@@ -135,11 +135,41 @@ impl ServiceFault {
     }
 }
 impl ServiceFault {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for ServiceFault {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "ServiceFault")?;
+        if let Some(inner_1) = &self.message {
+            {
+                write!(f, ": {}", inner_1)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for ServiceFault {}
+impl aws_http::request_id::RequestId for crate::error::ServiceFault {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for ServiceFault {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl ServiceFault {
     /// Creates a new builder-style object to manufacture [`ServiceFault`](crate::error::ServiceFault).
     pub fn builder() -> crate::error::service_fault::Builder {
         crate::error::service_fault::Builder::default()
     }
 }
+
 /// See [`ServiceFault`](crate::error::ServiceFault).
 pub mod service_fault {
 
@@ -199,35 +229,6 @@ pub mod service_fault {
         }
     }
 }
-impl ServiceFault {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for ServiceFault {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "ServiceFault")?;
-        if let Some(inner_1) = &self.message {
-            {
-                write!(f, ": {}", inner_1)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for ServiceFault {}
-impl aws_http::request_id::RequestId for crate::error::ServiceFault {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for ServiceFault {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>Your request is invalid.</p>
 #[non_exhaustive]
@@ -248,11 +249,41 @@ impl RequestError {
     }
 }
 impl RequestError {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for RequestError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "RequestError")?;
+        if let Some(inner_2) = &self.message {
+            {
+                write!(f, ": {}", inner_2)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for RequestError {}
+impl aws_http::request_id::RequestId for crate::error::RequestError {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for RequestError {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl RequestError {
     /// Creates a new builder-style object to manufacture [`RequestError`](crate::error::RequestError).
     pub fn builder() -> crate::error::request_error::Builder {
         crate::error::request_error::Builder::default()
     }
 }
+
 /// See [`RequestError`](crate::error::RequestError).
 pub mod request_error {
 
@@ -310,35 +341,6 @@ pub mod request_error {
                 meta: self.meta.unwrap_or_default(),
             }
         }
-    }
-}
-impl RequestError {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for RequestError {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "RequestError")?;
-        if let Some(inner_2) = &self.message {
-            {
-                write!(f, ": {}", inner_2)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for RequestError {}
-impl aws_http::request_id::RequestId for crate::error::RequestError {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for RequestError {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
     }
 }
 

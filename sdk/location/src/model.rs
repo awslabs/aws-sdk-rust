@@ -21,6 +21,13 @@ impl ValidationExceptionField {
         self.message.as_deref()
     }
 }
+impl ValidationExceptionField {
+    /// Creates a new builder-style object to manufacture [`ValidationExceptionField`](crate::model::ValidationExceptionField).
+    pub fn builder() -> crate::model::validation_exception_field::Builder {
+        crate::model::validation_exception_field::Builder::default()
+    }
+}
+
 /// See [`ValidationExceptionField`](crate::model::ValidationExceptionField).
 pub mod validation_exception_field {
 
@@ -59,12 +66,6 @@ pub mod validation_exception_field {
                 message: self.message,
             }
         }
-    }
-}
-impl ValidationExceptionField {
-    /// Creates a new builder-style object to manufacture [`ValidationExceptionField`](crate::model::ValidationExceptionField).
-    pub fn builder() -> crate::model::validation_exception_field::Builder {
-        crate::model::validation_exception_field::Builder::default()
     }
 }
 
@@ -162,6 +163,13 @@ impl std::fmt::Debug for ListDevicePositionsResponseEntry {
         formatter.finish()
     }
 }
+impl ListDevicePositionsResponseEntry {
+    /// Creates a new builder-style object to manufacture [`ListDevicePositionsResponseEntry`](crate::model::ListDevicePositionsResponseEntry).
+    pub fn builder() -> crate::model::list_device_positions_response_entry::Builder {
+        crate::model::list_device_positions_response_entry::Builder::default()
+    }
+}
+
 /// See [`ListDevicePositionsResponseEntry`](crate::model::ListDevicePositionsResponseEntry).
 pub mod list_device_positions_response_entry {
 
@@ -278,12 +286,6 @@ pub mod list_device_positions_response_entry {
         }
     }
 }
-impl ListDevicePositionsResponseEntry {
-    /// Creates a new builder-style object to manufacture [`ListDevicePositionsResponseEntry`](crate::model::ListDevicePositionsResponseEntry).
-    pub fn builder() -> crate::model::list_device_positions_response_entry::Builder {
-        crate::model::list_device_positions_response_entry::Builder::default()
-    }
-}
 
 /// <p>Defines the level of certainty of the position.</p>
 #[non_exhaustive]
@@ -299,6 +301,13 @@ impl PositionalAccuracy {
         self.horizontal
     }
 }
+impl PositionalAccuracy {
+    /// Creates a new builder-style object to manufacture [`PositionalAccuracy`](crate::model::PositionalAccuracy).
+    pub fn builder() -> crate::model::positional_accuracy::Builder {
+        crate::model::positional_accuracy::Builder::default()
+    }
+}
+
 /// See [`PositionalAccuracy`](crate::model::PositionalAccuracy).
 pub mod positional_accuracy {
 
@@ -325,12 +334,6 @@ pub mod positional_accuracy {
                 horizontal: self.horizontal,
             }
         }
-    }
-}
-impl PositionalAccuracy {
-    /// Creates a new builder-style object to manufacture [`PositionalAccuracy`](crate::model::PositionalAccuracy).
-    pub fn builder() -> crate::model::positional_accuracy::Builder {
-        crate::model::positional_accuracy::Builder::default()
     }
 }
 
@@ -399,6 +402,13 @@ impl std::fmt::Debug for DevicePosition {
         formatter.finish()
     }
 }
+impl DevicePosition {
+    /// Creates a new builder-style object to manufacture [`DevicePosition`](crate::model::DevicePosition).
+    pub fn builder() -> crate::model::device_position::Builder {
+        crate::model::device_position::Builder::default()
+    }
+}
+
 /// See [`DevicePosition`](crate::model::DevicePosition).
 pub mod device_position {
 
@@ -531,12 +541,6 @@ pub mod device_position {
         }
     }
 }
-impl DevicePosition {
-    /// Creates a new builder-style object to manufacture [`DevicePosition`](crate::model::DevicePosition).
-    pub fn builder() -> crate::model::device_position::Builder {
-        crate::model::device_position::Builder::default()
-    }
-}
 
 /// <p>Contains error details for each device that failed to update its position.</p>
 #[non_exhaustive]
@@ -566,6 +570,13 @@ impl BatchUpdateDevicePositionError {
         self.error.as_ref()
     }
 }
+impl BatchUpdateDevicePositionError {
+    /// Creates a new builder-style object to manufacture [`BatchUpdateDevicePositionError`](crate::model::BatchUpdateDevicePositionError).
+    pub fn builder() -> crate::model::batch_update_device_position_error::Builder {
+        crate::model::batch_update_device_position_error::Builder::default()
+    }
+}
+
 /// See [`BatchUpdateDevicePositionError`](crate::model::BatchUpdateDevicePositionError).
 pub mod batch_update_device_position_error {
 
@@ -624,12 +635,6 @@ pub mod batch_update_device_position_error {
         }
     }
 }
-impl BatchUpdateDevicePositionError {
-    /// Creates a new builder-style object to manufacture [`BatchUpdateDevicePositionError`](crate::model::BatchUpdateDevicePositionError).
-    pub fn builder() -> crate::model::batch_update_device_position_error::Builder {
-        crate::model::batch_update_device_position_error::Builder::default()
-    }
-}
 
 /// <p>Contains the batch request error details associated with the request.</p>
 #[non_exhaustive]
@@ -652,6 +657,13 @@ impl BatchItemError {
         self.message.as_deref()
     }
 }
+impl BatchItemError {
+    /// Creates a new builder-style object to manufacture [`BatchItemError`](crate::model::BatchItemError).
+    pub fn builder() -> crate::model::batch_item_error::Builder {
+        crate::model::batch_item_error::Builder::default()
+    }
+}
+
 /// See [`BatchItemError`](crate::model::BatchItemError).
 pub mod batch_item_error {
 
@@ -693,12 +705,6 @@ pub mod batch_item_error {
                 message: self.message,
             }
         }
-    }
-}
-impl BatchItemError {
-    /// Creates a new builder-style object to manufacture [`BatchItemError`](crate::model::BatchItemError).
-    pub fn builder() -> crate::model::batch_item_error::Builder {
-        crate::model::batch_item_error::Builder::default()
     }
 }
 
@@ -799,6 +805,13 @@ impl std::fmt::Debug for DevicePositionUpdate {
         formatter.finish()
     }
 }
+impl DevicePositionUpdate {
+    /// Creates a new builder-style object to manufacture [`DevicePositionUpdate`](crate::model::DevicePositionUpdate).
+    pub fn builder() -> crate::model::device_position_update::Builder {
+        crate::model::device_position_update::Builder::default()
+    }
+}
+
 /// See [`DevicePositionUpdate`](crate::model::DevicePositionUpdate).
 pub mod device_position_update {
 
@@ -917,12 +930,6 @@ pub mod device_position_update {
         }
     }
 }
-impl DevicePositionUpdate {
-    /// Creates a new builder-style object to manufacture [`DevicePositionUpdate`](crate::model::DevicePositionUpdate).
-    pub fn builder() -> crate::model::device_position_update::Builder {
-        crate::model::device_position_update::Builder::default()
-    }
-}
 
 /// <p>Contains error details for each device that didn't return a position.</p>
 #[non_exhaustive]
@@ -945,6 +952,13 @@ impl BatchGetDevicePositionError {
         self.error.as_ref()
     }
 }
+impl BatchGetDevicePositionError {
+    /// Creates a new builder-style object to manufacture [`BatchGetDevicePositionError`](crate::model::BatchGetDevicePositionError).
+    pub fn builder() -> crate::model::batch_get_device_position_error::Builder {
+        crate::model::batch_get_device_position_error::Builder::default()
+    }
+}
+
 /// See [`BatchGetDevicePositionError`](crate::model::BatchGetDevicePositionError).
 pub mod batch_get_device_position_error {
 
@@ -988,12 +1002,6 @@ pub mod batch_get_device_position_error {
         }
     }
 }
-impl BatchGetDevicePositionError {
-    /// Creates a new builder-style object to manufacture [`BatchGetDevicePositionError`](crate::model::BatchGetDevicePositionError).
-    pub fn builder() -> crate::model::batch_get_device_position_error::Builder {
-        crate::model::batch_get_device_position_error::Builder::default()
-    }
-}
 
 /// <p>Contains the tracker resource details.</p>
 #[non_exhaustive]
@@ -1016,6 +1024,13 @@ impl BatchDeleteDevicePositionHistoryError {
         self.error.as_ref()
     }
 }
+impl BatchDeleteDevicePositionHistoryError {
+    /// Creates a new builder-style object to manufacture [`BatchDeleteDevicePositionHistoryError`](crate::model::BatchDeleteDevicePositionHistoryError).
+    pub fn builder() -> crate::model::batch_delete_device_position_history_error::Builder {
+        crate::model::batch_delete_device_position_history_error::Builder::default()
+    }
+}
+
 /// See [`BatchDeleteDevicePositionHistoryError`](crate::model::BatchDeleteDevicePositionHistoryError).
 pub mod batch_delete_device_position_history_error {
 
@@ -1057,12 +1072,6 @@ pub mod batch_delete_device_position_history_error {
                 error: self.error,
             }
         }
-    }
-}
-impl BatchDeleteDevicePositionHistoryError {
-    /// Creates a new builder-style object to manufacture [`BatchDeleteDevicePositionHistoryError`](crate::model::BatchDeleteDevicePositionHistoryError).
-    pub fn builder() -> crate::model::batch_delete_device_position_history_error::Builder {
-        crate::model::batch_delete_device_position_history_error::Builder::default()
     }
 }
 
@@ -1125,6 +1134,13 @@ impl ListTrackersResponseEntry {
         self.update_time.as_ref()
     }
 }
+impl ListTrackersResponseEntry {
+    /// Creates a new builder-style object to manufacture [`ListTrackersResponseEntry`](crate::model::ListTrackersResponseEntry).
+    pub fn builder() -> crate::model::list_trackers_response_entry::Builder {
+        crate::model::list_trackers_response_entry::Builder::default()
+    }
+}
+
 /// See [`ListTrackersResponseEntry`](crate::model::ListTrackersResponseEntry).
 pub mod list_trackers_response_entry {
 
@@ -1233,12 +1249,6 @@ pub mod list_trackers_response_entry {
                 update_time: self.update_time,
             }
         }
-    }
-}
-impl ListTrackersResponseEntry {
-    /// Creates a new builder-style object to manufacture [`ListTrackersResponseEntry`](crate::model::ListTrackersResponseEntry).
-    pub fn builder() -> crate::model::list_trackers_response_entry::Builder {
-        crate::model::list_trackers_response_entry::Builder::default()
     }
 }
 
@@ -1355,6 +1365,13 @@ impl CalculateRouteMatrixSummary {
         self.distance_unit.as_ref()
     }
 }
+impl CalculateRouteMatrixSummary {
+    /// Creates a new builder-style object to manufacture [`CalculateRouteMatrixSummary`](crate::model::CalculateRouteMatrixSummary).
+    pub fn builder() -> crate::model::calculate_route_matrix_summary::Builder {
+        crate::model::calculate_route_matrix_summary::Builder::default()
+    }
+}
+
 /// See [`CalculateRouteMatrixSummary`](crate::model::CalculateRouteMatrixSummary).
 pub mod calculate_route_matrix_summary {
 
@@ -1434,12 +1451,6 @@ pub mod calculate_route_matrix_summary {
         }
     }
 }
-impl CalculateRouteMatrixSummary {
-    /// Creates a new builder-style object to manufacture [`CalculateRouteMatrixSummary`](crate::model::CalculateRouteMatrixSummary).
-    pub fn builder() -> crate::model::calculate_route_matrix_summary::Builder {
-        crate::model::calculate_route_matrix_summary::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1500,6 +1511,13 @@ impl RouteMatrixEntry {
         self.error.as_ref()
     }
 }
+impl RouteMatrixEntry {
+    /// Creates a new builder-style object to manufacture [`RouteMatrixEntry`](crate::model::RouteMatrixEntry).
+    pub fn builder() -> crate::model::route_matrix_entry::Builder {
+        crate::model::route_matrix_entry::Builder::default()
+    }
+}
+
 /// See [`RouteMatrixEntry`](crate::model::RouteMatrixEntry).
 pub mod route_matrix_entry {
 
@@ -1555,12 +1573,6 @@ pub mod route_matrix_entry {
         }
     }
 }
-impl RouteMatrixEntry {
-    /// Creates a new builder-style object to manufacture [`RouteMatrixEntry`](crate::model::RouteMatrixEntry).
-    pub fn builder() -> crate::model::route_matrix_entry::Builder {
-        crate::model::route_matrix_entry::Builder::default()
-    }
-}
 
 /// <p>An error corresponding to the calculation of a route between the <code>DeparturePosition</code> and <code>DestinationPosition</code>.</p>
 /// <p>The error code can be one of the following:</p>
@@ -1602,6 +1614,13 @@ impl RouteMatrixEntryError {
         self.message.as_deref()
     }
 }
+impl RouteMatrixEntryError {
+    /// Creates a new builder-style object to manufacture [`RouteMatrixEntryError`](crate::model::RouteMatrixEntryError).
+    pub fn builder() -> crate::model::route_matrix_entry_error::Builder {
+        crate::model::route_matrix_entry_error::Builder::default()
+    }
+}
+
 /// See [`RouteMatrixEntryError`](crate::model::RouteMatrixEntryError).
 pub mod route_matrix_entry_error {
 
@@ -1643,12 +1662,6 @@ pub mod route_matrix_entry_error {
                 message: self.message,
             }
         }
-    }
-}
-impl RouteMatrixEntryError {
-    /// Creates a new builder-style object to manufacture [`RouteMatrixEntryError`](crate::model::RouteMatrixEntryError).
-    pub fn builder() -> crate::model::route_matrix_entry_error::Builder {
-        crate::model::route_matrix_entry_error::Builder::default()
     }
 }
 
@@ -1733,6 +1746,13 @@ impl CalculateRouteTruckModeOptions {
         self.weight.as_ref()
     }
 }
+impl CalculateRouteTruckModeOptions {
+    /// Creates a new builder-style object to manufacture [`CalculateRouteTruckModeOptions`](crate::model::CalculateRouteTruckModeOptions).
+    pub fn builder() -> crate::model::calculate_route_truck_mode_options::Builder {
+        crate::model::calculate_route_truck_mode_options::Builder::default()
+    }
+}
+
 /// See [`CalculateRouteTruckModeOptions`](crate::model::CalculateRouteTruckModeOptions).
 pub mod calculate_route_truck_mode_options {
 
@@ -1808,12 +1828,6 @@ pub mod calculate_route_truck_mode_options {
         }
     }
 }
-impl CalculateRouteTruckModeOptions {
-    /// Creates a new builder-style object to manufacture [`CalculateRouteTruckModeOptions`](crate::model::CalculateRouteTruckModeOptions).
-    pub fn builder() -> crate::model::calculate_route_truck_mode_options::Builder {
-        crate::model::calculate_route_truck_mode_options::Builder::default()
-    }
-}
 
 /// <p>Contains details about the truck's weight specifications. Used to avoid roads that can't support or allow the total weight for requests that specify <code>TravelMode</code> as <code>Truck</code>.</p>
 #[non_exhaustive]
@@ -1844,6 +1858,13 @@ impl TruckWeight {
         self.unit.as_ref()
     }
 }
+impl TruckWeight {
+    /// Creates a new builder-style object to manufacture [`TruckWeight`](crate::model::TruckWeight).
+    pub fn builder() -> crate::model::truck_weight::Builder {
+        crate::model::truck_weight::Builder::default()
+    }
+}
+
 /// See [`TruckWeight`](crate::model::TruckWeight).
 pub mod truck_weight {
 
@@ -1893,12 +1914,6 @@ pub mod truck_weight {
                 unit: self.unit,
             }
         }
-    }
-}
-impl TruckWeight {
-    /// Creates a new builder-style object to manufacture [`TruckWeight`](crate::model::TruckWeight).
-    pub fn builder() -> crate::model::truck_weight::Builder {
-        crate::model::truck_weight::Builder::default()
     }
 }
 
@@ -2000,6 +2015,13 @@ impl TruckDimensions {
         self.unit.as_ref()
     }
 }
+impl TruckDimensions {
+    /// Creates a new builder-style object to manufacture [`TruckDimensions`](crate::model::TruckDimensions).
+    pub fn builder() -> crate::model::truck_dimensions::Builder {
+        crate::model::truck_dimensions::Builder::default()
+    }
+}
+
 /// See [`TruckDimensions`](crate::model::TruckDimensions).
 pub mod truck_dimensions {
 
@@ -2096,12 +2118,6 @@ pub mod truck_dimensions {
         }
     }
 }
-impl TruckDimensions {
-    /// Creates a new builder-style object to manufacture [`TruckDimensions`](crate::model::TruckDimensions).
-    pub fn builder() -> crate::model::truck_dimensions::Builder {
-        crate::model::truck_dimensions::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2163,6 +2179,13 @@ impl CalculateRouteCarModeOptions {
         self.avoid_tolls
     }
 }
+impl CalculateRouteCarModeOptions {
+    /// Creates a new builder-style object to manufacture [`CalculateRouteCarModeOptions`](crate::model::CalculateRouteCarModeOptions).
+    pub fn builder() -> crate::model::calculate_route_car_mode_options::Builder {
+        crate::model::calculate_route_car_mode_options::Builder::default()
+    }
+}
+
 /// See [`CalculateRouteCarModeOptions`](crate::model::CalculateRouteCarModeOptions).
 pub mod calculate_route_car_mode_options {
 
@@ -2209,12 +2232,6 @@ pub mod calculate_route_car_mode_options {
                 avoid_tolls: self.avoid_tolls,
             }
         }
-    }
-}
-impl CalculateRouteCarModeOptions {
-    /// Creates a new builder-style object to manufacture [`CalculateRouteCarModeOptions`](crate::model::CalculateRouteCarModeOptions).
-    pub fn builder() -> crate::model::calculate_route_car_mode_options::Builder {
-        crate::model::calculate_route_car_mode_options::Builder::default()
     }
 }
 
@@ -2338,6 +2355,13 @@ impl std::fmt::Debug for CalculateRouteSummary {
         formatter.finish()
     }
 }
+impl CalculateRouteSummary {
+    /// Creates a new builder-style object to manufacture [`CalculateRouteSummary`](crate::model::CalculateRouteSummary).
+    pub fn builder() -> crate::model::calculate_route_summary::Builder {
+        crate::model::calculate_route_summary::Builder::default()
+    }
+}
+
 /// See [`CalculateRouteSummary`](crate::model::CalculateRouteSummary).
 pub mod calculate_route_summary {
 
@@ -2470,12 +2494,6 @@ pub mod calculate_route_summary {
         }
     }
 }
-impl CalculateRouteSummary {
-    /// Creates a new builder-style object to manufacture [`CalculateRouteSummary`](crate::model::CalculateRouteSummary).
-    pub fn builder() -> crate::model::calculate_route_summary::Builder {
-        crate::model::calculate_route_summary::Builder::default()
-    }
-}
 
 /// <p>Contains the calculated route's details for each path between a pair of positions. The number of legs returned corresponds to one fewer than the total number of positions in the request. </p>
 /// <p>For example, a route with a departure position and destination position returns one leg with the positions <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">snapped to a nearby road</a>:</p>
@@ -2562,6 +2580,13 @@ impl std::fmt::Debug for Leg {
         formatter.finish()
     }
 }
+impl Leg {
+    /// Creates a new builder-style object to manufacture [`Leg`](crate::model::Leg).
+    pub fn builder() -> crate::model::leg::Builder {
+        crate::model::leg::Builder::default()
+    }
+}
+
 /// See [`Leg`](crate::model::Leg).
 pub mod leg {
 
@@ -2703,12 +2728,6 @@ pub mod leg {
         }
     }
 }
-impl Leg {
-    /// Creates a new builder-style object to manufacture [`Leg`](crate::model::Leg).
-    pub fn builder() -> crate::model::leg::Builder {
-        crate::model::leg::Builder::default()
-    }
-}
 
 /// <p> Represents an element of a leg within a route. A step contains instructions for how to move to the next step in the leg. </p>
 #[non_exhaustive]
@@ -2765,6 +2784,13 @@ impl std::fmt::Debug for Step {
         formatter.finish()
     }
 }
+impl Step {
+    /// Creates a new builder-style object to manufacture [`Step`](crate::model::Step).
+    pub fn builder() -> crate::model::step::Builder {
+        crate::model::step::Builder::default()
+    }
+}
+
 /// See [`Step`](crate::model::Step).
 pub mod step {
 
@@ -2869,12 +2895,6 @@ pub mod step {
         }
     }
 }
-impl Step {
-    /// Creates a new builder-style object to manufacture [`Step`](crate::model::Step).
-    pub fn builder() -> crate::model::step::Builder {
-        crate::model::step::Builder::default()
-    }
-}
 
 /// <p>Contains the geometry details for each path between a pair of positions. Used in plotting a route leg on a map.</p>
 #[non_exhaustive]
@@ -2898,6 +2918,13 @@ impl LegGeometry {
         self.line_string.as_deref()
     }
 }
+impl LegGeometry {
+    /// Creates a new builder-style object to manufacture [`LegGeometry`](crate::model::LegGeometry).
+    pub fn builder() -> crate::model::leg_geometry::Builder {
+        crate::model::leg_geometry::Builder::default()
+    }
+}
+
 /// See [`LegGeometry`](crate::model::LegGeometry).
 pub mod leg_geometry {
 
@@ -2941,12 +2968,6 @@ pub mod leg_geometry {
                 line_string: self.line_string,
             }
         }
-    }
-}
-impl LegGeometry {
-    /// Creates a new builder-style object to manufacture [`LegGeometry`](crate::model::LegGeometry).
-    pub fn builder() -> crate::model::leg_geometry::Builder {
-        crate::model::leg_geometry::Builder::default()
     }
 }
 
@@ -3031,6 +3052,13 @@ impl ListRouteCalculatorsResponseEntry {
         self.update_time.as_ref()
     }
 }
+impl ListRouteCalculatorsResponseEntry {
+    /// Creates a new builder-style object to manufacture [`ListRouteCalculatorsResponseEntry`](crate::model::ListRouteCalculatorsResponseEntry).
+    pub fn builder() -> crate::model::list_route_calculators_response_entry::Builder {
+        crate::model::list_route_calculators_response_entry::Builder::default()
+    }
+}
+
 /// See [`ListRouteCalculatorsResponseEntry`](crate::model::ListRouteCalculatorsResponseEntry).
 pub mod list_route_calculators_response_entry {
 
@@ -3163,12 +3191,6 @@ pub mod list_route_calculators_response_entry {
         }
     }
 }
-impl ListRouteCalculatorsResponseEntry {
-    /// Creates a new builder-style object to manufacture [`ListRouteCalculatorsResponseEntry`](crate::model::ListRouteCalculatorsResponseEntry).
-    pub fn builder() -> crate::model::list_route_calculators_response_entry::Builder {
-        crate::model::list_route_calculators_response_entry::Builder::default()
-    }
-}
 
 /// <p>Contains a search result from a text search query that is run on a place index resource.</p>
 #[non_exhaustive]
@@ -3215,6 +3237,13 @@ impl SearchForTextResult {
         self.place_id.as_deref()
     }
 }
+impl SearchForTextResult {
+    /// Creates a new builder-style object to manufacture [`SearchForTextResult`](crate::model::SearchForTextResult).
+    pub fn builder() -> crate::model::search_for_text_result::Builder {
+        crate::model::search_for_text_result::Builder::default()
+    }
+}
+
 /// See [`SearchForTextResult`](crate::model::SearchForTextResult).
 pub mod search_for_text_result {
 
@@ -3287,12 +3316,6 @@ pub mod search_for_text_result {
                 place_id: self.place_id,
             }
         }
-    }
-}
-impl SearchForTextResult {
-    /// Creates a new builder-style object to manufacture [`SearchForTextResult`](crate::model::SearchForTextResult).
-    pub fn builder() -> crate::model::search_for_text_result::Builder {
-        crate::model::search_for_text_result::Builder::default()
     }
 }
 
@@ -3412,6 +3435,13 @@ impl Place {
         self.unit_number.as_deref()
     }
 }
+impl Place {
+    /// Creates a new builder-style object to manufacture [`Place`](crate::model::Place).
+    pub fn builder() -> crate::model::place::Builder {
+        crate::model::place::Builder::default()
+    }
+}
+
 /// See [`Place`](crate::model::Place).
 pub mod place {
 
@@ -3612,12 +3642,6 @@ pub mod place {
         }
     }
 }
-impl Place {
-    /// Creates a new builder-style object to manufacture [`Place`](crate::model::Place).
-    pub fn builder() -> crate::model::place::Builder {
-        crate::model::place::Builder::default()
-    }
-}
 
 /// <p>Information about a time zone. Includes the name of the time zone and the offset from UTC in seconds.</p>
 #[non_exhaustive]
@@ -3640,6 +3664,13 @@ impl TimeZone {
         self.offset
     }
 }
+impl TimeZone {
+    /// Creates a new builder-style object to manufacture [`TimeZone`](crate::model::TimeZone).
+    pub fn builder() -> crate::model::time_zone::Builder {
+        crate::model::time_zone::Builder::default()
+    }
+}
+
 /// See [`TimeZone`](crate::model::TimeZone).
 pub mod time_zone {
 
@@ -3680,12 +3711,6 @@ pub mod time_zone {
         }
     }
 }
-impl TimeZone {
-    /// Creates a new builder-style object to manufacture [`TimeZone`](crate::model::TimeZone).
-    pub fn builder() -> crate::model::time_zone::Builder {
-        crate::model::time_zone::Builder::default()
-    }
-}
 
 /// <p>Places uses a point geometry to specify a location or a Place.</p>
 #[non_exhaustive]
@@ -3716,6 +3741,13 @@ impl std::fmt::Debug for PlaceGeometry {
         formatter.finish()
     }
 }
+impl PlaceGeometry {
+    /// Creates a new builder-style object to manufacture [`PlaceGeometry`](crate::model::PlaceGeometry).
+    pub fn builder() -> crate::model::place_geometry::Builder {
+        crate::model::place_geometry::Builder::default()
+    }
+}
+
 /// See [`PlaceGeometry`](crate::model::PlaceGeometry).
 pub mod place_geometry {
 
@@ -3761,12 +3793,6 @@ pub mod place_geometry {
             formatter.field("point", &"*** Sensitive Data Redacted ***");
             formatter.finish()
         }
-    }
-}
-impl PlaceGeometry {
-    /// Creates a new builder-style object to manufacture [`PlaceGeometry`](crate::model::PlaceGeometry).
-    pub fn builder() -> crate::model::place_geometry::Builder {
-        crate::model::place_geometry::Builder::default()
     }
 }
 
@@ -3867,6 +3893,13 @@ impl std::fmt::Debug for SearchPlaceIndexForTextSummary {
         formatter.finish()
     }
 }
+impl SearchPlaceIndexForTextSummary {
+    /// Creates a new builder-style object to manufacture [`SearchPlaceIndexForTextSummary`](crate::model::SearchPlaceIndexForTextSummary).
+    pub fn builder() -> crate::model::search_place_index_for_text_summary::Builder {
+        crate::model::search_place_index_for_text_summary::Builder::default()
+    }
+}
+
 /// See [`SearchPlaceIndexForTextSummary`](crate::model::SearchPlaceIndexForTextSummary).
 pub mod search_place_index_for_text_summary {
 
@@ -4040,12 +4073,6 @@ pub mod search_place_index_for_text_summary {
         }
     }
 }
-impl SearchPlaceIndexForTextSummary {
-    /// Creates a new builder-style object to manufacture [`SearchPlaceIndexForTextSummary`](crate::model::SearchPlaceIndexForTextSummary).
-    pub fn builder() -> crate::model::search_place_index_for_text_summary::Builder {
-        crate::model::search_place_index_for_text_summary::Builder::default()
-    }
-}
 
 /// <p>Contains a place suggestion resulting from a place suggestion query that is run on a place index resource.</p>
 #[non_exhaustive]
@@ -4072,6 +4099,13 @@ impl SearchForSuggestionsResult {
         self.place_id.as_deref()
     }
 }
+impl SearchForSuggestionsResult {
+    /// Creates a new builder-style object to manufacture [`SearchForSuggestionsResult`](crate::model::SearchForSuggestionsResult).
+    pub fn builder() -> crate::model::search_for_suggestions_result::Builder {
+        crate::model::search_for_suggestions_result::Builder::default()
+    }
+}
+
 /// See [`SearchForSuggestionsResult`](crate::model::SearchForSuggestionsResult).
 pub mod search_for_suggestions_result {
 
@@ -4114,12 +4148,6 @@ pub mod search_for_suggestions_result {
                 place_id: self.place_id,
             }
         }
-    }
-}
-impl SearchForSuggestionsResult {
-    /// Creates a new builder-style object to manufacture [`SearchForSuggestionsResult`](crate::model::SearchForSuggestionsResult).
-    pub fn builder() -> crate::model::search_for_suggestions_result::Builder {
-        crate::model::search_for_suggestions_result::Builder::default()
     }
 }
 
@@ -4208,6 +4236,13 @@ impl std::fmt::Debug for SearchPlaceIndexForSuggestionsSummary {
         formatter.finish()
     }
 }
+impl SearchPlaceIndexForSuggestionsSummary {
+    /// Creates a new builder-style object to manufacture [`SearchPlaceIndexForSuggestionsSummary`](crate::model::SearchPlaceIndexForSuggestionsSummary).
+    pub fn builder() -> crate::model::search_place_index_for_suggestions_summary::Builder {
+        crate::model::search_place_index_for_suggestions_summary::Builder::default()
+    }
+}
+
 /// See [`SearchPlaceIndexForSuggestionsSummary`](crate::model::SearchPlaceIndexForSuggestionsSummary).
 pub mod search_place_index_for_suggestions_summary {
 
@@ -4358,12 +4393,6 @@ pub mod search_place_index_for_suggestions_summary {
         }
     }
 }
-impl SearchPlaceIndexForSuggestionsSummary {
-    /// Creates a new builder-style object to manufacture [`SearchPlaceIndexForSuggestionsSummary`](crate::model::SearchPlaceIndexForSuggestionsSummary).
-    pub fn builder() -> crate::model::search_place_index_for_suggestions_summary::Builder {
-        crate::model::search_place_index_for_suggestions_summary::Builder::default()
-    }
-}
 
 /// <p>Contains a search result from a position search query that is run on a place index resource.</p>
 #[non_exhaustive]
@@ -4401,6 +4430,13 @@ impl SearchForPositionResult {
         self.place_id.as_deref()
     }
 }
+impl SearchForPositionResult {
+    /// Creates a new builder-style object to manufacture [`SearchForPositionResult`](crate::model::SearchForPositionResult).
+    pub fn builder() -> crate::model::search_for_position_result::Builder {
+        crate::model::search_for_position_result::Builder::default()
+    }
+}
+
 /// See [`SearchForPositionResult`](crate::model::SearchForPositionResult).
 pub mod search_for_position_result {
 
@@ -4459,12 +4495,6 @@ pub mod search_for_position_result {
                 place_id: self.place_id,
             }
         }
-    }
-}
-impl SearchForPositionResult {
-    /// Creates a new builder-style object to manufacture [`SearchForPositionResult`](crate::model::SearchForPositionResult).
-    pub fn builder() -> crate::model::search_for_position_result::Builder {
-        crate::model::search_for_position_result::Builder::default()
     }
 }
 
@@ -4527,6 +4557,13 @@ impl std::fmt::Debug for SearchPlaceIndexForPositionSummary {
         formatter.finish()
     }
 }
+impl SearchPlaceIndexForPositionSummary {
+    /// Creates a new builder-style object to manufacture [`SearchPlaceIndexForPositionSummary`](crate::model::SearchPlaceIndexForPositionSummary).
+    pub fn builder() -> crate::model::search_place_index_for_position_summary::Builder {
+        crate::model::search_place_index_for_position_summary::Builder::default()
+    }
+}
+
 /// See [`SearchPlaceIndexForPositionSummary`](crate::model::SearchPlaceIndexForPositionSummary).
 pub mod search_place_index_for_position_summary {
 
@@ -4621,12 +4658,6 @@ pub mod search_place_index_for_position_summary {
         }
     }
 }
-impl SearchPlaceIndexForPositionSummary {
-    /// Creates a new builder-style object to manufacture [`SearchPlaceIndexForPositionSummary`](crate::model::SearchPlaceIndexForPositionSummary).
-    pub fn builder() -> crate::model::search_place_index_for_position_summary::Builder {
-        crate::model::search_place_index_for_position_summary::Builder::default()
-    }
-}
 
 /// <p>A place index resource listed in your AWS account.</p>
 #[non_exhaustive]
@@ -4697,6 +4728,13 @@ impl ListPlaceIndexesResponseEntry {
         self.update_time.as_ref()
     }
 }
+impl ListPlaceIndexesResponseEntry {
+    /// Creates a new builder-style object to manufacture [`ListPlaceIndexesResponseEntry`](crate::model::ListPlaceIndexesResponseEntry).
+    pub fn builder() -> crate::model::list_place_indexes_response_entry::Builder {
+        crate::model::list_place_indexes_response_entry::Builder::default()
+    }
+}
+
 /// See [`ListPlaceIndexesResponseEntry`](crate::model::ListPlaceIndexesResponseEntry).
 pub mod list_place_indexes_response_entry {
 
@@ -4814,12 +4852,6 @@ pub mod list_place_indexes_response_entry {
         }
     }
 }
-impl ListPlaceIndexesResponseEntry {
-    /// Creates a new builder-style object to manufacture [`ListPlaceIndexesResponseEntry`](crate::model::ListPlaceIndexesResponseEntry).
-    pub fn builder() -> crate::model::list_place_indexes_response_entry::Builder {
-        crate::model::list_place_indexes_response_entry::Builder::default()
-    }
-}
 
 /// <p>Specifies the data storage option chosen for requesting Places.</p> <important>
 /// <p>When using Amazon Location Places:</p>
@@ -4854,6 +4886,13 @@ impl DataSourceConfiguration {
         self.intended_use.as_ref()
     }
 }
+impl DataSourceConfiguration {
+    /// Creates a new builder-style object to manufacture [`DataSourceConfiguration`](crate::model::DataSourceConfiguration).
+    pub fn builder() -> crate::model::data_source_configuration::Builder {
+        crate::model::data_source_configuration::Builder::default()
+    }
+}
+
 /// See [`DataSourceConfiguration`](crate::model::DataSourceConfiguration).
 pub mod data_source_configuration {
 
@@ -4895,12 +4934,6 @@ pub mod data_source_configuration {
                 intended_use: self.intended_use,
             }
         }
-    }
-}
-impl DataSourceConfiguration {
-    /// Creates a new builder-style object to manufacture [`DataSourceConfiguration`](crate::model::DataSourceConfiguration).
-    pub fn builder() -> crate::model::data_source_configuration::Builder {
-        crate::model::data_source_configuration::Builder::default()
     }
 }
 
@@ -4992,6 +5025,13 @@ impl ListMapsResponseEntry {
         self.update_time.as_ref()
     }
 }
+impl ListMapsResponseEntry {
+    /// Creates a new builder-style object to manufacture [`ListMapsResponseEntry`](crate::model::ListMapsResponseEntry).
+    pub fn builder() -> crate::model::list_maps_response_entry::Builder {
+        crate::model::list_maps_response_entry::Builder::default()
+    }
+}
+
 /// See [`ListMapsResponseEntry`](crate::model::ListMapsResponseEntry).
 pub mod list_maps_response_entry {
 
@@ -5097,12 +5137,6 @@ pub mod list_maps_response_entry {
         }
     }
 }
-impl ListMapsResponseEntry {
-    /// Creates a new builder-style object to manufacture [`ListMapsResponseEntry`](crate::model::ListMapsResponseEntry).
-    pub fn builder() -> crate::model::list_maps_response_entry::Builder {
-        crate::model::list_maps_response_entry::Builder::default()
-    }
-}
 
 /// <p>Specifies the map tile style selected from an available provider.</p>
 #[non_exhaustive]
@@ -5186,6 +5220,13 @@ impl MapConfiguration {
         self.style.as_deref()
     }
 }
+impl MapConfiguration {
+    /// Creates a new builder-style object to manufacture [`MapConfiguration`](crate::model::MapConfiguration).
+    pub fn builder() -> crate::model::map_configuration::Builder {
+        crate::model::map_configuration::Builder::default()
+    }
+}
+
 /// See [`MapConfiguration`](crate::model::MapConfiguration).
 pub mod map_configuration {
 
@@ -5280,12 +5321,6 @@ pub mod map_configuration {
         }
     }
 }
-impl MapConfiguration {
-    /// Creates a new builder-style object to manufacture [`MapConfiguration`](crate::model::MapConfiguration).
-    pub fn builder() -> crate::model::map_configuration::Builder {
-        crate::model::map_configuration::Builder::default()
-    }
-}
 
 /// <p>Contains the geofence geometry details.</p>
 /// <p>A geofence geometry is made up of either a polygon or a circle. Can be either a polygon or a circle. Including both will return a validation error.</p> <note>
@@ -5327,6 +5362,13 @@ impl std::fmt::Debug for GeofenceGeometry {
         formatter.finish()
     }
 }
+impl GeofenceGeometry {
+    /// Creates a new builder-style object to manufacture [`GeofenceGeometry`](crate::model::GeofenceGeometry).
+    pub fn builder() -> crate::model::geofence_geometry::Builder {
+        crate::model::geofence_geometry::Builder::default()
+    }
+}
+
 /// See [`GeofenceGeometry`](crate::model::GeofenceGeometry).
 pub mod geofence_geometry {
 
@@ -5392,12 +5434,6 @@ pub mod geofence_geometry {
         }
     }
 }
-impl GeofenceGeometry {
-    /// Creates a new builder-style object to manufacture [`GeofenceGeometry`](crate::model::GeofenceGeometry).
-    pub fn builder() -> crate::model::geofence_geometry::Builder {
-        crate::model::geofence_geometry::Builder::default()
-    }
-}
 
 /// <p>A circle on the earth, as defined by a center point and a radius.</p>
 #[non_exhaustive]
@@ -5428,6 +5464,13 @@ impl std::fmt::Debug for Circle {
         formatter.finish()
     }
 }
+impl Circle {
+    /// Creates a new builder-style object to manufacture [`Circle`](crate::model::Circle).
+    pub fn builder() -> crate::model::circle::Builder {
+        crate::model::circle::Builder::default()
+    }
+}
+
 /// See [`Circle`](crate::model::Circle).
 pub mod circle {
 
@@ -5480,12 +5523,6 @@ pub mod circle {
             formatter.field("radius", &"*** Sensitive Data Redacted ***");
             formatter.finish()
         }
-    }
-}
-impl Circle {
-    /// Creates a new builder-style object to manufacture [`Circle`](crate::model::Circle).
-    pub fn builder() -> crate::model::circle::Builder {
-        crate::model::circle::Builder::default()
     }
 }
 
@@ -5545,6 +5582,13 @@ impl ListGeofenceResponseEntry {
         self.update_time.as_ref()
     }
 }
+impl ListGeofenceResponseEntry {
+    /// Creates a new builder-style object to manufacture [`ListGeofenceResponseEntry`](crate::model::ListGeofenceResponseEntry).
+    pub fn builder() -> crate::model::list_geofence_response_entry::Builder {
+        crate::model::list_geofence_response_entry::Builder::default()
+    }
+}
+
 /// See [`ListGeofenceResponseEntry`](crate::model::ListGeofenceResponseEntry).
 pub mod list_geofence_response_entry {
 
@@ -5644,12 +5688,6 @@ pub mod list_geofence_response_entry {
         }
     }
 }
-impl ListGeofenceResponseEntry {
-    /// Creates a new builder-style object to manufacture [`ListGeofenceResponseEntry`](crate::model::ListGeofenceResponseEntry).
-    pub fn builder() -> crate::model::list_geofence_response_entry::Builder {
-        crate::model::list_geofence_response_entry::Builder::default()
-    }
-}
 
 /// <p>Contains error details for each geofence that failed to be stored in a given geofence collection.</p>
 #[non_exhaustive]
@@ -5672,6 +5710,13 @@ impl BatchPutGeofenceError {
         self.error.as_ref()
     }
 }
+impl BatchPutGeofenceError {
+    /// Creates a new builder-style object to manufacture [`BatchPutGeofenceError`](crate::model::BatchPutGeofenceError).
+    pub fn builder() -> crate::model::batch_put_geofence_error::Builder {
+        crate::model::batch_put_geofence_error::Builder::default()
+    }
+}
+
 /// See [`BatchPutGeofenceError`](crate::model::BatchPutGeofenceError).
 pub mod batch_put_geofence_error {
 
@@ -5715,12 +5760,6 @@ pub mod batch_put_geofence_error {
         }
     }
 }
-impl BatchPutGeofenceError {
-    /// Creates a new builder-style object to manufacture [`BatchPutGeofenceError`](crate::model::BatchPutGeofenceError).
-    pub fn builder() -> crate::model::batch_put_geofence_error::Builder {
-        crate::model::batch_put_geofence_error::Builder::default()
-    }
-}
 
 /// <p>Contains a summary of each geofence that was successfully stored in a given geofence collection.</p>
 #[non_exhaustive]
@@ -5750,6 +5789,13 @@ impl BatchPutGeofenceSuccess {
         self.update_time.as_ref()
     }
 }
+impl BatchPutGeofenceSuccess {
+    /// Creates a new builder-style object to manufacture [`BatchPutGeofenceSuccess`](crate::model::BatchPutGeofenceSuccess).
+    pub fn builder() -> crate::model::batch_put_geofence_success::Builder {
+        crate::model::batch_put_geofence_success::Builder::default()
+    }
+}
+
 /// See [`BatchPutGeofenceSuccess`](crate::model::BatchPutGeofenceSuccess).
 pub mod batch_put_geofence_success {
 
@@ -5808,12 +5854,6 @@ pub mod batch_put_geofence_success {
         }
     }
 }
-impl BatchPutGeofenceSuccess {
-    /// Creates a new builder-style object to manufacture [`BatchPutGeofenceSuccess`](crate::model::BatchPutGeofenceSuccess).
-    pub fn builder() -> crate::model::batch_put_geofence_success::Builder {
-        crate::model::batch_put_geofence_success::Builder::default()
-    }
-}
 
 /// <p>Contains geofence geometry details. </p>
 #[non_exhaustive]
@@ -5840,6 +5880,13 @@ impl BatchPutGeofenceRequestEntry {
         self.geometry.as_ref()
     }
 }
+impl BatchPutGeofenceRequestEntry {
+    /// Creates a new builder-style object to manufacture [`BatchPutGeofenceRequestEntry`](crate::model::BatchPutGeofenceRequestEntry).
+    pub fn builder() -> crate::model::batch_put_geofence_request_entry::Builder {
+        crate::model::batch_put_geofence_request_entry::Builder::default()
+    }
+}
+
 /// See [`BatchPutGeofenceRequestEntry`](crate::model::BatchPutGeofenceRequestEntry).
 pub mod batch_put_geofence_request_entry {
 
@@ -5887,12 +5934,6 @@ pub mod batch_put_geofence_request_entry {
         }
     }
 }
-impl BatchPutGeofenceRequestEntry {
-    /// Creates a new builder-style object to manufacture [`BatchPutGeofenceRequestEntry`](crate::model::BatchPutGeofenceRequestEntry).
-    pub fn builder() -> crate::model::batch_put_geofence_request_entry::Builder {
-        crate::model::batch_put_geofence_request_entry::Builder::default()
-    }
-}
 
 /// <p>Contains error details for each device that failed to evaluate its position against the geofences in a given geofence collection.</p>
 #[non_exhaustive]
@@ -5922,6 +5963,13 @@ impl BatchEvaluateGeofencesError {
         self.error.as_ref()
     }
 }
+impl BatchEvaluateGeofencesError {
+    /// Creates a new builder-style object to manufacture [`BatchEvaluateGeofencesError`](crate::model::BatchEvaluateGeofencesError).
+    pub fn builder() -> crate::model::batch_evaluate_geofences_error::Builder {
+        crate::model::batch_evaluate_geofences_error::Builder::default()
+    }
+}
+
 /// See [`BatchEvaluateGeofencesError`](crate::model::BatchEvaluateGeofencesError).
 pub mod batch_evaluate_geofences_error {
 
@@ -5980,12 +6028,6 @@ pub mod batch_evaluate_geofences_error {
         }
     }
 }
-impl BatchEvaluateGeofencesError {
-    /// Creates a new builder-style object to manufacture [`BatchEvaluateGeofencesError`](crate::model::BatchEvaluateGeofencesError).
-    pub fn builder() -> crate::model::batch_evaluate_geofences_error::Builder {
-        crate::model::batch_evaluate_geofences_error::Builder::default()
-    }
-}
 
 /// <p>Contains error details for each geofence that failed to delete from the geofence collection.</p>
 #[non_exhaustive]
@@ -6008,6 +6050,13 @@ impl BatchDeleteGeofenceError {
         self.error.as_ref()
     }
 }
+impl BatchDeleteGeofenceError {
+    /// Creates a new builder-style object to manufacture [`BatchDeleteGeofenceError`](crate::model::BatchDeleteGeofenceError).
+    pub fn builder() -> crate::model::batch_delete_geofence_error::Builder {
+        crate::model::batch_delete_geofence_error::Builder::default()
+    }
+}
+
 /// See [`BatchDeleteGeofenceError`](crate::model::BatchDeleteGeofenceError).
 pub mod batch_delete_geofence_error {
 
@@ -6049,12 +6098,6 @@ pub mod batch_delete_geofence_error {
                 error: self.error,
             }
         }
-    }
-}
-impl BatchDeleteGeofenceError {
-    /// Creates a new builder-style object to manufacture [`BatchDeleteGeofenceError`](crate::model::BatchDeleteGeofenceError).
-    pub fn builder() -> crate::model::batch_delete_geofence_error::Builder {
-        crate::model::batch_delete_geofence_error::Builder::default()
     }
 }
 
@@ -6117,6 +6160,13 @@ impl ListGeofenceCollectionsResponseEntry {
         self.update_time.as_ref()
     }
 }
+impl ListGeofenceCollectionsResponseEntry {
+    /// Creates a new builder-style object to manufacture [`ListGeofenceCollectionsResponseEntry`](crate::model::ListGeofenceCollectionsResponseEntry).
+    pub fn builder() -> crate::model::list_geofence_collections_response_entry::Builder {
+        crate::model::list_geofence_collections_response_entry::Builder::default()
+    }
+}
+
 /// See [`ListGeofenceCollectionsResponseEntry`](crate::model::ListGeofenceCollectionsResponseEntry).
 pub mod list_geofence_collections_response_entry {
 
@@ -6228,11 +6278,5 @@ pub mod list_geofence_collections_response_entry {
                 update_time: self.update_time,
             }
         }
-    }
-}
-impl ListGeofenceCollectionsResponseEntry {
-    /// Creates a new builder-style object to manufacture [`ListGeofenceCollectionsResponseEntry`](crate::model::ListGeofenceCollectionsResponseEntry).
-    pub fn builder() -> crate::model::list_geofence_collections_response_entry::Builder {
-        crate::model::list_geofence_collections_response_entry::Builder::default()
     }
 }

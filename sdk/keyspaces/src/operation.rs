@@ -4,7 +4,7 @@
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`create_keyspace`](crate::client::Client::create_keyspace).
 ///
-/// See [`crate::client::fluent_builders::CreateKeyspace`] for more details about the operation.
+/// `ParseStrictResponse` impl for `CreateKeyspace`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateKeyspace {
     _private: (),
@@ -37,7 +37,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateKeyspace {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`create_table`](crate::client::Client::create_table).
 ///
-/// See [`crate::client::fluent_builders::CreateTable`] for more details about the operation.
+/// `ParseStrictResponse` impl for `CreateTable`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateTable {
     _private: (),
@@ -70,7 +70,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateTable {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`delete_keyspace`](crate::client::Client::delete_keyspace).
 ///
-/// See [`crate::client::fluent_builders::DeleteKeyspace`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DeleteKeyspace`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteKeyspace {
     _private: (),
@@ -103,7 +103,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteKeyspace {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`delete_table`](crate::client::Client::delete_table).
 ///
-/// See [`crate::client::fluent_builders::DeleteTable`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DeleteTable`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteTable {
     _private: (),
@@ -136,7 +136,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteTable {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`get_keyspace`](crate::client::Client::get_keyspace).
 ///
-/// See [`crate::client::fluent_builders::GetKeyspace`] for more details about the operation.
+/// `ParseStrictResponse` impl for `GetKeyspace`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetKeyspace {
     _private: (),
@@ -169,7 +169,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetKeyspace {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`get_table`](crate::client::Client::get_table).
 ///
-/// See [`crate::client::fluent_builders::GetTable`] for more details about the operation.
+/// `ParseStrictResponse` impl for `GetTable`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetTable {
     _private: (),
@@ -201,7 +201,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetTable {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_keyspaces`](crate::client::Client::list_keyspaces).
 ///
-/// See [`crate::client::fluent_builders::ListKeyspaces`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListKeyspaces`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListKeyspaces {
     _private: (),
@@ -234,7 +234,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListKeyspaces {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_tables`](crate::client::Client::list_tables).
 ///
-/// See [`crate::client::fluent_builders::ListTables`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListTables`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTables {
     _private: (),
@@ -267,7 +267,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTables {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
 ///
-/// See [`crate::client::fluent_builders::ListTagsForResource`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTagsForResource {
     _private: (),
@@ -302,7 +302,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`restore_table`](crate::client::Client::restore_table).
 ///
-/// See [`crate::client::fluent_builders::RestoreTable`] for more details about the operation.
+/// `ParseStrictResponse` impl for `RestoreTable`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct RestoreTable {
     _private: (),
@@ -335,7 +335,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RestoreTable {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`tag_resource`](crate::client::Client::tag_resource).
 ///
-/// See [`crate::client::fluent_builders::TagResource`] for more details about the operation.
+/// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct TagResource {
     _private: (),
@@ -368,7 +368,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`untag_resource`](crate::client::Client::untag_resource).
 ///
-/// See [`crate::client::fluent_builders::UntagResource`] for more details about the operation.
+/// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UntagResource {
     _private: (),
@@ -401,7 +401,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`update_table`](crate::client::Client::update_table).
 ///
-/// See [`crate::client::fluent_builders::UpdateTable`] for more details about the operation.
+/// `ParseStrictResponse` impl for `UpdateTable`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateTable {
     _private: (),

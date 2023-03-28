@@ -69,6 +69,13 @@ impl Webhook {
         self.last_modified_secret.as_ref()
     }
 }
+impl Webhook {
+    /// Creates a new builder-style object to manufacture [`Webhook`](crate::model::Webhook).
+    pub fn builder() -> crate::model::webhook::Builder {
+        crate::model::webhook::Builder::default()
+    }
+}
+
 /// See [`Webhook`](crate::model::Webhook).
 pub mod webhook {
 
@@ -196,12 +203,6 @@ pub mod webhook {
                 last_modified_secret: self.last_modified_secret,
             }
         }
-    }
-}
-impl Webhook {
-    /// Creates a new builder-style object to manufacture [`Webhook`](crate::model::Webhook).
-    pub fn builder() -> crate::model::webhook::Builder {
-        crate::model::webhook::Builder::default()
     }
 }
 
@@ -419,6 +420,13 @@ impl WebhookFilter {
         self.exclude_matched_pattern
     }
 }
+impl WebhookFilter {
+    /// Creates a new builder-style object to manufacture [`WebhookFilter`](crate::model::WebhookFilter).
+    pub fn builder() -> crate::model::webhook_filter::Builder {
+        crate::model::webhook_filter::Builder::default()
+    }
+}
+
 /// See [`WebhookFilter`](crate::model::WebhookFilter).
 pub mod webhook_filter {
 
@@ -568,12 +576,6 @@ pub mod webhook_filter {
                 exclude_matched_pattern: self.exclude_matched_pattern,
             }
         }
-    }
-}
-impl WebhookFilter {
-    /// Creates a new builder-style object to manufacture [`WebhookFilter`](crate::model::WebhookFilter).
-    pub fn builder() -> crate::model::webhook_filter::Builder {
-        crate::model::webhook_filter::Builder::default()
     }
 }
 
@@ -819,6 +821,13 @@ impl ReportGroup {
         self.status.as_ref()
     }
 }
+impl ReportGroup {
+    /// Creates a new builder-style object to manufacture [`ReportGroup`](crate::model::ReportGroup).
+    pub fn builder() -> crate::model::report_group::Builder {
+        crate::model::report_group::Builder::default()
+    }
+}
+
 /// See [`ReportGroup`](crate::model::ReportGroup).
 pub mod report_group {
 
@@ -1012,12 +1021,6 @@ pub mod report_group {
         }
     }
 }
-impl ReportGroup {
-    /// Creates a new builder-style object to manufacture [`ReportGroup`](crate::model::ReportGroup).
-    pub fn builder() -> crate::model::report_group::Builder {
-        crate::model::report_group::Builder::default()
-    }
-}
 
 /// When writing a match expression against `ReportGroupStatusType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -1133,6 +1136,13 @@ impl Tag {
         self.value.as_deref()
     }
 }
+impl Tag {
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
+    pub fn builder() -> crate::model::tag::Builder {
+        crate::model::tag::Builder::default()
+    }
+}
+
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
 
@@ -1173,12 +1183,6 @@ pub mod tag {
         }
     }
 }
-impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
-    pub fn builder() -> crate::model::tag::Builder {
-        crate::model::tag::Builder::default()
-    }
-}
 
 /// <p> Information about the location where the run of a report is exported. </p>
 #[non_exhaustive]
@@ -1209,6 +1213,13 @@ impl ReportExportConfig {
         self.s3_destination.as_ref()
     }
 }
+impl ReportExportConfig {
+    /// Creates a new builder-style object to manufacture [`ReportExportConfig`](crate::model::ReportExportConfig).
+    pub fn builder() -> crate::model::report_export_config::Builder {
+        crate::model::report_export_config::Builder::default()
+    }
+}
+
 /// See [`ReportExportConfig`](crate::model::ReportExportConfig).
 pub mod report_export_config {
 
@@ -1261,12 +1272,6 @@ pub mod report_export_config {
                 s3_destination: self.s3_destination,
             }
         }
-    }
-}
-impl ReportExportConfig {
-    /// Creates a new builder-style object to manufacture [`ReportExportConfig`](crate::model::ReportExportConfig).
-    pub fn builder() -> crate::model::report_export_config::Builder {
-        crate::model::report_export_config::Builder::default()
     }
 }
 
@@ -1327,6 +1332,13 @@ impl S3ReportExportConfig {
         self.encryption_disabled
     }
 }
+impl S3ReportExportConfig {
+    /// Creates a new builder-style object to manufacture [`S3ReportExportConfig`](crate::model::S3ReportExportConfig).
+    pub fn builder() -> crate::model::s3_report_export_config::Builder {
+        crate::model::s3_report_export_config::Builder::default()
+    }
+}
+
 /// See [`S3ReportExportConfig`](crate::model::S3ReportExportConfig).
 pub mod s3_report_export_config {
 
@@ -1427,12 +1439,6 @@ pub mod s3_report_export_config {
                 encryption_disabled: self.encryption_disabled,
             }
         }
-    }
-}
-impl S3ReportExportConfig {
-    /// Creates a new builder-style object to manufacture [`S3ReportExportConfig`](crate::model::S3ReportExportConfig).
-    pub fn builder() -> crate::model::s3_report_export_config::Builder {
-        crate::model::s3_report_export_config::Builder::default()
     }
 }
 
@@ -2080,6 +2086,13 @@ impl Project {
         self.resource_access_role.as_deref()
     }
 }
+impl Project {
+    /// Creates a new builder-style object to manufacture [`Project`](crate::model::Project).
+    pub fn builder() -> crate::model::project::Builder {
+        crate::model::project::Builder::default()
+    }
+}
+
 /// See [`Project`](crate::model::Project).
 pub mod project {
 
@@ -2582,12 +2595,6 @@ pub mod project {
         }
     }
 }
-impl Project {
-    /// Creates a new builder-style object to manufacture [`Project`](crate::model::Project).
-    pub fn builder() -> crate::model::project::Builder {
-        crate::model::project::Builder::default()
-    }
-}
 
 /// <p>Contains configuration information about a batch build project.</p>
 #[non_exhaustive]
@@ -2659,6 +2666,13 @@ impl ProjectBuildBatchConfig {
         self.batch_report_mode.as_ref()
     }
 }
+impl ProjectBuildBatchConfig {
+    /// Creates a new builder-style object to manufacture [`ProjectBuildBatchConfig`](crate::model::ProjectBuildBatchConfig).
+    pub fn builder() -> crate::model::project_build_batch_config::Builder {
+        crate::model::project_build_batch_config::Builder::default()
+    }
+}
+
 /// See [`ProjectBuildBatchConfig`](crate::model::ProjectBuildBatchConfig).
 pub mod project_build_batch_config {
 
@@ -2767,12 +2781,6 @@ pub mod project_build_batch_config {
                 batch_report_mode: self.batch_report_mode,
             }
         }
-    }
-}
-impl ProjectBuildBatchConfig {
-    /// Creates a new builder-style object to manufacture [`ProjectBuildBatchConfig`](crate::model::ProjectBuildBatchConfig).
-    pub fn builder() -> crate::model::project_build_batch_config::Builder {
-        crate::model::project_build_batch_config::Builder::default()
     }
 }
 
@@ -2889,6 +2897,13 @@ impl BatchRestrictions {
         self.compute_types_allowed.as_deref()
     }
 }
+impl BatchRestrictions {
+    /// Creates a new builder-style object to manufacture [`BatchRestrictions`](crate::model::BatchRestrictions).
+    pub fn builder() -> crate::model::batch_restrictions::Builder {
+        crate::model::batch_restrictions::Builder::default()
+    }
+}
+
 /// See [`BatchRestrictions`](crate::model::BatchRestrictions).
 pub mod batch_restrictions {
 
@@ -2938,12 +2953,6 @@ pub mod batch_restrictions {
         }
     }
 }
-impl BatchRestrictions {
-    /// Creates a new builder-style object to manufacture [`BatchRestrictions`](crate::model::BatchRestrictions).
-    pub fn builder() -> crate::model::batch_restrictions::Builder {
-        crate::model::batch_restrictions::Builder::default()
-    }
-}
 
 /// <p> Information about a file system created by Amazon Elastic File System (EFS). For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/whatisefs.html">What Is Amazon Elastic File System?</a> </p>
 #[non_exhaustive]
@@ -2991,6 +3000,13 @@ impl ProjectFileSystemLocation {
         self.mount_options.as_deref()
     }
 }
+impl ProjectFileSystemLocation {
+    /// Creates a new builder-style object to manufacture [`ProjectFileSystemLocation`](crate::model::ProjectFileSystemLocation).
+    pub fn builder() -> crate::model::project_file_system_location::Builder {
+        crate::model::project_file_system_location::Builder::default()
+    }
+}
+
 /// See [`ProjectFileSystemLocation`](crate::model::ProjectFileSystemLocation).
 pub mod project_file_system_location {
 
@@ -3075,12 +3091,6 @@ pub mod project_file_system_location {
                 mount_options: self.mount_options,
             }
         }
-    }
-}
-impl ProjectFileSystemLocation {
-    /// Creates a new builder-style object to manufacture [`ProjectFileSystemLocation`](crate::model::ProjectFileSystemLocation).
-    pub fn builder() -> crate::model::project_file_system_location::Builder {
-        crate::model::project_file_system_location::Builder::default()
     }
 }
 
@@ -3190,6 +3200,13 @@ impl LogsConfig {
         self.s3_logs.as_ref()
     }
 }
+impl LogsConfig {
+    /// Creates a new builder-style object to manufacture [`LogsConfig`](crate::model::LogsConfig).
+    pub fn builder() -> crate::model::logs_config::Builder {
+        crate::model::logs_config::Builder::default()
+    }
+}
+
 /// See [`LogsConfig`](crate::model::LogsConfig).
 pub mod logs_config {
 
@@ -3234,12 +3251,6 @@ pub mod logs_config {
                 s3_logs: self.s3_logs,
             }
         }
-    }
-}
-impl LogsConfig {
-    /// Creates a new builder-style object to manufacture [`LogsConfig`](crate::model::LogsConfig).
-    pub fn builder() -> crate::model::logs_config::Builder {
-        crate::model::logs_config::Builder::default()
     }
 }
 
@@ -3342,6 +3353,13 @@ impl S3LogsConfig {
         self.bucket_owner_access.as_ref()
     }
 }
+impl S3LogsConfig {
+    /// Creates a new builder-style object to manufacture [`S3LogsConfig`](crate::model::S3LogsConfig).
+    pub fn builder() -> crate::model::s3_logs_config::Builder {
+        crate::model::s3_logs_config::Builder::default()
+    }
+}
+
 /// See [`S3LogsConfig`](crate::model::S3LogsConfig).
 pub mod s3_logs_config {
 
@@ -3474,12 +3492,6 @@ pub mod s3_logs_config {
                 bucket_owner_access: self.bucket_owner_access,
             }
         }
-    }
-}
-impl S3LogsConfig {
-    /// Creates a new builder-style object to manufacture [`S3LogsConfig`](crate::model::S3LogsConfig).
-    pub fn builder() -> crate::model::s3_logs_config::Builder {
-        crate::model::s3_logs_config::Builder::default()
     }
 }
 
@@ -3749,6 +3761,13 @@ impl CloudWatchLogsConfig {
         self.stream_name.as_deref()
     }
 }
+impl CloudWatchLogsConfig {
+    /// Creates a new builder-style object to manufacture [`CloudWatchLogsConfig`](crate::model::CloudWatchLogsConfig).
+    pub fn builder() -> crate::model::cloud_watch_logs_config::Builder {
+        crate::model::cloud_watch_logs_config::Builder::default()
+    }
+}
+
 /// See [`CloudWatchLogsConfig`](crate::model::CloudWatchLogsConfig).
 pub mod cloud_watch_logs_config {
 
@@ -3812,12 +3831,6 @@ pub mod cloud_watch_logs_config {
         }
     }
 }
-impl CloudWatchLogsConfig {
-    /// Creates a new builder-style object to manufacture [`CloudWatchLogsConfig`](crate::model::CloudWatchLogsConfig).
-    pub fn builder() -> crate::model::cloud_watch_logs_config::Builder {
-        crate::model::cloud_watch_logs_config::Builder::default()
-    }
-}
 
 /// <p>Information about the build badge for the build project.</p>
 #[non_exhaustive]
@@ -3840,6 +3853,13 @@ impl ProjectBadge {
         self.badge_request_url.as_deref()
     }
 }
+impl ProjectBadge {
+    /// Creates a new builder-style object to manufacture [`ProjectBadge`](crate::model::ProjectBadge).
+    pub fn builder() -> crate::model::project_badge::Builder {
+        crate::model::project_badge::Builder::default()
+    }
+}
+
 /// See [`ProjectBadge`](crate::model::ProjectBadge).
 pub mod project_badge {
 
@@ -3883,12 +3903,6 @@ pub mod project_badge {
         }
     }
 }
-impl ProjectBadge {
-    /// Creates a new builder-style object to manufacture [`ProjectBadge`](crate::model::ProjectBadge).
-    pub fn builder() -> crate::model::project_badge::Builder {
-        crate::model::project_badge::Builder::default()
-    }
-}
 
 /// <p>Information about the VPC configuration that CodeBuild accesses.</p>
 #[non_exhaustive]
@@ -3918,6 +3932,13 @@ impl VpcConfig {
         self.security_group_ids.as_deref()
     }
 }
+impl VpcConfig {
+    /// Creates a new builder-style object to manufacture [`VpcConfig`](crate::model::VpcConfig).
+    pub fn builder() -> crate::model::vpc_config::Builder {
+        crate::model::vpc_config::Builder::default()
+    }
+}
+
 /// See [`VpcConfig`](crate::model::VpcConfig).
 pub mod vpc_config {
 
@@ -3986,12 +4007,6 @@ pub mod vpc_config {
                 security_group_ids: self.security_group_ids,
             }
         }
-    }
-}
-impl VpcConfig {
-    /// Creates a new builder-style object to manufacture [`VpcConfig`](crate::model::VpcConfig).
-    pub fn builder() -> crate::model::vpc_config::Builder {
-        crate::model::vpc_config::Builder::default()
     }
 }
 
@@ -4181,6 +4196,13 @@ impl ProjectEnvironment {
         self.image_pull_credentials_type.as_ref()
     }
 }
+impl ProjectEnvironment {
+    /// Creates a new builder-style object to manufacture [`ProjectEnvironment`](crate::model::ProjectEnvironment).
+    pub fn builder() -> crate::model::project_environment::Builder {
+        crate::model::project_environment::Builder::default()
+    }
+}
+
 /// See [`ProjectEnvironment`](crate::model::ProjectEnvironment).
 pub mod project_environment {
 
@@ -4437,12 +4459,6 @@ pub mod project_environment {
         }
     }
 }
-impl ProjectEnvironment {
-    /// Creates a new builder-style object to manufacture [`ProjectEnvironment`](crate::model::ProjectEnvironment).
-    pub fn builder() -> crate::model::project_environment::Builder {
-        crate::model::project_environment::Builder::default()
-    }
-}
 
 /// When writing a match expression against `ImagePullCredentialsType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -4568,6 +4584,13 @@ impl RegistryCredential {
         self.credential_provider.as_ref()
     }
 }
+impl RegistryCredential {
+    /// Creates a new builder-style object to manufacture [`RegistryCredential`](crate::model::RegistryCredential).
+    pub fn builder() -> crate::model::registry_credential::Builder {
+        crate::model::registry_credential::Builder::default()
+    }
+}
+
 /// See [`RegistryCredential`](crate::model::RegistryCredential).
 pub mod registry_credential {
 
@@ -4613,12 +4636,6 @@ pub mod registry_credential {
                 credential_provider: self.credential_provider,
             }
         }
-    }
-}
-impl RegistryCredential {
-    /// Creates a new builder-style object to manufacture [`RegistryCredential`](crate::model::RegistryCredential).
-    pub fn builder() -> crate::model::registry_credential::Builder {
-        crate::model::registry_credential::Builder::default()
     }
 }
 
@@ -4751,6 +4768,13 @@ impl EnvironmentVariable {
         self.r#type.as_ref()
     }
 }
+impl EnvironmentVariable {
+    /// Creates a new builder-style object to manufacture [`EnvironmentVariable`](crate::model::EnvironmentVariable).
+    pub fn builder() -> crate::model::environment_variable::Builder {
+        crate::model::environment_variable::Builder::default()
+    }
+}
+
 /// See [`EnvironmentVariable`](crate::model::EnvironmentVariable).
 pub mod environment_variable {
 
@@ -4818,12 +4842,6 @@ pub mod environment_variable {
                 r#type: self.r#type,
             }
         }
-    }
-}
-impl EnvironmentVariable {
-    /// Creates a new builder-style object to manufacture [`EnvironmentVariable`](crate::model::EnvironmentVariable).
-    pub fn builder() -> crate::model::environment_variable::Builder {
-        crate::model::environment_variable::Builder::default()
     }
 }
 
@@ -5250,6 +5268,13 @@ impl ProjectCache {
         self.modes.as_deref()
     }
 }
+impl ProjectCache {
+    /// Creates a new builder-style object to manufacture [`ProjectCache`](crate::model::ProjectCache).
+    pub fn builder() -> crate::model::project_cache::Builder {
+        crate::model::project_cache::Builder::default()
+    }
+}
+
 /// See [`ProjectCache`](crate::model::ProjectCache).
 pub mod project_cache {
 
@@ -5391,12 +5416,6 @@ pub mod project_cache {
                 modes: self.modes,
             }
         }
-    }
-}
-impl ProjectCache {
-    /// Creates a new builder-style object to manufacture [`ProjectCache`](crate::model::ProjectCache).
-    pub fn builder() -> crate::model::project_cache::Builder {
-        crate::model::project_cache::Builder::default()
     }
 }
 
@@ -5837,6 +5856,13 @@ impl ProjectArtifacts {
         self.bucket_owner_access.as_ref()
     }
 }
+impl ProjectArtifacts {
+    /// Creates a new builder-style object to manufacture [`ProjectArtifacts`](crate::model::ProjectArtifacts).
+    pub fn builder() -> crate::model::project_artifacts::Builder {
+        crate::model::project_artifacts::Builder::default()
+    }
+}
+
 /// See [`ProjectArtifacts`](crate::model::ProjectArtifacts).
 pub mod project_artifacts {
 
@@ -6149,12 +6175,6 @@ pub mod project_artifacts {
                 bucket_owner_access: self.bucket_owner_access,
             }
         }
-    }
-}
-impl ProjectArtifacts {
-    /// Creates a new builder-style object to manufacture [`ProjectArtifacts`](crate::model::ProjectArtifacts).
-    pub fn builder() -> crate::model::project_artifacts::Builder {
-        crate::model::project_artifacts::Builder::default()
     }
 }
 
@@ -6472,6 +6492,13 @@ impl ProjectSourceVersion {
         self.source_version.as_deref()
     }
 }
+impl ProjectSourceVersion {
+    /// Creates a new builder-style object to manufacture [`ProjectSourceVersion`](crate::model::ProjectSourceVersion).
+    pub fn builder() -> crate::model::project_source_version::Builder {
+        crate::model::project_source_version::Builder::default()
+    }
+}
+
 /// See [`ProjectSourceVersion`](crate::model::ProjectSourceVersion).
 pub mod project_source_version {
 
@@ -6530,12 +6557,6 @@ pub mod project_source_version {
                 source_version: self.source_version,
             }
         }
-    }
-}
-impl ProjectSourceVersion {
-    /// Creates a new builder-style object to manufacture [`ProjectSourceVersion`](crate::model::ProjectSourceVersion).
-    pub fn builder() -> crate::model::project_source_version::Builder {
-        crate::model::project_source_version::Builder::default()
     }
 }
 
@@ -6712,6 +6733,13 @@ impl ProjectSource {
         self.source_identifier.as_deref()
     }
 }
+impl ProjectSource {
+    /// Creates a new builder-style object to manufacture [`ProjectSource`](crate::model::ProjectSource).
+    pub fn builder() -> crate::model::project_source::Builder {
+        crate::model::project_source::Builder::default()
+    }
+}
+
 /// See [`ProjectSource`](crate::model::ProjectSource).
 pub mod project_source {
 
@@ -6953,12 +6981,6 @@ pub mod project_source {
         }
     }
 }
-impl ProjectSource {
-    /// Creates a new builder-style object to manufacture [`ProjectSource`](crate::model::ProjectSource).
-    pub fn builder() -> crate::model::project_source::Builder {
-        crate::model::project_source::Builder::default()
-    }
-}
 
 /// <p>Contains information that defines how the CodeBuild build project reports the build status to the source provider. </p>
 #[non_exhaustive]
@@ -7037,6 +7059,13 @@ impl BuildStatusConfig {
         self.target_url.as_deref()
     }
 }
+impl BuildStatusConfig {
+    /// Creates a new builder-style object to manufacture [`BuildStatusConfig`](crate::model::BuildStatusConfig).
+    pub fn builder() -> crate::model::build_status_config::Builder {
+        crate::model::build_status_config::Builder::default()
+    }
+}
+
 /// See [`BuildStatusConfig`](crate::model::BuildStatusConfig).
 pub mod build_status_config {
 
@@ -7133,12 +7162,6 @@ pub mod build_status_config {
         }
     }
 }
-impl BuildStatusConfig {
-    /// Creates a new builder-style object to manufacture [`BuildStatusConfig`](crate::model::BuildStatusConfig).
-    pub fn builder() -> crate::model::build_status_config::Builder {
-        crate::model::build_status_config::Builder::default()
-    }
-}
 
 /// <p>Information about the authorization settings for CodeBuild to access the source code to be built.</p>
 /// <p>This information is for the CodeBuild console's use only. Your code should not get or set this information directly.</p>
@@ -7168,6 +7191,13 @@ impl SourceAuth {
         self.resource.as_deref()
     }
 }
+impl SourceAuth {
+    /// Creates a new builder-style object to manufacture [`SourceAuth`](crate::model::SourceAuth).
+    pub fn builder() -> crate::model::source_auth::Builder {
+        crate::model::source_auth::Builder::default()
+    }
+}
+
 /// See [`SourceAuth`](crate::model::SourceAuth).
 pub mod source_auth {
 
@@ -7215,12 +7245,6 @@ pub mod source_auth {
                 resource: self.resource,
             }
         }
-    }
-}
-impl SourceAuth {
-    /// Creates a new builder-style object to manufacture [`SourceAuth`](crate::model::SourceAuth).
-    pub fn builder() -> crate::model::source_auth::Builder {
-        crate::model::source_auth::Builder::default()
     }
 }
 
@@ -7323,6 +7347,13 @@ impl GitSubmodulesConfig {
         self.fetch_submodules
     }
 }
+impl GitSubmodulesConfig {
+    /// Creates a new builder-style object to manufacture [`GitSubmodulesConfig`](crate::model::GitSubmodulesConfig).
+    pub fn builder() -> crate::model::git_submodules_config::Builder {
+        crate::model::git_submodules_config::Builder::default()
+    }
+}
+
 /// See [`GitSubmodulesConfig`](crate::model::GitSubmodulesConfig).
 pub mod git_submodules_config {
 
@@ -7349,12 +7380,6 @@ pub mod git_submodules_config {
                 fetch_submodules: self.fetch_submodules,
             }
         }
-    }
-}
-impl GitSubmodulesConfig {
-    /// Creates a new builder-style object to manufacture [`GitSubmodulesConfig`](crate::model::GitSubmodulesConfig).
-    pub fn builder() -> crate::model::git_submodules_config::Builder {
-        crate::model::git_submodules_config::Builder::default()
     }
 }
 
@@ -7746,6 +7771,13 @@ impl BuildBatch {
         self.debug_session_enabled
     }
 }
+impl BuildBatch {
+    /// Creates a new builder-style object to manufacture [`BuildBatch`](crate::model::BuildBatch).
+    pub fn builder() -> crate::model::build_batch::Builder {
+        crate::model::build_batch::Builder::default()
+    }
+}
+
 /// See [`BuildBatch`](crate::model::BuildBatch).
 pub mod build_batch {
 
@@ -8265,12 +8297,6 @@ pub mod build_batch {
         }
     }
 }
-impl BuildBatch {
-    /// Creates a new builder-style object to manufacture [`BuildBatch`](crate::model::BuildBatch).
-    pub fn builder() -> crate::model::build_batch::Builder {
-        crate::model::build_batch::Builder::default()
-    }
-}
 
 /// <p>Contains information about a batch build build group. Build groups are used to combine builds that can run in parallel, while still being able to set dependencies on other build groups.</p>
 #[non_exhaustive]
@@ -8314,6 +8340,13 @@ impl BuildGroup {
         self.prior_build_summary_list.as_deref()
     }
 }
+impl BuildGroup {
+    /// Creates a new builder-style object to manufacture [`BuildGroup`](crate::model::BuildGroup).
+    pub fn builder() -> crate::model::build_group::Builder {
+        crate::model::build_group::Builder::default()
+    }
+}
+
 /// See [`BuildGroup`](crate::model::BuildGroup).
 pub mod build_group {
 
@@ -8410,12 +8443,6 @@ pub mod build_group {
                 prior_build_summary_list: self.prior_build_summary_list,
             }
         }
-    }
-}
-impl BuildGroup {
-    /// Creates a new builder-style object to manufacture [`BuildGroup`](crate::model::BuildGroup).
-    pub fn builder() -> crate::model::build_group::Builder {
-        crate::model::build_group::Builder::default()
     }
 }
 
@@ -8537,6 +8564,13 @@ impl BuildSummary {
         self.secondary_artifacts.as_deref()
     }
 }
+impl BuildSummary {
+    /// Creates a new builder-style object to manufacture [`BuildSummary`](crate::model::BuildSummary).
+    pub fn builder() -> crate::model::build_summary::Builder {
+        crate::model::build_summary::Builder::default()
+    }
+}
+
 /// See [`BuildSummary`](crate::model::BuildSummary).
 pub mod build_summary {
 
@@ -8708,12 +8742,6 @@ pub mod build_summary {
         }
     }
 }
-impl BuildSummary {
-    /// Creates a new builder-style object to manufacture [`BuildSummary`](crate::model::BuildSummary).
-    pub fn builder() -> crate::model::build_summary::Builder {
-        crate::model::build_summary::Builder::default()
-    }
-}
 
 /// <p>Represents a resolved build artifact. A resolved artifact is an artifact that is built and deployed to the destination, such as Amazon S3.</p>
 #[non_exhaustive]
@@ -8743,6 +8771,13 @@ impl ResolvedArtifact {
         self.identifier.as_deref()
     }
 }
+impl ResolvedArtifact {
+    /// Creates a new builder-style object to manufacture [`ResolvedArtifact`](crate::model::ResolvedArtifact).
+    pub fn builder() -> crate::model::resolved_artifact::Builder {
+        crate::model::resolved_artifact::Builder::default()
+    }
+}
+
 /// See [`ResolvedArtifact`](crate::model::ResolvedArtifact).
 pub mod resolved_artifact {
 
@@ -8793,12 +8828,6 @@ pub mod resolved_artifact {
                 identifier: self.identifier,
             }
         }
-    }
-}
-impl ResolvedArtifact {
-    /// Creates a new builder-style object to manufacture [`ResolvedArtifact`](crate::model::ResolvedArtifact).
-    pub fn builder() -> crate::model::resolved_artifact::Builder {
-        crate::model::resolved_artifact::Builder::default()
     }
 }
 
@@ -9043,6 +9072,13 @@ impl BuildArtifacts {
         self.bucket_owner_access.as_ref()
     }
 }
+impl BuildArtifacts {
+    /// Creates a new builder-style object to manufacture [`BuildArtifacts`](crate::model::BuildArtifacts).
+    pub fn builder() -> crate::model::build_artifacts::Builder {
+        crate::model::build_artifacts::Builder::default()
+    }
+}
+
 /// See [`BuildArtifacts`](crate::model::BuildArtifacts).
 pub mod build_artifacts {
 
@@ -9215,12 +9251,6 @@ pub mod build_artifacts {
                 bucket_owner_access: self.bucket_owner_access,
             }
         }
-    }
-}
-impl BuildArtifacts {
-    /// Creates a new builder-style object to manufacture [`BuildArtifacts`](crate::model::BuildArtifacts).
-    pub fn builder() -> crate::model::build_artifacts::Builder {
-        crate::model::build_artifacts::Builder::default()
     }
 }
 
@@ -9437,6 +9467,13 @@ impl BuildBatchPhase {
         self.contexts.as_deref()
     }
 }
+impl BuildBatchPhase {
+    /// Creates a new builder-style object to manufacture [`BuildBatchPhase`](crate::model::BuildBatchPhase).
+    pub fn builder() -> crate::model::build_batch_phase::Builder {
+        crate::model::build_batch_phase::Builder::default()
+    }
+}
+
 /// See [`BuildBatchPhase`](crate::model::BuildBatchPhase).
 pub mod build_batch_phase {
 
@@ -9710,12 +9747,6 @@ pub mod build_batch_phase {
         }
     }
 }
-impl BuildBatchPhase {
-    /// Creates a new builder-style object to manufacture [`BuildBatchPhase`](crate::model::BuildBatchPhase).
-    pub fn builder() -> crate::model::build_batch_phase::Builder {
-        crate::model::build_batch_phase::Builder::default()
-    }
-}
 
 /// <p>Additional information about a build phase that has an error. You can use this information for troubleshooting.</p>
 #[non_exhaustive]
@@ -9738,6 +9769,13 @@ impl PhaseContext {
         self.message.as_deref()
     }
 }
+impl PhaseContext {
+    /// Creates a new builder-style object to manufacture [`PhaseContext`](crate::model::PhaseContext).
+    pub fn builder() -> crate::model::phase_context::Builder {
+        crate::model::phase_context::Builder::default()
+    }
+}
+
 /// See [`PhaseContext`](crate::model::PhaseContext).
 pub mod phase_context {
 
@@ -9776,12 +9814,6 @@ pub mod phase_context {
                 message: self.message,
             }
         }
-    }
-}
-impl PhaseContext {
-    /// Creates a new builder-style object to manufacture [`PhaseContext`](crate::model::PhaseContext).
-    pub fn builder() -> crate::model::phase_context::Builder {
-        crate::model::phase_context::Builder::default()
     }
 }
 
@@ -10210,6 +10242,13 @@ impl Build {
         self.build_batch_arn.as_deref()
     }
 }
+impl Build {
+    /// Creates a new builder-style object to manufacture [`Build`](crate::model::Build).
+    pub fn builder() -> crate::model::build::Builder {
+        crate::model::build::Builder::default()
+    }
+}
+
 /// See [`Build`](crate::model::Build).
 pub mod build {
 
@@ -10789,12 +10828,6 @@ pub mod build {
         }
     }
 }
-impl Build {
-    /// Creates a new builder-style object to manufacture [`Build`](crate::model::Build).
-    pub fn builder() -> crate::model::build::Builder {
-        crate::model::build::Builder::default()
-    }
-}
 
 /// <p>Contains information about the debug session for a build. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/session-manager.html">Viewing a running build in Session Manager</a>.</p>
 #[non_exhaustive]
@@ -10817,6 +10850,13 @@ impl DebugSession {
         self.session_target.as_deref()
     }
 }
+impl DebugSession {
+    /// Creates a new builder-style object to manufacture [`DebugSession`](crate::model::DebugSession).
+    pub fn builder() -> crate::model::debug_session::Builder {
+        crate::model::debug_session::Builder::default()
+    }
+}
+
 /// See [`DebugSession`](crate::model::DebugSession).
 pub mod debug_session {
 
@@ -10860,12 +10900,6 @@ pub mod debug_session {
         }
     }
 }
-impl DebugSession {
-    /// Creates a new builder-style object to manufacture [`DebugSession`](crate::model::DebugSession).
-    pub fn builder() -> crate::model::debug_session::Builder {
-        crate::model::debug_session::Builder::default()
-    }
-}
 
 /// <p>Contains information about an exported environment variable. </p>
 /// <p>Exported environment variables are used in conjunction with CodePipeline to export environment variables from the current build stage to subsequent stages in the pipeline. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/actions-variables.html">Working with variables</a> in the <i>CodePipeline User Guide</i>.</p> <note>
@@ -10891,6 +10925,13 @@ impl ExportedEnvironmentVariable {
         self.value.as_deref()
     }
 }
+impl ExportedEnvironmentVariable {
+    /// Creates a new builder-style object to manufacture [`ExportedEnvironmentVariable`](crate::model::ExportedEnvironmentVariable).
+    pub fn builder() -> crate::model::exported_environment_variable::Builder {
+        crate::model::exported_environment_variable::Builder::default()
+    }
+}
+
 /// See [`ExportedEnvironmentVariable`](crate::model::ExportedEnvironmentVariable).
 pub mod exported_environment_variable {
 
@@ -10931,12 +10972,6 @@ pub mod exported_environment_variable {
         }
     }
 }
-impl ExportedEnvironmentVariable {
-    /// Creates a new builder-style object to manufacture [`ExportedEnvironmentVariable`](crate::model::ExportedEnvironmentVariable).
-    pub fn builder() -> crate::model::exported_environment_variable::Builder {
-        crate::model::exported_environment_variable::Builder::default()
-    }
-}
 
 /// <p>Describes a network interface.</p>
 #[non_exhaustive]
@@ -10959,6 +10994,13 @@ impl NetworkInterface {
         self.network_interface_id.as_deref()
     }
 }
+impl NetworkInterface {
+    /// Creates a new builder-style object to manufacture [`NetworkInterface`](crate::model::NetworkInterface).
+    pub fn builder() -> crate::model::network_interface::Builder {
+        crate::model::network_interface::Builder::default()
+    }
+}
+
 /// See [`NetworkInterface`](crate::model::NetworkInterface).
 pub mod network_interface {
 
@@ -11000,12 +11042,6 @@ pub mod network_interface {
                 network_interface_id: self.network_interface_id,
             }
         }
-    }
-}
-impl NetworkInterface {
-    /// Creates a new builder-style object to manufacture [`NetworkInterface`](crate::model::NetworkInterface).
-    pub fn builder() -> crate::model::network_interface::Builder {
-        crate::model::network_interface::Builder::default()
     }
 }
 
@@ -11072,6 +11108,13 @@ impl LogsLocation {
         self.s3_logs.as_ref()
     }
 }
+impl LogsLocation {
+    /// Creates a new builder-style object to manufacture [`LogsLocation`](crate::model::LogsLocation).
+    pub fn builder() -> crate::model::logs_location::Builder {
+        crate::model::logs_location::Builder::default()
+    }
+}
+
 /// See [`LogsLocation`](crate::model::LogsLocation).
 pub mod logs_location {
 
@@ -11191,12 +11234,6 @@ pub mod logs_location {
                 s3_logs: self.s3_logs,
             }
         }
-    }
-}
-impl LogsLocation {
-    /// Creates a new builder-style object to manufacture [`LogsLocation`](crate::model::LogsLocation).
-    pub fn builder() -> crate::model::logs_location::Builder {
-        crate::model::logs_location::Builder::default()
     }
 }
 
@@ -11461,6 +11498,13 @@ impl BuildPhase {
         self.contexts.as_deref()
     }
 }
+impl BuildPhase {
+    /// Creates a new builder-style object to manufacture [`BuildPhase`](crate::model::BuildPhase).
+    pub fn builder() -> crate::model::build_phase::Builder {
+        crate::model::build_phase::Builder::default()
+    }
+}
+
 /// See [`BuildPhase`](crate::model::BuildPhase).
 pub mod build_phase {
 
@@ -11782,12 +11826,6 @@ pub mod build_phase {
         }
     }
 }
-impl BuildPhase {
-    /// Creates a new builder-style object to manufacture [`BuildPhase`](crate::model::BuildPhase).
-    pub fn builder() -> crate::model::build_phase::Builder {
-        crate::model::build_phase::Builder::default()
-    }
-}
 
 /// When writing a match expression against `BuildPhaseType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -12056,6 +12094,13 @@ impl SourceCredentialsInfo {
         self.auth_type.as_ref()
     }
 }
+impl SourceCredentialsInfo {
+    /// Creates a new builder-style object to manufacture [`SourceCredentialsInfo`](crate::model::SourceCredentialsInfo).
+    pub fn builder() -> crate::model::source_credentials_info::Builder {
+        crate::model::source_credentials_info::Builder::default()
+    }
+}
+
 /// See [`SourceCredentialsInfo`](crate::model::SourceCredentialsInfo).
 pub mod source_credentials_info {
 
@@ -12109,12 +12154,6 @@ pub mod source_credentials_info {
                 auth_type: self.auth_type,
             }
         }
-    }
-}
-impl SourceCredentialsInfo {
-    /// Creates a new builder-style object to manufacture [`SourceCredentialsInfo`](crate::model::SourceCredentialsInfo).
-    pub fn builder() -> crate::model::source_credentials_info::Builder {
-        crate::model::source_credentials_info::Builder::default()
     }
 }
 
@@ -12504,6 +12543,13 @@ impl ReportFilter {
         self.status.as_ref()
     }
 }
+impl ReportFilter {
+    /// Creates a new builder-style object to manufacture [`ReportFilter`](crate::model::ReportFilter).
+    pub fn builder() -> crate::model::report_filter::Builder {
+        crate::model::report_filter::Builder::default()
+    }
+}
+
 /// See [`ReportFilter`](crate::model::ReportFilter).
 pub mod report_filter {
 
@@ -12533,12 +12579,6 @@ pub mod report_filter {
                 status: self.status,
             }
         }
-    }
-}
-impl ReportFilter {
-    /// Creates a new builder-style object to manufacture [`ReportFilter`](crate::model::ReportFilter).
-    pub fn builder() -> crate::model::report_filter::Builder {
-        crate::model::report_filter::Builder::default()
     }
 }
 
@@ -12868,6 +12908,13 @@ impl EnvironmentPlatform {
         self.languages.as_deref()
     }
 }
+impl EnvironmentPlatform {
+    /// Creates a new builder-style object to manufacture [`EnvironmentPlatform`](crate::model::EnvironmentPlatform).
+    pub fn builder() -> crate::model::environment_platform::Builder {
+        crate::model::environment_platform::Builder::default()
+    }
+}
+
 /// See [`EnvironmentPlatform`](crate::model::EnvironmentPlatform).
 pub mod environment_platform {
 
@@ -12920,12 +12967,6 @@ pub mod environment_platform {
         }
     }
 }
-impl EnvironmentPlatform {
-    /// Creates a new builder-style object to manufacture [`EnvironmentPlatform`](crate::model::EnvironmentPlatform).
-    pub fn builder() -> crate::model::environment_platform::Builder {
-        crate::model::environment_platform::Builder::default()
-    }
-}
 
 /// <p>A set of Docker images that are related by programming language and are managed by CodeBuild.</p>
 #[non_exhaustive]
@@ -12948,6 +12989,13 @@ impl EnvironmentLanguage {
         self.images.as_deref()
     }
 }
+impl EnvironmentLanguage {
+    /// Creates a new builder-style object to manufacture [`EnvironmentLanguage`](crate::model::EnvironmentLanguage).
+    pub fn builder() -> crate::model::environment_language::Builder {
+        crate::model::environment_language::Builder::default()
+    }
+}
+
 /// See [`EnvironmentLanguage`](crate::model::EnvironmentLanguage).
 pub mod environment_language {
 
@@ -13000,12 +13048,6 @@ pub mod environment_language {
         }
     }
 }
-impl EnvironmentLanguage {
-    /// Creates a new builder-style object to manufacture [`EnvironmentLanguage`](crate::model::EnvironmentLanguage).
-    pub fn builder() -> crate::model::environment_language::Builder {
-        crate::model::environment_language::Builder::default()
-    }
-}
 
 /// <p>Information about a Docker image that is managed by CodeBuild.</p>
 #[non_exhaustive]
@@ -13035,6 +13077,13 @@ impl EnvironmentImage {
         self.versions.as_deref()
     }
 }
+impl EnvironmentImage {
+    /// Creates a new builder-style object to manufacture [`EnvironmentImage`](crate::model::EnvironmentImage).
+    pub fn builder() -> crate::model::environment_image::Builder {
+        crate::model::environment_image::Builder::default()
+    }
+}
+
 /// See [`EnvironmentImage`](crate::model::EnvironmentImage).
 pub mod environment_image {
 
@@ -13094,12 +13143,6 @@ pub mod environment_image {
                 versions: self.versions,
             }
         }
-    }
-}
-impl EnvironmentImage {
-    /// Creates a new builder-style object to manufacture [`EnvironmentImage`](crate::model::EnvironmentImage).
-    pub fn builder() -> crate::model::environment_image::Builder {
-        crate::model::environment_image::Builder::default()
     }
 }
 
@@ -13350,6 +13393,13 @@ impl BuildBatchFilter {
         self.status.as_ref()
     }
 }
+impl BuildBatchFilter {
+    /// Creates a new builder-style object to manufacture [`BuildBatchFilter`](crate::model::BuildBatchFilter).
+    pub fn builder() -> crate::model::build_batch_filter::Builder {
+        crate::model::build_batch_filter::Builder::default()
+    }
+}
+
 /// See [`BuildBatchFilter`](crate::model::BuildBatchFilter).
 pub mod build_batch_filter {
 
@@ -13378,12 +13428,6 @@ pub mod build_batch_filter {
         }
     }
 }
-impl BuildBatchFilter {
-    /// Creates a new builder-style object to manufacture [`BuildBatchFilter`](crate::model::BuildBatchFilter).
-    pub fn builder() -> crate::model::build_batch_filter::Builder {
-        crate::model::build_batch_filter::Builder::default()
-    }
-}
 
 /// <p>Contains the unmodified data for the report. For more information, see .</p>
 #[non_exhaustive]
@@ -13406,6 +13450,13 @@ impl ReportWithRawData {
         self.data.as_deref()
     }
 }
+impl ReportWithRawData {
+    /// Creates a new builder-style object to manufacture [`ReportWithRawData`](crate::model::ReportWithRawData).
+    pub fn builder() -> crate::model::report_with_raw_data::Builder {
+        crate::model::report_with_raw_data::Builder::default()
+    }
+}
+
 /// See [`ReportWithRawData`](crate::model::ReportWithRawData).
 pub mod report_with_raw_data {
 
@@ -13446,12 +13497,6 @@ pub mod report_with_raw_data {
         }
     }
 }
-impl ReportWithRawData {
-    /// Creates a new builder-style object to manufacture [`ReportWithRawData`](crate::model::ReportWithRawData).
-    pub fn builder() -> crate::model::report_with_raw_data::Builder {
-        crate::model::report_with_raw_data::Builder::default()
-    }
-}
 
 /// <p>Contains trend statistics for a set of reports. The actual values depend on the type of trend being collected. For more information, see .</p>
 #[non_exhaustive]
@@ -13481,6 +13526,13 @@ impl ReportGroupTrendStats {
         self.min.as_deref()
     }
 }
+impl ReportGroupTrendStats {
+    /// Creates a new builder-style object to manufacture [`ReportGroupTrendStats`](crate::model::ReportGroupTrendStats).
+    pub fn builder() -> crate::model::report_group_trend_stats::Builder {
+        crate::model::report_group_trend_stats::Builder::default()
+    }
+}
+
 /// See [`ReportGroupTrendStats`](crate::model::ReportGroupTrendStats).
 pub mod report_group_trend_stats {
 
@@ -13531,12 +13583,6 @@ pub mod report_group_trend_stats {
                 min: self.min,
             }
         }
-    }
-}
-impl ReportGroupTrendStats {
-    /// Creates a new builder-style object to manufacture [`ReportGroupTrendStats`](crate::model::ReportGroupTrendStats).
-    pub fn builder() -> crate::model::report_group_trend_stats::Builder {
-        crate::model::report_group_trend_stats::Builder::default()
     }
 }
 
@@ -13740,6 +13786,13 @@ impl TestCase {
         self.expired.as_ref()
     }
 }
+impl TestCase {
+    /// Creates a new builder-style object to manufacture [`TestCase`](crate::model::TestCase).
+    pub fn builder() -> crate::model::test_case::Builder {
+        crate::model::test_case::Builder::default()
+    }
+}
+
 /// See [`TestCase`](crate::model::TestCase).
 pub mod test_case {
 
@@ -13858,12 +13911,6 @@ pub mod test_case {
         }
     }
 }
-impl TestCase {
-    /// Creates a new builder-style object to manufacture [`TestCase`](crate::model::TestCase).
-    pub fn builder() -> crate::model::test_case::Builder {
-        crate::model::test_case::Builder::default()
-    }
-}
 
 /// <p>A filter used to return specific types of test cases. In order to pass the filter, the report must meet all of the filter properties.</p>
 #[non_exhaustive]
@@ -13900,6 +13947,13 @@ impl TestCaseFilter {
         self.keyword.as_deref()
     }
 }
+impl TestCaseFilter {
+    /// Creates a new builder-style object to manufacture [`TestCaseFilter`](crate::model::TestCaseFilter).
+    pub fn builder() -> crate::model::test_case_filter::Builder {
+        crate::model::test_case_filter::Builder::default()
+    }
+}
+
 /// See [`TestCaseFilter`](crate::model::TestCaseFilter).
 pub mod test_case_filter {
 
@@ -13952,12 +14006,6 @@ pub mod test_case_filter {
                 keyword: self.keyword,
             }
         }
-    }
-}
-impl TestCaseFilter {
-    /// Creates a new builder-style object to manufacture [`TestCaseFilter`](crate::model::TestCaseFilter).
-    pub fn builder() -> crate::model::test_case_filter::Builder {
-        crate::model::test_case_filter::Builder::default()
     }
 }
 
@@ -14040,6 +14088,13 @@ impl CodeCoverage {
         self.expired.as_ref()
     }
 }
+impl CodeCoverage {
+    /// Creates a new builder-style object to manufacture [`CodeCoverage`](crate::model::CodeCoverage).
+    pub fn builder() -> crate::model::code_coverage::Builder {
+        crate::model::code_coverage::Builder::default()
+    }
+}
+
 /// See [`CodeCoverage`](crate::model::CodeCoverage).
 pub mod code_coverage {
 
@@ -14179,12 +14234,6 @@ pub mod code_coverage {
         }
     }
 }
-impl CodeCoverage {
-    /// Creates a new builder-style object to manufacture [`CodeCoverage`](crate::model::CodeCoverage).
-    pub fn builder() -> crate::model::code_coverage::Builder {
-        crate::model::code_coverage::Builder::default()
-    }
-}
 
 /// When writing a match expression against `ReportCodeCoverageSortByType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -14299,6 +14348,13 @@ impl BuildNotDeleted {
         self.status_code.as_deref()
     }
 }
+impl BuildNotDeleted {
+    /// Creates a new builder-style object to manufacture [`BuildNotDeleted`](crate::model::BuildNotDeleted).
+    pub fn builder() -> crate::model::build_not_deleted::Builder {
+        crate::model::build_not_deleted::Builder::default()
+    }
+}
+
 /// See [`BuildNotDeleted`](crate::model::BuildNotDeleted).
 pub mod build_not_deleted {
 
@@ -14337,12 +14393,6 @@ pub mod build_not_deleted {
                 status_code: self.status_code,
             }
         }
-    }
-}
-impl BuildNotDeleted {
-    /// Creates a new builder-style object to manufacture [`BuildNotDeleted`](crate::model::BuildNotDeleted).
-    pub fn builder() -> crate::model::build_not_deleted::Builder {
-        crate::model::build_not_deleted::Builder::default()
     }
 }
 
@@ -14467,6 +14517,13 @@ impl Report {
         self.code_coverage_summary.as_ref()
     }
 }
+impl Report {
+    /// Creates a new builder-style object to manufacture [`Report`](crate::model::Report).
+    pub fn builder() -> crate::model::report::Builder {
+        crate::model::report::Builder::default()
+    }
+}
+
 /// See [`Report`](crate::model::Report).
 pub mod report {
 
@@ -14680,12 +14737,6 @@ pub mod report {
         }
     }
 }
-impl Report {
-    /// Creates a new builder-style object to manufacture [`Report`](crate::model::Report).
-    pub fn builder() -> crate::model::report::Builder {
-        crate::model::report::Builder::default()
-    }
-}
 
 /// <p>Contains a summary of a code coverage report.</p>
 /// <p>Line coverage measures how many statements your tests cover. A statement is a single instruction, not including comments, conditionals, etc.</p>
@@ -14738,6 +14789,13 @@ impl CodeCoverageReportSummary {
         self.branches_missed
     }
 }
+impl CodeCoverageReportSummary {
+    /// Creates a new builder-style object to manufacture [`CodeCoverageReportSummary`](crate::model::CodeCoverageReportSummary).
+    pub fn builder() -> crate::model::code_coverage_report_summary::Builder {
+        crate::model::code_coverage_report_summary::Builder::default()
+    }
+}
+
 /// See [`CodeCoverageReportSummary`](crate::model::CodeCoverageReportSummary).
 pub mod code_coverage_report_summary {
 
@@ -14826,12 +14884,6 @@ pub mod code_coverage_report_summary {
         }
     }
 }
-impl CodeCoverageReportSummary {
-    /// Creates a new builder-style object to manufacture [`CodeCoverageReportSummary`](crate::model::CodeCoverageReportSummary).
-    pub fn builder() -> crate::model::code_coverage_report_summary::Builder {
-        crate::model::code_coverage_report_summary::Builder::default()
-    }
-}
 
 /// <p> Information about a test report. </p>
 #[non_exhaustive]
@@ -14863,6 +14915,13 @@ impl TestReportSummary {
         self.duration_in_nano_seconds
     }
 }
+impl TestReportSummary {
+    /// Creates a new builder-style object to manufacture [`TestReportSummary`](crate::model::TestReportSummary).
+    pub fn builder() -> crate::model::test_report_summary::Builder {
+        crate::model::test_report_summary::Builder::default()
+    }
+}
+
 /// See [`TestReportSummary`](crate::model::TestReportSummary).
 pub mod test_report_summary {
 
@@ -14923,11 +14982,5 @@ pub mod test_report_summary {
                 duration_in_nano_seconds: self.duration_in_nano_seconds,
             }
         }
-    }
-}
-impl TestReportSummary {
-    /// Creates a new builder-style object to manufacture [`TestReportSummary`](crate::model::TestReportSummary).
-    pub fn builder() -> crate::model::test_report_summary::Builder {
-        crate::model::test_report_summary::Builder::default()
     }
 }

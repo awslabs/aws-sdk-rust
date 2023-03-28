@@ -251,6 +251,13 @@ impl ActiveContext {
         self.parameters.as_ref()
     }
 }
+impl ActiveContext {
+    /// Creates a new builder-style object to manufacture [`ActiveContext`](crate::model::ActiveContext).
+    pub fn builder() -> crate::model::active_context::Builder {
+        crate::model::active_context::Builder::default()
+    }
+}
+
 /// See [`ActiveContext`](crate::model::ActiveContext).
 pub mod active_context {
 
@@ -323,12 +330,6 @@ pub mod active_context {
         }
     }
 }
-impl ActiveContext {
-    /// Creates a new builder-style object to manufacture [`ActiveContext`](crate::model::ActiveContext).
-    pub fn builder() -> crate::model::active_context::Builder {
-        crate::model::active_context::Builder::default()
-    }
-}
 
 /// <p>The length of time or number of turns that a context remains active.</p>
 #[non_exhaustive]
@@ -351,6 +352,13 @@ impl ActiveContextTimeToLive {
         self.turns_to_live
     }
 }
+impl ActiveContextTimeToLive {
+    /// Creates a new builder-style object to manufacture [`ActiveContextTimeToLive`](crate::model::ActiveContextTimeToLive).
+    pub fn builder() -> crate::model::active_context_time_to_live::Builder {
+        crate::model::active_context_time_to_live::Builder::default()
+    }
+}
+
 /// See [`ActiveContextTimeToLive`](crate::model::ActiveContextTimeToLive).
 pub mod active_context_time_to_live {
 
@@ -389,12 +397,6 @@ pub mod active_context_time_to_live {
                 turns_to_live: self.turns_to_live,
             }
         }
-    }
-}
-impl ActiveContextTimeToLive {
-    /// Creates a new builder-style object to manufacture [`ActiveContextTimeToLive`](crate::model::ActiveContextTimeToLive).
-    pub fn builder() -> crate::model::active_context_time_to_live::Builder {
-        crate::model::active_context_time_to_live::Builder::default()
     }
 }
 
@@ -505,6 +507,13 @@ impl std::fmt::Debug for IntentSummary {
         formatter.finish()
     }
 }
+impl IntentSummary {
+    /// Creates a new builder-style object to manufacture [`IntentSummary`](crate::model::IntentSummary).
+    pub fn builder() -> crate::model::intent_summary::Builder {
+        crate::model::intent_summary::Builder::default()
+    }
+}
+
 /// See [`IntentSummary`](crate::model::IntentSummary).
 pub mod intent_summary {
 
@@ -682,12 +691,6 @@ pub mod intent_summary {
             formatter.field("slot_to_elicit", &self.slot_to_elicit);
             formatter.finish()
         }
-    }
-}
-impl IntentSummary {
-    /// Creates a new builder-style object to manufacture [`IntentSummary`](crate::model::IntentSummary).
-    pub fn builder() -> crate::model::intent_summary::Builder {
-        crate::model::intent_summary::Builder::default()
     }
 }
 
@@ -1101,6 +1104,13 @@ impl std::fmt::Debug for DialogAction {
         formatter.finish()
     }
 }
+impl DialogAction {
+    /// Creates a new builder-style object to manufacture [`DialogAction`](crate::model::DialogAction).
+    pub fn builder() -> crate::model::dialog_action::Builder {
+        crate::model::dialog_action::Builder::default()
+    }
+}
+
 /// See [`DialogAction`](crate::model::DialogAction).
 pub mod dialog_action {
 
@@ -1277,12 +1287,6 @@ pub mod dialog_action {
         }
     }
 }
-impl DialogAction {
-    /// Creates a new builder-style object to manufacture [`DialogAction`](crate::model::DialogAction).
-    pub fn builder() -> crate::model::dialog_action::Builder {
-        crate::model::dialog_action::Builder::default()
-    }
-}
 
 /// <p>If you configure a response card when creating your bots, Amazon Lex substitutes the session attributes and slot values that are available, and then returns it. The response card can also come from a Lambda function ( <code>dialogCodeHook</code> and <code>fulfillmentActivity</code> on an intent).</p>
 #[non_exhaustive]
@@ -1312,6 +1316,13 @@ impl ResponseCard {
         self.generic_attachments.as_deref()
     }
 }
+impl ResponseCard {
+    /// Creates a new builder-style object to manufacture [`ResponseCard`](crate::model::ResponseCard).
+    pub fn builder() -> crate::model::response_card::Builder {
+        crate::model::response_card::Builder::default()
+    }
+}
+
 /// See [`ResponseCard`](crate::model::ResponseCard).
 pub mod response_card {
 
@@ -1377,12 +1388,6 @@ pub mod response_card {
         }
     }
 }
-impl ResponseCard {
-    /// Creates a new builder-style object to manufacture [`ResponseCard`](crate::model::ResponseCard).
-    pub fn builder() -> crate::model::response_card::Builder {
-        crate::model::response_card::Builder::default()
-    }
-}
 
 /// <p>Represents an option rendered to the user when a prompt is shown. It could be an image, a button, a link, or text. </p>
 #[non_exhaustive]
@@ -1426,6 +1431,13 @@ impl GenericAttachment {
         self.buttons.as_deref()
     }
 }
+impl GenericAttachment {
+    /// Creates a new builder-style object to manufacture [`GenericAttachment`](crate::model::GenericAttachment).
+    pub fn builder() -> crate::model::generic_attachment::Builder {
+        crate::model::generic_attachment::Builder::default()
+    }
+}
+
 /// See [`GenericAttachment`](crate::model::GenericAttachment).
 pub mod generic_attachment {
 
@@ -1514,12 +1526,6 @@ pub mod generic_attachment {
         }
     }
 }
-impl GenericAttachment {
-    /// Creates a new builder-style object to manufacture [`GenericAttachment`](crate::model::GenericAttachment).
-    pub fn builder() -> crate::model::generic_attachment::Builder {
-        crate::model::generic_attachment::Builder::default()
-    }
-}
 
 /// <p>Represents an option to be shown on the client platform (Facebook, Slack, etc.)</p>
 #[non_exhaustive]
@@ -1542,6 +1548,13 @@ impl Button {
         self.value.as_deref()
     }
 }
+impl Button {
+    /// Creates a new builder-style object to manufacture [`Button`](crate::model::Button).
+    pub fn builder() -> crate::model::button::Builder {
+        crate::model::button::Builder::default()
+    }
+}
+
 /// See [`Button`](crate::model::Button).
 pub mod button {
 
@@ -1580,12 +1593,6 @@ pub mod button {
                 value: self.value,
             }
         }
-    }
-}
-impl Button {
-    /// Creates a new builder-style object to manufacture [`Button`](crate::model::Button).
-    pub fn builder() -> crate::model::button::Builder {
-        crate::model::button::Builder::default()
     }
 }
 
@@ -1696,6 +1703,13 @@ impl SentimentResponse {
         self.sentiment_score.as_deref()
     }
 }
+impl SentimentResponse {
+    /// Creates a new builder-style object to manufacture [`SentimentResponse`](crate::model::SentimentResponse).
+    pub fn builder() -> crate::model::sentiment_response::Builder {
+        crate::model::sentiment_response::Builder::default()
+    }
+}
+
 /// See [`SentimentResponse`](crate::model::SentimentResponse).
 pub mod sentiment_response {
 
@@ -1742,12 +1756,6 @@ pub mod sentiment_response {
         }
     }
 }
-impl SentimentResponse {
-    /// Creates a new builder-style object to manufacture [`SentimentResponse`](crate::model::SentimentResponse).
-    pub fn builder() -> crate::model::sentiment_response::Builder {
-        crate::model::sentiment_response::Builder::default()
-    }
-}
 
 /// <p>An intent that Amazon Lex suggests satisfies the user's intent. Includes the name of the intent, the confidence that Amazon Lex has that the user's intent is satisfied, and the slots defined for the intent.</p>
 #[non_exhaustive]
@@ -1790,6 +1798,13 @@ impl std::fmt::Debug for PredictedIntent {
         formatter.finish()
     }
 }
+impl PredictedIntent {
+    /// Creates a new builder-style object to manufacture [`PredictedIntent`](crate::model::PredictedIntent).
+    pub fn builder() -> crate::model::predicted_intent::Builder {
+        crate::model::predicted_intent::Builder::default()
+    }
+}
+
 /// See [`PredictedIntent`](crate::model::PredictedIntent).
 pub mod predicted_intent {
 
@@ -1871,12 +1886,6 @@ pub mod predicted_intent {
         }
     }
 }
-impl PredictedIntent {
-    /// Creates a new builder-style object to manufacture [`PredictedIntent`](crate::model::PredictedIntent).
-    pub fn builder() -> crate::model::predicted_intent::Builder {
-        crate::model::predicted_intent::Builder::default()
-    }
-}
 
 /// <p>Provides a score that indicates the confidence that Amazon Lex has that an intent is the one that satisfies the user's intent.</p>
 #[non_exhaustive]
@@ -1892,6 +1901,13 @@ impl IntentConfidence {
         self.score
     }
 }
+impl IntentConfidence {
+    /// Creates a new builder-style object to manufacture [`IntentConfidence`](crate::model::IntentConfidence).
+    pub fn builder() -> crate::model::intent_confidence::Builder {
+        crate::model::intent_confidence::Builder::default()
+    }
+}
+
 /// See [`IntentConfidence`](crate::model::IntentConfidence).
 pub mod intent_confidence {
 
@@ -1918,11 +1934,5 @@ pub mod intent_confidence {
                 score: self.score.unwrap_or_default(),
             }
         }
-    }
-}
-impl IntentConfidence {
-    /// Creates a new builder-style object to manufacture [`IntentConfidence`](crate::model::IntentConfidence).
-    pub fn builder() -> crate::model::intent_confidence::Builder {
-        crate::model::intent_confidence::Builder::default()
     }
 }

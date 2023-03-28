@@ -4,7 +4,7 @@
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`describe_stream`](crate::client::Client::describe_stream).
 ///
-/// See [`crate::client::fluent_builders::DescribeStream`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DescribeStream`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeStream {
     _private: (),
@@ -37,7 +37,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeStream {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`get_records`](crate::client::Client::get_records).
 ///
-/// See [`crate::client::fluent_builders::GetRecords`] for more details about the operation.
+/// `ParseStrictResponse` impl for `GetRecords`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetRecords {
     _private: (),
@@ -70,7 +70,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetRecords {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`get_shard_iterator`](crate::client::Client::get_shard_iterator).
 ///
-/// See [`crate::client::fluent_builders::GetShardIterator`] for more details about the operation.
+/// `ParseStrictResponse` impl for `GetShardIterator`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetShardIterator {
     _private: (),
@@ -105,7 +105,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetShardIterator {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_streams`](crate::client::Client::list_streams).
 ///
-/// See [`crate::client::fluent_builders::ListStreams`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListStreams`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListStreams {
     _private: (),

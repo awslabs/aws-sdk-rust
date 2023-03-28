@@ -34,6 +34,13 @@ impl aws_http::request_id::RequestId for ValidatePipelineDefinitionOutput {
         self._request_id.as_deref()
     }
 }
+impl ValidatePipelineDefinitionOutput {
+    /// Creates a new builder-style object to manufacture [`ValidatePipelineDefinitionOutput`](crate::output::ValidatePipelineDefinitionOutput).
+    pub fn builder() -> crate::output::validate_pipeline_definition_output::Builder {
+        crate::output::validate_pipeline_definition_output::Builder::default()
+    }
+}
+
 /// See [`ValidatePipelineDefinitionOutput`](crate::output::ValidatePipelineDefinitionOutput).
 pub mod validate_pipeline_definition_output {
 
@@ -117,12 +124,6 @@ pub mod validate_pipeline_definition_output {
         }
     }
 }
-impl ValidatePipelineDefinitionOutput {
-    /// Creates a new builder-style object to manufacture [`ValidatePipelineDefinitionOutput`](crate::output::ValidatePipelineDefinitionOutput).
-    pub fn builder() -> crate::output::validate_pipeline_definition_output::Builder {
-        crate::output::validate_pipeline_definition_output::Builder::default()
-    }
-}
 
 /// <p>Contains the output of SetTaskStatus.</p>
 #[non_exhaustive]
@@ -135,6 +136,13 @@ impl aws_http::request_id::RequestId for SetTaskStatusOutput {
         self._request_id.as_deref()
     }
 }
+impl SetTaskStatusOutput {
+    /// Creates a new builder-style object to manufacture [`SetTaskStatusOutput`](crate::output::SetTaskStatusOutput).
+    pub fn builder() -> crate::output::set_task_status_output::Builder {
+        crate::output::set_task_status_output::Builder::default()
+    }
+}
+
 /// See [`SetTaskStatusOutput`](crate::output::SetTaskStatusOutput).
 pub mod set_task_status_output {
 
@@ -162,12 +170,6 @@ pub mod set_task_status_output {
         }
     }
 }
-impl SetTaskStatusOutput {
-    /// Creates a new builder-style object to manufacture [`SetTaskStatusOutput`](crate::output::SetTaskStatusOutput).
-    pub fn builder() -> crate::output::set_task_status_output::Builder {
-        crate::output::set_task_status_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -180,6 +182,13 @@ impl aws_http::request_id::RequestId for SetStatusOutput {
         self._request_id.as_deref()
     }
 }
+impl SetStatusOutput {
+    /// Creates a new builder-style object to manufacture [`SetStatusOutput`](crate::output::SetStatusOutput).
+    pub fn builder() -> crate::output::set_status_output::Builder {
+        crate::output::set_status_output::Builder::default()
+    }
+}
+
 /// See [`SetStatusOutput`](crate::output::SetStatusOutput).
 pub mod set_status_output {
 
@@ -207,12 +216,6 @@ pub mod set_status_output {
         }
     }
 }
-impl SetStatusOutput {
-    /// Creates a new builder-style object to manufacture [`SetStatusOutput`](crate::output::SetStatusOutput).
-    pub fn builder() -> crate::output::set_status_output::Builder {
-        crate::output::set_status_output::Builder::default()
-    }
-}
 
 /// <p>Contains the output of ReportTaskRunnerHeartbeat.</p>
 #[non_exhaustive]
@@ -234,6 +237,13 @@ impl aws_http::request_id::RequestId for ReportTaskRunnerHeartbeatOutput {
         self._request_id.as_deref()
     }
 }
+impl ReportTaskRunnerHeartbeatOutput {
+    /// Creates a new builder-style object to manufacture [`ReportTaskRunnerHeartbeatOutput`](crate::output::ReportTaskRunnerHeartbeatOutput).
+    pub fn builder() -> crate::output::report_task_runner_heartbeat_output::Builder {
+        crate::output::report_task_runner_heartbeat_output::Builder::default()
+    }
+}
+
 /// See [`ReportTaskRunnerHeartbeatOutput`](crate::output::ReportTaskRunnerHeartbeatOutput).
 pub mod report_task_runner_heartbeat_output {
 
@@ -273,12 +283,6 @@ pub mod report_task_runner_heartbeat_output {
         }
     }
 }
-impl ReportTaskRunnerHeartbeatOutput {
-    /// Creates a new builder-style object to manufacture [`ReportTaskRunnerHeartbeatOutput`](crate::output::ReportTaskRunnerHeartbeatOutput).
-    pub fn builder() -> crate::output::report_task_runner_heartbeat_output::Builder {
-        crate::output::report_task_runner_heartbeat_output::Builder::default()
-    }
-}
 
 /// <p>Contains the output of ReportTaskProgress.</p>
 #[non_exhaustive]
@@ -300,6 +304,13 @@ impl aws_http::request_id::RequestId for ReportTaskProgressOutput {
         self._request_id.as_deref()
     }
 }
+impl ReportTaskProgressOutput {
+    /// Creates a new builder-style object to manufacture [`ReportTaskProgressOutput`](crate::output::ReportTaskProgressOutput).
+    pub fn builder() -> crate::output::report_task_progress_output::Builder {
+        crate::output::report_task_progress_output::Builder::default()
+    }
+}
+
 /// See [`ReportTaskProgressOutput`](crate::output::ReportTaskProgressOutput).
 pub mod report_task_progress_output {
 
@@ -339,12 +350,6 @@ pub mod report_task_progress_output {
         }
     }
 }
-impl ReportTaskProgressOutput {
-    /// Creates a new builder-style object to manufacture [`ReportTaskProgressOutput`](crate::output::ReportTaskProgressOutput).
-    pub fn builder() -> crate::output::report_task_progress_output::Builder {
-        crate::output::report_task_progress_output::Builder::default()
-    }
-}
 
 /// <p>Contains the output of RemoveTags.</p>
 #[non_exhaustive]
@@ -357,6 +362,13 @@ impl aws_http::request_id::RequestId for RemoveTagsOutput {
         self._request_id.as_deref()
     }
 }
+impl RemoveTagsOutput {
+    /// Creates a new builder-style object to manufacture [`RemoveTagsOutput`](crate::output::RemoveTagsOutput).
+    pub fn builder() -> crate::output::remove_tags_output::Builder {
+        crate::output::remove_tags_output::Builder::default()
+    }
+}
+
 /// See [`RemoveTagsOutput`](crate::output::RemoveTagsOutput).
 pub mod remove_tags_output {
 
@@ -382,12 +394,6 @@ pub mod remove_tags_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl RemoveTagsOutput {
-    /// Creates a new builder-style object to manufacture [`RemoveTagsOutput`](crate::output::RemoveTagsOutput).
-    pub fn builder() -> crate::output::remove_tags_output::Builder {
-        crate::output::remove_tags_output::Builder::default()
     }
 }
 
@@ -425,6 +431,13 @@ impl aws_http::request_id::RequestId for QueryObjectsOutput {
         self._request_id.as_deref()
     }
 }
+impl QueryObjectsOutput {
+    /// Creates a new builder-style object to manufacture [`QueryObjectsOutput`](crate::output::QueryObjectsOutput).
+    pub fn builder() -> crate::output::query_objects_output::Builder {
+        crate::output::query_objects_output::Builder::default()
+    }
+}
+
 /// See [`QueryObjectsOutput`](crate::output::QueryObjectsOutput).
 pub mod query_objects_output {
 
@@ -497,12 +510,6 @@ pub mod query_objects_output {
         }
     }
 }
-impl QueryObjectsOutput {
-    /// Creates a new builder-style object to manufacture [`QueryObjectsOutput`](crate::output::QueryObjectsOutput).
-    pub fn builder() -> crate::output::query_objects_output::Builder {
-        crate::output::query_objects_output::Builder::default()
-    }
-}
 
 /// <p>Contains the output of PutPipelineDefinition.</p>
 #[non_exhaustive]
@@ -538,6 +545,13 @@ impl aws_http::request_id::RequestId for PutPipelineDefinitionOutput {
         self._request_id.as_deref()
     }
 }
+impl PutPipelineDefinitionOutput {
+    /// Creates a new builder-style object to manufacture [`PutPipelineDefinitionOutput`](crate::output::PutPipelineDefinitionOutput).
+    pub fn builder() -> crate::output::put_pipeline_definition_output::Builder {
+        crate::output::put_pipeline_definition_output::Builder::default()
+    }
+}
+
 /// See [`PutPipelineDefinitionOutput`](crate::output::PutPipelineDefinitionOutput).
 pub mod put_pipeline_definition_output {
 
@@ -621,12 +635,6 @@ pub mod put_pipeline_definition_output {
         }
     }
 }
-impl PutPipelineDefinitionOutput {
-    /// Creates a new builder-style object to manufacture [`PutPipelineDefinitionOutput`](crate::output::PutPipelineDefinitionOutput).
-    pub fn builder() -> crate::output::put_pipeline_definition_output::Builder {
-        crate::output::put_pipeline_definition_output::Builder::default()
-    }
-}
 
 /// <p>Contains the output of PollForTask.</p>
 #[non_exhaustive]
@@ -648,6 +656,13 @@ impl aws_http::request_id::RequestId for PollForTaskOutput {
         self._request_id.as_deref()
     }
 }
+impl PollForTaskOutput {
+    /// Creates a new builder-style object to manufacture [`PollForTaskOutput`](crate::output::PollForTaskOutput).
+    pub fn builder() -> crate::output::poll_for_task_output::Builder {
+        crate::output::poll_for_task_output::Builder::default()
+    }
+}
+
 /// See [`PollForTaskOutput`](crate::output::PollForTaskOutput).
 pub mod poll_for_task_output {
 
@@ -690,12 +705,6 @@ pub mod poll_for_task_output {
         }
     }
 }
-impl PollForTaskOutput {
-    /// Creates a new builder-style object to manufacture [`PollForTaskOutput`](crate::output::PollForTaskOutput).
-    pub fn builder() -> crate::output::poll_for_task_output::Builder {
-        crate::output::poll_for_task_output::Builder::default()
-    }
-}
 
 /// <p>Contains the output of ListPipelines.</p>
 #[non_exhaustive]
@@ -731,6 +740,13 @@ impl aws_http::request_id::RequestId for ListPipelinesOutput {
         self._request_id.as_deref()
     }
 }
+impl ListPipelinesOutput {
+    /// Creates a new builder-style object to manufacture [`ListPipelinesOutput`](crate::output::ListPipelinesOutput).
+    pub fn builder() -> crate::output::list_pipelines_output::Builder {
+        crate::output::list_pipelines_output::Builder::default()
+    }
+}
+
 /// See [`ListPipelinesOutput`](crate::output::ListPipelinesOutput).
 pub mod list_pipelines_output {
 
@@ -804,12 +820,6 @@ pub mod list_pipelines_output {
         }
     }
 }
-impl ListPipelinesOutput {
-    /// Creates a new builder-style object to manufacture [`ListPipelinesOutput`](crate::output::ListPipelinesOutput).
-    pub fn builder() -> crate::output::list_pipelines_output::Builder {
-        crate::output::list_pipelines_output::Builder::default()
-    }
-}
 
 /// <p>Contains the output of GetPipelineDefinition.</p>
 #[non_exhaustive]
@@ -845,6 +855,13 @@ impl aws_http::request_id::RequestId for GetPipelineDefinitionOutput {
         self._request_id.as_deref()
     }
 }
+impl GetPipelineDefinitionOutput {
+    /// Creates a new builder-style object to manufacture [`GetPipelineDefinitionOutput`](crate::output::GetPipelineDefinitionOutput).
+    pub fn builder() -> crate::output::get_pipeline_definition_output::Builder {
+        crate::output::get_pipeline_definition_output::Builder::default()
+    }
+}
+
 /// See [`GetPipelineDefinitionOutput`](crate::output::GetPipelineDefinitionOutput).
 pub mod get_pipeline_definition_output {
 
@@ -938,12 +955,6 @@ pub mod get_pipeline_definition_output {
         }
     }
 }
-impl GetPipelineDefinitionOutput {
-    /// Creates a new builder-style object to manufacture [`GetPipelineDefinitionOutput`](crate::output::GetPipelineDefinitionOutput).
-    pub fn builder() -> crate::output::get_pipeline_definition_output::Builder {
-        crate::output::get_pipeline_definition_output::Builder::default()
-    }
-}
 
 /// <p>Contains the output of EvaluateExpression.</p>
 #[non_exhaustive]
@@ -965,6 +976,13 @@ impl aws_http::request_id::RequestId for EvaluateExpressionOutput {
         self._request_id.as_deref()
     }
 }
+impl EvaluateExpressionOutput {
+    /// Creates a new builder-style object to manufacture [`EvaluateExpressionOutput`](crate::output::EvaluateExpressionOutput).
+    pub fn builder() -> crate::output::evaluate_expression_output::Builder {
+        crate::output::evaluate_expression_output::Builder::default()
+    }
+}
+
 /// See [`EvaluateExpressionOutput`](crate::output::EvaluateExpressionOutput).
 pub mod evaluate_expression_output {
 
@@ -1007,12 +1025,6 @@ pub mod evaluate_expression_output {
         }
     }
 }
-impl EvaluateExpressionOutput {
-    /// Creates a new builder-style object to manufacture [`EvaluateExpressionOutput`](crate::output::EvaluateExpressionOutput).
-    pub fn builder() -> crate::output::evaluate_expression_output::Builder {
-        crate::output::evaluate_expression_output::Builder::default()
-    }
-}
 
 /// <p>Contains the output of DescribePipelines.</p>
 #[non_exhaustive]
@@ -1037,6 +1049,13 @@ impl aws_http::request_id::RequestId for DescribePipelinesOutput {
         self._request_id.as_deref()
     }
 }
+impl DescribePipelinesOutput {
+    /// Creates a new builder-style object to manufacture [`DescribePipelinesOutput`](crate::output::DescribePipelinesOutput).
+    pub fn builder() -> crate::output::describe_pipelines_output::Builder {
+        crate::output::describe_pipelines_output::Builder::default()
+    }
+}
+
 /// See [`DescribePipelinesOutput`](crate::output::DescribePipelinesOutput).
 pub mod describe_pipelines_output {
 
@@ -1089,12 +1108,6 @@ pub mod describe_pipelines_output {
         }
     }
 }
-impl DescribePipelinesOutput {
-    /// Creates a new builder-style object to manufacture [`DescribePipelinesOutput`](crate::output::DescribePipelinesOutput).
-    pub fn builder() -> crate::output::describe_pipelines_output::Builder {
-        crate::output::describe_pipelines_output::Builder::default()
-    }
-}
 
 /// <p>Contains the output of DescribeObjects.</p>
 #[non_exhaustive]
@@ -1130,6 +1143,13 @@ impl aws_http::request_id::RequestId for DescribeObjectsOutput {
         self._request_id.as_deref()
     }
 }
+impl DescribeObjectsOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeObjectsOutput`](crate::output::DescribeObjectsOutput).
+    pub fn builder() -> crate::output::describe_objects_output::Builder {
+        crate::output::describe_objects_output::Builder::default()
+    }
+}
+
 /// See [`DescribeObjectsOutput`](crate::output::DescribeObjectsOutput).
 pub mod describe_objects_output {
 
@@ -1203,12 +1223,6 @@ pub mod describe_objects_output {
         }
     }
 }
-impl DescribeObjectsOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeObjectsOutput`](crate::output::DescribeObjectsOutput).
-    pub fn builder() -> crate::output::describe_objects_output::Builder {
-        crate::output::describe_objects_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1221,6 +1235,13 @@ impl aws_http::request_id::RequestId for DeletePipelineOutput {
         self._request_id.as_deref()
     }
 }
+impl DeletePipelineOutput {
+    /// Creates a new builder-style object to manufacture [`DeletePipelineOutput`](crate::output::DeletePipelineOutput).
+    pub fn builder() -> crate::output::delete_pipeline_output::Builder {
+        crate::output::delete_pipeline_output::Builder::default()
+    }
+}
+
 /// See [`DeletePipelineOutput`](crate::output::DeletePipelineOutput).
 pub mod delete_pipeline_output {
 
@@ -1248,12 +1269,6 @@ pub mod delete_pipeline_output {
         }
     }
 }
-impl DeletePipelineOutput {
-    /// Creates a new builder-style object to manufacture [`DeletePipelineOutput`](crate::output::DeletePipelineOutput).
-    pub fn builder() -> crate::output::delete_pipeline_output::Builder {
-        crate::output::delete_pipeline_output::Builder::default()
-    }
-}
 
 /// <p>Contains the output of DeactivatePipeline.</p>
 #[non_exhaustive]
@@ -1266,6 +1281,13 @@ impl aws_http::request_id::RequestId for DeactivatePipelineOutput {
         self._request_id.as_deref()
     }
 }
+impl DeactivatePipelineOutput {
+    /// Creates a new builder-style object to manufacture [`DeactivatePipelineOutput`](crate::output::DeactivatePipelineOutput).
+    pub fn builder() -> crate::output::deactivate_pipeline_output::Builder {
+        crate::output::deactivate_pipeline_output::Builder::default()
+    }
+}
+
 /// See [`DeactivatePipelineOutput`](crate::output::DeactivatePipelineOutput).
 pub mod deactivate_pipeline_output {
 
@@ -1293,12 +1315,6 @@ pub mod deactivate_pipeline_output {
         }
     }
 }
-impl DeactivatePipelineOutput {
-    /// Creates a new builder-style object to manufacture [`DeactivatePipelineOutput`](crate::output::DeactivatePipelineOutput).
-    pub fn builder() -> crate::output::deactivate_pipeline_output::Builder {
-        crate::output::deactivate_pipeline_output::Builder::default()
-    }
-}
 
 /// <p>Contains the output of CreatePipeline.</p>
 #[non_exhaustive]
@@ -1320,6 +1336,13 @@ impl aws_http::request_id::RequestId for CreatePipelineOutput {
         self._request_id.as_deref()
     }
 }
+impl CreatePipelineOutput {
+    /// Creates a new builder-style object to manufacture [`CreatePipelineOutput`](crate::output::CreatePipelineOutput).
+    pub fn builder() -> crate::output::create_pipeline_output::Builder {
+        crate::output::create_pipeline_output::Builder::default()
+    }
+}
+
 /// See [`CreatePipelineOutput`](crate::output::CreatePipelineOutput).
 pub mod create_pipeline_output {
 
@@ -1359,12 +1382,6 @@ pub mod create_pipeline_output {
         }
     }
 }
-impl CreatePipelineOutput {
-    /// Creates a new builder-style object to manufacture [`CreatePipelineOutput`](crate::output::CreatePipelineOutput).
-    pub fn builder() -> crate::output::create_pipeline_output::Builder {
-        crate::output::create_pipeline_output::Builder::default()
-    }
-}
 
 /// <p>Contains the output of AddTags.</p>
 #[non_exhaustive]
@@ -1377,6 +1394,13 @@ impl aws_http::request_id::RequestId for AddTagsOutput {
         self._request_id.as_deref()
     }
 }
+impl AddTagsOutput {
+    /// Creates a new builder-style object to manufacture [`AddTagsOutput`](crate::output::AddTagsOutput).
+    pub fn builder() -> crate::output::add_tags_output::Builder {
+        crate::output::add_tags_output::Builder::default()
+    }
+}
+
 /// See [`AddTagsOutput`](crate::output::AddTagsOutput).
 pub mod add_tags_output {
 
@@ -1404,12 +1428,6 @@ pub mod add_tags_output {
         }
     }
 }
-impl AddTagsOutput {
-    /// Creates a new builder-style object to manufacture [`AddTagsOutput`](crate::output::AddTagsOutput).
-    pub fn builder() -> crate::output::add_tags_output::Builder {
-        crate::output::add_tags_output::Builder::default()
-    }
-}
 
 /// <p>Contains the output of ActivatePipeline.</p>
 #[non_exhaustive]
@@ -1422,6 +1440,13 @@ impl aws_http::request_id::RequestId for ActivatePipelineOutput {
         self._request_id.as_deref()
     }
 }
+impl ActivatePipelineOutput {
+    /// Creates a new builder-style object to manufacture [`ActivatePipelineOutput`](crate::output::ActivatePipelineOutput).
+    pub fn builder() -> crate::output::activate_pipeline_output::Builder {
+        crate::output::activate_pipeline_output::Builder::default()
+    }
+}
+
 /// See [`ActivatePipelineOutput`](crate::output::ActivatePipelineOutput).
 pub mod activate_pipeline_output {
 
@@ -1447,11 +1472,5 @@ pub mod activate_pipeline_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl ActivatePipelineOutput {
-    /// Creates a new builder-style object to manufacture [`ActivatePipelineOutput`](crate::output::ActivatePipelineOutput).
-    pub fn builder() -> crate::output::activate_pipeline_output::Builder {
-        crate::output::activate_pipeline_output::Builder::default()
     }
 }

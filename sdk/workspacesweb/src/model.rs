@@ -21,6 +21,13 @@ impl ValidationExceptionField {
         self.message.as_deref()
     }
 }
+impl ValidationExceptionField {
+    /// Creates a new builder-style object to manufacture [`ValidationExceptionField`](crate::model::ValidationExceptionField).
+    pub fn builder() -> crate::model::validation_exception_field::Builder {
+        crate::model::validation_exception_field::Builder::default()
+    }
+}
+
 /// See [`ValidationExceptionField`](crate::model::ValidationExceptionField).
 pub mod validation_exception_field {
 
@@ -59,12 +66,6 @@ pub mod validation_exception_field {
                 message: self.message,
             }
         }
-    }
-}
-impl ValidationExceptionField {
-    /// Creates a new builder-style object to manufacture [`ValidationExceptionField`](crate::model::ValidationExceptionField).
-    pub fn builder() -> crate::model::validation_exception_field::Builder {
-        crate::model::validation_exception_field::Builder::default()
     }
 }
 
@@ -245,6 +246,13 @@ impl UserSettings {
         self.idle_disconnect_timeout_in_minutes
     }
 }
+impl UserSettings {
+    /// Creates a new builder-style object to manufacture [`UserSettings`](crate::model::UserSettings).
+    pub fn builder() -> crate::model::user_settings::Builder {
+        crate::model::user_settings::Builder::default()
+    }
+}
+
 /// See [`UserSettings`](crate::model::UserSettings).
 pub mod user_settings {
 
@@ -402,12 +410,6 @@ pub mod user_settings {
         }
     }
 }
-impl UserSettings {
-    /// Creates a new builder-style object to manufacture [`UserSettings`](crate::model::UserSettings).
-    pub fn builder() -> crate::model::user_settings::Builder {
-        crate::model::user_settings::Builder::default()
-    }
-}
 
 /// When writing a match expression against `EnabledType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -527,6 +529,13 @@ impl UserAccessLoggingSettings {
         self.kinesis_stream_arn.as_deref()
     }
 }
+impl UserAccessLoggingSettings {
+    /// Creates a new builder-style object to manufacture [`UserAccessLoggingSettings`](crate::model::UserAccessLoggingSettings).
+    pub fn builder() -> crate::model::user_access_logging_settings::Builder {
+        crate::model::user_access_logging_settings::Builder::default()
+    }
+}
+
 /// See [`UserAccessLoggingSettings`](crate::model::UserAccessLoggingSettings).
 pub mod user_access_logging_settings {
 
@@ -595,12 +604,6 @@ pub mod user_access_logging_settings {
                 kinesis_stream_arn: self.kinesis_stream_arn,
             }
         }
-    }
-}
-impl UserAccessLoggingSettings {
-    /// Creates a new builder-style object to manufacture [`UserAccessLoggingSettings`](crate::model::UserAccessLoggingSettings).
-    pub fn builder() -> crate::model::user_access_logging_settings::Builder {
-        crate::model::user_access_logging_settings::Builder::default()
     }
 }
 
@@ -736,6 +739,13 @@ impl std::fmt::Debug for Portal {
         formatter.finish()
     }
 }
+impl Portal {
+    /// Creates a new builder-style object to manufacture [`Portal`](crate::model::Portal).
+    pub fn builder() -> crate::model::portal::Builder {
+        crate::model::portal::Builder::default()
+    }
+}
+
 /// See [`Portal`](crate::model::Portal).
 pub mod portal {
 
@@ -984,12 +994,6 @@ pub mod portal {
             formatter.field("authentication_type", &self.authentication_type);
             formatter.finish()
         }
-    }
-}
-impl Portal {
-    /// Creates a new builder-style object to manufacture [`Portal`](crate::model::Portal).
-    pub fn builder() -> crate::model::portal::Builder {
-        crate::model::portal::Builder::default()
     }
 }
 
@@ -1392,6 +1396,13 @@ impl NetworkSettings {
         self.security_group_ids.as_deref()
     }
 }
+impl NetworkSettings {
+    /// Creates a new builder-style object to manufacture [`NetworkSettings`](crate::model::NetworkSettings).
+    pub fn builder() -> crate::model::network_settings::Builder {
+        crate::model::network_settings::Builder::default()
+    }
+}
+
 /// See [`NetworkSettings`](crate::model::NetworkSettings).
 pub mod network_settings {
 
@@ -1496,12 +1507,6 @@ pub mod network_settings {
                 security_group_ids: self.security_group_ids,
             }
         }
-    }
-}
-impl NetworkSettings {
-    /// Creates a new builder-style object to manufacture [`NetworkSettings`](crate::model::NetworkSettings).
-    pub fn builder() -> crate::model::network_settings::Builder {
-        crate::model::network_settings::Builder::default()
     }
 }
 
@@ -1639,6 +1644,13 @@ impl std::fmt::Debug for IdentityProvider {
         formatter.finish()
     }
 }
+impl IdentityProvider {
+    /// Creates a new builder-style object to manufacture [`IdentityProvider`](crate::model::IdentityProvider).
+    pub fn builder() -> crate::model::identity_provider::Builder {
+        crate::model::identity_provider::Builder::default()
+    }
+}
+
 /// See [`IdentityProvider`](crate::model::IdentityProvider).
 pub mod identity_provider {
 
@@ -1822,12 +1834,6 @@ pub mod identity_provider {
         }
     }
 }
-impl IdentityProvider {
-    /// Creates a new builder-style object to manufacture [`IdentityProvider`](crate::model::IdentityProvider).
-    pub fn builder() -> crate::model::identity_provider::Builder {
-        crate::model::identity_provider::Builder::default()
-    }
-}
 
 /// When writing a match expression against `IdentityProviderType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -1985,6 +1991,13 @@ impl std::fmt::Debug for BrowserSettings {
         formatter.finish()
     }
 }
+impl BrowserSettings {
+    /// Creates a new builder-style object to manufacture [`BrowserSettings`](crate::model::BrowserSettings).
+    pub fn builder() -> crate::model::browser_settings::Builder {
+        crate::model::browser_settings::Builder::default()
+    }
+}
+
 /// See [`BrowserSettings`](crate::model::BrowserSettings).
 pub mod browser_settings {
 
@@ -2061,12 +2074,6 @@ pub mod browser_settings {
         }
     }
 }
-impl BrowserSettings {
-    /// Creates a new builder-style object to manufacture [`BrowserSettings`](crate::model::BrowserSettings).
-    pub fn builder() -> crate::model::browser_settings::Builder {
-        crate::model::browser_settings::Builder::default()
-    }
-}
 
 /// <p>The tag.</p>
 #[non_exhaustive]
@@ -2097,6 +2104,13 @@ impl std::fmt::Debug for Tag {
         formatter.finish()
     }
 }
+impl Tag {
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
+    pub fn builder() -> crate::model::tag::Builder {
+        crate::model::tag::Builder::default()
+    }
+}
+
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
 
@@ -2143,12 +2157,6 @@ pub mod tag {
             formatter.field("value", &"*** Sensitive Data Redacted ***");
             formatter.finish()
         }
-    }
-}
-impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
-    pub fn builder() -> crate::model::tag::Builder {
-        crate::model::tag::Builder::default()
     }
 }
 
@@ -2215,6 +2223,13 @@ impl UserSettingsSummary {
         self.idle_disconnect_timeout_in_minutes
     }
 }
+impl UserSettingsSummary {
+    /// Creates a new builder-style object to manufacture [`UserSettingsSummary`](crate::model::UserSettingsSummary).
+    pub fn builder() -> crate::model::user_settings_summary::Builder {
+        crate::model::user_settings_summary::Builder::default()
+    }
+}
+
 /// See [`UserSettingsSummary`](crate::model::UserSettingsSummary).
 pub mod user_settings_summary {
 
@@ -2351,12 +2366,6 @@ pub mod user_settings_summary {
         }
     }
 }
-impl UserSettingsSummary {
-    /// Creates a new builder-style object to manufacture [`UserSettingsSummary`](crate::model::UserSettingsSummary).
-    pub fn builder() -> crate::model::user_settings_summary::Builder {
-        crate::model::user_settings_summary::Builder::default()
-    }
-}
 
 /// <p>The summary of user access logging settings.</p>
 #[non_exhaustive]
@@ -2379,6 +2388,13 @@ impl UserAccessLoggingSettingsSummary {
         self.kinesis_stream_arn.as_deref()
     }
 }
+impl UserAccessLoggingSettingsSummary {
+    /// Creates a new builder-style object to manufacture [`UserAccessLoggingSettingsSummary`](crate::model::UserAccessLoggingSettingsSummary).
+    pub fn builder() -> crate::model::user_access_logging_settings_summary::Builder {
+        crate::model::user_access_logging_settings_summary::Builder::default()
+    }
+}
+
 /// See [`UserAccessLoggingSettingsSummary`](crate::model::UserAccessLoggingSettingsSummary).
 pub mod user_access_logging_settings_summary {
 
@@ -2428,12 +2444,6 @@ pub mod user_access_logging_settings_summary {
         }
     }
 }
-impl UserAccessLoggingSettingsSummary {
-    /// Creates a new builder-style object to manufacture [`UserAccessLoggingSettingsSummary`](crate::model::UserAccessLoggingSettingsSummary).
-    pub fn builder() -> crate::model::user_access_logging_settings_summary::Builder {
-        crate::model::user_access_logging_settings_summary::Builder::default()
-    }
-}
 
 /// <p>The summary of the trust store.</p>
 #[non_exhaustive]
@@ -2449,6 +2459,13 @@ impl TrustStoreSummary {
         self.trust_store_arn.as_deref()
     }
 }
+impl TrustStoreSummary {
+    /// Creates a new builder-style object to manufacture [`TrustStoreSummary`](crate::model::TrustStoreSummary).
+    pub fn builder() -> crate::model::trust_store_summary::Builder {
+        crate::model::trust_store_summary::Builder::default()
+    }
+}
+
 /// See [`TrustStoreSummary`](crate::model::TrustStoreSummary).
 pub mod trust_store_summary {
 
@@ -2478,12 +2495,6 @@ pub mod trust_store_summary {
                 trust_store_arn: self.trust_store_arn,
             }
         }
-    }
-}
-impl TrustStoreSummary {
-    /// Creates a new builder-style object to manufacture [`TrustStoreSummary`](crate::model::TrustStoreSummary).
-    pub fn builder() -> crate::model::trust_store_summary::Builder {
-        crate::model::trust_store_summary::Builder::default()
     }
 }
 
@@ -2529,6 +2540,13 @@ impl CertificateSummary {
         self.not_valid_after.as_ref()
     }
 }
+impl CertificateSummary {
+    /// Creates a new builder-style object to manufacture [`CertificateSummary`](crate::model::CertificateSummary).
+    pub fn builder() -> crate::model::certificate_summary::Builder {
+        crate::model::certificate_summary::Builder::default()
+    }
+}
+
 /// See [`CertificateSummary`](crate::model::CertificateSummary).
 pub mod certificate_summary {
 
@@ -2609,12 +2627,6 @@ pub mod certificate_summary {
                 not_valid_after: self.not_valid_after,
             }
         }
-    }
-}
-impl CertificateSummary {
-    /// Creates a new builder-style object to manufacture [`CertificateSummary`](crate::model::CertificateSummary).
-    pub fn builder() -> crate::model::certificate_summary::Builder {
-        crate::model::certificate_summary::Builder::default()
     }
 }
 
@@ -2742,6 +2754,13 @@ impl std::fmt::Debug for PortalSummary {
         formatter.finish()
     }
 }
+impl PortalSummary {
+    /// Creates a new builder-style object to manufacture [`PortalSummary`](crate::model::PortalSummary).
+    pub fn builder() -> crate::model::portal_summary::Builder {
+        crate::model::portal_summary::Builder::default()
+    }
+}
+
 /// See [`PortalSummary`](crate::model::PortalSummary).
 pub mod portal_summary {
 
@@ -2976,12 +2995,6 @@ pub mod portal_summary {
         }
     }
 }
-impl PortalSummary {
-    /// Creates a new builder-style object to manufacture [`PortalSummary`](crate::model::PortalSummary).
-    pub fn builder() -> crate::model::portal_summary::Builder {
-        crate::model::portal_summary::Builder::default()
-    }
-}
 
 /// <p>The summary of network settings.</p>
 #[non_exhaustive]
@@ -3004,6 +3017,13 @@ impl NetworkSettingsSummary {
         self.vpc_id.as_deref()
     }
 }
+impl NetworkSettingsSummary {
+    /// Creates a new builder-style object to manufacture [`NetworkSettingsSummary`](crate::model::NetworkSettingsSummary).
+    pub fn builder() -> crate::model::network_settings_summary::Builder {
+        crate::model::network_settings_summary::Builder::default()
+    }
+}
+
 /// See [`NetworkSettingsSummary`](crate::model::NetworkSettingsSummary).
 pub mod network_settings_summary {
 
@@ -3047,12 +3067,6 @@ pub mod network_settings_summary {
         }
     }
 }
-impl NetworkSettingsSummary {
-    /// Creates a new builder-style object to manufacture [`NetworkSettingsSummary`](crate::model::NetworkSettingsSummary).
-    pub fn builder() -> crate::model::network_settings_summary::Builder {
-        crate::model::network_settings_summary::Builder::default()
-    }
-}
 
 /// <p>The summary of the identity provider.</p>
 #[non_exhaustive]
@@ -3093,6 +3107,13 @@ impl std::fmt::Debug for IdentityProviderSummary {
         formatter.finish()
     }
 }
+impl IdentityProviderSummary {
+    /// Creates a new builder-style object to manufacture [`IdentityProviderSummary`](crate::model::IdentityProviderSummary).
+    pub fn builder() -> crate::model::identity_provider_summary::Builder {
+        crate::model::identity_provider_summary::Builder::default()
+    }
+}
+
 /// See [`IdentityProviderSummary`](crate::model::IdentityProviderSummary).
 pub mod identity_provider_summary {
 
@@ -3163,12 +3184,6 @@ pub mod identity_provider_summary {
         }
     }
 }
-impl IdentityProviderSummary {
-    /// Creates a new builder-style object to manufacture [`IdentityProviderSummary`](crate::model::IdentityProviderSummary).
-    pub fn builder() -> crate::model::identity_provider_summary::Builder {
-        crate::model::identity_provider_summary::Builder::default()
-    }
-}
 
 /// <p>The summary for browser settings.</p>
 #[non_exhaustive]
@@ -3184,6 +3199,13 @@ impl BrowserSettingsSummary {
         self.browser_settings_arn.as_deref()
     }
 }
+impl BrowserSettingsSummary {
+    /// Creates a new builder-style object to manufacture [`BrowserSettingsSummary`](crate::model::BrowserSettingsSummary).
+    pub fn builder() -> crate::model::browser_settings_summary::Builder {
+        crate::model::browser_settings_summary::Builder::default()
+    }
+}
+
 /// See [`BrowserSettingsSummary`](crate::model::BrowserSettingsSummary).
 pub mod browser_settings_summary {
 
@@ -3213,12 +3235,6 @@ pub mod browser_settings_summary {
                 browser_settings_arn: self.browser_settings_arn,
             }
         }
-    }
-}
-impl BrowserSettingsSummary {
-    /// Creates a new builder-style object to manufacture [`BrowserSettingsSummary`](crate::model::BrowserSettingsSummary).
-    pub fn builder() -> crate::model::browser_settings_summary::Builder {
-        crate::model::browser_settings_summary::Builder::default()
     }
 }
 
@@ -3271,6 +3287,13 @@ impl Certificate {
         self.body.as_ref()
     }
 }
+impl Certificate {
+    /// Creates a new builder-style object to manufacture [`Certificate`](crate::model::Certificate).
+    pub fn builder() -> crate::model::certificate::Builder {
+        crate::model::certificate::Builder::default()
+    }
+}
+
 /// See [`Certificate`](crate::model::Certificate).
 pub mod certificate {
 
@@ -3365,12 +3388,6 @@ pub mod certificate {
         }
     }
 }
-impl Certificate {
-    /// Creates a new builder-style object to manufacture [`Certificate`](crate::model::Certificate).
-    pub fn builder() -> crate::model::certificate::Builder {
-        crate::model::certificate::Builder::default()
-    }
-}
 
 /// <p>A trust store that can be associated with a web portal. A trust store contains certificate authority (CA) certificates. Once associated with a web portal, the browser in a streaming session will recognize certificates that have been issued using any of the CAs in the trust store. If your organization has internal websites that use certificates issued by private CAs, you should add the private CA certificate to the trust store. </p>
 #[non_exhaustive]
@@ -3393,6 +3410,13 @@ impl TrustStore {
         self.trust_store_arn.as_deref()
     }
 }
+impl TrustStore {
+    /// Creates a new builder-style object to manufacture [`TrustStore`](crate::model::TrustStore).
+    pub fn builder() -> crate::model::trust_store::Builder {
+        crate::model::trust_store::Builder::default()
+    }
+}
+
 /// See [`TrustStore`](crate::model::TrustStore).
 pub mod trust_store {
 
@@ -3443,11 +3467,5 @@ pub mod trust_store {
                 trust_store_arn: self.trust_store_arn,
             }
         }
-    }
-}
-impl TrustStore {
-    /// Creates a new builder-style object to manufacture [`TrustStore`](crate::model::TrustStore).
-    pub fn builder() -> crate::model::trust_store::Builder {
-        crate::model::trust_store::Builder::default()
     }
 }

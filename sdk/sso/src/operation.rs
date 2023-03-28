@@ -4,7 +4,7 @@
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`get_role_credentials`](crate::client::Client::get_role_credentials).
 ///
-/// See [`crate::client::fluent_builders::GetRoleCredentials`] for more details about the operation.
+/// `ParseStrictResponse` impl for `GetRoleCredentials`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetRoleCredentials {
     _private: (),
@@ -39,7 +39,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetRoleCredentials {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_account_roles`](crate::client::Client::list_account_roles).
 ///
-/// See [`crate::client::fluent_builders::ListAccountRoles`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListAccountRoles`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListAccountRoles {
     _private: (),
@@ -74,7 +74,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAccountRoles {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_accounts`](crate::client::Client::list_accounts).
 ///
-/// See [`crate::client::fluent_builders::ListAccounts`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListAccounts`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListAccounts {
     _private: (),
@@ -107,7 +107,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAccounts {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`logout`](crate::client::Client::logout).
 ///
-/// See [`crate::client::fluent_builders::Logout`] for more details about the operation.
+/// `ParseStrictResponse` impl for `Logout`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct Logout {
     _private: (),

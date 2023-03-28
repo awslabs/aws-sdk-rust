@@ -56,6 +56,13 @@ impl SuiteDefinitionConfiguration {
         self.protocol.as_ref()
     }
 }
+impl SuiteDefinitionConfiguration {
+    /// Creates a new builder-style object to manufacture [`SuiteDefinitionConfiguration`](crate::model::SuiteDefinitionConfiguration).
+    pub fn builder() -> crate::model::suite_definition_configuration::Builder {
+        crate::model::suite_definition_configuration::Builder::default()
+    }
+}
+
 /// See [`SuiteDefinitionConfiguration`](crate::model::SuiteDefinitionConfiguration).
 pub mod suite_definition_configuration {
 
@@ -171,12 +178,6 @@ pub mod suite_definition_configuration {
         }
     }
 }
-impl SuiteDefinitionConfiguration {
-    /// Creates a new builder-style object to manufacture [`SuiteDefinitionConfiguration`](crate::model::SuiteDefinitionConfiguration).
-    pub fn builder() -> crate::model::suite_definition_configuration::Builder {
-        crate::model::suite_definition_configuration::Builder::default()
-    }
-}
 
 /// When writing a match expression against `Protocol`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -289,6 +290,13 @@ impl DeviceUnderTest {
         self.certificate_arn.as_deref()
     }
 }
+impl DeviceUnderTest {
+    /// Creates a new builder-style object to manufacture [`DeviceUnderTest`](crate::model::DeviceUnderTest).
+    pub fn builder() -> crate::model::device_under_test::Builder {
+        crate::model::device_under_test::Builder::default()
+    }
+}
+
 /// See [`DeviceUnderTest`](crate::model::DeviceUnderTest).
 pub mod device_under_test {
 
@@ -332,12 +340,6 @@ pub mod device_under_test {
         }
     }
 }
-impl DeviceUnderTest {
-    /// Creates a new builder-style object to manufacture [`DeviceUnderTest`](crate::model::DeviceUnderTest).
-    pub fn builder() -> crate::model::device_under_test::Builder {
-        crate::model::device_under_test::Builder::default()
-    }
-}
 
 /// <p>Gets suite run configuration.</p>
 #[non_exhaustive]
@@ -367,6 +369,13 @@ impl SuiteRunConfiguration {
         self.parallel_run
     }
 }
+impl SuiteRunConfiguration {
+    /// Creates a new builder-style object to manufacture [`SuiteRunConfiguration`](crate::model::SuiteRunConfiguration).
+    pub fn builder() -> crate::model::suite_run_configuration::Builder {
+        crate::model::suite_run_configuration::Builder::default()
+    }
+}
+
 /// See [`SuiteRunConfiguration`](crate::model::SuiteRunConfiguration).
 pub mod suite_run_configuration {
 
@@ -429,12 +438,6 @@ pub mod suite_run_configuration {
                 parallel_run: self.parallel_run.unwrap_or_default(),
             }
         }
-    }
-}
-impl SuiteRunConfiguration {
-    /// Creates a new builder-style object to manufacture [`SuiteRunConfiguration`](crate::model::SuiteRunConfiguration).
-    pub fn builder() -> crate::model::suite_run_configuration::Builder {
-        crate::model::suite_run_configuration::Builder::default()
     }
 }
 
@@ -516,6 +519,13 @@ impl SuiteRunInformation {
         self.failed
     }
 }
+impl SuiteRunInformation {
+    /// Creates a new builder-style object to manufacture [`SuiteRunInformation`](crate::model::SuiteRunInformation).
+    pub fn builder() -> crate::model::suite_run_information::Builder {
+        crate::model::suite_run_information::Builder::default()
+    }
+}
+
 /// See [`SuiteRunInformation`](crate::model::SuiteRunInformation).
 pub mod suite_run_information {
 
@@ -671,12 +681,6 @@ pub mod suite_run_information {
                 failed: self.failed.unwrap_or_default(),
             }
         }
-    }
-}
-impl SuiteRunInformation {
-    /// Creates a new builder-style object to manufacture [`SuiteRunInformation`](crate::model::SuiteRunInformation).
-    pub fn builder() -> crate::model::suite_run_information::Builder {
-        crate::model::suite_run_information::Builder::default()
     }
 }
 
@@ -871,6 +875,13 @@ impl SuiteDefinitionInformation {
         self.created_at.as_ref()
     }
 }
+impl SuiteDefinitionInformation {
+    /// Creates a new builder-style object to manufacture [`SuiteDefinitionInformation`](crate::model::SuiteDefinitionInformation).
+    pub fn builder() -> crate::model::suite_definition_information::Builder {
+        crate::model::suite_definition_information::Builder::default()
+    }
+}
+
 /// See [`SuiteDefinitionInformation`](crate::model::SuiteDefinitionInformation).
 pub mod suite_definition_information {
 
@@ -990,12 +1001,6 @@ pub mod suite_definition_information {
         }
     }
 }
-impl SuiteDefinitionInformation {
-    /// Creates a new builder-style object to manufacture [`SuiteDefinitionInformation`](crate::model::SuiteDefinitionInformation).
-    pub fn builder() -> crate::model::suite_definition_information::Builder {
-        crate::model::suite_definition_information::Builder::default()
-    }
-}
 
 /// <p>Show each group result.</p>
 #[non_exhaustive]
@@ -1011,6 +1016,13 @@ impl TestResult {
         self.groups.as_deref()
     }
 }
+impl TestResult {
+    /// Creates a new builder-style object to manufacture [`TestResult`](crate::model::TestResult).
+    pub fn builder() -> crate::model::test_result::Builder {
+        crate::model::test_result::Builder::default()
+    }
+}
+
 /// See [`TestResult`](crate::model::TestResult).
 pub mod test_result {
 
@@ -1048,12 +1060,6 @@ pub mod test_result {
         }
     }
 }
-impl TestResult {
-    /// Creates a new builder-style object to manufacture [`TestResult`](crate::model::TestResult).
-    pub fn builder() -> crate::model::test_result::Builder {
-        crate::model::test_result::Builder::default()
-    }
-}
 
 /// <p>Show Group Result.</p>
 #[non_exhaustive]
@@ -1083,6 +1089,13 @@ impl GroupResult {
         self.tests.as_deref()
     }
 }
+impl GroupResult {
+    /// Creates a new builder-style object to manufacture [`GroupResult`](crate::model::GroupResult).
+    pub fn builder() -> crate::model::group_result::Builder {
+        crate::model::group_result::Builder::default()
+    }
+}
+
 /// See [`GroupResult`](crate::model::GroupResult).
 pub mod group_result {
 
@@ -1142,12 +1155,6 @@ pub mod group_result {
                 tests: self.tests,
             }
         }
-    }
-}
-impl GroupResult {
-    /// Creates a new builder-style object to manufacture [`GroupResult`](crate::model::GroupResult).
-    pub fn builder() -> crate::model::group_result::Builder {
-        crate::model::group_result::Builder::default()
     }
 }
 
@@ -1248,6 +1255,13 @@ impl TestCaseRun {
         self.test_scenarios.as_deref()
     }
 }
+impl TestCaseRun {
+    /// Creates a new builder-style object to manufacture [`TestCaseRun`](crate::model::TestCaseRun).
+    pub fn builder() -> crate::model::test_case_run::Builder {
+        crate::model::test_case_run::Builder::default()
+    }
+}
+
 /// See [`TestCaseRun`](crate::model::TestCaseRun).
 pub mod test_case_run {
 
@@ -1429,12 +1443,6 @@ pub mod test_case_run {
         }
     }
 }
-impl TestCaseRun {
-    /// Creates a new builder-style object to manufacture [`TestCaseRun`](crate::model::TestCaseRun).
-    pub fn builder() -> crate::model::test_case_run::Builder {
-        crate::model::test_case_run::Builder::default()
-    }
-}
 
 /// <p>Provides test case scenario.</p>
 #[non_exhaustive]
@@ -1508,6 +1516,13 @@ impl TestCaseScenario {
         self.system_message.as_deref()
     }
 }
+impl TestCaseScenario {
+    /// Creates a new builder-style object to manufacture [`TestCaseScenario`](crate::model::TestCaseScenario).
+    pub fn builder() -> crate::model::test_case_scenario::Builder {
+        crate::model::test_case_scenario::Builder::default()
+    }
+}
+
 /// See [`TestCaseScenario`](crate::model::TestCaseScenario).
 pub mod test_case_scenario {
 
@@ -1625,12 +1640,6 @@ pub mod test_case_scenario {
                 system_message: self.system_message,
             }
         }
-    }
-}
-impl TestCaseScenario {
-    /// Creates a new builder-style object to manufacture [`TestCaseScenario`](crate::model::TestCaseScenario).
-    pub fn builder() -> crate::model::test_case_scenario::Builder {
-        crate::model::test_case_scenario::Builder::default()
     }
 }
 

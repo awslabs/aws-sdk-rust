@@ -19,6 +19,13 @@ impl aws_http::request_id::RequestId for SendAlexaOfferToMasterOutput {
         self._request_id.as_deref()
     }
 }
+impl SendAlexaOfferToMasterOutput {
+    /// Creates a new builder-style object to manufacture [`SendAlexaOfferToMasterOutput`](crate::output::SendAlexaOfferToMasterOutput).
+    pub fn builder() -> crate::output::send_alexa_offer_to_master_output::Builder {
+        crate::output::send_alexa_offer_to_master_output::Builder::default()
+    }
+}
+
 /// See [`SendAlexaOfferToMasterOutput`](crate::output::SendAlexaOfferToMasterOutput).
 pub mod send_alexa_offer_to_master_output {
 
@@ -58,12 +65,6 @@ pub mod send_alexa_offer_to_master_output {
         }
     }
 }
-impl SendAlexaOfferToMasterOutput {
-    /// Creates a new builder-style object to manufacture [`SendAlexaOfferToMasterOutput`](crate::output::SendAlexaOfferToMasterOutput).
-    pub fn builder() -> crate::output::send_alexa_offer_to_master_output::Builder {
-        crate::output::send_alexa_offer_to_master_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -85,6 +86,13 @@ impl aws_http::request_id::RequestId for GetIceServerConfigOutput {
         self._request_id.as_deref()
     }
 }
+impl GetIceServerConfigOutput {
+    /// Creates a new builder-style object to manufacture [`GetIceServerConfigOutput`](crate::output::GetIceServerConfigOutput).
+    pub fn builder() -> crate::output::get_ice_server_config_output::Builder {
+        crate::output::get_ice_server_config_output::Builder::default()
+    }
+}
+
 /// See [`GetIceServerConfigOutput`](crate::output::GetIceServerConfigOutput).
 pub mod get_ice_server_config_output {
 
@@ -131,11 +139,5 @@ pub mod get_ice_server_config_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl GetIceServerConfigOutput {
-    /// Creates a new builder-style object to manufacture [`GetIceServerConfigOutput`](crate::output::GetIceServerConfigOutput).
-    pub fn builder() -> crate::output::get_ice_server_config_output::Builder {
-        crate::output::get_ice_server_config_output::Builder::default()
     }
 }

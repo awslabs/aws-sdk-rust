@@ -4,7 +4,7 @@
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`add_permission`](crate::client::Client::add_permission).
 ///
-/// See [`crate::client::fluent_builders::AddPermission`] for more details about the operation.
+/// `ParseStrictResponse` impl for `AddPermission`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct AddPermission {
     _private: (),
@@ -37,7 +37,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AddPermission {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`change_message_visibility`](crate::client::Client::change_message_visibility).
 ///
-/// See [`crate::client::fluent_builders::ChangeMessageVisibility`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ChangeMessageVisibility`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ChangeMessageVisibility {
     _private: (),
@@ -102,7 +102,7 @@ mod change_message_visibility_request_test {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`change_message_visibility_batch`](crate::client::Client::change_message_visibility_batch).
 ///
-/// See [`crate::client::fluent_builders::ChangeMessageVisibilityBatch`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ChangeMessageVisibilityBatch`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ChangeMessageVisibilityBatch {
     _private: (),
@@ -137,7 +137,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ChangeMessageVisibilityB
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`create_queue`](crate::client::Client::create_queue).
 ///
-/// See [`crate::client::fluent_builders::CreateQueue`] for more details about the operation.
+/// `ParseStrictResponse` impl for `CreateQueue`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateQueue {
     _private: (),
@@ -170,7 +170,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateQueue {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`delete_message`](crate::client::Client::delete_message).
 ///
-/// See [`crate::client::fluent_builders::DeleteMessage`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DeleteMessage`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteMessage {
     _private: (),
@@ -203,7 +203,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteMessage {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`delete_message_batch`](crate::client::Client::delete_message_batch).
 ///
-/// See [`crate::client::fluent_builders::DeleteMessageBatch`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DeleteMessageBatch`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteMessageBatch {
     _private: (),
@@ -238,7 +238,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteMessageBatch {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`delete_queue`](crate::client::Client::delete_queue).
 ///
-/// See [`crate::client::fluent_builders::DeleteQueue`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DeleteQueue`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteQueue {
     _private: (),
@@ -271,7 +271,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteQueue {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`get_queue_attributes`](crate::client::Client::get_queue_attributes).
 ///
-/// See [`crate::client::fluent_builders::GetQueueAttributes`] for more details about the operation.
+/// `ParseStrictResponse` impl for `GetQueueAttributes`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetQueueAttributes {
     _private: (),
@@ -306,7 +306,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetQueueAttributes {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`get_queue_url`](crate::client::Client::get_queue_url).
 ///
-/// See [`crate::client::fluent_builders::GetQueueUrl`] for more details about the operation.
+/// `ParseStrictResponse` impl for `GetQueueUrl`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetQueueUrl {
     _private: (),
@@ -339,7 +339,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetQueueUrl {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_dead_letter_source_queues`](crate::client::Client::list_dead_letter_source_queues).
 ///
-/// See [`crate::client::fluent_builders::ListDeadLetterSourceQueues`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListDeadLetterSourceQueues`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListDeadLetterSourceQueues {
     _private: (),
@@ -374,7 +374,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListDeadLetterSourceQueu
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_queues`](crate::client::Client::list_queues).
 ///
-/// See [`crate::client::fluent_builders::ListQueues`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListQueues`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListQueues {
     _private: (),
@@ -407,7 +407,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListQueues {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_queue_tags`](crate::client::Client::list_queue_tags).
 ///
-/// See [`crate::client::fluent_builders::ListQueueTags`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListQueueTags`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListQueueTags {
     _private: (),
@@ -440,7 +440,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListQueueTags {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`purge_queue`](crate::client::Client::purge_queue).
 ///
-/// See [`crate::client::fluent_builders::PurgeQueue`] for more details about the operation.
+/// `ParseStrictResponse` impl for `PurgeQueue`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PurgeQueue {
     _private: (),
@@ -473,7 +473,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PurgeQueue {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`receive_message`](crate::client::Client::receive_message).
 ///
-/// See [`crate::client::fluent_builders::ReceiveMessage`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ReceiveMessage`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ReceiveMessage {
     _private: (),
@@ -506,7 +506,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ReceiveMessage {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`remove_permission`](crate::client::Client::remove_permission).
 ///
-/// See [`crate::client::fluent_builders::RemovePermission`] for more details about the operation.
+/// `ParseStrictResponse` impl for `RemovePermission`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct RemovePermission {
     _private: (),
@@ -541,7 +541,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RemovePermission {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`send_message`](crate::client::Client::send_message).
 ///
-/// See [`crate::client::fluent_builders::SendMessage`] for more details about the operation.
+/// `ParseStrictResponse` impl for `SendMessage`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct SendMessage {
     _private: (),
@@ -574,7 +574,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SendMessage {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`send_message_batch`](crate::client::Client::send_message_batch).
 ///
-/// See [`crate::client::fluent_builders::SendMessageBatch`] for more details about the operation.
+/// `ParseStrictResponse` impl for `SendMessageBatch`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct SendMessageBatch {
     _private: (),
@@ -609,7 +609,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SendMessageBatch {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`set_queue_attributes`](crate::client::Client::set_queue_attributes).
 ///
-/// See [`crate::client::fluent_builders::SetQueueAttributes`] for more details about the operation.
+/// `ParseStrictResponse` impl for `SetQueueAttributes`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct SetQueueAttributes {
     _private: (),
@@ -644,7 +644,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SetQueueAttributes {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`tag_queue`](crate::client::Client::tag_queue).
 ///
-/// See [`crate::client::fluent_builders::TagQueue`] for more details about the operation.
+/// `ParseStrictResponse` impl for `TagQueue`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct TagQueue {
     _private: (),
@@ -676,7 +676,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagQueue {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`untag_queue`](crate::client::Client::untag_queue).
 ///
-/// See [`crate::client::fluent_builders::UntagQueue`] for more details about the operation.
+/// `ParseStrictResponse` impl for `UntagQueue`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UntagQueue {
     _private: (),

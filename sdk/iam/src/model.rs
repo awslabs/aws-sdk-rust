@@ -50,6 +50,13 @@ impl SshPublicKey {
         self.upload_date.as_ref()
     }
 }
+impl SshPublicKey {
+    /// Creates a new builder-style object to manufacture [`SshPublicKey`](crate::model::SshPublicKey).
+    pub fn builder() -> crate::model::ssh_public_key::Builder {
+        crate::model::ssh_public_key::Builder::default()
+    }
+}
+
 /// See [`SshPublicKey`](crate::model::SshPublicKey).
 pub mod ssh_public_key {
 
@@ -145,12 +152,6 @@ pub mod ssh_public_key {
                 upload_date: self.upload_date,
             }
         }
-    }
-}
-impl SshPublicKey {
-    /// Creates a new builder-style object to manufacture [`SshPublicKey`](crate::model::SshPublicKey).
-    pub fn builder() -> crate::model::ssh_public_key::Builder {
-        crate::model::ssh_public_key::Builder::default()
     }
 }
 
@@ -287,6 +288,13 @@ impl SigningCertificate {
         self.upload_date.as_ref()
     }
 }
+impl SigningCertificate {
+    /// Creates a new builder-style object to manufacture [`SigningCertificate`](crate::model::SigningCertificate).
+    pub fn builder() -> crate::model::signing_certificate::Builder {
+        crate::model::signing_certificate::Builder::default()
+    }
+}
+
 /// See [`SigningCertificate`](crate::model::SigningCertificate).
 pub mod signing_certificate {
 
@@ -372,12 +380,6 @@ pub mod signing_certificate {
         }
     }
 }
-impl SigningCertificate {
-    /// Creates a new builder-style object to manufacture [`SigningCertificate`](crate::model::SigningCertificate).
-    pub fn builder() -> crate::model::signing_certificate::Builder {
-        crate::model::signing_certificate::Builder::default()
-    }
-}
 
 /// <p>A structure that represents user-provided metadata that can be associated with an IAM resource. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User Guide</i>.</p>
 #[non_exhaustive]
@@ -404,6 +406,13 @@ impl Tag {
         self.value.as_deref()
     }
 }
+impl Tag {
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
+    pub fn builder() -> crate::model::tag::Builder {
+        crate::model::tag::Builder::default()
+    }
+}
+
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
 
@@ -446,12 +455,6 @@ pub mod tag {
                 value: self.value,
             }
         }
-    }
-}
-impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
-    pub fn builder() -> crate::model::tag::Builder {
-        crate::model::tag::Builder::default()
     }
 }
 
@@ -505,6 +508,13 @@ impl ServerCertificateMetadata {
         self.expiration.as_ref()
     }
 }
+impl ServerCertificateMetadata {
+    /// Creates a new builder-style object to manufacture [`ServerCertificateMetadata`](crate::model::ServerCertificateMetadata).
+    pub fn builder() -> crate::model::server_certificate_metadata::Builder {
+        crate::model::server_certificate_metadata::Builder::default()
+    }
+}
+
 /// See [`ServerCertificateMetadata`](crate::model::ServerCertificateMetadata).
 pub mod server_certificate_metadata {
 
@@ -605,12 +615,6 @@ pub mod server_certificate_metadata {
         }
     }
 }
-impl ServerCertificateMetadata {
-    /// Creates a new builder-style object to manufacture [`ServerCertificateMetadata`](crate::model::ServerCertificateMetadata).
-    pub fn builder() -> crate::model::server_certificate_metadata::Builder {
-        crate::model::server_certificate_metadata::Builder::default()
-    }
-}
 
 /// <p>Contains information about an IAM role. This structure is returned as a response element in several API operations that interact with roles.</p>
 #[non_exhaustive]
@@ -700,6 +704,13 @@ impl Role {
         self.role_last_used.as_ref()
     }
 }
+impl Role {
+    /// Creates a new builder-style object to manufacture [`Role`](crate::model::Role).
+    pub fn builder() -> crate::model::role::Builder {
+        crate::model::role::Builder::default()
+    }
+}
+
 /// See [`Role`](crate::model::Role).
 pub mod role {
 
@@ -878,12 +889,6 @@ pub mod role {
         }
     }
 }
-impl Role {
-    /// Creates a new builder-style object to manufacture [`Role`](crate::model::Role).
-    pub fn builder() -> crate::model::role::Builder {
-        crate::model::role::Builder::default()
-    }
-}
 
 /// <p>Contains information about the last time that an IAM role was used. This includes the date and time and the Region in which the role was last used. Activity is only reported for the trailing 400 days. This period can be shorter if your Region began supporting these features within the last year. The role might have been used more than 400 days ago. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#access-advisor_tracking-period">Regions where data is tracked</a> in the <i>IAM User Guide</i>.</p>
 /// <p>This data type is returned as a response element in the <code>GetRole</code> and <code>GetAccountAuthorizationDetails</code> operations.</p>
@@ -909,6 +914,13 @@ impl RoleLastUsed {
         self.region.as_deref()
     }
 }
+impl RoleLastUsed {
+    /// Creates a new builder-style object to manufacture [`RoleLastUsed`](crate::model::RoleLastUsed).
+    pub fn builder() -> crate::model::role_last_used::Builder {
+        crate::model::role_last_used::Builder::default()
+    }
+}
+
 /// See [`RoleLastUsed`](crate::model::RoleLastUsed).
 pub mod role_last_used {
 
@@ -954,12 +966,6 @@ pub mod role_last_used {
         }
     }
 }
-impl RoleLastUsed {
-    /// Creates a new builder-style object to manufacture [`RoleLastUsed`](crate::model::RoleLastUsed).
-    pub fn builder() -> crate::model::role_last_used::Builder {
-        crate::model::role_last_used::Builder::default()
-    }
-}
 
 /// <p>Contains information about an attached permissions boundary.</p>
 /// <p>An attached permissions boundary is a managed policy that has been attached to a user or role to set the permissions boundary.</p>
@@ -987,6 +993,13 @@ impl AttachedPermissionsBoundary {
         self.permissions_boundary_arn.as_deref()
     }
 }
+impl AttachedPermissionsBoundary {
+    /// Creates a new builder-style object to manufacture [`AttachedPermissionsBoundary`](crate::model::AttachedPermissionsBoundary).
+    pub fn builder() -> crate::model::attached_permissions_boundary::Builder {
+        crate::model::attached_permissions_boundary::Builder::default()
+    }
+}
+
 /// See [`AttachedPermissionsBoundary`](crate::model::AttachedPermissionsBoundary).
 pub mod attached_permissions_boundary {
 
@@ -1035,12 +1048,6 @@ pub mod attached_permissions_boundary {
                 permissions_boundary_arn: self.permissions_boundary_arn,
             }
         }
-    }
-}
-impl AttachedPermissionsBoundary {
-    /// Creates a new builder-style object to manufacture [`AttachedPermissionsBoundary`](crate::model::AttachedPermissionsBoundary).
-    pub fn builder() -> crate::model::attached_permissions_boundary::Builder {
-        crate::model::attached_permissions_boundary::Builder::default()
     }
 }
 
@@ -1225,6 +1232,13 @@ impl EvaluationResult {
         self.resource_specific_results.as_deref()
     }
 }
+impl EvaluationResult {
+    /// Creates a new builder-style object to manufacture [`EvaluationResult`](crate::model::EvaluationResult).
+    pub fn builder() -> crate::model::evaluation_result::Builder {
+        crate::model::evaluation_result::Builder::default()
+    }
+}
+
 /// See [`EvaluationResult`](crate::model::EvaluationResult).
 pub mod evaluation_result {
 
@@ -1432,12 +1446,6 @@ pub mod evaluation_result {
         }
     }
 }
-impl EvaluationResult {
-    /// Creates a new builder-style object to manufacture [`EvaluationResult`](crate::model::EvaluationResult).
-    pub fn builder() -> crate::model::evaluation_result::Builder {
-        crate::model::evaluation_result::Builder::default()
-    }
-}
 
 /// <p>Contains the result of the simulation of a single API operation call on a single resource.</p>
 /// <p>This data type is used by a member of the <code>EvaluationResult</code> data type.</p>
@@ -1500,6 +1508,13 @@ impl ResourceSpecificResult {
         self.permissions_boundary_decision_detail.as_ref()
     }
 }
+impl ResourceSpecificResult {
+    /// Creates a new builder-style object to manufacture [`ResourceSpecificResult`](crate::model::ResourceSpecificResult).
+    pub fn builder() -> crate::model::resource_specific_result::Builder {
+        crate::model::resource_specific_result::Builder::default()
+    }
+}
+
 /// See [`ResourceSpecificResult`](crate::model::ResourceSpecificResult).
 pub mod resource_specific_result {
 
@@ -1646,12 +1661,6 @@ pub mod resource_specific_result {
         }
     }
 }
-impl ResourceSpecificResult {
-    /// Creates a new builder-style object to manufacture [`ResourceSpecificResult`](crate::model::ResourceSpecificResult).
-    pub fn builder() -> crate::model::resource_specific_result::Builder {
-        crate::model::resource_specific_result::Builder::default()
-    }
-}
 
 /// <p>Contains information about the effect that a permissions boundary has on a policy simulation when the boundary is applied to an IAM entity.</p>
 #[non_exhaustive]
@@ -1667,6 +1676,13 @@ impl PermissionsBoundaryDecisionDetail {
         self.allowed_by_permissions_boundary
     }
 }
+impl PermissionsBoundaryDecisionDetail {
+    /// Creates a new builder-style object to manufacture [`PermissionsBoundaryDecisionDetail`](crate::model::PermissionsBoundaryDecisionDetail).
+    pub fn builder() -> crate::model::permissions_boundary_decision_detail::Builder {
+        crate::model::permissions_boundary_decision_detail::Builder::default()
+    }
+}
+
 /// See [`PermissionsBoundaryDecisionDetail`](crate::model::PermissionsBoundaryDecisionDetail).
 pub mod permissions_boundary_decision_detail {
 
@@ -1698,12 +1714,6 @@ pub mod permissions_boundary_decision_detail {
                     .unwrap_or_default(),
             }
         }
-    }
-}
-impl PermissionsBoundaryDecisionDetail {
-    /// Creates a new builder-style object to manufacture [`PermissionsBoundaryDecisionDetail`](crate::model::PermissionsBoundaryDecisionDetail).
-    pub fn builder() -> crate::model::permissions_boundary_decision_detail::Builder {
-        crate::model::permissions_boundary_decision_detail::Builder::default()
     }
 }
 
@@ -1840,6 +1850,13 @@ impl Statement {
         self.end_position.as_ref()
     }
 }
+impl Statement {
+    /// Creates a new builder-style object to manufacture [`Statement`](crate::model::Statement).
+    pub fn builder() -> crate::model::statement::Builder {
+        crate::model::statement::Builder::default()
+    }
+}
+
 /// See [`Statement`](crate::model::Statement).
 pub mod statement {
 
@@ -1916,12 +1933,6 @@ pub mod statement {
         }
     }
 }
-impl Statement {
-    /// Creates a new builder-style object to manufacture [`Statement`](crate::model::Statement).
-    pub fn builder() -> crate::model::statement::Builder {
-        crate::model::statement::Builder::default()
-    }
-}
 
 /// <p>Contains the row and column of a location of a <code>Statement</code> element in a policy document.</p>
 /// <p>This data type is used as a member of the <code> <code>Statement</code> </code> type.</p>
@@ -1945,6 +1956,13 @@ impl Position {
         self.column
     }
 }
+impl Position {
+    /// Creates a new builder-style object to manufacture [`Position`](crate::model::Position).
+    pub fn builder() -> crate::model::position::Builder {
+        crate::model::position::Builder::default()
+    }
+}
+
 /// See [`Position`](crate::model::Position).
 pub mod position {
 
@@ -1983,12 +2001,6 @@ pub mod position {
                 column: self.column.unwrap_or_default(),
             }
         }
-    }
-}
-impl Position {
-    /// Creates a new builder-style object to manufacture [`Position`](crate::model::Position).
-    pub fn builder() -> crate::model::position::Builder {
-        crate::model::position::Builder::default()
     }
 }
 
@@ -2129,6 +2141,13 @@ impl OrganizationsDecisionDetail {
         self.allowed_by_organizations
     }
 }
+impl OrganizationsDecisionDetail {
+    /// Creates a new builder-style object to manufacture [`OrganizationsDecisionDetail`](crate::model::OrganizationsDecisionDetail).
+    pub fn builder() -> crate::model::organizations_decision_detail::Builder {
+        crate::model::organizations_decision_detail::Builder::default()
+    }
+}
+
 /// See [`OrganizationsDecisionDetail`](crate::model::OrganizationsDecisionDetail).
 pub mod organizations_decision_detail {
 
@@ -2155,12 +2174,6 @@ pub mod organizations_decision_detail {
                 allowed_by_organizations: self.allowed_by_organizations.unwrap_or_default(),
             }
         }
-    }
-}
-impl OrganizationsDecisionDetail {
-    /// Creates a new builder-style object to manufacture [`OrganizationsDecisionDetail`](crate::model::OrganizationsDecisionDetail).
-    pub fn builder() -> crate::model::organizations_decision_detail::Builder {
-        crate::model::organizations_decision_detail::Builder::default()
     }
 }
 
@@ -2193,6 +2206,13 @@ impl ContextEntry {
         self.context_key_type.as_ref()
     }
 }
+impl ContextEntry {
+    /// Creates a new builder-style object to manufacture [`ContextEntry`](crate::model::ContextEntry).
+    pub fn builder() -> crate::model::context_entry::Builder {
+        crate::model::context_entry::Builder::default()
+    }
+}
+
 /// See [`ContextEntry`](crate::model::ContextEntry).
 pub mod context_entry {
 
@@ -2258,12 +2278,6 @@ pub mod context_entry {
                 context_key_type: self.context_key_type,
             }
         }
-    }
-}
-impl ContextEntry {
-    /// Creates a new builder-style object to manufacture [`ContextEntry`](crate::model::ContextEntry).
-    pub fn builder() -> crate::model::context_entry::Builder {
-        crate::model::context_entry::Builder::default()
     }
 }
 
@@ -2586,6 +2600,13 @@ impl std::fmt::Debug for ServiceSpecificCredential {
         formatter.finish()
     }
 }
+impl ServiceSpecificCredential {
+    /// Creates a new builder-style object to manufacture [`ServiceSpecificCredential`](crate::model::ServiceSpecificCredential).
+    pub fn builder() -> crate::model::service_specific_credential::Builder {
+        crate::model::service_specific_credential::Builder::default()
+    }
+}
+
 /// See [`ServiceSpecificCredential`](crate::model::ServiceSpecificCredential).
 pub mod service_specific_credential {
 
@@ -2717,12 +2738,6 @@ pub mod service_specific_credential {
         }
     }
 }
-impl ServiceSpecificCredential {
-    /// Creates a new builder-style object to manufacture [`ServiceSpecificCredential`](crate::model::ServiceSpecificCredential).
-    pub fn builder() -> crate::model::service_specific_credential::Builder {
-        crate::model::service_specific_credential::Builder::default()
-    }
-}
 
 /// <p>Contains information about a virtual MFA device.</p>
 #[non_exhaustive]
@@ -2785,6 +2800,13 @@ impl std::fmt::Debug for VirtualMfaDevice {
         formatter.finish()
     }
 }
+impl VirtualMfaDevice {
+    /// Creates a new builder-style object to manufacture [`VirtualMfaDevice`](crate::model::VirtualMfaDevice).
+    pub fn builder() -> crate::model::virtual_mfa_device::Builder {
+        crate::model::virtual_mfa_device::Builder::default()
+    }
+}
+
 /// See [`VirtualMfaDevice`](crate::model::VirtualMfaDevice).
 pub mod virtual_mfa_device {
 
@@ -2906,12 +2928,6 @@ pub mod virtual_mfa_device {
         }
     }
 }
-impl VirtualMfaDevice {
-    /// Creates a new builder-style object to manufacture [`VirtualMfaDevice`](crate::model::VirtualMfaDevice).
-    pub fn builder() -> crate::model::virtual_mfa_device::Builder {
-        crate::model::virtual_mfa_device::Builder::default()
-    }
-}
 
 /// <p>Contains information about an IAM user entity.</p>
 /// <p>This data type is used as a response element in the following operations:</p>
@@ -2998,6 +3014,13 @@ impl User {
         self.tags.as_deref()
     }
 }
+impl User {
+    /// Creates a new builder-style object to manufacture [`User`](crate::model::User).
+    pub fn builder() -> crate::model::user::Builder {
+        crate::model::user::Builder::default()
+    }
+}
+
 /// See [`User`](crate::model::User).
 pub mod user {
 
@@ -3146,12 +3169,6 @@ pub mod user {
         }
     }
 }
-impl User {
-    /// Creates a new builder-style object to manufacture [`User`](crate::model::User).
-    pub fn builder() -> crate::model::user::Builder {
-        crate::model::user::Builder::default()
-    }
-}
 
 /// When writing a match expression against `AssignmentStatusType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -3286,6 +3303,13 @@ impl SshPublicKeyMetadata {
         self.upload_date.as_ref()
     }
 }
+impl SshPublicKeyMetadata {
+    /// Creates a new builder-style object to manufacture [`SshPublicKeyMetadata`](crate::model::SshPublicKeyMetadata).
+    pub fn builder() -> crate::model::ssh_public_key_metadata::Builder {
+        crate::model::ssh_public_key_metadata::Builder::default()
+    }
+}
+
 /// See [`SshPublicKeyMetadata`](crate::model::SshPublicKeyMetadata).
 pub mod ssh_public_key_metadata {
 
@@ -3356,12 +3380,6 @@ pub mod ssh_public_key_metadata {
         }
     }
 }
-impl SshPublicKeyMetadata {
-    /// Creates a new builder-style object to manufacture [`SshPublicKeyMetadata`](crate::model::SshPublicKeyMetadata).
-    pub fn builder() -> crate::model::ssh_public_key_metadata::Builder {
-        crate::model::ssh_public_key_metadata::Builder::default()
-    }
-}
 
 /// <p>Contains additional details about a service-specific credential.</p>
 #[non_exhaustive]
@@ -3412,6 +3430,13 @@ impl ServiceSpecificCredentialMetadata {
         self.service_name.as_deref()
     }
 }
+impl ServiceSpecificCredentialMetadata {
+    /// Creates a new builder-style object to manufacture [`ServiceSpecificCredentialMetadata`](crate::model::ServiceSpecificCredentialMetadata).
+    pub fn builder() -> crate::model::service_specific_credential_metadata::Builder {
+        crate::model::service_specific_credential_metadata::Builder::default()
+    }
+}
+
 /// See [`ServiceSpecificCredentialMetadata`](crate::model::ServiceSpecificCredentialMetadata).
 pub mod service_specific_credential_metadata {
 
@@ -3512,12 +3537,6 @@ pub mod service_specific_credential_metadata {
         }
     }
 }
-impl ServiceSpecificCredentialMetadata {
-    /// Creates a new builder-style object to manufacture [`ServiceSpecificCredentialMetadata`](crate::model::ServiceSpecificCredentialMetadata).
-    pub fn builder() -> crate::model::service_specific_credential_metadata::Builder {
-        crate::model::service_specific_credential_metadata::Builder::default()
-    }
-}
 
 /// <p>Contains the list of SAML providers for this account.</p>
 #[non_exhaustive]
@@ -3547,6 +3566,13 @@ impl SamlProviderListEntry {
         self.create_date.as_ref()
     }
 }
+impl SamlProviderListEntry {
+    /// Creates a new builder-style object to manufacture [`SamlProviderListEntry`](crate::model::SamlProviderListEntry).
+    pub fn builder() -> crate::model::saml_provider_list_entry::Builder {
+        crate::model::saml_provider_list_entry::Builder::default()
+    }
+}
+
 /// See [`SamlProviderListEntry`](crate::model::SamlProviderListEntry).
 pub mod saml_provider_list_entry {
 
@@ -3605,12 +3631,6 @@ pub mod saml_provider_list_entry {
         }
     }
 }
-impl SamlProviderListEntry {
-    /// Creates a new builder-style object to manufacture [`SamlProviderListEntry`](crate::model::SamlProviderListEntry).
-    pub fn builder() -> crate::model::saml_provider_list_entry::Builder {
-        crate::model::saml_provider_list_entry::Builder::default()
-    }
-}
 
 /// <p>Contains information about a version of a managed policy.</p>
 /// <p>This data type is used as a response element in the <code>CreatePolicyVersion</code>, <code>GetPolicyVersion</code>, <code>ListPolicyVersions</code>, and <code>GetAccountAuthorizationDetails</code> operations. </p>
@@ -3655,6 +3675,13 @@ impl PolicyVersion {
         self.create_date.as_ref()
     }
 }
+impl PolicyVersion {
+    /// Creates a new builder-style object to manufacture [`PolicyVersion`](crate::model::PolicyVersion).
+    pub fn builder() -> crate::model::policy_version::Builder {
+        crate::model::policy_version::Builder::default()
+    }
+}
+
 /// See [`PolicyVersion`](crate::model::PolicyVersion).
 pub mod policy_version {
 
@@ -3728,12 +3755,6 @@ pub mod policy_version {
         }
     }
 }
-impl PolicyVersion {
-    /// Creates a new builder-style object to manufacture [`PolicyVersion`](crate::model::PolicyVersion).
-    pub fn builder() -> crate::model::policy_version::Builder {
-        crate::model::policy_version::Builder::default()
-    }
-}
 
 /// <p>Contains details about the permissions policies that are attached to the specified identity (user, group, or role).</p>
 /// <p>This data type is used as a response element in the <code>ListPoliciesGrantingServiceAccess</code> operation.</p>
@@ -3759,6 +3780,13 @@ impl ListPoliciesGrantingServiceAccessEntry {
         self.policies.as_deref()
     }
 }
+impl ListPoliciesGrantingServiceAccessEntry {
+    /// Creates a new builder-style object to manufacture [`ListPoliciesGrantingServiceAccessEntry`](crate::model::ListPoliciesGrantingServiceAccessEntry).
+    pub fn builder() -> crate::model::list_policies_granting_service_access_entry::Builder {
+        crate::model::list_policies_granting_service_access_entry::Builder::default()
+    }
+}
+
 /// See [`ListPoliciesGrantingServiceAccessEntry`](crate::model::ListPoliciesGrantingServiceAccessEntry).
 pub mod list_policies_granting_service_access_entry {
 
@@ -3814,12 +3842,6 @@ pub mod list_policies_granting_service_access_entry {
         }
     }
 }
-impl ListPoliciesGrantingServiceAccessEntry {
-    /// Creates a new builder-style object to manufacture [`ListPoliciesGrantingServiceAccessEntry`](crate::model::ListPoliciesGrantingServiceAccessEntry).
-    pub fn builder() -> crate::model::list_policies_granting_service_access_entry::Builder {
-        crate::model::list_policies_granting_service_access_entry::Builder::default()
-    }
-}
 
 /// <p>Contains details about the permissions policies that are attached to the specified identity (user, group, or role).</p>
 /// <p>This data type is an element of the <code>ListPoliciesGrantingServiceAccessEntry</code> object.</p>
@@ -3870,6 +3892,13 @@ impl PolicyGrantingServiceAccess {
         self.entity_name.as_deref()
     }
 }
+impl PolicyGrantingServiceAccess {
+    /// Creates a new builder-style object to manufacture [`PolicyGrantingServiceAccess`](crate::model::PolicyGrantingServiceAccess).
+    pub fn builder() -> crate::model::policy_granting_service_access::Builder {
+        crate::model::policy_granting_service_access::Builder::default()
+    }
+}
+
 /// See [`PolicyGrantingServiceAccess`](crate::model::PolicyGrantingServiceAccess).
 pub mod policy_granting_service_access {
 
@@ -3956,12 +3985,6 @@ pub mod policy_granting_service_access {
                 entity_name: self.entity_name,
             }
         }
-    }
-}
-impl PolicyGrantingServiceAccess {
-    /// Creates a new builder-style object to manufacture [`PolicyGrantingServiceAccess`](crate::model::PolicyGrantingServiceAccess).
-    pub fn builder() -> crate::model::policy_granting_service_access::Builder {
-        crate::model::policy_granting_service_access::Builder::default()
     }
 }
 
@@ -4257,6 +4280,13 @@ impl Policy {
         self.tags.as_deref()
     }
 }
+impl Policy {
+    /// Creates a new builder-style object to manufacture [`Policy`](crate::model::Policy).
+    pub fn builder() -> crate::model::policy::Builder {
+        crate::model::policy::Builder::default()
+    }
+}
+
 /// See [`Policy`](crate::model::Policy).
 pub mod policy {
 
@@ -4448,12 +4478,6 @@ pub mod policy {
                 tags: self.tags,
             }
         }
-    }
-}
-impl Policy {
-    /// Creates a new builder-style object to manufacture [`Policy`](crate::model::Policy).
-    pub fn builder() -> crate::model::policy::Builder {
-        crate::model::policy::Builder::default()
     }
 }
 
@@ -4661,6 +4685,13 @@ impl OpenIdConnectProviderListEntry {
         self.arn.as_deref()
     }
 }
+impl OpenIdConnectProviderListEntry {
+    /// Creates a new builder-style object to manufacture [`OpenIdConnectProviderListEntry`](crate::model::OpenIdConnectProviderListEntry).
+    pub fn builder() -> crate::model::open_id_connect_provider_list_entry::Builder {
+        crate::model::open_id_connect_provider_list_entry::Builder::default()
+    }
+}
+
 /// See [`OpenIdConnectProviderListEntry`](crate::model::OpenIdConnectProviderListEntry).
 pub mod open_id_connect_provider_list_entry {
 
@@ -4687,12 +4718,6 @@ pub mod open_id_connect_provider_list_entry {
         pub fn build(self) -> crate::model::OpenIdConnectProviderListEntry {
             crate::model::OpenIdConnectProviderListEntry { arn: self.arn }
         }
-    }
-}
-impl OpenIdConnectProviderListEntry {
-    /// Creates a new builder-style object to manufacture [`OpenIdConnectProviderListEntry`](crate::model::OpenIdConnectProviderListEntry).
-    pub fn builder() -> crate::model::open_id_connect_provider_list_entry::Builder {
-        crate::model::open_id_connect_provider_list_entry::Builder::default()
     }
 }
 
@@ -4725,6 +4750,13 @@ impl MfaDevice {
         self.enable_date.as_ref()
     }
 }
+impl MfaDevice {
+    /// Creates a new builder-style object to manufacture [`MfaDevice`](crate::model::MfaDevice).
+    pub fn builder() -> crate::model::mfa_device::Builder {
+        crate::model::mfa_device::Builder::default()
+    }
+}
+
 /// See [`MfaDevice`](crate::model::MfaDevice).
 pub mod mfa_device {
 
@@ -4781,12 +4813,6 @@ pub mod mfa_device {
                 enable_date: self.enable_date,
             }
         }
-    }
-}
-impl MfaDevice {
-    /// Creates a new builder-style object to manufacture [`MfaDevice`](crate::model::MfaDevice).
-    pub fn builder() -> crate::model::mfa_device::Builder {
-        crate::model::mfa_device::Builder::default()
     }
 }
 
@@ -4853,6 +4879,13 @@ impl InstanceProfile {
         self.tags.as_deref()
     }
 }
+impl InstanceProfile {
+    /// Creates a new builder-style object to manufacture [`InstanceProfile`](crate::model::InstanceProfile).
+    pub fn builder() -> crate::model::instance_profile::Builder {
+        crate::model::instance_profile::Builder::default()
+    }
+}
+
 /// See [`InstanceProfile`](crate::model::InstanceProfile).
 pub mod instance_profile {
 
@@ -4980,12 +5013,6 @@ pub mod instance_profile {
         }
     }
 }
-impl InstanceProfile {
-    /// Creates a new builder-style object to manufacture [`InstanceProfile`](crate::model::InstanceProfile).
-    pub fn builder() -> crate::model::instance_profile::Builder {
-        crate::model::instance_profile::Builder::default()
-    }
-}
 
 /// <p>Contains information about an IAM group entity.</p>
 /// <p>This data type is used as a response element in the following operations:</p>
@@ -5035,6 +5062,13 @@ impl Group {
         self.create_date.as_ref()
     }
 }
+impl Group {
+    /// Creates a new builder-style object to manufacture [`Group`](crate::model::Group).
+    pub fn builder() -> crate::model::group::Builder {
+        crate::model::group::Builder::default()
+    }
+}
+
 /// See [`Group`](crate::model::Group).
 pub mod group {
 
@@ -5114,12 +5148,6 @@ pub mod group {
         }
     }
 }
-impl Group {
-    /// Creates a new builder-style object to manufacture [`Group`](crate::model::Group).
-    pub fn builder() -> crate::model::group::Builder {
-        crate::model::group::Builder::default()
-    }
-}
 
 /// <p>Contains information about a role that a managed policy is attached to.</p>
 /// <p>This data type is used as a response element in the <code>ListEntitiesForPolicy</code> operation. </p>
@@ -5144,6 +5172,13 @@ impl PolicyRole {
         self.role_id.as_deref()
     }
 }
+impl PolicyRole {
+    /// Creates a new builder-style object to manufacture [`PolicyRole`](crate::model::PolicyRole).
+    pub fn builder() -> crate::model::policy_role::Builder {
+        crate::model::policy_role::Builder::default()
+    }
+}
+
 /// See [`PolicyRole`](crate::model::PolicyRole).
 pub mod policy_role {
 
@@ -5184,12 +5219,6 @@ pub mod policy_role {
         }
     }
 }
-impl PolicyRole {
-    /// Creates a new builder-style object to manufacture [`PolicyRole`](crate::model::PolicyRole).
-    pub fn builder() -> crate::model::policy_role::Builder {
-        crate::model::policy_role::Builder::default()
-    }
-}
 
 /// <p>Contains information about a user that a managed policy is attached to.</p>
 /// <p>This data type is used as a response element in the <code>ListEntitiesForPolicy</code> operation. </p>
@@ -5214,6 +5243,13 @@ impl PolicyUser {
         self.user_id.as_deref()
     }
 }
+impl PolicyUser {
+    /// Creates a new builder-style object to manufacture [`PolicyUser`](crate::model::PolicyUser).
+    pub fn builder() -> crate::model::policy_user::Builder {
+        crate::model::policy_user::Builder::default()
+    }
+}
+
 /// See [`PolicyUser`](crate::model::PolicyUser).
 pub mod policy_user {
 
@@ -5254,12 +5290,6 @@ pub mod policy_user {
         }
     }
 }
-impl PolicyUser {
-    /// Creates a new builder-style object to manufacture [`PolicyUser`](crate::model::PolicyUser).
-    pub fn builder() -> crate::model::policy_user::Builder {
-        crate::model::policy_user::Builder::default()
-    }
-}
 
 /// <p>Contains information about a group that a managed policy is attached to.</p>
 /// <p>This data type is used as a response element in the <code>ListEntitiesForPolicy</code> operation. </p>
@@ -5284,6 +5314,13 @@ impl PolicyGroup {
         self.group_id.as_deref()
     }
 }
+impl PolicyGroup {
+    /// Creates a new builder-style object to manufacture [`PolicyGroup`](crate::model::PolicyGroup).
+    pub fn builder() -> crate::model::policy_group::Builder {
+        crate::model::policy_group::Builder::default()
+    }
+}
+
 /// See [`PolicyGroup`](crate::model::PolicyGroup).
 pub mod policy_group {
 
@@ -5322,12 +5359,6 @@ pub mod policy_group {
                 group_id: self.group_id,
             }
         }
-    }
-}
-impl PolicyGroup {
-    /// Creates a new builder-style object to manufacture [`PolicyGroup`](crate::model::PolicyGroup).
-    pub fn builder() -> crate::model::policy_group::Builder {
-        crate::model::policy_group::Builder::default()
     }
 }
 
@@ -5467,6 +5498,13 @@ impl AttachedPolicy {
         self.policy_arn.as_deref()
     }
 }
+impl AttachedPolicy {
+    /// Creates a new builder-style object to manufacture [`AttachedPolicy`](crate::model::AttachedPolicy).
+    pub fn builder() -> crate::model::attached_policy::Builder {
+        crate::model::attached_policy::Builder::default()
+    }
+}
+
 /// See [`AttachedPolicy`](crate::model::AttachedPolicy).
 pub mod attached_policy {
 
@@ -5509,12 +5547,6 @@ pub mod attached_policy {
         }
     }
 }
-impl AttachedPolicy {
-    /// Creates a new builder-style object to manufacture [`AttachedPolicy`](crate::model::AttachedPolicy).
-    pub fn builder() -> crate::model::attached_policy::Builder {
-        crate::model::attached_policy::Builder::default()
-    }
-}
 
 /// <p>Contains information about an Amazon Web Services access key, without its secret key.</p>
 /// <p>This data type is used as a response element in the <code>ListAccessKeys</code> operation.</p>
@@ -5552,6 +5584,13 @@ impl AccessKeyMetadata {
         self.create_date.as_ref()
     }
 }
+impl AccessKeyMetadata {
+    /// Creates a new builder-style object to manufacture [`AccessKeyMetadata`](crate::model::AccessKeyMetadata).
+    pub fn builder() -> crate::model::access_key_metadata::Builder {
+        crate::model::access_key_metadata::Builder::default()
+    }
+}
+
 /// See [`AccessKeyMetadata`](crate::model::AccessKeyMetadata).
 pub mod access_key_metadata {
 
@@ -5620,12 +5659,6 @@ pub mod access_key_metadata {
                 create_date: self.create_date,
             }
         }
-    }
-}
-impl AccessKeyMetadata {
-    /// Creates a new builder-style object to manufacture [`AccessKeyMetadata`](crate::model::AccessKeyMetadata).
-    pub fn builder() -> crate::model::access_key_metadata::Builder {
-        crate::model::access_key_metadata::Builder::default()
     }
 }
 
@@ -5741,6 +5774,13 @@ impl DeletionTaskFailureReasonType {
         self.role_usage_list.as_deref()
     }
 }
+impl DeletionTaskFailureReasonType {
+    /// Creates a new builder-style object to manufacture [`DeletionTaskFailureReasonType`](crate::model::DeletionTaskFailureReasonType).
+    pub fn builder() -> crate::model::deletion_task_failure_reason_type::Builder {
+        crate::model::deletion_task_failure_reason_type::Builder::default()
+    }
+}
+
 /// See [`DeletionTaskFailureReasonType`](crate::model::DeletionTaskFailureReasonType).
 pub mod deletion_task_failure_reason_type {
 
@@ -5790,12 +5830,6 @@ pub mod deletion_task_failure_reason_type {
         }
     }
 }
-impl DeletionTaskFailureReasonType {
-    /// Creates a new builder-style object to manufacture [`DeletionTaskFailureReasonType`](crate::model::DeletionTaskFailureReasonType).
-    pub fn builder() -> crate::model::deletion_task_failure_reason_type::Builder {
-        crate::model::deletion_task_failure_reason_type::Builder::default()
-    }
-}
 
 /// <p>An object that contains details about how a service-linked role is used, if that information is returned by the service.</p>
 /// <p>This data type is used as a response element in the <code>GetServiceLinkedRoleDeletionStatus</code> operation.</p>
@@ -5819,6 +5853,13 @@ impl RoleUsageType {
         self.resources.as_deref()
     }
 }
+impl RoleUsageType {
+    /// Creates a new builder-style object to manufacture [`RoleUsageType`](crate::model::RoleUsageType).
+    pub fn builder() -> crate::model::role_usage_type::Builder {
+        crate::model::role_usage_type::Builder::default()
+    }
+}
+
 /// See [`RoleUsageType`](crate::model::RoleUsageType).
 pub mod role_usage_type {
 
@@ -5866,12 +5907,6 @@ pub mod role_usage_type {
                 resources: self.resources,
             }
         }
-    }
-}
-impl RoleUsageType {
-    /// Creates a new builder-style object to manufacture [`RoleUsageType`](crate::model::RoleUsageType).
-    pub fn builder() -> crate::model::role_usage_type::Builder {
-        crate::model::role_usage_type::Builder::default()
     }
 }
 
@@ -5999,6 +6034,13 @@ impl ErrorDetails {
         self.code.as_deref()
     }
 }
+impl ErrorDetails {
+    /// Creates a new builder-style object to manufacture [`ErrorDetails`](crate::model::ErrorDetails).
+    pub fn builder() -> crate::model::error_details::Builder {
+        crate::model::error_details::Builder::default()
+    }
+}
+
 /// See [`ErrorDetails`](crate::model::ErrorDetails).
 pub mod error_details {
 
@@ -6039,12 +6081,6 @@ pub mod error_details {
         }
     }
 }
-impl ErrorDetails {
-    /// Creates a new builder-style object to manufacture [`ErrorDetails`](crate::model::ErrorDetails).
-    pub fn builder() -> crate::model::error_details::Builder {
-        crate::model::error_details::Builder::default()
-    }
-}
 
 /// <p>An object that contains details about when the IAM entities (users or roles) were last used in an attempt to access the specified Amazon Web Services service.</p>
 /// <p>This data type is a response element in the <code>GetServiceLastAccessedDetailsWithEntities</code> operation.</p>
@@ -6070,6 +6106,13 @@ impl EntityDetails {
         self.last_authenticated.as_ref()
     }
 }
+impl EntityDetails {
+    /// Creates a new builder-style object to manufacture [`EntityDetails`](crate::model::EntityDetails).
+    pub fn builder() -> crate::model::entity_details::Builder {
+        crate::model::entity_details::Builder::default()
+    }
+}
+
 /// See [`EntityDetails`](crate::model::EntityDetails).
 pub mod entity_details {
 
@@ -6118,12 +6161,6 @@ pub mod entity_details {
         }
     }
 }
-impl EntityDetails {
-    /// Creates a new builder-style object to manufacture [`EntityDetails`](crate::model::EntityDetails).
-    pub fn builder() -> crate::model::entity_details::Builder {
-        crate::model::entity_details::Builder::default()
-    }
-}
 
 /// <p>Contains details about the specified entity (user or role).</p>
 /// <p>This data type is an element of the <code>EntityDetails</code> object.</p>
@@ -6170,6 +6207,13 @@ impl EntityInfo {
         self.path.as_deref()
     }
 }
+impl EntityInfo {
+    /// Creates a new builder-style object to manufacture [`EntityInfo`](crate::model::EntityInfo).
+    pub fn builder() -> crate::model::entity_info::Builder {
+        crate::model::entity_info::Builder::default()
+    }
+}
+
 /// See [`EntityInfo`](crate::model::EntityInfo).
 pub mod entity_info {
 
@@ -6249,12 +6293,6 @@ pub mod entity_info {
                 path: self.path,
             }
         }
-    }
-}
-impl EntityInfo {
-    /// Creates a new builder-style object to manufacture [`EntityInfo`](crate::model::EntityInfo).
-    pub fn builder() -> crate::model::entity_info::Builder {
-        crate::model::entity_info::Builder::default()
     }
 }
 
@@ -6425,6 +6463,13 @@ impl ServiceLastAccessed {
         self.tracked_actions_last_accessed.as_deref()
     }
 }
+impl ServiceLastAccessed {
+    /// Creates a new builder-style object to manufacture [`ServiceLastAccessed`](crate::model::ServiceLastAccessed).
+    pub fn builder() -> crate::model::service_last_accessed::Builder {
+        crate::model::service_last_accessed::Builder::default()
+    }
+}
+
 /// See [`ServiceLastAccessed`](crate::model::ServiceLastAccessed).
 pub mod service_last_accessed {
 
@@ -6562,12 +6607,6 @@ pub mod service_last_accessed {
         }
     }
 }
-impl ServiceLastAccessed {
-    /// Creates a new builder-style object to manufacture [`ServiceLastAccessed`](crate::model::ServiceLastAccessed).
-    pub fn builder() -> crate::model::service_last_accessed::Builder {
-        crate::model::service_last_accessed::Builder::default()
-    }
-}
 
 /// <p>Contains details about the most recent attempt to access an action within the service.</p>
 /// <p>This data type is used as a response element in the <code>GetServiceLastAccessedDetails</code> operation.</p>
@@ -6611,6 +6650,13 @@ impl TrackedActionLastAccessed {
         self.last_accessed_region.as_deref()
     }
 }
+impl TrackedActionLastAccessed {
+    /// Creates a new builder-style object to manufacture [`TrackedActionLastAccessed`](crate::model::TrackedActionLastAccessed).
+    pub fn builder() -> crate::model::tracked_action_last_accessed::Builder {
+        crate::model::tracked_action_last_accessed::Builder::default()
+    }
+}
+
 /// See [`TrackedActionLastAccessed`](crate::model::TrackedActionLastAccessed).
 pub mod tracked_action_last_accessed {
 
@@ -6688,12 +6734,6 @@ pub mod tracked_action_last_accessed {
                 last_accessed_region: self.last_accessed_region,
             }
         }
-    }
-}
-impl TrackedActionLastAccessed {
-    /// Creates a new builder-style object to manufacture [`TrackedActionLastAccessed`](crate::model::TrackedActionLastAccessed).
-    pub fn builder() -> crate::model::tracked_action_last_accessed::Builder {
-        crate::model::tracked_action_last_accessed::Builder::default()
     }
 }
 
@@ -6827,6 +6867,13 @@ impl ServerCertificate {
         self.tags.as_deref()
     }
 }
+impl ServerCertificate {
+    /// Creates a new builder-style object to manufacture [`ServerCertificate`](crate::model::ServerCertificate).
+    pub fn builder() -> crate::model::server_certificate::Builder {
+        crate::model::server_certificate::Builder::default()
+    }
+}
+
 /// See [`ServerCertificate`](crate::model::ServerCertificate).
 pub mod server_certificate {
 
@@ -6913,12 +6960,6 @@ pub mod server_certificate {
         }
     }
 }
-impl ServerCertificate {
-    /// Creates a new builder-style object to manufacture [`ServerCertificate`](crate::model::ServerCertificate).
-    pub fn builder() -> crate::model::server_certificate::Builder {
-        crate::model::server_certificate::Builder::default()
-    }
-}
 
 /// <p>An object that contains details about when a principal in the reported Organizations entity last attempted to access an Amazon Web Services service. A principal can be an IAM user, an IAM role, or the Amazon Web Services account root user within the reported Organizations entity.</p>
 /// <p>This data type is a response element in the <code>GetOrganizationsAccessReport</code> operation.</p>
@@ -6978,6 +7019,13 @@ impl AccessDetail {
         self.total_authenticated_entities
     }
 }
+impl AccessDetail {
+    /// Creates a new builder-style object to manufacture [`AccessDetail`](crate::model::AccessDetail).
+    pub fn builder() -> crate::model::access_detail::Builder {
+        crate::model::access_detail::Builder::default()
+    }
+}
+
 /// See [`AccessDetail`](crate::model::AccessDetail).
 pub mod access_detail {
 
@@ -7078,12 +7126,6 @@ pub mod access_detail {
                 total_authenticated_entities: self.total_authenticated_entities,
             }
         }
-    }
-}
-impl AccessDetail {
-    /// Creates a new builder-style object to manufacture [`AccessDetail`](crate::model::AccessDetail).
-    pub fn builder() -> crate::model::access_detail::Builder {
-        crate::model::access_detail::Builder::default()
     }
 }
 
@@ -7221,6 +7263,13 @@ impl LoginProfile {
         self.password_reset_required
     }
 }
+impl LoginProfile {
+    /// Creates a new builder-style object to manufacture [`LoginProfile`](crate::model::LoginProfile).
+    pub fn builder() -> crate::model::login_profile::Builder {
+        crate::model::login_profile::Builder::default()
+    }
+}
+
 /// See [`LoginProfile`](crate::model::LoginProfile).
 pub mod login_profile {
 
@@ -7274,12 +7323,6 @@ pub mod login_profile {
                 password_reset_required: self.password_reset_required.unwrap_or_default(),
             }
         }
-    }
-}
-impl LoginProfile {
-    /// Creates a new builder-style object to manufacture [`LoginProfile`](crate::model::LoginProfile).
-    pub fn builder() -> crate::model::login_profile::Builder {
-        crate::model::login_profile::Builder::default()
     }
 }
 
@@ -7689,6 +7732,13 @@ impl PasswordPolicy {
         self.hard_expiry
     }
 }
+impl PasswordPolicy {
+    /// Creates a new builder-style object to manufacture [`PasswordPolicy`](crate::model::PasswordPolicy).
+    pub fn builder() -> crate::model::password_policy::Builder {
+        crate::model::password_policy::Builder::default()
+    }
+}
+
 /// See [`PasswordPolicy`](crate::model::PasswordPolicy).
 pub mod password_policy {
 
@@ -7838,12 +7888,6 @@ pub mod password_policy {
         }
     }
 }
-impl PasswordPolicy {
-    /// Creates a new builder-style object to manufacture [`PasswordPolicy`](crate::model::PasswordPolicy).
-    pub fn builder() -> crate::model::password_policy::Builder {
-        crate::model::password_policy::Builder::default()
-    }
-}
 
 /// <p>Contains information about a managed policy, including the policy's ARN, versions, and the number of principal entities (users, groups, and roles) that the policy is attached to.</p>
 /// <p>This data type is used as a response element in the <code>GetAccountAuthorizationDetails</code> operation.</p>
@@ -7950,6 +7994,13 @@ impl ManagedPolicyDetail {
         self.policy_version_list.as_deref()
     }
 }
+impl ManagedPolicyDetail {
+    /// Creates a new builder-style object to manufacture [`ManagedPolicyDetail`](crate::model::ManagedPolicyDetail).
+    pub fn builder() -> crate::model::managed_policy_detail::Builder {
+        crate::model::managed_policy_detail::Builder::default()
+    }
+}
+
 /// See [`ManagedPolicyDetail`](crate::model::ManagedPolicyDetail).
 pub mod managed_policy_detail {
 
@@ -8144,12 +8195,6 @@ pub mod managed_policy_detail {
         }
     }
 }
-impl ManagedPolicyDetail {
-    /// Creates a new builder-style object to manufacture [`ManagedPolicyDetail`](crate::model::ManagedPolicyDetail).
-    pub fn builder() -> crate::model::managed_policy_detail::Builder {
-        crate::model::managed_policy_detail::Builder::default()
-    }
-}
 
 /// <p>Contains information about an IAM role, including all of the role's policies.</p>
 /// <p>This data type is used as a response element in the <code>GetAccountAuthorizationDetails</code> operation.</p>
@@ -8251,6 +8296,13 @@ impl RoleDetail {
         self.role_last_used.as_ref()
     }
 }
+impl RoleDetail {
+    /// Creates a new builder-style object to manufacture [`RoleDetail`](crate::model::RoleDetail).
+    pub fn builder() -> crate::model::role_detail::Builder {
+        crate::model::role_detail::Builder::default()
+    }
+}
+
 /// See [`RoleDetail`](crate::model::RoleDetail).
 pub mod role_detail {
 
@@ -8472,12 +8524,6 @@ pub mod role_detail {
         }
     }
 }
-impl RoleDetail {
-    /// Creates a new builder-style object to manufacture [`RoleDetail`](crate::model::RoleDetail).
-    pub fn builder() -> crate::model::role_detail::Builder {
-        crate::model::role_detail::Builder::default()
-    }
-}
 
 /// <p>Contains information about an IAM policy, including the policy document.</p>
 /// <p>This data type is used as a response element in the <code>GetAccountAuthorizationDetails</code> operation.</p>
@@ -8501,6 +8547,13 @@ impl PolicyDetail {
         self.policy_document.as_deref()
     }
 }
+impl PolicyDetail {
+    /// Creates a new builder-style object to manufacture [`PolicyDetail`](crate::model::PolicyDetail).
+    pub fn builder() -> crate::model::policy_detail::Builder {
+        crate::model::policy_detail::Builder::default()
+    }
+}
+
 /// See [`PolicyDetail`](crate::model::PolicyDetail).
 pub mod policy_detail {
 
@@ -8542,12 +8595,6 @@ pub mod policy_detail {
                 policy_document: self.policy_document,
             }
         }
-    }
-}
-impl PolicyDetail {
-    /// Creates a new builder-style object to manufacture [`PolicyDetail`](crate::model::PolicyDetail).
-    pub fn builder() -> crate::model::policy_detail::Builder {
-        crate::model::policy_detail::Builder::default()
     }
 }
 
@@ -8612,6 +8659,13 @@ impl GroupDetail {
         self.attached_managed_policies.as_deref()
     }
 }
+impl GroupDetail {
+    /// Creates a new builder-style object to manufacture [`GroupDetail`](crate::model::GroupDetail).
+    pub fn builder() -> crate::model::group_detail::Builder {
+        crate::model::group_detail::Builder::default()
+    }
+}
+
 /// See [`GroupDetail`](crate::model::GroupDetail).
 pub mod group_detail {
 
@@ -8737,12 +8791,6 @@ pub mod group_detail {
         }
     }
 }
-impl GroupDetail {
-    /// Creates a new builder-style object to manufacture [`GroupDetail`](crate::model::GroupDetail).
-    pub fn builder() -> crate::model::group_detail::Builder {
-        crate::model::group_detail::Builder::default()
-    }
-}
 
 /// <p>Contains information about an IAM user, including all the user's policies and all the IAM groups the user is in.</p>
 /// <p>This data type is used as a response element in the <code>GetAccountAuthorizationDetails</code> operation.</p>
@@ -8830,6 +8878,13 @@ impl UserDetail {
         self.tags.as_deref()
     }
 }
+impl UserDetail {
+    /// Creates a new builder-style object to manufacture [`UserDetail`](crate::model::UserDetail).
+    pub fn builder() -> crate::model::user_detail::Builder {
+        crate::model::user_detail::Builder::default()
+    }
+}
+
 /// See [`UserDetail`](crate::model::UserDetail).
 pub mod user_detail {
 
@@ -9017,12 +9072,6 @@ pub mod user_detail {
         }
     }
 }
-impl UserDetail {
-    /// Creates a new builder-style object to manufacture [`UserDetail`](crate::model::UserDetail).
-    pub fn builder() -> crate::model::user_detail::Builder {
-        crate::model::user_detail::Builder::default()
-    }
-}
 
 /// <p>Contains information about the last time an Amazon Web Services access key was used since IAM began tracking this information on April 22, 2015.</p>
 /// <p>This data type is used as a response element in the <code>GetAccessKeyLastUsed</code> operation.</p>
@@ -9085,6 +9134,13 @@ impl AccessKeyLastUsed {
         self.region.as_deref()
     }
 }
+impl AccessKeyLastUsed {
+    /// Creates a new builder-style object to manufacture [`AccessKeyLastUsed`](crate::model::AccessKeyLastUsed).
+    pub fn builder() -> crate::model::access_key_last_used::Builder {
+        crate::model::access_key_last_used::Builder::default()
+    }
+}
+
 /// See [`AccessKeyLastUsed`](crate::model::AccessKeyLastUsed).
 pub mod access_key_last_used {
 
@@ -9170,12 +9226,6 @@ pub mod access_key_last_used {
                 region: self.region,
             }
         }
-    }
-}
-impl AccessKeyLastUsed {
-    /// Creates a new builder-style object to manufacture [`AccessKeyLastUsed`](crate::model::AccessKeyLastUsed).
-    pub fn builder() -> crate::model::access_key_last_used::Builder {
-        crate::model::access_key_last_used::Builder::default()
     }
 }
 
@@ -9330,6 +9380,13 @@ impl std::fmt::Debug for AccessKey {
         formatter.finish()
     }
 }
+impl AccessKey {
+    /// Creates a new builder-style object to manufacture [`AccessKey`](crate::model::AccessKey).
+    pub fn builder() -> crate::model::access_key::Builder {
+        crate::model::access_key::Builder::default()
+    }
+}
+
 /// See [`AccessKey`](crate::model::AccessKey).
 pub mod access_key {
 
@@ -9424,11 +9481,5 @@ pub mod access_key {
             formatter.field("create_date", &self.create_date);
             formatter.finish()
         }
-    }
-}
-impl AccessKey {
-    /// Creates a new builder-style object to manufacture [`AccessKey`](crate::model::AccessKey).
-    pub fn builder() -> crate::model::access_key::Builder {
-        crate::model::access_key::Builder::default()
     }
 }

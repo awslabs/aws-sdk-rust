@@ -19,6 +19,13 @@ impl aws_http::request_id::RequestId for UpdateExperimentTemplateOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdateExperimentTemplateOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateExperimentTemplateOutput`](crate::output::UpdateExperimentTemplateOutput).
+    pub fn builder() -> crate::output::update_experiment_template_output::Builder {
+        crate::output::update_experiment_template_output::Builder::default()
+    }
+}
+
 /// See [`UpdateExperimentTemplateOutput`](crate::output::UpdateExperimentTemplateOutput).
 pub mod update_experiment_template_output {
 
@@ -61,12 +68,6 @@ pub mod update_experiment_template_output {
         }
     }
 }
-impl UpdateExperimentTemplateOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateExperimentTemplateOutput`](crate::output::UpdateExperimentTemplateOutput).
-    pub fn builder() -> crate::output::update_experiment_template_output::Builder {
-        crate::output::update_experiment_template_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -79,6 +80,13 @@ impl aws_http::request_id::RequestId for UntagResourceOutput {
         self._request_id.as_deref()
     }
 }
+impl UntagResourceOutput {
+    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    pub fn builder() -> crate::output::untag_resource_output::Builder {
+        crate::output::untag_resource_output::Builder::default()
+    }
+}
+
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
 
@@ -106,12 +114,6 @@ pub mod untag_resource_output {
         }
     }
 }
-impl UntagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
-    pub fn builder() -> crate::output::untag_resource_output::Builder {
-        crate::output::untag_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -124,6 +126,13 @@ impl aws_http::request_id::RequestId for TagResourceOutput {
         self._request_id.as_deref()
     }
 }
+impl TagResourceOutput {
+    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
+    pub fn builder() -> crate::output::tag_resource_output::Builder {
+        crate::output::tag_resource_output::Builder::default()
+    }
+}
+
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
 
@@ -151,12 +160,6 @@ pub mod tag_resource_output {
         }
     }
 }
-impl TagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
-    pub fn builder() -> crate::output::tag_resource_output::Builder {
-        crate::output::tag_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -178,6 +181,13 @@ impl aws_http::request_id::RequestId for StopExperimentOutput {
         self._request_id.as_deref()
     }
 }
+impl StopExperimentOutput {
+    /// Creates a new builder-style object to manufacture [`StopExperimentOutput`](crate::output::StopExperimentOutput).
+    pub fn builder() -> crate::output::stop_experiment_output::Builder {
+        crate::output::stop_experiment_output::Builder::default()
+    }
+}
+
 /// See [`StopExperimentOutput`](crate::output::StopExperimentOutput).
 pub mod stop_experiment_output {
 
@@ -220,12 +230,6 @@ pub mod stop_experiment_output {
         }
     }
 }
-impl StopExperimentOutput {
-    /// Creates a new builder-style object to manufacture [`StopExperimentOutput`](crate::output::StopExperimentOutput).
-    pub fn builder() -> crate::output::stop_experiment_output::Builder {
-        crate::output::stop_experiment_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -247,6 +251,13 @@ impl aws_http::request_id::RequestId for StartExperimentOutput {
         self._request_id.as_deref()
     }
 }
+impl StartExperimentOutput {
+    /// Creates a new builder-style object to manufacture [`StartExperimentOutput`](crate::output::StartExperimentOutput).
+    pub fn builder() -> crate::output::start_experiment_output::Builder {
+        crate::output::start_experiment_output::Builder::default()
+    }
+}
+
 /// See [`StartExperimentOutput`](crate::output::StartExperimentOutput).
 pub mod start_experiment_output {
 
@@ -289,12 +300,6 @@ pub mod start_experiment_output {
         }
     }
 }
-impl StartExperimentOutput {
-    /// Creates a new builder-style object to manufacture [`StartExperimentOutput`](crate::output::StartExperimentOutput).
-    pub fn builder() -> crate::output::start_experiment_output::Builder {
-        crate::output::start_experiment_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -326,6 +331,13 @@ impl aws_http::request_id::RequestId for ListTargetResourceTypesOutput {
         self._request_id.as_deref()
     }
 }
+impl ListTargetResourceTypesOutput {
+    /// Creates a new builder-style object to manufacture [`ListTargetResourceTypesOutput`](crate::output::ListTargetResourceTypesOutput).
+    pub fn builder() -> crate::output::list_target_resource_types_output::Builder {
+        crate::output::list_target_resource_types_output::Builder::default()
+    }
+}
+
 /// See [`ListTargetResourceTypesOutput`](crate::output::ListTargetResourceTypesOutput).
 pub mod list_target_resource_types_output {
 
@@ -390,12 +402,6 @@ pub mod list_target_resource_types_output {
         }
     }
 }
-impl ListTargetResourceTypesOutput {
-    /// Creates a new builder-style object to manufacture [`ListTargetResourceTypesOutput`](crate::output::ListTargetResourceTypesOutput).
-    pub fn builder() -> crate::output::list_target_resource_types_output::Builder {
-        crate::output::list_target_resource_types_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -421,6 +427,13 @@ impl aws_http::request_id::RequestId for ListTagsForResourceOutput {
         self._request_id.as_deref()
     }
 }
+impl ListTagsForResourceOutput {
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
+        crate::output::list_tags_for_resource_output::Builder::default()
+    }
+}
+
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
 
@@ -477,12 +490,6 @@ pub mod list_tags_for_resource_output {
         }
     }
 }
-impl ListTagsForResourceOutput {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
-    pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
-        crate::output::list_tags_for_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -514,6 +521,13 @@ impl aws_http::request_id::RequestId for ListExperimentTemplatesOutput {
         self._request_id.as_deref()
     }
 }
+impl ListExperimentTemplatesOutput {
+    /// Creates a new builder-style object to manufacture [`ListExperimentTemplatesOutput`](crate::output::ListExperimentTemplatesOutput).
+    pub fn builder() -> crate::output::list_experiment_templates_output::Builder {
+        crate::output::list_experiment_templates_output::Builder::default()
+    }
+}
+
 /// See [`ListExperimentTemplatesOutput`](crate::output::ListExperimentTemplatesOutput).
 pub mod list_experiment_templates_output {
 
@@ -578,12 +592,6 @@ pub mod list_experiment_templates_output {
         }
     }
 }
-impl ListExperimentTemplatesOutput {
-    /// Creates a new builder-style object to manufacture [`ListExperimentTemplatesOutput`](crate::output::ListExperimentTemplatesOutput).
-    pub fn builder() -> crate::output::list_experiment_templates_output::Builder {
-        crate::output::list_experiment_templates_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -612,6 +620,13 @@ impl aws_http::request_id::RequestId for ListExperimentsOutput {
         self._request_id.as_deref()
     }
 }
+impl ListExperimentsOutput {
+    /// Creates a new builder-style object to manufacture [`ListExperimentsOutput`](crate::output::ListExperimentsOutput).
+    pub fn builder() -> crate::output::list_experiments_output::Builder {
+        crate::output::list_experiments_output::Builder::default()
+    }
+}
+
 /// See [`ListExperimentsOutput`](crate::output::ListExperimentsOutput).
 pub mod list_experiments_output {
 
@@ -672,12 +687,6 @@ pub mod list_experiments_output {
         }
     }
 }
-impl ListExperimentsOutput {
-    /// Creates a new builder-style object to manufacture [`ListExperimentsOutput`](crate::output::ListExperimentsOutput).
-    pub fn builder() -> crate::output::list_experiments_output::Builder {
-        crate::output::list_experiments_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -706,6 +715,13 @@ impl aws_http::request_id::RequestId for ListActionsOutput {
         self._request_id.as_deref()
     }
 }
+impl ListActionsOutput {
+    /// Creates a new builder-style object to manufacture [`ListActionsOutput`](crate::output::ListActionsOutput).
+    pub fn builder() -> crate::output::list_actions_output::Builder {
+        crate::output::list_actions_output::Builder::default()
+    }
+}
+
 /// See [`ListActionsOutput`](crate::output::ListActionsOutput).
 pub mod list_actions_output {
 
@@ -766,12 +782,6 @@ pub mod list_actions_output {
         }
     }
 }
-impl ListActionsOutput {
-    /// Creates a new builder-style object to manufacture [`ListActionsOutput`](crate::output::ListActionsOutput).
-    pub fn builder() -> crate::output::list_actions_output::Builder {
-        crate::output::list_actions_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -793,6 +803,13 @@ impl aws_http::request_id::RequestId for GetTargetResourceTypeOutput {
         self._request_id.as_deref()
     }
 }
+impl GetTargetResourceTypeOutput {
+    /// Creates a new builder-style object to manufacture [`GetTargetResourceTypeOutput`](crate::output::GetTargetResourceTypeOutput).
+    pub fn builder() -> crate::output::get_target_resource_type_output::Builder {
+        crate::output::get_target_resource_type_output::Builder::default()
+    }
+}
+
 /// See [`GetTargetResourceTypeOutput`](crate::output::GetTargetResourceTypeOutput).
 pub mod get_target_resource_type_output {
 
@@ -835,12 +852,6 @@ pub mod get_target_resource_type_output {
         }
     }
 }
-impl GetTargetResourceTypeOutput {
-    /// Creates a new builder-style object to manufacture [`GetTargetResourceTypeOutput`](crate::output::GetTargetResourceTypeOutput).
-    pub fn builder() -> crate::output::get_target_resource_type_output::Builder {
-        crate::output::get_target_resource_type_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -862,6 +873,13 @@ impl aws_http::request_id::RequestId for GetExperimentTemplateOutput {
         self._request_id.as_deref()
     }
 }
+impl GetExperimentTemplateOutput {
+    /// Creates a new builder-style object to manufacture [`GetExperimentTemplateOutput`](crate::output::GetExperimentTemplateOutput).
+    pub fn builder() -> crate::output::get_experiment_template_output::Builder {
+        crate::output::get_experiment_template_output::Builder::default()
+    }
+}
+
 /// See [`GetExperimentTemplateOutput`](crate::output::GetExperimentTemplateOutput).
 pub mod get_experiment_template_output {
 
@@ -904,12 +922,6 @@ pub mod get_experiment_template_output {
         }
     }
 }
-impl GetExperimentTemplateOutput {
-    /// Creates a new builder-style object to manufacture [`GetExperimentTemplateOutput`](crate::output::GetExperimentTemplateOutput).
-    pub fn builder() -> crate::output::get_experiment_template_output::Builder {
-        crate::output::get_experiment_template_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -931,6 +943,13 @@ impl aws_http::request_id::RequestId for GetExperimentOutput {
         self._request_id.as_deref()
     }
 }
+impl GetExperimentOutput {
+    /// Creates a new builder-style object to manufacture [`GetExperimentOutput`](crate::output::GetExperimentOutput).
+    pub fn builder() -> crate::output::get_experiment_output::Builder {
+        crate::output::get_experiment_output::Builder::default()
+    }
+}
+
 /// See [`GetExperimentOutput`](crate::output::GetExperimentOutput).
 pub mod get_experiment_output {
 
@@ -973,12 +992,6 @@ pub mod get_experiment_output {
         }
     }
 }
-impl GetExperimentOutput {
-    /// Creates a new builder-style object to manufacture [`GetExperimentOutput`](crate::output::GetExperimentOutput).
-    pub fn builder() -> crate::output::get_experiment_output::Builder {
-        crate::output::get_experiment_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1000,6 +1013,13 @@ impl aws_http::request_id::RequestId for GetActionOutput {
         self._request_id.as_deref()
     }
 }
+impl GetActionOutput {
+    /// Creates a new builder-style object to manufacture [`GetActionOutput`](crate::output::GetActionOutput).
+    pub fn builder() -> crate::output::get_action_output::Builder {
+        crate::output::get_action_output::Builder::default()
+    }
+}
+
 /// See [`GetActionOutput`](crate::output::GetActionOutput).
 pub mod get_action_output {
 
@@ -1039,12 +1059,6 @@ pub mod get_action_output {
         }
     }
 }
-impl GetActionOutput {
-    /// Creates a new builder-style object to manufacture [`GetActionOutput`](crate::output::GetActionOutput).
-    pub fn builder() -> crate::output::get_action_output::Builder {
-        crate::output::get_action_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1066,6 +1080,13 @@ impl aws_http::request_id::RequestId for DeleteExperimentTemplateOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteExperimentTemplateOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteExperimentTemplateOutput`](crate::output::DeleteExperimentTemplateOutput).
+    pub fn builder() -> crate::output::delete_experiment_template_output::Builder {
+        crate::output::delete_experiment_template_output::Builder::default()
+    }
+}
+
 /// See [`DeleteExperimentTemplateOutput`](crate::output::DeleteExperimentTemplateOutput).
 pub mod delete_experiment_template_output {
 
@@ -1108,12 +1129,6 @@ pub mod delete_experiment_template_output {
         }
     }
 }
-impl DeleteExperimentTemplateOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteExperimentTemplateOutput`](crate::output::DeleteExperimentTemplateOutput).
-    pub fn builder() -> crate::output::delete_experiment_template_output::Builder {
-        crate::output::delete_experiment_template_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1135,6 +1150,13 @@ impl aws_http::request_id::RequestId for CreateExperimentTemplateOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateExperimentTemplateOutput {
+    /// Creates a new builder-style object to manufacture [`CreateExperimentTemplateOutput`](crate::output::CreateExperimentTemplateOutput).
+    pub fn builder() -> crate::output::create_experiment_template_output::Builder {
+        crate::output::create_experiment_template_output::Builder::default()
+    }
+}
+
 /// See [`CreateExperimentTemplateOutput`](crate::output::CreateExperimentTemplateOutput).
 pub mod create_experiment_template_output {
 
@@ -1175,11 +1197,5 @@ pub mod create_experiment_template_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl CreateExperimentTemplateOutput {
-    /// Creates a new builder-style object to manufacture [`CreateExperimentTemplateOutput`](crate::output::CreateExperimentTemplateOutput).
-    pub fn builder() -> crate::output::create_experiment_template_output::Builder {
-        crate::output::create_experiment_template_output::Builder::default()
     }
 }

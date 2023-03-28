@@ -88,6 +88,13 @@ impl VpcIngressConnection {
         self.deleted_at.as_ref()
     }
 }
+impl VpcIngressConnection {
+    /// Creates a new builder-style object to manufacture [`VpcIngressConnection`](crate::model::VpcIngressConnection).
+    pub fn builder() -> crate::model::vpc_ingress_connection::Builder {
+        crate::model::vpc_ingress_connection::Builder::default()
+    }
+}
+
 /// See [`VpcIngressConnection`](crate::model::VpcIngressConnection).
 pub mod vpc_ingress_connection {
 
@@ -253,12 +260,6 @@ pub mod vpc_ingress_connection {
         }
     }
 }
-impl VpcIngressConnection {
-    /// Creates a new builder-style object to manufacture [`VpcIngressConnection`](crate::model::VpcIngressConnection).
-    pub fn builder() -> crate::model::vpc_ingress_connection::Builder {
-        crate::model::vpc_ingress_connection::Builder::default()
-    }
-}
 
 /// <p>The configuration of your VPC and the associated VPC endpoint. The VPC endpoint is an Amazon Web Services PrivateLink resource that allows access to your App Runner services from within an Amazon VPC.</p>
 #[non_exhaustive]
@@ -281,6 +282,13 @@ impl IngressVpcConfiguration {
         self.vpc_endpoint_id.as_deref()
     }
 }
+impl IngressVpcConfiguration {
+    /// Creates a new builder-style object to manufacture [`IngressVpcConfiguration`](crate::model::IngressVpcConfiguration).
+    pub fn builder() -> crate::model::ingress_vpc_configuration::Builder {
+        crate::model::ingress_vpc_configuration::Builder::default()
+    }
+}
+
 /// See [`IngressVpcConfiguration`](crate::model::IngressVpcConfiguration).
 pub mod ingress_vpc_configuration {
 
@@ -322,12 +330,6 @@ pub mod ingress_vpc_configuration {
                 vpc_endpoint_id: self.vpc_endpoint_id,
             }
         }
-    }
-}
-impl IngressVpcConfiguration {
-    /// Creates a new builder-style object to manufacture [`IngressVpcConfiguration`](crate::model::IngressVpcConfiguration).
-    pub fn builder() -> crate::model::ingress_vpc_configuration::Builder {
-        crate::model::ingress_vpc_configuration::Builder::default()
     }
 }
 
@@ -597,6 +599,13 @@ impl Service {
         self.observability_configuration.as_ref()
     }
 }
+impl Service {
+    /// Creates a new builder-style object to manufacture [`Service`](crate::model::Service).
+    pub fn builder() -> crate::model::service::Builder {
+        crate::model::service::Builder::default()
+    }
+}
+
 /// See [`Service`](crate::model::Service).
 pub mod service {
 
@@ -853,12 +862,6 @@ pub mod service {
         }
     }
 }
-impl Service {
-    /// Creates a new builder-style object to manufacture [`Service`](crate::model::Service).
-    pub fn builder() -> crate::model::service::Builder {
-        crate::model::service::Builder::default()
-    }
-}
 
 /// <p>Describes the observability configuration of an App Runner service. These are additional observability features, like tracing, that you choose to enable. They're configured in a separate resource that you associate with your service.</p>
 #[non_exhaustive]
@@ -885,6 +888,13 @@ impl ServiceObservabilityConfiguration {
         self.observability_configuration_arn.as_deref()
     }
 }
+impl ServiceObservabilityConfiguration {
+    /// Creates a new builder-style object to manufacture [`ServiceObservabilityConfiguration`](crate::model::ServiceObservabilityConfiguration).
+    pub fn builder() -> crate::model::service_observability_configuration::Builder {
+        crate::model::service_observability_configuration::Builder::default()
+    }
+}
+
 /// See [`ServiceObservabilityConfiguration`](crate::model::ServiceObservabilityConfiguration).
 pub mod service_observability_configuration {
 
@@ -935,12 +945,6 @@ pub mod service_observability_configuration {
         }
     }
 }
-impl ServiceObservabilityConfiguration {
-    /// Creates a new builder-style object to manufacture [`ServiceObservabilityConfiguration`](crate::model::ServiceObservabilityConfiguration).
-    pub fn builder() -> crate::model::service_observability_configuration::Builder {
-        crate::model::service_observability_configuration::Builder::default()
-    }
-}
 
 /// <p>Describes configuration settings related to network traffic of an App Runner service. Consists of embedded objects for each configurable network feature.</p>
 #[non_exhaustive]
@@ -965,6 +969,13 @@ impl NetworkConfiguration {
         self.ingress_configuration.as_ref()
     }
 }
+impl NetworkConfiguration {
+    /// Creates a new builder-style object to manufacture [`NetworkConfiguration`](crate::model::NetworkConfiguration).
+    pub fn builder() -> crate::model::network_configuration::Builder {
+        crate::model::network_configuration::Builder::default()
+    }
+}
+
 /// See [`NetworkConfiguration`](crate::model::NetworkConfiguration).
 pub mod network_configuration {
 
@@ -1011,12 +1022,6 @@ pub mod network_configuration {
         }
     }
 }
-impl NetworkConfiguration {
-    /// Creates a new builder-style object to manufacture [`NetworkConfiguration`](crate::model::NetworkConfiguration).
-    pub fn builder() -> crate::model::network_configuration::Builder {
-        crate::model::network_configuration::Builder::default()
-    }
-}
 
 /// <p>Network configuration settings for inbound network traffic.</p>
 #[non_exhaustive]
@@ -1032,6 +1037,13 @@ impl IngressConfiguration {
         self.is_publicly_accessible
     }
 }
+impl IngressConfiguration {
+    /// Creates a new builder-style object to manufacture [`IngressConfiguration`](crate::model::IngressConfiguration).
+    pub fn builder() -> crate::model::ingress_configuration::Builder {
+        crate::model::ingress_configuration::Builder::default()
+    }
+}
+
 /// See [`IngressConfiguration`](crate::model::IngressConfiguration).
 pub mod ingress_configuration {
 
@@ -1060,12 +1072,6 @@ pub mod ingress_configuration {
         }
     }
 }
-impl IngressConfiguration {
-    /// Creates a new builder-style object to manufacture [`IngressConfiguration`](crate::model::IngressConfiguration).
-    pub fn builder() -> crate::model::ingress_configuration::Builder {
-        crate::model::ingress_configuration::Builder::default()
-    }
-}
 
 /// <p>Describes configuration settings related to outbound network traffic of an App Runner service.</p>
 #[non_exhaustive]
@@ -1092,6 +1098,13 @@ impl EgressConfiguration {
         self.vpc_connector_arn.as_deref()
     }
 }
+impl EgressConfiguration {
+    /// Creates a new builder-style object to manufacture [`EgressConfiguration`](crate::model::EgressConfiguration).
+    pub fn builder() -> crate::model::egress_configuration::Builder {
+        crate::model::egress_configuration::Builder::default()
+    }
+}
+
 /// See [`EgressConfiguration`](crate::model::EgressConfiguration).
 pub mod egress_configuration {
 
@@ -1140,12 +1153,6 @@ pub mod egress_configuration {
                 vpc_connector_arn: self.vpc_connector_arn,
             }
         }
-    }
-}
-impl EgressConfiguration {
-    /// Creates a new builder-style object to manufacture [`EgressConfiguration`](crate::model::EgressConfiguration).
-    pub fn builder() -> crate::model::egress_configuration::Builder {
-        crate::model::egress_configuration::Builder::default()
     }
 }
 
@@ -1268,6 +1275,13 @@ impl AutoScalingConfigurationSummary {
         self.auto_scaling_configuration_revision
     }
 }
+impl AutoScalingConfigurationSummary {
+    /// Creates a new builder-style object to manufacture [`AutoScalingConfigurationSummary`](crate::model::AutoScalingConfigurationSummary).
+    pub fn builder() -> crate::model::auto_scaling_configuration_summary::Builder {
+        crate::model::auto_scaling_configuration_summary::Builder::default()
+    }
+}
+
 /// See [`AutoScalingConfigurationSummary`](crate::model::AutoScalingConfigurationSummary).
 pub mod auto_scaling_configuration_summary {
 
@@ -1337,12 +1351,6 @@ pub mod auto_scaling_configuration_summary {
         }
     }
 }
-impl AutoScalingConfigurationSummary {
-    /// Creates a new builder-style object to manufacture [`AutoScalingConfigurationSummary`](crate::model::AutoScalingConfigurationSummary).
-    pub fn builder() -> crate::model::auto_scaling_configuration_summary::Builder {
-        crate::model::auto_scaling_configuration_summary::Builder::default()
-    }
-}
 
 /// <p>Describes the settings for the health check that App Runner performs to monitor the health of a service.</p>
 #[non_exhaustive]
@@ -1409,6 +1417,13 @@ impl HealthCheckConfiguration {
         self.unhealthy_threshold
     }
 }
+impl HealthCheckConfiguration {
+    /// Creates a new builder-style object to manufacture [`HealthCheckConfiguration`](crate::model::HealthCheckConfiguration).
+    pub fn builder() -> crate::model::health_check_configuration::Builder {
+        crate::model::health_check_configuration::Builder::default()
+    }
+}
+
 /// See [`HealthCheckConfiguration`](crate::model::HealthCheckConfiguration).
 pub mod health_check_configuration {
 
@@ -1514,12 +1529,6 @@ pub mod health_check_configuration {
                 unhealthy_threshold: self.unhealthy_threshold,
             }
         }
-    }
-}
-impl HealthCheckConfiguration {
-    /// Creates a new builder-style object to manufacture [`HealthCheckConfiguration`](crate::model::HealthCheckConfiguration).
-    pub fn builder() -> crate::model::health_check_configuration::Builder {
-        crate::model::health_check_configuration::Builder::default()
     }
 }
 
@@ -1629,6 +1638,13 @@ impl EncryptionConfiguration {
         self.kms_key.as_deref()
     }
 }
+impl EncryptionConfiguration {
+    /// Creates a new builder-style object to manufacture [`EncryptionConfiguration`](crate::model::EncryptionConfiguration).
+    pub fn builder() -> crate::model::encryption_configuration::Builder {
+        crate::model::encryption_configuration::Builder::default()
+    }
+}
+
 /// See [`EncryptionConfiguration`](crate::model::EncryptionConfiguration).
 pub mod encryption_configuration {
 
@@ -1655,12 +1671,6 @@ pub mod encryption_configuration {
                 kms_key: self.kms_key,
             }
         }
-    }
-}
-impl EncryptionConfiguration {
-    /// Creates a new builder-style object to manufacture [`EncryptionConfiguration`](crate::model::EncryptionConfiguration).
-    pub fn builder() -> crate::model::encryption_configuration::Builder {
-        crate::model::encryption_configuration::Builder::default()
     }
 }
 
@@ -1696,6 +1706,13 @@ impl InstanceConfiguration {
         self.instance_role_arn.as_deref()
     }
 }
+impl InstanceConfiguration {
+    /// Creates a new builder-style object to manufacture [`InstanceConfiguration`](crate::model::InstanceConfiguration).
+    pub fn builder() -> crate::model::instance_configuration::Builder {
+        crate::model::instance_configuration::Builder::default()
+    }
+}
+
 /// See [`InstanceConfiguration`](crate::model::InstanceConfiguration).
 pub mod instance_configuration {
 
@@ -1755,12 +1772,6 @@ pub mod instance_configuration {
         }
     }
 }
-impl InstanceConfiguration {
-    /// Creates a new builder-style object to manufacture [`InstanceConfiguration`](crate::model::InstanceConfiguration).
-    pub fn builder() -> crate::model::instance_configuration::Builder {
-        crate::model::instance_configuration::Builder::default()
-    }
-}
 
 /// <p>Describes the source deployed to an App Runner service. It can be a code or an image repository.</p>
 #[non_exhaustive]
@@ -1806,6 +1817,13 @@ impl SourceConfiguration {
         self.authentication_configuration.as_ref()
     }
 }
+impl SourceConfiguration {
+    /// Creates a new builder-style object to manufacture [`SourceConfiguration`](crate::model::SourceConfiguration).
+    pub fn builder() -> crate::model::source_configuration::Builder {
+        crate::model::source_configuration::Builder::default()
+    }
+}
+
 /// See [`SourceConfiguration`](crate::model::SourceConfiguration).
 pub mod source_configuration {
 
@@ -1889,12 +1907,6 @@ pub mod source_configuration {
         }
     }
 }
-impl SourceConfiguration {
-    /// Creates a new builder-style object to manufacture [`SourceConfiguration`](crate::model::SourceConfiguration).
-    pub fn builder() -> crate::model::source_configuration::Builder {
-        crate::model::source_configuration::Builder::default()
-    }
-}
 
 /// <p>Describes resources needed to authenticate access to some source repositories. The specific resource depends on the repository provider.</p>
 #[non_exhaustive]
@@ -1917,6 +1929,13 @@ impl AuthenticationConfiguration {
         self.access_role_arn.as_deref()
     }
 }
+impl AuthenticationConfiguration {
+    /// Creates a new builder-style object to manufacture [`AuthenticationConfiguration`](crate::model::AuthenticationConfiguration).
+    pub fn builder() -> crate::model::authentication_configuration::Builder {
+        crate::model::authentication_configuration::Builder::default()
+    }
+}
+
 /// See [`AuthenticationConfiguration`](crate::model::AuthenticationConfiguration).
 pub mod authentication_configuration {
 
@@ -1963,12 +1982,6 @@ pub mod authentication_configuration {
         }
     }
 }
-impl AuthenticationConfiguration {
-    /// Creates a new builder-style object to manufacture [`AuthenticationConfiguration`](crate::model::AuthenticationConfiguration).
-    pub fn builder() -> crate::model::authentication_configuration::Builder {
-        crate::model::authentication_configuration::Builder::default()
-    }
-}
 
 /// <p>Describes a source image repository.</p>
 #[non_exhaustive]
@@ -2000,6 +2013,13 @@ impl ImageRepository {
         self.image_repository_type.as_ref()
     }
 }
+impl ImageRepository {
+    /// Creates a new builder-style object to manufacture [`ImageRepository`](crate::model::ImageRepository).
+    pub fn builder() -> crate::model::image_repository::Builder {
+        crate::model::image_repository::Builder::default()
+    }
+}
+
 /// See [`ImageRepository`](crate::model::ImageRepository).
 pub mod image_repository {
 
@@ -2061,12 +2081,6 @@ pub mod image_repository {
                 image_repository_type: self.image_repository_type,
             }
         }
-    }
-}
-impl ImageRepository {
-    /// Creates a new builder-style object to manufacture [`ImageRepository`](crate::model::ImageRepository).
-    pub fn builder() -> crate::model::image_repository::Builder {
-        crate::model::image_repository::Builder::default()
     }
 }
 
@@ -2233,6 +2247,13 @@ impl std::fmt::Debug for ImageConfiguration {
         formatter.finish()
     }
 }
+impl ImageConfiguration {
+    /// Creates a new builder-style object to manufacture [`ImageConfiguration`](crate::model::ImageConfiguration).
+    pub fn builder() -> crate::model::image_configuration::Builder {
+        crate::model::image_configuration::Builder::default()
+    }
+}
+
 /// See [`ImageConfiguration`](crate::model::ImageConfiguration).
 pub mod image_configuration {
 
@@ -2362,12 +2383,6 @@ pub mod image_configuration {
         }
     }
 }
-impl ImageConfiguration {
-    /// Creates a new builder-style object to manufacture [`ImageConfiguration`](crate::model::ImageConfiguration).
-    pub fn builder() -> crate::model::image_configuration::Builder {
-        crate::model::image_configuration::Builder::default()
-    }
-}
 
 /// <p>Describes a source code repository.</p>
 #[non_exhaustive]
@@ -2401,6 +2416,13 @@ impl CodeRepository {
         self.code_configuration.as_ref()
     }
 }
+impl CodeRepository {
+    /// Creates a new builder-style object to manufacture [`CodeRepository`](crate::model::CodeRepository).
+    pub fn builder() -> crate::model::code_repository::Builder {
+        crate::model::code_repository::Builder::default()
+    }
+}
+
 /// See [`CodeRepository`](crate::model::CodeRepository).
 pub mod code_repository {
 
@@ -2466,12 +2488,6 @@ pub mod code_repository {
         }
     }
 }
-impl CodeRepository {
-    /// Creates a new builder-style object to manufacture [`CodeRepository`](crate::model::CodeRepository).
-    pub fn builder() -> crate::model::code_repository::Builder {
-        crate::model::code_repository::Builder::default()
-    }
-}
 
 /// <p>Describes the configuration that App Runner uses to build and run an App Runner service from a source code repository.</p>
 #[non_exhaustive]
@@ -2504,6 +2520,13 @@ impl CodeConfiguration {
         self.code_configuration_values.as_ref()
     }
 }
+impl CodeConfiguration {
+    /// Creates a new builder-style object to manufacture [`CodeConfiguration`](crate::model::CodeConfiguration).
+    pub fn builder() -> crate::model::code_configuration::Builder {
+        crate::model::code_configuration::Builder::default()
+    }
+}
+
 /// See [`CodeConfiguration`](crate::model::CodeConfiguration).
 pub mod code_configuration {
 
@@ -2560,12 +2583,6 @@ pub mod code_configuration {
                 code_configuration_values: self.code_configuration_values,
             }
         }
-    }
-}
-impl CodeConfiguration {
-    /// Creates a new builder-style object to manufacture [`CodeConfiguration`](crate::model::CodeConfiguration).
-    pub fn builder() -> crate::model::code_configuration::Builder {
-        crate::model::code_configuration::Builder::default()
     }
 }
 
@@ -2656,6 +2673,13 @@ impl std::fmt::Debug for CodeConfigurationValues {
         formatter.finish()
     }
 }
+impl CodeConfigurationValues {
+    /// Creates a new builder-style object to manufacture [`CodeConfigurationValues`](crate::model::CodeConfigurationValues).
+    pub fn builder() -> crate::model::code_configuration_values::Builder {
+        crate::model::code_configuration_values::Builder::default()
+    }
+}
+
 /// See [`CodeConfigurationValues`](crate::model::CodeConfigurationValues).
 pub mod code_configuration_values {
 
@@ -2812,12 +2836,6 @@ pub mod code_configuration_values {
             );
             formatter.finish()
         }
-    }
-}
-impl CodeConfigurationValues {
-    /// Creates a new builder-style object to manufacture [`CodeConfigurationValues`](crate::model::CodeConfigurationValues).
-    pub fn builder() -> crate::model::code_configuration_values::Builder {
-        crate::model::code_configuration_values::Builder::default()
     }
 }
 
@@ -3079,6 +3097,13 @@ impl SourceCodeVersion {
         self.value.as_deref()
     }
 }
+impl SourceCodeVersion {
+    /// Creates a new builder-style object to manufacture [`SourceCodeVersion`](crate::model::SourceCodeVersion).
+    pub fn builder() -> crate::model::source_code_version::Builder {
+        crate::model::source_code_version::Builder::default()
+    }
+}
+
 /// See [`SourceCodeVersion`](crate::model::SourceCodeVersion).
 pub mod source_code_version {
 
@@ -3124,12 +3149,6 @@ pub mod source_code_version {
                 value: self.value,
             }
         }
-    }
-}
-impl SourceCodeVersion {
-    /// Creates a new builder-style object to manufacture [`SourceCodeVersion`](crate::model::SourceCodeVersion).
-    pub fn builder() -> crate::model::source_code_version::Builder {
-        crate::model::source_code_version::Builder::default()
     }
 }
 
@@ -3358,6 +3377,13 @@ impl Tag {
         self.value.as_deref()
     }
 }
+impl Tag {
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
+    pub fn builder() -> crate::model::tag::Builder {
+        crate::model::tag::Builder::default()
+    }
+}
+
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
 
@@ -3398,12 +3424,6 @@ pub mod tag {
         }
     }
 }
-impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
-    pub fn builder() -> crate::model::tag::Builder {
-        crate::model::tag::Builder::default()
-    }
-}
 
 /// <p>Provides summary information about an VPC Ingress Connection, which includes its VPC Ingress Connection ARN and its associated Service ARN.</p>
 #[non_exhaustive]
@@ -3426,6 +3446,13 @@ impl VpcIngressConnectionSummary {
         self.service_arn.as_deref()
     }
 }
+impl VpcIngressConnectionSummary {
+    /// Creates a new builder-style object to manufacture [`VpcIngressConnectionSummary`](crate::model::VpcIngressConnectionSummary).
+    pub fn builder() -> crate::model::vpc_ingress_connection_summary::Builder {
+        crate::model::vpc_ingress_connection_summary::Builder::default()
+    }
+}
+
 /// See [`VpcIngressConnectionSummary`](crate::model::VpcIngressConnectionSummary).
 pub mod vpc_ingress_connection_summary {
 
@@ -3469,12 +3496,6 @@ pub mod vpc_ingress_connection_summary {
         }
     }
 }
-impl VpcIngressConnectionSummary {
-    /// Creates a new builder-style object to manufacture [`VpcIngressConnectionSummary`](crate::model::VpcIngressConnectionSummary).
-    pub fn builder() -> crate::model::vpc_ingress_connection_summary::Builder {
-        crate::model::vpc_ingress_connection_summary::Builder::default()
-    }
-}
 
 /// <p>Returns a list of VPC Ingress Connections based on the filter provided. It can return either <code>ServiceArn</code> or <code>VpcEndpointId</code>, or both.</p>
 #[non_exhaustive]
@@ -3497,6 +3518,13 @@ impl ListVpcIngressConnectionsFilter {
         self.vpc_endpoint_id.as_deref()
     }
 }
+impl ListVpcIngressConnectionsFilter {
+    /// Creates a new builder-style object to manufacture [`ListVpcIngressConnectionsFilter`](crate::model::ListVpcIngressConnectionsFilter).
+    pub fn builder() -> crate::model::list_vpc_ingress_connections_filter::Builder {
+        crate::model::list_vpc_ingress_connections_filter::Builder::default()
+    }
+}
+
 /// See [`ListVpcIngressConnectionsFilter`](crate::model::ListVpcIngressConnectionsFilter).
 pub mod list_vpc_ingress_connections_filter {
 
@@ -3538,12 +3566,6 @@ pub mod list_vpc_ingress_connections_filter {
                 vpc_endpoint_id: self.vpc_endpoint_id,
             }
         }
-    }
-}
-impl ListVpcIngressConnectionsFilter {
-    /// Creates a new builder-style object to manufacture [`ListVpcIngressConnectionsFilter`](crate::model::ListVpcIngressConnectionsFilter).
-    pub fn builder() -> crate::model::list_vpc_ingress_connections_filter::Builder {
-        crate::model::list_vpc_ingress_connections_filter::Builder::default()
     }
 }
 
@@ -3617,6 +3639,13 @@ impl VpcConnector {
         self.deleted_at.as_ref()
     }
 }
+impl VpcConnector {
+    /// Creates a new builder-style object to manufacture [`VpcConnector`](crate::model::VpcConnector).
+    pub fn builder() -> crate::model::vpc_connector::Builder {
+        crate::model::vpc_connector::Builder::default()
+    }
+}
+
 /// See [`VpcConnector`](crate::model::VpcConnector).
 pub mod vpc_connector {
 
@@ -3764,12 +3793,6 @@ pub mod vpc_connector {
                 deleted_at: self.deleted_at,
             }
         }
-    }
-}
-impl VpcConnector {
-    /// Creates a new builder-style object to manufacture [`VpcConnector`](crate::model::VpcConnector).
-    pub fn builder() -> crate::model::vpc_connector::Builder {
-        crate::model::vpc_connector::Builder::default()
     }
 }
 
@@ -3930,6 +3953,13 @@ impl ServiceSummary {
         self.status.as_ref()
     }
 }
+impl ServiceSummary {
+    /// Creates a new builder-style object to manufacture [`ServiceSummary`](crate::model::ServiceSummary).
+    pub fn builder() -> crate::model::service_summary::Builder {
+        crate::model::service_summary::Builder::default()
+    }
+}
+
 /// See [`ServiceSummary`](crate::model::ServiceSummary).
 pub mod service_summary {
 
@@ -4047,12 +4077,6 @@ pub mod service_summary {
         }
     }
 }
-impl ServiceSummary {
-    /// Creates a new builder-style object to manufacture [`ServiceSummary`](crate::model::ServiceSummary).
-    pub fn builder() -> crate::model::service_summary::Builder {
-        crate::model::service_summary::Builder::default()
-    }
-}
 
 /// <p>Provides summary information for an operation that occurred on an App Runner service.</p>
 #[non_exhaustive]
@@ -4110,6 +4134,13 @@ impl OperationSummary {
         self.updated_at.as_ref()
     }
 }
+impl OperationSummary {
+    /// Creates a new builder-style object to manufacture [`OperationSummary`](crate::model::OperationSummary).
+    pub fn builder() -> crate::model::operation_summary::Builder {
+        crate::model::operation_summary::Builder::default()
+    }
+}
+
 /// See [`OperationSummary`](crate::model::OperationSummary).
 pub mod operation_summary {
 
@@ -4220,12 +4251,6 @@ pub mod operation_summary {
                 updated_at: self.updated_at,
             }
         }
-    }
-}
-impl OperationSummary {
-    /// Creates a new builder-style object to manufacture [`OperationSummary`](crate::model::OperationSummary).
-    pub fn builder() -> crate::model::operation_summary::Builder {
-        crate::model::operation_summary::Builder::default()
     }
 }
 
@@ -4492,6 +4517,13 @@ impl ObservabilityConfigurationSummary {
         self.observability_configuration_revision
     }
 }
+impl ObservabilityConfigurationSummary {
+    /// Creates a new builder-style object to manufacture [`ObservabilityConfigurationSummary`](crate::model::ObservabilityConfigurationSummary).
+    pub fn builder() -> crate::model::observability_configuration_summary::Builder {
+        crate::model::observability_configuration_summary::Builder::default()
+    }
+}
+
 /// See [`ObservabilityConfigurationSummary`](crate::model::ObservabilityConfigurationSummary).
 pub mod observability_configuration_summary {
 
@@ -4561,12 +4593,6 @@ pub mod observability_configuration_summary {
         }
     }
 }
-impl ObservabilityConfigurationSummary {
-    /// Creates a new builder-style object to manufacture [`ObservabilityConfigurationSummary`](crate::model::ObservabilityConfigurationSummary).
-    pub fn builder() -> crate::model::observability_configuration_summary::Builder {
-        crate::model::observability_configuration_summary::Builder::default()
-    }
-}
 
 /// <p>Provides summary information about an App Runner connection resource.</p>
 #[non_exhaustive]
@@ -4610,6 +4636,13 @@ impl ConnectionSummary {
         self.created_at.as_ref()
     }
 }
+impl ConnectionSummary {
+    /// Creates a new builder-style object to manufacture [`ConnectionSummary`](crate::model::ConnectionSummary).
+    pub fn builder() -> crate::model::connection_summary::Builder {
+        crate::model::connection_summary::Builder::default()
+    }
+}
+
 /// See [`ConnectionSummary`](crate::model::ConnectionSummary).
 pub mod connection_summary {
 
@@ -4699,12 +4732,6 @@ pub mod connection_summary {
                 created_at: self.created_at,
             }
         }
-    }
-}
-impl ConnectionSummary {
-    /// Creates a new builder-style object to manufacture [`ConnectionSummary`](crate::model::ConnectionSummary).
-    pub fn builder() -> crate::model::connection_summary::Builder {
-        crate::model::connection_summary::Builder::default()
     }
 }
 
@@ -4921,6 +4948,13 @@ impl VpcDnsTarget {
         self.domain_name.as_deref()
     }
 }
+impl VpcDnsTarget {
+    /// Creates a new builder-style object to manufacture [`VpcDnsTarget`](crate::model::VpcDnsTarget).
+    pub fn builder() -> crate::model::vpc_dns_target::Builder {
+        crate::model::vpc_dns_target::Builder::default()
+    }
+}
+
 /// See [`VpcDnsTarget`](crate::model::VpcDnsTarget).
 pub mod vpc_dns_target {
 
@@ -4976,12 +5010,6 @@ pub mod vpc_dns_target {
         }
     }
 }
-impl VpcDnsTarget {
-    /// Creates a new builder-style object to manufacture [`VpcDnsTarget`](crate::model::VpcDnsTarget).
-    pub fn builder() -> crate::model::vpc_dns_target::Builder {
-        crate::model::vpc_dns_target::Builder::default()
-    }
-}
 
 /// <p>Describes a custom domain that's associated with an App Runner service.</p>
 #[non_exhaustive]
@@ -5021,6 +5049,13 @@ impl CustomDomain {
         self.status.as_ref()
     }
 }
+impl CustomDomain {
+    /// Creates a new builder-style object to manufacture [`CustomDomain`](crate::model::CustomDomain).
+    pub fn builder() -> crate::model::custom_domain::Builder {
+        crate::model::custom_domain::Builder::default()
+    }
+}
+
 /// See [`CustomDomain`](crate::model::CustomDomain).
 pub mod custom_domain {
 
@@ -5099,12 +5134,6 @@ pub mod custom_domain {
                 status: self.status,
             }
         }
-    }
-}
-impl CustomDomain {
-    /// Creates a new builder-style object to manufacture [`CustomDomain`](crate::model::CustomDomain).
-    pub fn builder() -> crate::model::custom_domain::Builder {
-        crate::model::custom_domain::Builder::default()
     }
 }
 
@@ -5272,6 +5301,13 @@ impl CertificateValidationRecord {
         self.status.as_ref()
     }
 }
+impl CertificateValidationRecord {
+    /// Creates a new builder-style object to manufacture [`CertificateValidationRecord`](crate::model::CertificateValidationRecord).
+    pub fn builder() -> crate::model::certificate_validation_record::Builder {
+        crate::model::certificate_validation_record::Builder::default()
+    }
+}
+
 /// See [`CertificateValidationRecord`](crate::model::CertificateValidationRecord).
 pub mod certificate_validation_record {
 
@@ -5337,12 +5373,6 @@ pub mod certificate_validation_record {
                 status: self.status,
             }
         }
-    }
-}
-impl CertificateValidationRecord {
-    /// Creates a new builder-style object to manufacture [`CertificateValidationRecord`](crate::model::CertificateValidationRecord).
-    pub fn builder() -> crate::model::certificate_validation_record::Builder {
-        crate::model::certificate_validation_record::Builder::default()
     }
 }
 
@@ -5507,6 +5537,13 @@ impl ObservabilityConfiguration {
         self.deleted_at.as_ref()
     }
 }
+impl ObservabilityConfiguration {
+    /// Creates a new builder-style object to manufacture [`ObservabilityConfiguration`](crate::model::ObservabilityConfiguration).
+    pub fn builder() -> crate::model::observability_configuration::Builder {
+        crate::model::observability_configuration::Builder::default()
+    }
+}
+
 /// See [`ObservabilityConfiguration`](crate::model::ObservabilityConfiguration).
 pub mod observability_configuration {
 
@@ -5648,12 +5685,6 @@ pub mod observability_configuration {
         }
     }
 }
-impl ObservabilityConfiguration {
-    /// Creates a new builder-style object to manufacture [`ObservabilityConfiguration`](crate::model::ObservabilityConfiguration).
-    pub fn builder() -> crate::model::observability_configuration::Builder {
-        crate::model::observability_configuration::Builder::default()
-    }
-}
 
 /// When writing a match expression against `ObservabilityConfigurationStatus`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -5761,6 +5792,13 @@ impl TraceConfiguration {
         self.vendor.as_ref()
     }
 }
+impl TraceConfiguration {
+    /// Creates a new builder-style object to manufacture [`TraceConfiguration`](crate::model::TraceConfiguration).
+    pub fn builder() -> crate::model::trace_configuration::Builder {
+        crate::model::trace_configuration::Builder::default()
+    }
+}
+
 /// See [`TraceConfiguration`](crate::model::TraceConfiguration).
 pub mod trace_configuration {
 
@@ -5790,12 +5828,6 @@ pub mod trace_configuration {
                 vendor: self.vendor,
             }
         }
-    }
-}
-impl TraceConfiguration {
-    /// Creates a new builder-style object to manufacture [`TraceConfiguration`](crate::model::TraceConfiguration).
-    pub fn builder() -> crate::model::trace_configuration::Builder {
-        crate::model::trace_configuration::Builder::default()
     }
 }
 
@@ -5966,6 +5998,13 @@ impl AutoScalingConfiguration {
         self.deleted_at.as_ref()
     }
 }
+impl AutoScalingConfiguration {
+    /// Creates a new builder-style object to manufacture [`AutoScalingConfiguration`](crate::model::AutoScalingConfiguration).
+    pub fn builder() -> crate::model::auto_scaling_configuration::Builder {
+        crate::model::auto_scaling_configuration::Builder::default()
+    }
+}
+
 /// See [`AutoScalingConfiguration`](crate::model::AutoScalingConfiguration).
 pub mod auto_scaling_configuration {
 
@@ -6130,12 +6169,6 @@ pub mod auto_scaling_configuration {
         }
     }
 }
-impl AutoScalingConfiguration {
-    /// Creates a new builder-style object to manufacture [`AutoScalingConfiguration`](crate::model::AutoScalingConfiguration).
-    pub fn builder() -> crate::model::auto_scaling_configuration::Builder {
-        crate::model::auto_scaling_configuration::Builder::default()
-    }
-}
 
 /// When writing a match expression against `AutoScalingConfigurationStatus`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -6271,6 +6304,13 @@ impl Connection {
         self.created_at.as_ref()
     }
 }
+impl Connection {
+    /// Creates a new builder-style object to manufacture [`Connection`](crate::model::Connection).
+    pub fn builder() -> crate::model::connection::Builder {
+        crate::model::connection::Builder::default()
+    }
+}
+
 /// See [`Connection`](crate::model::Connection).
 pub mod connection {
 
@@ -6360,11 +6400,5 @@ pub mod connection {
                 created_at: self.created_at,
             }
         }
-    }
-}
-impl Connection {
-    /// Creates a new builder-style object to manufacture [`Connection`](crate::model::Connection).
-    pub fn builder() -> crate::model::connection::Builder {
-        crate::model::connection::Builder::default()
     }
 }

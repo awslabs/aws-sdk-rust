@@ -4,7 +4,7 @@
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`create_configuration_set`](crate::client::Client::create_configuration_set).
 ///
-/// See [`crate::client::fluent_builders::CreateConfigurationSet`] for more details about the operation.
+/// `ParseStrictResponse` impl for `CreateConfigurationSet`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateConfigurationSet {
     _private: (),
@@ -39,7 +39,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateConfigurationSet {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`create_configuration_set_event_destination`](crate::client::Client::create_configuration_set_event_destination).
 ///
-/// See [`crate::client::fluent_builders::CreateConfigurationSetEventDestination`] for more details about the operation.
+/// `ParseStrictResponse` impl for `CreateConfigurationSetEventDestination`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateConfigurationSetEventDestination {
     _private: (),
@@ -76,7 +76,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateConfigurationSetEv
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`delete_configuration_set`](crate::client::Client::delete_configuration_set).
 ///
-/// See [`crate::client::fluent_builders::DeleteConfigurationSet`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DeleteConfigurationSet`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteConfigurationSet {
     _private: (),
@@ -111,7 +111,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteConfigurationSet {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`delete_configuration_set_event_destination`](crate::client::Client::delete_configuration_set_event_destination).
 ///
-/// See [`crate::client::fluent_builders::DeleteConfigurationSetEventDestination`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DeleteConfigurationSetEventDestination`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteConfigurationSetEventDestination {
     _private: (),
@@ -148,7 +148,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteConfigurationSetEv
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`get_configuration_set_event_destinations`](crate::client::Client::get_configuration_set_event_destinations).
 ///
-/// See [`crate::client::fluent_builders::GetConfigurationSetEventDestinations`] for more details about the operation.
+/// `ParseStrictResponse` impl for `GetConfigurationSetEventDestinations`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetConfigurationSetEventDestinations {
     _private: (),
@@ -185,7 +185,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetConfigurationSetEvent
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_configuration_sets`](crate::client::Client::list_configuration_sets).
 ///
-/// See [`crate::client::fluent_builders::ListConfigurationSets`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListConfigurationSets`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListConfigurationSets {
     _private: (),
@@ -220,7 +220,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListConfigurationSets {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`send_voice_message`](crate::client::Client::send_voice_message).
 ///
-/// See [`crate::client::fluent_builders::SendVoiceMessage`] for more details about the operation.
+/// `ParseStrictResponse` impl for `SendVoiceMessage`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct SendVoiceMessage {
     _private: (),
@@ -255,7 +255,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SendVoiceMessage {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`update_configuration_set_event_destination`](crate::client::Client::update_configuration_set_event_destination).
 ///
-/// See [`crate::client::fluent_builders::UpdateConfigurationSetEventDestination`] for more details about the operation.
+/// `ParseStrictResponse` impl for `UpdateConfigurationSetEventDestination`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateConfigurationSetEventDestination {
     _private: (),

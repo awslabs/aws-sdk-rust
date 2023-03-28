@@ -4,7 +4,7 @@
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`create_lifecycle_policy`](crate::client::Client::create_lifecycle_policy).
 ///
-/// See [`crate::client::fluent_builders::CreateLifecyclePolicy`] for more details about the operation.
+/// `ParseStrictResponse` impl for `CreateLifecyclePolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateLifecyclePolicy {
     _private: (),
@@ -39,7 +39,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateLifecyclePolicy {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`delete_lifecycle_policy`](crate::client::Client::delete_lifecycle_policy).
 ///
-/// See [`crate::client::fluent_builders::DeleteLifecyclePolicy`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DeleteLifecyclePolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteLifecyclePolicy {
     _private: (),
@@ -74,7 +74,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteLifecyclePolicy {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`get_lifecycle_policies`](crate::client::Client::get_lifecycle_policies).
 ///
-/// See [`crate::client::fluent_builders::GetLifecyclePolicies`] for more details about the operation.
+/// `ParseStrictResponse` impl for `GetLifecyclePolicies`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetLifecyclePolicies {
     _private: (),
@@ -109,7 +109,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetLifecyclePolicies {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`get_lifecycle_policy`](crate::client::Client::get_lifecycle_policy).
 ///
-/// See [`crate::client::fluent_builders::GetLifecyclePolicy`] for more details about the operation.
+/// `ParseStrictResponse` impl for `GetLifecyclePolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetLifecyclePolicy {
     _private: (),
@@ -144,7 +144,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetLifecyclePolicy {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
 ///
-/// See [`crate::client::fluent_builders::ListTagsForResource`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTagsForResource {
     _private: (),
@@ -179,7 +179,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`tag_resource`](crate::client::Client::tag_resource).
 ///
-/// See [`crate::client::fluent_builders::TagResource`] for more details about the operation.
+/// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct TagResource {
     _private: (),
@@ -212,7 +212,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`untag_resource`](crate::client::Client::untag_resource).
 ///
-/// See [`crate::client::fluent_builders::UntagResource`] for more details about the operation.
+/// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UntagResource {
     _private: (),
@@ -245,7 +245,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`update_lifecycle_policy`](crate::client::Client::update_lifecycle_policy).
 ///
-/// See [`crate::client::fluent_builders::UpdateLifecyclePolicy`] for more details about the operation.
+/// `ParseStrictResponse` impl for `UpdateLifecyclePolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateLifecyclePolicy {
     _private: (),

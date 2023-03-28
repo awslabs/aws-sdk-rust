@@ -85,6 +85,13 @@ impl PipelineActivity {
         self.device_shadow_enrich.as_ref()
     }
 }
+impl PipelineActivity {
+    /// Creates a new builder-style object to manufacture [`PipelineActivity`](crate::model::PipelineActivity).
+    pub fn builder() -> crate::model::pipeline_activity::Builder {
+        crate::model::pipeline_activity::Builder::default()
+    }
+}
+
 /// See [`PipelineActivity`](crate::model::PipelineActivity).
 pub mod pipeline_activity {
 
@@ -256,12 +263,6 @@ pub mod pipeline_activity {
         }
     }
 }
-impl PipelineActivity {
-    /// Creates a new builder-style object to manufacture [`PipelineActivity`](crate::model::PipelineActivity).
-    pub fn builder() -> crate::model::pipeline_activity::Builder {
-        crate::model::pipeline_activity::Builder::default()
-    }
-}
 
 /// <p>An activity that adds information from the IoT Device Shadow service to a message.</p>
 #[non_exhaustive]
@@ -305,6 +306,13 @@ impl DeviceShadowEnrichActivity {
         self.next.as_deref()
     }
 }
+impl DeviceShadowEnrichActivity {
+    /// Creates a new builder-style object to manufacture [`DeviceShadowEnrichActivity`](crate::model::DeviceShadowEnrichActivity).
+    pub fn builder() -> crate::model::device_shadow_enrich_activity::Builder {
+        crate::model::device_shadow_enrich_activity::Builder::default()
+    }
+}
+
 /// See [`DeviceShadowEnrichActivity`](crate::model::DeviceShadowEnrichActivity).
 pub mod device_shadow_enrich_activity {
 
@@ -381,12 +389,6 @@ pub mod device_shadow_enrich_activity {
         }
     }
 }
-impl DeviceShadowEnrichActivity {
-    /// Creates a new builder-style object to manufacture [`DeviceShadowEnrichActivity`](crate::model::DeviceShadowEnrichActivity).
-    pub fn builder() -> crate::model::device_shadow_enrich_activity::Builder {
-        crate::model::device_shadow_enrich_activity::Builder::default()
-    }
-}
 
 /// <p>An activity that adds data from the IoT device registry to your message.</p>
 #[non_exhaustive]
@@ -430,6 +432,13 @@ impl DeviceRegistryEnrichActivity {
         self.next.as_deref()
     }
 }
+impl DeviceRegistryEnrichActivity {
+    /// Creates a new builder-style object to manufacture [`DeviceRegistryEnrichActivity`](crate::model::DeviceRegistryEnrichActivity).
+    pub fn builder() -> crate::model::device_registry_enrich_activity::Builder {
+        crate::model::device_registry_enrich_activity::Builder::default()
+    }
+}
+
 /// See [`DeviceRegistryEnrichActivity`](crate::model::DeviceRegistryEnrichActivity).
 pub mod device_registry_enrich_activity {
 
@@ -506,12 +515,6 @@ pub mod device_registry_enrich_activity {
         }
     }
 }
-impl DeviceRegistryEnrichActivity {
-    /// Creates a new builder-style object to manufacture [`DeviceRegistryEnrichActivity`](crate::model::DeviceRegistryEnrichActivity).
-    pub fn builder() -> crate::model::device_registry_enrich_activity::Builder {
-        crate::model::device_registry_enrich_activity::Builder::default()
-    }
-}
 
 /// <p>An activity that computes an arithmetic expression using the message's attributes.</p>
 #[non_exhaustive]
@@ -548,6 +551,13 @@ impl MathActivity {
         self.next.as_deref()
     }
 }
+impl MathActivity {
+    /// Creates a new builder-style object to manufacture [`MathActivity`](crate::model::MathActivity).
+    pub fn builder() -> crate::model::math_activity::Builder {
+        crate::model::math_activity::Builder::default()
+    }
+}
+
 /// See [`MathActivity`](crate::model::MathActivity).
 pub mod math_activity {
 
@@ -612,12 +622,6 @@ pub mod math_activity {
         }
     }
 }
-impl MathActivity {
-    /// Creates a new builder-style object to manufacture [`MathActivity`](crate::model::MathActivity).
-    pub fn builder() -> crate::model::math_activity::Builder {
-        crate::model::math_activity::Builder::default()
-    }
-}
 
 /// <p>An activity that filters a message based on its attributes.</p>
 #[non_exhaustive]
@@ -647,6 +651,13 @@ impl FilterActivity {
         self.next.as_deref()
     }
 }
+impl FilterActivity {
+    /// Creates a new builder-style object to manufacture [`FilterActivity`](crate::model::FilterActivity).
+    pub fn builder() -> crate::model::filter_activity::Builder {
+        crate::model::filter_activity::Builder::default()
+    }
+}
+
 /// See [`FilterActivity`](crate::model::FilterActivity).
 pub mod filter_activity {
 
@@ -699,12 +710,6 @@ pub mod filter_activity {
         }
     }
 }
-impl FilterActivity {
-    /// Creates a new builder-style object to manufacture [`FilterActivity`](crate::model::FilterActivity).
-    pub fn builder() -> crate::model::filter_activity::Builder {
-        crate::model::filter_activity::Builder::default()
-    }
-}
 
 /// <p>Used to create a new message using only the specified attributes from the original message.</p>
 #[non_exhaustive]
@@ -734,6 +739,13 @@ impl SelectAttributesActivity {
         self.next.as_deref()
     }
 }
+impl SelectAttributesActivity {
+    /// Creates a new builder-style object to manufacture [`SelectAttributesActivity`](crate::model::SelectAttributesActivity).
+    pub fn builder() -> crate::model::select_attributes_activity::Builder {
+        crate::model::select_attributes_activity::Builder::default()
+    }
+}
+
 /// See [`SelectAttributesActivity`](crate::model::SelectAttributesActivity).
 pub mod select_attributes_activity {
 
@@ -795,12 +807,6 @@ pub mod select_attributes_activity {
         }
     }
 }
-impl SelectAttributesActivity {
-    /// Creates a new builder-style object to manufacture [`SelectAttributesActivity`](crate::model::SelectAttributesActivity).
-    pub fn builder() -> crate::model::select_attributes_activity::Builder {
-        crate::model::select_attributes_activity::Builder::default()
-    }
-}
 
 /// <p>An activity that removes attributes from a message.</p>
 #[non_exhaustive]
@@ -830,6 +836,13 @@ impl RemoveAttributesActivity {
         self.next.as_deref()
     }
 }
+impl RemoveAttributesActivity {
+    /// Creates a new builder-style object to manufacture [`RemoveAttributesActivity`](crate::model::RemoveAttributesActivity).
+    pub fn builder() -> crate::model::remove_attributes_activity::Builder {
+        crate::model::remove_attributes_activity::Builder::default()
+    }
+}
+
 /// See [`RemoveAttributesActivity`](crate::model::RemoveAttributesActivity).
 pub mod remove_attributes_activity {
 
@@ -891,12 +904,6 @@ pub mod remove_attributes_activity {
         }
     }
 }
-impl RemoveAttributesActivity {
-    /// Creates a new builder-style object to manufacture [`RemoveAttributesActivity`](crate::model::RemoveAttributesActivity).
-    pub fn builder() -> crate::model::remove_attributes_activity::Builder {
-        crate::model::remove_attributes_activity::Builder::default()
-    }
-}
 
 /// <p>An activity that adds other attributes based on existing attributes in the message.</p>
 #[non_exhaustive]
@@ -934,6 +941,13 @@ impl AddAttributesActivity {
         self.next.as_deref()
     }
 }
+impl AddAttributesActivity {
+    /// Creates a new builder-style object to manufacture [`AddAttributesActivity`](crate::model::AddAttributesActivity).
+    pub fn builder() -> crate::model::add_attributes_activity::Builder {
+        crate::model::add_attributes_activity::Builder::default()
+    }
+}
+
 /// See [`AddAttributesActivity`](crate::model::AddAttributesActivity).
 pub mod add_attributes_activity {
 
@@ -1007,12 +1021,6 @@ pub mod add_attributes_activity {
         }
     }
 }
-impl AddAttributesActivity {
-    /// Creates a new builder-style object to manufacture [`AddAttributesActivity`](crate::model::AddAttributesActivity).
-    pub fn builder() -> crate::model::add_attributes_activity::Builder {
-        crate::model::add_attributes_activity::Builder::default()
-    }
-}
 
 /// <p>The datastore activity that specifies where to store the processed data.</p>
 #[non_exhaustive]
@@ -1035,6 +1043,13 @@ impl DatastoreActivity {
         self.datastore_name.as_deref()
     }
 }
+impl DatastoreActivity {
+    /// Creates a new builder-style object to manufacture [`DatastoreActivity`](crate::model::DatastoreActivity).
+    pub fn builder() -> crate::model::datastore_activity::Builder {
+        crate::model::datastore_activity::Builder::default()
+    }
+}
+
 /// See [`DatastoreActivity`](crate::model::DatastoreActivity).
 pub mod datastore_activity {
 
@@ -1078,12 +1093,6 @@ pub mod datastore_activity {
         }
     }
 }
-impl DatastoreActivity {
-    /// Creates a new builder-style object to manufacture [`DatastoreActivity`](crate::model::DatastoreActivity).
-    pub fn builder() -> crate::model::datastore_activity::Builder {
-        crate::model::datastore_activity::Builder::default()
-    }
-}
 
 /// <p>An activity that runs a Lambda function to modify the message.</p>
 #[non_exhaustive]
@@ -1122,6 +1131,13 @@ impl LambdaActivity {
         self.next.as_deref()
     }
 }
+impl LambdaActivity {
+    /// Creates a new builder-style object to manufacture [`LambdaActivity`](crate::model::LambdaActivity).
+    pub fn builder() -> crate::model::lambda_activity::Builder {
+        crate::model::lambda_activity::Builder::default()
+    }
+}
+
 /// See [`LambdaActivity`](crate::model::LambdaActivity).
 pub mod lambda_activity {
 
@@ -1188,12 +1204,6 @@ pub mod lambda_activity {
         }
     }
 }
-impl LambdaActivity {
-    /// Creates a new builder-style object to manufacture [`LambdaActivity`](crate::model::LambdaActivity).
-    pub fn builder() -> crate::model::lambda_activity::Builder {
-        crate::model::lambda_activity::Builder::default()
-    }
-}
 
 /// <p>The activity that determines the source of the messages to be processed.</p>
 #[non_exhaustive]
@@ -1223,6 +1233,13 @@ impl ChannelActivity {
         self.next.as_deref()
     }
 }
+impl ChannelActivity {
+    /// Creates a new builder-style object to manufacture [`ChannelActivity`](crate::model::ChannelActivity).
+    pub fn builder() -> crate::model::channel_activity::Builder {
+        crate::model::channel_activity::Builder::default()
+    }
+}
+
 /// See [`ChannelActivity`](crate::model::ChannelActivity).
 pub mod channel_activity {
 
@@ -1275,12 +1292,6 @@ pub mod channel_activity {
         }
     }
 }
-impl ChannelActivity {
-    /// Creates a new builder-style object to manufacture [`ChannelActivity`](crate::model::ChannelActivity).
-    pub fn builder() -> crate::model::channel_activity::Builder {
-        crate::model::channel_activity::Builder::default()
-    }
-}
 
 /// <p>Contains the configuration information of file formats. IoT Analytics data stores support JSON and <a href="https://parquet.apache.org/">Parquet</a>.</p>
 /// <p>The default file format is JSON. You can specify only one format.</p>
@@ -1307,6 +1318,13 @@ impl FileFormatConfiguration {
         self.parquet_configuration.as_ref()
     }
 }
+impl FileFormatConfiguration {
+    /// Creates a new builder-style object to manufacture [`FileFormatConfiguration`](crate::model::FileFormatConfiguration).
+    pub fn builder() -> crate::model::file_format_configuration::Builder {
+        crate::model::file_format_configuration::Builder::default()
+    }
+}
+
 /// See [`FileFormatConfiguration`](crate::model::FileFormatConfiguration).
 pub mod file_format_configuration {
 
@@ -1353,12 +1371,6 @@ pub mod file_format_configuration {
         }
     }
 }
-impl FileFormatConfiguration {
-    /// Creates a new builder-style object to manufacture [`FileFormatConfiguration`](crate::model::FileFormatConfiguration).
-    pub fn builder() -> crate::model::file_format_configuration::Builder {
-        crate::model::file_format_configuration::Builder::default()
-    }
-}
 
 /// <p>Contains the configuration information of the Parquet format.</p>
 #[non_exhaustive]
@@ -1374,6 +1386,13 @@ impl ParquetConfiguration {
         self.schema_definition.as_ref()
     }
 }
+impl ParquetConfiguration {
+    /// Creates a new builder-style object to manufacture [`ParquetConfiguration`](crate::model::ParquetConfiguration).
+    pub fn builder() -> crate::model::parquet_configuration::Builder {
+        crate::model::parquet_configuration::Builder::default()
+    }
+}
+
 /// See [`ParquetConfiguration`](crate::model::ParquetConfiguration).
 pub mod parquet_configuration {
 
@@ -1405,12 +1424,6 @@ pub mod parquet_configuration {
         }
     }
 }
-impl ParquetConfiguration {
-    /// Creates a new builder-style object to manufacture [`ParquetConfiguration`](crate::model::ParquetConfiguration).
-    pub fn builder() -> crate::model::parquet_configuration::Builder {
-        crate::model::parquet_configuration::Builder::default()
-    }
-}
 
 /// <p>Information needed to define a schema.</p>
 #[non_exhaustive]
@@ -1428,6 +1441,13 @@ impl SchemaDefinition {
         self.columns.as_deref()
     }
 }
+impl SchemaDefinition {
+    /// Creates a new builder-style object to manufacture [`SchemaDefinition`](crate::model::SchemaDefinition).
+    pub fn builder() -> crate::model::schema_definition::Builder {
+        crate::model::schema_definition::Builder::default()
+    }
+}
+
 /// See [`SchemaDefinition`](crate::model::SchemaDefinition).
 pub mod schema_definition {
 
@@ -1467,12 +1487,6 @@ pub mod schema_definition {
         }
     }
 }
-impl SchemaDefinition {
-    /// Creates a new builder-style object to manufacture [`SchemaDefinition`](crate::model::SchemaDefinition).
-    pub fn builder() -> crate::model::schema_definition::Builder {
-        crate::model::schema_definition::Builder::default()
-    }
-}
 
 /// <p>Contains information about a column that stores your data.</p>
 #[non_exhaustive]
@@ -1495,6 +1509,13 @@ impl Column {
         self.r#type.as_deref()
     }
 }
+impl Column {
+    /// Creates a new builder-style object to manufacture [`Column`](crate::model::Column).
+    pub fn builder() -> crate::model::column::Builder {
+        crate::model::column::Builder::default()
+    }
+}
+
 /// See [`Column`](crate::model::Column).
 pub mod column {
 
@@ -1535,17 +1556,18 @@ pub mod column {
         }
     }
 }
-impl Column {
-    /// Creates a new builder-style object to manufacture [`Column`](crate::model::Column).
-    pub fn builder() -> crate::model::column::Builder {
-        crate::model::column::Builder::default()
-    }
-}
 
 /// <p>Contains the configuration information of the JSON format.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct JsonConfiguration {}
+impl JsonConfiguration {
+    /// Creates a new builder-style object to manufacture [`JsonConfiguration`](crate::model::JsonConfiguration).
+    pub fn builder() -> crate::model::json_configuration::Builder {
+        crate::model::json_configuration::Builder::default()
+    }
+}
+
 /// See [`JsonConfiguration`](crate::model::JsonConfiguration).
 pub mod json_configuration {
 
@@ -1558,12 +1580,6 @@ pub mod json_configuration {
         pub fn build(self) -> crate::model::JsonConfiguration {
             crate::model::JsonConfiguration {}
         }
-    }
-}
-impl JsonConfiguration {
-    /// Creates a new builder-style object to manufacture [`JsonConfiguration`](crate::model::JsonConfiguration).
-    pub fn builder() -> crate::model::json_configuration::Builder {
-        crate::model::json_configuration::Builder::default()
     }
 }
 
@@ -1656,6 +1672,13 @@ impl DatastoreIotSiteWiseMultiLayerStorage {
         self.customer_managed_s3_storage.as_ref()
     }
 }
+impl DatastoreIotSiteWiseMultiLayerStorage {
+    /// Creates a new builder-style object to manufacture [`DatastoreIotSiteWiseMultiLayerStorage`](crate::model::DatastoreIotSiteWiseMultiLayerStorage).
+    pub fn builder() -> crate::model::datastore_iot_site_wise_multi_layer_storage::Builder {
+        crate::model::datastore_iot_site_wise_multi_layer_storage::Builder::default()
+    }
+}
+
 /// See [`DatastoreIotSiteWiseMultiLayerStorage`](crate::model::DatastoreIotSiteWiseMultiLayerStorage).
 pub mod datastore_iot_site_wise_multi_layer_storage {
 
@@ -1691,12 +1714,6 @@ pub mod datastore_iot_site_wise_multi_layer_storage {
         }
     }
 }
-impl DatastoreIotSiteWiseMultiLayerStorage {
-    /// Creates a new builder-style object to manufacture [`DatastoreIotSiteWiseMultiLayerStorage`](crate::model::DatastoreIotSiteWiseMultiLayerStorage).
-    pub fn builder() -> crate::model::datastore_iot_site_wise_multi_layer_storage::Builder {
-        crate::model::datastore_iot_site_wise_multi_layer_storage::Builder::default()
-    }
-}
 
 /// <p> Used to store data used by IoT SiteWise in an Amazon S3 bucket that you manage. You can't change the choice of Amazon S3 storage after your data store is created. </p>
 #[non_exhaustive]
@@ -1719,6 +1736,13 @@ impl IotSiteWiseCustomerManagedDatastoreS3Storage {
         self.key_prefix.as_deref()
     }
 }
+impl IotSiteWiseCustomerManagedDatastoreS3Storage {
+    /// Creates a new builder-style object to manufacture [`IotSiteWiseCustomerManagedDatastoreS3Storage`](crate::model::IotSiteWiseCustomerManagedDatastoreS3Storage).
+    pub fn builder() -> crate::model::iot_site_wise_customer_managed_datastore_s3_storage::Builder {
+        crate::model::iot_site_wise_customer_managed_datastore_s3_storage::Builder::default()
+    }
+}
+
 /// See [`IotSiteWiseCustomerManagedDatastoreS3Storage`](crate::model::IotSiteWiseCustomerManagedDatastoreS3Storage).
 pub mod iot_site_wise_customer_managed_datastore_s3_storage {
 
@@ -1759,12 +1783,6 @@ pub mod iot_site_wise_customer_managed_datastore_s3_storage {
         }
     }
 }
-impl IotSiteWiseCustomerManagedDatastoreS3Storage {
-    /// Creates a new builder-style object to manufacture [`IotSiteWiseCustomerManagedDatastoreS3Storage`](crate::model::IotSiteWiseCustomerManagedDatastoreS3Storage).
-    pub fn builder() -> crate::model::iot_site_wise_customer_managed_datastore_s3_storage::Builder {
-        crate::model::iot_site_wise_customer_managed_datastore_s3_storage::Builder::default()
-    }
-}
 
 /// <p>S3-customer-managed; When you choose customer-managed storage, the <code>retentionPeriod</code> parameter is ignored. You can't change the choice of Amazon S3 storage after your data store is created. </p>
 #[non_exhaustive]
@@ -1794,6 +1812,13 @@ impl CustomerManagedDatastoreS3Storage {
         self.role_arn.as_deref()
     }
 }
+impl CustomerManagedDatastoreS3Storage {
+    /// Creates a new builder-style object to manufacture [`CustomerManagedDatastoreS3Storage`](crate::model::CustomerManagedDatastoreS3Storage).
+    pub fn builder() -> crate::model::customer_managed_datastore_s3_storage::Builder {
+        crate::model::customer_managed_datastore_s3_storage::Builder::default()
+    }
+}
+
 /// See [`CustomerManagedDatastoreS3Storage`](crate::model::CustomerManagedDatastoreS3Storage).
 pub mod customer_managed_datastore_s3_storage {
 
@@ -1846,17 +1871,18 @@ pub mod customer_managed_datastore_s3_storage {
         }
     }
 }
-impl CustomerManagedDatastoreS3Storage {
-    /// Creates a new builder-style object to manufacture [`CustomerManagedDatastoreS3Storage`](crate::model::CustomerManagedDatastoreS3Storage).
-    pub fn builder() -> crate::model::customer_managed_datastore_s3_storage::Builder {
-        crate::model::customer_managed_datastore_s3_storage::Builder::default()
-    }
-}
 
 /// <p>Used to store data in an Amazon S3 bucket managed by IoT Analytics. You can't change the choice of Amazon S3 storage after your data store is created. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ServiceManagedDatastoreS3Storage {}
+impl ServiceManagedDatastoreS3Storage {
+    /// Creates a new builder-style object to manufacture [`ServiceManagedDatastoreS3Storage`](crate::model::ServiceManagedDatastoreS3Storage).
+    pub fn builder() -> crate::model::service_managed_datastore_s3_storage::Builder {
+        crate::model::service_managed_datastore_s3_storage::Builder::default()
+    }
+}
+
 /// See [`ServiceManagedDatastoreS3Storage`](crate::model::ServiceManagedDatastoreS3Storage).
 pub mod service_managed_datastore_s3_storage {
 
@@ -1869,12 +1895,6 @@ pub mod service_managed_datastore_s3_storage {
         pub fn build(self) -> crate::model::ServiceManagedDatastoreS3Storage {
             crate::model::ServiceManagedDatastoreS3Storage {}
         }
-    }
-}
-impl ServiceManagedDatastoreS3Storage {
-    /// Creates a new builder-style object to manufacture [`ServiceManagedDatastoreS3Storage`](crate::model::ServiceManagedDatastoreS3Storage).
-    pub fn builder() -> crate::model::service_managed_datastore_s3_storage::Builder {
-        crate::model::service_managed_datastore_s3_storage::Builder::default()
     }
 }
 
@@ -1899,6 +1919,13 @@ impl RetentionPeriod {
         self.number_of_days
     }
 }
+impl RetentionPeriod {
+    /// Creates a new builder-style object to manufacture [`RetentionPeriod`](crate::model::RetentionPeriod).
+    pub fn builder() -> crate::model::retention_period::Builder {
+        crate::model::retention_period::Builder::default()
+    }
+}
+
 /// See [`RetentionPeriod`](crate::model::RetentionPeriod).
 pub mod retention_period {
 
@@ -1939,12 +1966,6 @@ pub mod retention_period {
         }
     }
 }
-impl RetentionPeriod {
-    /// Creates a new builder-style object to manufacture [`RetentionPeriod`](crate::model::RetentionPeriod).
-    pub fn builder() -> crate::model::retention_period::Builder {
-        crate::model::retention_period::Builder::default()
-    }
-}
 
 /// <p>A structure that contains the name and configuration information of a late data rule.</p>
 #[non_exhaustive]
@@ -1969,6 +1990,13 @@ impl LateDataRule {
         self.rule_configuration.as_ref()
     }
 }
+impl LateDataRule {
+    /// Creates a new builder-style object to manufacture [`LateDataRule`](crate::model::LateDataRule).
+    pub fn builder() -> crate::model::late_data_rule::Builder {
+        crate::model::late_data_rule::Builder::default()
+    }
+}
+
 /// See [`LateDataRule`](crate::model::LateDataRule).
 pub mod late_data_rule {
 
@@ -2015,12 +2043,6 @@ pub mod late_data_rule {
         }
     }
 }
-impl LateDataRule {
-    /// Creates a new builder-style object to manufacture [`LateDataRule`](crate::model::LateDataRule).
-    pub fn builder() -> crate::model::late_data_rule::Builder {
-        crate::model::late_data_rule::Builder::default()
-    }
-}
 
 /// <p>The information needed to configure a delta time session window.</p>
 #[non_exhaustive]
@@ -2039,6 +2061,13 @@ impl LateDataRuleConfiguration {
         self.delta_time_session_window_configuration.as_ref()
     }
 }
+impl LateDataRuleConfiguration {
+    /// Creates a new builder-style object to manufacture [`LateDataRuleConfiguration`](crate::model::LateDataRuleConfiguration).
+    pub fn builder() -> crate::model::late_data_rule_configuration::Builder {
+        crate::model::late_data_rule_configuration::Builder::default()
+    }
+}
+
 /// See [`LateDataRuleConfiguration`](crate::model::LateDataRuleConfiguration).
 pub mod late_data_rule_configuration {
 
@@ -2075,12 +2104,6 @@ pub mod late_data_rule_configuration {
         }
     }
 }
-impl LateDataRuleConfiguration {
-    /// Creates a new builder-style object to manufacture [`LateDataRuleConfiguration`](crate::model::LateDataRuleConfiguration).
-    pub fn builder() -> crate::model::late_data_rule_configuration::Builder {
-        crate::model::late_data_rule_configuration::Builder::default()
-    }
-}
 
 /// <p>A structure that contains the configuration information of a delta time session window.</p>
 /// <p> <a href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeltaTime.html"> <code>DeltaTime</code> </a> specifies a time interval. You can use <code>DeltaTime</code> to create dataset contents with data that has arrived in the data store since the last execution. For an example of <code>DeltaTime</code>, see <a href="https://docs.aws.amazon.com/iotanalytics/latest/userguide/automate-create-dataset.html#automate-example6"> Creating a SQL dataset with a delta window (CLI)</a> in the <i>IoT Analytics User Guide</i>.</p>
@@ -2099,6 +2122,13 @@ impl DeltaTimeSessionWindowConfiguration {
         self.timeout_in_minutes
     }
 }
+impl DeltaTimeSessionWindowConfiguration {
+    /// Creates a new builder-style object to manufacture [`DeltaTimeSessionWindowConfiguration`](crate::model::DeltaTimeSessionWindowConfiguration).
+    pub fn builder() -> crate::model::delta_time_session_window_configuration::Builder {
+        crate::model::delta_time_session_window_configuration::Builder::default()
+    }
+}
+
 /// See [`DeltaTimeSessionWindowConfiguration`](crate::model::DeltaTimeSessionWindowConfiguration).
 pub mod delta_time_session_window_configuration {
 
@@ -2129,12 +2159,6 @@ pub mod delta_time_session_window_configuration {
         }
     }
 }
-impl DeltaTimeSessionWindowConfiguration {
-    /// Creates a new builder-style object to manufacture [`DeltaTimeSessionWindowConfiguration`](crate::model::DeltaTimeSessionWindowConfiguration).
-    pub fn builder() -> crate::model::delta_time_session_window_configuration::Builder {
-        crate::model::delta_time_session_window_configuration::Builder::default()
-    }
-}
 
 /// <p>Information about the versioning of dataset contents.</p>
 #[non_exhaustive]
@@ -2157,6 +2181,13 @@ impl VersioningConfiguration {
         self.max_versions
     }
 }
+impl VersioningConfiguration {
+    /// Creates a new builder-style object to manufacture [`VersioningConfiguration`](crate::model::VersioningConfiguration).
+    pub fn builder() -> crate::model::versioning_configuration::Builder {
+        crate::model::versioning_configuration::Builder::default()
+    }
+}
+
 /// See [`VersioningConfiguration`](crate::model::VersioningConfiguration).
 pub mod versioning_configuration {
 
@@ -2197,12 +2228,6 @@ pub mod versioning_configuration {
         }
     }
 }
-impl VersioningConfiguration {
-    /// Creates a new builder-style object to manufacture [`VersioningConfiguration`](crate::model::VersioningConfiguration).
-    pub fn builder() -> crate::model::versioning_configuration::Builder {
-        crate::model::versioning_configuration::Builder::default()
-    }
-}
 
 /// <p>When dataset contents are created, they are delivered to destination specified here.</p>
 #[non_exhaustive]
@@ -2227,6 +2252,13 @@ impl DatasetContentDeliveryRule {
         self.destination.as_ref()
     }
 }
+impl DatasetContentDeliveryRule {
+    /// Creates a new builder-style object to manufacture [`DatasetContentDeliveryRule`](crate::model::DatasetContentDeliveryRule).
+    pub fn builder() -> crate::model::dataset_content_delivery_rule::Builder {
+        crate::model::dataset_content_delivery_rule::Builder::default()
+    }
+}
+
 /// See [`DatasetContentDeliveryRule`](crate::model::DatasetContentDeliveryRule).
 pub mod dataset_content_delivery_rule {
 
@@ -2274,12 +2306,6 @@ pub mod dataset_content_delivery_rule {
         }
     }
 }
-impl DatasetContentDeliveryRule {
-    /// Creates a new builder-style object to manufacture [`DatasetContentDeliveryRule`](crate::model::DatasetContentDeliveryRule).
-    pub fn builder() -> crate::model::dataset_content_delivery_rule::Builder {
-        crate::model::dataset_content_delivery_rule::Builder::default()
-    }
-}
 
 /// <p>The destination to which dataset contents are delivered.</p>
 #[non_exhaustive]
@@ -2307,6 +2333,13 @@ impl DatasetContentDeliveryDestination {
         self.s3_destination_configuration.as_ref()
     }
 }
+impl DatasetContentDeliveryDestination {
+    /// Creates a new builder-style object to manufacture [`DatasetContentDeliveryDestination`](crate::model::DatasetContentDeliveryDestination).
+    pub fn builder() -> crate::model::dataset_content_delivery_destination::Builder {
+        crate::model::dataset_content_delivery_destination::Builder::default()
+    }
+}
+
 /// See [`DatasetContentDeliveryDestination`](crate::model::DatasetContentDeliveryDestination).
 pub mod dataset_content_delivery_destination {
 
@@ -2359,12 +2392,6 @@ pub mod dataset_content_delivery_destination {
                 s3_destination_configuration: self.s3_destination_configuration,
             }
         }
-    }
-}
-impl DatasetContentDeliveryDestination {
-    /// Creates a new builder-style object to manufacture [`DatasetContentDeliveryDestination`](crate::model::DatasetContentDeliveryDestination).
-    pub fn builder() -> crate::model::dataset_content_delivery_destination::Builder {
-        crate::model::dataset_content_delivery_destination::Builder::default()
     }
 }
 
@@ -2421,6 +2448,13 @@ impl S3DestinationConfiguration {
         self.role_arn.as_deref()
     }
 }
+impl S3DestinationConfiguration {
+    /// Creates a new builder-style object to manufacture [`S3DestinationConfiguration`](crate::model::S3DestinationConfiguration).
+    pub fn builder() -> crate::model::s3_destination_configuration::Builder {
+        crate::model::s3_destination_configuration::Builder::default()
+    }
+}
+
 /// See [`S3DestinationConfiguration`](crate::model::S3DestinationConfiguration).
 pub mod s3_destination_configuration {
 
@@ -2506,12 +2540,6 @@ pub mod s3_destination_configuration {
         }
     }
 }
-impl S3DestinationConfiguration {
-    /// Creates a new builder-style object to manufacture [`S3DestinationConfiguration`](crate::model::S3DestinationConfiguration).
-    pub fn builder() -> crate::model::s3_destination_configuration::Builder {
-        crate::model::s3_destination_configuration::Builder::default()
-    }
-}
 
 /// <p>Configuration information for coordination with Glue, a fully managed extract, transform and load (ETL) service.</p>
 #[non_exhaustive]
@@ -2534,6 +2562,13 @@ impl GlueConfiguration {
         self.database_name.as_deref()
     }
 }
+impl GlueConfiguration {
+    /// Creates a new builder-style object to manufacture [`GlueConfiguration`](crate::model::GlueConfiguration).
+    pub fn builder() -> crate::model::glue_configuration::Builder {
+        crate::model::glue_configuration::Builder::default()
+    }
+}
+
 /// See [`GlueConfiguration`](crate::model::GlueConfiguration).
 pub mod glue_configuration {
 
@@ -2577,12 +2612,6 @@ pub mod glue_configuration {
         }
     }
 }
-impl GlueConfiguration {
-    /// Creates a new builder-style object to manufacture [`GlueConfiguration`](crate::model::GlueConfiguration).
-    pub fn builder() -> crate::model::glue_configuration::Builder {
-        crate::model::glue_configuration::Builder::default()
-    }
-}
 
 /// <p>Configuration information for delivery of dataset contents to IoT Events.</p>
 #[non_exhaustive]
@@ -2605,6 +2634,13 @@ impl IotEventsDestinationConfiguration {
         self.role_arn.as_deref()
     }
 }
+impl IotEventsDestinationConfiguration {
+    /// Creates a new builder-style object to manufacture [`IotEventsDestinationConfiguration`](crate::model::IotEventsDestinationConfiguration).
+    pub fn builder() -> crate::model::iot_events_destination_configuration::Builder {
+        crate::model::iot_events_destination_configuration::Builder::default()
+    }
+}
+
 /// See [`IotEventsDestinationConfiguration`](crate::model::IotEventsDestinationConfiguration).
 pub mod iot_events_destination_configuration {
 
@@ -2645,12 +2681,6 @@ pub mod iot_events_destination_configuration {
         }
     }
 }
-impl IotEventsDestinationConfiguration {
-    /// Creates a new builder-style object to manufacture [`IotEventsDestinationConfiguration`](crate::model::IotEventsDestinationConfiguration).
-    pub fn builder() -> crate::model::iot_events_destination_configuration::Builder {
-        crate::model::iot_events_destination_configuration::Builder::default()
-    }
-}
 
 /// <p>The <code>DatasetTrigger</code> that specifies when the dataset is automatically updated.</p>
 #[non_exhaustive]
@@ -2673,6 +2703,13 @@ impl DatasetTrigger {
         self.dataset.as_ref()
     }
 }
+impl DatasetTrigger {
+    /// Creates a new builder-style object to manufacture [`DatasetTrigger`](crate::model::DatasetTrigger).
+    pub fn builder() -> crate::model::dataset_trigger::Builder {
+        crate::model::dataset_trigger::Builder::default()
+    }
+}
+
 /// See [`DatasetTrigger`](crate::model::DatasetTrigger).
 pub mod dataset_trigger {
 
@@ -2716,12 +2753,6 @@ pub mod dataset_trigger {
         }
     }
 }
-impl DatasetTrigger {
-    /// Creates a new builder-style object to manufacture [`DatasetTrigger`](crate::model::DatasetTrigger).
-    pub fn builder() -> crate::model::dataset_trigger::Builder {
-        crate::model::dataset_trigger::Builder::default()
-    }
-}
 
 /// <p>Information about the dataset whose content generation triggers the new dataset content generation.</p>
 #[non_exhaustive]
@@ -2737,6 +2768,13 @@ impl TriggeringDataset {
         self.name.as_deref()
     }
 }
+impl TriggeringDataset {
+    /// Creates a new builder-style object to manufacture [`TriggeringDataset`](crate::model::TriggeringDataset).
+    pub fn builder() -> crate::model::triggering_dataset::Builder {
+        crate::model::triggering_dataset::Builder::default()
+    }
+}
+
 /// See [`TriggeringDataset`](crate::model::TriggeringDataset).
 pub mod triggering_dataset {
 
@@ -2763,12 +2801,6 @@ pub mod triggering_dataset {
         }
     }
 }
-impl TriggeringDataset {
-    /// Creates a new builder-style object to manufacture [`TriggeringDataset`](crate::model::TriggeringDataset).
-    pub fn builder() -> crate::model::triggering_dataset::Builder {
-        crate::model::triggering_dataset::Builder::default()
-    }
-}
 
 /// <p>The schedule for when to trigger an update.</p>
 #[non_exhaustive]
@@ -2784,6 +2816,13 @@ impl Schedule {
         self.expression.as_deref()
     }
 }
+impl Schedule {
+    /// Creates a new builder-style object to manufacture [`Schedule`](crate::model::Schedule).
+    pub fn builder() -> crate::model::schedule::Builder {
+        crate::model::schedule::Builder::default()
+    }
+}
+
 /// See [`Schedule`](crate::model::Schedule).
 pub mod schedule {
 
@@ -2810,12 +2849,6 @@ pub mod schedule {
                 expression: self.expression,
             }
         }
-    }
-}
-impl Schedule {
-    /// Creates a new builder-style object to manufacture [`Schedule`](crate::model::Schedule).
-    pub fn builder() -> crate::model::schedule::Builder {
-        crate::model::schedule::Builder::default()
     }
 }
 
@@ -2847,6 +2880,13 @@ impl DatasetAction {
         self.container_action.as_ref()
     }
 }
+impl DatasetAction {
+    /// Creates a new builder-style object to manufacture [`DatasetAction`](crate::model::DatasetAction).
+    pub fn builder() -> crate::model::dataset_action::Builder {
+        crate::model::dataset_action::Builder::default()
+    }
+}
+
 /// See [`DatasetAction`](crate::model::DatasetAction).
 pub mod dataset_action {
 
@@ -2905,12 +2945,6 @@ pub mod dataset_action {
         }
     }
 }
-impl DatasetAction {
-    /// Creates a new builder-style object to manufacture [`DatasetAction`](crate::model::DatasetAction).
-    pub fn builder() -> crate::model::dataset_action::Builder {
-        crate::model::dataset_action::Builder::default()
-    }
-}
 
 /// <p>Information required to run the <code>containerAction</code> to produce dataset contents.</p>
 #[non_exhaustive]
@@ -2949,6 +2983,13 @@ impl ContainerDatasetAction {
         self.variables.as_deref()
     }
 }
+impl ContainerDatasetAction {
+    /// Creates a new builder-style object to manufacture [`ContainerDatasetAction`](crate::model::ContainerDatasetAction).
+    pub fn builder() -> crate::model::container_dataset_action::Builder {
+        crate::model::container_dataset_action::Builder::default()
+    }
+}
+
 /// See [`ContainerDatasetAction`](crate::model::ContainerDatasetAction).
 pub mod container_dataset_action {
 
@@ -3031,12 +3072,6 @@ pub mod container_dataset_action {
         }
     }
 }
-impl ContainerDatasetAction {
-    /// Creates a new builder-style object to manufacture [`ContainerDatasetAction`](crate::model::ContainerDatasetAction).
-    pub fn builder() -> crate::model::container_dataset_action::Builder {
-        crate::model::container_dataset_action::Builder::default()
-    }
-}
 
 /// <p>An instance of a variable to be passed to the <code>containerAction</code> execution. Each variable must have a name and a value given by one of <code>stringValue</code>, <code>datasetContentVersionValue</code>, or <code>outputFileUriValue</code>.</p>
 #[non_exhaustive]
@@ -3083,6 +3118,13 @@ impl Variable {
         self.output_file_uri_value.as_ref()
     }
 }
+impl Variable {
+    /// Creates a new builder-style object to manufacture [`Variable`](crate::model::Variable).
+    pub fn builder() -> crate::model::variable::Builder {
+        crate::model::variable::Builder::default()
+    }
+}
+
 /// See [`Variable`](crate::model::Variable).
 pub mod variable {
 
@@ -3169,12 +3211,6 @@ pub mod variable {
         }
     }
 }
-impl Variable {
-    /// Creates a new builder-style object to manufacture [`Variable`](crate::model::Variable).
-    pub fn builder() -> crate::model::variable::Builder {
-        crate::model::variable::Builder::default()
-    }
-}
 
 /// <p>The value of the variable as a structure that specifies an output file URI.</p>
 #[non_exhaustive]
@@ -3190,6 +3226,13 @@ impl OutputFileUriValue {
         self.file_name.as_deref()
     }
 }
+impl OutputFileUriValue {
+    /// Creates a new builder-style object to manufacture [`OutputFileUriValue`](crate::model::OutputFileUriValue).
+    pub fn builder() -> crate::model::output_file_uri_value::Builder {
+        crate::model::output_file_uri_value::Builder::default()
+    }
+}
+
 /// See [`OutputFileUriValue`](crate::model::OutputFileUriValue).
 pub mod output_file_uri_value {
 
@@ -3218,12 +3261,6 @@ pub mod output_file_uri_value {
         }
     }
 }
-impl OutputFileUriValue {
-    /// Creates a new builder-style object to manufacture [`OutputFileUriValue`](crate::model::OutputFileUriValue).
-    pub fn builder() -> crate::model::output_file_uri_value::Builder {
-        crate::model::output_file_uri_value::Builder::default()
-    }
-}
 
 /// <p>The dataset whose latest contents are used as input to the notebook or application.</p>
 #[non_exhaustive]
@@ -3239,6 +3276,13 @@ impl DatasetContentVersionValue {
         self.dataset_name.as_deref()
     }
 }
+impl DatasetContentVersionValue {
+    /// Creates a new builder-style object to manufacture [`DatasetContentVersionValue`](crate::model::DatasetContentVersionValue).
+    pub fn builder() -> crate::model::dataset_content_version_value::Builder {
+        crate::model::dataset_content_version_value::Builder::default()
+    }
+}
+
 /// See [`DatasetContentVersionValue`](crate::model::DatasetContentVersionValue).
 pub mod dataset_content_version_value {
 
@@ -3267,12 +3311,6 @@ pub mod dataset_content_version_value {
         }
     }
 }
-impl DatasetContentVersionValue {
-    /// Creates a new builder-style object to manufacture [`DatasetContentVersionValue`](crate::model::DatasetContentVersionValue).
-    pub fn builder() -> crate::model::dataset_content_version_value::Builder {
-        crate::model::dataset_content_version_value::Builder::default()
-    }
-}
 
 /// <p>The configuration of the resource used to execute the <code>containerAction</code>.</p>
 #[non_exhaustive]
@@ -3295,6 +3333,13 @@ impl ResourceConfiguration {
         self.volume_size_in_gb
     }
 }
+impl ResourceConfiguration {
+    /// Creates a new builder-style object to manufacture [`ResourceConfiguration`](crate::model::ResourceConfiguration).
+    pub fn builder() -> crate::model::resource_configuration::Builder {
+        crate::model::resource_configuration::Builder::default()
+    }
+}
+
 /// See [`ResourceConfiguration`](crate::model::ResourceConfiguration).
 pub mod resource_configuration {
 
@@ -3336,12 +3381,6 @@ pub mod resource_configuration {
                 volume_size_in_gb: self.volume_size_in_gb.unwrap_or_default(),
             }
         }
-    }
-}
-impl ResourceConfiguration {
-    /// Creates a new builder-style object to manufacture [`ResourceConfiguration`](crate::model::ResourceConfiguration).
-    pub fn builder() -> crate::model::resource_configuration::Builder {
-        crate::model::resource_configuration::Builder::default()
     }
 }
 
@@ -3456,6 +3495,13 @@ impl SqlQueryDatasetAction {
         self.filters.as_deref()
     }
 }
+impl SqlQueryDatasetAction {
+    /// Creates a new builder-style object to manufacture [`SqlQueryDatasetAction`](crate::model::SqlQueryDatasetAction).
+    pub fn builder() -> crate::model::sql_query_dataset_action::Builder {
+        crate::model::sql_query_dataset_action::Builder::default()
+    }
+}
+
 /// See [`SqlQueryDatasetAction`](crate::model::SqlQueryDatasetAction).
 pub mod sql_query_dataset_action {
 
@@ -3505,12 +3551,6 @@ pub mod sql_query_dataset_action {
         }
     }
 }
-impl SqlQueryDatasetAction {
-    /// Creates a new builder-style object to manufacture [`SqlQueryDatasetAction`](crate::model::SqlQueryDatasetAction).
-    pub fn builder() -> crate::model::sql_query_dataset_action::Builder {
-        crate::model::sql_query_dataset_action::Builder::default()
-    }
-}
 
 /// <p>Information that is used to filter message data, to segregate it according to the timeframe in which it arrives.</p>
 #[non_exhaustive]
@@ -3526,6 +3566,13 @@ impl QueryFilter {
         self.delta_time.as_ref()
     }
 }
+impl QueryFilter {
+    /// Creates a new builder-style object to manufacture [`QueryFilter`](crate::model::QueryFilter).
+    pub fn builder() -> crate::model::query_filter::Builder {
+        crate::model::query_filter::Builder::default()
+    }
+}
+
 /// See [`QueryFilter`](crate::model::QueryFilter).
 pub mod query_filter {
 
@@ -3557,12 +3604,6 @@ pub mod query_filter {
         }
     }
 }
-impl QueryFilter {
-    /// Creates a new builder-style object to manufacture [`QueryFilter`](crate::model::QueryFilter).
-    pub fn builder() -> crate::model::query_filter::Builder {
-        crate::model::query_filter::Builder::default()
-    }
-}
 
 /// <p>Used to limit data to that which has arrived since the last execution of the action.</p>
 #[non_exhaustive]
@@ -3585,6 +3626,13 @@ impl DeltaTime {
         self.time_expression.as_deref()
     }
 }
+impl DeltaTime {
+    /// Creates a new builder-style object to manufacture [`DeltaTime`](crate::model::DeltaTime).
+    pub fn builder() -> crate::model::delta_time::Builder {
+        crate::model::delta_time::Builder::default()
+    }
+}
+
 /// See [`DeltaTime`](crate::model::DeltaTime).
 pub mod delta_time {
 
@@ -3628,12 +3676,6 @@ pub mod delta_time {
         }
     }
 }
-impl DeltaTime {
-    /// Creates a new builder-style object to manufacture [`DeltaTime`](crate::model::DeltaTime).
-    pub fn builder() -> crate::model::delta_time::Builder {
-        crate::model::delta_time::Builder::default()
-    }
-}
 
 /// <p>Where channel data is stored. You may choose one of <code>serviceManagedS3</code>, <code>customerManagedS3</code> storage. If not specified, the default is <code>serviceManagedS3</code>. This can't be changed after creation of the channel.</p>
 #[non_exhaustive]
@@ -3660,6 +3702,13 @@ impl ChannelStorage {
         self.customer_managed_s3.as_ref()
     }
 }
+impl ChannelStorage {
+    /// Creates a new builder-style object to manufacture [`ChannelStorage`](crate::model::ChannelStorage).
+    pub fn builder() -> crate::model::channel_storage::Builder {
+        crate::model::channel_storage::Builder::default()
+    }
+}
+
 /// See [`ChannelStorage`](crate::model::ChannelStorage).
 pub mod channel_storage {
 
@@ -3714,12 +3763,6 @@ pub mod channel_storage {
         }
     }
 }
-impl ChannelStorage {
-    /// Creates a new builder-style object to manufacture [`ChannelStorage`](crate::model::ChannelStorage).
-    pub fn builder() -> crate::model::channel_storage::Builder {
-        crate::model::channel_storage::Builder::default()
-    }
-}
 
 /// <p>Used to store channel data in an S3 bucket that you manage. If customer-managed storage is selected, the <code>retentionPeriod</code> parameter is ignored. You can't change the choice of S3 storage after the data store is created.</p>
 #[non_exhaustive]
@@ -3749,6 +3792,13 @@ impl CustomerManagedChannelS3Storage {
         self.role_arn.as_deref()
     }
 }
+impl CustomerManagedChannelS3Storage {
+    /// Creates a new builder-style object to manufacture [`CustomerManagedChannelS3Storage`](crate::model::CustomerManagedChannelS3Storage).
+    pub fn builder() -> crate::model::customer_managed_channel_s3_storage::Builder {
+        crate::model::customer_managed_channel_s3_storage::Builder::default()
+    }
+}
+
 /// See [`CustomerManagedChannelS3Storage`](crate::model::CustomerManagedChannelS3Storage).
 pub mod customer_managed_channel_s3_storage {
 
@@ -3801,17 +3851,18 @@ pub mod customer_managed_channel_s3_storage {
         }
     }
 }
-impl CustomerManagedChannelS3Storage {
-    /// Creates a new builder-style object to manufacture [`CustomerManagedChannelS3Storage`](crate::model::CustomerManagedChannelS3Storage).
-    pub fn builder() -> crate::model::customer_managed_channel_s3_storage::Builder {
-        crate::model::customer_managed_channel_s3_storage::Builder::default()
-    }
-}
 
 /// <p>Used to store channel data in an S3 bucket managed by IoT Analytics. You can't change the choice of S3 storage after the data store is created.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ServiceManagedChannelS3Storage {}
+impl ServiceManagedChannelS3Storage {
+    /// Creates a new builder-style object to manufacture [`ServiceManagedChannelS3Storage`](crate::model::ServiceManagedChannelS3Storage).
+    pub fn builder() -> crate::model::service_managed_channel_s3_storage::Builder {
+        crate::model::service_managed_channel_s3_storage::Builder::default()
+    }
+}
+
 /// See [`ServiceManagedChannelS3Storage`](crate::model::ServiceManagedChannelS3Storage).
 pub mod service_managed_channel_s3_storage {
 
@@ -3824,12 +3875,6 @@ pub mod service_managed_channel_s3_storage {
         pub fn build(self) -> crate::model::ServiceManagedChannelS3Storage {
             crate::model::ServiceManagedChannelS3Storage {}
         }
-    }
-}
-impl ServiceManagedChannelS3Storage {
-    /// Creates a new builder-style object to manufacture [`ServiceManagedChannelS3Storage`](crate::model::ServiceManagedChannelS3Storage).
-    pub fn builder() -> crate::model::service_managed_channel_s3_storage::Builder {
-        crate::model::service_managed_channel_s3_storage::Builder::default()
     }
 }
 
@@ -3854,6 +3899,13 @@ impl Tag {
         self.value.as_deref()
     }
 }
+impl Tag {
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
+    pub fn builder() -> crate::model::tag::Builder {
+        crate::model::tag::Builder::default()
+    }
+}
+
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
 
@@ -3894,12 +3946,6 @@ pub mod tag {
         }
     }
 }
-impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
-    pub fn builder() -> crate::model::tag::Builder {
-        crate::model::tag::Builder::default()
-    }
-}
 
 /// <p>Specifies one or more sets of channel messages.</p>
 #[non_exhaustive]
@@ -3919,6 +3965,13 @@ impl ChannelMessages {
         self.s3_paths.as_deref()
     }
 }
+impl ChannelMessages {
+    /// Creates a new builder-style object to manufacture [`ChannelMessages`](crate::model::ChannelMessages).
+    pub fn builder() -> crate::model::channel_messages::Builder {
+        crate::model::channel_messages::Builder::default()
+    }
+}
+
 /// See [`ChannelMessages`](crate::model::ChannelMessages).
 pub mod channel_messages {
 
@@ -3960,12 +4013,6 @@ pub mod channel_messages {
         }
     }
 }
-impl ChannelMessages {
-    /// Creates a new builder-style object to manufacture [`ChannelMessages`](crate::model::ChannelMessages).
-    pub fn builder() -> crate::model::channel_messages::Builder {
-        crate::model::channel_messages::Builder::default()
-    }
-}
 
 /// <p>Information about logging options.</p>
 #[non_exhaustive]
@@ -3995,6 +4042,13 @@ impl LoggingOptions {
         self.enabled
     }
 }
+impl LoggingOptions {
+    /// Creates a new builder-style object to manufacture [`LoggingOptions`](crate::model::LoggingOptions).
+    pub fn builder() -> crate::model::logging_options::Builder {
+        crate::model::logging_options::Builder::default()
+    }
+}
+
 /// See [`LoggingOptions`](crate::model::LoggingOptions).
 pub mod logging_options {
 
@@ -4045,12 +4099,6 @@ pub mod logging_options {
                 enabled: self.enabled.unwrap_or_default(),
             }
         }
-    }
-}
-impl LoggingOptions {
-    /// Creates a new builder-style object to manufacture [`LoggingOptions`](crate::model::LoggingOptions).
-    pub fn builder() -> crate::model::logging_options::Builder {
-        crate::model::logging_options::Builder::default()
     }
 }
 
@@ -4177,6 +4225,13 @@ impl PipelineSummary {
         self.last_update_time.as_ref()
     }
 }
+impl PipelineSummary {
+    /// Creates a new builder-style object to manufacture [`PipelineSummary`](crate::model::PipelineSummary).
+    pub fn builder() -> crate::model::pipeline_summary::Builder {
+        crate::model::pipeline_summary::Builder::default()
+    }
+}
+
 /// See [`PipelineSummary`](crate::model::PipelineSummary).
 pub mod pipeline_summary {
 
@@ -4260,12 +4315,6 @@ pub mod pipeline_summary {
         }
     }
 }
-impl PipelineSummary {
-    /// Creates a new builder-style object to manufacture [`PipelineSummary`](crate::model::PipelineSummary).
-    pub fn builder() -> crate::model::pipeline_summary::Builder {
-        crate::model::pipeline_summary::Builder::default()
-    }
-}
 
 /// <p>Information about pipeline reprocessing.</p>
 #[non_exhaustive]
@@ -4295,6 +4344,13 @@ impl ReprocessingSummary {
         self.creation_time.as_ref()
     }
 }
+impl ReprocessingSummary {
+    /// Creates a new builder-style object to manufacture [`ReprocessingSummary`](crate::model::ReprocessingSummary).
+    pub fn builder() -> crate::model::reprocessing_summary::Builder {
+        crate::model::reprocessing_summary::Builder::default()
+    }
+}
+
 /// See [`ReprocessingSummary`](crate::model::ReprocessingSummary).
 pub mod reprocessing_summary {
 
@@ -4351,12 +4407,6 @@ pub mod reprocessing_summary {
                 creation_time: self.creation_time,
             }
         }
-    }
-}
-impl ReprocessingSummary {
-    /// Creates a new builder-style object to manufacture [`ReprocessingSummary`](crate::model::ReprocessingSummary).
-    pub fn builder() -> crate::model::reprocessing_summary::Builder {
-        crate::model::reprocessing_summary::Builder::default()
     }
 }
 
@@ -4529,6 +4579,13 @@ impl DatastoreSummary {
         self.datastore_partitions.as_ref()
     }
 }
+impl DatastoreSummary {
+    /// Creates a new builder-style object to manufacture [`DatastoreSummary`](crate::model::DatastoreSummary).
+    pub fn builder() -> crate::model::datastore_summary::Builder {
+        crate::model::datastore_summary::Builder::default()
+    }
+}
+
 /// See [`DatastoreSummary`](crate::model::DatastoreSummary).
 pub mod datastore_summary {
 
@@ -4669,12 +4726,6 @@ pub mod datastore_summary {
         }
     }
 }
-impl DatastoreSummary {
-    /// Creates a new builder-style object to manufacture [`DatastoreSummary`](crate::model::DatastoreSummary).
-    pub fn builder() -> crate::model::datastore_summary::Builder {
-        crate::model::datastore_summary::Builder::default()
-    }
-}
 
 /// <p> Contains information about the partition dimensions in a data store. </p>
 #[non_exhaustive]
@@ -4690,6 +4741,13 @@ impl DatastorePartitions {
         self.partitions.as_deref()
     }
 }
+impl DatastorePartitions {
+    /// Creates a new builder-style object to manufacture [`DatastorePartitions`](crate::model::DatastorePartitions).
+    pub fn builder() -> crate::model::datastore_partitions::Builder {
+        crate::model::datastore_partitions::Builder::default()
+    }
+}
+
 /// See [`DatastorePartitions`](crate::model::DatastorePartitions).
 pub mod datastore_partitions {
 
@@ -4727,12 +4785,6 @@ pub mod datastore_partitions {
         }
     }
 }
-impl DatastorePartitions {
-    /// Creates a new builder-style object to manufacture [`DatastorePartitions`](crate::model::DatastorePartitions).
-    pub fn builder() -> crate::model::datastore_partitions::Builder {
-        crate::model::datastore_partitions::Builder::default()
-    }
-}
 
 /// <p> A single dimension to partition a data store. The dimension must be an <code>AttributePartition</code> or a <code>TimestampPartition</code>. </p>
 #[non_exhaustive]
@@ -4755,6 +4807,13 @@ impl DatastorePartition {
         self.timestamp_partition.as_ref()
     }
 }
+impl DatastorePartition {
+    /// Creates a new builder-style object to manufacture [`DatastorePartition`](crate::model::DatastorePartition).
+    pub fn builder() -> crate::model::datastore_partition::Builder {
+        crate::model::datastore_partition::Builder::default()
+    }
+}
+
 /// See [`DatastorePartition`](crate::model::DatastorePartition).
 pub mod datastore_partition {
 
@@ -4801,12 +4860,6 @@ pub mod datastore_partition {
         }
     }
 }
-impl DatastorePartition {
-    /// Creates a new builder-style object to manufacture [`DatastorePartition`](crate::model::DatastorePartition).
-    pub fn builder() -> crate::model::datastore_partition::Builder {
-        crate::model::datastore_partition::Builder::default()
-    }
-}
 
 /// <p> A partition dimension defined by a timestamp attribute. </p>
 #[non_exhaustive]
@@ -4829,6 +4882,13 @@ impl TimestampPartition {
         self.timestamp_format.as_deref()
     }
 }
+impl TimestampPartition {
+    /// Creates a new builder-style object to manufacture [`TimestampPartition`](crate::model::TimestampPartition).
+    pub fn builder() -> crate::model::timestamp_partition::Builder {
+        crate::model::timestamp_partition::Builder::default()
+    }
+}
+
 /// See [`TimestampPartition`](crate::model::TimestampPartition).
 pub mod timestamp_partition {
 
@@ -4875,12 +4935,6 @@ pub mod timestamp_partition {
         }
     }
 }
-impl TimestampPartition {
-    /// Creates a new builder-style object to manufacture [`TimestampPartition`](crate::model::TimestampPartition).
-    pub fn builder() -> crate::model::timestamp_partition::Builder {
-        crate::model::timestamp_partition::Builder::default()
-    }
-}
 
 /// <p> A partition dimension defined by an attribute. </p>
 #[non_exhaustive]
@@ -4896,6 +4950,13 @@ impl Partition {
         self.attribute_name.as_deref()
     }
 }
+impl Partition {
+    /// Creates a new builder-style object to manufacture [`Partition`](crate::model::Partition).
+    pub fn builder() -> crate::model::partition::Builder {
+        crate::model::partition::Builder::default()
+    }
+}
+
 /// See [`Partition`](crate::model::Partition).
 pub mod partition {
 
@@ -4925,12 +4986,6 @@ pub mod partition {
                 attribute_name: self.attribute_name,
             }
         }
-    }
-}
-impl Partition {
-    /// Creates a new builder-style object to manufacture [`Partition`](crate::model::Partition).
-    pub fn builder() -> crate::model::partition::Builder {
-        crate::model::partition::Builder::default()
     }
 }
 
@@ -5156,6 +5211,13 @@ impl DatastoreStorageSummary {
         self.iot_site_wise_multi_layer_storage.as_ref()
     }
 }
+impl DatastoreStorageSummary {
+    /// Creates a new builder-style object to manufacture [`DatastoreStorageSummary`](crate::model::DatastoreStorageSummary).
+    pub fn builder() -> crate::model::datastore_storage_summary::Builder {
+        crate::model::datastore_storage_summary::Builder::default()
+    }
+}
+
 /// See [`DatastoreStorageSummary`](crate::model::DatastoreStorageSummary).
 pub mod datastore_storage_summary {
 
@@ -5229,12 +5291,6 @@ pub mod datastore_storage_summary {
         }
     }
 }
-impl DatastoreStorageSummary {
-    /// Creates a new builder-style object to manufacture [`DatastoreStorageSummary`](crate::model::DatastoreStorageSummary).
-    pub fn builder() -> crate::model::datastore_storage_summary::Builder {
-        crate::model::datastore_storage_summary::Builder::default()
-    }
-}
 
 /// <p> Contains information about the data store that you manage, which stores data used by IoT SiteWise. </p>
 #[non_exhaustive]
@@ -5254,6 +5310,13 @@ impl DatastoreIotSiteWiseMultiLayerStorageSummary {
         self.customer_managed_s3_storage.as_ref()
     }
 }
+impl DatastoreIotSiteWiseMultiLayerStorageSummary {
+    /// Creates a new builder-style object to manufacture [`DatastoreIotSiteWiseMultiLayerStorageSummary`](crate::model::DatastoreIotSiteWiseMultiLayerStorageSummary).
+    pub fn builder() -> crate::model::datastore_iot_site_wise_multi_layer_storage_summary::Builder {
+        crate::model::datastore_iot_site_wise_multi_layer_storage_summary::Builder::default()
+    }
+}
+
 /// See [`DatastoreIotSiteWiseMultiLayerStorageSummary`](crate::model::DatastoreIotSiteWiseMultiLayerStorageSummary).
 pub mod datastore_iot_site_wise_multi_layer_storage_summary {
 
@@ -5291,12 +5354,6 @@ pub mod datastore_iot_site_wise_multi_layer_storage_summary {
         }
     }
 }
-impl DatastoreIotSiteWiseMultiLayerStorageSummary {
-    /// Creates a new builder-style object to manufacture [`DatastoreIotSiteWiseMultiLayerStorageSummary`](crate::model::DatastoreIotSiteWiseMultiLayerStorageSummary).
-    pub fn builder() -> crate::model::datastore_iot_site_wise_multi_layer_storage_summary::Builder {
-        crate::model::datastore_iot_site_wise_multi_layer_storage_summary::Builder::default()
-    }
-}
 
 /// <p> Contains information about the data store that you manage, which stores data used by IoT SiteWise. </p>
 #[non_exhaustive]
@@ -5319,6 +5376,15 @@ impl IotSiteWiseCustomerManagedDatastoreS3StorageSummary {
         self.key_prefix.as_deref()
     }
 }
+impl IotSiteWiseCustomerManagedDatastoreS3StorageSummary {
+    /// Creates a new builder-style object to manufacture [`IotSiteWiseCustomerManagedDatastoreS3StorageSummary`](crate::model::IotSiteWiseCustomerManagedDatastoreS3StorageSummary).
+    pub fn builder(
+    ) -> crate::model::iot_site_wise_customer_managed_datastore_s3_storage_summary::Builder {
+        crate::model::iot_site_wise_customer_managed_datastore_s3_storage_summary::Builder::default(
+        )
+    }
+}
+
 /// See [`IotSiteWiseCustomerManagedDatastoreS3StorageSummary`](crate::model::IotSiteWiseCustomerManagedDatastoreS3StorageSummary).
 pub mod iot_site_wise_customer_managed_datastore_s3_storage_summary {
 
@@ -5359,14 +5425,6 @@ pub mod iot_site_wise_customer_managed_datastore_s3_storage_summary {
         }
     }
 }
-impl IotSiteWiseCustomerManagedDatastoreS3StorageSummary {
-    /// Creates a new builder-style object to manufacture [`IotSiteWiseCustomerManagedDatastoreS3StorageSummary`](crate::model::IotSiteWiseCustomerManagedDatastoreS3StorageSummary).
-    pub fn builder(
-    ) -> crate::model::iot_site_wise_customer_managed_datastore_s3_storage_summary::Builder {
-        crate::model::iot_site_wise_customer_managed_datastore_s3_storage_summary::Builder::default(
-        )
-    }
-}
 
 /// <p>Contains information about the data store that you manage.</p>
 #[non_exhaustive]
@@ -5396,6 +5454,13 @@ impl CustomerManagedDatastoreS3StorageSummary {
         self.role_arn.as_deref()
     }
 }
+impl CustomerManagedDatastoreS3StorageSummary {
+    /// Creates a new builder-style object to manufacture [`CustomerManagedDatastoreS3StorageSummary`](crate::model::CustomerManagedDatastoreS3StorageSummary).
+    pub fn builder() -> crate::model::customer_managed_datastore_s3_storage_summary::Builder {
+        crate::model::customer_managed_datastore_s3_storage_summary::Builder::default()
+    }
+}
+
 /// See [`CustomerManagedDatastoreS3StorageSummary`](crate::model::CustomerManagedDatastoreS3StorageSummary).
 pub mod customer_managed_datastore_s3_storage_summary {
 
@@ -5448,17 +5513,18 @@ pub mod customer_managed_datastore_s3_storage_summary {
         }
     }
 }
-impl CustomerManagedDatastoreS3StorageSummary {
-    /// Creates a new builder-style object to manufacture [`CustomerManagedDatastoreS3StorageSummary`](crate::model::CustomerManagedDatastoreS3StorageSummary).
-    pub fn builder() -> crate::model::customer_managed_datastore_s3_storage_summary::Builder {
-        crate::model::customer_managed_datastore_s3_storage_summary::Builder::default()
-    }
-}
 
 /// <p>Contains information about the data store that is managed by IoT Analytics.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ServiceManagedDatastoreS3StorageSummary {}
+impl ServiceManagedDatastoreS3StorageSummary {
+    /// Creates a new builder-style object to manufacture [`ServiceManagedDatastoreS3StorageSummary`](crate::model::ServiceManagedDatastoreS3StorageSummary).
+    pub fn builder() -> crate::model::service_managed_datastore_s3_storage_summary::Builder {
+        crate::model::service_managed_datastore_s3_storage_summary::Builder::default()
+    }
+}
+
 /// See [`ServiceManagedDatastoreS3StorageSummary`](crate::model::ServiceManagedDatastoreS3StorageSummary).
 pub mod service_managed_datastore_s3_storage_summary {
 
@@ -5471,12 +5537,6 @@ pub mod service_managed_datastore_s3_storage_summary {
         pub fn build(self) -> crate::model::ServiceManagedDatastoreS3StorageSummary {
             crate::model::ServiceManagedDatastoreS3StorageSummary {}
         }
-    }
-}
-impl ServiceManagedDatastoreS3StorageSummary {
-    /// Creates a new builder-style object to manufacture [`ServiceManagedDatastoreS3StorageSummary`](crate::model::ServiceManagedDatastoreS3StorageSummary).
-    pub fn builder() -> crate::model::service_managed_datastore_s3_storage_summary::Builder {
-        crate::model::service_managed_datastore_s3_storage_summary::Builder::default()
     }
 }
 
@@ -5529,6 +5589,13 @@ impl DatasetSummary {
         self.actions.as_deref()
     }
 }
+impl DatasetSummary {
+    /// Creates a new builder-style object to manufacture [`DatasetSummary`](crate::model::DatasetSummary).
+    pub fn builder() -> crate::model::dataset_summary::Builder {
+        crate::model::dataset_summary::Builder::default()
+    }
+}
+
 /// See [`DatasetSummary`](crate::model::DatasetSummary).
 pub mod dataset_summary {
 
@@ -5644,12 +5711,6 @@ pub mod dataset_summary {
         }
     }
 }
-impl DatasetSummary {
-    /// Creates a new builder-style object to manufacture [`DatasetSummary`](crate::model::DatasetSummary).
-    pub fn builder() -> crate::model::dataset_summary::Builder {
-        crate::model::dataset_summary::Builder::default()
-    }
-}
 
 /// <p>Information about the action that automatically creates the dataset's contents.</p>
 #[non_exhaustive]
@@ -5672,6 +5733,13 @@ impl DatasetActionSummary {
         self.action_type.as_ref()
     }
 }
+impl DatasetActionSummary {
+    /// Creates a new builder-style object to manufacture [`DatasetActionSummary`](crate::model::DatasetActionSummary).
+    pub fn builder() -> crate::model::dataset_action_summary::Builder {
+        crate::model::dataset_action_summary::Builder::default()
+    }
+}
+
 /// See [`DatasetActionSummary`](crate::model::DatasetActionSummary).
 pub mod dataset_action_summary {
 
@@ -5713,12 +5781,6 @@ pub mod dataset_action_summary {
                 action_type: self.action_type,
             }
         }
-    }
-}
-impl DatasetActionSummary {
-    /// Creates a new builder-style object to manufacture [`DatasetActionSummary`](crate::model::DatasetActionSummary).
-    pub fn builder() -> crate::model::dataset_action_summary::Builder {
-        crate::model::dataset_action_summary::Builder::default()
     }
 }
 
@@ -5951,6 +6013,13 @@ impl DatasetContentSummary {
         self.completion_time.as_ref()
     }
 }
+impl DatasetContentSummary {
+    /// Creates a new builder-style object to manufacture [`DatasetContentSummary`](crate::model::DatasetContentSummary).
+    pub fn builder() -> crate::model::dataset_content_summary::Builder {
+        crate::model::dataset_content_summary::Builder::default()
+    }
+}
+
 /// See [`DatasetContentSummary`](crate::model::DatasetContentSummary).
 pub mod dataset_content_summary {
 
@@ -6039,12 +6108,6 @@ pub mod dataset_content_summary {
         }
     }
 }
-impl DatasetContentSummary {
-    /// Creates a new builder-style object to manufacture [`DatasetContentSummary`](crate::model::DatasetContentSummary).
-    pub fn builder() -> crate::model::dataset_content_summary::Builder {
-        crate::model::dataset_content_summary::Builder::default()
-    }
-}
 
 /// <p>The state of the dataset contents and the reason they are in this state.</p>
 #[non_exhaustive]
@@ -6067,6 +6130,13 @@ impl DatasetContentStatus {
         self.reason.as_deref()
     }
 }
+impl DatasetContentStatus {
+    /// Creates a new builder-style object to manufacture [`DatasetContentStatus`](crate::model::DatasetContentStatus).
+    pub fn builder() -> crate::model::dataset_content_status::Builder {
+        crate::model::dataset_content_status::Builder::default()
+    }
+}
+
 /// See [`DatasetContentStatus`](crate::model::DatasetContentStatus).
 pub mod dataset_content_status {
 
@@ -6108,12 +6178,6 @@ pub mod dataset_content_status {
                 reason: self.reason,
             }
         }
-    }
-}
-impl DatasetContentStatus {
-    /// Creates a new builder-style object to manufacture [`DatasetContentStatus`](crate::model::DatasetContentStatus).
-    pub fn builder() -> crate::model::dataset_content_status::Builder {
-        crate::model::dataset_content_status::Builder::default()
     }
 }
 
@@ -6267,6 +6331,13 @@ impl ChannelSummary {
         self.last_message_arrival_time.as_ref()
     }
 }
+impl ChannelSummary {
+    /// Creates a new builder-style object to manufacture [`ChannelSummary`](crate::model::ChannelSummary).
+    pub fn builder() -> crate::model::channel_summary::Builder {
+        crate::model::channel_summary::Builder::default()
+    }
+}
+
 /// See [`ChannelSummary`](crate::model::ChannelSummary).
 pub mod channel_summary {
 
@@ -6372,12 +6443,6 @@ pub mod channel_summary {
                 last_message_arrival_time: self.last_message_arrival_time,
             }
         }
-    }
-}
-impl ChannelSummary {
-    /// Creates a new builder-style object to manufacture [`ChannelSummary`](crate::model::ChannelSummary).
-    pub fn builder() -> crate::model::channel_summary::Builder {
-        crate::model::channel_summary::Builder::default()
     }
 }
 
@@ -6503,6 +6568,13 @@ impl ChannelStorageSummary {
         self.customer_managed_s3.as_ref()
     }
 }
+impl ChannelStorageSummary {
+    /// Creates a new builder-style object to manufacture [`ChannelStorageSummary`](crate::model::ChannelStorageSummary).
+    pub fn builder() -> crate::model::channel_storage_summary::Builder {
+        crate::model::channel_storage_summary::Builder::default()
+    }
+}
+
 /// See [`ChannelStorageSummary`](crate::model::ChannelStorageSummary).
 pub mod channel_storage_summary {
 
@@ -6557,12 +6629,6 @@ pub mod channel_storage_summary {
         }
     }
 }
-impl ChannelStorageSummary {
-    /// Creates a new builder-style object to manufacture [`ChannelStorageSummary`](crate::model::ChannelStorageSummary).
-    pub fn builder() -> crate::model::channel_storage_summary::Builder {
-        crate::model::channel_storage_summary::Builder::default()
-    }
-}
 
 /// <p>Used to store channel data in an S3 bucket that you manage.</p>
 #[non_exhaustive]
@@ -6592,6 +6658,13 @@ impl CustomerManagedChannelS3StorageSummary {
         self.role_arn.as_deref()
     }
 }
+impl CustomerManagedChannelS3StorageSummary {
+    /// Creates a new builder-style object to manufacture [`CustomerManagedChannelS3StorageSummary`](crate::model::CustomerManagedChannelS3StorageSummary).
+    pub fn builder() -> crate::model::customer_managed_channel_s3_storage_summary::Builder {
+        crate::model::customer_managed_channel_s3_storage_summary::Builder::default()
+    }
+}
+
 /// See [`CustomerManagedChannelS3StorageSummary`](crate::model::CustomerManagedChannelS3StorageSummary).
 pub mod customer_managed_channel_s3_storage_summary {
 
@@ -6644,17 +6717,18 @@ pub mod customer_managed_channel_s3_storage_summary {
         }
     }
 }
-impl CustomerManagedChannelS3StorageSummary {
-    /// Creates a new builder-style object to manufacture [`CustomerManagedChannelS3StorageSummary`](crate::model::CustomerManagedChannelS3StorageSummary).
-    pub fn builder() -> crate::model::customer_managed_channel_s3_storage_summary::Builder {
-        crate::model::customer_managed_channel_s3_storage_summary::Builder::default()
-    }
-}
 
 /// <p>Used to store channel data in an S3 bucket managed by IoT Analytics.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ServiceManagedChannelS3StorageSummary {}
+impl ServiceManagedChannelS3StorageSummary {
+    /// Creates a new builder-style object to manufacture [`ServiceManagedChannelS3StorageSummary`](crate::model::ServiceManagedChannelS3StorageSummary).
+    pub fn builder() -> crate::model::service_managed_channel_s3_storage_summary::Builder {
+        crate::model::service_managed_channel_s3_storage_summary::Builder::default()
+    }
+}
+
 /// See [`ServiceManagedChannelS3StorageSummary`](crate::model::ServiceManagedChannelS3StorageSummary).
 pub mod service_managed_channel_s3_storage_summary {
 
@@ -6667,12 +6741,6 @@ pub mod service_managed_channel_s3_storage_summary {
         pub fn build(self) -> crate::model::ServiceManagedChannelS3StorageSummary {
             crate::model::ServiceManagedChannelS3StorageSummary {}
         }
-    }
-}
-impl ServiceManagedChannelS3StorageSummary {
-    /// Creates a new builder-style object to manufacture [`ServiceManagedChannelS3StorageSummary`](crate::model::ServiceManagedChannelS3StorageSummary).
-    pub fn builder() -> crate::model::service_managed_channel_s3_storage_summary::Builder {
-        crate::model::service_managed_channel_s3_storage_summary::Builder::default()
     }
 }
 
@@ -6697,6 +6765,13 @@ impl DatasetEntry {
         self.data_uri.as_deref()
     }
 }
+impl DatasetEntry {
+    /// Creates a new builder-style object to manufacture [`DatasetEntry`](crate::model::DatasetEntry).
+    pub fn builder() -> crate::model::dataset_entry::Builder {
+        crate::model::dataset_entry::Builder::default()
+    }
+}
+
 /// See [`DatasetEntry`](crate::model::DatasetEntry).
 pub mod dataset_entry {
 
@@ -6735,12 +6810,6 @@ pub mod dataset_entry {
                 data_uri: self.data_uri,
             }
         }
-    }
-}
-impl DatasetEntry {
-    /// Creates a new builder-style object to manufacture [`DatasetEntry`](crate::model::DatasetEntry).
-    pub fn builder() -> crate::model::dataset_entry::Builder {
-        crate::model::dataset_entry::Builder::default()
     }
 }
 
@@ -6796,6 +6865,13 @@ impl Pipeline {
         self.last_update_time.as_ref()
     }
 }
+impl Pipeline {
+    /// Creates a new builder-style object to manufacture [`Pipeline`](crate::model::Pipeline).
+    pub fn builder() -> crate::model::pipeline::Builder {
+        crate::model::pipeline::Builder::default()
+    }
+}
+
 /// See [`Pipeline`](crate::model::Pipeline).
 pub mod pipeline {
 
@@ -6909,12 +6985,6 @@ pub mod pipeline {
         }
     }
 }
-impl Pipeline {
-    /// Creates a new builder-style object to manufacture [`Pipeline`](crate::model::Pipeline).
-    pub fn builder() -> crate::model::pipeline::Builder {
-        crate::model::pipeline::Builder::default()
-    }
-}
 
 /// <p>Statistical information about the data store.</p>
 #[non_exhaustive]
@@ -6930,6 +7000,13 @@ impl DatastoreStatistics {
         self.size.as_ref()
     }
 }
+impl DatastoreStatistics {
+    /// Creates a new builder-style object to manufacture [`DatastoreStatistics`](crate::model::DatastoreStatistics).
+    pub fn builder() -> crate::model::datastore_statistics::Builder {
+        crate::model::datastore_statistics::Builder::default()
+    }
+}
+
 /// See [`DatastoreStatistics`](crate::model::DatastoreStatistics).
 pub mod datastore_statistics {
 
@@ -6959,12 +7036,6 @@ pub mod datastore_statistics {
         }
     }
 }
-impl DatastoreStatistics {
-    /// Creates a new builder-style object to manufacture [`DatastoreStatistics`](crate::model::DatastoreStatistics).
-    pub fn builder() -> crate::model::datastore_statistics::Builder {
-        crate::model::datastore_statistics::Builder::default()
-    }
-}
 
 /// <p>The estimated size of the resource.</p>
 #[non_exhaustive]
@@ -6987,6 +7058,13 @@ impl EstimatedResourceSize {
         self.estimated_on.as_ref()
     }
 }
+impl EstimatedResourceSize {
+    /// Creates a new builder-style object to manufacture [`EstimatedResourceSize`](crate::model::EstimatedResourceSize).
+    pub fn builder() -> crate::model::estimated_resource_size::Builder {
+        crate::model::estimated_resource_size::Builder::default()
+    }
+}
+
 /// See [`EstimatedResourceSize`](crate::model::EstimatedResourceSize).
 pub mod estimated_resource_size {
 
@@ -7028,12 +7106,6 @@ pub mod estimated_resource_size {
                 estimated_on: self.estimated_on,
             }
         }
-    }
-}
-impl EstimatedResourceSize {
-    /// Creates a new builder-style object to manufacture [`EstimatedResourceSize`](crate::model::EstimatedResourceSize).
-    pub fn builder() -> crate::model::estimated_resource_size::Builder {
-        crate::model::estimated_resource_size::Builder::default()
     }
 }
 
@@ -7164,6 +7236,13 @@ impl Datastore {
         self.datastore_partitions.as_ref()
     }
 }
+impl Datastore {
+    /// Creates a new builder-style object to manufacture [`Datastore`](crate::model::Datastore).
+    pub fn builder() -> crate::model::datastore::Builder {
+        crate::model::datastore::Builder::default()
+    }
+}
+
 /// See [`Datastore`](crate::model::Datastore).
 pub mod datastore {
 
@@ -7376,12 +7455,6 @@ pub mod datastore {
         }
     }
 }
-impl Datastore {
-    /// Creates a new builder-style object to manufacture [`Datastore`](crate::model::Datastore).
-    pub fn builder() -> crate::model::datastore::Builder {
-        crate::model::datastore::Builder::default()
-    }
-}
 
 /// <p>Information about a dataset.</p>
 #[non_exhaustive]
@@ -7472,6 +7545,13 @@ impl Dataset {
         self.late_data_rules.as_deref()
     }
 }
+impl Dataset {
+    /// Creates a new builder-style object to manufacture [`Dataset`](crate::model::Dataset).
+    pub fn builder() -> crate::model::dataset::Builder {
+        crate::model::dataset::Builder::default()
+    }
+}
+
 /// See [`Dataset`](crate::model::Dataset).
 pub mod dataset {
 
@@ -7679,12 +7759,6 @@ pub mod dataset {
         }
     }
 }
-impl Dataset {
-    /// Creates a new builder-style object to manufacture [`Dataset`](crate::model::Dataset).
-    pub fn builder() -> crate::model::dataset::Builder {
-        crate::model::dataset::Builder::default()
-    }
-}
 
 /// <p>Statistics information about the channel.</p>
 #[non_exhaustive]
@@ -7700,6 +7774,13 @@ impl ChannelStatistics {
         self.size.as_ref()
     }
 }
+impl ChannelStatistics {
+    /// Creates a new builder-style object to manufacture [`ChannelStatistics`](crate::model::ChannelStatistics).
+    pub fn builder() -> crate::model::channel_statistics::Builder {
+        crate::model::channel_statistics::Builder::default()
+    }
+}
+
 /// See [`ChannelStatistics`](crate::model::ChannelStatistics).
 pub mod channel_statistics {
 
@@ -7727,12 +7808,6 @@ pub mod channel_statistics {
         pub fn build(self) -> crate::model::ChannelStatistics {
             crate::model::ChannelStatistics { size: self.size }
         }
-    }
-}
-impl ChannelStatistics {
-    /// Creates a new builder-style object to manufacture [`ChannelStatistics`](crate::model::ChannelStatistics).
-    pub fn builder() -> crate::model::channel_statistics::Builder {
-        crate::model::channel_statistics::Builder::default()
     }
 }
 
@@ -7803,6 +7878,13 @@ impl Channel {
         self.last_message_arrival_time.as_ref()
     }
 }
+impl Channel {
+    /// Creates a new builder-style object to manufacture [`Channel`](crate::model::Channel).
+    pub fn builder() -> crate::model::channel::Builder {
+        crate::model::channel::Builder::default()
+    }
+}
+
 /// See [`Channel`](crate::model::Channel).
 pub mod channel {
 
@@ -7937,12 +8019,6 @@ pub mod channel {
         }
     }
 }
-impl Channel {
-    /// Creates a new builder-style object to manufacture [`Channel`](crate::model::Channel).
-    pub fn builder() -> crate::model::channel::Builder {
-        crate::model::channel::Builder::default()
-    }
-}
 
 /// <p>Contains informations about errors.</p>
 #[non_exhaustive]
@@ -7972,6 +8048,13 @@ impl BatchPutMessageErrorEntry {
         self.error_message.as_deref()
     }
 }
+impl BatchPutMessageErrorEntry {
+    /// Creates a new builder-style object to manufacture [`BatchPutMessageErrorEntry`](crate::model::BatchPutMessageErrorEntry).
+    pub fn builder() -> crate::model::batch_put_message_error_entry::Builder {
+        crate::model::batch_put_message_error_entry::Builder::default()
+    }
+}
+
 /// See [`BatchPutMessageErrorEntry`](crate::model::BatchPutMessageErrorEntry).
 pub mod batch_put_message_error_entry {
 
@@ -8027,12 +8110,6 @@ pub mod batch_put_message_error_entry {
         }
     }
 }
-impl BatchPutMessageErrorEntry {
-    /// Creates a new builder-style object to manufacture [`BatchPutMessageErrorEntry`](crate::model::BatchPutMessageErrorEntry).
-    pub fn builder() -> crate::model::batch_put_message_error_entry::Builder {
-        crate::model::batch_put_message_error_entry::Builder::default()
-    }
-}
 
 /// <p>Information about a message.</p>
 #[non_exhaustive]
@@ -8055,6 +8132,13 @@ impl Message {
         self.payload.as_ref()
     }
 }
+impl Message {
+    /// Creates a new builder-style object to manufacture [`Message`](crate::model::Message).
+    pub fn builder() -> crate::model::message::Builder {
+        crate::model::message::Builder::default()
+    }
+}
+
 /// See [`Message`](crate::model::Message).
 pub mod message {
 
@@ -8093,11 +8177,5 @@ pub mod message {
                 payload: self.payload,
             }
         }
-    }
-}
-impl Message {
-    /// Creates a new builder-style object to manufacture [`Message`](crate::model::Message).
-    pub fn builder() -> crate::model::message::Builder {
-        crate::model::message::Builder::default()
     }
 }

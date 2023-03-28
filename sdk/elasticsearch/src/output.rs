@@ -43,6 +43,13 @@ impl aws_http::request_id::RequestId for UpgradeElasticsearchDomainOutput {
         self._request_id.as_deref()
     }
 }
+impl UpgradeElasticsearchDomainOutput {
+    /// Creates a new builder-style object to manufacture [`UpgradeElasticsearchDomainOutput`](crate::output::UpgradeElasticsearchDomainOutput).
+    pub fn builder() -> crate::output::upgrade_elasticsearch_domain_output::Builder {
+        crate::output::upgrade_elasticsearch_domain_output::Builder::default()
+    }
+}
+
 /// See [`UpgradeElasticsearchDomainOutput`](crate::output::UpgradeElasticsearchDomainOutput).
 pub mod upgrade_elasticsearch_domain_output {
 
@@ -128,12 +135,6 @@ pub mod upgrade_elasticsearch_domain_output {
         }
     }
 }
-impl UpgradeElasticsearchDomainOutput {
-    /// Creates a new builder-style object to manufacture [`UpgradeElasticsearchDomainOutput`](crate::output::UpgradeElasticsearchDomainOutput).
-    pub fn builder() -> crate::output::upgrade_elasticsearch_domain_output::Builder {
-        crate::output::upgrade_elasticsearch_domain_output::Builder::default()
-    }
-}
 
 /// <p>Contains the configuration and status of the VPC endpoint being updated.</p>
 #[non_exhaustive]
@@ -155,6 +156,13 @@ impl aws_http::request_id::RequestId for UpdateVpcEndpointOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdateVpcEndpointOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateVpcEndpointOutput`](crate::output::UpdateVpcEndpointOutput).
+    pub fn builder() -> crate::output::update_vpc_endpoint_output::Builder {
+        crate::output::update_vpc_endpoint_output::Builder::default()
+    }
+}
+
 /// See [`UpdateVpcEndpointOutput`](crate::output::UpdateVpcEndpointOutput).
 pub mod update_vpc_endpoint_output {
 
@@ -197,12 +205,6 @@ pub mod update_vpc_endpoint_output {
         }
     }
 }
-impl UpdateVpcEndpointOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateVpcEndpointOutput`](crate::output::UpdateVpcEndpointOutput).
-    pub fn builder() -> crate::output::update_vpc_endpoint_output::Builder {
-        crate::output::update_vpc_endpoint_output::Builder::default()
-    }
-}
 
 /// <p> Container for response returned by <code> <code>UpdatePackage</code> </code> operation. </p>
 #[non_exhaustive]
@@ -224,6 +226,13 @@ impl aws_http::request_id::RequestId for UpdatePackageOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdatePackageOutput {
+    /// Creates a new builder-style object to manufacture [`UpdatePackageOutput`](crate::output::UpdatePackageOutput).
+    pub fn builder() -> crate::output::update_package_output::Builder {
+        crate::output::update_package_output::Builder::default()
+    }
+}
+
 /// See [`UpdatePackageOutput`](crate::output::UpdatePackageOutput).
 pub mod update_package_output {
 
@@ -266,12 +275,6 @@ pub mod update_package_output {
         }
     }
 }
-impl UpdatePackageOutput {
-    /// Creates a new builder-style object to manufacture [`UpdatePackageOutput`](crate::output::UpdatePackageOutput).
-    pub fn builder() -> crate::output::update_package_output::Builder {
-        crate::output::update_package_output::Builder::default()
-    }
-}
 
 /// <p>The result of an <code>UpdateElasticsearchDomain</code> request. Contains the status of the Elasticsearch domain being updated.</p>
 #[non_exhaustive]
@@ -300,6 +303,13 @@ impl aws_http::request_id::RequestId for UpdateElasticsearchDomainConfigOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdateElasticsearchDomainConfigOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateElasticsearchDomainConfigOutput`](crate::output::UpdateElasticsearchDomainConfigOutput).
+    pub fn builder() -> crate::output::update_elasticsearch_domain_config_output::Builder {
+        crate::output::update_elasticsearch_domain_config_output::Builder::default()
+    }
+}
+
 /// See [`UpdateElasticsearchDomainConfigOutput`](crate::output::UpdateElasticsearchDomainConfigOutput).
 pub mod update_elasticsearch_domain_config_output {
 
@@ -357,12 +367,6 @@ pub mod update_elasticsearch_domain_config_output {
         }
     }
 }
-impl UpdateElasticsearchDomainConfigOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateElasticsearchDomainConfigOutput`](crate::output::UpdateElasticsearchDomainConfigOutput).
-    pub fn builder() -> crate::output::update_elasticsearch_domain_config_output::Builder {
-        crate::output::update_elasticsearch_domain_config_output::Builder::default()
-    }
-}
 
 /// <p>The result of a <code>StartElasticsearchServiceSoftwareUpdate</code> operation. Contains the status of the update.</p>
 #[non_exhaustive]
@@ -386,6 +390,13 @@ impl aws_http::request_id::RequestId for StartElasticsearchServiceSoftwareUpdate
         self._request_id.as_deref()
     }
 }
+impl StartElasticsearchServiceSoftwareUpdateOutput {
+    /// Creates a new builder-style object to manufacture [`StartElasticsearchServiceSoftwareUpdateOutput`](crate::output::StartElasticsearchServiceSoftwareUpdateOutput).
+    pub fn builder() -> crate::output::start_elasticsearch_service_software_update_output::Builder {
+        crate::output::start_elasticsearch_service_software_update_output::Builder::default()
+    }
+}
+
 /// See [`StartElasticsearchServiceSoftwareUpdateOutput`](crate::output::StartElasticsearchServiceSoftwareUpdateOutput).
 pub mod start_elasticsearch_service_software_update_output {
 
@@ -432,12 +443,6 @@ pub mod start_elasticsearch_service_software_update_output {
         }
     }
 }
-impl StartElasticsearchServiceSoftwareUpdateOutput {
-    /// Creates a new builder-style object to manufacture [`StartElasticsearchServiceSoftwareUpdateOutput`](crate::output::StartElasticsearchServiceSoftwareUpdateOutput).
-    pub fn builder() -> crate::output::start_elasticsearch_service_software_update_output::Builder {
-        crate::output::start_elasticsearch_service_software_update_output::Builder::default()
-    }
-}
 
 /// <p>Container for response parameters to the <code><code>RevokeVpcEndpointAccess</code></code> operation. The response body for this operation is empty.</p>
 #[non_exhaustive]
@@ -450,6 +455,13 @@ impl aws_http::request_id::RequestId for RevokeVpcEndpointAccessOutput {
         self._request_id.as_deref()
     }
 }
+impl RevokeVpcEndpointAccessOutput {
+    /// Creates a new builder-style object to manufacture [`RevokeVpcEndpointAccessOutput`](crate::output::RevokeVpcEndpointAccessOutput).
+    pub fn builder() -> crate::output::revoke_vpc_endpoint_access_output::Builder {
+        crate::output::revoke_vpc_endpoint_access_output::Builder::default()
+    }
+}
+
 /// See [`RevokeVpcEndpointAccessOutput`](crate::output::RevokeVpcEndpointAccessOutput).
 pub mod revoke_vpc_endpoint_access_output {
 
@@ -477,12 +489,6 @@ pub mod revoke_vpc_endpoint_access_output {
         }
     }
 }
-impl RevokeVpcEndpointAccessOutput {
-    /// Creates a new builder-style object to manufacture [`RevokeVpcEndpointAccessOutput`](crate::output::RevokeVpcEndpointAccessOutput).
-    pub fn builder() -> crate::output::revoke_vpc_endpoint_access_output::Builder {
-        crate::output::revoke_vpc_endpoint_access_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -495,6 +501,13 @@ impl aws_http::request_id::RequestId for RemoveTagsOutput {
         self._request_id.as_deref()
     }
 }
+impl RemoveTagsOutput {
+    /// Creates a new builder-style object to manufacture [`RemoveTagsOutput`](crate::output::RemoveTagsOutput).
+    pub fn builder() -> crate::output::remove_tags_output::Builder {
+        crate::output::remove_tags_output::Builder::default()
+    }
+}
+
 /// See [`RemoveTagsOutput`](crate::output::RemoveTagsOutput).
 pub mod remove_tags_output {
 
@@ -522,12 +535,6 @@ pub mod remove_tags_output {
         }
     }
 }
-impl RemoveTagsOutput {
-    /// Creates a new builder-style object to manufacture [`RemoveTagsOutput`](crate::output::RemoveTagsOutput).
-    pub fn builder() -> crate::output::remove_tags_output::Builder {
-        crate::output::remove_tags_output::Builder::default()
-    }
-}
 
 /// <p>The result of a <code><code>RejectInboundCrossClusterSearchConnection</code></code> operation. Contains details of rejected inbound connection.</p>
 #[non_exhaustive]
@@ -552,6 +559,14 @@ impl aws_http::request_id::RequestId for RejectInboundCrossClusterSearchConnecti
         self._request_id.as_deref()
     }
 }
+impl RejectInboundCrossClusterSearchConnectionOutput {
+    /// Creates a new builder-style object to manufacture [`RejectInboundCrossClusterSearchConnectionOutput`](crate::output::RejectInboundCrossClusterSearchConnectionOutput).
+    pub fn builder() -> crate::output::reject_inbound_cross_cluster_search_connection_output::Builder
+    {
+        crate::output::reject_inbound_cross_cluster_search_connection_output::Builder::default()
+    }
+}
+
 /// See [`RejectInboundCrossClusterSearchConnectionOutput`](crate::output::RejectInboundCrossClusterSearchConnectionOutput).
 pub mod reject_inbound_cross_cluster_search_connection_output {
 
@@ -598,13 +613,6 @@ pub mod reject_inbound_cross_cluster_search_connection_output {
         }
     }
 }
-impl RejectInboundCrossClusterSearchConnectionOutput {
-    /// Creates a new builder-style object to manufacture [`RejectInboundCrossClusterSearchConnectionOutput`](crate::output::RejectInboundCrossClusterSearchConnectionOutput).
-    pub fn builder() -> crate::output::reject_inbound_cross_cluster_search_connection_output::Builder
-    {
-        crate::output::reject_inbound_cross_cluster_search_connection_output::Builder::default()
-    }
-}
 
 /// <p>Represents the output of a <code>PurchaseReservedElasticsearchInstanceOffering</code> operation.</p>
 #[non_exhaustive]
@@ -633,6 +641,14 @@ impl aws_http::request_id::RequestId for PurchaseReservedElasticsearchInstanceOf
         self._request_id.as_deref()
     }
 }
+impl PurchaseReservedElasticsearchInstanceOfferingOutput {
+    /// Creates a new builder-style object to manufacture [`PurchaseReservedElasticsearchInstanceOfferingOutput`](crate::output::PurchaseReservedElasticsearchInstanceOfferingOutput).
+    pub fn builder(
+    ) -> crate::output::purchase_reserved_elasticsearch_instance_offering_output::Builder {
+        crate::output::purchase_reserved_elasticsearch_instance_offering_output::Builder::default()
+    }
+}
+
 /// See [`PurchaseReservedElasticsearchInstanceOfferingOutput`](crate::output::PurchaseReservedElasticsearchInstanceOfferingOutput).
 pub mod purchase_reserved_elasticsearch_instance_offering_output {
 
@@ -693,13 +709,6 @@ pub mod purchase_reserved_elasticsearch_instance_offering_output {
         }
     }
 }
-impl PurchaseReservedElasticsearchInstanceOfferingOutput {
-    /// Creates a new builder-style object to manufacture [`PurchaseReservedElasticsearchInstanceOfferingOutput`](crate::output::PurchaseReservedElasticsearchInstanceOfferingOutput).
-    pub fn builder(
-    ) -> crate::output::purchase_reserved_elasticsearch_instance_offering_output::Builder {
-        crate::output::purchase_reserved_elasticsearch_instance_offering_output::Builder::default()
-    }
-}
 
 /// <p>Container for response parameters to the <code><code>ListVpcEndpointsForDomain</code></code> operation. Returns a list containing summarized details of the VPC endpoints.</p>
 #[non_exhaustive]
@@ -731,6 +740,13 @@ impl aws_http::request_id::RequestId for ListVpcEndpointsForDomainOutput {
         self._request_id.as_deref()
     }
 }
+impl ListVpcEndpointsForDomainOutput {
+    /// Creates a new builder-style object to manufacture [`ListVpcEndpointsForDomainOutput`](crate::output::ListVpcEndpointsForDomainOutput).
+    pub fn builder() -> crate::output::list_vpc_endpoints_for_domain_output::Builder {
+        crate::output::list_vpc_endpoints_for_domain_output::Builder::default()
+    }
+}
+
 /// See [`ListVpcEndpointsForDomainOutput`](crate::output::ListVpcEndpointsForDomainOutput).
 pub mod list_vpc_endpoints_for_domain_output {
 
@@ -795,12 +811,6 @@ pub mod list_vpc_endpoints_for_domain_output {
         }
     }
 }
-impl ListVpcEndpointsForDomainOutput {
-    /// Creates a new builder-style object to manufacture [`ListVpcEndpointsForDomainOutput`](crate::output::ListVpcEndpointsForDomainOutput).
-    pub fn builder() -> crate::output::list_vpc_endpoints_for_domain_output::Builder {
-        crate::output::list_vpc_endpoints_for_domain_output::Builder::default()
-    }
-}
 
 /// <p>Container for response parameters to the <code><code>ListVpcEndpoints</code></code> operation. Returns a list containing summarized details of the VPC endpoints.</p>
 #[non_exhaustive]
@@ -832,6 +842,13 @@ impl aws_http::request_id::RequestId for ListVpcEndpointsOutput {
         self._request_id.as_deref()
     }
 }
+impl ListVpcEndpointsOutput {
+    /// Creates a new builder-style object to manufacture [`ListVpcEndpointsOutput`](crate::output::ListVpcEndpointsOutput).
+    pub fn builder() -> crate::output::list_vpc_endpoints_output::Builder {
+        crate::output::list_vpc_endpoints_output::Builder::default()
+    }
+}
+
 /// See [`ListVpcEndpointsOutput`](crate::output::ListVpcEndpointsOutput).
 pub mod list_vpc_endpoints_output {
 
@@ -896,12 +913,6 @@ pub mod list_vpc_endpoints_output {
         }
     }
 }
-impl ListVpcEndpointsOutput {
-    /// Creates a new builder-style object to manufacture [`ListVpcEndpointsOutput`](crate::output::ListVpcEndpointsOutput).
-    pub fn builder() -> crate::output::list_vpc_endpoints_output::Builder {
-        crate::output::list_vpc_endpoints_output::Builder::default()
-    }
-}
 
 /// <p>Container for response parameters to the <code><code>ListVpcEndpointAccess</code></code> operation. Returns a list of accounts id and account type authorized to manage VPC endpoints.</p>
 #[non_exhaustive]
@@ -933,6 +944,13 @@ impl aws_http::request_id::RequestId for ListVpcEndpointAccessOutput {
         self._request_id.as_deref()
     }
 }
+impl ListVpcEndpointAccessOutput {
+    /// Creates a new builder-style object to manufacture [`ListVpcEndpointAccessOutput`](crate::output::ListVpcEndpointAccessOutput).
+    pub fn builder() -> crate::output::list_vpc_endpoint_access_output::Builder {
+        crate::output::list_vpc_endpoint_access_output::Builder::default()
+    }
+}
+
 /// See [`ListVpcEndpointAccessOutput`](crate::output::ListVpcEndpointAccessOutput).
 pub mod list_vpc_endpoint_access_output {
 
@@ -997,12 +1015,6 @@ pub mod list_vpc_endpoint_access_output {
         }
     }
 }
-impl ListVpcEndpointAccessOutput {
-    /// Creates a new builder-style object to manufacture [`ListVpcEndpointAccessOutput`](crate::output::ListVpcEndpointAccessOutput).
-    pub fn builder() -> crate::output::list_vpc_endpoint_access_output::Builder {
-        crate::output::list_vpc_endpoint_access_output::Builder::default()
-    }
-}
 
 /// <p>The result of a <code>ListTags</code> operation. Contains tags for all requested Elasticsearch domains.</p>
 #[non_exhaustive]
@@ -1024,6 +1036,13 @@ impl aws_http::request_id::RequestId for ListTagsOutput {
         self._request_id.as_deref()
     }
 }
+impl ListTagsOutput {
+    /// Creates a new builder-style object to manufacture [`ListTagsOutput`](crate::output::ListTagsOutput).
+    pub fn builder() -> crate::output::list_tags_output::Builder {
+        crate::output::list_tags_output::Builder::default()
+    }
+}
+
 /// See [`ListTagsOutput`](crate::output::ListTagsOutput).
 pub mod list_tags_output {
 
@@ -1072,12 +1091,6 @@ pub mod list_tags_output {
         }
     }
 }
-impl ListTagsOutput {
-    /// Creates a new builder-style object to manufacture [`ListTagsOutput`](crate::output::ListTagsOutput).
-    pub fn builder() -> crate::output::list_tags_output::Builder {
-        crate::output::list_tags_output::Builder::default()
-    }
-}
 
 /// <p> Container for response parameters to <code> <code>ListPackagesForDomain</code> </code> operation. </p>
 #[non_exhaustive]
@@ -1109,6 +1122,13 @@ impl aws_http::request_id::RequestId for ListPackagesForDomainOutput {
         self._request_id.as_deref()
     }
 }
+impl ListPackagesForDomainOutput {
+    /// Creates a new builder-style object to manufacture [`ListPackagesForDomainOutput`](crate::output::ListPackagesForDomainOutput).
+    pub fn builder() -> crate::output::list_packages_for_domain_output::Builder {
+        crate::output::list_packages_for_domain_output::Builder::default()
+    }
+}
+
 /// See [`ListPackagesForDomainOutput`](crate::output::ListPackagesForDomainOutput).
 pub mod list_packages_for_domain_output {
 
@@ -1173,12 +1193,6 @@ pub mod list_packages_for_domain_output {
         }
     }
 }
-impl ListPackagesForDomainOutput {
-    /// Creates a new builder-style object to manufacture [`ListPackagesForDomainOutput`](crate::output::ListPackagesForDomainOutput).
-    pub fn builder() -> crate::output::list_packages_for_domain_output::Builder {
-        crate::output::list_packages_for_domain_output::Builder::default()
-    }
-}
 
 /// <p> Container for the parameters for response received from <code> <code>ListElasticsearchVersions</code> </code> operation. </p>
 #[non_exhaustive]
@@ -1207,6 +1221,13 @@ impl aws_http::request_id::RequestId for ListElasticsearchVersionsOutput {
         self._request_id.as_deref()
     }
 }
+impl ListElasticsearchVersionsOutput {
+    /// Creates a new builder-style object to manufacture [`ListElasticsearchVersionsOutput`](crate::output::ListElasticsearchVersionsOutput).
+    pub fn builder() -> crate::output::list_elasticsearch_versions_output::Builder {
+        crate::output::list_elasticsearch_versions_output::Builder::default()
+    }
+}
+
 /// See [`ListElasticsearchVersionsOutput`](crate::output::ListElasticsearchVersionsOutput).
 pub mod list_elasticsearch_versions_output {
 
@@ -1267,12 +1288,6 @@ pub mod list_elasticsearch_versions_output {
         }
     }
 }
-impl ListElasticsearchVersionsOutput {
-    /// Creates a new builder-style object to manufacture [`ListElasticsearchVersionsOutput`](crate::output::ListElasticsearchVersionsOutput).
-    pub fn builder() -> crate::output::list_elasticsearch_versions_output::Builder {
-        crate::output::list_elasticsearch_versions_output::Builder::default()
-    }
-}
 
 /// <p> Container for the parameters returned by <code> <code>ListElasticsearchInstanceTypes</code> </code> operation. </p>
 #[non_exhaustive]
@@ -1304,6 +1319,13 @@ impl aws_http::request_id::RequestId for ListElasticsearchInstanceTypesOutput {
         self._request_id.as_deref()
     }
 }
+impl ListElasticsearchInstanceTypesOutput {
+    /// Creates a new builder-style object to manufacture [`ListElasticsearchInstanceTypesOutput`](crate::output::ListElasticsearchInstanceTypesOutput).
+    pub fn builder() -> crate::output::list_elasticsearch_instance_types_output::Builder {
+        crate::output::list_elasticsearch_instance_types_output::Builder::default()
+    }
+}
+
 /// See [`ListElasticsearchInstanceTypesOutput`](crate::output::ListElasticsearchInstanceTypesOutput).
 pub mod list_elasticsearch_instance_types_output {
 
@@ -1368,12 +1390,6 @@ pub mod list_elasticsearch_instance_types_output {
         }
     }
 }
-impl ListElasticsearchInstanceTypesOutput {
-    /// Creates a new builder-style object to manufacture [`ListElasticsearchInstanceTypesOutput`](crate::output::ListElasticsearchInstanceTypesOutput).
-    pub fn builder() -> crate::output::list_elasticsearch_instance_types_output::Builder {
-        crate::output::list_elasticsearch_instance_types_output::Builder::default()
-    }
-}
 
 /// <p> Container for response parameters to <code> <code>ListDomainsForPackage</code> </code> operation. </p>
 #[non_exhaustive]
@@ -1405,6 +1421,13 @@ impl aws_http::request_id::RequestId for ListDomainsForPackageOutput {
         self._request_id.as_deref()
     }
 }
+impl ListDomainsForPackageOutput {
+    /// Creates a new builder-style object to manufacture [`ListDomainsForPackageOutput`](crate::output::ListDomainsForPackageOutput).
+    pub fn builder() -> crate::output::list_domains_for_package_output::Builder {
+        crate::output::list_domains_for_package_output::Builder::default()
+    }
+}
+
 /// See [`ListDomainsForPackageOutput`](crate::output::ListDomainsForPackageOutput).
 pub mod list_domains_for_package_output {
 
@@ -1469,12 +1492,6 @@ pub mod list_domains_for_package_output {
         }
     }
 }
-impl ListDomainsForPackageOutput {
-    /// Creates a new builder-style object to manufacture [`ListDomainsForPackageOutput`](crate::output::ListDomainsForPackageOutput).
-    pub fn builder() -> crate::output::list_domains_for_package_output::Builder {
-        crate::output::list_domains_for_package_output::Builder::default()
-    }
-}
 
 /// <p>The result of a <code>ListDomainNames</code> operation. Contains the names of all domains owned by this account and their respective engine types.</p>
 #[non_exhaustive]
@@ -1496,6 +1513,13 @@ impl aws_http::request_id::RequestId for ListDomainNamesOutput {
         self._request_id.as_deref()
     }
 }
+impl ListDomainNamesOutput {
+    /// Creates a new builder-style object to manufacture [`ListDomainNamesOutput`](crate::output::ListDomainNamesOutput).
+    pub fn builder() -> crate::output::list_domain_names_output::Builder {
+        crate::output::list_domain_names_output::Builder::default()
+    }
+}
+
 /// See [`ListDomainNamesOutput`](crate::output::ListDomainNamesOutput).
 pub mod list_domain_names_output {
 
@@ -1542,12 +1566,6 @@ pub mod list_domain_names_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl ListDomainNamesOutput {
-    /// Creates a new builder-style object to manufacture [`ListDomainNamesOutput`](crate::output::ListDomainNamesOutput).
-    pub fn builder() -> crate::output::list_domain_names_output::Builder {
-        crate::output::list_domain_names_output::Builder::default()
     }
 }
 
@@ -1611,6 +1629,13 @@ impl aws_http::request_id::RequestId for GetUpgradeStatusOutput {
         self._request_id.as_deref()
     }
 }
+impl GetUpgradeStatusOutput {
+    /// Creates a new builder-style object to manufacture [`GetUpgradeStatusOutput`](crate::output::GetUpgradeStatusOutput).
+    pub fn builder() -> crate::output::get_upgrade_status_output::Builder {
+        crate::output::get_upgrade_status_output::Builder::default()
+    }
+}
+
 /// See [`GetUpgradeStatusOutput`](crate::output::GetUpgradeStatusOutput).
 pub mod get_upgrade_status_output {
 
@@ -1706,12 +1731,6 @@ pub mod get_upgrade_status_output {
         }
     }
 }
-impl GetUpgradeStatusOutput {
-    /// Creates a new builder-style object to manufacture [`GetUpgradeStatusOutput`](crate::output::GetUpgradeStatusOutput).
-    pub fn builder() -> crate::output::get_upgrade_status_output::Builder {
-        crate::output::get_upgrade_status_output::Builder::default()
-    }
-}
 
 /// <p> Container for response returned by <code> <code>GetUpgradeHistory</code> </code> operation. </p>
 #[non_exhaustive]
@@ -1740,6 +1759,13 @@ impl aws_http::request_id::RequestId for GetUpgradeHistoryOutput {
         self._request_id.as_deref()
     }
 }
+impl GetUpgradeHistoryOutput {
+    /// Creates a new builder-style object to manufacture [`GetUpgradeHistoryOutput`](crate::output::GetUpgradeHistoryOutput).
+    pub fn builder() -> crate::output::get_upgrade_history_output::Builder {
+        crate::output::get_upgrade_history_output::Builder::default()
+    }
+}
+
 /// See [`GetUpgradeHistoryOutput`](crate::output::GetUpgradeHistoryOutput).
 pub mod get_upgrade_history_output {
 
@@ -1801,12 +1827,6 @@ pub mod get_upgrade_history_output {
         }
     }
 }
-impl GetUpgradeHistoryOutput {
-    /// Creates a new builder-style object to manufacture [`GetUpgradeHistoryOutput`](crate::output::GetUpgradeHistoryOutput).
-    pub fn builder() -> crate::output::get_upgrade_history_output::Builder {
-        crate::output::get_upgrade_history_output::Builder::default()
-    }
-}
 
 /// <p> Container for response returned by <code> <code>GetPackageVersionHistory</code> </code> operation. </p>
 #[non_exhaustive]
@@ -1845,6 +1865,13 @@ impl aws_http::request_id::RequestId for GetPackageVersionHistoryOutput {
         self._request_id.as_deref()
     }
 }
+impl GetPackageVersionHistoryOutput {
+    /// Creates a new builder-style object to manufacture [`GetPackageVersionHistoryOutput`](crate::output::GetPackageVersionHistoryOutput).
+    pub fn builder() -> crate::output::get_package_version_history_output::Builder {
+        crate::output::get_package_version_history_output::Builder::default()
+    }
+}
+
 /// See [`GetPackageVersionHistoryOutput`](crate::output::GetPackageVersionHistoryOutput).
 pub mod get_package_version_history_output {
 
@@ -1921,12 +1948,6 @@ pub mod get_package_version_history_output {
         }
     }
 }
-impl GetPackageVersionHistoryOutput {
-    /// Creates a new builder-style object to manufacture [`GetPackageVersionHistoryOutput`](crate::output::GetPackageVersionHistoryOutput).
-    pub fn builder() -> crate::output::get_package_version_history_output::Builder {
-        crate::output::get_package_version_history_output::Builder::default()
-    }
-}
 
 /// <p> Container for response returned by <code> <code>GetCompatibleElasticsearchVersions</code> </code> operation. </p>
 #[non_exhaustive]
@@ -1951,6 +1972,13 @@ impl aws_http::request_id::RequestId for GetCompatibleElasticsearchVersionsOutpu
         self._request_id.as_deref()
     }
 }
+impl GetCompatibleElasticsearchVersionsOutput {
+    /// Creates a new builder-style object to manufacture [`GetCompatibleElasticsearchVersionsOutput`](crate::output::GetCompatibleElasticsearchVersionsOutput).
+    pub fn builder() -> crate::output::get_compatible_elasticsearch_versions_output::Builder {
+        crate::output::get_compatible_elasticsearch_versions_output::Builder::default()
+    }
+}
+
 /// See [`GetCompatibleElasticsearchVersionsOutput`](crate::output::GetCompatibleElasticsearchVersionsOutput).
 pub mod get_compatible_elasticsearch_versions_output {
 
@@ -2003,12 +2031,6 @@ pub mod get_compatible_elasticsearch_versions_output {
         }
     }
 }
-impl GetCompatibleElasticsearchVersionsOutput {
-    /// Creates a new builder-style object to manufacture [`GetCompatibleElasticsearchVersionsOutput`](crate::output::GetCompatibleElasticsearchVersionsOutput).
-    pub fn builder() -> crate::output::get_compatible_elasticsearch_versions_output::Builder {
-        crate::output::get_compatible_elasticsearch_versions_output::Builder::default()
-    }
-}
 
 /// <p> Container for response returned by <code> <code>DissociatePackage</code> </code> operation. </p>
 #[non_exhaustive]
@@ -2032,6 +2054,13 @@ impl aws_http::request_id::RequestId for DissociatePackageOutput {
         self._request_id.as_deref()
     }
 }
+impl DissociatePackageOutput {
+    /// Creates a new builder-style object to manufacture [`DissociatePackageOutput`](crate::output::DissociatePackageOutput).
+    pub fn builder() -> crate::output::dissociate_package_output::Builder {
+        crate::output::dissociate_package_output::Builder::default()
+    }
+}
+
 /// See [`DissociatePackageOutput`](crate::output::DissociatePackageOutput).
 pub mod dissociate_package_output {
 
@@ -2074,12 +2103,6 @@ pub mod dissociate_package_output {
         }
     }
 }
-impl DissociatePackageOutput {
-    /// Creates a new builder-style object to manufacture [`DissociatePackageOutput`](crate::output::DissociatePackageOutput).
-    pub fn builder() -> crate::output::dissociate_package_output::Builder {
-        crate::output::dissociate_package_output::Builder::default()
-    }
-}
 
 /// <p>Container for response parameters to the <code><code>DescribeVpcEndpoints</code></code> operation. Returns a list containing configuration details and status of the VPC Endpoints as well as a list containing error responses of the endpoints that could not be described</p>
 #[non_exhaustive]
@@ -2108,6 +2131,13 @@ impl aws_http::request_id::RequestId for DescribeVpcEndpointsOutput {
         self._request_id.as_deref()
     }
 }
+impl DescribeVpcEndpointsOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeVpcEndpointsOutput`](crate::output::DescribeVpcEndpointsOutput).
+    pub fn builder() -> crate::output::describe_vpc_endpoints_output::Builder {
+        crate::output::describe_vpc_endpoints_output::Builder::default()
+    }
+}
+
 /// See [`DescribeVpcEndpointsOutput`](crate::output::DescribeVpcEndpointsOutput).
 pub mod describe_vpc_endpoints_output {
 
@@ -2178,12 +2208,6 @@ pub mod describe_vpc_endpoints_output {
         }
     }
 }
-impl DescribeVpcEndpointsOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeVpcEndpointsOutput`](crate::output::DescribeVpcEndpointsOutput).
-    pub fn builder() -> crate::output::describe_vpc_endpoints_output::Builder {
-        crate::output::describe_vpc_endpoints_output::Builder::default()
-    }
-}
 
 /// <p>Container for results from <code>DescribeReservedElasticsearchInstances</code></p>
 #[non_exhaustive]
@@ -2215,6 +2239,13 @@ impl aws_http::request_id::RequestId for DescribeReservedElasticsearchInstancesO
         self._request_id.as_deref()
     }
 }
+impl DescribeReservedElasticsearchInstancesOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeReservedElasticsearchInstancesOutput`](crate::output::DescribeReservedElasticsearchInstancesOutput).
+    pub fn builder() -> crate::output::describe_reserved_elasticsearch_instances_output::Builder {
+        crate::output::describe_reserved_elasticsearch_instances_output::Builder::default()
+    }
+}
+
 /// See [`DescribeReservedElasticsearchInstancesOutput`](crate::output::DescribeReservedElasticsearchInstancesOutput).
 pub mod describe_reserved_elasticsearch_instances_output {
 
@@ -2279,12 +2310,6 @@ pub mod describe_reserved_elasticsearch_instances_output {
         }
     }
 }
-impl DescribeReservedElasticsearchInstancesOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeReservedElasticsearchInstancesOutput`](crate::output::DescribeReservedElasticsearchInstancesOutput).
-    pub fn builder() -> crate::output::describe_reserved_elasticsearch_instances_output::Builder {
-        crate::output::describe_reserved_elasticsearch_instances_output::Builder::default()
-    }
-}
 
 /// <p>Container for results from <code>DescribeReservedElasticsearchInstanceOfferings</code></p>
 #[non_exhaustive]
@@ -2316,6 +2341,14 @@ impl aws_http::request_id::RequestId for DescribeReservedElasticsearchInstanceOf
         self._request_id.as_deref()
     }
 }
+impl DescribeReservedElasticsearchInstanceOfferingsOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeReservedElasticsearchInstanceOfferingsOutput`](crate::output::DescribeReservedElasticsearchInstanceOfferingsOutput).
+    pub fn builder(
+    ) -> crate::output::describe_reserved_elasticsearch_instance_offerings_output::Builder {
+        crate::output::describe_reserved_elasticsearch_instance_offerings_output::Builder::default()
+    }
+}
+
 /// See [`DescribeReservedElasticsearchInstanceOfferingsOutput`](crate::output::DescribeReservedElasticsearchInstanceOfferingsOutput).
 pub mod describe_reserved_elasticsearch_instance_offerings_output {
 
@@ -2385,13 +2418,6 @@ pub mod describe_reserved_elasticsearch_instance_offerings_output {
         }
     }
 }
-impl DescribeReservedElasticsearchInstanceOfferingsOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeReservedElasticsearchInstanceOfferingsOutput`](crate::output::DescribeReservedElasticsearchInstanceOfferingsOutput).
-    pub fn builder(
-    ) -> crate::output::describe_reserved_elasticsearch_instance_offerings_output::Builder {
-        crate::output::describe_reserved_elasticsearch_instance_offerings_output::Builder::default()
-    }
-}
 
 /// <p> Container for response returned by <code> <code>DescribePackages</code> </code> operation. </p>
 #[non_exhaustive]
@@ -2420,6 +2446,13 @@ impl aws_http::request_id::RequestId for DescribePackagesOutput {
         self._request_id.as_deref()
     }
 }
+impl DescribePackagesOutput {
+    /// Creates a new builder-style object to manufacture [`DescribePackagesOutput`](crate::output::DescribePackagesOutput).
+    pub fn builder() -> crate::output::describe_packages_output::Builder {
+        crate::output::describe_packages_output::Builder::default()
+    }
+}
+
 /// See [`DescribePackagesOutput`](crate::output::DescribePackagesOutput).
 pub mod describe_packages_output {
 
@@ -2481,12 +2514,6 @@ pub mod describe_packages_output {
         }
     }
 }
-impl DescribePackagesOutput {
-    /// Creates a new builder-style object to manufacture [`DescribePackagesOutput`](crate::output::DescribePackagesOutput).
-    pub fn builder() -> crate::output::describe_packages_output::Builder {
-        crate::output::describe_packages_output::Builder::default()
-    }
-}
 
 /// <p>The result of a <code><code>DescribeOutboundCrossClusterSearchConnections</code></code> request. Contains the list of connections matching the filter criteria.</p>
 #[non_exhaustive]
@@ -2518,6 +2545,14 @@ impl aws_http::request_id::RequestId for DescribeOutboundCrossClusterSearchConne
         self._request_id.as_deref()
     }
 }
+impl DescribeOutboundCrossClusterSearchConnectionsOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeOutboundCrossClusterSearchConnectionsOutput`](crate::output::DescribeOutboundCrossClusterSearchConnectionsOutput).
+    pub fn builder(
+    ) -> crate::output::describe_outbound_cross_cluster_search_connections_output::Builder {
+        crate::output::describe_outbound_cross_cluster_search_connections_output::Builder::default()
+    }
+}
+
 /// See [`DescribeOutboundCrossClusterSearchConnectionsOutput`](crate::output::DescribeOutboundCrossClusterSearchConnectionsOutput).
 pub mod describe_outbound_cross_cluster_search_connections_output {
 
@@ -2584,13 +2619,6 @@ pub mod describe_outbound_cross_cluster_search_connections_output {
         }
     }
 }
-impl DescribeOutboundCrossClusterSearchConnectionsOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeOutboundCrossClusterSearchConnectionsOutput`](crate::output::DescribeOutboundCrossClusterSearchConnectionsOutput).
-    pub fn builder(
-    ) -> crate::output::describe_outbound_cross_cluster_search_connections_output::Builder {
-        crate::output::describe_outbound_cross_cluster_search_connections_output::Builder::default()
-    }
-}
 
 /// <p>The result of a <code><code>DescribeInboundCrossClusterSearchConnections</code></code> request. Contains the list of connections matching the filter criteria.</p>
 #[non_exhaustive]
@@ -2622,6 +2650,14 @@ impl aws_http::request_id::RequestId for DescribeInboundCrossClusterSearchConnec
         self._request_id.as_deref()
     }
 }
+impl DescribeInboundCrossClusterSearchConnectionsOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeInboundCrossClusterSearchConnectionsOutput`](crate::output::DescribeInboundCrossClusterSearchConnectionsOutput).
+    pub fn builder(
+    ) -> crate::output::describe_inbound_cross_cluster_search_connections_output::Builder {
+        crate::output::describe_inbound_cross_cluster_search_connections_output::Builder::default()
+    }
+}
+
 /// See [`DescribeInboundCrossClusterSearchConnectionsOutput`](crate::output::DescribeInboundCrossClusterSearchConnectionsOutput).
 pub mod describe_inbound_cross_cluster_search_connections_output {
 
@@ -2688,13 +2724,6 @@ pub mod describe_inbound_cross_cluster_search_connections_output {
         }
     }
 }
-impl DescribeInboundCrossClusterSearchConnectionsOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeInboundCrossClusterSearchConnectionsOutput`](crate::output::DescribeInboundCrossClusterSearchConnectionsOutput).
-    pub fn builder(
-    ) -> crate::output::describe_inbound_cross_cluster_search_connections_output::Builder {
-        crate::output::describe_inbound_cross_cluster_search_connections_output::Builder::default()
-    }
-}
 
 /// <p> Container for the parameters received from <code> <code>DescribeElasticsearchInstanceTypeLimits</code> </code> operation. </p>
 #[non_exhaustive]
@@ -2732,6 +2761,13 @@ impl aws_http::request_id::RequestId for DescribeElasticsearchInstanceTypeLimits
         self._request_id.as_deref()
     }
 }
+impl DescribeElasticsearchInstanceTypeLimitsOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeElasticsearchInstanceTypeLimitsOutput`](crate::output::DescribeElasticsearchInstanceTypeLimitsOutput).
+    pub fn builder() -> crate::output::describe_elasticsearch_instance_type_limits_output::Builder {
+        crate::output::describe_elasticsearch_instance_type_limits_output::Builder::default()
+    }
+}
+
 /// See [`DescribeElasticsearchInstanceTypeLimitsOutput`](crate::output::DescribeElasticsearchInstanceTypeLimitsOutput).
 pub mod describe_elasticsearch_instance_type_limits_output {
 
@@ -2800,12 +2836,6 @@ pub mod describe_elasticsearch_instance_type_limits_output {
         }
     }
 }
-impl DescribeElasticsearchInstanceTypeLimitsOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeElasticsearchInstanceTypeLimitsOutput`](crate::output::DescribeElasticsearchInstanceTypeLimitsOutput).
-    pub fn builder() -> crate::output::describe_elasticsearch_instance_type_limits_output::Builder {
-        crate::output::describe_elasticsearch_instance_type_limits_output::Builder::default()
-    }
-}
 
 /// <p>The result of a <code>DescribeElasticsearchDomains</code> request. Contains the status of the specified domains or all domains owned by the account.</p>
 #[non_exhaustive]
@@ -2830,6 +2860,13 @@ impl aws_http::request_id::RequestId for DescribeElasticsearchDomainsOutput {
         self._request_id.as_deref()
     }
 }
+impl DescribeElasticsearchDomainsOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeElasticsearchDomainsOutput`](crate::output::DescribeElasticsearchDomainsOutput).
+    pub fn builder() -> crate::output::describe_elasticsearch_domains_output::Builder {
+        crate::output::describe_elasticsearch_domains_output::Builder::default()
+    }
+}
+
 /// See [`DescribeElasticsearchDomainsOutput`](crate::output::DescribeElasticsearchDomainsOutput).
 pub mod describe_elasticsearch_domains_output {
 
@@ -2882,12 +2919,6 @@ pub mod describe_elasticsearch_domains_output {
         }
     }
 }
-impl DescribeElasticsearchDomainsOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeElasticsearchDomainsOutput`](crate::output::DescribeElasticsearchDomainsOutput).
-    pub fn builder() -> crate::output::describe_elasticsearch_domains_output::Builder {
-        crate::output::describe_elasticsearch_domains_output::Builder::default()
-    }
-}
 
 /// <p>The result of a <code>DescribeElasticsearchDomainConfig</code> request. Contains the configuration information of the requested domain.</p>
 #[non_exhaustive]
@@ -2909,6 +2940,13 @@ impl aws_http::request_id::RequestId for DescribeElasticsearchDomainConfigOutput
         self._request_id.as_deref()
     }
 }
+impl DescribeElasticsearchDomainConfigOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeElasticsearchDomainConfigOutput`](crate::output::DescribeElasticsearchDomainConfigOutput).
+    pub fn builder() -> crate::output::describe_elasticsearch_domain_config_output::Builder {
+        crate::output::describe_elasticsearch_domain_config_output::Builder::default()
+    }
+}
+
 /// See [`DescribeElasticsearchDomainConfigOutput`](crate::output::DescribeElasticsearchDomainConfigOutput).
 pub mod describe_elasticsearch_domain_config_output {
 
@@ -2951,12 +2989,6 @@ pub mod describe_elasticsearch_domain_config_output {
         }
     }
 }
-impl DescribeElasticsearchDomainConfigOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeElasticsearchDomainConfigOutput`](crate::output::DescribeElasticsearchDomainConfigOutput).
-    pub fn builder() -> crate::output::describe_elasticsearch_domain_config_output::Builder {
-        crate::output::describe_elasticsearch_domain_config_output::Builder::default()
-    }
-}
 
 /// <p>The result of a <code>DescribeElasticsearchDomain</code> request. Contains the status of the domain specified in the request.</p>
 #[non_exhaustive]
@@ -2978,6 +3010,13 @@ impl aws_http::request_id::RequestId for DescribeElasticsearchDomainOutput {
         self._request_id.as_deref()
     }
 }
+impl DescribeElasticsearchDomainOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeElasticsearchDomainOutput`](crate::output::DescribeElasticsearchDomainOutput).
+    pub fn builder() -> crate::output::describe_elasticsearch_domain_output::Builder {
+        crate::output::describe_elasticsearch_domain_output::Builder::default()
+    }
+}
+
 /// See [`DescribeElasticsearchDomainOutput`](crate::output::DescribeElasticsearchDomainOutput).
 pub mod describe_elasticsearch_domain_output {
 
@@ -3020,12 +3059,6 @@ pub mod describe_elasticsearch_domain_output {
         }
     }
 }
-impl DescribeElasticsearchDomainOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeElasticsearchDomainOutput`](crate::output::DescribeElasticsearchDomainOutput).
-    pub fn builder() -> crate::output::describe_elasticsearch_domain_output::Builder {
-        crate::output::describe_elasticsearch_domain_output::Builder::default()
-    }
-}
 
 /// <p>The result of a <code>DescribeDomainChangeProgress</code> request. Contains the progress information of the requested domain change. </p>
 #[non_exhaustive]
@@ -3049,6 +3082,13 @@ impl aws_http::request_id::RequestId for DescribeDomainChangeProgressOutput {
         self._request_id.as_deref()
     }
 }
+impl DescribeDomainChangeProgressOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeDomainChangeProgressOutput`](crate::output::DescribeDomainChangeProgressOutput).
+    pub fn builder() -> crate::output::describe_domain_change_progress_output::Builder {
+        crate::output::describe_domain_change_progress_output::Builder::default()
+    }
+}
+
 /// See [`DescribeDomainChangeProgressOutput`](crate::output::DescribeDomainChangeProgressOutput).
 pub mod describe_domain_change_progress_output {
 
@@ -3095,12 +3135,6 @@ pub mod describe_domain_change_progress_output {
         }
     }
 }
-impl DescribeDomainChangeProgressOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeDomainChangeProgressOutput`](crate::output::DescribeDomainChangeProgressOutput).
-    pub fn builder() -> crate::output::describe_domain_change_progress_output::Builder {
-        crate::output::describe_domain_change_progress_output::Builder::default()
-    }
-}
 
 /// <p>The result of <code>DescribeDomainAutoTunes</code> request. See the <a href="https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/auto-tune.html" target="_blank">Developer Guide</a> for more information. </p>
 #[non_exhaustive]
@@ -3129,6 +3163,13 @@ impl aws_http::request_id::RequestId for DescribeDomainAutoTunesOutput {
         self._request_id.as_deref()
     }
 }
+impl DescribeDomainAutoTunesOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeDomainAutoTunesOutput`](crate::output::DescribeDomainAutoTunesOutput).
+    pub fn builder() -> crate::output::describe_domain_auto_tunes_output::Builder {
+        crate::output::describe_domain_auto_tunes_output::Builder::default()
+    }
+}
+
 /// See [`DescribeDomainAutoTunesOutput`](crate::output::DescribeDomainAutoTunesOutput).
 pub mod describe_domain_auto_tunes_output {
 
@@ -3189,12 +3230,6 @@ pub mod describe_domain_auto_tunes_output {
         }
     }
 }
-impl DescribeDomainAutoTunesOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeDomainAutoTunesOutput`](crate::output::DescribeDomainAutoTunesOutput).
-    pub fn builder() -> crate::output::describe_domain_auto_tunes_output::Builder {
-        crate::output::describe_domain_auto_tunes_output::Builder::default()
-    }
-}
 
 /// <p>Container for response parameters to the <code><code>DeleteVpcEndpoint</code></code> operation. Contains the summarized detail of the VPC Endpoint being deleted.</p>
 #[non_exhaustive]
@@ -3216,6 +3251,13 @@ impl aws_http::request_id::RequestId for DeleteVpcEndpointOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteVpcEndpointOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteVpcEndpointOutput`](crate::output::DeleteVpcEndpointOutput).
+    pub fn builder() -> crate::output::delete_vpc_endpoint_output::Builder {
+        crate::output::delete_vpc_endpoint_output::Builder::default()
+    }
+}
+
 /// See [`DeleteVpcEndpointOutput`](crate::output::DeleteVpcEndpointOutput).
 pub mod delete_vpc_endpoint_output {
 
@@ -3258,12 +3300,6 @@ pub mod delete_vpc_endpoint_output {
         }
     }
 }
-impl DeleteVpcEndpointOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteVpcEndpointOutput`](crate::output::DeleteVpcEndpointOutput).
-    pub fn builder() -> crate::output::delete_vpc_endpoint_output::Builder {
-        crate::output::delete_vpc_endpoint_output::Builder::default()
-    }
-}
 
 /// <p> Container for response parameters to <code> <code>DeletePackage</code> </code> operation. </p>
 #[non_exhaustive]
@@ -3285,6 +3321,13 @@ impl aws_http::request_id::RequestId for DeletePackageOutput {
         self._request_id.as_deref()
     }
 }
+impl DeletePackageOutput {
+    /// Creates a new builder-style object to manufacture [`DeletePackageOutput`](crate::output::DeletePackageOutput).
+    pub fn builder() -> crate::output::delete_package_output::Builder {
+        crate::output::delete_package_output::Builder::default()
+    }
+}
+
 /// See [`DeletePackageOutput`](crate::output::DeletePackageOutput).
 pub mod delete_package_output {
 
@@ -3327,12 +3370,6 @@ pub mod delete_package_output {
         }
     }
 }
-impl DeletePackageOutput {
-    /// Creates a new builder-style object to manufacture [`DeletePackageOutput`](crate::output::DeletePackageOutput).
-    pub fn builder() -> crate::output::delete_package_output::Builder {
-        crate::output::delete_package_output::Builder::default()
-    }
-}
 
 /// <p>The result of a <code><code>DeleteOutboundCrossClusterSearchConnection</code></code> operation. Contains details of deleted outbound connection.</p>
 #[non_exhaustive]
@@ -3357,6 +3394,14 @@ impl aws_http::request_id::RequestId for DeleteOutboundCrossClusterSearchConnect
         self._request_id.as_deref()
     }
 }
+impl DeleteOutboundCrossClusterSearchConnectionOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteOutboundCrossClusterSearchConnectionOutput`](crate::output::DeleteOutboundCrossClusterSearchConnectionOutput).
+    pub fn builder(
+    ) -> crate::output::delete_outbound_cross_cluster_search_connection_output::Builder {
+        crate::output::delete_outbound_cross_cluster_search_connection_output::Builder::default()
+    }
+}
+
 /// See [`DeleteOutboundCrossClusterSearchConnectionOutput`](crate::output::DeleteOutboundCrossClusterSearchConnectionOutput).
 pub mod delete_outbound_cross_cluster_search_connection_output {
 
@@ -3403,13 +3448,6 @@ pub mod delete_outbound_cross_cluster_search_connection_output {
         }
     }
 }
-impl DeleteOutboundCrossClusterSearchConnectionOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteOutboundCrossClusterSearchConnectionOutput`](crate::output::DeleteOutboundCrossClusterSearchConnectionOutput).
-    pub fn builder(
-    ) -> crate::output::delete_outbound_cross_cluster_search_connection_output::Builder {
-        crate::output::delete_outbound_cross_cluster_search_connection_output::Builder::default()
-    }
-}
 
 /// <p>The result of a <code><code>DeleteInboundCrossClusterSearchConnection</code></code> operation. Contains details of deleted inbound connection.</p>
 #[non_exhaustive]
@@ -3434,6 +3472,14 @@ impl aws_http::request_id::RequestId for DeleteInboundCrossClusterSearchConnecti
         self._request_id.as_deref()
     }
 }
+impl DeleteInboundCrossClusterSearchConnectionOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteInboundCrossClusterSearchConnectionOutput`](crate::output::DeleteInboundCrossClusterSearchConnectionOutput).
+    pub fn builder() -> crate::output::delete_inbound_cross_cluster_search_connection_output::Builder
+    {
+        crate::output::delete_inbound_cross_cluster_search_connection_output::Builder::default()
+    }
+}
+
 /// See [`DeleteInboundCrossClusterSearchConnectionOutput`](crate::output::DeleteInboundCrossClusterSearchConnectionOutput).
 pub mod delete_inbound_cross_cluster_search_connection_output {
 
@@ -3480,13 +3526,6 @@ pub mod delete_inbound_cross_cluster_search_connection_output {
         }
     }
 }
-impl DeleteInboundCrossClusterSearchConnectionOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteInboundCrossClusterSearchConnectionOutput`](crate::output::DeleteInboundCrossClusterSearchConnectionOutput).
-    pub fn builder() -> crate::output::delete_inbound_cross_cluster_search_connection_output::Builder
-    {
-        crate::output::delete_inbound_cross_cluster_search_connection_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3499,6 +3538,13 @@ impl aws_http::request_id::RequestId for DeleteElasticsearchServiceRoleOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteElasticsearchServiceRoleOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteElasticsearchServiceRoleOutput`](crate::output::DeleteElasticsearchServiceRoleOutput).
+    pub fn builder() -> crate::output::delete_elasticsearch_service_role_output::Builder {
+        crate::output::delete_elasticsearch_service_role_output::Builder::default()
+    }
+}
+
 /// See [`DeleteElasticsearchServiceRoleOutput`](crate::output::DeleteElasticsearchServiceRoleOutput).
 pub mod delete_elasticsearch_service_role_output {
 
@@ -3526,12 +3572,6 @@ pub mod delete_elasticsearch_service_role_output {
         }
     }
 }
-impl DeleteElasticsearchServiceRoleOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteElasticsearchServiceRoleOutput`](crate::output::DeleteElasticsearchServiceRoleOutput).
-    pub fn builder() -> crate::output::delete_elasticsearch_service_role_output::Builder {
-        crate::output::delete_elasticsearch_service_role_output::Builder::default()
-    }
-}
 
 /// <p>The result of a <code>DeleteElasticsearchDomain</code> request. Contains the status of the pending deletion, or no status if the domain and all of its resources have been deleted.</p>
 #[non_exhaustive]
@@ -3553,6 +3593,13 @@ impl aws_http::request_id::RequestId for DeleteElasticsearchDomainOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteElasticsearchDomainOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteElasticsearchDomainOutput`](crate::output::DeleteElasticsearchDomainOutput).
+    pub fn builder() -> crate::output::delete_elasticsearch_domain_output::Builder {
+        crate::output::delete_elasticsearch_domain_output::Builder::default()
+    }
+}
+
 /// See [`DeleteElasticsearchDomainOutput`](crate::output::DeleteElasticsearchDomainOutput).
 pub mod delete_elasticsearch_domain_output {
 
@@ -3595,12 +3642,6 @@ pub mod delete_elasticsearch_domain_output {
         }
     }
 }
-impl DeleteElasticsearchDomainOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteElasticsearchDomainOutput`](crate::output::DeleteElasticsearchDomainOutput).
-    pub fn builder() -> crate::output::delete_elasticsearch_domain_output::Builder {
-        crate::output::delete_elasticsearch_domain_output::Builder::default()
-    }
-}
 
 /// <p>Container for response parameters to the <code><code>CreateVpcEndpoint</code></code> operation. Contains the configuration and status of the VPC Endpoint being created.</p>
 #[non_exhaustive]
@@ -3622,6 +3663,13 @@ impl aws_http::request_id::RequestId for CreateVpcEndpointOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateVpcEndpointOutput {
+    /// Creates a new builder-style object to manufacture [`CreateVpcEndpointOutput`](crate::output::CreateVpcEndpointOutput).
+    pub fn builder() -> crate::output::create_vpc_endpoint_output::Builder {
+        crate::output::create_vpc_endpoint_output::Builder::default()
+    }
+}
+
 /// See [`CreateVpcEndpointOutput`](crate::output::CreateVpcEndpointOutput).
 pub mod create_vpc_endpoint_output {
 
@@ -3664,12 +3712,6 @@ pub mod create_vpc_endpoint_output {
         }
     }
 }
-impl CreateVpcEndpointOutput {
-    /// Creates a new builder-style object to manufacture [`CreateVpcEndpointOutput`](crate::output::CreateVpcEndpointOutput).
-    pub fn builder() -> crate::output::create_vpc_endpoint_output::Builder {
-        crate::output::create_vpc_endpoint_output::Builder::default()
-    }
-}
 
 /// <p> Container for response returned by <code> <code>CreatePackage</code> </code> operation. </p>
 #[non_exhaustive]
@@ -3691,6 +3733,13 @@ impl aws_http::request_id::RequestId for CreatePackageOutput {
         self._request_id.as_deref()
     }
 }
+impl CreatePackageOutput {
+    /// Creates a new builder-style object to manufacture [`CreatePackageOutput`](crate::output::CreatePackageOutput).
+    pub fn builder() -> crate::output::create_package_output::Builder {
+        crate::output::create_package_output::Builder::default()
+    }
+}
+
 /// See [`CreatePackageOutput`](crate::output::CreatePackageOutput).
 pub mod create_package_output {
 
@@ -3731,12 +3780,6 @@ pub mod create_package_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl CreatePackageOutput {
-    /// Creates a new builder-style object to manufacture [`CreatePackageOutput`](crate::output::CreatePackageOutput).
-    pub fn builder() -> crate::output::create_package_output::Builder {
-        crate::output::create_package_output::Builder::default()
     }
 }
 
@@ -3791,6 +3834,14 @@ impl aws_http::request_id::RequestId for CreateOutboundCrossClusterSearchConnect
         self._request_id.as_deref()
     }
 }
+impl CreateOutboundCrossClusterSearchConnectionOutput {
+    /// Creates a new builder-style object to manufacture [`CreateOutboundCrossClusterSearchConnectionOutput`](crate::output::CreateOutboundCrossClusterSearchConnectionOutput).
+    pub fn builder(
+    ) -> crate::output::create_outbound_cross_cluster_search_connection_output::Builder {
+        crate::output::create_outbound_cross_cluster_search_connection_output::Builder::default()
+    }
+}
+
 /// See [`CreateOutboundCrossClusterSearchConnectionOutput`](crate::output::CreateOutboundCrossClusterSearchConnectionOutput).
 pub mod create_outbound_cross_cluster_search_connection_output {
 
@@ -3900,13 +3951,6 @@ pub mod create_outbound_cross_cluster_search_connection_output {
         }
     }
 }
-impl CreateOutboundCrossClusterSearchConnectionOutput {
-    /// Creates a new builder-style object to manufacture [`CreateOutboundCrossClusterSearchConnectionOutput`](crate::output::CreateOutboundCrossClusterSearchConnectionOutput).
-    pub fn builder(
-    ) -> crate::output::create_outbound_cross_cluster_search_connection_output::Builder {
-        crate::output::create_outbound_cross_cluster_search_connection_output::Builder::default()
-    }
-}
 
 /// <p>The result of a <code>CreateElasticsearchDomain</code> operation. Contains the status of the newly created Elasticsearch domain.</p>
 #[non_exhaustive]
@@ -3928,6 +3972,13 @@ impl aws_http::request_id::RequestId for CreateElasticsearchDomainOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateElasticsearchDomainOutput {
+    /// Creates a new builder-style object to manufacture [`CreateElasticsearchDomainOutput`](crate::output::CreateElasticsearchDomainOutput).
+    pub fn builder() -> crate::output::create_elasticsearch_domain_output::Builder {
+        crate::output::create_elasticsearch_domain_output::Builder::default()
+    }
+}
+
 /// See [`CreateElasticsearchDomainOutput`](crate::output::CreateElasticsearchDomainOutput).
 pub mod create_elasticsearch_domain_output {
 
@@ -3970,12 +4021,6 @@ pub mod create_elasticsearch_domain_output {
         }
     }
 }
-impl CreateElasticsearchDomainOutput {
-    /// Creates a new builder-style object to manufacture [`CreateElasticsearchDomainOutput`](crate::output::CreateElasticsearchDomainOutput).
-    pub fn builder() -> crate::output::create_elasticsearch_domain_output::Builder {
-        crate::output::create_elasticsearch_domain_output::Builder::default()
-    }
-}
 
 /// <p>The result of a <code>CancelElasticsearchServiceSoftwareUpdate</code> operation. Contains the status of the update.</p>
 #[non_exhaustive]
@@ -3999,6 +4044,14 @@ impl aws_http::request_id::RequestId for CancelElasticsearchServiceSoftwareUpdat
         self._request_id.as_deref()
     }
 }
+impl CancelElasticsearchServiceSoftwareUpdateOutput {
+    /// Creates a new builder-style object to manufacture [`CancelElasticsearchServiceSoftwareUpdateOutput`](crate::output::CancelElasticsearchServiceSoftwareUpdateOutput).
+    pub fn builder() -> crate::output::cancel_elasticsearch_service_software_update_output::Builder
+    {
+        crate::output::cancel_elasticsearch_service_software_update_output::Builder::default()
+    }
+}
+
 /// See [`CancelElasticsearchServiceSoftwareUpdateOutput`](crate::output::CancelElasticsearchServiceSoftwareUpdateOutput).
 pub mod cancel_elasticsearch_service_software_update_output {
 
@@ -4045,13 +4098,6 @@ pub mod cancel_elasticsearch_service_software_update_output {
         }
     }
 }
-impl CancelElasticsearchServiceSoftwareUpdateOutput {
-    /// Creates a new builder-style object to manufacture [`CancelElasticsearchServiceSoftwareUpdateOutput`](crate::output::CancelElasticsearchServiceSoftwareUpdateOutput).
-    pub fn builder() -> crate::output::cancel_elasticsearch_service_software_update_output::Builder
-    {
-        crate::output::cancel_elasticsearch_service_software_update_output::Builder::default()
-    }
-}
 
 /// <p>Container for response parameters to the <code><code>AuthorizeVpcEndpointAccess</code></code> operation. Contains the account ID and the type of the account being authorized to access the VPC endpoint.</p>
 #[non_exhaustive]
@@ -4073,6 +4119,13 @@ impl aws_http::request_id::RequestId for AuthorizeVpcEndpointAccessOutput {
         self._request_id.as_deref()
     }
 }
+impl AuthorizeVpcEndpointAccessOutput {
+    /// Creates a new builder-style object to manufacture [`AuthorizeVpcEndpointAccessOutput`](crate::output::AuthorizeVpcEndpointAccessOutput).
+    pub fn builder() -> crate::output::authorize_vpc_endpoint_access_output::Builder {
+        crate::output::authorize_vpc_endpoint_access_output::Builder::default()
+    }
+}
+
 /// See [`AuthorizeVpcEndpointAccessOutput`](crate::output::AuthorizeVpcEndpointAccessOutput).
 pub mod authorize_vpc_endpoint_access_output {
 
@@ -4115,12 +4168,6 @@ pub mod authorize_vpc_endpoint_access_output {
         }
     }
 }
-impl AuthorizeVpcEndpointAccessOutput {
-    /// Creates a new builder-style object to manufacture [`AuthorizeVpcEndpointAccessOutput`](crate::output::AuthorizeVpcEndpointAccessOutput).
-    pub fn builder() -> crate::output::authorize_vpc_endpoint_access_output::Builder {
-        crate::output::authorize_vpc_endpoint_access_output::Builder::default()
-    }
-}
 
 /// <p> Container for response returned by <code> <code>AssociatePackage</code> </code> operation. </p>
 #[non_exhaustive]
@@ -4144,6 +4191,13 @@ impl aws_http::request_id::RequestId for AssociatePackageOutput {
         self._request_id.as_deref()
     }
 }
+impl AssociatePackageOutput {
+    /// Creates a new builder-style object to manufacture [`AssociatePackageOutput`](crate::output::AssociatePackageOutput).
+    pub fn builder() -> crate::output::associate_package_output::Builder {
+        crate::output::associate_package_output::Builder::default()
+    }
+}
+
 /// See [`AssociatePackageOutput`](crate::output::AssociatePackageOutput).
 pub mod associate_package_output {
 
@@ -4186,12 +4240,6 @@ pub mod associate_package_output {
         }
     }
 }
-impl AssociatePackageOutput {
-    /// Creates a new builder-style object to manufacture [`AssociatePackageOutput`](crate::output::AssociatePackageOutput).
-    pub fn builder() -> crate::output::associate_package_output::Builder {
-        crate::output::associate_package_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -4204,6 +4252,13 @@ impl aws_http::request_id::RequestId for AddTagsOutput {
         self._request_id.as_deref()
     }
 }
+impl AddTagsOutput {
+    /// Creates a new builder-style object to manufacture [`AddTagsOutput`](crate::output::AddTagsOutput).
+    pub fn builder() -> crate::output::add_tags_output::Builder {
+        crate::output::add_tags_output::Builder::default()
+    }
+}
+
 /// See [`AddTagsOutput`](crate::output::AddTagsOutput).
 pub mod add_tags_output {
 
@@ -4231,12 +4286,6 @@ pub mod add_tags_output {
         }
     }
 }
-impl AddTagsOutput {
-    /// Creates a new builder-style object to manufacture [`AddTagsOutput`](crate::output::AddTagsOutput).
-    pub fn builder() -> crate::output::add_tags_output::Builder {
-        crate::output::add_tags_output::Builder::default()
-    }
-}
 
 /// <p>The result of a <code><code>AcceptInboundCrossClusterSearchConnection</code></code> operation. Contains details of accepted inbound connection.</p>
 #[non_exhaustive]
@@ -4261,6 +4310,14 @@ impl aws_http::request_id::RequestId for AcceptInboundCrossClusterSearchConnecti
         self._request_id.as_deref()
     }
 }
+impl AcceptInboundCrossClusterSearchConnectionOutput {
+    /// Creates a new builder-style object to manufacture [`AcceptInboundCrossClusterSearchConnectionOutput`](crate::output::AcceptInboundCrossClusterSearchConnectionOutput).
+    pub fn builder() -> crate::output::accept_inbound_cross_cluster_search_connection_output::Builder
+    {
+        crate::output::accept_inbound_cross_cluster_search_connection_output::Builder::default()
+    }
+}
+
 /// See [`AcceptInboundCrossClusterSearchConnectionOutput`](crate::output::AcceptInboundCrossClusterSearchConnectionOutput).
 pub mod accept_inbound_cross_cluster_search_connection_output {
 
@@ -4305,12 +4362,5 @@ pub mod accept_inbound_cross_cluster_search_connection_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl AcceptInboundCrossClusterSearchConnectionOutput {
-    /// Creates a new builder-style object to manufacture [`AcceptInboundCrossClusterSearchConnectionOutput`](crate::output::AcceptInboundCrossClusterSearchConnectionOutput).
-    pub fn builder() -> crate::output::accept_inbound_cross_cluster_search_connection_output::Builder
-    {
-        crate::output::accept_inbound_cross_cluster_search_connection_output::Builder::default()
     }
 }

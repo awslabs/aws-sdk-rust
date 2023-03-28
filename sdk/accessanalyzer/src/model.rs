@@ -21,6 +21,13 @@ impl ValidationExceptionField {
         self.message.as_deref()
     }
 }
+impl ValidationExceptionField {
+    /// Creates a new builder-style object to manufacture [`ValidationExceptionField`](crate::model::ValidationExceptionField).
+    pub fn builder() -> crate::model::validation_exception_field::Builder {
+        crate::model::validation_exception_field::Builder::default()
+    }
+}
+
 /// See [`ValidationExceptionField`](crate::model::ValidationExceptionField).
 pub mod validation_exception_field {
 
@@ -59,12 +66,6 @@ pub mod validation_exception_field {
                 message: self.message,
             }
         }
-    }
-}
-impl ValidationExceptionField {
-    /// Creates a new builder-style object to manufacture [`ValidationExceptionField`](crate::model::ValidationExceptionField).
-    pub fn builder() -> crate::model::validation_exception_field::Builder {
-        crate::model::validation_exception_field::Builder::default()
     }
 }
 
@@ -249,6 +250,13 @@ impl AnalyzerSummary {
         self.status_reason.as_ref()
     }
 }
+impl AnalyzerSummary {
+    /// Creates a new builder-style object to manufacture [`AnalyzerSummary`](crate::model::AnalyzerSummary).
+    pub fn builder() -> crate::model::analyzer_summary::Builder {
+        crate::model::analyzer_summary::Builder::default()
+    }
+}
+
 /// See [`AnalyzerSummary`](crate::model::AnalyzerSummary).
 pub mod analyzer_summary {
 
@@ -405,12 +413,6 @@ pub mod analyzer_summary {
         }
     }
 }
-impl AnalyzerSummary {
-    /// Creates a new builder-style object to manufacture [`AnalyzerSummary`](crate::model::AnalyzerSummary).
-    pub fn builder() -> crate::model::analyzer_summary::Builder {
-        crate::model::analyzer_summary::Builder::default()
-    }
-}
 
 /// <p>Provides more details about the current status of the analyzer. For example, if the creation for the analyzer fails, a <code>Failed</code> status is returned. For an analyzer with organization as the type, this failure can be due to an issue with creating the service-linked roles required in the member accounts of the Amazon Web Services organization.</p>
 #[non_exhaustive]
@@ -426,6 +428,13 @@ impl StatusReason {
         self.code.as_ref()
     }
 }
+impl StatusReason {
+    /// Creates a new builder-style object to manufacture [`StatusReason`](crate::model::StatusReason).
+    pub fn builder() -> crate::model::status_reason::Builder {
+        crate::model::status_reason::Builder::default()
+    }
+}
+
 /// See [`StatusReason`](crate::model::StatusReason).
 pub mod status_reason {
 
@@ -450,12 +459,6 @@ pub mod status_reason {
         pub fn build(self) -> crate::model::StatusReason {
             crate::model::StatusReason { code: self.code }
         }
-    }
-}
-impl StatusReason {
-    /// Creates a new builder-style object to manufacture [`StatusReason`](crate::model::StatusReason).
-    pub fn builder() -> crate::model::status_reason::Builder {
-        crate::model::status_reason::Builder::default()
     }
 }
 
@@ -784,6 +787,13 @@ impl InlineArchiveRule {
         self.filter.as_ref()
     }
 }
+impl InlineArchiveRule {
+    /// Creates a new builder-style object to manufacture [`InlineArchiveRule`](crate::model::InlineArchiveRule).
+    pub fn builder() -> crate::model::inline_archive_rule::Builder {
+        crate::model::inline_archive_rule::Builder::default()
+    }
+}
+
 /// See [`InlineArchiveRule`](crate::model::InlineArchiveRule).
 pub mod inline_archive_rule {
 
@@ -841,12 +851,6 @@ pub mod inline_archive_rule {
         }
     }
 }
-impl InlineArchiveRule {
-    /// Creates a new builder-style object to manufacture [`InlineArchiveRule`](crate::model::InlineArchiveRule).
-    pub fn builder() -> crate::model::inline_archive_rule::Builder {
-        crate::model::inline_archive_rule::Builder::default()
-    }
-}
 
 /// <p>The criteria to use in the filter that defines the archive rule. For more information on available filter keys, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-reference-filter-keys.html">IAM Access Analyzer filter keys</a>.</p>
 #[non_exhaustive]
@@ -883,6 +887,13 @@ impl Criterion {
         self.exists
     }
 }
+impl Criterion {
+    /// Creates a new builder-style object to manufacture [`Criterion`](crate::model::Criterion).
+    pub fn builder() -> crate::model::criterion::Builder {
+        crate::model::criterion::Builder::default()
+    }
+}
+
 /// See [`Criterion`](crate::model::Criterion).
 pub mod criterion {
 
@@ -974,12 +985,6 @@ pub mod criterion {
         }
     }
 }
-impl Criterion {
-    /// Creates a new builder-style object to manufacture [`Criterion`](crate::model::Criterion).
-    pub fn builder() -> crate::model::criterion::Builder {
-        crate::model::criterion::Builder::default()
-    }
-}
 
 /// <p>Contains information about an archive rule.</p>
 #[non_exhaustive]
@@ -1021,6 +1026,13 @@ impl ArchiveRuleSummary {
         self.updated_at.as_ref()
     }
 }
+impl ArchiveRuleSummary {
+    /// Creates a new builder-style object to manufacture [`ArchiveRuleSummary`](crate::model::ArchiveRuleSummary).
+    pub fn builder() -> crate::model::archive_rule_summary::Builder {
+        crate::model::archive_rule_summary::Builder::default()
+    }
+}
+
 /// See [`ArchiveRuleSummary`](crate::model::ArchiveRuleSummary).
 pub mod archive_rule_summary {
 
@@ -1108,12 +1120,6 @@ pub mod archive_rule_summary {
         }
     }
 }
-impl ArchiveRuleSummary {
-    /// Creates a new builder-style object to manufacture [`ArchiveRuleSummary`](crate::model::ArchiveRuleSummary).
-    pub fn builder() -> crate::model::archive_rule_summary::Builder {
-        crate::model::archive_rule_summary::Builder::default()
-    }
-}
 
 /// <p>A finding in a policy. Each finding is an actionable recommendation that can be used to improve the policy.</p>
 #[non_exhaustive]
@@ -1165,6 +1171,13 @@ impl ValidatePolicyFinding {
         self.locations.as_deref()
     }
 }
+impl ValidatePolicyFinding {
+    /// Creates a new builder-style object to manufacture [`ValidatePolicyFinding`](crate::model::ValidatePolicyFinding).
+    pub fn builder() -> crate::model::validate_policy_finding::Builder {
+        crate::model::validate_policy_finding::Builder::default()
+    }
+}
+
 /// See [`ValidatePolicyFinding`](crate::model::ValidatePolicyFinding).
 pub mod validate_policy_finding {
 
@@ -1267,12 +1280,6 @@ pub mod validate_policy_finding {
         }
     }
 }
-impl ValidatePolicyFinding {
-    /// Creates a new builder-style object to manufacture [`ValidatePolicyFinding`](crate::model::ValidatePolicyFinding).
-    pub fn builder() -> crate::model::validate_policy_finding::Builder {
-        crate::model::validate_policy_finding::Builder::default()
-    }
-}
 
 /// <p>A location in a policy that is represented as a path through the JSON representation and a corresponding span.</p>
 #[non_exhaustive]
@@ -1295,6 +1302,13 @@ impl Location {
         self.span.as_ref()
     }
 }
+impl Location {
+    /// Creates a new builder-style object to manufacture [`Location`](crate::model::Location).
+    pub fn builder() -> crate::model::location::Builder {
+        crate::model::location::Builder::default()
+    }
+}
+
 /// See [`Location`](crate::model::Location).
 pub mod location {
 
@@ -1344,12 +1358,6 @@ pub mod location {
         }
     }
 }
-impl Location {
-    /// Creates a new builder-style object to manufacture [`Location`](crate::model::Location).
-    pub fn builder() -> crate::model::location::Builder {
-        crate::model::location::Builder::default()
-    }
-}
 
 /// <p>A span in a policy. The span consists of a start position (inclusive) and end position (exclusive).</p>
 #[non_exhaustive]
@@ -1372,6 +1380,13 @@ impl Span {
         self.end.as_ref()
     }
 }
+impl Span {
+    /// Creates a new builder-style object to manufacture [`Span`](crate::model::Span).
+    pub fn builder() -> crate::model::span::Builder {
+        crate::model::span::Builder::default()
+    }
+}
+
 /// See [`Span`](crate::model::Span).
 pub mod span {
 
@@ -1412,12 +1427,6 @@ pub mod span {
         }
     }
 }
-impl Span {
-    /// Creates a new builder-style object to manufacture [`Span`](crate::model::Span).
-    pub fn builder() -> crate::model::span::Builder {
-        crate::model::span::Builder::default()
-    }
-}
 
 /// <p>A position in a policy.</p>
 #[non_exhaustive]
@@ -1447,6 +1456,13 @@ impl Position {
         self.offset
     }
 }
+impl Position {
+    /// Creates a new builder-style object to manufacture [`Position`](crate::model::Position).
+    pub fn builder() -> crate::model::position::Builder {
+        crate::model::position::Builder::default()
+    }
+}
+
 /// See [`Position`](crate::model::Position).
 pub mod position {
 
@@ -1497,12 +1513,6 @@ pub mod position {
                 offset: self.offset,
             }
         }
-    }
-}
-impl Position {
-    /// Creates a new builder-style object to manufacture [`Position`](crate::model::Position).
-    pub fn builder() -> crate::model::position::Builder {
-        crate::model::position::Builder::default()
     }
 }
 
@@ -1608,6 +1618,13 @@ impl Substring {
         self.length
     }
 }
+impl Substring {
+    /// Creates a new builder-style object to manufacture [`Substring`](crate::model::Substring).
+    pub fn builder() -> crate::model::substring::Builder {
+        crate::model::substring::Builder::default()
+    }
+}
+
 /// See [`Substring`](crate::model::Substring).
 pub mod substring {
 
@@ -1646,12 +1663,6 @@ pub mod substring {
                 length: self.length,
             }
         }
-    }
-}
-impl Substring {
-    /// Creates a new builder-style object to manufacture [`Substring`](crate::model::Substring).
-    pub fn builder() -> crate::model::substring::Builder {
-        crate::model::substring::Builder::default()
     }
 }
 
@@ -2236,6 +2247,13 @@ impl CloudTrailDetails {
         self.end_time.as_ref()
     }
 }
+impl CloudTrailDetails {
+    /// Creates a new builder-style object to manufacture [`CloudTrailDetails`](crate::model::CloudTrailDetails).
+    pub fn builder() -> crate::model::cloud_trail_details::Builder {
+        crate::model::cloud_trail_details::Builder::default()
+    }
+}
+
 /// See [`CloudTrailDetails`](crate::model::CloudTrailDetails).
 pub mod cloud_trail_details {
 
@@ -2315,12 +2333,6 @@ pub mod cloud_trail_details {
         }
     }
 }
-impl CloudTrailDetails {
-    /// Creates a new builder-style object to manufacture [`CloudTrailDetails`](crate::model::CloudTrailDetails).
-    pub fn builder() -> crate::model::cloud_trail_details::Builder {
-        crate::model::cloud_trail_details::Builder::default()
-    }
-}
 
 /// <p>Contains details about the CloudTrail trail being analyzed to generate a policy.</p>
 #[non_exhaustive]
@@ -2350,6 +2362,13 @@ impl Trail {
         self.all_regions
     }
 }
+impl Trail {
+    /// Creates a new builder-style object to manufacture [`Trail`](crate::model::Trail).
+    pub fn builder() -> crate::model::trail::Builder {
+        crate::model::trail::Builder::default()
+    }
+}
+
 /// See [`Trail`](crate::model::Trail).
 pub mod trail {
 
@@ -2414,12 +2433,6 @@ pub mod trail {
         }
     }
 }
-impl Trail {
-    /// Creates a new builder-style object to manufacture [`Trail`](crate::model::Trail).
-    pub fn builder() -> crate::model::trail::Builder {
-        crate::model::trail::Builder::default()
-    }
-}
 
 /// <p>Contains the ARN details about the IAM entity for which the policy is generated.</p>
 #[non_exhaustive]
@@ -2435,6 +2448,13 @@ impl PolicyGenerationDetails {
         self.principal_arn.as_deref()
     }
 }
+impl PolicyGenerationDetails {
+    /// Creates a new builder-style object to manufacture [`PolicyGenerationDetails`](crate::model::PolicyGenerationDetails).
+    pub fn builder() -> crate::model::policy_generation_details::Builder {
+        crate::model::policy_generation_details::Builder::default()
+    }
+}
+
 /// See [`PolicyGenerationDetails`](crate::model::PolicyGenerationDetails).
 pub mod policy_generation_details {
 
@@ -2464,12 +2484,6 @@ pub mod policy_generation_details {
                 principal_arn: self.principal_arn,
             }
         }
-    }
-}
-impl PolicyGenerationDetails {
-    /// Creates a new builder-style object to manufacture [`PolicyGenerationDetails`](crate::model::PolicyGenerationDetails).
-    pub fn builder() -> crate::model::policy_generation_details::Builder {
-        crate::model::policy_generation_details::Builder::default()
     }
 }
 
@@ -2515,6 +2529,13 @@ impl PolicyGeneration {
         self.completed_on.as_ref()
     }
 }
+impl PolicyGeneration {
+    /// Creates a new builder-style object to manufacture [`PolicyGeneration`](crate::model::PolicyGeneration).
+    pub fn builder() -> crate::model::policy_generation::Builder {
+        crate::model::policy_generation::Builder::default()
+    }
+}
+
 /// See [`PolicyGeneration`](crate::model::PolicyGeneration).
 pub mod policy_generation {
 
@@ -2598,12 +2619,6 @@ pub mod policy_generation {
                 completed_on: self.completed_on,
             }
         }
-    }
-}
-impl PolicyGeneration {
-    /// Creates a new builder-style object to manufacture [`PolicyGeneration`](crate::model::PolicyGeneration).
-    pub fn builder() -> crate::model::policy_generation::Builder {
-        crate::model::policy_generation::Builder::default()
     }
 }
 
@@ -2820,6 +2835,13 @@ impl FindingSummary {
         self.sources.as_deref()
     }
 }
+impl FindingSummary {
+    /// Creates a new builder-style object to manufacture [`FindingSummary`](crate::model::FindingSummary).
+    pub fn builder() -> crate::model::finding_summary::Builder {
+        crate::model::finding_summary::Builder::default()
+    }
+}
+
 /// See [`FindingSummary`](crate::model::FindingSummary).
 pub mod finding_summary {
 
@@ -3074,12 +3096,6 @@ pub mod finding_summary {
         }
     }
 }
-impl FindingSummary {
-    /// Creates a new builder-style object to manufacture [`FindingSummary`](crate::model::FindingSummary).
-    pub fn builder() -> crate::model::finding_summary::Builder {
-        crate::model::finding_summary::Builder::default()
-    }
-}
 
 /// <p>The source of the finding. This indicates how the access that generated the finding is granted. It is populated for Amazon S3 bucket findings.</p>
 #[non_exhaustive]
@@ -3102,6 +3118,13 @@ impl FindingSource {
         self.detail.as_ref()
     }
 }
+impl FindingSource {
+    /// Creates a new builder-style object to manufacture [`FindingSource`](crate::model::FindingSource).
+    pub fn builder() -> crate::model::finding_source::Builder {
+        crate::model::finding_source::Builder::default()
+    }
+}
+
 /// See [`FindingSource`](crate::model::FindingSource).
 pub mod finding_source {
 
@@ -3148,12 +3171,6 @@ pub mod finding_source {
         }
     }
 }
-impl FindingSource {
-    /// Creates a new builder-style object to manufacture [`FindingSource`](crate::model::FindingSource).
-    pub fn builder() -> crate::model::finding_source::Builder {
-        crate::model::finding_source::Builder::default()
-    }
-}
 
 /// <p>Includes details about how the access that generated the finding is granted. This is populated for Amazon S3 bucket findings.</p>
 #[non_exhaustive]
@@ -3176,6 +3193,13 @@ impl FindingSourceDetail {
         self.access_point_account.as_deref()
     }
 }
+impl FindingSourceDetail {
+    /// Creates a new builder-style object to manufacture [`FindingSourceDetail`](crate::model::FindingSourceDetail).
+    pub fn builder() -> crate::model::finding_source_detail::Builder {
+        crate::model::finding_source_detail::Builder::default()
+    }
+}
+
 /// See [`FindingSourceDetail`](crate::model::FindingSourceDetail).
 pub mod finding_source_detail {
 
@@ -3220,12 +3244,6 @@ pub mod finding_source_detail {
                 access_point_account: self.access_point_account,
             }
         }
-    }
-}
-impl FindingSourceDetail {
-    /// Creates a new builder-style object to manufacture [`FindingSourceDetail`](crate::model::FindingSourceDetail).
-    pub fn builder() -> crate::model::finding_source_detail::Builder {
-        crate::model::finding_source_detail::Builder::default()
     }
 }
 
@@ -3611,6 +3629,13 @@ impl SortCriteria {
         self.order_by.as_ref()
     }
 }
+impl SortCriteria {
+    /// Creates a new builder-style object to manufacture [`SortCriteria`](crate::model::SortCriteria).
+    pub fn builder() -> crate::model::sort_criteria::Builder {
+        crate::model::sort_criteria::Builder::default()
+    }
+}
+
 /// See [`SortCriteria`](crate::model::SortCriteria).
 pub mod sort_criteria {
 
@@ -3652,12 +3677,6 @@ pub mod sort_criteria {
                 order_by: self.order_by,
             }
         }
-    }
-}
-impl SortCriteria {
-    /// Creates a new builder-style object to manufacture [`SortCriteria`](crate::model::SortCriteria).
-    pub fn builder() -> crate::model::sort_criteria::Builder {
-        crate::model::sort_criteria::Builder::default()
     }
 }
 
@@ -3779,6 +3798,13 @@ impl AnalyzedResourceSummary {
         self.resource_type.as_ref()
     }
 }
+impl AnalyzedResourceSummary {
+    /// Creates a new builder-style object to manufacture [`AnalyzedResourceSummary`](crate::model::AnalyzedResourceSummary).
+    pub fn builder() -> crate::model::analyzed_resource_summary::Builder {
+        crate::model::analyzed_resource_summary::Builder::default()
+    }
+}
+
 /// See [`AnalyzedResourceSummary`](crate::model::AnalyzedResourceSummary).
 pub mod analyzed_resource_summary {
 
@@ -3837,12 +3863,6 @@ pub mod analyzed_resource_summary {
         }
     }
 }
-impl AnalyzedResourceSummary {
-    /// Creates a new builder-style object to manufacture [`AnalyzedResourceSummary`](crate::model::AnalyzedResourceSummary).
-    pub fn builder() -> crate::model::analyzed_resource_summary::Builder {
-        crate::model::analyzed_resource_summary::Builder::default()
-    }
-}
 
 /// <p>Contains a summary of information about an access preview.</p>
 #[non_exhaustive]
@@ -3896,6 +3916,13 @@ impl AccessPreviewSummary {
         self.status_reason.as_ref()
     }
 }
+impl AccessPreviewSummary {
+    /// Creates a new builder-style object to manufacture [`AccessPreviewSummary`](crate::model::AccessPreviewSummary).
+    pub fn builder() -> crate::model::access_preview_summary::Builder {
+        crate::model::access_preview_summary::Builder::default()
+    }
+}
+
 /// See [`AccessPreviewSummary`](crate::model::AccessPreviewSummary).
 pub mod access_preview_summary {
 
@@ -3991,12 +4018,6 @@ pub mod access_preview_summary {
         }
     }
 }
-impl AccessPreviewSummary {
-    /// Creates a new builder-style object to manufacture [`AccessPreviewSummary`](crate::model::AccessPreviewSummary).
-    pub fn builder() -> crate::model::access_preview_summary::Builder {
-        crate::model::access_preview_summary::Builder::default()
-    }
-}
 
 /// <p>Provides more details about the current status of the access preview. For example, if the creation of the access preview fails, a <code>Failed</code> status is returned. This failure can be due to an internal issue with the analysis or due to an invalid proposed resource configuration.</p>
 #[non_exhaustive]
@@ -4012,6 +4033,13 @@ impl AccessPreviewStatusReason {
         self.code.as_ref()
     }
 }
+impl AccessPreviewStatusReason {
+    /// Creates a new builder-style object to manufacture [`AccessPreviewStatusReason`](crate::model::AccessPreviewStatusReason).
+    pub fn builder() -> crate::model::access_preview_status_reason::Builder {
+        crate::model::access_preview_status_reason::Builder::default()
+    }
+}
+
 /// See [`AccessPreviewStatusReason`](crate::model::AccessPreviewStatusReason).
 pub mod access_preview_status_reason {
 
@@ -4039,12 +4067,6 @@ pub mod access_preview_status_reason {
         pub fn build(self) -> crate::model::AccessPreviewStatusReason {
             crate::model::AccessPreviewStatusReason { code: self.code }
         }
-    }
-}
-impl AccessPreviewStatusReason {
-    /// Creates a new builder-style object to manufacture [`AccessPreviewStatusReason`](crate::model::AccessPreviewStatusReason).
-    pub fn builder() -> crate::model::access_preview_status_reason::Builder {
-        crate::model::access_preview_status_reason::Builder::default()
     }
 }
 
@@ -4369,6 +4391,13 @@ impl AccessPreviewFinding {
         self.sources.as_deref()
     }
 }
+impl AccessPreviewFinding {
+    /// Creates a new builder-style object to manufacture [`AccessPreviewFinding`](crate::model::AccessPreviewFinding).
+    pub fn builder() -> crate::model::access_preview_finding::Builder {
+        crate::model::access_preview_finding::Builder::default()
+    }
+}
+
 /// See [`AccessPreviewFinding`](crate::model::AccessPreviewFinding).
 pub mod access_preview_finding {
 
@@ -4650,12 +4679,6 @@ pub mod access_preview_finding {
         }
     }
 }
-impl AccessPreviewFinding {
-    /// Creates a new builder-style object to manufacture [`AccessPreviewFinding`](crate::model::AccessPreviewFinding).
-    pub fn builder() -> crate::model::access_preview_finding::Builder {
-        crate::model::access_preview_finding::Builder::default()
-    }
-}
 
 /// When writing a match expression against `FindingChangeType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -4775,6 +4798,13 @@ impl GeneratedPolicyResult {
         self.generated_policies.as_deref()
     }
 }
+impl GeneratedPolicyResult {
+    /// Creates a new builder-style object to manufacture [`GeneratedPolicyResult`](crate::model::GeneratedPolicyResult).
+    pub fn builder() -> crate::model::generated_policy_result::Builder {
+        crate::model::generated_policy_result::Builder::default()
+    }
+}
+
 /// See [`GeneratedPolicyResult`](crate::model::GeneratedPolicyResult).
 pub mod generated_policy_result {
 
@@ -4828,12 +4858,6 @@ pub mod generated_policy_result {
         }
     }
 }
-impl GeneratedPolicyResult {
-    /// Creates a new builder-style object to manufacture [`GeneratedPolicyResult`](crate::model::GeneratedPolicyResult).
-    pub fn builder() -> crate::model::generated_policy_result::Builder {
-        crate::model::generated_policy_result::Builder::default()
-    }
-}
 
 /// <p>Contains the text for the generated policy.</p>
 #[non_exhaustive]
@@ -4849,6 +4873,13 @@ impl GeneratedPolicy {
         self.policy.as_deref()
     }
 }
+impl GeneratedPolicy {
+    /// Creates a new builder-style object to manufacture [`GeneratedPolicy`](crate::model::GeneratedPolicy).
+    pub fn builder() -> crate::model::generated_policy::Builder {
+        crate::model::generated_policy::Builder::default()
+    }
+}
+
 /// See [`GeneratedPolicy`](crate::model::GeneratedPolicy).
 pub mod generated_policy {
 
@@ -4875,12 +4906,6 @@ pub mod generated_policy {
                 policy: self.policy,
             }
         }
-    }
-}
-impl GeneratedPolicy {
-    /// Creates a new builder-style object to manufacture [`GeneratedPolicy`](crate::model::GeneratedPolicy).
-    pub fn builder() -> crate::model::generated_policy::Builder {
-        crate::model::generated_policy::Builder::default()
     }
 }
 
@@ -4914,6 +4939,13 @@ impl GeneratedPolicyProperties {
         self.cloud_trail_properties.as_ref()
     }
 }
+impl GeneratedPolicyProperties {
+    /// Creates a new builder-style object to manufacture [`GeneratedPolicyProperties`](crate::model::GeneratedPolicyProperties).
+    pub fn builder() -> crate::model::generated_policy_properties::Builder {
+        crate::model::generated_policy_properties::Builder::default()
+    }
+}
+
 /// See [`GeneratedPolicyProperties`](crate::model::GeneratedPolicyProperties).
 pub mod generated_policy_properties {
 
@@ -4972,12 +5004,6 @@ pub mod generated_policy_properties {
         }
     }
 }
-impl GeneratedPolicyProperties {
-    /// Creates a new builder-style object to manufacture [`GeneratedPolicyProperties`](crate::model::GeneratedPolicyProperties).
-    pub fn builder() -> crate::model::generated_policy_properties::Builder {
-        crate::model::generated_policy_properties::Builder::default()
-    }
-}
 
 /// <p>Contains information about CloudTrail access.</p>
 #[non_exhaustive]
@@ -5007,6 +5033,13 @@ impl CloudTrailProperties {
         self.end_time.as_ref()
     }
 }
+impl CloudTrailProperties {
+    /// Creates a new builder-style object to manufacture [`CloudTrailProperties`](crate::model::CloudTrailProperties).
+    pub fn builder() -> crate::model::cloud_trail_properties::Builder {
+        crate::model::cloud_trail_properties::Builder::default()
+    }
+}
+
 /// See [`CloudTrailProperties`](crate::model::CloudTrailProperties).
 pub mod cloud_trail_properties {
 
@@ -5075,12 +5108,6 @@ pub mod cloud_trail_properties {
         }
     }
 }
-impl CloudTrailProperties {
-    /// Creates a new builder-style object to manufacture [`CloudTrailProperties`](crate::model::CloudTrailProperties).
-    pub fn builder() -> crate::model::cloud_trail_properties::Builder {
-        crate::model::cloud_trail_properties::Builder::default()
-    }
-}
 
 /// <p>Contains details about the CloudTrail trail being analyzed to generate a policy.</p>
 #[non_exhaustive]
@@ -5110,6 +5137,13 @@ impl TrailProperties {
         self.all_regions
     }
 }
+impl TrailProperties {
+    /// Creates a new builder-style object to manufacture [`TrailProperties`](crate::model::TrailProperties).
+    pub fn builder() -> crate::model::trail_properties::Builder {
+        crate::model::trail_properties::Builder::default()
+    }
+}
+
 /// See [`TrailProperties`](crate::model::TrailProperties).
 pub mod trail_properties {
 
@@ -5174,12 +5208,6 @@ pub mod trail_properties {
         }
     }
 }
-impl TrailProperties {
-    /// Creates a new builder-style object to manufacture [`TrailProperties`](crate::model::TrailProperties).
-    pub fn builder() -> crate::model::trail_properties::Builder {
-        crate::model::trail_properties::Builder::default()
-    }
-}
 
 /// <p>Contains details about the policy generation request.</p>
 #[non_exhaustive]
@@ -5223,6 +5251,13 @@ impl JobDetails {
         self.job_error.as_ref()
     }
 }
+impl JobDetails {
+    /// Creates a new builder-style object to manufacture [`JobDetails`](crate::model::JobDetails).
+    pub fn builder() -> crate::model::job_details::Builder {
+        crate::model::job_details::Builder::default()
+    }
+}
+
 /// See [`JobDetails`](crate::model::JobDetails).
 pub mod job_details {
 
@@ -5305,12 +5340,6 @@ pub mod job_details {
         }
     }
 }
-impl JobDetails {
-    /// Creates a new builder-style object to manufacture [`JobDetails`](crate::model::JobDetails).
-    pub fn builder() -> crate::model::job_details::Builder {
-        crate::model::job_details::Builder::default()
-    }
-}
 
 /// <p>Contains the details about the policy generation error.</p>
 #[non_exhaustive]
@@ -5333,6 +5362,13 @@ impl JobError {
         self.message.as_deref()
     }
 }
+impl JobError {
+    /// Creates a new builder-style object to manufacture [`JobError`](crate::model::JobError).
+    pub fn builder() -> crate::model::job_error::Builder {
+        crate::model::job_error::Builder::default()
+    }
+}
+
 /// See [`JobError`](crate::model::JobError).
 pub mod job_error {
 
@@ -5371,12 +5407,6 @@ pub mod job_error {
                 message: self.message,
             }
         }
-    }
-}
-impl JobError {
-    /// Creates a new builder-style object to manufacture [`JobError`](crate::model::JobError).
-    pub fn builder() -> crate::model::job_error::Builder {
-        crate::model::job_error::Builder::default()
     }
 }
 
@@ -5598,6 +5628,13 @@ impl Finding {
         self.sources.as_deref()
     }
 }
+impl Finding {
+    /// Creates a new builder-style object to manufacture [`Finding`](crate::model::Finding).
+    pub fn builder() -> crate::model::finding::Builder {
+        crate::model::finding::Builder::default()
+    }
+}
+
 /// See [`Finding`](crate::model::Finding).
 pub mod finding {
 
@@ -5852,12 +5889,6 @@ pub mod finding {
         }
     }
 }
-impl Finding {
-    /// Creates a new builder-style object to manufacture [`Finding`](crate::model::Finding).
-    pub fn builder() -> crate::model::finding::Builder {
-        crate::model::finding::Builder::default()
-    }
-}
 
 /// <p>Contains details about the analyzed resource.</p>
 #[non_exhaustive]
@@ -5943,6 +5974,13 @@ impl AnalyzedResource {
         self.error.as_deref()
     }
 }
+impl AnalyzedResource {
+    /// Creates a new builder-style object to manufacture [`AnalyzedResource`](crate::model::AnalyzedResource).
+    pub fn builder() -> crate::model::analyzed_resource::Builder {
+        crate::model::analyzed_resource::Builder::default()
+    }
+}
+
 /// See [`AnalyzedResource`](crate::model::AnalyzedResource).
 pub mod analyzed_resource {
 
@@ -6127,12 +6165,6 @@ pub mod analyzed_resource {
         }
     }
 }
-impl AnalyzedResource {
-    /// Creates a new builder-style object to manufacture [`AnalyzedResource`](crate::model::AnalyzedResource).
-    pub fn builder() -> crate::model::analyzed_resource::Builder {
-        crate::model::analyzed_resource::Builder::default()
-    }
-}
 
 /// <p>Contains information about an access preview.</p>
 #[non_exhaustive]
@@ -6201,6 +6233,13 @@ impl AccessPreview {
         self.status_reason.as_ref()
     }
 }
+impl AccessPreview {
+    /// Creates a new builder-style object to manufacture [`AccessPreview`](crate::model::AccessPreview).
+    pub fn builder() -> crate::model::access_preview::Builder {
+        crate::model::access_preview::Builder::default()
+    }
+}
+
 /// See [`AccessPreview`](crate::model::AccessPreview).
 pub mod access_preview {
 
@@ -6325,12 +6364,6 @@ pub mod access_preview {
                 status_reason: self.status_reason,
             }
         }
-    }
-}
-impl AccessPreview {
-    /// Creates a new builder-style object to manufacture [`AccessPreview`](crate::model::AccessPreview).
-    pub fn builder() -> crate::model::access_preview::Builder {
-        crate::model::access_preview::Builder::default()
     }
 }
 
@@ -6546,6 +6579,13 @@ impl SqsQueueConfiguration {
         self.queue_policy.as_deref()
     }
 }
+impl SqsQueueConfiguration {
+    /// Creates a new builder-style object to manufacture [`SqsQueueConfiguration`](crate::model::SqsQueueConfiguration).
+    pub fn builder() -> crate::model::sqs_queue_configuration::Builder {
+        crate::model::sqs_queue_configuration::Builder::default()
+    }
+}
+
 /// See [`SqsQueueConfiguration`](crate::model::SqsQueueConfiguration).
 pub mod sqs_queue_configuration {
 
@@ -6574,12 +6614,6 @@ pub mod sqs_queue_configuration {
         }
     }
 }
-impl SqsQueueConfiguration {
-    /// Creates a new builder-style object to manufacture [`SqsQueueConfiguration`](crate::model::SqsQueueConfiguration).
-    pub fn builder() -> crate::model::sqs_queue_configuration::Builder {
-        crate::model::sqs_queue_configuration::Builder::default()
-    }
-}
 
 /// <p>The proposed access control configuration for an Amazon SNS topic. You can propose a configuration for a new Amazon SNS topic or an existing Amazon SNS topic that you own by specifying the policy. If the configuration is for an existing Amazon SNS topic and you do not specify the Amazon SNS policy, then the access preview uses the existing Amazon SNS policy for the topic. If the access preview is for a new resource and you do not specify the policy, then the access preview assumes an Amazon SNS topic without a policy. To propose deletion of an existing Amazon SNS topic policy, you can specify an empty string for the Amazon SNS policy. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/api/API_Topic.html">Topic</a>.</p>
 #[non_exhaustive]
@@ -6595,6 +6629,13 @@ impl SnsTopicConfiguration {
         self.topic_policy.as_deref()
     }
 }
+impl SnsTopicConfiguration {
+    /// Creates a new builder-style object to manufacture [`SnsTopicConfiguration`](crate::model::SnsTopicConfiguration).
+    pub fn builder() -> crate::model::sns_topic_configuration::Builder {
+        crate::model::sns_topic_configuration::Builder::default()
+    }
+}
+
 /// See [`SnsTopicConfiguration`](crate::model::SnsTopicConfiguration).
 pub mod sns_topic_configuration {
 
@@ -6621,12 +6662,6 @@ pub mod sns_topic_configuration {
                 topic_policy: self.topic_policy,
             }
         }
-    }
-}
-impl SnsTopicConfiguration {
-    /// Creates a new builder-style object to manufacture [`SnsTopicConfiguration`](crate::model::SnsTopicConfiguration).
-    pub fn builder() -> crate::model::sns_topic_configuration::Builder {
-        crate::model::sns_topic_configuration::Builder::default()
     }
 }
 
@@ -6677,6 +6712,13 @@ impl S3BucketConfiguration {
         self.access_points.as_ref()
     }
 }
+impl S3BucketConfiguration {
+    /// Creates a new builder-style object to manufacture [`S3BucketConfiguration`](crate::model::S3BucketConfiguration).
+    pub fn builder() -> crate::model::s3_bucket_configuration::Builder {
+        crate::model::s3_bucket_configuration::Builder::default()
+    }
+}
+
 /// See [`S3BucketConfiguration`](crate::model::S3BucketConfiguration).
 pub mod s3_bucket_configuration {
 
@@ -6787,12 +6829,6 @@ pub mod s3_bucket_configuration {
         }
     }
 }
-impl S3BucketConfiguration {
-    /// Creates a new builder-style object to manufacture [`S3BucketConfiguration`](crate::model::S3BucketConfiguration).
-    pub fn builder() -> crate::model::s3_bucket_configuration::Builder {
-        crate::model::s3_bucket_configuration::Builder::default()
-    }
-}
 
 /// <p>The configuration for an Amazon S3 access point or multi-region access point for the bucket. You can propose up to 10 access points or multi-region access points per bucket. If the proposed Amazon S3 access point configuration is for an existing bucket, the access preview uses the proposed access point configuration in place of the existing access points. To propose an access point without a policy, you can provide an empty string as the access point policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/creating-access-points.html">Creating access points</a>. For more information about access point policy limits, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-points-restrictions-limitations.html">Access points restrictions and limitations</a>.</p>
 #[non_exhaustive]
@@ -6824,6 +6860,13 @@ impl S3AccessPointConfiguration {
         self.network_origin.as_ref()
     }
 }
+impl S3AccessPointConfiguration {
+    /// Creates a new builder-style object to manufacture [`S3AccessPointConfiguration`](crate::model::S3AccessPointConfiguration).
+    pub fn builder() -> crate::model::s3_access_point_configuration::Builder {
+        crate::model::s3_access_point_configuration::Builder::default()
+    }
+}
+
 /// See [`S3AccessPointConfiguration`](crate::model::S3AccessPointConfiguration).
 pub mod s3_access_point_configuration {
 
@@ -6889,12 +6932,6 @@ pub mod s3_access_point_configuration {
         }
     }
 }
-impl S3AccessPointConfiguration {
-    /// Creates a new builder-style object to manufacture [`S3AccessPointConfiguration`](crate::model::S3AccessPointConfiguration).
-    pub fn builder() -> crate::model::s3_access_point_configuration::Builder {
-        crate::model::s3_access_point_configuration::Builder::default()
-    }
-}
 
 /// <p>The proposed <code>InternetConfiguration</code> or <code>VpcConfiguration</code> to apply to the Amazon S3 access point. <code>VpcConfiguration</code> does not apply to multi-region access points. You can make the access point accessible from the internet, or you can specify that all requests made through that access point must originate from a specific virtual private cloud (VPC). You can specify only one type of network configuration. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/creating-access-points.html">Creating access points</a>.</p>
 #[non_exhaustive]
@@ -6955,6 +6992,13 @@ impl NetworkOriginConfiguration {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InternetConfiguration {}
+impl InternetConfiguration {
+    /// Creates a new builder-style object to manufacture [`InternetConfiguration`](crate::model::InternetConfiguration).
+    pub fn builder() -> crate::model::internet_configuration::Builder {
+        crate::model::internet_configuration::Builder::default()
+    }
+}
+
 /// See [`InternetConfiguration`](crate::model::InternetConfiguration).
 pub mod internet_configuration {
 
@@ -6967,12 +7011,6 @@ pub mod internet_configuration {
         pub fn build(self) -> crate::model::InternetConfiguration {
             crate::model::InternetConfiguration {}
         }
-    }
-}
-impl InternetConfiguration {
-    /// Creates a new builder-style object to manufacture [`InternetConfiguration`](crate::model::InternetConfiguration).
-    pub fn builder() -> crate::model::internet_configuration::Builder {
-        crate::model::internet_configuration::Builder::default()
     }
 }
 
@@ -6990,6 +7028,13 @@ impl VpcConfiguration {
         self.vpc_id.as_deref()
     }
 }
+impl VpcConfiguration {
+    /// Creates a new builder-style object to manufacture [`VpcConfiguration`](crate::model::VpcConfiguration).
+    pub fn builder() -> crate::model::vpc_configuration::Builder {
+        crate::model::vpc_configuration::Builder::default()
+    }
+}
+
 /// See [`VpcConfiguration`](crate::model::VpcConfiguration).
 pub mod vpc_configuration {
 
@@ -7018,12 +7063,6 @@ pub mod vpc_configuration {
         }
     }
 }
-impl VpcConfiguration {
-    /// Creates a new builder-style object to manufacture [`VpcConfiguration`](crate::model::VpcConfiguration).
-    pub fn builder() -> crate::model::vpc_configuration::Builder {
-        crate::model::vpc_configuration::Builder::default()
-    }
-}
 
 /// <p>The <code>PublicAccessBlock</code> configuration to apply to this Amazon S3 bucket. If the proposed configuration is for an existing Amazon S3 bucket and the configuration is not specified, the access preview uses the existing setting. If the proposed configuration is for a new bucket and the configuration is not specified, the access preview uses <code>false</code>. If the proposed configuration is for a new access point or multi-region access point and the access point BPA configuration is not specified, the access preview uses <code>true</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-publicaccessblockconfiguration.html">PublicAccessBlockConfiguration</a>. </p>
 #[non_exhaustive]
@@ -7046,6 +7085,13 @@ impl S3PublicAccessBlockConfiguration {
         self.restrict_public_buckets
     }
 }
+impl S3PublicAccessBlockConfiguration {
+    /// Creates a new builder-style object to manufacture [`S3PublicAccessBlockConfiguration`](crate::model::S3PublicAccessBlockConfiguration).
+    pub fn builder() -> crate::model::s3_public_access_block_configuration::Builder {
+        crate::model::s3_public_access_block_configuration::Builder::default()
+    }
+}
+
 /// See [`S3PublicAccessBlockConfiguration`](crate::model::S3PublicAccessBlockConfiguration).
 pub mod s3_public_access_block_configuration {
 
@@ -7086,12 +7132,6 @@ pub mod s3_public_access_block_configuration {
         }
     }
 }
-impl S3PublicAccessBlockConfiguration {
-    /// Creates a new builder-style object to manufacture [`S3PublicAccessBlockConfiguration`](crate::model::S3PublicAccessBlockConfiguration).
-    pub fn builder() -> crate::model::s3_public_access_block_configuration::Builder {
-        crate::model::s3_public_access_block_configuration::Builder::default()
-    }
-}
 
 /// <p>A proposed access control list grant configuration for an Amazon S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#setting-acls">How to Specify an ACL</a>.</p>
 #[non_exhaustive]
@@ -7114,6 +7154,13 @@ impl S3BucketAclGrantConfiguration {
         self.grantee.as_ref()
     }
 }
+impl S3BucketAclGrantConfiguration {
+    /// Creates a new builder-style object to manufacture [`S3BucketAclGrantConfiguration`](crate::model::S3BucketAclGrantConfiguration).
+    pub fn builder() -> crate::model::s3_bucket_acl_grant_configuration::Builder {
+        crate::model::s3_bucket_acl_grant_configuration::Builder::default()
+    }
+}
+
 /// See [`S3BucketAclGrantConfiguration`](crate::model::S3BucketAclGrantConfiguration).
 pub mod s3_bucket_acl_grant_configuration {
 
@@ -7155,12 +7202,6 @@ pub mod s3_bucket_acl_grant_configuration {
                 grantee: self.grantee,
             }
         }
-    }
-}
-impl S3BucketAclGrantConfiguration {
-    /// Creates a new builder-style object to manufacture [`S3BucketAclGrantConfiguration`](crate::model::S3BucketAclGrantConfiguration).
-    pub fn builder() -> crate::model::s3_bucket_acl_grant_configuration::Builder {
-        crate::model::s3_bucket_acl_grant_configuration::Builder::default()
     }
 }
 
@@ -7342,6 +7383,13 @@ impl SecretsManagerSecretConfiguration {
         self.secret_policy.as_deref()
     }
 }
+impl SecretsManagerSecretConfiguration {
+    /// Creates a new builder-style object to manufacture [`SecretsManagerSecretConfiguration`](crate::model::SecretsManagerSecretConfiguration).
+    pub fn builder() -> crate::model::secrets_manager_secret_configuration::Builder {
+        crate::model::secrets_manager_secret_configuration::Builder::default()
+    }
+}
+
 /// See [`SecretsManagerSecretConfiguration`](crate::model::SecretsManagerSecretConfiguration).
 pub mod secrets_manager_secret_configuration {
 
@@ -7385,12 +7433,6 @@ pub mod secrets_manager_secret_configuration {
         }
     }
 }
-impl SecretsManagerSecretConfiguration {
-    /// Creates a new builder-style object to manufacture [`SecretsManagerSecretConfiguration`](crate::model::SecretsManagerSecretConfiguration).
-    pub fn builder() -> crate::model::secrets_manager_secret_configuration::Builder {
-        crate::model::secrets_manager_secret_configuration::Builder::default()
-    }
-}
 
 /// <p>The proposed access control configuration for an Amazon RDS DB snapshot. You can propose a configuration for a new Amazon RDS DB snapshot or an Amazon RDS DB snapshot that you own by specifying the <code>RdsDbSnapshotAttributeValue</code> and optional KMS encryption key. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ModifyDBSnapshotAttribute.html">ModifyDBSnapshotAttribute</a>.</p>
 #[non_exhaustive]
@@ -7427,6 +7469,13 @@ impl RdsDbSnapshotConfiguration {
         self.kms_key_id.as_deref()
     }
 }
+impl RdsDbSnapshotConfiguration {
+    /// Creates a new builder-style object to manufacture [`RdsDbSnapshotConfiguration`](crate::model::RdsDbSnapshotConfiguration).
+    pub fn builder() -> crate::model::rds_db_snapshot_configuration::Builder {
+        crate::model::rds_db_snapshot_configuration::Builder::default()
+    }
+}
+
 /// See [`RdsDbSnapshotConfiguration`](crate::model::RdsDbSnapshotConfiguration).
 pub mod rds_db_snapshot_configuration {
 
@@ -7496,12 +7545,6 @@ pub mod rds_db_snapshot_configuration {
                 kms_key_id: self.kms_key_id,
             }
         }
-    }
-}
-impl RdsDbSnapshotConfiguration {
-    /// Creates a new builder-style object to manufacture [`RdsDbSnapshotConfiguration`](crate::model::RdsDbSnapshotConfiguration).
-    pub fn builder() -> crate::model::rds_db_snapshot_configuration::Builder {
-        crate::model::rds_db_snapshot_configuration::Builder::default()
     }
 }
 
@@ -7590,6 +7633,13 @@ impl RdsDbClusterSnapshotConfiguration {
         self.kms_key_id.as_deref()
     }
 }
+impl RdsDbClusterSnapshotConfiguration {
+    /// Creates a new builder-style object to manufacture [`RdsDbClusterSnapshotConfiguration`](crate::model::RdsDbClusterSnapshotConfiguration).
+    pub fn builder() -> crate::model::rds_db_cluster_snapshot_configuration::Builder {
+        crate::model::rds_db_cluster_snapshot_configuration::Builder::default()
+    }
+}
+
 /// See [`RdsDbClusterSnapshotConfiguration`](crate::model::RdsDbClusterSnapshotConfiguration).
 pub mod rds_db_cluster_snapshot_configuration {
 
@@ -7659,12 +7709,6 @@ pub mod rds_db_cluster_snapshot_configuration {
                 kms_key_id: self.kms_key_id,
             }
         }
-    }
-}
-impl RdsDbClusterSnapshotConfiguration {
-    /// Creates a new builder-style object to manufacture [`RdsDbClusterSnapshotConfiguration`](crate::model::RdsDbClusterSnapshotConfiguration).
-    pub fn builder() -> crate::model::rds_db_cluster_snapshot_configuration::Builder {
-        crate::model::rds_db_cluster_snapshot_configuration::Builder::default()
     }
 }
 
@@ -7738,6 +7782,13 @@ impl KmsKeyConfiguration {
         self.grants.as_deref()
     }
 }
+impl KmsKeyConfiguration {
+    /// Creates a new builder-style object to manufacture [`KmsKeyConfiguration`](crate::model::KmsKeyConfiguration).
+    pub fn builder() -> crate::model::kms_key_configuration::Builder {
+        crate::model::kms_key_configuration::Builder::default()
+    }
+}
+
 /// See [`KmsKeyConfiguration`](crate::model::KmsKeyConfiguration).
 pub mod kms_key_configuration {
 
@@ -7804,12 +7855,6 @@ pub mod kms_key_configuration {
         }
     }
 }
-impl KmsKeyConfiguration {
-    /// Creates a new builder-style object to manufacture [`KmsKeyConfiguration`](crate::model::KmsKeyConfiguration).
-    pub fn builder() -> crate::model::kms_key_configuration::Builder {
-        crate::model::kms_key_configuration::Builder::default()
-    }
-}
 
 /// <p>A proposed grant configuration for a KMS key. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateGrant.html">CreateGrant</a>.</p>
 #[non_exhaustive]
@@ -7853,6 +7898,13 @@ impl KmsGrantConfiguration {
         self.issuing_account.as_deref()
     }
 }
+impl KmsGrantConfiguration {
+    /// Creates a new builder-style object to manufacture [`KmsGrantConfiguration`](crate::model::KmsGrantConfiguration).
+    pub fn builder() -> crate::model::kms_grant_configuration::Builder {
+        crate::model::kms_grant_configuration::Builder::default()
+    }
+}
+
 /// See [`KmsGrantConfiguration`](crate::model::KmsGrantConfiguration).
 pub mod kms_grant_configuration {
 
@@ -7950,12 +8002,6 @@ pub mod kms_grant_configuration {
         }
     }
 }
-impl KmsGrantConfiguration {
-    /// Creates a new builder-style object to manufacture [`KmsGrantConfiguration`](crate::model::KmsGrantConfiguration).
-    pub fn builder() -> crate::model::kms_grant_configuration::Builder {
-        crate::model::kms_grant_configuration::Builder::default()
-    }
-}
 
 /// <p>Use this structure to propose allowing <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operations</a> in the grant only when the operation request includes the specified <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">encryption context</a>. You can specify only one type of encryption context. An empty map is treated as not specified. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_GrantConstraints.html">GrantConstraints</a>.</p>
 #[non_exhaustive]
@@ -7986,6 +8032,13 @@ impl KmsGrantConstraints {
         self.encryption_context_subset.as_ref()
     }
 }
+impl KmsGrantConstraints {
+    /// Creates a new builder-style object to manufacture [`KmsGrantConstraints`](crate::model::KmsGrantConstraints).
+    pub fn builder() -> crate::model::kms_grant_constraints::Builder {
+        crate::model::kms_grant_constraints::Builder::default()
+    }
+}
+
 /// See [`KmsGrantConstraints`](crate::model::KmsGrantConstraints).
 pub mod kms_grant_constraints {
 
@@ -8058,12 +8111,6 @@ pub mod kms_grant_constraints {
                 encryption_context_subset: self.encryption_context_subset,
             }
         }
-    }
-}
-impl KmsGrantConstraints {
-    /// Creates a new builder-style object to manufacture [`KmsGrantConstraints`](crate::model::KmsGrantConstraints).
-    pub fn builder() -> crate::model::kms_grant_constraints::Builder {
-        crate::model::kms_grant_constraints::Builder::default()
     }
 }
 
@@ -8257,6 +8304,13 @@ impl EfsFileSystemConfiguration {
         self.file_system_policy.as_deref()
     }
 }
+impl EfsFileSystemConfiguration {
+    /// Creates a new builder-style object to manufacture [`EfsFileSystemConfiguration`](crate::model::EfsFileSystemConfiguration).
+    pub fn builder() -> crate::model::efs_file_system_configuration::Builder {
+        crate::model::efs_file_system_configuration::Builder::default()
+    }
+}
+
 /// See [`EfsFileSystemConfiguration`](crate::model::EfsFileSystemConfiguration).
 pub mod efs_file_system_configuration {
 
@@ -8288,12 +8342,6 @@ pub mod efs_file_system_configuration {
         }
     }
 }
-impl EfsFileSystemConfiguration {
-    /// Creates a new builder-style object to manufacture [`EfsFileSystemConfiguration`](crate::model::EfsFileSystemConfiguration).
-    pub fn builder() -> crate::model::efs_file_system_configuration::Builder {
-        crate::model::efs_file_system_configuration::Builder::default()
-    }
-}
 
 /// <p>The proposed access control configuration for an IAM role. You can propose a configuration for a new IAM role or an existing IAM role that you own by specifying the trust policy. If the configuration is for a new IAM role, you must specify the trust policy. If the configuration is for an existing IAM role that you own and you do not propose the trust policy, the access preview uses the existing trust policy for the role. The proposed trust policy cannot be an empty string. For more information about role trust policy limits, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html">IAM and STS quotas</a>.</p>
 #[non_exhaustive]
@@ -8309,6 +8357,13 @@ impl IamRoleConfiguration {
         self.trust_policy.as_deref()
     }
 }
+impl IamRoleConfiguration {
+    /// Creates a new builder-style object to manufacture [`IamRoleConfiguration`](crate::model::IamRoleConfiguration).
+    pub fn builder() -> crate::model::iam_role_configuration::Builder {
+        crate::model::iam_role_configuration::Builder::default()
+    }
+}
+
 /// See [`IamRoleConfiguration`](crate::model::IamRoleConfiguration).
 pub mod iam_role_configuration {
 
@@ -8337,12 +8392,6 @@ pub mod iam_role_configuration {
         }
     }
 }
-impl IamRoleConfiguration {
-    /// Creates a new builder-style object to manufacture [`IamRoleConfiguration`](crate::model::IamRoleConfiguration).
-    pub fn builder() -> crate::model::iam_role_configuration::Builder {
-        crate::model::iam_role_configuration::Builder::default()
-    }
-}
 
 /// <p>The proposed access control configuration for an Amazon ECR repository. You can propose a configuration for a new Amazon ECR repository or an existing Amazon ECR repository that you own by specifying the Amazon ECR policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_Repository.html">Repository</a>.</p>
 /// <ul>
@@ -8363,6 +8412,13 @@ impl EcrRepositoryConfiguration {
         self.repository_policy.as_deref()
     }
 }
+impl EcrRepositoryConfiguration {
+    /// Creates a new builder-style object to manufacture [`EcrRepositoryConfiguration`](crate::model::EcrRepositoryConfiguration).
+    pub fn builder() -> crate::model::ecr_repository_configuration::Builder {
+        crate::model::ecr_repository_configuration::Builder::default()
+    }
+}
+
 /// See [`EcrRepositoryConfiguration`](crate::model::EcrRepositoryConfiguration).
 pub mod ecr_repository_configuration {
 
@@ -8392,12 +8448,6 @@ pub mod ecr_repository_configuration {
                 repository_policy: self.repository_policy,
             }
         }
-    }
-}
-impl EcrRepositoryConfiguration {
-    /// Creates a new builder-style object to manufacture [`EcrRepositoryConfiguration`](crate::model::EcrRepositoryConfiguration).
-    pub fn builder() -> crate::model::ecr_repository_configuration::Builder {
-        crate::model::ecr_repository_configuration::Builder::default()
     }
 }
 
@@ -8457,6 +8507,13 @@ impl EbsSnapshotConfiguration {
         self.kms_key_id.as_deref()
     }
 }
+impl EbsSnapshotConfiguration {
+    /// Creates a new builder-style object to manufacture [`EbsSnapshotConfiguration`](crate::model::EbsSnapshotConfiguration).
+    pub fn builder() -> crate::model::ebs_snapshot_configuration::Builder {
+        crate::model::ebs_snapshot_configuration::Builder::default()
+    }
+}
+
 /// See [`EbsSnapshotConfiguration`](crate::model::EbsSnapshotConfiguration).
 pub mod ebs_snapshot_configuration {
 
@@ -8553,11 +8610,5 @@ pub mod ebs_snapshot_configuration {
                 kms_key_id: self.kms_key_id,
             }
         }
-    }
-}
-impl EbsSnapshotConfiguration {
-    /// Creates a new builder-style object to manufacture [`EbsSnapshotConfiguration`](crate::model::EbsSnapshotConfiguration).
-    pub fn builder() -> crate::model::ebs_snapshot_configuration::Builder {
-        crate::model::ebs_snapshot_configuration::Builder::default()
     }
 }

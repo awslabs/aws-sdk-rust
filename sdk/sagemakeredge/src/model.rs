@@ -49,6 +49,13 @@ impl DeploymentResult {
         self.deployment_models.as_deref()
     }
 }
+impl DeploymentResult {
+    /// Creates a new builder-style object to manufacture [`DeploymentResult`](crate::model::DeploymentResult).
+    pub fn builder() -> crate::model::deployment_result::Builder {
+        crate::model::deployment_result::Builder::default()
+    }
+}
+
 /// See [`DeploymentResult`](crate::model::DeploymentResult).
 pub mod deployment_result {
 
@@ -162,12 +169,6 @@ pub mod deployment_result {
         }
     }
 }
-impl DeploymentResult {
-    /// Creates a new builder-style object to manufacture [`DeploymentResult`](crate::model::DeploymentResult).
-    pub fn builder() -> crate::model::deployment_result::Builder {
-        crate::model::deployment_result::Builder::default()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
@@ -232,6 +233,13 @@ impl DeploymentModel {
         self.rollback_failure_reason.as_deref()
     }
 }
+impl DeploymentModel {
+    /// Creates a new builder-style object to manufacture [`DeploymentModel`](crate::model::DeploymentModel).
+    pub fn builder() -> crate::model::deployment_model::Builder {
+        crate::model::deployment_model::Builder::default()
+    }
+}
+
 /// See [`DeploymentModel`](crate::model::DeploymentModel).
 pub mod deployment_model {
 
@@ -357,12 +365,6 @@ pub mod deployment_model {
                 rollback_failure_reason: self.rollback_failure_reason,
             }
         }
-    }
-}
-impl DeploymentModel {
-    /// Creates a new builder-style object to manufacture [`DeploymentModel`](crate::model::DeploymentModel).
-    pub fn builder() -> crate::model::deployment_model::Builder {
-        crate::model::deployment_model::Builder::default()
     }
 }
 
@@ -588,6 +590,13 @@ impl Model {
         self.model_metrics.as_deref()
     }
 }
+impl Model {
+    /// Creates a new builder-style object to manufacture [`Model`](crate::model::Model).
+    pub fn builder() -> crate::model::model::Builder {
+        crate::model::model::Builder::default()
+    }
+}
+
 /// See [`Model`](crate::model::Model).
 pub mod model {
 
@@ -682,12 +691,6 @@ pub mod model {
         }
     }
 }
-impl Model {
-    /// Creates a new builder-style object to manufacture [`Model`](crate::model::Model).
-    pub fn builder() -> crate::model::model::Builder {
-        crate::model::model::Builder::default()
-    }
-}
 
 /// <p>Information required for edge device metrics.</p>
 #[non_exhaustive]
@@ -724,6 +727,13 @@ impl EdgeMetric {
         self.timestamp.as_ref()
     }
 }
+impl EdgeMetric {
+    /// Creates a new builder-style object to manufacture [`EdgeMetric`](crate::model::EdgeMetric).
+    pub fn builder() -> crate::model::edge_metric::Builder {
+        crate::model::edge_metric::Builder::default()
+    }
+}
+
 /// See [`EdgeMetric`](crate::model::EdgeMetric).
 pub mod edge_metric {
 
@@ -791,12 +801,6 @@ pub mod edge_metric {
         }
     }
 }
-impl EdgeMetric {
-    /// Creates a new builder-style object to manufacture [`EdgeMetric`](crate::model::EdgeMetric).
-    pub fn builder() -> crate::model::edge_metric::Builder {
-        crate::model::edge_metric::Builder::default()
-    }
-}
 
 /// <p>Information about a deployment on an edge device that is registered with SageMaker Edge Manager.</p>
 #[non_exhaustive]
@@ -835,6 +839,13 @@ impl EdgeDeployment {
         self.definitions.as_deref()
     }
 }
+impl EdgeDeployment {
+    /// Creates a new builder-style object to manufacture [`EdgeDeployment`](crate::model::EdgeDeployment).
+    pub fn builder() -> crate::model::edge_deployment::Builder {
+        crate::model::edge_deployment::Builder::default()
+    }
+}
+
 /// See [`EdgeDeployment`](crate::model::EdgeDeployment).
 pub mod edge_deployment {
 
@@ -921,12 +932,6 @@ pub mod edge_deployment {
         }
     }
 }
-impl EdgeDeployment {
-    /// Creates a new builder-style object to manufacture [`EdgeDeployment`](crate::model::EdgeDeployment).
-    pub fn builder() -> crate::model::edge_deployment::Builder {
-        crate::model::edge_deployment::Builder::default()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
@@ -963,6 +968,13 @@ impl Definition {
         self.state.as_ref()
     }
 }
+impl Definition {
+    /// Creates a new builder-style object to manufacture [`Definition`](crate::model::Definition).
+    pub fn builder() -> crate::model::definition::Builder {
+        crate::model::definition::Builder::default()
+    }
+}
+
 /// See [`Definition`](crate::model::Definition).
 pub mod definition {
 
@@ -1027,12 +1039,6 @@ pub mod definition {
         }
     }
 }
-impl Definition {
-    /// Creates a new builder-style object to manufacture [`Definition`](crate::model::Definition).
-    pub fn builder() -> crate::model::definition::Builder {
-        crate::model::definition::Builder::default()
-    }
-}
 
 /// <p>Information about the checksum of a model deployed on a device.</p>
 #[non_exhaustive]
@@ -1055,6 +1061,13 @@ impl Checksum {
         self.sum.as_deref()
     }
 }
+impl Checksum {
+    /// Creates a new builder-style object to manufacture [`Checksum`](crate::model::Checksum).
+    pub fn builder() -> crate::model::checksum::Builder {
+        crate::model::checksum::Builder::default()
+    }
+}
+
 /// See [`Checksum`](crate::model::Checksum).
 pub mod checksum {
 
@@ -1093,12 +1106,6 @@ pub mod checksum {
                 sum: self.sum,
             }
         }
-    }
-}
-impl Checksum {
-    /// Creates a new builder-style object to manufacture [`Checksum`](crate::model::Checksum).
-    pub fn builder() -> crate::model::checksum::Builder {
-        crate::model::checksum::Builder::default()
     }
 }
 

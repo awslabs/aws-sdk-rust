@@ -21,6 +21,13 @@ impl ValidationExceptionField {
         self.message.as_deref()
     }
 }
+impl ValidationExceptionField {
+    /// Creates a new builder-style object to manufacture [`ValidationExceptionField`](crate::model::ValidationExceptionField).
+    pub fn builder() -> crate::model::validation_exception_field::Builder {
+        crate::model::validation_exception_field::Builder::default()
+    }
+}
+
 /// See [`ValidationExceptionField`](crate::model::ValidationExceptionField).
 pub mod validation_exception_field {
 
@@ -59,12 +66,6 @@ pub mod validation_exception_field {
                 message: self.message,
             }
         }
-    }
-}
-impl ValidationExceptionField {
-    /// Creates a new builder-style object to manufacture [`ValidationExceptionField`](crate::model::ValidationExceptionField).
-    pub fn builder() -> crate::model::validation_exception_field::Builder {
-        crate::model::validation_exception_field::Builder::default()
     }
 }
 
@@ -233,6 +234,13 @@ impl WorkloadShare {
         self.workload_id.as_deref()
     }
 }
+impl WorkloadShare {
+    /// Creates a new builder-style object to manufacture [`WorkloadShare`](crate::model::WorkloadShare).
+    pub fn builder() -> crate::model::workload_share::Builder {
+        crate::model::workload_share::Builder::default()
+    }
+}
+
 /// See [`WorkloadShare`](crate::model::WorkloadShare).
 pub mod workload_share {
 
@@ -339,12 +347,6 @@ pub mod workload_share {
                 workload_id: self.workload_id,
             }
         }
-    }
-}
-impl WorkloadShare {
-    /// Creates a new builder-style object to manufacture [`WorkloadShare`](crate::model::WorkloadShare).
-    pub fn builder() -> crate::model::workload_share::Builder {
-        crate::model::workload_share::Builder::default()
     }
 }
 
@@ -821,6 +823,13 @@ impl Workload {
         self.applications.as_deref()
     }
 }
+impl Workload {
+    /// Creates a new builder-style object to manufacture [`Workload`](crate::model::Workload).
+    pub fn builder() -> crate::model::workload::Builder {
+        crate::model::workload::Builder::default()
+    }
+}
+
 /// See [`Workload`](crate::model::Workload).
 pub mod workload {
 
@@ -1317,12 +1326,6 @@ pub mod workload {
         }
     }
 }
-impl Workload {
-    /// Creates a new builder-style object to manufacture [`Workload`](crate::model::Workload).
-    pub fn builder() -> crate::model::workload::Builder {
-        crate::model::workload::Builder::default()
-    }
-}
 
 /// <p>Discovery configuration associated to the workload.</p>
 #[non_exhaustive]
@@ -1341,6 +1344,13 @@ impl WorkloadDiscoveryConfig {
         self.trusted_advisor_integration_status.as_ref()
     }
 }
+impl WorkloadDiscoveryConfig {
+    /// Creates a new builder-style object to manufacture [`WorkloadDiscoveryConfig`](crate::model::WorkloadDiscoveryConfig).
+    pub fn builder() -> crate::model::workload_discovery_config::Builder {
+        crate::model::workload_discovery_config::Builder::default()
+    }
+}
+
 /// See [`WorkloadDiscoveryConfig`](crate::model::WorkloadDiscoveryConfig).
 pub mod workload_discovery_config {
 
@@ -1374,12 +1384,6 @@ pub mod workload_discovery_config {
                 trusted_advisor_integration_status: self.trusted_advisor_integration_status,
             }
         }
-    }
-}
-impl WorkloadDiscoveryConfig {
-    /// Creates a new builder-style object to manufacture [`WorkloadDiscoveryConfig`](crate::model::WorkloadDiscoveryConfig).
-    pub fn builder() -> crate::model::workload_discovery_config::Builder {
-        crate::model::workload_discovery_config::Builder::default()
     }
 }
 
@@ -1833,6 +1837,13 @@ impl ShareInvitation {
         self.lens_arn.as_deref()
     }
 }
+impl ShareInvitation {
+    /// Creates a new builder-style object to manufacture [`ShareInvitation`](crate::model::ShareInvitation).
+    pub fn builder() -> crate::model::share_invitation::Builder {
+        crate::model::share_invitation::Builder::default()
+    }
+}
+
 /// See [`ShareInvitation`](crate::model::ShareInvitation).
 pub mod share_invitation {
 
@@ -1919,12 +1930,6 @@ pub mod share_invitation {
                 lens_arn: self.lens_arn,
             }
         }
-    }
-}
-impl ShareInvitation {
-    /// Creates a new builder-style object to manufacture [`ShareInvitation`](crate::model::ShareInvitation).
-    pub fn builder() -> crate::model::share_invitation::Builder {
-        crate::model::share_invitation::Builder::default()
     }
 }
 
@@ -2200,6 +2205,13 @@ impl LensReview {
         self.next_token.as_deref()
     }
 }
+impl LensReview {
+    /// Creates a new builder-style object to manufacture [`LensReview`](crate::model::LensReview).
+    pub fn builder() -> crate::model::lens_review::Builder {
+        crate::model::lens_review::Builder::default()
+    }
+}
+
 /// See [`LensReview`](crate::model::LensReview).
 pub mod lens_review {
 
@@ -2368,12 +2380,6 @@ pub mod lens_review {
         }
     }
 }
-impl LensReview {
-    /// Creates a new builder-style object to manufacture [`LensReview`](crate::model::LensReview).
-    pub fn builder() -> crate::model::lens_review::Builder {
-        crate::model::lens_review::Builder::default()
-    }
-}
 
 /// <p>A pillar review summary of a lens review.</p>
 #[non_exhaustive]
@@ -2414,6 +2420,13 @@ impl PillarReviewSummary {
         self.risk_counts.as_ref()
     }
 }
+impl PillarReviewSummary {
+    /// Creates a new builder-style object to manufacture [`PillarReviewSummary`](crate::model::PillarReviewSummary).
+    pub fn builder() -> crate::model::pillar_review_summary::Builder {
+        crate::model::pillar_review_summary::Builder::default()
+    }
+}
+
 /// See [`PillarReviewSummary`](crate::model::PillarReviewSummary).
 pub mod pillar_review_summary {
 
@@ -2488,12 +2501,6 @@ pub mod pillar_review_summary {
                 risk_counts: self.risk_counts,
             }
         }
-    }
-}
-impl PillarReviewSummary {
-    /// Creates a new builder-style object to manufacture [`PillarReviewSummary`](crate::model::PillarReviewSummary).
-    pub fn builder() -> crate::model::pillar_review_summary::Builder {
-        crate::model::pillar_review_summary::Builder::default()
     }
 }
 
@@ -2811,6 +2818,13 @@ impl Answer {
         self.reason.as_ref()
     }
 }
+impl Answer {
+    /// Creates a new builder-style object to manufacture [`Answer`](crate::model::Answer).
+    pub fn builder() -> crate::model::answer::Builder {
+        crate::model::answer::Builder::default()
+    }
+}
+
 /// See [`Answer`](crate::model::Answer).
 pub mod answer {
 
@@ -3049,12 +3063,6 @@ pub mod answer {
         }
     }
 }
-impl Answer {
-    /// Creates a new builder-style object to manufacture [`Answer`](crate::model::Answer).
-    pub fn builder() -> crate::model::answer::Builder {
-        crate::model::answer::Builder::default()
-    }
-}
 
 /// When writing a match expression against `AnswerReason`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -3202,6 +3210,13 @@ impl ChoiceAnswer {
         self.notes.as_deref()
     }
 }
+impl ChoiceAnswer {
+    /// Creates a new builder-style object to manufacture [`ChoiceAnswer`](crate::model::ChoiceAnswer).
+    pub fn builder() -> crate::model::choice_answer::Builder {
+        crate::model::choice_answer::Builder::default()
+    }
+}
+
 /// See [`ChoiceAnswer`](crate::model::ChoiceAnswer).
 pub mod choice_answer {
 
@@ -3270,12 +3285,6 @@ pub mod choice_answer {
                 notes: self.notes,
             }
         }
-    }
-}
-impl ChoiceAnswer {
-    /// Creates a new builder-style object to manufacture [`ChoiceAnswer`](crate::model::ChoiceAnswer).
-    pub fn builder() -> crate::model::choice_answer::Builder {
-        crate::model::choice_answer::Builder::default()
     }
 }
 
@@ -3536,6 +3545,13 @@ impl Choice {
         self.additional_resources.as_deref()
     }
 }
+impl Choice {
+    /// Creates a new builder-style object to manufacture [`Choice`](crate::model::Choice).
+    pub fn builder() -> crate::model::choice::Builder {
+        crate::model::choice::Builder::default()
+    }
+}
+
 /// See [`Choice`](crate::model::Choice).
 pub mod choice {
 
@@ -3640,12 +3656,6 @@ pub mod choice {
         }
     }
 }
-impl Choice {
-    /// Creates a new builder-style object to manufacture [`Choice`](crate::model::Choice).
-    pub fn builder() -> crate::model::choice::Builder {
-        crate::model::choice::Builder::default()
-    }
-}
 
 /// <p>The choice level additional resources.</p>
 #[non_exhaustive]
@@ -3668,6 +3678,13 @@ impl AdditionalResources {
         self.content.as_deref()
     }
 }
+impl AdditionalResources {
+    /// Creates a new builder-style object to manufacture [`AdditionalResources`](crate::model::AdditionalResources).
+    pub fn builder() -> crate::model::additional_resources::Builder {
+        crate::model::additional_resources::Builder::default()
+    }
+}
+
 /// See [`AdditionalResources`](crate::model::AdditionalResources).
 pub mod additional_resources {
 
@@ -3720,12 +3737,6 @@ pub mod additional_resources {
         }
     }
 }
-impl AdditionalResources {
-    /// Creates a new builder-style object to manufacture [`AdditionalResources`](crate::model::AdditionalResources).
-    pub fn builder() -> crate::model::additional_resources::Builder {
-        crate::model::additional_resources::Builder::default()
-    }
-}
 
 /// <p>The choice content.</p>
 #[non_exhaustive]
@@ -3748,6 +3759,13 @@ impl ChoiceContent {
         self.url.as_deref()
     }
 }
+impl ChoiceContent {
+    /// Creates a new builder-style object to manufacture [`ChoiceContent`](crate::model::ChoiceContent).
+    pub fn builder() -> crate::model::choice_content::Builder {
+        crate::model::choice_content::Builder::default()
+    }
+}
+
 /// See [`ChoiceContent`](crate::model::ChoiceContent).
 pub mod choice_content {
 
@@ -3786,12 +3804,6 @@ pub mod choice_content {
                 url: self.url,
             }
         }
-    }
-}
-impl ChoiceContent {
-    /// Creates a new builder-style object to manufacture [`ChoiceContent`](crate::model::ChoiceContent).
-    pub fn builder() -> crate::model::choice_content::Builder {
-        crate::model::choice_content::Builder::default()
     }
 }
 
@@ -3915,6 +3927,13 @@ impl ChoiceUpdate {
         self.notes.as_deref()
     }
 }
+impl ChoiceUpdate {
+    /// Creates a new builder-style object to manufacture [`ChoiceUpdate`](crate::model::ChoiceUpdate).
+    pub fn builder() -> crate::model::choice_update::Builder {
+        crate::model::choice_update::Builder::default()
+    }
+}
+
 /// See [`ChoiceUpdate`](crate::model::ChoiceUpdate).
 pub mod choice_update {
 
@@ -3973,12 +3992,6 @@ pub mod choice_update {
         }
     }
 }
-impl ChoiceUpdate {
-    /// Creates a new builder-style object to manufacture [`ChoiceUpdate`](crate::model::ChoiceUpdate).
-    pub fn builder() -> crate::model::choice_update::Builder {
-        crate::model::choice_update::Builder::default()
-    }
-}
 
 /// <p>A workload share summary return object.</p>
 #[non_exhaustive]
@@ -4022,6 +4035,13 @@ impl WorkloadShareSummary {
         self.status_message.as_deref()
     }
 }
+impl WorkloadShareSummary {
+    /// Creates a new builder-style object to manufacture [`WorkloadShareSummary`](crate::model::WorkloadShareSummary).
+    pub fn builder() -> crate::model::workload_share_summary::Builder {
+        crate::model::workload_share_summary::Builder::default()
+    }
+}
+
 /// See [`WorkloadShareSummary`](crate::model::WorkloadShareSummary).
 pub mod workload_share_summary {
 
@@ -4104,12 +4124,6 @@ pub mod workload_share_summary {
         }
     }
 }
-impl WorkloadShareSummary {
-    /// Creates a new builder-style object to manufacture [`WorkloadShareSummary`](crate::model::WorkloadShareSummary).
-    pub fn builder() -> crate::model::workload_share_summary::Builder {
-        crate::model::workload_share_summary::Builder::default()
-    }
-}
 
 /// <p>A workload summary return object.</p>
 #[non_exhaustive]
@@ -4180,6 +4194,13 @@ impl WorkloadSummary {
         self.improvement_status.as_ref()
     }
 }
+impl WorkloadSummary {
+    /// Creates a new builder-style object to manufacture [`WorkloadSummary`](crate::model::WorkloadSummary).
+    pub fn builder() -> crate::model::workload_summary::Builder {
+        crate::model::workload_summary::Builder::default()
+    }
+}
+
 /// See [`WorkloadSummary`](crate::model::WorkloadSummary).
 pub mod workload_summary {
 
@@ -4325,12 +4346,6 @@ pub mod workload_summary {
         }
     }
 }
-impl WorkloadSummary {
-    /// Creates a new builder-style object to manufacture [`WorkloadSummary`](crate::model::WorkloadSummary).
-    pub fn builder() -> crate::model::workload_summary::Builder {
-        crate::model::workload_summary::Builder::default()
-    }
-}
 
 /// <p>A share invitation summary return object.</p>
 #[non_exhaustive]
@@ -4404,6 +4419,13 @@ impl ShareInvitationSummary {
         self.lens_arn.as_deref()
     }
 }
+impl ShareInvitationSummary {
+    /// Creates a new builder-style object to manufacture [`ShareInvitationSummary`](crate::model::ShareInvitationSummary).
+    pub fn builder() -> crate::model::share_invitation_summary::Builder {
+        crate::model::share_invitation_summary::Builder::default()
+    }
+}
+
 /// See [`ShareInvitationSummary`](crate::model::ShareInvitationSummary).
 pub mod share_invitation_summary {
 
@@ -4542,12 +4564,6 @@ pub mod share_invitation_summary {
         }
     }
 }
-impl ShareInvitationSummary {
-    /// Creates a new builder-style object to manufacture [`ShareInvitationSummary`](crate::model::ShareInvitationSummary).
-    pub fn builder() -> crate::model::share_invitation_summary::Builder {
-        crate::model::share_invitation_summary::Builder::default()
-    }
-}
 
 /// <p>A notification summary return object.</p>
 #[non_exhaustive]
@@ -4570,6 +4586,13 @@ impl NotificationSummary {
         self.lens_upgrade_summary.as_ref()
     }
 }
+impl NotificationSummary {
+    /// Creates a new builder-style object to manufacture [`NotificationSummary`](crate::model::NotificationSummary).
+    pub fn builder() -> crate::model::notification_summary::Builder {
+        crate::model::notification_summary::Builder::default()
+    }
+}
+
 /// See [`NotificationSummary`](crate::model::NotificationSummary).
 pub mod notification_summary {
 
@@ -4614,12 +4637,6 @@ pub mod notification_summary {
                 lens_upgrade_summary: self.lens_upgrade_summary,
             }
         }
-    }
-}
-impl NotificationSummary {
-    /// Creates a new builder-style object to manufacture [`NotificationSummary`](crate::model::NotificationSummary).
-    pub fn builder() -> crate::model::notification_summary::Builder {
-        crate::model::notification_summary::Builder::default()
     }
 }
 
@@ -4680,6 +4697,13 @@ impl LensUpgradeSummary {
         self.latest_lens_version.as_deref()
     }
 }
+impl LensUpgradeSummary {
+    /// Creates a new builder-style object to manufacture [`LensUpgradeSummary`](crate::model::LensUpgradeSummary).
+    pub fn builder() -> crate::model::lens_upgrade_summary::Builder {
+        crate::model::lens_upgrade_summary::Builder::default()
+    }
+}
+
 /// See [`LensUpgradeSummary`](crate::model::LensUpgradeSummary).
 pub mod lens_upgrade_summary {
 
@@ -4783,12 +4807,6 @@ pub mod lens_upgrade_summary {
                 latest_lens_version: self.latest_lens_version,
             }
         }
-    }
-}
-impl LensUpgradeSummary {
-    /// Creates a new builder-style object to manufacture [`LensUpgradeSummary`](crate::model::LensUpgradeSummary).
-    pub fn builder() -> crate::model::lens_upgrade_summary::Builder {
-        crate::model::lens_upgrade_summary::Builder::default()
     }
 }
 
@@ -4921,6 +4939,13 @@ impl MilestoneSummary {
         self.workload_summary.as_ref()
     }
 }
+impl MilestoneSummary {
+    /// Creates a new builder-style object to manufacture [`MilestoneSummary`](crate::model::MilestoneSummary).
+    pub fn builder() -> crate::model::milestone_summary::Builder {
+        crate::model::milestone_summary::Builder::default()
+    }
+}
+
 /// See [`MilestoneSummary`](crate::model::MilestoneSummary).
 pub mod milestone_summary {
 
@@ -4998,12 +5023,6 @@ pub mod milestone_summary {
         }
     }
 }
-impl MilestoneSummary {
-    /// Creates a new builder-style object to manufacture [`MilestoneSummary`](crate::model::MilestoneSummary).
-    pub fn builder() -> crate::model::milestone_summary::Builder {
-        crate::model::milestone_summary::Builder::default()
-    }
-}
 
 /// <p>A lens share summary return object.</p>
 #[non_exhaustive]
@@ -5040,6 +5059,13 @@ impl LensShareSummary {
         self.status_message.as_deref()
     }
 }
+impl LensShareSummary {
+    /// Creates a new builder-style object to manufacture [`LensShareSummary`](crate::model::LensShareSummary).
+    pub fn builder() -> crate::model::lens_share_summary::Builder {
+        crate::model::lens_share_summary::Builder::default()
+    }
+}
+
 /// See [`LensShareSummary`](crate::model::LensShareSummary).
 pub mod lens_share_summary {
 
@@ -5107,12 +5133,6 @@ pub mod lens_share_summary {
         }
     }
 }
-impl LensShareSummary {
-    /// Creates a new builder-style object to manufacture [`LensShareSummary`](crate::model::LensShareSummary).
-    pub fn builder() -> crate::model::lens_share_summary::Builder {
-        crate::model::lens_share_summary::Builder::default()
-    }
-}
 
 /// <p>A lens review summary of a workload.</p>
 #[non_exhaustive]
@@ -5178,6 +5198,13 @@ impl LensReviewSummary {
         self.risk_counts.as_ref()
     }
 }
+impl LensReviewSummary {
+    /// Creates a new builder-style object to manufacture [`LensReviewSummary`](crate::model::LensReviewSummary).
+    pub fn builder() -> crate::model::lens_review_summary::Builder {
+        crate::model::lens_review_summary::Builder::default()
+    }
+}
+
 /// See [`LensReviewSummary`](crate::model::LensReviewSummary).
 pub mod lens_review_summary {
 
@@ -5300,12 +5327,6 @@ pub mod lens_review_summary {
         }
     }
 }
-impl LensReviewSummary {
-    /// Creates a new builder-style object to manufacture [`LensReviewSummary`](crate::model::LensReviewSummary).
-    pub fn builder() -> crate::model::lens_review_summary::Builder {
-        crate::model::lens_review_summary::Builder::default()
-    }
-}
 
 /// <p>An improvement summary of a lens review in a workload.</p>
 #[non_exhaustive]
@@ -5360,6 +5381,13 @@ impl ImprovementSummary {
         self.improvement_plans.as_deref()
     }
 }
+impl ImprovementSummary {
+    /// Creates a new builder-style object to manufacture [`ImprovementSummary`](crate::model::ImprovementSummary).
+    pub fn builder() -> crate::model::improvement_summary::Builder {
+        crate::model::improvement_summary::Builder::default()
+    }
+}
+
 /// See [`ImprovementSummary`](crate::model::ImprovementSummary).
 pub mod improvement_summary {
 
@@ -5468,12 +5496,6 @@ pub mod improvement_summary {
         }
     }
 }
-impl ImprovementSummary {
-    /// Creates a new builder-style object to manufacture [`ImprovementSummary`](crate::model::ImprovementSummary).
-    pub fn builder() -> crate::model::improvement_summary::Builder {
-        crate::model::improvement_summary::Builder::default()
-    }
-}
 
 /// <p>The choice level improvement plan.</p>
 #[non_exhaustive]
@@ -5505,6 +5527,13 @@ impl ChoiceImprovementPlan {
         self.improvement_plan_url.as_deref()
     }
 }
+impl ChoiceImprovementPlan {
+    /// Creates a new builder-style object to manufacture [`ChoiceImprovementPlan`](crate::model::ChoiceImprovementPlan).
+    pub fn builder() -> crate::model::choice_improvement_plan::Builder {
+        crate::model::choice_improvement_plan::Builder::default()
+    }
+}
+
 /// See [`ChoiceImprovementPlan`](crate::model::ChoiceImprovementPlan).
 pub mod choice_improvement_plan {
 
@@ -5560,12 +5589,6 @@ pub mod choice_improvement_plan {
                 improvement_plan_url: self.improvement_plan_url,
             }
         }
-    }
-}
-impl ChoiceImprovementPlan {
-    /// Creates a new builder-style object to manufacture [`ChoiceImprovementPlan`](crate::model::ChoiceImprovementPlan).
-    pub fn builder() -> crate::model::choice_improvement_plan::Builder {
-        crate::model::choice_improvement_plan::Builder::default()
     }
 }
 
@@ -5652,6 +5675,13 @@ impl LensSummary {
         self.lens_status.as_ref()
     }
 }
+impl LensSummary {
+    /// Creates a new builder-style object to manufacture [`LensSummary`](crate::model::LensSummary).
+    pub fn builder() -> crate::model::lens_summary::Builder {
+        crate::model::lens_summary::Builder::default()
+    }
+}
+
 /// See [`LensSummary`](crate::model::LensSummary).
 pub mod lens_summary {
 
@@ -5801,12 +5831,6 @@ pub mod lens_summary {
                 lens_status: self.lens_status,
             }
         }
-    }
-}
-impl LensSummary {
-    /// Creates a new builder-style object to manufacture [`LensSummary`](crate::model::LensSummary).
-    pub fn builder() -> crate::model::lens_summary::Builder {
-        crate::model::lens_summary::Builder::default()
     }
 }
 
@@ -6089,6 +6113,13 @@ impl CheckSummary {
         self.account_summary.as_ref()
     }
 }
+impl CheckSummary {
+    /// Creates a new builder-style object to manufacture [`CheckSummary`](crate::model::CheckSummary).
+    pub fn builder() -> crate::model::check_summary::Builder {
+        crate::model::check_summary::Builder::default()
+    }
+}
+
 /// See [`CheckSummary`](crate::model::CheckSummary).
 pub mod check_summary {
 
@@ -6253,12 +6284,6 @@ pub mod check_summary {
                 account_summary: self.account_summary,
             }
         }
-    }
-}
-impl CheckSummary {
-    /// Creates a new builder-style object to manufacture [`CheckSummary`](crate::model::CheckSummary).
-    pub fn builder() -> crate::model::check_summary::Builder {
-        crate::model::check_summary::Builder::default()
     }
 }
 
@@ -6552,6 +6577,13 @@ impl CheckDetail {
         self.updated_at.as_ref()
     }
 }
+impl CheckDetail {
+    /// Creates a new builder-style object to manufacture [`CheckDetail`](crate::model::CheckDetail).
+    pub fn builder() -> crate::model::check_detail::Builder {
+        crate::model::check_detail::Builder::default()
+    }
+}
+
 /// See [`CheckDetail`](crate::model::CheckDetail).
 pub mod check_detail {
 
@@ -6733,12 +6765,6 @@ pub mod check_detail {
                 updated_at: self.updated_at,
             }
         }
-    }
-}
-impl CheckDetail {
-    /// Creates a new builder-style object to manufacture [`CheckDetail`](crate::model::CheckDetail).
-    pub fn builder() -> crate::model::check_detail::Builder {
-        crate::model::check_detail::Builder::default()
     }
 }
 
@@ -6926,6 +6952,13 @@ impl AnswerSummary {
         self.reason.as_ref()
     }
 }
+impl AnswerSummary {
+    /// Creates a new builder-style object to manufacture [`AnswerSummary`](crate::model::AnswerSummary).
+    pub fn builder() -> crate::model::answer_summary::Builder {
+        crate::model::answer_summary::Builder::default()
+    }
+}
+
 /// See [`AnswerSummary`](crate::model::AnswerSummary).
 pub mod answer_summary {
 
@@ -7088,12 +7121,6 @@ pub mod answer_summary {
         }
     }
 }
-impl AnswerSummary {
-    /// Creates a new builder-style object to manufacture [`AnswerSummary`](crate::model::AnswerSummary).
-    pub fn builder() -> crate::model::answer_summary::Builder {
-        crate::model::answer_summary::Builder::default()
-    }
-}
 
 /// <p>A choice summary that has been answered on a question in your workload.</p>
 #[non_exhaustive]
@@ -7123,6 +7150,13 @@ impl ChoiceAnswerSummary {
         self.reason.as_ref()
     }
 }
+impl ChoiceAnswerSummary {
+    /// Creates a new builder-style object to manufacture [`ChoiceAnswerSummary`](crate::model::ChoiceAnswerSummary).
+    pub fn builder() -> crate::model::choice_answer_summary::Builder {
+        crate::model::choice_answer_summary::Builder::default()
+    }
+}
+
 /// See [`ChoiceAnswerSummary`](crate::model::ChoiceAnswerSummary).
 pub mod choice_answer_summary {
 
@@ -7179,12 +7213,6 @@ pub mod choice_answer_summary {
                 reason: self.reason,
             }
         }
-    }
-}
-impl ChoiceAnswerSummary {
-    /// Creates a new builder-style object to manufacture [`ChoiceAnswerSummary`](crate::model::ChoiceAnswerSummary).
-    pub fn builder() -> crate::model::choice_answer_summary::Builder {
-        crate::model::choice_answer_summary::Builder::default()
     }
 }
 
@@ -7322,6 +7350,13 @@ impl Milestone {
         self.workload.as_ref()
     }
 }
+impl Milestone {
+    /// Creates a new builder-style object to manufacture [`Milestone`](crate::model::Milestone).
+    pub fn builder() -> crate::model::milestone::Builder {
+        crate::model::milestone::Builder::default()
+    }
+}
+
 /// See [`Milestone`](crate::model::Milestone).
 pub mod milestone {
 
@@ -7396,12 +7431,6 @@ pub mod milestone {
         }
     }
 }
-impl Milestone {
-    /// Creates a new builder-style object to manufacture [`Milestone`](crate::model::Milestone).
-    pub fn builder() -> crate::model::milestone::Builder {
-        crate::model::milestone::Builder::default()
-    }
-}
 
 /// <p>The differences between the base and latest versions of the lens.</p>
 #[non_exhaustive]
@@ -7417,6 +7446,13 @@ impl VersionDifferences {
         self.pillar_differences.as_deref()
     }
 }
+impl VersionDifferences {
+    /// Creates a new builder-style object to manufacture [`VersionDifferences`](crate::model::VersionDifferences).
+    pub fn builder() -> crate::model::version_differences::Builder {
+        crate::model::version_differences::Builder::default()
+    }
+}
+
 /// See [`VersionDifferences`](crate::model::VersionDifferences).
 pub mod version_differences {
 
@@ -7453,12 +7489,6 @@ pub mod version_differences {
                 pillar_differences: self.pillar_differences,
             }
         }
-    }
-}
-impl VersionDifferences {
-    /// Creates a new builder-style object to manufacture [`VersionDifferences`](crate::model::VersionDifferences).
-    pub fn builder() -> crate::model::version_differences::Builder {
-        crate::model::version_differences::Builder::default()
     }
 }
 
@@ -7499,6 +7529,13 @@ impl PillarDifference {
         self.question_differences.as_deref()
     }
 }
+impl PillarDifference {
+    /// Creates a new builder-style object to manufacture [`PillarDifference`](crate::model::PillarDifference).
+    pub fn builder() -> crate::model::pillar_difference::Builder {
+        crate::model::pillar_difference::Builder::default()
+    }
+}
+
 /// See [`PillarDifference`](crate::model::PillarDifference).
 pub mod pillar_difference {
 
@@ -7578,12 +7615,6 @@ pub mod pillar_difference {
         }
     }
 }
-impl PillarDifference {
-    /// Creates a new builder-style object to manufacture [`PillarDifference`](crate::model::PillarDifference).
-    pub fn builder() -> crate::model::pillar_difference::Builder {
-        crate::model::pillar_difference::Builder::default()
-    }
-}
 
 /// <p>A question difference return object.</p>
 #[non_exhaustive]
@@ -7613,6 +7644,13 @@ impl QuestionDifference {
         self.difference_status.as_ref()
     }
 }
+impl QuestionDifference {
+    /// Creates a new builder-style object to manufacture [`QuestionDifference`](crate::model::QuestionDifference).
+    pub fn builder() -> crate::model::question_difference::Builder {
+        crate::model::question_difference::Builder::default()
+    }
+}
+
 /// See [`QuestionDifference`](crate::model::QuestionDifference).
 pub mod question_difference {
 
@@ -7669,12 +7707,6 @@ pub mod question_difference {
                 difference_status: self.difference_status,
             }
         }
-    }
-}
-impl QuestionDifference {
-    /// Creates a new builder-style object to manufacture [`QuestionDifference`](crate::model::QuestionDifference).
-    pub fn builder() -> crate::model::question_difference::Builder {
-        crate::model::question_difference::Builder::default()
     }
 }
 
@@ -7809,6 +7841,13 @@ impl LensReviewReport {
         self.base64_string.as_deref()
     }
 }
+impl LensReviewReport {
+    /// Creates a new builder-style object to manufacture [`LensReviewReport`](crate::model::LensReviewReport).
+    pub fn builder() -> crate::model::lens_review_report::Builder {
+        crate::model::lens_review_report::Builder::default()
+    }
+}
+
 /// See [`LensReviewReport`](crate::model::LensReviewReport).
 pub mod lens_review_report {
 
@@ -7872,12 +7911,6 @@ pub mod lens_review_report {
         }
     }
 }
-impl LensReviewReport {
-    /// Creates a new builder-style object to manufacture [`LensReviewReport`](crate::model::LensReviewReport).
-    pub fn builder() -> crate::model::lens_review_report::Builder {
-        crate::model::lens_review_report::Builder::default()
-    }
-}
 
 /// <p>A lens return object.</p>
 #[non_exhaustive]
@@ -7939,6 +7972,13 @@ impl Lens {
         self.tags.as_ref()
     }
 }
+impl Lens {
+    /// Creates a new builder-style object to manufacture [`Lens`](crate::model::Lens).
+    pub fn builder() -> crate::model::lens::Builder {
+        crate::model::lens::Builder::default()
+    }
+}
+
 /// See [`Lens`](crate::model::Lens).
 pub mod lens {
 
@@ -8057,11 +8097,5 @@ pub mod lens {
                 tags: self.tags,
             }
         }
-    }
-}
-impl Lens {
-    /// Creates a new builder-style object to manufacture [`Lens`](crate::model::Lens).
-    pub fn builder() -> crate::model::lens::Builder {
-        crate::model::lens::Builder::default()
     }
 }

@@ -150,11 +150,41 @@ pub struct ValidationException {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl ValidationException {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for ValidationException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "ValidationException")?;
+        if let Some(inner_1) = &self.message {
+            {
+                write!(f, ": {}", inner_1)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for ValidationException {}
+impl aws_http::request_id::RequestId for crate::error::ValidationException {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for ValidationException {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl ValidationException {
     /// Creates a new builder-style object to manufacture [`ValidationException`](crate::error::ValidationException).
     pub fn builder() -> crate::error::validation_exception::Builder {
         crate::error::validation_exception::Builder::default()
     }
 }
+
 /// See [`ValidationException`](crate::error::ValidationException).
 pub mod validation_exception {
 
@@ -199,35 +229,6 @@ pub mod validation_exception {
         }
     }
 }
-impl ValidationException {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for ValidationException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "ValidationException")?;
-        if let Some(inner_1) = &self.message {
-            {
-                write!(f, ": {}", inner_1)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for ValidationException {}
-impl aws_http::request_id::RequestId for crate::error::ValidationException {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for ValidationException {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>This account already has five reports defined. To define a new report, you must delete an existing report.</p>
 #[non_exhaustive]
@@ -239,11 +240,41 @@ pub struct ReportLimitReachedException {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl ReportLimitReachedException {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for ReportLimitReachedException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "ReportLimitReachedException")?;
+        if let Some(inner_2) = &self.message {
+            {
+                write!(f, ": {}", inner_2)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for ReportLimitReachedException {}
+impl aws_http::request_id::RequestId for crate::error::ReportLimitReachedException {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for ReportLimitReachedException {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl ReportLimitReachedException {
     /// Creates a new builder-style object to manufacture [`ReportLimitReachedException`](crate::error::ReportLimitReachedException).
     pub fn builder() -> crate::error::report_limit_reached_exception::Builder {
         crate::error::report_limit_reached_exception::Builder::default()
     }
 }
+
 /// See [`ReportLimitReachedException`](crate::error::ReportLimitReachedException).
 pub mod report_limit_reached_exception {
 
@@ -288,35 +319,6 @@ pub mod report_limit_reached_exception {
         }
     }
 }
-impl ReportLimitReachedException {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for ReportLimitReachedException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "ReportLimitReachedException")?;
-        if let Some(inner_2) = &self.message {
-            {
-                write!(f, ": {}", inner_2)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for ReportLimitReachedException {}
-impl aws_http::request_id::RequestId for crate::error::ReportLimitReachedException {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for ReportLimitReachedException {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>An error on the server occurred during the processing of your request. Try again later.</p>
 #[non_exhaustive]
@@ -328,11 +330,41 @@ pub struct InternalErrorException {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl InternalErrorException {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for InternalErrorException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "InternalErrorException")?;
+        if let Some(inner_3) = &self.message {
+            {
+                write!(f, ": {}", inner_3)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for InternalErrorException {}
+impl aws_http::request_id::RequestId for crate::error::InternalErrorException {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InternalErrorException {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl InternalErrorException {
     /// Creates a new builder-style object to manufacture [`InternalErrorException`](crate::error::InternalErrorException).
     pub fn builder() -> crate::error::internal_error_exception::Builder {
         crate::error::internal_error_exception::Builder::default()
     }
 }
+
 /// See [`InternalErrorException`](crate::error::InternalErrorException).
 pub mod internal_error_exception {
 
@@ -377,35 +409,6 @@ pub mod internal_error_exception {
         }
     }
 }
-impl InternalErrorException {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for InternalErrorException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "InternalErrorException")?;
-        if let Some(inner_3) = &self.message {
-            {
-                write!(f, ": {}", inner_3)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for InternalErrorException {}
-impl aws_http::request_id::RequestId for crate::error::InternalErrorException {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InternalErrorException {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>A report with the specified name already exists in the account. Specify a different report name.</p>
 #[non_exhaustive]
@@ -417,11 +420,41 @@ pub struct DuplicateReportNameException {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl DuplicateReportNameException {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for DuplicateReportNameException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "DuplicateReportNameException")?;
+        if let Some(inner_4) = &self.message {
+            {
+                write!(f, ": {}", inner_4)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for DuplicateReportNameException {}
+impl aws_http::request_id::RequestId for crate::error::DuplicateReportNameException {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for DuplicateReportNameException {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl DuplicateReportNameException {
     /// Creates a new builder-style object to manufacture [`DuplicateReportNameException`](crate::error::DuplicateReportNameException).
     pub fn builder() -> crate::error::duplicate_report_name_exception::Builder {
         crate::error::duplicate_report_name_exception::Builder::default()
     }
 }
+
 /// See [`DuplicateReportNameException`](crate::error::DuplicateReportNameException).
 pub mod duplicate_report_name_exception {
 
@@ -464,35 +497,6 @@ pub mod duplicate_report_name_exception {
                 meta: self.meta.unwrap_or_default(),
             }
         }
-    }
-}
-impl DuplicateReportNameException {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for DuplicateReportNameException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "DuplicateReportNameException")?;
-        if let Some(inner_4) = &self.message {
-            {
-                write!(f, ": {}", inner_4)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for DuplicateReportNameException {}
-impl aws_http::request_id::RequestId for crate::error::DuplicateReportNameException {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for DuplicateReportNameException {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
     }
 }
 

@@ -58,6 +58,13 @@ impl StartSelector {
         self.continuation_token.as_deref()
     }
 }
+impl StartSelector {
+    /// Creates a new builder-style object to manufacture [`StartSelector`](crate::model::StartSelector).
+    pub fn builder() -> crate::model::start_selector::Builder {
+        crate::model::start_selector::Builder::default()
+    }
+}
+
 /// See [`StartSelector`](crate::model::StartSelector).
 pub mod start_selector {
 
@@ -150,12 +157,6 @@ pub mod start_selector {
                 continuation_token: self.continuation_token,
             }
         }
-    }
-}
-impl StartSelector {
-    /// Creates a new builder-style object to manufacture [`StartSelector`](crate::model::StartSelector).
-    pub fn builder() -> crate::model::start_selector::Builder {
-        crate::model::start_selector::Builder::default()
     }
 }
 

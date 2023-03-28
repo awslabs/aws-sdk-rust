@@ -4,7 +4,7 @@
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`batch_get_field`](crate::client::Client::batch_get_field).
 ///
-/// See [`crate::client::fluent_builders::BatchGetField`] for more details about the operation.
+/// `ParseStrictResponse` impl for `BatchGetField`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct BatchGetField {
     _private: (),
@@ -37,7 +37,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchGetField {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`batch_put_field_options`](crate::client::Client::batch_put_field_options).
 ///
-/// See [`crate::client::fluent_builders::BatchPutFieldOptions`] for more details about the operation.
+/// `ParseStrictResponse` impl for `BatchPutFieldOptions`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct BatchPutFieldOptions {
     _private: (),
@@ -72,7 +72,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchPutFieldOptions {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`create_case`](crate::client::Client::create_case).
 ///
-/// See [`crate::client::fluent_builders::CreateCase`] for more details about the operation.
+/// `ParseStrictResponse` impl for `CreateCase`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateCase {
     _private: (),
@@ -105,7 +105,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateCase {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`create_domain`](crate::client::Client::create_domain).
 ///
-/// See [`crate::client::fluent_builders::CreateDomain`] for more details about the operation.
+/// `ParseStrictResponse` impl for `CreateDomain`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateDomain {
     _private: (),
@@ -138,7 +138,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateDomain {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`create_field`](crate::client::Client::create_field).
 ///
-/// See [`crate::client::fluent_builders::CreateField`] for more details about the operation.
+/// `ParseStrictResponse` impl for `CreateField`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateField {
     _private: (),
@@ -171,7 +171,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateField {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`create_layout`](crate::client::Client::create_layout).
 ///
-/// See [`crate::client::fluent_builders::CreateLayout`] for more details about the operation.
+/// `ParseStrictResponse` impl for `CreateLayout`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateLayout {
     _private: (),
@@ -204,7 +204,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateLayout {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`create_related_item`](crate::client::Client::create_related_item).
 ///
-/// See [`crate::client::fluent_builders::CreateRelatedItem`] for more details about the operation.
+/// `ParseStrictResponse` impl for `CreateRelatedItem`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateRelatedItem {
     _private: (),
@@ -239,7 +239,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateRelatedItem {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`create_template`](crate::client::Client::create_template).
 ///
-/// See [`crate::client::fluent_builders::CreateTemplate`] for more details about the operation.
+/// `ParseStrictResponse` impl for `CreateTemplate`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateTemplate {
     _private: (),
@@ -272,7 +272,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateTemplate {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`get_case`](crate::client::Client::get_case).
 ///
-/// See [`crate::client::fluent_builders::GetCase`] for more details about the operation.
+/// `ParseStrictResponse` impl for `GetCase`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetCase {
     _private: (),
@@ -304,7 +304,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetCase {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`get_case_event_configuration`](crate::client::Client::get_case_event_configuration).
 ///
-/// See [`crate::client::fluent_builders::GetCaseEventConfiguration`] for more details about the operation.
+/// `ParseStrictResponse` impl for `GetCaseEventConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetCaseEventConfiguration {
     _private: (),
@@ -339,7 +339,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetCaseEventConfiguratio
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`get_domain`](crate::client::Client::get_domain).
 ///
-/// See [`crate::client::fluent_builders::GetDomain`] for more details about the operation.
+/// `ParseStrictResponse` impl for `GetDomain`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetDomain {
     _private: (),
@@ -371,7 +371,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDomain {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`get_layout`](crate::client::Client::get_layout).
 ///
-/// See [`crate::client::fluent_builders::GetLayout`] for more details about the operation.
+/// `ParseStrictResponse` impl for `GetLayout`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetLayout {
     _private: (),
@@ -403,7 +403,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetLayout {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`get_template`](crate::client::Client::get_template).
 ///
-/// See [`crate::client::fluent_builders::GetTemplate`] for more details about the operation.
+/// `ParseStrictResponse` impl for `GetTemplate`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetTemplate {
     _private: (),
@@ -436,7 +436,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetTemplate {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_cases_for_contact`](crate::client::Client::list_cases_for_contact).
 ///
-/// See [`crate::client::fluent_builders::ListCasesForContact`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListCasesForContact`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListCasesForContact {
     _private: (),
@@ -471,7 +471,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListCasesForContact {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_domains`](crate::client::Client::list_domains).
 ///
-/// See [`crate::client::fluent_builders::ListDomains`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListDomains`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListDomains {
     _private: (),
@@ -504,7 +504,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListDomains {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_field_options`](crate::client::Client::list_field_options).
 ///
-/// See [`crate::client::fluent_builders::ListFieldOptions`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListFieldOptions`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListFieldOptions {
     _private: (),
@@ -539,7 +539,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListFieldOptions {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_fields`](crate::client::Client::list_fields).
 ///
-/// See [`crate::client::fluent_builders::ListFields`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListFields`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListFields {
     _private: (),
@@ -572,7 +572,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListFields {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_layouts`](crate::client::Client::list_layouts).
 ///
-/// See [`crate::client::fluent_builders::ListLayouts`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListLayouts`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListLayouts {
     _private: (),
@@ -605,7 +605,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListLayouts {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
 ///
-/// See [`crate::client::fluent_builders::ListTagsForResource`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTagsForResource {
     _private: (),
@@ -640,7 +640,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_templates`](crate::client::Client::list_templates).
 ///
-/// See [`crate::client::fluent_builders::ListTemplates`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListTemplates`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTemplates {
     _private: (),
@@ -673,7 +673,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTemplates {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`put_case_event_configuration`](crate::client::Client::put_case_event_configuration).
 ///
-/// See [`crate::client::fluent_builders::PutCaseEventConfiguration`] for more details about the operation.
+/// `ParseStrictResponse` impl for `PutCaseEventConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutCaseEventConfiguration {
     _private: (),
@@ -708,7 +708,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutCaseEventConfiguratio
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`search_cases`](crate::client::Client::search_cases).
 ///
-/// See [`crate::client::fluent_builders::SearchCases`] for more details about the operation.
+/// `ParseStrictResponse` impl for `SearchCases`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct SearchCases {
     _private: (),
@@ -741,7 +741,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SearchCases {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`search_related_items`](crate::client::Client::search_related_items).
 ///
-/// See [`crate::client::fluent_builders::SearchRelatedItems`] for more details about the operation.
+/// `ParseStrictResponse` impl for `SearchRelatedItems`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct SearchRelatedItems {
     _private: (),
@@ -776,7 +776,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SearchRelatedItems {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`tag_resource`](crate::client::Client::tag_resource).
 ///
-/// See [`crate::client::fluent_builders::TagResource`] for more details about the operation.
+/// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct TagResource {
     _private: (),
@@ -809,7 +809,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`untag_resource`](crate::client::Client::untag_resource).
 ///
-/// See [`crate::client::fluent_builders::UntagResource`] for more details about the operation.
+/// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UntagResource {
     _private: (),
@@ -842,7 +842,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`update_case`](crate::client::Client::update_case).
 ///
-/// See [`crate::client::fluent_builders::UpdateCase`] for more details about the operation.
+/// `ParseStrictResponse` impl for `UpdateCase`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateCase {
     _private: (),
@@ -875,7 +875,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateCase {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`update_field`](crate::client::Client::update_field).
 ///
-/// See [`crate::client::fluent_builders::UpdateField`] for more details about the operation.
+/// `ParseStrictResponse` impl for `UpdateField`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateField {
     _private: (),
@@ -908,7 +908,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateField {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`update_layout`](crate::client::Client::update_layout).
 ///
-/// See [`crate::client::fluent_builders::UpdateLayout`] for more details about the operation.
+/// `ParseStrictResponse` impl for `UpdateLayout`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateLayout {
     _private: (),
@@ -941,7 +941,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateLayout {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`update_template`](crate::client::Client::update_template).
 ///
-/// See [`crate::client::fluent_builders::UpdateTemplate`] for more details about the operation.
+/// `ParseStrictResponse` impl for `UpdateTemplate`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateTemplate {
     _private: (),

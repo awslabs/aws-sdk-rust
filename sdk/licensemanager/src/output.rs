@@ -10,6 +10,13 @@ impl aws_http::request_id::RequestId for UpdateServiceSettingsOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdateServiceSettingsOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateServiceSettingsOutput`](crate::output::UpdateServiceSettingsOutput).
+    pub fn builder() -> crate::output::update_service_settings_output::Builder {
+        crate::output::update_service_settings_output::Builder::default()
+    }
+}
+
 /// See [`UpdateServiceSettingsOutput`](crate::output::UpdateServiceSettingsOutput).
 pub mod update_service_settings_output {
 
@@ -37,12 +44,6 @@ pub mod update_service_settings_output {
         }
     }
 }
-impl UpdateServiceSettingsOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateServiceSettingsOutput`](crate::output::UpdateServiceSettingsOutput).
-    pub fn builder() -> crate::output::update_service_settings_output::Builder {
-        crate::output::update_service_settings_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -55,6 +56,13 @@ impl aws_http::request_id::RequestId for UpdateLicenseSpecificationsForResourceO
         self._request_id.as_deref()
     }
 }
+impl UpdateLicenseSpecificationsForResourceOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateLicenseSpecificationsForResourceOutput`](crate::output::UpdateLicenseSpecificationsForResourceOutput).
+    pub fn builder() -> crate::output::update_license_specifications_for_resource_output::Builder {
+        crate::output::update_license_specifications_for_resource_output::Builder::default()
+    }
+}
+
 /// See [`UpdateLicenseSpecificationsForResourceOutput`](crate::output::UpdateLicenseSpecificationsForResourceOutput).
 pub mod update_license_specifications_for_resource_output {
 
@@ -82,12 +90,6 @@ pub mod update_license_specifications_for_resource_output {
         }
     }
 }
-impl UpdateLicenseSpecificationsForResourceOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateLicenseSpecificationsForResourceOutput`](crate::output::UpdateLicenseSpecificationsForResourceOutput).
-    pub fn builder() -> crate::output::update_license_specifications_for_resource_output::Builder {
-        crate::output::update_license_specifications_for_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -100,6 +102,13 @@ impl aws_http::request_id::RequestId for UpdateLicenseManagerReportGeneratorOutp
         self._request_id.as_deref()
     }
 }
+impl UpdateLicenseManagerReportGeneratorOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateLicenseManagerReportGeneratorOutput`](crate::output::UpdateLicenseManagerReportGeneratorOutput).
+    pub fn builder() -> crate::output::update_license_manager_report_generator_output::Builder {
+        crate::output::update_license_manager_report_generator_output::Builder::default()
+    }
+}
+
 /// See [`UpdateLicenseManagerReportGeneratorOutput`](crate::output::UpdateLicenseManagerReportGeneratorOutput).
 pub mod update_license_manager_report_generator_output {
 
@@ -127,12 +136,6 @@ pub mod update_license_manager_report_generator_output {
         }
     }
 }
-impl UpdateLicenseManagerReportGeneratorOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateLicenseManagerReportGeneratorOutput`](crate::output::UpdateLicenseManagerReportGeneratorOutput).
-    pub fn builder() -> crate::output::update_license_manager_report_generator_output::Builder {
-        crate::output::update_license_manager_report_generator_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -145,6 +148,13 @@ impl aws_http::request_id::RequestId for UpdateLicenseConfigurationOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdateLicenseConfigurationOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateLicenseConfigurationOutput`](crate::output::UpdateLicenseConfigurationOutput).
+    pub fn builder() -> crate::output::update_license_configuration_output::Builder {
+        crate::output::update_license_configuration_output::Builder::default()
+    }
+}
+
 /// See [`UpdateLicenseConfigurationOutput`](crate::output::UpdateLicenseConfigurationOutput).
 pub mod update_license_configuration_output {
 
@@ -172,12 +182,6 @@ pub mod update_license_configuration_output {
         }
     }
 }
-impl UpdateLicenseConfigurationOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateLicenseConfigurationOutput`](crate::output::UpdateLicenseConfigurationOutput).
-    pub fn builder() -> crate::output::update_license_configuration_output::Builder {
-        crate::output::update_license_configuration_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -190,6 +194,13 @@ impl aws_http::request_id::RequestId for UntagResourceOutput {
         self._request_id.as_deref()
     }
 }
+impl UntagResourceOutput {
+    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    pub fn builder() -> crate::output::untag_resource_output::Builder {
+        crate::output::untag_resource_output::Builder::default()
+    }
+}
+
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
 
@@ -217,12 +228,6 @@ pub mod untag_resource_output {
         }
     }
 }
-impl UntagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
-    pub fn builder() -> crate::output::untag_resource_output::Builder {
-        crate::output::untag_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -235,6 +240,13 @@ impl aws_http::request_id::RequestId for TagResourceOutput {
         self._request_id.as_deref()
     }
 }
+impl TagResourceOutput {
+    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
+    pub fn builder() -> crate::output::tag_resource_output::Builder {
+        crate::output::tag_resource_output::Builder::default()
+    }
+}
+
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
 
@@ -260,12 +272,6 @@ pub mod tag_resource_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl TagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
-    pub fn builder() -> crate::output::tag_resource_output::Builder {
-        crate::output::tag_resource_output::Builder::default()
     }
 }
 
@@ -303,6 +309,13 @@ impl aws_http::request_id::RequestId for RejectGrantOutput {
         self._request_id.as_deref()
     }
 }
+impl RejectGrantOutput {
+    /// Creates a new builder-style object to manufacture [`RejectGrantOutput`](crate::output::RejectGrantOutput).
+    pub fn builder() -> crate::output::reject_grant_output::Builder {
+        crate::output::reject_grant_output::Builder::default()
+    }
+}
+
 /// See [`RejectGrantOutput`](crate::output::RejectGrantOutput).
 pub mod reject_grant_output {
 
@@ -366,12 +379,6 @@ pub mod reject_grant_output {
         }
     }
 }
-impl RejectGrantOutput {
-    /// Creates a new builder-style object to manufacture [`RejectGrantOutput`](crate::output::RejectGrantOutput).
-    pub fn builder() -> crate::output::reject_grant_output::Builder {
-        crate::output::reject_grant_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -403,6 +410,13 @@ impl aws_http::request_id::RequestId for ListUsageForLicenseConfigurationOutput 
         self._request_id.as_deref()
     }
 }
+impl ListUsageForLicenseConfigurationOutput {
+    /// Creates a new builder-style object to manufacture [`ListUsageForLicenseConfigurationOutput`](crate::output::ListUsageForLicenseConfigurationOutput).
+    pub fn builder() -> crate::output::list_usage_for_license_configuration_output::Builder {
+        crate::output::list_usage_for_license_configuration_output::Builder::default()
+    }
+}
+
 /// See [`ListUsageForLicenseConfigurationOutput`](crate::output::ListUsageForLicenseConfigurationOutput).
 pub mod list_usage_for_license_configuration_output {
 
@@ -467,12 +481,6 @@ pub mod list_usage_for_license_configuration_output {
         }
     }
 }
-impl ListUsageForLicenseConfigurationOutput {
-    /// Creates a new builder-style object to manufacture [`ListUsageForLicenseConfigurationOutput`](crate::output::ListUsageForLicenseConfigurationOutput).
-    pub fn builder() -> crate::output::list_usage_for_license_configuration_output::Builder {
-        crate::output::list_usage_for_license_configuration_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -501,6 +509,13 @@ impl aws_http::request_id::RequestId for ListTokensOutput {
         self._request_id.as_deref()
     }
 }
+impl ListTokensOutput {
+    /// Creates a new builder-style object to manufacture [`ListTokensOutput`](crate::output::ListTokensOutput).
+    pub fn builder() -> crate::output::list_tokens_output::Builder {
+        crate::output::list_tokens_output::Builder::default()
+    }
+}
+
 /// See [`ListTokensOutput`](crate::output::ListTokensOutput).
 pub mod list_tokens_output {
 
@@ -561,12 +576,6 @@ pub mod list_tokens_output {
         }
     }
 }
-impl ListTokensOutput {
-    /// Creates a new builder-style object to manufacture [`ListTokensOutput`](crate::output::ListTokensOutput).
-    pub fn builder() -> crate::output::list_tokens_output::Builder {
-        crate::output::list_tokens_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -588,6 +597,13 @@ impl aws_http::request_id::RequestId for ListTagsForResourceOutput {
         self._request_id.as_deref()
     }
 }
+impl ListTagsForResourceOutput {
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
+        crate::output::list_tags_for_resource_output::Builder::default()
+    }
+}
+
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
 
@@ -636,12 +652,6 @@ pub mod list_tags_for_resource_output {
         }
     }
 }
-impl ListTagsForResourceOutput {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
-    pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
-        crate::output::list_tags_for_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -673,6 +683,13 @@ impl aws_http::request_id::RequestId for ListResourceInventoryOutput {
         self._request_id.as_deref()
     }
 }
+impl ListResourceInventoryOutput {
+    /// Creates a new builder-style object to manufacture [`ListResourceInventoryOutput`](crate::output::ListResourceInventoryOutput).
+    pub fn builder() -> crate::output::list_resource_inventory_output::Builder {
+        crate::output::list_resource_inventory_output::Builder::default()
+    }
+}
+
 /// See [`ListResourceInventoryOutput`](crate::output::ListResourceInventoryOutput).
 pub mod list_resource_inventory_output {
 
@@ -734,12 +751,6 @@ pub mod list_resource_inventory_output {
         }
     }
 }
-impl ListResourceInventoryOutput {
-    /// Creates a new builder-style object to manufacture [`ListResourceInventoryOutput`](crate::output::ListResourceInventoryOutput).
-    pub fn builder() -> crate::output::list_resource_inventory_output::Builder {
-        crate::output::list_resource_inventory_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -768,6 +779,13 @@ impl aws_http::request_id::RequestId for ListReceivedLicensesForOrganizationOutp
         self._request_id.as_deref()
     }
 }
+impl ListReceivedLicensesForOrganizationOutput {
+    /// Creates a new builder-style object to manufacture [`ListReceivedLicensesForOrganizationOutput`](crate::output::ListReceivedLicensesForOrganizationOutput).
+    pub fn builder() -> crate::output::list_received_licenses_for_organization_output::Builder {
+        crate::output::list_received_licenses_for_organization_output::Builder::default()
+    }
+}
+
 /// See [`ListReceivedLicensesForOrganizationOutput`](crate::output::ListReceivedLicensesForOrganizationOutput).
 pub mod list_received_licenses_for_organization_output {
 
@@ -828,12 +846,6 @@ pub mod list_received_licenses_for_organization_output {
         }
     }
 }
-impl ListReceivedLicensesForOrganizationOutput {
-    /// Creates a new builder-style object to manufacture [`ListReceivedLicensesForOrganizationOutput`](crate::output::ListReceivedLicensesForOrganizationOutput).
-    pub fn builder() -> crate::output::list_received_licenses_for_organization_output::Builder {
-        crate::output::list_received_licenses_for_organization_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -862,6 +874,13 @@ impl aws_http::request_id::RequestId for ListReceivedLicensesOutput {
         self._request_id.as_deref()
     }
 }
+impl ListReceivedLicensesOutput {
+    /// Creates a new builder-style object to manufacture [`ListReceivedLicensesOutput`](crate::output::ListReceivedLicensesOutput).
+    pub fn builder() -> crate::output::list_received_licenses_output::Builder {
+        crate::output::list_received_licenses_output::Builder::default()
+    }
+}
+
 /// See [`ListReceivedLicensesOutput`](crate::output::ListReceivedLicensesOutput).
 pub mod list_received_licenses_output {
 
@@ -922,12 +941,6 @@ pub mod list_received_licenses_output {
         }
     }
 }
-impl ListReceivedLicensesOutput {
-    /// Creates a new builder-style object to manufacture [`ListReceivedLicensesOutput`](crate::output::ListReceivedLicensesOutput).
-    pub fn builder() -> crate::output::list_received_licenses_output::Builder {
-        crate::output::list_received_licenses_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -956,6 +969,13 @@ impl aws_http::request_id::RequestId for ListReceivedGrantsForOrganizationOutput
         self._request_id.as_deref()
     }
 }
+impl ListReceivedGrantsForOrganizationOutput {
+    /// Creates a new builder-style object to manufacture [`ListReceivedGrantsForOrganizationOutput`](crate::output::ListReceivedGrantsForOrganizationOutput).
+    pub fn builder() -> crate::output::list_received_grants_for_organization_output::Builder {
+        crate::output::list_received_grants_for_organization_output::Builder::default()
+    }
+}
+
 /// See [`ListReceivedGrantsForOrganizationOutput`](crate::output::ListReceivedGrantsForOrganizationOutput).
 pub mod list_received_grants_for_organization_output {
 
@@ -1016,12 +1036,6 @@ pub mod list_received_grants_for_organization_output {
         }
     }
 }
-impl ListReceivedGrantsForOrganizationOutput {
-    /// Creates a new builder-style object to manufacture [`ListReceivedGrantsForOrganizationOutput`](crate::output::ListReceivedGrantsForOrganizationOutput).
-    pub fn builder() -> crate::output::list_received_grants_for_organization_output::Builder {
-        crate::output::list_received_grants_for_organization_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1050,6 +1064,13 @@ impl aws_http::request_id::RequestId for ListReceivedGrantsOutput {
         self._request_id.as_deref()
     }
 }
+impl ListReceivedGrantsOutput {
+    /// Creates a new builder-style object to manufacture [`ListReceivedGrantsOutput`](crate::output::ListReceivedGrantsOutput).
+    pub fn builder() -> crate::output::list_received_grants_output::Builder {
+        crate::output::list_received_grants_output::Builder::default()
+    }
+}
+
 /// See [`ListReceivedGrantsOutput`](crate::output::ListReceivedGrantsOutput).
 pub mod list_received_grants_output {
 
@@ -1110,12 +1131,6 @@ pub mod list_received_grants_output {
         }
     }
 }
-impl ListReceivedGrantsOutput {
-    /// Creates a new builder-style object to manufacture [`ListReceivedGrantsOutput`](crate::output::ListReceivedGrantsOutput).
-    pub fn builder() -> crate::output::list_received_grants_output::Builder {
-        crate::output::list_received_grants_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1144,6 +1159,13 @@ impl aws_http::request_id::RequestId for ListLicenseVersionsOutput {
         self._request_id.as_deref()
     }
 }
+impl ListLicenseVersionsOutput {
+    /// Creates a new builder-style object to manufacture [`ListLicenseVersionsOutput`](crate::output::ListLicenseVersionsOutput).
+    pub fn builder() -> crate::output::list_license_versions_output::Builder {
+        crate::output::list_license_versions_output::Builder::default()
+    }
+}
+
 /// See [`ListLicenseVersionsOutput`](crate::output::ListLicenseVersionsOutput).
 pub mod list_license_versions_output {
 
@@ -1204,12 +1226,6 @@ pub mod list_license_versions_output {
         }
     }
 }
-impl ListLicenseVersionsOutput {
-    /// Creates a new builder-style object to manufacture [`ListLicenseVersionsOutput`](crate::output::ListLicenseVersionsOutput).
-    pub fn builder() -> crate::output::list_license_versions_output::Builder {
-        crate::output::list_license_versions_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1241,6 +1257,13 @@ impl aws_http::request_id::RequestId for ListLicenseSpecificationsForResourceOut
         self._request_id.as_deref()
     }
 }
+impl ListLicenseSpecificationsForResourceOutput {
+    /// Creates a new builder-style object to manufacture [`ListLicenseSpecificationsForResourceOutput`](crate::output::ListLicenseSpecificationsForResourceOutput).
+    pub fn builder() -> crate::output::list_license_specifications_for_resource_output::Builder {
+        crate::output::list_license_specifications_for_resource_output::Builder::default()
+    }
+}
+
 /// See [`ListLicenseSpecificationsForResourceOutput`](crate::output::ListLicenseSpecificationsForResourceOutput).
 pub mod list_license_specifications_for_resource_output {
 
@@ -1302,12 +1325,6 @@ pub mod list_license_specifications_for_resource_output {
         }
     }
 }
-impl ListLicenseSpecificationsForResourceOutput {
-    /// Creates a new builder-style object to manufacture [`ListLicenseSpecificationsForResourceOutput`](crate::output::ListLicenseSpecificationsForResourceOutput).
-    pub fn builder() -> crate::output::list_license_specifications_for_resource_output::Builder {
-        crate::output::list_license_specifications_for_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1336,6 +1353,13 @@ impl aws_http::request_id::RequestId for ListLicensesOutput {
         self._request_id.as_deref()
     }
 }
+impl ListLicensesOutput {
+    /// Creates a new builder-style object to manufacture [`ListLicensesOutput`](crate::output::ListLicensesOutput).
+    pub fn builder() -> crate::output::list_licenses_output::Builder {
+        crate::output::list_licenses_output::Builder::default()
+    }
+}
+
 /// See [`ListLicensesOutput`](crate::output::ListLicensesOutput).
 pub mod list_licenses_output {
 
@@ -1396,12 +1420,6 @@ pub mod list_licenses_output {
         }
     }
 }
-impl ListLicensesOutput {
-    /// Creates a new builder-style object to manufacture [`ListLicensesOutput`](crate::output::ListLicensesOutput).
-    pub fn builder() -> crate::output::list_licenses_output::Builder {
-        crate::output::list_licenses_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1430,6 +1448,13 @@ impl aws_http::request_id::RequestId for ListLicenseManagerReportGeneratorsOutpu
         self._request_id.as_deref()
     }
 }
+impl ListLicenseManagerReportGeneratorsOutput {
+    /// Creates a new builder-style object to manufacture [`ListLicenseManagerReportGeneratorsOutput`](crate::output::ListLicenseManagerReportGeneratorsOutput).
+    pub fn builder() -> crate::output::list_license_manager_report_generators_output::Builder {
+        crate::output::list_license_manager_report_generators_output::Builder::default()
+    }
+}
+
 /// See [`ListLicenseManagerReportGeneratorsOutput`](crate::output::ListLicenseManagerReportGeneratorsOutput).
 pub mod list_license_manager_report_generators_output {
 
@@ -1491,12 +1516,6 @@ pub mod list_license_manager_report_generators_output {
         }
     }
 }
-impl ListLicenseManagerReportGeneratorsOutput {
-    /// Creates a new builder-style object to manufacture [`ListLicenseManagerReportGeneratorsOutput`](crate::output::ListLicenseManagerReportGeneratorsOutput).
-    pub fn builder() -> crate::output::list_license_manager_report_generators_output::Builder {
-        crate::output::list_license_manager_report_generators_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1528,6 +1547,13 @@ impl aws_http::request_id::RequestId for ListLicenseConversionTasksOutput {
         self._request_id.as_deref()
     }
 }
+impl ListLicenseConversionTasksOutput {
+    /// Creates a new builder-style object to manufacture [`ListLicenseConversionTasksOutput`](crate::output::ListLicenseConversionTasksOutput).
+    pub fn builder() -> crate::output::list_license_conversion_tasks_output::Builder {
+        crate::output::list_license_conversion_tasks_output::Builder::default()
+    }
+}
+
 /// See [`ListLicenseConversionTasksOutput`](crate::output::ListLicenseConversionTasksOutput).
 pub mod list_license_conversion_tasks_output {
 
@@ -1592,12 +1618,6 @@ pub mod list_license_conversion_tasks_output {
         }
     }
 }
-impl ListLicenseConversionTasksOutput {
-    /// Creates a new builder-style object to manufacture [`ListLicenseConversionTasksOutput`](crate::output::ListLicenseConversionTasksOutput).
-    pub fn builder() -> crate::output::list_license_conversion_tasks_output::Builder {
-        crate::output::list_license_conversion_tasks_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1629,6 +1649,13 @@ impl aws_http::request_id::RequestId for ListLicenseConfigurationsOutput {
         self._request_id.as_deref()
     }
 }
+impl ListLicenseConfigurationsOutput {
+    /// Creates a new builder-style object to manufacture [`ListLicenseConfigurationsOutput`](crate::output::ListLicenseConfigurationsOutput).
+    pub fn builder() -> crate::output::list_license_configurations_output::Builder {
+        crate::output::list_license_configurations_output::Builder::default()
+    }
+}
+
 /// See [`ListLicenseConfigurationsOutput`](crate::output::ListLicenseConfigurationsOutput).
 pub mod list_license_configurations_output {
 
@@ -1690,12 +1717,6 @@ pub mod list_license_configurations_output {
         }
     }
 }
-impl ListLicenseConfigurationsOutput {
-    /// Creates a new builder-style object to manufacture [`ListLicenseConfigurationsOutput`](crate::output::ListLicenseConfigurationsOutput).
-    pub fn builder() -> crate::output::list_license_configurations_output::Builder {
-        crate::output::list_license_configurations_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1727,6 +1748,14 @@ impl aws_http::request_id::RequestId for ListFailuresForLicenseConfigurationOper
         self._request_id.as_deref()
     }
 }
+impl ListFailuresForLicenseConfigurationOperationsOutput {
+    /// Creates a new builder-style object to manufacture [`ListFailuresForLicenseConfigurationOperationsOutput`](crate::output::ListFailuresForLicenseConfigurationOperationsOutput).
+    pub fn builder(
+    ) -> crate::output::list_failures_for_license_configuration_operations_output::Builder {
+        crate::output::list_failures_for_license_configuration_operations_output::Builder::default()
+    }
+}
+
 /// See [`ListFailuresForLicenseConfigurationOperationsOutput`](crate::output::ListFailuresForLicenseConfigurationOperationsOutput).
 pub mod list_failures_for_license_configuration_operations_output {
 
@@ -1791,13 +1820,6 @@ pub mod list_failures_for_license_configuration_operations_output {
         }
     }
 }
-impl ListFailuresForLicenseConfigurationOperationsOutput {
-    /// Creates a new builder-style object to manufacture [`ListFailuresForLicenseConfigurationOperationsOutput`](crate::output::ListFailuresForLicenseConfigurationOperationsOutput).
-    pub fn builder(
-    ) -> crate::output::list_failures_for_license_configuration_operations_output::Builder {
-        crate::output::list_failures_for_license_configuration_operations_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1826,6 +1848,13 @@ impl aws_http::request_id::RequestId for ListDistributedGrantsOutput {
         self._request_id.as_deref()
     }
 }
+impl ListDistributedGrantsOutput {
+    /// Creates a new builder-style object to manufacture [`ListDistributedGrantsOutput`](crate::output::ListDistributedGrantsOutput).
+    pub fn builder() -> crate::output::list_distributed_grants_output::Builder {
+        crate::output::list_distributed_grants_output::Builder::default()
+    }
+}
+
 /// See [`ListDistributedGrantsOutput`](crate::output::ListDistributedGrantsOutput).
 pub mod list_distributed_grants_output {
 
@@ -1886,12 +1915,6 @@ pub mod list_distributed_grants_output {
         }
     }
 }
-impl ListDistributedGrantsOutput {
-    /// Creates a new builder-style object to manufacture [`ListDistributedGrantsOutput`](crate::output::ListDistributedGrantsOutput).
-    pub fn builder() -> crate::output::list_distributed_grants_output::Builder {
-        crate::output::list_distributed_grants_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1923,6 +1946,13 @@ impl aws_http::request_id::RequestId for ListAssociationsForLicenseConfiguration
         self._request_id.as_deref()
     }
 }
+impl ListAssociationsForLicenseConfigurationOutput {
+    /// Creates a new builder-style object to manufacture [`ListAssociationsForLicenseConfigurationOutput`](crate::output::ListAssociationsForLicenseConfigurationOutput).
+    pub fn builder() -> crate::output::list_associations_for_license_configuration_output::Builder {
+        crate::output::list_associations_for_license_configuration_output::Builder::default()
+    }
+}
+
 /// See [`ListAssociationsForLicenseConfigurationOutput`](crate::output::ListAssociationsForLicenseConfigurationOutput).
 pub mod list_associations_for_license_configuration_output {
 
@@ -1989,12 +2019,6 @@ pub mod list_associations_for_license_configuration_output {
         }
     }
 }
-impl ListAssociationsForLicenseConfigurationOutput {
-    /// Creates a new builder-style object to manufacture [`ListAssociationsForLicenseConfigurationOutput`](crate::output::ListAssociationsForLicenseConfigurationOutput).
-    pub fn builder() -> crate::output::list_associations_for_license_configuration_output::Builder {
-        crate::output::list_associations_for_license_configuration_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2046,6 +2070,13 @@ impl aws_http::request_id::RequestId for GetServiceSettingsOutput {
         self._request_id.as_deref()
     }
 }
+impl GetServiceSettingsOutput {
+    /// Creates a new builder-style object to manufacture [`GetServiceSettingsOutput`](crate::output::GetServiceSettingsOutput).
+    pub fn builder() -> crate::output::get_service_settings_output::Builder {
+        crate::output::get_service_settings_output::Builder::default()
+    }
+}
+
 /// See [`GetServiceSettingsOutput`](crate::output::GetServiceSettingsOutput).
 pub mod get_service_settings_output {
 
@@ -2155,12 +2186,6 @@ pub mod get_service_settings_output {
         }
     }
 }
-impl GetServiceSettingsOutput {
-    /// Creates a new builder-style object to manufacture [`GetServiceSettingsOutput`](crate::output::GetServiceSettingsOutput).
-    pub fn builder() -> crate::output::get_service_settings_output::Builder {
-        crate::output::get_service_settings_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2182,6 +2207,13 @@ impl aws_http::request_id::RequestId for GetLicenseUsageOutput {
         self._request_id.as_deref()
     }
 }
+impl GetLicenseUsageOutput {
+    /// Creates a new builder-style object to manufacture [`GetLicenseUsageOutput`](crate::output::GetLicenseUsageOutput).
+    pub fn builder() -> crate::output::get_license_usage_output::Builder {
+        crate::output::get_license_usage_output::Builder::default()
+    }
+}
+
 /// See [`GetLicenseUsageOutput`](crate::output::GetLicenseUsageOutput).
 pub mod get_license_usage_output {
 
@@ -2224,12 +2256,6 @@ pub mod get_license_usage_output {
         }
     }
 }
-impl GetLicenseUsageOutput {
-    /// Creates a new builder-style object to manufacture [`GetLicenseUsageOutput`](crate::output::GetLicenseUsageOutput).
-    pub fn builder() -> crate::output::get_license_usage_output::Builder {
-        crate::output::get_license_usage_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2251,6 +2277,13 @@ impl aws_http::request_id::RequestId for GetLicenseManagerReportGeneratorOutput 
         self._request_id.as_deref()
     }
 }
+impl GetLicenseManagerReportGeneratorOutput {
+    /// Creates a new builder-style object to manufacture [`GetLicenseManagerReportGeneratorOutput`](crate::output::GetLicenseManagerReportGeneratorOutput).
+    pub fn builder() -> crate::output::get_license_manager_report_generator_output::Builder {
+        crate::output::get_license_manager_report_generator_output::Builder::default()
+    }
+}
+
 /// See [`GetLicenseManagerReportGeneratorOutput`](crate::output::GetLicenseManagerReportGeneratorOutput).
 pub mod get_license_manager_report_generator_output {
 
@@ -2291,12 +2324,6 @@ pub mod get_license_manager_report_generator_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl GetLicenseManagerReportGeneratorOutput {
-    /// Creates a new builder-style object to manufacture [`GetLicenseManagerReportGeneratorOutput`](crate::output::GetLicenseManagerReportGeneratorOutput).
-    pub fn builder() -> crate::output::get_license_manager_report_generator_output::Builder {
-        crate::output::get_license_manager_report_generator_output::Builder::default()
     }
 }
 
@@ -2380,6 +2407,13 @@ impl aws_http::request_id::RequestId for GetLicenseConversionTaskOutput {
         self._request_id.as_deref()
     }
 }
+impl GetLicenseConversionTaskOutput {
+    /// Creates a new builder-style object to manufacture [`GetLicenseConversionTaskOutput`](crate::output::GetLicenseConversionTaskOutput).
+    pub fn builder() -> crate::output::get_license_conversion_task_output::Builder {
+        crate::output::get_license_conversion_task_output::Builder::default()
+    }
+}
+
 /// See [`GetLicenseConversionTaskOutput`](crate::output::GetLicenseConversionTaskOutput).
 pub mod get_license_conversion_task_output {
 
@@ -2547,12 +2581,6 @@ pub mod get_license_conversion_task_output {
         }
     }
 }
-impl GetLicenseConversionTaskOutput {
-    /// Creates a new builder-style object to manufacture [`GetLicenseConversionTaskOutput`](crate::output::GetLicenseConversionTaskOutput).
-    pub fn builder() -> crate::output::get_license_conversion_task_output::Builder {
-        crate::output::get_license_conversion_task_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2698,6 +2726,13 @@ impl aws_http::request_id::RequestId for GetLicenseConfigurationOutput {
         self._request_id.as_deref()
     }
 }
+impl GetLicenseConfigurationOutput {
+    /// Creates a new builder-style object to manufacture [`GetLicenseConfigurationOutput`](crate::output::GetLicenseConfigurationOutput).
+    pub fn builder() -> crate::output::get_license_configuration_output::Builder {
+        crate::output::get_license_configuration_output::Builder::default()
+    }
+}
+
 /// See [`GetLicenseConfigurationOutput`](crate::output::GetLicenseConfigurationOutput).
 pub mod get_license_configuration_output {
 
@@ -3002,12 +3037,6 @@ pub mod get_license_configuration_output {
         }
     }
 }
-impl GetLicenseConfigurationOutput {
-    /// Creates a new builder-style object to manufacture [`GetLicenseConfigurationOutput`](crate::output::GetLicenseConfigurationOutput).
-    pub fn builder() -> crate::output::get_license_configuration_output::Builder {
-        crate::output::get_license_configuration_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3029,6 +3058,13 @@ impl aws_http::request_id::RequestId for GetLicenseOutput {
         self._request_id.as_deref()
     }
 }
+impl GetLicenseOutput {
+    /// Creates a new builder-style object to manufacture [`GetLicenseOutput`](crate::output::GetLicenseOutput).
+    pub fn builder() -> crate::output::get_license_output::Builder {
+        crate::output::get_license_output::Builder::default()
+    }
+}
+
 /// See [`GetLicenseOutput`](crate::output::GetLicenseOutput).
 pub mod get_license_output {
 
@@ -3068,12 +3104,6 @@ pub mod get_license_output {
         }
     }
 }
-impl GetLicenseOutput {
-    /// Creates a new builder-style object to manufacture [`GetLicenseOutput`](crate::output::GetLicenseOutput).
-    pub fn builder() -> crate::output::get_license_output::Builder {
-        crate::output::get_license_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3095,6 +3125,13 @@ impl aws_http::request_id::RequestId for GetGrantOutput {
         self._request_id.as_deref()
     }
 }
+impl GetGrantOutput {
+    /// Creates a new builder-style object to manufacture [`GetGrantOutput`](crate::output::GetGrantOutput).
+    pub fn builder() -> crate::output::get_grant_output::Builder {
+        crate::output::get_grant_output::Builder::default()
+    }
+}
+
 /// See [`GetGrantOutput`](crate::output::GetGrantOutput).
 pub mod get_grant_output {
 
@@ -3134,12 +3171,6 @@ pub mod get_grant_output {
         }
     }
 }
-impl GetGrantOutput {
-    /// Creates a new builder-style object to manufacture [`GetGrantOutput`](crate::output::GetGrantOutput).
-    pub fn builder() -> crate::output::get_grant_output::Builder {
-        crate::output::get_grant_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3161,6 +3192,13 @@ impl aws_http::request_id::RequestId for GetAccessTokenOutput {
         self._request_id.as_deref()
     }
 }
+impl GetAccessTokenOutput {
+    /// Creates a new builder-style object to manufacture [`GetAccessTokenOutput`](crate::output::GetAccessTokenOutput).
+    pub fn builder() -> crate::output::get_access_token_output::Builder {
+        crate::output::get_access_token_output::Builder::default()
+    }
+}
+
 /// See [`GetAccessTokenOutput`](crate::output::GetAccessTokenOutput).
 pub mod get_access_token_output {
 
@@ -3200,12 +3238,6 @@ pub mod get_access_token_output {
         }
     }
 }
-impl GetAccessTokenOutput {
-    /// Creates a new builder-style object to manufacture [`GetAccessTokenOutput`](crate::output::GetAccessTokenOutput).
-    pub fn builder() -> crate::output::get_access_token_output::Builder {
-        crate::output::get_access_token_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3234,6 +3266,13 @@ impl aws_http::request_id::RequestId for ExtendLicenseConsumptionOutput {
         self._request_id.as_deref()
     }
 }
+impl ExtendLicenseConsumptionOutput {
+    /// Creates a new builder-style object to manufacture [`ExtendLicenseConsumptionOutput`](crate::output::ExtendLicenseConsumptionOutput).
+    pub fn builder() -> crate::output::extend_license_consumption_output::Builder {
+        crate::output::extend_license_consumption_output::Builder::default()
+    }
+}
+
 /// See [`ExtendLicenseConsumptionOutput`](crate::output::ExtendLicenseConsumptionOutput).
 pub mod extend_license_consumption_output {
 
@@ -3288,12 +3327,6 @@ pub mod extend_license_consumption_output {
         }
     }
 }
-impl ExtendLicenseConsumptionOutput {
-    /// Creates a new builder-style object to manufacture [`ExtendLicenseConsumptionOutput`](crate::output::ExtendLicenseConsumptionOutput).
-    pub fn builder() -> crate::output::extend_license_consumption_output::Builder {
-        crate::output::extend_license_consumption_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3306,6 +3339,13 @@ impl aws_http::request_id::RequestId for DeleteTokenOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteTokenOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteTokenOutput`](crate::output::DeleteTokenOutput).
+    pub fn builder() -> crate::output::delete_token_output::Builder {
+        crate::output::delete_token_output::Builder::default()
+    }
+}
+
 /// See [`DeleteTokenOutput`](crate::output::DeleteTokenOutput).
 pub mod delete_token_output {
 
@@ -3333,12 +3373,6 @@ pub mod delete_token_output {
         }
     }
 }
-impl DeleteTokenOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteTokenOutput`](crate::output::DeleteTokenOutput).
-    pub fn builder() -> crate::output::delete_token_output::Builder {
-        crate::output::delete_token_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3351,6 +3385,13 @@ impl aws_http::request_id::RequestId for DeleteLicenseManagerReportGeneratorOutp
         self._request_id.as_deref()
     }
 }
+impl DeleteLicenseManagerReportGeneratorOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteLicenseManagerReportGeneratorOutput`](crate::output::DeleteLicenseManagerReportGeneratorOutput).
+    pub fn builder() -> crate::output::delete_license_manager_report_generator_output::Builder {
+        crate::output::delete_license_manager_report_generator_output::Builder::default()
+    }
+}
+
 /// See [`DeleteLicenseManagerReportGeneratorOutput`](crate::output::DeleteLicenseManagerReportGeneratorOutput).
 pub mod delete_license_manager_report_generator_output {
 
@@ -3378,12 +3419,6 @@ pub mod delete_license_manager_report_generator_output {
         }
     }
 }
-impl DeleteLicenseManagerReportGeneratorOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteLicenseManagerReportGeneratorOutput`](crate::output::DeleteLicenseManagerReportGeneratorOutput).
-    pub fn builder() -> crate::output::delete_license_manager_report_generator_output::Builder {
-        crate::output::delete_license_manager_report_generator_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3396,6 +3431,13 @@ impl aws_http::request_id::RequestId for DeleteLicenseConfigurationOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteLicenseConfigurationOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteLicenseConfigurationOutput`](crate::output::DeleteLicenseConfigurationOutput).
+    pub fn builder() -> crate::output::delete_license_configuration_output::Builder {
+        crate::output::delete_license_configuration_output::Builder::default()
+    }
+}
+
 /// See [`DeleteLicenseConfigurationOutput`](crate::output::DeleteLicenseConfigurationOutput).
 pub mod delete_license_configuration_output {
 
@@ -3421,12 +3463,6 @@ pub mod delete_license_configuration_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl DeleteLicenseConfigurationOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteLicenseConfigurationOutput`](crate::output::DeleteLicenseConfigurationOutput).
-    pub fn builder() -> crate::output::delete_license_configuration_output::Builder {
-        crate::output::delete_license_configuration_output::Builder::default()
     }
 }
 
@@ -3457,6 +3493,13 @@ impl aws_http::request_id::RequestId for DeleteLicenseOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteLicenseOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteLicenseOutput`](crate::output::DeleteLicenseOutput).
+    pub fn builder() -> crate::output::delete_license_output::Builder {
+        crate::output::delete_license_output::Builder::default()
+    }
+}
+
 /// See [`DeleteLicenseOutput`](crate::output::DeleteLicenseOutput).
 pub mod delete_license_output {
 
@@ -3514,12 +3557,6 @@ pub mod delete_license_output {
         }
     }
 }
-impl DeleteLicenseOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteLicenseOutput`](crate::output::DeleteLicenseOutput).
-    pub fn builder() -> crate::output::delete_license_output::Builder {
-        crate::output::delete_license_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3555,6 +3592,13 @@ impl aws_http::request_id::RequestId for DeleteGrantOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteGrantOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteGrantOutput`](crate::output::DeleteGrantOutput).
+    pub fn builder() -> crate::output::delete_grant_output::Builder {
+        crate::output::delete_grant_output::Builder::default()
+    }
+}
+
 /// See [`DeleteGrantOutput`](crate::output::DeleteGrantOutput).
 pub mod delete_grant_output {
 
@@ -3618,12 +3662,6 @@ pub mod delete_grant_output {
         }
     }
 }
-impl DeleteGrantOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteGrantOutput`](crate::output::DeleteGrantOutput).
-    pub fn builder() -> crate::output::delete_grant_output::Builder {
-        crate::output::delete_grant_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3659,6 +3697,13 @@ impl aws_http::request_id::RequestId for CreateTokenOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateTokenOutput {
+    /// Creates a new builder-style object to manufacture [`CreateTokenOutput`](crate::output::CreateTokenOutput).
+    pub fn builder() -> crate::output::create_token_output::Builder {
+        crate::output::create_token_output::Builder::default()
+    }
+}
+
 /// See [`CreateTokenOutput`](crate::output::CreateTokenOutput).
 pub mod create_token_output {
 
@@ -3725,12 +3770,6 @@ pub mod create_token_output {
         }
     }
 }
-impl CreateTokenOutput {
-    /// Creates a new builder-style object to manufacture [`CreateTokenOutput`](crate::output::CreateTokenOutput).
-    pub fn builder() -> crate::output::create_token_output::Builder {
-        crate::output::create_token_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3766,6 +3805,13 @@ impl aws_http::request_id::RequestId for CreateLicenseVersionOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateLicenseVersionOutput {
+    /// Creates a new builder-style object to manufacture [`CreateLicenseVersionOutput`](crate::output::CreateLicenseVersionOutput).
+    pub fn builder() -> crate::output::create_license_version_output::Builder {
+        crate::output::create_license_version_output::Builder::default()
+    }
+}
+
 /// See [`CreateLicenseVersionOutput`](crate::output::CreateLicenseVersionOutput).
 pub mod create_license_version_output {
 
@@ -3832,12 +3878,6 @@ pub mod create_license_version_output {
         }
     }
 }
-impl CreateLicenseVersionOutput {
-    /// Creates a new builder-style object to manufacture [`CreateLicenseVersionOutput`](crate::output::CreateLicenseVersionOutput).
-    pub fn builder() -> crate::output::create_license_version_output::Builder {
-        crate::output::create_license_version_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3859,6 +3899,13 @@ impl aws_http::request_id::RequestId for CreateLicenseManagerReportGeneratorOutp
         self._request_id.as_deref()
     }
 }
+impl CreateLicenseManagerReportGeneratorOutput {
+    /// Creates a new builder-style object to manufacture [`CreateLicenseManagerReportGeneratorOutput`](crate::output::CreateLicenseManagerReportGeneratorOutput).
+    pub fn builder() -> crate::output::create_license_manager_report_generator_output::Builder {
+        crate::output::create_license_manager_report_generator_output::Builder::default()
+    }
+}
+
 /// See [`CreateLicenseManagerReportGeneratorOutput`](crate::output::CreateLicenseManagerReportGeneratorOutput).
 pub mod create_license_manager_report_generator_output {
 
@@ -3904,12 +3951,6 @@ pub mod create_license_manager_report_generator_output {
         }
     }
 }
-impl CreateLicenseManagerReportGeneratorOutput {
-    /// Creates a new builder-style object to manufacture [`CreateLicenseManagerReportGeneratorOutput`](crate::output::CreateLicenseManagerReportGeneratorOutput).
-    pub fn builder() -> crate::output::create_license_manager_report_generator_output::Builder {
-        crate::output::create_license_manager_report_generator_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3931,6 +3972,13 @@ impl aws_http::request_id::RequestId for CreateLicenseConversionTaskForResourceO
         self._request_id.as_deref()
     }
 }
+impl CreateLicenseConversionTaskForResourceOutput {
+    /// Creates a new builder-style object to manufacture [`CreateLicenseConversionTaskForResourceOutput`](crate::output::CreateLicenseConversionTaskForResourceOutput).
+    pub fn builder() -> crate::output::create_license_conversion_task_for_resource_output::Builder {
+        crate::output::create_license_conversion_task_for_resource_output::Builder::default()
+    }
+}
+
 /// See [`CreateLicenseConversionTaskForResourceOutput`](crate::output::CreateLicenseConversionTaskForResourceOutput).
 pub mod create_license_conversion_task_for_resource_output {
 
@@ -3973,12 +4021,6 @@ pub mod create_license_conversion_task_for_resource_output {
         }
     }
 }
-impl CreateLicenseConversionTaskForResourceOutput {
-    /// Creates a new builder-style object to manufacture [`CreateLicenseConversionTaskForResourceOutput`](crate::output::CreateLicenseConversionTaskForResourceOutput).
-    pub fn builder() -> crate::output::create_license_conversion_task_for_resource_output::Builder {
-        crate::output::create_license_conversion_task_for_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -4000,6 +4042,13 @@ impl aws_http::request_id::RequestId for CreateLicenseConfigurationOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateLicenseConfigurationOutput {
+    /// Creates a new builder-style object to manufacture [`CreateLicenseConfigurationOutput`](crate::output::CreateLicenseConfigurationOutput).
+    pub fn builder() -> crate::output::create_license_configuration_output::Builder {
+        crate::output::create_license_configuration_output::Builder::default()
+    }
+}
+
 /// See [`CreateLicenseConfigurationOutput`](crate::output::CreateLicenseConfigurationOutput).
 pub mod create_license_configuration_output {
 
@@ -4042,12 +4091,6 @@ pub mod create_license_configuration_output {
         }
     }
 }
-impl CreateLicenseConfigurationOutput {
-    /// Creates a new builder-style object to manufacture [`CreateLicenseConfigurationOutput`](crate::output::CreateLicenseConfigurationOutput).
-    pub fn builder() -> crate::output::create_license_configuration_output::Builder {
-        crate::output::create_license_configuration_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -4083,6 +4126,13 @@ impl aws_http::request_id::RequestId for CreateLicenseOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateLicenseOutput {
+    /// Creates a new builder-style object to manufacture [`CreateLicenseOutput`](crate::output::CreateLicenseOutput).
+    pub fn builder() -> crate::output::create_license_output::Builder {
+        crate::output::create_license_output::Builder::default()
+    }
+}
+
 /// See [`CreateLicenseOutput`](crate::output::CreateLicenseOutput).
 pub mod create_license_output {
 
@@ -4149,12 +4199,6 @@ pub mod create_license_output {
         }
     }
 }
-impl CreateLicenseOutput {
-    /// Creates a new builder-style object to manufacture [`CreateLicenseOutput`](crate::output::CreateLicenseOutput).
-    pub fn builder() -> crate::output::create_license_output::Builder {
-        crate::output::create_license_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -4190,6 +4234,13 @@ impl aws_http::request_id::RequestId for CreateGrantVersionOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateGrantVersionOutput {
+    /// Creates a new builder-style object to manufacture [`CreateGrantVersionOutput`](crate::output::CreateGrantVersionOutput).
+    pub fn builder() -> crate::output::create_grant_version_output::Builder {
+        crate::output::create_grant_version_output::Builder::default()
+    }
+}
+
 /// See [`CreateGrantVersionOutput`](crate::output::CreateGrantVersionOutput).
 pub mod create_grant_version_output {
 
@@ -4253,12 +4304,6 @@ pub mod create_grant_version_output {
         }
     }
 }
-impl CreateGrantVersionOutput {
-    /// Creates a new builder-style object to manufacture [`CreateGrantVersionOutput`](crate::output::CreateGrantVersionOutput).
-    pub fn builder() -> crate::output::create_grant_version_output::Builder {
-        crate::output::create_grant_version_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -4294,6 +4339,13 @@ impl aws_http::request_id::RequestId for CreateGrantOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateGrantOutput {
+    /// Creates a new builder-style object to manufacture [`CreateGrantOutput`](crate::output::CreateGrantOutput).
+    pub fn builder() -> crate::output::create_grant_output::Builder {
+        crate::output::create_grant_output::Builder::default()
+    }
+}
+
 /// See [`CreateGrantOutput`](crate::output::CreateGrantOutput).
 pub mod create_grant_output {
 
@@ -4355,12 +4407,6 @@ pub mod create_grant_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl CreateGrantOutput {
-    /// Creates a new builder-style object to manufacture [`CreateGrantOutput`](crate::output::CreateGrantOutput).
-    pub fn builder() -> crate::output::create_grant_output::Builder {
-        crate::output::create_grant_output::Builder::default()
     }
 }
 
@@ -4433,6 +4479,13 @@ impl aws_http::request_id::RequestId for CheckoutLicenseOutput {
         self._request_id.as_deref()
     }
 }
+impl CheckoutLicenseOutput {
+    /// Creates a new builder-style object to manufacture [`CheckoutLicenseOutput`](crate::output::CheckoutLicenseOutput).
+    pub fn builder() -> crate::output::checkout_license_output::Builder {
+        crate::output::checkout_license_output::Builder::default()
+    }
+}
+
 /// See [`CheckoutLicenseOutput`](crate::output::CheckoutLicenseOutput).
 pub mod checkout_license_output {
 
@@ -4572,12 +4625,6 @@ pub mod checkout_license_output {
         }
     }
 }
-impl CheckoutLicenseOutput {
-    /// Creates a new builder-style object to manufacture [`CheckoutLicenseOutput`](crate::output::CheckoutLicenseOutput).
-    pub fn builder() -> crate::output::checkout_license_output::Builder {
-        crate::output::checkout_license_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -4648,6 +4695,13 @@ impl aws_http::request_id::RequestId for CheckoutBorrowLicenseOutput {
         self._request_id.as_deref()
     }
 }
+impl CheckoutBorrowLicenseOutput {
+    /// Creates a new builder-style object to manufacture [`CheckoutBorrowLicenseOutput`](crate::output::CheckoutBorrowLicenseOutput).
+    pub fn builder() -> crate::output::checkout_borrow_license_output::Builder {
+        crate::output::checkout_borrow_license_output::Builder::default()
+    }
+}
+
 /// See [`CheckoutBorrowLicenseOutput`](crate::output::CheckoutBorrowLicenseOutput).
 pub mod checkout_borrow_license_output {
 
@@ -4793,12 +4847,6 @@ pub mod checkout_borrow_license_output {
         }
     }
 }
-impl CheckoutBorrowLicenseOutput {
-    /// Creates a new builder-style object to manufacture [`CheckoutBorrowLicenseOutput`](crate::output::CheckoutBorrowLicenseOutput).
-    pub fn builder() -> crate::output::checkout_borrow_license_output::Builder {
-        crate::output::checkout_borrow_license_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -4811,6 +4859,13 @@ impl aws_http::request_id::RequestId for CheckInLicenseOutput {
         self._request_id.as_deref()
     }
 }
+impl CheckInLicenseOutput {
+    /// Creates a new builder-style object to manufacture [`CheckInLicenseOutput`](crate::output::CheckInLicenseOutput).
+    pub fn builder() -> crate::output::check_in_license_output::Builder {
+        crate::output::check_in_license_output::Builder::default()
+    }
+}
+
 /// See [`CheckInLicenseOutput`](crate::output::CheckInLicenseOutput).
 pub mod check_in_license_output {
 
@@ -4836,12 +4891,6 @@ pub mod check_in_license_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl CheckInLicenseOutput {
-    /// Creates a new builder-style object to manufacture [`CheckInLicenseOutput`](crate::output::CheckInLicenseOutput).
-    pub fn builder() -> crate::output::check_in_license_output::Builder {
-        crate::output::check_in_license_output::Builder::default()
     }
 }
 
@@ -4879,6 +4928,13 @@ impl aws_http::request_id::RequestId for AcceptGrantOutput {
         self._request_id.as_deref()
     }
 }
+impl AcceptGrantOutput {
+    /// Creates a new builder-style object to manufacture [`AcceptGrantOutput`](crate::output::AcceptGrantOutput).
+    pub fn builder() -> crate::output::accept_grant_output::Builder {
+        crate::output::accept_grant_output::Builder::default()
+    }
+}
+
 /// See [`AcceptGrantOutput`](crate::output::AcceptGrantOutput).
 pub mod accept_grant_output {
 
@@ -4940,11 +4996,5 @@ pub mod accept_grant_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl AcceptGrantOutput {
-    /// Creates a new builder-style object to manufacture [`AcceptGrantOutput`](crate::output::AcceptGrantOutput).
-    pub fn builder() -> crate::output::accept_grant_output::Builder {
-        crate::output::accept_grant_output::Builder::default()
     }
 }

@@ -4,7 +4,7 @@
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`create_identity_pool`](crate::client::Client::create_identity_pool).
 ///
-/// See [`crate::client::fluent_builders::CreateIdentityPool`] for more details about the operation.
+/// `ParseStrictResponse` impl for `CreateIdentityPool`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateIdentityPool {
     _private: (),
@@ -39,7 +39,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateIdentityPool {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`delete_identities`](crate::client::Client::delete_identities).
 ///
-/// See [`crate::client::fluent_builders::DeleteIdentities`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DeleteIdentities`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteIdentities {
     _private: (),
@@ -74,7 +74,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteIdentities {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`delete_identity_pool`](crate::client::Client::delete_identity_pool).
 ///
-/// See [`crate::client::fluent_builders::DeleteIdentityPool`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DeleteIdentityPool`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteIdentityPool {
     _private: (),
@@ -109,7 +109,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteIdentityPool {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`describe_identity`](crate::client::Client::describe_identity).
 ///
-/// See [`crate::client::fluent_builders::DescribeIdentity`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DescribeIdentity`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeIdentity {
     _private: (),
@@ -144,7 +144,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeIdentity {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`describe_identity_pool`](crate::client::Client::describe_identity_pool).
 ///
-/// See [`crate::client::fluent_builders::DescribeIdentityPool`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DescribeIdentityPool`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeIdentityPool {
     _private: (),
@@ -179,7 +179,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeIdentityPool {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`get_credentials_for_identity`](crate::client::Client::get_credentials_for_identity).
 ///
-/// See [`crate::client::fluent_builders::GetCredentialsForIdentity`] for more details about the operation.
+/// `ParseStrictResponse` impl for `GetCredentialsForIdentity`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetCredentialsForIdentity {
     _private: (),
@@ -214,7 +214,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetCredentialsForIdentit
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`get_id`](crate::client::Client::get_id).
 ///
-/// See [`crate::client::fluent_builders::GetId`] for more details about the operation.
+/// `ParseStrictResponse` impl for `GetId`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetId {
     _private: (),
@@ -246,7 +246,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetId {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`get_identity_pool_roles`](crate::client::Client::get_identity_pool_roles).
 ///
-/// See [`crate::client::fluent_builders::GetIdentityPoolRoles`] for more details about the operation.
+/// `ParseStrictResponse` impl for `GetIdentityPoolRoles`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetIdentityPoolRoles {
     _private: (),
@@ -281,7 +281,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetIdentityPoolRoles {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`get_open_id_token`](crate::client::Client::get_open_id_token).
 ///
-/// See [`crate::client::fluent_builders::GetOpenIdToken`] for more details about the operation.
+/// `ParseStrictResponse` impl for `GetOpenIdToken`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetOpenIdToken {
     _private: (),
@@ -314,7 +314,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetOpenIdToken {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`get_open_id_token_for_developer_identity`](crate::client::Client::get_open_id_token_for_developer_identity).
 ///
-/// See [`crate::client::fluent_builders::GetOpenIdTokenForDeveloperIdentity`] for more details about the operation.
+/// `ParseStrictResponse` impl for `GetOpenIdTokenForDeveloperIdentity`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetOpenIdTokenForDeveloperIdentity {
     _private: (),
@@ -351,7 +351,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetOpenIdTokenForDevelop
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`get_principal_tag_attribute_map`](crate::client::Client::get_principal_tag_attribute_map).
 ///
-/// See [`crate::client::fluent_builders::GetPrincipalTagAttributeMap`] for more details about the operation.
+/// `ParseStrictResponse` impl for `GetPrincipalTagAttributeMap`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetPrincipalTagAttributeMap {
     _private: (),
@@ -386,7 +386,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetPrincipalTagAttribute
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_identities`](crate::client::Client::list_identities).
 ///
-/// See [`crate::client::fluent_builders::ListIdentities`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListIdentities`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListIdentities {
     _private: (),
@@ -419,7 +419,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListIdentities {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_identity_pools`](crate::client::Client::list_identity_pools).
 ///
-/// See [`crate::client::fluent_builders::ListIdentityPools`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListIdentityPools`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListIdentityPools {
     _private: (),
@@ -454,7 +454,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListIdentityPools {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
 ///
-/// See [`crate::client::fluent_builders::ListTagsForResource`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTagsForResource {
     _private: (),
@@ -489,7 +489,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`lookup_developer_identity`](crate::client::Client::lookup_developer_identity).
 ///
-/// See [`crate::client::fluent_builders::LookupDeveloperIdentity`] for more details about the operation.
+/// `ParseStrictResponse` impl for `LookupDeveloperIdentity`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct LookupDeveloperIdentity {
     _private: (),
@@ -524,7 +524,7 @@ impl aws_smithy_http::response::ParseStrictResponse for LookupDeveloperIdentity 
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`merge_developer_identities`](crate::client::Client::merge_developer_identities).
 ///
-/// See [`crate::client::fluent_builders::MergeDeveloperIdentities`] for more details about the operation.
+/// `ParseStrictResponse` impl for `MergeDeveloperIdentities`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct MergeDeveloperIdentities {
     _private: (),
@@ -559,7 +559,7 @@ impl aws_smithy_http::response::ParseStrictResponse for MergeDeveloperIdentities
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`set_identity_pool_roles`](crate::client::Client::set_identity_pool_roles).
 ///
-/// See [`crate::client::fluent_builders::SetIdentityPoolRoles`] for more details about the operation.
+/// `ParseStrictResponse` impl for `SetIdentityPoolRoles`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct SetIdentityPoolRoles {
     _private: (),
@@ -594,7 +594,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SetIdentityPoolRoles {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`set_principal_tag_attribute_map`](crate::client::Client::set_principal_tag_attribute_map).
 ///
-/// See [`crate::client::fluent_builders::SetPrincipalTagAttributeMap`] for more details about the operation.
+/// `ParseStrictResponse` impl for `SetPrincipalTagAttributeMap`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct SetPrincipalTagAttributeMap {
     _private: (),
@@ -629,7 +629,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SetPrincipalTagAttribute
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`tag_resource`](crate::client::Client::tag_resource).
 ///
-/// See [`crate::client::fluent_builders::TagResource`] for more details about the operation.
+/// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct TagResource {
     _private: (),
@@ -662,7 +662,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`unlink_developer_identity`](crate::client::Client::unlink_developer_identity).
 ///
-/// See [`crate::client::fluent_builders::UnlinkDeveloperIdentity`] for more details about the operation.
+/// `ParseStrictResponse` impl for `UnlinkDeveloperIdentity`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UnlinkDeveloperIdentity {
     _private: (),
@@ -697,7 +697,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UnlinkDeveloperIdentity 
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`unlink_identity`](crate::client::Client::unlink_identity).
 ///
-/// See [`crate::client::fluent_builders::UnlinkIdentity`] for more details about the operation.
+/// `ParseStrictResponse` impl for `UnlinkIdentity`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UnlinkIdentity {
     _private: (),
@@ -730,7 +730,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UnlinkIdentity {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`untag_resource`](crate::client::Client::untag_resource).
 ///
-/// See [`crate::client::fluent_builders::UntagResource`] for more details about the operation.
+/// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UntagResource {
     _private: (),
@@ -763,7 +763,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`update_identity_pool`](crate::client::Client::update_identity_pool).
 ///
-/// See [`crate::client::fluent_builders::UpdateIdentityPool`] for more details about the operation.
+/// `ParseStrictResponse` impl for `UpdateIdentityPool`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateIdentityPool {
     _private: (),

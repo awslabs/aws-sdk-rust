@@ -121,11 +121,41 @@ pub struct ConcurrentModificationException {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl ConcurrentModificationException {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for ConcurrentModificationException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "ConcurrentModificationException")?;
+        if let Some(inner_1) = &self.message {
+            {
+                write!(f, ": {}", inner_1)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for ConcurrentModificationException {}
+impl aws_http::request_id::RequestId for crate::error::ConcurrentModificationException {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for ConcurrentModificationException {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl ConcurrentModificationException {
     /// Creates a new builder-style object to manufacture [`ConcurrentModificationException`](crate::error::ConcurrentModificationException).
     pub fn builder() -> crate::error::concurrent_modification_exception::Builder {
         crate::error::concurrent_modification_exception::Builder::default()
     }
 }
+
 /// See [`ConcurrentModificationException`](crate::error::ConcurrentModificationException).
 pub mod concurrent_modification_exception {
 
@@ -168,35 +198,6 @@ pub mod concurrent_modification_exception {
                 meta: self.meta.unwrap_or_default(),
             }
         }
-    }
-}
-impl ConcurrentModificationException {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for ConcurrentModificationException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "ConcurrentModificationException")?;
-        if let Some(inner_1) = &self.message {
-            {
-                write!(f, ": {}", inner_1)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for ConcurrentModificationException {}
-impl aws_http::request_id::RequestId for crate::error::ConcurrentModificationException {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for ConcurrentModificationException {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
     }
 }
 
@@ -539,11 +540,41 @@ pub struct UnsupportedLocale {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl UnsupportedLocale {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for UnsupportedLocale {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "UnsupportedLocale")?;
+        if let Some(inner_2) = &self.message {
+            {
+                write!(f, ": {}", inner_2)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for UnsupportedLocale {}
+impl aws_http::request_id::RequestId for crate::error::UnsupportedLocale {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for UnsupportedLocale {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl UnsupportedLocale {
     /// Creates a new builder-style object to manufacture [`UnsupportedLocale`](crate::error::UnsupportedLocale).
     pub fn builder() -> crate::error::unsupported_locale::Builder {
         crate::error::unsupported_locale::Builder::default()
     }
 }
+
 /// See [`UnsupportedLocale`](crate::error::UnsupportedLocale).
 pub mod unsupported_locale {
 
@@ -588,35 +619,6 @@ pub mod unsupported_locale {
         }
     }
 }
-impl UnsupportedLocale {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for UnsupportedLocale {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "UnsupportedLocale")?;
-        if let Some(inner_2) = &self.message {
-            {
-                write!(f, ": {}", inner_2)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for UnsupportedLocale {}
-impl aws_http::request_id::RequestId for crate::error::UnsupportedLocale {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for UnsupportedLocale {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>The specified pagination token (<code>nextToken</code>) is not valid.</p>
 #[non_exhaustive]
@@ -628,11 +630,41 @@ pub struct InvalidPaginationToken {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl InvalidPaginationToken {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for InvalidPaginationToken {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "InvalidPaginationToken")?;
+        if let Some(inner_3) = &self.message {
+            {
+                write!(f, ": {}", inner_3)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for InvalidPaginationToken {}
+impl aws_http::request_id::RequestId for crate::error::InvalidPaginationToken {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidPaginationToken {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl InvalidPaginationToken {
     /// Creates a new builder-style object to manufacture [`InvalidPaginationToken`](crate::error::InvalidPaginationToken).
     pub fn builder() -> crate::error::invalid_pagination_token::Builder {
         crate::error::invalid_pagination_token::Builder::default()
     }
 }
+
 /// See [`InvalidPaginationToken`](crate::error::InvalidPaginationToken).
 pub mod invalid_pagination_token {
 
@@ -675,35 +707,6 @@ pub mod invalid_pagination_token {
                 meta: self.meta.unwrap_or_default(),
             }
         }
-    }
-}
-impl InvalidPaginationToken {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for InvalidPaginationToken {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "InvalidPaginationToken")?;
-        if let Some(inner_3) = &self.message {
-            {
-                write!(f, ": {}", inner_3)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for InvalidPaginationToken {}
-impl aws_http::request_id::RequestId for crate::error::InvalidPaginationToken {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidPaginationToken {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
     }
 }
 

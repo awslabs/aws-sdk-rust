@@ -145,11 +145,41 @@ pub struct ThrottledException {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl ThrottledException {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for ThrottledException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "ThrottledException")?;
+        if let Some(inner_1) = &self.message {
+            {
+                write!(f, ": {}", inner_1)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for ThrottledException {}
+impl aws_http::request_id::RequestId for crate::error::ThrottledException {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for ThrottledException {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl ThrottledException {
     /// Creates a new builder-style object to manufacture [`ThrottledException`](crate::error::ThrottledException).
     pub fn builder() -> crate::error::throttled_exception::Builder {
         crate::error::throttled_exception::Builder::default()
     }
 }
+
 /// See [`ThrottledException`](crate::error::ThrottledException).
 pub mod throttled_exception {
 
@@ -194,35 +224,6 @@ pub mod throttled_exception {
         }
     }
 }
-impl ThrottledException {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for ThrottledException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "ThrottledException")?;
-        if let Some(inner_1) = &self.message {
-            {
-                write!(f, ": {}", inner_1)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for ThrottledException {}
-impl aws_http::request_id::RequestId for crate::error::ThrottledException {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for ThrottledException {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>This error indicates one of the following:</p>
 /// <ul>
@@ -241,11 +242,41 @@ pub struct InvalidParameterException {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl InvalidParameterException {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for InvalidParameterException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "InvalidParameterException")?;
+        if let Some(inner_2) = &self.message {
+            {
+                write!(f, ": {}", inner_2)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for InvalidParameterException {}
+impl aws_http::request_id::RequestId for crate::error::InvalidParameterException {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidParameterException {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl InvalidParameterException {
     /// Creates a new builder-style object to manufacture [`InvalidParameterException`](crate::error::InvalidParameterException).
     pub fn builder() -> crate::error::invalid_parameter_exception::Builder {
         crate::error::invalid_parameter_exception::Builder::default()
     }
 }
+
 /// See [`InvalidParameterException`](crate::error::InvalidParameterException).
 pub mod invalid_parameter_exception {
 
@@ -290,35 +321,6 @@ pub mod invalid_parameter_exception {
         }
     }
 }
-impl InvalidParameterException {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for InvalidParameterException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "InvalidParameterException")?;
-        if let Some(inner_2) = &self.message {
-            {
-                write!(f, ": {}", inner_2)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for InvalidParameterException {}
-impl aws_http::request_id::RequestId for crate::error::InvalidParameterException {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidParameterException {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>The request processing failed because of an unknown error, exception, or failure. You can retry the request.</p>
 #[non_exhaustive]
@@ -330,11 +332,41 @@ pub struct InternalServiceException {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl InternalServiceException {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for InternalServiceException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "InternalServiceException")?;
+        if let Some(inner_3) = &self.message {
+            {
+                write!(f, ": {}", inner_3)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for InternalServiceException {}
+impl aws_http::request_id::RequestId for crate::error::InternalServiceException {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InternalServiceException {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl InternalServiceException {
     /// Creates a new builder-style object to manufacture [`InternalServiceException`](crate::error::InternalServiceException).
     pub fn builder() -> crate::error::internal_service_exception::Builder {
         crate::error::internal_service_exception::Builder::default()
     }
 }
+
 /// See [`InternalServiceException`](crate::error::InternalServiceException).
 pub mod internal_service_exception {
 
@@ -377,35 +409,6 @@ pub mod internal_service_exception {
                 meta: self.meta.unwrap_or_default(),
             }
         }
-    }
-}
-impl InternalServiceException {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for InternalServiceException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "InternalServiceException")?;
-        if let Some(inner_3) = &self.message {
-            {
-                write!(f, ": {}", inner_3)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for InternalServiceException {}
-impl aws_http::request_id::RequestId for crate::error::InternalServiceException {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InternalServiceException {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
     }
 }
 
@@ -727,11 +730,41 @@ pub struct ConstraintViolationException {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl ConstraintViolationException {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for ConstraintViolationException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "ConstraintViolationException")?;
+        if let Some(inner_4) = &self.message {
+            {
+                write!(f, ": {}", inner_4)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for ConstraintViolationException {}
+impl aws_http::request_id::RequestId for crate::error::ConstraintViolationException {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for ConstraintViolationException {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl ConstraintViolationException {
     /// Creates a new builder-style object to manufacture [`ConstraintViolationException`](crate::error::ConstraintViolationException).
     pub fn builder() -> crate::error::constraint_violation_exception::Builder {
         crate::error::constraint_violation_exception::Builder::default()
     }
 }
+
 /// See [`ConstraintViolationException`](crate::error::ConstraintViolationException).
 pub mod constraint_violation_exception {
 
@@ -776,35 +809,6 @@ pub mod constraint_violation_exception {
         }
     }
 }
-impl ConstraintViolationException {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for ConstraintViolationException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "ConstraintViolationException")?;
-        if let Some(inner_4) = &self.message {
-            {
-                write!(f, ": {}", inner_4)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for ConstraintViolationException {}
-impl aws_http::request_id::RequestId for crate::error::ConstraintViolationException {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for ConstraintViolationException {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>The target of the operation is currently being modified by a different request. Try again later.</p>
 #[non_exhaustive]
@@ -816,11 +820,41 @@ pub struct ConcurrentModificationException {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl ConcurrentModificationException {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for ConcurrentModificationException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "ConcurrentModificationException")?;
+        if let Some(inner_5) = &self.message {
+            {
+                write!(f, ": {}", inner_5)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for ConcurrentModificationException {}
+impl aws_http::request_id::RequestId for crate::error::ConcurrentModificationException {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for ConcurrentModificationException {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl ConcurrentModificationException {
     /// Creates a new builder-style object to manufacture [`ConcurrentModificationException`](crate::error::ConcurrentModificationException).
     pub fn builder() -> crate::error::concurrent_modification_exception::Builder {
         crate::error::concurrent_modification_exception::Builder::default()
     }
 }
+
 /// See [`ConcurrentModificationException`](crate::error::ConcurrentModificationException).
 pub mod concurrent_modification_exception {
 
@@ -863,35 +897,6 @@ pub mod concurrent_modification_exception {
                 meta: self.meta.unwrap_or_default(),
             }
         }
-    }
-}
-impl ConcurrentModificationException {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for ConcurrentModificationException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "ConcurrentModificationException")?;
-        if let Some(inner_5) = &self.message {
-            {
-                write!(f, ": {}", inner_5)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for ConcurrentModificationException {}
-impl aws_http::request_id::RequestId for crate::error::ConcurrentModificationException {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for ConcurrentModificationException {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
     }
 }
 
@@ -1053,11 +1058,41 @@ pub struct PaginationTokenExpiredException {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl PaginationTokenExpiredException {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for PaginationTokenExpiredException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "PaginationTokenExpiredException")?;
+        if let Some(inner_6) = &self.message {
+            {
+                write!(f, ": {}", inner_6)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for PaginationTokenExpiredException {}
+impl aws_http::request_id::RequestId for crate::error::PaginationTokenExpiredException {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for PaginationTokenExpiredException {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl PaginationTokenExpiredException {
     /// Creates a new builder-style object to manufacture [`PaginationTokenExpiredException`](crate::error::PaginationTokenExpiredException).
     pub fn builder() -> crate::error::pagination_token_expired_exception::Builder {
         crate::error::pagination_token_expired_exception::Builder::default()
     }
 }
+
 /// See [`PaginationTokenExpiredException`](crate::error::PaginationTokenExpiredException).
 pub mod pagination_token_expired_exception {
 
@@ -1100,35 +1135,6 @@ pub mod pagination_token_expired_exception {
                 meta: self.meta.unwrap_or_default(),
             }
         }
-    }
-}
-impl PaginationTokenExpiredException {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for PaginationTokenExpiredException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "PaginationTokenExpiredException")?;
-        if let Some(inner_6) = &self.message {
-            {
-                write!(f, ": {}", inner_6)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for PaginationTokenExpiredException {}
-impl aws_http::request_id::RequestId for crate::error::PaginationTokenExpiredException {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for PaginationTokenExpiredException {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
     }
 }
 

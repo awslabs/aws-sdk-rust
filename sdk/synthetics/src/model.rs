@@ -14,6 +14,13 @@ impl ArtifactConfigInput {
         self.s3_encryption.as_ref()
     }
 }
+impl ArtifactConfigInput {
+    /// Creates a new builder-style object to manufacture [`ArtifactConfigInput`](crate::model::ArtifactConfigInput).
+    pub fn builder() -> crate::model::artifact_config_input::Builder {
+        crate::model::artifact_config_input::Builder::default()
+    }
+}
+
 /// See [`ArtifactConfigInput`](crate::model::ArtifactConfigInput).
 pub mod artifact_config_input {
 
@@ -45,12 +52,6 @@ pub mod artifact_config_input {
         }
     }
 }
-impl ArtifactConfigInput {
-    /// Creates a new builder-style object to manufacture [`ArtifactConfigInput`](crate::model::ArtifactConfigInput).
-    pub fn builder() -> crate::model::artifact_config_input::Builder {
-        crate::model::artifact_config_input::Builder::default()
-    }
-}
 
 /// <p>A structure that contains the configuration of encryption-at-rest settings for canary artifacts that the canary uploads to Amazon S3. </p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_artifact_encryption.html">Encrypting canary artifacts</a> </p>
@@ -76,6 +77,13 @@ impl S3EncryptionConfig {
         self.kms_key_arn.as_deref()
     }
 }
+impl S3EncryptionConfig {
+    /// Creates a new builder-style object to manufacture [`S3EncryptionConfig`](crate::model::S3EncryptionConfig).
+    pub fn builder() -> crate::model::s3_encryption_config::Builder {
+        crate::model::s3_encryption_config::Builder::default()
+    }
+}
+
 /// See [`S3EncryptionConfig`](crate::model::S3EncryptionConfig).
 pub mod s3_encryption_config {
 
@@ -119,12 +127,6 @@ pub mod s3_encryption_config {
                 kms_key_arn: self.kms_key_arn,
             }
         }
-    }
-}
-impl S3EncryptionConfig {
-    /// Creates a new builder-style object to manufacture [`S3EncryptionConfig`](crate::model::S3EncryptionConfig).
-    pub fn builder() -> crate::model::s3_encryption_config::Builder {
-        crate::model::s3_encryption_config::Builder::default()
     }
 }
 
@@ -240,6 +242,13 @@ impl VisualReferenceInput {
         self.base_canary_run_id.as_deref()
     }
 }
+impl VisualReferenceInput {
+    /// Creates a new builder-style object to manufacture [`VisualReferenceInput`](crate::model::VisualReferenceInput).
+    pub fn builder() -> crate::model::visual_reference_input::Builder {
+        crate::model::visual_reference_input::Builder::default()
+    }
+}
+
 /// See [`VisualReferenceInput`](crate::model::VisualReferenceInput).
 pub mod visual_reference_input {
 
@@ -293,12 +302,6 @@ pub mod visual_reference_input {
         }
     }
 }
-impl VisualReferenceInput {
-    /// Creates a new builder-style object to manufacture [`VisualReferenceInput`](crate::model::VisualReferenceInput).
-    pub fn builder() -> crate::model::visual_reference_input::Builder {
-        crate::model::visual_reference_input::Builder::default()
-    }
-}
 
 /// <p>A structure representing a screenshot that is used as a baseline during visual monitoring comparisons made by the canary.</p>
 #[non_exhaustive]
@@ -321,6 +324,13 @@ impl BaseScreenshot {
         self.ignore_coordinates.as_deref()
     }
 }
+impl BaseScreenshot {
+    /// Creates a new builder-style object to manufacture [`BaseScreenshot`](crate::model::BaseScreenshot).
+    pub fn builder() -> crate::model::base_screenshot::Builder {
+        crate::model::base_screenshot::Builder::default()
+    }
+}
+
 /// See [`BaseScreenshot`](crate::model::BaseScreenshot).
 pub mod base_screenshot {
 
@@ -373,12 +383,6 @@ pub mod base_screenshot {
         }
     }
 }
-impl BaseScreenshot {
-    /// Creates a new builder-style object to manufacture [`BaseScreenshot`](crate::model::BaseScreenshot).
-    pub fn builder() -> crate::model::base_screenshot::Builder {
-        crate::model::base_screenshot::Builder::default()
-    }
-}
 
 /// <p>If this canary is to test an endpoint in a VPC, this structure contains information about the subnets and security groups of the VPC endpoint. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_VPC.html"> Running a Canary in a VPC</a>.</p>
 #[non_exhaustive]
@@ -401,6 +405,13 @@ impl VpcConfigInput {
         self.security_group_ids.as_deref()
     }
 }
+impl VpcConfigInput {
+    /// Creates a new builder-style object to manufacture [`VpcConfigInput`](crate::model::VpcConfigInput).
+    pub fn builder() -> crate::model::vpc_config_input::Builder {
+        crate::model::vpc_config_input::Builder::default()
+    }
+}
+
 /// See [`VpcConfigInput`](crate::model::VpcConfigInput).
 pub mod vpc_config_input {
 
@@ -459,12 +470,6 @@ pub mod vpc_config_input {
         }
     }
 }
-impl VpcConfigInput {
-    /// Creates a new builder-style object to manufacture [`VpcConfigInput`](crate::model::VpcConfigInput).
-    pub fn builder() -> crate::model::vpc_config_input::Builder {
-        crate::model::vpc_config_input::Builder::default()
-    }
-}
 
 /// <p>A structure that contains input information for a canary run.</p>
 #[non_exhaustive]
@@ -517,6 +522,13 @@ impl CanaryRunConfigInput {
         self.environment_variables.as_ref()
     }
 }
+impl CanaryRunConfigInput {
+    /// Creates a new builder-style object to manufacture [`CanaryRunConfigInput`](crate::model::CanaryRunConfigInput).
+    pub fn builder() -> crate::model::canary_run_config_input::Builder {
+        crate::model::canary_run_config_input::Builder::default()
+    }
+}
+
 /// See [`CanaryRunConfigInput`](crate::model::CanaryRunConfigInput).
 pub mod canary_run_config_input {
 
@@ -610,12 +622,6 @@ pub mod canary_run_config_input {
         }
     }
 }
-impl CanaryRunConfigInput {
-    /// Creates a new builder-style object to manufacture [`CanaryRunConfigInput`](crate::model::CanaryRunConfigInput).
-    pub fn builder() -> crate::model::canary_run_config_input::Builder {
-        crate::model::canary_run_config_input::Builder::default()
-    }
-}
 
 /// <p>This structure specifies how often a canary is to make runs and the date and time when it should stop making runs.</p>
 #[non_exhaustive]
@@ -646,6 +652,13 @@ impl CanaryScheduleInput {
         self.duration_in_seconds
     }
 }
+impl CanaryScheduleInput {
+    /// Creates a new builder-style object to manufacture [`CanaryScheduleInput`](crate::model::CanaryScheduleInput).
+    pub fn builder() -> crate::model::canary_schedule_input::Builder {
+        crate::model::canary_schedule_input::Builder::default()
+    }
+}
+
 /// See [`CanaryScheduleInput`](crate::model::CanaryScheduleInput).
 pub mod canary_schedule_input {
 
@@ -694,12 +707,6 @@ pub mod canary_schedule_input {
         }
     }
 }
-impl CanaryScheduleInput {
-    /// Creates a new builder-style object to manufacture [`CanaryScheduleInput`](crate::model::CanaryScheduleInput).
-    pub fn builder() -> crate::model::canary_schedule_input::Builder {
-        crate::model::canary_schedule_input::Builder::default()
-    }
-}
 
 /// <p>Use this structure to input your script code for the canary. This structure contains the Lambda handler with the location where the canary should start running the script. If the script is stored in an S3 bucket, the bucket name, key, and version are also included. If the script was passed into the canary directly, the script code is contained in the value of <code>Zipfile</code>. </p>
 #[non_exhaustive]
@@ -745,6 +752,13 @@ impl CanaryCodeInput {
         self.handler.as_deref()
     }
 }
+impl CanaryCodeInput {
+    /// Creates a new builder-style object to manufacture [`CanaryCodeInput`](crate::model::CanaryCodeInput).
+    pub fn builder() -> crate::model::canary_code_input::Builder {
+        crate::model::canary_code_input::Builder::default()
+    }
+}
+
 /// See [`CanaryCodeInput`](crate::model::CanaryCodeInput).
 pub mod canary_code_input {
 
@@ -823,12 +837,6 @@ pub mod canary_code_input {
         }
     }
 }
-impl CanaryCodeInput {
-    /// Creates a new builder-style object to manufacture [`CanaryCodeInput`](crate::model::CanaryCodeInput).
-    pub fn builder() -> crate::model::canary_code_input::Builder {
-        crate::model::canary_code_input::Builder::default()
-    }
-}
 
 /// <p>A structure containing some information about a group.</p>
 #[non_exhaustive]
@@ -858,6 +866,13 @@ impl GroupSummary {
         self.arn.as_deref()
     }
 }
+impl GroupSummary {
+    /// Creates a new builder-style object to manufacture [`GroupSummary`](crate::model::GroupSummary).
+    pub fn builder() -> crate::model::group_summary::Builder {
+        crate::model::group_summary::Builder::default()
+    }
+}
+
 /// See [`GroupSummary`](crate::model::GroupSummary).
 pub mod group_summary {
 
@@ -908,12 +923,6 @@ pub mod group_summary {
                 arn: self.arn,
             }
         }
-    }
-}
-impl GroupSummary {
-    /// Creates a new builder-style object to manufacture [`GroupSummary`](crate::model::GroupSummary).
-    pub fn builder() -> crate::model::group_summary::Builder {
-        crate::model::group_summary::Builder::default()
     }
 }
 
@@ -970,6 +979,13 @@ impl Group {
         self.last_modified_time.as_ref()
     }
 }
+impl Group {
+    /// Creates a new builder-style object to manufacture [`Group`](crate::model::Group).
+    pub fn builder() -> crate::model::group::Builder {
+        crate::model::group::Builder::default()
+    }
+}
+
 /// See [`Group`](crate::model::Group).
 pub mod group {
 
@@ -1081,12 +1097,6 @@ pub mod group {
         }
     }
 }
-impl Group {
-    /// Creates a new builder-style object to manufacture [`Group`](crate::model::Group).
-    pub fn builder() -> crate::model::group::Builder {
-        crate::model::group::Builder::default()
-    }
-}
 
 /// <p>This structure contains the details about one run of one canary.</p>
 #[non_exhaustive]
@@ -1130,6 +1140,13 @@ impl CanaryRun {
         self.artifact_s3_location.as_deref()
     }
 }
+impl CanaryRun {
+    /// Creates a new builder-style object to manufacture [`CanaryRun`](crate::model::CanaryRun).
+    pub fn builder() -> crate::model::canary_run::Builder {
+        crate::model::canary_run::Builder::default()
+    }
+}
+
 /// See [`CanaryRun`](crate::model::CanaryRun).
 pub mod canary_run {
 
@@ -1215,12 +1232,6 @@ pub mod canary_run {
         }
     }
 }
-impl CanaryRun {
-    /// Creates a new builder-style object to manufacture [`CanaryRun`](crate::model::CanaryRun).
-    pub fn builder() -> crate::model::canary_run::Builder {
-        crate::model::canary_run::Builder::default()
-    }
-}
 
 /// <p>This structure contains the start and end times of a single canary run.</p>
 #[non_exhaustive]
@@ -1243,6 +1254,13 @@ impl CanaryRunTimeline {
         self.completed.as_ref()
     }
 }
+impl CanaryRunTimeline {
+    /// Creates a new builder-style object to manufacture [`CanaryRunTimeline`](crate::model::CanaryRunTimeline).
+    pub fn builder() -> crate::model::canary_run_timeline::Builder {
+        crate::model::canary_run_timeline::Builder::default()
+    }
+}
+
 /// See [`CanaryRunTimeline`](crate::model::CanaryRunTimeline).
 pub mod canary_run_timeline {
 
@@ -1289,12 +1307,6 @@ pub mod canary_run_timeline {
         }
     }
 }
-impl CanaryRunTimeline {
-    /// Creates a new builder-style object to manufacture [`CanaryRunTimeline`](crate::model::CanaryRunTimeline).
-    pub fn builder() -> crate::model::canary_run_timeline::Builder {
-        crate::model::canary_run_timeline::Builder::default()
-    }
-}
 
 /// <p>This structure contains the status information about a canary run.</p>
 #[non_exhaustive]
@@ -1326,6 +1338,13 @@ impl CanaryRunStatus {
         self.state_reason_code.as_ref()
     }
 }
+impl CanaryRunStatus {
+    /// Creates a new builder-style object to manufacture [`CanaryRunStatus`](crate::model::CanaryRunStatus).
+    pub fn builder() -> crate::model::canary_run_status::Builder {
+        crate::model::canary_run_status::Builder::default()
+    }
+}
+
 /// See [`CanaryRunStatus`](crate::model::CanaryRunStatus).
 pub mod canary_run_status {
 
@@ -1382,12 +1401,6 @@ pub mod canary_run_status {
                 state_reason_code: self.state_reason_code,
             }
         }
-    }
-}
-impl CanaryRunStatus {
-    /// Creates a new builder-style object to manufacture [`CanaryRunStatus`](crate::model::CanaryRunStatus).
-    pub fn builder() -> crate::model::canary_run_status::Builder {
-        crate::model::canary_run_status::Builder::default()
     }
 }
 
@@ -1708,6 +1721,13 @@ impl Canary {
         self.artifact_config.as_ref()
     }
 }
+impl Canary {
+    /// Creates a new builder-style object to manufacture [`Canary`](crate::model::Canary).
+    pub fn builder() -> crate::model::canary::Builder {
+        crate::model::canary::Builder::default()
+    }
+}
+
 /// See [`Canary`](crate::model::Canary).
 pub mod canary {
 
@@ -1984,12 +2004,6 @@ pub mod canary {
         }
     }
 }
-impl Canary {
-    /// Creates a new builder-style object to manufacture [`Canary`](crate::model::Canary).
-    pub fn builder() -> crate::model::canary::Builder {
-        crate::model::canary::Builder::default()
-    }
-}
 
 /// <p>A structure that contains the configuration for canary artifacts, including the encryption-at-rest settings for artifacts that the canary uploads to Amazon S3.</p>
 #[non_exhaustive]
@@ -2005,6 +2019,13 @@ impl ArtifactConfigOutput {
         self.s3_encryption.as_ref()
     }
 }
+impl ArtifactConfigOutput {
+    /// Creates a new builder-style object to manufacture [`ArtifactConfigOutput`](crate::model::ArtifactConfigOutput).
+    pub fn builder() -> crate::model::artifact_config_output::Builder {
+        crate::model::artifact_config_output::Builder::default()
+    }
+}
+
 /// See [`ArtifactConfigOutput`](crate::model::ArtifactConfigOutput).
 pub mod artifact_config_output {
 
@@ -2036,12 +2057,6 @@ pub mod artifact_config_output {
         }
     }
 }
-impl ArtifactConfigOutput {
-    /// Creates a new builder-style object to manufacture [`ArtifactConfigOutput`](crate::model::ArtifactConfigOutput).
-    pub fn builder() -> crate::model::artifact_config_output::Builder {
-        crate::model::artifact_config_output::Builder::default()
-    }
-}
 
 /// <p>If this canary performs visual monitoring by comparing screenshots, this structure contains the ID of the canary run that is used as the baseline for screenshots, and the coordinates of any parts of those screenshots that are ignored during visual monitoring comparison.</p>
 /// <p>Visual monitoring is supported only on canaries running the <b>syn-puppeteer-node-3.2</b> runtime or later.</p>
@@ -2065,6 +2080,13 @@ impl VisualReferenceOutput {
         self.base_canary_run_id.as_deref()
     }
 }
+impl VisualReferenceOutput {
+    /// Creates a new builder-style object to manufacture [`VisualReferenceOutput`](crate::model::VisualReferenceOutput).
+    pub fn builder() -> crate::model::visual_reference_output::Builder {
+        crate::model::visual_reference_output::Builder::default()
+    }
+}
+
 /// See [`VisualReferenceOutput`](crate::model::VisualReferenceOutput).
 pub mod visual_reference_output {
 
@@ -2118,12 +2140,6 @@ pub mod visual_reference_output {
         }
     }
 }
-impl VisualReferenceOutput {
-    /// Creates a new builder-style object to manufacture [`VisualReferenceOutput`](crate::model::VisualReferenceOutput).
-    pub fn builder() -> crate::model::visual_reference_output::Builder {
-        crate::model::visual_reference_output::Builder::default()
-    }
-}
 
 /// <p>If this canary is to test an endpoint in a VPC, this structure contains information about the subnets and security groups of the VPC endpoint. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_VPC.html"> Running a Canary in a VPC</a>.</p>
 #[non_exhaustive]
@@ -2153,6 +2169,13 @@ impl VpcConfigOutput {
         self.security_group_ids.as_deref()
     }
 }
+impl VpcConfigOutput {
+    /// Creates a new builder-style object to manufacture [`VpcConfigOutput`](crate::model::VpcConfigOutput).
+    pub fn builder() -> crate::model::vpc_config_output::Builder {
+        crate::model::vpc_config_output::Builder::default()
+    }
+}
+
 /// See [`VpcConfigOutput`](crate::model::VpcConfigOutput).
 pub mod vpc_config_output {
 
@@ -2223,12 +2246,6 @@ pub mod vpc_config_output {
         }
     }
 }
-impl VpcConfigOutput {
-    /// Creates a new builder-style object to manufacture [`VpcConfigOutput`](crate::model::VpcConfigOutput).
-    pub fn builder() -> crate::model::vpc_config_output::Builder {
-        crate::model::vpc_config_output::Builder::default()
-    }
-}
 
 /// <p>This structure contains information about when the canary was created and modified.</p>
 #[non_exhaustive]
@@ -2265,6 +2282,13 @@ impl CanaryTimeline {
         self.last_stopped.as_ref()
     }
 }
+impl CanaryTimeline {
+    /// Creates a new builder-style object to manufacture [`CanaryTimeline`](crate::model::CanaryTimeline).
+    pub fn builder() -> crate::model::canary_timeline::Builder {
+        crate::model::canary_timeline::Builder::default()
+    }
+}
+
 /// See [`CanaryTimeline`](crate::model::CanaryTimeline).
 pub mod canary_timeline {
 
@@ -2341,12 +2365,6 @@ pub mod canary_timeline {
         }
     }
 }
-impl CanaryTimeline {
-    /// Creates a new builder-style object to manufacture [`CanaryTimeline`](crate::model::CanaryTimeline).
-    pub fn builder() -> crate::model::canary_timeline::Builder {
-        crate::model::canary_timeline::Builder::default()
-    }
-}
 
 /// <p>A structure that contains the current state of the canary.</p>
 #[non_exhaustive]
@@ -2376,6 +2394,13 @@ impl CanaryStatus {
         self.state_reason_code.as_ref()
     }
 }
+impl CanaryStatus {
+    /// Creates a new builder-style object to manufacture [`CanaryStatus`](crate::model::CanaryStatus).
+    pub fn builder() -> crate::model::canary_status::Builder {
+        crate::model::canary_status::Builder::default()
+    }
+}
+
 /// See [`CanaryStatus`](crate::model::CanaryStatus).
 pub mod canary_status {
 
@@ -2429,12 +2454,6 @@ pub mod canary_status {
                 state_reason_code: self.state_reason_code,
             }
         }
-    }
-}
-impl CanaryStatus {
-    /// Creates a new builder-style object to manufacture [`CanaryStatus`](crate::model::CanaryStatus).
-    pub fn builder() -> crate::model::canary_status::Builder {
-        crate::model::canary_status::Builder::default()
     }
 }
 
@@ -2749,6 +2768,13 @@ impl CanaryRunConfigOutput {
         self.active_tracing
     }
 }
+impl CanaryRunConfigOutput {
+    /// Creates a new builder-style object to manufacture [`CanaryRunConfigOutput`](crate::model::CanaryRunConfigOutput).
+    pub fn builder() -> crate::model::canary_run_config_output::Builder {
+        crate::model::canary_run_config_output::Builder::default()
+    }
+}
+
 /// See [`CanaryRunConfigOutput`](crate::model::CanaryRunConfigOutput).
 pub mod canary_run_config_output {
 
@@ -2801,12 +2827,6 @@ pub mod canary_run_config_output {
         }
     }
 }
-impl CanaryRunConfigOutput {
-    /// Creates a new builder-style object to manufacture [`CanaryRunConfigOutput`](crate::model::CanaryRunConfigOutput).
-    pub fn builder() -> crate::model::canary_run_config_output::Builder {
-        crate::model::canary_run_config_output::Builder::default()
-    }
-}
 
 /// <p>How long, in seconds, for the canary to continue making regular runs according to the schedule in the <code>Expression</code> value.</p>
 #[non_exhaustive]
@@ -2837,6 +2857,13 @@ impl CanaryScheduleOutput {
         self.duration_in_seconds
     }
 }
+impl CanaryScheduleOutput {
+    /// Creates a new builder-style object to manufacture [`CanaryScheduleOutput`](crate::model::CanaryScheduleOutput).
+    pub fn builder() -> crate::model::canary_schedule_output::Builder {
+        crate::model::canary_schedule_output::Builder::default()
+    }
+}
+
 /// See [`CanaryScheduleOutput`](crate::model::CanaryScheduleOutput).
 pub mod canary_schedule_output {
 
@@ -2885,12 +2912,6 @@ pub mod canary_schedule_output {
         }
     }
 }
-impl CanaryScheduleOutput {
-    /// Creates a new builder-style object to manufacture [`CanaryScheduleOutput`](crate::model::CanaryScheduleOutput).
-    pub fn builder() -> crate::model::canary_schedule_output::Builder {
-        crate::model::canary_schedule_output::Builder::default()
-    }
-}
 
 /// <p>This structure contains information about the canary's Lambda handler and where its code is stored by CloudWatch Synthetics.</p>
 #[non_exhaustive]
@@ -2913,6 +2934,13 @@ impl CanaryCodeOutput {
         self.handler.as_deref()
     }
 }
+impl CanaryCodeOutput {
+    /// Creates a new builder-style object to manufacture [`CanaryCodeOutput`](crate::model::CanaryCodeOutput).
+    pub fn builder() -> crate::model::canary_code_output::Builder {
+        crate::model::canary_code_output::Builder::default()
+    }
+}
+
 /// See [`CanaryCodeOutput`](crate::model::CanaryCodeOutput).
 pub mod canary_code_output {
 
@@ -2956,12 +2984,6 @@ pub mod canary_code_output {
         }
     }
 }
-impl CanaryCodeOutput {
-    /// Creates a new builder-style object to manufacture [`CanaryCodeOutput`](crate::model::CanaryCodeOutput).
-    pub fn builder() -> crate::model::canary_code_output::Builder {
-        crate::model::canary_code_output::Builder::default()
-    }
-}
 
 /// <p>This structure contains information about one canary runtime version. For more information about runtime versions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Library.html"> Canary Runtime Versions</a>.</p>
 #[non_exhaustive]
@@ -2998,6 +3020,13 @@ impl RuntimeVersion {
         self.deprecation_date.as_ref()
     }
 }
+impl RuntimeVersion {
+    /// Creates a new builder-style object to manufacture [`RuntimeVersion`](crate::model::RuntimeVersion).
+    pub fn builder() -> crate::model::runtime_version::Builder {
+        crate::model::runtime_version::Builder::default()
+    }
+}
+
 /// See [`RuntimeVersion`](crate::model::RuntimeVersion).
 pub mod runtime_version {
 
@@ -3068,12 +3097,6 @@ pub mod runtime_version {
         }
     }
 }
-impl RuntimeVersion {
-    /// Creates a new builder-style object to manufacture [`RuntimeVersion`](crate::model::RuntimeVersion).
-    pub fn builder() -> crate::model::runtime_version::Builder {
-        crate::model::runtime_version::Builder::default()
-    }
-}
 
 /// <p>This structure contains information about the most recent run of a single canary.</p>
 #[non_exhaustive]
@@ -3096,6 +3119,13 @@ impl CanaryLastRun {
         self.last_run.as_ref()
     }
 }
+impl CanaryLastRun {
+    /// Creates a new builder-style object to manufacture [`CanaryLastRun`](crate::model::CanaryLastRun).
+    pub fn builder() -> crate::model::canary_last_run::Builder {
+        crate::model::canary_last_run::Builder::default()
+    }
+}
+
 /// See [`CanaryLastRun`](crate::model::CanaryLastRun).
 pub mod canary_last_run {
 
@@ -3134,11 +3164,5 @@ pub mod canary_last_run {
                 last_run: self.last_run,
             }
         }
-    }
-}
-impl CanaryLastRun {
-    /// Creates a new builder-style object to manufacture [`CanaryLastRun`](crate::model::CanaryLastRun).
-    pub fn builder() -> crate::model::canary_last_run::Builder {
-        crate::model::canary_last_run::Builder::default()
     }
 }

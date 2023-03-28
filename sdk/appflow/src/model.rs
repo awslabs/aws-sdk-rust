@@ -131,6 +131,13 @@ impl MetadataCatalogConfig {
         self.glue_data_catalog.as_ref()
     }
 }
+impl MetadataCatalogConfig {
+    /// Creates a new builder-style object to manufacture [`MetadataCatalogConfig`](crate::model::MetadataCatalogConfig).
+    pub fn builder() -> crate::model::metadata_catalog_config::Builder {
+        crate::model::metadata_catalog_config::Builder::default()
+    }
+}
+
 /// See [`MetadataCatalogConfig`](crate::model::MetadataCatalogConfig).
 pub mod metadata_catalog_config {
 
@@ -160,12 +167,6 @@ pub mod metadata_catalog_config {
                 glue_data_catalog: self.glue_data_catalog,
             }
         }
-    }
-}
-impl MetadataCatalogConfig {
-    /// Creates a new builder-style object to manufacture [`MetadataCatalogConfig`](crate::model::MetadataCatalogConfig).
-    pub fn builder() -> crate::model::metadata_catalog_config::Builder {
-        crate::model::metadata_catalog_config::Builder::default()
     }
 }
 
@@ -205,6 +206,13 @@ impl GlueDataCatalogConfig {
         self.table_prefix.as_deref()
     }
 }
+impl GlueDataCatalogConfig {
+    /// Creates a new builder-style object to manufacture [`GlueDataCatalogConfig`](crate::model::GlueDataCatalogConfig).
+    pub fn builder() -> crate::model::glue_data_catalog_config::Builder {
+        crate::model::glue_data_catalog_config::Builder::default()
+    }
+}
+
 /// See [`GlueDataCatalogConfig`](crate::model::GlueDataCatalogConfig).
 pub mod glue_data_catalog_config {
 
@@ -266,12 +274,6 @@ pub mod glue_data_catalog_config {
         }
     }
 }
-impl GlueDataCatalogConfig {
-    /// Creates a new builder-style object to manufacture [`GlueDataCatalogConfig`](crate::model::GlueDataCatalogConfig).
-    pub fn builder() -> crate::model::glue_data_catalog_config::Builder {
-        crate::model::glue_data_catalog_config::Builder::default()
-    }
-}
 
 /// <p> A class for modeling different type of tasks. Task implementation varies based on the <code>TaskType</code>. </p>
 #[non_exhaustive]
@@ -321,6 +323,13 @@ impl Task {
         self.task_properties.as_ref()
     }
 }
+impl Task {
+    /// Creates a new builder-style object to manufacture [`Task`](crate::model::Task).
+    pub fn builder() -> crate::model::task::Builder {
+        crate::model::task::Builder::default()
+    }
+}
+
 /// See [`Task`](crate::model::Task).
 pub mod task {
 
@@ -430,12 +439,6 @@ pub mod task {
                 task_properties: self.task_properties,
             }
         }
-    }
-}
-impl Task {
-    /// Creates a new builder-style object to manufacture [`Task`](crate::model::Task).
-    pub fn builder() -> crate::model::task::Builder {
-        crate::model::task::Builder::default()
     }
 }
 
@@ -893,6 +896,13 @@ impl ConnectorOperator {
         self.pardot.as_ref()
     }
 }
+impl ConnectorOperator {
+    /// Creates a new builder-style object to manufacture [`ConnectorOperator`](crate::model::ConnectorOperator).
+    pub fn builder() -> crate::model::connector_operator::Builder {
+        crate::model::connector_operator::Builder::default()
+    }
+}
+
 /// See [`ConnectorOperator`](crate::model::ConnectorOperator).
 pub mod connector_operator {
 
@@ -1166,12 +1176,6 @@ pub mod connector_operator {
                 pardot: self.pardot,
             }
         }
-    }
-}
-impl ConnectorOperator {
-    /// Creates a new builder-style object to manufacture [`ConnectorOperator`](crate::model::ConnectorOperator).
-    pub fn builder() -> crate::model::connector_operator::Builder {
-        crate::model::connector_operator::Builder::default()
     }
 }
 
@@ -4201,6 +4205,13 @@ impl DestinationFlowConfig {
         self.destination_connector_properties.as_ref()
     }
 }
+impl DestinationFlowConfig {
+    /// Creates a new builder-style object to manufacture [`DestinationFlowConfig`](crate::model::DestinationFlowConfig).
+    pub fn builder() -> crate::model::destination_flow_config::Builder {
+        crate::model::destination_flow_config::Builder::default()
+    }
+}
+
 /// See [`DestinationFlowConfig`](crate::model::DestinationFlowConfig).
 pub mod destination_flow_config {
 
@@ -4276,12 +4287,6 @@ pub mod destination_flow_config {
                 destination_connector_properties: self.destination_connector_properties,
             }
         }
-    }
-}
-impl DestinationFlowConfig {
-    /// Creates a new builder-style object to manufacture [`DestinationFlowConfig`](crate::model::DestinationFlowConfig).
-    pub fn builder() -> crate::model::destination_flow_config::Builder {
-        crate::model::destination_flow_config::Builder::default()
     }
 }
 
@@ -4393,6 +4398,13 @@ impl DestinationConnectorProperties {
         self.sapo_data.as_ref()
     }
 }
+impl DestinationConnectorProperties {
+    /// Creates a new builder-style object to manufacture [`DestinationConnectorProperties`](crate::model::DestinationConnectorProperties).
+    pub fn builder() -> crate::model::destination_connector_properties::Builder {
+        crate::model::destination_connector_properties::Builder::default()
+    }
+}
+
 /// See [`DestinationConnectorProperties`](crate::model::DestinationConnectorProperties).
 pub mod destination_connector_properties {
 
@@ -4620,12 +4632,6 @@ pub mod destination_connector_properties {
         }
     }
 }
-impl DestinationConnectorProperties {
-    /// Creates a new builder-style object to manufacture [`DestinationConnectorProperties`](crate::model::DestinationConnectorProperties).
-    pub fn builder() -> crate::model::destination_connector_properties::Builder {
-        crate::model::destination_connector_properties::Builder::default()
-    }
-}
 
 /// <p>The properties that are applied when using SAPOData as a flow destination</p>
 #[non_exhaustive]
@@ -4674,6 +4680,13 @@ impl SapoDataDestinationProperties {
         self.write_operation_type.as_ref()
     }
 }
+impl SapoDataDestinationProperties {
+    /// Creates a new builder-style object to manufacture [`SapoDataDestinationProperties`](crate::model::SapoDataDestinationProperties).
+    pub fn builder() -> crate::model::sapo_data_destination_properties::Builder {
+        crate::model::sapo_data_destination_properties::Builder::default()
+    }
+}
+
 /// See [`SapoDataDestinationProperties`](crate::model::SapoDataDestinationProperties).
 pub mod sapo_data_destination_properties {
 
@@ -4772,12 +4785,6 @@ pub mod sapo_data_destination_properties {
                 write_operation_type: self.write_operation_type,
             }
         }
-    }
-}
-impl SapoDataDestinationProperties {
-    /// Creates a new builder-style object to manufacture [`SapoDataDestinationProperties`](crate::model::SapoDataDestinationProperties).
-    pub fn builder() -> crate::model::sapo_data_destination_properties::Builder {
-        crate::model::sapo_data_destination_properties::Builder::default()
     }
 }
 
@@ -4912,6 +4919,13 @@ impl ErrorHandlingConfig {
         self.bucket_name.as_deref()
     }
 }
+impl ErrorHandlingConfig {
+    /// Creates a new builder-style object to manufacture [`ErrorHandlingConfig`](crate::model::ErrorHandlingConfig).
+    pub fn builder() -> crate::model::error_handling_config::Builder {
+        crate::model::error_handling_config::Builder::default()
+    }
+}
+
 /// See [`ErrorHandlingConfig`](crate::model::ErrorHandlingConfig).
 pub mod error_handling_config {
 
@@ -4972,12 +4986,6 @@ pub mod error_handling_config {
         }
     }
 }
-impl ErrorHandlingConfig {
-    /// Creates a new builder-style object to manufacture [`ErrorHandlingConfig`](crate::model::ErrorHandlingConfig).
-    pub fn builder() -> crate::model::error_handling_config::Builder {
-        crate::model::error_handling_config::Builder::default()
-    }
-}
 
 /// <p>Determines how Amazon AppFlow handles the success response that it gets from the connector after placing data.</p>
 /// <p>For example, this setting would determine where to write the response from the destination connector upon a successful insert operation.</p>
@@ -5001,6 +5009,13 @@ impl SuccessResponseHandlingConfig {
         self.bucket_name.as_deref()
     }
 }
+impl SuccessResponseHandlingConfig {
+    /// Creates a new builder-style object to manufacture [`SuccessResponseHandlingConfig`](crate::model::SuccessResponseHandlingConfig).
+    pub fn builder() -> crate::model::success_response_handling_config::Builder {
+        crate::model::success_response_handling_config::Builder::default()
+    }
+}
+
 /// See [`SuccessResponseHandlingConfig`](crate::model::SuccessResponseHandlingConfig).
 pub mod success_response_handling_config {
 
@@ -5042,12 +5057,6 @@ pub mod success_response_handling_config {
                 bucket_name: self.bucket_name,
             }
         }
-    }
-}
-impl SuccessResponseHandlingConfig {
-    /// Creates a new builder-style object to manufacture [`SuccessResponseHandlingConfig`](crate::model::SuccessResponseHandlingConfig).
-    pub fn builder() -> crate::model::success_response_handling_config::Builder {
-        crate::model::success_response_handling_config::Builder::default()
     }
 }
 
@@ -5097,6 +5106,13 @@ impl CustomConnectorDestinationProperties {
         self.custom_properties.as_ref()
     }
 }
+impl CustomConnectorDestinationProperties {
+    /// Creates a new builder-style object to manufacture [`CustomConnectorDestinationProperties`](crate::model::CustomConnectorDestinationProperties).
+    pub fn builder() -> crate::model::custom_connector_destination_properties::Builder {
+        crate::model::custom_connector_destination_properties::Builder::default()
+    }
+}
+
 /// See [`CustomConnectorDestinationProperties`](crate::model::CustomConnectorDestinationProperties).
 pub mod custom_connector_destination_properties {
 
@@ -5205,12 +5221,6 @@ pub mod custom_connector_destination_properties {
         }
     }
 }
-impl CustomConnectorDestinationProperties {
-    /// Creates a new builder-style object to manufacture [`CustomConnectorDestinationProperties`](crate::model::CustomConnectorDestinationProperties).
-    pub fn builder() -> crate::model::custom_connector_destination_properties::Builder {
-        crate::model::custom_connector_destination_properties::Builder::default()
-    }
-}
 
 /// <p>The properties that Amazon AppFlow applies when you use Marketo as a flow destination.</p>
 #[non_exhaustive]
@@ -5233,6 +5243,13 @@ impl MarketoDestinationProperties {
         self.error_handling_config.as_ref()
     }
 }
+impl MarketoDestinationProperties {
+    /// Creates a new builder-style object to manufacture [`MarketoDestinationProperties`](crate::model::MarketoDestinationProperties).
+    pub fn builder() -> crate::model::marketo_destination_properties::Builder {
+        crate::model::marketo_destination_properties::Builder::default()
+    }
+}
+
 /// See [`MarketoDestinationProperties`](crate::model::MarketoDestinationProperties).
 pub mod marketo_destination_properties {
 
@@ -5276,12 +5293,6 @@ pub mod marketo_destination_properties {
         }
     }
 }
-impl MarketoDestinationProperties {
-    /// Creates a new builder-style object to manufacture [`MarketoDestinationProperties`](crate::model::MarketoDestinationProperties).
-    pub fn builder() -> crate::model::marketo_destination_properties::Builder {
-        crate::model::marketo_destination_properties::Builder::default()
-    }
-}
 
 /// <p>The properties that are applied when Zendesk is used as a destination.</p>
 #[non_exhaustive]
@@ -5318,6 +5329,13 @@ impl ZendeskDestinationProperties {
         self.write_operation_type.as_ref()
     }
 }
+impl ZendeskDestinationProperties {
+    /// Creates a new builder-style object to manufacture [`ZendeskDestinationProperties`](crate::model::ZendeskDestinationProperties).
+    pub fn builder() -> crate::model::zendesk_destination_properties::Builder {
+        crate::model::zendesk_destination_properties::Builder::default()
+    }
+}
+
 /// See [`ZendeskDestinationProperties`](crate::model::ZendeskDestinationProperties).
 pub mod zendesk_destination_properties {
 
@@ -5397,12 +5415,6 @@ pub mod zendesk_destination_properties {
         }
     }
 }
-impl ZendeskDestinationProperties {
-    /// Creates a new builder-style object to manufacture [`ZendeskDestinationProperties`](crate::model::ZendeskDestinationProperties).
-    pub fn builder() -> crate::model::zendesk_destination_properties::Builder {
-        crate::model::zendesk_destination_properties::Builder::default()
-    }
-}
 
 /// <p> The properties that are applied when Amazon Connect Customer Profiles is used as a destination. </p>
 #[non_exhaustive]
@@ -5425,6 +5437,13 @@ impl CustomerProfilesDestinationProperties {
         self.object_type_name.as_deref()
     }
 }
+impl CustomerProfilesDestinationProperties {
+    /// Creates a new builder-style object to manufacture [`CustomerProfilesDestinationProperties`](crate::model::CustomerProfilesDestinationProperties).
+    pub fn builder() -> crate::model::customer_profiles_destination_properties::Builder {
+        crate::model::customer_profiles_destination_properties::Builder::default()
+    }
+}
+
 /// See [`CustomerProfilesDestinationProperties`](crate::model::CustomerProfilesDestinationProperties).
 pub mod customer_profiles_destination_properties {
 
@@ -5468,12 +5487,6 @@ pub mod customer_profiles_destination_properties {
         }
     }
 }
-impl CustomerProfilesDestinationProperties {
-    /// Creates a new builder-style object to manufacture [`CustomerProfilesDestinationProperties`](crate::model::CustomerProfilesDestinationProperties).
-    pub fn builder() -> crate::model::customer_profiles_destination_properties::Builder {
-        crate::model::customer_profiles_destination_properties::Builder::default()
-    }
-}
 
 /// <p> The properties that are applied when Amazon Honeycode is used as a destination. </p>
 #[non_exhaustive]
@@ -5496,6 +5509,13 @@ impl HoneycodeDestinationProperties {
         self.error_handling_config.as_ref()
     }
 }
+impl HoneycodeDestinationProperties {
+    /// Creates a new builder-style object to manufacture [`HoneycodeDestinationProperties`](crate::model::HoneycodeDestinationProperties).
+    pub fn builder() -> crate::model::honeycode_destination_properties::Builder {
+        crate::model::honeycode_destination_properties::Builder::default()
+    }
+}
+
 /// See [`HoneycodeDestinationProperties`](crate::model::HoneycodeDestinationProperties).
 pub mod honeycode_destination_properties {
 
@@ -5539,12 +5559,6 @@ pub mod honeycode_destination_properties {
         }
     }
 }
-impl HoneycodeDestinationProperties {
-    /// Creates a new builder-style object to manufacture [`HoneycodeDestinationProperties`](crate::model::HoneycodeDestinationProperties).
-    pub fn builder() -> crate::model::honeycode_destination_properties::Builder {
-        crate::model::honeycode_destination_properties::Builder::default()
-    }
-}
 
 /// <p> The properties that are applied when Upsolver is used as a destination. </p>
 #[non_exhaustive]
@@ -5576,6 +5590,13 @@ impl UpsolverDestinationProperties {
         self.s3_output_format_config.as_ref()
     }
 }
+impl UpsolverDestinationProperties {
+    /// Creates a new builder-style object to manufacture [`UpsolverDestinationProperties`](crate::model::UpsolverDestinationProperties).
+    pub fn builder() -> crate::model::upsolver_destination_properties::Builder {
+        crate::model::upsolver_destination_properties::Builder::default()
+    }
+}
+
 /// See [`UpsolverDestinationProperties`](crate::model::UpsolverDestinationProperties).
 pub mod upsolver_destination_properties {
 
@@ -5638,12 +5659,6 @@ pub mod upsolver_destination_properties {
         }
     }
 }
-impl UpsolverDestinationProperties {
-    /// Creates a new builder-style object to manufacture [`UpsolverDestinationProperties`](crate::model::UpsolverDestinationProperties).
-    pub fn builder() -> crate::model::upsolver_destination_properties::Builder {
-        crate::model::upsolver_destination_properties::Builder::default()
-    }
-}
 
 /// <p> The configuration that determines how Amazon AppFlow formats the flow output data when Upsolver is used as the destination. </p>
 #[non_exhaustive]
@@ -5673,6 +5688,13 @@ impl UpsolverS3OutputFormatConfig {
         self.aggregation_config.as_ref()
     }
 }
+impl UpsolverS3OutputFormatConfig {
+    /// Creates a new builder-style object to manufacture [`UpsolverS3OutputFormatConfig`](crate::model::UpsolverS3OutputFormatConfig).
+    pub fn builder() -> crate::model::upsolver_s3_output_format_config::Builder {
+        crate::model::upsolver_s3_output_format_config::Builder::default()
+    }
+}
+
 /// See [`UpsolverS3OutputFormatConfig`](crate::model::UpsolverS3OutputFormatConfig).
 pub mod upsolver_s3_output_format_config {
 
@@ -5731,12 +5753,6 @@ pub mod upsolver_s3_output_format_config {
         }
     }
 }
-impl UpsolverS3OutputFormatConfig {
-    /// Creates a new builder-style object to manufacture [`UpsolverS3OutputFormatConfig`](crate::model::UpsolverS3OutputFormatConfig).
-    pub fn builder() -> crate::model::upsolver_s3_output_format_config::Builder {
-        crate::model::upsolver_s3_output_format_config::Builder::default()
-    }
-}
 
 /// <p> The aggregation settings that you can use to customize the output format of your flow data. </p>
 #[non_exhaustive]
@@ -5759,6 +5775,13 @@ impl AggregationConfig {
         self.target_file_size
     }
 }
+impl AggregationConfig {
+    /// Creates a new builder-style object to manufacture [`AggregationConfig`](crate::model::AggregationConfig).
+    pub fn builder() -> crate::model::aggregation_config::Builder {
+        crate::model::aggregation_config::Builder::default()
+    }
+}
+
 /// See [`AggregationConfig`](crate::model::AggregationConfig).
 pub mod aggregation_config {
 
@@ -5800,12 +5823,6 @@ pub mod aggregation_config {
                 target_file_size: self.target_file_size,
             }
         }
-    }
-}
-impl AggregationConfig {
-    /// Creates a new builder-style object to manufacture [`AggregationConfig`](crate::model::AggregationConfig).
-    pub fn builder() -> crate::model::aggregation_config::Builder {
-        crate::model::aggregation_config::Builder::default()
     }
 }
 
@@ -5965,6 +5982,13 @@ impl PrefixConfig {
         self.path_prefix_hierarchy.as_deref()
     }
 }
+impl PrefixConfig {
+    /// Creates a new builder-style object to manufacture [`PrefixConfig`](crate::model::PrefixConfig).
+    pub fn builder() -> crate::model::prefix_config::Builder {
+        crate::model::prefix_config::Builder::default()
+    }
+}
+
 /// See [`PrefixConfig`](crate::model::PrefixConfig).
 pub mod prefix_config {
 
@@ -6069,12 +6093,6 @@ pub mod prefix_config {
                 path_prefix_hierarchy: self.path_prefix_hierarchy,
             }
         }
-    }
-}
-impl PrefixConfig {
-    /// Creates a new builder-style object to manufacture [`PrefixConfig`](crate::model::PrefixConfig).
-    pub fn builder() -> crate::model::prefix_config::Builder {
-        crate::model::prefix_config::Builder::default()
     }
 }
 
@@ -6467,6 +6485,13 @@ impl AsRef<str> for FileType {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LookoutMetricsDestinationProperties {}
+impl LookoutMetricsDestinationProperties {
+    /// Creates a new builder-style object to manufacture [`LookoutMetricsDestinationProperties`](crate::model::LookoutMetricsDestinationProperties).
+    pub fn builder() -> crate::model::lookout_metrics_destination_properties::Builder {
+        crate::model::lookout_metrics_destination_properties::Builder::default()
+    }
+}
+
 /// See [`LookoutMetricsDestinationProperties`](crate::model::LookoutMetricsDestinationProperties).
 pub mod lookout_metrics_destination_properties {
 
@@ -6479,12 +6504,6 @@ pub mod lookout_metrics_destination_properties {
         pub fn build(self) -> crate::model::LookoutMetricsDestinationProperties {
             crate::model::LookoutMetricsDestinationProperties {}
         }
-    }
-}
-impl LookoutMetricsDestinationProperties {
-    /// Creates a new builder-style object to manufacture [`LookoutMetricsDestinationProperties`](crate::model::LookoutMetricsDestinationProperties).
-    pub fn builder() -> crate::model::lookout_metrics_destination_properties::Builder {
-        crate::model::lookout_metrics_destination_properties::Builder::default()
     }
 }
 
@@ -6509,6 +6528,13 @@ impl EventBridgeDestinationProperties {
         self.error_handling_config.as_ref()
     }
 }
+impl EventBridgeDestinationProperties {
+    /// Creates a new builder-style object to manufacture [`EventBridgeDestinationProperties`](crate::model::EventBridgeDestinationProperties).
+    pub fn builder() -> crate::model::event_bridge_destination_properties::Builder {
+        crate::model::event_bridge_destination_properties::Builder::default()
+    }
+}
+
 /// See [`EventBridgeDestinationProperties`](crate::model::EventBridgeDestinationProperties).
 pub mod event_bridge_destination_properties {
 
@@ -6552,12 +6578,6 @@ pub mod event_bridge_destination_properties {
         }
     }
 }
-impl EventBridgeDestinationProperties {
-    /// Creates a new builder-style object to manufacture [`EventBridgeDestinationProperties`](crate::model::EventBridgeDestinationProperties).
-    pub fn builder() -> crate::model::event_bridge_destination_properties::Builder {
-        crate::model::event_bridge_destination_properties::Builder::default()
-    }
-}
 
 /// <p> The properties that are applied when Snowflake is being used as a destination. </p>
 #[non_exhaustive]
@@ -6594,6 +6614,13 @@ impl SnowflakeDestinationProperties {
         self.error_handling_config.as_ref()
     }
 }
+impl SnowflakeDestinationProperties {
+    /// Creates a new builder-style object to manufacture [`SnowflakeDestinationProperties`](crate::model::SnowflakeDestinationProperties).
+    pub fn builder() -> crate::model::snowflake_destination_properties::Builder {
+        crate::model::snowflake_destination_properties::Builder::default()
+    }
+}
+
 /// See [`SnowflakeDestinationProperties`](crate::model::SnowflakeDestinationProperties).
 pub mod snowflake_destination_properties {
 
@@ -6665,12 +6692,6 @@ pub mod snowflake_destination_properties {
                 error_handling_config: self.error_handling_config,
             }
         }
-    }
-}
-impl SnowflakeDestinationProperties {
-    /// Creates a new builder-style object to manufacture [`SnowflakeDestinationProperties`](crate::model::SnowflakeDestinationProperties).
-    pub fn builder() -> crate::model::snowflake_destination_properties::Builder {
-        crate::model::snowflake_destination_properties::Builder::default()
     }
 }
 
@@ -6764,6 +6785,13 @@ impl SalesforceDestinationProperties {
         self.data_transfer_api.as_ref()
     }
 }
+impl SalesforceDestinationProperties {
+    /// Creates a new builder-style object to manufacture [`SalesforceDestinationProperties`](crate::model::SalesforceDestinationProperties).
+    pub fn builder() -> crate::model::salesforce_destination_properties::Builder {
+        crate::model::salesforce_destination_properties::Builder::default()
+    }
+}
+
 /// See [`SalesforceDestinationProperties`](crate::model::SalesforceDestinationProperties).
 pub mod salesforce_destination_properties {
 
@@ -6904,12 +6932,6 @@ pub mod salesforce_destination_properties {
         }
     }
 }
-impl SalesforceDestinationProperties {
-    /// Creates a new builder-style object to manufacture [`SalesforceDestinationProperties`](crate::model::SalesforceDestinationProperties).
-    pub fn builder() -> crate::model::salesforce_destination_properties::Builder {
-        crate::model::salesforce_destination_properties::Builder::default()
-    }
-}
 
 /// When writing a match expression against `SalesforceDataTransferApi`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -7038,6 +7060,13 @@ impl S3DestinationProperties {
         self.s3_output_format_config.as_ref()
     }
 }
+impl S3DestinationProperties {
+    /// Creates a new builder-style object to manufacture [`S3DestinationProperties`](crate::model::S3DestinationProperties).
+    pub fn builder() -> crate::model::s3_destination_properties::Builder {
+        crate::model::s3_destination_properties::Builder::default()
+    }
+}
+
 /// See [`S3DestinationProperties`](crate::model::S3DestinationProperties).
 pub mod s3_destination_properties {
 
@@ -7099,12 +7128,6 @@ pub mod s3_destination_properties {
         }
     }
 }
-impl S3DestinationProperties {
-    /// Creates a new builder-style object to manufacture [`S3DestinationProperties`](crate::model::S3DestinationProperties).
-    pub fn builder() -> crate::model::s3_destination_properties::Builder {
-        crate::model::s3_destination_properties::Builder::default()
-    }
-}
 
 /// <p> The configuration that determines how Amazon AppFlow should format the flow output data when Amazon S3 is used as the destination. </p>
 #[non_exhaustive]
@@ -7149,6 +7172,13 @@ impl S3OutputFormatConfig {
         self.preserve_source_data_typing
     }
 }
+impl S3OutputFormatConfig {
+    /// Creates a new builder-style object to manufacture [`S3OutputFormatConfig`](crate::model::S3OutputFormatConfig).
+    pub fn builder() -> crate::model::s3_output_format_config::Builder {
+        crate::model::s3_output_format_config::Builder::default()
+    }
+}
+
 /// See [`S3OutputFormatConfig`](crate::model::S3OutputFormatConfig).
 pub mod s3_output_format_config {
 
@@ -7227,12 +7257,6 @@ pub mod s3_output_format_config {
         }
     }
 }
-impl S3OutputFormatConfig {
-    /// Creates a new builder-style object to manufacture [`S3OutputFormatConfig`](crate::model::S3OutputFormatConfig).
-    pub fn builder() -> crate::model::s3_output_format_config::Builder {
-        crate::model::s3_output_format_config::Builder::default()
-    }
-}
 
 /// <p> The properties that are applied when Amazon Redshift is being used as a destination. </p>
 #[non_exhaustive]
@@ -7269,6 +7293,13 @@ impl RedshiftDestinationProperties {
         self.error_handling_config.as_ref()
     }
 }
+impl RedshiftDestinationProperties {
+    /// Creates a new builder-style object to manufacture [`RedshiftDestinationProperties`](crate::model::RedshiftDestinationProperties).
+    pub fn builder() -> crate::model::redshift_destination_properties::Builder {
+        crate::model::redshift_destination_properties::Builder::default()
+    }
+}
+
 /// See [`RedshiftDestinationProperties`](crate::model::RedshiftDestinationProperties).
 pub mod redshift_destination_properties {
 
@@ -7340,12 +7371,6 @@ pub mod redshift_destination_properties {
                 error_handling_config: self.error_handling_config,
             }
         }
-    }
-}
-impl RedshiftDestinationProperties {
-    /// Creates a new builder-style object to manufacture [`RedshiftDestinationProperties`](crate::model::RedshiftDestinationProperties).
-    pub fn builder() -> crate::model::redshift_destination_properties::Builder {
-        crate::model::redshift_destination_properties::Builder::default()
     }
 }
 
@@ -7620,6 +7645,13 @@ impl SourceFlowConfig {
         self.incremental_pull_config.as_ref()
     }
 }
+impl SourceFlowConfig {
+    /// Creates a new builder-style object to manufacture [`SourceFlowConfig`](crate::model::SourceFlowConfig).
+    pub fn builder() -> crate::model::source_flow_config::Builder {
+        crate::model::source_flow_config::Builder::default()
+    }
+}
+
 /// See [`SourceFlowConfig`](crate::model::SourceFlowConfig).
 pub mod source_flow_config {
 
@@ -7716,12 +7748,6 @@ pub mod source_flow_config {
         }
     }
 }
-impl SourceFlowConfig {
-    /// Creates a new builder-style object to manufacture [`SourceFlowConfig`](crate::model::SourceFlowConfig).
-    pub fn builder() -> crate::model::source_flow_config::Builder {
-        crate::model::source_flow_config::Builder::default()
-    }
-}
 
 /// <p> Specifies the configuration used when importing incremental records from the source. </p>
 #[non_exhaustive]
@@ -7737,6 +7763,13 @@ impl IncrementalPullConfig {
         self.datetime_type_field_name.as_deref()
     }
 }
+impl IncrementalPullConfig {
+    /// Creates a new builder-style object to manufacture [`IncrementalPullConfig`](crate::model::IncrementalPullConfig).
+    pub fn builder() -> crate::model::incremental_pull_config::Builder {
+        crate::model::incremental_pull_config::Builder::default()
+    }
+}
+
 /// See [`IncrementalPullConfig`](crate::model::IncrementalPullConfig).
 pub mod incremental_pull_config {
 
@@ -7766,12 +7799,6 @@ pub mod incremental_pull_config {
                 datetime_type_field_name: self.datetime_type_field_name,
             }
         }
-    }
-}
-impl IncrementalPullConfig {
-    /// Creates a new builder-style object to manufacture [`IncrementalPullConfig`](crate::model::IncrementalPullConfig).
-    pub fn builder() -> crate::model::incremental_pull_config::Builder {
-        crate::model::incremental_pull_config::Builder::default()
     }
 }
 
@@ -7905,6 +7932,13 @@ impl SourceConnectorProperties {
         self.pardot.as_ref()
     }
 }
+impl SourceConnectorProperties {
+    /// Creates a new builder-style object to manufacture [`SourceConnectorProperties`](crate::model::SourceConnectorProperties).
+    pub fn builder() -> crate::model::source_connector_properties::Builder {
+        crate::model::source_connector_properties::Builder::default()
+    }
+}
+
 /// See [`SourceConnectorProperties`](crate::model::SourceConnectorProperties).
 pub mod source_connector_properties {
 
@@ -8184,12 +8218,6 @@ pub mod source_connector_properties {
         }
     }
 }
-impl SourceConnectorProperties {
-    /// Creates a new builder-style object to manufacture [`SourceConnectorProperties`](crate::model::SourceConnectorProperties).
-    pub fn builder() -> crate::model::source_connector_properties::Builder {
-        crate::model::source_connector_properties::Builder::default()
-    }
-}
 
 /// <p>The properties that are applied when Salesforce Pardot is being used as a source.</p>
 #[non_exhaustive]
@@ -8205,6 +8233,13 @@ impl PardotSourceProperties {
         self.object.as_deref()
     }
 }
+impl PardotSourceProperties {
+    /// Creates a new builder-style object to manufacture [`PardotSourceProperties`](crate::model::PardotSourceProperties).
+    pub fn builder() -> crate::model::pardot_source_properties::Builder {
+        crate::model::pardot_source_properties::Builder::default()
+    }
+}
+
 /// See [`PardotSourceProperties`](crate::model::PardotSourceProperties).
 pub mod pardot_source_properties {
 
@@ -8233,12 +8268,6 @@ pub mod pardot_source_properties {
         }
     }
 }
-impl PardotSourceProperties {
-    /// Creates a new builder-style object to manufacture [`PardotSourceProperties`](crate::model::PardotSourceProperties).
-    pub fn builder() -> crate::model::pardot_source_properties::Builder {
-        crate::model::pardot_source_properties::Builder::default()
-    }
-}
 
 /// <p>The properties that are applied when the custom connector is being used as a source.</p>
 #[non_exhaustive]
@@ -8265,6 +8294,13 @@ impl CustomConnectorSourceProperties {
         self.custom_properties.as_ref()
     }
 }
+impl CustomConnectorSourceProperties {
+    /// Creates a new builder-style object to manufacture [`CustomConnectorSourceProperties`](crate::model::CustomConnectorSourceProperties).
+    pub fn builder() -> crate::model::custom_connector_source_properties::Builder {
+        crate::model::custom_connector_source_properties::Builder::default()
+    }
+}
+
 /// See [`CustomConnectorSourceProperties`](crate::model::CustomConnectorSourceProperties).
 pub mod custom_connector_source_properties {
 
@@ -8322,12 +8358,6 @@ pub mod custom_connector_source_properties {
         }
     }
 }
-impl CustomConnectorSourceProperties {
-    /// Creates a new builder-style object to manufacture [`CustomConnectorSourceProperties`](crate::model::CustomConnectorSourceProperties).
-    pub fn builder() -> crate::model::custom_connector_source_properties::Builder {
-        crate::model::custom_connector_source_properties::Builder::default()
-    }
-}
 
 /// <p> The properties that are applied when using SAPOData as a flow source. </p>
 #[non_exhaustive]
@@ -8343,6 +8373,13 @@ impl SapoDataSourceProperties {
         self.object_path.as_deref()
     }
 }
+impl SapoDataSourceProperties {
+    /// Creates a new builder-style object to manufacture [`SapoDataSourceProperties`](crate::model::SapoDataSourceProperties).
+    pub fn builder() -> crate::model::sapo_data_source_properties::Builder {
+        crate::model::sapo_data_source_properties::Builder::default()
+    }
+}
+
 /// See [`SapoDataSourceProperties`](crate::model::SapoDataSourceProperties).
 pub mod sapo_data_source_properties {
 
@@ -8371,12 +8408,6 @@ pub mod sapo_data_source_properties {
         }
     }
 }
-impl SapoDataSourceProperties {
-    /// Creates a new builder-style object to manufacture [`SapoDataSourceProperties`](crate::model::SapoDataSourceProperties).
-    pub fn builder() -> crate::model::sapo_data_source_properties::Builder {
-        crate::model::sapo_data_source_properties::Builder::default()
-    }
-}
 
 /// <p> The properties that are applied when using Zendesk as a flow source. </p>
 #[non_exhaustive]
@@ -8392,6 +8423,13 @@ impl ZendeskSourceProperties {
         self.object.as_deref()
     }
 }
+impl ZendeskSourceProperties {
+    /// Creates a new builder-style object to manufacture [`ZendeskSourceProperties`](crate::model::ZendeskSourceProperties).
+    pub fn builder() -> crate::model::zendesk_source_properties::Builder {
+        crate::model::zendesk_source_properties::Builder::default()
+    }
+}
+
 /// See [`ZendeskSourceProperties`](crate::model::ZendeskSourceProperties).
 pub mod zendesk_source_properties {
 
@@ -8418,12 +8456,6 @@ pub mod zendesk_source_properties {
                 object: self.object,
             }
         }
-    }
-}
-impl ZendeskSourceProperties {
-    /// Creates a new builder-style object to manufacture [`ZendeskSourceProperties`](crate::model::ZendeskSourceProperties).
-    pub fn builder() -> crate::model::zendesk_source_properties::Builder {
-        crate::model::zendesk_source_properties::Builder::default()
     }
 }
 
@@ -8469,6 +8501,13 @@ impl VeevaSourceProperties {
         self.include_all_versions
     }
 }
+impl VeevaSourceProperties {
+    /// Creates a new builder-style object to manufacture [`VeevaSourceProperties`](crate::model::VeevaSourceProperties).
+    pub fn builder() -> crate::model::veeva_source_properties::Builder {
+        crate::model::veeva_source_properties::Builder::default()
+    }
+}
+
 /// See [`VeevaSourceProperties`](crate::model::VeevaSourceProperties).
 pub mod veeva_source_properties {
 
@@ -8548,12 +8587,6 @@ pub mod veeva_source_properties {
         }
     }
 }
-impl VeevaSourceProperties {
-    /// Creates a new builder-style object to manufacture [`VeevaSourceProperties`](crate::model::VeevaSourceProperties).
-    pub fn builder() -> crate::model::veeva_source_properties::Builder {
-        crate::model::veeva_source_properties::Builder::default()
-    }
-}
 
 /// <p> The properties that are applied when using Trend Micro as a flow source. </p>
 #[non_exhaustive]
@@ -8569,6 +8602,13 @@ impl TrendmicroSourceProperties {
         self.object.as_deref()
     }
 }
+impl TrendmicroSourceProperties {
+    /// Creates a new builder-style object to manufacture [`TrendmicroSourceProperties`](crate::model::TrendmicroSourceProperties).
+    pub fn builder() -> crate::model::trendmicro_source_properties::Builder {
+        crate::model::trendmicro_source_properties::Builder::default()
+    }
+}
+
 /// See [`TrendmicroSourceProperties`](crate::model::TrendmicroSourceProperties).
 pub mod trendmicro_source_properties {
 
@@ -8597,12 +8637,6 @@ pub mod trendmicro_source_properties {
         }
     }
 }
-impl TrendmicroSourceProperties {
-    /// Creates a new builder-style object to manufacture [`TrendmicroSourceProperties`](crate::model::TrendmicroSourceProperties).
-    pub fn builder() -> crate::model::trendmicro_source_properties::Builder {
-        crate::model::trendmicro_source_properties::Builder::default()
-    }
-}
 
 /// <p> The properties that are applied when Slack is being used as a source. </p>
 #[non_exhaustive]
@@ -8618,6 +8652,13 @@ impl SlackSourceProperties {
         self.object.as_deref()
     }
 }
+impl SlackSourceProperties {
+    /// Creates a new builder-style object to manufacture [`SlackSourceProperties`](crate::model::SlackSourceProperties).
+    pub fn builder() -> crate::model::slack_source_properties::Builder {
+        crate::model::slack_source_properties::Builder::default()
+    }
+}
+
 /// See [`SlackSourceProperties`](crate::model::SlackSourceProperties).
 pub mod slack_source_properties {
 
@@ -8646,12 +8687,6 @@ pub mod slack_source_properties {
         }
     }
 }
-impl SlackSourceProperties {
-    /// Creates a new builder-style object to manufacture [`SlackSourceProperties`](crate::model::SlackSourceProperties).
-    pub fn builder() -> crate::model::slack_source_properties::Builder {
-        crate::model::slack_source_properties::Builder::default()
-    }
-}
 
 /// <p> The properties that are applied when Singular is being used as a source. </p>
 #[non_exhaustive]
@@ -8667,6 +8702,13 @@ impl SingularSourceProperties {
         self.object.as_deref()
     }
 }
+impl SingularSourceProperties {
+    /// Creates a new builder-style object to manufacture [`SingularSourceProperties`](crate::model::SingularSourceProperties).
+    pub fn builder() -> crate::model::singular_source_properties::Builder {
+        crate::model::singular_source_properties::Builder::default()
+    }
+}
+
 /// See [`SingularSourceProperties`](crate::model::SingularSourceProperties).
 pub mod singular_source_properties {
 
@@ -8695,12 +8737,6 @@ pub mod singular_source_properties {
         }
     }
 }
-impl SingularSourceProperties {
-    /// Creates a new builder-style object to manufacture [`SingularSourceProperties`](crate::model::SingularSourceProperties).
-    pub fn builder() -> crate::model::singular_source_properties::Builder {
-        crate::model::singular_source_properties::Builder::default()
-    }
-}
 
 /// <p> The properties that are applied when ServiceNow is being used as a source. </p>
 #[non_exhaustive]
@@ -8716,6 +8752,13 @@ impl ServiceNowSourceProperties {
         self.object.as_deref()
     }
 }
+impl ServiceNowSourceProperties {
+    /// Creates a new builder-style object to manufacture [`ServiceNowSourceProperties`](crate::model::ServiceNowSourceProperties).
+    pub fn builder() -> crate::model::service_now_source_properties::Builder {
+        crate::model::service_now_source_properties::Builder::default()
+    }
+}
+
 /// See [`ServiceNowSourceProperties`](crate::model::ServiceNowSourceProperties).
 pub mod service_now_source_properties {
 
@@ -8742,12 +8785,6 @@ pub mod service_now_source_properties {
                 object: self.object,
             }
         }
-    }
-}
-impl ServiceNowSourceProperties {
-    /// Creates a new builder-style object to manufacture [`ServiceNowSourceProperties`](crate::model::ServiceNowSourceProperties).
-    pub fn builder() -> crate::model::service_now_source_properties::Builder {
-        crate::model::service_now_source_properties::Builder::default()
     }
 }
 
@@ -8834,6 +8871,13 @@ impl SalesforceSourceProperties {
         self.data_transfer_api.as_ref()
     }
 }
+impl SalesforceSourceProperties {
+    /// Creates a new builder-style object to manufacture [`SalesforceSourceProperties`](crate::model::SalesforceSourceProperties).
+    pub fn builder() -> crate::model::salesforce_source_properties::Builder {
+        crate::model::salesforce_source_properties::Builder::default()
+    }
+}
+
 /// See [`SalesforceSourceProperties`](crate::model::SalesforceSourceProperties).
 pub mod salesforce_source_properties {
 
@@ -8947,12 +8991,6 @@ pub mod salesforce_source_properties {
         }
     }
 }
-impl SalesforceSourceProperties {
-    /// Creates a new builder-style object to manufacture [`SalesforceSourceProperties`](crate::model::SalesforceSourceProperties).
-    pub fn builder() -> crate::model::salesforce_source_properties::Builder {
-        crate::model::salesforce_source_properties::Builder::default()
-    }
-}
 
 /// <p> The properties that are applied when Amazon S3 is being used as the flow source. </p>
 #[non_exhaustive]
@@ -8984,6 +9022,13 @@ impl S3SourceProperties {
         self.s3_input_format_config.as_ref()
     }
 }
+impl S3SourceProperties {
+    /// Creates a new builder-style object to manufacture [`S3SourceProperties`](crate::model::S3SourceProperties).
+    pub fn builder() -> crate::model::s3_source_properties::Builder {
+        crate::model::s3_source_properties::Builder::default()
+    }
+}
+
 /// See [`S3SourceProperties`](crate::model::S3SourceProperties).
 pub mod s3_source_properties {
 
@@ -9042,12 +9087,6 @@ pub mod s3_source_properties {
         }
     }
 }
-impl S3SourceProperties {
-    /// Creates a new builder-style object to manufacture [`S3SourceProperties`](crate::model::S3SourceProperties).
-    pub fn builder() -> crate::model::s3_source_properties::Builder {
-        crate::model::s3_source_properties::Builder::default()
-    }
-}
 
 /// <p> When you use Amazon S3 as the source, the configuration format that you provide the flow input data. </p>
 #[non_exhaustive]
@@ -9063,6 +9102,13 @@ impl S3InputFormatConfig {
         self.s3_input_file_type.as_ref()
     }
 }
+impl S3InputFormatConfig {
+    /// Creates a new builder-style object to manufacture [`S3InputFormatConfig`](crate::model::S3InputFormatConfig).
+    pub fn builder() -> crate::model::s3_input_format_config::Builder {
+        crate::model::s3_input_format_config::Builder::default()
+    }
+}
+
 /// See [`S3InputFormatConfig`](crate::model::S3InputFormatConfig).
 pub mod s3_input_format_config {
 
@@ -9092,12 +9138,6 @@ pub mod s3_input_format_config {
                 s3_input_file_type: self.s3_input_file_type,
             }
         }
-    }
-}
-impl S3InputFormatConfig {
-    /// Creates a new builder-style object to manufacture [`S3InputFormatConfig`](crate::model::S3InputFormatConfig).
-    pub fn builder() -> crate::model::s3_input_format_config::Builder {
-        crate::model::s3_input_format_config::Builder::default()
     }
 }
 
@@ -9205,6 +9245,13 @@ impl MarketoSourceProperties {
         self.object.as_deref()
     }
 }
+impl MarketoSourceProperties {
+    /// Creates a new builder-style object to manufacture [`MarketoSourceProperties`](crate::model::MarketoSourceProperties).
+    pub fn builder() -> crate::model::marketo_source_properties::Builder {
+        crate::model::marketo_source_properties::Builder::default()
+    }
+}
+
 /// See [`MarketoSourceProperties`](crate::model::MarketoSourceProperties).
 pub mod marketo_source_properties {
 
@@ -9233,12 +9280,6 @@ pub mod marketo_source_properties {
         }
     }
 }
-impl MarketoSourceProperties {
-    /// Creates a new builder-style object to manufacture [`MarketoSourceProperties`](crate::model::MarketoSourceProperties).
-    pub fn builder() -> crate::model::marketo_source_properties::Builder {
-        crate::model::marketo_source_properties::Builder::default()
-    }
-}
 
 /// <p> The properties that are applied when Infor Nexus is being used as a source. </p>
 #[non_exhaustive]
@@ -9254,6 +9295,13 @@ impl InforNexusSourceProperties {
         self.object.as_deref()
     }
 }
+impl InforNexusSourceProperties {
+    /// Creates a new builder-style object to manufacture [`InforNexusSourceProperties`](crate::model::InforNexusSourceProperties).
+    pub fn builder() -> crate::model::infor_nexus_source_properties::Builder {
+        crate::model::infor_nexus_source_properties::Builder::default()
+    }
+}
+
 /// See [`InforNexusSourceProperties`](crate::model::InforNexusSourceProperties).
 pub mod infor_nexus_source_properties {
 
@@ -9282,12 +9330,6 @@ pub mod infor_nexus_source_properties {
         }
     }
 }
-impl InforNexusSourceProperties {
-    /// Creates a new builder-style object to manufacture [`InforNexusSourceProperties`](crate::model::InforNexusSourceProperties).
-    pub fn builder() -> crate::model::infor_nexus_source_properties::Builder {
-        crate::model::infor_nexus_source_properties::Builder::default()
-    }
-}
 
 /// <p> The properties that are applied when Google Analytics is being used as a source. </p>
 #[non_exhaustive]
@@ -9303,6 +9345,13 @@ impl GoogleAnalyticsSourceProperties {
         self.object.as_deref()
     }
 }
+impl GoogleAnalyticsSourceProperties {
+    /// Creates a new builder-style object to manufacture [`GoogleAnalyticsSourceProperties`](crate::model::GoogleAnalyticsSourceProperties).
+    pub fn builder() -> crate::model::google_analytics_source_properties::Builder {
+        crate::model::google_analytics_source_properties::Builder::default()
+    }
+}
+
 /// See [`GoogleAnalyticsSourceProperties`](crate::model::GoogleAnalyticsSourceProperties).
 pub mod google_analytics_source_properties {
 
@@ -9331,12 +9380,6 @@ pub mod google_analytics_source_properties {
         }
     }
 }
-impl GoogleAnalyticsSourceProperties {
-    /// Creates a new builder-style object to manufacture [`GoogleAnalyticsSourceProperties`](crate::model::GoogleAnalyticsSourceProperties).
-    pub fn builder() -> crate::model::google_analytics_source_properties::Builder {
-        crate::model::google_analytics_source_properties::Builder::default()
-    }
-}
 
 /// <p> The properties that are applied when Dynatrace is being used as a source. </p>
 #[non_exhaustive]
@@ -9352,6 +9395,13 @@ impl DynatraceSourceProperties {
         self.object.as_deref()
     }
 }
+impl DynatraceSourceProperties {
+    /// Creates a new builder-style object to manufacture [`DynatraceSourceProperties`](crate::model::DynatraceSourceProperties).
+    pub fn builder() -> crate::model::dynatrace_source_properties::Builder {
+        crate::model::dynatrace_source_properties::Builder::default()
+    }
+}
+
 /// See [`DynatraceSourceProperties`](crate::model::DynatraceSourceProperties).
 pub mod dynatrace_source_properties {
 
@@ -9380,12 +9430,6 @@ pub mod dynatrace_source_properties {
         }
     }
 }
-impl DynatraceSourceProperties {
-    /// Creates a new builder-style object to manufacture [`DynatraceSourceProperties`](crate::model::DynatraceSourceProperties).
-    pub fn builder() -> crate::model::dynatrace_source_properties::Builder {
-        crate::model::dynatrace_source_properties::Builder::default()
-    }
-}
 
 /// <p> The properties that are applied when Datadog is being used as a source. </p>
 #[non_exhaustive]
@@ -9401,6 +9445,13 @@ impl DatadogSourceProperties {
         self.object.as_deref()
     }
 }
+impl DatadogSourceProperties {
+    /// Creates a new builder-style object to manufacture [`DatadogSourceProperties`](crate::model::DatadogSourceProperties).
+    pub fn builder() -> crate::model::datadog_source_properties::Builder {
+        crate::model::datadog_source_properties::Builder::default()
+    }
+}
+
 /// See [`DatadogSourceProperties`](crate::model::DatadogSourceProperties).
 pub mod datadog_source_properties {
 
@@ -9429,12 +9480,6 @@ pub mod datadog_source_properties {
         }
     }
 }
-impl DatadogSourceProperties {
-    /// Creates a new builder-style object to manufacture [`DatadogSourceProperties`](crate::model::DatadogSourceProperties).
-    pub fn builder() -> crate::model::datadog_source_properties::Builder {
-        crate::model::datadog_source_properties::Builder::default()
-    }
-}
 
 /// <p> The properties that are applied when Amplitude is being used as a source. </p>
 #[non_exhaustive]
@@ -9450,6 +9495,13 @@ impl AmplitudeSourceProperties {
         self.object.as_deref()
     }
 }
+impl AmplitudeSourceProperties {
+    /// Creates a new builder-style object to manufacture [`AmplitudeSourceProperties`](crate::model::AmplitudeSourceProperties).
+    pub fn builder() -> crate::model::amplitude_source_properties::Builder {
+        crate::model::amplitude_source_properties::Builder::default()
+    }
+}
+
 /// See [`AmplitudeSourceProperties`](crate::model::AmplitudeSourceProperties).
 pub mod amplitude_source_properties {
 
@@ -9478,12 +9530,6 @@ pub mod amplitude_source_properties {
         }
     }
 }
-impl AmplitudeSourceProperties {
-    /// Creates a new builder-style object to manufacture [`AmplitudeSourceProperties`](crate::model::AmplitudeSourceProperties).
-    pub fn builder() -> crate::model::amplitude_source_properties::Builder {
-        crate::model::amplitude_source_properties::Builder::default()
-    }
-}
 
 /// <p> The trigger settings that determine how and when Amazon AppFlow runs the specified flow. </p>
 #[non_exhaustive]
@@ -9506,6 +9552,13 @@ impl TriggerConfig {
         self.trigger_properties.as_ref()
     }
 }
+impl TriggerConfig {
+    /// Creates a new builder-style object to manufacture [`TriggerConfig`](crate::model::TriggerConfig).
+    pub fn builder() -> crate::model::trigger_config::Builder {
+        crate::model::trigger_config::Builder::default()
+    }
+}
+
 /// See [`TriggerConfig`](crate::model::TriggerConfig).
 pub mod trigger_config {
 
@@ -9552,12 +9605,6 @@ pub mod trigger_config {
         }
     }
 }
-impl TriggerConfig {
-    /// Creates a new builder-style object to manufacture [`TriggerConfig`](crate::model::TriggerConfig).
-    pub fn builder() -> crate::model::trigger_config::Builder {
-        crate::model::trigger_config::Builder::default()
-    }
-}
 
 /// <p> Specifies the configuration details that control the trigger for a flow. Currently, these settings only apply to the <code>Scheduled</code> trigger type. </p>
 #[non_exhaustive]
@@ -9573,6 +9620,13 @@ impl TriggerProperties {
         self.scheduled.as_ref()
     }
 }
+impl TriggerProperties {
+    /// Creates a new builder-style object to manufacture [`TriggerProperties`](crate::model::TriggerProperties).
+    pub fn builder() -> crate::model::trigger_properties::Builder {
+        crate::model::trigger_properties::Builder::default()
+    }
+}
+
 /// See [`TriggerProperties`](crate::model::TriggerProperties).
 pub mod trigger_properties {
 
@@ -9602,12 +9656,6 @@ pub mod trigger_properties {
                 scheduled: self.scheduled,
             }
         }
-    }
-}
-impl TriggerProperties {
-    /// Creates a new builder-style object to manufacture [`TriggerProperties`](crate::model::TriggerProperties).
-    pub fn builder() -> crate::model::trigger_properties::Builder {
-        crate::model::trigger_properties::Builder::default()
     }
 }
 
@@ -9676,6 +9724,13 @@ impl ScheduledTriggerProperties {
         self.flow_error_deactivation_threshold
     }
 }
+impl ScheduledTriggerProperties {
+    /// Creates a new builder-style object to manufacture [`ScheduledTriggerProperties`](crate::model::ScheduledTriggerProperties).
+    pub fn builder() -> crate::model::scheduled_trigger_properties::Builder {
+        crate::model::scheduled_trigger_properties::Builder::default()
+    }
+}
+
 /// See [`ScheduledTriggerProperties`](crate::model::ScheduledTriggerProperties).
 pub mod scheduled_trigger_properties {
 
@@ -9806,12 +9861,6 @@ pub mod scheduled_trigger_properties {
                 flow_error_deactivation_threshold: self.flow_error_deactivation_threshold,
             }
         }
-    }
-}
-impl ScheduledTriggerProperties {
-    /// Creates a new builder-style object to manufacture [`ScheduledTriggerProperties`](crate::model::ScheduledTriggerProperties).
-    pub fn builder() -> crate::model::scheduled_trigger_properties::Builder {
-        crate::model::scheduled_trigger_properties::Builder::default()
     }
 }
 
@@ -10014,6 +10063,13 @@ impl ConnectorProvisioningConfig {
         self.lambda.as_ref()
     }
 }
+impl ConnectorProvisioningConfig {
+    /// Creates a new builder-style object to manufacture [`ConnectorProvisioningConfig`](crate::model::ConnectorProvisioningConfig).
+    pub fn builder() -> crate::model::connector_provisioning_config::Builder {
+        crate::model::connector_provisioning_config::Builder::default()
+    }
+}
+
 /// See [`ConnectorProvisioningConfig`](crate::model::ConnectorProvisioningConfig).
 pub mod connector_provisioning_config {
 
@@ -10045,12 +10101,6 @@ pub mod connector_provisioning_config {
         }
     }
 }
-impl ConnectorProvisioningConfig {
-    /// Creates a new builder-style object to manufacture [`ConnectorProvisioningConfig`](crate::model::ConnectorProvisioningConfig).
-    pub fn builder() -> crate::model::connector_provisioning_config::Builder {
-        crate::model::connector_provisioning_config::Builder::default()
-    }
-}
 
 /// <p>Contains information about the configuration of the lambda which is being registered as the connector.</p>
 #[non_exhaustive]
@@ -10066,6 +10116,13 @@ impl LambdaConnectorProvisioningConfig {
         self.lambda_arn.as_deref()
     }
 }
+impl LambdaConnectorProvisioningConfig {
+    /// Creates a new builder-style object to manufacture [`LambdaConnectorProvisioningConfig`](crate::model::LambdaConnectorProvisioningConfig).
+    pub fn builder() -> crate::model::lambda_connector_provisioning_config::Builder {
+        crate::model::lambda_connector_provisioning_config::Builder::default()
+    }
+}
+
 /// See [`LambdaConnectorProvisioningConfig`](crate::model::LambdaConnectorProvisioningConfig).
 pub mod lambda_connector_provisioning_config {
 
@@ -10092,12 +10149,6 @@ pub mod lambda_connector_provisioning_config {
                 lambda_arn: self.lambda_arn,
             }
         }
-    }
-}
-impl LambdaConnectorProvisioningConfig {
-    /// Creates a new builder-style object to manufacture [`LambdaConnectorProvisioningConfig`](crate::model::LambdaConnectorProvisioningConfig).
-    pub fn builder() -> crate::model::lambda_connector_provisioning_config::Builder {
-        crate::model::lambda_connector_provisioning_config::Builder::default()
     }
 }
 
@@ -10127,6 +10178,13 @@ impl ConnectorProfileConfig {
         self.connector_profile_credentials.as_ref()
     }
 }
+impl ConnectorProfileConfig {
+    /// Creates a new builder-style object to manufacture [`ConnectorProfileConfig`](crate::model::ConnectorProfileConfig).
+    pub fn builder() -> crate::model::connector_profile_config::Builder {
+        crate::model::connector_profile_config::Builder::default()
+    }
+}
+
 /// See [`ConnectorProfileConfig`](crate::model::ConnectorProfileConfig).
 pub mod connector_profile_config {
 
@@ -10179,12 +10237,6 @@ pub mod connector_profile_config {
                 connector_profile_credentials: self.connector_profile_credentials,
             }
         }
-    }
-}
-impl ConnectorProfileConfig {
-    /// Creates a new builder-style object to manufacture [`ConnectorProfileConfig`](crate::model::ConnectorProfileConfig).
-    pub fn builder() -> crate::model::connector_profile_config::Builder {
-        crate::model::connector_profile_config::Builder::default()
     }
 }
 
@@ -10361,6 +10413,13 @@ impl ConnectorProfileCredentials {
         self.pardot.as_ref()
     }
 }
+impl ConnectorProfileCredentials {
+    /// Creates a new builder-style object to manufacture [`ConnectorProfileCredentials`](crate::model::ConnectorProfileCredentials).
+    pub fn builder() -> crate::model::connector_profile_credentials::Builder {
+        crate::model::connector_profile_credentials::Builder::default()
+    }
+}
+
 /// See [`ConnectorProfileCredentials`](crate::model::ConnectorProfileCredentials).
 pub mod connector_profile_credentials {
 
@@ -10712,12 +10771,6 @@ pub mod connector_profile_credentials {
         }
     }
 }
-impl ConnectorProfileCredentials {
-    /// Creates a new builder-style object to manufacture [`ConnectorProfileCredentials`](crate::model::ConnectorProfileCredentials).
-    pub fn builder() -> crate::model::connector_profile_credentials::Builder {
-        crate::model::connector_profile_credentials::Builder::default()
-    }
-}
 
 /// <p>The connector-specific profile credentials required when using Salesforce Pardot.</p>
 #[non_exhaustive]
@@ -10764,6 +10817,13 @@ impl std::fmt::Debug for PardotConnectorProfileCredentials {
         formatter.finish()
     }
 }
+impl PardotConnectorProfileCredentials {
+    /// Creates a new builder-style object to manufacture [`PardotConnectorProfileCredentials`](crate::model::PardotConnectorProfileCredentials).
+    pub fn builder() -> crate::model::pardot_connector_profile_credentials::Builder {
+        crate::model::pardot_connector_profile_credentials::Builder::default()
+    }
+}
+
 /// See [`PardotConnectorProfileCredentials`](crate::model::PardotConnectorProfileCredentials).
 pub mod pardot_connector_profile_credentials {
 
@@ -10847,12 +10907,6 @@ pub mod pardot_connector_profile_credentials {
         }
     }
 }
-impl PardotConnectorProfileCredentials {
-    /// Creates a new builder-style object to manufacture [`PardotConnectorProfileCredentials`](crate::model::PardotConnectorProfileCredentials).
-    pub fn builder() -> crate::model::pardot_connector_profile_credentials::Builder {
-        crate::model::pardot_connector_profile_credentials::Builder::default()
-    }
-}
 
 /// <p> Used by select connectors for which the OAuth workflow is supported, such as Salesforce, Google Analytics, Marketo, Zendesk, and Slack. </p>
 #[non_exhaustive]
@@ -10875,6 +10929,13 @@ impl ConnectorOAuthRequest {
         self.redirect_uri.as_deref()
     }
 }
+impl ConnectorOAuthRequest {
+    /// Creates a new builder-style object to manufacture [`ConnectorOAuthRequest`](crate::model::ConnectorOAuthRequest).
+    pub fn builder() -> crate::model::connector_o_auth_request::Builder {
+        crate::model::connector_o_auth_request::Builder::default()
+    }
+}
+
 /// See [`ConnectorOAuthRequest`](crate::model::ConnectorOAuthRequest).
 pub mod connector_o_auth_request {
 
@@ -10913,12 +10974,6 @@ pub mod connector_o_auth_request {
                 redirect_uri: self.redirect_uri,
             }
         }
-    }
-}
-impl ConnectorOAuthRequest {
-    /// Creates a new builder-style object to manufacture [`ConnectorOAuthRequest`](crate::model::ConnectorOAuthRequest).
-    pub fn builder() -> crate::model::connector_o_auth_request::Builder {
-        crate::model::connector_o_auth_request::Builder::default()
     }
 }
 
@@ -10964,6 +11019,13 @@ impl CustomConnectorProfileCredentials {
         self.custom.as_ref()
     }
 }
+impl CustomConnectorProfileCredentials {
+    /// Creates a new builder-style object to manufacture [`CustomConnectorProfileCredentials`](crate::model::CustomConnectorProfileCredentials).
+    pub fn builder() -> crate::model::custom_connector_profile_credentials::Builder {
+        crate::model::custom_connector_profile_credentials::Builder::default()
+    }
+}
+
 /// See [`CustomConnectorProfileCredentials`](crate::model::CustomConnectorProfileCredentials).
 pub mod custom_connector_profile_credentials {
 
@@ -11055,12 +11117,6 @@ pub mod custom_connector_profile_credentials {
         }
     }
 }
-impl CustomConnectorProfileCredentials {
-    /// Creates a new builder-style object to manufacture [`CustomConnectorProfileCredentials`](crate::model::CustomConnectorProfileCredentials).
-    pub fn builder() -> crate::model::custom_connector_profile_credentials::Builder {
-        crate::model::custom_connector_profile_credentials::Builder::default()
-    }
-}
 
 /// <p>The custom credentials required for custom authentication.</p>
 #[non_exhaustive]
@@ -11087,6 +11143,13 @@ impl CustomAuthCredentials {
         self.credentials_map.as_ref()
     }
 }
+impl CustomAuthCredentials {
+    /// Creates a new builder-style object to manufacture [`CustomAuthCredentials`](crate::model::CustomAuthCredentials).
+    pub fn builder() -> crate::model::custom_auth_credentials::Builder {
+        crate::model::custom_auth_credentials::Builder::default()
+    }
+}
+
 /// See [`CustomAuthCredentials`](crate::model::CustomAuthCredentials).
 pub mod custom_auth_credentials {
 
@@ -11147,12 +11210,6 @@ pub mod custom_auth_credentials {
         }
     }
 }
-impl CustomAuthCredentials {
-    /// Creates a new builder-style object to manufacture [`CustomAuthCredentials`](crate::model::CustomAuthCredentials).
-    pub fn builder() -> crate::model::custom_auth_credentials::Builder {
-        crate::model::custom_auth_credentials::Builder::default()
-    }
-}
 
 /// <p>The API key credentials required for API key authentication.</p>
 #[non_exhaustive]
@@ -11183,6 +11240,13 @@ impl std::fmt::Debug for ApiKeyCredentials {
         formatter.finish()
     }
 }
+impl ApiKeyCredentials {
+    /// Creates a new builder-style object to manufacture [`ApiKeyCredentials`](crate::model::ApiKeyCredentials).
+    pub fn builder() -> crate::model::api_key_credentials::Builder {
+        crate::model::api_key_credentials::Builder::default()
+    }
+}
+
 /// See [`ApiKeyCredentials`](crate::model::ApiKeyCredentials).
 pub mod api_key_credentials {
 
@@ -11232,12 +11296,6 @@ pub mod api_key_credentials {
             formatter.field("api_secret_key", &"*** Sensitive Data Redacted ***");
             formatter.finish()
         }
-    }
-}
-impl ApiKeyCredentials {
-    /// Creates a new builder-style object to manufacture [`ApiKeyCredentials`](crate::model::ApiKeyCredentials).
-    pub fn builder() -> crate::model::api_key_credentials::Builder {
-        crate::model::api_key_credentials::Builder::default()
     }
 }
 
@@ -11294,6 +11352,13 @@ impl std::fmt::Debug for OAuth2Credentials {
         formatter.finish()
     }
 }
+impl OAuth2Credentials {
+    /// Creates a new builder-style object to manufacture [`OAuth2Credentials`](crate::model::OAuth2Credentials).
+    pub fn builder() -> crate::model::o_auth2_credentials::Builder {
+        crate::model::o_auth2_credentials::Builder::default()
+    }
+}
+
 /// See [`OAuth2Credentials`](crate::model::OAuth2Credentials).
 pub mod o_auth2_credentials {
 
@@ -11390,12 +11455,6 @@ pub mod o_auth2_credentials {
         }
     }
 }
-impl OAuth2Credentials {
-    /// Creates a new builder-style object to manufacture [`OAuth2Credentials`](crate::model::OAuth2Credentials).
-    pub fn builder() -> crate::model::o_auth2_credentials::Builder {
-        crate::model::o_auth2_credentials::Builder::default()
-    }
-}
 
 /// <p> The basic auth credentials required for basic authentication. </p>
 #[non_exhaustive]
@@ -11426,6 +11485,13 @@ impl std::fmt::Debug for BasicAuthCredentials {
         formatter.finish()
     }
 }
+impl BasicAuthCredentials {
+    /// Creates a new builder-style object to manufacture [`BasicAuthCredentials`](crate::model::BasicAuthCredentials).
+    pub fn builder() -> crate::model::basic_auth_credentials::Builder {
+        crate::model::basic_auth_credentials::Builder::default()
+    }
+}
+
 /// See [`BasicAuthCredentials`](crate::model::BasicAuthCredentials).
 pub mod basic_auth_credentials {
 
@@ -11472,12 +11538,6 @@ pub mod basic_auth_credentials {
             formatter.field("password", &"*** Sensitive Data Redacted ***");
             formatter.finish()
         }
-    }
-}
-impl BasicAuthCredentials {
-    /// Creates a new builder-style object to manufacture [`BasicAuthCredentials`](crate::model::BasicAuthCredentials).
-    pub fn builder() -> crate::model::basic_auth_credentials::Builder {
-        crate::model::basic_auth_credentials::Builder::default()
     }
 }
 
@@ -11606,6 +11666,13 @@ impl SapoDataConnectorProfileCredentials {
         self.o_auth_credentials.as_ref()
     }
 }
+impl SapoDataConnectorProfileCredentials {
+    /// Creates a new builder-style object to manufacture [`SapoDataConnectorProfileCredentials`](crate::model::SapoDataConnectorProfileCredentials).
+    pub fn builder() -> crate::model::sapo_data_connector_profile_credentials::Builder {
+        crate::model::sapo_data_connector_profile_credentials::Builder::default()
+    }
+}
+
 /// See [`SapoDataConnectorProfileCredentials`](crate::model::SapoDataConnectorProfileCredentials).
 pub mod sapo_data_connector_profile_credentials {
 
@@ -11650,12 +11717,6 @@ pub mod sapo_data_connector_profile_credentials {
                 o_auth_credentials: self.o_auth_credentials,
             }
         }
-    }
-}
-impl SapoDataConnectorProfileCredentials {
-    /// Creates a new builder-style object to manufacture [`SapoDataConnectorProfileCredentials`](crate::model::SapoDataConnectorProfileCredentials).
-    pub fn builder() -> crate::model::sapo_data_connector_profile_credentials::Builder {
-        crate::model::sapo_data_connector_profile_credentials::Builder::default()
     }
 }
 
@@ -11712,6 +11773,13 @@ impl std::fmt::Debug for OAuthCredentials {
         formatter.finish()
     }
 }
+impl OAuthCredentials {
+    /// Creates a new builder-style object to manufacture [`OAuthCredentials`](crate::model::OAuthCredentials).
+    pub fn builder() -> crate::model::o_auth_credentials::Builder {
+        crate::model::o_auth_credentials::Builder::default()
+    }
+}
+
 /// See [`OAuthCredentials`](crate::model::OAuthCredentials).
 pub mod o_auth_credentials {
 
@@ -11808,12 +11876,6 @@ pub mod o_auth_credentials {
         }
     }
 }
-impl OAuthCredentials {
-    /// Creates a new builder-style object to manufacture [`OAuthCredentials`](crate::model::OAuthCredentials).
-    pub fn builder() -> crate::model::o_auth_credentials::Builder {
-        crate::model::o_auth_credentials::Builder::default()
-    }
-}
 
 /// <p> The connector-specific profile credentials required when using Zendesk. </p>
 #[non_exhaustive]
@@ -11860,6 +11922,13 @@ impl std::fmt::Debug for ZendeskConnectorProfileCredentials {
         formatter.finish()
     }
 }
+impl ZendeskConnectorProfileCredentials {
+    /// Creates a new builder-style object to manufacture [`ZendeskConnectorProfileCredentials`](crate::model::ZendeskConnectorProfileCredentials).
+    pub fn builder() -> crate::model::zendesk_connector_profile_credentials::Builder {
+        crate::model::zendesk_connector_profile_credentials::Builder::default()
+    }
+}
+
 /// See [`ZendeskConnectorProfileCredentials`](crate::model::ZendeskConnectorProfileCredentials).
 pub mod zendesk_connector_profile_credentials {
 
@@ -11940,12 +12009,6 @@ pub mod zendesk_connector_profile_credentials {
         }
     }
 }
-impl ZendeskConnectorProfileCredentials {
-    /// Creates a new builder-style object to manufacture [`ZendeskConnectorProfileCredentials`](crate::model::ZendeskConnectorProfileCredentials).
-    pub fn builder() -> crate::model::zendesk_connector_profile_credentials::Builder {
-        crate::model::zendesk_connector_profile_credentials::Builder::default()
-    }
-}
 
 /// <p> The connector-specific profile credentials required when using Veeva. </p>
 #[non_exhaustive]
@@ -11976,6 +12039,13 @@ impl std::fmt::Debug for VeevaConnectorProfileCredentials {
         formatter.finish()
     }
 }
+impl VeevaConnectorProfileCredentials {
+    /// Creates a new builder-style object to manufacture [`VeevaConnectorProfileCredentials`](crate::model::VeevaConnectorProfileCredentials).
+    pub fn builder() -> crate::model::veeva_connector_profile_credentials::Builder {
+        crate::model::veeva_connector_profile_credentials::Builder::default()
+    }
+}
+
 /// See [`VeevaConnectorProfileCredentials`](crate::model::VeevaConnectorProfileCredentials).
 pub mod veeva_connector_profile_credentials {
 
@@ -12024,12 +12094,6 @@ pub mod veeva_connector_profile_credentials {
         }
     }
 }
-impl VeevaConnectorProfileCredentials {
-    /// Creates a new builder-style object to manufacture [`VeevaConnectorProfileCredentials`](crate::model::VeevaConnectorProfileCredentials).
-    pub fn builder() -> crate::model::veeva_connector_profile_credentials::Builder {
-        crate::model::veeva_connector_profile_credentials::Builder::default()
-    }
-}
 
 /// <p> The connector-specific profile credentials required when using Trend Micro. </p>
 #[non_exhaustive]
@@ -12052,6 +12116,13 @@ impl std::fmt::Debug for TrendmicroConnectorProfileCredentials {
         formatter.finish()
     }
 }
+impl TrendmicroConnectorProfileCredentials {
+    /// Creates a new builder-style object to manufacture [`TrendmicroConnectorProfileCredentials`](crate::model::TrendmicroConnectorProfileCredentials).
+    pub fn builder() -> crate::model::trendmicro_connector_profile_credentials::Builder {
+        crate::model::trendmicro_connector_profile_credentials::Builder::default()
+    }
+}
+
 /// See [`TrendmicroConnectorProfileCredentials`](crate::model::TrendmicroConnectorProfileCredentials).
 pub mod trendmicro_connector_profile_credentials {
 
@@ -12090,12 +12161,6 @@ pub mod trendmicro_connector_profile_credentials {
         }
     }
 }
-impl TrendmicroConnectorProfileCredentials {
-    /// Creates a new builder-style object to manufacture [`TrendmicroConnectorProfileCredentials`](crate::model::TrendmicroConnectorProfileCredentials).
-    pub fn builder() -> crate::model::trendmicro_connector_profile_credentials::Builder {
-        crate::model::trendmicro_connector_profile_credentials::Builder::default()
-    }
-}
 
 /// <p> The connector-specific profile credentials required when using Snowflake. </p>
 #[non_exhaustive]
@@ -12126,6 +12191,13 @@ impl std::fmt::Debug for SnowflakeConnectorProfileCredentials {
         formatter.finish()
     }
 }
+impl SnowflakeConnectorProfileCredentials {
+    /// Creates a new builder-style object to manufacture [`SnowflakeConnectorProfileCredentials`](crate::model::SnowflakeConnectorProfileCredentials).
+    pub fn builder() -> crate::model::snowflake_connector_profile_credentials::Builder {
+        crate::model::snowflake_connector_profile_credentials::Builder::default()
+    }
+}
+
 /// See [`SnowflakeConnectorProfileCredentials`](crate::model::SnowflakeConnectorProfileCredentials).
 pub mod snowflake_connector_profile_credentials {
 
@@ -12174,12 +12246,6 @@ pub mod snowflake_connector_profile_credentials {
         }
     }
 }
-impl SnowflakeConnectorProfileCredentials {
-    /// Creates a new builder-style object to manufacture [`SnowflakeConnectorProfileCredentials`](crate::model::SnowflakeConnectorProfileCredentials).
-    pub fn builder() -> crate::model::snowflake_connector_profile_credentials::Builder {
-        crate::model::snowflake_connector_profile_credentials::Builder::default()
-    }
-}
 
 /// <p> The connector-specific profile credentials required when using Slack. </p>
 #[non_exhaustive]
@@ -12226,6 +12292,13 @@ impl std::fmt::Debug for SlackConnectorProfileCredentials {
         formatter.finish()
     }
 }
+impl SlackConnectorProfileCredentials {
+    /// Creates a new builder-style object to manufacture [`SlackConnectorProfileCredentials`](crate::model::SlackConnectorProfileCredentials).
+    pub fn builder() -> crate::model::slack_connector_profile_credentials::Builder {
+        crate::model::slack_connector_profile_credentials::Builder::default()
+    }
+}
+
 /// See [`SlackConnectorProfileCredentials`](crate::model::SlackConnectorProfileCredentials).
 pub mod slack_connector_profile_credentials {
 
@@ -12306,12 +12379,6 @@ pub mod slack_connector_profile_credentials {
         }
     }
 }
-impl SlackConnectorProfileCredentials {
-    /// Creates a new builder-style object to manufacture [`SlackConnectorProfileCredentials`](crate::model::SlackConnectorProfileCredentials).
-    pub fn builder() -> crate::model::slack_connector_profile_credentials::Builder {
-        crate::model::slack_connector_profile_credentials::Builder::default()
-    }
-}
 
 /// <p> The connector-specific profile credentials required when using Singular. </p>
 #[non_exhaustive]
@@ -12334,6 +12401,13 @@ impl std::fmt::Debug for SingularConnectorProfileCredentials {
         formatter.finish()
     }
 }
+impl SingularConnectorProfileCredentials {
+    /// Creates a new builder-style object to manufacture [`SingularConnectorProfileCredentials`](crate::model::SingularConnectorProfileCredentials).
+    pub fn builder() -> crate::model::singular_connector_profile_credentials::Builder {
+        crate::model::singular_connector_profile_credentials::Builder::default()
+    }
+}
+
 /// See [`SingularConnectorProfileCredentials`](crate::model::SingularConnectorProfileCredentials).
 pub mod singular_connector_profile_credentials {
 
@@ -12369,12 +12443,6 @@ pub mod singular_connector_profile_credentials {
         }
     }
 }
-impl SingularConnectorProfileCredentials {
-    /// Creates a new builder-style object to manufacture [`SingularConnectorProfileCredentials`](crate::model::SingularConnectorProfileCredentials).
-    pub fn builder() -> crate::model::singular_connector_profile_credentials::Builder {
-        crate::model::singular_connector_profile_credentials::Builder::default()
-    }
-}
 
 /// <p> The connector-specific profile credentials required when using ServiceNow. </p>
 #[non_exhaustive]
@@ -12405,6 +12473,13 @@ impl std::fmt::Debug for ServiceNowConnectorProfileCredentials {
         formatter.finish()
     }
 }
+impl ServiceNowConnectorProfileCredentials {
+    /// Creates a new builder-style object to manufacture [`ServiceNowConnectorProfileCredentials`](crate::model::ServiceNowConnectorProfileCredentials).
+    pub fn builder() -> crate::model::service_now_connector_profile_credentials::Builder {
+        crate::model::service_now_connector_profile_credentials::Builder::default()
+    }
+}
+
 /// See [`ServiceNowConnectorProfileCredentials`](crate::model::ServiceNowConnectorProfileCredentials).
 pub mod service_now_connector_profile_credentials {
 
@@ -12453,12 +12528,6 @@ pub mod service_now_connector_profile_credentials {
         }
     }
 }
-impl ServiceNowConnectorProfileCredentials {
-    /// Creates a new builder-style object to manufacture [`ServiceNowConnectorProfileCredentials`](crate::model::ServiceNowConnectorProfileCredentials).
-    pub fn builder() -> crate::model::service_now_connector_profile_credentials::Builder {
-        crate::model::service_now_connector_profile_credentials::Builder::default()
-    }
-}
 
 /// <p> The connector-specific profile credentials required when using Salesforce. </p>
 #[non_exhaustive]
@@ -12505,6 +12574,13 @@ impl std::fmt::Debug for SalesforceConnectorProfileCredentials {
         formatter.finish()
     }
 }
+impl SalesforceConnectorProfileCredentials {
+    /// Creates a new builder-style object to manufacture [`SalesforceConnectorProfileCredentials`](crate::model::SalesforceConnectorProfileCredentials).
+    pub fn builder() -> crate::model::salesforce_connector_profile_credentials::Builder {
+        crate::model::salesforce_connector_profile_credentials::Builder::default()
+    }
+}
+
 /// See [`SalesforceConnectorProfileCredentials`](crate::model::SalesforceConnectorProfileCredentials).
 pub mod salesforce_connector_profile_credentials {
 
@@ -12588,12 +12664,6 @@ pub mod salesforce_connector_profile_credentials {
         }
     }
 }
-impl SalesforceConnectorProfileCredentials {
-    /// Creates a new builder-style object to manufacture [`SalesforceConnectorProfileCredentials`](crate::model::SalesforceConnectorProfileCredentials).
-    pub fn builder() -> crate::model::salesforce_connector_profile_credentials::Builder {
-        crate::model::salesforce_connector_profile_credentials::Builder::default()
-    }
-}
 
 /// <p> The connector-specific profile credentials required when using Amazon Redshift. </p>
 #[non_exhaustive]
@@ -12624,6 +12694,13 @@ impl std::fmt::Debug for RedshiftConnectorProfileCredentials {
         formatter.finish()
     }
 }
+impl RedshiftConnectorProfileCredentials {
+    /// Creates a new builder-style object to manufacture [`RedshiftConnectorProfileCredentials`](crate::model::RedshiftConnectorProfileCredentials).
+    pub fn builder() -> crate::model::redshift_connector_profile_credentials::Builder {
+        crate::model::redshift_connector_profile_credentials::Builder::default()
+    }
+}
+
 /// See [`RedshiftConnectorProfileCredentials`](crate::model::RedshiftConnectorProfileCredentials).
 pub mod redshift_connector_profile_credentials {
 
@@ -12672,12 +12749,6 @@ pub mod redshift_connector_profile_credentials {
         }
     }
 }
-impl RedshiftConnectorProfileCredentials {
-    /// Creates a new builder-style object to manufacture [`RedshiftConnectorProfileCredentials`](crate::model::RedshiftConnectorProfileCredentials).
-    pub fn builder() -> crate::model::redshift_connector_profile_credentials::Builder {
-        crate::model::redshift_connector_profile_credentials::Builder::default()
-    }
-}
 
 /// <p> The connector-specific profile credentials required by Marketo. </p>
 #[non_exhaustive]
@@ -12724,6 +12795,13 @@ impl std::fmt::Debug for MarketoConnectorProfileCredentials {
         formatter.finish()
     }
 }
+impl MarketoConnectorProfileCredentials {
+    /// Creates a new builder-style object to manufacture [`MarketoConnectorProfileCredentials`](crate::model::MarketoConnectorProfileCredentials).
+    pub fn builder() -> crate::model::marketo_connector_profile_credentials::Builder {
+        crate::model::marketo_connector_profile_credentials::Builder::default()
+    }
+}
+
 /// See [`MarketoConnectorProfileCredentials`](crate::model::MarketoConnectorProfileCredentials).
 pub mod marketo_connector_profile_credentials {
 
@@ -12804,12 +12882,6 @@ pub mod marketo_connector_profile_credentials {
         }
     }
 }
-impl MarketoConnectorProfileCredentials {
-    /// Creates a new builder-style object to manufacture [`MarketoConnectorProfileCredentials`](crate::model::MarketoConnectorProfileCredentials).
-    pub fn builder() -> crate::model::marketo_connector_profile_credentials::Builder {
-        crate::model::marketo_connector_profile_credentials::Builder::default()
-    }
-}
 
 /// <p> The connector-specific profile credentials required by Infor Nexus. </p>
 #[non_exhaustive]
@@ -12856,6 +12928,13 @@ impl std::fmt::Debug for InforNexusConnectorProfileCredentials {
         formatter.finish()
     }
 }
+impl InforNexusConnectorProfileCredentials {
+    /// Creates a new builder-style object to manufacture [`InforNexusConnectorProfileCredentials`](crate::model::InforNexusConnectorProfileCredentials).
+    pub fn builder() -> crate::model::infor_nexus_connector_profile_credentials::Builder {
+        crate::model::infor_nexus_connector_profile_credentials::Builder::default()
+    }
+}
+
 /// See [`InforNexusConnectorProfileCredentials`](crate::model::InforNexusConnectorProfileCredentials).
 pub mod infor_nexus_connector_profile_credentials {
 
@@ -12936,12 +13015,6 @@ pub mod infor_nexus_connector_profile_credentials {
         }
     }
 }
-impl InforNexusConnectorProfileCredentials {
-    /// Creates a new builder-style object to manufacture [`InforNexusConnectorProfileCredentials`](crate::model::InforNexusConnectorProfileCredentials).
-    pub fn builder() -> crate::model::infor_nexus_connector_profile_credentials::Builder {
-        crate::model::infor_nexus_connector_profile_credentials::Builder::default()
-    }
-}
 
 /// <p> The connector-specific credentials required when using Amazon Honeycode. </p>
 #[non_exhaustive]
@@ -12980,6 +13053,13 @@ impl std::fmt::Debug for HoneycodeConnectorProfileCredentials {
         formatter.finish()
     }
 }
+impl HoneycodeConnectorProfileCredentials {
+    /// Creates a new builder-style object to manufacture [`HoneycodeConnectorProfileCredentials`](crate::model::HoneycodeConnectorProfileCredentials).
+    pub fn builder() -> crate::model::honeycode_connector_profile_credentials::Builder {
+        crate::model::honeycode_connector_profile_credentials::Builder::default()
+    }
+}
+
 /// See [`HoneycodeConnectorProfileCredentials`](crate::model::HoneycodeConnectorProfileCredentials).
 pub mod honeycode_connector_profile_credentials {
 
@@ -13047,12 +13127,6 @@ pub mod honeycode_connector_profile_credentials {
         }
     }
 }
-impl HoneycodeConnectorProfileCredentials {
-    /// Creates a new builder-style object to manufacture [`HoneycodeConnectorProfileCredentials`](crate::model::HoneycodeConnectorProfileCredentials).
-    pub fn builder() -> crate::model::honeycode_connector_profile_credentials::Builder {
-        crate::model::honeycode_connector_profile_credentials::Builder::default()
-    }
-}
 
 /// <p> The connector-specific profile credentials required by Google Analytics. </p>
 #[non_exhaustive]
@@ -13107,6 +13181,13 @@ impl std::fmt::Debug for GoogleAnalyticsConnectorProfileCredentials {
         formatter.finish()
     }
 }
+impl GoogleAnalyticsConnectorProfileCredentials {
+    /// Creates a new builder-style object to manufacture [`GoogleAnalyticsConnectorProfileCredentials`](crate::model::GoogleAnalyticsConnectorProfileCredentials).
+    pub fn builder() -> crate::model::google_analytics_connector_profile_credentials::Builder {
+        crate::model::google_analytics_connector_profile_credentials::Builder::default()
+    }
+}
+
 /// See [`GoogleAnalyticsConnectorProfileCredentials`](crate::model::GoogleAnalyticsConnectorProfileCredentials).
 pub mod google_analytics_connector_profile_credentials {
 
@@ -13203,12 +13284,6 @@ pub mod google_analytics_connector_profile_credentials {
         }
     }
 }
-impl GoogleAnalyticsConnectorProfileCredentials {
-    /// Creates a new builder-style object to manufacture [`GoogleAnalyticsConnectorProfileCredentials`](crate::model::GoogleAnalyticsConnectorProfileCredentials).
-    pub fn builder() -> crate::model::google_analytics_connector_profile_credentials::Builder {
-        crate::model::google_analytics_connector_profile_credentials::Builder::default()
-    }
-}
 
 /// <p> The connector-specific profile credentials required by Dynatrace. </p>
 #[non_exhaustive]
@@ -13224,6 +13299,13 @@ impl DynatraceConnectorProfileCredentials {
         self.api_token.as_deref()
     }
 }
+impl DynatraceConnectorProfileCredentials {
+    /// Creates a new builder-style object to manufacture [`DynatraceConnectorProfileCredentials`](crate::model::DynatraceConnectorProfileCredentials).
+    pub fn builder() -> crate::model::dynatrace_connector_profile_credentials::Builder {
+        crate::model::dynatrace_connector_profile_credentials::Builder::default()
+    }
+}
+
 /// See [`DynatraceConnectorProfileCredentials`](crate::model::DynatraceConnectorProfileCredentials).
 pub mod dynatrace_connector_profile_credentials {
 
@@ -13250,12 +13332,6 @@ pub mod dynatrace_connector_profile_credentials {
                 api_token: self.api_token,
             }
         }
-    }
-}
-impl DynatraceConnectorProfileCredentials {
-    /// Creates a new builder-style object to manufacture [`DynatraceConnectorProfileCredentials`](crate::model::DynatraceConnectorProfileCredentials).
-    pub fn builder() -> crate::model::dynatrace_connector_profile_credentials::Builder {
-        crate::model::dynatrace_connector_profile_credentials::Builder::default()
     }
 }
 
@@ -13288,6 +13364,13 @@ impl std::fmt::Debug for DatadogConnectorProfileCredentials {
         formatter.finish()
     }
 }
+impl DatadogConnectorProfileCredentials {
+    /// Creates a new builder-style object to manufacture [`DatadogConnectorProfileCredentials`](crate::model::DatadogConnectorProfileCredentials).
+    pub fn builder() -> crate::model::datadog_connector_profile_credentials::Builder {
+        crate::model::datadog_connector_profile_credentials::Builder::default()
+    }
+}
+
 /// See [`DatadogConnectorProfileCredentials`](crate::model::DatadogConnectorProfileCredentials).
 pub mod datadog_connector_profile_credentials {
 
@@ -13339,12 +13422,6 @@ pub mod datadog_connector_profile_credentials {
         }
     }
 }
-impl DatadogConnectorProfileCredentials {
-    /// Creates a new builder-style object to manufacture [`DatadogConnectorProfileCredentials`](crate::model::DatadogConnectorProfileCredentials).
-    pub fn builder() -> crate::model::datadog_connector_profile_credentials::Builder {
-        crate::model::datadog_connector_profile_credentials::Builder::default()
-    }
-}
 
 /// <p> The connector-specific credentials required when using Amplitude. </p>
 #[non_exhaustive]
@@ -13375,6 +13452,13 @@ impl std::fmt::Debug for AmplitudeConnectorProfileCredentials {
         formatter.finish()
     }
 }
+impl AmplitudeConnectorProfileCredentials {
+    /// Creates a new builder-style object to manufacture [`AmplitudeConnectorProfileCredentials`](crate::model::AmplitudeConnectorProfileCredentials).
+    pub fn builder() -> crate::model::amplitude_connector_profile_credentials::Builder {
+        crate::model::amplitude_connector_profile_credentials::Builder::default()
+    }
+}
+
 /// See [`AmplitudeConnectorProfileCredentials`](crate::model::AmplitudeConnectorProfileCredentials).
 pub mod amplitude_connector_profile_credentials {
 
@@ -13421,12 +13505,6 @@ pub mod amplitude_connector_profile_credentials {
             formatter.field("secret_key", &"*** Sensitive Data Redacted ***");
             formatter.finish()
         }
-    }
-}
-impl AmplitudeConnectorProfileCredentials {
-    /// Creates a new builder-style object to manufacture [`AmplitudeConnectorProfileCredentials`](crate::model::AmplitudeConnectorProfileCredentials).
-    pub fn builder() -> crate::model::amplitude_connector_profile_credentials::Builder {
-        crate::model::amplitude_connector_profile_credentials::Builder::default()
     }
 }
 
@@ -13597,6 +13675,13 @@ impl ConnectorProfileProperties {
         self.pardot.as_ref()
     }
 }
+impl ConnectorProfileProperties {
+    /// Creates a new builder-style object to manufacture [`ConnectorProfileProperties`](crate::model::ConnectorProfileProperties).
+    pub fn builder() -> crate::model::connector_profile_properties::Builder {
+        crate::model::connector_profile_properties::Builder::default()
+    }
+}
+
 /// See [`ConnectorProfileProperties`](crate::model::ConnectorProfileProperties).
 pub mod connector_profile_properties {
 
@@ -13941,12 +14026,6 @@ pub mod connector_profile_properties {
         }
     }
 }
-impl ConnectorProfileProperties {
-    /// Creates a new builder-style object to manufacture [`ConnectorProfileProperties`](crate::model::ConnectorProfileProperties).
-    pub fn builder() -> crate::model::connector_profile_properties::Builder {
-        crate::model::connector_profile_properties::Builder::default()
-    }
-}
 
 /// <p>The connector-specific profile properties required when using Salesforce Pardot.</p>
 #[non_exhaustive]
@@ -13976,6 +14055,13 @@ impl PardotConnectorProfileProperties {
         self.business_unit_id.as_deref()
     }
 }
+impl PardotConnectorProfileProperties {
+    /// Creates a new builder-style object to manufacture [`PardotConnectorProfileProperties`](crate::model::PardotConnectorProfileProperties).
+    pub fn builder() -> crate::model::pardot_connector_profile_properties::Builder {
+        crate::model::pardot_connector_profile_properties::Builder::default()
+    }
+}
+
 /// See [`PardotConnectorProfileProperties`](crate::model::PardotConnectorProfileProperties).
 pub mod pardot_connector_profile_properties {
 
@@ -14031,12 +14117,6 @@ pub mod pardot_connector_profile_properties {
         }
     }
 }
-impl PardotConnectorProfileProperties {
-    /// Creates a new builder-style object to manufacture [`PardotConnectorProfileProperties`](crate::model::PardotConnectorProfileProperties).
-    pub fn builder() -> crate::model::pardot_connector_profile_properties::Builder {
-        crate::model::pardot_connector_profile_properties::Builder::default()
-    }
-}
 
 /// <p>The profile properties required by the custom connector.</p>
 #[non_exhaustive]
@@ -14063,6 +14143,13 @@ impl CustomConnectorProfileProperties {
         self.o_auth2_properties.as_ref()
     }
 }
+impl CustomConnectorProfileProperties {
+    /// Creates a new builder-style object to manufacture [`CustomConnectorProfileProperties`](crate::model::CustomConnectorProfileProperties).
+    pub fn builder() -> crate::model::custom_connector_profile_properties::Builder {
+        crate::model::custom_connector_profile_properties::Builder::default()
+    }
+}
+
 /// See [`CustomConnectorProfileProperties`](crate::model::CustomConnectorProfileProperties).
 pub mod custom_connector_profile_properties {
 
@@ -14123,12 +14210,6 @@ pub mod custom_connector_profile_properties {
         }
     }
 }
-impl CustomConnectorProfileProperties {
-    /// Creates a new builder-style object to manufacture [`CustomConnectorProfileProperties`](crate::model::CustomConnectorProfileProperties).
-    pub fn builder() -> crate::model::custom_connector_profile_properties::Builder {
-        crate::model::custom_connector_profile_properties::Builder::default()
-    }
-}
 
 /// <p>The OAuth 2.0 properties required for OAuth 2.0 authentication.</p>
 #[non_exhaustive]
@@ -14162,6 +14243,13 @@ impl OAuth2Properties {
         self.token_url_custom_properties.as_ref()
     }
 }
+impl OAuth2Properties {
+    /// Creates a new builder-style object to manufacture [`OAuth2Properties`](crate::model::OAuth2Properties).
+    pub fn builder() -> crate::model::o_auth2_properties::Builder {
+        crate::model::o_auth2_properties::Builder::default()
+    }
+}
+
 /// See [`OAuth2Properties`](crate::model::OAuth2Properties).
 pub mod o_auth2_properties {
 
@@ -14232,12 +14320,6 @@ pub mod o_auth2_properties {
                 token_url_custom_properties: self.token_url_custom_properties,
             }
         }
-    }
-}
-impl OAuth2Properties {
-    /// Creates a new builder-style object to manufacture [`OAuth2Properties`](crate::model::OAuth2Properties).
-    pub fn builder() -> crate::model::o_auth2_properties::Builder {
-        crate::model::o_auth2_properties::Builder::default()
     }
 }
 
@@ -14387,6 +14469,13 @@ impl SapoDataConnectorProfileProperties {
         self.o_auth_properties.as_ref()
     }
 }
+impl SapoDataConnectorProfileProperties {
+    /// Creates a new builder-style object to manufacture [`SapoDataConnectorProfileProperties`](crate::model::SapoDataConnectorProfileProperties).
+    pub fn builder() -> crate::model::sapo_data_connector_profile_properties::Builder {
+        crate::model::sapo_data_connector_profile_properties::Builder::default()
+    }
+}
+
 /// See [`SapoDataConnectorProfileProperties`](crate::model::SapoDataConnectorProfileProperties).
 pub mod sapo_data_connector_profile_properties {
 
@@ -14505,12 +14594,6 @@ pub mod sapo_data_connector_profile_properties {
         }
     }
 }
-impl SapoDataConnectorProfileProperties {
-    /// Creates a new builder-style object to manufacture [`SapoDataConnectorProfileProperties`](crate::model::SapoDataConnectorProfileProperties).
-    pub fn builder() -> crate::model::sapo_data_connector_profile_properties::Builder {
-        crate::model::sapo_data_connector_profile_properties::Builder::default()
-    }
-}
 
 /// <p> The OAuth properties required for OAuth type authentication. </p>
 #[non_exhaustive]
@@ -14540,6 +14623,13 @@ impl OAuthProperties {
         self.o_auth_scopes.as_deref()
     }
 }
+impl OAuthProperties {
+    /// Creates a new builder-style object to manufacture [`OAuthProperties`](crate::model::OAuthProperties).
+    pub fn builder() -> crate::model::o_auth_properties::Builder {
+        crate::model::o_auth_properties::Builder::default()
+    }
+}
+
 /// See [`OAuthProperties`](crate::model::OAuthProperties).
 pub mod o_auth_properties {
 
@@ -14604,12 +14694,6 @@ pub mod o_auth_properties {
         }
     }
 }
-impl OAuthProperties {
-    /// Creates a new builder-style object to manufacture [`OAuthProperties`](crate::model::OAuthProperties).
-    pub fn builder() -> crate::model::o_auth_properties::Builder {
-        crate::model::o_auth_properties::Builder::default()
-    }
-}
 
 /// <p> The connector-specific profile properties required when using Zendesk. </p>
 #[non_exhaustive]
@@ -14625,6 +14709,13 @@ impl ZendeskConnectorProfileProperties {
         self.instance_url.as_deref()
     }
 }
+impl ZendeskConnectorProfileProperties {
+    /// Creates a new builder-style object to manufacture [`ZendeskConnectorProfileProperties`](crate::model::ZendeskConnectorProfileProperties).
+    pub fn builder() -> crate::model::zendesk_connector_profile_properties::Builder {
+        crate::model::zendesk_connector_profile_properties::Builder::default()
+    }
+}
+
 /// See [`ZendeskConnectorProfileProperties`](crate::model::ZendeskConnectorProfileProperties).
 pub mod zendesk_connector_profile_properties {
 
@@ -14653,12 +14744,6 @@ pub mod zendesk_connector_profile_properties {
         }
     }
 }
-impl ZendeskConnectorProfileProperties {
-    /// Creates a new builder-style object to manufacture [`ZendeskConnectorProfileProperties`](crate::model::ZendeskConnectorProfileProperties).
-    pub fn builder() -> crate::model::zendesk_connector_profile_properties::Builder {
-        crate::model::zendesk_connector_profile_properties::Builder::default()
-    }
-}
 
 /// <p> The connector-specific profile properties required when using Veeva. </p>
 #[non_exhaustive]
@@ -14674,6 +14759,13 @@ impl VeevaConnectorProfileProperties {
         self.instance_url.as_deref()
     }
 }
+impl VeevaConnectorProfileProperties {
+    /// Creates a new builder-style object to manufacture [`VeevaConnectorProfileProperties`](crate::model::VeevaConnectorProfileProperties).
+    pub fn builder() -> crate::model::veeva_connector_profile_properties::Builder {
+        crate::model::veeva_connector_profile_properties::Builder::default()
+    }
+}
+
 /// See [`VeevaConnectorProfileProperties`](crate::model::VeevaConnectorProfileProperties).
 pub mod veeva_connector_profile_properties {
 
@@ -14702,17 +14794,18 @@ pub mod veeva_connector_profile_properties {
         }
     }
 }
-impl VeevaConnectorProfileProperties {
-    /// Creates a new builder-style object to manufacture [`VeevaConnectorProfileProperties`](crate::model::VeevaConnectorProfileProperties).
-    pub fn builder() -> crate::model::veeva_connector_profile_properties::Builder {
-        crate::model::veeva_connector_profile_properties::Builder::default()
-    }
-}
 
 /// <p> The connector-specific profile properties required when using Trend Micro. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TrendmicroConnectorProfileProperties {}
+impl TrendmicroConnectorProfileProperties {
+    /// Creates a new builder-style object to manufacture [`TrendmicroConnectorProfileProperties`](crate::model::TrendmicroConnectorProfileProperties).
+    pub fn builder() -> crate::model::trendmicro_connector_profile_properties::Builder {
+        crate::model::trendmicro_connector_profile_properties::Builder::default()
+    }
+}
+
 /// See [`TrendmicroConnectorProfileProperties`](crate::model::TrendmicroConnectorProfileProperties).
 pub mod trendmicro_connector_profile_properties {
 
@@ -14725,12 +14818,6 @@ pub mod trendmicro_connector_profile_properties {
         pub fn build(self) -> crate::model::TrendmicroConnectorProfileProperties {
             crate::model::TrendmicroConnectorProfileProperties {}
         }
-    }
-}
-impl TrendmicroConnectorProfileProperties {
-    /// Creates a new builder-style object to manufacture [`TrendmicroConnectorProfileProperties`](crate::model::TrendmicroConnectorProfileProperties).
-    pub fn builder() -> crate::model::trendmicro_connector_profile_properties::Builder {
-        crate::model::trendmicro_connector_profile_properties::Builder::default()
     }
 }
 
@@ -14794,6 +14881,13 @@ impl SnowflakeConnectorProfileProperties {
         self.region.as_deref()
     }
 }
+impl SnowflakeConnectorProfileProperties {
+    /// Creates a new builder-style object to manufacture [`SnowflakeConnectorProfileProperties`](crate::model::SnowflakeConnectorProfileProperties).
+    pub fn builder() -> crate::model::snowflake_connector_profile_properties::Builder {
+        crate::model::snowflake_connector_profile_properties::Builder::default()
+    }
+}
+
 /// See [`SnowflakeConnectorProfileProperties`](crate::model::SnowflakeConnectorProfileProperties).
 pub mod snowflake_connector_profile_properties {
 
@@ -14904,12 +14998,6 @@ pub mod snowflake_connector_profile_properties {
         }
     }
 }
-impl SnowflakeConnectorProfileProperties {
-    /// Creates a new builder-style object to manufacture [`SnowflakeConnectorProfileProperties`](crate::model::SnowflakeConnectorProfileProperties).
-    pub fn builder() -> crate::model::snowflake_connector_profile_properties::Builder {
-        crate::model::snowflake_connector_profile_properties::Builder::default()
-    }
-}
 
 /// <p> The connector-specific profile properties required when using Slack. </p>
 #[non_exhaustive]
@@ -14925,6 +15013,13 @@ impl SlackConnectorProfileProperties {
         self.instance_url.as_deref()
     }
 }
+impl SlackConnectorProfileProperties {
+    /// Creates a new builder-style object to manufacture [`SlackConnectorProfileProperties`](crate::model::SlackConnectorProfileProperties).
+    pub fn builder() -> crate::model::slack_connector_profile_properties::Builder {
+        crate::model::slack_connector_profile_properties::Builder::default()
+    }
+}
+
 /// See [`SlackConnectorProfileProperties`](crate::model::SlackConnectorProfileProperties).
 pub mod slack_connector_profile_properties {
 
@@ -14953,17 +15048,18 @@ pub mod slack_connector_profile_properties {
         }
     }
 }
-impl SlackConnectorProfileProperties {
-    /// Creates a new builder-style object to manufacture [`SlackConnectorProfileProperties`](crate::model::SlackConnectorProfileProperties).
-    pub fn builder() -> crate::model::slack_connector_profile_properties::Builder {
-        crate::model::slack_connector_profile_properties::Builder::default()
-    }
-}
 
 /// <p> The connector-specific profile properties required when using Singular. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SingularConnectorProfileProperties {}
+impl SingularConnectorProfileProperties {
+    /// Creates a new builder-style object to manufacture [`SingularConnectorProfileProperties`](crate::model::SingularConnectorProfileProperties).
+    pub fn builder() -> crate::model::singular_connector_profile_properties::Builder {
+        crate::model::singular_connector_profile_properties::Builder::default()
+    }
+}
+
 /// See [`SingularConnectorProfileProperties`](crate::model::SingularConnectorProfileProperties).
 pub mod singular_connector_profile_properties {
 
@@ -14976,12 +15072,6 @@ pub mod singular_connector_profile_properties {
         pub fn build(self) -> crate::model::SingularConnectorProfileProperties {
             crate::model::SingularConnectorProfileProperties {}
         }
-    }
-}
-impl SingularConnectorProfileProperties {
-    /// Creates a new builder-style object to manufacture [`SingularConnectorProfileProperties`](crate::model::SingularConnectorProfileProperties).
-    pub fn builder() -> crate::model::singular_connector_profile_properties::Builder {
-        crate::model::singular_connector_profile_properties::Builder::default()
     }
 }
 
@@ -14999,6 +15089,13 @@ impl ServiceNowConnectorProfileProperties {
         self.instance_url.as_deref()
     }
 }
+impl ServiceNowConnectorProfileProperties {
+    /// Creates a new builder-style object to manufacture [`ServiceNowConnectorProfileProperties`](crate::model::ServiceNowConnectorProfileProperties).
+    pub fn builder() -> crate::model::service_now_connector_profile_properties::Builder {
+        crate::model::service_now_connector_profile_properties::Builder::default()
+    }
+}
+
 /// See [`ServiceNowConnectorProfileProperties`](crate::model::ServiceNowConnectorProfileProperties).
 pub mod service_now_connector_profile_properties {
 
@@ -15027,12 +15124,6 @@ pub mod service_now_connector_profile_properties {
         }
     }
 }
-impl ServiceNowConnectorProfileProperties {
-    /// Creates a new builder-style object to manufacture [`ServiceNowConnectorProfileProperties`](crate::model::ServiceNowConnectorProfileProperties).
-    pub fn builder() -> crate::model::service_now_connector_profile_properties::Builder {
-        crate::model::service_now_connector_profile_properties::Builder::default()
-    }
-}
 
 /// <p> The connector-specific profile properties required when using Salesforce. </p>
 #[non_exhaustive]
@@ -15055,6 +15146,13 @@ impl SalesforceConnectorProfileProperties {
         self.is_sandbox_environment
     }
 }
+impl SalesforceConnectorProfileProperties {
+    /// Creates a new builder-style object to manufacture [`SalesforceConnectorProfileProperties`](crate::model::SalesforceConnectorProfileProperties).
+    pub fn builder() -> crate::model::salesforce_connector_profile_properties::Builder {
+        crate::model::salesforce_connector_profile_properties::Builder::default()
+    }
+}
+
 /// See [`SalesforceConnectorProfileProperties`](crate::model::SalesforceConnectorProfileProperties).
 pub mod salesforce_connector_profile_properties {
 
@@ -15093,12 +15191,6 @@ pub mod salesforce_connector_profile_properties {
                 is_sandbox_environment: self.is_sandbox_environment.unwrap_or_default(),
             }
         }
-    }
-}
-impl SalesforceConnectorProfileProperties {
-    /// Creates a new builder-style object to manufacture [`SalesforceConnectorProfileProperties`](crate::model::SalesforceConnectorProfileProperties).
-    pub fn builder() -> crate::model::salesforce_connector_profile_properties::Builder {
-        crate::model::salesforce_connector_profile_properties::Builder::default()
     }
 }
 
@@ -15172,6 +15264,13 @@ impl RedshiftConnectorProfileProperties {
         self.database_name.as_deref()
     }
 }
+impl RedshiftConnectorProfileProperties {
+    /// Creates a new builder-style object to manufacture [`RedshiftConnectorProfileProperties`](crate::model::RedshiftConnectorProfileProperties).
+    pub fn builder() -> crate::model::redshift_connector_profile_properties::Builder {
+        crate::model::redshift_connector_profile_properties::Builder::default()
+    }
+}
+
 /// See [`RedshiftConnectorProfileProperties`](crate::model::RedshiftConnectorProfileProperties).
 pub mod redshift_connector_profile_properties {
 
@@ -15311,12 +15410,6 @@ pub mod redshift_connector_profile_properties {
         }
     }
 }
-impl RedshiftConnectorProfileProperties {
-    /// Creates a new builder-style object to manufacture [`RedshiftConnectorProfileProperties`](crate::model::RedshiftConnectorProfileProperties).
-    pub fn builder() -> crate::model::redshift_connector_profile_properties::Builder {
-        crate::model::redshift_connector_profile_properties::Builder::default()
-    }
-}
 
 /// <p> The connector-specific profile properties required when using Marketo. </p>
 #[non_exhaustive]
@@ -15332,6 +15425,13 @@ impl MarketoConnectorProfileProperties {
         self.instance_url.as_deref()
     }
 }
+impl MarketoConnectorProfileProperties {
+    /// Creates a new builder-style object to manufacture [`MarketoConnectorProfileProperties`](crate::model::MarketoConnectorProfileProperties).
+    pub fn builder() -> crate::model::marketo_connector_profile_properties::Builder {
+        crate::model::marketo_connector_profile_properties::Builder::default()
+    }
+}
+
 /// See [`MarketoConnectorProfileProperties`](crate::model::MarketoConnectorProfileProperties).
 pub mod marketo_connector_profile_properties {
 
@@ -15360,12 +15460,6 @@ pub mod marketo_connector_profile_properties {
         }
     }
 }
-impl MarketoConnectorProfileProperties {
-    /// Creates a new builder-style object to manufacture [`MarketoConnectorProfileProperties`](crate::model::MarketoConnectorProfileProperties).
-    pub fn builder() -> crate::model::marketo_connector_profile_properties::Builder {
-        crate::model::marketo_connector_profile_properties::Builder::default()
-    }
-}
 
 /// <p> The connector-specific profile properties required by Infor Nexus. </p>
 #[non_exhaustive]
@@ -15381,6 +15475,13 @@ impl InforNexusConnectorProfileProperties {
         self.instance_url.as_deref()
     }
 }
+impl InforNexusConnectorProfileProperties {
+    /// Creates a new builder-style object to manufacture [`InforNexusConnectorProfileProperties`](crate::model::InforNexusConnectorProfileProperties).
+    pub fn builder() -> crate::model::infor_nexus_connector_profile_properties::Builder {
+        crate::model::infor_nexus_connector_profile_properties::Builder::default()
+    }
+}
+
 /// See [`InforNexusConnectorProfileProperties`](crate::model::InforNexusConnectorProfileProperties).
 pub mod infor_nexus_connector_profile_properties {
 
@@ -15409,17 +15510,18 @@ pub mod infor_nexus_connector_profile_properties {
         }
     }
 }
-impl InforNexusConnectorProfileProperties {
-    /// Creates a new builder-style object to manufacture [`InforNexusConnectorProfileProperties`](crate::model::InforNexusConnectorProfileProperties).
-    pub fn builder() -> crate::model::infor_nexus_connector_profile_properties::Builder {
-        crate::model::infor_nexus_connector_profile_properties::Builder::default()
-    }
-}
 
 /// <p> The connector-specific properties required when using Amazon Honeycode. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct HoneycodeConnectorProfileProperties {}
+impl HoneycodeConnectorProfileProperties {
+    /// Creates a new builder-style object to manufacture [`HoneycodeConnectorProfileProperties`](crate::model::HoneycodeConnectorProfileProperties).
+    pub fn builder() -> crate::model::honeycode_connector_profile_properties::Builder {
+        crate::model::honeycode_connector_profile_properties::Builder::default()
+    }
+}
+
 /// See [`HoneycodeConnectorProfileProperties`](crate::model::HoneycodeConnectorProfileProperties).
 pub mod honeycode_connector_profile_properties {
 
@@ -15434,17 +15536,18 @@ pub mod honeycode_connector_profile_properties {
         }
     }
 }
-impl HoneycodeConnectorProfileProperties {
-    /// Creates a new builder-style object to manufacture [`HoneycodeConnectorProfileProperties`](crate::model::HoneycodeConnectorProfileProperties).
-    pub fn builder() -> crate::model::honeycode_connector_profile_properties::Builder {
-        crate::model::honeycode_connector_profile_properties::Builder::default()
-    }
-}
 
 /// <p> The connector-specific profile properties required by Google Analytics. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GoogleAnalyticsConnectorProfileProperties {}
+impl GoogleAnalyticsConnectorProfileProperties {
+    /// Creates a new builder-style object to manufacture [`GoogleAnalyticsConnectorProfileProperties`](crate::model::GoogleAnalyticsConnectorProfileProperties).
+    pub fn builder() -> crate::model::google_analytics_connector_profile_properties::Builder {
+        crate::model::google_analytics_connector_profile_properties::Builder::default()
+    }
+}
+
 /// See [`GoogleAnalyticsConnectorProfileProperties`](crate::model::GoogleAnalyticsConnectorProfileProperties).
 pub mod google_analytics_connector_profile_properties {
 
@@ -15457,12 +15560,6 @@ pub mod google_analytics_connector_profile_properties {
         pub fn build(self) -> crate::model::GoogleAnalyticsConnectorProfileProperties {
             crate::model::GoogleAnalyticsConnectorProfileProperties {}
         }
-    }
-}
-impl GoogleAnalyticsConnectorProfileProperties {
-    /// Creates a new builder-style object to manufacture [`GoogleAnalyticsConnectorProfileProperties`](crate::model::GoogleAnalyticsConnectorProfileProperties).
-    pub fn builder() -> crate::model::google_analytics_connector_profile_properties::Builder {
-        crate::model::google_analytics_connector_profile_properties::Builder::default()
     }
 }
 
@@ -15480,6 +15577,13 @@ impl DynatraceConnectorProfileProperties {
         self.instance_url.as_deref()
     }
 }
+impl DynatraceConnectorProfileProperties {
+    /// Creates a new builder-style object to manufacture [`DynatraceConnectorProfileProperties`](crate::model::DynatraceConnectorProfileProperties).
+    pub fn builder() -> crate::model::dynatrace_connector_profile_properties::Builder {
+        crate::model::dynatrace_connector_profile_properties::Builder::default()
+    }
+}
+
 /// See [`DynatraceConnectorProfileProperties`](crate::model::DynatraceConnectorProfileProperties).
 pub mod dynatrace_connector_profile_properties {
 
@@ -15508,12 +15612,6 @@ pub mod dynatrace_connector_profile_properties {
         }
     }
 }
-impl DynatraceConnectorProfileProperties {
-    /// Creates a new builder-style object to manufacture [`DynatraceConnectorProfileProperties`](crate::model::DynatraceConnectorProfileProperties).
-    pub fn builder() -> crate::model::dynatrace_connector_profile_properties::Builder {
-        crate::model::dynatrace_connector_profile_properties::Builder::default()
-    }
-}
 
 /// <p> The connector-specific profile properties required by Datadog. </p>
 #[non_exhaustive]
@@ -15529,6 +15627,13 @@ impl DatadogConnectorProfileProperties {
         self.instance_url.as_deref()
     }
 }
+impl DatadogConnectorProfileProperties {
+    /// Creates a new builder-style object to manufacture [`DatadogConnectorProfileProperties`](crate::model::DatadogConnectorProfileProperties).
+    pub fn builder() -> crate::model::datadog_connector_profile_properties::Builder {
+        crate::model::datadog_connector_profile_properties::Builder::default()
+    }
+}
+
 /// See [`DatadogConnectorProfileProperties`](crate::model::DatadogConnectorProfileProperties).
 pub mod datadog_connector_profile_properties {
 
@@ -15557,17 +15662,18 @@ pub mod datadog_connector_profile_properties {
         }
     }
 }
-impl DatadogConnectorProfileProperties {
-    /// Creates a new builder-style object to manufacture [`DatadogConnectorProfileProperties`](crate::model::DatadogConnectorProfileProperties).
-    pub fn builder() -> crate::model::datadog_connector_profile_properties::Builder {
-        crate::model::datadog_connector_profile_properties::Builder::default()
-    }
-}
 
 /// <p> The connector-specific profile properties required when using Amplitude. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AmplitudeConnectorProfileProperties {}
+impl AmplitudeConnectorProfileProperties {
+    /// Creates a new builder-style object to manufacture [`AmplitudeConnectorProfileProperties`](crate::model::AmplitudeConnectorProfileProperties).
+    pub fn builder() -> crate::model::amplitude_connector_profile_properties::Builder {
+        crate::model::amplitude_connector_profile_properties::Builder::default()
+    }
+}
+
 /// See [`AmplitudeConnectorProfileProperties`](crate::model::AmplitudeConnectorProfileProperties).
 pub mod amplitude_connector_profile_properties {
 
@@ -15580,12 +15686,6 @@ pub mod amplitude_connector_profile_properties {
         pub fn build(self) -> crate::model::AmplitudeConnectorProfileProperties {
             crate::model::AmplitudeConnectorProfileProperties {}
         }
-    }
-}
-impl AmplitudeConnectorProfileProperties {
-    /// Creates a new builder-style object to manufacture [`AmplitudeConnectorProfileProperties`](crate::model::AmplitudeConnectorProfileProperties).
-    pub fn builder() -> crate::model::amplitude_connector_profile_properties::Builder {
-        crate::model::amplitude_connector_profile_properties::Builder::default()
     }
 }
 
@@ -15884,6 +15984,13 @@ impl FlowDefinition {
         self.last_run_execution_details.as_ref()
     }
 }
+impl FlowDefinition {
+    /// Creates a new builder-style object to manufacture [`FlowDefinition`](crate::model::FlowDefinition).
+    pub fn builder() -> crate::model::flow_definition::Builder {
+        crate::model::flow_definition::Builder::default()
+    }
+}
+
 /// See [`FlowDefinition`](crate::model::FlowDefinition).
 pub mod flow_definition {
 
@@ -16130,12 +16237,6 @@ pub mod flow_definition {
         }
     }
 }
-impl FlowDefinition {
-    /// Creates a new builder-style object to manufacture [`FlowDefinition`](crate::model::FlowDefinition).
-    pub fn builder() -> crate::model::flow_definition::Builder {
-        crate::model::flow_definition::Builder::default()
-    }
-}
 
 /// <p> Describes the details of the flow run, including the timestamp, status, and message. </p>
 #[non_exhaustive]
@@ -16167,6 +16268,13 @@ impl ExecutionDetails {
         self.most_recent_execution_status.as_ref()
     }
 }
+impl ExecutionDetails {
+    /// Creates a new builder-style object to manufacture [`ExecutionDetails`](crate::model::ExecutionDetails).
+    pub fn builder() -> crate::model::execution_details::Builder {
+        crate::model::execution_details::Builder::default()
+    }
+}
+
 /// See [`ExecutionDetails`](crate::model::ExecutionDetails).
 pub mod execution_details {
 
@@ -16232,12 +16340,6 @@ pub mod execution_details {
                 most_recent_execution_status: self.most_recent_execution_status,
             }
         }
-    }
-}
-impl ExecutionDetails {
-    /// Creates a new builder-style object to manufacture [`ExecutionDetails`](crate::model::ExecutionDetails).
-    pub fn builder() -> crate::model::execution_details::Builder {
-        crate::model::execution_details::Builder::default()
     }
 }
 
@@ -16422,6 +16524,13 @@ impl ConnectorDetail {
         self.connector_modes.as_deref()
     }
 }
+impl ConnectorDetail {
+    /// Creates a new builder-style object to manufacture [`ConnectorDetail`](crate::model::ConnectorDetail).
+    pub fn builder() -> crate::model::connector_detail::Builder {
+        crate::model::connector_detail::Builder::default()
+    }
+}
+
 /// See [`ConnectorDetail`](crate::model::ConnectorDetail).
 pub mod connector_detail {
 
@@ -16613,12 +16722,6 @@ pub mod connector_detail {
         }
     }
 }
-impl ConnectorDetail {
-    /// Creates a new builder-style object to manufacture [`ConnectorDetail`](crate::model::ConnectorDetail).
-    pub fn builder() -> crate::model::connector_detail::Builder {
-        crate::model::connector_detail::Builder::default()
-    }
-}
 
 /// <p> The high-level entity that can be queried in Amazon AppFlow. For example, a Salesforce entity might be an <i>Account</i> or <i>Opportunity</i>, whereas a ServiceNow entity might be an <i>Incident</i>. </p>
 #[non_exhaustive]
@@ -16648,6 +16751,13 @@ impl ConnectorEntity {
         self.has_nested_entities
     }
 }
+impl ConnectorEntity {
+    /// Creates a new builder-style object to manufacture [`ConnectorEntity`](crate::model::ConnectorEntity).
+    pub fn builder() -> crate::model::connector_entity::Builder {
+        crate::model::connector_entity::Builder::default()
+    }
+}
+
 /// See [`ConnectorEntity`](crate::model::ConnectorEntity).
 pub mod connector_entity {
 
@@ -16698,12 +16808,6 @@ pub mod connector_entity {
                 has_nested_entities: self.has_nested_entities.unwrap_or_default(),
             }
         }
-    }
-}
-impl ConnectorEntity {
-    /// Creates a new builder-style object to manufacture [`ConnectorEntity`](crate::model::ConnectorEntity).
-    pub fn builder() -> crate::model::connector_entity::Builder {
-        crate::model::connector_entity::Builder::default()
     }
 }
 
@@ -16773,6 +16877,13 @@ impl ExecutionRecord {
         self.metadata_catalog_details.as_deref()
     }
 }
+impl ExecutionRecord {
+    /// Creates a new builder-style object to manufacture [`ExecutionRecord`](crate::model::ExecutionRecord).
+    pub fn builder() -> crate::model::execution_record::Builder {
+        crate::model::execution_record::Builder::default()
+    }
+}
+
 /// See [`ExecutionRecord`](crate::model::ExecutionRecord).
 pub mod execution_record {
 
@@ -16916,12 +17027,6 @@ pub mod execution_record {
         }
     }
 }
-impl ExecutionRecord {
-    /// Creates a new builder-style object to manufacture [`ExecutionRecord`](crate::model::ExecutionRecord).
-    pub fn builder() -> crate::model::execution_record::Builder {
-        crate::model::execution_record::Builder::default()
-    }
-}
 
 /// <p>Describes the metadata catalog, metadata table, and data partitions that Amazon AppFlow used for the associated flow run.</p>
 #[non_exhaustive]
@@ -16978,6 +17083,13 @@ impl MetadataCatalogDetail {
         self.partition_registration_output.as_ref()
     }
 }
+impl MetadataCatalogDetail {
+    /// Creates a new builder-style object to manufacture [`MetadataCatalogDetail`](crate::model::MetadataCatalogDetail).
+    pub fn builder() -> crate::model::metadata_catalog_detail::Builder {
+        crate::model::metadata_catalog_detail::Builder::default()
+    }
+}
+
 /// See [`MetadataCatalogDetail`](crate::model::MetadataCatalogDetail).
 pub mod metadata_catalog_detail {
 
@@ -17074,12 +17186,6 @@ pub mod metadata_catalog_detail {
         }
     }
 }
-impl MetadataCatalogDetail {
-    /// Creates a new builder-style object to manufacture [`MetadataCatalogDetail`](crate::model::MetadataCatalogDetail).
-    pub fn builder() -> crate::model::metadata_catalog_detail::Builder {
-        crate::model::metadata_catalog_detail::Builder::default()
-    }
-}
 
 /// <p>Describes the status of an attempt from Amazon AppFlow to register a resource.</p>
 /// <p>When you run a flow that you've configured to use a metadata catalog, Amazon AppFlow registers a metadata table and data partitions with that catalog. This operation provides the status of that registration attempt. The operation also indicates how many related resources Amazon AppFlow created or updated.</p>
@@ -17110,6 +17216,13 @@ impl RegistrationOutput {
         self.status.as_ref()
     }
 }
+impl RegistrationOutput {
+    /// Creates a new builder-style object to manufacture [`RegistrationOutput`](crate::model::RegistrationOutput).
+    pub fn builder() -> crate::model::registration_output::Builder {
+        crate::model::registration_output::Builder::default()
+    }
+}
+
 /// See [`RegistrationOutput`](crate::model::RegistrationOutput).
 pub mod registration_output {
 
@@ -17163,12 +17276,6 @@ pub mod registration_output {
                 status: self.status,
             }
         }
-    }
-}
-impl RegistrationOutput {
-    /// Creates a new builder-style object to manufacture [`RegistrationOutput`](crate::model::RegistrationOutput).
-    pub fn builder() -> crate::model::registration_output::Builder {
-        crate::model::registration_output::Builder::default()
     }
 }
 
@@ -17292,6 +17399,13 @@ impl ExecutionResult {
         self.records_processed
     }
 }
+impl ExecutionResult {
+    /// Creates a new builder-style object to manufacture [`ExecutionResult`](crate::model::ExecutionResult).
+    pub fn builder() -> crate::model::execution_result::Builder {
+        crate::model::execution_result::Builder::default()
+    }
+}
+
 /// See [`ExecutionResult`](crate::model::ExecutionResult).
 pub mod execution_result {
 
@@ -17359,12 +17473,6 @@ pub mod execution_result {
         }
     }
 }
-impl ExecutionResult {
-    /// Creates a new builder-style object to manufacture [`ExecutionResult`](crate::model::ExecutionResult).
-    pub fn builder() -> crate::model::execution_result::Builder {
-        crate::model::execution_result::Builder::default()
-    }
-}
 
 /// <p> Provides details in the event of a failed flow, including the failure count and the related error messages. </p>
 #[non_exhaustive]
@@ -17387,6 +17495,13 @@ impl ErrorInfo {
         self.execution_message.as_deref()
     }
 }
+impl ErrorInfo {
+    /// Creates a new builder-style object to manufacture [`ErrorInfo`](crate::model::ErrorInfo).
+    pub fn builder() -> crate::model::error_info::Builder {
+        crate::model::error_info::Builder::default()
+    }
+}
+
 /// See [`ErrorInfo`](crate::model::ErrorInfo).
 pub mod error_info {
 
@@ -17428,12 +17543,6 @@ pub mod error_info {
                 execution_message: self.execution_message,
             }
         }
-    }
-}
-impl ErrorInfo {
-    /// Creates a new builder-style object to manufacture [`ErrorInfo`](crate::model::ErrorInfo).
-    pub fn builder() -> crate::model::error_info::Builder {
-        crate::model::error_info::Builder::default()
     }
 }
 
@@ -17645,6 +17754,13 @@ impl ConnectorConfiguration {
         self.registered_by.as_deref()
     }
 }
+impl ConnectorConfiguration {
+    /// Creates a new builder-style object to manufacture [`ConnectorConfiguration`](crate::model::ConnectorConfiguration).
+    pub fn builder() -> crate::model::connector_configuration::Builder {
+        crate::model::connector_configuration::Builder::default()
+    }
+}
+
 /// See [`ConnectorConfiguration`](crate::model::ConnectorConfiguration).
 pub mod connector_configuration {
 
@@ -18114,12 +18230,6 @@ pub mod connector_configuration {
         }
     }
 }
-impl ConnectorConfiguration {
-    /// Creates a new builder-style object to manufacture [`ConnectorConfiguration`](crate::model::ConnectorConfiguration).
-    pub fn builder() -> crate::model::connector_configuration::Builder {
-        crate::model::connector_configuration::Builder::default()
-    }
-}
 
 /// When writing a match expression against `Operators`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -18384,6 +18494,13 @@ impl ConnectorRuntimeSetting {
         self.connector_supplied_value_options.as_deref()
     }
 }
+impl ConnectorRuntimeSetting {
+    /// Creates a new builder-style object to manufacture [`ConnectorRuntimeSetting`](crate::model::ConnectorRuntimeSetting).
+    pub fn builder() -> crate::model::connector_runtime_setting::Builder {
+        crate::model::connector_runtime_setting::Builder::default()
+    }
+}
+
 /// See [`ConnectorRuntimeSetting`](crate::model::ConnectorRuntimeSetting).
 pub mod connector_runtime_setting {
 
@@ -18497,12 +18614,6 @@ pub mod connector_runtime_setting {
         }
     }
 }
-impl ConnectorRuntimeSetting {
-    /// Creates a new builder-style object to manufacture [`ConnectorRuntimeSetting`](crate::model::ConnectorRuntimeSetting).
-    pub fn builder() -> crate::model::connector_runtime_setting::Builder {
-        crate::model::connector_runtime_setting::Builder::default()
-    }
-}
 
 /// <p>Contains information about the authentication config that the connector supports.</p>
 #[non_exhaustive]
@@ -18553,6 +18664,13 @@ impl AuthenticationConfig {
         self.custom_auth_configs.as_deref()
     }
 }
+impl AuthenticationConfig {
+    /// Creates a new builder-style object to manufacture [`AuthenticationConfig`](crate::model::AuthenticationConfig).
+    pub fn builder() -> crate::model::authentication_config::Builder {
+        crate::model::authentication_config::Builder::default()
+    }
+}
+
 /// See [`AuthenticationConfig`](crate::model::AuthenticationConfig).
 pub mod authentication_config {
 
@@ -18654,12 +18772,6 @@ pub mod authentication_config {
         }
     }
 }
-impl AuthenticationConfig {
-    /// Creates a new builder-style object to manufacture [`AuthenticationConfig`](crate::model::AuthenticationConfig).
-    pub fn builder() -> crate::model::authentication_config::Builder {
-        crate::model::authentication_config::Builder::default()
-    }
-}
 
 /// <p>Configuration information required for custom authentication.</p>
 #[non_exhaustive]
@@ -18682,6 +18794,13 @@ impl CustomAuthConfig {
         self.auth_parameters.as_deref()
     }
 }
+impl CustomAuthConfig {
+    /// Creates a new builder-style object to manufacture [`CustomAuthConfig`](crate::model::CustomAuthConfig).
+    pub fn builder() -> crate::model::custom_auth_config::Builder {
+        crate::model::custom_auth_config::Builder::default()
+    }
+}
+
 /// See [`CustomAuthConfig`](crate::model::CustomAuthConfig).
 pub mod custom_auth_config {
 
@@ -18734,12 +18853,6 @@ pub mod custom_auth_config {
         }
     }
 }
-impl CustomAuthConfig {
-    /// Creates a new builder-style object to manufacture [`CustomAuthConfig`](crate::model::CustomAuthConfig).
-    pub fn builder() -> crate::model::custom_auth_config::Builder {
-        crate::model::custom_auth_config::Builder::default()
-    }
-}
 
 /// <p>Information about required authentication parameters.</p>
 #[non_exhaustive]
@@ -18790,6 +18903,13 @@ impl AuthParameter {
         self.connector_supplied_values.as_deref()
     }
 }
+impl AuthParameter {
+    /// Creates a new builder-style object to manufacture [`AuthParameter`](crate::model::AuthParameter).
+    pub fn builder() -> crate::model::auth_parameter::Builder {
+        crate::model::auth_parameter::Builder::default()
+    }
+}
+
 /// See [`AuthParameter`](crate::model::AuthParameter).
 pub mod auth_parameter {
 
@@ -18888,12 +19008,6 @@ pub mod auth_parameter {
         }
     }
 }
-impl AuthParameter {
-    /// Creates a new builder-style object to manufacture [`AuthParameter`](crate::model::AuthParameter).
-    pub fn builder() -> crate::model::auth_parameter::Builder {
-        crate::model::auth_parameter::Builder::default()
-    }
-}
 
 /// <p>Contains the default values required for OAuth 2.0 authentication.</p>
 #[non_exhaustive]
@@ -18943,6 +19057,13 @@ impl OAuth2Defaults {
         self.oauth2_custom_properties.as_deref()
     }
 }
+impl OAuth2Defaults {
+    /// Creates a new builder-style object to manufacture [`OAuth2Defaults`](crate::model::OAuth2Defaults).
+    pub fn builder() -> crate::model::o_auth2_defaults::Builder {
+        crate::model::o_auth2_defaults::Builder::default()
+    }
+}
+
 /// See [`OAuth2Defaults`](crate::model::OAuth2Defaults).
 pub mod o_auth2_defaults {
 
@@ -19072,12 +19193,6 @@ pub mod o_auth2_defaults {
         }
     }
 }
-impl OAuth2Defaults {
-    /// Creates a new builder-style object to manufacture [`OAuth2Defaults`](crate::model::OAuth2Defaults).
-    pub fn builder() -> crate::model::o_auth2_defaults::Builder {
-        crate::model::o_auth2_defaults::Builder::default()
-    }
-}
 
 /// <p>Custom parameter required for OAuth 2.0 authentication.</p>
 #[non_exhaustive]
@@ -19135,6 +19250,13 @@ impl OAuth2CustomParameter {
         self.r#type.as_ref()
     }
 }
+impl OAuth2CustomParameter {
+    /// Creates a new builder-style object to manufacture [`OAuth2CustomParameter`](crate::model::OAuth2CustomParameter).
+    pub fn builder() -> crate::model::o_auth2_custom_parameter::Builder {
+        crate::model::o_auth2_custom_parameter::Builder::default()
+    }
+}
+
 /// See [`OAuth2CustomParameter`](crate::model::OAuth2CustomParameter).
 pub mod o_auth2_custom_parameter {
 
@@ -19246,12 +19368,6 @@ pub mod o_auth2_custom_parameter {
                 r#type: self.r#type,
             }
         }
-    }
-}
-impl OAuth2CustomParameter {
-    /// Creates a new builder-style object to manufacture [`OAuth2CustomParameter`](crate::model::OAuth2CustomParameter).
-    pub fn builder() -> crate::model::o_auth2_custom_parameter::Builder {
-        crate::model::o_auth2_custom_parameter::Builder::default()
     }
 }
 
@@ -19510,6 +19626,13 @@ impl ConnectorMetadata {
         self.pardot.as_ref()
     }
 }
+impl ConnectorMetadata {
+    /// Creates a new builder-style object to manufacture [`ConnectorMetadata`](crate::model::ConnectorMetadata).
+    pub fn builder() -> crate::model::connector_metadata::Builder {
+        crate::model::connector_metadata::Builder::default()
+    }
+}
+
 /// See [`ConnectorMetadata`](crate::model::ConnectorMetadata).
 pub mod connector_metadata {
 
@@ -19853,17 +19976,18 @@ pub mod connector_metadata {
         }
     }
 }
-impl ConnectorMetadata {
-    /// Creates a new builder-style object to manufacture [`ConnectorMetadata`](crate::model::ConnectorMetadata).
-    pub fn builder() -> crate::model::connector_metadata::Builder {
-        crate::model::connector_metadata::Builder::default()
-    }
-}
 
 /// <p>The connector metadata specific to Salesforce Pardot.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct PardotMetadata {}
+impl PardotMetadata {
+    /// Creates a new builder-style object to manufacture [`PardotMetadata`](crate::model::PardotMetadata).
+    pub fn builder() -> crate::model::pardot_metadata::Builder {
+        crate::model::pardot_metadata::Builder::default()
+    }
+}
+
 /// See [`PardotMetadata`](crate::model::PardotMetadata).
 pub mod pardot_metadata {
 
@@ -19878,17 +20002,18 @@ pub mod pardot_metadata {
         }
     }
 }
-impl PardotMetadata {
-    /// Creates a new builder-style object to manufacture [`PardotMetadata`](crate::model::PardotMetadata).
-    pub fn builder() -> crate::model::pardot_metadata::Builder {
-        crate::model::pardot_metadata::Builder::default()
-    }
-}
 
 /// <p> The connector metadata specific to SAPOData. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SapoDataMetadata {}
+impl SapoDataMetadata {
+    /// Creates a new builder-style object to manufacture [`SapoDataMetadata`](crate::model::SapoDataMetadata).
+    pub fn builder() -> crate::model::sapo_data_metadata::Builder {
+        crate::model::sapo_data_metadata::Builder::default()
+    }
+}
+
 /// See [`SapoDataMetadata`](crate::model::SapoDataMetadata).
 pub mod sapo_data_metadata {
 
@@ -19901,12 +20026,6 @@ pub mod sapo_data_metadata {
         pub fn build(self) -> crate::model::SapoDataMetadata {
             crate::model::SapoDataMetadata {}
         }
-    }
-}
-impl SapoDataMetadata {
-    /// Creates a new builder-style object to manufacture [`SapoDataMetadata`](crate::model::SapoDataMetadata).
-    pub fn builder() -> crate::model::sapo_data_metadata::Builder {
-        crate::model::sapo_data_metadata::Builder::default()
     }
 }
 
@@ -19924,6 +20043,13 @@ impl HoneycodeMetadata {
         self.o_auth_scopes.as_deref()
     }
 }
+impl HoneycodeMetadata {
+    /// Creates a new builder-style object to manufacture [`HoneycodeMetadata`](crate::model::HoneycodeMetadata).
+    pub fn builder() -> crate::model::honeycode_metadata::Builder {
+        crate::model::honeycode_metadata::Builder::default()
+    }
+}
+
 /// See [`HoneycodeMetadata`](crate::model::HoneycodeMetadata).
 pub mod honeycode_metadata {
 
@@ -19961,17 +20087,18 @@ pub mod honeycode_metadata {
         }
     }
 }
-impl HoneycodeMetadata {
-    /// Creates a new builder-style object to manufacture [`HoneycodeMetadata`](crate::model::HoneycodeMetadata).
-    pub fn builder() -> crate::model::honeycode_metadata::Builder {
-        crate::model::honeycode_metadata::Builder::default()
-    }
-}
 
 /// <p> The connector metadata specific to Amazon Connect Customer Profiles. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CustomerProfilesMetadata {}
+impl CustomerProfilesMetadata {
+    /// Creates a new builder-style object to manufacture [`CustomerProfilesMetadata`](crate::model::CustomerProfilesMetadata).
+    pub fn builder() -> crate::model::customer_profiles_metadata::Builder {
+        crate::model::customer_profiles_metadata::Builder::default()
+    }
+}
+
 /// See [`CustomerProfilesMetadata`](crate::model::CustomerProfilesMetadata).
 pub mod customer_profiles_metadata {
 
@@ -19986,17 +20113,18 @@ pub mod customer_profiles_metadata {
         }
     }
 }
-impl CustomerProfilesMetadata {
-    /// Creates a new builder-style object to manufacture [`CustomerProfilesMetadata`](crate::model::CustomerProfilesMetadata).
-    pub fn builder() -> crate::model::customer_profiles_metadata::Builder {
-        crate::model::customer_profiles_metadata::Builder::default()
-    }
-}
 
 /// <p> The connector metadata specific to Upsolver. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpsolverMetadata {}
+impl UpsolverMetadata {
+    /// Creates a new builder-style object to manufacture [`UpsolverMetadata`](crate::model::UpsolverMetadata).
+    pub fn builder() -> crate::model::upsolver_metadata::Builder {
+        crate::model::upsolver_metadata::Builder::default()
+    }
+}
+
 /// See [`UpsolverMetadata`](crate::model::UpsolverMetadata).
 pub mod upsolver_metadata {
 
@@ -20011,17 +20139,18 @@ pub mod upsolver_metadata {
         }
     }
 }
-impl UpsolverMetadata {
-    /// Creates a new builder-style object to manufacture [`UpsolverMetadata`](crate::model::UpsolverMetadata).
-    pub fn builder() -> crate::model::upsolver_metadata::Builder {
-        crate::model::upsolver_metadata::Builder::default()
-    }
-}
 
 /// <p> The connector metadata specific to Amazon EventBridge. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EventBridgeMetadata {}
+impl EventBridgeMetadata {
+    /// Creates a new builder-style object to manufacture [`EventBridgeMetadata`](crate::model::EventBridgeMetadata).
+    pub fn builder() -> crate::model::event_bridge_metadata::Builder {
+        crate::model::event_bridge_metadata::Builder::default()
+    }
+}
+
 /// See [`EventBridgeMetadata`](crate::model::EventBridgeMetadata).
 pub mod event_bridge_metadata {
 
@@ -20034,12 +20163,6 @@ pub mod event_bridge_metadata {
         pub fn build(self) -> crate::model::EventBridgeMetadata {
             crate::model::EventBridgeMetadata {}
         }
-    }
-}
-impl EventBridgeMetadata {
-    /// Creates a new builder-style object to manufacture [`EventBridgeMetadata`](crate::model::EventBridgeMetadata).
-    pub fn builder() -> crate::model::event_bridge_metadata::Builder {
-        crate::model::event_bridge_metadata::Builder::default()
     }
 }
 
@@ -20057,6 +20180,13 @@ impl ZendeskMetadata {
         self.o_auth_scopes.as_deref()
     }
 }
+impl ZendeskMetadata {
+    /// Creates a new builder-style object to manufacture [`ZendeskMetadata`](crate::model::ZendeskMetadata).
+    pub fn builder() -> crate::model::zendesk_metadata::Builder {
+        crate::model::zendesk_metadata::Builder::default()
+    }
+}
+
 /// See [`ZendeskMetadata`](crate::model::ZendeskMetadata).
 pub mod zendesk_metadata {
 
@@ -20094,17 +20224,18 @@ pub mod zendesk_metadata {
         }
     }
 }
-impl ZendeskMetadata {
-    /// Creates a new builder-style object to manufacture [`ZendeskMetadata`](crate::model::ZendeskMetadata).
-    pub fn builder() -> crate::model::zendesk_metadata::Builder {
-        crate::model::zendesk_metadata::Builder::default()
-    }
-}
 
 /// <p> The connector metadata specific to Veeva. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct VeevaMetadata {}
+impl VeevaMetadata {
+    /// Creates a new builder-style object to manufacture [`VeevaMetadata`](crate::model::VeevaMetadata).
+    pub fn builder() -> crate::model::veeva_metadata::Builder {
+        crate::model::veeva_metadata::Builder::default()
+    }
+}
+
 /// See [`VeevaMetadata`](crate::model::VeevaMetadata).
 pub mod veeva_metadata {
 
@@ -20119,17 +20250,18 @@ pub mod veeva_metadata {
         }
     }
 }
-impl VeevaMetadata {
-    /// Creates a new builder-style object to manufacture [`VeevaMetadata`](crate::model::VeevaMetadata).
-    pub fn builder() -> crate::model::veeva_metadata::Builder {
-        crate::model::veeva_metadata::Builder::default()
-    }
-}
 
 /// <p> The connector metadata specific to Trend Micro. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TrendmicroMetadata {}
+impl TrendmicroMetadata {
+    /// Creates a new builder-style object to manufacture [`TrendmicroMetadata`](crate::model::TrendmicroMetadata).
+    pub fn builder() -> crate::model::trendmicro_metadata::Builder {
+        crate::model::trendmicro_metadata::Builder::default()
+    }
+}
+
 /// See [`TrendmicroMetadata`](crate::model::TrendmicroMetadata).
 pub mod trendmicro_metadata {
 
@@ -20142,12 +20274,6 @@ pub mod trendmicro_metadata {
         pub fn build(self) -> crate::model::TrendmicroMetadata {
             crate::model::TrendmicroMetadata {}
         }
-    }
-}
-impl TrendmicroMetadata {
-    /// Creates a new builder-style object to manufacture [`TrendmicroMetadata`](crate::model::TrendmicroMetadata).
-    pub fn builder() -> crate::model::trendmicro_metadata::Builder {
-        crate::model::trendmicro_metadata::Builder::default()
     }
 }
 
@@ -20165,6 +20291,13 @@ impl SnowflakeMetadata {
         self.supported_regions.as_deref()
     }
 }
+impl SnowflakeMetadata {
+    /// Creates a new builder-style object to manufacture [`SnowflakeMetadata`](crate::model::SnowflakeMetadata).
+    pub fn builder() -> crate::model::snowflake_metadata::Builder {
+        crate::model::snowflake_metadata::Builder::default()
+    }
+}
+
 /// See [`SnowflakeMetadata`](crate::model::SnowflakeMetadata).
 pub mod snowflake_metadata {
 
@@ -20202,12 +20335,6 @@ pub mod snowflake_metadata {
         }
     }
 }
-impl SnowflakeMetadata {
-    /// Creates a new builder-style object to manufacture [`SnowflakeMetadata`](crate::model::SnowflakeMetadata).
-    pub fn builder() -> crate::model::snowflake_metadata::Builder {
-        crate::model::snowflake_metadata::Builder::default()
-    }
-}
 
 /// <p> The connector metadata specific to Slack. </p>
 #[non_exhaustive]
@@ -20223,6 +20350,13 @@ impl SlackMetadata {
         self.o_auth_scopes.as_deref()
     }
 }
+impl SlackMetadata {
+    /// Creates a new builder-style object to manufacture [`SlackMetadata`](crate::model::SlackMetadata).
+    pub fn builder() -> crate::model::slack_metadata::Builder {
+        crate::model::slack_metadata::Builder::default()
+    }
+}
+
 /// See [`SlackMetadata`](crate::model::SlackMetadata).
 pub mod slack_metadata {
 
@@ -20260,17 +20394,18 @@ pub mod slack_metadata {
         }
     }
 }
-impl SlackMetadata {
-    /// Creates a new builder-style object to manufacture [`SlackMetadata`](crate::model::SlackMetadata).
-    pub fn builder() -> crate::model::slack_metadata::Builder {
-        crate::model::slack_metadata::Builder::default()
-    }
-}
 
 /// <p> The connector metadata specific to Singular. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct SingularMetadata {}
+impl SingularMetadata {
+    /// Creates a new builder-style object to manufacture [`SingularMetadata`](crate::model::SingularMetadata).
+    pub fn builder() -> crate::model::singular_metadata::Builder {
+        crate::model::singular_metadata::Builder::default()
+    }
+}
+
 /// See [`SingularMetadata`](crate::model::SingularMetadata).
 pub mod singular_metadata {
 
@@ -20285,17 +20420,18 @@ pub mod singular_metadata {
         }
     }
 }
-impl SingularMetadata {
-    /// Creates a new builder-style object to manufacture [`SingularMetadata`](crate::model::SingularMetadata).
-    pub fn builder() -> crate::model::singular_metadata::Builder {
-        crate::model::singular_metadata::Builder::default()
-    }
-}
 
 /// <p> The connector metadata specific to ServiceNow. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ServiceNowMetadata {}
+impl ServiceNowMetadata {
+    /// Creates a new builder-style object to manufacture [`ServiceNowMetadata`](crate::model::ServiceNowMetadata).
+    pub fn builder() -> crate::model::service_now_metadata::Builder {
+        crate::model::service_now_metadata::Builder::default()
+    }
+}
+
 /// See [`ServiceNowMetadata`](crate::model::ServiceNowMetadata).
 pub mod service_now_metadata {
 
@@ -20308,12 +20444,6 @@ pub mod service_now_metadata {
         pub fn build(self) -> crate::model::ServiceNowMetadata {
             crate::model::ServiceNowMetadata {}
         }
-    }
-}
-impl ServiceNowMetadata {
-    /// Creates a new builder-style object to manufacture [`ServiceNowMetadata`](crate::model::ServiceNowMetadata).
-    pub fn builder() -> crate::model::service_now_metadata::Builder {
-        crate::model::service_now_metadata::Builder::default()
     }
 }
 
@@ -20341,6 +20471,13 @@ impl SalesforceMetadata {
         self.data_transfer_apis.as_deref()
     }
 }
+impl SalesforceMetadata {
+    /// Creates a new builder-style object to manufacture [`SalesforceMetadata`](crate::model::SalesforceMetadata).
+    pub fn builder() -> crate::model::salesforce_metadata::Builder {
+        crate::model::salesforce_metadata::Builder::default()
+    }
+}
+
 /// See [`SalesforceMetadata`](crate::model::SalesforceMetadata).
 pub mod salesforce_metadata {
 
@@ -20403,17 +20540,18 @@ pub mod salesforce_metadata {
         }
     }
 }
-impl SalesforceMetadata {
-    /// Creates a new builder-style object to manufacture [`SalesforceMetadata`](crate::model::SalesforceMetadata).
-    pub fn builder() -> crate::model::salesforce_metadata::Builder {
-        crate::model::salesforce_metadata::Builder::default()
-    }
-}
 
 /// <p> The connector metadata specific to Amazon S3. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct S3Metadata {}
+impl S3Metadata {
+    /// Creates a new builder-style object to manufacture [`S3Metadata`](crate::model::S3Metadata).
+    pub fn builder() -> crate::model::s3_metadata::Builder {
+        crate::model::s3_metadata::Builder::default()
+    }
+}
+
 /// See [`S3Metadata`](crate::model::S3Metadata).
 pub mod s3_metadata {
 
@@ -20428,17 +20566,18 @@ pub mod s3_metadata {
         }
     }
 }
-impl S3Metadata {
-    /// Creates a new builder-style object to manufacture [`S3Metadata`](crate::model::S3Metadata).
-    pub fn builder() -> crate::model::s3_metadata::Builder {
-        crate::model::s3_metadata::Builder::default()
-    }
-}
 
 /// <p> The connector metadata specific to Amazon Redshift. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RedshiftMetadata {}
+impl RedshiftMetadata {
+    /// Creates a new builder-style object to manufacture [`RedshiftMetadata`](crate::model::RedshiftMetadata).
+    pub fn builder() -> crate::model::redshift_metadata::Builder {
+        crate::model::redshift_metadata::Builder::default()
+    }
+}
+
 /// See [`RedshiftMetadata`](crate::model::RedshiftMetadata).
 pub mod redshift_metadata {
 
@@ -20453,17 +20592,18 @@ pub mod redshift_metadata {
         }
     }
 }
-impl RedshiftMetadata {
-    /// Creates a new builder-style object to manufacture [`RedshiftMetadata`](crate::model::RedshiftMetadata).
-    pub fn builder() -> crate::model::redshift_metadata::Builder {
-        crate::model::redshift_metadata::Builder::default()
-    }
-}
 
 /// <p> The connector metadata specific to Marketo. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct MarketoMetadata {}
+impl MarketoMetadata {
+    /// Creates a new builder-style object to manufacture [`MarketoMetadata`](crate::model::MarketoMetadata).
+    pub fn builder() -> crate::model::marketo_metadata::Builder {
+        crate::model::marketo_metadata::Builder::default()
+    }
+}
+
 /// See [`MarketoMetadata`](crate::model::MarketoMetadata).
 pub mod marketo_metadata {
 
@@ -20478,17 +20618,18 @@ pub mod marketo_metadata {
         }
     }
 }
-impl MarketoMetadata {
-    /// Creates a new builder-style object to manufacture [`MarketoMetadata`](crate::model::MarketoMetadata).
-    pub fn builder() -> crate::model::marketo_metadata::Builder {
-        crate::model::marketo_metadata::Builder::default()
-    }
-}
 
 /// <p> The connector metadata specific to Infor Nexus. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InforNexusMetadata {}
+impl InforNexusMetadata {
+    /// Creates a new builder-style object to manufacture [`InforNexusMetadata`](crate::model::InforNexusMetadata).
+    pub fn builder() -> crate::model::infor_nexus_metadata::Builder {
+        crate::model::infor_nexus_metadata::Builder::default()
+    }
+}
+
 /// See [`InforNexusMetadata`](crate::model::InforNexusMetadata).
 pub mod infor_nexus_metadata {
 
@@ -20501,12 +20642,6 @@ pub mod infor_nexus_metadata {
         pub fn build(self) -> crate::model::InforNexusMetadata {
             crate::model::InforNexusMetadata {}
         }
-    }
-}
-impl InforNexusMetadata {
-    /// Creates a new builder-style object to manufacture [`InforNexusMetadata`](crate::model::InforNexusMetadata).
-    pub fn builder() -> crate::model::infor_nexus_metadata::Builder {
-        crate::model::infor_nexus_metadata::Builder::default()
     }
 }
 
@@ -20524,6 +20659,13 @@ impl GoogleAnalyticsMetadata {
         self.o_auth_scopes.as_deref()
     }
 }
+impl GoogleAnalyticsMetadata {
+    /// Creates a new builder-style object to manufacture [`GoogleAnalyticsMetadata`](crate::model::GoogleAnalyticsMetadata).
+    pub fn builder() -> crate::model::google_analytics_metadata::Builder {
+        crate::model::google_analytics_metadata::Builder::default()
+    }
+}
+
 /// See [`GoogleAnalyticsMetadata`](crate::model::GoogleAnalyticsMetadata).
 pub mod google_analytics_metadata {
 
@@ -20561,17 +20703,18 @@ pub mod google_analytics_metadata {
         }
     }
 }
-impl GoogleAnalyticsMetadata {
-    /// Creates a new builder-style object to manufacture [`GoogleAnalyticsMetadata`](crate::model::GoogleAnalyticsMetadata).
-    pub fn builder() -> crate::model::google_analytics_metadata::Builder {
-        crate::model::google_analytics_metadata::Builder::default()
-    }
-}
 
 /// <p> The connector metadata specific to Dynatrace. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DynatraceMetadata {}
+impl DynatraceMetadata {
+    /// Creates a new builder-style object to manufacture [`DynatraceMetadata`](crate::model::DynatraceMetadata).
+    pub fn builder() -> crate::model::dynatrace_metadata::Builder {
+        crate::model::dynatrace_metadata::Builder::default()
+    }
+}
+
 /// See [`DynatraceMetadata`](crate::model::DynatraceMetadata).
 pub mod dynatrace_metadata {
 
@@ -20586,17 +20729,18 @@ pub mod dynatrace_metadata {
         }
     }
 }
-impl DynatraceMetadata {
-    /// Creates a new builder-style object to manufacture [`DynatraceMetadata`](crate::model::DynatraceMetadata).
-    pub fn builder() -> crate::model::dynatrace_metadata::Builder {
-        crate::model::dynatrace_metadata::Builder::default()
-    }
-}
 
 /// <p> The connector metadata specific to Datadog. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DatadogMetadata {}
+impl DatadogMetadata {
+    /// Creates a new builder-style object to manufacture [`DatadogMetadata`](crate::model::DatadogMetadata).
+    pub fn builder() -> crate::model::datadog_metadata::Builder {
+        crate::model::datadog_metadata::Builder::default()
+    }
+}
+
 /// See [`DatadogMetadata`](crate::model::DatadogMetadata).
 pub mod datadog_metadata {
 
@@ -20611,17 +20755,18 @@ pub mod datadog_metadata {
         }
     }
 }
-impl DatadogMetadata {
-    /// Creates a new builder-style object to manufacture [`DatadogMetadata`](crate::model::DatadogMetadata).
-    pub fn builder() -> crate::model::datadog_metadata::Builder {
-        crate::model::datadog_metadata::Builder::default()
-    }
-}
 
 /// <p> The connector metadata specific to Amplitude. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AmplitudeMetadata {}
+impl AmplitudeMetadata {
+    /// Creates a new builder-style object to manufacture [`AmplitudeMetadata`](crate::model::AmplitudeMetadata).
+    pub fn builder() -> crate::model::amplitude_metadata::Builder {
+        crate::model::amplitude_metadata::Builder::default()
+    }
+}
+
 /// See [`AmplitudeMetadata`](crate::model::AmplitudeMetadata).
 pub mod amplitude_metadata {
 
@@ -20634,12 +20779,6 @@ pub mod amplitude_metadata {
         pub fn build(self) -> crate::model::AmplitudeMetadata {
             crate::model::AmplitudeMetadata {}
         }
-    }
-}
-impl AmplitudeMetadata {
-    /// Creates a new builder-style object to manufacture [`AmplitudeMetadata`](crate::model::AmplitudeMetadata).
-    pub fn builder() -> crate::model::amplitude_metadata::Builder {
-        crate::model::amplitude_metadata::Builder::default()
     }
 }
 
@@ -20837,6 +20976,13 @@ impl ConnectorProfile {
         self.private_connection_provisioning_state.as_ref()
     }
 }
+impl ConnectorProfile {
+    /// Creates a new builder-style object to manufacture [`ConnectorProfile`](crate::model::ConnectorProfile).
+    pub fn builder() -> crate::model::connector_profile::Builder {
+        crate::model::connector_profile::Builder::default()
+    }
+}
+
 /// See [`ConnectorProfile`](crate::model::ConnectorProfile).
 pub mod connector_profile {
 
@@ -21011,12 +21157,6 @@ pub mod connector_profile {
         }
     }
 }
-impl ConnectorProfile {
-    /// Creates a new builder-style object to manufacture [`ConnectorProfile`](crate::model::ConnectorProfile).
-    pub fn builder() -> crate::model::connector_profile::Builder {
-        crate::model::connector_profile::Builder::default()
-    }
-}
 
 /// <p> Specifies the private connection provisioning state. </p>
 #[non_exhaustive]
@@ -21050,6 +21190,13 @@ impl PrivateConnectionProvisioningState {
         self.failure_cause.as_ref()
     }
 }
+impl PrivateConnectionProvisioningState {
+    /// Creates a new builder-style object to manufacture [`PrivateConnectionProvisioningState`](crate::model::PrivateConnectionProvisioningState).
+    pub fn builder() -> crate::model::private_connection_provisioning_state::Builder {
+        crate::model::private_connection_provisioning_state::Builder::default()
+    }
+}
+
 /// See [`PrivateConnectionProvisioningState`](crate::model::PrivateConnectionProvisioningState).
 pub mod private_connection_provisioning_state {
 
@@ -21113,12 +21260,6 @@ pub mod private_connection_provisioning_state {
                 failure_cause: self.failure_cause,
             }
         }
-    }
-}
-impl PrivateConnectionProvisioningState {
-    /// Creates a new builder-style object to manufacture [`PrivateConnectionProvisioningState`](crate::model::PrivateConnectionProvisioningState).
-    pub fn builder() -> crate::model::private_connection_provisioning_state::Builder {
-        crate::model::private_connection_provisioning_state::Builder::default()
     }
 }
 
@@ -21428,6 +21569,13 @@ impl ConnectorEntityField {
         self.custom_properties.as_ref()
     }
 }
+impl ConnectorEntityField {
+    /// Creates a new builder-style object to manufacture [`ConnectorEntityField`](crate::model::ConnectorEntityField).
+    pub fn builder() -> crate::model::connector_entity_field::Builder {
+        crate::model::connector_entity_field::Builder::default()
+    }
+}
+
 /// See [`ConnectorEntityField`](crate::model::ConnectorEntityField).
 pub mod connector_entity_field {
 
@@ -21616,12 +21764,6 @@ pub mod connector_entity_field {
         }
     }
 }
-impl ConnectorEntityField {
-    /// Creates a new builder-style object to manufacture [`ConnectorEntityField`](crate::model::ConnectorEntityField).
-    pub fn builder() -> crate::model::connector_entity_field::Builder {
-        crate::model::connector_entity_field::Builder::default()
-    }
-}
 
 /// <p> The properties that can be applied to a field when connector is being used as a destination. </p>
 #[non_exhaustive]
@@ -21675,6 +21817,13 @@ impl DestinationFieldProperties {
         self.supported_write_operations.as_deref()
     }
 }
+impl DestinationFieldProperties {
+    /// Creates a new builder-style object to manufacture [`DestinationFieldProperties`](crate::model::DestinationFieldProperties).
+    pub fn builder() -> crate::model::destination_field_properties::Builder {
+        crate::model::destination_field_properties::Builder::default()
+    }
+}
+
 /// See [`DestinationFieldProperties`](crate::model::DestinationFieldProperties).
 pub mod destination_field_properties {
 
@@ -21776,12 +21925,6 @@ pub mod destination_field_properties {
         }
     }
 }
-impl DestinationFieldProperties {
-    /// Creates a new builder-style object to manufacture [`DestinationFieldProperties`](crate::model::DestinationFieldProperties).
-    pub fn builder() -> crate::model::destination_field_properties::Builder {
-        crate::model::destination_field_properties::Builder::default()
-    }
-}
 
 /// <p> The properties that can be applied to a field when the connector is being used as a source. </p>
 #[non_exhaustive]
@@ -21811,6 +21954,13 @@ impl SourceFieldProperties {
         self.is_timestamp_field_for_incremental_queries
     }
 }
+impl SourceFieldProperties {
+    /// Creates a new builder-style object to manufacture [`SourceFieldProperties`](crate::model::SourceFieldProperties).
+    pub fn builder() -> crate::model::source_field_properties::Builder {
+        crate::model::source_field_properties::Builder::default()
+    }
+}
+
 /// See [`SourceFieldProperties`](crate::model::SourceFieldProperties).
 pub mod source_field_properties {
 
@@ -21868,12 +22018,6 @@ pub mod source_field_properties {
         }
     }
 }
-impl SourceFieldProperties {
-    /// Creates a new builder-style object to manufacture [`SourceFieldProperties`](crate::model::SourceFieldProperties).
-    pub fn builder() -> crate::model::source_field_properties::Builder {
-        crate::model::source_field_properties::Builder::default()
-    }
-}
 
 /// <p> Contains details regarding all the supported <code>FieldTypes</code> and their corresponding <code>filterOperators</code> and <code>supportedValues</code>. </p>
 #[non_exhaustive]
@@ -21889,6 +22033,13 @@ impl SupportedFieldTypeDetails {
         self.v1.as_ref()
     }
 }
+impl SupportedFieldTypeDetails {
+    /// Creates a new builder-style object to manufacture [`SupportedFieldTypeDetails`](crate::model::SupportedFieldTypeDetails).
+    pub fn builder() -> crate::model::supported_field_type_details::Builder {
+        crate::model::supported_field_type_details::Builder::default()
+    }
+}
+
 /// See [`SupportedFieldTypeDetails`](crate::model::SupportedFieldTypeDetails).
 pub mod supported_field_type_details {
 
@@ -21916,12 +22067,6 @@ pub mod supported_field_type_details {
         pub fn build(self) -> crate::model::SupportedFieldTypeDetails {
             crate::model::SupportedFieldTypeDetails { v1: self.v1 }
         }
-    }
-}
-impl SupportedFieldTypeDetails {
-    /// Creates a new builder-style object to manufacture [`SupportedFieldTypeDetails`](crate::model::SupportedFieldTypeDetails).
-    pub fn builder() -> crate::model::supported_field_type_details::Builder {
-        crate::model::supported_field_type_details::Builder::default()
     }
 }
 
@@ -21981,6 +22126,13 @@ impl FieldTypeDetails {
         self.field_length_range.as_ref()
     }
 }
+impl FieldTypeDetails {
+    /// Creates a new builder-style object to manufacture [`FieldTypeDetails`](crate::model::FieldTypeDetails).
+    pub fn builder() -> crate::model::field_type_details::Builder {
+        crate::model::field_type_details::Builder::default()
+    }
+}
+
 /// See [`FieldTypeDetails`](crate::model::FieldTypeDetails).
 pub mod field_type_details {
 
@@ -22111,12 +22263,6 @@ pub mod field_type_details {
         }
     }
 }
-impl FieldTypeDetails {
-    /// Creates a new builder-style object to manufacture [`FieldTypeDetails`](crate::model::FieldTypeDetails).
-    pub fn builder() -> crate::model::field_type_details::Builder {
-        crate::model::field_type_details::Builder::default()
-    }
-}
 
 /// <p>The range of values that the property supports.</p>
 #[non_exhaustive]
@@ -22139,6 +22285,13 @@ impl Range {
         self.minimum
     }
 }
+impl Range {
+    /// Creates a new builder-style object to manufacture [`Range`](crate::model::Range).
+    pub fn builder() -> crate::model::range::Builder {
+        crate::model::range::Builder::default()
+    }
+}
+
 /// See [`Range`](crate::model::Range).
 pub mod range {
 
@@ -22177,11 +22330,5 @@ pub mod range {
                 minimum: self.minimum.unwrap_or_default(),
             }
         }
-    }
-}
-impl Range {
-    /// Creates a new builder-style object to manufacture [`Range`](crate::model::Range).
-    pub fn builder() -> crate::model::range::Builder {
-        crate::model::range::Builder::default()
     }
 }

@@ -19,6 +19,13 @@ impl aws_http::request_id::RequestId for UpdateFlowOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdateFlowOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateFlowOutput`](crate::output::UpdateFlowOutput).
+    pub fn builder() -> crate::output::update_flow_output::Builder {
+        crate::output::update_flow_output::Builder::default()
+    }
+}
+
 /// See [`UpdateFlowOutput`](crate::output::UpdateFlowOutput).
 pub mod update_flow_output {
 
@@ -61,12 +68,6 @@ pub mod update_flow_output {
         }
     }
 }
-impl UpdateFlowOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateFlowOutput`](crate::output::UpdateFlowOutput).
-    pub fn builder() -> crate::output::update_flow_output::Builder {
-        crate::output::update_flow_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -88,6 +89,13 @@ impl aws_http::request_id::RequestId for UpdateConnectorRegistrationOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdateConnectorRegistrationOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateConnectorRegistrationOutput`](crate::output::UpdateConnectorRegistrationOutput).
+    pub fn builder() -> crate::output::update_connector_registration_output::Builder {
+        crate::output::update_connector_registration_output::Builder::default()
+    }
+}
+
 /// See [`UpdateConnectorRegistrationOutput`](crate::output::UpdateConnectorRegistrationOutput).
 pub mod update_connector_registration_output {
 
@@ -130,12 +138,6 @@ pub mod update_connector_registration_output {
         }
     }
 }
-impl UpdateConnectorRegistrationOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateConnectorRegistrationOutput`](crate::output::UpdateConnectorRegistrationOutput).
-    pub fn builder() -> crate::output::update_connector_registration_output::Builder {
-        crate::output::update_connector_registration_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -157,6 +159,13 @@ impl aws_http::request_id::RequestId for UpdateConnectorProfileOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdateConnectorProfileOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateConnectorProfileOutput`](crate::output::UpdateConnectorProfileOutput).
+    pub fn builder() -> crate::output::update_connector_profile_output::Builder {
+        crate::output::update_connector_profile_output::Builder::default()
+    }
+}
+
 /// See [`UpdateConnectorProfileOutput`](crate::output::UpdateConnectorProfileOutput).
 pub mod update_connector_profile_output {
 
@@ -199,12 +208,6 @@ pub mod update_connector_profile_output {
         }
     }
 }
-impl UpdateConnectorProfileOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateConnectorProfileOutput`](crate::output::UpdateConnectorProfileOutput).
-    pub fn builder() -> crate::output::update_connector_profile_output::Builder {
-        crate::output::update_connector_profile_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -217,6 +220,13 @@ impl aws_http::request_id::RequestId for UntagResourceOutput {
         self._request_id.as_deref()
     }
 }
+impl UntagResourceOutput {
+    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    pub fn builder() -> crate::output::untag_resource_output::Builder {
+        crate::output::untag_resource_output::Builder::default()
+    }
+}
+
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
 
@@ -244,12 +254,6 @@ pub mod untag_resource_output {
         }
     }
 }
-impl UntagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
-    pub fn builder() -> crate::output::untag_resource_output::Builder {
-        crate::output::untag_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -262,6 +266,13 @@ impl aws_http::request_id::RequestId for UnregisterConnectorOutput {
         self._request_id.as_deref()
     }
 }
+impl UnregisterConnectorOutput {
+    /// Creates a new builder-style object to manufacture [`UnregisterConnectorOutput`](crate::output::UnregisterConnectorOutput).
+    pub fn builder() -> crate::output::unregister_connector_output::Builder {
+        crate::output::unregister_connector_output::Builder::default()
+    }
+}
+
 /// See [`UnregisterConnectorOutput`](crate::output::UnregisterConnectorOutput).
 pub mod unregister_connector_output {
 
@@ -289,12 +300,6 @@ pub mod unregister_connector_output {
         }
     }
 }
-impl UnregisterConnectorOutput {
-    /// Creates a new builder-style object to manufacture [`UnregisterConnectorOutput`](crate::output::UnregisterConnectorOutput).
-    pub fn builder() -> crate::output::unregister_connector_output::Builder {
-        crate::output::unregister_connector_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -307,6 +312,13 @@ impl aws_http::request_id::RequestId for TagResourceOutput {
         self._request_id.as_deref()
     }
 }
+impl TagResourceOutput {
+    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
+    pub fn builder() -> crate::output::tag_resource_output::Builder {
+        crate::output::tag_resource_output::Builder::default()
+    }
+}
+
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
 
@@ -332,12 +344,6 @@ pub mod tag_resource_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl TagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
-    pub fn builder() -> crate::output::tag_resource_output::Builder {
-        crate::output::tag_resource_output::Builder::default()
     }
 }
 
@@ -368,6 +374,13 @@ impl aws_http::request_id::RequestId for StopFlowOutput {
         self._request_id.as_deref()
     }
 }
+impl StopFlowOutput {
+    /// Creates a new builder-style object to manufacture [`StopFlowOutput`](crate::output::StopFlowOutput).
+    pub fn builder() -> crate::output::stop_flow_output::Builder {
+        crate::output::stop_flow_output::Builder::default()
+    }
+}
+
 /// See [`StopFlowOutput`](crate::output::StopFlowOutput).
 pub mod stop_flow_output {
 
@@ -422,12 +435,6 @@ pub mod stop_flow_output {
         }
     }
 }
-impl StopFlowOutput {
-    /// Creates a new builder-style object to manufacture [`StopFlowOutput`](crate::output::StopFlowOutput).
-    pub fn builder() -> crate::output::stop_flow_output::Builder {
-        crate::output::stop_flow_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -463,6 +470,13 @@ impl aws_http::request_id::RequestId for StartFlowOutput {
         self._request_id.as_deref()
     }
 }
+impl StartFlowOutput {
+    /// Creates a new builder-style object to manufacture [`StartFlowOutput`](crate::output::StartFlowOutput).
+    pub fn builder() -> crate::output::start_flow_output::Builder {
+        crate::output::start_flow_output::Builder::default()
+    }
+}
+
 /// See [`StartFlowOutput`](crate::output::StartFlowOutput).
 pub mod start_flow_output {
 
@@ -529,12 +543,6 @@ pub mod start_flow_output {
         }
     }
 }
-impl StartFlowOutput {
-    /// Creates a new builder-style object to manufacture [`StartFlowOutput`](crate::output::StartFlowOutput).
-    pub fn builder() -> crate::output::start_flow_output::Builder {
-        crate::output::start_flow_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -556,6 +564,13 @@ impl aws_http::request_id::RequestId for RegisterConnectorOutput {
         self._request_id.as_deref()
     }
 }
+impl RegisterConnectorOutput {
+    /// Creates a new builder-style object to manufacture [`RegisterConnectorOutput`](crate::output::RegisterConnectorOutput).
+    pub fn builder() -> crate::output::register_connector_output::Builder {
+        crate::output::register_connector_output::Builder::default()
+    }
+}
+
 /// See [`RegisterConnectorOutput`](crate::output::RegisterConnectorOutput).
 pub mod register_connector_output {
 
@@ -598,12 +613,6 @@ pub mod register_connector_output {
         }
     }
 }
-impl RegisterConnectorOutput {
-    /// Creates a new builder-style object to manufacture [`RegisterConnectorOutput`](crate::output::RegisterConnectorOutput).
-    pub fn builder() -> crate::output::register_connector_output::Builder {
-        crate::output::register_connector_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -629,6 +638,13 @@ impl aws_http::request_id::RequestId for ListTagsForResourceOutput {
         self._request_id.as_deref()
     }
 }
+impl ListTagsForResourceOutput {
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
+        crate::output::list_tags_for_resource_output::Builder::default()
+    }
+}
+
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
 
@@ -685,12 +701,6 @@ pub mod list_tags_for_resource_output {
         }
     }
 }
-impl ListTagsForResourceOutput {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
-    pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
-        crate::output::list_tags_for_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -719,6 +729,13 @@ impl aws_http::request_id::RequestId for ListFlowsOutput {
         self._request_id.as_deref()
     }
 }
+impl ListFlowsOutput {
+    /// Creates a new builder-style object to manufacture [`ListFlowsOutput`](crate::output::ListFlowsOutput).
+    pub fn builder() -> crate::output::list_flows_output::Builder {
+        crate::output::list_flows_output::Builder::default()
+    }
+}
+
 /// See [`ListFlowsOutput`](crate::output::ListFlowsOutput).
 pub mod list_flows_output {
 
@@ -779,12 +796,6 @@ pub mod list_flows_output {
         }
     }
 }
-impl ListFlowsOutput {
-    /// Creates a new builder-style object to manufacture [`ListFlowsOutput`](crate::output::ListFlowsOutput).
-    pub fn builder() -> crate::output::list_flows_output::Builder {
-        crate::output::list_flows_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -813,6 +824,13 @@ impl aws_http::request_id::RequestId for ListConnectorsOutput {
         self._request_id.as_deref()
     }
 }
+impl ListConnectorsOutput {
+    /// Creates a new builder-style object to manufacture [`ListConnectorsOutput`](crate::output::ListConnectorsOutput).
+    pub fn builder() -> crate::output::list_connectors_output::Builder {
+        crate::output::list_connectors_output::Builder::default()
+    }
+}
+
 /// See [`ListConnectorsOutput`](crate::output::ListConnectorsOutput).
 pub mod list_connectors_output {
 
@@ -873,12 +891,6 @@ pub mod list_connectors_output {
         }
     }
 }
-impl ListConnectorsOutput {
-    /// Creates a new builder-style object to manufacture [`ListConnectorsOutput`](crate::output::ListConnectorsOutput).
-    pub fn builder() -> crate::output::list_connectors_output::Builder {
-        crate::output::list_connectors_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -919,6 +931,13 @@ impl aws_http::request_id::RequestId for ListConnectorEntitiesOutput {
         self._request_id.as_deref()
     }
 }
+impl ListConnectorEntitiesOutput {
+    /// Creates a new builder-style object to manufacture [`ListConnectorEntitiesOutput`](crate::output::ListConnectorEntitiesOutput).
+    pub fn builder() -> crate::output::list_connector_entities_output::Builder {
+        crate::output::list_connector_entities_output::Builder::default()
+    }
+}
+
 /// See [`ListConnectorEntitiesOutput`](crate::output::ListConnectorEntitiesOutput).
 pub mod list_connector_entities_output {
 
@@ -993,12 +1012,6 @@ pub mod list_connector_entities_output {
         }
     }
 }
-impl ListConnectorEntitiesOutput {
-    /// Creates a new builder-style object to manufacture [`ListConnectorEntitiesOutput`](crate::output::ListConnectorEntitiesOutput).
-    pub fn builder() -> crate::output::list_connector_entities_output::Builder {
-        crate::output::list_connector_entities_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1027,6 +1040,13 @@ impl aws_http::request_id::RequestId for DescribeFlowExecutionRecordsOutput {
         self._request_id.as_deref()
     }
 }
+impl DescribeFlowExecutionRecordsOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeFlowExecutionRecordsOutput`](crate::output::DescribeFlowExecutionRecordsOutput).
+    pub fn builder() -> crate::output::describe_flow_execution_records_output::Builder {
+        crate::output::describe_flow_execution_records_output::Builder::default()
+    }
+}
+
 /// See [`DescribeFlowExecutionRecordsOutput`](crate::output::DescribeFlowExecutionRecordsOutput).
 pub mod describe_flow_execution_records_output {
 
@@ -1086,12 +1106,6 @@ pub mod describe_flow_execution_records_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl DescribeFlowExecutionRecordsOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeFlowExecutionRecordsOutput`](crate::output::DescribeFlowExecutionRecordsOutput).
-    pub fn builder() -> crate::output::describe_flow_execution_records_output::Builder {
-        crate::output::describe_flow_execution_records_output::Builder::default()
     }
 }
 
@@ -1265,6 +1279,13 @@ impl aws_http::request_id::RequestId for DescribeFlowOutput {
         self._request_id.as_deref()
     }
 }
+impl DescribeFlowOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeFlowOutput`](crate::output::DescribeFlowOutput).
+    pub fn builder() -> crate::output::describe_flow_output::Builder {
+        crate::output::describe_flow_output::Builder::default()
+    }
+}
+
 /// See [`DescribeFlowOutput`](crate::output::DescribeFlowOutput).
 pub mod describe_flow_output {
 
@@ -1613,12 +1634,6 @@ pub mod describe_flow_output {
         }
     }
 }
-impl DescribeFlowOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeFlowOutput`](crate::output::DescribeFlowOutput).
-    pub fn builder() -> crate::output::describe_flow_output::Builder {
-        crate::output::describe_flow_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1666,6 +1681,13 @@ impl aws_http::request_id::RequestId for DescribeConnectorsOutput {
         self._request_id.as_deref()
     }
 }
+impl DescribeConnectorsOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeConnectorsOutput`](crate::output::DescribeConnectorsOutput).
+    pub fn builder() -> crate::output::describe_connectors_output::Builder {
+        crate::output::describe_connectors_output::Builder::default()
+    }
+}
+
 /// See [`DescribeConnectorsOutput`](crate::output::DescribeConnectorsOutput).
 pub mod describe_connectors_output {
 
@@ -1761,12 +1783,6 @@ pub mod describe_connectors_output {
         }
     }
 }
-impl DescribeConnectorsOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeConnectorsOutput`](crate::output::DescribeConnectorsOutput).
-    pub fn builder() -> crate::output::describe_connectors_output::Builder {
-        crate::output::describe_connectors_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1798,6 +1814,13 @@ impl aws_http::request_id::RequestId for DescribeConnectorProfilesOutput {
         self._request_id.as_deref()
     }
 }
+impl DescribeConnectorProfilesOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeConnectorProfilesOutput`](crate::output::DescribeConnectorProfilesOutput).
+    pub fn builder() -> crate::output::describe_connector_profiles_output::Builder {
+        crate::output::describe_connector_profiles_output::Builder::default()
+    }
+}
+
 /// See [`DescribeConnectorProfilesOutput`](crate::output::DescribeConnectorProfilesOutput).
 pub mod describe_connector_profiles_output {
 
@@ -1859,12 +1882,6 @@ pub mod describe_connector_profiles_output {
         }
     }
 }
-impl DescribeConnectorProfilesOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeConnectorProfilesOutput`](crate::output::DescribeConnectorProfilesOutput).
-    pub fn builder() -> crate::output::describe_connector_profiles_output::Builder {
-        crate::output::describe_connector_profiles_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1889,6 +1906,13 @@ impl aws_http::request_id::RequestId for DescribeConnectorEntityOutput {
         self._request_id.as_deref()
     }
 }
+impl DescribeConnectorEntityOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeConnectorEntityOutput`](crate::output::DescribeConnectorEntityOutput).
+    pub fn builder() -> crate::output::describe_connector_entity_output::Builder {
+        crate::output::describe_connector_entity_output::Builder::default()
+    }
+}
+
 /// See [`DescribeConnectorEntityOutput`](crate::output::DescribeConnectorEntityOutput).
 pub mod describe_connector_entity_output {
 
@@ -1941,12 +1965,6 @@ pub mod describe_connector_entity_output {
         }
     }
 }
-impl DescribeConnectorEntityOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeConnectorEntityOutput`](crate::output::DescribeConnectorEntityOutput).
-    pub fn builder() -> crate::output::describe_connector_entity_output::Builder {
-        crate::output::describe_connector_entity_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1970,6 +1988,13 @@ impl aws_http::request_id::RequestId for DescribeConnectorOutput {
         self._request_id.as_deref()
     }
 }
+impl DescribeConnectorOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeConnectorOutput`](crate::output::DescribeConnectorOutput).
+    pub fn builder() -> crate::output::describe_connector_output::Builder {
+        crate::output::describe_connector_output::Builder::default()
+    }
+}
+
 /// See [`DescribeConnectorOutput`](crate::output::DescribeConnectorOutput).
 pub mod describe_connector_output {
 
@@ -2016,12 +2041,6 @@ pub mod describe_connector_output {
         }
     }
 }
-impl DescribeConnectorOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeConnectorOutput`](crate::output::DescribeConnectorOutput).
-    pub fn builder() -> crate::output::describe_connector_output::Builder {
-        crate::output::describe_connector_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2034,6 +2053,13 @@ impl aws_http::request_id::RequestId for DeleteFlowOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteFlowOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteFlowOutput`](crate::output::DeleteFlowOutput).
+    pub fn builder() -> crate::output::delete_flow_output::Builder {
+        crate::output::delete_flow_output::Builder::default()
+    }
+}
+
 /// See [`DeleteFlowOutput`](crate::output::DeleteFlowOutput).
 pub mod delete_flow_output {
 
@@ -2061,12 +2087,6 @@ pub mod delete_flow_output {
         }
     }
 }
-impl DeleteFlowOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteFlowOutput`](crate::output::DeleteFlowOutput).
-    pub fn builder() -> crate::output::delete_flow_output::Builder {
-        crate::output::delete_flow_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2079,6 +2099,13 @@ impl aws_http::request_id::RequestId for DeleteConnectorProfileOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteConnectorProfileOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteConnectorProfileOutput`](crate::output::DeleteConnectorProfileOutput).
+    pub fn builder() -> crate::output::delete_connector_profile_output::Builder {
+        crate::output::delete_connector_profile_output::Builder::default()
+    }
+}
+
 /// See [`DeleteConnectorProfileOutput`](crate::output::DeleteConnectorProfileOutput).
 pub mod delete_connector_profile_output {
 
@@ -2104,12 +2131,6 @@ pub mod delete_connector_profile_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl DeleteConnectorProfileOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteConnectorProfileOutput`](crate::output::DeleteConnectorProfileOutput).
-    pub fn builder() -> crate::output::delete_connector_profile_output::Builder {
-        crate::output::delete_connector_profile_output::Builder::default()
     }
 }
 
@@ -2140,6 +2161,13 @@ impl aws_http::request_id::RequestId for CreateFlowOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateFlowOutput {
+    /// Creates a new builder-style object to manufacture [`CreateFlowOutput`](crate::output::CreateFlowOutput).
+    pub fn builder() -> crate::output::create_flow_output::Builder {
+        crate::output::create_flow_output::Builder::default()
+    }
+}
+
 /// See [`CreateFlowOutput`](crate::output::CreateFlowOutput).
 pub mod create_flow_output {
 
@@ -2194,12 +2222,6 @@ pub mod create_flow_output {
         }
     }
 }
-impl CreateFlowOutput {
-    /// Creates a new builder-style object to manufacture [`CreateFlowOutput`](crate::output::CreateFlowOutput).
-    pub fn builder() -> crate::output::create_flow_output::Builder {
-        crate::output::create_flow_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2221,6 +2243,13 @@ impl aws_http::request_id::RequestId for CreateConnectorProfileOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateConnectorProfileOutput {
+    /// Creates a new builder-style object to manufacture [`CreateConnectorProfileOutput`](crate::output::CreateConnectorProfileOutput).
+    pub fn builder() -> crate::output::create_connector_profile_output::Builder {
+        crate::output::create_connector_profile_output::Builder::default()
+    }
+}
+
 /// See [`CreateConnectorProfileOutput`](crate::output::CreateConnectorProfileOutput).
 pub mod create_connector_profile_output {
 
@@ -2261,11 +2290,5 @@ pub mod create_connector_profile_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl CreateConnectorProfileOutput {
-    /// Creates a new builder-style object to manufacture [`CreateConnectorProfileOutput`](crate::output::CreateConnectorProfileOutput).
-    pub fn builder() -> crate::output::create_connector_profile_output::Builder {
-        crate::output::create_connector_profile_output::Builder::default()
     }
 }

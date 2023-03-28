@@ -19,6 +19,13 @@ impl aws_http::request_id::RequestId for UpdateEnvironmentOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdateEnvironmentOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateEnvironmentOutput`](crate::output::UpdateEnvironmentOutput).
+    pub fn builder() -> crate::output::update_environment_output::Builder {
+        crate::output::update_environment_output::Builder::default()
+    }
+}
+
 /// See [`UpdateEnvironmentOutput`](crate::output::UpdateEnvironmentOutput).
 pub mod update_environment_output {
 
@@ -58,12 +65,6 @@ pub mod update_environment_output {
         }
     }
 }
-impl UpdateEnvironmentOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateEnvironmentOutput`](crate::output::UpdateEnvironmentOutput).
-    pub fn builder() -> crate::output::update_environment_output::Builder {
-        crate::output::update_environment_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -76,6 +77,13 @@ impl aws_http::request_id::RequestId for UntagResourceOutput {
         self._request_id.as_deref()
     }
 }
+impl UntagResourceOutput {
+    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    pub fn builder() -> crate::output::untag_resource_output::Builder {
+        crate::output::untag_resource_output::Builder::default()
+    }
+}
+
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
 
@@ -103,12 +111,6 @@ pub mod untag_resource_output {
         }
     }
 }
-impl UntagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
-    pub fn builder() -> crate::output::untag_resource_output::Builder {
-        crate::output::untag_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -121,6 +123,13 @@ impl aws_http::request_id::RequestId for TagResourceOutput {
         self._request_id.as_deref()
     }
 }
+impl TagResourceOutput {
+    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
+    pub fn builder() -> crate::output::tag_resource_output::Builder {
+        crate::output::tag_resource_output::Builder::default()
+    }
+}
+
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
 
@@ -148,12 +157,6 @@ pub mod tag_resource_output {
         }
     }
 }
-impl TagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
-    pub fn builder() -> crate::output::tag_resource_output::Builder {
-        crate::output::tag_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -166,6 +169,13 @@ impl aws_http::request_id::RequestId for PublishMetricsOutput {
         self._request_id.as_deref()
     }
 }
+impl PublishMetricsOutput {
+    /// Creates a new builder-style object to manufacture [`PublishMetricsOutput`](crate::output::PublishMetricsOutput).
+    pub fn builder() -> crate::output::publish_metrics_output::Builder {
+        crate::output::publish_metrics_output::Builder::default()
+    }
+}
+
 /// See [`PublishMetricsOutput`](crate::output::PublishMetricsOutput).
 pub mod publish_metrics_output {
 
@@ -193,12 +203,6 @@ pub mod publish_metrics_output {
         }
     }
 }
-impl PublishMetricsOutput {
-    /// Creates a new builder-style object to manufacture [`PublishMetricsOutput`](crate::output::PublishMetricsOutput).
-    pub fn builder() -> crate::output::publish_metrics_output::Builder {
-        crate::output::publish_metrics_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -224,6 +228,13 @@ impl aws_http::request_id::RequestId for ListTagsForResourceOutput {
         self._request_id.as_deref()
     }
 }
+impl ListTagsForResourceOutput {
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
+        crate::output::list_tags_for_resource_output::Builder::default()
+    }
+}
+
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
 
@@ -280,12 +291,6 @@ pub mod list_tags_for_resource_output {
         }
     }
 }
-impl ListTagsForResourceOutput {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
-    pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
-        crate::output::list_tags_for_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -314,6 +319,13 @@ impl aws_http::request_id::RequestId for ListEnvironmentsOutput {
         self._request_id.as_deref()
     }
 }
+impl ListEnvironmentsOutput {
+    /// Creates a new builder-style object to manufacture [`ListEnvironmentsOutput`](crate::output::ListEnvironmentsOutput).
+    pub fn builder() -> crate::output::list_environments_output::Builder {
+        crate::output::list_environments_output::Builder::default()
+    }
+}
+
 /// See [`ListEnvironmentsOutput`](crate::output::ListEnvironmentsOutput).
 pub mod list_environments_output {
 
@@ -374,12 +386,6 @@ pub mod list_environments_output {
         }
     }
 }
-impl ListEnvironmentsOutput {
-    /// Creates a new builder-style object to manufacture [`ListEnvironmentsOutput`](crate::output::ListEnvironmentsOutput).
-    pub fn builder() -> crate::output::list_environments_output::Builder {
-        crate::output::list_environments_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -401,6 +407,13 @@ impl aws_http::request_id::RequestId for GetEnvironmentOutput {
         self._request_id.as_deref()
     }
 }
+impl GetEnvironmentOutput {
+    /// Creates a new builder-style object to manufacture [`GetEnvironmentOutput`](crate::output::GetEnvironmentOutput).
+    pub fn builder() -> crate::output::get_environment_output::Builder {
+        crate::output::get_environment_output::Builder::default()
+    }
+}
+
 /// See [`GetEnvironmentOutput`](crate::output::GetEnvironmentOutput).
 pub mod get_environment_output {
 
@@ -443,12 +456,6 @@ pub mod get_environment_output {
         }
     }
 }
-impl GetEnvironmentOutput {
-    /// Creates a new builder-style object to manufacture [`GetEnvironmentOutput`](crate::output::GetEnvironmentOutput).
-    pub fn builder() -> crate::output::get_environment_output::Builder {
-        crate::output::get_environment_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -461,6 +468,13 @@ impl aws_http::request_id::RequestId for DeleteEnvironmentOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteEnvironmentOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteEnvironmentOutput`](crate::output::DeleteEnvironmentOutput).
+    pub fn builder() -> crate::output::delete_environment_output::Builder {
+        crate::output::delete_environment_output::Builder::default()
+    }
+}
+
 /// See [`DeleteEnvironmentOutput`](crate::output::DeleteEnvironmentOutput).
 pub mod delete_environment_output {
 
@@ -486,12 +500,6 @@ pub mod delete_environment_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl DeleteEnvironmentOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteEnvironmentOutput`](crate::output::DeleteEnvironmentOutput).
-    pub fn builder() -> crate::output::delete_environment_output::Builder {
-        crate::output::delete_environment_output::Builder::default()
     }
 }
 
@@ -531,6 +539,13 @@ impl aws_http::request_id::RequestId for CreateWebLoginTokenOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateWebLoginTokenOutput {
+    /// Creates a new builder-style object to manufacture [`CreateWebLoginTokenOutput`](crate::output::CreateWebLoginTokenOutput).
+    pub fn builder() -> crate::output::create_web_login_token_output::Builder {
+        crate::output::create_web_login_token_output::Builder::default()
+    }
+}
+
 /// See [`CreateWebLoginTokenOutput`](crate::output::CreateWebLoginTokenOutput).
 pub mod create_web_login_token_output {
 
@@ -594,12 +609,6 @@ pub mod create_web_login_token_output {
         }
     }
 }
-impl CreateWebLoginTokenOutput {
-    /// Creates a new builder-style object to manufacture [`CreateWebLoginTokenOutput`](crate::output::CreateWebLoginTokenOutput).
-    pub fn builder() -> crate::output::create_web_login_token_output::Builder {
-        crate::output::create_web_login_token_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -621,6 +630,13 @@ impl aws_http::request_id::RequestId for CreateEnvironmentOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateEnvironmentOutput {
+    /// Creates a new builder-style object to manufacture [`CreateEnvironmentOutput`](crate::output::CreateEnvironmentOutput).
+    pub fn builder() -> crate::output::create_environment_output::Builder {
+        crate::output::create_environment_output::Builder::default()
+    }
+}
+
 /// See [`CreateEnvironmentOutput`](crate::output::CreateEnvironmentOutput).
 pub mod create_environment_output {
 
@@ -660,12 +676,6 @@ pub mod create_environment_output {
         }
     }
 }
-impl CreateEnvironmentOutput {
-    /// Creates a new builder-style object to manufacture [`CreateEnvironmentOutput`](crate::output::CreateEnvironmentOutput).
-    pub fn builder() -> crate::output::create_environment_output::Builder {
-        crate::output::create_environment_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -703,6 +713,13 @@ impl aws_http::request_id::RequestId for CreateCliTokenOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateCliTokenOutput {
+    /// Creates a new builder-style object to manufacture [`CreateCliTokenOutput`](crate::output::CreateCliTokenOutput).
+    pub fn builder() -> crate::output::create_cli_token_output::Builder {
+        crate::output::create_cli_token_output::Builder::default()
+    }
+}
+
 /// See [`CreateCliTokenOutput`](crate::output::CreateCliTokenOutput).
 pub mod create_cli_token_output {
 
@@ -764,11 +781,5 @@ pub mod create_cli_token_output {
             formatter.field("_request_id", &self._request_id);
             formatter.finish()
         }
-    }
-}
-impl CreateCliTokenOutput {
-    /// Creates a new builder-style object to manufacture [`CreateCliTokenOutput`](crate::output::CreateCliTokenOutput).
-    pub fn builder() -> crate::output::create_cli_token_output::Builder {
-        crate::output::create_cli_token_output::Builder::default()
     }
 }

@@ -58,6 +58,13 @@ impl ApplicationSummary {
         self.application_state.as_ref()
     }
 }
+impl ApplicationSummary {
+    /// Creates a new builder-style object to manufacture [`ApplicationSummary`](crate::model::ApplicationSummary).
+    pub fn builder() -> crate::model::application_summary::Builder {
+        crate::model::application_summary::Builder::default()
+    }
+}
+
 /// See [`ApplicationSummary`](crate::model::ApplicationSummary).
 pub mod application_summary {
 
@@ -171,12 +178,6 @@ pub mod application_summary {
                 application_state: self.application_state,
             }
         }
-    }
-}
-impl ApplicationSummary {
-    /// Creates a new builder-style object to manufacture [`ApplicationSummary`](crate::model::ApplicationSummary).
-    pub fn builder() -> crate::model::application_summary::Builder {
-        crate::model::application_summary::Builder::default()
     }
 }
 

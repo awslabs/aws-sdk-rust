@@ -162,11 +162,41 @@ pub struct NotFoundException {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl NotFoundException {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for NotFoundException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "NotFoundException")?;
+        if let Some(inner_1) = &self.message {
+            {
+                write!(f, ": {}", inner_1)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for NotFoundException {}
+impl aws_http::request_id::RequestId for crate::error::NotFoundException {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for NotFoundException {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl NotFoundException {
     /// Creates a new builder-style object to manufacture [`NotFoundException`](crate::error::NotFoundException).
     pub fn builder() -> crate::error::not_found_exception::Builder {
         crate::error::not_found_exception::Builder::default()
     }
 }
+
 /// See [`NotFoundException`](crate::error::NotFoundException).
 pub mod not_found_exception {
 
@@ -211,35 +241,6 @@ pub mod not_found_exception {
         }
     }
 }
-impl NotFoundException {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for NotFoundException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "NotFoundException")?;
-        if let Some(inner_1) = &self.message {
-            {
-                write!(f, ": {}", inner_1)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for NotFoundException {}
-impl aws_http::request_id::RequestId for crate::error::NotFoundException {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for NotFoundException {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>One or more parameters had an invalid value.</p>
 #[non_exhaustive]
@@ -251,11 +252,41 @@ pub struct InvalidParameterException {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl InvalidParameterException {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for InvalidParameterException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "InvalidParameterException")?;
+        if let Some(inner_2) = &self.message {
+            {
+                write!(f, ": {}", inner_2)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for InvalidParameterException {}
+impl aws_http::request_id::RequestId for crate::error::InvalidParameterException {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidParameterException {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl InvalidParameterException {
     /// Creates a new builder-style object to manufacture [`InvalidParameterException`](crate::error::InvalidParameterException).
     pub fn builder() -> crate::error::invalid_parameter_exception::Builder {
         crate::error::invalid_parameter_exception::Builder::default()
     }
 }
+
 /// See [`InvalidParameterException`](crate::error::InvalidParameterException).
 pub mod invalid_parameter_exception {
 
@@ -300,35 +331,6 @@ pub mod invalid_parameter_exception {
         }
     }
 }
-impl InvalidParameterException {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for InvalidParameterException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "InvalidParameterException")?;
-        if let Some(inner_2) = &self.message {
-            {
-                write!(f, ": {}", inner_2)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for InvalidParameterException {}
-impl aws_http::request_id::RequestId for crate::error::InvalidParameterException {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidParameterException {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>The pagination token is invalid. Try again without a pagination token.</p>
 #[non_exhaustive]
@@ -340,11 +342,41 @@ pub struct InvalidNextTokenException {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl InvalidNextTokenException {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for InvalidNextTokenException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "InvalidNextTokenException")?;
+        if let Some(inner_3) = &self.message {
+            {
+                write!(f, ": {}", inner_3)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for InvalidNextTokenException {}
+impl aws_http::request_id::RequestId for crate::error::InvalidNextTokenException {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidNextTokenException {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl InvalidNextTokenException {
     /// Creates a new builder-style object to manufacture [`InvalidNextTokenException`](crate::error::InvalidNextTokenException).
     pub fn builder() -> crate::error::invalid_next_token_exception::Builder {
         crate::error::invalid_next_token_exception::Builder::default()
     }
 }
+
 /// See [`InvalidNextTokenException`](crate::error::InvalidNextTokenException).
 pub mod invalid_next_token_exception {
 
@@ -389,35 +421,6 @@ pub mod invalid_next_token_exception {
         }
     }
 }
-impl InvalidNextTokenException {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for InvalidNextTokenException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "InvalidNextTokenException")?;
-        if let Some(inner_3) = &self.message {
-            {
-                write!(f, ": {}", inner_3)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for InvalidNextTokenException {}
-impl aws_http::request_id::RequestId for crate::error::InvalidNextTokenException {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidNextTokenException {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>An error on the server occurred during the processing of your request. Try again later.</p>
 #[non_exhaustive]
@@ -429,11 +432,41 @@ pub struct InternalErrorException {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl InternalErrorException {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for InternalErrorException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "InternalErrorException")?;
+        if let Some(inner_4) = &self.message {
+            {
+                write!(f, ": {}", inner_4)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for InternalErrorException {}
+impl aws_http::request_id::RequestId for crate::error::InternalErrorException {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InternalErrorException {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl InternalErrorException {
     /// Creates a new builder-style object to manufacture [`InternalErrorException`](crate::error::InternalErrorException).
     pub fn builder() -> crate::error::internal_error_exception::Builder {
         crate::error::internal_error_exception::Builder::default()
     }
 }
+
 /// See [`InternalErrorException`](crate::error::InternalErrorException).
 pub mod internal_error_exception {
 
@@ -478,35 +511,6 @@ pub mod internal_error_exception {
         }
     }
 }
-impl InternalErrorException {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for InternalErrorException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "InternalErrorException")?;
-        if let Some(inner_4) = &self.message {
-            {
-                write!(f, ": {}", inner_4)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for InternalErrorException {}
-impl aws_http::request_id::RequestId for crate::error::InternalErrorException {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InternalErrorException {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>The pagination token expired. Try again without a pagination token.</p>
 #[non_exhaustive]
@@ -518,11 +522,41 @@ pub struct ExpiredNextTokenException {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl ExpiredNextTokenException {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for ExpiredNextTokenException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "ExpiredNextTokenException")?;
+        if let Some(inner_5) = &self.message {
+            {
+                write!(f, ": {}", inner_5)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for ExpiredNextTokenException {}
+impl aws_http::request_id::RequestId for crate::error::ExpiredNextTokenException {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for ExpiredNextTokenException {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl ExpiredNextTokenException {
     /// Creates a new builder-style object to manufacture [`ExpiredNextTokenException`](crate::error::ExpiredNextTokenException).
     pub fn builder() -> crate::error::expired_next_token_exception::Builder {
         crate::error::expired_next_token_exception::Builder::default()
     }
 }
+
 /// See [`ExpiredNextTokenException`](crate::error::ExpiredNextTokenException).
 pub mod expired_next_token_exception {
 
@@ -565,35 +599,6 @@ pub mod expired_next_token_exception {
                 meta: self.meta.unwrap_or_default(),
             }
         }
-    }
-}
-impl ExpiredNextTokenException {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for ExpiredNextTokenException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "ExpiredNextTokenException")?;
-        if let Some(inner_5) = &self.message {
-            {
-                write!(f, ": {}", inner_5)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for ExpiredNextTokenException {}
-impl aws_http::request_id::RequestId for crate::error::ExpiredNextTokenException {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for ExpiredNextTokenException {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
     }
 }
 

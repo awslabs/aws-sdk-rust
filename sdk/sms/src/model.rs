@@ -111,6 +111,13 @@ impl Tag {
         self.value.as_deref()
     }
 }
+impl Tag {
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
+    pub fn builder() -> crate::model::tag::Builder {
+        crate::model::tag::Builder::default()
+    }
+}
+
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
 
@@ -151,12 +158,6 @@ pub mod tag {
         }
     }
 }
-impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
-    pub fn builder() -> crate::model::tag::Builder {
-        crate::model::tag::Builder::default()
-    }
-}
 
 /// <p>Logical grouping of servers.</p>
 #[non_exhaustive]
@@ -186,6 +187,13 @@ impl ServerGroup {
         self.server_list.as_deref()
     }
 }
+impl ServerGroup {
+    /// Creates a new builder-style object to manufacture [`ServerGroup`](crate::model::ServerGroup).
+    pub fn builder() -> crate::model::server_group::Builder {
+        crate::model::server_group::Builder::default()
+    }
+}
+
 /// See [`ServerGroup`](crate::model::ServerGroup).
 pub mod server_group {
 
@@ -250,12 +258,6 @@ pub mod server_group {
         }
     }
 }
-impl ServerGroup {
-    /// Creates a new builder-style object to manufacture [`ServerGroup`](crate::model::ServerGroup).
-    pub fn builder() -> crate::model::server_group::Builder {
-        crate::model::server_group::Builder::default()
-    }
-}
 
 /// <p>Represents a server.</p>
 #[non_exhaustive]
@@ -299,6 +301,13 @@ impl Server {
         self.replication_job_terminated
     }
 }
+impl Server {
+    /// Creates a new builder-style object to manufacture [`Server`](crate::model::Server).
+    pub fn builder() -> crate::model::server::Builder {
+        crate::model::server::Builder::default()
+    }
+}
+
 /// See [`Server`](crate::model::Server).
 pub mod server {
 
@@ -381,12 +390,6 @@ pub mod server {
         }
     }
 }
-impl Server {
-    /// Creates a new builder-style object to manufacture [`Server`](crate::model::Server).
-    pub fn builder() -> crate::model::server::Builder {
-        crate::model::server::Builder::default()
-    }
-}
 
 /// <p>Represents a VM server.</p>
 #[non_exhaustive]
@@ -430,6 +433,13 @@ impl VmServer {
         self.vm_path.as_deref()
     }
 }
+impl VmServer {
+    /// Creates a new builder-style object to manufacture [`VmServer`](crate::model::VmServer).
+    pub fn builder() -> crate::model::vm_server::Builder {
+        crate::model::vm_server::Builder::default()
+    }
+}
+
 /// See [`VmServer`](crate::model::VmServer).
 pub mod vm_server {
 
@@ -513,12 +523,6 @@ pub mod vm_server {
                 vm_path: self.vm_path,
             }
         }
-    }
-}
-impl VmServer {
-    /// Creates a new builder-style object to manufacture [`VmServer`](crate::model::VmServer).
-    pub fn builder() -> crate::model::vm_server::Builder {
-        crate::model::vm_server::Builder::default()
     }
 }
 
@@ -638,6 +642,13 @@ impl VmServerAddress {
         self.vm_id.as_deref()
     }
 }
+impl VmServerAddress {
+    /// Creates a new builder-style object to manufacture [`VmServerAddress`](crate::model::VmServerAddress).
+    pub fn builder() -> crate::model::vm_server_address::Builder {
+        crate::model::vm_server_address::Builder::default()
+    }
+}
+
 /// See [`VmServerAddress`](crate::model::VmServerAddress).
 pub mod vm_server_address {
 
@@ -679,12 +690,6 @@ pub mod vm_server_address {
                 vm_id: self.vm_id,
             }
         }
-    }
-}
-impl VmServerAddress {
-    /// Creates a new builder-style object to manufacture [`VmServerAddress`](crate::model::VmServerAddress).
-    pub fn builder() -> crate::model::vm_server_address::Builder {
-        crate::model::vm_server_address::Builder::default()
     }
 }
 
@@ -919,6 +924,13 @@ impl AppSummary {
         self.total_servers
     }
 }
+impl AppSummary {
+    /// Creates a new builder-style object to manufacture [`AppSummary`](crate::model::AppSummary).
+    pub fn builder() -> crate::model::app_summary::Builder {
+        crate::model::app_summary::Builder::default()
+    }
+}
+
 /// See [`AppSummary`](crate::model::AppSummary).
 pub mod app_summary {
 
@@ -1207,12 +1219,6 @@ pub mod app_summary {
         }
     }
 }
-impl AppSummary {
-    /// Creates a new builder-style object to manufacture [`AppSummary`](crate::model::AppSummary).
-    pub fn builder() -> crate::model::app_summary::Builder {
-        crate::model::app_summary::Builder::default()
-    }
-}
 
 /// <p>Details about the latest launch of an application.</p>
 #[non_exhaustive]
@@ -1242,6 +1248,13 @@ impl LaunchDetails {
         self.stack_id.as_deref()
     }
 }
+impl LaunchDetails {
+    /// Creates a new builder-style object to manufacture [`LaunchDetails`](crate::model::LaunchDetails).
+    pub fn builder() -> crate::model::launch_details::Builder {
+        crate::model::launch_details::Builder::default()
+    }
+}
+
 /// See [`LaunchDetails`](crate::model::LaunchDetails).
 pub mod launch_details {
 
@@ -1295,12 +1308,6 @@ pub mod launch_details {
                 stack_id: self.stack_id,
             }
         }
-    }
-}
-impl LaunchDetails {
-    /// Creates a new builder-style object to manufacture [`LaunchDetails`](crate::model::LaunchDetails).
-    pub fn builder() -> crate::model::launch_details::Builder {
-        crate::model::launch_details::Builder::default()
     }
 }
 
@@ -1979,6 +1986,13 @@ impl ServerGroupValidationConfiguration {
         self.server_validation_configurations.as_deref()
     }
 }
+impl ServerGroupValidationConfiguration {
+    /// Creates a new builder-style object to manufacture [`ServerGroupValidationConfiguration`](crate::model::ServerGroupValidationConfiguration).
+    pub fn builder() -> crate::model::server_group_validation_configuration::Builder {
+        crate::model::server_group_validation_configuration::Builder::default()
+    }
+}
+
 /// See [`ServerGroupValidationConfiguration`](crate::model::ServerGroupValidationConfiguration).
 pub mod server_group_validation_configuration {
 
@@ -2035,12 +2049,6 @@ pub mod server_group_validation_configuration {
         }
     }
 }
-impl ServerGroupValidationConfiguration {
-    /// Creates a new builder-style object to manufacture [`ServerGroupValidationConfiguration`](crate::model::ServerGroupValidationConfiguration).
-    pub fn builder() -> crate::model::server_group_validation_configuration::Builder {
-        crate::model::server_group_validation_configuration::Builder::default()
-    }
-}
 
 /// <p>Configuration for validating an instance.</p>
 #[non_exhaustive]
@@ -2089,6 +2097,13 @@ impl ServerValidationConfiguration {
         self.user_data_validation_parameters.as_ref()
     }
 }
+impl ServerValidationConfiguration {
+    /// Creates a new builder-style object to manufacture [`ServerValidationConfiguration`](crate::model::ServerValidationConfiguration).
+    pub fn builder() -> crate::model::server_validation_configuration::Builder {
+        crate::model::server_validation_configuration::Builder::default()
+    }
+}
+
 /// See [`ServerValidationConfiguration`](crate::model::ServerValidationConfiguration).
 pub mod server_validation_configuration {
 
@@ -2182,12 +2197,6 @@ pub mod server_validation_configuration {
         }
     }
 }
-impl ServerValidationConfiguration {
-    /// Creates a new builder-style object to manufacture [`ServerValidationConfiguration`](crate::model::ServerValidationConfiguration).
-    pub fn builder() -> crate::model::server_validation_configuration::Builder {
-        crate::model::server_validation_configuration::Builder::default()
-    }
-}
 
 /// <p>Contains validation parameters.</p>
 #[non_exhaustive]
@@ -2210,6 +2219,13 @@ impl UserDataValidationParameters {
         self.script_type.as_ref()
     }
 }
+impl UserDataValidationParameters {
+    /// Creates a new builder-style object to manufacture [`UserDataValidationParameters`](crate::model::UserDataValidationParameters).
+    pub fn builder() -> crate::model::user_data_validation_parameters::Builder {
+        crate::model::user_data_validation_parameters::Builder::default()
+    }
+}
+
 /// See [`UserDataValidationParameters`](crate::model::UserDataValidationParameters).
 pub mod user_data_validation_parameters {
 
@@ -2251,12 +2267,6 @@ pub mod user_data_validation_parameters {
                 script_type: self.script_type,
             }
         }
-    }
-}
-impl UserDataValidationParameters {
-    /// Creates a new builder-style object to manufacture [`UserDataValidationParameters`](crate::model::UserDataValidationParameters).
-    pub fn builder() -> crate::model::user_data_validation_parameters::Builder {
-        crate::model::user_data_validation_parameters::Builder::default()
     }
 }
 
@@ -2364,6 +2374,13 @@ impl Source {
         self.s3_location.as_ref()
     }
 }
+impl Source {
+    /// Creates a new builder-style object to manufacture [`Source`](crate::model::Source).
+    pub fn builder() -> crate::model::source::Builder {
+        crate::model::source::Builder::default()
+    }
+}
+
 /// See [`Source`](crate::model::Source).
 pub mod source {
 
@@ -2395,12 +2412,6 @@ pub mod source {
         }
     }
 }
-impl Source {
-    /// Creates a new builder-style object to manufacture [`Source`](crate::model::Source).
-    pub fn builder() -> crate::model::source::Builder {
-        crate::model::source::Builder::default()
-    }
-}
 
 /// <p>Location of an Amazon S3 object.</p>
 #[non_exhaustive]
@@ -2423,6 +2434,13 @@ impl S3Location {
         self.key.as_deref()
     }
 }
+impl S3Location {
+    /// Creates a new builder-style object to manufacture [`S3Location`](crate::model::S3Location).
+    pub fn builder() -> crate::model::s3_location::Builder {
+        crate::model::s3_location::Builder::default()
+    }
+}
+
 /// See [`S3Location`](crate::model::S3Location).
 pub mod s3_location {
 
@@ -2461,12 +2479,6 @@ pub mod s3_location {
                 key: self.key,
             }
         }
-    }
-}
-impl S3Location {
-    /// Creates a new builder-style object to manufacture [`S3Location`](crate::model::S3Location).
-    pub fn builder() -> crate::model::s3_location::Builder {
-        crate::model::s3_location::Builder::default()
     }
 }
 
@@ -2596,6 +2608,13 @@ impl AppValidationConfiguration {
         self.ssm_validation_parameters.as_ref()
     }
 }
+impl AppValidationConfiguration {
+    /// Creates a new builder-style object to manufacture [`AppValidationConfiguration`](crate::model::AppValidationConfiguration).
+    pub fn builder() -> crate::model::app_validation_configuration::Builder {
+        crate::model::app_validation_configuration::Builder::default()
+    }
+}
+
 /// See [`AppValidationConfiguration`](crate::model::AppValidationConfiguration).
 pub mod app_validation_configuration {
 
@@ -2677,12 +2696,6 @@ pub mod app_validation_configuration {
         }
     }
 }
-impl AppValidationConfiguration {
-    /// Creates a new builder-style object to manufacture [`AppValidationConfiguration`](crate::model::AppValidationConfiguration).
-    pub fn builder() -> crate::model::app_validation_configuration::Builder {
-        crate::model::app_validation_configuration::Builder::default()
-    }
-}
 
 /// <p>Contains validation parameters.</p>
 #[non_exhaustive]
@@ -2733,6 +2746,13 @@ impl SsmValidationParameters {
         self.output_s3_bucket_name.as_deref()
     }
 }
+impl SsmValidationParameters {
+    /// Creates a new builder-style object to manufacture [`SsmValidationParameters`](crate::model::SsmValidationParameters).
+    pub fn builder() -> crate::model::ssm_validation_parameters::Builder {
+        crate::model::ssm_validation_parameters::Builder::default()
+    }
+}
+
 /// See [`SsmValidationParameters`](crate::model::SsmValidationParameters).
 pub mod ssm_validation_parameters {
 
@@ -2825,12 +2845,6 @@ pub mod ssm_validation_parameters {
                 output_s3_bucket_name: self.output_s3_bucket_name,
             }
         }
-    }
-}
-impl SsmValidationParameters {
-    /// Creates a new builder-style object to manufacture [`SsmValidationParameters`](crate::model::SsmValidationParameters).
-    pub fn builder() -> crate::model::ssm_validation_parameters::Builder {
-        crate::model::ssm_validation_parameters::Builder::default()
     }
 }
 
@@ -2945,6 +2959,13 @@ impl ServerGroupReplicationConfiguration {
         self.server_replication_configurations.as_deref()
     }
 }
+impl ServerGroupReplicationConfiguration {
+    /// Creates a new builder-style object to manufacture [`ServerGroupReplicationConfiguration`](crate::model::ServerGroupReplicationConfiguration).
+    pub fn builder() -> crate::model::server_group_replication_configuration::Builder {
+        crate::model::server_group_replication_configuration::Builder::default()
+    }
+}
+
 /// See [`ServerGroupReplicationConfiguration`](crate::model::ServerGroupReplicationConfiguration).
 pub mod server_group_replication_configuration {
 
@@ -3001,12 +3022,6 @@ pub mod server_group_replication_configuration {
         }
     }
 }
-impl ServerGroupReplicationConfiguration {
-    /// Creates a new builder-style object to manufacture [`ServerGroupReplicationConfiguration`](crate::model::ServerGroupReplicationConfiguration).
-    pub fn builder() -> crate::model::server_group_replication_configuration::Builder {
-        crate::model::server_group_replication_configuration::Builder::default()
-    }
-}
 
 /// <p>Replication configuration of a server.</p>
 #[non_exhaustive]
@@ -3032,6 +3047,13 @@ impl ServerReplicationConfiguration {
         self.server_replication_parameters.as_ref()
     }
 }
+impl ServerReplicationConfiguration {
+    /// Creates a new builder-style object to manufacture [`ServerReplicationConfiguration`](crate::model::ServerReplicationConfiguration).
+    pub fn builder() -> crate::model::server_replication_configuration::Builder {
+        crate::model::server_replication_configuration::Builder::default()
+    }
+}
+
 /// See [`ServerReplicationConfiguration`](crate::model::ServerReplicationConfiguration).
 pub mod server_replication_configuration {
 
@@ -3077,12 +3099,6 @@ pub mod server_replication_configuration {
                 server_replication_parameters: self.server_replication_parameters,
             }
         }
-    }
-}
-impl ServerReplicationConfiguration {
-    /// Creates a new builder-style object to manufacture [`ServerReplicationConfiguration`](crate::model::ServerReplicationConfiguration).
-    pub fn builder() -> crate::model::server_replication_configuration::Builder {
-        crate::model::server_replication_configuration::Builder::default()
     }
 }
 
@@ -3156,6 +3172,13 @@ impl ServerReplicationParameters {
         self.kms_key_id.as_deref()
     }
 }
+impl ServerReplicationParameters {
+    /// Creates a new builder-style object to manufacture [`ServerReplicationParameters`](crate::model::ServerReplicationParameters).
+    pub fn builder() -> crate::model::server_replication_parameters::Builder {
+        crate::model::server_replication_parameters::Builder::default()
+    }
+}
+
 /// See [`ServerReplicationParameters`](crate::model::ServerReplicationParameters).
 pub mod server_replication_parameters {
 
@@ -3279,12 +3302,6 @@ pub mod server_replication_parameters {
         }
     }
 }
-impl ServerReplicationParameters {
-    /// Creates a new builder-style object to manufacture [`ServerReplicationParameters`](crate::model::ServerReplicationParameters).
-    pub fn builder() -> crate::model::server_replication_parameters::Builder {
-        crate::model::server_replication_parameters::Builder::default()
-    }
-}
 
 /// <p>Launch configuration for a server group.</p>
 #[non_exhaustive]
@@ -3317,6 +3334,13 @@ impl ServerGroupLaunchConfiguration {
         self.server_launch_configurations.as_deref()
     }
 }
+impl ServerGroupLaunchConfiguration {
+    /// Creates a new builder-style object to manufacture [`ServerGroupLaunchConfiguration`](crate::model::ServerGroupLaunchConfiguration).
+    pub fn builder() -> crate::model::server_group_launch_configuration::Builder {
+        crate::model::server_group_launch_configuration::Builder::default()
+    }
+}
+
 /// See [`ServerGroupLaunchConfiguration`](crate::model::ServerGroupLaunchConfiguration).
 pub mod server_group_launch_configuration {
 
@@ -3383,12 +3407,6 @@ pub mod server_group_launch_configuration {
                 server_launch_configurations: self.server_launch_configurations,
             }
         }
-    }
-}
-impl ServerGroupLaunchConfiguration {
-    /// Creates a new builder-style object to manufacture [`ServerGroupLaunchConfiguration`](crate::model::ServerGroupLaunchConfiguration).
-    pub fn builder() -> crate::model::server_group_launch_configuration::Builder {
-        crate::model::server_group_launch_configuration::Builder::default()
     }
 }
 
@@ -3483,6 +3501,13 @@ impl ServerLaunchConfiguration {
         self.configure_script_type.as_ref()
     }
 }
+impl ServerLaunchConfiguration {
+    /// Creates a new builder-style object to manufacture [`ServerLaunchConfiguration`](crate::model::ServerLaunchConfiguration).
+    pub fn builder() -> crate::model::server_launch_configuration::Builder {
+        crate::model::server_launch_configuration::Builder::default()
+    }
+}
+
 /// See [`ServerLaunchConfiguration`](crate::model::ServerLaunchConfiguration).
 pub mod server_launch_configuration {
 
@@ -3658,12 +3683,6 @@ pub mod server_launch_configuration {
         }
     }
 }
-impl ServerLaunchConfiguration {
-    /// Creates a new builder-style object to manufacture [`ServerLaunchConfiguration`](crate::model::ServerLaunchConfiguration).
-    pub fn builder() -> crate::model::server_launch_configuration::Builder {
-        crate::model::server_launch_configuration::Builder::default()
-    }
-}
 
 /// <p>A script that runs on first launch of an Amazon EC2 instance. Used for configuring the server during launch.</p>
 #[non_exhaustive]
@@ -3679,6 +3698,13 @@ impl UserData {
         self.s3_location.as_ref()
     }
 }
+impl UserData {
+    /// Creates a new builder-style object to manufacture [`UserData`](crate::model::UserData).
+    pub fn builder() -> crate::model::user_data::Builder {
+        crate::model::user_data::Builder::default()
+    }
+}
+
 /// See [`UserData`](crate::model::UserData).
 pub mod user_data {
 
@@ -3710,12 +3736,6 @@ pub mod user_data {
         }
     }
 }
-impl UserData {
-    /// Creates a new builder-style object to manufacture [`UserData`](crate::model::UserData).
-    pub fn builder() -> crate::model::user_data::Builder {
-        crate::model::user_data::Builder::default()
-    }
-}
 
 /// <p>Contains the status of validating an application.</p>
 #[non_exhaustive]
@@ -3745,6 +3765,13 @@ impl NotificationContext {
         self.status_message.as_deref()
     }
 }
+impl NotificationContext {
+    /// Creates a new builder-style object to manufacture [`NotificationContext`](crate::model::NotificationContext).
+    pub fn builder() -> crate::model::notification_context::Builder {
+        crate::model::notification_context::Builder::default()
+    }
+}
+
 /// See [`NotificationContext`](crate::model::NotificationContext).
 pub mod notification_context {
 
@@ -3804,12 +3831,6 @@ pub mod notification_context {
                 status_message: self.status_message,
             }
         }
-    }
-}
-impl NotificationContext {
-    /// Creates a new builder-style object to manufacture [`NotificationContext`](crate::model::NotificationContext).
-    pub fn builder() -> crate::model::notification_context::Builder {
-        crate::model::notification_context::Builder::default()
     }
 }
 
@@ -4135,6 +4156,13 @@ impl ReplicationRun {
         self.kms_key_id.as_deref()
     }
 }
+impl ReplicationRun {
+    /// Creates a new builder-style object to manufacture [`ReplicationRun`](crate::model::ReplicationRun).
+    pub fn builder() -> crate::model::replication_run::Builder {
+        crate::model::replication_run::Builder::default()
+    }
+}
+
 /// See [`ReplicationRun`](crate::model::ReplicationRun).
 pub mod replication_run {
 
@@ -4318,12 +4346,6 @@ pub mod replication_run {
         }
     }
 }
-impl ReplicationRun {
-    /// Creates a new builder-style object to manufacture [`ReplicationRun`](crate::model::ReplicationRun).
-    pub fn builder() -> crate::model::replication_run::Builder {
-        crate::model::replication_run::Builder::default()
-    }
-}
 
 /// <p>Details of the current stage of a replication run.</p>
 #[non_exhaustive]
@@ -4346,6 +4368,13 @@ impl ReplicationRunStageDetails {
         self.stage_progress.as_deref()
     }
 }
+impl ReplicationRunStageDetails {
+    /// Creates a new builder-style object to manufacture [`ReplicationRunStageDetails`](crate::model::ReplicationRunStageDetails).
+    pub fn builder() -> crate::model::replication_run_stage_details::Builder {
+        crate::model::replication_run_stage_details::Builder::default()
+    }
+}
+
 /// See [`ReplicationRunStageDetails`](crate::model::ReplicationRunStageDetails).
 pub mod replication_run_stage_details {
 
@@ -4387,12 +4416,6 @@ pub mod replication_run_stage_details {
                 stage_progress: self.stage_progress,
             }
         }
-    }
-}
-impl ReplicationRunStageDetails {
-    /// Creates a new builder-style object to manufacture [`ReplicationRunStageDetails`](crate::model::ReplicationRunStageDetails).
-    pub fn builder() -> crate::model::replication_run_stage_details::Builder {
-        crate::model::replication_run_stage_details::Builder::default()
     }
 }
 
@@ -4762,6 +4785,13 @@ impl ReplicationJob {
         self.replication_run_list.as_deref()
     }
 }
+impl ReplicationJob {
+    /// Creates a new builder-style object to manufacture [`ReplicationJob`](crate::model::ReplicationJob).
+    pub fn builder() -> crate::model::replication_job::Builder {
+        crate::model::replication_job::Builder::default()
+    }
+}
+
 /// See [`ReplicationJob`](crate::model::ReplicationJob).
 pub mod replication_job {
 
@@ -5048,12 +5078,6 @@ pub mod replication_job {
         }
     }
 }
-impl ReplicationJob {
-    /// Creates a new builder-style object to manufacture [`ReplicationJob`](crate::model::ReplicationJob).
-    pub fn builder() -> crate::model::replication_job::Builder {
-        crate::model::replication_job::Builder::default()
-    }
-}
 
 /// When writing a match expression against `ReplicationJobState`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -5263,6 +5287,13 @@ impl Connector {
         self.associated_on.as_ref()
     }
 }
+impl Connector {
+    /// Creates a new builder-style object to manufacture [`Connector`](crate::model::Connector).
+    pub fn builder() -> crate::model::connector::Builder {
+        crate::model::connector::Builder::default()
+    }
+}
+
 /// See [`Connector`](crate::model::Connector).
 pub mod connector {
 
@@ -5422,12 +5453,6 @@ pub mod connector {
                 associated_on: self.associated_on,
             }
         }
-    }
-}
-impl Connector {
-    /// Creates a new builder-style object to manufacture [`Connector`](crate::model::Connector).
-    pub fn builder() -> crate::model::connector::Builder {
-        crate::model::connector::Builder::default()
     }
 }
 
@@ -5692,6 +5717,13 @@ impl ValidationOutput {
         self.server_validation_output.as_ref()
     }
 }
+impl ValidationOutput {
+    /// Creates a new builder-style object to manufacture [`ValidationOutput`](crate::model::ValidationOutput).
+    pub fn builder() -> crate::model::validation_output::Builder {
+        crate::model::validation_output::Builder::default()
+    }
+}
+
 /// See [`ValidationOutput`](crate::model::ValidationOutput).
 pub mod validation_output {
 
@@ -5814,12 +5846,6 @@ pub mod validation_output {
         }
     }
 }
-impl ValidationOutput {
-    /// Creates a new builder-style object to manufacture [`ValidationOutput`](crate::model::ValidationOutput).
-    pub fn builder() -> crate::model::validation_output::Builder {
-        crate::model::validation_output::Builder::default()
-    }
-}
 
 /// <p>Contains output from validating an instance.</p>
 #[non_exhaustive]
@@ -5835,6 +5861,13 @@ impl ServerValidationOutput {
         self.server.as_ref()
     }
 }
+impl ServerValidationOutput {
+    /// Creates a new builder-style object to manufacture [`ServerValidationOutput`](crate::model::ServerValidationOutput).
+    pub fn builder() -> crate::model::server_validation_output::Builder {
+        crate::model::server_validation_output::Builder::default()
+    }
+}
+
 /// See [`ServerValidationOutput`](crate::model::ServerValidationOutput).
 pub mod server_validation_output {
 
@@ -5863,12 +5896,6 @@ pub mod server_validation_output {
         }
     }
 }
-impl ServerValidationOutput {
-    /// Creates a new builder-style object to manufacture [`ServerValidationOutput`](crate::model::ServerValidationOutput).
-    pub fn builder() -> crate::model::server_validation_output::Builder {
-        crate::model::server_validation_output::Builder::default()
-    }
-}
 
 /// <p>Output from validating an application.</p>
 #[non_exhaustive]
@@ -5884,6 +5911,13 @@ impl AppValidationOutput {
         self.ssm_output.as_ref()
     }
 }
+impl AppValidationOutput {
+    /// Creates a new builder-style object to manufacture [`AppValidationOutput`](crate::model::AppValidationOutput).
+    pub fn builder() -> crate::model::app_validation_output::Builder {
+        crate::model::app_validation_output::Builder::default()
+    }
+}
+
 /// See [`AppValidationOutput`](crate::model::AppValidationOutput).
 pub mod app_validation_output {
 
@@ -5915,12 +5949,6 @@ pub mod app_validation_output {
         }
     }
 }
-impl AppValidationOutput {
-    /// Creates a new builder-style object to manufacture [`AppValidationOutput`](crate::model::AppValidationOutput).
-    pub fn builder() -> crate::model::app_validation_output::Builder {
-        crate::model::app_validation_output::Builder::default()
-    }
-}
 
 /// <p>Contains the location of validation output.</p>
 #[non_exhaustive]
@@ -5936,6 +5964,13 @@ impl SsmOutput {
         self.s3_location.as_ref()
     }
 }
+impl SsmOutput {
+    /// Creates a new builder-style object to manufacture [`SsmOutput`](crate::model::SsmOutput).
+    pub fn builder() -> crate::model::ssm_output::Builder {
+        crate::model::ssm_output::Builder::default()
+    }
+}
+
 /// See [`SsmOutput`](crate::model::SsmOutput).
 pub mod ssm_output {
 
@@ -5965,12 +6000,6 @@ pub mod ssm_output {
                 s3_location: self.s3_location,
             }
         }
-    }
-}
-impl SsmOutput {
-    /// Creates a new builder-style object to manufacture [`SsmOutput`](crate::model::SsmOutput).
-    pub fn builder() -> crate::model::ssm_output::Builder {
-        crate::model::ssm_output::Builder::default()
     }
 }
 

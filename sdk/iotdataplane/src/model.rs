@@ -127,6 +127,13 @@ impl RetainedMessageSummary {
         self.last_modified_time
     }
 }
+impl RetainedMessageSummary {
+    /// Creates a new builder-style object to manufacture [`RetainedMessageSummary`](crate::model::RetainedMessageSummary).
+    pub fn builder() -> crate::model::retained_message_summary::Builder {
+        crate::model::retained_message_summary::Builder::default()
+    }
+}
+
 /// See [`RetainedMessageSummary`](crate::model::RetainedMessageSummary).
 pub mod retained_message_summary {
 
@@ -189,11 +196,5 @@ pub mod retained_message_summary {
                 last_modified_time: self.last_modified_time.unwrap_or_default(),
             }
         }
-    }
-}
-impl RetainedMessageSummary {
-    /// Creates a new builder-style object to manufacture [`RetainedMessageSummary`](crate::model::RetainedMessageSummary).
-    pub fn builder() -> crate::model::retained_message_summary::Builder {
-        crate::model::retained_message_summary::Builder::default()
     }
 }

@@ -114,11 +114,41 @@ pub struct InvalidInput {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl InvalidInput {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for InvalidInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "InvalidInput")?;
+        if let Some(inner_1) = &self.message {
+            {
+                write!(f, ": {}", inner_1)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for InvalidInput {}
+impl aws_http::request_id::RequestId for crate::error::InvalidInput {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidInput {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl InvalidInput {
     /// Creates a new builder-style object to manufacture [`InvalidInput`](crate::error::InvalidInput).
     pub fn builder() -> crate::error::invalid_input::Builder {
         crate::error::invalid_input::Builder::default()
     }
 }
+
 /// See [`InvalidInput`](crate::error::InvalidInput).
 pub mod invalid_input {
 
@@ -161,35 +191,6 @@ pub mod invalid_input {
                 meta: self.meta.unwrap_or_default(),
             }
         }
-    }
-}
-impl InvalidInput {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for InvalidInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "InvalidInput")?;
-        if let Some(inner_1) = &self.message {
-            {
-                write!(f, ": {}", inner_1)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for InvalidInput {}
-impl aws_http::request_id::RequestId for crate::error::InvalidInput {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidInput {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
     }
 }
 
@@ -332,11 +333,41 @@ pub struct UnsupportedTld {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl UnsupportedTld {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for UnsupportedTld {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "UnsupportedTld [UnsupportedTLD]")?;
+        if let Some(inner_2) = &self.message {
+            {
+                write!(f, ": {}", inner_2)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for UnsupportedTld {}
+impl aws_http::request_id::RequestId for crate::error::UnsupportedTld {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for UnsupportedTld {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl UnsupportedTld {
     /// Creates a new builder-style object to manufacture [`UnsupportedTld`](crate::error::UnsupportedTld).
     pub fn builder() -> crate::error::unsupported_tld::Builder {
         crate::error::unsupported_tld::Builder::default()
     }
 }
+
 /// See [`UnsupportedTld`](crate::error::UnsupportedTld).
 pub mod unsupported_tld {
 
@@ -381,35 +412,6 @@ pub mod unsupported_tld {
         }
     }
 }
-impl UnsupportedTld {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for UnsupportedTld {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "UnsupportedTld [UnsupportedTLD]")?;
-        if let Some(inner_2) = &self.message {
-            {
-                write!(f, ": {}", inner_2)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for UnsupportedTld {}
-impl aws_http::request_id::RequestId for crate::error::UnsupportedTld {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for UnsupportedTld {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>The number of operations or jobs running exceeded the allowed threshold for the account.</p>
 #[non_exhaustive]
@@ -421,11 +423,41 @@ pub struct OperationLimitExceeded {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl OperationLimitExceeded {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for OperationLimitExceeded {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "OperationLimitExceeded")?;
+        if let Some(inner_3) = &self.message {
+            {
+                write!(f, ": {}", inner_3)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for OperationLimitExceeded {}
+impl aws_http::request_id::RequestId for crate::error::OperationLimitExceeded {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for OperationLimitExceeded {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl OperationLimitExceeded {
     /// Creates a new builder-style object to manufacture [`OperationLimitExceeded`](crate::error::OperationLimitExceeded).
     pub fn builder() -> crate::error::operation_limit_exceeded::Builder {
         crate::error::operation_limit_exceeded::Builder::default()
     }
 }
+
 /// See [`OperationLimitExceeded`](crate::error::OperationLimitExceeded).
 pub mod operation_limit_exceeded {
 
@@ -468,35 +500,6 @@ pub mod operation_limit_exceeded {
                 meta: self.meta.unwrap_or_default(),
             }
         }
-    }
-}
-impl OperationLimitExceeded {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for OperationLimitExceeded {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "OperationLimitExceeded")?;
-        if let Some(inner_3) = &self.message {
-            {
-                write!(f, ": {}", inner_3)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for OperationLimitExceeded {}
-impl aws_http::request_id::RequestId for crate::error::OperationLimitExceeded {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for OperationLimitExceeded {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
     }
 }
 
@@ -663,11 +666,41 @@ pub struct TldRulesViolation {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl TldRulesViolation {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for TldRulesViolation {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "TldRulesViolation [TLDRulesViolation]")?;
+        if let Some(inner_4) = &self.message {
+            {
+                write!(f, ": {}", inner_4)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for TldRulesViolation {}
+impl aws_http::request_id::RequestId for crate::error::TldRulesViolation {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for TldRulesViolation {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl TldRulesViolation {
     /// Creates a new builder-style object to manufacture [`TldRulesViolation`](crate::error::TldRulesViolation).
     pub fn builder() -> crate::error::tld_rules_violation::Builder {
         crate::error::tld_rules_violation::Builder::default()
     }
 }
+
 /// See [`TldRulesViolation`](crate::error::TldRulesViolation).
 pub mod tld_rules_violation {
 
@@ -712,35 +745,6 @@ pub mod tld_rules_violation {
         }
     }
 }
-impl TldRulesViolation {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for TldRulesViolation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "TldRulesViolation [TLDRulesViolation]")?;
-        if let Some(inner_4) = &self.message {
-            {
-                write!(f, ": {}", inner_4)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for TldRulesViolation {}
-impl aws_http::request_id::RequestId for crate::error::TldRulesViolation {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for TldRulesViolation {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>The request is already in progress for the domain.</p>
 #[non_exhaustive]
@@ -752,11 +756,41 @@ pub struct DuplicateRequest {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl DuplicateRequest {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for DuplicateRequest {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "DuplicateRequest")?;
+        if let Some(inner_5) = &self.message {
+            {
+                write!(f, ": {}", inner_5)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for DuplicateRequest {}
+impl aws_http::request_id::RequestId for crate::error::DuplicateRequest {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for DuplicateRequest {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl DuplicateRequest {
     /// Creates a new builder-style object to manufacture [`DuplicateRequest`](crate::error::DuplicateRequest).
     pub fn builder() -> crate::error::duplicate_request::Builder {
         crate::error::duplicate_request::Builder::default()
     }
 }
+
 /// See [`DuplicateRequest`](crate::error::DuplicateRequest).
 pub mod duplicate_request {
 
@@ -799,35 +833,6 @@ pub mod duplicate_request {
                 meta: self.meta.unwrap_or_default(),
             }
         }
-    }
-}
-impl DuplicateRequest {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for DuplicateRequest {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "DuplicateRequest")?;
-        if let Some(inner_5) = &self.message {
-            {
-                write!(f, ": {}", inner_5)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for DuplicateRequest {}
-impl aws_http::request_id::RequestId for crate::error::DuplicateRequest {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for DuplicateRequest {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
     }
 }
 
@@ -1455,11 +1460,41 @@ pub struct DomainLimitExceeded {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl DomainLimitExceeded {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for DomainLimitExceeded {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "DomainLimitExceeded")?;
+        if let Some(inner_6) = &self.message {
+            {
+                write!(f, ": {}", inner_6)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for DomainLimitExceeded {}
+impl aws_http::request_id::RequestId for crate::error::DomainLimitExceeded {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for DomainLimitExceeded {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl DomainLimitExceeded {
     /// Creates a new builder-style object to manufacture [`DomainLimitExceeded`](crate::error::DomainLimitExceeded).
     pub fn builder() -> crate::error::domain_limit_exceeded::Builder {
         crate::error::domain_limit_exceeded::Builder::default()
     }
 }
+
 /// See [`DomainLimitExceeded`](crate::error::DomainLimitExceeded).
 pub mod domain_limit_exceeded {
 
@@ -1502,35 +1537,6 @@ pub mod domain_limit_exceeded {
                 meta: self.meta.unwrap_or_default(),
             }
         }
-    }
-}
-impl DomainLimitExceeded {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for DomainLimitExceeded {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "DomainLimitExceeded")?;
-        if let Some(inner_6) = &self.message {
-            {
-                write!(f, ": {}", inner_6)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for DomainLimitExceeded {}
-impl aws_http::request_id::RequestId for crate::error::DomainLimitExceeded {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for DomainLimitExceeded {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
     }
 }
 
@@ -4919,11 +4925,41 @@ pub struct DnssecLimitExceeded {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl DnssecLimitExceeded {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for DnssecLimitExceeded {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "DnssecLimitExceeded")?;
+        if let Some(inner_7) = &self.message {
+            {
+                write!(f, ": {}", inner_7)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for DnssecLimitExceeded {}
+impl aws_http::request_id::RequestId for crate::error::DnssecLimitExceeded {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for DnssecLimitExceeded {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl DnssecLimitExceeded {
     /// Creates a new builder-style object to manufacture [`DnssecLimitExceeded`](crate::error::DnssecLimitExceeded).
     pub fn builder() -> crate::error::dnssec_limit_exceeded::Builder {
         crate::error::dnssec_limit_exceeded::Builder::default()
     }
 }
+
 /// See [`DnssecLimitExceeded`](crate::error::DnssecLimitExceeded).
 pub mod dnssec_limit_exceeded {
 
@@ -4966,35 +5002,6 @@ pub mod dnssec_limit_exceeded {
                 meta: self.meta.unwrap_or_default(),
             }
         }
-    }
-}
-impl DnssecLimitExceeded {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for DnssecLimitExceeded {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "DnssecLimitExceeded")?;
-        if let Some(inner_7) = &self.message {
-            {
-                write!(f, ": {}", inner_7)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for DnssecLimitExceeded {}
-impl aws_http::request_id::RequestId for crate::error::DnssecLimitExceeded {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for DnssecLimitExceeded {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
     }
 }
 

@@ -49,6 +49,13 @@ impl VirtualMachine {
         self.last_backup_date.as_ref()
     }
 }
+impl VirtualMachine {
+    /// Creates a new builder-style object to manufacture [`VirtualMachine`](crate::model::VirtualMachine).
+    pub fn builder() -> crate::model::virtual_machine::Builder {
+        crate::model::virtual_machine::Builder::default()
+    }
+}
+
 /// See [`VirtualMachine`](crate::model::VirtualMachine).
 pub mod virtual_machine {
 
@@ -143,12 +150,6 @@ pub mod virtual_machine {
         }
     }
 }
-impl VirtualMachine {
-    /// Creates a new builder-style object to manufacture [`VirtualMachine`](crate::model::VirtualMachine).
-    pub fn builder() -> crate::model::virtual_machine::Builder {
-        crate::model::virtual_machine::Builder::default()
-    }
-}
 
 /// <p>Your <code>VirtualMachine</code> objects, ordered by their Amazon Resource Names (ARNs).</p>
 #[non_exhaustive]
@@ -206,6 +207,13 @@ impl VirtualMachineDetails {
         self.vmware_tags.as_deref()
     }
 }
+impl VirtualMachineDetails {
+    /// Creates a new builder-style object to manufacture [`VirtualMachineDetails`](crate::model::VirtualMachineDetails).
+    pub fn builder() -> crate::model::virtual_machine_details::Builder {
+        crate::model::virtual_machine_details::Builder::default()
+    }
+}
+
 /// See [`VirtualMachineDetails`](crate::model::VirtualMachineDetails).
 pub mod virtual_machine_details {
 
@@ -321,12 +329,6 @@ pub mod virtual_machine_details {
         }
     }
 }
-impl VirtualMachineDetails {
-    /// Creates a new builder-style object to manufacture [`VirtualMachineDetails`](crate::model::VirtualMachineDetails).
-    pub fn builder() -> crate::model::virtual_machine_details::Builder {
-        crate::model::virtual_machine_details::Builder::default()
-    }
-}
 
 /// <p>A VMware tag is a tag attached to a specific virtual machine. A <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BGW_Tag.html">tag</a> is a key-value pair you can use to manage, filter, and search for your resources.</p>
 /// <p>The content of VMware tags can be matched to Amazon Web Services tags.</p>
@@ -357,6 +359,13 @@ impl VmwareTag {
         self.vmware_tag_description.as_deref()
     }
 }
+impl VmwareTag {
+    /// Creates a new builder-style object to manufacture [`VmwareTag`](crate::model::VmwareTag).
+    pub fn builder() -> crate::model::vmware_tag::Builder {
+        crate::model::vmware_tag::Builder::default()
+    }
+}
+
 /// See [`VmwareTag`](crate::model::VmwareTag).
 pub mod vmware_tag {
 
@@ -418,12 +427,6 @@ pub mod vmware_tag {
         }
     }
 }
-impl VmwareTag {
-    /// Creates a new builder-style object to manufacture [`VmwareTag`](crate::model::VmwareTag).
-    pub fn builder() -> crate::model::vmware_tag::Builder {
-        crate::model::vmware_tag::Builder::default()
-    }
-}
 
 /// <p>Represents the hypervisor's permissions to which the gateway will connect.</p>
 /// <p>A hypervisor is hardware, software, or firmware that creates and manages virtual machines, and allocates resources to them.</p>
@@ -468,6 +471,13 @@ impl Hypervisor {
         self.state.as_ref()
     }
 }
+impl Hypervisor {
+    /// Creates a new builder-style object to manufacture [`Hypervisor`](crate::model::Hypervisor).
+    pub fn builder() -> crate::model::hypervisor::Builder {
+        crate::model::hypervisor::Builder::default()
+    }
+}
+
 /// See [`Hypervisor`](crate::model::Hypervisor).
 pub mod hypervisor {
 
@@ -548,12 +558,6 @@ pub mod hypervisor {
                 state: self.state,
             }
         }
-    }
-}
-impl Hypervisor {
-    /// Creates a new builder-style object to manufacture [`Hypervisor`](crate::model::Hypervisor).
-    pub fn builder() -> crate::model::hypervisor::Builder {
-        crate::model::hypervisor::Builder::default()
     }
 }
 
@@ -678,6 +682,13 @@ impl Tag {
         self.value.as_deref()
     }
 }
+impl Tag {
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
+    pub fn builder() -> crate::model::tag::Builder {
+        crate::model::tag::Builder::default()
+    }
+}
+
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
 
@@ -716,12 +727,6 @@ pub mod tag {
                 value: self.value,
             }
         }
-    }
-}
-impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
-    pub fn builder() -> crate::model::tag::Builder {
-        crate::model::tag::Builder::default()
     }
 }
 
@@ -801,6 +806,13 @@ impl HypervisorDetails {
         self.latest_metadata_sync_status.as_ref()
     }
 }
+impl HypervisorDetails {
+    /// Creates a new builder-style object to manufacture [`HypervisorDetails`](crate::model::HypervisorDetails).
+    pub fn builder() -> crate::model::hypervisor_details::Builder {
+        crate::model::hypervisor_details::Builder::default()
+    }
+}
+
 /// See [`HypervisorDetails`](crate::model::HypervisorDetails).
 pub mod hypervisor_details {
 
@@ -956,12 +968,6 @@ pub mod hypervisor_details {
         }
     }
 }
-impl HypervisorDetails {
-    /// Creates a new builder-style object to manufacture [`HypervisorDetails`](crate::model::HypervisorDetails).
-    pub fn builder() -> crate::model::hypervisor_details::Builder {
-        crate::model::hypervisor_details::Builder::default()
-    }
-}
 
 /// When writing a match expression against `SyncMetadataStatus`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -1111,6 +1117,13 @@ impl VmwareToAwsTagMapping {
         self.aws_tag_value.as_deref()
     }
 }
+impl VmwareToAwsTagMapping {
+    /// Creates a new builder-style object to manufacture [`VmwareToAwsTagMapping`](crate::model::VmwareToAwsTagMapping).
+    pub fn builder() -> crate::model::vmware_to_aws_tag_mapping::Builder {
+        crate::model::vmware_to_aws_tag_mapping::Builder::default()
+    }
+}
+
 /// See [`VmwareToAwsTagMapping`](crate::model::VmwareToAwsTagMapping).
 pub mod vmware_to_aws_tag_mapping {
 
@@ -1184,12 +1197,6 @@ pub mod vmware_to_aws_tag_mapping {
         }
     }
 }
-impl VmwareToAwsTagMapping {
-    /// Creates a new builder-style object to manufacture [`VmwareToAwsTagMapping`](crate::model::VmwareToAwsTagMapping).
-    pub fn builder() -> crate::model::vmware_to_aws_tag_mapping::Builder {
-        crate::model::vmware_to_aws_tag_mapping::Builder::default()
-    }
-}
 
 /// <p>A gateway is an Backup Gateway appliance that runs on the customer's network to provide seamless connectivity to backup storage in the Amazon Web Services Cloud.</p>
 #[non_exhaustive]
@@ -1233,6 +1240,13 @@ impl Gateway {
         self.last_seen_time.as_ref()
     }
 }
+impl Gateway {
+    /// Creates a new builder-style object to manufacture [`Gateway`](crate::model::Gateway).
+    pub fn builder() -> crate::model::gateway::Builder {
+        crate::model::gateway::Builder::default()
+    }
+}
+
 /// See [`Gateway`](crate::model::Gateway).
 pub mod gateway {
 
@@ -1319,12 +1333,6 @@ pub mod gateway {
                 last_seen_time: self.last_seen_time,
             }
         }
-    }
-}
-impl Gateway {
-    /// Creates a new builder-style object to manufacture [`Gateway`](crate::model::Gateway).
-    pub fn builder() -> crate::model::gateway::Builder {
-        crate::model::gateway::Builder::default()
     }
 }
 
@@ -1480,6 +1488,13 @@ impl GatewayDetails {
         self.vpc_endpoint.as_deref()
     }
 }
+impl GatewayDetails {
+    /// Creates a new builder-style object to manufacture [`GatewayDetails`](crate::model::GatewayDetails).
+    pub fn builder() -> crate::model::gateway_details::Builder {
+        crate::model::gateway_details::Builder::default()
+    }
+}
+
 /// See [`GatewayDetails`](crate::model::GatewayDetails).
 pub mod gateway_details {
 
@@ -1610,12 +1625,6 @@ pub mod gateway_details {
         }
     }
 }
-impl GatewayDetails {
-    /// Creates a new builder-style object to manufacture [`GatewayDetails`](crate::model::GatewayDetails).
-    pub fn builder() -> crate::model::gateway_details::Builder {
-        crate::model::gateway_details::Builder::default()
-    }
-}
 
 /// <p>This is your gateway's weekly maintenance start time including the day and time of the week. Note that values are in terms of the gateway's time zone. Can be weekly or monthly.</p>
 #[non_exhaustive]
@@ -1652,6 +1661,13 @@ impl MaintenanceStartTime {
         self.minute_of_hour
     }
 }
+impl MaintenanceStartTime {
+    /// Creates a new builder-style object to manufacture [`MaintenanceStartTime`](crate::model::MaintenanceStartTime).
+    pub fn builder() -> crate::model::maintenance_start_time::Builder {
+        crate::model::maintenance_start_time::Builder::default()
+    }
+}
+
 /// See [`MaintenanceStartTime`](crate::model::MaintenanceStartTime).
 pub mod maintenance_start_time {
 
@@ -1716,12 +1732,6 @@ pub mod maintenance_start_time {
         }
     }
 }
-impl MaintenanceStartTime {
-    /// Creates a new builder-style object to manufacture [`MaintenanceStartTime`](crate::model::MaintenanceStartTime).
-    pub fn builder() -> crate::model::maintenance_start_time::Builder {
-        crate::model::maintenance_start_time::Builder::default()
-    }
-}
 
 /// <p>Describes a bandwidth rate limit interval for a gateway. A bandwidth rate limit schedule consists of one or more bandwidth rate limit intervals. A bandwidth rate limit interval defines a period of time on one or more days of the week, during which bandwidth rate limits are specified for uploading, downloading, or both.</p>
 #[non_exhaustive]
@@ -1780,6 +1790,13 @@ impl BandwidthRateLimitInterval {
         self.days_of_week.as_deref()
     }
 }
+impl BandwidthRateLimitInterval {
+    /// Creates a new builder-style object to manufacture [`BandwidthRateLimitInterval`](crate::model::BandwidthRateLimitInterval).
+    pub fn builder() -> crate::model::bandwidth_rate_limit_interval::Builder {
+        crate::model::bandwidth_rate_limit_interval::Builder::default()
+    }
+}
+
 /// See [`BandwidthRateLimitInterval`](crate::model::BandwidthRateLimitInterval).
 pub mod bandwidth_rate_limit_interval {
 
@@ -1884,11 +1901,5 @@ pub mod bandwidth_rate_limit_interval {
                 days_of_week: self.days_of_week,
             }
         }
-    }
-}
-impl BandwidthRateLimitInterval {
-    /// Creates a new builder-style object to manufacture [`BandwidthRateLimitInterval`](crate::model::BandwidthRateLimitInterval).
-    pub fn builder() -> crate::model::bandwidth_rate_limit_interval::Builder {
-        crate::model::bandwidth_rate_limit_interval::Builder::default()
     }
 }

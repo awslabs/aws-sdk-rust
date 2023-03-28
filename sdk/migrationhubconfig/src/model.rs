@@ -35,6 +35,13 @@ impl HomeRegionControl {
         self.requested_time.as_ref()
     }
 }
+impl HomeRegionControl {
+    /// Creates a new builder-style object to manufacture [`HomeRegionControl`](crate::model::HomeRegionControl).
+    pub fn builder() -> crate::model::home_region_control::Builder {
+        crate::model::home_region_control::Builder::default()
+    }
+}
+
 /// See [`HomeRegionControl`](crate::model::HomeRegionControl).
 pub mod home_region_control {
 
@@ -102,12 +109,6 @@ pub mod home_region_control {
         }
     }
 }
-impl HomeRegionControl {
-    /// Creates a new builder-style object to manufacture [`HomeRegionControl`](crate::model::HomeRegionControl).
-    pub fn builder() -> crate::model::home_region_control::Builder {
-        crate::model::home_region_control::Builder::default()
-    }
-}
 
 /// <p>The target parameter specifies the identifier to which the home region is applied, which is always an <code>ACCOUNT</code>. It applies the home region to the current <code>ACCOUNT</code>.</p>
 #[non_exhaustive]
@@ -130,6 +131,13 @@ impl Target {
         self.id.as_deref()
     }
 }
+impl Target {
+    /// Creates a new builder-style object to manufacture [`Target`](crate::model::Target).
+    pub fn builder() -> crate::model::target::Builder {
+        crate::model::target::Builder::default()
+    }
+}
+
 /// See [`Target`](crate::model::Target).
 pub mod target {
 
@@ -168,12 +176,6 @@ pub mod target {
                 id: self.id,
             }
         }
-    }
-}
-impl Target {
-    /// Creates a new builder-style object to manufacture [`Target`](crate::model::Target).
-    pub fn builder() -> crate::model::target::Builder {
-        crate::model::target::Builder::default()
     }
 }
 

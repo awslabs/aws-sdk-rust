@@ -49,6 +49,13 @@ impl PricingPlan {
         self.update_reason.as_ref()
     }
 }
+impl PricingPlan {
+    /// Creates a new builder-style object to manufacture [`PricingPlan`](crate::model::PricingPlan).
+    pub fn builder() -> crate::model::pricing_plan::Builder {
+        crate::model::pricing_plan::Builder::default()
+    }
+}
+
 /// See [`PricingPlan`](crate::model::PricingPlan).
 pub mod pricing_plan {
 
@@ -150,12 +157,6 @@ pub mod pricing_plan {
                 update_reason: self.update_reason,
             }
         }
-    }
-}
-impl PricingPlan {
-    /// Creates a new builder-style object to manufacture [`PricingPlan`](crate::model::PricingPlan).
-    pub fn builder() -> crate::model::pricing_plan::Builder {
-        crate::model::pricing_plan::Builder::default()
     }
 }
 
@@ -386,6 +387,13 @@ impl BundleInformation {
         self.pricing_tier.as_ref()
     }
 }
+impl BundleInformation {
+    /// Creates a new builder-style object to manufacture [`BundleInformation`](crate::model::BundleInformation).
+    pub fn builder() -> crate::model::bundle_information::Builder {
+        crate::model::bundle_information::Builder::default()
+    }
+}
+
 /// See [`BundleInformation`](crate::model::BundleInformation).
 pub mod bundle_information {
 
@@ -436,12 +444,6 @@ pub mod bundle_information {
                 pricing_tier: self.pricing_tier,
             }
         }
-    }
-}
-impl BundleInformation {
-    /// Creates a new builder-style object to manufacture [`BundleInformation`](crate::model::BundleInformation).
-    pub fn builder() -> crate::model::bundle_information::Builder {
-        crate::model::bundle_information::Builder::default()
     }
 }
 
@@ -671,6 +673,13 @@ impl ParentEntityUpdateRequest {
         self.parent_entity_id.as_deref()
     }
 }
+impl ParentEntityUpdateRequest {
+    /// Creates a new builder-style object to manufacture [`ParentEntityUpdateRequest`](crate::model::ParentEntityUpdateRequest).
+    pub fn builder() -> crate::model::parent_entity_update_request::Builder {
+        crate::model::parent_entity_update_request::Builder::default()
+    }
+}
+
 /// See [`ParentEntityUpdateRequest`](crate::model::ParentEntityUpdateRequest).
 pub mod parent_entity_update_request {
 
@@ -715,12 +724,6 @@ pub mod parent_entity_update_request {
                 parent_entity_id: self.parent_entity_id,
             }
         }
-    }
-}
-impl ParentEntityUpdateRequest {
-    /// Creates a new builder-style object to manufacture [`ParentEntityUpdateRequest`](crate::model::ParentEntityUpdateRequest).
-    pub fn builder() -> crate::model::parent_entity_update_request::Builder {
-        crate::model::parent_entity_update_request::Builder::default()
     }
 }
 
@@ -873,6 +876,13 @@ impl ComponentUpdateRequest {
         self.property_group_updates.as_ref()
     }
 }
+impl ComponentUpdateRequest {
+    /// Creates a new builder-style object to manufacture [`ComponentUpdateRequest`](crate::model::ComponentUpdateRequest).
+    pub fn builder() -> crate::model::component_update_request::Builder {
+        crate::model::component_update_request::Builder::default()
+    }
+}
+
 /// See [`ComponentUpdateRequest`](crate::model::ComponentUpdateRequest).
 pub mod component_update_request {
 
@@ -995,12 +1005,6 @@ pub mod component_update_request {
         }
     }
 }
-impl ComponentUpdateRequest {
-    /// Creates a new builder-style object to manufacture [`ComponentUpdateRequest`](crate::model::ComponentUpdateRequest).
-    pub fn builder() -> crate::model::component_update_request::Builder {
-        crate::model::component_update_request::Builder::default()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
@@ -1030,6 +1034,13 @@ impl ComponentPropertyGroupRequest {
         self.update_type.as_ref()
     }
 }
+impl ComponentPropertyGroupRequest {
+    /// Creates a new builder-style object to manufacture [`ComponentPropertyGroupRequest`](crate::model::ComponentPropertyGroupRequest).
+    pub fn builder() -> crate::model::component_property_group_request::Builder {
+        crate::model::component_property_group_request::Builder::default()
+    }
+}
+
 /// See [`ComponentPropertyGroupRequest`](crate::model::ComponentPropertyGroupRequest).
 pub mod component_property_group_request {
 
@@ -1095,12 +1106,6 @@ pub mod component_property_group_request {
                 update_type: self.update_type,
             }
         }
-    }
-}
-impl ComponentPropertyGroupRequest {
-    /// Creates a new builder-style object to manufacture [`ComponentPropertyGroupRequest`](crate::model::ComponentPropertyGroupRequest).
-    pub fn builder() -> crate::model::component_property_group_request::Builder {
-        crate::model::component_property_group_request::Builder::default()
     }
 }
 
@@ -1314,6 +1319,13 @@ impl PropertyRequest {
         self.update_type.as_ref()
     }
 }
+impl PropertyRequest {
+    /// Creates a new builder-style object to manufacture [`PropertyRequest`](crate::model::PropertyRequest).
+    pub fn builder() -> crate::model::property_request::Builder {
+        crate::model::property_request::Builder::default()
+    }
+}
+
 /// See [`PropertyRequest`](crate::model::PropertyRequest).
 pub mod property_request {
 
@@ -1370,12 +1382,6 @@ pub mod property_request {
                 update_type: self.update_type,
             }
         }
-    }
-}
-impl PropertyRequest {
-    /// Creates a new builder-style object to manufacture [`PropertyRequest`](crate::model::PropertyRequest).
-    pub fn builder() -> crate::model::property_request::Builder {
-        crate::model::property_request::Builder::default()
     }
 }
 
@@ -1551,6 +1557,13 @@ impl DataValue {
         self.expression.as_deref()
     }
 }
+impl DataValue {
+    /// Creates a new builder-style object to manufacture [`DataValue`](crate::model::DataValue).
+    pub fn builder() -> crate::model::data_value::Builder {
+        crate::model::data_value::Builder::default()
+    }
+}
+
 /// See [`DataValue`](crate::model::DataValue).
 pub mod data_value {
 
@@ -1704,12 +1717,6 @@ pub mod data_value {
         }
     }
 }
-impl DataValue {
-    /// Creates a new builder-style object to manufacture [`DataValue`](crate::model::DataValue).
-    pub fn builder() -> crate::model::data_value::Builder {
-        crate::model::data_value::Builder::default()
-    }
-}
 
 /// <p>A value that associates a component and an entity.</p>
 #[non_exhaustive]
@@ -1732,6 +1739,13 @@ impl RelationshipValue {
         self.target_component_name.as_deref()
     }
 }
+impl RelationshipValue {
+    /// Creates a new builder-style object to manufacture [`RelationshipValue`](crate::model::RelationshipValue).
+    pub fn builder() -> crate::model::relationship_value::Builder {
+        crate::model::relationship_value::Builder::default()
+    }
+}
+
 /// See [`RelationshipValue`](crate::model::RelationshipValue).
 pub mod relationship_value {
 
@@ -1776,12 +1790,6 @@ pub mod relationship_value {
                 target_component_name: self.target_component_name,
             }
         }
-    }
-}
-impl RelationshipValue {
-    /// Creates a new builder-style object to manufacture [`RelationshipValue`](crate::model::RelationshipValue).
-    pub fn builder() -> crate::model::relationship_value::Builder {
-        crate::model::relationship_value::Builder::default()
     }
 }
 
@@ -1852,6 +1860,13 @@ impl PropertyDefinitionRequest {
         self.display_name.as_deref()
     }
 }
+impl PropertyDefinitionRequest {
+    /// Creates a new builder-style object to manufacture [`PropertyDefinitionRequest`](crate::model::PropertyDefinitionRequest).
+    pub fn builder() -> crate::model::property_definition_request::Builder {
+        crate::model::property_definition_request::Builder::default()
+    }
+}
+
 /// See [`PropertyDefinitionRequest`](crate::model::PropertyDefinitionRequest).
 pub mod property_definition_request {
 
@@ -1984,12 +1999,6 @@ pub mod property_definition_request {
         }
     }
 }
-impl PropertyDefinitionRequest {
-    /// Creates a new builder-style object to manufacture [`PropertyDefinitionRequest`](crate::model::PropertyDefinitionRequest).
-    pub fn builder() -> crate::model::property_definition_request::Builder {
-        crate::model::property_definition_request::Builder::default()
-    }
-}
 
 /// <p>An object that specifies the data type of a property.</p>
 #[non_exhaustive]
@@ -2033,6 +2042,13 @@ impl DataType {
         self.relationship.as_ref()
     }
 }
+impl DataType {
+    /// Creates a new builder-style object to manufacture [`DataType`](crate::model::DataType).
+    pub fn builder() -> crate::model::data_type::Builder {
+        crate::model::data_type::Builder::default()
+    }
+}
+
 /// See [`DataType`](crate::model::DataType).
 pub mod data_type {
 
@@ -2130,12 +2146,6 @@ pub mod data_type {
         }
     }
 }
-impl DataType {
-    /// Creates a new builder-style object to manufacture [`DataType`](crate::model::DataType).
-    pub fn builder() -> crate::model::data_type::Builder {
-        crate::model::data_type::Builder::default()
-    }
-}
 
 /// <p>An object that specifies a relationship with another component type.</p>
 #[non_exhaustive]
@@ -2158,6 +2168,13 @@ impl Relationship {
         self.relationship_type.as_deref()
     }
 }
+impl Relationship {
+    /// Creates a new builder-style object to manufacture [`Relationship`](crate::model::Relationship).
+    pub fn builder() -> crate::model::relationship::Builder {
+        crate::model::relationship::Builder::default()
+    }
+}
+
 /// See [`Relationship`](crate::model::Relationship).
 pub mod relationship {
 
@@ -2202,12 +2219,6 @@ pub mod relationship {
                 relationship_type: self.relationship_type,
             }
         }
-    }
-}
-impl Relationship {
-    /// Creates a new builder-style object to manufacture [`Relationship`](crate::model::Relationship).
-    pub fn builder() -> crate::model::relationship::Builder {
-        crate::model::relationship::Builder::default()
     }
 }
 
@@ -2458,6 +2469,13 @@ impl PropertyGroupRequest {
         self.property_names.as_deref()
     }
 }
+impl PropertyGroupRequest {
+    /// Creates a new builder-style object to manufacture [`PropertyGroupRequest`](crate::model::PropertyGroupRequest).
+    pub fn builder() -> crate::model::property_group_request::Builder {
+        crate::model::property_group_request::Builder::default()
+    }
+}
+
 /// See [`PropertyGroupRequest`](crate::model::PropertyGroupRequest).
 pub mod property_group_request {
 
@@ -2510,12 +2528,6 @@ pub mod property_group_request {
         }
     }
 }
-impl PropertyGroupRequest {
-    /// Creates a new builder-style object to manufacture [`PropertyGroupRequest`](crate::model::PropertyGroupRequest).
-    pub fn builder() -> crate::model::property_group_request::Builder {
-        crate::model::property_group_request::Builder::default()
-    }
-}
 
 /// <p>The function request body.</p>
 #[non_exhaustive]
@@ -2545,6 +2557,13 @@ impl FunctionRequest {
         self.implemented_by.as_ref()
     }
 }
+impl FunctionRequest {
+    /// Creates a new builder-style object to manufacture [`FunctionRequest`](crate::model::FunctionRequest).
+    pub fn builder() -> crate::model::function_request::Builder {
+        crate::model::function_request::Builder::default()
+    }
+}
+
 /// See [`FunctionRequest`](crate::model::FunctionRequest).
 pub mod function_request {
 
@@ -2609,12 +2628,6 @@ pub mod function_request {
         }
     }
 }
-impl FunctionRequest {
-    /// Creates a new builder-style object to manufacture [`FunctionRequest`](crate::model::FunctionRequest).
-    pub fn builder() -> crate::model::function_request::Builder {
-        crate::model::function_request::Builder::default()
-    }
-}
 
 /// <p>The data connector.</p>
 #[non_exhaustive]
@@ -2637,6 +2650,13 @@ impl DataConnector {
         self.is_native
     }
 }
+impl DataConnector {
+    /// Creates a new builder-style object to manufacture [`DataConnector`](crate::model::DataConnector).
+    pub fn builder() -> crate::model::data_connector::Builder {
+        crate::model::data_connector::Builder::default()
+    }
+}
+
 /// See [`DataConnector`](crate::model::DataConnector).
 pub mod data_connector {
 
@@ -2680,12 +2700,6 @@ pub mod data_connector {
         }
     }
 }
-impl DataConnector {
-    /// Creates a new builder-style object to manufacture [`DataConnector`](crate::model::DataConnector).
-    pub fn builder() -> crate::model::data_connector::Builder {
-        crate::model::data_connector::Builder::default()
-    }
-}
 
 /// <p>The Lambda function.</p>
 #[non_exhaustive]
@@ -2701,6 +2715,13 @@ impl LambdaFunction {
         self.arn.as_deref()
     }
 }
+impl LambdaFunction {
+    /// Creates a new builder-style object to manufacture [`LambdaFunction`](crate::model::LambdaFunction).
+    pub fn builder() -> crate::model::lambda_function::Builder {
+        crate::model::lambda_function::Builder::default()
+    }
+}
+
 /// See [`LambdaFunction`](crate::model::LambdaFunction).
 pub mod lambda_function {
 
@@ -2725,12 +2746,6 @@ pub mod lambda_function {
         pub fn build(self) -> crate::model::LambdaFunction {
             crate::model::LambdaFunction { arn: self.arn }
         }
-    }
-}
-impl LambdaFunction {
-    /// Creates a new builder-style object to manufacture [`LambdaFunction`](crate::model::LambdaFunction).
-    pub fn builder() -> crate::model::lambda_function::Builder {
-        crate::model::lambda_function::Builder::default()
     }
 }
 
@@ -2866,6 +2881,13 @@ impl WorkspaceSummary {
         self.update_date_time.as_ref()
     }
 }
+impl WorkspaceSummary {
+    /// Creates a new builder-style object to manufacture [`WorkspaceSummary`](crate::model::WorkspaceSummary).
+    pub fn builder() -> crate::model::workspace_summary::Builder {
+        crate::model::workspace_summary::Builder::default()
+    }
+}
+
 /// See [`WorkspaceSummary`](crate::model::WorkspaceSummary).
 pub mod workspace_summary {
 
@@ -2948,12 +2970,6 @@ pub mod workspace_summary {
         }
     }
 }
-impl WorkspaceSummary {
-    /// Creates a new builder-style object to manufacture [`WorkspaceSummary`](crate::model::WorkspaceSummary).
-    pub fn builder() -> crate::model::workspace_summary::Builder {
-        crate::model::workspace_summary::Builder::default()
-    }
-}
 
 /// <p>The sync resource summary.</p>
 #[non_exhaustive]
@@ -2997,6 +3013,13 @@ impl SyncResourceSummary {
         self.update_date_time.as_ref()
     }
 }
+impl SyncResourceSummary {
+    /// Creates a new builder-style object to manufacture [`SyncResourceSummary`](crate::model::SyncResourceSummary).
+    pub fn builder() -> crate::model::sync_resource_summary::Builder {
+        crate::model::sync_resource_summary::Builder::default()
+    }
+}
+
 /// See [`SyncResourceSummary`](crate::model::SyncResourceSummary).
 pub mod sync_resource_summary {
 
@@ -3082,12 +3105,6 @@ pub mod sync_resource_summary {
         }
     }
 }
-impl SyncResourceSummary {
-    /// Creates a new builder-style object to manufacture [`SyncResourceSummary`](crate::model::SyncResourceSummary).
-    pub fn builder() -> crate::model::sync_resource_summary::Builder {
-        crate::model::sync_resource_summary::Builder::default()
-    }
-}
 
 /// <p>The sync resource status.</p>
 #[non_exhaustive]
@@ -3110,6 +3127,13 @@ impl SyncResourceStatus {
         self.error.as_ref()
     }
 }
+impl SyncResourceStatus {
+    /// Creates a new builder-style object to manufacture [`SyncResourceStatus`](crate::model::SyncResourceStatus).
+    pub fn builder() -> crate::model::sync_resource_status::Builder {
+        crate::model::sync_resource_status::Builder::default()
+    }
+}
+
 /// See [`SyncResourceStatus`](crate::model::SyncResourceStatus).
 pub mod sync_resource_status {
 
@@ -3153,12 +3177,6 @@ pub mod sync_resource_status {
         }
     }
 }
-impl SyncResourceStatus {
-    /// Creates a new builder-style object to manufacture [`SyncResourceStatus`](crate::model::SyncResourceStatus).
-    pub fn builder() -> crate::model::sync_resource_status::Builder {
-        crate::model::sync_resource_status::Builder::default()
-    }
-}
 
 /// <p>The error details.</p>
 #[non_exhaustive]
@@ -3181,6 +3199,13 @@ impl ErrorDetails {
         self.message.as_deref()
     }
 }
+impl ErrorDetails {
+    /// Creates a new builder-style object to manufacture [`ErrorDetails`](crate::model::ErrorDetails).
+    pub fn builder() -> crate::model::error_details::Builder {
+        crate::model::error_details::Builder::default()
+    }
+}
+
 /// See [`ErrorDetails`](crate::model::ErrorDetails).
 pub mod error_details {
 
@@ -3219,12 +3244,6 @@ pub mod error_details {
                 message: self.message,
             }
         }
-    }
-}
-impl ErrorDetails {
-    /// Creates a new builder-style object to manufacture [`ErrorDetails`](crate::model::ErrorDetails).
-    pub fn builder() -> crate::model::error_details::Builder {
-        crate::model::error_details::Builder::default()
     }
 }
 
@@ -3666,6 +3685,13 @@ impl SyncJobSummary {
         self.update_date_time.as_ref()
     }
 }
+impl SyncJobSummary {
+    /// Creates a new builder-style object to manufacture [`SyncJobSummary`](crate::model::SyncJobSummary).
+    pub fn builder() -> crate::model::sync_job_summary::Builder {
+        crate::model::sync_job_summary::Builder::default()
+    }
+}
+
 /// See [`SyncJobSummary`](crate::model::SyncJobSummary).
 pub mod sync_job_summary {
 
@@ -3763,12 +3789,6 @@ pub mod sync_job_summary {
         }
     }
 }
-impl SyncJobSummary {
-    /// Creates a new builder-style object to manufacture [`SyncJobSummary`](crate::model::SyncJobSummary).
-    pub fn builder() -> crate::model::sync_job_summary::Builder {
-        crate::model::sync_job_summary::Builder::default()
-    }
-}
 
 /// <p>The SyncJob status.</p>
 #[non_exhaustive]
@@ -3791,6 +3811,13 @@ impl SyncJobStatus {
         self.error.as_ref()
     }
 }
+impl SyncJobStatus {
+    /// Creates a new builder-style object to manufacture [`SyncJobStatus`](crate::model::SyncJobStatus).
+    pub fn builder() -> crate::model::sync_job_status::Builder {
+        crate::model::sync_job_status::Builder::default()
+    }
+}
+
 /// See [`SyncJobStatus`](crate::model::SyncJobStatus).
 pub mod sync_job_status {
 
@@ -3829,12 +3856,6 @@ pub mod sync_job_status {
                 error: self.error,
             }
         }
-    }
-}
-impl SyncJobStatus {
-    /// Creates a new builder-style object to manufacture [`SyncJobStatus`](crate::model::SyncJobStatus).
-    pub fn builder() -> crate::model::sync_job_status::Builder {
-        crate::model::sync_job_status::Builder::default()
     }
 }
 
@@ -3992,6 +4013,13 @@ impl SceneSummary {
         self.description.as_deref()
     }
 }
+impl SceneSummary {
+    /// Creates a new builder-style object to manufacture [`SceneSummary`](crate::model::SceneSummary).
+    pub fn builder() -> crate::model::scene_summary::Builder {
+        crate::model::scene_summary::Builder::default()
+    }
+}
+
 /// See [`SceneSummary`](crate::model::SceneSummary).
 pub mod scene_summary {
 
@@ -4089,12 +4117,6 @@ pub mod scene_summary {
         }
     }
 }
-impl SceneSummary {
-    /// Creates a new builder-style object to manufacture [`SceneSummary`](crate::model::SceneSummary).
-    pub fn builder() -> crate::model::scene_summary::Builder {
-        crate::model::scene_summary::Builder::default()
-    }
-}
 
 /// <p>An object that contains information about an entity.</p>
 #[non_exhaustive]
@@ -4166,6 +4188,13 @@ impl EntitySummary {
         self.update_date_time.as_ref()
     }
 }
+impl EntitySummary {
+    /// Creates a new builder-style object to manufacture [`EntitySummary`](crate::model::EntitySummary).
+    pub fn builder() -> crate::model::entity_summary::Builder {
+        crate::model::entity_summary::Builder::default()
+    }
+}
+
 /// See [`EntitySummary`](crate::model::EntitySummary).
 pub mod entity_summary {
 
@@ -4299,12 +4328,6 @@ pub mod entity_summary {
         }
     }
 }
-impl EntitySummary {
-    /// Creates a new builder-style object to manufacture [`EntitySummary`](crate::model::EntitySummary).
-    pub fn builder() -> crate::model::entity_summary::Builder {
-        crate::model::entity_summary::Builder::default()
-    }
-}
 
 /// <p>An object that represents the status of an entity, component, component type, or workspace.</p>
 #[non_exhaustive]
@@ -4327,6 +4350,13 @@ impl Status {
         self.error.as_ref()
     }
 }
+impl Status {
+    /// Creates a new builder-style object to manufacture [`Status`](crate::model::Status).
+    pub fn builder() -> crate::model::status::Builder {
+        crate::model::status::Builder::default()
+    }
+}
+
 /// See [`Status`](crate::model::Status).
 pub mod status {
 
@@ -4365,12 +4395,6 @@ pub mod status {
                 error: self.error,
             }
         }
-    }
-}
-impl Status {
-    /// Creates a new builder-style object to manufacture [`Status`](crate::model::Status).
-    pub fn builder() -> crate::model::status::Builder {
-        crate::model::status::Builder::default()
     }
 }
 
@@ -4496,6 +4520,13 @@ impl ComponentTypeSummary {
         self.component_type_name.as_deref()
     }
 }
+impl ComponentTypeSummary {
+    /// Creates a new builder-style object to manufacture [`ComponentTypeSummary`](crate::model::ComponentTypeSummary).
+    pub fn builder() -> crate::model::component_type_summary::Builder {
+        crate::model::component_type_summary::Builder::default()
+    }
+}
+
 /// See [`ComponentTypeSummary`](crate::model::ComponentTypeSummary).
 pub mod component_type_summary {
 
@@ -4608,12 +4639,6 @@ pub mod component_type_summary {
         }
     }
 }
-impl ComponentTypeSummary {
-    /// Creates a new builder-style object to manufacture [`ComponentTypeSummary`](crate::model::ComponentTypeSummary).
-    pub fn builder() -> crate::model::component_type_summary::Builder {
-        crate::model::component_type_summary::Builder::default()
-    }
-}
 
 /// <p>An object that filters items in a list of component types.</p> <note>
 /// <p>Only one object is accepted as a valid input.</p>
@@ -4706,6 +4731,13 @@ impl PropertyValueHistory {
         self.values.as_deref()
     }
 }
+impl PropertyValueHistory {
+    /// Creates a new builder-style object to manufacture [`PropertyValueHistory`](crate::model::PropertyValueHistory).
+    pub fn builder() -> crate::model::property_value_history::Builder {
+        crate::model::property_value_history::Builder::default()
+    }
+}
+
 /// See [`PropertyValueHistory`](crate::model::PropertyValueHistory).
 pub mod property_value_history {
 
@@ -4760,12 +4792,6 @@ pub mod property_value_history {
                 values: self.values,
             }
         }
-    }
-}
-impl PropertyValueHistory {
-    /// Creates a new builder-style object to manufacture [`PropertyValueHistory`](crate::model::PropertyValueHistory).
-    pub fn builder() -> crate::model::property_value_history::Builder {
-        crate::model::property_value_history::Builder::default()
     }
 }
 
@@ -4829,6 +4855,13 @@ impl PropertyValue {
         self.time.as_deref()
     }
 }
+impl PropertyValue {
+    /// Creates a new builder-style object to manufacture [`PropertyValue`](crate::model::PropertyValue).
+    pub fn builder() -> crate::model::property_value::Builder {
+        crate::model::property_value::Builder::default()
+    }
+}
+
 /// See [`PropertyValue`](crate::model::PropertyValue).
 pub mod property_value {
 
@@ -4916,12 +4949,6 @@ pub mod property_value {
         }
     }
 }
-impl PropertyValue {
-    /// Creates a new builder-style object to manufacture [`PropertyValue`](crate::model::PropertyValue).
-    pub fn builder() -> crate::model::property_value::Builder {
-        crate::model::property_value::Builder::default()
-    }
-}
 
 /// <p>An object that uniquely identifies an entity property.</p>
 #[non_exhaustive]
@@ -4962,6 +4989,13 @@ impl EntityPropertyReference {
         self.property_name.as_deref()
     }
 }
+impl EntityPropertyReference {
+    /// Creates a new builder-style object to manufacture [`EntityPropertyReference`](crate::model::EntityPropertyReference).
+    pub fn builder() -> crate::model::entity_property_reference::Builder {
+        crate::model::entity_property_reference::Builder::default()
+    }
+}
+
 /// See [`EntityPropertyReference`](crate::model::EntityPropertyReference).
 pub mod entity_property_reference {
 
@@ -5047,12 +5081,6 @@ pub mod entity_property_reference {
                 property_name: self.property_name,
             }
         }
-    }
-}
-impl EntityPropertyReference {
-    /// Creates a new builder-style object to manufacture [`EntityPropertyReference`](crate::model::EntityPropertyReference).
-    pub fn builder() -> crate::model::entity_property_reference::Builder {
-        crate::model::entity_property_reference::Builder::default()
     }
 }
 
@@ -5167,6 +5195,13 @@ impl InterpolationParameters {
         self.interval_in_seconds
     }
 }
+impl InterpolationParameters {
+    /// Creates a new builder-style object to manufacture [`InterpolationParameters`](crate::model::InterpolationParameters).
+    pub fn builder() -> crate::model::interpolation_parameters::Builder {
+        crate::model::interpolation_parameters::Builder::default()
+    }
+}
+
 /// See [`InterpolationParameters`](crate::model::InterpolationParameters).
 pub mod interpolation_parameters {
 
@@ -5208,12 +5243,6 @@ pub mod interpolation_parameters {
                 interval_in_seconds: self.interval_in_seconds,
             }
         }
-    }
-}
-impl InterpolationParameters {
-    /// Creates a new builder-style object to manufacture [`InterpolationParameters`](crate::model::InterpolationParameters).
-    pub fn builder() -> crate::model::interpolation_parameters::Builder {
-        crate::model::interpolation_parameters::Builder::default()
     }
 }
 
@@ -5332,6 +5361,13 @@ impl PropertyFilter {
         self.value.as_ref()
     }
 }
+impl PropertyFilter {
+    /// Creates a new builder-style object to manufacture [`PropertyFilter`](crate::model::PropertyFilter).
+    pub fn builder() -> crate::model::property_filter::Builder {
+        crate::model::property_filter::Builder::default()
+    }
+}
+
 /// See [`PropertyFilter`](crate::model::PropertyFilter).
 pub mod property_filter {
 
@@ -5387,12 +5423,6 @@ pub mod property_filter {
         }
     }
 }
-impl PropertyFilter {
-    /// Creates a new builder-style object to manufacture [`PropertyFilter`](crate::model::PropertyFilter).
-    pub fn builder() -> crate::model::property_filter::Builder {
-        crate::model::property_filter::Builder::default()
-    }
-}
 
 /// <p>The latest value of the property.</p>
 #[non_exhaustive]
@@ -5417,6 +5447,13 @@ impl PropertyLatestValue {
         self.property_value.as_ref()
     }
 }
+impl PropertyLatestValue {
+    /// Creates a new builder-style object to manufacture [`PropertyLatestValue`](crate::model::PropertyLatestValue).
+    pub fn builder() -> crate::model::property_latest_value::Builder {
+        crate::model::property_latest_value::Builder::default()
+    }
+}
+
 /// See [`PropertyLatestValue`](crate::model::PropertyLatestValue).
 pub mod property_latest_value {
 
@@ -5463,12 +5500,6 @@ pub mod property_latest_value {
         }
     }
 }
-impl PropertyLatestValue {
-    /// Creates a new builder-style object to manufacture [`PropertyLatestValue`](crate::model::PropertyLatestValue).
-    pub fn builder() -> crate::model::property_latest_value::Builder {
-        crate::model::property_latest_value::Builder::default()
-    }
-}
 
 /// <p>The tabular conditions.</p>
 #[non_exhaustive]
@@ -5493,6 +5524,13 @@ impl TabularConditions {
         self.property_filters.as_deref()
     }
 }
+impl TabularConditions {
+    /// Creates a new builder-style object to manufacture [`TabularConditions`](crate::model::TabularConditions).
+    pub fn builder() -> crate::model::tabular_conditions::Builder {
+        crate::model::tabular_conditions::Builder::default()
+    }
+}
+
 /// See [`TabularConditions`](crate::model::TabularConditions).
 pub mod tabular_conditions {
 
@@ -5554,12 +5592,6 @@ pub mod tabular_conditions {
         }
     }
 }
-impl TabularConditions {
-    /// Creates a new builder-style object to manufacture [`TabularConditions`](crate::model::TabularConditions).
-    pub fn builder() -> crate::model::tabular_conditions::Builder {
-        crate::model::tabular_conditions::Builder::default()
-    }
-}
 
 /// <p>Filter criteria that orders the return output. It can be sorted in ascending or descending order.</p>
 #[non_exhaustive]
@@ -5582,6 +5614,13 @@ impl OrderBy {
         self.property_name.as_deref()
     }
 }
+impl OrderBy {
+    /// Creates a new builder-style object to manufacture [`OrderBy`](crate::model::OrderBy).
+    pub fn builder() -> crate::model::order_by::Builder {
+        crate::model::order_by::Builder::default()
+    }
+}
+
 /// See [`OrderBy`](crate::model::OrderBy).
 pub mod order_by {
 
@@ -5623,12 +5662,6 @@ pub mod order_by {
                 property_name: self.property_name,
             }
         }
-    }
-}
-impl OrderBy {
-    /// Creates a new builder-style object to manufacture [`OrderBy`](crate::model::OrderBy).
-    pub fn builder() -> crate::model::order_by::Builder {
-        crate::model::order_by::Builder::default()
     }
 }
 
@@ -5803,6 +5836,13 @@ impl ComponentResponse {
         self.sync_source.as_deref()
     }
 }
+impl ComponentResponse {
+    /// Creates a new builder-style object to manufacture [`ComponentResponse`](crate::model::ComponentResponse).
+    pub fn builder() -> crate::model::component_response::Builder {
+        crate::model::component_response::Builder::default()
+    }
+}
+
 /// See [`ComponentResponse`](crate::model::ComponentResponse).
 pub mod component_response {
 
@@ -5961,12 +6001,6 @@ pub mod component_response {
         }
     }
 }
-impl ComponentResponse {
-    /// Creates a new builder-style object to manufacture [`ComponentResponse`](crate::model::ComponentResponse).
-    pub fn builder() -> crate::model::component_response::Builder {
-        crate::model::component_response::Builder::default()
-    }
-}
 
 /// <p>The component property group response.</p>
 #[non_exhaustive]
@@ -5996,6 +6030,13 @@ impl ComponentPropertyGroupResponse {
         self.is_inherited
     }
 }
+impl ComponentPropertyGroupResponse {
+    /// Creates a new builder-style object to manufacture [`ComponentPropertyGroupResponse`](crate::model::ComponentPropertyGroupResponse).
+    pub fn builder() -> crate::model::component_property_group_response::Builder {
+        crate::model::component_property_group_response::Builder::default()
+    }
+}
+
 /// See [`ComponentPropertyGroupResponse`](crate::model::ComponentPropertyGroupResponse).
 pub mod component_property_group_response {
 
@@ -6060,12 +6101,6 @@ pub mod component_property_group_response {
         }
     }
 }
-impl ComponentPropertyGroupResponse {
-    /// Creates a new builder-style object to manufacture [`ComponentPropertyGroupResponse`](crate::model::ComponentPropertyGroupResponse).
-    pub fn builder() -> crate::model::component_property_group_response::Builder {
-        crate::model::component_property_group_response::Builder::default()
-    }
-}
 
 /// <p>An object that contains information about a property response.</p>
 #[non_exhaustive]
@@ -6088,6 +6123,13 @@ impl PropertyResponse {
         self.value.as_ref()
     }
 }
+impl PropertyResponse {
+    /// Creates a new builder-style object to manufacture [`PropertyResponse`](crate::model::PropertyResponse).
+    pub fn builder() -> crate::model::property_response::Builder {
+        crate::model::property_response::Builder::default()
+    }
+}
+
 /// See [`PropertyResponse`](crate::model::PropertyResponse).
 pub mod property_response {
 
@@ -6129,12 +6171,6 @@ pub mod property_response {
                 value: self.value,
             }
         }
-    }
-}
-impl PropertyResponse {
-    /// Creates a new builder-style object to manufacture [`PropertyResponse`](crate::model::PropertyResponse).
-    pub fn builder() -> crate::model::property_response::Builder {
-        crate::model::property_response::Builder::default()
     }
 }
 
@@ -6226,6 +6262,13 @@ impl PropertyDefinitionResponse {
         self.display_name.as_deref()
     }
 }
+impl PropertyDefinitionResponse {
+    /// Creates a new builder-style object to manufacture [`PropertyDefinitionResponse`](crate::model::PropertyDefinitionResponse).
+    pub fn builder() -> crate::model::property_definition_response::Builder {
+        crate::model::property_definition_response::Builder::default()
+    }
+}
+
 /// See [`PropertyDefinitionResponse`](crate::model::PropertyDefinitionResponse).
 pub mod property_definition_response {
 
@@ -6394,12 +6437,6 @@ pub mod property_definition_response {
         }
     }
 }
-impl PropertyDefinitionResponse {
-    /// Creates a new builder-style object to manufacture [`PropertyDefinitionResponse`](crate::model::PropertyDefinitionResponse).
-    pub fn builder() -> crate::model::property_definition_response::Builder {
-        crate::model::property_definition_response::Builder::default()
-    }
-}
 
 /// <p>The property group response</p>
 #[non_exhaustive]
@@ -6429,6 +6466,13 @@ impl PropertyGroupResponse {
         self.is_inherited
     }
 }
+impl PropertyGroupResponse {
+    /// Creates a new builder-style object to manufacture [`PropertyGroupResponse`](crate::model::PropertyGroupResponse).
+    pub fn builder() -> crate::model::property_group_response::Builder {
+        crate::model::property_group_response::Builder::default()
+    }
+}
+
 /// See [`PropertyGroupResponse`](crate::model::PropertyGroupResponse).
 pub mod property_group_response {
 
@@ -6493,12 +6537,6 @@ pub mod property_group_response {
         }
     }
 }
-impl PropertyGroupResponse {
-    /// Creates a new builder-style object to manufacture [`PropertyGroupResponse`](crate::model::PropertyGroupResponse).
-    pub fn builder() -> crate::model::property_group_response::Builder {
-        crate::model::property_group_response::Builder::default()
-    }
-}
 
 /// <p>The function response.</p>
 #[non_exhaustive]
@@ -6535,6 +6573,13 @@ impl FunctionResponse {
         self.is_inherited
     }
 }
+impl FunctionResponse {
+    /// Creates a new builder-style object to manufacture [`FunctionResponse`](crate::model::FunctionResponse).
+    pub fn builder() -> crate::model::function_response::Builder {
+        crate::model::function_response::Builder::default()
+    }
+}
+
 /// See [`FunctionResponse`](crate::model::FunctionResponse).
 pub mod function_response {
 
@@ -6611,12 +6656,6 @@ pub mod function_response {
         }
     }
 }
-impl FunctionResponse {
-    /// Creates a new builder-style object to manufacture [`FunctionResponse`](crate::model::FunctionResponse).
-    pub fn builder() -> crate::model::function_response::Builder {
-        crate::model::function_response::Builder::default()
-    }
-}
 
 /// <p>Represents a single row in the query results.</p>
 #[non_exhaustive]
@@ -6632,6 +6671,13 @@ impl Row {
         self.row_data.as_deref()
     }
 }
+impl Row {
+    /// Creates a new builder-style object to manufacture [`Row`](crate::model::Row).
+    pub fn builder() -> crate::model::row::Builder {
+        crate::model::row::Builder::default()
+    }
+}
+
 /// See [`Row`](crate::model::Row).
 pub mod row {
 
@@ -6669,12 +6715,6 @@ pub mod row {
         }
     }
 }
-impl Row {
-    /// Creates a new builder-style object to manufacture [`Row`](crate::model::Row).
-    pub fn builder() -> crate::model::row::Builder {
-        crate::model::row::Builder::default()
-    }
-}
 
 /// <p>A description of the column in the query results.</p>
 #[non_exhaustive]
@@ -6697,6 +6737,13 @@ impl ColumnDescription {
         self.r#type.as_ref()
     }
 }
+impl ColumnDescription {
+    /// Creates a new builder-style object to manufacture [`ColumnDescription`](crate::model::ColumnDescription).
+    pub fn builder() -> crate::model::column_description::Builder {
+        crate::model::column_description::Builder::default()
+    }
+}
+
 /// See [`ColumnDescription`](crate::model::ColumnDescription).
 pub mod column_description {
 
@@ -6735,12 +6782,6 @@ pub mod column_description {
                 r#type: self.r#type,
             }
         }
-    }
-}
-impl ColumnDescription {
-    /// Creates a new builder-style object to manufacture [`ColumnDescription`](crate::model::ColumnDescription).
-    pub fn builder() -> crate::model::column_description::Builder {
-        crate::model::column_description::Builder::default()
     }
 }
 
@@ -6889,6 +6930,13 @@ impl ComponentRequest {
         self.property_groups.as_ref()
     }
 }
+impl ComponentRequest {
+    /// Creates a new builder-style object to manufacture [`ComponentRequest`](crate::model::ComponentRequest).
+    pub fn builder() -> crate::model::component_request::Builder {
+        crate::model::component_request::Builder::default()
+    }
+}
+
 /// See [`ComponentRequest`](crate::model::ComponentRequest).
 pub mod component_request {
 
@@ -6996,12 +7044,6 @@ pub mod component_request {
         }
     }
 }
-impl ComponentRequest {
-    /// Creates a new builder-style object to manufacture [`ComponentRequest`](crate::model::ComponentRequest).
-    pub fn builder() -> crate::model::component_request::Builder {
-        crate::model::component_request::Builder::default()
-    }
-}
 
 /// <p>An object that contains information about errors returned by the <code>BatchPutProperty</code> action.</p>
 #[non_exhaustive]
@@ -7017,6 +7059,13 @@ impl BatchPutPropertyErrorEntry {
         self.errors.as_deref()
     }
 }
+impl BatchPutPropertyErrorEntry {
+    /// Creates a new builder-style object to manufacture [`BatchPutPropertyErrorEntry`](crate::model::BatchPutPropertyErrorEntry).
+    pub fn builder() -> crate::model::batch_put_property_error_entry::Builder {
+        crate::model::batch_put_property_error_entry::Builder::default()
+    }
+}
+
 /// See [`BatchPutPropertyErrorEntry`](crate::model::BatchPutPropertyErrorEntry).
 pub mod batch_put_property_error_entry {
 
@@ -7054,12 +7103,6 @@ pub mod batch_put_property_error_entry {
         }
     }
 }
-impl BatchPutPropertyErrorEntry {
-    /// Creates a new builder-style object to manufacture [`BatchPutPropertyErrorEntry`](crate::model::BatchPutPropertyErrorEntry).
-    pub fn builder() -> crate::model::batch_put_property_error_entry::Builder {
-        crate::model::batch_put_property_error_entry::Builder::default()
-    }
-}
 
 /// <p>An error returned by the <code>BatchPutProperty</code> action.</p>
 #[non_exhaustive]
@@ -7089,6 +7132,13 @@ impl BatchPutPropertyError {
         self.entry.as_ref()
     }
 }
+impl BatchPutPropertyError {
+    /// Creates a new builder-style object to manufacture [`BatchPutPropertyError`](crate::model::BatchPutPropertyError).
+    pub fn builder() -> crate::model::batch_put_property_error::Builder {
+        crate::model::batch_put_property_error::Builder::default()
+    }
+}
+
 /// See [`BatchPutPropertyError`](crate::model::BatchPutPropertyError).
 pub mod batch_put_property_error {
 
@@ -7147,12 +7197,6 @@ pub mod batch_put_property_error {
         }
     }
 }
-impl BatchPutPropertyError {
-    /// Creates a new builder-style object to manufacture [`BatchPutPropertyError`](crate::model::BatchPutPropertyError).
-    pub fn builder() -> crate::model::batch_put_property_error::Builder {
-        crate::model::batch_put_property_error::Builder::default()
-    }
-}
 
 /// <p>An object that specifies information about time series property values. This object is used and consumed by the <a href="https://docs.aws.amazon.com/iot-twinmaker/latest/apireference/API_BatchPutPropertyValues.html">BatchPutPropertyValues</a> action.</p>
 #[non_exhaustive]
@@ -7177,6 +7221,13 @@ impl PropertyValueEntry {
         self.property_values.as_deref()
     }
 }
+impl PropertyValueEntry {
+    /// Creates a new builder-style object to manufacture [`PropertyValueEntry`](crate::model::PropertyValueEntry).
+    pub fn builder() -> crate::model::property_value_entry::Builder {
+        crate::model::property_value_entry::Builder::default()
+    }
+}
+
 /// See [`PropertyValueEntry`](crate::model::PropertyValueEntry).
 pub mod property_value_entry {
 
@@ -7231,11 +7282,5 @@ pub mod property_value_entry {
                 property_values: self.property_values,
             }
         }
-    }
-}
-impl PropertyValueEntry {
-    /// Creates a new builder-style object to manufacture [`PropertyValueEntry`](crate::model::PropertyValueEntry).
-    pub fn builder() -> crate::model::property_value_entry::Builder {
-        crate::model::property_value_entry::Builder::default()
     }
 }

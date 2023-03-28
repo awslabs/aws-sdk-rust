@@ -21,6 +21,13 @@ impl ValidationExceptionField {
         self.message.as_deref()
     }
 }
+impl ValidationExceptionField {
+    /// Creates a new builder-style object to manufacture [`ValidationExceptionField`](crate::model::ValidationExceptionField).
+    pub fn builder() -> crate::model::validation_exception_field::Builder {
+        crate::model::validation_exception_field::Builder::default()
+    }
+}
+
 /// See [`ValidationExceptionField`](crate::model::ValidationExceptionField).
 pub mod validation_exception_field {
 
@@ -59,12 +66,6 @@ pub mod validation_exception_field {
                 message: self.message,
             }
         }
-    }
-}
-impl ValidationExceptionField {
-    /// Creates a new builder-style object to manufacture [`ValidationExceptionField`](crate::model::ValidationExceptionField).
-    pub fn builder() -> crate::model::validation_exception_field::Builder {
-        crate::model::validation_exception_field::Builder::default()
     }
 }
 
@@ -203,6 +204,13 @@ impl VpcAttachment {
         self.options.as_ref()
     }
 }
+impl VpcAttachment {
+    /// Creates a new builder-style object to manufacture [`VpcAttachment`](crate::model::VpcAttachment).
+    pub fn builder() -> crate::model::vpc_attachment::Builder {
+        crate::model::vpc_attachment::Builder::default()
+    }
+}
+
 /// See [`VpcAttachment`](crate::model::VpcAttachment).
 pub mod vpc_attachment {
 
@@ -267,12 +275,6 @@ pub mod vpc_attachment {
         }
     }
 }
-impl VpcAttachment {
-    /// Creates a new builder-style object to manufacture [`VpcAttachment`](crate::model::VpcAttachment).
-    pub fn builder() -> crate::model::vpc_attachment::Builder {
-        crate::model::vpc_attachment::Builder::default()
-    }
-}
 
 /// <p>Describes the VPC options.</p>
 #[non_exhaustive]
@@ -295,6 +297,13 @@ impl VpcOptions {
         self.appliance_mode_support
     }
 }
+impl VpcOptions {
+    /// Creates a new builder-style object to manufacture [`VpcOptions`](crate::model::VpcOptions).
+    pub fn builder() -> crate::model::vpc_options::Builder {
+        crate::model::vpc_options::Builder::default()
+    }
+}
+
 /// See [`VpcOptions`](crate::model::VpcOptions).
 pub mod vpc_options {
 
@@ -333,12 +342,6 @@ pub mod vpc_options {
                 appliance_mode_support: self.appliance_mode_support.unwrap_or_default(),
             }
         }
-    }
-}
-impl VpcOptions {
-    /// Creates a new builder-style object to manufacture [`VpcOptions`](crate::model::VpcOptions).
-    pub fn builder() -> crate::model::vpc_options::Builder {
-        crate::model::vpc_options::Builder::default()
     }
 }
 
@@ -449,6 +452,13 @@ impl Attachment {
         self.updated_at.as_ref()
     }
 }
+impl Attachment {
+    /// Creates a new builder-style object to manufacture [`Attachment`](crate::model::Attachment).
+    pub fn builder() -> crate::model::attachment::Builder {
+        crate::model::attachment::Builder::default()
+    }
+}
+
 /// See [`Attachment`](crate::model::Attachment).
 pub mod attachment {
 
@@ -679,12 +689,6 @@ pub mod attachment {
         }
     }
 }
-impl Attachment {
-    /// Creates a new builder-style object to manufacture [`Attachment`](crate::model::Attachment).
-    pub fn builder() -> crate::model::attachment::Builder {
-        crate::model::attachment::Builder::default()
-    }
-}
 
 /// <p>Describes a proposed segment change. In some cases, the segment change must first be evaluated and accepted. </p>
 #[non_exhaustive]
@@ -714,6 +718,13 @@ impl ProposedSegmentChange {
         self.segment_name.as_deref()
     }
 }
+impl ProposedSegmentChange {
+    /// Creates a new builder-style object to manufacture [`ProposedSegmentChange`](crate::model::ProposedSegmentChange).
+    pub fn builder() -> crate::model::proposed_segment_change::Builder {
+        crate::model::proposed_segment_change::Builder::default()
+    }
+}
+
 /// See [`ProposedSegmentChange`](crate::model::ProposedSegmentChange).
 pub mod proposed_segment_change {
 
@@ -778,12 +789,6 @@ pub mod proposed_segment_change {
         }
     }
 }
-impl ProposedSegmentChange {
-    /// Creates a new builder-style object to manufacture [`ProposedSegmentChange`](crate::model::ProposedSegmentChange).
-    pub fn builder() -> crate::model::proposed_segment_change::Builder {
-        crate::model::proposed_segment_change::Builder::default()
-    }
-}
 
 /// <p>Describes a tag.</p>
 #[non_exhaustive]
@@ -810,6 +815,13 @@ impl Tag {
         self.value.as_deref()
     }
 }
+impl Tag {
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
+    pub fn builder() -> crate::model::tag::Builder {
+        crate::model::tag::Builder::default()
+    }
+}
+
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
 
@@ -852,12 +864,6 @@ pub mod tag {
                 value: self.value,
             }
         }
-    }
-}
-impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
-    pub fn builder() -> crate::model::tag::Builder {
-        crate::model::tag::Builder::default()
     }
 }
 
@@ -1178,6 +1184,13 @@ impl std::fmt::Debug for Site {
         formatter.finish()
     }
 }
+impl Site {
+    /// Creates a new builder-style object to manufacture [`Site`](crate::model::Site).
+    pub fn builder() -> crate::model::site::Builder {
+        crate::model::site::Builder::default()
+    }
+}
+
 /// See [`Site`](crate::model::Site).
 pub mod site {
 
@@ -1319,12 +1332,6 @@ pub mod site {
         }
     }
 }
-impl Site {
-    /// Creates a new builder-style object to manufacture [`Site`](crate::model::Site).
-    pub fn builder() -> crate::model::site::Builder {
-        crate::model::site::Builder::default()
-    }
-}
 
 /// When writing a match expression against `SiteState`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -1463,6 +1470,13 @@ impl std::fmt::Debug for Location {
         formatter.finish()
     }
 }
+impl Location {
+    /// Creates a new builder-style object to manufacture [`Location`](crate::model::Location).
+    pub fn builder() -> crate::model::location::Builder {
+        crate::model::location::Builder::default()
+    }
+}
+
 /// See [`Location`](crate::model::Location).
 pub mod location {
 
@@ -1522,12 +1536,6 @@ pub mod location {
             formatter.field("longitude", &"*** Sensitive Data Redacted ***");
             formatter.finish()
         }
-    }
-}
-impl Location {
-    /// Creates a new builder-style object to manufacture [`Location`](crate::model::Location).
-    pub fn builder() -> crate::model::location::Builder {
-        crate::model::location::Builder::default()
     }
 }
 
@@ -1615,6 +1623,13 @@ impl Link {
         self.tags.as_deref()
     }
 }
+impl Link {
+    /// Creates a new builder-style object to manufacture [`Link`](crate::model::Link).
+    pub fn builder() -> crate::model::link::Builder {
+        crate::model::link::Builder::default()
+    }
+}
+
 /// See [`Link`](crate::model::Link).
 pub mod link {
 
@@ -1781,12 +1796,6 @@ pub mod link {
         }
     }
 }
-impl Link {
-    /// Creates a new builder-style object to manufacture [`Link`](crate::model::Link).
-    pub fn builder() -> crate::model::link::Builder {
-        crate::model::link::Builder::default()
-    }
-}
 
 /// When writing a match expression against `LinkState`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -1909,6 +1918,13 @@ impl Bandwidth {
         self.download_speed
     }
 }
+impl Bandwidth {
+    /// Creates a new builder-style object to manufacture [`Bandwidth`](crate::model::Bandwidth).
+    pub fn builder() -> crate::model::bandwidth::Builder {
+        crate::model::bandwidth::Builder::default()
+    }
+}
+
 /// See [`Bandwidth`](crate::model::Bandwidth).
 pub mod bandwidth {
 
@@ -1947,12 +1963,6 @@ pub mod bandwidth {
                 download_speed: self.download_speed,
             }
         }
-    }
-}
-impl Bandwidth {
-    /// Creates a new builder-style object to manufacture [`Bandwidth`](crate::model::Bandwidth).
-    pub fn builder() -> crate::model::bandwidth::Builder {
-        crate::model::bandwidth::Builder::default()
     }
 }
 
@@ -2005,6 +2015,13 @@ impl GlobalNetwork {
         self.tags.as_deref()
     }
 }
+impl GlobalNetwork {
+    /// Creates a new builder-style object to manufacture [`GlobalNetwork`](crate::model::GlobalNetwork).
+    pub fn builder() -> crate::model::global_network::Builder {
+        crate::model::global_network::Builder::default()
+    }
+}
+
 /// See [`GlobalNetwork`](crate::model::GlobalNetwork).
 pub mod global_network {
 
@@ -2112,12 +2129,6 @@ pub mod global_network {
                 tags: self.tags,
             }
         }
-    }
-}
-impl GlobalNetwork {
-    /// Creates a new builder-style object to manufacture [`GlobalNetwork`](crate::model::GlobalNetwork).
-    pub fn builder() -> crate::model::global_network::Builder {
-        crate::model::global_network::Builder::default()
     }
 }
 
@@ -2348,6 +2359,13 @@ impl std::fmt::Debug for Device {
         formatter.finish()
     }
 }
+impl Device {
+    /// Creates a new builder-style object to manufacture [`Device`](crate::model::Device).
+    pub fn builder() -> crate::model::device::Builder {
+        crate::model::device::Builder::default()
+    }
+}
+
 /// See [`Device`](crate::model::Device).
 pub mod device {
 
@@ -2573,12 +2591,6 @@ pub mod device {
         }
     }
 }
-impl Device {
-    /// Creates a new builder-style object to manufacture [`Device`](crate::model::Device).
-    pub fn builder() -> crate::model::device::Builder {
-        crate::model::device::Builder::default()
-    }
-}
 
 /// When writing a match expression against `DeviceState`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -2701,6 +2713,13 @@ impl AwsLocation {
         self.subnet_arn.as_deref()
     }
 }
+impl AwsLocation {
+    /// Creates a new builder-style object to manufacture [`AwsLocation`](crate::model::AwsLocation).
+    pub fn builder() -> crate::model::aws_location::Builder {
+        crate::model::aws_location::Builder::default()
+    }
+}
+
 /// See [`AwsLocation`](crate::model::AwsLocation).
 pub mod aws_location {
 
@@ -2739,12 +2758,6 @@ pub mod aws_location {
                 subnet_arn: self.subnet_arn,
             }
         }
-    }
-}
-impl AwsLocation {
-    /// Creates a new builder-style object to manufacture [`AwsLocation`](crate::model::AwsLocation).
-    pub fn builder() -> crate::model::aws_location::Builder {
-        crate::model::aws_location::Builder::default()
     }
 }
 
@@ -2818,6 +2831,13 @@ impl CoreNetwork {
         self.tags.as_deref()
     }
 }
+impl CoreNetwork {
+    /// Creates a new builder-style object to manufacture [`CoreNetwork`](crate::model::CoreNetwork).
+    pub fn builder() -> crate::model::core_network::Builder {
+        crate::model::core_network::Builder::default()
+    }
+}
+
 /// See [`CoreNetwork`](crate::model::CoreNetwork).
 pub mod core_network {
 
@@ -2984,12 +3004,6 @@ pub mod core_network {
         }
     }
 }
-impl CoreNetwork {
-    /// Creates a new builder-style object to manufacture [`CoreNetwork`](crate::model::CoreNetwork).
-    pub fn builder() -> crate::model::core_network::Builder {
-        crate::model::core_network::Builder::default()
-    }
-}
 
 /// <p>Describes a core network edge.</p>
 #[non_exhaustive]
@@ -3019,6 +3033,13 @@ impl CoreNetworkEdge {
         self.inside_cidr_blocks.as_deref()
     }
 }
+impl CoreNetworkEdge {
+    /// Creates a new builder-style object to manufacture [`CoreNetworkEdge`](crate::model::CoreNetworkEdge).
+    pub fn builder() -> crate::model::core_network_edge::Builder {
+        crate::model::core_network_edge::Builder::default()
+    }
+}
+
 /// See [`CoreNetworkEdge`](crate::model::CoreNetworkEdge).
 pub mod core_network_edge {
 
@@ -3083,12 +3104,6 @@ pub mod core_network_edge {
         }
     }
 }
-impl CoreNetworkEdge {
-    /// Creates a new builder-style object to manufacture [`CoreNetworkEdge`](crate::model::CoreNetworkEdge).
-    pub fn builder() -> crate::model::core_network_edge::Builder {
-        crate::model::core_network_edge::Builder::default()
-    }
-}
 
 /// <p>Describes a core network segment, which are dedicated routes. Only attachments within this segment can communicate with each other.</p>
 #[non_exhaustive]
@@ -3118,6 +3133,13 @@ impl CoreNetworkSegment {
         self.shared_segments.as_deref()
     }
 }
+impl CoreNetworkSegment {
+    /// Creates a new builder-style object to manufacture [`CoreNetworkSegment`](crate::model::CoreNetworkSegment).
+    pub fn builder() -> crate::model::core_network_segment::Builder {
+        crate::model::core_network_segment::Builder::default()
+    }
+}
+
 /// See [`CoreNetworkSegment`](crate::model::CoreNetworkSegment).
 pub mod core_network_segment {
 
@@ -3186,12 +3208,6 @@ pub mod core_network_segment {
                 shared_segments: self.shared_segments,
             }
         }
-    }
-}
-impl CoreNetworkSegment {
-    /// Creates a new builder-style object to manufacture [`CoreNetworkSegment`](crate::model::CoreNetworkSegment).
-    pub fn builder() -> crate::model::core_network_segment::Builder {
-        crate::model::core_network_segment::Builder::default()
     }
 }
 
@@ -3379,6 +3395,13 @@ impl Connection {
         self.tags.as_deref()
     }
 }
+impl Connection {
+    /// Creates a new builder-style object to manufacture [`Connection`](crate::model::Connection).
+    pub fn builder() -> crate::model::connection::Builder {
+        crate::model::connection::Builder::default()
+    }
+}
+
 /// See [`Connection`](crate::model::Connection).
 pub mod connection {
 
@@ -3555,12 +3578,6 @@ pub mod connection {
                 tags: self.tags,
             }
         }
-    }
-}
-impl Connection {
-    /// Creates a new builder-style object to manufacture [`Connection`](crate::model::Connection).
-    pub fn builder() -> crate::model::connection::Builder {
-        crate::model::connection::Builder::default()
     }
 }
 
@@ -3748,6 +3765,13 @@ impl RouteAnalysis {
         self.return_path.as_ref()
     }
 }
+impl RouteAnalysis {
+    /// Creates a new builder-style object to manufacture [`RouteAnalysis`](crate::model::RouteAnalysis).
+    pub fn builder() -> crate::model::route_analysis::Builder {
+        crate::model::route_analysis::Builder::default()
+    }
+}
+
 /// See [`RouteAnalysis`](crate::model::RouteAnalysis).
 pub mod route_analysis {
 
@@ -3923,12 +3947,6 @@ pub mod route_analysis {
         }
     }
 }
-impl RouteAnalysis {
-    /// Creates a new builder-style object to manufacture [`RouteAnalysis`](crate::model::RouteAnalysis).
-    pub fn builder() -> crate::model::route_analysis::Builder {
-        crate::model::route_analysis::Builder::default()
-    }
-}
 
 /// <p>Describes a route analysis path.</p>
 #[non_exhaustive]
@@ -3951,6 +3969,13 @@ impl RouteAnalysisPath {
         self.path.as_deref()
     }
 }
+impl RouteAnalysisPath {
+    /// Creates a new builder-style object to manufacture [`RouteAnalysisPath`](crate::model::RouteAnalysisPath).
+    pub fn builder() -> crate::model::route_analysis_path::Builder {
+        crate::model::route_analysis_path::Builder::default()
+    }
+}
+
 /// See [`RouteAnalysisPath`](crate::model::RouteAnalysisPath).
 pub mod route_analysis_path {
 
@@ -4003,12 +4028,6 @@ pub mod route_analysis_path {
         }
     }
 }
-impl RouteAnalysisPath {
-    /// Creates a new builder-style object to manufacture [`RouteAnalysisPath`](crate::model::RouteAnalysisPath).
-    pub fn builder() -> crate::model::route_analysis_path::Builder {
-        crate::model::route_analysis_path::Builder::default()
-    }
-}
 
 /// <p>Describes a path component.</p>
 #[non_exhaustive]
@@ -4038,6 +4057,13 @@ impl PathComponent {
         self.destination_cidr_block.as_deref()
     }
 }
+impl PathComponent {
+    /// Creates a new builder-style object to manufacture [`PathComponent`](crate::model::PathComponent).
+    pub fn builder() -> crate::model::path_component::Builder {
+        crate::model::path_component::Builder::default()
+    }
+}
+
 /// See [`PathComponent`](crate::model::PathComponent).
 pub mod path_component {
 
@@ -4096,12 +4122,6 @@ pub mod path_component {
         }
     }
 }
-impl PathComponent {
-    /// Creates a new builder-style object to manufacture [`PathComponent`](crate::model::PathComponent).
-    pub fn builder() -> crate::model::path_component::Builder {
-        crate::model::path_component::Builder::default()
-    }
-}
 
 /// <p>Describes a network resource.</p>
 #[non_exhaustive]
@@ -4152,6 +4172,13 @@ impl NetworkResourceSummary {
         self.is_middlebox
     }
 }
+impl NetworkResourceSummary {
+    /// Creates a new builder-style object to manufacture [`NetworkResourceSummary`](crate::model::NetworkResourceSummary).
+    pub fn builder() -> crate::model::network_resource_summary::Builder {
+        crate::model::network_resource_summary::Builder::default()
+    }
+}
+
 /// See [`NetworkResourceSummary`](crate::model::NetworkResourceSummary).
 pub mod network_resource_summary {
 
@@ -4246,12 +4273,6 @@ pub mod network_resource_summary {
         }
     }
 }
-impl NetworkResourceSummary {
-    /// Creates a new builder-style object to manufacture [`NetworkResourceSummary`](crate::model::NetworkResourceSummary).
-    pub fn builder() -> crate::model::network_resource_summary::Builder {
-        crate::model::network_resource_summary::Builder::default()
-    }
-}
 
 /// <p>Describes the status of an analysis at completion.</p>
 #[non_exhaustive]
@@ -4311,6 +4332,13 @@ impl RouteAnalysisCompletion {
         self.reason_context.as_ref()
     }
 }
+impl RouteAnalysisCompletion {
+    /// Creates a new builder-style object to manufacture [`RouteAnalysisCompletion`](crate::model::RouteAnalysisCompletion).
+    pub fn builder() -> crate::model::route_analysis_completion::Builder {
+        crate::model::route_analysis_completion::Builder::default()
+    }
+}
+
 /// See [`RouteAnalysisCompletion`](crate::model::RouteAnalysisCompletion).
 pub mod route_analysis_completion {
 
@@ -4414,12 +4442,6 @@ pub mod route_analysis_completion {
                 reason_context: self.reason_context,
             }
         }
-    }
-}
-impl RouteAnalysisCompletion {
-    /// Creates a new builder-style object to manufacture [`RouteAnalysisCompletion`](crate::model::RouteAnalysisCompletion).
-    pub fn builder() -> crate::model::route_analysis_completion::Builder {
-        crate::model::route_analysis_completion::Builder::default()
     }
 }
 
@@ -4720,6 +4742,13 @@ impl RouteAnalysisEndpointOptions {
         self.ip_address.as_deref()
     }
 }
+impl RouteAnalysisEndpointOptions {
+    /// Creates a new builder-style object to manufacture [`RouteAnalysisEndpointOptions`](crate::model::RouteAnalysisEndpointOptions).
+    pub fn builder() -> crate::model::route_analysis_endpoint_options::Builder {
+        crate::model::route_analysis_endpoint_options::Builder::default()
+    }
+}
+
 /// See [`RouteAnalysisEndpointOptions`](crate::model::RouteAnalysisEndpointOptions).
 pub mod route_analysis_endpoint_options {
 
@@ -4779,12 +4808,6 @@ pub mod route_analysis_endpoint_options {
                 ip_address: self.ip_address,
             }
         }
-    }
-}
-impl RouteAnalysisEndpointOptions {
-    /// Creates a new builder-style object to manufacture [`RouteAnalysisEndpointOptions`](crate::model::RouteAnalysisEndpointOptions).
-    pub fn builder() -> crate::model::route_analysis_endpoint_options::Builder {
-        crate::model::route_analysis_endpoint_options::Builder::default()
     }
 }
 
@@ -4906,6 +4929,13 @@ impl RouteAnalysisEndpointOptionsSpecification {
         self.ip_address.as_deref()
     }
 }
+impl RouteAnalysisEndpointOptionsSpecification {
+    /// Creates a new builder-style object to manufacture [`RouteAnalysisEndpointOptionsSpecification`](crate::model::RouteAnalysisEndpointOptionsSpecification).
+    pub fn builder() -> crate::model::route_analysis_endpoint_options_specification::Builder {
+        crate::model::route_analysis_endpoint_options_specification::Builder::default()
+    }
+}
+
 /// See [`RouteAnalysisEndpointOptionsSpecification`](crate::model::RouteAnalysisEndpointOptionsSpecification).
 pub mod route_analysis_endpoint_options_specification {
 
@@ -4952,12 +4982,6 @@ pub mod route_analysis_endpoint_options_specification {
         }
     }
 }
-impl RouteAnalysisEndpointOptionsSpecification {
-    /// Creates a new builder-style object to manufacture [`RouteAnalysisEndpointOptionsSpecification`](crate::model::RouteAnalysisEndpointOptionsSpecification).
-    pub fn builder() -> crate::model::route_analysis_endpoint_options_specification::Builder {
-        crate::model::route_analysis_endpoint_options_specification::Builder::default()
-    }
-}
 
 /// <p>The status of an Amazon Web Services Organization and the accounts within that organization.</p>
 #[non_exhaustive]
@@ -4994,6 +5018,13 @@ impl OrganizationStatus {
         self.account_status_list.as_deref()
     }
 }
+impl OrganizationStatus {
+    /// Creates a new builder-style object to manufacture [`OrganizationStatus`](crate::model::OrganizationStatus).
+    pub fn builder() -> crate::model::organization_status::Builder {
+        crate::model::organization_status::Builder::default()
+    }
+}
+
 /// See [`OrganizationStatus`](crate::model::OrganizationStatus).
 pub mod organization_status {
 
@@ -5080,12 +5111,6 @@ pub mod organization_status {
         }
     }
 }
-impl OrganizationStatus {
-    /// Creates a new builder-style object to manufacture [`OrganizationStatus`](crate::model::OrganizationStatus).
-    pub fn builder() -> crate::model::organization_status::Builder {
-        crate::model::organization_status::Builder::default()
-    }
-}
 
 /// <p>Describes the current status of an account within an Amazon Web Services Organization, including service-linked roles (SLRs).</p>
 #[non_exhaustive]
@@ -5108,6 +5133,13 @@ impl AccountStatus {
         self.slr_deployment_status.as_deref()
     }
 }
+impl AccountStatus {
+    /// Creates a new builder-style object to manufacture [`AccountStatus`](crate::model::AccountStatus).
+    pub fn builder() -> crate::model::account_status::Builder {
+        crate::model::account_status::Builder::default()
+    }
+}
+
 /// See [`AccountStatus`](crate::model::AccountStatus).
 pub mod account_status {
 
@@ -5149,12 +5181,6 @@ pub mod account_status {
                 slr_deployment_status: self.slr_deployment_status,
             }
         }
-    }
-}
-impl AccountStatus {
-    /// Creates a new builder-style object to manufacture [`AccountStatus`](crate::model::AccountStatus).
-    pub fn builder() -> crate::model::account_status::Builder {
-        crate::model::account_status::Builder::default()
     }
 }
 
@@ -5221,6 +5247,13 @@ impl CoreNetworkPolicy {
         self.policy_document.as_deref()
     }
 }
+impl CoreNetworkPolicy {
+    /// Creates a new builder-style object to manufacture [`CoreNetworkPolicy`](crate::model::CoreNetworkPolicy).
+    pub fn builder() -> crate::model::core_network_policy::Builder {
+        crate::model::core_network_policy::Builder::default()
+    }
+}
+
 /// See [`CoreNetworkPolicy`](crate::model::CoreNetworkPolicy).
 pub mod core_network_policy {
 
@@ -5358,12 +5391,6 @@ pub mod core_network_policy {
         }
     }
 }
-impl CoreNetworkPolicy {
-    /// Creates a new builder-style object to manufacture [`CoreNetworkPolicy`](crate::model::CoreNetworkPolicy).
-    pub fn builder() -> crate::model::core_network_policy::Builder {
-        crate::model::core_network_policy::Builder::default()
-    }
-}
 
 /// <p>Provides details about an error in a core network policy.</p>
 #[non_exhaustive]
@@ -5393,6 +5420,13 @@ impl CoreNetworkPolicyError {
         self.path.as_deref()
     }
 }
+impl CoreNetworkPolicyError {
+    /// Creates a new builder-style object to manufacture [`CoreNetworkPolicyError`](crate::model::CoreNetworkPolicyError).
+    pub fn builder() -> crate::model::core_network_policy_error::Builder {
+        crate::model::core_network_policy_error::Builder::default()
+    }
+}
+
 /// See [`CoreNetworkPolicyError`](crate::model::CoreNetworkPolicyError).
 pub mod core_network_policy_error {
 
@@ -5443,12 +5477,6 @@ pub mod core_network_policy_error {
                 path: self.path,
             }
         }
-    }
-}
-impl CoreNetworkPolicyError {
-    /// Creates a new builder-style object to manufacture [`CoreNetworkPolicyError`](crate::model::CoreNetworkPolicyError).
-    pub fn builder() -> crate::model::core_network_policy_error::Builder {
-        crate::model::core_network_policy_error::Builder::default()
     }
 }
 
@@ -5691,6 +5719,13 @@ impl TransitGatewayRegistration {
         self.state.as_ref()
     }
 }
+impl TransitGatewayRegistration {
+    /// Creates a new builder-style object to manufacture [`TransitGatewayRegistration`](crate::model::TransitGatewayRegistration).
+    pub fn builder() -> crate::model::transit_gateway_registration::Builder {
+        crate::model::transit_gateway_registration::Builder::default()
+    }
+}
+
 /// See [`TransitGatewayRegistration`](crate::model::TransitGatewayRegistration).
 pub mod transit_gateway_registration {
 
@@ -5752,12 +5787,6 @@ pub mod transit_gateway_registration {
         }
     }
 }
-impl TransitGatewayRegistration {
-    /// Creates a new builder-style object to manufacture [`TransitGatewayRegistration`](crate::model::TransitGatewayRegistration).
-    pub fn builder() -> crate::model::transit_gateway_registration::Builder {
-        crate::model::transit_gateway_registration::Builder::default()
-    }
-}
 
 /// <p>Describes the status of a transit gateway registration.</p>
 #[non_exhaustive]
@@ -5780,6 +5809,13 @@ impl TransitGatewayRegistrationStateReason {
         self.message.as_deref()
     }
 }
+impl TransitGatewayRegistrationStateReason {
+    /// Creates a new builder-style object to manufacture [`TransitGatewayRegistrationStateReason`](crate::model::TransitGatewayRegistrationStateReason).
+    pub fn builder() -> crate::model::transit_gateway_registration_state_reason::Builder {
+        crate::model::transit_gateway_registration_state_reason::Builder::default()
+    }
+}
+
 /// See [`TransitGatewayRegistrationStateReason`](crate::model::TransitGatewayRegistrationStateReason).
 pub mod transit_gateway_registration_state_reason {
 
@@ -5821,12 +5857,6 @@ pub mod transit_gateway_registration_state_reason {
                 message: self.message,
             }
         }
-    }
-}
-impl TransitGatewayRegistrationStateReason {
-    /// Creates a new builder-style object to manufacture [`TransitGatewayRegistrationStateReason`](crate::model::TransitGatewayRegistrationStateReason).
-    pub fn builder() -> crate::model::transit_gateway_registration_state_reason::Builder {
-        crate::model::transit_gateway_registration_state_reason::Builder::default()
     }
 }
 
@@ -6014,6 +6044,13 @@ impl Peering {
         self.created_at.as_ref()
     }
 }
+impl Peering {
+    /// Creates a new builder-style object to manufacture [`Peering`](crate::model::Peering).
+    pub fn builder() -> crate::model::peering::Builder {
+        crate::model::peering::Builder::default()
+    }
+}
+
 /// See [`Peering`](crate::model::Peering).
 pub mod peering {
 
@@ -6175,12 +6212,6 @@ pub mod peering {
                 created_at: self.created_at,
             }
         }
-    }
-}
-impl Peering {
-    /// Creates a new builder-style object to manufacture [`Peering`](crate::model::Peering).
-    pub fn builder() -> crate::model::peering::Builder {
-        crate::model::peering::Builder::default()
     }
 }
 
@@ -6425,6 +6456,13 @@ impl CoreNetworkSummary {
         self.tags.as_deref()
     }
 }
+impl CoreNetworkSummary {
+    /// Creates a new builder-style object to manufacture [`CoreNetworkSummary`](crate::model::CoreNetworkSummary).
+    pub fn builder() -> crate::model::core_network_summary::Builder {
+        crate::model::core_network_summary::Builder::default()
+    }
+}
+
 /// See [`CoreNetworkSummary`](crate::model::CoreNetworkSummary).
 pub mod core_network_summary {
 
@@ -6549,12 +6587,6 @@ pub mod core_network_summary {
         }
     }
 }
-impl CoreNetworkSummary {
-    /// Creates a new builder-style object to manufacture [`CoreNetworkSummary`](crate::model::CoreNetworkSummary).
-    pub fn builder() -> crate::model::core_network_summary::Builder {
-        crate::model::core_network_summary::Builder::default()
-    }
-}
 
 /// <p>Describes a core network policy version.</p>
 #[non_exhaustive]
@@ -6605,6 +6637,13 @@ impl CoreNetworkPolicyVersion {
         self.change_set_state.as_ref()
     }
 }
+impl CoreNetworkPolicyVersion {
+    /// Creates a new builder-style object to manufacture [`CoreNetworkPolicyVersion`](crate::model::CoreNetworkPolicyVersion).
+    pub fn builder() -> crate::model::core_network_policy_version::Builder {
+        crate::model::core_network_policy_version::Builder::default()
+    }
+}
+
 /// See [`CoreNetworkPolicyVersion`](crate::model::CoreNetworkPolicyVersion).
 pub mod core_network_policy_version {
 
@@ -6705,12 +6744,6 @@ pub mod core_network_policy_version {
         }
     }
 }
-impl CoreNetworkPolicyVersion {
-    /// Creates a new builder-style object to manufacture [`CoreNetworkPolicyVersion`](crate::model::CoreNetworkPolicyVersion).
-    pub fn builder() -> crate::model::core_network_policy_version::Builder {
-        crate::model::core_network_policy_version::Builder::default()
-    }
-}
 
 /// <p>Summary description of a Connect peer.</p>
 #[non_exhaustive]
@@ -6768,6 +6801,13 @@ impl ConnectPeerSummary {
         self.tags.as_deref()
     }
 }
+impl ConnectPeerSummary {
+    /// Creates a new builder-style object to manufacture [`ConnectPeerSummary`](crate::model::ConnectPeerSummary).
+    pub fn builder() -> crate::model::connect_peer_summary::Builder {
+        crate::model::connect_peer_summary::Builder::default()
+    }
+}
+
 /// See [`ConnectPeerSummary`](crate::model::ConnectPeerSummary).
 pub mod connect_peer_summary {
 
@@ -6893,12 +6933,6 @@ pub mod connect_peer_summary {
                 tags: self.tags,
             }
         }
-    }
-}
-impl ConnectPeerSummary {
-    /// Creates a new builder-style object to manufacture [`ConnectPeerSummary`](crate::model::ConnectPeerSummary).
-    pub fn builder() -> crate::model::connect_peer_summary::Builder {
-        crate::model::connect_peer_summary::Builder::default()
     }
 }
 
@@ -7030,6 +7064,13 @@ impl TransitGatewayRouteTableAttachment {
         self.transit_gateway_route_table_arn.as_deref()
     }
 }
+impl TransitGatewayRouteTableAttachment {
+    /// Creates a new builder-style object to manufacture [`TransitGatewayRouteTableAttachment`](crate::model::TransitGatewayRouteTableAttachment).
+    pub fn builder() -> crate::model::transit_gateway_route_table_attachment::Builder {
+        crate::model::transit_gateway_route_table_attachment::Builder::default()
+    }
+}
+
 /// See [`TransitGatewayRouteTableAttachment`](crate::model::TransitGatewayRouteTableAttachment).
 pub mod transit_gateway_route_table_attachment {
 
@@ -7091,12 +7132,6 @@ pub mod transit_gateway_route_table_attachment {
         }
     }
 }
-impl TransitGatewayRouteTableAttachment {
-    /// Creates a new builder-style object to manufacture [`TransitGatewayRouteTableAttachment`](crate::model::TransitGatewayRouteTableAttachment).
-    pub fn builder() -> crate::model::transit_gateway_route_table_attachment::Builder {
-        crate::model::transit_gateway_route_table_attachment::Builder::default()
-    }
-}
 
 /// <p>Describes a transit gateway peering attachment.</p>
 #[non_exhaustive]
@@ -7126,6 +7161,13 @@ impl TransitGatewayPeering {
         self.transit_gateway_peering_attachment_id.as_deref()
     }
 }
+impl TransitGatewayPeering {
+    /// Creates a new builder-style object to manufacture [`TransitGatewayPeering`](crate::model::TransitGatewayPeering).
+    pub fn builder() -> crate::model::transit_gateway_peering::Builder {
+        crate::model::transit_gateway_peering::Builder::default()
+    }
+}
+
 /// See [`TransitGatewayPeering`](crate::model::TransitGatewayPeering).
 pub mod transit_gateway_peering {
 
@@ -7187,12 +7229,6 @@ pub mod transit_gateway_peering {
         }
     }
 }
-impl TransitGatewayPeering {
-    /// Creates a new builder-style object to manufacture [`TransitGatewayPeering`](crate::model::TransitGatewayPeering).
-    pub fn builder() -> crate::model::transit_gateway_peering::Builder {
-        crate::model::transit_gateway_peering::Builder::default()
-    }
-}
 
 /// <p>Describes a transit gateway Connect peer association.</p>
 #[non_exhaustive]
@@ -7238,6 +7274,13 @@ impl TransitGatewayConnectPeerAssociation {
         self.state.as_ref()
     }
 }
+impl TransitGatewayConnectPeerAssociation {
+    /// Creates a new builder-style object to manufacture [`TransitGatewayConnectPeerAssociation`](crate::model::TransitGatewayConnectPeerAssociation).
+    pub fn builder() -> crate::model::transit_gateway_connect_peer_association::Builder {
+        crate::model::transit_gateway_connect_peer_association::Builder::default()
+    }
+}
+
 /// See [`TransitGatewayConnectPeerAssociation`](crate::model::TransitGatewayConnectPeerAssociation).
 pub mod transit_gateway_connect_peer_association {
 
@@ -7328,12 +7371,6 @@ pub mod transit_gateway_connect_peer_association {
                 state: self.state,
             }
         }
-    }
-}
-impl TransitGatewayConnectPeerAssociation {
-    /// Creates a new builder-style object to manufacture [`TransitGatewayConnectPeerAssociation`](crate::model::TransitGatewayConnectPeerAssociation).
-    pub fn builder() -> crate::model::transit_gateway_connect_peer_association::Builder {
-        crate::model::transit_gateway_connect_peer_association::Builder::default()
     }
 }
 
@@ -7460,6 +7497,13 @@ impl SiteToSiteVpnAttachment {
         self.vpn_connection_arn.as_deref()
     }
 }
+impl SiteToSiteVpnAttachment {
+    /// Creates a new builder-style object to manufacture [`SiteToSiteVpnAttachment`](crate::model::SiteToSiteVpnAttachment).
+    pub fn builder() -> crate::model::site_to_site_vpn_attachment::Builder {
+        crate::model::site_to_site_vpn_attachment::Builder::default()
+    }
+}
+
 /// See [`SiteToSiteVpnAttachment`](crate::model::SiteToSiteVpnAttachment).
 pub mod site_to_site_vpn_attachment {
 
@@ -7504,12 +7548,6 @@ pub mod site_to_site_vpn_attachment {
                 vpn_connection_arn: self.vpn_connection_arn,
             }
         }
-    }
-}
-impl SiteToSiteVpnAttachment {
-    /// Creates a new builder-style object to manufacture [`SiteToSiteVpnAttachment`](crate::model::SiteToSiteVpnAttachment).
-    pub fn builder() -> crate::model::site_to_site_vpn_attachment::Builder {
-        crate::model::site_to_site_vpn_attachment::Builder::default()
     }
 }
 
@@ -7583,6 +7621,13 @@ impl NetworkTelemetry {
         self.health.as_ref()
     }
 }
+impl NetworkTelemetry {
+    /// Creates a new builder-style object to manufacture [`NetworkTelemetry`](crate::model::NetworkTelemetry).
+    pub fn builder() -> crate::model::network_telemetry::Builder {
+        crate::model::network_telemetry::Builder::default()
+    }
+}
+
 /// See [`NetworkTelemetry`](crate::model::NetworkTelemetry).
 pub mod network_telemetry {
 
@@ -7719,12 +7764,6 @@ pub mod network_telemetry {
         }
     }
 }
-impl NetworkTelemetry {
-    /// Creates a new builder-style object to manufacture [`NetworkTelemetry`](crate::model::NetworkTelemetry).
-    pub fn builder() -> crate::model::network_telemetry::Builder {
-        crate::model::network_telemetry::Builder::default()
-    }
-}
 
 /// <p>Describes connection health.</p>
 #[non_exhaustive]
@@ -7754,6 +7793,13 @@ impl ConnectionHealth {
         self.timestamp.as_ref()
     }
 }
+impl ConnectionHealth {
+    /// Creates a new builder-style object to manufacture [`ConnectionHealth`](crate::model::ConnectionHealth).
+    pub fn builder() -> crate::model::connection_health::Builder {
+        crate::model::connection_health::Builder::default()
+    }
+}
+
 /// See [`ConnectionHealth`](crate::model::ConnectionHealth).
 pub mod connection_health {
 
@@ -7813,12 +7859,6 @@ pub mod connection_health {
                 timestamp: self.timestamp,
             }
         }
-    }
-}
-impl ConnectionHealth {
-    /// Creates a new builder-style object to manufacture [`ConnectionHealth`](crate::model::ConnectionHealth).
-    pub fn builder() -> crate::model::connection_health::Builder {
-        crate::model::connection_health::Builder::default()
     }
 }
 
@@ -8044,6 +8084,13 @@ impl NetworkRoute {
         self.r#type.as_ref()
     }
 }
+impl NetworkRoute {
+    /// Creates a new builder-style object to manufacture [`NetworkRoute`](crate::model::NetworkRoute).
+    pub fn builder() -> crate::model::network_route::Builder {
+        crate::model::network_route::Builder::default()
+    }
+}
+
 /// See [`NetworkRoute`](crate::model::NetworkRoute).
 pub mod network_route {
 
@@ -8134,12 +8181,6 @@ pub mod network_route {
                 r#type: self.r#type,
             }
         }
-    }
-}
-impl NetworkRoute {
-    /// Creates a new builder-style object to manufacture [`NetworkRoute`](crate::model::NetworkRoute).
-    pub fn builder() -> crate::model::network_route::Builder {
-        crate::model::network_route::Builder::default()
     }
 }
 
@@ -8372,6 +8413,13 @@ impl NetworkRouteDestination {
         self.resource_id.as_deref()
     }
 }
+impl NetworkRouteDestination {
+    /// Creates a new builder-style object to manufacture [`NetworkRouteDestination`](crate::model::NetworkRouteDestination).
+    pub fn builder() -> crate::model::network_route_destination::Builder {
+        crate::model::network_route_destination::Builder::default()
+    }
+}
+
 /// See [`NetworkRouteDestination`](crate::model::NetworkRouteDestination).
 pub mod network_route_destination {
 
@@ -8473,12 +8521,6 @@ pub mod network_route_destination {
                 resource_id: self.resource_id,
             }
         }
-    }
-}
-impl NetworkRouteDestination {
-    /// Creates a new builder-style object to manufacture [`NetworkRouteDestination`](crate::model::NetworkRouteDestination).
-    pub fn builder() -> crate::model::network_route_destination::Builder {
-        crate::model::network_route_destination::Builder::default()
     }
 }
 
@@ -8600,6 +8642,13 @@ impl CoreNetworkSegmentEdgeIdentifier {
         self.edge_location.as_deref()
     }
 }
+impl CoreNetworkSegmentEdgeIdentifier {
+    /// Creates a new builder-style object to manufacture [`CoreNetworkSegmentEdgeIdentifier`](crate::model::CoreNetworkSegmentEdgeIdentifier).
+    pub fn builder() -> crate::model::core_network_segment_edge_identifier::Builder {
+        crate::model::core_network_segment_edge_identifier::Builder::default()
+    }
+}
+
 /// See [`CoreNetworkSegmentEdgeIdentifier`](crate::model::CoreNetworkSegmentEdgeIdentifier).
 pub mod core_network_segment_edge_identifier {
 
@@ -8658,12 +8707,6 @@ pub mod core_network_segment_edge_identifier {
         }
     }
 }
-impl CoreNetworkSegmentEdgeIdentifier {
-    /// Creates a new builder-style object to manufacture [`CoreNetworkSegmentEdgeIdentifier`](crate::model::CoreNetworkSegmentEdgeIdentifier).
-    pub fn builder() -> crate::model::core_network_segment_edge_identifier::Builder {
-        crate::model::core_network_segment_edge_identifier::Builder::default()
-    }
-}
 
 /// <p>Describes a route table.</p>
 #[non_exhaustive]
@@ -8689,6 +8732,13 @@ impl RouteTableIdentifier {
         self.core_network_segment_edge.as_ref()
     }
 }
+impl RouteTableIdentifier {
+    /// Creates a new builder-style object to manufacture [`RouteTableIdentifier`](crate::model::RouteTableIdentifier).
+    pub fn builder() -> crate::model::route_table_identifier::Builder {
+        crate::model::route_table_identifier::Builder::default()
+    }
+}
+
 /// See [`RouteTableIdentifier`](crate::model::RouteTableIdentifier).
 pub mod route_table_identifier {
 
@@ -8740,12 +8790,6 @@ pub mod route_table_identifier {
                 core_network_segment_edge: self.core_network_segment_edge,
             }
         }
-    }
-}
-impl RouteTableIdentifier {
-    /// Creates a new builder-style object to manufacture [`RouteTableIdentifier`](crate::model::RouteTableIdentifier).
-    pub fn builder() -> crate::model::route_table_identifier::Builder {
-        crate::model::route_table_identifier::Builder::default()
     }
 }
 
@@ -8881,6 +8925,13 @@ impl NetworkResource {
         self.metadata.as_ref()
     }
 }
+impl NetworkResource {
+    /// Creates a new builder-style object to manufacture [`NetworkResource`](crate::model::NetworkResource).
+    pub fn builder() -> crate::model::network_resource::Builder {
+        crate::model::network_resource::Builder::default()
+    }
+}
+
 /// See [`NetworkResource`](crate::model::NetworkResource).
 pub mod network_resource {
 
@@ -9111,12 +9162,6 @@ pub mod network_resource {
         }
     }
 }
-impl NetworkResource {
-    /// Creates a new builder-style object to manufacture [`NetworkResource`](crate::model::NetworkResource).
-    pub fn builder() -> crate::model::network_resource::Builder {
-        crate::model::network_resource::Builder::default()
-    }
-}
 
 /// <p>Describes a resource relationship.</p>
 #[non_exhaustive]
@@ -9139,6 +9184,13 @@ impl Relationship {
         self.to.as_deref()
     }
 }
+impl Relationship {
+    /// Creates a new builder-style object to manufacture [`Relationship`](crate::model::Relationship).
+    pub fn builder() -> crate::model::relationship::Builder {
+        crate::model::relationship::Builder::default()
+    }
+}
+
 /// See [`Relationship`](crate::model::Relationship).
 pub mod relationship {
 
@@ -9179,12 +9231,6 @@ pub mod relationship {
         }
     }
 }
-impl Relationship {
-    /// Creates a new builder-style object to manufacture [`Relationship`](crate::model::Relationship).
-    pub fn builder() -> crate::model::relationship::Builder {
-        crate::model::relationship::Builder::default()
-    }
-}
 
 /// <p>Describes a resource count.</p>
 #[non_exhaustive]
@@ -9207,6 +9253,13 @@ impl NetworkResourceCount {
         self.count
     }
 }
+impl NetworkResourceCount {
+    /// Creates a new builder-style object to manufacture [`NetworkResourceCount`](crate::model::NetworkResourceCount).
+    pub fn builder() -> crate::model::network_resource_count::Builder {
+        crate::model::network_resource_count::Builder::default()
+    }
+}
+
 /// See [`NetworkResourceCount`](crate::model::NetworkResourceCount).
 pub mod network_resource_count {
 
@@ -9250,12 +9303,6 @@ pub mod network_resource_count {
         }
     }
 }
-impl NetworkResourceCount {
-    /// Creates a new builder-style object to manufacture [`NetworkResourceCount`](crate::model::NetworkResourceCount).
-    pub fn builder() -> crate::model::network_resource_count::Builder {
-        crate::model::network_resource_count::Builder::default()
-    }
-}
 
 /// <p>Describes the association between a device and a link.</p>
 #[non_exhaustive]
@@ -9294,6 +9341,13 @@ impl LinkAssociation {
         self.link_association_state.as_ref()
     }
 }
+impl LinkAssociation {
+    /// Creates a new builder-style object to manufacture [`LinkAssociation`](crate::model::LinkAssociation).
+    pub fn builder() -> crate::model::link_association::Builder {
+        crate::model::link_association::Builder::default()
+    }
+}
+
 /// See [`LinkAssociation`](crate::model::LinkAssociation).
 pub mod link_association {
 
@@ -9362,12 +9416,6 @@ pub mod link_association {
                 link_association_state: self.link_association_state,
             }
         }
-    }
-}
-impl LinkAssociation {
-    /// Creates a new builder-style object to manufacture [`LinkAssociation`](crate::model::LinkAssociation).
-    pub fn builder() -> crate::model::link_association::Builder {
-        crate::model::link_association::Builder::default()
     }
 }
 
@@ -9515,6 +9563,13 @@ impl CustomerGatewayAssociation {
         self.state.as_ref()
     }
 }
+impl CustomerGatewayAssociation {
+    /// Creates a new builder-style object to manufacture [`CustomerGatewayAssociation`](crate::model::CustomerGatewayAssociation).
+    pub fn builder() -> crate::model::customer_gateway_association::Builder {
+        crate::model::customer_gateway_association::Builder::default()
+    }
+}
+
 /// See [`CustomerGatewayAssociation`](crate::model::CustomerGatewayAssociation).
 pub mod customer_gateway_association {
 
@@ -9598,12 +9653,6 @@ pub mod customer_gateway_association {
                 state: self.state,
             }
         }
-    }
-}
-impl CustomerGatewayAssociation {
-    /// Creates a new builder-style object to manufacture [`CustomerGatewayAssociation`](crate::model::CustomerGatewayAssociation).
-    pub fn builder() -> crate::model::customer_gateway_association::Builder {
-        crate::model::customer_gateway_association::Builder::default()
     }
 }
 
@@ -9758,6 +9807,13 @@ impl CoreNetworkChange {
         self.identifier_path.as_deref()
     }
 }
+impl CoreNetworkChange {
+    /// Creates a new builder-style object to manufacture [`CoreNetworkChange`](crate::model::CoreNetworkChange).
+    pub fn builder() -> crate::model::core_network_change::Builder {
+        crate::model::core_network_change::Builder::default()
+    }
+}
+
 /// See [`CoreNetworkChange`](crate::model::CoreNetworkChange).
 pub mod core_network_change {
 
@@ -9858,12 +9914,6 @@ pub mod core_network_change {
         }
     }
 }
-impl CoreNetworkChange {
-    /// Creates a new builder-style object to manufacture [`CoreNetworkChange`](crate::model::CoreNetworkChange).
-    pub fn builder() -> crate::model::core_network_change::Builder {
-        crate::model::core_network_change::Builder::default()
-    }
-}
 
 /// <p>Describes a core network change.</p>
 #[non_exhaustive]
@@ -9921,6 +9971,13 @@ impl CoreNetworkChangeValues {
         self.shared_segments.as_deref()
     }
 }
+impl CoreNetworkChangeValues {
+    /// Creates a new builder-style object to manufacture [`CoreNetworkChangeValues`](crate::model::CoreNetworkChangeValues).
+    pub fn builder() -> crate::model::core_network_change_values::Builder {
+        crate::model::core_network_change_values::Builder::default()
+    }
+}
+
 /// See [`CoreNetworkChangeValues`](crate::model::CoreNetworkChangeValues).
 pub mod core_network_change_values {
 
@@ -10049,12 +10106,6 @@ pub mod core_network_change_values {
                 shared_segments: self.shared_segments,
             }
         }
-    }
-}
-impl CoreNetworkChangeValues {
-    /// Creates a new builder-style object to manufacture [`CoreNetworkChangeValues`](crate::model::CoreNetworkChangeValues).
-    pub fn builder() -> crate::model::core_network_change_values::Builder {
-        crate::model::core_network_change_values::Builder::default()
     }
 }
 
@@ -10337,6 +10388,13 @@ impl CoreNetworkChangeEvent {
         self.values.as_ref()
     }
 }
+impl CoreNetworkChangeEvent {
+    /// Creates a new builder-style object to manufacture [`CoreNetworkChangeEvent`](crate::model::CoreNetworkChangeEvent).
+    pub fn builder() -> crate::model::core_network_change_event::Builder {
+        crate::model::core_network_change_event::Builder::default()
+    }
+}
+
 /// See [`CoreNetworkChangeEvent`](crate::model::CoreNetworkChangeEvent).
 pub mod core_network_change_event {
 
@@ -10440,12 +10498,6 @@ pub mod core_network_change_event {
         }
     }
 }
-impl CoreNetworkChangeEvent {
-    /// Creates a new builder-style object to manufacture [`CoreNetworkChangeEvent`](crate::model::CoreNetworkChangeEvent).
-    pub fn builder() -> crate::model::core_network_change_event::Builder {
-        crate::model::core_network_change_event::Builder::default()
-    }
-}
 
 /// <p>Describes a core network change event.</p>
 #[non_exhaustive]
@@ -10482,6 +10534,13 @@ impl CoreNetworkChangeEventValues {
         self.cidr.as_deref()
     }
 }
+impl CoreNetworkChangeEventValues {
+    /// Creates a new builder-style object to manufacture [`CoreNetworkChangeEventValues`](crate::model::CoreNetworkChangeEventValues).
+    pub fn builder() -> crate::model::core_network_change_event_values::Builder {
+        crate::model::core_network_change_event_values::Builder::default()
+    }
+}
+
 /// See [`CoreNetworkChangeEventValues`](crate::model::CoreNetworkChangeEventValues).
 pub mod core_network_change_event_values {
 
@@ -10550,12 +10609,6 @@ pub mod core_network_change_event_values {
                 cidr: self.cidr,
             }
         }
-    }
-}
-impl CoreNetworkChangeEventValues {
-    /// Creates a new builder-style object to manufacture [`CoreNetworkChangeEventValues`](crate::model::CoreNetworkChangeEventValues).
-    pub fn builder() -> crate::model::core_network_change_event_values::Builder {
-        crate::model::core_network_change_event_values::Builder::default()
     }
 }
 
@@ -10701,6 +10754,13 @@ impl ConnectPeerAssociation {
         self.state.as_ref()
     }
 }
+impl ConnectPeerAssociation {
+    /// Creates a new builder-style object to manufacture [`ConnectPeerAssociation`](crate::model::ConnectPeerAssociation).
+    pub fn builder() -> crate::model::connect_peer_association::Builder {
+        crate::model::connect_peer_association::Builder::default()
+    }
+}
+
 /// See [`ConnectPeerAssociation`](crate::model::ConnectPeerAssociation).
 pub mod connect_peer_association {
 
@@ -10784,12 +10844,6 @@ pub mod connect_peer_association {
                 state: self.state,
             }
         }
-    }
-}
-impl ConnectPeerAssociation {
-    /// Creates a new builder-style object to manufacture [`ConnectPeerAssociation`](crate::model::ConnectPeerAssociation).
-    pub fn builder() -> crate::model::connect_peer_association::Builder {
-        crate::model::connect_peer_association::Builder::default()
     }
 }
 
@@ -10958,6 +11012,13 @@ impl ConnectPeer {
         self.tags.as_deref()
     }
 }
+impl ConnectPeer {
+    /// Creates a new builder-style object to manufacture [`ConnectPeer`](crate::model::ConnectPeer).
+    pub fn builder() -> crate::model::connect_peer::Builder {
+        crate::model::connect_peer::Builder::default()
+    }
+}
+
 /// See [`ConnectPeer`](crate::model::ConnectPeer).
 pub mod connect_peer {
 
@@ -11100,12 +11161,6 @@ pub mod connect_peer {
         }
     }
 }
-impl ConnectPeer {
-    /// Creates a new builder-style object to manufacture [`ConnectPeer`](crate::model::ConnectPeer).
-    pub fn builder() -> crate::model::connect_peer::Builder {
-        crate::model::connect_peer::Builder::default()
-    }
-}
 
 /// <p>Describes a core network Connect peer configuration.</p>
 #[non_exhaustive]
@@ -11152,6 +11207,13 @@ impl ConnectPeerConfiguration {
         self.bgp_configurations.as_deref()
     }
 }
+impl ConnectPeerConfiguration {
+    /// Creates a new builder-style object to manufacture [`ConnectPeerConfiguration`](crate::model::ConnectPeerConfiguration).
+    pub fn builder() -> crate::model::connect_peer_configuration::Builder {
+        crate::model::connect_peer_configuration::Builder::default()
+    }
+}
+
 /// See [`ConnectPeerConfiguration`](crate::model::ConnectPeerConfiguration).
 pub mod connect_peer_configuration {
 
@@ -11256,12 +11318,6 @@ pub mod connect_peer_configuration {
         }
     }
 }
-impl ConnectPeerConfiguration {
-    /// Creates a new builder-style object to manufacture [`ConnectPeerConfiguration`](crate::model::ConnectPeerConfiguration).
-    pub fn builder() -> crate::model::connect_peer_configuration::Builder {
-        crate::model::connect_peer_configuration::Builder::default()
-    }
-}
 
 /// <p>Describes a core network BGP configuration.</p>
 #[non_exhaustive]
@@ -11298,6 +11354,13 @@ impl ConnectPeerBgpConfiguration {
         self.peer_address.as_deref()
     }
 }
+impl ConnectPeerBgpConfiguration {
+    /// Creates a new builder-style object to manufacture [`ConnectPeerBgpConfiguration`](crate::model::ConnectPeerBgpConfiguration).
+    pub fn builder() -> crate::model::connect_peer_bgp_configuration::Builder {
+        crate::model::connect_peer_bgp_configuration::Builder::default()
+    }
+}
+
 /// See [`ConnectPeerBgpConfiguration`](crate::model::ConnectPeerBgpConfiguration).
 pub mod connect_peer_bgp_configuration {
 
@@ -11363,12 +11426,6 @@ pub mod connect_peer_bgp_configuration {
                 peer_address: self.peer_address,
             }
         }
-    }
-}
-impl ConnectPeerBgpConfiguration {
-    /// Creates a new builder-style object to manufacture [`ConnectPeerBgpConfiguration`](crate::model::ConnectPeerBgpConfiguration).
-    pub fn builder() -> crate::model::connect_peer_bgp_configuration::Builder {
-        crate::model::connect_peer_bgp_configuration::Builder::default()
     }
 }
 
@@ -11485,6 +11542,13 @@ impl ConnectAttachment {
         self.options.as_ref()
     }
 }
+impl ConnectAttachment {
+    /// Creates a new builder-style object to manufacture [`ConnectAttachment`](crate::model::ConnectAttachment).
+    pub fn builder() -> crate::model::connect_attachment::Builder {
+        crate::model::connect_attachment::Builder::default()
+    }
+}
+
 /// See [`ConnectAttachment`](crate::model::ConnectAttachment).
 pub mod connect_attachment {
 
@@ -11546,12 +11610,6 @@ pub mod connect_attachment {
         }
     }
 }
-impl ConnectAttachment {
-    /// Creates a new builder-style object to manufacture [`ConnectAttachment`](crate::model::ConnectAttachment).
-    pub fn builder() -> crate::model::connect_attachment::Builder {
-        crate::model::connect_attachment::Builder::default()
-    }
-}
 
 /// <p>Describes a core network Connect attachment options.</p>
 #[non_exhaustive]
@@ -11567,6 +11625,13 @@ impl ConnectAttachmentOptions {
         self.protocol.as_ref()
     }
 }
+impl ConnectAttachmentOptions {
+    /// Creates a new builder-style object to manufacture [`ConnectAttachmentOptions`](crate::model::ConnectAttachmentOptions).
+    pub fn builder() -> crate::model::connect_attachment_options::Builder {
+        crate::model::connect_attachment_options::Builder::default()
+    }
+}
+
 /// See [`ConnectAttachmentOptions`](crate::model::ConnectAttachmentOptions).
 pub mod connect_attachment_options {
 
@@ -11598,12 +11663,6 @@ pub mod connect_attachment_options {
         }
     }
 }
-impl ConnectAttachmentOptions {
-    /// Creates a new builder-style object to manufacture [`ConnectAttachmentOptions`](crate::model::ConnectAttachmentOptions).
-    pub fn builder() -> crate::model::connect_attachment_options::Builder {
-        crate::model::connect_attachment_options::Builder::default()
-    }
-}
 
 /// <p>Describes the BGP options.</p>
 #[non_exhaustive]
@@ -11619,6 +11678,13 @@ impl BgpOptions {
         self.peer_asn
     }
 }
+impl BgpOptions {
+    /// Creates a new builder-style object to manufacture [`BgpOptions`](crate::model::BgpOptions).
+    pub fn builder() -> crate::model::bgp_options::Builder {
+        crate::model::bgp_options::Builder::default()
+    }
+}
+
 /// See [`BgpOptions`](crate::model::BgpOptions).
 pub mod bgp_options {
 
@@ -11645,11 +11711,5 @@ pub mod bgp_options {
                 peer_asn: self.peer_asn,
             }
         }
-    }
-}
-impl BgpOptions {
-    /// Creates a new builder-style object to manufacture [`BgpOptions`](crate::model::BgpOptions).
-    pub fn builder() -> crate::model::bgp_options::Builder {
-        crate::model::bgp_options::Builder::default()
     }
 }

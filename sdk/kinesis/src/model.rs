@@ -14,6 +14,13 @@ impl StreamModeDetails {
         self.stream_mode.as_ref()
     }
 }
+impl StreamModeDetails {
+    /// Creates a new builder-style object to manufacture [`StreamModeDetails`](crate::model::StreamModeDetails).
+    pub fn builder() -> crate::model::stream_mode_details::Builder {
+        crate::model::stream_mode_details::Builder::default()
+    }
+}
+
 /// See [`StreamModeDetails`](crate::model::StreamModeDetails).
 pub mod stream_mode_details {
 
@@ -43,12 +50,6 @@ pub mod stream_mode_details {
                 stream_mode: self.stream_mode,
             }
         }
-    }
-}
-impl StreamModeDetails {
-    /// Creates a new builder-style object to manufacture [`StreamModeDetails`](crate::model::StreamModeDetails).
-    pub fn builder() -> crate::model::stream_mode_details::Builder {
-        crate::model::stream_mode_details::Builder::default()
     }
 }
 
@@ -354,6 +355,13 @@ impl Consumer {
         self.consumer_creation_timestamp.as_ref()
     }
 }
+impl Consumer {
+    /// Creates a new builder-style object to manufacture [`Consumer`](crate::model::Consumer).
+    pub fn builder() -> crate::model::consumer::Builder {
+        crate::model::consumer::Builder::default()
+    }
+}
+
 /// See [`Consumer`](crate::model::Consumer).
 pub mod consumer {
 
@@ -427,12 +435,6 @@ pub mod consumer {
                 consumer_creation_timestamp: self.consumer_creation_timestamp,
             }
         }
-    }
-}
-impl Consumer {
-    /// Creates a new builder-style object to manufacture [`Consumer`](crate::model::Consumer).
-    pub fn builder() -> crate::model::consumer::Builder {
-        crate::model::consumer::Builder::default()
     }
 }
 
@@ -566,6 +568,13 @@ impl PutRecordsResultEntry {
         self.error_message.as_deref()
     }
 }
+impl PutRecordsResultEntry {
+    /// Creates a new builder-style object to manufacture [`PutRecordsResultEntry`](crate::model::PutRecordsResultEntry).
+    pub fn builder() -> crate::model::put_records_result_entry::Builder {
+        crate::model::put_records_result_entry::Builder::default()
+    }
+}
+
 /// See [`PutRecordsResultEntry`](crate::model::PutRecordsResultEntry).
 pub mod put_records_result_entry {
 
@@ -636,12 +645,6 @@ pub mod put_records_result_entry {
         }
     }
 }
-impl PutRecordsResultEntry {
-    /// Creates a new builder-style object to manufacture [`PutRecordsResultEntry`](crate::model::PutRecordsResultEntry).
-    pub fn builder() -> crate::model::put_records_result_entry::Builder {
-        crate::model::put_records_result_entry::Builder::default()
-    }
-}
 
 /// <p>Represents the output for <code>PutRecords</code>.</p>
 #[non_exhaustive]
@@ -671,6 +674,13 @@ impl PutRecordsRequestEntry {
         self.partition_key.as_deref()
     }
 }
+impl PutRecordsRequestEntry {
+    /// Creates a new builder-style object to manufacture [`PutRecordsRequestEntry`](crate::model::PutRecordsRequestEntry).
+    pub fn builder() -> crate::model::put_records_request_entry::Builder {
+        crate::model::put_records_request_entry::Builder::default()
+    }
+}
+
 /// See [`PutRecordsRequestEntry`](crate::model::PutRecordsRequestEntry).
 pub mod put_records_request_entry {
 
@@ -729,12 +739,6 @@ pub mod put_records_request_entry {
         }
     }
 }
-impl PutRecordsRequestEntry {
-    /// Creates a new builder-style object to manufacture [`PutRecordsRequestEntry`](crate::model::PutRecordsRequestEntry).
-    pub fn builder() -> crate::model::put_records_request_entry::Builder {
-        crate::model::put_records_request_entry::Builder::default()
-    }
-}
 
 /// <p>Metadata assigned to the stream, consisting of a key-value pair.</p>
 #[non_exhaustive]
@@ -757,6 +761,13 @@ impl Tag {
         self.value.as_deref()
     }
 }
+impl Tag {
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
+    pub fn builder() -> crate::model::tag::Builder {
+        crate::model::tag::Builder::default()
+    }
+}
+
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
 
@@ -795,12 +806,6 @@ pub mod tag {
                 value: self.value,
             }
         }
-    }
-}
-impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
-    pub fn builder() -> crate::model::tag::Builder {
-        crate::model::tag::Builder::default()
     }
 }
 
@@ -846,6 +851,13 @@ impl StreamSummary {
         self.stream_creation_timestamp.as_ref()
     }
 }
+impl StreamSummary {
+    /// Creates a new builder-style object to manufacture [`StreamSummary`](crate::model::StreamSummary).
+    pub fn builder() -> crate::model::stream_summary::Builder {
+        crate::model::stream_summary::Builder::default()
+    }
+}
+
 /// See [`StreamSummary`](crate::model::StreamSummary).
 pub mod stream_summary {
 
@@ -929,12 +941,6 @@ pub mod stream_summary {
                 stream_creation_timestamp: self.stream_creation_timestamp,
             }
         }
-    }
-}
-impl StreamSummary {
-    /// Creates a new builder-style object to manufacture [`StreamSummary`](crate::model::StreamSummary).
-    pub fn builder() -> crate::model::stream_summary::Builder {
-        crate::model::stream_summary::Builder::default()
     }
 }
 
@@ -1080,6 +1086,13 @@ impl Shard {
         self.sequence_number_range.as_ref()
     }
 }
+impl Shard {
+    /// Creates a new builder-style object to manufacture [`Shard`](crate::model::Shard).
+    pub fn builder() -> crate::model::shard::Builder {
+        crate::model::shard::Builder::default()
+    }
+}
+
 /// See [`Shard`](crate::model::Shard).
 pub mod shard {
 
@@ -1168,12 +1181,6 @@ pub mod shard {
         }
     }
 }
-impl Shard {
-    /// Creates a new builder-style object to manufacture [`Shard`](crate::model::Shard).
-    pub fn builder() -> crate::model::shard::Builder {
-        crate::model::shard::Builder::default()
-    }
-}
 
 /// <p>The range of possible sequence numbers for the shard.</p>
 #[non_exhaustive]
@@ -1196,6 +1203,13 @@ impl SequenceNumberRange {
         self.ending_sequence_number.as_deref()
     }
 }
+impl SequenceNumberRange {
+    /// Creates a new builder-style object to manufacture [`SequenceNumberRange`](crate::model::SequenceNumberRange).
+    pub fn builder() -> crate::model::sequence_number_range::Builder {
+        crate::model::sequence_number_range::Builder::default()
+    }
+}
+
 /// See [`SequenceNumberRange`](crate::model::SequenceNumberRange).
 pub mod sequence_number_range {
 
@@ -1242,12 +1256,6 @@ pub mod sequence_number_range {
         }
     }
 }
-impl SequenceNumberRange {
-    /// Creates a new builder-style object to manufacture [`SequenceNumberRange`](crate::model::SequenceNumberRange).
-    pub fn builder() -> crate::model::sequence_number_range::Builder {
-        crate::model::sequence_number_range::Builder::default()
-    }
-}
 
 /// <p>The range of possible hash key values for the shard, which is a set of ordered contiguous positive integers.</p>
 #[non_exhaustive]
@@ -1270,6 +1278,13 @@ impl HashKeyRange {
         self.ending_hash_key.as_deref()
     }
 }
+impl HashKeyRange {
+    /// Creates a new builder-style object to manufacture [`HashKeyRange`](crate::model::HashKeyRange).
+    pub fn builder() -> crate::model::hash_key_range::Builder {
+        crate::model::hash_key_range::Builder::default()
+    }
+}
+
 /// See [`HashKeyRange`](crate::model::HashKeyRange).
 pub mod hash_key_range {
 
@@ -1314,12 +1329,6 @@ pub mod hash_key_range {
                 ending_hash_key: self.ending_hash_key,
             }
         }
-    }
-}
-impl HashKeyRange {
-    /// Creates a new builder-style object to manufacture [`HashKeyRange`](crate::model::HashKeyRange).
-    pub fn builder() -> crate::model::hash_key_range::Builder {
-        crate::model::hash_key_range::Builder::default()
     }
 }
 
@@ -1369,6 +1378,13 @@ impl ShardFilter {
         self.timestamp.as_ref()
     }
 }
+impl ShardFilter {
+    /// Creates a new builder-style object to manufacture [`ShardFilter`](crate::model::ShardFilter).
+    pub fn builder() -> crate::model::shard_filter::Builder {
+        crate::model::shard_filter::Builder::default()
+    }
+}
+
 /// See [`ShardFilter`](crate::model::ShardFilter).
 pub mod shard_filter {
 
@@ -1443,12 +1459,6 @@ pub mod shard_filter {
                 timestamp: self.timestamp,
             }
         }
-    }
-}
-impl ShardFilter {
-    /// Creates a new builder-style object to manufacture [`ShardFilter`](crate::model::ShardFilter).
-    pub fn builder() -> crate::model::shard_filter::Builder {
-        crate::model::shard_filter::Builder::default()
     }
 }
 
@@ -1710,6 +1720,13 @@ impl ChildShard {
         self.hash_key_range.as_ref()
     }
 }
+impl ChildShard {
+    /// Creates a new builder-style object to manufacture [`ChildShard`](crate::model::ChildShard).
+    pub fn builder() -> crate::model::child_shard::Builder {
+        crate::model::child_shard::Builder::default()
+    }
+}
+
 /// See [`ChildShard`](crate::model::ChildShard).
 pub mod child_shard {
 
@@ -1774,12 +1791,6 @@ pub mod child_shard {
         }
     }
 }
-impl ChildShard {
-    /// Creates a new builder-style object to manufacture [`ChildShard`](crate::model::ChildShard).
-    pub fn builder() -> crate::model::child_shard::Builder {
-        crate::model::child_shard::Builder::default()
-    }
-}
 
 /// <p>The unit of data of the Kinesis data stream, which is composed of a sequence number, a partition key, and a data blob.</p>
 #[non_exhaustive]
@@ -1833,6 +1844,13 @@ impl Record {
         self.encryption_type.as_ref()
     }
 }
+impl Record {
+    /// Creates a new builder-style object to manufacture [`Record`](crate::model::Record).
+    pub fn builder() -> crate::model::record::Builder {
+        crate::model::record::Builder::default()
+    }
+}
+
 /// See [`Record`](crate::model::Record).
 pub mod record {
 
@@ -1927,12 +1945,6 @@ pub mod record {
                 encryption_type: self.encryption_type,
             }
         }
-    }
-}
-impl Record {
-    /// Creates a new builder-style object to manufacture [`Record`](crate::model::Record).
-    pub fn builder() -> crate::model::record::Builder {
-        crate::model::record::Builder::default()
     }
 }
 
@@ -2183,6 +2195,13 @@ impl StreamDescriptionSummary {
         self.consumer_count
     }
 }
+impl StreamDescriptionSummary {
+    /// Creates a new builder-style object to manufacture [`StreamDescriptionSummary`](crate::model::StreamDescriptionSummary).
+    pub fn builder() -> crate::model::stream_description_summary::Builder {
+        crate::model::stream_description_summary::Builder::default()
+    }
+}
+
 /// See [`StreamDescriptionSummary`](crate::model::StreamDescriptionSummary).
 pub mod stream_description_summary {
 
@@ -2387,12 +2406,6 @@ pub mod stream_description_summary {
         }
     }
 }
-impl StreamDescriptionSummary {
-    /// Creates a new builder-style object to manufacture [`StreamDescriptionSummary`](crate::model::StreamDescriptionSummary).
-    pub fn builder() -> crate::model::stream_description_summary::Builder {
-        crate::model::stream_description_summary::Builder::default()
-    }
-}
 
 /// <p>Represents enhanced metrics types.</p>
 #[non_exhaustive]
@@ -2432,6 +2445,13 @@ impl EnhancedMetrics {
         self.shard_level_metrics.as_deref()
     }
 }
+impl EnhancedMetrics {
+    /// Creates a new builder-style object to manufacture [`EnhancedMetrics`](crate::model::EnhancedMetrics).
+    pub fn builder() -> crate::model::enhanced_metrics::Builder {
+        crate::model::enhanced_metrics::Builder::default()
+    }
+}
+
 /// See [`EnhancedMetrics`](crate::model::EnhancedMetrics).
 pub mod enhanced_metrics {
 
@@ -2494,12 +2514,6 @@ pub mod enhanced_metrics {
         }
     }
 }
-impl EnhancedMetrics {
-    /// Creates a new builder-style object to manufacture [`EnhancedMetrics`](crate::model::EnhancedMetrics).
-    pub fn builder() -> crate::model::enhanced_metrics::Builder {
-        crate::model::enhanced_metrics::Builder::default()
-    }
-}
 
 /// <p>An object that represents the details of a registered consumer. This type of object is returned by <code>DescribeStreamConsumer</code>.</p>
 #[non_exhaustive]
@@ -2545,6 +2559,13 @@ impl ConsumerDescription {
         self.stream_arn.as_deref()
     }
 }
+impl ConsumerDescription {
+    /// Creates a new builder-style object to manufacture [`ConsumerDescription`](crate::model::ConsumerDescription).
+    pub fn builder() -> crate::model::consumer_description::Builder {
+        crate::model::consumer_description::Builder::default()
+    }
+}
+
 /// See [`ConsumerDescription`](crate::model::ConsumerDescription).
 pub mod consumer_description {
 
@@ -2630,12 +2651,6 @@ pub mod consumer_description {
                 stream_arn: self.stream_arn,
             }
         }
-    }
-}
-impl ConsumerDescription {
-    /// Creates a new builder-style object to manufacture [`ConsumerDescription`](crate::model::ConsumerDescription).
-    pub fn builder() -> crate::model::consumer_description::Builder {
-        crate::model::consumer_description::Builder::default()
     }
 }
 
@@ -2757,6 +2772,13 @@ impl StreamDescription {
         self.key_id.as_deref()
     }
 }
+impl StreamDescription {
+    /// Creates a new builder-style object to manufacture [`StreamDescription`](crate::model::StreamDescription).
+    pub fn builder() -> crate::model::stream_description::Builder {
+        crate::model::stream_description::Builder::default()
+    }
+}
+
 /// See [`StreamDescription`](crate::model::StreamDescription).
 pub mod stream_description {
 
@@ -2968,11 +2990,5 @@ pub mod stream_description {
                 key_id: self.key_id,
             }
         }
-    }
-}
-impl StreamDescription {
-    /// Creates a new builder-style object to manufacture [`StreamDescription`](crate::model::StreamDescription).
-    pub fn builder() -> crate::model::stream_description::Builder {
-        crate::model::stream_description::Builder::default()
     }
 }

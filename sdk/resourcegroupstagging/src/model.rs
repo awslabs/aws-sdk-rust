@@ -34,6 +34,13 @@ impl FailureInfo {
         self.error_message.as_deref()
     }
 }
+impl FailureInfo {
+    /// Creates a new builder-style object to manufacture [`FailureInfo`](crate::model::FailureInfo).
+    pub fn builder() -> crate::model::failure_info::Builder {
+        crate::model::failure_info::Builder::default()
+    }
+}
+
 /// See [`FailureInfo`](crate::model::FailureInfo).
 pub mod failure_info {
 
@@ -90,12 +97,6 @@ pub mod failure_info {
                 error_message: self.error_message,
             }
         }
-    }
-}
-impl FailureInfo {
-    /// Creates a new builder-style object to manufacture [`FailureInfo`](crate::model::FailureInfo).
-    pub fn builder() -> crate::model::failure_info::Builder {
-        crate::model::failure_info::Builder::default()
     }
 }
 
@@ -217,6 +218,13 @@ impl ResourceTagMapping {
         self.compliance_details.as_ref()
     }
 }
+impl ResourceTagMapping {
+    /// Creates a new builder-style object to manufacture [`ResourceTagMapping`](crate::model::ResourceTagMapping).
+    pub fn builder() -> crate::model::resource_tag_mapping::Builder {
+        crate::model::resource_tag_mapping::Builder::default()
+    }
+}
+
 /// See [`ResourceTagMapping`](crate::model::ResourceTagMapping).
 pub mod resource_tag_mapping {
 
@@ -281,12 +289,6 @@ pub mod resource_tag_mapping {
         }
     }
 }
-impl ResourceTagMapping {
-    /// Creates a new builder-style object to manufacture [`ResourceTagMapping`](crate::model::ResourceTagMapping).
-    pub fn builder() -> crate::model::resource_tag_mapping::Builder {
-        crate::model::resource_tag_mapping::Builder::default()
-    }
-}
 
 /// <p>Information that shows whether a resource is compliant with the effective tag policy, including details on any noncompliant tag keys.</p>
 #[non_exhaustive]
@@ -316,6 +318,13 @@ impl ComplianceDetails {
         self.compliance_status
     }
 }
+impl ComplianceDetails {
+    /// Creates a new builder-style object to manufacture [`ComplianceDetails`](crate::model::ComplianceDetails).
+    pub fn builder() -> crate::model::compliance_details::Builder {
+        crate::model::compliance_details::Builder::default()
+    }
+}
+
 /// See [`ComplianceDetails`](crate::model::ComplianceDetails).
 pub mod compliance_details {
 
@@ -390,12 +399,6 @@ pub mod compliance_details {
         }
     }
 }
-impl ComplianceDetails {
-    /// Creates a new builder-style object to manufacture [`ComplianceDetails`](crate::model::ComplianceDetails).
-    pub fn builder() -> crate::model::compliance_details::Builder {
-        crate::model::compliance_details::Builder::default()
-    }
-}
 
 /// <p>The metadata that you apply to Amazon Web Services resources to help you categorize and organize them. Each tag consists of a key and a value, both of which you define. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>.</p>
 #[non_exhaustive]
@@ -418,6 +421,13 @@ impl Tag {
         self.value.as_deref()
     }
 }
+impl Tag {
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
+    pub fn builder() -> crate::model::tag::Builder {
+        crate::model::tag::Builder::default()
+    }
+}
+
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
 
@@ -458,12 +468,6 @@ pub mod tag {
         }
     }
 }
-impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
-    pub fn builder() -> crate::model::tag::Builder {
-        crate::model::tag::Builder::default()
-    }
-}
 
 /// <p>A list of tags (keys and values) that are used to specify the associated resources.</p>
 #[non_exhaustive]
@@ -486,6 +490,13 @@ impl TagFilter {
         self.values.as_deref()
     }
 }
+impl TagFilter {
+    /// Creates a new builder-style object to manufacture [`TagFilter`](crate::model::TagFilter).
+    pub fn builder() -> crate::model::tag_filter::Builder {
+        crate::model::tag_filter::Builder::default()
+    }
+}
+
 /// See [`TagFilter`](crate::model::TagFilter).
 pub mod tag_filter {
 
@@ -533,12 +544,6 @@ pub mod tag_filter {
                 values: self.values,
             }
         }
-    }
-}
-impl TagFilter {
-    /// Creates a new builder-style object to manufacture [`TagFilter`](crate::model::TagFilter).
-    pub fn builder() -> crate::model::tag_filter::Builder {
-        crate::model::tag_filter::Builder::default()
     }
 }
 
@@ -591,6 +596,13 @@ impl Summary {
         self.non_compliant_resources
     }
 }
+impl Summary {
+    /// Creates a new builder-style object to manufacture [`Summary`](crate::model::Summary).
+    pub fn builder() -> crate::model::summary::Builder {
+        crate::model::summary::Builder::default()
+    }
+}
+
 /// See [`Summary`](crate::model::Summary).
 pub mod summary {
 
@@ -683,12 +695,6 @@ pub mod summary {
                 non_compliant_resources: self.non_compliant_resources.unwrap_or_default(),
             }
         }
-    }
-}
-impl Summary {
-    /// Creates a new builder-style object to manufacture [`Summary`](crate::model::Summary).
-    pub fn builder() -> crate::model::summary::Builder {
-        crate::model::summary::Builder::default()
     }
 }
 

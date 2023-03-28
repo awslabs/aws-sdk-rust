@@ -21,6 +21,13 @@ impl S3Location {
         self.prefix.as_deref()
     }
 }
+impl S3Location {
+    /// Creates a new builder-style object to manufacture [`S3Location`](crate::model::S3Location).
+    pub fn builder() -> crate::model::s3_location::Builder {
+        crate::model::s3_location::Builder::default()
+    }
+}
+
 /// See [`S3Location`](crate::model::S3Location).
 pub mod s3_location {
 
@@ -59,12 +66,6 @@ pub mod s3_location {
                 prefix: self.prefix,
             }
         }
-    }
-}
-impl S3Location {
-    /// Creates a new builder-style object to manufacture [`S3Location`](crate::model::S3Location).
-    pub fn builder() -> crate::model::s3_location::Builder {
-        crate::model::s3_location::Builder::default()
     }
 }
 
@@ -309,6 +310,13 @@ impl ReportDefinition {
         self.last_updated_at.as_ref()
     }
 }
+impl ReportDefinition {
+    /// Creates a new builder-style object to manufacture [`ReportDefinition`](crate::model::ReportDefinition).
+    pub fn builder() -> crate::model::report_definition::Builder {
+        crate::model::report_definition::Builder::default()
+    }
+}
+
 /// See [`ReportDefinition`](crate::model::ReportDefinition).
 pub mod report_definition {
 
@@ -424,12 +432,6 @@ pub mod report_definition {
         }
     }
 }
-impl ReportDefinition {
-    /// Creates a new builder-style object to manufacture [`ReportDefinition`](crate::model::ReportDefinition).
-    pub fn builder() -> crate::model::report_definition::Builder {
-        crate::model::report_definition::Builder::default()
-    }
-}
 
 /// <p>Represents the Amazon Simple Storage Service (Amazon S3) location where usage data is read from.</p>
 #[non_exhaustive]
@@ -459,6 +461,13 @@ impl SourceS3Location {
         self.region.as_ref()
     }
 }
+impl SourceS3Location {
+    /// Creates a new builder-style object to manufacture [`SourceS3Location`](crate::model::SourceS3Location).
+    pub fn builder() -> crate::model::source_s3_location::Builder {
+        crate::model::source_s3_location::Builder::default()
+    }
+}
+
 /// See [`SourceS3Location`](crate::model::SourceS3Location).
 pub mod source_s3_location {
 
@@ -512,12 +521,6 @@ pub mod source_s3_location {
                 region: self.region,
             }
         }
-    }
-}
-impl SourceS3Location {
-    /// Creates a new builder-style object to manufacture [`SourceS3Location`](crate::model::SourceS3Location).
-    pub fn builder() -> crate::model::source_s3_location::Builder {
-        crate::model::source_s3_location::Builder::default()
     }
 }
 

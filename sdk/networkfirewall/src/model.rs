@@ -113,6 +113,13 @@ impl RuleGroupResponse {
         self.last_modified_time.as_ref()
     }
 }
+impl RuleGroupResponse {
+    /// Creates a new builder-style object to manufacture [`RuleGroupResponse`](crate::model::RuleGroupResponse).
+    pub fn builder() -> crate::model::rule_group_response::Builder {
+        crate::model::rule_group_response::Builder::default()
+    }
+}
+
 /// See [`RuleGroupResponse`](crate::model::RuleGroupResponse).
 pub mod rule_group_response {
 
@@ -337,12 +344,6 @@ pub mod rule_group_response {
         }
     }
 }
-impl RuleGroupResponse {
-    /// Creates a new builder-style object to manufacture [`RuleGroupResponse`](crate::model::RuleGroupResponse).
-    pub fn builder() -> crate::model::rule_group_response::Builder {
-        crate::model::rule_group_response::Builder::default()
-    }
-}
 
 /// <p>High-level information about the managed rule group that your own rule group is copied from. You can use the the metadata to track version updates made to the originating rule group. You can retrieve all objects for a rule group by calling <a href="https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_DescribeRuleGroup.html">DescribeRuleGroup</a>.</p>
 #[non_exhaustive]
@@ -365,6 +366,13 @@ impl SourceMetadata {
         self.source_update_token.as_deref()
     }
 }
+impl SourceMetadata {
+    /// Creates a new builder-style object to manufacture [`SourceMetadata`](crate::model::SourceMetadata).
+    pub fn builder() -> crate::model::source_metadata::Builder {
+        crate::model::source_metadata::Builder::default()
+    }
+}
+
 /// See [`SourceMetadata`](crate::model::SourceMetadata).
 pub mod source_metadata {
 
@@ -408,12 +416,6 @@ pub mod source_metadata {
         }
     }
 }
-impl SourceMetadata {
-    /// Creates a new builder-style object to manufacture [`SourceMetadata`](crate::model::SourceMetadata).
-    pub fn builder() -> crate::model::source_metadata::Builder {
-        crate::model::source_metadata::Builder::default()
-    }
-}
 
 /// <p>A complex type that contains optional Amazon Web Services Key Management Service (KMS) encryption settings for your Network Firewall resources. Your data is encrypted by default with an Amazon Web Services owned key that Amazon Web Services owns and manages for you. You can use either the Amazon Web Services owned key, or provide your own customer managed key. To learn more about KMS encryption of your Network Firewall resources, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-encryption-at-rest.html">Encryption at rest with Amazon Web Services Key Managment Service</a> in the <i>Network Firewall Developer Guide</i>.</p>
 #[non_exhaustive]
@@ -436,6 +438,13 @@ impl EncryptionConfiguration {
         self.r#type.as_ref()
     }
 }
+impl EncryptionConfiguration {
+    /// Creates a new builder-style object to manufacture [`EncryptionConfiguration`](crate::model::EncryptionConfiguration).
+    pub fn builder() -> crate::model::encryption_configuration::Builder {
+        crate::model::encryption_configuration::Builder::default()
+    }
+}
+
 /// See [`EncryptionConfiguration`](crate::model::EncryptionConfiguration).
 pub mod encryption_configuration {
 
@@ -477,12 +486,6 @@ pub mod encryption_configuration {
                 r#type: self.r#type,
             }
         }
-    }
-}
-impl EncryptionConfiguration {
-    /// Creates a new builder-style object to manufacture [`EncryptionConfiguration`](crate::model::EncryptionConfiguration).
-    pub fn builder() -> crate::model::encryption_configuration::Builder {
-        crate::model::encryption_configuration::Builder::default()
     }
 }
 
@@ -597,6 +600,13 @@ impl Tag {
         self.value.as_deref()
     }
 }
+impl Tag {
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
+    pub fn builder() -> crate::model::tag::Builder {
+        crate::model::tag::Builder::default()
+    }
+}
+
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
 
@@ -635,12 +645,6 @@ pub mod tag {
                 value: self.value,
             }
         }
-    }
-}
-impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
-    pub fn builder() -> crate::model::tag::Builder {
-        crate::model::tag::Builder::default()
     }
 }
 
@@ -861,6 +865,13 @@ impl RuleGroup {
         self.stateful_rule_options.as_ref()
     }
 }
+impl RuleGroup {
+    /// Creates a new builder-style object to manufacture [`RuleGroup`](crate::model::RuleGroup).
+    pub fn builder() -> crate::model::rule_group::Builder {
+        crate::model::rule_group::Builder::default()
+    }
+}
+
 /// See [`RuleGroup`](crate::model::RuleGroup).
 pub mod rule_group {
 
@@ -937,12 +948,6 @@ pub mod rule_group {
         }
     }
 }
-impl RuleGroup {
-    /// Creates a new builder-style object to manufacture [`RuleGroup`](crate::model::RuleGroup).
-    pub fn builder() -> crate::model::rule_group::Builder {
-        crate::model::rule_group::Builder::default()
-    }
-}
 
 /// <p>Additional options governing how Network Firewall handles the rule group. You can only use these for stateful rule groups.</p>
 #[non_exhaustive]
@@ -958,6 +963,13 @@ impl StatefulRuleOptions {
         self.rule_order.as_ref()
     }
 }
+impl StatefulRuleOptions {
+    /// Creates a new builder-style object to manufacture [`StatefulRuleOptions`](crate::model::StatefulRuleOptions).
+    pub fn builder() -> crate::model::stateful_rule_options::Builder {
+        crate::model::stateful_rule_options::Builder::default()
+    }
+}
+
 /// See [`StatefulRuleOptions`](crate::model::StatefulRuleOptions).
 pub mod stateful_rule_options {
 
@@ -987,12 +999,6 @@ pub mod stateful_rule_options {
                 rule_order: self.rule_order,
             }
         }
-    }
-}
-impl StatefulRuleOptions {
-    /// Creates a new builder-style object to manufacture [`StatefulRuleOptions`](crate::model::StatefulRuleOptions).
-    pub fn builder() -> crate::model::stateful_rule_options::Builder {
-        crate::model::stateful_rule_options::Builder::default()
     }
 }
 
@@ -1126,6 +1132,13 @@ impl RulesSource {
         self.stateless_rules_and_custom_actions.as_ref()
     }
 }
+impl RulesSource {
+    /// Creates a new builder-style object to manufacture [`RulesSource`](crate::model::RulesSource).
+    pub fn builder() -> crate::model::rules_source::Builder {
+        crate::model::rules_source::Builder::default()
+    }
+}
+
 /// See [`RulesSource`](crate::model::RulesSource).
 pub mod rules_source {
 
@@ -1211,12 +1224,6 @@ pub mod rules_source {
         }
     }
 }
-impl RulesSource {
-    /// Creates a new builder-style object to manufacture [`RulesSource`](crate::model::RulesSource).
-    pub fn builder() -> crate::model::rules_source::Builder {
-        crate::model::rules_source::Builder::default()
-    }
-}
 
 /// <p>Stateless inspection criteria. Each stateless rule group uses exactly one of these data types to define its stateless rules. </p>
 #[non_exhaustive]
@@ -1239,6 +1246,13 @@ impl StatelessRulesAndCustomActions {
         self.custom_actions.as_deref()
     }
 }
+impl StatelessRulesAndCustomActions {
+    /// Creates a new builder-style object to manufacture [`StatelessRulesAndCustomActions`](crate::model::StatelessRulesAndCustomActions).
+    pub fn builder() -> crate::model::stateless_rules_and_custom_actions::Builder {
+        crate::model::stateless_rules_and_custom_actions::Builder::default()
+    }
+}
+
 /// See [`StatelessRulesAndCustomActions`](crate::model::StatelessRulesAndCustomActions).
 pub mod stateless_rules_and_custom_actions {
 
@@ -1297,12 +1311,6 @@ pub mod stateless_rules_and_custom_actions {
         }
     }
 }
-impl StatelessRulesAndCustomActions {
-    /// Creates a new builder-style object to manufacture [`StatelessRulesAndCustomActions`](crate::model::StatelessRulesAndCustomActions).
-    pub fn builder() -> crate::model::stateless_rules_and_custom_actions::Builder {
-        crate::model::stateless_rules_and_custom_actions::Builder::default()
-    }
-}
 
 /// <p>An optional, non-standard action to use for stateless packet handling. You can define this in addition to the standard action that you must specify. </p>
 /// <p>You define and name the custom actions that you want to be able to use, and then you reference them by name in your actions settings. </p>
@@ -1331,6 +1339,13 @@ impl CustomAction {
         self.action_definition.as_ref()
     }
 }
+impl CustomAction {
+    /// Creates a new builder-style object to manufacture [`CustomAction`](crate::model::CustomAction).
+    pub fn builder() -> crate::model::custom_action::Builder {
+        crate::model::custom_action::Builder::default()
+    }
+}
+
 /// See [`CustomAction`](crate::model::CustomAction).
 pub mod custom_action {
 
@@ -1374,12 +1389,6 @@ pub mod custom_action {
         }
     }
 }
-impl CustomAction {
-    /// Creates a new builder-style object to manufacture [`CustomAction`](crate::model::CustomAction).
-    pub fn builder() -> crate::model::custom_action::Builder {
-        crate::model::custom_action::Builder::default()
-    }
-}
 
 /// <p>A custom action to use in stateless rule actions settings. This is used in <code>CustomAction</code>.</p>
 #[non_exhaustive]
@@ -1397,6 +1406,13 @@ impl ActionDefinition {
         self.publish_metric_action.as_ref()
     }
 }
+impl ActionDefinition {
+    /// Creates a new builder-style object to manufacture [`ActionDefinition`](crate::model::ActionDefinition).
+    pub fn builder() -> crate::model::action_definition::Builder {
+        crate::model::action_definition::Builder::default()
+    }
+}
+
 /// See [`ActionDefinition`](crate::model::ActionDefinition).
 pub mod action_definition {
 
@@ -1430,12 +1446,6 @@ pub mod action_definition {
         }
     }
 }
-impl ActionDefinition {
-    /// Creates a new builder-style object to manufacture [`ActionDefinition`](crate::model::ActionDefinition).
-    pub fn builder() -> crate::model::action_definition::Builder {
-        crate::model::action_definition::Builder::default()
-    }
-}
 
 /// <p>Stateless inspection criteria that publishes the specified metrics to Amazon CloudWatch for the matching packet. This setting defines a CloudWatch dimension value to be published.</p>
 #[non_exhaustive]
@@ -1451,6 +1461,13 @@ impl PublishMetricAction {
         self.dimensions.as_deref()
     }
 }
+impl PublishMetricAction {
+    /// Creates a new builder-style object to manufacture [`PublishMetricAction`](crate::model::PublishMetricAction).
+    pub fn builder() -> crate::model::publish_metric_action::Builder {
+        crate::model::publish_metric_action::Builder::default()
+    }
+}
+
 /// See [`PublishMetricAction`](crate::model::PublishMetricAction).
 pub mod publish_metric_action {
 
@@ -1488,12 +1505,6 @@ pub mod publish_metric_action {
         }
     }
 }
-impl PublishMetricAction {
-    /// Creates a new builder-style object to manufacture [`PublishMetricAction`](crate::model::PublishMetricAction).
-    pub fn builder() -> crate::model::publish_metric_action::Builder {
-        crate::model::publish_metric_action::Builder::default()
-    }
-}
 
 /// <p>The value to use in an Amazon CloudWatch custom metric dimension. This is used in the <code>PublishMetrics</code> <code>CustomAction</code>. A CloudWatch custom metric dimension is a name/value pair that's part of the identity of a metric. </p>
 /// <p>Network Firewall sets the dimension name to <code>CustomAction</code> and you provide the dimension value. </p>
@@ -1511,6 +1522,13 @@ impl Dimension {
         self.value.as_deref()
     }
 }
+impl Dimension {
+    /// Creates a new builder-style object to manufacture [`Dimension`](crate::model::Dimension).
+    pub fn builder() -> crate::model::dimension::Builder {
+        crate::model::dimension::Builder::default()
+    }
+}
+
 /// See [`Dimension`](crate::model::Dimension).
 pub mod dimension {
 
@@ -1535,12 +1553,6 @@ pub mod dimension {
         pub fn build(self) -> crate::model::Dimension {
             crate::model::Dimension { value: self.value }
         }
-    }
-}
-impl Dimension {
-    /// Creates a new builder-style object to manufacture [`Dimension`](crate::model::Dimension).
-    pub fn builder() -> crate::model::dimension::Builder {
-        crate::model::dimension::Builder::default()
     }
 }
 
@@ -1569,6 +1581,13 @@ impl StatelessRule {
         self.priority
     }
 }
+impl StatelessRule {
+    /// Creates a new builder-style object to manufacture [`StatelessRule`](crate::model::StatelessRule).
+    pub fn builder() -> crate::model::stateless_rule::Builder {
+        crate::model::stateless_rule::Builder::default()
+    }
+}
+
 /// See [`StatelessRule`](crate::model::StatelessRule).
 pub mod stateless_rule {
 
@@ -1616,12 +1635,6 @@ pub mod stateless_rule {
         }
     }
 }
-impl StatelessRule {
-    /// Creates a new builder-style object to manufacture [`StatelessRule`](crate::model::StatelessRule).
-    pub fn builder() -> crate::model::stateless_rule::Builder {
-        crate::model::stateless_rule::Builder::default()
-    }
-}
 
 /// <p>The inspection criteria and action for a single stateless rule. Network Firewall inspects each packet for the specified matching criteria. When a packet matches the criteria, Network Firewall performs the rule's actions on the packet.</p>
 #[non_exhaustive]
@@ -1664,6 +1677,13 @@ impl RuleDefinition {
         self.actions.as_deref()
     }
 }
+impl RuleDefinition {
+    /// Creates a new builder-style object to manufacture [`RuleDefinition`](crate::model::RuleDefinition).
+    pub fn builder() -> crate::model::rule_definition::Builder {
+        crate::model::rule_definition::Builder::default()
+    }
+}
+
 /// See [`RuleDefinition`](crate::model::RuleDefinition).
 pub mod rule_definition {
 
@@ -1736,12 +1756,6 @@ pub mod rule_definition {
         }
     }
 }
-impl RuleDefinition {
-    /// Creates a new builder-style object to manufacture [`RuleDefinition`](crate::model::RuleDefinition).
-    pub fn builder() -> crate::model::rule_definition::Builder {
-        crate::model::rule_definition::Builder::default()
-    }
-}
 
 /// <p>Criteria for Network Firewall to use to inspect an individual packet in stateless rule inspection. Each match attributes set can include one or more items such as IP address, CIDR range, port number, protocol, and TCP flags. </p>
 #[non_exhaustive]
@@ -1796,6 +1810,13 @@ impl MatchAttributes {
         self.tcp_flags.as_deref()
     }
 }
+impl MatchAttributes {
+    /// Creates a new builder-style object to manufacture [`MatchAttributes`](crate::model::MatchAttributes).
+    pub fn builder() -> crate::model::match_attributes::Builder {
+        crate::model::match_attributes::Builder::default()
+    }
+}
+
 /// See [`MatchAttributes`](crate::model::MatchAttributes).
 pub mod match_attributes {
 
@@ -1939,12 +1960,6 @@ pub mod match_attributes {
         }
     }
 }
-impl MatchAttributes {
-    /// Creates a new builder-style object to manufacture [`MatchAttributes`](crate::model::MatchAttributes).
-    pub fn builder() -> crate::model::match_attributes::Builder {
-        crate::model::match_attributes::Builder::default()
-    }
-}
 
 /// <p>TCP flags and masks to inspect packets for, used in stateless rules <code>MatchAttributes</code> settings.</p>
 #[non_exhaustive]
@@ -1977,6 +1992,13 @@ impl TcpFlagField {
         self.masks.as_deref()
     }
 }
+impl TcpFlagField {
+    /// Creates a new builder-style object to manufacture [`TcpFlagField`](crate::model::TcpFlagField).
+    pub fn builder() -> crate::model::tcp_flag_field::Builder {
+        crate::model::tcp_flag_field::Builder::default()
+    }
+}
+
 /// See [`TcpFlagField`](crate::model::TcpFlagField).
 pub mod tcp_flag_field {
 
@@ -2043,12 +2065,6 @@ pub mod tcp_flag_field {
                 masks: self.masks,
             }
         }
-    }
-}
-impl TcpFlagField {
-    /// Creates a new builder-style object to manufacture [`TcpFlagField`](crate::model::TcpFlagField).
-    pub fn builder() -> crate::model::tcp_flag_field::Builder {
-        crate::model::tcp_flag_field::Builder::default()
     }
 }
 
@@ -2193,6 +2209,13 @@ impl PortRange {
         self.to_port
     }
 }
+impl PortRange {
+    /// Creates a new builder-style object to manufacture [`PortRange`](crate::model::PortRange).
+    pub fn builder() -> crate::model::port_range::Builder {
+        crate::model::port_range::Builder::default()
+    }
+}
+
 /// See [`PortRange`](crate::model::PortRange).
 pub mod port_range {
 
@@ -2233,12 +2256,6 @@ pub mod port_range {
         }
     }
 }
-impl PortRange {
-    /// Creates a new builder-style object to manufacture [`PortRange`](crate::model::PortRange).
-    pub fn builder() -> crate::model::port_range::Builder {
-        crate::model::port_range::Builder::default()
-    }
-}
 
 /// <p>A single IP address specification. This is used in the <code>MatchAttributes</code> source and destination specifications.</p>
 #[non_exhaustive]
@@ -2270,6 +2287,13 @@ impl Address {
         self.address_definition.as_deref()
     }
 }
+impl Address {
+    /// Creates a new builder-style object to manufacture [`Address`](crate::model::Address).
+    pub fn builder() -> crate::model::address::Builder {
+        crate::model::address::Builder::default()
+    }
+}
+
 /// See [`Address`](crate::model::Address).
 pub mod address {
 
@@ -2317,12 +2341,6 @@ pub mod address {
         }
     }
 }
-impl Address {
-    /// Creates a new builder-style object to manufacture [`Address`](crate::model::Address).
-    pub fn builder() -> crate::model::address::Builder {
-        crate::model::address::Builder::default()
-    }
-}
 
 /// <p>A single Suricata rules specification, for use in a stateful rule group. Use this option to specify a simple Suricata rule with protocol, source and destination, ports, direction, and rule options. For information about the Suricata <code>Rules</code> format, see <a href="https://suricata.readthedocs.io/rules/intro.html#">Rules Format</a>. </p>
 #[non_exhaustive]
@@ -2366,6 +2384,13 @@ impl StatefulRule {
         self.rule_options.as_deref()
     }
 }
+impl StatefulRule {
+    /// Creates a new builder-style object to manufacture [`StatefulRule`](crate::model::StatefulRule).
+    pub fn builder() -> crate::model::stateful_rule::Builder {
+        crate::model::stateful_rule::Builder::default()
+    }
+}
+
 /// See [`StatefulRule`](crate::model::StatefulRule).
 pub mod stateful_rule {
 
@@ -2444,12 +2469,6 @@ pub mod stateful_rule {
         }
     }
 }
-impl StatefulRule {
-    /// Creates a new builder-style object to manufacture [`StatefulRule`](crate::model::StatefulRule).
-    pub fn builder() -> crate::model::stateful_rule::Builder {
-        crate::model::stateful_rule::Builder::default()
-    }
-}
 
 /// <p>Additional settings for a stateful rule. This is part of the <code>StatefulRule</code> configuration.</p>
 #[non_exhaustive]
@@ -2472,6 +2491,13 @@ impl RuleOption {
         self.settings.as_deref()
     }
 }
+impl RuleOption {
+    /// Creates a new builder-style object to manufacture [`RuleOption`](crate::model::RuleOption).
+    pub fn builder() -> crate::model::rule_option::Builder {
+        crate::model::rule_option::Builder::default()
+    }
+}
+
 /// See [`RuleOption`](crate::model::RuleOption).
 pub mod rule_option {
 
@@ -2519,12 +2545,6 @@ pub mod rule_option {
                 settings: self.settings,
             }
         }
-    }
-}
-impl RuleOption {
-    /// Creates a new builder-style object to manufacture [`RuleOption`](crate::model::RuleOption).
-    pub fn builder() -> crate::model::rule_option::Builder {
-        crate::model::rule_option::Builder::default()
     }
 }
 
@@ -2613,6 +2633,13 @@ impl Header {
         self.destination_port.as_deref()
     }
 }
+impl Header {
+    /// Creates a new builder-style object to manufacture [`Header`](crate::model::Header).
+    pub fn builder() -> crate::model::header::Builder {
+        crate::model::header::Builder::default()
+    }
+}
+
 /// See [`Header`](crate::model::Header).
 pub mod header {
 
@@ -2744,12 +2771,6 @@ pub mod header {
                 destination_port: self.destination_port,
             }
         }
-    }
-}
-impl Header {
-    /// Creates a new builder-style object to manufacture [`Header`](crate::model::Header).
-    pub fn builder() -> crate::model::header::Builder {
-        crate::model::header::Builder::default()
     }
 }
 
@@ -3163,6 +3184,13 @@ impl RulesSourceList {
         self.generated_rules_type.as_ref()
     }
 }
+impl RulesSourceList {
+    /// Creates a new builder-style object to manufacture [`RulesSourceList`](crate::model::RulesSourceList).
+    pub fn builder() -> crate::model::rules_source_list::Builder {
+        crate::model::rules_source_list::Builder::default()
+    }
+}
+
 /// See [`RulesSourceList`](crate::model::RulesSourceList).
 pub mod rules_source_list {
 
@@ -3242,12 +3270,6 @@ pub mod rules_source_list {
                 generated_rules_type: self.generated_rules_type,
             }
         }
-    }
-}
-impl RulesSourceList {
-    /// Creates a new builder-style object to manufacture [`RulesSourceList`](crate::model::RulesSourceList).
-    pub fn builder() -> crate::model::rules_source_list::Builder {
-        crate::model::rules_source_list::Builder::default()
     }
 }
 
@@ -3453,6 +3475,13 @@ impl ReferenceSets {
         self.ip_set_references.as_ref()
     }
 }
+impl ReferenceSets {
+    /// Creates a new builder-style object to manufacture [`ReferenceSets`](crate::model::ReferenceSets).
+    pub fn builder() -> crate::model::reference_sets::Builder {
+        crate::model::reference_sets::Builder::default()
+    }
+}
+
 /// See [`ReferenceSets`](crate::model::ReferenceSets).
 pub mod reference_sets {
 
@@ -3498,12 +3527,6 @@ pub mod reference_sets {
         }
     }
 }
-impl ReferenceSets {
-    /// Creates a new builder-style object to manufacture [`ReferenceSets`](crate::model::ReferenceSets).
-    pub fn builder() -> crate::model::reference_sets::Builder {
-        crate::model::reference_sets::Builder::default()
-    }
-}
 
 /// <p>Configures one or more IP set references for a Suricata-compatible rule group. This is used in <code>CreateRuleGroup</code> or <code>UpdateRuleGroup</code>. An IP set reference is a rule variable that references a resource that you create and manage in another Amazon Web Services service, such as an Amazon VPC prefix list. Network Firewall IP set references enable you to dynamically update the contents of your rules. When you create, update, or delete the IP set you are referencing in your rule, Network Firewall automatically updates the rule's content with the changes. For more information about IP set references in Network Firewall, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/rule-groups-ip-set-references">Using IP set references</a> in the <i>Network Firewall Developer Guide</i>.</p>
 /// <p> Network Firewall currently supports only <a href="https://docs.aws.amazon.com/vpc/latest/userguide/managed-prefix-lists.html">Amazon VPC prefix lists</a> as IP set references. </p>
@@ -3520,6 +3543,13 @@ impl IpSetReference {
         self.reference_arn.as_deref()
     }
 }
+impl IpSetReference {
+    /// Creates a new builder-style object to manufacture [`IpSetReference`](crate::model::IpSetReference).
+    pub fn builder() -> crate::model::ip_set_reference::Builder {
+        crate::model::ip_set_reference::Builder::default()
+    }
+}
+
 /// See [`IpSetReference`](crate::model::IpSetReference).
 pub mod ip_set_reference {
 
@@ -3549,12 +3579,6 @@ pub mod ip_set_reference {
                 reference_arn: self.reference_arn,
             }
         }
-    }
-}
-impl IpSetReference {
-    /// Creates a new builder-style object to manufacture [`IpSetReference`](crate::model::IpSetReference).
-    pub fn builder() -> crate::model::ip_set_reference::Builder {
-        crate::model::ip_set_reference::Builder::default()
     }
 }
 
@@ -3587,6 +3611,13 @@ impl RuleVariables {
         self.port_sets.as_ref()
     }
 }
+impl RuleVariables {
+    /// Creates a new builder-style object to manufacture [`RuleVariables`](crate::model::RuleVariables).
+    pub fn builder() -> crate::model::rule_variables::Builder {
+        crate::model::rule_variables::Builder::default()
+    }
+}
+
 /// See [`RuleVariables`](crate::model::RuleVariables).
 pub mod rule_variables {
 
@@ -3661,12 +3692,6 @@ pub mod rule_variables {
         }
     }
 }
-impl RuleVariables {
-    /// Creates a new builder-style object to manufacture [`RuleVariables`](crate::model::RuleVariables).
-    pub fn builder() -> crate::model::rule_variables::Builder {
-        crate::model::rule_variables::Builder::default()
-    }
-}
 
 /// <p>A set of port ranges for use in the rules in a rule group. </p>
 #[non_exhaustive]
@@ -3682,6 +3707,13 @@ impl PortSet {
         self.definition.as_deref()
     }
 }
+impl PortSet {
+    /// Creates a new builder-style object to manufacture [`PortSet`](crate::model::PortSet).
+    pub fn builder() -> crate::model::port_set::Builder {
+        crate::model::port_set::Builder::default()
+    }
+}
+
 /// See [`PortSet`](crate::model::PortSet).
 pub mod port_set {
 
@@ -3719,12 +3751,6 @@ pub mod port_set {
         }
     }
 }
-impl PortSet {
-    /// Creates a new builder-style object to manufacture [`PortSet`](crate::model::PortSet).
-    pub fn builder() -> crate::model::port_set::Builder {
-        crate::model::port_set::Builder::default()
-    }
-}
 
 /// <p>A list of IP addresses and address ranges, in CIDR notation. This is part of a <code>RuleVariables</code>. </p>
 #[non_exhaustive]
@@ -3740,6 +3766,13 @@ impl IpSet {
         self.definition.as_deref()
     }
 }
+impl IpSet {
+    /// Creates a new builder-style object to manufacture [`IpSet`](crate::model::IpSet).
+    pub fn builder() -> crate::model::ip_set::Builder {
+        crate::model::ip_set::Builder::default()
+    }
+}
+
 /// See [`IpSet`](crate::model::IpSet).
 pub mod ip_set {
 
@@ -3777,12 +3810,6 @@ pub mod ip_set {
         }
     }
 }
-impl IpSet {
-    /// Creates a new builder-style object to manufacture [`IpSet`](crate::model::IpSet).
-    pub fn builder() -> crate::model::ip_set::Builder {
-        crate::model::ip_set::Builder::default()
-    }
-}
 
 /// <p>Defines how Network Firewall performs logging for a <code>Firewall</code>. </p>
 #[non_exhaustive]
@@ -3801,6 +3828,13 @@ impl LoggingConfiguration {
         self.log_destination_configs.as_deref()
     }
 }
+impl LoggingConfiguration {
+    /// Creates a new builder-style object to manufacture [`LoggingConfiguration`](crate::model::LoggingConfiguration).
+    pub fn builder() -> crate::model::logging_configuration::Builder {
+        crate::model::logging_configuration::Builder::default()
+    }
+}
+
 /// See [`LoggingConfiguration`](crate::model::LoggingConfiguration).
 pub mod logging_configuration {
 
@@ -3840,12 +3874,6 @@ pub mod logging_configuration {
                 log_destination_configs: self.log_destination_configs,
             }
         }
-    }
-}
-impl LoggingConfiguration {
-    /// Creates a new builder-style object to manufacture [`LoggingConfiguration`](crate::model::LoggingConfiguration).
-    pub fn builder() -> crate::model::logging_configuration::Builder {
-        crate::model::logging_configuration::Builder::default()
     }
 }
 
@@ -3892,6 +3920,13 @@ impl LogDestinationConfig {
         self.log_destination.as_ref()
     }
 }
+impl LogDestinationConfig {
+    /// Creates a new builder-style object to manufacture [`LogDestinationConfig`](crate::model::LogDestinationConfig).
+    pub fn builder() -> crate::model::log_destination_config::Builder {
+        crate::model::log_destination_config::Builder::default()
+    }
+}
+
 /// See [`LogDestinationConfig`](crate::model::LogDestinationConfig).
 pub mod log_destination_config {
 
@@ -3972,12 +4007,6 @@ pub mod log_destination_config {
                 log_destination: self.log_destination,
             }
         }
-    }
-}
-impl LogDestinationConfig {
-    /// Creates a new builder-style object to manufacture [`LogDestinationConfig`](crate::model::LogDestinationConfig).
-    pub fn builder() -> crate::model::log_destination_config::Builder {
-        crate::model::log_destination_config::Builder::default()
     }
 }
 
@@ -4258,6 +4287,13 @@ impl FirewallPolicyResponse {
         self.last_modified_time.as_ref()
     }
 }
+impl FirewallPolicyResponse {
+    /// Creates a new builder-style object to manufacture [`FirewallPolicyResponse`](crate::model::FirewallPolicyResponse).
+    pub fn builder() -> crate::model::firewall_policy_response::Builder {
+        crate::model::firewall_policy_response::Builder::default()
+    }
+}
+
 /// See [`FirewallPolicyResponse`](crate::model::FirewallPolicyResponse).
 pub mod firewall_policy_response {
 
@@ -4447,12 +4483,6 @@ pub mod firewall_policy_response {
         }
     }
 }
-impl FirewallPolicyResponse {
-    /// Creates a new builder-style object to manufacture [`FirewallPolicyResponse`](crate::model::FirewallPolicyResponse).
-    pub fn builder() -> crate::model::firewall_policy_response::Builder {
-        crate::model::firewall_policy_response::Builder::default()
-    }
-}
 
 /// <p>The firewall policy defines the behavior of a firewall using a collection of stateless and stateful rule groups and other settings. You can use one firewall policy for multiple firewalls. </p>
 /// <p>This, along with <code>FirewallPolicyResponse</code>, define the policy. You can retrieve all objects for a firewall policy by calling <code>DescribeFirewallPolicy</code>.</p>
@@ -4545,6 +4575,13 @@ impl FirewallPolicy {
         self.stateful_engine_options.as_ref()
     }
 }
+impl FirewallPolicy {
+    /// Creates a new builder-style object to manufacture [`FirewallPolicy`](crate::model::FirewallPolicy).
+    pub fn builder() -> crate::model::firewall_policy::Builder {
+        crate::model::firewall_policy::Builder::default()
+    }
+}
+
 /// See [`FirewallPolicy`](crate::model::FirewallPolicy).
 pub mod firewall_policy {
 
@@ -4745,12 +4782,6 @@ pub mod firewall_policy {
         }
     }
 }
-impl FirewallPolicy {
-    /// Creates a new builder-style object to manufacture [`FirewallPolicy`](crate::model::FirewallPolicy).
-    pub fn builder() -> crate::model::firewall_policy::Builder {
-        crate::model::firewall_policy::Builder::default()
-    }
-}
 
 /// <p>Configuration settings for the handling of the stateful rule groups in a firewall policy. </p>
 #[non_exhaustive]
@@ -4783,6 +4814,13 @@ impl StatefulEngineOptions {
         self.stream_exception_policy.as_ref()
     }
 }
+impl StatefulEngineOptions {
+    /// Creates a new builder-style object to manufacture [`StatefulEngineOptions`](crate::model::StatefulEngineOptions).
+    pub fn builder() -> crate::model::stateful_engine_options::Builder {
+        crate::model::stateful_engine_options::Builder::default()
+    }
+}
+
 /// See [`StatefulEngineOptions`](crate::model::StatefulEngineOptions).
 pub mod stateful_engine_options {
 
@@ -4839,12 +4877,6 @@ pub mod stateful_engine_options {
                 stream_exception_policy: self.stream_exception_policy,
             }
         }
-    }
-}
-impl StatefulEngineOptions {
-    /// Creates a new builder-style object to manufacture [`StatefulEngineOptions`](crate::model::StatefulEngineOptions).
-    pub fn builder() -> crate::model::stateful_engine_options::Builder {
-        crate::model::stateful_engine_options::Builder::default()
     }
 }
 
@@ -4972,6 +5004,13 @@ impl StatefulRuleGroupReference {
         self.r#override.as_ref()
     }
 }
+impl StatefulRuleGroupReference {
+    /// Creates a new builder-style object to manufacture [`StatefulRuleGroupReference`](crate::model::StatefulRuleGroupReference).
+    pub fn builder() -> crate::model::stateful_rule_group_reference::Builder {
+        crate::model::stateful_rule_group_reference::Builder::default()
+    }
+}
+
 /// See [`StatefulRuleGroupReference`](crate::model::StatefulRuleGroupReference).
 pub mod stateful_rule_group_reference {
 
@@ -5031,12 +5070,6 @@ pub mod stateful_rule_group_reference {
         }
     }
 }
-impl StatefulRuleGroupReference {
-    /// Creates a new builder-style object to manufacture [`StatefulRuleGroupReference`](crate::model::StatefulRuleGroupReference).
-    pub fn builder() -> crate::model::stateful_rule_group_reference::Builder {
-        crate::model::stateful_rule_group_reference::Builder::default()
-    }
-}
 
 /// <p>The setting that allows the policy owner to change the behavior of the rule group within a policy. </p>
 #[non_exhaustive]
@@ -5052,6 +5085,13 @@ impl StatefulRuleGroupOverride {
         self.action.as_ref()
     }
 }
+impl StatefulRuleGroupOverride {
+    /// Creates a new builder-style object to manufacture [`StatefulRuleGroupOverride`](crate::model::StatefulRuleGroupOverride).
+    pub fn builder() -> crate::model::stateful_rule_group_override::Builder {
+        crate::model::stateful_rule_group_override::Builder::default()
+    }
+}
+
 /// See [`StatefulRuleGroupOverride`](crate::model::StatefulRuleGroupOverride).
 pub mod stateful_rule_group_override {
 
@@ -5081,12 +5121,6 @@ pub mod stateful_rule_group_override {
                 action: self.action,
             }
         }
-    }
-}
-impl StatefulRuleGroupOverride {
-    /// Creates a new builder-style object to manufacture [`StatefulRuleGroupOverride`](crate::model::StatefulRuleGroupOverride).
-    pub fn builder() -> crate::model::stateful_rule_group_override::Builder {
-        crate::model::stateful_rule_group_override::Builder::default()
     }
 }
 
@@ -5196,6 +5230,13 @@ impl StatelessRuleGroupReference {
         self.priority
     }
 }
+impl StatelessRuleGroupReference {
+    /// Creates a new builder-style object to manufacture [`StatelessRuleGroupReference`](crate::model::StatelessRuleGroupReference).
+    pub fn builder() -> crate::model::stateless_rule_group_reference::Builder {
+        crate::model::stateless_rule_group_reference::Builder::default()
+    }
+}
+
 /// See [`StatelessRuleGroupReference`](crate::model::StatelessRuleGroupReference).
 pub mod stateless_rule_group_reference {
 
@@ -5236,12 +5277,6 @@ pub mod stateless_rule_group_reference {
         }
     }
 }
-impl StatelessRuleGroupReference {
-    /// Creates a new builder-style object to manufacture [`StatelessRuleGroupReference`](crate::model::StatelessRuleGroupReference).
-    pub fn builder() -> crate::model::stateless_rule_group_reference::Builder {
-        crate::model::stateless_rule_group_reference::Builder::default()
-    }
-}
 
 /// <p>High-level information about a rule group, returned by <code>ListRuleGroups</code>. You can use the information provided in the metadata to retrieve and manage a rule group.</p>
 #[non_exhaustive]
@@ -5264,6 +5299,13 @@ impl RuleGroupMetadata {
         self.arn.as_deref()
     }
 }
+impl RuleGroupMetadata {
+    /// Creates a new builder-style object to manufacture [`RuleGroupMetadata`](crate::model::RuleGroupMetadata).
+    pub fn builder() -> crate::model::rule_group_metadata::Builder {
+        crate::model::rule_group_metadata::Builder::default()
+    }
+}
+
 /// See [`RuleGroupMetadata`](crate::model::RuleGroupMetadata).
 pub mod rule_group_metadata {
 
@@ -5302,12 +5344,6 @@ pub mod rule_group_metadata {
                 arn: self.arn,
             }
         }
-    }
-}
-impl RuleGroupMetadata {
-    /// Creates a new builder-style object to manufacture [`RuleGroupMetadata`](crate::model::RuleGroupMetadata).
-    pub fn builder() -> crate::model::rule_group_metadata::Builder {
-        crate::model::rule_group_metadata::Builder::default()
     }
 }
 
@@ -5516,6 +5552,13 @@ impl FirewallMetadata {
         self.firewall_arn.as_deref()
     }
 }
+impl FirewallMetadata {
+    /// Creates a new builder-style object to manufacture [`FirewallMetadata`](crate::model::FirewallMetadata).
+    pub fn builder() -> crate::model::firewall_metadata::Builder {
+        crate::model::firewall_metadata::Builder::default()
+    }
+}
+
 /// See [`FirewallMetadata`](crate::model::FirewallMetadata).
 pub mod firewall_metadata {
 
@@ -5559,12 +5602,6 @@ pub mod firewall_metadata {
         }
     }
 }
-impl FirewallMetadata {
-    /// Creates a new builder-style object to manufacture [`FirewallMetadata`](crate::model::FirewallMetadata).
-    pub fn builder() -> crate::model::firewall_metadata::Builder {
-        crate::model::firewall_metadata::Builder::default()
-    }
-}
 
 /// <p>High-level information about a firewall policy, returned by operations like create and describe. You can use the information provided in the metadata to retrieve and manage a firewall policy. You can retrieve all objects for a firewall policy by calling <code>DescribeFirewallPolicy</code>. </p>
 #[non_exhaustive]
@@ -5587,6 +5624,13 @@ impl FirewallPolicyMetadata {
         self.arn.as_deref()
     }
 }
+impl FirewallPolicyMetadata {
+    /// Creates a new builder-style object to manufacture [`FirewallPolicyMetadata`](crate::model::FirewallPolicyMetadata).
+    pub fn builder() -> crate::model::firewall_policy_metadata::Builder {
+        crate::model::firewall_policy_metadata::Builder::default()
+    }
+}
+
 /// See [`FirewallPolicyMetadata`](crate::model::FirewallPolicyMetadata).
 pub mod firewall_policy_metadata {
 
@@ -5627,12 +5671,6 @@ pub mod firewall_policy_metadata {
         }
     }
 }
-impl FirewallPolicyMetadata {
-    /// Creates a new builder-style object to manufacture [`FirewallPolicyMetadata`](crate::model::FirewallPolicyMetadata).
-    pub fn builder() -> crate::model::firewall_policy_metadata::Builder {
-        crate::model::firewall_policy_metadata::Builder::default()
-    }
-}
 
 /// <p>The ID for a subnet that you want to associate with the firewall. This is used with <code>CreateFirewall</code> and <code>AssociateSubnets</code>. Network Firewall creates an instance of the associated firewall in each subnet that you specify, to filter traffic in the subnet's Availability Zone.</p>
 #[non_exhaustive]
@@ -5655,6 +5693,13 @@ impl SubnetMapping {
         self.ip_address_type.as_ref()
     }
 }
+impl SubnetMapping {
+    /// Creates a new builder-style object to manufacture [`SubnetMapping`](crate::model::SubnetMapping).
+    pub fn builder() -> crate::model::subnet_mapping::Builder {
+        crate::model::subnet_mapping::Builder::default()
+    }
+}
+
 /// See [`SubnetMapping`](crate::model::SubnetMapping).
 pub mod subnet_mapping {
 
@@ -5696,12 +5741,6 @@ pub mod subnet_mapping {
                 ip_address_type: self.ip_address_type,
             }
         }
-    }
-}
-impl SubnetMapping {
-    /// Creates a new builder-style object to manufacture [`SubnetMapping`](crate::model::SubnetMapping).
-    pub fn builder() -> crate::model::subnet_mapping::Builder {
-        crate::model::subnet_mapping::Builder::default()
     }
 }
 
@@ -5843,6 +5882,13 @@ impl FirewallStatus {
         self.capacity_usage_summary.as_ref()
     }
 }
+impl FirewallStatus {
+    /// Creates a new builder-style object to manufacture [`FirewallStatus`](crate::model::FirewallStatus).
+    pub fn builder() -> crate::model::firewall_status::Builder {
+        crate::model::firewall_status::Builder::default()
+    }
+}
+
 /// See [`FirewallStatus`](crate::model::FirewallStatus).
 pub mod firewall_status {
 
@@ -5941,12 +5987,6 @@ pub mod firewall_status {
         }
     }
 }
-impl FirewallStatus {
-    /// Creates a new builder-style object to manufacture [`FirewallStatus`](crate::model::FirewallStatus).
-    pub fn builder() -> crate::model::firewall_status::Builder {
-        crate::model::firewall_status::Builder::default()
-    }
-}
 
 /// <p>The capacity usage summary of the resources used by the <code>ReferenceSets</code> in a firewall.</p>
 #[non_exhaustive]
@@ -5962,6 +6002,13 @@ impl CapacityUsageSummary {
         self.cid_rs.as_ref()
     }
 }
+impl CapacityUsageSummary {
+    /// Creates a new builder-style object to manufacture [`CapacityUsageSummary`](crate::model::CapacityUsageSummary).
+    pub fn builder() -> crate::model::capacity_usage_summary::Builder {
+        crate::model::capacity_usage_summary::Builder::default()
+    }
+}
+
 /// See [`CapacityUsageSummary`](crate::model::CapacityUsageSummary).
 pub mod capacity_usage_summary {
 
@@ -5988,12 +6035,6 @@ pub mod capacity_usage_summary {
                 cid_rs: self.cid_rs,
             }
         }
-    }
-}
-impl CapacityUsageSummary {
-    /// Creates a new builder-style object to manufacture [`CapacityUsageSummary`](crate::model::CapacityUsageSummary).
-    pub fn builder() -> crate::model::capacity_usage_summary::Builder {
-        crate::model::capacity_usage_summary::Builder::default()
     }
 }
 
@@ -6031,6 +6072,13 @@ impl CidrSummary {
         self.ip_set_references.as_ref()
     }
 }
+impl CidrSummary {
+    /// Creates a new builder-style object to manufacture [`CidrSummary`](crate::model::CidrSummary).
+    pub fn builder() -> crate::model::cidr_summary::Builder {
+        crate::model::cidr_summary::Builder::default()
+    }
+}
+
 /// See [`CidrSummary`](crate::model::CidrSummary).
 pub mod cidr_summary {
 
@@ -6100,12 +6148,6 @@ pub mod cidr_summary {
         }
     }
 }
-impl CidrSummary {
-    /// Creates a new builder-style object to manufacture [`CidrSummary`](crate::model::CidrSummary).
-    pub fn builder() -> crate::model::cidr_summary::Builder {
-        crate::model::cidr_summary::Builder::default()
-    }
-}
 
 /// <p>General information about the IP set.</p>
 #[non_exhaustive]
@@ -6121,6 +6163,13 @@ impl IpSetMetadata {
         self.resolved_cidr_count
     }
 }
+impl IpSetMetadata {
+    /// Creates a new builder-style object to manufacture [`IpSetMetadata`](crate::model::IpSetMetadata).
+    pub fn builder() -> crate::model::ip_set_metadata::Builder {
+        crate::model::ip_set_metadata::Builder::default()
+    }
+}
+
 /// See [`IpSetMetadata`](crate::model::IpSetMetadata).
 pub mod ip_set_metadata {
 
@@ -6147,12 +6196,6 @@ pub mod ip_set_metadata {
                 resolved_cidr_count: self.resolved_cidr_count,
             }
         }
-    }
-}
-impl IpSetMetadata {
-    /// Creates a new builder-style object to manufacture [`IpSetMetadata`](crate::model::IpSetMetadata).
-    pub fn builder() -> crate::model::ip_set_metadata::Builder {
-        crate::model::ip_set_metadata::Builder::default()
     }
 }
 
@@ -6189,6 +6232,13 @@ impl SyncState {
         self.config.as_ref()
     }
 }
+impl SyncState {
+    /// Creates a new builder-style object to manufacture [`SyncState`](crate::model::SyncState).
+    pub fn builder() -> crate::model::sync_state::Builder {
+        crate::model::sync_state::Builder::default()
+    }
+}
+
 /// See [`SyncState`](crate::model::SyncState).
 pub mod sync_state {
 
@@ -6249,12 +6299,6 @@ pub mod sync_state {
         }
     }
 }
-impl SyncState {
-    /// Creates a new builder-style object to manufacture [`SyncState`](crate::model::SyncState).
-    pub fn builder() -> crate::model::sync_state::Builder {
-        crate::model::sync_state::Builder::default()
-    }
-}
 
 /// <p>Provides configuration status for a single policy or rule group that is used for a firewall endpoint. Network Firewall provides each endpoint with the rules that are configured in the firewall policy. Each time you add a subnet or modify the associated firewall policy, Network Firewall synchronizes the rules in the endpoint, so it can properly filter network traffic. This is part of a <code>SyncState</code> for a firewall.</p>
 #[non_exhaustive]
@@ -6277,6 +6321,13 @@ impl PerObjectStatus {
         self.update_token.as_deref()
     }
 }
+impl PerObjectStatus {
+    /// Creates a new builder-style object to manufacture [`PerObjectStatus`](crate::model::PerObjectStatus).
+    pub fn builder() -> crate::model::per_object_status::Builder {
+        crate::model::per_object_status::Builder::default()
+    }
+}
+
 /// See [`PerObjectStatus`](crate::model::PerObjectStatus).
 pub mod per_object_status {
 
@@ -6318,12 +6369,6 @@ pub mod per_object_status {
                 update_token: self.update_token,
             }
         }
-    }
-}
-impl PerObjectStatus {
-    /// Creates a new builder-style object to manufacture [`PerObjectStatus`](crate::model::PerObjectStatus).
-    pub fn builder() -> crate::model::per_object_status::Builder {
-        crate::model::per_object_status::Builder::default()
     }
 }
 
@@ -6459,6 +6504,13 @@ impl Attachment {
         self.status_message.as_deref()
     }
 }
+impl Attachment {
+    /// Creates a new builder-style object to manufacture [`Attachment`](crate::model::Attachment).
+    pub fn builder() -> crate::model::attachment::Builder {
+        crate::model::attachment::Builder::default()
+    }
+}
+
 /// See [`Attachment`](crate::model::Attachment).
 pub mod attachment {
 
@@ -6527,12 +6579,6 @@ pub mod attachment {
                 status_message: self.status_message,
             }
         }
-    }
-}
-impl Attachment {
-    /// Creates a new builder-style object to manufacture [`Attachment`](crate::model::Attachment).
-    pub fn builder() -> crate::model::attachment::Builder {
-        crate::model::attachment::Builder::default()
     }
 }
 
@@ -6926,6 +6972,13 @@ impl Firewall {
         self.encryption_configuration.as_ref()
     }
 }
+impl Firewall {
+    /// Creates a new builder-style object to manufacture [`Firewall`](crate::model::Firewall).
+    pub fn builder() -> crate::model::firewall::Builder {
+        crate::model::firewall::Builder::default()
+    }
+}
+
 /// See [`Firewall`](crate::model::Firewall).
 pub mod firewall {
 
@@ -7122,11 +7175,5 @@ pub mod firewall {
                 encryption_configuration: self.encryption_configuration,
             }
         }
-    }
-}
-impl Firewall {
-    /// Creates a new builder-style object to manufacture [`Firewall`](crate::model::Firewall).
-    pub fn builder() -> crate::model::firewall::Builder {
-        crate::model::firewall::Builder::default()
     }
 }

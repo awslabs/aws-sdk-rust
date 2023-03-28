@@ -127,6 +127,13 @@ impl ListSinksItem {
         self.name.as_deref()
     }
 }
+impl ListSinksItem {
+    /// Creates a new builder-style object to manufacture [`ListSinksItem`](crate::model::ListSinksItem).
+    pub fn builder() -> crate::model::list_sinks_item::Builder {
+        crate::model::list_sinks_item::Builder::default()
+    }
+}
+
 /// See [`ListSinksItem`](crate::model::ListSinksItem).
 pub mod list_sinks_item {
 
@@ -179,12 +186,6 @@ pub mod list_sinks_item {
         }
     }
 }
-impl ListSinksItem {
-    /// Creates a new builder-style object to manufacture [`ListSinksItem`](crate::model::ListSinksItem).
-    pub fn builder() -> crate::model::list_sinks_item::Builder {
-        crate::model::list_sinks_item::Builder::default()
-    }
-}
 
 /// <p>A structure that contains information about one of this source account's links to a monitoring account.</p>
 #[non_exhaustive]
@@ -228,6 +229,13 @@ impl ListLinksItem {
         self.sink_arn.as_deref()
     }
 }
+impl ListLinksItem {
+    /// Creates a new builder-style object to manufacture [`ListLinksItem`](crate::model::ListLinksItem).
+    pub fn builder() -> crate::model::list_links_item::Builder {
+        crate::model::list_links_item::Builder::default()
+    }
+}
+
 /// See [`ListLinksItem`](crate::model::ListLinksItem).
 pub mod list_links_item {
 
@@ -313,12 +321,6 @@ pub mod list_links_item {
         }
     }
 }
-impl ListLinksItem {
-    /// Creates a new builder-style object to manufacture [`ListLinksItem`](crate::model::ListLinksItem).
-    pub fn builder() -> crate::model::list_links_item::Builder {
-        crate::model::list_links_item::Builder::default()
-    }
-}
 
 /// <p>A structure that contains information about one link attached to this monitoring account sink.</p>
 #[non_exhaustive]
@@ -348,6 +350,13 @@ impl ListAttachedLinksItem {
         self.resource_types.as_deref()
     }
 }
+impl ListAttachedLinksItem {
+    /// Creates a new builder-style object to manufacture [`ListAttachedLinksItem`](crate::model::ListAttachedLinksItem).
+    pub fn builder() -> crate::model::list_attached_links_item::Builder {
+        crate::model::list_attached_links_item::Builder::default()
+    }
+}
+
 /// See [`ListAttachedLinksItem`](crate::model::ListAttachedLinksItem).
 pub mod list_attached_links_item {
 
@@ -407,11 +416,5 @@ pub mod list_attached_links_item {
                 resource_types: self.resource_types,
             }
         }
-    }
-}
-impl ListAttachedLinksItem {
-    /// Creates a new builder-style object to manufacture [`ListAttachedLinksItem`](crate::model::ListAttachedLinksItem).
-    pub fn builder() -> crate::model::list_attached_links_item::Builder {
-        crate::model::list_attached_links_item::Builder::default()
     }
 }

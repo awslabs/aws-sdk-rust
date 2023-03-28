@@ -74,6 +74,13 @@ impl PolicyDetails {
         self.actions.as_deref()
     }
 }
+impl PolicyDetails {
+    /// Creates a new builder-style object to manufacture [`PolicyDetails`](crate::model::PolicyDetails).
+    pub fn builder() -> crate::model::policy_details::Builder {
+        crate::model::policy_details::Builder::default()
+    }
+}
+
 /// See [`PolicyDetails`](crate::model::PolicyDetails).
 pub mod policy_details {
 
@@ -250,12 +257,6 @@ pub mod policy_details {
         }
     }
 }
-impl PolicyDetails {
-    /// Creates a new builder-style object to manufacture [`PolicyDetails`](crate::model::PolicyDetails).
-    pub fn builder() -> crate::model::policy_details::Builder {
-        crate::model::policy_details::Builder::default()
-    }
-}
 
 /// <p> <b>[Event-based policies only]</b> Specifies an action for an event-based policy.</p>
 #[non_exhaustive]
@@ -278,6 +279,13 @@ impl Action {
         self.cross_region_copy.as_deref()
     }
 }
+impl Action {
+    /// Creates a new builder-style object to manufacture [`Action`](crate::model::Action).
+    pub fn builder() -> crate::model::action::Builder {
+        crate::model::action::Builder::default()
+    }
+}
+
 /// See [`Action`](crate::model::Action).
 pub mod action {
 
@@ -328,12 +336,6 @@ pub mod action {
         }
     }
 }
-impl Action {
-    /// Creates a new builder-style object to manufacture [`Action`](crate::model::Action).
-    pub fn builder() -> crate::model::action::Builder {
-        crate::model::action::Builder::default()
-    }
-}
 
 /// <p> <b>[Event-based policies only]</b> Specifies a cross-Region copy action for event-based policies.</p> <note>
 /// <p>To specify a cross-Region copy rule for snapshot and AMI policies, use <code>CrossRegionCopyRule</code>.</p>
@@ -367,6 +369,13 @@ impl CrossRegionCopyAction {
         self.retain_rule.as_ref()
     }
 }
+impl CrossRegionCopyAction {
+    /// Creates a new builder-style object to manufacture [`CrossRegionCopyAction`](crate::model::CrossRegionCopyAction).
+    pub fn builder() -> crate::model::cross_region_copy_action::Builder {
+        crate::model::cross_region_copy_action::Builder::default()
+    }
+}
+
 /// See [`CrossRegionCopyAction`](crate::model::CrossRegionCopyAction).
 pub mod cross_region_copy_action {
 
@@ -429,12 +438,6 @@ pub mod cross_region_copy_action {
         }
     }
 }
-impl CrossRegionCopyAction {
-    /// Creates a new builder-style object to manufacture [`CrossRegionCopyAction`](crate::model::CrossRegionCopyAction).
-    pub fn builder() -> crate::model::cross_region_copy_action::Builder {
-        crate::model::cross_region_copy_action::Builder::default()
-    }
-}
 
 /// <p>Specifies a retention rule for cross-Region snapshot copies created by snapshot or event-based policies, or cross-Region AMI copies created by AMI policies. After the retention period expires, the cross-Region copy is deleted.</p>
 #[non_exhaustive]
@@ -457,6 +460,13 @@ impl CrossRegionCopyRetainRule {
         self.interval_unit.as_ref()
     }
 }
+impl CrossRegionCopyRetainRule {
+    /// Creates a new builder-style object to manufacture [`CrossRegionCopyRetainRule`](crate::model::CrossRegionCopyRetainRule).
+    pub fn builder() -> crate::model::cross_region_copy_retain_rule::Builder {
+        crate::model::cross_region_copy_retain_rule::Builder::default()
+    }
+}
+
 /// See [`CrossRegionCopyRetainRule`](crate::model::CrossRegionCopyRetainRule).
 pub mod cross_region_copy_retain_rule {
 
@@ -498,12 +508,6 @@ pub mod cross_region_copy_retain_rule {
                 interval_unit: self.interval_unit,
             }
         }
-    }
-}
-impl CrossRegionCopyRetainRule {
-    /// Creates a new builder-style object to manufacture [`CrossRegionCopyRetainRule`](crate::model::CrossRegionCopyRetainRule).
-    pub fn builder() -> crate::model::cross_region_copy_retain_rule::Builder {
-        crate::model::cross_region_copy_retain_rule::Builder::default()
     }
 }
 
@@ -630,6 +634,13 @@ impl EncryptionConfiguration {
         self.cmk_arn.as_deref()
     }
 }
+impl EncryptionConfiguration {
+    /// Creates a new builder-style object to manufacture [`EncryptionConfiguration`](crate::model::EncryptionConfiguration).
+    pub fn builder() -> crate::model::encryption_configuration::Builder {
+        crate::model::encryption_configuration::Builder::default()
+    }
+}
+
 /// See [`EncryptionConfiguration`](crate::model::EncryptionConfiguration).
 pub mod encryption_configuration {
 
@@ -670,12 +681,6 @@ pub mod encryption_configuration {
         }
     }
 }
-impl EncryptionConfiguration {
-    /// Creates a new builder-style object to manufacture [`EncryptionConfiguration`](crate::model::EncryptionConfiguration).
-    pub fn builder() -> crate::model::encryption_configuration::Builder {
-        crate::model::encryption_configuration::Builder::default()
-    }
-}
 
 /// <p> <b>[Event-based policies only]</b> Specifies an event that activates an event-based policy.</p>
 #[non_exhaustive]
@@ -698,6 +703,13 @@ impl EventSource {
         self.parameters.as_ref()
     }
 }
+impl EventSource {
+    /// Creates a new builder-style object to manufacture [`EventSource`](crate::model::EventSource).
+    pub fn builder() -> crate::model::event_source::Builder {
+        crate::model::event_source::Builder::default()
+    }
+}
+
 /// See [`EventSource`](crate::model::EventSource).
 pub mod event_source {
 
@@ -744,12 +756,6 @@ pub mod event_source {
         }
     }
 }
-impl EventSource {
-    /// Creates a new builder-style object to manufacture [`EventSource`](crate::model::EventSource).
-    pub fn builder() -> crate::model::event_source::Builder {
-        crate::model::event_source::Builder::default()
-    }
-}
 
 /// <p> <b>[Event-based policies only]</b> Specifies an event that activates an event-based policy.</p>
 #[non_exhaustive]
@@ -781,6 +787,13 @@ impl EventParameters {
         self.description_regex.as_deref()
     }
 }
+impl EventParameters {
+    /// Creates a new builder-style object to manufacture [`EventParameters`](crate::model::EventParameters).
+    pub fn builder() -> crate::model::event_parameters::Builder {
+        crate::model::event_parameters::Builder::default()
+    }
+}
+
 /// See [`EventParameters`](crate::model::EventParameters).
 pub mod event_parameters {
 
@@ -848,12 +861,6 @@ pub mod event_parameters {
                 description_regex: self.description_regex,
             }
         }
-    }
-}
-impl EventParameters {
-    /// Creates a new builder-style object to manufacture [`EventParameters`](crate::model::EventParameters).
-    pub fn builder() -> crate::model::event_parameters::Builder {
-        crate::model::event_parameters::Builder::default()
     }
 }
 
@@ -1060,6 +1067,13 @@ impl Parameters {
         self.exclude_data_volume_tags.as_deref()
     }
 }
+impl Parameters {
+    /// Creates a new builder-style object to manufacture [`Parameters`](crate::model::Parameters).
+    pub fn builder() -> crate::model::parameters::Builder {
+        crate::model::parameters::Builder::default()
+    }
+}
+
 /// See [`Parameters`](crate::model::Parameters).
 pub mod parameters {
 
@@ -1123,12 +1137,6 @@ pub mod parameters {
         }
     }
 }
-impl Parameters {
-    /// Creates a new builder-style object to manufacture [`Parameters`](crate::model::Parameters).
-    pub fn builder() -> crate::model::parameters::Builder {
-        crate::model::parameters::Builder::default()
-    }
-}
 
 /// <p>Specifies a tag for a resource.</p>
 #[non_exhaustive]
@@ -1151,6 +1159,13 @@ impl Tag {
         self.value.as_deref()
     }
 }
+impl Tag {
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
+    pub fn builder() -> crate::model::tag::Builder {
+        crate::model::tag::Builder::default()
+    }
+}
+
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
 
@@ -1189,12 +1204,6 @@ pub mod tag {
                 value: self.value,
             }
         }
-    }
-}
-impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
-    pub fn builder() -> crate::model::tag::Builder {
-        crate::model::tag::Builder::default()
     }
 }
 
@@ -1291,6 +1300,13 @@ impl Schedule {
         self.archive_rule.as_ref()
     }
 }
+impl Schedule {
+    /// Creates a new builder-style object to manufacture [`Schedule`](crate::model::Schedule).
+    pub fn builder() -> crate::model::schedule::Builder {
+        crate::model::schedule::Builder::default()
+    }
+}
+
 /// See [`Schedule`](crate::model::Schedule).
 pub mod schedule {
 
@@ -1497,12 +1513,6 @@ pub mod schedule {
         }
     }
 }
-impl Schedule {
-    /// Creates a new builder-style object to manufacture [`Schedule`](crate::model::Schedule).
-    pub fn builder() -> crate::model::schedule::Builder {
-        crate::model::schedule::Builder::default()
-    }
-}
 
 /// <p> <b>[Snapshot policies only]</b> Specifies a snapshot archiving rule for a schedule.</p>
 #[non_exhaustive]
@@ -1518,6 +1528,13 @@ impl ArchiveRule {
         self.retain_rule.as_ref()
     }
 }
+impl ArchiveRule {
+    /// Creates a new builder-style object to manufacture [`ArchiveRule`](crate::model::ArchiveRule).
+    pub fn builder() -> crate::model::archive_rule::Builder {
+        crate::model::archive_rule::Builder::default()
+    }
+}
+
 /// See [`ArchiveRule`](crate::model::ArchiveRule).
 pub mod archive_rule {
 
@@ -1549,12 +1566,6 @@ pub mod archive_rule {
         }
     }
 }
-impl ArchiveRule {
-    /// Creates a new builder-style object to manufacture [`ArchiveRule`](crate::model::ArchiveRule).
-    pub fn builder() -> crate::model::archive_rule::Builder {
-        crate::model::archive_rule::Builder::default()
-    }
-}
 
 /// <p> <b>[Snapshot policies only]</b> Specifies information about the archive storage tier retention period.</p>
 #[non_exhaustive]
@@ -1572,6 +1583,13 @@ impl ArchiveRetainRule {
         self.retention_archive_tier.as_ref()
     }
 }
+impl ArchiveRetainRule {
+    /// Creates a new builder-style object to manufacture [`ArchiveRetainRule`](crate::model::ArchiveRetainRule).
+    pub fn builder() -> crate::model::archive_retain_rule::Builder {
+        crate::model::archive_retain_rule::Builder::default()
+    }
+}
+
 /// See [`ArchiveRetainRule`](crate::model::ArchiveRetainRule).
 pub mod archive_retain_rule {
 
@@ -1601,12 +1619,6 @@ pub mod archive_retain_rule {
                 retention_archive_tier: self.retention_archive_tier,
             }
         }
-    }
-}
-impl ArchiveRetainRule {
-    /// Creates a new builder-style object to manufacture [`ArchiveRetainRule`](crate::model::ArchiveRetainRule).
-    pub fn builder() -> crate::model::archive_retain_rule::Builder {
-        crate::model::archive_retain_rule::Builder::default()
     }
 }
 
@@ -1642,6 +1654,13 @@ impl RetentionArchiveTier {
         self.interval_unit.as_ref()
     }
 }
+impl RetentionArchiveTier {
+    /// Creates a new builder-style object to manufacture [`RetentionArchiveTier`](crate::model::RetentionArchiveTier).
+    pub fn builder() -> crate::model::retention_archive_tier::Builder {
+        crate::model::retention_archive_tier::Builder::default()
+    }
+}
+
 /// See [`RetentionArchiveTier`](crate::model::RetentionArchiveTier).
 pub mod retention_archive_tier {
 
@@ -1697,12 +1716,6 @@ pub mod retention_archive_tier {
         }
     }
 }
-impl RetentionArchiveTier {
-    /// Creates a new builder-style object to manufacture [`RetentionArchiveTier`](crate::model::RetentionArchiveTier).
-    pub fn builder() -> crate::model::retention_archive_tier::Builder {
-        crate::model::retention_archive_tier::Builder::default()
-    }
-}
 
 /// <p> <b>[AMI policies only]</b> Specifies an AMI deprecation rule for AMIs created by an AMI lifecycle policy.</p>
 /// <p>For age-based schedules, you must specify <b>Interval</b> and <b>IntervalUnit</b>. For count-based schedules, you must specify <b>Count</b>.</p>
@@ -1733,6 +1746,13 @@ impl DeprecateRule {
         self.interval_unit.as_ref()
     }
 }
+impl DeprecateRule {
+    /// Creates a new builder-style object to manufacture [`DeprecateRule`](crate::model::DeprecateRule).
+    pub fn builder() -> crate::model::deprecate_rule::Builder {
+        crate::model::deprecate_rule::Builder::default()
+    }
+}
+
 /// See [`DeprecateRule`](crate::model::DeprecateRule).
 pub mod deprecate_rule {
 
@@ -1788,12 +1808,6 @@ pub mod deprecate_rule {
         }
     }
 }
-impl DeprecateRule {
-    /// Creates a new builder-style object to manufacture [`DeprecateRule`](crate::model::DeprecateRule).
-    pub fn builder() -> crate::model::deprecate_rule::Builder {
-        crate::model::deprecate_rule::Builder::default()
-    }
-}
 
 /// <p> <b>[Snapshot policies only]</b> Specifies a rule for sharing snapshots across Amazon Web Services accounts.</p>
 #[non_exhaustive]
@@ -1825,6 +1839,13 @@ impl ShareRule {
         self.unshare_interval_unit.as_ref()
     }
 }
+impl ShareRule {
+    /// Creates a new builder-style object to manufacture [`ShareRule`](crate::model::ShareRule).
+    pub fn builder() -> crate::model::share_rule::Builder {
+        crate::model::share_rule::Builder::default()
+    }
+}
+
 /// See [`ShareRule`](crate::model::ShareRule).
 pub mod share_rule {
 
@@ -1891,12 +1912,6 @@ pub mod share_rule {
                 unshare_interval_unit: self.unshare_interval_unit,
             }
         }
-    }
-}
-impl ShareRule {
-    /// Creates a new builder-style object to manufacture [`ShareRule`](crate::model::ShareRule).
-    pub fn builder() -> crate::model::share_rule::Builder {
-        crate::model::share_rule::Builder::default()
     }
 }
 
@@ -1968,6 +1983,13 @@ impl CrossRegionCopyRule {
         self.deprecate_rule.as_ref()
     }
 }
+impl CrossRegionCopyRule {
+    /// Creates a new builder-style object to manufacture [`CrossRegionCopyRule`](crate::model::CrossRegionCopyRule).
+    pub fn builder() -> crate::model::cross_region_copy_rule::Builder {
+        crate::model::cross_region_copy_rule::Builder::default()
+    }
+}
+
 /// See [`CrossRegionCopyRule`](crate::model::CrossRegionCopyRule).
 pub mod cross_region_copy_rule {
 
@@ -2085,12 +2107,6 @@ pub mod cross_region_copy_rule {
         }
     }
 }
-impl CrossRegionCopyRule {
-    /// Creates a new builder-style object to manufacture [`CrossRegionCopyRule`](crate::model::CrossRegionCopyRule).
-    pub fn builder() -> crate::model::cross_region_copy_rule::Builder {
-        crate::model::cross_region_copy_rule::Builder::default()
-    }
-}
 
 /// <p> <b>[AMI policies only]</b> Specifies an AMI deprecation rule for cross-Region AMI copies created by an AMI policy.</p>
 #[non_exhaustive]
@@ -2113,6 +2129,13 @@ impl CrossRegionCopyDeprecateRule {
         self.interval_unit.as_ref()
     }
 }
+impl CrossRegionCopyDeprecateRule {
+    /// Creates a new builder-style object to manufacture [`CrossRegionCopyDeprecateRule`](crate::model::CrossRegionCopyDeprecateRule).
+    pub fn builder() -> crate::model::cross_region_copy_deprecate_rule::Builder {
+        crate::model::cross_region_copy_deprecate_rule::Builder::default()
+    }
+}
+
 /// See [`CrossRegionCopyDeprecateRule`](crate::model::CrossRegionCopyDeprecateRule).
 pub mod cross_region_copy_deprecate_rule {
 
@@ -2156,12 +2179,6 @@ pub mod cross_region_copy_deprecate_rule {
         }
     }
 }
-impl CrossRegionCopyDeprecateRule {
-    /// Creates a new builder-style object to manufacture [`CrossRegionCopyDeprecateRule`](crate::model::CrossRegionCopyDeprecateRule).
-    pub fn builder() -> crate::model::cross_region_copy_deprecate_rule::Builder {
-        crate::model::cross_region_copy_deprecate_rule::Builder::default()
-    }
-}
 
 /// <p> <b>[Snapshot policies only]</b> Specifies a rule for enabling fast snapshot restore for snapshots created by snapshot policies. You can enable fast snapshot restore based on either a count or a time interval.</p>
 #[non_exhaustive]
@@ -2198,6 +2215,13 @@ impl FastRestoreRule {
         self.availability_zones.as_deref()
     }
 }
+impl FastRestoreRule {
+    /// Creates a new builder-style object to manufacture [`FastRestoreRule`](crate::model::FastRestoreRule).
+    pub fn builder() -> crate::model::fast_restore_rule::Builder {
+        crate::model::fast_restore_rule::Builder::default()
+    }
+}
+
 /// See [`FastRestoreRule`](crate::model::FastRestoreRule).
 pub mod fast_restore_rule {
 
@@ -2274,12 +2298,6 @@ pub mod fast_restore_rule {
         }
     }
 }
-impl FastRestoreRule {
-    /// Creates a new builder-style object to manufacture [`FastRestoreRule`](crate::model::FastRestoreRule).
-    pub fn builder() -> crate::model::fast_restore_rule::Builder {
-        crate::model::fast_restore_rule::Builder::default()
-    }
-}
 
 /// <p> <b>[Snapshot and AMI policies only]</b> Specifies a retention rule for snapshots created by snapshot policies, or for AMIs created by AMI policies.</p> <note>
 /// <p>For snapshot policies that have an <code>ArchiveRule</code>, this retention rule applies to standard tier retention. When the retention threshold is met, snapshots are moved from the standard to the archive tier.</p>
@@ -2317,6 +2335,13 @@ impl RetainRule {
         self.interval_unit.as_ref()
     }
 }
+impl RetainRule {
+    /// Creates a new builder-style object to manufacture [`RetainRule`](crate::model::RetainRule).
+    pub fn builder() -> crate::model::retain_rule::Builder {
+        crate::model::retain_rule::Builder::default()
+    }
+}
+
 /// See [`RetainRule`](crate::model::RetainRule).
 pub mod retain_rule {
 
@@ -2372,12 +2397,6 @@ pub mod retain_rule {
         }
     }
 }
-impl RetainRule {
-    /// Creates a new builder-style object to manufacture [`RetainRule`](crate::model::RetainRule).
-    pub fn builder() -> crate::model::retain_rule::Builder {
-        crate::model::retain_rule::Builder::default()
-    }
-}
 
 /// <p> <b>[Snapshot and AMI policies only]</b> Specifies when the policy should create snapshots or AMIs.</p> <note>
 /// <ul>
@@ -2430,6 +2449,13 @@ impl CreateRule {
         self.cron_expression.as_deref()
     }
 }
+impl CreateRule {
+    /// Creates a new builder-style object to manufacture [`CreateRule`](crate::model::CreateRule).
+    pub fn builder() -> crate::model::create_rule::Builder {
+        crate::model::create_rule::Builder::default()
+    }
+}
+
 /// See [`CreateRule`](crate::model::CreateRule).
 pub mod create_rule {
 
@@ -2526,12 +2552,6 @@ pub mod create_rule {
                 cron_expression: self.cron_expression,
             }
         }
-    }
-}
-impl CreateRule {
-    /// Creates a new builder-style object to manufacture [`CreateRule`](crate::model::CreateRule).
-    pub fn builder() -> crate::model::create_rule::Builder {
-        crate::model::create_rule::Builder::default()
     }
 }
 
@@ -3168,6 +3188,13 @@ impl LifecyclePolicy {
         self.policy_arn.as_deref()
     }
 }
+impl LifecyclePolicy {
+    /// Creates a new builder-style object to manufacture [`LifecyclePolicy`](crate::model::LifecyclePolicy).
+    pub fn builder() -> crate::model::lifecycle_policy::Builder {
+        crate::model::lifecycle_policy::Builder::default()
+    }
+}
+
 /// See [`LifecyclePolicy`](crate::model::LifecyclePolicy).
 pub mod lifecycle_policy {
 
@@ -3339,12 +3366,6 @@ pub mod lifecycle_policy {
         }
     }
 }
-impl LifecyclePolicy {
-    /// Creates a new builder-style object to manufacture [`LifecyclePolicy`](crate::model::LifecyclePolicy).
-    pub fn builder() -> crate::model::lifecycle_policy::Builder {
-        crate::model::lifecycle_policy::Builder::default()
-    }
-}
 
 /// When writing a match expression against `GettablePolicyStateValues`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -3489,6 +3510,13 @@ impl LifecyclePolicySummary {
         self.policy_type.as_ref()
     }
 }
+impl LifecyclePolicySummary {
+    /// Creates a new builder-style object to manufacture [`LifecyclePolicySummary`](crate::model::LifecyclePolicySummary).
+    pub fn builder() -> crate::model::lifecycle_policy_summary::Builder {
+        crate::model::lifecycle_policy_summary::Builder::default()
+    }
+}
+
 /// See [`LifecyclePolicySummary`](crate::model::LifecyclePolicySummary).
 pub mod lifecycle_policy_summary {
 
@@ -3586,11 +3614,5 @@ pub mod lifecycle_policy_summary {
                 policy_type: self.policy_type,
             }
         }
-    }
-}
-impl LifecyclePolicySummary {
-    /// Creates a new builder-style object to manufacture [`LifecyclePolicySummary`](crate::model::LifecyclePolicySummary).
-    pub fn builder() -> crate::model::lifecycle_policy_summary::Builder {
-        crate::model::lifecycle_policy_summary::Builder::default()
     }
 }

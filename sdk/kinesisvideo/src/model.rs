@@ -14,6 +14,13 @@ impl SingleMasterConfiguration {
         self.message_ttl_seconds
     }
 }
+impl SingleMasterConfiguration {
+    /// Creates a new builder-style object to manufacture [`SingleMasterConfiguration`](crate::model::SingleMasterConfiguration).
+    pub fn builder() -> crate::model::single_master_configuration::Builder {
+        crate::model::single_master_configuration::Builder::default()
+    }
+}
+
 /// See [`SingleMasterConfiguration`](crate::model::SingleMasterConfiguration).
 pub mod single_master_configuration {
 
@@ -42,12 +49,6 @@ pub mod single_master_configuration {
         }
     }
 }
-impl SingleMasterConfiguration {
-    /// Creates a new builder-style object to manufacture [`SingleMasterConfiguration`](crate::model::SingleMasterConfiguration).
-    pub fn builder() -> crate::model::single_master_configuration::Builder {
-        crate::model::single_master_configuration::Builder::default()
-    }
-}
 
 /// <p>The structure that contains the notification information for the KVS images delivery. If this parameter is null, the configuration will be deleted from the stream.</p>
 #[non_exhaustive]
@@ -72,6 +73,13 @@ impl NotificationConfiguration {
         self.destination_config.as_ref()
     }
 }
+impl NotificationConfiguration {
+    /// Creates a new builder-style object to manufacture [`NotificationConfiguration`](crate::model::NotificationConfiguration).
+    pub fn builder() -> crate::model::notification_configuration::Builder {
+        crate::model::notification_configuration::Builder::default()
+    }
+}
+
 /// See [`NotificationConfiguration`](crate::model::NotificationConfiguration).
 pub mod notification_configuration {
 
@@ -122,12 +130,6 @@ pub mod notification_configuration {
         }
     }
 }
-impl NotificationConfiguration {
-    /// Creates a new builder-style object to manufacture [`NotificationConfiguration`](crate::model::NotificationConfiguration).
-    pub fn builder() -> crate::model::notification_configuration::Builder {
-        crate::model::notification_configuration::Builder::default()
-    }
-}
 
 /// <p>The structure that contains the information required to deliver a notification to a customer.</p>
 #[non_exhaustive]
@@ -143,6 +145,13 @@ impl NotificationDestinationConfig {
         self.uri.as_deref()
     }
 }
+impl NotificationDestinationConfig {
+    /// Creates a new builder-style object to manufacture [`NotificationDestinationConfig`](crate::model::NotificationDestinationConfig).
+    pub fn builder() -> crate::model::notification_destination_config::Builder {
+        crate::model::notification_destination_config::Builder::default()
+    }
+}
+
 /// See [`NotificationDestinationConfig`](crate::model::NotificationDestinationConfig).
 pub mod notification_destination_config {
 
@@ -167,12 +176,6 @@ pub mod notification_destination_config {
         pub fn build(self) -> crate::model::NotificationDestinationConfig {
             crate::model::NotificationDestinationConfig { uri: self.uri }
         }
-    }
-}
-impl NotificationDestinationConfig {
-    /// Creates a new builder-style object to manufacture [`NotificationDestinationConfig`](crate::model::NotificationDestinationConfig).
-    pub fn builder() -> crate::model::notification_destination_config::Builder {
-        crate::model::notification_destination_config::Builder::default()
     }
 }
 
@@ -289,6 +292,13 @@ impl MediaStorageConfiguration {
         self.status.as_ref()
     }
 }
+impl MediaStorageConfiguration {
+    /// Creates a new builder-style object to manufacture [`MediaStorageConfiguration`](crate::model::MediaStorageConfiguration).
+    pub fn builder() -> crate::model::media_storage_configuration::Builder {
+        crate::model::media_storage_configuration::Builder::default()
+    }
+}
+
 /// See [`MediaStorageConfiguration`](crate::model::MediaStorageConfiguration).
 pub mod media_storage_configuration {
 
@@ -330,12 +340,6 @@ pub mod media_storage_configuration {
                 status: self.status,
             }
         }
-    }
-}
-impl MediaStorageConfiguration {
-    /// Creates a new builder-style object to manufacture [`MediaStorageConfiguration`](crate::model::MediaStorageConfiguration).
-    pub fn builder() -> crate::model::media_storage_configuration::Builder {
-        crate::model::media_storage_configuration::Builder::default()
     }
 }
 
@@ -502,6 +506,13 @@ impl ImageGenerationConfiguration {
         self.height_pixels
     }
 }
+impl ImageGenerationConfiguration {
+    /// Creates a new builder-style object to manufacture [`ImageGenerationConfiguration`](crate::model::ImageGenerationConfiguration).
+    pub fn builder() -> crate::model::image_generation_configuration::Builder {
+        crate::model::image_generation_configuration::Builder::default()
+    }
+}
+
 /// See [`ImageGenerationConfiguration`](crate::model::ImageGenerationConfiguration).
 pub mod image_generation_configuration {
 
@@ -642,12 +653,6 @@ pub mod image_generation_configuration {
                 height_pixels: self.height_pixels,
             }
         }
-    }
-}
-impl ImageGenerationConfiguration {
-    /// Creates a new builder-style object to manufacture [`ImageGenerationConfiguration`](crate::model::ImageGenerationConfiguration).
-    pub fn builder() -> crate::model::image_generation_configuration::Builder {
-        crate::model::image_generation_configuration::Builder::default()
     }
 }
 
@@ -847,6 +852,13 @@ impl ImageGenerationDestinationConfig {
         self.destination_region.as_deref()
     }
 }
+impl ImageGenerationDestinationConfig {
+    /// Creates a new builder-style object to manufacture [`ImageGenerationDestinationConfig`](crate::model::ImageGenerationDestinationConfig).
+    pub fn builder() -> crate::model::image_generation_destination_config::Builder {
+        crate::model::image_generation_destination_config::Builder::default()
+    }
+}
+
 /// See [`ImageGenerationDestinationConfig`](crate::model::ImageGenerationDestinationConfig).
 pub mod image_generation_destination_config {
 
@@ -888,12 +900,6 @@ pub mod image_generation_destination_config {
                 destination_region: self.destination_region,
             }
         }
-    }
-}
-impl ImageGenerationDestinationConfig {
-    /// Creates a new builder-style object to manufacture [`ImageGenerationDestinationConfig`](crate::model::ImageGenerationDestinationConfig).
-    pub fn builder() -> crate::model::image_generation_destination_config::Builder {
-        crate::model::image_generation_destination_config::Builder::default()
     }
 }
 
@@ -1102,6 +1108,13 @@ impl Tag {
         self.value.as_deref()
     }
 }
+impl Tag {
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
+    pub fn builder() -> crate::model::tag::Builder {
+        crate::model::tag::Builder::default()
+    }
+}
+
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
 
@@ -1142,12 +1155,6 @@ pub mod tag {
         }
     }
 }
-impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
-    pub fn builder() -> crate::model::tag::Builder {
-        crate::model::tag::Builder::default()
-    }
-}
 
 /// <p>A description of the stream's edge configuration that will be used to sync with the Edge Agent IoT Greengrass component. The Edge Agent component will run on an IoT Hub Device setup at your premise.</p>
 #[non_exhaustive]
@@ -1184,6 +1191,13 @@ impl EdgeConfig {
         self.deletion_config.as_ref()
     }
 }
+impl EdgeConfig {
+    /// Creates a new builder-style object to manufacture [`EdgeConfig`](crate::model::EdgeConfig).
+    pub fn builder() -> crate::model::edge_config::Builder {
+        crate::model::edge_config::Builder::default()
+    }
+}
+
 /// See [`EdgeConfig`](crate::model::EdgeConfig).
 pub mod edge_config {
 
@@ -1260,12 +1274,6 @@ pub mod edge_config {
         }
     }
 }
-impl EdgeConfig {
-    /// Creates a new builder-style object to manufacture [`EdgeConfig`](crate::model::EdgeConfig).
-    pub fn builder() -> crate::model::edge_config::Builder {
-        crate::model::edge_config::Builder::default()
-    }
-}
 
 /// <p>The configuration details required to delete the connection of the stream from the Edge Agent.</p>
 #[non_exhaustive]
@@ -1297,6 +1305,13 @@ impl DeletionConfig {
         self.delete_after_upload
     }
 }
+impl DeletionConfig {
+    /// Creates a new builder-style object to manufacture [`DeletionConfig`](crate::model::DeletionConfig).
+    pub fn builder() -> crate::model::deletion_config::Builder {
+        crate::model::deletion_config::Builder::default()
+    }
+}
+
 /// See [`DeletionConfig`](crate::model::DeletionConfig).
 pub mod deletion_config {
 
@@ -1354,12 +1369,6 @@ pub mod deletion_config {
         }
     }
 }
-impl DeletionConfig {
-    /// Creates a new builder-style object to manufacture [`DeletionConfig`](crate::model::DeletionConfig).
-    pub fn builder() -> crate::model::deletion_config::Builder {
-        crate::model::deletion_config::Builder::default()
-    }
-}
 
 /// <p>The configuration details that include the maximum size of the media (<code>MaxLocalMediaSizeInMB</code>) that you want to store for a stream on the Edge Agent, as well as the strategy that should be used (<code>StrategyOnFullSize</code>) when a stream's maximum size has been reached.</p>
 #[non_exhaustive]
@@ -1382,6 +1391,13 @@ impl LocalSizeConfig {
         self.strategy_on_full_size.as_ref()
     }
 }
+impl LocalSizeConfig {
+    /// Creates a new builder-style object to manufacture [`LocalSizeConfig`](crate::model::LocalSizeConfig).
+    pub fn builder() -> crate::model::local_size_config::Builder {
+        crate::model::local_size_config::Builder::default()
+    }
+}
+
 /// See [`LocalSizeConfig`](crate::model::LocalSizeConfig).
 pub mod local_size_config {
 
@@ -1423,12 +1439,6 @@ pub mod local_size_config {
                 strategy_on_full_size: self.strategy_on_full_size,
             }
         }
-    }
-}
-impl LocalSizeConfig {
-    /// Creates a new builder-style object to manufacture [`LocalSizeConfig`](crate::model::LocalSizeConfig).
-    pub fn builder() -> crate::model::local_size_config::Builder {
-        crate::model::local_size_config::Builder::default()
     }
 }
 
@@ -1538,6 +1548,13 @@ impl UploaderConfig {
         self.schedule_config.as_ref()
     }
 }
+impl UploaderConfig {
+    /// Creates a new builder-style object to manufacture [`UploaderConfig`](crate::model::UploaderConfig).
+    pub fn builder() -> crate::model::uploader_config::Builder {
+        crate::model::uploader_config::Builder::default()
+    }
+}
+
 /// See [`UploaderConfig`](crate::model::UploaderConfig).
 pub mod uploader_config {
 
@@ -1569,12 +1586,6 @@ pub mod uploader_config {
         }
     }
 }
-impl UploaderConfig {
-    /// Creates a new builder-style object to manufacture [`UploaderConfig`](crate::model::UploaderConfig).
-    pub fn builder() -> crate::model::uploader_config::Builder {
-        crate::model::uploader_config::Builder::default()
-    }
-}
 
 /// <p>This API enables you to specify the duration that the camera, or local media file, should record onto the Edge Agent. The <code>ScheduleConfig</code> consists of the <code>ScheduleExpression</code> and the <code>DurationInMinutes</code> attributes. </p>
 /// <p>If the <code>ScheduleExpression</code> is not provided, then the Edge Agent will always be set to recording mode.</p>
@@ -1600,6 +1611,13 @@ impl ScheduleConfig {
         self.duration_in_seconds
     }
 }
+impl ScheduleConfig {
+    /// Creates a new builder-style object to manufacture [`ScheduleConfig`](crate::model::ScheduleConfig).
+    pub fn builder() -> crate::model::schedule_config::Builder {
+        crate::model::schedule_config::Builder::default()
+    }
+}
+
 /// See [`ScheduleConfig`](crate::model::ScheduleConfig).
 pub mod schedule_config {
 
@@ -1645,12 +1663,6 @@ pub mod schedule_config {
         }
     }
 }
-impl ScheduleConfig {
-    /// Creates a new builder-style object to manufacture [`ScheduleConfig`](crate::model::ScheduleConfig).
-    pub fn builder() -> crate::model::schedule_config::Builder {
-        crate::model::schedule_config::Builder::default()
-    }
-}
 
 /// <p>The recorder configuration consists of the local <code>MediaSourceConfig</code> details that are used as credentials to accesss the local media files streamed on the camera. </p>
 #[non_exhaustive]
@@ -1673,6 +1685,13 @@ impl RecorderConfig {
         self.schedule_config.as_ref()
     }
 }
+impl RecorderConfig {
+    /// Creates a new builder-style object to manufacture [`RecorderConfig`](crate::model::RecorderConfig).
+    pub fn builder() -> crate::model::recorder_config::Builder {
+        crate::model::recorder_config::Builder::default()
+    }
+}
+
 /// See [`RecorderConfig`](crate::model::RecorderConfig).
 pub mod recorder_config {
 
@@ -1719,12 +1738,6 @@ pub mod recorder_config {
         }
     }
 }
-impl RecorderConfig {
-    /// Creates a new builder-style object to manufacture [`RecorderConfig`](crate::model::RecorderConfig).
-    pub fn builder() -> crate::model::recorder_config::Builder {
-        crate::model::recorder_config::Builder::default()
-    }
-}
 
 /// <p>The configuration details that consist of the credentials required (<code>MediaUriSecretArn</code> and <code>MediaUriType</code>) to access the media files that are streamed to the camera.</p>
 #[non_exhaustive]
@@ -1759,6 +1772,13 @@ impl std::fmt::Debug for MediaSourceConfig {
         formatter.finish()
     }
 }
+impl MediaSourceConfig {
+    /// Creates a new builder-style object to manufacture [`MediaSourceConfig`](crate::model::MediaSourceConfig).
+    pub fn builder() -> crate::model::media_source_config::Builder {
+        crate::model::media_source_config::Builder::default()
+    }
+}
+
 /// See [`MediaSourceConfig`](crate::model::MediaSourceConfig).
 pub mod media_source_config {
 
@@ -1815,12 +1835,6 @@ pub mod media_source_config {
             formatter.field("media_uri_type", &self.media_uri_type);
             formatter.finish()
         }
-    }
-}
-impl MediaSourceConfig {
-    /// Creates a new builder-style object to manufacture [`MediaSourceConfig`](crate::model::MediaSourceConfig).
-    pub fn builder() -> crate::model::media_source_config::Builder {
-        crate::model::media_source_config::Builder::default()
     }
 }
 
@@ -2101,6 +2115,13 @@ impl StreamInfo {
         self.data_retention_in_hours
     }
 }
+impl StreamInfo {
+    /// Creates a new builder-style object to manufacture [`StreamInfo`](crate::model::StreamInfo).
+    pub fn builder() -> crate::model::stream_info::Builder {
+        crate::model::stream_info::Builder::default()
+    }
+}
+
 /// See [`StreamInfo`](crate::model::StreamInfo).
 pub mod stream_info {
 
@@ -2228,12 +2249,6 @@ pub mod stream_info {
         }
     }
 }
-impl StreamInfo {
-    /// Creates a new builder-style object to manufacture [`StreamInfo`](crate::model::StreamInfo).
-    pub fn builder() -> crate::model::stream_info::Builder {
-        crate::model::stream_info::Builder::default()
-    }
-}
 
 /// When writing a match expression against `Status`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -2356,6 +2371,13 @@ impl StreamNameCondition {
         self.comparison_value.as_deref()
     }
 }
+impl StreamNameCondition {
+    /// Creates a new builder-style object to manufacture [`StreamNameCondition`](crate::model::StreamNameCondition).
+    pub fn builder() -> crate::model::stream_name_condition::Builder {
+        crate::model::stream_name_condition::Builder::default()
+    }
+}
+
 /// See [`StreamNameCondition`](crate::model::StreamNameCondition).
 pub mod stream_name_condition {
 
@@ -2400,12 +2422,6 @@ pub mod stream_name_condition {
                 comparison_value: self.comparison_value,
             }
         }
-    }
-}
-impl StreamNameCondition {
-    /// Creates a new builder-style object to manufacture [`StreamNameCondition`](crate::model::StreamNameCondition).
-    pub fn builder() -> crate::model::stream_name_condition::Builder {
-        crate::model::stream_name_condition::Builder::default()
     }
 }
 
@@ -2554,6 +2570,13 @@ impl ChannelInfo {
         self.version.as_deref()
     }
 }
+impl ChannelInfo {
+    /// Creates a new builder-style object to manufacture [`ChannelInfo`](crate::model::ChannelInfo).
+    pub fn builder() -> crate::model::channel_info::Builder {
+        crate::model::channel_info::Builder::default()
+    }
+}
+
 /// See [`ChannelInfo`](crate::model::ChannelInfo).
 pub mod channel_info {
 
@@ -2670,12 +2693,6 @@ pub mod channel_info {
         }
     }
 }
-impl ChannelInfo {
-    /// Creates a new builder-style object to manufacture [`ChannelInfo`](crate::model::ChannelInfo).
-    pub fn builder() -> crate::model::channel_info::Builder {
-        crate::model::channel_info::Builder::default()
-    }
-}
 
 /// When writing a match expression against `ChannelType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -2788,6 +2805,13 @@ impl ChannelNameCondition {
         self.comparison_value.as_deref()
     }
 }
+impl ChannelNameCondition {
+    /// Creates a new builder-style object to manufacture [`ChannelNameCondition`](crate::model::ChannelNameCondition).
+    pub fn builder() -> crate::model::channel_name_condition::Builder {
+        crate::model::channel_name_condition::Builder::default()
+    }
+}
+
 /// See [`ChannelNameCondition`](crate::model::ChannelNameCondition).
 pub mod channel_name_condition {
 
@@ -2834,12 +2858,6 @@ pub mod channel_name_condition {
         }
     }
 }
-impl ChannelNameCondition {
-    /// Creates a new builder-style object to manufacture [`ChannelNameCondition`](crate::model::ChannelNameCondition).
-    pub fn builder() -> crate::model::channel_name_condition::Builder {
-        crate::model::channel_name_condition::Builder::default()
-    }
-}
 
 /// <p>An object that describes the endpoint of the signaling channel returned by the <code>GetSignalingChannelEndpoint</code> API.</p>
 #[non_exhaustive]
@@ -2862,6 +2880,13 @@ impl ResourceEndpointListItem {
         self.resource_endpoint.as_deref()
     }
 }
+impl ResourceEndpointListItem {
+    /// Creates a new builder-style object to manufacture [`ResourceEndpointListItem`](crate::model::ResourceEndpointListItem).
+    pub fn builder() -> crate::model::resource_endpoint_list_item::Builder {
+        crate::model::resource_endpoint_list_item::Builder::default()
+    }
+}
+
 /// See [`ResourceEndpointListItem`](crate::model::ResourceEndpointListItem).
 pub mod resource_endpoint_list_item {
 
@@ -2906,12 +2931,6 @@ pub mod resource_endpoint_list_item {
                 resource_endpoint: self.resource_endpoint,
             }
         }
-    }
-}
-impl ResourceEndpointListItem {
-    /// Creates a new builder-style object to manufacture [`ResourceEndpointListItem`](crate::model::ResourceEndpointListItem).
-    pub fn builder() -> crate::model::resource_endpoint_list_item::Builder {
-        crate::model::resource_endpoint_list_item::Builder::default()
     }
 }
 
@@ -3031,6 +3050,13 @@ impl SingleMasterChannelEndpointConfiguration {
         self.role.as_ref()
     }
 }
+impl SingleMasterChannelEndpointConfiguration {
+    /// Creates a new builder-style object to manufacture [`SingleMasterChannelEndpointConfiguration`](crate::model::SingleMasterChannelEndpointConfiguration).
+    pub fn builder() -> crate::model::single_master_channel_endpoint_configuration::Builder {
+        crate::model::single_master_channel_endpoint_configuration::Builder::default()
+    }
+}
+
 /// See [`SingleMasterChannelEndpointConfiguration`](crate::model::SingleMasterChannelEndpointConfiguration).
 pub mod single_master_channel_endpoint_configuration {
 
@@ -3078,12 +3104,6 @@ pub mod single_master_channel_endpoint_configuration {
                 role: self.role,
             }
         }
-    }
-}
-impl SingleMasterChannelEndpointConfiguration {
-    /// Creates a new builder-style object to manufacture [`SingleMasterChannelEndpointConfiguration`](crate::model::SingleMasterChannelEndpointConfiguration).
-    pub fn builder() -> crate::model::single_master_channel_endpoint_configuration::Builder {
-        crate::model::single_master_channel_endpoint_configuration::Builder::default()
     }
 }
 
@@ -3327,6 +3347,13 @@ impl MappedResourceConfigurationListItem {
         self.arn.as_deref()
     }
 }
+impl MappedResourceConfigurationListItem {
+    /// Creates a new builder-style object to manufacture [`MappedResourceConfigurationListItem`](crate::model::MappedResourceConfigurationListItem).
+    pub fn builder() -> crate::model::mapped_resource_configuration_list_item::Builder {
+        crate::model::mapped_resource_configuration_list_item::Builder::default()
+    }
+}
+
 /// See [`MappedResourceConfigurationListItem`](crate::model::MappedResourceConfigurationListItem).
 pub mod mapped_resource_configuration_list_item {
 
@@ -3365,11 +3392,5 @@ pub mod mapped_resource_configuration_list_item {
                 arn: self.arn,
             }
         }
-    }
-}
-impl MappedResourceConfigurationListItem {
-    /// Creates a new builder-style object to manufacture [`MappedResourceConfigurationListItem`](crate::model::MappedResourceConfigurationListItem).
-    pub fn builder() -> crate::model::mapped_resource_configuration_list_item::Builder {
-        crate::model::mapped_resource_configuration_list_item::Builder::default()
     }
 }

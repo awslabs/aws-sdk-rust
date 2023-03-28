@@ -181,6 +181,13 @@ impl RepositoryAssociationSummary {
         self.state.as_ref()
     }
 }
+impl RepositoryAssociationSummary {
+    /// Creates a new builder-style object to manufacture [`RepositoryAssociationSummary`](crate::model::RepositoryAssociationSummary).
+    pub fn builder() -> crate::model::repository_association_summary::Builder {
+        crate::model::repository_association_summary::Builder::default()
+    }
+}
+
 /// See [`RepositoryAssociationSummary`](crate::model::RepositoryAssociationSummary).
 pub mod repository_association_summary {
 
@@ -337,12 +344,6 @@ pub mod repository_association_summary {
                 state: self.state,
             }
         }
-    }
-}
-impl RepositoryAssociationSummary {
-    /// Creates a new builder-style object to manufacture [`RepositoryAssociationSummary`](crate::model::RepositoryAssociationSummary).
-    pub fn builder() -> crate::model::repository_association_summary::Builder {
-        crate::model::repository_association_summary::Builder::default()
     }
 }
 
@@ -635,6 +636,13 @@ impl RecommendationSummary {
         self.severity.as_ref()
     }
 }
+impl RecommendationSummary {
+    /// Creates a new builder-style object to manufacture [`RecommendationSummary`](crate::model::RecommendationSummary).
+    pub fn builder() -> crate::model::recommendation_summary::Builder {
+        crate::model::recommendation_summary::Builder::default()
+    }
+}
+
 /// See [`RecommendationSummary`](crate::model::RecommendationSummary).
 pub mod recommendation_summary {
 
@@ -758,12 +766,6 @@ pub mod recommendation_summary {
                 severity: self.severity,
             }
         }
-    }
-}
-impl RecommendationSummary {
-    /// Creates a new builder-style object to manufacture [`RecommendationSummary`](crate::model::RecommendationSummary).
-    pub fn builder() -> crate::model::recommendation_summary::Builder {
-        crate::model::recommendation_summary::Builder::default()
     }
 }
 
@@ -914,6 +916,13 @@ impl RuleMetadata {
         self.rule_tags.as_deref()
     }
 }
+impl RuleMetadata {
+    /// Creates a new builder-style object to manufacture [`RuleMetadata`](crate::model::RuleMetadata).
+    pub fn builder() -> crate::model::rule_metadata::Builder {
+        crate::model::rule_metadata::Builder::default()
+    }
+}
+
 /// See [`RuleMetadata`](crate::model::RuleMetadata).
 pub mod rule_metadata {
 
@@ -1003,12 +1012,6 @@ pub mod rule_metadata {
                 rule_tags: self.rule_tags,
             }
         }
-    }
-}
-impl RuleMetadata {
-    /// Creates a new builder-style object to manufacture [`RuleMetadata`](crate::model::RuleMetadata).
-    pub fn builder() -> crate::model::rule_metadata::Builder {
-        crate::model::rule_metadata::Builder::default()
     }
 }
 
@@ -1191,6 +1194,13 @@ impl RecommendationFeedbackSummary {
         self.user_id.as_deref()
     }
 }
+impl RecommendationFeedbackSummary {
+    /// Creates a new builder-style object to manufacture [`RecommendationFeedbackSummary`](crate::model::RecommendationFeedbackSummary).
+    pub fn builder() -> crate::model::recommendation_feedback_summary::Builder {
+        crate::model::recommendation_feedback_summary::Builder::default()
+    }
+}
+
 /// See [`RecommendationFeedbackSummary`](crate::model::RecommendationFeedbackSummary).
 pub mod recommendation_feedback_summary {
 
@@ -1255,12 +1265,6 @@ pub mod recommendation_feedback_summary {
                 user_id: self.user_id,
             }
         }
-    }
-}
-impl RecommendationFeedbackSummary {
-    /// Creates a new builder-style object to manufacture [`RecommendationFeedbackSummary`](crate::model::RecommendationFeedbackSummary).
-    pub fn builder() -> crate::model::recommendation_feedback_summary::Builder {
-        crate::model::recommendation_feedback_summary::Builder::default()
     }
 }
 
@@ -1369,6 +1373,13 @@ impl CodeReviewSummary {
         self.source_code_type.as_ref()
     }
 }
+impl CodeReviewSummary {
+    /// Creates a new builder-style object to manufacture [`CodeReviewSummary`](crate::model::CodeReviewSummary).
+    pub fn builder() -> crate::model::code_review_summary::Builder {
+        crate::model::code_review_summary::Builder::default()
+    }
+}
+
 /// See [`CodeReviewSummary`](crate::model::CodeReviewSummary).
 pub mod code_review_summary {
 
@@ -1567,12 +1578,6 @@ pub mod code_review_summary {
         }
     }
 }
-impl CodeReviewSummary {
-    /// Creates a new builder-style object to manufacture [`CodeReviewSummary`](crate::model::CodeReviewSummary).
-    pub fn builder() -> crate::model::code_review_summary::Builder {
-        crate::model::code_review_summary::Builder::default()
-    }
-}
 
 /// <p>Specifies the source code that is analyzed in a code review.</p>
 #[non_exhaustive]
@@ -1618,6 +1623,13 @@ impl SourceCodeType {
         self.request_metadata.as_ref()
     }
 }
+impl SourceCodeType {
+    /// Creates a new builder-style object to manufacture [`SourceCodeType`](crate::model::SourceCodeType).
+    pub fn builder() -> crate::model::source_code_type::Builder {
+        crate::model::source_code_type::Builder::default()
+    }
+}
+
 /// See [`SourceCodeType`](crate::model::SourceCodeType).
 pub mod source_code_type {
 
@@ -1712,12 +1724,6 @@ pub mod source_code_type {
         }
     }
 }
-impl SourceCodeType {
-    /// Creates a new builder-style object to manufacture [`SourceCodeType`](crate::model::SourceCodeType).
-    pub fn builder() -> crate::model::source_code_type::Builder {
-        crate::model::source_code_type::Builder::default()
-    }
-}
 
 /// <p>Metadata that is associated with a code review. This applies to both pull request and repository analysis code reviews.</p>
 #[non_exhaustive]
@@ -1754,6 +1760,13 @@ impl RequestMetadata {
         self.vendor_name.as_ref()
     }
 }
+impl RequestMetadata {
+    /// Creates a new builder-style object to manufacture [`RequestMetadata`](crate::model::RequestMetadata).
+    pub fn builder() -> crate::model::request_metadata::Builder {
+        crate::model::request_metadata::Builder::default()
+    }
+}
+
 /// See [`RequestMetadata`](crate::model::RequestMetadata).
 pub mod request_metadata {
 
@@ -1822,12 +1835,6 @@ pub mod request_metadata {
                 vendor_name: self.vendor_name,
             }
         }
-    }
-}
-impl RequestMetadata {
-    /// Creates a new builder-style object to manufacture [`RequestMetadata`](crate::model::RequestMetadata).
-    pub fn builder() -> crate::model::request_metadata::Builder {
-        crate::model::request_metadata::Builder::default()
     }
 }
 
@@ -1947,6 +1954,13 @@ impl EventInfo {
         self.state.as_deref()
     }
 }
+impl EventInfo {
+    /// Creates a new builder-style object to manufacture [`EventInfo`](crate::model::EventInfo).
+    pub fn builder() -> crate::model::event_info::Builder {
+        crate::model::event_info::Builder::default()
+    }
+}
+
 /// See [`EventInfo`](crate::model::EventInfo).
 pub mod event_info {
 
@@ -1987,12 +2001,6 @@ pub mod event_info {
         }
     }
 }
-impl EventInfo {
-    /// Creates a new builder-style object to manufacture [`EventInfo`](crate::model::EventInfo).
-    pub fn builder() -> crate::model::event_info::Builder {
-        crate::model::event_info::Builder::default()
-    }
-}
 
 /// <p>Information about an associated repository in an S3 bucket. The associated repository contains a source code .zip file and a build artifacts .zip file that contains .jar or .class files.</p>
 #[non_exhaustive]
@@ -2015,6 +2023,13 @@ impl S3BucketRepository {
         self.details.as_ref()
     }
 }
+impl S3BucketRepository {
+    /// Creates a new builder-style object to manufacture [`S3BucketRepository`](crate::model::S3BucketRepository).
+    pub fn builder() -> crate::model::s3_bucket_repository::Builder {
+        crate::model::s3_bucket_repository::Builder::default()
+    }
+}
+
 /// See [`S3BucketRepository`](crate::model::S3BucketRepository).
 pub mod s3_bucket_repository {
 
@@ -2058,12 +2073,6 @@ pub mod s3_bucket_repository {
         }
     }
 }
-impl S3BucketRepository {
-    /// Creates a new builder-style object to manufacture [`S3BucketRepository`](crate::model::S3BucketRepository).
-    pub fn builder() -> crate::model::s3_bucket_repository::Builder {
-        crate::model::s3_bucket_repository::Builder::default()
-    }
-}
 
 /// <p>Specifies the name of an S3 bucket and a <code>CodeArtifacts</code> object that contains the S3 object keys for a source code .zip file and for a build artifacts .zip file that contains .jar or .class files.</p>
 #[non_exhaustive]
@@ -2086,6 +2095,13 @@ impl S3RepositoryDetails {
         self.code_artifacts.as_ref()
     }
 }
+impl S3RepositoryDetails {
+    /// Creates a new builder-style object to manufacture [`S3RepositoryDetails`](crate::model::S3RepositoryDetails).
+    pub fn builder() -> crate::model::s3_repository_details::Builder {
+        crate::model::s3_repository_details::Builder::default()
+    }
+}
+
 /// See [`S3RepositoryDetails`](crate::model::S3RepositoryDetails).
 pub mod s3_repository_details {
 
@@ -2129,12 +2145,6 @@ pub mod s3_repository_details {
         }
     }
 }
-impl S3RepositoryDetails {
-    /// Creates a new builder-style object to manufacture [`S3RepositoryDetails`](crate::model::S3RepositoryDetails).
-    pub fn builder() -> crate::model::s3_repository_details::Builder {
-        crate::model::s3_repository_details::Builder::default()
-    }
-}
 
 /// <p>Code artifacts are source code artifacts and build artifacts used in a repository analysis or a pull request review.</p>
 /// <ul>
@@ -2161,6 +2171,13 @@ impl CodeArtifacts {
         self.build_artifacts_object_key.as_deref()
     }
 }
+impl CodeArtifacts {
+    /// Creates a new builder-style object to manufacture [`CodeArtifacts`](crate::model::CodeArtifacts).
+    pub fn builder() -> crate::model::code_artifacts::Builder {
+        crate::model::code_artifacts::Builder::default()
+    }
+}
+
 /// See [`CodeArtifacts`](crate::model::CodeArtifacts).
 pub mod code_artifacts {
 
@@ -2210,12 +2227,6 @@ pub mod code_artifacts {
         }
     }
 }
-impl CodeArtifacts {
-    /// Creates a new builder-style object to manufacture [`CodeArtifacts`](crate::model::CodeArtifacts).
-    pub fn builder() -> crate::model::code_artifacts::Builder {
-        crate::model::code_artifacts::Builder::default()
-    }
-}
 
 /// <p>A type of <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">SourceCodeType</a> that specifies a code diff between a source and destination branch in an associated repository.</p>
 #[non_exhaustive]
@@ -2238,6 +2249,13 @@ impl BranchDiffSourceCodeType {
         self.destination_branch_name.as_deref()
     }
 }
+impl BranchDiffSourceCodeType {
+    /// Creates a new builder-style object to manufacture [`BranchDiffSourceCodeType`](crate::model::BranchDiffSourceCodeType).
+    pub fn builder() -> crate::model::branch_diff_source_code_type::Builder {
+        crate::model::branch_diff_source_code_type::Builder::default()
+    }
+}
+
 /// See [`BranchDiffSourceCodeType`](crate::model::BranchDiffSourceCodeType).
 pub mod branch_diff_source_code_type {
 
@@ -2284,12 +2302,6 @@ pub mod branch_diff_source_code_type {
         }
     }
 }
-impl BranchDiffSourceCodeType {
-    /// Creates a new builder-style object to manufacture [`BranchDiffSourceCodeType`](crate::model::BranchDiffSourceCodeType).
-    pub fn builder() -> crate::model::branch_diff_source_code_type::Builder {
-        crate::model::branch_diff_source_code_type::Builder::default()
-    }
-}
 
 /// <p>A <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">SourceCodeType</a> that specifies the tip of a branch in an associated repository.</p>
 #[non_exhaustive]
@@ -2305,6 +2317,13 @@ impl RepositoryHeadSourceCodeType {
         self.branch_name.as_deref()
     }
 }
+impl RepositoryHeadSourceCodeType {
+    /// Creates a new builder-style object to manufacture [`RepositoryHeadSourceCodeType`](crate::model::RepositoryHeadSourceCodeType).
+    pub fn builder() -> crate::model::repository_head_source_code_type::Builder {
+        crate::model::repository_head_source_code_type::Builder::default()
+    }
+}
+
 /// See [`RepositoryHeadSourceCodeType`](crate::model::RepositoryHeadSourceCodeType).
 pub mod repository_head_source_code_type {
 
@@ -2331,12 +2350,6 @@ pub mod repository_head_source_code_type {
                 branch_name: self.branch_name,
             }
         }
-    }
-}
-impl RepositoryHeadSourceCodeType {
-    /// Creates a new builder-style object to manufacture [`RepositoryHeadSourceCodeType`](crate::model::RepositoryHeadSourceCodeType).
-    pub fn builder() -> crate::model::repository_head_source_code_type::Builder {
-        crate::model::repository_head_source_code_type::Builder::default()
     }
 }
 
@@ -2368,6 +2381,13 @@ impl CommitDiffSourceCodeType {
         self.merge_base_commit.as_deref()
     }
 }
+impl CommitDiffSourceCodeType {
+    /// Creates a new builder-style object to manufacture [`CommitDiffSourceCodeType`](crate::model::CommitDiffSourceCodeType).
+    pub fn builder() -> crate::model::commit_diff_source_code_type::Builder {
+        crate::model::commit_diff_source_code_type::Builder::default()
+    }
+}
+
 /// See [`CommitDiffSourceCodeType`](crate::model::CommitDiffSourceCodeType).
 pub mod commit_diff_source_code_type {
 
@@ -2429,12 +2449,6 @@ pub mod commit_diff_source_code_type {
         }
     }
 }
-impl CommitDiffSourceCodeType {
-    /// Creates a new builder-style object to manufacture [`CommitDiffSourceCodeType`](crate::model::CommitDiffSourceCodeType).
-    pub fn builder() -> crate::model::commit_diff_source_code_type::Builder {
-        crate::model::commit_diff_source_code_type::Builder::default()
-    }
-}
 
 /// <p>Information about metrics summaries.</p>
 #[non_exhaustive]
@@ -2464,6 +2478,13 @@ impl MetricsSummary {
         self.findings_count
     }
 }
+impl MetricsSummary {
+    /// Creates a new builder-style object to manufacture [`MetricsSummary`](crate::model::MetricsSummary).
+    pub fn builder() -> crate::model::metrics_summary::Builder {
+        crate::model::metrics_summary::Builder::default()
+    }
+}
+
 /// See [`MetricsSummary`](crate::model::MetricsSummary).
 pub mod metrics_summary {
 
@@ -2517,12 +2538,6 @@ pub mod metrics_summary {
                 findings_count: self.findings_count,
             }
         }
-    }
-}
-impl MetricsSummary {
-    /// Creates a new builder-style object to manufacture [`MetricsSummary`](crate::model::MetricsSummary).
-    pub fn builder() -> crate::model::metrics_summary::Builder {
-        crate::model::metrics_summary::Builder::default()
     }
 }
 
@@ -2843,6 +2858,13 @@ impl RepositoryAssociation {
         self.s3_repository_details.as_ref()
     }
 }
+impl RepositoryAssociation {
+    /// Creates a new builder-style object to manufacture [`RepositoryAssociation`](crate::model::RepositoryAssociation).
+    pub fn builder() -> crate::model::repository_association::Builder {
+        crate::model::repository_association::Builder::default()
+    }
+}
+
 /// See [`RepositoryAssociation`](crate::model::RepositoryAssociation).
 pub mod repository_association {
 
@@ -3066,12 +3088,6 @@ pub mod repository_association {
         }
     }
 }
-impl RepositoryAssociation {
-    /// Creates a new builder-style object to manufacture [`RepositoryAssociation`](crate::model::RepositoryAssociation).
-    pub fn builder() -> crate::model::repository_association::Builder {
-        crate::model::repository_association::Builder::default()
-    }
-}
 
 /// <p>An object that contains:</p>
 /// <ul>
@@ -3098,6 +3114,13 @@ impl KmsKeyDetails {
         self.encryption_option.as_ref()
     }
 }
+impl KmsKeyDetails {
+    /// Creates a new builder-style object to manufacture [`KmsKeyDetails`](crate::model::KmsKeyDetails).
+    pub fn builder() -> crate::model::kms_key_details::Builder {
+        crate::model::kms_key_details::Builder::default()
+    }
+}
+
 /// See [`KmsKeyDetails`](crate::model::KmsKeyDetails).
 pub mod kms_key_details {
 
@@ -3139,12 +3162,6 @@ pub mod kms_key_details {
                 encryption_option: self.encryption_option,
             }
         }
-    }
-}
-impl KmsKeyDetails {
-    /// Creates a new builder-style object to manufacture [`KmsKeyDetails`](crate::model::KmsKeyDetails).
-    pub fn builder() -> crate::model::kms_key_details::Builder {
-        crate::model::kms_key_details::Builder::default()
     }
 }
 
@@ -3289,6 +3306,13 @@ impl RecommendationFeedback {
         self.last_updated_time_stamp.as_ref()
     }
 }
+impl RecommendationFeedback {
+    /// Creates a new builder-style object to manufacture [`RecommendationFeedback`](crate::model::RecommendationFeedback).
+    pub fn builder() -> crate::model::recommendation_feedback::Builder {
+        crate::model::recommendation_feedback::Builder::default()
+    }
+}
+
 /// See [`RecommendationFeedback`](crate::model::RecommendationFeedback).
 pub mod recommendation_feedback {
 
@@ -3398,12 +3422,6 @@ pub mod recommendation_feedback {
                 last_updated_time_stamp: self.last_updated_time_stamp,
             }
         }
-    }
-}
-impl RecommendationFeedback {
-    /// Creates a new builder-style object to manufacture [`RecommendationFeedback`](crate::model::RecommendationFeedback).
-    pub fn builder() -> crate::model::recommendation_feedback::Builder {
-        crate::model::recommendation_feedback::Builder::default()
     }
 }
 
@@ -3538,6 +3556,13 @@ impl CodeReview {
         self.config_file_state.as_ref()
     }
 }
+impl CodeReview {
+    /// Creates a new builder-style object to manufacture [`CodeReview`](crate::model::CodeReview).
+    pub fn builder() -> crate::model::code_review::Builder {
+        crate::model::code_review::Builder::default()
+    }
+}
+
 /// See [`CodeReview`](crate::model::CodeReview).
 pub mod code_review {
 
@@ -3794,12 +3819,6 @@ pub mod code_review {
         }
     }
 }
-impl CodeReview {
-    /// Creates a new builder-style object to manufacture [`CodeReview`](crate::model::CodeReview).
-    pub fn builder() -> crate::model::code_review::Builder {
-        crate::model::code_review::Builder::default()
-    }
-}
 
 /// When writing a match expression against `ConfigFileState`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -4014,6 +4033,13 @@ impl Metrics {
         self.findings_count
     }
 }
+impl Metrics {
+    /// Creates a new builder-style object to manufacture [`Metrics`](crate::model::Metrics).
+    pub fn builder() -> crate::model::metrics::Builder {
+        crate::model::metrics::Builder::default()
+    }
+}
+
 /// See [`Metrics`](crate::model::Metrics).
 pub mod metrics {
 
@@ -4069,12 +4095,6 @@ pub mod metrics {
         }
     }
 }
-impl Metrics {
-    /// Creates a new builder-style object to manufacture [`Metrics`](crate::model::Metrics).
-    pub fn builder() -> crate::model::metrics::Builder {
-        crate::model::metrics::Builder::default()
-    }
-}
 
 /// <p>The type of a code review. There are two code review types:</p>
 /// <ul>
@@ -4101,6 +4121,13 @@ impl CodeReviewType {
         self.analysis_types.as_deref()
     }
 }
+impl CodeReviewType {
+    /// Creates a new builder-style object to manufacture [`CodeReviewType`](crate::model::CodeReviewType).
+    pub fn builder() -> crate::model::code_review_type::Builder {
+        crate::model::code_review_type::Builder::default()
+    }
+}
+
 /// See [`CodeReviewType`](crate::model::CodeReviewType).
 pub mod code_review_type {
 
@@ -4153,12 +4180,6 @@ pub mod code_review_type {
         }
     }
 }
-impl CodeReviewType {
-    /// Creates a new builder-style object to manufacture [`CodeReviewType`](crate::model::CodeReviewType).
-    pub fn builder() -> crate::model::code_review_type::Builder {
-        crate::model::code_review_type::Builder::default()
-    }
-}
 
 /// <p>A code review type that analyzes all code under a specified branch in an associated repository. The associated repository is specified using its ARN when you call <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CreateCodeReview">CreateCodeReview</a>.</p>
 #[non_exhaustive]
@@ -4183,6 +4204,13 @@ impl RepositoryAnalysis {
         self.source_code_type.as_ref()
     }
 }
+impl RepositoryAnalysis {
+    /// Creates a new builder-style object to manufacture [`RepositoryAnalysis`](crate::model::RepositoryAnalysis).
+    pub fn builder() -> crate::model::repository_analysis::Builder {
+        crate::model::repository_analysis::Builder::default()
+    }
+}
+
 /// See [`RepositoryAnalysis`](crate::model::RepositoryAnalysis).
 pub mod repository_analysis {
 
@@ -4232,12 +4260,6 @@ pub mod repository_analysis {
         }
     }
 }
-impl RepositoryAnalysis {
-    /// Creates a new builder-style object to manufacture [`RepositoryAnalysis`](crate::model::RepositoryAnalysis).
-    pub fn builder() -> crate::model::repository_analysis::Builder {
-        crate::model::repository_analysis::Builder::default()
-    }
-}
 
 /// <p>Information about an associated Amazon Web Services CodeCommit repository or an associated repository that is managed by Amazon Web Services CodeStar Connections (for example, Bitbucket). This <code>Repository</code> object is not used if your source code is in an associated GitHub repository.</p>
 #[non_exhaustive]
@@ -4276,6 +4298,13 @@ impl Repository {
         self.s3_bucket.as_ref()
     }
 }
+impl Repository {
+    /// Creates a new builder-style object to manufacture [`Repository`](crate::model::Repository).
+    pub fn builder() -> crate::model::repository::Builder {
+        crate::model::repository::Builder::default()
+    }
+}
+
 /// See [`Repository`](crate::model::Repository).
 pub mod repository {
 
@@ -4356,12 +4385,6 @@ pub mod repository {
         }
     }
 }
-impl Repository {
-    /// Creates a new builder-style object to manufacture [`Repository`](crate::model::Repository).
-    pub fn builder() -> crate::model::repository::Builder {
-        crate::model::repository::Builder::default()
-    }
-}
 
 /// <p>Information about a repository in an S3 bucket.</p>
 #[non_exhaustive]
@@ -4384,6 +4407,13 @@ impl S3Repository {
         self.bucket_name.as_deref()
     }
 }
+impl S3Repository {
+    /// Creates a new builder-style object to manufacture [`S3Repository`](crate::model::S3Repository).
+    pub fn builder() -> crate::model::s3_repository::Builder {
+        crate::model::s3_repository::Builder::default()
+    }
+}
+
 /// See [`S3Repository`](crate::model::S3Repository).
 pub mod s3_repository {
 
@@ -4424,12 +4454,6 @@ pub mod s3_repository {
         }
     }
 }
-impl S3Repository {
-    /// Creates a new builder-style object to manufacture [`S3Repository`](crate::model::S3Repository).
-    pub fn builder() -> crate::model::s3_repository::Builder {
-        crate::model::s3_repository::Builder::default()
-    }
-}
 
 /// <p>Information about a third-party source repository connected to CodeGuru Reviewer.</p>
 #[non_exhaustive]
@@ -4459,6 +4483,13 @@ impl ThirdPartySourceRepository {
         self.owner.as_deref()
     }
 }
+impl ThirdPartySourceRepository {
+    /// Creates a new builder-style object to manufacture [`ThirdPartySourceRepository`](crate::model::ThirdPartySourceRepository).
+    pub fn builder() -> crate::model::third_party_source_repository::Builder {
+        crate::model::third_party_source_repository::Builder::default()
+    }
+}
+
 /// See [`ThirdPartySourceRepository`](crate::model::ThirdPartySourceRepository).
 pub mod third_party_source_repository {
 
@@ -4514,12 +4545,6 @@ pub mod third_party_source_repository {
         }
     }
 }
-impl ThirdPartySourceRepository {
-    /// Creates a new builder-style object to manufacture [`ThirdPartySourceRepository`](crate::model::ThirdPartySourceRepository).
-    pub fn builder() -> crate::model::third_party_source_repository::Builder {
-        crate::model::third_party_source_repository::Builder::default()
-    }
-}
 
 /// <p>Information about an Amazon Web Services CodeCommit repository. The CodeCommit repository must be in the same Amazon Web Services Region and Amazon Web Services account where its CodeGuru Reviewer code reviews are configured.</p>
 #[non_exhaustive]
@@ -4535,6 +4560,13 @@ impl CodeCommitRepository {
         self.name.as_deref()
     }
 }
+impl CodeCommitRepository {
+    /// Creates a new builder-style object to manufacture [`CodeCommitRepository`](crate::model::CodeCommitRepository).
+    pub fn builder() -> crate::model::code_commit_repository::Builder {
+        crate::model::code_commit_repository::Builder::default()
+    }
+}
+
 /// See [`CodeCommitRepository`](crate::model::CodeCommitRepository).
 pub mod code_commit_repository {
 
@@ -4559,11 +4591,5 @@ pub mod code_commit_repository {
         pub fn build(self) -> crate::model::CodeCommitRepository {
             crate::model::CodeCommitRepository { name: self.name }
         }
-    }
-}
-impl CodeCommitRepository {
-    /// Creates a new builder-style object to manufacture [`CodeCommitRepository`](crate::model::CodeCommitRepository).
-    pub fn builder() -> crate::model::code_commit_repository::Builder {
-        crate::model::code_commit_repository::Builder::default()
     }
 }

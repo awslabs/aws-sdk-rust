@@ -70,6 +70,13 @@ impl aws_http::request_id::RequestId for UpdateSlackChannelConfigurationOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdateSlackChannelConfigurationOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateSlackChannelConfigurationOutput`](crate::output::UpdateSlackChannelConfigurationOutput).
+    pub fn builder() -> crate::output::update_slack_channel_configuration_output::Builder {
+        crate::output::update_slack_channel_configuration_output::Builder::default()
+    }
+}
+
 /// See [`UpdateSlackChannelConfigurationOutput`](crate::output::UpdateSlackChannelConfigurationOutput).
 pub mod update_slack_channel_configuration_output {
 
@@ -209,12 +216,6 @@ pub mod update_slack_channel_configuration_output {
         }
     }
 }
-impl UpdateSlackChannelConfigurationOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateSlackChannelConfigurationOutput`](crate::output::UpdateSlackChannelConfigurationOutput).
-    pub fn builder() -> crate::output::update_slack_channel_configuration_output::Builder {
-        crate::output::update_slack_channel_configuration_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -250,6 +251,13 @@ impl aws_http::request_id::RequestId for RegisterSlackWorkspaceForOrganizationOu
         self._request_id.as_deref()
     }
 }
+impl RegisterSlackWorkspaceForOrganizationOutput {
+    /// Creates a new builder-style object to manufacture [`RegisterSlackWorkspaceForOrganizationOutput`](crate::output::RegisterSlackWorkspaceForOrganizationOutput).
+    pub fn builder() -> crate::output::register_slack_workspace_for_organization_output::Builder {
+        crate::output::register_slack_workspace_for_organization_output::Builder::default()
+    }
+}
+
 /// See [`RegisterSlackWorkspaceForOrganizationOutput`](crate::output::RegisterSlackWorkspaceForOrganizationOutput).
 pub mod register_slack_workspace_for_organization_output {
 
@@ -316,12 +324,6 @@ pub mod register_slack_workspace_for_organization_output {
         }
     }
 }
-impl RegisterSlackWorkspaceForOrganizationOutput {
-    /// Creates a new builder-style object to manufacture [`RegisterSlackWorkspaceForOrganizationOutput`](crate::output::RegisterSlackWorkspaceForOrganizationOutput).
-    pub fn builder() -> crate::output::register_slack_workspace_for_organization_output::Builder {
-        crate::output::register_slack_workspace_for_organization_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -334,6 +336,13 @@ impl aws_http::request_id::RequestId for PutAccountAliasOutput {
         self._request_id.as_deref()
     }
 }
+impl PutAccountAliasOutput {
+    /// Creates a new builder-style object to manufacture [`PutAccountAliasOutput`](crate::output::PutAccountAliasOutput).
+    pub fn builder() -> crate::output::put_account_alias_output::Builder {
+        crate::output::put_account_alias_output::Builder::default()
+    }
+}
+
 /// See [`PutAccountAliasOutput`](crate::output::PutAccountAliasOutput).
 pub mod put_account_alias_output {
 
@@ -359,12 +368,6 @@ pub mod put_account_alias_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl PutAccountAliasOutput {
-    /// Creates a new builder-style object to manufacture [`PutAccountAliasOutput`](crate::output::PutAccountAliasOutput).
-    pub fn builder() -> crate::output::put_account_alias_output::Builder {
-        crate::output::put_account_alias_output::Builder::default()
     }
 }
 
@@ -398,6 +401,13 @@ impl aws_http::request_id::RequestId for ListSlackWorkspaceConfigurationsOutput 
         self._request_id.as_deref()
     }
 }
+impl ListSlackWorkspaceConfigurationsOutput {
+    /// Creates a new builder-style object to manufacture [`ListSlackWorkspaceConfigurationsOutput`](crate::output::ListSlackWorkspaceConfigurationsOutput).
+    pub fn builder() -> crate::output::list_slack_workspace_configurations_output::Builder {
+        crate::output::list_slack_workspace_configurations_output::Builder::default()
+    }
+}
+
 /// See [`ListSlackWorkspaceConfigurationsOutput`](crate::output::ListSlackWorkspaceConfigurationsOutput).
 pub mod list_slack_workspace_configurations_output {
 
@@ -462,12 +472,6 @@ pub mod list_slack_workspace_configurations_output {
         }
     }
 }
-impl ListSlackWorkspaceConfigurationsOutput {
-    /// Creates a new builder-style object to manufacture [`ListSlackWorkspaceConfigurationsOutput`](crate::output::ListSlackWorkspaceConfigurationsOutput).
-    pub fn builder() -> crate::output::list_slack_workspace_configurations_output::Builder {
-        crate::output::list_slack_workspace_configurations_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -499,6 +503,13 @@ impl aws_http::request_id::RequestId for ListSlackChannelConfigurationsOutput {
         self._request_id.as_deref()
     }
 }
+impl ListSlackChannelConfigurationsOutput {
+    /// Creates a new builder-style object to manufacture [`ListSlackChannelConfigurationsOutput`](crate::output::ListSlackChannelConfigurationsOutput).
+    pub fn builder() -> crate::output::list_slack_channel_configurations_output::Builder {
+        crate::output::list_slack_channel_configurations_output::Builder::default()
+    }
+}
+
 /// See [`ListSlackChannelConfigurationsOutput`](crate::output::ListSlackChannelConfigurationsOutput).
 pub mod list_slack_channel_configurations_output {
 
@@ -563,12 +574,6 @@ pub mod list_slack_channel_configurations_output {
         }
     }
 }
-impl ListSlackChannelConfigurationsOutput {
-    /// Creates a new builder-style object to manufacture [`ListSlackChannelConfigurationsOutput`](crate::output::ListSlackChannelConfigurationsOutput).
-    pub fn builder() -> crate::output::list_slack_channel_configurations_output::Builder {
-        crate::output::list_slack_channel_configurations_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -590,6 +595,13 @@ impl aws_http::request_id::RequestId for GetAccountAliasOutput {
         self._request_id.as_deref()
     }
 }
+impl GetAccountAliasOutput {
+    /// Creates a new builder-style object to manufacture [`GetAccountAliasOutput`](crate::output::GetAccountAliasOutput).
+    pub fn builder() -> crate::output::get_account_alias_output::Builder {
+        crate::output::get_account_alias_output::Builder::default()
+    }
+}
+
 /// See [`GetAccountAliasOutput`](crate::output::GetAccountAliasOutput).
 pub mod get_account_alias_output {
 
@@ -632,12 +644,6 @@ pub mod get_account_alias_output {
         }
     }
 }
-impl GetAccountAliasOutput {
-    /// Creates a new builder-style object to manufacture [`GetAccountAliasOutput`](crate::output::GetAccountAliasOutput).
-    pub fn builder() -> crate::output::get_account_alias_output::Builder {
-        crate::output::get_account_alias_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -650,6 +656,13 @@ impl aws_http::request_id::RequestId for DeleteSlackWorkspaceConfigurationOutput
         self._request_id.as_deref()
     }
 }
+impl DeleteSlackWorkspaceConfigurationOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteSlackWorkspaceConfigurationOutput`](crate::output::DeleteSlackWorkspaceConfigurationOutput).
+    pub fn builder() -> crate::output::delete_slack_workspace_configuration_output::Builder {
+        crate::output::delete_slack_workspace_configuration_output::Builder::default()
+    }
+}
+
 /// See [`DeleteSlackWorkspaceConfigurationOutput`](crate::output::DeleteSlackWorkspaceConfigurationOutput).
 pub mod delete_slack_workspace_configuration_output {
 
@@ -677,12 +690,6 @@ pub mod delete_slack_workspace_configuration_output {
         }
     }
 }
-impl DeleteSlackWorkspaceConfigurationOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteSlackWorkspaceConfigurationOutput`](crate::output::DeleteSlackWorkspaceConfigurationOutput).
-    pub fn builder() -> crate::output::delete_slack_workspace_configuration_output::Builder {
-        crate::output::delete_slack_workspace_configuration_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -695,6 +702,13 @@ impl aws_http::request_id::RequestId for DeleteSlackChannelConfigurationOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteSlackChannelConfigurationOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteSlackChannelConfigurationOutput`](crate::output::DeleteSlackChannelConfigurationOutput).
+    pub fn builder() -> crate::output::delete_slack_channel_configuration_output::Builder {
+        crate::output::delete_slack_channel_configuration_output::Builder::default()
+    }
+}
+
 /// See [`DeleteSlackChannelConfigurationOutput`](crate::output::DeleteSlackChannelConfigurationOutput).
 pub mod delete_slack_channel_configuration_output {
 
@@ -722,12 +736,6 @@ pub mod delete_slack_channel_configuration_output {
         }
     }
 }
-impl DeleteSlackChannelConfigurationOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteSlackChannelConfigurationOutput`](crate::output::DeleteSlackChannelConfigurationOutput).
-    pub fn builder() -> crate::output::delete_slack_channel_configuration_output::Builder {
-        crate::output::delete_slack_channel_configuration_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -740,6 +748,13 @@ impl aws_http::request_id::RequestId for DeleteAccountAliasOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteAccountAliasOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteAccountAliasOutput`](crate::output::DeleteAccountAliasOutput).
+    pub fn builder() -> crate::output::delete_account_alias_output::Builder {
+        crate::output::delete_account_alias_output::Builder::default()
+    }
+}
+
 /// See [`DeleteAccountAliasOutput`](crate::output::DeleteAccountAliasOutput).
 pub mod delete_account_alias_output {
 
@@ -767,12 +782,6 @@ pub mod delete_account_alias_output {
         }
     }
 }
-impl DeleteAccountAliasOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteAccountAliasOutput`](crate::output::DeleteAccountAliasOutput).
-    pub fn builder() -> crate::output::delete_account_alias_output::Builder {
-        crate::output::delete_account_alias_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -785,6 +794,13 @@ impl aws_http::request_id::RequestId for CreateSlackChannelConfigurationOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateSlackChannelConfigurationOutput {
+    /// Creates a new builder-style object to manufacture [`CreateSlackChannelConfigurationOutput`](crate::output::CreateSlackChannelConfigurationOutput).
+    pub fn builder() -> crate::output::create_slack_channel_configuration_output::Builder {
+        crate::output::create_slack_channel_configuration_output::Builder::default()
+    }
+}
+
 /// See [`CreateSlackChannelConfigurationOutput`](crate::output::CreateSlackChannelConfigurationOutput).
 pub mod create_slack_channel_configuration_output {
 
@@ -810,11 +826,5 @@ pub mod create_slack_channel_configuration_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl CreateSlackChannelConfigurationOutput {
-    /// Creates a new builder-style object to manufacture [`CreateSlackChannelConfigurationOutput`](crate::output::CreateSlackChannelConfigurationOutput).
-    pub fn builder() -> crate::output::create_slack_channel_configuration_output::Builder {
-        crate::output::create_slack_channel_configuration_output::Builder::default()
     }
 }

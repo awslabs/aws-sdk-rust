@@ -4,7 +4,7 @@
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`create_batch_inference_job`](crate::client::Client::create_batch_inference_job).
 ///
-/// See [`crate::client::fluent_builders::CreateBatchInferenceJob`] for more details about the operation.
+/// `ParseStrictResponse` impl for `CreateBatchInferenceJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateBatchInferenceJob {
     _private: (),
@@ -39,7 +39,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateBatchInferenceJob 
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`create_batch_segment_job`](crate::client::Client::create_batch_segment_job).
 ///
-/// See [`crate::client::fluent_builders::CreateBatchSegmentJob`] for more details about the operation.
+/// `ParseStrictResponse` impl for `CreateBatchSegmentJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateBatchSegmentJob {
     _private: (),
@@ -74,7 +74,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateBatchSegmentJob {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`create_campaign`](crate::client::Client::create_campaign).
 ///
-/// See [`crate::client::fluent_builders::CreateCampaign`] for more details about the operation.
+/// `ParseStrictResponse` impl for `CreateCampaign`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateCampaign {
     _private: (),
@@ -107,7 +107,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateCampaign {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`create_dataset`](crate::client::Client::create_dataset).
 ///
-/// See [`crate::client::fluent_builders::CreateDataset`] for more details about the operation.
+/// `ParseStrictResponse` impl for `CreateDataset`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateDataset {
     _private: (),
@@ -140,7 +140,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateDataset {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`create_dataset_export_job`](crate::client::Client::create_dataset_export_job).
 ///
-/// See [`crate::client::fluent_builders::CreateDatasetExportJob`] for more details about the operation.
+/// `ParseStrictResponse` impl for `CreateDatasetExportJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateDatasetExportJob {
     _private: (),
@@ -175,7 +175,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateDatasetExportJob {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`create_dataset_group`](crate::client::Client::create_dataset_group).
 ///
-/// See [`crate::client::fluent_builders::CreateDatasetGroup`] for more details about the operation.
+/// `ParseStrictResponse` impl for `CreateDatasetGroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateDatasetGroup {
     _private: (),
@@ -210,7 +210,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateDatasetGroup {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`create_dataset_import_job`](crate::client::Client::create_dataset_import_job).
 ///
-/// See [`crate::client::fluent_builders::CreateDatasetImportJob`] for more details about the operation.
+/// `ParseStrictResponse` impl for `CreateDatasetImportJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateDatasetImportJob {
     _private: (),
@@ -245,7 +245,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateDatasetImportJob {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`create_event_tracker`](crate::client::Client::create_event_tracker).
 ///
-/// See [`crate::client::fluent_builders::CreateEventTracker`] for more details about the operation.
+/// `ParseStrictResponse` impl for `CreateEventTracker`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateEventTracker {
     _private: (),
@@ -280,7 +280,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateEventTracker {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`create_filter`](crate::client::Client::create_filter).
 ///
-/// See [`crate::client::fluent_builders::CreateFilter`] for more details about the operation.
+/// `ParseStrictResponse` impl for `CreateFilter`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateFilter {
     _private: (),
@@ -313,7 +313,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateFilter {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`create_metric_attribution`](crate::client::Client::create_metric_attribution).
 ///
-/// See [`crate::client::fluent_builders::CreateMetricAttribution`] for more details about the operation.
+/// `ParseStrictResponse` impl for `CreateMetricAttribution`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateMetricAttribution {
     _private: (),
@@ -348,7 +348,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateMetricAttribution 
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`create_recommender`](crate::client::Client::create_recommender).
 ///
-/// See [`crate::client::fluent_builders::CreateRecommender`] for more details about the operation.
+/// `ParseStrictResponse` impl for `CreateRecommender`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateRecommender {
     _private: (),
@@ -383,7 +383,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateRecommender {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`create_schema`](crate::client::Client::create_schema).
 ///
-/// See [`crate::client::fluent_builders::CreateSchema`] for more details about the operation.
+/// `ParseStrictResponse` impl for `CreateSchema`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateSchema {
     _private: (),
@@ -416,7 +416,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateSchema {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`create_solution`](crate::client::Client::create_solution).
 ///
-/// See [`crate::client::fluent_builders::CreateSolution`] for more details about the operation.
+/// `ParseStrictResponse` impl for `CreateSolution`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateSolution {
     _private: (),
@@ -449,7 +449,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateSolution {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`create_solution_version`](crate::client::Client::create_solution_version).
 ///
-/// See [`crate::client::fluent_builders::CreateSolutionVersion`] for more details about the operation.
+/// `ParseStrictResponse` impl for `CreateSolutionVersion`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateSolutionVersion {
     _private: (),
@@ -484,7 +484,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateSolutionVersion {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`delete_campaign`](crate::client::Client::delete_campaign).
 ///
-/// See [`crate::client::fluent_builders::DeleteCampaign`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DeleteCampaign`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteCampaign {
     _private: (),
@@ -517,7 +517,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteCampaign {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`delete_dataset`](crate::client::Client::delete_dataset).
 ///
-/// See [`crate::client::fluent_builders::DeleteDataset`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DeleteDataset`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteDataset {
     _private: (),
@@ -550,7 +550,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteDataset {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`delete_dataset_group`](crate::client::Client::delete_dataset_group).
 ///
-/// See [`crate::client::fluent_builders::DeleteDatasetGroup`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DeleteDatasetGroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteDatasetGroup {
     _private: (),
@@ -585,7 +585,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteDatasetGroup {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`delete_event_tracker`](crate::client::Client::delete_event_tracker).
 ///
-/// See [`crate::client::fluent_builders::DeleteEventTracker`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DeleteEventTracker`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteEventTracker {
     _private: (),
@@ -620,7 +620,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteEventTracker {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`delete_filter`](crate::client::Client::delete_filter).
 ///
-/// See [`crate::client::fluent_builders::DeleteFilter`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DeleteFilter`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteFilter {
     _private: (),
@@ -653,7 +653,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteFilter {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`delete_metric_attribution`](crate::client::Client::delete_metric_attribution).
 ///
-/// See [`crate::client::fluent_builders::DeleteMetricAttribution`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DeleteMetricAttribution`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteMetricAttribution {
     _private: (),
@@ -688,7 +688,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteMetricAttribution 
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`delete_recommender`](crate::client::Client::delete_recommender).
 ///
-/// See [`crate::client::fluent_builders::DeleteRecommender`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DeleteRecommender`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteRecommender {
     _private: (),
@@ -723,7 +723,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteRecommender {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`delete_schema`](crate::client::Client::delete_schema).
 ///
-/// See [`crate::client::fluent_builders::DeleteSchema`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DeleteSchema`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteSchema {
     _private: (),
@@ -756,7 +756,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteSchema {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`delete_solution`](crate::client::Client::delete_solution).
 ///
-/// See [`crate::client::fluent_builders::DeleteSolution`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DeleteSolution`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteSolution {
     _private: (),
@@ -789,7 +789,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteSolution {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`describe_algorithm`](crate::client::Client::describe_algorithm).
 ///
-/// See [`crate::client::fluent_builders::DescribeAlgorithm`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DescribeAlgorithm`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeAlgorithm {
     _private: (),
@@ -824,7 +824,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeAlgorithm {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`describe_batch_inference_job`](crate::client::Client::describe_batch_inference_job).
 ///
-/// See [`crate::client::fluent_builders::DescribeBatchInferenceJob`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DescribeBatchInferenceJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeBatchInferenceJob {
     _private: (),
@@ -859,7 +859,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeBatchInferenceJo
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`describe_batch_segment_job`](crate::client::Client::describe_batch_segment_job).
 ///
-/// See [`crate::client::fluent_builders::DescribeBatchSegmentJob`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DescribeBatchSegmentJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeBatchSegmentJob {
     _private: (),
@@ -894,7 +894,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeBatchSegmentJob 
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`describe_campaign`](crate::client::Client::describe_campaign).
 ///
-/// See [`crate::client::fluent_builders::DescribeCampaign`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DescribeCampaign`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeCampaign {
     _private: (),
@@ -929,7 +929,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeCampaign {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`describe_dataset`](crate::client::Client::describe_dataset).
 ///
-/// See [`crate::client::fluent_builders::DescribeDataset`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DescribeDataset`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeDataset {
     _private: (),
@@ -964,7 +964,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeDataset {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`describe_dataset_export_job`](crate::client::Client::describe_dataset_export_job).
 ///
-/// See [`crate::client::fluent_builders::DescribeDatasetExportJob`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DescribeDatasetExportJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeDatasetExportJob {
     _private: (),
@@ -999,7 +999,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeDatasetExportJob
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`describe_dataset_group`](crate::client::Client::describe_dataset_group).
 ///
-/// See [`crate::client::fluent_builders::DescribeDatasetGroup`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DescribeDatasetGroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeDatasetGroup {
     _private: (),
@@ -1034,7 +1034,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeDatasetGroup {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`describe_dataset_import_job`](crate::client::Client::describe_dataset_import_job).
 ///
-/// See [`crate::client::fluent_builders::DescribeDatasetImportJob`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DescribeDatasetImportJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeDatasetImportJob {
     _private: (),
@@ -1069,7 +1069,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeDatasetImportJob
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`describe_event_tracker`](crate::client::Client::describe_event_tracker).
 ///
-/// See [`crate::client::fluent_builders::DescribeEventTracker`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DescribeEventTracker`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeEventTracker {
     _private: (),
@@ -1104,7 +1104,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeEventTracker {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`describe_feature_transformation`](crate::client::Client::describe_feature_transformation).
 ///
-/// See [`crate::client::fluent_builders::DescribeFeatureTransformation`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DescribeFeatureTransformation`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeFeatureTransformation {
     _private: (),
@@ -1139,7 +1139,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeFeatureTransform
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`describe_filter`](crate::client::Client::describe_filter).
 ///
-/// See [`crate::client::fluent_builders::DescribeFilter`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DescribeFilter`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeFilter {
     _private: (),
@@ -1172,7 +1172,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeFilter {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`describe_metric_attribution`](crate::client::Client::describe_metric_attribution).
 ///
-/// See [`crate::client::fluent_builders::DescribeMetricAttribution`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DescribeMetricAttribution`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeMetricAttribution {
     _private: (),
@@ -1207,7 +1207,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeMetricAttributio
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`describe_recipe`](crate::client::Client::describe_recipe).
 ///
-/// See [`crate::client::fluent_builders::DescribeRecipe`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DescribeRecipe`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeRecipe {
     _private: (),
@@ -1240,7 +1240,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeRecipe {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`describe_recommender`](crate::client::Client::describe_recommender).
 ///
-/// See [`crate::client::fluent_builders::DescribeRecommender`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DescribeRecommender`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeRecommender {
     _private: (),
@@ -1275,7 +1275,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeRecommender {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`describe_schema`](crate::client::Client::describe_schema).
 ///
-/// See [`crate::client::fluent_builders::DescribeSchema`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DescribeSchema`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeSchema {
     _private: (),
@@ -1308,7 +1308,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeSchema {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`describe_solution`](crate::client::Client::describe_solution).
 ///
-/// See [`crate::client::fluent_builders::DescribeSolution`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DescribeSolution`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeSolution {
     _private: (),
@@ -1343,7 +1343,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeSolution {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`describe_solution_version`](crate::client::Client::describe_solution_version).
 ///
-/// See [`crate::client::fluent_builders::DescribeSolutionVersion`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DescribeSolutionVersion`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeSolutionVersion {
     _private: (),
@@ -1378,7 +1378,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeSolutionVersion 
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`get_solution_metrics`](crate::client::Client::get_solution_metrics).
 ///
-/// See [`crate::client::fluent_builders::GetSolutionMetrics`] for more details about the operation.
+/// `ParseStrictResponse` impl for `GetSolutionMetrics`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetSolutionMetrics {
     _private: (),
@@ -1413,7 +1413,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSolutionMetrics {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_batch_inference_jobs`](crate::client::Client::list_batch_inference_jobs).
 ///
-/// See [`crate::client::fluent_builders::ListBatchInferenceJobs`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListBatchInferenceJobs`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListBatchInferenceJobs {
     _private: (),
@@ -1448,7 +1448,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListBatchInferenceJobs {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_batch_segment_jobs`](crate::client::Client::list_batch_segment_jobs).
 ///
-/// See [`crate::client::fluent_builders::ListBatchSegmentJobs`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListBatchSegmentJobs`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListBatchSegmentJobs {
     _private: (),
@@ -1483,7 +1483,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListBatchSegmentJobs {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_campaigns`](crate::client::Client::list_campaigns).
 ///
-/// See [`crate::client::fluent_builders::ListCampaigns`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListCampaigns`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListCampaigns {
     _private: (),
@@ -1516,7 +1516,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListCampaigns {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_dataset_export_jobs`](crate::client::Client::list_dataset_export_jobs).
 ///
-/// See [`crate::client::fluent_builders::ListDatasetExportJobs`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListDatasetExportJobs`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListDatasetExportJobs {
     _private: (),
@@ -1551,7 +1551,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListDatasetExportJobs {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_dataset_groups`](crate::client::Client::list_dataset_groups).
 ///
-/// See [`crate::client::fluent_builders::ListDatasetGroups`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListDatasetGroups`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListDatasetGroups {
     _private: (),
@@ -1586,7 +1586,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListDatasetGroups {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_dataset_import_jobs`](crate::client::Client::list_dataset_import_jobs).
 ///
-/// See [`crate::client::fluent_builders::ListDatasetImportJobs`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListDatasetImportJobs`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListDatasetImportJobs {
     _private: (),
@@ -1621,7 +1621,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListDatasetImportJobs {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_datasets`](crate::client::Client::list_datasets).
 ///
-/// See [`crate::client::fluent_builders::ListDatasets`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListDatasets`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListDatasets {
     _private: (),
@@ -1654,7 +1654,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListDatasets {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_event_trackers`](crate::client::Client::list_event_trackers).
 ///
-/// See [`crate::client::fluent_builders::ListEventTrackers`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListEventTrackers`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListEventTrackers {
     _private: (),
@@ -1689,7 +1689,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListEventTrackers {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_filters`](crate::client::Client::list_filters).
 ///
-/// See [`crate::client::fluent_builders::ListFilters`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListFilters`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListFilters {
     _private: (),
@@ -1722,7 +1722,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListFilters {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_metric_attribution_metrics`](crate::client::Client::list_metric_attribution_metrics).
 ///
-/// See [`crate::client::fluent_builders::ListMetricAttributionMetrics`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListMetricAttributionMetrics`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListMetricAttributionMetrics {
     _private: (),
@@ -1757,7 +1757,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListMetricAttributionMet
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_metric_attributions`](crate::client::Client::list_metric_attributions).
 ///
-/// See [`crate::client::fluent_builders::ListMetricAttributions`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListMetricAttributions`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListMetricAttributions {
     _private: (),
@@ -1792,7 +1792,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListMetricAttributions {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_recipes`](crate::client::Client::list_recipes).
 ///
-/// See [`crate::client::fluent_builders::ListRecipes`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListRecipes`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListRecipes {
     _private: (),
@@ -1825,7 +1825,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListRecipes {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_recommenders`](crate::client::Client::list_recommenders).
 ///
-/// See [`crate::client::fluent_builders::ListRecommenders`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListRecommenders`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListRecommenders {
     _private: (),
@@ -1860,7 +1860,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListRecommenders {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_schemas`](crate::client::Client::list_schemas).
 ///
-/// See [`crate::client::fluent_builders::ListSchemas`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListSchemas`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListSchemas {
     _private: (),
@@ -1893,7 +1893,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListSchemas {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_solutions`](crate::client::Client::list_solutions).
 ///
-/// See [`crate::client::fluent_builders::ListSolutions`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListSolutions`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListSolutions {
     _private: (),
@@ -1926,7 +1926,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListSolutions {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_solution_versions`](crate::client::Client::list_solution_versions).
 ///
-/// See [`crate::client::fluent_builders::ListSolutionVersions`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListSolutionVersions`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListSolutionVersions {
     _private: (),
@@ -1961,7 +1961,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListSolutionVersions {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
 ///
-/// See [`crate::client::fluent_builders::ListTagsForResource`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTagsForResource {
     _private: (),
@@ -1996,7 +1996,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`start_recommender`](crate::client::Client::start_recommender).
 ///
-/// See [`crate::client::fluent_builders::StartRecommender`] for more details about the operation.
+/// `ParseStrictResponse` impl for `StartRecommender`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StartRecommender {
     _private: (),
@@ -2031,7 +2031,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartRecommender {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`stop_recommender`](crate::client::Client::stop_recommender).
 ///
-/// See [`crate::client::fluent_builders::StopRecommender`] for more details about the operation.
+/// `ParseStrictResponse` impl for `StopRecommender`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StopRecommender {
     _private: (),
@@ -2066,7 +2066,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StopRecommender {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`stop_solution_version_creation`](crate::client::Client::stop_solution_version_creation).
 ///
-/// See [`crate::client::fluent_builders::StopSolutionVersionCreation`] for more details about the operation.
+/// `ParseStrictResponse` impl for `StopSolutionVersionCreation`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StopSolutionVersionCreation {
     _private: (),
@@ -2101,7 +2101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StopSolutionVersionCreat
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`tag_resource`](crate::client::Client::tag_resource).
 ///
-/// See [`crate::client::fluent_builders::TagResource`] for more details about the operation.
+/// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct TagResource {
     _private: (),
@@ -2134,7 +2134,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`untag_resource`](crate::client::Client::untag_resource).
 ///
-/// See [`crate::client::fluent_builders::UntagResource`] for more details about the operation.
+/// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UntagResource {
     _private: (),
@@ -2167,7 +2167,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`update_campaign`](crate::client::Client::update_campaign).
 ///
-/// See [`crate::client::fluent_builders::UpdateCampaign`] for more details about the operation.
+/// `ParseStrictResponse` impl for `UpdateCampaign`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateCampaign {
     _private: (),
@@ -2200,7 +2200,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateCampaign {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`update_metric_attribution`](crate::client::Client::update_metric_attribution).
 ///
-/// See [`crate::client::fluent_builders::UpdateMetricAttribution`] for more details about the operation.
+/// `ParseStrictResponse` impl for `UpdateMetricAttribution`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateMetricAttribution {
     _private: (),
@@ -2235,7 +2235,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateMetricAttribution 
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`update_recommender`](crate::client::Client::update_recommender).
 ///
-/// See [`crate::client::fluent_builders::UpdateRecommender`] for more details about the operation.
+/// `ParseStrictResponse` impl for `UpdateRecommender`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateRecommender {
     _private: (),

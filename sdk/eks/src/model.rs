@@ -49,6 +49,13 @@ impl Update {
         self.errors.as_deref()
     }
 }
+impl Update {
+    /// Creates a new builder-style object to manufacture [`Update`](crate::model::Update).
+    pub fn builder() -> crate::model::update::Builder {
+        crate::model::update::Builder::default()
+    }
+}
+
 /// See [`Update`](crate::model::Update).
 pub mod update {
 
@@ -161,12 +168,6 @@ pub mod update {
         }
     }
 }
-impl Update {
-    /// Creates a new builder-style object to manufacture [`Update`](crate::model::Update).
-    pub fn builder() -> crate::model::update::Builder {
-        crate::model::update::Builder::default()
-    }
-}
 
 /// <p>An object representing an error when an asynchronous operation fails.</p>
 #[non_exhaustive]
@@ -214,6 +215,13 @@ impl ErrorDetail {
         self.resource_ids.as_deref()
     }
 }
+impl ErrorDetail {
+    /// Creates a new builder-style object to manufacture [`ErrorDetail`](crate::model::ErrorDetail).
+    pub fn builder() -> crate::model::error_detail::Builder {
+        crate::model::error_detail::Builder::default()
+    }
+}
+
 /// See [`ErrorDetail`](crate::model::ErrorDetail).
 pub mod error_detail {
 
@@ -297,12 +305,6 @@ pub mod error_detail {
                 resource_ids: self.resource_ids,
             }
         }
-    }
-}
-impl ErrorDetail {
-    /// Creates a new builder-style object to manufacture [`ErrorDetail`](crate::model::ErrorDetail).
-    pub fn builder() -> crate::model::error_detail::Builder {
-        crate::model::error_detail::Builder::default()
     }
 }
 
@@ -510,6 +512,13 @@ impl UpdateParam {
         self.value.as_deref()
     }
 }
+impl UpdateParam {
+    /// Creates a new builder-style object to manufacture [`UpdateParam`](crate::model::UpdateParam).
+    pub fn builder() -> crate::model::update_param::Builder {
+        crate::model::update_param::Builder::default()
+    }
+}
+
 /// See [`UpdateParam`](crate::model::UpdateParam).
 pub mod update_param {
 
@@ -551,12 +560,6 @@ pub mod update_param {
                 value: self.value,
             }
         }
-    }
-}
-impl UpdateParam {
-    /// Creates a new builder-style object to manufacture [`UpdateParam`](crate::model::UpdateParam).
-    pub fn builder() -> crate::model::update_param::Builder {
-        crate::model::update_param::Builder::default()
     }
 }
 
@@ -1041,6 +1044,13 @@ impl LaunchTemplateSpecification {
         self.id.as_deref()
     }
 }
+impl LaunchTemplateSpecification {
+    /// Creates a new builder-style object to manufacture [`LaunchTemplateSpecification`](crate::model::LaunchTemplateSpecification).
+    pub fn builder() -> crate::model::launch_template_specification::Builder {
+        crate::model::launch_template_specification::Builder::default()
+    }
+}
+
 /// See [`LaunchTemplateSpecification`](crate::model::LaunchTemplateSpecification).
 pub mod launch_template_specification {
 
@@ -1097,12 +1107,6 @@ pub mod launch_template_specification {
         }
     }
 }
-impl LaunchTemplateSpecification {
-    /// Creates a new builder-style object to manufacture [`LaunchTemplateSpecification`](crate::model::LaunchTemplateSpecification).
-    pub fn builder() -> crate::model::launch_template_specification::Builder {
-        crate::model::launch_template_specification::Builder::default()
-    }
-}
 
 /// <p>The node group update configuration.</p>
 #[non_exhaustive]
@@ -1125,6 +1129,13 @@ impl NodegroupUpdateConfig {
         self.max_unavailable_percentage
     }
 }
+impl NodegroupUpdateConfig {
+    /// Creates a new builder-style object to manufacture [`NodegroupUpdateConfig`](crate::model::NodegroupUpdateConfig).
+    pub fn builder() -> crate::model::nodegroup_update_config::Builder {
+        crate::model::nodegroup_update_config::Builder::default()
+    }
+}
+
 /// See [`NodegroupUpdateConfig`](crate::model::NodegroupUpdateConfig).
 pub mod nodegroup_update_config {
 
@@ -1165,12 +1176,6 @@ pub mod nodegroup_update_config {
         }
     }
 }
-impl NodegroupUpdateConfig {
-    /// Creates a new builder-style object to manufacture [`NodegroupUpdateConfig`](crate::model::NodegroupUpdateConfig).
-    pub fn builder() -> crate::model::nodegroup_update_config::Builder {
-        crate::model::nodegroup_update_config::Builder::default()
-    }
-}
 
 /// <p>An object representing the scaling configuration details for the Auto Scaling group that is associated with your node group. When creating a node group, you must specify all or none of the properties. When updating a node group, you can specify any or none of the properties.</p>
 #[non_exhaustive]
@@ -1208,6 +1213,13 @@ impl NodegroupScalingConfig {
         self.desired_size
     }
 }
+impl NodegroupScalingConfig {
+    /// Creates a new builder-style object to manufacture [`NodegroupScalingConfig`](crate::model::NodegroupScalingConfig).
+    pub fn builder() -> crate::model::nodegroup_scaling_config::Builder {
+        crate::model::nodegroup_scaling_config::Builder::default()
+    }
+}
+
 /// See [`NodegroupScalingConfig`](crate::model::NodegroupScalingConfig).
 pub mod nodegroup_scaling_config {
 
@@ -1268,12 +1280,6 @@ pub mod nodegroup_scaling_config {
         }
     }
 }
-impl NodegroupScalingConfig {
-    /// Creates a new builder-style object to manufacture [`NodegroupScalingConfig`](crate::model::NodegroupScalingConfig).
-    pub fn builder() -> crate::model::nodegroup_scaling_config::Builder {
-        crate::model::nodegroup_scaling_config::Builder::default()
-    }
-}
 
 /// <p>An object representing the details of an update to a taints payload. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/node-taints-managed-node-groups.html">Node taints on managed node groups</a>.</p>
 #[non_exhaustive]
@@ -1296,6 +1302,13 @@ impl UpdateTaintsPayload {
         self.remove_taints.as_deref()
     }
 }
+impl UpdateTaintsPayload {
+    /// Creates a new builder-style object to manufacture [`UpdateTaintsPayload`](crate::model::UpdateTaintsPayload).
+    pub fn builder() -> crate::model::update_taints_payload::Builder {
+        crate::model::update_taints_payload::Builder::default()
+    }
+}
+
 /// See [`UpdateTaintsPayload`](crate::model::UpdateTaintsPayload).
 pub mod update_taints_payload {
 
@@ -1354,12 +1367,6 @@ pub mod update_taints_payload {
         }
     }
 }
-impl UpdateTaintsPayload {
-    /// Creates a new builder-style object to manufacture [`UpdateTaintsPayload`](crate::model::UpdateTaintsPayload).
-    pub fn builder() -> crate::model::update_taints_payload::Builder {
-        crate::model::update_taints_payload::Builder::default()
-    }
-}
 
 /// <p>A property that allows a node to repel a set of pods. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/node-taints-managed-node-groups.html">Node taints on managed node groups</a>.</p>
 #[non_exhaustive]
@@ -1389,6 +1396,13 @@ impl Taint {
         self.effect.as_ref()
     }
 }
+impl Taint {
+    /// Creates a new builder-style object to manufacture [`Taint`](crate::model::Taint).
+    pub fn builder() -> crate::model::taint::Builder {
+        crate::model::taint::Builder::default()
+    }
+}
+
 /// See [`Taint`](crate::model::Taint).
 pub mod taint {
 
@@ -1439,12 +1453,6 @@ pub mod taint {
                 effect: self.effect,
             }
         }
-    }
-}
-impl Taint {
-    /// Creates a new builder-style object to manufacture [`Taint`](crate::model::Taint).
-    pub fn builder() -> crate::model::taint::Builder {
-        crate::model::taint::Builder::default()
     }
 }
 
@@ -1568,6 +1576,13 @@ impl UpdateLabelsPayload {
         self.remove_labels.as_deref()
     }
 }
+impl UpdateLabelsPayload {
+    /// Creates a new builder-style object to manufacture [`UpdateLabelsPayload`](crate::model::UpdateLabelsPayload).
+    pub fn builder() -> crate::model::update_labels_payload::Builder {
+        crate::model::update_labels_payload::Builder::default()
+    }
+}
+
 /// See [`UpdateLabelsPayload`](crate::model::UpdateLabelsPayload).
 pub mod update_labels_payload {
 
@@ -1634,12 +1649,6 @@ pub mod update_labels_payload {
         }
     }
 }
-impl UpdateLabelsPayload {
-    /// Creates a new builder-style object to manufacture [`UpdateLabelsPayload`](crate::model::UpdateLabelsPayload).
-    pub fn builder() -> crate::model::update_labels_payload::Builder {
-        crate::model::update_labels_payload::Builder::default()
-    }
-}
 
 /// <p>An object representing the logging configuration for resources in your cluster.</p>
 #[non_exhaustive]
@@ -1655,6 +1664,13 @@ impl Logging {
         self.cluster_logging.as_deref()
     }
 }
+impl Logging {
+    /// Creates a new builder-style object to manufacture [`Logging`](crate::model::Logging).
+    pub fn builder() -> crate::model::logging::Builder {
+        crate::model::logging::Builder::default()
+    }
+}
+
 /// See [`Logging`](crate::model::Logging).
 pub mod logging {
 
@@ -1692,12 +1708,6 @@ pub mod logging {
         }
     }
 }
-impl Logging {
-    /// Creates a new builder-style object to manufacture [`Logging`](crate::model::Logging).
-    pub fn builder() -> crate::model::logging::Builder {
-        crate::model::logging::Builder::default()
-    }
-}
 
 /// <p>An object representing the enabled or disabled Kubernetes control plane logs for your cluster.</p>
 #[non_exhaustive]
@@ -1720,6 +1730,13 @@ impl LogSetup {
         self.enabled
     }
 }
+impl LogSetup {
+    /// Creates a new builder-style object to manufacture [`LogSetup`](crate::model::LogSetup).
+    pub fn builder() -> crate::model::log_setup::Builder {
+        crate::model::log_setup::Builder::default()
+    }
+}
+
 /// See [`LogSetup`](crate::model::LogSetup).
 pub mod log_setup {
 
@@ -1767,12 +1784,6 @@ pub mod log_setup {
                 enabled: self.enabled,
             }
         }
-    }
-}
-impl LogSetup {
-    /// Creates a new builder-style object to manufacture [`LogSetup`](crate::model::LogSetup).
-    pub fn builder() -> crate::model::log_setup::Builder {
-        crate::model::log_setup::Builder::default()
     }
 }
 
@@ -1929,6 +1940,13 @@ impl VpcConfigRequest {
         self.public_access_cidrs.as_deref()
     }
 }
+impl VpcConfigRequest {
+    /// Creates a new builder-style object to manufacture [`VpcConfigRequest`](crate::model::VpcConfigRequest).
+    pub fn builder() -> crate::model::vpc_config_request::Builder {
+        crate::model::vpc_config_request::Builder::default()
+    }
+}
+
 /// See [`VpcConfigRequest`](crate::model::VpcConfigRequest).
 pub mod vpc_config_request {
 
@@ -2030,12 +2048,6 @@ pub mod vpc_config_request {
                 public_access_cidrs: self.public_access_cidrs,
             }
         }
-    }
-}
-impl VpcConfigRequest {
-    /// Creates a new builder-style object to manufacture [`VpcConfigRequest`](crate::model::VpcConfigRequest).
-    pub fn builder() -> crate::model::vpc_config_request::Builder {
-        crate::model::vpc_config_request::Builder::default()
     }
 }
 
@@ -2288,6 +2300,13 @@ impl Cluster {
         self.outpost_config.as_ref()
     }
 }
+impl Cluster {
+    /// Creates a new builder-style object to manufacture [`Cluster`](crate::model::Cluster).
+    pub fn builder() -> crate::model::cluster::Builder {
+        crate::model::cluster::Builder::default()
+    }
+}
+
 /// See [`Cluster`](crate::model::Cluster).
 pub mod cluster {
 
@@ -2605,12 +2624,6 @@ pub mod cluster {
         }
     }
 }
-impl Cluster {
-    /// Creates a new builder-style object to manufacture [`Cluster`](crate::model::Cluster).
-    pub fn builder() -> crate::model::cluster::Builder {
-        crate::model::cluster::Builder::default()
-    }
-}
 
 /// <p>An object representing the configuration of your local Amazon EKS cluster on an Amazon Web Services Outpost. This API isn't available for Amazon EKS clusters on the Amazon Web Services cloud.</p>
 #[non_exhaustive]
@@ -2642,6 +2655,13 @@ impl OutpostConfigResponse {
         self.control_plane_placement.as_ref()
     }
 }
+impl OutpostConfigResponse {
+    /// Creates a new builder-style object to manufacture [`OutpostConfigResponse`](crate::model::OutpostConfigResponse).
+    pub fn builder() -> crate::model::outpost_config_response::Builder {
+        crate::model::outpost_config_response::Builder::default()
+    }
+}
+
 /// See [`OutpostConfigResponse`](crate::model::OutpostConfigResponse).
 pub mod outpost_config_response {
 
@@ -2716,12 +2736,6 @@ pub mod outpost_config_response {
         }
     }
 }
-impl OutpostConfigResponse {
-    /// Creates a new builder-style object to manufacture [`OutpostConfigResponse`](crate::model::OutpostConfigResponse).
-    pub fn builder() -> crate::model::outpost_config_response::Builder {
-        crate::model::outpost_config_response::Builder::default()
-    }
-}
 
 /// <p>The placement configuration for all the control plane instances of your local Amazon EKS cluster on an Amazon Web Services Outpost. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-outposts-capacity-considerations.html">Capacity considerations</a> in the <i>Amazon EKS User Guide</i>.</p>
 #[non_exhaustive]
@@ -2737,6 +2751,13 @@ impl ControlPlanePlacementResponse {
         self.group_name.as_deref()
     }
 }
+impl ControlPlanePlacementResponse {
+    /// Creates a new builder-style object to manufacture [`ControlPlanePlacementResponse`](crate::model::ControlPlanePlacementResponse).
+    pub fn builder() -> crate::model::control_plane_placement_response::Builder {
+        crate::model::control_plane_placement_response::Builder::default()
+    }
+}
+
 /// See [`ControlPlanePlacementResponse`](crate::model::ControlPlanePlacementResponse).
 pub mod control_plane_placement_response {
 
@@ -2765,12 +2786,6 @@ pub mod control_plane_placement_response {
         }
     }
 }
-impl ControlPlanePlacementResponse {
-    /// Creates a new builder-style object to manufacture [`ControlPlanePlacementResponse`](crate::model::ControlPlanePlacementResponse).
-    pub fn builder() -> crate::model::control_plane_placement_response::Builder {
-        crate::model::control_plane_placement_response::Builder::default()
-    }
-}
 
 /// <p>An object representing the health of your local Amazon EKS cluster on an Amazon Web Services Outpost. You can't use this API with an Amazon EKS cluster on the Amazon Web Services cloud. </p>
 #[non_exhaustive]
@@ -2786,6 +2801,13 @@ impl ClusterHealth {
         self.issues.as_deref()
     }
 }
+impl ClusterHealth {
+    /// Creates a new builder-style object to manufacture [`ClusterHealth`](crate::model::ClusterHealth).
+    pub fn builder() -> crate::model::cluster_health::Builder {
+        crate::model::cluster_health::Builder::default()
+    }
+}
+
 /// See [`ClusterHealth`](crate::model::ClusterHealth).
 pub mod cluster_health {
 
@@ -2823,12 +2845,6 @@ pub mod cluster_health {
         }
     }
 }
-impl ClusterHealth {
-    /// Creates a new builder-style object to manufacture [`ClusterHealth`](crate::model::ClusterHealth).
-    pub fn builder() -> crate::model::cluster_health::Builder {
-        crate::model::cluster_health::Builder::default()
-    }
-}
 
 /// <p>An issue with your local Amazon EKS cluster on an Amazon Web Services Outpost. You can't use this API with an Amazon EKS cluster on the Amazon Web Services cloud.</p>
 #[non_exhaustive]
@@ -2858,6 +2874,13 @@ impl ClusterIssue {
         self.resource_ids.as_deref()
     }
 }
+impl ClusterIssue {
+    /// Creates a new builder-style object to manufacture [`ClusterIssue`](crate::model::ClusterIssue).
+    pub fn builder() -> crate::model::cluster_issue::Builder {
+        crate::model::cluster_issue::Builder::default()
+    }
+}
+
 /// See [`ClusterIssue`](crate::model::ClusterIssue).
 pub mod cluster_issue {
 
@@ -2920,12 +2943,6 @@ pub mod cluster_issue {
                 resource_ids: self.resource_ids,
             }
         }
-    }
-}
-impl ClusterIssue {
-    /// Creates a new builder-style object to manufacture [`ClusterIssue`](crate::model::ClusterIssue).
-    pub fn builder() -> crate::model::cluster_issue::Builder {
-        crate::model::cluster_issue::Builder::default()
     }
 }
 
@@ -3088,6 +3105,13 @@ impl ConnectorConfigResponse {
         self.role_arn.as_deref()
     }
 }
+impl ConnectorConfigResponse {
+    /// Creates a new builder-style object to manufacture [`ConnectorConfigResponse`](crate::model::ConnectorConfigResponse).
+    pub fn builder() -> crate::model::connector_config_response::Builder {
+        crate::model::connector_config_response::Builder::default()
+    }
+}
+
 /// See [`ConnectorConfigResponse`](crate::model::ConnectorConfigResponse).
 pub mod connector_config_response {
 
@@ -3173,12 +3197,6 @@ pub mod connector_config_response {
         }
     }
 }
-impl ConnectorConfigResponse {
-    /// Creates a new builder-style object to manufacture [`ConnectorConfigResponse`](crate::model::ConnectorConfigResponse).
-    pub fn builder() -> crate::model::connector_config_response::Builder {
-        crate::model::connector_config_response::Builder::default()
-    }
-}
 
 /// <p>The encryption configuration for the cluster.</p>
 #[non_exhaustive]
@@ -3201,6 +3219,13 @@ impl EncryptionConfig {
         self.provider.as_ref()
     }
 }
+impl EncryptionConfig {
+    /// Creates a new builder-style object to manufacture [`EncryptionConfig`](crate::model::EncryptionConfig).
+    pub fn builder() -> crate::model::encryption_config::Builder {
+        crate::model::encryption_config::Builder::default()
+    }
+}
+
 /// See [`EncryptionConfig`](crate::model::EncryptionConfig).
 pub mod encryption_config {
 
@@ -3250,12 +3275,6 @@ pub mod encryption_config {
         }
     }
 }
-impl EncryptionConfig {
-    /// Creates a new builder-style object to manufacture [`EncryptionConfig`](crate::model::EncryptionConfig).
-    pub fn builder() -> crate::model::encryption_config::Builder {
-        crate::model::encryption_config::Builder::default()
-    }
-}
 
 /// <p>Identifies the Key Management Service (KMS) key used to encrypt the secrets.</p>
 #[non_exhaustive]
@@ -3271,6 +3290,13 @@ impl Provider {
         self.key_arn.as_deref()
     }
 }
+impl Provider {
+    /// Creates a new builder-style object to manufacture [`Provider`](crate::model::Provider).
+    pub fn builder() -> crate::model::provider::Builder {
+        crate::model::provider::Builder::default()
+    }
+}
+
 /// See [`Provider`](crate::model::Provider).
 pub mod provider {
 
@@ -3299,12 +3325,6 @@ pub mod provider {
         }
     }
 }
-impl Provider {
-    /// Creates a new builder-style object to manufacture [`Provider`](crate::model::Provider).
-    pub fn builder() -> crate::model::provider::Builder {
-        crate::model::provider::Builder::default()
-    }
-}
 
 /// <p>An object representing the <code>certificate-authority-data</code> for your cluster.</p>
 #[non_exhaustive]
@@ -3320,6 +3340,13 @@ impl Certificate {
         self.data.as_deref()
     }
 }
+impl Certificate {
+    /// Creates a new builder-style object to manufacture [`Certificate`](crate::model::Certificate).
+    pub fn builder() -> crate::model::certificate::Builder {
+        crate::model::certificate::Builder::default()
+    }
+}
+
 /// See [`Certificate`](crate::model::Certificate).
 pub mod certificate {
 
@@ -3344,12 +3371,6 @@ pub mod certificate {
         pub fn build(self) -> crate::model::Certificate {
             crate::model::Certificate { data: self.data }
         }
-    }
-}
-impl Certificate {
-    /// Creates a new builder-style object to manufacture [`Certificate`](crate::model::Certificate).
-    pub fn builder() -> crate::model::certificate::Builder {
-        crate::model::certificate::Builder::default()
     }
 }
 
@@ -3479,6 +3500,13 @@ impl Identity {
         self.oidc.as_ref()
     }
 }
+impl Identity {
+    /// Creates a new builder-style object to manufacture [`Identity`](crate::model::Identity).
+    pub fn builder() -> crate::model::identity::Builder {
+        crate::model::identity::Builder::default()
+    }
+}
+
 /// See [`Identity`](crate::model::Identity).
 pub mod identity {
 
@@ -3505,12 +3533,6 @@ pub mod identity {
         }
     }
 }
-impl Identity {
-    /// Creates a new builder-style object to manufacture [`Identity`](crate::model::Identity).
-    pub fn builder() -> crate::model::identity::Builder {
-        crate::model::identity::Builder::default()
-    }
-}
 
 /// <p>An object representing the <a href="https://openid.net/connect/">OpenID Connect</a> (OIDC) identity provider information for the cluster.</p>
 #[non_exhaustive]
@@ -3526,6 +3548,13 @@ impl Oidc {
         self.issuer.as_deref()
     }
 }
+impl Oidc {
+    /// Creates a new builder-style object to manufacture [`Oidc`](crate::model::Oidc).
+    pub fn builder() -> crate::model::oidc::Builder {
+        crate::model::oidc::Builder::default()
+    }
+}
+
 /// See [`Oidc`](crate::model::Oidc).
 pub mod oidc {
 
@@ -3552,12 +3581,6 @@ pub mod oidc {
                 issuer: self.issuer,
             }
         }
-    }
-}
-impl Oidc {
-    /// Creates a new builder-style object to manufacture [`Oidc`](crate::model::Oidc).
-    pub fn builder() -> crate::model::oidc::Builder {
-        crate::model::oidc::Builder::default()
     }
 }
 
@@ -3589,6 +3612,13 @@ impl KubernetesNetworkConfigResponse {
         self.ip_family.as_ref()
     }
 }
+impl KubernetesNetworkConfigResponse {
+    /// Creates a new builder-style object to manufacture [`KubernetesNetworkConfigResponse`](crate::model::KubernetesNetworkConfigResponse).
+    pub fn builder() -> crate::model::kubernetes_network_config_response::Builder {
+        crate::model::kubernetes_network_config_response::Builder::default()
+    }
+}
+
 /// See [`KubernetesNetworkConfigResponse`](crate::model::KubernetesNetworkConfigResponse).
 pub mod kubernetes_network_config_response {
 
@@ -3645,12 +3675,6 @@ pub mod kubernetes_network_config_response {
                 ip_family: self.ip_family,
             }
         }
-    }
-}
-impl KubernetesNetworkConfigResponse {
-    /// Creates a new builder-style object to manufacture [`KubernetesNetworkConfigResponse`](crate::model::KubernetesNetworkConfigResponse).
-    pub fn builder() -> crate::model::kubernetes_network_config_response::Builder {
-        crate::model::kubernetes_network_config_response::Builder::default()
     }
 }
 
@@ -3800,6 +3824,13 @@ impl VpcConfigResponse {
         self.public_access_cidrs.as_deref()
     }
 }
+impl VpcConfigResponse {
+    /// Creates a new builder-style object to manufacture [`VpcConfigResponse`](crate::model::VpcConfigResponse).
+    pub fn builder() -> crate::model::vpc_config_response::Builder {
+        crate::model::vpc_config_response::Builder::default()
+    }
+}
+
 /// See [`VpcConfigResponse`](crate::model::VpcConfigResponse).
 pub mod vpc_config_response {
 
@@ -3930,12 +3961,6 @@ pub mod vpc_config_response {
         }
     }
 }
-impl VpcConfigResponse {
-    /// Creates a new builder-style object to manufacture [`VpcConfigResponse`](crate::model::VpcConfigResponse).
-    pub fn builder() -> crate::model::vpc_config_response::Builder {
-        crate::model::vpc_config_response::Builder::default()
-    }
-}
 
 /// <p>The configuration sent to a cluster for configuration.</p>
 #[non_exhaustive]
@@ -3958,6 +3983,13 @@ impl ConnectorConfigRequest {
         self.provider.as_ref()
     }
 }
+impl ConnectorConfigRequest {
+    /// Creates a new builder-style object to manufacture [`ConnectorConfigRequest`](crate::model::ConnectorConfigRequest).
+    pub fn builder() -> crate::model::connector_config_request::Builder {
+        crate::model::connector_config_request::Builder::default()
+    }
+}
+
 /// See [`ConnectorConfigRequest`](crate::model::ConnectorConfigRequest).
 pub mod connector_config_request {
 
@@ -3999,12 +4031,6 @@ pub mod connector_config_request {
                 provider: self.provider,
             }
         }
-    }
-}
-impl ConnectorConfigRequest {
-    /// Creates a new builder-style object to manufacture [`ConnectorConfigRequest`](crate::model::ConnectorConfigRequest).
-    pub fn builder() -> crate::model::connector_config_request::Builder {
-        crate::model::connector_config_request::Builder::default()
     }
 }
 
@@ -4166,6 +4192,13 @@ impl IdentityProviderConfig {
         self.name.as_deref()
     }
 }
+impl IdentityProviderConfig {
+    /// Creates a new builder-style object to manufacture [`IdentityProviderConfig`](crate::model::IdentityProviderConfig).
+    pub fn builder() -> crate::model::identity_provider_config::Builder {
+        crate::model::identity_provider_config::Builder::default()
+    }
+}
+
 /// See [`IdentityProviderConfig`](crate::model::IdentityProviderConfig).
 pub mod identity_provider_config {
 
@@ -4204,12 +4237,6 @@ pub mod identity_provider_config {
                 name: self.name,
             }
         }
-    }
-}
-impl IdentityProviderConfig {
-    /// Creates a new builder-style object to manufacture [`IdentityProviderConfig`](crate::model::IdentityProviderConfig).
-    pub fn builder() -> crate::model::identity_provider_config::Builder {
-        crate::model::identity_provider_config::Builder::default()
     }
 }
 
@@ -4395,6 +4422,13 @@ impl Nodegroup {
         self.tags.as_ref()
     }
 }
+impl Nodegroup {
+    /// Creates a new builder-style object to manufacture [`Nodegroup`](crate::model::Nodegroup).
+    pub fn builder() -> crate::model::nodegroup::Builder {
+        crate::model::nodegroup::Builder::default()
+    }
+}
+
 /// See [`Nodegroup`](crate::model::Nodegroup).
 pub mod nodegroup {
 
@@ -4791,12 +4825,6 @@ pub mod nodegroup {
         }
     }
 }
-impl Nodegroup {
-    /// Creates a new builder-style object to manufacture [`Nodegroup`](crate::model::Nodegroup).
-    pub fn builder() -> crate::model::nodegroup::Builder {
-        crate::model::nodegroup::Builder::default()
-    }
-}
 
 /// <p>An object representing the health status of the node group.</p>
 #[non_exhaustive]
@@ -4812,6 +4840,13 @@ impl NodegroupHealth {
         self.issues.as_deref()
     }
 }
+impl NodegroupHealth {
+    /// Creates a new builder-style object to manufacture [`NodegroupHealth`](crate::model::NodegroupHealth).
+    pub fn builder() -> crate::model::nodegroup_health::Builder {
+        crate::model::nodegroup_health::Builder::default()
+    }
+}
+
 /// See [`NodegroupHealth`](crate::model::NodegroupHealth).
 pub mod nodegroup_health {
 
@@ -4847,12 +4882,6 @@ pub mod nodegroup_health {
                 issues: self.issues,
             }
         }
-    }
-}
-impl NodegroupHealth {
-    /// Creates a new builder-style object to manufacture [`NodegroupHealth`](crate::model::NodegroupHealth).
-    pub fn builder() -> crate::model::nodegroup_health::Builder {
-        crate::model::nodegroup_health::Builder::default()
     }
 }
 
@@ -4918,6 +4947,13 @@ impl Issue {
         self.resource_ids.as_deref()
     }
 }
+impl Issue {
+    /// Creates a new builder-style object to manufacture [`Issue`](crate::model::Issue).
+    pub fn builder() -> crate::model::issue::Builder {
+        crate::model::issue::Builder::default()
+    }
+}
+
 /// See [`Issue`](crate::model::Issue).
 pub mod issue {
 
@@ -5014,12 +5050,6 @@ pub mod issue {
                 resource_ids: self.resource_ids,
             }
         }
-    }
-}
-impl Issue {
-    /// Creates a new builder-style object to manufacture [`Issue`](crate::model::Issue).
-    pub fn builder() -> crate::model::issue::Builder {
-        crate::model::issue::Builder::default()
     }
 }
 
@@ -5253,6 +5283,13 @@ impl NodegroupResources {
         self.remote_access_security_group.as_deref()
     }
 }
+impl NodegroupResources {
+    /// Creates a new builder-style object to manufacture [`NodegroupResources`](crate::model::NodegroupResources).
+    pub fn builder() -> crate::model::nodegroup_resources::Builder {
+        crate::model::nodegroup_resources::Builder::default()
+    }
+}
+
 /// See [`NodegroupResources`](crate::model::NodegroupResources).
 pub mod nodegroup_resources {
 
@@ -5309,12 +5346,6 @@ pub mod nodegroup_resources {
         }
     }
 }
-impl NodegroupResources {
-    /// Creates a new builder-style object to manufacture [`NodegroupResources`](crate::model::NodegroupResources).
-    pub fn builder() -> crate::model::nodegroup_resources::Builder {
-        crate::model::nodegroup_resources::Builder::default()
-    }
-}
 
 /// <p>An Auto Scaling group that is associated with an Amazon EKS managed node group.</p>
 #[non_exhaustive]
@@ -5330,6 +5361,13 @@ impl AutoScalingGroup {
         self.name.as_deref()
     }
 }
+impl AutoScalingGroup {
+    /// Creates a new builder-style object to manufacture [`AutoScalingGroup`](crate::model::AutoScalingGroup).
+    pub fn builder() -> crate::model::auto_scaling_group::Builder {
+        crate::model::auto_scaling_group::Builder::default()
+    }
+}
+
 /// See [`AutoScalingGroup`](crate::model::AutoScalingGroup).
 pub mod auto_scaling_group {
 
@@ -5354,12 +5392,6 @@ pub mod auto_scaling_group {
         pub fn build(self) -> crate::model::AutoScalingGroup {
             crate::model::AutoScalingGroup { name: self.name }
         }
-    }
-}
-impl AutoScalingGroup {
-    /// Creates a new builder-style object to manufacture [`AutoScalingGroup`](crate::model::AutoScalingGroup).
-    pub fn builder() -> crate::model::auto_scaling_group::Builder {
-        crate::model::auto_scaling_group::Builder::default()
     }
 }
 
@@ -5537,6 +5569,13 @@ impl RemoteAccessConfig {
         self.source_security_groups.as_deref()
     }
 }
+impl RemoteAccessConfig {
+    /// Creates a new builder-style object to manufacture [`RemoteAccessConfig`](crate::model::RemoteAccessConfig).
+    pub fn builder() -> crate::model::remote_access_config::Builder {
+        crate::model::remote_access_config::Builder::default()
+    }
+}
+
 /// See [`RemoteAccessConfig`](crate::model::RemoteAccessConfig).
 pub mod remote_access_config {
 
@@ -5584,12 +5623,6 @@ pub mod remote_access_config {
                 source_security_groups: self.source_security_groups,
             }
         }
-    }
-}
-impl RemoteAccessConfig {
-    /// Creates a new builder-style object to manufacture [`RemoteAccessConfig`](crate::model::RemoteAccessConfig).
-    pub fn builder() -> crate::model::remote_access_config::Builder {
-        crate::model::remote_access_config::Builder::default()
     }
 }
 
@@ -5820,6 +5853,13 @@ impl IdentityProviderConfigResponse {
         self.oidc.as_ref()
     }
 }
+impl IdentityProviderConfigResponse {
+    /// Creates a new builder-style object to manufacture [`IdentityProviderConfigResponse`](crate::model::IdentityProviderConfigResponse).
+    pub fn builder() -> crate::model::identity_provider_config_response::Builder {
+        crate::model::identity_provider_config_response::Builder::default()
+    }
+}
+
 /// See [`IdentityProviderConfigResponse`](crate::model::IdentityProviderConfigResponse).
 pub mod identity_provider_config_response {
 
@@ -5847,12 +5887,6 @@ pub mod identity_provider_config_response {
         pub fn build(self) -> crate::model::IdentityProviderConfigResponse {
             crate::model::IdentityProviderConfigResponse { oidc: self.oidc }
         }
-    }
-}
-impl IdentityProviderConfigResponse {
-    /// Creates a new builder-style object to manufacture [`IdentityProviderConfigResponse`](crate::model::IdentityProviderConfigResponse).
-    pub fn builder() -> crate::model::identity_provider_config_response::Builder {
-        crate::model::identity_provider_config_response::Builder::default()
     }
 }
 
@@ -5955,6 +5989,13 @@ impl OidcIdentityProviderConfig {
         self.status.as_ref()
     }
 }
+impl OidcIdentityProviderConfig {
+    /// Creates a new builder-style object to manufacture [`OidcIdentityProviderConfig`](crate::model::OidcIdentityProviderConfig).
+    pub fn builder() -> crate::model::oidc_identity_provider_config::Builder {
+        crate::model::oidc_identity_provider_config::Builder::default()
+    }
+}
+
 /// See [`OidcIdentityProviderConfig`](crate::model::OidcIdentityProviderConfig).
 pub mod oidc_identity_provider_config {
 
@@ -6173,12 +6214,6 @@ pub mod oidc_identity_provider_config {
         }
     }
 }
-impl OidcIdentityProviderConfig {
-    /// Creates a new builder-style object to manufacture [`OidcIdentityProviderConfig`](crate::model::OidcIdentityProviderConfig).
-    pub fn builder() -> crate::model::oidc_identity_provider_config::Builder {
-        crate::model::oidc_identity_provider_config::Builder::default()
-    }
-}
 
 /// When writing a match expression against `ConfigStatus`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -6349,6 +6384,13 @@ impl FargateProfile {
         self.tags.as_ref()
     }
 }
+impl FargateProfile {
+    /// Creates a new builder-style object to manufacture [`FargateProfile`](crate::model::FargateProfile).
+    pub fn builder() -> crate::model::fargate_profile::Builder {
+        crate::model::fargate_profile::Builder::default()
+    }
+}
+
 /// See [`FargateProfile`](crate::model::FargateProfile).
 pub mod fargate_profile {
 
@@ -6524,12 +6566,6 @@ pub mod fargate_profile {
         }
     }
 }
-impl FargateProfile {
-    /// Creates a new builder-style object to manufacture [`FargateProfile`](crate::model::FargateProfile).
-    pub fn builder() -> crate::model::fargate_profile::Builder {
-        crate::model::fargate_profile::Builder::default()
-    }
-}
 
 /// When writing a match expression against `FargateProfileStatus`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -6669,6 +6705,13 @@ impl FargateProfileSelector {
         self.labels.as_ref()
     }
 }
+impl FargateProfileSelector {
+    /// Creates a new builder-style object to manufacture [`FargateProfileSelector`](crate::model::FargateProfileSelector).
+    pub fn builder() -> crate::model::fargate_profile_selector::Builder {
+        crate::model::fargate_profile_selector::Builder::default()
+    }
+}
+
 /// See [`FargateProfileSelector`](crate::model::FargateProfileSelector).
 pub mod fargate_profile_selector {
 
@@ -6726,12 +6769,6 @@ pub mod fargate_profile_selector {
         }
     }
 }
-impl FargateProfileSelector {
-    /// Creates a new builder-style object to manufacture [`FargateProfileSelector`](crate::model::FargateProfileSelector).
-    pub fn builder() -> crate::model::fargate_profile_selector::Builder {
-        crate::model::fargate_profile_selector::Builder::default()
-    }
-}
 
 /// <p>Information about an add-on.</p>
 #[non_exhaustive]
@@ -6784,6 +6821,13 @@ impl AddonInfo {
         self.marketplace_information.as_ref()
     }
 }
+impl AddonInfo {
+    /// Creates a new builder-style object to manufacture [`AddonInfo`](crate::model::AddonInfo).
+    pub fn builder() -> crate::model::addon_info::Builder {
+        crate::model::addon_info::Builder::default()
+    }
+}
+
 /// See [`AddonInfo`](crate::model::AddonInfo).
 pub mod addon_info {
 
@@ -6889,12 +6933,6 @@ pub mod addon_info {
         }
     }
 }
-impl AddonInfo {
-    /// Creates a new builder-style object to manufacture [`AddonInfo`](crate::model::AddonInfo).
-    pub fn builder() -> crate::model::addon_info::Builder {
-        crate::model::addon_info::Builder::default()
-    }
-}
 
 /// <p>Information about an Amazon EKS add-on from the Amazon Web Services Marketplace.</p>
 #[non_exhaustive]
@@ -6917,6 +6955,13 @@ impl MarketplaceInformation {
         self.product_url.as_deref()
     }
 }
+impl MarketplaceInformation {
+    /// Creates a new builder-style object to manufacture [`MarketplaceInformation`](crate::model::MarketplaceInformation).
+    pub fn builder() -> crate::model::marketplace_information::Builder {
+        crate::model::marketplace_information::Builder::default()
+    }
+}
+
 /// See [`MarketplaceInformation`](crate::model::MarketplaceInformation).
 pub mod marketplace_information {
 
@@ -6957,12 +7002,6 @@ pub mod marketplace_information {
         }
     }
 }
-impl MarketplaceInformation {
-    /// Creates a new builder-style object to manufacture [`MarketplaceInformation`](crate::model::MarketplaceInformation).
-    pub fn builder() -> crate::model::marketplace_information::Builder {
-        crate::model::marketplace_information::Builder::default()
-    }
-}
 
 /// <p>Information about an add-on version.</p>
 #[non_exhaustive]
@@ -6999,6 +7038,13 @@ impl AddonVersionInfo {
         self.requires_configuration
     }
 }
+impl AddonVersionInfo {
+    /// Creates a new builder-style object to manufacture [`AddonVersionInfo`](crate::model::AddonVersionInfo).
+    pub fn builder() -> crate::model::addon_version_info::Builder {
+        crate::model::addon_version_info::Builder::default()
+    }
+}
+
 /// See [`AddonVersionInfo`](crate::model::AddonVersionInfo).
 pub mod addon_version_info {
 
@@ -7084,12 +7130,6 @@ pub mod addon_version_info {
         }
     }
 }
-impl AddonVersionInfo {
-    /// Creates a new builder-style object to manufacture [`AddonVersionInfo`](crate::model::AddonVersionInfo).
-    pub fn builder() -> crate::model::addon_version_info::Builder {
-        crate::model::addon_version_info::Builder::default()
-    }
-}
 
 /// <p>Compatibility information.</p>
 #[non_exhaustive]
@@ -7119,6 +7159,13 @@ impl Compatibility {
         self.default_version
     }
 }
+impl Compatibility {
+    /// Creates a new builder-style object to manufacture [`Compatibility`](crate::model::Compatibility).
+    pub fn builder() -> crate::model::compatibility::Builder {
+        crate::model::compatibility::Builder::default()
+    }
+}
+
 /// See [`Compatibility`](crate::model::Compatibility).
 pub mod compatibility {
 
@@ -7181,12 +7228,6 @@ pub mod compatibility {
                 default_version: self.default_version.unwrap_or_default(),
             }
         }
-    }
-}
-impl Compatibility {
-    /// Creates a new builder-style object to manufacture [`Compatibility`](crate::model::Compatibility).
-    pub fn builder() -> crate::model::compatibility::Builder {
-        crate::model::compatibility::Builder::default()
     }
 }
 
@@ -7301,6 +7342,13 @@ impl Addon {
         self.configuration_values.as_deref()
     }
 }
+impl Addon {
+    /// Creates a new builder-style object to manufacture [`Addon`](crate::model::Addon).
+    pub fn builder() -> crate::model::addon::Builder {
+        crate::model::addon::Builder::default()
+    }
+}
+
 /// See [`Addon`](crate::model::Addon).
 pub mod addon {
 
@@ -7524,12 +7572,6 @@ pub mod addon {
         }
     }
 }
-impl Addon {
-    /// Creates a new builder-style object to manufacture [`Addon`](crate::model::Addon).
-    pub fn builder() -> crate::model::addon::Builder {
-        crate::model::addon::Builder::default()
-    }
-}
 
 /// <p>The health of the add-on.</p>
 #[non_exhaustive]
@@ -7545,6 +7587,13 @@ impl AddonHealth {
         self.issues.as_deref()
     }
 }
+impl AddonHealth {
+    /// Creates a new builder-style object to manufacture [`AddonHealth`](crate::model::AddonHealth).
+    pub fn builder() -> crate::model::addon_health::Builder {
+        crate::model::addon_health::Builder::default()
+    }
+}
+
 /// See [`AddonHealth`](crate::model::AddonHealth).
 pub mod addon_health {
 
@@ -7582,12 +7631,6 @@ pub mod addon_health {
         }
     }
 }
-impl AddonHealth {
-    /// Creates a new builder-style object to manufacture [`AddonHealth`](crate::model::AddonHealth).
-    pub fn builder() -> crate::model::addon_health::Builder {
-        crate::model::addon_health::Builder::default()
-    }
-}
 
 /// <p>An issue related to an add-on.</p>
 #[non_exhaustive]
@@ -7617,6 +7660,13 @@ impl AddonIssue {
         self.resource_ids.as_deref()
     }
 }
+impl AddonIssue {
+    /// Creates a new builder-style object to manufacture [`AddonIssue`](crate::model::AddonIssue).
+    pub fn builder() -> crate::model::addon_issue::Builder {
+        crate::model::addon_issue::Builder::default()
+    }
+}
+
 /// See [`AddonIssue`](crate::model::AddonIssue).
 pub mod addon_issue {
 
@@ -7679,12 +7729,6 @@ pub mod addon_issue {
                 resource_ids: self.resource_ids,
             }
         }
-    }
-}
-impl AddonIssue {
-    /// Creates a new builder-style object to manufacture [`AddonIssue`](crate::model::AddonIssue).
-    pub fn builder() -> crate::model::addon_issue::Builder {
-        crate::model::addon_issue::Builder::default()
     }
 }
 
@@ -7980,6 +8024,13 @@ impl OutpostConfigRequest {
         self.control_plane_placement.as_ref()
     }
 }
+impl OutpostConfigRequest {
+    /// Creates a new builder-style object to manufacture [`OutpostConfigRequest`](crate::model::OutpostConfigRequest).
+    pub fn builder() -> crate::model::outpost_config_request::Builder {
+        crate::model::outpost_config_request::Builder::default()
+    }
+}
+
 /// See [`OutpostConfigRequest`](crate::model::OutpostConfigRequest).
 pub mod outpost_config_request {
 
@@ -8058,12 +8109,6 @@ pub mod outpost_config_request {
         }
     }
 }
-impl OutpostConfigRequest {
-    /// Creates a new builder-style object to manufacture [`OutpostConfigRequest`](crate::model::OutpostConfigRequest).
-    pub fn builder() -> crate::model::outpost_config_request::Builder {
-        crate::model::outpost_config_request::Builder::default()
-    }
-}
 
 /// <p>The placement configuration for all the control plane instances of your local Amazon EKS cluster on an Amazon Web Services Outpost. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-outposts-capacity-considerations.html">Capacity considerations</a> in the <i>Amazon EKS User Guide</i> </p>
 #[non_exhaustive]
@@ -8079,6 +8124,13 @@ impl ControlPlanePlacementRequest {
         self.group_name.as_deref()
     }
 }
+impl ControlPlanePlacementRequest {
+    /// Creates a new builder-style object to manufacture [`ControlPlanePlacementRequest`](crate::model::ControlPlanePlacementRequest).
+    pub fn builder() -> crate::model::control_plane_placement_request::Builder {
+        crate::model::control_plane_placement_request::Builder::default()
+    }
+}
+
 /// See [`ControlPlanePlacementRequest`](crate::model::ControlPlanePlacementRequest).
 pub mod control_plane_placement_request {
 
@@ -8105,12 +8157,6 @@ pub mod control_plane_placement_request {
                 group_name: self.group_name,
             }
         }
-    }
-}
-impl ControlPlanePlacementRequest {
-    /// Creates a new builder-style object to manufacture [`ControlPlanePlacementRequest`](crate::model::ControlPlanePlacementRequest).
-    pub fn builder() -> crate::model::control_plane_placement_request::Builder {
-        crate::model::control_plane_placement_request::Builder::default()
     }
 }
 
@@ -8151,6 +8197,13 @@ impl KubernetesNetworkConfigRequest {
         self.ip_family.as_ref()
     }
 }
+impl KubernetesNetworkConfigRequest {
+    /// Creates a new builder-style object to manufacture [`KubernetesNetworkConfigRequest`](crate::model::KubernetesNetworkConfigRequest).
+    pub fn builder() -> crate::model::kubernetes_network_config_request::Builder {
+        crate::model::kubernetes_network_config_request::Builder::default()
+    }
+}
+
 /// See [`KubernetesNetworkConfigRequest`](crate::model::KubernetesNetworkConfigRequest).
 pub mod kubernetes_network_config_request {
 
@@ -8208,12 +8261,6 @@ pub mod kubernetes_network_config_request {
                 ip_family: self.ip_family,
             }
         }
-    }
-}
-impl KubernetesNetworkConfigRequest {
-    /// Creates a new builder-style object to manufacture [`KubernetesNetworkConfigRequest`](crate::model::KubernetesNetworkConfigRequest).
-    pub fn builder() -> crate::model::kubernetes_network_config_request::Builder {
-        crate::model::kubernetes_network_config_request::Builder::default()
     }
 }
 
@@ -8284,6 +8331,13 @@ impl OidcIdentityProviderConfigRequest {
         self.required_claims.as_ref()
     }
 }
+impl OidcIdentityProviderConfigRequest {
+    /// Creates a new builder-style object to manufacture [`OidcIdentityProviderConfigRequest`](crate::model::OidcIdentityProviderConfigRequest).
+    pub fn builder() -> crate::model::oidc_identity_provider_config_request::Builder {
+        crate::model::oidc_identity_provider_config_request::Builder::default()
+    }
+}
+
 /// See [`OidcIdentityProviderConfigRequest`](crate::model::OidcIdentityProviderConfigRequest).
 pub mod oidc_identity_provider_config_request {
 
@@ -8426,11 +8480,5 @@ pub mod oidc_identity_provider_config_request {
                 required_claims: self.required_claims,
             }
         }
-    }
-}
-impl OidcIdentityProviderConfigRequest {
-    /// Creates a new builder-style object to manufacture [`OidcIdentityProviderConfigRequest`](crate::model::OidcIdentityProviderConfigRequest).
-    pub fn builder() -> crate::model::oidc_identity_provider_config_request::Builder {
-        crate::model::oidc_identity_provider_config_request::Builder::default()
     }
 }

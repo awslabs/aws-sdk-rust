@@ -16,6 +16,13 @@ impl CapacityUnitsConfiguration {
         self.rescore_capacity_units
     }
 }
+impl CapacityUnitsConfiguration {
+    /// Creates a new builder-style object to manufacture [`CapacityUnitsConfiguration`](crate::model::CapacityUnitsConfiguration).
+    pub fn builder() -> crate::model::capacity_units_configuration::Builder {
+        crate::model::capacity_units_configuration::Builder::default()
+    }
+}
+
 /// See [`CapacityUnitsConfiguration`](crate::model::CapacityUnitsConfiguration).
 pub mod capacity_units_configuration {
 
@@ -46,12 +53,6 @@ pub mod capacity_units_configuration {
         }
     }
 }
-impl CapacityUnitsConfiguration {
-    /// Creates a new builder-style object to manufacture [`CapacityUnitsConfiguration`](crate::model::CapacityUnitsConfiguration).
-    pub fn builder() -> crate::model::capacity_units_configuration::Builder {
-        crate::model::capacity_units_configuration::Builder::default()
-    }
-}
 
 /// <p>A key-value pair that identifies or categorizes a rescore execution plan. A rescore execution plan is an Amazon Kendra Intelligent Ranking resource used for provisioning the <code>Rescore</code> API. You can also use a tag to help control access to a rescore execution plan. A tag key and value can consist of Unicode letters, digits, white space, and any of the following symbols: _ . : / = + - @.</p>
 #[non_exhaustive]
@@ -74,6 +75,13 @@ impl Tag {
         self.value.as_deref()
     }
 }
+impl Tag {
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
+    pub fn builder() -> crate::model::tag::Builder {
+        crate::model::tag::Builder::default()
+    }
+}
+
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
 
@@ -114,12 +122,6 @@ pub mod tag {
         }
     }
 }
-impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
-    pub fn builder() -> crate::model::tag::Builder {
-        crate::model::tag::Builder::default()
-    }
-}
 
 /// <p>A result item for a document with a new relevancy score.</p>
 #[non_exhaustive]
@@ -142,6 +144,13 @@ impl RescoreResultItem {
         self.score
     }
 }
+impl RescoreResultItem {
+    /// Creates a new builder-style object to manufacture [`RescoreResultItem`](crate::model::RescoreResultItem).
+    pub fn builder() -> crate::model::rescore_result_item::Builder {
+        crate::model::rescore_result_item::Builder::default()
+    }
+}
+
 /// See [`RescoreResultItem`](crate::model::RescoreResultItem).
 pub mod rescore_result_item {
 
@@ -180,12 +189,6 @@ pub mod rescore_result_item {
                 score: self.score,
             }
         }
-    }
-}
-impl RescoreResultItem {
-    /// Creates a new builder-style object to manufacture [`RescoreResultItem`](crate::model::RescoreResultItem).
-    pub fn builder() -> crate::model::rescore_result_item::Builder {
-        crate::model::rescore_result_item::Builder::default()
     }
 }
 
@@ -245,6 +248,13 @@ impl Document {
         self.original_score
     }
 }
+impl Document {
+    /// Creates a new builder-style object to manufacture [`Document`](crate::model::Document).
+    pub fn builder() -> crate::model::document::Builder {
+        crate::model::document::Builder::default()
+    }
+}
+
 /// See [`Document`](crate::model::Document).
 pub mod document {
 
@@ -363,12 +373,6 @@ pub mod document {
         }
     }
 }
-impl Document {
-    /// Creates a new builder-style object to manufacture [`Document`](crate::model::Document).
-    pub fn builder() -> crate::model::document::Builder {
-        crate::model::document::Builder::default()
-    }
-}
 
 /// <p>Summary information for a rescore execution plan. A rescore execution plan is an Amazon Kendra Intelligent Ranking resource used for provisioning the <code>Rescore</code> API.</p>
 #[non_exhaustive]
@@ -412,6 +416,13 @@ impl RescoreExecutionPlanSummary {
         self.status.as_ref()
     }
 }
+impl RescoreExecutionPlanSummary {
+    /// Creates a new builder-style object to manufacture [`RescoreExecutionPlanSummary`](crate::model::RescoreExecutionPlanSummary).
+    pub fn builder() -> crate::model::rescore_execution_plan_summary::Builder {
+        crate::model::rescore_execution_plan_summary::Builder::default()
+    }
+}
+
 /// See [`RescoreExecutionPlanSummary`](crate::model::RescoreExecutionPlanSummary).
 pub mod rescore_execution_plan_summary {
 
@@ -495,12 +506,6 @@ pub mod rescore_execution_plan_summary {
                 status: self.status,
             }
         }
-    }
-}
-impl RescoreExecutionPlanSummary {
-    /// Creates a new builder-style object to manufacture [`RescoreExecutionPlanSummary`](crate::model::RescoreExecutionPlanSummary).
-    pub fn builder() -> crate::model::rescore_execution_plan_summary::Builder {
-        crate::model::rescore_execution_plan_summary::Builder::default()
     }
 }
 

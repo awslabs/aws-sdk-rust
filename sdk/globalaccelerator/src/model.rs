@@ -42,6 +42,13 @@ impl ByoipCidr {
         self.events.as_deref()
     }
 }
+impl ByoipCidr {
+    /// Creates a new builder-style object to manufacture [`ByoipCidr`](crate::model::ByoipCidr).
+    pub fn builder() -> crate::model::byoip_cidr::Builder {
+        crate::model::byoip_cidr::Builder::default()
+    }
+}
+
 /// See [`ByoipCidr`](crate::model::ByoipCidr).
 pub mod byoip_cidr {
 
@@ -106,12 +113,6 @@ pub mod byoip_cidr {
         }
     }
 }
-impl ByoipCidr {
-    /// Creates a new builder-style object to manufacture [`ByoipCidr`](crate::model::ByoipCidr).
-    pub fn builder() -> crate::model::byoip_cidr::Builder {
-        crate::model::byoip_cidr::Builder::default()
-    }
-}
 
 /// <p>A complex type that contains a <code>Message</code> and a <code>Timestamp</code> value for changes that you make in the status of an IP address range that you bring to Global Accelerator through bring your own IP address (BYOIP).</p>
 #[non_exhaustive]
@@ -134,6 +135,13 @@ impl ByoipCidrEvent {
         self.timestamp.as_ref()
     }
 }
+impl ByoipCidrEvent {
+    /// Creates a new builder-style object to manufacture [`ByoipCidrEvent`](crate::model::ByoipCidrEvent).
+    pub fn builder() -> crate::model::byoip_cidr_event::Builder {
+        crate::model::byoip_cidr_event::Builder::default()
+    }
+}
+
 /// See [`ByoipCidrEvent`](crate::model::ByoipCidrEvent).
 pub mod byoip_cidr_event {
 
@@ -175,12 +183,6 @@ pub mod byoip_cidr_event {
                 timestamp: self.timestamp,
             }
         }
-    }
-}
-impl ByoipCidrEvent {
-    /// Creates a new builder-style object to manufacture [`ByoipCidrEvent`](crate::model::ByoipCidrEvent).
-    pub fn builder() -> crate::model::byoip_cidr_event::Builder {
-        crate::model::byoip_cidr_event::Builder::default()
     }
 }
 
@@ -372,6 +374,13 @@ impl Listener {
         self.client_affinity.as_ref()
     }
 }
+impl Listener {
+    /// Creates a new builder-style object to manufacture [`Listener`](crate::model::Listener).
+    pub fn builder() -> crate::model::listener::Builder {
+        crate::model::listener::Builder::default()
+    }
+}
+
 /// See [`Listener`](crate::model::Listener).
 pub mod listener {
 
@@ -452,12 +461,6 @@ pub mod listener {
                 client_affinity: self.client_affinity,
             }
         }
-    }
-}
-impl Listener {
-    /// Creates a new builder-style object to manufacture [`Listener`](crate::model::Listener).
-    pub fn builder() -> crate::model::listener::Builder {
-        crate::model::listener::Builder::default()
     }
 }
 
@@ -662,6 +665,13 @@ impl PortRange {
         self.to_port
     }
 }
+impl PortRange {
+    /// Creates a new builder-style object to manufacture [`PortRange`](crate::model::PortRange).
+    pub fn builder() -> crate::model::port_range::Builder {
+        crate::model::port_range::Builder::default()
+    }
+}
+
 /// See [`PortRange`](crate::model::PortRange).
 pub mod port_range {
 
@@ -700,12 +710,6 @@ pub mod port_range {
                 to_port: self.to_port,
             }
         }
-    }
-}
-impl PortRange {
-    /// Creates a new builder-style object to manufacture [`PortRange`](crate::model::PortRange).
-    pub fn builder() -> crate::model::port_range::Builder {
-        crate::model::port_range::Builder::default()
     }
 }
 
@@ -795,6 +799,13 @@ impl EndpointGroup {
         self.port_overrides.as_deref()
     }
 }
+impl EndpointGroup {
+    /// Creates a new builder-style object to manufacture [`EndpointGroup`](crate::model::EndpointGroup).
+    pub fn builder() -> crate::model::endpoint_group::Builder {
+        crate::model::endpoint_group::Builder::default()
+    }
+}
+
 /// See [`EndpointGroup`](crate::model::EndpointGroup).
 pub mod endpoint_group {
 
@@ -971,12 +982,6 @@ pub mod endpoint_group {
         }
     }
 }
-impl EndpointGroup {
-    /// Creates a new builder-style object to manufacture [`EndpointGroup`](crate::model::EndpointGroup).
-    pub fn builder() -> crate::model::endpoint_group::Builder {
-        crate::model::endpoint_group::Builder::default()
-    }
-}
 
 /// <p>Override specific listener ports used to route traffic to endpoints that are part of an endpoint group. For example, you can create a port override in which the listener receives user traffic on ports 80 and 443, but your accelerator routes that traffic to ports 1080 and 1443, respectively, on the endpoints.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-endpoint-groups-port-override.html"> Overriding listener ports</a> in the <i>Global Accelerator Developer Guide</i>.</p>
@@ -1000,6 +1005,13 @@ impl PortOverride {
         self.endpoint_port
     }
 }
+impl PortOverride {
+    /// Creates a new builder-style object to manufacture [`PortOverride`](crate::model::PortOverride).
+    pub fn builder() -> crate::model::port_override::Builder {
+        crate::model::port_override::Builder::default()
+    }
+}
+
 /// See [`PortOverride`](crate::model::PortOverride).
 pub mod port_override {
 
@@ -1038,12 +1050,6 @@ pub mod port_override {
                 endpoint_port: self.endpoint_port,
             }
         }
-    }
-}
-impl PortOverride {
-    /// Creates a new builder-style object to manufacture [`PortOverride`](crate::model::PortOverride).
-    pub fn builder() -> crate::model::port_override::Builder {
-        crate::model::port_override::Builder::default()
     }
 }
 
@@ -1194,6 +1200,13 @@ impl EndpointDescription {
         self.client_ip_preservation_enabled
     }
 }
+impl EndpointDescription {
+    /// Creates a new builder-style object to manufacture [`EndpointDescription`](crate::model::EndpointDescription).
+    pub fn builder() -> crate::model::endpoint_description::Builder {
+        crate::model::endpoint_description::Builder::default()
+    }
+}
+
 /// See [`EndpointDescription`](crate::model::EndpointDescription).
 pub mod endpoint_description {
 
@@ -1285,12 +1298,6 @@ pub mod endpoint_description {
                 client_ip_preservation_enabled: self.client_ip_preservation_enabled,
             }
         }
-    }
-}
-impl EndpointDescription {
-    /// Creates a new builder-style object to manufacture [`EndpointDescription`](crate::model::EndpointDescription).
-    pub fn builder() -> crate::model::endpoint_description::Builder {
-        crate::model::endpoint_description::Builder::default()
     }
 }
 
@@ -1425,6 +1432,13 @@ impl EndpointConfiguration {
         self.client_ip_preservation_enabled
     }
 }
+impl EndpointConfiguration {
+    /// Creates a new builder-style object to manufacture [`EndpointConfiguration`](crate::model::EndpointConfiguration).
+    pub fn builder() -> crate::model::endpoint_configuration::Builder {
+        crate::model::endpoint_configuration::Builder::default()
+    }
+}
+
 /// See [`EndpointConfiguration`](crate::model::EndpointConfiguration).
 pub mod endpoint_configuration {
 
@@ -1488,12 +1502,6 @@ pub mod endpoint_configuration {
         }
     }
 }
-impl EndpointConfiguration {
-    /// Creates a new builder-style object to manufacture [`EndpointConfiguration`](crate::model::EndpointConfiguration).
-    pub fn builder() -> crate::model::endpoint_configuration::Builder {
-        crate::model::endpoint_configuration::Builder::default()
-    }
-}
 
 /// <p>A complex type for a listener for a custom routing accelerator.</p>
 #[non_exhaustive]
@@ -1518,6 +1526,13 @@ impl CustomRoutingListener {
         self.port_ranges.as_deref()
     }
 }
+impl CustomRoutingListener {
+    /// Creates a new builder-style object to manufacture [`CustomRoutingListener`](crate::model::CustomRoutingListener).
+    pub fn builder() -> crate::model::custom_routing_listener::Builder {
+        crate::model::custom_routing_listener::Builder::default()
+    }
+}
+
 /// See [`CustomRoutingListener`](crate::model::CustomRoutingListener).
 pub mod custom_routing_listener {
 
@@ -1569,12 +1584,6 @@ pub mod custom_routing_listener {
         }
     }
 }
-impl CustomRoutingListener {
-    /// Creates a new builder-style object to manufacture [`CustomRoutingListener`](crate::model::CustomRoutingListener).
-    pub fn builder() -> crate::model::custom_routing_listener::Builder {
-        crate::model::custom_routing_listener::Builder::default()
-    }
-}
 
 /// <p>Attributes of a custom routing accelerator.</p>
 #[non_exhaustive]
@@ -1610,6 +1619,13 @@ impl CustomRoutingAcceleratorAttributes {
         self.flow_logs_s3_prefix.as_deref()
     }
 }
+impl CustomRoutingAcceleratorAttributes {
+    /// Creates a new builder-style object to manufacture [`CustomRoutingAcceleratorAttributes`](crate::model::CustomRoutingAcceleratorAttributes).
+    pub fn builder() -> crate::model::custom_routing_accelerator_attributes::Builder {
+        crate::model::custom_routing_accelerator_attributes::Builder::default()
+    }
+}
+
 /// See [`CustomRoutingAcceleratorAttributes`](crate::model::CustomRoutingAcceleratorAttributes).
 pub mod custom_routing_accelerator_attributes {
 
@@ -1672,12 +1688,6 @@ pub mod custom_routing_accelerator_attributes {
                 flow_logs_s3_prefix: self.flow_logs_s3_prefix,
             }
         }
-    }
-}
-impl CustomRoutingAcceleratorAttributes {
-    /// Creates a new builder-style object to manufacture [`CustomRoutingAcceleratorAttributes`](crate::model::CustomRoutingAcceleratorAttributes).
-    pub fn builder() -> crate::model::custom_routing_accelerator_attributes::Builder {
-        crate::model::custom_routing_accelerator_attributes::Builder::default()
     }
 }
 
@@ -1759,6 +1769,13 @@ impl CustomRoutingAccelerator {
         self.last_modified_time.as_ref()
     }
 }
+impl CustomRoutingAccelerator {
+    /// Creates a new builder-style object to manufacture [`CustomRoutingAccelerator`](crate::model::CustomRoutingAccelerator).
+    pub fn builder() -> crate::model::custom_routing_accelerator::Builder {
+        crate::model::custom_routing_accelerator::Builder::default()
+    }
+}
+
 /// See [`CustomRoutingAccelerator`](crate::model::CustomRoutingAccelerator).
 pub mod custom_routing_accelerator {
 
@@ -1915,12 +1932,6 @@ pub mod custom_routing_accelerator {
         }
     }
 }
-impl CustomRoutingAccelerator {
-    /// Creates a new builder-style object to manufacture [`CustomRoutingAccelerator`](crate::model::CustomRoutingAccelerator).
-    pub fn builder() -> crate::model::custom_routing_accelerator::Builder {
-        crate::model::custom_routing_accelerator::Builder::default()
-    }
-}
 
 /// When writing a match expression against `CustomRoutingAcceleratorStatus`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -2044,6 +2055,13 @@ impl IpSet {
         self.ip_address_family.as_ref()
     }
 }
+impl IpSet {
+    /// Creates a new builder-style object to manufacture [`IpSet`](crate::model::IpSet).
+    pub fn builder() -> crate::model::ip_set::Builder {
+        crate::model::ip_set::Builder::default()
+    }
+}
+
 /// See [`IpSet`](crate::model::IpSet).
 pub mod ip_set {
 
@@ -2108,12 +2126,6 @@ pub mod ip_set {
                 ip_address_family: self.ip_address_family,
             }
         }
-    }
-}
-impl IpSet {
-    /// Creates a new builder-style object to manufacture [`IpSet`](crate::model::IpSet).
-    pub fn builder() -> crate::model::ip_set::Builder {
-        crate::model::ip_set::Builder::default()
     }
 }
 
@@ -2331,6 +2343,13 @@ impl AcceleratorAttributes {
         self.flow_logs_s3_prefix.as_deref()
     }
 }
+impl AcceleratorAttributes {
+    /// Creates a new builder-style object to manufacture [`AcceleratorAttributes`](crate::model::AcceleratorAttributes).
+    pub fn builder() -> crate::model::accelerator_attributes::Builder {
+        crate::model::accelerator_attributes::Builder::default()
+    }
+}
+
 /// See [`AcceleratorAttributes`](crate::model::AcceleratorAttributes).
 pub mod accelerator_attributes {
 
@@ -2393,12 +2412,6 @@ pub mod accelerator_attributes {
                 flow_logs_s3_prefix: self.flow_logs_s3_prefix,
             }
         }
-    }
-}
-impl AcceleratorAttributes {
-    /// Creates a new builder-style object to manufacture [`AcceleratorAttributes`](crate::model::AcceleratorAttributes).
-    pub fn builder() -> crate::model::accelerator_attributes::Builder {
-        crate::model::accelerator_attributes::Builder::default()
     }
 }
 
@@ -2500,6 +2513,13 @@ impl Accelerator {
         self.events.as_deref()
     }
 }
+impl Accelerator {
+    /// Creates a new builder-style object to manufacture [`Accelerator`](crate::model::Accelerator).
+    pub fn builder() -> crate::model::accelerator::Builder {
+        crate::model::accelerator::Builder::default()
+    }
+}
+
 /// See [`Accelerator`](crate::model::Accelerator).
 pub mod accelerator {
 
@@ -2698,12 +2718,6 @@ pub mod accelerator {
         }
     }
 }
-impl Accelerator {
-    /// Creates a new builder-style object to manufacture [`Accelerator`](crate::model::Accelerator).
-    pub fn builder() -> crate::model::accelerator::Builder {
-        crate::model::accelerator::Builder::default()
-    }
-}
 
 /// <p>A complex type that contains a <code>Timestamp</code> value and <code>Message</code> for changes that you make to an accelerator in Global Accelerator. Messages stored here provide progress or error information when you update an accelerator from IPv4 to dual-stack, or from dual-stack to IPv4. Global Accelerator stores a maximum of ten event messages. </p>
 #[non_exhaustive]
@@ -2726,6 +2740,13 @@ impl AcceleratorEvent {
         self.timestamp.as_ref()
     }
 }
+impl AcceleratorEvent {
+    /// Creates a new builder-style object to manufacture [`AcceleratorEvent`](crate::model::AcceleratorEvent).
+    pub fn builder() -> crate::model::accelerator_event::Builder {
+        crate::model::accelerator_event::Builder::default()
+    }
+}
+
 /// See [`AcceleratorEvent`](crate::model::AcceleratorEvent).
 pub mod accelerator_event {
 
@@ -2767,12 +2788,6 @@ pub mod accelerator_event {
                 timestamp: self.timestamp,
             }
         }
-    }
-}
-impl AcceleratorEvent {
-    /// Creates a new builder-style object to manufacture [`AcceleratorEvent`](crate::model::AcceleratorEvent).
-    pub fn builder() -> crate::model::accelerator_event::Builder {
-        crate::model::accelerator_event::Builder::default()
     }
 }
 
@@ -2889,6 +2904,13 @@ impl Tag {
         self.value.as_deref()
     }
 }
+impl Tag {
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
+    pub fn builder() -> crate::model::tag::Builder {
+        crate::model::tag::Builder::default()
+    }
+}
+
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
 
@@ -2929,12 +2951,6 @@ pub mod tag {
         }
     }
 }
-impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
-    pub fn builder() -> crate::model::tag::Builder {
-        crate::model::tag::Builder::default()
-    }
-}
 
 /// <p>A complex type for an endpoint. Specifies information about the endpoint to remove from the endpoint group.</p>
 #[non_exhaustive]
@@ -2961,6 +2977,13 @@ impl EndpointIdentifier {
         self.client_ip_preservation_enabled
     }
 }
+impl EndpointIdentifier {
+    /// Creates a new builder-style object to manufacture [`EndpointIdentifier`](crate::model::EndpointIdentifier).
+    pub fn builder() -> crate::model::endpoint_identifier::Builder {
+        crate::model::endpoint_identifier::Builder::default()
+    }
+}
+
 /// See [`EndpointIdentifier`](crate::model::EndpointIdentifier).
 pub mod endpoint_identifier {
 
@@ -3008,12 +3031,6 @@ pub mod endpoint_identifier {
         }
     }
 }
-impl EndpointIdentifier {
-    /// Creates a new builder-style object to manufacture [`EndpointIdentifier`](crate::model::EndpointIdentifier).
-    pub fn builder() -> crate::model::endpoint_identifier::Builder {
-        crate::model::endpoint_identifier::Builder::default()
-    }
-}
 
 /// <p>Provides authorization for Amazon to bring a specific IP address range to a specific Amazon Web Services account using bring your own IP addresses (BYOIP). </p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring your own IP addresses (BYOIP)</a> in the <i>Global Accelerator Developer Guide</i>.</p>
@@ -3037,6 +3054,13 @@ impl CidrAuthorizationContext {
         self.signature.as_deref()
     }
 }
+impl CidrAuthorizationContext {
+    /// Creates a new builder-style object to manufacture [`CidrAuthorizationContext`](crate::model::CidrAuthorizationContext).
+    pub fn builder() -> crate::model::cidr_authorization_context::Builder {
+        crate::model::cidr_authorization_context::Builder::default()
+    }
+}
+
 /// See [`CidrAuthorizationContext`](crate::model::CidrAuthorizationContext).
 pub mod cidr_authorization_context {
 
@@ -3075,12 +3099,6 @@ pub mod cidr_authorization_context {
                 signature: self.signature,
             }
         }
-    }
-}
-impl CidrAuthorizationContext {
-    /// Creates a new builder-style object to manufacture [`CidrAuthorizationContext`](crate::model::CidrAuthorizationContext).
-    pub fn builder() -> crate::model::cidr_authorization_context::Builder {
-        crate::model::cidr_authorization_context::Builder::default()
     }
 }
 
@@ -3153,6 +3171,13 @@ impl DestinationPortMapping {
         self.destination_traffic_state.as_ref()
     }
 }
+impl DestinationPortMapping {
+    /// Creates a new builder-style object to manufacture [`DestinationPortMapping`](crate::model::DestinationPortMapping).
+    pub fn builder() -> crate::model::destination_port_mapping::Builder {
+        crate::model::destination_port_mapping::Builder::default()
+    }
+}
+
 /// See [`DestinationPortMapping`](crate::model::DestinationPortMapping).
 pub mod destination_port_mapping {
 
@@ -3297,12 +3322,6 @@ pub mod destination_port_mapping {
         }
     }
 }
-impl DestinationPortMapping {
-    /// Creates a new builder-style object to manufacture [`DestinationPortMapping`](crate::model::DestinationPortMapping).
-    pub fn builder() -> crate::model::destination_port_mapping::Builder {
-        crate::model::destination_port_mapping::Builder::default()
-    }
-}
 
 /// When writing a match expression against `CustomRoutingDestinationTrafficState`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -3417,6 +3436,13 @@ impl SocketAddress {
         self.port
     }
 }
+impl SocketAddress {
+    /// Creates a new builder-style object to manufacture [`SocketAddress`](crate::model::SocketAddress).
+    pub fn builder() -> crate::model::socket_address::Builder {
+        crate::model::socket_address::Builder::default()
+    }
+}
+
 /// See [`SocketAddress`](crate::model::SocketAddress).
 pub mod socket_address {
 
@@ -3455,12 +3481,6 @@ pub mod socket_address {
                 port: self.port,
             }
         }
-    }
-}
-impl SocketAddress {
-    /// Creates a new builder-style object to manufacture [`SocketAddress`](crate::model::SocketAddress).
-    pub fn builder() -> crate::model::socket_address::Builder {
-        crate::model::socket_address::Builder::default()
     }
 }
 
@@ -3516,6 +3536,13 @@ impl PortMapping {
         self.destination_traffic_state.as_ref()
     }
 }
+impl PortMapping {
+    /// Creates a new builder-style object to manufacture [`PortMapping`](crate::model::PortMapping).
+    pub fn builder() -> crate::model::port_mapping::Builder {
+        crate::model::port_mapping::Builder::default()
+    }
+}
+
 /// See [`PortMapping`](crate::model::PortMapping).
 pub mod port_mapping {
 
@@ -3625,12 +3652,6 @@ pub mod port_mapping {
                 destination_traffic_state: self.destination_traffic_state,
             }
         }
-    }
-}
-impl PortMapping {
-    /// Creates a new builder-style object to manufacture [`PortMapping`](crate::model::PortMapping).
-    pub fn builder() -> crate::model::port_mapping::Builder {
-        crate::model::port_mapping::Builder::default()
     }
 }
 
@@ -3767,6 +3788,13 @@ impl CustomRoutingEndpointGroup {
         self.endpoint_descriptions.as_deref()
     }
 }
+impl CustomRoutingEndpointGroup {
+    /// Creates a new builder-style object to manufacture [`CustomRoutingEndpointGroup`](crate::model::CustomRoutingEndpointGroup).
+    pub fn builder() -> crate::model::custom_routing_endpoint_group::Builder {
+        crate::model::custom_routing_endpoint_group::Builder::default()
+    }
+}
+
 /// See [`CustomRoutingEndpointGroup`](crate::model::CustomRoutingEndpointGroup).
 pub mod custom_routing_endpoint_group {
 
@@ -3867,12 +3895,6 @@ pub mod custom_routing_endpoint_group {
         }
     }
 }
-impl CustomRoutingEndpointGroup {
-    /// Creates a new builder-style object to manufacture [`CustomRoutingEndpointGroup`](crate::model::CustomRoutingEndpointGroup).
-    pub fn builder() -> crate::model::custom_routing_endpoint_group::Builder {
-        crate::model::custom_routing_endpoint_group::Builder::default()
-    }
-}
 
 /// <p>A complex type for an endpoint for a custom routing accelerator. Each endpoint group can include one or more endpoints, which are virtual private cloud (VPC) subnets.</p>
 #[non_exhaustive]
@@ -3888,6 +3910,13 @@ impl CustomRoutingEndpointDescription {
         self.endpoint_id.as_deref()
     }
 }
+impl CustomRoutingEndpointDescription {
+    /// Creates a new builder-style object to manufacture [`CustomRoutingEndpointDescription`](crate::model::CustomRoutingEndpointDescription).
+    pub fn builder() -> crate::model::custom_routing_endpoint_description::Builder {
+        crate::model::custom_routing_endpoint_description::Builder::default()
+    }
+}
+
 /// See [`CustomRoutingEndpointDescription`](crate::model::CustomRoutingEndpointDescription).
 pub mod custom_routing_endpoint_description {
 
@@ -3914,12 +3943,6 @@ pub mod custom_routing_endpoint_description {
                 endpoint_id: self.endpoint_id,
             }
         }
-    }
-}
-impl CustomRoutingEndpointDescription {
-    /// Creates a new builder-style object to manufacture [`CustomRoutingEndpointDescription`](crate::model::CustomRoutingEndpointDescription).
-    pub fn builder() -> crate::model::custom_routing_endpoint_description::Builder {
-        crate::model::custom_routing_endpoint_description::Builder::default()
     }
 }
 
@@ -3951,6 +3974,13 @@ impl CustomRoutingDestinationDescription {
         self.protocols.as_deref()
     }
 }
+impl CustomRoutingDestinationDescription {
+    /// Creates a new builder-style object to manufacture [`CustomRoutingDestinationDescription`](crate::model::CustomRoutingDestinationDescription).
+    pub fn builder() -> crate::model::custom_routing_destination_description::Builder {
+        crate::model::custom_routing_destination_description::Builder::default()
+    }
+}
+
 /// See [`CustomRoutingDestinationDescription`](crate::model::CustomRoutingDestinationDescription).
 pub mod custom_routing_destination_description {
 
@@ -4012,12 +4042,6 @@ pub mod custom_routing_destination_description {
         }
     }
 }
-impl CustomRoutingDestinationDescription {
-    /// Creates a new builder-style object to manufacture [`CustomRoutingDestinationDescription`](crate::model::CustomRoutingDestinationDescription).
-    pub fn builder() -> crate::model::custom_routing_destination_description::Builder {
-        crate::model::custom_routing_destination_description::Builder::default()
-    }
-}
 
 /// <p>For a custom routing accelerator, sets the port range and protocol for all endpoints (virtual private cloud subnets) in an endpoint group to accept client traffic on.</p>
 #[non_exhaustive]
@@ -4047,6 +4071,13 @@ impl CustomRoutingDestinationConfiguration {
         self.protocols.as_deref()
     }
 }
+impl CustomRoutingDestinationConfiguration {
+    /// Creates a new builder-style object to manufacture [`CustomRoutingDestinationConfiguration`](crate::model::CustomRoutingDestinationConfiguration).
+    pub fn builder() -> crate::model::custom_routing_destination_configuration::Builder {
+        crate::model::custom_routing_destination_configuration::Builder::default()
+    }
+}
+
 /// See [`CustomRoutingDestinationConfiguration`](crate::model::CustomRoutingDestinationConfiguration).
 pub mod custom_routing_destination_configuration {
 
@@ -4109,12 +4140,6 @@ pub mod custom_routing_destination_configuration {
         }
     }
 }
-impl CustomRoutingDestinationConfiguration {
-    /// Creates a new builder-style object to manufacture [`CustomRoutingDestinationConfiguration`](crate::model::CustomRoutingDestinationConfiguration).
-    pub fn builder() -> crate::model::custom_routing_destination_configuration::Builder {
-        crate::model::custom_routing_destination_configuration::Builder::default()
-    }
-}
 
 /// <p>The list of endpoint objects. For custom routing, this is a list of virtual private cloud (VPC) subnet IDs.</p>
 #[non_exhaustive]
@@ -4130,6 +4155,13 @@ impl CustomRoutingEndpointConfiguration {
         self.endpoint_id.as_deref()
     }
 }
+impl CustomRoutingEndpointConfiguration {
+    /// Creates a new builder-style object to manufacture [`CustomRoutingEndpointConfiguration`](crate::model::CustomRoutingEndpointConfiguration).
+    pub fn builder() -> crate::model::custom_routing_endpoint_configuration::Builder {
+        crate::model::custom_routing_endpoint_configuration::Builder::default()
+    }
+}
+
 /// See [`CustomRoutingEndpointConfiguration`](crate::model::CustomRoutingEndpointConfiguration).
 pub mod custom_routing_endpoint_configuration {
 
@@ -4156,11 +4188,5 @@ pub mod custom_routing_endpoint_configuration {
                 endpoint_id: self.endpoint_id,
             }
         }
-    }
-}
-impl CustomRoutingEndpointConfiguration {
-    /// Creates a new builder-style object to manufacture [`CustomRoutingEndpointConfiguration`](crate::model::CustomRoutingEndpointConfiguration).
-    pub fn builder() -> crate::model::custom_routing_endpoint_configuration::Builder {
-        crate::model::custom_routing_endpoint_configuration::Builder::default()
     }
 }

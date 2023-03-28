@@ -52,6 +52,13 @@ impl EnvironmentMember {
         self.last_access.as_ref()
     }
 }
+impl EnvironmentMember {
+    /// Creates a new builder-style object to manufacture [`EnvironmentMember`](crate::model::EnvironmentMember).
+    pub fn builder() -> crate::model::environment_member::Builder {
+        crate::model::environment_member::Builder::default()
+    }
+}
+
 /// See [`EnvironmentMember`](crate::model::EnvironmentMember).
 pub mod environment_member {
 
@@ -145,12 +152,6 @@ pub mod environment_member {
                 last_access: self.last_access,
             }
         }
-    }
-}
-impl EnvironmentMember {
-    /// Creates a new builder-style object to manufacture [`EnvironmentMember`](crate::model::EnvironmentMember).
-    pub fn builder() -> crate::model::environment_member::Builder {
-        crate::model::environment_member::Builder::default()
     }
 }
 
@@ -462,6 +463,13 @@ impl std::fmt::Debug for Tag {
         formatter.finish()
     }
 }
+impl Tag {
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
+    pub fn builder() -> crate::model::tag::Builder {
+        crate::model::tag::Builder::default()
+    }
+}
+
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
 
@@ -508,12 +516,6 @@ pub mod tag {
             formatter.field("value", &"*** Sensitive Data Redacted ***");
             formatter.finish()
         }
-    }
-}
-impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
-    pub fn builder() -> crate::model::tag::Builder {
-        crate::model::tag::Builder::default()
     }
 }
 
@@ -764,6 +766,13 @@ impl std::fmt::Debug for Environment {
         formatter.finish()
     }
 }
+impl Environment {
+    /// Creates a new builder-style object to manufacture [`Environment`](crate::model::Environment).
+    pub fn builder() -> crate::model::environment::Builder {
+        crate::model::environment::Builder::default()
+    }
+}
+
 /// See [`Environment`](crate::model::Environment).
 pub mod environment {
 
@@ -952,12 +961,6 @@ pub mod environment {
             );
             formatter.finish()
         }
-    }
-}
-impl Environment {
-    /// Creates a new builder-style object to manufacture [`Environment`](crate::model::Environment).
-    pub fn builder() -> crate::model::environment::Builder {
-        crate::model::environment::Builder::default()
     }
 }
 
@@ -1168,6 +1171,13 @@ impl EnvironmentLifecycle {
         self.failure_resource.as_deref()
     }
 }
+impl EnvironmentLifecycle {
+    /// Creates a new builder-style object to manufacture [`EnvironmentLifecycle`](crate::model::EnvironmentLifecycle).
+    pub fn builder() -> crate::model::environment_lifecycle::Builder {
+        crate::model::environment_lifecycle::Builder::default()
+    }
+}
+
 /// See [`EnvironmentLifecycle`](crate::model::EnvironmentLifecycle).
 pub mod environment_lifecycle {
 
@@ -1238,12 +1248,6 @@ pub mod environment_lifecycle {
                 failure_resource: self.failure_resource,
             }
         }
-    }
-}
-impl EnvironmentLifecycle {
-    /// Creates a new builder-style object to manufacture [`EnvironmentLifecycle`](crate::model::EnvironmentLifecycle).
-    pub fn builder() -> crate::model::environment_lifecycle::Builder {
-        crate::model::environment_lifecycle::Builder::default()
     }
 }
 

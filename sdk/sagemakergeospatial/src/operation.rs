@@ -4,7 +4,7 @@
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`delete_earth_observation_job`](crate::client::Client::delete_earth_observation_job).
 ///
-/// See [`crate::client::fluent_builders::DeleteEarthObservationJob`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DeleteEarthObservationJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteEarthObservationJob {
     _private: (),
@@ -39,7 +39,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteEarthObservationJo
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`delete_vector_enrichment_job`](crate::client::Client::delete_vector_enrichment_job).
 ///
-/// See [`crate::client::fluent_builders::DeleteVectorEnrichmentJob`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DeleteVectorEnrichmentJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteVectorEnrichmentJob {
     _private: (),
@@ -74,7 +74,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteVectorEnrichmentJo
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`export_earth_observation_job`](crate::client::Client::export_earth_observation_job).
 ///
-/// See [`crate::client::fluent_builders::ExportEarthObservationJob`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ExportEarthObservationJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ExportEarthObservationJob {
     _private: (),
@@ -109,7 +109,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ExportEarthObservationJo
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`export_vector_enrichment_job`](crate::client::Client::export_vector_enrichment_job).
 ///
-/// See [`crate::client::fluent_builders::ExportVectorEnrichmentJob`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ExportVectorEnrichmentJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ExportVectorEnrichmentJob {
     _private: (),
@@ -144,7 +144,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ExportVectorEnrichmentJo
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`get_earth_observation_job`](crate::client::Client::get_earth_observation_job).
 ///
-/// See [`crate::client::fluent_builders::GetEarthObservationJob`] for more details about the operation.
+/// `ParseStrictResponse` impl for `GetEarthObservationJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetEarthObservationJob {
     _private: (),
@@ -179,7 +179,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetEarthObservationJob {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`get_raster_data_collection`](crate::client::Client::get_raster_data_collection).
 ///
-/// See [`crate::client::fluent_builders::GetRasterDataCollection`] for more details about the operation.
+/// `ParseStrictResponse` impl for `GetRasterDataCollection`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetRasterDataCollection {
     _private: (),
@@ -214,7 +214,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetRasterDataCollection 
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`get_tile`](crate::client::Client::get_tile).
 ///
-/// See [`crate::client::fluent_builders::GetTile`] for more details about the operation.
+/// `ParseStrictResponse` impl for `GetTile`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetTile {
     _private: (),
@@ -252,7 +252,7 @@ impl aws_smithy_http::response::ParseHttpResponse for GetTile {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`get_vector_enrichment_job`](crate::client::Client::get_vector_enrichment_job).
 ///
-/// See [`crate::client::fluent_builders::GetVectorEnrichmentJob`] for more details about the operation.
+/// `ParseStrictResponse` impl for `GetVectorEnrichmentJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetVectorEnrichmentJob {
     _private: (),
@@ -287,7 +287,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetVectorEnrichmentJob {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_earth_observation_jobs`](crate::client::Client::list_earth_observation_jobs).
 ///
-/// See [`crate::client::fluent_builders::ListEarthObservationJobs`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListEarthObservationJobs`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListEarthObservationJobs {
     _private: (),
@@ -322,7 +322,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListEarthObservationJobs
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_raster_data_collections`](crate::client::Client::list_raster_data_collections).
 ///
-/// See [`crate::client::fluent_builders::ListRasterDataCollections`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListRasterDataCollections`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListRasterDataCollections {
     _private: (),
@@ -357,7 +357,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListRasterDataCollection
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
 ///
-/// See [`crate::client::fluent_builders::ListTagsForResource`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTagsForResource {
     _private: (),
@@ -392,7 +392,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_vector_enrichment_jobs`](crate::client::Client::list_vector_enrichment_jobs).
 ///
-/// See [`crate::client::fluent_builders::ListVectorEnrichmentJobs`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListVectorEnrichmentJobs`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListVectorEnrichmentJobs {
     _private: (),
@@ -427,7 +427,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListVectorEnrichmentJobs
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`search_raster_data_collection`](crate::client::Client::search_raster_data_collection).
 ///
-/// See [`crate::client::fluent_builders::SearchRasterDataCollection`] for more details about the operation.
+/// `ParseStrictResponse` impl for `SearchRasterDataCollection`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct SearchRasterDataCollection {
     _private: (),
@@ -462,7 +462,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SearchRasterDataCollecti
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`start_earth_observation_job`](crate::client::Client::start_earth_observation_job).
 ///
-/// See [`crate::client::fluent_builders::StartEarthObservationJob`] for more details about the operation.
+/// `ParseStrictResponse` impl for `StartEarthObservationJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StartEarthObservationJob {
     _private: (),
@@ -497,7 +497,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartEarthObservationJob
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`start_vector_enrichment_job`](crate::client::Client::start_vector_enrichment_job).
 ///
-/// See [`crate::client::fluent_builders::StartVectorEnrichmentJob`] for more details about the operation.
+/// `ParseStrictResponse` impl for `StartVectorEnrichmentJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StartVectorEnrichmentJob {
     _private: (),
@@ -532,7 +532,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartVectorEnrichmentJob
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`stop_earth_observation_job`](crate::client::Client::stop_earth_observation_job).
 ///
-/// See [`crate::client::fluent_builders::StopEarthObservationJob`] for more details about the operation.
+/// `ParseStrictResponse` impl for `StopEarthObservationJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StopEarthObservationJob {
     _private: (),
@@ -567,7 +567,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StopEarthObservationJob 
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`stop_vector_enrichment_job`](crate::client::Client::stop_vector_enrichment_job).
 ///
-/// See [`crate::client::fluent_builders::StopVectorEnrichmentJob`] for more details about the operation.
+/// `ParseStrictResponse` impl for `StopVectorEnrichmentJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StopVectorEnrichmentJob {
     _private: (),
@@ -602,7 +602,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StopVectorEnrichmentJob 
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`tag_resource`](crate::client::Client::tag_resource).
 ///
-/// See [`crate::client::fluent_builders::TagResource`] for more details about the operation.
+/// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct TagResource {
     _private: (),
@@ -635,7 +635,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`untag_resource`](crate::client::Client::untag_resource).
 ///
-/// See [`crate::client::fluent_builders::UntagResource`] for more details about the operation.
+/// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UntagResource {
     _private: (),

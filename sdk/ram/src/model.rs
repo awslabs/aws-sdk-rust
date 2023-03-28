@@ -87,6 +87,13 @@ impl ResourceShare {
         self.feature_set.as_ref()
     }
 }
+impl ResourceShare {
+    /// Creates a new builder-style object to manufacture [`ResourceShare`](crate::model::ResourceShare).
+    pub fn builder() -> crate::model::resource_share::Builder {
+        crate::model::resource_share::Builder::default()
+    }
+}
+
 /// See [`ResourceShare`](crate::model::ResourceShare).
 pub mod resource_share {
 
@@ -263,12 +270,6 @@ pub mod resource_share {
         }
     }
 }
-impl ResourceShare {
-    /// Creates a new builder-style object to manufacture [`ResourceShare`](crate::model::ResourceShare).
-    pub fn builder() -> crate::model::resource_share::Builder {
-        crate::model::resource_share::Builder::default()
-    }
-}
 
 /// When writing a match expression against `ResourceShareFeatureSet`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -389,6 +390,13 @@ impl Tag {
         self.value.as_deref()
     }
 }
+impl Tag {
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
+    pub fn builder() -> crate::model::tag::Builder {
+        crate::model::tag::Builder::default()
+    }
+}
+
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
 
@@ -427,12 +435,6 @@ pub mod tag {
                 value: self.value,
             }
         }
-    }
-}
-impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
-    pub fn builder() -> crate::model::tag::Builder {
-        crate::model::tag::Builder::default()
     }
 }
 
@@ -618,6 +620,13 @@ impl ResourceShareInvitation {
         self.receiver_arn.as_deref()
     }
 }
+impl ResourceShareInvitation {
+    /// Creates a new builder-style object to manufacture [`ResourceShareInvitation`](crate::model::ResourceShareInvitation).
+    pub fn builder() -> crate::model::resource_share_invitation::Builder {
+        crate::model::resource_share_invitation::Builder::default()
+    }
+}
+
 /// See [`ResourceShareInvitation`](crate::model::ResourceShareInvitation).
 pub mod resource_share_invitation {
 
@@ -781,12 +790,6 @@ pub mod resource_share_invitation {
         }
     }
 }
-impl ResourceShareInvitation {
-    /// Creates a new builder-style object to manufacture [`ResourceShareInvitation`](crate::model::ResourceShareInvitation).
-    pub fn builder() -> crate::model::resource_share_invitation::Builder {
-        crate::model::resource_share_invitation::Builder::default()
-    }
-}
 
 /// <p>Describes an association with a resource share and either a principal or a resource.</p>
 #[non_exhaustive]
@@ -882,6 +885,13 @@ impl ResourceShareAssociation {
         self.external
     }
 }
+impl ResourceShareAssociation {
+    /// Creates a new builder-style object to manufacture [`ResourceShareAssociation`](crate::model::ResourceShareAssociation).
+    pub fn builder() -> crate::model::resource_share_association::Builder {
+        crate::model::resource_share_association::Builder::default()
+    }
+}
+
 /// See [`ResourceShareAssociation`](crate::model::ResourceShareAssociation).
 pub mod resource_share_association {
 
@@ -1054,12 +1064,6 @@ pub mod resource_share_association {
                 external: self.external,
             }
         }
-    }
-}
-impl ResourceShareAssociation {
-    /// Creates a new builder-style object to manufacture [`ResourceShareAssociation`](crate::model::ResourceShareAssociation).
-    pub fn builder() -> crate::model::resource_share_association::Builder {
-        crate::model::resource_share_association::Builder::default()
     }
 }
 
@@ -1406,6 +1410,13 @@ impl ServiceNameAndResourceType {
         self.resource_region_scope.as_ref()
     }
 }
+impl ServiceNameAndResourceType {
+    /// Creates a new builder-style object to manufacture [`ServiceNameAndResourceType`](crate::model::ServiceNameAndResourceType).
+    pub fn builder() -> crate::model::service_name_and_resource_type::Builder {
+        crate::model::service_name_and_resource_type::Builder::default()
+    }
+}
+
 /// See [`ServiceNameAndResourceType`](crate::model::ServiceNameAndResourceType).
 pub mod service_name_and_resource_type {
 
@@ -1470,12 +1481,6 @@ pub mod service_name_and_resource_type {
                 resource_region_scope: self.resource_region_scope,
             }
         }
-    }
-}
-impl ServiceNameAndResourceType {
-    /// Creates a new builder-style object to manufacture [`ServiceNameAndResourceType`](crate::model::ServiceNameAndResourceType).
-    pub fn builder() -> crate::model::service_name_and_resource_type::Builder {
-        crate::model::service_name_and_resource_type::Builder::default()
     }
 }
 
@@ -1738,6 +1743,13 @@ impl ResourceSharePermissionSummary {
         self.is_resource_type_default
     }
 }
+impl ResourceSharePermissionSummary {
+    /// Creates a new builder-style object to manufacture [`ResourceSharePermissionSummary`](crate::model::ResourceSharePermissionSummary).
+    pub fn builder() -> crate::model::resource_share_permission_summary::Builder {
+        crate::model::resource_share_permission_summary::Builder::default()
+    }
+}
+
 /// See [`ResourceSharePermissionSummary`](crate::model::ResourceSharePermissionSummary).
 pub mod resource_share_permission_summary {
 
@@ -1871,12 +1883,6 @@ pub mod resource_share_permission_summary {
         }
     }
 }
-impl ResourceSharePermissionSummary {
-    /// Creates a new builder-style object to manufacture [`ResourceSharePermissionSummary`](crate::model::ResourceSharePermissionSummary).
-    pub fn builder() -> crate::model::resource_share_permission_summary::Builder {
-        crate::model::resource_share_permission_summary::Builder::default()
-    }
-}
 
 /// <p>Describes a resource associated with a resource share in RAM.</p>
 #[non_exhaustive]
@@ -1956,6 +1962,13 @@ impl Resource {
         self.resource_region_scope.as_ref()
     }
 }
+impl Resource {
+    /// Creates a new builder-style object to manufacture [`Resource`](crate::model::Resource).
+    pub fn builder() -> crate::model::resource::Builder {
+        crate::model::resource::Builder::default()
+    }
+}
+
 /// See [`Resource`](crate::model::Resource).
 pub mod resource {
 
@@ -2107,12 +2120,6 @@ pub mod resource {
                 resource_region_scope: self.resource_region_scope,
             }
         }
-    }
-}
-impl Resource {
-    /// Creates a new builder-style object to manufacture [`Resource`](crate::model::Resource).
-    pub fn builder() -> crate::model::resource::Builder {
-        crate::model::resource::Builder::default()
     }
 }
 
@@ -2359,6 +2366,13 @@ impl Principal {
         self.external
     }
 }
+impl Principal {
+    /// Creates a new builder-style object to manufacture [`Principal`](crate::model::Principal).
+    pub fn builder() -> crate::model::principal::Builder {
+        crate::model::principal::Builder::default()
+    }
+}
+
 /// See [`Principal`](crate::model::Principal).
 pub mod principal {
 
@@ -2444,12 +2458,6 @@ pub mod principal {
         }
     }
 }
-impl Principal {
-    /// Creates a new builder-style object to manufacture [`Principal`](crate::model::Principal).
-    pub fn builder() -> crate::model::principal::Builder {
-        crate::model::principal::Builder::default()
-    }
-}
 
 /// <p>A tag key and optional list of possible values that you can use to filter results for tagged resources.</p>
 #[non_exhaustive]
@@ -2472,6 +2480,13 @@ impl TagFilter {
         self.tag_values.as_deref()
     }
 }
+impl TagFilter {
+    /// Creates a new builder-style object to manufacture [`TagFilter`](crate::model::TagFilter).
+    pub fn builder() -> crate::model::tag_filter::Builder {
+        crate::model::tag_filter::Builder::default()
+    }
+}
+
 /// See [`TagFilter`](crate::model::TagFilter).
 pub mod tag_filter {
 
@@ -2519,12 +2534,6 @@ pub mod tag_filter {
                 tag_values: self.tag_values,
             }
         }
-    }
-}
-impl TagFilter {
-    /// Creates a new builder-style object to manufacture [`TagFilter`](crate::model::TagFilter).
-    pub fn builder() -> crate::model::tag_filter::Builder {
-        crate::model::tag_filter::Builder::default()
     }
 }
 
@@ -2598,6 +2607,13 @@ impl ResourceSharePermissionDetail {
         self.is_resource_type_default
     }
 }
+impl ResourceSharePermissionDetail {
+    /// Creates a new builder-style object to manufacture [`ResourceSharePermissionDetail`](crate::model::ResourceSharePermissionDetail).
+    pub fn builder() -> crate::model::resource_share_permission_detail::Builder {
+        crate::model::resource_share_permission_detail::Builder::default()
+    }
+}
+
 /// See [`ResourceSharePermissionDetail`](crate::model::ResourceSharePermissionDetail).
 pub mod resource_share_permission_detail {
 
@@ -2729,11 +2745,5 @@ pub mod resource_share_permission_detail {
                 is_resource_type_default: self.is_resource_type_default,
             }
         }
-    }
-}
-impl ResourceSharePermissionDetail {
-    /// Creates a new builder-style object to manufacture [`ResourceSharePermissionDetail`](crate::model::ResourceSharePermissionDetail).
-    pub fn builder() -> crate::model::resource_share_permission_detail::Builder {
-        crate::model::resource_share_permission_detail::Builder::default()
     }
 }

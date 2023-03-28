@@ -63,6 +63,13 @@ impl PipelineDeclaration {
         self.version
     }
 }
+impl PipelineDeclaration {
+    /// Creates a new builder-style object to manufacture [`PipelineDeclaration`](crate::model::PipelineDeclaration).
+    pub fn builder() -> crate::model::pipeline_declaration::Builder {
+        crate::model::pipeline_declaration::Builder::default()
+    }
+}
+
 /// See [`PipelineDeclaration`](crate::model::PipelineDeclaration).
 pub mod pipeline_declaration {
 
@@ -188,12 +195,6 @@ pub mod pipeline_declaration {
         }
     }
 }
-impl PipelineDeclaration {
-    /// Creates a new builder-style object to manufacture [`PipelineDeclaration`](crate::model::PipelineDeclaration).
-    pub fn builder() -> crate::model::pipeline_declaration::Builder {
-        crate::model::pipeline_declaration::Builder::default()
-    }
-}
 
 /// <p>Represents information about a stage and its definition.</p>
 #[non_exhaustive]
@@ -223,6 +224,13 @@ impl StageDeclaration {
         self.actions.as_deref()
     }
 }
+impl StageDeclaration {
+    /// Creates a new builder-style object to manufacture [`StageDeclaration`](crate::model::StageDeclaration).
+    pub fn builder() -> crate::model::stage_declaration::Builder {
+        crate::model::stage_declaration::Builder::default()
+    }
+}
+
 /// See [`StageDeclaration`](crate::model::StageDeclaration).
 pub mod stage_declaration {
 
@@ -291,12 +299,6 @@ pub mod stage_declaration {
                 actions: self.actions,
             }
         }
-    }
-}
-impl StageDeclaration {
-    /// Creates a new builder-style object to manufacture [`StageDeclaration`](crate::model::StageDeclaration).
-    pub fn builder() -> crate::model::stage_declaration::Builder {
-        crate::model::stage_declaration::Builder::default()
     }
 }
 
@@ -380,6 +382,13 @@ impl ActionDeclaration {
         self.namespace.as_deref()
     }
 }
+impl ActionDeclaration {
+    /// Creates a new builder-style object to manufacture [`ActionDeclaration`](crate::model::ActionDeclaration).
+    pub fn builder() -> crate::model::action_declaration::Builder {
+        crate::model::action_declaration::Builder::default()
+    }
+}
+
 /// See [`ActionDeclaration`](crate::model::ActionDeclaration).
 pub mod action_declaration {
 
@@ -549,12 +558,6 @@ pub mod action_declaration {
         }
     }
 }
-impl ActionDeclaration {
-    /// Creates a new builder-style object to manufacture [`ActionDeclaration`](crate::model::ActionDeclaration).
-    pub fn builder() -> crate::model::action_declaration::Builder {
-        crate::model::action_declaration::Builder::default()
-    }
-}
 
 /// <p>Represents information about an artifact to be worked on, such as a test or build artifact.</p>
 #[non_exhaustive]
@@ -572,6 +575,13 @@ impl InputArtifact {
         self.name.as_deref()
     }
 }
+impl InputArtifact {
+    /// Creates a new builder-style object to manufacture [`InputArtifact`](crate::model::InputArtifact).
+    pub fn builder() -> crate::model::input_artifact::Builder {
+        crate::model::input_artifact::Builder::default()
+    }
+}
+
 /// See [`InputArtifact`](crate::model::InputArtifact).
 pub mod input_artifact {
 
@@ -600,12 +610,6 @@ pub mod input_artifact {
         }
     }
 }
-impl InputArtifact {
-    /// Creates a new builder-style object to manufacture [`InputArtifact`](crate::model::InputArtifact).
-    pub fn builder() -> crate::model::input_artifact::Builder {
-        crate::model::input_artifact::Builder::default()
-    }
-}
 
 /// <p>Represents information about the output of an action.</p>
 #[non_exhaustive]
@@ -625,6 +629,13 @@ impl OutputArtifact {
         self.name.as_deref()
     }
 }
+impl OutputArtifact {
+    /// Creates a new builder-style object to manufacture [`OutputArtifact`](crate::model::OutputArtifact).
+    pub fn builder() -> crate::model::output_artifact::Builder {
+        crate::model::output_artifact::Builder::default()
+    }
+}
+
 /// See [`OutputArtifact`](crate::model::OutputArtifact).
 pub mod output_artifact {
 
@@ -653,12 +664,6 @@ pub mod output_artifact {
         pub fn build(self) -> crate::model::OutputArtifact {
             crate::model::OutputArtifact { name: self.name }
         }
-    }
-}
-impl OutputArtifact {
-    /// Creates a new builder-style object to manufacture [`OutputArtifact`](crate::model::OutputArtifact).
-    pub fn builder() -> crate::model::output_artifact::Builder {
-        crate::model::output_artifact::Builder::default()
     }
 }
 
@@ -713,6 +718,13 @@ impl ActionTypeId {
         self.version.as_deref()
     }
 }
+impl ActionTypeId {
+    /// Creates a new builder-style object to manufacture [`ActionTypeId`](crate::model::ActionTypeId).
+    pub fn builder() -> crate::model::action_type_id::Builder {
+        crate::model::action_type_id::Builder::default()
+    }
+}
+
 /// See [`ActionTypeId`](crate::model::ActionTypeId).
 pub mod action_type_id {
 
@@ -794,12 +806,6 @@ pub mod action_type_id {
                 version: self.version,
             }
         }
-    }
-}
-impl ActionTypeId {
-    /// Creates a new builder-style object to manufacture [`ActionTypeId`](crate::model::ActionTypeId).
-    pub fn builder() -> crate::model::action_type_id::Builder {
-        crate::model::action_type_id::Builder::default()
     }
 }
 
@@ -1029,6 +1035,13 @@ impl BlockerDeclaration {
         self.r#type.as_ref()
     }
 }
+impl BlockerDeclaration {
+    /// Creates a new builder-style object to manufacture [`BlockerDeclaration`](crate::model::BlockerDeclaration).
+    pub fn builder() -> crate::model::blocker_declaration::Builder {
+        crate::model::blocker_declaration::Builder::default()
+    }
+}
+
 /// See [`BlockerDeclaration`](crate::model::BlockerDeclaration).
 pub mod blocker_declaration {
 
@@ -1067,12 +1080,6 @@ pub mod blocker_declaration {
                 r#type: self.r#type,
             }
         }
-    }
-}
-impl BlockerDeclaration {
-    /// Creates a new builder-style object to manufacture [`BlockerDeclaration`](crate::model::BlockerDeclaration).
-    pub fn builder() -> crate::model::blocker_declaration::Builder {
-        crate::model::blocker_declaration::Builder::default()
     }
 }
 
@@ -1191,6 +1198,13 @@ impl ArtifactStore {
         self.encryption_key.as_ref()
     }
 }
+impl ArtifactStore {
+    /// Creates a new builder-style object to manufacture [`ArtifactStore`](crate::model::ArtifactStore).
+    pub fn builder() -> crate::model::artifact_store::Builder {
+        crate::model::artifact_store::Builder::default()
+    }
+}
+
 /// See [`ArtifactStore`](crate::model::ArtifactStore).
 pub mod artifact_store {
 
@@ -1249,12 +1263,6 @@ pub mod artifact_store {
         }
     }
 }
-impl ArtifactStore {
-    /// Creates a new builder-style object to manufacture [`ArtifactStore`](crate::model::ArtifactStore).
-    pub fn builder() -> crate::model::artifact_store::Builder {
-        crate::model::artifact_store::Builder::default()
-    }
-}
 
 /// <p>Represents information about the key used to encrypt data in the artifact store, such as an AWS Key Management Service (AWS KMS) key.</p>
 #[non_exhaustive]
@@ -1281,6 +1289,13 @@ impl EncryptionKey {
         self.r#type.as_ref()
     }
 }
+impl EncryptionKey {
+    /// Creates a new builder-style object to manufacture [`EncryptionKey`](crate::model::EncryptionKey).
+    pub fn builder() -> crate::model::encryption_key::Builder {
+        crate::model::encryption_key::Builder::default()
+    }
+}
+
 /// See [`EncryptionKey`](crate::model::EncryptionKey).
 pub mod encryption_key {
 
@@ -1326,12 +1341,6 @@ pub mod encryption_key {
                 r#type: self.r#type,
             }
         }
-    }
-}
-impl EncryptionKey {
-    /// Creates a new builder-style object to manufacture [`EncryptionKey`](crate::model::EncryptionKey).
-    pub fn builder() -> crate::model::encryption_key::Builder {
-        crate::model::encryption_key::Builder::default()
     }
 }
 
@@ -1576,6 +1585,13 @@ impl ActionTypeDeclaration {
         self.urls.as_ref()
     }
 }
+impl ActionTypeDeclaration {
+    /// Creates a new builder-style object to manufacture [`ActionTypeDeclaration`](crate::model::ActionTypeDeclaration).
+    pub fn builder() -> crate::model::action_type_declaration::Builder {
+        crate::model::action_type_declaration::Builder::default()
+    }
+}
+
 /// See [`ActionTypeDeclaration`](crate::model::ActionTypeDeclaration).
 pub mod action_type_declaration {
 
@@ -1723,12 +1739,6 @@ pub mod action_type_declaration {
         }
     }
 }
-impl ActionTypeDeclaration {
-    /// Creates a new builder-style object to manufacture [`ActionTypeDeclaration`](crate::model::ActionTypeDeclaration).
-    pub fn builder() -> crate::model::action_type_declaration::Builder {
-        crate::model::action_type_declaration::Builder::default()
-    }
-}
 
 /// <p>Returns information about URLs for web pages that display to customers as links on the pipeline view, such as an external configuration page for the action type.</p>
 #[non_exhaustive]
@@ -1765,6 +1775,13 @@ impl ActionTypeUrls {
         self.revision_url_template.as_deref()
     }
 }
+impl ActionTypeUrls {
+    /// Creates a new builder-style object to manufacture [`ActionTypeUrls`](crate::model::ActionTypeUrls).
+    pub fn builder() -> crate::model::action_type_urls::Builder {
+        crate::model::action_type_urls::Builder::default()
+    }
+}
+
 /// See [`ActionTypeUrls`](crate::model::ActionTypeUrls).
 pub mod action_type_urls {
 
@@ -1841,12 +1858,6 @@ pub mod action_type_urls {
         }
     }
 }
-impl ActionTypeUrls {
-    /// Creates a new builder-style object to manufacture [`ActionTypeUrls`](crate::model::ActionTypeUrls).
-    pub fn builder() -> crate::model::action_type_urls::Builder {
-        crate::model::action_type_urls::Builder::default()
-    }
-}
 
 /// <p>Represents information about each property specified in the action configuration, such as the description and key name that display for the customer using the action type.</p>
 #[non_exhaustive]
@@ -1897,6 +1908,13 @@ impl ActionTypeProperty {
         self.description.as_deref()
     }
 }
+impl ActionTypeProperty {
+    /// Creates a new builder-style object to manufacture [`ActionTypeProperty`](crate::model::ActionTypeProperty).
+    pub fn builder() -> crate::model::action_type_property::Builder {
+        crate::model::action_type_property::Builder::default()
+    }
+}
+
 /// See [`ActionTypeProperty`](crate::model::ActionTypeProperty).
 pub mod action_type_property {
 
@@ -1985,12 +2003,6 @@ pub mod action_type_property {
         }
     }
 }
-impl ActionTypeProperty {
-    /// Creates a new builder-style object to manufacture [`ActionTypeProperty`](crate::model::ActionTypeProperty).
-    pub fn builder() -> crate::model::action_type_property::Builder {
-        crate::model::action_type_property::Builder::default()
-    }
-}
 
 /// <p>Details identifying the users with permissions to use the action type.</p>
 #[non_exhaustive]
@@ -2006,6 +2018,13 @@ impl ActionTypePermissions {
         self.allowed_accounts.as_deref()
     }
 }
+impl ActionTypePermissions {
+    /// Creates a new builder-style object to manufacture [`ActionTypePermissions`](crate::model::ActionTypePermissions).
+    pub fn builder() -> crate::model::action_type_permissions::Builder {
+        crate::model::action_type_permissions::Builder::default()
+    }
+}
+
 /// See [`ActionTypePermissions`](crate::model::ActionTypePermissions).
 pub mod action_type_permissions {
 
@@ -2043,12 +2062,6 @@ pub mod action_type_permissions {
         }
     }
 }
-impl ActionTypePermissions {
-    /// Creates a new builder-style object to manufacture [`ActionTypePermissions`](crate::model::ActionTypePermissions).
-    pub fn builder() -> crate::model::action_type_permissions::Builder {
-        crate::model::action_type_permissions::Builder::default()
-    }
-}
 
 /// <p>Information about parameters for artifacts associated with the action type, such as the minimum and maximum artifacts allowed.</p>
 #[non_exhaustive]
@@ -2071,6 +2084,13 @@ impl ActionTypeArtifactDetails {
         self.maximum_count
     }
 }
+impl ActionTypeArtifactDetails {
+    /// Creates a new builder-style object to manufacture [`ActionTypeArtifactDetails`](crate::model::ActionTypeArtifactDetails).
+    pub fn builder() -> crate::model::action_type_artifact_details::Builder {
+        crate::model::action_type_artifact_details::Builder::default()
+    }
+}
+
 /// See [`ActionTypeArtifactDetails`](crate::model::ActionTypeArtifactDetails).
 pub mod action_type_artifact_details {
 
@@ -2109,12 +2129,6 @@ pub mod action_type_artifact_details {
                 maximum_count: self.maximum_count.unwrap_or_default(),
             }
         }
-    }
-}
-impl ActionTypeArtifactDetails {
-    /// Creates a new builder-style object to manufacture [`ActionTypeArtifactDetails`](crate::model::ActionTypeArtifactDetails).
-    pub fn builder() -> crate::model::action_type_artifact_details::Builder {
-        crate::model::action_type_artifact_details::Builder::default()
     }
 }
 
@@ -2169,6 +2183,13 @@ impl ActionTypeIdentifier {
         self.version.as_deref()
     }
 }
+impl ActionTypeIdentifier {
+    /// Creates a new builder-style object to manufacture [`ActionTypeIdentifier`](crate::model::ActionTypeIdentifier).
+    pub fn builder() -> crate::model::action_type_identifier::Builder {
+        crate::model::action_type_identifier::Builder::default()
+    }
+}
+
 /// See [`ActionTypeIdentifier`](crate::model::ActionTypeIdentifier).
 pub mod action_type_identifier {
 
@@ -2252,12 +2273,6 @@ pub mod action_type_identifier {
         }
     }
 }
-impl ActionTypeIdentifier {
-    /// Creates a new builder-style object to manufacture [`ActionTypeIdentifier`](crate::model::ActionTypeIdentifier).
-    pub fn builder() -> crate::model::action_type_identifier::Builder {
-        crate::model::action_type_identifier::Builder::default()
-    }
-}
 
 /// <p>The action engine, or executor, for an action type created for a provider, where the action is to be used by customers of the provider. The action engine is associated with the model used to create and update the action, such as the Lambda integration model.</p>
 #[non_exhaustive]
@@ -2300,6 +2315,13 @@ impl ActionTypeExecutor {
         self.job_timeout
     }
 }
+impl ActionTypeExecutor {
+    /// Creates a new builder-style object to manufacture [`ActionTypeExecutor`](crate::model::ActionTypeExecutor).
+    pub fn builder() -> crate::model::action_type_executor::Builder {
+        crate::model::action_type_executor::Builder::default()
+    }
+}
+
 /// See [`ActionTypeExecutor`](crate::model::ActionTypeExecutor).
 pub mod action_type_executor {
 
@@ -2374,12 +2396,6 @@ pub mod action_type_executor {
                 job_timeout: self.job_timeout,
             }
         }
-    }
-}
-impl ActionTypeExecutor {
-    /// Creates a new builder-style object to manufacture [`ActionTypeExecutor`](crate::model::ActionTypeExecutor).
-    pub fn builder() -> crate::model::action_type_executor::Builder {
-        crate::model::action_type_executor::Builder::default()
     }
 }
 
@@ -2500,6 +2516,13 @@ impl ExecutorConfiguration {
         self.job_worker_executor_configuration.as_ref()
     }
 }
+impl ExecutorConfiguration {
+    /// Creates a new builder-style object to manufacture [`ExecutorConfiguration`](crate::model::ExecutorConfiguration).
+    pub fn builder() -> crate::model::executor_configuration::Builder {
+        crate::model::executor_configuration::Builder::default()
+    }
+}
+
 /// See [`ExecutorConfiguration`](crate::model::ExecutorConfiguration).
 pub mod executor_configuration {
 
@@ -2554,12 +2577,6 @@ pub mod executor_configuration {
         }
     }
 }
-impl ExecutorConfiguration {
-    /// Creates a new builder-style object to manufacture [`ExecutorConfiguration`](crate::model::ExecutorConfiguration).
-    pub fn builder() -> crate::model::executor_configuration::Builder {
-        crate::model::executor_configuration::Builder::default()
-    }
-}
 
 /// <p>Details about the polling configuration for the <code>JobWorker</code> action engine, or executor.</p>
 #[non_exhaustive]
@@ -2582,6 +2599,13 @@ impl JobWorkerExecutorConfiguration {
         self.polling_service_principals.as_deref()
     }
 }
+impl JobWorkerExecutorConfiguration {
+    /// Creates a new builder-style object to manufacture [`JobWorkerExecutorConfiguration`](crate::model::JobWorkerExecutorConfiguration).
+    pub fn builder() -> crate::model::job_worker_executor_configuration::Builder {
+        crate::model::job_worker_executor_configuration::Builder::default()
+    }
+}
+
 /// See [`JobWorkerExecutorConfiguration`](crate::model::JobWorkerExecutorConfiguration).
 pub mod job_worker_executor_configuration {
 
@@ -2641,12 +2665,6 @@ pub mod job_worker_executor_configuration {
         }
     }
 }
-impl JobWorkerExecutorConfiguration {
-    /// Creates a new builder-style object to manufacture [`JobWorkerExecutorConfiguration`](crate::model::JobWorkerExecutorConfiguration).
-    pub fn builder() -> crate::model::job_worker_executor_configuration::Builder {
-        crate::model::job_worker_executor_configuration::Builder::default()
-    }
-}
 
 /// <p>Details about the configuration for the <code>Lambda</code> action engine, or executor.</p>
 #[non_exhaustive]
@@ -2662,6 +2680,13 @@ impl LambdaExecutorConfiguration {
         self.lambda_function_arn.as_deref()
     }
 }
+impl LambdaExecutorConfiguration {
+    /// Creates a new builder-style object to manufacture [`LambdaExecutorConfiguration`](crate::model::LambdaExecutorConfiguration).
+    pub fn builder() -> crate::model::lambda_executor_configuration::Builder {
+        crate::model::lambda_executor_configuration::Builder::default()
+    }
+}
+
 /// See [`LambdaExecutorConfiguration`](crate::model::LambdaExecutorConfiguration).
 pub mod lambda_executor_configuration {
 
@@ -2693,12 +2718,6 @@ pub mod lambda_executor_configuration {
         }
     }
 }
-impl LambdaExecutorConfiguration {
-    /// Creates a new builder-style object to manufacture [`LambdaExecutorConfiguration`](crate::model::LambdaExecutorConfiguration).
-    pub fn builder() -> crate::model::lambda_executor_configuration::Builder {
-        crate::model::lambda_executor_configuration::Builder::default()
-    }
-}
 
 /// <p>A tag is a key-value pair that is used to manage the resource.</p>
 #[non_exhaustive]
@@ -2721,6 +2740,13 @@ impl Tag {
         self.value.as_deref()
     }
 }
+impl Tag {
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
+    pub fn builder() -> crate::model::tag::Builder {
+        crate::model::tag::Builder::default()
+    }
+}
+
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
 
@@ -2759,12 +2785,6 @@ pub mod tag {
                 value: self.value,
             }
         }
-    }
-}
-impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
-    pub fn builder() -> crate::model::tag::Builder {
-        crate::model::tag::Builder::default()
     }
 }
 
@@ -2909,6 +2929,13 @@ impl ListWebhookItem {
         self.tags.as_deref()
     }
 }
+impl ListWebhookItem {
+    /// Creates a new builder-style object to manufacture [`ListWebhookItem`](crate::model::ListWebhookItem).
+    pub fn builder() -> crate::model::list_webhook_item::Builder {
+        crate::model::list_webhook_item::Builder::default()
+    }
+}
+
 /// See [`ListWebhookItem`](crate::model::ListWebhookItem).
 pub mod list_webhook_item {
 
@@ -3027,12 +3054,6 @@ pub mod list_webhook_item {
         }
     }
 }
-impl ListWebhookItem {
-    /// Creates a new builder-style object to manufacture [`ListWebhookItem`](crate::model::ListWebhookItem).
-    pub fn builder() -> crate::model::list_webhook_item::Builder {
-        crate::model::list_webhook_item::Builder::default()
-    }
-}
 
 /// <p>Represents information about a webhook and its definition.</p>
 #[non_exhaustive]
@@ -3095,6 +3116,13 @@ impl WebhookDefinition {
         self.authentication_configuration.as_ref()
     }
 }
+impl WebhookDefinition {
+    /// Creates a new builder-style object to manufacture [`WebhookDefinition`](crate::model::WebhookDefinition).
+    pub fn builder() -> crate::model::webhook_definition::Builder {
+        crate::model::webhook_definition::Builder::default()
+    }
+}
+
 /// See [`WebhookDefinition`](crate::model::WebhookDefinition).
 pub mod webhook_definition {
 
@@ -3218,12 +3246,6 @@ pub mod webhook_definition {
         }
     }
 }
-impl WebhookDefinition {
-    /// Creates a new builder-style object to manufacture [`WebhookDefinition`](crate::model::WebhookDefinition).
-    pub fn builder() -> crate::model::webhook_definition::Builder {
-        crate::model::webhook_definition::Builder::default()
-    }
-}
 
 /// <p>The authentication applied to incoming webhook trigger requests.</p>
 #[non_exhaustive]
@@ -3246,6 +3268,13 @@ impl WebhookAuthConfiguration {
         self.secret_token.as_deref()
     }
 }
+impl WebhookAuthConfiguration {
+    /// Creates a new builder-style object to manufacture [`WebhookAuthConfiguration`](crate::model::WebhookAuthConfiguration).
+    pub fn builder() -> crate::model::webhook_auth_configuration::Builder {
+        crate::model::webhook_auth_configuration::Builder::default()
+    }
+}
+
 /// See [`WebhookAuthConfiguration`](crate::model::WebhookAuthConfiguration).
 pub mod webhook_auth_configuration {
 
@@ -3287,12 +3316,6 @@ pub mod webhook_auth_configuration {
                 secret_token: self.secret_token,
             }
         }
-    }
-}
-impl WebhookAuthConfiguration {
-    /// Creates a new builder-style object to manufacture [`WebhookAuthConfiguration`](crate::model::WebhookAuthConfiguration).
-    pub fn builder() -> crate::model::webhook_auth_configuration::Builder {
-        crate::model::webhook_auth_configuration::Builder::default()
     }
 }
 
@@ -3414,6 +3437,13 @@ impl WebhookFilterRule {
         self.match_equals.as_deref()
     }
 }
+impl WebhookFilterRule {
+    /// Creates a new builder-style object to manufacture [`WebhookFilterRule`](crate::model::WebhookFilterRule).
+    pub fn builder() -> crate::model::webhook_filter_rule::Builder {
+        crate::model::webhook_filter_rule::Builder::default()
+    }
+}
+
 /// See [`WebhookFilterRule`](crate::model::WebhookFilterRule).
 pub mod webhook_filter_rule {
 
@@ -3454,12 +3484,6 @@ pub mod webhook_filter_rule {
         }
     }
 }
-impl WebhookFilterRule {
-    /// Creates a new builder-style object to manufacture [`WebhookFilterRule`](crate::model::WebhookFilterRule).
-    pub fn builder() -> crate::model::webhook_filter_rule::Builder {
-        crate::model::webhook_filter_rule::Builder::default()
-    }
-}
 
 /// <p>The details of the actions taken and results produced on an artifact as it passes through stages in the pipeline.</p>
 #[non_exhaustive]
@@ -3489,6 +3513,13 @@ impl ExecutionDetails {
         self.percent_complete
     }
 }
+impl ExecutionDetails {
+    /// Creates a new builder-style object to manufacture [`ExecutionDetails`](crate::model::ExecutionDetails).
+    pub fn builder() -> crate::model::execution_details::Builder {
+        crate::model::execution_details::Builder::default()
+    }
+}
+
 /// See [`ExecutionDetails`](crate::model::ExecutionDetails).
 pub mod execution_details {
 
@@ -3544,12 +3575,6 @@ pub mod execution_details {
         }
     }
 }
-impl ExecutionDetails {
-    /// Creates a new builder-style object to manufacture [`ExecutionDetails`](crate::model::ExecutionDetails).
-    pub fn builder() -> crate::model::execution_details::Builder {
-        crate::model::execution_details::Builder::default()
-    }
-}
 
 /// <p>Represents information about a current revision.</p>
 #[non_exhaustive]
@@ -3586,6 +3611,13 @@ impl CurrentRevision {
         self.revision_summary.as_deref()
     }
 }
+impl CurrentRevision {
+    /// Creates a new builder-style object to manufacture [`CurrentRevision`](crate::model::CurrentRevision).
+    pub fn builder() -> crate::model::current_revision::Builder {
+        crate::model::current_revision::Builder::default()
+    }
+}
+
 /// See [`CurrentRevision`](crate::model::CurrentRevision).
 pub mod current_revision {
 
@@ -3659,12 +3691,6 @@ pub mod current_revision {
         }
     }
 }
-impl CurrentRevision {
-    /// Creates a new builder-style object to manufacture [`CurrentRevision`](crate::model::CurrentRevision).
-    pub fn builder() -> crate::model::current_revision::Builder {
-        crate::model::current_revision::Builder::default()
-    }
-}
 
 /// <p>Represents information about failure details.</p>
 #[non_exhaustive]
@@ -3694,6 +3720,13 @@ impl FailureDetails {
         self.external_execution_id.as_deref()
     }
 }
+impl FailureDetails {
+    /// Creates a new builder-style object to manufacture [`FailureDetails`](crate::model::FailureDetails).
+    pub fn builder() -> crate::model::failure_details::Builder {
+        crate::model::failure_details::Builder::default()
+    }
+}
+
 /// See [`FailureDetails`](crate::model::FailureDetails).
 pub mod failure_details {
 
@@ -3747,12 +3780,6 @@ pub mod failure_details {
                 external_execution_id: self.external_execution_id,
             }
         }
-    }
-}
-impl FailureDetails {
-    /// Creates a new builder-style object to manufacture [`FailureDetails`](crate::model::FailureDetails).
-    pub fn builder() -> crate::model::failure_details::Builder {
-        crate::model::failure_details::Builder::default()
     }
 }
 
@@ -3894,6 +3921,13 @@ impl ApprovalResult {
         self.status.as_ref()
     }
 }
+impl ApprovalResult {
+    /// Creates a new builder-style object to manufacture [`ApprovalResult`](crate::model::ApprovalResult).
+    pub fn builder() -> crate::model::approval_result::Builder {
+        crate::model::approval_result::Builder::default()
+    }
+}
+
 /// See [`ApprovalResult`](crate::model::ApprovalResult).
 pub mod approval_result {
 
@@ -3935,12 +3969,6 @@ pub mod approval_result {
                 status: self.status,
             }
         }
-    }
-}
-impl ApprovalResult {
-    /// Creates a new builder-style object to manufacture [`ApprovalResult`](crate::model::ApprovalResult).
-    pub fn builder() -> crate::model::approval_result::Builder {
-        crate::model::approval_result::Builder::default()
     }
 }
 
@@ -4062,6 +4090,13 @@ impl ActionRevision {
         self.created.as_ref()
     }
 }
+impl ActionRevision {
+    /// Creates a new builder-style object to manufacture [`ActionRevision`](crate::model::ActionRevision).
+    pub fn builder() -> crate::model::action_revision::Builder {
+        crate::model::action_revision::Builder::default()
+    }
+}
+
 /// See [`ActionRevision`](crate::model::ActionRevision).
 pub mod action_revision {
 
@@ -4120,12 +4155,6 @@ pub mod action_revision {
         }
     }
 }
-impl ActionRevision {
-    /// Creates a new builder-style object to manufacture [`ActionRevision`](crate::model::ActionRevision).
-    pub fn builder() -> crate::model::action_revision::Builder {
-        crate::model::action_revision::Builder::default()
-    }
-}
 
 /// <p>A response to a <code>PollForThirdPartyJobs</code> request returned by AWS CodePipeline when there is a job to be worked on by a partner action.</p>
 #[non_exhaustive]
@@ -4148,6 +4177,13 @@ impl ThirdPartyJob {
         self.job_id.as_deref()
     }
 }
+impl ThirdPartyJob {
+    /// Creates a new builder-style object to manufacture [`ThirdPartyJob`](crate::model::ThirdPartyJob).
+    pub fn builder() -> crate::model::third_party_job::Builder {
+        crate::model::third_party_job::Builder::default()
+    }
+}
+
 /// See [`ThirdPartyJob`](crate::model::ThirdPartyJob).
 pub mod third_party_job {
 
@@ -4188,12 +4224,6 @@ pub mod third_party_job {
         }
     }
 }
-impl ThirdPartyJob {
-    /// Creates a new builder-style object to manufacture [`ThirdPartyJob`](crate::model::ThirdPartyJob).
-    pub fn builder() -> crate::model::third_party_job::Builder {
-        crate::model::third_party_job::Builder::default()
-    }
-}
 
 /// <p>Represents information about a job.</p>
 #[non_exhaustive]
@@ -4230,6 +4260,13 @@ impl Job {
         self.account_id.as_deref()
     }
 }
+impl Job {
+    /// Creates a new builder-style object to manufacture [`Job`](crate::model::Job).
+    pub fn builder() -> crate::model::job::Builder {
+        crate::model::job::Builder::default()
+    }
+}
+
 /// See [`Job`](crate::model::Job).
 pub mod job {
 
@@ -4292,12 +4329,6 @@ pub mod job {
                 account_id: self.account_id,
             }
         }
-    }
-}
-impl Job {
-    /// Creates a new builder-style object to manufacture [`Job`](crate::model::Job).
-    pub fn builder() -> crate::model::job::Builder {
-        crate::model::job::Builder::default()
     }
 }
 
@@ -4384,6 +4415,13 @@ impl std::fmt::Debug for JobData {
         formatter.finish()
     }
 }
+impl JobData {
+    /// Creates a new builder-style object to manufacture [`JobData`](crate::model::JobData).
+    pub fn builder() -> crate::model::job_data::Builder {
+        crate::model::job_data::Builder::default()
+    }
+}
+
 /// See [`JobData`](crate::model::JobData).
 pub mod job_data {
 
@@ -4550,12 +4588,6 @@ pub mod job_data {
         }
     }
 }
-impl JobData {
-    /// Creates a new builder-style object to manufacture [`JobData`](crate::model::JobData).
-    pub fn builder() -> crate::model::job_data::Builder {
-        crate::model::job_data::Builder::default()
-    }
-}
 
 /// <p>Represents an AWS session credentials object. These credentials are temporary credentials that are issued by AWS Secure Token Service (STS). They can be used to access input and output artifacts in the S3 bucket used to store artifact for the pipeline in AWS CodePipeline.</p>
 #[non_exhaustive]
@@ -4594,6 +4626,13 @@ impl std::fmt::Debug for AwsSessionCredentials {
         formatter.finish()
     }
 }
+impl AwsSessionCredentials {
+    /// Creates a new builder-style object to manufacture [`AwsSessionCredentials`](crate::model::AwsSessionCredentials).
+    pub fn builder() -> crate::model::aws_session_credentials::Builder {
+        crate::model::aws_session_credentials::Builder::default()
+    }
+}
+
 /// See [`AwsSessionCredentials`](crate::model::AwsSessionCredentials).
 pub mod aws_session_credentials {
 
@@ -4664,12 +4703,6 @@ pub mod aws_session_credentials {
         }
     }
 }
-impl AwsSessionCredentials {
-    /// Creates a new builder-style object to manufacture [`AwsSessionCredentials`](crate::model::AwsSessionCredentials).
-    pub fn builder() -> crate::model::aws_session_credentials::Builder {
-        crate::model::aws_session_credentials::Builder::default()
-    }
-}
 
 /// <p>Represents information about an artifact that is worked on by actions in the pipeline.</p>
 #[non_exhaustive]
@@ -4699,6 +4732,13 @@ impl Artifact {
         self.location.as_ref()
     }
 }
+impl Artifact {
+    /// Creates a new builder-style object to manufacture [`Artifact`](crate::model::Artifact).
+    pub fn builder() -> crate::model::artifact::Builder {
+        crate::model::artifact::Builder::default()
+    }
+}
+
 /// See [`Artifact`](crate::model::Artifact).
 pub mod artifact {
 
@@ -4754,12 +4794,6 @@ pub mod artifact {
         }
     }
 }
-impl Artifact {
-    /// Creates a new builder-style object to manufacture [`Artifact`](crate::model::Artifact).
-    pub fn builder() -> crate::model::artifact::Builder {
-        crate::model::artifact::Builder::default()
-    }
-}
 
 /// <p>Represents information about the location of an artifact.</p>
 #[non_exhaustive]
@@ -4782,6 +4816,13 @@ impl ArtifactLocation {
         self.s3_location.as_ref()
     }
 }
+impl ArtifactLocation {
+    /// Creates a new builder-style object to manufacture [`ArtifactLocation`](crate::model::ArtifactLocation).
+    pub fn builder() -> crate::model::artifact_location::Builder {
+        crate::model::artifact_location::Builder::default()
+    }
+}
+
 /// See [`ArtifactLocation`](crate::model::ArtifactLocation).
 pub mod artifact_location {
 
@@ -4828,12 +4869,6 @@ pub mod artifact_location {
         }
     }
 }
-impl ArtifactLocation {
-    /// Creates a new builder-style object to manufacture [`ArtifactLocation`](crate::model::ArtifactLocation).
-    pub fn builder() -> crate::model::artifact_location::Builder {
-        crate::model::artifact_location::Builder::default()
-    }
-}
 
 /// <p>The location of the S3 bucket that contains a revision.</p>
 #[non_exhaustive]
@@ -4856,6 +4891,13 @@ impl S3ArtifactLocation {
         self.object_key.as_deref()
     }
 }
+impl S3ArtifactLocation {
+    /// Creates a new builder-style object to manufacture [`S3ArtifactLocation`](crate::model::S3ArtifactLocation).
+    pub fn builder() -> crate::model::s3_artifact_location::Builder {
+        crate::model::s3_artifact_location::Builder::default()
+    }
+}
+
 /// See [`S3ArtifactLocation`](crate::model::S3ArtifactLocation).
 pub mod s3_artifact_location {
 
@@ -4894,12 +4936,6 @@ pub mod s3_artifact_location {
                 object_key: self.object_key,
             }
         }
-    }
-}
-impl S3ArtifactLocation {
-    /// Creates a new builder-style object to manufacture [`S3ArtifactLocation`](crate::model::S3ArtifactLocation).
-    pub fn builder() -> crate::model::s3_artifact_location::Builder {
-        crate::model::s3_artifact_location::Builder::default()
     }
 }
 
@@ -5034,6 +5070,13 @@ impl PipelineContext {
         self.pipeline_execution_id.as_deref()
     }
 }
+impl PipelineContext {
+    /// Creates a new builder-style object to manufacture [`PipelineContext`](crate::model::PipelineContext).
+    pub fn builder() -> crate::model::pipeline_context::Builder {
+        crate::model::pipeline_context::Builder::default()
+    }
+}
+
 /// See [`PipelineContext`](crate::model::PipelineContext).
 pub mod pipeline_context {
 
@@ -5119,12 +5162,6 @@ pub mod pipeline_context {
         }
     }
 }
-impl PipelineContext {
-    /// Creates a new builder-style object to manufacture [`PipelineContext`](crate::model::PipelineContext).
-    pub fn builder() -> crate::model::pipeline_context::Builder {
-        crate::model::pipeline_context::Builder::default()
-    }
-}
 
 /// <p>Represents the context of an action in the stage of a pipeline to a job worker.</p>
 #[non_exhaustive]
@@ -5147,6 +5184,13 @@ impl ActionContext {
         self.action_execution_id.as_deref()
     }
 }
+impl ActionContext {
+    /// Creates a new builder-style object to manufacture [`ActionContext`](crate::model::ActionContext).
+    pub fn builder() -> crate::model::action_context::Builder {
+        crate::model::action_context::Builder::default()
+    }
+}
+
 /// See [`ActionContext`](crate::model::ActionContext).
 pub mod action_context {
 
@@ -5190,12 +5234,6 @@ pub mod action_context {
         }
     }
 }
-impl ActionContext {
-    /// Creates a new builder-style object to manufacture [`ActionContext`](crate::model::ActionContext).
-    pub fn builder() -> crate::model::action_context::Builder {
-        crate::model::action_context::Builder::default()
-    }
-}
 
 /// <p>Represents information about a stage to a job worker.</p>
 #[non_exhaustive]
@@ -5211,6 +5249,13 @@ impl StageContext {
         self.name.as_deref()
     }
 }
+impl StageContext {
+    /// Creates a new builder-style object to manufacture [`StageContext`](crate::model::StageContext).
+    pub fn builder() -> crate::model::stage_context::Builder {
+        crate::model::stage_context::Builder::default()
+    }
+}
+
 /// See [`StageContext`](crate::model::StageContext).
 pub mod stage_context {
 
@@ -5237,12 +5282,6 @@ pub mod stage_context {
         }
     }
 }
-impl StageContext {
-    /// Creates a new builder-style object to manufacture [`StageContext`](crate::model::StageContext).
-    pub fn builder() -> crate::model::stage_context::Builder {
-        crate::model::stage_context::Builder::default()
-    }
-}
 
 /// <p>Represents information about an action configuration.</p>
 #[non_exhaustive]
@@ -5262,6 +5301,13 @@ impl ActionConfiguration {
         self.configuration.as_ref()
     }
 }
+impl ActionConfiguration {
+    /// Creates a new builder-style object to manufacture [`ActionConfiguration`](crate::model::ActionConfiguration).
+    pub fn builder() -> crate::model::action_configuration::Builder {
+        crate::model::action_configuration::Builder::default()
+    }
+}
+
 /// See [`ActionConfiguration`](crate::model::ActionConfiguration).
 pub mod action_configuration {
 
@@ -5307,12 +5353,6 @@ pub mod action_configuration {
         }
     }
 }
-impl ActionConfiguration {
-    /// Creates a new builder-style object to manufacture [`ActionConfiguration`](crate::model::ActionConfiguration).
-    pub fn builder() -> crate::model::action_configuration::Builder {
-        crate::model::action_configuration::Builder::default()
-    }
-}
 
 /// <p>Returns a summary of a pipeline.</p>
 #[non_exhaustive]
@@ -5349,6 +5389,13 @@ impl PipelineSummary {
         self.updated.as_ref()
     }
 }
+impl PipelineSummary {
+    /// Creates a new builder-style object to manufacture [`PipelineSummary`](crate::model::PipelineSummary).
+    pub fn builder() -> crate::model::pipeline_summary::Builder {
+        crate::model::pipeline_summary::Builder::default()
+    }
+}
+
 /// See [`PipelineSummary`](crate::model::PipelineSummary).
 pub mod pipeline_summary {
 
@@ -5417,12 +5464,6 @@ pub mod pipeline_summary {
                 updated: self.updated,
             }
         }
-    }
-}
-impl PipelineSummary {
-    /// Creates a new builder-style object to manufacture [`PipelineSummary`](crate::model::PipelineSummary).
-    pub fn builder() -> crate::model::pipeline_summary::Builder {
-        crate::model::pipeline_summary::Builder::default()
     }
 }
 
@@ -5498,6 +5539,13 @@ impl PipelineExecutionSummary {
         self.stop_trigger.as_ref()
     }
 }
+impl PipelineExecutionSummary {
+    /// Creates a new builder-style object to manufacture [`PipelineExecutionSummary`](crate::model::PipelineExecutionSummary).
+    pub fn builder() -> crate::model::pipeline_execution_summary::Builder {
+        crate::model::pipeline_execution_summary::Builder::default()
+    }
+}
+
 /// See [`PipelineExecutionSummary`](crate::model::PipelineExecutionSummary).
 pub mod pipeline_execution_summary {
 
@@ -5642,12 +5690,6 @@ pub mod pipeline_execution_summary {
         }
     }
 }
-impl PipelineExecutionSummary {
-    /// Creates a new builder-style object to manufacture [`PipelineExecutionSummary`](crate::model::PipelineExecutionSummary).
-    pub fn builder() -> crate::model::pipeline_execution_summary::Builder {
-        crate::model::pipeline_execution_summary::Builder::default()
-    }
-}
 
 /// <p>The interaction that stopped a pipeline execution.</p>
 #[non_exhaustive]
@@ -5663,6 +5705,13 @@ impl StopExecutionTrigger {
         self.reason.as_deref()
     }
 }
+impl StopExecutionTrigger {
+    /// Creates a new builder-style object to manufacture [`StopExecutionTrigger`](crate::model::StopExecutionTrigger).
+    pub fn builder() -> crate::model::stop_execution_trigger::Builder {
+        crate::model::stop_execution_trigger::Builder::default()
+    }
+}
+
 /// See [`StopExecutionTrigger`](crate::model::StopExecutionTrigger).
 pub mod stop_execution_trigger {
 
@@ -5691,12 +5740,6 @@ pub mod stop_execution_trigger {
         }
     }
 }
-impl StopExecutionTrigger {
-    /// Creates a new builder-style object to manufacture [`StopExecutionTrigger`](crate::model::StopExecutionTrigger).
-    pub fn builder() -> crate::model::stop_execution_trigger::Builder {
-        crate::model::stop_execution_trigger::Builder::default()
-    }
-}
 
 /// <p>The interaction or event that started a pipeline execution.</p>
 #[non_exhaustive]
@@ -5719,6 +5762,13 @@ impl ExecutionTrigger {
         self.trigger_detail.as_deref()
     }
 }
+impl ExecutionTrigger {
+    /// Creates a new builder-style object to manufacture [`ExecutionTrigger`](crate::model::ExecutionTrigger).
+    pub fn builder() -> crate::model::execution_trigger::Builder {
+        crate::model::execution_trigger::Builder::default()
+    }
+}
+
 /// See [`ExecutionTrigger`](crate::model::ExecutionTrigger).
 pub mod execution_trigger {
 
@@ -5763,12 +5813,6 @@ pub mod execution_trigger {
                 trigger_detail: self.trigger_detail,
             }
         }
-    }
-}
-impl ExecutionTrigger {
-    /// Creates a new builder-style object to manufacture [`ExecutionTrigger`](crate::model::ExecutionTrigger).
-    pub fn builder() -> crate::model::execution_trigger::Builder {
-        crate::model::execution_trigger::Builder::default()
     }
 }
 
@@ -5924,6 +5968,13 @@ impl SourceRevision {
         self.revision_url.as_deref()
     }
 }
+impl SourceRevision {
+    /// Creates a new builder-style object to manufacture [`SourceRevision`](crate::model::SourceRevision).
+    pub fn builder() -> crate::model::source_revision::Builder {
+        crate::model::source_revision::Builder::default()
+    }
+}
+
 /// See [`SourceRevision`](crate::model::SourceRevision).
 pub mod source_revision {
 
@@ -5989,12 +6040,6 @@ pub mod source_revision {
                 revision_url: self.revision_url,
             }
         }
-    }
-}
-impl SourceRevision {
-    /// Creates a new builder-style object to manufacture [`SourceRevision`](crate::model::SourceRevision).
-    pub fn builder() -> crate::model::source_revision::Builder {
-        crate::model::source_revision::Builder::default()
     }
 }
 
@@ -6168,6 +6213,13 @@ impl ActionType {
         self.output_artifact_details.as_ref()
     }
 }
+impl ActionType {
+    /// Creates a new builder-style object to manufacture [`ActionType`](crate::model::ActionType).
+    pub fn builder() -> crate::model::action_type::Builder {
+        crate::model::action_type::Builder::default()
+    }
+}
+
 /// See [`ActionType`](crate::model::ActionType).
 pub mod action_type {
 
@@ -6266,12 +6318,6 @@ pub mod action_type {
         }
     }
 }
-impl ActionType {
-    /// Creates a new builder-style object to manufacture [`ActionType`](crate::model::ActionType).
-    pub fn builder() -> crate::model::action_type::Builder {
-        crate::model::action_type::Builder::default()
-    }
-}
 
 /// <p>Returns information about the details of an artifact.</p>
 #[non_exhaustive]
@@ -6294,6 +6340,13 @@ impl ArtifactDetails {
         self.maximum_count
     }
 }
+impl ArtifactDetails {
+    /// Creates a new builder-style object to manufacture [`ArtifactDetails`](crate::model::ArtifactDetails).
+    pub fn builder() -> crate::model::artifact_details::Builder {
+        crate::model::artifact_details::Builder::default()
+    }
+}
+
 /// See [`ArtifactDetails`](crate::model::ArtifactDetails).
 pub mod artifact_details {
 
@@ -6332,12 +6385,6 @@ pub mod artifact_details {
                 maximum_count: self.maximum_count.unwrap_or_default(),
             }
         }
-    }
-}
-impl ArtifactDetails {
-    /// Creates a new builder-style object to manufacture [`ArtifactDetails`](crate::model::ArtifactDetails).
-    pub fn builder() -> crate::model::artifact_details::Builder {
-        crate::model::artifact_details::Builder::default()
     }
 }
 
@@ -6401,6 +6448,13 @@ impl ActionConfigurationProperty {
         self.r#type.as_ref()
     }
 }
+impl ActionConfigurationProperty {
+    /// Creates a new builder-style object to manufacture [`ActionConfigurationProperty`](crate::model::ActionConfigurationProperty).
+    pub fn builder() -> crate::model::action_configuration_property::Builder {
+        crate::model::action_configuration_property::Builder::default()
+    }
+}
+
 /// See [`ActionConfigurationProperty`](crate::model::ActionConfigurationProperty).
 pub mod action_configuration_property {
 
@@ -6506,12 +6560,6 @@ pub mod action_configuration_property {
                 r#type: self.r#type,
             }
         }
-    }
-}
-impl ActionConfigurationProperty {
-    /// Creates a new builder-style object to manufacture [`ActionConfigurationProperty`](crate::model::ActionConfigurationProperty).
-    pub fn builder() -> crate::model::action_configuration_property::Builder {
-        crate::model::action_configuration_property::Builder::default()
     }
 }
 
@@ -6647,6 +6695,13 @@ impl ActionTypeSettings {
         self.revision_url_template.as_deref()
     }
 }
+impl ActionTypeSettings {
+    /// Creates a new builder-style object to manufacture [`ActionTypeSettings`](crate::model::ActionTypeSettings).
+    pub fn builder() -> crate::model::action_type_settings::Builder {
+        crate::model::action_type_settings::Builder::default()
+    }
+}
+
 /// See [`ActionTypeSettings`](crate::model::ActionTypeSettings).
 pub mod action_type_settings {
 
@@ -6724,12 +6779,6 @@ pub mod action_type_settings {
                 revision_url_template: self.revision_url_template,
             }
         }
-    }
-}
-impl ActionTypeSettings {
-    /// Creates a new builder-style object to manufacture [`ActionTypeSettings`](crate::model::ActionTypeSettings).
-    pub fn builder() -> crate::model::action_type_settings::Builder {
-        crate::model::action_type_settings::Builder::default()
     }
 }
 
@@ -6810,6 +6859,13 @@ impl ActionExecutionDetail {
         self.output.as_ref()
     }
 }
+impl ActionExecutionDetail {
+    /// Creates a new builder-style object to manufacture [`ActionExecutionDetail`](crate::model::ActionExecutionDetail).
+    pub fn builder() -> crate::model::action_execution_detail::Builder {
+        crate::model::action_execution_detail::Builder::default()
+    }
+}
+
 /// See [`ActionExecutionDetail`](crate::model::ActionExecutionDetail).
 pub mod action_execution_detail {
 
@@ -6967,12 +7023,6 @@ pub mod action_execution_detail {
         }
     }
 }
-impl ActionExecutionDetail {
-    /// Creates a new builder-style object to manufacture [`ActionExecutionDetail`](crate::model::ActionExecutionDetail).
-    pub fn builder() -> crate::model::action_execution_detail::Builder {
-        crate::model::action_execution_detail::Builder::default()
-    }
-}
 
 /// <p>Output details listed for an action execution, such as the action execution result.</p>
 #[non_exhaustive]
@@ -7006,6 +7056,13 @@ impl ActionExecutionOutput {
         self.output_variables.as_ref()
     }
 }
+impl ActionExecutionOutput {
+    /// Creates a new builder-style object to manufacture [`ActionExecutionOutput`](crate::model::ActionExecutionOutput).
+    pub fn builder() -> crate::model::action_execution_output::Builder {
+        crate::model::action_execution_output::Builder::default()
+    }
+}
+
 /// See [`ActionExecutionOutput`](crate::model::ActionExecutionOutput).
 pub mod action_execution_output {
 
@@ -7088,12 +7145,6 @@ pub mod action_execution_output {
         }
     }
 }
-impl ActionExecutionOutput {
-    /// Creates a new builder-style object to manufacture [`ActionExecutionOutput`](crate::model::ActionExecutionOutput).
-    pub fn builder() -> crate::model::action_execution_output::Builder {
-        crate::model::action_execution_output::Builder::default()
-    }
-}
 
 /// <p>Execution result information, such as the external execution ID.</p>
 #[non_exhaustive]
@@ -7123,6 +7174,13 @@ impl ActionExecutionResult {
         self.external_execution_url.as_deref()
     }
 }
+impl ActionExecutionResult {
+    /// Creates a new builder-style object to manufacture [`ActionExecutionResult`](crate::model::ActionExecutionResult).
+    pub fn builder() -> crate::model::action_execution_result::Builder {
+        crate::model::action_execution_result::Builder::default()
+    }
+}
+
 /// See [`ActionExecutionResult`](crate::model::ActionExecutionResult).
 pub mod action_execution_result {
 
@@ -7184,12 +7242,6 @@ pub mod action_execution_result {
         }
     }
 }
-impl ActionExecutionResult {
-    /// Creates a new builder-style object to manufacture [`ActionExecutionResult`](crate::model::ActionExecutionResult).
-    pub fn builder() -> crate::model::action_execution_result::Builder {
-        crate::model::action_execution_result::Builder::default()
-    }
-}
 
 /// <p>Artifact details for the action execution, such as the artifact location.</p>
 #[non_exhaustive]
@@ -7212,6 +7264,13 @@ impl ArtifactDetail {
         self.s3location.as_ref()
     }
 }
+impl ArtifactDetail {
+    /// Creates a new builder-style object to manufacture [`ArtifactDetail`](crate::model::ArtifactDetail).
+    pub fn builder() -> crate::model::artifact_detail::Builder {
+        crate::model::artifact_detail::Builder::default()
+    }
+}
+
 /// See [`ArtifactDetail`](crate::model::ArtifactDetail).
 pub mod artifact_detail {
 
@@ -7255,12 +7314,6 @@ pub mod artifact_detail {
         }
     }
 }
-impl ArtifactDetail {
-    /// Creates a new builder-style object to manufacture [`ArtifactDetail`](crate::model::ArtifactDetail).
-    pub fn builder() -> crate::model::artifact_detail::Builder {
-        crate::model::artifact_detail::Builder::default()
-    }
-}
 
 /// <p>The Amazon S3 artifact location for an action's artifacts.</p>
 #[non_exhaustive]
@@ -7283,6 +7336,13 @@ impl S3Location {
         self.key.as_deref()
     }
 }
+impl S3Location {
+    /// Creates a new builder-style object to manufacture [`S3Location`](crate::model::S3Location).
+    pub fn builder() -> crate::model::s3_location::Builder {
+        crate::model::s3_location::Builder::default()
+    }
+}
+
 /// See [`S3Location`](crate::model::S3Location).
 pub mod s3_location {
 
@@ -7321,12 +7381,6 @@ pub mod s3_location {
                 key: self.key,
             }
         }
-    }
-}
-impl S3Location {
-    /// Creates a new builder-style object to manufacture [`S3Location`](crate::model::S3Location).
-    pub fn builder() -> crate::model::s3_location::Builder {
-        crate::model::s3_location::Builder::default()
     }
 }
 
@@ -7394,6 +7448,13 @@ impl ActionExecutionInput {
         self.namespace.as_deref()
     }
 }
+impl ActionExecutionInput {
+    /// Creates a new builder-style object to manufacture [`ActionExecutionInput`](crate::model::ActionExecutionInput).
+    pub fn builder() -> crate::model::action_execution_input::Builder {
+        crate::model::action_execution_input::Builder::default()
+    }
+}
+
 /// See [`ActionExecutionInput`](crate::model::ActionExecutionInput).
 pub mod action_execution_input {
 
@@ -7541,12 +7602,6 @@ pub mod action_execution_input {
         }
     }
 }
-impl ActionExecutionInput {
-    /// Creates a new builder-style object to manufacture [`ActionExecutionInput`](crate::model::ActionExecutionInput).
-    pub fn builder() -> crate::model::action_execution_input::Builder {
-        crate::model::action_execution_input::Builder::default()
-    }
-}
 
 /// When writing a match expression against `ActionExecutionStatus`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -7664,6 +7719,13 @@ impl ActionExecutionFilter {
         self.pipeline_execution_id.as_deref()
     }
 }
+impl ActionExecutionFilter {
+    /// Creates a new builder-style object to manufacture [`ActionExecutionFilter`](crate::model::ActionExecutionFilter).
+    pub fn builder() -> crate::model::action_execution_filter::Builder {
+        crate::model::action_execution_filter::Builder::default()
+    }
+}
+
 /// See [`ActionExecutionFilter`](crate::model::ActionExecutionFilter).
 pub mod action_execution_filter {
 
@@ -7695,12 +7757,6 @@ pub mod action_execution_filter {
         }
     }
 }
-impl ActionExecutionFilter {
-    /// Creates a new builder-style object to manufacture [`ActionExecutionFilter`](crate::model::ActionExecutionFilter).
-    pub fn builder() -> crate::model::action_execution_filter::Builder {
-        crate::model::action_execution_filter::Builder::default()
-    }
-}
 
 /// <p>The details of a job sent in response to a <code>GetThirdPartyJobDetails</code> request.</p>
 #[non_exhaustive]
@@ -7730,6 +7786,13 @@ impl ThirdPartyJobDetails {
         self.nonce.as_deref()
     }
 }
+impl ThirdPartyJobDetails {
+    /// Creates a new builder-style object to manufacture [`ThirdPartyJobDetails`](crate::model::ThirdPartyJobDetails).
+    pub fn builder() -> crate::model::third_party_job_details::Builder {
+        crate::model::third_party_job_details::Builder::default()
+    }
+}
+
 /// See [`ThirdPartyJobDetails`](crate::model::ThirdPartyJobDetails).
 pub mod third_party_job_details {
 
@@ -7783,12 +7846,6 @@ pub mod third_party_job_details {
                 nonce: self.nonce,
             }
         }
-    }
-}
-impl ThirdPartyJobDetails {
-    /// Creates a new builder-style object to manufacture [`ThirdPartyJobDetails`](crate::model::ThirdPartyJobDetails).
-    pub fn builder() -> crate::model::third_party_job_details::Builder {
-        crate::model::third_party_job_details::Builder::default()
     }
 }
 
@@ -7875,6 +7932,13 @@ impl std::fmt::Debug for ThirdPartyJobData {
         formatter.finish()
     }
 }
+impl ThirdPartyJobData {
+    /// Creates a new builder-style object to manufacture [`ThirdPartyJobData`](crate::model::ThirdPartyJobData).
+    pub fn builder() -> crate::model::third_party_job_data::Builder {
+        crate::model::third_party_job_data::Builder::default()
+    }
+}
+
 /// See [`ThirdPartyJobData`](crate::model::ThirdPartyJobData).
 pub mod third_party_job_data {
 
@@ -8041,12 +8105,6 @@ pub mod third_party_job_data {
         }
     }
 }
-impl ThirdPartyJobData {
-    /// Creates a new builder-style object to manufacture [`ThirdPartyJobData`](crate::model::ThirdPartyJobData).
-    pub fn builder() -> crate::model::third_party_job_data::Builder {
-        crate::model::third_party_job_data::Builder::default()
-    }
-}
 
 /// <p>Represents information about the state of the stage.</p>
 #[non_exhaustive]
@@ -8090,6 +8148,13 @@ impl StageState {
         self.latest_execution.as_ref()
     }
 }
+impl StageState {
+    /// Creates a new builder-style object to manufacture [`StageState`](crate::model::StageState).
+    pub fn builder() -> crate::model::stage_state::Builder {
+        crate::model::stage_state::Builder::default()
+    }
+}
+
 /// See [`StageState`](crate::model::StageState).
 pub mod stage_state {
 
@@ -8184,12 +8249,6 @@ pub mod stage_state {
         }
     }
 }
-impl StageState {
-    /// Creates a new builder-style object to manufacture [`StageState`](crate::model::StageState).
-    pub fn builder() -> crate::model::stage_state::Builder {
-        crate::model::stage_state::Builder::default()
-    }
-}
 
 /// <p>Represents information about the run of a stage.</p>
 #[non_exhaustive]
@@ -8216,6 +8275,13 @@ impl StageExecution {
         self.status.as_ref()
     }
 }
+impl StageExecution {
+    /// Creates a new builder-style object to manufacture [`StageExecution`](crate::model::StageExecution).
+    pub fn builder() -> crate::model::stage_execution::Builder {
+        crate::model::stage_execution::Builder::default()
+    }
+}
+
 /// See [`StageExecution`](crate::model::StageExecution).
 pub mod stage_execution {
 
@@ -8264,12 +8330,6 @@ pub mod stage_execution {
                 status: self.status,
             }
         }
-    }
-}
-impl StageExecution {
-    /// Creates a new builder-style object to manufacture [`StageExecution`](crate::model::StageExecution).
-    pub fn builder() -> crate::model::stage_execution::Builder {
-        crate::model::stage_execution::Builder::default()
     }
 }
 
@@ -8434,6 +8494,13 @@ impl ActionState {
         self.revision_url.as_deref()
     }
 }
+impl ActionState {
+    /// Creates a new builder-style object to manufacture [`ActionState`](crate::model::ActionState).
+    pub fn builder() -> crate::model::action_state::Builder {
+        crate::model::action_state::Builder::default()
+    }
+}
+
 /// See [`ActionState`](crate::model::ActionState).
 pub mod action_state {
 
@@ -8514,12 +8581,6 @@ pub mod action_state {
                 revision_url: self.revision_url,
             }
         }
-    }
-}
-impl ActionState {
-    /// Creates a new builder-style object to manufacture [`ActionState`](crate::model::ActionState).
-    pub fn builder() -> crate::model::action_state::Builder {
-        crate::model::action_state::Builder::default()
     }
 }
 
@@ -8604,6 +8665,13 @@ impl ActionExecution {
         self.error_details.as_ref()
     }
 }
+impl ActionExecution {
+    /// Creates a new builder-style object to manufacture [`ActionExecution`](crate::model::ActionExecution).
+    pub fn builder() -> crate::model::action_execution::Builder {
+        crate::model::action_execution::Builder::default()
+    }
+}
+
 /// See [`ActionExecution`](crate::model::ActionExecution).
 pub mod action_execution {
 
@@ -8765,12 +8833,6 @@ pub mod action_execution {
         }
     }
 }
-impl ActionExecution {
-    /// Creates a new builder-style object to manufacture [`ActionExecution`](crate::model::ActionExecution).
-    pub fn builder() -> crate::model::action_execution::Builder {
-        crate::model::action_execution::Builder::default()
-    }
-}
 
 /// <p>Represents information about an error in AWS CodePipeline.</p>
 #[non_exhaustive]
@@ -8793,6 +8855,13 @@ impl ErrorDetails {
         self.message.as_deref()
     }
 }
+impl ErrorDetails {
+    /// Creates a new builder-style object to manufacture [`ErrorDetails`](crate::model::ErrorDetails).
+    pub fn builder() -> crate::model::error_details::Builder {
+        crate::model::error_details::Builder::default()
+    }
+}
+
 /// See [`ErrorDetails`](crate::model::ErrorDetails).
 pub mod error_details {
 
@@ -8833,12 +8902,6 @@ pub mod error_details {
         }
     }
 }
-impl ErrorDetails {
-    /// Creates a new builder-style object to manufacture [`ErrorDetails`](crate::model::ErrorDetails).
-    pub fn builder() -> crate::model::error_details::Builder {
-        crate::model::error_details::Builder::default()
-    }
-}
 
 /// <p>Represents information about the state of transitions between one stage and another stage.</p>
 #[non_exhaustive]
@@ -8875,6 +8938,13 @@ impl TransitionState {
         self.disabled_reason.as_deref()
     }
 }
+impl TransitionState {
+    /// Creates a new builder-style object to manufacture [`TransitionState`](crate::model::TransitionState).
+    pub fn builder() -> crate::model::transition_state::Builder {
+        crate::model::transition_state::Builder::default()
+    }
+}
+
 /// See [`TransitionState`](crate::model::TransitionState).
 pub mod transition_state {
 
@@ -8948,12 +9018,6 @@ pub mod transition_state {
         }
     }
 }
-impl TransitionState {
-    /// Creates a new builder-style object to manufacture [`TransitionState`](crate::model::TransitionState).
-    pub fn builder() -> crate::model::transition_state::Builder {
-        crate::model::transition_state::Builder::default()
-    }
-}
 
 /// <p>Represents information about an execution of a pipeline.</p>
 #[non_exhaustive]
@@ -9022,6 +9086,13 @@ impl PipelineExecution {
         self.artifact_revisions.as_deref()
     }
 }
+impl PipelineExecution {
+    /// Creates a new builder-style object to manufacture [`PipelineExecution`](crate::model::PipelineExecution).
+    pub fn builder() -> crate::model::pipeline_execution::Builder {
+        crate::model::pipeline_execution::Builder::default()
+    }
+}
+
 /// See [`PipelineExecution`](crate::model::PipelineExecution).
 pub mod pipeline_execution {
 
@@ -9150,12 +9221,6 @@ pub mod pipeline_execution {
         }
     }
 }
-impl PipelineExecution {
-    /// Creates a new builder-style object to manufacture [`PipelineExecution`](crate::model::PipelineExecution).
-    pub fn builder() -> crate::model::pipeline_execution::Builder {
-        crate::model::pipeline_execution::Builder::default()
-    }
-}
 
 /// <p>Represents revision details of an artifact. </p>
 #[non_exhaustive]
@@ -9206,6 +9271,13 @@ impl ArtifactRevision {
         self.revision_url.as_deref()
     }
 }
+impl ArtifactRevision {
+    /// Creates a new builder-style object to manufacture [`ArtifactRevision`](crate::model::ArtifactRevision).
+    pub fn builder() -> crate::model::artifact_revision::Builder {
+        crate::model::artifact_revision::Builder::default()
+    }
+}
+
 /// See [`ArtifactRevision`](crate::model::ArtifactRevision).
 pub mod artifact_revision {
 
@@ -9303,12 +9375,6 @@ pub mod artifact_revision {
         }
     }
 }
-impl ArtifactRevision {
-    /// Creates a new builder-style object to manufacture [`ArtifactRevision`](crate::model::ArtifactRevision).
-    pub fn builder() -> crate::model::artifact_revision::Builder {
-        crate::model::artifact_revision::Builder::default()
-    }
-}
 
 /// <p>Information about a pipeline.</p>
 #[non_exhaustive]
@@ -9338,6 +9404,13 @@ impl PipelineMetadata {
         self.updated.as_ref()
     }
 }
+impl PipelineMetadata {
+    /// Creates a new builder-style object to manufacture [`PipelineMetadata`](crate::model::PipelineMetadata).
+    pub fn builder() -> crate::model::pipeline_metadata::Builder {
+        crate::model::pipeline_metadata::Builder::default()
+    }
+}
+
 /// See [`PipelineMetadata`](crate::model::PipelineMetadata).
 pub mod pipeline_metadata {
 
@@ -9396,12 +9469,6 @@ pub mod pipeline_metadata {
         }
     }
 }
-impl PipelineMetadata {
-    /// Creates a new builder-style object to manufacture [`PipelineMetadata`](crate::model::PipelineMetadata).
-    pub fn builder() -> crate::model::pipeline_metadata::Builder {
-        crate::model::pipeline_metadata::Builder::default()
-    }
-}
 
 /// <p>Represents information about the details of a job.</p>
 #[non_exhaustive]
@@ -9431,6 +9498,13 @@ impl JobDetails {
         self.account_id.as_deref()
     }
 }
+impl JobDetails {
+    /// Creates a new builder-style object to manufacture [`JobDetails`](crate::model::JobDetails).
+    pub fn builder() -> crate::model::job_details::Builder {
+        crate::model::job_details::Builder::default()
+    }
+}
+
 /// See [`JobDetails`](crate::model::JobDetails).
 pub mod job_details {
 
@@ -9481,12 +9555,6 @@ pub mod job_details {
                 account_id: self.account_id,
             }
         }
-    }
-}
-impl JobDetails {
-    /// Creates a new builder-style object to manufacture [`JobDetails`](crate::model::JobDetails).
-    pub fn builder() -> crate::model::job_details::Builder {
-        crate::model::job_details::Builder::default()
     }
 }
 

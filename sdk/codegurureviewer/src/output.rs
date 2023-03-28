@@ -10,6 +10,13 @@ impl aws_http::request_id::RequestId for UntagResourceOutput {
         self._request_id.as_deref()
     }
 }
+impl UntagResourceOutput {
+    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    pub fn builder() -> crate::output::untag_resource_output::Builder {
+        crate::output::untag_resource_output::Builder::default()
+    }
+}
+
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
 
@@ -37,12 +44,6 @@ pub mod untag_resource_output {
         }
     }
 }
-impl UntagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
-    pub fn builder() -> crate::output::untag_resource_output::Builder {
-        crate::output::untag_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -55,6 +56,13 @@ impl aws_http::request_id::RequestId for TagResourceOutput {
         self._request_id.as_deref()
     }
 }
+impl TagResourceOutput {
+    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
+    pub fn builder() -> crate::output::tag_resource_output::Builder {
+        crate::output::tag_resource_output::Builder::default()
+    }
+}
+
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
 
@@ -82,12 +90,6 @@ pub mod tag_resource_output {
         }
     }
 }
-impl TagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
-    pub fn builder() -> crate::output::tag_resource_output::Builder {
-        crate::output::tag_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -100,6 +102,13 @@ impl aws_http::request_id::RequestId for PutRecommendationFeedbackOutput {
         self._request_id.as_deref()
     }
 }
+impl PutRecommendationFeedbackOutput {
+    /// Creates a new builder-style object to manufacture [`PutRecommendationFeedbackOutput`](crate::output::PutRecommendationFeedbackOutput).
+    pub fn builder() -> crate::output::put_recommendation_feedback_output::Builder {
+        crate::output::put_recommendation_feedback_output::Builder::default()
+    }
+}
+
 /// See [`PutRecommendationFeedbackOutput`](crate::output::PutRecommendationFeedbackOutput).
 pub mod put_recommendation_feedback_output {
 
@@ -125,12 +134,6 @@ pub mod put_recommendation_feedback_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl PutRecommendationFeedbackOutput {
-    /// Creates a new builder-style object to manufacture [`PutRecommendationFeedbackOutput`](crate::output::PutRecommendationFeedbackOutput).
-    pub fn builder() -> crate::output::put_recommendation_feedback_output::Builder {
-        crate::output::put_recommendation_feedback_output::Builder::default()
     }
 }
 
@@ -166,6 +169,13 @@ impl aws_http::request_id::RequestId for ListTagsForResourceOutput {
         self._request_id.as_deref()
     }
 }
+impl ListTagsForResourceOutput {
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
+        crate::output::list_tags_for_resource_output::Builder::default()
+    }
+}
+
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
 
@@ -230,12 +240,6 @@ pub mod list_tags_for_resource_output {
         }
     }
 }
-impl ListTagsForResourceOutput {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
-    pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
-        crate::output::list_tags_for_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -267,6 +271,13 @@ impl aws_http::request_id::RequestId for ListRepositoryAssociationsOutput {
         self._request_id.as_deref()
     }
 }
+impl ListRepositoryAssociationsOutput {
+    /// Creates a new builder-style object to manufacture [`ListRepositoryAssociationsOutput`](crate::output::ListRepositoryAssociationsOutput).
+    pub fn builder() -> crate::output::list_repository_associations_output::Builder {
+        crate::output::list_repository_associations_output::Builder::default()
+    }
+}
+
 /// See [`ListRepositoryAssociationsOutput`](crate::output::ListRepositoryAssociationsOutput).
 pub mod list_repository_associations_output {
 
@@ -331,12 +342,6 @@ pub mod list_repository_associations_output {
         }
     }
 }
-impl ListRepositoryAssociationsOutput {
-    /// Creates a new builder-style object to manufacture [`ListRepositoryAssociationsOutput`](crate::output::ListRepositoryAssociationsOutput).
-    pub fn builder() -> crate::output::list_repository_associations_output::Builder {
-        crate::output::list_repository_associations_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -368,6 +373,13 @@ impl aws_http::request_id::RequestId for ListRecommendationsOutput {
         self._request_id.as_deref()
     }
 }
+impl ListRecommendationsOutput {
+    /// Creates a new builder-style object to manufacture [`ListRecommendationsOutput`](crate::output::ListRecommendationsOutput).
+    pub fn builder() -> crate::output::list_recommendations_output::Builder {
+        crate::output::list_recommendations_output::Builder::default()
+    }
+}
+
 /// See [`ListRecommendationsOutput`](crate::output::ListRecommendationsOutput).
 pub mod list_recommendations_output {
 
@@ -432,12 +444,6 @@ pub mod list_recommendations_output {
         }
     }
 }
-impl ListRecommendationsOutput {
-    /// Creates a new builder-style object to manufacture [`ListRecommendationsOutput`](crate::output::ListRecommendationsOutput).
-    pub fn builder() -> crate::output::list_recommendations_output::Builder {
-        crate::output::list_recommendations_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -469,6 +475,13 @@ impl aws_http::request_id::RequestId for ListRecommendationFeedbackOutput {
         self._request_id.as_deref()
     }
 }
+impl ListRecommendationFeedbackOutput {
+    /// Creates a new builder-style object to manufacture [`ListRecommendationFeedbackOutput`](crate::output::ListRecommendationFeedbackOutput).
+    pub fn builder() -> crate::output::list_recommendation_feedback_output::Builder {
+        crate::output::list_recommendation_feedback_output::Builder::default()
+    }
+}
+
 /// See [`ListRecommendationFeedbackOutput`](crate::output::ListRecommendationFeedbackOutput).
 pub mod list_recommendation_feedback_output {
 
@@ -533,12 +546,6 @@ pub mod list_recommendation_feedback_output {
         }
     }
 }
-impl ListRecommendationFeedbackOutput {
-    /// Creates a new builder-style object to manufacture [`ListRecommendationFeedbackOutput`](crate::output::ListRecommendationFeedbackOutput).
-    pub fn builder() -> crate::output::list_recommendation_feedback_output::Builder {
-        crate::output::list_recommendation_feedback_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -567,6 +574,13 @@ impl aws_http::request_id::RequestId for ListCodeReviewsOutput {
         self._request_id.as_deref()
     }
 }
+impl ListCodeReviewsOutput {
+    /// Creates a new builder-style object to manufacture [`ListCodeReviewsOutput`](crate::output::ListCodeReviewsOutput).
+    pub fn builder() -> crate::output::list_code_reviews_output::Builder {
+        crate::output::list_code_reviews_output::Builder::default()
+    }
+}
+
 /// See [`ListCodeReviewsOutput`](crate::output::ListCodeReviewsOutput).
 pub mod list_code_reviews_output {
 
@@ -628,12 +642,6 @@ pub mod list_code_reviews_output {
         }
     }
 }
-impl ListCodeReviewsOutput {
-    /// Creates a new builder-style object to manufacture [`ListCodeReviewsOutput`](crate::output::ListCodeReviewsOutput).
-    pub fn builder() -> crate::output::list_code_reviews_output::Builder {
-        crate::output::list_code_reviews_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -676,6 +684,13 @@ impl aws_http::request_id::RequestId for DisassociateRepositoryOutput {
         self._request_id.as_deref()
     }
 }
+impl DisassociateRepositoryOutput {
+    /// Creates a new builder-style object to manufacture [`DisassociateRepositoryOutput`](crate::output::DisassociateRepositoryOutput).
+    pub fn builder() -> crate::output::disassociate_repository_output::Builder {
+        crate::output::disassociate_repository_output::Builder::default()
+    }
+}
+
 /// See [`DisassociateRepositoryOutput`](crate::output::DisassociateRepositoryOutput).
 pub mod disassociate_repository_output {
 
@@ -758,12 +773,6 @@ pub mod disassociate_repository_output {
         }
     }
 }
-impl DisassociateRepositoryOutput {
-    /// Creates a new builder-style object to manufacture [`DisassociateRepositoryOutput`](crate::output::DisassociateRepositoryOutput).
-    pub fn builder() -> crate::output::disassociate_repository_output::Builder {
-        crate::output::disassociate_repository_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -806,6 +815,13 @@ impl aws_http::request_id::RequestId for DescribeRepositoryAssociationOutput {
         self._request_id.as_deref()
     }
 }
+impl DescribeRepositoryAssociationOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeRepositoryAssociationOutput`](crate::output::DescribeRepositoryAssociationOutput).
+    pub fn builder() -> crate::output::describe_repository_association_output::Builder {
+        crate::output::describe_repository_association_output::Builder::default()
+    }
+}
+
 /// See [`DescribeRepositoryAssociationOutput`](crate::output::DescribeRepositoryAssociationOutput).
 pub mod describe_repository_association_output {
 
@@ -888,12 +904,6 @@ pub mod describe_repository_association_output {
         }
     }
 }
-impl DescribeRepositoryAssociationOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeRepositoryAssociationOutput`](crate::output::DescribeRepositoryAssociationOutput).
-    pub fn builder() -> crate::output::describe_repository_association_output::Builder {
-        crate::output::describe_repository_association_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -917,6 +927,13 @@ impl aws_http::request_id::RequestId for DescribeRecommendationFeedbackOutput {
         self._request_id.as_deref()
     }
 }
+impl DescribeRecommendationFeedbackOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeRecommendationFeedbackOutput`](crate::output::DescribeRecommendationFeedbackOutput).
+    pub fn builder() -> crate::output::describe_recommendation_feedback_output::Builder {
+        crate::output::describe_recommendation_feedback_output::Builder::default()
+    }
+}
+
 /// See [`DescribeRecommendationFeedbackOutput`](crate::output::DescribeRecommendationFeedbackOutput).
 pub mod describe_recommendation_feedback_output {
 
@@ -963,12 +980,6 @@ pub mod describe_recommendation_feedback_output {
         }
     }
 }
-impl DescribeRecommendationFeedbackOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeRecommendationFeedbackOutput`](crate::output::DescribeRecommendationFeedbackOutput).
-    pub fn builder() -> crate::output::describe_recommendation_feedback_output::Builder {
-        crate::output::describe_recommendation_feedback_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -990,6 +1001,13 @@ impl aws_http::request_id::RequestId for DescribeCodeReviewOutput {
         self._request_id.as_deref()
     }
 }
+impl DescribeCodeReviewOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeCodeReviewOutput`](crate::output::DescribeCodeReviewOutput).
+    pub fn builder() -> crate::output::describe_code_review_output::Builder {
+        crate::output::describe_code_review_output::Builder::default()
+    }
+}
+
 /// See [`DescribeCodeReviewOutput`](crate::output::DescribeCodeReviewOutput).
 pub mod describe_code_review_output {
 
@@ -1032,12 +1050,6 @@ pub mod describe_code_review_output {
         }
     }
 }
-impl DescribeCodeReviewOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeCodeReviewOutput`](crate::output::DescribeCodeReviewOutput).
-    pub fn builder() -> crate::output::describe_code_review_output::Builder {
-        crate::output::describe_code_review_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1059,6 +1071,13 @@ impl aws_http::request_id::RequestId for CreateCodeReviewOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateCodeReviewOutput {
+    /// Creates a new builder-style object to manufacture [`CreateCodeReviewOutput`](crate::output::CreateCodeReviewOutput).
+    pub fn builder() -> crate::output::create_code_review_output::Builder {
+        crate::output::create_code_review_output::Builder::default()
+    }
+}
+
 /// See [`CreateCodeReviewOutput`](crate::output::CreateCodeReviewOutput).
 pub mod create_code_review_output {
 
@@ -1099,12 +1118,6 @@ pub mod create_code_review_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl CreateCodeReviewOutput {
-    /// Creates a new builder-style object to manufacture [`CreateCodeReviewOutput`](crate::output::CreateCodeReviewOutput).
-    pub fn builder() -> crate::output::create_code_review_output::Builder {
-        crate::output::create_code_review_output::Builder::default()
     }
 }
 
@@ -1149,6 +1162,13 @@ impl aws_http::request_id::RequestId for AssociateRepositoryOutput {
         self._request_id.as_deref()
     }
 }
+impl AssociateRepositoryOutput {
+    /// Creates a new builder-style object to manufacture [`AssociateRepositoryOutput`](crate::output::AssociateRepositoryOutput).
+    pub fn builder() -> crate::output::associate_repository_output::Builder {
+        crate::output::associate_repository_output::Builder::default()
+    }
+}
+
 /// See [`AssociateRepositoryOutput`](crate::output::AssociateRepositoryOutput).
 pub mod associate_repository_output {
 
@@ -1229,11 +1249,5 @@ pub mod associate_repository_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl AssociateRepositoryOutput {
-    /// Creates a new builder-style object to manufacture [`AssociateRepositoryOutput`](crate::output::AssociateRepositoryOutput).
-    pub fn builder() -> crate::output::associate_repository_output::Builder {
-        crate::output::associate_repository_output::Builder::default()
     }
 }

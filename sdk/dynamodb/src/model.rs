@@ -21,6 +21,13 @@ impl TimeToLiveSpecification {
         self.attribute_name.as_deref()
     }
 }
+impl TimeToLiveSpecification {
+    /// Creates a new builder-style object to manufacture [`TimeToLiveSpecification`](crate::model::TimeToLiveSpecification).
+    pub fn builder() -> crate::model::time_to_live_specification::Builder {
+        crate::model::time_to_live_specification::Builder::default()
+    }
+}
+
 /// See [`TimeToLiveSpecification`](crate::model::TimeToLiveSpecification).
 pub mod time_to_live_specification {
 
@@ -64,12 +71,6 @@ pub mod time_to_live_specification {
         }
     }
 }
-impl TimeToLiveSpecification {
-    /// Creates a new builder-style object to manufacture [`TimeToLiveSpecification`](crate::model::TimeToLiveSpecification).
-    pub fn builder() -> crate::model::time_to_live_specification::Builder {
-        crate::model::time_to_live_specification::Builder::default()
-    }
-}
 
 /// <p>Represents the auto scaling configuration for a global table.</p>
 #[non_exhaustive]
@@ -111,6 +112,13 @@ impl TableAutoScalingDescription {
         self.replicas.as_deref()
     }
 }
+impl TableAutoScalingDescription {
+    /// Creates a new builder-style object to manufacture [`TableAutoScalingDescription`](crate::model::TableAutoScalingDescription).
+    pub fn builder() -> crate::model::table_auto_scaling_description::Builder {
+        crate::model::table_auto_scaling_description::Builder::default()
+    }
+}
+
 /// See [`TableAutoScalingDescription`](crate::model::TableAutoScalingDescription).
 pub mod table_auto_scaling_description {
 
@@ -188,12 +196,6 @@ pub mod table_auto_scaling_description {
         }
     }
 }
-impl TableAutoScalingDescription {
-    /// Creates a new builder-style object to manufacture [`TableAutoScalingDescription`](crate::model::TableAutoScalingDescription).
-    pub fn builder() -> crate::model::table_auto_scaling_description::Builder {
-        crate::model::table_auto_scaling_description::Builder::default()
-    }
-}
 
 /// <p>Represents the auto scaling settings of the replica.</p>
 #[non_exhaustive]
@@ -262,6 +264,13 @@ impl ReplicaAutoScalingDescription {
         self.replica_status.as_ref()
     }
 }
+impl ReplicaAutoScalingDescription {
+    /// Creates a new builder-style object to manufacture [`ReplicaAutoScalingDescription`](crate::model::ReplicaAutoScalingDescription).
+    pub fn builder() -> crate::model::replica_auto_scaling_description::Builder {
+        crate::model::replica_auto_scaling_description::Builder::default()
+    }
+}
+
 /// See [`ReplicaAutoScalingDescription`](crate::model::ReplicaAutoScalingDescription).
 pub mod replica_auto_scaling_description {
 
@@ -383,12 +392,6 @@ pub mod replica_auto_scaling_description {
                 replica_status: self.replica_status,
             }
         }
-    }
-}
-impl ReplicaAutoScalingDescription {
-    /// Creates a new builder-style object to manufacture [`ReplicaAutoScalingDescription`](crate::model::ReplicaAutoScalingDescription).
-    pub fn builder() -> crate::model::replica_auto_scaling_description::Builder {
-        crate::model::replica_auto_scaling_description::Builder::default()
     }
 }
 
@@ -564,6 +567,13 @@ impl AutoScalingSettingsDescription {
         self.scaling_policies.as_deref()
     }
 }
+impl AutoScalingSettingsDescription {
+    /// Creates a new builder-style object to manufacture [`AutoScalingSettingsDescription`](crate::model::AutoScalingSettingsDescription).
+    pub fn builder() -> crate::model::auto_scaling_settings_description::Builder {
+        crate::model::auto_scaling_settings_description::Builder::default()
+    }
+}
+
 /// See [`AutoScalingSettingsDescription`](crate::model::AutoScalingSettingsDescription).
 pub mod auto_scaling_settings_description {
 
@@ -656,12 +666,6 @@ pub mod auto_scaling_settings_description {
         }
     }
 }
-impl AutoScalingSettingsDescription {
-    /// Creates a new builder-style object to manufacture [`AutoScalingSettingsDescription`](crate::model::AutoScalingSettingsDescription).
-    pub fn builder() -> crate::model::auto_scaling_settings_description::Builder {
-        crate::model::auto_scaling_settings_description::Builder::default()
-    }
-}
 
 /// <p>Represents the properties of the scaling policy.</p>
 #[non_exhaustive]
@@ -690,6 +694,13 @@ impl AutoScalingPolicyDescription {
         self.target_tracking_scaling_policy_configuration.as_ref()
     }
 }
+impl AutoScalingPolicyDescription {
+    /// Creates a new builder-style object to manufacture [`AutoScalingPolicyDescription`](crate::model::AutoScalingPolicyDescription).
+    pub fn builder() -> crate::model::auto_scaling_policy_description::Builder {
+        crate::model::auto_scaling_policy_description::Builder::default()
+    }
+}
+
 /// See [`AutoScalingPolicyDescription`](crate::model::AutoScalingPolicyDescription).
 pub mod auto_scaling_policy_description {
 
@@ -741,12 +752,6 @@ pub mod auto_scaling_policy_description {
         }
     }
 }
-impl AutoScalingPolicyDescription {
-    /// Creates a new builder-style object to manufacture [`AutoScalingPolicyDescription`](crate::model::AutoScalingPolicyDescription).
-    pub fn builder() -> crate::model::auto_scaling_policy_description::Builder {
-        crate::model::auto_scaling_policy_description::Builder::default()
-    }
-}
 
 /// <p>Represents the properties of a target tracking scaling policy.</p>
 #[non_exhaustive]
@@ -783,6 +788,15 @@ impl AutoScalingTargetTrackingScalingPolicyConfigurationDescription {
         self.target_value
     }
 }
+impl AutoScalingTargetTrackingScalingPolicyConfigurationDescription {
+    /// Creates a new builder-style object to manufacture [`AutoScalingTargetTrackingScalingPolicyConfigurationDescription`](crate::model::AutoScalingTargetTrackingScalingPolicyConfigurationDescription).
+    pub fn builder(
+    ) -> crate::model::auto_scaling_target_tracking_scaling_policy_configuration_description::Builder
+    {
+        crate::model::auto_scaling_target_tracking_scaling_policy_configuration_description::Builder::default()
+    }
+}
+
 /// See [`AutoScalingTargetTrackingScalingPolicyConfigurationDescription`](crate::model::AutoScalingTargetTrackingScalingPolicyConfigurationDescription).
 pub mod auto_scaling_target_tracking_scaling_policy_configuration_description {
 
@@ -849,14 +863,6 @@ pub mod auto_scaling_target_tracking_scaling_policy_configuration_description {
         }
     }
 }
-impl AutoScalingTargetTrackingScalingPolicyConfigurationDescription {
-    /// Creates a new builder-style object to manufacture [`AutoScalingTargetTrackingScalingPolicyConfigurationDescription`](crate::model::AutoScalingTargetTrackingScalingPolicyConfigurationDescription).
-    pub fn builder(
-    ) -> crate::model::auto_scaling_target_tracking_scaling_policy_configuration_description::Builder
-    {
-        crate::model::auto_scaling_target_tracking_scaling_policy_configuration_description::Builder::default()
-    }
-}
 
 /// <p>Represents the auto scaling configuration for a replica global secondary index.</p>
 #[non_exhaustive]
@@ -913,6 +919,14 @@ impl ReplicaGlobalSecondaryIndexAutoScalingDescription {
             .as_ref()
     }
 }
+impl ReplicaGlobalSecondaryIndexAutoScalingDescription {
+    /// Creates a new builder-style object to manufacture [`ReplicaGlobalSecondaryIndexAutoScalingDescription`](crate::model::ReplicaGlobalSecondaryIndexAutoScalingDescription).
+    pub fn builder(
+    ) -> crate::model::replica_global_secondary_index_auto_scaling_description::Builder {
+        crate::model::replica_global_secondary_index_auto_scaling_description::Builder::default()
+    }
+}
+
 /// See [`ReplicaGlobalSecondaryIndexAutoScalingDescription`](crate::model::ReplicaGlobalSecondaryIndexAutoScalingDescription).
 pub mod replica_global_secondary_index_auto_scaling_description {
 
@@ -1006,13 +1020,6 @@ pub mod replica_global_secondary_index_auto_scaling_description {
                     .provisioned_write_capacity_auto_scaling_settings,
             }
         }
-    }
-}
-impl ReplicaGlobalSecondaryIndexAutoScalingDescription {
-    /// Creates a new builder-style object to manufacture [`ReplicaGlobalSecondaryIndexAutoScalingDescription`](crate::model::ReplicaGlobalSecondaryIndexAutoScalingDescription).
-    pub fn builder(
-    ) -> crate::model::replica_global_secondary_index_auto_scaling_description::Builder {
-        crate::model::replica_global_secondary_index_auto_scaling_description::Builder::default()
     }
 }
 
@@ -1275,6 +1282,13 @@ impl ReplicaAutoScalingUpdate {
             .as_ref()
     }
 }
+impl ReplicaAutoScalingUpdate {
+    /// Creates a new builder-style object to manufacture [`ReplicaAutoScalingUpdate`](crate::model::ReplicaAutoScalingUpdate).
+    pub fn builder() -> crate::model::replica_auto_scaling_update::Builder {
+        crate::model::replica_auto_scaling_update::Builder::default()
+    }
+}
+
 /// See [`ReplicaAutoScalingUpdate`](crate::model::ReplicaAutoScalingUpdate).
 pub mod replica_auto_scaling_update {
 
@@ -1353,12 +1367,6 @@ pub mod replica_auto_scaling_update {
         }
     }
 }
-impl ReplicaAutoScalingUpdate {
-    /// Creates a new builder-style object to manufacture [`ReplicaAutoScalingUpdate`](crate::model::ReplicaAutoScalingUpdate).
-    pub fn builder() -> crate::model::replica_auto_scaling_update::Builder {
-        crate::model::replica_auto_scaling_update::Builder::default()
-    }
-}
 
 /// <p>Represents the auto scaling settings to be modified for a global table or global secondary index.</p>
 #[non_exhaustive]
@@ -1404,6 +1412,13 @@ impl AutoScalingSettingsUpdate {
         self.scaling_policy_update.as_ref()
     }
 }
+impl AutoScalingSettingsUpdate {
+    /// Creates a new builder-style object to manufacture [`AutoScalingSettingsUpdate`](crate::model::AutoScalingSettingsUpdate).
+    pub fn builder() -> crate::model::auto_scaling_settings_update::Builder {
+        crate::model::auto_scaling_settings_update::Builder::default()
+    }
+}
+
 /// See [`AutoScalingSettingsUpdate`](crate::model::AutoScalingSettingsUpdate).
 pub mod auto_scaling_settings_update {
 
@@ -1490,12 +1505,6 @@ pub mod auto_scaling_settings_update {
         }
     }
 }
-impl AutoScalingSettingsUpdate {
-    /// Creates a new builder-style object to manufacture [`AutoScalingSettingsUpdate`](crate::model::AutoScalingSettingsUpdate).
-    pub fn builder() -> crate::model::auto_scaling_settings_update::Builder {
-        crate::model::auto_scaling_settings_update::Builder::default()
-    }
-}
 
 /// <p>Represents the auto scaling policy to be modified.</p>
 #[non_exhaustive]
@@ -1523,6 +1532,13 @@ impl AutoScalingPolicyUpdate {
         self.target_tracking_scaling_policy_configuration.as_ref()
     }
 }
+impl AutoScalingPolicyUpdate {
+    /// Creates a new builder-style object to manufacture [`AutoScalingPolicyUpdate`](crate::model::AutoScalingPolicyUpdate).
+    pub fn builder() -> crate::model::auto_scaling_policy_update::Builder {
+        crate::model::auto_scaling_policy_update::Builder::default()
+    }
+}
+
 /// See [`AutoScalingPolicyUpdate`](crate::model::AutoScalingPolicyUpdate).
 pub mod auto_scaling_policy_update {
 
@@ -1574,12 +1590,6 @@ pub mod auto_scaling_policy_update {
         }
     }
 }
-impl AutoScalingPolicyUpdate {
-    /// Creates a new builder-style object to manufacture [`AutoScalingPolicyUpdate`](crate::model::AutoScalingPolicyUpdate).
-    pub fn builder() -> crate::model::auto_scaling_policy_update::Builder {
-        crate::model::auto_scaling_policy_update::Builder::default()
-    }
-}
 
 /// <p>Represents the settings of a target tracking scaling policy that will be modified.</p>
 #[non_exhaustive]
@@ -1616,6 +1626,15 @@ impl AutoScalingTargetTrackingScalingPolicyConfigurationUpdate {
         self.target_value
     }
 }
+impl AutoScalingTargetTrackingScalingPolicyConfigurationUpdate {
+    /// Creates a new builder-style object to manufacture [`AutoScalingTargetTrackingScalingPolicyConfigurationUpdate`](crate::model::AutoScalingTargetTrackingScalingPolicyConfigurationUpdate).
+    pub fn builder(
+    ) -> crate::model::auto_scaling_target_tracking_scaling_policy_configuration_update::Builder
+    {
+        crate::model::auto_scaling_target_tracking_scaling_policy_configuration_update::Builder::default()
+    }
+}
+
 /// See [`AutoScalingTargetTrackingScalingPolicyConfigurationUpdate`](crate::model::AutoScalingTargetTrackingScalingPolicyConfigurationUpdate).
 pub mod auto_scaling_target_tracking_scaling_policy_configuration_update {
 
@@ -1682,14 +1701,6 @@ pub mod auto_scaling_target_tracking_scaling_policy_configuration_update {
         }
     }
 }
-impl AutoScalingTargetTrackingScalingPolicyConfigurationUpdate {
-    /// Creates a new builder-style object to manufacture [`AutoScalingTargetTrackingScalingPolicyConfigurationUpdate`](crate::model::AutoScalingTargetTrackingScalingPolicyConfigurationUpdate).
-    pub fn builder(
-    ) -> crate::model::auto_scaling_target_tracking_scaling_policy_configuration_update::Builder
-    {
-        crate::model::auto_scaling_target_tracking_scaling_policy_configuration_update::Builder::default()
-    }
-}
 
 /// <p>Represents the auto scaling settings of a global secondary index for a replica that will be modified.</p>
 #[non_exhaustive]
@@ -1715,6 +1726,13 @@ impl ReplicaGlobalSecondaryIndexAutoScalingUpdate {
         self.provisioned_read_capacity_auto_scaling_update.as_ref()
     }
 }
+impl ReplicaGlobalSecondaryIndexAutoScalingUpdate {
+    /// Creates a new builder-style object to manufacture [`ReplicaGlobalSecondaryIndexAutoScalingUpdate`](crate::model::ReplicaGlobalSecondaryIndexAutoScalingUpdate).
+    pub fn builder() -> crate::model::replica_global_secondary_index_auto_scaling_update::Builder {
+        crate::model::replica_global_secondary_index_auto_scaling_update::Builder::default()
+    }
+}
+
 /// See [`ReplicaGlobalSecondaryIndexAutoScalingUpdate`](crate::model::ReplicaGlobalSecondaryIndexAutoScalingUpdate).
 pub mod replica_global_secondary_index_auto_scaling_update {
 
@@ -1763,12 +1781,6 @@ pub mod replica_global_secondary_index_auto_scaling_update {
         }
     }
 }
-impl ReplicaGlobalSecondaryIndexAutoScalingUpdate {
-    /// Creates a new builder-style object to manufacture [`ReplicaGlobalSecondaryIndexAutoScalingUpdate`](crate::model::ReplicaGlobalSecondaryIndexAutoScalingUpdate).
-    pub fn builder() -> crate::model::replica_global_secondary_index_auto_scaling_update::Builder {
-        crate::model::replica_global_secondary_index_auto_scaling_update::Builder::default()
-    }
-}
 
 /// <p>Represents the auto scaling settings of a global secondary index for a global table that will be modified.</p>
 #[non_exhaustive]
@@ -1794,6 +1806,13 @@ impl GlobalSecondaryIndexAutoScalingUpdate {
         self.provisioned_write_capacity_auto_scaling_update.as_ref()
     }
 }
+impl GlobalSecondaryIndexAutoScalingUpdate {
+    /// Creates a new builder-style object to manufacture [`GlobalSecondaryIndexAutoScalingUpdate`](crate::model::GlobalSecondaryIndexAutoScalingUpdate).
+    pub fn builder() -> crate::model::global_secondary_index_auto_scaling_update::Builder {
+        crate::model::global_secondary_index_auto_scaling_update::Builder::default()
+    }
+}
+
 /// See [`GlobalSecondaryIndexAutoScalingUpdate`](crate::model::GlobalSecondaryIndexAutoScalingUpdate).
 pub mod global_secondary_index_auto_scaling_update {
 
@@ -1840,12 +1859,6 @@ pub mod global_secondary_index_auto_scaling_update {
                     .provisioned_write_capacity_auto_scaling_update,
             }
         }
-    }
-}
-impl GlobalSecondaryIndexAutoScalingUpdate {
-    /// Creates a new builder-style object to manufacture [`GlobalSecondaryIndexAutoScalingUpdate`](crate::model::GlobalSecondaryIndexAutoScalingUpdate).
-    pub fn builder() -> crate::model::global_secondary_index_auto_scaling_update::Builder {
-        crate::model::global_secondary_index_auto_scaling_update::Builder::default()
     }
 }
 
@@ -2171,6 +2184,13 @@ impl TableDescription {
         self.table_class_summary.as_ref()
     }
 }
+impl TableDescription {
+    /// Creates a new builder-style object to manufacture [`TableDescription`](crate::model::TableDescription).
+    pub fn builder() -> crate::model::table_description::Builder {
+        crate::model::table_description::Builder::default()
+    }
+}
+
 /// See [`TableDescription`](crate::model::TableDescription).
 pub mod table_description {
 
@@ -2697,12 +2717,6 @@ pub mod table_description {
         }
     }
 }
-impl TableDescription {
-    /// Creates a new builder-style object to manufacture [`TableDescription`](crate::model::TableDescription).
-    pub fn builder() -> crate::model::table_description::Builder {
-        crate::model::table_description::Builder::default()
-    }
-}
 
 /// <p>Contains details of the table class.</p>
 #[non_exhaustive]
@@ -2725,6 +2739,13 @@ impl TableClassSummary {
         self.last_update_date_time.as_ref()
     }
 }
+impl TableClassSummary {
+    /// Creates a new builder-style object to manufacture [`TableClassSummary`](crate::model::TableClassSummary).
+    pub fn builder() -> crate::model::table_class_summary::Builder {
+        crate::model::table_class_summary::Builder::default()
+    }
+}
+
 /// See [`TableClassSummary`](crate::model::TableClassSummary).
 pub mod table_class_summary {
 
@@ -2769,12 +2790,6 @@ pub mod table_class_summary {
                 last_update_date_time: self.last_update_date_time,
             }
         }
-    }
-}
-impl TableClassSummary {
-    /// Creates a new builder-style object to manufacture [`TableClassSummary`](crate::model::TableClassSummary).
-    pub fn builder() -> crate::model::table_class_summary::Builder {
-        crate::model::table_class_summary::Builder::default()
     }
 }
 
@@ -2902,6 +2917,13 @@ impl ArchivalSummary {
         self.archival_backup_arn.as_deref()
     }
 }
+impl ArchivalSummary {
+    /// Creates a new builder-style object to manufacture [`ArchivalSummary`](crate::model::ArchivalSummary).
+    pub fn builder() -> crate::model::archival_summary::Builder {
+        crate::model::archival_summary::Builder::default()
+    }
+}
+
 /// See [`ArchivalSummary`](crate::model::ArchivalSummary).
 pub mod archival_summary {
 
@@ -2969,12 +2991,6 @@ pub mod archival_summary {
         }
     }
 }
-impl ArchivalSummary {
-    /// Creates a new builder-style object to manufacture [`ArchivalSummary`](crate::model::ArchivalSummary).
-    pub fn builder() -> crate::model::archival_summary::Builder {
-        crate::model::archival_summary::Builder::default()
-    }
-}
 
 /// <p>The description of the server-side encryption status on the specified table.</p>
 #[non_exhaustive]
@@ -3027,6 +3043,13 @@ impl SseDescription {
         self.inaccessible_encryption_date_time.as_ref()
     }
 }
+impl SseDescription {
+    /// Creates a new builder-style object to manufacture [`SseDescription`](crate::model::SseDescription).
+    pub fn builder() -> crate::model::sse_description::Builder {
+        crate::model::sse_description::Builder::default()
+    }
+}
+
 /// See [`SseDescription`](crate::model::SseDescription).
 pub mod sse_description {
 
@@ -3113,12 +3136,6 @@ pub mod sse_description {
                 inaccessible_encryption_date_time: self.inaccessible_encryption_date_time,
             }
         }
-    }
-}
-impl SseDescription {
-    /// Creates a new builder-style object to manufacture [`SseDescription`](crate::model::SseDescription).
-    pub fn builder() -> crate::model::sse_description::Builder {
-        crate::model::sse_description::Builder::default()
     }
 }
 
@@ -3352,6 +3369,13 @@ impl RestoreSummary {
         self.restore_in_progress
     }
 }
+impl RestoreSummary {
+    /// Creates a new builder-style object to manufacture [`RestoreSummary`](crate::model::RestoreSummary).
+    pub fn builder() -> crate::model::restore_summary::Builder {
+        crate::model::restore_summary::Builder::default()
+    }
+}
+
 /// See [`RestoreSummary`](crate::model::RestoreSummary).
 pub mod restore_summary {
 
@@ -3423,12 +3447,6 @@ pub mod restore_summary {
                 restore_in_progress: self.restore_in_progress,
             }
         }
-    }
-}
-impl RestoreSummary {
-    /// Creates a new builder-style object to manufacture [`RestoreSummary`](crate::model::RestoreSummary).
-    pub fn builder() -> crate::model::restore_summary::Builder {
-        crate::model::restore_summary::Builder::default()
     }
 }
 
@@ -3536,6 +3554,13 @@ impl ReplicaDescription {
         self.replica_table_class_summary.as_ref()
     }
 }
+impl ReplicaDescription {
+    /// Creates a new builder-style object to manufacture [`ReplicaDescription`](crate::model::ReplicaDescription).
+    pub fn builder() -> crate::model::replica_description::Builder {
+        crate::model::replica_description::Builder::default()
+    }
+}
+
 /// See [`ReplicaDescription`](crate::model::ReplicaDescription).
 pub mod replica_description {
 
@@ -3732,12 +3757,6 @@ pub mod replica_description {
         }
     }
 }
-impl ReplicaDescription {
-    /// Creates a new builder-style object to manufacture [`ReplicaDescription`](crate::model::ReplicaDescription).
-    pub fn builder() -> crate::model::replica_description::Builder {
-        crate::model::replica_description::Builder::default()
-    }
-}
 
 /// <p>Represents the properties of a replica global secondary index.</p>
 #[non_exhaustive]
@@ -3763,6 +3782,13 @@ impl ReplicaGlobalSecondaryIndexDescription {
         self.provisioned_throughput_override.as_ref()
     }
 }
+impl ReplicaGlobalSecondaryIndexDescription {
+    /// Creates a new builder-style object to manufacture [`ReplicaGlobalSecondaryIndexDescription`](crate::model::ReplicaGlobalSecondaryIndexDescription).
+    pub fn builder() -> crate::model::replica_global_secondary_index_description::Builder {
+        crate::model::replica_global_secondary_index_description::Builder::default()
+    }
+}
+
 /// See [`ReplicaGlobalSecondaryIndexDescription`](crate::model::ReplicaGlobalSecondaryIndexDescription).
 pub mod replica_global_secondary_index_description {
 
@@ -3810,12 +3836,6 @@ pub mod replica_global_secondary_index_description {
         }
     }
 }
-impl ReplicaGlobalSecondaryIndexDescription {
-    /// Creates a new builder-style object to manufacture [`ReplicaGlobalSecondaryIndexDescription`](crate::model::ReplicaGlobalSecondaryIndexDescription).
-    pub fn builder() -> crate::model::replica_global_secondary_index_description::Builder {
-        crate::model::replica_global_secondary_index_description::Builder::default()
-    }
-}
 
 /// <p>Replica-specific provisioned throughput settings. If not specified, uses the source table's provisioned throughput settings.</p>
 #[non_exhaustive]
@@ -3831,6 +3851,13 @@ impl ProvisionedThroughputOverride {
         self.read_capacity_units
     }
 }
+impl ProvisionedThroughputOverride {
+    /// Creates a new builder-style object to manufacture [`ProvisionedThroughputOverride`](crate::model::ProvisionedThroughputOverride).
+    pub fn builder() -> crate::model::provisioned_throughput_override::Builder {
+        crate::model::provisioned_throughput_override::Builder::default()
+    }
+}
+
 /// See [`ProvisionedThroughputOverride`](crate::model::ProvisionedThroughputOverride).
 pub mod provisioned_throughput_override {
 
@@ -3857,12 +3884,6 @@ pub mod provisioned_throughput_override {
                 read_capacity_units: self.read_capacity_units,
             }
         }
-    }
-}
-impl ProvisionedThroughputOverride {
-    /// Creates a new builder-style object to manufacture [`ProvisionedThroughputOverride`](crate::model::ProvisionedThroughputOverride).
-    pub fn builder() -> crate::model::provisioned_throughput_override::Builder {
-        crate::model::provisioned_throughput_override::Builder::default()
     }
 }
 
@@ -3899,6 +3920,13 @@ impl StreamSpecification {
         self.stream_view_type.as_ref()
     }
 }
+impl StreamSpecification {
+    /// Creates a new builder-style object to manufacture [`StreamSpecification`](crate::model::StreamSpecification).
+    pub fn builder() -> crate::model::stream_specification::Builder {
+        crate::model::stream_specification::Builder::default()
+    }
+}
+
 /// See [`StreamSpecification`](crate::model::StreamSpecification).
 pub mod stream_specification {
 
@@ -3952,12 +3980,6 @@ pub mod stream_specification {
                 stream_view_type: self.stream_view_type,
             }
         }
-    }
-}
-impl StreamSpecification {
-    /// Creates a new builder-style object to manufacture [`StreamSpecification`](crate::model::StreamSpecification).
-    pub fn builder() -> crate::model::stream_specification::Builder {
-        crate::model::stream_specification::Builder::default()
     }
 }
 
@@ -4167,6 +4189,13 @@ impl GlobalSecondaryIndexDescription {
         self.index_arn.as_deref()
     }
 }
+impl GlobalSecondaryIndexDescription {
+    /// Creates a new builder-style object to manufacture [`GlobalSecondaryIndexDescription`](crate::model::GlobalSecondaryIndexDescription).
+    pub fn builder() -> crate::model::global_secondary_index_description::Builder {
+        crate::model::global_secondary_index_description::Builder::default()
+    }
+}
+
 /// See [`GlobalSecondaryIndexDescription`](crate::model::GlobalSecondaryIndexDescription).
 pub mod global_secondary_index_description {
 
@@ -4347,12 +4376,6 @@ pub mod global_secondary_index_description {
         }
     }
 }
-impl GlobalSecondaryIndexDescription {
-    /// Creates a new builder-style object to manufacture [`GlobalSecondaryIndexDescription`](crate::model::GlobalSecondaryIndexDescription).
-    pub fn builder() -> crate::model::global_secondary_index_description::Builder {
-        crate::model::global_secondary_index_description::Builder::default()
-    }
-}
 
 /// <p>Represents the provisioned throughput settings for the table, consisting of read and write capacity units, along with data about increases and decreases.</p>
 #[non_exhaustive]
@@ -4396,6 +4419,13 @@ impl ProvisionedThroughputDescription {
         self.write_capacity_units
     }
 }
+impl ProvisionedThroughputDescription {
+    /// Creates a new builder-style object to manufacture [`ProvisionedThroughputDescription`](crate::model::ProvisionedThroughputDescription).
+    pub fn builder() -> crate::model::provisioned_throughput_description::Builder {
+        crate::model::provisioned_throughput_description::Builder::default()
+    }
+}
+
 /// See [`ProvisionedThroughputDescription`](crate::model::ProvisionedThroughputDescription).
 pub mod provisioned_throughput_description {
 
@@ -4478,12 +4508,6 @@ pub mod provisioned_throughput_description {
         }
     }
 }
-impl ProvisionedThroughputDescription {
-    /// Creates a new builder-style object to manufacture [`ProvisionedThroughputDescription`](crate::model::ProvisionedThroughputDescription).
-    pub fn builder() -> crate::model::provisioned_throughput_description::Builder {
-        crate::model::provisioned_throughput_description::Builder::default()
-    }
-}
 
 /// <p>Represents attributes that are copied (projected) from the table into an index. These are in addition to the primary key attributes and index key attributes, which are automatically projected.</p>
 #[non_exhaustive]
@@ -4518,6 +4542,13 @@ impl Projection {
         self.non_key_attributes.as_deref()
     }
 }
+impl Projection {
+    /// Creates a new builder-style object to manufacture [`Projection`](crate::model::Projection).
+    pub fn builder() -> crate::model::projection::Builder {
+        crate::model::projection::Builder::default()
+    }
+}
+
 /// See [`Projection`](crate::model::Projection).
 pub mod projection {
 
@@ -4580,12 +4611,6 @@ pub mod projection {
                 non_key_attributes: self.non_key_attributes,
             }
         }
-    }
-}
-impl Projection {
-    /// Creates a new builder-style object to manufacture [`Projection`](crate::model::Projection).
-    pub fn builder() -> crate::model::projection::Builder {
-        crate::model::projection::Builder::default()
     }
 }
 
@@ -4721,6 +4746,13 @@ impl KeySchemaElement {
         self.key_type.as_ref()
     }
 }
+impl KeySchemaElement {
+    /// Creates a new builder-style object to manufacture [`KeySchemaElement`](crate::model::KeySchemaElement).
+    pub fn builder() -> crate::model::key_schema_element::Builder {
+        crate::model::key_schema_element::Builder::default()
+    }
+}
+
 /// See [`KeySchemaElement`](crate::model::KeySchemaElement).
 pub mod key_schema_element {
 
@@ -4776,12 +4808,6 @@ pub mod key_schema_element {
                 key_type: self.key_type,
             }
         }
-    }
-}
-impl KeySchemaElement {
-    /// Creates a new builder-style object to manufacture [`KeySchemaElement`](crate::model::KeySchemaElement).
-    pub fn builder() -> crate::model::key_schema_element::Builder {
-        crate::model::key_schema_element::Builder::default()
     }
 }
 
@@ -4938,6 +4964,13 @@ impl LocalSecondaryIndexDescription {
         self.index_arn.as_deref()
     }
 }
+impl LocalSecondaryIndexDescription {
+    /// Creates a new builder-style object to manufacture [`LocalSecondaryIndexDescription`](crate::model::LocalSecondaryIndexDescription).
+    pub fn builder() -> crate::model::local_secondary_index_description::Builder {
+        crate::model::local_secondary_index_description::Builder::default()
+    }
+}
+
 /// See [`LocalSecondaryIndexDescription`](crate::model::LocalSecondaryIndexDescription).
 pub mod local_secondary_index_description {
 
@@ -5052,12 +5085,6 @@ pub mod local_secondary_index_description {
         }
     }
 }
-impl LocalSecondaryIndexDescription {
-    /// Creates a new builder-style object to manufacture [`LocalSecondaryIndexDescription`](crate::model::LocalSecondaryIndexDescription).
-    pub fn builder() -> crate::model::local_secondary_index_description::Builder {
-        crate::model::local_secondary_index_description::Builder::default()
-    }
-}
 
 /// <p>Contains the details for the read/write capacity mode. This page talks about <code>PROVISIONED</code> and <code>PAY_PER_REQUEST</code> billing modes. For more information about these modes, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html">Read/write capacity mode</a>.</p> <note>
 /// <p>You may need to switch to on-demand mode at least once in order to return a <code>BillingModeSummary</code> response.</p>
@@ -5092,6 +5119,13 @@ impl BillingModeSummary {
         self.last_update_to_pay_per_request_date_time.as_ref()
     }
 }
+impl BillingModeSummary {
+    /// Creates a new builder-style object to manufacture [`BillingModeSummary`](crate::model::BillingModeSummary).
+    pub fn builder() -> crate::model::billing_mode_summary::Builder {
+        crate::model::billing_mode_summary::Builder::default()
+    }
+}
+
 /// See [`BillingModeSummary`](crate::model::BillingModeSummary).
 pub mod billing_mode_summary {
 
@@ -5149,12 +5183,6 @@ pub mod billing_mode_summary {
                     .last_update_to_pay_per_request_date_time,
             }
         }
-    }
-}
-impl BillingModeSummary {
-    /// Creates a new builder-style object to manufacture [`BillingModeSummary`](crate::model::BillingModeSummary).
-    pub fn builder() -> crate::model::billing_mode_summary::Builder {
-        crate::model::billing_mode_summary::Builder::default()
     }
 }
 
@@ -5279,6 +5307,13 @@ impl AttributeDefinition {
         self.attribute_type.as_ref()
     }
 }
+impl AttributeDefinition {
+    /// Creates a new builder-style object to manufacture [`AttributeDefinition`](crate::model::AttributeDefinition).
+    pub fn builder() -> crate::model::attribute_definition::Builder {
+        crate::model::attribute_definition::Builder::default()
+    }
+}
+
 /// See [`AttributeDefinition`](crate::model::AttributeDefinition).
 pub mod attribute_definition {
 
@@ -5333,12 +5368,6 @@ pub mod attribute_definition {
                 attribute_type: self.attribute_type,
             }
         }
-    }
-}
-impl AttributeDefinition {
-    /// Creates a new builder-style object to manufacture [`AttributeDefinition`](crate::model::AttributeDefinition).
-    pub fn builder() -> crate::model::attribute_definition::Builder {
-        crate::model::attribute_definition::Builder::default()
     }
 }
 
@@ -5474,6 +5503,13 @@ impl ReplicationGroupUpdate {
         self.delete.as_ref()
     }
 }
+impl ReplicationGroupUpdate {
+    /// Creates a new builder-style object to manufacture [`ReplicationGroupUpdate`](crate::model::ReplicationGroupUpdate).
+    pub fn builder() -> crate::model::replication_group_update::Builder {
+        crate::model::replication_group_update::Builder::default()
+    }
+}
+
 /// See [`ReplicationGroupUpdate`](crate::model::ReplicationGroupUpdate).
 pub mod replication_group_update {
 
@@ -5535,12 +5571,6 @@ pub mod replication_group_update {
         }
     }
 }
-impl ReplicationGroupUpdate {
-    /// Creates a new builder-style object to manufacture [`ReplicationGroupUpdate`](crate::model::ReplicationGroupUpdate).
-    pub fn builder() -> crate::model::replication_group_update::Builder {
-        crate::model::replication_group_update::Builder::default()
-    }
-}
 
 /// <p>Represents a replica to be deleted.</p>
 #[non_exhaustive]
@@ -5556,6 +5586,13 @@ impl DeleteReplicationGroupMemberAction {
         self.region_name.as_deref()
     }
 }
+impl DeleteReplicationGroupMemberAction {
+    /// Creates a new builder-style object to manufacture [`DeleteReplicationGroupMemberAction`](crate::model::DeleteReplicationGroupMemberAction).
+    pub fn builder() -> crate::model::delete_replication_group_member_action::Builder {
+        crate::model::delete_replication_group_member_action::Builder::default()
+    }
+}
+
 /// See [`DeleteReplicationGroupMemberAction`](crate::model::DeleteReplicationGroupMemberAction).
 pub mod delete_replication_group_member_action {
 
@@ -5582,12 +5619,6 @@ pub mod delete_replication_group_member_action {
                 region_name: self.region_name,
             }
         }
-    }
-}
-impl DeleteReplicationGroupMemberAction {
-    /// Creates a new builder-style object to manufacture [`DeleteReplicationGroupMemberAction`](crate::model::DeleteReplicationGroupMemberAction).
-    pub fn builder() -> crate::model::delete_replication_group_member_action::Builder {
-        crate::model::delete_replication_group_member_action::Builder::default()
     }
 }
 
@@ -5639,6 +5670,13 @@ impl UpdateReplicationGroupMemberAction {
         self.table_class_override.as_ref()
     }
 }
+impl UpdateReplicationGroupMemberAction {
+    /// Creates a new builder-style object to manufacture [`UpdateReplicationGroupMemberAction`](crate::model::UpdateReplicationGroupMemberAction).
+    pub fn builder() -> crate::model::update_replication_group_member_action::Builder {
+        crate::model::update_replication_group_member_action::Builder::default()
+    }
+}
+
 /// See [`UpdateReplicationGroupMemberAction`](crate::model::UpdateReplicationGroupMemberAction).
 pub mod update_replication_group_member_action {
 
@@ -5741,12 +5779,6 @@ pub mod update_replication_group_member_action {
         }
     }
 }
-impl UpdateReplicationGroupMemberAction {
-    /// Creates a new builder-style object to manufacture [`UpdateReplicationGroupMemberAction`](crate::model::UpdateReplicationGroupMemberAction).
-    pub fn builder() -> crate::model::update_replication_group_member_action::Builder {
-        crate::model::update_replication_group_member_action::Builder::default()
-    }
-}
 
 /// <p>Represents the properties of a replica global secondary index.</p>
 #[non_exhaustive]
@@ -5772,6 +5804,13 @@ impl ReplicaGlobalSecondaryIndex {
         self.provisioned_throughput_override.as_ref()
     }
 }
+impl ReplicaGlobalSecondaryIndex {
+    /// Creates a new builder-style object to manufacture [`ReplicaGlobalSecondaryIndex`](crate::model::ReplicaGlobalSecondaryIndex).
+    pub fn builder() -> crate::model::replica_global_secondary_index::Builder {
+        crate::model::replica_global_secondary_index::Builder::default()
+    }
+}
+
 /// See [`ReplicaGlobalSecondaryIndex`](crate::model::ReplicaGlobalSecondaryIndex).
 pub mod replica_global_secondary_index {
 
@@ -5817,12 +5856,6 @@ pub mod replica_global_secondary_index {
                 provisioned_throughput_override: self.provisioned_throughput_override,
             }
         }
-    }
-}
-impl ReplicaGlobalSecondaryIndex {
-    /// Creates a new builder-style object to manufacture [`ReplicaGlobalSecondaryIndex`](crate::model::ReplicaGlobalSecondaryIndex).
-    pub fn builder() -> crate::model::replica_global_secondary_index::Builder {
-        crate::model::replica_global_secondary_index::Builder::default()
     }
 }
 
@@ -5874,6 +5907,13 @@ impl CreateReplicationGroupMemberAction {
         self.table_class_override.as_ref()
     }
 }
+impl CreateReplicationGroupMemberAction {
+    /// Creates a new builder-style object to manufacture [`CreateReplicationGroupMemberAction`](crate::model::CreateReplicationGroupMemberAction).
+    pub fn builder() -> crate::model::create_replication_group_member_action::Builder {
+        crate::model::create_replication_group_member_action::Builder::default()
+    }
+}
+
 /// See [`CreateReplicationGroupMemberAction`](crate::model::CreateReplicationGroupMemberAction).
 pub mod create_replication_group_member_action {
 
@@ -5976,12 +6016,6 @@ pub mod create_replication_group_member_action {
         }
     }
 }
-impl CreateReplicationGroupMemberAction {
-    /// Creates a new builder-style object to manufacture [`CreateReplicationGroupMemberAction`](crate::model::CreateReplicationGroupMemberAction).
-    pub fn builder() -> crate::model::create_replication_group_member_action::Builder {
-        crate::model::create_replication_group_member_action::Builder::default()
-    }
-}
 
 /// <p>Represents the settings used to enable server-side encryption.</p>
 #[non_exhaustive]
@@ -6017,6 +6051,13 @@ impl SseSpecification {
         self.kms_master_key_id.as_deref()
     }
 }
+impl SseSpecification {
+    /// Creates a new builder-style object to manufacture [`SseSpecification`](crate::model::SseSpecification).
+    pub fn builder() -> crate::model::sse_specification::Builder {
+        crate::model::sse_specification::Builder::default()
+    }
+}
+
 /// See [`SseSpecification`](crate::model::SseSpecification).
 pub mod sse_specification {
 
@@ -6078,12 +6119,6 @@ pub mod sse_specification {
         }
     }
 }
-impl SseSpecification {
-    /// Creates a new builder-style object to manufacture [`SseSpecification`](crate::model::SseSpecification).
-    pub fn builder() -> crate::model::sse_specification::Builder {
-        crate::model::sse_specification::Builder::default()
-    }
-}
 
 /// <p>Represents one of the following:</p>
 /// <ul>
@@ -6132,6 +6167,13 @@ impl GlobalSecondaryIndexUpdate {
         self.delete.as_ref()
     }
 }
+impl GlobalSecondaryIndexUpdate {
+    /// Creates a new builder-style object to manufacture [`GlobalSecondaryIndexUpdate`](crate::model::GlobalSecondaryIndexUpdate).
+    pub fn builder() -> crate::model::global_secondary_index_update::Builder {
+        crate::model::global_secondary_index_update::Builder::default()
+    }
+}
+
 /// See [`GlobalSecondaryIndexUpdate`](crate::model::GlobalSecondaryIndexUpdate).
 pub mod global_secondary_index_update {
 
@@ -6207,12 +6249,6 @@ pub mod global_secondary_index_update {
         }
     }
 }
-impl GlobalSecondaryIndexUpdate {
-    /// Creates a new builder-style object to manufacture [`GlobalSecondaryIndexUpdate`](crate::model::GlobalSecondaryIndexUpdate).
-    pub fn builder() -> crate::model::global_secondary_index_update::Builder {
-        crate::model::global_secondary_index_update::Builder::default()
-    }
-}
 
 /// <p>Represents a global secondary index to be deleted from an existing table.</p>
 #[non_exhaustive]
@@ -6228,6 +6264,13 @@ impl DeleteGlobalSecondaryIndexAction {
         self.index_name.as_deref()
     }
 }
+impl DeleteGlobalSecondaryIndexAction {
+    /// Creates a new builder-style object to manufacture [`DeleteGlobalSecondaryIndexAction`](crate::model::DeleteGlobalSecondaryIndexAction).
+    pub fn builder() -> crate::model::delete_global_secondary_index_action::Builder {
+        crate::model::delete_global_secondary_index_action::Builder::default()
+    }
+}
+
 /// See [`DeleteGlobalSecondaryIndexAction`](crate::model::DeleteGlobalSecondaryIndexAction).
 pub mod delete_global_secondary_index_action {
 
@@ -6254,12 +6297,6 @@ pub mod delete_global_secondary_index_action {
                 index_name: self.index_name,
             }
         }
-    }
-}
-impl DeleteGlobalSecondaryIndexAction {
-    /// Creates a new builder-style object to manufacture [`DeleteGlobalSecondaryIndexAction`](crate::model::DeleteGlobalSecondaryIndexAction).
-    pub fn builder() -> crate::model::delete_global_secondary_index_action::Builder {
-        crate::model::delete_global_secondary_index_action::Builder::default()
     }
 }
 
@@ -6302,6 +6339,13 @@ impl CreateGlobalSecondaryIndexAction {
         self.provisioned_throughput.as_ref()
     }
 }
+impl CreateGlobalSecondaryIndexAction {
+    /// Creates a new builder-style object to manufacture [`CreateGlobalSecondaryIndexAction`](crate::model::CreateGlobalSecondaryIndexAction).
+    pub fn builder() -> crate::model::create_global_secondary_index_action::Builder {
+        crate::model::create_global_secondary_index_action::Builder::default()
+    }
+}
+
 /// See [`CreateGlobalSecondaryIndexAction`](crate::model::CreateGlobalSecondaryIndexAction).
 pub mod create_global_secondary_index_action {
 
@@ -6386,12 +6430,6 @@ pub mod create_global_secondary_index_action {
         }
     }
 }
-impl CreateGlobalSecondaryIndexAction {
-    /// Creates a new builder-style object to manufacture [`CreateGlobalSecondaryIndexAction`](crate::model::CreateGlobalSecondaryIndexAction).
-    pub fn builder() -> crate::model::create_global_secondary_index_action::Builder {
-        crate::model::create_global_secondary_index_action::Builder::default()
-    }
-}
 
 /// <p>Represents the provisioned throughput settings for a specified table or index. The settings can be modified using the <code>UpdateTable</code> operation.</p>
 /// <p>For current minimum and maximum provisioned throughput values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service, Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
@@ -6419,6 +6457,13 @@ impl ProvisionedThroughput {
         self.write_capacity_units
     }
 }
+impl ProvisionedThroughput {
+    /// Creates a new builder-style object to manufacture [`ProvisionedThroughput`](crate::model::ProvisionedThroughput).
+    pub fn builder() -> crate::model::provisioned_throughput::Builder {
+        crate::model::provisioned_throughput::Builder::default()
+    }
+}
+
 /// See [`ProvisionedThroughput`](crate::model::ProvisionedThroughput).
 pub mod provisioned_throughput {
 
@@ -6463,12 +6508,6 @@ pub mod provisioned_throughput {
         }
     }
 }
-impl ProvisionedThroughput {
-    /// Creates a new builder-style object to manufacture [`ProvisionedThroughput`](crate::model::ProvisionedThroughput).
-    pub fn builder() -> crate::model::provisioned_throughput::Builder {
-        crate::model::provisioned_throughput::Builder::default()
-    }
-}
 
 /// <p>Represents the new provisioned throughput settings to be applied to a global secondary index.</p>
 #[non_exhaustive]
@@ -6495,6 +6534,13 @@ impl UpdateGlobalSecondaryIndexAction {
         self.provisioned_throughput.as_ref()
     }
 }
+impl UpdateGlobalSecondaryIndexAction {
+    /// Creates a new builder-style object to manufacture [`UpdateGlobalSecondaryIndexAction`](crate::model::UpdateGlobalSecondaryIndexAction).
+    pub fn builder() -> crate::model::update_global_secondary_index_action::Builder {
+        crate::model::update_global_secondary_index_action::Builder::default()
+    }
+}
+
 /// See [`UpdateGlobalSecondaryIndexAction`](crate::model::UpdateGlobalSecondaryIndexAction).
 pub mod update_global_secondary_index_action {
 
@@ -6543,12 +6589,6 @@ pub mod update_global_secondary_index_action {
         }
     }
 }
-impl UpdateGlobalSecondaryIndexAction {
-    /// Creates a new builder-style object to manufacture [`UpdateGlobalSecondaryIndexAction`](crate::model::UpdateGlobalSecondaryIndexAction).
-    pub fn builder() -> crate::model::update_global_secondary_index_action::Builder {
-        crate::model::update_global_secondary_index_action::Builder::default()
-    }
-}
 
 /// <p>Information about item collections, if any, that were affected by the operation. <code>ItemCollectionMetrics</code> is only returned if the request asked for it. If the table does not have any local secondary indexes, this information is not returned in the response.</p>
 #[non_exhaustive]
@@ -6579,6 +6619,13 @@ impl ItemCollectionMetrics {
         self.size_estimate_range_gb.as_deref()
     }
 }
+impl ItemCollectionMetrics {
+    /// Creates a new builder-style object to manufacture [`ItemCollectionMetrics`](crate::model::ItemCollectionMetrics).
+    pub fn builder() -> crate::model::item_collection_metrics::Builder {
+        crate::model::item_collection_metrics::Builder::default()
+    }
+}
+
 /// See [`ItemCollectionMetrics`](crate::model::ItemCollectionMetrics).
 pub mod item_collection_metrics {
 
@@ -6645,12 +6692,6 @@ pub mod item_collection_metrics {
                 size_estimate_range_gb: self.size_estimate_range_gb,
             }
         }
-    }
-}
-impl ItemCollectionMetrics {
-    /// Creates a new builder-style object to manufacture [`ItemCollectionMetrics`](crate::model::ItemCollectionMetrics).
-    pub fn builder() -> crate::model::item_collection_metrics::Builder {
-        crate::model::item_collection_metrics::Builder::default()
     }
 }
 
@@ -6908,6 +6949,13 @@ impl ConsumedCapacity {
         self.global_secondary_indexes.as_ref()
     }
 }
+impl ConsumedCapacity {
+    /// Creates a new builder-style object to manufacture [`ConsumedCapacity`](crate::model::ConsumedCapacity).
+    pub fn builder() -> crate::model::consumed_capacity::Builder {
+        crate::model::consumed_capacity::Builder::default()
+    }
+}
+
 /// See [`ConsumedCapacity`](crate::model::ConsumedCapacity).
 pub mod consumed_capacity {
 
@@ -7042,12 +7090,6 @@ pub mod consumed_capacity {
         }
     }
 }
-impl ConsumedCapacity {
-    /// Creates a new builder-style object to manufacture [`ConsumedCapacity`](crate::model::ConsumedCapacity).
-    pub fn builder() -> crate::model::consumed_capacity::Builder {
-        crate::model::consumed_capacity::Builder::default()
-    }
-}
 
 /// <p>Represents the amount of provisioned throughput capacity consumed on a table or an index.</p>
 #[non_exhaustive]
@@ -7077,6 +7119,13 @@ impl Capacity {
         self.capacity_units
     }
 }
+impl Capacity {
+    /// Creates a new builder-style object to manufacture [`Capacity`](crate::model::Capacity).
+    pub fn builder() -> crate::model::capacity::Builder {
+        crate::model::capacity::Builder::default()
+    }
+}
+
 /// See [`Capacity`](crate::model::Capacity).
 pub mod capacity {
 
@@ -7127,12 +7176,6 @@ pub mod capacity {
                 capacity_units: self.capacity_units,
             }
         }
-    }
-}
-impl Capacity {
-    /// Creates a new builder-style object to manufacture [`Capacity`](crate::model::Capacity).
-    pub fn builder() -> crate::model::capacity::Builder {
-        crate::model::capacity::Builder::default()
     }
 }
 
@@ -7662,6 +7705,13 @@ impl ExpectedAttributeValue {
         self.attribute_value_list.as_deref()
     }
 }
+impl ExpectedAttributeValue {
+    /// Creates a new builder-style object to manufacture [`ExpectedAttributeValue`](crate::model::ExpectedAttributeValue).
+    pub fn builder() -> crate::model::expected_attribute_value::Builder {
+        crate::model::expected_attribute_value::Builder::default()
+    }
+}
+
 /// See [`ExpectedAttributeValue`](crate::model::ExpectedAttributeValue).
 pub mod expected_attribute_value {
 
@@ -7816,12 +7866,6 @@ pub mod expected_attribute_value {
                 attribute_value_list: self.attribute_value_list,
             }
         }
-    }
-}
-impl ExpectedAttributeValue {
-    /// Creates a new builder-style object to manufacture [`ExpectedAttributeValue`](crate::model::ExpectedAttributeValue).
-    pub fn builder() -> crate::model::expected_attribute_value::Builder {
-        crate::model::expected_attribute_value::Builder::default()
     }
 }
 
@@ -8052,6 +8096,13 @@ impl AttributeValueUpdate {
         self.action.as_ref()
     }
 }
+impl AttributeValueUpdate {
+    /// Creates a new builder-style object to manufacture [`AttributeValueUpdate`](crate::model::AttributeValueUpdate).
+    pub fn builder() -> crate::model::attribute_value_update::Builder {
+        crate::model::attribute_value_update::Builder::default()
+    }
+}
+
 /// See [`AttributeValueUpdate`](crate::model::AttributeValueUpdate).
 pub mod attribute_value_update {
 
@@ -8138,12 +8189,6 @@ pub mod attribute_value_update {
                 action: self.action,
             }
         }
-    }
-}
-impl AttributeValueUpdate {
-    /// Creates a new builder-style object to manufacture [`AttributeValueUpdate`](crate::model::AttributeValueUpdate).
-    pub fn builder() -> crate::model::attribute_value_update::Builder {
-        crate::model::attribute_value_update::Builder::default()
     }
 }
 
@@ -8340,6 +8385,13 @@ impl ReplicaSettingsDescription {
         self.replica_table_class_summary.as_ref()
     }
 }
+impl ReplicaSettingsDescription {
+    /// Creates a new builder-style object to manufacture [`ReplicaSettingsDescription`](crate::model::ReplicaSettingsDescription).
+    pub fn builder() -> crate::model::replica_settings_description::Builder {
+        crate::model::replica_settings_description::Builder::default()
+    }
+}
+
 /// See [`ReplicaSettingsDescription`](crate::model::ReplicaSettingsDescription).
 pub mod replica_settings_description {
 
@@ -8536,12 +8588,6 @@ pub mod replica_settings_description {
         }
     }
 }
-impl ReplicaSettingsDescription {
-    /// Creates a new builder-style object to manufacture [`ReplicaSettingsDescription`](crate::model::ReplicaSettingsDescription).
-    pub fn builder() -> crate::model::replica_settings_description::Builder {
-        crate::model::replica_settings_description::Builder::default()
-    }
-}
 
 /// <p>Represents the properties of a global secondary index.</p>
 #[non_exhaustive]
@@ -8612,6 +8658,13 @@ impl ReplicaGlobalSecondaryIndexSettingsDescription {
             .as_ref()
     }
 }
+impl ReplicaGlobalSecondaryIndexSettingsDescription {
+    /// Creates a new builder-style object to manufacture [`ReplicaGlobalSecondaryIndexSettingsDescription`](crate::model::ReplicaGlobalSecondaryIndexSettingsDescription).
+    pub fn builder() -> crate::model::replica_global_secondary_index_settings_description::Builder {
+        crate::model::replica_global_secondary_index_settings_description::Builder::default()
+    }
+}
+
 /// See [`ReplicaGlobalSecondaryIndexSettingsDescription`](crate::model::ReplicaGlobalSecondaryIndexSettingsDescription).
 pub mod replica_global_secondary_index_settings_description {
 
@@ -8737,12 +8790,6 @@ pub mod replica_global_secondary_index_settings_description {
         }
     }
 }
-impl ReplicaGlobalSecondaryIndexSettingsDescription {
-    /// Creates a new builder-style object to manufacture [`ReplicaGlobalSecondaryIndexSettingsDescription`](crate::model::ReplicaGlobalSecondaryIndexSettingsDescription).
-    pub fn builder() -> crate::model::replica_global_secondary_index_settings_description::Builder {
-        crate::model::replica_global_secondary_index_settings_description::Builder::default()
-    }
-}
 
 /// <p>Represents the settings for a global table in a Region that will be modified.</p>
 #[non_exhaustive]
@@ -8794,6 +8841,13 @@ impl ReplicaSettingsUpdate {
         self.replica_table_class.as_ref()
     }
 }
+impl ReplicaSettingsUpdate {
+    /// Creates a new builder-style object to manufacture [`ReplicaSettingsUpdate`](crate::model::ReplicaSettingsUpdate).
+    pub fn builder() -> crate::model::replica_settings_update::Builder {
+        crate::model::replica_settings_update::Builder::default()
+    }
+}
+
 /// See [`ReplicaSettingsUpdate`](crate::model::ReplicaSettingsUpdate).
 pub mod replica_settings_update {
 
@@ -8904,12 +8958,6 @@ pub mod replica_settings_update {
         }
     }
 }
-impl ReplicaSettingsUpdate {
-    /// Creates a new builder-style object to manufacture [`ReplicaSettingsUpdate`](crate::model::ReplicaSettingsUpdate).
-    pub fn builder() -> crate::model::replica_settings_update::Builder {
-        crate::model::replica_settings_update::Builder::default()
-    }
-}
 
 /// <p>Represents the settings of a global secondary index for a global table that will be modified.</p>
 #[non_exhaustive]
@@ -8943,6 +8991,13 @@ impl ReplicaGlobalSecondaryIndexSettingsUpdate {
             .as_ref()
     }
 }
+impl ReplicaGlobalSecondaryIndexSettingsUpdate {
+    /// Creates a new builder-style object to manufacture [`ReplicaGlobalSecondaryIndexSettingsUpdate`](crate::model::ReplicaGlobalSecondaryIndexSettingsUpdate).
+    pub fn builder() -> crate::model::replica_global_secondary_index_settings_update::Builder {
+        crate::model::replica_global_secondary_index_settings_update::Builder::default()
+    }
+}
+
 /// See [`ReplicaGlobalSecondaryIndexSettingsUpdate`](crate::model::ReplicaGlobalSecondaryIndexSettingsUpdate).
 pub mod replica_global_secondary_index_settings_update {
 
@@ -9006,12 +9061,6 @@ pub mod replica_global_secondary_index_settings_update {
         }
     }
 }
-impl ReplicaGlobalSecondaryIndexSettingsUpdate {
-    /// Creates a new builder-style object to manufacture [`ReplicaGlobalSecondaryIndexSettingsUpdate`](crate::model::ReplicaGlobalSecondaryIndexSettingsUpdate).
-    pub fn builder() -> crate::model::replica_global_secondary_index_settings_update::Builder {
-        crate::model::replica_global_secondary_index_settings_update::Builder::default()
-    }
-}
 
 /// <p>Represents the settings of a global secondary index for a global table that will be modified.</p>
 #[non_exhaustive]
@@ -9045,6 +9094,13 @@ impl GlobalTableGlobalSecondaryIndexSettingsUpdate {
             .as_ref()
     }
 }
+impl GlobalTableGlobalSecondaryIndexSettingsUpdate {
+    /// Creates a new builder-style object to manufacture [`GlobalTableGlobalSecondaryIndexSettingsUpdate`](crate::model::GlobalTableGlobalSecondaryIndexSettingsUpdate).
+    pub fn builder() -> crate::model::global_table_global_secondary_index_settings_update::Builder {
+        crate::model::global_table_global_secondary_index_settings_update::Builder::default()
+    }
+}
+
 /// See [`GlobalTableGlobalSecondaryIndexSettingsUpdate`](crate::model::GlobalTableGlobalSecondaryIndexSettingsUpdate).
 pub mod global_table_global_secondary_index_settings_update {
 
@@ -9108,12 +9164,6 @@ pub mod global_table_global_secondary_index_settings_update {
         }
     }
 }
-impl GlobalTableGlobalSecondaryIndexSettingsUpdate {
-    /// Creates a new builder-style object to manufacture [`GlobalTableGlobalSecondaryIndexSettingsUpdate`](crate::model::GlobalTableGlobalSecondaryIndexSettingsUpdate).
-    pub fn builder() -> crate::model::global_table_global_secondary_index_settings_update::Builder {
-        crate::model::global_table_global_secondary_index_settings_update::Builder::default()
-    }
-}
 
 /// <p>Contains details about the global table.</p>
 #[non_exhaustive]
@@ -9169,6 +9219,13 @@ impl GlobalTableDescription {
         self.global_table_name.as_deref()
     }
 }
+impl GlobalTableDescription {
+    /// Creates a new builder-style object to manufacture [`GlobalTableDescription`](crate::model::GlobalTableDescription).
+    pub fn builder() -> crate::model::global_table_description::Builder {
+        crate::model::global_table_description::Builder::default()
+    }
+}
+
 /// See [`GlobalTableDescription`](crate::model::GlobalTableDescription).
 pub mod global_table_description {
 
@@ -9277,12 +9334,6 @@ pub mod global_table_description {
                 global_table_name: self.global_table_name,
             }
         }
-    }
-}
-impl GlobalTableDescription {
-    /// Creates a new builder-style object to manufacture [`GlobalTableDescription`](crate::model::GlobalTableDescription).
-    pub fn builder() -> crate::model::global_table_description::Builder {
-        crate::model::global_table_description::Builder::default()
     }
 }
 
@@ -9414,6 +9465,13 @@ impl ReplicaUpdate {
         self.delete.as_ref()
     }
 }
+impl ReplicaUpdate {
+    /// Creates a new builder-style object to manufacture [`ReplicaUpdate`](crate::model::ReplicaUpdate).
+    pub fn builder() -> crate::model::replica_update::Builder {
+        crate::model::replica_update::Builder::default()
+    }
+}
+
 /// See [`ReplicaUpdate`](crate::model::ReplicaUpdate).
 pub mod replica_update {
 
@@ -9460,12 +9518,6 @@ pub mod replica_update {
         }
     }
 }
-impl ReplicaUpdate {
-    /// Creates a new builder-style object to manufacture [`ReplicaUpdate`](crate::model::ReplicaUpdate).
-    pub fn builder() -> crate::model::replica_update::Builder {
-        crate::model::replica_update::Builder::default()
-    }
-}
 
 /// <p>Represents a replica to be removed.</p>
 #[non_exhaustive]
@@ -9481,6 +9533,13 @@ impl DeleteReplicaAction {
         self.region_name.as_deref()
     }
 }
+impl DeleteReplicaAction {
+    /// Creates a new builder-style object to manufacture [`DeleteReplicaAction`](crate::model::DeleteReplicaAction).
+    pub fn builder() -> crate::model::delete_replica_action::Builder {
+        crate::model::delete_replica_action::Builder::default()
+    }
+}
+
 /// See [`DeleteReplicaAction`](crate::model::DeleteReplicaAction).
 pub mod delete_replica_action {
 
@@ -9509,12 +9568,6 @@ pub mod delete_replica_action {
         }
     }
 }
-impl DeleteReplicaAction {
-    /// Creates a new builder-style object to manufacture [`DeleteReplicaAction`](crate::model::DeleteReplicaAction).
-    pub fn builder() -> crate::model::delete_replica_action::Builder {
-        crate::model::delete_replica_action::Builder::default()
-    }
-}
 
 /// <p>Represents a replica to be added.</p>
 #[non_exhaustive]
@@ -9530,6 +9583,13 @@ impl CreateReplicaAction {
         self.region_name.as_deref()
     }
 }
+impl CreateReplicaAction {
+    /// Creates a new builder-style object to manufacture [`CreateReplicaAction`](crate::model::CreateReplicaAction).
+    pub fn builder() -> crate::model::create_replica_action::Builder {
+        crate::model::create_replica_action::Builder::default()
+    }
+}
+
 /// See [`CreateReplicaAction`](crate::model::CreateReplicaAction).
 pub mod create_replica_action {
 
@@ -9556,12 +9616,6 @@ pub mod create_replica_action {
                 region_name: self.region_name,
             }
         }
-    }
-}
-impl CreateReplicaAction {
-    /// Creates a new builder-style object to manufacture [`CreateReplicaAction`](crate::model::CreateReplicaAction).
-    pub fn builder() -> crate::model::create_replica_action::Builder {
-        crate::model::create_replica_action::Builder::default()
     }
 }
 
@@ -9790,6 +9844,13 @@ impl ContinuousBackupsDescription {
         self.point_in_time_recovery_description.as_ref()
     }
 }
+impl ContinuousBackupsDescription {
+    /// Creates a new builder-style object to manufacture [`ContinuousBackupsDescription`](crate::model::ContinuousBackupsDescription).
+    pub fn builder() -> crate::model::continuous_backups_description::Builder {
+        crate::model::continuous_backups_description::Builder::default()
+    }
+}
+
 /// See [`ContinuousBackupsDescription`](crate::model::ContinuousBackupsDescription).
 pub mod continuous_backups_description {
 
@@ -9844,12 +9905,6 @@ pub mod continuous_backups_description {
         }
     }
 }
-impl ContinuousBackupsDescription {
-    /// Creates a new builder-style object to manufacture [`ContinuousBackupsDescription`](crate::model::ContinuousBackupsDescription).
-    pub fn builder() -> crate::model::continuous_backups_description::Builder {
-        crate::model::continuous_backups_description::Builder::default()
-    }
-}
 
 /// <p>The description of the point in time settings applied to the table.</p>
 #[non_exhaustive]
@@ -9891,6 +9946,13 @@ impl PointInTimeRecoveryDescription {
         self.latest_restorable_date_time.as_ref()
     }
 }
+impl PointInTimeRecoveryDescription {
+    /// Creates a new builder-style object to manufacture [`PointInTimeRecoveryDescription`](crate::model::PointInTimeRecoveryDescription).
+    pub fn builder() -> crate::model::point_in_time_recovery_description::Builder {
+        crate::model::point_in_time_recovery_description::Builder::default()
+    }
+}
+
 /// See [`PointInTimeRecoveryDescription`](crate::model::PointInTimeRecoveryDescription).
 pub mod point_in_time_recovery_description {
 
@@ -9962,12 +10024,6 @@ pub mod point_in_time_recovery_description {
                 latest_restorable_date_time: self.latest_restorable_date_time,
             }
         }
-    }
-}
-impl PointInTimeRecoveryDescription {
-    /// Creates a new builder-style object to manufacture [`PointInTimeRecoveryDescription`](crate::model::PointInTimeRecoveryDescription).
-    pub fn builder() -> crate::model::point_in_time_recovery_description::Builder {
-        crate::model::point_in_time_recovery_description::Builder::default()
     }
 }
 
@@ -10169,6 +10225,13 @@ impl PointInTimeRecoverySpecification {
         self.point_in_time_recovery_enabled
     }
 }
+impl PointInTimeRecoverySpecification {
+    /// Creates a new builder-style object to manufacture [`PointInTimeRecoverySpecification`](crate::model::PointInTimeRecoverySpecification).
+    pub fn builder() -> crate::model::point_in_time_recovery_specification::Builder {
+        crate::model::point_in_time_recovery_specification::Builder::default()
+    }
+}
+
 /// See [`PointInTimeRecoverySpecification`](crate::model::PointInTimeRecoverySpecification).
 pub mod point_in_time_recovery_specification {
 
@@ -10198,12 +10261,6 @@ pub mod point_in_time_recovery_specification {
                 point_in_time_recovery_enabled: self.point_in_time_recovery_enabled,
             }
         }
-    }
-}
-impl PointInTimeRecoverySpecification {
-    /// Creates a new builder-style object to manufacture [`PointInTimeRecoverySpecification`](crate::model::PointInTimeRecoverySpecification).
-    pub fn builder() -> crate::model::point_in_time_recovery_specification::Builder {
-        crate::model::point_in_time_recovery_specification::Builder::default()
     }
 }
 
@@ -10241,6 +10298,13 @@ impl CancellationReason {
         self.message.as_deref()
     }
 }
+impl CancellationReason {
+    /// Creates a new builder-style object to manufacture [`CancellationReason`](crate::model::CancellationReason).
+    pub fn builder() -> crate::model::cancellation_reason::Builder {
+        crate::model::cancellation_reason::Builder::default()
+    }
+}
+
 /// See [`CancellationReason`](crate::model::CancellationReason).
 pub mod cancellation_reason {
 
@@ -10310,12 +10374,6 @@ pub mod cancellation_reason {
         }
     }
 }
-impl CancellationReason {
-    /// Creates a new builder-style object to manufacture [`CancellationReason`](crate::model::CancellationReason).
-    pub fn builder() -> crate::model::cancellation_reason::Builder {
-        crate::model::cancellation_reason::Builder::default()
-    }
-}
 
 /// <p>A list of requests that can perform update, put, delete, or check operations on multiple items in one or more tables atomically.</p>
 #[non_exhaustive]
@@ -10352,6 +10410,13 @@ impl TransactWriteItem {
         self.update.as_ref()
     }
 }
+impl TransactWriteItem {
+    /// Creates a new builder-style object to manufacture [`TransactWriteItem`](crate::model::TransactWriteItem).
+    pub fn builder() -> crate::model::transact_write_item::Builder {
+        crate::model::transact_write_item::Builder::default()
+    }
+}
+
 /// See [`TransactWriteItem`](crate::model::TransactWriteItem).
 pub mod transact_write_item {
 
@@ -10417,12 +10482,6 @@ pub mod transact_write_item {
                 update: self.update,
             }
         }
-    }
-}
-impl TransactWriteItem {
-    /// Creates a new builder-style object to manufacture [`TransactWriteItem`](crate::model::TransactWriteItem).
-    pub fn builder() -> crate::model::transact_write_item::Builder {
-        crate::model::transact_write_item::Builder::default()
     }
 }
 
@@ -10501,6 +10560,13 @@ impl Update {
         self.return_values_on_condition_check_failure.as_ref()
     }
 }
+impl Update {
+    /// Creates a new builder-style object to manufacture [`Update`](crate::model::Update).
+    pub fn builder() -> crate::model::update::Builder {
+        crate::model::update::Builder::default()
+    }
+}
+
 /// See [`Update`](crate::model::Update).
 pub mod update {
 
@@ -10666,12 +10732,6 @@ pub mod update {
         }
     }
 }
-impl Update {
-    /// Creates a new builder-style object to manufacture [`Update`](crate::model::Update).
-    pub fn builder() -> crate::model::update::Builder {
-        crate::model::update::Builder::default()
-    }
-}
 
 /// When writing a match expression against `ReturnValuesOnConditionCheckFailure`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -10833,6 +10893,13 @@ impl Delete {
         self.return_values_on_condition_check_failure.as_ref()
     }
 }
+impl Delete {
+    /// Creates a new builder-style object to manufacture [`Delete`](crate::model::Delete).
+    pub fn builder() -> crate::model::delete::Builder {
+        crate::model::delete::Builder::default()
+    }
+}
+
 /// See [`Delete`](crate::model::Delete).
 pub mod delete {
 
@@ -10983,12 +11050,6 @@ pub mod delete {
         }
     }
 }
-impl Delete {
-    /// Creates a new builder-style object to manufacture [`Delete`](crate::model::Delete).
-    pub fn builder() -> crate::model::delete::Builder {
-        crate::model::delete::Builder::default()
-    }
-}
 
 /// <p>Represents a request to perform a <code>PutItem</code> operation.</p>
 #[non_exhaustive]
@@ -11058,6 +11119,13 @@ impl Put {
         self.return_values_on_condition_check_failure.as_ref()
     }
 }
+impl Put {
+    /// Creates a new builder-style object to manufacture [`Put`](crate::model::Put).
+    pub fn builder() -> crate::model::put::Builder {
+        crate::model::put::Builder::default()
+    }
+}
+
 /// See [`Put`](crate::model::Put).
 pub mod put {
 
@@ -11208,12 +11276,6 @@ pub mod put {
         }
     }
 }
-impl Put {
-    /// Creates a new builder-style object to manufacture [`Put`](crate::model::Put).
-    pub fn builder() -> crate::model::put::Builder {
-        crate::model::put::Builder::default()
-    }
-}
 
 /// <p>Represents a request to perform a check that an item exists or to check the condition of specific attributes of the item.</p>
 #[non_exhaustive]
@@ -11283,6 +11345,13 @@ impl ConditionCheck {
         self.return_values_on_condition_check_failure.as_ref()
     }
 }
+impl ConditionCheck {
+    /// Creates a new builder-style object to manufacture [`ConditionCheck`](crate::model::ConditionCheck).
+    pub fn builder() -> crate::model::condition_check::Builder {
+        crate::model::condition_check::Builder::default()
+    }
+}
+
 /// See [`ConditionCheck`](crate::model::ConditionCheck).
 pub mod condition_check {
 
@@ -11433,12 +11502,6 @@ pub mod condition_check {
         }
     }
 }
-impl ConditionCheck {
-    /// Creates a new builder-style object to manufacture [`ConditionCheck`](crate::model::ConditionCheck).
-    pub fn builder() -> crate::model::condition_check::Builder {
-        crate::model::condition_check::Builder::default()
-    }
-}
 
 /// <p>Details for the requested item.</p>
 #[non_exhaustive]
@@ -11460,6 +11523,13 @@ impl ItemResponse {
         self.item.as_ref()
     }
 }
+impl ItemResponse {
+    /// Creates a new builder-style object to manufacture [`ItemResponse`](crate::model::ItemResponse).
+    pub fn builder() -> crate::model::item_response::Builder {
+        crate::model::item_response::Builder::default()
+    }
+}
+
 /// See [`ItemResponse`](crate::model::ItemResponse).
 pub mod item_response {
 
@@ -11503,12 +11573,6 @@ pub mod item_response {
         }
     }
 }
-impl ItemResponse {
-    /// Creates a new builder-style object to manufacture [`ItemResponse`](crate::model::ItemResponse).
-    pub fn builder() -> crate::model::item_response::Builder {
-        crate::model::item_response::Builder::default()
-    }
-}
 
 /// <p>Specifies an item to be retrieved as part of the transaction.</p>
 #[non_exhaustive]
@@ -11524,6 +11588,13 @@ impl TransactGetItem {
         self.get.as_ref()
     }
 }
+impl TransactGetItem {
+    /// Creates a new builder-style object to manufacture [`TransactGetItem`](crate::model::TransactGetItem).
+    pub fn builder() -> crate::model::transact_get_item::Builder {
+        crate::model::transact_get_item::Builder::default()
+    }
+}
+
 /// See [`TransactGetItem`](crate::model::TransactGetItem).
 pub mod transact_get_item {
 
@@ -11548,12 +11619,6 @@ pub mod transact_get_item {
         pub fn build(self) -> crate::model::TransactGetItem {
             crate::model::TransactGetItem { get: self.get }
         }
-    }
-}
-impl TransactGetItem {
-    /// Creates a new builder-style object to manufacture [`TransactGetItem`](crate::model::TransactGetItem).
-    pub fn builder() -> crate::model::transact_get_item::Builder {
-        crate::model::transact_get_item::Builder::default()
     }
 }
 
@@ -11602,6 +11667,13 @@ impl Get {
         self.expression_attribute_names.as_ref()
     }
 }
+impl Get {
+    /// Creates a new builder-style object to manufacture [`Get`](crate::model::Get).
+    pub fn builder() -> crate::model::get::Builder {
+        crate::model::get::Builder::default()
+    }
+}
+
 /// See [`Get`](crate::model::Get).
 pub mod get {
 
@@ -11703,12 +11775,6 @@ pub mod get {
         }
     }
 }
-impl Get {
-    /// Creates a new builder-style object to manufacture [`Get`](crate::model::Get).
-    pub fn builder() -> crate::model::get::Builder {
-        crate::model::get::Builder::default()
-    }
-}
 
 /// <p>Describes a tag. A tag is a key-value pair. You can add up to 50 tags to a single DynamoDB table. </p>
 /// <p>Amazon Web Services-assigned tag names and values are automatically assigned the <code>aws:</code> prefix, which the user cannot assign. Amazon Web Services-assigned tag names do not count towards the tag limit of 50. User-assigned tag names have the prefix <code>user:</code> in the Cost Allocation Report. You cannot backdate the application of a tag.</p>
@@ -11733,6 +11799,13 @@ impl Tag {
         self.value.as_deref()
     }
 }
+impl Tag {
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
+    pub fn builder() -> crate::model::tag::Builder {
+        crate::model::tag::Builder::default()
+    }
+}
+
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
 
@@ -11771,12 +11844,6 @@ pub mod tag {
                 value: self.value,
             }
         }
-    }
-}
-impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
-    pub fn builder() -> crate::model::tag::Builder {
-        crate::model::tag::Builder::default()
     }
 }
 
@@ -11857,6 +11924,13 @@ impl Condition {
         self.comparison_operator.as_ref()
     }
 }
+impl Condition {
+    /// Creates a new builder-style object to manufacture [`Condition`](crate::model::Condition).
+    pub fn builder() -> crate::model::condition::Builder {
+        crate::model::condition::Builder::default()
+    }
+}
+
 /// See [`Condition`](crate::model::Condition).
 pub mod condition {
 
@@ -11960,12 +12034,6 @@ pub mod condition {
                 comparison_operator: self.comparison_operator,
             }
         }
-    }
-}
-impl Condition {
-    /// Creates a new builder-style object to manufacture [`Condition`](crate::model::Condition).
-    pub fn builder() -> crate::model::condition::Builder {
-        crate::model::condition::Builder::default()
     }
 }
 
@@ -12116,6 +12184,13 @@ impl LocalSecondaryIndex {
         self.projection.as_ref()
     }
 }
+impl LocalSecondaryIndex {
+    /// Creates a new builder-style object to manufacture [`LocalSecondaryIndex`](crate::model::LocalSecondaryIndex).
+    pub fn builder() -> crate::model::local_secondary_index::Builder {
+        crate::model::local_secondary_index::Builder::default()
+    }
+}
+
 /// See [`LocalSecondaryIndex`](crate::model::LocalSecondaryIndex).
 pub mod local_secondary_index {
 
@@ -12194,12 +12269,6 @@ pub mod local_secondary_index {
         }
     }
 }
-impl LocalSecondaryIndex {
-    /// Creates a new builder-style object to manufacture [`LocalSecondaryIndex`](crate::model::LocalSecondaryIndex).
-    pub fn builder() -> crate::model::local_secondary_index::Builder {
-        crate::model::local_secondary_index::Builder::default()
-    }
-}
 
 /// <p>Represents the properties of a global secondary index.</p>
 #[non_exhaustive]
@@ -12254,6 +12323,13 @@ impl GlobalSecondaryIndex {
         self.provisioned_throughput.as_ref()
     }
 }
+impl GlobalSecondaryIndex {
+    /// Creates a new builder-style object to manufacture [`GlobalSecondaryIndex`](crate::model::GlobalSecondaryIndex).
+    pub fn builder() -> crate::model::global_secondary_index::Builder {
+        crate::model::global_secondary_index::Builder::default()
+    }
+}
+
 /// See [`GlobalSecondaryIndex`](crate::model::GlobalSecondaryIndex).
 pub mod global_secondary_index {
 
@@ -12352,12 +12428,6 @@ pub mod global_secondary_index {
         }
     }
 }
-impl GlobalSecondaryIndex {
-    /// Creates a new builder-style object to manufacture [`GlobalSecondaryIndex`](crate::model::GlobalSecondaryIndex).
-    pub fn builder() -> crate::model::global_secondary_index::Builder {
-        crate::model::global_secondary_index::Builder::default()
-    }
-}
 
 /// <p> Summary information about the source file for the import. </p>
 #[non_exhaustive]
@@ -12422,6 +12492,13 @@ impl ImportSummary {
         self.end_time.as_ref()
     }
 }
+impl ImportSummary {
+    /// Creates a new builder-style object to manufacture [`ImportSummary`](crate::model::ImportSummary).
+    pub fn builder() -> crate::model::import_summary::Builder {
+        crate::model::import_summary::Builder::default()
+    }
+}
+
 /// See [`ImportSummary`](crate::model::ImportSummary).
 pub mod import_summary {
 
@@ -12552,12 +12629,6 @@ pub mod import_summary {
         }
     }
 }
-impl ImportSummary {
-    /// Creates a new builder-style object to manufacture [`ImportSummary`](crate::model::ImportSummary).
-    pub fn builder() -> crate::model::import_summary::Builder {
-        crate::model::import_summary::Builder::default()
-    }
-}
 
 /// When writing a match expression against `InputFormat`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -12682,6 +12753,13 @@ impl S3BucketSource {
         self.s3_key_prefix.as_deref()
     }
 }
+impl S3BucketSource {
+    /// Creates a new builder-style object to manufacture [`S3BucketSource`](crate::model::S3BucketSource).
+    pub fn builder() -> crate::model::s3_bucket_source::Builder {
+        crate::model::s3_bucket_source::Builder::default()
+    }
+}
+
 /// See [`S3BucketSource`](crate::model::S3BucketSource).
 pub mod s3_bucket_source {
 
@@ -12738,12 +12816,6 @@ pub mod s3_bucket_source {
                 s3_key_prefix: self.s3_key_prefix,
             }
         }
-    }
-}
-impl S3BucketSource {
-    /// Creates a new builder-style object to manufacture [`S3BucketSource`](crate::model::S3BucketSource).
-    pub fn builder() -> crate::model::s3_bucket_source::Builder {
-        crate::model::s3_bucket_source::Builder::default()
     }
 }
 
@@ -12879,6 +12951,13 @@ impl GlobalTable {
         self.replication_group.as_deref()
     }
 }
+impl GlobalTable {
+    /// Creates a new builder-style object to manufacture [`GlobalTable`](crate::model::GlobalTable).
+    pub fn builder() -> crate::model::global_table::Builder {
+        crate::model::global_table::Builder::default()
+    }
+}
+
 /// See [`GlobalTable`](crate::model::GlobalTable).
 pub mod global_table {
 
@@ -12931,12 +13010,6 @@ pub mod global_table {
         }
     }
 }
-impl GlobalTable {
-    /// Creates a new builder-style object to manufacture [`GlobalTable`](crate::model::GlobalTable).
-    pub fn builder() -> crate::model::global_table::Builder {
-        crate::model::global_table::Builder::default()
-    }
-}
 
 /// <p>Represents the properties of a replica.</p>
 #[non_exhaustive]
@@ -12952,6 +13025,13 @@ impl Replica {
         self.region_name.as_deref()
     }
 }
+impl Replica {
+    /// Creates a new builder-style object to manufacture [`Replica`](crate::model::Replica).
+    pub fn builder() -> crate::model::replica::Builder {
+        crate::model::replica::Builder::default()
+    }
+}
+
 /// See [`Replica`](crate::model::Replica).
 pub mod replica {
 
@@ -12980,12 +13060,6 @@ pub mod replica {
         }
     }
 }
-impl Replica {
-    /// Creates a new builder-style object to manufacture [`Replica`](crate::model::Replica).
-    pub fn builder() -> crate::model::replica::Builder {
-        crate::model::replica::Builder::default()
-    }
-}
 
 /// <p>Summary information about an export task.</p>
 #[non_exhaustive]
@@ -13008,6 +13082,13 @@ impl ExportSummary {
         self.export_status.as_ref()
     }
 }
+impl ExportSummary {
+    /// Creates a new builder-style object to manufacture [`ExportSummary`](crate::model::ExportSummary).
+    pub fn builder() -> crate::model::export_summary::Builder {
+        crate::model::export_summary::Builder::default()
+    }
+}
+
 /// See [`ExportSummary`](crate::model::ExportSummary).
 pub mod export_summary {
 
@@ -13049,12 +13130,6 @@ pub mod export_summary {
                 export_status: self.export_status,
             }
         }
-    }
-}
-impl ExportSummary {
-    /// Creates a new builder-style object to manufacture [`ExportSummary`](crate::model::ExportSummary).
-    pub fn builder() -> crate::model::export_summary::Builder {
-        crate::model::export_summary::Builder::default()
     }
 }
 
@@ -13183,6 +13258,13 @@ impl ContributorInsightsSummary {
         self.contributor_insights_status.as_ref()
     }
 }
+impl ContributorInsightsSummary {
+    /// Creates a new builder-style object to manufacture [`ContributorInsightsSummary`](crate::model::ContributorInsightsSummary).
+    pub fn builder() -> crate::model::contributor_insights_summary::Builder {
+        crate::model::contributor_insights_summary::Builder::default()
+    }
+}
+
 /// See [`ContributorInsightsSummary`](crate::model::ContributorInsightsSummary).
 pub mod contributor_insights_summary {
 
@@ -13240,12 +13322,6 @@ pub mod contributor_insights_summary {
                 contributor_insights_status: self.contributor_insights_status,
             }
         }
-    }
-}
-impl ContributorInsightsSummary {
-    /// Creates a new builder-style object to manufacture [`ContributorInsightsSummary`](crate::model::ContributorInsightsSummary).
-    pub fn builder() -> crate::model::contributor_insights_summary::Builder {
-        crate::model::contributor_insights_summary::Builder::default()
     }
 }
 
@@ -13336,6 +13412,13 @@ impl BackupSummary {
         self.backup_size_bytes
     }
 }
+impl BackupSummary {
+    /// Creates a new builder-style object to manufacture [`BackupSummary`](crate::model::BackupSummary).
+    pub fn builder() -> crate::model::backup_summary::Builder {
+        crate::model::backup_summary::Builder::default()
+    }
+}
+
 /// See [`BackupSummary`](crate::model::BackupSummary).
 pub mod backup_summary {
 
@@ -13492,12 +13575,6 @@ pub mod backup_summary {
                 backup_size_bytes: self.backup_size_bytes,
             }
         }
-    }
-}
-impl BackupSummary {
-    /// Creates a new builder-style object to manufacture [`BackupSummary`](crate::model::BackupSummary).
-    pub fn builder() -> crate::model::backup_summary::Builder {
-        crate::model::backup_summary::Builder::default()
     }
 }
 
@@ -13935,6 +14012,13 @@ impl ImportTableDescription {
         self.failure_message.as_deref()
     }
 }
+impl ImportTableDescription {
+    /// Creates a new builder-style object to manufacture [`ImportTableDescription`](crate::model::ImportTableDescription).
+    pub fn builder() -> crate::model::import_table_description::Builder {
+        crate::model::import_table_description::Builder::default()
+    }
+}
+
 /// See [`ImportTableDescription`](crate::model::ImportTableDescription).
 pub mod import_table_description {
 
@@ -14213,12 +14297,6 @@ pub mod import_table_description {
         }
     }
 }
-impl ImportTableDescription {
-    /// Creates a new builder-style object to manufacture [`ImportTableDescription`](crate::model::ImportTableDescription).
-    pub fn builder() -> crate::model::import_table_description::Builder {
-        crate::model::import_table_description::Builder::default()
-    }
-}
 
 /// <p> The parameters for the table created as part of the import operation. </p>
 #[non_exhaustive]
@@ -14286,6 +14364,13 @@ impl TableCreationParameters {
         self.global_secondary_indexes.as_deref()
     }
 }
+impl TableCreationParameters {
+    /// Creates a new builder-style object to manufacture [`TableCreationParameters`](crate::model::TableCreationParameters).
+    pub fn builder() -> crate::model::table_creation_parameters::Builder {
+        crate::model::table_creation_parameters::Builder::default()
+    }
+}
+
 /// See [`TableCreationParameters`](crate::model::TableCreationParameters).
 pub mod table_creation_parameters {
 
@@ -14432,12 +14517,6 @@ pub mod table_creation_parameters {
         }
     }
 }
-impl TableCreationParameters {
-    /// Creates a new builder-style object to manufacture [`TableCreationParameters`](crate::model::TableCreationParameters).
-    pub fn builder() -> crate::model::table_creation_parameters::Builder {
-        crate::model::table_creation_parameters::Builder::default()
-    }
-}
 
 /// When writing a match expression against `InputCompressionType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -14550,6 +14629,13 @@ impl InputFormatOptions {
         self.csv.as_ref()
     }
 }
+impl InputFormatOptions {
+    /// Creates a new builder-style object to manufacture [`InputFormatOptions`](crate::model::InputFormatOptions).
+    pub fn builder() -> crate::model::input_format_options::Builder {
+        crate::model::input_format_options::Builder::default()
+    }
+}
+
 /// See [`InputFormatOptions`](crate::model::InputFormatOptions).
 pub mod input_format_options {
 
@@ -14576,12 +14662,6 @@ pub mod input_format_options {
         }
     }
 }
-impl InputFormatOptions {
-    /// Creates a new builder-style object to manufacture [`InputFormatOptions`](crate::model::InputFormatOptions).
-    pub fn builder() -> crate::model::input_format_options::Builder {
-        crate::model::input_format_options::Builder::default()
-    }
-}
 
 /// <p> Processing options for the CSV file being imported. </p>
 #[non_exhaustive]
@@ -14604,6 +14684,13 @@ impl CsvOptions {
         self.header_list.as_deref()
     }
 }
+impl CsvOptions {
+    /// Creates a new builder-style object to manufacture [`CsvOptions`](crate::model::CsvOptions).
+    pub fn builder() -> crate::model::csv_options::Builder {
+        crate::model::csv_options::Builder::default()
+    }
+}
+
 /// See [`CsvOptions`](crate::model::CsvOptions).
 pub mod csv_options {
 
@@ -14651,12 +14738,6 @@ pub mod csv_options {
                 header_list: self.header_list,
             }
         }
-    }
-}
-impl CsvOptions {
-    /// Creates a new builder-style object to manufacture [`CsvOptions`](crate::model::CsvOptions).
-    pub fn builder() -> crate::model::csv_options::Builder {
-        crate::model::csv_options::Builder::default()
     }
 }
 
@@ -14808,6 +14889,13 @@ impl ExportDescription {
         self.item_count
     }
 }
+impl ExportDescription {
+    /// Creates a new builder-style object to manufacture [`ExportDescription`](crate::model::ExportDescription).
+    pub fn builder() -> crate::model::export_description::Builder {
+        crate::model::export_description::Builder::default()
+    }
+}
+
 /// See [`ExportDescription`](crate::model::ExportDescription).
 pub mod export_description {
 
@@ -15090,12 +15178,6 @@ pub mod export_description {
         }
     }
 }
-impl ExportDescription {
-    /// Creates a new builder-style object to manufacture [`ExportDescription`](crate::model::ExportDescription).
-    pub fn builder() -> crate::model::export_description::Builder {
-        crate::model::export_description::Builder::default()
-    }
-}
 
 /// When writing a match expression against `ExportFormat`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -15298,6 +15380,13 @@ impl ParameterizedStatement {
         self.parameters.as_deref()
     }
 }
+impl ParameterizedStatement {
+    /// Creates a new builder-style object to manufacture [`ParameterizedStatement`](crate::model::ParameterizedStatement).
+    pub fn builder() -> crate::model::parameterized_statement::Builder {
+        crate::model::parameterized_statement::Builder::default()
+    }
+}
+
 /// See [`ParameterizedStatement`](crate::model::ParameterizedStatement).
 pub mod parameterized_statement {
 
@@ -15345,12 +15434,6 @@ pub mod parameterized_statement {
                 parameters: self.parameters,
             }
         }
-    }
-}
-impl ParameterizedStatement {
-    /// Creates a new builder-style object to manufacture [`ParameterizedStatement`](crate::model::ParameterizedStatement).
-    pub fn builder() -> crate::model::parameterized_statement::Builder {
-        crate::model::parameterized_statement::Builder::default()
     }
 }
 
@@ -15488,6 +15571,13 @@ impl TimeToLiveDescription {
         self.attribute_name.as_deref()
     }
 }
+impl TimeToLiveDescription {
+    /// Creates a new builder-style object to manufacture [`TimeToLiveDescription`](crate::model::TimeToLiveDescription).
+    pub fn builder() -> crate::model::time_to_live_description::Builder {
+        crate::model::time_to_live_description::Builder::default()
+    }
+}
+
 /// See [`TimeToLiveDescription`](crate::model::TimeToLiveDescription).
 pub mod time_to_live_description {
 
@@ -15532,12 +15622,6 @@ pub mod time_to_live_description {
                 attribute_name: self.attribute_name,
             }
         }
-    }
-}
-impl TimeToLiveDescription {
-    /// Creates a new builder-style object to manufacture [`TimeToLiveDescription`](crate::model::TimeToLiveDescription).
-    pub fn builder() -> crate::model::time_to_live_description::Builder {
-        crate::model::time_to_live_description::Builder::default()
     }
 }
 
@@ -15669,6 +15753,13 @@ impl KinesisDataStreamDestination {
         self.destination_status_description.as_deref()
     }
 }
+impl KinesisDataStreamDestination {
+    /// Creates a new builder-style object to manufacture [`KinesisDataStreamDestination`](crate::model::KinesisDataStreamDestination).
+    pub fn builder() -> crate::model::kinesis_data_stream_destination::Builder {
+        crate::model::kinesis_data_stream_destination::Builder::default()
+    }
+}
+
 /// See [`KinesisDataStreamDestination`](crate::model::KinesisDataStreamDestination).
 pub mod kinesis_data_stream_destination {
 
@@ -15730,12 +15821,6 @@ pub mod kinesis_data_stream_destination {
         }
     }
 }
-impl KinesisDataStreamDestination {
-    /// Creates a new builder-style object to manufacture [`KinesisDataStreamDestination`](crate::model::KinesisDataStreamDestination).
-    pub fn builder() -> crate::model::kinesis_data_stream_destination::Builder {
-        crate::model::kinesis_data_stream_destination::Builder::default()
-    }
-}
 
 /// <p>An endpoint information details.</p>
 #[non_exhaustive]
@@ -15758,6 +15843,13 @@ impl Endpoint {
         self.cache_period_in_minutes
     }
 }
+impl Endpoint {
+    /// Creates a new builder-style object to manufacture [`Endpoint`](crate::model::Endpoint).
+    pub fn builder() -> crate::model::endpoint::Builder {
+        crate::model::endpoint::Builder::default()
+    }
+}
+
 /// See [`Endpoint`](crate::model::Endpoint).
 pub mod endpoint {
 
@@ -15798,12 +15890,6 @@ pub mod endpoint {
         }
     }
 }
-impl Endpoint {
-    /// Creates a new builder-style object to manufacture [`Endpoint`](crate::model::Endpoint).
-    pub fn builder() -> crate::model::endpoint::Builder {
-        crate::model::endpoint::Builder::default()
-    }
-}
 
 /// <p>Represents a failure a contributor insights operation.</p>
 #[non_exhaustive]
@@ -15826,6 +15912,13 @@ impl FailureException {
         self.exception_description.as_deref()
     }
 }
+impl FailureException {
+    /// Creates a new builder-style object to manufacture [`FailureException`](crate::model::FailureException).
+    pub fn builder() -> crate::model::failure_exception::Builder {
+        crate::model::failure_exception::Builder::default()
+    }
+}
+
 /// See [`FailureException`](crate::model::FailureException).
 pub mod failure_exception {
 
@@ -15872,12 +15965,6 @@ pub mod failure_exception {
         }
     }
 }
-impl FailureException {
-    /// Creates a new builder-style object to manufacture [`FailureException`](crate::model::FailureException).
-    pub fn builder() -> crate::model::failure_exception::Builder {
-        crate::model::failure_exception::Builder::default()
-    }
-}
 
 /// <p>Contains the description of the backup created for the table.</p>
 #[non_exhaustive]
@@ -15909,6 +15996,13 @@ impl BackupDescription {
         self.source_table_feature_details.as_ref()
     }
 }
+impl BackupDescription {
+    /// Creates a new builder-style object to manufacture [`BackupDescription`](crate::model::BackupDescription).
+    pub fn builder() -> crate::model::backup_description::Builder {
+        crate::model::backup_description::Builder::default()
+    }
+}
+
 /// See [`BackupDescription`](crate::model::BackupDescription).
 pub mod backup_description {
 
@@ -15974,12 +16068,6 @@ pub mod backup_description {
         }
     }
 }
-impl BackupDescription {
-    /// Creates a new builder-style object to manufacture [`BackupDescription`](crate::model::BackupDescription).
-    pub fn builder() -> crate::model::backup_description::Builder {
-        crate::model::backup_description::Builder::default()
-    }
-}
 
 /// <p>Contains the details of the features enabled on the table when the backup was created. For example, LSIs, GSIs, streams, TTL. </p>
 #[non_exhaustive]
@@ -16031,6 +16119,13 @@ impl SourceTableFeatureDetails {
         self.sse_description.as_ref()
     }
 }
+impl SourceTableFeatureDetails {
+    /// Creates a new builder-style object to manufacture [`SourceTableFeatureDetails`](crate::model::SourceTableFeatureDetails).
+    pub fn builder() -> crate::model::source_table_feature_details::Builder {
+        crate::model::source_table_feature_details::Builder::default()
+    }
+}
+
 /// See [`SourceTableFeatureDetails`](crate::model::SourceTableFeatureDetails).
 pub mod source_table_feature_details {
 
@@ -16146,12 +16241,6 @@ pub mod source_table_feature_details {
         }
     }
 }
-impl SourceTableFeatureDetails {
-    /// Creates a new builder-style object to manufacture [`SourceTableFeatureDetails`](crate::model::SourceTableFeatureDetails).
-    pub fn builder() -> crate::model::source_table_feature_details::Builder {
-        crate::model::source_table_feature_details::Builder::default()
-    }
-}
 
 /// <p>Represents the properties of a global secondary index for the table when the backup was created.</p>
 #[non_exhaustive]
@@ -16204,6 +16293,13 @@ impl GlobalSecondaryIndexInfo {
         self.provisioned_throughput.as_ref()
     }
 }
+impl GlobalSecondaryIndexInfo {
+    /// Creates a new builder-style object to manufacture [`GlobalSecondaryIndexInfo`](crate::model::GlobalSecondaryIndexInfo).
+    pub fn builder() -> crate::model::global_secondary_index_info::Builder {
+        crate::model::global_secondary_index_info::Builder::default()
+    }
+}
+
 /// See [`GlobalSecondaryIndexInfo`](crate::model::GlobalSecondaryIndexInfo).
 pub mod global_secondary_index_info {
 
@@ -16300,12 +16396,6 @@ pub mod global_secondary_index_info {
         }
     }
 }
-impl GlobalSecondaryIndexInfo {
-    /// Creates a new builder-style object to manufacture [`GlobalSecondaryIndexInfo`](crate::model::GlobalSecondaryIndexInfo).
-    pub fn builder() -> crate::model::global_secondary_index_info::Builder {
-        crate::model::global_secondary_index_info::Builder::default()
-    }
-}
 
 /// <p>Represents the properties of a local secondary index for the table when the backup was created.</p>
 #[non_exhaustive]
@@ -16349,6 +16439,13 @@ impl LocalSecondaryIndexInfo {
         self.projection.as_ref()
     }
 }
+impl LocalSecondaryIndexInfo {
+    /// Creates a new builder-style object to manufacture [`LocalSecondaryIndexInfo`](crate::model::LocalSecondaryIndexInfo).
+    pub fn builder() -> crate::model::local_secondary_index_info::Builder {
+        crate::model::local_secondary_index_info::Builder::default()
+    }
+}
+
 /// See [`LocalSecondaryIndexInfo`](crate::model::LocalSecondaryIndexInfo).
 pub mod local_secondary_index_info {
 
@@ -16425,12 +16522,6 @@ pub mod local_secondary_index_info {
                 projection: self.projection,
             }
         }
-    }
-}
-impl LocalSecondaryIndexInfo {
-    /// Creates a new builder-style object to manufacture [`LocalSecondaryIndexInfo`](crate::model::LocalSecondaryIndexInfo).
-    pub fn builder() -> crate::model::local_secondary_index_info::Builder {
-        crate::model::local_secondary_index_info::Builder::default()
     }
 }
 
@@ -16514,6 +16605,13 @@ impl SourceTableDetails {
         self.billing_mode.as_ref()
     }
 }
+impl SourceTableDetails {
+    /// Creates a new builder-style object to manufacture [`SourceTableDetails`](crate::model::SourceTableDetails).
+    pub fn builder() -> crate::model::source_table_details::Builder {
+        crate::model::source_table_details::Builder::default()
+    }
+}
+
 /// See [`SourceTableDetails`](crate::model::SourceTableDetails).
 pub mod source_table_details {
 
@@ -16667,12 +16765,6 @@ pub mod source_table_details {
         }
     }
 }
-impl SourceTableDetails {
-    /// Creates a new builder-style object to manufacture [`SourceTableDetails`](crate::model::SourceTableDetails).
-    pub fn builder() -> crate::model::source_table_details::Builder {
-        crate::model::source_table_details::Builder::default()
-    }
-}
 
 /// <p>Contains the details of the backup created for the table.</p>
 #[non_exhaustive]
@@ -16740,6 +16832,13 @@ impl BackupDetails {
         self.backup_expiry_date_time.as_ref()
     }
 }
+impl BackupDetails {
+    /// Creates a new builder-style object to manufacture [`BackupDetails`](crate::model::BackupDetails).
+    pub fn builder() -> crate::model::backup_details::Builder {
+        crate::model::backup_details::Builder::default()
+    }
+}
+
 /// See [`BackupDetails`](crate::model::BackupDetails).
 pub mod backup_details {
 
@@ -16862,12 +16961,6 @@ pub mod backup_details {
         }
     }
 }
-impl BackupDetails {
-    /// Creates a new builder-style object to manufacture [`BackupDetails`](crate::model::BackupDetails).
-    pub fn builder() -> crate::model::backup_details::Builder {
-        crate::model::backup_details::Builder::default()
-    }
-}
 
 /// <p>Represents an operation to perform - either <code>DeleteItem</code> or <code>PutItem</code>. You can only request one of these operations, not both, in a single <code>WriteRequest</code>. If you do need to perform both of these operations, you need to provide two separate <code>WriteRequest</code> objects.</p>
 #[non_exhaustive]
@@ -16890,6 +16983,13 @@ impl WriteRequest {
         self.delete_request.as_ref()
     }
 }
+impl WriteRequest {
+    /// Creates a new builder-style object to manufacture [`WriteRequest`](crate::model::WriteRequest).
+    pub fn builder() -> crate::model::write_request::Builder {
+        crate::model::write_request::Builder::default()
+    }
+}
+
 /// See [`WriteRequest`](crate::model::WriteRequest).
 pub mod write_request {
 
@@ -16936,12 +17036,6 @@ pub mod write_request {
         }
     }
 }
-impl WriteRequest {
-    /// Creates a new builder-style object to manufacture [`WriteRequest`](crate::model::WriteRequest).
-    pub fn builder() -> crate::model::write_request::Builder {
-        crate::model::write_request::Builder::default()
-    }
-}
 
 /// <p>Represents a request to perform a <code>DeleteItem</code> operation on an item.</p>
 #[non_exhaustive]
@@ -16963,6 +17057,13 @@ impl DeleteRequest {
         self.key.as_ref()
     }
 }
+impl DeleteRequest {
+    /// Creates a new builder-style object to manufacture [`DeleteRequest`](crate::model::DeleteRequest).
+    pub fn builder() -> crate::model::delete_request::Builder {
+        crate::model::delete_request::Builder::default()
+    }
+}
+
 /// See [`DeleteRequest`](crate::model::DeleteRequest).
 pub mod delete_request {
 
@@ -17006,12 +17107,6 @@ pub mod delete_request {
         }
     }
 }
-impl DeleteRequest {
-    /// Creates a new builder-style object to manufacture [`DeleteRequest`](crate::model::DeleteRequest).
-    pub fn builder() -> crate::model::delete_request::Builder {
-        crate::model::delete_request::Builder::default()
-    }
-}
 
 /// <p>Represents a request to perform a <code>PutItem</code> operation on an item.</p>
 #[non_exhaustive]
@@ -17033,6 +17128,13 @@ impl PutRequest {
         self.item.as_ref()
     }
 }
+impl PutRequest {
+    /// Creates a new builder-style object to manufacture [`PutRequest`](crate::model::PutRequest).
+    pub fn builder() -> crate::model::put_request::Builder {
+        crate::model::put_request::Builder::default()
+    }
+}
+
 /// See [`PutRequest`](crate::model::PutRequest).
 pub mod put_request {
 
@@ -17074,12 +17176,6 @@ pub mod put_request {
         pub fn build(self) -> crate::model::PutRequest {
             crate::model::PutRequest { item: self.item }
         }
-    }
-}
-impl PutRequest {
-    /// Creates a new builder-style object to manufacture [`PutRequest`](crate::model::PutRequest).
-    pub fn builder() -> crate::model::put_request::Builder {
-        crate::model::put_request::Builder::default()
     }
 }
 
@@ -17180,6 +17276,13 @@ impl KeysAndAttributes {
         self.expression_attribute_names.as_ref()
     }
 }
+impl KeysAndAttributes {
+    /// Creates a new builder-style object to manufacture [`KeysAndAttributes`](crate::model::KeysAndAttributes).
+    pub fn builder() -> crate::model::keys_and_attributes::Builder {
+        crate::model::keys_and_attributes::Builder::default()
+    }
+}
+
 /// See [`KeysAndAttributes`](crate::model::KeysAndAttributes).
 pub mod keys_and_attributes {
 
@@ -17349,12 +17452,6 @@ pub mod keys_and_attributes {
         }
     }
 }
-impl KeysAndAttributes {
-    /// Creates a new builder-style object to manufacture [`KeysAndAttributes`](crate::model::KeysAndAttributes).
-    pub fn builder() -> crate::model::keys_and_attributes::Builder {
-        crate::model::keys_and_attributes::Builder::default()
-    }
-}
 
 /// <p> A PartiQL batch statement response.. </p>
 #[non_exhaustive]
@@ -17390,6 +17487,13 @@ impl BatchStatementResponse {
         self.item.as_ref()
     }
 }
+impl BatchStatementResponse {
+    /// Creates a new builder-style object to manufacture [`BatchStatementResponse`](crate::model::BatchStatementResponse).
+    pub fn builder() -> crate::model::batch_statement_response::Builder {
+        crate::model::batch_statement_response::Builder::default()
+    }
+}
+
 /// See [`BatchStatementResponse`](crate::model::BatchStatementResponse).
 pub mod batch_statement_response {
 
@@ -17462,12 +17566,6 @@ pub mod batch_statement_response {
         }
     }
 }
-impl BatchStatementResponse {
-    /// Creates a new builder-style object to manufacture [`BatchStatementResponse`](crate::model::BatchStatementResponse).
-    pub fn builder() -> crate::model::batch_statement_response::Builder {
-        crate::model::batch_statement_response::Builder::default()
-    }
-}
 
 /// <p> An error associated with a statement in a PartiQL batch that was run. </p>
 #[non_exhaustive]
@@ -17490,6 +17588,13 @@ impl BatchStatementError {
         self.message.as_deref()
     }
 }
+impl BatchStatementError {
+    /// Creates a new builder-style object to manufacture [`BatchStatementError`](crate::model::BatchStatementError).
+    pub fn builder() -> crate::model::batch_statement_error::Builder {
+        crate::model::batch_statement_error::Builder::default()
+    }
+}
+
 /// See [`BatchStatementError`](crate::model::BatchStatementError).
 pub mod batch_statement_error {
 
@@ -17531,12 +17636,6 @@ pub mod batch_statement_error {
                 message: self.message,
             }
         }
-    }
-}
-impl BatchStatementError {
-    /// Creates a new builder-style object to manufacture [`BatchStatementError`](crate::model::BatchStatementError).
-    pub fn builder() -> crate::model::batch_statement_error::Builder {
-        crate::model::batch_statement_error::Builder::default()
     }
 }
 
@@ -17725,6 +17824,13 @@ impl BatchStatementRequest {
         self.consistent_read
     }
 }
+impl BatchStatementRequest {
+    /// Creates a new builder-style object to manufacture [`BatchStatementRequest`](crate::model::BatchStatementRequest).
+    pub fn builder() -> crate::model::batch_statement_request::Builder {
+        crate::model::batch_statement_request::Builder::default()
+    }
+}
+
 /// See [`BatchStatementRequest`](crate::model::BatchStatementRequest).
 pub mod batch_statement_request {
 
@@ -17784,11 +17890,5 @@ pub mod batch_statement_request {
                 consistent_read: self.consistent_read,
             }
         }
-    }
-}
-impl BatchStatementRequest {
-    /// Creates a new builder-style object to manufacture [`BatchStatementRequest`](crate::model::BatchStatementRequest).
-    pub fn builder() -> crate::model::batch_statement_request::Builder {
-        crate::model::batch_statement_request::Builder::default()
     }
 }

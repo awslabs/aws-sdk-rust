@@ -4,7 +4,7 @@
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`activate_pipeline`](crate::client::Client::activate_pipeline).
 ///
-/// See [`crate::client::fluent_builders::ActivatePipeline`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ActivatePipeline`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ActivatePipeline {
     _private: (),
@@ -39,7 +39,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ActivatePipeline {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`add_tags`](crate::client::Client::add_tags).
 ///
-/// See [`crate::client::fluent_builders::AddTags`] for more details about the operation.
+/// `ParseStrictResponse` impl for `AddTags`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct AddTags {
     _private: (),
@@ -71,7 +71,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AddTags {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`create_pipeline`](crate::client::Client::create_pipeline).
 ///
-/// See [`crate::client::fluent_builders::CreatePipeline`] for more details about the operation.
+/// `ParseStrictResponse` impl for `CreatePipeline`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreatePipeline {
     _private: (),
@@ -104,7 +104,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreatePipeline {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`deactivate_pipeline`](crate::client::Client::deactivate_pipeline).
 ///
-/// See [`crate::client::fluent_builders::DeactivatePipeline`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DeactivatePipeline`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeactivatePipeline {
     _private: (),
@@ -139,7 +139,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeactivatePipeline {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`delete_pipeline`](crate::client::Client::delete_pipeline).
 ///
-/// See [`crate::client::fluent_builders::DeletePipeline`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DeletePipeline`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeletePipeline {
     _private: (),
@@ -172,7 +172,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeletePipeline {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`describe_objects`](crate::client::Client::describe_objects).
 ///
-/// See [`crate::client::fluent_builders::DescribeObjects`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DescribeObjects`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeObjects {
     _private: (),
@@ -207,7 +207,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeObjects {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`describe_pipelines`](crate::client::Client::describe_pipelines).
 ///
-/// See [`crate::client::fluent_builders::DescribePipelines`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DescribePipelines`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribePipelines {
     _private: (),
@@ -242,7 +242,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribePipelines {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`evaluate_expression`](crate::client::Client::evaluate_expression).
 ///
-/// See [`crate::client::fluent_builders::EvaluateExpression`] for more details about the operation.
+/// `ParseStrictResponse` impl for `EvaluateExpression`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct EvaluateExpression {
     _private: (),
@@ -277,7 +277,7 @@ impl aws_smithy_http::response::ParseStrictResponse for EvaluateExpression {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`get_pipeline_definition`](crate::client::Client::get_pipeline_definition).
 ///
-/// See [`crate::client::fluent_builders::GetPipelineDefinition`] for more details about the operation.
+/// `ParseStrictResponse` impl for `GetPipelineDefinition`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetPipelineDefinition {
     _private: (),
@@ -312,7 +312,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetPipelineDefinition {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_pipelines`](crate::client::Client::list_pipelines).
 ///
-/// See [`crate::client::fluent_builders::ListPipelines`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListPipelines`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListPipelines {
     _private: (),
@@ -345,7 +345,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListPipelines {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`poll_for_task`](crate::client::Client::poll_for_task).
 ///
-/// See [`crate::client::fluent_builders::PollForTask`] for more details about the operation.
+/// `ParseStrictResponse` impl for `PollForTask`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PollForTask {
     _private: (),
@@ -378,7 +378,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PollForTask {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`put_pipeline_definition`](crate::client::Client::put_pipeline_definition).
 ///
-/// See [`crate::client::fluent_builders::PutPipelineDefinition`] for more details about the operation.
+/// `ParseStrictResponse` impl for `PutPipelineDefinition`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutPipelineDefinition {
     _private: (),
@@ -413,7 +413,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutPipelineDefinition {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`query_objects`](crate::client::Client::query_objects).
 ///
-/// See [`crate::client::fluent_builders::QueryObjects`] for more details about the operation.
+/// `ParseStrictResponse` impl for `QueryObjects`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct QueryObjects {
     _private: (),
@@ -446,7 +446,7 @@ impl aws_smithy_http::response::ParseStrictResponse for QueryObjects {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`remove_tags`](crate::client::Client::remove_tags).
 ///
-/// See [`crate::client::fluent_builders::RemoveTags`] for more details about the operation.
+/// `ParseStrictResponse` impl for `RemoveTags`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct RemoveTags {
     _private: (),
@@ -479,7 +479,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RemoveTags {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`report_task_progress`](crate::client::Client::report_task_progress).
 ///
-/// See [`crate::client::fluent_builders::ReportTaskProgress`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ReportTaskProgress`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ReportTaskProgress {
     _private: (),
@@ -514,7 +514,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ReportTaskProgress {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`report_task_runner_heartbeat`](crate::client::Client::report_task_runner_heartbeat).
 ///
-/// See [`crate::client::fluent_builders::ReportTaskRunnerHeartbeat`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ReportTaskRunnerHeartbeat`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ReportTaskRunnerHeartbeat {
     _private: (),
@@ -549,7 +549,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ReportTaskRunnerHeartbea
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`set_status`](crate::client::Client::set_status).
 ///
-/// See [`crate::client::fluent_builders::SetStatus`] for more details about the operation.
+/// `ParseStrictResponse` impl for `SetStatus`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct SetStatus {
     _private: (),
@@ -581,7 +581,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SetStatus {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`set_task_status`](crate::client::Client::set_task_status).
 ///
-/// See [`crate::client::fluent_builders::SetTaskStatus`] for more details about the operation.
+/// `ParseStrictResponse` impl for `SetTaskStatus`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct SetTaskStatus {
     _private: (),
@@ -614,7 +614,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SetTaskStatus {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`validate_pipeline_definition`](crate::client::Client::validate_pipeline_definition).
 ///
-/// See [`crate::client::fluent_builders::ValidatePipelineDefinition`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ValidatePipelineDefinition`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ValidatePipelineDefinition {
     _private: (),

@@ -84,6 +84,13 @@ impl Endpoint {
         self.customer_owned_ipv4_pool.as_deref()
     }
 }
+impl Endpoint {
+    /// Creates a new builder-style object to manufacture [`Endpoint`](crate::model::Endpoint).
+    pub fn builder() -> crate::model::endpoint::Builder {
+        crate::model::endpoint::Builder::default()
+    }
+}
+
 /// See [`Endpoint`](crate::model::Endpoint).
 pub mod endpoint {
 
@@ -257,12 +264,6 @@ pub mod endpoint {
         }
     }
 }
-impl Endpoint {
-    /// Creates a new builder-style object to manufacture [`Endpoint`](crate::model::Endpoint).
-    pub fn builder() -> crate::model::endpoint::Builder {
-        crate::model::endpoint::Builder::default()
-    }
-}
 
 /// When writing a match expression against `EndpointAccessType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -370,6 +371,13 @@ impl NetworkInterface {
         self.network_interface_id.as_deref()
     }
 }
+impl NetworkInterface {
+    /// Creates a new builder-style object to manufacture [`NetworkInterface`](crate::model::NetworkInterface).
+    pub fn builder() -> crate::model::network_interface::Builder {
+        crate::model::network_interface::Builder::default()
+    }
+}
+
 /// See [`NetworkInterface`](crate::model::NetworkInterface).
 pub mod network_interface {
 
@@ -399,12 +407,6 @@ pub mod network_interface {
                 network_interface_id: self.network_interface_id,
             }
         }
-    }
-}
-impl NetworkInterface {
-    /// Creates a new builder-style object to manufacture [`NetworkInterface`](crate::model::NetworkInterface).
-    pub fn builder() -> crate::model::network_interface::Builder {
-        crate::model::network_interface::Builder::default()
     }
 }
 

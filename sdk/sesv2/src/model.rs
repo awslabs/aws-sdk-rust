@@ -28,6 +28,13 @@ impl EmailTemplateContent {
         self.html.as_deref()
     }
 }
+impl EmailTemplateContent {
+    /// Creates a new builder-style object to manufacture [`EmailTemplateContent`](crate::model::EmailTemplateContent).
+    pub fn builder() -> crate::model::email_template_content::Builder {
+        crate::model::email_template_content::Builder::default()
+    }
+}
+
 /// See [`EmailTemplateContent`](crate::model::EmailTemplateContent).
 pub mod email_template_content {
 
@@ -80,12 +87,6 @@ pub mod email_template_content {
         }
     }
 }
-impl EmailTemplateContent {
-    /// Creates a new builder-style object to manufacture [`EmailTemplateContent`](crate::model::EmailTemplateContent).
-    pub fn builder() -> crate::model::email_template_content::Builder {
-        crate::model::email_template_content::Builder::default()
-    }
-}
 
 /// <p>An interest group, theme, or label within a list. Lists can have multiple topics.</p>
 #[non_exhaustive]
@@ -124,6 +125,13 @@ impl Topic {
         self.default_subscription_status.as_ref()
     }
 }
+impl Topic {
+    /// Creates a new builder-style object to manufacture [`Topic`](crate::model::Topic).
+    pub fn builder() -> crate::model::topic::Builder {
+        crate::model::topic::Builder::default()
+    }
+}
+
 /// See [`Topic`](crate::model::Topic).
 pub mod topic {
 
@@ -193,12 +201,6 @@ pub mod topic {
                 default_subscription_status: self.default_subscription_status,
             }
         }
-    }
-}
-impl Topic {
-    /// Creates a new builder-style object to manufacture [`Topic`](crate::model::Topic).
-    pub fn builder() -> crate::model::topic::Builder {
-        crate::model::topic::Builder::default()
     }
 }
 
@@ -315,6 +317,13 @@ impl TopicPreference {
         self.subscription_status.as_ref()
     }
 }
+impl TopicPreference {
+    /// Creates a new builder-style object to manufacture [`TopicPreference`](crate::model::TopicPreference).
+    pub fn builder() -> crate::model::topic_preference::Builder {
+        crate::model::topic_preference::Builder::default()
+    }
+}
+
 /// See [`TopicPreference`](crate::model::TopicPreference).
 pub mod topic_preference {
 
@@ -356,12 +365,6 @@ pub mod topic_preference {
                 subscription_status: self.subscription_status,
             }
         }
-    }
-}
-impl TopicPreference {
-    /// Creates a new builder-style object to manufacture [`TopicPreference`](crate::model::TopicPreference).
-    pub fn builder() -> crate::model::topic_preference::Builder {
-        crate::model::topic_preference::Builder::default()
     }
 }
 
@@ -420,6 +423,13 @@ impl EventDestinationDefinition {
         self.pinpoint_destination.as_ref()
     }
 }
+impl EventDestinationDefinition {
+    /// Creates a new builder-style object to manufacture [`EventDestinationDefinition`](crate::model::EventDestinationDefinition).
+    pub fn builder() -> crate::model::event_destination_definition::Builder {
+        crate::model::event_destination_definition::Builder::default()
+    }
+}
+
 /// See [`EventDestinationDefinition`](crate::model::EventDestinationDefinition).
 pub mod event_destination_definition {
 
@@ -540,12 +550,6 @@ pub mod event_destination_definition {
         }
     }
 }
-impl EventDestinationDefinition {
-    /// Creates a new builder-style object to manufacture [`EventDestinationDefinition`](crate::model::EventDestinationDefinition).
-    pub fn builder() -> crate::model::event_destination_definition::Builder {
-        crate::model::event_destination_definition::Builder::default()
-    }
-}
 
 /// <p>An object that defines an Amazon Pinpoint project destination for email events. You can send email event data to a Amazon Pinpoint project to view metrics using the Transactional Messaging dashboards that are built in to Amazon Pinpoint. For more information, see <a href="https://docs.aws.amazon.com/pinpoint/latest/userguide/analytics-transactional-messages.html">Transactional Messaging Charts</a> in the <i>Amazon Pinpoint User Guide</i>.</p>
 #[non_exhaustive]
@@ -561,6 +565,13 @@ impl PinpointDestination {
         self.application_arn.as_deref()
     }
 }
+impl PinpointDestination {
+    /// Creates a new builder-style object to manufacture [`PinpointDestination`](crate::model::PinpointDestination).
+    pub fn builder() -> crate::model::pinpoint_destination::Builder {
+        crate::model::pinpoint_destination::Builder::default()
+    }
+}
+
 /// See [`PinpointDestination`](crate::model::PinpointDestination).
 pub mod pinpoint_destination {
 
@@ -592,12 +603,6 @@ pub mod pinpoint_destination {
         }
     }
 }
-impl PinpointDestination {
-    /// Creates a new builder-style object to manufacture [`PinpointDestination`](crate::model::PinpointDestination).
-    pub fn builder() -> crate::model::pinpoint_destination::Builder {
-        crate::model::pinpoint_destination::Builder::default()
-    }
-}
 
 /// <p>An object that defines an Amazon SNS destination for email events. You can use Amazon SNS to send notification when certain email events occur.</p>
 #[non_exhaustive]
@@ -613,6 +618,13 @@ impl SnsDestination {
         self.topic_arn.as_deref()
     }
 }
+impl SnsDestination {
+    /// Creates a new builder-style object to manufacture [`SnsDestination`](crate::model::SnsDestination).
+    pub fn builder() -> crate::model::sns_destination::Builder {
+        crate::model::sns_destination::Builder::default()
+    }
+}
+
 /// See [`SnsDestination`](crate::model::SnsDestination).
 pub mod sns_destination {
 
@@ -641,12 +653,6 @@ pub mod sns_destination {
         }
     }
 }
-impl SnsDestination {
-    /// Creates a new builder-style object to manufacture [`SnsDestination`](crate::model::SnsDestination).
-    pub fn builder() -> crate::model::sns_destination::Builder {
-        crate::model::sns_destination::Builder::default()
-    }
-}
 
 /// <p>An object that defines an Amazon CloudWatch destination for email events. You can use Amazon CloudWatch to monitor and gain insights on your email sending metrics.</p>
 #[non_exhaustive]
@@ -665,6 +671,13 @@ impl CloudWatchDestination {
         self.dimension_configurations.as_deref()
     }
 }
+impl CloudWatchDestination {
+    /// Creates a new builder-style object to manufacture [`CloudWatchDestination`](crate::model::CloudWatchDestination).
+    pub fn builder() -> crate::model::cloud_watch_destination::Builder {
+        crate::model::cloud_watch_destination::Builder::default()
+    }
+}
+
 /// See [`CloudWatchDestination`](crate::model::CloudWatchDestination).
 pub mod cloud_watch_destination {
 
@@ -706,12 +719,6 @@ pub mod cloud_watch_destination {
                 dimension_configurations: self.dimension_configurations,
             }
         }
-    }
-}
-impl CloudWatchDestination {
-    /// Creates a new builder-style object to manufacture [`CloudWatchDestination`](crate::model::CloudWatchDestination).
-    pub fn builder() -> crate::model::cloud_watch_destination::Builder {
-        crate::model::cloud_watch_destination::Builder::default()
     }
 }
 
@@ -761,6 +768,13 @@ impl CloudWatchDimensionConfiguration {
         self.default_dimension_value.as_deref()
     }
 }
+impl CloudWatchDimensionConfiguration {
+    /// Creates a new builder-style object to manufacture [`CloudWatchDimensionConfiguration`](crate::model::CloudWatchDimensionConfiguration).
+    pub fn builder() -> crate::model::cloud_watch_dimension_configuration::Builder {
+        crate::model::cloud_watch_dimension_configuration::Builder::default()
+    }
+}
+
 /// See [`CloudWatchDimensionConfiguration`](crate::model::CloudWatchDimensionConfiguration).
 pub mod cloud_watch_dimension_configuration {
 
@@ -836,12 +850,6 @@ pub mod cloud_watch_dimension_configuration {
                 default_dimension_value: self.default_dimension_value,
             }
         }
-    }
-}
-impl CloudWatchDimensionConfiguration {
-    /// Creates a new builder-style object to manufacture [`CloudWatchDimensionConfiguration`](crate::model::CloudWatchDimensionConfiguration).
-    pub fn builder() -> crate::model::cloud_watch_dimension_configuration::Builder {
-        crate::model::cloud_watch_dimension_configuration::Builder::default()
     }
 }
 
@@ -967,6 +975,13 @@ impl KinesisFirehoseDestination {
         self.delivery_stream_arn.as_deref()
     }
 }
+impl KinesisFirehoseDestination {
+    /// Creates a new builder-style object to manufacture [`KinesisFirehoseDestination`](crate::model::KinesisFirehoseDestination).
+    pub fn builder() -> crate::model::kinesis_firehose_destination::Builder {
+        crate::model::kinesis_firehose_destination::Builder::default()
+    }
+}
+
 /// See [`KinesisFirehoseDestination`](crate::model::KinesisFirehoseDestination).
 pub mod kinesis_firehose_destination {
 
@@ -1008,12 +1023,6 @@ pub mod kinesis_firehose_destination {
                 delivery_stream_arn: self.delivery_stream_arn,
             }
         }
-    }
-}
-impl KinesisFirehoseDestination {
-    /// Creates a new builder-style object to manufacture [`KinesisFirehoseDestination`](crate::model::KinesisFirehoseDestination).
-    pub fn builder() -> crate::model::kinesis_firehose_destination::Builder {
-        crate::model::kinesis_firehose_destination::Builder::default()
     }
 }
 
@@ -1187,6 +1196,13 @@ impl Tag {
         self.value.as_deref()
     }
 }
+impl Tag {
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
+    pub fn builder() -> crate::model::tag::Builder {
+        crate::model::tag::Builder::default()
+    }
+}
+
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
 
@@ -1227,12 +1243,6 @@ pub mod tag {
         }
     }
 }
-impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
-    pub fn builder() -> crate::model::tag::Builder {
-        crate::model::tag::Builder::default()
-    }
-}
 
 /// <p>An object used to specify a list or topic to which an email belongs, which will be used when a contact chooses to unsubscribe.</p>
 #[non_exhaustive]
@@ -1255,6 +1265,13 @@ impl ListManagementOptions {
         self.topic_name.as_deref()
     }
 }
+impl ListManagementOptions {
+    /// Creates a new builder-style object to manufacture [`ListManagementOptions`](crate::model::ListManagementOptions).
+    pub fn builder() -> crate::model::list_management_options::Builder {
+        crate::model::list_management_options::Builder::default()
+    }
+}
+
 /// See [`ListManagementOptions`](crate::model::ListManagementOptions).
 pub mod list_management_options {
 
@@ -1298,12 +1315,6 @@ pub mod list_management_options {
         }
     }
 }
-impl ListManagementOptions {
-    /// Creates a new builder-style object to manufacture [`ListManagementOptions`](crate::model::ListManagementOptions).
-    pub fn builder() -> crate::model::list_management_options::Builder {
-        crate::model::list_management_options::Builder::default()
-    }
-}
 
 /// <p>Contains the name and value of a tag that you apply to an email. You can use message tags when you publish email sending events. </p>
 #[non_exhaustive]
@@ -1342,6 +1353,13 @@ impl MessageTag {
         self.value.as_deref()
     }
 }
+impl MessageTag {
+    /// Creates a new builder-style object to manufacture [`MessageTag`](crate::model::MessageTag).
+    pub fn builder() -> crate::model::message_tag::Builder {
+        crate::model::message_tag::Builder::default()
+    }
+}
+
 /// See [`MessageTag`](crate::model::MessageTag).
 pub mod message_tag {
 
@@ -1398,12 +1416,6 @@ pub mod message_tag {
         }
     }
 }
-impl MessageTag {
-    /// Creates a new builder-style object to manufacture [`MessageTag`](crate::model::MessageTag).
-    pub fn builder() -> crate::model::message_tag::Builder {
-        crate::model::message_tag::Builder::default()
-    }
-}
 
 /// <p>An object that defines the entire content of the email, including the message headers and the body content. You can create a simple email message, in which you specify the subject and the text and HTML versions of the message body. You can also create raw messages, in which you specify a complete MIME-formatted message. Raw messages can include attachments and custom headers.</p>
 #[non_exhaustive]
@@ -1451,6 +1463,13 @@ impl EmailContent {
         self.template.as_ref()
     }
 }
+impl EmailContent {
+    /// Creates a new builder-style object to manufacture [`EmailContent`](crate::model::EmailContent).
+    pub fn builder() -> crate::model::email_content::Builder {
+        crate::model::email_content::Builder::default()
+    }
+}
+
 /// See [`EmailContent`](crate::model::EmailContent).
 pub mod email_content {
 
@@ -1521,12 +1540,6 @@ pub mod email_content {
         }
     }
 }
-impl EmailContent {
-    /// Creates a new builder-style object to manufacture [`EmailContent`](crate::model::EmailContent).
-    pub fn builder() -> crate::model::email_content::Builder {
-        crate::model::email_content::Builder::default()
-    }
-}
 
 /// <p>An object that defines the email template to use for an email message, and the values to use for any message variables in that template. An <i>email template</i> is a type of message template that contains content that you want to define, save, and reuse in email messages that you send.</p>
 #[non_exhaustive]
@@ -1556,6 +1569,13 @@ impl Template {
         self.template_data.as_deref()
     }
 }
+impl Template {
+    /// Creates a new builder-style object to manufacture [`Template`](crate::model::Template).
+    pub fn builder() -> crate::model::template::Builder {
+        crate::model::template::Builder::default()
+    }
+}
+
 /// See [`Template`](crate::model::Template).
 pub mod template {
 
@@ -1614,12 +1634,6 @@ pub mod template {
         }
     }
 }
-impl Template {
-    /// Creates a new builder-style object to manufacture [`Template`](crate::model::Template).
-    pub fn builder() -> crate::model::template::Builder {
-        crate::model::template::Builder::default()
-    }
-}
 
 /// <p>Represents the raw content of an email message.</p>
 #[non_exhaustive]
@@ -1653,6 +1667,13 @@ impl RawMessage {
         self.data.as_ref()
     }
 }
+impl RawMessage {
+    /// Creates a new builder-style object to manufacture [`RawMessage`](crate::model::RawMessage).
+    pub fn builder() -> crate::model::raw_message::Builder {
+        crate::model::raw_message::Builder::default()
+    }
+}
+
 /// See [`RawMessage`](crate::model::RawMessage).
 pub mod raw_message {
 
@@ -1697,12 +1718,6 @@ pub mod raw_message {
         }
     }
 }
-impl RawMessage {
-    /// Creates a new builder-style object to manufacture [`RawMessage`](crate::model::RawMessage).
-    pub fn builder() -> crate::model::raw_message::Builder {
-        crate::model::raw_message::Builder::default()
-    }
-}
 
 /// <p>Represents the email message that you're sending. The <code>Message</code> object consists of a subject line and a message body.</p>
 #[non_exhaustive]
@@ -1725,6 +1740,13 @@ impl Message {
         self.body.as_ref()
     }
 }
+impl Message {
+    /// Creates a new builder-style object to manufacture [`Message`](crate::model::Message).
+    pub fn builder() -> crate::model::message::Builder {
+        crate::model::message::Builder::default()
+    }
+}
+
 /// See [`Message`](crate::model::Message).
 pub mod message {
 
@@ -1765,12 +1787,6 @@ pub mod message {
         }
     }
 }
-impl Message {
-    /// Creates a new builder-style object to manufacture [`Message`](crate::model::Message).
-    pub fn builder() -> crate::model::message::Builder {
-        crate::model::message::Builder::default()
-    }
-}
 
 /// <p>Represents the body of the email message.</p>
 #[non_exhaustive]
@@ -1793,6 +1809,13 @@ impl Body {
         self.html.as_ref()
     }
 }
+impl Body {
+    /// Creates a new builder-style object to manufacture [`Body`](crate::model::Body).
+    pub fn builder() -> crate::model::body::Builder {
+        crate::model::body::Builder::default()
+    }
+}
+
 /// See [`Body`](crate::model::Body).
 pub mod body {
 
@@ -1833,12 +1856,6 @@ pub mod body {
         }
     }
 }
-impl Body {
-    /// Creates a new builder-style object to manufacture [`Body`](crate::model::Body).
-    pub fn builder() -> crate::model::body::Builder {
-        crate::model::body::Builder::default()
-    }
-}
 
 /// <p>An object that represents the content of the email, and optionally a character set specification.</p>
 #[non_exhaustive]
@@ -1861,6 +1878,13 @@ impl Content {
         self.charset.as_deref()
     }
 }
+impl Content {
+    /// Creates a new builder-style object to manufacture [`Content`](crate::model::Content).
+    pub fn builder() -> crate::model::content::Builder {
+        crate::model::content::Builder::default()
+    }
+}
+
 /// See [`Content`](crate::model::Content).
 pub mod content {
 
@@ -1901,12 +1925,6 @@ pub mod content {
         }
     }
 }
-impl Content {
-    /// Creates a new builder-style object to manufacture [`Content`](crate::model::Content).
-    pub fn builder() -> crate::model::content::Builder {
-        crate::model::content::Builder::default()
-    }
-}
 
 /// <p>An object that describes the recipients for an email.</p> <note>
 /// <p>Amazon SES does not support the SMTPUTF8 extension, as described in <a href="https://tools.ietf.org/html/rfc6531">RFC6531</a>. For this reason, the <i>local part</i> of a destination email address (the part of the email address that precedes the @ sign) may only contain <a href="https://en.wikipedia.org/wiki/Email_address#Local-part">7-bit ASCII characters</a>. If the <i>domain part</i> of an address (the part after the @ sign) contains non-ASCII characters, they must be encoded using Punycode, as described in <a href="https://tools.ietf.org/html/rfc3492.html">RFC3492</a>.</p>
@@ -1938,6 +1956,13 @@ impl Destination {
         self.bcc_addresses.as_deref()
     }
 }
+impl Destination {
+    /// Creates a new builder-style object to manufacture [`Destination`](crate::model::Destination).
+    pub fn builder() -> crate::model::destination::Builder {
+        crate::model::destination::Builder::default()
+    }
+}
+
 /// See [`Destination`](crate::model::Destination).
 pub mod destination {
 
@@ -2017,12 +2042,6 @@ pub mod destination {
         }
     }
 }
-impl Destination {
-    /// Creates a new builder-style object to manufacture [`Destination`](crate::model::Destination).
-    pub fn builder() -> crate::model::destination::Builder {
-        crate::model::destination::Builder::default()
-    }
-}
 
 /// <p>The result of the <code>SendBulkEmail</code> operation of each specified <code>BulkEmailEntry</code>.</p>
 #[non_exhaustive]
@@ -2086,6 +2105,13 @@ impl BulkEmailEntryResult {
         self.message_id.as_deref()
     }
 }
+impl BulkEmailEntryResult {
+    /// Creates a new builder-style object to manufacture [`BulkEmailEntryResult`](crate::model::BulkEmailEntryResult).
+    pub fn builder() -> crate::model::bulk_email_entry_result::Builder {
+        crate::model::bulk_email_entry_result::Builder::default()
+    }
+}
+
 /// See [`BulkEmailEntryResult`](crate::model::BulkEmailEntryResult).
 pub mod bulk_email_entry_result {
 
@@ -2173,12 +2199,6 @@ pub mod bulk_email_entry_result {
                 message_id: self.message_id,
             }
         }
-    }
-}
-impl BulkEmailEntryResult {
-    /// Creates a new builder-style object to manufacture [`BulkEmailEntryResult`](crate::model::BulkEmailEntryResult).
-    pub fn builder() -> crate::model::bulk_email_entry_result::Builder {
-        crate::model::bulk_email_entry_result::Builder::default()
     }
 }
 
@@ -2381,6 +2401,13 @@ impl BulkEmailEntry {
         self.replacement_email_content.as_ref()
     }
 }
+impl BulkEmailEntry {
+    /// Creates a new builder-style object to manufacture [`BulkEmailEntry`](crate::model::BulkEmailEntry).
+    pub fn builder() -> crate::model::bulk_email_entry::Builder {
+        crate::model::bulk_email_entry::Builder::default()
+    }
+}
+
 /// See [`BulkEmailEntry`](crate::model::BulkEmailEntry).
 pub mod bulk_email_entry {
 
@@ -2456,12 +2483,6 @@ pub mod bulk_email_entry {
         }
     }
 }
-impl BulkEmailEntry {
-    /// Creates a new builder-style object to manufacture [`BulkEmailEntry`](crate::model::BulkEmailEntry).
-    pub fn builder() -> crate::model::bulk_email_entry::Builder {
-        crate::model::bulk_email_entry::Builder::default()
-    }
-}
 
 /// <p>The <code>ReplaceEmailContent</code> object to be used for a specific <code>BulkEmailEntry</code>. The <code>ReplacementTemplate</code> can be specified within this object.</p>
 #[non_exhaustive]
@@ -2477,6 +2498,13 @@ impl ReplacementEmailContent {
         self.replacement_template.as_ref()
     }
 }
+impl ReplacementEmailContent {
+    /// Creates a new builder-style object to manufacture [`ReplacementEmailContent`](crate::model::ReplacementEmailContent).
+    pub fn builder() -> crate::model::replacement_email_content::Builder {
+        crate::model::replacement_email_content::Builder::default()
+    }
+}
+
 /// See [`ReplacementEmailContent`](crate::model::ReplacementEmailContent).
 pub mod replacement_email_content {
 
@@ -2508,12 +2536,6 @@ pub mod replacement_email_content {
         }
     }
 }
-impl ReplacementEmailContent {
-    /// Creates a new builder-style object to manufacture [`ReplacementEmailContent`](crate::model::ReplacementEmailContent).
-    pub fn builder() -> crate::model::replacement_email_content::Builder {
-        crate::model::replacement_email_content::Builder::default()
-    }
-}
 
 /// <p>An object which contains <code>ReplacementTemplateData</code> to be used for a specific <code>BulkEmailEntry</code>.</p>
 #[non_exhaustive]
@@ -2529,6 +2551,13 @@ impl ReplacementTemplate {
         self.replacement_template_data.as_deref()
     }
 }
+impl ReplacementTemplate {
+    /// Creates a new builder-style object to manufacture [`ReplacementTemplate`](crate::model::ReplacementTemplate).
+    pub fn builder() -> crate::model::replacement_template::Builder {
+        crate::model::replacement_template::Builder::default()
+    }
+}
+
 /// See [`ReplacementTemplate`](crate::model::ReplacementTemplate).
 pub mod replacement_template {
 
@@ -2560,12 +2589,6 @@ pub mod replacement_template {
         }
     }
 }
-impl ReplacementTemplate {
-    /// Creates a new builder-style object to manufacture [`ReplacementTemplate`](crate::model::ReplacementTemplate).
-    pub fn builder() -> crate::model::replacement_template::Builder {
-        crate::model::replacement_template::Builder::default()
-    }
-}
 
 /// <p>An object that contains the body of the message. You can specify a template message.</p>
 #[non_exhaustive]
@@ -2581,6 +2604,13 @@ impl BulkEmailContent {
         self.template.as_ref()
     }
 }
+impl BulkEmailContent {
+    /// Creates a new builder-style object to manufacture [`BulkEmailContent`](crate::model::BulkEmailContent).
+    pub fn builder() -> crate::model::bulk_email_content::Builder {
+        crate::model::bulk_email_content::Builder::default()
+    }
+}
+
 /// See [`BulkEmailContent`](crate::model::BulkEmailContent).
 pub mod bulk_email_content {
 
@@ -2607,12 +2637,6 @@ pub mod bulk_email_content {
                 template: self.template,
             }
         }
-    }
-}
-impl BulkEmailContent {
-    /// Creates a new builder-style object to manufacture [`BulkEmailContent`](crate::model::BulkEmailContent).
-    pub fn builder() -> crate::model::bulk_email_content::Builder {
-        crate::model::bulk_email_content::Builder::default()
     }
 }
 
@@ -3008,6 +3032,13 @@ impl std::fmt::Debug for DkimSigningAttributes {
         formatter.finish()
     }
 }
+impl DkimSigningAttributes {
+    /// Creates a new builder-style object to manufacture [`DkimSigningAttributes`](crate::model::DkimSigningAttributes).
+    pub fn builder() -> crate::model::dkim_signing_attributes::Builder {
+        crate::model::dkim_signing_attributes::Builder::default()
+    }
+}
+
 /// See [`DkimSigningAttributes`](crate::model::DkimSigningAttributes).
 pub mod dkim_signing_attributes {
 
@@ -3084,12 +3115,6 @@ pub mod dkim_signing_attributes {
             formatter.field("next_signing_key_length", &self.next_signing_key_length);
             formatter.finish()
         }
-    }
-}
-impl DkimSigningAttributes {
-    /// Creates a new builder-style object to manufacture [`DkimSigningAttributes`](crate::model::DkimSigningAttributes).
-    pub fn builder() -> crate::model::dkim_signing_attributes::Builder {
-        crate::model::dkim_signing_attributes::Builder::default()
     }
 }
 
@@ -3308,6 +3333,13 @@ impl DomainDeliverabilityTrackingOption {
         self.inbox_placement_tracking_option.as_ref()
     }
 }
+impl DomainDeliverabilityTrackingOption {
+    /// Creates a new builder-style object to manufacture [`DomainDeliverabilityTrackingOption`](crate::model::DomainDeliverabilityTrackingOption).
+    pub fn builder() -> crate::model::domain_deliverability_tracking_option::Builder {
+        crate::model::domain_deliverability_tracking_option::Builder::default()
+    }
+}
+
 /// See [`DomainDeliverabilityTrackingOption`](crate::model::DomainDeliverabilityTrackingOption).
 pub mod domain_deliverability_tracking_option {
 
@@ -3370,12 +3402,6 @@ pub mod domain_deliverability_tracking_option {
         }
     }
 }
-impl DomainDeliverabilityTrackingOption {
-    /// Creates a new builder-style object to manufacture [`DomainDeliverabilityTrackingOption`](crate::model::DomainDeliverabilityTrackingOption).
-    pub fn builder() -> crate::model::domain_deliverability_tracking_option::Builder {
-        crate::model::domain_deliverability_tracking_option::Builder::default()
-    }
-}
 
 /// <p>An object that contains information about the inbox placement data settings for a verified domain that’s associated with your Amazon Web Services account. This data is available only if you enabled the Deliverability dashboard for the domain.</p>
 #[non_exhaustive]
@@ -3398,6 +3424,13 @@ impl InboxPlacementTrackingOption {
         self.tracked_isps.as_deref()
     }
 }
+impl InboxPlacementTrackingOption {
+    /// Creates a new builder-style object to manufacture [`InboxPlacementTrackingOption`](crate::model::InboxPlacementTrackingOption).
+    pub fn builder() -> crate::model::inbox_placement_tracking_option::Builder {
+        crate::model::inbox_placement_tracking_option::Builder::default()
+    }
+}
+
 /// See [`InboxPlacementTrackingOption`](crate::model::InboxPlacementTrackingOption).
 pub mod inbox_placement_tracking_option {
 
@@ -3447,12 +3480,6 @@ pub mod inbox_placement_tracking_option {
         }
     }
 }
-impl InboxPlacementTrackingOption {
-    /// Creates a new builder-style object to manufacture [`InboxPlacementTrackingOption`](crate::model::InboxPlacementTrackingOption).
-    pub fn builder() -> crate::model::inbox_placement_tracking_option::Builder {
-        crate::model::inbox_placement_tracking_option::Builder::default()
-    }
-}
 
 /// <p>An object that defines the VDM settings that apply to emails that you send using the configuration set.</p>
 #[non_exhaustive]
@@ -3475,6 +3502,13 @@ impl VdmOptions {
         self.guardian_options.as_ref()
     }
 }
+impl VdmOptions {
+    /// Creates a new builder-style object to manufacture [`VdmOptions`](crate::model::VdmOptions).
+    pub fn builder() -> crate::model::vdm_options::Builder {
+        crate::model::vdm_options::Builder::default()
+    }
+}
+
 /// See [`VdmOptions`](crate::model::VdmOptions).
 pub mod vdm_options {
 
@@ -3521,12 +3555,6 @@ pub mod vdm_options {
         }
     }
 }
-impl VdmOptions {
-    /// Creates a new builder-style object to manufacture [`VdmOptions`](crate::model::VdmOptions).
-    pub fn builder() -> crate::model::vdm_options::Builder {
-        crate::model::vdm_options::Builder::default()
-    }
-}
 
 /// <p>An object containing additional settings for your VDM configuration as applicable to the Guardian.</p>
 #[non_exhaustive]
@@ -3550,6 +3578,13 @@ impl GuardianOptions {
         self.optimized_shared_delivery.as_ref()
     }
 }
+impl GuardianOptions {
+    /// Creates a new builder-style object to manufacture [`GuardianOptions`](crate::model::GuardianOptions).
+    pub fn builder() -> crate::model::guardian_options::Builder {
+        crate::model::guardian_options::Builder::default()
+    }
+}
+
 /// See [`GuardianOptions`](crate::model::GuardianOptions).
 pub mod guardian_options {
 
@@ -3587,12 +3622,6 @@ pub mod guardian_options {
                 optimized_shared_delivery: self.optimized_shared_delivery,
             }
         }
-    }
-}
-impl GuardianOptions {
-    /// Creates a new builder-style object to manufacture [`GuardianOptions`](crate::model::GuardianOptions).
-    pub fn builder() -> crate::model::guardian_options::Builder {
-        crate::model::guardian_options::Builder::default()
     }
 }
 
@@ -3708,6 +3737,13 @@ impl DashboardOptions {
         self.engagement_metrics.as_ref()
     }
 }
+impl DashboardOptions {
+    /// Creates a new builder-style object to manufacture [`DashboardOptions`](crate::model::DashboardOptions).
+    pub fn builder() -> crate::model::dashboard_options::Builder {
+        crate::model::dashboard_options::Builder::default()
+    }
+}
+
 /// See [`DashboardOptions`](crate::model::DashboardOptions).
 pub mod dashboard_options {
 
@@ -3745,12 +3781,6 @@ pub mod dashboard_options {
                 engagement_metrics: self.engagement_metrics,
             }
         }
-    }
-}
-impl DashboardOptions {
-    /// Creates a new builder-style object to manufacture [`DashboardOptions`](crate::model::DashboardOptions).
-    pub fn builder() -> crate::model::dashboard_options::Builder {
-        crate::model::dashboard_options::Builder::default()
     }
 }
 
@@ -3883,6 +3913,13 @@ impl VdmAttributes {
         self.guardian_attributes.as_ref()
     }
 }
+impl VdmAttributes {
+    /// Creates a new builder-style object to manufacture [`VdmAttributes`](crate::model::VdmAttributes).
+    pub fn builder() -> crate::model::vdm_attributes::Builder {
+        crate::model::vdm_attributes::Builder::default()
+    }
+}
+
 /// See [`VdmAttributes`](crate::model::VdmAttributes).
 pub mod vdm_attributes {
 
@@ -3952,12 +3989,6 @@ pub mod vdm_attributes {
         }
     }
 }
-impl VdmAttributes {
-    /// Creates a new builder-style object to manufacture [`VdmAttributes`](crate::model::VdmAttributes).
-    pub fn builder() -> crate::model::vdm_attributes::Builder {
-        crate::model::vdm_attributes::Builder::default()
-    }
-}
 
 /// <p>An object containing additional settings for your VDM configuration as applicable to the Guardian.</p>
 #[non_exhaustive]
@@ -3981,6 +4012,13 @@ impl GuardianAttributes {
         self.optimized_shared_delivery.as_ref()
     }
 }
+impl GuardianAttributes {
+    /// Creates a new builder-style object to manufacture [`GuardianAttributes`](crate::model::GuardianAttributes).
+    pub fn builder() -> crate::model::guardian_attributes::Builder {
+        crate::model::guardian_attributes::Builder::default()
+    }
+}
+
 /// See [`GuardianAttributes`](crate::model::GuardianAttributes).
 pub mod guardian_attributes {
 
@@ -4020,12 +4058,6 @@ pub mod guardian_attributes {
         }
     }
 }
-impl GuardianAttributes {
-    /// Creates a new builder-style object to manufacture [`GuardianAttributes`](crate::model::GuardianAttributes).
-    pub fn builder() -> crate::model::guardian_attributes::Builder {
-        crate::model::guardian_attributes::Builder::default()
-    }
-}
 
 /// <p>An object containing additional settings for your VDM configuration as applicable to the Dashboard.</p>
 #[non_exhaustive]
@@ -4049,6 +4081,13 @@ impl DashboardAttributes {
         self.engagement_metrics.as_ref()
     }
 }
+impl DashboardAttributes {
+    /// Creates a new builder-style object to manufacture [`DashboardAttributes`](crate::model::DashboardAttributes).
+    pub fn builder() -> crate::model::dashboard_attributes::Builder {
+        crate::model::dashboard_attributes::Builder::default()
+    }
+}
+
 /// See [`DashboardAttributes`](crate::model::DashboardAttributes).
 pub mod dashboard_attributes {
 
@@ -4086,12 +4125,6 @@ pub mod dashboard_attributes {
                 engagement_metrics: self.engagement_metrics,
             }
         }
-    }
-}
-impl DashboardAttributes {
-    /// Creates a new builder-style object to manufacture [`DashboardAttributes`](crate::model::DashboardAttributes).
-    pub fn builder() -> crate::model::dashboard_attributes::Builder {
-        crate::model::dashboard_attributes::Builder::default()
     }
 }
 
@@ -4303,6 +4336,13 @@ impl SuppressedDestinationSummary {
         self.last_update_time.as_ref()
     }
 }
+impl SuppressedDestinationSummary {
+    /// Creates a new builder-style object to manufacture [`SuppressedDestinationSummary`](crate::model::SuppressedDestinationSummary).
+    pub fn builder() -> crate::model::suppressed_destination_summary::Builder {
+        crate::model::suppressed_destination_summary::Builder::default()
+    }
+}
+
 /// See [`SuppressedDestinationSummary`](crate::model::SuppressedDestinationSummary).
 pub mod suppressed_destination_summary {
 
@@ -4364,12 +4404,6 @@ pub mod suppressed_destination_summary {
         }
     }
 }
-impl SuppressedDestinationSummary {
-    /// Creates a new builder-style object to manufacture [`SuppressedDestinationSummary`](crate::model::SuppressedDestinationSummary).
-    pub fn builder() -> crate::model::suppressed_destination_summary::Builder {
-        crate::model::suppressed_destination_summary::Builder::default()
-    }
-}
 
 /// <p>A recommendation generated for your account.</p>
 #[non_exhaustive]
@@ -4427,6 +4461,13 @@ impl Recommendation {
         self.impact.as_ref()
     }
 }
+impl Recommendation {
+    /// Creates a new builder-style object to manufacture [`Recommendation`](crate::model::Recommendation).
+    pub fn builder() -> crate::model::recommendation::Builder {
+        crate::model::recommendation::Builder::default()
+    }
+}
+
 /// See [`Recommendation`](crate::model::Recommendation).
 pub mod recommendation {
 
@@ -4540,12 +4581,6 @@ pub mod recommendation {
                 impact: self.impact,
             }
         }
-    }
-}
-impl Recommendation {
-    /// Creates a new builder-style object to manufacture [`Recommendation`](crate::model::Recommendation).
-    pub fn builder() -> crate::model::recommendation::Builder {
-        crate::model::recommendation::Builder::default()
     }
 }
 
@@ -5003,6 +5038,13 @@ impl ImportJobSummary {
         self.failed_records_count
     }
 }
+impl ImportJobSummary {
+    /// Creates a new builder-style object to manufacture [`ImportJobSummary`](crate::model::ImportJobSummary).
+    pub fn builder() -> crate::model::import_job_summary::Builder {
+        crate::model::import_job_summary::Builder::default()
+    }
+}
+
 /// See [`ImportJobSummary`](crate::model::ImportJobSummary).
 pub mod import_job_summary {
 
@@ -5098,12 +5140,6 @@ pub mod import_job_summary {
                 failed_records_count: self.failed_records_count,
             }
         }
-    }
-}
-impl ImportJobSummary {
-    /// Creates a new builder-style object to manufacture [`ImportJobSummary`](crate::model::ImportJobSummary).
-    pub fn builder() -> crate::model::import_job_summary::Builder {
-        crate::model::import_job_summary::Builder::default()
     }
 }
 
@@ -5232,6 +5268,13 @@ impl ImportDestination {
         self.contact_list_destination.as_ref()
     }
 }
+impl ImportDestination {
+    /// Creates a new builder-style object to manufacture [`ImportDestination`](crate::model::ImportDestination).
+    pub fn builder() -> crate::model::import_destination::Builder {
+        crate::model::import_destination::Builder::default()
+    }
+}
+
 /// See [`ImportDestination`](crate::model::ImportDestination).
 pub mod import_destination {
 
@@ -5286,12 +5329,6 @@ pub mod import_destination {
         }
     }
 }
-impl ImportDestination {
-    /// Creates a new builder-style object to manufacture [`ImportDestination`](crate::model::ImportDestination).
-    pub fn builder() -> crate::model::import_destination::Builder {
-        crate::model::import_destination::Builder::default()
-    }
-}
 
 /// <p>An object that contains details about the action of a contact list.</p>
 #[non_exhaustive]
@@ -5324,6 +5361,13 @@ impl ContactListDestination {
         self.contact_list_import_action.as_ref()
     }
 }
+impl ContactListDestination {
+    /// Creates a new builder-style object to manufacture [`ContactListDestination`](crate::model::ContactListDestination).
+    pub fn builder() -> crate::model::contact_list_destination::Builder {
+        crate::model::contact_list_destination::Builder::default()
+    }
+}
+
 /// See [`ContactListDestination`](crate::model::ContactListDestination).
 pub mod contact_list_destination {
 
@@ -5380,12 +5424,6 @@ pub mod contact_list_destination {
                 contact_list_import_action: self.contact_list_import_action,
             }
         }
-    }
-}
-impl ContactListDestination {
-    /// Creates a new builder-style object to manufacture [`ContactListDestination`](crate::model::ContactListDestination).
-    pub fn builder() -> crate::model::contact_list_destination::Builder {
-        crate::model::contact_list_destination::Builder::default()
     }
 }
 
@@ -5506,6 +5544,13 @@ impl SuppressionListDestination {
         self.suppression_list_import_action.as_ref()
     }
 }
+impl SuppressionListDestination {
+    /// Creates a new builder-style object to manufacture [`SuppressionListDestination`](crate::model::SuppressionListDestination).
+    pub fn builder() -> crate::model::suppression_list_destination::Builder {
+        crate::model::suppression_list_destination::Builder::default()
+    }
+}
+
 /// See [`SuppressionListDestination`](crate::model::SuppressionListDestination).
 pub mod suppression_list_destination {
 
@@ -5547,12 +5592,6 @@ pub mod suppression_list_destination {
                 suppression_list_import_action: self.suppression_list_import_action,
             }
         }
-    }
-}
-impl SuppressionListDestination {
-    /// Creates a new builder-style object to manufacture [`SuppressionListDestination`](crate::model::SuppressionListDestination).
-    pub fn builder() -> crate::model::suppression_list_destination::Builder {
-        crate::model::suppression_list_destination::Builder::default()
     }
 }
 
@@ -5770,6 +5809,13 @@ impl EmailTemplateMetadata {
         self.created_timestamp.as_ref()
     }
 }
+impl EmailTemplateMetadata {
+    /// Creates a new builder-style object to manufacture [`EmailTemplateMetadata`](crate::model::EmailTemplateMetadata).
+    pub fn builder() -> crate::model::email_template_metadata::Builder {
+        crate::model::email_template_metadata::Builder::default()
+    }
+}
+
 /// See [`EmailTemplateMetadata`](crate::model::EmailTemplateMetadata).
 pub mod email_template_metadata {
 
@@ -5814,12 +5860,6 @@ pub mod email_template_metadata {
                 created_timestamp: self.created_timestamp,
             }
         }
-    }
-}
-impl EmailTemplateMetadata {
-    /// Creates a new builder-style object to manufacture [`EmailTemplateMetadata`](crate::model::EmailTemplateMetadata).
-    pub fn builder() -> crate::model::email_template_metadata::Builder {
-        crate::model::email_template_metadata::Builder::default()
     }
 }
 
@@ -5874,6 +5914,13 @@ impl IdentityInfo {
         self.verification_status.as_ref()
     }
 }
+impl IdentityInfo {
+    /// Creates a new builder-style object to manufacture [`IdentityInfo`](crate::model::IdentityInfo).
+    pub fn builder() -> crate::model::identity_info::Builder {
+        crate::model::identity_info::Builder::default()
+    }
+}
+
 /// See [`IdentityInfo`](crate::model::IdentityInfo).
 pub mod identity_info {
 
@@ -5961,12 +6008,6 @@ pub mod identity_info {
                 verification_status: self.verification_status,
             }
         }
-    }
-}
-impl IdentityInfo {
-    /// Creates a new builder-style object to manufacture [`IdentityInfo`](crate::model::IdentityInfo).
-    pub fn builder() -> crate::model::identity_info::Builder {
-        crate::model::identity_info::Builder::default()
     }
 }
 
@@ -6283,6 +6324,13 @@ impl DomainDeliverabilityCampaign {
         self.esps.as_deref()
     }
 }
+impl DomainDeliverabilityCampaign {
+    /// Creates a new builder-style object to manufacture [`DomainDeliverabilityCampaign`](crate::model::DomainDeliverabilityCampaign).
+    pub fn builder() -> crate::model::domain_deliverability_campaign::Builder {
+        crate::model::domain_deliverability_campaign::Builder::default()
+    }
+}
+
 /// See [`DomainDeliverabilityCampaign`](crate::model::DomainDeliverabilityCampaign).
 pub mod domain_deliverability_campaign {
 
@@ -6491,12 +6539,6 @@ pub mod domain_deliverability_campaign {
         }
     }
 }
-impl DomainDeliverabilityCampaign {
-    /// Creates a new builder-style object to manufacture [`DomainDeliverabilityCampaign`](crate::model::DomainDeliverabilityCampaign).
-    pub fn builder() -> crate::model::domain_deliverability_campaign::Builder {
-        crate::model::domain_deliverability_campaign::Builder::default()
-    }
-}
 
 /// <p>An object that contains metadata related to a predictive inbox placement test.</p>
 #[non_exhaustive]
@@ -6549,6 +6591,13 @@ impl DeliverabilityTestReport {
         self.deliverability_test_status.as_ref()
     }
 }
+impl DeliverabilityTestReport {
+    /// Creates a new builder-style object to manufacture [`DeliverabilityTestReport`](crate::model::DeliverabilityTestReport).
+    pub fn builder() -> crate::model::deliverability_test_report::Builder {
+        crate::model::deliverability_test_report::Builder::default()
+    }
+}
+
 /// See [`DeliverabilityTestReport`](crate::model::DeliverabilityTestReport).
 pub mod deliverability_test_report {
 
@@ -6648,12 +6697,6 @@ pub mod deliverability_test_report {
                 deliverability_test_status: self.deliverability_test_status,
             }
         }
-    }
-}
-impl DeliverabilityTestReport {
-    /// Creates a new builder-style object to manufacture [`DeliverabilityTestReport`](crate::model::DeliverabilityTestReport).
-    pub fn builder() -> crate::model::deliverability_test_report::Builder {
-        crate::model::deliverability_test_report::Builder::default()
     }
 }
 
@@ -6795,6 +6838,13 @@ impl CustomVerificationEmailTemplateMetadata {
         self.failure_redirection_url.as_deref()
     }
 }
+impl CustomVerificationEmailTemplateMetadata {
+    /// Creates a new builder-style object to manufacture [`CustomVerificationEmailTemplateMetadata`](crate::model::CustomVerificationEmailTemplateMetadata).
+    pub fn builder() -> crate::model::custom_verification_email_template_metadata::Builder {
+        crate::model::custom_verification_email_template_metadata::Builder::default()
+    }
+}
+
 /// See [`CustomVerificationEmailTemplateMetadata`](crate::model::CustomVerificationEmailTemplateMetadata).
 pub mod custom_verification_email_template_metadata {
 
@@ -6886,12 +6936,6 @@ pub mod custom_verification_email_template_metadata {
         }
     }
 }
-impl CustomVerificationEmailTemplateMetadata {
-    /// Creates a new builder-style object to manufacture [`CustomVerificationEmailTemplateMetadata`](crate::model::CustomVerificationEmailTemplateMetadata).
-    pub fn builder() -> crate::model::custom_verification_email_template_metadata::Builder {
-        crate::model::custom_verification_email_template_metadata::Builder::default()
-    }
-}
 
 /// <p>A contact is the end-user who is receiving the email.</p>
 #[non_exhaustive]
@@ -6938,6 +6982,13 @@ impl Contact {
         self.last_updated_timestamp.as_ref()
     }
 }
+impl Contact {
+    /// Creates a new builder-style object to manufacture [`Contact`](crate::model::Contact).
+    pub fn builder() -> crate::model::contact::Builder {
+        crate::model::contact::Builder::default()
+    }
+}
+
 /// See [`Contact`](crate::model::Contact).
 pub mod contact {
 
@@ -7040,12 +7091,6 @@ pub mod contact {
         }
     }
 }
-impl Contact {
-    /// Creates a new builder-style object to manufacture [`Contact`](crate::model::Contact).
-    pub fn builder() -> crate::model::contact::Builder {
-        crate::model::contact::Builder::default()
-    }
-}
 
 /// <p>A filter that can be applied to a list of contacts.</p>
 #[non_exhaustive]
@@ -7068,6 +7113,13 @@ impl ListContactsFilter {
         self.topic_filter.as_ref()
     }
 }
+impl ListContactsFilter {
+    /// Creates a new builder-style object to manufacture [`ListContactsFilter`](crate::model::ListContactsFilter).
+    pub fn builder() -> crate::model::list_contacts_filter::Builder {
+        crate::model::list_contacts_filter::Builder::default()
+    }
+}
+
 /// See [`ListContactsFilter`](crate::model::ListContactsFilter).
 pub mod list_contacts_filter {
 
@@ -7114,12 +7166,6 @@ pub mod list_contacts_filter {
         }
     }
 }
-impl ListContactsFilter {
-    /// Creates a new builder-style object to manufacture [`ListContactsFilter`](crate::model::ListContactsFilter).
-    pub fn builder() -> crate::model::list_contacts_filter::Builder {
-        crate::model::list_contacts_filter::Builder::default()
-    }
-}
 
 /// <p>Used for filtering by a specific topic preference.</p>
 #[non_exhaustive]
@@ -7142,6 +7188,13 @@ impl TopicFilter {
         self.use_default_if_preference_unavailable
     }
 }
+impl TopicFilter {
+    /// Creates a new builder-style object to manufacture [`TopicFilter`](crate::model::TopicFilter).
+    pub fn builder() -> crate::model::topic_filter::Builder {
+        crate::model::topic_filter::Builder::default()
+    }
+}
+
 /// See [`TopicFilter`](crate::model::TopicFilter).
 pub mod topic_filter {
 
@@ -7187,12 +7240,6 @@ pub mod topic_filter {
         }
     }
 }
-impl TopicFilter {
-    /// Creates a new builder-style object to manufacture [`TopicFilter`](crate::model::TopicFilter).
-    pub fn builder() -> crate::model::topic_filter::Builder {
-        crate::model::topic_filter::Builder::default()
-    }
-}
 
 /// <p>A list that contains contacts that have subscribed to a particular topic or topics.</p>
 #[non_exhaustive]
@@ -7215,6 +7262,13 @@ impl ContactList {
         self.last_updated_timestamp.as_ref()
     }
 }
+impl ContactList {
+    /// Creates a new builder-style object to manufacture [`ContactList`](crate::model::ContactList).
+    pub fn builder() -> crate::model::contact_list::Builder {
+        crate::model::contact_list::Builder::default()
+    }
+}
+
 /// See [`ContactList`](crate::model::ContactList).
 pub mod contact_list {
 
@@ -7261,12 +7315,6 @@ pub mod contact_list {
         }
     }
 }
-impl ContactList {
-    /// Creates a new builder-style object to manufacture [`ContactList`](crate::model::ContactList).
-    pub fn builder() -> crate::model::contact_list::Builder {
-        crate::model::contact_list::Builder::default()
-    }
-}
 
 /// <p>An object that contains information about an email address that is on the suppression list for your account.</p>
 #[non_exhaustive]
@@ -7305,6 +7353,13 @@ impl SuppressedDestination {
         self.attributes.as_ref()
     }
 }
+impl SuppressedDestination {
+    /// Creates a new builder-style object to manufacture [`SuppressedDestination`](crate::model::SuppressedDestination).
+    pub fn builder() -> crate::model::suppressed_destination::Builder {
+        crate::model::suppressed_destination::Builder::default()
+    }
+}
+
 /// See [`SuppressedDestination`](crate::model::SuppressedDestination).
 pub mod suppressed_destination {
 
@@ -7381,12 +7436,6 @@ pub mod suppressed_destination {
         }
     }
 }
-impl SuppressedDestination {
-    /// Creates a new builder-style object to manufacture [`SuppressedDestination`](crate::model::SuppressedDestination).
-    pub fn builder() -> crate::model::suppressed_destination::Builder {
-        crate::model::suppressed_destination::Builder::default()
-    }
-}
 
 /// <p>An object that contains additional attributes that are related an email address that is on the suppression list for your account.</p>
 #[non_exhaustive]
@@ -7409,6 +7458,13 @@ impl SuppressedDestinationAttributes {
         self.feedback_id.as_deref()
     }
 }
+impl SuppressedDestinationAttributes {
+    /// Creates a new builder-style object to manufacture [`SuppressedDestinationAttributes`](crate::model::SuppressedDestinationAttributes).
+    pub fn builder() -> crate::model::suppressed_destination_attributes::Builder {
+        crate::model::suppressed_destination_attributes::Builder::default()
+    }
+}
+
 /// See [`SuppressedDestinationAttributes`](crate::model::SuppressedDestinationAttributes).
 pub mod suppressed_destination_attributes {
 
@@ -7449,12 +7505,6 @@ pub mod suppressed_destination_attributes {
         }
     }
 }
-impl SuppressedDestinationAttributes {
-    /// Creates a new builder-style object to manufacture [`SuppressedDestinationAttributes`](crate::model::SuppressedDestinationAttributes).
-    pub fn builder() -> crate::model::suppressed_destination_attributes::Builder {
-        crate::model::suppressed_destination_attributes::Builder::default()
-    }
-}
 
 /// <p>An object that contains the failure details about an import job.</p>
 #[non_exhaustive]
@@ -7477,6 +7527,13 @@ impl FailureInfo {
         self.error_message.as_deref()
     }
 }
+impl FailureInfo {
+    /// Creates a new builder-style object to manufacture [`FailureInfo`](crate::model::FailureInfo).
+    pub fn builder() -> crate::model::failure_info::Builder {
+        crate::model::failure_info::Builder::default()
+    }
+}
+
 /// See [`FailureInfo`](crate::model::FailureInfo).
 pub mod failure_info {
 
@@ -7523,12 +7580,6 @@ pub mod failure_info {
         }
     }
 }
-impl FailureInfo {
-    /// Creates a new builder-style object to manufacture [`FailureInfo`](crate::model::FailureInfo).
-    pub fn builder() -> crate::model::failure_info::Builder {
-        crate::model::failure_info::Builder::default()
-    }
-}
 
 /// <p>An object that contains details about the data source of the import job.</p>
 #[non_exhaustive]
@@ -7553,6 +7604,13 @@ impl ImportDataSource {
         self.data_format.as_ref()
     }
 }
+impl ImportDataSource {
+    /// Creates a new builder-style object to manufacture [`ImportDataSource`](crate::model::ImportDataSource).
+    pub fn builder() -> crate::model::import_data_source::Builder {
+        crate::model::import_data_source::Builder::default()
+    }
+}
+
 /// See [`ImportDataSource`](crate::model::ImportDataSource).
 pub mod import_data_source {
 
@@ -7596,12 +7654,6 @@ pub mod import_data_source {
                 data_format: self.data_format,
             }
         }
-    }
-}
-impl ImportDataSource {
-    /// Creates a new builder-style object to manufacture [`ImportDataSource`](crate::model::ImportDataSource).
-    pub fn builder() -> crate::model::import_data_source::Builder {
-        crate::model::import_data_source::Builder::default()
     }
 }
 
@@ -7741,6 +7793,13 @@ impl MailFromAttributes {
         self.behavior_on_mx_failure.as_ref()
     }
 }
+impl MailFromAttributes {
+    /// Creates a new builder-style object to manufacture [`MailFromAttributes`](crate::model::MailFromAttributes).
+    pub fn builder() -> crate::model::mail_from_attributes::Builder {
+        crate::model::mail_from_attributes::Builder::default()
+    }
+}
+
 /// See [`MailFromAttributes`](crate::model::MailFromAttributes).
 pub mod mail_from_attributes {
 
@@ -7817,12 +7876,6 @@ pub mod mail_from_attributes {
                 behavior_on_mx_failure: self.behavior_on_mx_failure,
             }
         }
-    }
-}
-impl MailFromAttributes {
-    /// Creates a new builder-style object to manufacture [`MailFromAttributes`](crate::model::MailFromAttributes).
-    pub fn builder() -> crate::model::mail_from_attributes::Builder {
-        crate::model::mail_from_attributes::Builder::default()
     }
 }
 
@@ -8041,6 +8094,13 @@ impl DkimAttributes {
         self.last_key_generation_timestamp.as_ref()
     }
 }
+impl DkimAttributes {
+    /// Creates a new builder-style object to manufacture [`DkimAttributes`](crate::model::DkimAttributes).
+    pub fn builder() -> crate::model::dkim_attributes::Builder {
+        crate::model::dkim_attributes::Builder::default()
+    }
+}
+
 /// See [`DkimAttributes`](crate::model::DkimAttributes).
 pub mod dkim_attributes {
 
@@ -8199,12 +8259,6 @@ pub mod dkim_attributes {
         }
     }
 }
-impl DkimAttributes {
-    /// Creates a new builder-style object to manufacture [`DkimAttributes`](crate::model::DkimAttributes).
-    pub fn builder() -> crate::model::dkim_attributes::Builder {
-        crate::model::dkim_attributes::Builder::default()
-    }
-}
 
 /// <p>An object that contains information about the volume of email sent on each day of the analysis period.</p>
 #[non_exhaustive]
@@ -8236,6 +8290,13 @@ impl DailyVolume {
         self.domain_isp_placements.as_deref()
     }
 }
+impl DailyVolume {
+    /// Creates a new builder-style object to manufacture [`DailyVolume`](crate::model::DailyVolume).
+    pub fn builder() -> crate::model::daily_volume::Builder {
+        crate::model::daily_volume::Builder::default()
+    }
+}
+
 /// See [`DailyVolume`](crate::model::DailyVolume).
 pub mod daily_volume {
 
@@ -8304,12 +8365,6 @@ pub mod daily_volume {
         }
     }
 }
-impl DailyVolume {
-    /// Creates a new builder-style object to manufacture [`DailyVolume`](crate::model::DailyVolume).
-    pub fn builder() -> crate::model::daily_volume::Builder {
-        crate::model::daily_volume::Builder::default()
-    }
-}
 
 /// <p>An object that contains inbox placement data for email sent from one of your email domains to a specific email provider.</p>
 #[non_exhaustive]
@@ -8353,6 +8408,13 @@ impl DomainIspPlacement {
         self.spam_percentage
     }
 }
+impl DomainIspPlacement {
+    /// Creates a new builder-style object to manufacture [`DomainIspPlacement`](crate::model::DomainIspPlacement).
+    pub fn builder() -> crate::model::domain_isp_placement::Builder {
+        crate::model::domain_isp_placement::Builder::default()
+    }
+}
+
 /// See [`DomainIspPlacement`](crate::model::DomainIspPlacement).
 pub mod domain_isp_placement {
 
@@ -8429,12 +8491,6 @@ pub mod domain_isp_placement {
         }
     }
 }
-impl DomainIspPlacement {
-    /// Creates a new builder-style object to manufacture [`DomainIspPlacement`](crate::model::DomainIspPlacement).
-    pub fn builder() -> crate::model::domain_isp_placement::Builder {
-        crate::model::domain_isp_placement::Builder::default()
-    }
-}
 
 /// <p>An object that contains information about the amount of email that was delivered to recipients.</p>
 #[non_exhaustive]
@@ -8471,6 +8527,13 @@ impl VolumeStatistics {
         self.projected_spam
     }
 }
+impl VolumeStatistics {
+    /// Creates a new builder-style object to manufacture [`VolumeStatistics`](crate::model::VolumeStatistics).
+    pub fn builder() -> crate::model::volume_statistics::Builder {
+        crate::model::volume_statistics::Builder::default()
+    }
+}
+
 /// See [`VolumeStatistics`](crate::model::VolumeStatistics).
 pub mod volume_statistics {
 
@@ -8535,12 +8598,6 @@ pub mod volume_statistics {
         }
     }
 }
-impl VolumeStatistics {
-    /// Creates a new builder-style object to manufacture [`VolumeStatistics`](crate::model::VolumeStatistics).
-    pub fn builder() -> crate::model::volume_statistics::Builder {
-        crate::model::volume_statistics::Builder::default()
-    }
-}
 
 /// <p>An object that contains information about email that was sent from the selected domain.</p>
 #[non_exhaustive]
@@ -8572,6 +8629,13 @@ impl OverallVolume {
         self.domain_isp_placements.as_deref()
     }
 }
+impl OverallVolume {
+    /// Creates a new builder-style object to manufacture [`OverallVolume`](crate::model::OverallVolume).
+    pub fn builder() -> crate::model::overall_volume::Builder {
+        crate::model::overall_volume::Builder::default()
+    }
+}
+
 /// See [`OverallVolume`](crate::model::OverallVolume).
 pub mod overall_volume {
 
@@ -8637,12 +8701,6 @@ pub mod overall_volume {
         }
     }
 }
-impl OverallVolume {
-    /// Creates a new builder-style object to manufacture [`OverallVolume`](crate::model::OverallVolume).
-    pub fn builder() -> crate::model::overall_volume::Builder {
-        crate::model::overall_volume::Builder::default()
-    }
-}
 
 /// <p>An object that describes how email sent during the predictive inbox placement test was handled by a certain email provider.</p>
 #[non_exhaustive]
@@ -8665,6 +8723,13 @@ impl IspPlacement {
         self.placement_statistics.as_ref()
     }
 }
+impl IspPlacement {
+    /// Creates a new builder-style object to manufacture [`IspPlacement`](crate::model::IspPlacement).
+    pub fn builder() -> crate::model::isp_placement::Builder {
+        crate::model::isp_placement::Builder::default()
+    }
+}
+
 /// See [`IspPlacement`](crate::model::IspPlacement).
 pub mod isp_placement {
 
@@ -8706,12 +8771,6 @@ pub mod isp_placement {
                 placement_statistics: self.placement_statistics,
             }
         }
-    }
-}
-impl IspPlacement {
-    /// Creates a new builder-style object to manufacture [`IspPlacement`](crate::model::IspPlacement).
-    pub fn builder() -> crate::model::isp_placement::Builder {
-        crate::model::isp_placement::Builder::default()
     }
 }
 
@@ -8757,6 +8816,13 @@ impl PlacementStatistics {
         self.dkim_percentage
     }
 }
+impl PlacementStatistics {
+    /// Creates a new builder-style object to manufacture [`PlacementStatistics`](crate::model::PlacementStatistics).
+    pub fn builder() -> crate::model::placement_statistics::Builder {
+        crate::model::placement_statistics::Builder::default()
+    }
+}
+
 /// See [`PlacementStatistics`](crate::model::PlacementStatistics).
 pub mod placement_statistics {
 
@@ -8831,12 +8897,6 @@ pub mod placement_statistics {
                 dkim_percentage: self.dkim_percentage,
             }
         }
-    }
-}
-impl PlacementStatistics {
-    /// Creates a new builder-style object to manufacture [`PlacementStatistics`](crate::model::PlacementStatistics).
-    pub fn builder() -> crate::model::placement_statistics::Builder {
-        crate::model::placement_statistics::Builder::default()
     }
 }
 
@@ -8983,6 +9043,13 @@ impl DedicatedIp {
         self.pool_name.as_deref()
     }
 }
+impl DedicatedIp {
+    /// Creates a new builder-style object to manufacture [`DedicatedIp`](crate::model::DedicatedIp).
+    pub fn builder() -> crate::model::dedicated_ip::Builder {
+        crate::model::dedicated_ip::Builder::default()
+    }
+}
+
 /// See [`DedicatedIp`](crate::model::DedicatedIp).
 pub mod dedicated_ip {
 
@@ -9056,12 +9123,6 @@ pub mod dedicated_ip {
                 pool_name: self.pool_name,
             }
         }
-    }
-}
-impl DedicatedIp {
-    /// Creates a new builder-style object to manufacture [`DedicatedIp`](crate::model::DedicatedIp).
-    pub fn builder() -> crate::model::dedicated_ip::Builder {
-        crate::model::dedicated_ip::Builder::default()
     }
 }
 
@@ -9184,6 +9245,13 @@ impl DedicatedIpPool {
         self.scaling_mode.as_ref()
     }
 }
+impl DedicatedIpPool {
+    /// Creates a new builder-style object to manufacture [`DedicatedIpPool`](crate::model::DedicatedIpPool).
+    pub fn builder() -> crate::model::dedicated_ip_pool::Builder {
+        crate::model::dedicated_ip_pool::Builder::default()
+    }
+}
+
 /// See [`DedicatedIpPool`](crate::model::DedicatedIpPool).
 pub mod dedicated_ip_pool {
 
@@ -9233,12 +9301,6 @@ pub mod dedicated_ip_pool {
                 scaling_mode: self.scaling_mode,
             }
         }
-    }
-}
-impl DedicatedIpPool {
-    /// Creates a new builder-style object to manufacture [`DedicatedIpPool`](crate::model::DedicatedIpPool).
-    pub fn builder() -> crate::model::dedicated_ip_pool::Builder {
-        crate::model::dedicated_ip_pool::Builder::default()
     }
 }
 
@@ -9394,6 +9456,13 @@ impl EventDestination {
         self.pinpoint_destination.as_ref()
     }
 }
+impl EventDestination {
+    /// Creates a new builder-style object to manufacture [`EventDestination`](crate::model::EventDestination).
+    pub fn builder() -> crate::model::event_destination::Builder {
+        crate::model::event_destination::Builder::default()
+    }
+}
+
 /// See [`EventDestination`](crate::model::EventDestination).
 pub mod event_destination {
 
@@ -9526,12 +9595,6 @@ pub mod event_destination {
         }
     }
 }
-impl EventDestination {
-    /// Creates a new builder-style object to manufacture [`EventDestination`](crate::model::EventDestination).
-    pub fn builder() -> crate::model::event_destination::Builder {
-        crate::model::event_destination::Builder::default()
-    }
-}
 
 /// <p>An object that contains information about the suppression list preferences for your account.</p>
 #[non_exhaustive]
@@ -9557,6 +9620,13 @@ impl SuppressionOptions {
         self.suppressed_reasons.as_deref()
     }
 }
+impl SuppressionOptions {
+    /// Creates a new builder-style object to manufacture [`SuppressionOptions`](crate::model::SuppressionOptions).
+    pub fn builder() -> crate::model::suppression_options::Builder {
+        crate::model::suppression_options::Builder::default()
+    }
+}
+
 /// See [`SuppressionOptions`](crate::model::SuppressionOptions).
 pub mod suppression_options {
 
@@ -9603,12 +9673,6 @@ pub mod suppression_options {
         }
     }
 }
-impl SuppressionOptions {
-    /// Creates a new builder-style object to manufacture [`SuppressionOptions`](crate::model::SuppressionOptions).
-    pub fn builder() -> crate::model::suppression_options::Builder {
-        crate::model::suppression_options::Builder::default()
-    }
-}
 
 /// <p>Used to enable or disable email sending for messages that use this configuration set in the current Amazon Web Services Region.</p>
 #[non_exhaustive]
@@ -9624,6 +9688,13 @@ impl SendingOptions {
         self.sending_enabled
     }
 }
+impl SendingOptions {
+    /// Creates a new builder-style object to manufacture [`SendingOptions`](crate::model::SendingOptions).
+    pub fn builder() -> crate::model::sending_options::Builder {
+        crate::model::sending_options::Builder::default()
+    }
+}
+
 /// See [`SendingOptions`](crate::model::SendingOptions).
 pub mod sending_options {
 
@@ -9652,12 +9723,6 @@ pub mod sending_options {
         }
     }
 }
-impl SendingOptions {
-    /// Creates a new builder-style object to manufacture [`SendingOptions`](crate::model::SendingOptions).
-    pub fn builder() -> crate::model::sending_options::Builder {
-        crate::model::sending_options::Builder::default()
-    }
-}
 
 /// <p>Enable or disable collection of reputation metrics for emails that you send using this configuration set in the current Amazon Web Services Region. </p>
 #[non_exhaustive]
@@ -9680,6 +9745,13 @@ impl ReputationOptions {
         self.last_fresh_start.as_ref()
     }
 }
+impl ReputationOptions {
+    /// Creates a new builder-style object to manufacture [`ReputationOptions`](crate::model::ReputationOptions).
+    pub fn builder() -> crate::model::reputation_options::Builder {
+        crate::model::reputation_options::Builder::default()
+    }
+}
+
 /// See [`ReputationOptions`](crate::model::ReputationOptions).
 pub mod reputation_options {
 
@@ -9723,12 +9795,6 @@ pub mod reputation_options {
         }
     }
 }
-impl ReputationOptions {
-    /// Creates a new builder-style object to manufacture [`ReputationOptions`](crate::model::ReputationOptions).
-    pub fn builder() -> crate::model::reputation_options::Builder {
-        crate::model::reputation_options::Builder::default()
-    }
-}
 
 /// <p>Used to associate a configuration set with a dedicated IP pool.</p>
 #[non_exhaustive]
@@ -9751,6 +9817,13 @@ impl DeliveryOptions {
         self.sending_pool_name.as_deref()
     }
 }
+impl DeliveryOptions {
+    /// Creates a new builder-style object to manufacture [`DeliveryOptions`](crate::model::DeliveryOptions).
+    pub fn builder() -> crate::model::delivery_options::Builder {
+        crate::model::delivery_options::Builder::default()
+    }
+}
+
 /// See [`DeliveryOptions`](crate::model::DeliveryOptions).
 pub mod delivery_options {
 
@@ -9797,12 +9870,6 @@ pub mod delivery_options {
         }
     }
 }
-impl DeliveryOptions {
-    /// Creates a new builder-style object to manufacture [`DeliveryOptions`](crate::model::DeliveryOptions).
-    pub fn builder() -> crate::model::delivery_options::Builder {
-        crate::model::delivery_options::Builder::default()
-    }
-}
 
 /// <p>An object that defines the tracking options for a configuration set. When you use the Amazon SES API v2 to send an email, it contains an invisible image that's used to track when recipients open your email. If your email contains links, those links are changed slightly in order to track when recipients click them.</p>
 /// <p>These images and links include references to a domain operated by Amazon Web Services. You can optionally configure the Amazon SES to use a domain that you operate for these images and links.</p>
@@ -9819,6 +9886,13 @@ impl TrackingOptions {
         self.custom_redirect_domain.as_deref()
     }
 }
+impl TrackingOptions {
+    /// Creates a new builder-style object to manufacture [`TrackingOptions`](crate::model::TrackingOptions).
+    pub fn builder() -> crate::model::tracking_options::Builder {
+        crate::model::tracking_options::Builder::default()
+    }
+}
+
 /// See [`TrackingOptions`](crate::model::TrackingOptions).
 pub mod tracking_options {
 
@@ -9850,12 +9924,6 @@ pub mod tracking_options {
         }
     }
 }
-impl TrackingOptions {
-    /// Creates a new builder-style object to manufacture [`TrackingOptions`](crate::model::TrackingOptions).
-    pub fn builder() -> crate::model::tracking_options::Builder {
-        crate::model::tracking_options::Builder::default()
-    }
-}
 
 /// <p>An object that contains information about a blacklisting event that impacts one of the dedicated IP addresses that is associated with your account.</p>
 #[non_exhaustive]
@@ -9885,6 +9953,13 @@ impl BlacklistEntry {
         self.description.as_deref()
     }
 }
+impl BlacklistEntry {
+    /// Creates a new builder-style object to manufacture [`BlacklistEntry`](crate::model::BlacklistEntry).
+    pub fn builder() -> crate::model::blacklist_entry::Builder {
+        crate::model::blacklist_entry::Builder::default()
+    }
+}
+
 /// See [`BlacklistEntry`](crate::model::BlacklistEntry).
 pub mod blacklist_entry {
 
@@ -9938,12 +10013,6 @@ pub mod blacklist_entry {
                 description: self.description,
             }
         }
-    }
-}
-impl BlacklistEntry {
-    /// Creates a new builder-style object to manufacture [`BlacklistEntry`](crate::model::BlacklistEntry).
-    pub fn builder() -> crate::model::blacklist_entry::Builder {
-        crate::model::blacklist_entry::Builder::default()
     }
 }
 
@@ -10021,6 +10090,13 @@ impl std::fmt::Debug for AccountDetails {
         formatter.finish()
     }
 }
+impl AccountDetails {
+    /// Creates a new builder-style object to manufacture [`AccountDetails`](crate::model::AccountDetails).
+    pub fn builder() -> crate::model::account_details::Builder {
+        crate::model::account_details::Builder::default()
+    }
+}
+
 /// See [`AccountDetails`](crate::model::AccountDetails).
 pub mod account_details {
 
@@ -10154,12 +10230,6 @@ pub mod account_details {
         }
     }
 }
-impl AccountDetails {
-    /// Creates a new builder-style object to manufacture [`AccountDetails`](crate::model::AccountDetails).
-    pub fn builder() -> crate::model::account_details::Builder {
-        crate::model::account_details::Builder::default()
-    }
-}
 
 /// <p>An object that contains information about your account details review.</p>
 #[non_exhaustive]
@@ -10194,6 +10264,13 @@ impl ReviewDetails {
         self.case_id.as_deref()
     }
 }
+impl ReviewDetails {
+    /// Creates a new builder-style object to manufacture [`ReviewDetails`](crate::model::ReviewDetails).
+    pub fn builder() -> crate::model::review_details::Builder {
+        crate::model::review_details::Builder::default()
+    }
+}
+
 /// See [`ReviewDetails`](crate::model::ReviewDetails).
 pub mod review_details {
 
@@ -10247,12 +10324,6 @@ pub mod review_details {
                 case_id: self.case_id,
             }
         }
-    }
-}
-impl ReviewDetails {
-    /// Creates a new builder-style object to manufacture [`ReviewDetails`](crate::model::ReviewDetails).
-    pub fn builder() -> crate::model::review_details::Builder {
-        crate::model::review_details::Builder::default()
     }
 }
 
@@ -10380,6 +10451,13 @@ impl SuppressionAttributes {
         self.suppressed_reasons.as_deref()
     }
 }
+impl SuppressionAttributes {
+    /// Creates a new builder-style object to manufacture [`SuppressionAttributes`](crate::model::SuppressionAttributes).
+    pub fn builder() -> crate::model::suppression_attributes::Builder {
+        crate::model::suppression_attributes::Builder::default()
+    }
+}
+
 /// See [`SuppressionAttributes`](crate::model::SuppressionAttributes).
 pub mod suppression_attributes {
 
@@ -10426,12 +10504,6 @@ pub mod suppression_attributes {
         }
     }
 }
-impl SuppressionAttributes {
-    /// Creates a new builder-style object to manufacture [`SuppressionAttributes`](crate::model::SuppressionAttributes).
-    pub fn builder() -> crate::model::suppression_attributes::Builder {
-        crate::model::suppression_attributes::Builder::default()
-    }
-}
 
 /// <p>An object that contains information about the per-day and per-second sending limits for your Amazon SES account in the current Amazon Web Services Region.</p>
 #[non_exhaustive]
@@ -10461,6 +10533,13 @@ impl SendQuota {
         self.sent_last24_hours
     }
 }
+impl SendQuota {
+    /// Creates a new builder-style object to manufacture [`SendQuota`](crate::model::SendQuota).
+    pub fn builder() -> crate::model::send_quota::Builder {
+        crate::model::send_quota::Builder::default()
+    }
+}
+
 /// See [`SendQuota`](crate::model::SendQuota).
 pub mod send_quota {
 
@@ -10513,12 +10592,6 @@ pub mod send_quota {
         }
     }
 }
-impl SendQuota {
-    /// Creates a new builder-style object to manufacture [`SendQuota`](crate::model::SendQuota).
-    pub fn builder() -> crate::model::send_quota::Builder {
-        crate::model::send_quota::Builder::default()
-    }
-}
 
 /// <p>An error corresponding to the unsuccessful processing of a single metric data query.</p>
 #[non_exhaustive]
@@ -10556,6 +10629,13 @@ impl MetricDataError {
         self.message.as_deref()
     }
 }
+impl MetricDataError {
+    /// Creates a new builder-style object to manufacture [`MetricDataError`](crate::model::MetricDataError).
+    pub fn builder() -> crate::model::metric_data_error::Builder {
+        crate::model::metric_data_error::Builder::default()
+    }
+}
+
 /// See [`MetricDataError`](crate::model::MetricDataError).
 pub mod metric_data_error {
 
@@ -10617,12 +10697,6 @@ pub mod metric_data_error {
                 message: self.message,
             }
         }
-    }
-}
-impl MetricDataError {
-    /// Creates a new builder-style object to manufacture [`MetricDataError`](crate::model::MetricDataError).
-    pub fn builder() -> crate::model::metric_data_error::Builder {
-        crate::model::metric_data_error::Builder::default()
     }
 }
 
@@ -10744,6 +10818,13 @@ impl MetricDataResult {
         self.values.as_deref()
     }
 }
+impl MetricDataResult {
+    /// Creates a new builder-style object to manufacture [`MetricDataResult`](crate::model::MetricDataResult).
+    pub fn builder() -> crate::model::metric_data_result::Builder {
+        crate::model::metric_data_result::Builder::default()
+    }
+}
+
 /// See [`MetricDataResult`](crate::model::MetricDataResult).
 pub mod metric_data_result {
 
@@ -10809,12 +10890,6 @@ pub mod metric_data_result {
                 values: self.values,
             }
         }
-    }
-}
-impl MetricDataResult {
-    /// Creates a new builder-style object to manufacture [`MetricDataResult`](crate::model::MetricDataResult).
-    pub fn builder() -> crate::model::metric_data_result::Builder {
-        crate::model::metric_data_result::Builder::default()
     }
 }
 
@@ -10897,6 +10972,13 @@ impl BatchGetMetricDataQuery {
         self.end_date.as_ref()
     }
 }
+impl BatchGetMetricDataQuery {
+    /// Creates a new builder-style object to manufacture [`BatchGetMetricDataQuery`](crate::model::BatchGetMetricDataQuery).
+    pub fn builder() -> crate::model::batch_get_metric_data_query::Builder {
+        crate::model::batch_get_metric_data_query::Builder::default()
+    }
+}
+
 /// See [`BatchGetMetricDataQuery`](crate::model::BatchGetMetricDataQuery).
 pub mod batch_get_metric_data_query {
 
@@ -11033,12 +11115,6 @@ pub mod batch_get_metric_data_query {
                 end_date: self.end_date,
             }
         }
-    }
-}
-impl BatchGetMetricDataQuery {
-    /// Creates a new builder-style object to manufacture [`BatchGetMetricDataQuery`](crate::model::BatchGetMetricDataQuery).
-    pub fn builder() -> crate::model::batch_get_metric_data_query::Builder {
-        crate::model::batch_get_metric_data_query::Builder::default()
     }
 }
 

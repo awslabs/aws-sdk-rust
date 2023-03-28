@@ -4,7 +4,7 @@
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`create_signaling_channel`](crate::client::Client::create_signaling_channel).
 ///
-/// See [`crate::client::fluent_builders::CreateSignalingChannel`] for more details about the operation.
+/// `ParseStrictResponse` impl for `CreateSignalingChannel`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateSignalingChannel {
     _private: (),
@@ -39,7 +39,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateSignalingChannel {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`create_stream`](crate::client::Client::create_stream).
 ///
-/// See [`crate::client::fluent_builders::CreateStream`] for more details about the operation.
+/// `ParseStrictResponse` impl for `CreateStream`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateStream {
     _private: (),
@@ -72,7 +72,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateStream {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`delete_signaling_channel`](crate::client::Client::delete_signaling_channel).
 ///
-/// See [`crate::client::fluent_builders::DeleteSignalingChannel`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DeleteSignalingChannel`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteSignalingChannel {
     _private: (),
@@ -107,7 +107,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteSignalingChannel {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`delete_stream`](crate::client::Client::delete_stream).
 ///
-/// See [`crate::client::fluent_builders::DeleteStream`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DeleteStream`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteStream {
     _private: (),
@@ -140,7 +140,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteStream {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`describe_edge_configuration`](crate::client::Client::describe_edge_configuration).
 ///
-/// See [`crate::client::fluent_builders::DescribeEdgeConfiguration`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DescribeEdgeConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeEdgeConfiguration {
     _private: (),
@@ -175,7 +175,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeEdgeConfiguratio
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`describe_image_generation_configuration`](crate::client::Client::describe_image_generation_configuration).
 ///
-/// See [`crate::client::fluent_builders::DescribeImageGenerationConfiguration`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DescribeImageGenerationConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeImageGenerationConfiguration {
     _private: (),
@@ -210,7 +210,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeImageGenerationC
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`describe_mapped_resource_configuration`](crate::client::Client::describe_mapped_resource_configuration).
 ///
-/// See [`crate::client::fluent_builders::DescribeMappedResourceConfiguration`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DescribeMappedResourceConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeMappedResourceConfiguration {
     _private: (),
@@ -245,7 +245,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeMappedResourceCo
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`describe_media_storage_configuration`](crate::client::Client::describe_media_storage_configuration).
 ///
-/// See [`crate::client::fluent_builders::DescribeMediaStorageConfiguration`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DescribeMediaStorageConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeMediaStorageConfiguration {
     _private: (),
@@ -280,7 +280,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeMediaStorageConf
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`describe_notification_configuration`](crate::client::Client::describe_notification_configuration).
 ///
-/// See [`crate::client::fluent_builders::DescribeNotificationConfiguration`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DescribeNotificationConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeNotificationConfiguration {
     _private: (),
@@ -315,7 +315,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeNotificationConf
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`describe_signaling_channel`](crate::client::Client::describe_signaling_channel).
 ///
-/// See [`crate::client::fluent_builders::DescribeSignalingChannel`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DescribeSignalingChannel`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeSignalingChannel {
     _private: (),
@@ -350,7 +350,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeSignalingChannel
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`describe_stream`](crate::client::Client::describe_stream).
 ///
-/// See [`crate::client::fluent_builders::DescribeStream`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DescribeStream`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeStream {
     _private: (),
@@ -383,7 +383,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeStream {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`get_data_endpoint`](crate::client::Client::get_data_endpoint).
 ///
-/// See [`crate::client::fluent_builders::GetDataEndpoint`] for more details about the operation.
+/// `ParseStrictResponse` impl for `GetDataEndpoint`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetDataEndpoint {
     _private: (),
@@ -418,7 +418,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDataEndpoint {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`get_signaling_channel_endpoint`](crate::client::Client::get_signaling_channel_endpoint).
 ///
-/// See [`crate::client::fluent_builders::GetSignalingChannelEndpoint`] for more details about the operation.
+/// `ParseStrictResponse` impl for `GetSignalingChannelEndpoint`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetSignalingChannelEndpoint {
     _private: (),
@@ -453,7 +453,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSignalingChannelEndpo
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_signaling_channels`](crate::client::Client::list_signaling_channels).
 ///
-/// See [`crate::client::fluent_builders::ListSignalingChannels`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListSignalingChannels`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListSignalingChannels {
     _private: (),
@@ -488,7 +488,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListSignalingChannels {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_streams`](crate::client::Client::list_streams).
 ///
-/// See [`crate::client::fluent_builders::ListStreams`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListStreams`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListStreams {
     _private: (),
@@ -521,7 +521,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListStreams {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
 ///
-/// See [`crate::client::fluent_builders::ListTagsForResource`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTagsForResource {
     _private: (),
@@ -556,7 +556,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_tags_for_stream`](crate::client::Client::list_tags_for_stream).
 ///
-/// See [`crate::client::fluent_builders::ListTagsForStream`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListTagsForStream`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTagsForStream {
     _private: (),
@@ -591,7 +591,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForStream {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`start_edge_configuration_update`](crate::client::Client::start_edge_configuration_update).
 ///
-/// See [`crate::client::fluent_builders::StartEdgeConfigurationUpdate`] for more details about the operation.
+/// `ParseStrictResponse` impl for `StartEdgeConfigurationUpdate`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StartEdgeConfigurationUpdate {
     _private: (),
@@ -626,7 +626,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartEdgeConfigurationUp
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`tag_resource`](crate::client::Client::tag_resource).
 ///
-/// See [`crate::client::fluent_builders::TagResource`] for more details about the operation.
+/// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct TagResource {
     _private: (),
@@ -659,7 +659,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`tag_stream`](crate::client::Client::tag_stream).
 ///
-/// See [`crate::client::fluent_builders::TagStream`] for more details about the operation.
+/// `ParseStrictResponse` impl for `TagStream`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct TagStream {
     _private: (),
@@ -691,7 +691,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagStream {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`untag_resource`](crate::client::Client::untag_resource).
 ///
-/// See [`crate::client::fluent_builders::UntagResource`] for more details about the operation.
+/// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UntagResource {
     _private: (),
@@ -724,7 +724,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`untag_stream`](crate::client::Client::untag_stream).
 ///
-/// See [`crate::client::fluent_builders::UntagStream`] for more details about the operation.
+/// `ParseStrictResponse` impl for `UntagStream`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UntagStream {
     _private: (),
@@ -757,7 +757,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagStream {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`update_data_retention`](crate::client::Client::update_data_retention).
 ///
-/// See [`crate::client::fluent_builders::UpdateDataRetention`] for more details about the operation.
+/// `ParseStrictResponse` impl for `UpdateDataRetention`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateDataRetention {
     _private: (),
@@ -792,7 +792,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateDataRetention {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`update_image_generation_configuration`](crate::client::Client::update_image_generation_configuration).
 ///
-/// See [`crate::client::fluent_builders::UpdateImageGenerationConfiguration`] for more details about the operation.
+/// `ParseStrictResponse` impl for `UpdateImageGenerationConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateImageGenerationConfiguration {
     _private: (),
@@ -827,7 +827,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateImageGenerationCon
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`update_media_storage_configuration`](crate::client::Client::update_media_storage_configuration).
 ///
-/// See [`crate::client::fluent_builders::UpdateMediaStorageConfiguration`] for more details about the operation.
+/// `ParseStrictResponse` impl for `UpdateMediaStorageConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateMediaStorageConfiguration {
     _private: (),
@@ -862,7 +862,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateMediaStorageConfig
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`update_notification_configuration`](crate::client::Client::update_notification_configuration).
 ///
-/// See [`crate::client::fluent_builders::UpdateNotificationConfiguration`] for more details about the operation.
+/// `ParseStrictResponse` impl for `UpdateNotificationConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateNotificationConfiguration {
     _private: (),
@@ -897,7 +897,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateNotificationConfig
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`update_signaling_channel`](crate::client::Client::update_signaling_channel).
 ///
-/// See [`crate::client::fluent_builders::UpdateSignalingChannel`] for more details about the operation.
+/// `ParseStrictResponse` impl for `UpdateSignalingChannel`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateSignalingChannel {
     _private: (),
@@ -932,7 +932,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateSignalingChannel {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`update_stream`](crate::client::Client::update_stream).
 ///
-/// See [`crate::client::fluent_builders::UpdateStream`] for more details about the operation.
+/// `ParseStrictResponse` impl for `UpdateStream`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateStream {
     _private: (),

@@ -56,6 +56,13 @@ impl User {
         self.arn.as_deref()
     }
 }
+impl User {
+    /// Creates a new builder-style object to manufacture [`User`](crate::model::User).
+    pub fn builder() -> crate::model::user::Builder {
+        crate::model::user::Builder::default()
+    }
+}
+
 /// See [`User`](crate::model::User).
 pub mod user {
 
@@ -174,12 +181,6 @@ pub mod user {
         }
     }
 }
-impl User {
-    /// Creates a new builder-style object to manufacture [`User`](crate::model::User).
-    pub fn builder() -> crate::model::user::Builder {
-        crate::model::user::Builder::default()
-    }
-}
 
 /// <p>Denotes the user's authentication properties, such as whether it requires a password to authenticate. Used in output responses.</p>
 #[non_exhaustive]
@@ -202,6 +203,13 @@ impl Authentication {
         self.password_count
     }
 }
+impl Authentication {
+    /// Creates a new builder-style object to manufacture [`Authentication`](crate::model::Authentication).
+    pub fn builder() -> crate::model::authentication::Builder {
+        crate::model::authentication::Builder::default()
+    }
+}
+
 /// See [`Authentication`](crate::model::Authentication).
 pub mod authentication {
 
@@ -243,12 +251,6 @@ pub mod authentication {
                 password_count: self.password_count,
             }
         }
-    }
-}
-impl Authentication {
-    /// Creates a new builder-style object to manufacture [`Authentication`](crate::model::Authentication).
-    pub fn builder() -> crate::model::authentication::Builder {
-        crate::model::authentication::Builder::default()
     }
 }
 
@@ -365,6 +367,13 @@ impl AuthenticationMode {
         self.passwords.as_deref()
     }
 }
+impl AuthenticationMode {
+    /// Creates a new builder-style object to manufacture [`AuthenticationMode`](crate::model::AuthenticationMode).
+    pub fn builder() -> crate::model::authentication_mode::Builder {
+        crate::model::authentication_mode::Builder::default()
+    }
+}
+
 /// See [`AuthenticationMode`](crate::model::AuthenticationMode).
 pub mod authentication_mode {
 
@@ -415,12 +424,6 @@ pub mod authentication_mode {
                 passwords: self.passwords,
             }
         }
-    }
-}
-impl AuthenticationMode {
-    /// Creates a new builder-style object to manufacture [`AuthenticationMode`](crate::model::AuthenticationMode).
-    pub fn builder() -> crate::model::authentication_mode::Builder {
-        crate::model::authentication_mode::Builder::default()
     }
 }
 
@@ -558,6 +561,13 @@ impl SubnetGroup {
         self.arn.as_deref()
     }
 }
+impl SubnetGroup {
+    /// Creates a new builder-style object to manufacture [`SubnetGroup`](crate::model::SubnetGroup).
+    pub fn builder() -> crate::model::subnet_group::Builder {
+        crate::model::subnet_group::Builder::default()
+    }
+}
+
 /// See [`SubnetGroup`](crate::model::SubnetGroup).
 pub mod subnet_group {
 
@@ -643,12 +653,6 @@ pub mod subnet_group {
         }
     }
 }
-impl SubnetGroup {
-    /// Creates a new builder-style object to manufacture [`SubnetGroup`](crate::model::SubnetGroup).
-    pub fn builder() -> crate::model::subnet_group::Builder {
-        crate::model::subnet_group::Builder::default()
-    }
-}
 
 /// <p>Represents the subnet associated with a cluster. This parameter refers to subnets defined in Amazon Virtual Private Cloud (Amazon VPC) and used with MemoryDB.</p>
 #[non_exhaustive]
@@ -671,6 +675,13 @@ impl Subnet {
         self.availability_zone.as_ref()
     }
 }
+impl Subnet {
+    /// Creates a new builder-style object to manufacture [`Subnet`](crate::model::Subnet).
+    pub fn builder() -> crate::model::subnet::Builder {
+        crate::model::subnet::Builder::default()
+    }
+}
+
 /// See [`Subnet`](crate::model::Subnet).
 pub mod subnet {
 
@@ -714,12 +725,6 @@ pub mod subnet {
         }
     }
 }
-impl Subnet {
-    /// Creates a new builder-style object to manufacture [`Subnet`](crate::model::Subnet).
-    pub fn builder() -> crate::model::subnet::Builder {
-        crate::model::subnet::Builder::default()
-    }
-}
 
 /// <p>Indicates if the cluster has a Multi-AZ configuration (multiaz) or not (singleaz).</p>
 #[non_exhaustive]
@@ -735,6 +740,13 @@ impl AvailabilityZone {
         self.name.as_deref()
     }
 }
+impl AvailabilityZone {
+    /// Creates a new builder-style object to manufacture [`AvailabilityZone`](crate::model::AvailabilityZone).
+    pub fn builder() -> crate::model::availability_zone::Builder {
+        crate::model::availability_zone::Builder::default()
+    }
+}
+
 /// See [`AvailabilityZone`](crate::model::AvailabilityZone).
 pub mod availability_zone {
 
@@ -759,12 +771,6 @@ pub mod availability_zone {
         pub fn build(self) -> crate::model::AvailabilityZone {
             crate::model::AvailabilityZone { name: self.name }
         }
-    }
-}
-impl AvailabilityZone {
-    /// Creates a new builder-style object to manufacture [`AvailabilityZone`](crate::model::AvailabilityZone).
-    pub fn builder() -> crate::model::availability_zone::Builder {
-        crate::model::availability_zone::Builder::default()
     }
 }
 
@@ -803,6 +809,13 @@ impl ParameterGroup {
         self.arn.as_deref()
     }
 }
+impl ParameterGroup {
+    /// Creates a new builder-style object to manufacture [`ParameterGroup`](crate::model::ParameterGroup).
+    pub fn builder() -> crate::model::parameter_group::Builder {
+        crate::model::parameter_group::Builder::default()
+    }
+}
+
 /// See [`ParameterGroup`](crate::model::ParameterGroup).
 pub mod parameter_group {
 
@@ -867,12 +880,6 @@ pub mod parameter_group {
         }
     }
 }
-impl ParameterGroup {
-    /// Creates a new builder-style object to manufacture [`ParameterGroup`](crate::model::ParameterGroup).
-    pub fn builder() -> crate::model::parameter_group::Builder {
-        crate::model::parameter_group::Builder::default()
-    }
-}
 
 /// <p>Describes a name-value pair that is used to update the value of a parameter.</p>
 #[non_exhaustive]
@@ -895,6 +902,13 @@ impl ParameterNameValue {
         self.parameter_value.as_deref()
     }
 }
+impl ParameterNameValue {
+    /// Creates a new builder-style object to manufacture [`ParameterNameValue`](crate::model::ParameterNameValue).
+    pub fn builder() -> crate::model::parameter_name_value::Builder {
+        crate::model::parameter_name_value::Builder::default()
+    }
+}
+
 /// See [`ParameterNameValue`](crate::model::ParameterNameValue).
 pub mod parameter_name_value {
 
@@ -939,12 +953,6 @@ pub mod parameter_name_value {
                 parameter_value: self.parameter_value,
             }
         }
-    }
-}
-impl ParameterNameValue {
-    /// Creates a new builder-style object to manufacture [`ParameterNameValue`](crate::model::ParameterNameValue).
-    pub fn builder() -> crate::model::parameter_name_value::Builder {
-        crate::model::parameter_name_value::Builder::default()
     }
 }
 
@@ -1137,6 +1145,13 @@ impl Cluster {
         self.data_tiering.as_ref()
     }
 }
+impl Cluster {
+    /// Creates a new builder-style object to manufacture [`Cluster`](crate::model::Cluster).
+    pub fn builder() -> crate::model::cluster::Builder {
+        crate::model::cluster::Builder::default()
+    }
+}
+
 /// See [`Cluster`](crate::model::Cluster).
 pub mod cluster {
 
@@ -1523,12 +1538,6 @@ pub mod cluster {
         }
     }
 }
-impl Cluster {
-    /// Creates a new builder-style object to manufacture [`Cluster`](crate::model::Cluster).
-    pub fn builder() -> crate::model::cluster::Builder {
-        crate::model::cluster::Builder::default()
-    }
-}
 
 /// When writing a match expression against `DataTieringStatus`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -1643,6 +1652,13 @@ impl SecurityGroupMembership {
         self.status.as_deref()
     }
 }
+impl SecurityGroupMembership {
+    /// Creates a new builder-style object to manufacture [`SecurityGroupMembership`](crate::model::SecurityGroupMembership).
+    pub fn builder() -> crate::model::security_group_membership::Builder {
+        crate::model::security_group_membership::Builder::default()
+    }
+}
+
 /// See [`SecurityGroupMembership`](crate::model::SecurityGroupMembership).
 pub mod security_group_membership {
 
@@ -1686,12 +1702,6 @@ pub mod security_group_membership {
         }
     }
 }
-impl SecurityGroupMembership {
-    /// Creates a new builder-style object to manufacture [`SecurityGroupMembership`](crate::model::SecurityGroupMembership).
-    pub fn builder() -> crate::model::security_group_membership::Builder {
-        crate::model::security_group_membership::Builder::default()
-    }
-}
 
 /// <p>Represents the information required for client programs to connect to the cluster and its nodes.</p>
 #[non_exhaustive]
@@ -1714,6 +1724,13 @@ impl Endpoint {
         self.port
     }
 }
+impl Endpoint {
+    /// Creates a new builder-style object to manufacture [`Endpoint`](crate::model::Endpoint).
+    pub fn builder() -> crate::model::endpoint::Builder {
+        crate::model::endpoint::Builder::default()
+    }
+}
+
 /// See [`Endpoint`](crate::model::Endpoint).
 pub mod endpoint {
 
@@ -1752,12 +1769,6 @@ pub mod endpoint {
                 port: self.port.unwrap_or_default(),
             }
         }
-    }
-}
-impl Endpoint {
-    /// Creates a new builder-style object to manufacture [`Endpoint`](crate::model::Endpoint).
-    pub fn builder() -> crate::model::endpoint::Builder {
-        crate::model::endpoint::Builder::default()
     }
 }
 
@@ -1893,6 +1904,13 @@ impl Shard {
         self.number_of_nodes
     }
 }
+impl Shard {
+    /// Creates a new builder-style object to manufacture [`Shard`](crate::model::Shard).
+    pub fn builder() -> crate::model::shard::Builder {
+        crate::model::shard::Builder::default()
+    }
+}
+
 /// See [`Shard`](crate::model::Shard).
 pub mod shard {
 
@@ -1978,12 +1996,6 @@ pub mod shard {
         }
     }
 }
-impl Shard {
-    /// Creates a new builder-style object to manufacture [`Shard`](crate::model::Shard).
-    pub fn builder() -> crate::model::shard::Builder {
-        crate::model::shard::Builder::default()
-    }
-}
 
 /// <p>Represents an individual node within a cluster. Each node runs its own instance of the cluster's protocol-compliant caching software.</p>
 #[non_exhaustive]
@@ -2027,6 +2039,13 @@ impl Node {
         self.endpoint.as_ref()
     }
 }
+impl Node {
+    /// Creates a new builder-style object to manufacture [`Node`](crate::model::Node).
+    pub fn builder() -> crate::model::node::Builder {
+        crate::model::node::Builder::default()
+    }
+}
+
 /// See [`Node`](crate::model::Node).
 pub mod node {
 
@@ -2109,12 +2128,6 @@ pub mod node {
         }
     }
 }
-impl Node {
-    /// Creates a new builder-style object to manufacture [`Node`](crate::model::Node).
-    pub fn builder() -> crate::model::node::Builder {
-        crate::model::node::Builder::default()
-    }
-}
 
 /// <p>A list of updates being applied to the cluster</p>
 #[non_exhaustive]
@@ -2147,6 +2160,13 @@ impl ClusterPendingUpdates {
         self.service_updates.as_deref()
     }
 }
+impl ClusterPendingUpdates {
+    /// Creates a new builder-style object to manufacture [`ClusterPendingUpdates`](crate::model::ClusterPendingUpdates).
+    pub fn builder() -> crate::model::cluster_pending_updates::Builder {
+        crate::model::cluster_pending_updates::Builder::default()
+    }
+}
+
 /// See [`ClusterPendingUpdates`](crate::model::ClusterPendingUpdates).
 pub mod cluster_pending_updates {
 
@@ -2218,12 +2238,6 @@ pub mod cluster_pending_updates {
         }
     }
 }
-impl ClusterPendingUpdates {
-    /// Creates a new builder-style object to manufacture [`ClusterPendingUpdates`](crate::model::ClusterPendingUpdates).
-    pub fn builder() -> crate::model::cluster_pending_updates::Builder {
-        crate::model::cluster_pending_updates::Builder::default()
-    }
-}
 
 /// <p>Update action that has yet to be processed for the corresponding apply/stop request</p>
 #[non_exhaustive]
@@ -2246,6 +2260,13 @@ impl PendingModifiedServiceUpdate {
         self.status.as_ref()
     }
 }
+impl PendingModifiedServiceUpdate {
+    /// Creates a new builder-style object to manufacture [`PendingModifiedServiceUpdate`](crate::model::PendingModifiedServiceUpdate).
+    pub fn builder() -> crate::model::pending_modified_service_update::Builder {
+        crate::model::pending_modified_service_update::Builder::default()
+    }
+}
+
 /// See [`PendingModifiedServiceUpdate`](crate::model::PendingModifiedServiceUpdate).
 pub mod pending_modified_service_update {
 
@@ -2290,12 +2311,6 @@ pub mod pending_modified_service_update {
                 status: self.status,
             }
         }
-    }
-}
-impl PendingModifiedServiceUpdate {
-    /// Creates a new builder-style object to manufacture [`PendingModifiedServiceUpdate`](crate::model::PendingModifiedServiceUpdate).
-    pub fn builder() -> crate::model::pending_modified_service_update::Builder {
-        crate::model::pending_modified_service_update::Builder::default()
     }
 }
 
@@ -2415,6 +2430,13 @@ impl AcLsUpdateStatus {
         self.acl_to_apply.as_deref()
     }
 }
+impl AcLsUpdateStatus {
+    /// Creates a new builder-style object to manufacture [`AcLsUpdateStatus`](crate::model::AcLsUpdateStatus).
+    pub fn builder() -> crate::model::ac_ls_update_status::Builder {
+        crate::model::ac_ls_update_status::Builder::default()
+    }
+}
+
 /// See [`AcLsUpdateStatus`](crate::model::AcLsUpdateStatus).
 pub mod ac_ls_update_status {
 
@@ -2443,12 +2465,6 @@ pub mod ac_ls_update_status {
         }
     }
 }
-impl AcLsUpdateStatus {
-    /// Creates a new builder-style object to manufacture [`AcLsUpdateStatus`](crate::model::AcLsUpdateStatus).
-    pub fn builder() -> crate::model::ac_ls_update_status::Builder {
-        crate::model::ac_ls_update_status::Builder::default()
-    }
-}
 
 /// <p>The status of the online resharding</p>
 #[non_exhaustive]
@@ -2464,6 +2480,13 @@ impl ReshardingStatus {
         self.slot_migration.as_ref()
     }
 }
+impl ReshardingStatus {
+    /// Creates a new builder-style object to manufacture [`ReshardingStatus`](crate::model::ReshardingStatus).
+    pub fn builder() -> crate::model::resharding_status::Builder {
+        crate::model::resharding_status::Builder::default()
+    }
+}
+
 /// See [`ReshardingStatus`](crate::model::ReshardingStatus).
 pub mod resharding_status {
 
@@ -2495,12 +2518,6 @@ pub mod resharding_status {
         }
     }
 }
-impl ReshardingStatus {
-    /// Creates a new builder-style object to manufacture [`ReshardingStatus`](crate::model::ReshardingStatus).
-    pub fn builder() -> crate::model::resharding_status::Builder {
-        crate::model::resharding_status::Builder::default()
-    }
-}
 
 /// <p>Represents the progress of an online resharding operation.</p>
 #[non_exhaustive]
@@ -2516,6 +2533,13 @@ impl SlotMigration {
         self.progress_percentage
     }
 }
+impl SlotMigration {
+    /// Creates a new builder-style object to manufacture [`SlotMigration`](crate::model::SlotMigration).
+    pub fn builder() -> crate::model::slot_migration::Builder {
+        crate::model::slot_migration::Builder::default()
+    }
+}
+
 /// See [`SlotMigration`](crate::model::SlotMigration).
 pub mod slot_migration {
 
@@ -2544,12 +2568,6 @@ pub mod slot_migration {
         }
     }
 }
-impl SlotMigration {
-    /// Creates a new builder-style object to manufacture [`SlotMigration`](crate::model::SlotMigration).
-    pub fn builder() -> crate::model::slot_migration::Builder {
-        crate::model::slot_migration::Builder::default()
-    }
-}
 
 /// <p>A request to configure the sharding properties of a cluster</p>
 #[non_exhaustive]
@@ -2565,6 +2583,13 @@ impl ShardConfigurationRequest {
         self.shard_count
     }
 }
+impl ShardConfigurationRequest {
+    /// Creates a new builder-style object to manufacture [`ShardConfigurationRequest`](crate::model::ShardConfigurationRequest).
+    pub fn builder() -> crate::model::shard_configuration_request::Builder {
+        crate::model::shard_configuration_request::Builder::default()
+    }
+}
+
 /// See [`ShardConfigurationRequest`](crate::model::ShardConfigurationRequest).
 pub mod shard_configuration_request {
 
@@ -2593,12 +2618,6 @@ pub mod shard_configuration_request {
         }
     }
 }
-impl ShardConfigurationRequest {
-    /// Creates a new builder-style object to manufacture [`ShardConfigurationRequest`](crate::model::ShardConfigurationRequest).
-    pub fn builder() -> crate::model::shard_configuration_request::Builder {
-        crate::model::shard_configuration_request::Builder::default()
-    }
-}
 
 /// <p>A request to configure the number of replicas in a shard</p>
 #[non_exhaustive]
@@ -2614,6 +2633,13 @@ impl ReplicaConfigurationRequest {
         self.replica_count
     }
 }
+impl ReplicaConfigurationRequest {
+    /// Creates a new builder-style object to manufacture [`ReplicaConfigurationRequest`](crate::model::ReplicaConfigurationRequest).
+    pub fn builder() -> crate::model::replica_configuration_request::Builder {
+        crate::model::replica_configuration_request::Builder::default()
+    }
+}
+
 /// See [`ReplicaConfigurationRequest`](crate::model::ReplicaConfigurationRequest).
 pub mod replica_configuration_request {
 
@@ -2640,12 +2666,6 @@ pub mod replica_configuration_request {
                 replica_count: self.replica_count.unwrap_or_default(),
             }
         }
-    }
-}
-impl ReplicaConfigurationRequest {
-    /// Creates a new builder-style object to manufacture [`ReplicaConfigurationRequest`](crate::model::ReplicaConfigurationRequest).
-    pub fn builder() -> crate::model::replica_configuration_request::Builder {
-        crate::model::replica_configuration_request::Builder::default()
     }
 }
 
@@ -2705,6 +2725,13 @@ impl Acl {
         self.arn.as_deref()
     }
 }
+impl Acl {
+    /// Creates a new builder-style object to manufacture [`Acl`](crate::model::Acl).
+    pub fn builder() -> crate::model::acl::Builder {
+        crate::model::acl::Builder::default()
+    }
+}
+
 /// See [`Acl`](crate::model::Acl).
 pub mod acl {
 
@@ -2829,12 +2856,6 @@ pub mod acl {
         }
     }
 }
-impl Acl {
-    /// Creates a new builder-style object to manufacture [`Acl`](crate::model::Acl).
-    pub fn builder() -> crate::model::acl::Builder {
-        crate::model::acl::Builder::default()
-    }
-}
 
 /// <p>Returns the updates being applied to the ACL.</p>
 #[non_exhaustive]
@@ -2857,6 +2878,13 @@ impl AclPendingChanges {
         self.user_names_to_add.as_deref()
     }
 }
+impl AclPendingChanges {
+    /// Creates a new builder-style object to manufacture [`AclPendingChanges`](crate::model::AclPendingChanges).
+    pub fn builder() -> crate::model::acl_pending_changes::Builder {
+        crate::model::acl_pending_changes::Builder::default()
+    }
+}
+
 /// See [`AclPendingChanges`](crate::model::AclPendingChanges).
 pub mod acl_pending_changes {
 
@@ -2915,12 +2943,6 @@ pub mod acl_pending_changes {
         }
     }
 }
-impl AclPendingChanges {
-    /// Creates a new builder-style object to manufacture [`AclPendingChanges`](crate::model::AclPendingChanges).
-    pub fn builder() -> crate::model::acl_pending_changes::Builder {
-        crate::model::acl_pending_changes::Builder::default()
-    }
-}
 
 /// <p>A tag that can be added to an MemoryDB resource. Tags are composed of a Key/Value pair. You can use tags to categorize and track all your MemoryDB resources. When you add or remove tags on clusters, those actions will be replicated to all nodes in the cluster. A tag with a null Value is permitted. For more information, see <a href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/tagging-resources.html">Tagging your MemoryDB resources</a> </p>
 #[non_exhaustive]
@@ -2943,6 +2965,13 @@ impl Tag {
         self.value.as_deref()
     }
 }
+impl Tag {
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
+    pub fn builder() -> crate::model::tag::Builder {
+        crate::model::tag::Builder::default()
+    }
+}
+
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
 
@@ -2981,12 +3010,6 @@ pub mod tag {
                 value: self.value,
             }
         }
-    }
-}
-impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
-    pub fn builder() -> crate::model::tag::Builder {
-        crate::model::tag::Builder::default()
     }
 }
 
@@ -3074,6 +3097,13 @@ impl ReservedNode {
         self.arn.as_deref()
     }
 }
+impl ReservedNode {
+    /// Creates a new builder-style object to manufacture [`ReservedNode`](crate::model::ReservedNode).
+    pub fn builder() -> crate::model::reserved_node::Builder {
+        crate::model::reserved_node::Builder::default()
+    }
+}
+
 /// See [`ReservedNode`](crate::model::ReservedNode).
 pub mod reserved_node {
 
@@ -3244,12 +3274,6 @@ pub mod reserved_node {
         }
     }
 }
-impl ReservedNode {
-    /// Creates a new builder-style object to manufacture [`ReservedNode`](crate::model::ReservedNode).
-    pub fn builder() -> crate::model::reserved_node::Builder {
-        crate::model::reserved_node::Builder::default()
-    }
-}
 
 /// <p>The recurring charge to run this reserved node.</p>
 #[non_exhaustive]
@@ -3272,6 +3296,13 @@ impl RecurringCharge {
         self.recurring_charge_frequency.as_deref()
     }
 }
+impl RecurringCharge {
+    /// Creates a new builder-style object to manufacture [`RecurringCharge`](crate::model::RecurringCharge).
+    pub fn builder() -> crate::model::recurring_charge::Builder {
+        crate::model::recurring_charge::Builder::default()
+    }
+}
+
 /// See [`RecurringCharge`](crate::model::RecurringCharge).
 pub mod recurring_charge {
 
@@ -3315,12 +3346,6 @@ pub mod recurring_charge {
         }
     }
 }
-impl RecurringCharge {
-    /// Creates a new builder-style object to manufacture [`RecurringCharge`](crate::model::RecurringCharge).
-    pub fn builder() -> crate::model::recurring_charge::Builder {
-        crate::model::recurring_charge::Builder::default()
-    }
-}
 
 /// <p>Used to streamline results of a search based on the property being filtered.</p>
 #[non_exhaustive]
@@ -3343,6 +3368,13 @@ impl Filter {
         self.values.as_deref()
     }
 }
+impl Filter {
+    /// Creates a new builder-style object to manufacture [`Filter`](crate::model::Filter).
+    pub fn builder() -> crate::model::filter::Builder {
+        crate::model::filter::Builder::default()
+    }
+}
+
 /// See [`Filter`](crate::model::Filter).
 pub mod filter {
 
@@ -3390,12 +3422,6 @@ pub mod filter {
                 values: self.values,
             }
         }
-    }
-}
-impl Filter {
-    /// Creates a new builder-style object to manufacture [`Filter`](crate::model::Filter).
-    pub fn builder() -> crate::model::filter::Builder {
-        crate::model::filter::Builder::default()
     }
 }
 
@@ -3457,6 +3483,13 @@ impl Snapshot {
         self.data_tiering.as_ref()
     }
 }
+impl Snapshot {
+    /// Creates a new builder-style object to manufacture [`Snapshot`](crate::model::Snapshot).
+    pub fn builder() -> crate::model::snapshot::Builder {
+        crate::model::snapshot::Builder::default()
+    }
+}
+
 /// See [`Snapshot`](crate::model::Snapshot).
 pub mod snapshot {
 
@@ -3561,12 +3594,6 @@ pub mod snapshot {
                 data_tiering: self.data_tiering,
             }
         }
-    }
-}
-impl Snapshot {
-    /// Creates a new builder-style object to manufacture [`Snapshot`](crate::model::Snapshot).
-    pub fn builder() -> crate::model::snapshot::Builder {
-        crate::model::snapshot::Builder::default()
     }
 }
 
@@ -3675,6 +3702,13 @@ impl ClusterConfiguration {
         self.shards.as_deref()
     }
 }
+impl ClusterConfiguration {
+    /// Creates a new builder-style object to manufacture [`ClusterConfiguration`](crate::model::ClusterConfiguration).
+    pub fn builder() -> crate::model::cluster_configuration::Builder {
+        crate::model::cluster_configuration::Builder::default()
+    }
+}
+
 /// See [`ClusterConfiguration`](crate::model::ClusterConfiguration).
 pub mod cluster_configuration {
 
@@ -3883,12 +3917,6 @@ pub mod cluster_configuration {
         }
     }
 }
-impl ClusterConfiguration {
-    /// Creates a new builder-style object to manufacture [`ClusterConfiguration`](crate::model::ClusterConfiguration).
-    pub fn builder() -> crate::model::cluster_configuration::Builder {
-        crate::model::cluster_configuration::Builder::default()
-    }
-}
 
 /// <p>Provides details of a shard in a snapshot</p>
 #[non_exhaustive]
@@ -3925,6 +3953,13 @@ impl ShardDetail {
         self.snapshot_creation_time.as_ref()
     }
 }
+impl ShardDetail {
+    /// Creates a new builder-style object to manufacture [`ShardDetail`](crate::model::ShardDetail).
+    pub fn builder() -> crate::model::shard_detail::Builder {
+        crate::model::shard_detail::Builder::default()
+    }
+}
+
 /// See [`ShardDetail`](crate::model::ShardDetail).
 pub mod shard_detail {
 
@@ -3995,12 +4030,6 @@ pub mod shard_detail {
         }
     }
 }
-impl ShardDetail {
-    /// Creates a new builder-style object to manufacture [`ShardDetail`](crate::model::ShardDetail).
-    pub fn builder() -> crate::model::shard_detail::Builder {
-        crate::model::shard_detail::Builder::default()
-    }
-}
 
 /// <p>Shard configuration options. Each shard configuration has the following: Slots and ReplicaCount.</p>
 #[non_exhaustive]
@@ -4023,6 +4052,13 @@ impl ShardConfiguration {
         self.replica_count
     }
 }
+impl ShardConfiguration {
+    /// Creates a new builder-style object to manufacture [`ShardConfiguration`](crate::model::ShardConfiguration).
+    pub fn builder() -> crate::model::shard_configuration::Builder {
+        crate::model::shard_configuration::Builder::default()
+    }
+}
+
 /// See [`ShardConfiguration`](crate::model::ShardConfiguration).
 pub mod shard_configuration {
 
@@ -4061,12 +4097,6 @@ pub mod shard_configuration {
                 replica_count: self.replica_count,
             }
         }
-    }
-}
-impl ShardConfiguration {
-    /// Creates a new builder-style object to manufacture [`ShardConfiguration`](crate::model::ShardConfiguration).
-    pub fn builder() -> crate::model::shard_configuration::Builder {
-        crate::model::shard_configuration::Builder::default()
     }
 }
 
@@ -4133,6 +4163,13 @@ impl ServiceUpdate {
         self.auto_update_start_date.as_ref()
     }
 }
+impl ServiceUpdate {
+    /// Creates a new builder-style object to manufacture [`ServiceUpdate`](crate::model::ServiceUpdate).
+    pub fn builder() -> crate::model::service_update::Builder {
+        crate::model::service_update::Builder::default()
+    }
+}
+
 /// See [`ServiceUpdate`](crate::model::ServiceUpdate).
 pub mod service_update {
 
@@ -4261,12 +4298,6 @@ pub mod service_update {
                 auto_update_start_date: self.auto_update_start_date,
             }
         }
-    }
-}
-impl ServiceUpdate {
-    /// Creates a new builder-style object to manufacture [`ServiceUpdate`](crate::model::ServiceUpdate).
-    pub fn builder() -> crate::model::service_update::Builder {
-        crate::model::service_update::Builder::default()
     }
 }
 
@@ -4406,6 +4437,13 @@ impl ReservedNodesOffering {
         self.recurring_charges.as_deref()
     }
 }
+impl ReservedNodesOffering {
+    /// Creates a new builder-style object to manufacture [`ReservedNodesOffering`](crate::model::ReservedNodesOffering).
+    pub fn builder() -> crate::model::reserved_nodes_offering::Builder {
+        crate::model::reserved_nodes_offering::Builder::default()
+    }
+}
+
 /// See [`ReservedNodesOffering`](crate::model::ReservedNodesOffering).
 pub mod reserved_nodes_offering {
 
@@ -4510,12 +4548,6 @@ pub mod reserved_nodes_offering {
         }
     }
 }
-impl ReservedNodesOffering {
-    /// Creates a new builder-style object to manufacture [`ReservedNodesOffering`](crate::model::ReservedNodesOffering).
-    pub fn builder() -> crate::model::reserved_nodes_offering::Builder {
-        crate::model::reserved_nodes_offering::Builder::default()
-    }
-}
 
 /// <p>Describes an individual setting that controls some aspect of MemoryDB behavior.</p>
 #[non_exhaustive]
@@ -4566,6 +4598,13 @@ impl Parameter {
         self.minimum_engine_version.as_deref()
     }
 }
+impl Parameter {
+    /// Creates a new builder-style object to manufacture [`Parameter`](crate::model::Parameter).
+    pub fn builder() -> crate::model::parameter::Builder {
+        crate::model::parameter::Builder::default()
+    }
+}
+
 /// See [`Parameter`](crate::model::Parameter).
 pub mod parameter {
 
@@ -4660,12 +4699,6 @@ pub mod parameter {
         }
     }
 }
-impl Parameter {
-    /// Creates a new builder-style object to manufacture [`Parameter`](crate::model::Parameter).
-    pub fn builder() -> crate::model::parameter::Builder {
-        crate::model::parameter::Builder::default()
-    }
-}
 
 /// <p>Represents a single occurrence of something interesting within the system. Some examples of events are creating a cluster or adding or removing a node.</p>
 #[non_exhaustive]
@@ -4702,6 +4735,13 @@ impl Event {
         self.date.as_ref()
     }
 }
+impl Event {
+    /// Creates a new builder-style object to manufacture [`Event`](crate::model::Event).
+    pub fn builder() -> crate::model::event::Builder {
+        crate::model::event::Builder::default()
+    }
+}
+
 /// See [`Event`](crate::model::Event).
 pub mod event {
 
@@ -4767,12 +4807,6 @@ pub mod event {
                 date: self.date,
             }
         }
-    }
-}
-impl Event {
-    /// Creates a new builder-style object to manufacture [`Event`](crate::model::Event).
-    pub fn builder() -> crate::model::event::Builder {
-        crate::model::event::Builder::default()
     }
 }
 
@@ -4921,6 +4955,13 @@ impl EngineVersionInfo {
         self.parameter_group_family.as_deref()
     }
 }
+impl EngineVersionInfo {
+    /// Creates a new builder-style object to manufacture [`EngineVersionInfo`](crate::model::EngineVersionInfo).
+    pub fn builder() -> crate::model::engine_version_info::Builder {
+        crate::model::engine_version_info::Builder::default()
+    }
+}
+
 /// See [`EngineVersionInfo`](crate::model::EngineVersionInfo).
 pub mod engine_version_info {
 
@@ -4982,12 +5023,6 @@ pub mod engine_version_info {
         }
     }
 }
-impl EngineVersionInfo {
-    /// Creates a new builder-style object to manufacture [`EngineVersionInfo`](crate::model::EngineVersionInfo).
-    pub fn builder() -> crate::model::engine_version_info::Builder {
-        crate::model::engine_version_info::Builder::default()
-    }
-}
 
 /// <p>A cluster whose updates have failed</p>
 #[non_exhaustive]
@@ -5017,6 +5052,13 @@ impl UnprocessedCluster {
         self.error_message.as_deref()
     }
 }
+impl UnprocessedCluster {
+    /// Creates a new builder-style object to manufacture [`UnprocessedCluster`](crate::model::UnprocessedCluster).
+    pub fn builder() -> crate::model::unprocessed_cluster::Builder {
+        crate::model::unprocessed_cluster::Builder::default()
+    }
+}
+
 /// See [`UnprocessedCluster`](crate::model::UnprocessedCluster).
 pub mod unprocessed_cluster {
 
@@ -5072,12 +5114,6 @@ pub mod unprocessed_cluster {
         }
     }
 }
-impl UnprocessedCluster {
-    /// Creates a new builder-style object to manufacture [`UnprocessedCluster`](crate::model::UnprocessedCluster).
-    pub fn builder() -> crate::model::unprocessed_cluster::Builder {
-        crate::model::unprocessed_cluster::Builder::default()
-    }
-}
 
 /// <p>A request to apply a service update</p>
 #[non_exhaustive]
@@ -5093,6 +5129,13 @@ impl ServiceUpdateRequest {
         self.service_update_name_to_apply.as_deref()
     }
 }
+impl ServiceUpdateRequest {
+    /// Creates a new builder-style object to manufacture [`ServiceUpdateRequest`](crate::model::ServiceUpdateRequest).
+    pub fn builder() -> crate::model::service_update_request::Builder {
+        crate::model::service_update_request::Builder::default()
+    }
+}
+
 /// See [`ServiceUpdateRequest`](crate::model::ServiceUpdateRequest).
 pub mod service_update_request {
 
@@ -5125,11 +5168,5 @@ pub mod service_update_request {
                 service_update_name_to_apply: self.service_update_name_to_apply,
             }
         }
-    }
-}
-impl ServiceUpdateRequest {
-    /// Creates a new builder-style object to manufacture [`ServiceUpdateRequest`](crate::model::ServiceUpdateRequest).
-    pub fn builder() -> crate::model::service_update_request::Builder {
-        crate::model::service_update_request::Builder::default()
     }
 }

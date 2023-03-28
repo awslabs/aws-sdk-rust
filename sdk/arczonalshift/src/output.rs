@@ -77,6 +77,13 @@ impl aws_http::request_id::RequestId for StartZonalShiftOutput {
         self._request_id.as_deref()
     }
 }
+impl StartZonalShiftOutput {
+    /// Creates a new builder-style object to manufacture [`StartZonalShiftOutput`](crate::output::StartZonalShiftOutput).
+    pub fn builder() -> crate::output::start_zonal_shift_output::Builder {
+        crate::output::start_zonal_shift_output::Builder::default()
+    }
+}
+
 /// See [`StartZonalShiftOutput`](crate::output::StartZonalShiftOutput).
 pub mod start_zonal_shift_output {
 
@@ -219,12 +226,6 @@ pub mod start_zonal_shift_output {
         }
     }
 }
-impl StartZonalShiftOutput {
-    /// Creates a new builder-style object to manufacture [`StartZonalShiftOutput`](crate::output::StartZonalShiftOutput).
-    pub fn builder() -> crate::output::start_zonal_shift_output::Builder {
-        crate::output::start_zonal_shift_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -253,6 +254,13 @@ impl aws_http::request_id::RequestId for ListZonalShiftsOutput {
         self._request_id.as_deref()
     }
 }
+impl ListZonalShiftsOutput {
+    /// Creates a new builder-style object to manufacture [`ListZonalShiftsOutput`](crate::output::ListZonalShiftsOutput).
+    pub fn builder() -> crate::output::list_zonal_shifts_output::Builder {
+        crate::output::list_zonal_shifts_output::Builder::default()
+    }
+}
+
 /// See [`ListZonalShiftsOutput`](crate::output::ListZonalShiftsOutput).
 pub mod list_zonal_shifts_output {
 
@@ -311,12 +319,6 @@ pub mod list_zonal_shifts_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl ListZonalShiftsOutput {
-    /// Creates a new builder-style object to manufacture [`ListZonalShiftsOutput`](crate::output::ListZonalShiftsOutput).
-    pub fn builder() -> crate::output::list_zonal_shifts_output::Builder {
-        crate::output::list_zonal_shifts_output::Builder::default()
     }
 }
 
@@ -398,6 +400,13 @@ impl aws_http::request_id::RequestId for UpdateZonalShiftOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdateZonalShiftOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateZonalShiftOutput`](crate::output::UpdateZonalShiftOutput).
+    pub fn builder() -> crate::output::update_zonal_shift_output::Builder {
+        crate::output::update_zonal_shift_output::Builder::default()
+    }
+}
+
 /// See [`UpdateZonalShiftOutput`](crate::output::UpdateZonalShiftOutput).
 pub mod update_zonal_shift_output {
 
@@ -540,12 +549,6 @@ pub mod update_zonal_shift_output {
         }
     }
 }
-impl UpdateZonalShiftOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateZonalShiftOutput`](crate::output::UpdateZonalShiftOutput).
-    pub fn builder() -> crate::output::update_zonal_shift_output::Builder {
-        crate::output::update_zonal_shift_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -625,6 +628,13 @@ impl aws_http::request_id::RequestId for CancelZonalShiftOutput {
         self._request_id.as_deref()
     }
 }
+impl CancelZonalShiftOutput {
+    /// Creates a new builder-style object to manufacture [`CancelZonalShiftOutput`](crate::output::CancelZonalShiftOutput).
+    pub fn builder() -> crate::output::cancel_zonal_shift_output::Builder {
+        crate::output::cancel_zonal_shift_output::Builder::default()
+    }
+}
+
 /// See [`CancelZonalShiftOutput`](crate::output::CancelZonalShiftOutput).
 pub mod cancel_zonal_shift_output {
 
@@ -767,12 +777,6 @@ pub mod cancel_zonal_shift_output {
         }
     }
 }
-impl CancelZonalShiftOutput {
-    /// Creates a new builder-style object to manufacture [`CancelZonalShiftOutput`](crate::output::CancelZonalShiftOutput).
-    pub fn builder() -> crate::output::cancel_zonal_shift_output::Builder {
-        crate::output::cancel_zonal_shift_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -801,6 +805,13 @@ impl aws_http::request_id::RequestId for ListManagedResourcesOutput {
         self._request_id.as_deref()
     }
 }
+impl ListManagedResourcesOutput {
+    /// Creates a new builder-style object to manufacture [`ListManagedResourcesOutput`](crate::output::ListManagedResourcesOutput).
+    pub fn builder() -> crate::output::list_managed_resources_output::Builder {
+        crate::output::list_managed_resources_output::Builder::default()
+    }
+}
+
 /// See [`ListManagedResourcesOutput`](crate::output::ListManagedResourcesOutput).
 pub mod list_managed_resources_output {
 
@@ -861,12 +872,6 @@ pub mod list_managed_resources_output {
         }
     }
 }
-impl ListManagedResourcesOutput {
-    /// Creates a new builder-style object to manufacture [`ListManagedResourcesOutput`](crate::output::ListManagedResourcesOutput).
-    pub fn builder() -> crate::output::list_managed_resources_output::Builder {
-        crate::output::list_managed_resources_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -911,6 +916,13 @@ impl aws_http::request_id::RequestId for GetManagedResourceOutput {
         self._request_id.as_deref()
     }
 }
+impl GetManagedResourceOutput {
+    /// Creates a new builder-style object to manufacture [`GetManagedResourceOutput`](crate::output::GetManagedResourceOutput).
+    pub fn builder() -> crate::output::get_managed_resource_output::Builder {
+        crate::output::get_managed_resource_output::Builder::default()
+    }
+}
+
 /// See [`GetManagedResourceOutput`](crate::output::GetManagedResourceOutput).
 pub mod get_managed_resource_output {
 
@@ -1004,11 +1016,5 @@ pub mod get_managed_resource_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl GetManagedResourceOutput {
-    /// Creates a new builder-style object to manufacture [`GetManagedResourceOutput`](crate::output::GetManagedResourceOutput).
-    pub fn builder() -> crate::output::get_managed_resource_output::Builder {
-        crate::output::get_managed_resource_output::Builder::default()
     }
 }

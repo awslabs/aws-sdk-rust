@@ -19,6 +19,13 @@ impl aws_http::request_id::RequestId for UpdateServiceOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdateServiceOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateServiceOutput`](crate::output::UpdateServiceOutput).
+    pub fn builder() -> crate::output::update_service_output::Builder {
+        crate::output::update_service_output::Builder::default()
+    }
+}
+
 /// See [`UpdateServiceOutput`](crate::output::UpdateServiceOutput).
 pub mod update_service_output {
 
@@ -58,12 +65,6 @@ pub mod update_service_output {
         }
     }
 }
-impl UpdateServiceOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateServiceOutput`](crate::output::UpdateServiceOutput).
-    pub fn builder() -> crate::output::update_service_output::Builder {
-        crate::output::update_service_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -85,6 +86,13 @@ impl aws_http::request_id::RequestId for UpdatePublicDnsNamespaceOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdatePublicDnsNamespaceOutput {
+    /// Creates a new builder-style object to manufacture [`UpdatePublicDnsNamespaceOutput`](crate::output::UpdatePublicDnsNamespaceOutput).
+    pub fn builder() -> crate::output::update_public_dns_namespace_output::Builder {
+        crate::output::update_public_dns_namespace_output::Builder::default()
+    }
+}
+
 /// See [`UpdatePublicDnsNamespaceOutput`](crate::output::UpdatePublicDnsNamespaceOutput).
 pub mod update_public_dns_namespace_output {
 
@@ -124,12 +132,6 @@ pub mod update_public_dns_namespace_output {
         }
     }
 }
-impl UpdatePublicDnsNamespaceOutput {
-    /// Creates a new builder-style object to manufacture [`UpdatePublicDnsNamespaceOutput`](crate::output::UpdatePublicDnsNamespaceOutput).
-    pub fn builder() -> crate::output::update_public_dns_namespace_output::Builder {
-        crate::output::update_public_dns_namespace_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -151,6 +153,13 @@ impl aws_http::request_id::RequestId for UpdatePrivateDnsNamespaceOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdatePrivateDnsNamespaceOutput {
+    /// Creates a new builder-style object to manufacture [`UpdatePrivateDnsNamespaceOutput`](crate::output::UpdatePrivateDnsNamespaceOutput).
+    pub fn builder() -> crate::output::update_private_dns_namespace_output::Builder {
+        crate::output::update_private_dns_namespace_output::Builder::default()
+    }
+}
+
 /// See [`UpdatePrivateDnsNamespaceOutput`](crate::output::UpdatePrivateDnsNamespaceOutput).
 pub mod update_private_dns_namespace_output {
 
@@ -190,12 +199,6 @@ pub mod update_private_dns_namespace_output {
         }
     }
 }
-impl UpdatePrivateDnsNamespaceOutput {
-    /// Creates a new builder-style object to manufacture [`UpdatePrivateDnsNamespaceOutput`](crate::output::UpdatePrivateDnsNamespaceOutput).
-    pub fn builder() -> crate::output::update_private_dns_namespace_output::Builder {
-        crate::output::update_private_dns_namespace_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -208,6 +211,13 @@ impl aws_http::request_id::RequestId for UpdateInstanceCustomHealthStatusOutput 
         self._request_id.as_deref()
     }
 }
+impl UpdateInstanceCustomHealthStatusOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateInstanceCustomHealthStatusOutput`](crate::output::UpdateInstanceCustomHealthStatusOutput).
+    pub fn builder() -> crate::output::update_instance_custom_health_status_output::Builder {
+        crate::output::update_instance_custom_health_status_output::Builder::default()
+    }
+}
+
 /// See [`UpdateInstanceCustomHealthStatusOutput`](crate::output::UpdateInstanceCustomHealthStatusOutput).
 pub mod update_instance_custom_health_status_output {
 
@@ -235,12 +245,6 @@ pub mod update_instance_custom_health_status_output {
         }
     }
 }
-impl UpdateInstanceCustomHealthStatusOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateInstanceCustomHealthStatusOutput`](crate::output::UpdateInstanceCustomHealthStatusOutput).
-    pub fn builder() -> crate::output::update_instance_custom_health_status_output::Builder {
-        crate::output::update_instance_custom_health_status_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -262,6 +266,13 @@ impl aws_http::request_id::RequestId for UpdateHttpNamespaceOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdateHttpNamespaceOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateHttpNamespaceOutput`](crate::output::UpdateHttpNamespaceOutput).
+    pub fn builder() -> crate::output::update_http_namespace_output::Builder {
+        crate::output::update_http_namespace_output::Builder::default()
+    }
+}
+
 /// See [`UpdateHttpNamespaceOutput`](crate::output::UpdateHttpNamespaceOutput).
 pub mod update_http_namespace_output {
 
@@ -301,12 +312,6 @@ pub mod update_http_namespace_output {
         }
     }
 }
-impl UpdateHttpNamespaceOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateHttpNamespaceOutput`](crate::output::UpdateHttpNamespaceOutput).
-    pub fn builder() -> crate::output::update_http_namespace_output::Builder {
-        crate::output::update_http_namespace_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -319,6 +324,13 @@ impl aws_http::request_id::RequestId for UntagResourceOutput {
         self._request_id.as_deref()
     }
 }
+impl UntagResourceOutput {
+    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    pub fn builder() -> crate::output::untag_resource_output::Builder {
+        crate::output::untag_resource_output::Builder::default()
+    }
+}
+
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
 
@@ -346,12 +358,6 @@ pub mod untag_resource_output {
         }
     }
 }
-impl UntagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
-    pub fn builder() -> crate::output::untag_resource_output::Builder {
-        crate::output::untag_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -364,6 +370,13 @@ impl aws_http::request_id::RequestId for TagResourceOutput {
         self._request_id.as_deref()
     }
 }
+impl TagResourceOutput {
+    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
+    pub fn builder() -> crate::output::tag_resource_output::Builder {
+        crate::output::tag_resource_output::Builder::default()
+    }
+}
+
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
 
@@ -391,12 +404,6 @@ pub mod tag_resource_output {
         }
     }
 }
-impl TagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
-    pub fn builder() -> crate::output::tag_resource_output::Builder {
-        crate::output::tag_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -418,6 +425,13 @@ impl aws_http::request_id::RequestId for RegisterInstanceOutput {
         self._request_id.as_deref()
     }
 }
+impl RegisterInstanceOutput {
+    /// Creates a new builder-style object to manufacture [`RegisterInstanceOutput`](crate::output::RegisterInstanceOutput).
+    pub fn builder() -> crate::output::register_instance_output::Builder {
+        crate::output::register_instance_output::Builder::default()
+    }
+}
+
 /// See [`RegisterInstanceOutput`](crate::output::RegisterInstanceOutput).
 pub mod register_instance_output {
 
@@ -457,12 +471,6 @@ pub mod register_instance_output {
         }
     }
 }
-impl RegisterInstanceOutput {
-    /// Creates a new builder-style object to manufacture [`RegisterInstanceOutput`](crate::output::RegisterInstanceOutput).
-    pub fn builder() -> crate::output::register_instance_output::Builder {
-        crate::output::register_instance_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -484,6 +492,13 @@ impl aws_http::request_id::RequestId for ListTagsForResourceOutput {
         self._request_id.as_deref()
     }
 }
+impl ListTagsForResourceOutput {
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
+        crate::output::list_tags_for_resource_output::Builder::default()
+    }
+}
+
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
 
@@ -532,12 +547,6 @@ pub mod list_tags_for_resource_output {
         }
     }
 }
-impl ListTagsForResourceOutput {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
-    pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
-        crate::output::list_tags_for_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -570,6 +579,13 @@ impl aws_http::request_id::RequestId for ListServicesOutput {
         self._request_id.as_deref()
     }
 }
+impl ListServicesOutput {
+    /// Creates a new builder-style object to manufacture [`ListServicesOutput`](crate::output::ListServicesOutput).
+    pub fn builder() -> crate::output::list_services_output::Builder {
+        crate::output::list_services_output::Builder::default()
+    }
+}
+
 /// See [`ListServicesOutput`](crate::output::ListServicesOutput).
 pub mod list_services_output {
 
@@ -634,12 +650,6 @@ pub mod list_services_output {
         }
     }
 }
-impl ListServicesOutput {
-    /// Creates a new builder-style object to manufacture [`ListServicesOutput`](crate::output::ListServicesOutput).
-    pub fn builder() -> crate::output::list_services_output::Builder {
-        crate::output::list_services_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -672,6 +682,13 @@ impl aws_http::request_id::RequestId for ListOperationsOutput {
         self._request_id.as_deref()
     }
 }
+impl ListOperationsOutput {
+    /// Creates a new builder-style object to manufacture [`ListOperationsOutput`](crate::output::ListOperationsOutput).
+    pub fn builder() -> crate::output::list_operations_output::Builder {
+        crate::output::list_operations_output::Builder::default()
+    }
+}
+
 /// See [`ListOperationsOutput`](crate::output::ListOperationsOutput).
 pub mod list_operations_output {
 
@@ -736,12 +753,6 @@ pub mod list_operations_output {
         }
     }
 }
-impl ListOperationsOutput {
-    /// Creates a new builder-style object to manufacture [`ListOperationsOutput`](crate::output::ListOperationsOutput).
-    pub fn builder() -> crate::output::list_operations_output::Builder {
-        crate::output::list_operations_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -774,6 +785,13 @@ impl aws_http::request_id::RequestId for ListNamespacesOutput {
         self._request_id.as_deref()
     }
 }
+impl ListNamespacesOutput {
+    /// Creates a new builder-style object to manufacture [`ListNamespacesOutput`](crate::output::ListNamespacesOutput).
+    pub fn builder() -> crate::output::list_namespaces_output::Builder {
+        crate::output::list_namespaces_output::Builder::default()
+    }
+}
+
 /// See [`ListNamespacesOutput`](crate::output::ListNamespacesOutput).
 pub mod list_namespaces_output {
 
@@ -838,12 +856,6 @@ pub mod list_namespaces_output {
         }
     }
 }
-impl ListNamespacesOutput {
-    /// Creates a new builder-style object to manufacture [`ListNamespacesOutput`](crate::output::ListNamespacesOutput).
-    pub fn builder() -> crate::output::list_namespaces_output::Builder {
-        crate::output::list_namespaces_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -872,6 +884,13 @@ impl aws_http::request_id::RequestId for ListInstancesOutput {
         self._request_id.as_deref()
     }
 }
+impl ListInstancesOutput {
+    /// Creates a new builder-style object to manufacture [`ListInstancesOutput`](crate::output::ListInstancesOutput).
+    pub fn builder() -> crate::output::list_instances_output::Builder {
+        crate::output::list_instances_output::Builder::default()
+    }
+}
+
 /// See [`ListInstancesOutput`](crate::output::ListInstancesOutput).
 pub mod list_instances_output {
 
@@ -932,12 +951,6 @@ pub mod list_instances_output {
         }
     }
 }
-impl ListInstancesOutput {
-    /// Creates a new builder-style object to manufacture [`ListInstancesOutput`](crate::output::ListInstancesOutput).
-    pub fn builder() -> crate::output::list_instances_output::Builder {
-        crate::output::list_instances_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -959,6 +972,13 @@ impl aws_http::request_id::RequestId for GetServiceOutput {
         self._request_id.as_deref()
     }
 }
+impl GetServiceOutput {
+    /// Creates a new builder-style object to manufacture [`GetServiceOutput`](crate::output::GetServiceOutput).
+    pub fn builder() -> crate::output::get_service_output::Builder {
+        crate::output::get_service_output::Builder::default()
+    }
+}
+
 /// See [`GetServiceOutput`](crate::output::GetServiceOutput).
 pub mod get_service_output {
 
@@ -998,12 +1018,6 @@ pub mod get_service_output {
         }
     }
 }
-impl GetServiceOutput {
-    /// Creates a new builder-style object to manufacture [`GetServiceOutput`](crate::output::GetServiceOutput).
-    pub fn builder() -> crate::output::get_service_output::Builder {
-        crate::output::get_service_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1025,6 +1039,13 @@ impl aws_http::request_id::RequestId for GetOperationOutput {
         self._request_id.as_deref()
     }
 }
+impl GetOperationOutput {
+    /// Creates a new builder-style object to manufacture [`GetOperationOutput`](crate::output::GetOperationOutput).
+    pub fn builder() -> crate::output::get_operation_output::Builder {
+        crate::output::get_operation_output::Builder::default()
+    }
+}
+
 /// See [`GetOperationOutput`](crate::output::GetOperationOutput).
 pub mod get_operation_output {
 
@@ -1067,12 +1088,6 @@ pub mod get_operation_output {
         }
     }
 }
-impl GetOperationOutput {
-    /// Creates a new builder-style object to manufacture [`GetOperationOutput`](crate::output::GetOperationOutput).
-    pub fn builder() -> crate::output::get_operation_output::Builder {
-        crate::output::get_operation_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1094,6 +1109,13 @@ impl aws_http::request_id::RequestId for GetNamespaceOutput {
         self._request_id.as_deref()
     }
 }
+impl GetNamespaceOutput {
+    /// Creates a new builder-style object to manufacture [`GetNamespaceOutput`](crate::output::GetNamespaceOutput).
+    pub fn builder() -> crate::output::get_namespace_output::Builder {
+        crate::output::get_namespace_output::Builder::default()
+    }
+}
+
 /// See [`GetNamespaceOutput`](crate::output::GetNamespaceOutput).
 pub mod get_namespace_output {
 
@@ -1136,12 +1158,6 @@ pub mod get_namespace_output {
         }
     }
 }
-impl GetNamespaceOutput {
-    /// Creates a new builder-style object to manufacture [`GetNamespaceOutput`](crate::output::GetNamespaceOutput).
-    pub fn builder() -> crate::output::get_namespace_output::Builder {
-        crate::output::get_namespace_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1176,6 +1192,13 @@ impl aws_http::request_id::RequestId for GetInstancesHealthStatusOutput {
         self._request_id.as_deref()
     }
 }
+impl GetInstancesHealthStatusOutput {
+    /// Creates a new builder-style object to manufacture [`GetInstancesHealthStatusOutput`](crate::output::GetInstancesHealthStatusOutput).
+    pub fn builder() -> crate::output::get_instances_health_status_output::Builder {
+        crate::output::get_instances_health_status_output::Builder::default()
+    }
+}
+
 /// See [`GetInstancesHealthStatusOutput`](crate::output::GetInstancesHealthStatusOutput).
 pub mod get_instances_health_status_output {
 
@@ -1244,12 +1267,6 @@ pub mod get_instances_health_status_output {
         }
     }
 }
-impl GetInstancesHealthStatusOutput {
-    /// Creates a new builder-style object to manufacture [`GetInstancesHealthStatusOutput`](crate::output::GetInstancesHealthStatusOutput).
-    pub fn builder() -> crate::output::get_instances_health_status_output::Builder {
-        crate::output::get_instances_health_status_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1271,6 +1288,13 @@ impl aws_http::request_id::RequestId for GetInstanceOutput {
         self._request_id.as_deref()
     }
 }
+impl GetInstanceOutput {
+    /// Creates a new builder-style object to manufacture [`GetInstanceOutput`](crate::output::GetInstanceOutput).
+    pub fn builder() -> crate::output::get_instance_output::Builder {
+        crate::output::get_instance_output::Builder::default()
+    }
+}
+
 /// See [`GetInstanceOutput`](crate::output::GetInstanceOutput).
 pub mod get_instance_output {
 
@@ -1310,12 +1334,6 @@ pub mod get_instance_output {
         }
     }
 }
-impl GetInstanceOutput {
-    /// Creates a new builder-style object to manufacture [`GetInstanceOutput`](crate::output::GetInstanceOutput).
-    pub fn builder() -> crate::output::get_instance_output::Builder {
-        crate::output::get_instance_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1337,6 +1355,13 @@ impl aws_http::request_id::RequestId for DiscoverInstancesOutput {
         self._request_id.as_deref()
     }
 }
+impl DiscoverInstancesOutput {
+    /// Creates a new builder-style object to manufacture [`DiscoverInstancesOutput`](crate::output::DiscoverInstancesOutput).
+    pub fn builder() -> crate::output::discover_instances_output::Builder {
+        crate::output::discover_instances_output::Builder::default()
+    }
+}
+
 /// See [`DiscoverInstancesOutput`](crate::output::DiscoverInstancesOutput).
 pub mod discover_instances_output {
 
@@ -1385,12 +1410,6 @@ pub mod discover_instances_output {
         }
     }
 }
-impl DiscoverInstancesOutput {
-    /// Creates a new builder-style object to manufacture [`DiscoverInstancesOutput`](crate::output::DiscoverInstancesOutput).
-    pub fn builder() -> crate::output::discover_instances_output::Builder {
-        crate::output::discover_instances_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1412,6 +1431,13 @@ impl aws_http::request_id::RequestId for DeregisterInstanceOutput {
         self._request_id.as_deref()
     }
 }
+impl DeregisterInstanceOutput {
+    /// Creates a new builder-style object to manufacture [`DeregisterInstanceOutput`](crate::output::DeregisterInstanceOutput).
+    pub fn builder() -> crate::output::deregister_instance_output::Builder {
+        crate::output::deregister_instance_output::Builder::default()
+    }
+}
+
 /// See [`DeregisterInstanceOutput`](crate::output::DeregisterInstanceOutput).
 pub mod deregister_instance_output {
 
@@ -1451,12 +1477,6 @@ pub mod deregister_instance_output {
         }
     }
 }
-impl DeregisterInstanceOutput {
-    /// Creates a new builder-style object to manufacture [`DeregisterInstanceOutput`](crate::output::DeregisterInstanceOutput).
-    pub fn builder() -> crate::output::deregister_instance_output::Builder {
-        crate::output::deregister_instance_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1469,6 +1489,13 @@ impl aws_http::request_id::RequestId for DeleteServiceOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteServiceOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteServiceOutput`](crate::output::DeleteServiceOutput).
+    pub fn builder() -> crate::output::delete_service_output::Builder {
+        crate::output::delete_service_output::Builder::default()
+    }
+}
+
 /// See [`DeleteServiceOutput`](crate::output::DeleteServiceOutput).
 pub mod delete_service_output {
 
@@ -1496,12 +1523,6 @@ pub mod delete_service_output {
         }
     }
 }
-impl DeleteServiceOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteServiceOutput`](crate::output::DeleteServiceOutput).
-    pub fn builder() -> crate::output::delete_service_output::Builder {
-        crate::output::delete_service_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1523,6 +1544,13 @@ impl aws_http::request_id::RequestId for DeleteNamespaceOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteNamespaceOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteNamespaceOutput`](crate::output::DeleteNamespaceOutput).
+    pub fn builder() -> crate::output::delete_namespace_output::Builder {
+        crate::output::delete_namespace_output::Builder::default()
+    }
+}
+
 /// See [`DeleteNamespaceOutput`](crate::output::DeleteNamespaceOutput).
 pub mod delete_namespace_output {
 
@@ -1562,12 +1590,6 @@ pub mod delete_namespace_output {
         }
     }
 }
-impl DeleteNamespaceOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteNamespaceOutput`](crate::output::DeleteNamespaceOutput).
-    pub fn builder() -> crate::output::delete_namespace_output::Builder {
-        crate::output::delete_namespace_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1589,6 +1611,13 @@ impl aws_http::request_id::RequestId for CreateServiceOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateServiceOutput {
+    /// Creates a new builder-style object to manufacture [`CreateServiceOutput`](crate::output::CreateServiceOutput).
+    pub fn builder() -> crate::output::create_service_output::Builder {
+        crate::output::create_service_output::Builder::default()
+    }
+}
+
 /// See [`CreateServiceOutput`](crate::output::CreateServiceOutput).
 pub mod create_service_output {
 
@@ -1628,12 +1657,6 @@ pub mod create_service_output {
         }
     }
 }
-impl CreateServiceOutput {
-    /// Creates a new builder-style object to manufacture [`CreateServiceOutput`](crate::output::CreateServiceOutput).
-    pub fn builder() -> crate::output::create_service_output::Builder {
-        crate::output::create_service_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1655,6 +1678,13 @@ impl aws_http::request_id::RequestId for CreatePublicDnsNamespaceOutput {
         self._request_id.as_deref()
     }
 }
+impl CreatePublicDnsNamespaceOutput {
+    /// Creates a new builder-style object to manufacture [`CreatePublicDnsNamespaceOutput`](crate::output::CreatePublicDnsNamespaceOutput).
+    pub fn builder() -> crate::output::create_public_dns_namespace_output::Builder {
+        crate::output::create_public_dns_namespace_output::Builder::default()
+    }
+}
+
 /// See [`CreatePublicDnsNamespaceOutput`](crate::output::CreatePublicDnsNamespaceOutput).
 pub mod create_public_dns_namespace_output {
 
@@ -1694,12 +1724,6 @@ pub mod create_public_dns_namespace_output {
         }
     }
 }
-impl CreatePublicDnsNamespaceOutput {
-    /// Creates a new builder-style object to manufacture [`CreatePublicDnsNamespaceOutput`](crate::output::CreatePublicDnsNamespaceOutput).
-    pub fn builder() -> crate::output::create_public_dns_namespace_output::Builder {
-        crate::output::create_public_dns_namespace_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1721,6 +1745,13 @@ impl aws_http::request_id::RequestId for CreatePrivateDnsNamespaceOutput {
         self._request_id.as_deref()
     }
 }
+impl CreatePrivateDnsNamespaceOutput {
+    /// Creates a new builder-style object to manufacture [`CreatePrivateDnsNamespaceOutput`](crate::output::CreatePrivateDnsNamespaceOutput).
+    pub fn builder() -> crate::output::create_private_dns_namespace_output::Builder {
+        crate::output::create_private_dns_namespace_output::Builder::default()
+    }
+}
+
 /// See [`CreatePrivateDnsNamespaceOutput`](crate::output::CreatePrivateDnsNamespaceOutput).
 pub mod create_private_dns_namespace_output {
 
@@ -1760,12 +1791,6 @@ pub mod create_private_dns_namespace_output {
         }
     }
 }
-impl CreatePrivateDnsNamespaceOutput {
-    /// Creates a new builder-style object to manufacture [`CreatePrivateDnsNamespaceOutput`](crate::output::CreatePrivateDnsNamespaceOutput).
-    pub fn builder() -> crate::output::create_private_dns_namespace_output::Builder {
-        crate::output::create_private_dns_namespace_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1787,6 +1812,13 @@ impl aws_http::request_id::RequestId for CreateHttpNamespaceOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateHttpNamespaceOutput {
+    /// Creates a new builder-style object to manufacture [`CreateHttpNamespaceOutput`](crate::output::CreateHttpNamespaceOutput).
+    pub fn builder() -> crate::output::create_http_namespace_output::Builder {
+        crate::output::create_http_namespace_output::Builder::default()
+    }
+}
+
 /// See [`CreateHttpNamespaceOutput`](crate::output::CreateHttpNamespaceOutput).
 pub mod create_http_namespace_output {
 
@@ -1824,11 +1856,5 @@ pub mod create_http_namespace_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl CreateHttpNamespaceOutput {
-    /// Creates a new builder-style object to manufacture [`CreateHttpNamespaceOutput`](crate::output::CreateHttpNamespaceOutput).
-    pub fn builder() -> crate::output::create_http_namespace_output::Builder {
-        crate::output::create_http_namespace_output::Builder::default()
     }
 }

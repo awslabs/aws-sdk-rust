@@ -26,6 +26,13 @@ impl aws_http::request_id::RequestId for ListDetectorsOutput {
         self._request_id.as_deref()
     }
 }
+impl ListDetectorsOutput {
+    /// Creates a new builder-style object to manufacture [`ListDetectorsOutput`](crate::output::ListDetectorsOutput).
+    pub fn builder() -> crate::output::list_detectors_output::Builder {
+        crate::output::list_detectors_output::Builder::default()
+    }
+}
+
 /// See [`ListDetectorsOutput`](crate::output::ListDetectorsOutput).
 pub mod list_detectors_output {
 
@@ -87,12 +94,6 @@ pub mod list_detectors_output {
         }
     }
 }
-impl ListDetectorsOutput {
-    /// Creates a new builder-style object to manufacture [`ListDetectorsOutput`](crate::output::ListDetectorsOutput).
-    pub fn builder() -> crate::output::list_detectors_output::Builder {
-        crate::output::list_detectors_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -121,6 +122,13 @@ impl aws_http::request_id::RequestId for ListAlarmsOutput {
         self._request_id.as_deref()
     }
 }
+impl ListAlarmsOutput {
+    /// Creates a new builder-style object to manufacture [`ListAlarmsOutput`](crate::output::ListAlarmsOutput).
+    pub fn builder() -> crate::output::list_alarms_output::Builder {
+        crate::output::list_alarms_output::Builder::default()
+    }
+}
+
 /// See [`ListAlarmsOutput`](crate::output::ListAlarmsOutput).
 pub mod list_alarms_output {
 
@@ -181,12 +189,6 @@ pub mod list_alarms_output {
         }
     }
 }
-impl ListAlarmsOutput {
-    /// Creates a new builder-style object to manufacture [`ListAlarmsOutput`](crate::output::ListAlarmsOutput).
-    pub fn builder() -> crate::output::list_alarms_output::Builder {
-        crate::output::list_alarms_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -208,6 +210,13 @@ impl aws_http::request_id::RequestId for DescribeDetectorOutput {
         self._request_id.as_deref()
     }
 }
+impl DescribeDetectorOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeDetectorOutput`](crate::output::DescribeDetectorOutput).
+    pub fn builder() -> crate::output::describe_detector_output::Builder {
+        crate::output::describe_detector_output::Builder::default()
+    }
+}
+
 /// See [`DescribeDetectorOutput`](crate::output::DescribeDetectorOutput).
 pub mod describe_detector_output {
 
@@ -247,12 +256,6 @@ pub mod describe_detector_output {
         }
     }
 }
-impl DescribeDetectorOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeDetectorOutput`](crate::output::DescribeDetectorOutput).
-    pub fn builder() -> crate::output::describe_detector_output::Builder {
-        crate::output::describe_detector_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -274,6 +277,13 @@ impl aws_http::request_id::RequestId for DescribeAlarmOutput {
         self._request_id.as_deref()
     }
 }
+impl DescribeAlarmOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeAlarmOutput`](crate::output::DescribeAlarmOutput).
+    pub fn builder() -> crate::output::describe_alarm_output::Builder {
+        crate::output::describe_alarm_output::Builder::default()
+    }
+}
+
 /// See [`DescribeAlarmOutput`](crate::output::DescribeAlarmOutput).
 pub mod describe_alarm_output {
 
@@ -313,12 +323,6 @@ pub mod describe_alarm_output {
         }
     }
 }
-impl DescribeAlarmOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeAlarmOutput`](crate::output::DescribeAlarmOutput).
-    pub fn builder() -> crate::output::describe_alarm_output::Builder {
-        crate::output::describe_alarm_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -343,6 +347,13 @@ impl aws_http::request_id::RequestId for BatchUpdateDetectorOutput {
         self._request_id.as_deref()
     }
 }
+impl BatchUpdateDetectorOutput {
+    /// Creates a new builder-style object to manufacture [`BatchUpdateDetectorOutput`](crate::output::BatchUpdateDetectorOutput).
+    pub fn builder() -> crate::output::batch_update_detector_output::Builder {
+        crate::output::batch_update_detector_output::Builder::default()
+    }
+}
+
 /// See [`BatchUpdateDetectorOutput`](crate::output::BatchUpdateDetectorOutput).
 pub mod batch_update_detector_output {
 
@@ -395,12 +406,6 @@ pub mod batch_update_detector_output {
         }
     }
 }
-impl BatchUpdateDetectorOutput {
-    /// Creates a new builder-style object to manufacture [`BatchUpdateDetectorOutput`](crate::output::BatchUpdateDetectorOutput).
-    pub fn builder() -> crate::output::batch_update_detector_output::Builder {
-        crate::output::batch_update_detector_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -424,6 +429,13 @@ impl aws_http::request_id::RequestId for BatchSnoozeAlarmOutput {
         self._request_id.as_deref()
     }
 }
+impl BatchSnoozeAlarmOutput {
+    /// Creates a new builder-style object to manufacture [`BatchSnoozeAlarmOutput`](crate::output::BatchSnoozeAlarmOutput).
+    pub fn builder() -> crate::output::batch_snooze_alarm_output::Builder {
+        crate::output::batch_snooze_alarm_output::Builder::default()
+    }
+}
+
 /// See [`BatchSnoozeAlarmOutput`](crate::output::BatchSnoozeAlarmOutput).
 pub mod batch_snooze_alarm_output {
 
@@ -473,12 +485,6 @@ pub mod batch_snooze_alarm_output {
         }
     }
 }
-impl BatchSnoozeAlarmOutput {
-    /// Creates a new builder-style object to manufacture [`BatchSnoozeAlarmOutput`](crate::output::BatchSnoozeAlarmOutput).
-    pub fn builder() -> crate::output::batch_snooze_alarm_output::Builder {
-        crate::output::batch_snooze_alarm_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -502,6 +508,13 @@ impl aws_http::request_id::RequestId for BatchResetAlarmOutput {
         self._request_id.as_deref()
     }
 }
+impl BatchResetAlarmOutput {
+    /// Creates a new builder-style object to manufacture [`BatchResetAlarmOutput`](crate::output::BatchResetAlarmOutput).
+    pub fn builder() -> crate::output::batch_reset_alarm_output::Builder {
+        crate::output::batch_reset_alarm_output::Builder::default()
+    }
+}
+
 /// See [`BatchResetAlarmOutput`](crate::output::BatchResetAlarmOutput).
 pub mod batch_reset_alarm_output {
 
@@ -551,12 +564,6 @@ pub mod batch_reset_alarm_output {
         }
     }
 }
-impl BatchResetAlarmOutput {
-    /// Creates a new builder-style object to manufacture [`BatchResetAlarmOutput`](crate::output::BatchResetAlarmOutput).
-    pub fn builder() -> crate::output::batch_reset_alarm_output::Builder {
-        crate::output::batch_reset_alarm_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -581,6 +588,13 @@ impl aws_http::request_id::RequestId for BatchPutMessageOutput {
         self._request_id.as_deref()
     }
 }
+impl BatchPutMessageOutput {
+    /// Creates a new builder-style object to manufacture [`BatchPutMessageOutput`](crate::output::BatchPutMessageOutput).
+    pub fn builder() -> crate::output::batch_put_message_output::Builder {
+        crate::output::batch_put_message_output::Builder::default()
+    }
+}
+
 /// See [`BatchPutMessageOutput`](crate::output::BatchPutMessageOutput).
 pub mod batch_put_message_output {
 
@@ -633,12 +647,6 @@ pub mod batch_put_message_output {
         }
     }
 }
-impl BatchPutMessageOutput {
-    /// Creates a new builder-style object to manufacture [`BatchPutMessageOutput`](crate::output::BatchPutMessageOutput).
-    pub fn builder() -> crate::output::batch_put_message_output::Builder {
-        crate::output::batch_put_message_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -662,6 +670,13 @@ impl aws_http::request_id::RequestId for BatchEnableAlarmOutput {
         self._request_id.as_deref()
     }
 }
+impl BatchEnableAlarmOutput {
+    /// Creates a new builder-style object to manufacture [`BatchEnableAlarmOutput`](crate::output::BatchEnableAlarmOutput).
+    pub fn builder() -> crate::output::batch_enable_alarm_output::Builder {
+        crate::output::batch_enable_alarm_output::Builder::default()
+    }
+}
+
 /// See [`BatchEnableAlarmOutput`](crate::output::BatchEnableAlarmOutput).
 pub mod batch_enable_alarm_output {
 
@@ -711,12 +726,6 @@ pub mod batch_enable_alarm_output {
         }
     }
 }
-impl BatchEnableAlarmOutput {
-    /// Creates a new builder-style object to manufacture [`BatchEnableAlarmOutput`](crate::output::BatchEnableAlarmOutput).
-    pub fn builder() -> crate::output::batch_enable_alarm_output::Builder {
-        crate::output::batch_enable_alarm_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -740,6 +749,13 @@ impl aws_http::request_id::RequestId for BatchDisableAlarmOutput {
         self._request_id.as_deref()
     }
 }
+impl BatchDisableAlarmOutput {
+    /// Creates a new builder-style object to manufacture [`BatchDisableAlarmOutput`](crate::output::BatchDisableAlarmOutput).
+    pub fn builder() -> crate::output::batch_disable_alarm_output::Builder {
+        crate::output::batch_disable_alarm_output::Builder::default()
+    }
+}
+
 /// See [`BatchDisableAlarmOutput`](crate::output::BatchDisableAlarmOutput).
 pub mod batch_disable_alarm_output {
 
@@ -789,12 +805,6 @@ pub mod batch_disable_alarm_output {
         }
     }
 }
-impl BatchDisableAlarmOutput {
-    /// Creates a new builder-style object to manufacture [`BatchDisableAlarmOutput`](crate::output::BatchDisableAlarmOutput).
-    pub fn builder() -> crate::output::batch_disable_alarm_output::Builder {
-        crate::output::batch_disable_alarm_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -819,6 +829,13 @@ impl aws_http::request_id::RequestId for BatchDeleteDetectorOutput {
         self._request_id.as_deref()
     }
 }
+impl BatchDeleteDetectorOutput {
+    /// Creates a new builder-style object to manufacture [`BatchDeleteDetectorOutput`](crate::output::BatchDeleteDetectorOutput).
+    pub fn builder() -> crate::output::batch_delete_detector_output::Builder {
+        crate::output::batch_delete_detector_output::Builder::default()
+    }
+}
+
 /// See [`BatchDeleteDetectorOutput`](crate::output::BatchDeleteDetectorOutput).
 pub mod batch_delete_detector_output {
 
@@ -871,12 +888,6 @@ pub mod batch_delete_detector_output {
         }
     }
 }
-impl BatchDeleteDetectorOutput {
-    /// Creates a new builder-style object to manufacture [`BatchDeleteDetectorOutput`](crate::output::BatchDeleteDetectorOutput).
-    pub fn builder() -> crate::output::batch_delete_detector_output::Builder {
-        crate::output::batch_delete_detector_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -900,6 +911,13 @@ impl aws_http::request_id::RequestId for BatchAcknowledgeAlarmOutput {
         self._request_id.as_deref()
     }
 }
+impl BatchAcknowledgeAlarmOutput {
+    /// Creates a new builder-style object to manufacture [`BatchAcknowledgeAlarmOutput`](crate::output::BatchAcknowledgeAlarmOutput).
+    pub fn builder() -> crate::output::batch_acknowledge_alarm_output::Builder {
+        crate::output::batch_acknowledge_alarm_output::Builder::default()
+    }
+}
+
 /// See [`BatchAcknowledgeAlarmOutput`](crate::output::BatchAcknowledgeAlarmOutput).
 pub mod batch_acknowledge_alarm_output {
 
@@ -947,11 +965,5 @@ pub mod batch_acknowledge_alarm_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl BatchAcknowledgeAlarmOutput {
-    /// Creates a new builder-style object to manufacture [`BatchAcknowledgeAlarmOutput`](crate::output::BatchAcknowledgeAlarmOutput).
-    pub fn builder() -> crate::output::batch_acknowledge_alarm_output::Builder {
-        crate::output::batch_acknowledge_alarm_output::Builder::default()
     }
 }

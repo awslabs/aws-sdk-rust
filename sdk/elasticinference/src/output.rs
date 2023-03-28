@@ -10,6 +10,13 @@ impl aws_http::request_id::RequestId for UntagResourceOutput {
         self._request_id.as_deref()
     }
 }
+impl UntagResourceOutput {
+    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    pub fn builder() -> crate::output::untag_resource_output::Builder {
+        crate::output::untag_resource_output::Builder::default()
+    }
+}
+
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
 
@@ -37,12 +44,6 @@ pub mod untag_resource_output {
         }
     }
 }
-impl UntagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
-    pub fn builder() -> crate::output::untag_resource_output::Builder {
-        crate::output::untag_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -55,6 +56,13 @@ impl aws_http::request_id::RequestId for TagResourceOutput {
         self._request_id.as_deref()
     }
 }
+impl TagResourceOutput {
+    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
+    pub fn builder() -> crate::output::tag_resource_output::Builder {
+        crate::output::tag_resource_output::Builder::default()
+    }
+}
+
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
 
@@ -82,12 +90,6 @@ pub mod tag_resource_output {
         }
     }
 }
-impl TagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
-    pub fn builder() -> crate::output::tag_resource_output::Builder {
-        crate::output::tag_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -113,6 +115,13 @@ impl aws_http::request_id::RequestId for ListTagsForResourceOutput {
         self._request_id.as_deref()
     }
 }
+impl ListTagsForResourceOutput {
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
+        crate::output::list_tags_for_resource_output::Builder::default()
+    }
+}
+
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
 
@@ -169,12 +178,6 @@ pub mod list_tags_for_resource_output {
         }
     }
 }
-impl ListTagsForResourceOutput {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
-    pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
-        crate::output::list_tags_for_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -196,6 +199,13 @@ impl aws_http::request_id::RequestId for DescribeAcceleratorTypesOutput {
         self._request_id.as_deref()
     }
 }
+impl DescribeAcceleratorTypesOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeAcceleratorTypesOutput`](crate::output::DescribeAcceleratorTypesOutput).
+    pub fn builder() -> crate::output::describe_accelerator_types_output::Builder {
+        crate::output::describe_accelerator_types_output::Builder::default()
+    }
+}
+
 /// See [`DescribeAcceleratorTypesOutput`](crate::output::DescribeAcceleratorTypesOutput).
 pub mod describe_accelerator_types_output {
 
@@ -245,12 +255,6 @@ pub mod describe_accelerator_types_output {
         }
     }
 }
-impl DescribeAcceleratorTypesOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeAcceleratorTypesOutput`](crate::output::DescribeAcceleratorTypesOutput).
-    pub fn builder() -> crate::output::describe_accelerator_types_output::Builder {
-        crate::output::describe_accelerator_types_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -282,6 +286,13 @@ impl aws_http::request_id::RequestId for DescribeAcceleratorsOutput {
         self._request_id.as_deref()
     }
 }
+impl DescribeAcceleratorsOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeAcceleratorsOutput`](crate::output::DescribeAcceleratorsOutput).
+    pub fn builder() -> crate::output::describe_accelerators_output::Builder {
+        crate::output::describe_accelerators_output::Builder::default()
+    }
+}
+
 /// See [`DescribeAcceleratorsOutput`](crate::output::DescribeAcceleratorsOutput).
 pub mod describe_accelerators_output {
 
@@ -343,12 +354,6 @@ pub mod describe_accelerators_output {
         }
     }
 }
-impl DescribeAcceleratorsOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeAcceleratorsOutput`](crate::output::DescribeAcceleratorsOutput).
-    pub fn builder() -> crate::output::describe_accelerators_output::Builder {
-        crate::output::describe_accelerators_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -373,6 +378,13 @@ impl aws_http::request_id::RequestId for DescribeAcceleratorOfferingsOutput {
         self._request_id.as_deref()
     }
 }
+impl DescribeAcceleratorOfferingsOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeAcceleratorOfferingsOutput`](crate::output::DescribeAcceleratorOfferingsOutput).
+    pub fn builder() -> crate::output::describe_accelerator_offerings_output::Builder {
+        crate::output::describe_accelerator_offerings_output::Builder::default()
+    }
+}
+
 /// See [`DescribeAcceleratorOfferingsOutput`](crate::output::DescribeAcceleratorOfferingsOutput).
 pub mod describe_accelerator_offerings_output {
 
@@ -423,11 +435,5 @@ pub mod describe_accelerator_offerings_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl DescribeAcceleratorOfferingsOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeAcceleratorOfferingsOutput`](crate::output::DescribeAcceleratorOfferingsOutput).
-    pub fn builder() -> crate::output::describe_accelerator_offerings_output::Builder {
-        crate::output::describe_accelerator_offerings_output::Builder::default()
     }
 }

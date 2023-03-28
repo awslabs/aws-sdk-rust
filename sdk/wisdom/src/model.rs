@@ -95,6 +95,13 @@ impl KnowledgeBaseData {
         self.tags.as_ref()
     }
 }
+impl KnowledgeBaseData {
+    /// Creates a new builder-style object to manufacture [`KnowledgeBaseData`](crate::model::KnowledgeBaseData).
+    pub fn builder() -> crate::model::knowledge_base_data::Builder {
+        crate::model::knowledge_base_data::Builder::default()
+    }
+}
+
 /// See [`KnowledgeBaseData`](crate::model::KnowledgeBaseData).
 pub mod knowledge_base_data {
 
@@ -292,12 +299,6 @@ pub mod knowledge_base_data {
         }
     }
 }
-impl KnowledgeBaseData {
-    /// Creates a new builder-style object to manufacture [`KnowledgeBaseData`](crate::model::KnowledgeBaseData).
-    pub fn builder() -> crate::model::knowledge_base_data::Builder {
-        crate::model::knowledge_base_data::Builder::default()
-    }
-}
 
 /// <p>The KMS key used for encryption.</p>
 #[non_exhaustive]
@@ -313,6 +314,13 @@ impl ServerSideEncryptionConfiguration {
         self.kms_key_id.as_deref()
     }
 }
+impl ServerSideEncryptionConfiguration {
+    /// Creates a new builder-style object to manufacture [`ServerSideEncryptionConfiguration`](crate::model::ServerSideEncryptionConfiguration).
+    pub fn builder() -> crate::model::server_side_encryption_configuration::Builder {
+        crate::model::server_side_encryption_configuration::Builder::default()
+    }
+}
+
 /// See [`ServerSideEncryptionConfiguration`](crate::model::ServerSideEncryptionConfiguration).
 pub mod server_side_encryption_configuration {
 
@@ -341,12 +349,6 @@ pub mod server_side_encryption_configuration {
         }
     }
 }
-impl ServerSideEncryptionConfiguration {
-    /// Creates a new builder-style object to manufacture [`ServerSideEncryptionConfiguration`](crate::model::ServerSideEncryptionConfiguration).
-    pub fn builder() -> crate::model::server_side_encryption_configuration::Builder {
-        crate::model::server_side_encryption_configuration::Builder::default()
-    }
-}
 
 /// <p>Information about how to render the content.</p>
 #[non_exhaustive]
@@ -372,6 +374,13 @@ impl RenderingConfiguration {
         self.template_uri.as_deref()
     }
 }
+impl RenderingConfiguration {
+    /// Creates a new builder-style object to manufacture [`RenderingConfiguration`](crate::model::RenderingConfiguration).
+    pub fn builder() -> crate::model::rendering_configuration::Builder {
+        crate::model::rendering_configuration::Builder::default()
+    }
+}
+
 /// See [`RenderingConfiguration`](crate::model::RenderingConfiguration).
 pub mod rendering_configuration {
 
@@ -408,12 +417,6 @@ pub mod rendering_configuration {
                 template_uri: self.template_uri,
             }
         }
-    }
-}
-impl RenderingConfiguration {
-    /// Creates a new builder-style object to manufacture [`RenderingConfiguration`](crate::model::RenderingConfiguration).
-    pub fn builder() -> crate::model::rendering_configuration::Builder {
-        crate::model::rendering_configuration::Builder::default()
     }
 }
 
@@ -487,6 +490,13 @@ impl AppIntegrationsConfiguration {
         self.object_fields.as_deref()
     }
 }
+impl AppIntegrationsConfiguration {
+    /// Creates a new builder-style object to manufacture [`AppIntegrationsConfiguration`](crate::model::AppIntegrationsConfiguration).
+    pub fn builder() -> crate::model::app_integrations_configuration::Builder {
+        crate::model::app_integrations_configuration::Builder::default()
+    }
+}
+
 /// See [`AppIntegrationsConfiguration`](crate::model::AppIntegrationsConfiguration).
 pub mod app_integrations_configuration {
 
@@ -547,12 +557,6 @@ pub mod app_integrations_configuration {
                 object_fields: self.object_fields,
             }
         }
-    }
-}
-impl AppIntegrationsConfiguration {
-    /// Creates a new builder-style object to manufacture [`AppIntegrationsConfiguration`](crate::model::AppIntegrationsConfiguration).
-    pub fn builder() -> crate::model::app_integrations_configuration::Builder {
-        crate::model::app_integrations_configuration::Builder::default()
     }
 }
 
@@ -859,6 +863,13 @@ impl ContentSummary {
         self.tags.as_ref()
     }
 }
+impl ContentSummary {
+    /// Creates a new builder-style object to manufacture [`ContentSummary`](crate::model::ContentSummary).
+    pub fn builder() -> crate::model::content_summary::Builder {
+        crate::model::content_summary::Builder::default()
+    }
+}
+
 /// See [`ContentSummary`](crate::model::ContentSummary).
 pub mod content_summary {
 
@@ -1050,12 +1061,6 @@ pub mod content_summary {
         }
     }
 }
-impl ContentSummary {
-    /// Creates a new builder-style object to manufacture [`ContentSummary`](crate::model::ContentSummary).
-    pub fn builder() -> crate::model::content_summary::Builder {
-        crate::model::content_summary::Builder::default()
-    }
-}
 
 /// When writing a match expression against `ContentStatus`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -1194,6 +1199,13 @@ impl SearchExpression {
         self.filters.as_deref()
     }
 }
+impl SearchExpression {
+    /// Creates a new builder-style object to manufacture [`SearchExpression`](crate::model::SearchExpression).
+    pub fn builder() -> crate::model::search_expression::Builder {
+        crate::model::search_expression::Builder::default()
+    }
+}
+
 /// See [`SearchExpression`](crate::model::SearchExpression).
 pub mod search_expression {
 
@@ -1231,12 +1243,6 @@ pub mod search_expression {
         }
     }
 }
-impl SearchExpression {
-    /// Creates a new builder-style object to manufacture [`SearchExpression`](crate::model::SearchExpression).
-    pub fn builder() -> crate::model::search_expression::Builder {
-        crate::model::search_expression::Builder::default()
-    }
-}
 
 /// <p>A search filter.</p>
 #[non_exhaustive]
@@ -1266,6 +1272,13 @@ impl Filter {
         self.value.as_deref()
     }
 }
+impl Filter {
+    /// Creates a new builder-style object to manufacture [`Filter`](crate::model::Filter).
+    pub fn builder() -> crate::model::filter::Builder {
+        crate::model::filter::Builder::default()
+    }
+}
+
 /// See [`Filter`](crate::model::Filter).
 pub mod filter {
 
@@ -1319,12 +1332,6 @@ pub mod filter {
                 value: self.value,
             }
         }
-    }
-}
-impl Filter {
-    /// Creates a new builder-style object to manufacture [`Filter`](crate::model::Filter).
-    pub fn builder() -> crate::model::filter::Builder {
-        crate::model::filter::Builder::default()
     }
 }
 
@@ -1584,6 +1591,13 @@ impl KnowledgeBaseSummary {
         self.tags.as_ref()
     }
 }
+impl KnowledgeBaseSummary {
+    /// Creates a new builder-style object to manufacture [`KnowledgeBaseSummary`](crate::model::KnowledgeBaseSummary).
+    pub fn builder() -> crate::model::knowledge_base_summary::Builder {
+        crate::model::knowledge_base_summary::Builder::default()
+    }
+}
+
 /// See [`KnowledgeBaseSummary`](crate::model::KnowledgeBaseSummary).
 pub mod knowledge_base_summary {
 
@@ -1766,12 +1780,6 @@ pub mod knowledge_base_summary {
         }
     }
 }
-impl KnowledgeBaseSummary {
-    /// Creates a new builder-style object to manufacture [`KnowledgeBaseSummary`](crate::model::KnowledgeBaseSummary).
-    pub fn builder() -> crate::model::knowledge_base_summary::Builder {
-        crate::model::knowledge_base_summary::Builder::default()
-    }
-}
 
 /// <p>Information about the content.</p>
 #[non_exhaustive]
@@ -1906,6 +1914,13 @@ impl std::fmt::Debug for ContentData {
         formatter.finish()
     }
 }
+impl ContentData {
+    /// Creates a new builder-style object to manufacture [`ContentData`](crate::model::ContentData).
+    pub fn builder() -> crate::model::content_data::Builder {
+        crate::model::content_data::Builder::default()
+    }
+}
+
 /// See [`ContentData`](crate::model::ContentData).
 pub mod content_data {
 
@@ -2156,12 +2171,6 @@ pub mod content_data {
         }
     }
 }
-impl ContentData {
-    /// Creates a new builder-style object to manufacture [`ContentData`](crate::model::ContentData).
-    pub fn builder() -> crate::model::content_data::Builder {
-        crate::model::content_data::Builder::default()
-    }
-}
 
 /// <p>Summary information about the session.</p>
 #[non_exhaustive]
@@ -2198,6 +2207,13 @@ impl SessionSummary {
         self.assistant_arn.as_deref()
     }
 }
+impl SessionSummary {
+    /// Creates a new builder-style object to manufacture [`SessionSummary`](crate::model::SessionSummary).
+    pub fn builder() -> crate::model::session_summary::Builder {
+        crate::model::session_summary::Builder::default()
+    }
+}
+
 /// See [`SessionSummary`](crate::model::SessionSummary).
 pub mod session_summary {
 
@@ -2265,12 +2281,6 @@ pub mod session_summary {
         }
     }
 }
-impl SessionSummary {
-    /// Creates a new builder-style object to manufacture [`SessionSummary`](crate::model::SessionSummary).
-    pub fn builder() -> crate::model::session_summary::Builder {
-        crate::model::session_summary::Builder::default()
-    }
-}
 
 /// <p>Information about the result.</p>
 #[non_exhaustive]
@@ -2300,6 +2310,13 @@ impl ResultData {
         self.relevance_score
     }
 }
+impl ResultData {
+    /// Creates a new builder-style object to manufacture [`ResultData`](crate::model::ResultData).
+    pub fn builder() -> crate::model::result_data::Builder {
+        crate::model::result_data::Builder::default()
+    }
+}
+
 /// See [`ResultData`](crate::model::ResultData).
 pub mod result_data {
 
@@ -2352,12 +2369,6 @@ pub mod result_data {
         }
     }
 }
-impl ResultData {
-    /// Creates a new builder-style object to manufacture [`ResultData`](crate::model::ResultData).
-    pub fn builder() -> crate::model::result_data::Builder {
-        crate::model::result_data::Builder::default()
-    }
-}
 
 /// <p>The document.</p>
 #[non_exhaustive]
@@ -2387,6 +2398,13 @@ impl Document {
         self.excerpt.as_ref()
     }
 }
+impl Document {
+    /// Creates a new builder-style object to manufacture [`Document`](crate::model::Document).
+    pub fn builder() -> crate::model::document::Builder {
+        crate::model::document::Builder::default()
+    }
+}
+
 /// See [`Document`](crate::model::Document).
 pub mod document {
 
@@ -2445,12 +2463,6 @@ pub mod document {
         }
     }
 }
-impl Document {
-    /// Creates a new builder-style object to manufacture [`Document`](crate::model::Document).
-    pub fn builder() -> crate::model::document::Builder {
-        crate::model::document::Builder::default()
-    }
-}
 
 /// <p>The text of the document.</p>
 #[non_exhaustive]
@@ -2481,6 +2493,13 @@ impl std::fmt::Debug for DocumentText {
         formatter.finish()
     }
 }
+impl DocumentText {
+    /// Creates a new builder-style object to manufacture [`DocumentText`](crate::model::DocumentText).
+    pub fn builder() -> crate::model::document_text::Builder {
+        crate::model::document_text::Builder::default()
+    }
+}
+
 /// See [`DocumentText`](crate::model::DocumentText).
 pub mod document_text {
 
@@ -2538,12 +2557,6 @@ pub mod document_text {
         }
     }
 }
-impl DocumentText {
-    /// Creates a new builder-style object to manufacture [`DocumentText`](crate::model::DocumentText).
-    pub fn builder() -> crate::model::document_text::Builder {
-        crate::model::document_text::Builder::default()
-    }
-}
 
 /// <p>Offset specification to describe highlighting of document excerpts for rendering search results and recommendations.</p>
 #[non_exhaustive]
@@ -2566,6 +2579,13 @@ impl Highlight {
         self.end_offset_exclusive
     }
 }
+impl Highlight {
+    /// Creates a new builder-style object to manufacture [`Highlight`](crate::model::Highlight).
+    pub fn builder() -> crate::model::highlight::Builder {
+        crate::model::highlight::Builder::default()
+    }
+}
+
 /// See [`Highlight`](crate::model::Highlight).
 pub mod highlight {
 
@@ -2606,12 +2626,6 @@ pub mod highlight {
         }
     }
 }
-impl Highlight {
-    /// Creates a new builder-style object to manufacture [`Highlight`](crate::model::Highlight).
-    pub fn builder() -> crate::model::highlight::Builder {
-        crate::model::highlight::Builder::default()
-    }
-}
 
 /// <p>Reference information about the content.</p>
 #[non_exhaustive]
@@ -2648,6 +2662,13 @@ impl ContentReference {
         self.content_id.as_deref()
     }
 }
+impl ContentReference {
+    /// Creates a new builder-style object to manufacture [`ContentReference`](crate::model::ContentReference).
+    pub fn builder() -> crate::model::content_reference::Builder {
+        crate::model::content_reference::Builder::default()
+    }
+}
+
 /// See [`ContentReference`](crate::model::ContentReference).
 pub mod content_reference {
 
@@ -2718,12 +2739,6 @@ pub mod content_reference {
         }
     }
 }
-impl ContentReference {
-    /// Creates a new builder-style object to manufacture [`ContentReference`](crate::model::ContentReference).
-    pub fn builder() -> crate::model::content_reference::Builder {
-        crate::model::content_reference::Builder::default()
-    }
-}
 
 /// <p>An error occurred when creating a recommendation.</p>
 #[non_exhaustive]
@@ -2746,6 +2761,13 @@ impl NotifyRecommendationsReceivedError {
         self.message.as_deref()
     }
 }
+impl NotifyRecommendationsReceivedError {
+    /// Creates a new builder-style object to manufacture [`NotifyRecommendationsReceivedError`](crate::model::NotifyRecommendationsReceivedError).
+    pub fn builder() -> crate::model::notify_recommendations_received_error::Builder {
+        crate::model::notify_recommendations_received_error::Builder::default()
+    }
+}
+
 /// See [`NotifyRecommendationsReceivedError`](crate::model::NotifyRecommendationsReceivedError).
 pub mod notify_recommendations_received_error {
 
@@ -2787,12 +2809,6 @@ pub mod notify_recommendations_received_error {
                 message: self.message,
             }
         }
-    }
-}
-impl NotifyRecommendationsReceivedError {
-    /// Creates a new builder-style object to manufacture [`NotifyRecommendationsReceivedError`](crate::model::NotifyRecommendationsReceivedError).
-    pub fn builder() -> crate::model::notify_recommendations_received_error::Builder {
-        crate::model::notify_recommendations_received_error::Builder::default()
     }
 }
 
@@ -2846,6 +2862,13 @@ impl RecommendationTrigger {
         self.recommendation_ids.as_deref()
     }
 }
+impl RecommendationTrigger {
+    /// Creates a new builder-style object to manufacture [`RecommendationTrigger`](crate::model::RecommendationTrigger).
+    pub fn builder() -> crate::model::recommendation_trigger::Builder {
+        crate::model::recommendation_trigger::Builder::default()
+    }
+}
+
 /// See [`RecommendationTrigger`](crate::model::RecommendationTrigger).
 pub mod recommendation_trigger {
 
@@ -2948,12 +2971,6 @@ pub mod recommendation_trigger {
         }
     }
 }
-impl RecommendationTrigger {
-    /// Creates a new builder-style object to manufacture [`RecommendationTrigger`](crate::model::RecommendationTrigger).
-    pub fn builder() -> crate::model::recommendation_trigger::Builder {
-        crate::model::recommendation_trigger::Builder::default()
-    }
-}
 
 /// <p>A union type containing information related to the trigger.</p>
 #[non_exhaustive]
@@ -3015,6 +3032,13 @@ impl std::fmt::Debug for QueryRecommendationTriggerData {
         formatter.finish()
     }
 }
+impl QueryRecommendationTriggerData {
+    /// Creates a new builder-style object to manufacture [`QueryRecommendationTriggerData`](crate::model::QueryRecommendationTriggerData).
+    pub fn builder() -> crate::model::query_recommendation_trigger_data::Builder {
+        crate::model::query_recommendation_trigger_data::Builder::default()
+    }
+}
+
 /// See [`QueryRecommendationTriggerData`](crate::model::QueryRecommendationTriggerData).
 pub mod query_recommendation_trigger_data {
 
@@ -3046,12 +3070,6 @@ pub mod query_recommendation_trigger_data {
             formatter.field("text", &"*** Sensitive Data Redacted ***");
             formatter.finish()
         }
-    }
-}
-impl QueryRecommendationTriggerData {
-    /// Creates a new builder-style object to manufacture [`QueryRecommendationTriggerData`](crate::model::QueryRecommendationTriggerData).
-    pub fn builder() -> crate::model::query_recommendation_trigger_data::Builder {
-        crate::model::query_recommendation_trigger_data::Builder::default()
     }
 }
 
@@ -3281,6 +3299,13 @@ impl RecommendationData {
         self.r#type.as_ref()
     }
 }
+impl RecommendationData {
+    /// Creates a new builder-style object to manufacture [`RecommendationData`](crate::model::RecommendationData).
+    pub fn builder() -> crate::model::recommendation_data::Builder {
+        crate::model::recommendation_data::Builder::default()
+    }
+}
+
 /// See [`RecommendationData`](crate::model::RecommendationData).
 pub mod recommendation_data {
 
@@ -3364,12 +3389,6 @@ pub mod recommendation_data {
                 r#type: self.r#type,
             }
         }
-    }
-}
-impl RecommendationData {
-    /// Creates a new builder-style object to manufacture [`RecommendationData`](crate::model::RecommendationData).
-    pub fn builder() -> crate::model::recommendation_data::Builder {
-        crate::model::recommendation_data::Builder::default()
     }
 }
 
@@ -3625,6 +3644,13 @@ impl AssistantSummary {
         self.server_side_encryption_configuration.as_ref()
     }
 }
+impl AssistantSummary {
+    /// Creates a new builder-style object to manufacture [`AssistantSummary`](crate::model::AssistantSummary).
+    pub fn builder() -> crate::model::assistant_summary::Builder {
+        crate::model::assistant_summary::Builder::default()
+    }
+}
+
 /// See [`AssistantSummary`](crate::model::AssistantSummary).
 pub mod assistant_summary {
 
@@ -3765,12 +3791,6 @@ pub mod assistant_summary {
                 server_side_encryption_configuration: self.server_side_encryption_configuration,
             }
         }
-    }
-}
-impl AssistantSummary {
-    /// Creates a new builder-style object to manufacture [`AssistantSummary`](crate::model::AssistantSummary).
-    pub fn builder() -> crate::model::assistant_summary::Builder {
-        crate::model::assistant_summary::Builder::default()
     }
 }
 
@@ -4046,6 +4066,13 @@ impl AssistantData {
         self.server_side_encryption_configuration.as_ref()
     }
 }
+impl AssistantData {
+    /// Creates a new builder-style object to manufacture [`AssistantData`](crate::model::AssistantData).
+    pub fn builder() -> crate::model::assistant_data::Builder {
+        crate::model::assistant_data::Builder::default()
+    }
+}
+
 /// See [`AssistantData`](crate::model::AssistantData).
 pub mod assistant_data {
 
@@ -4188,12 +4215,6 @@ pub mod assistant_data {
         }
     }
 }
-impl AssistantData {
-    /// Creates a new builder-style object to manufacture [`AssistantData`](crate::model::AssistantData).
-    pub fn builder() -> crate::model::assistant_data::Builder {
-        crate::model::assistant_data::Builder::default()
-    }
-}
 
 /// <p>Information about the session.</p>
 #[non_exhaustive]
@@ -4241,6 +4262,13 @@ impl SessionData {
         self.tags.as_ref()
     }
 }
+impl SessionData {
+    /// Creates a new builder-style object to manufacture [`SessionData`](crate::model::SessionData).
+    pub fn builder() -> crate::model::session_data::Builder {
+        crate::model::session_data::Builder::default()
+    }
+}
+
 /// See [`SessionData`](crate::model::SessionData).
 pub mod session_data {
 
@@ -4334,12 +4362,6 @@ pub mod session_data {
         }
     }
 }
-impl SessionData {
-    /// Creates a new builder-style object to manufacture [`SessionData`](crate::model::SessionData).
-    pub fn builder() -> crate::model::session_data::Builder {
-        crate::model::session_data::Builder::default()
-    }
-}
 
 /// <p>Summary information about the assistant association.</p>
 #[non_exhaustive]
@@ -4403,6 +4425,13 @@ impl AssistantAssociationSummary {
         self.tags.as_ref()
     }
 }
+impl AssistantAssociationSummary {
+    /// Creates a new builder-style object to manufacture [`AssistantAssociationSummary`](crate::model::AssistantAssociationSummary).
+    pub fn builder() -> crate::model::assistant_association_summary::Builder {
+        crate::model::assistant_association_summary::Builder::default()
+    }
+}
+
 /// See [`AssistantAssociationSummary`](crate::model::AssistantAssociationSummary).
 pub mod assistant_association_summary {
 
@@ -4539,12 +4568,6 @@ pub mod assistant_association_summary {
         }
     }
 }
-impl AssistantAssociationSummary {
-    /// Creates a new builder-style object to manufacture [`AssistantAssociationSummary`](crate::model::AssistantAssociationSummary).
-    pub fn builder() -> crate::model::assistant_association_summary::Builder {
-        crate::model::assistant_association_summary::Builder::default()
-    }
-}
 
 /// <p>The data that is output as a result of the assistant association.</p>
 #[non_exhaustive]
@@ -4606,6 +4629,13 @@ impl KnowledgeBaseAssociationData {
         self.knowledge_base_arn.as_deref()
     }
 }
+impl KnowledgeBaseAssociationData {
+    /// Creates a new builder-style object to manufacture [`KnowledgeBaseAssociationData`](crate::model::KnowledgeBaseAssociationData).
+    pub fn builder() -> crate::model::knowledge_base_association_data::Builder {
+        crate::model::knowledge_base_association_data::Builder::default()
+    }
+}
+
 /// See [`KnowledgeBaseAssociationData`](crate::model::KnowledgeBaseAssociationData).
 pub mod knowledge_base_association_data {
 
@@ -4650,12 +4680,6 @@ pub mod knowledge_base_association_data {
                 knowledge_base_arn: self.knowledge_base_arn,
             }
         }
-    }
-}
-impl KnowledgeBaseAssociationData {
-    /// Creates a new builder-style object to manufacture [`KnowledgeBaseAssociationData`](crate::model::KnowledgeBaseAssociationData).
-    pub fn builder() -> crate::model::knowledge_base_association_data::Builder {
-        crate::model::knowledge_base_association_data::Builder::default()
     }
 }
 
@@ -4806,6 +4830,13 @@ impl AssistantAssociationData {
         self.tags.as_ref()
     }
 }
+impl AssistantAssociationData {
+    /// Creates a new builder-style object to manufacture [`AssistantAssociationData`](crate::model::AssistantAssociationData).
+    pub fn builder() -> crate::model::assistant_association_data::Builder {
+        crate::model::assistant_association_data::Builder::default()
+    }
+}
+
 /// See [`AssistantAssociationData`](crate::model::AssistantAssociationData).
 pub mod assistant_association_data {
 
@@ -4940,12 +4971,6 @@ pub mod assistant_association_data {
                 tags: self.tags,
             }
         }
-    }
-}
-impl AssistantAssociationData {
-    /// Creates a new builder-style object to manufacture [`AssistantAssociationData`](crate::model::AssistantAssociationData).
-    pub fn builder() -> crate::model::assistant_association_data::Builder {
-        crate::model::assistant_association_data::Builder::default()
     }
 }
 

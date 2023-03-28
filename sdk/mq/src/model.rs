@@ -28,6 +28,13 @@ impl SanitizationWarning {
         self.reason.as_ref()
     }
 }
+impl SanitizationWarning {
+    /// Creates a new builder-style object to manufacture [`SanitizationWarning`](crate::model::SanitizationWarning).
+    pub fn builder() -> crate::model::sanitization_warning::Builder {
+        crate::model::sanitization_warning::Builder::default()
+    }
+}
+
 /// See [`SanitizationWarning`](crate::model::SanitizationWarning).
 pub mod sanitization_warning {
 
@@ -84,12 +91,6 @@ pub mod sanitization_warning {
                 reason: self.reason,
             }
         }
-    }
-}
-impl SanitizationWarning {
-    /// Creates a new builder-style object to manufacture [`SanitizationWarning`](crate::model::SanitizationWarning).
-    pub fn builder() -> crate::model::sanitization_warning::Builder {
-        crate::model::sanitization_warning::Builder::default()
     }
 }
 
@@ -226,6 +227,13 @@ impl ConfigurationRevision {
         self.revision
     }
 }
+impl ConfigurationRevision {
+    /// Creates a new builder-style object to manufacture [`ConfigurationRevision`](crate::model::ConfigurationRevision).
+    pub fn builder() -> crate::model::configuration_revision::Builder {
+        crate::model::configuration_revision::Builder::default()
+    }
+}
+
 /// See [`ConfigurationRevision`](crate::model::ConfigurationRevision).
 pub mod configuration_revision {
 
@@ -281,12 +289,6 @@ pub mod configuration_revision {
         }
     }
 }
-impl ConfigurationRevision {
-    /// Creates a new builder-style object to manufacture [`ConfigurationRevision`](crate::model::ConfigurationRevision).
-    pub fn builder() -> crate::model::configuration_revision::Builder {
-        crate::model::configuration_revision::Builder::default()
-    }
-}
 
 /// <p>The scheduled time period relative to UTC during which Amazon MQ begins to apply pending updates or patches to the broker.</p>
 #[non_exhaustive]
@@ -316,6 +318,13 @@ impl WeeklyStartTime {
         self.time_zone.as_deref()
     }
 }
+impl WeeklyStartTime {
+    /// Creates a new builder-style object to manufacture [`WeeklyStartTime`](crate::model::WeeklyStartTime).
+    pub fn builder() -> crate::model::weekly_start_time::Builder {
+        crate::model::weekly_start_time::Builder::default()
+    }
+}
+
 /// See [`WeeklyStartTime`](crate::model::WeeklyStartTime).
 pub mod weekly_start_time {
 
@@ -369,12 +378,6 @@ pub mod weekly_start_time {
                 time_zone: self.time_zone,
             }
         }
-    }
-}
-impl WeeklyStartTime {
-    /// Creates a new builder-style object to manufacture [`WeeklyStartTime`](crate::model::WeeklyStartTime).
-    pub fn builder() -> crate::model::weekly_start_time::Builder {
-        crate::model::weekly_start_time::Builder::default()
     }
 }
 
@@ -522,6 +525,13 @@ impl Logs {
         self.general
     }
 }
+impl Logs {
+    /// Creates a new builder-style object to manufacture [`Logs`](crate::model::Logs).
+    pub fn builder() -> crate::model::logs::Builder {
+        crate::model::logs::Builder::default()
+    }
+}
+
 /// See [`Logs`](crate::model::Logs).
 pub mod logs {
 
@@ -560,12 +570,6 @@ pub mod logs {
                 general: self.general.unwrap_or_default(),
             }
         }
-    }
-}
-impl Logs {
-    /// Creates a new builder-style object to manufacture [`Logs`](crate::model::Logs).
-    pub fn builder() -> crate::model::logs::Builder {
-        crate::model::logs::Builder::default()
     }
 }
 
@@ -646,6 +650,13 @@ impl LdapServerMetadataOutput {
         self.user_search_subtree
     }
 }
+impl LdapServerMetadataOutput {
+    /// Creates a new builder-style object to manufacture [`LdapServerMetadataOutput`](crate::model::LdapServerMetadataOutput).
+    pub fn builder() -> crate::model::ldap_server_metadata_output::Builder {
+        crate::model::ldap_server_metadata_output::Builder::default()
+    }
+}
+
 /// See [`LdapServerMetadataOutput`](crate::model::LdapServerMetadataOutput).
 pub mod ldap_server_metadata_output {
 
@@ -803,12 +814,6 @@ pub mod ldap_server_metadata_output {
         }
     }
 }
-impl LdapServerMetadataOutput {
-    /// Creates a new builder-style object to manufacture [`LdapServerMetadataOutput`](crate::model::LdapServerMetadataOutput).
-    pub fn builder() -> crate::model::ldap_server_metadata_output::Builder {
-        crate::model::ldap_server_metadata_output::Builder::default()
-    }
-}
 
 /// <p>A list of information about the configuration.</p> <important>
 /// <p>Does not apply to RabbitMQ brokers.</p>
@@ -833,6 +838,13 @@ impl ConfigurationId {
         self.revision
     }
 }
+impl ConfigurationId {
+    /// Creates a new builder-style object to manufacture [`ConfigurationId`](crate::model::ConfigurationId).
+    pub fn builder() -> crate::model::configuration_id::Builder {
+        crate::model::configuration_id::Builder::default()
+    }
+}
+
 /// See [`ConfigurationId`](crate::model::ConfigurationId).
 pub mod configuration_id {
 
@@ -871,12 +883,6 @@ pub mod configuration_id {
                 revision: self.revision.unwrap_or_default(),
             }
         }
-    }
-}
-impl ConfigurationId {
-    /// Creates a new builder-style object to manufacture [`ConfigurationId`](crate::model::ConfigurationId).
-    pub fn builder() -> crate::model::configuration_id::Builder {
-        crate::model::configuration_id::Builder::default()
     }
 }
 
@@ -1058,6 +1064,13 @@ impl LdapServerMetadataInput {
         self.user_search_subtree
     }
 }
+impl LdapServerMetadataInput {
+    /// Creates a new builder-style object to manufacture [`LdapServerMetadataInput`](crate::model::LdapServerMetadataInput).
+    pub fn builder() -> crate::model::ldap_server_metadata_input::Builder {
+        crate::model::ldap_server_metadata_input::Builder::default()
+    }
+}
+
 /// See [`LdapServerMetadataInput`](crate::model::LdapServerMetadataInput).
 pub mod ldap_server_metadata_input {
 
@@ -1230,12 +1243,6 @@ pub mod ldap_server_metadata_input {
         }
     }
 }
-impl LdapServerMetadataInput {
-    /// Creates a new builder-style object to manufacture [`LdapServerMetadataInput`](crate::model::LdapServerMetadataInput).
-    pub fn builder() -> crate::model::ldap_server_metadata_input::Builder {
-        crate::model::ldap_server_metadata_input::Builder::default()
-    }
-}
 
 /// <p>Returns a list of all broker users. Does not apply to RabbitMQ brokers.</p>
 #[non_exhaustive]
@@ -1258,6 +1265,13 @@ impl UserSummary {
         self.username.as_deref()
     }
 }
+impl UserSummary {
+    /// Creates a new builder-style object to manufacture [`UserSummary`](crate::model::UserSummary).
+    pub fn builder() -> crate::model::user_summary::Builder {
+        crate::model::user_summary::Builder::default()
+    }
+}
+
 /// See [`UserSummary`](crate::model::UserSummary).
 pub mod user_summary {
 
@@ -1299,12 +1313,6 @@ pub mod user_summary {
                 username: self.username,
             }
         }
-    }
-}
-impl UserSummary {
-    /// Creates a new builder-style object to manufacture [`UserSummary`](crate::model::UserSummary).
-    pub fn builder() -> crate::model::user_summary::Builder {
-        crate::model::user_summary::Builder::default()
     }
 }
 
@@ -1486,6 +1494,13 @@ impl Configuration {
         self.tags.as_ref()
     }
 }
+impl Configuration {
+    /// Creates a new builder-style object to manufacture [`Configuration`](crate::model::Configuration).
+    pub fn builder() -> crate::model::configuration::Builder {
+        crate::model::configuration::Builder::default()
+    }
+}
+
 /// See [`Configuration`](crate::model::Configuration).
 pub mod configuration {
 
@@ -1658,12 +1673,6 @@ pub mod configuration {
         }
     }
 }
-impl Configuration {
-    /// Creates a new builder-style object to manufacture [`Configuration`](crate::model::Configuration).
-    pub fn builder() -> crate::model::configuration::Builder {
-        crate::model::configuration::Builder::default()
-    }
-}
 
 /// When writing a match expression against `EngineType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -1818,6 +1827,13 @@ impl BrokerSummary {
         self.host_instance_type.as_deref()
     }
 }
+impl BrokerSummary {
+    /// Creates a new builder-style object to manufacture [`BrokerSummary`](crate::model::BrokerSummary).
+    pub fn builder() -> crate::model::broker_summary::Builder {
+        crate::model::broker_summary::Builder::default()
+    }
+}
+
 /// See [`BrokerSummary`](crate::model::BrokerSummary).
 pub mod broker_summary {
 
@@ -1943,12 +1959,6 @@ pub mod broker_summary {
                 host_instance_type: self.host_instance_type,
             }
         }
-    }
-}
-impl BrokerSummary {
-    /// Creates a new builder-style object to manufacture [`BrokerSummary`](crate::model::BrokerSummary).
-    pub fn builder() -> crate::model::broker_summary::Builder {
-        crate::model::broker_summary::Builder::default()
     }
 }
 
@@ -2196,6 +2206,13 @@ impl UserPendingChanges {
         self.pending_change.as_ref()
     }
 }
+impl UserPendingChanges {
+    /// Creates a new builder-style object to manufacture [`UserPendingChanges`](crate::model::UserPendingChanges).
+    pub fn builder() -> crate::model::user_pending_changes::Builder {
+        crate::model::user_pending_changes::Builder::default()
+    }
+}
+
 /// See [`UserPendingChanges`](crate::model::UserPendingChanges).
 pub mod user_pending_changes {
 
@@ -2260,12 +2277,6 @@ pub mod user_pending_changes {
         }
     }
 }
-impl UserPendingChanges {
-    /// Creates a new builder-style object to manufacture [`UserPendingChanges`](crate::model::UserPendingChanges).
-    pub fn builder() -> crate::model::user_pending_changes::Builder {
-        crate::model::user_pending_changes::Builder::default()
-    }
-}
 
 /// <p>Option for host instance type.</p>
 #[non_exhaustive]
@@ -2319,6 +2330,13 @@ impl BrokerInstanceOption {
         self.supported_engine_versions.as_deref()
     }
 }
+impl BrokerInstanceOption {
+    /// Creates a new builder-style object to manufacture [`BrokerInstanceOption`](crate::model::BrokerInstanceOption).
+    pub fn builder() -> crate::model::broker_instance_option::Builder {
+        crate::model::broker_instance_option::Builder::default()
+    }
+}
+
 /// See [`BrokerInstanceOption`](crate::model::BrokerInstanceOption).
 pub mod broker_instance_option {
 
@@ -2446,12 +2464,6 @@ pub mod broker_instance_option {
         }
     }
 }
-impl BrokerInstanceOption {
-    /// Creates a new builder-style object to manufacture [`BrokerInstanceOption`](crate::model::BrokerInstanceOption).
-    pub fn builder() -> crate::model::broker_instance_option::Builder {
-        crate::model::broker_instance_option::Builder::default()
-    }
-}
 
 /// When writing a match expression against `BrokerStorageType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -2559,6 +2571,13 @@ impl AvailabilityZone {
         self.name.as_deref()
     }
 }
+impl AvailabilityZone {
+    /// Creates a new builder-style object to manufacture [`AvailabilityZone`](crate::model::AvailabilityZone).
+    pub fn builder() -> crate::model::availability_zone::Builder {
+        crate::model::availability_zone::Builder::default()
+    }
+}
+
 /// See [`AvailabilityZone`](crate::model::AvailabilityZone).
 pub mod availability_zone {
 
@@ -2585,12 +2604,6 @@ pub mod availability_zone {
         }
     }
 }
-impl AvailabilityZone {
-    /// Creates a new builder-style object to manufacture [`AvailabilityZone`](crate::model::AvailabilityZone).
-    pub fn builder() -> crate::model::availability_zone::Builder {
-        crate::model::availability_zone::Builder::default()
-    }
-}
 
 /// <p>Types of broker engines.</p>
 #[non_exhaustive]
@@ -2613,6 +2626,13 @@ impl BrokerEngineType {
         self.engine_versions.as_deref()
     }
 }
+impl BrokerEngineType {
+    /// Creates a new builder-style object to manufacture [`BrokerEngineType`](crate::model::BrokerEngineType).
+    pub fn builder() -> crate::model::broker_engine_type::Builder {
+        crate::model::broker_engine_type::Builder::default()
+    }
+}
+
 /// See [`BrokerEngineType`](crate::model::BrokerEngineType).
 pub mod broker_engine_type {
 
@@ -2665,12 +2685,6 @@ pub mod broker_engine_type {
         }
     }
 }
-impl BrokerEngineType {
-    /// Creates a new builder-style object to manufacture [`BrokerEngineType`](crate::model::BrokerEngineType).
-    pub fn builder() -> crate::model::broker_engine_type::Builder {
-        crate::model::broker_engine_type::Builder::default()
-    }
-}
 
 /// <p>Id of the engine version.</p>
 #[non_exhaustive]
@@ -2686,6 +2700,13 @@ impl EngineVersion {
         self.name.as_deref()
     }
 }
+impl EngineVersion {
+    /// Creates a new builder-style object to manufacture [`EngineVersion`](crate::model::EngineVersion).
+    pub fn builder() -> crate::model::engine_version::Builder {
+        crate::model::engine_version::Builder::default()
+    }
+}
+
 /// See [`EngineVersion`](crate::model::EngineVersion).
 pub mod engine_version {
 
@@ -2710,12 +2731,6 @@ pub mod engine_version {
         pub fn build(self) -> crate::model::EngineVersion {
             crate::model::EngineVersion { name: self.name }
         }
-    }
-}
-impl EngineVersion {
-    /// Creates a new builder-style object to manufacture [`EngineVersion`](crate::model::EngineVersion).
-    pub fn builder() -> crate::model::engine_version::Builder {
-        crate::model::engine_version::Builder::default()
     }
 }
 
@@ -2761,6 +2776,13 @@ impl LogsSummary {
         self.pending.as_ref()
     }
 }
+impl LogsSummary {
+    /// Creates a new builder-style object to manufacture [`LogsSummary`](crate::model::LogsSummary).
+    pub fn builder() -> crate::model::logs_summary::Builder {
+        crate::model::logs_summary::Builder::default()
+    }
+}
+
 /// See [`LogsSummary`](crate::model::LogsSummary).
 pub mod logs_summary {
 
@@ -2846,12 +2868,6 @@ pub mod logs_summary {
         }
     }
 }
-impl LogsSummary {
-    /// Creates a new builder-style object to manufacture [`LogsSummary`](crate::model::LogsSummary).
-    pub fn builder() -> crate::model::logs_summary::Builder {
-        crate::model::logs_summary::Builder::default()
-    }
-}
 
 /// <p>The list of information about logs to be enabled for the specified broker.</p>
 #[non_exhaustive]
@@ -2874,6 +2890,13 @@ impl PendingLogs {
         self.general
     }
 }
+impl PendingLogs {
+    /// Creates a new builder-style object to manufacture [`PendingLogs`](crate::model::PendingLogs).
+    pub fn builder() -> crate::model::pending_logs::Builder {
+        crate::model::pending_logs::Builder::default()
+    }
+}
+
 /// See [`PendingLogs`](crate::model::PendingLogs).
 pub mod pending_logs {
 
@@ -2914,12 +2937,6 @@ pub mod pending_logs {
         }
     }
 }
-impl PendingLogs {
-    /// Creates a new builder-style object to manufacture [`PendingLogs`](crate::model::PendingLogs).
-    pub fn builder() -> crate::model::pending_logs::Builder {
-        crate::model::pending_logs::Builder::default()
-    }
-}
 
 /// <important>
 /// <p>Does not apply to RabbitMQ brokers.</p>
@@ -2945,6 +2962,13 @@ impl EncryptionOptions {
         self.use_aws_owned_key
     }
 }
+impl EncryptionOptions {
+    /// Creates a new builder-style object to manufacture [`EncryptionOptions`](crate::model::EncryptionOptions).
+    pub fn builder() -> crate::model::encryption_options::Builder {
+        crate::model::encryption_options::Builder::default()
+    }
+}
+
 /// See [`EncryptionOptions`](crate::model::EncryptionOptions).
 pub mod encryption_options {
 
@@ -2985,12 +3009,6 @@ pub mod encryption_options {
         }
     }
 }
-impl EncryptionOptions {
-    /// Creates a new builder-style object to manufacture [`EncryptionOptions`](crate::model::EncryptionOptions).
-    pub fn builder() -> crate::model::encryption_options::Builder {
-        crate::model::encryption_options::Builder::default()
-    }
-}
 
 /// <p>Broker configuration information</p>
 #[non_exhaustive]
@@ -3020,6 +3038,13 @@ impl Configurations {
         self.pending.as_ref()
     }
 }
+impl Configurations {
+    /// Creates a new builder-style object to manufacture [`Configurations`](crate::model::Configurations).
+    pub fn builder() -> crate::model::configurations::Builder {
+        crate::model::configurations::Builder::default()
+    }
+}
+
 /// See [`Configurations`](crate::model::Configurations).
 pub mod configurations {
 
@@ -3087,12 +3112,6 @@ pub mod configurations {
         }
     }
 }
-impl Configurations {
-    /// Creates a new builder-style object to manufacture [`Configurations`](crate::model::Configurations).
-    pub fn builder() -> crate::model::configurations::Builder {
-        crate::model::configurations::Builder::default()
-    }
-}
 
 /// <p>Returns information about all brokers.</p>
 #[non_exhaustive]
@@ -3122,6 +3141,13 @@ impl BrokerInstance {
         self.ip_address.as_deref()
     }
 }
+impl BrokerInstance {
+    /// Creates a new builder-style object to manufacture [`BrokerInstance`](crate::model::BrokerInstance).
+    pub fn builder() -> crate::model::broker_instance::Builder {
+        crate::model::broker_instance::Builder::default()
+    }
+}
+
 /// See [`BrokerInstance`](crate::model::BrokerInstance).
 pub mod broker_instance {
 
@@ -3183,12 +3209,6 @@ pub mod broker_instance {
         }
     }
 }
-impl BrokerInstance {
-    /// Creates a new builder-style object to manufacture [`BrokerInstance`](crate::model::BrokerInstance).
-    pub fn builder() -> crate::model::broker_instance::Builder {
-        crate::model::broker_instance::Builder::default()
-    }
-}
 
 /// <p>The action required to resolve a broker issue when the broker is in a CRITICAL_ACTION_REQUIRED state.</p>
 #[non_exhaustive]
@@ -3211,6 +3231,13 @@ impl ActionRequired {
         self.action_required_info.as_deref()
     }
 }
+impl ActionRequired {
+    /// Creates a new builder-style object to manufacture [`ActionRequired`](crate::model::ActionRequired).
+    pub fn builder() -> crate::model::action_required::Builder {
+        crate::model::action_required::Builder::default()
+    }
+}
+
 /// See [`ActionRequired`](crate::model::ActionRequired).
 pub mod action_required {
 
@@ -3255,12 +3282,6 @@ pub mod action_required {
                 action_required_info: self.action_required_info,
             }
         }
-    }
-}
-impl ActionRequired {
-    /// Creates a new builder-style object to manufacture [`ActionRequired`](crate::model::ActionRequired).
-    pub fn builder() -> crate::model::action_required::Builder {
-        crate::model::action_required::Builder::default()
     }
 }
 
@@ -3309,6 +3330,13 @@ impl User {
         self.username.as_deref()
     }
 }
+impl User {
+    /// Creates a new builder-style object to manufacture [`User`](crate::model::User).
+    pub fn builder() -> crate::model::user::Builder {
+        crate::model::user::Builder::default()
+    }
+}
+
 /// See [`User`](crate::model::User).
 pub mod user {
 
@@ -3390,11 +3418,5 @@ pub mod user {
                 username: self.username,
             }
         }
-    }
-}
-impl User {
-    /// Creates a new builder-style object to manufacture [`User`](crate::model::User).
-    pub fn builder() -> crate::model::user::Builder {
-        crate::model::user::Builder::default()
     }
 }

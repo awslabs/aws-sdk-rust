@@ -560,6 +560,13 @@ impl Tag {
         self.value.as_deref()
     }
 }
+impl Tag {
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
+    pub fn builder() -> crate::model::tag::Builder {
+        crate::model::tag::Builder::default()
+    }
+}
+
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
 
@@ -598,12 +605,6 @@ pub mod tag {
                 value: self.value,
             }
         }
-    }
-}
-impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
-    pub fn builder() -> crate::model::tag::Builder {
-        crate::model::tag::Builder::default()
     }
 }
 
@@ -810,6 +811,13 @@ impl Block {
         self.block_token.as_deref()
     }
 }
+impl Block {
+    /// Creates a new builder-style object to manufacture [`Block`](crate::model::Block).
+    pub fn builder() -> crate::model::block::Builder {
+        crate::model::block::Builder::default()
+    }
+}
+
 /// See [`Block`](crate::model::Block).
 pub mod block {
 
@@ -850,12 +858,6 @@ pub mod block {
         }
     }
 }
-impl Block {
-    /// Creates a new builder-style object to manufacture [`Block`](crate::model::Block).
-    pub fn builder() -> crate::model::block::Builder {
-        crate::model::block::Builder::default()
-    }
-}
 
 /// <p>A block of data in an Amazon Elastic Block Store snapshot that is different from another snapshot of the same volume/snapshot lineage.</p>
 #[non_exhaustive]
@@ -894,6 +896,13 @@ impl std::fmt::Debug for ChangedBlock {
         formatter.finish()
     }
 }
+impl ChangedBlock {
+    /// Creates a new builder-style object to manufacture [`ChangedBlock`](crate::model::ChangedBlock).
+    pub fn builder() -> crate::model::changed_block::Builder {
+        crate::model::changed_block::Builder::default()
+    }
+}
+
 /// See [`ChangedBlock`](crate::model::ChangedBlock).
 pub mod changed_block {
 
@@ -959,12 +968,6 @@ pub mod changed_block {
             formatter.field("second_block_token", &"*** Sensitive Data Redacted ***");
             formatter.finish()
         }
-    }
-}
-impl ChangedBlock {
-    /// Creates a new builder-style object to manufacture [`ChangedBlock`](crate::model::ChangedBlock).
-    pub fn builder() -> crate::model::changed_block::Builder {
-        crate::model::changed_block::Builder::default()
     }
 }
 

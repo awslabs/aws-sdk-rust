@@ -17,6 +17,13 @@ impl InstanceAccessControlAttributeConfiguration {
         self.access_control_attributes.as_deref()
     }
 }
+impl InstanceAccessControlAttributeConfiguration {
+    /// Creates a new builder-style object to manufacture [`InstanceAccessControlAttributeConfiguration`](crate::model::InstanceAccessControlAttributeConfiguration).
+    pub fn builder() -> crate::model::instance_access_control_attribute_configuration::Builder {
+        crate::model::instance_access_control_attribute_configuration::Builder::default()
+    }
+}
+
 /// See [`InstanceAccessControlAttributeConfiguration`](crate::model::InstanceAccessControlAttributeConfiguration).
 pub mod instance_access_control_attribute_configuration {
 
@@ -58,12 +65,6 @@ pub mod instance_access_control_attribute_configuration {
         }
     }
 }
-impl InstanceAccessControlAttributeConfiguration {
-    /// Creates a new builder-style object to manufacture [`InstanceAccessControlAttributeConfiguration`](crate::model::InstanceAccessControlAttributeConfiguration).
-    pub fn builder() -> crate::model::instance_access_control_attribute_configuration::Builder {
-        crate::model::instance_access_control_attribute_configuration::Builder::default()
-    }
-}
 
 /// <p>These are IAM Identity Center identity store attributes that you can configure for use in attributes-based access control (ABAC). You can create permissions policies that determine who can access your AWS resources based upon the configured attribute values. When you enable ABAC and specify <code>AccessControlAttributes</code>, IAM Identity Center passes the attribute values of the authenticated user into IAM for use in policy evaluation.</p>
 #[non_exhaustive]
@@ -86,6 +87,13 @@ impl AccessControlAttribute {
         self.value.as_ref()
     }
 }
+impl AccessControlAttribute {
+    /// Creates a new builder-style object to manufacture [`AccessControlAttribute`](crate::model::AccessControlAttribute).
+    pub fn builder() -> crate::model::access_control_attribute::Builder {
+        crate::model::access_control_attribute::Builder::default()
+    }
+}
+
 /// See [`AccessControlAttribute`](crate::model::AccessControlAttribute).
 pub mod access_control_attribute {
 
@@ -129,12 +137,6 @@ pub mod access_control_attribute {
         }
     }
 }
-impl AccessControlAttribute {
-    /// Creates a new builder-style object to manufacture [`AccessControlAttribute`](crate::model::AccessControlAttribute).
-    pub fn builder() -> crate::model::access_control_attribute::Builder {
-        crate::model::access_control_attribute::Builder::default()
-    }
-}
 
 /// <p>The value used for mapping a specified attribute to an identity source. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/attributemappingsconcept.html">Attribute mappings</a> in the <i>IAM Identity Center User Guide</i>.</p>
 #[non_exhaustive]
@@ -150,6 +152,13 @@ impl AccessControlAttributeValue {
         self.source.as_deref()
     }
 }
+impl AccessControlAttributeValue {
+    /// Creates a new builder-style object to manufacture [`AccessControlAttributeValue`](crate::model::AccessControlAttributeValue).
+    pub fn builder() -> crate::model::access_control_attribute_value::Builder {
+        crate::model::access_control_attribute_value::Builder::default()
+    }
+}
+
 /// See [`AccessControlAttributeValue`](crate::model::AccessControlAttributeValue).
 pub mod access_control_attribute_value {
 
@@ -187,12 +196,6 @@ pub mod access_control_attribute_value {
         }
     }
 }
-impl AccessControlAttributeValue {
-    /// Creates a new builder-style object to manufacture [`AccessControlAttributeValue`](crate::model::AccessControlAttributeValue).
-    pub fn builder() -> crate::model::access_control_attribute_value::Builder {
-        crate::model::access_control_attribute_value::Builder::default()
-    }
-}
 
 /// <p>A set of key-value pairs that are used to manage the resource. Tags can only be applied to permission sets and cannot be applied to corresponding roles that IAM Identity Center creates in AWS accounts.</p>
 #[non_exhaustive]
@@ -215,6 +218,13 @@ impl Tag {
         self.value.as_deref()
     }
 }
+impl Tag {
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
+    pub fn builder() -> crate::model::tag::Builder {
+        crate::model::tag::Builder::default()
+    }
+}
+
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
 
@@ -255,12 +265,6 @@ pub mod tag {
         }
     }
 }
-impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
-    pub fn builder() -> crate::model::tag::Builder {
-        crate::model::tag::Builder::default()
-    }
-}
 
 /// <p>Specifies the configuration of the AWS managed or customer managed policy that you want to set as a permissions boundary. Specify either <code>CustomerManagedPolicyReference</code> to use the name and path of a customer managed policy, or <code>ManagedPolicyArn</code> to use the ARN of an AWS managed policy. A permissions boundary represents the maximum permissions that any policy can grant your role. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions boundaries for IAM entities</a> in the <i>IAM User Guide</i>.</p> <important>
 /// <p>Policies used as permissions boundaries don't provide permissions. You must also attach an IAM policy to the role. To learn how the effective permissions for a role are evaluated, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html">IAM JSON policy evaluation logic</a> in the <i>IAM User Guide</i>.</p>
@@ -288,6 +292,13 @@ impl PermissionsBoundary {
         self.managed_policy_arn.as_deref()
     }
 }
+impl PermissionsBoundary {
+    /// Creates a new builder-style object to manufacture [`PermissionsBoundary`](crate::model::PermissionsBoundary).
+    pub fn builder() -> crate::model::permissions_boundary::Builder {
+        crate::model::permissions_boundary::Builder::default()
+    }
+}
+
 /// See [`PermissionsBoundary`](crate::model::PermissionsBoundary).
 pub mod permissions_boundary {
 
@@ -338,12 +349,6 @@ pub mod permissions_boundary {
         }
     }
 }
-impl PermissionsBoundary {
-    /// Creates a new builder-style object to manufacture [`PermissionsBoundary`](crate::model::PermissionsBoundary).
-    pub fn builder() -> crate::model::permissions_boundary::Builder {
-        crate::model::permissions_boundary::Builder::default()
-    }
-}
 
 /// <p>Specifies the name and path of a customer managed policy. You must have an IAM policy that matches the name and path in each AWS account where you want to deploy your permission set.</p>
 #[non_exhaustive]
@@ -366,6 +371,13 @@ impl CustomerManagedPolicyReference {
         self.path.as_deref()
     }
 }
+impl CustomerManagedPolicyReference {
+    /// Creates a new builder-style object to manufacture [`CustomerManagedPolicyReference`](crate::model::CustomerManagedPolicyReference).
+    pub fn builder() -> crate::model::customer_managed_policy_reference::Builder {
+        crate::model::customer_managed_policy_reference::Builder::default()
+    }
+}
+
 /// See [`CustomerManagedPolicyReference`](crate::model::CustomerManagedPolicyReference).
 pub mod customer_managed_policy_reference {
 
@@ -404,12 +416,6 @@ pub mod customer_managed_policy_reference {
                 path: self.path,
             }
         }
-    }
-}
-impl CustomerManagedPolicyReference {
-    /// Creates a new builder-style object to manufacture [`CustomerManagedPolicyReference`](crate::model::CustomerManagedPolicyReference).
-    pub fn builder() -> crate::model::customer_managed_policy_reference::Builder {
-        crate::model::customer_managed_policy_reference::Builder::default()
     }
 }
 
@@ -462,6 +468,13 @@ impl PermissionSetProvisioningStatus {
         self.created_date.as_ref()
     }
 }
+impl PermissionSetProvisioningStatus {
+    /// Creates a new builder-style object to manufacture [`PermissionSetProvisioningStatus`](crate::model::PermissionSetProvisioningStatus).
+    pub fn builder() -> crate::model::permission_set_provisioning_status::Builder {
+        crate::model::permission_set_provisioning_status::Builder::default()
+    }
+}
+
 /// See [`PermissionSetProvisioningStatus`](crate::model::PermissionSetProvisioningStatus).
 pub mod permission_set_provisioning_status {
 
@@ -560,12 +573,6 @@ pub mod permission_set_provisioning_status {
                 created_date: self.created_date,
             }
         }
-    }
-}
-impl PermissionSetProvisioningStatus {
-    /// Creates a new builder-style object to manufacture [`PermissionSetProvisioningStatus`](crate::model::PermissionSetProvisioningStatus).
-    pub fn builder() -> crate::model::permission_set_provisioning_status::Builder {
-        crate::model::permission_set_provisioning_status::Builder::default()
     }
 }
 
@@ -887,6 +894,13 @@ impl PermissionSetProvisioningStatusMetadata {
         self.created_date.as_ref()
     }
 }
+impl PermissionSetProvisioningStatusMetadata {
+    /// Creates a new builder-style object to manufacture [`PermissionSetProvisioningStatusMetadata`](crate::model::PermissionSetProvisioningStatusMetadata).
+    pub fn builder() -> crate::model::permission_set_provisioning_status_metadata::Builder {
+        crate::model::permission_set_provisioning_status_metadata::Builder::default()
+    }
+}
+
 /// See [`PermissionSetProvisioningStatusMetadata`](crate::model::PermissionSetProvisioningStatusMetadata).
 pub mod permission_set_provisioning_status_metadata {
 
@@ -945,12 +959,6 @@ pub mod permission_set_provisioning_status_metadata {
         }
     }
 }
-impl PermissionSetProvisioningStatusMetadata {
-    /// Creates a new builder-style object to manufacture [`PermissionSetProvisioningStatusMetadata`](crate::model::PermissionSetProvisioningStatusMetadata).
-    pub fn builder() -> crate::model::permission_set_provisioning_status_metadata::Builder {
-        crate::model::permission_set_provisioning_status_metadata::Builder::default()
-    }
-}
 
 /// <p>Filters he operation status list based on the passed attribute value.</p>
 #[non_exhaustive]
@@ -966,6 +974,13 @@ impl OperationStatusFilter {
         self.status.as_ref()
     }
 }
+impl OperationStatusFilter {
+    /// Creates a new builder-style object to manufacture [`OperationStatusFilter`](crate::model::OperationStatusFilter).
+    pub fn builder() -> crate::model::operation_status_filter::Builder {
+        crate::model::operation_status_filter::Builder::default()
+    }
+}
+
 /// See [`OperationStatusFilter`](crate::model::OperationStatusFilter).
 pub mod operation_status_filter {
 
@@ -997,12 +1012,6 @@ pub mod operation_status_filter {
         }
     }
 }
-impl OperationStatusFilter {
-    /// Creates a new builder-style object to manufacture [`OperationStatusFilter`](crate::model::OperationStatusFilter).
-    pub fn builder() -> crate::model::operation_status_filter::Builder {
-        crate::model::operation_status_filter::Builder::default()
-    }
-}
 
 /// <p>A structure that stores the details of the AWS managed policy.</p>
 #[non_exhaustive]
@@ -1025,6 +1034,13 @@ impl AttachedManagedPolicy {
         self.arn.as_deref()
     }
 }
+impl AttachedManagedPolicy {
+    /// Creates a new builder-style object to manufacture [`AttachedManagedPolicy`](crate::model::AttachedManagedPolicy).
+    pub fn builder() -> crate::model::attached_managed_policy::Builder {
+        crate::model::attached_managed_policy::Builder::default()
+    }
+}
+
 /// See [`AttachedManagedPolicy`](crate::model::AttachedManagedPolicy).
 pub mod attached_managed_policy {
 
@@ -1065,12 +1081,6 @@ pub mod attached_managed_policy {
         }
     }
 }
-impl AttachedManagedPolicy {
-    /// Creates a new builder-style object to manufacture [`AttachedManagedPolicy`](crate::model::AttachedManagedPolicy).
-    pub fn builder() -> crate::model::attached_managed_policy::Builder {
-        crate::model::attached_managed_policy::Builder::default()
-    }
-}
 
 /// <p>Provides information about the IAM Identity Center instance.</p>
 #[non_exhaustive]
@@ -1093,6 +1103,13 @@ impl InstanceMetadata {
         self.identity_store_id.as_deref()
     }
 }
+impl InstanceMetadata {
+    /// Creates a new builder-style object to manufacture [`InstanceMetadata`](crate::model::InstanceMetadata).
+    pub fn builder() -> crate::model::instance_metadata::Builder {
+        crate::model::instance_metadata::Builder::default()
+    }
+}
+
 /// See [`InstanceMetadata`](crate::model::InstanceMetadata).
 pub mod instance_metadata {
 
@@ -1136,12 +1153,6 @@ pub mod instance_metadata {
         }
     }
 }
-impl InstanceMetadata {
-    /// Creates a new builder-style object to manufacture [`InstanceMetadata`](crate::model::InstanceMetadata).
-    pub fn builder() -> crate::model::instance_metadata::Builder {
-        crate::model::instance_metadata::Builder::default()
-    }
-}
 
 /// <p>The assignment that indicates a principal's limited access to a specified AWS account with a specified permission set.</p> <note>
 /// <p>The term <i>principal</i> here refers to a user or group that is defined in IAM Identity Center.</p>
@@ -1180,6 +1191,13 @@ impl AccountAssignment {
         self.principal_id.as_deref()
     }
 }
+impl AccountAssignment {
+    /// Creates a new builder-style object to manufacture [`AccountAssignment`](crate::model::AccountAssignment).
+    pub fn builder() -> crate::model::account_assignment::Builder {
+        crate::model::account_assignment::Builder::default()
+    }
+}
+
 /// See [`AccountAssignment`](crate::model::AccountAssignment).
 pub mod account_assignment {
 
@@ -1248,12 +1266,6 @@ pub mod account_assignment {
                 principal_id: self.principal_id,
             }
         }
-    }
-}
-impl AccountAssignment {
-    /// Creates a new builder-style object to manufacture [`AccountAssignment`](crate::model::AccountAssignment).
-    pub fn builder() -> crate::model::account_assignment::Builder {
-        crate::model::account_assignment::Builder::default()
     }
 }
 
@@ -1375,6 +1387,13 @@ impl AccountAssignmentOperationStatusMetadata {
         self.created_date.as_ref()
     }
 }
+impl AccountAssignmentOperationStatusMetadata {
+    /// Creates a new builder-style object to manufacture [`AccountAssignmentOperationStatusMetadata`](crate::model::AccountAssignmentOperationStatusMetadata).
+    pub fn builder() -> crate::model::account_assignment_operation_status_metadata::Builder {
+        crate::model::account_assignment_operation_status_metadata::Builder::default()
+    }
+}
+
 /// See [`AccountAssignmentOperationStatusMetadata`](crate::model::AccountAssignmentOperationStatusMetadata).
 pub mod account_assignment_operation_status_metadata {
 
@@ -1433,12 +1452,6 @@ pub mod account_assignment_operation_status_metadata {
         }
     }
 }
-impl AccountAssignmentOperationStatusMetadata {
-    /// Creates a new builder-style object to manufacture [`AccountAssignmentOperationStatusMetadata`](crate::model::AccountAssignmentOperationStatusMetadata).
-    pub fn builder() -> crate::model::account_assignment_operation_status_metadata::Builder {
-        crate::model::account_assignment_operation_status_metadata::Builder::default()
-    }
-}
 
 /// <p>An entity that contains IAM policies.</p>
 #[non_exhaustive]
@@ -1489,6 +1502,13 @@ impl PermissionSet {
         self.relay_state.as_deref()
     }
 }
+impl PermissionSet {
+    /// Creates a new builder-style object to manufacture [`PermissionSet`](crate::model::PermissionSet).
+    pub fn builder() -> crate::model::permission_set::Builder {
+        crate::model::permission_set::Builder::default()
+    }
+}
+
 /// See [`PermissionSet`](crate::model::PermissionSet).
 pub mod permission_set {
 
@@ -1584,12 +1604,6 @@ pub mod permission_set {
                 relay_state: self.relay_state,
             }
         }
-    }
-}
-impl PermissionSet {
-    /// Creates a new builder-style object to manufacture [`PermissionSet`](crate::model::PermissionSet).
-    pub fn builder() -> crate::model::permission_set::Builder {
-        crate::model::permission_set::Builder::default()
     }
 }
 
@@ -1764,6 +1778,13 @@ impl AccountAssignmentOperationStatus {
         self.created_date.as_ref()
     }
 }
+impl AccountAssignmentOperationStatus {
+    /// Creates a new builder-style object to manufacture [`AccountAssignmentOperationStatus`](crate::model::AccountAssignmentOperationStatus).
+    pub fn builder() -> crate::model::account_assignment_operation_status::Builder {
+        crate::model::account_assignment_operation_status::Builder::default()
+    }
+}
+
 /// See [`AccountAssignmentOperationStatus`](crate::model::AccountAssignmentOperationStatus).
 pub mod account_assignment_operation_status {
 
@@ -1904,12 +1925,6 @@ pub mod account_assignment_operation_status {
                 created_date: self.created_date,
             }
         }
-    }
-}
-impl AccountAssignmentOperationStatus {
-    /// Creates a new builder-style object to manufacture [`AccountAssignmentOperationStatus`](crate::model::AccountAssignmentOperationStatus).
-    pub fn builder() -> crate::model::account_assignment_operation_status::Builder {
-        crate::model::account_assignment_operation_status::Builder::default()
     }
 }
 

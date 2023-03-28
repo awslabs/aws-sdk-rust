@@ -26,6 +26,13 @@ impl aws_http::request_id::RequestId for GetRecommendationsOutput {
         self._request_id.as_deref()
     }
 }
+impl GetRecommendationsOutput {
+    /// Creates a new builder-style object to manufacture [`GetRecommendationsOutput`](crate::output::GetRecommendationsOutput).
+    pub fn builder() -> crate::output::get_recommendations_output::Builder {
+        crate::output::get_recommendations_output::Builder::default()
+    }
+}
+
 /// See [`GetRecommendationsOutput`](crate::output::GetRecommendationsOutput).
 pub mod get_recommendations_output {
 
@@ -89,12 +96,6 @@ pub mod get_recommendations_output {
         }
     }
 }
-impl GetRecommendationsOutput {
-    /// Creates a new builder-style object to manufacture [`GetRecommendationsOutput`](crate::output::GetRecommendationsOutput).
-    pub fn builder() -> crate::output::get_recommendations_output::Builder {
-        crate::output::get_recommendations_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -123,6 +124,13 @@ impl aws_http::request_id::RequestId for GetPersonalizedRankingOutput {
         self._request_id.as_deref()
     }
 }
+impl GetPersonalizedRankingOutput {
+    /// Creates a new builder-style object to manufacture [`GetPersonalizedRankingOutput`](crate::output::GetPersonalizedRankingOutput).
+    pub fn builder() -> crate::output::get_personalized_ranking_output::Builder {
+        crate::output::get_personalized_ranking_output::Builder::default()
+    }
+}
+
 /// See [`GetPersonalizedRankingOutput`](crate::output::GetPersonalizedRankingOutput).
 pub mod get_personalized_ranking_output {
 
@@ -185,11 +193,5 @@ pub mod get_personalized_ranking_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl GetPersonalizedRankingOutput {
-    /// Creates a new builder-style object to manufacture [`GetPersonalizedRankingOutput`](crate::output::GetPersonalizedRankingOutput).
-    pub fn builder() -> crate::output::get_personalized_ranking_output::Builder {
-        crate::output::get_personalized_ranking_output::Builder::default()
     }
 }

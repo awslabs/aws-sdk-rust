@@ -21,6 +21,13 @@ impl PortalStatus {
         self.error.as_ref()
     }
 }
+impl PortalStatus {
+    /// Creates a new builder-style object to manufacture [`PortalStatus`](crate::model::PortalStatus).
+    pub fn builder() -> crate::model::portal_status::Builder {
+        crate::model::portal_status::Builder::default()
+    }
+}
+
 /// See [`PortalStatus`](crate::model::PortalStatus).
 pub mod portal_status {
 
@@ -64,12 +71,6 @@ pub mod portal_status {
         }
     }
 }
-impl PortalStatus {
-    /// Creates a new builder-style object to manufacture [`PortalStatus`](crate::model::PortalStatus).
-    pub fn builder() -> crate::model::portal_status::Builder {
-        crate::model::portal_status::Builder::default()
-    }
-}
 
 /// <p>Contains IoT SiteWise Monitor error details.</p>
 #[non_exhaustive]
@@ -92,6 +93,13 @@ impl MonitorErrorDetails {
         self.message.as_deref()
     }
 }
+impl MonitorErrorDetails {
+    /// Creates a new builder-style object to manufacture [`MonitorErrorDetails`](crate::model::MonitorErrorDetails).
+    pub fn builder() -> crate::model::monitor_error_details::Builder {
+        crate::model::monitor_error_details::Builder::default()
+    }
+}
+
 /// See [`MonitorErrorDetails`](crate::model::MonitorErrorDetails).
 pub mod monitor_error_details {
 
@@ -133,12 +141,6 @@ pub mod monitor_error_details {
                 message: self.message,
             }
         }
-    }
-}
-impl MonitorErrorDetails {
-    /// Creates a new builder-style object to manufacture [`MonitorErrorDetails`](crate::model::MonitorErrorDetails).
-    pub fn builder() -> crate::model::monitor_error_details::Builder {
-        crate::model::monitor_error_details::Builder::default()
     }
 }
 
@@ -363,6 +365,13 @@ impl Alarms {
         self.notification_lambda_arn.as_deref()
     }
 }
+impl Alarms {
+    /// Creates a new builder-style object to manufacture [`Alarms`](crate::model::Alarms).
+    pub fn builder() -> crate::model::alarms::Builder {
+        crate::model::alarms::Builder::default()
+    }
+}
+
 /// See [`Alarms`](crate::model::Alarms).
 pub mod alarms {
 
@@ -409,12 +418,6 @@ pub mod alarms {
         }
     }
 }
-impl Alarms {
-    /// Creates a new builder-style object to manufacture [`Alarms`](crate::model::Alarms).
-    pub fn builder() -> crate::model::alarms::Builder {
-        crate::model::alarms::Builder::default()
-    }
-}
 
 /// <p>Contains an image that is one of the following:</p>
 /// <ul>
@@ -441,6 +444,13 @@ impl Image {
         self.file.as_ref()
     }
 }
+impl Image {
+    /// Creates a new builder-style object to manufacture [`Image`](crate::model::Image).
+    pub fn builder() -> crate::model::image::Builder {
+        crate::model::image::Builder::default()
+    }
+}
+
 /// See [`Image`](crate::model::Image).
 pub mod image {
 
@@ -481,12 +491,6 @@ pub mod image {
         }
     }
 }
-impl Image {
-    /// Creates a new builder-style object to manufacture [`Image`](crate::model::Image).
-    pub fn builder() -> crate::model::image::Builder {
-        crate::model::image::Builder::default()
-    }
-}
 
 /// <p>Contains an image file.</p>
 #[non_exhaustive]
@@ -509,6 +513,13 @@ impl ImageFile {
         self.r#type.as_ref()
     }
 }
+impl ImageFile {
+    /// Creates a new builder-style object to manufacture [`ImageFile`](crate::model::ImageFile).
+    pub fn builder() -> crate::model::image_file::Builder {
+        crate::model::image_file::Builder::default()
+    }
+}
+
 /// See [`ImageFile`](crate::model::ImageFile).
 pub mod image_file {
 
@@ -547,12 +558,6 @@ pub mod image_file {
                 r#type: self.r#type,
             }
         }
-    }
-}
-impl ImageFile {
-    /// Creates a new builder-style object to manufacture [`ImageFile`](crate::model::ImageFile).
-    pub fn builder() -> crate::model::image_file::Builder {
-        crate::model::image_file::Builder::default()
     }
 }
 
@@ -856,6 +861,13 @@ impl AssetModelStatus {
         self.error.as_ref()
     }
 }
+impl AssetModelStatus {
+    /// Creates a new builder-style object to manufacture [`AssetModelStatus`](crate::model::AssetModelStatus).
+    pub fn builder() -> crate::model::asset_model_status::Builder {
+        crate::model::asset_model_status::Builder::default()
+    }
+}
+
 /// See [`AssetModelStatus`](crate::model::AssetModelStatus).
 pub mod asset_model_status {
 
@@ -899,12 +911,6 @@ pub mod asset_model_status {
         }
     }
 }
-impl AssetModelStatus {
-    /// Creates a new builder-style object to manufacture [`AssetModelStatus`](crate::model::AssetModelStatus).
-    pub fn builder() -> crate::model::asset_model_status::Builder {
-        crate::model::asset_model_status::Builder::default()
-    }
-}
 
 /// <p>Contains the details of an IoT SiteWise error.</p>
 #[non_exhaustive]
@@ -934,6 +940,13 @@ impl ErrorDetails {
         self.details.as_deref()
     }
 }
+impl ErrorDetails {
+    /// Creates a new builder-style object to manufacture [`ErrorDetails`](crate::model::ErrorDetails).
+    pub fn builder() -> crate::model::error_details::Builder {
+        crate::model::error_details::Builder::default()
+    }
+}
+
 /// See [`ErrorDetails`](crate::model::ErrorDetails).
 pub mod error_details {
 
@@ -995,12 +1008,6 @@ pub mod error_details {
         }
     }
 }
-impl ErrorDetails {
-    /// Creates a new builder-style object to manufacture [`ErrorDetails`](crate::model::ErrorDetails).
-    pub fn builder() -> crate::model::error_details::Builder {
-        crate::model::error_details::Builder::default()
-    }
-}
 
 /// <p>Contains detailed error information. </p>
 #[non_exhaustive]
@@ -1023,6 +1030,13 @@ impl DetailedError {
         self.message.as_deref()
     }
 }
+impl DetailedError {
+    /// Creates a new builder-style object to manufacture [`DetailedError`](crate::model::DetailedError).
+    pub fn builder() -> crate::model::detailed_error::Builder {
+        crate::model::detailed_error::Builder::default()
+    }
+}
+
 /// See [`DetailedError`](crate::model::DetailedError).
 pub mod detailed_error {
 
@@ -1064,12 +1078,6 @@ pub mod detailed_error {
                 message: self.message,
             }
         }
-    }
-}
-impl DetailedError {
-    /// Creates a new builder-style object to manufacture [`DetailedError`](crate::model::DetailedError).
-    pub fn builder() -> crate::model::detailed_error::Builder {
-        crate::model::detailed_error::Builder::default()
     }
 }
 
@@ -1421,6 +1429,13 @@ impl AssetModelCompositeModel {
         self.id.as_deref()
     }
 }
+impl AssetModelCompositeModel {
+    /// Creates a new builder-style object to manufacture [`AssetModelCompositeModel`](crate::model::AssetModelCompositeModel).
+    pub fn builder() -> crate::model::asset_model_composite_model::Builder {
+        crate::model::asset_model_composite_model::Builder::default()
+    }
+}
+
 /// See [`AssetModelCompositeModel`](crate::model::AssetModelCompositeModel).
 pub mod asset_model_composite_model {
 
@@ -1506,12 +1521,6 @@ pub mod asset_model_composite_model {
         }
     }
 }
-impl AssetModelCompositeModel {
-    /// Creates a new builder-style object to manufacture [`AssetModelCompositeModel`](crate::model::AssetModelCompositeModel).
-    pub fn builder() -> crate::model::asset_model_composite_model::Builder {
-        crate::model::asset_model_composite_model::Builder::default()
-    }
-}
 
 /// <p>Contains information about an asset model property.</p>
 #[non_exhaustive]
@@ -1562,6 +1571,13 @@ impl AssetModelProperty {
         self.r#type.as_ref()
     }
 }
+impl AssetModelProperty {
+    /// Creates a new builder-style object to manufacture [`AssetModelProperty`](crate::model::AssetModelProperty).
+    pub fn builder() -> crate::model::asset_model_property::Builder {
+        crate::model::asset_model_property::Builder::default()
+    }
+}
+
 /// See [`AssetModelProperty`](crate::model::AssetModelProperty).
 pub mod asset_model_property {
 
@@ -1656,12 +1672,6 @@ pub mod asset_model_property {
         }
     }
 }
-impl AssetModelProperty {
-    /// Creates a new builder-style object to manufacture [`AssetModelProperty`](crate::model::AssetModelProperty).
-    pub fn builder() -> crate::model::asset_model_property::Builder {
-        crate::model::asset_model_property::Builder::default()
-    }
-}
 
 /// <p>Contains a property type, which can be one of <code>attribute</code>, <code>measurement</code>, <code>metric</code>, or <code>transform</code>.</p>
 #[non_exhaustive]
@@ -1698,6 +1708,13 @@ impl PropertyType {
         self.metric.as_ref()
     }
 }
+impl PropertyType {
+    /// Creates a new builder-style object to manufacture [`PropertyType`](crate::model::PropertyType).
+    pub fn builder() -> crate::model::property_type::Builder {
+        crate::model::property_type::Builder::default()
+    }
+}
+
 /// See [`PropertyType`](crate::model::PropertyType).
 pub mod property_type {
 
@@ -1771,12 +1788,6 @@ pub mod property_type {
         }
     }
 }
-impl PropertyType {
-    /// Creates a new builder-style object to manufacture [`PropertyType`](crate::model::PropertyType).
-    pub fn builder() -> crate::model::property_type::Builder {
-        crate::model::property_type::Builder::default()
-    }
-}
 
 /// <p>Contains an asset metric property. With metrics, you can calculate aggregate functions, such as an average, maximum, or minimum, as specified through an expression. A metric maps several values to a single value (such as a sum).</p>
 /// <p>The maximum number of dependent/cascading variables used in any one metric calculation is 10. Therefore, a <i>root</i> metric can have up to 10 cascading metrics in its computational dependency tree. Additionally, a metric can only have a data type of <code>DOUBLE</code> and consume properties with data types of <code>INTEGER</code> or <code>DOUBLE</code>.</p>
@@ -1817,6 +1828,13 @@ impl Metric {
         self.processing_config.as_ref()
     }
 }
+impl Metric {
+    /// Creates a new builder-style object to manufacture [`Metric`](crate::model::Metric).
+    pub fn builder() -> crate::model::metric::Builder {
+        crate::model::metric::Builder::default()
+    }
+}
+
 /// See [`Metric`](crate::model::Metric).
 pub mod metric {
 
@@ -1898,12 +1916,6 @@ pub mod metric {
         }
     }
 }
-impl Metric {
-    /// Creates a new builder-style object to manufacture [`Metric`](crate::model::Metric).
-    pub fn builder() -> crate::model::metric::Builder {
-        crate::model::metric::Builder::default()
-    }
-}
 
 /// <p>The processing configuration for the given metric property. You can configure metrics to be computed at the edge or in the Amazon Web Services Cloud. By default, metrics are forwarded to the cloud.</p>
 #[non_exhaustive]
@@ -1919,6 +1931,13 @@ impl MetricProcessingConfig {
         self.compute_location.as_ref()
     }
 }
+impl MetricProcessingConfig {
+    /// Creates a new builder-style object to manufacture [`MetricProcessingConfig`](crate::model::MetricProcessingConfig).
+    pub fn builder() -> crate::model::metric_processing_config::Builder {
+        crate::model::metric_processing_config::Builder::default()
+    }
+}
+
 /// See [`MetricProcessingConfig`](crate::model::MetricProcessingConfig).
 pub mod metric_processing_config {
 
@@ -1948,12 +1967,6 @@ pub mod metric_processing_config {
                 compute_location: self.compute_location,
             }
         }
-    }
-}
-impl MetricProcessingConfig {
-    /// Creates a new builder-style object to manufacture [`MetricProcessingConfig`](crate::model::MetricProcessingConfig).
-    pub fn builder() -> crate::model::metric_processing_config::Builder {
-        crate::model::metric_processing_config::Builder::default()
     }
 }
 
@@ -2061,6 +2074,13 @@ impl MetricWindow {
         self.tumbling.as_ref()
     }
 }
+impl MetricWindow {
+    /// Creates a new builder-style object to manufacture [`MetricWindow`](crate::model::MetricWindow).
+    pub fn builder() -> crate::model::metric_window::Builder {
+        crate::model::metric_window::Builder::default()
+    }
+}
+
 /// See [`MetricWindow`](crate::model::MetricWindow).
 pub mod metric_window {
 
@@ -2090,12 +2110,6 @@ pub mod metric_window {
                 tumbling: self.tumbling,
             }
         }
-    }
-}
-impl MetricWindow {
-    /// Creates a new builder-style object to manufacture [`MetricWindow`](crate::model::MetricWindow).
-    pub fn builder() -> crate::model::metric_window::Builder {
-        crate::model::metric_window::Builder::default()
     }
 }
 
@@ -2162,6 +2176,13 @@ impl TumblingWindow {
         self.offset.as_deref()
     }
 }
+impl TumblingWindow {
+    /// Creates a new builder-style object to manufacture [`TumblingWindow`](crate::model::TumblingWindow).
+    pub fn builder() -> crate::model::tumbling_window::Builder {
+        crate::model::tumbling_window::Builder::default()
+    }
+}
+
 /// See [`TumblingWindow`](crate::model::TumblingWindow).
 pub mod tumbling_window {
 
@@ -2242,12 +2263,6 @@ pub mod tumbling_window {
         }
     }
 }
-impl TumblingWindow {
-    /// Creates a new builder-style object to manufacture [`TumblingWindow`](crate::model::TumblingWindow).
-    pub fn builder() -> crate::model::tumbling_window::Builder {
-        crate::model::tumbling_window::Builder::default()
-    }
-}
 
 /// <p>Contains expression variable information.</p>
 #[non_exhaustive]
@@ -2270,6 +2285,13 @@ impl ExpressionVariable {
         self.value.as_ref()
     }
 }
+impl ExpressionVariable {
+    /// Creates a new builder-style object to manufacture [`ExpressionVariable`](crate::model::ExpressionVariable).
+    pub fn builder() -> crate::model::expression_variable::Builder {
+        crate::model::expression_variable::Builder::default()
+    }
+}
+
 /// See [`ExpressionVariable`](crate::model::ExpressionVariable).
 pub mod expression_variable {
 
@@ -2313,12 +2335,6 @@ pub mod expression_variable {
         }
     }
 }
-impl ExpressionVariable {
-    /// Creates a new builder-style object to manufacture [`ExpressionVariable`](crate::model::ExpressionVariable).
-    pub fn builder() -> crate::model::expression_variable::Builder {
-        crate::model::expression_variable::Builder::default()
-    }
-}
 
 /// <p>Identifies a property value used in an expression.</p>
 #[non_exhaustive]
@@ -2343,6 +2359,13 @@ impl VariableValue {
         self.hierarchy_id.as_deref()
     }
 }
+impl VariableValue {
+    /// Creates a new builder-style object to manufacture [`VariableValue`](crate::model::VariableValue).
+    pub fn builder() -> crate::model::variable_value::Builder {
+        crate::model::variable_value::Builder::default()
+    }
+}
+
 /// See [`VariableValue`](crate::model::VariableValue).
 pub mod variable_value {
 
@@ -2385,12 +2408,6 @@ pub mod variable_value {
         }
     }
 }
-impl VariableValue {
-    /// Creates a new builder-style object to manufacture [`VariableValue`](crate::model::VariableValue).
-    pub fn builder() -> crate::model::variable_value::Builder {
-        crate::model::variable_value::Builder::default()
-    }
-}
 
 /// <p>Contains an asset transform property. A transform is a one-to-one mapping of a property's data points from one form to another. For example, you can use a transform to convert a Celsius data stream to Fahrenheit by applying the transformation expression to each data point of the Celsius stream. A transform can only have a data type of <code>DOUBLE</code> and consume properties with data types of <code>INTEGER</code> or <code>DOUBLE</code>.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html#transforms">Transforms</a> in the <i>IoT SiteWise User Guide</i>.</p>
@@ -2425,6 +2442,13 @@ impl Transform {
         self.processing_config.as_ref()
     }
 }
+impl Transform {
+    /// Creates a new builder-style object to manufacture [`Transform`](crate::model::Transform).
+    pub fn builder() -> crate::model::transform::Builder {
+        crate::model::transform::Builder::default()
+    }
+}
+
 /// See [`Transform`](crate::model::Transform).
 pub mod transform {
 
@@ -2491,12 +2515,6 @@ pub mod transform {
         }
     }
 }
-impl Transform {
-    /// Creates a new builder-style object to manufacture [`Transform`](crate::model::Transform).
-    pub fn builder() -> crate::model::transform::Builder {
-        crate::model::transform::Builder::default()
-    }
-}
 
 /// <p>The processing configuration for the given transform property. You can configure transforms to be kept at the edge or forwarded to the Amazon Web Services Cloud. You can also configure transforms to be computed at the edge or in the cloud.</p>
 #[non_exhaustive]
@@ -2519,6 +2537,13 @@ impl TransformProcessingConfig {
         self.forwarding_config.as_ref()
     }
 }
+impl TransformProcessingConfig {
+    /// Creates a new builder-style object to manufacture [`TransformProcessingConfig`](crate::model::TransformProcessingConfig).
+    pub fn builder() -> crate::model::transform_processing_config::Builder {
+        crate::model::transform_processing_config::Builder::default()
+    }
+}
+
 /// See [`TransformProcessingConfig`](crate::model::TransformProcessingConfig).
 pub mod transform_processing_config {
 
@@ -2565,12 +2590,6 @@ pub mod transform_processing_config {
         }
     }
 }
-impl TransformProcessingConfig {
-    /// Creates a new builder-style object to manufacture [`TransformProcessingConfig`](crate::model::TransformProcessingConfig).
-    pub fn builder() -> crate::model::transform_processing_config::Builder {
-        crate::model::transform_processing_config::Builder::default()
-    }
-}
 
 /// <p>The forwarding configuration for a given property.</p>
 #[non_exhaustive]
@@ -2586,6 +2605,13 @@ impl ForwardingConfig {
         self.state.as_ref()
     }
 }
+impl ForwardingConfig {
+    /// Creates a new builder-style object to manufacture [`ForwardingConfig`](crate::model::ForwardingConfig).
+    pub fn builder() -> crate::model::forwarding_config::Builder {
+        crate::model::forwarding_config::Builder::default()
+    }
+}
+
 /// See [`ForwardingConfig`](crate::model::ForwardingConfig).
 pub mod forwarding_config {
 
@@ -2613,12 +2639,6 @@ pub mod forwarding_config {
         pub fn build(self) -> crate::model::ForwardingConfig {
             crate::model::ForwardingConfig { state: self.state }
         }
-    }
-}
-impl ForwardingConfig {
-    /// Creates a new builder-style object to manufacture [`ForwardingConfig`](crate::model::ForwardingConfig).
-    pub fn builder() -> crate::model::forwarding_config::Builder {
-        crate::model::forwarding_config::Builder::default()
     }
 }
 
@@ -2730,6 +2750,13 @@ impl Measurement {
         self.processing_config.as_ref()
     }
 }
+impl Measurement {
+    /// Creates a new builder-style object to manufacture [`Measurement`](crate::model::Measurement).
+    pub fn builder() -> crate::model::measurement::Builder {
+        crate::model::measurement::Builder::default()
+    }
+}
+
 /// See [`Measurement`](crate::model::Measurement).
 pub mod measurement {
 
@@ -2765,12 +2792,6 @@ pub mod measurement {
         }
     }
 }
-impl Measurement {
-    /// Creates a new builder-style object to manufacture [`Measurement`](crate::model::Measurement).
-    pub fn builder() -> crate::model::measurement::Builder {
-        crate::model::measurement::Builder::default()
-    }
-}
 
 /// <p>The processing configuration for the given measurement property. You can configure measurements to be kept at the edge or forwarded to the Amazon Web Services Cloud. By default, measurements are forwarded to the cloud.</p>
 #[non_exhaustive]
@@ -2786,6 +2807,13 @@ impl MeasurementProcessingConfig {
         self.forwarding_config.as_ref()
     }
 }
+impl MeasurementProcessingConfig {
+    /// Creates a new builder-style object to manufacture [`MeasurementProcessingConfig`](crate::model::MeasurementProcessingConfig).
+    pub fn builder() -> crate::model::measurement_processing_config::Builder {
+        crate::model::measurement_processing_config::Builder::default()
+    }
+}
+
 /// See [`MeasurementProcessingConfig`](crate::model::MeasurementProcessingConfig).
 pub mod measurement_processing_config {
 
@@ -2817,12 +2845,6 @@ pub mod measurement_processing_config {
         }
     }
 }
-impl MeasurementProcessingConfig {
-    /// Creates a new builder-style object to manufacture [`MeasurementProcessingConfig`](crate::model::MeasurementProcessingConfig).
-    pub fn builder() -> crate::model::measurement_processing_config::Builder {
-        crate::model::measurement_processing_config::Builder::default()
-    }
-}
 
 /// <p>Contains an asset attribute property. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html#attributes">Attributes</a> in the <i>IoT SiteWise User Guide</i>.</p>
 #[non_exhaustive]
@@ -2838,6 +2860,13 @@ impl Attribute {
         self.default_value.as_deref()
     }
 }
+impl Attribute {
+    /// Creates a new builder-style object to manufacture [`Attribute`](crate::model::Attribute).
+    pub fn builder() -> crate::model::attribute::Builder {
+        crate::model::attribute::Builder::default()
+    }
+}
+
 /// See [`Attribute`](crate::model::Attribute).
 pub mod attribute {
 
@@ -2867,12 +2896,6 @@ pub mod attribute {
                 default_value: self.default_value,
             }
         }
-    }
-}
-impl Attribute {
-    /// Creates a new builder-style object to manufacture [`Attribute`](crate::model::Attribute).
-    pub fn builder() -> crate::model::attribute::Builder {
-        crate::model::attribute::Builder::default()
     }
 }
 
@@ -3009,6 +3032,13 @@ impl AssetModelHierarchy {
         self.child_asset_model_id.as_deref()
     }
 }
+impl AssetModelHierarchy {
+    /// Creates a new builder-style object to manufacture [`AssetModelHierarchy`](crate::model::AssetModelHierarchy).
+    pub fn builder() -> crate::model::asset_model_hierarchy::Builder {
+        crate::model::asset_model_hierarchy::Builder::default()
+    }
+}
+
 /// See [`AssetModelHierarchy`](crate::model::AssetModelHierarchy).
 pub mod asset_model_hierarchy {
 
@@ -3064,12 +3094,6 @@ pub mod asset_model_hierarchy {
         }
     }
 }
-impl AssetModelHierarchy {
-    /// Creates a new builder-style object to manufacture [`AssetModelHierarchy`](crate::model::AssetModelHierarchy).
-    pub fn builder() -> crate::model::asset_model_hierarchy::Builder {
-        crate::model::asset_model_hierarchy::Builder::default()
-    }
-}
 
 /// <p>Contains information about the current status of an asset. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-and-model-states.html">Asset and model states</a> in the <i>IoT SiteWise User Guide</i>.</p>
 #[non_exhaustive]
@@ -3092,6 +3116,13 @@ impl AssetStatus {
         self.error.as_ref()
     }
 }
+impl AssetStatus {
+    /// Creates a new builder-style object to manufacture [`AssetStatus`](crate::model::AssetStatus).
+    pub fn builder() -> crate::model::asset_status::Builder {
+        crate::model::asset_status::Builder::default()
+    }
+}
+
 /// See [`AssetStatus`](crate::model::AssetStatus).
 pub mod asset_status {
 
@@ -3130,12 +3161,6 @@ pub mod asset_status {
                 error: self.error,
             }
         }
-    }
-}
-impl AssetStatus {
-    /// Creates a new builder-style object to manufacture [`AssetStatus`](crate::model::AssetStatus).
-    pub fn builder() -> crate::model::asset_status::Builder {
-        crate::model::asset_status::Builder::default()
     }
 }
 
@@ -3355,6 +3380,13 @@ impl Resource {
         self.project.as_ref()
     }
 }
+impl Resource {
+    /// Creates a new builder-style object to manufacture [`Resource`](crate::model::Resource).
+    pub fn builder() -> crate::model::resource::Builder {
+        crate::model::resource::Builder::default()
+    }
+}
+
 /// See [`Resource`](crate::model::Resource).
 pub mod resource {
 
@@ -3401,12 +3433,6 @@ pub mod resource {
         }
     }
 }
-impl Resource {
-    /// Creates a new builder-style object to manufacture [`Resource`](crate::model::Resource).
-    pub fn builder() -> crate::model::resource::Builder {
-        crate::model::resource::Builder::default()
-    }
-}
 
 /// <p>Identifies a specific IoT SiteWise Monitor project.</p>
 #[non_exhaustive]
@@ -3422,6 +3448,13 @@ impl ProjectResource {
         self.id.as_deref()
     }
 }
+impl ProjectResource {
+    /// Creates a new builder-style object to manufacture [`ProjectResource`](crate::model::ProjectResource).
+    pub fn builder() -> crate::model::project_resource::Builder {
+        crate::model::project_resource::Builder::default()
+    }
+}
+
 /// See [`ProjectResource`](crate::model::ProjectResource).
 pub mod project_resource {
 
@@ -3448,12 +3481,6 @@ pub mod project_resource {
         }
     }
 }
-impl ProjectResource {
-    /// Creates a new builder-style object to manufacture [`ProjectResource`](crate::model::ProjectResource).
-    pub fn builder() -> crate::model::project_resource::Builder {
-        crate::model::project_resource::Builder::default()
-    }
-}
 
 /// <p>Identifies an IoT SiteWise Monitor portal.</p>
 #[non_exhaustive]
@@ -3469,6 +3496,13 @@ impl PortalResource {
         self.id.as_deref()
     }
 }
+impl PortalResource {
+    /// Creates a new builder-style object to manufacture [`PortalResource`](crate::model::PortalResource).
+    pub fn builder() -> crate::model::portal_resource::Builder {
+        crate::model::portal_resource::Builder::default()
+    }
+}
+
 /// See [`PortalResource`](crate::model::PortalResource).
 pub mod portal_resource {
 
@@ -3493,12 +3527,6 @@ pub mod portal_resource {
         pub fn build(self) -> crate::model::PortalResource {
             crate::model::PortalResource { id: self.id }
         }
-    }
-}
-impl PortalResource {
-    /// Creates a new builder-style object to manufacture [`PortalResource`](crate::model::PortalResource).
-    pub fn builder() -> crate::model::portal_resource::Builder {
-        crate::model::portal_resource::Builder::default()
     }
 }
 
@@ -3539,6 +3567,13 @@ impl Identity {
         self.iam_role.as_ref()
     }
 }
+impl Identity {
+    /// Creates a new builder-style object to manufacture [`Identity`](crate::model::Identity).
+    pub fn builder() -> crate::model::identity::Builder {
+        crate::model::identity::Builder::default()
+    }
+}
+
 /// See [`Identity`](crate::model::Identity).
 pub mod identity {
 
@@ -3612,12 +3647,6 @@ pub mod identity {
         }
     }
 }
-impl Identity {
-    /// Creates a new builder-style object to manufacture [`Identity`](crate::model::Identity).
-    pub fn builder() -> crate::model::identity::Builder {
-        crate::model::identity::Builder::default()
-    }
-}
 
 /// <p>Contains information about an Identity and Access Management role. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM roles</a> in the <i>IAM User Guide</i>.</p>
 #[non_exhaustive]
@@ -3633,6 +3662,13 @@ impl IamRoleIdentity {
         self.arn.as_deref()
     }
 }
+impl IamRoleIdentity {
+    /// Creates a new builder-style object to manufacture [`IamRoleIdentity`](crate::model::IamRoleIdentity).
+    pub fn builder() -> crate::model::iam_role_identity::Builder {
+        crate::model::iam_role_identity::Builder::default()
+    }
+}
+
 /// See [`IamRoleIdentity`](crate::model::IamRoleIdentity).
 pub mod iam_role_identity {
 
@@ -3659,12 +3695,6 @@ pub mod iam_role_identity {
         }
     }
 }
-impl IamRoleIdentity {
-    /// Creates a new builder-style object to manufacture [`IamRoleIdentity`](crate::model::IamRoleIdentity).
-    pub fn builder() -> crate::model::iam_role_identity::Builder {
-        crate::model::iam_role_identity::Builder::default()
-    }
-}
 
 /// <p>Contains information about an Identity and Access Management user.</p>
 #[non_exhaustive]
@@ -3684,6 +3714,13 @@ impl IamUserIdentity {
         self.arn.as_deref()
     }
 }
+impl IamUserIdentity {
+    /// Creates a new builder-style object to manufacture [`IamUserIdentity`](crate::model::IamUserIdentity).
+    pub fn builder() -> crate::model::iam_user_identity::Builder {
+        crate::model::iam_user_identity::Builder::default()
+    }
+}
+
 /// See [`IamUserIdentity`](crate::model::IamUserIdentity).
 pub mod iam_user_identity {
 
@@ -3714,12 +3751,6 @@ pub mod iam_user_identity {
         }
     }
 }
-impl IamUserIdentity {
-    /// Creates a new builder-style object to manufacture [`IamUserIdentity`](crate::model::IamUserIdentity).
-    pub fn builder() -> crate::model::iam_user_identity::Builder {
-        crate::model::iam_user_identity::Builder::default()
-    }
-}
 
 /// <p>Contains information for a group identity in an access policy.</p>
 #[non_exhaustive]
@@ -3735,6 +3766,13 @@ impl GroupIdentity {
         self.id.as_deref()
     }
 }
+impl GroupIdentity {
+    /// Creates a new builder-style object to manufacture [`GroupIdentity`](crate::model::GroupIdentity).
+    pub fn builder() -> crate::model::group_identity::Builder {
+        crate::model::group_identity::Builder::default()
+    }
+}
+
 /// See [`GroupIdentity`](crate::model::GroupIdentity).
 pub mod group_identity {
 
@@ -3761,12 +3799,6 @@ pub mod group_identity {
         }
     }
 }
-impl GroupIdentity {
-    /// Creates a new builder-style object to manufacture [`GroupIdentity`](crate::model::GroupIdentity).
-    pub fn builder() -> crate::model::group_identity::Builder {
-        crate::model::group_identity::Builder::default()
-    }
-}
 
 /// <p>Contains information for a user identity in an access policy.</p>
 #[non_exhaustive]
@@ -3782,6 +3814,13 @@ impl UserIdentity {
         self.id.as_deref()
     }
 }
+impl UserIdentity {
+    /// Creates a new builder-style object to manufacture [`UserIdentity`](crate::model::UserIdentity).
+    pub fn builder() -> crate::model::user_identity::Builder {
+        crate::model::user_identity::Builder::default()
+    }
+}
+
 /// See [`UserIdentity`](crate::model::UserIdentity).
 pub mod user_identity {
 
@@ -3808,12 +3847,6 @@ pub mod user_identity {
         }
     }
 }
-impl UserIdentity {
-    /// Creates a new builder-style object to manufacture [`UserIdentity`](crate::model::UserIdentity).
-    pub fn builder() -> crate::model::user_identity::Builder {
-        crate::model::user_identity::Builder::default()
-    }
-}
 
 /// <p>Contains current status information for the configuration.</p>
 #[non_exhaustive]
@@ -3836,6 +3869,13 @@ impl ConfigurationStatus {
         self.error.as_ref()
     }
 }
+impl ConfigurationStatus {
+    /// Creates a new builder-style object to manufacture [`ConfigurationStatus`](crate::model::ConfigurationStatus).
+    pub fn builder() -> crate::model::configuration_status::Builder {
+        crate::model::configuration_status::Builder::default()
+    }
+}
+
 /// See [`ConfigurationStatus`](crate::model::ConfigurationStatus).
 pub mod configuration_status {
 
@@ -3882,12 +3922,6 @@ pub mod configuration_status {
         }
     }
 }
-impl ConfigurationStatus {
-    /// Creates a new builder-style object to manufacture [`ConfigurationStatus`](crate::model::ConfigurationStatus).
-    pub fn builder() -> crate::model::configuration_status::Builder {
-        crate::model::configuration_status::Builder::default()
-    }
-}
 
 /// <p>Contains the details of an IoT SiteWise configuration error.</p>
 #[non_exhaustive]
@@ -3910,6 +3944,13 @@ impl ConfigurationErrorDetails {
         self.message.as_deref()
     }
 }
+impl ConfigurationErrorDetails {
+    /// Creates a new builder-style object to manufacture [`ConfigurationErrorDetails`](crate::model::ConfigurationErrorDetails).
+    pub fn builder() -> crate::model::configuration_error_details::Builder {
+        crate::model::configuration_error_details::Builder::default()
+    }
+}
+
 /// See [`ConfigurationErrorDetails`](crate::model::ConfigurationErrorDetails).
 pub mod configuration_error_details {
 
@@ -3948,12 +3989,6 @@ pub mod configuration_error_details {
                 message: self.message,
             }
         }
-    }
-}
-impl ConfigurationErrorDetails {
-    /// Creates a new builder-style object to manufacture [`ConfigurationErrorDetails`](crate::model::ConfigurationErrorDetails).
-    pub fn builder() -> crate::model::configuration_error_details::Builder {
-        crate::model::configuration_error_details::Builder::default()
     }
 }
 
@@ -4083,6 +4118,13 @@ impl RetentionPeriod {
         self.unlimited
     }
 }
+impl RetentionPeriod {
+    /// Creates a new builder-style object to manufacture [`RetentionPeriod`](crate::model::RetentionPeriod).
+    pub fn builder() -> crate::model::retention_period::Builder {
+        crate::model::retention_period::Builder::default()
+    }
+}
+
 /// See [`RetentionPeriod`](crate::model::RetentionPeriod).
 pub mod retention_period {
 
@@ -4129,12 +4171,6 @@ pub mod retention_period {
                 unlimited: self.unlimited,
             }
         }
-    }
-}
-impl RetentionPeriod {
-    /// Creates a new builder-style object to manufacture [`RetentionPeriod`](crate::model::RetentionPeriod).
-    pub fn builder() -> crate::model::retention_period::Builder {
-        crate::model::retention_period::Builder::default()
     }
 }
 
@@ -4246,6 +4282,13 @@ impl MultiLayerStorage {
         self.customer_managed_s3_storage.as_ref()
     }
 }
+impl MultiLayerStorage {
+    /// Creates a new builder-style object to manufacture [`MultiLayerStorage`](crate::model::MultiLayerStorage).
+    pub fn builder() -> crate::model::multi_layer_storage::Builder {
+        crate::model::multi_layer_storage::Builder::default()
+    }
+}
+
 /// See [`MultiLayerStorage`](crate::model::MultiLayerStorage).
 pub mod multi_layer_storage {
 
@@ -4281,12 +4324,6 @@ pub mod multi_layer_storage {
         }
     }
 }
-impl MultiLayerStorage {
-    /// Creates a new builder-style object to manufacture [`MultiLayerStorage`](crate::model::MultiLayerStorage).
-    pub fn builder() -> crate::model::multi_layer_storage::Builder {
-        crate::model::multi_layer_storage::Builder::default()
-    }
-}
 
 /// <p>Contains information about a customer managed Amazon S3 bucket.</p>
 #[non_exhaustive]
@@ -4309,6 +4346,13 @@ impl CustomerManagedS3Storage {
         self.role_arn.as_deref()
     }
 }
+impl CustomerManagedS3Storage {
+    /// Creates a new builder-style object to manufacture [`CustomerManagedS3Storage`](crate::model::CustomerManagedS3Storage).
+    pub fn builder() -> crate::model::customer_managed_s3_storage::Builder {
+        crate::model::customer_managed_s3_storage::Builder::default()
+    }
+}
+
 /// See [`CustomerManagedS3Storage`](crate::model::CustomerManagedS3Storage).
 pub mod customer_managed_s3_storage {
 
@@ -4350,12 +4394,6 @@ pub mod customer_managed_s3_storage {
                 role_arn: self.role_arn,
             }
         }
-    }
-}
-impl CustomerManagedS3Storage {
-    /// Creates a new builder-style object to manufacture [`CustomerManagedS3Storage`](crate::model::CustomerManagedS3Storage).
-    pub fn builder() -> crate::model::customer_managed_s3_storage::Builder {
-        crate::model::customer_managed_s3_storage::Builder::default()
     }
 }
 
@@ -4463,6 +4501,13 @@ impl LoggingOptions {
         self.level.as_ref()
     }
 }
+impl LoggingOptions {
+    /// Creates a new builder-style object to manufacture [`LoggingOptions`](crate::model::LoggingOptions).
+    pub fn builder() -> crate::model::logging_options::Builder {
+        crate::model::logging_options::Builder::default()
+    }
+}
+
 /// See [`LoggingOptions`](crate::model::LoggingOptions).
 pub mod logging_options {
 
@@ -4487,12 +4532,6 @@ pub mod logging_options {
         pub fn build(self) -> crate::model::LoggingOptions {
             crate::model::LoggingOptions { level: self.level }
         }
-    }
-}
-impl LoggingOptions {
-    /// Creates a new builder-style object to manufacture [`LoggingOptions`](crate::model::LoggingOptions).
-    pub fn builder() -> crate::model::logging_options::Builder {
-        crate::model::logging_options::Builder::default()
     }
 }
 
@@ -4748,6 +4787,13 @@ impl TimeSeriesSummary {
         self.time_series_last_update_date.as_ref()
     }
 }
+impl TimeSeriesSummary {
+    /// Creates a new builder-style object to manufacture [`TimeSeriesSummary`](crate::model::TimeSeriesSummary).
+    pub fn builder() -> crate::model::time_series_summary::Builder {
+        crate::model::time_series_summary::Builder::default()
+    }
+}
+
 /// See [`TimeSeriesSummary`](crate::model::TimeSeriesSummary).
 pub mod time_series_summary {
 
@@ -4877,12 +4923,6 @@ pub mod time_series_summary {
                 time_series_last_update_date: self.time_series_last_update_date,
             }
         }
-    }
-}
-impl TimeSeriesSummary {
-    /// Creates a new builder-style object to manufacture [`TimeSeriesSummary`](crate::model::TimeSeriesSummary).
-    pub fn builder() -> crate::model::time_series_summary::Builder {
-        crate::model::time_series_summary::Builder::default()
     }
 }
 
@@ -5020,6 +5060,13 @@ impl ProjectSummary {
         self.last_update_date.as_ref()
     }
 }
+impl ProjectSummary {
+    /// Creates a new builder-style object to manufacture [`ProjectSummary`](crate::model::ProjectSummary).
+    pub fn builder() -> crate::model::project_summary::Builder {
+        crate::model::project_summary::Builder::default()
+    }
+}
+
 /// See [`ProjectSummary`](crate::model::ProjectSummary).
 pub mod project_summary {
 
@@ -5102,12 +5149,6 @@ pub mod project_summary {
         }
     }
 }
-impl ProjectSummary {
-    /// Creates a new builder-style object to manufacture [`ProjectSummary`](crate::model::ProjectSummary).
-    pub fn builder() -> crate::model::project_summary::Builder {
-        crate::model::project_summary::Builder::default()
-    }
-}
 
 /// <p>Contains a portal summary.</p>
 #[non_exhaustive]
@@ -5172,6 +5213,13 @@ impl PortalSummary {
         self.status.as_ref()
     }
 }
+impl PortalSummary {
+    /// Creates a new builder-style object to manufacture [`PortalSummary`](crate::model::PortalSummary).
+    pub fn builder() -> crate::model::portal_summary::Builder {
+        crate::model::portal_summary::Builder::default()
+    }
+}
+
 /// See [`PortalSummary`](crate::model::PortalSummary).
 pub mod portal_summary {
 
@@ -5293,12 +5341,6 @@ pub mod portal_summary {
         }
     }
 }
-impl PortalSummary {
-    /// Creates a new builder-style object to manufacture [`PortalSummary`](crate::model::PortalSummary).
-    pub fn builder() -> crate::model::portal_summary::Builder {
-        crate::model::portal_summary::Builder::default()
-    }
-}
 
 /// <p>Contains a summary of a gateway.</p>
 #[non_exhaustive]
@@ -5352,6 +5394,13 @@ impl GatewaySummary {
         self.last_update_date.as_ref()
     }
 }
+impl GatewaySummary {
+    /// Creates a new builder-style object to manufacture [`GatewaySummary`](crate::model::GatewaySummary).
+    pub fn builder() -> crate::model::gateway_summary::Builder {
+        crate::model::gateway_summary::Builder::default()
+    }
+}
+
 /// See [`GatewaySummary`](crate::model::GatewaySummary).
 pub mod gateway_summary {
 
@@ -5462,12 +5511,6 @@ pub mod gateway_summary {
         }
     }
 }
-impl GatewaySummary {
-    /// Creates a new builder-style object to manufacture [`GatewaySummary`](crate::model::GatewaySummary).
-    pub fn builder() -> crate::model::gateway_summary::Builder {
-        crate::model::gateway_summary::Builder::default()
-    }
-}
 
 /// <p>Contains a summary of a gateway capability configuration.</p>
 #[non_exhaustive]
@@ -5502,6 +5545,13 @@ impl GatewayCapabilitySummary {
         self.capability_sync_status.as_ref()
     }
 }
+impl GatewayCapabilitySummary {
+    /// Creates a new builder-style object to manufacture [`GatewayCapabilitySummary`](crate::model::GatewayCapabilitySummary).
+    pub fn builder() -> crate::model::gateway_capability_summary::Builder {
+        crate::model::gateway_capability_summary::Builder::default()
+    }
+}
+
 /// See [`GatewayCapabilitySummary`](crate::model::GatewayCapabilitySummary).
 pub mod gateway_capability_summary {
 
@@ -5558,12 +5608,6 @@ pub mod gateway_capability_summary {
         }
     }
 }
-impl GatewayCapabilitySummary {
-    /// Creates a new builder-style object to manufacture [`GatewayCapabilitySummary`](crate::model::GatewayCapabilitySummary).
-    pub fn builder() -> crate::model::gateway_capability_summary::Builder {
-        crate::model::gateway_capability_summary::Builder::default()
-    }
-}
 
 /// <p>Contains a gateway's platform information.</p>
 #[non_exhaustive]
@@ -5586,6 +5630,13 @@ impl GatewayPlatform {
         self.greengrass_v2.as_ref()
     }
 }
+impl GatewayPlatform {
+    /// Creates a new builder-style object to manufacture [`GatewayPlatform`](crate::model::GatewayPlatform).
+    pub fn builder() -> crate::model::gateway_platform::Builder {
+        crate::model::gateway_platform::Builder::default()
+    }
+}
+
 /// See [`GatewayPlatform`](crate::model::GatewayPlatform).
 pub mod gateway_platform {
 
@@ -5632,12 +5683,6 @@ pub mod gateway_platform {
         }
     }
 }
-impl GatewayPlatform {
-    /// Creates a new builder-style object to manufacture [`GatewayPlatform`](crate::model::GatewayPlatform).
-    pub fn builder() -> crate::model::gateway_platform::Builder {
-        crate::model::gateway_platform::Builder::default()
-    }
-}
 
 /// <p>Contains details for a gateway that runs on IoT Greengrass V2. To create a gateway that runs on IoT Greengrass V2, you must deploy the IoT SiteWise Edge component to your gateway device. Your <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/device-service-role.html">Greengrass device role</a> must use the <code>AWSIoTSiteWiseEdgeAccess</code> policy. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/sw-gateways.html">Using IoT SiteWise at the edge</a> in the <i>IoT SiteWise User Guide</i>.</p>
 #[non_exhaustive]
@@ -5653,6 +5698,13 @@ impl GreengrassV2 {
         self.core_device_thing_name.as_deref()
     }
 }
+impl GreengrassV2 {
+    /// Creates a new builder-style object to manufacture [`GreengrassV2`](crate::model::GreengrassV2).
+    pub fn builder() -> crate::model::greengrass_v2::Builder {
+        crate::model::greengrass_v2::Builder::default()
+    }
+}
+
 /// See [`GreengrassV2`](crate::model::GreengrassV2).
 pub mod greengrass_v2 {
 
@@ -5684,12 +5736,6 @@ pub mod greengrass_v2 {
         }
     }
 }
-impl GreengrassV2 {
-    /// Creates a new builder-style object to manufacture [`GreengrassV2`](crate::model::GreengrassV2).
-    pub fn builder() -> crate::model::greengrass_v2::Builder {
-        crate::model::greengrass_v2::Builder::default()
-    }
-}
 
 /// <p>Contains details for a gateway that runs on IoT Greengrass. To create a gateway that runs on IoT Greengrass, you must add the IoT SiteWise connector to a Greengrass group and deploy it. Your Greengrass group must also have permissions to upload data to IoT SiteWise. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/gateway-connector.html">Ingesting data using a gateway</a> in the <i>IoT SiteWise User Guide</i>.</p>
 #[non_exhaustive]
@@ -5705,6 +5751,13 @@ impl Greengrass {
         self.group_arn.as_deref()
     }
 }
+impl Greengrass {
+    /// Creates a new builder-style object to manufacture [`Greengrass`](crate::model::Greengrass).
+    pub fn builder() -> crate::model::greengrass::Builder {
+        crate::model::greengrass::Builder::default()
+    }
+}
+
 /// See [`Greengrass`](crate::model::Greengrass).
 pub mod greengrass {
 
@@ -5731,12 +5784,6 @@ pub mod greengrass {
                 group_arn: self.group_arn,
             }
         }
-    }
-}
-impl Greengrass {
-    /// Creates a new builder-style object to manufacture [`Greengrass`](crate::model::Greengrass).
-    pub fn builder() -> crate::model::greengrass::Builder {
-        crate::model::greengrass::Builder::default()
     }
 }
 
@@ -5782,6 +5829,13 @@ impl DashboardSummary {
         self.last_update_date.as_ref()
     }
 }
+impl DashboardSummary {
+    /// Creates a new builder-style object to manufacture [`DashboardSummary`](crate::model::DashboardSummary).
+    pub fn builder() -> crate::model::dashboard_summary::Builder {
+        crate::model::dashboard_summary::Builder::default()
+    }
+}
+
 /// See [`DashboardSummary`](crate::model::DashboardSummary).
 pub mod dashboard_summary {
 
@@ -5864,12 +5918,6 @@ pub mod dashboard_summary {
         }
     }
 }
-impl DashboardSummary {
-    /// Creates a new builder-style object to manufacture [`DashboardSummary`](crate::model::DashboardSummary).
-    pub fn builder() -> crate::model::dashboard_summary::Builder {
-        crate::model::dashboard_summary::Builder::default()
-    }
-}
 
 /// <p>Contains a job summary information.</p>
 #[non_exhaustive]
@@ -5915,6 +5963,13 @@ impl JobSummary {
         self.status.as_ref()
     }
 }
+impl JobSummary {
+    /// Creates a new builder-style object to manufacture [`JobSummary`](crate::model::JobSummary).
+    pub fn builder() -> crate::model::job_summary::Builder {
+        crate::model::job_summary::Builder::default()
+    }
+}
+
 /// See [`JobSummary`](crate::model::JobSummary).
 pub mod job_summary {
 
@@ -5981,12 +6036,6 @@ pub mod job_summary {
                 status: self.status,
             }
         }
-    }
-}
-impl JobSummary {
-    /// Creates a new builder-style object to manufacture [`JobSummary`](crate::model::JobSummary).
-    pub fn builder() -> crate::model::job_summary::Builder {
-        crate::model::job_summary::Builder::default()
     }
 }
 
@@ -6304,6 +6353,13 @@ impl AssociatedAssetsSummary {
         self.description.as_deref()
     }
 }
+impl AssociatedAssetsSummary {
+    /// Creates a new builder-style object to manufacture [`AssociatedAssetsSummary`](crate::model::AssociatedAssetsSummary).
+    pub fn builder() -> crate::model::associated_assets_summary::Builder {
+        crate::model::associated_assets_summary::Builder::default()
+    }
+}
+
 /// See [`AssociatedAssetsSummary`](crate::model::AssociatedAssetsSummary).
 pub mod associated_assets_summary {
 
@@ -6448,12 +6504,6 @@ pub mod associated_assets_summary {
         }
     }
 }
-impl AssociatedAssetsSummary {
-    /// Creates a new builder-style object to manufacture [`AssociatedAssetsSummary`](crate::model::AssociatedAssetsSummary).
-    pub fn builder() -> crate::model::associated_assets_summary::Builder {
-        crate::model::associated_assets_summary::Builder::default()
-    }
-}
 
 /// <p>Describes an asset hierarchy that contains a hierarchy's name and ID.</p>
 #[non_exhaustive]
@@ -6476,6 +6526,13 @@ impl AssetHierarchy {
         self.name.as_deref()
     }
 }
+impl AssetHierarchy {
+    /// Creates a new builder-style object to manufacture [`AssetHierarchy`](crate::model::AssetHierarchy).
+    pub fn builder() -> crate::model::asset_hierarchy::Builder {
+        crate::model::asset_hierarchy::Builder::default()
+    }
+}
+
 /// See [`AssetHierarchy`](crate::model::AssetHierarchy).
 pub mod asset_hierarchy {
 
@@ -6514,12 +6571,6 @@ pub mod asset_hierarchy {
                 name: self.name,
             }
         }
-    }
-}
-impl AssetHierarchy {
-    /// Creates a new builder-style object to manufacture [`AssetHierarchy`](crate::model::AssetHierarchy).
-    pub fn builder() -> crate::model::asset_hierarchy::Builder {
-        crate::model::asset_hierarchy::Builder::default()
     }
 }
 
@@ -6687,6 +6738,13 @@ impl AssetSummary {
         self.description.as_deref()
     }
 }
+impl AssetSummary {
+    /// Creates a new builder-style object to manufacture [`AssetSummary`](crate::model::AssetSummary).
+    pub fn builder() -> crate::model::asset_summary::Builder {
+        crate::model::asset_summary::Builder::default()
+    }
+}
+
 /// See [`AssetSummary`](crate::model::AssetSummary).
 pub mod asset_summary {
 
@@ -6831,12 +6889,6 @@ pub mod asset_summary {
         }
     }
 }
-impl AssetSummary {
-    /// Creates a new builder-style object to manufacture [`AssetSummary`](crate::model::AssetSummary).
-    pub fn builder() -> crate::model::asset_summary::Builder {
-        crate::model::asset_summary::Builder::default()
-    }
-}
 
 /// When writing a match expression against `ListAssetsFilter`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -6957,6 +7009,13 @@ impl AssetRelationshipSummary {
         self.relationship_type.as_ref()
     }
 }
+impl AssetRelationshipSummary {
+    /// Creates a new builder-style object to manufacture [`AssetRelationshipSummary`](crate::model::AssetRelationshipSummary).
+    pub fn builder() -> crate::model::asset_relationship_summary::Builder {
+        crate::model::asset_relationship_summary::Builder::default()
+    }
+}
+
 /// See [`AssetRelationshipSummary`](crate::model::AssetRelationshipSummary).
 pub mod asset_relationship_summary {
 
@@ -7009,12 +7068,6 @@ pub mod asset_relationship_summary {
                 relationship_type: self.relationship_type,
             }
         }
-    }
-}
-impl AssetRelationshipSummary {
-    /// Creates a new builder-style object to manufacture [`AssetRelationshipSummary`](crate::model::AssetRelationshipSummary).
-    pub fn builder() -> crate::model::asset_relationship_summary::Builder {
-        crate::model::asset_relationship_summary::Builder::default()
     }
 }
 
@@ -7126,6 +7179,13 @@ impl AssetHierarchyInfo {
         self.child_asset_id.as_deref()
     }
 }
+impl AssetHierarchyInfo {
+    /// Creates a new builder-style object to manufacture [`AssetHierarchyInfo`](crate::model::AssetHierarchyInfo).
+    pub fn builder() -> crate::model::asset_hierarchy_info::Builder {
+        crate::model::asset_hierarchy_info::Builder::default()
+    }
+}
+
 /// See [`AssetHierarchyInfo`](crate::model::AssetHierarchyInfo).
 pub mod asset_hierarchy_info {
 
@@ -7170,12 +7230,6 @@ pub mod asset_hierarchy_info {
                 child_asset_id: self.child_asset_id,
             }
         }
-    }
-}
-impl AssetHierarchyInfo {
-    /// Creates a new builder-style object to manufacture [`AssetHierarchyInfo`](crate::model::AssetHierarchyInfo).
-    pub fn builder() -> crate::model::asset_hierarchy_info::Builder {
-        crate::model::asset_hierarchy_info::Builder::default()
     }
 }
 
@@ -7306,6 +7360,13 @@ impl AssetPropertySummary {
         self.asset_composite_model_id.as_deref()
     }
 }
+impl AssetPropertySummary {
+    /// Creates a new builder-style object to manufacture [`AssetPropertySummary`](crate::model::AssetPropertySummary).
+    pub fn builder() -> crate::model::asset_property_summary::Builder {
+        crate::model::asset_property_summary::Builder::default()
+    }
+}
+
 /// See [`AssetPropertySummary`](crate::model::AssetPropertySummary).
 pub mod asset_property_summary {
 
@@ -7388,12 +7449,6 @@ pub mod asset_property_summary {
         }
     }
 }
-impl AssetPropertySummary {
-    /// Creates a new builder-style object to manufacture [`AssetPropertySummary`](crate::model::AssetPropertySummary).
-    pub fn builder() -> crate::model::asset_property_summary::Builder {
-        crate::model::asset_property_summary::Builder::default()
-    }
-}
 
 /// <p>Contains asset property value notification information. When the notification state is enabled, IoT SiteWise publishes property value updates to a unique MQTT topic. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/interact-with-other-services.html">Interacting with other services</a> in the <i>IoT SiteWise User Guide</i>.</p>
 #[non_exhaustive]
@@ -7416,6 +7471,13 @@ impl PropertyNotification {
         self.state.as_ref()
     }
 }
+impl PropertyNotification {
+    /// Creates a new builder-style object to manufacture [`PropertyNotification`](crate::model::PropertyNotification).
+    pub fn builder() -> crate::model::property_notification::Builder {
+        crate::model::property_notification::Builder::default()
+    }
+}
+
 /// See [`PropertyNotification`](crate::model::PropertyNotification).
 pub mod property_notification {
 
@@ -7457,12 +7519,6 @@ pub mod property_notification {
                 state: self.state,
             }
         }
-    }
-}
-impl PropertyNotification {
-    /// Creates a new builder-style object to manufacture [`PropertyNotification`](crate::model::PropertyNotification).
-    pub fn builder() -> crate::model::property_notification::Builder {
-        crate::model::property_notification::Builder::default()
     }
 }
 
@@ -7616,6 +7672,13 @@ impl AssetModelSummary {
         self.status.as_ref()
     }
 }
+impl AssetModelSummary {
+    /// Creates a new builder-style object to manufacture [`AssetModelSummary`](crate::model::AssetModelSummary).
+    pub fn builder() -> crate::model::asset_model_summary::Builder {
+        crate::model::asset_model_summary::Builder::default()
+    }
+}
+
 /// See [`AssetModelSummary`](crate::model::AssetModelSummary).
 pub mod asset_model_summary {
 
@@ -7727,12 +7790,6 @@ pub mod asset_model_summary {
         }
     }
 }
-impl AssetModelSummary {
-    /// Creates a new builder-style object to manufacture [`AssetModelSummary`](crate::model::AssetModelSummary).
-    pub fn builder() -> crate::model::asset_model_summary::Builder {
-        crate::model::asset_model_summary::Builder::default()
-    }
-}
 
 /// <p>Contains a summary of a property associated with a model.</p>
 #[non_exhaustive]
@@ -7790,6 +7847,13 @@ impl AssetModelPropertySummary {
         self.asset_model_composite_model_id.as_deref()
     }
 }
+impl AssetModelPropertySummary {
+    /// Creates a new builder-style object to manufacture [`AssetModelPropertySummary`](crate::model::AssetModelPropertySummary).
+    pub fn builder() -> crate::model::asset_model_property_summary::Builder {
+        crate::model::asset_model_property_summary::Builder::default()
+    }
+}
+
 /// See [`AssetModelPropertySummary`](crate::model::AssetModelPropertySummary).
 pub mod asset_model_property_summary {
 
@@ -7900,12 +7964,6 @@ pub mod asset_model_property_summary {
                 asset_model_composite_model_id: self.asset_model_composite_model_id,
             }
         }
-    }
-}
-impl AssetModelPropertySummary {
-    /// Creates a new builder-style object to manufacture [`AssetModelPropertySummary`](crate::model::AssetModelPropertySummary).
-    pub fn builder() -> crate::model::asset_model_property_summary::Builder {
-        crate::model::asset_model_property_summary::Builder::default()
     }
 }
 
@@ -8050,6 +8108,13 @@ impl AccessPolicySummary {
         self.last_update_date.as_ref()
     }
 }
+impl AccessPolicySummary {
+    /// Creates a new builder-style object to manufacture [`AccessPolicySummary`](crate::model::AccessPolicySummary).
+    pub fn builder() -> crate::model::access_policy_summary::Builder {
+        crate::model::access_policy_summary::Builder::default()
+    }
+}
+
 /// See [`AccessPolicySummary`](crate::model::AccessPolicySummary).
 pub mod access_policy_summary {
 
@@ -8145,12 +8210,6 @@ pub mod access_policy_summary {
                 last_update_date: self.last_update_date,
             }
         }
-    }
-}
-impl AccessPolicySummary {
-    /// Creates a new builder-style object to manufacture [`AccessPolicySummary`](crate::model::AccessPolicySummary).
-    pub fn builder() -> crate::model::access_policy_summary::Builder {
-        crate::model::access_policy_summary::Builder::default()
     }
 }
 
@@ -8360,6 +8419,13 @@ impl InterpolatedAssetPropertyValue {
         self.value.as_ref()
     }
 }
+impl InterpolatedAssetPropertyValue {
+    /// Creates a new builder-style object to manufacture [`InterpolatedAssetPropertyValue`](crate::model::InterpolatedAssetPropertyValue).
+    pub fn builder() -> crate::model::interpolated_asset_property_value::Builder {
+        crate::model::interpolated_asset_property_value::Builder::default()
+    }
+}
+
 /// See [`InterpolatedAssetPropertyValue`](crate::model::InterpolatedAssetPropertyValue).
 pub mod interpolated_asset_property_value {
 
@@ -8403,12 +8469,6 @@ pub mod interpolated_asset_property_value {
         }
     }
 }
-impl InterpolatedAssetPropertyValue {
-    /// Creates a new builder-style object to manufacture [`InterpolatedAssetPropertyValue`](crate::model::InterpolatedAssetPropertyValue).
-    pub fn builder() -> crate::model::interpolated_asset_property_value::Builder {
-        crate::model::interpolated_asset_property_value::Builder::default()
-    }
-}
 
 /// <p>Contains an asset property value (of a single type only).</p>
 #[non_exhaustive]
@@ -8445,6 +8505,13 @@ impl Variant {
         self.boolean_value
     }
 }
+impl Variant {
+    /// Creates a new builder-style object to manufacture [`Variant`](crate::model::Variant).
+    pub fn builder() -> crate::model::variant::Builder {
+        crate::model::variant::Builder::default()
+    }
+}
+
 /// See [`Variant`](crate::model::Variant).
 pub mod variant {
 
@@ -8509,12 +8576,6 @@ pub mod variant {
         }
     }
 }
-impl Variant {
-    /// Creates a new builder-style object to manufacture [`Variant`](crate::model::Variant).
-    pub fn builder() -> crate::model::variant::Builder {
-        crate::model::variant::Builder::default()
-    }
-}
 
 /// <p>Contains a timestamp with optional nanosecond granularity.</p>
 #[non_exhaustive]
@@ -8537,6 +8598,13 @@ impl TimeInNanos {
         self.offset_in_nanos
     }
 }
+impl TimeInNanos {
+    /// Creates a new builder-style object to manufacture [`TimeInNanos`](crate::model::TimeInNanos).
+    pub fn builder() -> crate::model::time_in_nanos::Builder {
+        crate::model::time_in_nanos::Builder::default()
+    }
+}
+
 /// See [`TimeInNanos`](crate::model::TimeInNanos).
 pub mod time_in_nanos {
 
@@ -8575,12 +8643,6 @@ pub mod time_in_nanos {
                 offset_in_nanos: self.offset_in_nanos,
             }
         }
-    }
-}
-impl TimeInNanos {
-    /// Creates a new builder-style object to manufacture [`TimeInNanos`](crate::model::TimeInNanos).
-    pub fn builder() -> crate::model::time_in_nanos::Builder {
-        crate::model::time_in_nanos::Builder::default()
     }
 }
 
@@ -8707,6 +8769,13 @@ impl AssetPropertyValue {
         self.quality.as_ref()
     }
 }
+impl AssetPropertyValue {
+    /// Creates a new builder-style object to manufacture [`AssetPropertyValue`](crate::model::AssetPropertyValue).
+    pub fn builder() -> crate::model::asset_property_value::Builder {
+        crate::model::asset_property_value::Builder::default()
+    }
+}
+
 /// See [`AssetPropertyValue`](crate::model::AssetPropertyValue).
 pub mod asset_property_value {
 
@@ -8760,12 +8829,6 @@ pub mod asset_property_value {
                 quality: self.quality,
             }
         }
-    }
-}
-impl AssetPropertyValue {
-    /// Creates a new builder-style object to manufacture [`AssetPropertyValue`](crate::model::AssetPropertyValue).
-    pub fn builder() -> crate::model::asset_property_value::Builder {
-        crate::model::asset_property_value::Builder::default()
     }
 }
 
@@ -8887,6 +8950,13 @@ impl AggregatedValue {
         self.value.as_ref()
     }
 }
+impl AggregatedValue {
+    /// Creates a new builder-style object to manufacture [`AggregatedValue`](crate::model::AggregatedValue).
+    pub fn builder() -> crate::model::aggregated_value::Builder {
+        crate::model::aggregated_value::Builder::default()
+    }
+}
+
 /// See [`AggregatedValue`](crate::model::AggregatedValue).
 pub mod aggregated_value {
 
@@ -8942,12 +9012,6 @@ pub mod aggregated_value {
         }
     }
 }
-impl AggregatedValue {
-    /// Creates a new builder-style object to manufacture [`AggregatedValue`](crate::model::AggregatedValue).
-    pub fn builder() -> crate::model::aggregated_value::Builder {
-        crate::model::aggregated_value::Builder::default()
-    }
-}
 
 /// <p>Contains the (pre-calculated) aggregate values for an asset property.</p>
 #[non_exhaustive]
@@ -8998,6 +9062,13 @@ impl Aggregates {
         self.standard_deviation
     }
 }
+impl Aggregates {
+    /// Creates a new builder-style object to manufacture [`Aggregates`](crate::model::Aggregates).
+    pub fn builder() -> crate::model::aggregates::Builder {
+        crate::model::aggregates::Builder::default()
+    }
+}
+
 /// See [`Aggregates`](crate::model::Aggregates).
 pub mod aggregates {
 
@@ -9084,12 +9155,6 @@ pub mod aggregates {
                 standard_deviation: self.standard_deviation,
             }
         }
-    }
-}
-impl Aggregates {
-    /// Creates a new builder-style object to manufacture [`Aggregates`](crate::model::Aggregates).
-    pub fn builder() -> crate::model::aggregates::Builder {
-        crate::model::aggregates::Builder::default()
     }
 }
 
@@ -9321,6 +9386,13 @@ impl ImageLocation {
         self.url.as_deref()
     }
 }
+impl ImageLocation {
+    /// Creates a new builder-style object to manufacture [`ImageLocation`](crate::model::ImageLocation).
+    pub fn builder() -> crate::model::image_location::Builder {
+        crate::model::image_location::Builder::default()
+    }
+}
+
 /// See [`ImageLocation`](crate::model::ImageLocation).
 pub mod image_location {
 
@@ -9361,12 +9433,6 @@ pub mod image_location {
         }
     }
 }
-impl ImageLocation {
-    /// Creates a new builder-style object to manufacture [`ImageLocation`](crate::model::ImageLocation).
-    pub fn builder() -> crate::model::image_location::Builder {
-        crate::model::image_location::Builder::default()
-    }
-}
 
 /// <p>Contains the configuration information of a job, such as the file format used to save data in Amazon S3.</p>
 #[non_exhaustive]
@@ -9382,6 +9448,13 @@ impl JobConfiguration {
         self.file_format.as_ref()
     }
 }
+impl JobConfiguration {
+    /// Creates a new builder-style object to manufacture [`JobConfiguration`](crate::model::JobConfiguration).
+    pub fn builder() -> crate::model::job_configuration::Builder {
+        crate::model::job_configuration::Builder::default()
+    }
+}
+
 /// See [`JobConfiguration`](crate::model::JobConfiguration).
 pub mod job_configuration {
 
@@ -9413,12 +9486,6 @@ pub mod job_configuration {
         }
     }
 }
-impl JobConfiguration {
-    /// Creates a new builder-style object to manufacture [`JobConfiguration`](crate::model::JobConfiguration).
-    pub fn builder() -> crate::model::job_configuration::Builder {
-        crate::model::job_configuration::Builder::default()
-    }
-}
 
 /// <p>The file format of the data.</p>
 #[non_exhaustive]
@@ -9434,6 +9501,13 @@ impl FileFormat {
         self.csv.as_ref()
     }
 }
+impl FileFormat {
+    /// Creates a new builder-style object to manufacture [`FileFormat`](crate::model::FileFormat).
+    pub fn builder() -> crate::model::file_format::Builder {
+        crate::model::file_format::Builder::default()
+    }
+}
+
 /// See [`FileFormat`](crate::model::FileFormat).
 pub mod file_format {
 
@@ -9460,12 +9534,6 @@ pub mod file_format {
         }
     }
 }
-impl FileFormat {
-    /// Creates a new builder-style object to manufacture [`FileFormat`](crate::model::FileFormat).
-    pub fn builder() -> crate::model::file_format::Builder {
-        crate::model::file_format::Builder::default()
-    }
-}
 
 /// <p>A .csv file.</p>
 #[non_exhaustive]
@@ -9481,6 +9549,13 @@ impl Csv {
         self.column_names.as_deref()
     }
 }
+impl Csv {
+    /// Creates a new builder-style object to manufacture [`Csv`](crate::model::Csv).
+    pub fn builder() -> crate::model::csv::Builder {
+        crate::model::csv::Builder::default()
+    }
+}
+
 /// See [`Csv`](crate::model::Csv).
 pub mod csv {
 
@@ -9516,12 +9591,6 @@ pub mod csv {
                 column_names: self.column_names,
             }
         }
-    }
-}
-impl Csv {
-    /// Creates a new builder-style object to manufacture [`Csv`](crate::model::Csv).
-    pub fn builder() -> crate::model::csv::Builder {
-        crate::model::csv::Builder::default()
     }
 }
 
@@ -9675,6 +9744,13 @@ impl ErrorReportLocation {
         self.prefix.as_deref()
     }
 }
+impl ErrorReportLocation {
+    /// Creates a new builder-style object to manufacture [`ErrorReportLocation`](crate::model::ErrorReportLocation).
+    pub fn builder() -> crate::model::error_report_location::Builder {
+        crate::model::error_report_location::Builder::default()
+    }
+}
+
 /// See [`ErrorReportLocation`](crate::model::ErrorReportLocation).
 pub mod error_report_location {
 
@@ -9715,12 +9791,6 @@ pub mod error_report_location {
         }
     }
 }
-impl ErrorReportLocation {
-    /// Creates a new builder-style object to manufacture [`ErrorReportLocation`](crate::model::ErrorReportLocation).
-    pub fn builder() -> crate::model::error_report_location::Builder {
-        crate::model::error_report_location::Builder::default()
-    }
-}
 
 /// <p>The file in Amazon S3 where your data is saved. </p>
 #[non_exhaustive]
@@ -9750,6 +9820,13 @@ impl File {
         self.version_id.as_deref()
     }
 }
+impl File {
+    /// Creates a new builder-style object to manufacture [`File`](crate::model::File).
+    pub fn builder() -> crate::model::file::Builder {
+        crate::model::file::Builder::default()
+    }
+}
+
 /// See [`File`](crate::model::File).
 pub mod file {
 
@@ -9802,12 +9879,6 @@ pub mod file {
         }
     }
 }
-impl File {
-    /// Creates a new builder-style object to manufacture [`File`](crate::model::File).
-    pub fn builder() -> crate::model::file::Builder {
-        crate::model::file::Builder::default()
-    }
-}
 
 /// <p>Contains information about a composite model property on an asset.</p>
 #[non_exhaustive]
@@ -9844,6 +9915,13 @@ impl CompositeModelProperty {
         self.id.as_deref()
     }
 }
+impl CompositeModelProperty {
+    /// Creates a new builder-style object to manufacture [`CompositeModelProperty`](crate::model::CompositeModelProperty).
+    pub fn builder() -> crate::model::composite_model_property::Builder {
+        crate::model::composite_model_property::Builder::default()
+    }
+}
+
 /// See [`CompositeModelProperty`](crate::model::CompositeModelProperty).
 pub mod composite_model_property {
 
@@ -9911,12 +9989,6 @@ pub mod composite_model_property {
         }
     }
 }
-impl CompositeModelProperty {
-    /// Creates a new builder-style object to manufacture [`CompositeModelProperty`](crate::model::CompositeModelProperty).
-    pub fn builder() -> crate::model::composite_model_property::Builder {
-        crate::model::composite_model_property::Builder::default()
-    }
-}
 
 /// <p>Contains asset property information.</p>
 #[non_exhaustive]
@@ -9974,6 +10046,13 @@ impl Property {
         self.r#type.as_ref()
     }
 }
+impl Property {
+    /// Creates a new builder-style object to manufacture [`Property`](crate::model::Property).
+    pub fn builder() -> crate::model::property::Builder {
+        crate::model::property::Builder::default()
+    }
+}
+
 /// See [`Property`](crate::model::Property).
 pub mod property {
 
@@ -10080,12 +10159,6 @@ pub mod property {
         }
     }
 }
-impl Property {
-    /// Creates a new builder-style object to manufacture [`Property`](crate::model::Property).
-    pub fn builder() -> crate::model::property::Builder {
-        crate::model::property::Builder::default()
-    }
-}
 
 /// <p>Contains information about a composite model in an asset. This object contains the asset's properties that you define in the composite model.</p>
 #[non_exhaustive]
@@ -10129,6 +10202,13 @@ impl AssetCompositeModel {
         self.id.as_deref()
     }
 }
+impl AssetCompositeModel {
+    /// Creates a new builder-style object to manufacture [`AssetCompositeModel`](crate::model::AssetCompositeModel).
+    pub fn builder() -> crate::model::asset_composite_model::Builder {
+        crate::model::asset_composite_model::Builder::default()
+    }
+}
+
 /// See [`AssetCompositeModel`](crate::model::AssetCompositeModel).
 pub mod asset_composite_model {
 
@@ -10214,12 +10294,6 @@ pub mod asset_composite_model {
         }
     }
 }
-impl AssetCompositeModel {
-    /// Creates a new builder-style object to manufacture [`AssetCompositeModel`](crate::model::AssetCompositeModel).
-    pub fn builder() -> crate::model::asset_composite_model::Builder {
-        crate::model::asset_composite_model::Builder::default()
-    }
-}
 
 /// <p>Contains asset property information.</p>
 #[non_exhaustive]
@@ -10277,6 +10351,13 @@ impl AssetProperty {
         self.unit.as_deref()
     }
 }
+impl AssetProperty {
+    /// Creates a new builder-style object to manufacture [`AssetProperty`](crate::model::AssetProperty).
+    pub fn builder() -> crate::model::asset_property::Builder {
+        crate::model::asset_property::Builder::default()
+    }
+}
+
 /// See [`AssetProperty`](crate::model::AssetProperty).
 pub mod asset_property {
 
@@ -10386,12 +10467,6 @@ pub mod asset_property {
         }
     }
 }
-impl AssetProperty {
-    /// Creates a new builder-style object to manufacture [`AssetProperty`](crate::model::AssetProperty).
-    pub fn builder() -> crate::model::asset_property::Builder {
-        crate::model::asset_property::Builder::default()
-    }
-}
 
 /// <p>Contains a composite model definition in an asset model. This composite model definition is applied to all assets created from the asset model.</p>
 #[non_exhaustive]
@@ -10428,6 +10503,13 @@ impl AssetModelCompositeModelDefinition {
         self.properties.as_deref()
     }
 }
+impl AssetModelCompositeModelDefinition {
+    /// Creates a new builder-style object to manufacture [`AssetModelCompositeModelDefinition`](crate::model::AssetModelCompositeModelDefinition).
+    pub fn builder() -> crate::model::asset_model_composite_model_definition::Builder {
+        crate::model::asset_model_composite_model_definition::Builder::default()
+    }
+}
+
 /// See [`AssetModelCompositeModelDefinition`](crate::model::AssetModelCompositeModelDefinition).
 pub mod asset_model_composite_model_definition {
 
@@ -10502,12 +10584,6 @@ pub mod asset_model_composite_model_definition {
         }
     }
 }
-impl AssetModelCompositeModelDefinition {
-    /// Creates a new builder-style object to manufacture [`AssetModelCompositeModelDefinition`](crate::model::AssetModelCompositeModelDefinition).
-    pub fn builder() -> crate::model::asset_model_composite_model_definition::Builder {
-        crate::model::asset_model_composite_model_definition::Builder::default()
-    }
-}
 
 /// <p>Contains an asset model property definition. This property definition is applied to all assets created from the asset model.</p>
 #[non_exhaustive]
@@ -10555,6 +10631,13 @@ impl AssetModelPropertyDefinition {
         self.r#type.as_ref()
     }
 }
+impl AssetModelPropertyDefinition {
+    /// Creates a new builder-style object to manufacture [`AssetModelPropertyDefinition`](crate::model::AssetModelPropertyDefinition).
+    pub fn builder() -> crate::model::asset_model_property_definition::Builder {
+        crate::model::asset_model_property_definition::Builder::default()
+    }
+}
+
 /// See [`AssetModelPropertyDefinition`](crate::model::AssetModelPropertyDefinition).
 pub mod asset_model_property_definition {
 
@@ -10641,12 +10724,6 @@ pub mod asset_model_property_definition {
         }
     }
 }
-impl AssetModelPropertyDefinition {
-    /// Creates a new builder-style object to manufacture [`AssetModelPropertyDefinition`](crate::model::AssetModelPropertyDefinition).
-    pub fn builder() -> crate::model::asset_model_property_definition::Builder {
-        crate::model::asset_model_property_definition::Builder::default()
-    }
-}
 
 /// <p>Contains an asset model hierarchy used in asset model creation. An asset model hierarchy determines the kind (or type) of asset that can belong to a hierarchy.</p>
 #[non_exhaustive]
@@ -10669,6 +10746,13 @@ impl AssetModelHierarchyDefinition {
         self.child_asset_model_id.as_deref()
     }
 }
+impl AssetModelHierarchyDefinition {
+    /// Creates a new builder-style object to manufacture [`AssetModelHierarchyDefinition`](crate::model::AssetModelHierarchyDefinition).
+    pub fn builder() -> crate::model::asset_model_hierarchy_definition::Builder {
+        crate::model::asset_model_hierarchy_definition::Builder::default()
+    }
+}
+
 /// See [`AssetModelHierarchyDefinition`](crate::model::AssetModelHierarchyDefinition).
 pub mod asset_model_hierarchy_definition {
 
@@ -10712,12 +10796,6 @@ pub mod asset_model_hierarchy_definition {
         }
     }
 }
-impl AssetModelHierarchyDefinition {
-    /// Creates a new builder-style object to manufacture [`AssetModelHierarchyDefinition`](crate::model::AssetModelHierarchyDefinition).
-    pub fn builder() -> crate::model::asset_model_hierarchy_definition::Builder {
-        crate::model::asset_model_hierarchy_definition::Builder::default()
-    }
-}
 
 /// <p>Contains error information for asset property value entries that are associated with the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchPutAssetPropertyValue.html">BatchPutAssetPropertyValue</a> API.</p>
 #[non_exhaustive]
@@ -10740,6 +10818,13 @@ impl BatchPutAssetPropertyErrorEntry {
         self.errors.as_deref()
     }
 }
+impl BatchPutAssetPropertyErrorEntry {
+    /// Creates a new builder-style object to manufacture [`BatchPutAssetPropertyErrorEntry`](crate::model::BatchPutAssetPropertyErrorEntry).
+    pub fn builder() -> crate::model::batch_put_asset_property_error_entry::Builder {
+        crate::model::batch_put_asset_property_error_entry::Builder::default()
+    }
+}
+
 /// See [`BatchPutAssetPropertyErrorEntry`](crate::model::BatchPutAssetPropertyErrorEntry).
 pub mod batch_put_asset_property_error_entry {
 
@@ -10790,12 +10875,6 @@ pub mod batch_put_asset_property_error_entry {
         }
     }
 }
-impl BatchPutAssetPropertyErrorEntry {
-    /// Creates a new builder-style object to manufacture [`BatchPutAssetPropertyErrorEntry`](crate::model::BatchPutAssetPropertyErrorEntry).
-    pub fn builder() -> crate::model::batch_put_asset_property_error_entry::Builder {
-        crate::model::batch_put_asset_property_error_entry::Builder::default()
-    }
-}
 
 /// <p>Contains error information from updating a batch of asset property values.</p>
 #[non_exhaustive]
@@ -10827,6 +10906,13 @@ impl BatchPutAssetPropertyError {
         self.timestamps.as_deref()
     }
 }
+impl BatchPutAssetPropertyError {
+    /// Creates a new builder-style object to manufacture [`BatchPutAssetPropertyError`](crate::model::BatchPutAssetPropertyError).
+    pub fn builder() -> crate::model::batch_put_asset_property_error::Builder {
+        crate::model::batch_put_asset_property_error::Builder::default()
+    }
+}
+
 /// See [`BatchPutAssetPropertyError`](crate::model::BatchPutAssetPropertyError).
 pub mod batch_put_asset_property_error {
 
@@ -10896,12 +10982,6 @@ pub mod batch_put_asset_property_error {
                 timestamps: self.timestamps,
             }
         }
-    }
-}
-impl BatchPutAssetPropertyError {
-    /// Creates a new builder-style object to manufacture [`BatchPutAssetPropertyError`](crate::model::BatchPutAssetPropertyError).
-    pub fn builder() -> crate::model::batch_put_asset_property_error::Builder {
-        crate::model::batch_put_asset_property_error::Builder::default()
     }
 }
 
@@ -11108,6 +11188,13 @@ impl PutAssetPropertyValueEntry {
         self.property_values.as_deref()
     }
 }
+impl PutAssetPropertyValueEntry {
+    /// Creates a new builder-style object to manufacture [`PutAssetPropertyValueEntry`](crate::model::PutAssetPropertyValueEntry).
+    pub fn builder() -> crate::model::put_asset_property_value_entry::Builder {
+        crate::model::put_asset_property_value_entry::Builder::default()
+    }
+}
+
 /// See [`PutAssetPropertyValueEntry`](crate::model::PutAssetPropertyValueEntry).
 pub mod put_asset_property_value_entry {
 
@@ -11197,12 +11284,6 @@ pub mod put_asset_property_value_entry {
         }
     }
 }
-impl PutAssetPropertyValueEntry {
-    /// Creates a new builder-style object to manufacture [`PutAssetPropertyValueEntry`](crate::model::PutAssetPropertyValueEntry).
-    pub fn builder() -> crate::model::put_asset_property_value_entry::Builder {
-        crate::model::put_asset_property_value_entry::Builder::default()
-    }
-}
 
 /// <p>Contains information for an entry that has been processed by the previous <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyValue.html">BatchGetAssetPropertyValueHistory</a> request.</p>
 #[non_exhaustive]
@@ -11236,6 +11317,14 @@ impl BatchGetAssetPropertyValueHistorySkippedEntry {
         self.error_info.as_ref()
     }
 }
+impl BatchGetAssetPropertyValueHistorySkippedEntry {
+    /// Creates a new builder-style object to manufacture [`BatchGetAssetPropertyValueHistorySkippedEntry`](crate::model::BatchGetAssetPropertyValueHistorySkippedEntry).
+    pub fn builder() -> crate::model::batch_get_asset_property_value_history_skipped_entry::Builder
+    {
+        crate::model::batch_get_asset_property_value_history_skipped_entry::Builder::default()
+    }
+}
+
 /// See [`BatchGetAssetPropertyValueHistorySkippedEntry`](crate::model::BatchGetAssetPropertyValueHistorySkippedEntry).
 pub mod batch_get_asset_property_value_history_skipped_entry {
 
@@ -11301,13 +11390,6 @@ pub mod batch_get_asset_property_value_history_skipped_entry {
         }
     }
 }
-impl BatchGetAssetPropertyValueHistorySkippedEntry {
-    /// Creates a new builder-style object to manufacture [`BatchGetAssetPropertyValueHistorySkippedEntry`](crate::model::BatchGetAssetPropertyValueHistorySkippedEntry).
-    pub fn builder() -> crate::model::batch_get_asset_property_value_history_skipped_entry::Builder
-    {
-        crate::model::batch_get_asset_property_value_history_skipped_entry::Builder::default()
-    }
-}
 
 /// <p>The error information, such as the error code and the timestamp.</p>
 #[non_exhaustive]
@@ -11332,6 +11414,13 @@ impl BatchGetAssetPropertyValueHistoryErrorInfo {
         self.error_timestamp.as_ref()
     }
 }
+impl BatchGetAssetPropertyValueHistoryErrorInfo {
+    /// Creates a new builder-style object to manufacture [`BatchGetAssetPropertyValueHistoryErrorInfo`](crate::model::BatchGetAssetPropertyValueHistoryErrorInfo).
+    pub fn builder() -> crate::model::batch_get_asset_property_value_history_error_info::Builder {
+        crate::model::batch_get_asset_property_value_history_error_info::Builder::default()
+    }
+}
+
 /// See [`BatchGetAssetPropertyValueHistoryErrorInfo`](crate::model::BatchGetAssetPropertyValueHistoryErrorInfo).
 pub mod batch_get_asset_property_value_history_error_info {
 
@@ -11380,12 +11469,6 @@ pub mod batch_get_asset_property_value_history_error_info {
                 error_timestamp: self.error_timestamp,
             }
         }
-    }
-}
-impl BatchGetAssetPropertyValueHistoryErrorInfo {
-    /// Creates a new builder-style object to manufacture [`BatchGetAssetPropertyValueHistoryErrorInfo`](crate::model::BatchGetAssetPropertyValueHistoryErrorInfo).
-    pub fn builder() -> crate::model::batch_get_asset_property_value_history_error_info::Builder {
-        crate::model::batch_get_asset_property_value_history_error_info::Builder::default()
     }
 }
 
@@ -11618,6 +11701,14 @@ impl BatchGetAssetPropertyValueHistorySuccessEntry {
         self.asset_property_value_history.as_deref()
     }
 }
+impl BatchGetAssetPropertyValueHistorySuccessEntry {
+    /// Creates a new builder-style object to manufacture [`BatchGetAssetPropertyValueHistorySuccessEntry`](crate::model::BatchGetAssetPropertyValueHistorySuccessEntry).
+    pub fn builder() -> crate::model::batch_get_asset_property_value_history_success_entry::Builder
+    {
+        crate::model::batch_get_asset_property_value_history_success_entry::Builder::default()
+    }
+}
+
 /// See [`BatchGetAssetPropertyValueHistorySuccessEntry`](crate::model::BatchGetAssetPropertyValueHistorySuccessEntry).
 pub mod batch_get_asset_property_value_history_success_entry {
 
@@ -11671,13 +11762,6 @@ pub mod batch_get_asset_property_value_history_success_entry {
         }
     }
 }
-impl BatchGetAssetPropertyValueHistorySuccessEntry {
-    /// Creates a new builder-style object to manufacture [`BatchGetAssetPropertyValueHistorySuccessEntry`](crate::model::BatchGetAssetPropertyValueHistorySuccessEntry).
-    pub fn builder() -> crate::model::batch_get_asset_property_value_history_success_entry::Builder
-    {
-        crate::model::batch_get_asset_property_value_history_success_entry::Builder::default()
-    }
-}
 
 /// <p>A list of the errors (if any) associated with the batch request. Each error entry contains the <code>entryId</code> of the entry that failed.</p>
 #[non_exhaustive]
@@ -11709,6 +11793,13 @@ impl BatchGetAssetPropertyValueHistoryErrorEntry {
         self.entry_id.as_deref()
     }
 }
+impl BatchGetAssetPropertyValueHistoryErrorEntry {
+    /// Creates a new builder-style object to manufacture [`BatchGetAssetPropertyValueHistoryErrorEntry`](crate::model::BatchGetAssetPropertyValueHistoryErrorEntry).
+    pub fn builder() -> crate::model::batch_get_asset_property_value_history_error_entry::Builder {
+        crate::model::batch_get_asset_property_value_history_error_entry::Builder::default()
+    }
+}
+
 /// See [`BatchGetAssetPropertyValueHistoryErrorEntry`](crate::model::BatchGetAssetPropertyValueHistoryErrorEntry).
 pub mod batch_get_asset_property_value_history_error_entry {
 
@@ -11769,12 +11860,6 @@ pub mod batch_get_asset_property_value_history_error_entry {
                 entry_id: self.entry_id,
             }
         }
-    }
-}
-impl BatchGetAssetPropertyValueHistoryErrorEntry {
-    /// Creates a new builder-style object to manufacture [`BatchGetAssetPropertyValueHistoryErrorEntry`](crate::model::BatchGetAssetPropertyValueHistoryErrorEntry).
-    pub fn builder() -> crate::model::batch_get_asset_property_value_history_error_entry::Builder {
-        crate::model::batch_get_asset_property_value_history_error_entry::Builder::default()
     }
 }
 
@@ -11848,6 +11933,13 @@ impl BatchGetAssetPropertyValueHistoryEntry {
         self.time_ordering.as_ref()
     }
 }
+impl BatchGetAssetPropertyValueHistoryEntry {
+    /// Creates a new builder-style object to manufacture [`BatchGetAssetPropertyValueHistoryEntry`](crate::model::BatchGetAssetPropertyValueHistoryEntry).
+    pub fn builder() -> crate::model::batch_get_asset_property_value_history_entry::Builder {
+        crate::model::batch_get_asset_property_value_history_entry::Builder::default()
+    }
+}
+
 /// See [`BatchGetAssetPropertyValueHistoryEntry`](crate::model::BatchGetAssetPropertyValueHistoryEntry).
 pub mod batch_get_asset_property_value_history_entry {
 
@@ -11983,12 +12075,6 @@ pub mod batch_get_asset_property_value_history_entry {
         }
     }
 }
-impl BatchGetAssetPropertyValueHistoryEntry {
-    /// Creates a new builder-style object to manufacture [`BatchGetAssetPropertyValueHistoryEntry`](crate::model::BatchGetAssetPropertyValueHistoryEntry).
-    pub fn builder() -> crate::model::batch_get_asset_property_value_history_entry::Builder {
-        crate::model::batch_get_asset_property_value_history_entry::Builder::default()
-    }
-}
 
 /// <p>Contains information for an entry that has been processed by the previous <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyValue.html">BatchGetAssetPropertyValue</a> request.</p>
 #[non_exhaustive]
@@ -12022,6 +12108,13 @@ impl BatchGetAssetPropertyValueSkippedEntry {
         self.error_info.as_ref()
     }
 }
+impl BatchGetAssetPropertyValueSkippedEntry {
+    /// Creates a new builder-style object to manufacture [`BatchGetAssetPropertyValueSkippedEntry`](crate::model::BatchGetAssetPropertyValueSkippedEntry).
+    pub fn builder() -> crate::model::batch_get_asset_property_value_skipped_entry::Builder {
+        crate::model::batch_get_asset_property_value_skipped_entry::Builder::default()
+    }
+}
+
 /// See [`BatchGetAssetPropertyValueSkippedEntry`](crate::model::BatchGetAssetPropertyValueSkippedEntry).
 pub mod batch_get_asset_property_value_skipped_entry {
 
@@ -12087,12 +12180,6 @@ pub mod batch_get_asset_property_value_skipped_entry {
         }
     }
 }
-impl BatchGetAssetPropertyValueSkippedEntry {
-    /// Creates a new builder-style object to manufacture [`BatchGetAssetPropertyValueSkippedEntry`](crate::model::BatchGetAssetPropertyValueSkippedEntry).
-    pub fn builder() -> crate::model::batch_get_asset_property_value_skipped_entry::Builder {
-        crate::model::batch_get_asset_property_value_skipped_entry::Builder::default()
-    }
-}
 
 /// <p>The error information, such as the error code and the timestamp.</p>
 #[non_exhaustive]
@@ -12117,6 +12204,13 @@ impl BatchGetAssetPropertyValueErrorInfo {
         self.error_timestamp.as_ref()
     }
 }
+impl BatchGetAssetPropertyValueErrorInfo {
+    /// Creates a new builder-style object to manufacture [`BatchGetAssetPropertyValueErrorInfo`](crate::model::BatchGetAssetPropertyValueErrorInfo).
+    pub fn builder() -> crate::model::batch_get_asset_property_value_error_info::Builder {
+        crate::model::batch_get_asset_property_value_error_info::Builder::default()
+    }
+}
+
 /// See [`BatchGetAssetPropertyValueErrorInfo`](crate::model::BatchGetAssetPropertyValueErrorInfo).
 pub mod batch_get_asset_property_value_error_info {
 
@@ -12165,12 +12259,6 @@ pub mod batch_get_asset_property_value_error_info {
                 error_timestamp: self.error_timestamp,
             }
         }
-    }
-}
-impl BatchGetAssetPropertyValueErrorInfo {
-    /// Creates a new builder-style object to manufacture [`BatchGetAssetPropertyValueErrorInfo`](crate::model::BatchGetAssetPropertyValueErrorInfo).
-    pub fn builder() -> crate::model::batch_get_asset_property_value_error_info::Builder {
-        crate::model::batch_get_asset_property_value_error_info::Builder::default()
     }
 }
 
@@ -12304,6 +12392,13 @@ impl BatchGetAssetPropertyValueSuccessEntry {
         self.asset_property_value.as_ref()
     }
 }
+impl BatchGetAssetPropertyValueSuccessEntry {
+    /// Creates a new builder-style object to manufacture [`BatchGetAssetPropertyValueSuccessEntry`](crate::model::BatchGetAssetPropertyValueSuccessEntry).
+    pub fn builder() -> crate::model::batch_get_asset_property_value_success_entry::Builder {
+        crate::model::batch_get_asset_property_value_success_entry::Builder::default()
+    }
+}
+
 /// See [`BatchGetAssetPropertyValueSuccessEntry`](crate::model::BatchGetAssetPropertyValueSuccessEntry).
 pub mod batch_get_asset_property_value_success_entry {
 
@@ -12347,12 +12442,6 @@ pub mod batch_get_asset_property_value_success_entry {
         }
     }
 }
-impl BatchGetAssetPropertyValueSuccessEntry {
-    /// Creates a new builder-style object to manufacture [`BatchGetAssetPropertyValueSuccessEntry`](crate::model::BatchGetAssetPropertyValueSuccessEntry).
-    pub fn builder() -> crate::model::batch_get_asset_property_value_success_entry::Builder {
-        crate::model::batch_get_asset_property_value_success_entry::Builder::default()
-    }
-}
 
 /// <p>Contains error information for an asset property value entry that is associated with the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyValue.html">BatchGetAssetPropertyValue</a> API.</p>
 #[non_exhaustive]
@@ -12384,6 +12473,13 @@ impl BatchGetAssetPropertyValueErrorEntry {
         self.entry_id.as_deref()
     }
 }
+impl BatchGetAssetPropertyValueErrorEntry {
+    /// Creates a new builder-style object to manufacture [`BatchGetAssetPropertyValueErrorEntry`](crate::model::BatchGetAssetPropertyValueErrorEntry).
+    pub fn builder() -> crate::model::batch_get_asset_property_value_error_entry::Builder {
+        crate::model::batch_get_asset_property_value_error_entry::Builder::default()
+    }
+}
+
 /// See [`BatchGetAssetPropertyValueErrorEntry`](crate::model::BatchGetAssetPropertyValueErrorEntry).
 pub mod batch_get_asset_property_value_error_entry {
 
@@ -12446,12 +12542,6 @@ pub mod batch_get_asset_property_value_error_entry {
         }
     }
 }
-impl BatchGetAssetPropertyValueErrorEntry {
-    /// Creates a new builder-style object to manufacture [`BatchGetAssetPropertyValueErrorEntry`](crate::model::BatchGetAssetPropertyValueErrorEntry).
-    pub fn builder() -> crate::model::batch_get_asset_property_value_error_entry::Builder {
-        crate::model::batch_get_asset_property_value_error_entry::Builder::default()
-    }
-}
 
 /// <p>Contains information for an asset property value entry that is associated with the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyValue.html">BatchGetAssetPropertyValue</a> API.</p>
 /// <p>To identify an asset property, you must specify one of the following:</p>
@@ -12493,6 +12583,13 @@ impl BatchGetAssetPropertyValueEntry {
         self.property_alias.as_deref()
     }
 }
+impl BatchGetAssetPropertyValueEntry {
+    /// Creates a new builder-style object to manufacture [`BatchGetAssetPropertyValueEntry`](crate::model::BatchGetAssetPropertyValueEntry).
+    pub fn builder() -> crate::model::batch_get_asset_property_value_entry::Builder {
+        crate::model::batch_get_asset_property_value_entry::Builder::default()
+    }
+}
+
 /// See [`BatchGetAssetPropertyValueEntry`](crate::model::BatchGetAssetPropertyValueEntry).
 pub mod batch_get_asset_property_value_entry {
 
@@ -12560,12 +12657,6 @@ pub mod batch_get_asset_property_value_entry {
         }
     }
 }
-impl BatchGetAssetPropertyValueEntry {
-    /// Creates a new builder-style object to manufacture [`BatchGetAssetPropertyValueEntry`](crate::model::BatchGetAssetPropertyValueEntry).
-    pub fn builder() -> crate::model::batch_get_asset_property_value_entry::Builder {
-        crate::model::batch_get_asset_property_value_entry::Builder::default()
-    }
-}
 
 /// <p>Contains information for an entry that has been processed by the previous <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyAggregates.html">BatchGetAssetPropertyAggregates</a> request.</p>
 #[non_exhaustive]
@@ -12599,6 +12690,13 @@ impl BatchGetAssetPropertyAggregatesSkippedEntry {
         self.error_info.as_ref()
     }
 }
+impl BatchGetAssetPropertyAggregatesSkippedEntry {
+    /// Creates a new builder-style object to manufacture [`BatchGetAssetPropertyAggregatesSkippedEntry`](crate::model::BatchGetAssetPropertyAggregatesSkippedEntry).
+    pub fn builder() -> crate::model::batch_get_asset_property_aggregates_skipped_entry::Builder {
+        crate::model::batch_get_asset_property_aggregates_skipped_entry::Builder::default()
+    }
+}
+
 /// See [`BatchGetAssetPropertyAggregatesSkippedEntry`](crate::model::BatchGetAssetPropertyAggregatesSkippedEntry).
 pub mod batch_get_asset_property_aggregates_skipped_entry {
 
@@ -12664,12 +12762,6 @@ pub mod batch_get_asset_property_aggregates_skipped_entry {
         }
     }
 }
-impl BatchGetAssetPropertyAggregatesSkippedEntry {
-    /// Creates a new builder-style object to manufacture [`BatchGetAssetPropertyAggregatesSkippedEntry`](crate::model::BatchGetAssetPropertyAggregatesSkippedEntry).
-    pub fn builder() -> crate::model::batch_get_asset_property_aggregates_skipped_entry::Builder {
-        crate::model::batch_get_asset_property_aggregates_skipped_entry::Builder::default()
-    }
-}
 
 /// <p>Contains the error code and the timestamp for an asset property aggregate entry that is associated with the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyAggregates.html">BatchGetAssetPropertyAggregates</a> API.</p>
 #[non_exhaustive]
@@ -12694,6 +12786,13 @@ impl BatchGetAssetPropertyAggregatesErrorInfo {
         self.error_timestamp.as_ref()
     }
 }
+impl BatchGetAssetPropertyAggregatesErrorInfo {
+    /// Creates a new builder-style object to manufacture [`BatchGetAssetPropertyAggregatesErrorInfo`](crate::model::BatchGetAssetPropertyAggregatesErrorInfo).
+    pub fn builder() -> crate::model::batch_get_asset_property_aggregates_error_info::Builder {
+        crate::model::batch_get_asset_property_aggregates_error_info::Builder::default()
+    }
+}
+
 /// See [`BatchGetAssetPropertyAggregatesErrorInfo`](crate::model::BatchGetAssetPropertyAggregatesErrorInfo).
 pub mod batch_get_asset_property_aggregates_error_info {
 
@@ -12742,12 +12841,6 @@ pub mod batch_get_asset_property_aggregates_error_info {
                 error_timestamp: self.error_timestamp,
             }
         }
-    }
-}
-impl BatchGetAssetPropertyAggregatesErrorInfo {
-    /// Creates a new builder-style object to manufacture [`BatchGetAssetPropertyAggregatesErrorInfo`](crate::model::BatchGetAssetPropertyAggregatesErrorInfo).
-    pub fn builder() -> crate::model::batch_get_asset_property_aggregates_error_info::Builder {
-        crate::model::batch_get_asset_property_aggregates_error_info::Builder::default()
     }
 }
 
@@ -12885,6 +12978,13 @@ impl BatchGetAssetPropertyAggregatesSuccessEntry {
         self.aggregated_values.as_deref()
     }
 }
+impl BatchGetAssetPropertyAggregatesSuccessEntry {
+    /// Creates a new builder-style object to manufacture [`BatchGetAssetPropertyAggregatesSuccessEntry`](crate::model::BatchGetAssetPropertyAggregatesSuccessEntry).
+    pub fn builder() -> crate::model::batch_get_asset_property_aggregates_success_entry::Builder {
+        crate::model::batch_get_asset_property_aggregates_success_entry::Builder::default()
+    }
+}
+
 /// See [`BatchGetAssetPropertyAggregatesSuccessEntry`](crate::model::BatchGetAssetPropertyAggregatesSuccessEntry).
 pub mod batch_get_asset_property_aggregates_success_entry {
 
@@ -12935,12 +13035,6 @@ pub mod batch_get_asset_property_aggregates_success_entry {
         }
     }
 }
-impl BatchGetAssetPropertyAggregatesSuccessEntry {
-    /// Creates a new builder-style object to manufacture [`BatchGetAssetPropertyAggregatesSuccessEntry`](crate::model::BatchGetAssetPropertyAggregatesSuccessEntry).
-    pub fn builder() -> crate::model::batch_get_asset_property_aggregates_success_entry::Builder {
-        crate::model::batch_get_asset_property_aggregates_success_entry::Builder::default()
-    }
-}
 
 /// <p>Contains error information for an asset property aggregate entry that is associated with the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyAggregates.html">BatchGetAssetPropertyAggregates</a> API.</p>
 #[non_exhaustive]
@@ -12972,6 +13066,13 @@ impl BatchGetAssetPropertyAggregatesErrorEntry {
         self.entry_id.as_deref()
     }
 }
+impl BatchGetAssetPropertyAggregatesErrorEntry {
+    /// Creates a new builder-style object to manufacture [`BatchGetAssetPropertyAggregatesErrorEntry`](crate::model::BatchGetAssetPropertyAggregatesErrorEntry).
+    pub fn builder() -> crate::model::batch_get_asset_property_aggregates_error_entry::Builder {
+        crate::model::batch_get_asset_property_aggregates_error_entry::Builder::default()
+    }
+}
+
 /// See [`BatchGetAssetPropertyAggregatesErrorEntry`](crate::model::BatchGetAssetPropertyAggregatesErrorEntry).
 pub mod batch_get_asset_property_aggregates_error_entry {
 
@@ -13032,12 +13133,6 @@ pub mod batch_get_asset_property_aggregates_error_entry {
                 entry_id: self.entry_id,
             }
         }
-    }
-}
-impl BatchGetAssetPropertyAggregatesErrorEntry {
-    /// Creates a new builder-style object to manufacture [`BatchGetAssetPropertyAggregatesErrorEntry`](crate::model::BatchGetAssetPropertyAggregatesErrorEntry).
-    pub fn builder() -> crate::model::batch_get_asset_property_aggregates_error_entry::Builder {
-        crate::model::batch_get_asset_property_aggregates_error_entry::Builder::default()
     }
 }
 
@@ -13125,6 +13220,13 @@ impl BatchGetAssetPropertyAggregatesEntry {
         self.time_ordering.as_ref()
     }
 }
+impl BatchGetAssetPropertyAggregatesEntry {
+    /// Creates a new builder-style object to manufacture [`BatchGetAssetPropertyAggregatesEntry`](crate::model::BatchGetAssetPropertyAggregatesEntry).
+    pub fn builder() -> crate::model::batch_get_asset_property_aggregates_entry::Builder {
+        crate::model::batch_get_asset_property_aggregates_entry::Builder::default()
+    }
+}
+
 /// See [`BatchGetAssetPropertyAggregatesEntry`](crate::model::BatchGetAssetPropertyAggregatesEntry).
 pub mod batch_get_asset_property_aggregates_entry {
 
@@ -13293,12 +13395,6 @@ pub mod batch_get_asset_property_aggregates_entry {
         }
     }
 }
-impl BatchGetAssetPropertyAggregatesEntry {
-    /// Creates a new builder-style object to manufacture [`BatchGetAssetPropertyAggregatesEntry`](crate::model::BatchGetAssetPropertyAggregatesEntry).
-    pub fn builder() -> crate::model::batch_get_asset_property_aggregates_entry::Builder {
-        crate::model::batch_get_asset_property_aggregates_entry::Builder::default()
-    }
-}
 
 /// <p>Contains error details for the requested associate project asset action.</p>
 #[non_exhaustive]
@@ -13328,6 +13424,13 @@ impl AssetErrorDetails {
         self.message.as_deref()
     }
 }
+impl AssetErrorDetails {
+    /// Creates a new builder-style object to manufacture [`AssetErrorDetails`](crate::model::AssetErrorDetails).
+    pub fn builder() -> crate::model::asset_error_details::Builder {
+        crate::model::asset_error_details::Builder::default()
+    }
+}
+
 /// See [`AssetErrorDetails`](crate::model::AssetErrorDetails).
 pub mod asset_error_details {
 
@@ -13381,12 +13484,6 @@ pub mod asset_error_details {
                 message: self.message,
             }
         }
-    }
-}
-impl AssetErrorDetails {
-    /// Creates a new builder-style object to manufacture [`AssetErrorDetails`](crate::model::AssetErrorDetails).
-    pub fn builder() -> crate::model::asset_error_details::Builder {
-        crate::model::asset_error_details::Builder::default()
     }
 }
 

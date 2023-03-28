@@ -4,7 +4,7 @@
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`batch_create_attendee`](crate::client::Client::batch_create_attendee).
 ///
-/// See [`crate::client::fluent_builders::BatchCreateAttendee`] for more details about the operation.
+/// `ParseStrictResponse` impl for `BatchCreateAttendee`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct BatchCreateAttendee {
     _private: (),
@@ -39,7 +39,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchCreateAttendee {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`batch_update_attendee_capabilities_except`](crate::client::Client::batch_update_attendee_capabilities_except).
 ///
-/// See [`crate::client::fluent_builders::BatchUpdateAttendeeCapabilitiesExcept`] for more details about the operation.
+/// `ParseStrictResponse` impl for `BatchUpdateAttendeeCapabilitiesExcept`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct BatchUpdateAttendeeCapabilitiesExcept {
     _private: (),
@@ -76,7 +76,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchUpdateAttendeeCapab
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`create_attendee`](crate::client::Client::create_attendee).
 ///
-/// See [`crate::client::fluent_builders::CreateAttendee`] for more details about the operation.
+/// `ParseStrictResponse` impl for `CreateAttendee`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateAttendee {
     _private: (),
@@ -109,7 +109,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateAttendee {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`create_meeting`](crate::client::Client::create_meeting).
 ///
-/// See [`crate::client::fluent_builders::CreateMeeting`] for more details about the operation.
+/// `ParseStrictResponse` impl for `CreateMeeting`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateMeeting {
     _private: (),
@@ -142,7 +142,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateMeeting {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`create_meeting_with_attendees`](crate::client::Client::create_meeting_with_attendees).
 ///
-/// See [`crate::client::fluent_builders::CreateMeetingWithAttendees`] for more details about the operation.
+/// `ParseStrictResponse` impl for `CreateMeetingWithAttendees`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateMeetingWithAttendees {
     _private: (),
@@ -177,7 +177,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateMeetingWithAttende
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`delete_attendee`](crate::client::Client::delete_attendee).
 ///
-/// See [`crate::client::fluent_builders::DeleteAttendee`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DeleteAttendee`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteAttendee {
     _private: (),
@@ -210,7 +210,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteAttendee {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`delete_meeting`](crate::client::Client::delete_meeting).
 ///
-/// See [`crate::client::fluent_builders::DeleteMeeting`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DeleteMeeting`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteMeeting {
     _private: (),
@@ -243,7 +243,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteMeeting {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`get_attendee`](crate::client::Client::get_attendee).
 ///
-/// See [`crate::client::fluent_builders::GetAttendee`] for more details about the operation.
+/// `ParseStrictResponse` impl for `GetAttendee`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetAttendee {
     _private: (),
@@ -276,7 +276,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAttendee {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`get_meeting`](crate::client::Client::get_meeting).
 ///
-/// See [`crate::client::fluent_builders::GetMeeting`] for more details about the operation.
+/// `ParseStrictResponse` impl for `GetMeeting`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetMeeting {
     _private: (),
@@ -309,7 +309,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetMeeting {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_attendees`](crate::client::Client::list_attendees).
 ///
-/// See [`crate::client::fluent_builders::ListAttendees`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListAttendees`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListAttendees {
     _private: (),
@@ -342,7 +342,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAttendees {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
 ///
-/// See [`crate::client::fluent_builders::ListTagsForResource`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTagsForResource {
     _private: (),
@@ -377,7 +377,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`start_meeting_transcription`](crate::client::Client::start_meeting_transcription).
 ///
-/// See [`crate::client::fluent_builders::StartMeetingTranscription`] for more details about the operation.
+/// `ParseStrictResponse` impl for `StartMeetingTranscription`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StartMeetingTranscription {
     _private: (),
@@ -412,7 +412,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartMeetingTranscriptio
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`stop_meeting_transcription`](crate::client::Client::stop_meeting_transcription).
 ///
-/// See [`crate::client::fluent_builders::StopMeetingTranscription`] for more details about the operation.
+/// `ParseStrictResponse` impl for `StopMeetingTranscription`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StopMeetingTranscription {
     _private: (),
@@ -447,7 +447,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StopMeetingTranscription
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`tag_resource`](crate::client::Client::tag_resource).
 ///
-/// See [`crate::client::fluent_builders::TagResource`] for more details about the operation.
+/// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct TagResource {
     _private: (),
@@ -480,7 +480,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`untag_resource`](crate::client::Client::untag_resource).
 ///
-/// See [`crate::client::fluent_builders::UntagResource`] for more details about the operation.
+/// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UntagResource {
     _private: (),
@@ -513,7 +513,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`update_attendee_capabilities`](crate::client::Client::update_attendee_capabilities).
 ///
-/// See [`crate::client::fluent_builders::UpdateAttendeeCapabilities`] for more details about the operation.
+/// `ParseStrictResponse` impl for `UpdateAttendeeCapabilities`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateAttendeeCapabilities {
     _private: (),

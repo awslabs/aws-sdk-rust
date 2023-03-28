@@ -39,6 +39,13 @@ impl std::fmt::Debug for Tag {
         formatter.finish()
     }
 }
+impl Tag {
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
+    pub fn builder() -> crate::model::tag::Builder {
+        crate::model::tag::Builder::default()
+    }
+}
+
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
 
@@ -85,12 +92,6 @@ pub mod tag {
             formatter.field("value", &"*** Sensitive Data Redacted ***");
             formatter.finish()
         }
-    }
-}
-impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
-    pub fn builder() -> crate::model::tag::Builder {
-        crate::model::tag::Builder::default()
     }
 }
 
@@ -180,6 +181,13 @@ impl WhatIfForecastSummary {
         self.last_modification_time.as_ref()
     }
 }
+impl WhatIfForecastSummary {
+    /// Creates a new builder-style object to manufacture [`WhatIfForecastSummary`](crate::model::WhatIfForecastSummary).
+    pub fn builder() -> crate::model::what_if_forecast_summary::Builder {
+        crate::model::what_if_forecast_summary::Builder::default()
+    }
+}
+
 /// See [`WhatIfForecastSummary`](crate::model::WhatIfForecastSummary).
 pub mod what_if_forecast_summary {
 
@@ -325,12 +333,6 @@ pub mod what_if_forecast_summary {
         }
     }
 }
-impl WhatIfForecastSummary {
-    /// Creates a new builder-style object to manufacture [`WhatIfForecastSummary`](crate::model::WhatIfForecastSummary).
-    pub fn builder() -> crate::model::what_if_forecast_summary::Builder {
-        crate::model::what_if_forecast_summary::Builder::default()
-    }
-}
 
 /// <p>Describes a filter for choosing a subset of objects. Each filter consists of a condition and a match statement. The condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude the objects that match the statement, respectively. The match statement consists of a key and a value.</p>
 #[non_exhaustive]
@@ -360,6 +362,13 @@ impl Filter {
         self.condition.as_ref()
     }
 }
+impl Filter {
+    /// Creates a new builder-style object to manufacture [`Filter`](crate::model::Filter).
+    pub fn builder() -> crate::model::filter::Builder {
+        crate::model::filter::Builder::default()
+    }
+}
+
 /// See [`Filter`](crate::model::Filter).
 pub mod filter {
 
@@ -413,12 +422,6 @@ pub mod filter {
                 condition: self.condition,
             }
         }
-    }
-}
-impl Filter {
-    /// Creates a new builder-style object to manufacture [`Filter`](crate::model::Filter).
-    pub fn builder() -> crate::model::filter::Builder {
-        crate::model::filter::Builder::default()
     }
 }
 
@@ -607,6 +610,13 @@ impl WhatIfForecastExportSummary {
         self.last_modification_time.as_ref()
     }
 }
+impl WhatIfForecastExportSummary {
+    /// Creates a new builder-style object to manufacture [`WhatIfForecastExportSummary`](crate::model::WhatIfForecastExportSummary).
+    pub fn builder() -> crate::model::what_if_forecast_export_summary::Builder {
+        crate::model::what_if_forecast_export_summary::Builder::default()
+    }
+}
+
 /// See [`WhatIfForecastExportSummary`](crate::model::WhatIfForecastExportSummary).
 pub mod what_if_forecast_export_summary {
 
@@ -779,12 +789,6 @@ pub mod what_if_forecast_export_summary {
         }
     }
 }
-impl WhatIfForecastExportSummary {
-    /// Creates a new builder-style object to manufacture [`WhatIfForecastExportSummary`](crate::model::WhatIfForecastExportSummary).
-    pub fn builder() -> crate::model::what_if_forecast_export_summary::Builder {
-        crate::model::what_if_forecast_export_summary::Builder::default()
-    }
-}
 
 /// <p>The destination for an export job. Provide an S3 path, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast to access the location, and an AWS Key Management Service (KMS) key (optional). </p>
 #[non_exhaustive]
@@ -800,6 +804,13 @@ impl DataDestination {
         self.s3_config.as_ref()
     }
 }
+impl DataDestination {
+    /// Creates a new builder-style object to manufacture [`DataDestination`](crate::model::DataDestination).
+    pub fn builder() -> crate::model::data_destination::Builder {
+        crate::model::data_destination::Builder::default()
+    }
+}
+
 /// See [`DataDestination`](crate::model::DataDestination).
 pub mod data_destination {
 
@@ -826,12 +837,6 @@ pub mod data_destination {
                 s3_config: self.s3_config,
             }
         }
-    }
-}
-impl DataDestination {
-    /// Creates a new builder-style object to manufacture [`DataDestination`](crate::model::DataDestination).
-    pub fn builder() -> crate::model::data_destination::Builder {
-        crate::model::data_destination::Builder::default()
     }
 }
 
@@ -865,6 +870,13 @@ impl S3Config {
         self.kms_key_arn.as_deref()
     }
 }
+impl S3Config {
+    /// Creates a new builder-style object to manufacture [`S3Config`](crate::model::S3Config).
+    pub fn builder() -> crate::model::s3_config::Builder {
+        crate::model::s3_config::Builder::default()
+    }
+}
+
 /// See [`S3Config`](crate::model::S3Config).
 pub mod s3_config {
 
@@ -917,12 +929,6 @@ pub mod s3_config {
                 kms_key_arn: self.kms_key_arn,
             }
         }
-    }
-}
-impl S3Config {
-    /// Creates a new builder-style object to manufacture [`S3Config`](crate::model::S3Config).
-    pub fn builder() -> crate::model::s3_config::Builder {
-        crate::model::s3_config::Builder::default()
     }
 }
 
@@ -1012,6 +1018,13 @@ impl WhatIfAnalysisSummary {
         self.last_modification_time.as_ref()
     }
 }
+impl WhatIfAnalysisSummary {
+    /// Creates a new builder-style object to manufacture [`WhatIfAnalysisSummary`](crate::model::WhatIfAnalysisSummary).
+    pub fn builder() -> crate::model::what_if_analysis_summary::Builder {
+        crate::model::what_if_analysis_summary::Builder::default()
+    }
+}
+
 /// See [`WhatIfAnalysisSummary`](crate::model::WhatIfAnalysisSummary).
 pub mod what_if_analysis_summary {
 
@@ -1154,12 +1167,6 @@ pub mod what_if_analysis_summary {
         }
     }
 }
-impl WhatIfAnalysisSummary {
-    /// Creates a new builder-style object to manufacture [`WhatIfAnalysisSummary`](crate::model::WhatIfAnalysisSummary).
-    pub fn builder() -> crate::model::what_if_analysis_summary::Builder {
-        crate::model::what_if_analysis_summary::Builder::default()
-    }
-}
 
 /// <p>Provides a summary of the predictor properties that are used in the <code>ListPredictors</code> operation. To get the complete set of properties, call the <code>DescribePredictor</code> operation, and provide the listed <code>PredictorArn</code>.</p>
 #[non_exhaustive]
@@ -1263,6 +1270,13 @@ impl PredictorSummary {
         self.last_modification_time.as_ref()
     }
 }
+impl PredictorSummary {
+    /// Creates a new builder-style object to manufacture [`PredictorSummary`](crate::model::PredictorSummary).
+    pub fn builder() -> crate::model::predictor_summary::Builder {
+        crate::model::predictor_summary::Builder::default()
+    }
+}
+
 /// See [`PredictorSummary`](crate::model::PredictorSummary).
 pub mod predictor_summary {
 
@@ -1439,12 +1453,6 @@ pub mod predictor_summary {
         }
     }
 }
-impl PredictorSummary {
-    /// Creates a new builder-style object to manufacture [`PredictorSummary`](crate::model::PredictorSummary).
-    pub fn builder() -> crate::model::predictor_summary::Builder {
-        crate::model::predictor_summary::Builder::default()
-    }
-}
 
 /// <p>Provides a summary of the reference predictor used when retraining or upgrading a predictor.</p>
 #[non_exhaustive]
@@ -1467,6 +1475,13 @@ impl ReferencePredictorSummary {
         self.state.as_ref()
     }
 }
+impl ReferencePredictorSummary {
+    /// Creates a new builder-style object to manufacture [`ReferencePredictorSummary`](crate::model::ReferencePredictorSummary).
+    pub fn builder() -> crate::model::reference_predictor_summary::Builder {
+        crate::model::reference_predictor_summary::Builder::default()
+    }
+}
+
 /// See [`ReferencePredictorSummary`](crate::model::ReferencePredictorSummary).
 pub mod reference_predictor_summary {
 
@@ -1505,12 +1520,6 @@ pub mod reference_predictor_summary {
                 state: self.state,
             }
         }
-    }
-}
-impl ReferencePredictorSummary {
-    /// Creates a new builder-style object to manufacture [`ReferencePredictorSummary`](crate::model::ReferencePredictorSummary).
-    pub fn builder() -> crate::model::reference_predictor_summary::Builder {
-        crate::model::reference_predictor_summary::Builder::default()
     }
 }
 
@@ -1686,6 +1695,13 @@ impl PredictorBacktestExportJobSummary {
         self.last_modification_time.as_ref()
     }
 }
+impl PredictorBacktestExportJobSummary {
+    /// Creates a new builder-style object to manufacture [`PredictorBacktestExportJobSummary`](crate::model::PredictorBacktestExportJobSummary).
+    pub fn builder() -> crate::model::predictor_backtest_export_job_summary::Builder {
+        crate::model::predictor_backtest_export_job_summary::Builder::default()
+    }
+}
+
 /// See [`PredictorBacktestExportJobSummary`](crate::model::PredictorBacktestExportJobSummary).
 pub mod predictor_backtest_export_job_summary {
 
@@ -1833,12 +1849,6 @@ pub mod predictor_backtest_export_job_summary {
         }
     }
 }
-impl PredictorBacktestExportJobSummary {
-    /// Creates a new builder-style object to manufacture [`PredictorBacktestExportJobSummary`](crate::model::PredictorBacktestExportJobSummary).
-    pub fn builder() -> crate::model::predictor_backtest_export_job_summary::Builder {
-        crate::model::predictor_backtest_export_job_summary::Builder::default()
-    }
-}
 
 /// <p>Provides a summary of the monitor properties used in the <code>ListMonitors</code> operation. To get a complete set of properties, call the <code>DescribeMonitor</code> operation, and provide the listed <code>MonitorArn</code>.</p>
 #[non_exhaustive]
@@ -1915,6 +1925,13 @@ impl MonitorSummary {
         self.last_modification_time.as_ref()
     }
 }
+impl MonitorSummary {
+    /// Creates a new builder-style object to manufacture [`MonitorSummary`](crate::model::MonitorSummary).
+    pub fn builder() -> crate::model::monitor_summary::Builder {
+        crate::model::monitor_summary::Builder::default()
+    }
+}
+
 /// See [`MonitorSummary`](crate::model::MonitorSummary).
 pub mod monitor_summary {
 
@@ -2035,12 +2052,6 @@ pub mod monitor_summary {
         }
     }
 }
-impl MonitorSummary {
-    /// Creates a new builder-style object to manufacture [`MonitorSummary`](crate::model::MonitorSummary).
-    pub fn builder() -> crate::model::monitor_summary::Builder {
-        crate::model::monitor_summary::Builder::default()
-    }
-}
 
 /// <p>Describes the results of a monitor evaluation.</p>
 #[non_exhaustive]
@@ -2126,6 +2137,13 @@ impl PredictorMonitorEvaluation {
         self.message.as_deref()
     }
 }
+impl PredictorMonitorEvaluation {
+    /// Creates a new builder-style object to manufacture [`PredictorMonitorEvaluation`](crate::model::PredictorMonitorEvaluation).
+    pub fn builder() -> crate::model::predictor_monitor_evaluation::Builder {
+        crate::model::predictor_monitor_evaluation::Builder::default()
+    }
+}
+
 /// See [`PredictorMonitorEvaluation`](crate::model::PredictorMonitorEvaluation).
 pub mod predictor_monitor_evaluation {
 
@@ -2301,12 +2319,6 @@ pub mod predictor_monitor_evaluation {
         }
     }
 }
-impl PredictorMonitorEvaluation {
-    /// Creates a new builder-style object to manufacture [`PredictorMonitorEvaluation`](crate::model::PredictorMonitorEvaluation).
-    pub fn builder() -> crate::model::predictor_monitor_evaluation::Builder {
-        crate::model::predictor_monitor_evaluation::Builder::default()
-    }
-}
 
 /// <p>An individual metric Forecast calculated when monitoring predictor usage. You can compare the value for this metric to the metric's value in the <code>Baseline</code> to see how your predictor's performance is changing.</p>
 /// <p>For more information about metrics generated by Forecast see <a href="https://docs.aws.amazon.com/forecast/latest/dg/metrics.html">Evaluating Predictor Accuracy</a> </p>
@@ -2330,6 +2342,13 @@ impl MetricResult {
         self.metric_value
     }
 }
+impl MetricResult {
+    /// Creates a new builder-style object to manufacture [`MetricResult`](crate::model::MetricResult).
+    pub fn builder() -> crate::model::metric_result::Builder {
+        crate::model::metric_result::Builder::default()
+    }
+}
+
 /// See [`MetricResult`](crate::model::MetricResult).
 pub mod metric_result {
 
@@ -2370,12 +2389,6 @@ pub mod metric_result {
         }
     }
 }
-impl MetricResult {
-    /// Creates a new builder-style object to manufacture [`MetricResult`](crate::model::MetricResult).
-    pub fn builder() -> crate::model::metric_result::Builder {
-        crate::model::metric_result::Builder::default()
-    }
-}
 
 /// <p>The source of the data the monitor used during the evaluation.</p>
 #[non_exhaustive]
@@ -2405,6 +2418,13 @@ impl MonitorDataSource {
         self.predictor_arn.as_deref()
     }
 }
+impl MonitorDataSource {
+    /// Creates a new builder-style object to manufacture [`MonitorDataSource`](crate::model::MonitorDataSource).
+    pub fn builder() -> crate::model::monitor_data_source::Builder {
+        crate::model::monitor_data_source::Builder::default()
+    }
+}
+
 /// See [`MonitorDataSource`](crate::model::MonitorDataSource).
 pub mod monitor_data_source {
 
@@ -2463,12 +2483,6 @@ pub mod monitor_data_source {
         }
     }
 }
-impl MonitorDataSource {
-    /// Creates a new builder-style object to manufacture [`MonitorDataSource`](crate::model::MonitorDataSource).
-    pub fn builder() -> crate::model::monitor_data_source::Builder {
-        crate::model::monitor_data_source::Builder::default()
-    }
-}
 
 /// <p>Provides details about a predictor event, such as a retraining.</p>
 #[non_exhaustive]
@@ -2491,6 +2505,13 @@ impl PredictorEvent {
         self.datetime.as_ref()
     }
 }
+impl PredictorEvent {
+    /// Creates a new builder-style object to manufacture [`PredictorEvent`](crate::model::PredictorEvent).
+    pub fn builder() -> crate::model::predictor_event::Builder {
+        crate::model::predictor_event::Builder::default()
+    }
+}
+
 /// See [`PredictorEvent`](crate::model::PredictorEvent).
 pub mod predictor_event {
 
@@ -2532,12 +2553,6 @@ pub mod predictor_event {
                 datetime: self.datetime,
             }
         }
-    }
-}
-impl PredictorEvent {
-    /// Creates a new builder-style object to manufacture [`PredictorEvent`](crate::model::PredictorEvent).
-    pub fn builder() -> crate::model::predictor_event::Builder {
-        crate::model::predictor_event::Builder::default()
     }
 }
 
@@ -2641,6 +2656,13 @@ impl ForecastSummary {
         self.last_modification_time.as_ref()
     }
 }
+impl ForecastSummary {
+    /// Creates a new builder-style object to manufacture [`ForecastSummary`](crate::model::ForecastSummary).
+    pub fn builder() -> crate::model::forecast_summary::Builder {
+        crate::model::forecast_summary::Builder::default()
+    }
+}
+
 /// See [`ForecastSummary`](crate::model::ForecastSummary).
 pub mod forecast_summary {
 
@@ -2813,12 +2835,6 @@ pub mod forecast_summary {
         }
     }
 }
-impl ForecastSummary {
-    /// Creates a new builder-style object to manufacture [`ForecastSummary`](crate::model::ForecastSummary).
-    pub fn builder() -> crate::model::forecast_summary::Builder {
-        crate::model::forecast_summary::Builder::default()
-    }
-}
 
 /// <p>Provides a summary of the forecast export job properties used in the <code>ListForecastExportJobs</code> operation. To get the complete set of properties, call the <code>DescribeForecastExportJob</code> operation, and provide the listed <code>ForecastExportJobArn</code>.</p>
 #[non_exhaustive]
@@ -2906,6 +2922,13 @@ impl ForecastExportJobSummary {
         self.last_modification_time.as_ref()
     }
 }
+impl ForecastExportJobSummary {
+    /// Creates a new builder-style object to manufacture [`ForecastExportJobSummary`](crate::model::ForecastExportJobSummary).
+    pub fn builder() -> crate::model::forecast_export_job_summary::Builder {
+        crate::model::forecast_export_job_summary::Builder::default()
+    }
+}
+
 /// See [`ForecastExportJobSummary`](crate::model::ForecastExportJobSummary).
 pub mod forecast_export_job_summary {
 
@@ -3051,12 +3074,6 @@ pub mod forecast_export_job_summary {
         }
     }
 }
-impl ForecastExportJobSummary {
-    /// Creates a new builder-style object to manufacture [`ForecastExportJobSummary`](crate::model::ForecastExportJobSummary).
-    pub fn builder() -> crate::model::forecast_export_job_summary::Builder {
-        crate::model::forecast_export_job_summary::Builder::default()
-    }
-}
 
 /// <p>Provides a summary of the Explainability export properties used in the <code>ListExplainabilityExports</code> operation. To get a complete set of properties, call the <code>DescribeExplainabilityExport</code> operation, and provide the <code>ExplainabilityExportArn</code>.</p>
 #[non_exhaustive]
@@ -3140,6 +3157,13 @@ impl ExplainabilityExportSummary {
         self.last_modification_time.as_ref()
     }
 }
+impl ExplainabilityExportSummary {
+    /// Creates a new builder-style object to manufacture [`ExplainabilityExportSummary`](crate::model::ExplainabilityExportSummary).
+    pub fn builder() -> crate::model::explainability_export_summary::Builder {
+        crate::model::explainability_export_summary::Builder::default()
+    }
+}
+
 /// See [`ExplainabilityExportSummary`](crate::model::ExplainabilityExportSummary).
 pub mod explainability_export_summary {
 
@@ -3281,12 +3305,6 @@ pub mod explainability_export_summary {
         }
     }
 }
-impl ExplainabilityExportSummary {
-    /// Creates a new builder-style object to manufacture [`ExplainabilityExportSummary`](crate::model::ExplainabilityExportSummary).
-    pub fn builder() -> crate::model::explainability_export_summary::Builder {
-        crate::model::explainability_export_summary::Builder::default()
-    }
-}
 
 /// <p>Provides a summary of the Explainability properties used in the <code>ListExplainabilities</code> operation. To get a complete set of properties, call the <code>DescribeExplainability</code> operation, and provide the listed <code>ExplainabilityArn</code>.</p>
 #[non_exhaustive]
@@ -3379,6 +3397,13 @@ impl ExplainabilitySummary {
         self.last_modification_time.as_ref()
     }
 }
+impl ExplainabilitySummary {
+    /// Creates a new builder-style object to manufacture [`ExplainabilitySummary`](crate::model::ExplainabilitySummary).
+    pub fn builder() -> crate::model::explainability_summary::Builder {
+        crate::model::explainability_summary::Builder::default()
+    }
+}
+
 /// See [`ExplainabilitySummary`](crate::model::ExplainabilitySummary).
 pub mod explainability_summary {
 
@@ -3532,12 +3557,6 @@ pub mod explainability_summary {
         }
     }
 }
-impl ExplainabilitySummary {
-    /// Creates a new builder-style object to manufacture [`ExplainabilitySummary`](crate::model::ExplainabilitySummary).
-    pub fn builder() -> crate::model::explainability_summary::Builder {
-        crate::model::explainability_summary::Builder::default()
-    }
-}
 
 /// <p>The ExplainabilityConfig data type defines the number of time series and time points included in <code>CreateExplainability</code>.</p>
 /// <p>If you provide a predictor ARN for <code>ResourceArn</code>, you must set both <code>TimePointGranularity</code> and <code>TimeSeriesGranularity</code> to “ALL”. When creating Predictor Explainability, Amazon Forecast considers all time series and time points.</p>
@@ -3570,6 +3589,13 @@ impl ExplainabilityConfig {
         self.time_point_granularity.as_ref()
     }
 }
+impl ExplainabilityConfig {
+    /// Creates a new builder-style object to manufacture [`ExplainabilityConfig`](crate::model::ExplainabilityConfig).
+    pub fn builder() -> crate::model::explainability_config::Builder {
+        crate::model::explainability_config::Builder::default()
+    }
+}
+
 /// See [`ExplainabilityConfig`](crate::model::ExplainabilityConfig).
 pub mod explainability_config {
 
@@ -3622,12 +3648,6 @@ pub mod explainability_config {
                 time_point_granularity: self.time_point_granularity,
             }
         }
-    }
-}
-impl ExplainabilityConfig {
-    /// Creates a new builder-style object to manufacture [`ExplainabilityConfig`](crate::model::ExplainabilityConfig).
-    pub fn builder() -> crate::model::explainability_config::Builder {
-        crate::model::explainability_config::Builder::default()
     }
 }
 
@@ -3864,6 +3884,13 @@ impl DatasetSummary {
         self.last_modification_time.as_ref()
     }
 }
+impl DatasetSummary {
+    /// Creates a new builder-style object to manufacture [`DatasetSummary`](crate::model::DatasetSummary).
+    pub fn builder() -> crate::model::dataset_summary::Builder {
+        crate::model::dataset_summary::Builder::default()
+    }
+}
+
 /// See [`DatasetSummary`](crate::model::DatasetSummary).
 pub mod dataset_summary {
 
@@ -3959,12 +3986,6 @@ pub mod dataset_summary {
                 last_modification_time: self.last_modification_time,
             }
         }
-    }
-}
-impl DatasetSummary {
-    /// Creates a new builder-style object to manufacture [`DatasetSummary`](crate::model::DatasetSummary).
-    pub fn builder() -> crate::model::dataset_summary::Builder {
-        crate::model::dataset_summary::Builder::default()
     }
 }
 
@@ -4270,6 +4291,13 @@ impl DatasetImportJobSummary {
         self.last_modification_time.as_ref()
     }
 }
+impl DatasetImportJobSummary {
+    /// Creates a new builder-style object to manufacture [`DatasetImportJobSummary`](crate::model::DatasetImportJobSummary).
+    pub fn builder() -> crate::model::dataset_import_job_summary::Builder {
+        crate::model::dataset_import_job_summary::Builder::default()
+    }
+}
+
 /// See [`DatasetImportJobSummary`](crate::model::DatasetImportJobSummary).
 pub mod dataset_import_job_summary {
 
@@ -4413,12 +4441,6 @@ pub mod dataset_import_job_summary {
         }
     }
 }
-impl DatasetImportJobSummary {
-    /// Creates a new builder-style object to manufacture [`DatasetImportJobSummary`](crate::model::DatasetImportJobSummary).
-    pub fn builder() -> crate::model::dataset_import_job_summary::Builder {
-        crate::model::dataset_import_job_summary::Builder::default()
-    }
-}
 
 /// <p>The source of your data, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast to access the data and, optionally, an AWS Key Management Service (KMS) key.</p>
 #[non_exhaustive]
@@ -4434,6 +4456,13 @@ impl DataSource {
         self.s3_config.as_ref()
     }
 }
+impl DataSource {
+    /// Creates a new builder-style object to manufacture [`DataSource`](crate::model::DataSource).
+    pub fn builder() -> crate::model::data_source::Builder {
+        crate::model::data_source::Builder::default()
+    }
+}
+
 /// See [`DataSource`](crate::model::DataSource).
 pub mod data_source {
 
@@ -4460,12 +4489,6 @@ pub mod data_source {
                 s3_config: self.s3_config,
             }
         }
-    }
-}
-impl DataSource {
-    /// Creates a new builder-style object to manufacture [`DataSource`](crate::model::DataSource).
-    pub fn builder() -> crate::model::data_source::Builder {
-        crate::model::data_source::Builder::default()
     }
 }
 
@@ -4504,6 +4527,13 @@ impl DatasetGroupSummary {
         self.last_modification_time.as_ref()
     }
 }
+impl DatasetGroupSummary {
+    /// Creates a new builder-style object to manufacture [`DatasetGroupSummary`](crate::model::DatasetGroupSummary).
+    pub fn builder() -> crate::model::dataset_group_summary::Builder {
+        crate::model::dataset_group_summary::Builder::default()
+    }
+}
+
 /// See [`DatasetGroupSummary`](crate::model::DatasetGroupSummary).
 pub mod dataset_group_summary {
 
@@ -4578,12 +4608,6 @@ pub mod dataset_group_summary {
                 last_modification_time: self.last_modification_time,
             }
         }
-    }
-}
-impl DatasetGroupSummary {
-    /// Creates a new builder-style object to manufacture [`DatasetGroupSummary`](crate::model::DatasetGroupSummary).
-    pub fn builder() -> crate::model::dataset_group_summary::Builder {
-        crate::model::dataset_group_summary::Builder::default()
     }
 }
 
@@ -4813,6 +4837,13 @@ impl EvaluationResult {
         self.test_windows.as_deref()
     }
 }
+impl EvaluationResult {
+    /// Creates a new builder-style object to manufacture [`EvaluationResult`](crate::model::EvaluationResult).
+    pub fn builder() -> crate::model::evaluation_result::Builder {
+        crate::model::evaluation_result::Builder::default()
+    }
+}
+
 /// See [`EvaluationResult`](crate::model::EvaluationResult).
 pub mod evaluation_result {
 
@@ -4863,12 +4894,6 @@ pub mod evaluation_result {
                 test_windows: self.test_windows,
             }
         }
-    }
-}
-impl EvaluationResult {
-    /// Creates a new builder-style object to manufacture [`EvaluationResult`](crate::model::EvaluationResult).
-    pub fn builder() -> crate::model::evaluation_result::Builder {
-        crate::model::evaluation_result::Builder::default()
     }
 }
 
@@ -4923,6 +4948,13 @@ impl WindowSummary {
         self.metrics.as_ref()
     }
 }
+impl WindowSummary {
+    /// Creates a new builder-style object to manufacture [`WindowSummary`](crate::model::WindowSummary).
+    pub fn builder() -> crate::model::window_summary::Builder {
+        crate::model::window_summary::Builder::default()
+    }
+}
+
 /// See [`WindowSummary`](crate::model::WindowSummary).
 pub mod window_summary {
 
@@ -5016,12 +5048,6 @@ pub mod window_summary {
         }
     }
 }
-impl WindowSummary {
-    /// Creates a new builder-style object to manufacture [`WindowSummary`](crate::model::WindowSummary).
-    pub fn builder() -> crate::model::window_summary::Builder {
-        crate::model::window_summary::Builder::default()
-    }
-}
 
 /// <p>Provides metrics that are used to evaluate the performance of a predictor. This object is part of the <code>WindowSummary</code> object.</p>
 #[non_exhaustive]
@@ -5067,6 +5093,13 @@ impl Metrics {
         self.average_weighted_quantile_loss
     }
 }
+impl Metrics {
+    /// Creates a new builder-style object to manufacture [`Metrics`](crate::model::Metrics).
+    pub fn builder() -> crate::model::metrics::Builder {
+        crate::model::metrics::Builder::default()
+    }
+}
+
 /// See [`Metrics`](crate::model::Metrics).
 pub mod metrics {
 
@@ -5162,12 +5195,6 @@ pub mod metrics {
         }
     }
 }
-impl Metrics {
-    /// Creates a new builder-style object to manufacture [`Metrics`](crate::model::Metrics).
-    pub fn builder() -> crate::model::metrics::Builder {
-        crate::model::metrics::Builder::default()
-    }
-}
 
 /// <p> Provides detailed error metrics to evaluate the performance of a predictor. This object is part of the <code>Metrics</code> object. </p>
 #[non_exhaustive]
@@ -5211,6 +5238,13 @@ impl ErrorMetric {
         self.mape
     }
 }
+impl ErrorMetric {
+    /// Creates a new builder-style object to manufacture [`ErrorMetric`](crate::model::ErrorMetric).
+    pub fn builder() -> crate::model::error_metric::Builder {
+        crate::model::error_metric::Builder::default()
+    }
+}
+
 /// See [`ErrorMetric`](crate::model::ErrorMetric).
 pub mod error_metric {
 
@@ -5290,12 +5324,6 @@ pub mod error_metric {
         }
     }
 }
-impl ErrorMetric {
-    /// Creates a new builder-style object to manufacture [`ErrorMetric`](crate::model::ErrorMetric).
-    pub fn builder() -> crate::model::error_metric::Builder {
-        crate::model::error_metric::Builder::default()
-    }
-}
 
 /// <p>The weighted loss value for a quantile. This object is part of the <code>Metrics</code> object.</p>
 #[non_exhaustive]
@@ -5318,6 +5346,13 @@ impl WeightedQuantileLoss {
         self.loss_value
     }
 }
+impl WeightedQuantileLoss {
+    /// Creates a new builder-style object to manufacture [`WeightedQuantileLoss`](crate::model::WeightedQuantileLoss).
+    pub fn builder() -> crate::model::weighted_quantile_loss::Builder {
+        crate::model::weighted_quantile_loss::Builder::default()
+    }
+}
+
 /// See [`WeightedQuantileLoss`](crate::model::WeightedQuantileLoss).
 pub mod weighted_quantile_loss {
 
@@ -5356,12 +5391,6 @@ pub mod weighted_quantile_loss {
                 loss_value: self.loss_value,
             }
         }
-    }
-}
-impl WeightedQuantileLoss {
-    /// Creates a new builder-style object to manufacture [`WeightedQuantileLoss`](crate::model::WeightedQuantileLoss).
-    pub fn builder() -> crate::model::weighted_quantile_loss::Builder {
-        crate::model::weighted_quantile_loss::Builder::default()
     }
 }
 
@@ -5490,6 +5519,13 @@ impl TimeSeriesReplacementsDataSource {
         self.timestamp_format.as_deref()
     }
 }
+impl TimeSeriesReplacementsDataSource {
+    /// Creates a new builder-style object to manufacture [`TimeSeriesReplacementsDataSource`](crate::model::TimeSeriesReplacementsDataSource).
+    pub fn builder() -> crate::model::time_series_replacements_data_source::Builder {
+        crate::model::time_series_replacements_data_source::Builder::default()
+    }
+}
+
 /// See [`TimeSeriesReplacementsDataSource`](crate::model::TimeSeriesReplacementsDataSource).
 pub mod time_series_replacements_data_source {
 
@@ -5557,12 +5593,6 @@ pub mod time_series_replacements_data_source {
         }
     }
 }
-impl TimeSeriesReplacementsDataSource {
-    /// Creates a new builder-style object to manufacture [`TimeSeriesReplacementsDataSource`](crate::model::TimeSeriesReplacementsDataSource).
-    pub fn builder() -> crate::model::time_series_replacements_data_source::Builder {
-        crate::model::time_series_replacements_data_source::Builder::default()
-    }
-}
 
 /// <p>Defines the fields of a dataset.</p>
 #[non_exhaustive]
@@ -5578,6 +5608,13 @@ impl Schema {
         self.attributes.as_deref()
     }
 }
+impl Schema {
+    /// Creates a new builder-style object to manufacture [`Schema`](crate::model::Schema).
+    pub fn builder() -> crate::model::schema::Builder {
+        crate::model::schema::Builder::default()
+    }
+}
+
 /// See [`Schema`](crate::model::Schema).
 pub mod schema {
 
@@ -5615,12 +5652,6 @@ pub mod schema {
         }
     }
 }
-impl Schema {
-    /// Creates a new builder-style object to manufacture [`Schema`](crate::model::Schema).
-    pub fn builder() -> crate::model::schema::Builder {
-        crate::model::schema::Builder::default()
-    }
-}
 
 /// <p>An attribute of a schema, which defines a dataset field. A schema attribute is required for every field in a dataset. The <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_Schema.html">Schema</a> object contains an array of <code>SchemaAttribute</code> objects.</p>
 #[non_exhaustive]
@@ -5645,6 +5676,13 @@ impl SchemaAttribute {
         self.attribute_type.as_ref()
     }
 }
+impl SchemaAttribute {
+    /// Creates a new builder-style object to manufacture [`SchemaAttribute`](crate::model::SchemaAttribute).
+    pub fn builder() -> crate::model::schema_attribute::Builder {
+        crate::model::schema_attribute::Builder::default()
+    }
+}
+
 /// See [`SchemaAttribute`](crate::model::SchemaAttribute).
 pub mod schema_attribute {
 
@@ -5691,12 +5729,6 @@ pub mod schema_attribute {
                 attribute_type: self.attribute_type,
             }
         }
-    }
-}
-impl SchemaAttribute {
-    /// Creates a new builder-style object to manufacture [`SchemaAttribute`](crate::model::SchemaAttribute).
-    pub fn builder() -> crate::model::schema_attribute::Builder {
-        crate::model::schema_attribute::Builder::default()
     }
 }
 
@@ -5829,6 +5861,13 @@ impl TimeSeriesTransformation {
         self.time_series_conditions.as_deref()
     }
 }
+impl TimeSeriesTransformation {
+    /// Creates a new builder-style object to manufacture [`TimeSeriesTransformation`](crate::model::TimeSeriesTransformation).
+    pub fn builder() -> crate::model::time_series_transformation::Builder {
+        crate::model::time_series_transformation::Builder::default()
+    }
+}
+
 /// See [`TimeSeriesTransformation`](crate::model::TimeSeriesTransformation).
 pub mod time_series_transformation {
 
@@ -5879,12 +5918,6 @@ pub mod time_series_transformation {
         }
     }
 }
-impl TimeSeriesTransformation {
-    /// Creates a new builder-style object to manufacture [`TimeSeriesTransformation`](crate::model::TimeSeriesTransformation).
-    pub fn builder() -> crate::model::time_series_transformation::Builder {
-        crate::model::time_series_transformation::Builder::default()
-    }
-}
 
 /// <p>Creates a subset of items within an attribute that are modified. For example, you can use this operation to create a subset of items that cost $5 or less. To do this, you specify <code>"AttributeName": "price"</code>, <code>"AttributeValue": "5"</code>, and <code>"Condition": "LESS_THAN"</code>. Pair this operation with the <code>Action</code> operation within the <code>CreateWhatIfForecastRequest$TimeSeriesTransformations</code> operation to define how the attribute is modified.</p>
 #[non_exhaustive]
@@ -5914,6 +5947,13 @@ impl TimeSeriesCondition {
         self.condition.as_ref()
     }
 }
+impl TimeSeriesCondition {
+    /// Creates a new builder-style object to manufacture [`TimeSeriesCondition`](crate::model::TimeSeriesCondition).
+    pub fn builder() -> crate::model::time_series_condition::Builder {
+        crate::model::time_series_condition::Builder::default()
+    }
+}
+
 /// See [`TimeSeriesCondition`](crate::model::TimeSeriesCondition).
 pub mod time_series_condition {
 
@@ -5973,12 +6013,6 @@ pub mod time_series_condition {
                 condition: self.condition,
             }
         }
-    }
-}
-impl TimeSeriesCondition {
-    /// Creates a new builder-style object to manufacture [`TimeSeriesCondition`](crate::model::TimeSeriesCondition).
-    pub fn builder() -> crate::model::time_series_condition::Builder {
-        crate::model::time_series_condition::Builder::default()
     }
 }
 
@@ -6122,6 +6156,13 @@ impl Action {
         self.value
     }
 }
+impl Action {
+    /// Creates a new builder-style object to manufacture [`Action`](crate::model::Action).
+    pub fn builder() -> crate::model::action::Builder {
+        crate::model::action::Builder::default()
+    }
+}
+
 /// See [`Action`](crate::model::Action).
 pub mod action {
 
@@ -6190,12 +6231,6 @@ pub mod action {
                 value: self.value,
             }
         }
-    }
-}
-impl Action {
-    /// Creates a new builder-style object to manufacture [`Action`](crate::model::Action).
-    pub fn builder() -> crate::model::action::Builder {
-        crate::model::action::Builder::default()
     }
 }
 
@@ -6321,6 +6356,13 @@ impl TimeSeriesSelector {
         self.time_series_identifiers.as_ref()
     }
 }
+impl TimeSeriesSelector {
+    /// Creates a new builder-style object to manufacture [`TimeSeriesSelector`](crate::model::TimeSeriesSelector).
+    pub fn builder() -> crate::model::time_series_selector::Builder {
+        crate::model::time_series_selector::Builder::default()
+    }
+}
+
 /// See [`TimeSeriesSelector`](crate::model::TimeSeriesSelector).
 pub mod time_series_selector {
 
@@ -6356,12 +6398,6 @@ pub mod time_series_selector {
         }
     }
 }
-impl TimeSeriesSelector {
-    /// Creates a new builder-style object to manufacture [`TimeSeriesSelector`](crate::model::TimeSeriesSelector).
-    pub fn builder() -> crate::model::time_series_selector::Builder {
-        crate::model::time_series_selector::Builder::default()
-    }
-}
 
 /// <p>Details about the import file that contains the time series for which you want to create forecasts.</p>
 #[non_exhaustive]
@@ -6391,6 +6427,13 @@ impl TimeSeriesIdentifiers {
         self.format.as_deref()
     }
 }
+impl TimeSeriesIdentifiers {
+    /// Creates a new builder-style object to manufacture [`TimeSeriesIdentifiers`](crate::model::TimeSeriesIdentifiers).
+    pub fn builder() -> crate::model::time_series_identifiers::Builder {
+        crate::model::time_series_identifiers::Builder::default()
+    }
+}
+
 /// See [`TimeSeriesIdentifiers`](crate::model::TimeSeriesIdentifiers).
 pub mod time_series_identifiers {
 
@@ -6446,12 +6489,6 @@ pub mod time_series_identifiers {
         }
     }
 }
-impl TimeSeriesIdentifiers {
-    /// Creates a new builder-style object to manufacture [`TimeSeriesIdentifiers`](crate::model::TimeSeriesIdentifiers).
-    pub fn builder() -> crate::model::time_series_identifiers::Builder {
-        crate::model::time_series_identifiers::Builder::default()
-    }
-}
 
 /// <p>Contains details on the backtests performed to evaluate the accuracy of the predictor. The tests are returned in descending order of accuracy, with the most accurate backtest appearing first. You specify the number of backtests to perform when you call the operation.</p>
 #[non_exhaustive]
@@ -6467,6 +6504,13 @@ impl PredictorExecutionDetails {
         self.predictor_executions.as_deref()
     }
 }
+impl PredictorExecutionDetails {
+    /// Creates a new builder-style object to manufacture [`PredictorExecutionDetails`](crate::model::PredictorExecutionDetails).
+    pub fn builder() -> crate::model::predictor_execution_details::Builder {
+        crate::model::predictor_execution_details::Builder::default()
+    }
+}
+
 /// See [`PredictorExecutionDetails`](crate::model::PredictorExecutionDetails).
 pub mod predictor_execution_details {
 
@@ -6505,12 +6549,6 @@ pub mod predictor_execution_details {
         }
     }
 }
-impl PredictorExecutionDetails {
-    /// Creates a new builder-style object to manufacture [`PredictorExecutionDetails`](crate::model::PredictorExecutionDetails).
-    pub fn builder() -> crate::model::predictor_execution_details::Builder {
-        crate::model::predictor_execution_details::Builder::default()
-    }
-}
 
 /// <p>The algorithm used to perform a backtest and the status of those tests.</p>
 #[non_exhaustive]
@@ -6533,6 +6571,13 @@ impl PredictorExecution {
         self.test_windows.as_deref()
     }
 }
+impl PredictorExecution {
+    /// Creates a new builder-style object to manufacture [`PredictorExecution`](crate::model::PredictorExecution).
+    pub fn builder() -> crate::model::predictor_execution::Builder {
+        crate::model::predictor_execution::Builder::default()
+    }
+}
+
 /// See [`PredictorExecution`](crate::model::PredictorExecution).
 pub mod predictor_execution {
 
@@ -6586,12 +6631,6 @@ pub mod predictor_execution {
         }
     }
 }
-impl PredictorExecution {
-    /// Creates a new builder-style object to manufacture [`PredictorExecution`](crate::model::PredictorExecution).
-    pub fn builder() -> crate::model::predictor_execution::Builder {
-        crate::model::predictor_execution::Builder::default()
-    }
-}
 
 /// <p>The status, start time, and end time of a backtest, as well as a failure reason if applicable.</p>
 #[non_exhaustive]
@@ -6638,6 +6677,13 @@ impl TestWindowSummary {
         self.message.as_deref()
     }
 }
+impl TestWindowSummary {
+    /// Creates a new builder-style object to manufacture [`TestWindowSummary`](crate::model::TestWindowSummary).
+    pub fn builder() -> crate::model::test_window_summary::Builder {
+        crate::model::test_window_summary::Builder::default()
+    }
+}
+
 /// See [`TestWindowSummary`](crate::model::TestWindowSummary).
 pub mod test_window_summary {
 
@@ -6718,12 +6764,6 @@ pub mod test_window_summary {
         }
     }
 }
-impl TestWindowSummary {
-    /// Creates a new builder-style object to manufacture [`TestWindowSummary`](crate::model::TestWindowSummary).
-    pub fn builder() -> crate::model::test_window_summary::Builder {
-        crate::model::test_window_summary::Builder::default()
-    }
-}
 
 /// <p>An AWS Key Management Service (KMS) key and an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the key. You can specify this optional object in the <code>CreateDataset</code> and <code>CreatePredictor</code> requests.</p>
 #[non_exhaustive]
@@ -6748,6 +6788,13 @@ impl EncryptionConfig {
         self.kms_key_arn.as_deref()
     }
 }
+impl EncryptionConfig {
+    /// Creates a new builder-style object to manufacture [`EncryptionConfig`](crate::model::EncryptionConfig).
+    pub fn builder() -> crate::model::encryption_config::Builder {
+        crate::model::encryption_config::Builder::default()
+    }
+}
+
 /// See [`EncryptionConfig`](crate::model::EncryptionConfig).
 pub mod encryption_config {
 
@@ -6788,12 +6835,6 @@ pub mod encryption_config {
                 kms_key_arn: self.kms_key_arn,
             }
         }
-    }
-}
-impl EncryptionConfig {
-    /// Creates a new builder-style object to manufacture [`EncryptionConfig`](crate::model::EncryptionConfig).
-    pub fn builder() -> crate::model::encryption_config::Builder {
-        crate::model::encryption_config::Builder::default()
     }
 }
 
@@ -6840,6 +6881,13 @@ impl FeaturizationConfig {
         self.featurizations.as_deref()
     }
 }
+impl FeaturizationConfig {
+    /// Creates a new builder-style object to manufacture [`FeaturizationConfig`](crate::model::FeaturizationConfig).
+    pub fn builder() -> crate::model::featurization_config::Builder {
+        crate::model::featurization_config::Builder::default()
+    }
+}
+
 /// See [`FeaturizationConfig`](crate::model::FeaturizationConfig).
 pub mod featurization_config {
 
@@ -6923,12 +6971,6 @@ pub mod featurization_config {
         }
     }
 }
-impl FeaturizationConfig {
-    /// Creates a new builder-style object to manufacture [`FeaturizationConfig`](crate::model::FeaturizationConfig).
-    pub fn builder() -> crate::model::featurization_config::Builder {
-        crate::model::featurization_config::Builder::default()
-    }
-}
 
 /// <note>
 /// <p>This object belongs to the <code>CreatePredictor</code> operation. If you created your predictor with <code>CreateAutoPredictor</code>, see <code>AttributeConfig</code>.</p>
@@ -6965,6 +7007,13 @@ impl Featurization {
         self.featurization_pipeline.as_deref()
     }
 }
+impl Featurization {
+    /// Creates a new builder-style object to manufacture [`Featurization`](crate::model::Featurization).
+    pub fn builder() -> crate::model::featurization::Builder {
+        crate::model::featurization::Builder::default()
+    }
+}
+
 /// See [`Featurization`](crate::model::Featurization).
 pub mod featurization {
 
@@ -7016,12 +7065,6 @@ pub mod featurization {
                 featurization_pipeline: self.featurization_pipeline,
             }
         }
-    }
-}
-impl Featurization {
-    /// Creates a new builder-style object to manufacture [`Featurization`](crate::model::Featurization).
-    pub fn builder() -> crate::model::featurization::Builder {
-        crate::model::featurization::Builder::default()
     }
 }
 
@@ -7085,6 +7128,13 @@ impl FeaturizationMethod {
         self.featurization_method_parameters.as_ref()
     }
 }
+impl FeaturizationMethod {
+    /// Creates a new builder-style object to manufacture [`FeaturizationMethod`](crate::model::FeaturizationMethod).
+    pub fn builder() -> crate::model::featurization_method::Builder {
+        crate::model::featurization_method::Builder::default()
+    }
+}
+
 /// See [`FeaturizationMethod`](crate::model::FeaturizationMethod).
 pub mod featurization_method {
 
@@ -7175,12 +7225,6 @@ pub mod featurization_method {
                 featurization_method_parameters: self.featurization_method_parameters,
             }
         }
-    }
-}
-impl FeaturizationMethod {
-    /// Creates a new builder-style object to manufacture [`FeaturizationMethod`](crate::model::FeaturizationMethod).
-    pub fn builder() -> crate::model::featurization_method::Builder {
-        crate::model::featurization_method::Builder::default()
     }
 }
 
@@ -7298,6 +7342,13 @@ impl InputDataConfig {
         self.supplementary_features.as_deref()
     }
 }
+impl InputDataConfig {
+    /// Creates a new builder-style object to manufacture [`InputDataConfig`](crate::model::InputDataConfig).
+    pub fn builder() -> crate::model::input_data_config::Builder {
+        crate::model::input_data_config::Builder::default()
+    }
+}
+
 /// See [`InputDataConfig`](crate::model::InputDataConfig).
 pub mod input_data_config {
 
@@ -7349,12 +7400,6 @@ pub mod input_data_config {
                 supplementary_features: self.supplementary_features,
             }
         }
-    }
-}
-impl InputDataConfig {
-    /// Creates a new builder-style object to manufacture [`InputDataConfig`](crate::model::InputDataConfig).
-    pub fn builder() -> crate::model::input_data_config::Builder {
-        crate::model::input_data_config::Builder::default()
     }
 }
 
@@ -7528,6 +7573,13 @@ impl SupplementaryFeature {
         self.value.as_deref()
     }
 }
+impl SupplementaryFeature {
+    /// Creates a new builder-style object to manufacture [`SupplementaryFeature`](crate::model::SupplementaryFeature).
+    pub fn builder() -> crate::model::supplementary_feature::Builder {
+        crate::model::supplementary_feature::Builder::default()
+    }
+}
+
 /// See [`SupplementaryFeature`](crate::model::SupplementaryFeature).
 pub mod supplementary_feature {
 
@@ -7710,12 +7762,6 @@ pub mod supplementary_feature {
         }
     }
 }
-impl SupplementaryFeature {
-    /// Creates a new builder-style object to manufacture [`SupplementaryFeature`](crate::model::SupplementaryFeature).
-    pub fn builder() -> crate::model::supplementary_feature::Builder {
-        crate::model::supplementary_feature::Builder::default()
-    }
-}
 
 /// <p>Configuration information for a hyperparameter tuning job. You specify this object in the <code>CreatePredictor</code> request.</p>
 /// <p>A <i>hyperparameter</i> is a parameter that governs the model training process. You set hyperparameters before training starts, unlike model parameters, which are determined during training. The values of the hyperparameters effect which values are chosen for the model parameters.</p>
@@ -7733,6 +7779,13 @@ impl HyperParameterTuningJobConfig {
         self.parameter_ranges.as_ref()
     }
 }
+impl HyperParameterTuningJobConfig {
+    /// Creates a new builder-style object to manufacture [`HyperParameterTuningJobConfig`](crate::model::HyperParameterTuningJobConfig).
+    pub fn builder() -> crate::model::hyper_parameter_tuning_job_config::Builder {
+        crate::model::hyper_parameter_tuning_job_config::Builder::default()
+    }
+}
+
 /// See [`HyperParameterTuningJobConfig`](crate::model::HyperParameterTuningJobConfig).
 pub mod hyper_parameter_tuning_job_config {
 
@@ -7762,12 +7815,6 @@ pub mod hyper_parameter_tuning_job_config {
                 parameter_ranges: self.parameter_ranges,
             }
         }
-    }
-}
-impl HyperParameterTuningJobConfig {
-    /// Creates a new builder-style object to manufacture [`HyperParameterTuningJobConfig`](crate::model::HyperParameterTuningJobConfig).
-    pub fn builder() -> crate::model::hyper_parameter_tuning_job_config::Builder {
-        crate::model::hyper_parameter_tuning_job_config::Builder::default()
     }
 }
 
@@ -7808,6 +7855,13 @@ impl ParameterRanges {
         self.integer_parameter_ranges.as_deref()
     }
 }
+impl ParameterRanges {
+    /// Creates a new builder-style object to manufacture [`ParameterRanges`](crate::model::ParameterRanges).
+    pub fn builder() -> crate::model::parameter_ranges::Builder {
+        crate::model::parameter_ranges::Builder::default()
+    }
+}
+
 /// See [`ParameterRanges`](crate::model::ParameterRanges).
 pub mod parameter_ranges {
 
@@ -7897,12 +7951,6 @@ pub mod parameter_ranges {
                 integer_parameter_ranges: self.integer_parameter_ranges,
             }
         }
-    }
-}
-impl ParameterRanges {
-    /// Creates a new builder-style object to manufacture [`ParameterRanges`](crate::model::ParameterRanges).
-    pub fn builder() -> crate::model::parameter_ranges::Builder {
-        crate::model::parameter_ranges::Builder::default()
     }
 }
 
@@ -7999,6 +8047,13 @@ impl IntegerParameterRange {
         self.scaling_type.as_ref()
     }
 }
+impl IntegerParameterRange {
+    /// Creates a new builder-style object to manufacture [`IntegerParameterRange`](crate::model::IntegerParameterRange).
+    pub fn builder() -> crate::model::integer_parameter_range::Builder {
+        crate::model::integer_parameter_range::Builder::default()
+    }
+}
+
 /// See [`IntegerParameterRange`](crate::model::IntegerParameterRange).
 pub mod integer_parameter_range {
 
@@ -8122,12 +8177,6 @@ pub mod integer_parameter_range {
                 scaling_type: self.scaling_type,
             }
         }
-    }
-}
-impl IntegerParameterRange {
-    /// Creates a new builder-style object to manufacture [`IntegerParameterRange`](crate::model::IntegerParameterRange).
-    pub fn builder() -> crate::model::integer_parameter_range::Builder {
-        crate::model::integer_parameter_range::Builder::default()
     }
 }
 
@@ -8324,6 +8373,13 @@ impl ContinuousParameterRange {
         self.scaling_type.as_ref()
     }
 }
+impl ContinuousParameterRange {
+    /// Creates a new builder-style object to manufacture [`ContinuousParameterRange`](crate::model::ContinuousParameterRange).
+    pub fn builder() -> crate::model::continuous_parameter_range::Builder {
+        crate::model::continuous_parameter_range::Builder::default()
+    }
+}
+
 /// See [`ContinuousParameterRange`](crate::model::ContinuousParameterRange).
 pub mod continuous_parameter_range {
 
@@ -8449,12 +8505,6 @@ pub mod continuous_parameter_range {
         }
     }
 }
-impl ContinuousParameterRange {
-    /// Creates a new builder-style object to manufacture [`ContinuousParameterRange`](crate::model::ContinuousParameterRange).
-    pub fn builder() -> crate::model::continuous_parameter_range::Builder {
-        crate::model::continuous_parameter_range::Builder::default()
-    }
-}
 
 /// <p>Specifies a categorical hyperparameter and it's range of tunable values. This object is part of the <code>ParameterRanges</code> object.</p>
 #[non_exhaustive]
@@ -8477,6 +8527,13 @@ impl CategoricalParameterRange {
         self.values.as_deref()
     }
 }
+impl CategoricalParameterRange {
+    /// Creates a new builder-style object to manufacture [`CategoricalParameterRange`](crate::model::CategoricalParameterRange).
+    pub fn builder() -> crate::model::categorical_parameter_range::Builder {
+        crate::model::categorical_parameter_range::Builder::default()
+    }
+}
+
 /// See [`CategoricalParameterRange`](crate::model::CategoricalParameterRange).
 pub mod categorical_parameter_range {
 
@@ -8526,12 +8583,6 @@ pub mod categorical_parameter_range {
         }
     }
 }
-impl CategoricalParameterRange {
-    /// Creates a new builder-style object to manufacture [`CategoricalParameterRange`](crate::model::CategoricalParameterRange).
-    pub fn builder() -> crate::model::categorical_parameter_range::Builder {
-        crate::model::categorical_parameter_range::Builder::default()
-    }
-}
 
 /// <p>Parameters that define how to split a dataset into training data and testing data, and the number of iterations to perform. These parameters are specified in the predefined algorithms but you can override them in the <code>CreatePredictor</code> request.</p>
 #[non_exhaustive]
@@ -8556,6 +8607,13 @@ impl EvaluationParameters {
         self.back_test_window_offset
     }
 }
+impl EvaluationParameters {
+    /// Creates a new builder-style object to manufacture [`EvaluationParameters`](crate::model::EvaluationParameters).
+    pub fn builder() -> crate::model::evaluation_parameters::Builder {
+        crate::model::evaluation_parameters::Builder::default()
+    }
+}
+
 /// See [`EvaluationParameters`](crate::model::EvaluationParameters).
 pub mod evaluation_parameters {
 
@@ -8598,12 +8656,6 @@ pub mod evaluation_parameters {
         }
     }
 }
-impl EvaluationParameters {
-    /// Creates a new builder-style object to manufacture [`EvaluationParameters`](crate::model::EvaluationParameters).
-    pub fn builder() -> crate::model::evaluation_parameters::Builder {
-        crate::model::evaluation_parameters::Builder::default()
-    }
-}
 
 /// <p>Metrics you can use as a baseline for comparison purposes. Use these metrics when you interpret monitoring results for an auto predictor.</p>
 #[non_exhaustive]
@@ -8619,6 +8671,13 @@ impl Baseline {
         self.predictor_baseline.as_ref()
     }
 }
+impl Baseline {
+    /// Creates a new builder-style object to manufacture [`Baseline`](crate::model::Baseline).
+    pub fn builder() -> crate::model::baseline::Builder {
+        crate::model::baseline::Builder::default()
+    }
+}
+
 /// See [`Baseline`](crate::model::Baseline).
 pub mod baseline {
 
@@ -8650,12 +8709,6 @@ pub mod baseline {
         }
     }
 }
-impl Baseline {
-    /// Creates a new builder-style object to manufacture [`Baseline`](crate::model::Baseline).
-    pub fn builder() -> crate::model::baseline::Builder {
-        crate::model::baseline::Builder::default()
-    }
-}
 
 /// <p>Metrics you can use as a baseline for comparison purposes. Use these metrics when you interpret monitoring results for an auto predictor.</p>
 #[non_exhaustive]
@@ -8671,6 +8724,13 @@ impl PredictorBaseline {
         self.baseline_metrics.as_deref()
     }
 }
+impl PredictorBaseline {
+    /// Creates a new builder-style object to manufacture [`PredictorBaseline`](crate::model::PredictorBaseline).
+    pub fn builder() -> crate::model::predictor_baseline::Builder {
+        crate::model::predictor_baseline::Builder::default()
+    }
+}
+
 /// See [`PredictorBaseline`](crate::model::PredictorBaseline).
 pub mod predictor_baseline {
 
@@ -8709,12 +8769,6 @@ pub mod predictor_baseline {
         }
     }
 }
-impl PredictorBaseline {
-    /// Creates a new builder-style object to manufacture [`PredictorBaseline`](crate::model::PredictorBaseline).
-    pub fn builder() -> crate::model::predictor_baseline::Builder {
-        crate::model::predictor_baseline::Builder::default()
-    }
-}
 
 /// <p>An individual metric that you can use for comparison as you evaluate your monitoring results.</p>
 #[non_exhaustive]
@@ -8737,6 +8791,13 @@ impl BaselineMetric {
         self.value
     }
 }
+impl BaselineMetric {
+    /// Creates a new builder-style object to manufacture [`BaselineMetric`](crate::model::BaselineMetric).
+    pub fn builder() -> crate::model::baseline_metric::Builder {
+        crate::model::baseline_metric::Builder::default()
+    }
+}
+
 /// See [`BaselineMetric`](crate::model::BaselineMetric).
 pub mod baseline_metric {
 
@@ -8775,12 +8836,6 @@ pub mod baseline_metric {
                 value: self.value,
             }
         }
-    }
-}
-impl BaselineMetric {
-    /// Creates a new builder-style object to manufacture [`BaselineMetric`](crate::model::BaselineMetric).
-    pub fn builder() -> crate::model::baseline_metric::Builder {
-        crate::model::baseline_metric::Builder::default()
     }
 }
 
@@ -8875,6 +8930,13 @@ impl Statistics {
         self.count_nan_long
     }
 }
+impl Statistics {
+    /// Creates a new builder-style object to manufacture [`Statistics`](crate::model::Statistics).
+    pub fn builder() -> crate::model::statistics::Builder {
+        crate::model::statistics::Builder::default()
+    }
+}
+
 /// See [`Statistics`](crate::model::Statistics).
 pub mod statistics {
 
@@ -9035,12 +9097,6 @@ pub mod statistics {
         }
     }
 }
-impl Statistics {
-    /// Creates a new builder-style object to manufacture [`Statistics`](crate::model::Statistics).
-    pub fn builder() -> crate::model::statistics::Builder {
-        crate::model::statistics::Builder::default()
-    }
-}
 
 /// <p>The time boundary Forecast uses to align and aggregate your data to match your forecast frequency. Provide the unit of time and the time boundary as a key value pair. If you don't provide a time boundary, Forecast uses a set of <a href="https://docs.aws.amazon.com/forecast/latest/dg/data-aggregation.html#default-time-boundaries">Default Time Boundaries</a>. </p>
 /// <p>For more information about aggregation, see <a href="https://docs.aws.amazon.com/forecast/latest/dg/data-aggregation.html">Data Aggregation for Different Forecast Frequencies</a>. For more information setting a custom time boundary, see <a href="https://docs.aws.amazon.com/forecast/latest/dg/data-aggregation.html#specifying-time-boundary">Specifying a Time Boundary</a>. </p>
@@ -9078,6 +9134,13 @@ impl TimeAlignmentBoundary {
         self.hour
     }
 }
+impl TimeAlignmentBoundary {
+    /// Creates a new builder-style object to manufacture [`TimeAlignmentBoundary`](crate::model::TimeAlignmentBoundary).
+    pub fn builder() -> crate::model::time_alignment_boundary::Builder {
+        crate::model::time_alignment_boundary::Builder::default()
+    }
+}
+
 /// See [`TimeAlignmentBoundary`](crate::model::TimeAlignmentBoundary).
 pub mod time_alignment_boundary {
 
@@ -9143,12 +9206,6 @@ pub mod time_alignment_boundary {
                 hour: self.hour,
             }
         }
-    }
-}
-impl TimeAlignmentBoundary {
-    /// Creates a new builder-style object to manufacture [`TimeAlignmentBoundary`](crate::model::TimeAlignmentBoundary).
-    pub fn builder() -> crate::model::time_alignment_boundary::Builder {
-        crate::model::time_alignment_boundary::Builder::default()
     }
 }
 
@@ -9463,6 +9520,13 @@ impl MonitorInfo {
         self.status.as_deref()
     }
 }
+impl MonitorInfo {
+    /// Creates a new builder-style object to manufacture [`MonitorInfo`](crate::model::MonitorInfo).
+    pub fn builder() -> crate::model::monitor_info::Builder {
+        crate::model::monitor_info::Builder::default()
+    }
+}
+
 /// See [`MonitorInfo`](crate::model::MonitorInfo).
 pub mod monitor_info {
 
@@ -9517,12 +9581,6 @@ pub mod monitor_info {
         }
     }
 }
-impl MonitorInfo {
-    /// Creates a new builder-style object to manufacture [`MonitorInfo`](crate::model::MonitorInfo).
-    pub fn builder() -> crate::model::monitor_info::Builder {
-        crate::model::monitor_info::Builder::default()
-    }
-}
 
 /// <p>Provides information about the Explainability resource.</p>
 #[non_exhaustive]
@@ -9557,6 +9615,13 @@ impl ExplainabilityInfo {
         self.status.as_deref()
     }
 }
+impl ExplainabilityInfo {
+    /// Creates a new builder-style object to manufacture [`ExplainabilityInfo`](crate::model::ExplainabilityInfo).
+    pub fn builder() -> crate::model::explainability_info::Builder {
+        crate::model::explainability_info::Builder::default()
+    }
+}
+
 /// See [`ExplainabilityInfo`](crate::model::ExplainabilityInfo).
 pub mod explainability_info {
 
@@ -9612,12 +9677,6 @@ pub mod explainability_info {
         }
     }
 }
-impl ExplainabilityInfo {
-    /// Creates a new builder-style object to manufacture [`ExplainabilityInfo`](crate::model::ExplainabilityInfo).
-    pub fn builder() -> crate::model::explainability_info::Builder {
-        crate::model::explainability_info::Builder::default()
-    }
-}
 
 /// <p>The data configuration for your dataset group and any additional datasets.</p>
 #[non_exhaustive]
@@ -9647,6 +9706,13 @@ impl DataConfig {
         self.additional_datasets.as_deref()
     }
 }
+impl DataConfig {
+    /// Creates a new builder-style object to manufacture [`DataConfig`](crate::model::DataConfig).
+    pub fn builder() -> crate::model::data_config::Builder {
+        crate::model::data_config::Builder::default()
+    }
+}
+
 /// See [`DataConfig`](crate::model::DataConfig).
 pub mod data_config {
 
@@ -9720,12 +9786,6 @@ pub mod data_config {
                 additional_datasets: self.additional_datasets,
             }
         }
-    }
-}
-impl DataConfig {
-    /// Creates a new builder-style object to manufacture [`DataConfig`](crate::model::DataConfig).
-    pub fn builder() -> crate::model::data_config::Builder {
-        crate::model::data_config::Builder::default()
     }
 }
 
@@ -9904,6 +9964,13 @@ impl AdditionalDataset {
         self.configuration.as_ref()
     }
 }
+impl AdditionalDataset {
+    /// Creates a new builder-style object to manufacture [`AdditionalDataset`](crate::model::AdditionalDataset).
+    pub fn builder() -> crate::model::additional_dataset::Builder {
+        crate::model::additional_dataset::Builder::default()
+    }
+}
+
 /// See [`AdditionalDataset`](crate::model::AdditionalDataset).
 pub mod additional_dataset {
 
@@ -10105,12 +10172,6 @@ pub mod additional_dataset {
         }
     }
 }
-impl AdditionalDataset {
-    /// Creates a new builder-style object to manufacture [`AdditionalDataset`](crate::model::AdditionalDataset).
-    pub fn builder() -> crate::model::additional_dataset::Builder {
-        crate::model::additional_dataset::Builder::default()
-    }
-}
 
 /// <p>Provides information about the method used to transform attributes.</p>
 /// <p>The following is an example using the RETAIL domain:</p>
@@ -10170,6 +10231,13 @@ impl AttributeConfig {
         self.transformations.as_ref()
     }
 }
+impl AttributeConfig {
+    /// Creates a new builder-style object to manufacture [`AttributeConfig`](crate::model::AttributeConfig).
+    pub fn builder() -> crate::model::attribute_config::Builder {
+        crate::model::attribute_config::Builder::default()
+    }
+}
+
 /// See [`AttributeConfig`](crate::model::AttributeConfig).
 pub mod attribute_config {
 
@@ -10258,12 +10326,6 @@ pub mod attribute_config {
         }
     }
 }
-impl AttributeConfig {
-    /// Creates a new builder-style object to manufacture [`AttributeConfig`](crate::model::AttributeConfig).
-    pub fn builder() -> crate::model::attribute_config::Builder {
-        crate::model::attribute_config::Builder::default()
-    }
-}
 
 /// <p>The configuration details for the predictor monitor.</p>
 #[non_exhaustive]
@@ -10279,6 +10341,13 @@ impl MonitorConfig {
         self.monitor_name.as_deref()
     }
 }
+impl MonitorConfig {
+    /// Creates a new builder-style object to manufacture [`MonitorConfig`](crate::model::MonitorConfig).
+    pub fn builder() -> crate::model::monitor_config::Builder {
+        crate::model::monitor_config::Builder::default()
+    }
+}
+
 /// See [`MonitorConfig`](crate::model::MonitorConfig).
 pub mod monitor_config {
 
@@ -10305,11 +10374,5 @@ pub mod monitor_config {
                 monitor_name: self.monitor_name,
             }
         }
-    }
-}
-impl MonitorConfig {
-    /// Creates a new builder-style object to manufacture [`MonitorConfig`](crate::model::MonitorConfig).
-    pub fn builder() -> crate::model::monitor_config::Builder {
-        crate::model::monitor_config::Builder::default()
     }
 }

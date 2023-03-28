@@ -21,6 +21,13 @@ impl ValidationExceptionField {
         self.message.as_deref()
     }
 }
+impl ValidationExceptionField {
+    /// Creates a new builder-style object to manufacture [`ValidationExceptionField`](crate::model::ValidationExceptionField).
+    pub fn builder() -> crate::model::validation_exception_field::Builder {
+        crate::model::validation_exception_field::Builder::default()
+    }
+}
+
 /// See [`ValidationExceptionField`](crate::model::ValidationExceptionField).
 pub mod validation_exception_field {
 
@@ -59,12 +66,6 @@ pub mod validation_exception_field {
                 message: self.message,
             }
         }
-    }
-}
-impl ValidationExceptionField {
-    /// Creates a new builder-style object to manufacture [`ValidationExceptionField`](crate::model::ValidationExceptionField).
-    pub fn builder() -> crate::model::validation_exception_field::Builder {
-        crate::model::validation_exception_field::Builder::default()
     }
 }
 
@@ -196,6 +197,13 @@ impl UpdateRoutingControlStateEntry {
         self.routing_control_state.as_ref()
     }
 }
+impl UpdateRoutingControlStateEntry {
+    /// Creates a new builder-style object to manufacture [`UpdateRoutingControlStateEntry`](crate::model::UpdateRoutingControlStateEntry).
+    pub fn builder() -> crate::model::update_routing_control_state_entry::Builder {
+        crate::model::update_routing_control_state_entry::Builder::default()
+    }
+}
+
 /// See [`UpdateRoutingControlStateEntry`](crate::model::UpdateRoutingControlStateEntry).
 pub mod update_routing_control_state_entry {
 
@@ -240,12 +248,6 @@ pub mod update_routing_control_state_entry {
                 routing_control_state: self.routing_control_state,
             }
         }
-    }
-}
-impl UpdateRoutingControlStateEntry {
-    /// Creates a new builder-style object to manufacture [`UpdateRoutingControlStateEntry`](crate::model::UpdateRoutingControlStateEntry).
-    pub fn builder() -> crate::model::update_routing_control_state_entry::Builder {
-        crate::model::update_routing_control_state_entry::Builder::default()
     }
 }
 
@@ -383,6 +385,13 @@ impl RoutingControl {
         self.routing_control_state.as_ref()
     }
 }
+impl RoutingControl {
+    /// Creates a new builder-style object to manufacture [`RoutingControl`](crate::model::RoutingControl).
+    pub fn builder() -> crate::model::routing_control::Builder {
+        crate::model::routing_control::Builder::default()
+    }
+}
+
 /// See [`RoutingControl`](crate::model::RoutingControl).
 pub mod routing_control {
 
@@ -472,11 +481,5 @@ pub mod routing_control {
                 routing_control_state: self.routing_control_state,
             }
         }
-    }
-}
-impl RoutingControl {
-    /// Creates a new builder-style object to manufacture [`RoutingControl`](crate::model::RoutingControl).
-    pub fn builder() -> crate::model::routing_control::Builder {
-        crate::model::routing_control::Builder::default()
     }
 }

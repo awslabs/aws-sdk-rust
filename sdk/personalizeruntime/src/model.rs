@@ -29,6 +29,13 @@ impl PredictedItem {
         self.promotion_name.as_deref()
     }
 }
+impl PredictedItem {
+    /// Creates a new builder-style object to manufacture [`PredictedItem`](crate::model::PredictedItem).
+    pub fn builder() -> crate::model::predicted_item::Builder {
+        crate::model::predicted_item::Builder::default()
+    }
+}
+
 /// See [`PredictedItem`](crate::model::PredictedItem).
 pub mod predicted_item {
 
@@ -84,12 +91,6 @@ pub mod predicted_item {
         }
     }
 }
-impl PredictedItem {
-    /// Creates a new builder-style object to manufacture [`PredictedItem`](crate::model::PredictedItem).
-    pub fn builder() -> crate::model::predicted_item::Builder {
-        crate::model::predicted_item::Builder::default()
-    }
-}
 
 /// <p>Contains information on a promotion. A promotion defines additional business rules that apply to a configurable subset of recommended items.</p>
 #[non_exhaustive]
@@ -134,6 +135,13 @@ impl Promotion {
         self.filter_values.as_ref()
     }
 }
+impl Promotion {
+    /// Creates a new builder-style object to manufacture [`Promotion`](crate::model::Promotion).
+    pub fn builder() -> crate::model::promotion::Builder {
+        crate::model::promotion::Builder::default()
+    }
+}
+
 /// See [`Promotion`](crate::model::Promotion).
 pub mod promotion {
 
@@ -217,11 +225,5 @@ pub mod promotion {
                 filter_values: self.filter_values,
             }
         }
-    }
-}
-impl Promotion {
-    /// Creates a new builder-style object to manufacture [`Promotion`](crate::model::Promotion).
-    pub fn builder() -> crate::model::promotion::Builder {
-        crate::model::promotion::Builder::default()
     }
 }

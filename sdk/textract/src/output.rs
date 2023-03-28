@@ -19,6 +19,13 @@ impl aws_http::request_id::RequestId for StartLendingAnalysisOutput {
         self._request_id.as_deref()
     }
 }
+impl StartLendingAnalysisOutput {
+    /// Creates a new builder-style object to manufacture [`StartLendingAnalysisOutput`](crate::output::StartLendingAnalysisOutput).
+    pub fn builder() -> crate::output::start_lending_analysis_output::Builder {
+        crate::output::start_lending_analysis_output::Builder::default()
+    }
+}
+
 /// See [`StartLendingAnalysisOutput`](crate::output::StartLendingAnalysisOutput).
 pub mod start_lending_analysis_output {
 
@@ -58,12 +65,6 @@ pub mod start_lending_analysis_output {
         }
     }
 }
-impl StartLendingAnalysisOutput {
-    /// Creates a new builder-style object to manufacture [`StartLendingAnalysisOutput`](crate::output::StartLendingAnalysisOutput).
-    pub fn builder() -> crate::output::start_lending_analysis_output::Builder {
-        crate::output::start_lending_analysis_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -85,6 +86,13 @@ impl aws_http::request_id::RequestId for StartExpenseAnalysisOutput {
         self._request_id.as_deref()
     }
 }
+impl StartExpenseAnalysisOutput {
+    /// Creates a new builder-style object to manufacture [`StartExpenseAnalysisOutput`](crate::output::StartExpenseAnalysisOutput).
+    pub fn builder() -> crate::output::start_expense_analysis_output::Builder {
+        crate::output::start_expense_analysis_output::Builder::default()
+    }
+}
+
 /// See [`StartExpenseAnalysisOutput`](crate::output::StartExpenseAnalysisOutput).
 pub mod start_expense_analysis_output {
 
@@ -124,12 +132,6 @@ pub mod start_expense_analysis_output {
         }
     }
 }
-impl StartExpenseAnalysisOutput {
-    /// Creates a new builder-style object to manufacture [`StartExpenseAnalysisOutput`](crate::output::StartExpenseAnalysisOutput).
-    pub fn builder() -> crate::output::start_expense_analysis_output::Builder {
-        crate::output::start_expense_analysis_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -151,6 +153,13 @@ impl aws_http::request_id::RequestId for StartDocumentTextDetectionOutput {
         self._request_id.as_deref()
     }
 }
+impl StartDocumentTextDetectionOutput {
+    /// Creates a new builder-style object to manufacture [`StartDocumentTextDetectionOutput`](crate::output::StartDocumentTextDetectionOutput).
+    pub fn builder() -> crate::output::start_document_text_detection_output::Builder {
+        crate::output::start_document_text_detection_output::Builder::default()
+    }
+}
+
 /// See [`StartDocumentTextDetectionOutput`](crate::output::StartDocumentTextDetectionOutput).
 pub mod start_document_text_detection_output {
 
@@ -190,12 +199,6 @@ pub mod start_document_text_detection_output {
         }
     }
 }
-impl StartDocumentTextDetectionOutput {
-    /// Creates a new builder-style object to manufacture [`StartDocumentTextDetectionOutput`](crate::output::StartDocumentTextDetectionOutput).
-    pub fn builder() -> crate::output::start_document_text_detection_output::Builder {
-        crate::output::start_document_text_detection_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -217,6 +220,13 @@ impl aws_http::request_id::RequestId for StartDocumentAnalysisOutput {
         self._request_id.as_deref()
     }
 }
+impl StartDocumentAnalysisOutput {
+    /// Creates a new builder-style object to manufacture [`StartDocumentAnalysisOutput`](crate::output::StartDocumentAnalysisOutput).
+    pub fn builder() -> crate::output::start_document_analysis_output::Builder {
+        crate::output::start_document_analysis_output::Builder::default()
+    }
+}
+
 /// See [`StartDocumentAnalysisOutput`](crate::output::StartDocumentAnalysisOutput).
 pub mod start_document_analysis_output {
 
@@ -254,12 +264,6 @@ pub mod start_document_analysis_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl StartDocumentAnalysisOutput {
-    /// Creates a new builder-style object to manufacture [`StartDocumentAnalysisOutput`](crate::output::StartDocumentAnalysisOutput).
-    pub fn builder() -> crate::output::start_document_analysis_output::Builder {
-        crate::output::start_document_analysis_output::Builder::default()
     }
 }
 
@@ -318,6 +322,13 @@ impl aws_http::request_id::RequestId for GetLendingAnalysisSummaryOutput {
         self._request_id.as_deref()
     }
 }
+impl GetLendingAnalysisSummaryOutput {
+    /// Creates a new builder-style object to manufacture [`GetLendingAnalysisSummaryOutput`](crate::output::GetLendingAnalysisSummaryOutput).
+    pub fn builder() -> crate::output::get_lending_analysis_summary_output::Builder {
+        crate::output::get_lending_analysis_summary_output::Builder::default()
+    }
+}
+
 /// See [`GetLendingAnalysisSummaryOutput`](crate::output::GetLendingAnalysisSummaryOutput).
 pub mod get_lending_analysis_summary_output {
 
@@ -444,12 +455,6 @@ pub mod get_lending_analysis_summary_output {
         }
     }
 }
-impl GetLendingAnalysisSummaryOutput {
-    /// Creates a new builder-style object to manufacture [`GetLendingAnalysisSummaryOutput`](crate::output::GetLendingAnalysisSummaryOutput).
-    pub fn builder() -> crate::output::get_lending_analysis_summary_output::Builder {
-        crate::output::get_lending_analysis_summary_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -513,6 +518,13 @@ impl aws_http::request_id::RequestId for GetLendingAnalysisOutput {
         self._request_id.as_deref()
     }
 }
+impl GetLendingAnalysisOutput {
+    /// Creates a new builder-style object to manufacture [`GetLendingAnalysisOutput`](crate::output::GetLendingAnalysisOutput).
+    pub fn builder() -> crate::output::get_lending_analysis_output::Builder {
+        crate::output::get_lending_analysis_output::Builder::default()
+    }
+}
+
 /// See [`GetLendingAnalysisOutput`](crate::output::GetLendingAnalysisOutput).
 pub mod get_lending_analysis_output {
 
@@ -657,12 +669,6 @@ pub mod get_lending_analysis_output {
         }
     }
 }
-impl GetLendingAnalysisOutput {
-    /// Creates a new builder-style object to manufacture [`GetLendingAnalysisOutput`](crate::output::GetLendingAnalysisOutput).
-    pub fn builder() -> crate::output::get_lending_analysis_output::Builder {
-        crate::output::get_lending_analysis_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -726,6 +732,13 @@ impl aws_http::request_id::RequestId for GetExpenseAnalysisOutput {
         self._request_id.as_deref()
     }
 }
+impl GetExpenseAnalysisOutput {
+    /// Creates a new builder-style object to manufacture [`GetExpenseAnalysisOutput`](crate::output::GetExpenseAnalysisOutput).
+    pub fn builder() -> crate::output::get_expense_analysis_output::Builder {
+        crate::output::get_expense_analysis_output::Builder::default()
+    }
+}
+
 /// See [`GetExpenseAnalysisOutput`](crate::output::GetExpenseAnalysisOutput).
 pub mod get_expense_analysis_output {
 
@@ -871,12 +884,6 @@ pub mod get_expense_analysis_output {
         }
     }
 }
-impl GetExpenseAnalysisOutput {
-    /// Creates a new builder-style object to manufacture [`GetExpenseAnalysisOutput`](crate::output::GetExpenseAnalysisOutput).
-    pub fn builder() -> crate::output::get_expense_analysis_output::Builder {
-        crate::output::get_expense_analysis_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -940,6 +947,13 @@ impl aws_http::request_id::RequestId for GetDocumentTextDetectionOutput {
         self._request_id.as_deref()
     }
 }
+impl GetDocumentTextDetectionOutput {
+    /// Creates a new builder-style object to manufacture [`GetDocumentTextDetectionOutput`](crate::output::GetDocumentTextDetectionOutput).
+    pub fn builder() -> crate::output::get_document_text_detection_output::Builder {
+        crate::output::get_document_text_detection_output::Builder::default()
+    }
+}
+
 /// See [`GetDocumentTextDetectionOutput`](crate::output::GetDocumentTextDetectionOutput).
 pub mod get_document_text_detection_output {
 
@@ -1084,12 +1098,6 @@ pub mod get_document_text_detection_output {
         }
     }
 }
-impl GetDocumentTextDetectionOutput {
-    /// Creates a new builder-style object to manufacture [`GetDocumentTextDetectionOutput`](crate::output::GetDocumentTextDetectionOutput).
-    pub fn builder() -> crate::output::get_document_text_detection_output::Builder {
-        crate::output::get_document_text_detection_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1153,6 +1161,13 @@ impl aws_http::request_id::RequestId for GetDocumentAnalysisOutput {
         self._request_id.as_deref()
     }
 }
+impl GetDocumentAnalysisOutput {
+    /// Creates a new builder-style object to manufacture [`GetDocumentAnalysisOutput`](crate::output::GetDocumentAnalysisOutput).
+    pub fn builder() -> crate::output::get_document_analysis_output::Builder {
+        crate::output::get_document_analysis_output::Builder::default()
+    }
+}
+
 /// See [`GetDocumentAnalysisOutput`](crate::output::GetDocumentAnalysisOutput).
 pub mod get_document_analysis_output {
 
@@ -1297,12 +1312,6 @@ pub mod get_document_analysis_output {
         }
     }
 }
-impl GetDocumentAnalysisOutput {
-    /// Creates a new builder-style object to manufacture [`GetDocumentAnalysisOutput`](crate::output::GetDocumentAnalysisOutput).
-    pub fn builder() -> crate::output::get_document_analysis_output::Builder {
-        crate::output::get_document_analysis_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1338,6 +1347,13 @@ impl aws_http::request_id::RequestId for DetectDocumentTextOutput {
         self._request_id.as_deref()
     }
 }
+impl DetectDocumentTextOutput {
+    /// Creates a new builder-style object to manufacture [`DetectDocumentTextOutput`](crate::output::DetectDocumentTextOutput).
+    pub fn builder() -> crate::output::detect_document_text_output::Builder {
+        crate::output::detect_document_text_output::Builder::default()
+    }
+}
+
 /// See [`DetectDocumentTextOutput`](crate::output::DetectDocumentTextOutput).
 pub mod detect_document_text_output {
 
@@ -1419,12 +1435,6 @@ pub mod detect_document_text_output {
         }
     }
 }
-impl DetectDocumentTextOutput {
-    /// Creates a new builder-style object to manufacture [`DetectDocumentTextOutput`](crate::output::DetectDocumentTextOutput).
-    pub fn builder() -> crate::output::detect_document_text_output::Builder {
-        crate::output::detect_document_text_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1460,6 +1470,13 @@ impl aws_http::request_id::RequestId for AnalyzeIdOutput {
         self._request_id.as_deref()
     }
 }
+impl AnalyzeIdOutput {
+    /// Creates a new builder-style object to manufacture [`AnalyzeIdOutput`](crate::output::AnalyzeIdOutput).
+    pub fn builder() -> crate::output::analyze_id_output::Builder {
+        crate::output::analyze_id_output::Builder::default()
+    }
+}
+
 /// See [`AnalyzeIdOutput`](crate::output::AnalyzeIdOutput).
 pub mod analyze_id_output {
 
@@ -1539,12 +1556,6 @@ pub mod analyze_id_output {
         }
     }
 }
-impl AnalyzeIdOutput {
-    /// Creates a new builder-style object to manufacture [`AnalyzeIdOutput`](crate::output::AnalyzeIdOutput).
-    pub fn builder() -> crate::output::analyze_id_output::Builder {
-        crate::output::analyze_id_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1573,6 +1584,13 @@ impl aws_http::request_id::RequestId for AnalyzeExpenseOutput {
         self._request_id.as_deref()
     }
 }
+impl AnalyzeExpenseOutput {
+    /// Creates a new builder-style object to manufacture [`AnalyzeExpenseOutput`](crate::output::AnalyzeExpenseOutput).
+    pub fn builder() -> crate::output::analyze_expense_output::Builder {
+        crate::output::analyze_expense_output::Builder::default()
+    }
+}
+
 /// See [`AnalyzeExpenseOutput`](crate::output::AnalyzeExpenseOutput).
 pub mod analyze_expense_output {
 
@@ -1637,12 +1655,6 @@ pub mod analyze_expense_output {
         }
     }
 }
-impl AnalyzeExpenseOutput {
-    /// Creates a new builder-style object to manufacture [`AnalyzeExpenseOutput`](crate::output::AnalyzeExpenseOutput).
-    pub fn builder() -> crate::output::analyze_expense_output::Builder {
-        crate::output::analyze_expense_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1687,6 +1699,13 @@ impl aws_http::request_id::RequestId for AnalyzeDocumentOutput {
         self._request_id.as_deref()
     }
 }
+impl AnalyzeDocumentOutput {
+    /// Creates a new builder-style object to manufacture [`AnalyzeDocumentOutput`](crate::output::AnalyzeDocumentOutput).
+    pub fn builder() -> crate::output::analyze_document_output::Builder {
+        crate::output::analyze_document_output::Builder::default()
+    }
+}
+
 /// See [`AnalyzeDocumentOutput`](crate::output::AnalyzeDocumentOutput).
 pub mod analyze_document_output {
 
@@ -1785,11 +1804,5 @@ pub mod analyze_document_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl AnalyzeDocumentOutput {
-    /// Creates a new builder-style object to manufacture [`AnalyzeDocumentOutput`](crate::output::AnalyzeDocumentOutput).
-    pub fn builder() -> crate::output::analyze_document_output::Builder {
-        crate::output::analyze_document_output::Builder::default()
     }
 }

@@ -66,6 +66,13 @@ impl aws_http::request_id::RequestId for UpdateVpcLinkOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdateVpcLinkOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateVpcLinkOutput`](crate::output::UpdateVpcLinkOutput).
+    pub fn builder() -> crate::output::update_vpc_link_output::Builder {
+        crate::output::update_vpc_link_output::Builder::default()
+    }
+}
+
 /// See [`UpdateVpcLinkOutput`](crate::output::UpdateVpcLinkOutput).
 pub mod update_vpc_link_output {
 
@@ -209,12 +216,6 @@ pub mod update_vpc_link_output {
         }
     }
 }
-impl UpdateVpcLinkOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateVpcLinkOutput`](crate::output::UpdateVpcLinkOutput).
-    pub fn builder() -> crate::output::update_vpc_link_output::Builder {
-        crate::output::update_vpc_link_output::Builder::default()
-    }
-}
 
 /// <p>Represents a usage plan used to specify who can assess associated API stages. Optionally, target request rate and quota limits can be set. In some cases clients can exceed the targets that you set. Don’t rely on usage plans to control costs. Consider using <a href="https://docs.aws.amazon.com/cost-management/latest/userguide/budgets-managing-costs.html">Amazon Web Services Budgets</a> to monitor costs and <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF</a> to manage API requests.</p>
 #[non_exhaustive]
@@ -289,6 +290,13 @@ impl aws_http::request_id::RequestId for UpdateUsagePlanOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdateUsagePlanOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateUsagePlanOutput`](crate::output::UpdateUsagePlanOutput).
+    pub fn builder() -> crate::output::update_usage_plan_output::Builder {
+        crate::output::update_usage_plan_output::Builder::default()
+    }
+}
+
 /// See [`UpdateUsagePlanOutput`](crate::output::UpdateUsagePlanOutput).
 pub mod update_usage_plan_output {
 
@@ -444,12 +452,6 @@ pub mod update_usage_plan_output {
         }
     }
 }
-impl UpdateUsagePlanOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateUsagePlanOutput`](crate::output::UpdateUsagePlanOutput).
-    pub fn builder() -> crate::output::update_usage_plan_output::Builder {
-        crate::output::update_usage_plan_output::Builder::default()
-    }
-}
 
 /// <p>Represents the usage data of a usage plan.</p>
 #[non_exhaustive]
@@ -505,6 +507,13 @@ impl aws_http::request_id::RequestId for UpdateUsageOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdateUsageOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateUsageOutput`](crate::output::UpdateUsageOutput).
+    pub fn builder() -> crate::output::update_usage_output::Builder {
+        crate::output::update_usage_output::Builder::default()
+    }
+}
+
 /// See [`UpdateUsageOutput`](crate::output::UpdateUsageOutput).
 pub mod update_usage_output {
 
@@ -610,12 +619,6 @@ pub mod update_usage_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl UpdateUsageOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateUsageOutput`](crate::output::UpdateUsageOutput).
-    pub fn builder() -> crate::output::update_usage_output::Builder {
-        crate::output::update_usage_output::Builder::default()
     }
 }
 
@@ -765,6 +768,13 @@ impl aws_http::request_id::RequestId for UpdateStageOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdateStageOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateStageOutput`](crate::output::UpdateStageOutput).
+    pub fn builder() -> crate::output::update_stage_output::Builder {
+        crate::output::update_stage_output::Builder::default()
+    }
+}
+
 /// See [`UpdateStageOutput`](crate::output::UpdateStageOutput).
 pub mod update_stage_output {
 
@@ -1074,12 +1084,6 @@ pub mod update_stage_output {
         }
     }
 }
-impl UpdateStageOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateStageOutput`](crate::output::UpdateStageOutput).
-    pub fn builder() -> crate::output::update_stage_output::Builder {
-        crate::output::update_stage_output::Builder::default()
-    }
-}
 
 /// <p>Represents a REST API.</p>
 #[non_exhaustive]
@@ -1191,6 +1195,13 @@ impl aws_http::request_id::RequestId for UpdateRestApiOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdateRestApiOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateRestApiOutput`](crate::output::UpdateRestApiOutput).
+    pub fn builder() -> crate::output::update_rest_api_output::Builder {
+        crate::output::update_rest_api_output::Builder::default()
+    }
+}
+
 /// See [`UpdateRestApiOutput`](crate::output::UpdateRestApiOutput).
 pub mod update_rest_api_output {
 
@@ -1424,12 +1435,6 @@ pub mod update_rest_api_output {
         }
     }
 }
-impl UpdateRestApiOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateRestApiOutput`](crate::output::UpdateRestApiOutput).
-    pub fn builder() -> crate::output::update_rest_api_output::Builder {
-        crate::output::update_rest_api_output::Builder::default()
-    }
-}
 
 /// <p>Represents an API resource.</p>
 #[non_exhaustive]
@@ -1483,6 +1488,13 @@ impl aws_http::request_id::RequestId for UpdateResourceOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdateResourceOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateResourceOutput`](crate::output::UpdateResourceOutput).
+    pub fn builder() -> crate::output::update_resource_output::Builder {
+        crate::output::update_resource_output::Builder::default()
+    }
+}
+
 /// See [`UpdateResourceOutput`](crate::output::UpdateResourceOutput).
 pub mod update_resource_output {
 
@@ -1587,12 +1599,6 @@ pub mod update_resource_output {
         }
     }
 }
-impl UpdateResourceOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateResourceOutput`](crate::output::UpdateResourceOutput).
-    pub fn builder() -> crate::output::update_resource_output::Builder {
-        crate::output::update_resource_output::Builder::default()
-    }
-}
 
 /// <p>A set of validation rules for incoming Method requests.</p>
 #[non_exhaustive]
@@ -1635,6 +1641,13 @@ impl aws_http::request_id::RequestId for UpdateRequestValidatorOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdateRequestValidatorOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateRequestValidatorOutput`](crate::output::UpdateRequestValidatorOutput).
+    pub fn builder() -> crate::output::update_request_validator_output::Builder {
+        crate::output::update_request_validator_output::Builder::default()
+    }
+}
+
 /// See [`UpdateRequestValidatorOutput`](crate::output::UpdateRequestValidatorOutput).
 pub mod update_request_validator_output {
 
@@ -1710,12 +1723,6 @@ pub mod update_request_validator_output {
         }
     }
 }
-impl UpdateRequestValidatorOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateRequestValidatorOutput`](crate::output::UpdateRequestValidatorOutput).
-    pub fn builder() -> crate::output::update_request_validator_output::Builder {
-        crate::output::update_request_validator_output::Builder::default()
-    }
-}
 
 /// <p>Represents the data structure of a method's request or response payload.</p>
 #[non_exhaustive]
@@ -1765,6 +1772,13 @@ impl aws_http::request_id::RequestId for UpdateModelOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdateModelOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateModelOutput`](crate::output::UpdateModelOutput).
+    pub fn builder() -> crate::output::update_model_output::Builder {
+        crate::output::update_model_output::Builder::default()
+    }
+}
+
 /// See [`UpdateModelOutput`](crate::output::UpdateModelOutput).
 pub mod update_model_output {
 
@@ -1852,12 +1866,6 @@ pub mod update_model_output {
         }
     }
 }
-impl UpdateModelOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateModelOutput`](crate::output::UpdateModelOutput).
-    pub fn builder() -> crate::output::update_model_output::Builder {
-        crate::output::update_model_output::Builder::default()
-    }
-}
 
 /// <p>Represents a method response of a given HTTP status code returned to the client. The method response is passed from the back end through the associated integration response that can be transformed using a mapping template. </p>
 #[non_exhaustive]
@@ -1900,6 +1908,13 @@ impl aws_http::request_id::RequestId for UpdateMethodResponseOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdateMethodResponseOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateMethodResponseOutput`](crate::output::UpdateMethodResponseOutput).
+    pub fn builder() -> crate::output::update_method_response_output::Builder {
+        crate::output::update_method_response_output::Builder::default()
+    }
+}
+
 /// See [`UpdateMethodResponseOutput`](crate::output::UpdateMethodResponseOutput).
 pub mod update_method_response_output {
 
@@ -1988,12 +2003,6 @@ pub mod update_method_response_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl UpdateMethodResponseOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateMethodResponseOutput`](crate::output::UpdateMethodResponseOutput).
-    pub fn builder() -> crate::output::update_method_response_output::Builder {
-        crate::output::update_method_response_output::Builder::default()
     }
 }
 
@@ -2100,6 +2109,13 @@ impl aws_http::request_id::RequestId for UpdateMethodOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdateMethodOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateMethodOutput`](crate::output::UpdateMethodOutput).
+    pub fn builder() -> crate::output::update_method_output::Builder {
+        crate::output::update_method_output::Builder::default()
+    }
+}
+
 /// See [`UpdateMethodOutput`](crate::output::UpdateMethodOutput).
 pub mod update_method_output {
 
@@ -2327,12 +2343,6 @@ pub mod update_method_output {
         }
     }
 }
-impl UpdateMethodOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateMethodOutput`](crate::output::UpdateMethodOutput).
-    pub fn builder() -> crate::output::update_method_output::Builder {
-        crate::output::update_method_output::Builder::default()
-    }
-}
 
 /// <p>Represents an integration response. The status code must map to an existing MethodResponse, and parameters and templates can be used to transform the back-end response.</p>
 #[non_exhaustive]
@@ -2392,6 +2402,13 @@ impl aws_http::request_id::RequestId for UpdateIntegrationResponseOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdateIntegrationResponseOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateIntegrationResponseOutput`](crate::output::UpdateIntegrationResponseOutput).
+    pub fn builder() -> crate::output::update_integration_response_output::Builder {
+        crate::output::update_integration_response_output::Builder::default()
+    }
+}
+
 /// See [`UpdateIntegrationResponseOutput`](crate::output::UpdateIntegrationResponseOutput).
 pub mod update_integration_response_output {
 
@@ -2519,12 +2536,6 @@ pub mod update_integration_response_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl UpdateIntegrationResponseOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateIntegrationResponseOutput`](crate::output::UpdateIntegrationResponseOutput).
-    pub fn builder() -> crate::output::update_integration_response_output::Builder {
-        crate::output::update_integration_response_output::Builder::default()
     }
 }
 
@@ -2666,6 +2677,13 @@ impl aws_http::request_id::RequestId for UpdateIntegrationOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdateIntegrationOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateIntegrationOutput`](crate::output::UpdateIntegrationOutput).
+    pub fn builder() -> crate::output::update_integration_output::Builder {
+        crate::output::update_integration_output::Builder::default()
+    }
+}
+
 /// See [`UpdateIntegrationOutput`](crate::output::UpdateIntegrationOutput).
 pub mod update_integration_output {
 
@@ -2960,12 +2978,6 @@ pub mod update_integration_output {
         }
     }
 }
-impl UpdateIntegrationOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateIntegrationOutput`](crate::output::UpdateIntegrationOutput).
-    pub fn builder() -> crate::output::update_integration_output::Builder {
-        crate::output::update_integration_output::Builder::default()
-    }
-}
 
 /// <p>A gateway response of a given response type and status code, with optional response parameters and mapping templates.</p>
 #[non_exhaustive]
@@ -3023,6 +3035,13 @@ impl aws_http::request_id::RequestId for UpdateGatewayResponseOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdateGatewayResponseOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateGatewayResponseOutput`](crate::output::UpdateGatewayResponseOutput).
+    pub fn builder() -> crate::output::update_gateway_response_output::Builder {
+        crate::output::update_gateway_response_output::Builder::default()
+    }
+}
+
 /// See [`UpdateGatewayResponseOutput`](crate::output::UpdateGatewayResponseOutput).
 pub mod update_gateway_response_output {
 
@@ -3145,12 +3164,6 @@ pub mod update_gateway_response_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl UpdateGatewayResponseOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateGatewayResponseOutput`](crate::output::UpdateGatewayResponseOutput).
-    pub fn builder() -> crate::output::update_gateway_response_output::Builder {
-        crate::output::update_gateway_response_output::Builder::default()
     }
 }
 
@@ -3294,6 +3307,13 @@ impl aws_http::request_id::RequestId for UpdateDomainNameOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdateDomainNameOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateDomainNameOutput`](crate::output::UpdateDomainNameOutput).
+    pub fn builder() -> crate::output::update_domain_name_output::Builder {
+        crate::output::update_domain_name_output::Builder::default()
+    }
+}
+
 /// See [`UpdateDomainNameOutput`](crate::output::UpdateDomainNameOutput).
 pub mod update_domain_name_output {
 
@@ -3600,12 +3620,6 @@ pub mod update_domain_name_output {
         }
     }
 }
-impl UpdateDomainNameOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateDomainNameOutput`](crate::output::UpdateDomainNameOutput).
-    pub fn builder() -> crate::output::update_domain_name_output::Builder {
-        crate::output::update_domain_name_output::Builder::default()
-    }
-}
 
 /// <p>A snapshot of the documentation of an API.</p>
 #[non_exhaustive]
@@ -3641,6 +3655,13 @@ impl aws_http::request_id::RequestId for UpdateDocumentationVersionOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdateDocumentationVersionOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateDocumentationVersionOutput`](crate::output::UpdateDocumentationVersionOutput).
+    pub fn builder() -> crate::output::update_documentation_version_output::Builder {
+        crate::output::update_documentation_version_output::Builder::default()
+    }
+}
+
 /// See [`UpdateDocumentationVersionOutput`](crate::output::UpdateDocumentationVersionOutput).
 pub mod update_documentation_version_output {
 
@@ -3707,12 +3728,6 @@ pub mod update_documentation_version_output {
         }
     }
 }
-impl UpdateDocumentationVersionOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateDocumentationVersionOutput`](crate::output::UpdateDocumentationVersionOutput).
-    pub fn builder() -> crate::output::update_documentation_version_output::Builder {
-        crate::output::update_documentation_version_output::Builder::default()
-    }
-}
 
 /// <p>A documentation part for a targeted API entity.</p>
 #[non_exhaustive]
@@ -3748,6 +3763,13 @@ impl aws_http::request_id::RequestId for UpdateDocumentationPartOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdateDocumentationPartOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateDocumentationPartOutput`](crate::output::UpdateDocumentationPartOutput).
+    pub fn builder() -> crate::output::update_documentation_part_output::Builder {
+        crate::output::update_documentation_part_output::Builder::default()
+    }
+}
+
 /// See [`UpdateDocumentationPartOutput`](crate::output::UpdateDocumentationPartOutput).
 pub mod update_documentation_part_output {
 
@@ -3814,12 +3836,6 @@ pub mod update_documentation_part_output {
         }
     }
 }
-impl UpdateDocumentationPartOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateDocumentationPartOutput`](crate::output::UpdateDocumentationPartOutput).
-    pub fn builder() -> crate::output::update_documentation_part_output::Builder {
-        crate::output::update_documentation_part_output::Builder::default()
-    }
-}
 
 /// <p>An immutable representation of a RestApi resource that can be called by users using Stages. A deployment must be associated with a Stage for it to be callable over the Internet.</p>
 #[non_exhaustive]
@@ -3874,6 +3890,13 @@ impl aws_http::request_id::RequestId for UpdateDeploymentOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdateDeploymentOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateDeploymentOutput`](crate::output::UpdateDeploymentOutput).
+    pub fn builder() -> crate::output::update_deployment_output::Builder {
+        crate::output::update_deployment_output::Builder::default()
+    }
+}
+
 /// See [`UpdateDeploymentOutput`](crate::output::UpdateDeploymentOutput).
 pub mod update_deployment_output {
 
@@ -3975,12 +3998,6 @@ pub mod update_deployment_output {
         }
     }
 }
-impl UpdateDeploymentOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateDeploymentOutput`](crate::output::UpdateDeploymentOutput).
-    pub fn builder() -> crate::output::update_deployment_output::Builder {
-        crate::output::update_deployment_output::Builder::default()
-    }
-}
 
 /// <p>Represents a client certificate used to configure client-side SSL authentication while sending requests to the integration endpoint.</p>
 #[non_exhaustive]
@@ -4041,6 +4058,13 @@ impl aws_http::request_id::RequestId for UpdateClientCertificateOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdateClientCertificateOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateClientCertificateOutput`](crate::output::UpdateClientCertificateOutput).
+    pub fn builder() -> crate::output::update_client_certificate_output::Builder {
+        crate::output::update_client_certificate_output::Builder::default()
+    }
+}
+
 /// See [`UpdateClientCertificateOutput`](crate::output::UpdateClientCertificateOutput).
 pub mod update_client_certificate_output {
 
@@ -4169,12 +4193,6 @@ pub mod update_client_certificate_output {
         }
     }
 }
-impl UpdateClientCertificateOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateClientCertificateOutput`](crate::output::UpdateClientCertificateOutput).
-    pub fn builder() -> crate::output::update_client_certificate_output::Builder {
-        crate::output::update_client_certificate_output::Builder::default()
-    }
-}
 
 /// <p>Represents the base path that callers of the API must provide as part of the URL after the domain name.</p>
 #[non_exhaustive]
@@ -4210,6 +4228,13 @@ impl aws_http::request_id::RequestId for UpdateBasePathMappingOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdateBasePathMappingOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateBasePathMappingOutput`](crate::output::UpdateBasePathMappingOutput).
+    pub fn builder() -> crate::output::update_base_path_mapping_output::Builder {
+        crate::output::update_base_path_mapping_output::Builder::default()
+    }
+}
+
 /// See [`UpdateBasePathMappingOutput`](crate::output::UpdateBasePathMappingOutput).
 pub mod update_base_path_mapping_output {
 
@@ -4271,12 +4296,6 @@ pub mod update_base_path_mapping_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl UpdateBasePathMappingOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateBasePathMappingOutput`](crate::output::UpdateBasePathMappingOutput).
-    pub fn builder() -> crate::output::update_base_path_mapping_output::Builder {
-        crate::output::update_base_path_mapping_output::Builder::default()
     }
 }
 
@@ -4363,6 +4382,13 @@ impl aws_http::request_id::RequestId for UpdateAuthorizerOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdateAuthorizerOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateAuthorizerOutput`](crate::output::UpdateAuthorizerOutput).
+    pub fn builder() -> crate::output::update_authorizer_output::Builder {
+        crate::output::update_authorizer_output::Builder::default()
+    }
+}
+
 /// See [`UpdateAuthorizerOutput`](crate::output::UpdateAuthorizerOutput).
 pub mod update_authorizer_output {
 
@@ -4540,12 +4566,6 @@ pub mod update_authorizer_output {
         }
     }
 }
-impl UpdateAuthorizerOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateAuthorizerOutput`](crate::output::UpdateAuthorizerOutput).
-    pub fn builder() -> crate::output::update_authorizer_output::Builder {
-        crate::output::update_authorizer_output::Builder::default()
-    }
-}
 
 /// <p>A resource that can be distributed to callers for executing Method resources that require an API key. API keys can be mapped to any Stage on any RestApi, which indicates that the callers with the API key can make requests to that stage.</p>
 #[non_exhaustive]
@@ -4634,6 +4654,13 @@ impl aws_http::request_id::RequestId for UpdateApiKeyOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdateApiKeyOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateApiKeyOutput`](crate::output::UpdateApiKeyOutput).
+    pub fn builder() -> crate::output::update_api_key_output::Builder {
+        crate::output::update_api_key_output::Builder::default()
+    }
+}
+
 /// See [`UpdateApiKeyOutput`](crate::output::UpdateApiKeyOutput).
 pub mod update_api_key_output {
 
@@ -4813,12 +4840,6 @@ pub mod update_api_key_output {
         }
     }
 }
-impl UpdateApiKeyOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateApiKeyOutput`](crate::output::UpdateApiKeyOutput).
-    pub fn builder() -> crate::output::update_api_key_output::Builder {
-        crate::output::update_api_key_output::Builder::default()
-    }
-}
 
 /// <p>Represents an AWS account that is associated with API Gateway.</p>
 #[non_exhaustive]
@@ -4861,6 +4882,13 @@ impl aws_http::request_id::RequestId for UpdateAccountOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdateAccountOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateAccountOutput`](crate::output::UpdateAccountOutput).
+    pub fn builder() -> crate::output::update_account_output::Builder {
+        crate::output::update_account_output::Builder::default()
+    }
+}
+
 /// See [`UpdateAccountOutput`](crate::output::UpdateAccountOutput).
 pub mod update_account_output {
 
@@ -4954,12 +4982,6 @@ pub mod update_account_output {
         }
     }
 }
-impl UpdateAccountOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateAccountOutput`](crate::output::UpdateAccountOutput).
-    pub fn builder() -> crate::output::update_account_output::Builder {
-        crate::output::update_account_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -4972,6 +4994,13 @@ impl aws_http::request_id::RequestId for UntagResourceOutput {
         self._request_id.as_deref()
     }
 }
+impl UntagResourceOutput {
+    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    pub fn builder() -> crate::output::untag_resource_output::Builder {
+        crate::output::untag_resource_output::Builder::default()
+    }
+}
+
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
 
@@ -4997,12 +5026,6 @@ pub mod untag_resource_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl UntagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
-    pub fn builder() -> crate::output::untag_resource_output::Builder {
-        crate::output::untag_resource_output::Builder::default()
     }
 }
 
@@ -5071,6 +5094,13 @@ impl aws_http::request_id::RequestId for TestInvokeMethodOutput {
         self._request_id.as_deref()
     }
 }
+impl TestInvokeMethodOutput {
+    /// Creates a new builder-style object to manufacture [`TestInvokeMethodOutput`](crate::output::TestInvokeMethodOutput).
+    pub fn builder() -> crate::output::test_invoke_method_output::Builder {
+        crate::output::test_invoke_method_output::Builder::default()
+    }
+}
+
 /// See [`TestInvokeMethodOutput`](crate::output::TestInvokeMethodOutput).
 pub mod test_invoke_method_output {
 
@@ -5204,12 +5234,6 @@ pub mod test_invoke_method_output {
         }
     }
 }
-impl TestInvokeMethodOutput {
-    /// Creates a new builder-style object to manufacture [`TestInvokeMethodOutput`](crate::output::TestInvokeMethodOutput).
-    pub fn builder() -> crate::output::test_invoke_method_output::Builder {
-        crate::output::test_invoke_method_output::Builder::default()
-    }
-}
 
 /// <p>Represents the response of the test invoke request for a custom Authorizer</p>
 #[non_exhaustive]
@@ -5283,6 +5307,13 @@ impl aws_http::request_id::RequestId for TestInvokeAuthorizerOutput {
         self._request_id.as_deref()
     }
 }
+impl TestInvokeAuthorizerOutput {
+    /// Creates a new builder-style object to manufacture [`TestInvokeAuthorizerOutput`](crate::output::TestInvokeAuthorizerOutput).
+    pub fn builder() -> crate::output::test_invoke_authorizer_output::Builder {
+        crate::output::test_invoke_authorizer_output::Builder::default()
+    }
+}
+
 /// See [`TestInvokeAuthorizerOutput`](crate::output::TestInvokeAuthorizerOutput).
 pub mod test_invoke_authorizer_output {
 
@@ -5428,12 +5459,6 @@ pub mod test_invoke_authorizer_output {
         }
     }
 }
-impl TestInvokeAuthorizerOutput {
-    /// Creates a new builder-style object to manufacture [`TestInvokeAuthorizerOutput`](crate::output::TestInvokeAuthorizerOutput).
-    pub fn builder() -> crate::output::test_invoke_authorizer_output::Builder {
-        crate::output::test_invoke_authorizer_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -5446,6 +5471,13 @@ impl aws_http::request_id::RequestId for TagResourceOutput {
         self._request_id.as_deref()
     }
 }
+impl TagResourceOutput {
+    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
+    pub fn builder() -> crate::output::tag_resource_output::Builder {
+        crate::output::tag_resource_output::Builder::default()
+    }
+}
+
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
 
@@ -5471,12 +5503,6 @@ pub mod tag_resource_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl TagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
-    pub fn builder() -> crate::output::tag_resource_output::Builder {
-        crate::output::tag_resource_output::Builder::default()
     }
 }
 
@@ -5590,6 +5616,13 @@ impl aws_http::request_id::RequestId for PutRestApiOutput {
         self._request_id.as_deref()
     }
 }
+impl PutRestApiOutput {
+    /// Creates a new builder-style object to manufacture [`PutRestApiOutput`](crate::output::PutRestApiOutput).
+    pub fn builder() -> crate::output::put_rest_api_output::Builder {
+        crate::output::put_rest_api_output::Builder::default()
+    }
+}
+
 /// See [`PutRestApiOutput`](crate::output::PutRestApiOutput).
 pub mod put_rest_api_output {
 
@@ -5823,12 +5856,6 @@ pub mod put_rest_api_output {
         }
     }
 }
-impl PutRestApiOutput {
-    /// Creates a new builder-style object to manufacture [`PutRestApiOutput`](crate::output::PutRestApiOutput).
-    pub fn builder() -> crate::output::put_rest_api_output::Builder {
-        crate::output::put_rest_api_output::Builder::default()
-    }
-}
 
 /// <p>Represents a method response of a given HTTP status code returned to the client. The method response is passed from the back end through the associated integration response that can be transformed using a mapping template. </p>
 #[non_exhaustive]
@@ -5871,6 +5898,13 @@ impl aws_http::request_id::RequestId for PutMethodResponseOutput {
         self._request_id.as_deref()
     }
 }
+impl PutMethodResponseOutput {
+    /// Creates a new builder-style object to manufacture [`PutMethodResponseOutput`](crate::output::PutMethodResponseOutput).
+    pub fn builder() -> crate::output::put_method_response_output::Builder {
+        crate::output::put_method_response_output::Builder::default()
+    }
+}
+
 /// See [`PutMethodResponseOutput`](crate::output::PutMethodResponseOutput).
 pub mod put_method_response_output {
 
@@ -5959,12 +5993,6 @@ pub mod put_method_response_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl PutMethodResponseOutput {
-    /// Creates a new builder-style object to manufacture [`PutMethodResponseOutput`](crate::output::PutMethodResponseOutput).
-    pub fn builder() -> crate::output::put_method_response_output::Builder {
-        crate::output::put_method_response_output::Builder::default()
     }
 }
 
@@ -6071,6 +6099,13 @@ impl aws_http::request_id::RequestId for PutMethodOutput {
         self._request_id.as_deref()
     }
 }
+impl PutMethodOutput {
+    /// Creates a new builder-style object to manufacture [`PutMethodOutput`](crate::output::PutMethodOutput).
+    pub fn builder() -> crate::output::put_method_output::Builder {
+        crate::output::put_method_output::Builder::default()
+    }
+}
+
 /// See [`PutMethodOutput`](crate::output::PutMethodOutput).
 pub mod put_method_output {
 
@@ -6298,12 +6333,6 @@ pub mod put_method_output {
         }
     }
 }
-impl PutMethodOutput {
-    /// Creates a new builder-style object to manufacture [`PutMethodOutput`](crate::output::PutMethodOutput).
-    pub fn builder() -> crate::output::put_method_output::Builder {
-        crate::output::put_method_output::Builder::default()
-    }
-}
 
 /// <p>Represents an integration response. The status code must map to an existing MethodResponse, and parameters and templates can be used to transform the back-end response.</p>
 #[non_exhaustive]
@@ -6363,6 +6392,13 @@ impl aws_http::request_id::RequestId for PutIntegrationResponseOutput {
         self._request_id.as_deref()
     }
 }
+impl PutIntegrationResponseOutput {
+    /// Creates a new builder-style object to manufacture [`PutIntegrationResponseOutput`](crate::output::PutIntegrationResponseOutput).
+    pub fn builder() -> crate::output::put_integration_response_output::Builder {
+        crate::output::put_integration_response_output::Builder::default()
+    }
+}
+
 /// See [`PutIntegrationResponseOutput`](crate::output::PutIntegrationResponseOutput).
 pub mod put_integration_response_output {
 
@@ -6490,12 +6526,6 @@ pub mod put_integration_response_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl PutIntegrationResponseOutput {
-    /// Creates a new builder-style object to manufacture [`PutIntegrationResponseOutput`](crate::output::PutIntegrationResponseOutput).
-    pub fn builder() -> crate::output::put_integration_response_output::Builder {
-        crate::output::put_integration_response_output::Builder::default()
     }
 }
 
@@ -6637,6 +6667,13 @@ impl aws_http::request_id::RequestId for PutIntegrationOutput {
         self._request_id.as_deref()
     }
 }
+impl PutIntegrationOutput {
+    /// Creates a new builder-style object to manufacture [`PutIntegrationOutput`](crate::output::PutIntegrationOutput).
+    pub fn builder() -> crate::output::put_integration_output::Builder {
+        crate::output::put_integration_output::Builder::default()
+    }
+}
+
 /// See [`PutIntegrationOutput`](crate::output::PutIntegrationOutput).
 pub mod put_integration_output {
 
@@ -6931,12 +6968,6 @@ pub mod put_integration_output {
         }
     }
 }
-impl PutIntegrationOutput {
-    /// Creates a new builder-style object to manufacture [`PutIntegrationOutput`](crate::output::PutIntegrationOutput).
-    pub fn builder() -> crate::output::put_integration_output::Builder {
-        crate::output::put_integration_output::Builder::default()
-    }
-}
 
 /// <p>A gateway response of a given response type and status code, with optional response parameters and mapping templates.</p>
 #[non_exhaustive]
@@ -6994,6 +7025,13 @@ impl aws_http::request_id::RequestId for PutGatewayResponseOutput {
         self._request_id.as_deref()
     }
 }
+impl PutGatewayResponseOutput {
+    /// Creates a new builder-style object to manufacture [`PutGatewayResponseOutput`](crate::output::PutGatewayResponseOutput).
+    pub fn builder() -> crate::output::put_gateway_response_output::Builder {
+        crate::output::put_gateway_response_output::Builder::default()
+    }
+}
+
 /// See [`PutGatewayResponseOutput`](crate::output::PutGatewayResponseOutput).
 pub mod put_gateway_response_output {
 
@@ -7118,12 +7156,6 @@ pub mod put_gateway_response_output {
         }
     }
 }
-impl PutGatewayResponseOutput {
-    /// Creates a new builder-style object to manufacture [`PutGatewayResponseOutput`](crate::output::PutGatewayResponseOutput).
-    pub fn builder() -> crate::output::put_gateway_response_output::Builder {
-        crate::output::put_gateway_response_output::Builder::default()
-    }
-}
 
 /// <p>Represents a REST API.</p>
 #[non_exhaustive]
@@ -7235,6 +7267,13 @@ impl aws_http::request_id::RequestId for ImportRestApiOutput {
         self._request_id.as_deref()
     }
 }
+impl ImportRestApiOutput {
+    /// Creates a new builder-style object to manufacture [`ImportRestApiOutput`](crate::output::ImportRestApiOutput).
+    pub fn builder() -> crate::output::import_rest_api_output::Builder {
+        crate::output::import_rest_api_output::Builder::default()
+    }
+}
+
 /// See [`ImportRestApiOutput`](crate::output::ImportRestApiOutput).
 pub mod import_rest_api_output {
 
@@ -7468,12 +7507,6 @@ pub mod import_rest_api_output {
         }
     }
 }
-impl ImportRestApiOutput {
-    /// Creates a new builder-style object to manufacture [`ImportRestApiOutput`](crate::output::ImportRestApiOutput).
-    pub fn builder() -> crate::output::import_rest_api_output::Builder {
-        crate::output::import_rest_api_output::Builder::default()
-    }
-}
 
 /// <p>A collection of the imported DocumentationPart identifiers.</p>
 #[non_exhaustive]
@@ -7502,6 +7535,13 @@ impl aws_http::request_id::RequestId for ImportDocumentationPartsOutput {
         self._request_id.as_deref()
     }
 }
+impl ImportDocumentationPartsOutput {
+    /// Creates a new builder-style object to manufacture [`ImportDocumentationPartsOutput`](crate::output::ImportDocumentationPartsOutput).
+    pub fn builder() -> crate::output::import_documentation_parts_output::Builder {
+        crate::output::import_documentation_parts_output::Builder::default()
+    }
+}
+
 /// See [`ImportDocumentationPartsOutput`](crate::output::ImportDocumentationPartsOutput).
 pub mod import_documentation_parts_output {
 
@@ -7571,12 +7611,6 @@ pub mod import_documentation_parts_output {
         }
     }
 }
-impl ImportDocumentationPartsOutput {
-    /// Creates a new builder-style object to manufacture [`ImportDocumentationPartsOutput`](crate::output::ImportDocumentationPartsOutput).
-    pub fn builder() -> crate::output::import_documentation_parts_output::Builder {
-        crate::output::import_documentation_parts_output::Builder::default()
-    }
-}
 
 /// <p>The identifier of an ApiKey used in a UsagePlan.</p>
 #[non_exhaustive]
@@ -7605,6 +7639,13 @@ impl aws_http::request_id::RequestId for ImportApiKeysOutput {
         self._request_id.as_deref()
     }
 }
+impl ImportApiKeysOutput {
+    /// Creates a new builder-style object to manufacture [`ImportApiKeysOutput`](crate::output::ImportApiKeysOutput).
+    pub fn builder() -> crate::output::import_api_keys_output::Builder {
+        crate::output::import_api_keys_output::Builder::default()
+    }
+}
+
 /// See [`ImportApiKeysOutput`](crate::output::ImportApiKeysOutput).
 pub mod import_api_keys_output {
 
@@ -7674,12 +7715,6 @@ pub mod import_api_keys_output {
         }
     }
 }
-impl ImportApiKeysOutput {
-    /// Creates a new builder-style object to manufacture [`ImportApiKeysOutput`](crate::output::ImportApiKeysOutput).
-    pub fn builder() -> crate::output::import_api_keys_output::Builder {
-        crate::output::import_api_keys_output::Builder::default()
-    }
-}
 
 /// <p>The collection of VPC links under the caller's account in a region.</p>
 #[non_exhaustive]
@@ -7708,6 +7743,13 @@ impl aws_http::request_id::RequestId for GetVpcLinksOutput {
         self._request_id.as_deref()
     }
 }
+impl GetVpcLinksOutput {
+    /// Creates a new builder-style object to manufacture [`GetVpcLinksOutput`](crate::output::GetVpcLinksOutput).
+    pub fn builder() -> crate::output::get_vpc_links_output::Builder {
+        crate::output::get_vpc_links_output::Builder::default()
+    }
+}
+
 /// See [`GetVpcLinksOutput`](crate::output::GetVpcLinksOutput).
 pub mod get_vpc_links_output {
 
@@ -7766,12 +7808,6 @@ pub mod get_vpc_links_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl GetVpcLinksOutput {
-    /// Creates a new builder-style object to manufacture [`GetVpcLinksOutput`](crate::output::GetVpcLinksOutput).
-    pub fn builder() -> crate::output::get_vpc_links_output::Builder {
-        crate::output::get_vpc_links_output::Builder::default()
     }
 }
 
@@ -7841,6 +7877,13 @@ impl aws_http::request_id::RequestId for GetVpcLinkOutput {
         self._request_id.as_deref()
     }
 }
+impl GetVpcLinkOutput {
+    /// Creates a new builder-style object to manufacture [`GetVpcLinkOutput`](crate::output::GetVpcLinkOutput).
+    pub fn builder() -> crate::output::get_vpc_link_output::Builder {
+        crate::output::get_vpc_link_output::Builder::default()
+    }
+}
+
 /// See [`GetVpcLinkOutput`](crate::output::GetVpcLinkOutput).
 pub mod get_vpc_link_output {
 
@@ -7984,12 +8027,6 @@ pub mod get_vpc_link_output {
         }
     }
 }
-impl GetVpcLinkOutput {
-    /// Creates a new builder-style object to manufacture [`GetVpcLinkOutput`](crate::output::GetVpcLinkOutput).
-    pub fn builder() -> crate::output::get_vpc_link_output::Builder {
-        crate::output::get_vpc_link_output::Builder::default()
-    }
-}
 
 /// <p>Represents a collection of usage plans for an AWS account.</p>
 #[non_exhaustive]
@@ -8018,6 +8055,13 @@ impl aws_http::request_id::RequestId for GetUsagePlansOutput {
         self._request_id.as_deref()
     }
 }
+impl GetUsagePlansOutput {
+    /// Creates a new builder-style object to manufacture [`GetUsagePlansOutput`](crate::output::GetUsagePlansOutput).
+    pub fn builder() -> crate::output::get_usage_plans_output::Builder {
+        crate::output::get_usage_plans_output::Builder::default()
+    }
+}
+
 /// See [`GetUsagePlansOutput`](crate::output::GetUsagePlansOutput).
 pub mod get_usage_plans_output {
 
@@ -8078,12 +8122,6 @@ pub mod get_usage_plans_output {
         }
     }
 }
-impl GetUsagePlansOutput {
-    /// Creates a new builder-style object to manufacture [`GetUsagePlansOutput`](crate::output::GetUsagePlansOutput).
-    pub fn builder() -> crate::output::get_usage_plans_output::Builder {
-        crate::output::get_usage_plans_output::Builder::default()
-    }
-}
 
 /// <p>Represents the collection of usage plan keys added to usage plans for the associated API keys and, possibly, other types of keys.</p>
 #[non_exhaustive]
@@ -8112,6 +8150,13 @@ impl aws_http::request_id::RequestId for GetUsagePlanKeysOutput {
         self._request_id.as_deref()
     }
 }
+impl GetUsagePlanKeysOutput {
+    /// Creates a new builder-style object to manufacture [`GetUsagePlanKeysOutput`](crate::output::GetUsagePlanKeysOutput).
+    pub fn builder() -> crate::output::get_usage_plan_keys_output::Builder {
+        crate::output::get_usage_plan_keys_output::Builder::default()
+    }
+}
+
 /// See [`GetUsagePlanKeysOutput`](crate::output::GetUsagePlanKeysOutput).
 pub mod get_usage_plan_keys_output {
 
@@ -8172,12 +8217,6 @@ pub mod get_usage_plan_keys_output {
         }
     }
 }
-impl GetUsagePlanKeysOutput {
-    /// Creates a new builder-style object to manufacture [`GetUsagePlanKeysOutput`](crate::output::GetUsagePlanKeysOutput).
-    pub fn builder() -> crate::output::get_usage_plan_keys_output::Builder {
-        crate::output::get_usage_plan_keys_output::Builder::default()
-    }
-}
 
 /// <p>Represents a usage plan key to identify a plan customer.</p>
 #[non_exhaustive]
@@ -8220,6 +8259,13 @@ impl aws_http::request_id::RequestId for GetUsagePlanKeyOutput {
         self._request_id.as_deref()
     }
 }
+impl GetUsagePlanKeyOutput {
+    /// Creates a new builder-style object to manufacture [`GetUsagePlanKeyOutput`](crate::output::GetUsagePlanKeyOutput).
+    pub fn builder() -> crate::output::get_usage_plan_key_output::Builder {
+        crate::output::get_usage_plan_key_output::Builder::default()
+    }
+}
+
 /// See [`GetUsagePlanKeyOutput`](crate::output::GetUsagePlanKeyOutput).
 pub mod get_usage_plan_key_output {
 
@@ -8293,12 +8339,6 @@ pub mod get_usage_plan_key_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl GetUsagePlanKeyOutput {
-    /// Creates a new builder-style object to manufacture [`GetUsagePlanKeyOutput`](crate::output::GetUsagePlanKeyOutput).
-    pub fn builder() -> crate::output::get_usage_plan_key_output::Builder {
-        crate::output::get_usage_plan_key_output::Builder::default()
     }
 }
 
@@ -8375,6 +8415,13 @@ impl aws_http::request_id::RequestId for GetUsagePlanOutput {
         self._request_id.as_deref()
     }
 }
+impl GetUsagePlanOutput {
+    /// Creates a new builder-style object to manufacture [`GetUsagePlanOutput`](crate::output::GetUsagePlanOutput).
+    pub fn builder() -> crate::output::get_usage_plan_output::Builder {
+        crate::output::get_usage_plan_output::Builder::default()
+    }
+}
+
 /// See [`GetUsagePlanOutput`](crate::output::GetUsagePlanOutput).
 pub mod get_usage_plan_output {
 
@@ -8530,12 +8577,6 @@ pub mod get_usage_plan_output {
         }
     }
 }
-impl GetUsagePlanOutput {
-    /// Creates a new builder-style object to manufacture [`GetUsagePlanOutput`](crate::output::GetUsagePlanOutput).
-    pub fn builder() -> crate::output::get_usage_plan_output::Builder {
-        crate::output::get_usage_plan_output::Builder::default()
-    }
-}
 
 /// <p>Represents the usage data of a usage plan.</p>
 #[non_exhaustive]
@@ -8591,6 +8632,13 @@ impl aws_http::request_id::RequestId for GetUsageOutput {
         self._request_id.as_deref()
     }
 }
+impl GetUsageOutput {
+    /// Creates a new builder-style object to manufacture [`GetUsageOutput`](crate::output::GetUsageOutput).
+    pub fn builder() -> crate::output::get_usage_output::Builder {
+        crate::output::get_usage_output::Builder::default()
+    }
+}
+
 /// See [`GetUsageOutput`](crate::output::GetUsageOutput).
 pub mod get_usage_output {
 
@@ -8698,12 +8746,6 @@ pub mod get_usage_output {
         }
     }
 }
-impl GetUsageOutput {
-    /// Creates a new builder-style object to manufacture [`GetUsageOutput`](crate::output::GetUsageOutput).
-    pub fn builder() -> crate::output::get_usage_output::Builder {
-        crate::output::get_usage_output::Builder::default()
-    }
-}
 
 /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
 #[non_exhaustive]
@@ -8729,6 +8771,13 @@ impl aws_http::request_id::RequestId for GetTagsOutput {
         self._request_id.as_deref()
     }
 }
+impl GetTagsOutput {
+    /// Creates a new builder-style object to manufacture [`GetTagsOutput`](crate::output::GetTagsOutput).
+    pub fn builder() -> crate::output::get_tags_output::Builder {
+        crate::output::get_tags_output::Builder::default()
+    }
+}
+
 /// See [`GetTagsOutput`](crate::output::GetTagsOutput).
 pub mod get_tags_output {
 
@@ -8785,12 +8834,6 @@ pub mod get_tags_output {
         }
     }
 }
-impl GetTagsOutput {
-    /// Creates a new builder-style object to manufacture [`GetTagsOutput`](crate::output::GetTagsOutput).
-    pub fn builder() -> crate::output::get_tags_output::Builder {
-        crate::output::get_tags_output::Builder::default()
-    }
-}
 
 /// <p>A list of Stage resources that are associated with the ApiKey resource.</p>
 #[non_exhaustive]
@@ -8812,6 +8855,13 @@ impl aws_http::request_id::RequestId for GetStagesOutput {
         self._request_id.as_deref()
     }
 }
+impl GetStagesOutput {
+    /// Creates a new builder-style object to manufacture [`GetStagesOutput`](crate::output::GetStagesOutput).
+    pub fn builder() -> crate::output::get_stages_output::Builder {
+        crate::output::get_stages_output::Builder::default()
+    }
+}
+
 /// See [`GetStagesOutput`](crate::output::GetStagesOutput).
 pub mod get_stages_output {
 
@@ -8858,12 +8908,6 @@ pub mod get_stages_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl GetStagesOutput {
-    /// Creates a new builder-style object to manufacture [`GetStagesOutput`](crate::output::GetStagesOutput).
-    pub fn builder() -> crate::output::get_stages_output::Builder {
-        crate::output::get_stages_output::Builder::default()
     }
 }
 
@@ -9013,6 +9057,13 @@ impl aws_http::request_id::RequestId for GetStageOutput {
         self._request_id.as_deref()
     }
 }
+impl GetStageOutput {
+    /// Creates a new builder-style object to manufacture [`GetStageOutput`](crate::output::GetStageOutput).
+    pub fn builder() -> crate::output::get_stage_output::Builder {
+        crate::output::get_stage_output::Builder::default()
+    }
+}
+
 /// See [`GetStageOutput`](crate::output::GetStageOutput).
 pub mod get_stage_output {
 
@@ -9322,12 +9373,6 @@ pub mod get_stage_output {
         }
     }
 }
-impl GetStageOutput {
-    /// Creates a new builder-style object to manufacture [`GetStageOutput`](crate::output::GetStageOutput).
-    pub fn builder() -> crate::output::get_stage_output::Builder {
-        crate::output::get_stage_output::Builder::default()
-    }
-}
 
 /// <p>The collection of SdkType instances.</p>
 #[non_exhaustive]
@@ -9349,6 +9394,13 @@ impl aws_http::request_id::RequestId for GetSdkTypesOutput {
         self._request_id.as_deref()
     }
 }
+impl GetSdkTypesOutput {
+    /// Creates a new builder-style object to manufacture [`GetSdkTypesOutput`](crate::output::GetSdkTypesOutput).
+    pub fn builder() -> crate::output::get_sdk_types_output::Builder {
+        crate::output::get_sdk_types_output::Builder::default()
+    }
+}
+
 /// See [`GetSdkTypesOutput`](crate::output::GetSdkTypesOutput).
 pub mod get_sdk_types_output {
 
@@ -9397,12 +9449,6 @@ pub mod get_sdk_types_output {
         }
     }
 }
-impl GetSdkTypesOutput {
-    /// Creates a new builder-style object to manufacture [`GetSdkTypesOutput`](crate::output::GetSdkTypesOutput).
-    pub fn builder() -> crate::output::get_sdk_types_output::Builder {
-        crate::output::get_sdk_types_output::Builder::default()
-    }
-}
 
 /// <p>A type of SDK that API Gateway can generate.</p>
 #[non_exhaustive]
@@ -9448,6 +9494,13 @@ impl aws_http::request_id::RequestId for GetSdkTypeOutput {
         self._request_id.as_deref()
     }
 }
+impl GetSdkTypeOutput {
+    /// Creates a new builder-style object to manufacture [`GetSdkTypeOutput`](crate::output::GetSdkTypeOutput).
+    pub fn builder() -> crate::output::get_sdk_type_output::Builder {
+        crate::output::get_sdk_type_output::Builder::default()
+    }
+}
+
 /// See [`GetSdkTypeOutput`](crate::output::GetSdkTypeOutput).
 pub mod get_sdk_type_output {
 
@@ -9539,12 +9592,6 @@ pub mod get_sdk_type_output {
         }
     }
 }
-impl GetSdkTypeOutput {
-    /// Creates a new builder-style object to manufacture [`GetSdkTypeOutput`](crate::output::GetSdkTypeOutput).
-    pub fn builder() -> crate::output::get_sdk_type_output::Builder {
-        crate::output::get_sdk_type_output::Builder::default()
-    }
-}
 
 /// <p>The binary blob response to GetSdk, which contains the generated SDK.</p>
 #[non_exhaustive]
@@ -9580,6 +9627,13 @@ impl aws_http::request_id::RequestId for GetSdkOutput {
         self._request_id.as_deref()
     }
 }
+impl GetSdkOutput {
+    /// Creates a new builder-style object to manufacture [`GetSdkOutput`](crate::output::GetSdkOutput).
+    pub fn builder() -> crate::output::get_sdk_output::Builder {
+        crate::output::get_sdk_output::Builder::default()
+    }
+}
+
 /// See [`GetSdkOutput`](crate::output::GetSdkOutput).
 pub mod get_sdk_output {
 
@@ -9646,12 +9700,6 @@ pub mod get_sdk_output {
         }
     }
 }
-impl GetSdkOutput {
-    /// Creates a new builder-style object to manufacture [`GetSdkOutput`](crate::output::GetSdkOutput).
-    pub fn builder() -> crate::output::get_sdk_output::Builder {
-        crate::output::get_sdk_output::Builder::default()
-    }
-}
 
 /// <p>Contains references to your APIs and links that guide you in how to interact with your collection. A collection offers a paginated view of your APIs.</p>
 #[non_exhaustive]
@@ -9680,6 +9728,13 @@ impl aws_http::request_id::RequestId for GetRestApisOutput {
         self._request_id.as_deref()
     }
 }
+impl GetRestApisOutput {
+    /// Creates a new builder-style object to manufacture [`GetRestApisOutput`](crate::output::GetRestApisOutput).
+    pub fn builder() -> crate::output::get_rest_apis_output::Builder {
+        crate::output::get_rest_apis_output::Builder::default()
+    }
+}
+
 /// See [`GetRestApisOutput`](crate::output::GetRestApisOutput).
 pub mod get_rest_apis_output {
 
@@ -9738,12 +9793,6 @@ pub mod get_rest_apis_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl GetRestApisOutput {
-    /// Creates a new builder-style object to manufacture [`GetRestApisOutput`](crate::output::GetRestApisOutput).
-    pub fn builder() -> crate::output::get_rest_apis_output::Builder {
-        crate::output::get_rest_apis_output::Builder::default()
     }
 }
 
@@ -9857,6 +9906,13 @@ impl aws_http::request_id::RequestId for GetRestApiOutput {
         self._request_id.as_deref()
     }
 }
+impl GetRestApiOutput {
+    /// Creates a new builder-style object to manufacture [`GetRestApiOutput`](crate::output::GetRestApiOutput).
+    pub fn builder() -> crate::output::get_rest_api_output::Builder {
+        crate::output::get_rest_api_output::Builder::default()
+    }
+}
+
 /// See [`GetRestApiOutput`](crate::output::GetRestApiOutput).
 pub mod get_rest_api_output {
 
@@ -10090,12 +10146,6 @@ pub mod get_rest_api_output {
         }
     }
 }
-impl GetRestApiOutput {
-    /// Creates a new builder-style object to manufacture [`GetRestApiOutput`](crate::output::GetRestApiOutput).
-    pub fn builder() -> crate::output::get_rest_api_output::Builder {
-        crate::output::get_rest_api_output::Builder::default()
-    }
-}
 
 /// <p>Represents a collection of Resource resources.</p>
 #[non_exhaustive]
@@ -10124,6 +10174,13 @@ impl aws_http::request_id::RequestId for GetResourcesOutput {
         self._request_id.as_deref()
     }
 }
+impl GetResourcesOutput {
+    /// Creates a new builder-style object to manufacture [`GetResourcesOutput`](crate::output::GetResourcesOutput).
+    pub fn builder() -> crate::output::get_resources_output::Builder {
+        crate::output::get_resources_output::Builder::default()
+    }
+}
+
 /// See [`GetResourcesOutput`](crate::output::GetResourcesOutput).
 pub mod get_resources_output {
 
@@ -10184,12 +10241,6 @@ pub mod get_resources_output {
         }
     }
 }
-impl GetResourcesOutput {
-    /// Creates a new builder-style object to manufacture [`GetResourcesOutput`](crate::output::GetResourcesOutput).
-    pub fn builder() -> crate::output::get_resources_output::Builder {
-        crate::output::get_resources_output::Builder::default()
-    }
-}
 
 /// <p>Represents an API resource.</p>
 #[non_exhaustive]
@@ -10243,6 +10294,13 @@ impl aws_http::request_id::RequestId for GetResourceOutput {
         self._request_id.as_deref()
     }
 }
+impl GetResourceOutput {
+    /// Creates a new builder-style object to manufacture [`GetResourceOutput`](crate::output::GetResourceOutput).
+    pub fn builder() -> crate::output::get_resource_output::Builder {
+        crate::output::get_resource_output::Builder::default()
+    }
+}
+
 /// See [`GetResourceOutput`](crate::output::GetResourceOutput).
 pub mod get_resource_output {
 
@@ -10347,12 +10405,6 @@ pub mod get_resource_output {
         }
     }
 }
-impl GetResourceOutput {
-    /// Creates a new builder-style object to manufacture [`GetResourceOutput`](crate::output::GetResourceOutput).
-    pub fn builder() -> crate::output::get_resource_output::Builder {
-        crate::output::get_resource_output::Builder::default()
-    }
-}
 
 /// <p>A collection of RequestValidator resources of a given RestApi.</p>
 #[non_exhaustive]
@@ -10381,6 +10433,13 @@ impl aws_http::request_id::RequestId for GetRequestValidatorsOutput {
         self._request_id.as_deref()
     }
 }
+impl GetRequestValidatorsOutput {
+    /// Creates a new builder-style object to manufacture [`GetRequestValidatorsOutput`](crate::output::GetRequestValidatorsOutput).
+    pub fn builder() -> crate::output::get_request_validators_output::Builder {
+        crate::output::get_request_validators_output::Builder::default()
+    }
+}
+
 /// See [`GetRequestValidatorsOutput`](crate::output::GetRequestValidatorsOutput).
 pub mod get_request_validators_output {
 
@@ -10441,12 +10500,6 @@ pub mod get_request_validators_output {
         }
     }
 }
-impl GetRequestValidatorsOutput {
-    /// Creates a new builder-style object to manufacture [`GetRequestValidatorsOutput`](crate::output::GetRequestValidatorsOutput).
-    pub fn builder() -> crate::output::get_request_validators_output::Builder {
-        crate::output::get_request_validators_output::Builder::default()
-    }
-}
 
 /// <p>A set of validation rules for incoming Method requests.</p>
 #[non_exhaustive]
@@ -10489,6 +10542,13 @@ impl aws_http::request_id::RequestId for GetRequestValidatorOutput {
         self._request_id.as_deref()
     }
 }
+impl GetRequestValidatorOutput {
+    /// Creates a new builder-style object to manufacture [`GetRequestValidatorOutput`](crate::output::GetRequestValidatorOutput).
+    pub fn builder() -> crate::output::get_request_validator_output::Builder {
+        crate::output::get_request_validator_output::Builder::default()
+    }
+}
+
 /// See [`GetRequestValidatorOutput`](crate::output::GetRequestValidatorOutput).
 pub mod get_request_validator_output {
 
@@ -10564,12 +10624,6 @@ pub mod get_request_validator_output {
         }
     }
 }
-impl GetRequestValidatorOutput {
-    /// Creates a new builder-style object to manufacture [`GetRequestValidatorOutput`](crate::output::GetRequestValidatorOutput).
-    pub fn builder() -> crate::output::get_request_validator_output::Builder {
-        crate::output::get_request_validator_output::Builder::default()
-    }
-}
 
 /// <p>Represents a mapping template used to transform a payload.</p>
 #[non_exhaustive]
@@ -10591,6 +10645,13 @@ impl aws_http::request_id::RequestId for GetModelTemplateOutput {
         self._request_id.as_deref()
     }
 }
+impl GetModelTemplateOutput {
+    /// Creates a new builder-style object to manufacture [`GetModelTemplateOutput`](crate::output::GetModelTemplateOutput).
+    pub fn builder() -> crate::output::get_model_template_output::Builder {
+        crate::output::get_model_template_output::Builder::default()
+    }
+}
+
 /// See [`GetModelTemplateOutput`](crate::output::GetModelTemplateOutput).
 pub mod get_model_template_output {
 
@@ -10630,12 +10691,6 @@ pub mod get_model_template_output {
         }
     }
 }
-impl GetModelTemplateOutput {
-    /// Creates a new builder-style object to manufacture [`GetModelTemplateOutput`](crate::output::GetModelTemplateOutput).
-    pub fn builder() -> crate::output::get_model_template_output::Builder {
-        crate::output::get_model_template_output::Builder::default()
-    }
-}
 
 /// <p>Represents a collection of Model resources.</p>
 #[non_exhaustive]
@@ -10664,6 +10719,13 @@ impl aws_http::request_id::RequestId for GetModelsOutput {
         self._request_id.as_deref()
     }
 }
+impl GetModelsOutput {
+    /// Creates a new builder-style object to manufacture [`GetModelsOutput`](crate::output::GetModelsOutput).
+    pub fn builder() -> crate::output::get_models_output::Builder {
+        crate::output::get_models_output::Builder::default()
+    }
+}
+
 /// See [`GetModelsOutput`](crate::output::GetModelsOutput).
 pub mod get_models_output {
 
@@ -10724,12 +10786,6 @@ pub mod get_models_output {
         }
     }
 }
-impl GetModelsOutput {
-    /// Creates a new builder-style object to manufacture [`GetModelsOutput`](crate::output::GetModelsOutput).
-    pub fn builder() -> crate::output::get_models_output::Builder {
-        crate::output::get_models_output::Builder::default()
-    }
-}
 
 /// <p>Represents the data structure of a method's request or response payload.</p>
 #[non_exhaustive]
@@ -10779,6 +10835,13 @@ impl aws_http::request_id::RequestId for GetModelOutput {
         self._request_id.as_deref()
     }
 }
+impl GetModelOutput {
+    /// Creates a new builder-style object to manufacture [`GetModelOutput`](crate::output::GetModelOutput).
+    pub fn builder() -> crate::output::get_model_output::Builder {
+        crate::output::get_model_output::Builder::default()
+    }
+}
+
 /// See [`GetModelOutput`](crate::output::GetModelOutput).
 pub mod get_model_output {
 
@@ -10866,12 +10929,6 @@ pub mod get_model_output {
         }
     }
 }
-impl GetModelOutput {
-    /// Creates a new builder-style object to manufacture [`GetModelOutput`](crate::output::GetModelOutput).
-    pub fn builder() -> crate::output::get_model_output::Builder {
-        crate::output::get_model_output::Builder::default()
-    }
-}
 
 /// <p>Represents a method response of a given HTTP status code returned to the client. The method response is passed from the back end through the associated integration response that can be transformed using a mapping template. </p>
 #[non_exhaustive]
@@ -10914,6 +10971,13 @@ impl aws_http::request_id::RequestId for GetMethodResponseOutput {
         self._request_id.as_deref()
     }
 }
+impl GetMethodResponseOutput {
+    /// Creates a new builder-style object to manufacture [`GetMethodResponseOutput`](crate::output::GetMethodResponseOutput).
+    pub fn builder() -> crate::output::get_method_response_output::Builder {
+        crate::output::get_method_response_output::Builder::default()
+    }
+}
+
 /// See [`GetMethodResponseOutput`](crate::output::GetMethodResponseOutput).
 pub mod get_method_response_output {
 
@@ -11002,12 +11066,6 @@ pub mod get_method_response_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl GetMethodResponseOutput {
-    /// Creates a new builder-style object to manufacture [`GetMethodResponseOutput`](crate::output::GetMethodResponseOutput).
-    pub fn builder() -> crate::output::get_method_response_output::Builder {
-        crate::output::get_method_response_output::Builder::default()
     }
 }
 
@@ -11114,6 +11172,13 @@ impl aws_http::request_id::RequestId for GetMethodOutput {
         self._request_id.as_deref()
     }
 }
+impl GetMethodOutput {
+    /// Creates a new builder-style object to manufacture [`GetMethodOutput`](crate::output::GetMethodOutput).
+    pub fn builder() -> crate::output::get_method_output::Builder {
+        crate::output::get_method_output::Builder::default()
+    }
+}
+
 /// See [`GetMethodOutput`](crate::output::GetMethodOutput).
 pub mod get_method_output {
 
@@ -11341,12 +11406,6 @@ pub mod get_method_output {
         }
     }
 }
-impl GetMethodOutput {
-    /// Creates a new builder-style object to manufacture [`GetMethodOutput`](crate::output::GetMethodOutput).
-    pub fn builder() -> crate::output::get_method_output::Builder {
-        crate::output::get_method_output::Builder::default()
-    }
-}
 
 /// <p>Represents an integration response. The status code must map to an existing MethodResponse, and parameters and templates can be used to transform the back-end response.</p>
 #[non_exhaustive]
@@ -11406,6 +11465,13 @@ impl aws_http::request_id::RequestId for GetIntegrationResponseOutput {
         self._request_id.as_deref()
     }
 }
+impl GetIntegrationResponseOutput {
+    /// Creates a new builder-style object to manufacture [`GetIntegrationResponseOutput`](crate::output::GetIntegrationResponseOutput).
+    pub fn builder() -> crate::output::get_integration_response_output::Builder {
+        crate::output::get_integration_response_output::Builder::default()
+    }
+}
+
 /// See [`GetIntegrationResponseOutput`](crate::output::GetIntegrationResponseOutput).
 pub mod get_integration_response_output {
 
@@ -11533,12 +11599,6 @@ pub mod get_integration_response_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl GetIntegrationResponseOutput {
-    /// Creates a new builder-style object to manufacture [`GetIntegrationResponseOutput`](crate::output::GetIntegrationResponseOutput).
-    pub fn builder() -> crate::output::get_integration_response_output::Builder {
-        crate::output::get_integration_response_output::Builder::default()
     }
 }
 
@@ -11680,6 +11740,13 @@ impl aws_http::request_id::RequestId for GetIntegrationOutput {
         self._request_id.as_deref()
     }
 }
+impl GetIntegrationOutput {
+    /// Creates a new builder-style object to manufacture [`GetIntegrationOutput`](crate::output::GetIntegrationOutput).
+    pub fn builder() -> crate::output::get_integration_output::Builder {
+        crate::output::get_integration_output::Builder::default()
+    }
+}
+
 /// See [`GetIntegrationOutput`](crate::output::GetIntegrationOutput).
 pub mod get_integration_output {
 
@@ -11974,12 +12041,6 @@ pub mod get_integration_output {
         }
     }
 }
-impl GetIntegrationOutput {
-    /// Creates a new builder-style object to manufacture [`GetIntegrationOutput`](crate::output::GetIntegrationOutput).
-    pub fn builder() -> crate::output::get_integration_output::Builder {
-        crate::output::get_integration_output::Builder::default()
-    }
-}
 
 /// <p>The collection of the GatewayResponse instances of a RestApi as a <code>responseType</code>-to-GatewayResponse object map of key-value pairs. As such, pagination is not supported for querying this collection.</p>
 #[non_exhaustive]
@@ -12008,6 +12069,13 @@ impl aws_http::request_id::RequestId for GetGatewayResponsesOutput {
         self._request_id.as_deref()
     }
 }
+impl GetGatewayResponsesOutput {
+    /// Creates a new builder-style object to manufacture [`GetGatewayResponsesOutput`](crate::output::GetGatewayResponsesOutput).
+    pub fn builder() -> crate::output::get_gateway_responses_output::Builder {
+        crate::output::get_gateway_responses_output::Builder::default()
+    }
+}
+
 /// See [`GetGatewayResponsesOutput`](crate::output::GetGatewayResponsesOutput).
 pub mod get_gateway_responses_output {
 
@@ -12068,12 +12136,6 @@ pub mod get_gateway_responses_output {
         }
     }
 }
-impl GetGatewayResponsesOutput {
-    /// Creates a new builder-style object to manufacture [`GetGatewayResponsesOutput`](crate::output::GetGatewayResponsesOutput).
-    pub fn builder() -> crate::output::get_gateway_responses_output::Builder {
-        crate::output::get_gateway_responses_output::Builder::default()
-    }
-}
 
 /// <p>A gateway response of a given response type and status code, with optional response parameters and mapping templates.</p>
 #[non_exhaustive]
@@ -12131,6 +12193,13 @@ impl aws_http::request_id::RequestId for GetGatewayResponseOutput {
         self._request_id.as_deref()
     }
 }
+impl GetGatewayResponseOutput {
+    /// Creates a new builder-style object to manufacture [`GetGatewayResponseOutput`](crate::output::GetGatewayResponseOutput).
+    pub fn builder() -> crate::output::get_gateway_response_output::Builder {
+        crate::output::get_gateway_response_output::Builder::default()
+    }
+}
+
 /// See [`GetGatewayResponseOutput`](crate::output::GetGatewayResponseOutput).
 pub mod get_gateway_response_output {
 
@@ -12255,12 +12324,6 @@ pub mod get_gateway_response_output {
         }
     }
 }
-impl GetGatewayResponseOutput {
-    /// Creates a new builder-style object to manufacture [`GetGatewayResponseOutput`](crate::output::GetGatewayResponseOutput).
-    pub fn builder() -> crate::output::get_gateway_response_output::Builder {
-        crate::output::get_gateway_response_output::Builder::default()
-    }
-}
 
 /// <p>The binary blob response to GetExport, which contains the generated SDK.</p>
 #[non_exhaustive]
@@ -12296,6 +12359,13 @@ impl aws_http::request_id::RequestId for GetExportOutput {
         self._request_id.as_deref()
     }
 }
+impl GetExportOutput {
+    /// Creates a new builder-style object to manufacture [`GetExportOutput`](crate::output::GetExportOutput).
+    pub fn builder() -> crate::output::get_export_output::Builder {
+        crate::output::get_export_output::Builder::default()
+    }
+}
+
 /// See [`GetExportOutput`](crate::output::GetExportOutput).
 pub mod get_export_output {
 
@@ -12362,12 +12432,6 @@ pub mod get_export_output {
         }
     }
 }
-impl GetExportOutput {
-    /// Creates a new builder-style object to manufacture [`GetExportOutput`](crate::output::GetExportOutput).
-    pub fn builder() -> crate::output::get_export_output::Builder {
-        crate::output::get_export_output::Builder::default()
-    }
-}
 
 /// <p>Represents a collection of DomainName resources.</p>
 #[non_exhaustive]
@@ -12396,6 +12460,13 @@ impl aws_http::request_id::RequestId for GetDomainNamesOutput {
         self._request_id.as_deref()
     }
 }
+impl GetDomainNamesOutput {
+    /// Creates a new builder-style object to manufacture [`GetDomainNamesOutput`](crate::output::GetDomainNamesOutput).
+    pub fn builder() -> crate::output::get_domain_names_output::Builder {
+        crate::output::get_domain_names_output::Builder::default()
+    }
+}
+
 /// See [`GetDomainNamesOutput`](crate::output::GetDomainNamesOutput).
 pub mod get_domain_names_output {
 
@@ -12454,12 +12525,6 @@ pub mod get_domain_names_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl GetDomainNamesOutput {
-    /// Creates a new builder-style object to manufacture [`GetDomainNamesOutput`](crate::output::GetDomainNamesOutput).
-    pub fn builder() -> crate::output::get_domain_names_output::Builder {
-        crate::output::get_domain_names_output::Builder::default()
     }
 }
 
@@ -12603,6 +12668,13 @@ impl aws_http::request_id::RequestId for GetDomainNameOutput {
         self._request_id.as_deref()
     }
 }
+impl GetDomainNameOutput {
+    /// Creates a new builder-style object to manufacture [`GetDomainNameOutput`](crate::output::GetDomainNameOutput).
+    pub fn builder() -> crate::output::get_domain_name_output::Builder {
+        crate::output::get_domain_name_output::Builder::default()
+    }
+}
+
 /// See [`GetDomainNameOutput`](crate::output::GetDomainNameOutput).
 pub mod get_domain_name_output {
 
@@ -12909,12 +12981,6 @@ pub mod get_domain_name_output {
         }
     }
 }
-impl GetDomainNameOutput {
-    /// Creates a new builder-style object to manufacture [`GetDomainNameOutput`](crate::output::GetDomainNameOutput).
-    pub fn builder() -> crate::output::get_domain_name_output::Builder {
-        crate::output::get_domain_name_output::Builder::default()
-    }
-}
 
 /// <p>The collection of documentation snapshots of an API. </p>
 #[non_exhaustive]
@@ -12943,6 +13009,13 @@ impl aws_http::request_id::RequestId for GetDocumentationVersionsOutput {
         self._request_id.as_deref()
     }
 }
+impl GetDocumentationVersionsOutput {
+    /// Creates a new builder-style object to manufacture [`GetDocumentationVersionsOutput`](crate::output::GetDocumentationVersionsOutput).
+    pub fn builder() -> crate::output::get_documentation_versions_output::Builder {
+        crate::output::get_documentation_versions_output::Builder::default()
+    }
+}
+
 /// See [`GetDocumentationVersionsOutput`](crate::output::GetDocumentationVersionsOutput).
 pub mod get_documentation_versions_output {
 
@@ -13003,12 +13076,6 @@ pub mod get_documentation_versions_output {
         }
     }
 }
-impl GetDocumentationVersionsOutput {
-    /// Creates a new builder-style object to manufacture [`GetDocumentationVersionsOutput`](crate::output::GetDocumentationVersionsOutput).
-    pub fn builder() -> crate::output::get_documentation_versions_output::Builder {
-        crate::output::get_documentation_versions_output::Builder::default()
-    }
-}
 
 /// <p>A snapshot of the documentation of an API.</p>
 #[non_exhaustive]
@@ -13044,6 +13111,13 @@ impl aws_http::request_id::RequestId for GetDocumentationVersionOutput {
         self._request_id.as_deref()
     }
 }
+impl GetDocumentationVersionOutput {
+    /// Creates a new builder-style object to manufacture [`GetDocumentationVersionOutput`](crate::output::GetDocumentationVersionOutput).
+    pub fn builder() -> crate::output::get_documentation_version_output::Builder {
+        crate::output::get_documentation_version_output::Builder::default()
+    }
+}
+
 /// See [`GetDocumentationVersionOutput`](crate::output::GetDocumentationVersionOutput).
 pub mod get_documentation_version_output {
 
@@ -13110,12 +13184,6 @@ pub mod get_documentation_version_output {
         }
     }
 }
-impl GetDocumentationVersionOutput {
-    /// Creates a new builder-style object to manufacture [`GetDocumentationVersionOutput`](crate::output::GetDocumentationVersionOutput).
-    pub fn builder() -> crate::output::get_documentation_version_output::Builder {
-        crate::output::get_documentation_version_output::Builder::default()
-    }
-}
 
 /// <p>The collection of documentation parts of an API.</p>
 #[non_exhaustive]
@@ -13144,6 +13212,13 @@ impl aws_http::request_id::RequestId for GetDocumentationPartsOutput {
         self._request_id.as_deref()
     }
 }
+impl GetDocumentationPartsOutput {
+    /// Creates a new builder-style object to manufacture [`GetDocumentationPartsOutput`](crate::output::GetDocumentationPartsOutput).
+    pub fn builder() -> crate::output::get_documentation_parts_output::Builder {
+        crate::output::get_documentation_parts_output::Builder::default()
+    }
+}
+
 /// See [`GetDocumentationPartsOutput`](crate::output::GetDocumentationPartsOutput).
 pub mod get_documentation_parts_output {
 
@@ -13204,12 +13279,6 @@ pub mod get_documentation_parts_output {
         }
     }
 }
-impl GetDocumentationPartsOutput {
-    /// Creates a new builder-style object to manufacture [`GetDocumentationPartsOutput`](crate::output::GetDocumentationPartsOutput).
-    pub fn builder() -> crate::output::get_documentation_parts_output::Builder {
-        crate::output::get_documentation_parts_output::Builder::default()
-    }
-}
 
 /// <p>A documentation part for a targeted API entity.</p>
 #[non_exhaustive]
@@ -13245,6 +13314,13 @@ impl aws_http::request_id::RequestId for GetDocumentationPartOutput {
         self._request_id.as_deref()
     }
 }
+impl GetDocumentationPartOutput {
+    /// Creates a new builder-style object to manufacture [`GetDocumentationPartOutput`](crate::output::GetDocumentationPartOutput).
+    pub fn builder() -> crate::output::get_documentation_part_output::Builder {
+        crate::output::get_documentation_part_output::Builder::default()
+    }
+}
+
 /// See [`GetDocumentationPartOutput`](crate::output::GetDocumentationPartOutput).
 pub mod get_documentation_part_output {
 
@@ -13311,12 +13387,6 @@ pub mod get_documentation_part_output {
         }
     }
 }
-impl GetDocumentationPartOutput {
-    /// Creates a new builder-style object to manufacture [`GetDocumentationPartOutput`](crate::output::GetDocumentationPartOutput).
-    pub fn builder() -> crate::output::get_documentation_part_output::Builder {
-        crate::output::get_documentation_part_output::Builder::default()
-    }
-}
 
 /// <p>Represents a collection resource that contains zero or more references to your existing deployments, and links that guide you on how to interact with your collection. The collection offers a paginated view of the contained deployments.</p>
 #[non_exhaustive]
@@ -13345,6 +13415,13 @@ impl aws_http::request_id::RequestId for GetDeploymentsOutput {
         self._request_id.as_deref()
     }
 }
+impl GetDeploymentsOutput {
+    /// Creates a new builder-style object to manufacture [`GetDeploymentsOutput`](crate::output::GetDeploymentsOutput).
+    pub fn builder() -> crate::output::get_deployments_output::Builder {
+        crate::output::get_deployments_output::Builder::default()
+    }
+}
+
 /// See [`GetDeploymentsOutput`](crate::output::GetDeploymentsOutput).
 pub mod get_deployments_output {
 
@@ -13405,12 +13482,6 @@ pub mod get_deployments_output {
         }
     }
 }
-impl GetDeploymentsOutput {
-    /// Creates a new builder-style object to manufacture [`GetDeploymentsOutput`](crate::output::GetDeploymentsOutput).
-    pub fn builder() -> crate::output::get_deployments_output::Builder {
-        crate::output::get_deployments_output::Builder::default()
-    }
-}
 
 /// <p>An immutable representation of a RestApi resource that can be called by users using Stages. A deployment must be associated with a Stage for it to be callable over the Internet.</p>
 #[non_exhaustive]
@@ -13465,6 +13536,13 @@ impl aws_http::request_id::RequestId for GetDeploymentOutput {
         self._request_id.as_deref()
     }
 }
+impl GetDeploymentOutput {
+    /// Creates a new builder-style object to manufacture [`GetDeploymentOutput`](crate::output::GetDeploymentOutput).
+    pub fn builder() -> crate::output::get_deployment_output::Builder {
+        crate::output::get_deployment_output::Builder::default()
+    }
+}
+
 /// See [`GetDeploymentOutput`](crate::output::GetDeploymentOutput).
 pub mod get_deployment_output {
 
@@ -13566,12 +13644,6 @@ pub mod get_deployment_output {
         }
     }
 }
-impl GetDeploymentOutput {
-    /// Creates a new builder-style object to manufacture [`GetDeploymentOutput`](crate::output::GetDeploymentOutput).
-    pub fn builder() -> crate::output::get_deployment_output::Builder {
-        crate::output::get_deployment_output::Builder::default()
-    }
-}
 
 /// <p>Represents a collection of ClientCertificate resources.</p>
 #[non_exhaustive]
@@ -13600,6 +13672,13 @@ impl aws_http::request_id::RequestId for GetClientCertificatesOutput {
         self._request_id.as_deref()
     }
 }
+impl GetClientCertificatesOutput {
+    /// Creates a new builder-style object to manufacture [`GetClientCertificatesOutput`](crate::output::GetClientCertificatesOutput).
+    pub fn builder() -> crate::output::get_client_certificates_output::Builder {
+        crate::output::get_client_certificates_output::Builder::default()
+    }
+}
+
 /// See [`GetClientCertificatesOutput`](crate::output::GetClientCertificatesOutput).
 pub mod get_client_certificates_output {
 
@@ -13658,12 +13737,6 @@ pub mod get_client_certificates_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl GetClientCertificatesOutput {
-    /// Creates a new builder-style object to manufacture [`GetClientCertificatesOutput`](crate::output::GetClientCertificatesOutput).
-    pub fn builder() -> crate::output::get_client_certificates_output::Builder {
-        crate::output::get_client_certificates_output::Builder::default()
     }
 }
 
@@ -13726,6 +13799,13 @@ impl aws_http::request_id::RequestId for GetClientCertificateOutput {
         self._request_id.as_deref()
     }
 }
+impl GetClientCertificateOutput {
+    /// Creates a new builder-style object to manufacture [`GetClientCertificateOutput`](crate::output::GetClientCertificateOutput).
+    pub fn builder() -> crate::output::get_client_certificate_output::Builder {
+        crate::output::get_client_certificate_output::Builder::default()
+    }
+}
+
 /// See [`GetClientCertificateOutput`](crate::output::GetClientCertificateOutput).
 pub mod get_client_certificate_output {
 
@@ -13854,12 +13934,6 @@ pub mod get_client_certificate_output {
         }
     }
 }
-impl GetClientCertificateOutput {
-    /// Creates a new builder-style object to manufacture [`GetClientCertificateOutput`](crate::output::GetClientCertificateOutput).
-    pub fn builder() -> crate::output::get_client_certificate_output::Builder {
-        crate::output::get_client_certificate_output::Builder::default()
-    }
-}
 
 /// <p>Represents a collection of BasePathMapping resources.</p>
 #[non_exhaustive]
@@ -13888,6 +13962,13 @@ impl aws_http::request_id::RequestId for GetBasePathMappingsOutput {
         self._request_id.as_deref()
     }
 }
+impl GetBasePathMappingsOutput {
+    /// Creates a new builder-style object to manufacture [`GetBasePathMappingsOutput`](crate::output::GetBasePathMappingsOutput).
+    pub fn builder() -> crate::output::get_base_path_mappings_output::Builder {
+        crate::output::get_base_path_mappings_output::Builder::default()
+    }
+}
+
 /// See [`GetBasePathMappingsOutput`](crate::output::GetBasePathMappingsOutput).
 pub mod get_base_path_mappings_output {
 
@@ -13948,12 +14029,6 @@ pub mod get_base_path_mappings_output {
         }
     }
 }
-impl GetBasePathMappingsOutput {
-    /// Creates a new builder-style object to manufacture [`GetBasePathMappingsOutput`](crate::output::GetBasePathMappingsOutput).
-    pub fn builder() -> crate::output::get_base_path_mappings_output::Builder {
-        crate::output::get_base_path_mappings_output::Builder::default()
-    }
-}
 
 /// <p>Represents the base path that callers of the API must provide as part of the URL after the domain name.</p>
 #[non_exhaustive]
@@ -13989,6 +14064,13 @@ impl aws_http::request_id::RequestId for GetBasePathMappingOutput {
         self._request_id.as_deref()
     }
 }
+impl GetBasePathMappingOutput {
+    /// Creates a new builder-style object to manufacture [`GetBasePathMappingOutput`](crate::output::GetBasePathMappingOutput).
+    pub fn builder() -> crate::output::get_base_path_mapping_output::Builder {
+        crate::output::get_base_path_mapping_output::Builder::default()
+    }
+}
+
 /// See [`GetBasePathMappingOutput`](crate::output::GetBasePathMappingOutput).
 pub mod get_base_path_mapping_output {
 
@@ -14052,12 +14134,6 @@ pub mod get_base_path_mapping_output {
         }
     }
 }
-impl GetBasePathMappingOutput {
-    /// Creates a new builder-style object to manufacture [`GetBasePathMappingOutput`](crate::output::GetBasePathMappingOutput).
-    pub fn builder() -> crate::output::get_base_path_mapping_output::Builder {
-        crate::output::get_base_path_mapping_output::Builder::default()
-    }
-}
 
 /// <p>Represents a collection of Authorizer resources.</p>
 #[non_exhaustive]
@@ -14086,6 +14162,13 @@ impl aws_http::request_id::RequestId for GetAuthorizersOutput {
         self._request_id.as_deref()
     }
 }
+impl GetAuthorizersOutput {
+    /// Creates a new builder-style object to manufacture [`GetAuthorizersOutput`](crate::output::GetAuthorizersOutput).
+    pub fn builder() -> crate::output::get_authorizers_output::Builder {
+        crate::output::get_authorizers_output::Builder::default()
+    }
+}
+
 /// See [`GetAuthorizersOutput`](crate::output::GetAuthorizersOutput).
 pub mod get_authorizers_output {
 
@@ -14144,12 +14227,6 @@ pub mod get_authorizers_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl GetAuthorizersOutput {
-    /// Creates a new builder-style object to manufacture [`GetAuthorizersOutput`](crate::output::GetAuthorizersOutput).
-    pub fn builder() -> crate::output::get_authorizers_output::Builder {
-        crate::output::get_authorizers_output::Builder::default()
     }
 }
 
@@ -14236,6 +14313,13 @@ impl aws_http::request_id::RequestId for GetAuthorizerOutput {
         self._request_id.as_deref()
     }
 }
+impl GetAuthorizerOutput {
+    /// Creates a new builder-style object to manufacture [`GetAuthorizerOutput`](crate::output::GetAuthorizerOutput).
+    pub fn builder() -> crate::output::get_authorizer_output::Builder {
+        crate::output::get_authorizer_output::Builder::default()
+    }
+}
+
 /// See [`GetAuthorizerOutput`](crate::output::GetAuthorizerOutput).
 pub mod get_authorizer_output {
 
@@ -14413,12 +14497,6 @@ pub mod get_authorizer_output {
         }
     }
 }
-impl GetAuthorizerOutput {
-    /// Creates a new builder-style object to manufacture [`GetAuthorizerOutput`](crate::output::GetAuthorizerOutput).
-    pub fn builder() -> crate::output::get_authorizer_output::Builder {
-        crate::output::get_authorizer_output::Builder::default()
-    }
-}
 
 /// <p>Represents a collection of API keys as represented by an ApiKeys resource.</p>
 #[non_exhaustive]
@@ -14454,6 +14532,13 @@ impl aws_http::request_id::RequestId for GetApiKeysOutput {
         self._request_id.as_deref()
     }
 }
+impl GetApiKeysOutput {
+    /// Creates a new builder-style object to manufacture [`GetApiKeysOutput`](crate::output::GetApiKeysOutput).
+    pub fn builder() -> crate::output::get_api_keys_output::Builder {
+        crate::output::get_api_keys_output::Builder::default()
+    }
+}
+
 /// See [`GetApiKeysOutput`](crate::output::GetApiKeysOutput).
 pub mod get_api_keys_output {
 
@@ -14533,12 +14618,6 @@ pub mod get_api_keys_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl GetApiKeysOutput {
-    /// Creates a new builder-style object to manufacture [`GetApiKeysOutput`](crate::output::GetApiKeysOutput).
-    pub fn builder() -> crate::output::get_api_keys_output::Builder {
-        crate::output::get_api_keys_output::Builder::default()
     }
 }
 
@@ -14629,6 +14708,13 @@ impl aws_http::request_id::RequestId for GetApiKeyOutput {
         self._request_id.as_deref()
     }
 }
+impl GetApiKeyOutput {
+    /// Creates a new builder-style object to manufacture [`GetApiKeyOutput`](crate::output::GetApiKeyOutput).
+    pub fn builder() -> crate::output::get_api_key_output::Builder {
+        crate::output::get_api_key_output::Builder::default()
+    }
+}
+
 /// See [`GetApiKeyOutput`](crate::output::GetApiKeyOutput).
 pub mod get_api_key_output {
 
@@ -14808,12 +14894,6 @@ pub mod get_api_key_output {
         }
     }
 }
-impl GetApiKeyOutput {
-    /// Creates a new builder-style object to manufacture [`GetApiKeyOutput`](crate::output::GetApiKeyOutput).
-    pub fn builder() -> crate::output::get_api_key_output::Builder {
-        crate::output::get_api_key_output::Builder::default()
-    }
-}
 
 /// <p>Represents an AWS account that is associated with API Gateway.</p>
 #[non_exhaustive]
@@ -14856,6 +14936,13 @@ impl aws_http::request_id::RequestId for GetAccountOutput {
         self._request_id.as_deref()
     }
 }
+impl GetAccountOutput {
+    /// Creates a new builder-style object to manufacture [`GetAccountOutput`](crate::output::GetAccountOutput).
+    pub fn builder() -> crate::output::get_account_output::Builder {
+        crate::output::get_account_output::Builder::default()
+    }
+}
+
 /// See [`GetAccountOutput`](crate::output::GetAccountOutput).
 pub mod get_account_output {
 
@@ -14949,12 +15036,6 @@ pub mod get_account_output {
         }
     }
 }
-impl GetAccountOutput {
-    /// Creates a new builder-style object to manufacture [`GetAccountOutput`](crate::output::GetAccountOutput).
-    pub fn builder() -> crate::output::get_account_output::Builder {
-        crate::output::get_account_output::Builder::default()
-    }
-}
 
 /// <p>Represents a client certificate used to configure client-side SSL authentication while sending requests to the integration endpoint.</p>
 #[non_exhaustive]
@@ -15015,6 +15096,13 @@ impl aws_http::request_id::RequestId for GenerateClientCertificateOutput {
         self._request_id.as_deref()
     }
 }
+impl GenerateClientCertificateOutput {
+    /// Creates a new builder-style object to manufacture [`GenerateClientCertificateOutput`](crate::output::GenerateClientCertificateOutput).
+    pub fn builder() -> crate::output::generate_client_certificate_output::Builder {
+        crate::output::generate_client_certificate_output::Builder::default()
+    }
+}
+
 /// See [`GenerateClientCertificateOutput`](crate::output::GenerateClientCertificateOutput).
 pub mod generate_client_certificate_output {
 
@@ -15143,12 +15231,6 @@ pub mod generate_client_certificate_output {
         }
     }
 }
-impl GenerateClientCertificateOutput {
-    /// Creates a new builder-style object to manufacture [`GenerateClientCertificateOutput`](crate::output::GenerateClientCertificateOutput).
-    pub fn builder() -> crate::output::generate_client_certificate_output::Builder {
-        crate::output::generate_client_certificate_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -15161,6 +15243,13 @@ impl aws_http::request_id::RequestId for FlushStageCacheOutput {
         self._request_id.as_deref()
     }
 }
+impl FlushStageCacheOutput {
+    /// Creates a new builder-style object to manufacture [`FlushStageCacheOutput`](crate::output::FlushStageCacheOutput).
+    pub fn builder() -> crate::output::flush_stage_cache_output::Builder {
+        crate::output::flush_stage_cache_output::Builder::default()
+    }
+}
+
 /// See [`FlushStageCacheOutput`](crate::output::FlushStageCacheOutput).
 pub mod flush_stage_cache_output {
 
@@ -15188,12 +15277,6 @@ pub mod flush_stage_cache_output {
         }
     }
 }
-impl FlushStageCacheOutput {
-    /// Creates a new builder-style object to manufacture [`FlushStageCacheOutput`](crate::output::FlushStageCacheOutput).
-    pub fn builder() -> crate::output::flush_stage_cache_output::Builder {
-        crate::output::flush_stage_cache_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -15206,6 +15289,13 @@ impl aws_http::request_id::RequestId for FlushStageAuthorizersCacheOutput {
         self._request_id.as_deref()
     }
 }
+impl FlushStageAuthorizersCacheOutput {
+    /// Creates a new builder-style object to manufacture [`FlushStageAuthorizersCacheOutput`](crate::output::FlushStageAuthorizersCacheOutput).
+    pub fn builder() -> crate::output::flush_stage_authorizers_cache_output::Builder {
+        crate::output::flush_stage_authorizers_cache_output::Builder::default()
+    }
+}
+
 /// See [`FlushStageAuthorizersCacheOutput`](crate::output::FlushStageAuthorizersCacheOutput).
 pub mod flush_stage_authorizers_cache_output {
 
@@ -15233,12 +15323,6 @@ pub mod flush_stage_authorizers_cache_output {
         }
     }
 }
-impl FlushStageAuthorizersCacheOutput {
-    /// Creates a new builder-style object to manufacture [`FlushStageAuthorizersCacheOutput`](crate::output::FlushStageAuthorizersCacheOutput).
-    pub fn builder() -> crate::output::flush_stage_authorizers_cache_output::Builder {
-        crate::output::flush_stage_authorizers_cache_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -15251,6 +15335,13 @@ impl aws_http::request_id::RequestId for DeleteVpcLinkOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteVpcLinkOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteVpcLinkOutput`](crate::output::DeleteVpcLinkOutput).
+    pub fn builder() -> crate::output::delete_vpc_link_output::Builder {
+        crate::output::delete_vpc_link_output::Builder::default()
+    }
+}
+
 /// See [`DeleteVpcLinkOutput`](crate::output::DeleteVpcLinkOutput).
 pub mod delete_vpc_link_output {
 
@@ -15278,12 +15369,6 @@ pub mod delete_vpc_link_output {
         }
     }
 }
-impl DeleteVpcLinkOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteVpcLinkOutput`](crate::output::DeleteVpcLinkOutput).
-    pub fn builder() -> crate::output::delete_vpc_link_output::Builder {
-        crate::output::delete_vpc_link_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -15296,6 +15381,13 @@ impl aws_http::request_id::RequestId for DeleteUsagePlanKeyOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteUsagePlanKeyOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteUsagePlanKeyOutput`](crate::output::DeleteUsagePlanKeyOutput).
+    pub fn builder() -> crate::output::delete_usage_plan_key_output::Builder {
+        crate::output::delete_usage_plan_key_output::Builder::default()
+    }
+}
+
 /// See [`DeleteUsagePlanKeyOutput`](crate::output::DeleteUsagePlanKeyOutput).
 pub mod delete_usage_plan_key_output {
 
@@ -15323,12 +15415,6 @@ pub mod delete_usage_plan_key_output {
         }
     }
 }
-impl DeleteUsagePlanKeyOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteUsagePlanKeyOutput`](crate::output::DeleteUsagePlanKeyOutput).
-    pub fn builder() -> crate::output::delete_usage_plan_key_output::Builder {
-        crate::output::delete_usage_plan_key_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -15341,6 +15427,13 @@ impl aws_http::request_id::RequestId for DeleteUsagePlanOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteUsagePlanOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteUsagePlanOutput`](crate::output::DeleteUsagePlanOutput).
+    pub fn builder() -> crate::output::delete_usage_plan_output::Builder {
+        crate::output::delete_usage_plan_output::Builder::default()
+    }
+}
+
 /// See [`DeleteUsagePlanOutput`](crate::output::DeleteUsagePlanOutput).
 pub mod delete_usage_plan_output {
 
@@ -15368,12 +15461,6 @@ pub mod delete_usage_plan_output {
         }
     }
 }
-impl DeleteUsagePlanOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteUsagePlanOutput`](crate::output::DeleteUsagePlanOutput).
-    pub fn builder() -> crate::output::delete_usage_plan_output::Builder {
-        crate::output::delete_usage_plan_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -15386,6 +15473,13 @@ impl aws_http::request_id::RequestId for DeleteStageOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteStageOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteStageOutput`](crate::output::DeleteStageOutput).
+    pub fn builder() -> crate::output::delete_stage_output::Builder {
+        crate::output::delete_stage_output::Builder::default()
+    }
+}
+
 /// See [`DeleteStageOutput`](crate::output::DeleteStageOutput).
 pub mod delete_stage_output {
 
@@ -15413,12 +15507,6 @@ pub mod delete_stage_output {
         }
     }
 }
-impl DeleteStageOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteStageOutput`](crate::output::DeleteStageOutput).
-    pub fn builder() -> crate::output::delete_stage_output::Builder {
-        crate::output::delete_stage_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -15431,6 +15519,13 @@ impl aws_http::request_id::RequestId for DeleteRestApiOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteRestApiOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteRestApiOutput`](crate::output::DeleteRestApiOutput).
+    pub fn builder() -> crate::output::delete_rest_api_output::Builder {
+        crate::output::delete_rest_api_output::Builder::default()
+    }
+}
+
 /// See [`DeleteRestApiOutput`](crate::output::DeleteRestApiOutput).
 pub mod delete_rest_api_output {
 
@@ -15458,12 +15553,6 @@ pub mod delete_rest_api_output {
         }
     }
 }
-impl DeleteRestApiOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteRestApiOutput`](crate::output::DeleteRestApiOutput).
-    pub fn builder() -> crate::output::delete_rest_api_output::Builder {
-        crate::output::delete_rest_api_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -15476,6 +15565,13 @@ impl aws_http::request_id::RequestId for DeleteResourceOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteResourceOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteResourceOutput`](crate::output::DeleteResourceOutput).
+    pub fn builder() -> crate::output::delete_resource_output::Builder {
+        crate::output::delete_resource_output::Builder::default()
+    }
+}
+
 /// See [`DeleteResourceOutput`](crate::output::DeleteResourceOutput).
 pub mod delete_resource_output {
 
@@ -15503,12 +15599,6 @@ pub mod delete_resource_output {
         }
     }
 }
-impl DeleteResourceOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteResourceOutput`](crate::output::DeleteResourceOutput).
-    pub fn builder() -> crate::output::delete_resource_output::Builder {
-        crate::output::delete_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -15521,6 +15611,13 @@ impl aws_http::request_id::RequestId for DeleteRequestValidatorOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteRequestValidatorOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteRequestValidatorOutput`](crate::output::DeleteRequestValidatorOutput).
+    pub fn builder() -> crate::output::delete_request_validator_output::Builder {
+        crate::output::delete_request_validator_output::Builder::default()
+    }
+}
+
 /// See [`DeleteRequestValidatorOutput`](crate::output::DeleteRequestValidatorOutput).
 pub mod delete_request_validator_output {
 
@@ -15548,12 +15645,6 @@ pub mod delete_request_validator_output {
         }
     }
 }
-impl DeleteRequestValidatorOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteRequestValidatorOutput`](crate::output::DeleteRequestValidatorOutput).
-    pub fn builder() -> crate::output::delete_request_validator_output::Builder {
-        crate::output::delete_request_validator_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -15566,6 +15657,13 @@ impl aws_http::request_id::RequestId for DeleteModelOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteModelOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteModelOutput`](crate::output::DeleteModelOutput).
+    pub fn builder() -> crate::output::delete_model_output::Builder {
+        crate::output::delete_model_output::Builder::default()
+    }
+}
+
 /// See [`DeleteModelOutput`](crate::output::DeleteModelOutput).
 pub mod delete_model_output {
 
@@ -15593,12 +15691,6 @@ pub mod delete_model_output {
         }
     }
 }
-impl DeleteModelOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteModelOutput`](crate::output::DeleteModelOutput).
-    pub fn builder() -> crate::output::delete_model_output::Builder {
-        crate::output::delete_model_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -15611,6 +15703,13 @@ impl aws_http::request_id::RequestId for DeleteMethodResponseOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteMethodResponseOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteMethodResponseOutput`](crate::output::DeleteMethodResponseOutput).
+    pub fn builder() -> crate::output::delete_method_response_output::Builder {
+        crate::output::delete_method_response_output::Builder::default()
+    }
+}
+
 /// See [`DeleteMethodResponseOutput`](crate::output::DeleteMethodResponseOutput).
 pub mod delete_method_response_output {
 
@@ -15638,12 +15737,6 @@ pub mod delete_method_response_output {
         }
     }
 }
-impl DeleteMethodResponseOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteMethodResponseOutput`](crate::output::DeleteMethodResponseOutput).
-    pub fn builder() -> crate::output::delete_method_response_output::Builder {
-        crate::output::delete_method_response_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -15656,6 +15749,13 @@ impl aws_http::request_id::RequestId for DeleteMethodOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteMethodOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteMethodOutput`](crate::output::DeleteMethodOutput).
+    pub fn builder() -> crate::output::delete_method_output::Builder {
+        crate::output::delete_method_output::Builder::default()
+    }
+}
+
 /// See [`DeleteMethodOutput`](crate::output::DeleteMethodOutput).
 pub mod delete_method_output {
 
@@ -15683,12 +15783,6 @@ pub mod delete_method_output {
         }
     }
 }
-impl DeleteMethodOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteMethodOutput`](crate::output::DeleteMethodOutput).
-    pub fn builder() -> crate::output::delete_method_output::Builder {
-        crate::output::delete_method_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -15701,6 +15795,13 @@ impl aws_http::request_id::RequestId for DeleteIntegrationResponseOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteIntegrationResponseOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteIntegrationResponseOutput`](crate::output::DeleteIntegrationResponseOutput).
+    pub fn builder() -> crate::output::delete_integration_response_output::Builder {
+        crate::output::delete_integration_response_output::Builder::default()
+    }
+}
+
 /// See [`DeleteIntegrationResponseOutput`](crate::output::DeleteIntegrationResponseOutput).
 pub mod delete_integration_response_output {
 
@@ -15728,12 +15829,6 @@ pub mod delete_integration_response_output {
         }
     }
 }
-impl DeleteIntegrationResponseOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteIntegrationResponseOutput`](crate::output::DeleteIntegrationResponseOutput).
-    pub fn builder() -> crate::output::delete_integration_response_output::Builder {
-        crate::output::delete_integration_response_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -15746,6 +15841,13 @@ impl aws_http::request_id::RequestId for DeleteIntegrationOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteIntegrationOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteIntegrationOutput`](crate::output::DeleteIntegrationOutput).
+    pub fn builder() -> crate::output::delete_integration_output::Builder {
+        crate::output::delete_integration_output::Builder::default()
+    }
+}
+
 /// See [`DeleteIntegrationOutput`](crate::output::DeleteIntegrationOutput).
 pub mod delete_integration_output {
 
@@ -15773,12 +15875,6 @@ pub mod delete_integration_output {
         }
     }
 }
-impl DeleteIntegrationOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteIntegrationOutput`](crate::output::DeleteIntegrationOutput).
-    pub fn builder() -> crate::output::delete_integration_output::Builder {
-        crate::output::delete_integration_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -15791,6 +15887,13 @@ impl aws_http::request_id::RequestId for DeleteGatewayResponseOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteGatewayResponseOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteGatewayResponseOutput`](crate::output::DeleteGatewayResponseOutput).
+    pub fn builder() -> crate::output::delete_gateway_response_output::Builder {
+        crate::output::delete_gateway_response_output::Builder::default()
+    }
+}
+
 /// See [`DeleteGatewayResponseOutput`](crate::output::DeleteGatewayResponseOutput).
 pub mod delete_gateway_response_output {
 
@@ -15818,12 +15921,6 @@ pub mod delete_gateway_response_output {
         }
     }
 }
-impl DeleteGatewayResponseOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteGatewayResponseOutput`](crate::output::DeleteGatewayResponseOutput).
-    pub fn builder() -> crate::output::delete_gateway_response_output::Builder {
-        crate::output::delete_gateway_response_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -15836,6 +15933,13 @@ impl aws_http::request_id::RequestId for DeleteDomainNameOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteDomainNameOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteDomainNameOutput`](crate::output::DeleteDomainNameOutput).
+    pub fn builder() -> crate::output::delete_domain_name_output::Builder {
+        crate::output::delete_domain_name_output::Builder::default()
+    }
+}
+
 /// See [`DeleteDomainNameOutput`](crate::output::DeleteDomainNameOutput).
 pub mod delete_domain_name_output {
 
@@ -15863,12 +15967,6 @@ pub mod delete_domain_name_output {
         }
     }
 }
-impl DeleteDomainNameOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteDomainNameOutput`](crate::output::DeleteDomainNameOutput).
-    pub fn builder() -> crate::output::delete_domain_name_output::Builder {
-        crate::output::delete_domain_name_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -15881,6 +15979,13 @@ impl aws_http::request_id::RequestId for DeleteDocumentationVersionOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteDocumentationVersionOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteDocumentationVersionOutput`](crate::output::DeleteDocumentationVersionOutput).
+    pub fn builder() -> crate::output::delete_documentation_version_output::Builder {
+        crate::output::delete_documentation_version_output::Builder::default()
+    }
+}
+
 /// See [`DeleteDocumentationVersionOutput`](crate::output::DeleteDocumentationVersionOutput).
 pub mod delete_documentation_version_output {
 
@@ -15908,12 +16013,6 @@ pub mod delete_documentation_version_output {
         }
     }
 }
-impl DeleteDocumentationVersionOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteDocumentationVersionOutput`](crate::output::DeleteDocumentationVersionOutput).
-    pub fn builder() -> crate::output::delete_documentation_version_output::Builder {
-        crate::output::delete_documentation_version_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -15926,6 +16025,13 @@ impl aws_http::request_id::RequestId for DeleteDocumentationPartOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteDocumentationPartOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteDocumentationPartOutput`](crate::output::DeleteDocumentationPartOutput).
+    pub fn builder() -> crate::output::delete_documentation_part_output::Builder {
+        crate::output::delete_documentation_part_output::Builder::default()
+    }
+}
+
 /// See [`DeleteDocumentationPartOutput`](crate::output::DeleteDocumentationPartOutput).
 pub mod delete_documentation_part_output {
 
@@ -15953,12 +16059,6 @@ pub mod delete_documentation_part_output {
         }
     }
 }
-impl DeleteDocumentationPartOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteDocumentationPartOutput`](crate::output::DeleteDocumentationPartOutput).
-    pub fn builder() -> crate::output::delete_documentation_part_output::Builder {
-        crate::output::delete_documentation_part_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -15971,6 +16071,13 @@ impl aws_http::request_id::RequestId for DeleteDeploymentOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteDeploymentOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteDeploymentOutput`](crate::output::DeleteDeploymentOutput).
+    pub fn builder() -> crate::output::delete_deployment_output::Builder {
+        crate::output::delete_deployment_output::Builder::default()
+    }
+}
+
 /// See [`DeleteDeploymentOutput`](crate::output::DeleteDeploymentOutput).
 pub mod delete_deployment_output {
 
@@ -15998,12 +16105,6 @@ pub mod delete_deployment_output {
         }
     }
 }
-impl DeleteDeploymentOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteDeploymentOutput`](crate::output::DeleteDeploymentOutput).
-    pub fn builder() -> crate::output::delete_deployment_output::Builder {
-        crate::output::delete_deployment_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -16016,6 +16117,13 @@ impl aws_http::request_id::RequestId for DeleteClientCertificateOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteClientCertificateOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteClientCertificateOutput`](crate::output::DeleteClientCertificateOutput).
+    pub fn builder() -> crate::output::delete_client_certificate_output::Builder {
+        crate::output::delete_client_certificate_output::Builder::default()
+    }
+}
+
 /// See [`DeleteClientCertificateOutput`](crate::output::DeleteClientCertificateOutput).
 pub mod delete_client_certificate_output {
 
@@ -16043,12 +16151,6 @@ pub mod delete_client_certificate_output {
         }
     }
 }
-impl DeleteClientCertificateOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteClientCertificateOutput`](crate::output::DeleteClientCertificateOutput).
-    pub fn builder() -> crate::output::delete_client_certificate_output::Builder {
-        crate::output::delete_client_certificate_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -16061,6 +16163,13 @@ impl aws_http::request_id::RequestId for DeleteBasePathMappingOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteBasePathMappingOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteBasePathMappingOutput`](crate::output::DeleteBasePathMappingOutput).
+    pub fn builder() -> crate::output::delete_base_path_mapping_output::Builder {
+        crate::output::delete_base_path_mapping_output::Builder::default()
+    }
+}
+
 /// See [`DeleteBasePathMappingOutput`](crate::output::DeleteBasePathMappingOutput).
 pub mod delete_base_path_mapping_output {
 
@@ -16088,12 +16197,6 @@ pub mod delete_base_path_mapping_output {
         }
     }
 }
-impl DeleteBasePathMappingOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteBasePathMappingOutput`](crate::output::DeleteBasePathMappingOutput).
-    pub fn builder() -> crate::output::delete_base_path_mapping_output::Builder {
-        crate::output::delete_base_path_mapping_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -16106,6 +16209,13 @@ impl aws_http::request_id::RequestId for DeleteAuthorizerOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteAuthorizerOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteAuthorizerOutput`](crate::output::DeleteAuthorizerOutput).
+    pub fn builder() -> crate::output::delete_authorizer_output::Builder {
+        crate::output::delete_authorizer_output::Builder::default()
+    }
+}
+
 /// See [`DeleteAuthorizerOutput`](crate::output::DeleteAuthorizerOutput).
 pub mod delete_authorizer_output {
 
@@ -16133,12 +16243,6 @@ pub mod delete_authorizer_output {
         }
     }
 }
-impl DeleteAuthorizerOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteAuthorizerOutput`](crate::output::DeleteAuthorizerOutput).
-    pub fn builder() -> crate::output::delete_authorizer_output::Builder {
-        crate::output::delete_authorizer_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -16151,6 +16255,13 @@ impl aws_http::request_id::RequestId for DeleteApiKeyOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteApiKeyOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteApiKeyOutput`](crate::output::DeleteApiKeyOutput).
+    pub fn builder() -> crate::output::delete_api_key_output::Builder {
+        crate::output::delete_api_key_output::Builder::default()
+    }
+}
+
 /// See [`DeleteApiKeyOutput`](crate::output::DeleteApiKeyOutput).
 pub mod delete_api_key_output {
 
@@ -16176,12 +16287,6 @@ pub mod delete_api_key_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl DeleteApiKeyOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteApiKeyOutput`](crate::output::DeleteApiKeyOutput).
-    pub fn builder() -> crate::output::delete_api_key_output::Builder {
-        crate::output::delete_api_key_output::Builder::default()
     }
 }
 
@@ -16251,6 +16356,13 @@ impl aws_http::request_id::RequestId for CreateVpcLinkOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateVpcLinkOutput {
+    /// Creates a new builder-style object to manufacture [`CreateVpcLinkOutput`](crate::output::CreateVpcLinkOutput).
+    pub fn builder() -> crate::output::create_vpc_link_output::Builder {
+        crate::output::create_vpc_link_output::Builder::default()
+    }
+}
+
 /// See [`CreateVpcLinkOutput`](crate::output::CreateVpcLinkOutput).
 pub mod create_vpc_link_output {
 
@@ -16394,12 +16506,6 @@ pub mod create_vpc_link_output {
         }
     }
 }
-impl CreateVpcLinkOutput {
-    /// Creates a new builder-style object to manufacture [`CreateVpcLinkOutput`](crate::output::CreateVpcLinkOutput).
-    pub fn builder() -> crate::output::create_vpc_link_output::Builder {
-        crate::output::create_vpc_link_output::Builder::default()
-    }
-}
 
 /// <p>Represents a usage plan key to identify a plan customer.</p>
 #[non_exhaustive]
@@ -16442,6 +16548,13 @@ impl aws_http::request_id::RequestId for CreateUsagePlanKeyOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateUsagePlanKeyOutput {
+    /// Creates a new builder-style object to manufacture [`CreateUsagePlanKeyOutput`](crate::output::CreateUsagePlanKeyOutput).
+    pub fn builder() -> crate::output::create_usage_plan_key_output::Builder {
+        crate::output::create_usage_plan_key_output::Builder::default()
+    }
+}
+
 /// See [`CreateUsagePlanKeyOutput`](crate::output::CreateUsagePlanKeyOutput).
 pub mod create_usage_plan_key_output {
 
@@ -16515,12 +16628,6 @@ pub mod create_usage_plan_key_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl CreateUsagePlanKeyOutput {
-    /// Creates a new builder-style object to manufacture [`CreateUsagePlanKeyOutput`](crate::output::CreateUsagePlanKeyOutput).
-    pub fn builder() -> crate::output::create_usage_plan_key_output::Builder {
-        crate::output::create_usage_plan_key_output::Builder::default()
     }
 }
 
@@ -16597,6 +16704,13 @@ impl aws_http::request_id::RequestId for CreateUsagePlanOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateUsagePlanOutput {
+    /// Creates a new builder-style object to manufacture [`CreateUsagePlanOutput`](crate::output::CreateUsagePlanOutput).
+    pub fn builder() -> crate::output::create_usage_plan_output::Builder {
+        crate::output::create_usage_plan_output::Builder::default()
+    }
+}
+
 /// See [`CreateUsagePlanOutput`](crate::output::CreateUsagePlanOutput).
 pub mod create_usage_plan_output {
 
@@ -16752,12 +16866,6 @@ pub mod create_usage_plan_output {
         }
     }
 }
-impl CreateUsagePlanOutput {
-    /// Creates a new builder-style object to manufacture [`CreateUsagePlanOutput`](crate::output::CreateUsagePlanOutput).
-    pub fn builder() -> crate::output::create_usage_plan_output::Builder {
-        crate::output::create_usage_plan_output::Builder::default()
-    }
-}
 
 /// <p>Represents a unique identifier for a version of a deployed RestApi that is callable by users.</p>
 #[non_exhaustive]
@@ -16905,6 +17013,13 @@ impl aws_http::request_id::RequestId for CreateStageOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateStageOutput {
+    /// Creates a new builder-style object to manufacture [`CreateStageOutput`](crate::output::CreateStageOutput).
+    pub fn builder() -> crate::output::create_stage_output::Builder {
+        crate::output::create_stage_output::Builder::default()
+    }
+}
+
 /// See [`CreateStageOutput`](crate::output::CreateStageOutput).
 pub mod create_stage_output {
 
@@ -17214,12 +17329,6 @@ pub mod create_stage_output {
         }
     }
 }
-impl CreateStageOutput {
-    /// Creates a new builder-style object to manufacture [`CreateStageOutput`](crate::output::CreateStageOutput).
-    pub fn builder() -> crate::output::create_stage_output::Builder {
-        crate::output::create_stage_output::Builder::default()
-    }
-}
 
 /// <p>Represents a REST API.</p>
 #[non_exhaustive]
@@ -17331,6 +17440,13 @@ impl aws_http::request_id::RequestId for CreateRestApiOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateRestApiOutput {
+    /// Creates a new builder-style object to manufacture [`CreateRestApiOutput`](crate::output::CreateRestApiOutput).
+    pub fn builder() -> crate::output::create_rest_api_output::Builder {
+        crate::output::create_rest_api_output::Builder::default()
+    }
+}
+
 /// See [`CreateRestApiOutput`](crate::output::CreateRestApiOutput).
 pub mod create_rest_api_output {
 
@@ -17564,12 +17680,6 @@ pub mod create_rest_api_output {
         }
     }
 }
-impl CreateRestApiOutput {
-    /// Creates a new builder-style object to manufacture [`CreateRestApiOutput`](crate::output::CreateRestApiOutput).
-    pub fn builder() -> crate::output::create_rest_api_output::Builder {
-        crate::output::create_rest_api_output::Builder::default()
-    }
-}
 
 /// <p>Represents an API resource.</p>
 #[non_exhaustive]
@@ -17623,6 +17733,13 @@ impl aws_http::request_id::RequestId for CreateResourceOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateResourceOutput {
+    /// Creates a new builder-style object to manufacture [`CreateResourceOutput`](crate::output::CreateResourceOutput).
+    pub fn builder() -> crate::output::create_resource_output::Builder {
+        crate::output::create_resource_output::Builder::default()
+    }
+}
+
 /// See [`CreateResourceOutput`](crate::output::CreateResourceOutput).
 pub mod create_resource_output {
 
@@ -17727,12 +17844,6 @@ pub mod create_resource_output {
         }
     }
 }
-impl CreateResourceOutput {
-    /// Creates a new builder-style object to manufacture [`CreateResourceOutput`](crate::output::CreateResourceOutput).
-    pub fn builder() -> crate::output::create_resource_output::Builder {
-        crate::output::create_resource_output::Builder::default()
-    }
-}
 
 /// <p>A set of validation rules for incoming Method requests.</p>
 #[non_exhaustive]
@@ -17775,6 +17886,13 @@ impl aws_http::request_id::RequestId for CreateRequestValidatorOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateRequestValidatorOutput {
+    /// Creates a new builder-style object to manufacture [`CreateRequestValidatorOutput`](crate::output::CreateRequestValidatorOutput).
+    pub fn builder() -> crate::output::create_request_validator_output::Builder {
+        crate::output::create_request_validator_output::Builder::default()
+    }
+}
+
 /// See [`CreateRequestValidatorOutput`](crate::output::CreateRequestValidatorOutput).
 pub mod create_request_validator_output {
 
@@ -17850,12 +17968,6 @@ pub mod create_request_validator_output {
         }
     }
 }
-impl CreateRequestValidatorOutput {
-    /// Creates a new builder-style object to manufacture [`CreateRequestValidatorOutput`](crate::output::CreateRequestValidatorOutput).
-    pub fn builder() -> crate::output::create_request_validator_output::Builder {
-        crate::output::create_request_validator_output::Builder::default()
-    }
-}
 
 /// <p>Represents the data structure of a method's request or response payload.</p>
 #[non_exhaustive]
@@ -17905,6 +18017,13 @@ impl aws_http::request_id::RequestId for CreateModelOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateModelOutput {
+    /// Creates a new builder-style object to manufacture [`CreateModelOutput`](crate::output::CreateModelOutput).
+    pub fn builder() -> crate::output::create_model_output::Builder {
+        crate::output::create_model_output::Builder::default()
+    }
+}
+
 /// See [`CreateModelOutput`](crate::output::CreateModelOutput).
 pub mod create_model_output {
 
@@ -17990,12 +18109,6 @@ pub mod create_model_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl CreateModelOutput {
-    /// Creates a new builder-style object to manufacture [`CreateModelOutput`](crate::output::CreateModelOutput).
-    pub fn builder() -> crate::output::create_model_output::Builder {
-        crate::output::create_model_output::Builder::default()
     }
 }
 
@@ -18139,6 +18252,13 @@ impl aws_http::request_id::RequestId for CreateDomainNameOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateDomainNameOutput {
+    /// Creates a new builder-style object to manufacture [`CreateDomainNameOutput`](crate::output::CreateDomainNameOutput).
+    pub fn builder() -> crate::output::create_domain_name_output::Builder {
+        crate::output::create_domain_name_output::Builder::default()
+    }
+}
+
 /// See [`CreateDomainNameOutput`](crate::output::CreateDomainNameOutput).
 pub mod create_domain_name_output {
 
@@ -18445,12 +18565,6 @@ pub mod create_domain_name_output {
         }
     }
 }
-impl CreateDomainNameOutput {
-    /// Creates a new builder-style object to manufacture [`CreateDomainNameOutput`](crate::output::CreateDomainNameOutput).
-    pub fn builder() -> crate::output::create_domain_name_output::Builder {
-        crate::output::create_domain_name_output::Builder::default()
-    }
-}
 
 /// <p>A snapshot of the documentation of an API.</p>
 #[non_exhaustive]
@@ -18486,6 +18600,13 @@ impl aws_http::request_id::RequestId for CreateDocumentationVersionOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateDocumentationVersionOutput {
+    /// Creates a new builder-style object to manufacture [`CreateDocumentationVersionOutput`](crate::output::CreateDocumentationVersionOutput).
+    pub fn builder() -> crate::output::create_documentation_version_output::Builder {
+        crate::output::create_documentation_version_output::Builder::default()
+    }
+}
+
 /// See [`CreateDocumentationVersionOutput`](crate::output::CreateDocumentationVersionOutput).
 pub mod create_documentation_version_output {
 
@@ -18552,12 +18673,6 @@ pub mod create_documentation_version_output {
         }
     }
 }
-impl CreateDocumentationVersionOutput {
-    /// Creates a new builder-style object to manufacture [`CreateDocumentationVersionOutput`](crate::output::CreateDocumentationVersionOutput).
-    pub fn builder() -> crate::output::create_documentation_version_output::Builder {
-        crate::output::create_documentation_version_output::Builder::default()
-    }
-}
 
 /// <p>A documentation part for a targeted API entity.</p>
 #[non_exhaustive]
@@ -18593,6 +18708,13 @@ impl aws_http::request_id::RequestId for CreateDocumentationPartOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateDocumentationPartOutput {
+    /// Creates a new builder-style object to manufacture [`CreateDocumentationPartOutput`](crate::output::CreateDocumentationPartOutput).
+    pub fn builder() -> crate::output::create_documentation_part_output::Builder {
+        crate::output::create_documentation_part_output::Builder::default()
+    }
+}
+
 /// See [`CreateDocumentationPartOutput`](crate::output::CreateDocumentationPartOutput).
 pub mod create_documentation_part_output {
 
@@ -18659,12 +18781,6 @@ pub mod create_documentation_part_output {
         }
     }
 }
-impl CreateDocumentationPartOutput {
-    /// Creates a new builder-style object to manufacture [`CreateDocumentationPartOutput`](crate::output::CreateDocumentationPartOutput).
-    pub fn builder() -> crate::output::create_documentation_part_output::Builder {
-        crate::output::create_documentation_part_output::Builder::default()
-    }
-}
 
 /// <p>An immutable representation of a RestApi resource that can be called by users using Stages. A deployment must be associated with a Stage for it to be callable over the Internet.</p>
 #[non_exhaustive]
@@ -18719,6 +18835,13 @@ impl aws_http::request_id::RequestId for CreateDeploymentOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateDeploymentOutput {
+    /// Creates a new builder-style object to manufacture [`CreateDeploymentOutput`](crate::output::CreateDeploymentOutput).
+    pub fn builder() -> crate::output::create_deployment_output::Builder {
+        crate::output::create_deployment_output::Builder::default()
+    }
+}
+
 /// See [`CreateDeploymentOutput`](crate::output::CreateDeploymentOutput).
 pub mod create_deployment_output {
 
@@ -18820,12 +18943,6 @@ pub mod create_deployment_output {
         }
     }
 }
-impl CreateDeploymentOutput {
-    /// Creates a new builder-style object to manufacture [`CreateDeploymentOutput`](crate::output::CreateDeploymentOutput).
-    pub fn builder() -> crate::output::create_deployment_output::Builder {
-        crate::output::create_deployment_output::Builder::default()
-    }
-}
 
 /// <p>Represents the base path that callers of the API must provide as part of the URL after the domain name.</p>
 #[non_exhaustive]
@@ -18861,6 +18978,13 @@ impl aws_http::request_id::RequestId for CreateBasePathMappingOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateBasePathMappingOutput {
+    /// Creates a new builder-style object to manufacture [`CreateBasePathMappingOutput`](crate::output::CreateBasePathMappingOutput).
+    pub fn builder() -> crate::output::create_base_path_mapping_output::Builder {
+        crate::output::create_base_path_mapping_output::Builder::default()
+    }
+}
+
 /// See [`CreateBasePathMappingOutput`](crate::output::CreateBasePathMappingOutput).
 pub mod create_base_path_mapping_output {
 
@@ -18922,12 +19046,6 @@ pub mod create_base_path_mapping_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl CreateBasePathMappingOutput {
-    /// Creates a new builder-style object to manufacture [`CreateBasePathMappingOutput`](crate::output::CreateBasePathMappingOutput).
-    pub fn builder() -> crate::output::create_base_path_mapping_output::Builder {
-        crate::output::create_base_path_mapping_output::Builder::default()
     }
 }
 
@@ -19014,6 +19132,13 @@ impl aws_http::request_id::RequestId for CreateAuthorizerOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateAuthorizerOutput {
+    /// Creates a new builder-style object to manufacture [`CreateAuthorizerOutput`](crate::output::CreateAuthorizerOutput).
+    pub fn builder() -> crate::output::create_authorizer_output::Builder {
+        crate::output::create_authorizer_output::Builder::default()
+    }
+}
+
 /// See [`CreateAuthorizerOutput`](crate::output::CreateAuthorizerOutput).
 pub mod create_authorizer_output {
 
@@ -19191,12 +19316,6 @@ pub mod create_authorizer_output {
         }
     }
 }
-impl CreateAuthorizerOutput {
-    /// Creates a new builder-style object to manufacture [`CreateAuthorizerOutput`](crate::output::CreateAuthorizerOutput).
-    pub fn builder() -> crate::output::create_authorizer_output::Builder {
-        crate::output::create_authorizer_output::Builder::default()
-    }
-}
 
 /// <p>A resource that can be distributed to callers for executing Method resources that require an API key. API keys can be mapped to any Stage on any RestApi, which indicates that the callers with the API key can make requests to that stage.</p>
 #[non_exhaustive]
@@ -19285,6 +19404,13 @@ impl aws_http::request_id::RequestId for CreateApiKeyOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateApiKeyOutput {
+    /// Creates a new builder-style object to manufacture [`CreateApiKeyOutput`](crate::output::CreateApiKeyOutput).
+    pub fn builder() -> crate::output::create_api_key_output::Builder {
+        crate::output::create_api_key_output::Builder::default()
+    }
+}
+
 /// See [`CreateApiKeyOutput`](crate::output::CreateApiKeyOutput).
 pub mod create_api_key_output {
 
@@ -19462,11 +19588,5 @@ pub mod create_api_key_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl CreateApiKeyOutput {
-    /// Creates a new builder-style object to manufacture [`CreateApiKeyOutput`](crate::output::CreateApiKeyOutput).
-    pub fn builder() -> crate::output::create_api_key_output::Builder {
-        crate::output::create_api_key_output::Builder::default()
     }
 }

@@ -35,6 +35,13 @@ impl Resource {
         self.resource_arn.as_deref()
     }
 }
+impl Resource {
+    /// Creates a new builder-style object to manufacture [`Resource`](crate::model::Resource).
+    pub fn builder() -> crate::model::resource::Builder {
+        crate::model::resource::Builder::default()
+    }
+}
+
 /// See [`Resource`](crate::model::Resource).
 pub mod resource {
 
@@ -111,12 +118,6 @@ pub mod resource {
         }
     }
 }
-impl Resource {
-    /// Creates a new builder-style object to manufacture [`Resource`](crate::model::Resource).
-    pub fn builder() -> crate::model::resource::Builder {
-        crate::model::resource::Builder::default()
-    }
-}
 
 /// <p>A component for DNS/routing control readiness checks and architecture checks.</p>
 #[non_exhaustive]
@@ -160,6 +161,13 @@ impl DnsTargetResource {
         self.target_resource.as_ref()
     }
 }
+impl DnsTargetResource {
+    /// Creates a new builder-style object to manufacture [`DnsTargetResource`](crate::model::DnsTargetResource).
+    pub fn builder() -> crate::model::dns_target_resource::Builder {
+        crate::model::dns_target_resource::Builder::default()
+    }
+}
+
 /// See [`DnsTargetResource`](crate::model::DnsTargetResource).
 pub mod dns_target_resource {
 
@@ -245,12 +253,6 @@ pub mod dns_target_resource {
         }
     }
 }
-impl DnsTargetResource {
-    /// Creates a new builder-style object to manufacture [`DnsTargetResource`](crate::model::DnsTargetResource).
-    pub fn builder() -> crate::model::dns_target_resource::Builder {
-        crate::model::dns_target_resource::Builder::default()
-    }
-}
 
 /// <p>The target resource that the Route 53 record points to.</p>
 #[non_exhaustive]
@@ -273,6 +275,13 @@ impl TargetResource {
         self.r53_resource.as_ref()
     }
 }
+impl TargetResource {
+    /// Creates a new builder-style object to manufacture [`TargetResource`](crate::model::TargetResource).
+    pub fn builder() -> crate::model::target_resource::Builder {
+        crate::model::target_resource::Builder::default()
+    }
+}
+
 /// See [`TargetResource`](crate::model::TargetResource).
 pub mod target_resource {
 
@@ -319,12 +328,6 @@ pub mod target_resource {
         }
     }
 }
-impl TargetResource {
-    /// Creates a new builder-style object to manufacture [`TargetResource`](crate::model::TargetResource).
-    pub fn builder() -> crate::model::target_resource::Builder {
-        crate::model::target_resource::Builder::default()
-    }
-}
 
 /// <p>The Route 53 resource that a DNS target resource record points to.</p>
 #[non_exhaustive]
@@ -347,6 +350,13 @@ impl R53ResourceRecord {
         self.record_set_id.as_deref()
     }
 }
+impl R53ResourceRecord {
+    /// Creates a new builder-style object to manufacture [`R53ResourceRecord`](crate::model::R53ResourceRecord).
+    pub fn builder() -> crate::model::r53_resource_record::Builder {
+        crate::model::r53_resource_record::Builder::default()
+    }
+}
+
 /// See [`R53ResourceRecord`](crate::model::R53ResourceRecord).
 pub mod r53_resource_record {
 
@@ -390,12 +400,6 @@ pub mod r53_resource_record {
         }
     }
 }
-impl R53ResourceRecord {
-    /// Creates a new builder-style object to manufacture [`R53ResourceRecord`](crate::model::R53ResourceRecord).
-    pub fn builder() -> crate::model::r53_resource_record::Builder {
-        crate::model::r53_resource_record::Builder::default()
-    }
-}
 
 /// <p>The Network Load Balancer resource that a DNS target resource points to.</p>
 #[non_exhaustive]
@@ -411,6 +415,13 @@ impl NlbResource {
         self.arn.as_deref()
     }
 }
+impl NlbResource {
+    /// Creates a new builder-style object to manufacture [`NlbResource`](crate::model::NlbResource).
+    pub fn builder() -> crate::model::nlb_resource::Builder {
+        crate::model::nlb_resource::Builder::default()
+    }
+}
+
 /// See [`NlbResource`](crate::model::NlbResource).
 pub mod nlb_resource {
 
@@ -435,12 +446,6 @@ pub mod nlb_resource {
         pub fn build(self) -> crate::model::NlbResource {
             crate::model::NlbResource { arn: self.arn }
         }
-    }
-}
-impl NlbResource {
-    /// Creates a new builder-style object to manufacture [`NlbResource`](crate::model::NlbResource).
-    pub fn builder() -> crate::model::nlb_resource::Builder {
-        crate::model::nlb_resource::Builder::default()
     }
 }
 
@@ -472,6 +477,13 @@ impl ListRulesOutput {
         self.rule_id.as_deref()
     }
 }
+impl ListRulesOutput {
+    /// Creates a new builder-style object to manufacture [`ListRulesOutput`](crate::model::ListRulesOutput).
+    pub fn builder() -> crate::model::list_rules_output::Builder {
+        crate::model::list_rules_output::Builder::default()
+    }
+}
+
 /// See [`ListRulesOutput`](crate::model::ListRulesOutput).
 pub mod list_rules_output {
 
@@ -530,12 +542,6 @@ pub mod list_rules_output {
         }
     }
 }
-impl ListRulesOutput {
-    /// Creates a new builder-style object to manufacture [`ListRulesOutput`](crate::model::ListRulesOutput).
-    pub fn builder() -> crate::model::list_rules_output::Builder {
-        crate::model::list_rules_output::Builder::default()
-    }
-}
 
 /// <p>A collection of resources of the same type.</p>
 #[non_exhaustive]
@@ -585,6 +591,13 @@ impl ResourceSetOutput {
         self.tags.as_ref()
     }
 }
+impl ResourceSetOutput {
+    /// Creates a new builder-style object to manufacture [`ResourceSetOutput`](crate::model::ResourceSetOutput).
+    pub fn builder() -> crate::model::resource_set_output::Builder {
+        crate::model::resource_set_output::Builder::default()
+    }
+}
+
 /// See [`ResourceSetOutput`](crate::model::ResourceSetOutput).
 pub mod resource_set_output {
 
@@ -698,12 +711,6 @@ pub mod resource_set_output {
         }
     }
 }
-impl ResourceSetOutput {
-    /// Creates a new builder-style object to manufacture [`ResourceSetOutput`](crate::model::ResourceSetOutput).
-    pub fn builder() -> crate::model::resource_set_output::Builder {
-        crate::model::resource_set_output::Builder::default()
-    }
-}
 
 /// <p>A representation of the application, typically containing multiple cells.</p>
 #[non_exhaustive]
@@ -744,6 +751,13 @@ impl RecoveryGroupOutput {
         self.tags.as_ref()
     }
 }
+impl RecoveryGroupOutput {
+    /// Creates a new builder-style object to manufacture [`RecoveryGroupOutput`](crate::model::RecoveryGroupOutput).
+    pub fn builder() -> crate::model::recovery_group_output::Builder {
+        crate::model::recovery_group_output::Builder::default()
+    }
+}
+
 /// See [`RecoveryGroupOutput`](crate::model::RecoveryGroupOutput).
 pub mod recovery_group_output {
 
@@ -840,12 +854,6 @@ pub mod recovery_group_output {
         }
     }
 }
-impl RecoveryGroupOutput {
-    /// Creates a new builder-style object to manufacture [`RecoveryGroupOutput`](crate::model::RecoveryGroupOutput).
-    pub fn builder() -> crate::model::recovery_group_output::Builder {
-        crate::model::recovery_group_output::Builder::default()
-    }
-}
 
 /// <p>A readiness check.</p>
 #[non_exhaustive]
@@ -886,6 +894,13 @@ impl ReadinessCheckOutput {
         self.tags.as_ref()
     }
 }
+impl ReadinessCheckOutput {
+    /// Creates a new builder-style object to manufacture [`ReadinessCheckOutput`](crate::model::ReadinessCheckOutput).
+    pub fn builder() -> crate::model::readiness_check_output::Builder {
+        crate::model::readiness_check_output::Builder::default()
+    }
+}
+
 /// See [`ReadinessCheckOutput`](crate::model::ReadinessCheckOutput).
 pub mod readiness_check_output {
 
@@ -973,12 +988,6 @@ pub mod readiness_check_output {
         }
     }
 }
-impl ReadinessCheckOutput {
-    /// Creates a new builder-style object to manufacture [`ReadinessCheckOutput`](crate::model::ReadinessCheckOutput).
-    pub fn builder() -> crate::model::readiness_check_output::Builder {
-        crate::model::readiness_check_output::Builder::default()
-    }
-}
 
 /// <p>Information about a cell.</p>
 #[non_exhaustive]
@@ -1026,6 +1035,13 @@ impl CellOutput {
         self.tags.as_ref()
     }
 }
+impl CellOutput {
+    /// Creates a new builder-style object to manufacture [`CellOutput`](crate::model::CellOutput).
+    pub fn builder() -> crate::model::cell_output::Builder {
+        crate::model::cell_output::Builder::default()
+    }
+}
+
 /// See [`CellOutput`](crate::model::CellOutput).
 pub mod cell_output {
 
@@ -1137,12 +1153,6 @@ pub mod cell_output {
         }
     }
 }
-impl CellOutput {
-    /// Creates a new builder-style object to manufacture [`CellOutput`](crate::model::CellOutput).
-    pub fn builder() -> crate::model::cell_output::Builder {
-        crate::model::cell_output::Builder::default()
-    }
-}
 
 /// <p>Summary of all readiness check statuses in a recovery group, paginated in GetRecoveryGroupReadinessSummary and GetCellReadinessSummary.</p>
 #[non_exhaustive]
@@ -1165,6 +1175,13 @@ impl ReadinessCheckSummary {
         self.readiness_check_name.as_deref()
     }
 }
+impl ReadinessCheckSummary {
+    /// Creates a new builder-style object to manufacture [`ReadinessCheckSummary`](crate::model::ReadinessCheckSummary).
+    pub fn builder() -> crate::model::readiness_check_summary::Builder {
+        crate::model::readiness_check_summary::Builder::default()
+    }
+}
+
 /// See [`ReadinessCheckSummary`](crate::model::ReadinessCheckSummary).
 pub mod readiness_check_summary {
 
@@ -1209,12 +1226,6 @@ pub mod readiness_check_summary {
                 readiness_check_name: self.readiness_check_name,
             }
         }
-    }
-}
-impl ReadinessCheckSummary {
-    /// Creates a new builder-style object to manufacture [`ReadinessCheckSummary`](crate::model::ReadinessCheckSummary).
-    pub fn builder() -> crate::model::readiness_check_summary::Builder {
-        crate::model::readiness_check_summary::Builder::default()
     }
 }
 
@@ -1355,6 +1366,13 @@ impl ResourceResult {
         self.resource_arn.as_deref()
     }
 }
+impl ResourceResult {
+    /// Creates a new builder-style object to manufacture [`ResourceResult`](crate::model::ResourceResult).
+    pub fn builder() -> crate::model::resource_result::Builder {
+        crate::model::resource_result::Builder::default()
+    }
+}
+
 /// See [`ResourceResult`](crate::model::ResourceResult).
 pub mod resource_result {
 
@@ -1425,12 +1443,6 @@ pub mod resource_result {
         }
     }
 }
-impl ResourceResult {
-    /// Creates a new builder-style object to manufacture [`ResourceResult`](crate::model::ResourceResult).
-    pub fn builder() -> crate::model::resource_result::Builder {
-        crate::model::resource_result::Builder::default()
-    }
-}
 
 /// <p>Information relating to readiness check status.</p>
 #[non_exhaustive]
@@ -1446,6 +1458,13 @@ impl Message {
         self.message_text.as_deref()
     }
 }
+impl Message {
+    /// Creates a new builder-style object to manufacture [`Message`](crate::model::Message).
+    pub fn builder() -> crate::model::message::Builder {
+        crate::model::message::Builder::default()
+    }
+}
+
 /// See [`Message`](crate::model::Message).
 pub mod message {
 
@@ -1472,12 +1491,6 @@ pub mod message {
                 message_text: self.message_text,
             }
         }
-    }
-}
-impl Message {
-    /// Creates a new builder-style object to manufacture [`Message`](crate::model::Message).
-    pub fn builder() -> crate::model::message::Builder {
-        crate::model::message::Builder::default()
     }
 }
 
@@ -1516,6 +1529,13 @@ impl RuleResult {
         self.rule_id.as_deref()
     }
 }
+impl RuleResult {
+    /// Creates a new builder-style object to manufacture [`RuleResult`](crate::model::RuleResult).
+    pub fn builder() -> crate::model::rule_result::Builder {
+        crate::model::rule_result::Builder::default()
+    }
+}
+
 /// See [`RuleResult`](crate::model::RuleResult).
 pub mod rule_result {
 
@@ -1595,12 +1615,6 @@ pub mod rule_result {
         }
     }
 }
-impl RuleResult {
-    /// Creates a new builder-style object to manufacture [`RuleResult`](crate::model::RuleResult).
-    pub fn builder() -> crate::model::rule_result::Builder {
-        crate::model::rule_result::Builder::default()
-    }
-}
 
 /// <p>Recommendations that are provided to make an application more recovery resilient.</p>
 #[non_exhaustive]
@@ -1616,6 +1630,13 @@ impl Recommendation {
         self.recommendation_text.as_deref()
     }
 }
+impl Recommendation {
+    /// Creates a new builder-style object to manufacture [`Recommendation`](crate::model::Recommendation).
+    pub fn builder() -> crate::model::recommendation::Builder {
+        crate::model::recommendation::Builder::default()
+    }
+}
+
 /// See [`Recommendation`](crate::model::Recommendation).
 pub mod recommendation {
 
@@ -1645,11 +1666,5 @@ pub mod recommendation {
                 recommendation_text: self.recommendation_text,
             }
         }
-    }
-}
-impl Recommendation {
-    /// Creates a new builder-style object to manufacture [`Recommendation`](crate::model::Recommendation).
-    pub fn builder() -> crate::model::recommendation::Builder {
-        crate::model::recommendation::Builder::default()
     }
 }

@@ -26,6 +26,13 @@ impl aws_http::request_id::RequestId for ListScheduleGroupsOutput {
         self._request_id.as_deref()
     }
 }
+impl ListScheduleGroupsOutput {
+    /// Creates a new builder-style object to manufacture [`ListScheduleGroupsOutput`](crate::output::ListScheduleGroupsOutput).
+    pub fn builder() -> crate::output::list_schedule_groups_output::Builder {
+        crate::output::list_schedule_groups_output::Builder::default()
+    }
+}
+
 /// See [`ListScheduleGroupsOutput`](crate::output::ListScheduleGroupsOutput).
 pub mod list_schedule_groups_output {
 
@@ -87,12 +94,6 @@ pub mod list_schedule_groups_output {
         }
     }
 }
-impl ListScheduleGroupsOutput {
-    /// Creates a new builder-style object to manufacture [`ListScheduleGroupsOutput`](crate::output::ListScheduleGroupsOutput).
-    pub fn builder() -> crate::output::list_schedule_groups_output::Builder {
-        crate::output::list_schedule_groups_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -114,6 +115,13 @@ impl aws_http::request_id::RequestId for CreateScheduleGroupOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateScheduleGroupOutput {
+    /// Creates a new builder-style object to manufacture [`CreateScheduleGroupOutput`](crate::output::CreateScheduleGroupOutput).
+    pub fn builder() -> crate::output::create_schedule_group_output::Builder {
+        crate::output::create_schedule_group_output::Builder::default()
+    }
+}
+
 /// See [`CreateScheduleGroupOutput`](crate::output::CreateScheduleGroupOutput).
 pub mod create_schedule_group_output {
 
@@ -156,12 +164,6 @@ pub mod create_schedule_group_output {
         }
     }
 }
-impl CreateScheduleGroupOutput {
-    /// Creates a new builder-style object to manufacture [`CreateScheduleGroupOutput`](crate::output::CreateScheduleGroupOutput).
-    pub fn builder() -> crate::output::create_schedule_group_output::Builder {
-        crate::output::create_schedule_group_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -174,6 +176,13 @@ impl aws_http::request_id::RequestId for DeleteScheduleGroupOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteScheduleGroupOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteScheduleGroupOutput`](crate::output::DeleteScheduleGroupOutput).
+    pub fn builder() -> crate::output::delete_schedule_group_output::Builder {
+        crate::output::delete_schedule_group_output::Builder::default()
+    }
+}
+
 /// See [`DeleteScheduleGroupOutput`](crate::output::DeleteScheduleGroupOutput).
 pub mod delete_schedule_group_output {
 
@@ -199,12 +208,6 @@ pub mod delete_schedule_group_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl DeleteScheduleGroupOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteScheduleGroupOutput`](crate::output::DeleteScheduleGroupOutput).
-    pub fn builder() -> crate::output::delete_schedule_group_output::Builder {
-        crate::output::delete_schedule_group_output::Builder::default()
     }
 }
 
@@ -256,6 +259,13 @@ impl aws_http::request_id::RequestId for GetScheduleGroupOutput {
         self._request_id.as_deref()
     }
 }
+impl GetScheduleGroupOutput {
+    /// Creates a new builder-style object to manufacture [`GetScheduleGroupOutput`](crate::output::GetScheduleGroupOutput).
+    pub fn builder() -> crate::output::get_schedule_group_output::Builder {
+        crate::output::get_schedule_group_output::Builder::default()
+    }
+}
+
 /// See [`GetScheduleGroupOutput`](crate::output::GetScheduleGroupOutput).
 pub mod get_schedule_group_output {
 
@@ -352,12 +362,6 @@ pub mod get_schedule_group_output {
         }
     }
 }
-impl GetScheduleGroupOutput {
-    /// Creates a new builder-style object to manufacture [`GetScheduleGroupOutput`](crate::output::GetScheduleGroupOutput).
-    pub fn builder() -> crate::output::get_schedule_group_output::Builder {
-        crate::output::get_schedule_group_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -386,6 +390,13 @@ impl aws_http::request_id::RequestId for ListSchedulesOutput {
         self._request_id.as_deref()
     }
 }
+impl ListSchedulesOutput {
+    /// Creates a new builder-style object to manufacture [`ListSchedulesOutput`](crate::output::ListSchedulesOutput).
+    pub fn builder() -> crate::output::list_schedules_output::Builder {
+        crate::output::list_schedules_output::Builder::default()
+    }
+}
+
 /// See [`ListSchedulesOutput`](crate::output::ListSchedulesOutput).
 pub mod list_schedules_output {
 
@@ -446,12 +457,6 @@ pub mod list_schedules_output {
         }
     }
 }
-impl ListSchedulesOutput {
-    /// Creates a new builder-style object to manufacture [`ListSchedulesOutput`](crate::output::ListSchedulesOutput).
-    pub fn builder() -> crate::output::list_schedules_output::Builder {
-        crate::output::list_schedules_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -473,6 +478,13 @@ impl aws_http::request_id::RequestId for CreateScheduleOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateScheduleOutput {
+    /// Creates a new builder-style object to manufacture [`CreateScheduleOutput`](crate::output::CreateScheduleOutput).
+    pub fn builder() -> crate::output::create_schedule_output::Builder {
+        crate::output::create_schedule_output::Builder::default()
+    }
+}
+
 /// See [`CreateScheduleOutput`](crate::output::CreateScheduleOutput).
 pub mod create_schedule_output {
 
@@ -512,12 +524,6 @@ pub mod create_schedule_output {
         }
     }
 }
-impl CreateScheduleOutput {
-    /// Creates a new builder-style object to manufacture [`CreateScheduleOutput`](crate::output::CreateScheduleOutput).
-    pub fn builder() -> crate::output::create_schedule_output::Builder {
-        crate::output::create_schedule_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -530,6 +536,13 @@ impl aws_http::request_id::RequestId for DeleteScheduleOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteScheduleOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteScheduleOutput`](crate::output::DeleteScheduleOutput).
+    pub fn builder() -> crate::output::delete_schedule_output::Builder {
+        crate::output::delete_schedule_output::Builder::default()
+    }
+}
+
 /// See [`DeleteScheduleOutput`](crate::output::DeleteScheduleOutput).
 pub mod delete_schedule_output {
 
@@ -557,12 +570,6 @@ pub mod delete_schedule_output {
         }
     }
 }
-impl DeleteScheduleOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteScheduleOutput`](crate::output::DeleteScheduleOutput).
-    pub fn builder() -> crate::output::delete_schedule_output::Builder {
-        crate::output::delete_schedule_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -584,6 +591,13 @@ impl aws_http::request_id::RequestId for UpdateScheduleOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdateScheduleOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateScheduleOutput`](crate::output::UpdateScheduleOutput).
+    pub fn builder() -> crate::output::update_schedule_output::Builder {
+        crate::output::update_schedule_output::Builder::default()
+    }
+}
+
 /// See [`UpdateScheduleOutput`](crate::output::UpdateScheduleOutput).
 pub mod update_schedule_output {
 
@@ -621,12 +635,6 @@ pub mod update_schedule_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl UpdateScheduleOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateScheduleOutput`](crate::output::UpdateScheduleOutput).
-    pub fn builder() -> crate::output::update_schedule_output::Builder {
-        crate::output::update_schedule_output::Builder::default()
     }
 }
 
@@ -759,6 +767,13 @@ impl aws_http::request_id::RequestId for GetScheduleOutput {
         self._request_id.as_deref()
     }
 }
+impl GetScheduleOutput {
+    /// Creates a new builder-style object to manufacture [`GetScheduleOutput`](crate::output::GetScheduleOutput).
+    pub fn builder() -> crate::output::get_schedule_output::Builder {
+        crate::output::get_schedule_output::Builder::default()
+    }
+}
+
 /// See [`GetScheduleOutput`](crate::output::GetScheduleOutput).
 pub mod get_schedule_output {
 
@@ -999,12 +1014,6 @@ pub mod get_schedule_output {
         }
     }
 }
-impl GetScheduleOutput {
-    /// Creates a new builder-style object to manufacture [`GetScheduleOutput`](crate::output::GetScheduleOutput).
-    pub fn builder() -> crate::output::get_schedule_output::Builder {
-        crate::output::get_schedule_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1017,6 +1026,13 @@ impl aws_http::request_id::RequestId for UntagResourceOutput {
         self._request_id.as_deref()
     }
 }
+impl UntagResourceOutput {
+    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    pub fn builder() -> crate::output::untag_resource_output::Builder {
+        crate::output::untag_resource_output::Builder::default()
+    }
+}
+
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
 
@@ -1044,12 +1060,6 @@ pub mod untag_resource_output {
         }
     }
 }
-impl UntagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
-    pub fn builder() -> crate::output::untag_resource_output::Builder {
-        crate::output::untag_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1062,6 +1072,13 @@ impl aws_http::request_id::RequestId for TagResourceOutput {
         self._request_id.as_deref()
     }
 }
+impl TagResourceOutput {
+    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
+    pub fn builder() -> crate::output::tag_resource_output::Builder {
+        crate::output::tag_resource_output::Builder::default()
+    }
+}
+
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
 
@@ -1089,12 +1106,6 @@ pub mod tag_resource_output {
         }
     }
 }
-impl TagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
-    pub fn builder() -> crate::output::tag_resource_output::Builder {
-        crate::output::tag_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1116,6 +1127,13 @@ impl aws_http::request_id::RequestId for ListTagsForResourceOutput {
         self._request_id.as_deref()
     }
 }
+impl ListTagsForResourceOutput {
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
+        crate::output::list_tags_for_resource_output::Builder::default()
+    }
+}
+
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
 
@@ -1162,11 +1180,5 @@ pub mod list_tags_for_resource_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl ListTagsForResourceOutput {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
-    pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
-        crate::output::list_tags_for_resource_output::Builder::default()
     }
 }

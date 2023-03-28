@@ -21,6 +21,13 @@ impl ApplicationMaintenanceConfigurationDescription {
         self.application_maintenance_window_end_time.as_deref()
     }
 }
+impl ApplicationMaintenanceConfigurationDescription {
+    /// Creates a new builder-style object to manufacture [`ApplicationMaintenanceConfigurationDescription`](crate::model::ApplicationMaintenanceConfigurationDescription).
+    pub fn builder() -> crate::model::application_maintenance_configuration_description::Builder {
+        crate::model::application_maintenance_configuration_description::Builder::default()
+    }
+}
+
 /// See [`ApplicationMaintenanceConfigurationDescription`](crate::model::ApplicationMaintenanceConfigurationDescription).
 pub mod application_maintenance_configuration_description {
 
@@ -77,12 +84,6 @@ pub mod application_maintenance_configuration_description {
         }
     }
 }
-impl ApplicationMaintenanceConfigurationDescription {
-    /// Creates a new builder-style object to manufacture [`ApplicationMaintenanceConfigurationDescription`](crate::model::ApplicationMaintenanceConfigurationDescription).
-    pub fn builder() -> crate::model::application_maintenance_configuration_description::Builder {
-        crate::model::application_maintenance_configuration_description::Builder::default()
-    }
-}
 
 /// <p>Describes the updated maintenance configuration for the application.</p>
 #[non_exhaustive]
@@ -99,6 +100,13 @@ impl ApplicationMaintenanceConfigurationUpdate {
             .as_deref()
     }
 }
+impl ApplicationMaintenanceConfigurationUpdate {
+    /// Creates a new builder-style object to manufacture [`ApplicationMaintenanceConfigurationUpdate`](crate::model::ApplicationMaintenanceConfigurationUpdate).
+    pub fn builder() -> crate::model::application_maintenance_configuration_update::Builder {
+        crate::model::application_maintenance_configuration_update::Builder::default()
+    }
+}
+
 /// See [`ApplicationMaintenanceConfigurationUpdate`](crate::model::ApplicationMaintenanceConfigurationUpdate).
 pub mod application_maintenance_configuration_update {
 
@@ -133,12 +141,6 @@ pub mod application_maintenance_configuration_update {
                     .application_maintenance_window_start_time_update,
             }
         }
-    }
-}
-impl ApplicationMaintenanceConfigurationUpdate {
-    /// Creates a new builder-style object to manufacture [`ApplicationMaintenanceConfigurationUpdate`](crate::model::ApplicationMaintenanceConfigurationUpdate).
-    pub fn builder() -> crate::model::application_maintenance_configuration_update::Builder {
-        crate::model::application_maintenance_configuration_update::Builder::default()
     }
 }
 
@@ -278,6 +280,13 @@ impl ApplicationDetail {
         self.application_mode.as_ref()
     }
 }
+impl ApplicationDetail {
+    /// Creates a new builder-style object to manufacture [`ApplicationDetail`](crate::model::ApplicationDetail).
+    pub fn builder() -> crate::model::application_detail::Builder {
+        crate::model::application_detail::Builder::default()
+    }
+}
+
 /// See [`ApplicationDetail`](crate::model::ApplicationDetail).
 pub mod application_detail {
 
@@ -572,12 +581,6 @@ pub mod application_detail {
         }
     }
 }
-impl ApplicationDetail {
-    /// Creates a new builder-style object to manufacture [`ApplicationDetail`](crate::model::ApplicationDetail).
-    pub fn builder() -> crate::model::application_detail::Builder {
-        crate::model::application_detail::Builder::default()
-    }
-}
 
 /// When writing a match expression against `ApplicationMode`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -701,6 +704,13 @@ impl CloudWatchLoggingOptionDescription {
         self.role_arn.as_deref()
     }
 }
+impl CloudWatchLoggingOptionDescription {
+    /// Creates a new builder-style object to manufacture [`CloudWatchLoggingOptionDescription`](crate::model::CloudWatchLoggingOptionDescription).
+    pub fn builder() -> crate::model::cloud_watch_logging_option_description::Builder {
+        crate::model::cloud_watch_logging_option_description::Builder::default()
+    }
+}
+
 /// See [`CloudWatchLoggingOptionDescription`](crate::model::CloudWatchLoggingOptionDescription).
 pub mod cloud_watch_logging_option_description {
 
@@ -764,12 +774,6 @@ pub mod cloud_watch_logging_option_description {
                 role_arn: self.role_arn,
             }
         }
-    }
-}
-impl CloudWatchLoggingOptionDescription {
-    /// Creates a new builder-style object to manufacture [`CloudWatchLoggingOptionDescription`](crate::model::CloudWatchLoggingOptionDescription).
-    pub fn builder() -> crate::model::cloud_watch_logging_option_description::Builder {
-        crate::model::cloud_watch_logging_option_description::Builder::default()
     }
 }
 
@@ -860,6 +864,13 @@ impl ApplicationConfigurationDescription {
         self.zeppelin_application_configuration_description.as_ref()
     }
 }
+impl ApplicationConfigurationDescription {
+    /// Creates a new builder-style object to manufacture [`ApplicationConfigurationDescription`](crate::model::ApplicationConfigurationDescription).
+    pub fn builder() -> crate::model::application_configuration_description::Builder {
+        crate::model::application_configuration_description::Builder::default()
+    }
+}
+
 /// See [`ApplicationConfigurationDescription`](crate::model::ApplicationConfigurationDescription).
 pub mod application_configuration_description {
 
@@ -1039,12 +1050,6 @@ pub mod application_configuration_description {
         }
     }
 }
-impl ApplicationConfigurationDescription {
-    /// Creates a new builder-style object to manufacture [`ApplicationConfigurationDescription`](crate::model::ApplicationConfigurationDescription).
-    pub fn builder() -> crate::model::application_configuration_description::Builder {
-        crate::model::application_configuration_description::Builder::default()
-    }
-}
 
 /// <p>The configuration of a Kinesis Data Analytics Studio notebook.</p>
 #[non_exhaustive]
@@ -1094,6 +1099,13 @@ impl ZeppelinApplicationConfigurationDescription {
         self.custom_artifacts_configuration_description.as_deref()
     }
 }
+impl ZeppelinApplicationConfigurationDescription {
+    /// Creates a new builder-style object to manufacture [`ZeppelinApplicationConfigurationDescription`](crate::model::ZeppelinApplicationConfigurationDescription).
+    pub fn builder() -> crate::model::zeppelin_application_configuration_description::Builder {
+        crate::model::zeppelin_application_configuration_description::Builder::default()
+    }
+}
+
 /// See [`ZeppelinApplicationConfigurationDescription`](crate::model::ZeppelinApplicationConfigurationDescription).
 pub mod zeppelin_application_configuration_description {
 
@@ -1199,12 +1211,6 @@ pub mod zeppelin_application_configuration_description {
         }
     }
 }
-impl ZeppelinApplicationConfigurationDescription {
-    /// Creates a new builder-style object to manufacture [`ZeppelinApplicationConfigurationDescription`](crate::model::ZeppelinApplicationConfigurationDescription).
-    pub fn builder() -> crate::model::zeppelin_application_configuration_description::Builder {
-        crate::model::zeppelin_application_configuration_description::Builder::default()
-    }
-}
 
 /// <p>Specifies a dependency JAR or a JAR of user-defined functions.</p>
 #[non_exhaustive]
@@ -1238,6 +1244,13 @@ impl CustomArtifactConfigurationDescription {
         self.maven_reference_description.as_ref()
     }
 }
+impl CustomArtifactConfigurationDescription {
+    /// Creates a new builder-style object to manufacture [`CustomArtifactConfigurationDescription`](crate::model::CustomArtifactConfigurationDescription).
+    pub fn builder() -> crate::model::custom_artifact_configuration_description::Builder {
+        crate::model::custom_artifact_configuration_description::Builder::default()
+    }
+}
+
 /// See [`CustomArtifactConfigurationDescription`](crate::model::CustomArtifactConfigurationDescription).
 pub mod custom_artifact_configuration_description {
 
@@ -1303,12 +1316,6 @@ pub mod custom_artifact_configuration_description {
         }
     }
 }
-impl CustomArtifactConfigurationDescription {
-    /// Creates a new builder-style object to manufacture [`CustomArtifactConfigurationDescription`](crate::model::CustomArtifactConfigurationDescription).
-    pub fn builder() -> crate::model::custom_artifact_configuration_description::Builder {
-        crate::model::custom_artifact_configuration_description::Builder::default()
-    }
-}
 
 /// <p>The information required to specify a Maven reference. You can use Maven references to specify dependency JAR files.</p>
 #[non_exhaustive]
@@ -1338,6 +1345,13 @@ impl MavenReference {
         self.version.as_deref()
     }
 }
+impl MavenReference {
+    /// Creates a new builder-style object to manufacture [`MavenReference`](crate::model::MavenReference).
+    pub fn builder() -> crate::model::maven_reference::Builder {
+        crate::model::maven_reference::Builder::default()
+    }
+}
+
 /// See [`MavenReference`](crate::model::MavenReference).
 pub mod maven_reference {
 
@@ -1390,12 +1404,6 @@ pub mod maven_reference {
         }
     }
 }
-impl MavenReference {
-    /// Creates a new builder-style object to manufacture [`MavenReference`](crate::model::MavenReference).
-    pub fn builder() -> crate::model::maven_reference::Builder {
-        crate::model::maven_reference::Builder::default()
-    }
-}
 
 /// <p>For a Kinesis Data Analytics application provides a description of an Amazon S3 object, including the Amazon Resource Name (ARN) of the S3 bucket, the name of the Amazon S3 object that contains the data, and the version number of the Amazon S3 object that contains the data. </p>
 #[non_exhaustive]
@@ -1425,6 +1433,13 @@ impl S3ContentLocation {
         self.object_version.as_deref()
     }
 }
+impl S3ContentLocation {
+    /// Creates a new builder-style object to manufacture [`S3ContentLocation`](crate::model::S3ContentLocation).
+    pub fn builder() -> crate::model::s3_content_location::Builder {
+        crate::model::s3_content_location::Builder::default()
+    }
+}
+
 /// See [`S3ContentLocation`](crate::model::S3ContentLocation).
 pub mod s3_content_location {
 
@@ -1478,12 +1493,6 @@ pub mod s3_content_location {
                 object_version: self.object_version,
             }
         }
-    }
-}
-impl S3ContentLocation {
-    /// Creates a new builder-style object to manufacture [`S3ContentLocation`](crate::model::S3ContentLocation).
-    pub fn builder() -> crate::model::s3_content_location::Builder {
-        crate::model::s3_content_location::Builder::default()
     }
 }
 
@@ -1594,6 +1603,13 @@ impl DeployAsApplicationConfigurationDescription {
         self.s3_content_location_description.as_ref()
     }
 }
+impl DeployAsApplicationConfigurationDescription {
+    /// Creates a new builder-style object to manufacture [`DeployAsApplicationConfigurationDescription`](crate::model::DeployAsApplicationConfigurationDescription).
+    pub fn builder() -> crate::model::deploy_as_application_configuration_description::Builder {
+        crate::model::deploy_as_application_configuration_description::Builder::default()
+    }
+}
+
 /// See [`DeployAsApplicationConfigurationDescription`](crate::model::DeployAsApplicationConfigurationDescription).
 pub mod deploy_as_application_configuration_description {
 
@@ -1629,12 +1645,6 @@ pub mod deploy_as_application_configuration_description {
         }
     }
 }
-impl DeployAsApplicationConfigurationDescription {
-    /// Creates a new builder-style object to manufacture [`DeployAsApplicationConfigurationDescription`](crate::model::DeployAsApplicationConfigurationDescription).
-    pub fn builder() -> crate::model::deploy_as_application_configuration_description::Builder {
-        crate::model::deploy_as_application_configuration_description::Builder::default()
-    }
-}
 
 /// <p>The description of the S3 base location that holds the application.</p>
 #[non_exhaustive]
@@ -1657,6 +1667,13 @@ impl S3ContentBaseLocationDescription {
         self.base_path.as_deref()
     }
 }
+impl S3ContentBaseLocationDescription {
+    /// Creates a new builder-style object to manufacture [`S3ContentBaseLocationDescription`](crate::model::S3ContentBaseLocationDescription).
+    pub fn builder() -> crate::model::s3_content_base_location_description::Builder {
+        crate::model::s3_content_base_location_description::Builder::default()
+    }
+}
+
 /// See [`S3ContentBaseLocationDescription`](crate::model::S3ContentBaseLocationDescription).
 pub mod s3_content_base_location_description {
 
@@ -1697,12 +1714,6 @@ pub mod s3_content_base_location_description {
         }
     }
 }
-impl S3ContentBaseLocationDescription {
-    /// Creates a new builder-style object to manufacture [`S3ContentBaseLocationDescription`](crate::model::S3ContentBaseLocationDescription).
-    pub fn builder() -> crate::model::s3_content_base_location_description::Builder {
-        crate::model::s3_content_base_location_description::Builder::default()
-    }
-}
 
 /// <p>The configuration parameters for the default Amazon Glue database. You use this database for Apache Flink SQL queries and table API transforms that you write in a Kinesis Data Analytics Studio notebook.</p>
 #[non_exhaustive]
@@ -1721,6 +1732,13 @@ impl CatalogConfigurationDescription {
         self.glue_data_catalog_configuration_description.as_ref()
     }
 }
+impl CatalogConfigurationDescription {
+    /// Creates a new builder-style object to manufacture [`CatalogConfigurationDescription`](crate::model::CatalogConfigurationDescription).
+    pub fn builder() -> crate::model::catalog_configuration_description::Builder {
+        crate::model::catalog_configuration_description::Builder::default()
+    }
+}
+
 /// See [`CatalogConfigurationDescription`](crate::model::CatalogConfigurationDescription).
 pub mod catalog_configuration_description {
 
@@ -1757,12 +1775,6 @@ pub mod catalog_configuration_description {
         }
     }
 }
-impl CatalogConfigurationDescription {
-    /// Creates a new builder-style object to manufacture [`CatalogConfigurationDescription`](crate::model::CatalogConfigurationDescription).
-    pub fn builder() -> crate::model::catalog_configuration_description::Builder {
-        crate::model::catalog_configuration_description::Builder::default()
-    }
-}
 
 /// <p>The configuration of the Glue Data Catalog that you use for Apache Flink SQL queries and table API transforms that you write in an application.</p>
 #[non_exhaustive]
@@ -1778,6 +1790,13 @@ impl GlueDataCatalogConfigurationDescription {
         self.database_arn.as_deref()
     }
 }
+impl GlueDataCatalogConfigurationDescription {
+    /// Creates a new builder-style object to manufacture [`GlueDataCatalogConfigurationDescription`](crate::model::GlueDataCatalogConfigurationDescription).
+    pub fn builder() -> crate::model::glue_data_catalog_configuration_description::Builder {
+        crate::model::glue_data_catalog_configuration_description::Builder::default()
+    }
+}
+
 /// See [`GlueDataCatalogConfigurationDescription`](crate::model::GlueDataCatalogConfigurationDescription).
 pub mod glue_data_catalog_configuration_description {
 
@@ -1806,12 +1825,6 @@ pub mod glue_data_catalog_configuration_description {
         }
     }
 }
-impl GlueDataCatalogConfigurationDescription {
-    /// Creates a new builder-style object to manufacture [`GlueDataCatalogConfigurationDescription`](crate::model::GlueDataCatalogConfigurationDescription).
-    pub fn builder() -> crate::model::glue_data_catalog_configuration_description::Builder {
-        crate::model::glue_data_catalog_configuration_description::Builder::default()
-    }
-}
 
 /// <p>The monitoring configuration for Apache Zeppelin within a Kinesis Data Analytics Studio notebook.</p>
 #[non_exhaustive]
@@ -1827,6 +1840,13 @@ impl ZeppelinMonitoringConfigurationDescription {
         self.log_level.as_ref()
     }
 }
+impl ZeppelinMonitoringConfigurationDescription {
+    /// Creates a new builder-style object to manufacture [`ZeppelinMonitoringConfigurationDescription`](crate::model::ZeppelinMonitoringConfigurationDescription).
+    pub fn builder() -> crate::model::zeppelin_monitoring_configuration_description::Builder {
+        crate::model::zeppelin_monitoring_configuration_description::Builder::default()
+    }
+}
+
 /// See [`ZeppelinMonitoringConfigurationDescription`](crate::model::ZeppelinMonitoringConfigurationDescription).
 pub mod zeppelin_monitoring_configuration_description {
 
@@ -1853,12 +1873,6 @@ pub mod zeppelin_monitoring_configuration_description {
                 log_level: self.log_level,
             }
         }
-    }
-}
-impl ZeppelinMonitoringConfigurationDescription {
-    /// Creates a new builder-style object to manufacture [`ZeppelinMonitoringConfigurationDescription`](crate::model::ZeppelinMonitoringConfigurationDescription).
-    pub fn builder() -> crate::model::zeppelin_monitoring_configuration_description::Builder {
-        crate::model::zeppelin_monitoring_configuration_description::Builder::default()
     }
 }
 
@@ -1997,6 +2011,13 @@ impl VpcConfigurationDescription {
         self.security_group_ids.as_deref()
     }
 }
+impl VpcConfigurationDescription {
+    /// Creates a new builder-style object to manufacture [`VpcConfigurationDescription`](crate::model::VpcConfigurationDescription).
+    pub fn builder() -> crate::model::vpc_configuration_description::Builder {
+        crate::model::vpc_configuration_description::Builder::default()
+    }
+}
+
 /// See [`VpcConfigurationDescription`](crate::model::VpcConfigurationDescription).
 pub mod vpc_configuration_description {
 
@@ -2082,12 +2103,6 @@ pub mod vpc_configuration_description {
         }
     }
 }
-impl VpcConfigurationDescription {
-    /// Creates a new builder-style object to manufacture [`VpcConfigurationDescription`](crate::model::VpcConfigurationDescription).
-    pub fn builder() -> crate::model::vpc_configuration_description::Builder {
-        crate::model::vpc_configuration_description::Builder::default()
-    }
-}
 
 /// <p>Describes whether snapshots are enabled for a Flink-based Kinesis Data Analytics application.</p>
 #[non_exhaustive]
@@ -2103,6 +2118,13 @@ impl ApplicationSnapshotConfigurationDescription {
         self.snapshots_enabled
     }
 }
+impl ApplicationSnapshotConfigurationDescription {
+    /// Creates a new builder-style object to manufacture [`ApplicationSnapshotConfigurationDescription`](crate::model::ApplicationSnapshotConfigurationDescription).
+    pub fn builder() -> crate::model::application_snapshot_configuration_description::Builder {
+        crate::model::application_snapshot_configuration_description::Builder::default()
+    }
+}
+
 /// See [`ApplicationSnapshotConfigurationDescription`](crate::model::ApplicationSnapshotConfigurationDescription).
 pub mod application_snapshot_configuration_description {
 
@@ -2131,12 +2153,6 @@ pub mod application_snapshot_configuration_description {
         }
     }
 }
-impl ApplicationSnapshotConfigurationDescription {
-    /// Creates a new builder-style object to manufacture [`ApplicationSnapshotConfigurationDescription`](crate::model::ApplicationSnapshotConfigurationDescription).
-    pub fn builder() -> crate::model::application_snapshot_configuration_description::Builder {
-        crate::model::application_snapshot_configuration_description::Builder::default()
-    }
-}
 
 /// <p>Describes the execution properties for an Apache Flink runtime.</p>
 #[non_exhaustive]
@@ -2155,6 +2171,13 @@ impl EnvironmentPropertyDescriptions {
         self.property_group_descriptions.as_deref()
     }
 }
+impl EnvironmentPropertyDescriptions {
+    /// Creates a new builder-style object to manufacture [`EnvironmentPropertyDescriptions`](crate::model::EnvironmentPropertyDescriptions).
+    pub fn builder() -> crate::model::environment_property_descriptions::Builder {
+        crate::model::environment_property_descriptions::Builder::default()
+    }
+}
+
 /// See [`EnvironmentPropertyDescriptions`](crate::model::EnvironmentPropertyDescriptions).
 pub mod environment_property_descriptions {
 
@@ -2193,12 +2216,6 @@ pub mod environment_property_descriptions {
         }
     }
 }
-impl EnvironmentPropertyDescriptions {
-    /// Creates a new builder-style object to manufacture [`EnvironmentPropertyDescriptions`](crate::model::EnvironmentPropertyDescriptions).
-    pub fn builder() -> crate::model::environment_property_descriptions::Builder {
-        crate::model::environment_property_descriptions::Builder::default()
-    }
-}
 
 /// <p>Property key-value pairs passed into an application.</p>
 #[non_exhaustive]
@@ -2225,6 +2242,13 @@ impl PropertyGroup {
         self.property_map.as_ref()
     }
 }
+impl PropertyGroup {
+    /// Creates a new builder-style object to manufacture [`PropertyGroup`](crate::model::PropertyGroup).
+    pub fn builder() -> crate::model::property_group::Builder {
+        crate::model::property_group::Builder::default()
+    }
+}
+
 /// See [`PropertyGroup`](crate::model::PropertyGroup).
 pub mod property_group {
 
@@ -2285,12 +2309,6 @@ pub mod property_group {
         }
     }
 }
-impl PropertyGroup {
-    /// Creates a new builder-style object to manufacture [`PropertyGroup`](crate::model::PropertyGroup).
-    pub fn builder() -> crate::model::property_group::Builder {
-        crate::model::property_group::Builder::default()
-    }
-}
 
 /// <p>Describes configuration parameters for a Flink-based Kinesis Data Analytics application.</p>
 #[non_exhaustive]
@@ -2336,6 +2354,13 @@ impl FlinkApplicationConfigurationDescription {
         self.job_plan_description.as_deref()
     }
 }
+impl FlinkApplicationConfigurationDescription {
+    /// Creates a new builder-style object to manufacture [`FlinkApplicationConfigurationDescription`](crate::model::FlinkApplicationConfigurationDescription).
+    pub fn builder() -> crate::model::flink_application_configuration_description::Builder {
+        crate::model::flink_application_configuration_description::Builder::default()
+    }
+}
+
 /// See [`FlinkApplicationConfigurationDescription`](crate::model::FlinkApplicationConfigurationDescription).
 pub mod flink_application_configuration_description {
 
@@ -2424,12 +2449,6 @@ pub mod flink_application_configuration_description {
         }
     }
 }
-impl FlinkApplicationConfigurationDescription {
-    /// Creates a new builder-style object to manufacture [`FlinkApplicationConfigurationDescription`](crate::model::FlinkApplicationConfigurationDescription).
-    pub fn builder() -> crate::model::flink_application_configuration_description::Builder {
-        crate::model::flink_application_configuration_description::Builder::default()
-    }
-}
 
 /// <p>Describes parameters for how a Flink-based Kinesis Data Analytics application executes multiple tasks simultaneously.</p>
 #[non_exhaustive]
@@ -2473,6 +2492,13 @@ impl ParallelismConfigurationDescription {
         self.auto_scaling_enabled
     }
 }
+impl ParallelismConfigurationDescription {
+    /// Creates a new builder-style object to manufacture [`ParallelismConfigurationDescription`](crate::model::ParallelismConfigurationDescription).
+    pub fn builder() -> crate::model::parallelism_configuration_description::Builder {
+        crate::model::parallelism_configuration_description::Builder::default()
+    }
+}
+
 /// See [`ParallelismConfigurationDescription`](crate::model::ParallelismConfigurationDescription).
 pub mod parallelism_configuration_description {
 
@@ -2550,12 +2576,6 @@ pub mod parallelism_configuration_description {
                 auto_scaling_enabled: self.auto_scaling_enabled,
             }
         }
-    }
-}
-impl ParallelismConfigurationDescription {
-    /// Creates a new builder-style object to manufacture [`ParallelismConfigurationDescription`](crate::model::ParallelismConfigurationDescription).
-    pub fn builder() -> crate::model::parallelism_configuration_description::Builder {
-        crate::model::parallelism_configuration_description::Builder::default()
     }
 }
 
@@ -2679,6 +2699,13 @@ impl MonitoringConfigurationDescription {
         self.log_level.as_ref()
     }
 }
+impl MonitoringConfigurationDescription {
+    /// Creates a new builder-style object to manufacture [`MonitoringConfigurationDescription`](crate::model::MonitoringConfigurationDescription).
+    pub fn builder() -> crate::model::monitoring_configuration_description::Builder {
+        crate::model::monitoring_configuration_description::Builder::default()
+    }
+}
+
 /// See [`MonitoringConfigurationDescription`](crate::model::MonitoringConfigurationDescription).
 pub mod monitoring_configuration_description {
 
@@ -2735,12 +2762,6 @@ pub mod monitoring_configuration_description {
                 log_level: self.log_level,
             }
         }
-    }
-}
-impl MonitoringConfigurationDescription {
-    /// Creates a new builder-style object to manufacture [`MonitoringConfigurationDescription`](crate::model::MonitoringConfigurationDescription).
-    pub fn builder() -> crate::model::monitoring_configuration_description::Builder {
-        crate::model::monitoring_configuration_description::Builder::default()
     }
 }
 
@@ -2905,6 +2926,13 @@ impl CheckpointConfigurationDescription {
         self.min_pause_between_checkpoints
     }
 }
+impl CheckpointConfigurationDescription {
+    /// Creates a new builder-style object to manufacture [`CheckpointConfigurationDescription`](crate::model::CheckpointConfigurationDescription).
+    pub fn builder() -> crate::model::checkpoint_configuration_description::Builder {
+        crate::model::checkpoint_configuration_description::Builder::default()
+    }
+}
+
 /// See [`CheckpointConfigurationDescription`](crate::model::CheckpointConfigurationDescription).
 pub mod checkpoint_configuration_description {
 
@@ -3001,12 +3029,6 @@ pub mod checkpoint_configuration_description {
         }
     }
 }
-impl CheckpointConfigurationDescription {
-    /// Creates a new builder-style object to manufacture [`CheckpointConfigurationDescription`](crate::model::CheckpointConfigurationDescription).
-    pub fn builder() -> crate::model::checkpoint_configuration_description::Builder {
-        crate::model::checkpoint_configuration_description::Builder::default()
-    }
-}
 
 /// <p>Describes the starting properties for a Kinesis Data Analytics application.</p>
 #[non_exhaustive]
@@ -3035,6 +3057,13 @@ impl RunConfigurationDescription {
         self.flink_run_configuration_description.as_ref()
     }
 }
+impl RunConfigurationDescription {
+    /// Creates a new builder-style object to manufacture [`RunConfigurationDescription`](crate::model::RunConfigurationDescription).
+    pub fn builder() -> crate::model::run_configuration_description::Builder {
+        crate::model::run_configuration_description::Builder::default()
+    }
+}
+
 /// See [`RunConfigurationDescription`](crate::model::RunConfigurationDescription).
 pub mod run_configuration_description {
 
@@ -3090,12 +3119,6 @@ pub mod run_configuration_description {
         }
     }
 }
-impl RunConfigurationDescription {
-    /// Creates a new builder-style object to manufacture [`RunConfigurationDescription`](crate::model::RunConfigurationDescription).
-    pub fn builder() -> crate::model::run_configuration_description::Builder {
-        crate::model::run_configuration_description::Builder::default()
-    }
-}
 
 /// <p>Describes the starting parameters for a Flink-based Kinesis Data Analytics application.</p>
 #[non_exhaustive]
@@ -3115,6 +3138,13 @@ impl FlinkRunConfiguration {
         self.allow_non_restored_state
     }
 }
+impl FlinkRunConfiguration {
+    /// Creates a new builder-style object to manufacture [`FlinkRunConfiguration`](crate::model::FlinkRunConfiguration).
+    pub fn builder() -> crate::model::flink_run_configuration::Builder {
+        crate::model::flink_run_configuration::Builder::default()
+    }
+}
+
 /// See [`FlinkRunConfiguration`](crate::model::FlinkRunConfiguration).
 pub mod flink_run_configuration {
 
@@ -3147,12 +3177,6 @@ pub mod flink_run_configuration {
         }
     }
 }
-impl FlinkRunConfiguration {
-    /// Creates a new builder-style object to manufacture [`FlinkRunConfiguration`](crate::model::FlinkRunConfiguration).
-    pub fn builder() -> crate::model::flink_run_configuration::Builder {
-        crate::model::flink_run_configuration::Builder::default()
-    }
-}
 
 /// <p>Specifies the method and snapshot to use when restarting an application using previously saved application state.</p>
 #[non_exhaustive]
@@ -3177,6 +3201,13 @@ impl ApplicationRestoreConfiguration {
         self.snapshot_name.as_deref()
     }
 }
+impl ApplicationRestoreConfiguration {
+    /// Creates a new builder-style object to manufacture [`ApplicationRestoreConfiguration`](crate::model::ApplicationRestoreConfiguration).
+    pub fn builder() -> crate::model::application_restore_configuration::Builder {
+        crate::model::application_restore_configuration::Builder::default()
+    }
+}
+
 /// See [`ApplicationRestoreConfiguration`](crate::model::ApplicationRestoreConfiguration).
 pub mod application_restore_configuration {
 
@@ -3225,12 +3256,6 @@ pub mod application_restore_configuration {
                 snapshot_name: self.snapshot_name,
             }
         }
-    }
-}
-impl ApplicationRestoreConfiguration {
-    /// Creates a new builder-style object to manufacture [`ApplicationRestoreConfiguration`](crate::model::ApplicationRestoreConfiguration).
-    pub fn builder() -> crate::model::application_restore_configuration::Builder {
-        crate::model::application_restore_configuration::Builder::default()
     }
 }
 
@@ -3358,6 +3383,13 @@ impl ApplicationCodeConfigurationDescription {
         self.code_content_description.as_ref()
     }
 }
+impl ApplicationCodeConfigurationDescription {
+    /// Creates a new builder-style object to manufacture [`ApplicationCodeConfigurationDescription`](crate::model::ApplicationCodeConfigurationDescription).
+    pub fn builder() -> crate::model::application_code_configuration_description::Builder {
+        crate::model::application_code_configuration_description::Builder::default()
+    }
+}
+
 /// See [`ApplicationCodeConfigurationDescription`](crate::model::ApplicationCodeConfigurationDescription).
 pub mod application_code_configuration_description {
 
@@ -3408,12 +3440,6 @@ pub mod application_code_configuration_description {
         }
     }
 }
-impl ApplicationCodeConfigurationDescription {
-    /// Creates a new builder-style object to manufacture [`ApplicationCodeConfigurationDescription`](crate::model::ApplicationCodeConfigurationDescription).
-    pub fn builder() -> crate::model::application_code_configuration_description::Builder {
-        crate::model::application_code_configuration_description::Builder::default()
-    }
-}
 
 /// <p>Describes details about the code of a Kinesis Data Analytics application.</p>
 #[non_exhaustive]
@@ -3453,6 +3479,13 @@ impl CodeContentDescription {
         self.s3_application_code_location_description.as_ref()
     }
 }
+impl CodeContentDescription {
+    /// Creates a new builder-style object to manufacture [`CodeContentDescription`](crate::model::CodeContentDescription).
+    pub fn builder() -> crate::model::code_content_description::Builder {
+        crate::model::code_content_description::Builder::default()
+    }
+}
+
 /// See [`CodeContentDescription`](crate::model::CodeContentDescription).
 pub mod code_content_description {
 
@@ -3525,12 +3558,6 @@ pub mod code_content_description {
         }
     }
 }
-impl CodeContentDescription {
-    /// Creates a new builder-style object to manufacture [`CodeContentDescription`](crate::model::CodeContentDescription).
-    pub fn builder() -> crate::model::code_content_description::Builder {
-        crate::model::code_content_description::Builder::default()
-    }
-}
 
 /// <p>Describes the location of an application's code stored in an S3 bucket.</p>
 #[non_exhaustive]
@@ -3560,6 +3587,13 @@ impl S3ApplicationCodeLocationDescription {
         self.object_version.as_deref()
     }
 }
+impl S3ApplicationCodeLocationDescription {
+    /// Creates a new builder-style object to manufacture [`S3ApplicationCodeLocationDescription`](crate::model::S3ApplicationCodeLocationDescription).
+    pub fn builder() -> crate::model::s3_application_code_location_description::Builder {
+        crate::model::s3_application_code_location_description::Builder::default()
+    }
+}
+
 /// See [`S3ApplicationCodeLocationDescription`](crate::model::S3ApplicationCodeLocationDescription).
 pub mod s3_application_code_location_description {
 
@@ -3613,12 +3647,6 @@ pub mod s3_application_code_location_description {
                 object_version: self.object_version,
             }
         }
-    }
-}
-impl S3ApplicationCodeLocationDescription {
-    /// Creates a new builder-style object to manufacture [`S3ApplicationCodeLocationDescription`](crate::model::S3ApplicationCodeLocationDescription).
-    pub fn builder() -> crate::model::s3_application_code_location_description::Builder {
-        crate::model::s3_application_code_location_description::Builder::default()
     }
 }
 
@@ -3743,6 +3771,13 @@ impl SqlApplicationConfigurationDescription {
         self.reference_data_source_descriptions.as_deref()
     }
 }
+impl SqlApplicationConfigurationDescription {
+    /// Creates a new builder-style object to manufacture [`SqlApplicationConfigurationDescription`](crate::model::SqlApplicationConfigurationDescription).
+    pub fn builder() -> crate::model::sql_application_configuration_description::Builder {
+        crate::model::sql_application_configuration_description::Builder::default()
+    }
+}
+
 /// See [`SqlApplicationConfigurationDescription`](crate::model::SqlApplicationConfigurationDescription).
 pub mod sql_application_configuration_description {
 
@@ -3828,12 +3863,6 @@ pub mod sql_application_configuration_description {
         }
     }
 }
-impl SqlApplicationConfigurationDescription {
-    /// Creates a new builder-style object to manufacture [`SqlApplicationConfigurationDescription`](crate::model::SqlApplicationConfigurationDescription).
-    pub fn builder() -> crate::model::sql_application_configuration_description::Builder {
-        crate::model::sql_application_configuration_description::Builder::default()
-    }
-}
 
 /// <p>For a SQL-based Kinesis Data Analytics application, describes the reference data source configured for an application.</p>
 #[non_exhaustive]
@@ -3873,6 +3902,13 @@ impl ReferenceDataSourceDescription {
         self.reference_schema.as_ref()
     }
 }
+impl ReferenceDataSourceDescription {
+    /// Creates a new builder-style object to manufacture [`ReferenceDataSourceDescription`](crate::model::ReferenceDataSourceDescription).
+    pub fn builder() -> crate::model::reference_data_source_description::Builder {
+        crate::model::reference_data_source_description::Builder::default()
+    }
+}
+
 /// See [`ReferenceDataSourceDescription`](crate::model::ReferenceDataSourceDescription).
 pub mod reference_data_source_description {
 
@@ -3947,12 +3983,6 @@ pub mod reference_data_source_description {
         }
     }
 }
-impl ReferenceDataSourceDescription {
-    /// Creates a new builder-style object to manufacture [`ReferenceDataSourceDescription`](crate::model::ReferenceDataSourceDescription).
-    pub fn builder() -> crate::model::reference_data_source_description::Builder {
-        crate::model::reference_data_source_description::Builder::default()
-    }
-}
 
 /// <p>For a SQL-based Kinesis Data Analytics application, describes the format of the data in the streaming source, and how each data element maps to corresponding columns created in the in-application stream. </p>
 #[non_exhaustive]
@@ -3982,6 +4012,13 @@ impl SourceSchema {
         self.record_columns.as_deref()
     }
 }
+impl SourceSchema {
+    /// Creates a new builder-style object to manufacture [`SourceSchema`](crate::model::SourceSchema).
+    pub fn builder() -> crate::model::source_schema::Builder {
+        crate::model::source_schema::Builder::default()
+    }
+}
+
 /// See [`SourceSchema`](crate::model::SourceSchema).
 pub mod source_schema {
 
@@ -4049,12 +4086,6 @@ pub mod source_schema {
         }
     }
 }
-impl SourceSchema {
-    /// Creates a new builder-style object to manufacture [`SourceSchema`](crate::model::SourceSchema).
-    pub fn builder() -> crate::model::source_schema::Builder {
-        crate::model::source_schema::Builder::default()
-    }
-}
 
 /// <p>For a SQL-based Kinesis Data Analytics application, describes the mapping of each data element in the streaming source to the corresponding column in the in-application stream.</p>
 /// <p>Also used to describe the format of the reference data source.</p>
@@ -4085,6 +4116,13 @@ impl RecordColumn {
         self.sql_type.as_deref()
     }
 }
+impl RecordColumn {
+    /// Creates a new builder-style object to manufacture [`RecordColumn`](crate::model::RecordColumn).
+    pub fn builder() -> crate::model::record_column::Builder {
+        crate::model::record_column::Builder::default()
+    }
+}
+
 /// See [`RecordColumn`](crate::model::RecordColumn).
 pub mod record_column {
 
@@ -4137,12 +4175,6 @@ pub mod record_column {
         }
     }
 }
-impl RecordColumn {
-    /// Creates a new builder-style object to manufacture [`RecordColumn`](crate::model::RecordColumn).
-    pub fn builder() -> crate::model::record_column::Builder {
-        crate::model::record_column::Builder::default()
-    }
-}
 
 /// <p> For a SQL-based Kinesis Data Analytics application, describes the record format and relevant mapping information that should be applied to schematize the records on the stream. </p>
 #[non_exhaustive]
@@ -4165,6 +4197,13 @@ impl RecordFormat {
         self.mapping_parameters.as_ref()
     }
 }
+impl RecordFormat {
+    /// Creates a new builder-style object to manufacture [`RecordFormat`](crate::model::RecordFormat).
+    pub fn builder() -> crate::model::record_format::Builder {
+        crate::model::record_format::Builder::default()
+    }
+}
+
 /// See [`RecordFormat`](crate::model::RecordFormat).
 pub mod record_format {
 
@@ -4211,12 +4250,6 @@ pub mod record_format {
         }
     }
 }
-impl RecordFormat {
-    /// Creates a new builder-style object to manufacture [`RecordFormat`](crate::model::RecordFormat).
-    pub fn builder() -> crate::model::record_format::Builder {
-        crate::model::record_format::Builder::default()
-    }
-}
 
 /// <p>When you configure a SQL-based Kinesis Data Analytics application's input at the time of creating or updating an application, provides additional mapping information specific to the record format (such as JSON, CSV, or record fields delimited by some delimiter) on the streaming source.</p>
 #[non_exhaustive]
@@ -4243,6 +4276,13 @@ impl MappingParameters {
         self.csv_mapping_parameters.as_ref()
     }
 }
+impl MappingParameters {
+    /// Creates a new builder-style object to manufacture [`MappingParameters`](crate::model::MappingParameters).
+    pub fn builder() -> crate::model::mapping_parameters::Builder {
+        crate::model::mapping_parameters::Builder::default()
+    }
+}
+
 /// See [`MappingParameters`](crate::model::MappingParameters).
 pub mod mapping_parameters {
 
@@ -4293,12 +4333,6 @@ pub mod mapping_parameters {
         }
     }
 }
-impl MappingParameters {
-    /// Creates a new builder-style object to manufacture [`MappingParameters`](crate::model::MappingParameters).
-    pub fn builder() -> crate::model::mapping_parameters::Builder {
-        crate::model::mapping_parameters::Builder::default()
-    }
-}
 
 /// <p>For a SQL-based Kinesis Data Analytics application, provides additional mapping information when the record format uses delimiters, such as CSV. For example, the following sample records use CSV format, where the records use the <i>'\n'</i> as the row delimiter and a comma (",") as the column delimiter: </p>
 /// <p> <code>"name1", "address1"</code> </p>
@@ -4323,6 +4357,13 @@ impl CsvMappingParameters {
         self.record_column_delimiter.as_deref()
     }
 }
+impl CsvMappingParameters {
+    /// Creates a new builder-style object to manufacture [`CsvMappingParameters`](crate::model::CsvMappingParameters).
+    pub fn builder() -> crate::model::csv_mapping_parameters::Builder {
+        crate::model::csv_mapping_parameters::Builder::default()
+    }
+}
+
 /// See [`CsvMappingParameters`](crate::model::CsvMappingParameters).
 pub mod csv_mapping_parameters {
 
@@ -4369,12 +4410,6 @@ pub mod csv_mapping_parameters {
         }
     }
 }
-impl CsvMappingParameters {
-    /// Creates a new builder-style object to manufacture [`CsvMappingParameters`](crate::model::CsvMappingParameters).
-    pub fn builder() -> crate::model::csv_mapping_parameters::Builder {
-        crate::model::csv_mapping_parameters::Builder::default()
-    }
-}
 
 /// <p>For a SQL-based Kinesis Data Analytics application, provides additional mapping information when JSON is the record format on the streaming source.</p>
 #[non_exhaustive]
@@ -4390,6 +4425,13 @@ impl JsonMappingParameters {
         self.record_row_path.as_deref()
     }
 }
+impl JsonMappingParameters {
+    /// Creates a new builder-style object to manufacture [`JsonMappingParameters`](crate::model::JsonMappingParameters).
+    pub fn builder() -> crate::model::json_mapping_parameters::Builder {
+        crate::model::json_mapping_parameters::Builder::default()
+    }
+}
+
 /// See [`JsonMappingParameters`](crate::model::JsonMappingParameters).
 pub mod json_mapping_parameters {
 
@@ -4419,12 +4461,6 @@ pub mod json_mapping_parameters {
                 record_row_path: self.record_row_path,
             }
         }
-    }
-}
-impl JsonMappingParameters {
-    /// Creates a new builder-style object to manufacture [`JsonMappingParameters`](crate::model::JsonMappingParameters).
-    pub fn builder() -> crate::model::json_mapping_parameters::Builder {
-        crate::model::json_mapping_parameters::Builder::default()
     }
 }
 
@@ -4550,6 +4586,13 @@ impl S3ReferenceDataSourceDescription {
         self.reference_role_arn.as_deref()
     }
 }
+impl S3ReferenceDataSourceDescription {
+    /// Creates a new builder-style object to manufacture [`S3ReferenceDataSourceDescription`](crate::model::S3ReferenceDataSourceDescription).
+    pub fn builder() -> crate::model::s3_reference_data_source_description::Builder {
+        crate::model::s3_reference_data_source_description::Builder::default()
+    }
+}
+
 /// See [`S3ReferenceDataSourceDescription`](crate::model::S3ReferenceDataSourceDescription).
 pub mod s3_reference_data_source_description {
 
@@ -4607,12 +4650,6 @@ pub mod s3_reference_data_source_description {
                 reference_role_arn: self.reference_role_arn,
             }
         }
-    }
-}
-impl S3ReferenceDataSourceDescription {
-    /// Creates a new builder-style object to manufacture [`S3ReferenceDataSourceDescription`](crate::model::S3ReferenceDataSourceDescription).
-    pub fn builder() -> crate::model::s3_reference_data_source_description::Builder {
-        crate::model::s3_reference_data_source_description::Builder::default()
     }
 }
 
@@ -4673,6 +4710,13 @@ impl OutputDescription {
         self.destination_schema.as_ref()
     }
 }
+impl OutputDescription {
+    /// Creates a new builder-style object to manufacture [`OutputDescription`](crate::model::OutputDescription).
+    pub fn builder() -> crate::model::output_description::Builder {
+        crate::model::output_description::Builder::default()
+    }
+}
+
 /// See [`OutputDescription`](crate::model::OutputDescription).
 pub mod output_description {
 
@@ -4785,12 +4829,6 @@ pub mod output_description {
         }
     }
 }
-impl OutputDescription {
-    /// Creates a new builder-style object to manufacture [`OutputDescription`](crate::model::OutputDescription).
-    pub fn builder() -> crate::model::output_description::Builder {
-        crate::model::output_description::Builder::default()
-    }
-}
 
 /// <p>Describes the data format when records are written to the destination in a SQL-based Kinesis Data Analytics application. </p>
 #[non_exhaustive]
@@ -4806,6 +4844,13 @@ impl DestinationSchema {
         self.record_format_type.as_ref()
     }
 }
+impl DestinationSchema {
+    /// Creates a new builder-style object to manufacture [`DestinationSchema`](crate::model::DestinationSchema).
+    pub fn builder() -> crate::model::destination_schema::Builder {
+        crate::model::destination_schema::Builder::default()
+    }
+}
+
 /// See [`DestinationSchema`](crate::model::DestinationSchema).
 pub mod destination_schema {
 
@@ -4837,12 +4882,6 @@ pub mod destination_schema {
         }
     }
 }
-impl DestinationSchema {
-    /// Creates a new builder-style object to manufacture [`DestinationSchema`](crate::model::DestinationSchema).
-    pub fn builder() -> crate::model::destination_schema::Builder {
-        crate::model::destination_schema::Builder::default()
-    }
-}
 
 /// <p>For a SQL-based Kinesis Data Analytics application's output, describes the Amazon Lambda function that is configured as its destination. </p>
 #[non_exhaustive]
@@ -4869,6 +4908,13 @@ impl LambdaOutputDescription {
         self.role_arn.as_deref()
     }
 }
+impl LambdaOutputDescription {
+    /// Creates a new builder-style object to manufacture [`LambdaOutputDescription`](crate::model::LambdaOutputDescription).
+    pub fn builder() -> crate::model::lambda_output_description::Builder {
+        crate::model::lambda_output_description::Builder::default()
+    }
+}
+
 /// See [`LambdaOutputDescription`](crate::model::LambdaOutputDescription).
 pub mod lambda_output_description {
 
@@ -4913,12 +4959,6 @@ pub mod lambda_output_description {
         }
     }
 }
-impl LambdaOutputDescription {
-    /// Creates a new builder-style object to manufacture [`LambdaOutputDescription`](crate::model::LambdaOutputDescription).
-    pub fn builder() -> crate::model::lambda_output_description::Builder {
-        crate::model::lambda_output_description::Builder::default()
-    }
-}
 
 /// <p>For a SQL-based Kinesis Data Analytics application's output, describes the Kinesis Data Firehose delivery stream that is configured as its destination.</p>
 #[non_exhaustive]
@@ -4945,6 +4985,13 @@ impl KinesisFirehoseOutputDescription {
         self.role_arn.as_deref()
     }
 }
+impl KinesisFirehoseOutputDescription {
+    /// Creates a new builder-style object to manufacture [`KinesisFirehoseOutputDescription`](crate::model::KinesisFirehoseOutputDescription).
+    pub fn builder() -> crate::model::kinesis_firehose_output_description::Builder {
+        crate::model::kinesis_firehose_output_description::Builder::default()
+    }
+}
+
 /// See [`KinesisFirehoseOutputDescription`](crate::model::KinesisFirehoseOutputDescription).
 pub mod kinesis_firehose_output_description {
 
@@ -4989,12 +5036,6 @@ pub mod kinesis_firehose_output_description {
         }
     }
 }
-impl KinesisFirehoseOutputDescription {
-    /// Creates a new builder-style object to manufacture [`KinesisFirehoseOutputDescription`](crate::model::KinesisFirehoseOutputDescription).
-    pub fn builder() -> crate::model::kinesis_firehose_output_description::Builder {
-        crate::model::kinesis_firehose_output_description::Builder::default()
-    }
-}
 
 /// <p>For an SQL-based Kinesis Data Analytics application's output, describes the Kinesis data stream that is configured as its destination. </p>
 #[non_exhaustive]
@@ -5021,6 +5062,13 @@ impl KinesisStreamsOutputDescription {
         self.role_arn.as_deref()
     }
 }
+impl KinesisStreamsOutputDescription {
+    /// Creates a new builder-style object to manufacture [`KinesisStreamsOutputDescription`](crate::model::KinesisStreamsOutputDescription).
+    pub fn builder() -> crate::model::kinesis_streams_output_description::Builder {
+        crate::model::kinesis_streams_output_description::Builder::default()
+    }
+}
+
 /// See [`KinesisStreamsOutputDescription`](crate::model::KinesisStreamsOutputDescription).
 pub mod kinesis_streams_output_description {
 
@@ -5063,12 +5111,6 @@ pub mod kinesis_streams_output_description {
                 role_arn: self.role_arn,
             }
         }
-    }
-}
-impl KinesisStreamsOutputDescription {
-    /// Creates a new builder-style object to manufacture [`KinesisStreamsOutputDescription`](crate::model::KinesisStreamsOutputDescription).
-    pub fn builder() -> crate::model::kinesis_streams_output_description::Builder {
-        crate::model::kinesis_streams_output_description::Builder::default()
     }
 }
 
@@ -5154,6 +5196,13 @@ impl InputDescription {
         self.input_starting_position_configuration.as_ref()
     }
 }
+impl InputDescription {
+    /// Creates a new builder-style object to manufacture [`InputDescription`](crate::model::InputDescription).
+    pub fn builder() -> crate::model::input_description::Builder {
+        crate::model::input_description::Builder::default()
+    }
+}
+
 /// See [`InputDescription`](crate::model::InputDescription).
 pub mod input_description {
 
@@ -5322,12 +5371,6 @@ pub mod input_description {
         }
     }
 }
-impl InputDescription {
-    /// Creates a new builder-style object to manufacture [`InputDescription`](crate::model::InputDescription).
-    pub fn builder() -> crate::model::input_description::Builder {
-        crate::model::input_description::Builder::default()
-    }
-}
 
 /// <p>Describes the point at which the application reads from the streaming source.</p>
 #[non_exhaustive]
@@ -5355,6 +5398,13 @@ impl InputStartingPositionConfiguration {
         self.input_starting_position.as_ref()
     }
 }
+impl InputStartingPositionConfiguration {
+    /// Creates a new builder-style object to manufacture [`InputStartingPositionConfiguration`](crate::model::InputStartingPositionConfiguration).
+    pub fn builder() -> crate::model::input_starting_position_configuration::Builder {
+        crate::model::input_starting_position_configuration::Builder::default()
+    }
+}
+
 /// See [`InputStartingPositionConfiguration`](crate::model::InputStartingPositionConfiguration).
 pub mod input_starting_position_configuration {
 
@@ -5398,12 +5448,6 @@ pub mod input_starting_position_configuration {
                 input_starting_position: self.input_starting_position,
             }
         }
-    }
-}
-impl InputStartingPositionConfiguration {
-    /// Creates a new builder-style object to manufacture [`InputStartingPositionConfiguration`](crate::model::InputStartingPositionConfiguration).
-    pub fn builder() -> crate::model::input_starting_position_configuration::Builder {
-        crate::model::input_starting_position_configuration::Builder::default()
     }
 }
 
@@ -5518,6 +5562,13 @@ impl InputParallelism {
         self.count
     }
 }
+impl InputParallelism {
+    /// Creates a new builder-style object to manufacture [`InputParallelism`](crate::model::InputParallelism).
+    pub fn builder() -> crate::model::input_parallelism::Builder {
+        crate::model::input_parallelism::Builder::default()
+    }
+}
+
 /// See [`InputParallelism`](crate::model::InputParallelism).
 pub mod input_parallelism {
 
@@ -5542,12 +5593,6 @@ pub mod input_parallelism {
         pub fn build(self) -> crate::model::InputParallelism {
             crate::model::InputParallelism { count: self.count }
         }
-    }
-}
-impl InputParallelism {
-    /// Creates a new builder-style object to manufacture [`InputParallelism`](crate::model::InputParallelism).
-    pub fn builder() -> crate::model::input_parallelism::Builder {
-        crate::model::input_parallelism::Builder::default()
     }
 }
 
@@ -5576,6 +5621,13 @@ impl KinesisFirehoseInputDescription {
         self.role_arn.as_deref()
     }
 }
+impl KinesisFirehoseInputDescription {
+    /// Creates a new builder-style object to manufacture [`KinesisFirehoseInputDescription`](crate::model::KinesisFirehoseInputDescription).
+    pub fn builder() -> crate::model::kinesis_firehose_input_description::Builder {
+        crate::model::kinesis_firehose_input_description::Builder::default()
+    }
+}
+
 /// See [`KinesisFirehoseInputDescription`](crate::model::KinesisFirehoseInputDescription).
 pub mod kinesis_firehose_input_description {
 
@@ -5620,12 +5672,6 @@ pub mod kinesis_firehose_input_description {
         }
     }
 }
-impl KinesisFirehoseInputDescription {
-    /// Creates a new builder-style object to manufacture [`KinesisFirehoseInputDescription`](crate::model::KinesisFirehoseInputDescription).
-    pub fn builder() -> crate::model::kinesis_firehose_input_description::Builder {
-        crate::model::kinesis_firehose_input_description::Builder::default()
-    }
-}
 
 /// <p>For a SQL-based Kinesis Data Analytics application, describes the Kinesis data stream that is configured as the streaming source in the application input configuration. </p>
 #[non_exhaustive]
@@ -5652,6 +5698,13 @@ impl KinesisStreamsInputDescription {
         self.role_arn.as_deref()
     }
 }
+impl KinesisStreamsInputDescription {
+    /// Creates a new builder-style object to manufacture [`KinesisStreamsInputDescription`](crate::model::KinesisStreamsInputDescription).
+    pub fn builder() -> crate::model::kinesis_streams_input_description::Builder {
+        crate::model::kinesis_streams_input_description::Builder::default()
+    }
+}
+
 /// See [`KinesisStreamsInputDescription`](crate::model::KinesisStreamsInputDescription).
 pub mod kinesis_streams_input_description {
 
@@ -5696,12 +5749,6 @@ pub mod kinesis_streams_input_description {
         }
     }
 }
-impl KinesisStreamsInputDescription {
-    /// Creates a new builder-style object to manufacture [`KinesisStreamsInputDescription`](crate::model::KinesisStreamsInputDescription).
-    pub fn builder() -> crate::model::kinesis_streams_input_description::Builder {
-        crate::model::kinesis_streams_input_description::Builder::default()
-    }
-}
 
 /// <p>For a SQL-based Kinesis Data Analytics application, provides the configuration information about an input processor. Currently, the only input processor available is <a href="https://docs.aws.amazon.com/lambda/">Amazon Lambda</a>.</p>
 #[non_exhaustive]
@@ -5720,6 +5767,13 @@ impl InputProcessingConfigurationDescription {
         self.input_lambda_processor_description.as_ref()
     }
 }
+impl InputProcessingConfigurationDescription {
+    /// Creates a new builder-style object to manufacture [`InputProcessingConfigurationDescription`](crate::model::InputProcessingConfigurationDescription).
+    pub fn builder() -> crate::model::input_processing_configuration_description::Builder {
+        crate::model::input_processing_configuration_description::Builder::default()
+    }
+}
+
 /// See [`InputProcessingConfigurationDescription`](crate::model::InputProcessingConfigurationDescription).
 pub mod input_processing_configuration_description {
 
@@ -5755,12 +5809,6 @@ pub mod input_processing_configuration_description {
         }
     }
 }
-impl InputProcessingConfigurationDescription {
-    /// Creates a new builder-style object to manufacture [`InputProcessingConfigurationDescription`](crate::model::InputProcessingConfigurationDescription).
-    pub fn builder() -> crate::model::input_processing_configuration_description::Builder {
-        crate::model::input_processing_configuration_description::Builder::default()
-    }
-}
 
 /// <p>For a SQL-based Kinesis Data Analytics application, an object that contains the Amazon Resource Name (ARN) of the Amazon Lambda function that is used to preprocess records in the stream.</p>
 #[non_exhaustive]
@@ -5791,6 +5839,13 @@ impl InputLambdaProcessorDescription {
         self.role_arn.as_deref()
     }
 }
+impl InputLambdaProcessorDescription {
+    /// Creates a new builder-style object to manufacture [`InputLambdaProcessorDescription`](crate::model::InputLambdaProcessorDescription).
+    pub fn builder() -> crate::model::input_lambda_processor_description::Builder {
+        crate::model::input_lambda_processor_description::Builder::default()
+    }
+}
+
 /// See [`InputLambdaProcessorDescription`](crate::model::InputLambdaProcessorDescription).
 pub mod input_lambda_processor_description {
 
@@ -5837,12 +5892,6 @@ pub mod input_lambda_processor_description {
                 role_arn: self.role_arn,
             }
         }
-    }
-}
-impl InputLambdaProcessorDescription {
-    /// Creates a new builder-style object to manufacture [`InputLambdaProcessorDescription`](crate::model::InputLambdaProcessorDescription).
-    pub fn builder() -> crate::model::input_lambda_processor_description::Builder {
-        crate::model::input_lambda_processor_description::Builder::default()
     }
 }
 
@@ -6147,6 +6196,13 @@ impl CloudWatchLoggingOptionUpdate {
         self.log_stream_arn_update.as_deref()
     }
 }
+impl CloudWatchLoggingOptionUpdate {
+    /// Creates a new builder-style object to manufacture [`CloudWatchLoggingOptionUpdate`](crate::model::CloudWatchLoggingOptionUpdate).
+    pub fn builder() -> crate::model::cloud_watch_logging_option_update::Builder {
+        crate::model::cloud_watch_logging_option_update::Builder::default()
+    }
+}
+
 /// See [`CloudWatchLoggingOptionUpdate`](crate::model::CloudWatchLoggingOptionUpdate).
 pub mod cloud_watch_logging_option_update {
 
@@ -6196,12 +6252,6 @@ pub mod cloud_watch_logging_option_update {
         }
     }
 }
-impl CloudWatchLoggingOptionUpdate {
-    /// Creates a new builder-style object to manufacture [`CloudWatchLoggingOptionUpdate`](crate::model::CloudWatchLoggingOptionUpdate).
-    pub fn builder() -> crate::model::cloud_watch_logging_option_update::Builder {
-        crate::model::cloud_watch_logging_option_update::Builder::default()
-    }
-}
 
 /// <p>Describes the updates to the starting parameters for a Kinesis Data Analytics application.</p>
 #[non_exhaustive]
@@ -6229,6 +6279,13 @@ impl RunConfigurationUpdate {
         self.application_restore_configuration.as_ref()
     }
 }
+impl RunConfigurationUpdate {
+    /// Creates a new builder-style object to manufacture [`RunConfigurationUpdate`](crate::model::RunConfigurationUpdate).
+    pub fn builder() -> crate::model::run_configuration_update::Builder {
+        crate::model::run_configuration_update::Builder::default()
+    }
+}
+
 /// See [`RunConfigurationUpdate`](crate::model::RunConfigurationUpdate).
 pub mod run_configuration_update {
 
@@ -6281,12 +6338,6 @@ pub mod run_configuration_update {
                 application_restore_configuration: self.application_restore_configuration,
             }
         }
-    }
-}
-impl RunConfigurationUpdate {
-    /// Creates a new builder-style object to manufacture [`RunConfigurationUpdate`](crate::model::RunConfigurationUpdate).
-    pub fn builder() -> crate::model::run_configuration_update::Builder {
-        crate::model::run_configuration_update::Builder::default()
     }
 }
 
@@ -6366,6 +6417,13 @@ impl ApplicationConfigurationUpdate {
         self.zeppelin_application_configuration_update.as_ref()
     }
 }
+impl ApplicationConfigurationUpdate {
+    /// Creates a new builder-style object to manufacture [`ApplicationConfigurationUpdate`](crate::model::ApplicationConfigurationUpdate).
+    pub fn builder() -> crate::model::application_configuration_update::Builder {
+        crate::model::application_configuration_update::Builder::default()
+    }
+}
+
 /// See [`ApplicationConfigurationUpdate`](crate::model::ApplicationConfigurationUpdate).
 pub mod application_configuration_update {
 
@@ -6523,12 +6581,6 @@ pub mod application_configuration_update {
         }
     }
 }
-impl ApplicationConfigurationUpdate {
-    /// Creates a new builder-style object to manufacture [`ApplicationConfigurationUpdate`](crate::model::ApplicationConfigurationUpdate).
-    pub fn builder() -> crate::model::application_configuration_update::Builder {
-        crate::model::application_configuration_update::Builder::default()
-    }
-}
 
 /// <p>Updates to the configuration of Kinesis Data Analytics Studio notebook.</p>
 #[non_exhaustive]
@@ -6576,6 +6628,13 @@ impl ZeppelinApplicationConfigurationUpdate {
         self.custom_artifacts_configuration_update.as_deref()
     }
 }
+impl ZeppelinApplicationConfigurationUpdate {
+    /// Creates a new builder-style object to manufacture [`ZeppelinApplicationConfigurationUpdate`](crate::model::ZeppelinApplicationConfigurationUpdate).
+    pub fn builder() -> crate::model::zeppelin_application_configuration_update::Builder {
+        crate::model::zeppelin_application_configuration_update::Builder::default()
+    }
+}
+
 /// See [`ZeppelinApplicationConfigurationUpdate`](crate::model::ZeppelinApplicationConfigurationUpdate).
 pub mod zeppelin_application_configuration_update {
 
@@ -6677,12 +6736,6 @@ pub mod zeppelin_application_configuration_update {
         }
     }
 }
-impl ZeppelinApplicationConfigurationUpdate {
-    /// Creates a new builder-style object to manufacture [`ZeppelinApplicationConfigurationUpdate`](crate::model::ZeppelinApplicationConfigurationUpdate).
-    pub fn builder() -> crate::model::zeppelin_application_configuration_update::Builder {
-        crate::model::zeppelin_application_configuration_update::Builder::default()
-    }
-}
 
 /// <p>Specifies dependency JARs, as well as JAR files that contain user-defined functions (UDF).</p>
 #[non_exhaustive]
@@ -6712,6 +6765,13 @@ impl CustomArtifactConfiguration {
         self.maven_reference.as_ref()
     }
 }
+impl CustomArtifactConfiguration {
+    /// Creates a new builder-style object to manufacture [`CustomArtifactConfiguration`](crate::model::CustomArtifactConfiguration).
+    pub fn builder() -> crate::model::custom_artifact_configuration::Builder {
+        crate::model::custom_artifact_configuration::Builder::default()
+    }
+}
+
 /// See [`CustomArtifactConfiguration`](crate::model::CustomArtifactConfiguration).
 pub mod custom_artifact_configuration {
 
@@ -6773,12 +6833,6 @@ pub mod custom_artifact_configuration {
         }
     }
 }
-impl CustomArtifactConfiguration {
-    /// Creates a new builder-style object to manufacture [`CustomArtifactConfiguration`](crate::model::CustomArtifactConfiguration).
-    pub fn builder() -> crate::model::custom_artifact_configuration::Builder {
-        crate::model::custom_artifact_configuration::Builder::default()
-    }
-}
 
 /// <p>Updates to the configuration information required to deploy an Amazon Data Analytics Studio notebook as an application with durable state.</p>
 #[non_exhaustive]
@@ -6796,6 +6850,13 @@ impl DeployAsApplicationConfigurationUpdate {
         self.s3_content_location_update.as_ref()
     }
 }
+impl DeployAsApplicationConfigurationUpdate {
+    /// Creates a new builder-style object to manufacture [`DeployAsApplicationConfigurationUpdate`](crate::model::DeployAsApplicationConfigurationUpdate).
+    pub fn builder() -> crate::model::deploy_as_application_configuration_update::Builder {
+        crate::model::deploy_as_application_configuration_update::Builder::default()
+    }
+}
+
 /// See [`DeployAsApplicationConfigurationUpdate`](crate::model::DeployAsApplicationConfigurationUpdate).
 pub mod deploy_as_application_configuration_update {
 
@@ -6831,12 +6892,6 @@ pub mod deploy_as_application_configuration_update {
         }
     }
 }
-impl DeployAsApplicationConfigurationUpdate {
-    /// Creates a new builder-style object to manufacture [`DeployAsApplicationConfigurationUpdate`](crate::model::DeployAsApplicationConfigurationUpdate).
-    pub fn builder() -> crate::model::deploy_as_application_configuration_update::Builder {
-        crate::model::deploy_as_application_configuration_update::Builder::default()
-    }
-}
 
 /// <p>The information required to update the S3 base location that holds the application.</p>
 #[non_exhaustive]
@@ -6859,6 +6914,13 @@ impl S3ContentBaseLocationUpdate {
         self.base_path_update.as_deref()
     }
 }
+impl S3ContentBaseLocationUpdate {
+    /// Creates a new builder-style object to manufacture [`S3ContentBaseLocationUpdate`](crate::model::S3ContentBaseLocationUpdate).
+    pub fn builder() -> crate::model::s3_content_base_location_update::Builder {
+        crate::model::s3_content_base_location_update::Builder::default()
+    }
+}
+
 /// See [`S3ContentBaseLocationUpdate`](crate::model::S3ContentBaseLocationUpdate).
 pub mod s3_content_base_location_update {
 
@@ -6905,12 +6967,6 @@ pub mod s3_content_base_location_update {
         }
     }
 }
-impl S3ContentBaseLocationUpdate {
-    /// Creates a new builder-style object to manufacture [`S3ContentBaseLocationUpdate`](crate::model::S3ContentBaseLocationUpdate).
-    pub fn builder() -> crate::model::s3_content_base_location_update::Builder {
-        crate::model::s3_content_base_location_update::Builder::default()
-    }
-}
 
 /// <p>Updates to the configuration parameters for the default Amazon Glue database. You use this database for SQL queries that you write in a Kinesis Data Analytics Studio notebook.</p>
 #[non_exhaustive]
@@ -6929,6 +6985,13 @@ impl CatalogConfigurationUpdate {
         self.glue_data_catalog_configuration_update.as_ref()
     }
 }
+impl CatalogConfigurationUpdate {
+    /// Creates a new builder-style object to manufacture [`CatalogConfigurationUpdate`](crate::model::CatalogConfigurationUpdate).
+    pub fn builder() -> crate::model::catalog_configuration_update::Builder {
+        crate::model::catalog_configuration_update::Builder::default()
+    }
+}
+
 /// See [`CatalogConfigurationUpdate`](crate::model::CatalogConfigurationUpdate).
 pub mod catalog_configuration_update {
 
@@ -6964,12 +7027,6 @@ pub mod catalog_configuration_update {
         }
     }
 }
-impl CatalogConfigurationUpdate {
-    /// Creates a new builder-style object to manufacture [`CatalogConfigurationUpdate`](crate::model::CatalogConfigurationUpdate).
-    pub fn builder() -> crate::model::catalog_configuration_update::Builder {
-        crate::model::catalog_configuration_update::Builder::default()
-    }
-}
 
 /// <p>Updates to the configuration of the Glue Data Catalog that you use for SQL queries that you write in a Kinesis Data Analytics Studio notebook.</p>
 #[non_exhaustive]
@@ -6985,6 +7042,13 @@ impl GlueDataCatalogConfigurationUpdate {
         self.database_arn_update.as_deref()
     }
 }
+impl GlueDataCatalogConfigurationUpdate {
+    /// Creates a new builder-style object to manufacture [`GlueDataCatalogConfigurationUpdate`](crate::model::GlueDataCatalogConfigurationUpdate).
+    pub fn builder() -> crate::model::glue_data_catalog_configuration_update::Builder {
+        crate::model::glue_data_catalog_configuration_update::Builder::default()
+    }
+}
+
 /// See [`GlueDataCatalogConfigurationUpdate`](crate::model::GlueDataCatalogConfigurationUpdate).
 pub mod glue_data_catalog_configuration_update {
 
@@ -7016,12 +7080,6 @@ pub mod glue_data_catalog_configuration_update {
         }
     }
 }
-impl GlueDataCatalogConfigurationUpdate {
-    /// Creates a new builder-style object to manufacture [`GlueDataCatalogConfigurationUpdate`](crate::model::GlueDataCatalogConfigurationUpdate).
-    pub fn builder() -> crate::model::glue_data_catalog_configuration_update::Builder {
-        crate::model::glue_data_catalog_configuration_update::Builder::default()
-    }
-}
 
 /// <p>Updates to the monitoring configuration for Apache Zeppelin within a Kinesis Data Analytics Studio notebook.</p>
 #[non_exhaustive]
@@ -7037,6 +7095,13 @@ impl ZeppelinMonitoringConfigurationUpdate {
         self.log_level_update.as_ref()
     }
 }
+impl ZeppelinMonitoringConfigurationUpdate {
+    /// Creates a new builder-style object to manufacture [`ZeppelinMonitoringConfigurationUpdate`](crate::model::ZeppelinMonitoringConfigurationUpdate).
+    pub fn builder() -> crate::model::zeppelin_monitoring_configuration_update::Builder {
+        crate::model::zeppelin_monitoring_configuration_update::Builder::default()
+    }
+}
+
 /// See [`ZeppelinMonitoringConfigurationUpdate`](crate::model::ZeppelinMonitoringConfigurationUpdate).
 pub mod zeppelin_monitoring_configuration_update {
 
@@ -7068,12 +7133,6 @@ pub mod zeppelin_monitoring_configuration_update {
         }
     }
 }
-impl ZeppelinMonitoringConfigurationUpdate {
-    /// Creates a new builder-style object to manufacture [`ZeppelinMonitoringConfigurationUpdate`](crate::model::ZeppelinMonitoringConfigurationUpdate).
-    pub fn builder() -> crate::model::zeppelin_monitoring_configuration_update::Builder {
-        crate::model::zeppelin_monitoring_configuration_update::Builder::default()
-    }
-}
 
 /// <p>Describes updates to the VPC configuration used by the application.</p>
 #[non_exhaustive]
@@ -7103,6 +7162,13 @@ impl VpcConfigurationUpdate {
         self.security_group_id_updates.as_deref()
     }
 }
+impl VpcConfigurationUpdate {
+    /// Creates a new builder-style object to manufacture [`VpcConfigurationUpdate`](crate::model::VpcConfigurationUpdate).
+    pub fn builder() -> crate::model::vpc_configuration_update::Builder {
+        crate::model::vpc_configuration_update::Builder::default()
+    }
+}
+
 /// See [`VpcConfigurationUpdate`](crate::model::VpcConfigurationUpdate).
 pub mod vpc_configuration_update {
 
@@ -7177,12 +7243,6 @@ pub mod vpc_configuration_update {
         }
     }
 }
-impl VpcConfigurationUpdate {
-    /// Creates a new builder-style object to manufacture [`VpcConfigurationUpdate`](crate::model::VpcConfigurationUpdate).
-    pub fn builder() -> crate::model::vpc_configuration_update::Builder {
-        crate::model::vpc_configuration_update::Builder::default()
-    }
-}
 
 /// <p>Describes updates to whether snapshots are enabled for a Flink-based Kinesis Data Analytics application.</p>
 #[non_exhaustive]
@@ -7198,6 +7258,13 @@ impl ApplicationSnapshotConfigurationUpdate {
         self.snapshots_enabled_update
     }
 }
+impl ApplicationSnapshotConfigurationUpdate {
+    /// Creates a new builder-style object to manufacture [`ApplicationSnapshotConfigurationUpdate`](crate::model::ApplicationSnapshotConfigurationUpdate).
+    pub fn builder() -> crate::model::application_snapshot_configuration_update::Builder {
+        crate::model::application_snapshot_configuration_update::Builder::default()
+    }
+}
+
 /// See [`ApplicationSnapshotConfigurationUpdate`](crate::model::ApplicationSnapshotConfigurationUpdate).
 pub mod application_snapshot_configuration_update {
 
@@ -7226,12 +7293,6 @@ pub mod application_snapshot_configuration_update {
         }
     }
 }
-impl ApplicationSnapshotConfigurationUpdate {
-    /// Creates a new builder-style object to manufacture [`ApplicationSnapshotConfigurationUpdate`](crate::model::ApplicationSnapshotConfigurationUpdate).
-    pub fn builder() -> crate::model::application_snapshot_configuration_update::Builder {
-        crate::model::application_snapshot_configuration_update::Builder::default()
-    }
-}
 
 /// <p>Describes updates to the execution property groups for a Flink-based Kinesis Data Analytics application or a Studio notebook.</p>
 #[non_exhaustive]
@@ -7247,6 +7308,13 @@ impl EnvironmentPropertyUpdates {
         self.property_groups.as_deref()
     }
 }
+impl EnvironmentPropertyUpdates {
+    /// Creates a new builder-style object to manufacture [`EnvironmentPropertyUpdates`](crate::model::EnvironmentPropertyUpdates).
+    pub fn builder() -> crate::model::environment_property_updates::Builder {
+        crate::model::environment_property_updates::Builder::default()
+    }
+}
+
 /// See [`EnvironmentPropertyUpdates`](crate::model::EnvironmentPropertyUpdates).
 pub mod environment_property_updates {
 
@@ -7282,12 +7350,6 @@ pub mod environment_property_updates {
                 property_groups: self.property_groups,
             }
         }
-    }
-}
-impl EnvironmentPropertyUpdates {
-    /// Creates a new builder-style object to manufacture [`EnvironmentPropertyUpdates`](crate::model::EnvironmentPropertyUpdates).
-    pub fn builder() -> crate::model::environment_property_updates::Builder {
-        crate::model::environment_property_updates::Builder::default()
     }
 }
 
@@ -7328,6 +7390,13 @@ impl FlinkApplicationConfigurationUpdate {
         self.parallelism_configuration_update.as_ref()
     }
 }
+impl FlinkApplicationConfigurationUpdate {
+    /// Creates a new builder-style object to manufacture [`FlinkApplicationConfigurationUpdate`](crate::model::FlinkApplicationConfigurationUpdate).
+    pub fn builder() -> crate::model::flink_application_configuration_update::Builder {
+        crate::model::flink_application_configuration_update::Builder::default()
+    }
+}
+
 /// See [`FlinkApplicationConfigurationUpdate`](crate::model::FlinkApplicationConfigurationUpdate).
 pub mod flink_application_configuration_update {
 
@@ -7401,12 +7470,6 @@ pub mod flink_application_configuration_update {
         }
     }
 }
-impl FlinkApplicationConfigurationUpdate {
-    /// Creates a new builder-style object to manufacture [`FlinkApplicationConfigurationUpdate`](crate::model::FlinkApplicationConfigurationUpdate).
-    pub fn builder() -> crate::model::flink_application_configuration_update::Builder {
-        crate::model::flink_application_configuration_update::Builder::default()
-    }
-}
 
 /// <p>Describes updates to parameters for how an application executes multiple tasks simultaneously.</p>
 #[non_exhaustive]
@@ -7445,6 +7508,13 @@ impl ParallelismConfigurationUpdate {
         self.auto_scaling_enabled_update
     }
 }
+impl ParallelismConfigurationUpdate {
+    /// Creates a new builder-style object to manufacture [`ParallelismConfigurationUpdate`](crate::model::ParallelismConfigurationUpdate).
+    pub fn builder() -> crate::model::parallelism_configuration_update::Builder {
+        crate::model::parallelism_configuration_update::Builder::default()
+    }
+}
+
 /// See [`ParallelismConfigurationUpdate`](crate::model::ParallelismConfigurationUpdate).
 pub mod parallelism_configuration_update {
 
@@ -7512,12 +7582,6 @@ pub mod parallelism_configuration_update {
         }
     }
 }
-impl ParallelismConfigurationUpdate {
-    /// Creates a new builder-style object to manufacture [`ParallelismConfigurationUpdate`](crate::model::ParallelismConfigurationUpdate).
-    pub fn builder() -> crate::model::parallelism_configuration_update::Builder {
-        crate::model::parallelism_configuration_update::Builder::default()
-    }
-}
 
 /// <p>Describes updates to configuration parameters for Amazon CloudWatch logging for an application.</p>
 #[non_exhaustive]
@@ -7549,6 +7613,13 @@ impl MonitoringConfigurationUpdate {
         self.log_level_update.as_ref()
     }
 }
+impl MonitoringConfigurationUpdate {
+    /// Creates a new builder-style object to manufacture [`MonitoringConfigurationUpdate`](crate::model::MonitoringConfigurationUpdate).
+    pub fn builder() -> crate::model::monitoring_configuration_update::Builder {
+        crate::model::monitoring_configuration_update::Builder::default()
+    }
+}
+
 /// See [`MonitoringConfigurationUpdate`](crate::model::MonitoringConfigurationUpdate).
 pub mod monitoring_configuration_update {
 
@@ -7608,12 +7679,6 @@ pub mod monitoring_configuration_update {
                 log_level_update: self.log_level_update,
             }
         }
-    }
-}
-impl MonitoringConfigurationUpdate {
-    /// Creates a new builder-style object to manufacture [`MonitoringConfigurationUpdate`](crate::model::MonitoringConfigurationUpdate).
-    pub fn builder() -> crate::model::monitoring_configuration_update::Builder {
-        crate::model::monitoring_configuration_update::Builder::default()
     }
 }
 
@@ -7680,6 +7745,13 @@ impl CheckpointConfigurationUpdate {
         self.min_pause_between_checkpoints_update
     }
 }
+impl CheckpointConfigurationUpdate {
+    /// Creates a new builder-style object to manufacture [`CheckpointConfigurationUpdate`](crate::model::CheckpointConfigurationUpdate).
+    pub fn builder() -> crate::model::checkpoint_configuration_update::Builder {
+        crate::model::checkpoint_configuration_update::Builder::default()
+    }
+}
+
 /// See [`CheckpointConfigurationUpdate`](crate::model::CheckpointConfigurationUpdate).
 pub mod checkpoint_configuration_update {
 
@@ -7779,12 +7851,6 @@ pub mod checkpoint_configuration_update {
         }
     }
 }
-impl CheckpointConfigurationUpdate {
-    /// Creates a new builder-style object to manufacture [`CheckpointConfigurationUpdate`](crate::model::CheckpointConfigurationUpdate).
-    pub fn builder() -> crate::model::checkpoint_configuration_update::Builder {
-        crate::model::checkpoint_configuration_update::Builder::default()
-    }
-}
 
 /// <p>Describes code configuration updates for an application. This is supported for a Flink-based Kinesis Data Analytics application or a SQL-based Kinesis Data Analytics application.</p>
 #[non_exhaustive]
@@ -7807,6 +7873,13 @@ impl ApplicationCodeConfigurationUpdate {
         self.code_content_update.as_ref()
     }
 }
+impl ApplicationCodeConfigurationUpdate {
+    /// Creates a new builder-style object to manufacture [`ApplicationCodeConfigurationUpdate`](crate::model::ApplicationCodeConfigurationUpdate).
+    pub fn builder() -> crate::model::application_code_configuration_update::Builder {
+        crate::model::application_code_configuration_update::Builder::default()
+    }
+}
+
 /// See [`ApplicationCodeConfigurationUpdate`](crate::model::ApplicationCodeConfigurationUpdate).
 pub mod application_code_configuration_update {
 
@@ -7853,12 +7926,6 @@ pub mod application_code_configuration_update {
         }
     }
 }
-impl ApplicationCodeConfigurationUpdate {
-    /// Creates a new builder-style object to manufacture [`ApplicationCodeConfigurationUpdate`](crate::model::ApplicationCodeConfigurationUpdate).
-    pub fn builder() -> crate::model::application_code_configuration_update::Builder {
-        crate::model::application_code_configuration_update::Builder::default()
-    }
-}
 
 /// <p>Describes an update to the code of an application. Not supported for Apache Zeppelin.</p>
 #[non_exhaustive]
@@ -7890,6 +7957,13 @@ impl CodeContentUpdate {
         self.s3_content_location_update.as_ref()
     }
 }
+impl CodeContentUpdate {
+    /// Creates a new builder-style object to manufacture [`CodeContentUpdate`](crate::model::CodeContentUpdate).
+    pub fn builder() -> crate::model::code_content_update::Builder {
+        crate::model::code_content_update::Builder::default()
+    }
+}
+
 /// See [`CodeContentUpdate`](crate::model::CodeContentUpdate).
 pub mod code_content_update {
 
@@ -7955,12 +8029,6 @@ pub mod code_content_update {
         }
     }
 }
-impl CodeContentUpdate {
-    /// Creates a new builder-style object to manufacture [`CodeContentUpdate`](crate::model::CodeContentUpdate).
-    pub fn builder() -> crate::model::code_content_update::Builder {
-        crate::model::code_content_update::Builder::default()
-    }
-}
 
 /// <p>Describes an update for the Amazon S3 code content location for an application.</p>
 #[non_exhaustive]
@@ -7990,6 +8058,13 @@ impl S3ContentLocationUpdate {
         self.object_version_update.as_deref()
     }
 }
+impl S3ContentLocationUpdate {
+    /// Creates a new builder-style object to manufacture [`S3ContentLocationUpdate`](crate::model::S3ContentLocationUpdate).
+    pub fn builder() -> crate::model::s3_content_location_update::Builder {
+        crate::model::s3_content_location_update::Builder::default()
+    }
+}
+
 /// See [`S3ContentLocationUpdate`](crate::model::S3ContentLocationUpdate).
 pub mod s3_content_location_update {
 
@@ -8051,12 +8126,6 @@ pub mod s3_content_location_update {
         }
     }
 }
-impl S3ContentLocationUpdate {
-    /// Creates a new builder-style object to manufacture [`S3ContentLocationUpdate`](crate::model::S3ContentLocationUpdate).
-    pub fn builder() -> crate::model::s3_content_location_update::Builder {
-        crate::model::s3_content_location_update::Builder::default()
-    }
-}
 
 /// <p>Describes updates to the input streams, destination streams, and reference data sources for a SQL-based Kinesis Data Analytics application.</p>
 #[non_exhaustive]
@@ -8089,6 +8158,13 @@ impl SqlApplicationConfigurationUpdate {
         self.reference_data_source_updates.as_deref()
     }
 }
+impl SqlApplicationConfigurationUpdate {
+    /// Creates a new builder-style object to manufacture [`SqlApplicationConfigurationUpdate`](crate::model::SqlApplicationConfigurationUpdate).
+    pub fn builder() -> crate::model::sql_application_configuration_update::Builder {
+        crate::model::sql_application_configuration_update::Builder::default()
+    }
+}
+
 /// See [`SqlApplicationConfigurationUpdate`](crate::model::SqlApplicationConfigurationUpdate).
 pub mod sql_application_configuration_update {
 
@@ -8172,12 +8248,6 @@ pub mod sql_application_configuration_update {
         }
     }
 }
-impl SqlApplicationConfigurationUpdate {
-    /// Creates a new builder-style object to manufacture [`SqlApplicationConfigurationUpdate`](crate::model::SqlApplicationConfigurationUpdate).
-    pub fn builder() -> crate::model::sql_application_configuration_update::Builder {
-        crate::model::sql_application_configuration_update::Builder::default()
-    }
-}
 
 /// <p>When you update a reference data source configuration for a SQL-based Kinesis Data Analytics application, this object provides all the updated values (such as the source bucket name and object key name), the in-application table name that is created, and updated mapping information that maps the data in the Amazon S3 object to the in-application reference table that is created.</p>
 #[non_exhaustive]
@@ -8217,6 +8287,13 @@ impl ReferenceDataSourceUpdate {
         self.reference_schema_update.as_ref()
     }
 }
+impl ReferenceDataSourceUpdate {
+    /// Creates a new builder-style object to manufacture [`ReferenceDataSourceUpdate`](crate::model::ReferenceDataSourceUpdate).
+    pub fn builder() -> crate::model::reference_data_source_update::Builder {
+        crate::model::reference_data_source_update::Builder::default()
+    }
+}
+
 /// See [`ReferenceDataSourceUpdate`](crate::model::ReferenceDataSourceUpdate).
 pub mod reference_data_source_update {
 
@@ -8294,12 +8371,6 @@ pub mod reference_data_source_update {
         }
     }
 }
-impl ReferenceDataSourceUpdate {
-    /// Creates a new builder-style object to manufacture [`ReferenceDataSourceUpdate`](crate::model::ReferenceDataSourceUpdate).
-    pub fn builder() -> crate::model::reference_data_source_update::Builder {
-        crate::model::reference_data_source_update::Builder::default()
-    }
-}
 
 /// <p>For a SQL-based Kinesis Data Analytics application, describes the Amazon S3 bucket name and object key name for an in-application reference table. </p>
 #[non_exhaustive]
@@ -8322,6 +8393,13 @@ impl S3ReferenceDataSourceUpdate {
         self.file_key_update.as_deref()
     }
 }
+impl S3ReferenceDataSourceUpdate {
+    /// Creates a new builder-style object to manufacture [`S3ReferenceDataSourceUpdate`](crate::model::S3ReferenceDataSourceUpdate).
+    pub fn builder() -> crate::model::s3_reference_data_source_update::Builder {
+        crate::model::s3_reference_data_source_update::Builder::default()
+    }
+}
+
 /// See [`S3ReferenceDataSourceUpdate`](crate::model::S3ReferenceDataSourceUpdate).
 pub mod s3_reference_data_source_update {
 
@@ -8366,12 +8444,6 @@ pub mod s3_reference_data_source_update {
                 file_key_update: self.file_key_update,
             }
         }
-    }
-}
-impl S3ReferenceDataSourceUpdate {
-    /// Creates a new builder-style object to manufacture [`S3ReferenceDataSourceUpdate`](crate::model::S3ReferenceDataSourceUpdate).
-    pub fn builder() -> crate::model::s3_reference_data_source_update::Builder {
-        crate::model::s3_reference_data_source_update::Builder::default()
     }
 }
 
@@ -8432,6 +8504,13 @@ impl OutputUpdate {
         self.destination_schema_update.as_ref()
     }
 }
+impl OutputUpdate {
+    /// Creates a new builder-style object to manufacture [`OutputUpdate`](crate::model::OutputUpdate).
+    pub fn builder() -> crate::model::output_update::Builder {
+        crate::model::output_update::Builder::default()
+    }
+}
+
 /// See [`OutputUpdate`](crate::model::OutputUpdate).
 pub mod output_update {
 
@@ -8540,12 +8619,6 @@ pub mod output_update {
         }
     }
 }
-impl OutputUpdate {
-    /// Creates a new builder-style object to manufacture [`OutputUpdate`](crate::model::OutputUpdate).
-    pub fn builder() -> crate::model::output_update::Builder {
-        crate::model::output_update::Builder::default()
-    }
-}
 
 /// <p>When you update an SQL-based Kinesis Data Analytics application's output configuration using the <code>UpdateApplication</code> operation, provides information about an Amazon Lambda function that is configured as the destination.</p>
 #[non_exhaustive]
@@ -8565,6 +8638,13 @@ impl LambdaOutputUpdate {
         self.resource_arn_update.as_deref()
     }
 }
+impl LambdaOutputUpdate {
+    /// Creates a new builder-style object to manufacture [`LambdaOutputUpdate`](crate::model::LambdaOutputUpdate).
+    pub fn builder() -> crate::model::lambda_output_update::Builder {
+        crate::model::lambda_output_update::Builder::default()
+    }
+}
+
 /// See [`LambdaOutputUpdate`](crate::model::LambdaOutputUpdate).
 pub mod lambda_output_update {
 
@@ -8600,12 +8680,6 @@ pub mod lambda_output_update {
         }
     }
 }
-impl LambdaOutputUpdate {
-    /// Creates a new builder-style object to manufacture [`LambdaOutputUpdate`](crate::model::LambdaOutputUpdate).
-    pub fn builder() -> crate::model::lambda_output_update::Builder {
-        crate::model::lambda_output_update::Builder::default()
-    }
-}
 
 /// <p>For a SQL-based Kinesis Data Analytics application, when updating an output configuration using the <code>UpdateApplication</code> operation, provides information about a Kinesis Data Firehose delivery stream that is configured as the destination.</p>
 #[non_exhaustive]
@@ -8621,6 +8695,13 @@ impl KinesisFirehoseOutputUpdate {
         self.resource_arn_update.as_deref()
     }
 }
+impl KinesisFirehoseOutputUpdate {
+    /// Creates a new builder-style object to manufacture [`KinesisFirehoseOutputUpdate`](crate::model::KinesisFirehoseOutputUpdate).
+    pub fn builder() -> crate::model::kinesis_firehose_output_update::Builder {
+        crate::model::kinesis_firehose_output_update::Builder::default()
+    }
+}
+
 /// See [`KinesisFirehoseOutputUpdate`](crate::model::KinesisFirehoseOutputUpdate).
 pub mod kinesis_firehose_output_update {
 
@@ -8652,12 +8733,6 @@ pub mod kinesis_firehose_output_update {
         }
     }
 }
-impl KinesisFirehoseOutputUpdate {
-    /// Creates a new builder-style object to manufacture [`KinesisFirehoseOutputUpdate`](crate::model::KinesisFirehoseOutputUpdate).
-    pub fn builder() -> crate::model::kinesis_firehose_output_update::Builder {
-        crate::model::kinesis_firehose_output_update::Builder::default()
-    }
-}
 
 /// <p>When you update a SQL-based Kinesis Data Analytics application's output configuration using the <code>UpdateApplication</code> operation, provides information about a Kinesis data stream that is configured as the destination.</p>
 #[non_exhaustive]
@@ -8673,6 +8748,13 @@ impl KinesisStreamsOutputUpdate {
         self.resource_arn_update.as_deref()
     }
 }
+impl KinesisStreamsOutputUpdate {
+    /// Creates a new builder-style object to manufacture [`KinesisStreamsOutputUpdate`](crate::model::KinesisStreamsOutputUpdate).
+    pub fn builder() -> crate::model::kinesis_streams_output_update::Builder {
+        crate::model::kinesis_streams_output_update::Builder::default()
+    }
+}
+
 /// See [`KinesisStreamsOutputUpdate`](crate::model::KinesisStreamsOutputUpdate).
 pub mod kinesis_streams_output_update {
 
@@ -8702,12 +8784,6 @@ pub mod kinesis_streams_output_update {
                 resource_arn_update: self.resource_arn_update,
             }
         }
-    }
-}
-impl KinesisStreamsOutputUpdate {
-    /// Creates a new builder-style object to manufacture [`KinesisStreamsOutputUpdate`](crate::model::KinesisStreamsOutputUpdate).
-    pub fn builder() -> crate::model::kinesis_streams_output_update::Builder {
-        crate::model::kinesis_streams_output_update::Builder::default()
     }
 }
 
@@ -8777,6 +8853,13 @@ impl InputUpdate {
         self.input_parallelism_update.as_ref()
     }
 }
+impl InputUpdate {
+    /// Creates a new builder-style object to manufacture [`InputUpdate`](crate::model::InputUpdate).
+    pub fn builder() -> crate::model::input_update::Builder {
+        crate::model::input_update::Builder::default()
+    }
+}
+
 /// See [`InputUpdate`](crate::model::InputUpdate).
 pub mod input_update {
 
@@ -8911,12 +8994,6 @@ pub mod input_update {
         }
     }
 }
-impl InputUpdate {
-    /// Creates a new builder-style object to manufacture [`InputUpdate`](crate::model::InputUpdate).
-    pub fn builder() -> crate::model::input_update::Builder {
-        crate::model::input_update::Builder::default()
-    }
-}
 
 /// <p>For a SQL-based Kinesis Data Analytics application, provides updates to the parallelism count.</p>
 #[non_exhaustive]
@@ -8932,6 +9009,13 @@ impl InputParallelismUpdate {
         self.count_update
     }
 }
+impl InputParallelismUpdate {
+    /// Creates a new builder-style object to manufacture [`InputParallelismUpdate`](crate::model::InputParallelismUpdate).
+    pub fn builder() -> crate::model::input_parallelism_update::Builder {
+        crate::model::input_parallelism_update::Builder::default()
+    }
+}
+
 /// See [`InputParallelismUpdate`](crate::model::InputParallelismUpdate).
 pub mod input_parallelism_update {
 
@@ -8958,12 +9042,6 @@ pub mod input_parallelism_update {
                 count_update: self.count_update,
             }
         }
-    }
-}
-impl InputParallelismUpdate {
-    /// Creates a new builder-style object to manufacture [`InputParallelismUpdate`](crate::model::InputParallelismUpdate).
-    pub fn builder() -> crate::model::input_parallelism_update::Builder {
-        crate::model::input_parallelism_update::Builder::default()
     }
 }
 
@@ -8995,6 +9073,13 @@ impl InputSchemaUpdate {
         self.record_column_updates.as_deref()
     }
 }
+impl InputSchemaUpdate {
+    /// Creates a new builder-style object to manufacture [`InputSchemaUpdate`](crate::model::InputSchemaUpdate).
+    pub fn builder() -> crate::model::input_schema_update::Builder {
+        crate::model::input_schema_update::Builder::default()
+    }
+}
+
 /// See [`InputSchemaUpdate`](crate::model::InputSchemaUpdate).
 pub mod input_schema_update {
 
@@ -9063,12 +9148,6 @@ pub mod input_schema_update {
         }
     }
 }
-impl InputSchemaUpdate {
-    /// Creates a new builder-style object to manufacture [`InputSchemaUpdate`](crate::model::InputSchemaUpdate).
-    pub fn builder() -> crate::model::input_schema_update::Builder {
-        crate::model::input_schema_update::Builder::default()
-    }
-}
 
 /// <p>For a SQL-based Kinesis Data Analytics application, when updating application input configuration, provides information about a Kinesis Data Firehose delivery stream as the streaming source.</p>
 #[non_exhaustive]
@@ -9084,6 +9163,13 @@ impl KinesisFirehoseInputUpdate {
         self.resource_arn_update.as_deref()
     }
 }
+impl KinesisFirehoseInputUpdate {
+    /// Creates a new builder-style object to manufacture [`KinesisFirehoseInputUpdate`](crate::model::KinesisFirehoseInputUpdate).
+    pub fn builder() -> crate::model::kinesis_firehose_input_update::Builder {
+        crate::model::kinesis_firehose_input_update::Builder::default()
+    }
+}
+
 /// See [`KinesisFirehoseInputUpdate`](crate::model::KinesisFirehoseInputUpdate).
 pub mod kinesis_firehose_input_update {
 
@@ -9115,12 +9201,6 @@ pub mod kinesis_firehose_input_update {
         }
     }
 }
-impl KinesisFirehoseInputUpdate {
-    /// Creates a new builder-style object to manufacture [`KinesisFirehoseInputUpdate`](crate::model::KinesisFirehoseInputUpdate).
-    pub fn builder() -> crate::model::kinesis_firehose_input_update::Builder {
-        crate::model::kinesis_firehose_input_update::Builder::default()
-    }
-}
 
 /// <p>When you update the input configuration for a SQL-based Kinesis Data Analytics application, provides information about a Kinesis stream as the streaming source.</p>
 #[non_exhaustive]
@@ -9136,6 +9216,13 @@ impl KinesisStreamsInputUpdate {
         self.resource_arn_update.as_deref()
     }
 }
+impl KinesisStreamsInputUpdate {
+    /// Creates a new builder-style object to manufacture [`KinesisStreamsInputUpdate`](crate::model::KinesisStreamsInputUpdate).
+    pub fn builder() -> crate::model::kinesis_streams_input_update::Builder {
+        crate::model::kinesis_streams_input_update::Builder::default()
+    }
+}
+
 /// See [`KinesisStreamsInputUpdate`](crate::model::KinesisStreamsInputUpdate).
 pub mod kinesis_streams_input_update {
 
@@ -9167,12 +9254,6 @@ pub mod kinesis_streams_input_update {
         }
     }
 }
-impl KinesisStreamsInputUpdate {
-    /// Creates a new builder-style object to manufacture [`KinesisStreamsInputUpdate`](crate::model::KinesisStreamsInputUpdate).
-    pub fn builder() -> crate::model::kinesis_streams_input_update::Builder {
-        crate::model::kinesis_streams_input_update::Builder::default()
-    }
-}
 
 /// <p>For a SQL-based Kinesis Data Analytics application, describes updates to an <code>InputProcessingConfiguration</code>.</p>
 #[non_exhaustive]
@@ -9191,6 +9272,13 @@ impl InputProcessingConfigurationUpdate {
         self.input_lambda_processor_update.as_ref()
     }
 }
+impl InputProcessingConfigurationUpdate {
+    /// Creates a new builder-style object to manufacture [`InputProcessingConfigurationUpdate`](crate::model::InputProcessingConfigurationUpdate).
+    pub fn builder() -> crate::model::input_processing_configuration_update::Builder {
+        crate::model::input_processing_configuration_update::Builder::default()
+    }
+}
+
 /// See [`InputProcessingConfigurationUpdate`](crate::model::InputProcessingConfigurationUpdate).
 pub mod input_processing_configuration_update {
 
@@ -9226,12 +9314,6 @@ pub mod input_processing_configuration_update {
         }
     }
 }
-impl InputProcessingConfigurationUpdate {
-    /// Creates a new builder-style object to manufacture [`InputProcessingConfigurationUpdate`](crate::model::InputProcessingConfigurationUpdate).
-    pub fn builder() -> crate::model::input_processing_configuration_update::Builder {
-        crate::model::input_processing_configuration_update::Builder::default()
-    }
-}
 
 /// <p>For a SQL-based Kinesis Data Analytics application, represents an update to the <code>InputLambdaProcessor</code> that is used to preprocess the records in the stream.</p>
 #[non_exhaustive]
@@ -9251,6 +9333,13 @@ impl InputLambdaProcessorUpdate {
         self.resource_arn_update.as_deref()
     }
 }
+impl InputLambdaProcessorUpdate {
+    /// Creates a new builder-style object to manufacture [`InputLambdaProcessorUpdate`](crate::model::InputLambdaProcessorUpdate).
+    pub fn builder() -> crate::model::input_lambda_processor_update::Builder {
+        crate::model::input_lambda_processor_update::Builder::default()
+    }
+}
+
 /// See [`InputLambdaProcessorUpdate`](crate::model::InputLambdaProcessorUpdate).
 pub mod input_lambda_processor_update {
 
@@ -9286,12 +9375,6 @@ pub mod input_lambda_processor_update {
         }
     }
 }
-impl InputLambdaProcessorUpdate {
-    /// Creates a new builder-style object to manufacture [`InputLambdaProcessorUpdate`](crate::model::InputLambdaProcessorUpdate).
-    pub fn builder() -> crate::model::input_lambda_processor_update::Builder {
-        crate::model::input_lambda_processor_update::Builder::default()
-    }
-}
 
 /// <p>A key-value pair (the value is optional) that you can define and assign to Amazon resources. If you specify a tag that already exists, the tag value is replaced with the value that you specify in the request. Note that the maximum number of application tags includes system tags. The maximum number of user-defined application tags is 50. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/how-tagging.html">Using Tagging</a>.</p>
 #[non_exhaustive]
@@ -9314,6 +9397,13 @@ impl Tag {
         self.value.as_deref()
     }
 }
+impl Tag {
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
+    pub fn builder() -> crate::model::tag::Builder {
+        crate::model::tag::Builder::default()
+    }
+}
+
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
 
@@ -9354,12 +9444,6 @@ pub mod tag {
         }
     }
 }
-impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
-    pub fn builder() -> crate::model::tag::Builder {
-        crate::model::tag::Builder::default()
-    }
-}
 
 /// <p>Describes the starting parameters for an Kinesis Data Analytics application.</p>
 #[non_exhaustive]
@@ -9397,6 +9481,13 @@ impl RunConfiguration {
         self.application_restore_configuration.as_ref()
     }
 }
+impl RunConfiguration {
+    /// Creates a new builder-style object to manufacture [`RunConfiguration`](crate::model::RunConfiguration).
+    pub fn builder() -> crate::model::run_configuration::Builder {
+        crate::model::run_configuration::Builder::default()
+    }
+}
+
 /// See [`RunConfiguration`](crate::model::RunConfiguration).
 pub mod run_configuration {
 
@@ -9473,12 +9564,6 @@ pub mod run_configuration {
         }
     }
 }
-impl RunConfiguration {
-    /// Creates a new builder-style object to manufacture [`RunConfiguration`](crate::model::RunConfiguration).
-    pub fn builder() -> crate::model::run_configuration::Builder {
-        crate::model::run_configuration::Builder::default()
-    }
-}
 
 /// <p>Describes the starting parameters for a SQL-based Kinesis Data Analytics application.</p>
 #[non_exhaustive]
@@ -9504,6 +9589,13 @@ impl SqlRunConfiguration {
         self.input_starting_position_configuration.as_ref()
     }
 }
+impl SqlRunConfiguration {
+    /// Creates a new builder-style object to manufacture [`SqlRunConfiguration`](crate::model::SqlRunConfiguration).
+    pub fn builder() -> crate::model::sql_run_configuration::Builder {
+        crate::model::sql_run_configuration::Builder::default()
+    }
+}
+
 /// See [`SqlRunConfiguration`](crate::model::SqlRunConfiguration).
 pub mod sql_run_configuration {
 
@@ -9551,12 +9643,6 @@ pub mod sql_run_configuration {
         }
     }
 }
-impl SqlRunConfiguration {
-    /// Creates a new builder-style object to manufacture [`SqlRunConfiguration`](crate::model::SqlRunConfiguration).
-    pub fn builder() -> crate::model::sql_run_configuration::Builder {
-        crate::model::sql_run_configuration::Builder::default()
-    }
-}
 
 /// <p>The summary of the application version.</p>
 #[non_exhaustive]
@@ -9579,6 +9665,13 @@ impl ApplicationVersionSummary {
         self.application_status.as_ref()
     }
 }
+impl ApplicationVersionSummary {
+    /// Creates a new builder-style object to manufacture [`ApplicationVersionSummary`](crate::model::ApplicationVersionSummary).
+    pub fn builder() -> crate::model::application_version_summary::Builder {
+        crate::model::application_version_summary::Builder::default()
+    }
+}
+
 /// See [`ApplicationVersionSummary`](crate::model::ApplicationVersionSummary).
 pub mod application_version_summary {
 
@@ -9622,12 +9715,6 @@ pub mod application_version_summary {
         }
     }
 }
-impl ApplicationVersionSummary {
-    /// Creates a new builder-style object to manufacture [`ApplicationVersionSummary`](crate::model::ApplicationVersionSummary).
-    pub fn builder() -> crate::model::application_version_summary::Builder {
-        crate::model::application_version_summary::Builder::default()
-    }
-}
 
 /// <p>Provides details about a snapshot of application state.</p>
 #[non_exhaustive]
@@ -9664,6 +9751,13 @@ impl SnapshotDetails {
         self.snapshot_creation_timestamp.as_ref()
     }
 }
+impl SnapshotDetails {
+    /// Creates a new builder-style object to manufacture [`SnapshotDetails`](crate::model::SnapshotDetails).
+    pub fn builder() -> crate::model::snapshot_details::Builder {
+        crate::model::snapshot_details::Builder::default()
+    }
+}
+
 /// See [`SnapshotDetails`](crate::model::SnapshotDetails).
 pub mod snapshot_details {
 
@@ -9735,12 +9829,6 @@ pub mod snapshot_details {
                 snapshot_creation_timestamp: self.snapshot_creation_timestamp,
             }
         }
-    }
-}
-impl SnapshotDetails {
-    /// Creates a new builder-style object to manufacture [`SnapshotDetails`](crate::model::SnapshotDetails).
-    pub fn builder() -> crate::model::snapshot_details::Builder {
-        crate::model::snapshot_details::Builder::default()
     }
 }
 
@@ -9893,6 +9981,13 @@ impl ApplicationSummary {
         self.application_mode.as_ref()
     }
 }
+impl ApplicationSummary {
+    /// Creates a new builder-style object to manufacture [`ApplicationSummary`](crate::model::ApplicationSummary).
+    pub fn builder() -> crate::model::application_summary::Builder {
+        crate::model::application_summary::Builder::default()
+    }
+}
+
 /// See [`ApplicationSummary`](crate::model::ApplicationSummary).
 pub mod application_summary {
 
@@ -9996,12 +10091,6 @@ pub mod application_summary {
         }
     }
 }
-impl ApplicationSummary {
-    /// Creates a new builder-style object to manufacture [`ApplicationSummary`](crate::model::ApplicationSummary).
-    pub fn builder() -> crate::model::application_summary::Builder {
-        crate::model::application_summary::Builder::default()
-    }
-}
 
 /// <p>For a SQL-based Kinesis Data Analytics application, describes a processor that is used to preprocess the records in the stream before being processed by your application code. Currently, the only input processor available is <a href="https://docs.aws.amazon.com/lambda/">Amazon Lambda</a>.</p>
 #[non_exhaustive]
@@ -10019,6 +10108,13 @@ impl InputProcessingConfiguration {
         self.input_lambda_processor.as_ref()
     }
 }
+impl InputProcessingConfiguration {
+    /// Creates a new builder-style object to manufacture [`InputProcessingConfiguration`](crate::model::InputProcessingConfiguration).
+    pub fn builder() -> crate::model::input_processing_configuration::Builder {
+        crate::model::input_processing_configuration::Builder::default()
+    }
+}
+
 /// See [`InputProcessingConfiguration`](crate::model::InputProcessingConfiguration).
 pub mod input_processing_configuration {
 
@@ -10050,12 +10146,6 @@ pub mod input_processing_configuration {
         }
     }
 }
-impl InputProcessingConfiguration {
-    /// Creates a new builder-style object to manufacture [`InputProcessingConfiguration`](crate::model::InputProcessingConfiguration).
-    pub fn builder() -> crate::model::input_processing_configuration::Builder {
-        crate::model::input_processing_configuration::Builder::default()
-    }
-}
 
 /// <p>An object that contains the Amazon Resource Name (ARN) of the Amazon Lambda function that is used to preprocess records in the stream in a SQL-based Kinesis Data Analytics application. </p>
 #[non_exhaustive]
@@ -10075,6 +10165,13 @@ impl InputLambdaProcessor {
         self.resource_arn.as_deref()
     }
 }
+impl InputLambdaProcessor {
+    /// Creates a new builder-style object to manufacture [`InputLambdaProcessor`](crate::model::InputLambdaProcessor).
+    pub fn builder() -> crate::model::input_lambda_processor::Builder {
+        crate::model::input_lambda_processor::Builder::default()
+    }
+}
+
 /// See [`InputLambdaProcessor`](crate::model::InputLambdaProcessor).
 pub mod input_lambda_processor {
 
@@ -10107,12 +10204,6 @@ pub mod input_lambda_processor {
         }
     }
 }
-impl InputLambdaProcessor {
-    /// Creates a new builder-style object to manufacture [`InputLambdaProcessor`](crate::model::InputLambdaProcessor).
-    pub fn builder() -> crate::model::input_lambda_processor::Builder {
-        crate::model::input_lambda_processor::Builder::default()
-    }
-}
 
 /// <p>For a SQL-based Kinesis Data Analytics application, provides a description of an Amazon S3 data source, including the Amazon Resource Name (ARN) of the S3 bucket and the name of the Amazon S3 object that contains the data.</p>
 #[non_exhaustive]
@@ -10135,6 +10226,13 @@ impl S3Configuration {
         self.file_key.as_deref()
     }
 }
+impl S3Configuration {
+    /// Creates a new builder-style object to manufacture [`S3Configuration`](crate::model::S3Configuration).
+    pub fn builder() -> crate::model::s3_configuration::Builder {
+        crate::model::s3_configuration::Builder::default()
+    }
+}
+
 /// See [`S3Configuration`](crate::model::S3Configuration).
 pub mod s3_configuration {
 
@@ -10173,12 +10271,6 @@ pub mod s3_configuration {
                 file_key: self.file_key,
             }
         }
-    }
-}
-impl S3Configuration {
-    /// Creates a new builder-style object to manufacture [`S3Configuration`](crate::model::S3Configuration).
-    pub fn builder() -> crate::model::s3_configuration::Builder {
-        crate::model::s3_configuration::Builder::default()
     }
 }
 
@@ -10286,6 +10378,13 @@ impl CloudWatchLoggingOption {
         self.log_stream_arn.as_deref()
     }
 }
+impl CloudWatchLoggingOption {
+    /// Creates a new builder-style object to manufacture [`CloudWatchLoggingOption`](crate::model::CloudWatchLoggingOption).
+    pub fn builder() -> crate::model::cloud_watch_logging_option::Builder {
+        crate::model::cloud_watch_logging_option::Builder::default()
+    }
+}
+
 /// See [`CloudWatchLoggingOption`](crate::model::CloudWatchLoggingOption).
 pub mod cloud_watch_logging_option {
 
@@ -10315,12 +10414,6 @@ pub mod cloud_watch_logging_option {
                 log_stream_arn: self.log_stream_arn,
             }
         }
-    }
-}
-impl CloudWatchLoggingOption {
-    /// Creates a new builder-style object to manufacture [`CloudWatchLoggingOption`](crate::model::CloudWatchLoggingOption).
-    pub fn builder() -> crate::model::cloud_watch_logging_option::Builder {
-        crate::model::cloud_watch_logging_option::Builder::default()
     }
 }
 
@@ -10397,6 +10490,13 @@ impl ApplicationConfiguration {
         self.zeppelin_application_configuration.as_ref()
     }
 }
+impl ApplicationConfiguration {
+    /// Creates a new builder-style object to manufacture [`ApplicationConfiguration`](crate::model::ApplicationConfiguration).
+    pub fn builder() -> crate::model::application_configuration::Builder {
+        crate::model::application_configuration::Builder::default()
+    }
+}
+
 /// See [`ApplicationConfiguration`](crate::model::ApplicationConfiguration).
 pub mod application_configuration {
 
@@ -10548,12 +10648,6 @@ pub mod application_configuration {
         }
     }
 }
-impl ApplicationConfiguration {
-    /// Creates a new builder-style object to manufacture [`ApplicationConfiguration`](crate::model::ApplicationConfiguration).
-    pub fn builder() -> crate::model::application_configuration::Builder {
-        crate::model::application_configuration::Builder::default()
-    }
-}
 
 /// <p>The configuration of a Kinesis Data Analytics Studio notebook.</p>
 #[non_exhaustive]
@@ -10601,6 +10695,13 @@ impl ZeppelinApplicationConfiguration {
         self.custom_artifacts_configuration.as_deref()
     }
 }
+impl ZeppelinApplicationConfiguration {
+    /// Creates a new builder-style object to manufacture [`ZeppelinApplicationConfiguration`](crate::model::ZeppelinApplicationConfiguration).
+    pub fn builder() -> crate::model::zeppelin_application_configuration::Builder {
+        crate::model::zeppelin_application_configuration::Builder::default()
+    }
+}
+
 /// See [`ZeppelinApplicationConfiguration`](crate::model::ZeppelinApplicationConfiguration).
 pub mod zeppelin_application_configuration {
 
@@ -10695,12 +10796,6 @@ pub mod zeppelin_application_configuration {
         }
     }
 }
-impl ZeppelinApplicationConfiguration {
-    /// Creates a new builder-style object to manufacture [`ZeppelinApplicationConfiguration`](crate::model::ZeppelinApplicationConfiguration).
-    pub fn builder() -> crate::model::zeppelin_application_configuration::Builder {
-        crate::model::zeppelin_application_configuration::Builder::default()
-    }
-}
 
 /// <p>The information required to deploy a Kinesis Data Analytics Studio notebook as an application with durable state.</p>
 #[non_exhaustive]
@@ -10716,6 +10811,13 @@ impl DeployAsApplicationConfiguration {
         self.s3_content_location.as_ref()
     }
 }
+impl DeployAsApplicationConfiguration {
+    /// Creates a new builder-style object to manufacture [`DeployAsApplicationConfiguration`](crate::model::DeployAsApplicationConfiguration).
+    pub fn builder() -> crate::model::deploy_as_application_configuration::Builder {
+        crate::model::deploy_as_application_configuration::Builder::default()
+    }
+}
+
 /// See [`DeployAsApplicationConfiguration`](crate::model::DeployAsApplicationConfiguration).
 pub mod deploy_as_application_configuration {
 
@@ -10747,12 +10849,6 @@ pub mod deploy_as_application_configuration {
         }
     }
 }
-impl DeployAsApplicationConfiguration {
-    /// Creates a new builder-style object to manufacture [`DeployAsApplicationConfiguration`](crate::model::DeployAsApplicationConfiguration).
-    pub fn builder() -> crate::model::deploy_as_application_configuration::Builder {
-        crate::model::deploy_as_application_configuration::Builder::default()
-    }
-}
 
 /// <p>The S3 bucket that holds the application information.</p>
 #[non_exhaustive]
@@ -10775,6 +10871,13 @@ impl S3ContentBaseLocation {
         self.base_path.as_deref()
     }
 }
+impl S3ContentBaseLocation {
+    /// Creates a new builder-style object to manufacture [`S3ContentBaseLocation`](crate::model::S3ContentBaseLocation).
+    pub fn builder() -> crate::model::s3_content_base_location::Builder {
+        crate::model::s3_content_base_location::Builder::default()
+    }
+}
+
 /// See [`S3ContentBaseLocation`](crate::model::S3ContentBaseLocation).
 pub mod s3_content_base_location {
 
@@ -10815,12 +10918,6 @@ pub mod s3_content_base_location {
         }
     }
 }
-impl S3ContentBaseLocation {
-    /// Creates a new builder-style object to manufacture [`S3ContentBaseLocation`](crate::model::S3ContentBaseLocation).
-    pub fn builder() -> crate::model::s3_content_base_location::Builder {
-        crate::model::s3_content_base_location::Builder::default()
-    }
-}
 
 /// <p>The configuration parameters for the default Amazon Glue database. You use this database for SQL queries that you write in a Kinesis Data Analytics Studio notebook.</p>
 #[non_exhaustive]
@@ -10839,6 +10936,13 @@ impl CatalogConfiguration {
         self.glue_data_catalog_configuration.as_ref()
     }
 }
+impl CatalogConfiguration {
+    /// Creates a new builder-style object to manufacture [`CatalogConfiguration`](crate::model::CatalogConfiguration).
+    pub fn builder() -> crate::model::catalog_configuration::Builder {
+        crate::model::catalog_configuration::Builder::default()
+    }
+}
+
 /// See [`CatalogConfiguration`](crate::model::CatalogConfiguration).
 pub mod catalog_configuration {
 
@@ -10874,12 +10978,6 @@ pub mod catalog_configuration {
         }
     }
 }
-impl CatalogConfiguration {
-    /// Creates a new builder-style object to manufacture [`CatalogConfiguration`](crate::model::CatalogConfiguration).
-    pub fn builder() -> crate::model::catalog_configuration::Builder {
-        crate::model::catalog_configuration::Builder::default()
-    }
-}
 
 /// <p>The configuration of the Glue Data Catalog that you use for Apache Flink SQL queries and table API transforms that you write in an application.</p>
 #[non_exhaustive]
@@ -10895,6 +10993,13 @@ impl GlueDataCatalogConfiguration {
         self.database_arn.as_deref()
     }
 }
+impl GlueDataCatalogConfiguration {
+    /// Creates a new builder-style object to manufacture [`GlueDataCatalogConfiguration`](crate::model::GlueDataCatalogConfiguration).
+    pub fn builder() -> crate::model::glue_data_catalog_configuration::Builder {
+        crate::model::glue_data_catalog_configuration::Builder::default()
+    }
+}
+
 /// See [`GlueDataCatalogConfiguration`](crate::model::GlueDataCatalogConfiguration).
 pub mod glue_data_catalog_configuration {
 
@@ -10923,12 +11028,6 @@ pub mod glue_data_catalog_configuration {
         }
     }
 }
-impl GlueDataCatalogConfiguration {
-    /// Creates a new builder-style object to manufacture [`GlueDataCatalogConfiguration`](crate::model::GlueDataCatalogConfiguration).
-    pub fn builder() -> crate::model::glue_data_catalog_configuration::Builder {
-        crate::model::glue_data_catalog_configuration::Builder::default()
-    }
-}
 
 /// <p>Describes configuration parameters for Amazon CloudWatch logging for a Kinesis Data Analytics Studio notebook. For more information about CloudWatch logging, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/monitoring-overview.html">Monitoring</a>.</p>
 #[non_exhaustive]
@@ -10944,6 +11043,13 @@ impl ZeppelinMonitoringConfiguration {
         self.log_level.as_ref()
     }
 }
+impl ZeppelinMonitoringConfiguration {
+    /// Creates a new builder-style object to manufacture [`ZeppelinMonitoringConfiguration`](crate::model::ZeppelinMonitoringConfiguration).
+    pub fn builder() -> crate::model::zeppelin_monitoring_configuration::Builder {
+        crate::model::zeppelin_monitoring_configuration::Builder::default()
+    }
+}
+
 /// See [`ZeppelinMonitoringConfiguration`](crate::model::ZeppelinMonitoringConfiguration).
 pub mod zeppelin_monitoring_configuration {
 
@@ -10972,12 +11078,6 @@ pub mod zeppelin_monitoring_configuration {
         }
     }
 }
-impl ZeppelinMonitoringConfiguration {
-    /// Creates a new builder-style object to manufacture [`ZeppelinMonitoringConfiguration`](crate::model::ZeppelinMonitoringConfiguration).
-    pub fn builder() -> crate::model::zeppelin_monitoring_configuration::Builder {
-        crate::model::zeppelin_monitoring_configuration::Builder::default()
-    }
-}
 
 /// <p>Describes the parameters of a VPC used by the application.</p>
 #[non_exhaustive]
@@ -11000,6 +11100,13 @@ impl VpcConfiguration {
         self.security_group_ids.as_deref()
     }
 }
+impl VpcConfiguration {
+    /// Creates a new builder-style object to manufacture [`VpcConfiguration`](crate::model::VpcConfiguration).
+    pub fn builder() -> crate::model::vpc_configuration::Builder {
+        crate::model::vpc_configuration::Builder::default()
+    }
+}
+
 /// See [`VpcConfiguration`](crate::model::VpcConfiguration).
 pub mod vpc_configuration {
 
@@ -11058,12 +11165,6 @@ pub mod vpc_configuration {
         }
     }
 }
-impl VpcConfiguration {
-    /// Creates a new builder-style object to manufacture [`VpcConfiguration`](crate::model::VpcConfiguration).
-    pub fn builder() -> crate::model::vpc_configuration::Builder {
-        crate::model::vpc_configuration::Builder::default()
-    }
-}
 
 /// <p>Describes whether snapshots are enabled for a Flink-based Kinesis Data Analytics application.</p>
 #[non_exhaustive]
@@ -11079,6 +11180,13 @@ impl ApplicationSnapshotConfiguration {
         self.snapshots_enabled
     }
 }
+impl ApplicationSnapshotConfiguration {
+    /// Creates a new builder-style object to manufacture [`ApplicationSnapshotConfiguration`](crate::model::ApplicationSnapshotConfiguration).
+    pub fn builder() -> crate::model::application_snapshot_configuration::Builder {
+        crate::model::application_snapshot_configuration::Builder::default()
+    }
+}
+
 /// See [`ApplicationSnapshotConfiguration`](crate::model::ApplicationSnapshotConfiguration).
 pub mod application_snapshot_configuration {
 
@@ -11107,12 +11215,6 @@ pub mod application_snapshot_configuration {
         }
     }
 }
-impl ApplicationSnapshotConfiguration {
-    /// Creates a new builder-style object to manufacture [`ApplicationSnapshotConfiguration`](crate::model::ApplicationSnapshotConfiguration).
-    pub fn builder() -> crate::model::application_snapshot_configuration::Builder {
-        crate::model::application_snapshot_configuration::Builder::default()
-    }
-}
 
 /// <p>Describes code configuration for an application.</p>
 #[non_exhaustive]
@@ -11135,6 +11237,13 @@ impl ApplicationCodeConfiguration {
         self.code_content_type.as_ref()
     }
 }
+impl ApplicationCodeConfiguration {
+    /// Creates a new builder-style object to manufacture [`ApplicationCodeConfiguration`](crate::model::ApplicationCodeConfiguration).
+    pub fn builder() -> crate::model::application_code_configuration::Builder {
+        crate::model::application_code_configuration::Builder::default()
+    }
+}
+
 /// See [`ApplicationCodeConfiguration`](crate::model::ApplicationCodeConfiguration).
 pub mod application_code_configuration {
 
@@ -11181,12 +11290,6 @@ pub mod application_code_configuration {
         }
     }
 }
-impl ApplicationCodeConfiguration {
-    /// Creates a new builder-style object to manufacture [`ApplicationCodeConfiguration`](crate::model::ApplicationCodeConfiguration).
-    pub fn builder() -> crate::model::application_code_configuration::Builder {
-        crate::model::application_code_configuration::Builder::default()
-    }
-}
 
 /// <p>Specifies either the application code, or the location of the application code, for a Flink-based Kinesis Data Analytics application. </p>
 #[non_exhaustive]
@@ -11216,6 +11319,13 @@ impl CodeContent {
         self.s3_content_location.as_ref()
     }
 }
+impl CodeContent {
+    /// Creates a new builder-style object to manufacture [`CodeContent`](crate::model::CodeContent).
+    pub fn builder() -> crate::model::code_content::Builder {
+        crate::model::code_content::Builder::default()
+    }
+}
+
 /// See [`CodeContent`](crate::model::CodeContent).
 pub mod code_content {
 
@@ -11274,12 +11384,6 @@ pub mod code_content {
         }
     }
 }
-impl CodeContent {
-    /// Creates a new builder-style object to manufacture [`CodeContent`](crate::model::CodeContent).
-    pub fn builder() -> crate::model::code_content::Builder {
-        crate::model::code_content::Builder::default()
-    }
-}
 
 /// <p>Describes execution properties for a Flink-based Kinesis Data Analytics application.</p>
 #[non_exhaustive]
@@ -11295,6 +11399,13 @@ impl EnvironmentProperties {
         self.property_groups.as_deref()
     }
 }
+impl EnvironmentProperties {
+    /// Creates a new builder-style object to manufacture [`EnvironmentProperties`](crate::model::EnvironmentProperties).
+    pub fn builder() -> crate::model::environment_properties::Builder {
+        crate::model::environment_properties::Builder::default()
+    }
+}
+
 /// See [`EnvironmentProperties`](crate::model::EnvironmentProperties).
 pub mod environment_properties {
 
@@ -11332,12 +11443,6 @@ pub mod environment_properties {
         }
     }
 }
-impl EnvironmentProperties {
-    /// Creates a new builder-style object to manufacture [`EnvironmentProperties`](crate::model::EnvironmentProperties).
-    pub fn builder() -> crate::model::environment_properties::Builder {
-        crate::model::environment_properties::Builder::default()
-    }
-}
 
 /// <p>Describes configuration parameters for a Flink-based Kinesis Data Analytics application or a Studio notebook.</p>
 #[non_exhaustive]
@@ -11373,6 +11478,13 @@ impl FlinkApplicationConfiguration {
         self.parallelism_configuration.as_ref()
     }
 }
+impl FlinkApplicationConfiguration {
+    /// Creates a new builder-style object to manufacture [`FlinkApplicationConfiguration`](crate::model::FlinkApplicationConfiguration).
+    pub fn builder() -> crate::model::flink_application_configuration::Builder {
+        crate::model::flink_application_configuration::Builder::default()
+    }
+}
+
 /// See [`FlinkApplicationConfiguration`](crate::model::FlinkApplicationConfiguration).
 pub mod flink_application_configuration {
 
@@ -11446,12 +11558,6 @@ pub mod flink_application_configuration {
         }
     }
 }
-impl FlinkApplicationConfiguration {
-    /// Creates a new builder-style object to manufacture [`FlinkApplicationConfiguration`](crate::model::FlinkApplicationConfiguration).
-    pub fn builder() -> crate::model::flink_application_configuration::Builder {
-        crate::model::flink_application_configuration::Builder::default()
-    }
-}
 
 /// <p>Describes parameters for how a Flink-based Kinesis Data Analytics application executes multiple tasks simultaneously. For more information about parallelism, see <a href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/dev/parallel.html">Parallel Execution</a> in the <a href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/">Apache Flink Documentation</a>.</p>
 #[non_exhaustive]
@@ -11488,6 +11594,13 @@ impl ParallelismConfiguration {
         self.auto_scaling_enabled
     }
 }
+impl ParallelismConfiguration {
+    /// Creates a new builder-style object to manufacture [`ParallelismConfiguration`](crate::model::ParallelismConfiguration).
+    pub fn builder() -> crate::model::parallelism_configuration::Builder {
+        crate::model::parallelism_configuration::Builder::default()
+    }
+}
+
 /// See [`ParallelismConfiguration`](crate::model::ParallelismConfiguration).
 pub mod parallelism_configuration {
 
@@ -11555,12 +11668,6 @@ pub mod parallelism_configuration {
         }
     }
 }
-impl ParallelismConfiguration {
-    /// Creates a new builder-style object to manufacture [`ParallelismConfiguration`](crate::model::ParallelismConfiguration).
-    pub fn builder() -> crate::model::parallelism_configuration::Builder {
-        crate::model::parallelism_configuration::Builder::default()
-    }
-}
 
 /// <p>Describes configuration parameters for Amazon CloudWatch logging for an application. For more information about CloudWatch logging, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/monitoring-overview.html">Monitoring</a>.</p>
 #[non_exhaustive]
@@ -11590,6 +11697,13 @@ impl MonitoringConfiguration {
         self.log_level.as_ref()
     }
 }
+impl MonitoringConfiguration {
+    /// Creates a new builder-style object to manufacture [`MonitoringConfiguration`](crate::model::MonitoringConfiguration).
+    pub fn builder() -> crate::model::monitoring_configuration::Builder {
+        crate::model::monitoring_configuration::Builder::default()
+    }
+}
+
 /// See [`MonitoringConfiguration`](crate::model::MonitoringConfiguration).
 pub mod monitoring_configuration {
 
@@ -11646,12 +11760,6 @@ pub mod monitoring_configuration {
                 log_level: self.log_level,
             }
         }
-    }
-}
-impl MonitoringConfiguration {
-    /// Creates a new builder-style object to manufacture [`MonitoringConfiguration`](crate::model::MonitoringConfiguration).
-    pub fn builder() -> crate::model::monitoring_configuration::Builder {
-        crate::model::monitoring_configuration::Builder::default()
     }
 }
 
@@ -11716,6 +11824,13 @@ impl CheckpointConfiguration {
         self.min_pause_between_checkpoints
     }
 }
+impl CheckpointConfiguration {
+    /// Creates a new builder-style object to manufacture [`CheckpointConfiguration`](crate::model::CheckpointConfiguration).
+    pub fn builder() -> crate::model::checkpoint_configuration::Builder {
+        crate::model::checkpoint_configuration::Builder::default()
+    }
+}
+
 /// See [`CheckpointConfiguration`](crate::model::CheckpointConfiguration).
 pub mod checkpoint_configuration {
 
@@ -11812,12 +11927,6 @@ pub mod checkpoint_configuration {
         }
     }
 }
-impl CheckpointConfiguration {
-    /// Creates a new builder-style object to manufacture [`CheckpointConfiguration`](crate::model::CheckpointConfiguration).
-    pub fn builder() -> crate::model::checkpoint_configuration::Builder {
-        crate::model::checkpoint_configuration::Builder::default()
-    }
-}
 
 /// <p>Describes the inputs, outputs, and reference data sources for a SQL-based Kinesis Data Analytics application.</p>
 #[non_exhaustive]
@@ -11850,6 +11959,13 @@ impl SqlApplicationConfiguration {
         self.reference_data_sources.as_deref()
     }
 }
+impl SqlApplicationConfiguration {
+    /// Creates a new builder-style object to manufacture [`SqlApplicationConfiguration`](crate::model::SqlApplicationConfiguration).
+    pub fn builder() -> crate::model::sql_application_configuration::Builder {
+        crate::model::sql_application_configuration::Builder::default()
+    }
+}
+
 /// See [`SqlApplicationConfiguration`](crate::model::SqlApplicationConfiguration).
 pub mod sql_application_configuration {
 
@@ -11930,12 +12046,6 @@ pub mod sql_application_configuration {
         }
     }
 }
-impl SqlApplicationConfiguration {
-    /// Creates a new builder-style object to manufacture [`SqlApplicationConfiguration`](crate::model::SqlApplicationConfiguration).
-    pub fn builder() -> crate::model::sql_application_configuration::Builder {
-        crate::model::sql_application_configuration::Builder::default()
-    }
-}
 
 /// <p>For a SQL-based Kinesis Data Analytics application, describes the reference data source by providing the source information (Amazon S3 bucket name and object key name), the resulting in-application table name that is created, and the necessary schema to map the data elements in the Amazon S3 object to the in-application table.</p>
 #[non_exhaustive]
@@ -11967,6 +12077,13 @@ impl ReferenceDataSource {
         self.reference_schema.as_ref()
     }
 }
+impl ReferenceDataSource {
+    /// Creates a new builder-style object to manufacture [`ReferenceDataSource`](crate::model::ReferenceDataSource).
+    pub fn builder() -> crate::model::reference_data_source::Builder {
+        crate::model::reference_data_source::Builder::default()
+    }
+}
+
 /// See [`ReferenceDataSource`](crate::model::ReferenceDataSource).
 pub mod reference_data_source {
 
@@ -12029,12 +12146,6 @@ pub mod reference_data_source {
         }
     }
 }
-impl ReferenceDataSource {
-    /// Creates a new builder-style object to manufacture [`ReferenceDataSource`](crate::model::ReferenceDataSource).
-    pub fn builder() -> crate::model::reference_data_source::Builder {
-        crate::model::reference_data_source::Builder::default()
-    }
-}
 
 /// <p>For a SQL-based Kinesis Data Analytics application, identifies the Amazon S3 bucket and object that contains the reference data.</p>
 /// <p>A Kinesis Data Analytics application loads reference data only once. If the data changes, you call the <code>UpdateApplication</code> operation to trigger reloading of data into your application. </p>
@@ -12058,6 +12169,13 @@ impl S3ReferenceDataSource {
         self.file_key.as_deref()
     }
 }
+impl S3ReferenceDataSource {
+    /// Creates a new builder-style object to manufacture [`S3ReferenceDataSource`](crate::model::S3ReferenceDataSource).
+    pub fn builder() -> crate::model::s3_reference_data_source::Builder {
+        crate::model::s3_reference_data_source::Builder::default()
+    }
+}
+
 /// See [`S3ReferenceDataSource`](crate::model::S3ReferenceDataSource).
 pub mod s3_reference_data_source {
 
@@ -12096,12 +12214,6 @@ pub mod s3_reference_data_source {
                 file_key: self.file_key,
             }
         }
-    }
-}
-impl S3ReferenceDataSource {
-    /// Creates a new builder-style object to manufacture [`S3ReferenceDataSource`](crate::model::S3ReferenceDataSource).
-    pub fn builder() -> crate::model::s3_reference_data_source::Builder {
-        crate::model::s3_reference_data_source::Builder::default()
     }
 }
 
@@ -12152,6 +12264,13 @@ impl Output {
         self.destination_schema.as_ref()
     }
 }
+impl Output {
+    /// Creates a new builder-style object to manufacture [`Output`](crate::model::Output).
+    pub fn builder() -> crate::model::output::Builder {
+        crate::model::output::Builder::default()
+    }
+}
+
 /// See [`Output`](crate::model::Output).
 pub mod output {
 
@@ -12244,12 +12363,6 @@ pub mod output {
         }
     }
 }
-impl Output {
-    /// Creates a new builder-style object to manufacture [`Output`](crate::model::Output).
-    pub fn builder() -> crate::model::output::Builder {
-        crate::model::output::Builder::default()
-    }
-}
 
 /// <p>When you configure a SQL-based Kinesis Data Analytics application's output, identifies an Amazon Lambda function as the destination. You provide the function Amazon Resource Name (ARN) of the Lambda function. </p>
 #[non_exhaustive]
@@ -12269,6 +12382,13 @@ impl LambdaOutput {
         self.resource_arn.as_deref()
     }
 }
+impl LambdaOutput {
+    /// Creates a new builder-style object to manufacture [`LambdaOutput`](crate::model::LambdaOutput).
+    pub fn builder() -> crate::model::lambda_output::Builder {
+        crate::model::lambda_output::Builder::default()
+    }
+}
+
 /// See [`LambdaOutput`](crate::model::LambdaOutput).
 pub mod lambda_output {
 
@@ -12301,12 +12421,6 @@ pub mod lambda_output {
         }
     }
 }
-impl LambdaOutput {
-    /// Creates a new builder-style object to manufacture [`LambdaOutput`](crate::model::LambdaOutput).
-    pub fn builder() -> crate::model::lambda_output::Builder {
-        crate::model::lambda_output::Builder::default()
-    }
-}
 
 /// <p>For a SQL-based Kinesis Data Analytics application, when configuring application output, identifies a Kinesis Data Firehose delivery stream as the destination. You provide the stream Amazon Resource Name (ARN) of the delivery stream. </p>
 #[non_exhaustive]
@@ -12322,6 +12436,13 @@ impl KinesisFirehoseOutput {
         self.resource_arn.as_deref()
     }
 }
+impl KinesisFirehoseOutput {
+    /// Creates a new builder-style object to manufacture [`KinesisFirehoseOutput`](crate::model::KinesisFirehoseOutput).
+    pub fn builder() -> crate::model::kinesis_firehose_output::Builder {
+        crate::model::kinesis_firehose_output::Builder::default()
+    }
+}
+
 /// See [`KinesisFirehoseOutput`](crate::model::KinesisFirehoseOutput).
 pub mod kinesis_firehose_output {
 
@@ -12350,12 +12471,6 @@ pub mod kinesis_firehose_output {
         }
     }
 }
-impl KinesisFirehoseOutput {
-    /// Creates a new builder-style object to manufacture [`KinesisFirehoseOutput`](crate::model::KinesisFirehoseOutput).
-    pub fn builder() -> crate::model::kinesis_firehose_output::Builder {
-        crate::model::kinesis_firehose_output::Builder::default()
-    }
-}
 
 /// <p>When you configure a SQL-based Kinesis Data Analytics application's output, identifies a Kinesis data stream as the destination. You provide the stream Amazon Resource Name (ARN). </p>
 #[non_exhaustive]
@@ -12371,6 +12486,13 @@ impl KinesisStreamsOutput {
         self.resource_arn.as_deref()
     }
 }
+impl KinesisStreamsOutput {
+    /// Creates a new builder-style object to manufacture [`KinesisStreamsOutput`](crate::model::KinesisStreamsOutput).
+    pub fn builder() -> crate::model::kinesis_streams_output::Builder {
+        crate::model::kinesis_streams_output::Builder::default()
+    }
+}
+
 /// See [`KinesisStreamsOutput`](crate::model::KinesisStreamsOutput).
 pub mod kinesis_streams_output {
 
@@ -12397,12 +12519,6 @@ pub mod kinesis_streams_output {
                 resource_arn: self.resource_arn,
             }
         }
-    }
-}
-impl KinesisStreamsOutput {
-    /// Creates a new builder-style object to manufacture [`KinesisStreamsOutput`](crate::model::KinesisStreamsOutput).
-    pub fn builder() -> crate::model::kinesis_streams_output::Builder {
-        crate::model::kinesis_streams_output::Builder::default()
     }
 }
 
@@ -12462,6 +12578,13 @@ impl Input {
         self.input_schema.as_ref()
     }
 }
+impl Input {
+    /// Creates a new builder-style object to manufacture [`Input`](crate::model::Input).
+    pub fn builder() -> crate::model::input::Builder {
+        crate::model::input::Builder::default()
+    }
+}
+
 /// See [`Input`](crate::model::Input).
 pub mod input {
 
@@ -12571,12 +12694,6 @@ pub mod input {
         }
     }
 }
-impl Input {
-    /// Creates a new builder-style object to manufacture [`Input`](crate::model::Input).
-    pub fn builder() -> crate::model::input::Builder {
-        crate::model::input::Builder::default()
-    }
-}
 
 /// <p>For a SQL-based Kinesis Data Analytics application, identifies a Kinesis Data Firehose delivery stream as the streaming source. You provide the delivery stream's Amazon Resource Name (ARN).</p>
 #[non_exhaustive]
@@ -12592,6 +12709,13 @@ impl KinesisFirehoseInput {
         self.resource_arn.as_deref()
     }
 }
+impl KinesisFirehoseInput {
+    /// Creates a new builder-style object to manufacture [`KinesisFirehoseInput`](crate::model::KinesisFirehoseInput).
+    pub fn builder() -> crate::model::kinesis_firehose_input::Builder {
+        crate::model::kinesis_firehose_input::Builder::default()
+    }
+}
+
 /// See [`KinesisFirehoseInput`](crate::model::KinesisFirehoseInput).
 pub mod kinesis_firehose_input {
 
@@ -12620,12 +12744,6 @@ pub mod kinesis_firehose_input {
         }
     }
 }
-impl KinesisFirehoseInput {
-    /// Creates a new builder-style object to manufacture [`KinesisFirehoseInput`](crate::model::KinesisFirehoseInput).
-    pub fn builder() -> crate::model::kinesis_firehose_input::Builder {
-        crate::model::kinesis_firehose_input::Builder::default()
-    }
-}
 
 /// <p> Identifies a Kinesis data stream as the streaming source. You provide the stream's Amazon Resource Name (ARN).</p>
 #[non_exhaustive]
@@ -12641,6 +12759,13 @@ impl KinesisStreamsInput {
         self.resource_arn.as_deref()
     }
 }
+impl KinesisStreamsInput {
+    /// Creates a new builder-style object to manufacture [`KinesisStreamsInput`](crate::model::KinesisStreamsInput).
+    pub fn builder() -> crate::model::kinesis_streams_input::Builder {
+        crate::model::kinesis_streams_input::Builder::default()
+    }
+}
+
 /// See [`KinesisStreamsInput`](crate::model::KinesisStreamsInput).
 pub mod kinesis_streams_input {
 
@@ -12667,11 +12792,5 @@ pub mod kinesis_streams_input {
                 resource_arn: self.resource_arn,
             }
         }
-    }
-}
-impl KinesisStreamsInput {
-    /// Creates a new builder-style object to manufacture [`KinesisStreamsInput`](crate::model::KinesisStreamsInput).
-    pub fn builder() -> crate::model::kinesis_streams_input::Builder {
-        crate::model::kinesis_streams_input::Builder::default()
     }
 }

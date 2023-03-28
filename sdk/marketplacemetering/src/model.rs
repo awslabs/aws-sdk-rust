@@ -22,6 +22,13 @@ impl UsageAllocation {
         self.tags.as_deref()
     }
 }
+impl UsageAllocation {
+    /// Creates a new builder-style object to manufacture [`UsageAllocation`](crate::model::UsageAllocation).
+    pub fn builder() -> crate::model::usage_allocation::Builder {
+        crate::model::usage_allocation::Builder::default()
+    }
+}
+
 /// See [`UsageAllocation`](crate::model::UsageAllocation).
 pub mod usage_allocation {
 
@@ -71,12 +78,6 @@ pub mod usage_allocation {
         }
     }
 }
-impl UsageAllocation {
-    /// Creates a new builder-style object to manufacture [`UsageAllocation`](crate::model::UsageAllocation).
-    pub fn builder() -> crate::model::usage_allocation::Builder {
-        crate::model::usage_allocation::Builder::default()
-    }
-}
 
 /// <p>Metadata assigned to an allocation. Each tag is made up of a <code>key</code> and a <code>value</code>.</p>
 #[non_exhaustive]
@@ -99,6 +100,13 @@ impl Tag {
         self.value.as_deref()
     }
 }
+impl Tag {
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
+    pub fn builder() -> crate::model::tag::Builder {
+        crate::model::tag::Builder::default()
+    }
+}
+
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
 
@@ -137,12 +145,6 @@ pub mod tag {
                 value: self.value,
             }
         }
-    }
-}
-impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
-    pub fn builder() -> crate::model::tag::Builder {
-        crate::model::tag::Builder::default()
     }
 }
 
@@ -191,6 +193,13 @@ impl UsageRecord {
         self.usage_allocations.as_deref()
     }
 }
+impl UsageRecord {
+    /// Creates a new builder-style object to manufacture [`UsageRecord`](crate::model::UsageRecord).
+    pub fn builder() -> crate::model::usage_record::Builder {
+        crate::model::usage_record::Builder::default()
+    }
+}
+
 /// See [`UsageRecord`](crate::model::UsageRecord).
 pub mod usage_record {
 
@@ -285,12 +294,6 @@ pub mod usage_record {
         }
     }
 }
-impl UsageRecord {
-    /// Creates a new builder-style object to manufacture [`UsageRecord`](crate::model::UsageRecord).
-    pub fn builder() -> crate::model::usage_record::Builder {
-        crate::model::usage_record::Builder::default()
-    }
-}
 
 /// <p>A <code>UsageRecordResult</code> indicates the status of a given <code>UsageRecord</code> processed by <code>BatchMeterUsage</code>.</p>
 #[non_exhaustive]
@@ -340,6 +343,13 @@ impl UsageRecordResult {
         self.status.as_ref()
     }
 }
+impl UsageRecordResult {
+    /// Creates a new builder-style object to manufacture [`UsageRecordResult`](crate::model::UsageRecordResult).
+    pub fn builder() -> crate::model::usage_record_result::Builder {
+        crate::model::usage_record_result::Builder::default()
+    }
+}
+
 /// See [`UsageRecordResult`](crate::model::UsageRecordResult).
 pub mod usage_record_result {
 
@@ -419,12 +429,6 @@ pub mod usage_record_result {
                 status: self.status,
             }
         }
-    }
-}
-impl UsageRecordResult {
-    /// Creates a new builder-style object to manufacture [`UsageRecordResult`](crate::model::UsageRecordResult).
-    pub fn builder() -> crate::model::usage_record_result::Builder {
-        crate::model::usage_record_result::Builder::default()
     }
 }
 

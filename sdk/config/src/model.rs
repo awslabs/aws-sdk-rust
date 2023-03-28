@@ -21,6 +21,13 @@ impl Tag {
         self.value.as_deref()
     }
 }
+impl Tag {
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
+    pub fn builder() -> crate::model::tag::Builder {
+        crate::model::tag::Builder::default()
+    }
+}
+
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
 
@@ -59,12 +66,6 @@ pub mod tag {
                 value: self.value,
             }
         }
-    }
-}
-impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
-    pub fn builder() -> crate::model::tag::Builder {
-        crate::model::tag::Builder::default()
     }
 }
 
@@ -172,6 +173,13 @@ impl EvaluationContext {
         self.evaluation_context_identifier.as_deref()
     }
 }
+impl EvaluationContext {
+    /// Creates a new builder-style object to manufacture [`EvaluationContext`](crate::model::EvaluationContext).
+    pub fn builder() -> crate::model::evaluation_context::Builder {
+        crate::model::evaluation_context::Builder::default()
+    }
+}
+
 /// See [`EvaluationContext`](crate::model::EvaluationContext).
 pub mod evaluation_context {
 
@@ -204,12 +212,6 @@ pub mod evaluation_context {
                 evaluation_context_identifier: self.evaluation_context_identifier,
             }
         }
-    }
-}
-impl EvaluationContext {
-    /// Creates a new builder-style object to manufacture [`EvaluationContext`](crate::model::EvaluationContext).
-    pub fn builder() -> crate::model::evaluation_context::Builder {
-        crate::model::evaluation_context::Builder::default()
     }
 }
 
@@ -251,6 +253,13 @@ impl ResourceDetails {
         self.resource_configuration_schema_type.as_ref()
     }
 }
+impl ResourceDetails {
+    /// Creates a new builder-style object to manufacture [`ResourceDetails`](crate::model::ResourceDetails).
+    pub fn builder() -> crate::model::resource_details::Builder {
+        crate::model::resource_details::Builder::default()
+    }
+}
+
 /// See [`ResourceDetails`](crate::model::ResourceDetails).
 pub mod resource_details {
 
@@ -326,12 +335,6 @@ pub mod resource_details {
                 resource_configuration_schema_type: self.resource_configuration_schema_type,
             }
         }
-    }
-}
-impl ResourceDetails {
-    /// Creates a new builder-style object to manufacture [`ResourceDetails`](crate::model::ResourceDetails).
-    pub fn builder() -> crate::model::resource_details::Builder {
-        crate::model::resource_details::Builder::default()
     }
 }
 
@@ -443,6 +446,13 @@ impl ResourceKey {
         self.resource_id.as_deref()
     }
 }
+impl ResourceKey {
+    /// Creates a new builder-style object to manufacture [`ResourceKey`](crate::model::ResourceKey).
+    pub fn builder() -> crate::model::resource_key::Builder {
+        crate::model::resource_key::Builder::default()
+    }
+}
+
 /// See [`ResourceKey`](crate::model::ResourceKey).
 pub mod resource_key {
 
@@ -484,12 +494,6 @@ pub mod resource_key {
                 resource_id: self.resource_id,
             }
         }
-    }
-}
-impl ResourceKey {
-    /// Creates a new builder-style object to manufacture [`ResourceKey`](crate::model::ResourceKey).
-    pub fn builder() -> crate::model::resource_key::Builder {
-        crate::model::resource_key::Builder::default()
     }
 }
 
@@ -1596,6 +1600,13 @@ impl QueryInfo {
         self.select_fields.as_deref()
     }
 }
+impl QueryInfo {
+    /// Creates a new builder-style object to manufacture [`QueryInfo`](crate::model::QueryInfo).
+    pub fn builder() -> crate::model::query_info::Builder {
+        crate::model::query_info::Builder::default()
+    }
+}
+
 /// See [`QueryInfo`](crate::model::QueryInfo).
 pub mod query_info {
 
@@ -1633,12 +1644,6 @@ pub mod query_info {
         }
     }
 }
-impl QueryInfo {
-    /// Creates a new builder-style object to manufacture [`QueryInfo`](crate::model::QueryInfo).
-    pub fn builder() -> crate::model::query_info::Builder {
-        crate::model::query_info::Builder::default()
-    }
-}
 
 /// <p>Details about the fields such as name of the field.</p>
 #[non_exhaustive]
@@ -1654,6 +1659,13 @@ impl FieldInfo {
         self.name.as_deref()
     }
 }
+impl FieldInfo {
+    /// Creates a new builder-style object to manufacture [`FieldInfo`](crate::model::FieldInfo).
+    pub fn builder() -> crate::model::field_info::Builder {
+        crate::model::field_info::Builder::default()
+    }
+}
+
 /// See [`FieldInfo`](crate::model::FieldInfo).
 pub mod field_info {
 
@@ -1678,12 +1690,6 @@ pub mod field_info {
         pub fn build(self) -> crate::model::FieldInfo {
             crate::model::FieldInfo { name: self.name }
         }
-    }
-}
-impl FieldInfo {
-    /// Creates a new builder-style object to manufacture [`FieldInfo`](crate::model::FieldInfo).
-    pub fn builder() -> crate::model::field_info::Builder {
-        crate::model::field_info::Builder::default()
     }
 }
 
@@ -1729,6 +1735,13 @@ impl StoredQuery {
         self.expression.as_deref()
     }
 }
+impl StoredQuery {
+    /// Creates a new builder-style object to manufacture [`StoredQuery`](crate::model::StoredQuery).
+    pub fn builder() -> crate::model::stored_query::Builder {
+        crate::model::stored_query::Builder::default()
+    }
+}
+
 /// See [`StoredQuery`](crate::model::StoredQuery).
 pub mod stored_query {
 
@@ -1805,12 +1818,6 @@ pub mod stored_query {
         }
     }
 }
-impl StoredQuery {
-    /// Creates a new builder-style object to manufacture [`StoredQuery`](crate::model::StoredQuery).
-    pub fn builder() -> crate::model::stored_query::Builder {
-        crate::model::stored_query::Builder::default()
-    }
-}
 
 /// <p>An object with the name of the retention configuration and the retention period in days. The object stores the configuration for data retention in Config.</p>
 #[non_exhaustive]
@@ -1837,6 +1844,13 @@ impl RetentionConfiguration {
         self.retention_period_in_days
     }
 }
+impl RetentionConfiguration {
+    /// Creates a new builder-style object to manufacture [`RetentionConfiguration`](crate::model::RetentionConfiguration).
+    pub fn builder() -> crate::model::retention_configuration::Builder {
+        crate::model::retention_configuration::Builder::default()
+    }
+}
+
 /// See [`RetentionConfiguration`](crate::model::RetentionConfiguration).
 pub mod retention_configuration {
 
@@ -1881,12 +1895,6 @@ pub mod retention_configuration {
         }
     }
 }
-impl RetentionConfiguration {
-    /// Creates a new builder-style object to manufacture [`RetentionConfiguration`](crate::model::RetentionConfiguration).
-    pub fn builder() -> crate::model::retention_configuration::Builder {
-        crate::model::retention_configuration::Builder::default()
-    }
-}
 
 /// <p>List of each of the failed remediation exceptions with specific reasons.</p>
 #[non_exhaustive]
@@ -1909,6 +1917,13 @@ impl FailedRemediationExceptionBatch {
         self.failed_items.as_deref()
     }
 }
+impl FailedRemediationExceptionBatch {
+    /// Creates a new builder-style object to manufacture [`FailedRemediationExceptionBatch`](crate::model::FailedRemediationExceptionBatch).
+    pub fn builder() -> crate::model::failed_remediation_exception_batch::Builder {
+        crate::model::failed_remediation_exception_batch::Builder::default()
+    }
+}
+
 /// See [`FailedRemediationExceptionBatch`](crate::model::FailedRemediationExceptionBatch).
 pub mod failed_remediation_exception_batch {
 
@@ -1962,12 +1977,6 @@ pub mod failed_remediation_exception_batch {
         }
     }
 }
-impl FailedRemediationExceptionBatch {
-    /// Creates a new builder-style object to manufacture [`FailedRemediationExceptionBatch`](crate::model::FailedRemediationExceptionBatch).
-    pub fn builder() -> crate::model::failed_remediation_exception_batch::Builder {
-        crate::model::failed_remediation_exception_batch::Builder::default()
-    }
-}
 
 /// <p>An object that represents the details about the remediation exception. The details include the rule name, an explanation of an exception, the time when the exception will be deleted, the resource ID, and resource type. </p>
 #[non_exhaustive]
@@ -2011,6 +2020,13 @@ impl RemediationException {
         self.expiration_time.as_ref()
     }
 }
+impl RemediationException {
+    /// Creates a new builder-style object to manufacture [`RemediationException`](crate::model::RemediationException).
+    pub fn builder() -> crate::model::remediation_exception::Builder {
+        crate::model::remediation_exception::Builder::default()
+    }
+}
+
 /// See [`RemediationException`](crate::model::RemediationException).
 pub mod remediation_exception {
 
@@ -2096,12 +2112,6 @@ pub mod remediation_exception {
         }
     }
 }
-impl RemediationException {
-    /// Creates a new builder-style object to manufacture [`RemediationException`](crate::model::RemediationException).
-    pub fn builder() -> crate::model::remediation_exception::Builder {
-        crate::model::remediation_exception::Builder::default()
-    }
-}
 
 /// <p>The details that identify a resource within Config, including the resource type and resource ID. </p>
 #[non_exhaustive]
@@ -2124,6 +2134,13 @@ impl RemediationExceptionResourceKey {
         self.resource_id.as_deref()
     }
 }
+impl RemediationExceptionResourceKey {
+    /// Creates a new builder-style object to manufacture [`RemediationExceptionResourceKey`](crate::model::RemediationExceptionResourceKey).
+    pub fn builder() -> crate::model::remediation_exception_resource_key::Builder {
+        crate::model::remediation_exception_resource_key::Builder::default()
+    }
+}
+
 /// See [`RemediationExceptionResourceKey`](crate::model::RemediationExceptionResourceKey).
 pub mod remediation_exception_resource_key {
 
@@ -2167,12 +2184,6 @@ pub mod remediation_exception_resource_key {
         }
     }
 }
-impl RemediationExceptionResourceKey {
-    /// Creates a new builder-style object to manufacture [`RemediationExceptionResourceKey`](crate::model::RemediationExceptionResourceKey).
-    pub fn builder() -> crate::model::remediation_exception_resource_key::Builder {
-        crate::model::remediation_exception_resource_key::Builder::default()
-    }
-}
 
 /// <p>List of each of the failed remediations with specific reasons.</p>
 #[non_exhaustive]
@@ -2195,6 +2206,13 @@ impl FailedRemediationBatch {
         self.failed_items.as_deref()
     }
 }
+impl FailedRemediationBatch {
+    /// Creates a new builder-style object to manufacture [`FailedRemediationBatch`](crate::model::FailedRemediationBatch).
+    pub fn builder() -> crate::model::failed_remediation_batch::Builder {
+        crate::model::failed_remediation_batch::Builder::default()
+    }
+}
+
 /// See [`FailedRemediationBatch`](crate::model::FailedRemediationBatch).
 pub mod failed_remediation_batch {
 
@@ -2246,12 +2264,6 @@ pub mod failed_remediation_batch {
                 failed_items: self.failed_items,
             }
         }
-    }
-}
-impl FailedRemediationBatch {
-    /// Creates a new builder-style object to manufacture [`FailedRemediationBatch`](crate::model::FailedRemediationBatch).
-    pub fn builder() -> crate::model::failed_remediation_batch::Builder {
-        crate::model::failed_remediation_batch::Builder::default()
     }
 }
 
@@ -2360,6 +2372,13 @@ impl RemediationConfiguration {
         self.created_by_service.as_deref()
     }
 }
+impl RemediationConfiguration {
+    /// Creates a new builder-style object to manufacture [`RemediationConfiguration`](crate::model::RemediationConfiguration).
+    pub fn builder() -> crate::model::remediation_configuration::Builder {
+        crate::model::remediation_configuration::Builder::default()
+    }
+}
+
 /// See [`RemediationConfiguration`](crate::model::RemediationConfiguration).
 pub mod remediation_configuration {
 
@@ -2566,12 +2585,6 @@ pub mod remediation_configuration {
         }
     }
 }
-impl RemediationConfiguration {
-    /// Creates a new builder-style object to manufacture [`RemediationConfiguration`](crate::model::RemediationConfiguration).
-    pub fn builder() -> crate::model::remediation_configuration::Builder {
-        crate::model::remediation_configuration::Builder::default()
-    }
-}
 
 /// <p>The controls that Config uses for executing remediations.</p>
 #[non_exhaustive]
@@ -2587,6 +2600,13 @@ impl ExecutionControls {
         self.ssm_controls.as_ref()
     }
 }
+impl ExecutionControls {
+    /// Creates a new builder-style object to manufacture [`ExecutionControls`](crate::model::ExecutionControls).
+    pub fn builder() -> crate::model::execution_controls::Builder {
+        crate::model::execution_controls::Builder::default()
+    }
+}
+
 /// See [`ExecutionControls`](crate::model::ExecutionControls).
 pub mod execution_controls {
 
@@ -2618,12 +2638,6 @@ pub mod execution_controls {
         }
     }
 }
-impl ExecutionControls {
-    /// Creates a new builder-style object to manufacture [`ExecutionControls`](crate::model::ExecutionControls).
-    pub fn builder() -> crate::model::execution_controls::Builder {
-        crate::model::execution_controls::Builder::default()
-    }
-}
 
 /// <p>Amazon Web Services Systems Manager (SSM) specific remediation controls.</p>
 #[non_exhaustive]
@@ -2646,6 +2660,13 @@ impl SsmControls {
         self.error_percentage
     }
 }
+impl SsmControls {
+    /// Creates a new builder-style object to manufacture [`SsmControls`](crate::model::SsmControls).
+    pub fn builder() -> crate::model::ssm_controls::Builder {
+        crate::model::ssm_controls::Builder::default()
+    }
+}
+
 /// See [`SsmControls`](crate::model::SsmControls).
 pub mod ssm_controls {
 
@@ -2689,12 +2710,6 @@ pub mod ssm_controls {
         }
     }
 }
-impl SsmControls {
-    /// Creates a new builder-style object to manufacture [`SsmControls`](crate::model::SsmControls).
-    pub fn builder() -> crate::model::ssm_controls::Builder {
-        crate::model::ssm_controls::Builder::default()
-    }
-}
 
 /// <p>The value is either a dynamic (resource) value or a static value. You must select either a dynamic value or a static value.</p>
 #[non_exhaustive]
@@ -2717,6 +2732,13 @@ impl RemediationParameterValue {
         self.static_value.as_ref()
     }
 }
+impl RemediationParameterValue {
+    /// Creates a new builder-style object to manufacture [`RemediationParameterValue`](crate::model::RemediationParameterValue).
+    pub fn builder() -> crate::model::remediation_parameter_value::Builder {
+        crate::model::remediation_parameter_value::Builder::default()
+    }
+}
+
 /// See [`RemediationParameterValue`](crate::model::RemediationParameterValue).
 pub mod remediation_parameter_value {
 
@@ -2763,12 +2785,6 @@ pub mod remediation_parameter_value {
         }
     }
 }
-impl RemediationParameterValue {
-    /// Creates a new builder-style object to manufacture [`RemediationParameterValue`](crate::model::RemediationParameterValue).
-    pub fn builder() -> crate::model::remediation_parameter_value::Builder {
-        crate::model::remediation_parameter_value::Builder::default()
-    }
-}
 
 /// <p>The static value of the resource.</p>
 #[non_exhaustive]
@@ -2784,6 +2800,13 @@ impl StaticValue {
         self.values.as_deref()
     }
 }
+impl StaticValue {
+    /// Creates a new builder-style object to manufacture [`StaticValue`](crate::model::StaticValue).
+    pub fn builder() -> crate::model::static_value::Builder {
+        crate::model::static_value::Builder::default()
+    }
+}
+
 /// See [`StaticValue`](crate::model::StaticValue).
 pub mod static_value {
 
@@ -2821,12 +2844,6 @@ pub mod static_value {
         }
     }
 }
-impl StaticValue {
-    /// Creates a new builder-style object to manufacture [`StaticValue`](crate::model::StaticValue).
-    pub fn builder() -> crate::model::static_value::Builder {
-        crate::model::static_value::Builder::default()
-    }
-}
 
 /// <p>The dynamic value of the resource.</p>
 #[non_exhaustive]
@@ -2842,6 +2859,13 @@ impl ResourceValue {
         self.value.as_ref()
     }
 }
+impl ResourceValue {
+    /// Creates a new builder-style object to manufacture [`ResourceValue`](crate::model::ResourceValue).
+    pub fn builder() -> crate::model::resource_value::Builder {
+        crate::model::resource_value::Builder::default()
+    }
+}
+
 /// See [`ResourceValue`](crate::model::ResourceValue).
 pub mod resource_value {
 
@@ -2869,12 +2893,6 @@ pub mod resource_value {
         pub fn build(self) -> crate::model::ResourceValue {
             crate::model::ResourceValue { value: self.value }
         }
-    }
-}
-impl ResourceValue {
-    /// Creates a new builder-style object to manufacture [`ResourceValue`](crate::model::ResourceValue).
-    pub fn builder() -> crate::model::resource_value::Builder {
-        crate::model::resource_value::Builder::default()
     }
 }
 
@@ -3073,6 +3091,13 @@ impl ConformancePackInputParameter {
         self.parameter_value.as_deref()
     }
 }
+impl ConformancePackInputParameter {
+    /// Creates a new builder-style object to manufacture [`ConformancePackInputParameter`](crate::model::ConformancePackInputParameter).
+    pub fn builder() -> crate::model::conformance_pack_input_parameter::Builder {
+        crate::model::conformance_pack_input_parameter::Builder::default()
+    }
+}
+
 /// See [`ConformancePackInputParameter`](crate::model::ConformancePackInputParameter).
 pub mod conformance_pack_input_parameter {
 
@@ -3117,12 +3142,6 @@ pub mod conformance_pack_input_parameter {
                 parameter_value: self.parameter_value,
             }
         }
-    }
-}
-impl ConformancePackInputParameter {
-    /// Creates a new builder-style object to manufacture [`ConformancePackInputParameter`](crate::model::ConformancePackInputParameter).
-    pub fn builder() -> crate::model::conformance_pack_input_parameter::Builder {
-        crate::model::conformance_pack_input_parameter::Builder::default()
     }
 }
 
@@ -3223,6 +3242,13 @@ impl OrganizationCustomPolicyRuleMetadata {
         self.debug_log_delivery_accounts.as_deref()
     }
 }
+impl OrganizationCustomPolicyRuleMetadata {
+    /// Creates a new builder-style object to manufacture [`OrganizationCustomPolicyRuleMetadata`](crate::model::OrganizationCustomPolicyRuleMetadata).
+    pub fn builder() -> crate::model::organization_custom_policy_rule_metadata::Builder {
+        crate::model::organization_custom_policy_rule_metadata::Builder::default()
+    }
+}
+
 /// See [`OrganizationCustomPolicyRuleMetadata`](crate::model::OrganizationCustomPolicyRuleMetadata).
 pub mod organization_custom_policy_rule_metadata {
 
@@ -3438,12 +3464,6 @@ pub mod organization_custom_policy_rule_metadata {
                 debug_log_delivery_accounts: self.debug_log_delivery_accounts,
             }
         }
-    }
-}
-impl OrganizationCustomPolicyRuleMetadata {
-    /// Creates a new builder-style object to manufacture [`OrganizationCustomPolicyRuleMetadata`](crate::model::OrganizationCustomPolicyRuleMetadata).
-    pub fn builder() -> crate::model::organization_custom_policy_rule_metadata::Builder {
-        crate::model::organization_custom_policy_rule_metadata::Builder::default()
     }
 }
 
@@ -3752,6 +3772,13 @@ impl OrganizationCustomRuleMetadata {
         self.tag_value_scope.as_deref()
     }
 }
+impl OrganizationCustomRuleMetadata {
+    /// Creates a new builder-style object to manufacture [`OrganizationCustomRuleMetadata`](crate::model::OrganizationCustomRuleMetadata).
+    pub fn builder() -> crate::model::organization_custom_rule_metadata::Builder {
+        crate::model::organization_custom_rule_metadata::Builder::default()
+    }
+}
+
 /// See [`OrganizationCustomRuleMetadata`](crate::model::OrganizationCustomRuleMetadata).
 pub mod organization_custom_rule_metadata {
 
@@ -3938,12 +3965,6 @@ pub mod organization_custom_rule_metadata {
         }
     }
 }
-impl OrganizationCustomRuleMetadata {
-    /// Creates a new builder-style object to manufacture [`OrganizationCustomRuleMetadata`](crate::model::OrganizationCustomRuleMetadata).
-    pub fn builder() -> crate::model::organization_custom_rule_metadata::Builder {
-        crate::model::organization_custom_rule_metadata::Builder::default()
-    }
-}
 
 /// When writing a match expression against `OrganizationConfigRuleTriggerType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -4123,6 +4144,13 @@ impl OrganizationManagedRuleMetadata {
         self.tag_value_scope.as_deref()
     }
 }
+impl OrganizationManagedRuleMetadata {
+    /// Creates a new builder-style object to manufacture [`OrganizationManagedRuleMetadata`](crate::model::OrganizationManagedRuleMetadata).
+    pub fn builder() -> crate::model::organization_managed_rule_metadata::Builder {
+        crate::model::organization_managed_rule_metadata::Builder::default()
+    }
+}
+
 /// See [`OrganizationManagedRuleMetadata`](crate::model::OrganizationManagedRuleMetadata).
 pub mod organization_managed_rule_metadata {
 
@@ -4270,12 +4298,6 @@ pub mod organization_managed_rule_metadata {
         }
     }
 }
-impl OrganizationManagedRuleMetadata {
-    /// Creates a new builder-style object to manufacture [`OrganizationManagedRuleMetadata`](crate::model::OrganizationManagedRuleMetadata).
-    pub fn builder() -> crate::model::organization_managed_rule_metadata::Builder {
-        crate::model::organization_managed_rule_metadata::Builder::default()
-    }
-}
 
 /// <p>Identifies an Amazon Web Services resource and indicates whether it complies with the Config rule that it was evaluated against.</p>
 #[non_exhaustive]
@@ -4319,6 +4341,13 @@ impl ExternalEvaluation {
         self.ordering_timestamp.as_ref()
     }
 }
+impl ExternalEvaluation {
+    /// Creates a new builder-style object to manufacture [`ExternalEvaluation`](crate::model::ExternalEvaluation).
+    pub fn builder() -> crate::model::external_evaluation::Builder {
+        crate::model::external_evaluation::Builder::default()
+    }
+}
+
 /// See [`ExternalEvaluation`](crate::model::ExternalEvaluation).
 pub mod external_evaluation {
 
@@ -4405,12 +4434,6 @@ pub mod external_evaluation {
                 ordering_timestamp: self.ordering_timestamp,
             }
         }
-    }
-}
-impl ExternalEvaluation {
-    /// Creates a new builder-style object to manufacture [`ExternalEvaluation`](crate::model::ExternalEvaluation).
-    pub fn builder() -> crate::model::external_evaluation::Builder {
-        crate::model::external_evaluation::Builder::default()
     }
 }
 
@@ -4565,6 +4588,13 @@ impl Evaluation {
         self.ordering_timestamp.as_ref()
     }
 }
+impl Evaluation {
+    /// Creates a new builder-style object to manufacture [`Evaluation`](crate::model::Evaluation).
+    pub fn builder() -> crate::model::evaluation::Builder {
+        crate::model::evaluation::Builder::default()
+    }
+}
+
 /// See [`Evaluation`](crate::model::Evaluation).
 pub mod evaluation {
 
@@ -4657,12 +4687,6 @@ pub mod evaluation {
         }
     }
 }
-impl Evaluation {
-    /// Creates a new builder-style object to manufacture [`Evaluation`](crate::model::Evaluation).
-    pub fn builder() -> crate::model::evaluation::Builder {
-        crate::model::evaluation::Builder::default()
-    }
-}
 
 /// <p>The channel through which Config delivers notifications and updated configuration states.</p>
 #[non_exhaustive]
@@ -4720,6 +4744,13 @@ impl DeliveryChannel {
         self.config_snapshot_delivery_properties.as_ref()
     }
 }
+impl DeliveryChannel {
+    /// Creates a new builder-style object to manufacture [`DeliveryChannel`](crate::model::DeliveryChannel).
+    pub fn builder() -> crate::model::delivery_channel::Builder {
+        crate::model::delivery_channel::Builder::default()
+    }
+}
+
 /// See [`DeliveryChannel`](crate::model::DeliveryChannel).
 pub mod delivery_channel {
 
@@ -4831,12 +4862,6 @@ pub mod delivery_channel {
         }
     }
 }
-impl DeliveryChannel {
-    /// Creates a new builder-style object to manufacture [`DeliveryChannel`](crate::model::DeliveryChannel).
-    pub fn builder() -> crate::model::delivery_channel::Builder {
-        crate::model::delivery_channel::Builder::default()
-    }
-}
 
 /// <p>Provides options for how often Config delivers configuration snapshots to the Amazon S3 bucket in your delivery channel.</p>
 /// <p>The frequency for a rule that triggers evaluations for your resources when Config delivers the configuration snapshot is set by one of two values, depending on which is less frequent:</p>
@@ -4868,6 +4893,13 @@ impl ConfigSnapshotDeliveryProperties {
         self.delivery_frequency.as_ref()
     }
 }
+impl ConfigSnapshotDeliveryProperties {
+    /// Creates a new builder-style object to manufacture [`ConfigSnapshotDeliveryProperties`](crate::model::ConfigSnapshotDeliveryProperties).
+    pub fn builder() -> crate::model::config_snapshot_delivery_properties::Builder {
+        crate::model::config_snapshot_delivery_properties::Builder::default()
+    }
+}
+
 /// See [`ConfigSnapshotDeliveryProperties`](crate::model::ConfigSnapshotDeliveryProperties).
 pub mod config_snapshot_delivery_properties {
 
@@ -4902,12 +4934,6 @@ pub mod config_snapshot_delivery_properties {
         }
     }
 }
-impl ConfigSnapshotDeliveryProperties {
-    /// Creates a new builder-style object to manufacture [`ConfigSnapshotDeliveryProperties`](crate::model::ConfigSnapshotDeliveryProperties).
-    pub fn builder() -> crate::model::config_snapshot_delivery_properties::Builder {
-        crate::model::config_snapshot_delivery_properties::Builder::default()
-    }
-}
 
 /// <p>This API allows you to create a conformance pack template with an Amazon Web Services Systems Manager document (SSM document). To deploy a conformance pack using an SSM document, first create an SSM document with conformance pack content, and then provide the <code>DocumentName</code> in the <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_PutConformancePack.html">PutConformancePack API</a>. You can also provide the <code>DocumentVersion</code>.</p>
 /// <p>The <code>TemplateSSMDocumentDetails</code> object contains the name of the SSM document and the version of the SSM document.</p>
@@ -4935,6 +4961,13 @@ impl TemplateSsmDocumentDetails {
         self.document_version.as_deref()
     }
 }
+impl TemplateSsmDocumentDetails {
+    /// Creates a new builder-style object to manufacture [`TemplateSsmDocumentDetails`](crate::model::TemplateSsmDocumentDetails).
+    pub fn builder() -> crate::model::template_ssm_document_details::Builder {
+        crate::model::template_ssm_document_details::Builder::default()
+    }
+}
+
 /// See [`TemplateSsmDocumentDetails`](crate::model::TemplateSsmDocumentDetails).
 pub mod template_ssm_document_details {
 
@@ -4985,12 +5018,6 @@ pub mod template_ssm_document_details {
         }
     }
 }
-impl TemplateSsmDocumentDetails {
-    /// Creates a new builder-style object to manufacture [`TemplateSsmDocumentDetails`](crate::model::TemplateSsmDocumentDetails).
-    pub fn builder() -> crate::model::template_ssm_document_details::Builder {
-        crate::model::template_ssm_document_details::Builder::default()
-    }
-}
 
 /// <p>An object that represents the recording of configuration changes of an Amazon Web Services resource.</p>
 #[non_exhaustive]
@@ -5024,6 +5051,13 @@ impl ConfigurationRecorder {
         self.recording_group.as_ref()
     }
 }
+impl ConfigurationRecorder {
+    /// Creates a new builder-style object to manufacture [`ConfigurationRecorder`](crate::model::ConfigurationRecorder).
+    pub fn builder() -> crate::model::configuration_recorder::Builder {
+        crate::model::configuration_recorder::Builder::default()
+    }
+}
+
 /// See [`ConfigurationRecorder`](crate::model::ConfigurationRecorder).
 pub mod configuration_recorder {
 
@@ -5083,12 +5117,6 @@ pub mod configuration_recorder {
         }
     }
 }
-impl ConfigurationRecorder {
-    /// Creates a new builder-style object to manufacture [`ConfigurationRecorder`](crate::model::ConfigurationRecorder).
-    pub fn builder() -> crate::model::configuration_recorder::Builder {
-        crate::model::configuration_recorder::Builder::default()
-    }
-}
 
 /// <p>Specifies which Amazon Web Services resource types Config records for configuration changes. In the recording group, you specify whether you want to record all supported resource types or only specific types of resources.</p>
 /// <p>By default, Config records the configuration changes for all supported types of <i>regional resources</i> that Config discovers in the region in which it is running. Regional resources are tied to a region and can be used only in that region. Examples of regional resources are EC2 instances and EBS volumes.</p>
@@ -5143,6 +5171,13 @@ impl RecordingGroup {
         self.resource_types.as_deref()
     }
 }
+impl RecordingGroup {
+    /// Creates a new builder-style object to manufacture [`RecordingGroup`](crate::model::RecordingGroup).
+    pub fn builder() -> crate::model::recording_group::Builder {
+        crate::model::recording_group::Builder::default()
+    }
+}
+
 /// See [`RecordingGroup`](crate::model::RecordingGroup).
 pub mod recording_group {
 
@@ -5225,12 +5260,6 @@ pub mod recording_group {
         }
     }
 }
-impl RecordingGroup {
-    /// Creates a new builder-style object to manufacture [`RecordingGroup`](crate::model::RecordingGroup).
-    pub fn builder() -> crate::model::recording_group::Builder {
-        crate::model::recording_group::Builder::default()
-    }
-}
 
 /// <p>The details about the configuration aggregator, including information about source accounts, regions, and metadata of the aggregator. </p>
 #[non_exhaustive]
@@ -5294,6 +5323,13 @@ impl ConfigurationAggregator {
         self.created_by.as_deref()
     }
 }
+impl ConfigurationAggregator {
+    /// Creates a new builder-style object to manufacture [`ConfigurationAggregator`](crate::model::ConfigurationAggregator).
+    pub fn builder() -> crate::model::configuration_aggregator::Builder {
+        crate::model::configuration_aggregator::Builder::default()
+    }
+}
+
 /// See [`ConfigurationAggregator`](crate::model::ConfigurationAggregator).
 pub mod configuration_aggregator {
 
@@ -5432,12 +5468,6 @@ pub mod configuration_aggregator {
         }
     }
 }
-impl ConfigurationAggregator {
-    /// Creates a new builder-style object to manufacture [`ConfigurationAggregator`](crate::model::ConfigurationAggregator).
-    pub fn builder() -> crate::model::configuration_aggregator::Builder {
-        crate::model::configuration_aggregator::Builder::default()
-    }
-}
 
 /// <p>This object contains regions to set up the aggregator and an IAM role to retrieve organization details.</p>
 #[non_exhaustive]
@@ -5467,6 +5497,13 @@ impl OrganizationAggregationSource {
         self.all_aws_regions
     }
 }
+impl OrganizationAggregationSource {
+    /// Creates a new builder-style object to manufacture [`OrganizationAggregationSource`](crate::model::OrganizationAggregationSource).
+    pub fn builder() -> crate::model::organization_aggregation_source::Builder {
+        crate::model::organization_aggregation_source::Builder::default()
+    }
+}
+
 /// See [`OrganizationAggregationSource`](crate::model::OrganizationAggregationSource).
 pub mod organization_aggregation_source {
 
@@ -5528,12 +5565,6 @@ pub mod organization_aggregation_source {
         }
     }
 }
-impl OrganizationAggregationSource {
-    /// Creates a new builder-style object to manufacture [`OrganizationAggregationSource`](crate::model::OrganizationAggregationSource).
-    pub fn builder() -> crate::model::organization_aggregation_source::Builder {
-        crate::model::organization_aggregation_source::Builder::default()
-    }
-}
 
 /// <p>A collection of accounts and regions.</p>
 #[non_exhaustive]
@@ -5563,6 +5594,13 @@ impl AccountAggregationSource {
         self.aws_regions.as_deref()
     }
 }
+impl AccountAggregationSource {
+    /// Creates a new builder-style object to manufacture [`AccountAggregationSource`](crate::model::AccountAggregationSource).
+    pub fn builder() -> crate::model::account_aggregation_source::Builder {
+        crate::model::account_aggregation_source::Builder::default()
+    }
+}
+
 /// See [`AccountAggregationSource`](crate::model::AccountAggregationSource).
 pub mod account_aggregation_source {
 
@@ -5631,12 +5669,6 @@ pub mod account_aggregation_source {
                 aws_regions: self.aws_regions,
             }
         }
-    }
-}
-impl AccountAggregationSource {
-    /// Creates a new builder-style object to manufacture [`AccountAggregationSource`](crate::model::AccountAggregationSource).
-    pub fn builder() -> crate::model::account_aggregation_source::Builder {
-        crate::model::account_aggregation_source::Builder::default()
     }
 }
 
@@ -5759,6 +5791,13 @@ impl ConfigRule {
         self.evaluation_modes.as_deref()
     }
 }
+impl ConfigRule {
+    /// Creates a new builder-style object to manufacture [`ConfigRule`](crate::model::ConfigRule).
+    pub fn builder() -> crate::model::config_rule::Builder {
+        crate::model::config_rule::Builder::default()
+    }
+}
+
 /// See [`ConfigRule`](crate::model::ConfigRule).
 pub mod config_rule {
 
@@ -5968,12 +6007,6 @@ pub mod config_rule {
         }
     }
 }
-impl ConfigRule {
-    /// Creates a new builder-style object to manufacture [`ConfigRule`](crate::model::ConfigRule).
-    pub fn builder() -> crate::model::config_rule::Builder {
-        crate::model::config_rule::Builder::default()
-    }
-}
 
 /// <p>The configuration object for Config rule evaluation mode. The Supported valid values are Detective or Proactive.</p>
 #[non_exhaustive]
@@ -5989,6 +6022,13 @@ impl EvaluationModeConfiguration {
         self.mode.as_ref()
     }
 }
+impl EvaluationModeConfiguration {
+    /// Creates a new builder-style object to manufacture [`EvaluationModeConfiguration`](crate::model::EvaluationModeConfiguration).
+    pub fn builder() -> crate::model::evaluation_mode_configuration::Builder {
+        crate::model::evaluation_mode_configuration::Builder::default()
+    }
+}
+
 /// See [`EvaluationModeConfiguration`](crate::model::EvaluationModeConfiguration).
 pub mod evaluation_mode_configuration {
 
@@ -6016,12 +6056,6 @@ pub mod evaluation_mode_configuration {
         pub fn build(self) -> crate::model::EvaluationModeConfiguration {
             crate::model::EvaluationModeConfiguration { mode: self.mode }
         }
-    }
-}
-impl EvaluationModeConfiguration {
-    /// Creates a new builder-style object to manufacture [`EvaluationModeConfiguration`](crate::model::EvaluationModeConfiguration).
-    pub fn builder() -> crate::model::evaluation_mode_configuration::Builder {
-        crate::model::evaluation_mode_configuration::Builder::default()
     }
 }
 
@@ -6170,6 +6204,13 @@ impl Source {
         self.custom_policy_details.as_ref()
     }
 }
+impl Source {
+    /// Creates a new builder-style object to manufacture [`Source`](crate::model::Source).
+    pub fn builder() -> crate::model::source::Builder {
+        crate::model::source::Builder::default()
+    }
+}
+
 /// See [`Source`](crate::model::Source).
 pub mod source {
 
@@ -6259,12 +6300,6 @@ pub mod source {
         }
     }
 }
-impl Source {
-    /// Creates a new builder-style object to manufacture [`Source`](crate::model::Source).
-    pub fn builder() -> crate::model::source::Builder {
-        crate::model::source::Builder::default()
-    }
-}
 
 /// <p>Provides the runtime system, policy definition, and whether debug logging enabled. You can specify the following CustomPolicyDetails parameter values only for Config Custom Policy rules.</p>
 #[non_exhaustive]
@@ -6294,6 +6329,13 @@ impl CustomPolicyDetails {
         self.enable_debug_log_delivery
     }
 }
+impl CustomPolicyDetails {
+    /// Creates a new builder-style object to manufacture [`CustomPolicyDetails`](crate::model::CustomPolicyDetails).
+    pub fn builder() -> crate::model::custom_policy_details::Builder {
+        crate::model::custom_policy_details::Builder::default()
+    }
+}
+
 /// See [`CustomPolicyDetails`](crate::model::CustomPolicyDetails).
 pub mod custom_policy_details {
 
@@ -6349,12 +6391,6 @@ pub mod custom_policy_details {
         }
     }
 }
-impl CustomPolicyDetails {
-    /// Creates a new builder-style object to manufacture [`CustomPolicyDetails`](crate::model::CustomPolicyDetails).
-    pub fn builder() -> crate::model::custom_policy_details::Builder {
-        crate::model::custom_policy_details::Builder::default()
-    }
-}
 
 /// <p>Provides the source and the message types that trigger Config to evaluate your Amazon Web Services resources against a rule. It also provides the frequency with which you want Config to run evaluations for the rule if the trigger type is periodic. You can specify the parameter values for <code>SourceDetail</code> only for custom rules. </p>
 #[non_exhaustive]
@@ -6406,6 +6442,13 @@ impl SourceDetail {
         self.maximum_execution_frequency.as_ref()
     }
 }
+impl SourceDetail {
+    /// Creates a new builder-style object to manufacture [`SourceDetail`](crate::model::SourceDetail).
+    pub fn builder() -> crate::model::source_detail::Builder {
+        crate::model::source_detail::Builder::default()
+    }
+}
+
 /// See [`SourceDetail`](crate::model::SourceDetail).
 pub mod source_detail {
 
@@ -6489,12 +6532,6 @@ pub mod source_detail {
                 maximum_execution_frequency: self.maximum_execution_frequency,
             }
         }
-    }
-}
-impl SourceDetail {
-    /// Creates a new builder-style object to manufacture [`SourceDetail`](crate::model::SourceDetail).
-    pub fn builder() -> crate::model::source_detail::Builder {
-        crate::model::source_detail::Builder::default()
     }
 }
 
@@ -6830,6 +6867,13 @@ impl Scope {
         self.compliance_resource_id.as_deref()
     }
 }
+impl Scope {
+    /// Creates a new builder-style object to manufacture [`Scope`](crate::model::Scope).
+    pub fn builder() -> crate::model::scope::Builder {
+        crate::model::scope::Builder::default()
+    }
+}
+
 /// See [`Scope`](crate::model::Scope).
 pub mod scope {
 
@@ -6907,12 +6951,6 @@ pub mod scope {
         }
     }
 }
-impl Scope {
-    /// Creates a new builder-style object to manufacture [`Scope`](crate::model::Scope).
-    pub fn builder() -> crate::model::scope::Builder {
-        crate::model::scope::Builder::default()
-    }
-}
 
 /// <p>An object that represents the authorizations granted to aggregator accounts and regions.</p>
 #[non_exhaustive]
@@ -6949,6 +6987,13 @@ impl AggregationAuthorization {
         self.creation_time.as_ref()
     }
 }
+impl AggregationAuthorization {
+    /// Creates a new builder-style object to manufacture [`AggregationAuthorization`](crate::model::AggregationAuthorization).
+    pub fn builder() -> crate::model::aggregation_authorization::Builder {
+        crate::model::aggregation_authorization::Builder::default()
+    }
+}
+
 /// See [`AggregationAuthorization`](crate::model::AggregationAuthorization).
 pub mod aggregation_authorization {
 
@@ -7028,12 +7073,6 @@ pub mod aggregation_authorization {
         }
     }
 }
-impl AggregationAuthorization {
-    /// Creates a new builder-style object to manufacture [`AggregationAuthorization`](crate::model::AggregationAuthorization).
-    pub fn builder() -> crate::model::aggregation_authorization::Builder {
-        crate::model::aggregation_authorization::Builder::default()
-    }
-}
 
 /// <p>Returns details of a specific query. </p>
 #[non_exhaustive]
@@ -7070,6 +7109,13 @@ impl StoredQueryMetadata {
         self.description.as_deref()
     }
 }
+impl StoredQueryMetadata {
+    /// Creates a new builder-style object to manufacture [`StoredQueryMetadata`](crate::model::StoredQueryMetadata).
+    pub fn builder() -> crate::model::stored_query_metadata::Builder {
+        crate::model::stored_query_metadata::Builder::default()
+    }
+}
+
 /// See [`StoredQueryMetadata`](crate::model::StoredQueryMetadata).
 pub mod stored_query_metadata {
 
@@ -7134,12 +7180,6 @@ pub mod stored_query_metadata {
         }
     }
 }
-impl StoredQueryMetadata {
-    /// Creates a new builder-style object to manufacture [`StoredQueryMetadata`](crate::model::StoredQueryMetadata).
-    pub fn builder() -> crate::model::stored_query_metadata::Builder {
-        crate::model::stored_query_metadata::Builder::default()
-    }
-}
 
 /// <p>Returns details of a resource evaluation.</p>
 #[non_exhaustive]
@@ -7169,6 +7209,13 @@ impl ResourceEvaluation {
         self.evaluation_start_timestamp.as_ref()
     }
 }
+impl ResourceEvaluation {
+    /// Creates a new builder-style object to manufacture [`ResourceEvaluation`](crate::model::ResourceEvaluation).
+    pub fn builder() -> crate::model::resource_evaluation::Builder {
+        crate::model::resource_evaluation::Builder::default()
+    }
+}
+
 /// See [`ResourceEvaluation`](crate::model::ResourceEvaluation).
 pub mod resource_evaluation {
 
@@ -7230,12 +7277,6 @@ pub mod resource_evaluation {
         }
     }
 }
-impl ResourceEvaluation {
-    /// Creates a new builder-style object to manufacture [`ResourceEvaluation`](crate::model::ResourceEvaluation).
-    pub fn builder() -> crate::model::resource_evaluation::Builder {
-        crate::model::resource_evaluation::Builder::default()
-    }
-}
 
 /// <p>Returns details of a resource evaluation based on the selected filter.</p>
 #[non_exhaustive]
@@ -7265,6 +7306,13 @@ impl ResourceEvaluationFilters {
         self.evaluation_context_identifier.as_deref()
     }
 }
+impl ResourceEvaluationFilters {
+    /// Creates a new builder-style object to manufacture [`ResourceEvaluationFilters`](crate::model::ResourceEvaluationFilters).
+    pub fn builder() -> crate::model::resource_evaluation_filters::Builder {
+        crate::model::resource_evaluation_filters::Builder::default()
+    }
+}
+
 /// See [`ResourceEvaluationFilters`](crate::model::ResourceEvaluationFilters).
 pub mod resource_evaluation_filters {
 
@@ -7329,12 +7377,6 @@ pub mod resource_evaluation_filters {
         }
     }
 }
-impl ResourceEvaluationFilters {
-    /// Creates a new builder-style object to manufacture [`ResourceEvaluationFilters`](crate::model::ResourceEvaluationFilters).
-    pub fn builder() -> crate::model::resource_evaluation_filters::Builder {
-        crate::model::resource_evaluation_filters::Builder::default()
-    }
-}
 
 /// <p>Filters evaluation results based on start and end times.</p>
 #[non_exhaustive]
@@ -7357,6 +7399,13 @@ impl TimeWindow {
         self.end_time.as_ref()
     }
 }
+impl TimeWindow {
+    /// Creates a new builder-style object to manufacture [`TimeWindow`](crate::model::TimeWindow).
+    pub fn builder() -> crate::model::time_window::Builder {
+        crate::model::time_window::Builder::default()
+    }
+}
+
 /// See [`TimeWindow`](crate::model::TimeWindow).
 pub mod time_window {
 
@@ -7403,12 +7452,6 @@ pub mod time_window {
         }
     }
 }
-impl TimeWindow {
-    /// Creates a new builder-style object to manufacture [`TimeWindow`](crate::model::TimeWindow).
-    pub fn builder() -> crate::model::time_window::Builder {
-        crate::model::time_window::Builder::default()
-    }
-}
 
 /// <p>The details that identify a resource that is discovered by Config, including the resource type, ID, and (if available) the custom resource name.</p>
 #[non_exhaustive]
@@ -7445,6 +7488,13 @@ impl ResourceIdentifier {
         self.resource_deletion_time.as_ref()
     }
 }
+impl ResourceIdentifier {
+    /// Creates a new builder-style object to manufacture [`ResourceIdentifier`](crate::model::ResourceIdentifier).
+    pub fn builder() -> crate::model::resource_identifier::Builder {
+        crate::model::resource_identifier::Builder::default()
+    }
+}
+
 /// See [`ResourceIdentifier`](crate::model::ResourceIdentifier).
 pub mod resource_identifier {
 
@@ -7518,12 +7568,6 @@ pub mod resource_identifier {
         }
     }
 }
-impl ResourceIdentifier {
-    /// Creates a new builder-style object to manufacture [`ResourceIdentifier`](crate::model::ResourceIdentifier).
-    pub fn builder() -> crate::model::resource_identifier::Builder {
-        crate::model::resource_identifier::Builder::default()
-    }
-}
 
 /// <p>A compliance score is the percentage of the number of compliant rule-resource combinations in a conformance pack compared to the number of total possible rule-resource combinations in the conformance pack. This metric provides you with a high-level view of the compliance state of your conformance packs. You can use it to identify, investigate, and understand the level of compliance in your conformance packs.</p>
 #[non_exhaustive]
@@ -7553,6 +7597,13 @@ impl ConformancePackComplianceScore {
         self.last_updated_time.as_ref()
     }
 }
+impl ConformancePackComplianceScore {
+    /// Creates a new builder-style object to manufacture [`ConformancePackComplianceScore`](crate::model::ConformancePackComplianceScore).
+    pub fn builder() -> crate::model::conformance_pack_compliance_score::Builder {
+        crate::model::conformance_pack_compliance_score::Builder::default()
+    }
+}
+
 /// See [`ConformancePackComplianceScore`](crate::model::ConformancePackComplianceScore).
 pub mod conformance_pack_compliance_score {
 
@@ -7609,12 +7660,6 @@ pub mod conformance_pack_compliance_score {
                 last_updated_time: self.last_updated_time,
             }
         }
-    }
-}
-impl ConformancePackComplianceScore {
-    /// Creates a new builder-style object to manufacture [`ConformancePackComplianceScore`](crate::model::ConformancePackComplianceScore).
-    pub fn builder() -> crate::model::conformance_pack_compliance_score::Builder {
-        crate::model::conformance_pack_compliance_score::Builder::default()
     }
 }
 
@@ -7807,6 +7852,13 @@ impl ConformancePackComplianceScoresFilters {
         self.conformance_pack_names.as_deref()
     }
 }
+impl ConformancePackComplianceScoresFilters {
+    /// Creates a new builder-style object to manufacture [`ConformancePackComplianceScoresFilters`](crate::model::ConformancePackComplianceScoresFilters).
+    pub fn builder() -> crate::model::conformance_pack_compliance_scores_filters::Builder {
+        crate::model::conformance_pack_compliance_scores_filters::Builder::default()
+    }
+}
+
 /// See [`ConformancePackComplianceScoresFilters`](crate::model::ConformancePackComplianceScoresFilters).
 pub mod conformance_pack_compliance_scores_filters {
 
@@ -7842,12 +7894,6 @@ pub mod conformance_pack_compliance_scores_filters {
                 conformance_pack_names: self.conformance_pack_names,
             }
         }
-    }
-}
-impl ConformancePackComplianceScoresFilters {
-    /// Creates a new builder-style object to manufacture [`ConformancePackComplianceScoresFilters`](crate::model::ConformancePackComplianceScoresFilters).
-    pub fn builder() -> crate::model::conformance_pack_compliance_scores_filters::Builder {
-        crate::model::conformance_pack_compliance_scores_filters::Builder::default()
     }
 }
 
@@ -7893,6 +7939,13 @@ impl AggregateResourceIdentifier {
         self.resource_name.as_deref()
     }
 }
+impl AggregateResourceIdentifier {
+    /// Creates a new builder-style object to manufacture [`AggregateResourceIdentifier`](crate::model::AggregateResourceIdentifier).
+    pub fn builder() -> crate::model::aggregate_resource_identifier::Builder {
+        crate::model::aggregate_resource_identifier::Builder::default()
+    }
+}
+
 /// See [`AggregateResourceIdentifier`](crate::model::AggregateResourceIdentifier).
 pub mod aggregate_resource_identifier {
 
@@ -7981,12 +8034,6 @@ pub mod aggregate_resource_identifier {
         }
     }
 }
-impl AggregateResourceIdentifier {
-    /// Creates a new builder-style object to manufacture [`AggregateResourceIdentifier`](crate::model::AggregateResourceIdentifier).
-    pub fn builder() -> crate::model::aggregate_resource_identifier::Builder {
-        crate::model::aggregate_resource_identifier::Builder::default()
-    }
-}
 
 /// <p>Filters the results by resource account ID, region, resource ID, and resource name.</p>
 #[non_exhaustive]
@@ -8023,6 +8070,13 @@ impl ResourceFilters {
         self.region.as_deref()
     }
 }
+impl ResourceFilters {
+    /// Creates a new builder-style object to manufacture [`ResourceFilters`](crate::model::ResourceFilters).
+    pub fn builder() -> crate::model::resource_filters::Builder {
+        crate::model::resource_filters::Builder::default()
+    }
+}
+
 /// See [`ResourceFilters`](crate::model::ResourceFilters).
 pub mod resource_filters {
 
@@ -8090,12 +8144,6 @@ pub mod resource_filters {
         }
     }
 }
-impl ResourceFilters {
-    /// Creates a new builder-style object to manufacture [`ResourceFilters`](crate::model::ResourceFilters).
-    pub fn builder() -> crate::model::resource_filters::Builder {
-        crate::model::resource_filters::Builder::default()
-    }
-}
 
 /// <p>Returns status details of an evaluation.</p>
 #[non_exhaustive]
@@ -8118,6 +8166,13 @@ impl EvaluationStatus {
         self.failure_reason.as_deref()
     }
 }
+impl EvaluationStatus {
+    /// Creates a new builder-style object to manufacture [`EvaluationStatus`](crate::model::EvaluationStatus).
+    pub fn builder() -> crate::model::evaluation_status::Builder {
+        crate::model::evaluation_status::Builder::default()
+    }
+}
+
 /// See [`EvaluationStatus`](crate::model::EvaluationStatus).
 pub mod evaluation_status {
 
@@ -8162,12 +8217,6 @@ pub mod evaluation_status {
                 failure_reason: self.failure_reason,
             }
         }
-    }
-}
-impl EvaluationStatus {
-    /// Creates a new builder-style object to manufacture [`EvaluationStatus`](crate::model::EvaluationStatus).
-    pub fn builder() -> crate::model::evaluation_status::Builder {
-        crate::model::evaluation_status::Builder::default()
     }
 }
 
@@ -8437,6 +8486,13 @@ impl ConfigurationItem {
         self.supplementary_configuration.as_ref()
     }
 }
+impl ConfigurationItem {
+    /// Creates a new builder-style object to manufacture [`ConfigurationItem`](crate::model::ConfigurationItem).
+    pub fn builder() -> crate::model::configuration_item::Builder {
+        crate::model::configuration_item::Builder::default()
+    }
+}
+
 /// See [`ConfigurationItem`](crate::model::ConfigurationItem).
 pub mod configuration_item {
 
@@ -8782,12 +8838,6 @@ pub mod configuration_item {
         }
     }
 }
-impl ConfigurationItem {
-    /// Creates a new builder-style object to manufacture [`ConfigurationItem`](crate::model::ConfigurationItem).
-    pub fn builder() -> crate::model::configuration_item::Builder {
-        crate::model::configuration_item::Builder::default()
-    }
-}
 
 /// <p>The relationship of the related resource to the main resource.</p>
 #[non_exhaustive]
@@ -8824,6 +8874,13 @@ impl Relationship {
         self.relationship_name.as_deref()
     }
 }
+impl Relationship {
+    /// Creates a new builder-style object to manufacture [`Relationship`](crate::model::Relationship).
+    pub fn builder() -> crate::model::relationship::Builder {
+        crate::model::relationship::Builder::default()
+    }
+}
+
 /// See [`Relationship`](crate::model::Relationship).
 pub mod relationship {
 
@@ -8895,12 +8952,6 @@ pub mod relationship {
                 relationship_name: self.relationship_name,
             }
         }
-    }
-}
-impl Relationship {
-    /// Creates a new builder-style object to manufacture [`Relationship`](crate::model::Relationship).
-    pub fn builder() -> crate::model::relationship::Builder {
-        crate::model::relationship::Builder::default()
     }
 }
 
@@ -9182,6 +9233,13 @@ impl OrganizationConformancePackDetailedStatus {
         self.last_update_time.as_ref()
     }
 }
+impl OrganizationConformancePackDetailedStatus {
+    /// Creates a new builder-style object to manufacture [`OrganizationConformancePackDetailedStatus`](crate::model::OrganizationConformancePackDetailedStatus).
+    pub fn builder() -> crate::model::organization_conformance_pack_detailed_status::Builder {
+        crate::model::organization_conformance_pack_detailed_status::Builder::default()
+    }
+}
+
 /// See [`OrganizationConformancePackDetailedStatus`](crate::model::OrganizationConformancePackDetailedStatus).
 pub mod organization_conformance_pack_detailed_status {
 
@@ -9304,12 +9362,6 @@ pub mod organization_conformance_pack_detailed_status {
                 last_update_time: self.last_update_time,
             }
         }
-    }
-}
-impl OrganizationConformancePackDetailedStatus {
-    /// Creates a new builder-style object to manufacture [`OrganizationConformancePackDetailedStatus`](crate::model::OrganizationConformancePackDetailedStatus).
-    pub fn builder() -> crate::model::organization_conformance_pack_detailed_status::Builder {
-        crate::model::organization_conformance_pack_detailed_status::Builder::default()
     }
 }
 
@@ -9495,6 +9547,13 @@ impl OrganizationResourceDetailedStatusFilters {
         self.status.as_ref()
     }
 }
+impl OrganizationResourceDetailedStatusFilters {
+    /// Creates a new builder-style object to manufacture [`OrganizationResourceDetailedStatusFilters`](crate::model::OrganizationResourceDetailedStatusFilters).
+    pub fn builder() -> crate::model::organization_resource_detailed_status_filters::Builder {
+        crate::model::organization_resource_detailed_status_filters::Builder::default()
+    }
+}
+
 /// See [`OrganizationResourceDetailedStatusFilters`](crate::model::OrganizationResourceDetailedStatusFilters).
 pub mod organization_resource_detailed_status_filters {
 
@@ -9560,12 +9619,6 @@ pub mod organization_resource_detailed_status_filters {
                 status: self.status,
             }
         }
-    }
-}
-impl OrganizationResourceDetailedStatusFilters {
-    /// Creates a new builder-style object to manufacture [`OrganizationResourceDetailedStatusFilters`](crate::model::OrganizationResourceDetailedStatusFilters).
-    pub fn builder() -> crate::model::organization_resource_detailed_status_filters::Builder {
-        crate::model::organization_resource_detailed_status_filters::Builder::default()
     }
 }
 
@@ -9644,6 +9697,13 @@ impl MemberAccountStatus {
         self.last_update_time.as_ref()
     }
 }
+impl MemberAccountStatus {
+    /// Creates a new builder-style object to manufacture [`MemberAccountStatus`](crate::model::MemberAccountStatus).
+    pub fn builder() -> crate::model::member_account_status::Builder {
+        crate::model::member_account_status::Builder::default()
+    }
+}
+
 /// See [`MemberAccountStatus`](crate::model::MemberAccountStatus).
 pub mod member_account_status {
 
@@ -9770,12 +9830,6 @@ pub mod member_account_status {
                 last_update_time: self.last_update_time,
             }
         }
-    }
-}
-impl MemberAccountStatus {
-    /// Creates a new builder-style object to manufacture [`MemberAccountStatus`](crate::model::MemberAccountStatus).
-    pub fn builder() -> crate::model::member_account_status::Builder {
-        crate::model::member_account_status::Builder::default()
     }
 }
 
@@ -9963,6 +10017,13 @@ impl StatusDetailFilters {
         self.member_account_rule_status.as_ref()
     }
 }
+impl StatusDetailFilters {
+    /// Creates a new builder-style object to manufacture [`StatusDetailFilters`](crate::model::StatusDetailFilters).
+    pub fn builder() -> crate::model::status_detail_filters::Builder {
+        crate::model::status_detail_filters::Builder::default()
+    }
+}
+
 /// See [`StatusDetailFilters`](crate::model::StatusDetailFilters).
 pub mod status_detail_filters {
 
@@ -10034,12 +10095,6 @@ pub mod status_detail_filters {
         }
     }
 }
-impl StatusDetailFilters {
-    /// Creates a new builder-style object to manufacture [`StatusDetailFilters`](crate::model::StatusDetailFilters).
-    pub fn builder() -> crate::model::status_detail_filters::Builder {
-        crate::model::status_detail_filters::Builder::default()
-    }
-}
 
 /// <p>An object that contains the resource type and the number of resources.</p>
 #[non_exhaustive]
@@ -10062,6 +10117,13 @@ impl ResourceCount {
         self.count
     }
 }
+impl ResourceCount {
+    /// Creates a new builder-style object to manufacture [`ResourceCount`](crate::model::ResourceCount).
+    pub fn builder() -> crate::model::resource_count::Builder {
+        crate::model::resource_count::Builder::default()
+    }
+}
+
 /// See [`ResourceCount`](crate::model::ResourceCount).
 pub mod resource_count {
 
@@ -10105,12 +10167,6 @@ pub mod resource_count {
         }
     }
 }
-impl ResourceCount {
-    /// Creates a new builder-style object to manufacture [`ResourceCount`](crate::model::ResourceCount).
-    pub fn builder() -> crate::model::resource_count::Builder {
-        crate::model::resource_count::Builder::default()
-    }
-}
 
 /// <p>Summary includes the name and status of the conformance pack.</p>
 #[non_exhaustive]
@@ -10136,6 +10192,13 @@ impl ConformancePackComplianceSummary {
         self.conformance_pack_compliance_status.as_ref()
     }
 }
+impl ConformancePackComplianceSummary {
+    /// Creates a new builder-style object to manufacture [`ConformancePackComplianceSummary`](crate::model::ConformancePackComplianceSummary).
+    pub fn builder() -> crate::model::conformance_pack_compliance_summary::Builder {
+        crate::model::conformance_pack_compliance_summary::Builder::default()
+    }
+}
+
 /// See [`ConformancePackComplianceSummary`](crate::model::ConformancePackComplianceSummary).
 pub mod conformance_pack_compliance_summary {
 
@@ -10184,12 +10247,6 @@ pub mod conformance_pack_compliance_summary {
                 conformance_pack_compliance_status: self.conformance_pack_compliance_status,
             }
         }
-    }
-}
-impl ConformancePackComplianceSummary {
-    /// Creates a new builder-style object to manufacture [`ConformancePackComplianceSummary`](crate::model::ConformancePackComplianceSummary).
-    pub fn builder() -> crate::model::conformance_pack_compliance_summary::Builder {
-        crate::model::conformance_pack_compliance_summary::Builder::default()
     }
 }
 
@@ -10336,6 +10393,13 @@ impl ConformancePackEvaluationResult {
         self.annotation.as_deref()
     }
 }
+impl ConformancePackEvaluationResult {
+    /// Creates a new builder-style object to manufacture [`ConformancePackEvaluationResult`](crate::model::ConformancePackEvaluationResult).
+    pub fn builder() -> crate::model::conformance_pack_evaluation_result::Builder {
+        crate::model::conformance_pack_evaluation_result::Builder::default()
+    }
+}
+
 /// See [`ConformancePackEvaluationResult`](crate::model::ConformancePackEvaluationResult).
 pub mod conformance_pack_evaluation_result {
 
@@ -10432,12 +10496,6 @@ pub mod conformance_pack_evaluation_result {
         }
     }
 }
-impl ConformancePackEvaluationResult {
-    /// Creates a new builder-style object to manufacture [`ConformancePackEvaluationResult`](crate::model::ConformancePackEvaluationResult).
-    pub fn builder() -> crate::model::conformance_pack_evaluation_result::Builder {
-        crate::model::conformance_pack_evaluation_result::Builder::default()
-    }
-}
 
 /// <p>Uniquely identifies an evaluation result.</p>
 #[non_exhaustive]
@@ -10469,6 +10527,13 @@ impl EvaluationResultIdentifier {
         self.resource_evaluation_id.as_deref()
     }
 }
+impl EvaluationResultIdentifier {
+    /// Creates a new builder-style object to manufacture [`EvaluationResultIdentifier`](crate::model::EvaluationResultIdentifier).
+    pub fn builder() -> crate::model::evaluation_result_identifier::Builder {
+        crate::model::evaluation_result_identifier::Builder::default()
+    }
+}
+
 /// See [`EvaluationResultIdentifier`](crate::model::EvaluationResultIdentifier).
 pub mod evaluation_result_identifier {
 
@@ -10534,12 +10599,6 @@ pub mod evaluation_result_identifier {
         }
     }
 }
-impl EvaluationResultIdentifier {
-    /// Creates a new builder-style object to manufacture [`EvaluationResultIdentifier`](crate::model::EvaluationResultIdentifier).
-    pub fn builder() -> crate::model::evaluation_result_identifier::Builder {
-        crate::model::evaluation_result_identifier::Builder::default()
-    }
-}
 
 /// <p>Identifies an Config rule that evaluated an Amazon Web Services resource, and provides the type and ID of the resource that the rule evaluated.</p>
 #[non_exhaustive]
@@ -10576,6 +10635,13 @@ impl EvaluationResultQualifier {
         self.evaluation_mode.as_ref()
     }
 }
+impl EvaluationResultQualifier {
+    /// Creates a new builder-style object to manufacture [`EvaluationResultQualifier`](crate::model::EvaluationResultQualifier).
+    pub fn builder() -> crate::model::evaluation_result_qualifier::Builder {
+        crate::model::evaluation_result_qualifier::Builder::default()
+    }
+}
+
 /// See [`EvaluationResultQualifier`](crate::model::EvaluationResultQualifier).
 pub mod evaluation_result_qualifier {
 
@@ -10649,12 +10715,6 @@ pub mod evaluation_result_qualifier {
         }
     }
 }
-impl EvaluationResultQualifier {
-    /// Creates a new builder-style object to manufacture [`EvaluationResultQualifier`](crate::model::EvaluationResultQualifier).
-    pub fn builder() -> crate::model::evaluation_result_qualifier::Builder {
-        crate::model::evaluation_result_qualifier::Builder::default()
-    }
-}
 
 /// <p>Filters a conformance pack by Config rule names, compliance types, Amazon Web Services resource types, and resource IDs.</p>
 #[non_exhaustive]
@@ -10699,6 +10759,13 @@ impl ConformancePackEvaluationFilters {
         self.resource_ids.as_deref()
     }
 }
+impl ConformancePackEvaluationFilters {
+    /// Creates a new builder-style object to manufacture [`ConformancePackEvaluationFilters`](crate::model::ConformancePackEvaluationFilters).
+    pub fn builder() -> crate::model::conformance_pack_evaluation_filters::Builder {
+        crate::model::conformance_pack_evaluation_filters::Builder::default()
+    }
+}
+
 /// See [`ConformancePackEvaluationFilters`](crate::model::ConformancePackEvaluationFilters).
 pub mod conformance_pack_evaluation_filters {
 
@@ -10797,12 +10864,6 @@ pub mod conformance_pack_evaluation_filters {
         }
     }
 }
-impl ConformancePackEvaluationFilters {
-    /// Creates a new builder-style object to manufacture [`ConformancePackEvaluationFilters`](crate::model::ConformancePackEvaluationFilters).
-    pub fn builder() -> crate::model::conformance_pack_evaluation_filters::Builder {
-        crate::model::conformance_pack_evaluation_filters::Builder::default()
-    }
-}
 
 /// <p>The number of Amazon Web Services resources of a specific type that are compliant or noncompliant, up to a maximum of 100 for each.</p>
 #[non_exhaustive]
@@ -10825,6 +10886,13 @@ impl ComplianceSummaryByResourceType {
         self.compliance_summary.as_ref()
     }
 }
+impl ComplianceSummaryByResourceType {
+    /// Creates a new builder-style object to manufacture [`ComplianceSummaryByResourceType`](crate::model::ComplianceSummaryByResourceType).
+    pub fn builder() -> crate::model::compliance_summary_by_resource_type::Builder {
+        crate::model::compliance_summary_by_resource_type::Builder::default()
+    }
+}
+
 /// See [`ComplianceSummaryByResourceType`](crate::model::ComplianceSummaryByResourceType).
 pub mod compliance_summary_by_resource_type {
 
@@ -10871,12 +10939,6 @@ pub mod compliance_summary_by_resource_type {
         }
     }
 }
-impl ComplianceSummaryByResourceType {
-    /// Creates a new builder-style object to manufacture [`ComplianceSummaryByResourceType`](crate::model::ComplianceSummaryByResourceType).
-    pub fn builder() -> crate::model::compliance_summary_by_resource_type::Builder {
-        crate::model::compliance_summary_by_resource_type::Builder::default()
-    }
-}
 
 /// <p>The number of Config rules or Amazon Web Services resources that are compliant and noncompliant.</p>
 #[non_exhaustive]
@@ -10910,6 +10972,13 @@ impl ComplianceSummary {
         self.compliance_summary_timestamp.as_ref()
     }
 }
+impl ComplianceSummary {
+    /// Creates a new builder-style object to manufacture [`ComplianceSummary`](crate::model::ComplianceSummary).
+    pub fn builder() -> crate::model::compliance_summary::Builder {
+        crate::model::compliance_summary::Builder::default()
+    }
+}
+
 /// See [`ComplianceSummary`](crate::model::ComplianceSummary).
 pub mod compliance_summary {
 
@@ -10979,12 +11048,6 @@ pub mod compliance_summary {
         }
     }
 }
-impl ComplianceSummary {
-    /// Creates a new builder-style object to manufacture [`ComplianceSummary`](crate::model::ComplianceSummary).
-    pub fn builder() -> crate::model::compliance_summary::Builder {
-        crate::model::compliance_summary::Builder::default()
-    }
-}
 
 /// <p>The number of Amazon Web Services resources or Config rules responsible for the current compliance of the item, up to a maximum number.</p>
 #[non_exhaustive]
@@ -11007,6 +11070,13 @@ impl ComplianceContributorCount {
         self.cap_exceeded
     }
 }
+impl ComplianceContributorCount {
+    /// Creates a new builder-style object to manufacture [`ComplianceContributorCount`](crate::model::ComplianceContributorCount).
+    pub fn builder() -> crate::model::compliance_contributor_count::Builder {
+        crate::model::compliance_contributor_count::Builder::default()
+    }
+}
+
 /// See [`ComplianceContributorCount`](crate::model::ComplianceContributorCount).
 pub mod compliance_contributor_count {
 
@@ -11045,12 +11115,6 @@ pub mod compliance_contributor_count {
                 cap_exceeded: self.cap_exceeded.unwrap_or_default(),
             }
         }
-    }
-}
-impl ComplianceContributorCount {
-    /// Creates a new builder-style object to manufacture [`ComplianceContributorCount`](crate::model::ComplianceContributorCount).
-    pub fn builder() -> crate::model::compliance_contributor_count::Builder {
-        crate::model::compliance_contributor_count::Builder::default()
     }
 }
 
@@ -11107,6 +11171,13 @@ impl EvaluationResult {
         self.result_token.as_deref()
     }
 }
+impl EvaluationResult {
+    /// Creates a new builder-style object to manufacture [`EvaluationResult`](crate::model::EvaluationResult).
+    pub fn builder() -> crate::model::evaluation_result::Builder {
+        crate::model::evaluation_result::Builder::default()
+    }
+}
+
 /// See [`EvaluationResult`](crate::model::EvaluationResult).
 pub mod evaluation_result {
 
@@ -11213,12 +11284,6 @@ pub mod evaluation_result {
         }
     }
 }
-impl EvaluationResult {
-    /// Creates a new builder-style object to manufacture [`EvaluationResult`](crate::model::EvaluationResult).
-    pub fn builder() -> crate::model::evaluation_result::Builder {
-        crate::model::evaluation_result::Builder::default()
-    }
-}
 
 /// <p>The count of resources that are grouped by the group name.</p>
 #[non_exhaustive]
@@ -11241,6 +11306,13 @@ impl GroupedResourceCount {
         self.resource_count
     }
 }
+impl GroupedResourceCount {
+    /// Creates a new builder-style object to manufacture [`GroupedResourceCount`](crate::model::GroupedResourceCount).
+    pub fn builder() -> crate::model::grouped_resource_count::Builder {
+        crate::model::grouped_resource_count::Builder::default()
+    }
+}
+
 /// See [`GroupedResourceCount`](crate::model::GroupedResourceCount).
 pub mod grouped_resource_count {
 
@@ -11279,12 +11351,6 @@ pub mod grouped_resource_count {
                 resource_count: self.resource_count.unwrap_or_default(),
             }
         }
-    }
-}
-impl GroupedResourceCount {
-    /// Creates a new builder-style object to manufacture [`GroupedResourceCount`](crate::model::GroupedResourceCount).
-    pub fn builder() -> crate::model::grouped_resource_count::Builder {
-        crate::model::grouped_resource_count::Builder::default()
     }
 }
 
@@ -11413,6 +11479,13 @@ impl ResourceCountFilters {
         self.region.as_deref()
     }
 }
+impl ResourceCountFilters {
+    /// Creates a new builder-style object to manufacture [`ResourceCountFilters`](crate::model::ResourceCountFilters).
+    pub fn builder() -> crate::model::resource_count_filters::Builder {
+        crate::model::resource_count_filters::Builder::default()
+    }
+}
+
 /// See [`ResourceCountFilters`](crate::model::ResourceCountFilters).
 pub mod resource_count_filters {
 
@@ -11468,12 +11541,6 @@ pub mod resource_count_filters {
         }
     }
 }
-impl ResourceCountFilters {
-    /// Creates a new builder-style object to manufacture [`ResourceCountFilters`](crate::model::ResourceCountFilters).
-    pub fn builder() -> crate::model::resource_count_filters::Builder {
-        crate::model::resource_count_filters::Builder::default()
-    }
-}
 
 /// <p>Provides a summary of compliance based on either account ID or region. </p>
 #[non_exhaustive]
@@ -11499,6 +11566,13 @@ impl AggregateConformancePackComplianceSummary {
         self.group_name.as_deref()
     }
 }
+impl AggregateConformancePackComplianceSummary {
+    /// Creates a new builder-style object to manufacture [`AggregateConformancePackComplianceSummary`](crate::model::AggregateConformancePackComplianceSummary).
+    pub fn builder() -> crate::model::aggregate_conformance_pack_compliance_summary::Builder {
+        crate::model::aggregate_conformance_pack_compliance_summary::Builder::default()
+    }
+}
+
 /// See [`AggregateConformancePackComplianceSummary`](crate::model::AggregateConformancePackComplianceSummary).
 pub mod aggregate_conformance_pack_compliance_summary {
 
@@ -11546,12 +11620,6 @@ pub mod aggregate_conformance_pack_compliance_summary {
         }
     }
 }
-impl AggregateConformancePackComplianceSummary {
-    /// Creates a new builder-style object to manufacture [`AggregateConformancePackComplianceSummary`](crate::model::AggregateConformancePackComplianceSummary).
-    pub fn builder() -> crate::model::aggregate_conformance_pack_compliance_summary::Builder {
-        crate::model::aggregate_conformance_pack_compliance_summary::Builder::default()
-    }
-}
 
 /// <p>The number of conformance packs that are compliant and noncompliant.</p>
 #[non_exhaustive]
@@ -11574,6 +11642,13 @@ impl AggregateConformancePackComplianceCount {
         self.non_compliant_conformance_pack_count
     }
 }
+impl AggregateConformancePackComplianceCount {
+    /// Creates a new builder-style object to manufacture [`AggregateConformancePackComplianceCount`](crate::model::AggregateConformancePackComplianceCount).
+    pub fn builder() -> crate::model::aggregate_conformance_pack_compliance_count::Builder {
+        crate::model::aggregate_conformance_pack_compliance_count::Builder::default()
+    }
+}
+
 /// See [`AggregateConformancePackComplianceCount`](crate::model::AggregateConformancePackComplianceCount).
 pub mod aggregate_conformance_pack_compliance_count {
 
@@ -11622,12 +11697,6 @@ pub mod aggregate_conformance_pack_compliance_count {
                     .unwrap_or_default(),
             }
         }
-    }
-}
-impl AggregateConformancePackComplianceCount {
-    /// Creates a new builder-style object to manufacture [`AggregateConformancePackComplianceCount`](crate::model::AggregateConformancePackComplianceCount).
-    pub fn builder() -> crate::model::aggregate_conformance_pack_compliance_count::Builder {
-        crate::model::aggregate_conformance_pack_compliance_count::Builder::default()
     }
 }
 
@@ -11744,6 +11813,14 @@ impl AggregateConformancePackComplianceSummaryFilters {
         self.aws_region.as_deref()
     }
 }
+impl AggregateConformancePackComplianceSummaryFilters {
+    /// Creates a new builder-style object to manufacture [`AggregateConformancePackComplianceSummaryFilters`](crate::model::AggregateConformancePackComplianceSummaryFilters).
+    pub fn builder() -> crate::model::aggregate_conformance_pack_compliance_summary_filters::Builder
+    {
+        crate::model::aggregate_conformance_pack_compliance_summary_filters::Builder::default()
+    }
+}
+
 /// See [`AggregateConformancePackComplianceSummaryFilters`](crate::model::AggregateConformancePackComplianceSummaryFilters).
 pub mod aggregate_conformance_pack_compliance_summary_filters {
 
@@ -11784,13 +11861,6 @@ pub mod aggregate_conformance_pack_compliance_summary_filters {
         }
     }
 }
-impl AggregateConformancePackComplianceSummaryFilters {
-    /// Creates a new builder-style object to manufacture [`AggregateConformancePackComplianceSummaryFilters`](crate::model::AggregateConformancePackComplianceSummaryFilters).
-    pub fn builder() -> crate::model::aggregate_conformance_pack_compliance_summary_filters::Builder
-    {
-        crate::model::aggregate_conformance_pack_compliance_summary_filters::Builder::default()
-    }
-}
 
 /// <p>Returns the number of compliant and noncompliant rules for one or more accounts and regions in an aggregator.</p>
 #[non_exhaustive]
@@ -11813,6 +11883,13 @@ impl AggregateComplianceCount {
         self.compliance_summary.as_ref()
     }
 }
+impl AggregateComplianceCount {
+    /// Creates a new builder-style object to manufacture [`AggregateComplianceCount`](crate::model::AggregateComplianceCount).
+    pub fn builder() -> crate::model::aggregate_compliance_count::Builder {
+        crate::model::aggregate_compliance_count::Builder::default()
+    }
+}
+
 /// See [`AggregateComplianceCount`](crate::model::AggregateComplianceCount).
 pub mod aggregate_compliance_count {
 
@@ -11854,12 +11931,6 @@ pub mod aggregate_compliance_count {
                 compliance_summary: self.compliance_summary,
             }
         }
-    }
-}
-impl AggregateComplianceCount {
-    /// Creates a new builder-style object to manufacture [`AggregateComplianceCount`](crate::model::AggregateComplianceCount).
-    pub fn builder() -> crate::model::aggregate_compliance_count::Builder {
-        crate::model::aggregate_compliance_count::Builder::default()
     }
 }
 
@@ -11976,6 +12047,13 @@ impl ConfigRuleComplianceSummaryFilters {
         self.aws_region.as_deref()
     }
 }
+impl ConfigRuleComplianceSummaryFilters {
+    /// Creates a new builder-style object to manufacture [`ConfigRuleComplianceSummaryFilters`](crate::model::ConfigRuleComplianceSummaryFilters).
+    pub fn builder() -> crate::model::config_rule_compliance_summary_filters::Builder {
+        crate::model::config_rule_compliance_summary_filters::Builder::default()
+    }
+}
+
 /// See [`ConfigRuleComplianceSummaryFilters`](crate::model::ConfigRuleComplianceSummaryFilters).
 pub mod config_rule_compliance_summary_filters {
 
@@ -12014,12 +12092,6 @@ pub mod config_rule_compliance_summary_filters {
                 aws_region: self.aws_region,
             }
         }
-    }
-}
-impl ConfigRuleComplianceSummaryFilters {
-    /// Creates a new builder-style object to manufacture [`ConfigRuleComplianceSummaryFilters`](crate::model::ConfigRuleComplianceSummaryFilters).
-    pub fn builder() -> crate::model::config_rule_compliance_summary_filters::Builder {
-        crate::model::config_rule_compliance_summary_filters::Builder::default()
     }
 }
 
@@ -12083,6 +12155,13 @@ impl AggregateEvaluationResult {
         self.aws_region.as_deref()
     }
 }
+impl AggregateEvaluationResult {
+    /// Creates a new builder-style object to manufacture [`AggregateEvaluationResult`](crate::model::AggregateEvaluationResult).
+    pub fn builder() -> crate::model::aggregate_evaluation_result::Builder {
+        crate::model::aggregate_evaluation_result::Builder::default()
+    }
+}
+
 /// See [`AggregateEvaluationResult`](crate::model::AggregateEvaluationResult).
 pub mod aggregate_evaluation_result {
 
@@ -12201,12 +12280,6 @@ pub mod aggregate_evaluation_result {
         }
     }
 }
-impl AggregateEvaluationResult {
-    /// Creates a new builder-style object to manufacture [`AggregateEvaluationResult`](crate::model::AggregateEvaluationResult).
-    pub fn builder() -> crate::model::aggregate_evaluation_result::Builder {
-        crate::model::aggregate_evaluation_result::Builder::default()
-    }
-}
 
 /// <p>Provides details of the current status of the invoked remediation action for that resource.</p>
 #[non_exhaustive]
@@ -12250,6 +12323,13 @@ impl RemediationExecutionStatus {
         self.last_updated_time.as_ref()
     }
 }
+impl RemediationExecutionStatus {
+    /// Creates a new builder-style object to manufacture [`RemediationExecutionStatus`](crate::model::RemediationExecutionStatus).
+    pub fn builder() -> crate::model::remediation_execution_status::Builder {
+        crate::model::remediation_execution_status::Builder::default()
+    }
+}
+
 /// See [`RemediationExecutionStatus`](crate::model::RemediationExecutionStatus).
 pub mod remediation_execution_status {
 
@@ -12348,12 +12428,6 @@ pub mod remediation_execution_status {
         }
     }
 }
-impl RemediationExecutionStatus {
-    /// Creates a new builder-style object to manufacture [`RemediationExecutionStatus`](crate::model::RemediationExecutionStatus).
-    pub fn builder() -> crate::model::remediation_execution_status::Builder {
-        crate::model::remediation_execution_status::Builder::default()
-    }
-}
 
 /// <p>Name of the step from the SSM document.</p>
 #[non_exhaustive]
@@ -12397,6 +12471,13 @@ impl RemediationExecutionStep {
         self.stop_time.as_ref()
     }
 }
+impl RemediationExecutionStep {
+    /// Creates a new builder-style object to manufacture [`RemediationExecutionStep`](crate::model::RemediationExecutionStep).
+    pub fn builder() -> crate::model::remediation_execution_step::Builder {
+        crate::model::remediation_execution_step::Builder::default()
+    }
+}
+
 /// See [`RemediationExecutionStep`](crate::model::RemediationExecutionStep).
 pub mod remediation_execution_step {
 
@@ -12483,12 +12564,6 @@ pub mod remediation_execution_step {
                 stop_time: self.stop_time,
             }
         }
-    }
-}
-impl RemediationExecutionStep {
-    /// Creates a new builder-style object to manufacture [`RemediationExecutionStep`](crate::model::RemediationExecutionStep).
-    pub fn builder() -> crate::model::remediation_execution_step::Builder {
-        crate::model::remediation_execution_step::Builder::default()
     }
 }
 
@@ -12712,6 +12787,13 @@ impl PendingAggregationRequest {
         self.requester_aws_region.as_deref()
     }
 }
+impl PendingAggregationRequest {
+    /// Creates a new builder-style object to manufacture [`PendingAggregationRequest`](crate::model::PendingAggregationRequest).
+    pub fn builder() -> crate::model::pending_aggregation_request::Builder {
+        crate::model::pending_aggregation_request::Builder::default()
+    }
+}
+
 /// See [`PendingAggregationRequest`](crate::model::PendingAggregationRequest).
 pub mod pending_aggregation_request {
 
@@ -12756,12 +12838,6 @@ pub mod pending_aggregation_request {
                 requester_aws_region: self.requester_aws_region,
             }
         }
-    }
-}
-impl PendingAggregationRequest {
-    /// Creates a new builder-style object to manufacture [`PendingAggregationRequest`](crate::model::PendingAggregationRequest).
-    pub fn builder() -> crate::model::pending_aggregation_request::Builder {
-        crate::model::pending_aggregation_request::Builder::default()
     }
 }
 
@@ -12831,6 +12907,13 @@ impl OrganizationConformancePackStatus {
         self.last_update_time.as_ref()
     }
 }
+impl OrganizationConformancePackStatus {
+    /// Creates a new builder-style object to manufacture [`OrganizationConformancePackStatus`](crate::model::OrganizationConformancePackStatus).
+    pub fn builder() -> crate::model::organization_conformance_pack_status::Builder {
+        crate::model::organization_conformance_pack_status::Builder::default()
+    }
+}
+
 /// See [`OrganizationConformancePackStatus`](crate::model::OrganizationConformancePackStatus).
 pub mod organization_conformance_pack_status {
 
@@ -12944,12 +13027,6 @@ pub mod organization_conformance_pack_status {
                 last_update_time: self.last_update_time,
             }
         }
-    }
-}
-impl OrganizationConformancePackStatus {
-    /// Creates a new builder-style object to manufacture [`OrganizationConformancePackStatus`](crate::model::OrganizationConformancePackStatus).
-    pub fn builder() -> crate::model::organization_conformance_pack_status::Builder {
-        crate::model::organization_conformance_pack_status::Builder::default()
     }
 }
 
@@ -13157,6 +13234,13 @@ impl OrganizationConformancePack {
         self.last_update_time.as_ref()
     }
 }
+impl OrganizationConformancePack {
+    /// Creates a new builder-style object to manufacture [`OrganizationConformancePack`](crate::model::OrganizationConformancePack).
+    pub fn builder() -> crate::model::organization_conformance_pack::Builder {
+        crate::model::organization_conformance_pack::Builder::default()
+    }
+}
+
 /// See [`OrganizationConformancePack`](crate::model::OrganizationConformancePack).
 pub mod organization_conformance_pack {
 
@@ -13308,12 +13392,6 @@ pub mod organization_conformance_pack {
         }
     }
 }
-impl OrganizationConformancePack {
-    /// Creates a new builder-style object to manufacture [`OrganizationConformancePack`](crate::model::OrganizationConformancePack).
-    pub fn builder() -> crate::model::organization_conformance_pack::Builder {
-        crate::model::organization_conformance_pack::Builder::default()
-    }
-}
 
 /// <p>Returns the status for an organization Config rule in an organization.</p>
 #[non_exhaustive]
@@ -13383,6 +13461,13 @@ impl OrganizationConfigRuleStatus {
         self.last_update_time.as_ref()
     }
 }
+impl OrganizationConfigRuleStatus {
+    /// Creates a new builder-style object to manufacture [`OrganizationConfigRuleStatus`](crate::model::OrganizationConfigRuleStatus).
+    pub fn builder() -> crate::model::organization_config_rule_status::Builder {
+        crate::model::organization_config_rule_status::Builder::default()
+    }
+}
+
 /// See [`OrganizationConfigRuleStatus`](crate::model::OrganizationConfigRuleStatus).
 pub mod organization_config_rule_status {
 
@@ -13500,12 +13585,6 @@ pub mod organization_config_rule_status {
                 last_update_time: self.last_update_time,
             }
         }
-    }
-}
-impl OrganizationConfigRuleStatus {
-    /// Creates a new builder-style object to manufacture [`OrganizationConfigRuleStatus`](crate::model::OrganizationConfigRuleStatus).
-    pub fn builder() -> crate::model::organization_config_rule_status::Builder {
-        crate::model::organization_config_rule_status::Builder::default()
     }
 }
 
@@ -13711,6 +13790,13 @@ impl OrganizationConfigRule {
         self.organization_custom_policy_rule_metadata.as_ref()
     }
 }
+impl OrganizationConfigRule {
+    /// Creates a new builder-style object to manufacture [`OrganizationConfigRule`](crate::model::OrganizationConfigRule).
+    pub fn builder() -> crate::model::organization_config_rule::Builder {
+        crate::model::organization_config_rule::Builder::default()
+    }
+}
+
 /// See [`OrganizationConfigRule`](crate::model::OrganizationConfigRule).
 pub mod organization_config_rule {
 
@@ -13857,12 +13943,6 @@ pub mod organization_config_rule {
         }
     }
 }
-impl OrganizationConfigRule {
-    /// Creates a new builder-style object to manufacture [`OrganizationConfigRule`](crate::model::OrganizationConfigRule).
-    pub fn builder() -> crate::model::organization_config_rule::Builder {
-        crate::model::organization_config_rule::Builder::default()
-    }
-}
 
 /// <p>An object that specifies metadata for your organization Config Custom Policy rule including the runtime system in use, which accounts have debug logging enabled, and other custom rule metadata such as resource type, resource ID of Amazon Web Services resource, and organization trigger types that trigger Config to evaluate Amazon Web Services resources against a rule.</p>
 #[non_exhaustive]
@@ -13954,6 +14034,13 @@ impl OrganizationCustomPolicyRuleMetadataNoPolicy {
         self.debug_log_delivery_accounts.as_deref()
     }
 }
+impl OrganizationCustomPolicyRuleMetadataNoPolicy {
+    /// Creates a new builder-style object to manufacture [`OrganizationCustomPolicyRuleMetadataNoPolicy`](crate::model::OrganizationCustomPolicyRuleMetadataNoPolicy).
+    pub fn builder() -> crate::model::organization_custom_policy_rule_metadata_no_policy::Builder {
+        crate::model::organization_custom_policy_rule_metadata_no_policy::Builder::default()
+    }
+}
+
 /// See [`OrganizationCustomPolicyRuleMetadataNoPolicy`](crate::model::OrganizationCustomPolicyRuleMetadataNoPolicy).
 pub mod organization_custom_policy_rule_metadata_no_policy {
 
@@ -14159,12 +14246,6 @@ pub mod organization_custom_policy_rule_metadata_no_policy {
         }
     }
 }
-impl OrganizationCustomPolicyRuleMetadataNoPolicy {
-    /// Creates a new builder-style object to manufacture [`OrganizationCustomPolicyRuleMetadataNoPolicy`](crate::model::OrganizationCustomPolicyRuleMetadataNoPolicy).
-    pub fn builder() -> crate::model::organization_custom_policy_rule_metadata_no_policy::Builder {
-        crate::model::organization_custom_policy_rule_metadata_no_policy::Builder::default()
-    }
-}
 
 /// <p>The status of a specified delivery channel.</p>
 /// <p>Valid values: <code>Success</code> | <code>Failure</code> </p>
@@ -14208,6 +14289,13 @@ impl DeliveryChannelStatus {
         self.config_stream_delivery_info.as_ref()
     }
 }
+impl DeliveryChannelStatus {
+    /// Creates a new builder-style object to manufacture [`DeliveryChannelStatus`](crate::model::DeliveryChannelStatus).
+    pub fn builder() -> crate::model::delivery_channel_status::Builder {
+        crate::model::delivery_channel_status::Builder::default()
+    }
+}
+
 /// See [`DeliveryChannelStatus`](crate::model::DeliveryChannelStatus).
 pub mod delivery_channel_status {
 
@@ -14293,12 +14381,6 @@ pub mod delivery_channel_status {
         }
     }
 }
-impl DeliveryChannelStatus {
-    /// Creates a new builder-style object to manufacture [`DeliveryChannelStatus`](crate::model::DeliveryChannelStatus).
-    pub fn builder() -> crate::model::delivery_channel_status::Builder {
-        crate::model::delivery_channel_status::Builder::default()
-    }
-}
 
 /// <p>A list that contains the status of the delivery of the configuration stream notification to the Amazon SNS topic.</p>
 #[non_exhaustive]
@@ -14337,6 +14419,13 @@ impl ConfigStreamDeliveryInfo {
         self.last_status_change_time.as_ref()
     }
 }
+impl ConfigStreamDeliveryInfo {
+    /// Creates a new builder-style object to manufacture [`ConfigStreamDeliveryInfo`](crate::model::ConfigStreamDeliveryInfo).
+    pub fn builder() -> crate::model::config_stream_delivery_info::Builder {
+        crate::model::config_stream_delivery_info::Builder::default()
+    }
+}
+
 /// See [`ConfigStreamDeliveryInfo`](crate::model::ConfigStreamDeliveryInfo).
 pub mod config_stream_delivery_info {
 
@@ -14413,12 +14502,6 @@ pub mod config_stream_delivery_info {
                 last_status_change_time: self.last_status_change_time,
             }
         }
-    }
-}
-impl ConfigStreamDeliveryInfo {
-    /// Creates a new builder-style object to manufacture [`ConfigStreamDeliveryInfo`](crate::model::ConfigStreamDeliveryInfo).
-    pub fn builder() -> crate::model::config_stream_delivery_info::Builder {
-        crate::model::config_stream_delivery_info::Builder::default()
     }
 }
 
@@ -14566,6 +14649,13 @@ impl ConfigExportDeliveryInfo {
         self.next_delivery_time.as_ref()
     }
 }
+impl ConfigExportDeliveryInfo {
+    /// Creates a new builder-style object to manufacture [`ConfigExportDeliveryInfo`](crate::model::ConfigExportDeliveryInfo).
+    pub fn builder() -> crate::model::config_export_delivery_info::Builder {
+        crate::model::config_export_delivery_info::Builder::default()
+    }
+}
+
 /// See [`ConfigExportDeliveryInfo`](crate::model::ConfigExportDeliveryInfo).
 pub mod config_export_delivery_info {
 
@@ -14672,12 +14762,6 @@ pub mod config_export_delivery_info {
         }
     }
 }
-impl ConfigExportDeliveryInfo {
-    /// Creates a new builder-style object to manufacture [`ConfigExportDeliveryInfo`](crate::model::ConfigExportDeliveryInfo).
-    pub fn builder() -> crate::model::config_export_delivery_info::Builder {
-        crate::model::config_export_delivery_info::Builder::default()
-    }
-}
 
 /// <p>Status details of a conformance pack.</p>
 #[non_exhaustive]
@@ -14760,6 +14844,13 @@ impl ConformancePackStatusDetail {
         self.last_update_completed_time.as_ref()
     }
 }
+impl ConformancePackStatusDetail {
+    /// Creates a new builder-style object to manufacture [`ConformancePackStatusDetail`](crate::model::ConformancePackStatusDetail).
+    pub fn builder() -> crate::model::conformance_pack_status_detail::Builder {
+        crate::model::conformance_pack_status_detail::Builder::default()
+    }
+}
+
 /// See [`ConformancePackStatusDetail`](crate::model::ConformancePackStatusDetail).
 pub mod conformance_pack_status_detail {
 
@@ -14910,12 +15001,6 @@ pub mod conformance_pack_status_detail {
                 last_update_completed_time: self.last_update_completed_time,
             }
         }
-    }
-}
-impl ConformancePackStatusDetail {
-    /// Creates a new builder-style object to manufacture [`ConformancePackStatusDetail`](crate::model::ConformancePackStatusDetail).
-    pub fn builder() -> crate::model::conformance_pack_status_detail::Builder {
-        crate::model::conformance_pack_status_detail::Builder::default()
     }
 }
 
@@ -15116,6 +15201,13 @@ impl ConformancePackDetail {
         self.template_ssm_document_details.as_ref()
     }
 }
+impl ConformancePackDetail {
+    /// Creates a new builder-style object to manufacture [`ConformancePackDetail`](crate::model::ConformancePackDetail).
+    pub fn builder() -> crate::model::conformance_pack_detail::Builder {
+        crate::model::conformance_pack_detail::Builder::default()
+    }
+}
+
 /// See [`ConformancePackDetail`](crate::model::ConformancePackDetail).
 pub mod conformance_pack_detail {
 
@@ -15286,12 +15378,6 @@ pub mod conformance_pack_detail {
         }
     }
 }
-impl ConformancePackDetail {
-    /// Creates a new builder-style object to manufacture [`ConformancePackDetail`](crate::model::ConformancePackDetail).
-    pub fn builder() -> crate::model::conformance_pack_detail::Builder {
-        crate::model::conformance_pack_detail::Builder::default()
-    }
-}
 
 /// <p>Compliance information of one or more Config rules within a conformance pack. You can filter using Config rule names and compliance types.</p>
 #[non_exhaustive]
@@ -15325,6 +15411,13 @@ impl ConformancePackRuleCompliance {
         self.controls.as_deref()
     }
 }
+impl ConformancePackRuleCompliance {
+    /// Creates a new builder-style object to manufacture [`ConformancePackRuleCompliance`](crate::model::ConformancePackRuleCompliance).
+    pub fn builder() -> crate::model::conformance_pack_rule_compliance::Builder {
+        crate::model::conformance_pack_rule_compliance::Builder::default()
+    }
+}
+
 /// See [`ConformancePackRuleCompliance`](crate::model::ConformancePackRuleCompliance).
 pub mod conformance_pack_rule_compliance {
 
@@ -15398,12 +15491,6 @@ pub mod conformance_pack_rule_compliance {
         }
     }
 }
-impl ConformancePackRuleCompliance {
-    /// Creates a new builder-style object to manufacture [`ConformancePackRuleCompliance`](crate::model::ConformancePackRuleCompliance).
-    pub fn builder() -> crate::model::conformance_pack_rule_compliance::Builder {
-        crate::model::conformance_pack_rule_compliance::Builder::default()
-    }
-}
 
 /// <p>Filters the conformance pack by compliance types and Config rule names.</p>
 #[non_exhaustive]
@@ -15430,6 +15517,13 @@ impl ConformancePackComplianceFilters {
         self.compliance_type.as_ref()
     }
 }
+impl ConformancePackComplianceFilters {
+    /// Creates a new builder-style object to manufacture [`ConformancePackComplianceFilters`](crate::model::ConformancePackComplianceFilters).
+    pub fn builder() -> crate::model::conformance_pack_compliance_filters::Builder {
+        crate::model::conformance_pack_compliance_filters::Builder::default()
+    }
+}
+
 /// See [`ConformancePackComplianceFilters`](crate::model::ConformancePackComplianceFilters).
 pub mod conformance_pack_compliance_filters {
 
@@ -15486,12 +15580,6 @@ pub mod conformance_pack_compliance_filters {
                 compliance_type: self.compliance_type,
             }
         }
-    }
-}
-impl ConformancePackComplianceFilters {
-    /// Creates a new builder-style object to manufacture [`ConformancePackComplianceFilters`](crate::model::ConformancePackComplianceFilters).
-    pub fn builder() -> crate::model::conformance_pack_compliance_filters::Builder {
-        crate::model::conformance_pack_compliance_filters::Builder::default()
     }
 }
 
@@ -15558,6 +15646,13 @@ impl ConfigurationRecorderStatus {
         self.last_status_change_time.as_ref()
     }
 }
+impl ConfigurationRecorderStatus {
+    /// Creates a new builder-style object to manufacture [`ConfigurationRecorderStatus`](crate::model::ConfigurationRecorderStatus).
+    pub fn builder() -> crate::model::configuration_recorder_status::Builder {
+        crate::model::configuration_recorder_status::Builder::default()
+    }
+}
+
 /// See [`ConfigurationRecorderStatus`](crate::model::ConfigurationRecorderStatus).
 pub mod configuration_recorder_status {
 
@@ -15686,12 +15781,6 @@ pub mod configuration_recorder_status {
                 last_status_change_time: self.last_status_change_time,
             }
         }
-    }
-}
-impl ConfigurationRecorderStatus {
-    /// Creates a new builder-style object to manufacture [`ConfigurationRecorderStatus`](crate::model::ConfigurationRecorderStatus).
-    pub fn builder() -> crate::model::configuration_recorder_status::Builder {
-        crate::model::configuration_recorder_status::Builder::default()
     }
 }
 
@@ -15858,6 +15947,13 @@ impl AggregatedSourceStatus {
         self.last_error_message.as_deref()
     }
 }
+impl AggregatedSourceStatus {
+    /// Creates a new builder-style object to manufacture [`AggregatedSourceStatus`](crate::model::AggregatedSourceStatus).
+    pub fn builder() -> crate::model::aggregated_source_status::Builder {
+        crate::model::aggregated_source_status::Builder::default()
+    }
+}
+
 /// See [`AggregatedSourceStatus`](crate::model::AggregatedSourceStatus).
 pub mod aggregated_source_status {
 
@@ -15985,12 +16081,6 @@ pub mod aggregated_source_status {
                 last_error_message: self.last_error_message,
             }
         }
-    }
-}
-impl AggregatedSourceStatus {
-    /// Creates a new builder-style object to manufacture [`AggregatedSourceStatus`](crate::model::AggregatedSourceStatus).
-    pub fn builder() -> crate::model::aggregated_source_status::Builder {
-        crate::model::aggregated_source_status::Builder::default()
     }
 }
 
@@ -16197,6 +16287,13 @@ impl DescribeConfigRulesFilters {
         self.evaluation_mode.as_ref()
     }
 }
+impl DescribeConfigRulesFilters {
+    /// Creates a new builder-style object to manufacture [`DescribeConfigRulesFilters`](crate::model::DescribeConfigRulesFilters).
+    pub fn builder() -> crate::model::describe_config_rules_filters::Builder {
+        crate::model::describe_config_rules_filters::Builder::default()
+    }
+}
+
 /// See [`DescribeConfigRulesFilters`](crate::model::DescribeConfigRulesFilters).
 pub mod describe_config_rules_filters {
 
@@ -16226,12 +16323,6 @@ pub mod describe_config_rules_filters {
                 evaluation_mode: self.evaluation_mode,
             }
         }
-    }
-}
-impl DescribeConfigRulesFilters {
-    /// Creates a new builder-style object to manufacture [`DescribeConfigRulesFilters`](crate::model::DescribeConfigRulesFilters).
-    pub fn builder() -> crate::model::describe_config_rules_filters::Builder {
-        crate::model::describe_config_rules_filters::Builder::default()
     }
 }
 
@@ -16360,6 +16451,13 @@ impl ConfigRuleEvaluationStatus {
         self.last_debug_log_delivery_time.as_ref()
     }
 }
+impl ConfigRuleEvaluationStatus {
+    /// Creates a new builder-style object to manufacture [`ConfigRuleEvaluationStatus`](crate::model::ConfigRuleEvaluationStatus).
+    pub fn builder() -> crate::model::config_rule_evaluation_status::Builder {
+        crate::model::config_rule_evaluation_status::Builder::default()
+    }
+}
+
 /// See [`ConfigRuleEvaluationStatus`](crate::model::ConfigRuleEvaluationStatus).
 pub mod config_rule_evaluation_status {
 
@@ -16618,12 +16716,6 @@ pub mod config_rule_evaluation_status {
         }
     }
 }
-impl ConfigRuleEvaluationStatus {
-    /// Creates a new builder-style object to manufacture [`ConfigRuleEvaluationStatus`](crate::model::ConfigRuleEvaluationStatus).
-    pub fn builder() -> crate::model::config_rule_evaluation_status::Builder {
-        crate::model::config_rule_evaluation_status::Builder::default()
-    }
-}
 
 /// <p>Indicates whether an Amazon Web Services resource that is evaluated according to one or more Config rules is compliant. A resource is compliant if it complies with all of the rules that evaluate it. A resource is noncompliant if it does not comply with one or more of these rules.</p>
 #[non_exhaustive]
@@ -16653,6 +16745,13 @@ impl ComplianceByResource {
         self.compliance.as_ref()
     }
 }
+impl ComplianceByResource {
+    /// Creates a new builder-style object to manufacture [`ComplianceByResource`](crate::model::ComplianceByResource).
+    pub fn builder() -> crate::model::compliance_by_resource::Builder {
+        crate::model::compliance_by_resource::Builder::default()
+    }
+}
+
 /// See [`ComplianceByResource`](crate::model::ComplianceByResource).
 pub mod compliance_by_resource {
 
@@ -16711,12 +16810,6 @@ pub mod compliance_by_resource {
         }
     }
 }
-impl ComplianceByResource {
-    /// Creates a new builder-style object to manufacture [`ComplianceByResource`](crate::model::ComplianceByResource).
-    pub fn builder() -> crate::model::compliance_by_resource::Builder {
-        crate::model::compliance_by_resource::Builder::default()
-    }
-}
 
 /// <p>Indicates whether an Amazon Web Services resource or Config rule is compliant and provides the number of contributors that affect the compliance.</p>
 #[non_exhaustive]
@@ -16749,6 +16842,13 @@ impl Compliance {
         self.compliance_contributor_count.as_ref()
     }
 }
+impl Compliance {
+    /// Creates a new builder-style object to manufacture [`Compliance`](crate::model::Compliance).
+    pub fn builder() -> crate::model::compliance::Builder {
+        crate::model::compliance::Builder::default()
+    }
+}
+
 /// See [`Compliance`](crate::model::Compliance).
 pub mod compliance {
 
@@ -16807,12 +16907,6 @@ pub mod compliance {
         }
     }
 }
-impl Compliance {
-    /// Creates a new builder-style object to manufacture [`Compliance`](crate::model::Compliance).
-    pub fn builder() -> crate::model::compliance::Builder {
-        crate::model::compliance::Builder::default()
-    }
-}
 
 /// <p>Indicates whether an Config rule is compliant. A rule is compliant if all of the resources that the rule evaluated comply with it. A rule is noncompliant if any of these resources do not comply.</p>
 #[non_exhaustive]
@@ -16835,6 +16929,13 @@ impl ComplianceByConfigRule {
         self.compliance.as_ref()
     }
 }
+impl ComplianceByConfigRule {
+    /// Creates a new builder-style object to manufacture [`ComplianceByConfigRule`](crate::model::ComplianceByConfigRule).
+    pub fn builder() -> crate::model::compliance_by_config_rule::Builder {
+        crate::model::compliance_by_config_rule::Builder::default()
+    }
+}
+
 /// See [`ComplianceByConfigRule`](crate::model::ComplianceByConfigRule).
 pub mod compliance_by_config_rule {
 
@@ -16881,12 +16982,6 @@ pub mod compliance_by_config_rule {
         }
     }
 }
-impl ComplianceByConfigRule {
-    /// Creates a new builder-style object to manufacture [`ComplianceByConfigRule`](crate::model::ComplianceByConfigRule).
-    pub fn builder() -> crate::model::compliance_by_config_rule::Builder {
-        crate::model::compliance_by_config_rule::Builder::default()
-    }
-}
 
 /// <p>Provides aggregate compliance of the conformance pack. Indicates whether a conformance pack is compliant based on the name of the conformance pack, account ID, and region.</p>
 /// <p>A conformance pack is compliant if all of the rules in a conformance packs are compliant. It is noncompliant if any of the rules are not compliant. The compliance status of a conformance pack is INSUFFICIENT_DATA only if all rules within a conformance pack cannot be evaluated due to insufficient data. If some of the rules in a conformance pack are compliant but the compliance status of other rules in that same conformance pack is INSUFFICIENT_DATA, the conformance pack shows compliant.</p>
@@ -16926,6 +17021,13 @@ impl AggregateComplianceByConformancePack {
         self.aws_region.as_deref()
     }
 }
+impl AggregateComplianceByConformancePack {
+    /// Creates a new builder-style object to manufacture [`AggregateComplianceByConformancePack`](crate::model::AggregateComplianceByConformancePack).
+    pub fn builder() -> crate::model::aggregate_compliance_by_conformance_pack::Builder {
+        crate::model::aggregate_compliance_by_conformance_pack::Builder::default()
+    }
+}
+
 /// See [`AggregateComplianceByConformancePack`](crate::model::AggregateComplianceByConformancePack).
 pub mod aggregate_compliance_by_conformance_pack {
 
@@ -17000,12 +17102,6 @@ pub mod aggregate_compliance_by_conformance_pack {
         }
     }
 }
-impl AggregateComplianceByConformancePack {
-    /// Creates a new builder-style object to manufacture [`AggregateComplianceByConformancePack`](crate::model::AggregateComplianceByConformancePack).
-    pub fn builder() -> crate::model::aggregate_compliance_by_conformance_pack::Builder {
-        crate::model::aggregate_compliance_by_conformance_pack::Builder::default()
-    }
-}
 
 /// <p>Provides the number of compliant and noncompliant rules within a conformance pack. Also provides the compliance status of the conformance pack and the total rule count which includes compliant rules, noncompliant rules, and rules that cannot be evaluated due to insufficient data.</p>
 /// <p>A conformance pack is compliant if all of the rules in a conformance packs are compliant. It is noncompliant if any of the rules are not compliant. The compliance status of a conformance pack is INSUFFICIENT_DATA only if all rules within a conformance pack cannot be evaluated due to insufficient data. If some of the rules in a conformance pack are compliant but the compliance status of other rules in that same conformance pack is INSUFFICIENT_DATA, the conformance pack shows compliant.</p>
@@ -17045,6 +17141,13 @@ impl AggregateConformancePackCompliance {
         self.total_rule_count
     }
 }
+impl AggregateConformancePackCompliance {
+    /// Creates a new builder-style object to manufacture [`AggregateConformancePackCompliance`](crate::model::AggregateConformancePackCompliance).
+    pub fn builder() -> crate::model::aggregate_conformance_pack_compliance::Builder {
+        crate::model::aggregate_conformance_pack_compliance::Builder::default()
+    }
+}
+
 /// See [`AggregateConformancePackCompliance`](crate::model::AggregateConformancePackCompliance).
 pub mod aggregate_conformance_pack_compliance {
 
@@ -17116,12 +17219,6 @@ pub mod aggregate_conformance_pack_compliance {
         }
     }
 }
-impl AggregateConformancePackCompliance {
-    /// Creates a new builder-style object to manufacture [`AggregateConformancePackCompliance`](crate::model::AggregateConformancePackCompliance).
-    pub fn builder() -> crate::model::aggregate_conformance_pack_compliance::Builder {
-        crate::model::aggregate_conformance_pack_compliance::Builder::default()
-    }
-}
 
 /// <p>Filters the conformance packs based on an account ID, region, compliance type, and the name of the conformance pack.</p>
 #[non_exhaustive]
@@ -17160,6 +17257,13 @@ impl AggregateConformancePackComplianceFilters {
         self.aws_region.as_deref()
     }
 }
+impl AggregateConformancePackComplianceFilters {
+    /// Creates a new builder-style object to manufacture [`AggregateConformancePackComplianceFilters`](crate::model::AggregateConformancePackComplianceFilters).
+    pub fn builder() -> crate::model::aggregate_conformance_pack_compliance_filters::Builder {
+        crate::model::aggregate_conformance_pack_compliance_filters::Builder::default()
+    }
+}
+
 /// See [`AggregateConformancePackComplianceFilters`](crate::model::AggregateConformancePackComplianceFilters).
 pub mod aggregate_conformance_pack_compliance_filters {
 
@@ -17234,12 +17338,6 @@ pub mod aggregate_conformance_pack_compliance_filters {
         }
     }
 }
-impl AggregateConformancePackComplianceFilters {
-    /// Creates a new builder-style object to manufacture [`AggregateConformancePackComplianceFilters`](crate::model::AggregateConformancePackComplianceFilters).
-    pub fn builder() -> crate::model::aggregate_conformance_pack_compliance_filters::Builder {
-        crate::model::aggregate_conformance_pack_compliance_filters::Builder::default()
-    }
-}
 
 /// <p>Indicates whether an Config rule is compliant based on account ID, region, compliance, and rule name.</p>
 /// <p>A rule is compliant if all of the resources that the rule evaluated comply with it. It is noncompliant if any of these resources do not comply.</p>
@@ -17277,6 +17375,13 @@ impl AggregateComplianceByConfigRule {
         self.aws_region.as_deref()
     }
 }
+impl AggregateComplianceByConfigRule {
+    /// Creates a new builder-style object to manufacture [`AggregateComplianceByConfigRule`](crate::model::AggregateComplianceByConfigRule).
+    pub fn builder() -> crate::model::aggregate_compliance_by_config_rule::Builder {
+        crate::model::aggregate_compliance_by_config_rule::Builder::default()
+    }
+}
+
 /// See [`AggregateComplianceByConfigRule`](crate::model::AggregateComplianceByConfigRule).
 pub mod aggregate_compliance_by_config_rule {
 
@@ -17347,12 +17452,6 @@ pub mod aggregate_compliance_by_config_rule {
         }
     }
 }
-impl AggregateComplianceByConfigRule {
-    /// Creates a new builder-style object to manufacture [`AggregateComplianceByConfigRule`](crate::model::AggregateComplianceByConfigRule).
-    pub fn builder() -> crate::model::aggregate_compliance_by_config_rule::Builder {
-        crate::model::aggregate_compliance_by_config_rule::Builder::default()
-    }
-}
 
 /// <p>Filters the compliance results based on account ID, region, compliance type, and rule name.</p>
 #[non_exhaustive]
@@ -17391,6 +17490,13 @@ impl ConfigRuleComplianceFilters {
         self.aws_region.as_deref()
     }
 }
+impl ConfigRuleComplianceFilters {
+    /// Creates a new builder-style object to manufacture [`ConfigRuleComplianceFilters`](crate::model::ConfigRuleComplianceFilters).
+    pub fn builder() -> crate::model::config_rule_compliance_filters::Builder {
+        crate::model::config_rule_compliance_filters::Builder::default()
+    }
+}
+
 /// See [`ConfigRuleComplianceFilters`](crate::model::ConfigRuleComplianceFilters).
 pub mod config_rule_compliance_filters {
 
@@ -17463,12 +17569,6 @@ pub mod config_rule_compliance_filters {
         }
     }
 }
-impl ConfigRuleComplianceFilters {
-    /// Creates a new builder-style object to manufacture [`ConfigRuleComplianceFilters`](crate::model::ConfigRuleComplianceFilters).
-    pub fn builder() -> crate::model::config_rule_compliance_filters::Builder {
-        crate::model::config_rule_compliance_filters::Builder::default()
-    }
-}
 
 /// <p>List of each of the failed delete remediation exceptions with specific reasons.</p>
 #[non_exhaustive]
@@ -17494,6 +17594,13 @@ impl FailedDeleteRemediationExceptionsBatch {
         self.failed_items.as_deref()
     }
 }
+impl FailedDeleteRemediationExceptionsBatch {
+    /// Creates a new builder-style object to manufacture [`FailedDeleteRemediationExceptionsBatch`](crate::model::FailedDeleteRemediationExceptionsBatch).
+    pub fn builder() -> crate::model::failed_delete_remediation_exceptions_batch::Builder {
+        crate::model::failed_delete_remediation_exceptions_batch::Builder::default()
+    }
+}
+
 /// See [`FailedDeleteRemediationExceptionsBatch`](crate::model::FailedDeleteRemediationExceptionsBatch).
 pub mod failed_delete_remediation_exceptions_batch {
 
@@ -17550,12 +17657,6 @@ pub mod failed_delete_remediation_exceptions_batch {
                 failed_items: self.failed_items,
             }
         }
-    }
-}
-impl FailedDeleteRemediationExceptionsBatch {
-    /// Creates a new builder-style object to manufacture [`FailedDeleteRemediationExceptionsBatch`](crate::model::FailedDeleteRemediationExceptionsBatch).
-    pub fn builder() -> crate::model::failed_delete_remediation_exceptions_batch::Builder {
-        crate::model::failed_delete_remediation_exceptions_batch::Builder::default()
     }
 }
 
@@ -17690,6 +17791,13 @@ impl BaseConfigurationItem {
         self.supplementary_configuration.as_ref()
     }
 }
+impl BaseConfigurationItem {
+    /// Creates a new builder-style object to manufacture [`BaseConfigurationItem`](crate::model::BaseConfigurationItem).
+    pub fn builder() -> crate::model::base_configuration_item::Builder {
+        crate::model::base_configuration_item::Builder::default()
+    }
+}
+
 /// See [`BaseConfigurationItem`](crate::model::BaseConfigurationItem).
 pub mod base_configuration_item {
 
@@ -17938,11 +18046,5 @@ pub mod base_configuration_item {
                 supplementary_configuration: self.supplementary_configuration,
             }
         }
-    }
-}
-impl BaseConfigurationItem {
-    /// Creates a new builder-style object to manufacture [`BaseConfigurationItem`](crate::model::BaseConfigurationItem).
-    pub fn builder() -> crate::model::base_configuration_item::Builder {
-        crate::model::base_configuration_item::Builder::default()
     }
 }

@@ -14,6 +14,13 @@ impl VerificationResponse {
         self.valid
     }
 }
+impl VerificationResponse {
+    /// Creates a new builder-style object to manufacture [`VerificationResponse`](crate::model::VerificationResponse).
+    pub fn builder() -> crate::model::verification_response::Builder {
+        crate::model::verification_response::Builder::default()
+    }
+}
+
 /// See [`VerificationResponse`](crate::model::VerificationResponse).
 pub mod verification_response {
 
@@ -40,12 +47,6 @@ pub mod verification_response {
                 valid: self.valid.unwrap_or_default(),
             }
         }
-    }
-}
-impl VerificationResponse {
-    /// Creates a new builder-style object to manufacture [`VerificationResponse`](crate::model::VerificationResponse).
-    pub fn builder() -> crate::model::verification_response::Builder {
-        crate::model::verification_response::Builder::default()
     }
 }
 
@@ -77,6 +78,13 @@ impl VerifyOtpMessageRequestParameters {
         self.reference_id.as_deref()
     }
 }
+impl VerifyOtpMessageRequestParameters {
+    /// Creates a new builder-style object to manufacture [`VerifyOtpMessageRequestParameters`](crate::model::VerifyOtpMessageRequestParameters).
+    pub fn builder() -> crate::model::verify_otp_message_request_parameters::Builder {
+        crate::model::verify_otp_message_request_parameters::Builder::default()
+    }
+}
+
 /// See [`VerifyOtpMessageRequestParameters`](crate::model::VerifyOtpMessageRequestParameters).
 pub mod verify_otp_message_request_parameters {
 
@@ -132,12 +140,6 @@ pub mod verify_otp_message_request_parameters {
         }
     }
 }
-impl VerifyOtpMessageRequestParameters {
-    /// Creates a new builder-style object to manufacture [`VerifyOtpMessageRequestParameters`](crate::model::VerifyOtpMessageRequestParameters).
-    pub fn builder() -> crate::model::verify_otp_message_request_parameters::Builder {
-        crate::model::verify_otp_message_request_parameters::Builder::default()
-    }
-}
 
 /// <p>Provides information about an API request or response.</p>
 #[non_exhaustive]
@@ -160,6 +162,13 @@ impl MessageBody {
         self.request_id.as_deref()
     }
 }
+impl MessageBody {
+    /// Creates a new builder-style object to manufacture [`MessageBody`](crate::model::MessageBody).
+    pub fn builder() -> crate::model::message_body::Builder {
+        crate::model::message_body::Builder::default()
+    }
+}
+
 /// See [`MessageBody`](crate::model::MessageBody).
 pub mod message_body {
 
@@ -198,12 +207,6 @@ pub mod message_body {
                 request_id: self.request_id,
             }
         }
-    }
-}
-impl MessageBody {
-    /// Creates a new builder-style object to manufacture [`MessageBody`](crate::model::MessageBody).
-    pub fn builder() -> crate::model::message_body::Builder {
-        crate::model::message_body::Builder::default()
     }
 }
 
@@ -260,6 +263,13 @@ impl VoiceTemplateRequest {
         self.voice_id.as_deref()
     }
 }
+impl VoiceTemplateRequest {
+    /// Creates a new builder-style object to manufacture [`VoiceTemplateRequest`](crate::model::VoiceTemplateRequest).
+    pub fn builder() -> crate::model::voice_template_request::Builder {
+        crate::model::voice_template_request::Builder::default()
+    }
+}
+
 /// See [`VoiceTemplateRequest`](crate::model::VoiceTemplateRequest).
 pub mod voice_template_request {
 
@@ -374,12 +384,6 @@ pub mod voice_template_request {
         }
     }
 }
-impl VoiceTemplateRequest {
-    /// Creates a new builder-style object to manufacture [`VoiceTemplateRequest`](crate::model::VoiceTemplateRequest).
-    pub fn builder() -> crate::model::voice_template_request::Builder {
-        crate::model::voice_template_request::Builder::default()
-    }
-}
 
 /// <p>Provides information about the status and settings of the voice channel for an application.</p>
 #[non_exhaustive]
@@ -458,6 +462,13 @@ impl VoiceChannelResponse {
         self.version
     }
 }
+impl VoiceChannelResponse {
+    /// Creates a new builder-style object to manufacture [`VoiceChannelResponse`](crate::model::VoiceChannelResponse).
+    pub fn builder() -> crate::model::voice_channel_response::Builder {
+        crate::model::voice_channel_response::Builder::default()
+    }
+}
+
 /// See [`VoiceChannelResponse`](crate::model::VoiceChannelResponse).
 pub mod voice_channel_response {
 
@@ -606,12 +617,6 @@ pub mod voice_channel_response {
         }
     }
 }
-impl VoiceChannelResponse {
-    /// Creates a new builder-style object to manufacture [`VoiceChannelResponse`](crate::model::VoiceChannelResponse).
-    pub fn builder() -> crate::model::voice_channel_response::Builder {
-        crate::model::voice_channel_response::Builder::default()
-    }
-}
 
 /// <p>Specifies the status and settings of the voice channel for an application.</p>
 #[non_exhaustive]
@@ -627,6 +632,13 @@ impl VoiceChannelRequest {
         self.enabled
     }
 }
+impl VoiceChannelRequest {
+    /// Creates a new builder-style object to manufacture [`VoiceChannelRequest`](crate::model::VoiceChannelRequest).
+    pub fn builder() -> crate::model::voice_channel_request::Builder {
+        crate::model::voice_channel_request::Builder::default()
+    }
+}
+
 /// See [`VoiceChannelRequest`](crate::model::VoiceChannelRequest).
 pub mod voice_channel_request {
 
@@ -655,12 +667,6 @@ pub mod voice_channel_request {
         }
     }
 }
-impl VoiceChannelRequest {
-    /// Creates a new builder-style object to manufacture [`VoiceChannelRequest`](crate::model::VoiceChannelRequest).
-    pub fn builder() -> crate::model::voice_channel_request::Builder {
-        crate::model::voice_channel_request::Builder::default()
-    }
-}
 
 /// <p>Specifies which version of a message template to use as the active version of the template.</p>
 #[non_exhaustive]
@@ -678,6 +684,13 @@ impl TemplateActiveVersionRequest {
         self.version.as_deref()
     }
 }
+impl TemplateActiveVersionRequest {
+    /// Creates a new builder-style object to manufacture [`TemplateActiveVersionRequest`](crate::model::TemplateActiveVersionRequest).
+    pub fn builder() -> crate::model::template_active_version_request::Builder {
+        crate::model::template_active_version_request::Builder::default()
+    }
+}
+
 /// See [`TemplateActiveVersionRequest`](crate::model::TemplateActiveVersionRequest).
 pub mod template_active_version_request {
 
@@ -706,12 +719,6 @@ pub mod template_active_version_request {
                 version: self.version,
             }
         }
-    }
-}
-impl TemplateActiveVersionRequest {
-    /// Creates a new builder-style object to manufacture [`TemplateActiveVersionRequest`](crate::model::TemplateActiveVersionRequest).
-    pub fn builder() -> crate::model::template_active_version_request::Builder {
-        crate::model::template_active_version_request::Builder::default()
     }
 }
 
@@ -761,6 +768,13 @@ impl SmsTemplateRequest {
         self.template_description.as_deref()
     }
 }
+impl SmsTemplateRequest {
+    /// Creates a new builder-style object to manufacture [`SmsTemplateRequest`](crate::model::SmsTemplateRequest).
+    pub fn builder() -> crate::model::sms_template_request::Builder {
+        crate::model::sms_template_request::Builder::default()
+    }
+}
+
 /// See [`SmsTemplateRequest`](crate::model::SmsTemplateRequest).
 pub mod sms_template_request {
 
@@ -861,12 +875,6 @@ pub mod sms_template_request {
                 template_description: self.template_description,
             }
         }
-    }
-}
-impl SmsTemplateRequest {
-    /// Creates a new builder-style object to manufacture [`SmsTemplateRequest`](crate::model::SmsTemplateRequest).
-    pub fn builder() -> crate::model::sms_template_request::Builder {
-        crate::model::sms_template_request::Builder::default()
     }
 }
 
@@ -975,6 +983,13 @@ impl SmsChannelResponse {
         self.version
     }
 }
+impl SmsChannelResponse {
+    /// Creates a new builder-style object to manufacture [`SmsChannelResponse`](crate::model::SmsChannelResponse).
+    pub fn builder() -> crate::model::sms_channel_response::Builder {
+        crate::model::sms_channel_response::Builder::default()
+    }
+}
+
 /// See [`SmsChannelResponse`](crate::model::SmsChannelResponse).
 pub mod sms_channel_response {
 
@@ -1181,12 +1196,6 @@ pub mod sms_channel_response {
         }
     }
 }
-impl SmsChannelResponse {
-    /// Creates a new builder-style object to manufacture [`SmsChannelResponse`](crate::model::SmsChannelResponse).
-    pub fn builder() -> crate::model::sms_channel_response::Builder {
-        crate::model::sms_channel_response::Builder::default()
-    }
-}
 
 /// <p>Specifies the status and settings of the SMS channel for an application.</p>
 #[non_exhaustive]
@@ -1216,6 +1225,13 @@ impl SmsChannelRequest {
         self.short_code.as_deref()
     }
 }
+impl SmsChannelRequest {
+    /// Creates a new builder-style object to manufacture [`SmsChannelRequest`](crate::model::SmsChannelRequest).
+    pub fn builder() -> crate::model::sms_channel_request::Builder {
+        crate::model::sms_channel_request::Builder::default()
+    }
+}
+
 /// See [`SmsChannelRequest`](crate::model::SmsChannelRequest).
 pub mod sms_channel_request {
 
@@ -1266,12 +1282,6 @@ pub mod sms_channel_request {
                 short_code: self.short_code,
             }
         }
-    }
-}
-impl SmsChannelRequest {
-    /// Creates a new builder-style object to manufacture [`SmsChannelRequest`](crate::model::SmsChannelRequest).
-    pub fn builder() -> crate::model::sms_channel_request::Builder {
-        crate::model::sms_channel_request::Builder::default()
     }
 }
 
@@ -1378,6 +1388,13 @@ impl SegmentResponse {
         self.version
     }
 }
+impl SegmentResponse {
+    /// Creates a new builder-style object to manufacture [`SegmentResponse`](crate::model::SegmentResponse).
+    pub fn builder() -> crate::model::segment_response::Builder {
+        crate::model::segment_response::Builder::default()
+    }
+}
+
 /// See [`SegmentResponse`](crate::model::SegmentResponse).
 pub mod segment_response {
 
@@ -1584,12 +1601,6 @@ pub mod segment_response {
         }
     }
 }
-impl SegmentResponse {
-    /// Creates a new builder-style object to manufacture [`SegmentResponse`](crate::model::SegmentResponse).
-    pub fn builder() -> crate::model::segment_response::Builder {
-        crate::model::segment_response::Builder::default()
-    }
-}
 
 /// When writing a match expression against `SegmentType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -1702,6 +1713,13 @@ impl SegmentGroupList {
         self.include.as_ref()
     }
 }
+impl SegmentGroupList {
+    /// Creates a new builder-style object to manufacture [`SegmentGroupList`](crate::model::SegmentGroupList).
+    pub fn builder() -> crate::model::segment_group_list::Builder {
+        crate::model::segment_group_list::Builder::default()
+    }
+}
+
 /// See [`SegmentGroupList`](crate::model::SegmentGroupList).
 pub mod segment_group_list {
 
@@ -1749,12 +1767,6 @@ pub mod segment_group_list {
                 include: self.include,
             }
         }
-    }
-}
-impl SegmentGroupList {
-    /// Creates a new builder-style object to manufacture [`SegmentGroupList`](crate::model::SegmentGroupList).
-    pub fn builder() -> crate::model::segment_group_list::Builder {
-        crate::model::segment_group_list::Builder::default()
     }
 }
 
@@ -1890,6 +1902,13 @@ impl SegmentGroup {
         self.r#type.as_ref()
     }
 }
+impl SegmentGroup {
+    /// Creates a new builder-style object to manufacture [`SegmentGroup`](crate::model::SegmentGroup).
+    pub fn builder() -> crate::model::segment_group::Builder {
+        crate::model::segment_group::Builder::default()
+    }
+}
+
 /// See [`SegmentGroup`](crate::model::SegmentGroup).
 pub mod segment_group {
 
@@ -1976,12 +1995,6 @@ pub mod segment_group {
                 r#type: self.r#type,
             }
         }
-    }
-}
-impl SegmentGroup {
-    /// Creates a new builder-style object to manufacture [`SegmentGroup`](crate::model::SegmentGroup).
-    pub fn builder() -> crate::model::segment_group::Builder {
-        crate::model::segment_group::Builder::default()
     }
 }
 
@@ -2196,6 +2209,13 @@ impl SegmentReference {
         self.version
     }
 }
+impl SegmentReference {
+    /// Creates a new builder-style object to manufacture [`SegmentReference`](crate::model::SegmentReference).
+    pub fn builder() -> crate::model::segment_reference::Builder {
+        crate::model::segment_reference::Builder::default()
+    }
+}
+
 /// See [`SegmentReference`](crate::model::SegmentReference).
 pub mod segment_reference {
 
@@ -2234,12 +2254,6 @@ pub mod segment_reference {
                 version: self.version.unwrap_or_default(),
             }
         }
-    }
-}
-impl SegmentReference {
-    /// Creates a new builder-style object to manufacture [`SegmentReference`](crate::model::SegmentReference).
-    pub fn builder() -> crate::model::segment_reference::Builder {
-        crate::model::segment_reference::Builder::default()
     }
 }
 
@@ -2310,6 +2324,13 @@ impl SegmentDimensions {
         self.user_attributes.as_ref()
     }
 }
+impl SegmentDimensions {
+    /// Creates a new builder-style object to manufacture [`SegmentDimensions`](crate::model::SegmentDimensions).
+    pub fn builder() -> crate::model::segment_dimensions::Builder {
+        crate::model::segment_dimensions::Builder::default()
+    }
+}
+
 /// See [`SegmentDimensions`](crate::model::SegmentDimensions).
 pub mod segment_dimensions {
 
@@ -2458,12 +2479,6 @@ pub mod segment_dimensions {
         }
     }
 }
-impl SegmentDimensions {
-    /// Creates a new builder-style object to manufacture [`SegmentDimensions`](crate::model::SegmentDimensions).
-    pub fn builder() -> crate::model::segment_dimensions::Builder {
-        crate::model::segment_dimensions::Builder::default()
-    }
-}
 
 /// <p>Specifies attribute-based criteria for including or excluding endpoints from a segment.</p>
 #[non_exhaustive]
@@ -2506,6 +2521,13 @@ impl AttributeDimension {
         self.values.as_deref()
     }
 }
+impl AttributeDimension {
+    /// Creates a new builder-style object to manufacture [`AttributeDimension`](crate::model::AttributeDimension).
+    pub fn builder() -> crate::model::attribute_dimension::Builder {
+        crate::model::attribute_dimension::Builder::default()
+    }
+}
+
 /// See [`AttributeDimension`](crate::model::AttributeDimension).
 pub mod attribute_dimension {
 
@@ -2576,12 +2598,6 @@ pub mod attribute_dimension {
                 values: self.values,
             }
         }
-    }
-}
-impl AttributeDimension {
-    /// Creates a new builder-style object to manufacture [`AttributeDimension`](crate::model::AttributeDimension).
-    pub fn builder() -> crate::model::attribute_dimension::Builder {
-        crate::model::attribute_dimension::Builder::default()
     }
 }
 
@@ -2729,6 +2745,13 @@ impl MetricDimension {
         self.value
     }
 }
+impl MetricDimension {
+    /// Creates a new builder-style object to manufacture [`MetricDimension`](crate::model::MetricDimension).
+    pub fn builder() -> crate::model::metric_dimension::Builder {
+        crate::model::metric_dimension::Builder::default()
+    }
+}
+
 /// See [`MetricDimension`](crate::model::MetricDimension).
 pub mod metric_dimension {
 
@@ -2772,12 +2795,6 @@ pub mod metric_dimension {
         }
     }
 }
-impl MetricDimension {
-    /// Creates a new builder-style object to manufacture [`MetricDimension`](crate::model::MetricDimension).
-    pub fn builder() -> crate::model::metric_dimension::Builder {
-        crate::model::metric_dimension::Builder::default()
-    }
-}
 
 /// <p>Specifies geographical dimension settings for a segment.</p>
 #[non_exhaustive]
@@ -2800,6 +2817,13 @@ impl SegmentLocation {
         self.gps_point.as_ref()
     }
 }
+impl SegmentLocation {
+    /// Creates a new builder-style object to manufacture [`SegmentLocation`](crate::model::SegmentLocation).
+    pub fn builder() -> crate::model::segment_location::Builder {
+        crate::model::segment_location::Builder::default()
+    }
+}
+
 /// See [`SegmentLocation`](crate::model::SegmentLocation).
 pub mod segment_location {
 
@@ -2846,12 +2870,6 @@ pub mod segment_location {
         }
     }
 }
-impl SegmentLocation {
-    /// Creates a new builder-style object to manufacture [`SegmentLocation`](crate::model::SegmentLocation).
-    pub fn builder() -> crate::model::segment_location::Builder {
-        crate::model::segment_location::Builder::default()
-    }
-}
 
 /// <p>Specifies GPS-based criteria for including or excluding endpoints from a segment.</p>
 #[non_exhaustive]
@@ -2874,6 +2892,13 @@ impl GpsPointDimension {
         self.range_in_kilometers
     }
 }
+impl GpsPointDimension {
+    /// Creates a new builder-style object to manufacture [`GpsPointDimension`](crate::model::GpsPointDimension).
+    pub fn builder() -> crate::model::gps_point_dimension::Builder {
+        crate::model::gps_point_dimension::Builder::default()
+    }
+}
+
 /// See [`GpsPointDimension`](crate::model::GpsPointDimension).
 pub mod gps_point_dimension {
 
@@ -2917,12 +2942,6 @@ pub mod gps_point_dimension {
         }
     }
 }
-impl GpsPointDimension {
-    /// Creates a new builder-style object to manufacture [`GpsPointDimension`](crate::model::GpsPointDimension).
-    pub fn builder() -> crate::model::gps_point_dimension::Builder {
-        crate::model::gps_point_dimension::Builder::default()
-    }
-}
 
 /// <p>Specifies the GPS coordinates of a location.</p>
 #[non_exhaustive]
@@ -2945,6 +2964,13 @@ impl GpsCoordinates {
         self.longitude
     }
 }
+impl GpsCoordinates {
+    /// Creates a new builder-style object to manufacture [`GpsCoordinates`](crate::model::GpsCoordinates).
+    pub fn builder() -> crate::model::gps_coordinates::Builder {
+        crate::model::gps_coordinates::Builder::default()
+    }
+}
+
 /// See [`GpsCoordinates`](crate::model::GpsCoordinates).
 pub mod gps_coordinates {
 
@@ -2985,12 +3011,6 @@ pub mod gps_coordinates {
         }
     }
 }
-impl GpsCoordinates {
-    /// Creates a new builder-style object to manufacture [`GpsCoordinates`](crate::model::GpsCoordinates).
-    pub fn builder() -> crate::model::gps_coordinates::Builder {
-        crate::model::gps_coordinates::Builder::default()
-    }
-}
 
 /// <p>Specifies the dimension type and values for a segment dimension.</p>
 #[non_exhaustive]
@@ -3013,6 +3033,13 @@ impl SetDimension {
         self.values.as_deref()
     }
 }
+impl SetDimension {
+    /// Creates a new builder-style object to manufacture [`SetDimension`](crate::model::SetDimension).
+    pub fn builder() -> crate::model::set_dimension::Builder {
+        crate::model::set_dimension::Builder::default()
+    }
+}
+
 /// See [`SetDimension`](crate::model::SetDimension).
 pub mod set_dimension {
 
@@ -3063,12 +3090,6 @@ pub mod set_dimension {
                 values: self.values,
             }
         }
-    }
-}
-impl SetDimension {
-    /// Creates a new builder-style object to manufacture [`SetDimension`](crate::model::SetDimension).
-    pub fn builder() -> crate::model::set_dimension::Builder {
-        crate::model::set_dimension::Builder::default()
     }
 }
 
@@ -3211,6 +3232,13 @@ impl SegmentDemographics {
         self.platform.as_ref()
     }
 }
+impl SegmentDemographics {
+    /// Creates a new builder-style object to manufacture [`SegmentDemographics`](crate::model::SegmentDemographics).
+    pub fn builder() -> crate::model::segment_demographics::Builder {
+        crate::model::segment_demographics::Builder::default()
+    }
+}
+
 /// See [`SegmentDemographics`](crate::model::SegmentDemographics).
 pub mod segment_demographics {
 
@@ -3311,12 +3339,6 @@ pub mod segment_demographics {
         }
     }
 }
-impl SegmentDemographics {
-    /// Creates a new builder-style object to manufacture [`SegmentDemographics`](crate::model::SegmentDemographics).
-    pub fn builder() -> crate::model::segment_demographics::Builder {
-        crate::model::segment_demographics::Builder::default()
-    }
-}
 
 /// <p>Specifies dimension settings for including or excluding endpoints from a segment based on how recently an endpoint was active.</p>
 #[non_exhaustive]
@@ -3332,6 +3354,13 @@ impl SegmentBehaviors {
         self.recency.as_ref()
     }
 }
+impl SegmentBehaviors {
+    /// Creates a new builder-style object to manufacture [`SegmentBehaviors`](crate::model::SegmentBehaviors).
+    pub fn builder() -> crate::model::segment_behaviors::Builder {
+        crate::model::segment_behaviors::Builder::default()
+    }
+}
+
 /// See [`SegmentBehaviors`](crate::model::SegmentBehaviors).
 pub mod segment_behaviors {
 
@@ -3363,12 +3392,6 @@ pub mod segment_behaviors {
         }
     }
 }
-impl SegmentBehaviors {
-    /// Creates a new builder-style object to manufacture [`SegmentBehaviors`](crate::model::SegmentBehaviors).
-    pub fn builder() -> crate::model::segment_behaviors::Builder {
-        crate::model::segment_behaviors::Builder::default()
-    }
-}
 
 /// <p>Specifies criteria for including or excluding endpoints from a segment based on how recently an endpoint was active.</p>
 #[non_exhaustive]
@@ -3391,6 +3414,13 @@ impl RecencyDimension {
         self.recency_type.as_ref()
     }
 }
+impl RecencyDimension {
+    /// Creates a new builder-style object to manufacture [`RecencyDimension`](crate::model::RecencyDimension).
+    pub fn builder() -> crate::model::recency_dimension::Builder {
+        crate::model::recency_dimension::Builder::default()
+    }
+}
+
 /// See [`RecencyDimension`](crate::model::RecencyDimension).
 pub mod recency_dimension {
 
@@ -3432,12 +3462,6 @@ pub mod recency_dimension {
                 recency_type: self.recency_type,
             }
         }
-    }
-}
-impl RecencyDimension {
-    /// Creates a new builder-style object to manufacture [`RecencyDimension`](crate::model::RecencyDimension).
-    pub fn builder() -> crate::model::recency_dimension::Builder {
-        crate::model::recency_dimension::Builder::default()
     }
 }
 
@@ -3682,6 +3706,13 @@ impl SegmentImportResource {
         self.size
     }
 }
+impl SegmentImportResource {
+    /// Creates a new builder-style object to manufacture [`SegmentImportResource`](crate::model::SegmentImportResource).
+    pub fn builder() -> crate::model::segment_import_resource::Builder {
+        crate::model::segment_import_resource::Builder::default()
+    }
+}
+
 /// See [`SegmentImportResource`](crate::model::SegmentImportResource).
 pub mod segment_import_resource {
 
@@ -3778,12 +3809,6 @@ pub mod segment_import_resource {
                 size: self.size.unwrap_or_default(),
             }
         }
-    }
-}
-impl SegmentImportResource {
-    /// Creates a new builder-style object to manufacture [`SegmentImportResource`](crate::model::SegmentImportResource).
-    pub fn builder() -> crate::model::segment_import_resource::Builder {
-        crate::model::segment_import_resource::Builder::default()
     }
 }
 
@@ -3916,6 +3941,13 @@ impl WriteSegmentRequest {
         self.tags.as_ref()
     }
 }
+impl WriteSegmentRequest {
+    /// Creates a new builder-style object to manufacture [`WriteSegmentRequest`](crate::model::WriteSegmentRequest).
+    pub fn builder() -> crate::model::write_segment_request::Builder {
+        crate::model::write_segment_request::Builder::default()
+    }
+}
+
 /// See [`WriteSegmentRequest`](crate::model::WriteSegmentRequest).
 pub mod write_segment_request {
 
@@ -4001,12 +4033,6 @@ pub mod write_segment_request {
                 tags: self.tags,
             }
         }
-    }
-}
-impl WriteSegmentRequest {
-    /// Creates a new builder-style object to manufacture [`WriteSegmentRequest`](crate::model::WriteSegmentRequest).
-    pub fn builder() -> crate::model::write_segment_request::Builder {
-        crate::model::write_segment_request::Builder::default()
     }
 }
 
@@ -4117,6 +4143,13 @@ impl RecommenderConfigurationResponse {
         self.recommendations_per_message
     }
 }
+impl RecommenderConfigurationResponse {
+    /// Creates a new builder-style object to manufacture [`RecommenderConfigurationResponse`](crate::model::RecommenderConfigurationResponse).
+    pub fn builder() -> crate::model::recommender_configuration_response::Builder {
+        crate::model::recommender_configuration_response::Builder::default()
+    }
+}
+
 /// See [`RecommenderConfigurationResponse`](crate::model::RecommenderConfigurationResponse).
 pub mod recommender_configuration_response {
 
@@ -4342,12 +4375,6 @@ pub mod recommender_configuration_response {
         }
     }
 }
-impl RecommenderConfigurationResponse {
-    /// Creates a new builder-style object to manufacture [`RecommenderConfigurationResponse`](crate::model::RecommenderConfigurationResponse).
-    pub fn builder() -> crate::model::recommender_configuration_response::Builder {
-        crate::model::recommender_configuration_response::Builder::default()
-    }
-}
 
 /// <p>Specifies Amazon Pinpoint configuration settings for retrieving and processing recommendation data from a recommender model.</p>
 #[non_exhaustive]
@@ -4447,6 +4474,13 @@ impl UpdateRecommenderConfigurationShape {
         self.recommendations_per_message
     }
 }
+impl UpdateRecommenderConfigurationShape {
+    /// Creates a new builder-style object to manufacture [`UpdateRecommenderConfigurationShape`](crate::model::UpdateRecommenderConfigurationShape).
+    pub fn builder() -> crate::model::update_recommender_configuration_shape::Builder {
+        crate::model::update_recommender_configuration_shape::Builder::default()
+    }
+}
+
 /// See [`UpdateRecommenderConfigurationShape`](crate::model::UpdateRecommenderConfigurationShape).
 pub mod update_recommender_configuration_shape {
 
@@ -4642,12 +4676,6 @@ pub mod update_recommender_configuration_shape {
         }
     }
 }
-impl UpdateRecommenderConfigurationShape {
-    /// Creates a new builder-style object to manufacture [`UpdateRecommenderConfigurationShape`](crate::model::UpdateRecommenderConfigurationShape).
-    pub fn builder() -> crate::model::update_recommender_configuration_shape::Builder {
-        crate::model::update_recommender_configuration_shape::Builder::default()
-    }
-}
 
 /// <p>Specifies the content and settings for a message template that can be used in messages that are sent through a push notification channel.</p>
 #[non_exhaustive]
@@ -4729,6 +4757,13 @@ impl PushNotificationTemplateRequest {
         self.template_description.as_deref()
     }
 }
+impl PushNotificationTemplateRequest {
+    /// Creates a new builder-style object to manufacture [`PushNotificationTemplateRequest`](crate::model::PushNotificationTemplateRequest).
+    pub fn builder() -> crate::model::push_notification_template_request::Builder {
+        crate::model::push_notification_template_request::Builder::default()
+    }
+}
+
 /// See [`PushNotificationTemplateRequest`](crate::model::PushNotificationTemplateRequest).
 pub mod push_notification_template_request {
 
@@ -4898,12 +4933,6 @@ pub mod push_notification_template_request {
         }
     }
 }
-impl PushNotificationTemplateRequest {
-    /// Creates a new builder-style object to manufacture [`PushNotificationTemplateRequest`](crate::model::PushNotificationTemplateRequest).
-    pub fn builder() -> crate::model::push_notification_template_request::Builder {
-        crate::model::push_notification_template_request::Builder::default()
-    }
-}
 
 /// <p>Specifies channel-specific content and settings for a message template that can be used in push notifications that are sent through the ADM (Amazon Device Messaging), Baidu (Baidu Cloud Push), or GCM (Firebase Cloud Messaging, formerly Google Cloud Messaging) channel.</p>
 #[non_exhaustive]
@@ -4985,6 +5014,13 @@ impl AndroidPushNotificationTemplate {
         self.url.as_deref()
     }
 }
+impl AndroidPushNotificationTemplate {
+    /// Creates a new builder-style object to manufacture [`AndroidPushNotificationTemplate`](crate::model::AndroidPushNotificationTemplate).
+    pub fn builder() -> crate::model::android_push_notification_template::Builder {
+        crate::model::android_push_notification_template::Builder::default()
+    }
+}
+
 /// See [`AndroidPushNotificationTemplate`](crate::model::AndroidPushNotificationTemplate).
 pub mod android_push_notification_template {
 
@@ -5123,12 +5159,6 @@ pub mod android_push_notification_template {
                 url: self.url,
             }
         }
-    }
-}
-impl AndroidPushNotificationTemplate {
-    /// Creates a new builder-style object to manufacture [`AndroidPushNotificationTemplate`](crate::model::AndroidPushNotificationTemplate).
-    pub fn builder() -> crate::model::android_push_notification_template::Builder {
-        crate::model::android_push_notification_template::Builder::default()
     }
 }
 
@@ -5281,6 +5311,13 @@ impl DefaultPushNotificationTemplate {
         self.url.as_deref()
     }
 }
+impl DefaultPushNotificationTemplate {
+    /// Creates a new builder-style object to manufacture [`DefaultPushNotificationTemplate`](crate::model::DefaultPushNotificationTemplate).
+    pub fn builder() -> crate::model::default_push_notification_template::Builder {
+        crate::model::default_push_notification_template::Builder::default()
+    }
+}
+
 /// See [`DefaultPushNotificationTemplate`](crate::model::DefaultPushNotificationTemplate).
 pub mod default_push_notification_template {
 
@@ -5369,12 +5406,6 @@ pub mod default_push_notification_template {
         }
     }
 }
-impl DefaultPushNotificationTemplate {
-    /// Creates a new builder-style object to manufacture [`DefaultPushNotificationTemplate`](crate::model::DefaultPushNotificationTemplate).
-    pub fn builder() -> crate::model::default_push_notification_template::Builder {
-        crate::model::default_push_notification_template::Builder::default()
-    }
-}
 
 /// <p>Specifies channel-specific content and settings for a message template that can be used in push notifications that are sent through the APNs (Apple Push Notification service) channel.</p>
 #[non_exhaustive]
@@ -5442,6 +5473,13 @@ impl ApnsPushNotificationTemplate {
         self.url.as_deref()
     }
 }
+impl ApnsPushNotificationTemplate {
+    /// Creates a new builder-style object to manufacture [`ApnsPushNotificationTemplate`](crate::model::ApnsPushNotificationTemplate).
+    pub fn builder() -> crate::model::apns_push_notification_template::Builder {
+        crate::model::apns_push_notification_template::Builder::default()
+    }
+}
+
 /// See [`ApnsPushNotificationTemplate`](crate::model::ApnsPushNotificationTemplate).
 pub mod apns_push_notification_template {
 
@@ -5550,12 +5588,6 @@ pub mod apns_push_notification_template {
                 url: self.url,
             }
         }
-    }
-}
-impl ApnsPushNotificationTemplate {
-    /// Creates a new builder-style object to manufacture [`ApnsPushNotificationTemplate`](crate::model::ApnsPushNotificationTemplate).
-    pub fn builder() -> crate::model::apns_push_notification_template::Builder {
-        crate::model::apns_push_notification_template::Builder::default()
     }
 }
 
@@ -5749,6 +5781,13 @@ impl JourneyResponse {
         self.closed_days.as_ref()
     }
 }
+impl JourneyResponse {
+    /// Creates a new builder-style object to manufacture [`JourneyResponse`](crate::model::JourneyResponse).
+    pub fn builder() -> crate::model::journey_response::Builder {
+        crate::model::journey_response::Builder::default()
+    }
+}
+
 /// See [`JourneyResponse`](crate::model::JourneyResponse).
 pub mod journey_response {
 
@@ -6117,12 +6156,6 @@ pub mod journey_response {
         }
     }
 }
-impl JourneyResponse {
-    /// Creates a new builder-style object to manufacture [`JourneyResponse`](crate::model::JourneyResponse).
-    pub fn builder() -> crate::model::journey_response::Builder {
-        crate::model::journey_response::Builder::default()
-    }
-}
 
 /// <p>The time when journey will stop sending messages.</p>
 #[non_exhaustive]
@@ -6166,6 +6199,13 @@ impl ClosedDays {
         self.custom.as_deref()
     }
 }
+impl ClosedDays {
+    /// Creates a new builder-style object to manufacture [`ClosedDays`](crate::model::ClosedDays).
+    pub fn builder() -> crate::model::closed_days::Builder {
+        crate::model::closed_days::Builder::default()
+    }
+}
+
 /// See [`ClosedDays`](crate::model::ClosedDays).
 pub mod closed_days {
 
@@ -6287,12 +6327,6 @@ pub mod closed_days {
         }
     }
 }
-impl ClosedDays {
-    /// Creates a new builder-style object to manufacture [`ClosedDays`](crate::model::ClosedDays).
-    pub fn builder() -> crate::model::closed_days::Builder {
-        crate::model::closed_days::Builder::default()
-    }
-}
 
 /// <p>Closed Days Rule. Part of Journey sending schedule.</p>
 #[non_exhaustive]
@@ -6322,6 +6356,13 @@ impl ClosedDaysRule {
         self.end_date_time.as_deref()
     }
 }
+impl ClosedDaysRule {
+    /// Creates a new builder-style object to manufacture [`ClosedDaysRule`](crate::model::ClosedDaysRule).
+    pub fn builder() -> crate::model::closed_days_rule::Builder {
+        crate::model::closed_days_rule::Builder::default()
+    }
+}
+
 /// See [`ClosedDaysRule`](crate::model::ClosedDaysRule).
 pub mod closed_days_rule {
 
@@ -6378,12 +6419,6 @@ pub mod closed_days_rule {
                 end_date_time: self.end_date_time,
             }
         }
-    }
-}
-impl ClosedDaysRule {
-    /// Creates a new builder-style object to manufacture [`ClosedDaysRule`](crate::model::ClosedDaysRule).
-    pub fn builder() -> crate::model::closed_days_rule::Builder {
-        crate::model::closed_days_rule::Builder::default()
     }
 }
 
@@ -6489,6 +6524,13 @@ impl OpenHours {
         self.custom.as_ref()
     }
 }
+impl OpenHours {
+    /// Creates a new builder-style object to manufacture [`OpenHours`](crate::model::OpenHours).
+    pub fn builder() -> crate::model::open_hours::Builder {
+        crate::model::open_hours::Builder::default()
+    }
+}
+
 /// See [`OpenHours`](crate::model::OpenHours).
 pub mod open_hours {
 
@@ -6680,12 +6722,6 @@ pub mod open_hours {
         }
     }
 }
-impl OpenHours {
-    /// Creates a new builder-style object to manufacture [`OpenHours`](crate::model::OpenHours).
-    pub fn builder() -> crate::model::open_hours::Builder {
-        crate::model::open_hours::Builder::default()
-    }
-}
 
 /// <p>List of OpenHours Rules.</p>
 #[non_exhaustive]
@@ -6708,6 +6744,13 @@ impl OpenHoursRule {
         self.end_time.as_deref()
     }
 }
+impl OpenHoursRule {
+    /// Creates a new builder-style object to manufacture [`OpenHoursRule`](crate::model::OpenHoursRule).
+    pub fn builder() -> crate::model::open_hours_rule::Builder {
+        crate::model::open_hours_rule::Builder::default()
+    }
+}
+
 /// See [`OpenHoursRule`](crate::model::OpenHoursRule).
 pub mod open_hours_rule {
 
@@ -6746,12 +6789,6 @@ pub mod open_hours_rule {
                 end_time: self.end_time,
             }
         }
-    }
-}
-impl OpenHoursRule {
-    /// Creates a new builder-style object to manufacture [`OpenHoursRule`](crate::model::OpenHoursRule).
-    pub fn builder() -> crate::model::open_hours_rule::Builder {
-        crate::model::open_hours_rule::Builder::default()
     }
 }
 
@@ -6899,6 +6936,13 @@ impl JourneyChannelSettings {
         self.connect_campaign_execution_role_arn.as_deref()
     }
 }
+impl JourneyChannelSettings {
+    /// Creates a new builder-style object to manufacture [`JourneyChannelSettings`](crate::model::JourneyChannelSettings).
+    pub fn builder() -> crate::model::journey_channel_settings::Builder {
+        crate::model::journey_channel_settings::Builder::default()
+    }
+}
+
 /// See [`JourneyChannelSettings`](crate::model::JourneyChannelSettings).
 pub mod journey_channel_settings {
 
@@ -6946,12 +6990,6 @@ pub mod journey_channel_settings {
                 connect_campaign_execution_role_arn: self.connect_campaign_execution_role_arn,
             }
         }
-    }
-}
-impl JourneyChannelSettings {
-    /// Creates a new builder-style object to manufacture [`JourneyChannelSettings`](crate::model::JourneyChannelSettings).
-    pub fn builder() -> crate::model::journey_channel_settings::Builder {
-        crate::model::journey_channel_settings::Builder::default()
     }
 }
 
@@ -7100,6 +7138,13 @@ impl StartCondition {
         self.segment_start_condition.as_ref()
     }
 }
+impl StartCondition {
+    /// Creates a new builder-style object to manufacture [`StartCondition`](crate::model::StartCondition).
+    pub fn builder() -> crate::model::start_condition::Builder {
+        crate::model::start_condition::Builder::default()
+    }
+}
+
 /// See [`StartCondition`](crate::model::StartCondition).
 pub mod start_condition {
 
@@ -7158,12 +7203,6 @@ pub mod start_condition {
         }
     }
 }
-impl StartCondition {
-    /// Creates a new builder-style object to manufacture [`StartCondition`](crate::model::StartCondition).
-    pub fn builder() -> crate::model::start_condition::Builder {
-        crate::model::start_condition::Builder::default()
-    }
-}
 
 /// <p>Specifies a segment to associate with an activity in a journey.</p>
 #[non_exhaustive]
@@ -7179,6 +7218,13 @@ impl SegmentCondition {
         self.segment_id.as_deref()
     }
 }
+impl SegmentCondition {
+    /// Creates a new builder-style object to manufacture [`SegmentCondition`](crate::model::SegmentCondition).
+    pub fn builder() -> crate::model::segment_condition::Builder {
+        crate::model::segment_condition::Builder::default()
+    }
+}
+
 /// See [`SegmentCondition`](crate::model::SegmentCondition).
 pub mod segment_condition {
 
@@ -7207,12 +7253,6 @@ pub mod segment_condition {
         }
     }
 }
-impl SegmentCondition {
-    /// Creates a new builder-style object to manufacture [`SegmentCondition`](crate::model::SegmentCondition).
-    pub fn builder() -> crate::model::segment_condition::Builder {
-        crate::model::segment_condition::Builder::default()
-    }
-}
 
 /// <p>Specifies the settings for an event that causes a journey activity to start.</p>
 #[non_exhaustive]
@@ -7235,6 +7275,13 @@ impl EventStartCondition {
         self.segment_id.as_deref()
     }
 }
+impl EventStartCondition {
+    /// Creates a new builder-style object to manufacture [`EventStartCondition`](crate::model::EventStartCondition).
+    pub fn builder() -> crate::model::event_start_condition::Builder {
+        crate::model::event_start_condition::Builder::default()
+    }
+}
+
 /// See [`EventStartCondition`](crate::model::EventStartCondition).
 pub mod event_start_condition {
 
@@ -7278,12 +7325,6 @@ pub mod event_start_condition {
         }
     }
 }
-impl EventStartCondition {
-    /// Creates a new builder-style object to manufacture [`EventStartCondition`](crate::model::EventStartCondition).
-    pub fn builder() -> crate::model::event_start_condition::Builder {
-        crate::model::event_start_condition::Builder::default()
-    }
-}
 
 /// <p>Specifies the settings for an event that causes a campaign to be sent or a journey activity to be performed.</p>
 #[non_exhaustive]
@@ -7308,6 +7349,13 @@ impl EventFilter {
         self.filter_type.as_ref()
     }
 }
+impl EventFilter {
+    /// Creates a new builder-style object to manufacture [`EventFilter`](crate::model::EventFilter).
+    pub fn builder() -> crate::model::event_filter::Builder {
+        crate::model::event_filter::Builder::default()
+    }
+}
+
 /// See [`EventFilter`](crate::model::EventFilter).
 pub mod event_filter {
 
@@ -7354,12 +7402,6 @@ pub mod event_filter {
                 filter_type: self.filter_type,
             }
         }
-    }
-}
-impl EventFilter {
-    /// Creates a new builder-style object to manufacture [`EventFilter`](crate::model::EventFilter).
-    pub fn builder() -> crate::model::event_filter::Builder {
-        crate::model::event_filter::Builder::default()
     }
 }
 
@@ -7493,6 +7535,13 @@ impl EventDimensions {
         self.metrics.as_ref()
     }
 }
+impl EventDimensions {
+    /// Creates a new builder-style object to manufacture [`EventDimensions`](crate::model::EventDimensions).
+    pub fn builder() -> crate::model::event_dimensions::Builder {
+        crate::model::event_dimensions::Builder::default()
+    }
+}
+
 /// See [`EventDimensions`](crate::model::EventDimensions).
 pub mod event_dimensions {
 
@@ -7582,12 +7631,6 @@ pub mod event_dimensions {
         }
     }
 }
-impl EventDimensions {
-    /// Creates a new builder-style object to manufacture [`EventDimensions`](crate::model::EventDimensions).
-    pub fn builder() -> crate::model::event_dimensions::Builder {
-        crate::model::event_dimensions::Builder::default()
-    }
-}
 
 /// <p>Specifies the schedule settings for a journey.</p>
 #[non_exhaustive]
@@ -7617,6 +7660,13 @@ impl JourneySchedule {
         self.timezone.as_deref()
     }
 }
+impl JourneySchedule {
+    /// Creates a new builder-style object to manufacture [`JourneySchedule`](crate::model::JourneySchedule).
+    pub fn builder() -> crate::model::journey_schedule::Builder {
+        crate::model::journey_schedule::Builder::default()
+    }
+}
+
 /// See [`JourneySchedule`](crate::model::JourneySchedule).
 pub mod journey_schedule {
 
@@ -7675,12 +7725,6 @@ pub mod journey_schedule {
         }
     }
 }
-impl JourneySchedule {
-    /// Creates a new builder-style object to manufacture [`JourneySchedule`](crate::model::JourneySchedule).
-    pub fn builder() -> crate::model::journey_schedule::Builder {
-        crate::model::journey_schedule::Builder::default()
-    }
-}
 
 /// <p>Specifies the start and end times that define a time range when messages aren't sent to endpoints.</p>
 #[non_exhaustive]
@@ -7703,6 +7747,13 @@ impl QuietTime {
         self.start.as_deref()
     }
 }
+impl QuietTime {
+    /// Creates a new builder-style object to manufacture [`QuietTime`](crate::model::QuietTime).
+    pub fn builder() -> crate::model::quiet_time::Builder {
+        crate::model::quiet_time::Builder::default()
+    }
+}
+
 /// See [`QuietTime`](crate::model::QuietTime).
 pub mod quiet_time {
 
@@ -7743,12 +7794,6 @@ pub mod quiet_time {
         }
     }
 }
-impl QuietTime {
-    /// Creates a new builder-style object to manufacture [`QuietTime`](crate::model::QuietTime).
-    pub fn builder() -> crate::model::quiet_time::Builder {
-        crate::model::quiet_time::Builder::default()
-    }
-}
 
 /// <p>Specifies limits on the messages that a journey can send and the number of times participants can enter a journey.</p>
 #[non_exhaustive]
@@ -7785,6 +7830,13 @@ impl JourneyLimits {
         self.endpoint_reentry_interval.as_deref()
     }
 }
+impl JourneyLimits {
+    /// Creates a new builder-style object to manufacture [`JourneyLimits`](crate::model::JourneyLimits).
+    pub fn builder() -> crate::model::journey_limits::Builder {
+        crate::model::journey_limits::Builder::default()
+    }
+}
+
 /// See [`JourneyLimits`](crate::model::JourneyLimits).
 pub mod journey_limits {
 
@@ -7850,12 +7902,6 @@ pub mod journey_limits {
                 endpoint_reentry_interval: self.endpoint_reentry_interval,
             }
         }
-    }
-}
-impl JourneyLimits {
-    /// Creates a new builder-style object to manufacture [`JourneyLimits`](crate::model::JourneyLimits).
-    pub fn builder() -> crate::model::journey_limits::Builder {
-        crate::model::journey_limits::Builder::default()
     }
 }
 
@@ -7947,6 +7993,13 @@ impl Activity {
         self.contact_center.as_ref()
     }
 }
+impl Activity {
+    /// Creates a new builder-style object to manufacture [`Activity`](crate::model::Activity).
+    pub fn builder() -> crate::model::activity::Builder {
+        crate::model::activity::Builder::default()
+    }
+}
+
 /// See [`Activity`](crate::model::Activity).
 pub mod activity {
 
@@ -8126,12 +8179,6 @@ pub mod activity {
         }
     }
 }
-impl Activity {
-    /// Creates a new builder-style object to manufacture [`Activity`](crate::model::Activity).
-    pub fn builder() -> crate::model::activity::Builder {
-        crate::model::activity::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -8147,6 +8194,13 @@ impl ContactCenterActivity {
         self.next_activity.as_deref()
     }
 }
+impl ContactCenterActivity {
+    /// Creates a new builder-style object to manufacture [`ContactCenterActivity`](crate::model::ContactCenterActivity).
+    pub fn builder() -> crate::model::contact_center_activity::Builder {
+        crate::model::contact_center_activity::Builder::default()
+    }
+}
+
 /// See [`ContactCenterActivity`](crate::model::ContactCenterActivity).
 pub mod contact_center_activity {
 
@@ -8178,12 +8232,6 @@ pub mod contact_center_activity {
         }
     }
 }
-impl ContactCenterActivity {
-    /// Creates a new builder-style object to manufacture [`ContactCenterActivity`](crate::model::ContactCenterActivity).
-    pub fn builder() -> crate::model::contact_center_activity::Builder {
-        crate::model::contact_center_activity::Builder::default()
-    }
-}
 
 /// <p>Specifies the settings for a wait activity in a journey. This type of activity waits for a certain amount of time or until a specific date and time before moving participants to the next activity in a journey.</p>
 #[non_exhaustive]
@@ -8206,6 +8254,13 @@ impl WaitActivity {
         self.wait_time.as_ref()
     }
 }
+impl WaitActivity {
+    /// Creates a new builder-style object to manufacture [`WaitActivity`](crate::model::WaitActivity).
+    pub fn builder() -> crate::model::wait_activity::Builder {
+        crate::model::wait_activity::Builder::default()
+    }
+}
+
 /// See [`WaitActivity`](crate::model::WaitActivity).
 pub mod wait_activity {
 
@@ -8249,12 +8304,6 @@ pub mod wait_activity {
         }
     }
 }
-impl WaitActivity {
-    /// Creates a new builder-style object to manufacture [`WaitActivity`](crate::model::WaitActivity).
-    pub fn builder() -> crate::model::wait_activity::Builder {
-        crate::model::wait_activity::Builder::default()
-    }
-}
 
 /// <p>Specifies a duration or a date and time that indicates when Amazon Pinpoint determines whether an activity's conditions have been met or an activity moves participants to the next activity in a journey.</p>
 #[non_exhaustive]
@@ -8277,6 +8326,13 @@ impl WaitTime {
         self.wait_until.as_deref()
     }
 }
+impl WaitTime {
+    /// Creates a new builder-style object to manufacture [`WaitTime`](crate::model::WaitTime).
+    pub fn builder() -> crate::model::wait_time::Builder {
+        crate::model::wait_time::Builder::default()
+    }
+}
+
 /// See [`WaitTime`](crate::model::WaitTime).
 pub mod wait_time {
 
@@ -8315,12 +8371,6 @@ pub mod wait_time {
                 wait_until: self.wait_until,
             }
         }
-    }
-}
-impl WaitTime {
-    /// Creates a new builder-style object to manufacture [`WaitTime`](crate::model::WaitTime).
-    pub fn builder() -> crate::model::wait_time::Builder {
-        crate::model::wait_time::Builder::default()
     }
 }
 
@@ -8363,6 +8413,13 @@ impl SmsMessageActivity {
         self.template_version.as_deref()
     }
 }
+impl SmsMessageActivity {
+    /// Creates a new builder-style object to manufacture [`SmsMessageActivity`](crate::model::SmsMessageActivity).
+    pub fn builder() -> crate::model::sms_message_activity::Builder {
+        crate::model::sms_message_activity::Builder::default()
+    }
+}
+
 /// See [`SmsMessageActivity`](crate::model::SmsMessageActivity).
 pub mod sms_message_activity {
 
@@ -8443,12 +8500,6 @@ pub mod sms_message_activity {
         }
     }
 }
-impl SmsMessageActivity {
-    /// Creates a new builder-style object to manufacture [`SmsMessageActivity`](crate::model::SmsMessageActivity).
-    pub fn builder() -> crate::model::sms_message_activity::Builder {
-        crate::model::sms_message_activity::Builder::default()
-    }
-}
 
 /// <p>Specifies the sender ID and message type for an SMS message that's sent to participants in a journey.</p>
 #[non_exhaustive]
@@ -8492,6 +8543,13 @@ impl JourneySmsMessage {
         self.template_id.as_deref()
     }
 }
+impl JourneySmsMessage {
+    /// Creates a new builder-style object to manufacture [`JourneySmsMessage`](crate::model::JourneySmsMessage).
+    pub fn builder() -> crate::model::journey_sms_message::Builder {
+        crate::model::journey_sms_message::Builder::default()
+    }
+}
+
 /// See [`JourneySmsMessage`](crate::model::JourneySmsMessage).
 pub mod journey_sms_message {
 
@@ -8572,12 +8630,6 @@ pub mod journey_sms_message {
                 template_id: self.template_id,
             }
         }
-    }
-}
-impl JourneySmsMessage {
-    /// Creates a new builder-style object to manufacture [`JourneySmsMessage`](crate::model::JourneySmsMessage).
-    pub fn builder() -> crate::model::journey_sms_message::Builder {
-        crate::model::journey_sms_message::Builder::default()
     }
 }
 
@@ -8685,6 +8737,13 @@ impl RandomSplitActivity {
         self.branches.as_deref()
     }
 }
+impl RandomSplitActivity {
+    /// Creates a new builder-style object to manufacture [`RandomSplitActivity`](crate::model::RandomSplitActivity).
+    pub fn builder() -> crate::model::random_split_activity::Builder {
+        crate::model::random_split_activity::Builder::default()
+    }
+}
+
 /// See [`RandomSplitActivity`](crate::model::RandomSplitActivity).
 pub mod random_split_activity {
 
@@ -8722,12 +8781,6 @@ pub mod random_split_activity {
         }
     }
 }
-impl RandomSplitActivity {
-    /// Creates a new builder-style object to manufacture [`RandomSplitActivity`](crate::model::RandomSplitActivity).
-    pub fn builder() -> crate::model::random_split_activity::Builder {
-        crate::model::random_split_activity::Builder::default()
-    }
-}
 
 /// <p>Specifies the settings for a path in a random split activity in a journey.</p>
 #[non_exhaustive]
@@ -8752,6 +8805,13 @@ impl RandomSplitEntry {
         self.percentage
     }
 }
+impl RandomSplitEntry {
+    /// Creates a new builder-style object to manufacture [`RandomSplitEntry`](crate::model::RandomSplitEntry).
+    pub fn builder() -> crate::model::random_split_entry::Builder {
+        crate::model::random_split_entry::Builder::default()
+    }
+}
+
 /// See [`RandomSplitEntry`](crate::model::RandomSplitEntry).
 pub mod random_split_entry {
 
@@ -8797,12 +8857,6 @@ pub mod random_split_entry {
         }
     }
 }
-impl RandomSplitEntry {
-    /// Creates a new builder-style object to manufacture [`RandomSplitEntry`](crate::model::RandomSplitEntry).
-    pub fn builder() -> crate::model::random_split_entry::Builder {
-        crate::model::random_split_entry::Builder::default()
-    }
-}
 
 /// <p>Specifies the settings for a push notification activity in a journey. This type of activity sends a push notification to participants.</p>
 #[non_exhaustive]
@@ -8843,6 +8897,13 @@ impl PushMessageActivity {
         self.template_version.as_deref()
     }
 }
+impl PushMessageActivity {
+    /// Creates a new builder-style object to manufacture [`PushMessageActivity`](crate::model::PushMessageActivity).
+    pub fn builder() -> crate::model::push_message_activity::Builder {
+        crate::model::push_message_activity::Builder::default()
+    }
+}
+
 /// See [`PushMessageActivity`](crate::model::PushMessageActivity).
 pub mod push_message_activity {
 
@@ -8923,12 +8984,6 @@ pub mod push_message_activity {
         }
     }
 }
-impl PushMessageActivity {
-    /// Creates a new builder-style object to manufacture [`PushMessageActivity`](crate::model::PushMessageActivity).
-    pub fn builder() -> crate::model::push_message_activity::Builder {
-        crate::model::push_message_activity::Builder::default()
-    }
-}
 
 /// <p>Specifies the message configuration for a push notification that's sent to participants in a journey.</p>
 #[non_exhaustive]
@@ -8946,6 +9001,13 @@ impl JourneyPushMessage {
         self.time_to_live.as_deref()
     }
 }
+impl JourneyPushMessage {
+    /// Creates a new builder-style object to manufacture [`JourneyPushMessage`](crate::model::JourneyPushMessage).
+    pub fn builder() -> crate::model::journey_push_message::Builder {
+        crate::model::journey_push_message::Builder::default()
+    }
+}
+
 /// See [`JourneyPushMessage`](crate::model::JourneyPushMessage).
 pub mod journey_push_message {
 
@@ -8974,12 +9036,6 @@ pub mod journey_push_message {
                 time_to_live: self.time_to_live,
             }
         }
-    }
-}
-impl JourneyPushMessage {
-    /// Creates a new builder-style object to manufacture [`JourneyPushMessage`](crate::model::JourneyPushMessage).
-    pub fn builder() -> crate::model::journey_push_message::Builder {
-        crate::model::journey_push_message::Builder::default()
     }
 }
 
@@ -9013,6 +9069,13 @@ impl MultiConditionalSplitActivity {
         self.evaluation_wait_time.as_ref()
     }
 }
+impl MultiConditionalSplitActivity {
+    /// Creates a new builder-style object to manufacture [`MultiConditionalSplitActivity`](crate::model::MultiConditionalSplitActivity).
+    pub fn builder() -> crate::model::multi_conditional_split_activity::Builder {
+        crate::model::multi_conditional_split_activity::Builder::default()
+    }
+}
+
 /// See [`MultiConditionalSplitActivity`](crate::model::MultiConditionalSplitActivity).
 pub mod multi_conditional_split_activity {
 
@@ -9081,12 +9144,6 @@ pub mod multi_conditional_split_activity {
         }
     }
 }
-impl MultiConditionalSplitActivity {
-    /// Creates a new builder-style object to manufacture [`MultiConditionalSplitActivity`](crate::model::MultiConditionalSplitActivity).
-    pub fn builder() -> crate::model::multi_conditional_split_activity::Builder {
-        crate::model::multi_conditional_split_activity::Builder::default()
-    }
-}
 
 /// <p>Specifies a condition to evaluate for an activity path in a journey.</p>
 #[non_exhaustive]
@@ -9109,6 +9166,13 @@ impl MultiConditionalBranch {
         self.next_activity.as_deref()
     }
 }
+impl MultiConditionalBranch {
+    /// Creates a new builder-style object to manufacture [`MultiConditionalBranch`](crate::model::MultiConditionalBranch).
+    pub fn builder() -> crate::model::multi_conditional_branch::Builder {
+        crate::model::multi_conditional_branch::Builder::default()
+    }
+}
+
 /// See [`MultiConditionalBranch`](crate::model::MultiConditionalBranch).
 pub mod multi_conditional_branch {
 
@@ -9155,12 +9219,6 @@ pub mod multi_conditional_branch {
         }
     }
 }
-impl MultiConditionalBranch {
-    /// Creates a new builder-style object to manufacture [`MultiConditionalBranch`](crate::model::MultiConditionalBranch).
-    pub fn builder() -> crate::model::multi_conditional_branch::Builder {
-        crate::model::multi_conditional_branch::Builder::default()
-    }
-}
 
 /// <p>Specifies a condition to evaluate for an activity in a journey.</p>
 #[non_exhaustive]
@@ -9190,6 +9248,13 @@ impl SimpleCondition {
         self.segment_dimensions.as_ref()
     }
 }
+impl SimpleCondition {
+    /// Creates a new builder-style object to manufacture [`SimpleCondition`](crate::model::SimpleCondition).
+    pub fn builder() -> crate::model::simple_condition::Builder {
+        crate::model::simple_condition::Builder::default()
+    }
+}
+
 /// See [`SimpleCondition`](crate::model::SimpleCondition).
 pub mod simple_condition {
 
@@ -9251,12 +9316,6 @@ pub mod simple_condition {
         }
     }
 }
-impl SimpleCondition {
-    /// Creates a new builder-style object to manufacture [`SimpleCondition`](crate::model::SimpleCondition).
-    pub fn builder() -> crate::model::simple_condition::Builder {
-        crate::model::simple_condition::Builder::default()
-    }
-}
 
 /// <p>Specifies the conditions to evaluate for an event that applies to an activity in a journey.</p>
 #[non_exhaustive]
@@ -9279,6 +9338,13 @@ impl EventCondition {
         self.message_activity.as_deref()
     }
 }
+impl EventCondition {
+    /// Creates a new builder-style object to manufacture [`EventCondition`](crate::model::EventCondition).
+    pub fn builder() -> crate::model::event_condition::Builder {
+        crate::model::event_condition::Builder::default()
+    }
+}
+
 /// See [`EventCondition`](crate::model::EventCondition).
 pub mod event_condition {
 
@@ -9325,12 +9391,6 @@ pub mod event_condition {
         }
     }
 }
-impl EventCondition {
-    /// Creates a new builder-style object to manufacture [`EventCondition`](crate::model::EventCondition).
-    pub fn builder() -> crate::model::event_condition::Builder {
-        crate::model::event_condition::Builder::default()
-    }
-}
 
 /// <p>Specifies the settings for a holdout activity in a journey. This type of activity stops a journey for a specified percentage of participants.</p>
 #[non_exhaustive]
@@ -9355,6 +9415,13 @@ impl HoldoutActivity {
         self.percentage
     }
 }
+impl HoldoutActivity {
+    /// Creates a new builder-style object to manufacture [`HoldoutActivity`](crate::model::HoldoutActivity).
+    pub fn builder() -> crate::model::holdout_activity::Builder {
+        crate::model::holdout_activity::Builder::default()
+    }
+}
+
 /// See [`HoldoutActivity`](crate::model::HoldoutActivity).
 pub mod holdout_activity {
 
@@ -9400,12 +9467,6 @@ pub mod holdout_activity {
         }
     }
 }
-impl HoldoutActivity {
-    /// Creates a new builder-style object to manufacture [`HoldoutActivity`](crate::model::HoldoutActivity).
-    pub fn builder() -> crate::model::holdout_activity::Builder {
-        crate::model::holdout_activity::Builder::default()
-    }
-}
 
 /// <p>Specifies the settings for an email activity in a journey. This type of activity sends an email message to participants.</p>
 #[non_exhaustive]
@@ -9446,6 +9507,13 @@ impl EmailMessageActivity {
         self.template_version.as_deref()
     }
 }
+impl EmailMessageActivity {
+    /// Creates a new builder-style object to manufacture [`EmailMessageActivity`](crate::model::EmailMessageActivity).
+    pub fn builder() -> crate::model::email_message_activity::Builder {
+        crate::model::email_message_activity::Builder::default()
+    }
+}
+
 /// See [`EmailMessageActivity`](crate::model::EmailMessageActivity).
 pub mod email_message_activity {
 
@@ -9526,12 +9594,6 @@ pub mod email_message_activity {
         }
     }
 }
-impl EmailMessageActivity {
-    /// Creates a new builder-style object to manufacture [`EmailMessageActivity`](crate::model::EmailMessageActivity).
-    pub fn builder() -> crate::model::email_message_activity::Builder {
-        crate::model::email_message_activity::Builder::default()
-    }
-}
 
 /// <p>Specifies the "From" address for an email message that's sent to participants in a journey.</p>
 #[non_exhaustive]
@@ -9547,6 +9609,13 @@ impl JourneyEmailMessage {
         self.from_address.as_deref()
     }
 }
+impl JourneyEmailMessage {
+    /// Creates a new builder-style object to manufacture [`JourneyEmailMessage`](crate::model::JourneyEmailMessage).
+    pub fn builder() -> crate::model::journey_email_message::Builder {
+        crate::model::journey_email_message::Builder::default()
+    }
+}
+
 /// See [`JourneyEmailMessage`](crate::model::JourneyEmailMessage).
 pub mod journey_email_message {
 
@@ -9573,12 +9642,6 @@ pub mod journey_email_message {
                 from_address: self.from_address,
             }
         }
-    }
-}
-impl JourneyEmailMessage {
-    /// Creates a new builder-style object to manufacture [`JourneyEmailMessage`](crate::model::JourneyEmailMessage).
-    pub fn builder() -> crate::model::journey_email_message::Builder {
-        crate::model::journey_email_message::Builder::default()
     }
 }
 
@@ -9619,6 +9682,13 @@ impl ConditionalSplitActivity {
         self.true_activity.as_deref()
     }
 }
+impl ConditionalSplitActivity {
+    /// Creates a new builder-style object to manufacture [`ConditionalSplitActivity`](crate::model::ConditionalSplitActivity).
+    pub fn builder() -> crate::model::conditional_split_activity::Builder {
+        crate::model::conditional_split_activity::Builder::default()
+    }
+}
+
 /// See [`ConditionalSplitActivity`](crate::model::ConditionalSplitActivity).
 pub mod conditional_split_activity {
 
@@ -9695,12 +9765,6 @@ pub mod conditional_split_activity {
         }
     }
 }
-impl ConditionalSplitActivity {
-    /// Creates a new builder-style object to manufacture [`ConditionalSplitActivity`](crate::model::ConditionalSplitActivity).
-    pub fn builder() -> crate::model::conditional_split_activity::Builder {
-        crate::model::conditional_split_activity::Builder::default()
-    }
-}
 
 /// <p>Specifies the conditions to evaluate for an activity in a journey, and how to evaluate those conditions.</p>
 #[non_exhaustive]
@@ -9723,6 +9787,13 @@ impl Condition {
         self.operator.as_ref()
     }
 }
+impl Condition {
+    /// Creates a new builder-style object to manufacture [`Condition`](crate::model::Condition).
+    pub fn builder() -> crate::model::condition::Builder {
+        crate::model::condition::Builder::default()
+    }
+}
+
 /// See [`Condition`](crate::model::Condition).
 pub mod condition {
 
@@ -9770,12 +9841,6 @@ pub mod condition {
                 operator: self.operator,
             }
         }
-    }
-}
-impl Condition {
-    /// Creates a new builder-style object to manufacture [`Condition`](crate::model::Condition).
-    pub fn builder() -> crate::model::condition::Builder {
-        crate::model::condition::Builder::default()
     }
 }
 
@@ -9930,6 +9995,13 @@ impl CustomMessageActivity {
         self.template_version.as_deref()
     }
 }
+impl CustomMessageActivity {
+    /// Creates a new builder-style object to manufacture [`CustomMessageActivity`](crate::model::CustomMessageActivity).
+    pub fn builder() -> crate::model::custom_message_activity::Builder {
+        crate::model::custom_message_activity::Builder::default()
+    }
+}
+
 /// See [`CustomMessageActivity`](crate::model::CustomMessageActivity).
 pub mod custom_message_activity {
 
@@ -10052,12 +10124,6 @@ pub mod custom_message_activity {
         }
     }
 }
-impl CustomMessageActivity {
-    /// Creates a new builder-style object to manufacture [`CustomMessageActivity`](crate::model::CustomMessageActivity).
-    pub fn builder() -> crate::model::custom_message_activity::Builder {
-        crate::model::custom_message_activity::Builder::default()
-    }
-}
 
 /// <p>Specifies the message content for a custom channel message that's sent to participants in a journey.</p>
 #[non_exhaustive]
@@ -10073,6 +10139,13 @@ impl JourneyCustomMessage {
         self.data.as_deref()
     }
 }
+impl JourneyCustomMessage {
+    /// Creates a new builder-style object to manufacture [`JourneyCustomMessage`](crate::model::JourneyCustomMessage).
+    pub fn builder() -> crate::model::journey_custom_message::Builder {
+        crate::model::journey_custom_message::Builder::default()
+    }
+}
+
 /// See [`JourneyCustomMessage`](crate::model::JourneyCustomMessage).
 pub mod journey_custom_message {
 
@@ -10097,12 +10170,6 @@ pub mod journey_custom_message {
         pub fn build(self) -> crate::model::JourneyCustomMessage {
             crate::model::JourneyCustomMessage { data: self.data }
         }
-    }
-}
-impl JourneyCustomMessage {
-    /// Creates a new builder-style object to manufacture [`JourneyCustomMessage`](crate::model::JourneyCustomMessage).
-    pub fn builder() -> crate::model::journey_custom_message::Builder {
-        crate::model::journey_custom_message::Builder::default()
     }
 }
 
@@ -10287,6 +10354,13 @@ impl JourneyStateRequest {
         self.state.as_ref()
     }
 }
+impl JourneyStateRequest {
+    /// Creates a new builder-style object to manufacture [`JourneyStateRequest`](crate::model::JourneyStateRequest).
+    pub fn builder() -> crate::model::journey_state_request::Builder {
+        crate::model::journey_state_request::Builder::default()
+    }
+}
+
 /// See [`JourneyStateRequest`](crate::model::JourneyStateRequest).
 pub mod journey_state_request {
 
@@ -10317,12 +10391,6 @@ pub mod journey_state_request {
         pub fn build(self) -> crate::model::JourneyStateRequest {
             crate::model::JourneyStateRequest { state: self.state }
         }
-    }
-}
-impl JourneyStateRequest {
-    /// Creates a new builder-style object to manufacture [`JourneyStateRequest`](crate::model::JourneyStateRequest).
-    pub fn builder() -> crate::model::journey_state_request::Builder {
-        crate::model::journey_state_request::Builder::default()
     }
 }
 
@@ -10489,6 +10557,13 @@ impl WriteJourneyRequest {
         self.closed_days.as_ref()
     }
 }
+impl WriteJourneyRequest {
+    /// Creates a new builder-style object to manufacture [`WriteJourneyRequest`](crate::model::WriteJourneyRequest).
+    pub fn builder() -> crate::model::write_journey_request::Builder {
+        crate::model::write_journey_request::Builder::default()
+    }
+}
+
 /// See [`WriteJourneyRequest`](crate::model::WriteJourneyRequest).
 pub mod write_journey_request {
 
@@ -10799,12 +10874,6 @@ pub mod write_journey_request {
         }
     }
 }
-impl WriteJourneyRequest {
-    /// Creates a new builder-style object to manufacture [`WriteJourneyRequest`](crate::model::WriteJourneyRequest).
-    pub fn builder() -> crate::model::write_journey_request::Builder {
-        crate::model::write_journey_request::Builder::default()
-    }
-}
 
 /// <p>InApp Template Request.</p>
 #[non_exhaustive]
@@ -10856,6 +10925,13 @@ impl InAppTemplateRequest {
         self.template_description.as_deref()
     }
 }
+impl InAppTemplateRequest {
+    /// Creates a new builder-style object to manufacture [`InAppTemplateRequest`](crate::model::InAppTemplateRequest).
+    pub fn builder() -> crate::model::in_app_template_request::Builder {
+        crate::model::in_app_template_request::Builder::default()
+    }
+}
+
 /// See [`InAppTemplateRequest`](crate::model::InAppTemplateRequest).
 pub mod in_app_template_request {
 
@@ -10976,12 +11052,6 @@ pub mod in_app_template_request {
                 template_description: self.template_description,
             }
         }
-    }
-}
-impl InAppTemplateRequest {
-    /// Creates a new builder-style object to manufacture [`InAppTemplateRequest`](crate::model::InAppTemplateRequest).
-    pub fn builder() -> crate::model::in_app_template_request::Builder {
-        crate::model::in_app_template_request::Builder::default()
     }
 }
 
@@ -11151,6 +11221,13 @@ impl InAppMessageContent {
         self.secondary_btn.as_ref()
     }
 }
+impl InAppMessageContent {
+    /// Creates a new builder-style object to manufacture [`InAppMessageContent`](crate::model::InAppMessageContent).
+    pub fn builder() -> crate::model::in_app_message_content::Builder {
+        crate::model::in_app_message_content::Builder::default()
+    }
+}
+
 /// See [`InAppMessageContent`](crate::model::InAppMessageContent).
 pub mod in_app_message_content {
 
@@ -11254,12 +11331,6 @@ pub mod in_app_message_content {
         }
     }
 }
-impl InAppMessageContent {
-    /// Creates a new builder-style object to manufacture [`InAppMessageContent`](crate::model::InAppMessageContent).
-    pub fn builder() -> crate::model::in_app_message_content::Builder {
-        crate::model::in_app_message_content::Builder::default()
-    }
-}
 
 /// <p>Button Config for an in-app message.</p>
 #[non_exhaustive]
@@ -11296,6 +11367,13 @@ impl InAppMessageButton {
         self.web.as_ref()
     }
 }
+impl InAppMessageButton {
+    /// Creates a new builder-style object to manufacture [`InAppMessageButton`](crate::model::InAppMessageButton).
+    pub fn builder() -> crate::model::in_app_message_button::Builder {
+        crate::model::in_app_message_button::Builder::default()
+    }
+}
+
 /// See [`InAppMessageButton`](crate::model::InAppMessageButton).
 pub mod in_app_message_button {
 
@@ -11372,12 +11450,6 @@ pub mod in_app_message_button {
         }
     }
 }
-impl InAppMessageButton {
-    /// Creates a new builder-style object to manufacture [`InAppMessageButton`](crate::model::InAppMessageButton).
-    pub fn builder() -> crate::model::in_app_message_button::Builder {
-        crate::model::in_app_message_button::Builder::default()
-    }
-}
 
 /// <p>Override button configuration.</p>
 #[non_exhaustive]
@@ -11400,6 +11472,13 @@ impl OverrideButtonConfiguration {
         self.link.as_deref()
     }
 }
+impl OverrideButtonConfiguration {
+    /// Creates a new builder-style object to manufacture [`OverrideButtonConfiguration`](crate::model::OverrideButtonConfiguration).
+    pub fn builder() -> crate::model::override_button_configuration::Builder {
+        crate::model::override_button_configuration::Builder::default()
+    }
+}
+
 /// See [`OverrideButtonConfiguration`](crate::model::OverrideButtonConfiguration).
 pub mod override_button_configuration {
 
@@ -11441,12 +11520,6 @@ pub mod override_button_configuration {
                 link: self.link,
             }
         }
-    }
-}
-impl OverrideButtonConfiguration {
-    /// Creates a new builder-style object to manufacture [`OverrideButtonConfiguration`](crate::model::OverrideButtonConfiguration).
-    pub fn builder() -> crate::model::override_button_configuration::Builder {
-        crate::model::override_button_configuration::Builder::default()
     }
 }
 
@@ -11594,6 +11667,13 @@ impl DefaultButtonConfiguration {
         self.text_color.as_deref()
     }
 }
+impl DefaultButtonConfiguration {
+    /// Creates a new builder-style object to manufacture [`DefaultButtonConfiguration`](crate::model::DefaultButtonConfiguration).
+    pub fn builder() -> crate::model::default_button_configuration::Builder {
+        crate::model::default_button_configuration::Builder::default()
+    }
+}
+
 /// See [`DefaultButtonConfiguration`](crate::model::DefaultButtonConfiguration).
 pub mod default_button_configuration {
 
@@ -11688,12 +11768,6 @@ pub mod default_button_configuration {
         }
     }
 }
-impl DefaultButtonConfiguration {
-    /// Creates a new builder-style object to manufacture [`DefaultButtonConfiguration`](crate::model::DefaultButtonConfiguration).
-    pub fn builder() -> crate::model::default_button_configuration::Builder {
-        crate::model::default_button_configuration::Builder::default()
-    }
-}
 
 /// <p>Text config for Message Header.</p>
 #[non_exhaustive]
@@ -11723,6 +11797,13 @@ impl InAppMessageHeaderConfig {
         self.text_color.as_deref()
     }
 }
+impl InAppMessageHeaderConfig {
+    /// Creates a new builder-style object to manufacture [`InAppMessageHeaderConfig`](crate::model::InAppMessageHeaderConfig).
+    pub fn builder() -> crate::model::in_app_message_header_config::Builder {
+        crate::model::in_app_message_header_config::Builder::default()
+    }
+}
+
 /// See [`InAppMessageHeaderConfig`](crate::model::InAppMessageHeaderConfig).
 pub mod in_app_message_header_config {
 
@@ -11776,12 +11857,6 @@ pub mod in_app_message_header_config {
                 text_color: self.text_color,
             }
         }
-    }
-}
-impl InAppMessageHeaderConfig {
-    /// Creates a new builder-style object to manufacture [`InAppMessageHeaderConfig`](crate::model::InAppMessageHeaderConfig).
-    pub fn builder() -> crate::model::in_app_message_header_config::Builder {
-        crate::model::in_app_message_header_config::Builder::default()
     }
 }
 
@@ -11908,6 +11983,13 @@ impl InAppMessageBodyConfig {
         self.text_color.as_deref()
     }
 }
+impl InAppMessageBodyConfig {
+    /// Creates a new builder-style object to manufacture [`InAppMessageBodyConfig`](crate::model::InAppMessageBodyConfig).
+    pub fn builder() -> crate::model::in_app_message_body_config::Builder {
+        crate::model::in_app_message_body_config::Builder::default()
+    }
+}
+
 /// See [`InAppMessageBodyConfig`](crate::model::InAppMessageBodyConfig).
 pub mod in_app_message_body_config {
 
@@ -11961,12 +12043,6 @@ pub mod in_app_message_body_config {
                 text_color: self.text_color,
             }
         }
-    }
-}
-impl InAppMessageBodyConfig {
-    /// Creates a new builder-style object to manufacture [`InAppMessageBodyConfig`](crate::model::InAppMessageBodyConfig).
-    pub fn builder() -> crate::model::in_app_message_body_config::Builder {
-        crate::model::in_app_message_body_config::Builder::default()
     }
 }
 
@@ -12054,6 +12130,13 @@ impl GcmChannelResponse {
         self.version
     }
 }
+impl GcmChannelResponse {
+    /// Creates a new builder-style object to manufacture [`GcmChannelResponse`](crate::model::GcmChannelResponse).
+    pub fn builder() -> crate::model::gcm_channel_response::Builder {
+        crate::model::gcm_channel_response::Builder::default()
+    }
+}
+
 /// See [`GcmChannelResponse`](crate::model::GcmChannelResponse).
 pub mod gcm_channel_response {
 
@@ -12214,12 +12297,6 @@ pub mod gcm_channel_response {
         }
     }
 }
-impl GcmChannelResponse {
-    /// Creates a new builder-style object to manufacture [`GcmChannelResponse`](crate::model::GcmChannelResponse).
-    pub fn builder() -> crate::model::gcm_channel_response::Builder {
-        crate::model::gcm_channel_response::Builder::default()
-    }
-}
 
 /// <p>Specifies the status and settings of the GCM channel for an application. This channel enables Amazon Pinpoint to send push notifications through the Firebase Cloud Messaging (FCM), formerly Google Cloud Messaging (GCM), service.</p>
 #[non_exhaustive]
@@ -12242,6 +12319,13 @@ impl GcmChannelRequest {
         self.enabled
     }
 }
+impl GcmChannelRequest {
+    /// Creates a new builder-style object to manufacture [`GcmChannelRequest`](crate::model::GcmChannelRequest).
+    pub fn builder() -> crate::model::gcm_channel_request::Builder {
+        crate::model::gcm_channel_request::Builder::default()
+    }
+}
+
 /// See [`GcmChannelRequest`](crate::model::GcmChannelRequest).
 pub mod gcm_channel_request {
 
@@ -12282,12 +12366,6 @@ pub mod gcm_channel_request {
         }
     }
 }
-impl GcmChannelRequest {
-    /// Creates a new builder-style object to manufacture [`GcmChannelRequest`](crate::model::GcmChannelRequest).
-    pub fn builder() -> crate::model::gcm_channel_request::Builder {
-        crate::model::gcm_channel_request::Builder::default()
-    }
-}
 
 /// <p>Specifies a batch of endpoints to create or update and the settings and attributes to set or change for each endpoint.</p>
 #[non_exhaustive]
@@ -12303,6 +12381,13 @@ impl EndpointBatchRequest {
         self.item.as_deref()
     }
 }
+impl EndpointBatchRequest {
+    /// Creates a new builder-style object to manufacture [`EndpointBatchRequest`](crate::model::EndpointBatchRequest).
+    pub fn builder() -> crate::model::endpoint_batch_request::Builder {
+        crate::model::endpoint_batch_request::Builder::default()
+    }
+}
+
 /// See [`EndpointBatchRequest`](crate::model::EndpointBatchRequest).
 pub mod endpoint_batch_request {
 
@@ -12336,12 +12421,6 @@ pub mod endpoint_batch_request {
         pub fn build(self) -> crate::model::EndpointBatchRequest {
             crate::model::EndpointBatchRequest { item: self.item }
         }
-    }
-}
-impl EndpointBatchRequest {
-    /// Creates a new builder-style object to manufacture [`EndpointBatchRequest`](crate::model::EndpointBatchRequest).
-    pub fn builder() -> crate::model::endpoint_batch_request::Builder {
-        crate::model::endpoint_batch_request::Builder::default()
     }
 }
 
@@ -12448,6 +12527,13 @@ impl EndpointBatchItem {
         self.user.as_ref()
     }
 }
+impl EndpointBatchItem {
+    /// Creates a new builder-style object to manufacture [`EndpointBatchItem`](crate::model::EndpointBatchItem).
+    pub fn builder() -> crate::model::endpoint_batch_item::Builder {
+        crate::model::endpoint_batch_item::Builder::default()
+    }
+}
+
 /// See [`EndpointBatchItem`](crate::model::EndpointBatchItem).
 pub mod endpoint_batch_item {
 
@@ -12654,12 +12740,6 @@ pub mod endpoint_batch_item {
         }
     }
 }
-impl EndpointBatchItem {
-    /// Creates a new builder-style object to manufacture [`EndpointBatchItem`](crate::model::EndpointBatchItem).
-    pub fn builder() -> crate::model::endpoint_batch_item::Builder {
-        crate::model::endpoint_batch_item::Builder::default()
-    }
-}
 
 /// <p>Specifies data for one or more attributes that describe the user who's associated with an endpoint.</p>
 #[non_exhaustive]
@@ -12690,6 +12770,13 @@ impl EndpointUser {
         self.user_id.as_deref()
     }
 }
+impl EndpointUser {
+    /// Creates a new builder-style object to manufacture [`EndpointUser`](crate::model::EndpointUser).
+    pub fn builder() -> crate::model::endpoint_user::Builder {
+        crate::model::endpoint_user::Builder::default()
+    }
+}
+
 /// See [`EndpointUser`](crate::model::EndpointUser).
 pub mod endpoint_user {
 
@@ -12749,12 +12836,6 @@ pub mod endpoint_user {
         }
     }
 }
-impl EndpointUser {
-    /// Creates a new builder-style object to manufacture [`EndpointUser`](crate::model::EndpointUser).
-    pub fn builder() -> crate::model::endpoint_user::Builder {
-        crate::model::endpoint_user::Builder::default()
-    }
-}
 
 /// <p>Specifies geographic information about an endpoint.</p>
 #[non_exhaustive]
@@ -12805,6 +12886,13 @@ impl EndpointLocation {
         self.region.as_deref()
     }
 }
+impl EndpointLocation {
+    /// Creates a new builder-style object to manufacture [`EndpointLocation`](crate::model::EndpointLocation).
+    pub fn builder() -> crate::model::endpoint_location::Builder {
+        crate::model::endpoint_location::Builder::default()
+    }
+}
+
 /// See [`EndpointLocation`](crate::model::EndpointLocation).
 pub mod endpoint_location {
 
@@ -12893,12 +12981,6 @@ pub mod endpoint_location {
         }
     }
 }
-impl EndpointLocation {
-    /// Creates a new builder-style object to manufacture [`EndpointLocation`](crate::model::EndpointLocation).
-    pub fn builder() -> crate::model::endpoint_location::Builder {
-        crate::model::endpoint_location::Builder::default()
-    }
-}
 
 /// <p>Specifies demographic information about an endpoint, such as the applicable time zone and platform.</p>
 #[non_exhaustive]
@@ -12963,6 +13045,13 @@ impl EndpointDemographic {
         self.timezone.as_deref()
     }
 }
+impl EndpointDemographic {
+    /// Creates a new builder-style object to manufacture [`EndpointDemographic`](crate::model::EndpointDemographic).
+    pub fn builder() -> crate::model::endpoint_demographic::Builder {
+        crate::model::endpoint_demographic::Builder::default()
+    }
+}
+
 /// See [`EndpointDemographic`](crate::model::EndpointDemographic).
 pub mod endpoint_demographic {
 
@@ -13079,12 +13168,6 @@ pub mod endpoint_demographic {
                 timezone: self.timezone,
             }
         }
-    }
-}
-impl EndpointDemographic {
-    /// Creates a new builder-style object to manufacture [`EndpointDemographic`](crate::model::EndpointDemographic).
-    pub fn builder() -> crate::model::endpoint_demographic::Builder {
-        crate::model::endpoint_demographic::Builder::default()
     }
 }
 
@@ -13343,6 +13426,13 @@ impl EndpointRequest {
         self.user.as_ref()
     }
 }
+impl EndpointRequest {
+    /// Creates a new builder-style object to manufacture [`EndpointRequest`](crate::model::EndpointRequest).
+    pub fn builder() -> crate::model::endpoint_request::Builder {
+        crate::model::endpoint_request::Builder::default()
+    }
+}
+
 /// See [`EndpointRequest`](crate::model::EndpointRequest).
 pub mod endpoint_request {
 
@@ -13537,12 +13627,6 @@ pub mod endpoint_request {
         }
     }
 }
-impl EndpointRequest {
-    /// Creates a new builder-style object to manufacture [`EndpointRequest`](crate::model::EndpointRequest).
-    pub fn builder() -> crate::model::endpoint_request::Builder {
-        crate::model::endpoint_request::Builder::default()
-    }
-}
 
 /// <p>Specifies the content and settings for a message template that can be used in messages that are sent through the email channel.</p>
 #[non_exhaustive]
@@ -13604,6 +13688,13 @@ impl EmailTemplateRequest {
         self.text_part.as_deref()
     }
 }
+impl EmailTemplateRequest {
+    /// Creates a new builder-style object to manufacture [`EmailTemplateRequest`](crate::model::EmailTemplateRequest).
+    pub fn builder() -> crate::model::email_template_request::Builder {
+        crate::model::email_template_request::Builder::default()
+    }
+}
+
 /// See [`EmailTemplateRequest`](crate::model::EmailTemplateRequest).
 pub mod email_template_request {
 
@@ -13730,12 +13821,6 @@ pub mod email_template_request {
         }
     }
 }
-impl EmailTemplateRequest {
-    /// Creates a new builder-style object to manufacture [`EmailTemplateRequest`](crate::model::EmailTemplateRequest).
-    pub fn builder() -> crate::model::email_template_request::Builder {
-        crate::model::email_template_request::Builder::default()
-    }
-}
 
 /// <p>Provides information about the status and settings of the email channel for an application.</p>
 #[non_exhaustive]
@@ -13849,6 +13934,13 @@ impl EmailChannelResponse {
         self.version
     }
 }
+impl EmailChannelResponse {
+    /// Creates a new builder-style object to manufacture [`EmailChannelResponse`](crate::model::EmailChannelResponse).
+    pub fn builder() -> crate::model::email_channel_response::Builder {
+        crate::model::email_channel_response::Builder::default()
+    }
+}
+
 /// See [`EmailChannelResponse`](crate::model::EmailChannelResponse).
 pub mod email_channel_response {
 
@@ -14060,12 +14152,6 @@ pub mod email_channel_response {
         }
     }
 }
-impl EmailChannelResponse {
-    /// Creates a new builder-style object to manufacture [`EmailChannelResponse`](crate::model::EmailChannelResponse).
-    pub fn builder() -> crate::model::email_channel_response::Builder {
-        crate::model::email_channel_response::Builder::default()
-    }
-}
 
 /// <p>Specifies the status and settings of the email channel for an application.</p>
 #[non_exhaustive]
@@ -14109,6 +14195,13 @@ impl EmailChannelRequest {
         self.role_arn.as_deref()
     }
 }
+impl EmailChannelRequest {
+    /// Creates a new builder-style object to manufacture [`EmailChannelRequest`](crate::model::EmailChannelRequest).
+    pub fn builder() -> crate::model::email_channel_request::Builder {
+        crate::model::email_channel_request::Builder::default()
+    }
+}
+
 /// See [`EmailChannelRequest`](crate::model::EmailChannelRequest).
 pub mod email_channel_request {
 
@@ -14186,12 +14279,6 @@ pub mod email_channel_request {
                 role_arn: self.role_arn,
             }
         }
-    }
-}
-impl EmailChannelRequest {
-    /// Creates a new builder-style object to manufacture [`EmailChannelRequest`](crate::model::EmailChannelRequest).
-    pub fn builder() -> crate::model::email_channel_request::Builder {
-        crate::model::email_channel_request::Builder::default()
     }
 }
 
@@ -14388,6 +14475,13 @@ impl CampaignResponse {
         self.priority
     }
 }
+impl CampaignResponse {
+    /// Creates a new builder-style object to manufacture [`CampaignResponse`](crate::model::CampaignResponse).
+    pub fn builder() -> crate::model::campaign_response::Builder {
+        crate::model::campaign_response::Builder::default()
+    }
+}
+
 /// See [`CampaignResponse`](crate::model::CampaignResponse).
 pub mod campaign_response {
 
@@ -14771,12 +14865,6 @@ pub mod campaign_response {
         }
     }
 }
-impl CampaignResponse {
-    /// Creates a new builder-style object to manufacture [`CampaignResponse`](crate::model::CampaignResponse).
-    pub fn builder() -> crate::model::campaign_response::Builder {
-        crate::model::campaign_response::Builder::default()
-    }
-}
 
 /// <p>Specifies the message template to use for the message, for each type of channel.</p>
 #[non_exhaustive]
@@ -14813,6 +14901,13 @@ impl TemplateConfiguration {
         self.voice_template.as_ref()
     }
 }
+impl TemplateConfiguration {
+    /// Creates a new builder-style object to manufacture [`TemplateConfiguration`](crate::model::TemplateConfiguration).
+    pub fn builder() -> crate::model::template_configuration::Builder {
+        crate::model::template_configuration::Builder::default()
+    }
+}
+
 /// See [`TemplateConfiguration`](crate::model::TemplateConfiguration).
 pub mod template_configuration {
 
@@ -14889,12 +14984,6 @@ pub mod template_configuration {
         }
     }
 }
-impl TemplateConfiguration {
-    /// Creates a new builder-style object to manufacture [`TemplateConfiguration`](crate::model::TemplateConfiguration).
-    pub fn builder() -> crate::model::template_configuration::Builder {
-        crate::model::template_configuration::Builder::default()
-    }
-}
 
 /// <p>Specifies the name and version of the message template to use for the message.</p>
 #[non_exhaustive]
@@ -14921,6 +15010,13 @@ impl Template {
         self.version.as_deref()
     }
 }
+impl Template {
+    /// Creates a new builder-style object to manufacture [`Template`](crate::model::Template).
+    pub fn builder() -> crate::model::template::Builder {
+        crate::model::template::Builder::default()
+    }
+}
+
 /// See [`Template`](crate::model::Template).
 pub mod template {
 
@@ -14965,12 +15061,6 @@ pub mod template {
         }
     }
 }
-impl Template {
-    /// Creates a new builder-style object to manufacture [`Template`](crate::model::Template).
-    pub fn builder() -> crate::model::template::Builder {
-        crate::model::template::Builder::default()
-    }
-}
 
 /// <p>Provides information about the status of a campaign.</p>
 #[non_exhaustive]
@@ -14988,6 +15078,13 @@ impl CampaignState {
         self.campaign_status.as_ref()
     }
 }
+impl CampaignState {
+    /// Creates a new builder-style object to manufacture [`CampaignState`](crate::model::CampaignState).
+    pub fn builder() -> crate::model::campaign_state::Builder {
+        crate::model::campaign_state::Builder::default()
+    }
+}
+
 /// See [`CampaignState`](crate::model::CampaignState).
 pub mod campaign_state {
 
@@ -15019,12 +15116,6 @@ pub mod campaign_state {
                 campaign_status: self.campaign_status,
             }
         }
-    }
-}
-impl CampaignState {
-    /// Creates a new builder-style object to manufacture [`CampaignState`](crate::model::CampaignState).
-    pub fn builder() -> crate::model::campaign_state::Builder {
-        crate::model::campaign_state::Builder::default()
     }
 }
 
@@ -15219,6 +15310,13 @@ impl Schedule {
         self.timezone.as_deref()
     }
 }
+impl Schedule {
+    /// Creates a new builder-style object to manufacture [`Schedule`](crate::model::Schedule).
+    pub fn builder() -> crate::model::schedule::Builder {
+        crate::model::schedule::Builder::default()
+    }
+}
+
 /// See [`Schedule`](crate::model::Schedule).
 pub mod schedule {
 
@@ -15338,12 +15436,6 @@ pub mod schedule {
                 timezone: self.timezone,
             }
         }
-    }
-}
-impl Schedule {
-    /// Creates a new builder-style object to manufacture [`Schedule`](crate::model::Schedule).
-    pub fn builder() -> crate::model::schedule::Builder {
-        crate::model::schedule::Builder::default()
     }
 }
 
@@ -15493,6 +15585,13 @@ impl CampaignEventFilter {
         self.filter_type.as_ref()
     }
 }
+impl CampaignEventFilter {
+    /// Creates a new builder-style object to manufacture [`CampaignEventFilter`](crate::model::CampaignEventFilter).
+    pub fn builder() -> crate::model::campaign_event_filter::Builder {
+        crate::model::campaign_event_filter::Builder::default()
+    }
+}
+
 /// See [`CampaignEventFilter`](crate::model::CampaignEventFilter).
 pub mod campaign_event_filter {
 
@@ -15539,12 +15638,6 @@ pub mod campaign_event_filter {
                 filter_type: self.filter_type,
             }
         }
-    }
-}
-impl CampaignEventFilter {
-    /// Creates a new builder-style object to manufacture [`CampaignEventFilter`](crate::model::CampaignEventFilter).
-    pub fn builder() -> crate::model::campaign_event_filter::Builder {
-        crate::model::campaign_event_filter::Builder::default()
     }
 }
 
@@ -15618,6 +15711,13 @@ impl MessageConfiguration {
         self.in_app_message.as_ref()
     }
 }
+impl MessageConfiguration {
+    /// Creates a new builder-style object to manufacture [`MessageConfiguration`](crate::model::MessageConfiguration).
+    pub fn builder() -> crate::model::message_configuration::Builder {
+        crate::model::message_configuration::Builder::default()
+    }
+}
+
 /// See [`MessageConfiguration`](crate::model::MessageConfiguration).
 pub mod message_configuration {
 
@@ -15769,12 +15869,6 @@ pub mod message_configuration {
         }
     }
 }
-impl MessageConfiguration {
-    /// Creates a new builder-style object to manufacture [`MessageConfiguration`](crate::model::MessageConfiguration).
-    pub fn builder() -> crate::model::message_configuration::Builder {
-        crate::model::message_configuration::Builder::default()
-    }
-}
 
 /// <p>In-app message configuration.</p>
 #[non_exhaustive]
@@ -15815,6 +15909,13 @@ impl CampaignInAppMessage {
         self.layout.as_ref()
     }
 }
+impl CampaignInAppMessage {
+    /// Creates a new builder-style object to manufacture [`CampaignInAppMessage`](crate::model::CampaignInAppMessage).
+    pub fn builder() -> crate::model::campaign_in_app_message::Builder {
+        crate::model::campaign_in_app_message::Builder::default()
+    }
+}
+
 /// See [`CampaignInAppMessage`](crate::model::CampaignInAppMessage).
 pub mod campaign_in_app_message {
 
@@ -15905,12 +16006,6 @@ pub mod campaign_in_app_message {
         }
     }
 }
-impl CampaignInAppMessage {
-    /// Creates a new builder-style object to manufacture [`CampaignInAppMessage`](crate::model::CampaignInAppMessage).
-    pub fn builder() -> crate::model::campaign_in_app_message::Builder {
-        crate::model::campaign_in_app_message::Builder::default()
-    }
-}
 
 /// <p>Specifies the content and settings for an SMS message that's sent to recipients of a campaign.</p>
 #[non_exhaustive]
@@ -15961,6 +16056,13 @@ impl CampaignSmsMessage {
         self.template_id.as_deref()
     }
 }
+impl CampaignSmsMessage {
+    /// Creates a new builder-style object to manufacture [`CampaignSmsMessage`](crate::model::CampaignSmsMessage).
+    pub fn builder() -> crate::model::campaign_sms_message::Builder {
+        crate::model::campaign_sms_message::Builder::default()
+    }
+}
+
 /// See [`CampaignSmsMessage`](crate::model::CampaignSmsMessage).
 pub mod campaign_sms_message {
 
@@ -16053,12 +16155,6 @@ pub mod campaign_sms_message {
                 template_id: self.template_id,
             }
         }
-    }
-}
-impl CampaignSmsMessage {
-    /// Creates a new builder-style object to manufacture [`CampaignSmsMessage`](crate::model::CampaignSmsMessage).
-    pub fn builder() -> crate::model::campaign_sms_message::Builder {
-        crate::model::campaign_sms_message::Builder::default()
     }
 }
 
@@ -16165,6 +16261,13 @@ impl Message {
         self.url.as_deref()
     }
 }
+impl Message {
+    /// Creates a new builder-style object to manufacture [`Message`](crate::model::Message).
+    pub fn builder() -> crate::model::message::Builder {
+        crate::model::message::Builder::default()
+    }
+}
+
 /// See [`Message`](crate::model::Message).
 pub mod message {
 
@@ -16343,12 +16446,6 @@ pub mod message {
         }
     }
 }
-impl Message {
-    /// Creates a new builder-style object to manufacture [`Message`](crate::model::Message).
-    pub fn builder() -> crate::model::message::Builder {
-        crate::model::message::Builder::default()
-    }
-}
 
 /// <p>Specifies the content and "From" address for an email message that's sent to recipients of a campaign.</p>
 #[non_exhaustive]
@@ -16385,6 +16482,13 @@ impl CampaignEmailMessage {
         self.title.as_deref()
     }
 }
+impl CampaignEmailMessage {
+    /// Creates a new builder-style object to manufacture [`CampaignEmailMessage`](crate::model::CampaignEmailMessage).
+    pub fn builder() -> crate::model::campaign_email_message::Builder {
+        crate::model::campaign_email_message::Builder::default()
+    }
+}
+
 /// See [`CampaignEmailMessage`](crate::model::CampaignEmailMessage).
 pub mod campaign_email_message {
 
@@ -16449,12 +16553,6 @@ pub mod campaign_email_message {
         }
     }
 }
-impl CampaignEmailMessage {
-    /// Creates a new builder-style object to manufacture [`CampaignEmailMessage`](crate::model::CampaignEmailMessage).
-    pub fn builder() -> crate::model::campaign_email_message::Builder {
-        crate::model::campaign_email_message::Builder::default()
-    }
-}
 
 /// <p>Specifies the contents of a message that's sent through a custom channel to recipients of a campaign.</p>
 #[non_exhaustive]
@@ -16470,6 +16568,13 @@ impl CampaignCustomMessage {
         self.data.as_deref()
     }
 }
+impl CampaignCustomMessage {
+    /// Creates a new builder-style object to manufacture [`CampaignCustomMessage`](crate::model::CampaignCustomMessage).
+    pub fn builder() -> crate::model::campaign_custom_message::Builder {
+        crate::model::campaign_custom_message::Builder::default()
+    }
+}
+
 /// See [`CampaignCustomMessage`](crate::model::CampaignCustomMessage).
 pub mod campaign_custom_message {
 
@@ -16494,12 +16599,6 @@ pub mod campaign_custom_message {
         pub fn build(self) -> crate::model::CampaignCustomMessage {
             crate::model::CampaignCustomMessage { data: self.data }
         }
-    }
-}
-impl CampaignCustomMessage {
-    /// Creates a new builder-style object to manufacture [`CampaignCustomMessage`](crate::model::CampaignCustomMessage).
-    pub fn builder() -> crate::model::campaign_custom_message::Builder {
-        crate::model::campaign_custom_message::Builder::default()
     }
 }
 
@@ -16545,6 +16644,13 @@ impl CampaignLimits {
         self.session
     }
 }
+impl CampaignLimits {
+    /// Creates a new builder-style object to manufacture [`CampaignLimits`](crate::model::CampaignLimits).
+    pub fn builder() -> crate::model::campaign_limits::Builder {
+        crate::model::campaign_limits::Builder::default()
+    }
+}
+
 /// See [`CampaignLimits`](crate::model::CampaignLimits).
 pub mod campaign_limits {
 
@@ -16621,12 +16727,6 @@ pub mod campaign_limits {
         }
     }
 }
-impl CampaignLimits {
-    /// Creates a new builder-style object to manufacture [`CampaignLimits`](crate::model::CampaignLimits).
-    pub fn builder() -> crate::model::campaign_limits::Builder {
-        crate::model::campaign_limits::Builder::default()
-    }
-}
 
 /// <p>Specifies settings for invoking an AWS Lambda function that customizes a segment for a campaign.</p>
 #[non_exhaustive]
@@ -16664,6 +16764,13 @@ impl CampaignHook {
         self.web_url.as_deref()
     }
 }
+impl CampaignHook {
+    /// Creates a new builder-style object to manufacture [`CampaignHook`](crate::model::CampaignHook).
+    pub fn builder() -> crate::model::campaign_hook::Builder {
+        crate::model::campaign_hook::Builder::default()
+    }
+}
+
 /// See [`CampaignHook`](crate::model::CampaignHook).
 pub mod campaign_hook {
 
@@ -16725,12 +16832,6 @@ pub mod campaign_hook {
                 web_url: self.web_url,
             }
         }
-    }
-}
-impl CampaignHook {
-    /// Creates a new builder-style object to manufacture [`CampaignHook`](crate::model::CampaignHook).
-    pub fn builder() -> crate::model::campaign_hook::Builder {
-        crate::model::campaign_hook::Builder::default()
     }
 }
 
@@ -16853,6 +16954,13 @@ impl CustomDeliveryConfiguration {
         self.endpoint_types.as_deref()
     }
 }
+impl CustomDeliveryConfiguration {
+    /// Creates a new builder-style object to manufacture [`CustomDeliveryConfiguration`](crate::model::CustomDeliveryConfiguration).
+    pub fn builder() -> crate::model::custom_delivery_configuration::Builder {
+        crate::model::custom_delivery_configuration::Builder::default()
+    }
+}
+
 /// See [`CustomDeliveryConfiguration`](crate::model::CustomDeliveryConfiguration).
 pub mod custom_delivery_configuration {
 
@@ -16909,12 +17017,6 @@ pub mod custom_delivery_configuration {
                 endpoint_types: self.endpoint_types,
             }
         }
-    }
-}
-impl CustomDeliveryConfiguration {
-    /// Creates a new builder-style object to manufacture [`CustomDeliveryConfiguration`](crate::model::CustomDeliveryConfiguration).
-    pub fn builder() -> crate::model::custom_delivery_configuration::Builder {
-        crate::model::custom_delivery_configuration::Builder::default()
     }
 }
 
@@ -16995,6 +17097,13 @@ impl TreatmentResource {
         self.treatment_name.as_deref()
     }
 }
+impl TreatmentResource {
+    /// Creates a new builder-style object to manufacture [`TreatmentResource`](crate::model::TreatmentResource).
+    pub fn builder() -> crate::model::treatment_resource::Builder {
+        crate::model::treatment_resource::Builder::default()
+    }
+}
+
 /// See [`TreatmentResource`](crate::model::TreatmentResource).
 pub mod treatment_resource {
 
@@ -17144,12 +17253,6 @@ pub mod treatment_resource {
         }
     }
 }
-impl TreatmentResource {
-    /// Creates a new builder-style object to manufacture [`TreatmentResource`](crate::model::TreatmentResource).
-    pub fn builder() -> crate::model::treatment_resource::Builder {
-        crate::model::treatment_resource::Builder::default()
-    }
-}
 
 /// <p>Specifies the configuration and other settings for a campaign.</p>
 #[non_exhaustive]
@@ -17291,6 +17394,13 @@ impl WriteCampaignRequest {
         self.priority
     }
 }
+impl WriteCampaignRequest {
+    /// Creates a new builder-style object to manufacture [`WriteCampaignRequest`](crate::model::WriteCampaignRequest).
+    pub fn builder() -> crate::model::write_campaign_request::Builder {
+        crate::model::write_campaign_request::Builder::default()
+    }
+}
+
 /// See [`WriteCampaignRequest`](crate::model::WriteCampaignRequest).
 pub mod write_campaign_request {
 
@@ -17566,12 +17676,6 @@ pub mod write_campaign_request {
         }
     }
 }
-impl WriteCampaignRequest {
-    /// Creates a new builder-style object to manufacture [`WriteCampaignRequest`](crate::model::WriteCampaignRequest).
-    pub fn builder() -> crate::model::write_campaign_request::Builder {
-        crate::model::write_campaign_request::Builder::default()
-    }
-}
 
 /// <p>Specifies the settings for a campaign treatment. A <i>treatment</i> is a variation of a campaign that's used for A/B testing of a campaign.</p>
 #[non_exhaustive]
@@ -17636,6 +17740,13 @@ impl WriteTreatmentResource {
         self.treatment_name.as_deref()
     }
 }
+impl WriteTreatmentResource {
+    /// Creates a new builder-style object to manufacture [`WriteTreatmentResource`](crate::model::WriteTreatmentResource).
+    pub fn builder() -> crate::model::write_treatment_resource::Builder {
+        crate::model::write_treatment_resource::Builder::default()
+    }
+}
+
 /// See [`WriteTreatmentResource`](crate::model::WriteTreatmentResource).
 pub mod write_treatment_resource {
 
@@ -17758,12 +17869,6 @@ pub mod write_treatment_resource {
         }
     }
 }
-impl WriteTreatmentResource {
-    /// Creates a new builder-style object to manufacture [`WriteTreatmentResource`](crate::model::WriteTreatmentResource).
-    pub fn builder() -> crate::model::write_treatment_resource::Builder {
-        crate::model::write_treatment_resource::Builder::default()
-    }
-}
 
 /// <p>Provides information about the status and settings of the Baidu (Baidu Cloud Push) channel for an application.</p>
 #[non_exhaustive]
@@ -17849,6 +17954,13 @@ impl BaiduChannelResponse {
         self.version
     }
 }
+impl BaiduChannelResponse {
+    /// Creates a new builder-style object to manufacture [`BaiduChannelResponse`](crate::model::BaiduChannelResponse).
+    pub fn builder() -> crate::model::baidu_channel_response::Builder {
+        crate::model::baidu_channel_response::Builder::default()
+    }
+}
+
 /// See [`BaiduChannelResponse`](crate::model::BaiduChannelResponse).
 pub mod baidu_channel_response {
 
@@ -18009,12 +18121,6 @@ pub mod baidu_channel_response {
         }
     }
 }
-impl BaiduChannelResponse {
-    /// Creates a new builder-style object to manufacture [`BaiduChannelResponse`](crate::model::BaiduChannelResponse).
-    pub fn builder() -> crate::model::baidu_channel_response::Builder {
-        crate::model::baidu_channel_response::Builder::default()
-    }
-}
 
 /// <p>Specifies the status and settings of the Baidu (Baidu Cloud Push) channel for an application.</p>
 #[non_exhaustive]
@@ -18044,6 +18150,13 @@ impl BaiduChannelRequest {
         self.secret_key.as_deref()
     }
 }
+impl BaiduChannelRequest {
+    /// Creates a new builder-style object to manufacture [`BaiduChannelRequest`](crate::model::BaiduChannelRequest).
+    pub fn builder() -> crate::model::baidu_channel_request::Builder {
+        crate::model::baidu_channel_request::Builder::default()
+    }
+}
+
 /// See [`BaiduChannelRequest`](crate::model::BaiduChannelRequest).
 pub mod baidu_channel_request {
 
@@ -18094,12 +18207,6 @@ pub mod baidu_channel_request {
                 secret_key: self.secret_key,
             }
         }
-    }
-}
-impl BaiduChannelRequest {
-    /// Creates a new builder-style object to manufacture [`BaiduChannelRequest`](crate::model::BaiduChannelRequest).
-    pub fn builder() -> crate::model::baidu_channel_request::Builder {
-        crate::model::baidu_channel_request::Builder::default()
     }
 }
 
@@ -18157,6 +18264,13 @@ impl ApplicationSettingsResource {
         self.quiet_time.as_ref()
     }
 }
+impl ApplicationSettingsResource {
+    /// Creates a new builder-style object to manufacture [`ApplicationSettingsResource`](crate::model::ApplicationSettingsResource).
+    pub fn builder() -> crate::model::application_settings_resource::Builder {
+        crate::model::application_settings_resource::Builder::default()
+    }
+}
+
 /// See [`ApplicationSettingsResource`](crate::model::ApplicationSettingsResource).
 pub mod application_settings_resource {
 
@@ -18260,12 +18374,6 @@ pub mod application_settings_resource {
         }
     }
 }
-impl ApplicationSettingsResource {
-    /// Creates a new builder-style object to manufacture [`ApplicationSettingsResource`](crate::model::ApplicationSettingsResource).
-    pub fn builder() -> crate::model::application_settings_resource::Builder {
-        crate::model::application_settings_resource::Builder::default()
-    }
-}
 
 /// <p>Specifies the default settings for an application.</p>
 #[non_exhaustive]
@@ -18335,6 +18443,13 @@ impl WriteApplicationSettingsRequest {
         self.quiet_time.as_ref()
     }
 }
+impl WriteApplicationSettingsRequest {
+    /// Creates a new builder-style object to manufacture [`WriteApplicationSettingsRequest`](crate::model::WriteApplicationSettingsRequest).
+    pub fn builder() -> crate::model::write_application_settings_request::Builder {
+        crate::model::write_application_settings_request::Builder::default()
+    }
+}
+
 /// See [`WriteApplicationSettingsRequest`](crate::model::WriteApplicationSettingsRequest).
 pub mod write_application_settings_request {
 
@@ -18446,12 +18561,6 @@ pub mod write_application_settings_request {
         }
     }
 }
-impl WriteApplicationSettingsRequest {
-    /// Creates a new builder-style object to manufacture [`WriteApplicationSettingsRequest`](crate::model::WriteApplicationSettingsRequest).
-    pub fn builder() -> crate::model::write_application_settings_request::Builder {
-        crate::model::write_application_settings_request::Builder::default()
-    }
-}
 
 /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) VoIP sandbox channel for an application.</p>
 #[non_exhaustive]
@@ -18544,6 +18653,13 @@ impl ApnsVoipSandboxChannelResponse {
         self.version
     }
 }
+impl ApnsVoipSandboxChannelResponse {
+    /// Creates a new builder-style object to manufacture [`ApnsVoipSandboxChannelResponse`](crate::model::ApnsVoipSandboxChannelResponse).
+    pub fn builder() -> crate::model::apns_voip_sandbox_channel_response::Builder {
+        crate::model::apns_voip_sandbox_channel_response::Builder::default()
+    }
+}
+
 /// See [`ApnsVoipSandboxChannelResponse`](crate::model::ApnsVoipSandboxChannelResponse).
 pub mod apns_voip_sandbox_channel_response {
 
@@ -18722,12 +18838,6 @@ pub mod apns_voip_sandbox_channel_response {
         }
     }
 }
-impl ApnsVoipSandboxChannelResponse {
-    /// Creates a new builder-style object to manufacture [`ApnsVoipSandboxChannelResponse`](crate::model::ApnsVoipSandboxChannelResponse).
-    pub fn builder() -> crate::model::apns_voip_sandbox_channel_response::Builder {
-        crate::model::apns_voip_sandbox_channel_response::Builder::default()
-    }
-}
 
 /// <p>Specifies the status and settings of the APNs (Apple Push Notification service) VoIP sandbox channel for an application.</p>
 #[non_exhaustive]
@@ -18792,6 +18902,13 @@ impl ApnsVoipSandboxChannelRequest {
         self.token_key_id.as_deref()
     }
 }
+impl ApnsVoipSandboxChannelRequest {
+    /// Creates a new builder-style object to manufacture [`ApnsVoipSandboxChannelRequest`](crate::model::ApnsVoipSandboxChannelRequest).
+    pub fn builder() -> crate::model::apns_voip_sandbox_channel_request::Builder {
+        crate::model::apns_voip_sandbox_channel_request::Builder::default()
+    }
+}
+
 /// See [`ApnsVoipSandboxChannelRequest`](crate::model::ApnsVoipSandboxChannelRequest).
 pub mod apns_voip_sandbox_channel_request {
 
@@ -18910,12 +19027,6 @@ pub mod apns_voip_sandbox_channel_request {
         }
     }
 }
-impl ApnsVoipSandboxChannelRequest {
-    /// Creates a new builder-style object to manufacture [`ApnsVoipSandboxChannelRequest`](crate::model::ApnsVoipSandboxChannelRequest).
-    pub fn builder() -> crate::model::apns_voip_sandbox_channel_request::Builder {
-        crate::model::apns_voip_sandbox_channel_request::Builder::default()
-    }
-}
 
 /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) VoIP channel for an application.</p>
 #[non_exhaustive]
@@ -19008,6 +19119,13 @@ impl ApnsVoipChannelResponse {
         self.version
     }
 }
+impl ApnsVoipChannelResponse {
+    /// Creates a new builder-style object to manufacture [`ApnsVoipChannelResponse`](crate::model::ApnsVoipChannelResponse).
+    pub fn builder() -> crate::model::apns_voip_channel_response::Builder {
+        crate::model::apns_voip_channel_response::Builder::default()
+    }
+}
+
 /// See [`ApnsVoipChannelResponse`](crate::model::ApnsVoipChannelResponse).
 pub mod apns_voip_channel_response {
 
@@ -19186,12 +19304,6 @@ pub mod apns_voip_channel_response {
         }
     }
 }
-impl ApnsVoipChannelResponse {
-    /// Creates a new builder-style object to manufacture [`ApnsVoipChannelResponse`](crate::model::ApnsVoipChannelResponse).
-    pub fn builder() -> crate::model::apns_voip_channel_response::Builder {
-        crate::model::apns_voip_channel_response::Builder::default()
-    }
-}
 
 /// <p>Specifies the status and settings of the APNs (Apple Push Notification service) VoIP channel for an application.</p>
 #[non_exhaustive]
@@ -19256,6 +19368,13 @@ impl ApnsVoipChannelRequest {
         self.token_key_id.as_deref()
     }
 }
+impl ApnsVoipChannelRequest {
+    /// Creates a new builder-style object to manufacture [`ApnsVoipChannelRequest`](crate::model::ApnsVoipChannelRequest).
+    pub fn builder() -> crate::model::apns_voip_channel_request::Builder {
+        crate::model::apns_voip_channel_request::Builder::default()
+    }
+}
+
 /// See [`ApnsVoipChannelRequest`](crate::model::ApnsVoipChannelRequest).
 pub mod apns_voip_channel_request {
 
@@ -19374,12 +19493,6 @@ pub mod apns_voip_channel_request {
         }
     }
 }
-impl ApnsVoipChannelRequest {
-    /// Creates a new builder-style object to manufacture [`ApnsVoipChannelRequest`](crate::model::ApnsVoipChannelRequest).
-    pub fn builder() -> crate::model::apns_voip_channel_request::Builder {
-        crate::model::apns_voip_channel_request::Builder::default()
-    }
-}
 
 /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) sandbox channel for an application.</p>
 #[non_exhaustive]
@@ -19472,6 +19585,13 @@ impl ApnsSandboxChannelResponse {
         self.version
     }
 }
+impl ApnsSandboxChannelResponse {
+    /// Creates a new builder-style object to manufacture [`ApnsSandboxChannelResponse`](crate::model::ApnsSandboxChannelResponse).
+    pub fn builder() -> crate::model::apns_sandbox_channel_response::Builder {
+        crate::model::apns_sandbox_channel_response::Builder::default()
+    }
+}
+
 /// See [`ApnsSandboxChannelResponse`](crate::model::ApnsSandboxChannelResponse).
 pub mod apns_sandbox_channel_response {
 
@@ -19650,12 +19770,6 @@ pub mod apns_sandbox_channel_response {
         }
     }
 }
-impl ApnsSandboxChannelResponse {
-    /// Creates a new builder-style object to manufacture [`ApnsSandboxChannelResponse`](crate::model::ApnsSandboxChannelResponse).
-    pub fn builder() -> crate::model::apns_sandbox_channel_response::Builder {
-        crate::model::apns_sandbox_channel_response::Builder::default()
-    }
-}
 
 /// <p>Specifies the status and settings of the APNs (Apple Push Notification service) sandbox channel for an application.</p>
 #[non_exhaustive]
@@ -19720,6 +19834,13 @@ impl ApnsSandboxChannelRequest {
         self.token_key_id.as_deref()
     }
 }
+impl ApnsSandboxChannelRequest {
+    /// Creates a new builder-style object to manufacture [`ApnsSandboxChannelRequest`](crate::model::ApnsSandboxChannelRequest).
+    pub fn builder() -> crate::model::apns_sandbox_channel_request::Builder {
+        crate::model::apns_sandbox_channel_request::Builder::default()
+    }
+}
+
 /// See [`ApnsSandboxChannelRequest`](crate::model::ApnsSandboxChannelRequest).
 pub mod apns_sandbox_channel_request {
 
@@ -19838,12 +19959,6 @@ pub mod apns_sandbox_channel_request {
         }
     }
 }
-impl ApnsSandboxChannelRequest {
-    /// Creates a new builder-style object to manufacture [`ApnsSandboxChannelRequest`](crate::model::ApnsSandboxChannelRequest).
-    pub fn builder() -> crate::model::apns_sandbox_channel_request::Builder {
-        crate::model::apns_sandbox_channel_request::Builder::default()
-    }
-}
 
 /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) channel for an application.</p>
 #[non_exhaustive]
@@ -19936,6 +20051,13 @@ impl ApnsChannelResponse {
         self.version
     }
 }
+impl ApnsChannelResponse {
+    /// Creates a new builder-style object to manufacture [`ApnsChannelResponse`](crate::model::ApnsChannelResponse).
+    pub fn builder() -> crate::model::apns_channel_response::Builder {
+        crate::model::apns_channel_response::Builder::default()
+    }
+}
+
 /// See [`ApnsChannelResponse`](crate::model::ApnsChannelResponse).
 pub mod apns_channel_response {
 
@@ -20114,12 +20236,6 @@ pub mod apns_channel_response {
         }
     }
 }
-impl ApnsChannelResponse {
-    /// Creates a new builder-style object to manufacture [`ApnsChannelResponse`](crate::model::ApnsChannelResponse).
-    pub fn builder() -> crate::model::apns_channel_response::Builder {
-        crate::model::apns_channel_response::Builder::default()
-    }
-}
 
 /// <p>Specifies the status and settings of the APNs (Apple Push Notification service) channel for an application.</p>
 #[non_exhaustive]
@@ -20184,6 +20300,13 @@ impl ApnsChannelRequest {
         self.token_key_id.as_deref()
     }
 }
+impl ApnsChannelRequest {
+    /// Creates a new builder-style object to manufacture [`ApnsChannelRequest`](crate::model::ApnsChannelRequest).
+    pub fn builder() -> crate::model::apns_channel_request::Builder {
+        crate::model::apns_channel_request::Builder::default()
+    }
+}
+
 /// See [`ApnsChannelRequest`](crate::model::ApnsChannelRequest).
 pub mod apns_channel_request {
 
@@ -20302,12 +20425,6 @@ pub mod apns_channel_request {
         }
     }
 }
-impl ApnsChannelRequest {
-    /// Creates a new builder-style object to manufacture [`ApnsChannelRequest`](crate::model::ApnsChannelRequest).
-    pub fn builder() -> crate::model::apns_channel_request::Builder {
-        crate::model::apns_channel_request::Builder::default()
-    }
-}
 
 /// <p>Provides information about the status and settings of the ADM (Amazon Device Messaging) channel for an application.</p>
 #[non_exhaustive]
@@ -20386,6 +20503,13 @@ impl AdmChannelResponse {
         self.version
     }
 }
+impl AdmChannelResponse {
+    /// Creates a new builder-style object to manufacture [`AdmChannelResponse`](crate::model::AdmChannelResponse).
+    pub fn builder() -> crate::model::adm_channel_response::Builder {
+        crate::model::adm_channel_response::Builder::default()
+    }
+}
+
 /// See [`AdmChannelResponse`](crate::model::AdmChannelResponse).
 pub mod adm_channel_response {
 
@@ -20534,12 +20658,6 @@ pub mod adm_channel_response {
         }
     }
 }
-impl AdmChannelResponse {
-    /// Creates a new builder-style object to manufacture [`AdmChannelResponse`](crate::model::AdmChannelResponse).
-    pub fn builder() -> crate::model::adm_channel_response::Builder {
-        crate::model::adm_channel_response::Builder::default()
-    }
-}
 
 /// <p>Specifies the status and settings of the ADM (Amazon Device Messaging) channel for an application.</p>
 #[non_exhaustive]
@@ -20569,6 +20687,13 @@ impl AdmChannelRequest {
         self.enabled
     }
 }
+impl AdmChannelRequest {
+    /// Creates a new builder-style object to manufacture [`AdmChannelRequest`](crate::model::AdmChannelRequest).
+    pub fn builder() -> crate::model::adm_channel_request::Builder {
+        crate::model::adm_channel_request::Builder::default()
+    }
+}
+
 /// See [`AdmChannelRequest`](crate::model::AdmChannelRequest).
 pub mod adm_channel_request {
 
@@ -20624,12 +20749,6 @@ pub mod adm_channel_request {
         }
     }
 }
-impl AdmChannelRequest {
-    /// Creates a new builder-style object to manufacture [`AdmChannelRequest`](crate::model::AdmChannelRequest).
-    pub fn builder() -> crate::model::adm_channel_request::Builder {
-        crate::model::adm_channel_request::Builder::default()
-    }
-}
 
 /// <p>Specifies the tags (keys and values) for an application, campaign, message template, or segment.</p>
 #[non_exhaustive]
@@ -20651,6 +20770,13 @@ impl TagsModel {
         self.tags.as_ref()
     }
 }
+impl TagsModel {
+    /// Creates a new builder-style object to manufacture [`TagsModel`](crate::model::TagsModel).
+    pub fn builder() -> crate::model::tags_model::Builder {
+        crate::model::tags_model::Builder::default()
+    }
+}
+
 /// See [`TagsModel`](crate::model::TagsModel).
 pub mod tags_model {
 
@@ -20696,12 +20822,6 @@ pub mod tags_model {
         }
     }
 }
-impl TagsModel {
-    /// Creates a new builder-style object to manufacture [`TagsModel`](crate::model::TagsModel).
-    pub fn builder() -> crate::model::tags_model::Builder {
-        crate::model::tags_model::Builder::default()
-    }
-}
 
 /// <p>Provides information about which users and endpoints a message was sent to.</p>
 #[non_exhaustive]
@@ -20743,6 +20863,13 @@ impl SendUsersMessageResponse {
         self.result.as_ref()
     }
 }
+impl SendUsersMessageResponse {
+    /// Creates a new builder-style object to manufacture [`SendUsersMessageResponse`](crate::model::SendUsersMessageResponse).
+    pub fn builder() -> crate::model::send_users_message_response::Builder {
+        crate::model::send_users_message_response::Builder::default()
+    }
+}
+
 /// See [`SendUsersMessageResponse`](crate::model::SendUsersMessageResponse).
 pub mod send_users_message_response {
 
@@ -20824,12 +20951,6 @@ pub mod send_users_message_response {
         }
     }
 }
-impl SendUsersMessageResponse {
-    /// Creates a new builder-style object to manufacture [`SendUsersMessageResponse`](crate::model::SendUsersMessageResponse).
-    pub fn builder() -> crate::model::send_users_message_response::Builder {
-        crate::model::send_users_message_response::Builder::default()
-    }
-}
 
 /// <p>Provides information about the delivery status and results of sending a message directly to an endpoint.</p>
 #[non_exhaustive]
@@ -20900,6 +21021,13 @@ impl EndpointMessageResult {
         self.updated_token.as_deref()
     }
 }
+impl EndpointMessageResult {
+    /// Creates a new builder-style object to manufacture [`EndpointMessageResult`](crate::model::EndpointMessageResult).
+    pub fn builder() -> crate::model::endpoint_message_result::Builder {
+        crate::model::endpoint_message_result::Builder::default()
+    }
+}
+
 /// See [`EndpointMessageResult`](crate::model::EndpointMessageResult).
 pub mod endpoint_message_result {
 
@@ -21015,12 +21143,6 @@ pub mod endpoint_message_result {
                 updated_token: self.updated_token,
             }
         }
-    }
-}
-impl EndpointMessageResult {
-    /// Creates a new builder-style object to manufacture [`EndpointMessageResult`](crate::model::EndpointMessageResult).
-    pub fn builder() -> crate::model::endpoint_message_result::Builder {
-        crate::model::endpoint_message_result::Builder::default()
     }
 }
 
@@ -21203,6 +21325,13 @@ impl SendUsersMessageRequest {
         self.users.as_ref()
     }
 }
+impl SendUsersMessageRequest {
+    /// Creates a new builder-style object to manufacture [`SendUsersMessageRequest`](crate::model::SendUsersMessageRequest).
+    pub fn builder() -> crate::model::send_users_message_request::Builder {
+        crate::model::send_users_message_request::Builder::default()
+    }
+}
+
 /// See [`SendUsersMessageRequest`](crate::model::SendUsersMessageRequest).
 pub mod send_users_message_request {
 
@@ -21329,12 +21458,6 @@ pub mod send_users_message_request {
         }
     }
 }
-impl SendUsersMessageRequest {
-    /// Creates a new builder-style object to manufacture [`SendUsersMessageRequest`](crate::model::SendUsersMessageRequest).
-    pub fn builder() -> crate::model::send_users_message_request::Builder {
-        crate::model::send_users_message_request::Builder::default()
-    }
-}
 
 /// <p>Specifies the content, including message variables and attributes, to use in a message that's sent directly to an endpoint.</p>
 #[non_exhaustive]
@@ -21390,6 +21513,13 @@ impl EndpointSendConfiguration {
         self.title_override.as_deref()
     }
 }
+impl EndpointSendConfiguration {
+    /// Creates a new builder-style object to manufacture [`EndpointSendConfiguration`](crate::model::EndpointSendConfiguration).
+    pub fn builder() -> crate::model::endpoint_send_configuration::Builder {
+        crate::model::endpoint_send_configuration::Builder::default()
+    }
+}
+
 /// See [`EndpointSendConfiguration`](crate::model::EndpointSendConfiguration).
 pub mod endpoint_send_configuration {
 
@@ -21508,12 +21638,6 @@ pub mod endpoint_send_configuration {
         }
     }
 }
-impl EndpointSendConfiguration {
-    /// Creates a new builder-style object to manufacture [`EndpointSendConfiguration`](crate::model::EndpointSendConfiguration).
-    pub fn builder() -> crate::model::endpoint_send_configuration::Builder {
-        crate::model::endpoint_send_configuration::Builder::default()
-    }
-}
 
 /// <p>Specifies the settings and content for the default message and any default messages that you tailored for specific channels.</p>
 #[non_exhaustive]
@@ -21588,6 +21712,13 @@ impl DirectMessageConfiguration {
         self.voice_message.as_ref()
     }
 }
+impl DirectMessageConfiguration {
+    /// Creates a new builder-style object to manufacture [`DirectMessageConfiguration`](crate::model::DirectMessageConfiguration).
+    pub fn builder() -> crate::model::direct_message_configuration::Builder {
+        crate::model::direct_message_configuration::Builder::default()
+    }
+}
+
 /// See [`DirectMessageConfiguration`](crate::model::DirectMessageConfiguration).
 pub mod direct_message_configuration {
 
@@ -21743,12 +21874,6 @@ pub mod direct_message_configuration {
         }
     }
 }
-impl DirectMessageConfiguration {
-    /// Creates a new builder-style object to manufacture [`DirectMessageConfiguration`](crate::model::DirectMessageConfiguration).
-    pub fn builder() -> crate::model::direct_message_configuration::Builder {
-        crate::model::direct_message_configuration::Builder::default()
-    }
-}
 
 /// <p>Specifies the settings for a one-time voice message that's sent directly to an endpoint through the voice channel.</p>
 #[non_exhaustive]
@@ -21798,6 +21923,13 @@ impl VoiceMessage {
         self.voice_id.as_deref()
     }
 }
+impl VoiceMessage {
+    /// Creates a new builder-style object to manufacture [`VoiceMessage`](crate::model::VoiceMessage).
+    pub fn builder() -> crate::model::voice_message::Builder {
+        crate::model::voice_message::Builder::default()
+    }
+}
+
 /// See [`VoiceMessage`](crate::model::VoiceMessage).
 pub mod voice_message {
 
@@ -21897,12 +22029,6 @@ pub mod voice_message {
         }
     }
 }
-impl VoiceMessage {
-    /// Creates a new builder-style object to manufacture [`VoiceMessage`](crate::model::VoiceMessage).
-    pub fn builder() -> crate::model::voice_message::Builder {
-        crate::model::voice_message::Builder::default()
-    }
-}
 
 /// <p>Specifies the default settings for a one-time SMS message that's sent directly to an endpoint.</p>
 #[non_exhaustive]
@@ -21980,6 +22106,13 @@ impl SmsMessage {
         self.template_id.as_deref()
     }
 }
+impl SmsMessage {
+    /// Creates a new builder-style object to manufacture [`SmsMessage`](crate::model::SmsMessage).
+    pub fn builder() -> crate::model::sms_message::Builder {
+        crate::model::sms_message::Builder::default()
+    }
+}
+
 /// See [`SmsMessage`](crate::model::SmsMessage).
 pub mod sms_message {
 
@@ -22125,12 +22258,6 @@ pub mod sms_message {
                 template_id: self.template_id,
             }
         }
-    }
-}
-impl SmsMessage {
-    /// Creates a new builder-style object to manufacture [`SmsMessage`](crate::model::SmsMessage).
-    pub fn builder() -> crate::model::sms_message::Builder {
-        crate::model::sms_message::Builder::default()
     }
 }
 
@@ -22290,6 +22417,13 @@ impl GcmMessage {
         self.url.as_deref()
     }
 }
+impl GcmMessage {
+    /// Creates a new builder-style object to manufacture [`GcmMessage`](crate::model::GcmMessage).
+    pub fn builder() -> crate::model::gcm_message::Builder {
+        crate::model::gcm_message::Builder::default()
+    }
+}
+
 /// See [`GcmMessage`](crate::model::GcmMessage).
 pub mod gcm_message {
 
@@ -22576,12 +22710,6 @@ pub mod gcm_message {
         }
     }
 }
-impl GcmMessage {
-    /// Creates a new builder-style object to manufacture [`GcmMessage`](crate::model::GcmMessage).
-    pub fn builder() -> crate::model::gcm_message::Builder {
-        crate::model::gcm_message::Builder::default()
-    }
-}
 
 /// <p>Specifies the default settings and content for a one-time email message that's sent directly to an endpoint.</p>
 #[non_exhaustive]
@@ -22645,6 +22773,13 @@ impl EmailMessage {
         self.substitutions.as_ref()
     }
 }
+impl EmailMessage {
+    /// Creates a new builder-style object to manufacture [`EmailMessage`](crate::model::EmailMessage).
+    pub fn builder() -> crate::model::email_message::Builder {
+        crate::model::email_message::Builder::default()
+    }
+}
+
 /// See [`EmailMessage`](crate::model::EmailMessage).
 pub mod email_message {
 
@@ -22780,12 +22915,6 @@ pub mod email_message {
         }
     }
 }
-impl EmailMessage {
-    /// Creates a new builder-style object to manufacture [`EmailMessage`](crate::model::EmailMessage).
-    pub fn builder() -> crate::model::email_message::Builder {
-        crate::model::email_message::Builder::default()
-    }
-}
 
 /// <p>Specifies the contents of an email message, composed of a subject, a text part, and an HTML part.</p>
 #[non_exhaustive]
@@ -22815,6 +22944,13 @@ impl SimpleEmail {
         self.text_part.as_ref()
     }
 }
+impl SimpleEmail {
+    /// Creates a new builder-style object to manufacture [`SimpleEmail`](crate::model::SimpleEmail).
+    pub fn builder() -> crate::model::simple_email::Builder {
+        crate::model::simple_email::Builder::default()
+    }
+}
+
 /// See [`SimpleEmail`](crate::model::SimpleEmail).
 pub mod simple_email {
 
@@ -22876,12 +23012,6 @@ pub mod simple_email {
         }
     }
 }
-impl SimpleEmail {
-    /// Creates a new builder-style object to manufacture [`SimpleEmail`](crate::model::SimpleEmail).
-    pub fn builder() -> crate::model::simple_email::Builder {
-        crate::model::simple_email::Builder::default()
-    }
-}
 
 /// <p>Specifies the subject or body of an email message, represented as textual email data and the applicable character set.</p>
 #[non_exhaustive]
@@ -22904,6 +23034,13 @@ impl SimpleEmailPart {
         self.data.as_deref()
     }
 }
+impl SimpleEmailPart {
+    /// Creates a new builder-style object to manufacture [`SimpleEmailPart`](crate::model::SimpleEmailPart).
+    pub fn builder() -> crate::model::simple_email_part::Builder {
+        crate::model::simple_email_part::Builder::default()
+    }
+}
+
 /// See [`SimpleEmailPart`](crate::model::SimpleEmailPart).
 pub mod simple_email_part {
 
@@ -22944,12 +23081,6 @@ pub mod simple_email_part {
         }
     }
 }
-impl SimpleEmailPart {
-    /// Creates a new builder-style object to manufacture [`SimpleEmailPart`](crate::model::SimpleEmailPart).
-    pub fn builder() -> crate::model::simple_email_part::Builder {
-        crate::model::simple_email_part::Builder::default()
-    }
-}
 
 /// <p>Specifies the contents of an email message, represented as a raw MIME message.</p>
 #[non_exhaustive]
@@ -22965,6 +23096,13 @@ impl RawEmail {
         self.data.as_ref()
     }
 }
+impl RawEmail {
+    /// Creates a new builder-style object to manufacture [`RawEmail`](crate::model::RawEmail).
+    pub fn builder() -> crate::model::raw_email::Builder {
+        crate::model::raw_email::Builder::default()
+    }
+}
+
 /// See [`RawEmail`](crate::model::RawEmail).
 pub mod raw_email {
 
@@ -22989,12 +23127,6 @@ pub mod raw_email {
         pub fn build(self) -> crate::model::RawEmail {
             crate::model::RawEmail { data: self.data }
         }
-    }
-}
-impl RawEmail {
-    /// Creates a new builder-style object to manufacture [`RawEmail`](crate::model::RawEmail).
-    pub fn builder() -> crate::model::raw_email::Builder {
-        crate::model::raw_email::Builder::default()
     }
 }
 
@@ -23074,6 +23206,13 @@ impl DefaultPushNotificationMessage {
         self.url.as_deref()
     }
 }
+impl DefaultPushNotificationMessage {
+    /// Creates a new builder-style object to manufacture [`DefaultPushNotificationMessage`](crate::model::DefaultPushNotificationMessage).
+    pub fn builder() -> crate::model::default_push_notification_message::Builder {
+        crate::model::default_push_notification_message::Builder::default()
+    }
+}
+
 /// See [`DefaultPushNotificationMessage`](crate::model::DefaultPushNotificationMessage).
 pub mod default_push_notification_message {
 
@@ -23218,12 +23357,6 @@ pub mod default_push_notification_message {
         }
     }
 }
-impl DefaultPushNotificationMessage {
-    /// Creates a new builder-style object to manufacture [`DefaultPushNotificationMessage`](crate::model::DefaultPushNotificationMessage).
-    pub fn builder() -> crate::model::default_push_notification_message::Builder {
-        crate::model::default_push_notification_message::Builder::default()
-    }
-}
 
 /// <p>Specifies the default message for all channels.</p>
 #[non_exhaustive]
@@ -23252,6 +23385,13 @@ impl DefaultMessage {
         self.substitutions.as_ref()
     }
 }
+impl DefaultMessage {
+    /// Creates a new builder-style object to manufacture [`DefaultMessage`](crate::model::DefaultMessage).
+    pub fn builder() -> crate::model::default_message::Builder {
+        crate::model::default_message::Builder::default()
+    }
+}
+
 /// See [`DefaultMessage`](crate::model::DefaultMessage).
 pub mod default_message {
 
@@ -23307,12 +23447,6 @@ pub mod default_message {
                 substitutions: self.substitutions,
             }
         }
-    }
-}
-impl DefaultMessage {
-    /// Creates a new builder-style object to manufacture [`DefaultMessage`](crate::model::DefaultMessage).
-    pub fn builder() -> crate::model::default_message::Builder {
-        crate::model::default_message::Builder::default()
     }
 }
 
@@ -23441,6 +23575,13 @@ impl BaiduMessage {
         self.url.as_deref()
     }
 }
+impl BaiduMessage {
+    /// Creates a new builder-style object to manufacture [`BaiduMessage`](crate::model::BaiduMessage).
+    pub fn builder() -> crate::model::baidu_message::Builder {
+        crate::model::baidu_message::Builder::default()
+    }
+}
+
 /// See [`BaiduMessage`](crate::model::BaiduMessage).
 pub mod baidu_message {
 
@@ -23678,12 +23819,6 @@ pub mod baidu_message {
         }
     }
 }
-impl BaiduMessage {
-    /// Creates a new builder-style object to manufacture [`BaiduMessage`](crate::model::BaiduMessage).
-    pub fn builder() -> crate::model::baidu_message::Builder {
-        crate::model::baidu_message::Builder::default()
-    }
-}
 
 /// <p>Specifies the settings for a one-time message that's sent directly to an endpoint through the APNs (Apple Push Notification service) channel.</p>
 #[non_exhaustive]
@@ -23880,6 +24015,13 @@ impl ApnsMessage {
         self.url.as_deref()
     }
 }
+impl ApnsMessage {
+    /// Creates a new builder-style object to manufacture [`ApnsMessage`](crate::model::ApnsMessage).
+    pub fn builder() -> crate::model::apns_message::Builder {
+        crate::model::apns_message::Builder::default()
+    }
+}
+
 /// See [`ApnsMessage`](crate::model::ApnsMessage).
 pub mod apns_message {
 
@@ -24207,12 +24349,6 @@ pub mod apns_message {
         }
     }
 }
-impl ApnsMessage {
-    /// Creates a new builder-style object to manufacture [`ApnsMessage`](crate::model::ApnsMessage).
-    pub fn builder() -> crate::model::apns_message::Builder {
-        crate::model::apns_message::Builder::default()
-    }
-}
 
 /// <p>Specifies the settings for a one-time message that's sent directly to an endpoint through the ADM (Amazon Device Messaging) channel.</p>
 #[non_exhaustive]
@@ -24353,6 +24489,13 @@ impl AdmMessage {
         self.url.as_deref()
     }
 }
+impl AdmMessage {
+    /// Creates a new builder-style object to manufacture [`AdmMessage`](crate::model::AdmMessage).
+    pub fn builder() -> crate::model::adm_message::Builder {
+        crate::model::adm_message::Builder::default()
+    }
+}
+
 /// See [`AdmMessage`](crate::model::AdmMessage).
 pub mod adm_message {
 
@@ -24620,12 +24763,6 @@ pub mod adm_message {
         }
     }
 }
-impl AdmMessage {
-    /// Creates a new builder-style object to manufacture [`AdmMessage`](crate::model::AdmMessage).
-    pub fn builder() -> crate::model::adm_message::Builder {
-        crate::model::adm_message::Builder::default()
-    }
-}
 
 /// <p>Provides information about the results of a request to send a message to an endpoint address.</p>
 #[non_exhaustive]
@@ -24674,6 +24811,13 @@ impl MessageResponse {
         self.result.as_ref()
     }
 }
+impl MessageResponse {
+    /// Creates a new builder-style object to manufacture [`MessageResponse`](crate::model::MessageResponse).
+    pub fn builder() -> crate::model::message_response::Builder {
+        crate::model::message_response::Builder::default()
+    }
+}
+
 /// See [`MessageResponse`](crate::model::MessageResponse).
 pub mod message_response {
 
@@ -24775,12 +24919,6 @@ pub mod message_response {
         }
     }
 }
-impl MessageResponse {
-    /// Creates a new builder-style object to manufacture [`MessageResponse`](crate::model::MessageResponse).
-    pub fn builder() -> crate::model::message_response::Builder {
-        crate::model::message_response::Builder::default()
-    }
-}
 
 /// <p>Provides information about the results of sending a message directly to an endpoint address.</p>
 #[non_exhaustive]
@@ -24844,6 +24982,13 @@ impl MessageResult {
         self.updated_token.as_deref()
     }
 }
+impl MessageResult {
+    /// Creates a new builder-style object to manufacture [`MessageResult`](crate::model::MessageResult).
+    pub fn builder() -> crate::model::message_result::Builder {
+        crate::model::message_result::Builder::default()
+    }
+}
+
 /// See [`MessageResult`](crate::model::MessageResult).
 pub mod message_result {
 
@@ -24949,12 +25094,6 @@ pub mod message_result {
         }
     }
 }
-impl MessageResult {
-    /// Creates a new builder-style object to manufacture [`MessageResult`](crate::model::MessageResult).
-    pub fn builder() -> crate::model::message_result::Builder {
-        crate::model::message_result::Builder::default()
-    }
-}
 
 /// <p>Send OTP message request parameters.</p>
 #[non_exhaustive]
@@ -25040,6 +25179,13 @@ impl SendOtpMessageRequestParameters {
         self.validity_period
     }
 }
+impl SendOtpMessageRequestParameters {
+    /// Creates a new builder-style object to manufacture [`SendOtpMessageRequestParameters`](crate::model::SendOtpMessageRequestParameters).
+    pub fn builder() -> crate::model::send_otp_message_request_parameters::Builder {
+        crate::model::send_otp_message_request_parameters::Builder::default()
+    }
+}
+
 /// See [`SendOtpMessageRequestParameters`](crate::model::SendOtpMessageRequestParameters).
 pub mod send_otp_message_request_parameters {
 
@@ -25194,12 +25340,6 @@ pub mod send_otp_message_request_parameters {
         }
     }
 }
-impl SendOtpMessageRequestParameters {
-    /// Creates a new builder-style object to manufacture [`SendOtpMessageRequestParameters`](crate::model::SendOtpMessageRequestParameters).
-    pub fn builder() -> crate::model::send_otp_message_request_parameters::Builder {
-        crate::model::send_otp_message_request_parameters::Builder::default()
-    }
-}
 
 /// <p>Specifies the configuration and other settings for a message.</p>
 #[non_exhaustive]
@@ -25270,6 +25410,13 @@ impl MessageRequest {
         self.trace_id.as_deref()
     }
 }
+impl MessageRequest {
+    /// Creates a new builder-style object to manufacture [`MessageRequest`](crate::model::MessageRequest).
+    pub fn builder() -> crate::model::message_request::Builder {
+        crate::model::message_request::Builder::default()
+    }
+}
+
 /// See [`MessageRequest`](crate::model::MessageRequest).
 pub mod message_request {
 
@@ -25425,12 +25572,6 @@ pub mod message_request {
         }
     }
 }
-impl MessageRequest {
-    /// Creates a new builder-style object to manufacture [`MessageRequest`](crate::model::MessageRequest).
-    pub fn builder() -> crate::model::message_request::Builder {
-        crate::model::message_request::Builder::default()
-    }
-}
 
 /// <p>Specifies address-based configuration settings for a message that's sent directly to an endpoint.</p>
 #[non_exhaustive]
@@ -25493,6 +25634,13 @@ impl AddressConfiguration {
         self.title_override.as_deref()
     }
 }
+impl AddressConfiguration {
+    /// Creates a new builder-style object to manufacture [`AddressConfiguration`](crate::model::AddressConfiguration).
+    pub fn builder() -> crate::model::address_configuration::Builder {
+        crate::model::address_configuration::Builder::default()
+    }
+}
+
 /// See [`AddressConfiguration`](crate::model::AddressConfiguration).
 pub mod address_configuration {
 
@@ -25626,12 +25774,6 @@ pub mod address_configuration {
         }
     }
 }
-impl AddressConfiguration {
-    /// Creates a new builder-style object to manufacture [`AddressConfiguration`](crate::model::AddressConfiguration).
-    pub fn builder() -> crate::model::address_configuration::Builder {
-        crate::model::address_configuration::Builder::default()
-    }
-}
 
 /// <p>Provides information about the type and the names of attributes that were removed from all the endpoints that are associated with an application.</p>
 #[non_exhaustive]
@@ -25671,6 +25813,13 @@ impl AttributesResource {
         self.attributes.as_deref()
     }
 }
+impl AttributesResource {
+    /// Creates a new builder-style object to manufacture [`AttributesResource`](crate::model::AttributesResource).
+    pub fn builder() -> crate::model::attributes_resource::Builder {
+        crate::model::attributes_resource::Builder::default()
+    }
+}
+
 /// See [`AttributesResource`](crate::model::AttributesResource).
 pub mod attributes_resource {
 
@@ -25748,12 +25897,6 @@ pub mod attributes_resource {
         }
     }
 }
-impl AttributesResource {
-    /// Creates a new builder-style object to manufacture [`AttributesResource`](crate::model::AttributesResource).
-    pub fn builder() -> crate::model::attributes_resource::Builder {
-        crate::model::attributes_resource::Builder::default()
-    }
-}
 
 /// <p>Specifies one or more attributes to remove from all the endpoints that are associated with an application.</p>
 #[non_exhaustive]
@@ -25769,6 +25912,13 @@ impl UpdateAttributesRequest {
         self.blacklist.as_deref()
     }
 }
+impl UpdateAttributesRequest {
+    /// Creates a new builder-style object to manufacture [`UpdateAttributesRequest`](crate::model::UpdateAttributesRequest).
+    pub fn builder() -> crate::model::update_attributes_request::Builder {
+        crate::model::update_attributes_request::Builder::default()
+    }
+}
+
 /// See [`UpdateAttributesRequest`](crate::model::UpdateAttributesRequest).
 pub mod update_attributes_request {
 
@@ -25804,12 +25954,6 @@ pub mod update_attributes_request {
                 blacklist: self.blacklist,
             }
         }
-    }
-}
-impl UpdateAttributesRequest {
-    /// Creates a new builder-style object to manufacture [`UpdateAttributesRequest`](crate::model::UpdateAttributesRequest).
-    pub fn builder() -> crate::model::update_attributes_request::Builder {
-        crate::model::update_attributes_request::Builder::default()
     }
 }
 
@@ -25890,6 +26034,13 @@ impl EventStream {
         self.role_arn.as_deref()
     }
 }
+impl EventStream {
+    /// Creates a new builder-style object to manufacture [`EventStream`](crate::model::EventStream).
+    pub fn builder() -> crate::model::event_stream::Builder {
+        crate::model::event_stream::Builder::default()
+    }
+}
+
 /// See [`EventStream`](crate::model::EventStream).
 pub mod event_stream {
 
@@ -26018,12 +26169,6 @@ pub mod event_stream {
         }
     }
 }
-impl EventStream {
-    /// Creates a new builder-style object to manufacture [`EventStream`](crate::model::EventStream).
-    pub fn builder() -> crate::model::event_stream::Builder {
-        crate::model::event_stream::Builder::default()
-    }
-}
 
 /// <p>Specifies the Amazon Resource Name (ARN) of an event stream to publish events to and the AWS Identity and Access Management (IAM) role to use when publishing those events.</p>
 #[non_exhaustive]
@@ -26074,6 +26219,13 @@ impl WriteEventStream {
         self.role_arn.as_deref()
     }
 }
+impl WriteEventStream {
+    /// Creates a new builder-style object to manufacture [`WriteEventStream`](crate::model::WriteEventStream).
+    pub fn builder() -> crate::model::write_event_stream::Builder {
+        crate::model::write_event_stream::Builder::default()
+    }
+}
+
 /// See [`WriteEventStream`](crate::model::WriteEventStream).
 pub mod write_event_stream {
 
@@ -26145,12 +26297,6 @@ pub mod write_event_stream {
         }
     }
 }
-impl WriteEventStream {
-    /// Creates a new builder-style object to manufacture [`WriteEventStream`](crate::model::WriteEventStream).
-    pub fn builder() -> crate::model::write_event_stream::Builder {
-        crate::model::write_event_stream::Builder::default()
-    }
-}
 
 /// <p>Provides information about endpoints and the events that they're associated with.</p>
 #[non_exhaustive]
@@ -26172,6 +26318,13 @@ impl EventsResponse {
         self.results.as_ref()
     }
 }
+impl EventsResponse {
+    /// Creates a new builder-style object to manufacture [`EventsResponse`](crate::model::EventsResponse).
+    pub fn builder() -> crate::model::events_response::Builder {
+        crate::model::events_response::Builder::default()
+    }
+}
+
 /// See [`EventsResponse`](crate::model::EventsResponse).
 pub mod events_response {
 
@@ -26217,12 +26370,6 @@ pub mod events_response {
         }
     }
 }
-impl EventsResponse {
-    /// Creates a new builder-style object to manufacture [`EventsResponse`](crate::model::EventsResponse).
-    pub fn builder() -> crate::model::events_response::Builder {
-        crate::model::events_response::Builder::default()
-    }
-}
 
 /// <p>Provides information about the results of a request to create or update an endpoint that's associated with an event.</p>
 #[non_exhaustive]
@@ -26253,6 +26400,13 @@ impl ItemResponse {
         self.events_item_response.as_ref()
     }
 }
+impl ItemResponse {
+    /// Creates a new builder-style object to manufacture [`ItemResponse`](crate::model::ItemResponse).
+    pub fn builder() -> crate::model::item_response::Builder {
+        crate::model::item_response::Builder::default()
+    }
+}
+
 /// See [`ItemResponse`](crate::model::ItemResponse).
 pub mod item_response {
 
@@ -26313,12 +26467,6 @@ pub mod item_response {
         }
     }
 }
-impl ItemResponse {
-    /// Creates a new builder-style object to manufacture [`ItemResponse`](crate::model::ItemResponse).
-    pub fn builder() -> crate::model::item_response::Builder {
-        crate::model::item_response::Builder::default()
-    }
-}
 
 /// <p>Provides the status code and message that result from processing an event.</p>
 #[non_exhaustive]
@@ -26341,6 +26489,13 @@ impl EventItemResponse {
         self.status_code
     }
 }
+impl EventItemResponse {
+    /// Creates a new builder-style object to manufacture [`EventItemResponse`](crate::model::EventItemResponse).
+    pub fn builder() -> crate::model::event_item_response::Builder {
+        crate::model::event_item_response::Builder::default()
+    }
+}
+
 /// See [`EventItemResponse`](crate::model::EventItemResponse).
 pub mod event_item_response {
 
@@ -26381,12 +26536,6 @@ pub mod event_item_response {
         }
     }
 }
-impl EventItemResponse {
-    /// Creates a new builder-style object to manufacture [`EventItemResponse`](crate::model::EventItemResponse).
-    pub fn builder() -> crate::model::event_item_response::Builder {
-        crate::model::event_item_response::Builder::default()
-    }
-}
 
 /// <p>Provides the status code and message that result from processing data for an endpoint.</p>
 #[non_exhaustive]
@@ -26409,6 +26558,13 @@ impl EndpointItemResponse {
         self.status_code
     }
 }
+impl EndpointItemResponse {
+    /// Creates a new builder-style object to manufacture [`EndpointItemResponse`](crate::model::EndpointItemResponse).
+    pub fn builder() -> crate::model::endpoint_item_response::Builder {
+        crate::model::endpoint_item_response::Builder::default()
+    }
+}
+
 /// See [`EndpointItemResponse`](crate::model::EndpointItemResponse).
 pub mod endpoint_item_response {
 
@@ -26449,12 +26605,6 @@ pub mod endpoint_item_response {
         }
     }
 }
-impl EndpointItemResponse {
-    /// Creates a new builder-style object to manufacture [`EndpointItemResponse`](crate::model::EndpointItemResponse).
-    pub fn builder() -> crate::model::endpoint_item_response::Builder {
-        crate::model::endpoint_item_response::Builder::default()
-    }
-}
 
 /// <p>Specifies a batch of events to process.</p>
 #[non_exhaustive]
@@ -26476,6 +26626,13 @@ impl EventsRequest {
         self.batch_item.as_ref()
     }
 }
+impl EventsRequest {
+    /// Creates a new builder-style object to manufacture [`EventsRequest`](crate::model::EventsRequest).
+    pub fn builder() -> crate::model::events_request::Builder {
+        crate::model::events_request::Builder::default()
+    }
+}
+
 /// See [`EventsRequest`](crate::model::EventsRequest).
 pub mod events_request {
 
@@ -26521,12 +26678,6 @@ pub mod events_request {
         }
     }
 }
-impl EventsRequest {
-    /// Creates a new builder-style object to manufacture [`EventsRequest`](crate::model::EventsRequest).
-    pub fn builder() -> crate::model::events_request::Builder {
-        crate::model::events_request::Builder::default()
-    }
-}
 
 /// <p>Specifies a batch of endpoints and events to process.</p>
 #[non_exhaustive]
@@ -26553,6 +26704,13 @@ impl EventsBatch {
         self.events.as_ref()
     }
 }
+impl EventsBatch {
+    /// Creates a new builder-style object to manufacture [`EventsBatch`](crate::model::EventsBatch).
+    pub fn builder() -> crate::model::events_batch::Builder {
+        crate::model::events_batch::Builder::default()
+    }
+}
+
 /// See [`EventsBatch`](crate::model::EventsBatch).
 pub mod events_batch {
 
@@ -26607,12 +26765,6 @@ pub mod events_batch {
                 events: self.events,
             }
         }
-    }
-}
-impl EventsBatch {
-    /// Creates a new builder-style object to manufacture [`EventsBatch`](crate::model::EventsBatch).
-    pub fn builder() -> crate::model::events_batch::Builder {
-        crate::model::events_batch::Builder::default()
     }
 }
 
@@ -26699,6 +26851,13 @@ impl Event {
         self.timestamp.as_deref()
     }
 }
+impl Event {
+    /// Creates a new builder-style object to manufacture [`Event`](crate::model::Event).
+    pub fn builder() -> crate::model::event::Builder {
+        crate::model::event::Builder::default()
+    }
+}
+
 /// See [`Event`](crate::model::Event).
 pub mod event {
 
@@ -26871,12 +27030,6 @@ pub mod event {
         }
     }
 }
-impl Event {
-    /// Creates a new builder-style object to manufacture [`Event`](crate::model::Event).
-    pub fn builder() -> crate::model::event::Builder {
-        crate::model::event::Builder::default()
-    }
-}
 
 /// <p>Provides information about a session.</p>
 #[non_exhaustive]
@@ -26913,6 +27066,13 @@ impl Session {
         self.stop_timestamp.as_deref()
     }
 }
+impl Session {
+    /// Creates a new builder-style object to manufacture [`Session`](crate::model::Session).
+    pub fn builder() -> crate::model::session::Builder {
+        crate::model::session::Builder::default()
+    }
+}
+
 /// See [`Session`](crate::model::Session).
 pub mod session {
 
@@ -26981,12 +27141,6 @@ pub mod session {
                 stop_timestamp: self.stop_timestamp,
             }
         }
-    }
-}
-impl Session {
-    /// Creates a new builder-style object to manufacture [`Session`](crate::model::Session).
-    pub fn builder() -> crate::model::session::Builder {
-        crate::model::session::Builder::default()
     }
 }
 
@@ -27084,6 +27238,13 @@ impl PublicEndpoint {
         self.user.as_ref()
     }
 }
+impl PublicEndpoint {
+    /// Creates a new builder-style object to manufacture [`PublicEndpoint`](crate::model::PublicEndpoint).
+    pub fn builder() -> crate::model::public_endpoint::Builder {
+        crate::model::public_endpoint::Builder::default()
+    }
+}
+
 /// See [`PublicEndpoint`](crate::model::PublicEndpoint).
 pub mod public_endpoint {
 
@@ -27276,12 +27437,6 @@ pub mod public_endpoint {
         }
     }
 }
-impl PublicEndpoint {
-    /// Creates a new builder-style object to manufacture [`PublicEndpoint`](crate::model::PublicEndpoint).
-    pub fn builder() -> crate::model::public_endpoint::Builder {
-        crate::model::public_endpoint::Builder::default()
-    }
-}
 
 /// <p>Provides information about a phone number.</p>
 #[non_exhaustive]
@@ -27388,6 +27543,13 @@ impl NumberValidateResponse {
         self.zip_code.as_deref()
     }
 }
+impl NumberValidateResponse {
+    /// Creates a new builder-style object to manufacture [`NumberValidateResponse`](crate::model::NumberValidateResponse).
+    pub fn builder() -> crate::model::number_validate_response::Builder {
+        crate::model::number_validate_response::Builder::default()
+    }
+}
+
 /// See [`NumberValidateResponse`](crate::model::NumberValidateResponse).
 pub mod number_validate_response {
 
@@ -27593,12 +27755,6 @@ pub mod number_validate_response {
         }
     }
 }
-impl NumberValidateResponse {
-    /// Creates a new builder-style object to manufacture [`NumberValidateResponse`](crate::model::NumberValidateResponse).
-    pub fn builder() -> crate::model::number_validate_response::Builder {
-        crate::model::number_validate_response::Builder::default()
-    }
-}
 
 /// <p>Specifies a phone number to validate and retrieve information about.</p>
 #[non_exhaustive]
@@ -27621,6 +27777,13 @@ impl NumberValidateRequest {
         self.phone_number.as_deref()
     }
 }
+impl NumberValidateRequest {
+    /// Creates a new builder-style object to manufacture [`NumberValidateRequest`](crate::model::NumberValidateRequest).
+    pub fn builder() -> crate::model::number_validate_request::Builder {
+        crate::model::number_validate_request::Builder::default()
+    }
+}
+
 /// See [`NumberValidateRequest`](crate::model::NumberValidateRequest).
 pub mod number_validate_request {
 
@@ -27664,12 +27827,6 @@ pub mod number_validate_request {
         }
     }
 }
-impl NumberValidateRequest {
-    /// Creates a new builder-style object to manufacture [`NumberValidateRequest`](crate::model::NumberValidateRequest).
-    pub fn builder() -> crate::model::number_validate_request::Builder {
-        crate::model::number_validate_request::Builder::default()
-    }
-}
 
 /// <p>Provides information about all the versions of a specific message template.</p>
 #[non_exhaustive]
@@ -27706,6 +27863,13 @@ impl TemplateVersionsResponse {
         self.request_id.as_deref()
     }
 }
+impl TemplateVersionsResponse {
+    /// Creates a new builder-style object to manufacture [`TemplateVersionsResponse`](crate::model::TemplateVersionsResponse).
+    pub fn builder() -> crate::model::template_versions_response::Builder {
+        crate::model::template_versions_response::Builder::default()
+    }
+}
+
 /// See [`TemplateVersionsResponse`](crate::model::TemplateVersionsResponse).
 pub mod template_versions_response {
 
@@ -27779,12 +27943,6 @@ pub mod template_versions_response {
         }
     }
 }
-impl TemplateVersionsResponse {
-    /// Creates a new builder-style object to manufacture [`TemplateVersionsResponse`](crate::model::TemplateVersionsResponse).
-    pub fn builder() -> crate::model::template_versions_response::Builder {
-        crate::model::template_versions_response::Builder::default()
-    }
-}
 
 /// <p>Provides information about a specific version of a message template.</p>
 #[non_exhaustive]
@@ -27842,6 +28000,13 @@ impl TemplateVersionResponse {
         self.version.as_deref()
     }
 }
+impl TemplateVersionResponse {
+    /// Creates a new builder-style object to manufacture [`TemplateVersionResponse`](crate::model::TemplateVersionResponse).
+    pub fn builder() -> crate::model::template_version_response::Builder {
+        crate::model::template_version_response::Builder::default()
+    }
+}
+
 /// See [`TemplateVersionResponse`](crate::model::TemplateVersionResponse).
 pub mod template_version_response {
 
@@ -27960,12 +28125,6 @@ pub mod template_version_response {
         }
     }
 }
-impl TemplateVersionResponse {
-    /// Creates a new builder-style object to manufacture [`TemplateVersionResponse`](crate::model::TemplateVersionResponse).
-    pub fn builder() -> crate::model::template_version_response::Builder {
-        crate::model::template_version_response::Builder::default()
-    }
-}
 
 /// <p>Provides information about all the message templates that are associated with your Amazon Pinpoint account.</p>
 #[non_exhaustive]
@@ -27988,6 +28147,13 @@ impl TemplatesResponse {
         self.next_token.as_deref()
     }
 }
+impl TemplatesResponse {
+    /// Creates a new builder-style object to manufacture [`TemplatesResponse`](crate::model::TemplatesResponse).
+    pub fn builder() -> crate::model::templates_response::Builder {
+        crate::model::templates_response::Builder::default()
+    }
+}
+
 /// See [`TemplatesResponse`](crate::model::TemplatesResponse).
 pub mod templates_response {
 
@@ -28035,12 +28201,6 @@ pub mod templates_response {
                 next_token: self.next_token,
             }
         }
-    }
-}
-impl TemplatesResponse {
-    /// Creates a new builder-style object to manufacture [`TemplatesResponse`](crate::model::TemplatesResponse).
-    pub fn builder() -> crate::model::templates_response::Builder {
-        crate::model::templates_response::Builder::default()
     }
 }
 
@@ -28118,6 +28278,13 @@ impl TemplateResponse {
         self.version.as_deref()
     }
 }
+impl TemplateResponse {
+    /// Creates a new builder-style object to manufacture [`TemplateResponse`](crate::model::TemplateResponse).
+    pub fn builder() -> crate::model::template_response::Builder {
+        crate::model::template_response::Builder::default()
+    }
+}
+
 /// See [`TemplateResponse`](crate::model::TemplateResponse).
 pub mod template_response {
 
@@ -28277,12 +28444,6 @@ pub mod template_response {
         }
     }
 }
-impl TemplateResponse {
-    /// Creates a new builder-style object to manufacture [`TemplateResponse`](crate::model::TemplateResponse).
-    pub fn builder() -> crate::model::template_response::Builder {
-        crate::model::template_response::Builder::default()
-    }
-}
 
 /// When writing a match expression against `TemplateType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -28410,6 +28571,13 @@ impl JourneysResponse {
         self.next_token.as_deref()
     }
 }
+impl JourneysResponse {
+    /// Creates a new builder-style object to manufacture [`JourneysResponse`](crate::model::JourneysResponse).
+    pub fn builder() -> crate::model::journeys_response::Builder {
+        crate::model::journeys_response::Builder::default()
+    }
+}
+
 /// See [`JourneysResponse`](crate::model::JourneysResponse).
 pub mod journeys_response {
 
@@ -28457,12 +28625,6 @@ pub mod journeys_response {
                 next_token: self.next_token,
             }
         }
-    }
-}
-impl JourneysResponse {
-    /// Creates a new builder-style object to manufacture [`JourneysResponse`](crate::model::JourneysResponse).
-    pub fn builder() -> crate::model::journeys_response::Builder {
-        crate::model::journeys_response::Builder::default()
     }
 }
 
@@ -28561,6 +28723,13 @@ impl VoiceTemplateResponse {
         self.voice_id.as_deref()
     }
 }
+impl VoiceTemplateResponse {
+    /// Creates a new builder-style object to manufacture [`VoiceTemplateResponse`](crate::model::VoiceTemplateResponse).
+    pub fn builder() -> crate::model::voice_template_response::Builder {
+        crate::model::voice_template_response::Builder::default()
+    }
+}
+
 /// See [`VoiceTemplateResponse`](crate::model::VoiceTemplateResponse).
 pub mod voice_template_response {
 
@@ -28759,12 +28928,6 @@ pub mod voice_template_response {
         }
     }
 }
-impl VoiceTemplateResponse {
-    /// Creates a new builder-style object to manufacture [`VoiceTemplateResponse`](crate::model::VoiceTemplateResponse).
-    pub fn builder() -> crate::model::voice_template_response::Builder {
-        crate::model::voice_template_response::Builder::default()
-    }
-}
 
 /// <p>Provides information about all the endpoints that are associated with a user ID.</p>
 #[non_exhaustive]
@@ -28780,6 +28943,13 @@ impl EndpointsResponse {
         self.item.as_deref()
     }
 }
+impl EndpointsResponse {
+    /// Creates a new builder-style object to manufacture [`EndpointsResponse`](crate::model::EndpointsResponse).
+    pub fn builder() -> crate::model::endpoints_response::Builder {
+        crate::model::endpoints_response::Builder::default()
+    }
+}
+
 /// See [`EndpointsResponse`](crate::model::EndpointsResponse).
 pub mod endpoints_response {
 
@@ -28813,12 +28983,6 @@ pub mod endpoints_response {
         pub fn build(self) -> crate::model::EndpointsResponse {
             crate::model::EndpointsResponse { item: self.item }
         }
-    }
-}
-impl EndpointsResponse {
-    /// Creates a new builder-style object to manufacture [`EndpointsResponse`](crate::model::EndpointsResponse).
-    pub fn builder() -> crate::model::endpoints_response::Builder {
-        crate::model::endpoints_response::Builder::default()
     }
 }
 
@@ -28944,6 +29108,13 @@ impl EndpointResponse {
         self.user.as_ref()
     }
 }
+impl EndpointResponse {
+    /// Creates a new builder-style object to manufacture [`EndpointResponse`](crate::model::EndpointResponse).
+    pub fn builder() -> crate::model::endpoint_response::Builder {
+        crate::model::endpoint_response::Builder::default()
+    }
+}
+
 /// See [`EndpointResponse`](crate::model::EndpointResponse).
 pub mod endpoint_response {
 
@@ -29190,12 +29361,6 @@ pub mod endpoint_response {
         }
     }
 }
-impl EndpointResponse {
-    /// Creates a new builder-style object to manufacture [`EndpointResponse`](crate::model::EndpointResponse).
-    pub fn builder() -> crate::model::endpoint_response::Builder {
-        crate::model::endpoint_response::Builder::default()
-    }
-}
 
 /// <p>Provides information about the content and settings for a message template that can be used in text messages that are sent through the SMS channel.</p>
 #[non_exhaustive]
@@ -29285,6 +29450,13 @@ impl SmsTemplateResponse {
         self.version.as_deref()
     }
 }
+impl SmsTemplateResponse {
+    /// Creates a new builder-style object to manufacture [`SmsTemplateResponse`](crate::model::SmsTemplateResponse).
+    pub fn builder() -> crate::model::sms_template_response::Builder {
+        crate::model::sms_template_response::Builder::default()
+    }
+}
+
 /// See [`SmsTemplateResponse`](crate::model::SmsTemplateResponse).
 pub mod sms_template_response {
 
@@ -29471,12 +29643,6 @@ pub mod sms_template_response {
         }
     }
 }
-impl SmsTemplateResponse {
-    /// Creates a new builder-style object to manufacture [`SmsTemplateResponse`](crate::model::SmsTemplateResponse).
-    pub fn builder() -> crate::model::sms_template_response::Builder {
-        crate::model::sms_template_response::Builder::default()
-    }
-}
 
 /// <p>Provides information about all the segments that are associated with an application.</p>
 #[non_exhaustive]
@@ -29499,6 +29665,13 @@ impl SegmentsResponse {
         self.next_token.as_deref()
     }
 }
+impl SegmentsResponse {
+    /// Creates a new builder-style object to manufacture [`SegmentsResponse`](crate::model::SegmentsResponse).
+    pub fn builder() -> crate::model::segments_response::Builder {
+        crate::model::segments_response::Builder::default()
+    }
+}
+
 /// See [`SegmentsResponse`](crate::model::SegmentsResponse).
 pub mod segments_response {
 
@@ -29548,12 +29721,6 @@ pub mod segments_response {
         }
     }
 }
-impl SegmentsResponse {
-    /// Creates a new builder-style object to manufacture [`SegmentsResponse`](crate::model::SegmentsResponse).
-    pub fn builder() -> crate::model::segments_response::Builder {
-        crate::model::segments_response::Builder::default()
-    }
-}
 
 /// <p>Provides information about the status and settings of all the import jobs that are associated with an application or segment. An import job is a job that imports endpoint definitions from one or more files.</p>
 #[non_exhaustive]
@@ -29576,6 +29743,13 @@ impl ImportJobsResponse {
         self.next_token.as_deref()
     }
 }
+impl ImportJobsResponse {
+    /// Creates a new builder-style object to manufacture [`ImportJobsResponse`](crate::model::ImportJobsResponse).
+    pub fn builder() -> crate::model::import_jobs_response::Builder {
+        crate::model::import_jobs_response::Builder::default()
+    }
+}
+
 /// See [`ImportJobsResponse`](crate::model::ImportJobsResponse).
 pub mod import_jobs_response {
 
@@ -29623,12 +29797,6 @@ pub mod import_jobs_response {
                 next_token: self.next_token,
             }
         }
-    }
-}
-impl ImportJobsResponse {
-    /// Creates a new builder-style object to manufacture [`ImportJobsResponse`](crate::model::ImportJobsResponse).
-    pub fn builder() -> crate::model::import_jobs_response::Builder {
-        crate::model::import_jobs_response::Builder::default()
     }
 }
 
@@ -29730,6 +29898,13 @@ impl ImportJobResponse {
         self.r#type.as_deref()
     }
 }
+impl ImportJobResponse {
+    /// Creates a new builder-style object to manufacture [`ImportJobResponse`](crate::model::ImportJobResponse).
+    pub fn builder() -> crate::model::import_job_response::Builder {
+        crate::model::import_job_response::Builder::default()
+    }
+}
+
 /// See [`ImportJobResponse`](crate::model::ImportJobResponse).
 pub mod import_job_response {
 
@@ -29924,12 +30099,6 @@ pub mod import_job_response {
                 r#type: self.r#type,
             }
         }
-    }
-}
-impl ImportJobResponse {
-    /// Creates a new builder-style object to manufacture [`ImportJobResponse`](crate::model::ImportJobResponse).
-    pub fn builder() -> crate::model::import_job_response::Builder {
-        crate::model::import_job_response::Builder::default()
     }
 }
 
@@ -30147,6 +30316,13 @@ impl ImportJobResource {
         self.segment_name.as_deref()
     }
 }
+impl ImportJobResource {
+    /// Creates a new builder-style object to manufacture [`ImportJobResource`](crate::model::ImportJobResource).
+    pub fn builder() -> crate::model::import_job_resource::Builder {
+        crate::model::import_job_resource::Builder::default()
+    }
+}
+
 /// See [`ImportJobResource`](crate::model::ImportJobResource).
 pub mod import_job_resource {
 
@@ -30275,12 +30451,6 @@ pub mod import_job_resource {
         }
     }
 }
-impl ImportJobResource {
-    /// Creates a new builder-style object to manufacture [`ImportJobResource`](crate::model::ImportJobResource).
-    pub fn builder() -> crate::model::import_job_resource::Builder {
-        crate::model::import_job_resource::Builder::default()
-    }
-}
 
 /// <p>Provides information about all the export jobs that are associated with an application or segment. An export job is a job that exports endpoint definitions to a file.</p>
 #[non_exhaustive]
@@ -30303,6 +30473,13 @@ impl ExportJobsResponse {
         self.next_token.as_deref()
     }
 }
+impl ExportJobsResponse {
+    /// Creates a new builder-style object to manufacture [`ExportJobsResponse`](crate::model::ExportJobsResponse).
+    pub fn builder() -> crate::model::export_jobs_response::Builder {
+        crate::model::export_jobs_response::Builder::default()
+    }
+}
+
 /// See [`ExportJobsResponse`](crate::model::ExportJobsResponse).
 pub mod export_jobs_response {
 
@@ -30350,12 +30527,6 @@ pub mod export_jobs_response {
                 next_token: self.next_token,
             }
         }
-    }
-}
-impl ExportJobsResponse {
-    /// Creates a new builder-style object to manufacture [`ExportJobsResponse`](crate::model::ExportJobsResponse).
-    pub fn builder() -> crate::model::export_jobs_response::Builder {
-        crate::model::export_jobs_response::Builder::default()
     }
 }
 
@@ -30457,6 +30628,13 @@ impl ExportJobResponse {
         self.r#type.as_deref()
     }
 }
+impl ExportJobResponse {
+    /// Creates a new builder-style object to manufacture [`ExportJobResponse`](crate::model::ExportJobResponse).
+    pub fn builder() -> crate::model::export_job_response::Builder {
+        crate::model::export_job_response::Builder::default()
+    }
+}
+
 /// See [`ExportJobResponse`](crate::model::ExportJobResponse).
 pub mod export_job_response {
 
@@ -30653,12 +30831,6 @@ pub mod export_job_response {
         }
     }
 }
-impl ExportJobResponse {
-    /// Creates a new builder-style object to manufacture [`ExportJobResponse`](crate::model::ExportJobResponse).
-    pub fn builder() -> crate::model::export_job_response::Builder {
-        crate::model::export_job_response::Builder::default()
-    }
-}
 
 /// <p>Provides information about the resource settings for a job that exports endpoint definitions to a file. The file can be added directly to an Amazon Simple Storage Service (Amazon S3) bucket by using the Amazon Pinpoint API or downloaded directly to a computer by using the Amazon Pinpoint console.</p>
 #[non_exhaustive]
@@ -30703,6 +30875,13 @@ impl ExportJobResource {
         self.segment_version
     }
 }
+impl ExportJobResource {
+    /// Creates a new builder-style object to manufacture [`ExportJobResource`](crate::model::ExportJobResource).
+    pub fn builder() -> crate::model::export_job_resource::Builder {
+        crate::model::export_job_resource::Builder::default()
+    }
+}
+
 /// See [`ExportJobResource`](crate::model::ExportJobResource).
 pub mod export_job_resource {
 
@@ -30778,12 +30957,6 @@ pub mod export_job_resource {
         }
     }
 }
-impl ExportJobResource {
-    /// Creates a new builder-style object to manufacture [`ExportJobResource`](crate::model::ExportJobResource).
-    pub fn builder() -> crate::model::export_job_resource::Builder {
-        crate::model::export_job_resource::Builder::default()
-    }
-}
 
 /// <p>Provides information about all the recommender model configurations that are associated with your Amazon Pinpoint account.</p>
 #[non_exhaustive]
@@ -30806,6 +30979,13 @@ impl ListRecommenderConfigurationsResponse {
         self.next_token.as_deref()
     }
 }
+impl ListRecommenderConfigurationsResponse {
+    /// Creates a new builder-style object to manufacture [`ListRecommenderConfigurationsResponse`](crate::model::ListRecommenderConfigurationsResponse).
+    pub fn builder() -> crate::model::list_recommender_configurations_response::Builder {
+        crate::model::list_recommender_configurations_response::Builder::default()
+    }
+}
+
 /// See [`ListRecommenderConfigurationsResponse`](crate::model::ListRecommenderConfigurationsResponse).
 pub mod list_recommender_configurations_response {
 
@@ -30856,12 +31036,6 @@ pub mod list_recommender_configurations_response {
                 next_token: self.next_token,
             }
         }
-    }
-}
-impl ListRecommenderConfigurationsResponse {
-    /// Creates a new builder-style object to manufacture [`ListRecommenderConfigurationsResponse`](crate::model::ListRecommenderConfigurationsResponse).
-    pub fn builder() -> crate::model::list_recommender_configurations_response::Builder {
-        crate::model::list_recommender_configurations_response::Builder::default()
     }
 }
 
@@ -30987,6 +31161,13 @@ impl PushNotificationTemplateResponse {
         self.version.as_deref()
     }
 }
+impl PushNotificationTemplateResponse {
+    /// Creates a new builder-style object to manufacture [`PushNotificationTemplateResponse`](crate::model::PushNotificationTemplateResponse).
+    pub fn builder() -> crate::model::push_notification_template_response::Builder {
+        crate::model::push_notification_template_response::Builder::default()
+    }
+}
+
 /// See [`PushNotificationTemplateResponse`](crate::model::PushNotificationTemplateResponse).
 pub mod push_notification_template_response {
 
@@ -31240,12 +31421,6 @@ pub mod push_notification_template_response {
         }
     }
 }
-impl PushNotificationTemplateResponse {
-    /// Creates a new builder-style object to manufacture [`PushNotificationTemplateResponse`](crate::model::PushNotificationTemplateResponse).
-    pub fn builder() -> crate::model::push_notification_template_response::Builder {
-        crate::model::push_notification_template_response::Builder::default()
-    }
-}
 
 /// <p>Provides the results of a query that retrieved the data for a standard execution metric that applies to a journey, and provides information about that query.</p>
 #[non_exhaustive]
@@ -31286,6 +31461,13 @@ impl JourneyExecutionMetricsResponse {
         self.metrics.as_ref()
     }
 }
+impl JourneyExecutionMetricsResponse {
+    /// Creates a new builder-style object to manufacture [`JourneyExecutionMetricsResponse`](crate::model::JourneyExecutionMetricsResponse).
+    pub fn builder() -> crate::model::journey_execution_metrics_response::Builder {
+        crate::model::journey_execution_metrics_response::Builder::default()
+    }
+}
+
 /// See [`JourneyExecutionMetricsResponse`](crate::model::JourneyExecutionMetricsResponse).
 pub mod journey_execution_metrics_response {
 
@@ -31373,12 +31555,6 @@ pub mod journey_execution_metrics_response {
         }
     }
 }
-impl JourneyExecutionMetricsResponse {
-    /// Creates a new builder-style object to manufacture [`JourneyExecutionMetricsResponse`](crate::model::JourneyExecutionMetricsResponse).
-    pub fn builder() -> crate::model::journey_execution_metrics_response::Builder {
-        crate::model::journey_execution_metrics_response::Builder::default()
-    }
-}
 
 /// <p>Provides the results of a query that retrieved the data for a standard execution metric that applies to a journey activity, and provides information about that query.</p>
 #[non_exhaustive]
@@ -31449,6 +31625,13 @@ impl JourneyExecutionActivityMetricsResponse {
         self.metrics.as_ref()
     }
 }
+impl JourneyExecutionActivityMetricsResponse {
+    /// Creates a new builder-style object to manufacture [`JourneyExecutionActivityMetricsResponse`](crate::model::JourneyExecutionActivityMetricsResponse).
+    pub fn builder() -> crate::model::journey_execution_activity_metrics_response::Builder {
+        crate::model::journey_execution_activity_metrics_response::Builder::default()
+    }
+}
+
 /// See [`JourneyExecutionActivityMetricsResponse`](crate::model::JourneyExecutionActivityMetricsResponse).
 pub mod journey_execution_activity_metrics_response {
 
@@ -31582,12 +31765,6 @@ pub mod journey_execution_activity_metrics_response {
         }
     }
 }
-impl JourneyExecutionActivityMetricsResponse {
-    /// Creates a new builder-style object to manufacture [`JourneyExecutionActivityMetricsResponse`](crate::model::JourneyExecutionActivityMetricsResponse).
-    pub fn builder() -> crate::model::journey_execution_activity_metrics_response::Builder {
-        crate::model::journey_execution_activity_metrics_response::Builder::default()
-    }
-}
 
 /// <p>Provides the results of a query that retrieved the data for a standard engagement metric that applies to a journey, and provides information about that query.</p>
 #[non_exhaustive]
@@ -31645,6 +31822,13 @@ impl JourneyDateRangeKpiResponse {
         self.start_time.as_ref()
     }
 }
+impl JourneyDateRangeKpiResponse {
+    /// Creates a new builder-style object to manufacture [`JourneyDateRangeKpiResponse`](crate::model::JourneyDateRangeKpiResponse).
+    pub fn builder() -> crate::model::journey_date_range_kpi_response::Builder {
+        crate::model::journey_date_range_kpi_response::Builder::default()
+    }
+}
+
 /// See [`JourneyDateRangeKpiResponse`](crate::model::JourneyDateRangeKpiResponse).
 pub mod journey_date_range_kpi_response {
 
@@ -31757,12 +31941,6 @@ pub mod journey_date_range_kpi_response {
         }
     }
 }
-impl JourneyDateRangeKpiResponse {
-    /// Creates a new builder-style object to manufacture [`JourneyDateRangeKpiResponse`](crate::model::JourneyDateRangeKpiResponse).
-    pub fn builder() -> crate::model::journey_date_range_kpi_response::Builder {
-        crate::model::journey_date_range_kpi_response::Builder::default()
-    }
-}
 
 /// <p>Provides the results of a query that retrieved the data for a standard metric that applies to an application, campaign, or journey.</p>
 #[non_exhaustive]
@@ -31778,6 +31956,13 @@ impl BaseKpiResult {
         self.rows.as_deref()
     }
 }
+impl BaseKpiResult {
+    /// Creates a new builder-style object to manufacture [`BaseKpiResult`](crate::model::BaseKpiResult).
+    pub fn builder() -> crate::model::base_kpi_result::Builder {
+        crate::model::base_kpi_result::Builder::default()
+    }
+}
+
 /// See [`BaseKpiResult`](crate::model::BaseKpiResult).
 pub mod base_kpi_result {
 
@@ -31813,12 +31998,6 @@ pub mod base_kpi_result {
         }
     }
 }
-impl BaseKpiResult {
-    /// Creates a new builder-style object to manufacture [`BaseKpiResult`](crate::model::BaseKpiResult).
-    pub fn builder() -> crate::model::base_kpi_result::Builder {
-        crate::model::base_kpi_result::Builder::default()
-    }
-}
 
 /// <p>Provides the results of a query that retrieved the data for a standard metric that applies to an application, campaign, or journey.</p>
 #[non_exhaustive]
@@ -31841,6 +32020,13 @@ impl ResultRow {
         self.values.as_deref()
     }
 }
+impl ResultRow {
+    /// Creates a new builder-style object to manufacture [`ResultRow`](crate::model::ResultRow).
+    pub fn builder() -> crate::model::result_row::Builder {
+        crate::model::result_row::Builder::default()
+    }
+}
+
 /// See [`ResultRow`](crate::model::ResultRow).
 pub mod result_row {
 
@@ -31899,12 +32085,6 @@ pub mod result_row {
         }
     }
 }
-impl ResultRow {
-    /// Creates a new builder-style object to manufacture [`ResultRow`](crate::model::ResultRow).
-    pub fn builder() -> crate::model::result_row::Builder {
-        crate::model::result_row::Builder::default()
-    }
-}
 
 /// <p>Provides a single value and metadata about that value as part of an array of query results for a standard metric that applies to an application, campaign, or journey.</p>
 #[non_exhaustive]
@@ -31934,6 +32114,13 @@ impl ResultRowValue {
         self.value.as_deref()
     }
 }
+impl ResultRowValue {
+    /// Creates a new builder-style object to manufacture [`ResultRowValue`](crate::model::ResultRowValue).
+    pub fn builder() -> crate::model::result_row_value::Builder {
+        crate::model::result_row_value::Builder::default()
+    }
+}
+
 /// See [`ResultRowValue`](crate::model::ResultRowValue).
 pub mod result_row_value {
 
@@ -31984,12 +32171,6 @@ pub mod result_row_value {
                 value: self.value,
             }
         }
-    }
-}
-impl ResultRowValue {
-    /// Creates a new builder-style object to manufacture [`ResultRowValue`](crate::model::ResultRowValue).
-    pub fn builder() -> crate::model::result_row_value::Builder {
-        crate::model::result_row_value::Builder::default()
     }
 }
 
@@ -32085,6 +32266,13 @@ impl InAppTemplateResponse {
         self.version.as_deref()
     }
 }
+impl InAppTemplateResponse {
+    /// Creates a new builder-style object to manufacture [`InAppTemplateResponse`](crate::model::InAppTemplateResponse).
+    pub fn builder() -> crate::model::in_app_template_response::Builder {
+        crate::model::in_app_template_response::Builder::default()
+    }
+}
+
 /// See [`InAppTemplateResponse`](crate::model::InAppTemplateResponse).
 pub mod in_app_template_response {
 
@@ -32291,12 +32479,6 @@ pub mod in_app_template_response {
         }
     }
 }
-impl InAppTemplateResponse {
-    /// Creates a new builder-style object to manufacture [`InAppTemplateResponse`](crate::model::InAppTemplateResponse).
-    pub fn builder() -> crate::model::in_app_template_response::Builder {
-        crate::model::in_app_template_response::Builder::default()
-    }
-}
 
 /// <p>Get in-app messages response object.</p>
 #[non_exhaustive]
@@ -32315,6 +32497,13 @@ impl InAppMessagesResponse {
         self.in_app_message_campaigns.as_deref()
     }
 }
+impl InAppMessagesResponse {
+    /// Creates a new builder-style object to manufacture [`InAppMessagesResponse`](crate::model::InAppMessagesResponse).
+    pub fn builder() -> crate::model::in_app_messages_response::Builder {
+        crate::model::in_app_messages_response::Builder::default()
+    }
+}
+
 /// See [`InAppMessagesResponse`](crate::model::InAppMessagesResponse).
 pub mod in_app_messages_response {
 
@@ -32354,12 +32543,6 @@ pub mod in_app_messages_response {
                 in_app_message_campaigns: self.in_app_message_campaigns,
             }
         }
-    }
-}
-impl InAppMessagesResponse {
-    /// Creates a new builder-style object to manufacture [`InAppMessagesResponse`](crate::model::InAppMessagesResponse).
-    pub fn builder() -> crate::model::in_app_messages_response::Builder {
-        crate::model::in_app_messages_response::Builder::default()
     }
 }
 
@@ -32426,6 +32609,13 @@ impl InAppMessageCampaign {
         self.treatment_id.as_deref()
     }
 }
+impl InAppMessageCampaign {
+    /// Creates a new builder-style object to manufacture [`InAppMessageCampaign`](crate::model::InAppMessageCampaign).
+    pub fn builder() -> crate::model::in_app_message_campaign::Builder {
+        crate::model::in_app_message_campaign::Builder::default()
+    }
+}
+
 /// See [`InAppMessageCampaign`](crate::model::InAppMessageCampaign).
 pub mod in_app_message_campaign {
 
@@ -32544,12 +32734,6 @@ pub mod in_app_message_campaign {
         }
     }
 }
-impl InAppMessageCampaign {
-    /// Creates a new builder-style object to manufacture [`InAppMessageCampaign`](crate::model::InAppMessageCampaign).
-    pub fn builder() -> crate::model::in_app_message_campaign::Builder {
-        crate::model::in_app_message_campaign::Builder::default()
-    }
-}
 
 /// <p>Schedule of the campaign.</p>
 #[non_exhaustive]
@@ -32579,6 +32763,13 @@ impl InAppCampaignSchedule {
         self.quiet_time.as_ref()
     }
 }
+impl InAppCampaignSchedule {
+    /// Creates a new builder-style object to manufacture [`InAppCampaignSchedule`](crate::model::InAppCampaignSchedule).
+    pub fn builder() -> crate::model::in_app_campaign_schedule::Builder {
+        crate::model::in_app_campaign_schedule::Builder::default()
+    }
+}
+
 /// See [`InAppCampaignSchedule`](crate::model::InAppCampaignSchedule).
 pub mod in_app_campaign_schedule {
 
@@ -32637,12 +32828,6 @@ pub mod in_app_campaign_schedule {
         }
     }
 }
-impl InAppCampaignSchedule {
-    /// Creates a new builder-style object to manufacture [`InAppCampaignSchedule`](crate::model::InAppCampaignSchedule).
-    pub fn builder() -> crate::model::in_app_campaign_schedule::Builder {
-        crate::model::in_app_campaign_schedule::Builder::default()
-    }
-}
 
 /// <p>Provides all fields required for building an in-app message.</p>
 #[non_exhaustive]
@@ -32676,6 +32861,13 @@ impl InAppMessage {
         self.layout.as_ref()
     }
 }
+impl InAppMessage {
+    /// Creates a new builder-style object to manufacture [`InAppMessage`](crate::model::InAppMessage).
+    pub fn builder() -> crate::model::in_app_message::Builder {
+        crate::model::in_app_message::Builder::default()
+    }
+}
+
 /// See [`InAppMessage`](crate::model::InAppMessage).
 pub mod in_app_message {
 
@@ -32752,12 +32944,6 @@ pub mod in_app_message {
                 layout: self.layout,
             }
         }
-    }
-}
-impl InAppMessage {
-    /// Creates a new builder-style object to manufacture [`InAppMessage`](crate::model::InAppMessage).
-    pub fn builder() -> crate::model::in_app_message::Builder {
-        crate::model::in_app_message::Builder::default()
     }
 }
 
@@ -32863,6 +33049,13 @@ impl EmailTemplateResponse {
         self.version.as_deref()
     }
 }
+impl EmailTemplateResponse {
+    /// Creates a new builder-style object to manufacture [`EmailTemplateResponse`](crate::model::EmailTemplateResponse).
+    pub fn builder() -> crate::model::email_template_response::Builder {
+        crate::model::email_template_response::Builder::default()
+    }
+}
+
 /// See [`EmailTemplateResponse`](crate::model::EmailTemplateResponse).
 pub mod email_template_response {
 
@@ -33073,12 +33266,6 @@ pub mod email_template_response {
         }
     }
 }
-impl EmailTemplateResponse {
-    /// Creates a new builder-style object to manufacture [`EmailTemplateResponse`](crate::model::EmailTemplateResponse).
-    pub fn builder() -> crate::model::email_template_response::Builder {
-        crate::model::email_template_response::Builder::default()
-    }
-}
 
 /// <p>Provides information about the general settings and status of all channels for an application, including channels that aren't enabled for the application.</p>
 #[non_exhaustive]
@@ -33100,6 +33287,13 @@ impl ChannelsResponse {
         self.channels.as_ref()
     }
 }
+impl ChannelsResponse {
+    /// Creates a new builder-style object to manufacture [`ChannelsResponse`](crate::model::ChannelsResponse).
+    pub fn builder() -> crate::model::channels_response::Builder {
+        crate::model::channels_response::Builder::default()
+    }
+}
+
 /// See [`ChannelsResponse`](crate::model::ChannelsResponse).
 pub mod channels_response {
 
@@ -33143,12 +33337,6 @@ pub mod channels_response {
                 channels: self.channels,
             }
         }
-    }
-}
-impl ChannelsResponse {
-    /// Creates a new builder-style object to manufacture [`ChannelsResponse`](crate::model::ChannelsResponse).
-    pub fn builder() -> crate::model::channels_response::Builder {
-        crate::model::channels_response::Builder::default()
     }
 }
 
@@ -33222,6 +33410,13 @@ impl ChannelResponse {
         self.version
     }
 }
+impl ChannelResponse {
+    /// Creates a new builder-style object to manufacture [`ChannelResponse`](crate::model::ChannelResponse).
+    pub fn builder() -> crate::model::channel_response::Builder {
+        crate::model::channel_response::Builder::default()
+    }
+}
+
 /// See [`ChannelResponse`](crate::model::ChannelResponse).
 pub mod channel_response {
 
@@ -33358,12 +33553,6 @@ pub mod channel_response {
         }
     }
 }
-impl ChannelResponse {
-    /// Creates a new builder-style object to manufacture [`ChannelResponse`](crate::model::ChannelResponse).
-    pub fn builder() -> crate::model::channel_response::Builder {
-        crate::model::channel_response::Builder::default()
-    }
-}
 
 /// <p>Provides information about the configuration and other settings for all the campaigns that are associated with an application.</p>
 #[non_exhaustive]
@@ -33386,6 +33575,13 @@ impl CampaignsResponse {
         self.next_token.as_deref()
     }
 }
+impl CampaignsResponse {
+    /// Creates a new builder-style object to manufacture [`CampaignsResponse`](crate::model::CampaignsResponse).
+    pub fn builder() -> crate::model::campaigns_response::Builder {
+        crate::model::campaigns_response::Builder::default()
+    }
+}
+
 /// See [`CampaignsResponse`](crate::model::CampaignsResponse).
 pub mod campaigns_response {
 
@@ -33433,12 +33629,6 @@ pub mod campaigns_response {
                 next_token: self.next_token,
             }
         }
-    }
-}
-impl CampaignsResponse {
-    /// Creates a new builder-style object to manufacture [`CampaignsResponse`](crate::model::CampaignsResponse).
-    pub fn builder() -> crate::model::campaigns_response::Builder {
-        crate::model::campaigns_response::Builder::default()
     }
 }
 
@@ -33498,6 +33688,13 @@ impl CampaignDateRangeKpiResponse {
         self.start_time.as_ref()
     }
 }
+impl CampaignDateRangeKpiResponse {
+    /// Creates a new builder-style object to manufacture [`CampaignDateRangeKpiResponse`](crate::model::CampaignDateRangeKpiResponse).
+    pub fn builder() -> crate::model::campaign_date_range_kpi_response::Builder {
+        crate::model::campaign_date_range_kpi_response::Builder::default()
+    }
+}
+
 /// See [`CampaignDateRangeKpiResponse`](crate::model::CampaignDateRangeKpiResponse).
 pub mod campaign_date_range_kpi_response {
 
@@ -33610,12 +33807,6 @@ pub mod campaign_date_range_kpi_response {
         }
     }
 }
-impl CampaignDateRangeKpiResponse {
-    /// Creates a new builder-style object to manufacture [`CampaignDateRangeKpiResponse`](crate::model::CampaignDateRangeKpiResponse).
-    pub fn builder() -> crate::model::campaign_date_range_kpi_response::Builder {
-        crate::model::campaign_date_range_kpi_response::Builder::default()
-    }
-}
 
 /// <p>Provides information about the activities that were performed by a campaign.</p>
 #[non_exhaustive]
@@ -33638,6 +33829,13 @@ impl ActivitiesResponse {
         self.next_token.as_deref()
     }
 }
+impl ActivitiesResponse {
+    /// Creates a new builder-style object to manufacture [`ActivitiesResponse`](crate::model::ActivitiesResponse).
+    pub fn builder() -> crate::model::activities_response::Builder {
+        crate::model::activities_response::Builder::default()
+    }
+}
+
 /// See [`ActivitiesResponse`](crate::model::ActivitiesResponse).
 pub mod activities_response {
 
@@ -33685,12 +33883,6 @@ pub mod activities_response {
                 next_token: self.next_token,
             }
         }
-    }
-}
-impl ActivitiesResponse {
-    /// Creates a new builder-style object to manufacture [`ActivitiesResponse`](crate::model::ActivitiesResponse).
-    pub fn builder() -> crate::model::activities_response::Builder {
-        crate::model::activities_response::Builder::default()
     }
 }
 
@@ -33792,6 +33984,13 @@ impl ActivityResponse {
         self.treatment_id.as_deref()
     }
 }
+impl ActivityResponse {
+    /// Creates a new builder-style object to manufacture [`ActivityResponse`](crate::model::ActivityResponse).
+    pub fn builder() -> crate::model::activity_response::Builder {
+        crate::model::activity_response::Builder::default()
+    }
+}
+
 /// See [`ActivityResponse`](crate::model::ActivityResponse).
 pub mod activity_response {
 
@@ -33970,12 +34169,6 @@ pub mod activity_response {
         }
     }
 }
-impl ActivityResponse {
-    /// Creates a new builder-style object to manufacture [`ActivityResponse`](crate::model::ActivityResponse).
-    pub fn builder() -> crate::model::activity_response::Builder {
-        crate::model::activity_response::Builder::default()
-    }
-}
 
 /// <p>Provides information about all of your applications.</p>
 #[non_exhaustive]
@@ -33998,6 +34191,13 @@ impl ApplicationsResponse {
         self.next_token.as_deref()
     }
 }
+impl ApplicationsResponse {
+    /// Creates a new builder-style object to manufacture [`ApplicationsResponse`](crate::model::ApplicationsResponse).
+    pub fn builder() -> crate::model::applications_response::Builder {
+        crate::model::applications_response::Builder::default()
+    }
+}
+
 /// See [`ApplicationsResponse`](crate::model::ApplicationsResponse).
 pub mod applications_response {
 
@@ -34047,12 +34247,6 @@ pub mod applications_response {
         }
     }
 }
-impl ApplicationsResponse {
-    /// Creates a new builder-style object to manufacture [`ApplicationsResponse`](crate::model::ApplicationsResponse).
-    pub fn builder() -> crate::model::applications_response::Builder {
-        crate::model::applications_response::Builder::default()
-    }
-}
 
 /// <p>Provides information about an application.</p>
 #[non_exhaustive]
@@ -34100,6 +34294,13 @@ impl ApplicationResponse {
         self.creation_date.as_deref()
     }
 }
+impl ApplicationResponse {
+    /// Creates a new builder-style object to manufacture [`ApplicationResponse`](crate::model::ApplicationResponse).
+    pub fn builder() -> crate::model::application_response::Builder {
+        crate::model::application_response::Builder::default()
+    }
+}
+
 /// See [`ApplicationResponse`](crate::model::ApplicationResponse).
 pub mod application_response {
 
@@ -34196,12 +34397,6 @@ pub mod application_response {
         }
     }
 }
-impl ApplicationResponse {
-    /// Creates a new builder-style object to manufacture [`ApplicationResponse`](crate::model::ApplicationResponse).
-    pub fn builder() -> crate::model::application_response::Builder {
-        crate::model::application_response::Builder::default()
-    }
-}
 
 /// <p>Provides the results of a query that retrieved the data for a standard metric that applies to an application, and provides information about that query.</p>
 #[non_exhaustive]
@@ -34252,6 +34447,13 @@ impl ApplicationDateRangeKpiResponse {
         self.start_time.as_ref()
     }
 }
+impl ApplicationDateRangeKpiResponse {
+    /// Creates a new builder-style object to manufacture [`ApplicationDateRangeKpiResponse`](crate::model::ApplicationDateRangeKpiResponse).
+    pub fn builder() -> crate::model::application_date_range_kpi_response::Builder {
+        crate::model::application_date_range_kpi_response::Builder::default()
+    }
+}
+
 /// See [`ApplicationDateRangeKpiResponse`](crate::model::ApplicationDateRangeKpiResponse).
 pub mod application_date_range_kpi_response {
 
@@ -34352,12 +34554,6 @@ pub mod application_date_range_kpi_response {
         }
     }
 }
-impl ApplicationDateRangeKpiResponse {
-    /// Creates a new builder-style object to manufacture [`ApplicationDateRangeKpiResponse`](crate::model::ApplicationDateRangeKpiResponse).
-    pub fn builder() -> crate::model::application_date_range_kpi_response::Builder {
-        crate::model::application_date_range_kpi_response::Builder::default()
-    }
-}
 
 /// <p>Provides information about a request to create a message template.</p>
 #[non_exhaustive]
@@ -34387,6 +34583,13 @@ impl CreateTemplateMessageBody {
         self.request_id.as_deref()
     }
 }
+impl CreateTemplateMessageBody {
+    /// Creates a new builder-style object to manufacture [`CreateTemplateMessageBody`](crate::model::CreateTemplateMessageBody).
+    pub fn builder() -> crate::model::create_template_message_body::Builder {
+        crate::model::create_template_message_body::Builder::default()
+    }
+}
+
 /// See [`CreateTemplateMessageBody`](crate::model::CreateTemplateMessageBody).
 pub mod create_template_message_body {
 
@@ -34437,12 +34640,6 @@ pub mod create_template_message_body {
                 request_id: self.request_id,
             }
         }
-    }
-}
-impl CreateTemplateMessageBody {
-    /// Creates a new builder-style object to manufacture [`CreateTemplateMessageBody`](crate::model::CreateTemplateMessageBody).
-    pub fn builder() -> crate::model::create_template_message_body::Builder {
-        crate::model::create_template_message_body::Builder::default()
     }
 }
 
@@ -34544,6 +34741,13 @@ impl CreateRecommenderConfigurationShape {
         self.recommendations_per_message
     }
 }
+impl CreateRecommenderConfigurationShape {
+    /// Creates a new builder-style object to manufacture [`CreateRecommenderConfigurationShape`](crate::model::CreateRecommenderConfigurationShape).
+    pub fn builder() -> crate::model::create_recommender_configuration_shape::Builder {
+        crate::model::create_recommender_configuration_shape::Builder::default()
+    }
+}
+
 /// See [`CreateRecommenderConfigurationShape`](crate::model::CreateRecommenderConfigurationShape).
 pub mod create_recommender_configuration_shape {
 
@@ -34739,12 +34943,6 @@ pub mod create_recommender_configuration_shape {
         }
     }
 }
-impl CreateRecommenderConfigurationShape {
-    /// Creates a new builder-style object to manufacture [`CreateRecommenderConfigurationShape`](crate::model::CreateRecommenderConfigurationShape).
-    pub fn builder() -> crate::model::create_recommender_configuration_shape::Builder {
-        crate::model::create_recommender_configuration_shape::Builder::default()
-    }
-}
 
 /// <p>Provides information about a request to create a message template.</p>
 #[non_exhaustive]
@@ -34774,6 +34972,13 @@ impl TemplateCreateMessageBody {
         self.request_id.as_deref()
     }
 }
+impl TemplateCreateMessageBody {
+    /// Creates a new builder-style object to manufacture [`TemplateCreateMessageBody`](crate::model::TemplateCreateMessageBody).
+    pub fn builder() -> crate::model::template_create_message_body::Builder {
+        crate::model::template_create_message_body::Builder::default()
+    }
+}
+
 /// See [`TemplateCreateMessageBody`](crate::model::TemplateCreateMessageBody).
 pub mod template_create_message_body {
 
@@ -34824,12 +35029,6 @@ pub mod template_create_message_body {
                 request_id: self.request_id,
             }
         }
-    }
-}
-impl TemplateCreateMessageBody {
-    /// Creates a new builder-style object to manufacture [`TemplateCreateMessageBody`](crate::model::TemplateCreateMessageBody).
-    pub fn builder() -> crate::model::template_create_message_body::Builder {
-        crate::model::template_create_message_body::Builder::default()
     }
 }
 
@@ -34910,6 +35109,13 @@ impl ImportJobRequest {
         self.segment_name.as_deref()
     }
 }
+impl ImportJobRequest {
+    /// Creates a new builder-style object to manufacture [`ImportJobRequest`](crate::model::ImportJobRequest).
+    pub fn builder() -> crate::model::import_job_request::Builder {
+        crate::model::import_job_request::Builder::default()
+    }
+}
+
 /// See [`ImportJobRequest`](crate::model::ImportJobRequest).
 pub mod import_job_request {
 
@@ -35036,12 +35242,6 @@ pub mod import_job_request {
         }
     }
 }
-impl ImportJobRequest {
-    /// Creates a new builder-style object to manufacture [`ImportJobRequest`](crate::model::ImportJobRequest).
-    pub fn builder() -> crate::model::import_job_request::Builder {
-        crate::model::import_job_request::Builder::default()
-    }
-}
 
 /// <p>Specifies the settings for a job that exports endpoint definitions to an Amazon Simple Storage Service (Amazon S3) bucket.</p>
 #[non_exhaustive]
@@ -35086,6 +35286,13 @@ impl ExportJobRequest {
         self.segment_version
     }
 }
+impl ExportJobRequest {
+    /// Creates a new builder-style object to manufacture [`ExportJobRequest`](crate::model::ExportJobRequest).
+    pub fn builder() -> crate::model::export_job_request::Builder {
+        crate::model::export_job_request::Builder::default()
+    }
+}
+
 /// See [`ExportJobRequest`](crate::model::ExportJobRequest).
 pub mod export_job_request {
 
@@ -35161,12 +35368,6 @@ pub mod export_job_request {
         }
     }
 }
-impl ExportJobRequest {
-    /// Creates a new builder-style object to manufacture [`ExportJobRequest`](crate::model::ExportJobRequest).
-    pub fn builder() -> crate::model::export_job_request::Builder {
-        crate::model::export_job_request::Builder::default()
-    }
-}
 
 /// <p>Specifies the display name of an application and the tags to associate with the application.</p>
 #[non_exhaustive]
@@ -35193,6 +35394,13 @@ impl CreateApplicationRequest {
         self.tags.as_ref()
     }
 }
+impl CreateApplicationRequest {
+    /// Creates a new builder-style object to manufacture [`CreateApplicationRequest`](crate::model::CreateApplicationRequest).
+    pub fn builder() -> crate::model::create_application_request::Builder {
+        crate::model::create_application_request::Builder::default()
+    }
+}
+
 /// See [`CreateApplicationRequest`](crate::model::CreateApplicationRequest).
 pub mod create_application_request {
 
@@ -35248,11 +35456,5 @@ pub mod create_application_request {
                 tags: self.tags,
             }
         }
-    }
-}
-impl CreateApplicationRequest {
-    /// Creates a new builder-style object to manufacture [`CreateApplicationRequest`](crate::model::CreateApplicationRequest).
-    pub fn builder() -> crate::model::create_application_request::Builder {
-        crate::model::create_application_request::Builder::default()
     }
 }

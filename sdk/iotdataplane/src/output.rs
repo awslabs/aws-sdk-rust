@@ -20,6 +20,13 @@ impl aws_http::request_id::RequestId for UpdateThingShadowOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdateThingShadowOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateThingShadowOutput`](crate::output::UpdateThingShadowOutput).
+    pub fn builder() -> crate::output::update_thing_shadow_output::Builder {
+        crate::output::update_thing_shadow_output::Builder::default()
+    }
+}
+
 /// See [`UpdateThingShadowOutput`](crate::output::UpdateThingShadowOutput).
 pub mod update_thing_shadow_output {
 
@@ -59,12 +66,6 @@ pub mod update_thing_shadow_output {
         }
     }
 }
-impl UpdateThingShadowOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateThingShadowOutput`](crate::output::UpdateThingShadowOutput).
-    pub fn builder() -> crate::output::update_thing_shadow_output::Builder {
-        crate::output::update_thing_shadow_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -77,6 +78,13 @@ impl aws_http::request_id::RequestId for PublishOutput {
         self._request_id.as_deref()
     }
 }
+impl PublishOutput {
+    /// Creates a new builder-style object to manufacture [`PublishOutput`](crate::output::PublishOutput).
+    pub fn builder() -> crate::output::publish_output::Builder {
+        crate::output::publish_output::Builder::default()
+    }
+}
+
 /// See [`PublishOutput`](crate::output::PublishOutput).
 pub mod publish_output {
 
@@ -102,12 +110,6 @@ pub mod publish_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl PublishOutput {
-    /// Creates a new builder-style object to manufacture [`PublishOutput`](crate::output::PublishOutput).
-    pub fn builder() -> crate::output::publish_output::Builder {
-        crate::output::publish_output::Builder::default()
     }
 }
 
@@ -138,6 +140,13 @@ impl aws_http::request_id::RequestId for ListRetainedMessagesOutput {
         self._request_id.as_deref()
     }
 }
+impl ListRetainedMessagesOutput {
+    /// Creates a new builder-style object to manufacture [`ListRetainedMessagesOutput`](crate::output::ListRetainedMessagesOutput).
+    pub fn builder() -> crate::output::list_retained_messages_output::Builder {
+        crate::output::list_retained_messages_output::Builder::default()
+    }
+}
+
 /// See [`ListRetainedMessagesOutput`](crate::output::ListRetainedMessagesOutput).
 pub mod list_retained_messages_output {
 
@@ -199,12 +208,6 @@ pub mod list_retained_messages_output {
         }
     }
 }
-impl ListRetainedMessagesOutput {
-    /// Creates a new builder-style object to manufacture [`ListRetainedMessagesOutput`](crate::output::ListRetainedMessagesOutput).
-    pub fn builder() -> crate::output::list_retained_messages_output::Builder {
-        crate::output::list_retained_messages_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -240,6 +243,13 @@ impl aws_http::request_id::RequestId for ListNamedShadowsForThingOutput {
         self._request_id.as_deref()
     }
 }
+impl ListNamedShadowsForThingOutput {
+    /// Creates a new builder-style object to manufacture [`ListNamedShadowsForThingOutput`](crate::output::ListNamedShadowsForThingOutput).
+    pub fn builder() -> crate::output::list_named_shadows_for_thing_output::Builder {
+        crate::output::list_named_shadows_for_thing_output::Builder::default()
+    }
+}
+
 /// See [`ListNamedShadowsForThingOutput`](crate::output::ListNamedShadowsForThingOutput).
 pub mod list_named_shadows_for_thing_output {
 
@@ -312,12 +322,6 @@ pub mod list_named_shadows_for_thing_output {
         }
     }
 }
-impl ListNamedShadowsForThingOutput {
-    /// Creates a new builder-style object to manufacture [`ListNamedShadowsForThingOutput`](crate::output::ListNamedShadowsForThingOutput).
-    pub fn builder() -> crate::output::list_named_shadows_for_thing_output::Builder {
-        crate::output::list_named_shadows_for_thing_output::Builder::default()
-    }
-}
 
 /// <p>The output from the GetThingShadow operation.</p>
 #[non_exhaustive]
@@ -339,6 +343,13 @@ impl aws_http::request_id::RequestId for GetThingShadowOutput {
         self._request_id.as_deref()
     }
 }
+impl GetThingShadowOutput {
+    /// Creates a new builder-style object to manufacture [`GetThingShadowOutput`](crate::output::GetThingShadowOutput).
+    pub fn builder() -> crate::output::get_thing_shadow_output::Builder {
+        crate::output::get_thing_shadow_output::Builder::default()
+    }
+}
+
 /// See [`GetThingShadowOutput`](crate::output::GetThingShadowOutput).
 pub mod get_thing_shadow_output {
 
@@ -376,12 +387,6 @@ pub mod get_thing_shadow_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl GetThingShadowOutput {
-    /// Creates a new builder-style object to manufacture [`GetThingShadowOutput`](crate::output::GetThingShadowOutput).
-    pub fn builder() -> crate::output::get_thing_shadow_output::Builder {
-        crate::output::get_thing_shadow_output::Builder::default()
     }
 }
 
@@ -426,6 +431,13 @@ impl aws_http::request_id::RequestId for GetRetainedMessageOutput {
         self._request_id.as_deref()
     }
 }
+impl GetRetainedMessageOutput {
+    /// Creates a new builder-style object to manufacture [`GetRetainedMessageOutput`](crate::output::GetRetainedMessageOutput).
+    pub fn builder() -> crate::output::get_retained_message_output::Builder {
+        crate::output::get_retained_message_output::Builder::default()
+    }
+}
+
 /// See [`GetRetainedMessageOutput`](crate::output::GetRetainedMessageOutput).
 pub mod get_retained_message_output {
 
@@ -501,12 +513,6 @@ pub mod get_retained_message_output {
         }
     }
 }
-impl GetRetainedMessageOutput {
-    /// Creates a new builder-style object to manufacture [`GetRetainedMessageOutput`](crate::output::GetRetainedMessageOutput).
-    pub fn builder() -> crate::output::get_retained_message_output::Builder {
-        crate::output::get_retained_message_output::Builder::default()
-    }
-}
 
 /// <p>The output from the DeleteThingShadow operation.</p>
 #[non_exhaustive]
@@ -528,6 +534,13 @@ impl aws_http::request_id::RequestId for DeleteThingShadowOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteThingShadowOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteThingShadowOutput`](crate::output::DeleteThingShadowOutput).
+    pub fn builder() -> crate::output::delete_thing_shadow_output::Builder {
+        crate::output::delete_thing_shadow_output::Builder::default()
+    }
+}
+
 /// See [`DeleteThingShadowOutput`](crate::output::DeleteThingShadowOutput).
 pub mod delete_thing_shadow_output {
 
@@ -565,11 +578,5 @@ pub mod delete_thing_shadow_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl DeleteThingShadowOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteThingShadowOutput`](crate::output::DeleteThingShadowOutput).
-    pub fn builder() -> crate::output::delete_thing_shadow_output::Builder {
-        crate::output::delete_thing_shadow_output::Builder::default()
     }
 }

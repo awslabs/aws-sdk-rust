@@ -14,6 +14,13 @@ impl CompositeSlotTypeSetting {
         self.sub_slots.as_deref()
     }
 }
+impl CompositeSlotTypeSetting {
+    /// Creates a new builder-style object to manufacture [`CompositeSlotTypeSetting`](crate::model::CompositeSlotTypeSetting).
+    pub fn builder() -> crate::model::composite_slot_type_setting::Builder {
+        crate::model::composite_slot_type_setting::Builder::default()
+    }
+}
+
 /// See [`CompositeSlotTypeSetting`](crate::model::CompositeSlotTypeSetting).
 pub mod composite_slot_type_setting {
 
@@ -52,12 +59,6 @@ pub mod composite_slot_type_setting {
         }
     }
 }
-impl CompositeSlotTypeSetting {
-    /// Creates a new builder-style object to manufacture [`CompositeSlotTypeSetting`](crate::model::CompositeSlotTypeSetting).
-    pub fn builder() -> crate::model::composite_slot_type_setting::Builder {
-        crate::model::composite_slot_type_setting::Builder::default()
-    }
-}
 
 /// <p>Subslot type composition.</p>
 #[non_exhaustive]
@@ -80,6 +81,13 @@ impl SubSlotTypeComposition {
         self.slot_type_id.as_deref()
     }
 }
+impl SubSlotTypeComposition {
+    /// Creates a new builder-style object to manufacture [`SubSlotTypeComposition`](crate::model::SubSlotTypeComposition).
+    pub fn builder() -> crate::model::sub_slot_type_composition::Builder {
+        crate::model::sub_slot_type_composition::Builder::default()
+    }
+}
+
 /// See [`SubSlotTypeComposition`](crate::model::SubSlotTypeComposition).
 pub mod sub_slot_type_composition {
 
@@ -120,12 +128,6 @@ pub mod sub_slot_type_composition {
         }
     }
 }
-impl SubSlotTypeComposition {
-    /// Creates a new builder-style object to manufacture [`SubSlotTypeComposition`](crate::model::SubSlotTypeComposition).
-    pub fn builder() -> crate::model::sub_slot_type_composition::Builder {
-        crate::model::sub_slot_type_composition::Builder::default()
-    }
-}
 
 /// <p>Provides information about the external source of the slot type's definition.</p>
 #[non_exhaustive]
@@ -143,6 +145,13 @@ impl ExternalSourceSetting {
         self.grammar_slot_type_setting.as_ref()
     }
 }
+impl ExternalSourceSetting {
+    /// Creates a new builder-style object to manufacture [`ExternalSourceSetting`](crate::model::ExternalSourceSetting).
+    pub fn builder() -> crate::model::external_source_setting::Builder {
+        crate::model::external_source_setting::Builder::default()
+    }
+}
+
 /// See [`ExternalSourceSetting`](crate::model::ExternalSourceSetting).
 pub mod external_source_setting {
 
@@ -178,12 +187,6 @@ pub mod external_source_setting {
         }
     }
 }
-impl ExternalSourceSetting {
-    /// Creates a new builder-style object to manufacture [`ExternalSourceSetting`](crate::model::ExternalSourceSetting).
-    pub fn builder() -> crate::model::external_source_setting::Builder {
-        crate::model::external_source_setting::Builder::default()
-    }
-}
 
 /// <p>Settings requried for a slot type based on a grammar that you provide.</p>
 #[non_exhaustive]
@@ -199,6 +202,13 @@ impl GrammarSlotTypeSetting {
         self.source.as_ref()
     }
 }
+impl GrammarSlotTypeSetting {
+    /// Creates a new builder-style object to manufacture [`GrammarSlotTypeSetting`](crate::model::GrammarSlotTypeSetting).
+    pub fn builder() -> crate::model::grammar_slot_type_setting::Builder {
+        crate::model::grammar_slot_type_setting::Builder::default()
+    }
+}
+
 /// See [`GrammarSlotTypeSetting`](crate::model::GrammarSlotTypeSetting).
 pub mod grammar_slot_type_setting {
 
@@ -230,12 +240,6 @@ pub mod grammar_slot_type_setting {
         }
     }
 }
-impl GrammarSlotTypeSetting {
-    /// Creates a new builder-style object to manufacture [`GrammarSlotTypeSetting`](crate::model::GrammarSlotTypeSetting).
-    pub fn builder() -> crate::model::grammar_slot_type_setting::Builder {
-        crate::model::grammar_slot_type_setting::Builder::default()
-    }
-}
 
 /// <p>Describes the Amazon S3 bucket name and location for the grammar that is the source for the slot type.</p>
 #[non_exhaustive]
@@ -265,6 +269,13 @@ impl GrammarSlotTypeSource {
         self.kms_key_arn.as_deref()
     }
 }
+impl GrammarSlotTypeSource {
+    /// Creates a new builder-style object to manufacture [`GrammarSlotTypeSource`](crate::model::GrammarSlotTypeSource).
+    pub fn builder() -> crate::model::grammar_slot_type_source::Builder {
+        crate::model::grammar_slot_type_source::Builder::default()
+    }
+}
+
 /// See [`GrammarSlotTypeSource`](crate::model::GrammarSlotTypeSource).
 pub mod grammar_slot_type_source {
 
@@ -323,12 +334,6 @@ pub mod grammar_slot_type_source {
         }
     }
 }
-impl GrammarSlotTypeSource {
-    /// Creates a new builder-style object to manufacture [`GrammarSlotTypeSource`](crate::model::GrammarSlotTypeSource).
-    pub fn builder() -> crate::model::grammar_slot_type_source::Builder {
-        crate::model::grammar_slot_type_source::Builder::default()
-    }
-}
 
 /// <p>Contains settings used by Amazon Lex to select a slot value.</p>
 #[non_exhaustive]
@@ -372,6 +377,13 @@ impl SlotValueSelectionSetting {
         self.advanced_recognition_setting.as_ref()
     }
 }
+impl SlotValueSelectionSetting {
+    /// Creates a new builder-style object to manufacture [`SlotValueSelectionSetting`](crate::model::SlotValueSelectionSetting).
+    pub fn builder() -> crate::model::slot_value_selection_setting::Builder {
+        crate::model::slot_value_selection_setting::Builder::default()
+    }
+}
+
 /// See [`SlotValueSelectionSetting`](crate::model::SlotValueSelectionSetting).
 pub mod slot_value_selection_setting {
 
@@ -451,12 +463,6 @@ pub mod slot_value_selection_setting {
         }
     }
 }
-impl SlotValueSelectionSetting {
-    /// Creates a new builder-style object to manufacture [`SlotValueSelectionSetting`](crate::model::SlotValueSelectionSetting).
-    pub fn builder() -> crate::model::slot_value_selection_setting::Builder {
-        crate::model::slot_value_selection_setting::Builder::default()
-    }
-}
 
 /// <p>Provides settings that enable advanced recognition settings for slot values.</p>
 #[non_exhaustive]
@@ -474,6 +480,13 @@ impl AdvancedRecognitionSetting {
         self.audio_recognition_strategy.as_ref()
     }
 }
+impl AdvancedRecognitionSetting {
+    /// Creates a new builder-style object to manufacture [`AdvancedRecognitionSetting`](crate::model::AdvancedRecognitionSetting).
+    pub fn builder() -> crate::model::advanced_recognition_setting::Builder {
+        crate::model::advanced_recognition_setting::Builder::default()
+    }
+}
+
 /// See [`AdvancedRecognitionSetting`](crate::model::AdvancedRecognitionSetting).
 pub mod advanced_recognition_setting {
 
@@ -507,12 +520,6 @@ pub mod advanced_recognition_setting {
                 audio_recognition_strategy: self.audio_recognition_strategy,
             }
         }
-    }
-}
-impl AdvancedRecognitionSetting {
-    /// Creates a new builder-style object to manufacture [`AdvancedRecognitionSetting`](crate::model::AdvancedRecognitionSetting).
-    pub fn builder() -> crate::model::advanced_recognition_setting::Builder {
-        crate::model::advanced_recognition_setting::Builder::default()
     }
 }
 
@@ -649,6 +656,13 @@ impl SlotValueRegexFilter {
         self.pattern.as_deref()
     }
 }
+impl SlotValueRegexFilter {
+    /// Creates a new builder-style object to manufacture [`SlotValueRegexFilter`](crate::model::SlotValueRegexFilter).
+    pub fn builder() -> crate::model::slot_value_regex_filter::Builder {
+        crate::model::slot_value_regex_filter::Builder::default()
+    }
+}
+
 /// See [`SlotValueRegexFilter`](crate::model::SlotValueRegexFilter).
 pub mod slot_value_regex_filter {
 
@@ -703,12 +717,6 @@ pub mod slot_value_regex_filter {
                 pattern: self.pattern,
             }
         }
-    }
-}
-impl SlotValueRegexFilter {
-    /// Creates a new builder-style object to manufacture [`SlotValueRegexFilter`](crate::model::SlotValueRegexFilter).
-    pub fn builder() -> crate::model::slot_value_regex_filter::Builder {
-        crate::model::slot_value_regex_filter::Builder::default()
     }
 }
 
@@ -830,6 +838,13 @@ impl SlotTypeValue {
         self.synonyms.as_deref()
     }
 }
+impl SlotTypeValue {
+    /// Creates a new builder-style object to manufacture [`SlotTypeValue`](crate::model::SlotTypeValue).
+    pub fn builder() -> crate::model::slot_type_value::Builder {
+        crate::model::slot_type_value::Builder::default()
+    }
+}
+
 /// See [`SlotTypeValue`](crate::model::SlotTypeValue).
 pub mod slot_type_value {
 
@@ -882,12 +897,6 @@ pub mod slot_type_value {
         }
     }
 }
-impl SlotTypeValue {
-    /// Creates a new builder-style object to manufacture [`SlotTypeValue`](crate::model::SlotTypeValue).
-    pub fn builder() -> crate::model::slot_type_value::Builder {
-        crate::model::slot_type_value::Builder::default()
-    }
-}
 
 /// <p>Defines one of the values for a slot type.</p>
 #[non_exhaustive]
@@ -903,6 +912,13 @@ impl SampleValue {
         self.value.as_deref()
     }
 }
+impl SampleValue {
+    /// Creates a new builder-style object to manufacture [`SampleValue`](crate::model::SampleValue).
+    pub fn builder() -> crate::model::sample_value::Builder {
+        crate::model::sample_value::Builder::default()
+    }
+}
+
 /// See [`SampleValue`](crate::model::SampleValue).
 pub mod sample_value {
 
@@ -927,12 +943,6 @@ pub mod sample_value {
         pub fn build(self) -> crate::model::SampleValue {
             crate::model::SampleValue { value: self.value }
         }
-    }
-}
-impl SampleValue {
-    /// Creates a new builder-style object to manufacture [`SampleValue`](crate::model::SampleValue).
-    pub fn builder() -> crate::model::sample_value::Builder {
-        crate::model::sample_value::Builder::default()
     }
 }
 
@@ -963,6 +973,13 @@ impl SubSlotSetting {
         self.slot_specifications.as_ref()
     }
 }
+impl SubSlotSetting {
+    /// Creates a new builder-style object to manufacture [`SubSlotSetting`](crate::model::SubSlotSetting).
+    pub fn builder() -> crate::model::sub_slot_setting::Builder {
+        crate::model::sub_slot_setting::Builder::default()
+    }
+}
+
 /// See [`SubSlotSetting`](crate::model::SubSlotSetting).
 pub mod sub_slot_setting {
 
@@ -1020,12 +1037,6 @@ pub mod sub_slot_setting {
         }
     }
 }
-impl SubSlotSetting {
-    /// Creates a new builder-style object to manufacture [`SubSlotSetting`](crate::model::SubSlotSetting).
-    pub fn builder() -> crate::model::sub_slot_setting::Builder {
-        crate::model::sub_slot_setting::Builder::default()
-    }
-}
 
 /// <p>Subslot specifications.</p>
 #[non_exhaustive]
@@ -1051,6 +1062,13 @@ impl Specifications {
         self.value_elicitation_setting.as_ref()
     }
 }
+impl Specifications {
+    /// Creates a new builder-style object to manufacture [`Specifications`](crate::model::Specifications).
+    pub fn builder() -> crate::model::specifications::Builder {
+        crate::model::specifications::Builder::default()
+    }
+}
+
 /// See [`Specifications`](crate::model::Specifications).
 pub mod specifications {
 
@@ -1098,12 +1116,6 @@ pub mod specifications {
         }
     }
 }
-impl Specifications {
-    /// Creates a new builder-style object to manufacture [`Specifications`](crate::model::Specifications).
-    pub fn builder() -> crate::model::specifications::Builder {
-        crate::model::specifications::Builder::default()
-    }
-}
 
 /// <p>Subslot elicitation settings.</p>
 /// <p> <code>DefaultValueSpecification</code> is a list of default values for a constituent sub slot in a composite slot. Default values are used when Amazon Lex hasn't determined a value for a slot. You can specify default values from context variables, session attributes, and defined values. This is similar to <code>DefaultValueSpecification</code> for slots.</p>
@@ -1148,6 +1160,13 @@ impl SubSlotValueElicitationSetting {
         self.wait_and_continue_specification.as_ref()
     }
 }
+impl SubSlotValueElicitationSetting {
+    /// Creates a new builder-style object to manufacture [`SubSlotValueElicitationSetting`](crate::model::SubSlotValueElicitationSetting).
+    pub fn builder() -> crate::model::sub_slot_value_elicitation_setting::Builder {
+        crate::model::sub_slot_value_elicitation_setting::Builder::default()
+    }
+}
+
 /// See [`SubSlotValueElicitationSetting`](crate::model::SubSlotValueElicitationSetting).
 pub mod sub_slot_value_elicitation_setting {
 
@@ -1239,12 +1258,6 @@ pub mod sub_slot_value_elicitation_setting {
         }
     }
 }
-impl SubSlotValueElicitationSetting {
-    /// Creates a new builder-style object to manufacture [`SubSlotValueElicitationSetting`](crate::model::SubSlotValueElicitationSetting).
-    pub fn builder() -> crate::model::sub_slot_value_elicitation_setting::Builder {
-        crate::model::sub_slot_value_elicitation_setting::Builder::default()
-    }
-}
 
 /// <p>Specifies the prompts that Amazon Lex uses while a bot is waiting for customer input. </p>
 #[non_exhaustive]
@@ -1284,6 +1297,13 @@ impl WaitAndContinueSpecification {
         self.active
     }
 }
+impl WaitAndContinueSpecification {
+    /// Creates a new builder-style object to manufacture [`WaitAndContinueSpecification`](crate::model::WaitAndContinueSpecification).
+    pub fn builder() -> crate::model::wait_and_continue_specification::Builder {
+        crate::model::wait_and_continue_specification::Builder::default()
+    }
+}
+
 /// See [`WaitAndContinueSpecification`](crate::model::WaitAndContinueSpecification).
 pub mod wait_and_continue_specification {
 
@@ -1361,12 +1381,6 @@ pub mod wait_and_continue_specification {
         }
     }
 }
-impl WaitAndContinueSpecification {
-    /// Creates a new builder-style object to manufacture [`WaitAndContinueSpecification`](crate::model::WaitAndContinueSpecification).
-    pub fn builder() -> crate::model::wait_and_continue_specification::Builder {
-        crate::model::wait_and_continue_specification::Builder::default()
-    }
-}
 
 /// <p>Defines the messages that Amazon Lex sends to a user to remind them that the bot is waiting for a response.</p>
 #[non_exhaustive]
@@ -1403,6 +1417,13 @@ impl StillWaitingResponseSpecification {
         self.allow_interrupt
     }
 }
+impl StillWaitingResponseSpecification {
+    /// Creates a new builder-style object to manufacture [`StillWaitingResponseSpecification`](crate::model::StillWaitingResponseSpecification).
+    pub fn builder() -> crate::model::still_waiting_response_specification::Builder {
+        crate::model::still_waiting_response_specification::Builder::default()
+    }
+}
+
 /// See [`StillWaitingResponseSpecification`](crate::model::StillWaitingResponseSpecification).
 pub mod still_waiting_response_specification {
 
@@ -1476,12 +1497,6 @@ pub mod still_waiting_response_specification {
         }
     }
 }
-impl StillWaitingResponseSpecification {
-    /// Creates a new builder-style object to manufacture [`StillWaitingResponseSpecification`](crate::model::StillWaitingResponseSpecification).
-    pub fn builder() -> crate::model::still_waiting_response_specification::Builder {
-        crate::model::still_waiting_response_specification::Builder::default()
-    }
-}
 
 /// <p>Provides one or more messages that Amazon Lex should send to the user.</p>
 #[non_exhaustive]
@@ -1504,6 +1519,13 @@ impl MessageGroup {
         self.variations.as_deref()
     }
 }
+impl MessageGroup {
+    /// Creates a new builder-style object to manufacture [`MessageGroup`](crate::model::MessageGroup).
+    pub fn builder() -> crate::model::message_group::Builder {
+        crate::model::message_group::Builder::default()
+    }
+}
+
 /// See [`MessageGroup`](crate::model::MessageGroup).
 pub mod message_group {
 
@@ -1553,12 +1575,6 @@ pub mod message_group {
         }
     }
 }
-impl MessageGroup {
-    /// Creates a new builder-style object to manufacture [`MessageGroup`](crate::model::MessageGroup).
-    pub fn builder() -> crate::model::message_group::Builder {
-        crate::model::message_group::Builder::default()
-    }
-}
 
 /// <p>The object that provides message text and it's type.</p>
 #[non_exhaustive]
@@ -1595,6 +1611,13 @@ impl Message {
         self.image_response_card.as_ref()
     }
 }
+impl Message {
+    /// Creates a new builder-style object to manufacture [`Message`](crate::model::Message).
+    pub fn builder() -> crate::model::message::Builder {
+        crate::model::message::Builder::default()
+    }
+}
+
 /// See [`Message`](crate::model::Message).
 pub mod message {
 
@@ -1671,12 +1694,6 @@ pub mod message {
         }
     }
 }
-impl Message {
-    /// Creates a new builder-style object to manufacture [`Message`](crate::model::Message).
-    pub fn builder() -> crate::model::message::Builder {
-        crate::model::message::Builder::default()
-    }
-}
 
 /// <p>A card that is shown to the user by a messaging platform. You define the contents of the card, the card is displayed by the platform. </p>
 /// <p>When you use a response card, the response from the user is constrained to the text associated with a button on the card.</p>
@@ -1714,6 +1731,13 @@ impl ImageResponseCard {
         self.buttons.as_deref()
     }
 }
+impl ImageResponseCard {
+    /// Creates a new builder-style object to manufacture [`ImageResponseCard`](crate::model::ImageResponseCard).
+    pub fn builder() -> crate::model::image_response_card::Builder {
+        crate::model::image_response_card::Builder::default()
+    }
+}
+
 /// See [`ImageResponseCard`](crate::model::ImageResponseCard).
 pub mod image_response_card {
 
@@ -1787,12 +1811,6 @@ pub mod image_response_card {
         }
     }
 }
-impl ImageResponseCard {
-    /// Creates a new builder-style object to manufacture [`ImageResponseCard`](crate::model::ImageResponseCard).
-    pub fn builder() -> crate::model::image_response_card::Builder {
-        crate::model::image_response_card::Builder::default()
-    }
-}
 
 /// <p>Describes a button to use on a response card used to gather slot values from a user.</p>
 #[non_exhaustive]
@@ -1815,6 +1833,13 @@ impl Button {
         self.value.as_deref()
     }
 }
+impl Button {
+    /// Creates a new builder-style object to manufacture [`Button`](crate::model::Button).
+    pub fn builder() -> crate::model::button::Builder {
+        crate::model::button::Builder::default()
+    }
+}
+
 /// See [`Button`](crate::model::Button).
 pub mod button {
 
@@ -1855,12 +1880,6 @@ pub mod button {
         }
     }
 }
-impl Button {
-    /// Creates a new builder-style object to manufacture [`Button`](crate::model::Button).
-    pub fn builder() -> crate::model::button::Builder {
-        crate::model::button::Builder::default()
-    }
-}
 
 /// <p>Defines a Speech Synthesis Markup Language (SSML) prompt.</p>
 #[non_exhaustive]
@@ -1876,6 +1895,13 @@ impl SsmlMessage {
         self.value.as_deref()
     }
 }
+impl SsmlMessage {
+    /// Creates a new builder-style object to manufacture [`SsmlMessage`](crate::model::SsmlMessage).
+    pub fn builder() -> crate::model::ssml_message::Builder {
+        crate::model::ssml_message::Builder::default()
+    }
+}
+
 /// See [`SsmlMessage`](crate::model::SsmlMessage).
 pub mod ssml_message {
 
@@ -1902,12 +1928,6 @@ pub mod ssml_message {
         }
     }
 }
-impl SsmlMessage {
-    /// Creates a new builder-style object to manufacture [`SsmlMessage`](crate::model::SsmlMessage).
-    pub fn builder() -> crate::model::ssml_message::Builder {
-        crate::model::ssml_message::Builder::default()
-    }
-}
 
 /// <p>A custom response string that Amazon Lex sends to your application. You define the content and structure the string.</p>
 #[non_exhaustive]
@@ -1923,6 +1943,13 @@ impl CustomPayload {
         self.value.as_deref()
     }
 }
+impl CustomPayload {
+    /// Creates a new builder-style object to manufacture [`CustomPayload`](crate::model::CustomPayload).
+    pub fn builder() -> crate::model::custom_payload::Builder {
+        crate::model::custom_payload::Builder::default()
+    }
+}
+
 /// See [`CustomPayload`](crate::model::CustomPayload).
 pub mod custom_payload {
 
@@ -1949,12 +1976,6 @@ pub mod custom_payload {
         }
     }
 }
-impl CustomPayload {
-    /// Creates a new builder-style object to manufacture [`CustomPayload`](crate::model::CustomPayload).
-    pub fn builder() -> crate::model::custom_payload::Builder {
-        crate::model::custom_payload::Builder::default()
-    }
-}
 
 /// <p>Defines an ASCII text message to send to the user.</p>
 #[non_exhaustive]
@@ -1970,6 +1991,13 @@ impl PlainTextMessage {
         self.value.as_deref()
     }
 }
+impl PlainTextMessage {
+    /// Creates a new builder-style object to manufacture [`PlainTextMessage`](crate::model::PlainTextMessage).
+    pub fn builder() -> crate::model::plain_text_message::Builder {
+        crate::model::plain_text_message::Builder::default()
+    }
+}
+
 /// See [`PlainTextMessage`](crate::model::PlainTextMessage).
 pub mod plain_text_message {
 
@@ -1996,12 +2024,6 @@ pub mod plain_text_message {
         }
     }
 }
-impl PlainTextMessage {
-    /// Creates a new builder-style object to manufacture [`PlainTextMessage`](crate::model::PlainTextMessage).
-    pub fn builder() -> crate::model::plain_text_message::Builder {
-        crate::model::plain_text_message::Builder::default()
-    }
-}
 
 /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
 #[non_exhaustive]
@@ -2024,6 +2046,13 @@ impl ResponseSpecification {
         self.allow_interrupt
     }
 }
+impl ResponseSpecification {
+    /// Creates a new builder-style object to manufacture [`ResponseSpecification`](crate::model::ResponseSpecification).
+    pub fn builder() -> crate::model::response_specification::Builder {
+        crate::model::response_specification::Builder::default()
+    }
+}
+
 /// See [`ResponseSpecification`](crate::model::ResponseSpecification).
 pub mod response_specification {
 
@@ -2073,12 +2102,6 @@ pub mod response_specification {
         }
     }
 }
-impl ResponseSpecification {
-    /// Creates a new builder-style object to manufacture [`ResponseSpecification`](crate::model::ResponseSpecification).
-    pub fn builder() -> crate::model::response_specification::Builder {
-        crate::model::response_specification::Builder::default()
-    }
-}
 
 /// <p>A sample utterance that invokes an intent or respond to a slot elicitation prompt.</p>
 #[non_exhaustive]
@@ -2094,6 +2117,13 @@ impl SampleUtterance {
         self.utterance.as_deref()
     }
 }
+impl SampleUtterance {
+    /// Creates a new builder-style object to manufacture [`SampleUtterance`](crate::model::SampleUtterance).
+    pub fn builder() -> crate::model::sample_utterance::Builder {
+        crate::model::sample_utterance::Builder::default()
+    }
+}
+
 /// See [`SampleUtterance`](crate::model::SampleUtterance).
 pub mod sample_utterance {
 
@@ -2120,12 +2150,6 @@ pub mod sample_utterance {
                 utterance: self.utterance,
             }
         }
-    }
-}
-impl SampleUtterance {
-    /// Creates a new builder-style object to manufacture [`SampleUtterance`](crate::model::SampleUtterance).
-    pub fn builder() -> crate::model::sample_utterance::Builder {
-        crate::model::sample_utterance::Builder::default()
     }
 }
 
@@ -2185,6 +2209,13 @@ impl PromptSpecification {
         self.prompt_attempts_specification.as_ref()
     }
 }
+impl PromptSpecification {
+    /// Creates a new builder-style object to manufacture [`PromptSpecification`](crate::model::PromptSpecification).
+    pub fn builder() -> crate::model::prompt_specification::Builder {
+        crate::model::prompt_specification::Builder::default()
+    }
+}
+
 /// See [`PromptSpecification`](crate::model::PromptSpecification).
 pub mod prompt_specification {
 
@@ -2300,12 +2331,6 @@ pub mod prompt_specification {
         }
     }
 }
-impl PromptSpecification {
-    /// Creates a new builder-style object to manufacture [`PromptSpecification`](crate::model::PromptSpecification).
-    pub fn builder() -> crate::model::prompt_specification::Builder {
-        crate::model::prompt_specification::Builder::default()
-    }
-}
 
 /// <p>Specifies the settings on a prompt attempt.</p>
 #[non_exhaustive]
@@ -2347,6 +2372,13 @@ impl PromptAttemptSpecification {
         self.text_input_specification.as_ref()
     }
 }
+impl PromptAttemptSpecification {
+    /// Creates a new builder-style object to manufacture [`PromptAttemptSpecification`](crate::model::PromptAttemptSpecification).
+    pub fn builder() -> crate::model::prompt_attempt_specification::Builder {
+        crate::model::prompt_attempt_specification::Builder::default()
+    }
+}
+
 /// See [`PromptAttemptSpecification`](crate::model::PromptAttemptSpecification).
 pub mod prompt_attempt_specification {
 
@@ -2428,12 +2460,6 @@ pub mod prompt_attempt_specification {
         }
     }
 }
-impl PromptAttemptSpecification {
-    /// Creates a new builder-style object to manufacture [`PromptAttemptSpecification`](crate::model::PromptAttemptSpecification).
-    pub fn builder() -> crate::model::prompt_attempt_specification::Builder {
-        crate::model::prompt_attempt_specification::Builder::default()
-    }
-}
 
 /// <p>Specifies the text input specifications.</p>
 #[non_exhaustive]
@@ -2449,6 +2475,13 @@ impl TextInputSpecification {
         self.start_timeout_ms
     }
 }
+impl TextInputSpecification {
+    /// Creates a new builder-style object to manufacture [`TextInputSpecification`](crate::model::TextInputSpecification).
+    pub fn builder() -> crate::model::text_input_specification::Builder {
+        crate::model::text_input_specification::Builder::default()
+    }
+}
+
 /// See [`TextInputSpecification`](crate::model::TextInputSpecification).
 pub mod text_input_specification {
 
@@ -2475,12 +2508,6 @@ pub mod text_input_specification {
                 start_timeout_ms: self.start_timeout_ms,
             }
         }
-    }
-}
-impl TextInputSpecification {
-    /// Creates a new builder-style object to manufacture [`TextInputSpecification`](crate::model::TextInputSpecification).
-    pub fn builder() -> crate::model::text_input_specification::Builder {
-        crate::model::text_input_specification::Builder::default()
     }
 }
 
@@ -2512,6 +2539,13 @@ impl AudioAndDtmfInputSpecification {
         self.dtmf_specification.as_ref()
     }
 }
+impl AudioAndDtmfInputSpecification {
+    /// Creates a new builder-style object to manufacture [`AudioAndDtmfInputSpecification`](crate::model::AudioAndDtmfInputSpecification).
+    pub fn builder() -> crate::model::audio_and_dtmf_input_specification::Builder {
+        crate::model::audio_and_dtmf_input_specification::Builder::default()
+    }
+}
+
 /// See [`AudioAndDtmfInputSpecification`](crate::model::AudioAndDtmfInputSpecification).
 pub mod audio_and_dtmf_input_specification {
 
@@ -2570,12 +2604,6 @@ pub mod audio_and_dtmf_input_specification {
         }
     }
 }
-impl AudioAndDtmfInputSpecification {
-    /// Creates a new builder-style object to manufacture [`AudioAndDtmfInputSpecification`](crate::model::AudioAndDtmfInputSpecification).
-    pub fn builder() -> crate::model::audio_and_dtmf_input_specification::Builder {
-        crate::model::audio_and_dtmf_input_specification::Builder::default()
-    }
-}
 
 /// <p>Specifies the DTMF input specifications.</p>
 #[non_exhaustive]
@@ -2612,6 +2640,13 @@ impl DtmfSpecification {
         self.end_character.as_deref()
     }
 }
+impl DtmfSpecification {
+    /// Creates a new builder-style object to manufacture [`DtmfSpecification`](crate::model::DtmfSpecification).
+    pub fn builder() -> crate::model::dtmf_specification::Builder {
+        crate::model::dtmf_specification::Builder::default()
+    }
+}
+
 /// See [`DtmfSpecification`](crate::model::DtmfSpecification).
 pub mod dtmf_specification {
 
@@ -2682,12 +2717,6 @@ pub mod dtmf_specification {
         }
     }
 }
-impl DtmfSpecification {
-    /// Creates a new builder-style object to manufacture [`DtmfSpecification`](crate::model::DtmfSpecification).
-    pub fn builder() -> crate::model::dtmf_specification::Builder {
-        crate::model::dtmf_specification::Builder::default()
-    }
-}
 
 /// <p>Specifies the audio input specifications.</p>
 #[non_exhaustive]
@@ -2710,6 +2739,13 @@ impl AudioSpecification {
         self.end_timeout_ms
     }
 }
+impl AudioSpecification {
+    /// Creates a new builder-style object to manufacture [`AudioSpecification`](crate::model::AudioSpecification).
+    pub fn builder() -> crate::model::audio_specification::Builder {
+        crate::model::audio_specification::Builder::default()
+    }
+}
+
 /// See [`AudioSpecification`](crate::model::AudioSpecification).
 pub mod audio_specification {
 
@@ -2750,12 +2786,6 @@ pub mod audio_specification {
         }
     }
 }
-impl AudioSpecification {
-    /// Creates a new builder-style object to manufacture [`AudioSpecification`](crate::model::AudioSpecification).
-    pub fn builder() -> crate::model::audio_specification::Builder {
-        crate::model::audio_specification::Builder::default()
-    }
-}
 
 /// <p>Specifies the allowed input types.</p>
 #[non_exhaustive]
@@ -2778,6 +2808,13 @@ impl AllowedInputTypes {
         self.allow_dtmf_input
     }
 }
+impl AllowedInputTypes {
+    /// Creates a new builder-style object to manufacture [`AllowedInputTypes`](crate::model::AllowedInputTypes).
+    pub fn builder() -> crate::model::allowed_input_types::Builder {
+        crate::model::allowed_input_types::Builder::default()
+    }
+}
+
 /// See [`AllowedInputTypes`](crate::model::AllowedInputTypes).
 pub mod allowed_input_types {
 
@@ -2816,12 +2853,6 @@ pub mod allowed_input_types {
                 allow_dtmf_input: self.allow_dtmf_input,
             }
         }
-    }
-}
-impl AllowedInputTypes {
-    /// Creates a new builder-style object to manufacture [`AllowedInputTypes`](crate::model::AllowedInputTypes).
-    pub fn builder() -> crate::model::allowed_input_types::Builder {
-        crate::model::allowed_input_types::Builder::default()
     }
 }
 
@@ -3041,6 +3072,13 @@ impl SlotDefaultValueSpecification {
         self.default_value_list.as_deref()
     }
 }
+impl SlotDefaultValueSpecification {
+    /// Creates a new builder-style object to manufacture [`SlotDefaultValueSpecification`](crate::model::SlotDefaultValueSpecification).
+    pub fn builder() -> crate::model::slot_default_value_specification::Builder {
+        crate::model::slot_default_value_specification::Builder::default()
+    }
+}
+
 /// See [`SlotDefaultValueSpecification`](crate::model::SlotDefaultValueSpecification).
 pub mod slot_default_value_specification {
 
@@ -3079,12 +3117,6 @@ pub mod slot_default_value_specification {
         }
     }
 }
-impl SlotDefaultValueSpecification {
-    /// Creates a new builder-style object to manufacture [`SlotDefaultValueSpecification`](crate::model::SlotDefaultValueSpecification).
-    pub fn builder() -> crate::model::slot_default_value_specification::Builder {
-        crate::model::slot_default_value_specification::Builder::default()
-    }
-}
 
 /// <p>Specifies the default value to use when a user doesn't provide a value for a slot.</p>
 #[non_exhaustive]
@@ -3100,6 +3132,13 @@ impl SlotDefaultValue {
         self.default_value.as_deref()
     }
 }
+impl SlotDefaultValue {
+    /// Creates a new builder-style object to manufacture [`SlotDefaultValue`](crate::model::SlotDefaultValue).
+    pub fn builder() -> crate::model::slot_default_value::Builder {
+        crate::model::slot_default_value::Builder::default()
+    }
+}
+
 /// See [`SlotDefaultValue`](crate::model::SlotDefaultValue).
 pub mod slot_default_value {
 
@@ -3131,12 +3170,6 @@ pub mod slot_default_value {
         }
     }
 }
-impl SlotDefaultValue {
-    /// Creates a new builder-style object to manufacture [`SlotDefaultValue`](crate::model::SlotDefaultValue).
-    pub fn builder() -> crate::model::slot_default_value::Builder {
-        crate::model::slot_default_value::Builder::default()
-    }
-}
 
 /// <p>Indicates whether a slot can return multiple values.</p>
 #[non_exhaustive]
@@ -3156,6 +3189,13 @@ impl MultipleValuesSetting {
         self.allow_multiple_values
     }
 }
+impl MultipleValuesSetting {
+    /// Creates a new builder-style object to manufacture [`MultipleValuesSetting`](crate::model::MultipleValuesSetting).
+    pub fn builder() -> crate::model::multiple_values_setting::Builder {
+        crate::model::multiple_values_setting::Builder::default()
+    }
+}
+
 /// See [`MultipleValuesSetting`](crate::model::MultipleValuesSetting).
 pub mod multiple_values_setting {
 
@@ -3188,12 +3228,6 @@ pub mod multiple_values_setting {
         }
     }
 }
-impl MultipleValuesSetting {
-    /// Creates a new builder-style object to manufacture [`MultipleValuesSetting`](crate::model::MultipleValuesSetting).
-    pub fn builder() -> crate::model::multiple_values_setting::Builder {
-        crate::model::multiple_values_setting::Builder::default()
-    }
-}
 
 /// <p>Determines whether Amazon Lex obscures slot values in conversation logs. </p>
 #[non_exhaustive]
@@ -3211,6 +3245,13 @@ impl ObfuscationSetting {
         self.obfuscation_setting_type.as_ref()
     }
 }
+impl ObfuscationSetting {
+    /// Creates a new builder-style object to manufacture [`ObfuscationSetting`](crate::model::ObfuscationSetting).
+    pub fn builder() -> crate::model::obfuscation_setting::Builder {
+        crate::model::obfuscation_setting::Builder::default()
+    }
+}
+
 /// See [`ObfuscationSetting`](crate::model::ObfuscationSetting).
 pub mod obfuscation_setting {
 
@@ -3244,12 +3285,6 @@ pub mod obfuscation_setting {
                 obfuscation_setting_type: self.obfuscation_setting_type,
             }
         }
-    }
-}
-impl ObfuscationSetting {
-    /// Creates a new builder-style object to manufacture [`ObfuscationSetting`](crate::model::ObfuscationSetting).
-    pub fn builder() -> crate::model::obfuscation_setting::Builder {
-        crate::model::obfuscation_setting::Builder::default()
     }
 }
 
@@ -3400,6 +3435,13 @@ impl SlotValueElicitationSetting {
         self.slot_capture_setting.as_ref()
     }
 }
+impl SlotValueElicitationSetting {
+    /// Creates a new builder-style object to manufacture [`SlotValueElicitationSetting`](crate::model::SlotValueElicitationSetting).
+    pub fn builder() -> crate::model::slot_value_elicitation_setting::Builder {
+        crate::model::slot_value_elicitation_setting::Builder::default()
+    }
+}
+
 /// See [`SlotValueElicitationSetting`](crate::model::SlotValueElicitationSetting).
 pub mod slot_value_elicitation_setting {
 
@@ -3521,12 +3563,6 @@ pub mod slot_value_elicitation_setting {
         }
     }
 }
-impl SlotValueElicitationSetting {
-    /// Creates a new builder-style object to manufacture [`SlotValueElicitationSetting`](crate::model::SlotValueElicitationSetting).
-    pub fn builder() -> crate::model::slot_value_elicitation_setting::Builder {
-        crate::model::slot_value_elicitation_setting::Builder::default()
-    }
-}
 
 /// <p>Settings used when Amazon Lex successfully captures a slot value from a user.</p>
 #[non_exhaustive]
@@ -3598,6 +3634,13 @@ impl SlotCaptureSetting {
         self.elicitation_code_hook.as_ref()
     }
 }
+impl SlotCaptureSetting {
+    /// Creates a new builder-style object to manufacture [`SlotCaptureSetting`](crate::model::SlotCaptureSetting).
+    pub fn builder() -> crate::model::slot_capture_setting::Builder {
+        crate::model::slot_capture_setting::Builder::default()
+    }
+}
+
 /// See [`SlotCaptureSetting`](crate::model::SlotCaptureSetting).
 pub mod slot_capture_setting {
 
@@ -3744,12 +3787,6 @@ pub mod slot_capture_setting {
         }
     }
 }
-impl SlotCaptureSetting {
-    /// Creates a new builder-style object to manufacture [`SlotCaptureSetting`](crate::model::SlotCaptureSetting).
-    pub fn builder() -> crate::model::slot_capture_setting::Builder {
-        crate::model::slot_capture_setting::Builder::default()
-    }
-}
 
 /// <p>Settings that specify the dialog code hook that is called by Amazon Lex between eliciting slot values.</p>
 #[non_exhaustive]
@@ -3772,6 +3809,13 @@ impl ElicitationCodeHookInvocationSetting {
         self.invocation_label.as_deref()
     }
 }
+impl ElicitationCodeHookInvocationSetting {
+    /// Creates a new builder-style object to manufacture [`ElicitationCodeHookInvocationSetting`](crate::model::ElicitationCodeHookInvocationSetting).
+    pub fn builder() -> crate::model::elicitation_code_hook_invocation_setting::Builder {
+        crate::model::elicitation_code_hook_invocation_setting::Builder::default()
+    }
+}
+
 /// See [`ElicitationCodeHookInvocationSetting`](crate::model::ElicitationCodeHookInvocationSetting).
 pub mod elicitation_code_hook_invocation_setting {
 
@@ -3815,12 +3859,6 @@ pub mod elicitation_code_hook_invocation_setting {
         }
     }
 }
-impl ElicitationCodeHookInvocationSetting {
-    /// Creates a new builder-style object to manufacture [`ElicitationCodeHookInvocationSetting`](crate::model::ElicitationCodeHookInvocationSetting).
-    pub fn builder() -> crate::model::elicitation_code_hook_invocation_setting::Builder {
-        crate::model::elicitation_code_hook_invocation_setting::Builder::default()
-    }
-}
 
 /// <p> Settings that specify the dialog code hook that is called by Amazon Lex at a step of the conversation. </p>
 #[non_exhaustive]
@@ -3860,6 +3898,13 @@ impl DialogCodeHookInvocationSetting {
         self.post_code_hook_specification.as_ref()
     }
 }
+impl DialogCodeHookInvocationSetting {
+    /// Creates a new builder-style object to manufacture [`DialogCodeHookInvocationSetting`](crate::model::DialogCodeHookInvocationSetting).
+    pub fn builder() -> crate::model::dialog_code_hook_invocation_setting::Builder {
+        crate::model::dialog_code_hook_invocation_setting::Builder::default()
+    }
+}
+
 /// See [`DialogCodeHookInvocationSetting`](crate::model::DialogCodeHookInvocationSetting).
 pub mod dialog_code_hook_invocation_setting {
 
@@ -3932,12 +3977,6 @@ pub mod dialog_code_hook_invocation_setting {
                 post_code_hook_specification: self.post_code_hook_specification,
             }
         }
-    }
-}
-impl DialogCodeHookInvocationSetting {
-    /// Creates a new builder-style object to manufacture [`DialogCodeHookInvocationSetting`](crate::model::DialogCodeHookInvocationSetting).
-    pub fn builder() -> crate::model::dialog_code_hook_invocation_setting::Builder {
-        crate::model::dialog_code_hook_invocation_setting::Builder::default()
     }
 }
 
@@ -4017,6 +4056,13 @@ impl PostDialogCodeHookInvocationSpecification {
         self.timeout_conditional.as_ref()
     }
 }
+impl PostDialogCodeHookInvocationSpecification {
+    /// Creates a new builder-style object to manufacture [`PostDialogCodeHookInvocationSpecification`](crate::model::PostDialogCodeHookInvocationSpecification).
+    pub fn builder() -> crate::model::post_dialog_code_hook_invocation_specification::Builder {
+        crate::model::post_dialog_code_hook_invocation_specification::Builder::default()
+    }
+}
+
 /// See [`PostDialogCodeHookInvocationSpecification`](crate::model::PostDialogCodeHookInvocationSpecification).
 pub mod post_dialog_code_hook_invocation_specification {
 
@@ -4177,12 +4223,6 @@ pub mod post_dialog_code_hook_invocation_specification {
         }
     }
 }
-impl PostDialogCodeHookInvocationSpecification {
-    /// Creates a new builder-style object to manufacture [`PostDialogCodeHookInvocationSpecification`](crate::model::PostDialogCodeHookInvocationSpecification).
-    pub fn builder() -> crate::model::post_dialog_code_hook_invocation_specification::Builder {
-        crate::model::post_dialog_code_hook_invocation_specification::Builder::default()
-    }
-}
 
 /// <p>Provides a list of conditional branches. Branches are evaluated in the order that they are entered in the list. The first branch with a condition that evaluates to true is executed. The last branch in the list is the default branch. The default branch should not have any condition expression. The default branch is executed if no other branch has a matching condition.</p>
 #[non_exhaustive]
@@ -4212,6 +4252,13 @@ impl ConditionalSpecification {
         self.default_branch.as_ref()
     }
 }
+impl ConditionalSpecification {
+    /// Creates a new builder-style object to manufacture [`ConditionalSpecification`](crate::model::ConditionalSpecification).
+    pub fn builder() -> crate::model::conditional_specification::Builder {
+        crate::model::conditional_specification::Builder::default()
+    }
+}
+
 /// See [`ConditionalSpecification`](crate::model::ConditionalSpecification).
 pub mod conditional_specification {
 
@@ -4277,12 +4324,6 @@ pub mod conditional_specification {
         }
     }
 }
-impl ConditionalSpecification {
-    /// Creates a new builder-style object to manufacture [`ConditionalSpecification`](crate::model::ConditionalSpecification).
-    pub fn builder() -> crate::model::conditional_specification::Builder {
-        crate::model::conditional_specification::Builder::default()
-    }
-}
 
 /// <p>A set of actions that Amazon Lex should run if none of the other conditions are met.</p>
 #[non_exhaustive]
@@ -4305,6 +4346,13 @@ impl DefaultConditionalBranch {
         self.response.as_ref()
     }
 }
+impl DefaultConditionalBranch {
+    /// Creates a new builder-style object to manufacture [`DefaultConditionalBranch`](crate::model::DefaultConditionalBranch).
+    pub fn builder() -> crate::model::default_conditional_branch::Builder {
+        crate::model::default_conditional_branch::Builder::default()
+    }
+}
+
 /// See [`DefaultConditionalBranch`](crate::model::DefaultConditionalBranch).
 pub mod default_conditional_branch {
 
@@ -4351,12 +4399,6 @@ pub mod default_conditional_branch {
         }
     }
 }
-impl DefaultConditionalBranch {
-    /// Creates a new builder-style object to manufacture [`DefaultConditionalBranch`](crate::model::DefaultConditionalBranch).
-    pub fn builder() -> crate::model::default_conditional_branch::Builder {
-        crate::model::default_conditional_branch::Builder::default()
-    }
-}
 
 /// <p>The current state of the conversation with the user.</p>
 #[non_exhaustive]
@@ -4390,6 +4432,13 @@ impl DialogState {
         self.session_attributes.as_ref()
     }
 }
+impl DialogState {
+    /// Creates a new builder-style object to manufacture [`DialogState`](crate::model::DialogState).
+    pub fn builder() -> crate::model::dialog_state::Builder {
+        crate::model::dialog_state::Builder::default()
+    }
+}
+
 /// See [`DialogState`](crate::model::DialogState).
 pub mod dialog_state {
 
@@ -4465,12 +4514,6 @@ pub mod dialog_state {
         }
     }
 }
-impl DialogState {
-    /// Creates a new builder-style object to manufacture [`DialogState`](crate::model::DialogState).
-    pub fn builder() -> crate::model::dialog_state::Builder {
-        crate::model::dialog_state::Builder::default()
-    }
-}
 
 /// <p>Override settings to configure the intent state.</p>
 #[non_exhaustive]
@@ -4499,6 +4542,13 @@ impl IntentOverride {
         self.slots.as_ref()
     }
 }
+impl IntentOverride {
+    /// Creates a new builder-style object to manufacture [`IntentOverride`](crate::model::IntentOverride).
+    pub fn builder() -> crate::model::intent_override::Builder {
+        crate::model::intent_override::Builder::default()
+    }
+}
+
 /// See [`IntentOverride`](crate::model::IntentOverride).
 pub mod intent_override {
 
@@ -4556,12 +4606,6 @@ pub mod intent_override {
         }
     }
 }
-impl IntentOverride {
-    /// Creates a new builder-style object to manufacture [`IntentOverride`](crate::model::IntentOverride).
-    pub fn builder() -> crate::model::intent_override::Builder {
-        crate::model::intent_override::Builder::default()
-    }
-}
 
 /// <p>The slot values that Amazon Lex uses when it sets slot values in a dialog step.</p>
 #[non_exhaustive]
@@ -4591,6 +4635,13 @@ impl SlotValueOverride {
         self.values.as_deref()
     }
 }
+impl SlotValueOverride {
+    /// Creates a new builder-style object to manufacture [`SlotValueOverride`](crate::model::SlotValueOverride).
+    pub fn builder() -> crate::model::slot_value_override::Builder {
+        crate::model::slot_value_override::Builder::default()
+    }
+}
+
 /// See [`SlotValueOverride`](crate::model::SlotValueOverride).
 pub mod slot_value_override {
 
@@ -4652,12 +4703,6 @@ pub mod slot_value_override {
         }
     }
 }
-impl SlotValueOverride {
-    /// Creates a new builder-style object to manufacture [`SlotValueOverride`](crate::model::SlotValueOverride).
-    pub fn builder() -> crate::model::slot_value_override::Builder {
-        crate::model::slot_value_override::Builder::default()
-    }
-}
 
 /// <p>The value to set in a slot.</p>
 #[non_exhaustive]
@@ -4673,6 +4718,13 @@ impl SlotValue {
         self.interpreted_value.as_deref()
     }
 }
+impl SlotValue {
+    /// Creates a new builder-style object to manufacture [`SlotValue`](crate::model::SlotValue).
+    pub fn builder() -> crate::model::slot_value::Builder {
+        crate::model::slot_value::Builder::default()
+    }
+}
+
 /// See [`SlotValue`](crate::model::SlotValue).
 pub mod slot_value {
 
@@ -4702,12 +4754,6 @@ pub mod slot_value {
                 interpreted_value: self.interpreted_value,
             }
         }
-    }
-}
-impl SlotValue {
-    /// Creates a new builder-style object to manufacture [`SlotValue`](crate::model::SlotValue).
-    pub fn builder() -> crate::model::slot_value::Builder {
-        crate::model::slot_value::Builder::default()
     }
 }
 
@@ -4829,6 +4875,13 @@ impl DialogAction {
         self.suppress_next_message
     }
 }
+impl DialogAction {
+    /// Creates a new builder-style object to manufacture [`DialogAction`](crate::model::DialogAction).
+    pub fn builder() -> crate::model::dialog_action::Builder {
+        crate::model::dialog_action::Builder::default()
+    }
+}
+
 /// See [`DialogAction`](crate::model::DialogAction).
 pub mod dialog_action {
 
@@ -4885,12 +4938,6 @@ pub mod dialog_action {
                 suppress_next_message: self.suppress_next_message,
             }
         }
-    }
-}
-impl DialogAction {
-    /// Creates a new builder-style object to manufacture [`DialogAction`](crate::model::DialogAction).
-    pub fn builder() -> crate::model::dialog_action::Builder {
-        crate::model::dialog_action::Builder::default()
     }
 }
 
@@ -5064,6 +5111,13 @@ impl ConditionalBranch {
         self.response.as_ref()
     }
 }
+impl ConditionalBranch {
+    /// Creates a new builder-style object to manufacture [`ConditionalBranch`](crate::model::ConditionalBranch).
+    pub fn builder() -> crate::model::conditional_branch::Builder {
+        crate::model::conditional_branch::Builder::default()
+    }
+}
+
 /// See [`ConditionalBranch`](crate::model::ConditionalBranch).
 pub mod conditional_branch {
 
@@ -5137,12 +5191,6 @@ pub mod conditional_branch {
         }
     }
 }
-impl ConditionalBranch {
-    /// Creates a new builder-style object to manufacture [`ConditionalBranch`](crate::model::ConditionalBranch).
-    pub fn builder() -> crate::model::conditional_branch::Builder {
-        crate::model::conditional_branch::Builder::default()
-    }
-}
 
 /// <p>Provides an expression that evaluates to true or false. </p>
 #[non_exhaustive]
@@ -5158,6 +5206,13 @@ impl Condition {
         self.expression_string.as_deref()
     }
 }
+impl Condition {
+    /// Creates a new builder-style object to manufacture [`Condition`](crate::model::Condition).
+    pub fn builder() -> crate::model::condition::Builder {
+        crate::model::condition::Builder::default()
+    }
+}
+
 /// See [`Condition`](crate::model::Condition).
 pub mod condition {
 
@@ -5187,12 +5242,6 @@ pub mod condition {
                 expression_string: self.expression_string,
             }
         }
-    }
-}
-impl Condition {
-    /// Creates a new builder-style object to manufacture [`Condition`](crate::model::Condition).
-    pub fn builder() -> crate::model::condition::Builder {
-        crate::model::condition::Builder::default()
     }
 }
 
@@ -5321,6 +5370,13 @@ impl InitialResponseSetting {
         self.code_hook.as_ref()
     }
 }
+impl InitialResponseSetting {
+    /// Creates a new builder-style object to manufacture [`InitialResponseSetting`](crate::model::InitialResponseSetting).
+    pub fn builder() -> crate::model::initial_response_setting::Builder {
+        crate::model::initial_response_setting::Builder::default()
+    }
+}
+
 /// See [`InitialResponseSetting`](crate::model::InitialResponseSetting).
 pub mod initial_response_setting {
 
@@ -5397,12 +5453,6 @@ pub mod initial_response_setting {
         }
     }
 }
-impl InitialResponseSetting {
-    /// Creates a new builder-style object to manufacture [`InitialResponseSetting`](crate::model::InitialResponseSetting).
-    pub fn builder() -> crate::model::initial_response_setting::Builder {
-        crate::model::initial_response_setting::Builder::default()
-    }
-}
 
 /// <p>Provides configuration information for the AMAZON.KendraSearchIntent intent. When you use this intent, Amazon Lex searches the specified Amazon Kendra index and returns documents from the index that match the user's utterance.</p>
 #[non_exhaustive]
@@ -5432,6 +5482,13 @@ impl KendraConfiguration {
         self.query_filter_string.as_deref()
     }
 }
+impl KendraConfiguration {
+    /// Creates a new builder-style object to manufacture [`KendraConfiguration`](crate::model::KendraConfiguration).
+    pub fn builder() -> crate::model::kendra_configuration::Builder {
+        crate::model::kendra_configuration::Builder::default()
+    }
+}
+
 /// See [`KendraConfiguration`](crate::model::KendraConfiguration).
 pub mod kendra_configuration {
 
@@ -5487,12 +5544,6 @@ pub mod kendra_configuration {
         }
     }
 }
-impl KendraConfiguration {
-    /// Creates a new builder-style object to manufacture [`KendraConfiguration`](crate::model::KendraConfiguration).
-    pub fn builder() -> crate::model::kendra_configuration::Builder {
-        crate::model::kendra_configuration::Builder::default()
-    }
-}
 
 /// <p>Describes a session context that is activated when an intent is fulfilled.</p>
 #[non_exhaustive]
@@ -5522,6 +5573,13 @@ impl OutputContext {
         self.turns_to_live
     }
 }
+impl OutputContext {
+    /// Creates a new builder-style object to manufacture [`OutputContext`](crate::model::OutputContext).
+    pub fn builder() -> crate::model::output_context::Builder {
+        crate::model::output_context::Builder::default()
+    }
+}
+
 /// See [`OutputContext`](crate::model::OutputContext).
 pub mod output_context {
 
@@ -5574,12 +5632,6 @@ pub mod output_context {
         }
     }
 }
-impl OutputContext {
-    /// Creates a new builder-style object to manufacture [`OutputContext`](crate::model::OutputContext).
-    pub fn builder() -> crate::model::output_context::Builder {
-        crate::model::output_context::Builder::default()
-    }
-}
 
 /// <p>The name of a context that must be active for an intent to be selected by Amazon Lex.</p>
 #[non_exhaustive]
@@ -5595,6 +5647,13 @@ impl InputContext {
         self.name.as_deref()
     }
 }
+impl InputContext {
+    /// Creates a new builder-style object to manufacture [`InputContext`](crate::model::InputContext).
+    pub fn builder() -> crate::model::input_context::Builder {
+        crate::model::input_context::Builder::default()
+    }
+}
+
 /// See [`InputContext`](crate::model::InputContext).
 pub mod input_context {
 
@@ -5619,12 +5678,6 @@ pub mod input_context {
         pub fn build(self) -> crate::model::InputContext {
             crate::model::InputContext { name: self.name }
         }
-    }
-}
-impl InputContext {
-    /// Creates a new builder-style object to manufacture [`InputContext`](crate::model::InputContext).
-    pub fn builder() -> crate::model::input_context::Builder {
-        crate::model::input_context::Builder::default()
     }
 }
 
@@ -5663,6 +5716,13 @@ impl IntentClosingSetting {
         self.conditional.as_ref()
     }
 }
+impl IntentClosingSetting {
+    /// Creates a new builder-style object to manufacture [`IntentClosingSetting`](crate::model::IntentClosingSetting).
+    pub fn builder() -> crate::model::intent_closing_setting::Builder {
+        crate::model::intent_closing_setting::Builder::default()
+    }
+}
+
 /// See [`IntentClosingSetting`](crate::model::IntentClosingSetting).
 pub mod intent_closing_setting {
 
@@ -5734,12 +5794,6 @@ pub mod intent_closing_setting {
                 conditional: self.conditional,
             }
         }
-    }
-}
-impl IntentClosingSetting {
-    /// Creates a new builder-style object to manufacture [`IntentClosingSetting`](crate::model::IntentClosingSetting).
-    pub fn builder() -> crate::model::intent_closing_setting::Builder {
-        crate::model::intent_closing_setting::Builder::default()
     }
 }
 
@@ -5856,6 +5910,13 @@ impl IntentConfirmationSetting {
         self.elicitation_code_hook.as_ref()
     }
 }
+impl IntentConfirmationSetting {
+    /// Creates a new builder-style object to manufacture [`IntentConfirmationSetting`](crate::model::IntentConfirmationSetting).
+    pub fn builder() -> crate::model::intent_confirmation_setting::Builder {
+        crate::model::intent_confirmation_setting::Builder::default()
+    }
+}
+
 /// See [`IntentConfirmationSetting`](crate::model::IntentConfirmationSetting).
 pub mod intent_confirmation_setting {
 
@@ -6081,12 +6142,6 @@ pub mod intent_confirmation_setting {
         }
     }
 }
-impl IntentConfirmationSetting {
-    /// Creates a new builder-style object to manufacture [`IntentConfirmationSetting`](crate::model::IntentConfirmationSetting).
-    pub fn builder() -> crate::model::intent_confirmation_setting::Builder {
-        crate::model::intent_confirmation_setting::Builder::default()
-    }
-}
 
 /// <p>Sets the priority that Amazon Lex should use when eliciting slot values from a user.</p>
 #[non_exhaustive]
@@ -6109,6 +6164,13 @@ impl SlotPriority {
         self.slot_id.as_deref()
     }
 }
+impl SlotPriority {
+    /// Creates a new builder-style object to manufacture [`SlotPriority`](crate::model::SlotPriority).
+    pub fn builder() -> crate::model::slot_priority::Builder {
+        crate::model::slot_priority::Builder::default()
+    }
+}
+
 /// See [`SlotPriority`](crate::model::SlotPriority).
 pub mod slot_priority {
 
@@ -6147,12 +6209,6 @@ pub mod slot_priority {
                 slot_id: self.slot_id,
             }
         }
-    }
-}
-impl SlotPriority {
-    /// Creates a new builder-style object to manufacture [`SlotPriority`](crate::model::SlotPriority).
-    pub fn builder() -> crate::model::slot_priority::Builder {
-        crate::model::slot_priority::Builder::default()
     }
 }
 
@@ -6197,6 +6253,13 @@ impl FulfillmentCodeHookSettings {
         self.active
     }
 }
+impl FulfillmentCodeHookSettings {
+    /// Creates a new builder-style object to manufacture [`FulfillmentCodeHookSettings`](crate::model::FulfillmentCodeHookSettings).
+    pub fn builder() -> crate::model::fulfillment_code_hook_settings::Builder {
+        crate::model::fulfillment_code_hook_settings::Builder::default()
+    }
+}
+
 /// See [`FulfillmentCodeHookSettings`](crate::model::FulfillmentCodeHookSettings).
 pub mod fulfillment_code_hook_settings {
 
@@ -6275,12 +6338,6 @@ pub mod fulfillment_code_hook_settings {
         }
     }
 }
-impl FulfillmentCodeHookSettings {
-    /// Creates a new builder-style object to manufacture [`FulfillmentCodeHookSettings`](crate::model::FulfillmentCodeHookSettings).
-    pub fn builder() -> crate::model::fulfillment_code_hook_settings::Builder {
-        crate::model::fulfillment_code_hook_settings::Builder::default()
-    }
-}
 
 /// <p>Provides information for updating the user on the progress of fulfilling an intent.</p>
 #[non_exhaustive]
@@ -6323,6 +6380,13 @@ impl FulfillmentUpdatesSpecification {
         self.timeout_in_seconds
     }
 }
+impl FulfillmentUpdatesSpecification {
+    /// Creates a new builder-style object to manufacture [`FulfillmentUpdatesSpecification`](crate::model::FulfillmentUpdatesSpecification).
+    pub fn builder() -> crate::model::fulfillment_updates_specification::Builder {
+        crate::model::fulfillment_updates_specification::Builder::default()
+    }
+}
+
 /// See [`FulfillmentUpdatesSpecification`](crate::model::FulfillmentUpdatesSpecification).
 pub mod fulfillment_updates_specification {
 
@@ -6403,12 +6467,6 @@ pub mod fulfillment_updates_specification {
         }
     }
 }
-impl FulfillmentUpdatesSpecification {
-    /// Creates a new builder-style object to manufacture [`FulfillmentUpdatesSpecification`](crate::model::FulfillmentUpdatesSpecification).
-    pub fn builder() -> crate::model::fulfillment_updates_specification::Builder {
-        crate::model::fulfillment_updates_specification::Builder::default()
-    }
-}
 
 /// <p>Provides settings for a message that is sent periodically to the user while a fulfillment Lambda function is running.</p>
 #[non_exhaustive]
@@ -6438,6 +6496,13 @@ impl FulfillmentUpdateResponseSpecification {
         self.allow_interrupt
     }
 }
+impl FulfillmentUpdateResponseSpecification {
+    /// Creates a new builder-style object to manufacture [`FulfillmentUpdateResponseSpecification`](crate::model::FulfillmentUpdateResponseSpecification).
+    pub fn builder() -> crate::model::fulfillment_update_response_specification::Builder {
+        crate::model::fulfillment_update_response_specification::Builder::default()
+    }
+}
+
 /// See [`FulfillmentUpdateResponseSpecification`](crate::model::FulfillmentUpdateResponseSpecification).
 pub mod fulfillment_update_response_specification {
 
@@ -6499,12 +6564,6 @@ pub mod fulfillment_update_response_specification {
         }
     }
 }
-impl FulfillmentUpdateResponseSpecification {
-    /// Creates a new builder-style object to manufacture [`FulfillmentUpdateResponseSpecification`](crate::model::FulfillmentUpdateResponseSpecification).
-    pub fn builder() -> crate::model::fulfillment_update_response_specification::Builder {
-        crate::model::fulfillment_update_response_specification::Builder::default()
-    }
-}
 
 /// <p>Provides settings for a message that is sent to the user when a fulfillment Lambda function starts running.</p>
 #[non_exhaustive]
@@ -6534,6 +6593,13 @@ impl FulfillmentStartResponseSpecification {
         self.allow_interrupt
     }
 }
+impl FulfillmentStartResponseSpecification {
+    /// Creates a new builder-style object to manufacture [`FulfillmentStartResponseSpecification`](crate::model::FulfillmentStartResponseSpecification).
+    pub fn builder() -> crate::model::fulfillment_start_response_specification::Builder {
+        crate::model::fulfillment_start_response_specification::Builder::default()
+    }
+}
+
 /// See [`FulfillmentStartResponseSpecification`](crate::model::FulfillmentStartResponseSpecification).
 pub mod fulfillment_start_response_specification {
 
@@ -6593,12 +6659,6 @@ pub mod fulfillment_start_response_specification {
                 allow_interrupt: self.allow_interrupt,
             }
         }
-    }
-}
-impl FulfillmentStartResponseSpecification {
-    /// Creates a new builder-style object to manufacture [`FulfillmentStartResponseSpecification`](crate::model::FulfillmentStartResponseSpecification).
-    pub fn builder() -> crate::model::fulfillment_start_response_specification::Builder {
-        crate::model::fulfillment_start_response_specification::Builder::default()
     }
 }
 
@@ -6678,6 +6738,13 @@ impl PostFulfillmentStatusSpecification {
         self.timeout_conditional.as_ref()
     }
 }
+impl PostFulfillmentStatusSpecification {
+    /// Creates a new builder-style object to manufacture [`PostFulfillmentStatusSpecification`](crate::model::PostFulfillmentStatusSpecification).
+    pub fn builder() -> crate::model::post_fulfillment_status_specification::Builder {
+        crate::model::post_fulfillment_status_specification::Builder::default()
+    }
+}
+
 /// See [`PostFulfillmentStatusSpecification`](crate::model::PostFulfillmentStatusSpecification).
 pub mod post_fulfillment_status_specification {
 
@@ -6838,12 +6905,6 @@ pub mod post_fulfillment_status_specification {
         }
     }
 }
-impl PostFulfillmentStatusSpecification {
-    /// Creates a new builder-style object to manufacture [`PostFulfillmentStatusSpecification`](crate::model::PostFulfillmentStatusSpecification).
-    pub fn builder() -> crate::model::post_fulfillment_status_specification::Builder {
-        crate::model::post_fulfillment_status_specification::Builder::default()
-    }
-}
 
 /// <p>Settings that determine the Lambda function that Amazon Lex uses for processing user responses.</p>
 #[non_exhaustive]
@@ -6859,6 +6920,13 @@ impl DialogCodeHookSettings {
         self.enabled
     }
 }
+impl DialogCodeHookSettings {
+    /// Creates a new builder-style object to manufacture [`DialogCodeHookSettings`](crate::model::DialogCodeHookSettings).
+    pub fn builder() -> crate::model::dialog_code_hook_settings::Builder {
+        crate::model::dialog_code_hook_settings::Builder::default()
+    }
+}
+
 /// See [`DialogCodeHookSettings`](crate::model::DialogCodeHookSettings).
 pub mod dialog_code_hook_settings {
 
@@ -6885,12 +6953,6 @@ pub mod dialog_code_hook_settings {
                 enabled: self.enabled.unwrap_or_default(),
             }
         }
-    }
-}
-impl DialogCodeHookSettings {
-    /// Creates a new builder-style object to manufacture [`DialogCodeHookSettings`](crate::model::DialogCodeHookSettings).
-    pub fn builder() -> crate::model::dialog_code_hook_settings::Builder {
-        crate::model::dialog_code_hook_settings::Builder::default()
     }
 }
 
@@ -7122,6 +7184,13 @@ impl ExportResourceSpecification {
         self.custom_vocabulary_export_specification.as_ref()
     }
 }
+impl ExportResourceSpecification {
+    /// Creates a new builder-style object to manufacture [`ExportResourceSpecification`](crate::model::ExportResourceSpecification).
+    pub fn builder() -> crate::model::export_resource_specification::Builder {
+        crate::model::export_resource_specification::Builder::default()
+    }
+}
+
 /// See [`ExportResourceSpecification`](crate::model::ExportResourceSpecification).
 pub mod export_resource_specification {
 
@@ -7195,12 +7264,6 @@ pub mod export_resource_specification {
         }
     }
 }
-impl ExportResourceSpecification {
-    /// Creates a new builder-style object to manufacture [`ExportResourceSpecification`](crate::model::ExportResourceSpecification).
-    pub fn builder() -> crate::model::export_resource_specification::Builder {
-        crate::model::export_resource_specification::Builder::default()
-    }
-}
 
 /// <p>Provides the parameters required for exporting a custom vocabulary.</p>
 #[non_exhaustive]
@@ -7230,6 +7293,13 @@ impl CustomVocabularyExportSpecification {
         self.locale_id.as_deref()
     }
 }
+impl CustomVocabularyExportSpecification {
+    /// Creates a new builder-style object to manufacture [`CustomVocabularyExportSpecification`](crate::model::CustomVocabularyExportSpecification).
+    pub fn builder() -> crate::model::custom_vocabulary_export_specification::Builder {
+        crate::model::custom_vocabulary_export_specification::Builder::default()
+    }
+}
+
 /// See [`CustomVocabularyExportSpecification`](crate::model::CustomVocabularyExportSpecification).
 pub mod custom_vocabulary_export_specification {
 
@@ -7282,12 +7352,6 @@ pub mod custom_vocabulary_export_specification {
         }
     }
 }
-impl CustomVocabularyExportSpecification {
-    /// Creates a new builder-style object to manufacture [`CustomVocabularyExportSpecification`](crate::model::CustomVocabularyExportSpecification).
-    pub fn builder() -> crate::model::custom_vocabulary_export_specification::Builder {
-        crate::model::custom_vocabulary_export_specification::Builder::default()
-    }
-}
 
 /// <p>Provides the bot locale parameters required for exporting a bot locale.</p>
 #[non_exhaustive]
@@ -7317,6 +7381,13 @@ impl BotLocaleExportSpecification {
         self.locale_id.as_deref()
     }
 }
+impl BotLocaleExportSpecification {
+    /// Creates a new builder-style object to manufacture [`BotLocaleExportSpecification`](crate::model::BotLocaleExportSpecification).
+    pub fn builder() -> crate::model::bot_locale_export_specification::Builder {
+        crate::model::bot_locale_export_specification::Builder::default()
+    }
+}
+
 /// See [`BotLocaleExportSpecification`](crate::model::BotLocaleExportSpecification).
 pub mod bot_locale_export_specification {
 
@@ -7369,12 +7440,6 @@ pub mod bot_locale_export_specification {
         }
     }
 }
-impl BotLocaleExportSpecification {
-    /// Creates a new builder-style object to manufacture [`BotLocaleExportSpecification`](crate::model::BotLocaleExportSpecification).
-    pub fn builder() -> crate::model::bot_locale_export_specification::Builder {
-        crate::model::bot_locale_export_specification::Builder::default()
-    }
-}
 
 /// <p>Provides the identity of a the bot that was exported.</p>
 #[non_exhaustive]
@@ -7397,6 +7462,13 @@ impl BotExportSpecification {
         self.bot_version.as_deref()
     }
 }
+impl BotExportSpecification {
+    /// Creates a new builder-style object to manufacture [`BotExportSpecification`](crate::model::BotExportSpecification).
+    pub fn builder() -> crate::model::bot_export_specification::Builder {
+        crate::model::bot_export_specification::Builder::default()
+    }
+}
+
 /// See [`BotExportSpecification`](crate::model::BotExportSpecification).
 pub mod bot_export_specification {
 
@@ -7435,12 +7507,6 @@ pub mod bot_export_specification {
                 bot_version: self.bot_version,
             }
         }
-    }
-}
-impl BotExportSpecification {
-    /// Creates a new builder-style object to manufacture [`BotExportSpecification`](crate::model::BotExportSpecification).
-    pub fn builder() -> crate::model::bot_export_specification::Builder {
-        crate::model::bot_export_specification::Builder::default()
     }
 }
 
@@ -7487,6 +7553,13 @@ impl std::fmt::Debug for EncryptionSetting {
         formatter.finish()
     }
 }
+impl EncryptionSetting {
+    /// Creates a new builder-style object to manufacture [`EncryptionSetting`](crate::model::EncryptionSetting).
+    pub fn builder() -> crate::model::encryption_setting::Builder {
+        crate::model::encryption_setting::Builder::default()
+    }
+}
+
 /// See [`EncryptionSetting`](crate::model::EncryptionSetting).
 pub mod encryption_setting {
 
@@ -7563,12 +7636,6 @@ pub mod encryption_setting {
         }
     }
 }
-impl EncryptionSetting {
-    /// Creates a new builder-style object to manufacture [`EncryptionSetting`](crate::model::EncryptionSetting).
-    pub fn builder() -> crate::model::encryption_setting::Builder {
-        crate::model::encryption_setting::Builder::default()
-    }
-}
 
 /// <p>Indicates the setting of the location where the transcript is stored.</p>
 #[non_exhaustive]
@@ -7586,6 +7653,13 @@ impl TranscriptSourceSetting {
         self.s3_bucket_transcript_source.as_ref()
     }
 }
+impl TranscriptSourceSetting {
+    /// Creates a new builder-style object to manufacture [`TranscriptSourceSetting`](crate::model::TranscriptSourceSetting).
+    pub fn builder() -> crate::model::transcript_source_setting::Builder {
+        crate::model::transcript_source_setting::Builder::default()
+    }
+}
+
 /// See [`TranscriptSourceSetting`](crate::model::TranscriptSourceSetting).
 pub mod transcript_source_setting {
 
@@ -7619,12 +7693,6 @@ pub mod transcript_source_setting {
                 s3_bucket_transcript_source: self.s3_bucket_transcript_source,
             }
         }
-    }
-}
-impl TranscriptSourceSetting {
-    /// Creates a new builder-style object to manufacture [`TranscriptSourceSetting`](crate::model::TranscriptSourceSetting).
-    pub fn builder() -> crate::model::transcript_source_setting::Builder {
-        crate::model::transcript_source_setting::Builder::default()
     }
 }
 
@@ -7670,6 +7738,13 @@ impl S3BucketTranscriptSource {
         self.kms_key_arn.as_deref()
     }
 }
+impl S3BucketTranscriptSource {
+    /// Creates a new builder-style object to manufacture [`S3BucketTranscriptSource`](crate::model::S3BucketTranscriptSource).
+    pub fn builder() -> crate::model::s3_bucket_transcript_source::Builder {
+        crate::model::s3_bucket_transcript_source::Builder::default()
+    }
+}
+
 /// See [`S3BucketTranscriptSource`](crate::model::S3BucketTranscriptSource).
 pub mod s3_bucket_transcript_source {
 
@@ -7758,12 +7833,6 @@ pub mod s3_bucket_transcript_source {
         }
     }
 }
-impl S3BucketTranscriptSource {
-    /// Creates a new builder-style object to manufacture [`S3BucketTranscriptSource`](crate::model::S3BucketTranscriptSource).
-    pub fn builder() -> crate::model::s3_bucket_transcript_source::Builder {
-        crate::model::s3_bucket_transcript_source::Builder::default()
-    }
-}
 
 /// <p>The object representing the filter that Amazon Lex will use to select the appropriate transcript.</p>
 #[non_exhaustive]
@@ -7779,6 +7848,13 @@ impl TranscriptFilter {
         self.lex_transcript_filter.as_ref()
     }
 }
+impl TranscriptFilter {
+    /// Creates a new builder-style object to manufacture [`TranscriptFilter`](crate::model::TranscriptFilter).
+    pub fn builder() -> crate::model::transcript_filter::Builder {
+        crate::model::transcript_filter::Builder::default()
+    }
+}
+
 /// See [`TranscriptFilter`](crate::model::TranscriptFilter).
 pub mod transcript_filter {
 
@@ -7810,12 +7886,6 @@ pub mod transcript_filter {
         }
     }
 }
-impl TranscriptFilter {
-    /// Creates a new builder-style object to manufacture [`TranscriptFilter`](crate::model::TranscriptFilter).
-    pub fn builder() -> crate::model::transcript_filter::Builder {
-        crate::model::transcript_filter::Builder::default()
-    }
-}
 
 /// <p>The object that contains transcript filter details that are associated with a bot recommendation.</p>
 #[non_exhaustive]
@@ -7831,6 +7901,13 @@ impl LexTranscriptFilter {
         self.date_range_filter.as_ref()
     }
 }
+impl LexTranscriptFilter {
+    /// Creates a new builder-style object to manufacture [`LexTranscriptFilter`](crate::model::LexTranscriptFilter).
+    pub fn builder() -> crate::model::lex_transcript_filter::Builder {
+        crate::model::lex_transcript_filter::Builder::default()
+    }
+}
+
 /// See [`LexTranscriptFilter`](crate::model::LexTranscriptFilter).
 pub mod lex_transcript_filter {
 
@@ -7862,12 +7939,6 @@ pub mod lex_transcript_filter {
         }
     }
 }
-impl LexTranscriptFilter {
-    /// Creates a new builder-style object to manufacture [`LexTranscriptFilter`](crate::model::LexTranscriptFilter).
-    pub fn builder() -> crate::model::lex_transcript_filter::Builder {
-        crate::model::lex_transcript_filter::Builder::default()
-    }
-}
 
 /// <p>The object used for specifying the data range that the customer wants Amazon Lex to read through in the input transcripts.</p>
 #[non_exhaustive]
@@ -7890,6 +7961,13 @@ impl DateRangeFilter {
         self.end_date_time.as_ref()
     }
 }
+impl DateRangeFilter {
+    /// Creates a new builder-style object to manufacture [`DateRangeFilter`](crate::model::DateRangeFilter).
+    pub fn builder() -> crate::model::date_range_filter::Builder {
+        crate::model::date_range_filter::Builder::default()
+    }
+}
+
 /// See [`DateRangeFilter`](crate::model::DateRangeFilter).
 pub mod date_range_filter {
 
@@ -7934,12 +8012,6 @@ pub mod date_range_filter {
                 end_date_time: self.end_date_time,
             }
         }
-    }
-}
-impl DateRangeFilter {
-    /// Creates a new builder-style object to manufacture [`DateRangeFilter`](crate::model::DateRangeFilter).
-    pub fn builder() -> crate::model::date_range_filter::Builder {
-        crate::model::date_range_filter::Builder::default()
     }
 }
 
@@ -8042,6 +8114,13 @@ impl PathFormat {
         self.object_prefixes.as_deref()
     }
 }
+impl PathFormat {
+    /// Creates a new builder-style object to manufacture [`PathFormat`](crate::model::PathFormat).
+    pub fn builder() -> crate::model::path_format::Builder {
+        crate::model::path_format::Builder::default()
+    }
+}
+
 /// See [`PathFormat`](crate::model::PathFormat).
 pub mod path_format {
 
@@ -8077,12 +8156,6 @@ pub mod path_format {
                 object_prefixes: self.object_prefixes,
             }
         }
-    }
-}
-impl PathFormat {
-    /// Creates a new builder-style object to manufacture [`PathFormat`](crate::model::PathFormat).
-    pub fn builder() -> crate::model::path_format::Builder {
-        crate::model::path_format::Builder::default()
     }
 }
 
@@ -8381,6 +8454,13 @@ impl VoiceSettings {
         self.engine.as_ref()
     }
 }
+impl VoiceSettings {
+    /// Creates a new builder-style object to manufacture [`VoiceSettings`](crate::model::VoiceSettings).
+    pub fn builder() -> crate::model::voice_settings::Builder {
+        crate::model::voice_settings::Builder::default()
+    }
+}
+
 /// See [`VoiceSettings`](crate::model::VoiceSettings).
 pub mod voice_settings {
 
@@ -8421,12 +8501,6 @@ pub mod voice_settings {
                 engine: self.engine,
             }
         }
-    }
-}
-impl VoiceSettings {
-    /// Creates a new builder-style object to manufacture [`VoiceSettings`](crate::model::VoiceSettings).
-    pub fn builder() -> crate::model::voice_settings::Builder {
-        crate::model::voice_settings::Builder::default()
     }
 }
 
@@ -8634,6 +8708,13 @@ impl SentimentAnalysisSettings {
         self.detect_sentiment
     }
 }
+impl SentimentAnalysisSettings {
+    /// Creates a new builder-style object to manufacture [`SentimentAnalysisSettings`](crate::model::SentimentAnalysisSettings).
+    pub fn builder() -> crate::model::sentiment_analysis_settings::Builder {
+        crate::model::sentiment_analysis_settings::Builder::default()
+    }
+}
+
 /// See [`SentimentAnalysisSettings`](crate::model::SentimentAnalysisSettings).
 pub mod sentiment_analysis_settings {
 
@@ -8662,12 +8743,6 @@ pub mod sentiment_analysis_settings {
         }
     }
 }
-impl SentimentAnalysisSettings {
-    /// Creates a new builder-style object to manufacture [`SentimentAnalysisSettings`](crate::model::SentimentAnalysisSettings).
-    pub fn builder() -> crate::model::sentiment_analysis_settings::Builder {
-        crate::model::sentiment_analysis_settings::Builder::default()
-    }
-}
 
 /// <p>Configures conversation logging that saves audio, text, and metadata for the conversations with your users.</p>
 #[non_exhaustive]
@@ -8690,6 +8765,13 @@ impl ConversationLogSettings {
         self.audio_log_settings.as_deref()
     }
 }
+impl ConversationLogSettings {
+    /// Creates a new builder-style object to manufacture [`ConversationLogSettings`](crate::model::ConversationLogSettings).
+    pub fn builder() -> crate::model::conversation_log_settings::Builder {
+        crate::model::conversation_log_settings::Builder::default()
+    }
+}
+
 /// See [`ConversationLogSettings`](crate::model::ConversationLogSettings).
 pub mod conversation_log_settings {
 
@@ -8750,12 +8832,6 @@ pub mod conversation_log_settings {
         }
     }
 }
-impl ConversationLogSettings {
-    /// Creates a new builder-style object to manufacture [`ConversationLogSettings`](crate::model::ConversationLogSettings).
-    pub fn builder() -> crate::model::conversation_log_settings::Builder {
-        crate::model::conversation_log_settings::Builder::default()
-    }
-}
 
 /// <p>Settings for logging audio of conversations between Amazon Lex and a user. You specify whether to log audio and the Amazon S3 bucket where the audio file is stored.</p>
 #[non_exhaustive]
@@ -8778,6 +8854,13 @@ impl AudioLogSetting {
         self.destination.as_ref()
     }
 }
+impl AudioLogSetting {
+    /// Creates a new builder-style object to manufacture [`AudioLogSetting`](crate::model::AudioLogSetting).
+    pub fn builder() -> crate::model::audio_log_setting::Builder {
+        crate::model::audio_log_setting::Builder::default()
+    }
+}
+
 /// See [`AudioLogSetting`](crate::model::AudioLogSetting).
 pub mod audio_log_setting {
 
@@ -8821,12 +8904,6 @@ pub mod audio_log_setting {
         }
     }
 }
-impl AudioLogSetting {
-    /// Creates a new builder-style object to manufacture [`AudioLogSetting`](crate::model::AudioLogSetting).
-    pub fn builder() -> crate::model::audio_log_setting::Builder {
-        crate::model::audio_log_setting::Builder::default()
-    }
-}
 
 /// <p>The location of audio log files collected when conversation logging is enabled for a bot.</p>
 #[non_exhaustive]
@@ -8842,6 +8919,13 @@ impl AudioLogDestination {
         self.s3_bucket.as_ref()
     }
 }
+impl AudioLogDestination {
+    /// Creates a new builder-style object to manufacture [`AudioLogDestination`](crate::model::AudioLogDestination).
+    pub fn builder() -> crate::model::audio_log_destination::Builder {
+        crate::model::audio_log_destination::Builder::default()
+    }
+}
+
 /// See [`AudioLogDestination`](crate::model::AudioLogDestination).
 pub mod audio_log_destination {
 
@@ -8873,12 +8957,6 @@ pub mod audio_log_destination {
         }
     }
 }
-impl AudioLogDestination {
-    /// Creates a new builder-style object to manufacture [`AudioLogDestination`](crate::model::AudioLogDestination).
-    pub fn builder() -> crate::model::audio_log_destination::Builder {
-        crate::model::audio_log_destination::Builder::default()
-    }
-}
 
 /// <p>Specifies an Amazon S3 bucket for logging audio conversations</p>
 #[non_exhaustive]
@@ -8908,6 +8986,13 @@ impl S3BucketLogDestination {
         self.log_prefix.as_deref()
     }
 }
+impl S3BucketLogDestination {
+    /// Creates a new builder-style object to manufacture [`S3BucketLogDestination`](crate::model::S3BucketLogDestination).
+    pub fn builder() -> crate::model::s3_bucket_log_destination::Builder {
+        crate::model::s3_bucket_log_destination::Builder::default()
+    }
+}
+
 /// See [`S3BucketLogDestination`](crate::model::S3BucketLogDestination).
 pub mod s3_bucket_log_destination {
 
@@ -8963,12 +9048,6 @@ pub mod s3_bucket_log_destination {
         }
     }
 }
-impl S3BucketLogDestination {
-    /// Creates a new builder-style object to manufacture [`S3BucketLogDestination`](crate::model::S3BucketLogDestination).
-    pub fn builder() -> crate::model::s3_bucket_log_destination::Builder {
-        crate::model::s3_bucket_log_destination::Builder::default()
-    }
-}
 
 /// <p>Defines settings to enable text conversation logs.</p>
 #[non_exhaustive]
@@ -8991,6 +9070,13 @@ impl TextLogSetting {
         self.destination.as_ref()
     }
 }
+impl TextLogSetting {
+    /// Creates a new builder-style object to manufacture [`TextLogSetting`](crate::model::TextLogSetting).
+    pub fn builder() -> crate::model::text_log_setting::Builder {
+        crate::model::text_log_setting::Builder::default()
+    }
+}
+
 /// See [`TextLogSetting`](crate::model::TextLogSetting).
 pub mod text_log_setting {
 
@@ -9034,12 +9120,6 @@ pub mod text_log_setting {
         }
     }
 }
-impl TextLogSetting {
-    /// Creates a new builder-style object to manufacture [`TextLogSetting`](crate::model::TextLogSetting).
-    pub fn builder() -> crate::model::text_log_setting::Builder {
-        crate::model::text_log_setting::Builder::default()
-    }
-}
 
 /// <p>Defines the Amazon CloudWatch Logs destination log group for conversation text logs.</p>
 #[non_exhaustive]
@@ -9057,6 +9137,13 @@ impl TextLogDestination {
         self.cloud_watch.as_ref()
     }
 }
+impl TextLogDestination {
+    /// Creates a new builder-style object to manufacture [`TextLogDestination`](crate::model::TextLogDestination).
+    pub fn builder() -> crate::model::text_log_destination::Builder {
+        crate::model::text_log_destination::Builder::default()
+    }
+}
+
 /// See [`TextLogDestination`](crate::model::TextLogDestination).
 pub mod text_log_destination {
 
@@ -9091,12 +9178,6 @@ pub mod text_log_destination {
         }
     }
 }
-impl TextLogDestination {
-    /// Creates a new builder-style object to manufacture [`TextLogDestination`](crate::model::TextLogDestination).
-    pub fn builder() -> crate::model::text_log_destination::Builder {
-        crate::model::text_log_destination::Builder::default()
-    }
-}
 
 /// <p>The Amazon CloudWatch Logs log group where the text and metadata logs are delivered. The log group must exist before you enable logging.</p>
 #[non_exhaustive]
@@ -9119,6 +9200,13 @@ impl CloudWatchLogGroupLogDestination {
         self.log_prefix.as_deref()
     }
 }
+impl CloudWatchLogGroupLogDestination {
+    /// Creates a new builder-style object to manufacture [`CloudWatchLogGroupLogDestination`](crate::model::CloudWatchLogGroupLogDestination).
+    pub fn builder() -> crate::model::cloud_watch_log_group_log_destination::Builder {
+        crate::model::cloud_watch_log_group_log_destination::Builder::default()
+    }
+}
+
 /// See [`CloudWatchLogGroupLogDestination`](crate::model::CloudWatchLogGroupLogDestination).
 pub mod cloud_watch_log_group_log_destination {
 
@@ -9162,12 +9250,6 @@ pub mod cloud_watch_log_group_log_destination {
         }
     }
 }
-impl CloudWatchLogGroupLogDestination {
-    /// Creates a new builder-style object to manufacture [`CloudWatchLogGroupLogDestination`](crate::model::CloudWatchLogGroupLogDestination).
-    pub fn builder() -> crate::model::cloud_watch_log_group_log_destination::Builder {
-        crate::model::cloud_watch_log_group_log_destination::Builder::default()
-    }
-}
 
 /// <p>Specifies settings that are unique to a locale. For example, you can use different Lambda function depending on the bot's locale.</p>
 #[non_exhaustive]
@@ -9192,6 +9274,13 @@ impl BotAliasLocaleSettings {
         self.code_hook_specification.as_ref()
     }
 }
+impl BotAliasLocaleSettings {
+    /// Creates a new builder-style object to manufacture [`BotAliasLocaleSettings`](crate::model::BotAliasLocaleSettings).
+    pub fn builder() -> crate::model::bot_alias_locale_settings::Builder {
+        crate::model::bot_alias_locale_settings::Builder::default()
+    }
+}
+
 /// See [`BotAliasLocaleSettings`](crate::model::BotAliasLocaleSettings).
 pub mod bot_alias_locale_settings {
 
@@ -9239,12 +9328,6 @@ pub mod bot_alias_locale_settings {
         }
     }
 }
-impl BotAliasLocaleSettings {
-    /// Creates a new builder-style object to manufacture [`BotAliasLocaleSettings`](crate::model::BotAliasLocaleSettings).
-    pub fn builder() -> crate::model::bot_alias_locale_settings::Builder {
-        crate::model::bot_alias_locale_settings::Builder::default()
-    }
-}
 
 /// <p>Contains information about code hooks that Amazon Lex calls during a conversation.</p>
 #[non_exhaustive]
@@ -9260,6 +9343,13 @@ impl CodeHookSpecification {
         self.lambda_code_hook.as_ref()
     }
 }
+impl CodeHookSpecification {
+    /// Creates a new builder-style object to manufacture [`CodeHookSpecification`](crate::model::CodeHookSpecification).
+    pub fn builder() -> crate::model::code_hook_specification::Builder {
+        crate::model::code_hook_specification::Builder::default()
+    }
+}
+
 /// See [`CodeHookSpecification`](crate::model::CodeHookSpecification).
 pub mod code_hook_specification {
 
@@ -9291,12 +9381,6 @@ pub mod code_hook_specification {
         }
     }
 }
-impl CodeHookSpecification {
-    /// Creates a new builder-style object to manufacture [`CodeHookSpecification`](crate::model::CodeHookSpecification).
-    pub fn builder() -> crate::model::code_hook_specification::Builder {
-        crate::model::code_hook_specification::Builder::default()
-    }
-}
 
 /// <p>Specifies a Lambda function that verifies requests to a bot or fulfills the user's request to a bot.</p>
 #[non_exhaustive]
@@ -9319,6 +9403,13 @@ impl LambdaCodeHook {
         self.code_hook_interface_version.as_deref()
     }
 }
+impl LambdaCodeHook {
+    /// Creates a new builder-style object to manufacture [`LambdaCodeHook`](crate::model::LambdaCodeHook).
+    pub fn builder() -> crate::model::lambda_code_hook::Builder {
+        crate::model::lambda_code_hook::Builder::default()
+    }
+}
+
 /// See [`LambdaCodeHook`](crate::model::LambdaCodeHook).
 pub mod lambda_code_hook {
 
@@ -9363,12 +9454,6 @@ pub mod lambda_code_hook {
                 code_hook_interface_version: self.code_hook_interface_version,
             }
         }
-    }
-}
-impl LambdaCodeHook {
-    /// Creates a new builder-style object to manufacture [`LambdaCodeHook`](crate::model::LambdaCodeHook).
-    pub fn builder() -> crate::model::lambda_code_hook::Builder {
-        crate::model::lambda_code_hook::Builder::default()
     }
 }
 
@@ -9509,6 +9594,13 @@ impl DataPrivacy {
         self.child_directed
     }
 }
+impl DataPrivacy {
+    /// Creates a new builder-style object to manufacture [`DataPrivacy`](crate::model::DataPrivacy).
+    pub fn builder() -> crate::model::data_privacy::Builder {
+        crate::model::data_privacy::Builder::default()
+    }
+}
+
 /// See [`DataPrivacy`](crate::model::DataPrivacy).
 pub mod data_privacy {
 
@@ -9535,12 +9627,6 @@ pub mod data_privacy {
                 child_directed: self.child_directed.unwrap_or_default(),
             }
         }
-    }
-}
-impl DataPrivacy {
-    /// Creates a new builder-style object to manufacture [`DataPrivacy`](crate::model::DataPrivacy).
-    pub fn builder() -> crate::model::data_privacy::Builder {
-        crate::model::data_privacy::Builder::default()
     }
 }
 
@@ -9775,6 +9861,13 @@ impl ImportResourceSpecification {
         self.custom_vocabulary_import_specification.as_ref()
     }
 }
+impl ImportResourceSpecification {
+    /// Creates a new builder-style object to manufacture [`ImportResourceSpecification`](crate::model::ImportResourceSpecification).
+    pub fn builder() -> crate::model::import_resource_specification::Builder {
+        crate::model::import_resource_specification::Builder::default()
+    }
+}
+
 /// See [`ImportResourceSpecification`](crate::model::ImportResourceSpecification).
 pub mod import_resource_specification {
 
@@ -9848,12 +9941,6 @@ pub mod import_resource_specification {
         }
     }
 }
-impl ImportResourceSpecification {
-    /// Creates a new builder-style object to manufacture [`ImportResourceSpecification`](crate::model::ImportResourceSpecification).
-    pub fn builder() -> crate::model::import_resource_specification::Builder {
-        crate::model::import_resource_specification::Builder::default()
-    }
-}
 
 /// <p>Provides the parameters required for importing a custom vocabulary.</p>
 #[non_exhaustive]
@@ -9883,6 +9970,13 @@ impl CustomVocabularyImportSpecification {
         self.locale_id.as_deref()
     }
 }
+impl CustomVocabularyImportSpecification {
+    /// Creates a new builder-style object to manufacture [`CustomVocabularyImportSpecification`](crate::model::CustomVocabularyImportSpecification).
+    pub fn builder() -> crate::model::custom_vocabulary_import_specification::Builder {
+        crate::model::custom_vocabulary_import_specification::Builder::default()
+    }
+}
+
 /// See [`CustomVocabularyImportSpecification`](crate::model::CustomVocabularyImportSpecification).
 pub mod custom_vocabulary_import_specification {
 
@@ -9933,12 +10027,6 @@ pub mod custom_vocabulary_import_specification {
                 locale_id: self.locale_id,
             }
         }
-    }
-}
-impl CustomVocabularyImportSpecification {
-    /// Creates a new builder-style object to manufacture [`CustomVocabularyImportSpecification`](crate::model::CustomVocabularyImportSpecification).
-    pub fn builder() -> crate::model::custom_vocabulary_import_specification::Builder {
-        crate::model::custom_vocabulary_import_specification::Builder::default()
     }
 }
 
@@ -9998,6 +10086,13 @@ impl BotLocaleImportSpecification {
         self.voice_settings.as_ref()
     }
 }
+impl BotLocaleImportSpecification {
+    /// Creates a new builder-style object to manufacture [`BotLocaleImportSpecification`](crate::model::BotLocaleImportSpecification).
+    pub fn builder() -> crate::model::bot_locale_import_specification::Builder {
+        crate::model::bot_locale_import_specification::Builder::default()
+    }
+}
+
 /// See [`BotLocaleImportSpecification`](crate::model::BotLocaleImportSpecification).
 pub mod bot_locale_import_specification {
 
@@ -10094,12 +10189,6 @@ pub mod bot_locale_import_specification {
         }
     }
 }
-impl BotLocaleImportSpecification {
-    /// Creates a new builder-style object to manufacture [`BotLocaleImportSpecification`](crate::model::BotLocaleImportSpecification).
-    pub fn builder() -> crate::model::bot_locale_import_specification::Builder {
-        crate::model::bot_locale_import_specification::Builder::default()
-    }
-}
 
 /// <p>Provides the bot parameters required for importing a bot.</p>
 #[non_exhaustive]
@@ -10162,6 +10251,13 @@ impl BotImportSpecification {
         self.test_bot_alias_tags.as_ref()
     }
 }
+impl BotImportSpecification {
+    /// Creates a new builder-style object to manufacture [`BotImportSpecification`](crate::model::BotImportSpecification).
+    pub fn builder() -> crate::model::bot_import_specification::Builder {
+        crate::model::bot_import_specification::Builder::default()
+    }
+}
+
 /// See [`BotImportSpecification`](crate::model::BotImportSpecification).
 pub mod bot_import_specification {
 
@@ -10291,12 +10387,6 @@ pub mod bot_import_specification {
         }
     }
 }
-impl BotImportSpecification {
-    /// Creates a new builder-style object to manufacture [`BotImportSpecification`](crate::model::BotImportSpecification).
-    pub fn builder() -> crate::model::bot_import_specification::Builder {
-        crate::model::bot_import_specification::Builder::default()
-    }
-}
 
 /// <p>The object containing information that associates the recommended intent/slot type with a conversation.</p>
 #[non_exhaustive]
@@ -10312,6 +10402,13 @@ impl AssociatedTranscript {
         self.transcript.as_deref()
     }
 }
+impl AssociatedTranscript {
+    /// Creates a new builder-style object to manufacture [`AssociatedTranscript`](crate::model::AssociatedTranscript).
+    pub fn builder() -> crate::model::associated_transcript::Builder {
+        crate::model::associated_transcript::Builder::default()
+    }
+}
+
 /// See [`AssociatedTranscript`](crate::model::AssociatedTranscript).
 pub mod associated_transcript {
 
@@ -10340,12 +10437,6 @@ pub mod associated_transcript {
         }
     }
 }
-impl AssociatedTranscript {
-    /// Creates a new builder-style object to manufacture [`AssociatedTranscript`](crate::model::AssociatedTranscript).
-    pub fn builder() -> crate::model::associated_transcript::Builder {
-        crate::model::associated_transcript::Builder::default()
-    }
-}
 
 /// <p>Filters to search for the associated transcript.</p>
 #[non_exhaustive]
@@ -10368,6 +10459,13 @@ impl AssociatedTranscriptFilter {
         self.values.as_deref()
     }
 }
+impl AssociatedTranscriptFilter {
+    /// Creates a new builder-style object to manufacture [`AssociatedTranscriptFilter`](crate::model::AssociatedTranscriptFilter).
+    pub fn builder() -> crate::model::associated_transcript_filter::Builder {
+        crate::model::associated_transcript_filter::Builder::default()
+    }
+}
+
 /// See [`AssociatedTranscriptFilter`](crate::model::AssociatedTranscriptFilter).
 pub mod associated_transcript_filter {
 
@@ -10418,12 +10516,6 @@ pub mod associated_transcript_filter {
                 values: self.values,
             }
         }
-    }
-}
-impl AssociatedTranscriptFilter {
-    /// Creates a new builder-style object to manufacture [`AssociatedTranscriptFilter`](crate::model::AssociatedTranscriptFilter).
-    pub fn builder() -> crate::model::associated_transcript_filter::Builder {
-        crate::model::associated_transcript_filter::Builder::default()
     }
 }
 
@@ -10668,6 +10760,13 @@ impl SlotTypeSummary {
         self.slot_type_category.as_ref()
     }
 }
+impl SlotTypeSummary {
+    /// Creates a new builder-style object to manufacture [`SlotTypeSummary`](crate::model::SlotTypeSummary).
+    pub fn builder() -> crate::model::slot_type_summary::Builder {
+        crate::model::slot_type_summary::Builder::default()
+    }
+}
+
 /// See [`SlotTypeSummary`](crate::model::SlotTypeSummary).
 pub mod slot_type_summary {
 
@@ -10776,12 +10875,6 @@ pub mod slot_type_summary {
                 slot_type_category: self.slot_type_category,
             }
         }
-    }
-}
-impl SlotTypeSummary {
-    /// Creates a new builder-style object to manufacture [`SlotTypeSummary`](crate::model::SlotTypeSummary).
-    pub fn builder() -> crate::model::slot_type_summary::Builder {
-        crate::model::slot_type_summary::Builder::default()
     }
 }
 
@@ -10913,6 +11006,13 @@ impl SlotTypeFilter {
         self.operator.as_ref()
     }
 }
+impl SlotTypeFilter {
+    /// Creates a new builder-style object to manufacture [`SlotTypeFilter`](crate::model::SlotTypeFilter).
+    pub fn builder() -> crate::model::slot_type_filter::Builder {
+        crate::model::slot_type_filter::Builder::default()
+    }
+}
+
 /// See [`SlotTypeFilter`](crate::model::SlotTypeFilter).
 pub mod slot_type_filter {
 
@@ -10978,12 +11078,6 @@ pub mod slot_type_filter {
                 operator: self.operator,
             }
         }
-    }
-}
-impl SlotTypeFilter {
-    /// Creates a new builder-style object to manufacture [`SlotTypeFilter`](crate::model::SlotTypeFilter).
-    pub fn builder() -> crate::model::slot_type_filter::Builder {
-        crate::model::slot_type_filter::Builder::default()
     }
 }
 
@@ -11192,6 +11286,13 @@ impl SlotTypeSortBy {
         self.order.as_ref()
     }
 }
+impl SlotTypeSortBy {
+    /// Creates a new builder-style object to manufacture [`SlotTypeSortBy`](crate::model::SlotTypeSortBy).
+    pub fn builder() -> crate::model::slot_type_sort_by::Builder {
+        crate::model::slot_type_sort_by::Builder::default()
+    }
+}
+
 /// See [`SlotTypeSortBy`](crate::model::SlotTypeSortBy).
 pub mod slot_type_sort_by {
 
@@ -11233,12 +11334,6 @@ pub mod slot_type_sort_by {
                 order: self.order,
             }
         }
-    }
-}
-impl SlotTypeSortBy {
-    /// Creates a new builder-style object to manufacture [`SlotTypeSortBy`](crate::model::SlotTypeSortBy).
-    pub fn builder() -> crate::model::slot_type_sort_by::Builder {
-        crate::model::slot_type_sort_by::Builder::default()
     }
 }
 
@@ -11483,6 +11578,13 @@ impl SlotSummary {
         self.last_updated_date_time.as_ref()
     }
 }
+impl SlotSummary {
+    /// Creates a new builder-style object to manufacture [`SlotSummary`](crate::model::SlotSummary).
+    pub fn builder() -> crate::model::slot_summary::Builder {
+        crate::model::slot_summary::Builder::default()
+    }
+}
+
 /// See [`SlotSummary`](crate::model::SlotSummary).
 pub mod slot_summary {
 
@@ -11596,12 +11698,6 @@ pub mod slot_summary {
         }
     }
 }
-impl SlotSummary {
-    /// Creates a new builder-style object to manufacture [`SlotSummary`](crate::model::SlotSummary).
-    pub fn builder() -> crate::model::slot_summary::Builder {
-        crate::model::slot_summary::Builder::default()
-    }
-}
 
 /// <p>Filters the response from the <code>ListSlots</code> operation.</p>
 #[non_exhaustive]
@@ -11631,6 +11727,13 @@ impl SlotFilter {
         self.operator.as_ref()
     }
 }
+impl SlotFilter {
+    /// Creates a new builder-style object to manufacture [`SlotFilter`](crate::model::SlotFilter).
+    pub fn builder() -> crate::model::slot_filter::Builder {
+        crate::model::slot_filter::Builder::default()
+    }
+}
+
 /// See [`SlotFilter`](crate::model::SlotFilter).
 pub mod slot_filter {
 
@@ -11696,12 +11799,6 @@ pub mod slot_filter {
                 operator: self.operator,
             }
         }
-    }
-}
-impl SlotFilter {
-    /// Creates a new builder-style object to manufacture [`SlotFilter`](crate::model::SlotFilter).
-    pub fn builder() -> crate::model::slot_filter::Builder {
-        crate::model::slot_filter::Builder::default()
     }
 }
 
@@ -11903,6 +12000,13 @@ impl SlotSortBy {
         self.order.as_ref()
     }
 }
+impl SlotSortBy {
+    /// Creates a new builder-style object to manufacture [`SlotSortBy`](crate::model::SlotSortBy).
+    pub fn builder() -> crate::model::slot_sort_by::Builder {
+        crate::model::slot_sort_by::Builder::default()
+    }
+}
+
 /// See [`SlotSortBy`](crate::model::SlotSortBy).
 pub mod slot_sort_by {
 
@@ -11944,12 +12048,6 @@ pub mod slot_sort_by {
                 order: self.order,
             }
         }
-    }
-}
-impl SlotSortBy {
-    /// Creates a new builder-style object to manufacture [`SlotSortBy`](crate::model::SlotSortBy).
-    pub fn builder() -> crate::model::slot_sort_by::Builder {
-        crate::model::slot_sort_by::Builder::default()
     }
 }
 
@@ -12073,6 +12171,13 @@ impl RecommendedIntentSummary {
         self.sample_utterances_count
     }
 }
+impl RecommendedIntentSummary {
+    /// Creates a new builder-style object to manufacture [`RecommendedIntentSummary`](crate::model::RecommendedIntentSummary).
+    pub fn builder() -> crate::model::recommended_intent_summary::Builder {
+        crate::model::recommended_intent_summary::Builder::default()
+    }
+}
+
 /// See [`RecommendedIntentSummary`](crate::model::RecommendedIntentSummary).
 pub mod recommended_intent_summary {
 
@@ -12123,12 +12228,6 @@ pub mod recommended_intent_summary {
                 sample_utterances_count: self.sample_utterances_count,
             }
         }
-    }
-}
-impl RecommendedIntentSummary {
-    /// Creates a new builder-style object to manufacture [`RecommendedIntentSummary`](crate::model::RecommendedIntentSummary).
-    pub fn builder() -> crate::model::recommended_intent_summary::Builder {
-        crate::model::recommended_intent_summary::Builder::default()
     }
 }
 
@@ -12188,6 +12287,13 @@ impl IntentSummary {
         self.last_updated_date_time.as_ref()
     }
 }
+impl IntentSummary {
+    /// Creates a new builder-style object to manufacture [`IntentSummary`](crate::model::IntentSummary).
+    pub fn builder() -> crate::model::intent_summary::Builder {
+        crate::model::intent_summary::Builder::default()
+    }
+}
+
 /// See [`IntentSummary`](crate::model::IntentSummary).
 pub mod intent_summary {
 
@@ -12312,12 +12418,6 @@ pub mod intent_summary {
         }
     }
 }
-impl IntentSummary {
-    /// Creates a new builder-style object to manufacture [`IntentSummary`](crate::model::IntentSummary).
-    pub fn builder() -> crate::model::intent_summary::Builder {
-        crate::model::intent_summary::Builder::default()
-    }
-}
 
 /// <p>Filters the response from the <code>ListIntents</code> operation.</p>
 #[non_exhaustive]
@@ -12347,6 +12447,13 @@ impl IntentFilter {
         self.operator.as_ref()
     }
 }
+impl IntentFilter {
+    /// Creates a new builder-style object to manufacture [`IntentFilter`](crate::model::IntentFilter).
+    pub fn builder() -> crate::model::intent_filter::Builder {
+        crate::model::intent_filter::Builder::default()
+    }
+}
+
 /// See [`IntentFilter`](crate::model::IntentFilter).
 pub mod intent_filter {
 
@@ -12412,12 +12519,6 @@ pub mod intent_filter {
                 operator: self.operator,
             }
         }
-    }
-}
-impl IntentFilter {
-    /// Creates a new builder-style object to manufacture [`IntentFilter`](crate::model::IntentFilter).
-    pub fn builder() -> crate::model::intent_filter::Builder {
-        crate::model::intent_filter::Builder::default()
     }
 }
 
@@ -12619,6 +12720,13 @@ impl IntentSortBy {
         self.order.as_ref()
     }
 }
+impl IntentSortBy {
+    /// Creates a new builder-style object to manufacture [`IntentSortBy`](crate::model::IntentSortBy).
+    pub fn builder() -> crate::model::intent_sort_by::Builder {
+        crate::model::intent_sort_by::Builder::default()
+    }
+}
+
 /// See [`IntentSortBy`](crate::model::IntentSortBy).
 pub mod intent_sort_by {
 
@@ -12660,12 +12768,6 @@ pub mod intent_sort_by {
                 order: self.order,
             }
         }
-    }
-}
-impl IntentSortBy {
-    /// Creates a new builder-style object to manufacture [`IntentSortBy`](crate::model::IntentSortBy).
-    pub fn builder() -> crate::model::intent_sort_by::Builder {
-        crate::model::intent_sort_by::Builder::default()
     }
 }
 
@@ -12824,6 +12926,13 @@ impl ImportSummary {
         self.imported_resource_type.as_ref()
     }
 }
+impl ImportSummary {
+    /// Creates a new builder-style object to manufacture [`ImportSummary`](crate::model::ImportSummary).
+    pub fn builder() -> crate::model::import_summary::Builder {
+        crate::model::import_summary::Builder::default()
+    }
+}
+
 /// See [`ImportSummary`](crate::model::ImportSummary).
 pub mod import_summary {
 
@@ -12957,12 +13066,6 @@ pub mod import_summary {
         }
     }
 }
-impl ImportSummary {
-    /// Creates a new builder-style object to manufacture [`ImportSummary`](crate::model::ImportSummary).
-    pub fn builder() -> crate::model::import_summary::Builder {
-        crate::model::import_summary::Builder::default()
-    }
-}
 
 /// When writing a match expression against `ImportResourceType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -13089,6 +13192,13 @@ impl ImportFilter {
         self.operator.as_ref()
     }
 }
+impl ImportFilter {
+    /// Creates a new builder-style object to manufacture [`ImportFilter`](crate::model::ImportFilter).
+    pub fn builder() -> crate::model::import_filter::Builder {
+        crate::model::import_filter::Builder::default()
+    }
+}
+
 /// See [`ImportFilter`](crate::model::ImportFilter).
 pub mod import_filter {
 
@@ -13154,12 +13264,6 @@ pub mod import_filter {
                 operator: self.operator,
             }
         }
-    }
-}
-impl ImportFilter {
-    /// Creates a new builder-style object to manufacture [`ImportFilter`](crate::model::ImportFilter).
-    pub fn builder() -> crate::model::import_filter::Builder {
-        crate::model::import_filter::Builder::default()
     }
 }
 
@@ -13361,6 +13465,13 @@ impl ImportSortBy {
         self.order.as_ref()
     }
 }
+impl ImportSortBy {
+    /// Creates a new builder-style object to manufacture [`ImportSortBy`](crate::model::ImportSortBy).
+    pub fn builder() -> crate::model::import_sort_by::Builder {
+        crate::model::import_sort_by::Builder::default()
+    }
+}
+
 /// See [`ImportSortBy`](crate::model::ImportSortBy).
 pub mod import_sort_by {
 
@@ -13402,12 +13513,6 @@ pub mod import_sort_by {
                 order: self.order,
             }
         }
-    }
-}
-impl ImportSortBy {
-    /// Creates a new builder-style object to manufacture [`ImportSortBy`](crate::model::ImportSortBy).
-    pub fn builder() -> crate::model::import_sort_by::Builder {
-        crate::model::import_sort_by::Builder::default()
     }
 }
 
@@ -13549,6 +13654,13 @@ impl ExportSummary {
         self.last_updated_date_time.as_ref()
     }
 }
+impl ExportSummary {
+    /// Creates a new builder-style object to manufacture [`ExportSummary`](crate::model::ExportSummary).
+    pub fn builder() -> crate::model::export_summary::Builder {
+        crate::model::export_summary::Builder::default()
+    }
+}
+
 /// See [`ExportSummary`](crate::model::ExportSummary).
 pub mod export_summary {
 
@@ -13656,12 +13768,6 @@ pub mod export_summary {
         }
     }
 }
-impl ExportSummary {
-    /// Creates a new builder-style object to manufacture [`ExportSummary`](crate::model::ExportSummary).
-    pub fn builder() -> crate::model::export_summary::Builder {
-        crate::model::export_summary::Builder::default()
-    }
-}
 
 /// <p>Filters the response form the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_ListExports.html">ListExports</a> operation</p>
 #[non_exhaustive]
@@ -13691,6 +13797,13 @@ impl ExportFilter {
         self.operator.as_ref()
     }
 }
+impl ExportFilter {
+    /// Creates a new builder-style object to manufacture [`ExportFilter`](crate::model::ExportFilter).
+    pub fn builder() -> crate::model::export_filter::Builder {
+        crate::model::export_filter::Builder::default()
+    }
+}
+
 /// See [`ExportFilter`](crate::model::ExportFilter).
 pub mod export_filter {
 
@@ -13756,12 +13869,6 @@ pub mod export_filter {
                 operator: self.operator,
             }
         }
-    }
-}
-impl ExportFilter {
-    /// Creates a new builder-style object to manufacture [`ExportFilter`](crate::model::ExportFilter).
-    pub fn builder() -> crate::model::export_filter::Builder {
-        crate::model::export_filter::Builder::default()
     }
 }
 
@@ -13963,6 +14070,13 @@ impl ExportSortBy {
         self.order.as_ref()
     }
 }
+impl ExportSortBy {
+    /// Creates a new builder-style object to manufacture [`ExportSortBy`](crate::model::ExportSortBy).
+    pub fn builder() -> crate::model::export_sort_by::Builder {
+        crate::model::export_sort_by::Builder::default()
+    }
+}
+
 /// See [`ExportSortBy`](crate::model::ExportSortBy).
 pub mod export_sort_by {
 
@@ -14004,12 +14118,6 @@ pub mod export_sort_by {
                 order: self.order,
             }
         }
-    }
-}
-impl ExportSortBy {
-    /// Creates a new builder-style object to manufacture [`ExportSortBy`](crate::model::ExportSortBy).
-    pub fn builder() -> crate::model::export_sort_by::Builder {
-        crate::model::export_sort_by::Builder::default()
     }
 }
 
@@ -14135,6 +14243,13 @@ impl CustomVocabularyItem {
         self.display_as.as_deref()
     }
 }
+impl CustomVocabularyItem {
+    /// Creates a new builder-style object to manufacture [`CustomVocabularyItem`](crate::model::CustomVocabularyItem).
+    pub fn builder() -> crate::model::custom_vocabulary_item::Builder {
+        crate::model::custom_vocabulary_item::Builder::default()
+    }
+}
+
 /// See [`CustomVocabularyItem`](crate::model::CustomVocabularyItem).
 pub mod custom_vocabulary_item {
 
@@ -14199,12 +14314,6 @@ pub mod custom_vocabulary_item {
         }
     }
 }
-impl CustomVocabularyItem {
-    /// Creates a new builder-style object to manufacture [`CustomVocabularyItem`](crate::model::CustomVocabularyItem).
-    pub fn builder() -> crate::model::custom_vocabulary_item::Builder {
-        crate::model::custom_vocabulary_item::Builder::default()
-    }
-}
 
 /// <p>Provides summary information about a built-in slot type for the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_ListBuiltInSlotTypes.html"> ListBuiltInSlotTypes </a> operation.</p>
 #[non_exhaustive]
@@ -14227,6 +14336,13 @@ impl BuiltInSlotTypeSummary {
         self.description.as_deref()
     }
 }
+impl BuiltInSlotTypeSummary {
+    /// Creates a new builder-style object to manufacture [`BuiltInSlotTypeSummary`](crate::model::BuiltInSlotTypeSummary).
+    pub fn builder() -> crate::model::built_in_slot_type_summary::Builder {
+        crate::model::built_in_slot_type_summary::Builder::default()
+    }
+}
+
 /// See [`BuiltInSlotTypeSummary`](crate::model::BuiltInSlotTypeSummary).
 pub mod built_in_slot_type_summary {
 
@@ -14270,12 +14386,6 @@ pub mod built_in_slot_type_summary {
         }
     }
 }
-impl BuiltInSlotTypeSummary {
-    /// Creates a new builder-style object to manufacture [`BuiltInSlotTypeSummary`](crate::model::BuiltInSlotTypeSummary).
-    pub fn builder() -> crate::model::built_in_slot_type_summary::Builder {
-        crate::model::built_in_slot_type_summary::Builder::default()
-    }
-}
 
 /// <p>Specifies attributes for sorting a list of built-in slot types.</p>
 #[non_exhaustive]
@@ -14298,6 +14408,13 @@ impl BuiltInSlotTypeSortBy {
         self.order.as_ref()
     }
 }
+impl BuiltInSlotTypeSortBy {
+    /// Creates a new builder-style object to manufacture [`BuiltInSlotTypeSortBy`](crate::model::BuiltInSlotTypeSortBy).
+    pub fn builder() -> crate::model::built_in_slot_type_sort_by::Builder {
+        crate::model::built_in_slot_type_sort_by::Builder::default()
+    }
+}
+
 /// See [`BuiltInSlotTypeSortBy`](crate::model::BuiltInSlotTypeSortBy).
 pub mod built_in_slot_type_sort_by {
 
@@ -14339,12 +14456,6 @@ pub mod built_in_slot_type_sort_by {
                 order: self.order,
             }
         }
-    }
-}
-impl BuiltInSlotTypeSortBy {
-    /// Creates a new builder-style object to manufacture [`BuiltInSlotTypeSortBy`](crate::model::BuiltInSlotTypeSortBy).
-    pub fn builder() -> crate::model::built_in_slot_type_sort_by::Builder {
-        crate::model::built_in_slot_type_sort_by::Builder::default()
     }
 }
 
@@ -14456,6 +14567,13 @@ impl BuiltInIntentSummary {
         self.description.as_deref()
     }
 }
+impl BuiltInIntentSummary {
+    /// Creates a new builder-style object to manufacture [`BuiltInIntentSummary`](crate::model::BuiltInIntentSummary).
+    pub fn builder() -> crate::model::built_in_intent_summary::Builder {
+        crate::model::built_in_intent_summary::Builder::default()
+    }
+}
+
 /// See [`BuiltInIntentSummary`](crate::model::BuiltInIntentSummary).
 pub mod built_in_intent_summary {
 
@@ -14499,12 +14617,6 @@ pub mod built_in_intent_summary {
         }
     }
 }
-impl BuiltInIntentSummary {
-    /// Creates a new builder-style object to manufacture [`BuiltInIntentSummary`](crate::model::BuiltInIntentSummary).
-    pub fn builder() -> crate::model::built_in_intent_summary::Builder {
-        crate::model::built_in_intent_summary::Builder::default()
-    }
-}
 
 /// <p>Specifies attributes for sorting a list of built-in intents.</p>
 #[non_exhaustive]
@@ -14527,6 +14639,13 @@ impl BuiltInIntentSortBy {
         self.order.as_ref()
     }
 }
+impl BuiltInIntentSortBy {
+    /// Creates a new builder-style object to manufacture [`BuiltInIntentSortBy`](crate::model::BuiltInIntentSortBy).
+    pub fn builder() -> crate::model::built_in_intent_sort_by::Builder {
+        crate::model::built_in_intent_sort_by::Builder::default()
+    }
+}
+
 /// See [`BuiltInIntentSortBy`](crate::model::BuiltInIntentSortBy).
 pub mod built_in_intent_sort_by {
 
@@ -14568,12 +14687,6 @@ pub mod built_in_intent_sort_by {
                 order: self.order,
             }
         }
-    }
-}
-impl BuiltInIntentSortBy {
-    /// Creates a new builder-style object to manufacture [`BuiltInIntentSortBy`](crate::model::BuiltInIntentSortBy).
-    pub fn builder() -> crate::model::built_in_intent_sort_by::Builder {
-        crate::model::built_in_intent_sort_by::Builder::default()
     }
 }
 
@@ -14706,6 +14819,13 @@ impl BotVersionSummary {
         self.creation_date_time.as_ref()
     }
 }
+impl BotVersionSummary {
+    /// Creates a new builder-style object to manufacture [`BotVersionSummary`](crate::model::BotVersionSummary).
+    pub fn builder() -> crate::model::bot_version_summary::Builder {
+        crate::model::bot_version_summary::Builder::default()
+    }
+}
+
 /// See [`BotVersionSummary`](crate::model::BotVersionSummary).
 pub mod bot_version_summary {
 
@@ -14788,12 +14908,6 @@ pub mod bot_version_summary {
         }
     }
 }
-impl BotVersionSummary {
-    /// Creates a new builder-style object to manufacture [`BotVersionSummary`](crate::model::BotVersionSummary).
-    pub fn builder() -> crate::model::bot_version_summary::Builder {
-        crate::model::bot_version_summary::Builder::default()
-    }
-}
 
 /// <p>Specifies attributes for sorting a list of bot versions.</p>
 #[non_exhaustive]
@@ -14816,6 +14930,13 @@ impl BotVersionSortBy {
         self.order.as_ref()
     }
 }
+impl BotVersionSortBy {
+    /// Creates a new builder-style object to manufacture [`BotVersionSortBy`](crate::model::BotVersionSortBy).
+    pub fn builder() -> crate::model::bot_version_sort_by::Builder {
+        crate::model::bot_version_sort_by::Builder::default()
+    }
+}
+
 /// See [`BotVersionSortBy`](crate::model::BotVersionSortBy).
 pub mod bot_version_sort_by {
 
@@ -14857,12 +14978,6 @@ pub mod bot_version_sort_by {
                 order: self.order,
             }
         }
-    }
-}
-impl BotVersionSortBy {
-    /// Creates a new builder-style object to manufacture [`BotVersionSortBy`](crate::model::BotVersionSortBy).
-    pub fn builder() -> crate::model::bot_version_sort_by::Builder {
-        crate::model::bot_version_sort_by::Builder::default()
     }
 }
 
@@ -15002,6 +15117,13 @@ impl BotSummary {
         self.last_updated_date_time.as_ref()
     }
 }
+impl BotSummary {
+    /// Creates a new builder-style object to manufacture [`BotSummary`](crate::model::BotSummary).
+    pub fn builder() -> crate::model::bot_summary::Builder {
+        crate::model::bot_summary::Builder::default()
+    }
+}
+
 /// See [`BotSummary`](crate::model::BotSummary).
 pub mod bot_summary {
 
@@ -15099,12 +15221,6 @@ pub mod bot_summary {
         }
     }
 }
-impl BotSummary {
-    /// Creates a new builder-style object to manufacture [`BotSummary`](crate::model::BotSummary).
-    pub fn builder() -> crate::model::bot_summary::Builder {
-        crate::model::bot_summary::Builder::default()
-    }
-}
 
 /// <p>Filters the responses returned by the <code>ListBots</code> operation.</p>
 #[non_exhaustive]
@@ -15134,6 +15250,13 @@ impl BotFilter {
         self.operator.as_ref()
     }
 }
+impl BotFilter {
+    /// Creates a new builder-style object to manufacture [`BotFilter`](crate::model::BotFilter).
+    pub fn builder() -> crate::model::bot_filter::Builder {
+        crate::model::bot_filter::Builder::default()
+    }
+}
+
 /// See [`BotFilter`](crate::model::BotFilter).
 pub mod bot_filter {
 
@@ -15196,12 +15319,6 @@ pub mod bot_filter {
                 operator: self.operator,
             }
         }
-    }
-}
-impl BotFilter {
-    /// Creates a new builder-style object to manufacture [`BotFilter`](crate::model::BotFilter).
-    pub fn builder() -> crate::model::bot_filter::Builder {
-        crate::model::bot_filter::Builder::default()
     }
 }
 
@@ -15403,6 +15520,13 @@ impl BotSortBy {
         self.order.as_ref()
     }
 }
+impl BotSortBy {
+    /// Creates a new builder-style object to manufacture [`BotSortBy`](crate::model::BotSortBy).
+    pub fn builder() -> crate::model::bot_sort_by::Builder {
+        crate::model::bot_sort_by::Builder::default()
+    }
+}
+
 /// See [`BotSortBy`](crate::model::BotSortBy).
 pub mod bot_sort_by {
 
@@ -15444,12 +15568,6 @@ pub mod bot_sort_by {
                 order: self.order,
             }
         }
-    }
-}
-impl BotSortBy {
-    /// Creates a new builder-style object to manufacture [`BotSortBy`](crate::model::BotSortBy).
-    pub fn builder() -> crate::model::bot_sort_by::Builder {
-        crate::model::bot_sort_by::Builder::default()
     }
 }
 
@@ -15577,6 +15695,13 @@ impl BotRecommendationSummary {
         self.last_updated_date_time.as_ref()
     }
 }
+impl BotRecommendationSummary {
+    /// Creates a new builder-style object to manufacture [`BotRecommendationSummary`](crate::model::BotRecommendationSummary).
+    pub fn builder() -> crate::model::bot_recommendation_summary::Builder {
+        crate::model::bot_recommendation_summary::Builder::default()
+    }
+}
+
 /// See [`BotRecommendationSummary`](crate::model::BotRecommendationSummary).
 pub mod bot_recommendation_summary {
 
@@ -15659,12 +15784,6 @@ pub mod bot_recommendation_summary {
         }
     }
 }
-impl BotRecommendationSummary {
-    /// Creates a new builder-style object to manufacture [`BotRecommendationSummary`](crate::model::BotRecommendationSummary).
-    pub fn builder() -> crate::model::bot_recommendation_summary::Builder {
-        crate::model::bot_recommendation_summary::Builder::default()
-    }
-}
 
 /// <p>Summary information about bot locales returned by the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_ListBotLocales.html">ListBotLocales</a> operation.</p>
 #[non_exhaustive]
@@ -15717,6 +15836,13 @@ impl BotLocaleSummary {
         self.last_build_submitted_date_time.as_ref()
     }
 }
+impl BotLocaleSummary {
+    /// Creates a new builder-style object to manufacture [`BotLocaleSummary`](crate::model::BotLocaleSummary).
+    pub fn builder() -> crate::model::bot_locale_summary::Builder {
+        crate::model::bot_locale_summary::Builder::default()
+    }
+}
+
 /// See [`BotLocaleSummary`](crate::model::BotLocaleSummary).
 pub mod bot_locale_summary {
 
@@ -15814,12 +15940,6 @@ pub mod bot_locale_summary {
         }
     }
 }
-impl BotLocaleSummary {
-    /// Creates a new builder-style object to manufacture [`BotLocaleSummary`](crate::model::BotLocaleSummary).
-    pub fn builder() -> crate::model::bot_locale_summary::Builder {
-        crate::model::bot_locale_summary::Builder::default()
-    }
-}
 
 /// <p>Filters responses returned by the <code>ListBotLocales</code> operation.</p>
 #[non_exhaustive]
@@ -15849,6 +15969,13 @@ impl BotLocaleFilter {
         self.operator.as_ref()
     }
 }
+impl BotLocaleFilter {
+    /// Creates a new builder-style object to manufacture [`BotLocaleFilter`](crate::model::BotLocaleFilter).
+    pub fn builder() -> crate::model::bot_locale_filter::Builder {
+        crate::model::bot_locale_filter::Builder::default()
+    }
+}
+
 /// See [`BotLocaleFilter`](crate::model::BotLocaleFilter).
 pub mod bot_locale_filter {
 
@@ -15914,12 +16041,6 @@ pub mod bot_locale_filter {
                 operator: self.operator,
             }
         }
-    }
-}
-impl BotLocaleFilter {
-    /// Creates a new builder-style object to manufacture [`BotLocaleFilter`](crate::model::BotLocaleFilter).
-    pub fn builder() -> crate::model::bot_locale_filter::Builder {
-        crate::model::bot_locale_filter::Builder::default()
     }
 }
 
@@ -16123,6 +16244,13 @@ impl BotLocaleSortBy {
         self.order.as_ref()
     }
 }
+impl BotLocaleSortBy {
+    /// Creates a new builder-style object to manufacture [`BotLocaleSortBy`](crate::model::BotLocaleSortBy).
+    pub fn builder() -> crate::model::bot_locale_sort_by::Builder {
+        crate::model::bot_locale_sort_by::Builder::default()
+    }
+}
+
 /// See [`BotLocaleSortBy`](crate::model::BotLocaleSortBy).
 pub mod bot_locale_sort_by {
 
@@ -16164,12 +16292,6 @@ pub mod bot_locale_sort_by {
                 order: self.order,
             }
         }
-    }
-}
-impl BotLocaleSortBy {
-    /// Creates a new builder-style object to manufacture [`BotLocaleSortBy`](crate::model::BotLocaleSortBy).
-    pub fn builder() -> crate::model::bot_locale_sort_by::Builder {
-        crate::model::bot_locale_sort_by::Builder::default()
     }
 }
 
@@ -16316,6 +16438,13 @@ impl BotAliasSummary {
         self.last_updated_date_time.as_ref()
     }
 }
+impl BotAliasSummary {
+    /// Creates a new builder-style object to manufacture [`BotAliasSummary`](crate::model::BotAliasSummary).
+    pub fn builder() -> crate::model::bot_alias_summary::Builder {
+        crate::model::bot_alias_summary::Builder::default()
+    }
+}
+
 /// See [`BotAliasSummary`](crate::model::BotAliasSummary).
 pub mod bot_alias_summary {
 
@@ -16428,12 +16557,6 @@ pub mod bot_alias_summary {
         }
     }
 }
-impl BotAliasSummary {
-    /// Creates a new builder-style object to manufacture [`BotAliasSummary`](crate::model::BotAliasSummary).
-    pub fn builder() -> crate::model::bot_alias_summary::Builder {
-        crate::model::bot_alias_summary::Builder::default()
-    }
-}
 
 /// <p>Provides summary information for aggregated utterances. The <code>ListAggregatedUtterances</code> operations combines all instances of the same utterance into a single aggregated summary.</p>
 #[non_exhaustive]
@@ -16492,6 +16615,13 @@ impl AggregatedUtterancesSummary {
         self.contains_data_from_deleted_resources
     }
 }
+impl AggregatedUtterancesSummary {
+    /// Creates a new builder-style object to manufacture [`AggregatedUtterancesSummary`](crate::model::AggregatedUtterancesSummary).
+    pub fn builder() -> crate::model::aggregated_utterances_summary::Builder {
+        crate::model::aggregated_utterances_summary::Builder::default()
+    }
+}
+
 /// See [`AggregatedUtterancesSummary`](crate::model::AggregatedUtterancesSummary).
 pub mod aggregated_utterances_summary {
 
@@ -16599,12 +16729,6 @@ pub mod aggregated_utterances_summary {
         }
     }
 }
-impl AggregatedUtterancesSummary {
-    /// Creates a new builder-style object to manufacture [`AggregatedUtterancesSummary`](crate::model::AggregatedUtterancesSummary).
-    pub fn builder() -> crate::model::aggregated_utterances_summary::Builder {
-        crate::model::aggregated_utterances_summary::Builder::default()
-    }
-}
 
 /// <p>Provides parameters for setting the time window and duration for aggregating utterance data.</p>
 #[non_exhaustive]
@@ -16623,6 +16747,13 @@ impl UtteranceAggregationDuration {
         self.relative_aggregation_duration.as_ref()
     }
 }
+impl UtteranceAggregationDuration {
+    /// Creates a new builder-style object to manufacture [`UtteranceAggregationDuration`](crate::model::UtteranceAggregationDuration).
+    pub fn builder() -> crate::model::utterance_aggregation_duration::Builder {
+        crate::model::utterance_aggregation_duration::Builder::default()
+    }
+}
+
 /// See [`UtteranceAggregationDuration`](crate::model::UtteranceAggregationDuration).
 pub mod utterance_aggregation_duration {
 
@@ -16656,12 +16787,6 @@ pub mod utterance_aggregation_duration {
                 relative_aggregation_duration: self.relative_aggregation_duration,
             }
         }
-    }
-}
-impl UtteranceAggregationDuration {
-    /// Creates a new builder-style object to manufacture [`UtteranceAggregationDuration`](crate::model::UtteranceAggregationDuration).
-    pub fn builder() -> crate::model::utterance_aggregation_duration::Builder {
-        crate::model::utterance_aggregation_duration::Builder::default()
     }
 }
 
@@ -16702,6 +16827,13 @@ impl RelativeAggregationDuration {
         self.time_value
     }
 }
+impl RelativeAggregationDuration {
+    /// Creates a new builder-style object to manufacture [`RelativeAggregationDuration`](crate::model::RelativeAggregationDuration).
+    pub fn builder() -> crate::model::relative_aggregation_duration::Builder {
+        crate::model::relative_aggregation_duration::Builder::default()
+    }
+}
+
 /// See [`RelativeAggregationDuration`](crate::model::RelativeAggregationDuration).
 pub mod relative_aggregation_duration {
 
@@ -16753,12 +16885,6 @@ pub mod relative_aggregation_duration {
                 time_value: self.time_value.unwrap_or_default(),
             }
         }
-    }
-}
-impl RelativeAggregationDuration {
-    /// Creates a new builder-style object to manufacture [`RelativeAggregationDuration`](crate::model::RelativeAggregationDuration).
-    pub fn builder() -> crate::model::relative_aggregation_duration::Builder {
-        crate::model::relative_aggregation_duration::Builder::default()
     }
 }
 
@@ -16887,6 +17013,13 @@ impl AggregatedUtterancesFilter {
         self.operator.as_ref()
     }
 }
+impl AggregatedUtterancesFilter {
+    /// Creates a new builder-style object to manufacture [`AggregatedUtterancesFilter`](crate::model::AggregatedUtterancesFilter).
+    pub fn builder() -> crate::model::aggregated_utterances_filter::Builder {
+        crate::model::aggregated_utterances_filter::Builder::default()
+    }
+}
+
 /// See [`AggregatedUtterancesFilter`](crate::model::AggregatedUtterancesFilter).
 pub mod aggregated_utterances_filter {
 
@@ -16952,12 +17085,6 @@ pub mod aggregated_utterances_filter {
                 operator: self.operator,
             }
         }
-    }
-}
-impl AggregatedUtterancesFilter {
-    /// Creates a new builder-style object to manufacture [`AggregatedUtterancesFilter`](crate::model::AggregatedUtterancesFilter).
-    pub fn builder() -> crate::model::aggregated_utterances_filter::Builder {
-        crate::model::aggregated_utterances_filter::Builder::default()
     }
 }
 
@@ -17163,6 +17290,13 @@ impl AggregatedUtterancesSortBy {
         self.order.as_ref()
     }
 }
+impl AggregatedUtterancesSortBy {
+    /// Creates a new builder-style object to manufacture [`AggregatedUtterancesSortBy`](crate::model::AggregatedUtterancesSortBy).
+    pub fn builder() -> crate::model::aggregated_utterances_sort_by::Builder {
+        crate::model::aggregated_utterances_sort_by::Builder::default()
+    }
+}
+
 /// See [`AggregatedUtterancesSortBy`](crate::model::AggregatedUtterancesSortBy).
 pub mod aggregated_utterances_sort_by {
 
@@ -17204,12 +17338,6 @@ pub mod aggregated_utterances_sort_by {
                 order: self.order,
             }
         }
-    }
-}
-impl AggregatedUtterancesSortBy {
-    /// Creates a new builder-style object to manufacture [`AggregatedUtterancesSortBy`](crate::model::AggregatedUtterancesSortBy).
-    pub fn builder() -> crate::model::aggregated_utterances_sort_by::Builder {
-        crate::model::aggregated_utterances_sort_by::Builder::default()
     }
 }
 
@@ -17442,6 +17570,13 @@ impl BotRecommendationResults {
         self.statistics.as_ref()
     }
 }
+impl BotRecommendationResults {
+    /// Creates a new builder-style object to manufacture [`BotRecommendationResults`](crate::model::BotRecommendationResults).
+    pub fn builder() -> crate::model::bot_recommendation_results::Builder {
+        crate::model::bot_recommendation_results::Builder::default()
+    }
+}
+
 /// See [`BotRecommendationResults`](crate::model::BotRecommendationResults).
 pub mod bot_recommendation_results {
 
@@ -17506,12 +17641,6 @@ pub mod bot_recommendation_results {
         }
     }
 }
-impl BotRecommendationResults {
-    /// Creates a new builder-style object to manufacture [`BotRecommendationResults`](crate::model::BotRecommendationResults).
-    pub fn builder() -> crate::model::bot_recommendation_results::Builder {
-        crate::model::bot_recommendation_results::Builder::default()
-    }
-}
 
 /// <p>A statistical summary of the bot recommendation results.</p>
 #[non_exhaustive]
@@ -17534,6 +17663,13 @@ impl BotRecommendationResultStatistics {
         self.slot_types.as_ref()
     }
 }
+impl BotRecommendationResultStatistics {
+    /// Creates a new builder-style object to manufacture [`BotRecommendationResultStatistics`](crate::model::BotRecommendationResultStatistics).
+    pub fn builder() -> crate::model::bot_recommendation_result_statistics::Builder {
+        crate::model::bot_recommendation_result_statistics::Builder::default()
+    }
+}
+
 /// See [`BotRecommendationResultStatistics`](crate::model::BotRecommendationResultStatistics).
 pub mod bot_recommendation_result_statistics {
 
@@ -17580,12 +17716,6 @@ pub mod bot_recommendation_result_statistics {
         }
     }
 }
-impl BotRecommendationResultStatistics {
-    /// Creates a new builder-style object to manufacture [`BotRecommendationResultStatistics`](crate::model::BotRecommendationResultStatistics).
-    pub fn builder() -> crate::model::bot_recommendation_result_statistics::Builder {
-        crate::model::bot_recommendation_result_statistics::Builder::default()
-    }
-}
 
 /// <p>The object that contains the statistical summary of the recommended slot type associated with the bot recommendation.</p>
 #[non_exhaustive]
@@ -17601,6 +17731,13 @@ impl SlotTypeStatistics {
         self.discovered_slot_type_count
     }
 }
+impl SlotTypeStatistics {
+    /// Creates a new builder-style object to manufacture [`SlotTypeStatistics`](crate::model::SlotTypeStatistics).
+    pub fn builder() -> crate::model::slot_type_statistics::Builder {
+        crate::model::slot_type_statistics::Builder::default()
+    }
+}
+
 /// See [`SlotTypeStatistics`](crate::model::SlotTypeStatistics).
 pub mod slot_type_statistics {
 
@@ -17629,12 +17766,6 @@ pub mod slot_type_statistics {
         }
     }
 }
-impl SlotTypeStatistics {
-    /// Creates a new builder-style object to manufacture [`SlotTypeStatistics`](crate::model::SlotTypeStatistics).
-    pub fn builder() -> crate::model::slot_type_statistics::Builder {
-        crate::model::slot_type_statistics::Builder::default()
-    }
-}
 
 /// <p>The object that contains the statistical summary of recommended intents associated with the bot recommendation.</p>
 #[non_exhaustive]
@@ -17650,6 +17781,13 @@ impl IntentStatistics {
         self.discovered_intent_count
     }
 }
+impl IntentStatistics {
+    /// Creates a new builder-style object to manufacture [`IntentStatistics`](crate::model::IntentStatistics).
+    pub fn builder() -> crate::model::intent_statistics::Builder {
+        crate::model::intent_statistics::Builder::default()
+    }
+}
+
 /// See [`IntentStatistics`](crate::model::IntentStatistics).
 pub mod intent_statistics {
 
@@ -17678,12 +17816,6 @@ pub mod intent_statistics {
         }
     }
 }
-impl IntentStatistics {
-    /// Creates a new builder-style object to manufacture [`IntentStatistics`](crate::model::IntentStatistics).
-    pub fn builder() -> crate::model::intent_statistics::Builder {
-        crate::model::intent_statistics::Builder::default()
-    }
-}
 
 /// <p>Provides information about an event that occurred affecting the bot locale.</p>
 #[non_exhaustive]
@@ -17706,6 +17838,13 @@ impl BotLocaleHistoryEvent {
         self.event_date.as_ref()
     }
 }
+impl BotLocaleHistoryEvent {
+    /// Creates a new builder-style object to manufacture [`BotLocaleHistoryEvent`](crate::model::BotLocaleHistoryEvent).
+    pub fn builder() -> crate::model::bot_locale_history_event::Builder {
+        crate::model::bot_locale_history_event::Builder::default()
+    }
+}
+
 /// See [`BotLocaleHistoryEvent`](crate::model::BotLocaleHistoryEvent).
 pub mod bot_locale_history_event {
 
@@ -17749,12 +17888,6 @@ pub mod bot_locale_history_event {
         }
     }
 }
-impl BotLocaleHistoryEvent {
-    /// Creates a new builder-style object to manufacture [`BotLocaleHistoryEvent`](crate::model::BotLocaleHistoryEvent).
-    pub fn builder() -> crate::model::bot_locale_history_event::Builder {
-        crate::model::bot_locale_history_event::Builder::default()
-    }
-}
 
 /// <p>Provides a record of an event that affects a bot alias. For example, when the version of a bot that the alias points to changes.</p>
 #[non_exhaustive]
@@ -17784,6 +17917,13 @@ impl BotAliasHistoryEvent {
         self.end_date.as_ref()
     }
 }
+impl BotAliasHistoryEvent {
+    /// Creates a new builder-style object to manufacture [`BotAliasHistoryEvent`](crate::model::BotAliasHistoryEvent).
+    pub fn builder() -> crate::model::bot_alias_history_event::Builder {
+        crate::model::bot_alias_history_event::Builder::default()
+    }
+}
+
 /// See [`BotAliasHistoryEvent`](crate::model::BotAliasHistoryEvent).
 pub mod bot_alias_history_event {
 
@@ -17842,12 +17982,6 @@ pub mod bot_alias_history_event {
         }
     }
 }
-impl BotAliasHistoryEvent {
-    /// Creates a new builder-style object to manufacture [`BotAliasHistoryEvent`](crate::model::BotAliasHistoryEvent).
-    pub fn builder() -> crate::model::bot_alias_history_event::Builder {
-        crate::model::bot_alias_history_event::Builder::default()
-    }
-}
 
 /// <p>The IAM principal that you allowing or denying access to an Amazon Lex action. You must provide a <code>service</code> or an <code>arn</code>, but not both in the same statement. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html"> AWS JSON policy elements: Principal </a>.</p>
 #[non_exhaustive]
@@ -17870,6 +18004,13 @@ impl Principal {
         self.arn.as_deref()
     }
 }
+impl Principal {
+    /// Creates a new builder-style object to manufacture [`Principal`](crate::model::Principal).
+    pub fn builder() -> crate::model::principal::Builder {
+        crate::model::principal::Builder::default()
+    }
+}
+
 /// See [`Principal`](crate::model::Principal).
 pub mod principal {
 
@@ -17908,12 +18049,6 @@ pub mod principal {
                 arn: self.arn,
             }
         }
-    }
-}
-impl Principal {
-    /// Creates a new builder-style object to manufacture [`Principal`](crate::model::Principal).
-    pub fn builder() -> crate::model::principal::Builder {
-        crate::model::principal::Builder::default()
     }
 }
 
@@ -18021,6 +18156,13 @@ impl BotVersionLocaleDetails {
         self.source_bot_version.as_deref()
     }
 }
+impl BotVersionLocaleDetails {
+    /// Creates a new builder-style object to manufacture [`BotVersionLocaleDetails`](crate::model::BotVersionLocaleDetails).
+    pub fn builder() -> crate::model::bot_version_locale_details::Builder {
+        crate::model::bot_version_locale_details::Builder::default()
+    }
+}
+
 /// See [`BotVersionLocaleDetails`](crate::model::BotVersionLocaleDetails).
 pub mod bot_version_locale_details {
 
@@ -18052,12 +18194,6 @@ pub mod bot_version_locale_details {
         }
     }
 }
-impl BotVersionLocaleDetails {
-    /// Creates a new builder-style object to manufacture [`BotVersionLocaleDetails`](crate::model::BotVersionLocaleDetails).
-    pub fn builder() -> crate::model::bot_version_locale_details::Builder {
-        crate::model::bot_version_locale_details::Builder::default()
-    }
-}
 
 /// <p>The unique failed custom vocabulary item from the custom vocabulary list.</p>
 #[non_exhaustive]
@@ -18087,6 +18223,13 @@ impl FailedCustomVocabularyItem {
         self.error_code.as_ref()
     }
 }
+impl FailedCustomVocabularyItem {
+    /// Creates a new builder-style object to manufacture [`FailedCustomVocabularyItem`](crate::model::FailedCustomVocabularyItem).
+    pub fn builder() -> crate::model::failed_custom_vocabulary_item::Builder {
+        crate::model::failed_custom_vocabulary_item::Builder::default()
+    }
+}
+
 /// See [`FailedCustomVocabularyItem`](crate::model::FailedCustomVocabularyItem).
 pub mod failed_custom_vocabulary_item {
 
@@ -18143,12 +18286,6 @@ pub mod failed_custom_vocabulary_item {
                 error_code: self.error_code,
             }
         }
-    }
-}
-impl FailedCustomVocabularyItem {
-    /// Creates a new builder-style object to manufacture [`FailedCustomVocabularyItem`](crate::model::FailedCustomVocabularyItem).
-    pub fn builder() -> crate::model::failed_custom_vocabulary_item::Builder {
-        crate::model::failed_custom_vocabulary_item::Builder::default()
     }
 }
 
@@ -18271,6 +18408,13 @@ impl CustomVocabularyEntryId {
         self.item_id.as_deref()
     }
 }
+impl CustomVocabularyEntryId {
+    /// Creates a new builder-style object to manufacture [`CustomVocabularyEntryId`](crate::model::CustomVocabularyEntryId).
+    pub fn builder() -> crate::model::custom_vocabulary_entry_id::Builder {
+        crate::model::custom_vocabulary_entry_id::Builder::default()
+    }
+}
+
 /// See [`CustomVocabularyEntryId`](crate::model::CustomVocabularyEntryId).
 pub mod custom_vocabulary_entry_id {
 
@@ -18297,12 +18441,6 @@ pub mod custom_vocabulary_entry_id {
                 item_id: self.item_id,
             }
         }
-    }
-}
-impl CustomVocabularyEntryId {
-    /// Creates a new builder-style object to manufacture [`CustomVocabularyEntryId`](crate::model::CustomVocabularyEntryId).
-    pub fn builder() -> crate::model::custom_vocabulary_entry_id::Builder {
-        crate::model::custom_vocabulary_entry_id::Builder::default()
     }
 }
 
@@ -18334,6 +18472,13 @@ impl NewCustomVocabularyItem {
         self.display_as.as_deref()
     }
 }
+impl NewCustomVocabularyItem {
+    /// Creates a new builder-style object to manufacture [`NewCustomVocabularyItem`](crate::model::NewCustomVocabularyItem).
+    pub fn builder() -> crate::model::new_custom_vocabulary_item::Builder {
+        crate::model::new_custom_vocabulary_item::Builder::default()
+    }
+}
+
 /// See [`NewCustomVocabularyItem`](crate::model::NewCustomVocabularyItem).
 pub mod new_custom_vocabulary_item {
 
@@ -18384,11 +18529,5 @@ pub mod new_custom_vocabulary_item {
                 display_as: self.display_as,
             }
         }
-    }
-}
-impl NewCustomVocabularyItem {
-    /// Creates a new builder-style object to manufacture [`NewCustomVocabularyItem`](crate::model::NewCustomVocabularyItem).
-    pub fn builder() -> crate::model::new_custom_vocabulary_item::Builder {
-        crate::model::new_custom_vocabulary_item::Builder::default()
     }
 }

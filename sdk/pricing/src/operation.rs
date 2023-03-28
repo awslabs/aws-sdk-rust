@@ -4,7 +4,7 @@
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`describe_services`](crate::client::Client::describe_services).
 ///
-/// See [`crate::client::fluent_builders::DescribeServices`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DescribeServices`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeServices {
     _private: (),
@@ -39,7 +39,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeServices {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`get_attribute_values`](crate::client::Client::get_attribute_values).
 ///
-/// See [`crate::client::fluent_builders::GetAttributeValues`] for more details about the operation.
+/// `ParseStrictResponse` impl for `GetAttributeValues`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetAttributeValues {
     _private: (),
@@ -74,7 +74,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAttributeValues {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`get_products`](crate::client::Client::get_products).
 ///
-/// See [`crate::client::fluent_builders::GetProducts`] for more details about the operation.
+/// `ParseStrictResponse` impl for `GetProducts`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetProducts {
     _private: (),

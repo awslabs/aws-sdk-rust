@@ -241,6 +241,13 @@ impl std::fmt::Debug for User {
         formatter.finish()
     }
 }
+impl User {
+    /// Creates a new builder-style object to manufacture [`User`](crate::model::User).
+    pub fn builder() -> crate::model::user::Builder {
+        crate::model::user::Builder::default()
+    }
+}
+
 /// See [`User`](crate::model::User).
 pub mod user {
 
@@ -513,12 +520,6 @@ pub mod user {
         }
     }
 }
-impl User {
-    /// Creates a new builder-style object to manufacture [`User`](crate::model::User).
-    pub fn builder() -> crate::model::user::Builder {
-        crate::model::user::Builder::default()
-    }
-}
 
 /// <p>The phone number associated with the user.</p>
 #[non_exhaustive]
@@ -557,6 +558,13 @@ impl std::fmt::Debug for PhoneNumber {
         formatter.finish()
     }
 }
+impl PhoneNumber {
+    /// Creates a new builder-style object to manufacture [`PhoneNumber`](crate::model::PhoneNumber).
+    pub fn builder() -> crate::model::phone_number::Builder {
+        crate::model::phone_number::Builder::default()
+    }
+}
+
 /// See [`PhoneNumber`](crate::model::PhoneNumber).
 pub mod phone_number {
 
@@ -616,12 +624,6 @@ pub mod phone_number {
             formatter.field("primary", &"*** Sensitive Data Redacted ***");
             formatter.finish()
         }
-    }
-}
-impl PhoneNumber {
-    /// Creates a new builder-style object to manufacture [`PhoneNumber`](crate::model::PhoneNumber).
-    pub fn builder() -> crate::model::phone_number::Builder {
-        crate::model::phone_number::Builder::default()
     }
 }
 
@@ -702,6 +704,13 @@ impl std::fmt::Debug for Address {
         formatter.finish()
     }
 }
+impl Address {
+    /// Creates a new builder-style object to manufacture [`Address`](crate::model::Address).
+    pub fn builder() -> crate::model::address::Builder {
+        crate::model::address::Builder::default()
+    }
+}
+
 /// See [`Address`](crate::model::Address).
 pub mod address {
 
@@ -831,12 +840,6 @@ pub mod address {
         }
     }
 }
-impl Address {
-    /// Creates a new builder-style object to manufacture [`Address`](crate::model::Address).
-    pub fn builder() -> crate::model::address::Builder {
-        crate::model::address::Builder::default()
-    }
-}
 
 /// <p>The email address associated with the user.</p>
 #[non_exhaustive]
@@ -875,6 +878,13 @@ impl std::fmt::Debug for Email {
         formatter.finish()
     }
 }
+impl Email {
+    /// Creates a new builder-style object to manufacture [`Email`](crate::model::Email).
+    pub fn builder() -> crate::model::email::Builder {
+        crate::model::email::Builder::default()
+    }
+}
+
 /// See [`Email`](crate::model::Email).
 pub mod email {
 
@@ -934,12 +944,6 @@ pub mod email {
             formatter.field("primary", &"*** Sensitive Data Redacted ***");
             formatter.finish()
         }
-    }
-}
-impl Email {
-    /// Creates a new builder-style object to manufacture [`Email`](crate::model::Email).
-    pub fn builder() -> crate::model::email::Builder {
-        crate::model::email::Builder::default()
     }
 }
 
@@ -1004,6 +1008,13 @@ impl std::fmt::Debug for Name {
         formatter.finish()
     }
 }
+impl Name {
+    /// Creates a new builder-style object to manufacture [`Name`](crate::model::Name).
+    pub fn builder() -> crate::model::name::Builder {
+        crate::model::name::Builder::default()
+    }
+}
+
 /// See [`Name`](crate::model::Name).
 pub mod name {
 
@@ -1110,12 +1121,6 @@ pub mod name {
         }
     }
 }
-impl Name {
-    /// Creates a new builder-style object to manufacture [`Name`](crate::model::Name).
-    pub fn builder() -> crate::model::name::Builder {
-        crate::model::name::Builder::default()
-    }
-}
 
 /// <p>The identifier issued to this resource by an external identity provider.</p>
 #[non_exhaustive]
@@ -1146,6 +1151,13 @@ impl std::fmt::Debug for ExternalId {
         formatter.finish()
     }
 }
+impl ExternalId {
+    /// Creates a new builder-style object to manufacture [`ExternalId`](crate::model::ExternalId).
+    pub fn builder() -> crate::model::external_id::Builder {
+        crate::model::external_id::Builder::default()
+    }
+}
+
 /// See [`ExternalId`](crate::model::ExternalId).
 pub mod external_id {
 
@@ -1194,12 +1206,6 @@ pub mod external_id {
         }
     }
 }
-impl ExternalId {
-    /// Creates a new builder-style object to manufacture [`ExternalId`](crate::model::ExternalId).
-    pub fn builder() -> crate::model::external_id::Builder {
-        crate::model::external_id::Builder::default()
-    }
-}
 
 /// <p>A query filter used by <code>ListUsers</code> and <code>ListGroups</code>. This filter object provides the attribute name and attribute value to search users or groups.</p>
 #[non_exhaustive]
@@ -1230,6 +1236,13 @@ impl std::fmt::Debug for Filter {
         formatter.finish()
     }
 }
+impl Filter {
+    /// Creates a new builder-style object to manufacture [`Filter`](crate::model::Filter).
+    pub fn builder() -> crate::model::filter::Builder {
+        crate::model::filter::Builder::default()
+    }
+}
+
 /// See [`Filter`](crate::model::Filter).
 pub mod filter {
 
@@ -1282,12 +1295,6 @@ pub mod filter {
             formatter.field("attribute_value", &"*** Sensitive Data Redacted ***");
             formatter.finish()
         }
-    }
-}
-impl Filter {
-    /// Creates a new builder-style object to manufacture [`Filter`](crate::model::Filter).
-    pub fn builder() -> crate::model::filter::Builder {
-        crate::model::filter::Builder::default()
     }
 }
 
@@ -1408,6 +1415,13 @@ impl AttributeOperation {
         self.attribute_value.as_ref()
     }
 }
+impl AttributeOperation {
+    /// Creates a new builder-style object to manufacture [`AttributeOperation`](crate::model::AttributeOperation).
+    pub fn builder() -> crate::model::attribute_operation::Builder {
+        crate::model::attribute_operation::Builder::default()
+    }
+}
+
 /// See [`AttributeOperation`](crate::model::AttributeOperation).
 pub mod attribute_operation {
 
@@ -1452,12 +1466,6 @@ pub mod attribute_operation {
                 attribute_value: self.attribute_value,
             }
         }
-    }
-}
-impl AttributeOperation {
-    /// Creates a new builder-style object to manufacture [`AttributeOperation`](crate::model::AttributeOperation).
-    pub fn builder() -> crate::model::attribute_operation::Builder {
-        crate::model::attribute_operation::Builder::default()
     }
 }
 
@@ -1514,6 +1522,13 @@ impl std::fmt::Debug for Group {
         formatter.finish()
     }
 }
+impl Group {
+    /// Creates a new builder-style object to manufacture [`Group`](crate::model::Group).
+    pub fn builder() -> crate::model::group::Builder {
+        crate::model::group::Builder::default()
+    }
+}
+
 /// See [`Group`](crate::model::Group).
 pub mod group {
 
@@ -1613,12 +1628,6 @@ pub mod group {
         }
     }
 }
-impl Group {
-    /// Creates a new builder-style object to manufacture [`Group`](crate::model::Group).
-    pub fn builder() -> crate::model::group::Builder {
-        crate::model::group::Builder::default()
-    }
-}
 
 /// <p>Contains the identifiers for a group, a group member, and a <code>GroupMembership</code> object in the identity store.</p>
 #[non_exhaustive]
@@ -1655,6 +1664,13 @@ impl GroupMembership {
         self.member_id.as_ref()
     }
 }
+impl GroupMembership {
+    /// Creates a new builder-style object to manufacture [`GroupMembership`](crate::model::GroupMembership).
+    pub fn builder() -> crate::model::group_membership::Builder {
+        crate::model::group_membership::Builder::default()
+    }
+}
+
 /// See [`GroupMembership`](crate::model::GroupMembership).
 pub mod group_membership {
 
@@ -1723,12 +1739,6 @@ pub mod group_membership {
                 member_id: self.member_id,
             }
         }
-    }
-}
-impl GroupMembership {
-    /// Creates a new builder-style object to manufacture [`GroupMembership`](crate::model::GroupMembership).
-    pub fn builder() -> crate::model::group_membership::Builder {
-        crate::model::group_membership::Builder::default()
     }
 }
 
@@ -1806,6 +1816,13 @@ impl std::fmt::Debug for GroupMembershipExistenceResult {
         formatter.finish()
     }
 }
+impl GroupMembershipExistenceResult {
+    /// Creates a new builder-style object to manufacture [`GroupMembershipExistenceResult`](crate::model::GroupMembershipExistenceResult).
+    pub fn builder() -> crate::model::group_membership_existence_result::Builder {
+        crate::model::group_membership_existence_result::Builder::default()
+    }
+}
+
 /// See [`GroupMembershipExistenceResult`](crate::model::GroupMembershipExistenceResult).
 pub mod group_membership_existence_result {
 
@@ -1865,12 +1882,6 @@ pub mod group_membership_existence_result {
             formatter.field("membership_exists", &"*** Sensitive Data Redacted ***");
             formatter.finish()
         }
-    }
-}
-impl GroupMembershipExistenceResult {
-    /// Creates a new builder-style object to manufacture [`GroupMembershipExistenceResult`](crate::model::GroupMembershipExistenceResult).
-    pub fn builder() -> crate::model::group_membership_existence_result::Builder {
-        crate::model::group_membership_existence_result::Builder::default()
     }
 }
 
@@ -1948,6 +1959,13 @@ impl UniqueAttribute {
         self.attribute_value.as_ref()
     }
 }
+impl UniqueAttribute {
+    /// Creates a new builder-style object to manufacture [`UniqueAttribute`](crate::model::UniqueAttribute).
+    pub fn builder() -> crate::model::unique_attribute::Builder {
+        crate::model::unique_attribute::Builder::default()
+    }
+}
+
 /// See [`UniqueAttribute`](crate::model::UniqueAttribute).
 pub mod unique_attribute {
 
@@ -1992,11 +2010,5 @@ pub mod unique_attribute {
                 attribute_value: self.attribute_value,
             }
         }
-    }
-}
-impl UniqueAttribute {
-    /// Creates a new builder-style object to manufacture [`UniqueAttribute`](crate::model::UniqueAttribute).
-    pub fn builder() -> crate::model::unique_attribute::Builder {
-        crate::model::unique_attribute::Builder::default()
     }
 }

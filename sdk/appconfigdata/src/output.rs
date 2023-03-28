@@ -23,6 +23,13 @@ impl aws_http::request_id::RequestId for StartConfigurationSessionOutput {
         self._request_id.as_deref()
     }
 }
+impl StartConfigurationSessionOutput {
+    /// Creates a new builder-style object to manufacture [`StartConfigurationSessionOutput`](crate::output::StartConfigurationSessionOutput).
+    pub fn builder() -> crate::output::start_configuration_session_output::Builder {
+        crate::output::start_configuration_session_output::Builder::default()
+    }
+}
+
 /// See [`StartConfigurationSessionOutput`](crate::output::StartConfigurationSessionOutput).
 pub mod start_configuration_session_output {
 
@@ -70,12 +77,6 @@ pub mod start_configuration_session_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl StartConfigurationSessionOutput {
-    /// Creates a new builder-style object to manufacture [`StartConfigurationSessionOutput`](crate::output::StartConfigurationSessionOutput).
-    pub fn builder() -> crate::output::start_configuration_session_output::Builder {
-        crate::output::start_configuration_session_output::Builder::default()
     }
 }
 
@@ -137,6 +138,13 @@ impl aws_http::request_id::RequestId for GetLatestConfigurationOutput {
         self._request_id.as_deref()
     }
 }
+impl GetLatestConfigurationOutput {
+    /// Creates a new builder-style object to manufacture [`GetLatestConfigurationOutput`](crate::output::GetLatestConfigurationOutput).
+    pub fn builder() -> crate::output::get_latest_configuration_output::Builder {
+        crate::output::get_latest_configuration_output::Builder::default()
+    }
+}
+
 /// See [`GetLatestConfigurationOutput`](crate::output::GetLatestConfigurationOutput).
 pub mod get_latest_configuration_output {
 
@@ -241,11 +249,5 @@ pub mod get_latest_configuration_output {
             formatter.field("_request_id", &self._request_id);
             formatter.finish()
         }
-    }
-}
-impl GetLatestConfigurationOutput {
-    /// Creates a new builder-style object to manufacture [`GetLatestConfigurationOutput`](crate::output::GetLatestConfigurationOutput).
-    pub fn builder() -> crate::output::get_latest_configuration_output::Builder {
-        crate::output::get_latest_configuration_output::Builder::default()
     }
 }

@@ -10,6 +10,13 @@ impl aws_http::request_id::RequestId for UpdatePermissionSetOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdatePermissionSetOutput {
+    /// Creates a new builder-style object to manufacture [`UpdatePermissionSetOutput`](crate::output::UpdatePermissionSetOutput).
+    pub fn builder() -> crate::output::update_permission_set_output::Builder {
+        crate::output::update_permission_set_output::Builder::default()
+    }
+}
+
 /// See [`UpdatePermissionSetOutput`](crate::output::UpdatePermissionSetOutput).
 pub mod update_permission_set_output {
 
@@ -37,12 +44,6 @@ pub mod update_permission_set_output {
         }
     }
 }
-impl UpdatePermissionSetOutput {
-    /// Creates a new builder-style object to manufacture [`UpdatePermissionSetOutput`](crate::output::UpdatePermissionSetOutput).
-    pub fn builder() -> crate::output::update_permission_set_output::Builder {
-        crate::output::update_permission_set_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -55,6 +56,14 @@ impl aws_http::request_id::RequestId for UpdateInstanceAccessControlAttributeCon
         self._request_id.as_deref()
     }
 }
+impl UpdateInstanceAccessControlAttributeConfigurationOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateInstanceAccessControlAttributeConfigurationOutput`](crate::output::UpdateInstanceAccessControlAttributeConfigurationOutput).
+    pub fn builder(
+    ) -> crate::output::update_instance_access_control_attribute_configuration_output::Builder {
+        crate::output::update_instance_access_control_attribute_configuration_output::Builder::default()
+    }
+}
+
 /// See [`UpdateInstanceAccessControlAttributeConfigurationOutput`](crate::output::UpdateInstanceAccessControlAttributeConfigurationOutput).
 pub mod update_instance_access_control_attribute_configuration_output {
 
@@ -84,13 +93,6 @@ pub mod update_instance_access_control_attribute_configuration_output {
         }
     }
 }
-impl UpdateInstanceAccessControlAttributeConfigurationOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateInstanceAccessControlAttributeConfigurationOutput`](crate::output::UpdateInstanceAccessControlAttributeConfigurationOutput).
-    pub fn builder(
-    ) -> crate::output::update_instance_access_control_attribute_configuration_output::Builder {
-        crate::output::update_instance_access_control_attribute_configuration_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -103,6 +105,13 @@ impl aws_http::request_id::RequestId for UntagResourceOutput {
         self._request_id.as_deref()
     }
 }
+impl UntagResourceOutput {
+    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    pub fn builder() -> crate::output::untag_resource_output::Builder {
+        crate::output::untag_resource_output::Builder::default()
+    }
+}
+
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
 
@@ -130,12 +139,6 @@ pub mod untag_resource_output {
         }
     }
 }
-impl UntagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
-    pub fn builder() -> crate::output::untag_resource_output::Builder {
-        crate::output::untag_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -148,6 +151,13 @@ impl aws_http::request_id::RequestId for TagResourceOutput {
         self._request_id.as_deref()
     }
 }
+impl TagResourceOutput {
+    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
+    pub fn builder() -> crate::output::tag_resource_output::Builder {
+        crate::output::tag_resource_output::Builder::default()
+    }
+}
+
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
 
@@ -175,12 +185,6 @@ pub mod tag_resource_output {
         }
     }
 }
-impl TagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
-    pub fn builder() -> crate::output::tag_resource_output::Builder {
-        crate::output::tag_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -193,6 +197,13 @@ impl aws_http::request_id::RequestId for PutPermissionsBoundaryToPermissionSetOu
         self._request_id.as_deref()
     }
 }
+impl PutPermissionsBoundaryToPermissionSetOutput {
+    /// Creates a new builder-style object to manufacture [`PutPermissionsBoundaryToPermissionSetOutput`](crate::output::PutPermissionsBoundaryToPermissionSetOutput).
+    pub fn builder() -> crate::output::put_permissions_boundary_to_permission_set_output::Builder {
+        crate::output::put_permissions_boundary_to_permission_set_output::Builder::default()
+    }
+}
+
 /// See [`PutPermissionsBoundaryToPermissionSetOutput`](crate::output::PutPermissionsBoundaryToPermissionSetOutput).
 pub mod put_permissions_boundary_to_permission_set_output {
 
@@ -220,12 +231,6 @@ pub mod put_permissions_boundary_to_permission_set_output {
         }
     }
 }
-impl PutPermissionsBoundaryToPermissionSetOutput {
-    /// Creates a new builder-style object to manufacture [`PutPermissionsBoundaryToPermissionSetOutput`](crate::output::PutPermissionsBoundaryToPermissionSetOutput).
-    pub fn builder() -> crate::output::put_permissions_boundary_to_permission_set_output::Builder {
-        crate::output::put_permissions_boundary_to_permission_set_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -238,6 +243,13 @@ impl aws_http::request_id::RequestId for PutInlinePolicyToPermissionSetOutput {
         self._request_id.as_deref()
     }
 }
+impl PutInlinePolicyToPermissionSetOutput {
+    /// Creates a new builder-style object to manufacture [`PutInlinePolicyToPermissionSetOutput`](crate::output::PutInlinePolicyToPermissionSetOutput).
+    pub fn builder() -> crate::output::put_inline_policy_to_permission_set_output::Builder {
+        crate::output::put_inline_policy_to_permission_set_output::Builder::default()
+    }
+}
+
 /// See [`PutInlinePolicyToPermissionSetOutput`](crate::output::PutInlinePolicyToPermissionSetOutput).
 pub mod put_inline_policy_to_permission_set_output {
 
@@ -265,12 +277,6 @@ pub mod put_inline_policy_to_permission_set_output {
         }
     }
 }
-impl PutInlinePolicyToPermissionSetOutput {
-    /// Creates a new builder-style object to manufacture [`PutInlinePolicyToPermissionSetOutput`](crate::output::PutInlinePolicyToPermissionSetOutput).
-    pub fn builder() -> crate::output::put_inline_policy_to_permission_set_output::Builder {
-        crate::output::put_inline_policy_to_permission_set_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -295,6 +301,13 @@ impl aws_http::request_id::RequestId for ProvisionPermissionSetOutput {
         self._request_id.as_deref()
     }
 }
+impl ProvisionPermissionSetOutput {
+    /// Creates a new builder-style object to manufacture [`ProvisionPermissionSetOutput`](crate::output::ProvisionPermissionSetOutput).
+    pub fn builder() -> crate::output::provision_permission_set_output::Builder {
+        crate::output::provision_permission_set_output::Builder::default()
+    }
+}
+
 /// See [`ProvisionPermissionSetOutput`](crate::output::ProvisionPermissionSetOutput).
 pub mod provision_permission_set_output {
 
@@ -341,12 +354,6 @@ pub mod provision_permission_set_output {
         }
     }
 }
-impl ProvisionPermissionSetOutput {
-    /// Creates a new builder-style object to manufacture [`ProvisionPermissionSetOutput`](crate::output::ProvisionPermissionSetOutput).
-    pub fn builder() -> crate::output::provision_permission_set_output::Builder {
-        crate::output::provision_permission_set_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -375,6 +382,13 @@ impl aws_http::request_id::RequestId for ListTagsForResourceOutput {
         self._request_id.as_deref()
     }
 }
+impl ListTagsForResourceOutput {
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
+        crate::output::list_tags_for_resource_output::Builder::default()
+    }
+}
+
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
 
@@ -435,12 +449,6 @@ pub mod list_tags_for_resource_output {
         }
     }
 }
-impl ListTagsForResourceOutput {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
-    pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
-        crate::output::list_tags_for_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -469,6 +477,13 @@ impl aws_http::request_id::RequestId for ListPermissionSetsProvisionedToAccountO
         self._request_id.as_deref()
     }
 }
+impl ListPermissionSetsProvisionedToAccountOutput {
+    /// Creates a new builder-style object to manufacture [`ListPermissionSetsProvisionedToAccountOutput`](crate::output::ListPermissionSetsProvisionedToAccountOutput).
+    pub fn builder() -> crate::output::list_permission_sets_provisioned_to_account_output::Builder {
+        crate::output::list_permission_sets_provisioned_to_account_output::Builder::default()
+    }
+}
+
 /// See [`ListPermissionSetsProvisionedToAccountOutput`](crate::output::ListPermissionSetsProvisionedToAccountOutput).
 pub mod list_permission_sets_provisioned_to_account_output {
 
@@ -529,12 +544,6 @@ pub mod list_permission_sets_provisioned_to_account_output {
         }
     }
 }
-impl ListPermissionSetsProvisionedToAccountOutput {
-    /// Creates a new builder-style object to manufacture [`ListPermissionSetsProvisionedToAccountOutput`](crate::output::ListPermissionSetsProvisionedToAccountOutput).
-    pub fn builder() -> crate::output::list_permission_sets_provisioned_to_account_output::Builder {
-        crate::output::list_permission_sets_provisioned_to_account_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -563,6 +572,13 @@ impl aws_http::request_id::RequestId for ListPermissionSetsOutput {
         self._request_id.as_deref()
     }
 }
+impl ListPermissionSetsOutput {
+    /// Creates a new builder-style object to manufacture [`ListPermissionSetsOutput`](crate::output::ListPermissionSetsOutput).
+    pub fn builder() -> crate::output::list_permission_sets_output::Builder {
+        crate::output::list_permission_sets_output::Builder::default()
+    }
+}
+
 /// See [`ListPermissionSetsOutput`](crate::output::ListPermissionSetsOutput).
 pub mod list_permission_sets_output {
 
@@ -623,12 +639,6 @@ pub mod list_permission_sets_output {
         }
     }
 }
-impl ListPermissionSetsOutput {
-    /// Creates a new builder-style object to manufacture [`ListPermissionSetsOutput`](crate::output::ListPermissionSetsOutput).
-    pub fn builder() -> crate::output::list_permission_sets_output::Builder {
-        crate::output::list_permission_sets_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -660,6 +670,13 @@ impl aws_http::request_id::RequestId for ListPermissionSetProvisioningStatusOutp
         self._request_id.as_deref()
     }
 }
+impl ListPermissionSetProvisioningStatusOutput {
+    /// Creates a new builder-style object to manufacture [`ListPermissionSetProvisioningStatusOutput`](crate::output::ListPermissionSetProvisioningStatusOutput).
+    pub fn builder() -> crate::output::list_permission_set_provisioning_status_output::Builder {
+        crate::output::list_permission_set_provisioning_status_output::Builder::default()
+    }
+}
+
 /// See [`ListPermissionSetProvisioningStatusOutput`](crate::output::ListPermissionSetProvisioningStatusOutput).
 pub mod list_permission_set_provisioning_status_output {
 
@@ -727,12 +744,6 @@ pub mod list_permission_set_provisioning_status_output {
         }
     }
 }
-impl ListPermissionSetProvisioningStatusOutput {
-    /// Creates a new builder-style object to manufacture [`ListPermissionSetProvisioningStatusOutput`](crate::output::ListPermissionSetProvisioningStatusOutput).
-    pub fn builder() -> crate::output::list_permission_set_provisioning_status_output::Builder {
-        crate::output::list_permission_set_provisioning_status_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -764,6 +775,13 @@ impl aws_http::request_id::RequestId for ListManagedPoliciesInPermissionSetOutpu
         self._request_id.as_deref()
     }
 }
+impl ListManagedPoliciesInPermissionSetOutput {
+    /// Creates a new builder-style object to manufacture [`ListManagedPoliciesInPermissionSetOutput`](crate::output::ListManagedPoliciesInPermissionSetOutput).
+    pub fn builder() -> crate::output::list_managed_policies_in_permission_set_output::Builder {
+        crate::output::list_managed_policies_in_permission_set_output::Builder::default()
+    }
+}
+
 /// See [`ListManagedPoliciesInPermissionSetOutput`](crate::output::ListManagedPoliciesInPermissionSetOutput).
 pub mod list_managed_policies_in_permission_set_output {
 
@@ -828,12 +846,6 @@ pub mod list_managed_policies_in_permission_set_output {
         }
     }
 }
-impl ListManagedPoliciesInPermissionSetOutput {
-    /// Creates a new builder-style object to manufacture [`ListManagedPoliciesInPermissionSetOutput`](crate::output::ListManagedPoliciesInPermissionSetOutput).
-    pub fn builder() -> crate::output::list_managed_policies_in_permission_set_output::Builder {
-        crate::output::list_managed_policies_in_permission_set_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -862,6 +874,13 @@ impl aws_http::request_id::RequestId for ListInstancesOutput {
         self._request_id.as_deref()
     }
 }
+impl ListInstancesOutput {
+    /// Creates a new builder-style object to manufacture [`ListInstancesOutput`](crate::output::ListInstancesOutput).
+    pub fn builder() -> crate::output::list_instances_output::Builder {
+        crate::output::list_instances_output::Builder::default()
+    }
+}
+
 /// See [`ListInstancesOutput`](crate::output::ListInstancesOutput).
 pub mod list_instances_output {
 
@@ -922,12 +941,6 @@ pub mod list_instances_output {
         }
     }
 }
-impl ListInstancesOutput {
-    /// Creates a new builder-style object to manufacture [`ListInstancesOutput`](crate::output::ListInstancesOutput).
-    pub fn builder() -> crate::output::list_instances_output::Builder {
-        crate::output::list_instances_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -959,6 +972,15 @@ impl aws_http::request_id::RequestId for ListCustomerManagedPolicyReferencesInPe
         self._request_id.as_deref()
     }
 }
+impl ListCustomerManagedPolicyReferencesInPermissionSetOutput {
+    /// Creates a new builder-style object to manufacture [`ListCustomerManagedPolicyReferencesInPermissionSetOutput`](crate::output::ListCustomerManagedPolicyReferencesInPermissionSetOutput).
+    pub fn builder(
+    ) -> crate::output::list_customer_managed_policy_references_in_permission_set_output::Builder
+    {
+        crate::output::list_customer_managed_policy_references_in_permission_set_output::Builder::default()
+    }
+}
+
 /// See [`ListCustomerManagedPolicyReferencesInPermissionSetOutput`](crate::output::ListCustomerManagedPolicyReferencesInPermissionSetOutput).
 pub mod list_customer_managed_policy_references_in_permission_set_output {
 
@@ -1025,14 +1047,6 @@ pub mod list_customer_managed_policy_references_in_permission_set_output {
         }
     }
 }
-impl ListCustomerManagedPolicyReferencesInPermissionSetOutput {
-    /// Creates a new builder-style object to manufacture [`ListCustomerManagedPolicyReferencesInPermissionSetOutput`](crate::output::ListCustomerManagedPolicyReferencesInPermissionSetOutput).
-    pub fn builder(
-    ) -> crate::output::list_customer_managed_policy_references_in_permission_set_output::Builder
-    {
-        crate::output::list_customer_managed_policy_references_in_permission_set_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1061,6 +1075,14 @@ impl aws_http::request_id::RequestId for ListAccountsForProvisionedPermissionSet
         self._request_id.as_deref()
     }
 }
+impl ListAccountsForProvisionedPermissionSetOutput {
+    /// Creates a new builder-style object to manufacture [`ListAccountsForProvisionedPermissionSetOutput`](crate::output::ListAccountsForProvisionedPermissionSetOutput).
+    pub fn builder() -> crate::output::list_accounts_for_provisioned_permission_set_output::Builder
+    {
+        crate::output::list_accounts_for_provisioned_permission_set_output::Builder::default()
+    }
+}
+
 /// See [`ListAccountsForProvisionedPermissionSetOutput`](crate::output::ListAccountsForProvisionedPermissionSetOutput).
 pub mod list_accounts_for_provisioned_permission_set_output {
 
@@ -1121,13 +1143,6 @@ pub mod list_accounts_for_provisioned_permission_set_output {
         }
     }
 }
-impl ListAccountsForProvisionedPermissionSetOutput {
-    /// Creates a new builder-style object to manufacture [`ListAccountsForProvisionedPermissionSetOutput`](crate::output::ListAccountsForProvisionedPermissionSetOutput).
-    pub fn builder() -> crate::output::list_accounts_for_provisioned_permission_set_output::Builder
-    {
-        crate::output::list_accounts_for_provisioned_permission_set_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1156,6 +1171,13 @@ impl aws_http::request_id::RequestId for ListAccountAssignmentsOutput {
         self._request_id.as_deref()
     }
 }
+impl ListAccountAssignmentsOutput {
+    /// Creates a new builder-style object to manufacture [`ListAccountAssignmentsOutput`](crate::output::ListAccountAssignmentsOutput).
+    pub fn builder() -> crate::output::list_account_assignments_output::Builder {
+        crate::output::list_account_assignments_output::Builder::default()
+    }
+}
+
 /// See [`ListAccountAssignmentsOutput`](crate::output::ListAccountAssignmentsOutput).
 pub mod list_account_assignments_output {
 
@@ -1217,12 +1239,6 @@ pub mod list_account_assignments_output {
         }
     }
 }
-impl ListAccountAssignmentsOutput {
-    /// Creates a new builder-style object to manufacture [`ListAccountAssignmentsOutput`](crate::output::ListAccountAssignmentsOutput).
-    pub fn builder() -> crate::output::list_account_assignments_output::Builder {
-        crate::output::list_account_assignments_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1254,6 +1270,13 @@ impl aws_http::request_id::RequestId for ListAccountAssignmentDeletionStatusOutp
         self._request_id.as_deref()
     }
 }
+impl ListAccountAssignmentDeletionStatusOutput {
+    /// Creates a new builder-style object to manufacture [`ListAccountAssignmentDeletionStatusOutput`](crate::output::ListAccountAssignmentDeletionStatusOutput).
+    pub fn builder() -> crate::output::list_account_assignment_deletion_status_output::Builder {
+        crate::output::list_account_assignment_deletion_status_output::Builder::default()
+    }
+}
+
 /// See [`ListAccountAssignmentDeletionStatusOutput`](crate::output::ListAccountAssignmentDeletionStatusOutput).
 pub mod list_account_assignment_deletion_status_output {
 
@@ -1321,12 +1344,6 @@ pub mod list_account_assignment_deletion_status_output {
         }
     }
 }
-impl ListAccountAssignmentDeletionStatusOutput {
-    /// Creates a new builder-style object to manufacture [`ListAccountAssignmentDeletionStatusOutput`](crate::output::ListAccountAssignmentDeletionStatusOutput).
-    pub fn builder() -> crate::output::list_account_assignment_deletion_status_output::Builder {
-        crate::output::list_account_assignment_deletion_status_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1358,6 +1375,13 @@ impl aws_http::request_id::RequestId for ListAccountAssignmentCreationStatusOutp
         self._request_id.as_deref()
     }
 }
+impl ListAccountAssignmentCreationStatusOutput {
+    /// Creates a new builder-style object to manufacture [`ListAccountAssignmentCreationStatusOutput`](crate::output::ListAccountAssignmentCreationStatusOutput).
+    pub fn builder() -> crate::output::list_account_assignment_creation_status_output::Builder {
+        crate::output::list_account_assignment_creation_status_output::Builder::default()
+    }
+}
+
 /// See [`ListAccountAssignmentCreationStatusOutput`](crate::output::ListAccountAssignmentCreationStatusOutput).
 pub mod list_account_assignment_creation_status_output {
 
@@ -1425,12 +1449,6 @@ pub mod list_account_assignment_creation_status_output {
         }
     }
 }
-impl ListAccountAssignmentCreationStatusOutput {
-    /// Creates a new builder-style object to manufacture [`ListAccountAssignmentCreationStatusOutput`](crate::output::ListAccountAssignmentCreationStatusOutput).
-    pub fn builder() -> crate::output::list_account_assignment_creation_status_output::Builder {
-        crate::output::list_account_assignment_creation_status_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1452,6 +1470,13 @@ impl aws_http::request_id::RequestId for GetPermissionsBoundaryForPermissionSetO
         self._request_id.as_deref()
     }
 }
+impl GetPermissionsBoundaryForPermissionSetOutput {
+    /// Creates a new builder-style object to manufacture [`GetPermissionsBoundaryForPermissionSetOutput`](crate::output::GetPermissionsBoundaryForPermissionSetOutput).
+    pub fn builder() -> crate::output::get_permissions_boundary_for_permission_set_output::Builder {
+        crate::output::get_permissions_boundary_for_permission_set_output::Builder::default()
+    }
+}
+
 /// See [`GetPermissionsBoundaryForPermissionSetOutput`](crate::output::GetPermissionsBoundaryForPermissionSetOutput).
 pub mod get_permissions_boundary_for_permission_set_output {
 
@@ -1494,12 +1519,6 @@ pub mod get_permissions_boundary_for_permission_set_output {
         }
     }
 }
-impl GetPermissionsBoundaryForPermissionSetOutput {
-    /// Creates a new builder-style object to manufacture [`GetPermissionsBoundaryForPermissionSetOutput`](crate::output::GetPermissionsBoundaryForPermissionSetOutput).
-    pub fn builder() -> crate::output::get_permissions_boundary_for_permission_set_output::Builder {
-        crate::output::get_permissions_boundary_for_permission_set_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1521,6 +1540,13 @@ impl aws_http::request_id::RequestId for GetInlinePolicyForPermissionSetOutput {
         self._request_id.as_deref()
     }
 }
+impl GetInlinePolicyForPermissionSetOutput {
+    /// Creates a new builder-style object to manufacture [`GetInlinePolicyForPermissionSetOutput`](crate::output::GetInlinePolicyForPermissionSetOutput).
+    pub fn builder() -> crate::output::get_inline_policy_for_permission_set_output::Builder {
+        crate::output::get_inline_policy_for_permission_set_output::Builder::default()
+    }
+}
+
 /// See [`GetInlinePolicyForPermissionSetOutput`](crate::output::GetInlinePolicyForPermissionSetOutput).
 pub mod get_inline_policy_for_permission_set_output {
 
@@ -1563,12 +1589,6 @@ pub mod get_inline_policy_for_permission_set_output {
         }
     }
 }
-impl GetInlinePolicyForPermissionSetOutput {
-    /// Creates a new builder-style object to manufacture [`GetInlinePolicyForPermissionSetOutput`](crate::output::GetInlinePolicyForPermissionSetOutput).
-    pub fn builder() -> crate::output::get_inline_policy_for_permission_set_output::Builder {
-        crate::output::get_inline_policy_for_permission_set_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1581,6 +1601,13 @@ impl aws_http::request_id::RequestId for DetachManagedPolicyFromPermissionSetOut
         self._request_id.as_deref()
     }
 }
+impl DetachManagedPolicyFromPermissionSetOutput {
+    /// Creates a new builder-style object to manufacture [`DetachManagedPolicyFromPermissionSetOutput`](crate::output::DetachManagedPolicyFromPermissionSetOutput).
+    pub fn builder() -> crate::output::detach_managed_policy_from_permission_set_output::Builder {
+        crate::output::detach_managed_policy_from_permission_set_output::Builder::default()
+    }
+}
+
 /// See [`DetachManagedPolicyFromPermissionSetOutput`](crate::output::DetachManagedPolicyFromPermissionSetOutput).
 pub mod detach_managed_policy_from_permission_set_output {
 
@@ -1608,12 +1635,6 @@ pub mod detach_managed_policy_from_permission_set_output {
         }
     }
 }
-impl DetachManagedPolicyFromPermissionSetOutput {
-    /// Creates a new builder-style object to manufacture [`DetachManagedPolicyFromPermissionSetOutput`](crate::output::DetachManagedPolicyFromPermissionSetOutput).
-    pub fn builder() -> crate::output::detach_managed_policy_from_permission_set_output::Builder {
-        crate::output::detach_managed_policy_from_permission_set_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1628,6 +1649,15 @@ impl aws_http::request_id::RequestId
         self._request_id.as_deref()
     }
 }
+impl DetachCustomerManagedPolicyReferenceFromPermissionSetOutput {
+    /// Creates a new builder-style object to manufacture [`DetachCustomerManagedPolicyReferenceFromPermissionSetOutput`](crate::output::DetachCustomerManagedPolicyReferenceFromPermissionSetOutput).
+    pub fn builder(
+    ) -> crate::output::detach_customer_managed_policy_reference_from_permission_set_output::Builder
+    {
+        crate::output::detach_customer_managed_policy_reference_from_permission_set_output::Builder::default()
+    }
+}
+
 /// See [`DetachCustomerManagedPolicyReferenceFromPermissionSetOutput`](crate::output::DetachCustomerManagedPolicyReferenceFromPermissionSetOutput).
 pub mod detach_customer_managed_policy_reference_from_permission_set_output {
 
@@ -1657,14 +1687,6 @@ pub mod detach_customer_managed_policy_reference_from_permission_set_output {
         }
     }
 }
-impl DetachCustomerManagedPolicyReferenceFromPermissionSetOutput {
-    /// Creates a new builder-style object to manufacture [`DetachCustomerManagedPolicyReferenceFromPermissionSetOutput`](crate::output::DetachCustomerManagedPolicyReferenceFromPermissionSetOutput).
-    pub fn builder(
-    ) -> crate::output::detach_customer_managed_policy_reference_from_permission_set_output::Builder
-    {
-        crate::output::detach_customer_managed_policy_reference_from_permission_set_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1689,6 +1711,13 @@ impl aws_http::request_id::RequestId for DescribePermissionSetProvisioningStatus
         self._request_id.as_deref()
     }
 }
+impl DescribePermissionSetProvisioningStatusOutput {
+    /// Creates a new builder-style object to manufacture [`DescribePermissionSetProvisioningStatusOutput`](crate::output::DescribePermissionSetProvisioningStatusOutput).
+    pub fn builder() -> crate::output::describe_permission_set_provisioning_status_output::Builder {
+        crate::output::describe_permission_set_provisioning_status_output::Builder::default()
+    }
+}
+
 /// See [`DescribePermissionSetProvisioningStatusOutput`](crate::output::DescribePermissionSetProvisioningStatusOutput).
 pub mod describe_permission_set_provisioning_status_output {
 
@@ -1735,12 +1764,6 @@ pub mod describe_permission_set_provisioning_status_output {
         }
     }
 }
-impl DescribePermissionSetProvisioningStatusOutput {
-    /// Creates a new builder-style object to manufacture [`DescribePermissionSetProvisioningStatusOutput`](crate::output::DescribePermissionSetProvisioningStatusOutput).
-    pub fn builder() -> crate::output::describe_permission_set_provisioning_status_output::Builder {
-        crate::output::describe_permission_set_provisioning_status_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1762,6 +1785,13 @@ impl aws_http::request_id::RequestId for DescribePermissionSetOutput {
         self._request_id.as_deref()
     }
 }
+impl DescribePermissionSetOutput {
+    /// Creates a new builder-style object to manufacture [`DescribePermissionSetOutput`](crate::output::DescribePermissionSetOutput).
+    pub fn builder() -> crate::output::describe_permission_set_output::Builder {
+        crate::output::describe_permission_set_output::Builder::default()
+    }
+}
+
 /// See [`DescribePermissionSetOutput`](crate::output::DescribePermissionSetOutput).
 pub mod describe_permission_set_output {
 
@@ -1802,12 +1832,6 @@ pub mod describe_permission_set_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl DescribePermissionSetOutput {
-    /// Creates a new builder-style object to manufacture [`DescribePermissionSetOutput`](crate::output::DescribePermissionSetOutput).
-    pub fn builder() -> crate::output::describe_permission_set_output::Builder {
-        crate::output::describe_permission_set_output::Builder::default()
     }
 }
 
@@ -1852,6 +1876,15 @@ impl aws_http::request_id::RequestId for DescribeInstanceAccessControlAttributeC
         self._request_id.as_deref()
     }
 }
+impl DescribeInstanceAccessControlAttributeConfigurationOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeInstanceAccessControlAttributeConfigurationOutput`](crate::output::DescribeInstanceAccessControlAttributeConfigurationOutput).
+    pub fn builder(
+    ) -> crate::output::describe_instance_access_control_attribute_configuration_output::Builder
+    {
+        crate::output::describe_instance_access_control_attribute_configuration_output::Builder::default()
+    }
+}
+
 /// See [`DescribeInstanceAccessControlAttributeConfigurationOutput`](crate::output::DescribeInstanceAccessControlAttributeConfigurationOutput).
 pub mod describe_instance_access_control_attribute_configuration_output {
 
@@ -1937,14 +1970,6 @@ pub mod describe_instance_access_control_attribute_configuration_output {
         }
     }
 }
-impl DescribeInstanceAccessControlAttributeConfigurationOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeInstanceAccessControlAttributeConfigurationOutput`](crate::output::DescribeInstanceAccessControlAttributeConfigurationOutput).
-    pub fn builder(
-    ) -> crate::output::describe_instance_access_control_attribute_configuration_output::Builder
-    {
-        crate::output::describe_instance_access_control_attribute_configuration_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1969,6 +1994,13 @@ impl aws_http::request_id::RequestId for DescribeAccountAssignmentDeletionStatus
         self._request_id.as_deref()
     }
 }
+impl DescribeAccountAssignmentDeletionStatusOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeAccountAssignmentDeletionStatusOutput`](crate::output::DescribeAccountAssignmentDeletionStatusOutput).
+    pub fn builder() -> crate::output::describe_account_assignment_deletion_status_output::Builder {
+        crate::output::describe_account_assignment_deletion_status_output::Builder::default()
+    }
+}
+
 /// See [`DescribeAccountAssignmentDeletionStatusOutput`](crate::output::DescribeAccountAssignmentDeletionStatusOutput).
 pub mod describe_account_assignment_deletion_status_output {
 
@@ -2015,12 +2047,6 @@ pub mod describe_account_assignment_deletion_status_output {
         }
     }
 }
-impl DescribeAccountAssignmentDeletionStatusOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeAccountAssignmentDeletionStatusOutput`](crate::output::DescribeAccountAssignmentDeletionStatusOutput).
-    pub fn builder() -> crate::output::describe_account_assignment_deletion_status_output::Builder {
-        crate::output::describe_account_assignment_deletion_status_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2045,6 +2071,13 @@ impl aws_http::request_id::RequestId for DescribeAccountAssignmentCreationStatus
         self._request_id.as_deref()
     }
 }
+impl DescribeAccountAssignmentCreationStatusOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeAccountAssignmentCreationStatusOutput`](crate::output::DescribeAccountAssignmentCreationStatusOutput).
+    pub fn builder() -> crate::output::describe_account_assignment_creation_status_output::Builder {
+        crate::output::describe_account_assignment_creation_status_output::Builder::default()
+    }
+}
+
 /// See [`DescribeAccountAssignmentCreationStatusOutput`](crate::output::DescribeAccountAssignmentCreationStatusOutput).
 pub mod describe_account_assignment_creation_status_output {
 
@@ -2091,12 +2124,6 @@ pub mod describe_account_assignment_creation_status_output {
         }
     }
 }
-impl DescribeAccountAssignmentCreationStatusOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeAccountAssignmentCreationStatusOutput`](crate::output::DescribeAccountAssignmentCreationStatusOutput).
-    pub fn builder() -> crate::output::describe_account_assignment_creation_status_output::Builder {
-        crate::output::describe_account_assignment_creation_status_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2109,6 +2136,13 @@ impl aws_http::request_id::RequestId for DeletePermissionSetOutput {
         self._request_id.as_deref()
     }
 }
+impl DeletePermissionSetOutput {
+    /// Creates a new builder-style object to manufacture [`DeletePermissionSetOutput`](crate::output::DeletePermissionSetOutput).
+    pub fn builder() -> crate::output::delete_permission_set_output::Builder {
+        crate::output::delete_permission_set_output::Builder::default()
+    }
+}
+
 /// See [`DeletePermissionSetOutput`](crate::output::DeletePermissionSetOutput).
 pub mod delete_permission_set_output {
 
@@ -2136,12 +2170,6 @@ pub mod delete_permission_set_output {
         }
     }
 }
-impl DeletePermissionSetOutput {
-    /// Creates a new builder-style object to manufacture [`DeletePermissionSetOutput`](crate::output::DeletePermissionSetOutput).
-    pub fn builder() -> crate::output::delete_permission_set_output::Builder {
-        crate::output::delete_permission_set_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2154,6 +2182,14 @@ impl aws_http::request_id::RequestId for DeletePermissionsBoundaryFromPermission
         self._request_id.as_deref()
     }
 }
+impl DeletePermissionsBoundaryFromPermissionSetOutput {
+    /// Creates a new builder-style object to manufacture [`DeletePermissionsBoundaryFromPermissionSetOutput`](crate::output::DeletePermissionsBoundaryFromPermissionSetOutput).
+    pub fn builder(
+    ) -> crate::output::delete_permissions_boundary_from_permission_set_output::Builder {
+        crate::output::delete_permissions_boundary_from_permission_set_output::Builder::default()
+    }
+}
+
 /// See [`DeletePermissionsBoundaryFromPermissionSetOutput`](crate::output::DeletePermissionsBoundaryFromPermissionSetOutput).
 pub mod delete_permissions_boundary_from_permission_set_output {
 
@@ -2181,13 +2217,6 @@ pub mod delete_permissions_boundary_from_permission_set_output {
         }
     }
 }
-impl DeletePermissionsBoundaryFromPermissionSetOutput {
-    /// Creates a new builder-style object to manufacture [`DeletePermissionsBoundaryFromPermissionSetOutput`](crate::output::DeletePermissionsBoundaryFromPermissionSetOutput).
-    pub fn builder(
-    ) -> crate::output::delete_permissions_boundary_from_permission_set_output::Builder {
-        crate::output::delete_permissions_boundary_from_permission_set_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2200,6 +2229,14 @@ impl aws_http::request_id::RequestId for DeleteInstanceAccessControlAttributeCon
         self._request_id.as_deref()
     }
 }
+impl DeleteInstanceAccessControlAttributeConfigurationOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteInstanceAccessControlAttributeConfigurationOutput`](crate::output::DeleteInstanceAccessControlAttributeConfigurationOutput).
+    pub fn builder(
+    ) -> crate::output::delete_instance_access_control_attribute_configuration_output::Builder {
+        crate::output::delete_instance_access_control_attribute_configuration_output::Builder::default()
+    }
+}
+
 /// See [`DeleteInstanceAccessControlAttributeConfigurationOutput`](crate::output::DeleteInstanceAccessControlAttributeConfigurationOutput).
 pub mod delete_instance_access_control_attribute_configuration_output {
 
@@ -2229,13 +2266,6 @@ pub mod delete_instance_access_control_attribute_configuration_output {
         }
     }
 }
-impl DeleteInstanceAccessControlAttributeConfigurationOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteInstanceAccessControlAttributeConfigurationOutput`](crate::output::DeleteInstanceAccessControlAttributeConfigurationOutput).
-    pub fn builder(
-    ) -> crate::output::delete_instance_access_control_attribute_configuration_output::Builder {
-        crate::output::delete_instance_access_control_attribute_configuration_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2248,6 +2278,13 @@ impl aws_http::request_id::RequestId for DeleteInlinePolicyFromPermissionSetOutp
         self._request_id.as_deref()
     }
 }
+impl DeleteInlinePolicyFromPermissionSetOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteInlinePolicyFromPermissionSetOutput`](crate::output::DeleteInlinePolicyFromPermissionSetOutput).
+    pub fn builder() -> crate::output::delete_inline_policy_from_permission_set_output::Builder {
+        crate::output::delete_inline_policy_from_permission_set_output::Builder::default()
+    }
+}
+
 /// See [`DeleteInlinePolicyFromPermissionSetOutput`](crate::output::DeleteInlinePolicyFromPermissionSetOutput).
 pub mod delete_inline_policy_from_permission_set_output {
 
@@ -2275,12 +2312,6 @@ pub mod delete_inline_policy_from_permission_set_output {
         }
     }
 }
-impl DeleteInlinePolicyFromPermissionSetOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteInlinePolicyFromPermissionSetOutput`](crate::output::DeleteInlinePolicyFromPermissionSetOutput).
-    pub fn builder() -> crate::output::delete_inline_policy_from_permission_set_output::Builder {
-        crate::output::delete_inline_policy_from_permission_set_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2305,6 +2336,13 @@ impl aws_http::request_id::RequestId for DeleteAccountAssignmentOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteAccountAssignmentOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteAccountAssignmentOutput`](crate::output::DeleteAccountAssignmentOutput).
+    pub fn builder() -> crate::output::delete_account_assignment_output::Builder {
+        crate::output::delete_account_assignment_output::Builder::default()
+    }
+}
+
 /// See [`DeleteAccountAssignmentOutput`](crate::output::DeleteAccountAssignmentOutput).
 pub mod delete_account_assignment_output {
 
@@ -2351,12 +2389,6 @@ pub mod delete_account_assignment_output {
         }
     }
 }
-impl DeleteAccountAssignmentOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteAccountAssignmentOutput`](crate::output::DeleteAccountAssignmentOutput).
-    pub fn builder() -> crate::output::delete_account_assignment_output::Builder {
-        crate::output::delete_account_assignment_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2378,6 +2410,13 @@ impl aws_http::request_id::RequestId for CreatePermissionSetOutput {
         self._request_id.as_deref()
     }
 }
+impl CreatePermissionSetOutput {
+    /// Creates a new builder-style object to manufacture [`CreatePermissionSetOutput`](crate::output::CreatePermissionSetOutput).
+    pub fn builder() -> crate::output::create_permission_set_output::Builder {
+        crate::output::create_permission_set_output::Builder::default()
+    }
+}
+
 /// See [`CreatePermissionSetOutput`](crate::output::CreatePermissionSetOutput).
 pub mod create_permission_set_output {
 
@@ -2420,12 +2459,6 @@ pub mod create_permission_set_output {
         }
     }
 }
-impl CreatePermissionSetOutput {
-    /// Creates a new builder-style object to manufacture [`CreatePermissionSetOutput`](crate::output::CreatePermissionSetOutput).
-    pub fn builder() -> crate::output::create_permission_set_output::Builder {
-        crate::output::create_permission_set_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2438,6 +2471,14 @@ impl aws_http::request_id::RequestId for CreateInstanceAccessControlAttributeCon
         self._request_id.as_deref()
     }
 }
+impl CreateInstanceAccessControlAttributeConfigurationOutput {
+    /// Creates a new builder-style object to manufacture [`CreateInstanceAccessControlAttributeConfigurationOutput`](crate::output::CreateInstanceAccessControlAttributeConfigurationOutput).
+    pub fn builder(
+    ) -> crate::output::create_instance_access_control_attribute_configuration_output::Builder {
+        crate::output::create_instance_access_control_attribute_configuration_output::Builder::default()
+    }
+}
+
 /// See [`CreateInstanceAccessControlAttributeConfigurationOutput`](crate::output::CreateInstanceAccessControlAttributeConfigurationOutput).
 pub mod create_instance_access_control_attribute_configuration_output {
 
@@ -2467,13 +2508,6 @@ pub mod create_instance_access_control_attribute_configuration_output {
         }
     }
 }
-impl CreateInstanceAccessControlAttributeConfigurationOutput {
-    /// Creates a new builder-style object to manufacture [`CreateInstanceAccessControlAttributeConfigurationOutput`](crate::output::CreateInstanceAccessControlAttributeConfigurationOutput).
-    pub fn builder(
-    ) -> crate::output::create_instance_access_control_attribute_configuration_output::Builder {
-        crate::output::create_instance_access_control_attribute_configuration_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2498,6 +2532,13 @@ impl aws_http::request_id::RequestId for CreateAccountAssignmentOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateAccountAssignmentOutput {
+    /// Creates a new builder-style object to manufacture [`CreateAccountAssignmentOutput`](crate::output::CreateAccountAssignmentOutput).
+    pub fn builder() -> crate::output::create_account_assignment_output::Builder {
+        crate::output::create_account_assignment_output::Builder::default()
+    }
+}
+
 /// See [`CreateAccountAssignmentOutput`](crate::output::CreateAccountAssignmentOutput).
 pub mod create_account_assignment_output {
 
@@ -2544,12 +2585,6 @@ pub mod create_account_assignment_output {
         }
     }
 }
-impl CreateAccountAssignmentOutput {
-    /// Creates a new builder-style object to manufacture [`CreateAccountAssignmentOutput`](crate::output::CreateAccountAssignmentOutput).
-    pub fn builder() -> crate::output::create_account_assignment_output::Builder {
-        crate::output::create_account_assignment_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2562,6 +2597,13 @@ impl aws_http::request_id::RequestId for AttachManagedPolicyToPermissionSetOutpu
         self._request_id.as_deref()
     }
 }
+impl AttachManagedPolicyToPermissionSetOutput {
+    /// Creates a new builder-style object to manufacture [`AttachManagedPolicyToPermissionSetOutput`](crate::output::AttachManagedPolicyToPermissionSetOutput).
+    pub fn builder() -> crate::output::attach_managed_policy_to_permission_set_output::Builder {
+        crate::output::attach_managed_policy_to_permission_set_output::Builder::default()
+    }
+}
+
 /// See [`AttachManagedPolicyToPermissionSetOutput`](crate::output::AttachManagedPolicyToPermissionSetOutput).
 pub mod attach_managed_policy_to_permission_set_output {
 
@@ -2589,12 +2631,6 @@ pub mod attach_managed_policy_to_permission_set_output {
         }
     }
 }
-impl AttachManagedPolicyToPermissionSetOutput {
-    /// Creates a new builder-style object to manufacture [`AttachManagedPolicyToPermissionSetOutput`](crate::output::AttachManagedPolicyToPermissionSetOutput).
-    pub fn builder() -> crate::output::attach_managed_policy_to_permission_set_output::Builder {
-        crate::output::attach_managed_policy_to_permission_set_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2607,6 +2643,15 @@ impl aws_http::request_id::RequestId for AttachCustomerManagedPolicyReferenceToP
         self._request_id.as_deref()
     }
 }
+impl AttachCustomerManagedPolicyReferenceToPermissionSetOutput {
+    /// Creates a new builder-style object to manufacture [`AttachCustomerManagedPolicyReferenceToPermissionSetOutput`](crate::output::AttachCustomerManagedPolicyReferenceToPermissionSetOutput).
+    pub fn builder(
+    ) -> crate::output::attach_customer_managed_policy_reference_to_permission_set_output::Builder
+    {
+        crate::output::attach_customer_managed_policy_reference_to_permission_set_output::Builder::default()
+    }
+}
+
 /// See [`AttachCustomerManagedPolicyReferenceToPermissionSetOutput`](crate::output::AttachCustomerManagedPolicyReferenceToPermissionSetOutput).
 pub mod attach_customer_managed_policy_reference_to_permission_set_output {
 
@@ -2634,13 +2679,5 @@ pub mod attach_customer_managed_policy_reference_to_permission_set_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl AttachCustomerManagedPolicyReferenceToPermissionSetOutput {
-    /// Creates a new builder-style object to manufacture [`AttachCustomerManagedPolicyReferenceToPermissionSetOutput`](crate::output::AttachCustomerManagedPolicyReferenceToPermissionSetOutput).
-    pub fn builder(
-    ) -> crate::output::attach_customer_managed_policy_reference_to_permission_set_output::Builder
-    {
-        crate::output::attach_customer_managed_policy_reference_to_permission_set_output::Builder::default()
     }
 }

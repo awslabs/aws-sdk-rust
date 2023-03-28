@@ -56,6 +56,13 @@ impl WorkflowListItem {
         self.creation_time.as_ref()
     }
 }
+impl WorkflowListItem {
+    /// Creates a new builder-style object to manufacture [`WorkflowListItem`](crate::model::WorkflowListItem).
+    pub fn builder() -> crate::model::workflow_list_item::Builder {
+        crate::model::workflow_list_item::Builder::default()
+    }
+}
+
 /// See [`WorkflowListItem`](crate::model::WorkflowListItem).
 pub mod workflow_list_item {
 
@@ -160,12 +167,6 @@ pub mod workflow_list_item {
                 creation_time: self.creation_time,
             }
         }
-    }
-}
-impl WorkflowListItem {
-    /// Creates a new builder-style object to manufacture [`WorkflowListItem`](crate::model::WorkflowListItem).
-    pub fn builder() -> crate::model::workflow_list_item::Builder {
-        crate::model::workflow_list_item::Builder::default()
     }
 }
 
@@ -380,6 +381,13 @@ impl WorkflowParameter {
         self.optional
     }
 }
+impl WorkflowParameter {
+    /// Creates a new builder-style object to manufacture [`WorkflowParameter`](crate::model::WorkflowParameter).
+    pub fn builder() -> crate::model::workflow_parameter::Builder {
+        crate::model::workflow_parameter::Builder::default()
+    }
+}
+
 /// See [`WorkflowParameter`](crate::model::WorkflowParameter).
 pub mod workflow_parameter {
 
@@ -418,12 +426,6 @@ pub mod workflow_parameter {
                 optional: self.optional,
             }
         }
-    }
-}
-impl WorkflowParameter {
-    /// Creates a new builder-style object to manufacture [`WorkflowParameter`](crate::model::WorkflowParameter).
-    pub fn builder() -> crate::model::workflow_parameter::Builder {
-        crate::model::workflow_parameter::Builder::default()
     }
 }
 
@@ -686,6 +688,13 @@ impl VariantStoreItem {
         self.store_size_bytes
     }
 }
+impl VariantStoreItem {
+    /// Creates a new builder-style object to manufacture [`VariantStoreItem`](crate::model::VariantStoreItem).
+    pub fn builder() -> crate::model::variant_store_item::Builder {
+        crate::model::variant_store_item::Builder::default()
+    }
+}
+
 /// See [`VariantStoreItem`](crate::model::VariantStoreItem).
 pub mod variant_store_item {
 
@@ -849,12 +858,6 @@ pub mod variant_store_item {
         }
     }
 }
-impl VariantStoreItem {
-    /// Creates a new builder-style object to manufacture [`VariantStoreItem`](crate::model::VariantStoreItem).
-    pub fn builder() -> crate::model::variant_store_item::Builder {
-        crate::model::variant_store_item::Builder::default()
-    }
-}
 
 /// <p>Server-side encryption (SSE) settings for a store.</p>
 #[non_exhaustive]
@@ -877,6 +880,13 @@ impl SseConfig {
         self.key_arn.as_deref()
     }
 }
+impl SseConfig {
+    /// Creates a new builder-style object to manufacture [`SseConfig`](crate::model::SseConfig).
+    pub fn builder() -> crate::model::sse_config::Builder {
+        crate::model::sse_config::Builder::default()
+    }
+}
+
 /// See [`SseConfig`](crate::model::SseConfig).
 pub mod sse_config {
 
@@ -918,12 +928,6 @@ pub mod sse_config {
                 key_arn: self.key_arn,
             }
         }
-    }
-}
-impl SseConfig {
-    /// Creates a new builder-style object to manufacture [`SseConfig`](crate::model::SseConfig).
-    pub fn builder() -> crate::model::sse_config::Builder {
-        crate::model::sse_config::Builder::default()
     }
 }
 
@@ -1168,6 +1172,13 @@ impl ListVariantStoresFilter {
         self.status.as_ref()
     }
 }
+impl ListVariantStoresFilter {
+    /// Creates a new builder-style object to manufacture [`ListVariantStoresFilter`](crate::model::ListVariantStoresFilter).
+    pub fn builder() -> crate::model::list_variant_stores_filter::Builder {
+        crate::model::list_variant_stores_filter::Builder::default()
+    }
+}
+
 /// See [`ListVariantStoresFilter`](crate::model::ListVariantStoresFilter).
 pub mod list_variant_stores_filter {
 
@@ -1194,12 +1205,6 @@ pub mod list_variant_stores_filter {
                 status: self.status,
             }
         }
-    }
-}
-impl ListVariantStoresFilter {
-    /// Creates a new builder-style object to manufacture [`ListVariantStoresFilter`](crate::model::ListVariantStoresFilter).
-    pub fn builder() -> crate::model::list_variant_stores_filter::Builder {
-        crate::model::list_variant_stores_filter::Builder::default()
     }
 }
 
@@ -1266,6 +1271,13 @@ impl VariantImportJobItem {
         self.run_left_normalization
     }
 }
+impl VariantImportJobItem {
+    /// Creates a new builder-style object to manufacture [`VariantImportJobItem`](crate::model::VariantImportJobItem).
+    pub fn builder() -> crate::model::variant_import_job_item::Builder {
+        crate::model::variant_import_job_item::Builder::default()
+    }
+}
+
 /// See [`VariantImportJobItem`](crate::model::VariantImportJobItem).
 pub mod variant_import_job_item {
 
@@ -1388,12 +1400,6 @@ pub mod variant_import_job_item {
                 run_left_normalization: self.run_left_normalization.unwrap_or_default(),
             }
         }
-    }
-}
-impl VariantImportJobItem {
-    /// Creates a new builder-style object to manufacture [`VariantImportJobItem`](crate::model::VariantImportJobItem).
-    pub fn builder() -> crate::model::variant_import_job_item::Builder {
-        crate::model::variant_import_job_item::Builder::default()
     }
 }
 
@@ -1529,6 +1535,13 @@ impl ListVariantImportJobsFilter {
         self.store_name.as_deref()
     }
 }
+impl ListVariantImportJobsFilter {
+    /// Creates a new builder-style object to manufacture [`ListVariantImportJobsFilter`](crate::model::ListVariantImportJobsFilter).
+    pub fn builder() -> crate::model::list_variant_import_jobs_filter::Builder {
+        crate::model::list_variant_import_jobs_filter::Builder::default()
+    }
+}
+
 /// See [`ListVariantImportJobsFilter`](crate::model::ListVariantImportJobsFilter).
 pub mod list_variant_import_jobs_filter {
 
@@ -1569,12 +1582,6 @@ pub mod list_variant_import_jobs_filter {
         }
     }
 }
-impl ListVariantImportJobsFilter {
-    /// Creates a new builder-style object to manufacture [`ListVariantImportJobsFilter`](crate::model::ListVariantImportJobsFilter).
-    pub fn builder() -> crate::model::list_variant_import_jobs_filter::Builder {
-        crate::model::list_variant_import_jobs_filter::Builder::default()
-    }
-}
 
 /// <p>A imported variant item's source.</p>
 #[non_exhaustive]
@@ -1590,6 +1597,13 @@ impl VariantImportItemSource {
         self.source.as_deref()
     }
 }
+impl VariantImportItemSource {
+    /// Creates a new builder-style object to manufacture [`VariantImportItemSource`](crate::model::VariantImportItemSource).
+    pub fn builder() -> crate::model::variant_import_item_source::Builder {
+        crate::model::variant_import_item_source::Builder::default()
+    }
+}
+
 /// See [`VariantImportItemSource`](crate::model::VariantImportItemSource).
 pub mod variant_import_item_source {
 
@@ -1618,12 +1632,6 @@ pub mod variant_import_item_source {
         }
     }
 }
-impl VariantImportItemSource {
-    /// Creates a new builder-style object to manufacture [`VariantImportItemSource`](crate::model::VariantImportItemSource).
-    pub fn builder() -> crate::model::variant_import_item_source::Builder {
-        crate::model::variant_import_item_source::Builder::default()
-    }
-}
 
 /// <p>Details about an imported variant item.</p>
 #[non_exhaustive]
@@ -1646,6 +1654,13 @@ impl VariantImportItemDetail {
         self.job_status.as_ref()
     }
 }
+impl VariantImportItemDetail {
+    /// Creates a new builder-style object to manufacture [`VariantImportItemDetail`](crate::model::VariantImportItemDetail).
+    pub fn builder() -> crate::model::variant_import_item_detail::Builder {
+        crate::model::variant_import_item_detail::Builder::default()
+    }
+}
+
 /// See [`VariantImportItemDetail`](crate::model::VariantImportItemDetail).
 pub mod variant_import_item_detail {
 
@@ -1687,12 +1702,6 @@ pub mod variant_import_item_detail {
                 job_status: self.job_status,
             }
         }
-    }
-}
-impl VariantImportItemDetail {
-    /// Creates a new builder-style object to manufacture [`VariantImportItemDetail`](crate::model::VariantImportItemDetail).
-    pub fn builder() -> crate::model::variant_import_item_detail::Builder {
-        crate::model::variant_import_item_detail::Builder::default()
     }
 }
 
@@ -1895,6 +1904,13 @@ impl StartReadSetImportJobSourceItem {
         self.tags.as_ref()
     }
 }
+impl StartReadSetImportJobSourceItem {
+    /// Creates a new builder-style object to manufacture [`StartReadSetImportJobSourceItem`](crate::model::StartReadSetImportJobSourceItem).
+    pub fn builder() -> crate::model::start_read_set_import_job_source_item::Builder {
+        crate::model::start_read_set_import_job_source_item::Builder::default()
+    }
+}
+
 /// See [`StartReadSetImportJobSourceItem`](crate::model::StartReadSetImportJobSourceItem).
 pub mod start_read_set_import_job_source_item {
 
@@ -2048,12 +2064,6 @@ pub mod start_read_set_import_job_source_item {
         }
     }
 }
-impl StartReadSetImportJobSourceItem {
-    /// Creates a new builder-style object to manufacture [`StartReadSetImportJobSourceItem`](crate::model::StartReadSetImportJobSourceItem).
-    pub fn builder() -> crate::model::start_read_set_import_job_source_item::Builder {
-        crate::model::start_read_set_import_job_source_item::Builder::default()
-    }
-}
 
 /// When writing a match expression against `FileType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -2171,6 +2181,13 @@ impl SourceFiles {
         self.source2.as_deref()
     }
 }
+impl SourceFiles {
+    /// Creates a new builder-style object to manufacture [`SourceFiles`](crate::model::SourceFiles).
+    pub fn builder() -> crate::model::source_files::Builder {
+        crate::model::source_files::Builder::default()
+    }
+}
+
 /// See [`SourceFiles`](crate::model::SourceFiles).
 pub mod source_files {
 
@@ -2209,12 +2226,6 @@ pub mod source_files {
                 source2: self.source2,
             }
         }
-    }
-}
-impl SourceFiles {
-    /// Creates a new builder-style object to manufacture [`SourceFiles`](crate::model::SourceFiles).
-    pub fn builder() -> crate::model::source_files::Builder {
-        crate::model::source_files::Builder::default()
     }
 }
 
@@ -2357,6 +2368,13 @@ impl ExportReadSet {
         self.read_set_id.as_deref()
     }
 }
+impl ExportReadSet {
+    /// Creates a new builder-style object to manufacture [`ExportReadSet`](crate::model::ExportReadSet).
+    pub fn builder() -> crate::model::export_read_set::Builder {
+        crate::model::export_read_set::Builder::default()
+    }
+}
+
 /// See [`ExportReadSet`](crate::model::ExportReadSet).
 pub mod export_read_set {
 
@@ -2383,12 +2401,6 @@ pub mod export_read_set {
                 read_set_id: self.read_set_id,
             }
         }
-    }
-}
-impl ExportReadSet {
-    /// Creates a new builder-style object to manufacture [`ExportReadSet`](crate::model::ExportReadSet).
-    pub fn builder() -> crate::model::export_read_set::Builder {
-        crate::model::export_read_set::Builder::default()
     }
 }
 
@@ -2531,6 +2543,13 @@ impl StartReadSetActivationJobSourceItem {
         self.read_set_id.as_deref()
     }
 }
+impl StartReadSetActivationJobSourceItem {
+    /// Creates a new builder-style object to manufacture [`StartReadSetActivationJobSourceItem`](crate::model::StartReadSetActivationJobSourceItem).
+    pub fn builder() -> crate::model::start_read_set_activation_job_source_item::Builder {
+        crate::model::start_read_set_activation_job_source_item::Builder::default()
+    }
+}
+
 /// See [`StartReadSetActivationJobSourceItem`](crate::model::StartReadSetActivationJobSourceItem).
 pub mod start_read_set_activation_job_source_item {
 
@@ -2557,12 +2576,6 @@ pub mod start_read_set_activation_job_source_item {
                 read_set_id: self.read_set_id,
             }
         }
-    }
-}
-impl StartReadSetActivationJobSourceItem {
-    /// Creates a new builder-style object to manufacture [`StartReadSetActivationJobSourceItem`](crate::model::StartReadSetActivationJobSourceItem).
-    pub fn builder() -> crate::model::start_read_set_activation_job_source_item::Builder {
-        crate::model::start_read_set_activation_job_source_item::Builder::default()
     }
 }
 
@@ -2615,6 +2628,13 @@ impl ImportReadSetJobItem {
         self.completion_time.as_ref()
     }
 }
+impl ImportReadSetJobItem {
+    /// Creates a new builder-style object to manufacture [`ImportReadSetJobItem`](crate::model::ImportReadSetJobItem).
+    pub fn builder() -> crate::model::import_read_set_job_item::Builder {
+        crate::model::import_read_set_job_item::Builder::default()
+    }
+}
+
 /// See [`ImportReadSetJobItem`](crate::model::ImportReadSetJobItem).
 pub mod import_read_set_job_item {
 
@@ -2715,12 +2735,6 @@ pub mod import_read_set_job_item {
         }
     }
 }
-impl ImportReadSetJobItem {
-    /// Creates a new builder-style object to manufacture [`ImportReadSetJobItem`](crate::model::ImportReadSetJobItem).
-    pub fn builder() -> crate::model::import_read_set_job_item::Builder {
-        crate::model::import_read_set_job_item::Builder::default()
-    }
-}
 
 /// <p>A filter for import read set jobs.</p>
 #[non_exhaustive]
@@ -2750,6 +2764,13 @@ impl ImportReadSetFilter {
         self.created_before.as_ref()
     }
 }
+impl ImportReadSetFilter {
+    /// Creates a new builder-style object to manufacture [`ImportReadSetFilter`](crate::model::ImportReadSetFilter).
+    pub fn builder() -> crate::model::import_read_set_filter::Builder {
+        crate::model::import_read_set_filter::Builder::default()
+    }
+}
+
 /// See [`ImportReadSetFilter`](crate::model::ImportReadSetFilter).
 pub mod import_read_set_filter {
 
@@ -2811,12 +2832,6 @@ pub mod import_read_set_filter {
         }
     }
 }
-impl ImportReadSetFilter {
-    /// Creates a new builder-style object to manufacture [`ImportReadSetFilter`](crate::model::ImportReadSetFilter).
-    pub fn builder() -> crate::model::import_read_set_filter::Builder {
-        crate::model::import_read_set_filter::Builder::default()
-    }
-}
 
 /// <p>Details about a read set export job.</p>
 #[non_exhaustive]
@@ -2867,6 +2882,13 @@ impl ExportReadSetJobDetail {
         self.completion_time.as_ref()
     }
 }
+impl ExportReadSetJobDetail {
+    /// Creates a new builder-style object to manufacture [`ExportReadSetJobDetail`](crate::model::ExportReadSetJobDetail).
+    pub fn builder() -> crate::model::export_read_set_job_detail::Builder {
+        crate::model::export_read_set_job_detail::Builder::default()
+    }
+}
+
 /// See [`ExportReadSetJobDetail`](crate::model::ExportReadSetJobDetail).
 pub mod export_read_set_job_detail {
 
@@ -2967,12 +2989,6 @@ pub mod export_read_set_job_detail {
         }
     }
 }
-impl ExportReadSetJobDetail {
-    /// Creates a new builder-style object to manufacture [`ExportReadSetJobDetail`](crate::model::ExportReadSetJobDetail).
-    pub fn builder() -> crate::model::export_read_set_job_detail::Builder {
-        crate::model::export_read_set_job_detail::Builder::default()
-    }
-}
 
 /// <p>An read set export job filter.</p>
 #[non_exhaustive]
@@ -3002,6 +3018,13 @@ impl ExportReadSetFilter {
         self.created_before.as_ref()
     }
 }
+impl ExportReadSetFilter {
+    /// Creates a new builder-style object to manufacture [`ExportReadSetFilter`](crate::model::ExportReadSetFilter).
+    pub fn builder() -> crate::model::export_read_set_filter::Builder {
+        crate::model::export_read_set_filter::Builder::default()
+    }
+}
+
 /// See [`ExportReadSetFilter`](crate::model::ExportReadSetFilter).
 pub mod export_read_set_filter {
 
@@ -3063,12 +3086,6 @@ pub mod export_read_set_filter {
         }
     }
 }
-impl ExportReadSetFilter {
-    /// Creates a new builder-style object to manufacture [`ExportReadSetFilter`](crate::model::ExportReadSetFilter).
-    pub fn builder() -> crate::model::export_read_set_filter::Builder {
-        crate::model::export_read_set_filter::Builder::default()
-    }
-}
 
 /// <p>A read set activation job.</p>
 #[non_exhaustive]
@@ -3112,6 +3129,13 @@ impl ActivateReadSetJobItem {
         self.completion_time.as_ref()
     }
 }
+impl ActivateReadSetJobItem {
+    /// Creates a new builder-style object to manufacture [`ActivateReadSetJobItem`](crate::model::ActivateReadSetJobItem).
+    pub fn builder() -> crate::model::activate_read_set_job_item::Builder {
+        crate::model::activate_read_set_job_item::Builder::default()
+    }
+}
+
 /// See [`ActivateReadSetJobItem`](crate::model::ActivateReadSetJobItem).
 pub mod activate_read_set_job_item {
 
@@ -3200,12 +3224,6 @@ pub mod activate_read_set_job_item {
         }
     }
 }
-impl ActivateReadSetJobItem {
-    /// Creates a new builder-style object to manufacture [`ActivateReadSetJobItem`](crate::model::ActivateReadSetJobItem).
-    pub fn builder() -> crate::model::activate_read_set_job_item::Builder {
-        crate::model::activate_read_set_job_item::Builder::default()
-    }
-}
 
 /// <p>A read set activation job filter.</p>
 #[non_exhaustive]
@@ -3235,6 +3253,13 @@ impl ActivateReadSetFilter {
         self.created_before.as_ref()
     }
 }
+impl ActivateReadSetFilter {
+    /// Creates a new builder-style object to manufacture [`ActivateReadSetFilter`](crate::model::ActivateReadSetFilter).
+    pub fn builder() -> crate::model::activate_read_set_filter::Builder {
+        crate::model::activate_read_set_filter::Builder::default()
+    }
+}
+
 /// See [`ActivateReadSetFilter`](crate::model::ActivateReadSetFilter).
 pub mod activate_read_set_filter {
 
@@ -3294,12 +3319,6 @@ pub mod activate_read_set_filter {
                 created_before: self.created_before,
             }
         }
-    }
-}
-impl ActivateReadSetFilter {
-    /// Creates a new builder-style object to manufacture [`ActivateReadSetFilter`](crate::model::ActivateReadSetFilter).
-    pub fn builder() -> crate::model::activate_read_set_filter::Builder {
-        crate::model::activate_read_set_filter::Builder::default()
     }
 }
 
@@ -3391,6 +3410,13 @@ impl ImportReadSetSourceItem {
         self.tags.as_ref()
     }
 }
+impl ImportReadSetSourceItem {
+    /// Creates a new builder-style object to manufacture [`ImportReadSetSourceItem`](crate::model::ImportReadSetSourceItem).
+    pub fn builder() -> crate::model::import_read_set_source_item::Builder {
+        crate::model::import_read_set_source_item::Builder::default()
+    }
+}
+
 /// See [`ImportReadSetSourceItem`](crate::model::ImportReadSetSourceItem).
 pub mod import_read_set_source_item {
 
@@ -3574,12 +3600,6 @@ pub mod import_read_set_source_item {
         }
     }
 }
-impl ImportReadSetSourceItem {
-    /// Creates a new builder-style object to manufacture [`ImportReadSetSourceItem`](crate::model::ImportReadSetSourceItem).
-    pub fn builder() -> crate::model::import_read_set_source_item::Builder {
-        crate::model::import_read_set_source_item::Builder::default()
-    }
-}
 
 /// When writing a match expression against `ReadSetImportJobItemStatus`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -3711,6 +3731,13 @@ impl ExportReadSetDetail {
         self.status_message.as_deref()
     }
 }
+impl ExportReadSetDetail {
+    /// Creates a new builder-style object to manufacture [`ExportReadSetDetail`](crate::model::ExportReadSetDetail).
+    pub fn builder() -> crate::model::export_read_set_detail::Builder {
+        crate::model::export_read_set_detail::Builder::default()
+    }
+}
+
 /// See [`ExportReadSetDetail`](crate::model::ExportReadSetDetail).
 pub mod export_read_set_detail {
 
@@ -3767,12 +3794,6 @@ pub mod export_read_set_detail {
                 status_message: self.status_message,
             }
         }
-    }
-}
-impl ExportReadSetDetail {
-    /// Creates a new builder-style object to manufacture [`ExportReadSetDetail`](crate::model::ExportReadSetDetail).
-    pub fn builder() -> crate::model::export_read_set_detail::Builder {
-        crate::model::export_read_set_detail::Builder::default()
     }
 }
 
@@ -3906,6 +3927,13 @@ impl ActivateReadSetSourceItem {
         self.status_message.as_deref()
     }
 }
+impl ActivateReadSetSourceItem {
+    /// Creates a new builder-style object to manufacture [`ActivateReadSetSourceItem`](crate::model::ActivateReadSetSourceItem).
+    pub fn builder() -> crate::model::activate_read_set_source_item::Builder {
+        crate::model::activate_read_set_source_item::Builder::default()
+    }
+}
+
 /// See [`ActivateReadSetSourceItem`](crate::model::ActivateReadSetSourceItem).
 pub mod activate_read_set_source_item {
 
@@ -3962,12 +3990,6 @@ pub mod activate_read_set_source_item {
                 status_message: self.status_message,
             }
         }
-    }
-}
-impl ActivateReadSetSourceItem {
-    /// Creates a new builder-style object to manufacture [`ActivateReadSetSourceItem`](crate::model::ActivateReadSetSourceItem).
-    pub fn builder() -> crate::model::activate_read_set_source_item::Builder {
-        crate::model::activate_read_set_source_item::Builder::default()
     }
 }
 
@@ -4122,6 +4144,13 @@ impl SequenceStoreDetail {
         self.creation_time.as_ref()
     }
 }
+impl SequenceStoreDetail {
+    /// Creates a new builder-style object to manufacture [`SequenceStoreDetail`](crate::model::SequenceStoreDetail).
+    pub fn builder() -> crate::model::sequence_store_detail::Builder {
+        crate::model::sequence_store_detail::Builder::default()
+    }
+}
+
 /// See [`SequenceStoreDetail`](crate::model::SequenceStoreDetail).
 pub mod sequence_store_detail {
 
@@ -4216,12 +4245,6 @@ pub mod sequence_store_detail {
         }
     }
 }
-impl SequenceStoreDetail {
-    /// Creates a new builder-style object to manufacture [`SequenceStoreDetail`](crate::model::SequenceStoreDetail).
-    pub fn builder() -> crate::model::sequence_store_detail::Builder {
-        crate::model::sequence_store_detail::Builder::default()
-    }
-}
 
 /// <p>A filter for a sequence store.</p>
 #[non_exhaustive]
@@ -4251,6 +4274,13 @@ impl SequenceStoreFilter {
         self.created_before.as_ref()
     }
 }
+impl SequenceStoreFilter {
+    /// Creates a new builder-style object to manufacture [`SequenceStoreFilter`](crate::model::SequenceStoreFilter).
+    pub fn builder() -> crate::model::sequence_store_filter::Builder {
+        crate::model::sequence_store_filter::Builder::default()
+    }
+}
+
 /// See [`SequenceStoreFilter`](crate::model::SequenceStoreFilter).
 pub mod sequence_store_filter {
 
@@ -4307,12 +4337,6 @@ pub mod sequence_store_filter {
                 created_before: self.created_before,
             }
         }
-    }
-}
-impl SequenceStoreFilter {
-    /// Creates a new builder-style object to manufacture [`SequenceStoreFilter`](crate::model::SequenceStoreFilter).
-    pub fn builder() -> crate::model::sequence_store_filter::Builder {
-        crate::model::sequence_store_filter::Builder::default()
     }
 }
 
@@ -4439,6 +4463,13 @@ impl ReadSetBatchError {
         self.message.as_deref()
     }
 }
+impl ReadSetBatchError {
+    /// Creates a new builder-style object to manufacture [`ReadSetBatchError`](crate::model::ReadSetBatchError).
+    pub fn builder() -> crate::model::read_set_batch_error::Builder {
+        crate::model::read_set_batch_error::Builder::default()
+    }
+}
+
 /// See [`ReadSetBatchError`](crate::model::ReadSetBatchError).
 pub mod read_set_batch_error {
 
@@ -4489,12 +4520,6 @@ pub mod read_set_batch_error {
                 message: self.message,
             }
         }
-    }
-}
-impl ReadSetBatchError {
-    /// Creates a new builder-style object to manufacture [`ReadSetBatchError`](crate::model::ReadSetBatchError).
-    pub fn builder() -> crate::model::read_set_batch_error::Builder {
-        crate::model::read_set_batch_error::Builder::default()
     }
 }
 
@@ -4589,6 +4614,13 @@ impl ReadSetListItem {
         self.creation_time.as_ref()
     }
 }
+impl ReadSetListItem {
+    /// Creates a new builder-style object to manufacture [`ReadSetListItem`](crate::model::ReadSetListItem).
+    pub fn builder() -> crate::model::read_set_list_item::Builder {
+        crate::model::read_set_list_item::Builder::default()
+    }
+}
+
 /// See [`ReadSetListItem`](crate::model::ReadSetListItem).
 pub mod read_set_list_item {
 
@@ -4764,12 +4796,6 @@ pub mod read_set_list_item {
         }
     }
 }
-impl ReadSetListItem {
-    /// Creates a new builder-style object to manufacture [`ReadSetListItem`](crate::model::ReadSetListItem).
-    pub fn builder() -> crate::model::read_set_list_item::Builder {
-        crate::model::read_set_list_item::Builder::default()
-    }
-}
 
 /// <p>Details about a sequence.</p>
 #[non_exhaustive]
@@ -4806,6 +4832,13 @@ impl SequenceInformation {
         self.alignment.as_deref()
     }
 }
+impl SequenceInformation {
+    /// Creates a new builder-style object to manufacture [`SequenceInformation`](crate::model::SequenceInformation).
+    pub fn builder() -> crate::model::sequence_information::Builder {
+        crate::model::sequence_information::Builder::default()
+    }
+}
+
 /// See [`SequenceInformation`](crate::model::SequenceInformation).
 pub mod sequence_information {
 
@@ -4871,12 +4904,6 @@ pub mod sequence_information {
                 alignment: self.alignment,
             }
         }
-    }
-}
-impl SequenceInformation {
-    /// Creates a new builder-style object to manufacture [`SequenceInformation`](crate::model::SequenceInformation).
-    pub fn builder() -> crate::model::sequence_information::Builder {
-        crate::model::sequence_information::Builder::default()
     }
 }
 
@@ -5027,6 +5054,13 @@ impl ReadSetFilter {
         self.created_before.as_ref()
     }
 }
+impl ReadSetFilter {
+    /// Creates a new builder-style object to manufacture [`ReadSetFilter`](crate::model::ReadSetFilter).
+    pub fn builder() -> crate::model::read_set_filter::Builder {
+        crate::model::read_set_filter::Builder::default()
+    }
+}
+
 /// See [`ReadSetFilter`](crate::model::ReadSetFilter).
 pub mod read_set_filter {
 
@@ -5115,12 +5149,6 @@ pub mod read_set_filter {
         }
     }
 }
-impl ReadSetFilter {
-    /// Creates a new builder-style object to manufacture [`ReadSetFilter`](crate::model::ReadSetFilter).
-    pub fn builder() -> crate::model::read_set_filter::Builder {
-        crate::model::read_set_filter::Builder::default()
-    }
-}
 
 /// <p>Files in a read set.</p>
 #[non_exhaustive]
@@ -5150,6 +5178,13 @@ impl ReadSetFiles {
         self.index.as_ref()
     }
 }
+impl ReadSetFiles {
+    /// Creates a new builder-style object to manufacture [`ReadSetFiles`](crate::model::ReadSetFiles).
+    pub fn builder() -> crate::model::read_set_files::Builder {
+        crate::model::read_set_files::Builder::default()
+    }
+}
+
 /// See [`ReadSetFiles`](crate::model::ReadSetFiles).
 pub mod read_set_files {
 
@@ -5211,12 +5246,6 @@ pub mod read_set_files {
         }
     }
 }
-impl ReadSetFiles {
-    /// Creates a new builder-style object to manufacture [`ReadSetFiles`](crate::model::ReadSetFiles).
-    pub fn builder() -> crate::model::read_set_files::Builder {
-        crate::model::read_set_files::Builder::default()
-    }
-}
 
 /// <p>Details about a file.</p>
 #[non_exhaustive]
@@ -5246,6 +5275,13 @@ impl FileInformation {
         self.content_length
     }
 }
+impl FileInformation {
+    /// Creates a new builder-style object to manufacture [`FileInformation`](crate::model::FileInformation).
+    pub fn builder() -> crate::model::file_information::Builder {
+        crate::model::file_information::Builder::default()
+    }
+}
+
 /// See [`FileInformation`](crate::model::FileInformation).
 pub mod file_information {
 
@@ -5296,12 +5332,6 @@ pub mod file_information {
                 content_length: self.content_length,
             }
         }
-    }
-}
-impl FileInformation {
-    /// Creates a new builder-style object to manufacture [`FileInformation`](crate::model::FileInformation).
-    pub fn builder() -> crate::model::file_information::Builder {
-        crate::model::file_information::Builder::default()
     }
 }
 
@@ -5382,6 +5412,13 @@ impl RunListItem {
         self.stop_time.as_ref()
     }
 }
+impl RunListItem {
+    /// Creates a new builder-style object to manufacture [`RunListItem`](crate::model::RunListItem).
+    pub fn builder() -> crate::model::run_list_item::Builder {
+        crate::model::run_list_item::Builder::default()
+    }
+}
+
 /// See [`RunListItem`](crate::model::RunListItem).
 pub mod run_list_item {
 
@@ -5525,12 +5562,6 @@ pub mod run_list_item {
                 stop_time: self.stop_time,
             }
         }
-    }
-}
-impl RunListItem {
-    /// Creates a new builder-style object to manufacture [`RunListItem`](crate::model::RunListItem).
-    pub fn builder() -> crate::model::run_list_item::Builder {
-        crate::model::run_list_item::Builder::default()
     }
 }
 
@@ -5911,6 +5942,13 @@ impl TaskListItem {
         self.stop_time.as_ref()
     }
 }
+impl TaskListItem {
+    /// Creates a new builder-style object to manufacture [`TaskListItem`](crate::model::TaskListItem).
+    pub fn builder() -> crate::model::task_list_item::Builder {
+        crate::model::task_list_item::Builder::default()
+    }
+}
+
 /// See [`TaskListItem`](crate::model::TaskListItem).
 pub mod task_list_item {
 
@@ -6030,12 +6068,6 @@ pub mod task_list_item {
                 stop_time: self.stop_time,
             }
         }
-    }
-}
-impl TaskListItem {
-    /// Creates a new builder-style object to manufacture [`TaskListItem`](crate::model::TaskListItem).
-    pub fn builder() -> crate::model::task_list_item::Builder {
-        crate::model::task_list_item::Builder::default()
     }
 }
 
@@ -6218,6 +6250,13 @@ impl RunGroupListItem {
         self.creation_time.as_ref()
     }
 }
+impl RunGroupListItem {
+    /// Creates a new builder-style object to manufacture [`RunGroupListItem`](crate::model::RunGroupListItem).
+    pub fn builder() -> crate::model::run_group_list_item::Builder {
+        crate::model::run_group_list_item::Builder::default()
+    }
+}
+
 /// See [`RunGroupListItem`](crate::model::RunGroupListItem).
 pub mod run_group_list_item {
 
@@ -6319,12 +6358,6 @@ pub mod run_group_list_item {
                 creation_time: self.creation_time,
             }
         }
-    }
-}
-impl RunGroupListItem {
-    /// Creates a new builder-style object to manufacture [`RunGroupListItem`](crate::model::RunGroupListItem).
-    pub fn builder() -> crate::model::run_group_list_item::Builder {
-        crate::model::run_group_list_item::Builder::default()
     }
 }
 
@@ -6492,6 +6525,13 @@ impl StartReferenceImportJobSourceItem {
         self.tags.as_ref()
     }
 }
+impl StartReferenceImportJobSourceItem {
+    /// Creates a new builder-style object to manufacture [`StartReferenceImportJobSourceItem`](crate::model::StartReferenceImportJobSourceItem).
+    pub fn builder() -> crate::model::start_reference_import_job_source_item::Builder {
+        crate::model::start_reference_import_job_source_item::Builder::default()
+    }
+}
+
 /// See [`StartReferenceImportJobSourceItem`](crate::model::StartReferenceImportJobSourceItem).
 pub mod start_reference_import_job_source_item {
 
@@ -6573,12 +6613,6 @@ pub mod start_reference_import_job_source_item {
         }
     }
 }
-impl StartReferenceImportJobSourceItem {
-    /// Creates a new builder-style object to manufacture [`StartReferenceImportJobSourceItem`](crate::model::StartReferenceImportJobSourceItem).
-    pub fn builder() -> crate::model::start_reference_import_job_source_item::Builder {
-        crate::model::start_reference_import_job_source_item::Builder::default()
-    }
-}
 
 /// <p>An import reference job.</p>
 #[non_exhaustive]
@@ -6629,6 +6663,13 @@ impl ImportReferenceJobItem {
         self.completion_time.as_ref()
     }
 }
+impl ImportReferenceJobItem {
+    /// Creates a new builder-style object to manufacture [`ImportReferenceJobItem`](crate::model::ImportReferenceJobItem).
+    pub fn builder() -> crate::model::import_reference_job_item::Builder {
+        crate::model::import_reference_job_item::Builder::default()
+    }
+}
+
 /// See [`ImportReferenceJobItem`](crate::model::ImportReferenceJobItem).
 pub mod import_reference_job_item {
 
@@ -6729,12 +6770,6 @@ pub mod import_reference_job_item {
         }
     }
 }
-impl ImportReferenceJobItem {
-    /// Creates a new builder-style object to manufacture [`ImportReferenceJobItem`](crate::model::ImportReferenceJobItem).
-    pub fn builder() -> crate::model::import_reference_job_item::Builder {
-        crate::model::import_reference_job_item::Builder::default()
-    }
-}
 
 /// <p>A filter for import references.</p>
 #[non_exhaustive]
@@ -6764,6 +6799,13 @@ impl ImportReferenceFilter {
         self.created_before.as_ref()
     }
 }
+impl ImportReferenceFilter {
+    /// Creates a new builder-style object to manufacture [`ImportReferenceFilter`](crate::model::ImportReferenceFilter).
+    pub fn builder() -> crate::model::import_reference_filter::Builder {
+        crate::model::import_reference_filter::Builder::default()
+    }
+}
+
 /// See [`ImportReferenceFilter`](crate::model::ImportReferenceFilter).
 pub mod import_reference_filter {
 
@@ -6825,12 +6867,6 @@ pub mod import_reference_filter {
         }
     }
 }
-impl ImportReferenceFilter {
-    /// Creates a new builder-style object to manufacture [`ImportReferenceFilter`](crate::model::ImportReferenceFilter).
-    pub fn builder() -> crate::model::import_reference_filter::Builder {
-        crate::model::import_reference_filter::Builder::default()
-    }
-}
 
 /// <p>An genome reference source.</p>
 #[non_exhaustive]
@@ -6885,6 +6921,13 @@ impl ImportReferenceSourceItem {
         self.tags.as_ref()
     }
 }
+impl ImportReferenceSourceItem {
+    /// Creates a new builder-style object to manufacture [`ImportReferenceSourceItem`](crate::model::ImportReferenceSourceItem).
+    pub fn builder() -> crate::model::import_reference_source_item::Builder {
+        crate::model::import_reference_source_item::Builder::default()
+    }
+}
+
 /// See [`ImportReferenceSourceItem`](crate::model::ImportReferenceSourceItem).
 pub mod import_reference_source_item {
 
@@ -6994,12 +7037,6 @@ pub mod import_reference_source_item {
                 tags: self.tags,
             }
         }
-    }
-}
-impl ImportReferenceSourceItem {
-    /// Creates a new builder-style object to manufacture [`ImportReferenceSourceItem`](crate::model::ImportReferenceSourceItem).
-    pub fn builder() -> crate::model::import_reference_source_item::Builder {
-        crate::model::import_reference_source_item::Builder::default()
     }
 }
 
@@ -7154,6 +7191,13 @@ impl ReferenceStoreDetail {
         self.creation_time.as_ref()
     }
 }
+impl ReferenceStoreDetail {
+    /// Creates a new builder-style object to manufacture [`ReferenceStoreDetail`](crate::model::ReferenceStoreDetail).
+    pub fn builder() -> crate::model::reference_store_detail::Builder {
+        crate::model::reference_store_detail::Builder::default()
+    }
+}
+
 /// See [`ReferenceStoreDetail`](crate::model::ReferenceStoreDetail).
 pub mod reference_store_detail {
 
@@ -7248,12 +7292,6 @@ pub mod reference_store_detail {
         }
     }
 }
-impl ReferenceStoreDetail {
-    /// Creates a new builder-style object to manufacture [`ReferenceStoreDetail`](crate::model::ReferenceStoreDetail).
-    pub fn builder() -> crate::model::reference_store_detail::Builder {
-        crate::model::reference_store_detail::Builder::default()
-    }
-}
 
 /// <p>A filter for reference stores.</p>
 #[non_exhaustive]
@@ -7283,6 +7321,13 @@ impl ReferenceStoreFilter {
         self.created_before.as_ref()
     }
 }
+impl ReferenceStoreFilter {
+    /// Creates a new builder-style object to manufacture [`ReferenceStoreFilter`](crate::model::ReferenceStoreFilter).
+    pub fn builder() -> crate::model::reference_store_filter::Builder {
+        crate::model::reference_store_filter::Builder::default()
+    }
+}
+
 /// See [`ReferenceStoreFilter`](crate::model::ReferenceStoreFilter).
 pub mod reference_store_filter {
 
@@ -7339,12 +7384,6 @@ pub mod reference_store_filter {
                 created_before: self.created_before,
             }
         }
-    }
-}
-impl ReferenceStoreFilter {
-    /// Creates a new builder-style object to manufacture [`ReferenceStoreFilter`](crate::model::ReferenceStoreFilter).
-    pub fn builder() -> crate::model::reference_store_filter::Builder {
-        crate::model::reference_store_filter::Builder::default()
     }
 }
 
@@ -7508,6 +7547,13 @@ impl ReferenceListItem {
         self.update_time.as_ref()
     }
 }
+impl ReferenceListItem {
+    /// Creates a new builder-style object to manufacture [`ReferenceListItem`](crate::model::ReferenceListItem).
+    pub fn builder() -> crate::model::reference_list_item::Builder {
+        crate::model::reference_list_item::Builder::default()
+    }
+}
+
 /// See [`ReferenceListItem`](crate::model::ReferenceListItem).
 pub mod reference_list_item {
 
@@ -7644,12 +7690,6 @@ pub mod reference_list_item {
         }
     }
 }
-impl ReferenceListItem {
-    /// Creates a new builder-style object to manufacture [`ReferenceListItem`](crate::model::ReferenceListItem).
-    pub fn builder() -> crate::model::reference_list_item::Builder {
-        crate::model::reference_list_item::Builder::default()
-    }
-}
 
 /// When writing a match expression against `ReferenceStatus`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -7781,6 +7821,13 @@ impl ReferenceFilter {
         self.created_before.as_ref()
     }
 }
+impl ReferenceFilter {
+    /// Creates a new builder-style object to manufacture [`ReferenceFilter`](crate::model::ReferenceFilter).
+    pub fn builder() -> crate::model::reference_filter::Builder {
+        crate::model::reference_filter::Builder::default()
+    }
+}
+
 /// See [`ReferenceFilter`](crate::model::ReferenceFilter).
 pub mod reference_filter {
 
@@ -7851,12 +7898,6 @@ pub mod reference_filter {
         }
     }
 }
-impl ReferenceFilter {
-    /// Creates a new builder-style object to manufacture [`ReferenceFilter`](crate::model::ReferenceFilter).
-    pub fn builder() -> crate::model::reference_filter::Builder {
-        crate::model::reference_filter::Builder::default()
-    }
-}
 
 /// <p>A set of genome reference files.</p>
 #[non_exhaustive]
@@ -7879,6 +7920,13 @@ impl ReferenceFiles {
         self.index.as_ref()
     }
 }
+impl ReferenceFiles {
+    /// Creates a new builder-style object to manufacture [`ReferenceFiles`](crate::model::ReferenceFiles).
+    pub fn builder() -> crate::model::reference_files::Builder {
+        crate::model::reference_files::Builder::default()
+    }
+}
+
 /// See [`ReferenceFiles`](crate::model::ReferenceFiles).
 pub mod reference_files {
 
@@ -7923,12 +7971,6 @@ pub mod reference_files {
                 index: self.index,
             }
         }
-    }
-}
-impl ReferenceFiles {
-    /// Creates a new builder-style object to manufacture [`ReferenceFiles`](crate::model::ReferenceFiles).
-    pub fn builder() -> crate::model::reference_files::Builder {
-        crate::model::reference_files::Builder::default()
     }
 }
 
@@ -8023,6 +8065,13 @@ impl AnnotationStoreItem {
         self.store_size_bytes
     }
 }
+impl AnnotationStoreItem {
+    /// Creates a new builder-style object to manufacture [`AnnotationStoreItem`](crate::model::AnnotationStoreItem).
+    pub fn builder() -> crate::model::annotation_store_item::Builder {
+        crate::model::annotation_store_item::Builder::default()
+    }
+}
+
 /// See [`AnnotationStoreItem`](crate::model::AnnotationStoreItem).
 pub mod annotation_store_item {
 
@@ -8201,12 +8250,6 @@ pub mod annotation_store_item {
         }
     }
 }
-impl AnnotationStoreItem {
-    /// Creates a new builder-style object to manufacture [`AnnotationStoreItem`](crate::model::AnnotationStoreItem).
-    pub fn builder() -> crate::model::annotation_store_item::Builder {
-        crate::model::annotation_store_item::Builder::default()
-    }
-}
 
 /// When writing a match expression against `StoreFormat`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -8317,6 +8360,13 @@ impl ListAnnotationStoresFilter {
         self.status.as_ref()
     }
 }
+impl ListAnnotationStoresFilter {
+    /// Creates a new builder-style object to manufacture [`ListAnnotationStoresFilter`](crate::model::ListAnnotationStoresFilter).
+    pub fn builder() -> crate::model::list_annotation_stores_filter::Builder {
+        crate::model::list_annotation_stores_filter::Builder::default()
+    }
+}
+
 /// See [`ListAnnotationStoresFilter`](crate::model::ListAnnotationStoresFilter).
 pub mod list_annotation_stores_filter {
 
@@ -8343,12 +8393,6 @@ pub mod list_annotation_stores_filter {
                 status: self.status,
             }
         }
-    }
-}
-impl ListAnnotationStoresFilter {
-    /// Creates a new builder-style object to manufacture [`ListAnnotationStoresFilter`](crate::model::ListAnnotationStoresFilter).
-    pub fn builder() -> crate::model::list_annotation_stores_filter::Builder {
-        crate::model::list_annotation_stores_filter::Builder::default()
     }
 }
 
@@ -8433,6 +8477,13 @@ impl TsvStoreOptions {
         self.schema.as_deref()
     }
 }
+impl TsvStoreOptions {
+    /// Creates a new builder-style object to manufacture [`TsvStoreOptions`](crate::model::TsvStoreOptions).
+    pub fn builder() -> crate::model::tsv_store_options::Builder {
+        crate::model::tsv_store_options::Builder::default()
+    }
+}
+
 /// See [`TsvStoreOptions`](crate::model::TsvStoreOptions).
 pub mod tsv_store_options {
 
@@ -8523,12 +8574,6 @@ pub mod tsv_store_options {
                 schema: self.schema,
             }
         }
-    }
-}
-impl TsvStoreOptions {
-    /// Creates a new builder-style object to manufacture [`TsvStoreOptions`](crate::model::TsvStoreOptions).
-    pub fn builder() -> crate::model::tsv_store_options::Builder {
-        crate::model::tsv_store_options::Builder::default()
     }
 }
 
@@ -8940,6 +8985,13 @@ impl AnnotationImportJobItem {
         self.run_left_normalization
     }
 }
+impl AnnotationImportJobItem {
+    /// Creates a new builder-style object to manufacture [`AnnotationImportJobItem`](crate::model::AnnotationImportJobItem).
+    pub fn builder() -> crate::model::annotation_import_job_item::Builder {
+        crate::model::annotation_import_job_item::Builder::default()
+    }
+}
+
 /// See [`AnnotationImportJobItem`](crate::model::AnnotationImportJobItem).
 pub mod annotation_import_job_item {
 
@@ -9064,12 +9116,6 @@ pub mod annotation_import_job_item {
         }
     }
 }
-impl AnnotationImportJobItem {
-    /// Creates a new builder-style object to manufacture [`AnnotationImportJobItem`](crate::model::AnnotationImportJobItem).
-    pub fn builder() -> crate::model::annotation_import_job_item::Builder {
-        crate::model::annotation_import_job_item::Builder::default()
-    }
-}
 
 /// <p>A filter for annotation import jobs.</p>
 #[non_exhaustive]
@@ -9092,6 +9138,13 @@ impl ListAnnotationImportJobsFilter {
         self.store_name.as_deref()
     }
 }
+impl ListAnnotationImportJobsFilter {
+    /// Creates a new builder-style object to manufacture [`ListAnnotationImportJobsFilter`](crate::model::ListAnnotationImportJobsFilter).
+    pub fn builder() -> crate::model::list_annotation_import_jobs_filter::Builder {
+        crate::model::list_annotation_import_jobs_filter::Builder::default()
+    }
+}
+
 /// See [`ListAnnotationImportJobsFilter`](crate::model::ListAnnotationImportJobsFilter).
 pub mod list_annotation_import_jobs_filter {
 
@@ -9130,12 +9183,6 @@ pub mod list_annotation_import_jobs_filter {
                 store_name: self.store_name,
             }
         }
-    }
-}
-impl ListAnnotationImportJobsFilter {
-    /// Creates a new builder-style object to manufacture [`ListAnnotationImportJobsFilter`](crate::model::ListAnnotationImportJobsFilter).
-    pub fn builder() -> crate::model::list_annotation_import_jobs_filter::Builder {
-        crate::model::list_annotation_import_jobs_filter::Builder::default()
     }
 }
 
@@ -9211,6 +9258,13 @@ impl VcfOptions {
         self.ignore_filter_field
     }
 }
+impl VcfOptions {
+    /// Creates a new builder-style object to manufacture [`VcfOptions`](crate::model::VcfOptions).
+    pub fn builder() -> crate::model::vcf_options::Builder {
+        crate::model::vcf_options::Builder::default()
+    }
+}
+
 /// See [`VcfOptions`](crate::model::VcfOptions).
 pub mod vcf_options {
 
@@ -9251,12 +9305,6 @@ pub mod vcf_options {
         }
     }
 }
-impl VcfOptions {
-    /// Creates a new builder-style object to manufacture [`VcfOptions`](crate::model::VcfOptions).
-    pub fn builder() -> crate::model::vcf_options::Builder {
-        crate::model::vcf_options::Builder::default()
-    }
-}
 
 /// <p>Formatting options for a TSV file.</p>
 #[non_exhaustive]
@@ -9272,6 +9320,13 @@ impl TsvOptions {
         self.read_options.as_ref()
     }
 }
+impl TsvOptions {
+    /// Creates a new builder-style object to manufacture [`TsvOptions`](crate::model::TsvOptions).
+    pub fn builder() -> crate::model::tsv_options::Builder {
+        crate::model::tsv_options::Builder::default()
+    }
+}
+
 /// See [`TsvOptions`](crate::model::TsvOptions).
 pub mod tsv_options {
 
@@ -9301,12 +9356,6 @@ pub mod tsv_options {
                 read_options: self.read_options,
             }
         }
-    }
-}
-impl TsvOptions {
-    /// Creates a new builder-style object to manufacture [`TsvOptions`](crate::model::TsvOptions).
-    pub fn builder() -> crate::model::tsv_options::Builder {
-        crate::model::tsv_options::Builder::default()
     }
 }
 
@@ -9380,6 +9429,13 @@ impl ReadOptions {
         self.line_sep.as_deref()
     }
 }
+impl ReadOptions {
+    /// Creates a new builder-style object to manufacture [`ReadOptions`](crate::model::ReadOptions).
+    pub fn builder() -> crate::model::read_options::Builder {
+        crate::model::read_options::Builder::default()
+    }
+}
+
 /// See [`ReadOptions`](crate::model::ReadOptions).
 pub mod read_options {
 
@@ -9504,12 +9560,6 @@ pub mod read_options {
         }
     }
 }
-impl ReadOptions {
-    /// Creates a new builder-style object to manufacture [`ReadOptions`](crate::model::ReadOptions).
-    pub fn builder() -> crate::model::read_options::Builder {
-        crate::model::read_options::Builder::default()
-    }
-}
 
 /// <p>A source for an annotation import job.</p>
 #[non_exhaustive]
@@ -9525,6 +9575,13 @@ impl AnnotationImportItemSource {
         self.source.as_deref()
     }
 }
+impl AnnotationImportItemSource {
+    /// Creates a new builder-style object to manufacture [`AnnotationImportItemSource`](crate::model::AnnotationImportItemSource).
+    pub fn builder() -> crate::model::annotation_import_item_source::Builder {
+        crate::model::annotation_import_item_source::Builder::default()
+    }
+}
+
 /// See [`AnnotationImportItemSource`](crate::model::AnnotationImportItemSource).
 pub mod annotation_import_item_source {
 
@@ -9553,12 +9610,6 @@ pub mod annotation_import_item_source {
         }
     }
 }
-impl AnnotationImportItemSource {
-    /// Creates a new builder-style object to manufacture [`AnnotationImportItemSource`](crate::model::AnnotationImportItemSource).
-    pub fn builder() -> crate::model::annotation_import_item_source::Builder {
-        crate::model::annotation_import_item_source::Builder::default()
-    }
-}
 
 /// <p>Details about an imported annotation item.</p>
 #[non_exhaustive]
@@ -9581,6 +9632,13 @@ impl AnnotationImportItemDetail {
         self.job_status.as_ref()
     }
 }
+impl AnnotationImportItemDetail {
+    /// Creates a new builder-style object to manufacture [`AnnotationImportItemDetail`](crate::model::AnnotationImportItemDetail).
+    pub fn builder() -> crate::model::annotation_import_item_detail::Builder {
+        crate::model::annotation_import_item_detail::Builder::default()
+    }
+}
+
 /// See [`AnnotationImportItemDetail`](crate::model::AnnotationImportItemDetail).
 pub mod annotation_import_item_detail {
 
@@ -9622,11 +9680,5 @@ pub mod annotation_import_item_detail {
                 job_status: self.job_status,
             }
         }
-    }
-}
-impl AnnotationImportItemDetail {
-    /// Creates a new builder-style object to manufacture [`AnnotationImportItemDetail`](crate::model::AnnotationImportItemDetail).
-    pub fn builder() -> crate::model::annotation_import_item_detail::Builder {
-        crate::model::annotation_import_item_detail::Builder::default()
     }
 }

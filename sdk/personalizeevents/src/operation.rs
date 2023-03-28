@@ -4,7 +4,7 @@
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`put_events`](crate::client::Client::put_events).
 ///
-/// See [`crate::client::fluent_builders::PutEvents`] for more details about the operation.
+/// `ParseStrictResponse` impl for `PutEvents`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutEvents {
     _private: (),
@@ -36,7 +36,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutEvents {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`put_items`](crate::client::Client::put_items).
 ///
-/// See [`crate::client::fluent_builders::PutItems`] for more details about the operation.
+/// `ParseStrictResponse` impl for `PutItems`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutItems {
     _private: (),
@@ -68,7 +68,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutItems {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`put_users`](crate::client::Client::put_users).
 ///
-/// See [`crate::client::fluent_builders::PutUsers`] for more details about the operation.
+/// `ParseStrictResponse` impl for `PutUsers`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutUsers {
     _private: (),

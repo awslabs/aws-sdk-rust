@@ -21,6 +21,13 @@ impl TemplateLocation {
         self.s3_key.as_deref()
     }
 }
+impl TemplateLocation {
+    /// Creates a new builder-style object to manufacture [`TemplateLocation`](crate::model::TemplateLocation).
+    pub fn builder() -> crate::model::template_location::Builder {
+        crate::model::template_location::Builder::default()
+    }
+}
+
 /// See [`TemplateLocation`](crate::model::TemplateLocation).
 pub mod template_location {
 
@@ -61,12 +68,6 @@ pub mod template_location {
         }
     }
 }
-impl TemplateLocation {
-    /// Creates a new builder-style object to manufacture [`TemplateLocation`](crate::model::TemplateLocation).
-    pub fn builder() -> crate::model::template_location::Builder {
-        crate::model::template_location::Builder::default()
-    }
-}
 
 /// <p>The object that contains the Docker image URI for either your robot or simulation applications.</p>
 #[non_exhaustive]
@@ -82,6 +83,13 @@ impl Environment {
         self.uri.as_deref()
     }
 }
+impl Environment {
+    /// Creates a new builder-style object to manufacture [`Environment`](crate::model::Environment).
+    pub fn builder() -> crate::model::environment::Builder {
+        crate::model::environment::Builder::default()
+    }
+}
+
 /// See [`Environment`](crate::model::Environment).
 pub mod environment {
 
@@ -108,12 +116,6 @@ pub mod environment {
         }
     }
 }
-impl Environment {
-    /// Creates a new builder-style object to manufacture [`Environment`](crate::model::Environment).
-    pub fn builder() -> crate::model::environment::Builder {
-        crate::model::environment::Builder::default()
-    }
-}
 
 /// <p>Information about a rendering engine.</p>
 #[non_exhaustive]
@@ -136,6 +138,13 @@ impl RenderingEngine {
         self.version.as_deref()
     }
 }
+impl RenderingEngine {
+    /// Creates a new builder-style object to manufacture [`RenderingEngine`](crate::model::RenderingEngine).
+    pub fn builder() -> crate::model::rendering_engine::Builder {
+        crate::model::rendering_engine::Builder::default()
+    }
+}
+
 /// See [`RenderingEngine`](crate::model::RenderingEngine).
 pub mod rendering_engine {
 
@@ -177,12 +186,6 @@ pub mod rendering_engine {
                 version: self.version,
             }
         }
-    }
-}
-impl RenderingEngine {
-    /// Creates a new builder-style object to manufacture [`RenderingEngine`](crate::model::RenderingEngine).
-    pub fn builder() -> crate::model::rendering_engine::Builder {
-        crate::model::rendering_engine::Builder::default()
     }
 }
 
@@ -294,6 +297,13 @@ impl RobotSoftwareSuite {
         self.version.as_ref()
     }
 }
+impl RobotSoftwareSuite {
+    /// Creates a new builder-style object to manufacture [`RobotSoftwareSuite`](crate::model::RobotSoftwareSuite).
+    pub fn builder() -> crate::model::robot_software_suite::Builder {
+        crate::model::robot_software_suite::Builder::default()
+    }
+}
+
 /// See [`RobotSoftwareSuite`](crate::model::RobotSoftwareSuite).
 pub mod robot_software_suite {
 
@@ -338,12 +348,6 @@ pub mod robot_software_suite {
                 version: self.version,
             }
         }
-    }
-}
-impl RobotSoftwareSuite {
-    /// Creates a new builder-style object to manufacture [`RobotSoftwareSuite`](crate::model::RobotSoftwareSuite).
-    pub fn builder() -> crate::model::robot_software_suite::Builder {
-        crate::model::robot_software_suite::Builder::default()
     }
 }
 
@@ -567,6 +571,13 @@ impl SimulationSoftwareSuite {
         self.version.as_deref()
     }
 }
+impl SimulationSoftwareSuite {
+    /// Creates a new builder-style object to manufacture [`SimulationSoftwareSuite`](crate::model::SimulationSoftwareSuite).
+    pub fn builder() -> crate::model::simulation_software_suite::Builder {
+        crate::model::simulation_software_suite::Builder::default()
+    }
+}
+
 /// See [`SimulationSoftwareSuite`](crate::model::SimulationSoftwareSuite).
 pub mod simulation_software_suite {
 
@@ -608,12 +619,6 @@ pub mod simulation_software_suite {
                 version: self.version,
             }
         }
-    }
-}
-impl SimulationSoftwareSuite {
-    /// Creates a new builder-style object to manufacture [`SimulationSoftwareSuite`](crate::model::SimulationSoftwareSuite).
-    pub fn builder() -> crate::model::simulation_software_suite::Builder {
-        crate::model::simulation_software_suite::Builder::default()
     }
 }
 
@@ -749,6 +754,13 @@ impl Source {
         self.architecture.as_ref()
     }
 }
+impl Source {
+    /// Creates a new builder-style object to manufacture [`Source`](crate::model::Source).
+    pub fn builder() -> crate::model::source::Builder {
+        crate::model::source::Builder::default()
+    }
+}
+
 /// See [`Source`](crate::model::Source).
 pub mod source {
 
@@ -814,12 +826,6 @@ pub mod source {
                 architecture: self.architecture,
             }
         }
-    }
-}
-impl Source {
-    /// Creates a new builder-style object to manufacture [`Source`](crate::model::Source).
-    pub fn builder() -> crate::model::source::Builder {
-        crate::model::source::Builder::default()
     }
 }
 
@@ -946,6 +952,13 @@ impl SourceConfig {
         self.architecture.as_ref()
     }
 }
+impl SourceConfig {
+    /// Creates a new builder-style object to manufacture [`SourceConfig`](crate::model::SourceConfig).
+    pub fn builder() -> crate::model::source_config::Builder {
+        crate::model::source_config::Builder::default()
+    }
+}
+
 /// See [`SourceConfig`](crate::model::SourceConfig).
 pub mod source_config {
 
@@ -999,12 +1012,6 @@ pub mod source_config {
                 architecture: self.architecture,
             }
         }
-    }
-}
-impl SourceConfig {
-    /// Creates a new builder-style object to manufacture [`SourceConfig`](crate::model::SourceConfig).
-    pub fn builder() -> crate::model::source_config::Builder {
-        crate::model::source_config::Builder::default()
     }
 }
 
@@ -1275,6 +1282,13 @@ impl DeploymentApplicationConfig {
         self.launch_config.as_ref()
     }
 }
+impl DeploymentApplicationConfig {
+    /// Creates a new builder-style object to manufacture [`DeploymentApplicationConfig`](crate::model::DeploymentApplicationConfig).
+    pub fn builder() -> crate::model::deployment_application_config::Builder {
+        crate::model::deployment_application_config::Builder::default()
+    }
+}
+
 /// See [`DeploymentApplicationConfig`](crate::model::DeploymentApplicationConfig).
 pub mod deployment_application_config {
 
@@ -1333,12 +1347,6 @@ pub mod deployment_application_config {
         }
     }
 }
-impl DeploymentApplicationConfig {
-    /// Creates a new builder-style object to manufacture [`DeploymentApplicationConfig`](crate::model::DeploymentApplicationConfig).
-    pub fn builder() -> crate::model::deployment_application_config::Builder {
-        crate::model::deployment_application_config::Builder::default()
-    }
-}
 
 /// <p>Configuration information for a deployment launch.</p>
 #[non_exhaustive]
@@ -1386,6 +1394,13 @@ impl DeploymentLaunchConfig {
         self.environment_variables.as_ref()
     }
 }
+impl DeploymentLaunchConfig {
+    /// Creates a new builder-style object to manufacture [`DeploymentLaunchConfig`](crate::model::DeploymentLaunchConfig).
+    pub fn builder() -> crate::model::deployment_launch_config::Builder {
+        crate::model::deployment_launch_config::Builder::default()
+    }
+}
+
 /// See [`DeploymentLaunchConfig`](crate::model::DeploymentLaunchConfig).
 pub mod deployment_launch_config {
 
@@ -1485,12 +1500,6 @@ pub mod deployment_launch_config {
         }
     }
 }
-impl DeploymentLaunchConfig {
-    /// Creates a new builder-style object to manufacture [`DeploymentLaunchConfig`](crate::model::DeploymentLaunchConfig).
-    pub fn builder() -> crate::model::deployment_launch_config::Builder {
-        crate::model::deployment_launch_config::Builder::default()
-    }
-}
 
 /// <p>Information about a deployment configuration.</p>
 #[non_exhaustive]
@@ -1527,6 +1536,13 @@ impl DeploymentConfig {
         self.download_condition_file.as_ref()
     }
 }
+impl DeploymentConfig {
+    /// Creates a new builder-style object to manufacture [`DeploymentConfig`](crate::model::DeploymentConfig).
+    pub fn builder() -> crate::model::deployment_config::Builder {
+        crate::model::deployment_config::Builder::default()
+    }
+}
+
 /// See [`DeploymentConfig`](crate::model::DeploymentConfig).
 pub mod deployment_config {
 
@@ -1600,12 +1616,6 @@ pub mod deployment_config {
         }
     }
 }
-impl DeploymentConfig {
-    /// Creates a new builder-style object to manufacture [`DeploymentConfig`](crate::model::DeploymentConfig).
-    pub fn builder() -> crate::model::deployment_config::Builder {
-        crate::model::deployment_config::Builder::default()
-    }
-}
 
 /// <p>Information about an S3 object.</p>
 #[non_exhaustive]
@@ -1635,6 +1645,13 @@ impl S3Object {
         self.etag.as_deref()
     }
 }
+impl S3Object {
+    /// Creates a new builder-style object to manufacture [`S3Object`](crate::model::S3Object).
+    pub fn builder() -> crate::model::s3_object::Builder {
+        crate::model::s3_object::Builder::default()
+    }
+}
+
 /// See [`S3Object`](crate::model::S3Object).
 pub mod s3_object {
 
@@ -1685,12 +1702,6 @@ pub mod s3_object {
                 etag: self.etag,
             }
         }
-    }
-}
-impl S3Object {
-    /// Creates a new builder-style object to manufacture [`S3Object`](crate::model::S3Object).
-    pub fn builder() -> crate::model::s3_object::Builder {
-        crate::model::s3_object::Builder::default()
     }
 }
 
@@ -1874,6 +1885,13 @@ impl SimulationJobSummary {
         self.compute_type.as_ref()
     }
 }
+impl SimulationJobSummary {
+    /// Creates a new builder-style object to manufacture [`SimulationJobSummary`](crate::model::SimulationJobSummary).
+    pub fn builder() -> crate::model::simulation_job_summary::Builder {
+        crate::model::simulation_job_summary::Builder::default()
+    }
+}
+
 /// See [`SimulationJobSummary`](crate::model::SimulationJobSummary).
 pub mod simulation_job_summary {
 
@@ -2024,12 +2042,6 @@ pub mod simulation_job_summary {
                 compute_type: self.compute_type,
             }
         }
-    }
-}
-impl SimulationJobSummary {
-    /// Creates a new builder-style object to manufacture [`SimulationJobSummary`](crate::model::SimulationJobSummary).
-    pub fn builder() -> crate::model::simulation_job_summary::Builder {
-        crate::model::simulation_job_summary::Builder::default()
     }
 }
 
@@ -2399,6 +2411,13 @@ impl SimulationJobRequest {
         self.tags.as_ref()
     }
 }
+impl SimulationJobRequest {
+    /// Creates a new builder-style object to manufacture [`SimulationJobRequest`](crate::model::SimulationJobRequest).
+    pub fn builder() -> crate::model::simulation_job_request::Builder {
+        crate::model::simulation_job_request::Builder::default()
+    }
+}
+
 /// See [`SimulationJobRequest`](crate::model::SimulationJobRequest).
 pub mod simulation_job_request {
 
@@ -2652,12 +2671,6 @@ pub mod simulation_job_request {
         }
     }
 }
-impl SimulationJobRequest {
-    /// Creates a new builder-style object to manufacture [`SimulationJobRequest`](crate::model::SimulationJobRequest).
-    pub fn builder() -> crate::model::simulation_job_request::Builder {
-        crate::model::simulation_job_request::Builder::default()
-    }
-}
 
 /// <p>Compute information for the simulation job.</p>
 #[non_exhaustive]
@@ -2687,6 +2700,13 @@ impl Compute {
         self.gpu_unit_limit
     }
 }
+impl Compute {
+    /// Creates a new builder-style object to manufacture [`Compute`](crate::model::Compute).
+    pub fn builder() -> crate::model::compute::Builder {
+        crate::model::compute::Builder::default()
+    }
+}
+
 /// See [`Compute`](crate::model::Compute).
 pub mod compute {
 
@@ -2742,12 +2762,6 @@ pub mod compute {
         }
     }
 }
-impl Compute {
-    /// Creates a new builder-style object to manufacture [`Compute`](crate::model::Compute).
-    pub fn builder() -> crate::model::compute::Builder {
-        crate::model::compute::Builder::default()
-    }
-}
 
 /// <p>If your simulation job accesses resources in a VPC, you provide this parameter identifying the list of security group IDs and subnet IDs. These must belong to the same VPC. You must provide at least one security group and two subnet IDs.</p>
 #[non_exhaustive]
@@ -2777,6 +2791,13 @@ impl VpcConfig {
         self.assign_public_ip
     }
 }
+impl VpcConfig {
+    /// Creates a new builder-style object to manufacture [`VpcConfig`](crate::model::VpcConfig).
+    pub fn builder() -> crate::model::vpc_config::Builder {
+        crate::model::vpc_config::Builder::default()
+    }
+}
+
 /// See [`VpcConfig`](crate::model::VpcConfig).
 pub mod vpc_config {
 
@@ -2847,12 +2868,6 @@ pub mod vpc_config {
         }
     }
 }
-impl VpcConfig {
-    /// Creates a new builder-style object to manufacture [`VpcConfig`](crate::model::VpcConfig).
-    pub fn builder() -> crate::model::vpc_config::Builder {
-        crate::model::vpc_config::Builder::default()
-    }
-}
 
 /// <p>Information about a data source.</p>
 #[non_exhaustive]
@@ -2904,6 +2919,13 @@ impl DataSourceConfig {
         self.destination.as_deref()
     }
 }
+impl DataSourceConfig {
+    /// Creates a new builder-style object to manufacture [`DataSourceConfig`](crate::model::DataSourceConfig).
+    pub fn builder() -> crate::model::data_source_config::Builder {
+        crate::model::data_source_config::Builder::default()
+    }
+}
+
 /// See [`DataSourceConfig`](crate::model::DataSourceConfig).
 pub mod data_source_config {
 
@@ -2998,12 +3020,6 @@ pub mod data_source_config {
                 destination: self.destination,
             }
         }
-    }
-}
-impl DataSourceConfig {
-    /// Creates a new builder-style object to manufacture [`DataSourceConfig`](crate::model::DataSourceConfig).
-    pub fn builder() -> crate::model::data_source_config::Builder {
-        crate::model::data_source_config::Builder::default()
     }
 }
 
@@ -3190,6 +3206,13 @@ impl SimulationApplicationConfig {
         self.use_default_tools
     }
 }
+impl SimulationApplicationConfig {
+    /// Creates a new builder-style object to manufacture [`SimulationApplicationConfig`](crate::model::SimulationApplicationConfig).
+    pub fn builder() -> crate::model::simulation_application_config::Builder {
+        crate::model::simulation_application_config::Builder::default()
+    }
+}
+
 /// See [`SimulationApplicationConfig`](crate::model::SimulationApplicationConfig).
 pub mod simulation_application_config {
 
@@ -3361,12 +3384,6 @@ pub mod simulation_application_config {
         }
     }
 }
-impl SimulationApplicationConfig {
-    /// Creates a new builder-style object to manufacture [`SimulationApplicationConfig`](crate::model::SimulationApplicationConfig).
-    pub fn builder() -> crate::model::simulation_application_config::Builder {
-        crate::model::simulation_application_config::Builder::default()
-    }
-}
 
 /// <p>Information about a tool. Tools are used in a simulation job.</p>
 #[non_exhaustive]
@@ -3410,6 +3427,13 @@ impl Tool {
         self.exit_behavior.as_ref()
     }
 }
+impl Tool {
+    /// Creates a new builder-style object to manufacture [`Tool`](crate::model::Tool).
+    pub fn builder() -> crate::model::tool::Builder {
+        crate::model::tool::Builder::default()
+    }
+}
+
 /// See [`Tool`](crate::model::Tool).
 pub mod tool {
 
@@ -3490,12 +3514,6 @@ pub mod tool {
                 exit_behavior: self.exit_behavior,
             }
         }
-    }
-}
-impl Tool {
-    /// Creates a new builder-style object to manufacture [`Tool`](crate::model::Tool).
-    pub fn builder() -> crate::model::tool::Builder {
-        crate::model::tool::Builder::default()
     }
 }
 
@@ -3603,6 +3621,13 @@ impl WorldConfig {
         self.world.as_deref()
     }
 }
+impl WorldConfig {
+    /// Creates a new builder-style object to manufacture [`WorldConfig`](crate::model::WorldConfig).
+    pub fn builder() -> crate::model::world_config::Builder {
+        crate::model::world_config::Builder::default()
+    }
+}
+
 /// See [`WorldConfig`](crate::model::WorldConfig).
 pub mod world_config {
 
@@ -3627,12 +3652,6 @@ pub mod world_config {
         pub fn build(self) -> crate::model::WorldConfig {
             crate::model::WorldConfig { world: self.world }
         }
-    }
-}
-impl WorldConfig {
-    /// Creates a new builder-style object to manufacture [`WorldConfig`](crate::model::WorldConfig).
-    pub fn builder() -> crate::model::world_config::Builder {
-        crate::model::world_config::Builder::default()
     }
 }
 
@@ -3708,6 +3727,13 @@ impl UploadConfiguration {
         self.upload_behavior.as_ref()
     }
 }
+impl UploadConfiguration {
+    /// Creates a new builder-style object to manufacture [`UploadConfiguration`](crate::model::UploadConfiguration).
+    pub fn builder() -> crate::model::upload_configuration::Builder {
+        crate::model::upload_configuration::Builder::default()
+    }
+}
+
 /// See [`UploadConfiguration`](crate::model::UploadConfiguration).
 pub mod upload_configuration {
 
@@ -3805,12 +3831,6 @@ pub mod upload_configuration {
                 upload_behavior: self.upload_behavior,
             }
         }
-    }
-}
-impl UploadConfiguration {
-    /// Creates a new builder-style object to manufacture [`UploadConfiguration`](crate::model::UploadConfiguration).
-    pub fn builder() -> crate::model::upload_configuration::Builder {
-        crate::model::upload_configuration::Builder::default()
     }
 }
 
@@ -3961,6 +3981,13 @@ impl LaunchConfig {
         self.command.as_deref()
     }
 }
+impl LaunchConfig {
+    /// Creates a new builder-style object to manufacture [`LaunchConfig`](crate::model::LaunchConfig).
+    pub fn builder() -> crate::model::launch_config::Builder {
+        crate::model::launch_config::Builder::default()
+    }
+}
+
 /// See [`LaunchConfig`](crate::model::LaunchConfig).
 pub mod launch_config {
 
@@ -4080,12 +4107,6 @@ pub mod launch_config {
         }
     }
 }
-impl LaunchConfig {
-    /// Creates a new builder-style object to manufacture [`LaunchConfig`](crate::model::LaunchConfig).
-    pub fn builder() -> crate::model::launch_config::Builder {
-        crate::model::launch_config::Builder::default()
-    }
-}
 
 /// <p>Configuration information for port forwarding.</p>
 #[non_exhaustive]
@@ -4101,6 +4122,13 @@ impl PortForwardingConfig {
         self.port_mappings.as_deref()
     }
 }
+impl PortForwardingConfig {
+    /// Creates a new builder-style object to manufacture [`PortForwardingConfig`](crate::model::PortForwardingConfig).
+    pub fn builder() -> crate::model::port_forwarding_config::Builder {
+        crate::model::port_forwarding_config::Builder::default()
+    }
+}
+
 /// See [`PortForwardingConfig`](crate::model::PortForwardingConfig).
 pub mod port_forwarding_config {
 
@@ -4138,12 +4166,6 @@ pub mod port_forwarding_config {
         }
     }
 }
-impl PortForwardingConfig {
-    /// Creates a new builder-style object to manufacture [`PortForwardingConfig`](crate::model::PortForwardingConfig).
-    pub fn builder() -> crate::model::port_forwarding_config::Builder {
-        crate::model::port_forwarding_config::Builder::default()
-    }
-}
 
 /// <p>An object representing a port mapping.</p>
 #[non_exhaustive]
@@ -4173,6 +4195,13 @@ impl PortMapping {
         self.enable_on_public_ip
     }
 }
+impl PortMapping {
+    /// Creates a new builder-style object to manufacture [`PortMapping`](crate::model::PortMapping).
+    pub fn builder() -> crate::model::port_mapping::Builder {
+        crate::model::port_mapping::Builder::default()
+    }
+}
+
 /// See [`PortMapping`](crate::model::PortMapping).
 pub mod port_mapping {
 
@@ -4223,12 +4252,6 @@ pub mod port_mapping {
                 enable_on_public_ip: self.enable_on_public_ip.unwrap_or_default(),
             }
         }
-    }
-}
-impl PortMapping {
-    /// Creates a new builder-style object to manufacture [`PortMapping`](crate::model::PortMapping).
-    pub fn builder() -> crate::model::port_mapping::Builder {
-        crate::model::port_mapping::Builder::default()
     }
 }
 
@@ -4313,6 +4336,13 @@ impl RobotApplicationConfig {
         self.use_default_tools
     }
 }
+impl RobotApplicationConfig {
+    /// Creates a new builder-style object to manufacture [`RobotApplicationConfig`](crate::model::RobotApplicationConfig).
+    pub fn builder() -> crate::model::robot_application_config::Builder {
+        crate::model::robot_application_config::Builder::default()
+    }
+}
+
 /// See [`RobotApplicationConfig`](crate::model::RobotApplicationConfig).
 pub mod robot_application_config {
 
@@ -4463,12 +4493,6 @@ pub mod robot_application_config {
         }
     }
 }
-impl RobotApplicationConfig {
-    /// Creates a new builder-style object to manufacture [`RobotApplicationConfig`](crate::model::RobotApplicationConfig).
-    pub fn builder() -> crate::model::robot_application_config::Builder {
-        crate::model::robot_application_config::Builder::default()
-    }
-}
 
 /// When writing a match expression against `FailureBehavior`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -4584,6 +4608,13 @@ impl LoggingConfig {
         self.record_all_ros_topics
     }
 }
+impl LoggingConfig {
+    /// Creates a new builder-style object to manufacture [`LoggingConfig`](crate::model::LoggingConfig).
+    pub fn builder() -> crate::model::logging_config::Builder {
+        crate::model::logging_config::Builder::default()
+    }
+}
+
 /// See [`LoggingConfig`](crate::model::LoggingConfig).
 pub mod logging_config {
 
@@ -4622,12 +4653,6 @@ pub mod logging_config {
         }
     }
 }
-impl LoggingConfig {
-    /// Creates a new builder-style object to manufacture [`LoggingConfig`](crate::model::LoggingConfig).
-    pub fn builder() -> crate::model::logging_config::Builder {
-        crate::model::logging_config::Builder::default()
-    }
-}
 
 /// <p>The output location.</p>
 #[non_exhaustive]
@@ -4650,6 +4675,13 @@ impl OutputLocation {
         self.s3_prefix.as_deref()
     }
 }
+impl OutputLocation {
+    /// Creates a new builder-style object to manufacture [`OutputLocation`](crate::model::OutputLocation).
+    pub fn builder() -> crate::model::output_location::Builder {
+        crate::model::output_location::Builder::default()
+    }
+}
+
 /// See [`OutputLocation`](crate::model::OutputLocation).
 pub mod output_location {
 
@@ -4690,12 +4722,6 @@ pub mod output_location {
         }
     }
 }
-impl OutputLocation {
-    /// Creates a new builder-style object to manufacture [`OutputLocation`](crate::model::OutputLocation).
-    pub fn builder() -> crate::model::output_location::Builder {
-        crate::model::output_location::Builder::default()
-    }
-}
 
 /// <p>Information about a failed create simulation job request.</p>
 #[non_exhaustive]
@@ -4732,6 +4758,13 @@ impl FailedCreateSimulationJobRequest {
         self.failed_at.as_ref()
     }
 }
+impl FailedCreateSimulationJobRequest {
+    /// Creates a new builder-style object to manufacture [`FailedCreateSimulationJobRequest`](crate::model::FailedCreateSimulationJobRequest).
+    pub fn builder() -> crate::model::failed_create_simulation_job_request::Builder {
+        crate::model::failed_create_simulation_job_request::Builder::default()
+    }
+}
+
 /// See [`FailedCreateSimulationJobRequest`](crate::model::FailedCreateSimulationJobRequest).
 pub mod failed_create_simulation_job_request {
 
@@ -4806,12 +4839,6 @@ pub mod failed_create_simulation_job_request {
                 failed_at: self.failed_at,
             }
         }
-    }
-}
-impl FailedCreateSimulationJobRequest {
-    /// Creates a new builder-style object to manufacture [`FailedCreateSimulationJobRequest`](crate::model::FailedCreateSimulationJobRequest).
-    pub fn builder() -> crate::model::failed_create_simulation_job_request::Builder {
-        crate::model::failed_create_simulation_job_request::Builder::default()
     }
 }
 
@@ -5236,6 +5263,13 @@ impl BatchPolicy {
         self.max_concurrency
     }
 }
+impl BatchPolicy {
+    /// Creates a new builder-style object to manufacture [`BatchPolicy`](crate::model::BatchPolicy).
+    pub fn builder() -> crate::model::batch_policy::Builder {
+        crate::model::batch_policy::Builder::default()
+    }
+}
+
 /// See [`BatchPolicy`](crate::model::BatchPolicy).
 pub mod batch_policy {
 
@@ -5278,12 +5312,6 @@ pub mod batch_policy {
                 max_concurrency: self.max_concurrency,
             }
         }
-    }
-}
-impl BatchPolicy {
-    /// Creates a new builder-style object to manufacture [`BatchPolicy`](crate::model::BatchPolicy).
-    pub fn builder() -> crate::model::batch_policy::Builder {
-        crate::model::batch_policy::Builder::default()
     }
 }
 
@@ -5466,6 +5494,13 @@ impl TemplateSummary {
         self.version.as_deref()
     }
 }
+impl TemplateSummary {
+    /// Creates a new builder-style object to manufacture [`TemplateSummary`](crate::model::TemplateSummary).
+    pub fn builder() -> crate::model::template_summary::Builder {
+        crate::model::template_summary::Builder::default()
+    }
+}
+
 /// See [`TemplateSummary`](crate::model::TemplateSummary).
 pub mod template_summary {
 
@@ -5548,12 +5583,6 @@ pub mod template_summary {
         }
     }
 }
-impl TemplateSummary {
-    /// Creates a new builder-style object to manufacture [`TemplateSummary`](crate::model::TemplateSummary).
-    pub fn builder() -> crate::model::template_summary::Builder {
-        crate::model::template_summary::Builder::default()
-    }
-}
 
 /// <p>Information about a world.</p>
 #[non_exhaustive]
@@ -5590,6 +5619,13 @@ impl WorldSummary {
         self.template.as_deref()
     }
 }
+impl WorldSummary {
+    /// Creates a new builder-style object to manufacture [`WorldSummary`](crate::model::WorldSummary).
+    pub fn builder() -> crate::model::world_summary::Builder {
+        crate::model::world_summary::Builder::default()
+    }
+}
+
 /// See [`WorldSummary`](crate::model::WorldSummary).
 pub mod world_summary {
 
@@ -5660,12 +5696,6 @@ pub mod world_summary {
         }
     }
 }
-impl WorldSummary {
-    /// Creates a new builder-style object to manufacture [`WorldSummary`](crate::model::WorldSummary).
-    pub fn builder() -> crate::model::world_summary::Builder {
-        crate::model::world_summary::Builder::default()
-    }
-}
 
 /// <p>Information about a filter.</p>
 #[non_exhaustive]
@@ -5688,6 +5718,13 @@ impl Filter {
         self.values.as_deref()
     }
 }
+impl Filter {
+    /// Creates a new builder-style object to manufacture [`Filter`](crate::model::Filter).
+    pub fn builder() -> crate::model::filter::Builder {
+        crate::model::filter::Builder::default()
+    }
+}
+
 /// See [`Filter`](crate::model::Filter).
 pub mod filter {
 
@@ -5735,12 +5772,6 @@ pub mod filter {
                 values: self.values,
             }
         }
-    }
-}
-impl Filter {
-    /// Creates a new builder-style object to manufacture [`Filter`](crate::model::Filter).
-    pub fn builder() -> crate::model::filter::Builder {
-        crate::model::filter::Builder::default()
     }
 }
 
@@ -5888,6 +5919,13 @@ impl WorldGenerationJobSummary {
         self.failed_world_count
     }
 }
+impl WorldGenerationJobSummary {
+    /// Creates a new builder-style object to manufacture [`WorldGenerationJobSummary`](crate::model::WorldGenerationJobSummary).
+    pub fn builder() -> crate::model::world_generation_job_summary::Builder {
+        crate::model::world_generation_job_summary::Builder::default()
+    }
+}
+
 /// See [`WorldGenerationJobSummary`](crate::model::WorldGenerationJobSummary).
 pub mod world_generation_job_summary {
 
@@ -6085,12 +6123,6 @@ pub mod world_generation_job_summary {
         }
     }
 }
-impl WorldGenerationJobSummary {
-    /// Creates a new builder-style object to manufacture [`WorldGenerationJobSummary`](crate::model::WorldGenerationJobSummary).
-    pub fn builder() -> crate::model::world_generation_job_summary::Builder {
-        crate::model::world_generation_job_summary::Builder::default()
-    }
-}
 
 /// <p>The number of worlds that will be created. You can configure the number of unique floorplans and the number of unique interiors for each floor plan. For example, if you want 1 world with 20 unique interiors, you set <code>floorplanCount = 1</code> and <code>interiorCountPerFloorplan = 20</code>. This will result in 20 worlds (<code>floorplanCount</code> * <code>interiorCountPerFloorplan)</code>. </p>
 /// <p>If you set <code>floorplanCount = 4</code> and <code>interiorCountPerFloorplan = 5</code>, there will be 20 worlds with 5 unique floor plans. </p>
@@ -6114,6 +6146,13 @@ impl WorldCount {
         self.interior_count_per_floorplan
     }
 }
+impl WorldCount {
+    /// Creates a new builder-style object to manufacture [`WorldCount`](crate::model::WorldCount).
+    pub fn builder() -> crate::model::world_count::Builder {
+        crate::model::world_count::Builder::default()
+    }
+}
+
 /// See [`WorldCount`](crate::model::WorldCount).
 pub mod world_count {
 
@@ -6152,12 +6191,6 @@ pub mod world_count {
                 interior_count_per_floorplan: self.interior_count_per_floorplan,
             }
         }
-    }
-}
-impl WorldCount {
-    /// Creates a new builder-style object to manufacture [`WorldCount`](crate::model::WorldCount).
-    pub fn builder() -> crate::model::world_count::Builder {
-        crate::model::world_count::Builder::default()
     }
 }
 
@@ -6404,6 +6437,13 @@ impl WorldExportJobSummary {
         self.output_location.as_ref()
     }
 }
+impl WorldExportJobSummary {
+    /// Creates a new builder-style object to manufacture [`WorldExportJobSummary`](crate::model::WorldExportJobSummary).
+    pub fn builder() -> crate::model::world_export_job_summary::Builder {
+        crate::model::world_export_job_summary::Builder::default()
+    }
+}
+
 /// See [`WorldExportJobSummary`](crate::model::WorldExportJobSummary).
 pub mod world_export_job_summary {
 
@@ -6572,12 +6612,6 @@ pub mod world_export_job_summary {
                 output_location: self.output_location,
             }
         }
-    }
-}
-impl WorldExportJobSummary {
-    /// Creates a new builder-style object to manufacture [`WorldExportJobSummary`](crate::model::WorldExportJobSummary).
-    pub fn builder() -> crate::model::world_export_job_summary::Builder {
-        crate::model::world_export_job_summary::Builder::default()
     }
 }
 
@@ -6870,6 +6904,13 @@ impl SimulationJobBatchSummary {
         self.created_request_count
     }
 }
+impl SimulationJobBatchSummary {
+    /// Creates a new builder-style object to manufacture [`SimulationJobBatchSummary`](crate::model::SimulationJobBatchSummary).
+    pub fn builder() -> crate::model::simulation_job_batch_summary::Builder {
+        crate::model::simulation_job_batch_summary::Builder::default()
+    }
+}
+
 /// See [`SimulationJobBatchSummary`](crate::model::SimulationJobBatchSummary).
 pub mod simulation_job_batch_summary {
 
@@ -7093,12 +7134,6 @@ pub mod simulation_job_batch_summary {
         }
     }
 }
-impl SimulationJobBatchSummary {
-    /// Creates a new builder-style object to manufacture [`SimulationJobBatchSummary`](crate::model::SimulationJobBatchSummary).
-    pub fn builder() -> crate::model::simulation_job_batch_summary::Builder {
-        crate::model::simulation_job_batch_summary::Builder::default()
-    }
-}
 
 /// <p>Summary information for a simulation application.</p>
 #[non_exhaustive]
@@ -7151,6 +7186,13 @@ impl SimulationApplicationSummary {
         self.simulation_software_suite.as_ref()
     }
 }
+impl SimulationApplicationSummary {
+    /// Creates a new builder-style object to manufacture [`SimulationApplicationSummary`](crate::model::SimulationApplicationSummary).
+    pub fn builder() -> crate::model::simulation_application_summary::Builder {
+        crate::model::simulation_application_summary::Builder::default()
+    }
+}
+
 /// See [`SimulationApplicationSummary`](crate::model::SimulationApplicationSummary).
 pub mod simulation_application_summary {
 
@@ -7252,12 +7294,6 @@ pub mod simulation_application_summary {
         }
     }
 }
-impl SimulationApplicationSummary {
-    /// Creates a new builder-style object to manufacture [`SimulationApplicationSummary`](crate::model::SimulationApplicationSummary).
-    pub fn builder() -> crate::model::simulation_application_summary::Builder {
-        crate::model::simulation_application_summary::Builder::default()
-    }
-}
 
 /// <p>Information about a robot.</p>
 #[non_exhaustive]
@@ -7329,6 +7365,13 @@ impl Robot {
         self.last_deployment_time.as_ref()
     }
 }
+impl Robot {
+    /// Creates a new builder-style object to manufacture [`Robot`](crate::model::Robot).
+    pub fn builder() -> crate::model::robot::Builder {
+        crate::model::robot::Builder::default()
+    }
+}
+
 /// See [`Robot`](crate::model::Robot).
 pub mod robot {
 
@@ -7466,12 +7509,6 @@ pub mod robot {
                 last_deployment_time: self.last_deployment_time,
             }
         }
-    }
-}
-impl Robot {
-    /// Creates a new builder-style object to manufacture [`Robot`](crate::model::Robot).
-    pub fn builder() -> crate::model::robot::Builder {
-        crate::model::robot::Builder::default()
     }
 }
 
@@ -7640,6 +7677,13 @@ impl RobotApplicationSummary {
         self.robot_software_suite.as_ref()
     }
 }
+impl RobotApplicationSummary {
+    /// Creates a new builder-style object to manufacture [`RobotApplicationSummary`](crate::model::RobotApplicationSummary).
+    pub fn builder() -> crate::model::robot_application_summary::Builder {
+        crate::model::robot_application_summary::Builder::default()
+    }
+}
+
 /// See [`RobotApplicationSummary`](crate::model::RobotApplicationSummary).
 pub mod robot_application_summary {
 
@@ -7722,12 +7766,6 @@ pub mod robot_application_summary {
         }
     }
 }
-impl RobotApplicationSummary {
-    /// Creates a new builder-style object to manufacture [`RobotApplicationSummary`](crate::model::RobotApplicationSummary).
-    pub fn builder() -> crate::model::robot_application_summary::Builder {
-        crate::model::robot_application_summary::Builder::default()
-    }
-}
 
 /// <p>Information about a fleet.</p>
 #[non_exhaustive]
@@ -7778,6 +7816,13 @@ impl Fleet {
         self.last_deployment_time.as_ref()
     }
 }
+impl Fleet {
+    /// Creates a new builder-style object to manufacture [`Fleet`](crate::model::Fleet).
+    pub fn builder() -> crate::model::fleet::Builder {
+        crate::model::fleet::Builder::default()
+    }
+}
+
 /// See [`Fleet`](crate::model::Fleet).
 pub mod fleet {
 
@@ -7878,12 +7923,6 @@ pub mod fleet {
         }
     }
 }
-impl Fleet {
-    /// Creates a new builder-style object to manufacture [`Fleet`](crate::model::Fleet).
-    pub fn builder() -> crate::model::fleet::Builder {
-        crate::model::fleet::Builder::default()
-    }
-}
 
 /// <p>Information about a deployment job.</p>
 #[non_exhaustive]
@@ -7951,6 +7990,13 @@ impl DeploymentJob {
         self.created_at.as_ref()
     }
 }
+impl DeploymentJob {
+    /// Creates a new builder-style object to manufacture [`DeploymentJob`](crate::model::DeploymentJob).
+    pub fn builder() -> crate::model::deployment_job::Builder {
+        crate::model::deployment_job::Builder::default()
+    }
+}
+
 /// See [`DeploymentJob`](crate::model::DeploymentJob).
 pub mod deployment_job {
 
@@ -8091,12 +8137,6 @@ pub mod deployment_job {
         }
     }
 }
-impl DeploymentJob {
-    /// Creates a new builder-style object to manufacture [`DeploymentJob`](crate::model::DeploymentJob).
-    pub fn builder() -> crate::model::deployment_job::Builder {
-        crate::model::deployment_job::Builder::default()
-    }
-}
 
 /// <p>Information about worlds that finished.</p>
 #[non_exhaustive]
@@ -8126,6 +8166,13 @@ impl FinishedWorldsSummary {
         self.failure_summary.as_ref()
     }
 }
+impl FinishedWorldsSummary {
+    /// Creates a new builder-style object to manufacture [`FinishedWorldsSummary`](crate::model::FinishedWorldsSummary).
+    pub fn builder() -> crate::model::finished_worlds_summary::Builder {
+        crate::model::finished_worlds_summary::Builder::default()
+    }
+}
+
 /// See [`FinishedWorldsSummary`](crate::model::FinishedWorldsSummary).
 pub mod finished_worlds_summary {
 
@@ -8190,12 +8237,6 @@ pub mod finished_worlds_summary {
         }
     }
 }
-impl FinishedWorldsSummary {
-    /// Creates a new builder-style object to manufacture [`FinishedWorldsSummary`](crate::model::FinishedWorldsSummary).
-    pub fn builder() -> crate::model::finished_worlds_summary::Builder {
-        crate::model::finished_worlds_summary::Builder::default()
-    }
-}
 
 /// <p>Information about worlds that failed.</p>
 #[non_exhaustive]
@@ -8218,6 +8259,13 @@ impl FailureSummary {
         self.failures.as_deref()
     }
 }
+impl FailureSummary {
+    /// Creates a new builder-style object to manufacture [`FailureSummary`](crate::model::FailureSummary).
+    pub fn builder() -> crate::model::failure_summary::Builder {
+        crate::model::failure_summary::Builder::default()
+    }
+}
+
 /// See [`FailureSummary`](crate::model::FailureSummary).
 pub mod failure_summary {
 
@@ -8265,12 +8313,6 @@ pub mod failure_summary {
                 failures: self.failures,
             }
         }
-    }
-}
-impl FailureSummary {
-    /// Creates a new builder-style object to manufacture [`FailureSummary`](crate::model::FailureSummary).
-    pub fn builder() -> crate::model::failure_summary::Builder {
-        crate::model::failure_summary::Builder::default()
     }
 }
 
@@ -8366,6 +8408,13 @@ impl WorldFailure {
         self.failure_count
     }
 }
+impl WorldFailure {
+    /// Creates a new builder-style object to manufacture [`WorldFailure`](crate::model::WorldFailure).
+    pub fn builder() -> crate::model::world_failure::Builder {
+        crate::model::world_failure::Builder::default()
+    }
+}
+
 /// See [`WorldFailure`](crate::model::WorldFailure).
 pub mod world_failure {
 
@@ -8486,12 +8535,6 @@ pub mod world_failure {
                 failure_count: self.failure_count.unwrap_or_default(),
             }
         }
-    }
-}
-impl WorldFailure {
-    /// Creates a new builder-style object to manufacture [`WorldFailure`](crate::model::WorldFailure).
-    pub fn builder() -> crate::model::world_failure::Builder {
-        crate::model::world_failure::Builder::default()
     }
 }
 
@@ -8761,6 +8804,13 @@ impl ComputeResponse {
         self.gpu_unit_limit
     }
 }
+impl ComputeResponse {
+    /// Creates a new builder-style object to manufacture [`ComputeResponse`](crate::model::ComputeResponse).
+    pub fn builder() -> crate::model::compute_response::Builder {
+        crate::model::compute_response::Builder::default()
+    }
+}
+
 /// See [`ComputeResponse`](crate::model::ComputeResponse).
 pub mod compute_response {
 
@@ -8816,12 +8866,6 @@ pub mod compute_response {
         }
     }
 }
-impl ComputeResponse {
-    /// Creates a new builder-style object to manufacture [`ComputeResponse`](crate::model::ComputeResponse).
-    pub fn builder() -> crate::model::compute_response::Builder {
-        crate::model::compute_response::Builder::default()
-    }
-}
 
 /// <p>Describes a network interface.</p>
 #[non_exhaustive]
@@ -8851,6 +8895,13 @@ impl NetworkInterface {
         self.public_ip_address.as_deref()
     }
 }
+impl NetworkInterface {
+    /// Creates a new builder-style object to manufacture [`NetworkInterface`](crate::model::NetworkInterface).
+    pub fn builder() -> crate::model::network_interface::Builder {
+        crate::model::network_interface::Builder::default()
+    }
+}
+
 /// See [`NetworkInterface`](crate::model::NetworkInterface).
 pub mod network_interface {
 
@@ -8912,12 +8963,6 @@ pub mod network_interface {
         }
     }
 }
-impl NetworkInterface {
-    /// Creates a new builder-style object to manufacture [`NetworkInterface`](crate::model::NetworkInterface).
-    pub fn builder() -> crate::model::network_interface::Builder {
-        crate::model::network_interface::Builder::default()
-    }
-}
 
 /// <p>VPC configuration associated with your simulation job.</p>
 #[non_exhaustive]
@@ -8954,6 +8999,13 @@ impl VpcConfigResponse {
         self.assign_public_ip
     }
 }
+impl VpcConfigResponse {
+    /// Creates a new builder-style object to manufacture [`VpcConfigResponse`](crate::model::VpcConfigResponse).
+    pub fn builder() -> crate::model::vpc_config_response::Builder {
+        crate::model::vpc_config_response::Builder::default()
+    }
+}
+
 /// See [`VpcConfigResponse`](crate::model::VpcConfigResponse).
 pub mod vpc_config_response {
 
@@ -9036,12 +9088,6 @@ pub mod vpc_config_response {
         }
     }
 }
-impl VpcConfigResponse {
-    /// Creates a new builder-style object to manufacture [`VpcConfigResponse`](crate::model::VpcConfigResponse).
-    pub fn builder() -> crate::model::vpc_config_response::Builder {
-        crate::model::vpc_config_response::Builder::default()
-    }
-}
 
 /// <p>Information about a data source.</p>
 #[non_exhaustive]
@@ -9093,6 +9139,13 @@ impl DataSource {
         self.destination.as_deref()
     }
 }
+impl DataSource {
+    /// Creates a new builder-style object to manufacture [`DataSource`](crate::model::DataSource).
+    pub fn builder() -> crate::model::data_source::Builder {
+        crate::model::data_source::Builder::default()
+    }
+}
+
 /// See [`DataSource`](crate::model::DataSource).
 pub mod data_source {
 
@@ -9189,12 +9242,6 @@ pub mod data_source {
         }
     }
 }
-impl DataSource {
-    /// Creates a new builder-style object to manufacture [`DataSource`](crate::model::DataSource).
-    pub fn builder() -> crate::model::data_source::Builder {
-        crate::model::data_source::Builder::default()
-    }
-}
 
 /// <p>Information about S3 keys.</p>
 #[non_exhaustive]
@@ -9217,6 +9264,13 @@ impl S3KeyOutput {
         self.etag.as_deref()
     }
 }
+impl S3KeyOutput {
+    /// Creates a new builder-style object to manufacture [`S3KeyOutput`](crate::model::S3KeyOutput).
+    pub fn builder() -> crate::model::s3_key_output::Builder {
+        crate::model::s3_key_output::Builder::default()
+    }
+}
+
 /// See [`S3KeyOutput`](crate::model::S3KeyOutput).
 pub mod s3_key_output {
 
@@ -9255,12 +9309,6 @@ pub mod s3_key_output {
                 etag: self.etag,
             }
         }
-    }
-}
-impl S3KeyOutput {
-    /// Creates a new builder-style object to manufacture [`S3KeyOutput`](crate::model::S3KeyOutput).
-    pub fn builder() -> crate::model::s3_key_output::Builder {
-        crate::model::s3_key_output::Builder::default()
     }
 }
 
@@ -9320,6 +9368,13 @@ impl RobotDeployment {
         self.failure_code.as_ref()
     }
 }
+impl RobotDeployment {
+    /// Creates a new builder-style object to manufacture [`RobotDeployment`](crate::model::RobotDeployment).
+    pub fn builder() -> crate::model::robot_deployment::Builder {
+        crate::model::robot_deployment::Builder::default()
+    }
+}
+
 /// See [`RobotDeployment`](crate::model::RobotDeployment).
 pub mod robot_deployment {
 
@@ -9435,12 +9490,6 @@ pub mod robot_deployment {
         }
     }
 }
-impl RobotDeployment {
-    /// Creates a new builder-style object to manufacture [`RobotDeployment`](crate::model::RobotDeployment).
-    pub fn builder() -> crate::model::robot_deployment::Builder {
-        crate::model::robot_deployment::Builder::default()
-    }
-}
 
 /// <p>Information about the progress of a deployment job.</p>
 #[non_exhaustive]
@@ -9553,6 +9602,13 @@ impl ProgressDetail {
         self.target_resource.as_deref()
     }
 }
+impl ProgressDetail {
+    /// Creates a new builder-style object to manufacture [`ProgressDetail`](crate::model::ProgressDetail).
+    pub fn builder() -> crate::model::progress_detail::Builder {
+        crate::model::progress_detail::Builder::default()
+    }
+}
+
 /// See [`ProgressDetail`](crate::model::ProgressDetail).
 pub mod progress_detail {
 
@@ -9700,12 +9756,6 @@ pub mod progress_detail {
                 target_resource: self.target_resource,
             }
         }
-    }
-}
-impl ProgressDetail {
-    /// Creates a new builder-style object to manufacture [`ProgressDetail`](crate::model::ProgressDetail).
-    pub fn builder() -> crate::model::progress_detail::Builder {
-        crate::model::progress_detail::Builder::default()
     }
 }
 
@@ -10026,6 +10076,13 @@ impl SimulationJob {
         self.compute.as_ref()
     }
 }
+impl SimulationJob {
+    /// Creates a new builder-style object to manufacture [`SimulationJob`](crate::model::SimulationJob).
+    pub fn builder() -> crate::model::simulation_job::Builder {
+        crate::model::simulation_job::Builder::default()
+    }
+}
+
 /// See [`SimulationJob`](crate::model::SimulationJob).
 pub mod simulation_job {
 
@@ -10405,11 +10462,5 @@ pub mod simulation_job {
                 compute: self.compute,
             }
         }
-    }
-}
-impl SimulationJob {
-    /// Creates a new builder-style object to manufacture [`SimulationJob`](crate::model::SimulationJob).
-    pub fn builder() -> crate::model::simulation_job::Builder {
-        crate::model::simulation_job::Builder::default()
     }
 }

@@ -135,6 +135,13 @@ impl PatchOperation {
         self.from.as_deref()
     }
 }
+impl PatchOperation {
+    /// Creates a new builder-style object to manufacture [`PatchOperation`](crate::model::PatchOperation).
+    pub fn builder() -> crate::model::patch_operation::Builder {
+        crate::model::patch_operation::Builder::default()
+    }
+}
+
 /// See [`PatchOperation`](crate::model::PatchOperation).
 pub mod patch_operation {
 
@@ -197,12 +204,6 @@ pub mod patch_operation {
                 from: self.from,
             }
         }
-    }
-}
-impl PatchOperation {
-    /// Creates a new builder-style object to manufacture [`PatchOperation`](crate::model::PatchOperation).
-    pub fn builder() -> crate::model::patch_operation::Builder {
-        crate::model::patch_operation::Builder::default()
     }
 }
 
@@ -344,6 +345,13 @@ impl QuotaSettings {
         self.period.as_ref()
     }
 }
+impl QuotaSettings {
+    /// Creates a new builder-style object to manufacture [`QuotaSettings`](crate::model::QuotaSettings).
+    pub fn builder() -> crate::model::quota_settings::Builder {
+        crate::model::quota_settings::Builder::default()
+    }
+}
+
 /// See [`QuotaSettings`](crate::model::QuotaSettings).
 pub mod quota_settings {
 
@@ -397,12 +405,6 @@ pub mod quota_settings {
                 period: self.period,
             }
         }
-    }
-}
-impl QuotaSettings {
-    /// Creates a new builder-style object to manufacture [`QuotaSettings`](crate::model::QuotaSettings).
-    pub fn builder() -> crate::model::quota_settings::Builder {
-        crate::model::quota_settings::Builder::default()
     }
 }
 
@@ -522,6 +524,13 @@ impl ThrottleSettings {
         self.rate_limit
     }
 }
+impl ThrottleSettings {
+    /// Creates a new builder-style object to manufacture [`ThrottleSettings`](crate::model::ThrottleSettings).
+    pub fn builder() -> crate::model::throttle_settings::Builder {
+        crate::model::throttle_settings::Builder::default()
+    }
+}
+
 /// See [`ThrottleSettings`](crate::model::ThrottleSettings).
 pub mod throttle_settings {
 
@@ -562,12 +571,6 @@ pub mod throttle_settings {
         }
     }
 }
-impl ThrottleSettings {
-    /// Creates a new builder-style object to manufacture [`ThrottleSettings`](crate::model::ThrottleSettings).
-    pub fn builder() -> crate::model::throttle_settings::Builder {
-        crate::model::throttle_settings::Builder::default()
-    }
-}
 
 /// <p>API stage name of the associated API stage in a usage plan.</p>
 #[non_exhaustive]
@@ -603,6 +606,13 @@ impl ApiStage {
         self.throttle.as_ref()
     }
 }
+impl ApiStage {
+    /// Creates a new builder-style object to manufacture [`ApiStage`](crate::model::ApiStage).
+    pub fn builder() -> crate::model::api_stage::Builder {
+        crate::model::api_stage::Builder::default()
+    }
+}
+
 /// See [`ApiStage`](crate::model::ApiStage).
 pub mod api_stage {
 
@@ -672,12 +682,6 @@ pub mod api_stage {
         }
     }
 }
-impl ApiStage {
-    /// Creates a new builder-style object to manufacture [`ApiStage`](crate::model::ApiStage).
-    pub fn builder() -> crate::model::api_stage::Builder {
-        crate::model::api_stage::Builder::default()
-    }
-}
 
 /// <p>Configuration settings of a canary deployment.</p>
 #[non_exhaustive]
@@ -718,6 +722,13 @@ impl CanarySettings {
         self.use_stage_cache
     }
 }
+impl CanarySettings {
+    /// Creates a new builder-style object to manufacture [`CanarySettings`](crate::model::CanarySettings).
+    pub fn builder() -> crate::model::canary_settings::Builder {
+        crate::model::canary_settings::Builder::default()
+    }
+}
+
 /// See [`CanarySettings`](crate::model::CanarySettings).
 pub mod canary_settings {
 
@@ -802,12 +813,6 @@ pub mod canary_settings {
         }
     }
 }
-impl CanarySettings {
-    /// Creates a new builder-style object to manufacture [`CanarySettings`](crate::model::CanarySettings).
-    pub fn builder() -> crate::model::canary_settings::Builder {
-        crate::model::canary_settings::Builder::default()
-    }
-}
 
 /// <p>Access log settings, including the access log format and access log destination ARN.</p>
 #[non_exhaustive]
@@ -830,6 +835,13 @@ impl AccessLogSettings {
         self.destination_arn.as_deref()
     }
 }
+impl AccessLogSettings {
+    /// Creates a new builder-style object to manufacture [`AccessLogSettings`](crate::model::AccessLogSettings).
+    pub fn builder() -> crate::model::access_log_settings::Builder {
+        crate::model::access_log_settings::Builder::default()
+    }
+}
+
 /// See [`AccessLogSettings`](crate::model::AccessLogSettings).
 pub mod access_log_settings {
 
@@ -871,12 +883,6 @@ pub mod access_log_settings {
                 destination_arn: self.destination_arn,
             }
         }
-    }
-}
-impl AccessLogSettings {
-    /// Creates a new builder-style object to manufacture [`AccessLogSettings`](crate::model::AccessLogSettings).
-    pub fn builder() -> crate::model::access_log_settings::Builder {
-        crate::model::access_log_settings::Builder::default()
     }
 }
 
@@ -960,6 +966,13 @@ impl MethodSetting {
         self.unauthorized_cache_control_header_strategy.as_ref()
     }
 }
+impl MethodSetting {
+    /// Creates a new builder-style object to manufacture [`MethodSetting`](crate::model::MethodSetting).
+    pub fn builder() -> crate::model::method_setting::Builder {
+        crate::model::method_setting::Builder::default()
+    }
+}
+
 /// See [`MethodSetting`](crate::model::MethodSetting).
 pub mod method_setting {
 
@@ -1110,12 +1123,6 @@ pub mod method_setting {
                     .unauthorized_cache_control_header_strategy,
             }
         }
-    }
-}
-impl MethodSetting {
-    /// Creates a new builder-style object to manufacture [`MethodSetting`](crate::model::MethodSetting).
-    pub fn builder() -> crate::model::method_setting::Builder {
-        crate::model::method_setting::Builder::default()
     }
 }
 
@@ -1482,6 +1489,13 @@ impl EndpointConfiguration {
         self.vpc_endpoint_ids.as_deref()
     }
 }
+impl EndpointConfiguration {
+    /// Creates a new builder-style object to manufacture [`EndpointConfiguration`](crate::model::EndpointConfiguration).
+    pub fn builder() -> crate::model::endpoint_configuration::Builder {
+        crate::model::endpoint_configuration::Builder::default()
+    }
+}
+
 /// See [`EndpointConfiguration`](crate::model::EndpointConfiguration).
 pub mod endpoint_configuration {
 
@@ -1538,12 +1552,6 @@ pub mod endpoint_configuration {
                 vpc_endpoint_ids: self.vpc_endpoint_ids,
             }
         }
-    }
-}
-impl EndpointConfiguration {
-    /// Creates a new builder-style object to manufacture [`EndpointConfiguration`](crate::model::EndpointConfiguration).
-    pub fn builder() -> crate::model::endpoint_configuration::Builder {
-        crate::model::endpoint_configuration::Builder::default()
     }
 }
 
@@ -1829,6 +1837,13 @@ impl Method {
         self.authorization_scopes.as_deref()
     }
 }
+impl Method {
+    /// Creates a new builder-style object to manufacture [`Method`](crate::model::Method).
+    pub fn builder() -> crate::model::method::Builder {
+        crate::model::method::Builder::default()
+    }
+}
+
 /// See [`Method`](crate::model::Method).
 pub mod method {
 
@@ -2045,12 +2060,6 @@ pub mod method {
         }
     }
 }
-impl Method {
-    /// Creates a new builder-style object to manufacture [`Method`](crate::model::Method).
-    pub fn builder() -> crate::model::method::Builder {
-        crate::model::method::Builder::default()
-    }
-}
 
 /// <p>Represents an HTTP, HTTP_PROXY, AWS, AWS_PROXY, or Mock integration.</p>
 #[non_exhaustive]
@@ -2184,6 +2193,13 @@ impl Integration {
         self.tls_config.as_ref()
     }
 }
+impl Integration {
+    /// Creates a new builder-style object to manufacture [`Integration`](crate::model::Integration).
+    pub fn builder() -> crate::model::integration::Builder {
+        crate::model::integration::Builder::default()
+    }
+}
+
 /// See [`Integration`](crate::model::Integration).
 pub mod integration {
 
@@ -2467,12 +2483,6 @@ pub mod integration {
         }
     }
 }
-impl Integration {
-    /// Creates a new builder-style object to manufacture [`Integration`](crate::model::Integration).
-    pub fn builder() -> crate::model::integration::Builder {
-        crate::model::integration::Builder::default()
-    }
-}
 
 /// <p>Specifies the TLS configuration for an integration.</p>
 #[non_exhaustive]
@@ -2492,6 +2502,13 @@ impl TlsConfig {
         self.insecure_skip_verification
     }
 }
+impl TlsConfig {
+    /// Creates a new builder-style object to manufacture [`TlsConfig`](crate::model::TlsConfig).
+    pub fn builder() -> crate::model::tls_config::Builder {
+        crate::model::tls_config::Builder::default()
+    }
+}
+
 /// See [`TlsConfig`](crate::model::TlsConfig).
 pub mod tls_config {
 
@@ -2522,12 +2539,6 @@ pub mod tls_config {
                 insecure_skip_verification: self.insecure_skip_verification.unwrap_or_default(),
             }
         }
-    }
-}
-impl TlsConfig {
-    /// Creates a new builder-style object to manufacture [`TlsConfig`](crate::model::TlsConfig).
-    pub fn builder() -> crate::model::tls_config::Builder {
-        crate::model::tls_config::Builder::default()
     }
 }
 
@@ -2583,6 +2594,13 @@ impl IntegrationResponse {
         self.content_handling.as_ref()
     }
 }
+impl IntegrationResponse {
+    /// Creates a new builder-style object to manufacture [`IntegrationResponse`](crate::model::IntegrationResponse).
+    pub fn builder() -> crate::model::integration_response::Builder {
+        crate::model::integration_response::Builder::default()
+    }
+}
+
 /// See [`IntegrationResponse`](crate::model::IntegrationResponse).
 pub mod integration_response {
 
@@ -2699,12 +2717,6 @@ pub mod integration_response {
                 content_handling: self.content_handling,
             }
         }
-    }
-}
-impl IntegrationResponse {
-    /// Creates a new builder-style object to manufacture [`IntegrationResponse`](crate::model::IntegrationResponse).
-    pub fn builder() -> crate::model::integration_response::Builder {
-        crate::model::integration_response::Builder::default()
     }
 }
 
@@ -3030,6 +3042,13 @@ impl MethodResponse {
         self.response_models.as_ref()
     }
 }
+impl MethodResponse {
+    /// Creates a new builder-style object to manufacture [`MethodResponse`](crate::model::MethodResponse).
+    pub fn builder() -> crate::model::method_response::Builder {
+        crate::model::method_response::Builder::default()
+    }
+}
+
 /// See [`MethodResponse`](crate::model::MethodResponse).
 pub mod method_response {
 
@@ -3107,12 +3126,6 @@ pub mod method_response {
                 response_models: self.response_models,
             }
         }
-    }
-}
-impl MethodResponse {
-    /// Creates a new builder-style object to manufacture [`MethodResponse`](crate::model::MethodResponse).
-    pub fn builder() -> crate::model::method_response::Builder {
-        crate::model::method_response::Builder::default()
     }
 }
 
@@ -3353,6 +3366,13 @@ impl MutualTlsAuthentication {
         self.truststore_warnings.as_deref()
     }
 }
+impl MutualTlsAuthentication {
+    /// Creates a new builder-style object to manufacture [`MutualTlsAuthentication`](crate::model::MutualTlsAuthentication).
+    pub fn builder() -> crate::model::mutual_tls_authentication::Builder {
+        crate::model::mutual_tls_authentication::Builder::default()
+    }
+}
+
 /// See [`MutualTlsAuthentication`](crate::model::MutualTlsAuthentication).
 pub mod mutual_tls_authentication {
 
@@ -3418,12 +3438,6 @@ pub mod mutual_tls_authentication {
                 truststore_warnings: self.truststore_warnings,
             }
         }
-    }
-}
-impl MutualTlsAuthentication {
-    /// Creates a new builder-style object to manufacture [`MutualTlsAuthentication`](crate::model::MutualTlsAuthentication).
-    pub fn builder() -> crate::model::mutual_tls_authentication::Builder {
-        crate::model::mutual_tls_authentication::Builder::default()
     }
 }
 
@@ -3670,6 +3684,13 @@ impl DocumentationPartLocation {
         self.name.as_deref()
     }
 }
+impl DocumentationPartLocation {
+    /// Creates a new builder-style object to manufacture [`DocumentationPartLocation`](crate::model::DocumentationPartLocation).
+    pub fn builder() -> crate::model::documentation_part_location::Builder {
+        crate::model::documentation_part_location::Builder::default()
+    }
+}
+
 /// See [`DocumentationPartLocation`](crate::model::DocumentationPartLocation).
 pub mod documentation_part_location {
 
@@ -3747,12 +3768,6 @@ pub mod documentation_part_location {
                 name: self.name,
             }
         }
-    }
-}
-impl DocumentationPartLocation {
-    /// Creates a new builder-style object to manufacture [`DocumentationPartLocation`](crate::model::DocumentationPartLocation).
-    pub fn builder() -> crate::model::documentation_part_location::Builder {
-        crate::model::documentation_part_location::Builder::default()
     }
 }
 
@@ -3932,6 +3947,13 @@ impl MethodSnapshot {
         self.api_key_required
     }
 }
+impl MethodSnapshot {
+    /// Creates a new builder-style object to manufacture [`MethodSnapshot`](crate::model::MethodSnapshot).
+    pub fn builder() -> crate::model::method_snapshot::Builder {
+        crate::model::method_snapshot::Builder::default()
+    }
+}
+
 /// See [`MethodSnapshot`](crate::model::MethodSnapshot).
 pub mod method_snapshot {
 
@@ -3973,12 +3995,6 @@ pub mod method_snapshot {
                 api_key_required: self.api_key_required.unwrap_or_default(),
             }
         }
-    }
-}
-impl MethodSnapshot {
-    /// Creates a new builder-style object to manufacture [`MethodSnapshot`](crate::model::MethodSnapshot).
-    pub fn builder() -> crate::model::method_snapshot::Builder {
-        crate::model::method_snapshot::Builder::default()
     }
 }
 
@@ -4312,6 +4328,13 @@ impl VpcLink {
         self.tags.as_ref()
     }
 }
+impl VpcLink {
+    /// Creates a new builder-style object to manufacture [`VpcLink`](crate::model::VpcLink).
+    pub fn builder() -> crate::model::vpc_link::Builder {
+        crate::model::vpc_link::Builder::default()
+    }
+}
+
 /// See [`VpcLink`](crate::model::VpcLink).
 pub mod vpc_link {
 
@@ -4444,12 +4467,6 @@ pub mod vpc_link {
         }
     }
 }
-impl VpcLink {
-    /// Creates a new builder-style object to manufacture [`VpcLink`](crate::model::VpcLink).
-    pub fn builder() -> crate::model::vpc_link::Builder {
-        crate::model::vpc_link::Builder::default()
-    }
-}
 
 /// <p>Represents a usage plan used to specify who can assess associated API stages. Optionally, target request rate and quota limits can be set. In some cases clients can exceed the targets that you set. Don’t rely on usage plans to control costs. Consider using <a href="https://docs.aws.amazon.com/cost-management/latest/userguide/budgets-managing-costs.html">Amazon Web Services Budgets</a> to monitor costs and <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF</a> to manage API requests.</p>
 #[non_exhaustive]
@@ -4518,6 +4535,13 @@ impl UsagePlan {
         self.tags.as_ref()
     }
 }
+impl UsagePlan {
+    /// Creates a new builder-style object to manufacture [`UsagePlan`](crate::model::UsagePlan).
+    pub fn builder() -> crate::model::usage_plan::Builder {
+        crate::model::usage_plan::Builder::default()
+    }
+}
+
 /// See [`UsagePlan`](crate::model::UsagePlan).
 pub mod usage_plan {
 
@@ -4662,12 +4686,6 @@ pub mod usage_plan {
         }
     }
 }
-impl UsagePlan {
-    /// Creates a new builder-style object to manufacture [`UsagePlan`](crate::model::UsagePlan).
-    pub fn builder() -> crate::model::usage_plan::Builder {
-        crate::model::usage_plan::Builder::default()
-    }
-}
 
 /// <p>Represents a usage plan key to identify a plan customer.</p>
 #[non_exhaustive]
@@ -4704,6 +4722,13 @@ impl UsagePlanKey {
         self.name.as_deref()
     }
 }
+impl UsagePlanKey {
+    /// Creates a new builder-style object to manufacture [`UsagePlanKey`](crate::model::UsagePlanKey).
+    pub fn builder() -> crate::model::usage_plan_key::Builder {
+        crate::model::usage_plan_key::Builder::default()
+    }
+}
+
 /// See [`UsagePlanKey`](crate::model::UsagePlanKey).
 pub mod usage_plan_key {
 
@@ -4766,12 +4791,6 @@ pub mod usage_plan_key {
                 name: self.name,
             }
         }
-    }
-}
-impl UsagePlanKey {
-    /// Creates a new builder-style object to manufacture [`UsagePlanKey`](crate::model::UsagePlanKey).
-    pub fn builder() -> crate::model::usage_plan_key::Builder {
-        crate::model::usage_plan_key::Builder::default()
     }
 }
 
@@ -4915,6 +4934,13 @@ impl Stage {
         self.last_updated_date.as_ref()
     }
 }
+impl Stage {
+    /// Creates a new builder-style object to manufacture [`Stage`](crate::model::Stage).
+    pub fn builder() -> crate::model::stage::Builder {
+        crate::model::stage::Builder::default()
+    }
+}
+
 /// See [`Stage`](crate::model::Stage).
 pub mod stage {
 
@@ -5213,12 +5239,6 @@ pub mod stage {
         }
     }
 }
-impl Stage {
-    /// Creates a new builder-style object to manufacture [`Stage`](crate::model::Stage).
-    pub fn builder() -> crate::model::stage::Builder {
-        crate::model::stage::Builder::default()
-    }
-}
 
 /// <p>A type of SDK that API Gateway can generate.</p>
 #[non_exhaustive]
@@ -5258,6 +5278,13 @@ impl SdkType {
         self.configuration_properties.as_deref()
     }
 }
+impl SdkType {
+    /// Creates a new builder-style object to manufacture [`SdkType`](crate::model::SdkType).
+    pub fn builder() -> crate::model::sdk_type::Builder {
+        crate::model::sdk_type::Builder::default()
+    }
+}
+
 /// See [`SdkType`](crate::model::SdkType).
 pub mod sdk_type {
 
@@ -5338,12 +5365,6 @@ pub mod sdk_type {
         }
     }
 }
-impl SdkType {
-    /// Creates a new builder-style object to manufacture [`SdkType`](crate::model::SdkType).
-    pub fn builder() -> crate::model::sdk_type::Builder {
-        crate::model::sdk_type::Builder::default()
-    }
-}
 
 /// <p>A configuration property of an SDK type.</p>
 #[non_exhaustive]
@@ -5387,6 +5408,13 @@ impl SdkConfigurationProperty {
         self.default_value.as_deref()
     }
 }
+impl SdkConfigurationProperty {
+    /// Creates a new builder-style object to manufacture [`SdkConfigurationProperty`](crate::model::SdkConfigurationProperty).
+    pub fn builder() -> crate::model::sdk_configuration_property::Builder {
+        crate::model::sdk_configuration_property::Builder::default()
+    }
+}
+
 /// See [`SdkConfigurationProperty`](crate::model::SdkConfigurationProperty).
 pub mod sdk_configuration_property {
 
@@ -5467,12 +5495,6 @@ pub mod sdk_configuration_property {
                 default_value: self.default_value,
             }
         }
-    }
-}
-impl SdkConfigurationProperty {
-    /// Creates a new builder-style object to manufacture [`SdkConfigurationProperty`](crate::model::SdkConfigurationProperty).
-    pub fn builder() -> crate::model::sdk_configuration_property::Builder {
-        crate::model::sdk_configuration_property::Builder::default()
     }
 }
 
@@ -5580,6 +5602,13 @@ impl RestApi {
         self.disable_execute_api_endpoint
     }
 }
+impl RestApi {
+    /// Creates a new builder-style object to manufacture [`RestApi`](crate::model::RestApi).
+    pub fn builder() -> crate::model::rest_api::Builder {
+        crate::model::rest_api::Builder::default()
+    }
+}
+
 /// See [`RestApi`](crate::model::RestApi).
 pub mod rest_api {
 
@@ -5802,12 +5831,6 @@ pub mod rest_api {
         }
     }
 }
-impl RestApi {
-    /// Creates a new builder-style object to manufacture [`RestApi`](crate::model::RestApi).
-    pub fn builder() -> crate::model::rest_api::Builder {
-        crate::model::rest_api::Builder::default()
-    }
-}
 
 /// <p>Represents an API resource.</p>
 #[non_exhaustive]
@@ -5855,6 +5878,13 @@ impl Resource {
         self.resource_methods.as_ref()
     }
 }
+impl Resource {
+    /// Creates a new builder-style object to manufacture [`Resource`](crate::model::Resource).
+    pub fn builder() -> crate::model::resource::Builder {
+        crate::model::resource::Builder::default()
+    }
+}
+
 /// See [`Resource`](crate::model::Resource).
 pub mod resource {
 
@@ -5948,12 +5978,6 @@ pub mod resource {
         }
     }
 }
-impl Resource {
-    /// Creates a new builder-style object to manufacture [`Resource`](crate::model::Resource).
-    pub fn builder() -> crate::model::resource::Builder {
-        crate::model::resource::Builder::default()
-    }
-}
 
 /// <p>A set of validation rules for incoming Method requests.</p>
 #[non_exhaustive]
@@ -5990,6 +6014,13 @@ impl RequestValidator {
         self.validate_request_parameters
     }
 }
+impl RequestValidator {
+    /// Creates a new builder-style object to manufacture [`RequestValidator`](crate::model::RequestValidator).
+    pub fn builder() -> crate::model::request_validator::Builder {
+        crate::model::request_validator::Builder::default()
+    }
+}
+
 /// See [`RequestValidator`](crate::model::RequestValidator).
 pub mod request_validator {
 
@@ -6054,12 +6085,6 @@ pub mod request_validator {
         }
     }
 }
-impl RequestValidator {
-    /// Creates a new builder-style object to manufacture [`RequestValidator`](crate::model::RequestValidator).
-    pub fn builder() -> crate::model::request_validator::Builder {
-        crate::model::request_validator::Builder::default()
-    }
-}
 
 /// <p>Represents the data structure of a method's request or response payload.</p>
 #[non_exhaustive]
@@ -6103,6 +6128,13 @@ impl Model {
         self.content_type.as_deref()
     }
 }
+impl Model {
+    /// Creates a new builder-style object to manufacture [`Model`](crate::model::Model).
+    pub fn builder() -> crate::model::model::Builder {
+        crate::model::model::Builder::default()
+    }
+}
+
 /// See [`Model`](crate::model::Model).
 pub mod model {
 
@@ -6179,12 +6211,6 @@ pub mod model {
         }
     }
 }
-impl Model {
-    /// Creates a new builder-style object to manufacture [`Model`](crate::model::Model).
-    pub fn builder() -> crate::model::model::Builder {
-        crate::model::model::Builder::default()
-    }
-}
 
 /// <p>A gateway response of a given response type and status code, with optional response parameters and mapping templates.</p>
 #[non_exhaustive]
@@ -6236,6 +6262,13 @@ impl GatewayResponse {
         self.default_response
     }
 }
+impl GatewayResponse {
+    /// Creates a new builder-style object to manufacture [`GatewayResponse`](crate::model::GatewayResponse).
+    pub fn builder() -> crate::model::gateway_response::Builder {
+        crate::model::gateway_response::Builder::default()
+    }
+}
+
 /// See [`GatewayResponse`](crate::model::GatewayResponse).
 pub mod gateway_response {
 
@@ -6347,12 +6380,6 @@ pub mod gateway_response {
                 default_response: self.default_response.unwrap_or_default(),
             }
         }
-    }
-}
-impl GatewayResponse {
-    /// Creates a new builder-style object to manufacture [`GatewayResponse`](crate::model::GatewayResponse).
-    pub fn builder() -> crate::model::gateway_response::Builder {
-        crate::model::gateway_response::Builder::default()
     }
 }
 
@@ -6490,6 +6517,13 @@ impl DomainName {
         self.ownership_verification_certificate_arn.as_deref()
     }
 }
+impl DomainName {
+    /// Creates a new builder-style object to manufacture [`DomainName`](crate::model::DomainName).
+    pub fn builder() -> crate::model::domain_name::Builder {
+        crate::model::domain_name::Builder::default()
+    }
+}
+
 /// See [`DomainName`](crate::model::DomainName).
 pub mod domain_name {
 
@@ -6785,12 +6819,6 @@ pub mod domain_name {
         }
     }
 }
-impl DomainName {
-    /// Creates a new builder-style object to manufacture [`DomainName`](crate::model::DomainName).
-    pub fn builder() -> crate::model::domain_name::Builder {
-        crate::model::domain_name::Builder::default()
-    }
-}
 
 /// <p>A snapshot of the documentation of an API.</p>
 #[non_exhaustive]
@@ -6820,6 +6848,13 @@ impl DocumentationVersion {
         self.description.as_deref()
     }
 }
+impl DocumentationVersion {
+    /// Creates a new builder-style object to manufacture [`DocumentationVersion`](crate::model::DocumentationVersion).
+    pub fn builder() -> crate::model::documentation_version::Builder {
+        crate::model::documentation_version::Builder::default()
+    }
+}
+
 /// See [`DocumentationVersion`](crate::model::DocumentationVersion).
 pub mod documentation_version {
 
@@ -6875,12 +6910,6 @@ pub mod documentation_version {
         }
     }
 }
-impl DocumentationVersion {
-    /// Creates a new builder-style object to manufacture [`DocumentationVersion`](crate::model::DocumentationVersion).
-    pub fn builder() -> crate::model::documentation_version::Builder {
-        crate::model::documentation_version::Builder::default()
-    }
-}
 
 /// <p>A documentation part for a targeted API entity.</p>
 #[non_exhaustive]
@@ -6910,6 +6939,13 @@ impl DocumentationPart {
         self.properties.as_deref()
     }
 }
+impl DocumentationPart {
+    /// Creates a new builder-style object to manufacture [`DocumentationPart`](crate::model::DocumentationPart).
+    pub fn builder() -> crate::model::documentation_part::Builder {
+        crate::model::documentation_part::Builder::default()
+    }
+}
+
 /// See [`DocumentationPart`](crate::model::DocumentationPart).
 pub mod documentation_part {
 
@@ -6963,12 +6999,6 @@ pub mod documentation_part {
                 properties: self.properties,
             }
         }
-    }
-}
-impl DocumentationPart {
-    /// Creates a new builder-style object to manufacture [`DocumentationPart`](crate::model::DocumentationPart).
-    pub fn builder() -> crate::model::documentation_part::Builder {
-        crate::model::documentation_part::Builder::default()
     }
 }
 
@@ -7111,6 +7141,13 @@ impl Deployment {
         self.api_summary.as_ref()
     }
 }
+impl Deployment {
+    /// Creates a new builder-style object to manufacture [`Deployment`](crate::model::Deployment).
+    pub fn builder() -> crate::model::deployment::Builder {
+        crate::model::deployment::Builder::default()
+    }
+}
+
 /// See [`Deployment`](crate::model::Deployment).
 pub mod deployment {
 
@@ -7201,12 +7238,6 @@ pub mod deployment {
         }
     }
 }
-impl Deployment {
-    /// Creates a new builder-style object to manufacture [`Deployment`](crate::model::Deployment).
-    pub fn builder() -> crate::model::deployment::Builder {
-        crate::model::deployment::Builder::default()
-    }
-}
 
 /// <p>Represents a client certificate used to configure client-side SSL authentication while sending requests to the integration endpoint.</p>
 #[non_exhaustive]
@@ -7261,6 +7292,13 @@ impl ClientCertificate {
         self.tags.as_ref()
     }
 }
+impl ClientCertificate {
+    /// Creates a new builder-style object to manufacture [`ClientCertificate`](crate::model::ClientCertificate).
+    pub fn builder() -> crate::model::client_certificate::Builder {
+        crate::model::client_certificate::Builder::default()
+    }
+}
+
 /// See [`ClientCertificate`](crate::model::ClientCertificate).
 pub mod client_certificate {
 
@@ -7378,12 +7416,6 @@ pub mod client_certificate {
         }
     }
 }
-impl ClientCertificate {
-    /// Creates a new builder-style object to manufacture [`ClientCertificate`](crate::model::ClientCertificate).
-    pub fn builder() -> crate::model::client_certificate::Builder {
-        crate::model::client_certificate::Builder::default()
-    }
-}
 
 /// <p>Represents the base path that callers of the API must provide as part of the URL after the domain name.</p>
 #[non_exhaustive]
@@ -7413,6 +7445,13 @@ impl BasePathMapping {
         self.stage.as_deref()
     }
 }
+impl BasePathMapping {
+    /// Creates a new builder-style object to manufacture [`BasePathMapping`](crate::model::BasePathMapping).
+    pub fn builder() -> crate::model::base_path_mapping::Builder {
+        crate::model::base_path_mapping::Builder::default()
+    }
+}
+
 /// See [`BasePathMapping`](crate::model::BasePathMapping).
 pub mod base_path_mapping {
 
@@ -7463,12 +7502,6 @@ pub mod base_path_mapping {
                 stage: self.stage,
             }
         }
-    }
-}
-impl BasePathMapping {
-    /// Creates a new builder-style object to manufacture [`BasePathMapping`](crate::model::BasePathMapping).
-    pub fn builder() -> crate::model::base_path_mapping::Builder {
-        crate::model::base_path_mapping::Builder::default()
     }
 }
 
@@ -7549,6 +7582,13 @@ impl Authorizer {
         self.authorizer_result_ttl_in_seconds
     }
 }
+impl Authorizer {
+    /// Creates a new builder-style object to manufacture [`Authorizer`](crate::model::Authorizer).
+    pub fn builder() -> crate::model::authorizer::Builder {
+        crate::model::authorizer::Builder::default()
+    }
+}
+
 /// See [`Authorizer`](crate::model::Authorizer).
 pub mod authorizer {
 
@@ -7715,12 +7755,6 @@ pub mod authorizer {
         }
     }
 }
-impl Authorizer {
-    /// Creates a new builder-style object to manufacture [`Authorizer`](crate::model::Authorizer).
-    pub fn builder() -> crate::model::authorizer::Builder {
-        crate::model::authorizer::Builder::default()
-    }
-}
 
 /// <p>A resource that can be distributed to callers for executing Method resources that require an API key. API keys can be mapped to any Stage on any RestApi, which indicates that the callers with the API key can make requests to that stage.</p>
 #[non_exhaustive]
@@ -7803,6 +7837,13 @@ impl ApiKey {
         self.tags.as_ref()
     }
 }
+impl ApiKey {
+    /// Creates a new builder-style object to manufacture [`ApiKey`](crate::model::ApiKey).
+    pub fn builder() -> crate::model::api_key::Builder {
+        crate::model::api_key::Builder::default()
+    }
+}
+
 /// See [`ApiKey`](crate::model::ApiKey).
 pub mod api_key {
 
@@ -7971,12 +8012,6 @@ pub mod api_key {
         }
     }
 }
-impl ApiKey {
-    /// Creates a new builder-style object to manufacture [`ApiKey`](crate::model::ApiKey).
-    pub fn builder() -> crate::model::api_key::Builder {
-        crate::model::api_key::Builder::default()
-    }
-}
 
 /// <p>The mutual TLS authentication configuration for a custom domain name. If specified, API Gateway performs two-way authentication between the client and the server. Clients must present a trusted certificate to access your API.</p>
 #[non_exhaustive]
@@ -7999,6 +8034,13 @@ impl MutualTlsAuthenticationInput {
         self.truststore_version.as_deref()
     }
 }
+impl MutualTlsAuthenticationInput {
+    /// Creates a new builder-style object to manufacture [`MutualTlsAuthenticationInput`](crate::model::MutualTlsAuthenticationInput).
+    pub fn builder() -> crate::model::mutual_tls_authentication_input::Builder {
+        crate::model::mutual_tls_authentication_input::Builder::default()
+    }
+}
+
 /// See [`MutualTlsAuthenticationInput`](crate::model::MutualTlsAuthenticationInput).
 pub mod mutual_tls_authentication_input {
 
@@ -8045,12 +8087,6 @@ pub mod mutual_tls_authentication_input {
         }
     }
 }
-impl MutualTlsAuthenticationInput {
-    /// Creates a new builder-style object to manufacture [`MutualTlsAuthenticationInput`](crate::model::MutualTlsAuthenticationInput).
-    pub fn builder() -> crate::model::mutual_tls_authentication_input::Builder {
-        crate::model::mutual_tls_authentication_input::Builder::default()
-    }
-}
 
 /// <p>The input configuration for a canary deployment.</p>
 #[non_exhaustive]
@@ -8084,6 +8120,13 @@ impl DeploymentCanarySettings {
         self.use_stage_cache
     }
 }
+impl DeploymentCanarySettings {
+    /// Creates a new builder-style object to manufacture [`DeploymentCanarySettings`](crate::model::DeploymentCanarySettings).
+    pub fn builder() -> crate::model::deployment_canary_settings::Builder {
+        crate::model::deployment_canary_settings::Builder::default()
+    }
+}
+
 /// See [`DeploymentCanarySettings`](crate::model::DeploymentCanarySettings).
 pub mod deployment_canary_settings {
 
@@ -8153,12 +8196,6 @@ pub mod deployment_canary_settings {
         }
     }
 }
-impl DeploymentCanarySettings {
-    /// Creates a new builder-style object to manufacture [`DeploymentCanarySettings`](crate::model::DeploymentCanarySettings).
-    pub fn builder() -> crate::model::deployment_canary_settings::Builder {
-        crate::model::deployment_canary_settings::Builder::default()
-    }
-}
 
 /// <p>A reference to a unique stage identified in the format <code>{restApiId}/{stage}</code>.</p>
 #[non_exhaustive]
@@ -8181,6 +8218,13 @@ impl StageKey {
         self.stage_name.as_deref()
     }
 }
+impl StageKey {
+    /// Creates a new builder-style object to manufacture [`StageKey`](crate::model::StageKey).
+    pub fn builder() -> crate::model::stage_key::Builder {
+        crate::model::stage_key::Builder::default()
+    }
+}
+
 /// See [`StageKey`](crate::model::StageKey).
 pub mod stage_key {
 
@@ -8219,11 +8263,5 @@ pub mod stage_key {
                 stage_name: self.stage_name,
             }
         }
-    }
-}
-impl StageKey {
-    /// Creates a new builder-style object to manufacture [`StageKey`](crate::model::StageKey).
-    pub fn builder() -> crate::model::stage_key::Builder {
-        crate::model::stage_key::Builder::default()
     }
 }

@@ -26,6 +26,13 @@ impl aws_http::request_id::RequestId for ListEnabledControlsOutput {
         self._request_id.as_deref()
     }
 }
+impl ListEnabledControlsOutput {
+    /// Creates a new builder-style object to manufacture [`ListEnabledControlsOutput`](crate::output::ListEnabledControlsOutput).
+    pub fn builder() -> crate::output::list_enabled_controls_output::Builder {
+        crate::output::list_enabled_controls_output::Builder::default()
+    }
+}
+
 /// See [`ListEnabledControlsOutput`](crate::output::ListEnabledControlsOutput).
 pub mod list_enabled_controls_output {
 
@@ -87,12 +94,6 @@ pub mod list_enabled_controls_output {
         }
     }
 }
-impl ListEnabledControlsOutput {
-    /// Creates a new builder-style object to manufacture [`ListEnabledControlsOutput`](crate::output::ListEnabledControlsOutput).
-    pub fn builder() -> crate::output::list_enabled_controls_output::Builder {
-        crate::output::list_enabled_controls_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -114,6 +115,13 @@ impl aws_http::request_id::RequestId for GetControlOperationOutput {
         self._request_id.as_deref()
     }
 }
+impl GetControlOperationOutput {
+    /// Creates a new builder-style object to manufacture [`GetControlOperationOutput`](crate::output::GetControlOperationOutput).
+    pub fn builder() -> crate::output::get_control_operation_output::Builder {
+        crate::output::get_control_operation_output::Builder::default()
+    }
+}
+
 /// See [`GetControlOperationOutput`](crate::output::GetControlOperationOutput).
 pub mod get_control_operation_output {
 
@@ -156,12 +164,6 @@ pub mod get_control_operation_output {
         }
     }
 }
-impl GetControlOperationOutput {
-    /// Creates a new builder-style object to manufacture [`GetControlOperationOutput`](crate::output::GetControlOperationOutput).
-    pub fn builder() -> crate::output::get_control_operation_output::Builder {
-        crate::output::get_control_operation_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -183,6 +185,13 @@ impl aws_http::request_id::RequestId for EnableControlOutput {
         self._request_id.as_deref()
     }
 }
+impl EnableControlOutput {
+    /// Creates a new builder-style object to manufacture [`EnableControlOutput`](crate::output::EnableControlOutput).
+    pub fn builder() -> crate::output::enable_control_output::Builder {
+        crate::output::enable_control_output::Builder::default()
+    }
+}
+
 /// See [`EnableControlOutput`](crate::output::EnableControlOutput).
 pub mod enable_control_output {
 
@@ -225,12 +234,6 @@ pub mod enable_control_output {
         }
     }
 }
-impl EnableControlOutput {
-    /// Creates a new builder-style object to manufacture [`EnableControlOutput`](crate::output::EnableControlOutput).
-    pub fn builder() -> crate::output::enable_control_output::Builder {
-        crate::output::enable_control_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -252,6 +255,13 @@ impl aws_http::request_id::RequestId for DisableControlOutput {
         self._request_id.as_deref()
     }
 }
+impl DisableControlOutput {
+    /// Creates a new builder-style object to manufacture [`DisableControlOutput`](crate::output::DisableControlOutput).
+    pub fn builder() -> crate::output::disable_control_output::Builder {
+        crate::output::disable_control_output::Builder::default()
+    }
+}
+
 /// See [`DisableControlOutput`](crate::output::DisableControlOutput).
 pub mod disable_control_output {
 
@@ -292,11 +302,5 @@ pub mod disable_control_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl DisableControlOutput {
-    /// Creates a new builder-style object to manufacture [`DisableControlOutput`](crate::output::DisableControlOutput).
-    pub fn builder() -> crate::output::disable_control_output::Builder {
-        crate::output::disable_control_output::Builder::default()
     }
 }

@@ -24,6 +24,13 @@ impl OutputConfig {
         self.s3_prefix.as_deref()
     }
 }
+impl OutputConfig {
+    /// Creates a new builder-style object to manufacture [`OutputConfig`](crate::model::OutputConfig).
+    pub fn builder() -> crate::model::output_config::Builder {
+        crate::model::output_config::Builder::default()
+    }
+}
+
 /// See [`OutputConfig`](crate::model::OutputConfig).
 pub mod output_config {
 
@@ -64,12 +71,6 @@ pub mod output_config {
         }
     }
 }
-impl OutputConfig {
-    /// Creates a new builder-style object to manufacture [`OutputConfig`](crate::model::OutputConfig).
-    pub fn builder() -> crate::model::output_config::Builder {
-        crate::model::output_config::Builder::default()
-    }
-}
 
 /// <p>The Amazon Simple Notification Service (Amazon SNS) topic to which Amazon Textract publishes the completion status of an asynchronous document operation. </p>
 #[non_exhaustive]
@@ -92,6 +93,13 @@ impl NotificationChannel {
         self.role_arn.as_deref()
     }
 }
+impl NotificationChannel {
+    /// Creates a new builder-style object to manufacture [`NotificationChannel`](crate::model::NotificationChannel).
+    pub fn builder() -> crate::model::notification_channel::Builder {
+        crate::model::notification_channel::Builder::default()
+    }
+}
+
 /// See [`NotificationChannel`](crate::model::NotificationChannel).
 pub mod notification_channel {
 
@@ -135,12 +143,6 @@ pub mod notification_channel {
         }
     }
 }
-impl NotificationChannel {
-    /// Creates a new builder-style object to manufacture [`NotificationChannel`](crate::model::NotificationChannel).
-    pub fn builder() -> crate::model::notification_channel::Builder {
-        crate::model::notification_channel::Builder::default()
-    }
-}
 
 /// <p>The Amazon S3 bucket that contains the document to be processed. It's used by asynchronous operations.</p>
 /// <p>The input document can be an image file in JPEG or PNG format. It can also be a file in PDF format.</p>
@@ -157,6 +159,13 @@ impl DocumentLocation {
         self.s3_object.as_ref()
     }
 }
+impl DocumentLocation {
+    /// Creates a new builder-style object to manufacture [`DocumentLocation`](crate::model::DocumentLocation).
+    pub fn builder() -> crate::model::document_location::Builder {
+        crate::model::document_location::Builder::default()
+    }
+}
+
 /// See [`DocumentLocation`](crate::model::DocumentLocation).
 pub mod document_location {
 
@@ -183,12 +192,6 @@ pub mod document_location {
                 s3_object: self.s3_object,
             }
         }
-    }
-}
-impl DocumentLocation {
-    /// Creates a new builder-style object to manufacture [`DocumentLocation`](crate::model::DocumentLocation).
-    pub fn builder() -> crate::model::document_location::Builder {
-        crate::model::document_location::Builder::default()
     }
 }
 
@@ -222,6 +225,13 @@ impl S3Object {
         self.version.as_deref()
     }
 }
+impl S3Object {
+    /// Creates a new builder-style object to manufacture [`S3Object`](crate::model::S3Object).
+    pub fn builder() -> crate::model::s3_object::Builder {
+        crate::model::s3_object::Builder::default()
+    }
+}
+
 /// See [`S3Object`](crate::model::S3Object).
 pub mod s3_object {
 
@@ -274,12 +284,6 @@ pub mod s3_object {
         }
     }
 }
-impl S3Object {
-    /// Creates a new builder-style object to manufacture [`S3Object`](crate::model::S3Object).
-    pub fn builder() -> crate::model::s3_object::Builder {
-        crate::model::s3_object::Builder::default()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
@@ -295,6 +299,13 @@ impl QueriesConfig {
         self.queries.as_deref()
     }
 }
+impl QueriesConfig {
+    /// Creates a new builder-style object to manufacture [`QueriesConfig`](crate::model::QueriesConfig).
+    pub fn builder() -> crate::model::queries_config::Builder {
+        crate::model::queries_config::Builder::default()
+    }
+}
+
 /// See [`QueriesConfig`](crate::model::QueriesConfig).
 pub mod queries_config {
 
@@ -330,12 +341,6 @@ pub mod queries_config {
                 queries: self.queries,
             }
         }
-    }
-}
-impl QueriesConfig {
-    /// Creates a new builder-style object to manufacture [`QueriesConfig`](crate::model::QueriesConfig).
-    pub fn builder() -> crate::model::queries_config::Builder {
-        crate::model::queries_config::Builder::default()
     }
 }
 
@@ -381,6 +386,13 @@ impl Query {
         self.pages.as_deref()
     }
 }
+impl Query {
+    /// Creates a new builder-style object to manufacture [`Query`](crate::model::Query).
+    pub fn builder() -> crate::model::query::Builder {
+        crate::model::query::Builder::default()
+    }
+}
+
 /// See [`Query`](crate::model::Query).
 pub mod query {
 
@@ -454,12 +466,6 @@ pub mod query {
                 pages: self.pages,
             }
         }
-    }
-}
-impl Query {
-    /// Creates a new builder-style object to manufacture [`Query`](crate::model::Query).
-    pub fn builder() -> crate::model::query::Builder {
-        crate::model::query::Builder::default()
     }
 }
 
@@ -584,6 +590,13 @@ impl Warning {
         self.pages.as_deref()
     }
 }
+impl Warning {
+    /// Creates a new builder-style object to manufacture [`Warning`](crate::model::Warning).
+    pub fn builder() -> crate::model::warning::Builder {
+        crate::model::warning::Builder::default()
+    }
+}
+
 /// See [`Warning`](crate::model::Warning).
 pub mod warning {
 
@@ -630,12 +643,6 @@ pub mod warning {
         }
     }
 }
-impl Warning {
-    /// Creates a new builder-style object to manufacture [`Warning`](crate::model::Warning).
-    pub fn builder() -> crate::model::warning::Builder {
-        crate::model::warning::Builder::default()
-    }
-}
 
 /// <p>Contains information regarding DocumentGroups and UndetectedDocumentTypes.</p>
 #[non_exhaustive]
@@ -658,6 +665,13 @@ impl LendingSummary {
         self.undetected_document_types.as_deref()
     }
 }
+impl LendingSummary {
+    /// Creates a new builder-style object to manufacture [`LendingSummary`](crate::model::LendingSummary).
+    pub fn builder() -> crate::model::lending_summary::Builder {
+        crate::model::lending_summary::Builder::default()
+    }
+}
+
 /// See [`LendingSummary`](crate::model::LendingSummary).
 pub mod lending_summary {
 
@@ -717,12 +731,6 @@ pub mod lending_summary {
         }
     }
 }
-impl LendingSummary {
-    /// Creates a new builder-style object to manufacture [`LendingSummary`](crate::model::LendingSummary).
-    pub fn builder() -> crate::model::lending_summary::Builder {
-        crate::model::lending_summary::Builder::default()
-    }
-}
 
 /// <p>Summary information about documents grouped by the same document type.</p>
 #[non_exhaustive]
@@ -762,6 +770,13 @@ impl DocumentGroup {
         self.undetected_signatures.as_deref()
     }
 }
+impl DocumentGroup {
+    /// Creates a new builder-style object to manufacture [`DocumentGroup`](crate::model::DocumentGroup).
+    pub fn builder() -> crate::model::document_group::Builder {
+        crate::model::document_group::Builder::default()
+    }
+}
+
 /// See [`DocumentGroup`](crate::model::DocumentGroup).
 pub mod document_group {
 
@@ -855,12 +870,6 @@ pub mod document_group {
         }
     }
 }
-impl DocumentGroup {
-    /// Creates a new builder-style object to manufacture [`DocumentGroup`](crate::model::DocumentGroup).
-    pub fn builder() -> crate::model::document_group::Builder {
-        crate::model::document_group::Builder::default()
-    }
-}
 
 /// <p>A structure containing information about an undetected signature on a page where it was expected but not found.</p>
 #[non_exhaustive]
@@ -876,6 +885,13 @@ impl UndetectedSignature {
         self.page
     }
 }
+impl UndetectedSignature {
+    /// Creates a new builder-style object to manufacture [`UndetectedSignature`](crate::model::UndetectedSignature).
+    pub fn builder() -> crate::model::undetected_signature::Builder {
+        crate::model::undetected_signature::Builder::default()
+    }
+}
+
 /// See [`UndetectedSignature`](crate::model::UndetectedSignature).
 pub mod undetected_signature {
 
@@ -902,12 +918,6 @@ pub mod undetected_signature {
         }
     }
 }
-impl UndetectedSignature {
-    /// Creates a new builder-style object to manufacture [`UndetectedSignature`](crate::model::UndetectedSignature).
-    pub fn builder() -> crate::model::undetected_signature::Builder {
-        crate::model::undetected_signature::Builder::default()
-    }
-}
 
 /// <p>A structure that holds information regarding a detected signature on a page.</p>
 #[non_exhaustive]
@@ -923,6 +933,13 @@ impl DetectedSignature {
         self.page
     }
 }
+impl DetectedSignature {
+    /// Creates a new builder-style object to manufacture [`DetectedSignature`](crate::model::DetectedSignature).
+    pub fn builder() -> crate::model::detected_signature::Builder {
+        crate::model::detected_signature::Builder::default()
+    }
+}
+
 /// See [`DetectedSignature`](crate::model::DetectedSignature).
 pub mod detected_signature {
 
@@ -949,12 +966,6 @@ pub mod detected_signature {
         }
     }
 }
-impl DetectedSignature {
-    /// Creates a new builder-style object to manufacture [`DetectedSignature`](crate::model::DetectedSignature).
-    pub fn builder() -> crate::model::detected_signature::Builder {
-        crate::model::detected_signature::Builder::default()
-    }
-}
 
 /// <p>Contains information about the pages of a document, defined by logical boundary.</p>
 #[non_exhaustive]
@@ -977,6 +988,13 @@ impl SplitDocument {
         self.pages.as_deref()
     }
 }
+impl SplitDocument {
+    /// Creates a new builder-style object to manufacture [`SplitDocument`](crate::model::SplitDocument).
+    pub fn builder() -> crate::model::split_document::Builder {
+        crate::model::split_document::Builder::default()
+    }
+}
+
 /// See [`SplitDocument`](crate::model::SplitDocument).
 pub mod split_document {
 
@@ -1021,12 +1039,6 @@ pub mod split_document {
                 pages: self.pages,
             }
         }
-    }
-}
-impl SplitDocument {
-    /// Creates a new builder-style object to manufacture [`SplitDocument`](crate::model::SplitDocument).
-    pub fn builder() -> crate::model::split_document::Builder {
-        crate::model::split_document::Builder::default()
     }
 }
 
@@ -1144,6 +1156,13 @@ impl DocumentMetadata {
         self.pages
     }
 }
+impl DocumentMetadata {
+    /// Creates a new builder-style object to manufacture [`DocumentMetadata`](crate::model::DocumentMetadata).
+    pub fn builder() -> crate::model::document_metadata::Builder {
+        crate::model::document_metadata::Builder::default()
+    }
+}
+
 /// See [`DocumentMetadata`](crate::model::DocumentMetadata).
 pub mod document_metadata {
 
@@ -1168,12 +1187,6 @@ pub mod document_metadata {
         pub fn build(self) -> crate::model::DocumentMetadata {
             crate::model::DocumentMetadata { pages: self.pages }
         }
-    }
-}
-impl DocumentMetadata {
-    /// Creates a new builder-style object to manufacture [`DocumentMetadata`](crate::model::DocumentMetadata).
-    pub fn builder() -> crate::model::document_metadata::Builder {
-        crate::model::document_metadata::Builder::default()
     }
 }
 
@@ -1205,6 +1218,13 @@ impl LendingResult {
         self.extractions.as_deref()
     }
 }
+impl LendingResult {
+    /// Creates a new builder-style object to manufacture [`LendingResult`](crate::model::LendingResult).
+    pub fn builder() -> crate::model::lending_result::Builder {
+        crate::model::lending_result::Builder::default()
+    }
+}
+
 /// See [`LendingResult`](crate::model::LendingResult).
 pub mod lending_result {
 
@@ -1269,12 +1289,6 @@ pub mod lending_result {
         }
     }
 }
-impl LendingResult {
-    /// Creates a new builder-style object to manufacture [`LendingResult`](crate::model::LendingResult).
-    pub fn builder() -> crate::model::lending_result::Builder {
-        crate::model::lending_result::Builder::default()
-    }
-}
 
 /// <p>Contains information extracted by an analysis operation after using StartLendingAnalysis.</p>
 #[non_exhaustive]
@@ -1304,6 +1318,13 @@ impl Extraction {
         self.identity_document.as_ref()
     }
 }
+impl Extraction {
+    /// Creates a new builder-style object to manufacture [`Extraction`](crate::model::Extraction).
+    pub fn builder() -> crate::model::extraction::Builder {
+        crate::model::extraction::Builder::default()
+    }
+}
+
 /// See [`Extraction`](crate::model::Extraction).
 pub mod extraction {
 
@@ -1365,12 +1386,6 @@ pub mod extraction {
         }
     }
 }
-impl Extraction {
-    /// Creates a new builder-style object to manufacture [`Extraction`](crate::model::Extraction).
-    pub fn builder() -> crate::model::extraction::Builder {
-        crate::model::extraction::Builder::default()
-    }
-}
 
 /// <p>The structure that lists each document processed in an AnalyzeID operation.</p>
 #[non_exhaustive]
@@ -1403,6 +1418,13 @@ impl IdentityDocument {
         self.blocks.as_deref()
     }
 }
+impl IdentityDocument {
+    /// Creates a new builder-style object to manufacture [`IdentityDocument`](crate::model::IdentityDocument).
+    pub fn builder() -> crate::model::identity_document::Builder {
+        crate::model::identity_document::Builder::default()
+    }
+}
+
 /// See [`IdentityDocument`](crate::model::IdentityDocument).
 pub mod identity_document {
 
@@ -1475,12 +1497,6 @@ pub mod identity_document {
                 blocks: self.blocks,
             }
         }
-    }
-}
-impl IdentityDocument {
-    /// Creates a new builder-style object to manufacture [`IdentityDocument`](crate::model::IdentityDocument).
-    pub fn builder() -> crate::model::identity_document::Builder {
-        crate::model::identity_document::Builder::default()
     }
 }
 
@@ -1652,6 +1668,13 @@ impl Block {
         self.query.as_ref()
     }
 }
+impl Block {
+    /// Creates a new builder-style object to manufacture [`Block`](crate::model::Block).
+    pub fn builder() -> crate::model::block::Builder {
+        crate::model::block::Builder::default()
+    }
+}
+
 /// See [`Block`](crate::model::Block).
 pub mod block {
 
@@ -1926,12 +1949,6 @@ pub mod block {
         }
     }
 }
-impl Block {
-    /// Creates a new builder-style object to manufacture [`Block`](crate::model::Block).
-    pub fn builder() -> crate::model::block::Builder {
-        crate::model::block::Builder::default()
-    }
-}
 
 /// When writing a match expression against `SelectionStatus`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -2140,6 +2157,13 @@ impl Relationship {
         self.ids.as_deref()
     }
 }
+impl Relationship {
+    /// Creates a new builder-style object to manufacture [`Relationship`](crate::model::Relationship).
+    pub fn builder() -> crate::model::relationship::Builder {
+        crate::model::relationship::Builder::default()
+    }
+}
+
 /// See [`Relationship`](crate::model::Relationship).
 pub mod relationship {
 
@@ -2190,12 +2214,6 @@ pub mod relationship {
                 ids: self.ids,
             }
         }
-    }
-}
-impl Relationship {
-    /// Creates a new builder-style object to manufacture [`Relationship`](crate::model::Relationship).
-    pub fn builder() -> crate::model::relationship::Builder {
-        crate::model::relationship::Builder::default()
     }
 }
 
@@ -2337,6 +2355,13 @@ impl Geometry {
         self.polygon.as_deref()
     }
 }
+impl Geometry {
+    /// Creates a new builder-style object to manufacture [`Geometry`](crate::model::Geometry).
+    pub fn builder() -> crate::model::geometry::Builder {
+        crate::model::geometry::Builder::default()
+    }
+}
+
 /// See [`Geometry`](crate::model::Geometry).
 pub mod geometry {
 
@@ -2389,12 +2414,6 @@ pub mod geometry {
         }
     }
 }
-impl Geometry {
-    /// Creates a new builder-style object to manufacture [`Geometry`](crate::model::Geometry).
-    pub fn builder() -> crate::model::geometry::Builder {
-        crate::model::geometry::Builder::default()
-    }
-}
 
 /// <p>The X and Y coordinates of a point on a document page. The X and Y values that are returned are ratios of the overall document page size. For example, if the input document is 700 x 200 and the operation returns X=0.5 and Y=0.25, then the point is at the (350,50) pixel coordinate on the document page.</p>
 /// <p>An array of <code>Point</code> objects, <code>Polygon</code>, is returned by <code>DetectDocumentText</code>. <code>Polygon</code> represents a fine-grained polygon around detected text. For more information, see Geometry in the Amazon Textract Developer Guide. </p>
@@ -2418,6 +2437,13 @@ impl Point {
         self.y
     }
 }
+impl Point {
+    /// Creates a new builder-style object to manufacture [`Point`](crate::model::Point).
+    pub fn builder() -> crate::model::point::Builder {
+        crate::model::point::Builder::default()
+    }
+}
+
 /// See [`Point`](crate::model::Point).
 pub mod point {
 
@@ -2458,12 +2484,6 @@ pub mod point {
         }
     }
 }
-impl Point {
-    /// Creates a new builder-style object to manufacture [`Point`](crate::model::Point).
-    pub fn builder() -> crate::model::point::Builder {
-        crate::model::point::Builder::default()
-    }
-}
 
 /// <p>The bounding box around the detected page, text, key-value pair, table, table cell, or selection element on a document page. The <code>left</code> (x-coordinate) and <code>top</code> (y-coordinate) are coordinates that represent the top and left sides of the bounding box. Note that the upper-left corner of the image is the origin (0,0). </p>
 /// <p>The <code>top</code> and <code>left</code> values returned are ratios of the overall document page size. For example, if the input image is 700 x 200 pixels, and the top-left coordinate of the bounding box is 350 x 50 pixels, the API returns a <code>left</code> value of 0.5 (350/700) and a <code>top</code> value of 0.25 (50/200).</p>
@@ -2502,6 +2522,13 @@ impl BoundingBox {
         self.top
     }
 }
+impl BoundingBox {
+    /// Creates a new builder-style object to manufacture [`BoundingBox`](crate::model::BoundingBox).
+    pub fn builder() -> crate::model::bounding_box::Builder {
+        crate::model::bounding_box::Builder::default()
+    }
+}
+
 /// See [`BoundingBox`](crate::model::BoundingBox).
 pub mod bounding_box {
 
@@ -2564,12 +2591,6 @@ pub mod bounding_box {
                 top: self.top.unwrap_or_default(),
             }
         }
-    }
-}
-impl BoundingBox {
-    /// Creates a new builder-style object to manufacture [`BoundingBox`](crate::model::BoundingBox).
-    pub fn builder() -> crate::model::bounding_box::Builder {
-        crate::model::bounding_box::Builder::default()
     }
 }
 
@@ -2837,6 +2858,13 @@ impl IdentityDocumentField {
         self.value_detection.as_ref()
     }
 }
+impl IdentityDocumentField {
+    /// Creates a new builder-style object to manufacture [`IdentityDocumentField`](crate::model::IdentityDocumentField).
+    pub fn builder() -> crate::model::identity_document_field::Builder {
+        crate::model::identity_document_field::Builder::default()
+    }
+}
+
 /// See [`IdentityDocumentField`](crate::model::IdentityDocumentField).
 pub mod identity_document_field {
 
@@ -2883,12 +2911,6 @@ pub mod identity_document_field {
         }
     }
 }
-impl IdentityDocumentField {
-    /// Creates a new builder-style object to manufacture [`IdentityDocumentField`](crate::model::IdentityDocumentField).
-    pub fn builder() -> crate::model::identity_document_field::Builder {
-        crate::model::identity_document_field::Builder::default()
-    }
-}
 
 /// <p>Used to contain the information detected by an AnalyzeID operation.</p>
 #[non_exhaustive]
@@ -2918,6 +2940,13 @@ impl AnalyzeIdDetections {
         self.confidence
     }
 }
+impl AnalyzeIdDetections {
+    /// Creates a new builder-style object to manufacture [`AnalyzeIdDetections`](crate::model::AnalyzeIdDetections).
+    pub fn builder() -> crate::model::analyze_id_detections::Builder {
+        crate::model::analyze_id_detections::Builder::default()
+    }
+}
+
 /// See [`AnalyzeIdDetections`](crate::model::AnalyzeIdDetections).
 pub mod analyze_id_detections {
 
@@ -2973,12 +3002,6 @@ pub mod analyze_id_detections {
         }
     }
 }
-impl AnalyzeIdDetections {
-    /// Creates a new builder-style object to manufacture [`AnalyzeIdDetections`](crate::model::AnalyzeIdDetections).
-    pub fn builder() -> crate::model::analyze_id_detections::Builder {
-        crate::model::analyze_id_detections::Builder::default()
-    }
-}
 
 /// <p>Contains information relating to dates in a document, including the type of value, and the value.</p>
 #[non_exhaustive]
@@ -3001,6 +3024,13 @@ impl NormalizedValue {
         self.value_type.as_ref()
     }
 }
+impl NormalizedValue {
+    /// Creates a new builder-style object to manufacture [`NormalizedValue`](crate::model::NormalizedValue).
+    pub fn builder() -> crate::model::normalized_value::Builder {
+        crate::model::normalized_value::Builder::default()
+    }
+}
+
 /// See [`NormalizedValue`](crate::model::NormalizedValue).
 pub mod normalized_value {
 
@@ -3042,12 +3072,6 @@ pub mod normalized_value {
                 value_type: self.value_type,
             }
         }
-    }
-}
-impl NormalizedValue {
-    /// Creates a new builder-style object to manufacture [`NormalizedValue`](crate::model::NormalizedValue).
-    pub fn builder() -> crate::model::normalized_value::Builder {
-        crate::model::normalized_value::Builder::default()
     }
 }
 
@@ -3171,6 +3195,13 @@ impl ExpenseDocument {
         self.blocks.as_deref()
     }
 }
+impl ExpenseDocument {
+    /// Creates a new builder-style object to manufacture [`ExpenseDocument`](crate::model::ExpenseDocument).
+    pub fn builder() -> crate::model::expense_document::Builder {
+        crate::model::expense_document::Builder::default()
+    }
+}
+
 /// See [`ExpenseDocument`](crate::model::ExpenseDocument).
 pub mod expense_document {
 
@@ -3263,12 +3294,6 @@ pub mod expense_document {
         }
     }
 }
-impl ExpenseDocument {
-    /// Creates a new builder-style object to manufacture [`ExpenseDocument`](crate::model::ExpenseDocument).
-    pub fn builder() -> crate::model::expense_document::Builder {
-        crate::model::expense_document::Builder::default()
-    }
-}
 
 /// <p>A grouping of tables which contain LineItems, with each table identified by the table's <code>LineItemGroupIndex</code>.</p>
 #[non_exhaustive]
@@ -3291,6 +3316,13 @@ impl LineItemGroup {
         self.line_items.as_deref()
     }
 }
+impl LineItemGroup {
+    /// Creates a new builder-style object to manufacture [`LineItemGroup`](crate::model::LineItemGroup).
+    pub fn builder() -> crate::model::line_item_group::Builder {
+        crate::model::line_item_group::Builder::default()
+    }
+}
+
 /// See [`LineItemGroup`](crate::model::LineItemGroup).
 pub mod line_item_group {
 
@@ -3340,12 +3372,6 @@ pub mod line_item_group {
         }
     }
 }
-impl LineItemGroup {
-    /// Creates a new builder-style object to manufacture [`LineItemGroup`](crate::model::LineItemGroup).
-    pub fn builder() -> crate::model::line_item_group::Builder {
-        crate::model::line_item_group::Builder::default()
-    }
-}
 
 /// <p>A structure that holds information about the different lines found in a document's tables.</p>
 #[non_exhaustive]
@@ -3361,6 +3387,13 @@ impl LineItemFields {
         self.line_item_expense_fields.as_deref()
     }
 }
+impl LineItemFields {
+    /// Creates a new builder-style object to manufacture [`LineItemFields`](crate::model::LineItemFields).
+    pub fn builder() -> crate::model::line_item_fields::Builder {
+        crate::model::line_item_fields::Builder::default()
+    }
+}
+
 /// See [`LineItemFields`](crate::model::LineItemFields).
 pub mod line_item_fields {
 
@@ -3397,12 +3430,6 @@ pub mod line_item_fields {
                 line_item_expense_fields: self.line_item_expense_fields,
             }
         }
-    }
-}
-impl LineItemFields {
-    /// Creates a new builder-style object to manufacture [`LineItemFields`](crate::model::LineItemFields).
-    pub fn builder() -> crate::model::line_item_fields::Builder {
-        crate::model::line_item_fields::Builder::default()
     }
 }
 
@@ -3455,6 +3482,13 @@ impl ExpenseField {
         self.group_properties.as_deref()
     }
 }
+impl ExpenseField {
+    /// Creates a new builder-style object to manufacture [`ExpenseField`](crate::model::ExpenseField).
+    pub fn builder() -> crate::model::expense_field::Builder {
+        crate::model::expense_field::Builder::default()
+    }
+}
+
 /// See [`ExpenseField`](crate::model::ExpenseField).
 pub mod expense_field {
 
@@ -3562,12 +3596,6 @@ pub mod expense_field {
         }
     }
 }
-impl ExpenseField {
-    /// Creates a new builder-style object to manufacture [`ExpenseField`](crate::model::ExpenseField).
-    pub fn builder() -> crate::model::expense_field::Builder {
-        crate::model::expense_field::Builder::default()
-    }
-}
 
 /// <p>Shows the group that a certain key belongs to. This helps differentiate between names and addresses for different organizations, that can be hard to determine via JSON response.</p>
 #[non_exhaustive]
@@ -3590,6 +3618,13 @@ impl ExpenseGroupProperty {
         self.id.as_deref()
     }
 }
+impl ExpenseGroupProperty {
+    /// Creates a new builder-style object to manufacture [`ExpenseGroupProperty`](crate::model::ExpenseGroupProperty).
+    pub fn builder() -> crate::model::expense_group_property::Builder {
+        crate::model::expense_group_property::Builder::default()
+    }
+}
+
 /// See [`ExpenseGroupProperty`](crate::model::ExpenseGroupProperty).
 pub mod expense_group_property {
 
@@ -3637,12 +3672,6 @@ pub mod expense_group_property {
                 id: self.id,
             }
         }
-    }
-}
-impl ExpenseGroupProperty {
-    /// Creates a new builder-style object to manufacture [`ExpenseGroupProperty`](crate::model::ExpenseGroupProperty).
-    pub fn builder() -> crate::model::expense_group_property::Builder {
-        crate::model::expense_group_property::Builder::default()
     }
 }
 
@@ -3695,6 +3724,13 @@ impl ExpenseCurrency {
         self.confidence
     }
 }
+impl ExpenseCurrency {
+    /// Creates a new builder-style object to manufacture [`ExpenseCurrency`](crate::model::ExpenseCurrency).
+    pub fn builder() -> crate::model::expense_currency::Builder {
+        crate::model::expense_currency::Builder::default()
+    }
+}
+
 /// See [`ExpenseCurrency`](crate::model::ExpenseCurrency).
 pub mod expense_currency {
 
@@ -3763,12 +3799,6 @@ pub mod expense_currency {
         }
     }
 }
-impl ExpenseCurrency {
-    /// Creates a new builder-style object to manufacture [`ExpenseCurrency`](crate::model::ExpenseCurrency).
-    pub fn builder() -> crate::model::expense_currency::Builder {
-        crate::model::expense_currency::Builder::default()
-    }
-}
 
 /// <p>An object used to store information about the Value or Label detected by Amazon Textract.</p>
 #[non_exhaustive]
@@ -3798,6 +3828,13 @@ impl ExpenseDetection {
         self.confidence
     }
 }
+impl ExpenseDetection {
+    /// Creates a new builder-style object to manufacture [`ExpenseDetection`](crate::model::ExpenseDetection).
+    pub fn builder() -> crate::model::expense_detection::Builder {
+        crate::model::expense_detection::Builder::default()
+    }
+}
+
 /// See [`ExpenseDetection`](crate::model::ExpenseDetection).
 pub mod expense_detection {
 
@@ -3850,12 +3887,6 @@ pub mod expense_detection {
         }
     }
 }
-impl ExpenseDetection {
-    /// Creates a new builder-style object to manufacture [`ExpenseDetection`](crate::model::ExpenseDetection).
-    pub fn builder() -> crate::model::expense_detection::Builder {
-        crate::model::expense_detection::Builder::default()
-    }
-}
 
 /// <p>An object used to store information about the Type detected by Amazon Textract.</p>
 #[non_exhaustive]
@@ -3878,6 +3909,13 @@ impl ExpenseType {
         self.confidence
     }
 }
+impl ExpenseType {
+    /// Creates a new builder-style object to manufacture [`ExpenseType`](crate::model::ExpenseType).
+    pub fn builder() -> crate::model::expense_type::Builder {
+        crate::model::expense_type::Builder::default()
+    }
+}
+
 /// See [`ExpenseType`](crate::model::ExpenseType).
 pub mod expense_type {
 
@@ -3918,12 +3956,6 @@ pub mod expense_type {
         }
     }
 }
-impl ExpenseType {
-    /// Creates a new builder-style object to manufacture [`ExpenseType`](crate::model::ExpenseType).
-    pub fn builder() -> crate::model::expense_type::Builder {
-        crate::model::expense_type::Builder::default()
-    }
-}
 
 /// <p>Holds the structured data returned by AnalyzeDocument for lending documents.</p>
 #[non_exhaustive]
@@ -3946,6 +3978,13 @@ impl LendingDocument {
         self.signature_detections.as_deref()
     }
 }
+impl LendingDocument {
+    /// Creates a new builder-style object to manufacture [`LendingDocument`](crate::model::LendingDocument).
+    pub fn builder() -> crate::model::lending_document::Builder {
+        crate::model::lending_document::Builder::default()
+    }
+}
+
 /// See [`LendingDocument`](crate::model::LendingDocument).
 pub mod lending_document {
 
@@ -4005,12 +4044,6 @@ pub mod lending_document {
         }
     }
 }
-impl LendingDocument {
-    /// Creates a new builder-style object to manufacture [`LendingDocument`](crate::model::LendingDocument).
-    pub fn builder() -> crate::model::lending_document::Builder {
-        crate::model::lending_document::Builder::default()
-    }
-}
 
 /// <p>Information regarding a detected signature on a page.</p>
 #[non_exhaustive]
@@ -4033,6 +4066,13 @@ impl SignatureDetection {
         self.geometry.as_ref()
     }
 }
+impl SignatureDetection {
+    /// Creates a new builder-style object to manufacture [`SignatureDetection`](crate::model::SignatureDetection).
+    pub fn builder() -> crate::model::signature_detection::Builder {
+        crate::model::signature_detection::Builder::default()
+    }
+}
+
 /// See [`SignatureDetection`](crate::model::SignatureDetection).
 pub mod signature_detection {
 
@@ -4073,12 +4113,6 @@ pub mod signature_detection {
         }
     }
 }
-impl SignatureDetection {
-    /// Creates a new builder-style object to manufacture [`SignatureDetection`](crate::model::SignatureDetection).
-    pub fn builder() -> crate::model::signature_detection::Builder {
-        crate::model::signature_detection::Builder::default()
-    }
-}
 
 /// <p>Holds the normalized key-value pairs returned by AnalyzeDocument, including the document type, detected text, and geometry.</p>
 #[non_exhaustive]
@@ -4108,6 +4142,13 @@ impl LendingField {
         self.value_detections.as_deref()
     }
 }
+impl LendingField {
+    /// Creates a new builder-style object to manufacture [`LendingField`](crate::model::LendingField).
+    pub fn builder() -> crate::model::lending_field::Builder {
+        crate::model::lending_field::Builder::default()
+    }
+}
+
 /// See [`LendingField`](crate::model::LendingField).
 pub mod lending_field {
 
@@ -4173,12 +4214,6 @@ pub mod lending_field {
         }
     }
 }
-impl LendingField {
-    /// Creates a new builder-style object to manufacture [`LendingField`](crate::model::LendingField).
-    pub fn builder() -> crate::model::lending_field::Builder {
-        crate::model::lending_field::Builder::default()
-    }
-}
 
 /// <p>The results extracted for a lending document.</p>
 #[non_exhaustive]
@@ -4215,6 +4250,13 @@ impl LendingDetection {
         self.confidence
     }
 }
+impl LendingDetection {
+    /// Creates a new builder-style object to manufacture [`LendingDetection`](crate::model::LendingDetection).
+    pub fn builder() -> crate::model::lending_detection::Builder {
+        crate::model::lending_detection::Builder::default()
+    }
+}
+
 /// See [`LendingDetection`](crate::model::LendingDetection).
 pub mod lending_detection {
 
@@ -4282,12 +4324,6 @@ pub mod lending_detection {
         }
     }
 }
-impl LendingDetection {
-    /// Creates a new builder-style object to manufacture [`LendingDetection`](crate::model::LendingDetection).
-    pub fn builder() -> crate::model::lending_detection::Builder {
-        crate::model::lending_detection::Builder::default()
-    }
-}
 
 /// <p>The class assigned to a Page object detected in an input document. Contains information regarding the predicted type/class of a document's page and the page number that the Page object was detected on.</p>
 #[non_exhaustive]
@@ -4310,6 +4346,13 @@ impl PageClassification {
         self.page_number.as_deref()
     }
 }
+impl PageClassification {
+    /// Creates a new builder-style object to manufacture [`PageClassification`](crate::model::PageClassification).
+    pub fn builder() -> crate::model::page_classification::Builder {
+        crate::model::page_classification::Builder::default()
+    }
+}
+
 /// See [`PageClassification`](crate::model::PageClassification).
 pub mod page_classification {
 
@@ -4368,12 +4411,6 @@ pub mod page_classification {
         }
     }
 }
-impl PageClassification {
-    /// Creates a new builder-style object to manufacture [`PageClassification`](crate::model::PageClassification).
-    pub fn builder() -> crate::model::page_classification::Builder {
-        crate::model::page_classification::Builder::default()
-    }
-}
 
 /// <p>Contains information regarding predicted values returned by Amazon Textract operations, including the predicted value and the confidence in the predicted value.</p>
 #[non_exhaustive]
@@ -4396,6 +4433,13 @@ impl Prediction {
         self.confidence
     }
 }
+impl Prediction {
+    /// Creates a new builder-style object to manufacture [`Prediction`](crate::model::Prediction).
+    pub fn builder() -> crate::model::prediction::Builder {
+        crate::model::prediction::Builder::default()
+    }
+}
+
 /// See [`Prediction`](crate::model::Prediction).
 pub mod prediction {
 
@@ -4436,12 +4480,6 @@ pub mod prediction {
         }
     }
 }
-impl Prediction {
-    /// Creates a new builder-style object to manufacture [`Prediction`](crate::model::Prediction).
-    pub fn builder() -> crate::model::prediction::Builder {
-        crate::model::prediction::Builder::default()
-    }
-}
 
 /// <p>The input document, either as bytes or as an S3 object.</p>
 /// <p>You pass image bytes to an Amazon Textract API operation by using the <code>Bytes</code> property. For example, you would use the <code>Bytes</code> property to pass a document loaded from a local file system. Image bytes passed by using the <code>Bytes</code> property must be base64 encoded. Your code might not need to encode document file bytes if you're using an AWS SDK to call Amazon Textract API operations. </p>
@@ -4471,6 +4509,13 @@ impl Document {
         self.s3_object.as_ref()
     }
 }
+impl Document {
+    /// Creates a new builder-style object to manufacture [`Document`](crate::model::Document).
+    pub fn builder() -> crate::model::document::Builder {
+        crate::model::document::Builder::default()
+    }
+}
+
 /// See [`Document`](crate::model::Document).
 pub mod document {
 
@@ -4513,12 +4558,6 @@ pub mod document {
         }
     }
 }
-impl Document {
-    /// Creates a new builder-style object to manufacture [`Document`](crate::model::Document).
-    pub fn builder() -> crate::model::document::Builder {
-        crate::model::document::Builder::default()
-    }
-}
 
 /// <p>Shows the results of the human in the loop evaluation. If there is no HumanLoopArn, the input did not trigger human review.</p>
 #[non_exhaustive]
@@ -4550,6 +4589,13 @@ impl HumanLoopActivationOutput {
             .as_deref()
     }
 }
+impl HumanLoopActivationOutput {
+    /// Creates a new builder-style object to manufacture [`HumanLoopActivationOutput`](crate::model::HumanLoopActivationOutput).
+    pub fn builder() -> crate::model::human_loop_activation_output::Builder {
+        crate::model::human_loop_activation_output::Builder::default()
+    }
+}
+
 /// See [`HumanLoopActivationOutput`](crate::model::HumanLoopActivationOutput).
 pub mod human_loop_activation_output {
 
@@ -4626,12 +4672,6 @@ pub mod human_loop_activation_output {
         }
     }
 }
-impl HumanLoopActivationOutput {
-    /// Creates a new builder-style object to manufacture [`HumanLoopActivationOutput`](crate::model::HumanLoopActivationOutput).
-    pub fn builder() -> crate::model::human_loop_activation_output::Builder {
-        crate::model::human_loop_activation_output::Builder::default()
-    }
-}
 
 /// <p>Sets up the human review workflow the document will be sent to if one of the conditions is met. You can also set certain attributes of the image before review. </p>
 #[non_exhaustive]
@@ -4661,6 +4701,13 @@ impl HumanLoopConfig {
         self.data_attributes.as_ref()
     }
 }
+impl HumanLoopConfig {
+    /// Creates a new builder-style object to manufacture [`HumanLoopConfig`](crate::model::HumanLoopConfig).
+    pub fn builder() -> crate::model::human_loop_config::Builder {
+        crate::model::human_loop_config::Builder::default()
+    }
+}
+
 /// See [`HumanLoopConfig`](crate::model::HumanLoopConfig).
 pub mod human_loop_config {
 
@@ -4722,12 +4769,6 @@ pub mod human_loop_config {
         }
     }
 }
-impl HumanLoopConfig {
-    /// Creates a new builder-style object to manufacture [`HumanLoopConfig`](crate::model::HumanLoopConfig).
-    pub fn builder() -> crate::model::human_loop_config::Builder {
-        crate::model::human_loop_config::Builder::default()
-    }
-}
 
 /// <p>Allows you to set attributes of the image. Currently, you can declare an image as free of personally identifiable information and adult content. </p>
 #[non_exhaustive]
@@ -4743,6 +4784,13 @@ impl HumanLoopDataAttributes {
         self.content_classifiers.as_deref()
     }
 }
+impl HumanLoopDataAttributes {
+    /// Creates a new builder-style object to manufacture [`HumanLoopDataAttributes`](crate::model::HumanLoopDataAttributes).
+    pub fn builder() -> crate::model::human_loop_data_attributes::Builder {
+        crate::model::human_loop_data_attributes::Builder::default()
+    }
+}
+
 /// See [`HumanLoopDataAttributes`](crate::model::HumanLoopDataAttributes).
 pub mod human_loop_data_attributes {
 
@@ -4779,12 +4827,6 @@ pub mod human_loop_data_attributes {
                 content_classifiers: self.content_classifiers,
             }
         }
-    }
-}
-impl HumanLoopDataAttributes {
-    /// Creates a new builder-style object to manufacture [`HumanLoopDataAttributes`](crate::model::HumanLoopDataAttributes).
-    pub fn builder() -> crate::model::human_loop_data_attributes::Builder {
-        crate::model::human_loop_data_attributes::Builder::default()
     }
 }
 

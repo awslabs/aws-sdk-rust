@@ -64,6 +64,13 @@ impl GatingRule {
         self.wait_period_ms
     }
 }
+impl GatingRule {
+    /// Creates a new builder-style object to manufacture [`GatingRule`](crate::model::GatingRule).
+    pub fn builder() -> crate::model::gating_rule::Builder {
+        crate::model::gating_rule::Builder::default()
+    }
+}
+
 /// See [`GatingRule`](crate::model::GatingRule).
 pub mod gating_rule {
 
@@ -203,12 +210,6 @@ pub mod gating_rule {
         }
     }
 }
-impl GatingRule {
-    /// Creates a new builder-style object to manufacture [`GatingRule`](crate::model::GatingRule).
-    pub fn builder() -> crate::model::gating_rule::Builder {
-        crate::model::gating_rule::Builder::default()
-    }
-}
 
 /// When writing a match expression against `Status`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -333,6 +334,13 @@ impl RuleConfig {
         self.r#type.as_ref()
     }
 }
+impl RuleConfig {
+    /// Creates a new builder-style object to manufacture [`RuleConfig`](crate::model::RuleConfig).
+    pub fn builder() -> crate::model::rule_config::Builder {
+        crate::model::rule_config::Builder::default()
+    }
+}
+
 /// See [`RuleConfig`](crate::model::RuleConfig).
 pub mod rule_config {
 
@@ -383,12 +391,6 @@ pub mod rule_config {
                 r#type: self.r#type,
             }
         }
-    }
-}
-impl RuleConfig {
-    /// Creates a new builder-style object to manufacture [`RuleConfig`](crate::model::RuleConfig).
-    pub fn builder() -> crate::model::rule_config::Builder {
-        crate::model::rule_config::Builder::default()
     }
 }
 
@@ -543,6 +545,13 @@ impl AssertionRule {
         self.wait_period_ms
     }
 }
+impl AssertionRule {
+    /// Creates a new builder-style object to manufacture [`AssertionRule`](crate::model::AssertionRule).
+    pub fn builder() -> crate::model::assertion_rule::Builder {
+        crate::model::assertion_rule::Builder::default()
+    }
+}
+
 /// See [`AssertionRule`](crate::model::AssertionRule).
 pub mod assertion_rule {
 
@@ -661,12 +670,6 @@ pub mod assertion_rule {
         }
     }
 }
-impl AssertionRule {
-    /// Creates a new builder-style object to manufacture [`AssertionRule`](crate::model::AssertionRule).
-    pub fn builder() -> crate::model::assertion_rule::Builder {
-        crate::model::assertion_rule::Builder::default()
-    }
-}
 
 /// <p>Update to a gating rule. You can update the name or the evaluation period (wait period). If you don't specify one of the items to update, the item is unchanged.</p>
 #[non_exhaustive]
@@ -696,6 +699,13 @@ impl GatingRuleUpdate {
         self.wait_period_ms
     }
 }
+impl GatingRuleUpdate {
+    /// Creates a new builder-style object to manufacture [`GatingRuleUpdate`](crate::model::GatingRuleUpdate).
+    pub fn builder() -> crate::model::gating_rule_update::Builder {
+        crate::model::gating_rule_update::Builder::default()
+    }
+}
+
 /// See [`GatingRuleUpdate`](crate::model::GatingRuleUpdate).
 pub mod gating_rule_update {
 
@@ -751,12 +761,6 @@ pub mod gating_rule_update {
         }
     }
 }
-impl GatingRuleUpdate {
-    /// Creates a new builder-style object to manufacture [`GatingRuleUpdate`](crate::model::GatingRuleUpdate).
-    pub fn builder() -> crate::model::gating_rule_update::Builder {
-        crate::model::gating_rule_update::Builder::default()
-    }
-}
 
 /// <p>An update to an assertion rule. You can update the name or the evaluation period (wait period). If you don't specify one of the items to update, the item is unchanged.</p>
 #[non_exhaustive]
@@ -786,6 +790,13 @@ impl AssertionRuleUpdate {
         self.wait_period_ms
     }
 }
+impl AssertionRuleUpdate {
+    /// Creates a new builder-style object to manufacture [`AssertionRuleUpdate`](crate::model::AssertionRuleUpdate).
+    pub fn builder() -> crate::model::assertion_rule_update::Builder {
+        crate::model::assertion_rule_update::Builder::default()
+    }
+}
+
 /// See [`AssertionRuleUpdate`](crate::model::AssertionRuleUpdate).
 pub mod assertion_rule_update {
 
@@ -841,12 +852,6 @@ pub mod assertion_rule_update {
         }
     }
 }
-impl AssertionRuleUpdate {
-    /// Creates a new builder-style object to manufacture [`AssertionRuleUpdate`](crate::model::AssertionRuleUpdate).
-    pub fn builder() -> crate::model::assertion_rule_update::Builder {
-        crate::model::assertion_rule_update::Builder::default()
-    }
-}
 
 /// <p>A routing control has one of two states: ON and OFF. You can map the routing control state to the state of an Amazon Route 53 health check, which can be used to control traffic routing.</p>
 #[non_exhaustive]
@@ -883,6 +888,13 @@ impl RoutingControl {
         self.status.as_ref()
     }
 }
+impl RoutingControl {
+    /// Creates a new builder-style object to manufacture [`RoutingControl`](crate::model::RoutingControl).
+    pub fn builder() -> crate::model::routing_control::Builder {
+        crate::model::routing_control::Builder::default()
+    }
+}
+
 /// See [`RoutingControl`](crate::model::RoutingControl).
 pub mod routing_control {
 
@@ -953,12 +965,6 @@ pub mod routing_control {
         }
     }
 }
-impl RoutingControl {
-    /// Creates a new builder-style object to manufacture [`RoutingControl`](crate::model::RoutingControl).
-    pub fn builder() -> crate::model::routing_control::Builder {
-        crate::model::routing_control::Builder::default()
-    }
-}
 
 /// <p>A control panel represents a group of routing controls that can be changed together in a single transaction.</p>
 #[non_exhaustive]
@@ -1009,6 +1015,13 @@ impl ControlPanel {
         self.status.as_ref()
     }
 }
+impl ControlPanel {
+    /// Creates a new builder-style object to manufacture [`ControlPanel`](crate::model::ControlPanel).
+    pub fn builder() -> crate::model::control_panel::Builder {
+        crate::model::control_panel::Builder::default()
+    }
+}
+
 /// See [`ControlPanel`](crate::model::ControlPanel).
 pub mod control_panel {
 
@@ -1100,12 +1113,6 @@ pub mod control_panel {
         }
     }
 }
-impl ControlPanel {
-    /// Creates a new builder-style object to manufacture [`ControlPanel`](crate::model::ControlPanel).
-    pub fn builder() -> crate::model::control_panel::Builder {
-        crate::model::control_panel::Builder::default()
-    }
-}
 
 /// <p>A safety rule. A safety rule can be an assertion rule or a gating rule.</p>
 #[non_exhaustive]
@@ -1130,6 +1137,13 @@ impl Rule {
         self.gating.as_ref()
     }
 }
+impl Rule {
+    /// Creates a new builder-style object to manufacture [`Rule`](crate::model::Rule).
+    pub fn builder() -> crate::model::rule::Builder {
+        crate::model::rule::Builder::default()
+    }
+}
+
 /// See [`Rule`](crate::model::Rule).
 pub mod rule {
 
@@ -1175,12 +1189,6 @@ pub mod rule {
         }
     }
 }
-impl Rule {
-    /// Creates a new builder-style object to manufacture [`Rule`](crate::model::Rule).
-    pub fn builder() -> crate::model::rule::Builder {
-        crate::model::rule::Builder::default()
-    }
-}
 
 /// <p>A set of five redundant Regional endpoints against which you can execute API calls to update or get the state of routing controls. You can host multiple control panels and routing controls on one cluster.</p>
 #[non_exhaustive]
@@ -1219,6 +1227,13 @@ impl Cluster {
         self.status.as_ref()
     }
 }
+impl Cluster {
+    /// Creates a new builder-style object to manufacture [`Cluster`](crate::model::Cluster).
+    pub fn builder() -> crate::model::cluster::Builder {
+        crate::model::cluster::Builder::default()
+    }
+}
+
 /// See [`Cluster`](crate::model::Cluster).
 pub mod cluster {
 
@@ -1295,12 +1310,6 @@ pub mod cluster {
         }
     }
 }
-impl Cluster {
-    /// Creates a new builder-style object to manufacture [`Cluster`](crate::model::Cluster).
-    pub fn builder() -> crate::model::cluster::Builder {
-        crate::model::cluster::Builder::default()
-    }
-}
 
 /// <p>A cluster endpoint. Specify an endpoint when you want to set or retrieve a routing control state in the cluster.</p>
 #[non_exhaustive]
@@ -1325,6 +1334,13 @@ impl ClusterEndpoint {
         self.region.as_deref()
     }
 }
+impl ClusterEndpoint {
+    /// Creates a new builder-style object to manufacture [`ClusterEndpoint`](crate::model::ClusterEndpoint).
+    pub fn builder() -> crate::model::cluster_endpoint::Builder {
+        crate::model::cluster_endpoint::Builder::default()
+    }
+}
+
 /// See [`ClusterEndpoint`](crate::model::ClusterEndpoint).
 pub mod cluster_endpoint {
 
@@ -1365,12 +1381,6 @@ pub mod cluster_endpoint {
                 region: self.region,
             }
         }
-    }
-}
-impl ClusterEndpoint {
-    /// Creates a new builder-style object to manufacture [`ClusterEndpoint`](crate::model::ClusterEndpoint).
-    pub fn builder() -> crate::model::cluster_endpoint::Builder {
-        crate::model::cluster_endpoint::Builder::default()
     }
 }
 
@@ -1425,6 +1435,13 @@ impl NewGatingRule {
         self.wait_period_ms
     }
 }
+impl NewGatingRule {
+    /// Creates a new builder-style object to manufacture [`NewGatingRule`](crate::model::NewGatingRule).
+    pub fn builder() -> crate::model::new_gating_rule::Builder {
+        crate::model::new_gating_rule::Builder::default()
+    }
+}
+
 /// See [`NewGatingRule`](crate::model::NewGatingRule).
 pub mod new_gating_rule {
 
@@ -1539,12 +1556,6 @@ pub mod new_gating_rule {
         }
     }
 }
-impl NewGatingRule {
-    /// Creates a new builder-style object to manufacture [`NewGatingRule`](crate::model::NewGatingRule).
-    pub fn builder() -> crate::model::new_gating_rule::Builder {
-        crate::model::new_gating_rule::Builder::default()
-    }
-}
 
 /// <p>A new assertion rule for a control panel.</p>
 #[non_exhaustive]
@@ -1588,6 +1599,13 @@ impl NewAssertionRule {
         self.wait_period_ms
     }
 }
+impl NewAssertionRule {
+    /// Creates a new builder-style object to manufacture [`NewAssertionRule`](crate::model::NewAssertionRule).
+    pub fn builder() -> crate::model::new_assertion_rule::Builder {
+        crate::model::new_assertion_rule::Builder::default()
+    }
+}
+
 /// See [`NewAssertionRule`](crate::model::NewAssertionRule).
 pub mod new_assertion_rule {
 
@@ -1677,11 +1695,5 @@ pub mod new_assertion_rule {
                 wait_period_ms: self.wait_period_ms.unwrap_or_default(),
             }
         }
-    }
-}
-impl NewAssertionRule {
-    /// Creates a new builder-style object to manufacture [`NewAssertionRule`](crate::model::NewAssertionRule).
-    pub fn builder() -> crate::model::new_assertion_rule::Builder {
-        crate::model::new_assertion_rule::Builder::default()
     }
 }

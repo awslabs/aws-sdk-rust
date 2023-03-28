@@ -28,6 +28,13 @@ impl TableMember {
         self.schema.as_deref()
     }
 }
+impl TableMember {
+    /// Creates a new builder-style object to manufacture [`TableMember`](crate::model::TableMember).
+    pub fn builder() -> crate::model::table_member::Builder {
+        crate::model::table_member::Builder::default()
+    }
+}
+
 /// See [`TableMember`](crate::model::TableMember).
 pub mod table_member {
 
@@ -78,12 +85,6 @@ pub mod table_member {
                 schema: self.schema,
             }
         }
-    }
-}
-impl TableMember {
-    /// Creates a new builder-style object to manufacture [`TableMember`](crate::model::TableMember).
-    pub fn builder() -> crate::model::table_member::Builder {
-        crate::model::table_member::Builder::default()
     }
 }
 
@@ -164,6 +165,13 @@ impl StatementData {
         self.is_batch_statement
     }
 }
+impl StatementData {
+    /// Creates a new builder-style object to manufacture [`StatementData`](crate::model::StatementData).
+    pub fn builder() -> crate::model::statement_data::Builder {
+        crate::model::statement_data::Builder::default()
+    }
+}
+
 /// See [`StatementData`](crate::model::StatementData).
 pub mod statement_data {
 
@@ -330,12 +338,6 @@ pub mod statement_data {
         }
     }
 }
-impl StatementData {
-    /// Creates a new builder-style object to manufacture [`StatementData`](crate::model::StatementData).
-    pub fn builder() -> crate::model::statement_data::Builder {
-        crate::model::statement_data::Builder::default()
-    }
-}
 
 /// <p>A parameter used in a SQL statement.</p>
 #[non_exhaustive]
@@ -358,6 +360,13 @@ impl SqlParameter {
         self.value.as_deref()
     }
 }
+impl SqlParameter {
+    /// Creates a new builder-style object to manufacture [`SqlParameter`](crate::model::SqlParameter).
+    pub fn builder() -> crate::model::sql_parameter::Builder {
+        crate::model::sql_parameter::Builder::default()
+    }
+}
+
 /// See [`SqlParameter`](crate::model::SqlParameter).
 pub mod sql_parameter {
 
@@ -396,12 +405,6 @@ pub mod sql_parameter {
                 value: self.value,
             }
         }
-    }
-}
-impl SqlParameter {
-    /// Creates a new builder-style object to manufacture [`SqlParameter`](crate::model::SqlParameter).
-    pub fn builder() -> crate::model::sql_parameter::Builder {
-        crate::model::sql_parameter::Builder::default()
     }
 }
 
@@ -626,6 +629,13 @@ impl ColumnMetadata {
         self.column_default.as_deref()
     }
 }
+impl ColumnMetadata {
+    /// Creates a new builder-style object to manufacture [`ColumnMetadata`](crate::model::ColumnMetadata).
+    pub fn builder() -> crate::model::column_metadata::Builder {
+        crate::model::column_metadata::Builder::default()
+    }
+}
+
 /// See [`ColumnMetadata`](crate::model::ColumnMetadata).
 pub mod column_metadata {
 
@@ -799,12 +809,6 @@ pub mod column_metadata {
                 column_default: self.column_default,
             }
         }
-    }
-}
-impl ColumnMetadata {
-    /// Creates a new builder-style object to manufacture [`ColumnMetadata`](crate::model::ColumnMetadata).
-    pub fn builder() -> crate::model::column_metadata::Builder {
-        crate::model::column_metadata::Builder::default()
     }
 }
 
@@ -1003,6 +1007,13 @@ impl SubStatementData {
         self.has_result_set
     }
 }
+impl SubStatementData {
+    /// Creates a new builder-style object to manufacture [`SubStatementData`](crate::model::SubStatementData).
+    pub fn builder() -> crate::model::sub_statement_data::Builder {
+        crate::model::sub_statement_data::Builder::default()
+    }
+}
+
 /// See [`SubStatementData`](crate::model::SubStatementData).
 pub mod sub_statement_data {
 
@@ -1158,12 +1169,6 @@ pub mod sub_statement_data {
                 has_result_set: self.has_result_set,
             }
         }
-    }
-}
-impl SubStatementData {
-    /// Creates a new builder-style object to manufacture [`SubStatementData`](crate::model::SubStatementData).
-    pub fn builder() -> crate::model::sub_statement_data::Builder {
-        crate::model::sub_statement_data::Builder::default()
     }
 }
 

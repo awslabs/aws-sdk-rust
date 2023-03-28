@@ -14,6 +14,13 @@ impl TagKeyOnly {
         self.key.as_deref()
     }
 }
+impl TagKeyOnly {
+    /// Creates a new builder-style object to manufacture [`TagKeyOnly`](crate::model::TagKeyOnly).
+    pub fn builder() -> crate::model::tag_key_only::Builder {
+        crate::model::tag_key_only::Builder::default()
+    }
+}
+
 /// See [`TagKeyOnly`](crate::model::TagKeyOnly).
 pub mod tag_key_only {
 
@@ -40,12 +47,6 @@ pub mod tag_key_only {
         }
     }
 }
-impl TagKeyOnly {
-    /// Creates a new builder-style object to manufacture [`TagKeyOnly`](crate::model::TagKeyOnly).
-    pub fn builder() -> crate::model::tag_key_only::Builder {
-        crate::model::tag_key_only::Builder::default()
-    }
-}
 
 /// <p>The ID of an EC2 instance.</p>
 #[non_exhaustive]
@@ -61,6 +62,13 @@ impl Instance {
         self.instance_id.as_deref()
     }
 }
+impl Instance {
+    /// Creates a new builder-style object to manufacture [`Instance`](crate::model::Instance).
+    pub fn builder() -> crate::model::instance::Builder {
+        crate::model::instance::Builder::default()
+    }
+}
+
 /// See [`Instance`](crate::model::Instance).
 pub mod instance {
 
@@ -87,12 +95,6 @@ pub mod instance {
                 instance_id: self.instance_id,
             }
         }
-    }
-}
-impl Instance {
-    /// Creates a new builder-style object to manufacture [`Instance`](crate::model::Instance).
-    pub fn builder() -> crate::model::instance::Builder {
-        crate::model::instance::Builder::default()
     }
 }
 
@@ -151,6 +153,13 @@ impl LoadBalancerAttributes {
         self.additional_attributes.as_deref()
     }
 }
+impl LoadBalancerAttributes {
+    /// Creates a new builder-style object to manufacture [`LoadBalancerAttributes`](crate::model::LoadBalancerAttributes).
+    pub fn builder() -> crate::model::load_balancer_attributes::Builder {
+        crate::model::load_balancer_attributes::Builder::default()
+    }
+}
+
 /// See [`LoadBalancerAttributes`](crate::model::LoadBalancerAttributes).
 pub mod load_balancer_attributes {
 
@@ -261,12 +270,6 @@ pub mod load_balancer_attributes {
         }
     }
 }
-impl LoadBalancerAttributes {
-    /// Creates a new builder-style object to manufacture [`LoadBalancerAttributes`](crate::model::LoadBalancerAttributes).
-    pub fn builder() -> crate::model::load_balancer_attributes::Builder {
-        crate::model::load_balancer_attributes::Builder::default()
-    }
-}
 
 /// <p>Information about additional load balancer attributes.</p>
 #[non_exhaustive]
@@ -297,6 +300,13 @@ impl AdditionalAttribute {
         self.value.as_deref()
     }
 }
+impl AdditionalAttribute {
+    /// Creates a new builder-style object to manufacture [`AdditionalAttribute`](crate::model::AdditionalAttribute).
+    pub fn builder() -> crate::model::additional_attribute::Builder {
+        crate::model::additional_attribute::Builder::default()
+    }
+}
+
 /// See [`AdditionalAttribute`](crate::model::AdditionalAttribute).
 pub mod additional_attribute {
 
@@ -345,12 +355,6 @@ pub mod additional_attribute {
         }
     }
 }
-impl AdditionalAttribute {
-    /// Creates a new builder-style object to manufacture [`AdditionalAttribute`](crate::model::AdditionalAttribute).
-    pub fn builder() -> crate::model::additional_attribute::Builder {
-        crate::model::additional_attribute::Builder::default()
-    }
-}
 
 /// <p>Information about the <code>ConnectionSettings</code> attribute.</p>
 #[non_exhaustive]
@@ -366,6 +370,13 @@ impl ConnectionSettings {
         self.idle_timeout
     }
 }
+impl ConnectionSettings {
+    /// Creates a new builder-style object to manufacture [`ConnectionSettings`](crate::model::ConnectionSettings).
+    pub fn builder() -> crate::model::connection_settings::Builder {
+        crate::model::connection_settings::Builder::default()
+    }
+}
+
 /// See [`ConnectionSettings`](crate::model::ConnectionSettings).
 pub mod connection_settings {
 
@@ -394,12 +405,6 @@ pub mod connection_settings {
         }
     }
 }
-impl ConnectionSettings {
-    /// Creates a new builder-style object to manufacture [`ConnectionSettings`](crate::model::ConnectionSettings).
-    pub fn builder() -> crate::model::connection_settings::Builder {
-        crate::model::connection_settings::Builder::default()
-    }
-}
 
 /// <p>Information about the <code>ConnectionDraining</code> attribute.</p>
 #[non_exhaustive]
@@ -422,6 +427,13 @@ impl ConnectionDraining {
         self.timeout
     }
 }
+impl ConnectionDraining {
+    /// Creates a new builder-style object to manufacture [`ConnectionDraining`](crate::model::ConnectionDraining).
+    pub fn builder() -> crate::model::connection_draining::Builder {
+        crate::model::connection_draining::Builder::default()
+    }
+}
+
 /// See [`ConnectionDraining`](crate::model::ConnectionDraining).
 pub mod connection_draining {
 
@@ -462,12 +474,6 @@ pub mod connection_draining {
         }
     }
 }
-impl ConnectionDraining {
-    /// Creates a new builder-style object to manufacture [`ConnectionDraining`](crate::model::ConnectionDraining).
-    pub fn builder() -> crate::model::connection_draining::Builder {
-        crate::model::connection_draining::Builder::default()
-    }
-}
 
 /// <p>Information about the <code>AccessLog</code> attribute.</p>
 #[non_exhaustive]
@@ -506,6 +512,13 @@ impl AccessLog {
         self.s3_bucket_prefix.as_deref()
     }
 }
+impl AccessLog {
+    /// Creates a new builder-style object to manufacture [`AccessLog`](crate::model::AccessLog).
+    pub fn builder() -> crate::model::access_log::Builder {
+        crate::model::access_log::Builder::default()
+    }
+}
+
 /// See [`AccessLog`](crate::model::AccessLog).
 pub mod access_log {
 
@@ -578,12 +591,6 @@ pub mod access_log {
         }
     }
 }
-impl AccessLog {
-    /// Creates a new builder-style object to manufacture [`AccessLog`](crate::model::AccessLog).
-    pub fn builder() -> crate::model::access_log::Builder {
-        crate::model::access_log::Builder::default()
-    }
-}
 
 /// <p>Information about the <code>CrossZoneLoadBalancing</code> attribute.</p>
 #[non_exhaustive]
@@ -599,6 +606,13 @@ impl CrossZoneLoadBalancing {
         self.enabled
     }
 }
+impl CrossZoneLoadBalancing {
+    /// Creates a new builder-style object to manufacture [`CrossZoneLoadBalancing`](crate::model::CrossZoneLoadBalancing).
+    pub fn builder() -> crate::model::cross_zone_load_balancing::Builder {
+        crate::model::cross_zone_load_balancing::Builder::default()
+    }
+}
+
 /// See [`CrossZoneLoadBalancing`](crate::model::CrossZoneLoadBalancing).
 pub mod cross_zone_load_balancing {
 
@@ -627,12 +641,6 @@ pub mod cross_zone_load_balancing {
         }
     }
 }
-impl CrossZoneLoadBalancing {
-    /// Creates a new builder-style object to manufacture [`CrossZoneLoadBalancing`](crate::model::CrossZoneLoadBalancing).
-    pub fn builder() -> crate::model::cross_zone_load_balancing::Builder {
-        crate::model::cross_zone_load_balancing::Builder::default()
-    }
-}
 
 /// <p>The tags associated with a load balancer.</p>
 #[non_exhaustive]
@@ -655,6 +663,13 @@ impl TagDescription {
         self.tags.as_deref()
     }
 }
+impl TagDescription {
+    /// Creates a new builder-style object to manufacture [`TagDescription`](crate::model::TagDescription).
+    pub fn builder() -> crate::model::tag_description::Builder {
+        crate::model::tag_description::Builder::default()
+    }
+}
+
 /// See [`TagDescription`](crate::model::TagDescription).
 pub mod tag_description {
 
@@ -707,12 +722,6 @@ pub mod tag_description {
         }
     }
 }
-impl TagDescription {
-    /// Creates a new builder-style object to manufacture [`TagDescription`](crate::model::TagDescription).
-    pub fn builder() -> crate::model::tag_description::Builder {
-        crate::model::tag_description::Builder::default()
-    }
-}
 
 /// <p>Information about a tag.</p>
 #[non_exhaustive]
@@ -735,6 +744,13 @@ impl Tag {
         self.value.as_deref()
     }
 }
+impl Tag {
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
+    pub fn builder() -> crate::model::tag::Builder {
+        crate::model::tag::Builder::default()
+    }
+}
+
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
 
@@ -773,12 +789,6 @@ pub mod tag {
                 value: self.value,
             }
         }
-    }
-}
-impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
-    pub fn builder() -> crate::model::tag::Builder {
-        crate::model::tag::Builder::default()
     }
 }
 
@@ -913,6 +923,13 @@ impl LoadBalancerDescription {
         self.scheme.as_deref()
     }
 }
+impl LoadBalancerDescription {
+    /// Creates a new builder-style object to manufacture [`LoadBalancerDescription`](crate::model::LoadBalancerDescription).
+    pub fn builder() -> crate::model::load_balancer_description::Builder {
+        crate::model::load_balancer_description::Builder::default()
+    }
+}
+
 /// See [`LoadBalancerDescription`](crate::model::LoadBalancerDescription).
 pub mod load_balancer_description {
 
@@ -1207,12 +1224,6 @@ pub mod load_balancer_description {
         }
     }
 }
-impl LoadBalancerDescription {
-    /// Creates a new builder-style object to manufacture [`LoadBalancerDescription`](crate::model::LoadBalancerDescription).
-    pub fn builder() -> crate::model::load_balancer_description::Builder {
-        crate::model::load_balancer_description::Builder::default()
-    }
-}
 
 /// <p>Information about a source security group.</p>
 #[non_exhaustive]
@@ -1235,6 +1246,13 @@ impl SourceSecurityGroup {
         self.group_name.as_deref()
     }
 }
+impl SourceSecurityGroup {
+    /// Creates a new builder-style object to manufacture [`SourceSecurityGroup`](crate::model::SourceSecurityGroup).
+    pub fn builder() -> crate::model::source_security_group::Builder {
+        crate::model::source_security_group::Builder::default()
+    }
+}
+
 /// See [`SourceSecurityGroup`](crate::model::SourceSecurityGroup).
 pub mod source_security_group {
 
@@ -1273,12 +1291,6 @@ pub mod source_security_group {
                 group_name: self.group_name,
             }
         }
-    }
-}
-impl SourceSecurityGroup {
-    /// Creates a new builder-style object to manufacture [`SourceSecurityGroup`](crate::model::SourceSecurityGroup).
-    pub fn builder() -> crate::model::source_security_group::Builder {
-        crate::model::source_security_group::Builder::default()
     }
 }
 
@@ -1334,6 +1346,13 @@ impl HealthCheck {
         self.healthy_threshold
     }
 }
+impl HealthCheck {
+    /// Creates a new builder-style object to manufacture [`HealthCheck`](crate::model::HealthCheck).
+    pub fn builder() -> crate::model::health_check::Builder {
+        crate::model::health_check::Builder::default()
+    }
+}
+
 /// See [`HealthCheck`](crate::model::HealthCheck).
 pub mod health_check {
 
@@ -1420,12 +1439,6 @@ pub mod health_check {
         }
     }
 }
-impl HealthCheck {
-    /// Creates a new builder-style object to manufacture [`HealthCheck`](crate::model::HealthCheck).
-    pub fn builder() -> crate::model::health_check::Builder {
-        crate::model::health_check::Builder::default()
-    }
-}
 
 /// <p>Information about the configuration of an EC2 instance.</p>
 #[non_exhaustive]
@@ -1448,6 +1461,13 @@ impl BackendServerDescription {
         self.policy_names.as_deref()
     }
 }
+impl BackendServerDescription {
+    /// Creates a new builder-style object to manufacture [`BackendServerDescription`](crate::model::BackendServerDescription).
+    pub fn builder() -> crate::model::backend_server_description::Builder {
+        crate::model::backend_server_description::Builder::default()
+    }
+}
+
 /// See [`BackendServerDescription`](crate::model::BackendServerDescription).
 pub mod backend_server_description {
 
@@ -1497,12 +1517,6 @@ pub mod backend_server_description {
         }
     }
 }
-impl BackendServerDescription {
-    /// Creates a new builder-style object to manufacture [`BackendServerDescription`](crate::model::BackendServerDescription).
-    pub fn builder() -> crate::model::backend_server_description::Builder {
-        crate::model::backend_server_description::Builder::default()
-    }
-}
 
 /// <p>The policies for a load balancer.</p>
 #[non_exhaustive]
@@ -1538,6 +1552,13 @@ impl Policies {
         self.other_policies.as_deref()
     }
 }
+impl Policies {
+    /// Creates a new builder-style object to manufacture [`Policies`](crate::model::Policies).
+    pub fn builder() -> crate::model::policies::Builder {
+        crate::model::policies::Builder::default()
+    }
+}
+
 /// See [`Policies`](crate::model::Policies).
 pub mod policies {
 
@@ -1625,12 +1646,6 @@ pub mod policies {
         }
     }
 }
-impl Policies {
-    /// Creates a new builder-style object to manufacture [`Policies`](crate::model::Policies).
-    pub fn builder() -> crate::model::policies::Builder {
-        crate::model::policies::Builder::default()
-    }
-}
 
 /// <p>Information about a policy for duration-based session stickiness.</p>
 #[non_exhaustive]
@@ -1653,6 +1668,13 @@ impl LbCookieStickinessPolicy {
         self.cookie_expiration_period
     }
 }
+impl LbCookieStickinessPolicy {
+    /// Creates a new builder-style object to manufacture [`LbCookieStickinessPolicy`](crate::model::LbCookieStickinessPolicy).
+    pub fn builder() -> crate::model::lb_cookie_stickiness_policy::Builder {
+        crate::model::lb_cookie_stickiness_policy::Builder::default()
+    }
+}
+
 /// See [`LbCookieStickinessPolicy`](crate::model::LbCookieStickinessPolicy).
 pub mod lb_cookie_stickiness_policy {
 
@@ -1693,12 +1715,6 @@ pub mod lb_cookie_stickiness_policy {
         }
     }
 }
-impl LbCookieStickinessPolicy {
-    /// Creates a new builder-style object to manufacture [`LbCookieStickinessPolicy`](crate::model::LbCookieStickinessPolicy).
-    pub fn builder() -> crate::model::lb_cookie_stickiness_policy::Builder {
-        crate::model::lb_cookie_stickiness_policy::Builder::default()
-    }
-}
 
 /// <p>Information about a policy for application-controlled session stickiness.</p>
 #[non_exhaustive]
@@ -1721,6 +1737,13 @@ impl AppCookieStickinessPolicy {
         self.cookie_name.as_deref()
     }
 }
+impl AppCookieStickinessPolicy {
+    /// Creates a new builder-style object to manufacture [`AppCookieStickinessPolicy`](crate::model::AppCookieStickinessPolicy).
+    pub fn builder() -> crate::model::app_cookie_stickiness_policy::Builder {
+        crate::model::app_cookie_stickiness_policy::Builder::default()
+    }
+}
+
 /// See [`AppCookieStickinessPolicy`](crate::model::AppCookieStickinessPolicy).
 pub mod app_cookie_stickiness_policy {
 
@@ -1761,12 +1784,6 @@ pub mod app_cookie_stickiness_policy {
         }
     }
 }
-impl AppCookieStickinessPolicy {
-    /// Creates a new builder-style object to manufacture [`AppCookieStickinessPolicy`](crate::model::AppCookieStickinessPolicy).
-    pub fn builder() -> crate::model::app_cookie_stickiness_policy::Builder {
-        crate::model::app_cookie_stickiness_policy::Builder::default()
-    }
-}
 
 /// <p>The policies enabled for a listener.</p>
 #[non_exhaustive]
@@ -1789,6 +1806,13 @@ impl ListenerDescription {
         self.policy_names.as_deref()
     }
 }
+impl ListenerDescription {
+    /// Creates a new builder-style object to manufacture [`ListenerDescription`](crate::model::ListenerDescription).
+    pub fn builder() -> crate::model::listener_description::Builder {
+        crate::model::listener_description::Builder::default()
+    }
+}
+
 /// See [`ListenerDescription`](crate::model::ListenerDescription).
 pub mod listener_description {
 
@@ -1836,12 +1860,6 @@ pub mod listener_description {
                 policy_names: self.policy_names,
             }
         }
-    }
-}
-impl ListenerDescription {
-    /// Creates a new builder-style object to manufacture [`ListenerDescription`](crate::model::ListenerDescription).
-    pub fn builder() -> crate::model::listener_description::Builder {
-        crate::model::listener_description::Builder::default()
     }
 }
 
@@ -1894,6 +1912,13 @@ impl Listener {
         self.ssl_certificate_id.as_deref()
     }
 }
+impl Listener {
+    /// Creates a new builder-style object to manufacture [`Listener`](crate::model::Listener).
+    pub fn builder() -> crate::model::listener::Builder {
+        crate::model::listener::Builder::default()
+    }
+}
+
 /// See [`Listener`](crate::model::Listener).
 pub mod listener {
 
@@ -1982,12 +2007,6 @@ pub mod listener {
         }
     }
 }
-impl Listener {
-    /// Creates a new builder-style object to manufacture [`Listener`](crate::model::Listener).
-    pub fn builder() -> crate::model::listener::Builder {
-        crate::model::listener::Builder::default()
-    }
-}
 
 /// <p>Information about a policy type.</p>
 #[non_exhaustive]
@@ -2020,6 +2039,13 @@ impl PolicyTypeDescription {
         self.policy_attribute_type_descriptions.as_deref()
     }
 }
+impl PolicyTypeDescription {
+    /// Creates a new builder-style object to manufacture [`PolicyTypeDescription`](crate::model::PolicyTypeDescription).
+    pub fn builder() -> crate::model::policy_type_description::Builder {
+        crate::model::policy_type_description::Builder::default()
+    }
+}
+
 /// See [`PolicyTypeDescription`](crate::model::PolicyTypeDescription).
 pub mod policy_type_description {
 
@@ -2088,12 +2114,6 @@ pub mod policy_type_description {
         }
     }
 }
-impl PolicyTypeDescription {
-    /// Creates a new builder-style object to manufacture [`PolicyTypeDescription`](crate::model::PolicyTypeDescription).
-    pub fn builder() -> crate::model::policy_type_description::Builder {
-        crate::model::policy_type_description::Builder::default()
-    }
-}
 
 /// <p>Information about a policy attribute type.</p>
 #[non_exhaustive]
@@ -2151,6 +2171,13 @@ impl PolicyAttributeTypeDescription {
         self.cardinality.as_deref()
     }
 }
+impl PolicyAttributeTypeDescription {
+    /// Creates a new builder-style object to manufacture [`PolicyAttributeTypeDescription`](crate::model::PolicyAttributeTypeDescription).
+    pub fn builder() -> crate::model::policy_attribute_type_description::Builder {
+        crate::model::policy_attribute_type_description::Builder::default()
+    }
+}
+
 /// See [`PolicyAttributeTypeDescription`](crate::model::PolicyAttributeTypeDescription).
 pub mod policy_attribute_type_description {
 
@@ -2250,12 +2277,6 @@ pub mod policy_attribute_type_description {
         }
     }
 }
-impl PolicyAttributeTypeDescription {
-    /// Creates a new builder-style object to manufacture [`PolicyAttributeTypeDescription`](crate::model::PolicyAttributeTypeDescription).
-    pub fn builder() -> crate::model::policy_attribute_type_description::Builder {
-        crate::model::policy_attribute_type_description::Builder::default()
-    }
-}
 
 /// <p>Information about a policy.</p>
 #[non_exhaustive]
@@ -2288,6 +2309,13 @@ impl PolicyDescription {
         self.policy_attribute_descriptions.as_deref()
     }
 }
+impl PolicyDescription {
+    /// Creates a new builder-style object to manufacture [`PolicyDescription`](crate::model::PolicyDescription).
+    pub fn builder() -> crate::model::policy_description::Builder {
+        crate::model::policy_description::Builder::default()
+    }
+}
+
 /// See [`PolicyDescription`](crate::model::PolicyDescription).
 pub mod policy_description {
 
@@ -2356,12 +2384,6 @@ pub mod policy_description {
         }
     }
 }
-impl PolicyDescription {
-    /// Creates a new builder-style object to manufacture [`PolicyDescription`](crate::model::PolicyDescription).
-    pub fn builder() -> crate::model::policy_description::Builder {
-        crate::model::policy_description::Builder::default()
-    }
-}
 
 /// <p>Information about a policy attribute.</p>
 #[non_exhaustive]
@@ -2384,6 +2406,13 @@ impl PolicyAttributeDescription {
         self.attribute_value.as_deref()
     }
 }
+impl PolicyAttributeDescription {
+    /// Creates a new builder-style object to manufacture [`PolicyAttributeDescription`](crate::model::PolicyAttributeDescription).
+    pub fn builder() -> crate::model::policy_attribute_description::Builder {
+        crate::model::policy_attribute_description::Builder::default()
+    }
+}
+
 /// See [`PolicyAttributeDescription`](crate::model::PolicyAttributeDescription).
 pub mod policy_attribute_description {
 
@@ -2428,12 +2457,6 @@ pub mod policy_attribute_description {
                 attribute_value: self.attribute_value,
             }
         }
-    }
-}
-impl PolicyAttributeDescription {
-    /// Creates a new builder-style object to manufacture [`PolicyAttributeDescription`](crate::model::PolicyAttributeDescription).
-    pub fn builder() -> crate::model::policy_attribute_description::Builder {
-        crate::model::policy_attribute_description::Builder::default()
     }
 }
 
@@ -2504,6 +2527,13 @@ impl InstanceState {
         self.description.as_deref()
     }
 }
+impl InstanceState {
+    /// Creates a new builder-style object to manufacture [`InstanceState`](crate::model::InstanceState).
+    pub fn builder() -> crate::model::instance_state::Builder {
+        crate::model::instance_state::Builder::default()
+    }
+}
+
 /// See [`InstanceState`](crate::model::InstanceState).
 pub mod instance_state {
 
@@ -2600,12 +2630,6 @@ pub mod instance_state {
         }
     }
 }
-impl InstanceState {
-    /// Creates a new builder-style object to manufacture [`InstanceState`](crate::model::InstanceState).
-    pub fn builder() -> crate::model::instance_state::Builder {
-        crate::model::instance_state::Builder::default()
-    }
-}
 
 /// <p>Information about an Elastic Load Balancing resource limit for your AWS account.</p>
 #[non_exhaustive]
@@ -2638,6 +2662,13 @@ impl Limit {
         self.max.as_deref()
     }
 }
+impl Limit {
+    /// Creates a new builder-style object to manufacture [`Limit`](crate::model::Limit).
+    pub fn builder() -> crate::model::limit::Builder {
+        crate::model::limit::Builder::default()
+    }
+}
+
 /// See [`Limit`](crate::model::Limit).
 pub mod limit {
 
@@ -2688,12 +2719,6 @@ pub mod limit {
         }
     }
 }
-impl Limit {
-    /// Creates a new builder-style object to manufacture [`Limit`](crate::model::Limit).
-    pub fn builder() -> crate::model::limit::Builder {
-        crate::model::limit::Builder::default()
-    }
-}
 
 /// <p>Information about a policy attribute.</p>
 #[non_exhaustive]
@@ -2716,6 +2741,13 @@ impl PolicyAttribute {
         self.attribute_value.as_deref()
     }
 }
+impl PolicyAttribute {
+    /// Creates a new builder-style object to manufacture [`PolicyAttribute`](crate::model::PolicyAttribute).
+    pub fn builder() -> crate::model::policy_attribute::Builder {
+        crate::model::policy_attribute::Builder::default()
+    }
+}
+
 /// See [`PolicyAttribute`](crate::model::PolicyAttribute).
 pub mod policy_attribute {
 
@@ -2760,11 +2792,5 @@ pub mod policy_attribute {
                 attribute_value: self.attribute_value,
             }
         }
-    }
-}
-impl PolicyAttribute {
-    /// Creates a new builder-style object to manufacture [`PolicyAttribute`](crate::model::PolicyAttribute).
-    pub fn builder() -> crate::model::policy_attribute::Builder {
-        crate::model::policy_attribute::Builder::default()
     }
 }

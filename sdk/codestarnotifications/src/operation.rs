@@ -4,7 +4,7 @@
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`create_notification_rule`](crate::client::Client::create_notification_rule).
 ///
-/// See [`crate::client::fluent_builders::CreateNotificationRule`] for more details about the operation.
+/// `ParseStrictResponse` impl for `CreateNotificationRule`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateNotificationRule {
     _private: (),
@@ -39,7 +39,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateNotificationRule {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`delete_notification_rule`](crate::client::Client::delete_notification_rule).
 ///
-/// See [`crate::client::fluent_builders::DeleteNotificationRule`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DeleteNotificationRule`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteNotificationRule {
     _private: (),
@@ -74,7 +74,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteNotificationRule {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`delete_target`](crate::client::Client::delete_target).
 ///
-/// See [`crate::client::fluent_builders::DeleteTarget`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DeleteTarget`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteTarget {
     _private: (),
@@ -107,7 +107,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteTarget {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`describe_notification_rule`](crate::client::Client::describe_notification_rule).
 ///
-/// See [`crate::client::fluent_builders::DescribeNotificationRule`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DescribeNotificationRule`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeNotificationRule {
     _private: (),
@@ -142,7 +142,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeNotificationRule
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_event_types`](crate::client::Client::list_event_types).
 ///
-/// See [`crate::client::fluent_builders::ListEventTypes`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListEventTypes`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListEventTypes {
     _private: (),
@@ -175,7 +175,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListEventTypes {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_notification_rules`](crate::client::Client::list_notification_rules).
 ///
-/// See [`crate::client::fluent_builders::ListNotificationRules`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListNotificationRules`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListNotificationRules {
     _private: (),
@@ -210,7 +210,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListNotificationRules {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
 ///
-/// See [`crate::client::fluent_builders::ListTagsForResource`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTagsForResource {
     _private: (),
@@ -245,7 +245,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_targets`](crate::client::Client::list_targets).
 ///
-/// See [`crate::client::fluent_builders::ListTargets`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListTargets`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTargets {
     _private: (),
@@ -278,7 +278,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTargets {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`subscribe`](crate::client::Client::subscribe).
 ///
-/// See [`crate::client::fluent_builders::Subscribe`] for more details about the operation.
+/// `ParseStrictResponse` impl for `Subscribe`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct Subscribe {
     _private: (),
@@ -310,7 +310,7 @@ impl aws_smithy_http::response::ParseStrictResponse for Subscribe {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`tag_resource`](crate::client::Client::tag_resource).
 ///
-/// See [`crate::client::fluent_builders::TagResource`] for more details about the operation.
+/// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct TagResource {
     _private: (),
@@ -343,7 +343,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`unsubscribe`](crate::client::Client::unsubscribe).
 ///
-/// See [`crate::client::fluent_builders::Unsubscribe`] for more details about the operation.
+/// `ParseStrictResponse` impl for `Unsubscribe`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct Unsubscribe {
     _private: (),
@@ -376,7 +376,7 @@ impl aws_smithy_http::response::ParseStrictResponse for Unsubscribe {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`untag_resource`](crate::client::Client::untag_resource).
 ///
-/// See [`crate::client::fluent_builders::UntagResource`] for more details about the operation.
+/// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UntagResource {
     _private: (),
@@ -409,7 +409,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`update_notification_rule`](crate::client::Client::update_notification_rule).
 ///
-/// See [`crate::client::fluent_builders::UpdateNotificationRule`] for more details about the operation.
+/// `ParseStrictResponse` impl for `UpdateNotificationRule`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateNotificationRule {
     _private: (),

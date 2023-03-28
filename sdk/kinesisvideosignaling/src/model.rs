@@ -35,6 +35,13 @@ impl IceServer {
         self.ttl
     }
 }
+impl IceServer {
+    /// Creates a new builder-style object to manufacture [`IceServer`](crate::model::IceServer).
+    pub fn builder() -> crate::model::ice_server::Builder {
+        crate::model::ice_server::Builder::default()
+    }
+}
+
 /// See [`IceServer`](crate::model::IceServer).
 pub mod ice_server {
 
@@ -106,12 +113,6 @@ pub mod ice_server {
                 ttl: self.ttl.unwrap_or_default(),
             }
         }
-    }
-}
-impl IceServer {
-    /// Creates a new builder-style object to manufacture [`IceServer`](crate::model::IceServer).
-    pub fn builder() -> crate::model::ice_server::Builder {
-        crate::model::ice_server::Builder::default()
     }
 }
 

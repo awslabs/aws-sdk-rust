@@ -11,6 +11,13 @@ impl aws_http::request_id::RequestId for UpdateSubscriberOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdateSubscriberOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateSubscriberOutput`](crate::output::UpdateSubscriberOutput).
+    pub fn builder() -> crate::output::update_subscriber_output::Builder {
+        crate::output::update_subscriber_output::Builder::default()
+    }
+}
+
 /// See [`UpdateSubscriberOutput`](crate::output::UpdateSubscriberOutput).
 pub mod update_subscriber_output {
 
@@ -38,12 +45,6 @@ pub mod update_subscriber_output {
         }
     }
 }
-impl UpdateSubscriberOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateSubscriberOutput`](crate::output::UpdateSubscriberOutput).
-    pub fn builder() -> crate::output::update_subscriber_output::Builder {
-        crate::output::update_subscriber_output::Builder::default()
-    }
-}
 
 /// <p> Response of UpdateNotification </p>
 #[non_exhaustive]
@@ -56,6 +57,13 @@ impl aws_http::request_id::RequestId for UpdateNotificationOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdateNotificationOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateNotificationOutput`](crate::output::UpdateNotificationOutput).
+    pub fn builder() -> crate::output::update_notification_output::Builder {
+        crate::output::update_notification_output::Builder::default()
+    }
+}
+
 /// See [`UpdateNotificationOutput`](crate::output::UpdateNotificationOutput).
 pub mod update_notification_output {
 
@@ -81,12 +89,6 @@ pub mod update_notification_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl UpdateNotificationOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateNotificationOutput`](crate::output::UpdateNotificationOutput).
-    pub fn builder() -> crate::output::update_notification_output::Builder {
-        crate::output::update_notification_output::Builder::default()
     }
 }
 
@@ -131,6 +133,13 @@ impl aws_http::request_id::RequestId for UpdateBudgetActionOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdateBudgetActionOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateBudgetActionOutput`](crate::output::UpdateBudgetActionOutput).
+    pub fn builder() -> crate::output::update_budget_action_output::Builder {
+        crate::output::update_budget_action_output::Builder::default()
+    }
+}
+
 /// See [`UpdateBudgetActionOutput`](crate::output::UpdateBudgetActionOutput).
 pub mod update_budget_action_output {
 
@@ -206,12 +215,6 @@ pub mod update_budget_action_output {
         }
     }
 }
-impl UpdateBudgetActionOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateBudgetActionOutput`](crate::output::UpdateBudgetActionOutput).
-    pub fn builder() -> crate::output::update_budget_action_output::Builder {
-        crate::output::update_budget_action_output::Builder::default()
-    }
-}
 
 /// <p> Response of UpdateBudget </p>
 #[non_exhaustive]
@@ -224,6 +227,13 @@ impl aws_http::request_id::RequestId for UpdateBudgetOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdateBudgetOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateBudgetOutput`](crate::output::UpdateBudgetOutput).
+    pub fn builder() -> crate::output::update_budget_output::Builder {
+        crate::output::update_budget_output::Builder::default()
+    }
+}
+
 /// See [`UpdateBudgetOutput`](crate::output::UpdateBudgetOutput).
 pub mod update_budget_output {
 
@@ -249,12 +259,6 @@ pub mod update_budget_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl UpdateBudgetOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateBudgetOutput`](crate::output::UpdateBudgetOutput).
-    pub fn builder() -> crate::output::update_budget_output::Builder {
-        crate::output::update_budget_output::Builder::default()
     }
 }
 
@@ -299,6 +303,13 @@ impl aws_http::request_id::RequestId for ExecuteBudgetActionOutput {
         self._request_id.as_deref()
     }
 }
+impl ExecuteBudgetActionOutput {
+    /// Creates a new builder-style object to manufacture [`ExecuteBudgetActionOutput`](crate::output::ExecuteBudgetActionOutput).
+    pub fn builder() -> crate::output::execute_budget_action_output::Builder {
+        crate::output::execute_budget_action_output::Builder::default()
+    }
+}
+
 /// See [`ExecuteBudgetActionOutput`](crate::output::ExecuteBudgetActionOutput).
 pub mod execute_budget_action_output {
 
@@ -377,12 +388,6 @@ pub mod execute_budget_action_output {
         }
     }
 }
-impl ExecuteBudgetActionOutput {
-    /// Creates a new builder-style object to manufacture [`ExecuteBudgetActionOutput`](crate::output::ExecuteBudgetActionOutput).
-    pub fn builder() -> crate::output::execute_budget_action_output::Builder {
-        crate::output::execute_budget_action_output::Builder::default()
-    }
-}
 
 /// <p> Response of DescribeSubscribersForNotification </p>
 #[non_exhaustive]
@@ -411,6 +416,13 @@ impl aws_http::request_id::RequestId for DescribeSubscribersForNotificationOutpu
         self._request_id.as_deref()
     }
 }
+impl DescribeSubscribersForNotificationOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeSubscribersForNotificationOutput`](crate::output::DescribeSubscribersForNotificationOutput).
+    pub fn builder() -> crate::output::describe_subscribers_for_notification_output::Builder {
+        crate::output::describe_subscribers_for_notification_output::Builder::default()
+    }
+}
+
 /// See [`DescribeSubscribersForNotificationOutput`](crate::output::DescribeSubscribersForNotificationOutput).
 pub mod describe_subscribers_for_notification_output {
 
@@ -471,12 +483,6 @@ pub mod describe_subscribers_for_notification_output {
         }
     }
 }
-impl DescribeSubscribersForNotificationOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeSubscribersForNotificationOutput`](crate::output::DescribeSubscribersForNotificationOutput).
-    pub fn builder() -> crate::output::describe_subscribers_for_notification_output::Builder {
-        crate::output::describe_subscribers_for_notification_output::Builder::default()
-    }
-}
 
 /// <p> Response of GetNotificationsForBudget </p>
 #[non_exhaustive]
@@ -505,6 +511,13 @@ impl aws_http::request_id::RequestId for DescribeNotificationsForBudgetOutput {
         self._request_id.as_deref()
     }
 }
+impl DescribeNotificationsForBudgetOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeNotificationsForBudgetOutput`](crate::output::DescribeNotificationsForBudgetOutput).
+    pub fn builder() -> crate::output::describe_notifications_for_budget_output::Builder {
+        crate::output::describe_notifications_for_budget_output::Builder::default()
+    }
+}
+
 /// See [`DescribeNotificationsForBudgetOutput`](crate::output::DescribeNotificationsForBudgetOutput).
 pub mod describe_notifications_for_budget_output {
 
@@ -565,12 +578,6 @@ pub mod describe_notifications_for_budget_output {
         }
     }
 }
-impl DescribeNotificationsForBudgetOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeNotificationsForBudgetOutput`](crate::output::DescribeNotificationsForBudgetOutput).
-    pub fn builder() -> crate::output::describe_notifications_for_budget_output::Builder {
-        crate::output::describe_notifications_for_budget_output::Builder::default()
-    }
-}
 
 /// <p> Response of DescribeBudgets </p>
 #[non_exhaustive]
@@ -599,6 +606,13 @@ impl aws_http::request_id::RequestId for DescribeBudgetsOutput {
         self._request_id.as_deref()
     }
 }
+impl DescribeBudgetsOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeBudgetsOutput`](crate::output::DescribeBudgetsOutput).
+    pub fn builder() -> crate::output::describe_budgets_output::Builder {
+        crate::output::describe_budgets_output::Builder::default()
+    }
+}
+
 /// See [`DescribeBudgetsOutput`](crate::output::DescribeBudgetsOutput).
 pub mod describe_budgets_output {
 
@@ -659,12 +673,6 @@ pub mod describe_budgets_output {
         }
     }
 }
-impl DescribeBudgetsOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeBudgetsOutput`](crate::output::DescribeBudgetsOutput).
-    pub fn builder() -> crate::output::describe_budgets_output::Builder {
-        crate::output::describe_budgets_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -697,6 +705,13 @@ impl aws_http::request_id::RequestId for DescribeBudgetPerformanceHistoryOutput 
         self._request_id.as_deref()
     }
 }
+impl DescribeBudgetPerformanceHistoryOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeBudgetPerformanceHistoryOutput`](crate::output::DescribeBudgetPerformanceHistoryOutput).
+    pub fn builder() -> crate::output::describe_budget_performance_history_output::Builder {
+        crate::output::describe_budget_performance_history_output::Builder::default()
+    }
+}
+
 /// See [`DescribeBudgetPerformanceHistoryOutput`](crate::output::DescribeBudgetPerformanceHistoryOutput).
 pub mod describe_budget_performance_history_output {
 
@@ -757,12 +772,6 @@ pub mod describe_budget_performance_history_output {
         }
     }
 }
-impl DescribeBudgetPerformanceHistoryOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeBudgetPerformanceHistoryOutput`](crate::output::DescribeBudgetPerformanceHistoryOutput).
-    pub fn builder() -> crate::output::describe_budget_performance_history_output::Builder {
-        crate::output::describe_budget_performance_history_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -794,6 +803,13 @@ impl aws_http::request_id::RequestId for DescribeBudgetNotificationsForAccountOu
         self._request_id.as_deref()
     }
 }
+impl DescribeBudgetNotificationsForAccountOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeBudgetNotificationsForAccountOutput`](crate::output::DescribeBudgetNotificationsForAccountOutput).
+    pub fn builder() -> crate::output::describe_budget_notifications_for_account_output::Builder {
+        crate::output::describe_budget_notifications_for_account_output::Builder::default()
+    }
+}
+
 /// See [`DescribeBudgetNotificationsForAccountOutput`](crate::output::DescribeBudgetNotificationsForAccountOutput).
 pub mod describe_budget_notifications_for_account_output {
 
@@ -858,12 +874,6 @@ pub mod describe_budget_notifications_for_account_output {
         }
     }
 }
-impl DescribeBudgetNotificationsForAccountOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeBudgetNotificationsForAccountOutput`](crate::output::DescribeBudgetNotificationsForAccountOutput).
-    pub fn builder() -> crate::output::describe_budget_notifications_for_account_output::Builder {
-        crate::output::describe_budget_notifications_for_account_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -892,6 +902,13 @@ impl aws_http::request_id::RequestId for DescribeBudgetActionsForBudgetOutput {
         self._request_id.as_deref()
     }
 }
+impl DescribeBudgetActionsForBudgetOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeBudgetActionsForBudgetOutput`](crate::output::DescribeBudgetActionsForBudgetOutput).
+    pub fn builder() -> crate::output::describe_budget_actions_for_budget_output::Builder {
+        crate::output::describe_budget_actions_for_budget_output::Builder::default()
+    }
+}
+
 /// See [`DescribeBudgetActionsForBudgetOutput`](crate::output::DescribeBudgetActionsForBudgetOutput).
 pub mod describe_budget_actions_for_budget_output {
 
@@ -952,12 +969,6 @@ pub mod describe_budget_actions_for_budget_output {
         }
     }
 }
-impl DescribeBudgetActionsForBudgetOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeBudgetActionsForBudgetOutput`](crate::output::DescribeBudgetActionsForBudgetOutput).
-    pub fn builder() -> crate::output::describe_budget_actions_for_budget_output::Builder {
-        crate::output::describe_budget_actions_for_budget_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -986,6 +997,13 @@ impl aws_http::request_id::RequestId for DescribeBudgetActionsForAccountOutput {
         self._request_id.as_deref()
     }
 }
+impl DescribeBudgetActionsForAccountOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeBudgetActionsForAccountOutput`](crate::output::DescribeBudgetActionsForAccountOutput).
+    pub fn builder() -> crate::output::describe_budget_actions_for_account_output::Builder {
+        crate::output::describe_budget_actions_for_account_output::Builder::default()
+    }
+}
+
 /// See [`DescribeBudgetActionsForAccountOutput`](crate::output::DescribeBudgetActionsForAccountOutput).
 pub mod describe_budget_actions_for_account_output {
 
@@ -1046,12 +1064,6 @@ pub mod describe_budget_actions_for_account_output {
         }
     }
 }
-impl DescribeBudgetActionsForAccountOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeBudgetActionsForAccountOutput`](crate::output::DescribeBudgetActionsForAccountOutput).
-    pub fn builder() -> crate::output::describe_budget_actions_for_account_output::Builder {
-        crate::output::describe_budget_actions_for_account_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1080,6 +1092,13 @@ impl aws_http::request_id::RequestId for DescribeBudgetActionHistoriesOutput {
         self._request_id.as_deref()
     }
 }
+impl DescribeBudgetActionHistoriesOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeBudgetActionHistoriesOutput`](crate::output::DescribeBudgetActionHistoriesOutput).
+    pub fn builder() -> crate::output::describe_budget_action_histories_output::Builder {
+        crate::output::describe_budget_action_histories_output::Builder::default()
+    }
+}
+
 /// See [`DescribeBudgetActionHistoriesOutput`](crate::output::DescribeBudgetActionHistoriesOutput).
 pub mod describe_budget_action_histories_output {
 
@@ -1141,12 +1160,6 @@ pub mod describe_budget_action_histories_output {
         }
     }
 }
-impl DescribeBudgetActionHistoriesOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeBudgetActionHistoriesOutput`](crate::output::DescribeBudgetActionHistoriesOutput).
-    pub fn builder() -> crate::output::describe_budget_action_histories_output::Builder {
-        crate::output::describe_budget_action_histories_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1182,6 +1195,13 @@ impl aws_http::request_id::RequestId for DescribeBudgetActionOutput {
         self._request_id.as_deref()
     }
 }
+impl DescribeBudgetActionOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeBudgetActionOutput`](crate::output::DescribeBudgetActionOutput).
+    pub fn builder() -> crate::output::describe_budget_action_output::Builder {
+        crate::output::describe_budget_action_output::Builder::default()
+    }
+}
+
 /// See [`DescribeBudgetActionOutput`](crate::output::DescribeBudgetActionOutput).
 pub mod describe_budget_action_output {
 
@@ -1245,12 +1265,6 @@ pub mod describe_budget_action_output {
         }
     }
 }
-impl DescribeBudgetActionOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeBudgetActionOutput`](crate::output::DescribeBudgetActionOutput).
-    pub fn builder() -> crate::output::describe_budget_action_output::Builder {
-        crate::output::describe_budget_action_output::Builder::default()
-    }
-}
 
 /// <p> Response of DescribeBudget </p>
 #[non_exhaustive]
@@ -1272,6 +1286,13 @@ impl aws_http::request_id::RequestId for DescribeBudgetOutput {
         self._request_id.as_deref()
     }
 }
+impl DescribeBudgetOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeBudgetOutput`](crate::output::DescribeBudgetOutput).
+    pub fn builder() -> crate::output::describe_budget_output::Builder {
+        crate::output::describe_budget_output::Builder::default()
+    }
+}
+
 /// See [`DescribeBudgetOutput`](crate::output::DescribeBudgetOutput).
 pub mod describe_budget_output {
 
@@ -1311,12 +1332,6 @@ pub mod describe_budget_output {
         }
     }
 }
-impl DescribeBudgetOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeBudgetOutput`](crate::output::DescribeBudgetOutput).
-    pub fn builder() -> crate::output::describe_budget_output::Builder {
-        crate::output::describe_budget_output::Builder::default()
-    }
-}
 
 /// <p> Response of DeleteSubscriber </p>
 #[non_exhaustive]
@@ -1329,6 +1344,13 @@ impl aws_http::request_id::RequestId for DeleteSubscriberOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteSubscriberOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteSubscriberOutput`](crate::output::DeleteSubscriberOutput).
+    pub fn builder() -> crate::output::delete_subscriber_output::Builder {
+        crate::output::delete_subscriber_output::Builder::default()
+    }
+}
+
 /// See [`DeleteSubscriberOutput`](crate::output::DeleteSubscriberOutput).
 pub mod delete_subscriber_output {
 
@@ -1356,12 +1378,6 @@ pub mod delete_subscriber_output {
         }
     }
 }
-impl DeleteSubscriberOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteSubscriberOutput`](crate::output::DeleteSubscriberOutput).
-    pub fn builder() -> crate::output::delete_subscriber_output::Builder {
-        crate::output::delete_subscriber_output::Builder::default()
-    }
-}
 
 /// <p> Response of DeleteNotification </p>
 #[non_exhaustive]
@@ -1374,6 +1390,13 @@ impl aws_http::request_id::RequestId for DeleteNotificationOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteNotificationOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteNotificationOutput`](crate::output::DeleteNotificationOutput).
+    pub fn builder() -> crate::output::delete_notification_output::Builder {
+        crate::output::delete_notification_output::Builder::default()
+    }
+}
+
 /// See [`DeleteNotificationOutput`](crate::output::DeleteNotificationOutput).
 pub mod delete_notification_output {
 
@@ -1399,12 +1422,6 @@ pub mod delete_notification_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl DeleteNotificationOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteNotificationOutput`](crate::output::DeleteNotificationOutput).
-    pub fn builder() -> crate::output::delete_notification_output::Builder {
-        crate::output::delete_notification_output::Builder::default()
     }
 }
 
@@ -1442,6 +1459,13 @@ impl aws_http::request_id::RequestId for DeleteBudgetActionOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteBudgetActionOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteBudgetActionOutput`](crate::output::DeleteBudgetActionOutput).
+    pub fn builder() -> crate::output::delete_budget_action_output::Builder {
+        crate::output::delete_budget_action_output::Builder::default()
+    }
+}
+
 /// See [`DeleteBudgetActionOutput`](crate::output::DeleteBudgetActionOutput).
 pub mod delete_budget_action_output {
 
@@ -1505,12 +1529,6 @@ pub mod delete_budget_action_output {
         }
     }
 }
-impl DeleteBudgetActionOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteBudgetActionOutput`](crate::output::DeleteBudgetActionOutput).
-    pub fn builder() -> crate::output::delete_budget_action_output::Builder {
-        crate::output::delete_budget_action_output::Builder::default()
-    }
-}
 
 /// <p> Response of DeleteBudget </p>
 #[non_exhaustive]
@@ -1523,6 +1541,13 @@ impl aws_http::request_id::RequestId for DeleteBudgetOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteBudgetOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteBudgetOutput`](crate::output::DeleteBudgetOutput).
+    pub fn builder() -> crate::output::delete_budget_output::Builder {
+        crate::output::delete_budget_output::Builder::default()
+    }
+}
+
 /// See [`DeleteBudgetOutput`](crate::output::DeleteBudgetOutput).
 pub mod delete_budget_output {
 
@@ -1550,12 +1575,6 @@ pub mod delete_budget_output {
         }
     }
 }
-impl DeleteBudgetOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteBudgetOutput`](crate::output::DeleteBudgetOutput).
-    pub fn builder() -> crate::output::delete_budget_output::Builder {
-        crate::output::delete_budget_output::Builder::default()
-    }
-}
 
 /// <p> Response of CreateSubscriber </p>
 #[non_exhaustive]
@@ -1568,6 +1587,13 @@ impl aws_http::request_id::RequestId for CreateSubscriberOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateSubscriberOutput {
+    /// Creates a new builder-style object to manufacture [`CreateSubscriberOutput`](crate::output::CreateSubscriberOutput).
+    pub fn builder() -> crate::output::create_subscriber_output::Builder {
+        crate::output::create_subscriber_output::Builder::default()
+    }
+}
+
 /// See [`CreateSubscriberOutput`](crate::output::CreateSubscriberOutput).
 pub mod create_subscriber_output {
 
@@ -1595,12 +1621,6 @@ pub mod create_subscriber_output {
         }
     }
 }
-impl CreateSubscriberOutput {
-    /// Creates a new builder-style object to manufacture [`CreateSubscriberOutput`](crate::output::CreateSubscriberOutput).
-    pub fn builder() -> crate::output::create_subscriber_output::Builder {
-        crate::output::create_subscriber_output::Builder::default()
-    }
-}
 
 /// <p> Response of CreateNotification </p>
 #[non_exhaustive]
@@ -1613,6 +1633,13 @@ impl aws_http::request_id::RequestId for CreateNotificationOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateNotificationOutput {
+    /// Creates a new builder-style object to manufacture [`CreateNotificationOutput`](crate::output::CreateNotificationOutput).
+    pub fn builder() -> crate::output::create_notification_output::Builder {
+        crate::output::create_notification_output::Builder::default()
+    }
+}
+
 /// See [`CreateNotificationOutput`](crate::output::CreateNotificationOutput).
 pub mod create_notification_output {
 
@@ -1638,12 +1665,6 @@ pub mod create_notification_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl CreateNotificationOutput {
-    /// Creates a new builder-style object to manufacture [`CreateNotificationOutput`](crate::output::CreateNotificationOutput).
-    pub fn builder() -> crate::output::create_notification_output::Builder {
-        crate::output::create_notification_output::Builder::default()
     }
 }
 
@@ -1681,6 +1702,13 @@ impl aws_http::request_id::RequestId for CreateBudgetActionOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateBudgetActionOutput {
+    /// Creates a new builder-style object to manufacture [`CreateBudgetActionOutput`](crate::output::CreateBudgetActionOutput).
+    pub fn builder() -> crate::output::create_budget_action_output::Builder {
+        crate::output::create_budget_action_output::Builder::default()
+    }
+}
+
 /// See [`CreateBudgetActionOutput`](crate::output::CreateBudgetActionOutput).
 pub mod create_budget_action_output {
 
@@ -1744,12 +1772,6 @@ pub mod create_budget_action_output {
         }
     }
 }
-impl CreateBudgetActionOutput {
-    /// Creates a new builder-style object to manufacture [`CreateBudgetActionOutput`](crate::output::CreateBudgetActionOutput).
-    pub fn builder() -> crate::output::create_budget_action_output::Builder {
-        crate::output::create_budget_action_output::Builder::default()
-    }
-}
 
 /// <p> Response of CreateBudget </p>
 #[non_exhaustive]
@@ -1762,6 +1784,13 @@ impl aws_http::request_id::RequestId for CreateBudgetOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateBudgetOutput {
+    /// Creates a new builder-style object to manufacture [`CreateBudgetOutput`](crate::output::CreateBudgetOutput).
+    pub fn builder() -> crate::output::create_budget_output::Builder {
+        crate::output::create_budget_output::Builder::default()
+    }
+}
+
 /// See [`CreateBudgetOutput`](crate::output::CreateBudgetOutput).
 pub mod create_budget_output {
 
@@ -1787,11 +1816,5 @@ pub mod create_budget_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl CreateBudgetOutput {
-    /// Creates a new builder-style object to manufacture [`CreateBudgetOutput`](crate::output::CreateBudgetOutput).
-    pub fn builder() -> crate::output::create_budget_output::Builder {
-        crate::output::create_budget_output::Builder::default()
     }
 }

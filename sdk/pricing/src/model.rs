@@ -34,6 +34,13 @@ impl Filter {
         self.value.as_deref()
     }
 }
+impl Filter {
+    /// Creates a new builder-style object to manufacture [`Filter`](crate::model::Filter).
+    pub fn builder() -> crate::model::filter::Builder {
+        crate::model::filter::Builder::default()
+    }
+}
+
 /// See [`Filter`](crate::model::Filter).
 pub mod filter {
 
@@ -90,12 +97,6 @@ pub mod filter {
                 value: self.value,
             }
         }
-    }
-}
-impl Filter {
-    /// Creates a new builder-style object to manufacture [`Filter`](crate::model::Filter).
-    pub fn builder() -> crate::model::filter::Builder {
-        crate::model::filter::Builder::default()
     }
 }
 
@@ -198,6 +199,13 @@ impl AttributeValue {
         self.value.as_deref()
     }
 }
+impl AttributeValue {
+    /// Creates a new builder-style object to manufacture [`AttributeValue`](crate::model::AttributeValue).
+    pub fn builder() -> crate::model::attribute_value::Builder {
+        crate::model::attribute_value::Builder::default()
+    }
+}
+
 /// See [`AttributeValue`](crate::model::AttributeValue).
 pub mod attribute_value {
 
@@ -224,12 +232,6 @@ pub mod attribute_value {
         }
     }
 }
-impl AttributeValue {
-    /// Creates a new builder-style object to manufacture [`AttributeValue`](crate::model::AttributeValue).
-    pub fn builder() -> crate::model::attribute_value::Builder {
-        crate::model::attribute_value::Builder::default()
-    }
-}
 
 /// <p>The metadata for a service, such as the service code and available attribute names.</p>
 #[non_exhaustive]
@@ -252,6 +254,13 @@ impl Service {
         self.attribute_names.as_deref()
     }
 }
+impl Service {
+    /// Creates a new builder-style object to manufacture [`Service`](crate::model::Service).
+    pub fn builder() -> crate::model::service::Builder {
+        crate::model::service::Builder::default()
+    }
+}
+
 /// See [`Service`](crate::model::Service).
 pub mod service {
 
@@ -299,11 +308,5 @@ pub mod service {
                 attribute_names: self.attribute_names,
             }
         }
-    }
-}
-impl Service {
-    /// Creates a new builder-style object to manufacture [`Service`](crate::model::Service).
-    pub fn builder() -> crate::model::service::Builder {
-        crate::model::service::Builder::default()
     }
 }

@@ -174,11 +174,41 @@ pub struct CloudHsmTagException {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl CloudHsmTagException {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for CloudHsmTagException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "CloudHsmTagException")?;
+        if let Some(inner_1) = &self.message {
+            {
+                write!(f, ": {}", inner_1)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for CloudHsmTagException {}
+impl aws_http::request_id::RequestId for crate::error::CloudHsmTagException {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for CloudHsmTagException {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl CloudHsmTagException {
     /// Creates a new builder-style object to manufacture [`CloudHsmTagException`](crate::error::CloudHsmTagException).
     pub fn builder() -> crate::error::cloud_hsm_tag_exception::Builder {
         crate::error::cloud_hsm_tag_exception::Builder::default()
     }
 }
+
 /// See [`CloudHsmTagException`](crate::error::CloudHsmTagException).
 pub mod cloud_hsm_tag_exception {
 
@@ -223,35 +253,6 @@ pub mod cloud_hsm_tag_exception {
         }
     }
 }
-impl CloudHsmTagException {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for CloudHsmTagException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "CloudHsmTagException")?;
-        if let Some(inner_1) = &self.message {
-            {
-                write!(f, ": {}", inner_1)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for CloudHsmTagException {}
-impl aws_http::request_id::RequestId for crate::error::CloudHsmTagException {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for CloudHsmTagException {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>The request was rejected because an error occurred.</p>
 #[non_exhaustive]
@@ -263,11 +264,41 @@ pub struct CloudHsmServiceException {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl CloudHsmServiceException {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for CloudHsmServiceException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "CloudHsmServiceException")?;
+        if let Some(inner_2) = &self.message {
+            {
+                write!(f, ": {}", inner_2)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for CloudHsmServiceException {}
+impl aws_http::request_id::RequestId for crate::error::CloudHsmServiceException {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for CloudHsmServiceException {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl CloudHsmServiceException {
     /// Creates a new builder-style object to manufacture [`CloudHsmServiceException`](crate::error::CloudHsmServiceException).
     pub fn builder() -> crate::error::cloud_hsm_service_exception::Builder {
         crate::error::cloud_hsm_service_exception::Builder::default()
     }
 }
+
 /// See [`CloudHsmServiceException`](crate::error::CloudHsmServiceException).
 pub mod cloud_hsm_service_exception {
 
@@ -312,35 +343,6 @@ pub mod cloud_hsm_service_exception {
         }
     }
 }
-impl CloudHsmServiceException {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for CloudHsmServiceException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "CloudHsmServiceException")?;
-        if let Some(inner_2) = &self.message {
-            {
-                write!(f, ": {}", inner_2)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for CloudHsmServiceException {}
-impl aws_http::request_id::RequestId for crate::error::CloudHsmServiceException {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for CloudHsmServiceException {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>The request was rejected because it refers to a resource that cannot be found.</p>
 #[non_exhaustive]
@@ -352,11 +354,41 @@ pub struct CloudHsmResourceNotFoundException {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl CloudHsmResourceNotFoundException {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for CloudHsmResourceNotFoundException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "CloudHsmResourceNotFoundException")?;
+        if let Some(inner_3) = &self.message {
+            {
+                write!(f, ": {}", inner_3)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for CloudHsmResourceNotFoundException {}
+impl aws_http::request_id::RequestId for crate::error::CloudHsmResourceNotFoundException {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for CloudHsmResourceNotFoundException {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl CloudHsmResourceNotFoundException {
     /// Creates a new builder-style object to manufacture [`CloudHsmResourceNotFoundException`](crate::error::CloudHsmResourceNotFoundException).
     pub fn builder() -> crate::error::cloud_hsm_resource_not_found_exception::Builder {
         crate::error::cloud_hsm_resource_not_found_exception::Builder::default()
     }
 }
+
 /// See [`CloudHsmResourceNotFoundException`](crate::error::CloudHsmResourceNotFoundException).
 pub mod cloud_hsm_resource_not_found_exception {
 
@@ -401,35 +433,6 @@ pub mod cloud_hsm_resource_not_found_exception {
         }
     }
 }
-impl CloudHsmResourceNotFoundException {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for CloudHsmResourceNotFoundException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "CloudHsmResourceNotFoundException")?;
-        if let Some(inner_3) = &self.message {
-            {
-                write!(f, ": {}", inner_3)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for CloudHsmResourceNotFoundException {}
-impl aws_http::request_id::RequestId for crate::error::CloudHsmResourceNotFoundException {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for CloudHsmResourceNotFoundException {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>The request was rejected because it is not a valid request.</p>
 #[non_exhaustive]
@@ -441,11 +444,41 @@ pub struct CloudHsmInvalidRequestException {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl CloudHsmInvalidRequestException {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for CloudHsmInvalidRequestException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "CloudHsmInvalidRequestException")?;
+        if let Some(inner_4) = &self.message {
+            {
+                write!(f, ": {}", inner_4)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for CloudHsmInvalidRequestException {}
+impl aws_http::request_id::RequestId for crate::error::CloudHsmInvalidRequestException {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for CloudHsmInvalidRequestException {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl CloudHsmInvalidRequestException {
     /// Creates a new builder-style object to manufacture [`CloudHsmInvalidRequestException`](crate::error::CloudHsmInvalidRequestException).
     pub fn builder() -> crate::error::cloud_hsm_invalid_request_exception::Builder {
         crate::error::cloud_hsm_invalid_request_exception::Builder::default()
     }
 }
+
 /// See [`CloudHsmInvalidRequestException`](crate::error::CloudHsmInvalidRequestException).
 pub mod cloud_hsm_invalid_request_exception {
 
@@ -490,35 +523,6 @@ pub mod cloud_hsm_invalid_request_exception {
         }
     }
 }
-impl CloudHsmInvalidRequestException {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for CloudHsmInvalidRequestException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "CloudHsmInvalidRequestException")?;
-        if let Some(inner_4) = &self.message {
-            {
-                write!(f, ": {}", inner_4)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for CloudHsmInvalidRequestException {}
-impl aws_http::request_id::RequestId for crate::error::CloudHsmInvalidRequestException {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for CloudHsmInvalidRequestException {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>The request was rejected because of an AWS CloudHSM internal failure. The request can be retried.</p>
 #[non_exhaustive]
@@ -530,11 +534,41 @@ pub struct CloudHsmInternalFailureException {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl CloudHsmInternalFailureException {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for CloudHsmInternalFailureException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "CloudHsmInternalFailureException")?;
+        if let Some(inner_5) = &self.message {
+            {
+                write!(f, ": {}", inner_5)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for CloudHsmInternalFailureException {}
+impl aws_http::request_id::RequestId for crate::error::CloudHsmInternalFailureException {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for CloudHsmInternalFailureException {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl CloudHsmInternalFailureException {
     /// Creates a new builder-style object to manufacture [`CloudHsmInternalFailureException`](crate::error::CloudHsmInternalFailureException).
     pub fn builder() -> crate::error::cloud_hsm_internal_failure_exception::Builder {
         crate::error::cloud_hsm_internal_failure_exception::Builder::default()
     }
 }
+
 /// See [`CloudHsmInternalFailureException`](crate::error::CloudHsmInternalFailureException).
 pub mod cloud_hsm_internal_failure_exception {
 
@@ -579,35 +613,6 @@ pub mod cloud_hsm_internal_failure_exception {
         }
     }
 }
-impl CloudHsmInternalFailureException {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for CloudHsmInternalFailureException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "CloudHsmInternalFailureException")?;
-        if let Some(inner_5) = &self.message {
-            {
-                write!(f, ": {}", inner_5)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for CloudHsmInternalFailureException {}
-impl aws_http::request_id::RequestId for crate::error::CloudHsmInternalFailureException {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for CloudHsmInternalFailureException {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>The request was rejected because the requester does not have permission to perform the requested operation.</p>
 #[non_exhaustive]
@@ -619,11 +624,41 @@ pub struct CloudHsmAccessDeniedException {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl CloudHsmAccessDeniedException {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for CloudHsmAccessDeniedException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "CloudHsmAccessDeniedException")?;
+        if let Some(inner_6) = &self.message {
+            {
+                write!(f, ": {}", inner_6)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for CloudHsmAccessDeniedException {}
+impl aws_http::request_id::RequestId for crate::error::CloudHsmAccessDeniedException {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for CloudHsmAccessDeniedException {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl CloudHsmAccessDeniedException {
     /// Creates a new builder-style object to manufacture [`CloudHsmAccessDeniedException`](crate::error::CloudHsmAccessDeniedException).
     pub fn builder() -> crate::error::cloud_hsm_access_denied_exception::Builder {
         crate::error::cloud_hsm_access_denied_exception::Builder::default()
     }
 }
+
 /// See [`CloudHsmAccessDeniedException`](crate::error::CloudHsmAccessDeniedException).
 pub mod cloud_hsm_access_denied_exception {
 
@@ -666,35 +701,6 @@ pub mod cloud_hsm_access_denied_exception {
                 meta: self.meta.unwrap_or_default(),
             }
         }
-    }
-}
-impl CloudHsmAccessDeniedException {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for CloudHsmAccessDeniedException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "CloudHsmAccessDeniedException")?;
-        if let Some(inner_6) = &self.message {
-            {
-                write!(f, ": {}", inner_6)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for CloudHsmAccessDeniedException {}
-impl aws_http::request_id::RequestId for crate::error::CloudHsmAccessDeniedException {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for CloudHsmAccessDeniedException {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
     }
 }
 

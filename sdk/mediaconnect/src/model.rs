@@ -108,6 +108,13 @@ impl Source {
         self.whitelist_cidr.as_deref()
     }
 }
+impl Source {
+    /// Creates a new builder-style object to manufacture [`Source`](crate::model::Source).
+    pub fn builder() -> crate::model::source::Builder {
+        crate::model::source::Builder::default()
+    }
+}
+
 /// See [`Source`](crate::model::Source).
 pub mod source {
 
@@ -328,12 +335,6 @@ pub mod source {
         }
     }
 }
-impl Source {
-    /// Creates a new builder-style object to manufacture [`Source`](crate::model::Source).
-    pub fn builder() -> crate::model::source::Builder {
-        crate::model::source::Builder::default()
-    }
-}
 
 /// Attributes related to the transport stream that are used in a source or output.
 #[non_exhaustive]
@@ -433,6 +434,13 @@ impl Transport {
         self.stream_id.as_deref()
     }
 }
+impl Transport {
+    /// Creates a new builder-style object to manufacture [`Transport`](crate::model::Transport).
+    pub fn builder() -> crate::model::transport::Builder {
+        crate::model::transport::Builder::default()
+    }
+}
+
 /// See [`Transport`](crate::model::Transport).
 pub mod transport {
 
@@ -620,12 +628,6 @@ pub mod transport {
         }
     }
 }
-impl Transport {
-    /// Creates a new builder-style object to manufacture [`Transport`](crate::model::Transport).
-    pub fn builder() -> crate::model::transport::Builder {
-        crate::model::transport::Builder::default()
-    }
-}
 
 /// When writing a match expression against `Protocol`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -796,6 +798,13 @@ impl MediaStreamSourceConfiguration {
         self.media_stream_name.as_deref()
     }
 }
+impl MediaStreamSourceConfiguration {
+    /// Creates a new builder-style object to manufacture [`MediaStreamSourceConfiguration`](crate::model::MediaStreamSourceConfiguration).
+    pub fn builder() -> crate::model::media_stream_source_configuration::Builder {
+        crate::model::media_stream_source_configuration::Builder::default()
+    }
+}
+
 /// See [`MediaStreamSourceConfiguration`](crate::model::MediaStreamSourceConfiguration).
 pub mod media_stream_source_configuration {
 
@@ -864,12 +873,6 @@ pub mod media_stream_source_configuration {
         }
     }
 }
-impl MediaStreamSourceConfiguration {
-    /// Creates a new builder-style object to manufacture [`MediaStreamSourceConfiguration`](crate::model::MediaStreamSourceConfiguration).
-    pub fn builder() -> crate::model::media_stream_source_configuration::Builder {
-        crate::model::media_stream_source_configuration::Builder::default()
-    }
-}
 
 /// The transport parameters that are associated with an incoming media stream.
 #[non_exhaustive]
@@ -899,6 +902,13 @@ impl InputConfiguration {
         self.interface.as_ref()
     }
 }
+impl InputConfiguration {
+    /// Creates a new builder-style object to manufacture [`InputConfiguration`](crate::model::InputConfiguration).
+    pub fn builder() -> crate::model::input_configuration::Builder {
+        crate::model::input_configuration::Builder::default()
+    }
+}
+
 /// See [`InputConfiguration`](crate::model::InputConfiguration).
 pub mod input_configuration {
 
@@ -954,12 +964,6 @@ pub mod input_configuration {
         }
     }
 }
-impl InputConfiguration {
-    /// Creates a new builder-style object to manufacture [`InputConfiguration`](crate::model::InputConfiguration).
-    pub fn builder() -> crate::model::input_configuration::Builder {
-        crate::model::input_configuration::Builder::default()
-    }
-}
 
 /// The VPC interface that is used for the media stream associated with the source or output.
 #[non_exhaustive]
@@ -975,6 +979,13 @@ impl Interface {
         self.name.as_deref()
     }
 }
+impl Interface {
+    /// Creates a new builder-style object to manufacture [`Interface`](crate::model::Interface).
+    pub fn builder() -> crate::model::interface::Builder {
+        crate::model::interface::Builder::default()
+    }
+}
+
 /// See [`Interface`](crate::model::Interface).
 pub mod interface {
 
@@ -999,12 +1010,6 @@ pub mod interface {
         pub fn build(self) -> crate::model::Interface {
             crate::model::Interface { name: self.name }
         }
-    }
-}
-impl Interface {
-    /// Creates a new builder-style object to manufacture [`Interface`](crate::model::Interface).
-    pub fn builder() -> crate::model::interface::Builder {
-        crate::model::interface::Builder::default()
     }
 }
 
@@ -1178,6 +1183,13 @@ impl Encryption {
         self.url.as_deref()
     }
 }
+impl Encryption {
+    /// Creates a new builder-style object to manufacture [`Encryption`](crate::model::Encryption).
+    pub fn builder() -> crate::model::encryption::Builder {
+        crate::model::encryption::Builder::default()
+    }
+}
+
 /// See [`Encryption`](crate::model::Encryption).
 pub mod encryption {
 
@@ -1309,12 +1321,6 @@ pub mod encryption {
                 url: self.url,
             }
         }
-    }
-}
-impl Encryption {
-    /// Creates a new builder-style object to manufacture [`Encryption`](crate::model::Encryption).
-    pub fn builder() -> crate::model::encryption::Builder {
-        crate::model::encryption::Builder::default()
     }
 }
 
@@ -1539,6 +1545,13 @@ impl MediaStreamSourceConfigurationRequest {
         self.media_stream_name.as_deref()
     }
 }
+impl MediaStreamSourceConfigurationRequest {
+    /// Creates a new builder-style object to manufacture [`MediaStreamSourceConfigurationRequest`](crate::model::MediaStreamSourceConfigurationRequest).
+    pub fn builder() -> crate::model::media_stream_source_configuration_request::Builder {
+        crate::model::media_stream_source_configuration_request::Builder::default()
+    }
+}
+
 /// See [`MediaStreamSourceConfigurationRequest`](crate::model::MediaStreamSourceConfigurationRequest).
 pub mod media_stream_source_configuration_request {
 
@@ -1610,12 +1623,6 @@ pub mod media_stream_source_configuration_request {
         }
     }
 }
-impl MediaStreamSourceConfigurationRequest {
-    /// Creates a new builder-style object to manufacture [`MediaStreamSourceConfigurationRequest`](crate::model::MediaStreamSourceConfigurationRequest).
-    pub fn builder() -> crate::model::media_stream_source_configuration_request::Builder {
-        crate::model::media_stream_source_configuration_request::Builder::default()
-    }
-}
 
 /// The transport parameters that you want to associate with an incoming media stream.
 #[non_exhaustive]
@@ -1638,6 +1645,13 @@ impl InputConfigurationRequest {
         self.interface.as_ref()
     }
 }
+impl InputConfigurationRequest {
+    /// Creates a new builder-style object to manufacture [`InputConfigurationRequest`](crate::model::InputConfigurationRequest).
+    pub fn builder() -> crate::model::input_configuration_request::Builder {
+        crate::model::input_configuration_request::Builder::default()
+    }
+}
+
 /// See [`InputConfigurationRequest`](crate::model::InputConfigurationRequest).
 pub mod input_configuration_request {
 
@@ -1681,12 +1695,6 @@ pub mod input_configuration_request {
         }
     }
 }
-impl InputConfigurationRequest {
-    /// Creates a new builder-style object to manufacture [`InputConfigurationRequest`](crate::model::InputConfigurationRequest).
-    pub fn builder() -> crate::model::input_configuration_request::Builder {
-        crate::model::input_configuration_request::Builder::default()
-    }
-}
 
 /// The VPC interface that you want to designate where the media stream is coming from or going to.
 #[non_exhaustive]
@@ -1702,6 +1710,13 @@ impl InterfaceRequest {
         self.name.as_deref()
     }
 }
+impl InterfaceRequest {
+    /// Creates a new builder-style object to manufacture [`InterfaceRequest`](crate::model::InterfaceRequest).
+    pub fn builder() -> crate::model::interface_request::Builder {
+        crate::model::interface_request::Builder::default()
+    }
+}
+
 /// See [`InterfaceRequest`](crate::model::InterfaceRequest).
 pub mod interface_request {
 
@@ -1726,12 +1741,6 @@ pub mod interface_request {
         pub fn build(self) -> crate::model::InterfaceRequest {
             crate::model::InterfaceRequest { name: self.name }
         }
-    }
-}
-impl InterfaceRequest {
-    /// Creates a new builder-style object to manufacture [`InterfaceRequest`](crate::model::InterfaceRequest).
-    pub fn builder() -> crate::model::interface_request::Builder {
-        crate::model::interface_request::Builder::default()
     }
 }
 
@@ -1805,6 +1814,13 @@ impl UpdateEncryption {
         self.url.as_deref()
     }
 }
+impl UpdateEncryption {
+    /// Creates a new builder-style object to manufacture [`UpdateEncryption`](crate::model::UpdateEncryption).
+    pub fn builder() -> crate::model::update_encryption::Builder {
+        crate::model::update_encryption::Builder::default()
+    }
+}
+
 /// See [`UpdateEncryption`](crate::model::UpdateEncryption).
 pub mod update_encryption {
 
@@ -1938,12 +1954,6 @@ pub mod update_encryption {
         }
     }
 }
-impl UpdateEncryption {
-    /// Creates a new builder-style object to manufacture [`UpdateEncryption`](crate::model::UpdateEncryption).
-    pub fn builder() -> crate::model::update_encryption::Builder {
-        crate::model::update_encryption::Builder::default()
-    }
-}
 
 /// The settings for an output.
 #[non_exhaustive]
@@ -2048,6 +2058,13 @@ impl Output {
         self.vpc_interface_attachment.as_ref()
     }
 }
+impl Output {
+    /// Creates a new builder-style object to manufacture [`Output`](crate::model::Output).
+    pub fn builder() -> crate::model::output::Builder {
+        crate::model::output::Builder::default()
+    }
+}
+
 /// See [`Output`](crate::model::Output).
 pub mod output {
 
@@ -2260,12 +2277,6 @@ pub mod output {
         }
     }
 }
-impl Output {
-    /// Creates a new builder-style object to manufacture [`Output`](crate::model::Output).
-    pub fn builder() -> crate::model::output::Builder {
-        crate::model::output::Builder::default()
-    }
-}
 
 /// The settings for attaching a VPC interface to an output.
 #[non_exhaustive]
@@ -2281,6 +2292,13 @@ impl VpcInterfaceAttachment {
         self.vpc_interface_name.as_deref()
     }
 }
+impl VpcInterfaceAttachment {
+    /// Creates a new builder-style object to manufacture [`VpcInterfaceAttachment`](crate::model::VpcInterfaceAttachment).
+    pub fn builder() -> crate::model::vpc_interface_attachment::Builder {
+        crate::model::vpc_interface_attachment::Builder::default()
+    }
+}
+
 /// See [`VpcInterfaceAttachment`](crate::model::VpcInterfaceAttachment).
 pub mod vpc_interface_attachment {
 
@@ -2310,12 +2328,6 @@ pub mod vpc_interface_attachment {
                 vpc_interface_name: self.vpc_interface_name,
             }
         }
-    }
-}
-impl VpcInterfaceAttachment {
-    /// Creates a new builder-style object to manufacture [`VpcInterfaceAttachment`](crate::model::VpcInterfaceAttachment).
-    pub fn builder() -> crate::model::vpc_interface_attachment::Builder {
-        crate::model::vpc_interface_attachment::Builder::default()
     }
 }
 
@@ -2357,6 +2369,13 @@ impl MediaStreamOutputConfiguration {
         self.media_stream_name.as_deref()
     }
 }
+impl MediaStreamOutputConfiguration {
+    /// Creates a new builder-style object to manufacture [`MediaStreamOutputConfiguration`](crate::model::MediaStreamOutputConfiguration).
+    pub fn builder() -> crate::model::media_stream_output_configuration::Builder {
+        crate::model::media_stream_output_configuration::Builder::default()
+    }
+}
+
 /// See [`MediaStreamOutputConfiguration`](crate::model::MediaStreamOutputConfiguration).
 pub mod media_stream_output_configuration {
 
@@ -2443,12 +2462,6 @@ pub mod media_stream_output_configuration {
         }
     }
 }
-impl MediaStreamOutputConfiguration {
-    /// Creates a new builder-style object to manufacture [`MediaStreamOutputConfiguration`](crate::model::MediaStreamOutputConfiguration).
-    pub fn builder() -> crate::model::media_stream_output_configuration::Builder {
-        crate::model::media_stream_output_configuration::Builder::default()
-    }
-}
 
 /// A collection of parameters that determine how MediaConnect will convert the content. These fields only apply to outputs on flows that have a CDI source.
 #[non_exhaustive]
@@ -2471,6 +2484,13 @@ impl EncodingParameters {
         self.encoder_profile.as_ref()
     }
 }
+impl EncodingParameters {
+    /// Creates a new builder-style object to manufacture [`EncodingParameters`](crate::model::EncodingParameters).
+    pub fn builder() -> crate::model::encoding_parameters::Builder {
+        crate::model::encoding_parameters::Builder::default()
+    }
+}
+
 /// See [`EncodingParameters`](crate::model::EncodingParameters).
 pub mod encoding_parameters {
 
@@ -2512,12 +2532,6 @@ pub mod encoding_parameters {
                 encoder_profile: self.encoder_profile,
             }
         }
-    }
-}
-impl EncodingParameters {
-    /// Creates a new builder-style object to manufacture [`EncodingParameters`](crate::model::EncodingParameters).
-    pub fn builder() -> crate::model::encoding_parameters::Builder {
-        crate::model::encoding_parameters::Builder::default()
     }
 }
 
@@ -2646,6 +2660,13 @@ impl DestinationConfiguration {
         self.outbound_ip.as_deref()
     }
 }
+impl DestinationConfiguration {
+    /// Creates a new builder-style object to manufacture [`DestinationConfiguration`](crate::model::DestinationConfiguration).
+    pub fn builder() -> crate::model::destination_configuration::Builder {
+        crate::model::destination_configuration::Builder::default()
+    }
+}
+
 /// See [`DestinationConfiguration`](crate::model::DestinationConfiguration).
 pub mod destination_configuration {
 
@@ -2716,12 +2737,6 @@ pub mod destination_configuration {
         }
     }
 }
-impl DestinationConfiguration {
-    /// Creates a new builder-style object to manufacture [`DestinationConfiguration`](crate::model::DestinationConfiguration).
-    pub fn builder() -> crate::model::destination_configuration::Builder {
-        crate::model::destination_configuration::Builder::default()
-    }
-}
 
 /// The media stream that you want to associate with the output, and the parameters for that association.
 #[non_exhaustive]
@@ -2763,6 +2778,13 @@ impl MediaStreamOutputConfigurationRequest {
         self.media_stream_name.as_deref()
     }
 }
+impl MediaStreamOutputConfigurationRequest {
+    /// Creates a new builder-style object to manufacture [`MediaStreamOutputConfigurationRequest`](crate::model::MediaStreamOutputConfigurationRequest).
+    pub fn builder() -> crate::model::media_stream_output_configuration_request::Builder {
+        crate::model::media_stream_output_configuration_request::Builder::default()
+    }
+}
+
 /// See [`MediaStreamOutputConfigurationRequest`](crate::model::MediaStreamOutputConfigurationRequest).
 pub mod media_stream_output_configuration_request {
 
@@ -2855,12 +2877,6 @@ pub mod media_stream_output_configuration_request {
         }
     }
 }
-impl MediaStreamOutputConfigurationRequest {
-    /// Creates a new builder-style object to manufacture [`MediaStreamOutputConfigurationRequest`](crate::model::MediaStreamOutputConfigurationRequest).
-    pub fn builder() -> crate::model::media_stream_output_configuration_request::Builder {
-        crate::model::media_stream_output_configuration_request::Builder::default()
-    }
-}
 
 /// A collection of parameters that determine how MediaConnect will convert the content. These fields only apply to outputs on flows that have a CDI source.
 #[non_exhaustive]
@@ -2883,6 +2899,13 @@ impl EncodingParametersRequest {
         self.encoder_profile.as_ref()
     }
 }
+impl EncodingParametersRequest {
+    /// Creates a new builder-style object to manufacture [`EncodingParametersRequest`](crate::model::EncodingParametersRequest).
+    pub fn builder() -> crate::model::encoding_parameters_request::Builder {
+        crate::model::encoding_parameters_request::Builder::default()
+    }
+}
+
 /// See [`EncodingParametersRequest`](crate::model::EncodingParametersRequest).
 pub mod encoding_parameters_request {
 
@@ -2926,12 +2949,6 @@ pub mod encoding_parameters_request {
         }
     }
 }
-impl EncodingParametersRequest {
-    /// Creates a new builder-style object to manufacture [`EncodingParametersRequest`](crate::model::EncodingParametersRequest).
-    pub fn builder() -> crate::model::encoding_parameters_request::Builder {
-        crate::model::encoding_parameters_request::Builder::default()
-    }
-}
 
 /// The transport parameters that you want to associate with an outbound media stream.
 #[non_exhaustive]
@@ -2961,6 +2978,13 @@ impl DestinationConfigurationRequest {
         self.interface.as_ref()
     }
 }
+impl DestinationConfigurationRequest {
+    /// Creates a new builder-style object to manufacture [`DestinationConfigurationRequest`](crate::model::DestinationConfigurationRequest).
+    pub fn builder() -> crate::model::destination_configuration_request::Builder {
+        crate::model::destination_configuration_request::Builder::default()
+    }
+}
+
 /// See [`DestinationConfigurationRequest`](crate::model::DestinationConfigurationRequest).
 pub mod destination_configuration_request {
 
@@ -3017,12 +3041,6 @@ pub mod destination_configuration_request {
                 interface: self.interface,
             }
         }
-    }
-}
-impl DestinationConfigurationRequest {
-    /// Creates a new builder-style object to manufacture [`DestinationConfigurationRequest`](crate::model::DestinationConfigurationRequest).
-    pub fn builder() -> crate::model::destination_configuration_request::Builder {
-        crate::model::destination_configuration_request::Builder::default()
     }
 }
 
@@ -3089,6 +3107,13 @@ impl MediaStream {
         self.video_format.as_deref()
     }
 }
+impl MediaStream {
+    /// Creates a new builder-style object to manufacture [`MediaStream`](crate::model::MediaStream).
+    pub fn builder() -> crate::model::media_stream::Builder {
+        crate::model::media_stream::Builder::default()
+    }
+}
+
 /// See [`MediaStream`](crate::model::MediaStream).
 pub mod media_stream {
 
@@ -3210,12 +3235,6 @@ pub mod media_stream {
         }
     }
 }
-impl MediaStream {
-    /// Creates a new builder-style object to manufacture [`MediaStream`](crate::model::MediaStream).
-    pub fn builder() -> crate::model::media_stream::Builder {
-        crate::model::media_stream::Builder::default()
-    }
-}
 
 /// When writing a match expression against `MediaStreamType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -3333,6 +3352,13 @@ impl MediaStreamAttributes {
         self.lang.as_deref()
     }
 }
+impl MediaStreamAttributes {
+    /// Creates a new builder-style object to manufacture [`MediaStreamAttributes`](crate::model::MediaStreamAttributes).
+    pub fn builder() -> crate::model::media_stream_attributes::Builder {
+        crate::model::media_stream_attributes::Builder::default()
+    }
+}
+
 /// See [`MediaStreamAttributes`](crate::model::MediaStreamAttributes).
 pub mod media_stream_attributes {
 
@@ -3371,12 +3397,6 @@ pub mod media_stream_attributes {
                 lang: self.lang,
             }
         }
-    }
-}
-impl MediaStreamAttributes {
-    /// Creates a new builder-style object to manufacture [`MediaStreamAttributes`](crate::model::MediaStreamAttributes).
-    pub fn builder() -> crate::model::media_stream_attributes::Builder {
-        crate::model::media_stream_attributes::Builder::default()
     }
 }
 
@@ -3436,6 +3456,13 @@ impl Fmtp {
         self.tcs.as_ref()
     }
 }
+impl Fmtp {
+    /// Creates a new builder-style object to manufacture [`Fmtp`](crate::model::Fmtp).
+    pub fn builder() -> crate::model::fmtp::Builder {
+        crate::model::fmtp::Builder::default()
+    }
+}
+
 /// See [`Fmtp`](crate::model::Fmtp).
 pub mod fmtp {
 
@@ -3543,12 +3570,6 @@ pub mod fmtp {
                 tcs: self.tcs,
             }
         }
-    }
-}
-impl Fmtp {
-    /// Creates a new builder-style object to manufacture [`Fmtp`](crate::model::Fmtp).
-    pub fn builder() -> crate::model::fmtp::Builder {
-        crate::model::fmtp::Builder::default()
     }
 }
 
@@ -4015,6 +4036,13 @@ impl MediaStreamAttributesRequest {
         self.lang.as_deref()
     }
 }
+impl MediaStreamAttributesRequest {
+    /// Creates a new builder-style object to manufacture [`MediaStreamAttributesRequest`](crate::model::MediaStreamAttributesRequest).
+    pub fn builder() -> crate::model::media_stream_attributes_request::Builder {
+        crate::model::media_stream_attributes_request::Builder::default()
+    }
+}
+
 /// See [`MediaStreamAttributesRequest`](crate::model::MediaStreamAttributesRequest).
 pub mod media_stream_attributes_request {
 
@@ -4053,12 +4081,6 @@ pub mod media_stream_attributes_request {
                 lang: self.lang,
             }
         }
-    }
-}
-impl MediaStreamAttributesRequest {
-    /// Creates a new builder-style object to manufacture [`MediaStreamAttributesRequest`](crate::model::MediaStreamAttributesRequest).
-    pub fn builder() -> crate::model::media_stream_attributes_request::Builder {
-        crate::model::media_stream_attributes_request::Builder::default()
     }
 }
 
@@ -4118,6 +4140,13 @@ impl FmtpRequest {
         self.tcs.as_ref()
     }
 }
+impl FmtpRequest {
+    /// Creates a new builder-style object to manufacture [`FmtpRequest`](crate::model::FmtpRequest).
+    pub fn builder() -> crate::model::fmtp_request::Builder {
+        crate::model::fmtp_request::Builder::default()
+    }
+}
+
 /// See [`FmtpRequest`](crate::model::FmtpRequest).
 pub mod fmtp_request {
 
@@ -4227,12 +4256,6 @@ pub mod fmtp_request {
         }
     }
 }
-impl FmtpRequest {
-    /// Creates a new builder-style object to manufacture [`FmtpRequest`](crate::model::FmtpRequest).
-    pub fn builder() -> crate::model::fmtp_request::Builder {
-        crate::model::fmtp_request::Builder::default()
-    }
-}
 
 /// The settings for a flow entitlement.
 #[non_exhaustive]
@@ -4290,6 +4313,13 @@ impl Entitlement {
         self.subscribers.as_deref()
     }
 }
+impl Entitlement {
+    /// Creates a new builder-style object to manufacture [`Entitlement`](crate::model::Entitlement).
+    pub fn builder() -> crate::model::entitlement::Builder {
+        crate::model::entitlement::Builder::default()
+    }
+}
+
 /// See [`Entitlement`](crate::model::Entitlement).
 pub mod entitlement {
 
@@ -4411,12 +4441,6 @@ pub mod entitlement {
                 subscribers: self.subscribers,
             }
         }
-    }
-}
-impl Entitlement {
-    /// Creates a new builder-style object to manufacture [`Entitlement`](crate::model::Entitlement).
-    pub fn builder() -> crate::model::entitlement::Builder {
-        crate::model::entitlement::Builder::default()
     }
 }
 
@@ -4617,6 +4641,13 @@ impl Flow {
         self.maintenance.as_ref()
     }
 }
+impl Flow {
+    /// Creates a new builder-style object to manufacture [`Flow`](crate::model::Flow).
+    pub fn builder() -> crate::model::flow::Builder {
+        crate::model::flow::Builder::default()
+    }
+}
+
 /// See [`Flow`](crate::model::Flow).
 pub mod flow {
 
@@ -4854,12 +4885,6 @@ pub mod flow {
         }
     }
 }
-impl Flow {
-    /// Creates a new builder-style object to manufacture [`Flow`](crate::model::Flow).
-    pub fn builder() -> crate::model::flow::Builder {
-        crate::model::flow::Builder::default()
-    }
-}
 
 /// The maintenance setting of a flow
 #[non_exhaustive]
@@ -4896,6 +4921,13 @@ impl Maintenance {
         self.maintenance_start_hour.as_deref()
     }
 }
+impl Maintenance {
+    /// Creates a new builder-style object to manufacture [`Maintenance`](crate::model::Maintenance).
+    pub fn builder() -> crate::model::maintenance::Builder {
+        crate::model::maintenance::Builder::default()
+    }
+}
+
 /// See [`Maintenance`](crate::model::Maintenance).
 pub mod maintenance {
 
@@ -4970,12 +5002,6 @@ pub mod maintenance {
                 maintenance_start_hour: self.maintenance_start_hour,
             }
         }
-    }
-}
-impl Maintenance {
-    /// Creates a new builder-style object to manufacture [`Maintenance`](crate::model::Maintenance).
-    pub fn builder() -> crate::model::maintenance::Builder {
-        crate::model::maintenance::Builder::default()
     }
 }
 
@@ -5153,6 +5179,13 @@ impl VpcInterface {
         self.subnet_id.as_deref()
     }
 }
+impl VpcInterface {
+    /// Creates a new builder-style object to manufacture [`VpcInterface`](crate::model::VpcInterface).
+    pub fn builder() -> crate::model::vpc_interface::Builder {
+        crate::model::vpc_interface::Builder::default()
+    }
+}
+
 /// See [`VpcInterface`](crate::model::VpcInterface).
 pub mod vpc_interface {
 
@@ -5260,12 +5293,6 @@ pub mod vpc_interface {
                 subnet_id: self.subnet_id,
             }
         }
-    }
-}
-impl VpcInterface {
-    /// Creates a new builder-style object to manufacture [`VpcInterface`](crate::model::VpcInterface).
-    pub fn builder() -> crate::model::vpc_interface::Builder {
-        crate::model::vpc_interface::Builder::default()
     }
 }
 
@@ -5513,6 +5540,13 @@ impl FailoverConfig {
         self.state.as_ref()
     }
 }
+impl FailoverConfig {
+    /// Creates a new builder-style object to manufacture [`FailoverConfig`](crate::model::FailoverConfig).
+    pub fn builder() -> crate::model::failover_config::Builder {
+        crate::model::failover_config::Builder::default()
+    }
+}
+
 /// See [`FailoverConfig`](crate::model::FailoverConfig).
 pub mod failover_config {
 
@@ -5581,12 +5615,6 @@ pub mod failover_config {
                 state: self.state,
             }
         }
-    }
-}
-impl FailoverConfig {
-    /// Creates a new builder-style object to manufacture [`FailoverConfig`](crate::model::FailoverConfig).
-    pub fn builder() -> crate::model::failover_config::Builder {
-        crate::model::failover_config::Builder::default()
     }
 }
 
@@ -5694,6 +5722,13 @@ impl SourcePriority {
         self.primary_source.as_deref()
     }
 }
+impl SourcePriority {
+    /// Creates a new builder-style object to manufacture [`SourcePriority`](crate::model::SourcePriority).
+    pub fn builder() -> crate::model::source_priority::Builder {
+        crate::model::source_priority::Builder::default()
+    }
+}
+
 /// See [`SourcePriority`](crate::model::SourcePriority).
 pub mod source_priority {
 
@@ -5723,12 +5758,6 @@ pub mod source_priority {
                 primary_source: self.primary_source,
             }
         }
-    }
-}
-impl SourcePriority {
-    /// Creates a new builder-style object to manufacture [`SourcePriority`](crate::model::SourcePriority).
-    pub fn builder() -> crate::model::source_priority::Builder {
-        crate::model::source_priority::Builder::default()
     }
 }
 
@@ -5850,6 +5879,13 @@ impl UpdateMaintenance {
         self.maintenance_start_hour.as_deref()
     }
 }
+impl UpdateMaintenance {
+    /// Creates a new builder-style object to manufacture [`UpdateMaintenance`](crate::model::UpdateMaintenance).
+    pub fn builder() -> crate::model::update_maintenance::Builder {
+        crate::model::update_maintenance::Builder::default()
+    }
+}
+
 /// See [`UpdateMaintenance`](crate::model::UpdateMaintenance).
 pub mod update_maintenance {
 
@@ -5911,12 +5947,6 @@ pub mod update_maintenance {
         }
     }
 }
-impl UpdateMaintenance {
-    /// Creates a new builder-style object to manufacture [`UpdateMaintenance`](crate::model::UpdateMaintenance).
-    pub fn builder() -> crate::model::update_maintenance::Builder {
-        crate::model::update_maintenance::Builder::default()
-    }
-}
 
 /// The settings for source failover.
 #[non_exhaustive]
@@ -5953,6 +5983,13 @@ impl UpdateFailoverConfig {
         self.state.as_ref()
     }
 }
+impl UpdateFailoverConfig {
+    /// Creates a new builder-style object to manufacture [`UpdateFailoverConfig`](crate::model::UpdateFailoverConfig).
+    pub fn builder() -> crate::model::update_failover_config::Builder {
+        crate::model::update_failover_config::Builder::default()
+    }
+}
+
 /// See [`UpdateFailoverConfig`](crate::model::UpdateFailoverConfig).
 pub mod update_failover_config {
 
@@ -6021,12 +6058,6 @@ pub mod update_failover_config {
                 state: self.state,
             }
         }
-    }
-}
-impl UpdateFailoverConfig {
-    /// Creates a new builder-style object to manufacture [`UpdateFailoverConfig`](crate::model::UpdateFailoverConfig).
-    pub fn builder() -> crate::model::update_failover_config::Builder {
-        crate::model::update_failover_config::Builder::default()
     }
 }
 
@@ -6130,6 +6161,13 @@ impl Reservation {
         self.start.as_deref()
     }
 }
+impl Reservation {
+    /// Creates a new builder-style object to manufacture [`Reservation`](crate::model::Reservation).
+    pub fn builder() -> crate::model::reservation::Builder {
+        crate::model::reservation::Builder::default()
+    }
+}
+
 /// See [`Reservation`](crate::model::Reservation).
 pub mod reservation {
 
@@ -6332,12 +6370,6 @@ pub mod reservation {
         }
     }
 }
-impl Reservation {
-    /// Creates a new builder-style object to manufacture [`Reservation`](crate::model::Reservation).
-    pub fn builder() -> crate::model::reservation::Builder {
-        crate::model::reservation::Builder::default()
-    }
-}
 
 /// A definition of what is being billed for, including the type and amount.
 #[non_exhaustive]
@@ -6360,6 +6392,13 @@ impl ResourceSpecification {
         self.resource_type.as_ref()
     }
 }
+impl ResourceSpecification {
+    /// Creates a new builder-style object to manufacture [`ResourceSpecification`](crate::model::ResourceSpecification).
+    pub fn builder() -> crate::model::resource_specification::Builder {
+        crate::model::resource_specification::Builder::default()
+    }
+}
+
 /// See [`ResourceSpecification`](crate::model::ResourceSpecification).
 pub mod resource_specification {
 
@@ -6401,12 +6440,6 @@ pub mod resource_specification {
                 resource_type: self.resource_type,
             }
         }
-    }
-}
-impl ResourceSpecification {
-    /// Creates a new builder-style object to manufacture [`ResourceSpecification`](crate::model::ResourceSpecification).
-    pub fn builder() -> crate::model::resource_specification::Builder {
-        crate::model::resource_specification::Builder::default()
     }
 }
 
@@ -6830,6 +6863,13 @@ impl Offering {
         self.resource_specification.as_ref()
     }
 }
+impl Offering {
+    /// Creates a new builder-style object to manufacture [`Offering`](crate::model::Offering).
+    pub fn builder() -> crate::model::offering::Builder {
+        crate::model::offering::Builder::default()
+    }
+}
+
 /// See [`Offering`](crate::model::Offering).
 pub mod offering {
 
@@ -6963,12 +7003,6 @@ pub mod offering {
         }
     }
 }
-impl Offering {
-    /// Creates a new builder-style object to manufacture [`Offering`](crate::model::Offering).
-    pub fn builder() -> crate::model::offering::Builder {
-        crate::model::offering::Builder::default()
-    }
-}
 
 /// Provides a summary of a flow, including its ARN, Availability Zone, and source type.
 #[non_exhaustive]
@@ -7026,6 +7060,13 @@ impl ListedFlow {
         self.maintenance.as_ref()
     }
 }
+impl ListedFlow {
+    /// Creates a new builder-style object to manufacture [`ListedFlow`](crate::model::ListedFlow).
+    pub fn builder() -> crate::model::listed_flow::Builder {
+        crate::model::listed_flow::Builder::default()
+    }
+}
+
 /// See [`ListedFlow`](crate::model::ListedFlow).
 pub mod listed_flow {
 
@@ -7133,12 +7174,6 @@ pub mod listed_flow {
                 maintenance: self.maintenance,
             }
         }
-    }
-}
-impl ListedFlow {
-    /// Creates a new builder-style object to manufacture [`ListedFlow`](crate::model::ListedFlow).
-    pub fn builder() -> crate::model::listed_flow::Builder {
-        crate::model::listed_flow::Builder::default()
     }
 }
 
@@ -7260,6 +7295,13 @@ impl ListedEntitlement {
         self.entitlement_name.as_deref()
     }
 }
+impl ListedEntitlement {
+    /// Creates a new builder-style object to manufacture [`ListedEntitlement`](crate::model::ListedEntitlement).
+    pub fn builder() -> crate::model::listed_entitlement::Builder {
+        crate::model::listed_entitlement::Builder::default()
+    }
+}
+
 /// See [`ListedEntitlement`](crate::model::ListedEntitlement).
 pub mod listed_entitlement {
 
@@ -7323,12 +7365,6 @@ pub mod listed_entitlement {
         }
     }
 }
-impl ListedEntitlement {
-    /// Creates a new builder-style object to manufacture [`ListedEntitlement`](crate::model::ListedEntitlement).
-    pub fn builder() -> crate::model::listed_entitlement::Builder {
-        crate::model::listed_entitlement::Builder::default()
-    }
-}
 
 /// The entitlements that you want to grant on a flow.
 #[non_exhaustive]
@@ -7379,6 +7415,13 @@ impl GrantEntitlementRequest {
         self.subscribers.as_deref()
     }
 }
+impl GrantEntitlementRequest {
+    /// Creates a new builder-style object to manufacture [`GrantEntitlementRequest`](crate::model::GrantEntitlementRequest).
+    pub fn builder() -> crate::model::grant_entitlement_request::Builder {
+        crate::model::grant_entitlement_request::Builder::default()
+    }
+}
+
 /// See [`GrantEntitlementRequest`](crate::model::GrantEntitlementRequest).
 pub mod grant_entitlement_request {
 
@@ -7487,12 +7530,6 @@ pub mod grant_entitlement_request {
         }
     }
 }
-impl GrantEntitlementRequest {
-    /// Creates a new builder-style object to manufacture [`GrantEntitlementRequest`](crate::model::GrantEntitlementRequest).
-    pub fn builder() -> crate::model::grant_entitlement_request::Builder {
-        crate::model::grant_entitlement_request::Builder::default()
-    }
-}
 
 /// Messages that provide the state of the flow.
 #[non_exhaustive]
@@ -7508,6 +7545,13 @@ impl Messages {
         self.errors.as_deref()
     }
 }
+impl Messages {
+    /// Creates a new builder-style object to manufacture [`Messages`](crate::model::Messages).
+    pub fn builder() -> crate::model::messages::Builder {
+        crate::model::messages::Builder::default()
+    }
+}
+
 /// See [`Messages`](crate::model::Messages).
 pub mod messages {
 
@@ -7545,12 +7589,6 @@ pub mod messages {
         }
     }
 }
-impl Messages {
-    /// Creates a new builder-style object to manufacture [`Messages`](crate::model::Messages).
-    pub fn builder() -> crate::model::messages::Builder {
-        crate::model::messages::Builder::default()
-    }
-}
 
 /// Create maintenance setting for a flow
 #[non_exhaustive]
@@ -7573,6 +7611,13 @@ impl AddMaintenance {
         self.maintenance_start_hour.as_deref()
     }
 }
+impl AddMaintenance {
+    /// Creates a new builder-style object to manufacture [`AddMaintenance`](crate::model::AddMaintenance).
+    pub fn builder() -> crate::model::add_maintenance::Builder {
+        crate::model::add_maintenance::Builder::default()
+    }
+}
+
 /// See [`AddMaintenance`](crate::model::AddMaintenance).
 pub mod add_maintenance {
 
@@ -7617,12 +7662,6 @@ pub mod add_maintenance {
                 maintenance_start_hour: self.maintenance_start_hour,
             }
         }
-    }
-}
-impl AddMaintenance {
-    /// Creates a new builder-style object to manufacture [`AddMaintenance`](crate::model::AddMaintenance).
-    pub fn builder() -> crate::model::add_maintenance::Builder {
-        crate::model::add_maintenance::Builder::default()
     }
 }
 
@@ -7670,6 +7709,13 @@ impl VpcInterfaceRequest {
         self.subnet_id.as_deref()
     }
 }
+impl VpcInterfaceRequest {
+    /// Creates a new builder-style object to manufacture [`VpcInterfaceRequest`](crate::model::VpcInterfaceRequest).
+    pub fn builder() -> crate::model::vpc_interface_request::Builder {
+        crate::model::vpc_interface_request::Builder::default()
+    }
+}
+
 /// See [`VpcInterfaceRequest`](crate::model::VpcInterfaceRequest).
 pub mod vpc_interface_request {
 
@@ -7756,12 +7802,6 @@ pub mod vpc_interface_request {
                 subnet_id: self.subnet_id,
             }
         }
-    }
-}
-impl VpcInterfaceRequest {
-    /// Creates a new builder-style object to manufacture [`VpcInterfaceRequest`](crate::model::VpcInterfaceRequest).
-    pub fn builder() -> crate::model::vpc_interface_request::Builder {
-        crate::model::vpc_interface_request::Builder::default()
     }
 }
 
@@ -7901,6 +7941,13 @@ impl SetSourceRequest {
         self.whitelist_cidr.as_deref()
     }
 }
+impl SetSourceRequest {
+    /// Creates a new builder-style object to manufacture [`SetSourceRequest`](crate::model::SetSourceRequest).
+    pub fn builder() -> crate::model::set_source_request::Builder {
+        crate::model::set_source_request::Builder::default()
+    }
+}
+
 /// See [`SetSourceRequest`](crate::model::SetSourceRequest).
 pub mod set_source_request {
 
@@ -8166,12 +8213,6 @@ pub mod set_source_request {
         }
     }
 }
-impl SetSourceRequest {
-    /// Creates a new builder-style object to manufacture [`SetSourceRequest`](crate::model::SetSourceRequest).
-    pub fn builder() -> crate::model::set_source_request::Builder {
-        crate::model::set_source_request::Builder::default()
-    }
-}
 
 /// The output that you want to add to this flow.
 #[non_exhaustive]
@@ -8290,6 +8331,13 @@ impl AddOutputRequest {
         self.vpc_interface_attachment.as_ref()
     }
 }
+impl AddOutputRequest {
+    /// Creates a new builder-style object to manufacture [`AddOutputRequest`](crate::model::AddOutputRequest).
+    pub fn builder() -> crate::model::add_output_request::Builder {
+        crate::model::add_output_request::Builder::default()
+    }
+}
+
 /// See [`AddOutputRequest`](crate::model::AddOutputRequest).
 pub mod add_output_request {
 
@@ -8520,12 +8568,6 @@ pub mod add_output_request {
         }
     }
 }
-impl AddOutputRequest {
-    /// Creates a new builder-style object to manufacture [`AddOutputRequest`](crate::model::AddOutputRequest).
-    pub fn builder() -> crate::model::add_output_request::Builder {
-        crate::model::add_output_request::Builder::default()
-    }
-}
 
 /// The media stream that you want to add to the flow.
 #[non_exhaustive]
@@ -8583,6 +8625,13 @@ impl AddMediaStreamRequest {
         self.video_format.as_deref()
     }
 }
+impl AddMediaStreamRequest {
+    /// Creates a new builder-style object to manufacture [`AddMediaStreamRequest`](crate::model::AddMediaStreamRequest).
+    pub fn builder() -> crate::model::add_media_stream_request::Builder {
+        crate::model::add_media_stream_request::Builder::default()
+    }
+}
+
 /// See [`AddMediaStreamRequest`](crate::model::AddMediaStreamRequest).
 pub mod add_media_stream_request {
 
@@ -8690,11 +8739,5 @@ pub mod add_media_stream_request {
                 video_format: self.video_format,
             }
         }
-    }
-}
-impl AddMediaStreamRequest {
-    /// Creates a new builder-style object to manufacture [`AddMediaStreamRequest`](crate::model::AddMediaStreamRequest).
-    pub fn builder() -> crate::model::add_media_stream_request::Builder {
-        crate::model::add_media_stream_request::Builder::default()
     }
 }

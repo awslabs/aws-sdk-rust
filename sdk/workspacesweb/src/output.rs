@@ -19,6 +19,13 @@ impl aws_http::request_id::RequestId for UpdateUserSettingsOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdateUserSettingsOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateUserSettingsOutput`](crate::output::UpdateUserSettingsOutput).
+    pub fn builder() -> crate::output::update_user_settings_output::Builder {
+        crate::output::update_user_settings_output::Builder::default()
+    }
+}
+
 /// See [`UpdateUserSettingsOutput`](crate::output::UpdateUserSettingsOutput).
 pub mod update_user_settings_output {
 
@@ -61,12 +68,6 @@ pub mod update_user_settings_output {
         }
     }
 }
-impl UpdateUserSettingsOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateUserSettingsOutput`](crate::output::UpdateUserSettingsOutput).
-    pub fn builder() -> crate::output::update_user_settings_output::Builder {
-        crate::output::update_user_settings_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -90,6 +91,13 @@ impl aws_http::request_id::RequestId for UpdateUserAccessLoggingSettingsOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdateUserAccessLoggingSettingsOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateUserAccessLoggingSettingsOutput`](crate::output::UpdateUserAccessLoggingSettingsOutput).
+    pub fn builder() -> crate::output::update_user_access_logging_settings_output::Builder {
+        crate::output::update_user_access_logging_settings_output::Builder::default()
+    }
+}
+
 /// See [`UpdateUserAccessLoggingSettingsOutput`](crate::output::UpdateUserAccessLoggingSettingsOutput).
 pub mod update_user_access_logging_settings_output {
 
@@ -136,12 +144,6 @@ pub mod update_user_access_logging_settings_output {
         }
     }
 }
-impl UpdateUserAccessLoggingSettingsOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateUserAccessLoggingSettingsOutput`](crate::output::UpdateUserAccessLoggingSettingsOutput).
-    pub fn builder() -> crate::output::update_user_access_logging_settings_output::Builder {
-        crate::output::update_user_access_logging_settings_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -163,6 +165,13 @@ impl aws_http::request_id::RequestId for UpdateTrustStoreOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdateTrustStoreOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateTrustStoreOutput`](crate::output::UpdateTrustStoreOutput).
+    pub fn builder() -> crate::output::update_trust_store_output::Builder {
+        crate::output::update_trust_store_output::Builder::default()
+    }
+}
+
 /// See [`UpdateTrustStoreOutput`](crate::output::UpdateTrustStoreOutput).
 pub mod update_trust_store_output {
 
@@ -205,12 +214,6 @@ pub mod update_trust_store_output {
         }
     }
 }
-impl UpdateTrustStoreOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateTrustStoreOutput`](crate::output::UpdateTrustStoreOutput).
-    pub fn builder() -> crate::output::update_trust_store_output::Builder {
-        crate::output::update_trust_store_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -232,6 +235,13 @@ impl aws_http::request_id::RequestId for UpdatePortalOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdatePortalOutput {
+    /// Creates a new builder-style object to manufacture [`UpdatePortalOutput`](crate::output::UpdatePortalOutput).
+    pub fn builder() -> crate::output::update_portal_output::Builder {
+        crate::output::update_portal_output::Builder::default()
+    }
+}
+
 /// See [`UpdatePortalOutput`](crate::output::UpdatePortalOutput).
 pub mod update_portal_output {
 
@@ -271,12 +281,6 @@ pub mod update_portal_output {
         }
     }
 }
-impl UpdatePortalOutput {
-    /// Creates a new builder-style object to manufacture [`UpdatePortalOutput`](crate::output::UpdatePortalOutput).
-    pub fn builder() -> crate::output::update_portal_output::Builder {
-        crate::output::update_portal_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -298,6 +302,13 @@ impl aws_http::request_id::RequestId for UpdateNetworkSettingsOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdateNetworkSettingsOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateNetworkSettingsOutput`](crate::output::UpdateNetworkSettingsOutput).
+    pub fn builder() -> crate::output::update_network_settings_output::Builder {
+        crate::output::update_network_settings_output::Builder::default()
+    }
+}
+
 /// See [`UpdateNetworkSettingsOutput`](crate::output::UpdateNetworkSettingsOutput).
 pub mod update_network_settings_output {
 
@@ -340,12 +351,6 @@ pub mod update_network_settings_output {
         }
     }
 }
-impl UpdateNetworkSettingsOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateNetworkSettingsOutput`](crate::output::UpdateNetworkSettingsOutput).
-    pub fn builder() -> crate::output::update_network_settings_output::Builder {
-        crate::output::update_network_settings_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -367,6 +372,13 @@ impl aws_http::request_id::RequestId for UpdateIdentityProviderOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdateIdentityProviderOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateIdentityProviderOutput`](crate::output::UpdateIdentityProviderOutput).
+    pub fn builder() -> crate::output::update_identity_provider_output::Builder {
+        crate::output::update_identity_provider_output::Builder::default()
+    }
+}
+
 /// See [`UpdateIdentityProviderOutput`](crate::output::UpdateIdentityProviderOutput).
 pub mod update_identity_provider_output {
 
@@ -409,12 +421,6 @@ pub mod update_identity_provider_output {
         }
     }
 }
-impl UpdateIdentityProviderOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateIdentityProviderOutput`](crate::output::UpdateIdentityProviderOutput).
-    pub fn builder() -> crate::output::update_identity_provider_output::Builder {
-        crate::output::update_identity_provider_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -436,6 +442,13 @@ impl aws_http::request_id::RequestId for UpdateBrowserSettingsOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdateBrowserSettingsOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateBrowserSettingsOutput`](crate::output::UpdateBrowserSettingsOutput).
+    pub fn builder() -> crate::output::update_browser_settings_output::Builder {
+        crate::output::update_browser_settings_output::Builder::default()
+    }
+}
+
 /// See [`UpdateBrowserSettingsOutput`](crate::output::UpdateBrowserSettingsOutput).
 pub mod update_browser_settings_output {
 
@@ -478,12 +491,6 @@ pub mod update_browser_settings_output {
         }
     }
 }
-impl UpdateBrowserSettingsOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateBrowserSettingsOutput`](crate::output::UpdateBrowserSettingsOutput).
-    pub fn builder() -> crate::output::update_browser_settings_output::Builder {
-        crate::output::update_browser_settings_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -496,6 +503,13 @@ impl aws_http::request_id::RequestId for UntagResourceOutput {
         self._request_id.as_deref()
     }
 }
+impl UntagResourceOutput {
+    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    pub fn builder() -> crate::output::untag_resource_output::Builder {
+        crate::output::untag_resource_output::Builder::default()
+    }
+}
+
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
 
@@ -523,12 +537,6 @@ pub mod untag_resource_output {
         }
     }
 }
-impl UntagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
-    pub fn builder() -> crate::output::untag_resource_output::Builder {
-        crate::output::untag_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -541,6 +549,13 @@ impl aws_http::request_id::RequestId for TagResourceOutput {
         self._request_id.as_deref()
     }
 }
+impl TagResourceOutput {
+    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
+    pub fn builder() -> crate::output::tag_resource_output::Builder {
+        crate::output::tag_resource_output::Builder::default()
+    }
+}
+
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
 
@@ -566,12 +581,6 @@ pub mod tag_resource_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl TagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
-    pub fn builder() -> crate::output::tag_resource_output::Builder {
-        crate::output::tag_resource_output::Builder::default()
     }
 }
 
@@ -602,6 +611,13 @@ impl aws_http::request_id::RequestId for ListUserSettingsOutput {
         self._request_id.as_deref()
     }
 }
+impl ListUserSettingsOutput {
+    /// Creates a new builder-style object to manufacture [`ListUserSettingsOutput`](crate::output::ListUserSettingsOutput).
+    pub fn builder() -> crate::output::list_user_settings_output::Builder {
+        crate::output::list_user_settings_output::Builder::default()
+    }
+}
+
 /// See [`ListUserSettingsOutput`](crate::output::ListUserSettingsOutput).
 pub mod list_user_settings_output {
 
@@ -663,12 +679,6 @@ pub mod list_user_settings_output {
         }
     }
 }
-impl ListUserSettingsOutput {
-    /// Creates a new builder-style object to manufacture [`ListUserSettingsOutput`](crate::output::ListUserSettingsOutput).
-    pub fn builder() -> crate::output::list_user_settings_output::Builder {
-        crate::output::list_user_settings_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -700,6 +710,13 @@ impl aws_http::request_id::RequestId for ListUserAccessLoggingSettingsOutput {
         self._request_id.as_deref()
     }
 }
+impl ListUserAccessLoggingSettingsOutput {
+    /// Creates a new builder-style object to manufacture [`ListUserAccessLoggingSettingsOutput`](crate::output::ListUserAccessLoggingSettingsOutput).
+    pub fn builder() -> crate::output::list_user_access_logging_settings_output::Builder {
+        crate::output::list_user_access_logging_settings_output::Builder::default()
+    }
+}
+
 /// See [`ListUserAccessLoggingSettingsOutput`](crate::output::ListUserAccessLoggingSettingsOutput).
 pub mod list_user_access_logging_settings_output {
 
@@ -766,12 +783,6 @@ pub mod list_user_access_logging_settings_output {
         }
     }
 }
-impl ListUserAccessLoggingSettingsOutput {
-    /// Creates a new builder-style object to manufacture [`ListUserAccessLoggingSettingsOutput`](crate::output::ListUserAccessLoggingSettingsOutput).
-    pub fn builder() -> crate::output::list_user_access_logging_settings_output::Builder {
-        crate::output::list_user_access_logging_settings_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -800,6 +811,13 @@ impl aws_http::request_id::RequestId for ListTrustStoresOutput {
         self._request_id.as_deref()
     }
 }
+impl ListTrustStoresOutput {
+    /// Creates a new builder-style object to manufacture [`ListTrustStoresOutput`](crate::output::ListTrustStoresOutput).
+    pub fn builder() -> crate::output::list_trust_stores_output::Builder {
+        crate::output::list_trust_stores_output::Builder::default()
+    }
+}
+
 /// See [`ListTrustStoresOutput`](crate::output::ListTrustStoresOutput).
 pub mod list_trust_stores_output {
 
@@ -861,12 +879,6 @@ pub mod list_trust_stores_output {
         }
     }
 }
-impl ListTrustStoresOutput {
-    /// Creates a new builder-style object to manufacture [`ListTrustStoresOutput`](crate::output::ListTrustStoresOutput).
-    pub fn builder() -> crate::output::list_trust_stores_output::Builder {
-        crate::output::list_trust_stores_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -902,6 +914,13 @@ impl aws_http::request_id::RequestId for ListTrustStoreCertificatesOutput {
         self._request_id.as_deref()
     }
 }
+impl ListTrustStoreCertificatesOutput {
+    /// Creates a new builder-style object to manufacture [`ListTrustStoreCertificatesOutput`](crate::output::ListTrustStoreCertificatesOutput).
+    pub fn builder() -> crate::output::list_trust_store_certificates_output::Builder {
+        crate::output::list_trust_store_certificates_output::Builder::default()
+    }
+}
+
 /// See [`ListTrustStoreCertificatesOutput`](crate::output::ListTrustStoreCertificatesOutput).
 pub mod list_trust_store_certificates_output {
 
@@ -978,12 +997,6 @@ pub mod list_trust_store_certificates_output {
         }
     }
 }
-impl ListTrustStoreCertificatesOutput {
-    /// Creates a new builder-style object to manufacture [`ListTrustStoreCertificatesOutput`](crate::output::ListTrustStoreCertificatesOutput).
-    pub fn builder() -> crate::output::list_trust_store_certificates_output::Builder {
-        crate::output::list_trust_store_certificates_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1005,6 +1018,13 @@ impl aws_http::request_id::RequestId for ListTagsForResourceOutput {
         self._request_id.as_deref()
     }
 }
+impl ListTagsForResourceOutput {
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
+        crate::output::list_tags_for_resource_output::Builder::default()
+    }
+}
+
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
 
@@ -1053,12 +1073,6 @@ pub mod list_tags_for_resource_output {
         }
     }
 }
-impl ListTagsForResourceOutput {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
-    pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
-        crate::output::list_tags_for_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1087,6 +1101,13 @@ impl aws_http::request_id::RequestId for ListPortalsOutput {
         self._request_id.as_deref()
     }
 }
+impl ListPortalsOutput {
+    /// Creates a new builder-style object to manufacture [`ListPortalsOutput`](crate::output::ListPortalsOutput).
+    pub fn builder() -> crate::output::list_portals_output::Builder {
+        crate::output::list_portals_output::Builder::default()
+    }
+}
+
 /// See [`ListPortalsOutput`](crate::output::ListPortalsOutput).
 pub mod list_portals_output {
 
@@ -1147,12 +1168,6 @@ pub mod list_portals_output {
         }
     }
 }
-impl ListPortalsOutput {
-    /// Creates a new builder-style object to manufacture [`ListPortalsOutput`](crate::output::ListPortalsOutput).
-    pub fn builder() -> crate::output::list_portals_output::Builder {
-        crate::output::list_portals_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1181,6 +1196,13 @@ impl aws_http::request_id::RequestId for ListNetworkSettingsOutput {
         self._request_id.as_deref()
     }
 }
+impl ListNetworkSettingsOutput {
+    /// Creates a new builder-style object to manufacture [`ListNetworkSettingsOutput`](crate::output::ListNetworkSettingsOutput).
+    pub fn builder() -> crate::output::list_network_settings_output::Builder {
+        crate::output::list_network_settings_output::Builder::default()
+    }
+}
+
 /// See [`ListNetworkSettingsOutput`](crate::output::ListNetworkSettingsOutput).
 pub mod list_network_settings_output {
 
@@ -1242,12 +1264,6 @@ pub mod list_network_settings_output {
         }
     }
 }
-impl ListNetworkSettingsOutput {
-    /// Creates a new builder-style object to manufacture [`ListNetworkSettingsOutput`](crate::output::ListNetworkSettingsOutput).
-    pub fn builder() -> crate::output::list_network_settings_output::Builder {
-        crate::output::list_network_settings_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1279,6 +1295,13 @@ impl aws_http::request_id::RequestId for ListIdentityProvidersOutput {
         self._request_id.as_deref()
     }
 }
+impl ListIdentityProvidersOutput {
+    /// Creates a new builder-style object to manufacture [`ListIdentityProvidersOutput`](crate::output::ListIdentityProvidersOutput).
+    pub fn builder() -> crate::output::list_identity_providers_output::Builder {
+        crate::output::list_identity_providers_output::Builder::default()
+    }
+}
+
 /// See [`ListIdentityProvidersOutput`](crate::output::ListIdentityProvidersOutput).
 pub mod list_identity_providers_output {
 
@@ -1340,12 +1363,6 @@ pub mod list_identity_providers_output {
         }
     }
 }
-impl ListIdentityProvidersOutput {
-    /// Creates a new builder-style object to manufacture [`ListIdentityProvidersOutput`](crate::output::ListIdentityProvidersOutput).
-    pub fn builder() -> crate::output::list_identity_providers_output::Builder {
-        crate::output::list_identity_providers_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1374,6 +1391,13 @@ impl aws_http::request_id::RequestId for ListBrowserSettingsOutput {
         self._request_id.as_deref()
     }
 }
+impl ListBrowserSettingsOutput {
+    /// Creates a new builder-style object to manufacture [`ListBrowserSettingsOutput`](crate::output::ListBrowserSettingsOutput).
+    pub fn builder() -> crate::output::list_browser_settings_output::Builder {
+        crate::output::list_browser_settings_output::Builder::default()
+    }
+}
+
 /// See [`ListBrowserSettingsOutput`](crate::output::ListBrowserSettingsOutput).
 pub mod list_browser_settings_output {
 
@@ -1435,12 +1459,6 @@ pub mod list_browser_settings_output {
         }
     }
 }
-impl ListBrowserSettingsOutput {
-    /// Creates a new builder-style object to manufacture [`ListBrowserSettingsOutput`](crate::output::ListBrowserSettingsOutput).
-    pub fn builder() -> crate::output::list_browser_settings_output::Builder {
-        crate::output::list_browser_settings_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1462,6 +1480,13 @@ impl aws_http::request_id::RequestId for GetUserSettingsOutput {
         self._request_id.as_deref()
     }
 }
+impl GetUserSettingsOutput {
+    /// Creates a new builder-style object to manufacture [`GetUserSettingsOutput`](crate::output::GetUserSettingsOutput).
+    pub fn builder() -> crate::output::get_user_settings_output::Builder {
+        crate::output::get_user_settings_output::Builder::default()
+    }
+}
+
 /// See [`GetUserSettingsOutput`](crate::output::GetUserSettingsOutput).
 pub mod get_user_settings_output {
 
@@ -1504,12 +1529,6 @@ pub mod get_user_settings_output {
         }
     }
 }
-impl GetUserSettingsOutput {
-    /// Creates a new builder-style object to manufacture [`GetUserSettingsOutput`](crate::output::GetUserSettingsOutput).
-    pub fn builder() -> crate::output::get_user_settings_output::Builder {
-        crate::output::get_user_settings_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1533,6 +1552,13 @@ impl aws_http::request_id::RequestId for GetUserAccessLoggingSettingsOutput {
         self._request_id.as_deref()
     }
 }
+impl GetUserAccessLoggingSettingsOutput {
+    /// Creates a new builder-style object to manufacture [`GetUserAccessLoggingSettingsOutput`](crate::output::GetUserAccessLoggingSettingsOutput).
+    pub fn builder() -> crate::output::get_user_access_logging_settings_output::Builder {
+        crate::output::get_user_access_logging_settings_output::Builder::default()
+    }
+}
+
 /// See [`GetUserAccessLoggingSettingsOutput`](crate::output::GetUserAccessLoggingSettingsOutput).
 pub mod get_user_access_logging_settings_output {
 
@@ -1579,12 +1605,6 @@ pub mod get_user_access_logging_settings_output {
         }
     }
 }
-impl GetUserAccessLoggingSettingsOutput {
-    /// Creates a new builder-style object to manufacture [`GetUserAccessLoggingSettingsOutput`](crate::output::GetUserAccessLoggingSettingsOutput).
-    pub fn builder() -> crate::output::get_user_access_logging_settings_output::Builder {
-        crate::output::get_user_access_logging_settings_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1613,6 +1633,13 @@ impl aws_http::request_id::RequestId for GetTrustStoreCertificateOutput {
         self._request_id.as_deref()
     }
 }
+impl GetTrustStoreCertificateOutput {
+    /// Creates a new builder-style object to manufacture [`GetTrustStoreCertificateOutput`](crate::output::GetTrustStoreCertificateOutput).
+    pub fn builder() -> crate::output::get_trust_store_certificate_output::Builder {
+        crate::output::get_trust_store_certificate_output::Builder::default()
+    }
+}
+
 /// See [`GetTrustStoreCertificateOutput`](crate::output::GetTrustStoreCertificateOutput).
 pub mod get_trust_store_certificate_output {
 
@@ -1670,12 +1697,6 @@ pub mod get_trust_store_certificate_output {
         }
     }
 }
-impl GetTrustStoreCertificateOutput {
-    /// Creates a new builder-style object to manufacture [`GetTrustStoreCertificateOutput`](crate::output::GetTrustStoreCertificateOutput).
-    pub fn builder() -> crate::output::get_trust_store_certificate_output::Builder {
-        crate::output::get_trust_store_certificate_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1697,6 +1718,13 @@ impl aws_http::request_id::RequestId for GetTrustStoreOutput {
         self._request_id.as_deref()
     }
 }
+impl GetTrustStoreOutput {
+    /// Creates a new builder-style object to manufacture [`GetTrustStoreOutput`](crate::output::GetTrustStoreOutput).
+    pub fn builder() -> crate::output::get_trust_store_output::Builder {
+        crate::output::get_trust_store_output::Builder::default()
+    }
+}
+
 /// See [`GetTrustStoreOutput`](crate::output::GetTrustStoreOutput).
 pub mod get_trust_store_output {
 
@@ -1739,12 +1767,6 @@ pub mod get_trust_store_output {
         }
     }
 }
-impl GetTrustStoreOutput {
-    /// Creates a new builder-style object to manufacture [`GetTrustStoreOutput`](crate::output::GetTrustStoreOutput).
-    pub fn builder() -> crate::output::get_trust_store_output::Builder {
-        crate::output::get_trust_store_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1773,6 +1795,13 @@ impl aws_http::request_id::RequestId for GetPortalServiceProviderMetadataOutput 
         self._request_id.as_deref()
     }
 }
+impl GetPortalServiceProviderMetadataOutput {
+    /// Creates a new builder-style object to manufacture [`GetPortalServiceProviderMetadataOutput`](crate::output::GetPortalServiceProviderMetadataOutput).
+    pub fn builder() -> crate::output::get_portal_service_provider_metadata_output::Builder {
+        crate::output::get_portal_service_provider_metadata_output::Builder::default()
+    }
+}
+
 /// See [`GetPortalServiceProviderMetadataOutput`](crate::output::GetPortalServiceProviderMetadataOutput).
 pub mod get_portal_service_provider_metadata_output {
 
@@ -1830,12 +1859,6 @@ pub mod get_portal_service_provider_metadata_output {
         }
     }
 }
-impl GetPortalServiceProviderMetadataOutput {
-    /// Creates a new builder-style object to manufacture [`GetPortalServiceProviderMetadataOutput`](crate::output::GetPortalServiceProviderMetadataOutput).
-    pub fn builder() -> crate::output::get_portal_service_provider_metadata_output::Builder {
-        crate::output::get_portal_service_provider_metadata_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1857,6 +1880,13 @@ impl aws_http::request_id::RequestId for GetPortalOutput {
         self._request_id.as_deref()
     }
 }
+impl GetPortalOutput {
+    /// Creates a new builder-style object to manufacture [`GetPortalOutput`](crate::output::GetPortalOutput).
+    pub fn builder() -> crate::output::get_portal_output::Builder {
+        crate::output::get_portal_output::Builder::default()
+    }
+}
+
 /// See [`GetPortalOutput`](crate::output::GetPortalOutput).
 pub mod get_portal_output {
 
@@ -1896,12 +1926,6 @@ pub mod get_portal_output {
         }
     }
 }
-impl GetPortalOutput {
-    /// Creates a new builder-style object to manufacture [`GetPortalOutput`](crate::output::GetPortalOutput).
-    pub fn builder() -> crate::output::get_portal_output::Builder {
-        crate::output::get_portal_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1923,6 +1947,13 @@ impl aws_http::request_id::RequestId for GetNetworkSettingsOutput {
         self._request_id.as_deref()
     }
 }
+impl GetNetworkSettingsOutput {
+    /// Creates a new builder-style object to manufacture [`GetNetworkSettingsOutput`](crate::output::GetNetworkSettingsOutput).
+    pub fn builder() -> crate::output::get_network_settings_output::Builder {
+        crate::output::get_network_settings_output::Builder::default()
+    }
+}
+
 /// See [`GetNetworkSettingsOutput`](crate::output::GetNetworkSettingsOutput).
 pub mod get_network_settings_output {
 
@@ -1965,12 +1996,6 @@ pub mod get_network_settings_output {
         }
     }
 }
-impl GetNetworkSettingsOutput {
-    /// Creates a new builder-style object to manufacture [`GetNetworkSettingsOutput`](crate::output::GetNetworkSettingsOutput).
-    pub fn builder() -> crate::output::get_network_settings_output::Builder {
-        crate::output::get_network_settings_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1992,6 +2017,13 @@ impl aws_http::request_id::RequestId for GetIdentityProviderOutput {
         self._request_id.as_deref()
     }
 }
+impl GetIdentityProviderOutput {
+    /// Creates a new builder-style object to manufacture [`GetIdentityProviderOutput`](crate::output::GetIdentityProviderOutput).
+    pub fn builder() -> crate::output::get_identity_provider_output::Builder {
+        crate::output::get_identity_provider_output::Builder::default()
+    }
+}
+
 /// See [`GetIdentityProviderOutput`](crate::output::GetIdentityProviderOutput).
 pub mod get_identity_provider_output {
 
@@ -2034,12 +2066,6 @@ pub mod get_identity_provider_output {
         }
     }
 }
-impl GetIdentityProviderOutput {
-    /// Creates a new builder-style object to manufacture [`GetIdentityProviderOutput`](crate::output::GetIdentityProviderOutput).
-    pub fn builder() -> crate::output::get_identity_provider_output::Builder {
-        crate::output::get_identity_provider_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2061,6 +2087,13 @@ impl aws_http::request_id::RequestId for GetBrowserSettingsOutput {
         self._request_id.as_deref()
     }
 }
+impl GetBrowserSettingsOutput {
+    /// Creates a new builder-style object to manufacture [`GetBrowserSettingsOutput`](crate::output::GetBrowserSettingsOutput).
+    pub fn builder() -> crate::output::get_browser_settings_output::Builder {
+        crate::output::get_browser_settings_output::Builder::default()
+    }
+}
+
 /// See [`GetBrowserSettingsOutput`](crate::output::GetBrowserSettingsOutput).
 pub mod get_browser_settings_output {
 
@@ -2103,12 +2136,6 @@ pub mod get_browser_settings_output {
         }
     }
 }
-impl GetBrowserSettingsOutput {
-    /// Creates a new builder-style object to manufacture [`GetBrowserSettingsOutput`](crate::output::GetBrowserSettingsOutput).
-    pub fn builder() -> crate::output::get_browser_settings_output::Builder {
-        crate::output::get_browser_settings_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2121,6 +2148,13 @@ impl aws_http::request_id::RequestId for DisassociateUserSettingsOutput {
         self._request_id.as_deref()
     }
 }
+impl DisassociateUserSettingsOutput {
+    /// Creates a new builder-style object to manufacture [`DisassociateUserSettingsOutput`](crate::output::DisassociateUserSettingsOutput).
+    pub fn builder() -> crate::output::disassociate_user_settings_output::Builder {
+        crate::output::disassociate_user_settings_output::Builder::default()
+    }
+}
+
 /// See [`DisassociateUserSettingsOutput`](crate::output::DisassociateUserSettingsOutput).
 pub mod disassociate_user_settings_output {
 
@@ -2148,12 +2182,6 @@ pub mod disassociate_user_settings_output {
         }
     }
 }
-impl DisassociateUserSettingsOutput {
-    /// Creates a new builder-style object to manufacture [`DisassociateUserSettingsOutput`](crate::output::DisassociateUserSettingsOutput).
-    pub fn builder() -> crate::output::disassociate_user_settings_output::Builder {
-        crate::output::disassociate_user_settings_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2166,6 +2194,13 @@ impl aws_http::request_id::RequestId for DisassociateUserAccessLoggingSettingsOu
         self._request_id.as_deref()
     }
 }
+impl DisassociateUserAccessLoggingSettingsOutput {
+    /// Creates a new builder-style object to manufacture [`DisassociateUserAccessLoggingSettingsOutput`](crate::output::DisassociateUserAccessLoggingSettingsOutput).
+    pub fn builder() -> crate::output::disassociate_user_access_logging_settings_output::Builder {
+        crate::output::disassociate_user_access_logging_settings_output::Builder::default()
+    }
+}
+
 /// See [`DisassociateUserAccessLoggingSettingsOutput`](crate::output::DisassociateUserAccessLoggingSettingsOutput).
 pub mod disassociate_user_access_logging_settings_output {
 
@@ -2193,12 +2228,6 @@ pub mod disassociate_user_access_logging_settings_output {
         }
     }
 }
-impl DisassociateUserAccessLoggingSettingsOutput {
-    /// Creates a new builder-style object to manufacture [`DisassociateUserAccessLoggingSettingsOutput`](crate::output::DisassociateUserAccessLoggingSettingsOutput).
-    pub fn builder() -> crate::output::disassociate_user_access_logging_settings_output::Builder {
-        crate::output::disassociate_user_access_logging_settings_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2211,6 +2240,13 @@ impl aws_http::request_id::RequestId for DisassociateTrustStoreOutput {
         self._request_id.as_deref()
     }
 }
+impl DisassociateTrustStoreOutput {
+    /// Creates a new builder-style object to manufacture [`DisassociateTrustStoreOutput`](crate::output::DisassociateTrustStoreOutput).
+    pub fn builder() -> crate::output::disassociate_trust_store_output::Builder {
+        crate::output::disassociate_trust_store_output::Builder::default()
+    }
+}
+
 /// See [`DisassociateTrustStoreOutput`](crate::output::DisassociateTrustStoreOutput).
 pub mod disassociate_trust_store_output {
 
@@ -2238,12 +2274,6 @@ pub mod disassociate_trust_store_output {
         }
     }
 }
-impl DisassociateTrustStoreOutput {
-    /// Creates a new builder-style object to manufacture [`DisassociateTrustStoreOutput`](crate::output::DisassociateTrustStoreOutput).
-    pub fn builder() -> crate::output::disassociate_trust_store_output::Builder {
-        crate::output::disassociate_trust_store_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2256,6 +2286,13 @@ impl aws_http::request_id::RequestId for DisassociateNetworkSettingsOutput {
         self._request_id.as_deref()
     }
 }
+impl DisassociateNetworkSettingsOutput {
+    /// Creates a new builder-style object to manufacture [`DisassociateNetworkSettingsOutput`](crate::output::DisassociateNetworkSettingsOutput).
+    pub fn builder() -> crate::output::disassociate_network_settings_output::Builder {
+        crate::output::disassociate_network_settings_output::Builder::default()
+    }
+}
+
 /// See [`DisassociateNetworkSettingsOutput`](crate::output::DisassociateNetworkSettingsOutput).
 pub mod disassociate_network_settings_output {
 
@@ -2283,12 +2320,6 @@ pub mod disassociate_network_settings_output {
         }
     }
 }
-impl DisassociateNetworkSettingsOutput {
-    /// Creates a new builder-style object to manufacture [`DisassociateNetworkSettingsOutput`](crate::output::DisassociateNetworkSettingsOutput).
-    pub fn builder() -> crate::output::disassociate_network_settings_output::Builder {
-        crate::output::disassociate_network_settings_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2301,6 +2332,13 @@ impl aws_http::request_id::RequestId for DisassociateBrowserSettingsOutput {
         self._request_id.as_deref()
     }
 }
+impl DisassociateBrowserSettingsOutput {
+    /// Creates a new builder-style object to manufacture [`DisassociateBrowserSettingsOutput`](crate::output::DisassociateBrowserSettingsOutput).
+    pub fn builder() -> crate::output::disassociate_browser_settings_output::Builder {
+        crate::output::disassociate_browser_settings_output::Builder::default()
+    }
+}
+
 /// See [`DisassociateBrowserSettingsOutput`](crate::output::DisassociateBrowserSettingsOutput).
 pub mod disassociate_browser_settings_output {
 
@@ -2328,12 +2366,6 @@ pub mod disassociate_browser_settings_output {
         }
     }
 }
-impl DisassociateBrowserSettingsOutput {
-    /// Creates a new builder-style object to manufacture [`DisassociateBrowserSettingsOutput`](crate::output::DisassociateBrowserSettingsOutput).
-    pub fn builder() -> crate::output::disassociate_browser_settings_output::Builder {
-        crate::output::disassociate_browser_settings_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2346,6 +2378,13 @@ impl aws_http::request_id::RequestId for DeleteUserSettingsOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteUserSettingsOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteUserSettingsOutput`](crate::output::DeleteUserSettingsOutput).
+    pub fn builder() -> crate::output::delete_user_settings_output::Builder {
+        crate::output::delete_user_settings_output::Builder::default()
+    }
+}
+
 /// See [`DeleteUserSettingsOutput`](crate::output::DeleteUserSettingsOutput).
 pub mod delete_user_settings_output {
 
@@ -2373,12 +2412,6 @@ pub mod delete_user_settings_output {
         }
     }
 }
-impl DeleteUserSettingsOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteUserSettingsOutput`](crate::output::DeleteUserSettingsOutput).
-    pub fn builder() -> crate::output::delete_user_settings_output::Builder {
-        crate::output::delete_user_settings_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2391,6 +2424,13 @@ impl aws_http::request_id::RequestId for DeleteUserAccessLoggingSettingsOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteUserAccessLoggingSettingsOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteUserAccessLoggingSettingsOutput`](crate::output::DeleteUserAccessLoggingSettingsOutput).
+    pub fn builder() -> crate::output::delete_user_access_logging_settings_output::Builder {
+        crate::output::delete_user_access_logging_settings_output::Builder::default()
+    }
+}
+
 /// See [`DeleteUserAccessLoggingSettingsOutput`](crate::output::DeleteUserAccessLoggingSettingsOutput).
 pub mod delete_user_access_logging_settings_output {
 
@@ -2418,12 +2458,6 @@ pub mod delete_user_access_logging_settings_output {
         }
     }
 }
-impl DeleteUserAccessLoggingSettingsOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteUserAccessLoggingSettingsOutput`](crate::output::DeleteUserAccessLoggingSettingsOutput).
-    pub fn builder() -> crate::output::delete_user_access_logging_settings_output::Builder {
-        crate::output::delete_user_access_logging_settings_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2436,6 +2470,13 @@ impl aws_http::request_id::RequestId for DeleteTrustStoreOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteTrustStoreOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteTrustStoreOutput`](crate::output::DeleteTrustStoreOutput).
+    pub fn builder() -> crate::output::delete_trust_store_output::Builder {
+        crate::output::delete_trust_store_output::Builder::default()
+    }
+}
+
 /// See [`DeleteTrustStoreOutput`](crate::output::DeleteTrustStoreOutput).
 pub mod delete_trust_store_output {
 
@@ -2463,12 +2504,6 @@ pub mod delete_trust_store_output {
         }
     }
 }
-impl DeleteTrustStoreOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteTrustStoreOutput`](crate::output::DeleteTrustStoreOutput).
-    pub fn builder() -> crate::output::delete_trust_store_output::Builder {
-        crate::output::delete_trust_store_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2481,6 +2516,13 @@ impl aws_http::request_id::RequestId for DeletePortalOutput {
         self._request_id.as_deref()
     }
 }
+impl DeletePortalOutput {
+    /// Creates a new builder-style object to manufacture [`DeletePortalOutput`](crate::output::DeletePortalOutput).
+    pub fn builder() -> crate::output::delete_portal_output::Builder {
+        crate::output::delete_portal_output::Builder::default()
+    }
+}
+
 /// See [`DeletePortalOutput`](crate::output::DeletePortalOutput).
 pub mod delete_portal_output {
 
@@ -2508,12 +2550,6 @@ pub mod delete_portal_output {
         }
     }
 }
-impl DeletePortalOutput {
-    /// Creates a new builder-style object to manufacture [`DeletePortalOutput`](crate::output::DeletePortalOutput).
-    pub fn builder() -> crate::output::delete_portal_output::Builder {
-        crate::output::delete_portal_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2526,6 +2562,13 @@ impl aws_http::request_id::RequestId for DeleteNetworkSettingsOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteNetworkSettingsOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteNetworkSettingsOutput`](crate::output::DeleteNetworkSettingsOutput).
+    pub fn builder() -> crate::output::delete_network_settings_output::Builder {
+        crate::output::delete_network_settings_output::Builder::default()
+    }
+}
+
 /// See [`DeleteNetworkSettingsOutput`](crate::output::DeleteNetworkSettingsOutput).
 pub mod delete_network_settings_output {
 
@@ -2553,12 +2596,6 @@ pub mod delete_network_settings_output {
         }
     }
 }
-impl DeleteNetworkSettingsOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteNetworkSettingsOutput`](crate::output::DeleteNetworkSettingsOutput).
-    pub fn builder() -> crate::output::delete_network_settings_output::Builder {
-        crate::output::delete_network_settings_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2571,6 +2608,13 @@ impl aws_http::request_id::RequestId for DeleteIdentityProviderOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteIdentityProviderOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteIdentityProviderOutput`](crate::output::DeleteIdentityProviderOutput).
+    pub fn builder() -> crate::output::delete_identity_provider_output::Builder {
+        crate::output::delete_identity_provider_output::Builder::default()
+    }
+}
+
 /// See [`DeleteIdentityProviderOutput`](crate::output::DeleteIdentityProviderOutput).
 pub mod delete_identity_provider_output {
 
@@ -2598,12 +2642,6 @@ pub mod delete_identity_provider_output {
         }
     }
 }
-impl DeleteIdentityProviderOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteIdentityProviderOutput`](crate::output::DeleteIdentityProviderOutput).
-    pub fn builder() -> crate::output::delete_identity_provider_output::Builder {
-        crate::output::delete_identity_provider_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2616,6 +2654,13 @@ impl aws_http::request_id::RequestId for DeleteBrowserSettingsOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteBrowserSettingsOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteBrowserSettingsOutput`](crate::output::DeleteBrowserSettingsOutput).
+    pub fn builder() -> crate::output::delete_browser_settings_output::Builder {
+        crate::output::delete_browser_settings_output::Builder::default()
+    }
+}
+
 /// See [`DeleteBrowserSettingsOutput`](crate::output::DeleteBrowserSettingsOutput).
 pub mod delete_browser_settings_output {
 
@@ -2643,12 +2688,6 @@ pub mod delete_browser_settings_output {
         }
     }
 }
-impl DeleteBrowserSettingsOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteBrowserSettingsOutput`](crate::output::DeleteBrowserSettingsOutput).
-    pub fn builder() -> crate::output::delete_browser_settings_output::Builder {
-        crate::output::delete_browser_settings_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2670,6 +2709,13 @@ impl aws_http::request_id::RequestId for CreateUserSettingsOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateUserSettingsOutput {
+    /// Creates a new builder-style object to manufacture [`CreateUserSettingsOutput`](crate::output::CreateUserSettingsOutput).
+    pub fn builder() -> crate::output::create_user_settings_output::Builder {
+        crate::output::create_user_settings_output::Builder::default()
+    }
+}
+
 /// See [`CreateUserSettingsOutput`](crate::output::CreateUserSettingsOutput).
 pub mod create_user_settings_output {
 
@@ -2712,12 +2758,6 @@ pub mod create_user_settings_output {
         }
     }
 }
-impl CreateUserSettingsOutput {
-    /// Creates a new builder-style object to manufacture [`CreateUserSettingsOutput`](crate::output::CreateUserSettingsOutput).
-    pub fn builder() -> crate::output::create_user_settings_output::Builder {
-        crate::output::create_user_settings_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2739,6 +2779,13 @@ impl aws_http::request_id::RequestId for CreateUserAccessLoggingSettingsOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateUserAccessLoggingSettingsOutput {
+    /// Creates a new builder-style object to manufacture [`CreateUserAccessLoggingSettingsOutput`](crate::output::CreateUserAccessLoggingSettingsOutput).
+    pub fn builder() -> crate::output::create_user_access_logging_settings_output::Builder {
+        crate::output::create_user_access_logging_settings_output::Builder::default()
+    }
+}
+
 /// See [`CreateUserAccessLoggingSettingsOutput`](crate::output::CreateUserAccessLoggingSettingsOutput).
 pub mod create_user_access_logging_settings_output {
 
@@ -2784,12 +2831,6 @@ pub mod create_user_access_logging_settings_output {
         }
     }
 }
-impl CreateUserAccessLoggingSettingsOutput {
-    /// Creates a new builder-style object to manufacture [`CreateUserAccessLoggingSettingsOutput`](crate::output::CreateUserAccessLoggingSettingsOutput).
-    pub fn builder() -> crate::output::create_user_access_logging_settings_output::Builder {
-        crate::output::create_user_access_logging_settings_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2811,6 +2852,13 @@ impl aws_http::request_id::RequestId for CreateTrustStoreOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateTrustStoreOutput {
+    /// Creates a new builder-style object to manufacture [`CreateTrustStoreOutput`](crate::output::CreateTrustStoreOutput).
+    pub fn builder() -> crate::output::create_trust_store_output::Builder {
+        crate::output::create_trust_store_output::Builder::default()
+    }
+}
+
 /// See [`CreateTrustStoreOutput`](crate::output::CreateTrustStoreOutput).
 pub mod create_trust_store_output {
 
@@ -2853,12 +2901,6 @@ pub mod create_trust_store_output {
         }
     }
 }
-impl CreateTrustStoreOutput {
-    /// Creates a new builder-style object to manufacture [`CreateTrustStoreOutput`](crate::output::CreateTrustStoreOutput).
-    pub fn builder() -> crate::output::create_trust_store_output::Builder {
-        crate::output::create_trust_store_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2887,6 +2929,13 @@ impl aws_http::request_id::RequestId for CreatePortalOutput {
         self._request_id.as_deref()
     }
 }
+impl CreatePortalOutput {
+    /// Creates a new builder-style object to manufacture [`CreatePortalOutput`](crate::output::CreatePortalOutput).
+    pub fn builder() -> crate::output::create_portal_output::Builder {
+        crate::output::create_portal_output::Builder::default()
+    }
+}
+
 /// See [`CreatePortalOutput`](crate::output::CreatePortalOutput).
 pub mod create_portal_output {
 
@@ -2941,12 +2990,6 @@ pub mod create_portal_output {
         }
     }
 }
-impl CreatePortalOutput {
-    /// Creates a new builder-style object to manufacture [`CreatePortalOutput`](crate::output::CreatePortalOutput).
-    pub fn builder() -> crate::output::create_portal_output::Builder {
-        crate::output::create_portal_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2968,6 +3011,13 @@ impl aws_http::request_id::RequestId for CreateNetworkSettingsOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateNetworkSettingsOutput {
+    /// Creates a new builder-style object to manufacture [`CreateNetworkSettingsOutput`](crate::output::CreateNetworkSettingsOutput).
+    pub fn builder() -> crate::output::create_network_settings_output::Builder {
+        crate::output::create_network_settings_output::Builder::default()
+    }
+}
+
 /// See [`CreateNetworkSettingsOutput`](crate::output::CreateNetworkSettingsOutput).
 pub mod create_network_settings_output {
 
@@ -3010,12 +3060,6 @@ pub mod create_network_settings_output {
         }
     }
 }
-impl CreateNetworkSettingsOutput {
-    /// Creates a new builder-style object to manufacture [`CreateNetworkSettingsOutput`](crate::output::CreateNetworkSettingsOutput).
-    pub fn builder() -> crate::output::create_network_settings_output::Builder {
-        crate::output::create_network_settings_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3037,6 +3081,13 @@ impl aws_http::request_id::RequestId for CreateIdentityProviderOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateIdentityProviderOutput {
+    /// Creates a new builder-style object to manufacture [`CreateIdentityProviderOutput`](crate::output::CreateIdentityProviderOutput).
+    pub fn builder() -> crate::output::create_identity_provider_output::Builder {
+        crate::output::create_identity_provider_output::Builder::default()
+    }
+}
+
 /// See [`CreateIdentityProviderOutput`](crate::output::CreateIdentityProviderOutput).
 pub mod create_identity_provider_output {
 
@@ -3079,12 +3130,6 @@ pub mod create_identity_provider_output {
         }
     }
 }
-impl CreateIdentityProviderOutput {
-    /// Creates a new builder-style object to manufacture [`CreateIdentityProviderOutput`](crate::output::CreateIdentityProviderOutput).
-    pub fn builder() -> crate::output::create_identity_provider_output::Builder {
-        crate::output::create_identity_provider_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3106,6 +3151,13 @@ impl aws_http::request_id::RequestId for CreateBrowserSettingsOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateBrowserSettingsOutput {
+    /// Creates a new builder-style object to manufacture [`CreateBrowserSettingsOutput`](crate::output::CreateBrowserSettingsOutput).
+    pub fn builder() -> crate::output::create_browser_settings_output::Builder {
+        crate::output::create_browser_settings_output::Builder::default()
+    }
+}
+
 /// See [`CreateBrowserSettingsOutput`](crate::output::CreateBrowserSettingsOutput).
 pub mod create_browser_settings_output {
 
@@ -3148,12 +3200,6 @@ pub mod create_browser_settings_output {
         }
     }
 }
-impl CreateBrowserSettingsOutput {
-    /// Creates a new builder-style object to manufacture [`CreateBrowserSettingsOutput`](crate::output::CreateBrowserSettingsOutput).
-    pub fn builder() -> crate::output::create_browser_settings_output::Builder {
-        crate::output::create_browser_settings_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3182,6 +3228,13 @@ impl aws_http::request_id::RequestId for AssociateUserSettingsOutput {
         self._request_id.as_deref()
     }
 }
+impl AssociateUserSettingsOutput {
+    /// Creates a new builder-style object to manufacture [`AssociateUserSettingsOutput`](crate::output::AssociateUserSettingsOutput).
+    pub fn builder() -> crate::output::associate_user_settings_output::Builder {
+        crate::output::associate_user_settings_output::Builder::default()
+    }
+}
+
 /// See [`AssociateUserSettingsOutput`](crate::output::AssociateUserSettingsOutput).
 pub mod associate_user_settings_output {
 
@@ -3236,12 +3289,6 @@ pub mod associate_user_settings_output {
         }
     }
 }
-impl AssociateUserSettingsOutput {
-    /// Creates a new builder-style object to manufacture [`AssociateUserSettingsOutput`](crate::output::AssociateUserSettingsOutput).
-    pub fn builder() -> crate::output::associate_user_settings_output::Builder {
-        crate::output::associate_user_settings_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3270,6 +3317,13 @@ impl aws_http::request_id::RequestId for AssociateUserAccessLoggingSettingsOutpu
         self._request_id.as_deref()
     }
 }
+impl AssociateUserAccessLoggingSettingsOutput {
+    /// Creates a new builder-style object to manufacture [`AssociateUserAccessLoggingSettingsOutput`](crate::output::AssociateUserAccessLoggingSettingsOutput).
+    pub fn builder() -> crate::output::associate_user_access_logging_settings_output::Builder {
+        crate::output::associate_user_access_logging_settings_output::Builder::default()
+    }
+}
+
 /// See [`AssociateUserAccessLoggingSettingsOutput`](crate::output::AssociateUserAccessLoggingSettingsOutput).
 pub mod associate_user_access_logging_settings_output {
 
@@ -3327,12 +3381,6 @@ pub mod associate_user_access_logging_settings_output {
         }
     }
 }
-impl AssociateUserAccessLoggingSettingsOutput {
-    /// Creates a new builder-style object to manufacture [`AssociateUserAccessLoggingSettingsOutput`](crate::output::AssociateUserAccessLoggingSettingsOutput).
-    pub fn builder() -> crate::output::associate_user_access_logging_settings_output::Builder {
-        crate::output::associate_user_access_logging_settings_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3361,6 +3409,13 @@ impl aws_http::request_id::RequestId for AssociateTrustStoreOutput {
         self._request_id.as_deref()
     }
 }
+impl AssociateTrustStoreOutput {
+    /// Creates a new builder-style object to manufacture [`AssociateTrustStoreOutput`](crate::output::AssociateTrustStoreOutput).
+    pub fn builder() -> crate::output::associate_trust_store_output::Builder {
+        crate::output::associate_trust_store_output::Builder::default()
+    }
+}
+
 /// See [`AssociateTrustStoreOutput`](crate::output::AssociateTrustStoreOutput).
 pub mod associate_trust_store_output {
 
@@ -3415,12 +3470,6 @@ pub mod associate_trust_store_output {
         }
     }
 }
-impl AssociateTrustStoreOutput {
-    /// Creates a new builder-style object to manufacture [`AssociateTrustStoreOutput`](crate::output::AssociateTrustStoreOutput).
-    pub fn builder() -> crate::output::associate_trust_store_output::Builder {
-        crate::output::associate_trust_store_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3449,6 +3498,13 @@ impl aws_http::request_id::RequestId for AssociateNetworkSettingsOutput {
         self._request_id.as_deref()
     }
 }
+impl AssociateNetworkSettingsOutput {
+    /// Creates a new builder-style object to manufacture [`AssociateNetworkSettingsOutput`](crate::output::AssociateNetworkSettingsOutput).
+    pub fn builder() -> crate::output::associate_network_settings_output::Builder {
+        crate::output::associate_network_settings_output::Builder::default()
+    }
+}
+
 /// See [`AssociateNetworkSettingsOutput`](crate::output::AssociateNetworkSettingsOutput).
 pub mod associate_network_settings_output {
 
@@ -3503,12 +3559,6 @@ pub mod associate_network_settings_output {
         }
     }
 }
-impl AssociateNetworkSettingsOutput {
-    /// Creates a new builder-style object to manufacture [`AssociateNetworkSettingsOutput`](crate::output::AssociateNetworkSettingsOutput).
-    pub fn builder() -> crate::output::associate_network_settings_output::Builder {
-        crate::output::associate_network_settings_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3537,6 +3587,13 @@ impl aws_http::request_id::RequestId for AssociateBrowserSettingsOutput {
         self._request_id.as_deref()
     }
 }
+impl AssociateBrowserSettingsOutput {
+    /// Creates a new builder-style object to manufacture [`AssociateBrowserSettingsOutput`](crate::output::AssociateBrowserSettingsOutput).
+    pub fn builder() -> crate::output::associate_browser_settings_output::Builder {
+        crate::output::associate_browser_settings_output::Builder::default()
+    }
+}
+
 /// See [`AssociateBrowserSettingsOutput`](crate::output::AssociateBrowserSettingsOutput).
 pub mod associate_browser_settings_output {
 
@@ -3589,11 +3646,5 @@ pub mod associate_browser_settings_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl AssociateBrowserSettingsOutput {
-    /// Creates a new builder-style object to manufacture [`AssociateBrowserSettingsOutput`](crate::output::AssociateBrowserSettingsOutput).
-    pub fn builder() -> crate::output::associate_browser_settings_output::Builder {
-        crate::output::associate_browser_settings_output::Builder::default()
     }
 }

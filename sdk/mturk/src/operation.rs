@@ -4,7 +4,7 @@
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`accept_qualification_request`](crate::client::Client::accept_qualification_request).
 ///
-/// See [`crate::client::fluent_builders::AcceptQualificationRequest`] for more details about the operation.
+/// `ParseStrictResponse` impl for `AcceptQualificationRequest`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct AcceptQualificationRequest {
     _private: (),
@@ -39,7 +39,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AcceptQualificationReque
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`approve_assignment`](crate::client::Client::approve_assignment).
 ///
-/// See [`crate::client::fluent_builders::ApproveAssignment`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ApproveAssignment`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ApproveAssignment {
     _private: (),
@@ -74,7 +74,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ApproveAssignment {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`associate_qualification_with_worker`](crate::client::Client::associate_qualification_with_worker).
 ///
-/// See [`crate::client::fluent_builders::AssociateQualificationWithWorker`] for more details about the operation.
+/// `ParseStrictResponse` impl for `AssociateQualificationWithWorker`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct AssociateQualificationWithWorker {
     _private: (),
@@ -109,7 +109,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateQualificationWi
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`create_additional_assignments_for_hit`](crate::client::Client::create_additional_assignments_for_hit).
 ///
-/// See [`crate::client::fluent_builders::CreateAdditionalAssignmentsForHIT`] for more details about the operation.
+/// `ParseStrictResponse` impl for `CreateAdditionalAssignmentsForHIT`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateAdditionalAssignmentsForHIT {
     _private: (),
@@ -144,7 +144,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateAdditionalAssignme
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`create_hit`](crate::client::Client::create_hit).
 ///
-/// See [`crate::client::fluent_builders::CreateHIT`] for more details about the operation.
+/// `ParseStrictResponse` impl for `CreateHIT`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateHIT {
     _private: (),
@@ -176,7 +176,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateHIT {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`create_hit_type`](crate::client::Client::create_hit_type).
 ///
-/// See [`crate::client::fluent_builders::CreateHITType`] for more details about the operation.
+/// `ParseStrictResponse` impl for `CreateHITType`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateHITType {
     _private: (),
@@ -209,7 +209,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateHITType {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`create_hit_with_hit_type`](crate::client::Client::create_hit_with_hit_type).
 ///
-/// See [`crate::client::fluent_builders::CreateHITWithHITType`] for more details about the operation.
+/// `ParseStrictResponse` impl for `CreateHITWithHITType`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateHITWithHITType {
     _private: (),
@@ -244,7 +244,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateHITWithHITType {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`create_qualification_type`](crate::client::Client::create_qualification_type).
 ///
-/// See [`crate::client::fluent_builders::CreateQualificationType`] for more details about the operation.
+/// `ParseStrictResponse` impl for `CreateQualificationType`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateQualificationType {
     _private: (),
@@ -279,7 +279,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateQualificationType 
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`create_worker_block`](crate::client::Client::create_worker_block).
 ///
-/// See [`crate::client::fluent_builders::CreateWorkerBlock`] for more details about the operation.
+/// `ParseStrictResponse` impl for `CreateWorkerBlock`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateWorkerBlock {
     _private: (),
@@ -314,7 +314,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateWorkerBlock {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`delete_hit`](crate::client::Client::delete_hit).
 ///
-/// See [`crate::client::fluent_builders::DeleteHIT`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DeleteHIT`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteHIT {
     _private: (),
@@ -346,7 +346,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteHIT {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`delete_qualification_type`](crate::client::Client::delete_qualification_type).
 ///
-/// See [`crate::client::fluent_builders::DeleteQualificationType`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DeleteQualificationType`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteQualificationType {
     _private: (),
@@ -381,7 +381,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteQualificationType 
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`delete_worker_block`](crate::client::Client::delete_worker_block).
 ///
-/// See [`crate::client::fluent_builders::DeleteWorkerBlock`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DeleteWorkerBlock`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteWorkerBlock {
     _private: (),
@@ -416,7 +416,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteWorkerBlock {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`disassociate_qualification_from_worker`](crate::client::Client::disassociate_qualification_from_worker).
 ///
-/// See [`crate::client::fluent_builders::DisassociateQualificationFromWorker`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DisassociateQualificationFromWorker`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DisassociateQualificationFromWorker {
     _private: (),
@@ -451,7 +451,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateQualificatio
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`get_account_balance`](crate::client::Client::get_account_balance).
 ///
-/// See [`crate::client::fluent_builders::GetAccountBalance`] for more details about the operation.
+/// `ParseStrictResponse` impl for `GetAccountBalance`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetAccountBalance {
     _private: (),
@@ -486,7 +486,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAccountBalance {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`get_assignment`](crate::client::Client::get_assignment).
 ///
-/// See [`crate::client::fluent_builders::GetAssignment`] for more details about the operation.
+/// `ParseStrictResponse` impl for `GetAssignment`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetAssignment {
     _private: (),
@@ -519,7 +519,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAssignment {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`get_file_upload_url`](crate::client::Client::get_file_upload_url).
 ///
-/// See [`crate::client::fluent_builders::GetFileUploadURL`] for more details about the operation.
+/// `ParseStrictResponse` impl for `GetFileUploadURL`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetFileUploadURL {
     _private: (),
@@ -554,7 +554,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetFileUploadURL {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`get_hit`](crate::client::Client::get_hit).
 ///
-/// See [`crate::client::fluent_builders::GetHIT`] for more details about the operation.
+/// `ParseStrictResponse` impl for `GetHIT`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetHIT {
     _private: (),
@@ -586,7 +586,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetHIT {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`get_qualification_score`](crate::client::Client::get_qualification_score).
 ///
-/// See [`crate::client::fluent_builders::GetQualificationScore`] for more details about the operation.
+/// `ParseStrictResponse` impl for `GetQualificationScore`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetQualificationScore {
     _private: (),
@@ -621,7 +621,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetQualificationScore {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`get_qualification_type`](crate::client::Client::get_qualification_type).
 ///
-/// See [`crate::client::fluent_builders::GetQualificationType`] for more details about the operation.
+/// `ParseStrictResponse` impl for `GetQualificationType`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetQualificationType {
     _private: (),
@@ -656,7 +656,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetQualificationType {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_assignments_for_hit`](crate::client::Client::list_assignments_for_hit).
 ///
-/// See [`crate::client::fluent_builders::ListAssignmentsForHIT`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListAssignmentsForHIT`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListAssignmentsForHIT {
     _private: (),
@@ -691,7 +691,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAssignmentsForHIT {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_bonus_payments`](crate::client::Client::list_bonus_payments).
 ///
-/// See [`crate::client::fluent_builders::ListBonusPayments`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListBonusPayments`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListBonusPayments {
     _private: (),
@@ -726,7 +726,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListBonusPayments {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_hi_ts`](crate::client::Client::list_hi_ts).
 ///
-/// See [`crate::client::fluent_builders::ListHITs`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListHITs`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListHITs {
     _private: (),
@@ -758,7 +758,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListHITs {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_hi_ts_for_qualification_type`](crate::client::Client::list_hi_ts_for_qualification_type).
 ///
-/// See [`crate::client::fluent_builders::ListHITsForQualificationType`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListHITsForQualificationType`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListHITsForQualificationType {
     _private: (),
@@ -793,7 +793,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListHITsForQualification
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_qualification_requests`](crate::client::Client::list_qualification_requests).
 ///
-/// See [`crate::client::fluent_builders::ListQualificationRequests`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListQualificationRequests`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListQualificationRequests {
     _private: (),
@@ -828,7 +828,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListQualificationRequest
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_qualification_types`](crate::client::Client::list_qualification_types).
 ///
-/// See [`crate::client::fluent_builders::ListQualificationTypes`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListQualificationTypes`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListQualificationTypes {
     _private: (),
@@ -863,7 +863,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListQualificationTypes {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_reviewable_hi_ts`](crate::client::Client::list_reviewable_hi_ts).
 ///
-/// See [`crate::client::fluent_builders::ListReviewableHITs`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListReviewableHITs`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListReviewableHITs {
     _private: (),
@@ -898,7 +898,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListReviewableHITs {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_review_policy_results_for_hit`](crate::client::Client::list_review_policy_results_for_hit).
 ///
-/// See [`crate::client::fluent_builders::ListReviewPolicyResultsForHIT`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListReviewPolicyResultsForHIT`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListReviewPolicyResultsForHIT {
     _private: (),
@@ -933,7 +933,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListReviewPolicyResultsF
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_worker_blocks`](crate::client::Client::list_worker_blocks).
 ///
-/// See [`crate::client::fluent_builders::ListWorkerBlocks`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListWorkerBlocks`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListWorkerBlocks {
     _private: (),
@@ -968,7 +968,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListWorkerBlocks {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_workers_with_qualification_type`](crate::client::Client::list_workers_with_qualification_type).
 ///
-/// See [`crate::client::fluent_builders::ListWorkersWithQualificationType`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListWorkersWithQualificationType`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListWorkersWithQualificationType {
     _private: (),
@@ -1003,7 +1003,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListWorkersWithQualifica
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`notify_workers`](crate::client::Client::notify_workers).
 ///
-/// See [`crate::client::fluent_builders::NotifyWorkers`] for more details about the operation.
+/// `ParseStrictResponse` impl for `NotifyWorkers`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct NotifyWorkers {
     _private: (),
@@ -1036,7 +1036,7 @@ impl aws_smithy_http::response::ParseStrictResponse for NotifyWorkers {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`reject_assignment`](crate::client::Client::reject_assignment).
 ///
-/// See [`crate::client::fluent_builders::RejectAssignment`] for more details about the operation.
+/// `ParseStrictResponse` impl for `RejectAssignment`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct RejectAssignment {
     _private: (),
@@ -1071,7 +1071,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RejectAssignment {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`reject_qualification_request`](crate::client::Client::reject_qualification_request).
 ///
-/// See [`crate::client::fluent_builders::RejectQualificationRequest`] for more details about the operation.
+/// `ParseStrictResponse` impl for `RejectQualificationRequest`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct RejectQualificationRequest {
     _private: (),
@@ -1106,7 +1106,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RejectQualificationReque
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`send_bonus`](crate::client::Client::send_bonus).
 ///
-/// See [`crate::client::fluent_builders::SendBonus`] for more details about the operation.
+/// `ParseStrictResponse` impl for `SendBonus`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct SendBonus {
     _private: (),
@@ -1138,7 +1138,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SendBonus {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`send_test_event_notification`](crate::client::Client::send_test_event_notification).
 ///
-/// See [`crate::client::fluent_builders::SendTestEventNotification`] for more details about the operation.
+/// `ParseStrictResponse` impl for `SendTestEventNotification`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct SendTestEventNotification {
     _private: (),
@@ -1173,7 +1173,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SendTestEventNotificatio
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`update_expiration_for_hit`](crate::client::Client::update_expiration_for_hit).
 ///
-/// See [`crate::client::fluent_builders::UpdateExpirationForHIT`] for more details about the operation.
+/// `ParseStrictResponse` impl for `UpdateExpirationForHIT`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateExpirationForHIT {
     _private: (),
@@ -1208,7 +1208,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateExpirationForHIT {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`update_hit_review_status`](crate::client::Client::update_hit_review_status).
 ///
-/// See [`crate::client::fluent_builders::UpdateHITReviewStatus`] for more details about the operation.
+/// `ParseStrictResponse` impl for `UpdateHITReviewStatus`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateHITReviewStatus {
     _private: (),
@@ -1243,7 +1243,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateHITReviewStatus {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`update_hit_type_of_hit`](crate::client::Client::update_hit_type_of_hit).
 ///
-/// See [`crate::client::fluent_builders::UpdateHITTypeOfHIT`] for more details about the operation.
+/// `ParseStrictResponse` impl for `UpdateHITTypeOfHIT`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateHITTypeOfHIT {
     _private: (),
@@ -1278,7 +1278,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateHITTypeOfHIT {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`update_notification_settings`](crate::client::Client::update_notification_settings).
 ///
-/// See [`crate::client::fluent_builders::UpdateNotificationSettings`] for more details about the operation.
+/// `ParseStrictResponse` impl for `UpdateNotificationSettings`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateNotificationSettings {
     _private: (),
@@ -1313,7 +1313,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateNotificationSettin
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`update_qualification_type`](crate::client::Client::update_qualification_type).
 ///
-/// See [`crate::client::fluent_builders::UpdateQualificationType`] for more details about the operation.
+/// `ParseStrictResponse` impl for `UpdateQualificationType`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateQualificationType {
     _private: (),

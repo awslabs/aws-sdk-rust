@@ -156,6 +156,13 @@ impl std::fmt::Debug for Studio {
         formatter.finish()
     }
 }
+impl Studio {
+    /// Creates a new builder-style object to manufacture [`Studio`](crate::model::Studio).
+    pub fn builder() -> crate::model::studio::Builder {
+        crate::model::studio::Builder::default()
+    }
+}
+
 /// See [`Studio`](crate::model::Studio).
 pub mod studio {
 
@@ -434,12 +441,6 @@ pub mod studio {
         }
     }
 }
-impl Studio {
-    /// Creates a new builder-style object to manufacture [`Studio`](crate::model::Studio).
-    pub fn builder() -> crate::model::studio::Builder {
-        crate::model::studio::Builder::default()
-    }
-}
 
 /// <p>Configuration of the encryption method that is used for the studio.</p>
 #[non_exhaustive]
@@ -464,6 +465,13 @@ impl StudioEncryptionConfiguration {
         self.key_type.as_ref()
     }
 }
+impl StudioEncryptionConfiguration {
+    /// Creates a new builder-style object to manufacture [`StudioEncryptionConfiguration`](crate::model::StudioEncryptionConfiguration).
+    pub fn builder() -> crate::model::studio_encryption_configuration::Builder {
+        crate::model::studio_encryption_configuration::Builder::default()
+    }
+}
+
 /// See [`StudioEncryptionConfiguration`](crate::model::StudioEncryptionConfiguration).
 pub mod studio_encryption_configuration {
 
@@ -509,12 +517,6 @@ pub mod studio_encryption_configuration {
                 key_type: self.key_type,
             }
         }
-    }
-}
-impl StudioEncryptionConfiguration {
-    /// Creates a new builder-style object to manufacture [`StudioEncryptionConfiguration`](crate::model::StudioEncryptionConfiguration).
-    pub fn builder() -> crate::model::studio_encryption_configuration::Builder {
-        crate::model::studio_encryption_configuration::Builder::default()
     }
 }
 
@@ -971,6 +973,13 @@ impl NewStudioMember {
         self.principal_id.as_deref()
     }
 }
+impl NewStudioMember {
+    /// Creates a new builder-style object to manufacture [`NewStudioMember`](crate::model::NewStudioMember).
+    pub fn builder() -> crate::model::new_studio_member::Builder {
+        crate::model::new_studio_member::Builder::default()
+    }
+}
+
 /// See [`NewStudioMember`](crate::model::NewStudioMember).
 pub mod new_studio_member {
 
@@ -1012,12 +1021,6 @@ pub mod new_studio_member {
                 principal_id: self.principal_id,
             }
         }
-    }
-}
-impl NewStudioMember {
-    /// Creates a new builder-style object to manufacture [`NewStudioMember`](crate::model::NewStudioMember).
-    pub fn builder() -> crate::model::new_studio_member::Builder {
-        crate::model::new_studio_member::Builder::default()
     }
 }
 
@@ -1143,6 +1146,13 @@ impl StudioMembership {
         self.sid.as_deref()
     }
 }
+impl StudioMembership {
+    /// Creates a new builder-style object to manufacture [`StudioMembership`](crate::model::StudioMembership).
+    pub fn builder() -> crate::model::studio_membership::Builder {
+        crate::model::studio_membership::Builder::default()
+    }
+}
+
 /// See [`StudioMembership`](crate::model::StudioMembership).
 pub mod studio_membership {
 
@@ -1211,12 +1221,6 @@ pub mod studio_membership {
                 sid: self.sid,
             }
         }
-    }
-}
-impl StudioMembership {
-    /// Creates a new builder-style object to manufacture [`StudioMembership`](crate::model::StudioMembership).
-    pub fn builder() -> crate::model::studio_membership::Builder {
-        crate::model::studio_membership::Builder::default()
     }
 }
 
@@ -1410,6 +1414,13 @@ impl std::fmt::Debug for StudioComponent {
         formatter.finish()
     }
 }
+impl StudioComponent {
+    /// Creates a new builder-style object to manufacture [`StudioComponent`](crate::model::StudioComponent).
+    pub fn builder() -> crate::model::studio_component::Builder {
+        crate::model::studio_component::Builder::default()
+    }
+}
+
 /// See [`StudioComponent`](crate::model::StudioComponent).
 pub mod studio_component {
 
@@ -1780,12 +1791,6 @@ pub mod studio_component {
             formatter.field("runtime_role_arn", &self.runtime_role_arn);
             formatter.finish()
         }
-    }
-}
-impl StudioComponent {
-    /// Creates a new builder-style object to manufacture [`StudioComponent`](crate::model::StudioComponent).
-    pub fn builder() -> crate::model::studio_component::Builder {
-        crate::model::studio_component::Builder::default()
     }
 }
 
@@ -2347,6 +2352,13 @@ impl ScriptParameterKeyValue {
         self.value.as_deref()
     }
 }
+impl ScriptParameterKeyValue {
+    /// Creates a new builder-style object to manufacture [`ScriptParameterKeyValue`](crate::model::ScriptParameterKeyValue).
+    pub fn builder() -> crate::model::script_parameter_key_value::Builder {
+        crate::model::script_parameter_key_value::Builder::default()
+    }
+}
+
 /// See [`ScriptParameterKeyValue`](crate::model::ScriptParameterKeyValue).
 pub mod script_parameter_key_value {
 
@@ -2385,12 +2397,6 @@ pub mod script_parameter_key_value {
                 value: self.value,
             }
         }
-    }
-}
-impl ScriptParameterKeyValue {
-    /// Creates a new builder-style object to manufacture [`ScriptParameterKeyValue`](crate::model::ScriptParameterKeyValue).
-    pub fn builder() -> crate::model::script_parameter_key_value::Builder {
-        crate::model::script_parameter_key_value::Builder::default()
     }
 }
 
@@ -2445,6 +2451,13 @@ impl std::fmt::Debug for StudioComponentInitializationScript {
         formatter.finish()
     }
 }
+impl StudioComponentInitializationScript {
+    /// Creates a new builder-style object to manufacture [`StudioComponentInitializationScript`](crate::model::StudioComponentInitializationScript).
+    pub fn builder() -> crate::model::studio_component_initialization_script::Builder {
+        crate::model::studio_component_initialization_script::Builder::default()
+    }
+}
+
 /// See [`StudioComponentInitializationScript`](crate::model::StudioComponentInitializationScript).
 pub mod studio_component_initialization_script {
 
@@ -2536,12 +2549,6 @@ pub mod studio_component_initialization_script {
             formatter.field("script", &"*** Sensitive Data Redacted ***");
             formatter.finish()
         }
-    }
-}
-impl StudioComponentInitializationScript {
-    /// Creates a new builder-style object to manufacture [`StudioComponentInitializationScript`](crate::model::StudioComponentInitializationScript).
-    pub fn builder() -> crate::model::studio_component_initialization_script::Builder {
-        crate::model::studio_component_initialization_script::Builder::default()
     }
 }
 
@@ -2879,6 +2886,13 @@ impl std::fmt::Debug for SharedFileSystemConfiguration {
         formatter.finish()
     }
 }
+impl SharedFileSystemConfiguration {
+    /// Creates a new builder-style object to manufacture [`SharedFileSystemConfiguration`](crate::model::SharedFileSystemConfiguration).
+    pub fn builder() -> crate::model::shared_file_system_configuration::Builder {
+        crate::model::shared_file_system_configuration::Builder::default()
+    }
+}
+
 /// See [`SharedFileSystemConfiguration`](crate::model::SharedFileSystemConfiguration).
 pub mod shared_file_system_configuration {
 
@@ -2975,12 +2989,6 @@ pub mod shared_file_system_configuration {
         }
     }
 }
-impl SharedFileSystemConfiguration {
-    /// Creates a new builder-style object to manufacture [`SharedFileSystemConfiguration`](crate::model::SharedFileSystemConfiguration).
-    pub fn builder() -> crate::model::shared_file_system_configuration::Builder {
-        crate::model::shared_file_system_configuration::Builder::default()
-    }
-}
 
 /// <p>The configuration for a license service that is associated with a studio resource.</p>
 #[non_exhaustive]
@@ -3003,6 +3011,13 @@ impl std::fmt::Debug for LicenseServiceConfiguration {
         formatter.finish()
     }
 }
+impl LicenseServiceConfiguration {
+    /// Creates a new builder-style object to manufacture [`LicenseServiceConfiguration`](crate::model::LicenseServiceConfiguration).
+    pub fn builder() -> crate::model::license_service_configuration::Builder {
+        crate::model::license_service_configuration::Builder::default()
+    }
+}
+
 /// See [`LicenseServiceConfiguration`](crate::model::LicenseServiceConfiguration).
 pub mod license_service_configuration {
 
@@ -3038,12 +3053,6 @@ pub mod license_service_configuration {
         }
     }
 }
-impl LicenseServiceConfiguration {
-    /// Creates a new builder-style object to manufacture [`LicenseServiceConfiguration`](crate::model::LicenseServiceConfiguration).
-    pub fn builder() -> crate::model::license_service_configuration::Builder {
-        crate::model::license_service_configuration::Builder::default()
-    }
-}
 
 /// <p>The configuration for a render farm that is associated with a studio resource.</p>
 #[non_exhaustive]
@@ -3074,6 +3083,13 @@ impl std::fmt::Debug for ComputeFarmConfiguration {
         formatter.finish()
     }
 }
+impl ComputeFarmConfiguration {
+    /// Creates a new builder-style object to manufacture [`ComputeFarmConfiguration`](crate::model::ComputeFarmConfiguration).
+    pub fn builder() -> crate::model::compute_farm_configuration::Builder {
+        crate::model::compute_farm_configuration::Builder::default()
+    }
+}
+
 /// See [`ComputeFarmConfiguration`](crate::model::ComputeFarmConfiguration).
 pub mod compute_farm_configuration {
 
@@ -3125,12 +3141,6 @@ pub mod compute_farm_configuration {
         }
     }
 }
-impl ComputeFarmConfiguration {
-    /// Creates a new builder-style object to manufacture [`ComputeFarmConfiguration`](crate::model::ComputeFarmConfiguration).
-    pub fn builder() -> crate::model::compute_farm_configuration::Builder {
-        crate::model::compute_farm_configuration::Builder::default()
-    }
-}
 
 /// <p>The configuration for a Directory Service for Microsoft Active Directory studio resource.</p>
 #[non_exhaustive]
@@ -3175,6 +3185,13 @@ impl std::fmt::Debug for ActiveDirectoryConfiguration {
         formatter.finish()
     }
 }
+impl ActiveDirectoryConfiguration {
+    /// Creates a new builder-style object to manufacture [`ActiveDirectoryConfiguration`](crate::model::ActiveDirectoryConfiguration).
+    pub fn builder() -> crate::model::active_directory_configuration::Builder {
+        crate::model::active_directory_configuration::Builder::default()
+    }
+}
+
 /// See [`ActiveDirectoryConfiguration`](crate::model::ActiveDirectoryConfiguration).
 pub mod active_directory_configuration {
 
@@ -3260,12 +3277,6 @@ pub mod active_directory_configuration {
         }
     }
 }
-impl ActiveDirectoryConfiguration {
-    /// Creates a new builder-style object to manufacture [`ActiveDirectoryConfiguration`](crate::model::ActiveDirectoryConfiguration).
-    pub fn builder() -> crate::model::active_directory_configuration::Builder {
-        crate::model::active_directory_configuration::Builder::default()
-    }
-}
 
 /// <p>An LDAP attribute of an Active Directory computer account, in the form of a name:value pair.</p>
 #[non_exhaustive]
@@ -3288,6 +3299,13 @@ impl ActiveDirectoryComputerAttribute {
         self.value.as_deref()
     }
 }
+impl ActiveDirectoryComputerAttribute {
+    /// Creates a new builder-style object to manufacture [`ActiveDirectoryComputerAttribute`](crate::model::ActiveDirectoryComputerAttribute).
+    pub fn builder() -> crate::model::active_directory_computer_attribute::Builder {
+        crate::model::active_directory_computer_attribute::Builder::default()
+    }
+}
+
 /// See [`ActiveDirectoryComputerAttribute`](crate::model::ActiveDirectoryComputerAttribute).
 pub mod active_directory_computer_attribute {
 
@@ -3326,12 +3344,6 @@ pub mod active_directory_computer_attribute {
                 value: self.value,
             }
         }
-    }
-}
-impl ActiveDirectoryComputerAttribute {
-    /// Creates a new builder-style object to manufacture [`ActiveDirectoryComputerAttribute`](crate::model::ActiveDirectoryComputerAttribute).
-    pub fn builder() -> crate::model::active_directory_computer_attribute::Builder {
-        crate::model::active_directory_computer_attribute::Builder::default()
     }
 }
 
@@ -3551,6 +3563,13 @@ impl StreamingSession {
         self.automatic_termination_mode.as_ref()
     }
 }
+impl StreamingSession {
+    /// Creates a new builder-style object to manufacture [`StreamingSession`](crate::model::StreamingSession).
+    pub fn builder() -> crate::model::streaming_session::Builder {
+        crate::model::streaming_session::Builder::default()
+    }
+}
+
 /// See [`StreamingSession`](crate::model::StreamingSession).
 pub mod streaming_session {
 
@@ -3982,12 +4001,6 @@ pub mod streaming_session {
         }
     }
 }
-impl StreamingSession {
-    /// Creates a new builder-style object to manufacture [`StreamingSession`](crate::model::StreamingSession).
-    pub fn builder() -> crate::model::streaming_session::Builder {
-        crate::model::streaming_session::Builder::default()
-    }
-}
 
 /// When writing a match expression against `AutomaticTerminationMode`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -4110,6 +4123,13 @@ impl VolumeConfiguration {
         self.iops
     }
 }
+impl VolumeConfiguration {
+    /// Creates a new builder-style object to manufacture [`VolumeConfiguration`](crate::model::VolumeConfiguration).
+    pub fn builder() -> crate::model::volume_configuration::Builder {
+        crate::model::volume_configuration::Builder::default()
+    }
+}
+
 /// See [`VolumeConfiguration`](crate::model::VolumeConfiguration).
 pub mod volume_configuration {
 
@@ -4160,12 +4180,6 @@ pub mod volume_configuration {
                 iops: self.iops,
             }
         }
-    }
-}
-impl VolumeConfiguration {
-    /// Creates a new builder-style object to manufacture [`VolumeConfiguration`](crate::model::VolumeConfiguration).
-    pub fn builder() -> crate::model::volume_configuration::Builder {
-        crate::model::volume_configuration::Builder::default()
     }
 }
 
@@ -4876,6 +4890,13 @@ impl std::fmt::Debug for StreamingSessionStream {
         formatter.finish()
     }
 }
+impl StreamingSessionStream {
+    /// Creates a new builder-style object to manufacture [`StreamingSessionStream`](crate::model::StreamingSessionStream).
+    pub fn builder() -> crate::model::streaming_session_stream::Builder {
+        crate::model::streaming_session_stream::Builder::default()
+    }
+}
+
 /// See [`StreamingSessionStream`](crate::model::StreamingSessionStream).
 pub mod streaming_session_stream {
 
@@ -5015,12 +5036,6 @@ pub mod streaming_session_stream {
             formatter.field("url", &"*** Sensitive Data Redacted ***");
             formatter.finish()
         }
-    }
-}
-impl StreamingSessionStream {
-    /// Creates a new builder-style object to manufacture [`StreamingSessionStream`](crate::model::StreamingSessionStream).
-    pub fn builder() -> crate::model::streaming_session_stream::Builder {
-        crate::model::streaming_session_stream::Builder::default()
     }
 }
 
@@ -5504,6 +5519,13 @@ impl StreamingSessionBackup {
         self.tags.as_ref()
     }
 }
+impl StreamingSessionBackup {
+    /// Creates a new builder-style object to manufacture [`StreamingSessionBackup`](crate::model::StreamingSessionBackup).
+    pub fn builder() -> crate::model::streaming_session_backup::Builder {
+        crate::model::streaming_session_backup::Builder::default()
+    }
+}
+
 /// See [`StreamingSessionBackup`](crate::model::StreamingSessionBackup).
 pub mod streaming_session_backup {
 
@@ -5672,12 +5694,6 @@ pub mod streaming_session_backup {
         }
     }
 }
-impl StreamingSessionBackup {
-    /// Creates a new builder-style object to manufacture [`StreamingSessionBackup`](crate::model::StreamingSessionBackup).
-    pub fn builder() -> crate::model::streaming_session_backup::Builder {
-        crate::model::streaming_session_backup::Builder::default()
-    }
-}
 
 /// <p>Represents a streaming image resource.</p>
 /// <p>Streaming images are used by studio users to select which operating system and software they want to use in a Nimble Studio streaming session.</p>
@@ -5806,6 +5822,13 @@ impl std::fmt::Debug for StreamingImage {
         formatter.finish()
     }
 }
+impl StreamingImage {
+    /// Creates a new builder-style object to manufacture [`StreamingImage`](crate::model::StreamingImage).
+    pub fn builder() -> crate::model::streaming_image::Builder {
+        crate::model::streaming_image::Builder::default()
+    }
+}
+
 /// See [`StreamingImage`](crate::model::StreamingImage).
 pub mod streaming_image {
 
@@ -6040,12 +6063,6 @@ pub mod streaming_image {
             formatter.field("tags", &self.tags);
             formatter.finish()
         }
-    }
-}
-impl StreamingImage {
-    /// Creates a new builder-style object to manufacture [`StreamingImage`](crate::model::StreamingImage).
-    pub fn builder() -> crate::model::streaming_image::Builder {
-        crate::model::streaming_image::Builder::default()
     }
 }
 
@@ -6340,6 +6357,13 @@ impl StreamingImageEncryptionConfiguration {
         self.key_type.as_ref()
     }
 }
+impl StreamingImageEncryptionConfiguration {
+    /// Creates a new builder-style object to manufacture [`StreamingImageEncryptionConfiguration`](crate::model::StreamingImageEncryptionConfiguration).
+    pub fn builder() -> crate::model::streaming_image_encryption_configuration::Builder {
+        crate::model::streaming_image_encryption_configuration::Builder::default()
+    }
+}
+
 /// See [`StreamingImageEncryptionConfiguration`](crate::model::StreamingImageEncryptionConfiguration).
 pub mod streaming_image_encryption_configuration {
 
@@ -6385,12 +6409,6 @@ pub mod streaming_image_encryption_configuration {
                 key_type: self.key_type,
             }
         }
-    }
-}
-impl StreamingImageEncryptionConfiguration {
-    /// Creates a new builder-style object to manufacture [`StreamingImageEncryptionConfiguration`](crate::model::StreamingImageEncryptionConfiguration).
-    pub fn builder() -> crate::model::streaming_image_encryption_configuration::Builder {
-        crate::model::streaming_image_encryption_configuration::Builder::default()
     }
 }
 
@@ -6529,6 +6547,13 @@ impl LaunchProfileMembership {
         self.sid.as_deref()
     }
 }
+impl LaunchProfileMembership {
+    /// Creates a new builder-style object to manufacture [`LaunchProfileMembership`](crate::model::LaunchProfileMembership).
+    pub fn builder() -> crate::model::launch_profile_membership::Builder {
+        crate::model::launch_profile_membership::Builder::default()
+    }
+}
+
 /// See [`LaunchProfileMembership`](crate::model::LaunchProfileMembership).
 pub mod launch_profile_membership {
 
@@ -6597,12 +6622,6 @@ pub mod launch_profile_membership {
                 sid: self.sid,
             }
         }
-    }
-}
-impl LaunchProfileMembership {
-    /// Creates a new builder-style object to manufacture [`LaunchProfileMembership`](crate::model::LaunchProfileMembership).
-    pub fn builder() -> crate::model::launch_profile_membership::Builder {
-        crate::model::launch_profile_membership::Builder::default()
     }
 }
 
@@ -6714,6 +6733,13 @@ impl NewLaunchProfileMember {
         self.principal_id.as_deref()
     }
 }
+impl NewLaunchProfileMember {
+    /// Creates a new builder-style object to manufacture [`NewLaunchProfileMember`](crate::model::NewLaunchProfileMember).
+    pub fn builder() -> crate::model::new_launch_profile_member::Builder {
+        crate::model::new_launch_profile_member::Builder::default()
+    }
+}
+
 /// See [`NewLaunchProfileMember`](crate::model::NewLaunchProfileMember).
 pub mod new_launch_profile_member {
 
@@ -6755,12 +6781,6 @@ pub mod new_launch_profile_member {
                 principal_id: self.principal_id,
             }
         }
-    }
-}
-impl NewLaunchProfileMember {
-    /// Creates a new builder-style object to manufacture [`NewLaunchProfileMember`](crate::model::NewLaunchProfileMember).
-    pub fn builder() -> crate::model::new_launch_profile_member::Builder {
-        crate::model::new_launch_profile_member::Builder::default()
     }
 }
 
@@ -6868,6 +6888,13 @@ impl std::fmt::Debug for LaunchProfileInitialization {
         formatter.finish()
     }
 }
+impl LaunchProfileInitialization {
+    /// Creates a new builder-style object to manufacture [`LaunchProfileInitialization`](crate::model::LaunchProfileInitialization).
+    pub fn builder() -> crate::model::launch_profile_initialization::Builder {
+        crate::model::launch_profile_initialization::Builder::default()
+    }
+}
+
 /// See [`LaunchProfileInitialization`](crate::model::LaunchProfileInitialization).
 pub mod launch_profile_initialization {
 
@@ -7077,12 +7104,6 @@ pub mod launch_profile_initialization {
         }
     }
 }
-impl LaunchProfileInitialization {
-    /// Creates a new builder-style object to manufacture [`LaunchProfileInitialization`](crate::model::LaunchProfileInitialization).
-    pub fn builder() -> crate::model::launch_profile_initialization::Builder {
-        crate::model::launch_profile_initialization::Builder::default()
-    }
-}
 
 /// <p>The launch profile initialization script is used when start streaming session runs.</p>
 #[non_exhaustive]
@@ -7140,6 +7161,13 @@ impl std::fmt::Debug for LaunchProfileInitializationScript {
         formatter.finish()
     }
 }
+impl LaunchProfileInitializationScript {
+    /// Creates a new builder-style object to manufacture [`LaunchProfileInitializationScript`](crate::model::LaunchProfileInitializationScript).
+    pub fn builder() -> crate::model::launch_profile_initialization_script::Builder {
+        crate::model::launch_profile_initialization_script::Builder::default()
+    }
+}
+
 /// See [`LaunchProfileInitializationScript`](crate::model::LaunchProfileInitializationScript).
 pub mod launch_profile_initialization_script {
 
@@ -7245,12 +7273,6 @@ pub mod launch_profile_initialization_script {
         }
     }
 }
-impl LaunchProfileInitializationScript {
-    /// Creates a new builder-style object to manufacture [`LaunchProfileInitializationScript`](crate::model::LaunchProfileInitializationScript).
-    pub fn builder() -> crate::model::launch_profile_initialization_script::Builder {
-        crate::model::launch_profile_initialization_script::Builder::default()
-    }
-}
 
 /// <p>The launch profile initialization Active Directory contains information required for the launch profile to connect to the Active Directory.</p>
 #[non_exhaustive]
@@ -7327,6 +7349,13 @@ impl std::fmt::Debug for LaunchProfileInitializationActiveDirectory {
         formatter.finish()
     }
 }
+impl LaunchProfileInitializationActiveDirectory {
+    /// Creates a new builder-style object to manufacture [`LaunchProfileInitializationActiveDirectory`](crate::model::LaunchProfileInitializationActiveDirectory).
+    pub fn builder() -> crate::model::launch_profile_initialization_active_directory::Builder {
+        crate::model::launch_profile_initialization_active_directory::Builder::default()
+    }
+}
+
 /// See [`LaunchProfileInitializationActiveDirectory`](crate::model::LaunchProfileInitializationActiveDirectory).
 pub mod launch_profile_initialization_active_directory {
 
@@ -7482,12 +7511,6 @@ pub mod launch_profile_initialization_active_directory {
         }
     }
 }
-impl LaunchProfileInitializationActiveDirectory {
-    /// Creates a new builder-style object to manufacture [`LaunchProfileInitializationActiveDirectory`](crate::model::LaunchProfileInitializationActiveDirectory).
-    pub fn builder() -> crate::model::launch_profile_initialization_active_directory::Builder {
-        crate::model::launch_profile_initialization_active_directory::Builder::default()
-    }
-}
 
 /// <p>The studio component's summary.</p>
 #[non_exhaustive]
@@ -7574,6 +7597,13 @@ impl std::fmt::Debug for StudioComponentSummary {
         formatter.finish()
     }
 }
+impl StudioComponentSummary {
+    /// Creates a new builder-style object to manufacture [`StudioComponentSummary`](crate::model::StudioComponentSummary).
+    pub fn builder() -> crate::model::studio_component_summary::Builder {
+        crate::model::studio_component_summary::Builder::default()
+    }
+}
+
 /// See [`StudioComponentSummary`](crate::model::StudioComponentSummary).
 pub mod studio_component_summary {
 
@@ -7726,12 +7756,6 @@ pub mod studio_component_summary {
             formatter.field("updated_by", &self.updated_by);
             formatter.finish()
         }
-    }
-}
-impl StudioComponentSummary {
-    /// Creates a new builder-style object to manufacture [`StudioComponentSummary`](crate::model::StudioComponentSummary).
-    pub fn builder() -> crate::model::studio_component_summary::Builder {
-        crate::model::studio_component_summary::Builder::default()
     }
 }
 
@@ -7892,6 +7916,13 @@ impl std::fmt::Debug for LaunchProfile {
         formatter.finish()
     }
 }
+impl LaunchProfile {
+    /// Creates a new builder-style object to manufacture [`LaunchProfile`](crate::model::LaunchProfile).
+    pub fn builder() -> crate::model::launch_profile::Builder {
+        crate::model::launch_profile::Builder::default()
+    }
+}
+
 /// See [`LaunchProfile`](crate::model::LaunchProfile).
 pub mod launch_profile {
 
@@ -8217,12 +8248,6 @@ pub mod launch_profile {
         }
     }
 }
-impl LaunchProfile {
-    /// Creates a new builder-style object to manufacture [`LaunchProfile`](crate::model::LaunchProfile).
-    pub fn builder() -> crate::model::launch_profile::Builder {
-        crate::model::launch_profile::Builder::default()
-    }
-}
 
 /// <p>The launch profile validation result.</p>
 #[non_exhaustive]
@@ -8261,6 +8286,13 @@ impl ValidationResult {
         self.status_message.as_deref()
     }
 }
+impl ValidationResult {
+    /// Creates a new builder-style object to manufacture [`ValidationResult`](crate::model::ValidationResult).
+    pub fn builder() -> crate::model::validation_result::Builder {
+        crate::model::validation_result::Builder::default()
+    }
+}
+
 /// See [`ValidationResult`](crate::model::ValidationResult).
 pub mod validation_result {
 
@@ -8339,12 +8371,6 @@ pub mod validation_result {
                 status_message: self.status_message,
             }
         }
-    }
-}
-impl ValidationResult {
-    /// Creates a new builder-style object to manufacture [`ValidationResult`](crate::model::ValidationResult).
-    pub fn builder() -> crate::model::validation_result::Builder {
-        crate::model::validation_result::Builder::default()
     }
 }
 
@@ -8824,6 +8850,13 @@ impl StreamConfiguration {
         self.automatic_termination_mode.as_ref()
     }
 }
+impl StreamConfiguration {
+    /// Creates a new builder-style object to manufacture [`StreamConfiguration`](crate::model::StreamConfiguration).
+    pub fn builder() -> crate::model::stream_configuration::Builder {
+        crate::model::stream_configuration::Builder::default()
+    }
+}
+
 /// See [`StreamConfiguration`](crate::model::StreamConfiguration).
 pub mod stream_configuration {
 
@@ -9039,12 +9072,6 @@ pub mod stream_configuration {
         }
     }
 }
-impl StreamConfiguration {
-    /// Creates a new builder-style object to manufacture [`StreamConfiguration`](crate::model::StreamConfiguration).
-    pub fn builder() -> crate::model::stream_configuration::Builder {
-        crate::model::stream_configuration::Builder::default()
-    }
-}
 
 /// <p>Configures how streaming sessions are backed up when launched from this launch profile.</p>
 #[non_exhaustive]
@@ -9069,6 +9096,13 @@ impl StreamConfigurationSessionBackup {
         self.max_backups_to_retain
     }
 }
+impl StreamConfigurationSessionBackup {
+    /// Creates a new builder-style object to manufacture [`StreamConfigurationSessionBackup`](crate::model::StreamConfigurationSessionBackup).
+    pub fn builder() -> crate::model::stream_configuration_session_backup::Builder {
+        crate::model::stream_configuration_session_backup::Builder::default()
+    }
+}
+
 /// See [`StreamConfigurationSessionBackup`](crate::model::StreamConfigurationSessionBackup).
 pub mod stream_configuration_session_backup {
 
@@ -9114,12 +9148,6 @@ pub mod stream_configuration_session_backup {
         }
     }
 }
-impl StreamConfigurationSessionBackup {
-    /// Creates a new builder-style object to manufacture [`StreamConfigurationSessionBackup`](crate::model::StreamConfigurationSessionBackup).
-    pub fn builder() -> crate::model::stream_configuration_session_backup::Builder {
-        crate::model::stream_configuration_session_backup::Builder::default()
-    }
-}
 
 /// <p>The configuration for a streaming session’s upload storage.</p>
 #[non_exhaustive]
@@ -9142,6 +9170,13 @@ impl StreamConfigurationSessionStorage {
         self.mode.as_deref()
     }
 }
+impl StreamConfigurationSessionStorage {
+    /// Creates a new builder-style object to manufacture [`StreamConfigurationSessionStorage`](crate::model::StreamConfigurationSessionStorage).
+    pub fn builder() -> crate::model::stream_configuration_session_storage::Builder {
+        crate::model::stream_configuration_session_storage::Builder::default()
+    }
+}
+
 /// See [`StreamConfigurationSessionStorage`](crate::model::StreamConfigurationSessionStorage).
 pub mod stream_configuration_session_storage {
 
@@ -9193,12 +9228,6 @@ pub mod stream_configuration_session_storage {
                 mode: self.mode,
             }
         }
-    }
-}
-impl StreamConfigurationSessionStorage {
-    /// Creates a new builder-style object to manufacture [`StreamConfigurationSessionStorage`](crate::model::StreamConfigurationSessionStorage).
-    pub fn builder() -> crate::model::stream_configuration_session_storage::Builder {
-        crate::model::stream_configuration_session_storage::Builder::default()
     }
 }
 
@@ -9318,6 +9347,13 @@ impl std::fmt::Debug for StreamingSessionStorageRoot {
         formatter.finish()
     }
 }
+impl StreamingSessionStorageRoot {
+    /// Creates a new builder-style object to manufacture [`StreamingSessionStorageRoot`](crate::model::StreamingSessionStorageRoot).
+    pub fn builder() -> crate::model::streaming_session_storage_root::Builder {
+        crate::model::streaming_session_storage_root::Builder::default()
+    }
+}
+
 /// See [`StreamingSessionStorageRoot`](crate::model::StreamingSessionStorageRoot).
 pub mod streaming_session_storage_root {
 
@@ -9364,12 +9400,6 @@ pub mod streaming_session_storage_root {
             formatter.field("windows", &"*** Sensitive Data Redacted ***");
             formatter.finish()
         }
-    }
-}
-impl StreamingSessionStorageRoot {
-    /// Creates a new builder-style object to manufacture [`StreamingSessionStorageRoot`](crate::model::StreamingSessionStorageRoot).
-    pub fn builder() -> crate::model::streaming_session_storage_root::Builder {
-        crate::model::streaming_session_storage_root::Builder::default()
     }
 }
 
@@ -9894,6 +9924,13 @@ impl StreamConfigurationCreate {
         self.automatic_termination_mode.as_ref()
     }
 }
+impl StreamConfigurationCreate {
+    /// Creates a new builder-style object to manufacture [`StreamConfigurationCreate`](crate::model::StreamConfigurationCreate).
+    pub fn builder() -> crate::model::stream_configuration_create::Builder {
+        crate::model::stream_configuration_create::Builder::default()
+    }
+}
+
 /// See [`StreamConfigurationCreate`](crate::model::StreamConfigurationCreate).
 pub mod stream_configuration_create {
 
@@ -10109,12 +10146,6 @@ pub mod stream_configuration_create {
         }
     }
 }
-impl StreamConfigurationCreate {
-    /// Creates a new builder-style object to manufacture [`StreamConfigurationCreate`](crate::model::StreamConfigurationCreate).
-    pub fn builder() -> crate::model::stream_configuration_create::Builder {
-        crate::model::stream_configuration_create::Builder::default()
-    }
-}
 
 /// <p>Represents a EULA resource.</p>
 #[non_exhaustive]
@@ -10158,6 +10189,13 @@ impl Eula {
         self.updated_at.as_ref()
     }
 }
+impl Eula {
+    /// Creates a new builder-style object to manufacture [`Eula`](crate::model::Eula).
+    pub fn builder() -> crate::model::eula::Builder {
+        crate::model::eula::Builder::default()
+    }
+}
+
 /// See [`Eula`](crate::model::Eula).
 pub mod eula {
 
@@ -10240,12 +10278,6 @@ pub mod eula {
         }
     }
 }
-impl Eula {
-    /// Creates a new builder-style object to manufacture [`Eula`](crate::model::Eula).
-    pub fn builder() -> crate::model::eula::Builder {
-        crate::model::eula::Builder::default()
-    }
-}
 
 /// <p>The acceptance of a EULA, required to use Amazon-provided streaming images.</p>
 #[non_exhaustive]
@@ -10289,6 +10321,13 @@ impl EulaAcceptance {
         self.eula_id.as_deref()
     }
 }
+impl EulaAcceptance {
+    /// Creates a new builder-style object to manufacture [`EulaAcceptance`](crate::model::EulaAcceptance).
+    pub fn builder() -> crate::model::eula_acceptance::Builder {
+        crate::model::eula_acceptance::Builder::default()
+    }
+}
+
 /// See [`EulaAcceptance`](crate::model::EulaAcceptance).
 pub mod eula_acceptance {
 
@@ -10369,11 +10408,5 @@ pub mod eula_acceptance {
                 eula_id: self.eula_id,
             }
         }
-    }
-}
-impl EulaAcceptance {
-    /// Creates a new builder-style object to manufacture [`EulaAcceptance`](crate::model::EulaAcceptance).
-    pub fn builder() -> crate::model::eula_acceptance::Builder {
-        crate::model::eula_acceptance::Builder::default()
     }
 }

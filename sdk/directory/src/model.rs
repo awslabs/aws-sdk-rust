@@ -113,6 +113,13 @@ impl Setting {
         self.value.as_deref()
     }
 }
+impl Setting {
+    /// Creates a new builder-style object to manufacture [`Setting`](crate::model::Setting).
+    pub fn builder() -> crate::model::setting::Builder {
+        crate::model::setting::Builder::default()
+    }
+}
+
 /// See [`Setting`](crate::model::Setting).
 pub mod setting {
 
@@ -153,12 +160,6 @@ pub mod setting {
                 value: self.value,
             }
         }
-    }
-}
-impl Setting {
-    /// Creates a new builder-style object to manufacture [`Setting`](crate::model::Setting).
-    pub fn builder() -> crate::model::setting::Builder {
-        crate::model::setting::Builder::default()
     }
 }
 
@@ -241,6 +242,13 @@ impl std::fmt::Debug for RadiusSettings {
         formatter.finish()
     }
 }
+impl RadiusSettings {
+    /// Creates a new builder-style object to manufacture [`RadiusSettings`](crate::model::RadiusSettings).
+    pub fn builder() -> crate::model::radius_settings::Builder {
+        crate::model::radius_settings::Builder::default()
+    }
+}
+
 /// See [`RadiusSettings`](crate::model::RadiusSettings).
 pub mod radius_settings {
 
@@ -389,12 +397,6 @@ pub mod radius_settings {
         }
     }
 }
-impl RadiusSettings {
-    /// Creates a new builder-style object to manufacture [`RadiusSettings`](crate::model::RadiusSettings).
-    pub fn builder() -> crate::model::radius_settings::Builder {
-        crate::model::radius_settings::Builder::default()
-    }
-}
 
 /// When writing a match expression against `RadiusAuthenticationProtocol`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -512,6 +514,13 @@ impl OsUpdateSettings {
         self.os_version.as_ref()
     }
 }
+impl OsUpdateSettings {
+    /// Creates a new builder-style object to manufacture [`OsUpdateSettings`](crate::model::OsUpdateSettings).
+    pub fn builder() -> crate::model::os_update_settings::Builder {
+        crate::model::os_update_settings::Builder::default()
+    }
+}
+
 /// See [`OsUpdateSettings`](crate::model::OsUpdateSettings).
 pub mod os_update_settings {
 
@@ -541,12 +550,6 @@ pub mod os_update_settings {
                 os_version: self.os_version,
             }
         }
-    }
-}
-impl OsUpdateSettings {
-    /// Creates a new builder-style object to manufacture [`OsUpdateSettings`](crate::model::OsUpdateSettings).
-    pub fn builder() -> crate::model::os_update_settings::Builder {
-        crate::model::os_update_settings::Builder::default()
     }
 }
 
@@ -746,6 +749,13 @@ impl UnshareTarget {
         self.r#type.as_ref()
     }
 }
+impl UnshareTarget {
+    /// Creates a new builder-style object to manufacture [`UnshareTarget`](crate::model::UnshareTarget).
+    pub fn builder() -> crate::model::unshare_target::Builder {
+        crate::model::unshare_target::Builder::default()
+    }
+}
+
 /// See [`UnshareTarget`](crate::model::UnshareTarget).
 pub mod unshare_target {
 
@@ -784,12 +794,6 @@ pub mod unshare_target {
                 r#type: self.r#type,
             }
         }
-    }
-}
-impl UnshareTarget {
-    /// Creates a new builder-style object to manufacture [`UnshareTarget`](crate::model::UnshareTarget).
-    pub fn builder() -> crate::model::unshare_target::Builder {
-        crate::model::unshare_target::Builder::default()
     }
 }
 
@@ -989,6 +993,13 @@ impl ShareTarget {
         self.r#type.as_ref()
     }
 }
+impl ShareTarget {
+    /// Creates a new builder-style object to manufacture [`ShareTarget`](crate::model::ShareTarget).
+    pub fn builder() -> crate::model::share_target::Builder {
+        crate::model::share_target::Builder::default()
+    }
+}
+
 /// See [`ShareTarget`](crate::model::ShareTarget).
 pub mod share_target {
 
@@ -1029,12 +1040,6 @@ pub mod share_target {
         }
     }
 }
-impl ShareTarget {
-    /// Creates a new builder-style object to manufacture [`ShareTarget`](crate::model::ShareTarget).
-    pub fn builder() -> crate::model::share_target::Builder {
-        crate::model::share_target::Builder::default()
-    }
-}
 
 /// <p>Contains information about the client certificate authentication settings for the <code>RegisterCertificate</code> and <code>DescribeCertificate</code> operations. </p>
 #[non_exhaustive]
@@ -1050,6 +1055,13 @@ impl ClientCertAuthSettings {
         self.ocsp_url.as_deref()
     }
 }
+impl ClientCertAuthSettings {
+    /// Creates a new builder-style object to manufacture [`ClientCertAuthSettings`](crate::model::ClientCertAuthSettings).
+    pub fn builder() -> crate::model::client_cert_auth_settings::Builder {
+        crate::model::client_cert_auth_settings::Builder::default()
+    }
+}
+
 /// See [`ClientCertAuthSettings`](crate::model::ClientCertAuthSettings).
 pub mod client_cert_auth_settings {
 
@@ -1076,12 +1088,6 @@ pub mod client_cert_auth_settings {
                 ocsp_url: self.ocsp_url,
             }
         }
-    }
-}
-impl ClientCertAuthSettings {
-    /// Creates a new builder-style object to manufacture [`ClientCertAuthSettings`](crate::model::ClientCertAuthSettings).
-    pub fn builder() -> crate::model::client_cert_auth_settings::Builder {
-        crate::model::client_cert_auth_settings::Builder::default()
     }
 }
 
@@ -1196,6 +1202,13 @@ impl Tag {
         self.value.as_deref()
     }
 }
+impl Tag {
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
+    pub fn builder() -> crate::model::tag::Builder {
+        crate::model::tag::Builder::default()
+    }
+}
+
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
 
@@ -1234,12 +1247,6 @@ pub mod tag {
                 value: self.value,
             }
         }
-    }
-}
-impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
-    pub fn builder() -> crate::model::tag::Builder {
-        crate::model::tag::Builder::default()
     }
 }
 
@@ -1301,6 +1308,13 @@ impl SchemaExtensionInfo {
         self.end_date_time.as_ref()
     }
 }
+impl SchemaExtensionInfo {
+    /// Creates a new builder-style object to manufacture [`SchemaExtensionInfo`](crate::model::SchemaExtensionInfo).
+    pub fn builder() -> crate::model::schema_extension_info::Builder {
+        crate::model::schema_extension_info::Builder::default()
+    }
+}
+
 /// See [`SchemaExtensionInfo`](crate::model::SchemaExtensionInfo).
 pub mod schema_extension_info {
 
@@ -1421,12 +1435,6 @@ pub mod schema_extension_info {
                 end_date_time: self.end_date_time,
             }
         }
-    }
-}
-impl SchemaExtensionInfo {
-    /// Creates a new builder-style object to manufacture [`SchemaExtensionInfo`](crate::model::SchemaExtensionInfo).
-    pub fn builder() -> crate::model::schema_extension_info::Builder {
-        crate::model::schema_extension_info::Builder::default()
     }
 }
 
@@ -1597,6 +1605,13 @@ impl LogSubscription {
         self.subscription_created_date_time.as_ref()
     }
 }
+impl LogSubscription {
+    /// Creates a new builder-style object to manufacture [`LogSubscription`](crate::model::LogSubscription).
+    pub fn builder() -> crate::model::log_subscription::Builder {
+        crate::model::log_subscription::Builder::default()
+    }
+}
+
 /// See [`LogSubscription`](crate::model::LogSubscription).
 pub mod log_subscription {
 
@@ -1655,12 +1670,6 @@ pub mod log_subscription {
         }
     }
 }
-impl LogSubscription {
-    /// Creates a new builder-style object to manufacture [`LogSubscription`](crate::model::LogSubscription).
-    pub fn builder() -> crate::model::log_subscription::Builder {
-        crate::model::log_subscription::Builder::default()
-    }
-}
 
 /// <p>Information about one or more IP address blocks.</p>
 #[non_exhaustive]
@@ -1711,6 +1720,13 @@ impl IpRouteInfo {
         self.description.as_deref()
     }
 }
+impl IpRouteInfo {
+    /// Creates a new builder-style object to manufacture [`IpRouteInfo`](crate::model::IpRouteInfo).
+    pub fn builder() -> crate::model::ip_route_info::Builder {
+        crate::model::ip_route_info::Builder::default()
+    }
+}
+
 /// See [`IpRouteInfo`](crate::model::IpRouteInfo).
 pub mod ip_route_info {
 
@@ -1806,12 +1822,6 @@ pub mod ip_route_info {
                 description: self.description,
             }
         }
-    }
-}
-impl IpRouteInfo {
-    /// Creates a new builder-style object to manufacture [`IpRouteInfo`](crate::model::IpRouteInfo).
-    pub fn builder() -> crate::model::ip_route_info::Builder {
-        crate::model::ip_route_info::Builder::default()
     }
 }
 
@@ -1974,6 +1984,13 @@ impl CertificateInfo {
         self.r#type.as_ref()
     }
 }
+impl CertificateInfo {
+    /// Creates a new builder-style object to manufacture [`CertificateInfo`](crate::model::CertificateInfo).
+    pub fn builder() -> crate::model::certificate_info::Builder {
+        crate::model::certificate_info::Builder::default()
+    }
+}
+
 /// See [`CertificateInfo`](crate::model::CertificateInfo).
 pub mod certificate_info {
 
@@ -2060,12 +2077,6 @@ pub mod certificate_info {
                 r#type: self.r#type,
             }
         }
-    }
-}
-impl CertificateInfo {
-    /// Creates a new builder-style object to manufacture [`CertificateInfo`](crate::model::CertificateInfo).
-    pub fn builder() -> crate::model::certificate_info::Builder {
-        crate::model::certificate_info::Builder::default()
     }
 }
 
@@ -2214,6 +2225,13 @@ impl SnapshotLimits {
         self.manual_snapshots_limit_reached
     }
 }
+impl SnapshotLimits {
+    /// Creates a new builder-style object to manufacture [`SnapshotLimits`](crate::model::SnapshotLimits).
+    pub fn builder() -> crate::model::snapshot_limits::Builder {
+        crate::model::snapshot_limits::Builder::default()
+    }
+}
+
 /// See [`SnapshotLimits`](crate::model::SnapshotLimits).
 pub mod snapshot_limits {
 
@@ -2272,12 +2290,6 @@ pub mod snapshot_limits {
                     .unwrap_or_default(),
             }
         }
-    }
-}
-impl SnapshotLimits {
-    /// Creates a new builder-style object to manufacture [`SnapshotLimits`](crate::model::SnapshotLimits).
-    pub fn builder() -> crate::model::snapshot_limits::Builder {
-        crate::model::snapshot_limits::Builder::default()
     }
 }
 
@@ -2351,6 +2363,13 @@ impl DirectoryLimits {
         self.connected_directories_limit_reached
     }
 }
+impl DirectoryLimits {
+    /// Creates a new builder-style object to manufacture [`DirectoryLimits`](crate::model::DirectoryLimits).
+    pub fn builder() -> crate::model::directory_limits::Builder {
+        crate::model::directory_limits::Builder::default()
+    }
+}
+
 /// See [`DirectoryLimits`](crate::model::DirectoryLimits).
 pub mod directory_limits {
 
@@ -2500,12 +2519,6 @@ pub mod directory_limits {
                     .unwrap_or_default(),
             }
         }
-    }
-}
-impl DirectoryLimits {
-    /// Creates a new builder-style object to manufacture [`DirectoryLimits`](crate::model::DirectoryLimits).
-    pub fn builder() -> crate::model::directory_limits::Builder {
-        crate::model::directory_limits::Builder::default()
     }
 }
 
@@ -2749,6 +2762,13 @@ impl UpdateInfoEntry {
         self.last_updated_date_time.as_ref()
     }
 }
+impl UpdateInfoEntry {
+    /// Creates a new builder-style object to manufacture [`UpdateInfoEntry`](crate::model::UpdateInfoEntry).
+    pub fn builder() -> crate::model::update_info_entry::Builder {
+        crate::model::update_info_entry::Builder::default()
+    }
+}
+
 /// See [`UpdateInfoEntry`](crate::model::UpdateInfoEntry).
 pub mod update_info_entry {
 
@@ -2879,12 +2899,6 @@ pub mod update_info_entry {
         }
     }
 }
-impl UpdateInfoEntry {
-    /// Creates a new builder-style object to manufacture [`UpdateInfoEntry`](crate::model::UpdateInfoEntry).
-    pub fn builder() -> crate::model::update_info_entry::Builder {
-        crate::model::update_info_entry::Builder::default()
-    }
-}
 
 /// <p> The value for a given type of <code>UpdateSettings</code>. </p>
 #[non_exhaustive]
@@ -2900,6 +2914,13 @@ impl UpdateValue {
         self.os_update_settings.as_ref()
     }
 }
+impl UpdateValue {
+    /// Creates a new builder-style object to manufacture [`UpdateValue`](crate::model::UpdateValue).
+    pub fn builder() -> crate::model::update_value::Builder {
+        crate::model::update_value::Builder::default()
+    }
+}
+
 /// See [`UpdateValue`](crate::model::UpdateValue).
 pub mod update_value {
 
@@ -2929,12 +2950,6 @@ pub mod update_value {
                 os_update_settings: self.os_update_settings,
             }
         }
-    }
-}
-impl UpdateValue {
-    /// Creates a new builder-style object to manufacture [`UpdateValue`](crate::model::UpdateValue).
-    pub fn builder() -> crate::model::update_value::Builder {
-        crate::model::update_value::Builder::default()
     }
 }
 
@@ -3117,6 +3132,13 @@ impl Trust {
         self.selective_auth.as_ref()
     }
 }
+impl Trust {
+    /// Creates a new builder-style object to manufacture [`Trust`](crate::model::Trust).
+    pub fn builder() -> crate::model::trust::Builder {
+        crate::model::trust::Builder::default()
+    }
+}
+
 /// See [`Trust`](crate::model::Trust).
 pub mod trust {
 
@@ -3290,12 +3312,6 @@ pub mod trust {
                 selective_auth: self.selective_auth,
             }
         }
-    }
-}
-impl Trust {
-    /// Creates a new builder-style object to manufacture [`Trust`](crate::model::Trust).
-    pub fn builder() -> crate::model::trust::Builder {
-        crate::model::trust::Builder::default()
     }
 }
 
@@ -3680,6 +3696,13 @@ impl Snapshot {
         self.start_time.as_ref()
     }
 }
+impl Snapshot {
+    /// Creates a new builder-style object to manufacture [`Snapshot`](crate::model::Snapshot).
+    pub fn builder() -> crate::model::snapshot::Builder {
+        crate::model::snapshot::Builder::default()
+    }
+}
+
 /// See [`Snapshot`](crate::model::Snapshot).
 pub mod snapshot {
 
@@ -3772,12 +3795,6 @@ pub mod snapshot {
                 start_time: self.start_time,
             }
         }
-    }
-}
-impl Snapshot {
-    /// Creates a new builder-style object to manufacture [`Snapshot`](crate::model::Snapshot).
-    pub fn builder() -> crate::model::snapshot::Builder {
-        crate::model::snapshot::Builder::default()
     }
 }
 
@@ -4051,6 +4068,13 @@ impl std::fmt::Debug for SharedDirectory {
         formatter.finish()
     }
 }
+impl SharedDirectory {
+    /// Creates a new builder-style object to manufacture [`SharedDirectory`](crate::model::SharedDirectory).
+    pub fn builder() -> crate::model::shared_directory::Builder {
+        crate::model::shared_directory::Builder::default()
+    }
+}
+
 /// See [`SharedDirectory`](crate::model::SharedDirectory).
 pub mod shared_directory {
 
@@ -4212,12 +4236,6 @@ pub mod shared_directory {
             formatter.field("last_updated_date_time", &self.last_updated_date_time);
             formatter.finish()
         }
-    }
-}
-impl SharedDirectory {
-    /// Creates a new builder-style object to manufacture [`SharedDirectory`](crate::model::SharedDirectory).
-    pub fn builder() -> crate::model::shared_directory::Builder {
-        crate::model::shared_directory::Builder::default()
     }
 }
 
@@ -4443,6 +4461,13 @@ impl SettingEntry {
         self.last_requested_date_time.as_ref()
     }
 }
+impl SettingEntry {
+    /// Creates a new builder-style object to manufacture [`SettingEntry`](crate::model::SettingEntry).
+    pub fn builder() -> crate::model::setting_entry::Builder {
+        crate::model::setting_entry::Builder::default()
+    }
+}
+
 /// See [`SettingEntry`](crate::model::SettingEntry).
 pub mod setting_entry {
 
@@ -4625,12 +4650,6 @@ pub mod setting_entry {
         }
     }
 }
-impl SettingEntry {
-    /// Creates a new builder-style object to manufacture [`SettingEntry`](crate::model::SettingEntry).
-    pub fn builder() -> crate::model::setting_entry::Builder {
-        crate::model::setting_entry::Builder::default()
-    }
-}
 
 /// When writing a match expression against `DirectoryConfigurationStatus`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -4811,6 +4830,13 @@ impl RegionDescription {
         self.last_updated_date_time.as_ref()
     }
 }
+impl RegionDescription {
+    /// Creates a new builder-style object to manufacture [`RegionDescription`](crate::model::RegionDescription).
+    pub fn builder() -> crate::model::region_description::Builder {
+        crate::model::region_description::Builder::default()
+    }
+}
+
 /// See [`RegionDescription`](crate::model::RegionDescription).
 pub mod region_description {
 
@@ -4958,12 +4984,6 @@ pub mod region_description {
         }
     }
 }
-impl RegionDescription {
-    /// Creates a new builder-style object to manufacture [`RegionDescription`](crate::model::RegionDescription).
-    pub fn builder() -> crate::model::region_description::Builder {
-        crate::model::region_description::Builder::default()
-    }
-}
 
 /// <p>Contains VPC information for the <code>CreateDirectory</code> or <code>CreateMicrosoftAD</code> operation.</p>
 #[non_exhaustive]
@@ -4986,6 +5006,13 @@ impl DirectoryVpcSettings {
         self.subnet_ids.as_deref()
     }
 }
+impl DirectoryVpcSettings {
+    /// Creates a new builder-style object to manufacture [`DirectoryVpcSettings`](crate::model::DirectoryVpcSettings).
+    pub fn builder() -> crate::model::directory_vpc_settings::Builder {
+        crate::model::directory_vpc_settings::Builder::default()
+    }
+}
+
 /// See [`DirectoryVpcSettings`](crate::model::DirectoryVpcSettings).
 pub mod directory_vpc_settings {
 
@@ -5033,12 +5060,6 @@ pub mod directory_vpc_settings {
                 subnet_ids: self.subnet_ids,
             }
         }
-    }
-}
-impl DirectoryVpcSettings {
-    /// Creates a new builder-style object to manufacture [`DirectoryVpcSettings`](crate::model::DirectoryVpcSettings).
-    pub fn builder() -> crate::model::directory_vpc_settings::Builder {
-        crate::model::directory_vpc_settings::Builder::default()
     }
 }
 
@@ -5307,6 +5328,13 @@ impl LdapsSettingInfo {
         self.last_updated_date_time.as_ref()
     }
 }
+impl LdapsSettingInfo {
+    /// Creates a new builder-style object to manufacture [`LdapsSettingInfo`](crate::model::LdapsSettingInfo).
+    pub fn builder() -> crate::model::ldaps_setting_info::Builder {
+        crate::model::ldaps_setting_info::Builder::default()
+    }
+}
+
 /// See [`LdapsSettingInfo`](crate::model::LdapsSettingInfo).
 pub mod ldaps_setting_info {
 
@@ -5366,12 +5394,6 @@ pub mod ldaps_setting_info {
                 last_updated_date_time: self.last_updated_date_time,
             }
         }
-    }
-}
-impl LdapsSettingInfo {
-    /// Creates a new builder-style object to manufacture [`LdapsSettingInfo`](crate::model::LdapsSettingInfo).
-    pub fn builder() -> crate::model::ldaps_setting_info::Builder {
-        crate::model::ldaps_setting_info::Builder::default()
     }
 }
 
@@ -5517,6 +5539,13 @@ impl EventTopic {
         self.status.as_ref()
     }
 }
+impl EventTopic {
+    /// Creates a new builder-style object to manufacture [`EventTopic`](crate::model::EventTopic).
+    pub fn builder() -> crate::model::event_topic::Builder {
+        crate::model::event_topic::Builder::default()
+    }
+}
+
 /// See [`EventTopic`](crate::model::EventTopic).
 pub mod event_topic {
 
@@ -5594,12 +5623,6 @@ pub mod event_topic {
                 status: self.status,
             }
         }
-    }
-}
-impl EventTopic {
-    /// Creates a new builder-style object to manufacture [`EventTopic`](crate::model::EventTopic).
-    pub fn builder() -> crate::model::event_topic::Builder {
-        crate::model::event_topic::Builder::default()
     }
 }
 
@@ -5782,6 +5805,13 @@ impl DomainController {
         self.status_last_updated_date_time.as_ref()
     }
 }
+impl DomainController {
+    /// Creates a new builder-style object to manufacture [`DomainController`](crate::model::DomainController).
+    pub fn builder() -> crate::model::domain_controller::Builder {
+        crate::model::domain_controller::Builder::default()
+    }
+}
+
 /// See [`DomainController`](crate::model::DomainController).
 pub mod domain_controller {
 
@@ -5934,12 +5964,6 @@ pub mod domain_controller {
                 status_last_updated_date_time: self.status_last_updated_date_time,
             }
         }
-    }
-}
-impl DomainController {
-    /// Creates a new builder-style object to manufacture [`DomainController`](crate::model::DomainController).
-    pub fn builder() -> crate::model::domain_controller::Builder {
-        crate::model::domain_controller::Builder::default()
     }
 }
 
@@ -6312,6 +6336,13 @@ impl std::fmt::Debug for DirectoryDescription {
         formatter.finish()
     }
 }
+impl DirectoryDescription {
+    /// Creates a new builder-style object to manufacture [`DirectoryDescription`](crate::model::DirectoryDescription).
+    pub fn builder() -> crate::model::directory_description::Builder {
+        crate::model::directory_description::Builder::default()
+    }
+}
+
 /// See [`DirectoryDescription`](crate::model::DirectoryDescription).
 pub mod directory_description {
 
@@ -6753,12 +6784,6 @@ pub mod directory_description {
         }
     }
 }
-impl DirectoryDescription {
-    /// Creates a new builder-style object to manufacture [`DirectoryDescription`](crate::model::DirectoryDescription).
-    pub fn builder() -> crate::model::directory_description::Builder {
-        crate::model::directory_description::Builder::default()
-    }
-}
 
 /// <p>Provides information about the Regions that are configured for multi-Region replication.</p>
 #[non_exhaustive]
@@ -6781,6 +6806,13 @@ impl RegionsInfo {
         self.additional_regions.as_deref()
     }
 }
+impl RegionsInfo {
+    /// Creates a new builder-style object to manufacture [`RegionsInfo`](crate::model::RegionsInfo).
+    pub fn builder() -> crate::model::regions_info::Builder {
+        crate::model::regions_info::Builder::default()
+    }
+}
+
 /// See [`RegionsInfo`](crate::model::RegionsInfo).
 pub mod regions_info {
 
@@ -6831,12 +6863,6 @@ pub mod regions_info {
                 additional_regions: self.additional_regions,
             }
         }
-    }
-}
-impl RegionsInfo {
-    /// Creates a new builder-style object to manufacture [`RegionsInfo`](crate::model::RegionsInfo).
-    pub fn builder() -> crate::model::regions_info::Builder {
-        crate::model::regions_info::Builder::default()
     }
 }
 
@@ -6891,6 +6917,13 @@ impl OwnerDirectoryDescription {
         self.radius_status.as_ref()
     }
 }
+impl OwnerDirectoryDescription {
+    /// Creates a new builder-style object to manufacture [`OwnerDirectoryDescription`](crate::model::OwnerDirectoryDescription).
+    pub fn builder() -> crate::model::owner_directory_description::Builder {
+        crate::model::owner_directory_description::Builder::default()
+    }
+}
+
 /// See [`OwnerDirectoryDescription`](crate::model::OwnerDirectoryDescription).
 pub mod owner_directory_description {
 
@@ -6998,12 +7031,6 @@ pub mod owner_directory_description {
                 radius_status: self.radius_status,
             }
         }
-    }
-}
-impl OwnerDirectoryDescription {
-    /// Creates a new builder-style object to manufacture [`OwnerDirectoryDescription`](crate::model::OwnerDirectoryDescription).
-    pub fn builder() -> crate::model::owner_directory_description::Builder {
-        crate::model::owner_directory_description::Builder::default()
     }
 }
 
@@ -7137,6 +7164,13 @@ impl DirectoryVpcSettingsDescription {
         self.availability_zones.as_deref()
     }
 }
+impl DirectoryVpcSettingsDescription {
+    /// Creates a new builder-style object to manufacture [`DirectoryVpcSettingsDescription`](crate::model::DirectoryVpcSettingsDescription).
+    pub fn builder() -> crate::model::directory_vpc_settings_description::Builder {
+        crate::model::directory_vpc_settings_description::Builder::default()
+    }
+}
+
 /// See [`DirectoryVpcSettingsDescription`](crate::model::DirectoryVpcSettingsDescription).
 pub mod directory_vpc_settings_description {
 
@@ -7222,12 +7256,6 @@ pub mod directory_vpc_settings_description {
         }
     }
 }
-impl DirectoryVpcSettingsDescription {
-    /// Creates a new builder-style object to manufacture [`DirectoryVpcSettingsDescription`](crate::model::DirectoryVpcSettingsDescription).
-    pub fn builder() -> crate::model::directory_vpc_settings_description::Builder {
-        crate::model::directory_vpc_settings_description::Builder::default()
-    }
-}
 
 /// <p>Contains information about an AD Connector directory.</p>
 #[non_exhaustive]
@@ -7278,6 +7306,13 @@ impl DirectoryConnectSettingsDescription {
         self.connect_ips.as_deref()
     }
 }
+impl DirectoryConnectSettingsDescription {
+    /// Creates a new builder-style object to manufacture [`DirectoryConnectSettingsDescription`](crate::model::DirectoryConnectSettingsDescription).
+    pub fn builder() -> crate::model::directory_connect_settings_description::Builder {
+        crate::model::directory_connect_settings_description::Builder::default()
+    }
+}
+
 /// See [`DirectoryConnectSettingsDescription`](crate::model::DirectoryConnectSettingsDescription).
 pub mod directory_connect_settings_description {
 
@@ -7397,12 +7432,6 @@ pub mod directory_connect_settings_description {
                 connect_ips: self.connect_ips,
             }
         }
-    }
-}
-impl DirectoryConnectSettingsDescription {
-    /// Creates a new builder-style object to manufacture [`DirectoryConnectSettingsDescription`](crate::model::DirectoryConnectSettingsDescription).
-    pub fn builder() -> crate::model::directory_connect_settings_description::Builder {
-        crate::model::directory_connect_settings_description::Builder::default()
     }
 }
 
@@ -7719,6 +7748,13 @@ impl ConditionalForwarder {
         self.replication_scope.as_ref()
     }
 }
+impl ConditionalForwarder {
+    /// Creates a new builder-style object to manufacture [`ConditionalForwarder`](crate::model::ConditionalForwarder).
+    pub fn builder() -> crate::model::conditional_forwarder::Builder {
+        crate::model::conditional_forwarder::Builder::default()
+    }
+}
+
 /// See [`ConditionalForwarder`](crate::model::ConditionalForwarder).
 pub mod conditional_forwarder {
 
@@ -7784,12 +7820,6 @@ pub mod conditional_forwarder {
                 replication_scope: self.replication_scope,
             }
         }
-    }
-}
-impl ConditionalForwarder {
-    /// Creates a new builder-style object to manufacture [`ConditionalForwarder`](crate::model::ConditionalForwarder).
-    pub fn builder() -> crate::model::conditional_forwarder::Builder {
-        crate::model::conditional_forwarder::Builder::default()
     }
 }
 
@@ -7906,6 +7936,13 @@ impl ClientAuthenticationSettingInfo {
         self.last_updated_date_time.as_ref()
     }
 }
+impl ClientAuthenticationSettingInfo {
+    /// Creates a new builder-style object to manufacture [`ClientAuthenticationSettingInfo`](crate::model::ClientAuthenticationSettingInfo).
+    pub fn builder() -> crate::model::client_authentication_setting_info::Builder {
+        crate::model::client_authentication_setting_info::Builder::default()
+    }
+}
+
 /// See [`ClientAuthenticationSettingInfo`](crate::model::ClientAuthenticationSettingInfo).
 pub mod client_authentication_setting_info {
 
@@ -7965,12 +8002,6 @@ pub mod client_authentication_setting_info {
                 last_updated_date_time: self.last_updated_date_time,
             }
         }
-    }
-}
-impl ClientAuthenticationSettingInfo {
-    /// Creates a new builder-style object to manufacture [`ClientAuthenticationSettingInfo`](crate::model::ClientAuthenticationSettingInfo).
-    pub fn builder() -> crate::model::client_authentication_setting_info::Builder {
-        crate::model::client_authentication_setting_info::Builder::default()
     }
 }
 
@@ -8131,6 +8162,13 @@ impl Certificate {
         self.client_cert_auth_settings.as_ref()
     }
 }
+impl Certificate {
+    /// Creates a new builder-style object to manufacture [`Certificate`](crate::model::Certificate).
+    pub fn builder() -> crate::model::certificate::Builder {
+        crate::model::certificate::Builder::default()
+    }
+}
+
 /// See [`Certificate`](crate::model::Certificate).
 pub mod certificate {
 
@@ -8265,12 +8303,6 @@ pub mod certificate {
         }
     }
 }
-impl Certificate {
-    /// Creates a new builder-style object to manufacture [`Certificate`](crate::model::Certificate).
-    pub fn builder() -> crate::model::certificate::Builder {
-        crate::model::certificate::Builder::default()
-    }
-}
 
 /// <p>Contains information about a computer account in a directory.</p>
 #[non_exhaustive]
@@ -8300,6 +8332,13 @@ impl Computer {
         self.computer_attributes.as_deref()
     }
 }
+impl Computer {
+    /// Creates a new builder-style object to manufacture [`Computer`](crate::model::Computer).
+    pub fn builder() -> crate::model::computer::Builder {
+        crate::model::computer::Builder::default()
+    }
+}
+
 /// See [`Computer`](crate::model::Computer).
 pub mod computer {
 
@@ -8364,12 +8403,6 @@ pub mod computer {
         }
     }
 }
-impl Computer {
-    /// Creates a new builder-style object to manufacture [`Computer`](crate::model::Computer).
-    pub fn builder() -> crate::model::computer::Builder {
-        crate::model::computer::Builder::default()
-    }
-}
 
 /// <p>Represents a named directory attribute.</p>
 #[non_exhaustive]
@@ -8392,6 +8425,13 @@ impl Attribute {
         self.value.as_deref()
     }
 }
+impl Attribute {
+    /// Creates a new builder-style object to manufacture [`Attribute`](crate::model::Attribute).
+    pub fn builder() -> crate::model::attribute::Builder {
+        crate::model::attribute::Builder::default()
+    }
+}
+
 /// See [`Attribute`](crate::model::Attribute).
 pub mod attribute {
 
@@ -8430,12 +8470,6 @@ pub mod attribute {
                 value: self.value,
             }
         }
-    }
-}
-impl Attribute {
-    /// Creates a new builder-style object to manufacture [`Attribute`](crate::model::Attribute).
-    pub fn builder() -> crate::model::attribute::Builder {
-        crate::model::attribute::Builder::default()
     }
 }
 
@@ -8484,6 +8518,13 @@ impl DirectoryConnectSettings {
         self.customer_user_name.as_deref()
     }
 }
+impl DirectoryConnectSettings {
+    /// Creates a new builder-style object to manufacture [`DirectoryConnectSettings`](crate::model::DirectoryConnectSettings).
+    pub fn builder() -> crate::model::directory_connect_settings::Builder {
+        crate::model::directory_connect_settings::Builder::default()
+    }
+}
+
 /// See [`DirectoryConnectSettings`](crate::model::DirectoryConnectSettings).
 pub mod directory_connect_settings {
 
@@ -8579,12 +8620,6 @@ pub mod directory_connect_settings {
         }
     }
 }
-impl DirectoryConnectSettings {
-    /// Creates a new builder-style object to manufacture [`DirectoryConnectSettings`](crate::model::DirectoryConnectSettings).
-    pub fn builder() -> crate::model::directory_connect_settings::Builder {
-        crate::model::directory_connect_settings::Builder::default()
-    }
-}
 
 /// <p>IP address block. This is often the address block of the DNS server used for your self-managed domain. </p>
 #[non_exhaustive]
@@ -8607,6 +8642,13 @@ impl IpRoute {
         self.description.as_deref()
     }
 }
+impl IpRoute {
+    /// Creates a new builder-style object to manufacture [`IpRoute`](crate::model::IpRoute).
+    pub fn builder() -> crate::model::ip_route::Builder {
+        crate::model::ip_route::Builder::default()
+    }
+}
+
 /// See [`IpRoute`](crate::model::IpRoute).
 pub mod ip_route {
 
@@ -8645,11 +8687,5 @@ pub mod ip_route {
                 description: self.description,
             }
         }
-    }
-}
-impl IpRoute {
-    /// Creates a new builder-style object to manufacture [`IpRoute`](crate::model::IpRoute).
-    pub fn builder() -> crate::model::ip_route::Builder {
-        crate::model::ip_route::Builder::default()
     }
 }

@@ -35,6 +35,13 @@ impl aws_http::request_id::RequestId for UpdateVocabularyFilterOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdateVocabularyFilterOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateVocabularyFilterOutput`](crate::output::UpdateVocabularyFilterOutput).
+    pub fn builder() -> crate::output::update_vocabulary_filter_output::Builder {
+        crate::output::update_vocabulary_filter_output::Builder::default()
+    }
+}
+
 /// See [`UpdateVocabularyFilterOutput`](crate::output::UpdateVocabularyFilterOutput).
 pub mod update_vocabulary_filter_output {
 
@@ -109,12 +116,6 @@ pub mod update_vocabulary_filter_output {
         }
     }
 }
-impl UpdateVocabularyFilterOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateVocabularyFilterOutput`](crate::output::UpdateVocabularyFilterOutput).
-    pub fn builder() -> crate::output::update_vocabulary_filter_output::Builder {
-        crate::output::update_vocabulary_filter_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -159,6 +160,13 @@ impl aws_http::request_id::RequestId for UpdateVocabularyOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdateVocabularyOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateVocabularyOutput`](crate::output::UpdateVocabularyOutput).
+    pub fn builder() -> crate::output::update_vocabulary_output::Builder {
+        crate::output::update_vocabulary_output::Builder::default()
+    }
+}
+
 /// See [`UpdateVocabularyOutput`](crate::output::UpdateVocabularyOutput).
 pub mod update_vocabulary_output {
 
@@ -248,12 +256,6 @@ pub mod update_vocabulary_output {
         }
     }
 }
-impl UpdateVocabularyOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateVocabularyOutput`](crate::output::UpdateVocabularyOutput).
-    pub fn builder() -> crate::output::update_vocabulary_output::Builder {
-        crate::output::update_vocabulary_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -298,6 +300,13 @@ impl aws_http::request_id::RequestId for UpdateMedicalVocabularyOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdateMedicalVocabularyOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateMedicalVocabularyOutput`](crate::output::UpdateMedicalVocabularyOutput).
+    pub fn builder() -> crate::output::update_medical_vocabulary_output::Builder {
+        crate::output::update_medical_vocabulary_output::Builder::default()
+    }
+}
+
 /// See [`UpdateMedicalVocabularyOutput`](crate::output::UpdateMedicalVocabularyOutput).
 pub mod update_medical_vocabulary_output {
 
@@ -387,12 +396,6 @@ pub mod update_medical_vocabulary_output {
         }
     }
 }
-impl UpdateMedicalVocabularyOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateMedicalVocabularyOutput`](crate::output::UpdateMedicalVocabularyOutput).
-    pub fn builder() -> crate::output::update_medical_vocabulary_output::Builder {
-        crate::output::update_medical_vocabulary_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -414,6 +417,13 @@ impl aws_http::request_id::RequestId for UpdateCallAnalyticsCategoryOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdateCallAnalyticsCategoryOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateCallAnalyticsCategoryOutput`](crate::output::UpdateCallAnalyticsCategoryOutput).
+    pub fn builder() -> crate::output::update_call_analytics_category_output::Builder {
+        crate::output::update_call_analytics_category_output::Builder::default()
+    }
+}
+
 /// See [`UpdateCallAnalyticsCategoryOutput`](crate::output::UpdateCallAnalyticsCategoryOutput).
 pub mod update_call_analytics_category_output {
 
@@ -456,12 +466,6 @@ pub mod update_call_analytics_category_output {
         }
     }
 }
-impl UpdateCallAnalyticsCategoryOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateCallAnalyticsCategoryOutput`](crate::output::UpdateCallAnalyticsCategoryOutput).
-    pub fn builder() -> crate::output::update_call_analytics_category_output::Builder {
-        crate::output::update_call_analytics_category_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -474,6 +478,13 @@ impl aws_http::request_id::RequestId for UntagResourceOutput {
         self._request_id.as_deref()
     }
 }
+impl UntagResourceOutput {
+    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    pub fn builder() -> crate::output::untag_resource_output::Builder {
+        crate::output::untag_resource_output::Builder::default()
+    }
+}
+
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
 
@@ -501,12 +512,6 @@ pub mod untag_resource_output {
         }
     }
 }
-impl UntagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
-    pub fn builder() -> crate::output::untag_resource_output::Builder {
-        crate::output::untag_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -519,6 +524,13 @@ impl aws_http::request_id::RequestId for TagResourceOutput {
         self._request_id.as_deref()
     }
 }
+impl TagResourceOutput {
+    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
+    pub fn builder() -> crate::output::tag_resource_output::Builder {
+        crate::output::tag_resource_output::Builder::default()
+    }
+}
+
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
 
@@ -546,12 +558,6 @@ pub mod tag_resource_output {
         }
     }
 }
-impl TagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
-    pub fn builder() -> crate::output::tag_resource_output::Builder {
-        crate::output::tag_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -573,6 +579,13 @@ impl aws_http::request_id::RequestId for StartTranscriptionJobOutput {
         self._request_id.as_deref()
     }
 }
+impl StartTranscriptionJobOutput {
+    /// Creates a new builder-style object to manufacture [`StartTranscriptionJobOutput`](crate::output::StartTranscriptionJobOutput).
+    pub fn builder() -> crate::output::start_transcription_job_output::Builder {
+        crate::output::start_transcription_job_output::Builder::default()
+    }
+}
+
 /// See [`StartTranscriptionJobOutput`](crate::output::StartTranscriptionJobOutput).
 pub mod start_transcription_job_output {
 
@@ -615,12 +628,6 @@ pub mod start_transcription_job_output {
         }
     }
 }
-impl StartTranscriptionJobOutput {
-    /// Creates a new builder-style object to manufacture [`StartTranscriptionJobOutput`](crate::output::StartTranscriptionJobOutput).
-    pub fn builder() -> crate::output::start_transcription_job_output::Builder {
-        crate::output::start_transcription_job_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -644,6 +651,13 @@ impl aws_http::request_id::RequestId for StartMedicalTranscriptionJobOutput {
         self._request_id.as_deref()
     }
 }
+impl StartMedicalTranscriptionJobOutput {
+    /// Creates a new builder-style object to manufacture [`StartMedicalTranscriptionJobOutput`](crate::output::StartMedicalTranscriptionJobOutput).
+    pub fn builder() -> crate::output::start_medical_transcription_job_output::Builder {
+        crate::output::start_medical_transcription_job_output::Builder::default()
+    }
+}
+
 /// See [`StartMedicalTranscriptionJobOutput`](crate::output::StartMedicalTranscriptionJobOutput).
 pub mod start_medical_transcription_job_output {
 
@@ -690,12 +704,6 @@ pub mod start_medical_transcription_job_output {
         }
     }
 }
-impl StartMedicalTranscriptionJobOutput {
-    /// Creates a new builder-style object to manufacture [`StartMedicalTranscriptionJobOutput`](crate::output::StartMedicalTranscriptionJobOutput).
-    pub fn builder() -> crate::output::start_medical_transcription_job_output::Builder {
-        crate::output::start_medical_transcription_job_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -717,6 +725,13 @@ impl aws_http::request_id::RequestId for StartCallAnalyticsJobOutput {
         self._request_id.as_deref()
     }
 }
+impl StartCallAnalyticsJobOutput {
+    /// Creates a new builder-style object to manufacture [`StartCallAnalyticsJobOutput`](crate::output::StartCallAnalyticsJobOutput).
+    pub fn builder() -> crate::output::start_call_analytics_job_output::Builder {
+        crate::output::start_call_analytics_job_output::Builder::default()
+    }
+}
+
 /// See [`StartCallAnalyticsJobOutput`](crate::output::StartCallAnalyticsJobOutput).
 pub mod start_call_analytics_job_output {
 
@@ -759,12 +774,6 @@ pub mod start_call_analytics_job_output {
         }
     }
 }
-impl StartCallAnalyticsJobOutput {
-    /// Creates a new builder-style object to manufacture [`StartCallAnalyticsJobOutput`](crate::output::StartCallAnalyticsJobOutput).
-    pub fn builder() -> crate::output::start_call_analytics_job_output::Builder {
-        crate::output::start_call_analytics_job_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -793,6 +802,13 @@ impl aws_http::request_id::RequestId for ListVocabularyFiltersOutput {
         self._request_id.as_deref()
     }
 }
+impl ListVocabularyFiltersOutput {
+    /// Creates a new builder-style object to manufacture [`ListVocabularyFiltersOutput`](crate::output::ListVocabularyFiltersOutput).
+    pub fn builder() -> crate::output::list_vocabulary_filters_output::Builder {
+        crate::output::list_vocabulary_filters_output::Builder::default()
+    }
+}
+
 /// See [`ListVocabularyFiltersOutput`](crate::output::ListVocabularyFiltersOutput).
 pub mod list_vocabulary_filters_output {
 
@@ -854,12 +870,6 @@ pub mod list_vocabulary_filters_output {
         }
     }
 }
-impl ListVocabularyFiltersOutput {
-    /// Creates a new builder-style object to manufacture [`ListVocabularyFiltersOutput`](crate::output::ListVocabularyFiltersOutput).
-    pub fn builder() -> crate::output::list_vocabulary_filters_output::Builder {
-        crate::output::list_vocabulary_filters_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -895,6 +905,13 @@ impl aws_http::request_id::RequestId for ListVocabulariesOutput {
         self._request_id.as_deref()
     }
 }
+impl ListVocabulariesOutput {
+    /// Creates a new builder-style object to manufacture [`ListVocabulariesOutput`](crate::output::ListVocabulariesOutput).
+    pub fn builder() -> crate::output::list_vocabularies_output::Builder {
+        crate::output::list_vocabularies_output::Builder::default()
+    }
+}
+
 /// See [`ListVocabulariesOutput`](crate::output::ListVocabulariesOutput).
 pub mod list_vocabularies_output {
 
@@ -970,12 +987,6 @@ pub mod list_vocabularies_output {
         }
     }
 }
-impl ListVocabulariesOutput {
-    /// Creates a new builder-style object to manufacture [`ListVocabulariesOutput`](crate::output::ListVocabulariesOutput).
-    pub fn builder() -> crate::output::list_vocabularies_output::Builder {
-        crate::output::list_vocabularies_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1014,6 +1025,13 @@ impl aws_http::request_id::RequestId for ListTranscriptionJobsOutput {
         self._request_id.as_deref()
     }
 }
+impl ListTranscriptionJobsOutput {
+    /// Creates a new builder-style object to manufacture [`ListTranscriptionJobsOutput`](crate::output::ListTranscriptionJobsOutput).
+    pub fn builder() -> crate::output::list_transcription_jobs_output::Builder {
+        crate::output::list_transcription_jobs_output::Builder::default()
+    }
+}
+
 /// See [`ListTranscriptionJobsOutput`](crate::output::ListTranscriptionJobsOutput).
 pub mod list_transcription_jobs_output {
 
@@ -1093,12 +1111,6 @@ pub mod list_transcription_jobs_output {
         }
     }
 }
-impl ListTranscriptionJobsOutput {
-    /// Creates a new builder-style object to manufacture [`ListTranscriptionJobsOutput`](crate::output::ListTranscriptionJobsOutput).
-    pub fn builder() -> crate::output::list_transcription_jobs_output::Builder {
-        crate::output::list_transcription_jobs_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1127,6 +1139,13 @@ impl aws_http::request_id::RequestId for ListTagsForResourceOutput {
         self._request_id.as_deref()
     }
 }
+impl ListTagsForResourceOutput {
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
+        crate::output::list_tags_for_resource_output::Builder::default()
+    }
+}
+
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
 
@@ -1187,12 +1206,6 @@ pub mod list_tags_for_resource_output {
         }
     }
 }
-impl ListTagsForResourceOutput {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
-    pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
-        crate::output::list_tags_for_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1228,6 +1241,13 @@ impl aws_http::request_id::RequestId for ListMedicalVocabulariesOutput {
         self._request_id.as_deref()
     }
 }
+impl ListMedicalVocabulariesOutput {
+    /// Creates a new builder-style object to manufacture [`ListMedicalVocabulariesOutput`](crate::output::ListMedicalVocabulariesOutput).
+    pub fn builder() -> crate::output::list_medical_vocabularies_output::Builder {
+        crate::output::list_medical_vocabularies_output::Builder::default()
+    }
+}
+
 /// See [`ListMedicalVocabulariesOutput`](crate::output::ListMedicalVocabulariesOutput).
 pub mod list_medical_vocabularies_output {
 
@@ -1303,12 +1323,6 @@ pub mod list_medical_vocabularies_output {
         }
     }
 }
-impl ListMedicalVocabulariesOutput {
-    /// Creates a new builder-style object to manufacture [`ListMedicalVocabulariesOutput`](crate::output::ListMedicalVocabulariesOutput).
-    pub fn builder() -> crate::output::list_medical_vocabularies_output::Builder {
-        crate::output::list_medical_vocabularies_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1347,6 +1361,13 @@ impl aws_http::request_id::RequestId for ListMedicalTranscriptionJobsOutput {
         self._request_id.as_deref()
     }
 }
+impl ListMedicalTranscriptionJobsOutput {
+    /// Creates a new builder-style object to manufacture [`ListMedicalTranscriptionJobsOutput`](crate::output::ListMedicalTranscriptionJobsOutput).
+    pub fn builder() -> crate::output::list_medical_transcription_jobs_output::Builder {
+        crate::output::list_medical_transcription_jobs_output::Builder::default()
+    }
+}
+
 /// See [`ListMedicalTranscriptionJobsOutput`](crate::output::ListMedicalTranscriptionJobsOutput).
 pub mod list_medical_transcription_jobs_output {
 
@@ -1426,12 +1447,6 @@ pub mod list_medical_transcription_jobs_output {
         }
     }
 }
-impl ListMedicalTranscriptionJobsOutput {
-    /// Creates a new builder-style object to manufacture [`ListMedicalTranscriptionJobsOutput`](crate::output::ListMedicalTranscriptionJobsOutput).
-    pub fn builder() -> crate::output::list_medical_transcription_jobs_output::Builder {
-        crate::output::list_medical_transcription_jobs_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1460,6 +1475,13 @@ impl aws_http::request_id::RequestId for ListLanguageModelsOutput {
         self._request_id.as_deref()
     }
 }
+impl ListLanguageModelsOutput {
+    /// Creates a new builder-style object to manufacture [`ListLanguageModelsOutput`](crate::output::ListLanguageModelsOutput).
+    pub fn builder() -> crate::output::list_language_models_output::Builder {
+        crate::output::list_language_models_output::Builder::default()
+    }
+}
+
 /// See [`ListLanguageModelsOutput`](crate::output::ListLanguageModelsOutput).
 pub mod list_language_models_output {
 
@@ -1520,12 +1542,6 @@ pub mod list_language_models_output {
         }
     }
 }
-impl ListLanguageModelsOutput {
-    /// Creates a new builder-style object to manufacture [`ListLanguageModelsOutput`](crate::output::ListLanguageModelsOutput).
-    pub fn builder() -> crate::output::list_language_models_output::Builder {
-        crate::output::list_language_models_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1564,6 +1580,13 @@ impl aws_http::request_id::RequestId for ListCallAnalyticsJobsOutput {
         self._request_id.as_deref()
     }
 }
+impl ListCallAnalyticsJobsOutput {
+    /// Creates a new builder-style object to manufacture [`ListCallAnalyticsJobsOutput`](crate::output::ListCallAnalyticsJobsOutput).
+    pub fn builder() -> crate::output::list_call_analytics_jobs_output::Builder {
+        crate::output::list_call_analytics_jobs_output::Builder::default()
+    }
+}
+
 /// See [`ListCallAnalyticsJobsOutput`](crate::output::ListCallAnalyticsJobsOutput).
 pub mod list_call_analytics_jobs_output {
 
@@ -1643,12 +1666,6 @@ pub mod list_call_analytics_jobs_output {
         }
     }
 }
-impl ListCallAnalyticsJobsOutput {
-    /// Creates a new builder-style object to manufacture [`ListCallAnalyticsJobsOutput`](crate::output::ListCallAnalyticsJobsOutput).
-    pub fn builder() -> crate::output::list_call_analytics_jobs_output::Builder {
-        crate::output::list_call_analytics_jobs_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1677,6 +1694,13 @@ impl aws_http::request_id::RequestId for ListCallAnalyticsCategoriesOutput {
         self._request_id.as_deref()
     }
 }
+impl ListCallAnalyticsCategoriesOutput {
+    /// Creates a new builder-style object to manufacture [`ListCallAnalyticsCategoriesOutput`](crate::output::ListCallAnalyticsCategoriesOutput).
+    pub fn builder() -> crate::output::list_call_analytics_categories_output::Builder {
+        crate::output::list_call_analytics_categories_output::Builder::default()
+    }
+}
+
 /// See [`ListCallAnalyticsCategoriesOutput`](crate::output::ListCallAnalyticsCategoriesOutput).
 pub mod list_call_analytics_categories_output {
 
@@ -1737,12 +1761,6 @@ pub mod list_call_analytics_categories_output {
         }
     }
 }
-impl ListCallAnalyticsCategoriesOutput {
-    /// Creates a new builder-style object to manufacture [`ListCallAnalyticsCategoriesOutput`](crate::output::ListCallAnalyticsCategoriesOutput).
-    pub fn builder() -> crate::output::list_call_analytics_categories_output::Builder {
-        crate::output::list_call_analytics_categories_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1787,6 +1805,13 @@ impl aws_http::request_id::RequestId for GetVocabularyFilterOutput {
         self._request_id.as_deref()
     }
 }
+impl GetVocabularyFilterOutput {
+    /// Creates a new builder-style object to manufacture [`GetVocabularyFilterOutput`](crate::output::GetVocabularyFilterOutput).
+    pub fn builder() -> crate::output::get_vocabulary_filter_output::Builder {
+        crate::output::get_vocabulary_filter_output::Builder::default()
+    }
+}
+
 /// See [`GetVocabularyFilterOutput`](crate::output::GetVocabularyFilterOutput).
 pub mod get_vocabulary_filter_output {
 
@@ -1873,12 +1898,6 @@ pub mod get_vocabulary_filter_output {
         }
     }
 }
-impl GetVocabularyFilterOutput {
-    /// Creates a new builder-style object to manufacture [`GetVocabularyFilterOutput`](crate::output::GetVocabularyFilterOutput).
-    pub fn builder() -> crate::output::get_vocabulary_filter_output::Builder {
-        crate::output::get_vocabulary_filter_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1937,6 +1956,13 @@ impl aws_http::request_id::RequestId for GetVocabularyOutput {
         self._request_id.as_deref()
     }
 }
+impl GetVocabularyOutput {
+    /// Creates a new builder-style object to manufacture [`GetVocabularyOutput`](crate::output::GetVocabularyOutput).
+    pub fn builder() -> crate::output::get_vocabulary_output::Builder {
+        crate::output::get_vocabulary_output::Builder::default()
+    }
+}
+
 /// See [`GetVocabularyOutput`](crate::output::GetVocabularyOutput).
 pub mod get_vocabulary_output {
 
@@ -2053,12 +2079,6 @@ pub mod get_vocabulary_output {
         }
     }
 }
-impl GetVocabularyOutput {
-    /// Creates a new builder-style object to manufacture [`GetVocabularyOutput`](crate::output::GetVocabularyOutput).
-    pub fn builder() -> crate::output::get_vocabulary_output::Builder {
-        crate::output::get_vocabulary_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2080,6 +2100,13 @@ impl aws_http::request_id::RequestId for GetTranscriptionJobOutput {
         self._request_id.as_deref()
     }
 }
+impl GetTranscriptionJobOutput {
+    /// Creates a new builder-style object to manufacture [`GetTranscriptionJobOutput`](crate::output::GetTranscriptionJobOutput).
+    pub fn builder() -> crate::output::get_transcription_job_output::Builder {
+        crate::output::get_transcription_job_output::Builder::default()
+    }
+}
+
 /// See [`GetTranscriptionJobOutput`](crate::output::GetTranscriptionJobOutput).
 pub mod get_transcription_job_output {
 
@@ -2120,12 +2147,6 @@ pub mod get_transcription_job_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl GetTranscriptionJobOutput {
-    /// Creates a new builder-style object to manufacture [`GetTranscriptionJobOutput`](crate::output::GetTranscriptionJobOutput).
-    pub fn builder() -> crate::output::get_transcription_job_output::Builder {
-        crate::output::get_transcription_job_output::Builder::default()
     }
 }
 
@@ -2186,6 +2207,13 @@ impl aws_http::request_id::RequestId for GetMedicalVocabularyOutput {
         self._request_id.as_deref()
     }
 }
+impl GetMedicalVocabularyOutput {
+    /// Creates a new builder-style object to manufacture [`GetMedicalVocabularyOutput`](crate::output::GetMedicalVocabularyOutput).
+    pub fn builder() -> crate::output::get_medical_vocabulary_output::Builder {
+        crate::output::get_medical_vocabulary_output::Builder::default()
+    }
+}
+
 /// See [`GetMedicalVocabularyOutput`](crate::output::GetMedicalVocabularyOutput).
 pub mod get_medical_vocabulary_output {
 
@@ -2302,12 +2330,6 @@ pub mod get_medical_vocabulary_output {
         }
     }
 }
-impl GetMedicalVocabularyOutput {
-    /// Creates a new builder-style object to manufacture [`GetMedicalVocabularyOutput`](crate::output::GetMedicalVocabularyOutput).
-    pub fn builder() -> crate::output::get_medical_vocabulary_output::Builder {
-        crate::output::get_medical_vocabulary_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2331,6 +2353,13 @@ impl aws_http::request_id::RequestId for GetMedicalTranscriptionJobOutput {
         self._request_id.as_deref()
     }
 }
+impl GetMedicalTranscriptionJobOutput {
+    /// Creates a new builder-style object to manufacture [`GetMedicalTranscriptionJobOutput`](crate::output::GetMedicalTranscriptionJobOutput).
+    pub fn builder() -> crate::output::get_medical_transcription_job_output::Builder {
+        crate::output::get_medical_transcription_job_output::Builder::default()
+    }
+}
+
 /// See [`GetMedicalTranscriptionJobOutput`](crate::output::GetMedicalTranscriptionJobOutput).
 pub mod get_medical_transcription_job_output {
 
@@ -2377,12 +2406,6 @@ pub mod get_medical_transcription_job_output {
         }
     }
 }
-impl GetMedicalTranscriptionJobOutput {
-    /// Creates a new builder-style object to manufacture [`GetMedicalTranscriptionJobOutput`](crate::output::GetMedicalTranscriptionJobOutput).
-    pub fn builder() -> crate::output::get_medical_transcription_job_output::Builder {
-        crate::output::get_medical_transcription_job_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2404,6 +2427,13 @@ impl aws_http::request_id::RequestId for GetCallAnalyticsJobOutput {
         self._request_id.as_deref()
     }
 }
+impl GetCallAnalyticsJobOutput {
+    /// Creates a new builder-style object to manufacture [`GetCallAnalyticsJobOutput`](crate::output::GetCallAnalyticsJobOutput).
+    pub fn builder() -> crate::output::get_call_analytics_job_output::Builder {
+        crate::output::get_call_analytics_job_output::Builder::default()
+    }
+}
+
 /// See [`GetCallAnalyticsJobOutput`](crate::output::GetCallAnalyticsJobOutput).
 pub mod get_call_analytics_job_output {
 
@@ -2446,12 +2476,6 @@ pub mod get_call_analytics_job_output {
         }
     }
 }
-impl GetCallAnalyticsJobOutput {
-    /// Creates a new builder-style object to manufacture [`GetCallAnalyticsJobOutput`](crate::output::GetCallAnalyticsJobOutput).
-    pub fn builder() -> crate::output::get_call_analytics_job_output::Builder {
-        crate::output::get_call_analytics_job_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2473,6 +2497,13 @@ impl aws_http::request_id::RequestId for GetCallAnalyticsCategoryOutput {
         self._request_id.as_deref()
     }
 }
+impl GetCallAnalyticsCategoryOutput {
+    /// Creates a new builder-style object to manufacture [`GetCallAnalyticsCategoryOutput`](crate::output::GetCallAnalyticsCategoryOutput).
+    pub fn builder() -> crate::output::get_call_analytics_category_output::Builder {
+        crate::output::get_call_analytics_category_output::Builder::default()
+    }
+}
+
 /// See [`GetCallAnalyticsCategoryOutput`](crate::output::GetCallAnalyticsCategoryOutput).
 pub mod get_call_analytics_category_output {
 
@@ -2515,12 +2546,6 @@ pub mod get_call_analytics_category_output {
         }
     }
 }
-impl GetCallAnalyticsCategoryOutput {
-    /// Creates a new builder-style object to manufacture [`GetCallAnalyticsCategoryOutput`](crate::output::GetCallAnalyticsCategoryOutput).
-    pub fn builder() -> crate::output::get_call_analytics_category_output::Builder {
-        crate::output::get_call_analytics_category_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2546,6 +2571,13 @@ impl aws_http::request_id::RequestId for DescribeLanguageModelOutput {
         self._request_id.as_deref()
     }
 }
+impl DescribeLanguageModelOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeLanguageModelOutput`](crate::output::DescribeLanguageModelOutput).
+    pub fn builder() -> crate::output::describe_language_model_output::Builder {
+        crate::output::describe_language_model_output::Builder::default()
+    }
+}
+
 /// See [`DescribeLanguageModelOutput`](crate::output::DescribeLanguageModelOutput).
 pub mod describe_language_model_output {
 
@@ -2592,12 +2624,6 @@ pub mod describe_language_model_output {
         }
     }
 }
-impl DescribeLanguageModelOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeLanguageModelOutput`](crate::output::DescribeLanguageModelOutput).
-    pub fn builder() -> crate::output::describe_language_model_output::Builder {
-        crate::output::describe_language_model_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2610,6 +2636,13 @@ impl aws_http::request_id::RequestId for DeleteVocabularyFilterOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteVocabularyFilterOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteVocabularyFilterOutput`](crate::output::DeleteVocabularyFilterOutput).
+    pub fn builder() -> crate::output::delete_vocabulary_filter_output::Builder {
+        crate::output::delete_vocabulary_filter_output::Builder::default()
+    }
+}
+
 /// See [`DeleteVocabularyFilterOutput`](crate::output::DeleteVocabularyFilterOutput).
 pub mod delete_vocabulary_filter_output {
 
@@ -2637,12 +2670,6 @@ pub mod delete_vocabulary_filter_output {
         }
     }
 }
-impl DeleteVocabularyFilterOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteVocabularyFilterOutput`](crate::output::DeleteVocabularyFilterOutput).
-    pub fn builder() -> crate::output::delete_vocabulary_filter_output::Builder {
-        crate::output::delete_vocabulary_filter_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2655,6 +2682,13 @@ impl aws_http::request_id::RequestId for DeleteVocabularyOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteVocabularyOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteVocabularyOutput`](crate::output::DeleteVocabularyOutput).
+    pub fn builder() -> crate::output::delete_vocabulary_output::Builder {
+        crate::output::delete_vocabulary_output::Builder::default()
+    }
+}
+
 /// See [`DeleteVocabularyOutput`](crate::output::DeleteVocabularyOutput).
 pub mod delete_vocabulary_output {
 
@@ -2682,12 +2716,6 @@ pub mod delete_vocabulary_output {
         }
     }
 }
-impl DeleteVocabularyOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteVocabularyOutput`](crate::output::DeleteVocabularyOutput).
-    pub fn builder() -> crate::output::delete_vocabulary_output::Builder {
-        crate::output::delete_vocabulary_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2700,6 +2728,13 @@ impl aws_http::request_id::RequestId for DeleteTranscriptionJobOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteTranscriptionJobOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteTranscriptionJobOutput`](crate::output::DeleteTranscriptionJobOutput).
+    pub fn builder() -> crate::output::delete_transcription_job_output::Builder {
+        crate::output::delete_transcription_job_output::Builder::default()
+    }
+}
+
 /// See [`DeleteTranscriptionJobOutput`](crate::output::DeleteTranscriptionJobOutput).
 pub mod delete_transcription_job_output {
 
@@ -2727,12 +2762,6 @@ pub mod delete_transcription_job_output {
         }
     }
 }
-impl DeleteTranscriptionJobOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteTranscriptionJobOutput`](crate::output::DeleteTranscriptionJobOutput).
-    pub fn builder() -> crate::output::delete_transcription_job_output::Builder {
-        crate::output::delete_transcription_job_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2745,6 +2774,13 @@ impl aws_http::request_id::RequestId for DeleteMedicalVocabularyOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteMedicalVocabularyOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteMedicalVocabularyOutput`](crate::output::DeleteMedicalVocabularyOutput).
+    pub fn builder() -> crate::output::delete_medical_vocabulary_output::Builder {
+        crate::output::delete_medical_vocabulary_output::Builder::default()
+    }
+}
+
 /// See [`DeleteMedicalVocabularyOutput`](crate::output::DeleteMedicalVocabularyOutput).
 pub mod delete_medical_vocabulary_output {
 
@@ -2772,12 +2808,6 @@ pub mod delete_medical_vocabulary_output {
         }
     }
 }
-impl DeleteMedicalVocabularyOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteMedicalVocabularyOutput`](crate::output::DeleteMedicalVocabularyOutput).
-    pub fn builder() -> crate::output::delete_medical_vocabulary_output::Builder {
-        crate::output::delete_medical_vocabulary_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2790,6 +2820,13 @@ impl aws_http::request_id::RequestId for DeleteMedicalTranscriptionJobOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteMedicalTranscriptionJobOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteMedicalTranscriptionJobOutput`](crate::output::DeleteMedicalTranscriptionJobOutput).
+    pub fn builder() -> crate::output::delete_medical_transcription_job_output::Builder {
+        crate::output::delete_medical_transcription_job_output::Builder::default()
+    }
+}
+
 /// See [`DeleteMedicalTranscriptionJobOutput`](crate::output::DeleteMedicalTranscriptionJobOutput).
 pub mod delete_medical_transcription_job_output {
 
@@ -2817,12 +2854,6 @@ pub mod delete_medical_transcription_job_output {
         }
     }
 }
-impl DeleteMedicalTranscriptionJobOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteMedicalTranscriptionJobOutput`](crate::output::DeleteMedicalTranscriptionJobOutput).
-    pub fn builder() -> crate::output::delete_medical_transcription_job_output::Builder {
-        crate::output::delete_medical_transcription_job_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2835,6 +2866,13 @@ impl aws_http::request_id::RequestId for DeleteLanguageModelOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteLanguageModelOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteLanguageModelOutput`](crate::output::DeleteLanguageModelOutput).
+    pub fn builder() -> crate::output::delete_language_model_output::Builder {
+        crate::output::delete_language_model_output::Builder::default()
+    }
+}
+
 /// See [`DeleteLanguageModelOutput`](crate::output::DeleteLanguageModelOutput).
 pub mod delete_language_model_output {
 
@@ -2862,12 +2900,6 @@ pub mod delete_language_model_output {
         }
     }
 }
-impl DeleteLanguageModelOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteLanguageModelOutput`](crate::output::DeleteLanguageModelOutput).
-    pub fn builder() -> crate::output::delete_language_model_output::Builder {
-        crate::output::delete_language_model_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2880,6 +2912,13 @@ impl aws_http::request_id::RequestId for DeleteCallAnalyticsJobOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteCallAnalyticsJobOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteCallAnalyticsJobOutput`](crate::output::DeleteCallAnalyticsJobOutput).
+    pub fn builder() -> crate::output::delete_call_analytics_job_output::Builder {
+        crate::output::delete_call_analytics_job_output::Builder::default()
+    }
+}
+
 /// See [`DeleteCallAnalyticsJobOutput`](crate::output::DeleteCallAnalyticsJobOutput).
 pub mod delete_call_analytics_job_output {
 
@@ -2907,12 +2946,6 @@ pub mod delete_call_analytics_job_output {
         }
     }
 }
-impl DeleteCallAnalyticsJobOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteCallAnalyticsJobOutput`](crate::output::DeleteCallAnalyticsJobOutput).
-    pub fn builder() -> crate::output::delete_call_analytics_job_output::Builder {
-        crate::output::delete_call_analytics_job_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2925,6 +2958,13 @@ impl aws_http::request_id::RequestId for DeleteCallAnalyticsCategoryOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteCallAnalyticsCategoryOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteCallAnalyticsCategoryOutput`](crate::output::DeleteCallAnalyticsCategoryOutput).
+    pub fn builder() -> crate::output::delete_call_analytics_category_output::Builder {
+        crate::output::delete_call_analytics_category_output::Builder::default()
+    }
+}
+
 /// See [`DeleteCallAnalyticsCategoryOutput`](crate::output::DeleteCallAnalyticsCategoryOutput).
 pub mod delete_call_analytics_category_output {
 
@@ -2950,12 +2990,6 @@ pub mod delete_call_analytics_category_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl DeleteCallAnalyticsCategoryOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteCallAnalyticsCategoryOutput`](crate::output::DeleteCallAnalyticsCategoryOutput).
-    pub fn builder() -> crate::output::delete_call_analytics_category_output::Builder {
-        crate::output::delete_call_analytics_category_output::Builder::default()
     }
 }
 
@@ -2995,6 +3029,13 @@ impl aws_http::request_id::RequestId for CreateVocabularyFilterOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateVocabularyFilterOutput {
+    /// Creates a new builder-style object to manufacture [`CreateVocabularyFilterOutput`](crate::output::CreateVocabularyFilterOutput).
+    pub fn builder() -> crate::output::create_vocabulary_filter_output::Builder {
+        crate::output::create_vocabulary_filter_output::Builder::default()
+    }
+}
+
 /// See [`CreateVocabularyFilterOutput`](crate::output::CreateVocabularyFilterOutput).
 pub mod create_vocabulary_filter_output {
 
@@ -3069,12 +3110,6 @@ pub mod create_vocabulary_filter_output {
         }
     }
 }
-impl CreateVocabularyFilterOutput {
-    /// Creates a new builder-style object to manufacture [`CreateVocabularyFilterOutput`](crate::output::CreateVocabularyFilterOutput).
-    pub fn builder() -> crate::output::create_vocabulary_filter_output::Builder {
-        crate::output::create_vocabulary_filter_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3126,6 +3161,13 @@ impl aws_http::request_id::RequestId for CreateVocabularyOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateVocabularyOutput {
+    /// Creates a new builder-style object to manufacture [`CreateVocabularyOutput`](crate::output::CreateVocabularyOutput).
+    pub fn builder() -> crate::output::create_vocabulary_output::Builder {
+        crate::output::create_vocabulary_output::Builder::default()
+    }
+}
+
 /// See [`CreateVocabularyOutput`](crate::output::CreateVocabularyOutput).
 pub mod create_vocabulary_output {
 
@@ -3230,12 +3272,6 @@ pub mod create_vocabulary_output {
         }
     }
 }
-impl CreateVocabularyOutput {
-    /// Creates a new builder-style object to manufacture [`CreateVocabularyOutput`](crate::output::CreateVocabularyOutput).
-    pub fn builder() -> crate::output::create_vocabulary_output::Builder {
-        crate::output::create_vocabulary_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3287,6 +3323,13 @@ impl aws_http::request_id::RequestId for CreateMedicalVocabularyOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateMedicalVocabularyOutput {
+    /// Creates a new builder-style object to manufacture [`CreateMedicalVocabularyOutput`](crate::output::CreateMedicalVocabularyOutput).
+    pub fn builder() -> crate::output::create_medical_vocabulary_output::Builder {
+        crate::output::create_medical_vocabulary_output::Builder::default()
+    }
+}
+
 /// See [`CreateMedicalVocabularyOutput`](crate::output::CreateMedicalVocabularyOutput).
 pub mod create_medical_vocabulary_output {
 
@@ -3391,12 +3434,6 @@ pub mod create_medical_vocabulary_output {
         }
     }
 }
-impl CreateMedicalVocabularyOutput {
-    /// Creates a new builder-style object to manufacture [`CreateMedicalVocabularyOutput`](crate::output::CreateMedicalVocabularyOutput).
-    pub fn builder() -> crate::output::create_medical_vocabulary_output::Builder {
-        crate::output::create_medical_vocabulary_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3446,6 +3483,13 @@ impl aws_http::request_id::RequestId for CreateLanguageModelOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateLanguageModelOutput {
+    /// Creates a new builder-style object to manufacture [`CreateLanguageModelOutput`](crate::output::CreateLanguageModelOutput).
+    pub fn builder() -> crate::output::create_language_model_output::Builder {
+        crate::output::create_language_model_output::Builder::default()
+    }
+}
+
 /// See [`CreateLanguageModelOutput`](crate::output::CreateLanguageModelOutput).
 pub mod create_language_model_output {
 
@@ -3545,12 +3589,6 @@ pub mod create_language_model_output {
         }
     }
 }
-impl CreateLanguageModelOutput {
-    /// Creates a new builder-style object to manufacture [`CreateLanguageModelOutput`](crate::output::CreateLanguageModelOutput).
-    pub fn builder() -> crate::output::create_language_model_output::Builder {
-        crate::output::create_language_model_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3572,6 +3610,13 @@ impl aws_http::request_id::RequestId for CreateCallAnalyticsCategoryOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateCallAnalyticsCategoryOutput {
+    /// Creates a new builder-style object to manufacture [`CreateCallAnalyticsCategoryOutput`](crate::output::CreateCallAnalyticsCategoryOutput).
+    pub fn builder() -> crate::output::create_call_analytics_category_output::Builder {
+        crate::output::create_call_analytics_category_output::Builder::default()
+    }
+}
+
 /// See [`CreateCallAnalyticsCategoryOutput`](crate::output::CreateCallAnalyticsCategoryOutput).
 pub mod create_call_analytics_category_output {
 
@@ -3612,11 +3657,5 @@ pub mod create_call_analytics_category_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl CreateCallAnalyticsCategoryOutput {
-    /// Creates a new builder-style object to manufacture [`CreateCallAnalyticsCategoryOutput`](crate::output::CreateCallAnalyticsCategoryOutput).
-    pub fn builder() -> crate::output::create_call_analytics_category_output::Builder {
-        crate::output::create_call_analytics_category_output::Builder::default()
     }
 }

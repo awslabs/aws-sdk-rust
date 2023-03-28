@@ -21,6 +21,13 @@ impl AutoScalingGroup {
         self.hook.as_deref()
     }
 }
+impl AutoScalingGroup {
+    /// Creates a new builder-style object to manufacture [`AutoScalingGroup`](crate::model::AutoScalingGroup).
+    pub fn builder() -> crate::model::auto_scaling_group::Builder {
+        crate::model::auto_scaling_group::Builder::default()
+    }
+}
+
 /// See [`AutoScalingGroup`](crate::model::AutoScalingGroup).
 pub mod auto_scaling_group {
 
@@ -61,12 +68,6 @@ pub mod auto_scaling_group {
         }
     }
 }
-impl AutoScalingGroup {
-    /// Creates a new builder-style object to manufacture [`AutoScalingGroup`](crate::model::AutoScalingGroup).
-    pub fn builder() -> crate::model::auto_scaling_group::Builder {
-        crate::model::auto_scaling_group::Builder::default()
-    }
-}
 
 /// <p>Information about groups of on-premises instance tags.</p>
 #[non_exhaustive]
@@ -85,6 +86,13 @@ impl OnPremisesTagSet {
         self.on_premises_tag_set_list.as_deref()
     }
 }
+impl OnPremisesTagSet {
+    /// Creates a new builder-style object to manufacture [`OnPremisesTagSet`](crate::model::OnPremisesTagSet).
+    pub fn builder() -> crate::model::on_premises_tag_set::Builder {
+        crate::model::on_premises_tag_set::Builder::default()
+    }
+}
+
 /// See [`OnPremisesTagSet`](crate::model::OnPremisesTagSet).
 pub mod on_premises_tag_set {
 
@@ -126,12 +134,6 @@ pub mod on_premises_tag_set {
         }
     }
 }
-impl OnPremisesTagSet {
-    /// Creates a new builder-style object to manufacture [`OnPremisesTagSet`](crate::model::OnPremisesTagSet).
-    pub fn builder() -> crate::model::on_premises_tag_set::Builder {
-        crate::model::on_premises_tag_set::Builder::default()
-    }
-}
 
 /// <p>Information about an on-premises instance tag filter.</p>
 #[non_exhaustive]
@@ -171,6 +173,13 @@ impl TagFilter {
         self.r#type.as_ref()
     }
 }
+impl TagFilter {
+    /// Creates a new builder-style object to manufacture [`TagFilter`](crate::model::TagFilter).
+    pub fn builder() -> crate::model::tag_filter::Builder {
+        crate::model::tag_filter::Builder::default()
+    }
+}
+
 /// See [`TagFilter`](crate::model::TagFilter).
 pub mod tag_filter {
 
@@ -231,12 +240,6 @@ pub mod tag_filter {
                 r#type: self.r#type,
             }
         }
-    }
-}
-impl TagFilter {
-    /// Creates a new builder-style object to manufacture [`TagFilter`](crate::model::TagFilter).
-    pub fn builder() -> crate::model::tag_filter::Builder {
-        crate::model::tag_filter::Builder::default()
     }
 }
 
@@ -356,6 +359,13 @@ impl EcsService {
         self.cluster_name.as_deref()
     }
 }
+impl EcsService {
+    /// Creates a new builder-style object to manufacture [`EcsService`](crate::model::EcsService).
+    pub fn builder() -> crate::model::ecs_service::Builder {
+        crate::model::ecs_service::Builder::default()
+    }
+}
+
 /// See [`EcsService`](crate::model::EcsService).
 pub mod ecs_service {
 
@@ -396,12 +406,6 @@ pub mod ecs_service {
         }
     }
 }
-impl EcsService {
-    /// Creates a new builder-style object to manufacture [`EcsService`](crate::model::EcsService).
-    pub fn builder() -> crate::model::ecs_service::Builder {
-        crate::model::ecs_service::Builder::default()
-    }
-}
 
 /// <p>Information about groups of Amazon EC2 instance tags.</p>
 #[non_exhaustive]
@@ -420,6 +424,13 @@ impl Ec2TagSet {
         self.ec2_tag_set_list.as_deref()
     }
 }
+impl Ec2TagSet {
+    /// Creates a new builder-style object to manufacture [`Ec2TagSet`](crate::model::Ec2TagSet).
+    pub fn builder() -> crate::model::ec2_tag_set::Builder {
+        crate::model::ec2_tag_set::Builder::default()
+    }
+}
+
 /// See [`Ec2TagSet`](crate::model::Ec2TagSet).
 pub mod ec2_tag_set {
 
@@ -461,12 +472,6 @@ pub mod ec2_tag_set {
         }
     }
 }
-impl Ec2TagSet {
-    /// Creates a new builder-style object to manufacture [`Ec2TagSet`](crate::model::Ec2TagSet).
-    pub fn builder() -> crate::model::ec2_tag_set::Builder {
-        crate::model::ec2_tag_set::Builder::default()
-    }
-}
 
 /// <p>Information about an EC2 tag filter.</p>
 #[non_exhaustive]
@@ -506,6 +511,13 @@ impl Ec2TagFilter {
         self.r#type.as_ref()
     }
 }
+impl Ec2TagFilter {
+    /// Creates a new builder-style object to manufacture [`Ec2TagFilter`](crate::model::Ec2TagFilter).
+    pub fn builder() -> crate::model::ec2_tag_filter::Builder {
+        crate::model::ec2_tag_filter::Builder::default()
+    }
+}
+
 /// See [`Ec2TagFilter`](crate::model::Ec2TagFilter).
 pub mod ec2_tag_filter {
 
@@ -569,12 +581,6 @@ pub mod ec2_tag_filter {
                 r#type: self.r#type,
             }
         }
-    }
-}
-impl Ec2TagFilter {
-    /// Creates a new builder-style object to manufacture [`Ec2TagFilter`](crate::model::Ec2TagFilter).
-    pub fn builder() -> crate::model::ec2_tag_filter::Builder {
-        crate::model::ec2_tag_filter::Builder::default()
     }
 }
 
@@ -712,6 +718,13 @@ impl LoadBalancerInfo {
         self.target_group_pair_info_list.as_deref()
     }
 }
+impl LoadBalancerInfo {
+    /// Creates a new builder-style object to manufacture [`LoadBalancerInfo`](crate::model::LoadBalancerInfo).
+    pub fn builder() -> crate::model::load_balancer_info::Builder {
+        crate::model::load_balancer_info::Builder::default()
+    }
+}
+
 /// See [`LoadBalancerInfo`](crate::model::LoadBalancerInfo).
 pub mod load_balancer_info {
 
@@ -804,12 +817,6 @@ pub mod load_balancer_info {
         }
     }
 }
-impl LoadBalancerInfo {
-    /// Creates a new builder-style object to manufacture [`LoadBalancerInfo`](crate::model::LoadBalancerInfo).
-    pub fn builder() -> crate::model::load_balancer_info::Builder {
-        crate::model::load_balancer_info::Builder::default()
-    }
-}
 
 /// <p> Information about two target groups and how traffic is routed during an Amazon ECS deployment. An optional test traffic route can be specified. </p>
 #[non_exhaustive]
@@ -839,6 +846,13 @@ impl TargetGroupPairInfo {
         self.test_traffic_route.as_ref()
     }
 }
+impl TargetGroupPairInfo {
+    /// Creates a new builder-style object to manufacture [`TargetGroupPairInfo`](crate::model::TargetGroupPairInfo).
+    pub fn builder() -> crate::model::target_group_pair_info::Builder {
+        crate::model::target_group_pair_info::Builder::default()
+    }
+}
+
 /// See [`TargetGroupPairInfo`](crate::model::TargetGroupPairInfo).
 pub mod target_group_pair_info {
 
@@ -906,12 +920,6 @@ pub mod target_group_pair_info {
         }
     }
 }
-impl TargetGroupPairInfo {
-    /// Creates a new builder-style object to manufacture [`TargetGroupPairInfo`](crate::model::TargetGroupPairInfo).
-    pub fn builder() -> crate::model::target_group_pair_info::Builder {
-        crate::model::target_group_pair_info::Builder::default()
-    }
-}
 
 /// <p> Information about a listener. The listener contains the path used to route traffic that is received from the load balancer to a target group. </p>
 #[non_exhaustive]
@@ -927,6 +935,13 @@ impl TrafficRoute {
         self.listener_arns.as_deref()
     }
 }
+impl TrafficRoute {
+    /// Creates a new builder-style object to manufacture [`TrafficRoute`](crate::model::TrafficRoute).
+    pub fn builder() -> crate::model::traffic_route::Builder {
+        crate::model::traffic_route::Builder::default()
+    }
+}
+
 /// See [`TrafficRoute`](crate::model::TrafficRoute).
 pub mod traffic_route {
 
@@ -964,12 +979,6 @@ pub mod traffic_route {
         }
     }
 }
-impl TrafficRoute {
-    /// Creates a new builder-style object to manufacture [`TrafficRoute`](crate::model::TrafficRoute).
-    pub fn builder() -> crate::model::traffic_route::Builder {
-        crate::model::traffic_route::Builder::default()
-    }
-}
 
 /// <p>Information about a target group in Elastic Load Balancing to use in a deployment. Instances are registered as targets in a target group, and traffic is routed to the target group.</p>
 #[non_exhaustive]
@@ -985,6 +994,13 @@ impl TargetGroupInfo {
         self.name.as_deref()
     }
 }
+impl TargetGroupInfo {
+    /// Creates a new builder-style object to manufacture [`TargetGroupInfo`](crate::model::TargetGroupInfo).
+    pub fn builder() -> crate::model::target_group_info::Builder {
+        crate::model::target_group_info::Builder::default()
+    }
+}
+
 /// See [`TargetGroupInfo`](crate::model::TargetGroupInfo).
 pub mod target_group_info {
 
@@ -1011,12 +1027,6 @@ pub mod target_group_info {
         }
     }
 }
-impl TargetGroupInfo {
-    /// Creates a new builder-style object to manufacture [`TargetGroupInfo`](crate::model::TargetGroupInfo).
-    pub fn builder() -> crate::model::target_group_info::Builder {
-        crate::model::target_group_info::Builder::default()
-    }
-}
 
 /// <p>Information about a load balancer in Elastic Load Balancing to use in a deployment. Instances are registered directly with a load balancer, and traffic is routed to the load balancer.</p>
 #[non_exhaustive]
@@ -1032,6 +1042,13 @@ impl ElbInfo {
         self.name.as_deref()
     }
 }
+impl ElbInfo {
+    /// Creates a new builder-style object to manufacture [`ElbInfo`](crate::model::ElbInfo).
+    pub fn builder() -> crate::model::elb_info::Builder {
+        crate::model::elb_info::Builder::default()
+    }
+}
+
 /// See [`ElbInfo`](crate::model::ElbInfo).
 pub mod elb_info {
 
@@ -1056,12 +1073,6 @@ pub mod elb_info {
         pub fn build(self) -> crate::model::ElbInfo {
             crate::model::ElbInfo { name: self.name }
         }
-    }
-}
-impl ElbInfo {
-    /// Creates a new builder-style object to manufacture [`ElbInfo`](crate::model::ElbInfo).
-    pub fn builder() -> crate::model::elb_info::Builder {
-        crate::model::elb_info::Builder::default()
     }
 }
 
@@ -1101,6 +1112,13 @@ impl BlueGreenDeploymentConfiguration {
         self.green_fleet_provisioning_option.as_ref()
     }
 }
+impl BlueGreenDeploymentConfiguration {
+    /// Creates a new builder-style object to manufacture [`BlueGreenDeploymentConfiguration`](crate::model::BlueGreenDeploymentConfiguration).
+    pub fn builder() -> crate::model::blue_green_deployment_configuration::Builder {
+        crate::model::blue_green_deployment_configuration::Builder::default()
+    }
+}
+
 /// See [`BlueGreenDeploymentConfiguration`](crate::model::BlueGreenDeploymentConfiguration).
 pub mod blue_green_deployment_configuration {
 
@@ -1175,12 +1193,6 @@ pub mod blue_green_deployment_configuration {
         }
     }
 }
-impl BlueGreenDeploymentConfiguration {
-    /// Creates a new builder-style object to manufacture [`BlueGreenDeploymentConfiguration`](crate::model::BlueGreenDeploymentConfiguration).
-    pub fn builder() -> crate::model::blue_green_deployment_configuration::Builder {
-        crate::model::blue_green_deployment_configuration::Builder::default()
-    }
-}
 
 /// <p>Information about the instances that belong to the replacement environment in a blue/green deployment.</p>
 #[non_exhaustive]
@@ -1204,6 +1216,13 @@ impl GreenFleetProvisioningOption {
         self.action.as_ref()
     }
 }
+impl GreenFleetProvisioningOption {
+    /// Creates a new builder-style object to manufacture [`GreenFleetProvisioningOption`](crate::model::GreenFleetProvisioningOption).
+    pub fn builder() -> crate::model::green_fleet_provisioning_option::Builder {
+        crate::model::green_fleet_provisioning_option::Builder::default()
+    }
+}
+
 /// See [`GreenFleetProvisioningOption`](crate::model::GreenFleetProvisioningOption).
 pub mod green_fleet_provisioning_option {
 
@@ -1241,12 +1260,6 @@ pub mod green_fleet_provisioning_option {
                 action: self.action,
             }
         }
-    }
-}
-impl GreenFleetProvisioningOption {
-    /// Creates a new builder-style object to manufacture [`GreenFleetProvisioningOption`](crate::model::GreenFleetProvisioningOption).
-    pub fn builder() -> crate::model::green_fleet_provisioning_option::Builder {
-        crate::model::green_fleet_provisioning_option::Builder::default()
     }
 }
 
@@ -1371,6 +1384,13 @@ impl DeploymentReadyOption {
         self.wait_time_in_minutes
     }
 }
+impl DeploymentReadyOption {
+    /// Creates a new builder-style object to manufacture [`DeploymentReadyOption`](crate::model::DeploymentReadyOption).
+    pub fn builder() -> crate::model::deployment_ready_option::Builder {
+        crate::model::deployment_ready_option::Builder::default()
+    }
+}
+
 /// See [`DeploymentReadyOption`](crate::model::DeploymentReadyOption).
 pub mod deployment_ready_option {
 
@@ -1420,12 +1440,6 @@ pub mod deployment_ready_option {
                 wait_time_in_minutes: self.wait_time_in_minutes.unwrap_or_default(),
             }
         }
-    }
-}
-impl DeploymentReadyOption {
-    /// Creates a new builder-style object to manufacture [`DeploymentReadyOption`](crate::model::DeploymentReadyOption).
-    pub fn builder() -> crate::model::deployment_ready_option::Builder {
-        crate::model::deployment_ready_option::Builder::default()
     }
 }
 
@@ -1554,6 +1568,13 @@ impl BlueInstanceTerminationOption {
         self.termination_wait_time_in_minutes
     }
 }
+impl BlueInstanceTerminationOption {
+    /// Creates a new builder-style object to manufacture [`BlueInstanceTerminationOption`](crate::model::BlueInstanceTerminationOption).
+    pub fn builder() -> crate::model::blue_instance_termination_option::Builder {
+        crate::model::blue_instance_termination_option::Builder::default()
+    }
+}
+
 /// See [`BlueInstanceTerminationOption`](crate::model::BlueInstanceTerminationOption).
 pub mod blue_instance_termination_option {
 
@@ -1612,12 +1633,6 @@ pub mod blue_instance_termination_option {
                     .unwrap_or_default(),
             }
         }
-    }
-}
-impl BlueInstanceTerminationOption {
-    /// Creates a new builder-style object to manufacture [`BlueInstanceTerminationOption`](crate::model::BlueInstanceTerminationOption).
-    pub fn builder() -> crate::model::blue_instance_termination_option::Builder {
-        crate::model::blue_instance_termination_option::Builder::default()
     }
 }
 
@@ -1732,6 +1747,13 @@ impl DeploymentStyle {
         self.deployment_option.as_ref()
     }
 }
+impl DeploymentStyle {
+    /// Creates a new builder-style object to manufacture [`DeploymentStyle`](crate::model::DeploymentStyle).
+    pub fn builder() -> crate::model::deployment_style::Builder {
+        crate::model::deployment_style::Builder::default()
+    }
+}
+
 /// See [`DeploymentStyle`](crate::model::DeploymentStyle).
 pub mod deployment_style {
 
@@ -1776,12 +1798,6 @@ pub mod deployment_style {
                 deployment_option: self.deployment_option,
             }
         }
-    }
-}
-impl DeploymentStyle {
-    /// Creates a new builder-style object to manufacture [`DeploymentStyle`](crate::model::DeploymentStyle).
-    pub fn builder() -> crate::model::deployment_style::Builder {
-        crate::model::deployment_style::Builder::default()
     }
 }
 
@@ -2078,6 +2094,13 @@ impl AutoRollbackConfiguration {
         self.events.as_deref()
     }
 }
+impl AutoRollbackConfiguration {
+    /// Creates a new builder-style object to manufacture [`AutoRollbackConfiguration`](crate::model::AutoRollbackConfiguration).
+    pub fn builder() -> crate::model::auto_rollback_configuration::Builder {
+        crate::model::auto_rollback_configuration::Builder::default()
+    }
+}
+
 /// See [`AutoRollbackConfiguration`](crate::model::AutoRollbackConfiguration).
 pub mod auto_rollback_configuration {
 
@@ -2125,12 +2148,6 @@ pub mod auto_rollback_configuration {
                 events: self.events,
             }
         }
-    }
-}
-impl AutoRollbackConfiguration {
-    /// Creates a new builder-style object to manufacture [`AutoRollbackConfiguration`](crate::model::AutoRollbackConfiguration).
-    pub fn builder() -> crate::model::auto_rollback_configuration::Builder {
-        crate::model::auto_rollback_configuration::Builder::default()
     }
 }
 
@@ -2271,6 +2288,13 @@ impl AlarmConfiguration {
         self.alarms.as_deref()
     }
 }
+impl AlarmConfiguration {
+    /// Creates a new builder-style object to manufacture [`AlarmConfiguration`](crate::model::AlarmConfiguration).
+    pub fn builder() -> crate::model::alarm_configuration::Builder {
+        crate::model::alarm_configuration::Builder::default()
+    }
+}
+
 /// See [`AlarmConfiguration`](crate::model::AlarmConfiguration).
 pub mod alarm_configuration {
 
@@ -2340,12 +2364,6 @@ pub mod alarm_configuration {
         }
     }
 }
-impl AlarmConfiguration {
-    /// Creates a new builder-style object to manufacture [`AlarmConfiguration`](crate::model::AlarmConfiguration).
-    pub fn builder() -> crate::model::alarm_configuration::Builder {
-        crate::model::alarm_configuration::Builder::default()
-    }
-}
 
 /// <p>Information about an alarm.</p>
 #[non_exhaustive]
@@ -2361,6 +2379,13 @@ impl Alarm {
         self.name.as_deref()
     }
 }
+impl Alarm {
+    /// Creates a new builder-style object to manufacture [`Alarm`](crate::model::Alarm).
+    pub fn builder() -> crate::model::alarm::Builder {
+        crate::model::alarm::Builder::default()
+    }
+}
+
 /// See [`Alarm`](crate::model::Alarm).
 pub mod alarm {
 
@@ -2385,12 +2410,6 @@ pub mod alarm {
         pub fn build(self) -> crate::model::Alarm {
             crate::model::Alarm { name: self.name }
         }
-    }
-}
-impl Alarm {
-    /// Creates a new builder-style object to manufacture [`Alarm`](crate::model::Alarm).
-    pub fn builder() -> crate::model::alarm::Builder {
-        crate::model::alarm::Builder::default()
     }
 }
 
@@ -2422,6 +2441,13 @@ impl TriggerConfig {
         self.trigger_events.as_deref()
     }
 }
+impl TriggerConfig {
+    /// Creates a new builder-style object to manufacture [`TriggerConfig`](crate::model::TriggerConfig).
+    pub fn builder() -> crate::model::trigger_config::Builder {
+        crate::model::trigger_config::Builder::default()
+    }
+}
+
 /// See [`TriggerConfig`](crate::model::TriggerConfig).
 pub mod trigger_config {
 
@@ -2485,12 +2511,6 @@ pub mod trigger_config {
                 trigger_events: self.trigger_events,
             }
         }
-    }
-}
-impl TriggerConfig {
-    /// Creates a new builder-style object to manufacture [`TriggerConfig`](crate::model::TriggerConfig).
-    pub fn builder() -> crate::model::trigger_config::Builder {
-        crate::model::trigger_config::Builder::default()
     }
 }
 
@@ -2656,6 +2676,13 @@ impl Tag {
         self.value.as_deref()
     }
 }
+impl Tag {
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
+    pub fn builder() -> crate::model::tag::Builder {
+        crate::model::tag::Builder::default()
+    }
+}
+
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
 
@@ -2694,12 +2721,6 @@ pub mod tag {
                 value: self.value,
             }
         }
-    }
-}
-impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
-    pub fn builder() -> crate::model::tag::Builder {
-        crate::model::tag::Builder::default()
     }
 }
 
@@ -2847,6 +2868,13 @@ impl RevisionLocation {
         self.app_spec_content.as_ref()
     }
 }
+impl RevisionLocation {
+    /// Creates a new builder-style object to manufacture [`RevisionLocation`](crate::model::RevisionLocation).
+    pub fn builder() -> crate::model::revision_location::Builder {
+        crate::model::revision_location::Builder::default()
+    }
+}
+
 /// See [`RevisionLocation`](crate::model::RevisionLocation).
 pub mod revision_location {
 
@@ -2947,12 +2975,6 @@ pub mod revision_location {
         }
     }
 }
-impl RevisionLocation {
-    /// Creates a new builder-style object to manufacture [`RevisionLocation`](crate::model::RevisionLocation).
-    pub fn builder() -> crate::model::revision_location::Builder {
-        crate::model::revision_location::Builder::default()
-    }
-}
 
 /// <p> A revision for an Lambda or Amazon ECS deployment that is a YAML-formatted or JSON-formatted string. For Lambda and Amazon ECS deployments, the revision is the same as the AppSpec file. This method replaces the deprecated <code>RawString</code> data type. </p>
 #[non_exhaustive]
@@ -2981,6 +3003,13 @@ impl AppSpecContent {
         self.sha256.as_deref()
     }
 }
+impl AppSpecContent {
+    /// Creates a new builder-style object to manufacture [`AppSpecContent`](crate::model::AppSpecContent).
+    pub fn builder() -> crate::model::app_spec_content::Builder {
+        crate::model::app_spec_content::Builder::default()
+    }
+}
+
 /// See [`AppSpecContent`](crate::model::AppSpecContent).
 pub mod app_spec_content {
 
@@ -3027,12 +3056,6 @@ pub mod app_spec_content {
         }
     }
 }
-impl AppSpecContent {
-    /// Creates a new builder-style object to manufacture [`AppSpecContent`](crate::model::AppSpecContent).
-    pub fn builder() -> crate::model::app_spec_content::Builder {
-        crate::model::app_spec_content::Builder::default()
-    }
-}
 
 /// <p>A revision for an Lambda deployment that is a YAML-formatted or JSON-formatted string. For Lambda deployments, the revision is the same as the AppSpec file.</p>
 #[deprecated(
@@ -3058,6 +3081,13 @@ impl RawString {
         self.sha256.as_deref()
     }
 }
+impl RawString {
+    /// Creates a new builder-style object to manufacture [`RawString`](crate::model::RawString).
+    pub fn builder() -> crate::model::raw_string::Builder {
+        crate::model::raw_string::Builder::default()
+    }
+}
+
 /// See [`RawString`](crate::model::RawString).
 pub mod raw_string {
 
@@ -3098,12 +3128,6 @@ pub mod raw_string {
         }
     }
 }
-impl RawString {
-    /// Creates a new builder-style object to manufacture [`RawString`](crate::model::RawString).
-    pub fn builder() -> crate::model::raw_string::Builder {
-        crate::model::raw_string::Builder::default()
-    }
-}
 
 /// <p>Information about the location of application artifacts stored in GitHub.</p>
 #[non_exhaustive]
@@ -3128,6 +3152,13 @@ impl GitHubLocation {
         self.commit_id.as_deref()
     }
 }
+impl GitHubLocation {
+    /// Creates a new builder-style object to manufacture [`GitHubLocation`](crate::model::GitHubLocation).
+    pub fn builder() -> crate::model::git_hub_location::Builder {
+        crate::model::git_hub_location::Builder::default()
+    }
+}
+
 /// See [`GitHubLocation`](crate::model::GitHubLocation).
 pub mod git_hub_location {
 
@@ -3168,12 +3199,6 @@ pub mod git_hub_location {
                 commit_id: self.commit_id,
             }
         }
-    }
-}
-impl GitHubLocation {
-    /// Creates a new builder-style object to manufacture [`GitHubLocation`](crate::model::GitHubLocation).
-    pub fn builder() -> crate::model::git_hub_location::Builder {
-        crate::model::git_hub_location::Builder::default()
     }
 }
 
@@ -3233,6 +3258,13 @@ impl S3Location {
         self.e_tag.as_deref()
     }
 }
+impl S3Location {
+    /// Creates a new builder-style object to manufacture [`S3Location`](crate::model::S3Location).
+    pub fn builder() -> crate::model::s3_location::Builder {
+        crate::model::s3_location::Builder::default()
+    }
+}
+
 /// See [`S3Location`](crate::model::S3Location).
 pub mod s3_location {
 
@@ -3324,12 +3356,6 @@ pub mod s3_location {
                 e_tag: self.e_tag,
             }
         }
-    }
-}
-impl S3Location {
-    /// Creates a new builder-style object to manufacture [`S3Location`](crate::model::S3Location).
-    pub fn builder() -> crate::model::s3_location::Builder {
-        crate::model::s3_location::Builder::default()
     }
 }
 
@@ -3870,6 +3896,13 @@ impl TimeRange {
         self.end.as_ref()
     }
 }
+impl TimeRange {
+    /// Creates a new builder-style object to manufacture [`TimeRange`](crate::model::TimeRange).
+    pub fn builder() -> crate::model::time_range::Builder {
+        crate::model::time_range::Builder::default()
+    }
+}
+
 /// See [`TimeRange`](crate::model::TimeRange).
 pub mod time_range {
 
@@ -3916,12 +3949,6 @@ pub mod time_range {
                 end: self.end,
             }
         }
-    }
-}
-impl TimeRange {
-    /// Creates a new builder-style object to manufacture [`TimeRange`](crate::model::TimeRange).
-    pub fn builder() -> crate::model::time_range::Builder {
-        crate::model::time_range::Builder::default()
     }
 }
 
@@ -4608,6 +4635,13 @@ impl InstanceInfo {
         self.tags.as_deref()
     }
 }
+impl InstanceInfo {
+    /// Creates a new builder-style object to manufacture [`InstanceInfo`](crate::model::InstanceInfo).
+    pub fn builder() -> crate::model::instance_info::Builder {
+        crate::model::instance_info::Builder::default()
+    }
+}
+
 /// See [`InstanceInfo`](crate::model::InstanceInfo).
 pub mod instance_info {
 
@@ -4729,12 +4763,6 @@ pub mod instance_info {
         }
     }
 }
-impl InstanceInfo {
-    /// Creates a new builder-style object to manufacture [`InstanceInfo`](crate::model::InstanceInfo).
-    pub fn builder() -> crate::model::instance_info::Builder {
-        crate::model::instance_info::Builder::default()
-    }
-}
 
 /// <p> Information about the deployment target. </p>
 #[non_exhaustive]
@@ -4782,6 +4810,13 @@ impl DeploymentTarget {
         self.cloud_formation_target.as_ref()
     }
 }
+impl DeploymentTarget {
+    /// Creates a new builder-style object to manufacture [`DeploymentTarget`](crate::model::DeploymentTarget).
+    pub fn builder() -> crate::model::deployment_target::Builder {
+        crate::model::deployment_target::Builder::default()
+    }
+}
+
 /// See [`DeploymentTarget`](crate::model::DeploymentTarget).
 pub mod deployment_target {
 
@@ -4873,12 +4908,6 @@ pub mod deployment_target {
         }
     }
 }
-impl DeploymentTarget {
-    /// Creates a new builder-style object to manufacture [`DeploymentTarget`](crate::model::DeploymentTarget).
-    pub fn builder() -> crate::model::deployment_target::Builder {
-        crate::model::deployment_target::Builder::default()
-    }
-}
 
 /// <p> Information about the target to be updated by an CloudFormation blue/green deployment. This target type is used for all deployments initiated by a CloudFormation stack update.</p>
 #[non_exhaustive]
@@ -4936,6 +4965,13 @@ impl CloudFormationTarget {
         self.target_version_weight
     }
 }
+impl CloudFormationTarget {
+    /// Creates a new builder-style object to manufacture [`CloudFormationTarget`](crate::model::CloudFormationTarget).
+    pub fn builder() -> crate::model::cloud_formation_target::Builder {
+        crate::model::cloud_formation_target::Builder::default()
+    }
+}
+
 /// See [`CloudFormationTarget`](crate::model::CloudFormationTarget).
 pub mod cloud_formation_target {
 
@@ -5056,12 +5092,6 @@ pub mod cloud_formation_target {
                 target_version_weight: self.target_version_weight.unwrap_or_default(),
             }
         }
-    }
-}
-impl CloudFormationTarget {
-    /// Creates a new builder-style object to manufacture [`CloudFormationTarget`](crate::model::CloudFormationTarget).
-    pub fn builder() -> crate::model::cloud_formation_target::Builder {
-        crate::model::cloud_formation_target::Builder::default()
     }
 }
 
@@ -5246,6 +5276,13 @@ impl LifecycleEvent {
         self.status.as_ref()
     }
 }
+impl LifecycleEvent {
+    /// Creates a new builder-style object to manufacture [`LifecycleEvent`](crate::model::LifecycleEvent).
+    pub fn builder() -> crate::model::lifecycle_event::Builder {
+        crate::model::lifecycle_event::Builder::default()
+    }
+}
+
 /// See [`LifecycleEvent`](crate::model::LifecycleEvent).
 pub mod lifecycle_event {
 
@@ -5353,12 +5390,6 @@ pub mod lifecycle_event {
         }
     }
 }
-impl LifecycleEvent {
-    /// Creates a new builder-style object to manufacture [`LifecycleEvent`](crate::model::LifecycleEvent).
-    pub fn builder() -> crate::model::lifecycle_event::Builder {
-        crate::model::lifecycle_event::Builder::default()
-    }
-}
 
 /// <p>Diagnostic information about executable scripts that are part of a deployment.</p>
 #[non_exhaustive]
@@ -5413,6 +5444,13 @@ impl Diagnostics {
         self.log_tail.as_deref()
     }
 }
+impl Diagnostics {
+    /// Creates a new builder-style object to manufacture [`Diagnostics`](crate::model::Diagnostics).
+    pub fn builder() -> crate::model::diagnostics::Builder {
+        crate::model::diagnostics::Builder::default()
+    }
+}
+
 /// See [`Diagnostics`](crate::model::Diagnostics).
 pub mod diagnostics {
 
@@ -5496,12 +5534,6 @@ pub mod diagnostics {
                 log_tail: self.log_tail,
             }
         }
-    }
-}
-impl Diagnostics {
-    /// Creates a new builder-style object to manufacture [`Diagnostics`](crate::model::Diagnostics).
-    pub fn builder() -> crate::model::diagnostics::Builder {
-        crate::model::diagnostics::Builder::default()
     }
 }
 
@@ -5680,6 +5712,13 @@ impl EcsTarget {
         self.task_sets_info.as_deref()
     }
 }
+impl EcsTarget {
+    /// Creates a new builder-style object to manufacture [`EcsTarget`](crate::model::EcsTarget).
+    pub fn builder() -> crate::model::ecs_target::Builder {
+        crate::model::ecs_target::Builder::default()
+    }
+}
+
 /// See [`EcsTarget`](crate::model::EcsTarget).
 pub mod ecs_target {
 
@@ -5808,12 +5847,6 @@ pub mod ecs_target {
         }
     }
 }
-impl EcsTarget {
-    /// Creates a new builder-style object to manufacture [`EcsTarget`](crate::model::EcsTarget).
-    pub fn builder() -> crate::model::ecs_target::Builder {
-        crate::model::ecs_target::Builder::default()
-    }
-}
 
 /// <p> Information about a set of Amazon ECS tasks in an CodeDeploy deployment. An Amazon ECS task set includes details such as the desired number of tasks, how many tasks are running, and whether the task set serves production traffic. An CodeDeploy application that uses the Amazon ECS compute platform deploys a containerized application in an Amazon ECS service as a task set. </p>
 #[non_exhaustive]
@@ -5888,6 +5921,13 @@ impl EcsTaskSet {
         self.task_set_label.as_ref()
     }
 }
+impl EcsTaskSet {
+    /// Creates a new builder-style object to manufacture [`EcsTaskSet`](crate::model::EcsTaskSet).
+    pub fn builder() -> crate::model::ecs_task_set::Builder {
+        crate::model::ecs_task_set::Builder::default()
+    }
+}
+
 /// See [`EcsTaskSet`](crate::model::EcsTaskSet).
 pub mod ecs_task_set {
 
@@ -6014,12 +6054,6 @@ pub mod ecs_task_set {
                 task_set_label: self.task_set_label,
             }
         }
-    }
-}
-impl EcsTaskSet {
-    /// Creates a new builder-style object to manufacture [`EcsTaskSet`](crate::model::EcsTaskSet).
-    pub fn builder() -> crate::model::ecs_task_set::Builder {
-        crate::model::ecs_task_set::Builder::default()
     }
 }
 
@@ -6169,6 +6203,13 @@ impl LambdaTarget {
         self.lambda_function_info.as_ref()
     }
 }
+impl LambdaTarget {
+    /// Creates a new builder-style object to manufacture [`LambdaTarget`](crate::model::LambdaTarget).
+    pub fn builder() -> crate::model::lambda_target::Builder {
+        crate::model::lambda_target::Builder::default()
+    }
+}
+
 /// See [`LambdaTarget`](crate::model::LambdaTarget).
 pub mod lambda_target {
 
@@ -6291,12 +6332,6 @@ pub mod lambda_target {
         }
     }
 }
-impl LambdaTarget {
-    /// Creates a new builder-style object to manufacture [`LambdaTarget`](crate::model::LambdaTarget).
-    pub fn builder() -> crate::model::lambda_target::Builder {
-        crate::model::lambda_target::Builder::default()
-    }
-}
 
 /// <p> Information about a Lambda function specified in a deployment. </p>
 #[non_exhaustive]
@@ -6340,6 +6375,13 @@ impl LambdaFunctionInfo {
         self.target_version_weight
     }
 }
+impl LambdaFunctionInfo {
+    /// Creates a new builder-style object to manufacture [`LambdaFunctionInfo`](crate::model::LambdaFunctionInfo).
+    pub fn builder() -> crate::model::lambda_function_info::Builder {
+        crate::model::lambda_function_info::Builder::default()
+    }
+}
+
 /// See [`LambdaFunctionInfo`](crate::model::LambdaFunctionInfo).
 pub mod lambda_function_info {
 
@@ -6428,12 +6470,6 @@ pub mod lambda_function_info {
         }
     }
 }
-impl LambdaFunctionInfo {
-    /// Creates a new builder-style object to manufacture [`LambdaFunctionInfo`](crate::model::LambdaFunctionInfo).
-    pub fn builder() -> crate::model::lambda_function_info::Builder {
-        crate::model::lambda_function_info::Builder::default()
-    }
-}
 
 /// <p> A target Amazon EC2 or on-premises instance during a deployment that uses the EC2/On-premises compute platform. </p>
 #[non_exhaustive]
@@ -6491,6 +6527,13 @@ impl InstanceTarget {
         self.instance_label.as_ref()
     }
 }
+impl InstanceTarget {
+    /// Creates a new builder-style object to manufacture [`InstanceTarget`](crate::model::InstanceTarget).
+    pub fn builder() -> crate::model::instance_target::Builder {
+        crate::model::instance_target::Builder::default()
+    }
+}
+
 /// See [`InstanceTarget`](crate::model::InstanceTarget).
 pub mod instance_target {
 
@@ -6611,12 +6654,6 @@ pub mod instance_target {
                 instance_label: self.instance_label,
             }
         }
-    }
-}
-impl InstanceTarget {
-    /// Creates a new builder-style object to manufacture [`InstanceTarget`](crate::model::InstanceTarget).
-    pub fn builder() -> crate::model::instance_target::Builder {
-        crate::model::instance_target::Builder::default()
     }
 }
 
@@ -6801,6 +6838,13 @@ impl InstanceSummary {
         self.instance_type.as_ref()
     }
 }
+impl InstanceSummary {
+    /// Creates a new builder-style object to manufacture [`InstanceSummary`](crate::model::InstanceSummary).
+    pub fn builder() -> crate::model::instance_summary::Builder {
+        crate::model::instance_summary::Builder::default()
+    }
+}
+
 /// See [`InstanceSummary`](crate::model::InstanceSummary).
 pub mod instance_summary {
 
@@ -6933,12 +6977,6 @@ pub mod instance_summary {
                 instance_type: self.instance_type,
             }
         }
-    }
-}
-impl InstanceSummary {
-    /// Creates a new builder-style object to manufacture [`InstanceSummary`](crate::model::InstanceSummary).
-    pub fn builder() -> crate::model::instance_summary::Builder {
-        crate::model::instance_summary::Builder::default()
     }
 }
 
@@ -7129,6 +7167,13 @@ impl DeploymentGroupInfo {
         self.ecs_services.as_deref()
     }
 }
+impl DeploymentGroupInfo {
+    /// Creates a new builder-style object to manufacture [`DeploymentGroupInfo`](crate::model::DeploymentGroupInfo).
+    pub fn builder() -> crate::model::deployment_group_info::Builder {
+        crate::model::deployment_group_info::Builder::default()
+    }
+}
+
 /// See [`DeploymentGroupInfo`](crate::model::DeploymentGroupInfo).
 pub mod deployment_group_info {
 
@@ -7539,12 +7584,6 @@ pub mod deployment_group_info {
         }
     }
 }
-impl DeploymentGroupInfo {
-    /// Creates a new builder-style object to manufacture [`DeploymentGroupInfo`](crate::model::DeploymentGroupInfo).
-    pub fn builder() -> crate::model::deployment_group_info::Builder {
-        crate::model::deployment_group_info::Builder::default()
-    }
-}
 
 /// When writing a match expression against `ComputePlatform`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -7676,6 +7715,13 @@ impl LastDeploymentInfo {
         self.create_time.as_ref()
     }
 }
+impl LastDeploymentInfo {
+    /// Creates a new builder-style object to manufacture [`LastDeploymentInfo`](crate::model::LastDeploymentInfo).
+    pub fn builder() -> crate::model::last_deployment_info::Builder {
+        crate::model::last_deployment_info::Builder::default()
+    }
+}
+
 /// See [`LastDeploymentInfo`](crate::model::LastDeploymentInfo).
 pub mod last_deployment_info {
 
@@ -7752,12 +7798,6 @@ pub mod last_deployment_info {
         }
     }
 }
-impl LastDeploymentInfo {
-    /// Creates a new builder-style object to manufacture [`LastDeploymentInfo`](crate::model::LastDeploymentInfo).
-    pub fn builder() -> crate::model::last_deployment_info::Builder {
-        crate::model::last_deployment_info::Builder::default()
-    }
-}
 
 /// <p>Information about a deployment configuration.</p>
 #[non_exhaustive]
@@ -7810,6 +7850,13 @@ impl DeploymentConfigInfo {
         self.traffic_routing_config.as_ref()
     }
 }
+impl DeploymentConfigInfo {
+    /// Creates a new builder-style object to manufacture [`DeploymentConfigInfo`](crate::model::DeploymentConfigInfo).
+    pub fn builder() -> crate::model::deployment_config_info::Builder {
+        crate::model::deployment_config_info::Builder::default()
+    }
+}
+
 /// See [`DeploymentConfigInfo`](crate::model::DeploymentConfigInfo).
 pub mod deployment_config_info {
 
@@ -7916,12 +7963,6 @@ pub mod deployment_config_info {
         }
     }
 }
-impl DeploymentConfigInfo {
-    /// Creates a new builder-style object to manufacture [`DeploymentConfigInfo`](crate::model::DeploymentConfigInfo).
-    pub fn builder() -> crate::model::deployment_config_info::Builder {
-        crate::model::deployment_config_info::Builder::default()
-    }
-}
 
 /// <p>The configuration that specifies how traffic is shifted from one version of a Lambda function to another version during an Lambda deployment, or from one Amazon ECS task set to another during an Amazon ECS deployment.</p>
 #[non_exhaustive]
@@ -7951,6 +7992,13 @@ impl TrafficRoutingConfig {
         self.time_based_linear.as_ref()
     }
 }
+impl TrafficRoutingConfig {
+    /// Creates a new builder-style object to manufacture [`TrafficRoutingConfig`](crate::model::TrafficRoutingConfig).
+    pub fn builder() -> crate::model::traffic_routing_config::Builder {
+        crate::model::traffic_routing_config::Builder::default()
+    }
+}
+
 /// See [`TrafficRoutingConfig`](crate::model::TrafficRoutingConfig).
 pub mod traffic_routing_config {
 
@@ -8012,12 +8060,6 @@ pub mod traffic_routing_config {
         }
     }
 }
-impl TrafficRoutingConfig {
-    /// Creates a new builder-style object to manufacture [`TrafficRoutingConfig`](crate::model::TrafficRoutingConfig).
-    pub fn builder() -> crate::model::traffic_routing_config::Builder {
-        crate::model::traffic_routing_config::Builder::default()
-    }
-}
 
 /// <p>A configuration that shifts traffic from one version of a Lambda function or ECS task set to another in equal increments, with an equal number of minutes between each increment. The original and target Lambda function versions or ECS task sets are specified in the deployment's AppSpec file.</p>
 #[non_exhaustive]
@@ -8040,6 +8082,13 @@ impl TimeBasedLinear {
         self.linear_interval
     }
 }
+impl TimeBasedLinear {
+    /// Creates a new builder-style object to manufacture [`TimeBasedLinear`](crate::model::TimeBasedLinear).
+    pub fn builder() -> crate::model::time_based_linear::Builder {
+        crate::model::time_based_linear::Builder::default()
+    }
+}
+
 /// See [`TimeBasedLinear`](crate::model::TimeBasedLinear).
 pub mod time_based_linear {
 
@@ -8080,12 +8129,6 @@ pub mod time_based_linear {
         }
     }
 }
-impl TimeBasedLinear {
-    /// Creates a new builder-style object to manufacture [`TimeBasedLinear`](crate::model::TimeBasedLinear).
-    pub fn builder() -> crate::model::time_based_linear::Builder {
-        crate::model::time_based_linear::Builder::default()
-    }
-}
 
 /// <p>A configuration that shifts traffic from one version of a Lambda function or Amazon ECS task set to another in two increments. The original and target Lambda function versions or ECS task sets are specified in the deployment's AppSpec file.</p>
 #[non_exhaustive]
@@ -8108,6 +8151,13 @@ impl TimeBasedCanary {
         self.canary_interval
     }
 }
+impl TimeBasedCanary {
+    /// Creates a new builder-style object to manufacture [`TimeBasedCanary`](crate::model::TimeBasedCanary).
+    pub fn builder() -> crate::model::time_based_canary::Builder {
+        crate::model::time_based_canary::Builder::default()
+    }
+}
+
 /// See [`TimeBasedCanary`](crate::model::TimeBasedCanary).
 pub mod time_based_canary {
 
@@ -8146,12 +8196,6 @@ pub mod time_based_canary {
                 canary_interval: self.canary_interval.unwrap_or_default(),
             }
         }
-    }
-}
-impl TimeBasedCanary {
-    /// Creates a new builder-style object to manufacture [`TimeBasedCanary`](crate::model::TimeBasedCanary).
-    pub fn builder() -> crate::model::time_based_canary::Builder {
-        crate::model::time_based_canary::Builder::default()
     }
 }
 
@@ -8289,6 +8333,13 @@ impl MinimumHealthyHosts {
         self.value
     }
 }
+impl MinimumHealthyHosts {
+    /// Creates a new builder-style object to manufacture [`MinimumHealthyHosts`](crate::model::MinimumHealthyHosts).
+    pub fn builder() -> crate::model::minimum_healthy_hosts::Builder {
+        crate::model::minimum_healthy_hosts::Builder::default()
+    }
+}
+
 /// See [`MinimumHealthyHosts`](crate::model::MinimumHealthyHosts).
 pub mod minimum_healthy_hosts {
 
@@ -8346,12 +8397,6 @@ pub mod minimum_healthy_hosts {
                 value: self.value.unwrap_or_default(),
             }
         }
-    }
-}
-impl MinimumHealthyHosts {
-    /// Creates a new builder-style object to manufacture [`MinimumHealthyHosts`](crate::model::MinimumHealthyHosts).
-    pub fn builder() -> crate::model::minimum_healthy_hosts::Builder {
-        crate::model::minimum_healthy_hosts::Builder::default()
     }
 }
 
@@ -8701,6 +8746,13 @@ impl DeploymentInfo {
         self.override_alarm_configuration.as_ref()
     }
 }
+impl DeploymentInfo {
+    /// Creates a new builder-style object to manufacture [`DeploymentInfo`](crate::model::DeploymentInfo).
+    pub fn builder() -> crate::model::deployment_info::Builder {
+        crate::model::deployment_info::Builder::default()
+    }
+}
+
 /// See [`DeploymentInfo`](crate::model::DeploymentInfo).
 pub mod deployment_info {
 
@@ -9219,12 +9271,6 @@ pub mod deployment_info {
         }
     }
 }
-impl DeploymentInfo {
-    /// Creates a new builder-style object to manufacture [`DeploymentInfo`](crate::model::DeploymentInfo).
-    pub fn builder() -> crate::model::deployment_info::Builder {
-        crate::model::deployment_info::Builder::default()
-    }
-}
 
 /// <p>Information about deployments related to the specified deployment.</p>
 #[non_exhaustive]
@@ -9252,6 +9298,13 @@ impl RelatedDeployments {
             .as_deref()
     }
 }
+impl RelatedDeployments {
+    /// Creates a new builder-style object to manufacture [`RelatedDeployments`](crate::model::RelatedDeployments).
+    pub fn builder() -> crate::model::related_deployments::Builder {
+        crate::model::related_deployments::Builder::default()
+    }
+}
+
 /// See [`RelatedDeployments`](crate::model::RelatedDeployments).
 pub mod related_deployments {
 
@@ -9314,12 +9367,6 @@ pub mod related_deployments {
                     .auto_update_outdated_instances_deployment_ids,
             }
         }
-    }
-}
-impl RelatedDeployments {
-    /// Creates a new builder-style object to manufacture [`RelatedDeployments`](crate::model::RelatedDeployments).
-    pub fn builder() -> crate::model::related_deployments::Builder {
-        crate::model::related_deployments::Builder::default()
     }
 }
 
@@ -9448,6 +9495,13 @@ impl TargetInstances {
         self.ec2_tag_set.as_ref()
     }
 }
+impl TargetInstances {
+    /// Creates a new builder-style object to manufacture [`TargetInstances`](crate::model::TargetInstances).
+    pub fn builder() -> crate::model::target_instances::Builder {
+        crate::model::target_instances::Builder::default()
+    }
+}
+
 /// See [`TargetInstances`](crate::model::TargetInstances).
 pub mod target_instances {
 
@@ -9521,12 +9575,6 @@ pub mod target_instances {
         }
     }
 }
-impl TargetInstances {
-    /// Creates a new builder-style object to manufacture [`TargetInstances`](crate::model::TargetInstances).
-    pub fn builder() -> crate::model::target_instances::Builder {
-        crate::model::target_instances::Builder::default()
-    }
-}
 
 /// <p>Information about a deployment rollback.</p>
 #[non_exhaustive]
@@ -9556,6 +9604,13 @@ impl RollbackInfo {
         self.rollback_message.as_deref()
     }
 }
+impl RollbackInfo {
+    /// Creates a new builder-style object to manufacture [`RollbackInfo`](crate::model::RollbackInfo).
+    pub fn builder() -> crate::model::rollback_info::Builder {
+        crate::model::rollback_info::Builder::default()
+    }
+}
+
 /// See [`RollbackInfo`](crate::model::RollbackInfo).
 pub mod rollback_info {
 
@@ -9618,12 +9673,6 @@ pub mod rollback_info {
                 rollback_message: self.rollback_message,
             }
         }
-    }
-}
-impl RollbackInfo {
-    /// Creates a new builder-style object to manufacture [`RollbackInfo`](crate::model::RollbackInfo).
-    pub fn builder() -> crate::model::rollback_info::Builder {
-        crate::model::rollback_info::Builder::default()
     }
 }
 
@@ -9801,6 +9850,13 @@ impl DeploymentOverview {
         self.ready
     }
 }
+impl DeploymentOverview {
+    /// Creates a new builder-style object to manufacture [`DeploymentOverview`](crate::model::DeploymentOverview).
+    pub fn builder() -> crate::model::deployment_overview::Builder {
+        crate::model::deployment_overview::Builder::default()
+    }
+}
+
 /// See [`DeploymentOverview`](crate::model::DeploymentOverview).
 pub mod deployment_overview {
 
@@ -9889,12 +9945,6 @@ pub mod deployment_overview {
         }
     }
 }
-impl DeploymentOverview {
-    /// Creates a new builder-style object to manufacture [`DeploymentOverview`](crate::model::DeploymentOverview).
-    pub fn builder() -> crate::model::deployment_overview::Builder {
-        crate::model::deployment_overview::Builder::default()
-    }
-}
 
 /// <p>Information about a deployment error.</p>
 #[non_exhaustive]
@@ -9949,6 +9999,13 @@ impl ErrorInformation {
         self.message.as_deref()
     }
 }
+impl ErrorInformation {
+    /// Creates a new builder-style object to manufacture [`ErrorInformation`](crate::model::ErrorInformation).
+    pub fn builder() -> crate::model::error_information::Builder {
+        crate::model::error_information::Builder::default()
+    }
+}
+
 /// See [`ErrorInformation`](crate::model::ErrorInformation).
 pub mod error_information {
 
@@ -10019,12 +10076,6 @@ pub mod error_information {
                 message: self.message,
             }
         }
-    }
-}
-impl ErrorInformation {
-    /// Creates a new builder-style object to manufacture [`ErrorInformation`](crate::model::ErrorInformation).
-    pub fn builder() -> crate::model::error_information::Builder {
-        crate::model::error_information::Builder::default()
     }
 }
 
@@ -10359,6 +10410,13 @@ impl GenericRevisionInfo {
         self.register_time.as_ref()
     }
 }
+impl GenericRevisionInfo {
+    /// Creates a new builder-style object to manufacture [`GenericRevisionInfo`](crate::model::GenericRevisionInfo).
+    pub fn builder() -> crate::model::generic_revision_info::Builder {
+        crate::model::generic_revision_info::Builder::default()
+    }
+}
+
 /// See [`GenericRevisionInfo`](crate::model::GenericRevisionInfo).
 pub mod generic_revision_info {
 
@@ -10453,12 +10511,6 @@ pub mod generic_revision_info {
         }
     }
 }
-impl GenericRevisionInfo {
-    /// Creates a new builder-style object to manufacture [`GenericRevisionInfo`](crate::model::GenericRevisionInfo).
-    pub fn builder() -> crate::model::generic_revision_info::Builder {
-        crate::model::generic_revision_info::Builder::default()
-    }
-}
 
 /// <p>Information about an application.</p>
 #[non_exhaustive]
@@ -10509,6 +10561,13 @@ impl ApplicationInfo {
         self.compute_platform.as_ref()
     }
 }
+impl ApplicationInfo {
+    /// Creates a new builder-style object to manufacture [`ApplicationInfo`](crate::model::ApplicationInfo).
+    pub fn builder() -> crate::model::application_info::Builder {
+        crate::model::application_info::Builder::default()
+    }
+}
+
 /// See [`ApplicationInfo`](crate::model::ApplicationInfo).
 pub mod application_info {
 
@@ -10610,12 +10669,6 @@ pub mod application_info {
                 compute_platform: self.compute_platform,
             }
         }
-    }
-}
-impl ApplicationInfo {
-    /// Creates a new builder-style object to manufacture [`ApplicationInfo`](crate::model::ApplicationInfo).
-    pub fn builder() -> crate::model::application_info::Builder {
-        crate::model::application_info::Builder::default()
     }
 }
 
@@ -10732,6 +10785,13 @@ impl RevisionInfo {
         self.generic_revision_info.as_ref()
     }
 }
+impl RevisionInfo {
+    /// Creates a new builder-style object to manufacture [`RevisionInfo`](crate::model::RevisionInfo).
+    pub fn builder() -> crate::model::revision_info::Builder {
+        crate::model::revision_info::Builder::default()
+    }
+}
+
 /// See [`RevisionInfo`](crate::model::RevisionInfo).
 pub mod revision_info {
 
@@ -10776,11 +10836,5 @@ pub mod revision_info {
                 generic_revision_info: self.generic_revision_info,
             }
         }
-    }
-}
-impl RevisionInfo {
-    /// Creates a new builder-style object to manufacture [`RevisionInfo`](crate::model::RevisionInfo).
-    pub fn builder() -> crate::model::revision_info::Builder {
-        crate::model::revision_info::Builder::default()
     }
 }

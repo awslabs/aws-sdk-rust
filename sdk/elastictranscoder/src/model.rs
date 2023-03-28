@@ -200,6 +200,13 @@ impl Pipeline {
         self.thumbnail_config.as_ref()
     }
 }
+impl Pipeline {
+    /// Creates a new builder-style object to manufacture [`Pipeline`](crate::model::Pipeline).
+    pub fn builder() -> crate::model::pipeline::Builder {
+        crate::model::pipeline::Builder::default()
+    }
+}
+
 /// See [`Pipeline`](crate::model::Pipeline).
 pub mod pipeline {
 
@@ -479,12 +486,6 @@ pub mod pipeline {
         }
     }
 }
-impl Pipeline {
-    /// Creates a new builder-style object to manufacture [`Pipeline`](crate::model::Pipeline).
-    pub fn builder() -> crate::model::pipeline::Builder {
-        crate::model::pipeline::Builder::default()
-    }
-}
 
 /// <p>The <code>PipelineOutputConfig</code> structure.</p>
 #[non_exhaustive]
@@ -532,6 +533,13 @@ impl PipelineOutputConfig {
         self.permissions.as_deref()
     }
 }
+impl PipelineOutputConfig {
+    /// Creates a new builder-style object to manufacture [`PipelineOutputConfig`](crate::model::PipelineOutputConfig).
+    pub fn builder() -> crate::model::pipeline_output_config::Builder {
+        crate::model::pipeline_output_config::Builder::default()
+    }
+}
+
 /// See [`PipelineOutputConfig`](crate::model::PipelineOutputConfig).
 pub mod pipeline_output_config {
 
@@ -614,12 +622,6 @@ pub mod pipeline_output_config {
         }
     }
 }
-impl PipelineOutputConfig {
-    /// Creates a new builder-style object to manufacture [`PipelineOutputConfig`](crate::model::PipelineOutputConfig).
-    pub fn builder() -> crate::model::pipeline_output_config::Builder {
-        crate::model::pipeline_output_config::Builder::default()
-    }
-}
 
 /// <p>The <code>Permission</code> structure.</p>
 #[non_exhaustive]
@@ -675,6 +677,13 @@ impl Permission {
         self.access.as_deref()
     }
 }
+impl Permission {
+    /// Creates a new builder-style object to manufacture [`Permission`](crate::model::Permission).
+    pub fn builder() -> crate::model::permission::Builder {
+        crate::model::permission::Builder::default()
+    }
+}
+
 /// See [`Permission`](crate::model::Permission).
 pub mod permission {
 
@@ -762,12 +771,6 @@ pub mod permission {
         }
     }
 }
-impl Permission {
-    /// Creates a new builder-style object to manufacture [`Permission`](crate::model::Permission).
-    pub fn builder() -> crate::model::permission::Builder {
-        crate::model::permission::Builder::default()
-    }
-}
 
 /// <p>The Amazon Simple Notification Service (Amazon SNS) topic or topics to notify in order to report job status.</p> <important>
 /// <p>To receive notifications, you must also subscribe to the new topic in the Amazon SNS console.</p>
@@ -806,6 +809,13 @@ impl Notifications {
         self.error.as_deref()
     }
 }
+impl Notifications {
+    /// Creates a new builder-style object to manufacture [`Notifications`](crate::model::Notifications).
+    pub fn builder() -> crate::model::notifications::Builder {
+        crate::model::notifications::Builder::default()
+    }
+}
+
 /// See [`Notifications`](crate::model::Notifications).
 pub mod notifications {
 
@@ -870,12 +880,6 @@ pub mod notifications {
         }
     }
 }
-impl Notifications {
-    /// Creates a new builder-style object to manufacture [`Notifications`](crate::model::Notifications).
-    pub fn builder() -> crate::model::notifications::Builder {
-        crate::model::notifications::Builder::default()
-    }
-}
 
 /// <p>Elastic Transcoder returns a warning if the resources used by your pipeline are not in the same region as the pipeline.</p>
 /// <p>Using resources in the same region, such as your Amazon S3 buckets, Amazon SNS notification topics, and AWS KMS key, reduces processing time and prevents cross-regional charges.</p>
@@ -903,6 +907,13 @@ impl Warning {
         self.message.as_deref()
     }
 }
+impl Warning {
+    /// Creates a new builder-style object to manufacture [`Warning`](crate::model::Warning).
+    pub fn builder() -> crate::model::warning::Builder {
+        crate::model::warning::Builder::default()
+    }
+}
+
 /// See [`Warning`](crate::model::Warning).
 pub mod warning {
 
@@ -945,12 +956,6 @@ pub mod warning {
                 message: self.message,
             }
         }
-    }
-}
-impl Warning {
-    /// Creates a new builder-style object to manufacture [`Warning`](crate::model::Warning).
-    pub fn builder() -> crate::model::warning::Builder {
-        crate::model::warning::Builder::default()
     }
 }
 
@@ -1024,6 +1029,13 @@ impl Preset {
         self.r#type.as_deref()
     }
 }
+impl Preset {
+    /// Creates a new builder-style object to manufacture [`Preset`](crate::model::Preset).
+    pub fn builder() -> crate::model::preset::Builder {
+        crate::model::preset::Builder::default()
+    }
+}
+
 /// See [`Preset`](crate::model::Preset).
 pub mod preset {
 
@@ -1157,12 +1169,6 @@ pub mod preset {
         }
     }
 }
-impl Preset {
-    /// Creates a new builder-style object to manufacture [`Preset`](crate::model::Preset).
-    pub fn builder() -> crate::model::preset::Builder {
-        crate::model::preset::Builder::default()
-    }
-}
 
 /// <p>Thumbnails for videos.</p>
 #[non_exhaustive]
@@ -1261,6 +1267,13 @@ impl Thumbnails {
         self.padding_policy.as_deref()
     }
 }
+impl Thumbnails {
+    /// Creates a new builder-style object to manufacture [`Thumbnails`](crate::model::Thumbnails).
+    pub fn builder() -> crate::model::thumbnails::Builder {
+        crate::model::thumbnails::Builder::default()
+    }
+}
+
 /// See [`Thumbnails`](crate::model::Thumbnails).
 pub mod thumbnails {
 
@@ -1411,12 +1424,6 @@ pub mod thumbnails {
                 padding_policy: self.padding_policy,
             }
         }
-    }
-}
-impl Thumbnails {
-    /// Creates a new builder-style object to manufacture [`Thumbnails`](crate::model::Thumbnails).
-    pub fn builder() -> crate::model::thumbnails::Builder {
-        crate::model::thumbnails::Builder::default()
     }
 }
 
@@ -1836,6 +1843,13 @@ impl VideoParameters {
         self.watermarks.as_deref()
     }
 }
+impl VideoParameters {
+    /// Creates a new builder-style object to manufacture [`VideoParameters`](crate::model::VideoParameters).
+    pub fn builder() -> crate::model::video_parameters::Builder {
+        crate::model::video_parameters::Builder::default()
+    }
+}
+
 /// See [`VideoParameters`](crate::model::VideoParameters).
 pub mod video_parameters {
 
@@ -2373,12 +2387,6 @@ pub mod video_parameters {
         }
     }
 }
-impl VideoParameters {
-    /// Creates a new builder-style object to manufacture [`VideoParameters`](crate::model::VideoParameters).
-    pub fn builder() -> crate::model::video_parameters::Builder {
-        crate::model::video_parameters::Builder::default()
-    }
-}
 
 /// <p>Settings for the size, location, and opacity of graphics that you want Elastic Transcoder to overlay over videos that are transcoded using this preset. You can specify settings for up to four watermarks. Watermarks appear in the specified size and location, and with the specified opacity for the duration of the transcoded video.</p>
 /// <p>Watermarks can be in .png or .jpg format. If you want to display a watermark that is not rectangular, use the .png format, which supports transparency.</p>
@@ -2549,6 +2557,13 @@ impl PresetWatermark {
         self.target.as_deref()
     }
 }
+impl PresetWatermark {
+    /// Creates a new builder-style object to manufacture [`PresetWatermark`](crate::model::PresetWatermark).
+    pub fn builder() -> crate::model::preset_watermark::Builder {
+        crate::model::preset_watermark::Builder::default()
+    }
+}
+
 /// See [`PresetWatermark`](crate::model::PresetWatermark).
 pub mod preset_watermark {
 
@@ -2790,12 +2805,6 @@ pub mod preset_watermark {
         }
     }
 }
-impl PresetWatermark {
-    /// Creates a new builder-style object to manufacture [`PresetWatermark`](crate::model::PresetWatermark).
-    pub fn builder() -> crate::model::preset_watermark::Builder {
-        crate::model::preset_watermark::Builder::default()
-    }
-}
 
 /// <p>Parameters required for transcoding audio.</p>
 #[non_exhaustive]
@@ -2956,6 +2965,13 @@ impl AudioParameters {
         self.codec_options.as_ref()
     }
 }
+impl AudioParameters {
+    /// Creates a new builder-style object to manufacture [`AudioParameters`](crate::model::AudioParameters).
+    pub fn builder() -> crate::model::audio_parameters::Builder {
+        crate::model::audio_parameters::Builder::default()
+    }
+}
+
 /// See [`AudioParameters`](crate::model::AudioParameters).
 pub mod audio_parameters {
 
@@ -3160,12 +3176,6 @@ pub mod audio_parameters {
         }
     }
 }
-impl AudioParameters {
-    /// Creates a new builder-style object to manufacture [`AudioParameters`](crate::model::AudioParameters).
-    pub fn builder() -> crate::model::audio_parameters::Builder {
-        crate::model::audio_parameters::Builder::default()
-    }
-}
 
 /// <p>Options associated with your audio codec.</p>
 #[non_exhaustive]
@@ -3236,6 +3246,13 @@ impl AudioCodecOptions {
         self.signed.as_deref()
     }
 }
+impl AudioCodecOptions {
+    /// Creates a new builder-style object to manufacture [`AudioCodecOptions`](crate::model::AudioCodecOptions).
+    pub fn builder() -> crate::model::audio_codec_options::Builder {
+        crate::model::audio_codec_options::Builder::default()
+    }
+}
+
 /// See [`AudioCodecOptions`](crate::model::AudioCodecOptions).
 pub mod audio_codec_options {
 
@@ -3332,12 +3349,6 @@ pub mod audio_codec_options {
                 signed: self.signed,
             }
         }
-    }
-}
-impl AudioCodecOptions {
-    /// Creates a new builder-style object to manufacture [`AudioCodecOptions`](crate::model::AudioCodecOptions).
-    pub fn builder() -> crate::model::audio_codec_options::Builder {
-        crate::model::audio_codec_options::Builder::default()
     }
 }
 
@@ -3466,6 +3477,13 @@ impl Job {
         self.timing.as_ref()
     }
 }
+impl Job {
+    /// Creates a new builder-style object to manufacture [`Job`](crate::model::Job).
+    pub fn builder() -> crate::model::job::Builder {
+        crate::model::job::Builder::default()
+    }
+}
+
 /// See [`Job`](crate::model::Job).
 pub mod job {
 
@@ -3703,12 +3721,6 @@ pub mod job {
         }
     }
 }
-impl Job {
-    /// Creates a new builder-style object to manufacture [`Job`](crate::model::Job).
-    pub fn builder() -> crate::model::job::Builder {
-        crate::model::job::Builder::default()
-    }
-}
 
 /// <p>Details about the timing of a job.</p>
 #[non_exhaustive]
@@ -3738,6 +3750,13 @@ impl Timing {
         self.finish_time_millis
     }
 }
+impl Timing {
+    /// Creates a new builder-style object to manufacture [`Timing`](crate::model::Timing).
+    pub fn builder() -> crate::model::timing::Builder {
+        crate::model::timing::Builder::default()
+    }
+}
+
 /// See [`Timing`](crate::model::Timing).
 pub mod timing {
 
@@ -3788,12 +3807,6 @@ pub mod timing {
                 finish_time_millis: self.finish_time_millis,
             }
         }
-    }
-}
-impl Timing {
-    /// Creates a new builder-style object to manufacture [`Timing`](crate::model::Timing).
-    pub fn builder() -> crate::model::timing::Builder {
-        crate::model::timing::Builder::default()
     }
 }
 
@@ -3873,6 +3886,13 @@ impl Playlist {
         self.status_detail.as_deref()
     }
 }
+impl Playlist {
+    /// Creates a new builder-style object to manufacture [`Playlist`](crate::model::Playlist).
+    pub fn builder() -> crate::model::playlist::Builder {
+        crate::model::playlist::Builder::default()
+    }
+}
+
 /// See [`Playlist`](crate::model::Playlist).
 pub mod playlist {
 
@@ -4009,12 +4029,6 @@ pub mod playlist {
         }
     }
 }
-impl Playlist {
-    /// Creates a new builder-style object to manufacture [`Playlist`](crate::model::Playlist).
-    pub fn builder() -> crate::model::playlist::Builder {
-        crate::model::playlist::Builder::default()
-    }
-}
 
 /// <p>The PlayReady DRM settings, if any, that you want Elastic Transcoder to apply to the output files associated with this playlist.</p>
 /// <p>PlayReady DRM encrypts your media files using <code>aes-ctr</code> encryption.</p>
@@ -4073,6 +4087,13 @@ impl PlayReadyDrm {
         self.license_acquisition_url.as_deref()
     }
 }
+impl PlayReadyDrm {
+    /// Creates a new builder-style object to manufacture [`PlayReadyDrm`](crate::model::PlayReadyDrm).
+    pub fn builder() -> crate::model::play_ready_drm::Builder {
+        crate::model::play_ready_drm::Builder::default()
+    }
+}
+
 /// See [`PlayReadyDrm`](crate::model::PlayReadyDrm).
 pub mod play_ready_drm {
 
@@ -4173,12 +4194,6 @@ pub mod play_ready_drm {
         }
     }
 }
-impl PlayReadyDrm {
-    /// Creates a new builder-style object to manufacture [`PlayReadyDrm`](crate::model::PlayReadyDrm).
-    pub fn builder() -> crate::model::play_ready_drm::Builder {
-        crate::model::play_ready_drm::Builder::default()
-    }
-}
 
 /// <p>The HLS content protection settings, if any, that you want Elastic Transcoder to apply to your output files.</p>
 #[non_exhaustive]
@@ -4239,6 +4254,13 @@ impl HlsContentProtection {
         self.key_storage_policy.as_deref()
     }
 }
+impl HlsContentProtection {
+    /// Creates a new builder-style object to manufacture [`HlsContentProtection`](crate::model::HlsContentProtection).
+    pub fn builder() -> crate::model::hls_content_protection::Builder {
+        crate::model::hls_content_protection::Builder::default()
+    }
+}
+
 /// See [`HlsContentProtection`](crate::model::HlsContentProtection).
 pub mod hls_content_protection {
 
@@ -4344,12 +4366,6 @@ pub mod hls_content_protection {
                 key_storage_policy: self.key_storage_policy,
             }
         }
-    }
-}
-impl HlsContentProtection {
-    /// Creates a new builder-style object to manufacture [`HlsContentProtection`](crate::model::HlsContentProtection).
-    pub fn builder() -> crate::model::hls_content_protection::Builder {
-        crate::model::hls_content_protection::Builder::default()
     }
 }
 
@@ -4580,6 +4596,13 @@ impl JobOutput {
         self.applied_color_space_conversion.as_deref()
     }
 }
+impl JobOutput {
+    /// Creates a new builder-style object to manufacture [`JobOutput`](crate::model::JobOutput).
+    pub fn builder() -> crate::model::job_output::Builder {
+        crate::model::job_output::Builder::default()
+    }
+}
+
 /// See [`JobOutput`](crate::model::JobOutput).
 pub mod job_output {
 
@@ -4960,12 +4983,6 @@ pub mod job_output {
         }
     }
 }
-impl JobOutput {
-    /// Creates a new builder-style object to manufacture [`JobOutput`](crate::model::JobOutput).
-    pub fn builder() -> crate::model::job_output::Builder {
-        crate::model::job_output::Builder::default()
-    }
-}
 
 /// <p>The encryption settings, if any, that are used for decrypting your input files or encrypting your output files. If your input file is encrypted, you must specify the mode that Elastic Transcoder uses to decrypt your file, otherwise you must specify the mode you want Elastic Transcoder to use to encrypt your output files.</p>
 #[non_exhaustive]
@@ -5036,6 +5053,13 @@ impl Encryption {
         self.initialization_vector.as_deref()
     }
 }
+impl Encryption {
+    /// Creates a new builder-style object to manufacture [`Encryption`](crate::model::Encryption).
+    pub fn builder() -> crate::model::encryption::Builder {
+        crate::model::encryption::Builder::default()
+    }
+}
+
 /// See [`Encryption`](crate::model::Encryption).
 pub mod encryption {
 
@@ -5137,12 +5161,6 @@ pub mod encryption {
         }
     }
 }
-impl Encryption {
-    /// Creates a new builder-style object to manufacture [`Encryption`](crate::model::Encryption).
-    pub fn builder() -> crate::model::encryption::Builder {
-        crate::model::encryption::Builder::default()
-    }
-}
 
 /// <p>The captions to be created, if any.</p>
 #[non_exhaustive]
@@ -5188,6 +5206,13 @@ impl Captions {
         self.caption_formats.as_deref()
     }
 }
+impl Captions {
+    /// Creates a new builder-style object to manufacture [`Captions`](crate::model::Captions).
+    pub fn builder() -> crate::model::captions::Builder {
+        crate::model::captions::Builder::default()
+    }
+}
+
 /// See [`Captions`](crate::model::Captions).
 pub mod captions {
 
@@ -5274,12 +5299,6 @@ pub mod captions {
         }
     }
 }
-impl Captions {
-    /// Creates a new builder-style object to manufacture [`Captions`](crate::model::Captions).
-    pub fn builder() -> crate::model::captions::Builder {
-        crate::model::captions::Builder::default()
-    }
-}
 
 /// <p>The file format of the output captions. If you leave this value blank, Elastic Transcoder returns an error.</p>
 #[non_exhaustive]
@@ -5353,6 +5372,13 @@ impl CaptionFormat {
         self.encryption.as_ref()
     }
 }
+impl CaptionFormat {
+    /// Creates a new builder-style object to manufacture [`CaptionFormat`](crate::model::CaptionFormat).
+    pub fn builder() -> crate::model::caption_format::Builder {
+        crate::model::caption_format::Builder::default()
+    }
+}
+
 /// See [`CaptionFormat`](crate::model::CaptionFormat).
 pub mod caption_format {
 
@@ -5452,12 +5478,6 @@ pub mod caption_format {
         }
     }
 }
-impl CaptionFormat {
-    /// Creates a new builder-style object to manufacture [`CaptionFormat`](crate::model::CaptionFormat).
-    pub fn builder() -> crate::model::caption_format::Builder {
-        crate::model::caption_format::Builder::default()
-    }
-}
 
 /// <p>A source file for the input sidecar captions used during the transcoding process.</p>
 #[non_exhaustive]
@@ -5513,6 +5533,13 @@ impl CaptionSource {
         self.encryption.as_ref()
     }
 }
+impl CaptionSource {
+    /// Creates a new builder-style object to manufacture [`CaptionSource`](crate::model::CaptionSource).
+    pub fn builder() -> crate::model::caption_source::Builder {
+        crate::model::caption_source::Builder::default()
+    }
+}
+
 /// See [`CaptionSource`](crate::model::CaptionSource).
 pub mod caption_source {
 
@@ -5604,12 +5631,6 @@ pub mod caption_source {
         }
     }
 }
-impl CaptionSource {
-    /// Creates a new builder-style object to manufacture [`CaptionSource`](crate::model::CaptionSource).
-    pub fn builder() -> crate::model::caption_source::Builder {
-        crate::model::caption_source::Builder::default()
-    }
-}
 
 /// <p>Settings for one clip in a composition. All jobs in a playlist must have the same clip settings.</p>
 #[deprecated]
@@ -5626,6 +5647,13 @@ impl Clip {
         self.time_span.as_ref()
     }
 }
+impl Clip {
+    /// Creates a new builder-style object to manufacture [`Clip`](crate::model::Clip).
+    pub fn builder() -> crate::model::clip::Builder {
+        crate::model::clip::Builder::default()
+    }
+}
+
 /// See [`Clip`](crate::model::Clip).
 pub mod clip {
 
@@ -5654,12 +5682,6 @@ pub mod clip {
         }
     }
 }
-impl Clip {
-    /// Creates a new builder-style object to manufacture [`Clip`](crate::model::Clip).
-    pub fn builder() -> crate::model::clip::Builder {
-        crate::model::clip::Builder::default()
-    }
-}
 
 /// <p>Settings that determine when a clip begins and how long it lasts.</p>
 #[non_exhaustive]
@@ -5684,6 +5706,13 @@ impl TimeSpan {
         self.duration.as_deref()
     }
 }
+impl TimeSpan {
+    /// Creates a new builder-style object to manufacture [`TimeSpan`](crate::model::TimeSpan).
+    pub fn builder() -> crate::model::time_span::Builder {
+        crate::model::time_span::Builder::default()
+    }
+}
+
 /// See [`TimeSpan`](crate::model::TimeSpan).
 pub mod time_span {
 
@@ -5726,12 +5755,6 @@ pub mod time_span {
         }
     }
 }
-impl TimeSpan {
-    /// Creates a new builder-style object to manufacture [`TimeSpan`](crate::model::TimeSpan).
-    pub fn builder() -> crate::model::time_span::Builder {
-        crate::model::time_span::Builder::default()
-    }
-}
 
 /// <p>The .jpg or .png file associated with an audio file.</p>
 #[non_exhaustive]
@@ -5766,6 +5789,13 @@ impl JobAlbumArt {
         self.artwork.as_deref()
     }
 }
+impl JobAlbumArt {
+    /// Creates a new builder-style object to manufacture [`JobAlbumArt`](crate::model::JobAlbumArt).
+    pub fn builder() -> crate::model::job_album_art::Builder {
+        crate::model::job_album_art::Builder::default()
+    }
+}
+
 /// See [`JobAlbumArt`](crate::model::JobAlbumArt).
 pub mod job_album_art {
 
@@ -5825,12 +5855,6 @@ pub mod job_album_art {
                 artwork: self.artwork,
             }
         }
-    }
-}
-impl JobAlbumArt {
-    /// Creates a new builder-style object to manufacture [`JobAlbumArt`](crate::model::JobAlbumArt).
-    pub fn builder() -> crate::model::job_album_art::Builder {
-        crate::model::job_album_art::Builder::default()
     }
 }
 
@@ -5910,6 +5934,13 @@ impl Artwork {
         self.encryption.as_ref()
     }
 }
+impl Artwork {
+    /// Creates a new builder-style object to manufacture [`Artwork`](crate::model::Artwork).
+    pub fn builder() -> crate::model::artwork::Builder {
+        crate::model::artwork::Builder::default()
+    }
+}
+
 /// See [`Artwork`](crate::model::Artwork).
 pub mod artwork {
 
@@ -6040,12 +6071,6 @@ pub mod artwork {
         }
     }
 }
-impl Artwork {
-    /// Creates a new builder-style object to manufacture [`Artwork`](crate::model::Artwork).
-    pub fn builder() -> crate::model::artwork::Builder {
-        crate::model::artwork::Builder::default()
-    }
-}
 
 /// <p>Watermarks can be in .png or .jpg format. If you want to display a watermark that is not rectangular, use the .png format, which supports transparency.</p>
 #[non_exhaustive]
@@ -6077,6 +6102,13 @@ impl JobWatermark {
         self.encryption.as_ref()
     }
 }
+impl JobWatermark {
+    /// Creates a new builder-style object to manufacture [`JobWatermark`](crate::model::JobWatermark).
+    pub fn builder() -> crate::model::job_watermark::Builder {
+        crate::model::job_watermark::Builder::default()
+    }
+}
+
 /// See [`JobWatermark`](crate::model::JobWatermark).
 pub mod job_watermark {
 
@@ -6135,12 +6167,6 @@ pub mod job_watermark {
                 encryption: self.encryption,
             }
         }
-    }
-}
-impl JobWatermark {
-    /// Creates a new builder-style object to manufacture [`JobWatermark`](crate::model::JobWatermark).
-    pub fn builder() -> crate::model::job_watermark::Builder {
-        crate::model::job_watermark::Builder::default()
     }
 }
 
@@ -6255,6 +6281,13 @@ impl JobInput {
         self.detected_properties.as_ref()
     }
 }
+impl JobInput {
+    /// Creates a new builder-style object to manufacture [`JobInput`](crate::model::JobInput).
+    pub fn builder() -> crate::model::job_input::Builder {
+        crate::model::job_input::Builder::default()
+    }
+}
+
 /// See [`JobInput`](crate::model::JobInput).
 pub mod job_input {
 
@@ -6434,12 +6467,6 @@ pub mod job_input {
         }
     }
 }
-impl JobInput {
-    /// Creates a new builder-style object to manufacture [`JobInput`](crate::model::JobInput).
-    pub fn builder() -> crate::model::job_input::Builder {
-        crate::model::job_input::Builder::default()
-    }
-}
 
 /// <p>The detected properties of the input file. Elastic Transcoder identifies these values from the input file.</p>
 #[non_exhaustive]
@@ -6483,6 +6510,13 @@ impl DetectedProperties {
         self.duration_millis
     }
 }
+impl DetectedProperties {
+    /// Creates a new builder-style object to manufacture [`DetectedProperties`](crate::model::DetectedProperties).
+    pub fn builder() -> crate::model::detected_properties::Builder {
+        crate::model::detected_properties::Builder::default()
+    }
+}
+
 /// See [`DetectedProperties`](crate::model::DetectedProperties).
 pub mod detected_properties {
 
@@ -6559,12 +6593,6 @@ pub mod detected_properties {
         }
     }
 }
-impl DetectedProperties {
-    /// Creates a new builder-style object to manufacture [`DetectedProperties`](crate::model::DetectedProperties).
-    pub fn builder() -> crate::model::detected_properties::Builder {
-        crate::model::detected_properties::Builder::default()
-    }
-}
 
 /// <p>The captions to be created, if any.</p>
 #[non_exhaustive]
@@ -6599,6 +6627,13 @@ impl InputCaptions {
         self.caption_sources.as_deref()
     }
 }
+impl InputCaptions {
+    /// Creates a new builder-style object to manufacture [`InputCaptions`](crate::model::InputCaptions).
+    pub fn builder() -> crate::model::input_captions::Builder {
+        crate::model::input_captions::Builder::default()
+    }
+}
+
 /// See [`InputCaptions`](crate::model::InputCaptions).
 pub mod input_captions {
 
@@ -6658,12 +6693,6 @@ pub mod input_captions {
                 caption_sources: self.caption_sources,
             }
         }
-    }
-}
-impl InputCaptions {
-    /// Creates a new builder-style object to manufacture [`InputCaptions`](crate::model::InputCaptions).
-    pub fn builder() -> crate::model::input_captions::Builder {
-        crate::model::input_captions::Builder::default()
     }
 }
 
@@ -6729,6 +6758,13 @@ impl CreateJobPlaylist {
         self.play_ready_drm.as_ref()
     }
 }
+impl CreateJobPlaylist {
+    /// Creates a new builder-style object to manufacture [`CreateJobPlaylist`](crate::model::CreateJobPlaylist).
+    pub fn builder() -> crate::model::create_job_playlist::Builder {
+        crate::model::create_job_playlist::Builder::default()
+    }
+}
+
 /// See [`CreateJobPlaylist`](crate::model::CreateJobPlaylist).
 pub mod create_job_playlist {
 
@@ -6836,12 +6872,6 @@ pub mod create_job_playlist {
                 play_ready_drm: self.play_ready_drm,
             }
         }
-    }
-}
-impl CreateJobPlaylist {
-    /// Creates a new builder-style object to manufacture [`CreateJobPlaylist`](crate::model::CreateJobPlaylist).
-    pub fn builder() -> crate::model::create_job_playlist::Builder {
-        crate::model::create_job_playlist::Builder::default()
     }
 }
 
@@ -6979,6 +7009,13 @@ impl CreateJobOutput {
         self.encryption.as_ref()
     }
 }
+impl CreateJobOutput {
+    /// Creates a new builder-style object to manufacture [`CreateJobOutput`](crate::model::CreateJobOutput).
+    pub fn builder() -> crate::model::create_job_output::Builder {
+        crate::model::create_job_output::Builder::default()
+    }
+}
+
 /// See [`CreateJobOutput`](crate::model::CreateJobOutput).
 pub mod create_job_output {
 
@@ -7208,11 +7245,5 @@ pub mod create_job_output {
                 encryption: self.encryption,
             }
         }
-    }
-}
-impl CreateJobOutput {
-    /// Creates a new builder-style object to manufacture [`CreateJobOutput`](crate::model::CreateJobOutput).
-    pub fn builder() -> crate::model::create_job_output::Builder {
-        crate::model::create_job_output::Builder::default()
     }
 }

@@ -20,6 +20,13 @@ impl aws_http::request_id::RequestId for StartSupportDataExportOutput {
         self._request_id.as_deref()
     }
 }
+impl StartSupportDataExportOutput {
+    /// Creates a new builder-style object to manufacture [`StartSupportDataExportOutput`](crate::output::StartSupportDataExportOutput).
+    pub fn builder() -> crate::output::start_support_data_export_output::Builder {
+        crate::output::start_support_data_export_output::Builder::default()
+    }
+}
+
 /// See [`StartSupportDataExportOutput`](crate::output::StartSupportDataExportOutput).
 pub mod start_support_data_export_output {
 
@@ -62,12 +69,6 @@ pub mod start_support_data_export_output {
         }
     }
 }
-impl StartSupportDataExportOutput {
-    /// Creates a new builder-style object to manufacture [`StartSupportDataExportOutput`](crate::output::StartSupportDataExportOutput).
-    pub fn builder() -> crate::output::start_support_data_export_output::Builder {
-        crate::output::start_support_data_export_output::Builder::default()
-    }
-}
 
 /// Container for the result of the GenerateDataSet operation.
 #[non_exhaustive]
@@ -89,6 +90,13 @@ impl aws_http::request_id::RequestId for GenerateDataSetOutput {
         self._request_id.as_deref()
     }
 }
+impl GenerateDataSetOutput {
+    /// Creates a new builder-style object to manufacture [`GenerateDataSetOutput`](crate::output::GenerateDataSetOutput).
+    pub fn builder() -> crate::output::generate_data_set_output::Builder {
+        crate::output::generate_data_set_output::Builder::default()
+    }
+}
+
 /// See [`GenerateDataSetOutput`](crate::output::GenerateDataSetOutput).
 pub mod generate_data_set_output {
 
@@ -129,11 +137,5 @@ pub mod generate_data_set_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl GenerateDataSetOutput {
-    /// Creates a new builder-style object to manufacture [`GenerateDataSetOutput`](crate::output::GenerateDataSetOutput).
-    pub fn builder() -> crate::output::generate_data_set_output::Builder {
-        crate::output::generate_data_set_output::Builder::default()
     }
 }

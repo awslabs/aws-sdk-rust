@@ -28,6 +28,13 @@ impl FailedS3Resource {
         self.error_message.as_deref()
     }
 }
+impl FailedS3Resource {
+    /// Creates a new builder-style object to manufacture [`FailedS3Resource`](crate::model::FailedS3Resource).
+    pub fn builder() -> crate::model::failed_s3_resource::Builder {
+        crate::model::failed_s3_resource::Builder::default()
+    }
+}
+
 /// See [`FailedS3Resource`](crate::model::FailedS3Resource).
 pub mod failed_s3_resource {
 
@@ -86,12 +93,6 @@ pub mod failed_s3_resource {
         }
     }
 }
-impl FailedS3Resource {
-    /// Creates a new builder-style object to manufacture [`FailedS3Resource`](crate::model::FailedS3Resource).
-    pub fn builder() -> crate::model::failed_s3_resource::Builder {
-        crate::model::failed_s3_resource::Builder::default()
-    }
-}
 
 /// <p>(Discontinued) Contains information about the S3 resource. This data type is used as a request parameter in the <code>DisassociateS3Resources</code> action and can be used as a response parameter in the <code>AssociateS3Resources</code> and <code>UpdateS3Resources</code> actions. </p>
 #[non_exhaustive]
@@ -114,6 +115,13 @@ impl S3Resource {
         self.prefix.as_deref()
     }
 }
+impl S3Resource {
+    /// Creates a new builder-style object to manufacture [`S3Resource`](crate::model::S3Resource).
+    pub fn builder() -> crate::model::s3_resource::Builder {
+        crate::model::s3_resource::Builder::default()
+    }
+}
+
 /// See [`S3Resource`](crate::model::S3Resource).
 pub mod s3_resource {
 
@@ -154,12 +162,6 @@ pub mod s3_resource {
         }
     }
 }
-impl S3Resource {
-    /// Creates a new builder-style object to manufacture [`S3Resource`](crate::model::S3Resource).
-    pub fn builder() -> crate::model::s3_resource::Builder {
-        crate::model::s3_resource::Builder::default()
-    }
-}
 
 /// <p>(Discontinued) The S3 resources whose classification types you want to update. This data type is used as a request parameter in the <code>UpdateS3Resources</code> action. </p>
 #[non_exhaustive]
@@ -191,6 +193,13 @@ impl S3ResourceClassificationUpdate {
         self.classification_type_update.as_ref()
     }
 }
+impl S3ResourceClassificationUpdate {
+    /// Creates a new builder-style object to manufacture [`S3ResourceClassificationUpdate`](crate::model::S3ResourceClassificationUpdate).
+    pub fn builder() -> crate::model::s3_resource_classification_update::Builder {
+        crate::model::s3_resource_classification_update::Builder::default()
+    }
+}
+
 /// See [`S3ResourceClassificationUpdate`](crate::model::S3ResourceClassificationUpdate).
 pub mod s3_resource_classification_update {
 
@@ -250,12 +259,6 @@ pub mod s3_resource_classification_update {
         }
     }
 }
-impl S3ResourceClassificationUpdate {
-    /// Creates a new builder-style object to manufacture [`S3ResourceClassificationUpdate`](crate::model::S3ResourceClassificationUpdate).
-    pub fn builder() -> crate::model::s3_resource_classification_update::Builder {
-        crate::model::s3_resource_classification_update::Builder::default()
-    }
-}
 
 /// <p>(Discontinued) The classification type that Amazon Macie Classic applies to the associated S3 resources. At least one of the classification types (<code>oneTime</code> or <code>continuous</code>) must be specified. </p>
 #[non_exhaustive]
@@ -278,6 +281,13 @@ impl ClassificationTypeUpdate {
         self.continuous.as_ref()
     }
 }
+impl ClassificationTypeUpdate {
+    /// Creates a new builder-style object to manufacture [`ClassificationTypeUpdate`](crate::model::ClassificationTypeUpdate).
+    pub fn builder() -> crate::model::classification_type_update::Builder {
+        crate::model::classification_type_update::Builder::default()
+    }
+}
+
 /// See [`ClassificationTypeUpdate`](crate::model::ClassificationTypeUpdate).
 pub mod classification_type_update {
 
@@ -322,12 +332,6 @@ pub mod classification_type_update {
                 continuous: self.continuous,
             }
         }
-    }
-}
-impl ClassificationTypeUpdate {
-    /// Creates a new builder-style object to manufacture [`ClassificationTypeUpdate`](crate::model::ClassificationTypeUpdate).
-    pub fn builder() -> crate::model::classification_type_update::Builder {
-        crate::model::classification_type_update::Builder::default()
     }
 }
 
@@ -538,6 +542,13 @@ impl S3ResourceClassification {
         self.classification_type.as_ref()
     }
 }
+impl S3ResourceClassification {
+    /// Creates a new builder-style object to manufacture [`S3ResourceClassification`](crate::model::S3ResourceClassification).
+    pub fn builder() -> crate::model::s3_resource_classification::Builder {
+        crate::model::s3_resource_classification::Builder::default()
+    }
+}
+
 /// See [`S3ResourceClassification`](crate::model::S3ResourceClassification).
 pub mod s3_resource_classification {
 
@@ -593,12 +604,6 @@ pub mod s3_resource_classification {
         }
     }
 }
-impl S3ResourceClassification {
-    /// Creates a new builder-style object to manufacture [`S3ResourceClassification`](crate::model::S3ResourceClassification).
-    pub fn builder() -> crate::model::s3_resource_classification::Builder {
-        crate::model::s3_resource_classification::Builder::default()
-    }
-}
 
 /// <p>(Discontinued) The classification type that Amazon Macie Classic applies to the associated S3 resources.</p>
 #[non_exhaustive]
@@ -621,6 +626,13 @@ impl ClassificationType {
         self.continuous.as_ref()
     }
 }
+impl ClassificationType {
+    /// Creates a new builder-style object to manufacture [`ClassificationType`](crate::model::ClassificationType).
+    pub fn builder() -> crate::model::classification_type::Builder {
+        crate::model::classification_type::Builder::default()
+    }
+}
+
 /// See [`ClassificationType`](crate::model::ClassificationType).
 pub mod classification_type {
 
@@ -667,12 +679,6 @@ pub mod classification_type {
         }
     }
 }
-impl ClassificationType {
-    /// Creates a new builder-style object to manufacture [`ClassificationType`](crate::model::ClassificationType).
-    pub fn builder() -> crate::model::classification_type::Builder {
-        crate::model::classification_type::Builder::default()
-    }
-}
 
 /// <p>(Discontinued) Contains information about the Amazon Macie Classic member account.</p>
 #[non_exhaustive]
@@ -688,6 +694,13 @@ impl MemberAccount {
         self.account_id.as_deref()
     }
 }
+impl MemberAccount {
+    /// Creates a new builder-style object to manufacture [`MemberAccount`](crate::model::MemberAccount).
+    pub fn builder() -> crate::model::member_account::Builder {
+        crate::model::member_account::Builder::default()
+    }
+}
+
 /// See [`MemberAccount`](crate::model::MemberAccount).
 pub mod member_account {
 
@@ -714,11 +727,5 @@ pub mod member_account {
                 account_id: self.account_id,
             }
         }
-    }
-}
-impl MemberAccount {
-    /// Creates a new builder-style object to manufacture [`MemberAccount`](crate::model::MemberAccount).
-    pub fn builder() -> crate::model::member_account::Builder {
-        crate::model::member_account::Builder::default()
     }
 }

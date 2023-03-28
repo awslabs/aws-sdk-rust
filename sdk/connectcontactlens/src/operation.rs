@@ -4,7 +4,7 @@
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_realtime_contact_analysis_segments`](crate::client::Client::list_realtime_contact_analysis_segments).
 ///
-/// See [`crate::client::fluent_builders::ListRealtimeContactAnalysisSegments`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListRealtimeContactAnalysisSegments`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListRealtimeContactAnalysisSegments {
     _private: (),

@@ -4,7 +4,7 @@
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`add_tags_to_resource`](crate::client::Client::add_tags_to_resource).
 ///
-/// See [`crate::client::fluent_builders::AddTagsToResource`] for more details about the operation.
+/// `ParseStrictResponse` impl for `AddTagsToResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct AddTagsToResource {
     _private: (),
@@ -39,7 +39,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AddTagsToResource {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`create_hapg`](crate::client::Client::create_hapg).
 ///
-/// See [`crate::client::fluent_builders::CreateHapg`] for more details about the operation.
+/// `ParseStrictResponse` impl for `CreateHapg`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateHapg {
     _private: (),
@@ -72,7 +72,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateHapg {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`create_hsm`](crate::client::Client::create_hsm).
 ///
-/// See [`crate::client::fluent_builders::CreateHsm`] for more details about the operation.
+/// `ParseStrictResponse` impl for `CreateHsm`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateHsm {
     _private: (),
@@ -104,7 +104,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateHsm {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`create_luna_client`](crate::client::Client::create_luna_client).
 ///
-/// See [`crate::client::fluent_builders::CreateLunaClient`] for more details about the operation.
+/// `ParseStrictResponse` impl for `CreateLunaClient`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateLunaClient {
     _private: (),
@@ -139,7 +139,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateLunaClient {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`delete_hapg`](crate::client::Client::delete_hapg).
 ///
-/// See [`crate::client::fluent_builders::DeleteHapg`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DeleteHapg`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteHapg {
     _private: (),
@@ -172,7 +172,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteHapg {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`delete_hsm`](crate::client::Client::delete_hsm).
 ///
-/// See [`crate::client::fluent_builders::DeleteHsm`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DeleteHsm`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteHsm {
     _private: (),
@@ -204,7 +204,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteHsm {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`delete_luna_client`](crate::client::Client::delete_luna_client).
 ///
-/// See [`crate::client::fluent_builders::DeleteLunaClient`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DeleteLunaClient`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteLunaClient {
     _private: (),
@@ -239,7 +239,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteLunaClient {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`describe_hapg`](crate::client::Client::describe_hapg).
 ///
-/// See [`crate::client::fluent_builders::DescribeHapg`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DescribeHapg`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeHapg {
     _private: (),
@@ -272,7 +272,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeHapg {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`describe_hsm`](crate::client::Client::describe_hsm).
 ///
-/// See [`crate::client::fluent_builders::DescribeHsm`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DescribeHsm`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeHsm {
     _private: (),
@@ -305,7 +305,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeHsm {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`describe_luna_client`](crate::client::Client::describe_luna_client).
 ///
-/// See [`crate::client::fluent_builders::DescribeLunaClient`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DescribeLunaClient`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeLunaClient {
     _private: (),
@@ -340,7 +340,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeLunaClient {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`get_config`](crate::client::Client::get_config).
 ///
-/// See [`crate::client::fluent_builders::GetConfig`] for more details about the operation.
+/// `ParseStrictResponse` impl for `GetConfig`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetConfig {
     _private: (),
@@ -372,7 +372,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetConfig {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_available_zones`](crate::client::Client::list_available_zones).
 ///
-/// See [`crate::client::fluent_builders::ListAvailableZones`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListAvailableZones`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListAvailableZones {
     _private: (),
@@ -407,7 +407,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAvailableZones {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_hapgs`](crate::client::Client::list_hapgs).
 ///
-/// See [`crate::client::fluent_builders::ListHapgs`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListHapgs`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListHapgs {
     _private: (),
@@ -439,7 +439,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListHapgs {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_hsms`](crate::client::Client::list_hsms).
 ///
-/// See [`crate::client::fluent_builders::ListHsms`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListHsms`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListHsms {
     _private: (),
@@ -471,7 +471,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListHsms {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_luna_clients`](crate::client::Client::list_luna_clients).
 ///
-/// See [`crate::client::fluent_builders::ListLunaClients`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListLunaClients`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListLunaClients {
     _private: (),
@@ -506,7 +506,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListLunaClients {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
 ///
-/// See [`crate::client::fluent_builders::ListTagsForResource`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTagsForResource {
     _private: (),
@@ -541,7 +541,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`modify_hapg`](crate::client::Client::modify_hapg).
 ///
-/// See [`crate::client::fluent_builders::ModifyHapg`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ModifyHapg`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ModifyHapg {
     _private: (),
@@ -574,7 +574,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyHapg {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`modify_hsm`](crate::client::Client::modify_hsm).
 ///
-/// See [`crate::client::fluent_builders::ModifyHsm`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ModifyHsm`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ModifyHsm {
     _private: (),
@@ -606,7 +606,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyHsm {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`modify_luna_client`](crate::client::Client::modify_luna_client).
 ///
-/// See [`crate::client::fluent_builders::ModifyLunaClient`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ModifyLunaClient`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ModifyLunaClient {
     _private: (),
@@ -641,7 +641,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyLunaClient {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`remove_tags_from_resource`](crate::client::Client::remove_tags_from_resource).
 ///
-/// See [`crate::client::fluent_builders::RemoveTagsFromResource`] for more details about the operation.
+/// `ParseStrictResponse` impl for `RemoveTagsFromResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct RemoveTagsFromResource {
     _private: (),

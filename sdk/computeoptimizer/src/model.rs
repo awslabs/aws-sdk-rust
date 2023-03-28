@@ -114,6 +114,13 @@ impl ExternalMetricsPreference {
         self.source.as_ref()
     }
 }
+impl ExternalMetricsPreference {
+    /// Creates a new builder-style object to manufacture [`ExternalMetricsPreference`](crate::model::ExternalMetricsPreference).
+    pub fn builder() -> crate::model::external_metrics_preference::Builder {
+        crate::model::external_metrics_preference::Builder::default()
+    }
+}
+
 /// See [`ExternalMetricsPreference`](crate::model::ExternalMetricsPreference).
 pub mod external_metrics_preference {
 
@@ -143,12 +150,6 @@ pub mod external_metrics_preference {
                 source: self.source,
             }
         }
-    }
-}
-impl ExternalMetricsPreference {
-    /// Creates a new builder-style object to manufacture [`ExternalMetricsPreference`](crate::model::ExternalMetricsPreference).
-    pub fn builder() -> crate::model::external_metrics_preference::Builder {
-        crate::model::external_metrics_preference::Builder::default()
     }
 }
 
@@ -488,6 +489,13 @@ impl Scope {
         self.value.as_deref()
     }
 }
+impl Scope {
+    /// Creates a new builder-style object to manufacture [`Scope`](crate::model::Scope).
+    pub fn builder() -> crate::model::scope::Builder {
+        crate::model::scope::Builder::default()
+    }
+}
+
 /// See [`Scope`](crate::model::Scope).
 pub mod scope {
 
@@ -552,12 +560,6 @@ pub mod scope {
                 value: self.value,
             }
         }
-    }
-}
-impl Scope {
-    /// Creates a new builder-style object to manufacture [`Scope`](crate::model::Scope).
-    pub fn builder() -> crate::model::scope::Builder {
-        crate::model::scope::Builder::default()
     }
 }
 
@@ -820,6 +822,13 @@ impl RecommendationSummary {
         self.current_performance_risk_ratings.as_ref()
     }
 }
+impl RecommendationSummary {
+    /// Creates a new builder-style object to manufacture [`RecommendationSummary`](crate::model::RecommendationSummary).
+    pub fn builder() -> crate::model::recommendation_summary::Builder {
+        crate::model::recommendation_summary::Builder::default()
+    }
+}
+
 /// See [`RecommendationSummary`](crate::model::RecommendationSummary).
 pub mod recommendation_summary {
 
@@ -922,12 +931,6 @@ pub mod recommendation_summary {
         }
     }
 }
-impl RecommendationSummary {
-    /// Creates a new builder-style object to manufacture [`RecommendationSummary`](crate::model::RecommendationSummary).
-    pub fn builder() -> crate::model::recommendation_summary::Builder {
-        crate::model::recommendation_summary::Builder::default()
-    }
-}
 
 /// <p>Describes the performance risk ratings for a given resource type.</p>
 /// <p>Resources with a <code>high</code> or <code>medium</code> rating are at risk of not meeting the performance needs of their workloads, while resources with a <code>low</code> rating are performing well in their workloads.</p>
@@ -965,6 +968,13 @@ impl CurrentPerformanceRiskRatings {
         self.very_low
     }
 }
+impl CurrentPerformanceRiskRatings {
+    /// Creates a new builder-style object to manufacture [`CurrentPerformanceRiskRatings`](crate::model::CurrentPerformanceRiskRatings).
+    pub fn builder() -> crate::model::current_performance_risk_ratings::Builder {
+        crate::model::current_performance_risk_ratings::Builder::default()
+    }
+}
+
 /// See [`CurrentPerformanceRiskRatings`](crate::model::CurrentPerformanceRiskRatings).
 pub mod current_performance_risk_ratings {
 
@@ -1029,12 +1039,6 @@ pub mod current_performance_risk_ratings {
         }
     }
 }
-impl CurrentPerformanceRiskRatings {
-    /// Creates a new builder-style object to manufacture [`CurrentPerformanceRiskRatings`](crate::model::CurrentPerformanceRiskRatings).
-    pub fn builder() -> crate::model::current_performance_risk_ratings::Builder {
-        crate::model::current_performance_risk_ratings::Builder::default()
-    }
-}
 
 /// <p>Describes the savings opportunity for recommendations of a given resource type or for the recommendation option of an individual resource.</p>
 /// <p>Savings opportunity represents the estimated monthly savings you can achieve by implementing a given Compute Optimizer recommendation.</p> <important>
@@ -1062,6 +1066,13 @@ impl SavingsOpportunity {
         self.estimated_monthly_savings.as_ref()
     }
 }
+impl SavingsOpportunity {
+    /// Creates a new builder-style object to manufacture [`SavingsOpportunity`](crate::model::SavingsOpportunity).
+    pub fn builder() -> crate::model::savings_opportunity::Builder {
+        crate::model::savings_opportunity::Builder::default()
+    }
+}
+
 /// See [`SavingsOpportunity`](crate::model::SavingsOpportunity).
 pub mod savings_opportunity {
 
@@ -1114,12 +1125,6 @@ pub mod savings_opportunity {
         }
     }
 }
-impl SavingsOpportunity {
-    /// Creates a new builder-style object to manufacture [`SavingsOpportunity`](crate::model::SavingsOpportunity).
-    pub fn builder() -> crate::model::savings_opportunity::Builder {
-        crate::model::savings_opportunity::Builder::default()
-    }
-}
 
 /// <p>Describes the estimated monthly savings amount possible, based on On-Demand instance pricing, by adopting Compute Optimizer recommendations for a given resource.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/view-ec2-recommendations.html#ec2-savings-calculation">Estimated monthly savings and savings opportunities</a> in the <i>Compute Optimizer User Guide</i>.</p>
@@ -1143,6 +1148,13 @@ impl EstimatedMonthlySavings {
         self.value
     }
 }
+impl EstimatedMonthlySavings {
+    /// Creates a new builder-style object to manufacture [`EstimatedMonthlySavings`](crate::model::EstimatedMonthlySavings).
+    pub fn builder() -> crate::model::estimated_monthly_savings::Builder {
+        crate::model::estimated_monthly_savings::Builder::default()
+    }
+}
+
 /// See [`EstimatedMonthlySavings`](crate::model::EstimatedMonthlySavings).
 pub mod estimated_monthly_savings {
 
@@ -1181,12 +1193,6 @@ pub mod estimated_monthly_savings {
                 value: self.value.unwrap_or_default(),
             }
         }
-    }
-}
-impl EstimatedMonthlySavings {
-    /// Creates a new builder-style object to manufacture [`EstimatedMonthlySavings`](crate::model::EstimatedMonthlySavings).
-    pub fn builder() -> crate::model::estimated_monthly_savings::Builder {
-        crate::model::estimated_monthly_savings::Builder::default()
     }
 }
 
@@ -1421,6 +1427,13 @@ impl Summary {
         self.reason_code_summaries.as_deref()
     }
 }
+impl Summary {
+    /// Creates a new builder-style object to manufacture [`Summary`](crate::model::Summary).
+    pub fn builder() -> crate::model::summary::Builder {
+        crate::model::summary::Builder::default()
+    }
+}
+
 /// See [`Summary`](crate::model::Summary).
 pub mod summary {
 
@@ -1483,12 +1496,6 @@ pub mod summary {
         }
     }
 }
-impl Summary {
-    /// Creates a new builder-style object to manufacture [`Summary`](crate::model::Summary).
-    pub fn builder() -> crate::model::summary::Builder {
-        crate::model::summary::Builder::default()
-    }
-}
 
 /// <p>A summary of a finding reason code.</p>
 #[non_exhaustive]
@@ -1511,6 +1518,13 @@ impl ReasonCodeSummary {
         self.value
     }
 }
+impl ReasonCodeSummary {
+    /// Creates a new builder-style object to manufacture [`ReasonCodeSummary`](crate::model::ReasonCodeSummary).
+    pub fn builder() -> crate::model::reason_code_summary::Builder {
+        crate::model::reason_code_summary::Builder::default()
+    }
+}
+
 /// See [`ReasonCodeSummary`](crate::model::ReasonCodeSummary).
 pub mod reason_code_summary {
 
@@ -1552,12 +1566,6 @@ pub mod reason_code_summary {
                 value: self.value.unwrap_or_default(),
             }
         }
-    }
-}
-impl ReasonCodeSummary {
-    /// Creates a new builder-style object to manufacture [`ReasonCodeSummary`](crate::model::ReasonCodeSummary).
-    pub fn builder() -> crate::model::reason_code_summary::Builder {
-        crate::model::reason_code_summary::Builder::default()
     }
 }
 
@@ -1819,6 +1827,13 @@ impl RecommendationPreferencesDetail {
         self.external_metrics_preference.as_ref()
     }
 }
+impl RecommendationPreferencesDetail {
+    /// Creates a new builder-style object to manufacture [`RecommendationPreferencesDetail`](crate::model::RecommendationPreferencesDetail).
+    pub fn builder() -> crate::model::recommendation_preferences_detail::Builder {
+        crate::model::recommendation_preferences_detail::Builder::default()
+    }
+}
+
 /// See [`RecommendationPreferencesDetail`](crate::model::RecommendationPreferencesDetail).
 pub mod recommendation_preferences_detail {
 
@@ -1929,12 +1944,6 @@ pub mod recommendation_preferences_detail {
                 external_metrics_preference: self.external_metrics_preference,
             }
         }
-    }
-}
-impl RecommendationPreferencesDetail {
-    /// Creates a new builder-style object to manufacture [`RecommendationPreferencesDetail`](crate::model::RecommendationPreferencesDetail).
-    pub fn builder() -> crate::model::recommendation_preferences_detail::Builder {
-        crate::model::recommendation_preferences_detail::Builder::default()
     }
 }
 
@@ -2077,6 +2086,13 @@ impl LambdaFunctionRecommendation {
         self.current_performance_risk.as_ref()
     }
 }
+impl LambdaFunctionRecommendation {
+    /// Creates a new builder-style object to manufacture [`LambdaFunctionRecommendation`](crate::model::LambdaFunctionRecommendation).
+    pub fn builder() -> crate::model::lambda_function_recommendation::Builder {
+        crate::model::lambda_function_recommendation::Builder::default()
+    }
+}
+
 /// See [`LambdaFunctionRecommendation`](crate::model::LambdaFunctionRecommendation).
 pub mod lambda_function_recommendation {
 
@@ -2334,12 +2350,6 @@ pub mod lambda_function_recommendation {
         }
     }
 }
-impl LambdaFunctionRecommendation {
-    /// Creates a new builder-style object to manufacture [`LambdaFunctionRecommendation`](crate::model::LambdaFunctionRecommendation).
-    pub fn builder() -> crate::model::lambda_function_recommendation::Builder {
-        crate::model::lambda_function_recommendation::Builder::default()
-    }
-}
 
 /// When writing a match expression against `CurrentPerformanceRisk`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -2483,6 +2493,13 @@ impl LambdaFunctionMemoryRecommendationOption {
         self.savings_opportunity.as_ref()
     }
 }
+impl LambdaFunctionMemoryRecommendationOption {
+    /// Creates a new builder-style object to manufacture [`LambdaFunctionMemoryRecommendationOption`](crate::model::LambdaFunctionMemoryRecommendationOption).
+    pub fn builder() -> crate::model::lambda_function_memory_recommendation_option::Builder {
+        crate::model::lambda_function_memory_recommendation_option::Builder::default()
+    }
+}
+
 /// See [`LambdaFunctionMemoryRecommendationOption`](crate::model::LambdaFunctionMemoryRecommendationOption).
 pub mod lambda_function_memory_recommendation_option {
 
@@ -2567,12 +2584,6 @@ pub mod lambda_function_memory_recommendation_option {
         }
     }
 }
-impl LambdaFunctionMemoryRecommendationOption {
-    /// Creates a new builder-style object to manufacture [`LambdaFunctionMemoryRecommendationOption`](crate::model::LambdaFunctionMemoryRecommendationOption).
-    pub fn builder() -> crate::model::lambda_function_memory_recommendation_option::Builder {
-        crate::model::lambda_function_memory_recommendation_option::Builder::default()
-    }
-}
 
 /// <p>Describes a projected utilization metric of an Lambda function recommendation option.</p>
 #[non_exhaustive]
@@ -2604,6 +2615,13 @@ impl LambdaFunctionMemoryProjectedMetric {
         self.value
     }
 }
+impl LambdaFunctionMemoryProjectedMetric {
+    /// Creates a new builder-style object to manufacture [`LambdaFunctionMemoryProjectedMetric`](crate::model::LambdaFunctionMemoryProjectedMetric).
+    pub fn builder() -> crate::model::lambda_function_memory_projected_metric::Builder {
+        crate::model::lambda_function_memory_projected_metric::Builder::default()
+    }
+}
+
 /// See [`LambdaFunctionMemoryProjectedMetric`](crate::model::LambdaFunctionMemoryProjectedMetric).
 pub mod lambda_function_memory_projected_metric {
 
@@ -2664,12 +2682,6 @@ pub mod lambda_function_memory_projected_metric {
                 value: self.value.unwrap_or_default(),
             }
         }
-    }
-}
-impl LambdaFunctionMemoryProjectedMetric {
-    /// Creates a new builder-style object to manufacture [`LambdaFunctionMemoryProjectedMetric`](crate::model::LambdaFunctionMemoryProjectedMetric).
-    pub fn builder() -> crate::model::lambda_function_memory_projected_metric::Builder {
-        crate::model::lambda_function_memory_projected_metric::Builder::default()
     }
 }
 
@@ -3111,6 +3123,13 @@ impl LambdaFunctionUtilizationMetric {
         self.value
     }
 }
+impl LambdaFunctionUtilizationMetric {
+    /// Creates a new builder-style object to manufacture [`LambdaFunctionUtilizationMetric`](crate::model::LambdaFunctionUtilizationMetric).
+    pub fn builder() -> crate::model::lambda_function_utilization_metric::Builder {
+        crate::model::lambda_function_utilization_metric::Builder::default()
+    }
+}
+
 /// See [`LambdaFunctionUtilizationMetric`](crate::model::LambdaFunctionUtilizationMetric).
 pub mod lambda_function_utilization_metric {
 
@@ -3181,12 +3200,6 @@ pub mod lambda_function_utilization_metric {
                 value: self.value.unwrap_or_default(),
             }
         }
-    }
-}
-impl LambdaFunctionUtilizationMetric {
-    /// Creates a new builder-style object to manufacture [`LambdaFunctionUtilizationMetric`](crate::model::LambdaFunctionUtilizationMetric).
-    pub fn builder() -> crate::model::lambda_function_utilization_metric::Builder {
-        crate::model::lambda_function_utilization_metric::Builder::default()
     }
 }
 
@@ -3412,6 +3425,13 @@ impl LambdaFunctionRecommendationFilter {
         self.values.as_deref()
     }
 }
+impl LambdaFunctionRecommendationFilter {
+    /// Creates a new builder-style object to manufacture [`LambdaFunctionRecommendationFilter`](crate::model::LambdaFunctionRecommendationFilter).
+    pub fn builder() -> crate::model::lambda_function_recommendation_filter::Builder {
+        crate::model::lambda_function_recommendation_filter::Builder::default()
+    }
+}
+
 /// See [`LambdaFunctionRecommendationFilter`](crate::model::LambdaFunctionRecommendationFilter).
 pub mod lambda_function_recommendation_filter {
 
@@ -3476,12 +3496,6 @@ pub mod lambda_function_recommendation_filter {
                 values: self.values,
             }
         }
-    }
-}
-impl LambdaFunctionRecommendationFilter {
-    /// Creates a new builder-style object to manufacture [`LambdaFunctionRecommendationFilter`](crate::model::LambdaFunctionRecommendationFilter).
-    pub fn builder() -> crate::model::lambda_function_recommendation_filter::Builder {
-        crate::model::lambda_function_recommendation_filter::Builder::default()
     }
 }
 
@@ -3614,6 +3628,13 @@ impl AccountEnrollmentStatus {
         self.last_updated_timestamp.as_ref()
     }
 }
+impl AccountEnrollmentStatus {
+    /// Creates a new builder-style object to manufacture [`AccountEnrollmentStatus`](crate::model::AccountEnrollmentStatus).
+    pub fn builder() -> crate::model::account_enrollment_status::Builder {
+        crate::model::account_enrollment_status::Builder::default()
+    }
+}
+
 /// See [`AccountEnrollmentStatus`](crate::model::AccountEnrollmentStatus).
 pub mod account_enrollment_status {
 
@@ -3686,12 +3707,6 @@ pub mod account_enrollment_status {
         }
     }
 }
-impl AccountEnrollmentStatus {
-    /// Creates a new builder-style object to manufacture [`AccountEnrollmentStatus`](crate::model::AccountEnrollmentStatus).
-    pub fn builder() -> crate::model::account_enrollment_status::Builder {
-        crate::model::account_enrollment_status::Builder::default()
-    }
-}
 
 /// <p>Describes a filter that returns a more specific list of account enrollment statuses. Use this filter with the <code>GetEnrollmentStatusesForOrganization</code> action.</p>
 #[non_exhaustive]
@@ -3718,6 +3733,13 @@ impl EnrollmentFilter {
         self.values.as_deref()
     }
 }
+impl EnrollmentFilter {
+    /// Creates a new builder-style object to manufacture [`EnrollmentFilter`](crate::model::EnrollmentFilter).
+    pub fn builder() -> crate::model::enrollment_filter::Builder {
+        crate::model::enrollment_filter::Builder::default()
+    }
+}
+
 /// See [`EnrollmentFilter`](crate::model::EnrollmentFilter).
 pub mod enrollment_filter {
 
@@ -3772,12 +3794,6 @@ pub mod enrollment_filter {
                 values: self.values,
             }
         }
-    }
-}
-impl EnrollmentFilter {
-    /// Creates a new builder-style object to manufacture [`EnrollmentFilter`](crate::model::EnrollmentFilter).
-    pub fn builder() -> crate::model::enrollment_filter::Builder {
-        crate::model::enrollment_filter::Builder::default()
     }
 }
 
@@ -3897,6 +3913,13 @@ impl GetRecommendationError {
         self.message.as_deref()
     }
 }
+impl GetRecommendationError {
+    /// Creates a new builder-style object to manufacture [`GetRecommendationError`](crate::model::GetRecommendationError).
+    pub fn builder() -> crate::model::get_recommendation_error::Builder {
+        crate::model::get_recommendation_error::Builder::default()
+    }
+}
+
 /// See [`GetRecommendationError`](crate::model::GetRecommendationError).
 pub mod get_recommendation_error {
 
@@ -3947,12 +3970,6 @@ pub mod get_recommendation_error {
                 message: self.message,
             }
         }
-    }
-}
-impl GetRecommendationError {
-    /// Creates a new builder-style object to manufacture [`GetRecommendationError`](crate::model::GetRecommendationError).
-    pub fn builder() -> crate::model::get_recommendation_error::Builder {
-        crate::model::get_recommendation_error::Builder::default()
     }
 }
 
@@ -4087,6 +4104,13 @@ impl EcsServiceRecommendation {
         self.current_performance_risk.as_ref()
     }
 }
+impl EcsServiceRecommendation {
+    /// Creates a new builder-style object to manufacture [`EcsServiceRecommendation`](crate::model::EcsServiceRecommendation).
+    pub fn builder() -> crate::model::ecs_service_recommendation::Builder {
+        crate::model::ecs_service_recommendation::Builder::default()
+    }
+}
+
 /// See [`EcsServiceRecommendation`](crate::model::EcsServiceRecommendation).
 pub mod ecs_service_recommendation {
 
@@ -4334,12 +4358,6 @@ pub mod ecs_service_recommendation {
         }
     }
 }
-impl EcsServiceRecommendation {
-    /// Creates a new builder-style object to manufacture [`EcsServiceRecommendation`](crate::model::EcsServiceRecommendation).
-    pub fn builder() -> crate::model::ecs_service_recommendation::Builder {
-        crate::model::ecs_service_recommendation::Builder::default()
-    }
-}
 
 /// <p> Describes the recommendation options for an Amazon ECS service. </p>
 #[non_exhaustive]
@@ -4395,6 +4413,13 @@ impl EcsServiceRecommendationOption {
         self.container_recommendations.as_deref()
     }
 }
+impl EcsServiceRecommendationOption {
+    /// Creates a new builder-style object to manufacture [`EcsServiceRecommendationOption`](crate::model::EcsServiceRecommendationOption).
+    pub fn builder() -> crate::model::ecs_service_recommendation_option::Builder {
+        crate::model::ecs_service_recommendation_option::Builder::default()
+    }
+}
+
 /// See [`EcsServiceRecommendationOption`](crate::model::EcsServiceRecommendationOption).
 pub mod ecs_service_recommendation_option {
 
@@ -4508,12 +4533,6 @@ pub mod ecs_service_recommendation_option {
         }
     }
 }
-impl EcsServiceRecommendationOption {
-    /// Creates a new builder-style object to manufacture [`EcsServiceRecommendationOption`](crate::model::EcsServiceRecommendationOption).
-    pub fn builder() -> crate::model::ecs_service_recommendation_option::Builder {
-        crate::model::ecs_service_recommendation_option::Builder::default()
-    }
-}
 
 /// <p> The CPU and memory recommendations for a container within the tasks of your Amazon ECS service. </p>
 #[non_exhaustive]
@@ -4545,6 +4564,13 @@ impl ContainerRecommendation {
         self.cpu
     }
 }
+impl ContainerRecommendation {
+    /// Creates a new builder-style object to manufacture [`ContainerRecommendation`](crate::model::ContainerRecommendation).
+    pub fn builder() -> crate::model::container_recommendation::Builder {
+        crate::model::container_recommendation::Builder::default()
+    }
+}
+
 /// See [`ContainerRecommendation`](crate::model::ContainerRecommendation).
 pub mod container_recommendation {
 
@@ -4607,12 +4633,6 @@ pub mod container_recommendation {
         }
     }
 }
-impl ContainerRecommendation {
-    /// Creates a new builder-style object to manufacture [`ContainerRecommendation`](crate::model::ContainerRecommendation).
-    pub fn builder() -> crate::model::container_recommendation::Builder {
-        crate::model::container_recommendation::Builder::default()
-    }
-}
 
 /// <p> The memory size configurations of a container. </p>
 #[non_exhaustive]
@@ -4635,6 +4655,13 @@ impl MemorySizeConfiguration {
         self.memory_reservation
     }
 }
+impl MemorySizeConfiguration {
+    /// Creates a new builder-style object to manufacture [`MemorySizeConfiguration`](crate::model::MemorySizeConfiguration).
+    pub fn builder() -> crate::model::memory_size_configuration::Builder {
+        crate::model::memory_size_configuration::Builder::default()
+    }
+}
+
 /// See [`MemorySizeConfiguration`](crate::model::MemorySizeConfiguration).
 pub mod memory_size_configuration {
 
@@ -4673,12 +4700,6 @@ pub mod memory_size_configuration {
                 memory_reservation: self.memory_reservation,
             }
         }
-    }
-}
-impl MemorySizeConfiguration {
-    /// Creates a new builder-style object to manufacture [`MemorySizeConfiguration`](crate::model::MemorySizeConfiguration).
-    pub fn builder() -> crate::model::memory_size_configuration::Builder {
-        crate::model::memory_size_configuration::Builder::default()
     }
 }
 
@@ -4732,6 +4753,13 @@ impl EcsServiceProjectedUtilizationMetric {
         self.upper_bound_value
     }
 }
+impl EcsServiceProjectedUtilizationMetric {
+    /// Creates a new builder-style object to manufacture [`EcsServiceProjectedUtilizationMetric`](crate::model::EcsServiceProjectedUtilizationMetric).
+    pub fn builder() -> crate::model::ecs_service_projected_utilization_metric::Builder {
+        crate::model::ecs_service_projected_utilization_metric::Builder::default()
+    }
+}
+
 /// See [`EcsServiceProjectedUtilizationMetric`](crate::model::EcsServiceProjectedUtilizationMetric).
 pub mod ecs_service_projected_utilization_metric {
 
@@ -4814,12 +4842,6 @@ pub mod ecs_service_projected_utilization_metric {
                 upper_bound_value: self.upper_bound_value.unwrap_or_default(),
             }
         }
-    }
-}
-impl EcsServiceProjectedUtilizationMetric {
-    /// Creates a new builder-style object to manufacture [`EcsServiceProjectedUtilizationMetric`](crate::model::EcsServiceProjectedUtilizationMetric).
-    pub fn builder() -> crate::model::ecs_service_projected_utilization_metric::Builder {
-        crate::model::ecs_service_projected_utilization_metric::Builder::default()
     }
 }
 
@@ -5354,6 +5376,13 @@ impl EcsServiceUtilizationMetric {
         self.value
     }
 }
+impl EcsServiceUtilizationMetric {
+    /// Creates a new builder-style object to manufacture [`EcsServiceUtilizationMetric`](crate::model::EcsServiceUtilizationMetric).
+    pub fn builder() -> crate::model::ecs_service_utilization_metric::Builder {
+        crate::model::ecs_service_utilization_metric::Builder::default()
+    }
+}
+
 /// See [`EcsServiceUtilizationMetric`](crate::model::EcsServiceUtilizationMetric).
 pub mod ecs_service_utilization_metric {
 
@@ -5426,12 +5455,6 @@ pub mod ecs_service_utilization_metric {
         }
     }
 }
-impl EcsServiceUtilizationMetric {
-    /// Creates a new builder-style object to manufacture [`EcsServiceUtilizationMetric`](crate::model::EcsServiceUtilizationMetric).
-    pub fn builder() -> crate::model::ecs_service_utilization_metric::Builder {
-        crate::model::ecs_service_utilization_metric::Builder::default()
-    }
-}
 
 /// <p> The Amazon ECS service configurations used for recommendations. </p>
 #[non_exhaustive]
@@ -5492,6 +5515,13 @@ impl ServiceConfiguration {
         self.task_definition_arn.as_deref()
     }
 }
+impl ServiceConfiguration {
+    /// Creates a new builder-style object to manufacture [`ServiceConfiguration`](crate::model::ServiceConfiguration).
+    pub fn builder() -> crate::model::service_configuration::Builder {
+        crate::model::service_configuration::Builder::default()
+    }
+}
+
 /// See [`ServiceConfiguration`](crate::model::ServiceConfiguration).
 pub mod service_configuration {
 
@@ -5601,12 +5631,6 @@ pub mod service_configuration {
                 task_definition_arn: self.task_definition_arn,
             }
         }
-    }
-}
-impl ServiceConfiguration {
-    /// Creates a new builder-style object to manufacture [`ServiceConfiguration`](crate::model::ServiceConfiguration).
-    pub fn builder() -> crate::model::service_configuration::Builder {
-        crate::model::service_configuration::Builder::default()
     }
 }
 
@@ -5732,6 +5756,13 @@ impl ContainerConfiguration {
         self.cpu
     }
 }
+impl ContainerConfiguration {
+    /// Creates a new builder-style object to manufacture [`ContainerConfiguration`](crate::model::ContainerConfiguration).
+    pub fn builder() -> crate::model::container_configuration::Builder {
+        crate::model::container_configuration::Builder::default()
+    }
+}
+
 /// See [`ContainerConfiguration`](crate::model::ContainerConfiguration).
 pub mod container_configuration {
 
@@ -5794,12 +5825,6 @@ pub mod container_configuration {
         }
     }
 }
-impl ContainerConfiguration {
-    /// Creates a new builder-style object to manufacture [`ContainerConfiguration`](crate::model::ContainerConfiguration).
-    pub fn builder() -> crate::model::container_configuration::Builder {
-        crate::model::container_configuration::Builder::default()
-    }
-}
 
 /// <p> Describes a filter that returns a more specific list of Amazon ECS service recommendations. Use this filter with the <code>GetECSServiceRecommendations</code> action. </p>
 #[non_exhaustive]
@@ -5836,6 +5861,13 @@ impl EcsServiceRecommendationFilter {
         self.values.as_deref()
     }
 }
+impl EcsServiceRecommendationFilter {
+    /// Creates a new builder-style object to manufacture [`EcsServiceRecommendationFilter`](crate::model::EcsServiceRecommendationFilter).
+    pub fn builder() -> crate::model::ecs_service_recommendation_filter::Builder {
+        crate::model::ecs_service_recommendation_filter::Builder::default()
+    }
+}
+
 /// See [`EcsServiceRecommendationFilter`](crate::model::EcsServiceRecommendationFilter).
 pub mod ecs_service_recommendation_filter {
 
@@ -5900,12 +5932,6 @@ pub mod ecs_service_recommendation_filter {
                 values: self.values,
             }
         }
-    }
-}
-impl EcsServiceRecommendationFilter {
-    /// Creates a new builder-style object to manufacture [`EcsServiceRecommendationFilter`](crate::model::EcsServiceRecommendationFilter).
-    pub fn builder() -> crate::model::ecs_service_recommendation_filter::Builder {
-        crate::model::ecs_service_recommendation_filter::Builder::default()
     }
 }
 
@@ -6033,6 +6059,13 @@ impl EcsServiceRecommendedOptionProjectedMetric {
         self.projected_metrics.as_deref()
     }
 }
+impl EcsServiceRecommendedOptionProjectedMetric {
+    /// Creates a new builder-style object to manufacture [`EcsServiceRecommendedOptionProjectedMetric`](crate::model::EcsServiceRecommendedOptionProjectedMetric).
+    pub fn builder() -> crate::model::ecs_service_recommended_option_projected_metric::Builder {
+        crate::model::ecs_service_recommended_option_projected_metric::Builder::default()
+    }
+}
+
 /// See [`EcsServiceRecommendedOptionProjectedMetric`](crate::model::EcsServiceRecommendedOptionProjectedMetric).
 pub mod ecs_service_recommended_option_projected_metric {
 
@@ -6095,12 +6128,6 @@ pub mod ecs_service_recommended_option_projected_metric {
         }
     }
 }
-impl EcsServiceRecommendedOptionProjectedMetric {
-    /// Creates a new builder-style object to manufacture [`EcsServiceRecommendedOptionProjectedMetric`](crate::model::EcsServiceRecommendedOptionProjectedMetric).
-    pub fn builder() -> crate::model::ecs_service_recommended_option_projected_metric::Builder {
-        crate::model::ecs_service_recommended_option_projected_metric::Builder::default()
-    }
-}
 
 /// <p> Describes the projected metrics of an Amazon ECS service recommendation option. </p>
 /// <p>To determine the performance difference between your current ECS service and the recommended option, compare the metric data of your service against its projected metric data.</p>
@@ -6148,6 +6175,13 @@ impl EcsServiceProjectedMetric {
         self.lower_bound_values.as_deref()
     }
 }
+impl EcsServiceProjectedMetric {
+    /// Creates a new builder-style object to manufacture [`EcsServiceProjectedMetric`](crate::model::EcsServiceProjectedMetric).
+    pub fn builder() -> crate::model::ecs_service_projected_metric::Builder {
+        crate::model::ecs_service_projected_metric::Builder::default()
+    }
+}
+
 /// See [`EcsServiceProjectedMetric`](crate::model::EcsServiceProjectedMetric).
 pub mod ecs_service_projected_metric {
 
@@ -6250,12 +6284,6 @@ pub mod ecs_service_projected_metric {
                 lower_bound_values: self.lower_bound_values,
             }
         }
-    }
-}
-impl EcsServiceProjectedMetric {
-    /// Creates a new builder-style object to manufacture [`EcsServiceProjectedMetric`](crate::model::EcsServiceProjectedMetric).
-    pub fn builder() -> crate::model::ecs_service_projected_metric::Builder {
-        crate::model::ecs_service_projected_metric::Builder::default()
     }
 }
 
@@ -6383,6 +6411,13 @@ impl RecommendedOptionProjectedMetric {
         self.projected_metrics.as_deref()
     }
 }
+impl RecommendedOptionProjectedMetric {
+    /// Creates a new builder-style object to manufacture [`RecommendedOptionProjectedMetric`](crate::model::RecommendedOptionProjectedMetric).
+    pub fn builder() -> crate::model::recommended_option_projected_metric::Builder {
+        crate::model::recommended_option_projected_metric::Builder::default()
+    }
+}
+
 /// See [`RecommendedOptionProjectedMetric`](crate::model::RecommendedOptionProjectedMetric).
 pub mod recommended_option_projected_metric {
 
@@ -6452,12 +6487,6 @@ pub mod recommended_option_projected_metric {
         }
     }
 }
-impl RecommendedOptionProjectedMetric {
-    /// Creates a new builder-style object to manufacture [`RecommendedOptionProjectedMetric`](crate::model::RecommendedOptionProjectedMetric).
-    pub fn builder() -> crate::model::recommended_option_projected_metric::Builder {
-        crate::model::recommended_option_projected_metric::Builder::default()
-    }
-}
 
 /// <p>Describes a projected utilization metric of a recommendation option, such as an Amazon EC2 instance. This represents the projected utilization of a recommendation option had you used that resource during the analyzed period.</p>
 /// <p>Compare the utilization metric data of your resource against its projected utilization metric data to determine the performance difference between your current resource and the recommended option.</p> <note>
@@ -6504,6 +6533,13 @@ impl ProjectedMetric {
         self.values.as_deref()
     }
 }
+impl ProjectedMetric {
+    /// Creates a new builder-style object to manufacture [`ProjectedMetric`](crate::model::ProjectedMetric).
+    pub fn builder() -> crate::model::projected_metric::Builder {
+        crate::model::projected_metric::Builder::default()
+    }
+}
+
 /// See [`ProjectedMetric`](crate::model::ProjectedMetric).
 pub mod projected_metric {
 
@@ -6583,12 +6619,6 @@ pub mod projected_metric {
                 values: self.values,
             }
         }
-    }
-}
-impl ProjectedMetric {
-    /// Creates a new builder-style object to manufacture [`ProjectedMetric`](crate::model::ProjectedMetric).
-    pub fn builder() -> crate::model::projected_metric::Builder {
-        crate::model::projected_metric::Builder::default()
     }
 }
 
@@ -6786,6 +6816,13 @@ impl RecommendationPreferences {
         self.cpu_vendor_architectures.as_deref()
     }
 }
+impl RecommendationPreferences {
+    /// Creates a new builder-style object to manufacture [`RecommendationPreferences`](crate::model::RecommendationPreferences).
+    pub fn builder() -> crate::model::recommendation_preferences::Builder {
+        crate::model::recommendation_preferences::Builder::default()
+    }
+}
+
 /// See [`RecommendationPreferences`](crate::model::RecommendationPreferences).
 pub mod recommendation_preferences {
 
@@ -6837,12 +6874,6 @@ pub mod recommendation_preferences {
                 cpu_vendor_architectures: self.cpu_vendor_architectures,
             }
         }
-    }
-}
-impl RecommendationPreferences {
-    /// Creates a new builder-style object to manufacture [`RecommendationPreferences`](crate::model::RecommendationPreferences).
-    pub fn builder() -> crate::model::recommendation_preferences::Builder {
-        crate::model::recommendation_preferences::Builder::default()
     }
 }
 
@@ -7138,6 +7169,13 @@ impl InstanceRecommendation {
         self.inferred_workload_types.as_deref()
     }
 }
+impl InstanceRecommendation {
+    /// Creates a new builder-style object to manufacture [`InstanceRecommendation`](crate::model::InstanceRecommendation).
+    pub fn builder() -> crate::model::instance_recommendation::Builder {
+        crate::model::instance_recommendation::Builder::default()
+    }
+}
+
 /// See [`InstanceRecommendation`](crate::model::InstanceRecommendation).
 pub mod instance_recommendation {
 
@@ -7485,12 +7523,6 @@ pub mod instance_recommendation {
         }
     }
 }
-impl InstanceRecommendation {
-    /// Creates a new builder-style object to manufacture [`InstanceRecommendation`](crate::model::InstanceRecommendation).
-    pub fn builder() -> crate::model::instance_recommendation::Builder {
-        crate::model::instance_recommendation::Builder::default()
-    }
-}
 
 /// When writing a match expression against `InferredWorkloadType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -7682,6 +7714,13 @@ impl EffectiveRecommendationPreferences {
         self.external_metrics_preference.as_ref()
     }
 }
+impl EffectiveRecommendationPreferences {
+    /// Creates a new builder-style object to manufacture [`EffectiveRecommendationPreferences`](crate::model::EffectiveRecommendationPreferences).
+    pub fn builder() -> crate::model::effective_recommendation_preferences::Builder {
+        crate::model::effective_recommendation_preferences::Builder::default()
+    }
+}
+
 /// See [`EffectiveRecommendationPreferences`](crate::model::EffectiveRecommendationPreferences).
 pub mod effective_recommendation_preferences {
 
@@ -7800,12 +7839,6 @@ pub mod effective_recommendation_preferences {
         }
     }
 }
-impl EffectiveRecommendationPreferences {
-    /// Creates a new builder-style object to manufacture [`EffectiveRecommendationPreferences`](crate::model::EffectiveRecommendationPreferences).
-    pub fn builder() -> crate::model::effective_recommendation_preferences::Builder {
-        crate::model::effective_recommendation_preferences::Builder::default()
-    }
-}
 
 /// <p>Describes the source of a recommendation, such as an Amazon EC2 instance or Auto Scaling group.</p>
 #[non_exhaustive]
@@ -7830,6 +7863,13 @@ impl RecommendationSource {
         self.recommendation_source_type.as_ref()
     }
 }
+impl RecommendationSource {
+    /// Creates a new builder-style object to manufacture [`RecommendationSource`](crate::model::RecommendationSource).
+    pub fn builder() -> crate::model::recommendation_source::Builder {
+        crate::model::recommendation_source::Builder::default()
+    }
+}
+
 /// See [`RecommendationSource`](crate::model::RecommendationSource).
 pub mod recommendation_source {
 
@@ -7878,12 +7918,6 @@ pub mod recommendation_source {
                 recommendation_source_type: self.recommendation_source_type,
             }
         }
-    }
-}
-impl RecommendationSource {
-    /// Creates a new builder-style object to manufacture [`RecommendationSource`](crate::model::RecommendationSource).
-    pub fn builder() -> crate::model::recommendation_source::Builder {
-        crate::model::recommendation_source::Builder::default()
     }
 }
 
@@ -7976,6 +8010,13 @@ impl InstanceRecommendationOption {
         self.migration_effort.as_ref()
     }
 }
+impl InstanceRecommendationOption {
+    /// Creates a new builder-style object to manufacture [`InstanceRecommendationOption`](crate::model::InstanceRecommendationOption).
+    pub fn builder() -> crate::model::instance_recommendation_option::Builder {
+        crate::model::instance_recommendation_option::Builder::default()
+    }
+}
+
 /// See [`InstanceRecommendationOption`](crate::model::InstanceRecommendationOption).
 pub mod instance_recommendation_option {
 
@@ -8136,12 +8177,6 @@ pub mod instance_recommendation_option {
                 migration_effort: self.migration_effort,
             }
         }
-    }
-}
-impl InstanceRecommendationOption {
-    /// Creates a new builder-style object to manufacture [`InstanceRecommendationOption`](crate::model::InstanceRecommendationOption).
-    pub fn builder() -> crate::model::instance_recommendation_option::Builder {
-        crate::model::instance_recommendation_option::Builder::default()
     }
 }
 
@@ -8435,6 +8470,13 @@ impl UtilizationMetric {
         self.value
     }
 }
+impl UtilizationMetric {
+    /// Creates a new builder-style object to manufacture [`UtilizationMetric`](crate::model::UtilizationMetric).
+    pub fn builder() -> crate::model::utilization_metric::Builder {
+        crate::model::utilization_metric::Builder::default()
+    }
+}
+
 /// See [`UtilizationMetric`](crate::model::UtilizationMetric).
 pub mod utilization_metric {
 
@@ -8530,12 +8572,6 @@ pub mod utilization_metric {
                 value: self.value.unwrap_or_default(),
             }
         }
-    }
-}
-impl UtilizationMetric {
-    /// Creates a new builder-style object to manufacture [`UtilizationMetric`](crate::model::UtilizationMetric).
-    pub fn builder() -> crate::model::utilization_metric::Builder {
-        crate::model::utilization_metric::Builder::default()
     }
 }
 
@@ -8852,6 +8888,13 @@ impl Filter {
         self.values.as_deref()
     }
 }
+impl Filter {
+    /// Creates a new builder-style object to manufacture [`Filter`](crate::model::Filter).
+    pub fn builder() -> crate::model::filter::Builder {
+        crate::model::filter::Builder::default()
+    }
+}
+
 /// See [`Filter`](crate::model::Filter).
 pub mod filter {
 
@@ -8955,12 +8998,6 @@ pub mod filter {
                 values: self.values,
             }
         }
-    }
-}
-impl Filter {
-    /// Creates a new builder-style object to manufacture [`Filter`](crate::model::Filter).
-    pub fn builder() -> crate::model::filter::Builder {
-        crate::model::filter::Builder::default()
     }
 }
 
@@ -9146,6 +9183,13 @@ impl VolumeRecommendation {
         self.current_performance_risk.as_ref()
     }
 }
+impl VolumeRecommendation {
+    /// Creates a new builder-style object to manufacture [`VolumeRecommendation`](crate::model::VolumeRecommendation).
+    pub fn builder() -> crate::model::volume_recommendation::Builder {
+        crate::model::volume_recommendation::Builder::default()
+    }
+}
+
 /// See [`VolumeRecommendation`](crate::model::VolumeRecommendation).
 pub mod volume_recommendation {
 
@@ -9316,12 +9360,6 @@ pub mod volume_recommendation {
         }
     }
 }
-impl VolumeRecommendation {
-    /// Creates a new builder-style object to manufacture [`VolumeRecommendation`](crate::model::VolumeRecommendation).
-    pub fn builder() -> crate::model::volume_recommendation::Builder {
-        crate::model::volume_recommendation::Builder::default()
-    }
-}
 
 /// <p>Describes a recommendation option for an Amazon Elastic Block Store (Amazon EBS) instance.</p>
 #[non_exhaustive]
@@ -9364,6 +9402,13 @@ impl VolumeRecommendationOption {
         self.savings_opportunity.as_ref()
     }
 }
+impl VolumeRecommendationOption {
+    /// Creates a new builder-style object to manufacture [`VolumeRecommendationOption`](crate::model::VolumeRecommendationOption).
+    pub fn builder() -> crate::model::volume_recommendation_option::Builder {
+        crate::model::volume_recommendation_option::Builder::default()
+    }
+}
+
 /// See [`VolumeRecommendationOption`](crate::model::VolumeRecommendationOption).
 pub mod volume_recommendation_option {
 
@@ -9440,12 +9485,6 @@ pub mod volume_recommendation_option {
         }
     }
 }
-impl VolumeRecommendationOption {
-    /// Creates a new builder-style object to manufacture [`VolumeRecommendationOption`](crate::model::VolumeRecommendationOption).
-    pub fn builder() -> crate::model::volume_recommendation_option::Builder {
-        crate::model::volume_recommendation_option::Builder::default()
-    }
-}
 
 /// <p>Describes the configuration of an Amazon Elastic Block Store (Amazon EBS) volume.</p>
 #[non_exhaustive]
@@ -9498,6 +9537,13 @@ impl VolumeConfiguration {
         self.volume_burst_throughput
     }
 }
+impl VolumeConfiguration {
+    /// Creates a new builder-style object to manufacture [`VolumeConfiguration`](crate::model::VolumeConfiguration).
+    pub fn builder() -> crate::model::volume_configuration::Builder {
+        crate::model::volume_configuration::Builder::default()
+    }
+}
+
 /// See [`VolumeConfiguration`](crate::model::VolumeConfiguration).
 pub mod volume_configuration {
 
@@ -9588,12 +9634,6 @@ pub mod volume_configuration {
         }
     }
 }
-impl VolumeConfiguration {
-    /// Creates a new builder-style object to manufacture [`VolumeConfiguration`](crate::model::VolumeConfiguration).
-    pub fn builder() -> crate::model::volume_configuration::Builder {
-        crate::model::volume_configuration::Builder::default()
-    }
-}
 
 /// <p>Describes a utilization metric of an Amazon Elastic Block Store (Amazon EBS) volume.</p>
 /// <p>Compare the utilization metric data of your resource against its projected utilization metric data to determine the performance difference between your current resource and the recommended option.</p>
@@ -9642,6 +9682,13 @@ impl EbsUtilizationMetric {
         self.value
     }
 }
+impl EbsUtilizationMetric {
+    /// Creates a new builder-style object to manufacture [`EbsUtilizationMetric`](crate::model::EbsUtilizationMetric).
+    pub fn builder() -> crate::model::ebs_utilization_metric::Builder {
+        crate::model::ebs_utilization_metric::Builder::default()
+    }
+}
+
 /// See [`EbsUtilizationMetric`](crate::model::EbsUtilizationMetric).
 pub mod ebs_utilization_metric {
 
@@ -9713,12 +9760,6 @@ pub mod ebs_utilization_metric {
                 value: self.value.unwrap_or_default(),
             }
         }
-    }
-}
-impl EbsUtilizationMetric {
-    /// Creates a new builder-style object to manufacture [`EbsUtilizationMetric`](crate::model::EbsUtilizationMetric).
-    pub fn builder() -> crate::model::ebs_utilization_metric::Builder {
-        crate::model::ebs_utilization_metric::Builder::default()
     }
 }
 
@@ -9943,6 +9984,13 @@ impl EbsFilter {
         self.values.as_deref()
     }
 }
+impl EbsFilter {
+    /// Creates a new builder-style object to manufacture [`EbsFilter`](crate::model::EbsFilter).
+    pub fn builder() -> crate::model::ebs_filter::Builder {
+        crate::model::ebs_filter::Builder::default()
+    }
+}
+
 /// See [`EbsFilter`](crate::model::EbsFilter).
 pub mod ebs_filter {
 
@@ -9994,12 +10042,6 @@ pub mod ebs_filter {
                 values: self.values,
             }
         }
-    }
-}
-impl EbsFilter {
-    /// Creates a new builder-style object to manufacture [`EbsFilter`](crate::model::EbsFilter).
-    pub fn builder() -> crate::model::ebs_filter::Builder {
-        crate::model::ebs_filter::Builder::default()
     }
 }
 
@@ -10222,6 +10264,13 @@ impl AutoScalingGroupRecommendation {
         self.inferred_workload_types.as_deref()
     }
 }
+impl AutoScalingGroupRecommendation {
+    /// Creates a new builder-style object to manufacture [`AutoScalingGroupRecommendation`](crate::model::AutoScalingGroupRecommendation).
+    pub fn builder() -> crate::model::auto_scaling_group_recommendation::Builder {
+        crate::model::auto_scaling_group_recommendation::Builder::default()
+    }
+}
+
 /// See [`AutoScalingGroupRecommendation`](crate::model::AutoScalingGroupRecommendation).
 pub mod auto_scaling_group_recommendation {
 
@@ -10480,12 +10529,6 @@ pub mod auto_scaling_group_recommendation {
         }
     }
 }
-impl AutoScalingGroupRecommendation {
-    /// Creates a new builder-style object to manufacture [`AutoScalingGroupRecommendation`](crate::model::AutoScalingGroupRecommendation).
-    pub fn builder() -> crate::model::auto_scaling_group_recommendation::Builder {
-        crate::model::auto_scaling_group_recommendation::Builder::default()
-    }
-}
 
 /// <p>Describes a recommendation option for an Auto Scaling group.</p>
 #[non_exhaustive]
@@ -10553,6 +10596,13 @@ impl AutoScalingGroupRecommendationOption {
         self.migration_effort.as_ref()
     }
 }
+impl AutoScalingGroupRecommendationOption {
+    /// Creates a new builder-style object to manufacture [`AutoScalingGroupRecommendationOption`](crate::model::AutoScalingGroupRecommendationOption).
+    pub fn builder() -> crate::model::auto_scaling_group_recommendation_option::Builder {
+        crate::model::auto_scaling_group_recommendation_option::Builder::default()
+    }
+}
+
 /// See [`AutoScalingGroupRecommendationOption`](crate::model::AutoScalingGroupRecommendationOption).
 pub mod auto_scaling_group_recommendation_option {
 
@@ -10675,12 +10725,6 @@ pub mod auto_scaling_group_recommendation_option {
         }
     }
 }
-impl AutoScalingGroupRecommendationOption {
-    /// Creates a new builder-style object to manufacture [`AutoScalingGroupRecommendationOption`](crate::model::AutoScalingGroupRecommendationOption).
-    pub fn builder() -> crate::model::auto_scaling_group_recommendation_option::Builder {
-        crate::model::auto_scaling_group_recommendation_option::Builder::default()
-    }
-}
 
 /// <p>Describes the configuration of an Auto Scaling group.</p>
 #[non_exhaustive]
@@ -10717,6 +10761,13 @@ impl AutoScalingGroupConfiguration {
         self.instance_type.as_deref()
     }
 }
+impl AutoScalingGroupConfiguration {
+    /// Creates a new builder-style object to manufacture [`AutoScalingGroupConfiguration`](crate::model::AutoScalingGroupConfiguration).
+    pub fn builder() -> crate::model::auto_scaling_group_configuration::Builder {
+        crate::model::auto_scaling_group_configuration::Builder::default()
+    }
+}
+
 /// See [`AutoScalingGroupConfiguration`](crate::model::AutoScalingGroupConfiguration).
 pub mod auto_scaling_group_configuration {
 
@@ -10784,12 +10835,6 @@ pub mod auto_scaling_group_configuration {
         }
     }
 }
-impl AutoScalingGroupConfiguration {
-    /// Creates a new builder-style object to manufacture [`AutoScalingGroupConfiguration`](crate::model::AutoScalingGroupConfiguration).
-    pub fn builder() -> crate::model::auto_scaling_group_configuration::Builder {
-        crate::model::auto_scaling_group_configuration::Builder::default()
-    }
-}
 
 /// <p>Describes the destination Amazon Simple Storage Service (Amazon S3) bucket name and object keys of a recommendations export file, and its associated metadata file.</p>
 #[non_exhaustive]
@@ -10823,6 +10868,13 @@ impl S3Destination {
         self.metadata_key.as_deref()
     }
 }
+impl S3Destination {
+    /// Creates a new builder-style object to manufacture [`S3Destination`](crate::model::S3Destination).
+    pub fn builder() -> crate::model::s3_destination::Builder {
+        crate::model::s3_destination::Builder::default()
+    }
+}
+
 /// See [`S3Destination`](crate::model::S3Destination).
 pub mod s3_destination {
 
@@ -10877,12 +10929,6 @@ pub mod s3_destination {
                 metadata_key: self.metadata_key,
             }
         }
-    }
-}
-impl S3Destination {
-    /// Creates a new builder-style object to manufacture [`S3Destination`](crate::model::S3Destination).
-    pub fn builder() -> crate::model::s3_destination::Builder {
-        crate::model::s3_destination::Builder::default()
     }
 }
 
@@ -10993,6 +11039,13 @@ impl S3DestinationConfig {
         self.key_prefix.as_deref()
     }
 }
+impl S3DestinationConfig {
+    /// Creates a new builder-style object to manufacture [`S3DestinationConfig`](crate::model::S3DestinationConfig).
+    pub fn builder() -> crate::model::s3_destination_config::Builder {
+        crate::model::s3_destination_config::Builder::default()
+    }
+}
+
 /// See [`S3DestinationConfig`](crate::model::S3DestinationConfig).
 pub mod s3_destination_config {
 
@@ -11031,12 +11084,6 @@ pub mod s3_destination_config {
                 key_prefix: self.key_prefix,
             }
         }
-    }
-}
-impl S3DestinationConfig {
-    /// Creates a new builder-style object to manufacture [`S3DestinationConfig`](crate::model::S3DestinationConfig).
-    pub fn builder() -> crate::model::s3_destination_config::Builder {
-        crate::model::s3_destination_config::Builder::default()
     }
 }
 
@@ -12693,6 +12740,13 @@ impl RecommendationExportJob {
         self.failure_reason.as_deref()
     }
 }
+impl RecommendationExportJob {
+    /// Creates a new builder-style object to manufacture [`RecommendationExportJob`](crate::model::RecommendationExportJob).
+    pub fn builder() -> crate::model::recommendation_export_job::Builder {
+        crate::model::recommendation_export_job::Builder::default()
+    }
+}
+
 /// See [`RecommendationExportJob`](crate::model::RecommendationExportJob).
 pub mod recommendation_export_job {
 
@@ -12806,12 +12860,6 @@ pub mod recommendation_export_job {
                 failure_reason: self.failure_reason,
             }
         }
-    }
-}
-impl RecommendationExportJob {
-    /// Creates a new builder-style object to manufacture [`RecommendationExportJob`](crate::model::RecommendationExportJob).
-    pub fn builder() -> crate::model::recommendation_export_job::Builder {
-        crate::model::recommendation_export_job::Builder::default()
     }
 }
 
@@ -12929,6 +12977,13 @@ impl ExportDestination {
         self.s3.as_ref()
     }
 }
+impl ExportDestination {
+    /// Creates a new builder-style object to manufacture [`ExportDestination`](crate::model::ExportDestination).
+    pub fn builder() -> crate::model::export_destination::Builder {
+        crate::model::export_destination::Builder::default()
+    }
+}
+
 /// See [`ExportDestination`](crate::model::ExportDestination).
 pub mod export_destination {
 
@@ -12953,12 +13008,6 @@ pub mod export_destination {
         pub fn build(self) -> crate::model::ExportDestination {
             crate::model::ExportDestination { s3: self.s3 }
         }
-    }
-}
-impl ExportDestination {
-    /// Creates a new builder-style object to manufacture [`ExportDestination`](crate::model::ExportDestination).
-    pub fn builder() -> crate::model::export_destination::Builder {
-        crate::model::export_destination::Builder::default()
     }
 }
 
@@ -12998,6 +13047,13 @@ impl JobFilter {
         self.values.as_deref()
     }
 }
+impl JobFilter {
+    /// Creates a new builder-style object to manufacture [`JobFilter`](crate::model::JobFilter).
+    pub fn builder() -> crate::model::job_filter::Builder {
+        crate::model::job_filter::Builder::default()
+    }
+}
+
 /// See [`JobFilter`](crate::model::JobFilter).
 pub mod job_filter {
 
@@ -13059,12 +13115,6 @@ pub mod job_filter {
                 values: self.values,
             }
         }
-    }
-}
-impl JobFilter {
-    /// Creates a new builder-style object to manufacture [`JobFilter`](crate::model::JobFilter).
-    pub fn builder() -> crate::model::job_filter::Builder {
-        crate::model::job_filter::Builder::default()
     }
 }
 

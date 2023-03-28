@@ -49,6 +49,13 @@ impl TemplateSyncConfig {
         self.subdirectory.as_deref()
     }
 }
+impl TemplateSyncConfig {
+    /// Creates a new builder-style object to manufacture [`TemplateSyncConfig`](crate::model::TemplateSyncConfig).
+    pub fn builder() -> crate::model::template_sync_config::Builder {
+        crate::model::template_sync_config::Builder::default()
+    }
+}
+
 /// See [`TemplateSyncConfig`](crate::model::TemplateSyncConfig).
 pub mod template_sync_config {
 
@@ -147,12 +154,6 @@ pub mod template_sync_config {
                 subdirectory: self.subdirectory,
             }
         }
-    }
-}
-impl TemplateSyncConfig {
-    /// Creates a new builder-style object to manufacture [`TemplateSyncConfig`](crate::model::TemplateSyncConfig).
-    pub fn builder() -> crate::model::template_sync_config::Builder {
-        crate::model::template_sync_config::Builder::default()
     }
 }
 
@@ -436,6 +437,13 @@ impl std::fmt::Debug for ServiceTemplateVersionSummary {
         formatter.finish()
     }
 }
+impl ServiceTemplateVersionSummary {
+    /// Creates a new builder-style object to manufacture [`ServiceTemplateVersionSummary`](crate::model::ServiceTemplateVersionSummary).
+    pub fn builder() -> crate::model::service_template_version_summary::Builder {
+        crate::model::service_template_version_summary::Builder::default()
+    }
+}
+
 /// See [`ServiceTemplateVersionSummary`](crate::model::ServiceTemplateVersionSummary).
 pub mod service_template_version_summary {
 
@@ -610,12 +618,6 @@ pub mod service_template_version_summary {
             formatter.field("last_modified_at", &self.last_modified_at);
             formatter.finish()
         }
-    }
-}
-impl ServiceTemplateVersionSummary {
-    /// Creates a new builder-style object to manufacture [`ServiceTemplateVersionSummary`](crate::model::ServiceTemplateVersionSummary).
-    pub fn builder() -> crate::model::service_template_version_summary::Builder {
-        crate::model::service_template_version_summary::Builder::default()
     }
 }
 
@@ -858,6 +860,13 @@ impl std::fmt::Debug for ServiceTemplateVersion {
         formatter.finish()
     }
 }
+impl ServiceTemplateVersion {
+    /// Creates a new builder-style object to manufacture [`ServiceTemplateVersion`](crate::model::ServiceTemplateVersion).
+    pub fn builder() -> crate::model::service_template_version::Builder {
+        crate::model::service_template_version::Builder::default()
+    }
+}
+
 /// See [`ServiceTemplateVersion`](crate::model::ServiceTemplateVersion).
 pub mod service_template_version {
 
@@ -1110,12 +1119,6 @@ pub mod service_template_version {
         }
     }
 }
-impl ServiceTemplateVersion {
-    /// Creates a new builder-style object to manufacture [`ServiceTemplateVersion`](crate::model::ServiceTemplateVersion).
-    pub fn builder() -> crate::model::service_template_version::Builder {
-        crate::model::service_template_version::Builder::default()
-    }
-}
 
 /// When writing a match expression against `ServiceTemplateSupportedComponentSourceType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -1225,6 +1228,13 @@ impl CompatibleEnvironmentTemplate {
         self.major_version.as_deref()
     }
 }
+impl CompatibleEnvironmentTemplate {
+    /// Creates a new builder-style object to manufacture [`CompatibleEnvironmentTemplate`](crate::model::CompatibleEnvironmentTemplate).
+    pub fn builder() -> crate::model::compatible_environment_template::Builder {
+        crate::model::compatible_environment_template::Builder::default()
+    }
+}
+
 /// See [`CompatibleEnvironmentTemplate`](crate::model::CompatibleEnvironmentTemplate).
 pub mod compatible_environment_template {
 
@@ -1271,12 +1281,6 @@ pub mod compatible_environment_template {
         }
     }
 }
-impl CompatibleEnvironmentTemplate {
-    /// Creates a new builder-style object to manufacture [`CompatibleEnvironmentTemplate`](crate::model::CompatibleEnvironmentTemplate).
-    pub fn builder() -> crate::model::compatible_environment_template::Builder {
-        crate::model::compatible_environment_template::Builder::default()
-    }
-}
 
 /// <p>A description of a resource tag.</p>
 #[non_exhaustive]
@@ -1299,6 +1303,13 @@ impl Tag {
         self.value.as_deref()
     }
 }
+impl Tag {
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
+    pub fn builder() -> crate::model::tag::Builder {
+        crate::model::tag::Builder::default()
+    }
+}
+
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
 
@@ -1339,12 +1350,6 @@ pub mod tag {
         }
     }
 }
-impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
-    pub fn builder() -> crate::model::tag::Builder {
-        crate::model::tag::Builder::default()
-    }
-}
 
 /// <p>Compatible environment template data.</p>
 #[non_exhaustive]
@@ -1367,6 +1372,13 @@ impl CompatibleEnvironmentTemplateInput {
         self.major_version.as_deref()
     }
 }
+impl CompatibleEnvironmentTemplateInput {
+    /// Creates a new builder-style object to manufacture [`CompatibleEnvironmentTemplateInput`](crate::model::CompatibleEnvironmentTemplateInput).
+    pub fn builder() -> crate::model::compatible_environment_template_input::Builder {
+        crate::model::compatible_environment_template_input::Builder::default()
+    }
+}
+
 /// See [`CompatibleEnvironmentTemplateInput`](crate::model::CompatibleEnvironmentTemplateInput).
 pub mod compatible_environment_template_input {
 
@@ -1411,12 +1423,6 @@ pub mod compatible_environment_template_input {
                 major_version: self.major_version,
             }
         }
-    }
-}
-impl CompatibleEnvironmentTemplateInput {
-    /// Creates a new builder-style object to manufacture [`CompatibleEnvironmentTemplateInput`](crate::model::CompatibleEnvironmentTemplateInput).
-    pub fn builder() -> crate::model::compatible_environment_template_input::Builder {
-        crate::model::compatible_environment_template_input::Builder::default()
     }
 }
 
@@ -1478,6 +1484,13 @@ impl S3ObjectSource {
         self.key.as_deref()
     }
 }
+impl S3ObjectSource {
+    /// Creates a new builder-style object to manufacture [`S3ObjectSource`](crate::model::S3ObjectSource).
+    pub fn builder() -> crate::model::s3_object_source::Builder {
+        crate::model::s3_object_source::Builder::default()
+    }
+}
+
 /// See [`S3ObjectSource`](crate::model::S3ObjectSource).
 pub mod s3_object_source {
 
@@ -1516,12 +1529,6 @@ pub mod s3_object_source {
                 key: self.key,
             }
         }
-    }
-}
-impl S3ObjectSource {
-    /// Creates a new builder-style object to manufacture [`S3ObjectSource`](crate::model::S3ObjectSource).
-    pub fn builder() -> crate::model::s3_object_source::Builder {
-        crate::model::s3_object_source::Builder::default()
     }
 }
 
@@ -1602,6 +1609,13 @@ impl std::fmt::Debug for ServiceTemplateSummary {
         formatter.finish()
     }
 }
+impl ServiceTemplateSummary {
+    /// Creates a new builder-style object to manufacture [`ServiceTemplateSummary`](crate::model::ServiceTemplateSummary).
+    pub fn builder() -> crate::model::service_template_summary::Builder {
+        crate::model::service_template_summary::Builder::default()
+    }
+}
+
 /// See [`ServiceTemplateSummary`](crate::model::ServiceTemplateSummary).
 pub mod service_template_summary {
 
@@ -1738,12 +1752,6 @@ pub mod service_template_summary {
             formatter.field("pipeline_provisioning", &self.pipeline_provisioning);
             formatter.finish()
         }
-    }
-}
-impl ServiceTemplateSummary {
-    /// Creates a new builder-style object to manufacture [`ServiceTemplateSummary`](crate::model::ServiceTemplateSummary).
-    pub fn builder() -> crate::model::service_template_summary::Builder {
-        crate::model::service_template_summary::Builder::default()
     }
 }
 
@@ -1917,6 +1925,13 @@ impl std::fmt::Debug for ServiceTemplate {
         formatter.finish()
     }
 }
+impl ServiceTemplate {
+    /// Creates a new builder-style object to manufacture [`ServiceTemplate`](crate::model::ServiceTemplate).
+    pub fn builder() -> crate::model::service_template::Builder {
+        crate::model::service_template::Builder::default()
+    }
+}
+
 /// See [`ServiceTemplate`](crate::model::ServiceTemplate).
 pub mod service_template {
 
@@ -2071,12 +2086,6 @@ pub mod service_template {
         }
     }
 }
-impl ServiceTemplate {
-    /// Creates a new builder-style object to manufacture [`ServiceTemplate`](crate::model::ServiceTemplate).
-    pub fn builder() -> crate::model::service_template::Builder {
-        crate::model::service_template::Builder::default()
-    }
-}
 
 /// <p>Summary data of an Proton service resource.</p>
 #[non_exhaustive]
@@ -2155,6 +2164,13 @@ impl std::fmt::Debug for ServiceSummary {
         formatter.finish()
     }
 }
+impl ServiceSummary {
+    /// Creates a new builder-style object to manufacture [`ServiceSummary`](crate::model::ServiceSummary).
+    pub fn builder() -> crate::model::service_summary::Builder {
+        crate::model::service_summary::Builder::default()
+    }
+}
+
 /// See [`ServiceSummary`](crate::model::ServiceSummary).
 pub mod service_summary {
 
@@ -2294,12 +2310,6 @@ pub mod service_summary {
             formatter.field("status_message", &"*** Sensitive Data Redacted ***");
             formatter.finish()
         }
-    }
-}
-impl ServiceSummary {
-    /// Creates a new builder-style object to manufacture [`ServiceSummary`](crate::model::ServiceSummary).
-    pub fn builder() -> crate::model::service_summary::Builder {
-        crate::model::service_summary::Builder::default()
     }
 }
 
@@ -2585,6 +2595,13 @@ impl std::fmt::Debug for Service {
         formatter.finish()
     }
 }
+impl Service {
+    /// Creates a new builder-style object to manufacture [`Service`](crate::model::Service).
+    pub fn builder() -> crate::model::service::Builder {
+        crate::model::service::Builder::default()
+    }
+}
+
 /// See [`Service`](crate::model::Service).
 pub mod service {
 
@@ -2800,12 +2817,6 @@ pub mod service {
         }
     }
 }
-impl Service {
-    /// Creates a new builder-style object to manufacture [`Service`](crate::model::Service).
-    pub fn builder() -> crate::model::service::Builder {
-        crate::model::service::Builder::default()
-    }
-}
 
 /// <p>Detailed data of an Proton service instance pipeline resource.</p>
 #[non_exhaustive]
@@ -2909,6 +2920,13 @@ impl std::fmt::Debug for ServicePipeline {
         formatter.finish()
     }
 }
+impl ServicePipeline {
+    /// Creates a new builder-style object to manufacture [`ServicePipeline`](crate::model::ServicePipeline).
+    pub fn builder() -> crate::model::service_pipeline::Builder {
+        crate::model::service_pipeline::Builder::default()
+    }
+}
+
 /// See [`ServicePipeline`](crate::model::ServicePipeline).
 pub mod service_pipeline {
 
@@ -3092,12 +3110,6 @@ pub mod service_pipeline {
             formatter.field("spec", &"*** Sensitive Data Redacted ***");
             formatter.finish()
         }
-    }
-}
-impl ServicePipeline {
-    /// Creates a new builder-style object to manufacture [`ServicePipeline`](crate::model::ServicePipeline).
-    pub fn builder() -> crate::model::service_pipeline::Builder {
-        crate::model::service_pipeline::Builder::default()
     }
 }
 
@@ -3364,6 +3376,13 @@ impl ProvisionedResource {
         self.provisioning_engine.as_ref()
     }
 }
+impl ProvisionedResource {
+    /// Creates a new builder-style object to manufacture [`ProvisionedResource`](crate::model::ProvisionedResource).
+    pub fn builder() -> crate::model::provisioned_resource::Builder {
+        crate::model::provisioned_resource::Builder::default()
+    }
+}
+
 /// See [`ProvisionedResource`](crate::model::ProvisionedResource).
 pub mod provisioned_resource {
 
@@ -3423,12 +3442,6 @@ pub mod provisioned_resource {
                 provisioning_engine: self.provisioning_engine,
             }
         }
-    }
-}
-impl ProvisionedResource {
-    /// Creates a new builder-style object to manufacture [`ProvisionedResource`](crate::model::ProvisionedResource).
-    pub fn builder() -> crate::model::provisioned_resource::Builder {
-        crate::model::provisioned_resource::Builder::default()
     }
 }
 
@@ -3553,6 +3566,13 @@ impl std::fmt::Debug for Output {
         formatter.finish()
     }
 }
+impl Output {
+    /// Creates a new builder-style object to manufacture [`Output`](crate::model::Output).
+    pub fn builder() -> crate::model::output::Builder {
+        crate::model::output::Builder::default()
+    }
+}
+
 /// See [`Output`](crate::model::Output).
 pub mod output {
 
@@ -3599,12 +3619,6 @@ pub mod output {
             formatter.field("value_string", &"*** Sensitive Data Redacted ***");
             formatter.finish()
         }
-    }
-}
-impl Output {
-    /// Creates a new builder-style object to manufacture [`Output`](crate::model::Output).
-    pub fn builder() -> crate::model::output::Builder {
-        crate::model::output::Builder::default()
     }
 }
 
@@ -3726,6 +3740,13 @@ impl std::fmt::Debug for ServiceInstanceSummary {
         formatter.finish()
     }
 }
+impl ServiceInstanceSummary {
+    /// Creates a new builder-style object to manufacture [`ServiceInstanceSummary`](crate::model::ServiceInstanceSummary).
+    pub fn builder() -> crate::model::service_instance_summary::Builder {
+        crate::model::service_instance_summary::Builder::default()
+    }
+}
+
 /// See [`ServiceInstanceSummary`](crate::model::ServiceInstanceSummary).
 pub mod service_instance_summary {
 
@@ -3938,12 +3959,6 @@ pub mod service_instance_summary {
             );
             formatter.finish()
         }
-    }
-}
-impl ServiceInstanceSummary {
-    /// Creates a new builder-style object to manufacture [`ServiceInstanceSummary`](crate::model::ServiceInstanceSummary).
-    pub fn builder() -> crate::model::service_instance_summary::Builder {
-        crate::model::service_instance_summary::Builder::default()
     }
 }
 
@@ -4185,6 +4200,13 @@ impl ListServiceInstancesFilter {
         self.value.as_deref()
     }
 }
+impl ListServiceInstancesFilter {
+    /// Creates a new builder-style object to manufacture [`ListServiceInstancesFilter`](crate::model::ListServiceInstancesFilter).
+    pub fn builder() -> crate::model::list_service_instances_filter::Builder {
+        crate::model::list_service_instances_filter::Builder::default()
+    }
+}
+
 /// See [`ListServiceInstancesFilter`](crate::model::ListServiceInstancesFilter).
 pub mod list_service_instances_filter {
 
@@ -4228,12 +4250,6 @@ pub mod list_service_instances_filter {
                 value: self.value,
             }
         }
-    }
-}
-impl ListServiceInstancesFilter {
-    /// Creates a new builder-style object to manufacture [`ListServiceInstancesFilter`](crate::model::ListServiceInstancesFilter).
-    pub fn builder() -> crate::model::list_service_instances_filter::Builder {
-        crate::model::list_service_instances_filter::Builder::default()
     }
 }
 
@@ -4518,6 +4534,13 @@ impl std::fmt::Debug for ServiceInstance {
         formatter.finish()
     }
 }
+impl ServiceInstance {
+    /// Creates a new builder-style object to manufacture [`ServiceInstance`](crate::model::ServiceInstance).
+    pub fn builder() -> crate::model::service_instance::Builder {
+        crate::model::service_instance::Builder::default()
+    }
+}
+
 /// See [`ServiceInstance`](crate::model::ServiceInstance).
 pub mod service_instance {
 
@@ -4745,12 +4768,6 @@ pub mod service_instance {
         }
     }
 }
-impl ServiceInstance {
-    /// Creates a new builder-style object to manufacture [`ServiceInstance`](crate::model::ServiceInstance).
-    pub fn builder() -> crate::model::service_instance::Builder {
-        crate::model::service_instance::Builder::default()
-    }
-}
 
 /// <p>Summary data of a linked repository—a repository that has been registered with Proton.</p>
 #[non_exhaustive]
@@ -4780,6 +4797,13 @@ impl RepositorySummary {
         self.name.as_deref()
     }
 }
+impl RepositorySummary {
+    /// Creates a new builder-style object to manufacture [`RepositorySummary`](crate::model::RepositorySummary).
+    pub fn builder() -> crate::model::repository_summary::Builder {
+        crate::model::repository_summary::Builder::default()
+    }
+}
+
 /// See [`RepositorySummary`](crate::model::RepositorySummary).
 pub mod repository_summary {
 
@@ -4835,12 +4859,6 @@ pub mod repository_summary {
         }
     }
 }
-impl RepositorySummary {
-    /// Creates a new builder-style object to manufacture [`RepositorySummary`](crate::model::RepositorySummary).
-    pub fn builder() -> crate::model::repository_summary::Builder {
-        crate::model::repository_summary::Builder::default()
-    }
-}
 
 /// <p>Detailed data of a linked repository—a repository that has been registered with Proton.</p>
 #[non_exhaustive]
@@ -4884,6 +4902,13 @@ impl Repository {
         self.encryption_key.as_deref()
     }
 }
+impl Repository {
+    /// Creates a new builder-style object to manufacture [`Repository`](crate::model::Repository).
+    pub fn builder() -> crate::model::repository::Builder {
+        crate::model::repository::Builder::default()
+    }
+}
+
 /// See [`Repository`](crate::model::Repository).
 pub mod repository {
 
@@ -4967,12 +4992,6 @@ pub mod repository {
                 encryption_key: self.encryption_key,
             }
         }
-    }
-}
-impl Repository {
-    /// Creates a new builder-style object to manufacture [`Repository`](crate::model::Repository).
-    pub fn builder() -> crate::model::repository::Builder {
-        crate::model::repository::Builder::default()
     }
 }
 
@@ -5069,6 +5088,13 @@ impl std::fmt::Debug for EnvironmentTemplateVersionSummary {
         formatter.finish()
     }
 }
+impl EnvironmentTemplateVersionSummary {
+    /// Creates a new builder-style object to manufacture [`EnvironmentTemplateVersionSummary`](crate::model::EnvironmentTemplateVersionSummary).
+    pub fn builder() -> crate::model::environment_template_version_summary::Builder {
+        crate::model::environment_template_version_summary::Builder::default()
+    }
+}
+
 /// See [`EnvironmentTemplateVersionSummary`](crate::model::EnvironmentTemplateVersionSummary).
 pub mod environment_template_version_summary {
 
@@ -5245,12 +5271,6 @@ pub mod environment_template_version_summary {
         }
     }
 }
-impl EnvironmentTemplateVersionSummary {
-    /// Creates a new builder-style object to manufacture [`EnvironmentTemplateVersionSummary`](crate::model::EnvironmentTemplateVersionSummary).
-    pub fn builder() -> crate::model::environment_template_version_summary::Builder {
-        crate::model::environment_template_version_summary::Builder::default()
-    }
-}
 
 /// <p>The environment template version data.</p>
 #[non_exhaustive]
@@ -5353,6 +5373,13 @@ impl std::fmt::Debug for EnvironmentTemplateVersion {
         formatter.finish()
     }
 }
+impl EnvironmentTemplateVersion {
+    /// Creates a new builder-style object to manufacture [`EnvironmentTemplateVersion`](crate::model::EnvironmentTemplateVersion).
+    pub fn builder() -> crate::model::environment_template_version::Builder {
+        crate::model::environment_template_version::Builder::default()
+    }
+}
+
 /// See [`EnvironmentTemplateVersion`](crate::model::EnvironmentTemplateVersion).
 pub mod environment_template_version {
 
@@ -5542,12 +5569,6 @@ pub mod environment_template_version {
         }
     }
 }
-impl EnvironmentTemplateVersion {
-    /// Creates a new builder-style object to manufacture [`EnvironmentTemplateVersion`](crate::model::EnvironmentTemplateVersion).
-    pub fn builder() -> crate::model::environment_template_version::Builder {
-        crate::model::environment_template_version::Builder::default()
-    }
-}
 
 /// <p>The environment template data.</p>
 #[non_exhaustive]
@@ -5626,6 +5647,13 @@ impl std::fmt::Debug for EnvironmentTemplateSummary {
         formatter.finish()
     }
 }
+impl EnvironmentTemplateSummary {
+    /// Creates a new builder-style object to manufacture [`EnvironmentTemplateSummary`](crate::model::EnvironmentTemplateSummary).
+    pub fn builder() -> crate::model::environment_template_summary::Builder {
+        crate::model::environment_template_summary::Builder::default()
+    }
+}
+
 /// See [`EnvironmentTemplateSummary`](crate::model::EnvironmentTemplateSummary).
 pub mod environment_template_summary {
 
@@ -5764,12 +5792,6 @@ pub mod environment_template_summary {
         }
     }
 }
-impl EnvironmentTemplateSummary {
-    /// Creates a new builder-style object to manufacture [`EnvironmentTemplateSummary`](crate::model::EnvironmentTemplateSummary).
-    pub fn builder() -> crate::model::environment_template_summary::Builder {
-        crate::model::environment_template_summary::Builder::default()
-    }
-}
 
 /// <p>The environment template data.</p>
 #[non_exhaustive]
@@ -5856,6 +5878,13 @@ impl std::fmt::Debug for EnvironmentTemplate {
         formatter.finish()
     }
 }
+impl EnvironmentTemplate {
+    /// Creates a new builder-style object to manufacture [`EnvironmentTemplate`](crate::model::EnvironmentTemplate).
+    pub fn builder() -> crate::model::environment_template::Builder {
+        crate::model::environment_template::Builder::default()
+    }
+}
+
 /// See [`EnvironmentTemplate`](crate::model::EnvironmentTemplate).
 pub mod environment_template {
 
@@ -6008,12 +6037,6 @@ pub mod environment_template {
             formatter.field("provisioning", &self.provisioning);
             formatter.finish()
         }
-    }
-}
-impl EnvironmentTemplate {
-    /// Creates a new builder-style object to manufacture [`EnvironmentTemplate`](crate::model::EnvironmentTemplate).
-    pub fn builder() -> crate::model::environment_template::Builder {
-        crate::model::environment_template::Builder::default()
     }
 }
 
@@ -6174,6 +6197,13 @@ impl std::fmt::Debug for EnvironmentSummary {
         formatter.finish()
     }
 }
+impl EnvironmentSummary {
+    /// Creates a new builder-style object to manufacture [`EnvironmentSummary`](crate::model::EnvironmentSummary).
+    pub fn builder() -> crate::model::environment_summary::Builder {
+        crate::model::environment_summary::Builder::default()
+    }
+}
+
 /// See [`EnvironmentSummary`](crate::model::EnvironmentSummary).
 pub mod environment_summary {
 
@@ -6462,12 +6492,6 @@ pub mod environment_summary {
         }
     }
 }
-impl EnvironmentSummary {
-    /// Creates a new builder-style object to manufacture [`EnvironmentSummary`](crate::model::EnvironmentSummary).
-    pub fn builder() -> crate::model::environment_summary::Builder {
-        crate::model::environment_summary::Builder::default()
-    }
-}
 
 /// <p>A search filter for environment templates.</p>
 #[non_exhaustive]
@@ -6490,6 +6514,13 @@ impl EnvironmentTemplateFilter {
         self.major_version.as_deref()
     }
 }
+impl EnvironmentTemplateFilter {
+    /// Creates a new builder-style object to manufacture [`EnvironmentTemplateFilter`](crate::model::EnvironmentTemplateFilter).
+    pub fn builder() -> crate::model::environment_template_filter::Builder {
+        crate::model::environment_template_filter::Builder::default()
+    }
+}
+
 /// See [`EnvironmentTemplateFilter`](crate::model::EnvironmentTemplateFilter).
 pub mod environment_template_filter {
 
@@ -6534,12 +6565,6 @@ pub mod environment_template_filter {
                 major_version: self.major_version,
             }
         }
-    }
-}
-impl EnvironmentTemplateFilter {
-    /// Creates a new builder-style object to manufacture [`EnvironmentTemplateFilter`](crate::model::EnvironmentTemplateFilter).
-    pub fn builder() -> crate::model::environment_template_filter::Builder {
-        crate::model::environment_template_filter::Builder::default()
     }
 }
 
@@ -6724,6 +6749,13 @@ impl std::fmt::Debug for Environment {
         formatter.finish()
     }
 }
+impl Environment {
+    /// Creates a new builder-style object to manufacture [`Environment`](crate::model::Environment).
+    pub fn builder() -> crate::model::environment::Builder {
+        crate::model::environment::Builder::default()
+    }
+}
+
 /// See [`Environment`](crate::model::Environment).
 pub mod environment {
 
@@ -7057,12 +7089,6 @@ pub mod environment {
         }
     }
 }
-impl Environment {
-    /// Creates a new builder-style object to manufacture [`Environment`](crate::model::Environment).
-    pub fn builder() -> crate::model::environment::Builder {
-        crate::model::environment::Builder::default()
-    }
-}
 
 /// <p>Detail data for a linked repository branch.</p>
 #[non_exhaustive]
@@ -7099,6 +7125,13 @@ impl RepositoryBranch {
         self.branch.as_deref()
     }
 }
+impl RepositoryBranch {
+    /// Creates a new builder-style object to manufacture [`RepositoryBranch`](crate::model::RepositoryBranch).
+    pub fn builder() -> crate::model::repository_branch::Builder {
+        crate::model::repository_branch::Builder::default()
+    }
+}
+
 /// See [`RepositoryBranch`](crate::model::RepositoryBranch).
 pub mod repository_branch {
 
@@ -7166,12 +7199,6 @@ pub mod repository_branch {
         }
     }
 }
-impl RepositoryBranch {
-    /// Creates a new builder-style object to manufacture [`RepositoryBranch`](crate::model::RepositoryBranch).
-    pub fn builder() -> crate::model::repository_branch::Builder {
-        crate::model::repository_branch::Builder::default()
-    }
-}
 
 /// <p>Detail input data for a linked repository branch.</p>
 #[non_exhaustive]
@@ -7201,6 +7228,13 @@ impl RepositoryBranchInput {
         self.branch.as_deref()
     }
 }
+impl RepositoryBranchInput {
+    /// Creates a new builder-style object to manufacture [`RepositoryBranchInput`](crate::model::RepositoryBranchInput).
+    pub fn builder() -> crate::model::repository_branch_input::Builder {
+        crate::model::repository_branch_input::Builder::default()
+    }
+}
+
 /// See [`RepositoryBranchInput`](crate::model::RepositoryBranchInput).
 pub mod repository_branch_input {
 
@@ -7254,12 +7288,6 @@ pub mod repository_branch_input {
                 branch: self.branch,
             }
         }
-    }
-}
-impl RepositoryBranchInput {
-    /// Creates a new builder-style object to manufacture [`RepositoryBranchInput`](crate::model::RepositoryBranchInput).
-    pub fn builder() -> crate::model::repository_branch_input::Builder {
-        crate::model::repository_branch_input::Builder::default()
     }
 }
 
@@ -7351,6 +7379,13 @@ impl EnvironmentAccountConnection {
         self.codebuild_role_arn.as_deref()
     }
 }
+impl EnvironmentAccountConnection {
+    /// Creates a new builder-style object to manufacture [`EnvironmentAccountConnection`](crate::model::EnvironmentAccountConnection).
+    pub fn builder() -> crate::model::environment_account_connection::Builder {
+        crate::model::environment_account_connection::Builder::default()
+    }
+}
+
 /// See [`EnvironmentAccountConnection`](crate::model::EnvironmentAccountConnection).
 pub mod environment_account_connection {
 
@@ -7525,12 +7560,6 @@ pub mod environment_account_connection {
                 codebuild_role_arn: self.codebuild_role_arn,
             }
         }
-    }
-}
-impl EnvironmentAccountConnection {
-    /// Creates a new builder-style object to manufacture [`EnvironmentAccountConnection`](crate::model::EnvironmentAccountConnection).
-    pub fn builder() -> crate::model::environment_account_connection::Builder {
-        crate::model::environment_account_connection::Builder::default()
     }
 }
 
@@ -7712,6 +7741,13 @@ impl EnvironmentAccountConnectionSummary {
         self.component_role_arn.as_deref()
     }
 }
+impl EnvironmentAccountConnectionSummary {
+    /// Creates a new builder-style object to manufacture [`EnvironmentAccountConnectionSummary`](crate::model::EnvironmentAccountConnectionSummary).
+    pub fn builder() -> crate::model::environment_account_connection_summary::Builder {
+        crate::model::environment_account_connection_summary::Builder::default()
+    }
+}
+
 /// See [`EnvironmentAccountConnectionSummary`](crate::model::EnvironmentAccountConnectionSummary).
 pub mod environment_account_connection_summary {
 
@@ -7871,12 +7907,6 @@ pub mod environment_account_connection_summary {
                 component_role_arn: self.component_role_arn,
             }
         }
-    }
-}
-impl EnvironmentAccountConnectionSummary {
-    /// Creates a new builder-style object to manufacture [`EnvironmentAccountConnectionSummary`](crate::model::EnvironmentAccountConnectionSummary).
-    pub fn builder() -> crate::model::environment_account_connection_summary::Builder {
-        crate::model::environment_account_connection_summary::Builder::default()
     }
 }
 
@@ -8091,6 +8121,13 @@ impl std::fmt::Debug for ComponentSummary {
         formatter.finish()
     }
 }
+impl ComponentSummary {
+    /// Creates a new builder-style object to manufacture [`ComponentSummary`](crate::model::ComponentSummary).
+    pub fn builder() -> crate::model::component_summary::Builder {
+        crate::model::component_summary::Builder::default()
+    }
+}
+
 /// See [`ComponentSummary`](crate::model::ComponentSummary).
 pub mod component_summary {
 
@@ -8289,12 +8326,6 @@ pub mod component_summary {
         }
     }
 }
-impl ComponentSummary {
-    /// Creates a new builder-style object to manufacture [`ComponentSummary`](crate::model::ComponentSummary).
-    pub fn builder() -> crate::model::component_summary::Builder {
-        crate::model::component_summary::Builder::default()
-    }
-}
 
 /// <p>Detailed data of an Proton component resource.</p>
 /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
@@ -8423,6 +8454,13 @@ impl std::fmt::Debug for Component {
         formatter.finish()
     }
 }
+impl Component {
+    /// Creates a new builder-style object to manufacture [`Component`](crate::model::Component).
+    pub fn builder() -> crate::model::component::Builder {
+        crate::model::component::Builder::default()
+    }
+}
+
 /// See [`Component`](crate::model::Component).
 pub mod component {
 
@@ -8647,12 +8685,6 @@ pub mod component {
         }
     }
 }
-impl Component {
-    /// Creates a new builder-style object to manufacture [`Component`](crate::model::Component).
-    pub fn builder() -> crate::model::component::Builder {
-        crate::model::component::Builder::default()
-    }
-}
 
 /// When writing a match expression against `ComponentDeploymentUpdateType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -8776,6 +8808,13 @@ impl AccountSettings {
         self.pipeline_codebuild_role_arn.as_deref()
     }
 }
+impl AccountSettings {
+    /// Creates a new builder-style object to manufacture [`AccountSettings`](crate::model::AccountSettings).
+    pub fn builder() -> crate::model::account_settings::Builder {
+        crate::model::account_settings::Builder::default()
+    }
+}
+
 /// See [`AccountSettings`](crate::model::AccountSettings).
 pub mod account_settings {
 
@@ -8842,12 +8881,6 @@ pub mod account_settings {
                 pipeline_codebuild_role_arn: self.pipeline_codebuild_role_arn,
             }
         }
-    }
-}
-impl AccountSettings {
-    /// Creates a new builder-style object to manufacture [`AccountSettings`](crate::model::AccountSettings).
-    pub fn builder() -> crate::model::account_settings::Builder {
-        crate::model::account_settings::Builder::default()
     }
 }
 
@@ -8983,6 +9016,13 @@ impl RepositorySyncDefinition {
         self.directory.as_deref()
     }
 }
+impl RepositorySyncDefinition {
+    /// Creates a new builder-style object to manufacture [`RepositorySyncDefinition`](crate::model::RepositorySyncDefinition).
+    pub fn builder() -> crate::model::repository_sync_definition::Builder {
+        crate::model::repository_sync_definition::Builder::default()
+    }
+}
+
 /// See [`RepositorySyncDefinition`](crate::model::RepositorySyncDefinition).
 pub mod repository_sync_definition {
 
@@ -9045,12 +9085,6 @@ pub mod repository_sync_definition {
                 directory: self.directory,
             }
         }
-    }
-}
-impl RepositorySyncDefinition {
-    /// Creates a new builder-style object to manufacture [`RepositorySyncDefinition`](crate::model::RepositorySyncDefinition).
-    pub fn builder() -> crate::model::repository_sync_definition::Builder {
-        crate::model::repository_sync_definition::Builder::default()
     }
 }
 
@@ -9181,6 +9215,13 @@ impl Revision {
         self.branch.as_deref()
     }
 }
+impl Revision {
+    /// Creates a new builder-style object to manufacture [`Revision`](crate::model::Revision).
+    pub fn builder() -> crate::model::revision::Builder {
+        crate::model::revision::Builder::default()
+    }
+}
+
 /// See [`Revision`](crate::model::Revision).
 pub mod revision {
 
@@ -9263,12 +9304,6 @@ pub mod revision {
         }
     }
 }
-impl Revision {
-    /// Creates a new builder-style object to manufacture [`Revision`](crate::model::Revision).
-    pub fn builder() -> crate::model::revision::Builder {
-        crate::model::revision::Builder::default()
-    }
-}
 
 /// <p>Detail data for a resource sync attempt activated by a push to a repository.</p>
 #[non_exhaustive]
@@ -9319,6 +9354,13 @@ impl ResourceSyncAttempt {
         self.events.as_deref()
     }
 }
+impl ResourceSyncAttempt {
+    /// Creates a new builder-style object to manufacture [`ResourceSyncAttempt`](crate::model::ResourceSyncAttempt).
+    pub fn builder() -> crate::model::resource_sync_attempt::Builder {
+        crate::model::resource_sync_attempt::Builder::default()
+    }
+}
+
 /// See [`ResourceSyncAttempt`](crate::model::ResourceSyncAttempt).
 pub mod resource_sync_attempt {
 
@@ -9428,12 +9470,6 @@ pub mod resource_sync_attempt {
         }
     }
 }
-impl ResourceSyncAttempt {
-    /// Creates a new builder-style object to manufacture [`ResourceSyncAttempt`](crate::model::ResourceSyncAttempt).
-    pub fn builder() -> crate::model::resource_sync_attempt::Builder {
-        crate::model::resource_sync_attempt::Builder::default()
-    }
-}
 
 /// <p>Detail data for a resource sync event.</p>
 #[non_exhaustive]
@@ -9470,6 +9506,13 @@ impl ResourceSyncEvent {
         self.event.as_deref()
     }
 }
+impl ResourceSyncEvent {
+    /// Creates a new builder-style object to manufacture [`ResourceSyncEvent`](crate::model::ResourceSyncEvent).
+    pub fn builder() -> crate::model::resource_sync_event::Builder {
+        crate::model::resource_sync_event::Builder::default()
+    }
+}
+
 /// See [`ResourceSyncEvent`](crate::model::ResourceSyncEvent).
 pub mod resource_sync_event {
 
@@ -9532,12 +9575,6 @@ pub mod resource_sync_event {
                 event: self.event,
             }
         }
-    }
-}
-impl ResourceSyncEvent {
-    /// Creates a new builder-style object to manufacture [`ResourceSyncEvent`](crate::model::ResourceSyncEvent).
-    pub fn builder() -> crate::model::resource_sync_event::Builder {
-        crate::model::resource_sync_event::Builder::default()
     }
 }
 
@@ -9675,6 +9712,13 @@ impl RepositorySyncAttempt {
         self.events.as_deref()
     }
 }
+impl RepositorySyncAttempt {
+    /// Creates a new builder-style object to manufacture [`RepositorySyncAttempt`](crate::model::RepositorySyncAttempt).
+    pub fn builder() -> crate::model::repository_sync_attempt::Builder {
+        crate::model::repository_sync_attempt::Builder::default()
+    }
+}
+
 /// See [`RepositorySyncAttempt`](crate::model::RepositorySyncAttempt).
 pub mod repository_sync_attempt {
 
@@ -9742,12 +9786,6 @@ pub mod repository_sync_attempt {
         }
     }
 }
-impl RepositorySyncAttempt {
-    /// Creates a new builder-style object to manufacture [`RepositorySyncAttempt`](crate::model::RepositorySyncAttempt).
-    pub fn builder() -> crate::model::repository_sync_attempt::Builder {
-        crate::model::repository_sync_attempt::Builder::default()
-    }
-}
 
 /// <p>Repository sync event detail data for a sync attempt.</p>
 #[non_exhaustive]
@@ -9784,6 +9822,13 @@ impl RepositorySyncEvent {
         self.event.as_deref()
     }
 }
+impl RepositorySyncEvent {
+    /// Creates a new builder-style object to manufacture [`RepositorySyncEvent`](crate::model::RepositorySyncEvent).
+    pub fn builder() -> crate::model::repository_sync_event::Builder {
+        crate::model::repository_sync_event::Builder::default()
+    }
+}
+
 /// See [`RepositorySyncEvent`](crate::model::RepositorySyncEvent).
 pub mod repository_sync_event {
 
@@ -9846,12 +9891,6 @@ pub mod repository_sync_event {
                 event: self.event,
             }
         }
-    }
-}
-impl RepositorySyncEvent {
-    /// Creates a new builder-style object to manufacture [`RepositorySyncEvent`](crate::model::RepositorySyncEvent).
-    pub fn builder() -> crate::model::repository_sync_event::Builder {
-        crate::model::repository_sync_event::Builder::default()
     }
 }
 

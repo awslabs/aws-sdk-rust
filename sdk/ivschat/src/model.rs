@@ -21,6 +21,13 @@ impl ValidationExceptionField {
         self.message.as_deref()
     }
 }
+impl ValidationExceptionField {
+    /// Creates a new builder-style object to manufacture [`ValidationExceptionField`](crate::model::ValidationExceptionField).
+    pub fn builder() -> crate::model::validation_exception_field::Builder {
+        crate::model::validation_exception_field::Builder::default()
+    }
+}
+
 /// See [`ValidationExceptionField`](crate::model::ValidationExceptionField).
 pub mod validation_exception_field {
 
@@ -59,12 +66,6 @@ pub mod validation_exception_field {
                 message: self.message,
             }
         }
-    }
-}
-impl ValidationExceptionField {
-    /// Creates a new builder-style object to manufacture [`ValidationExceptionField`](crate::model::ValidationExceptionField).
-    pub fn builder() -> crate::model::validation_exception_field::Builder {
-        crate::model::validation_exception_field::Builder::default()
     }
 }
 
@@ -271,6 +272,13 @@ impl MessageReviewHandler {
         self.fallback_result.as_ref()
     }
 }
+impl MessageReviewHandler {
+    /// Creates a new builder-style object to manufacture [`MessageReviewHandler`](crate::model::MessageReviewHandler).
+    pub fn builder() -> crate::model::message_review_handler::Builder {
+        crate::model::message_review_handler::Builder::default()
+    }
+}
+
 /// See [`MessageReviewHandler`](crate::model::MessageReviewHandler).
 pub mod message_review_handler {
 
@@ -312,12 +320,6 @@ pub mod message_review_handler {
                 fallback_result: self.fallback_result,
             }
         }
-    }
-}
-impl MessageReviewHandler {
-    /// Creates a new builder-style object to manufacture [`MessageReviewHandler`](crate::model::MessageReviewHandler).
-    pub fn builder() -> crate::model::message_review_handler::Builder {
-        crate::model::message_review_handler::Builder::default()
     }
 }
 
@@ -582,6 +584,13 @@ impl FirehoseDestinationConfiguration {
         self.delivery_stream_name.as_deref()
     }
 }
+impl FirehoseDestinationConfiguration {
+    /// Creates a new builder-style object to manufacture [`FirehoseDestinationConfiguration`](crate::model::FirehoseDestinationConfiguration).
+    pub fn builder() -> crate::model::firehose_destination_configuration::Builder {
+        crate::model::firehose_destination_configuration::Builder::default()
+    }
+}
+
 /// See [`FirehoseDestinationConfiguration`](crate::model::FirehoseDestinationConfiguration).
 pub mod firehose_destination_configuration {
 
@@ -613,12 +622,6 @@ pub mod firehose_destination_configuration {
         }
     }
 }
-impl FirehoseDestinationConfiguration {
-    /// Creates a new builder-style object to manufacture [`FirehoseDestinationConfiguration`](crate::model::FirehoseDestinationConfiguration).
-    pub fn builder() -> crate::model::firehose_destination_configuration::Builder {
-        crate::model::firehose_destination_configuration::Builder::default()
-    }
-}
 
 /// <p>Specifies a CloudWatch Logs location where chat logs will be stored.</p>
 #[non_exhaustive]
@@ -634,6 +637,13 @@ impl CloudWatchLogsDestinationConfiguration {
         self.log_group_name.as_deref()
     }
 }
+impl CloudWatchLogsDestinationConfiguration {
+    /// Creates a new builder-style object to manufacture [`CloudWatchLogsDestinationConfiguration`](crate::model::CloudWatchLogsDestinationConfiguration).
+    pub fn builder() -> crate::model::cloud_watch_logs_destination_configuration::Builder {
+        crate::model::cloud_watch_logs_destination_configuration::Builder::default()
+    }
+}
+
 /// See [`CloudWatchLogsDestinationConfiguration`](crate::model::CloudWatchLogsDestinationConfiguration).
 pub mod cloud_watch_logs_destination_configuration {
 
@@ -665,12 +675,6 @@ pub mod cloud_watch_logs_destination_configuration {
         }
     }
 }
-impl CloudWatchLogsDestinationConfiguration {
-    /// Creates a new builder-style object to manufacture [`CloudWatchLogsDestinationConfiguration`](crate::model::CloudWatchLogsDestinationConfiguration).
-    pub fn builder() -> crate::model::cloud_watch_logs_destination_configuration::Builder {
-        crate::model::cloud_watch_logs_destination_configuration::Builder::default()
-    }
-}
 
 /// <p>Specifies an S3 location where chat logs will be stored.</p>
 #[non_exhaustive]
@@ -686,6 +690,13 @@ impl S3DestinationConfiguration {
         self.bucket_name.as_deref()
     }
 }
+impl S3DestinationConfiguration {
+    /// Creates a new builder-style object to manufacture [`S3DestinationConfiguration`](crate::model::S3DestinationConfiguration).
+    pub fn builder() -> crate::model::s3_destination_configuration::Builder {
+        crate::model::s3_destination_configuration::Builder::default()
+    }
+}
+
 /// See [`S3DestinationConfiguration`](crate::model::S3DestinationConfiguration).
 pub mod s3_destination_configuration {
 
@@ -712,12 +723,6 @@ pub mod s3_destination_configuration {
                 bucket_name: self.bucket_name,
             }
         }
-    }
-}
-impl S3DestinationConfiguration {
-    /// Creates a new builder-style object to manufacture [`S3DestinationConfiguration`](crate::model::S3DestinationConfiguration).
-    pub fn builder() -> crate::model::s3_destination_configuration::Builder {
-        crate::model::s3_destination_configuration::Builder::default()
     }
 }
 
@@ -790,6 +795,13 @@ impl RoomSummary {
         self.logging_configuration_identifiers.as_deref()
     }
 }
+impl RoomSummary {
+    /// Creates a new builder-style object to manufacture [`RoomSummary`](crate::model::RoomSummary).
+    pub fn builder() -> crate::model::room_summary::Builder {
+        crate::model::room_summary::Builder::default()
+    }
+}
+
 /// See [`RoomSummary`](crate::model::RoomSummary).
 pub mod room_summary {
 
@@ -941,12 +953,6 @@ pub mod room_summary {
         }
     }
 }
-impl RoomSummary {
-    /// Creates a new builder-style object to manufacture [`RoomSummary`](crate::model::RoomSummary).
-    pub fn builder() -> crate::model::room_summary::Builder {
-        crate::model::room_summary::Builder::default()
-    }
-}
 
 /// <p>Summary information about a logging configuration.</p>
 #[non_exhaustive]
@@ -1017,6 +1023,13 @@ impl LoggingConfigurationSummary {
         self.tags.as_ref()
     }
 }
+impl LoggingConfigurationSummary {
+    /// Creates a new builder-style object to manufacture [`LoggingConfigurationSummary`](crate::model::LoggingConfigurationSummary).
+    pub fn builder() -> crate::model::logging_configuration_summary::Builder {
+        crate::model::logging_configuration_summary::Builder::default()
+    }
+}
+
 /// See [`LoggingConfigurationSummary`](crate::model::LoggingConfigurationSummary).
 pub mod logging_configuration_summary {
 
@@ -1160,12 +1173,6 @@ pub mod logging_configuration_summary {
                 tags: self.tags,
             }
         }
-    }
-}
-impl LoggingConfigurationSummary {
-    /// Creates a new builder-style object to manufacture [`LoggingConfigurationSummary`](crate::model::LoggingConfigurationSummary).
-    pub fn builder() -> crate::model::logging_configuration_summary::Builder {
-        crate::model::logging_configuration_summary::Builder::default()
     }
 }
 

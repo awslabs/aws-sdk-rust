@@ -19,6 +19,13 @@ impl aws_http::request_id::RequestId for BatchPutMetricsOutput {
         self._request_id.as_deref()
     }
 }
+impl BatchPutMetricsOutput {
+    /// Creates a new builder-style object to manufacture [`BatchPutMetricsOutput`](crate::output::BatchPutMetricsOutput).
+    pub fn builder() -> crate::output::batch_put_metrics_output::Builder {
+        crate::output::batch_put_metrics_output::Builder::default()
+    }
+}
+
 /// See [`BatchPutMetricsOutput`](crate::output::BatchPutMetricsOutput).
 pub mod batch_put_metrics_output {
 
@@ -65,11 +72,5 @@ pub mod batch_put_metrics_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl BatchPutMetricsOutput {
-    /// Creates a new builder-style object to manufacture [`BatchPutMetricsOutput`](crate::output::BatchPutMetricsOutput).
-    pub fn builder() -> crate::output::batch_put_metrics_output::Builder {
-        crate::output::batch_put_metrics_output::Builder::default()
     }
 }

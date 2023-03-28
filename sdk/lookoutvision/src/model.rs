@@ -267,6 +267,13 @@ impl Tag {
         self.value.as_deref()
     }
 }
+impl Tag {
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
+    pub fn builder() -> crate::model::tag::Builder {
+        crate::model::tag::Builder::default()
+    }
+}
+
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
 
@@ -305,12 +312,6 @@ pub mod tag {
                 value: self.value,
             }
         }
-    }
-}
-impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
-    pub fn builder() -> crate::model::tag::Builder {
-        crate::model::tag::Builder::default()
     }
 }
 
@@ -441,6 +442,13 @@ impl ModelPackagingConfiguration {
         self.greengrass.as_ref()
     }
 }
+impl ModelPackagingConfiguration {
+    /// Creates a new builder-style object to manufacture [`ModelPackagingConfiguration`](crate::model::ModelPackagingConfiguration).
+    pub fn builder() -> crate::model::model_packaging_configuration::Builder {
+        crate::model::model_packaging_configuration::Builder::default()
+    }
+}
+
 /// See [`ModelPackagingConfiguration`](crate::model::ModelPackagingConfiguration).
 pub mod model_packaging_configuration {
 
@@ -470,12 +478,6 @@ pub mod model_packaging_configuration {
                 greengrass: self.greengrass,
             }
         }
-    }
-}
-impl ModelPackagingConfiguration {
-    /// Creates a new builder-style object to manufacture [`ModelPackagingConfiguration`](crate::model::ModelPackagingConfiguration).
-    pub fn builder() -> crate::model::model_packaging_configuration::Builder {
-        crate::model::model_packaging_configuration::Builder::default()
     }
 }
 
@@ -546,6 +548,13 @@ impl GreengrassConfiguration {
         self.tags.as_deref()
     }
 }
+impl GreengrassConfiguration {
+    /// Creates a new builder-style object to manufacture [`GreengrassConfiguration`](crate::model::GreengrassConfiguration).
+    pub fn builder() -> crate::model::greengrass_configuration::Builder {
+        crate::model::greengrass_configuration::Builder::default()
+    }
+}
+
 /// See [`GreengrassConfiguration`](crate::model::GreengrassConfiguration).
 pub mod greengrass_configuration {
 
@@ -690,12 +699,6 @@ pub mod greengrass_configuration {
         }
     }
 }
-impl GreengrassConfiguration {
-    /// Creates a new builder-style object to manufacture [`GreengrassConfiguration`](crate::model::GreengrassConfiguration).
-    pub fn builder() -> crate::model::greengrass_configuration::Builder {
-        crate::model::greengrass_configuration::Builder::default()
-    }
-}
 
 /// <p>Information about the location of training output or the output of a model packaging job.</p>
 #[non_exhaustive]
@@ -718,6 +721,13 @@ impl S3Location {
         self.prefix.as_deref()
     }
 }
+impl S3Location {
+    /// Creates a new builder-style object to manufacture [`S3Location`](crate::model::S3Location).
+    pub fn builder() -> crate::model::s3_location::Builder {
+        crate::model::s3_location::Builder::default()
+    }
+}
+
 /// See [`S3Location`](crate::model::S3Location).
 pub mod s3_location {
 
@@ -758,12 +768,6 @@ pub mod s3_location {
         }
     }
 }
-impl S3Location {
-    /// Creates a new builder-style object to manufacture [`S3Location`](crate::model::S3Location).
-    pub fn builder() -> crate::model::s3_location::Builder {
-        crate::model::s3_location::Builder::default()
-    }
-}
 
 /// <p>The platform on which a model runs on an AWS IoT Greengrass core device.</p>
 #[non_exhaustive]
@@ -801,6 +805,13 @@ impl TargetPlatform {
         self.accelerator.as_ref()
     }
 }
+impl TargetPlatform {
+    /// Creates a new builder-style object to manufacture [`TargetPlatform`](crate::model::TargetPlatform).
+    pub fn builder() -> crate::model::target_platform::Builder {
+        crate::model::target_platform::Builder::default()
+    }
+}
+
 /// See [`TargetPlatform`](crate::model::TargetPlatform).
 pub mod target_platform {
 
@@ -868,12 +879,6 @@ pub mod target_platform {
                 accelerator: self.accelerator,
             }
         }
-    }
-}
-impl TargetPlatform {
-    /// Creates a new builder-style object to manufacture [`TargetPlatform`](crate::model::TargetPlatform).
-    pub fn builder() -> crate::model::target_platform::Builder {
-        crate::model::target_platform::Builder::default()
     }
 }
 
@@ -1254,6 +1259,13 @@ impl ProjectMetadata {
         self.creation_timestamp.as_ref()
     }
 }
+impl ProjectMetadata {
+    /// Creates a new builder-style object to manufacture [`ProjectMetadata`](crate::model::ProjectMetadata).
+    pub fn builder() -> crate::model::project_metadata::Builder {
+        crate::model::project_metadata::Builder::default()
+    }
+}
+
 /// See [`ProjectMetadata`](crate::model::ProjectMetadata).
 pub mod project_metadata {
 
@@ -1307,12 +1319,6 @@ pub mod project_metadata {
                 creation_timestamp: self.creation_timestamp,
             }
         }
-    }
-}
-impl ProjectMetadata {
-    /// Creates a new builder-style object to manufacture [`ProjectMetadata`](crate::model::ProjectMetadata).
-    pub fn builder() -> crate::model::project_metadata::Builder {
-        crate::model::project_metadata::Builder::default()
     }
 }
 
@@ -1372,6 +1378,13 @@ impl ModelMetadata {
         self.performance.as_ref()
     }
 }
+impl ModelMetadata {
+    /// Creates a new builder-style object to manufacture [`ModelMetadata`](crate::model::ModelMetadata).
+    pub fn builder() -> crate::model::model_metadata::Builder {
+        crate::model::model_metadata::Builder::default()
+    }
+}
+
 /// See [`ModelMetadata`](crate::model::ModelMetadata).
 pub mod model_metadata {
 
@@ -1484,12 +1497,6 @@ pub mod model_metadata {
         }
     }
 }
-impl ModelMetadata {
-    /// Creates a new builder-style object to manufacture [`ModelMetadata`](crate::model::ModelMetadata).
-    pub fn builder() -> crate::model::model_metadata::Builder {
-        crate::model::model_metadata::Builder::default()
-    }
-}
 
 /// <p>Information about the evaluation performance of a trained model. </p>
 #[non_exhaustive]
@@ -1519,6 +1526,13 @@ impl ModelPerformance {
         self.precision
     }
 }
+impl ModelPerformance {
+    /// Creates a new builder-style object to manufacture [`ModelPerformance`](crate::model::ModelPerformance).
+    pub fn builder() -> crate::model::model_performance::Builder {
+        crate::model::model_performance::Builder::default()
+    }
+}
+
 /// See [`ModelPerformance`](crate::model::ModelPerformance).
 pub mod model_performance {
 
@@ -1569,12 +1583,6 @@ pub mod model_performance {
                 precision: self.precision,
             }
         }
-    }
-}
-impl ModelPerformance {
-    /// Creates a new builder-style object to manufacture [`ModelPerformance`](crate::model::ModelPerformance).
-    pub fn builder() -> crate::model::model_performance::Builder {
-        crate::model::model_performance::Builder::default()
     }
 }
 
@@ -1783,6 +1791,13 @@ impl ModelPackagingJobMetadata {
         self.last_updated_timestamp.as_ref()
     }
 }
+impl ModelPackagingJobMetadata {
+    /// Creates a new builder-style object to manufacture [`ModelPackagingJobMetadata`](crate::model::ModelPackagingJobMetadata).
+    pub fn builder() -> crate::model::model_packaging_job_metadata::Builder {
+        crate::model::model_packaging_job_metadata::Builder::default()
+    }
+}
+
 /// See [`ModelPackagingJobMetadata`](crate::model::ModelPackagingJobMetadata).
 pub mod model_packaging_job_metadata {
 
@@ -1929,12 +1944,6 @@ pub mod model_packaging_job_metadata {
                 last_updated_timestamp: self.last_updated_timestamp,
             }
         }
-    }
-}
-impl ModelPackagingJobMetadata {
-    /// Creates a new builder-style object to manufacture [`ModelPackagingJobMetadata`](crate::model::ModelPackagingJobMetadata).
-    pub fn builder() -> crate::model::model_packaging_job_metadata::Builder {
-        crate::model::model_packaging_job_metadata::Builder::default()
     }
 }
 
@@ -2090,6 +2099,13 @@ impl DetectAnomalyResult {
         self.anomaly_mask.as_ref()
     }
 }
+impl DetectAnomalyResult {
+    /// Creates a new builder-style object to manufacture [`DetectAnomalyResult`](crate::model::DetectAnomalyResult).
+    pub fn builder() -> crate::model::detect_anomaly_result::Builder {
+        crate::model::detect_anomaly_result::Builder::default()
+    }
+}
+
 /// See [`DetectAnomalyResult`](crate::model::DetectAnomalyResult).
 pub mod detect_anomaly_result {
 
@@ -2186,12 +2202,6 @@ pub mod detect_anomaly_result {
         }
     }
 }
-impl DetectAnomalyResult {
-    /// Creates a new builder-style object to manufacture [`DetectAnomalyResult`](crate::model::DetectAnomalyResult).
-    pub fn builder() -> crate::model::detect_anomaly_result::Builder {
-        crate::model::detect_anomaly_result::Builder::default()
-    }
-}
 
 /// <p>Information about an anomaly type found on an image by an image segmentation model. For more information, see <code>DetectAnomalies</code>.</p>
 #[non_exhaustive]
@@ -2214,6 +2224,13 @@ impl Anomaly {
         self.pixel_anomaly.as_ref()
     }
 }
+impl Anomaly {
+    /// Creates a new builder-style object to manufacture [`Anomaly`](crate::model::Anomaly).
+    pub fn builder() -> crate::model::anomaly::Builder {
+        crate::model::anomaly::Builder::default()
+    }
+}
+
 /// See [`Anomaly`](crate::model::Anomaly).
 pub mod anomaly {
 
@@ -2257,12 +2274,6 @@ pub mod anomaly {
         }
     }
 }
-impl Anomaly {
-    /// Creates a new builder-style object to manufacture [`Anomaly`](crate::model::Anomaly).
-    pub fn builder() -> crate::model::anomaly::Builder {
-        crate::model::anomaly::Builder::default()
-    }
-}
 
 /// <p>Information about the pixels in an anomaly mask. For more information, see <code>Anomaly</code>. <code>PixelAnomaly</code> is only returned by image segmentation models.</p>
 #[non_exhaustive]
@@ -2285,6 +2296,13 @@ impl PixelAnomaly {
         self.color.as_deref()
     }
 }
+impl PixelAnomaly {
+    /// Creates a new builder-style object to manufacture [`PixelAnomaly`](crate::model::PixelAnomaly).
+    pub fn builder() -> crate::model::pixel_anomaly::Builder {
+        crate::model::pixel_anomaly::Builder::default()
+    }
+}
+
 /// See [`PixelAnomaly`](crate::model::PixelAnomaly).
 pub mod pixel_anomaly {
 
@@ -2325,12 +2343,6 @@ pub mod pixel_anomaly {
         }
     }
 }
-impl PixelAnomaly {
-    /// Creates a new builder-style object to manufacture [`PixelAnomaly`](crate::model::PixelAnomaly).
-    pub fn builder() -> crate::model::pixel_anomaly::Builder {
-        crate::model::pixel_anomaly::Builder::default()
-    }
-}
 
 /// <p>The source for an image.</p>
 #[non_exhaustive]
@@ -2346,6 +2358,13 @@ impl ImageSource {
         self.r#type.as_deref()
     }
 }
+impl ImageSource {
+    /// Creates a new builder-style object to manufacture [`ImageSource`](crate::model::ImageSource).
+    pub fn builder() -> crate::model::image_source::Builder {
+        crate::model::image_source::Builder::default()
+    }
+}
+
 /// See [`ImageSource`](crate::model::ImageSource).
 pub mod image_source {
 
@@ -2372,12 +2391,6 @@ pub mod image_source {
                 r#type: self.r#type,
             }
         }
-    }
-}
-impl ImageSource {
-    /// Creates a new builder-style object to manufacture [`ImageSource`](crate::model::ImageSource).
-    pub fn builder() -> crate::model::image_source::Builder {
-        crate::model::image_source::Builder::default()
     }
 }
 
@@ -2416,6 +2429,13 @@ impl ProjectDescription {
         self.datasets.as_deref()
     }
 }
+impl ProjectDescription {
+    /// Creates a new builder-style object to manufacture [`ProjectDescription`](crate::model::ProjectDescription).
+    pub fn builder() -> crate::model::project_description::Builder {
+        crate::model::project_description::Builder::default()
+    }
+}
+
 /// See [`ProjectDescription`](crate::model::ProjectDescription).
 pub mod project_description {
 
@@ -2492,12 +2512,6 @@ pub mod project_description {
         }
     }
 }
-impl ProjectDescription {
-    /// Creates a new builder-style object to manufacture [`ProjectDescription`](crate::model::ProjectDescription).
-    pub fn builder() -> crate::model::project_description::Builder {
-        crate::model::project_description::Builder::default()
-    }
-}
 
 /// <p>Summary information for an Amazon Lookout for Vision dataset. For more information, see <code>DescribeDataset</code> and <code>ProjectDescription</code>.</p>
 #[non_exhaustive]
@@ -2534,6 +2548,13 @@ impl DatasetMetadata {
         self.status_message.as_deref()
     }
 }
+impl DatasetMetadata {
+    /// Creates a new builder-style object to manufacture [`DatasetMetadata`](crate::model::DatasetMetadata).
+    pub fn builder() -> crate::model::dataset_metadata::Builder {
+        crate::model::dataset_metadata::Builder::default()
+    }
+}
+
 /// See [`DatasetMetadata`](crate::model::DatasetMetadata).
 pub mod dataset_metadata {
 
@@ -2605,12 +2626,6 @@ pub mod dataset_metadata {
                 status_message: self.status_message,
             }
         }
-    }
-}
-impl DatasetMetadata {
-    /// Creates a new builder-style object to manufacture [`DatasetMetadata`](crate::model::DatasetMetadata).
-    pub fn builder() -> crate::model::dataset_metadata::Builder {
-        crate::model::dataset_metadata::Builder::default()
     }
 }
 
@@ -2704,6 +2719,13 @@ impl ModelPackagingDescription {
         self.last_updated_timestamp.as_ref()
     }
 }
+impl ModelPackagingDescription {
+    /// Creates a new builder-style object to manufacture [`ModelPackagingDescription`](crate::model::ModelPackagingDescription).
+    pub fn builder() -> crate::model::model_packaging_description::Builder {
+        crate::model::model_packaging_description::Builder::default()
+    }
+}
+
 /// See [`ModelPackagingDescription`](crate::model::ModelPackagingDescription).
 pub mod model_packaging_description {
 
@@ -2890,12 +2912,6 @@ pub mod model_packaging_description {
         }
     }
 }
-impl ModelPackagingDescription {
-    /// Creates a new builder-style object to manufacture [`ModelPackagingDescription`](crate::model::ModelPackagingDescription).
-    pub fn builder() -> crate::model::model_packaging_description::Builder {
-        crate::model::model_packaging_description::Builder::default()
-    }
-}
 
 /// <p> Information about the output from a model packaging job. </p>
 #[non_exhaustive]
@@ -2911,6 +2927,13 @@ impl ModelPackagingOutputDetails {
         self.greengrass.as_ref()
     }
 }
+impl ModelPackagingOutputDetails {
+    /// Creates a new builder-style object to manufacture [`ModelPackagingOutputDetails`](crate::model::ModelPackagingOutputDetails).
+    pub fn builder() -> crate::model::model_packaging_output_details::Builder {
+        crate::model::model_packaging_output_details::Builder::default()
+    }
+}
+
 /// See [`ModelPackagingOutputDetails`](crate::model::ModelPackagingOutputDetails).
 pub mod model_packaging_output_details {
 
@@ -2942,12 +2965,6 @@ pub mod model_packaging_output_details {
         }
     }
 }
-impl ModelPackagingOutputDetails {
-    /// Creates a new builder-style object to manufacture [`ModelPackagingOutputDetails`](crate::model::ModelPackagingOutputDetails).
-    pub fn builder() -> crate::model::model_packaging_output_details::Builder {
-        crate::model::model_packaging_output_details::Builder::default()
-    }
-}
 
 /// <p>Information about the AWS IoT Greengrass component created by a model packaging job. </p>
 #[non_exhaustive]
@@ -2977,6 +2994,13 @@ impl GreengrassOutputDetails {
         self.component_version.as_deref()
     }
 }
+impl GreengrassOutputDetails {
+    /// Creates a new builder-style object to manufacture [`GreengrassOutputDetails`](crate::model::GreengrassOutputDetails).
+    pub fn builder() -> crate::model::greengrass_output_details::Builder {
+        crate::model::greengrass_output_details::Builder::default()
+    }
+}
+
 /// See [`GreengrassOutputDetails`](crate::model::GreengrassOutputDetails).
 pub mod greengrass_output_details {
 
@@ -3036,12 +3060,6 @@ pub mod greengrass_output_details {
                 component_version: self.component_version,
             }
         }
-    }
-}
-impl GreengrassOutputDetails {
-    /// Creates a new builder-style object to manufacture [`GreengrassOutputDetails`](crate::model::GreengrassOutputDetails).
-    pub fn builder() -> crate::model::greengrass_output_details::Builder {
-        crate::model::greengrass_output_details::Builder::default()
     }
 }
 
@@ -3150,6 +3168,13 @@ impl ModelDescription {
         self.max_inference_units
     }
 }
+impl ModelDescription {
+    /// Creates a new builder-style object to manufacture [`ModelDescription`](crate::model::ModelDescription).
+    pub fn builder() -> crate::model::model_description::Builder {
+        crate::model::model_description::Builder::default()
+    }
+}
+
 /// See [`ModelDescription`](crate::model::ModelDescription).
 pub mod model_description {
 
@@ -3358,12 +3383,6 @@ pub mod model_description {
         }
     }
 }
-impl ModelDescription {
-    /// Creates a new builder-style object to manufacture [`ModelDescription`](crate::model::ModelDescription).
-    pub fn builder() -> crate::model::model_description::Builder {
-        crate::model::model_description::Builder::default()
-    }
-}
 
 /// <p>The S3 location where Amazon Lookout for Vision saves training output.</p>
 #[non_exhaustive]
@@ -3386,6 +3405,13 @@ impl OutputS3Object {
         self.key.as_deref()
     }
 }
+impl OutputS3Object {
+    /// Creates a new builder-style object to manufacture [`OutputS3Object`](crate::model::OutputS3Object).
+    pub fn builder() -> crate::model::output_s3_object::Builder {
+        crate::model::output_s3_object::Builder::default()
+    }
+}
+
 /// See [`OutputS3Object`](crate::model::OutputS3Object).
 pub mod output_s3_object {
 
@@ -3426,12 +3452,6 @@ pub mod output_s3_object {
         }
     }
 }
-impl OutputS3Object {
-    /// Creates a new builder-style object to manufacture [`OutputS3Object`](crate::model::OutputS3Object).
-    pub fn builder() -> crate::model::output_s3_object::Builder {
-        crate::model::output_s3_object::Builder::default()
-    }
-}
 
 /// <p>The S3 location where Amazon Lookout for Vision saves model training files.</p>
 #[non_exhaustive]
@@ -3447,6 +3467,13 @@ impl OutputConfig {
         self.s3_location.as_ref()
     }
 }
+impl OutputConfig {
+    /// Creates a new builder-style object to manufacture [`OutputConfig`](crate::model::OutputConfig).
+    pub fn builder() -> crate::model::output_config::Builder {
+        crate::model::output_config::Builder::default()
+    }
+}
+
 /// See [`OutputConfig`](crate::model::OutputConfig).
 pub mod output_config {
 
@@ -3476,12 +3503,6 @@ pub mod output_config {
                 s3_location: self.s3_location,
             }
         }
-    }
-}
-impl OutputConfig {
-    /// Creates a new builder-style object to manufacture [`OutputConfig`](crate::model::OutputConfig).
-    pub fn builder() -> crate::model::output_config::Builder {
-        crate::model::output_config::Builder::default()
     }
 }
 
@@ -3541,6 +3562,13 @@ impl DatasetDescription {
         self.image_stats.as_ref()
     }
 }
+impl DatasetDescription {
+    /// Creates a new builder-style object to manufacture [`DatasetDescription`](crate::model::DatasetDescription).
+    pub fn builder() -> crate::model::dataset_description::Builder {
+        crate::model::dataset_description::Builder::default()
+    }
+}
+
 /// See [`DatasetDescription`](crate::model::DatasetDescription).
 pub mod dataset_description {
 
@@ -3656,12 +3684,6 @@ pub mod dataset_description {
         }
     }
 }
-impl DatasetDescription {
-    /// Creates a new builder-style object to manufacture [`DatasetDescription`](crate::model::DatasetDescription).
-    pub fn builder() -> crate::model::dataset_description::Builder {
-        crate::model::dataset_description::Builder::default()
-    }
-}
 
 /// <p>Statistics about the images in a dataset.</p>
 #[non_exhaustive]
@@ -3698,6 +3720,13 @@ impl DatasetImageStats {
         self.anomaly
     }
 }
+impl DatasetImageStats {
+    /// Creates a new builder-style object to manufacture [`DatasetImageStats`](crate::model::DatasetImageStats).
+    pub fn builder() -> crate::model::dataset_image_stats::Builder {
+        crate::model::dataset_image_stats::Builder::default()
+    }
+}
+
 /// See [`DatasetImageStats`](crate::model::DatasetImageStats).
 pub mod dataset_image_stats {
 
@@ -3762,12 +3791,6 @@ pub mod dataset_image_stats {
         }
     }
 }
-impl DatasetImageStats {
-    /// Creates a new builder-style object to manufacture [`DatasetImageStats`](crate::model::DatasetImageStats).
-    pub fn builder() -> crate::model::dataset_image_stats::Builder {
-        crate::model::dataset_image_stats::Builder::default()
-    }
-}
 
 /// <p>Information about the location of a manifest file that Amazon Lookout for Vision uses to to create a dataset.</p>
 #[non_exhaustive]
@@ -3785,6 +3808,13 @@ impl DatasetSource {
         self.ground_truth_manifest.as_ref()
     }
 }
+impl DatasetSource {
+    /// Creates a new builder-style object to manufacture [`DatasetSource`](crate::model::DatasetSource).
+    pub fn builder() -> crate::model::dataset_source::Builder {
+        crate::model::dataset_source::Builder::default()
+    }
+}
+
 /// See [`DatasetSource`](crate::model::DatasetSource).
 pub mod dataset_source {
 
@@ -3820,12 +3850,6 @@ pub mod dataset_source {
         }
     }
 }
-impl DatasetSource {
-    /// Creates a new builder-style object to manufacture [`DatasetSource`](crate::model::DatasetSource).
-    pub fn builder() -> crate::model::dataset_source::Builder {
-        crate::model::dataset_source::Builder::default()
-    }
-}
 
 /// <p>Location information about a manifest file. You can use a manifest file to create a dataset.</p>
 #[non_exhaustive]
@@ -3841,6 +3865,13 @@ impl DatasetGroundTruthManifest {
         self.s3_object.as_ref()
     }
 }
+impl DatasetGroundTruthManifest {
+    /// Creates a new builder-style object to manufacture [`DatasetGroundTruthManifest`](crate::model::DatasetGroundTruthManifest).
+    pub fn builder() -> crate::model::dataset_ground_truth_manifest::Builder {
+        crate::model::dataset_ground_truth_manifest::Builder::default()
+    }
+}
+
 /// See [`DatasetGroundTruthManifest`](crate::model::DatasetGroundTruthManifest).
 pub mod dataset_ground_truth_manifest {
 
@@ -3872,12 +3903,6 @@ pub mod dataset_ground_truth_manifest {
         }
     }
 }
-impl DatasetGroundTruthManifest {
-    /// Creates a new builder-style object to manufacture [`DatasetGroundTruthManifest`](crate::model::DatasetGroundTruthManifest).
-    pub fn builder() -> crate::model::dataset_ground_truth_manifest::Builder {
-        crate::model::dataset_ground_truth_manifest::Builder::default()
-    }
-}
 
 /// <p>Amazon S3 Location information for an input manifest file. </p>
 #[non_exhaustive]
@@ -3907,6 +3932,13 @@ impl InputS3Object {
         self.version_id.as_deref()
     }
 }
+impl InputS3Object {
+    /// Creates a new builder-style object to manufacture [`InputS3Object`](crate::model::InputS3Object).
+    pub fn builder() -> crate::model::input_s3_object::Builder {
+        crate::model::input_s3_object::Builder::default()
+    }
+}
+
 /// See [`InputS3Object`](crate::model::InputS3Object).
 pub mod input_s3_object {
 
@@ -3957,11 +3989,5 @@ pub mod input_s3_object {
                 version_id: self.version_id,
             }
         }
-    }
-}
-impl InputS3Object {
-    /// Creates a new builder-style object to manufacture [`InputS3Object`](crate::model::InputS3Object).
-    pub fn builder() -> crate::model::input_s3_object::Builder {
-        crate::model::input_s3_object::Builder::default()
     }
 }

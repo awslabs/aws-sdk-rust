@@ -21,6 +21,13 @@ impl aws_http::request_id::RequestId for UpdateResourceOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdateResourceOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateResourceOutput`](crate::output::UpdateResourceOutput).
+    pub fn builder() -> crate::output::update_resource_output::Builder {
+        crate::output::update_resource_output::Builder::default()
+    }
+}
+
 /// See [`UpdateResourceOutput`](crate::output::UpdateResourceOutput).
 pub mod update_resource_output {
 
@@ -65,12 +72,6 @@ pub mod update_resource_output {
         }
     }
 }
-impl UpdateResourceOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateResourceOutput`](crate::output::UpdateResourceOutput).
-    pub fn builder() -> crate::output::update_resource_output::Builder {
-        crate::output::update_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -109,6 +110,13 @@ impl aws_http::request_id::RequestId for ListResourcesOutput {
         self._request_id.as_deref()
     }
 }
+impl ListResourcesOutput {
+    /// Creates a new builder-style object to manufacture [`ListResourcesOutput`](crate::output::ListResourcesOutput).
+    pub fn builder() -> crate::output::list_resources_output::Builder {
+        crate::output::list_resources_output::Builder::default()
+    }
+}
+
 /// See [`ListResourcesOutput`](crate::output::ListResourcesOutput).
 pub mod list_resources_output {
 
@@ -182,12 +190,6 @@ pub mod list_resources_output {
         }
     }
 }
-impl ListResourcesOutput {
-    /// Creates a new builder-style object to manufacture [`ListResourcesOutput`](crate::output::ListResourcesOutput).
-    pub fn builder() -> crate::output::list_resources_output::Builder {
-        crate::output::list_resources_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -219,6 +221,13 @@ impl aws_http::request_id::RequestId for ListResourceRequestsOutput {
         self._request_id.as_deref()
     }
 }
+impl ListResourceRequestsOutput {
+    /// Creates a new builder-style object to manufacture [`ListResourceRequestsOutput`](crate::output::ListResourceRequestsOutput).
+    pub fn builder() -> crate::output::list_resource_requests_output::Builder {
+        crate::output::list_resource_requests_output::Builder::default()
+    }
+}
+
 /// See [`ListResourceRequestsOutput`](crate::output::ListResourceRequestsOutput).
 pub mod list_resource_requests_output {
 
@@ -283,12 +292,6 @@ pub mod list_resource_requests_output {
         }
     }
 }
-impl ListResourceRequestsOutput {
-    /// Creates a new builder-style object to manufacture [`ListResourceRequestsOutput`](crate::output::ListResourceRequestsOutput).
-    pub fn builder() -> crate::output::list_resource_requests_output::Builder {
-        crate::output::list_resource_requests_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -310,6 +313,13 @@ impl aws_http::request_id::RequestId for GetResourceRequestStatusOutput {
         self._request_id.as_deref()
     }
 }
+impl GetResourceRequestStatusOutput {
+    /// Creates a new builder-style object to manufacture [`GetResourceRequestStatusOutput`](crate::output::GetResourceRequestStatusOutput).
+    pub fn builder() -> crate::output::get_resource_request_status_output::Builder {
+        crate::output::get_resource_request_status_output::Builder::default()
+    }
+}
+
 /// See [`GetResourceRequestStatusOutput`](crate::output::GetResourceRequestStatusOutput).
 pub mod get_resource_request_status_output {
 
@@ -352,12 +362,6 @@ pub mod get_resource_request_status_output {
         }
     }
 }
-impl GetResourceRequestStatusOutput {
-    /// Creates a new builder-style object to manufacture [`GetResourceRequestStatusOutput`](crate::output::GetResourceRequestStatusOutput).
-    pub fn builder() -> crate::output::get_resource_request_status_output::Builder {
-        crate::output::get_resource_request_status_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -386,6 +390,13 @@ impl aws_http::request_id::RequestId for GetResourceOutput {
         self._request_id.as_deref()
     }
 }
+impl GetResourceOutput {
+    /// Creates a new builder-style object to manufacture [`GetResourceOutput`](crate::output::GetResourceOutput).
+    pub fn builder() -> crate::output::get_resource_output::Builder {
+        crate::output::get_resource_output::Builder::default()
+    }
+}
+
 /// See [`GetResourceOutput`](crate::output::GetResourceOutput).
 pub mod get_resource_output {
 
@@ -440,12 +451,6 @@ pub mod get_resource_output {
         }
     }
 }
-impl GetResourceOutput {
-    /// Creates a new builder-style object to manufacture [`GetResourceOutput`](crate::output::GetResourceOutput).
-    pub fn builder() -> crate::output::get_resource_output::Builder {
-        crate::output::get_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -469,6 +474,13 @@ impl aws_http::request_id::RequestId for DeleteResourceOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteResourceOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteResourceOutput`](crate::output::DeleteResourceOutput).
+    pub fn builder() -> crate::output::delete_resource_output::Builder {
+        crate::output::delete_resource_output::Builder::default()
+    }
+}
+
 /// See [`DeleteResourceOutput`](crate::output::DeleteResourceOutput).
 pub mod delete_resource_output {
 
@@ -513,12 +525,6 @@ pub mod delete_resource_output {
         }
     }
 }
-impl DeleteResourceOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteResourceOutput`](crate::output::DeleteResourceOutput).
-    pub fn builder() -> crate::output::delete_resource_output::Builder {
-        crate::output::delete_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -542,6 +548,13 @@ impl aws_http::request_id::RequestId for CreateResourceOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateResourceOutput {
+    /// Creates a new builder-style object to manufacture [`CreateResourceOutput`](crate::output::CreateResourceOutput).
+    pub fn builder() -> crate::output::create_resource_output::Builder {
+        crate::output::create_resource_output::Builder::default()
+    }
+}
+
 /// See [`CreateResourceOutput`](crate::output::CreateResourceOutput).
 pub mod create_resource_output {
 
@@ -586,12 +599,6 @@ pub mod create_resource_output {
         }
     }
 }
-impl CreateResourceOutput {
-    /// Creates a new builder-style object to manufacture [`CreateResourceOutput`](crate::output::CreateResourceOutput).
-    pub fn builder() -> crate::output::create_resource_output::Builder {
-        crate::output::create_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -613,6 +620,13 @@ impl aws_http::request_id::RequestId for CancelResourceRequestOutput {
         self._request_id.as_deref()
     }
 }
+impl CancelResourceRequestOutput {
+    /// Creates a new builder-style object to manufacture [`CancelResourceRequestOutput`](crate::output::CancelResourceRequestOutput).
+    pub fn builder() -> crate::output::cancel_resource_request_output::Builder {
+        crate::output::cancel_resource_request_output::Builder::default()
+    }
+}
+
 /// See [`CancelResourceRequestOutput`](crate::output::CancelResourceRequestOutput).
 pub mod cancel_resource_request_output {
 
@@ -653,11 +667,5 @@ pub mod cancel_resource_request_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl CancelResourceRequestOutput {
-    /// Creates a new builder-style object to manufacture [`CancelResourceRequestOutput`](crate::output::CancelResourceRequestOutput).
-    pub fn builder() -> crate::output::cancel_resource_request_output::Builder {
-        crate::output::cancel_resource_request_output::Builder::default()
     }
 }

@@ -10,6 +10,13 @@ impl aws_http::request_id::RequestId for StopVectorEnrichmentJobOutput {
         self._request_id.as_deref()
     }
 }
+impl StopVectorEnrichmentJobOutput {
+    /// Creates a new builder-style object to manufacture [`StopVectorEnrichmentJobOutput`](crate::output::StopVectorEnrichmentJobOutput).
+    pub fn builder() -> crate::output::stop_vector_enrichment_job_output::Builder {
+        crate::output::stop_vector_enrichment_job_output::Builder::default()
+    }
+}
+
 /// See [`StopVectorEnrichmentJobOutput`](crate::output::StopVectorEnrichmentJobOutput).
 pub mod stop_vector_enrichment_job_output {
 
@@ -35,12 +42,6 @@ pub mod stop_vector_enrichment_job_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl StopVectorEnrichmentJobOutput {
-    /// Creates a new builder-style object to manufacture [`StopVectorEnrichmentJobOutput`](crate::output::StopVectorEnrichmentJobOutput).
-    pub fn builder() -> crate::output::stop_vector_enrichment_job_output::Builder {
-        crate::output::stop_vector_enrichment_job_output::Builder::default()
     }
 }
 
@@ -96,6 +97,13 @@ impl aws_http::request_id::RequestId for ExportVectorEnrichmentJobOutput {
         self._request_id.as_deref()
     }
 }
+impl ExportVectorEnrichmentJobOutput {
+    /// Creates a new builder-style object to manufacture [`ExportVectorEnrichmentJobOutput`](crate::output::ExportVectorEnrichmentJobOutput).
+    pub fn builder() -> crate::output::export_vector_enrichment_job_output::Builder {
+        crate::output::export_vector_enrichment_job_output::Builder::default()
+    }
+}
+
 /// See [`ExportVectorEnrichmentJobOutput`](crate::output::ExportVectorEnrichmentJobOutput).
 pub mod export_vector_enrichment_job_output {
 
@@ -203,12 +211,6 @@ pub mod export_vector_enrichment_job_output {
         }
     }
 }
-impl ExportVectorEnrichmentJobOutput {
-    /// Creates a new builder-style object to manufacture [`ExportVectorEnrichmentJobOutput`](crate::output::ExportVectorEnrichmentJobOutput).
-    pub fn builder() -> crate::output::export_vector_enrichment_job_output::Builder {
-        crate::output::export_vector_enrichment_job_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -252,6 +254,13 @@ impl aws_http::request_id::RequestId for ListVectorEnrichmentJobsOutput {
         self._request_id.as_deref()
     }
 }
+impl ListVectorEnrichmentJobsOutput {
+    /// Creates a new builder-style object to manufacture [`ListVectorEnrichmentJobsOutput`](crate::output::ListVectorEnrichmentJobsOutput).
+    pub fn builder() -> crate::output::list_vector_enrichment_jobs_output::Builder {
+        crate::output::list_vector_enrichment_jobs_output::Builder::default()
+    }
+}
+
 /// See [`ListVectorEnrichmentJobsOutput`](crate::output::ListVectorEnrichmentJobsOutput).
 pub mod list_vector_enrichment_jobs_output {
 
@@ -328,12 +337,6 @@ pub mod list_vector_enrichment_jobs_output {
             formatter.field("_request_id", &self._request_id);
             formatter.finish()
         }
-    }
-}
-impl ListVectorEnrichmentJobsOutput {
-    /// Creates a new builder-style object to manufacture [`ListVectorEnrichmentJobsOutput`](crate::output::ListVectorEnrichmentJobsOutput).
-    pub fn builder() -> crate::output::list_vector_enrichment_jobs_output::Builder {
-        crate::output::list_vector_enrichment_jobs_output::Builder::default()
     }
 }
 
@@ -433,6 +436,13 @@ impl aws_http::request_id::RequestId for StartVectorEnrichmentJobOutput {
         self._request_id.as_deref()
     }
 }
+impl StartVectorEnrichmentJobOutput {
+    /// Creates a new builder-style object to manufacture [`StartVectorEnrichmentJobOutput`](crate::output::StartVectorEnrichmentJobOutput).
+    pub fn builder() -> crate::output::start_vector_enrichment_job_output::Builder {
+        crate::output::start_vector_enrichment_job_output::Builder::default()
+    }
+}
+
 /// See [`StartVectorEnrichmentJobOutput`](crate::output::StartVectorEnrichmentJobOutput).
 pub mod start_vector_enrichment_job_output {
 
@@ -627,12 +637,6 @@ pub mod start_vector_enrichment_job_output {
         }
     }
 }
-impl StartVectorEnrichmentJobOutput {
-    /// Creates a new builder-style object to manufacture [`StartVectorEnrichmentJobOutput`](crate::output::StartVectorEnrichmentJobOutput).
-    pub fn builder() -> crate::output::start_vector_enrichment_job_output::Builder {
-        crate::output::start_vector_enrichment_job_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -645,6 +649,13 @@ impl aws_http::request_id::RequestId for DeleteVectorEnrichmentJobOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteVectorEnrichmentJobOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteVectorEnrichmentJobOutput`](crate::output::DeleteVectorEnrichmentJobOutput).
+    pub fn builder() -> crate::output::delete_vector_enrichment_job_output::Builder {
+        crate::output::delete_vector_enrichment_job_output::Builder::default()
+    }
+}
+
 /// See [`DeleteVectorEnrichmentJobOutput`](crate::output::DeleteVectorEnrichmentJobOutput).
 pub mod delete_vector_enrichment_job_output {
 
@@ -670,12 +681,6 @@ pub mod delete_vector_enrichment_job_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl DeleteVectorEnrichmentJobOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteVectorEnrichmentJobOutput`](crate::output::DeleteVectorEnrichmentJobOutput).
-    pub fn builder() -> crate::output::delete_vector_enrichment_job_output::Builder {
-        crate::output::delete_vector_enrichment_job_output::Builder::default()
     }
 }
 
@@ -803,6 +808,13 @@ impl aws_http::request_id::RequestId for GetVectorEnrichmentJobOutput {
         self._request_id.as_deref()
     }
 }
+impl GetVectorEnrichmentJobOutput {
+    /// Creates a new builder-style object to manufacture [`GetVectorEnrichmentJobOutput`](crate::output::GetVectorEnrichmentJobOutput).
+    pub fn builder() -> crate::output::get_vector_enrichment_job_output::Builder {
+        crate::output::get_vector_enrichment_job_output::Builder::default()
+    }
+}
+
 /// See [`GetVectorEnrichmentJobOutput`](crate::output::GetVectorEnrichmentJobOutput).
 pub mod get_vector_enrichment_job_output {
 
@@ -1054,12 +1066,6 @@ pub mod get_vector_enrichment_job_output {
         }
     }
 }
-impl GetVectorEnrichmentJobOutput {
-    /// Creates a new builder-style object to manufacture [`GetVectorEnrichmentJobOutput`](crate::output::GetVectorEnrichmentJobOutput).
-    pub fn builder() -> crate::output::get_vector_enrichment_job_output::Builder {
-        crate::output::get_vector_enrichment_job_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1105,6 +1111,13 @@ impl aws_http::request_id::RequestId for SearchRasterDataCollectionOutput {
         self._request_id.as_deref()
     }
 }
+impl SearchRasterDataCollectionOutput {
+    /// Creates a new builder-style object to manufacture [`SearchRasterDataCollectionOutput`](crate::output::SearchRasterDataCollectionOutput).
+    pub fn builder() -> crate::output::search_raster_data_collection_output::Builder {
+        crate::output::search_raster_data_collection_output::Builder::default()
+    }
+}
+
 /// See [`SearchRasterDataCollectionOutput`](crate::output::SearchRasterDataCollectionOutput).
 pub mod search_raster_data_collection_output {
 
@@ -1187,12 +1200,6 @@ pub mod search_raster_data_collection_output {
         }
     }
 }
-impl SearchRasterDataCollectionOutput {
-    /// Creates a new builder-style object to manufacture [`SearchRasterDataCollectionOutput`](crate::output::SearchRasterDataCollectionOutput).
-    pub fn builder() -> crate::output::search_raster_data_collection_output::Builder {
-        crate::output::search_raster_data_collection_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1236,6 +1243,13 @@ impl aws_http::request_id::RequestId for ListRasterDataCollectionsOutput {
         self._request_id.as_deref()
     }
 }
+impl ListRasterDataCollectionsOutput {
+    /// Creates a new builder-style object to manufacture [`ListRasterDataCollectionsOutput`](crate::output::ListRasterDataCollectionsOutput).
+    pub fn builder() -> crate::output::list_raster_data_collections_output::Builder {
+        crate::output::list_raster_data_collections_output::Builder::default()
+    }
+}
+
 /// See [`ListRasterDataCollectionsOutput`](crate::output::ListRasterDataCollectionsOutput).
 pub mod list_raster_data_collections_output {
 
@@ -1312,12 +1326,6 @@ pub mod list_raster_data_collections_output {
         }
     }
 }
-impl ListRasterDataCollectionsOutput {
-    /// Creates a new builder-style object to manufacture [`ListRasterDataCollectionsOutput`](crate::output::ListRasterDataCollectionsOutput).
-    pub fn builder() -> crate::output::list_raster_data_collections_output::Builder {
-        crate::output::list_raster_data_collections_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1392,6 +1400,13 @@ impl aws_http::request_id::RequestId for GetRasterDataCollectionOutput {
         self._request_id.as_deref()
     }
 }
+impl GetRasterDataCollectionOutput {
+    /// Creates a new builder-style object to manufacture [`GetRasterDataCollectionOutput`](crate::output::GetRasterDataCollectionOutput).
+    pub fn builder() -> crate::output::get_raster_data_collection_output::Builder {
+        crate::output::get_raster_data_collection_output::Builder::default()
+    }
+}
+
 /// See [`GetRasterDataCollectionOutput`](crate::output::GetRasterDataCollectionOutput).
 pub mod get_raster_data_collection_output {
 
@@ -1556,12 +1571,6 @@ pub mod get_raster_data_collection_output {
         }
     }
 }
-impl GetRasterDataCollectionOutput {
-    /// Creates a new builder-style object to manufacture [`GetRasterDataCollectionOutput`](crate::output::GetRasterDataCollectionOutput).
-    pub fn builder() -> crate::output::get_raster_data_collection_output::Builder {
-        crate::output::get_raster_data_collection_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1574,6 +1583,13 @@ impl aws_http::request_id::RequestId for StopEarthObservationJobOutput {
         self._request_id.as_deref()
     }
 }
+impl StopEarthObservationJobOutput {
+    /// Creates a new builder-style object to manufacture [`StopEarthObservationJobOutput`](crate::output::StopEarthObservationJobOutput).
+    pub fn builder() -> crate::output::stop_earth_observation_job_output::Builder {
+        crate::output::stop_earth_observation_job_output::Builder::default()
+    }
+}
+
 /// See [`StopEarthObservationJobOutput`](crate::output::StopEarthObservationJobOutput).
 pub mod stop_earth_observation_job_output {
 
@@ -1601,12 +1617,6 @@ pub mod stop_earth_observation_job_output {
         }
     }
 }
-impl StopEarthObservationJobOutput {
-    /// Creates a new builder-style object to manufacture [`StopEarthObservationJobOutput`](crate::output::StopEarthObservationJobOutput).
-    pub fn builder() -> crate::output::stop_earth_observation_job_output::Builder {
-        crate::output::stop_earth_observation_job_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1627,6 +1637,13 @@ impl aws_http::request_id::RequestId for GetTileOutput {
         self._request_id.as_deref()
     }
 }
+impl GetTileOutput {
+    /// Creates a new builder-style object to manufacture [`GetTileOutput`](crate::output::GetTileOutput).
+    pub fn builder() -> crate::output::get_tile_output::Builder {
+        crate::output::get_tile_output::Builder::default()
+    }
+}
+
 /// See [`GetTileOutput`](crate::output::GetTileOutput).
 pub mod get_tile_output {
 
@@ -1667,12 +1684,6 @@ pub mod get_tile_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl GetTileOutput {
-    /// Creates a new builder-style object to manufacture [`GetTileOutput`](crate::output::GetTileOutput).
-    pub fn builder() -> crate::output::get_tile_output::Builder {
-        crate::output::get_tile_output::Builder::default()
     }
 }
 
@@ -1733,6 +1744,13 @@ impl aws_http::request_id::RequestId for ExportEarthObservationJobOutput {
         self._request_id.as_deref()
     }
 }
+impl ExportEarthObservationJobOutput {
+    /// Creates a new builder-style object to manufacture [`ExportEarthObservationJobOutput`](crate::output::ExportEarthObservationJobOutput).
+    pub fn builder() -> crate::output::export_earth_observation_job_output::Builder {
+        crate::output::export_earth_observation_job_output::Builder::default()
+    }
+}
+
 /// See [`ExportEarthObservationJobOutput`](crate::output::ExportEarthObservationJobOutput).
 pub mod export_earth_observation_job_output {
 
@@ -1848,12 +1866,6 @@ pub mod export_earth_observation_job_output {
         }
     }
 }
-impl ExportEarthObservationJobOutput {
-    /// Creates a new builder-style object to manufacture [`ExportEarthObservationJobOutput`](crate::output::ExportEarthObservationJobOutput).
-    pub fn builder() -> crate::output::export_earth_observation_job_output::Builder {
-        crate::output::export_earth_observation_job_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1897,6 +1909,13 @@ impl aws_http::request_id::RequestId for ListEarthObservationJobsOutput {
         self._request_id.as_deref()
     }
 }
+impl ListEarthObservationJobsOutput {
+    /// Creates a new builder-style object to manufacture [`ListEarthObservationJobsOutput`](crate::output::ListEarthObservationJobsOutput).
+    pub fn builder() -> crate::output::list_earth_observation_jobs_output::Builder {
+        crate::output::list_earth_observation_jobs_output::Builder::default()
+    }
+}
+
 /// See [`ListEarthObservationJobsOutput`](crate::output::ListEarthObservationJobsOutput).
 pub mod list_earth_observation_jobs_output {
 
@@ -1973,12 +1992,6 @@ pub mod list_earth_observation_jobs_output {
             formatter.field("_request_id", &self._request_id);
             formatter.finish()
         }
-    }
-}
-impl ListEarthObservationJobsOutput {
-    /// Creates a new builder-style object to manufacture [`ListEarthObservationJobsOutput`](crate::output::ListEarthObservationJobsOutput).
-    pub fn builder() -> crate::output::list_earth_observation_jobs_output::Builder {
-        crate::output::list_earth_observation_jobs_output::Builder::default()
     }
 }
 
@@ -2069,6 +2082,13 @@ impl aws_http::request_id::RequestId for StartEarthObservationJobOutput {
         self._request_id.as_deref()
     }
 }
+impl StartEarthObservationJobOutput {
+    /// Creates a new builder-style object to manufacture [`StartEarthObservationJobOutput`](crate::output::StartEarthObservationJobOutput).
+    pub fn builder() -> crate::output::start_earth_observation_job_output::Builder {
+        crate::output::start_earth_observation_job_output::Builder::default()
+    }
+}
+
 /// See [`StartEarthObservationJobOutput`](crate::output::StartEarthObservationJobOutput).
 pub mod start_earth_observation_job_output {
 
@@ -2248,12 +2268,6 @@ pub mod start_earth_observation_job_output {
         }
     }
 }
-impl StartEarthObservationJobOutput {
-    /// Creates a new builder-style object to manufacture [`StartEarthObservationJobOutput`](crate::output::StartEarthObservationJobOutput).
-    pub fn builder() -> crate::output::start_earth_observation_job_output::Builder {
-        crate::output::start_earth_observation_job_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2266,6 +2280,13 @@ impl aws_http::request_id::RequestId for DeleteEarthObservationJobOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteEarthObservationJobOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteEarthObservationJobOutput`](crate::output::DeleteEarthObservationJobOutput).
+    pub fn builder() -> crate::output::delete_earth_observation_job_output::Builder {
+        crate::output::delete_earth_observation_job_output::Builder::default()
+    }
+}
+
 /// See [`DeleteEarthObservationJobOutput`](crate::output::DeleteEarthObservationJobOutput).
 pub mod delete_earth_observation_job_output {
 
@@ -2291,12 +2312,6 @@ pub mod delete_earth_observation_job_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl DeleteEarthObservationJobOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteEarthObservationJobOutput`](crate::output::DeleteEarthObservationJobOutput).
-    pub fn builder() -> crate::output::delete_earth_observation_job_output::Builder {
-        crate::output::delete_earth_observation_job_output::Builder::default()
     }
 }
 
@@ -2419,6 +2434,13 @@ impl aws_http::request_id::RequestId for GetEarthObservationJobOutput {
         self._request_id.as_deref()
     }
 }
+impl GetEarthObservationJobOutput {
+    /// Creates a new builder-style object to manufacture [`GetEarthObservationJobOutput`](crate::output::GetEarthObservationJobOutput).
+    pub fn builder() -> crate::output::get_earth_observation_job_output::Builder {
+        crate::output::get_earth_observation_job_output::Builder::default()
+    }
+}
+
 /// See [`GetEarthObservationJobOutput`](crate::output::GetEarthObservationJobOutput).
 pub mod get_earth_observation_job_output {
 
@@ -2672,12 +2694,6 @@ pub mod get_earth_observation_job_output {
         }
     }
 }
-impl GetEarthObservationJobOutput {
-    /// Creates a new builder-style object to manufacture [`GetEarthObservationJobOutput`](crate::output::GetEarthObservationJobOutput).
-    pub fn builder() -> crate::output::get_earth_observation_job_output::Builder {
-        crate::output::get_earth_observation_job_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2690,6 +2706,13 @@ impl aws_http::request_id::RequestId for UntagResourceOutput {
         self._request_id.as_deref()
     }
 }
+impl UntagResourceOutput {
+    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    pub fn builder() -> crate::output::untag_resource_output::Builder {
+        crate::output::untag_resource_output::Builder::default()
+    }
+}
+
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
 
@@ -2717,12 +2740,6 @@ pub mod untag_resource_output {
         }
     }
 }
-impl UntagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
-    pub fn builder() -> crate::output::untag_resource_output::Builder {
-        crate::output::untag_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2735,6 +2752,13 @@ impl aws_http::request_id::RequestId for TagResourceOutput {
         self._request_id.as_deref()
     }
 }
+impl TagResourceOutput {
+    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
+    pub fn builder() -> crate::output::tag_resource_output::Builder {
+        crate::output::tag_resource_output::Builder::default()
+    }
+}
+
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
 
@@ -2762,12 +2786,6 @@ pub mod tag_resource_output {
         }
     }
 }
-impl TagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
-    pub fn builder() -> crate::output::tag_resource_output::Builder {
-        crate::output::tag_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2793,6 +2811,13 @@ impl aws_http::request_id::RequestId for ListTagsForResourceOutput {
         self._request_id.as_deref()
     }
 }
+impl ListTagsForResourceOutput {
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
+        crate::output::list_tags_for_resource_output::Builder::default()
+    }
+}
+
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
 
@@ -2847,11 +2872,5 @@ pub mod list_tags_for_resource_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl ListTagsForResourceOutput {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
-    pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
-        crate::output::list_tags_for_resource_output::Builder::default()
     }
 }

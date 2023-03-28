@@ -45,6 +45,13 @@ impl std::fmt::Debug for UserProfileSummary {
         formatter.finish()
     }
 }
+impl UserProfileSummary {
+    /// Creates a new builder-style object to manufacture [`UserProfileSummary`](crate::model::UserProfileSummary).
+    pub fn builder() -> crate::model::user_profile_summary::Builder {
+        crate::model::user_profile_summary::Builder::default()
+    }
+}
+
 /// See [`UserProfileSummary`](crate::model::UserProfileSummary).
 pub mod user_profile_summary {
 
@@ -125,12 +132,6 @@ pub mod user_profile_summary {
         }
     }
 }
-impl UserProfileSummary {
-    /// Creates a new builder-style object to manufacture [`UserProfileSummary`](crate::model::UserProfileSummary).
-    pub fn builder() -> crate::model::user_profile_summary::Builder {
-        crate::model::user_profile_summary::Builder::default()
-    }
-}
 
 /// <p>Information about a team member in a project.</p>
 #[non_exhaustive]
@@ -160,6 +161,13 @@ impl TeamMember {
         self.remote_access_allowed
     }
 }
+impl TeamMember {
+    /// Creates a new builder-style object to manufacture [`TeamMember`](crate::model::TeamMember).
+    pub fn builder() -> crate::model::team_member::Builder {
+        crate::model::team_member::Builder::default()
+    }
+}
+
 /// See [`TeamMember`](crate::model::TeamMember).
 pub mod team_member {
 
@@ -212,12 +220,6 @@ pub mod team_member {
         }
     }
 }
-impl TeamMember {
-    /// Creates a new builder-style object to manufacture [`TeamMember`](crate::model::TeamMember).
-    pub fn builder() -> crate::model::team_member::Builder {
-        crate::model::team_member::Builder::default()
-    }
-}
 
 /// <p>Information about a resource for a project.</p>
 #[non_exhaustive]
@@ -233,6 +235,13 @@ impl Resource {
         self.id.as_deref()
     }
 }
+impl Resource {
+    /// Creates a new builder-style object to manufacture [`Resource`](crate::model::Resource).
+    pub fn builder() -> crate::model::resource::Builder {
+        crate::model::resource::Builder::default()
+    }
+}
+
 /// See [`Resource`](crate::model::Resource).
 pub mod resource {
 
@@ -259,12 +268,6 @@ pub mod resource {
         }
     }
 }
-impl Resource {
-    /// Creates a new builder-style object to manufacture [`Resource`](crate::model::Resource).
-    pub fn builder() -> crate::model::resource::Builder {
-        crate::model::resource::Builder::default()
-    }
-}
 
 /// <p>Information about the metadata for a project.</p>
 #[non_exhaustive]
@@ -287,6 +290,13 @@ impl ProjectSummary {
         self.project_arn.as_deref()
     }
 }
+impl ProjectSummary {
+    /// Creates a new builder-style object to manufacture [`ProjectSummary`](crate::model::ProjectSummary).
+    pub fn builder() -> crate::model::project_summary::Builder {
+        crate::model::project_summary::Builder::default()
+    }
+}
+
 /// See [`ProjectSummary`](crate::model::ProjectSummary).
 pub mod project_summary {
 
@@ -327,12 +337,6 @@ pub mod project_summary {
         }
     }
 }
-impl ProjectSummary {
-    /// Creates a new builder-style object to manufacture [`ProjectSummary`](crate::model::ProjectSummary).
-    pub fn builder() -> crate::model::project_summary::Builder {
-        crate::model::project_summary::Builder::default()
-    }
-}
 
 /// <p>An indication of whether a project creation or deletion is failed or successful.</p>
 #[non_exhaustive]
@@ -355,6 +359,13 @@ impl ProjectStatus {
         self.reason.as_deref()
     }
 }
+impl ProjectStatus {
+    /// Creates a new builder-style object to manufacture [`ProjectStatus`](crate::model::ProjectStatus).
+    pub fn builder() -> crate::model::project_status::Builder {
+        crate::model::project_status::Builder::default()
+    }
+}
+
 /// See [`ProjectStatus`](crate::model::ProjectStatus).
 pub mod project_status {
 
@@ -395,12 +406,6 @@ pub mod project_status {
         }
     }
 }
-impl ProjectStatus {
-    /// Creates a new builder-style object to manufacture [`ProjectStatus`](crate::model::ProjectStatus).
-    pub fn builder() -> crate::model::project_status::Builder {
-        crate::model::project_status::Builder::default()
-    }
-}
 
 /// <p>The toolchain template file provided with the project request. AWS CodeStar uses the template to provision the toolchain stack in AWS CloudFormation.</p>
 #[non_exhaustive]
@@ -434,6 +439,13 @@ impl Toolchain {
         self.stack_parameters.as_ref()
     }
 }
+impl Toolchain {
+    /// Creates a new builder-style object to manufacture [`Toolchain`](crate::model::Toolchain).
+    pub fn builder() -> crate::model::toolchain::Builder {
+        crate::model::toolchain::Builder::default()
+    }
+}
+
 /// See [`Toolchain`](crate::model::Toolchain).
 pub mod toolchain {
 
@@ -506,12 +518,6 @@ pub mod toolchain {
         }
     }
 }
-impl Toolchain {
-    /// Creates a new builder-style object to manufacture [`Toolchain`](crate::model::Toolchain).
-    pub fn builder() -> crate::model::toolchain::Builder {
-        crate::model::toolchain::Builder::default()
-    }
-}
 
 /// <p>The Amazon S3 location where the toolchain template file provided with the project request is stored. AWS CodeStar retrieves the file during project creation.</p>
 #[non_exhaustive]
@@ -527,6 +533,13 @@ impl ToolchainSource {
         self.s3.as_ref()
     }
 }
+impl ToolchainSource {
+    /// Creates a new builder-style object to manufacture [`ToolchainSource`](crate::model::ToolchainSource).
+    pub fn builder() -> crate::model::toolchain_source::Builder {
+        crate::model::toolchain_source::Builder::default()
+    }
+}
+
 /// See [`ToolchainSource`](crate::model::ToolchainSource).
 pub mod toolchain_source {
 
@@ -553,12 +566,6 @@ pub mod toolchain_source {
         }
     }
 }
-impl ToolchainSource {
-    /// Creates a new builder-style object to manufacture [`ToolchainSource`](crate::model::ToolchainSource).
-    pub fn builder() -> crate::model::toolchain_source::Builder {
-        crate::model::toolchain_source::Builder::default()
-    }
-}
 
 /// <p>The Amazon S3 location where the source code files provided with the project request are stored.</p>
 #[non_exhaustive]
@@ -581,6 +588,13 @@ impl S3Location {
         self.bucket_key.as_deref()
     }
 }
+impl S3Location {
+    /// Creates a new builder-style object to manufacture [`S3Location`](crate::model::S3Location).
+    pub fn builder() -> crate::model::s3_location::Builder {
+        crate::model::s3_location::Builder::default()
+    }
+}
+
 /// See [`S3Location`](crate::model::S3Location).
 pub mod s3_location {
 
@@ -621,12 +635,6 @@ pub mod s3_location {
         }
     }
 }
-impl S3Location {
-    /// Creates a new builder-style object to manufacture [`S3Location`](crate::model::S3Location).
-    pub fn builder() -> crate::model::s3_location::Builder {
-        crate::model::s3_location::Builder::default()
-    }
-}
 
 /// <p>Location and destination information about the source code files provided with the project request. The source code is uploaded to the new project source repository after project creation.</p>
 #[non_exhaustive]
@@ -649,6 +657,13 @@ impl Code {
         self.destination.as_ref()
     }
 }
+impl Code {
+    /// Creates a new builder-style object to manufacture [`Code`](crate::model::Code).
+    pub fn builder() -> crate::model::code::Builder {
+        crate::model::code::Builder::default()
+    }
+}
+
 /// See [`Code`](crate::model::Code).
 pub mod code {
 
@@ -692,12 +707,6 @@ pub mod code {
         }
     }
 }
-impl Code {
-    /// Creates a new builder-style object to manufacture [`Code`](crate::model::Code).
-    pub fn builder() -> crate::model::code::Builder {
-        crate::model::code::Builder::default()
-    }
-}
 
 /// <p>The repository to be created in AWS CodeStar. Valid values are AWS CodeCommit or GitHub. After AWS CodeStar provisions the new repository, the source code files provided with the project request are placed in the repository.</p>
 #[non_exhaustive]
@@ -720,6 +729,13 @@ impl CodeDestination {
         self.git_hub.as_ref()
     }
 }
+impl CodeDestination {
+    /// Creates a new builder-style object to manufacture [`CodeDestination`](crate::model::CodeDestination).
+    pub fn builder() -> crate::model::code_destination::Builder {
+        crate::model::code_destination::Builder::default()
+    }
+}
+
 /// See [`CodeDestination`](crate::model::CodeDestination).
 pub mod code_destination {
 
@@ -764,12 +780,6 @@ pub mod code_destination {
                 git_hub: self.git_hub,
             }
         }
-    }
-}
-impl CodeDestination {
-    /// Creates a new builder-style object to manufacture [`CodeDestination`](crate::model::CodeDestination).
-    pub fn builder() -> crate::model::code_destination::Builder {
-        crate::model::code_destination::Builder::default()
     }
 }
 
@@ -842,6 +852,13 @@ impl std::fmt::Debug for GitHubCodeDestination {
         formatter.finish()
     }
 }
+impl GitHubCodeDestination {
+    /// Creates a new builder-style object to manufacture [`GitHubCodeDestination`](crate::model::GitHubCodeDestination).
+    pub fn builder() -> crate::model::git_hub_code_destination::Builder {
+        crate::model::git_hub_code_destination::Builder::default()
+    }
+}
+
 /// See [`GitHubCodeDestination`](crate::model::GitHubCodeDestination).
 pub mod git_hub_code_destination {
 
@@ -955,12 +972,6 @@ pub mod git_hub_code_destination {
         }
     }
 }
-impl GitHubCodeDestination {
-    /// Creates a new builder-style object to manufacture [`GitHubCodeDestination`](crate::model::GitHubCodeDestination).
-    pub fn builder() -> crate::model::git_hub_code_destination::Builder {
-        crate::model::git_hub_code_destination::Builder::default()
-    }
-}
 
 /// <p>Information about the AWS CodeCommit repository to be created in AWS CodeStar. This is where the source code files provided with the project request will be uploaded after project creation.</p>
 #[non_exhaustive]
@@ -976,6 +987,13 @@ impl CodeCommitCodeDestination {
         self.name.as_deref()
     }
 }
+impl CodeCommitCodeDestination {
+    /// Creates a new builder-style object to manufacture [`CodeCommitCodeDestination`](crate::model::CodeCommitCodeDestination).
+    pub fn builder() -> crate::model::code_commit_code_destination::Builder {
+        crate::model::code_commit_code_destination::Builder::default()
+    }
+}
+
 /// See [`CodeCommitCodeDestination`](crate::model::CodeCommitCodeDestination).
 pub mod code_commit_code_destination {
 
@@ -1002,12 +1020,6 @@ pub mod code_commit_code_destination {
         }
     }
 }
-impl CodeCommitCodeDestination {
-    /// Creates a new builder-style object to manufacture [`CodeCommitCodeDestination`](crate::model::CodeCommitCodeDestination).
-    pub fn builder() -> crate::model::code_commit_code_destination::Builder {
-        crate::model::code_commit_code_destination::Builder::default()
-    }
-}
 
 /// <p>The location where the source code files provided with the project request are stored. AWS CodeStar retrieves the files during project creation.</p>
 #[non_exhaustive]
@@ -1023,6 +1035,13 @@ impl CodeSource {
         self.s3.as_ref()
     }
 }
+impl CodeSource {
+    /// Creates a new builder-style object to manufacture [`CodeSource`](crate::model::CodeSource).
+    pub fn builder() -> crate::model::code_source::Builder {
+        crate::model::code_source::Builder::default()
+    }
+}
+
 /// See [`CodeSource`](crate::model::CodeSource).
 pub mod code_source {
 
@@ -1047,11 +1066,5 @@ pub mod code_source {
         pub fn build(self) -> crate::model::CodeSource {
             crate::model::CodeSource { s3: self.s3 }
         }
-    }
-}
-impl CodeSource {
-    /// Creates a new builder-style object to manufacture [`CodeSource`](crate::model::CodeSource).
-    pub fn builder() -> crate::model::code_source::Builder {
-        crate::model::code_source::Builder::default()
     }
 }

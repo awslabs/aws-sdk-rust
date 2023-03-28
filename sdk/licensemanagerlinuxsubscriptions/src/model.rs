@@ -123,6 +123,13 @@ impl LinuxSubscriptionsDiscoverySettings {
         self.organization_integration.as_ref()
     }
 }
+impl LinuxSubscriptionsDiscoverySettings {
+    /// Creates a new builder-style object to manufacture [`LinuxSubscriptionsDiscoverySettings`](crate::model::LinuxSubscriptionsDiscoverySettings).
+    pub fn builder() -> crate::model::linux_subscriptions_discovery_settings::Builder {
+        crate::model::linux_subscriptions_discovery_settings::Builder::default()
+    }
+}
+
 /// See [`LinuxSubscriptionsDiscoverySettings`](crate::model::LinuxSubscriptionsDiscoverySettings).
 pub mod linux_subscriptions_discovery_settings {
 
@@ -177,12 +184,6 @@ pub mod linux_subscriptions_discovery_settings {
                 organization_integration: self.organization_integration,
             }
         }
-    }
-}
-impl LinuxSubscriptionsDiscoverySettings {
-    /// Creates a new builder-style object to manufacture [`LinuxSubscriptionsDiscoverySettings`](crate::model::LinuxSubscriptionsDiscoverySettings).
-    pub fn builder() -> crate::model::linux_subscriptions_discovery_settings::Builder {
-        crate::model::linux_subscriptions_discovery_settings::Builder::default()
     }
 }
 
@@ -398,6 +399,13 @@ impl Subscription {
         self.instance_count
     }
 }
+impl Subscription {
+    /// Creates a new builder-style object to manufacture [`Subscription`](crate::model::Subscription).
+    pub fn builder() -> crate::model::subscription::Builder {
+        crate::model::subscription::Builder::default()
+    }
+}
+
 /// See [`Subscription`](crate::model::Subscription).
 pub mod subscription {
 
@@ -450,12 +458,6 @@ pub mod subscription {
         }
     }
 }
-impl Subscription {
-    /// Creates a new builder-style object to manufacture [`Subscription`](crate::model::Subscription).
-    pub fn builder() -> crate::model::subscription::Builder {
-        crate::model::subscription::Builder::default()
-    }
-}
 
 /// <p>A filter object that is used to return more specific results from a describe operation. Filters can be used to match a set of resources by specific criteria.</p>
 #[non_exhaustive]
@@ -485,6 +487,13 @@ impl Filter {
         self.operator.as_ref()
     }
 }
+impl Filter {
+    /// Creates a new builder-style object to manufacture [`Filter`](crate::model::Filter).
+    pub fn builder() -> crate::model::filter::Builder {
+        crate::model::filter::Builder::default()
+    }
+}
+
 /// See [`Filter`](crate::model::Filter).
 pub mod filter {
 
@@ -544,12 +553,6 @@ pub mod filter {
                 operator: self.operator,
             }
         }
-    }
-}
-impl Filter {
-    /// Creates a new builder-style object to manufacture [`Filter`](crate::model::Filter).
-    pub fn builder() -> crate::model::filter::Builder {
-        crate::model::filter::Builder::default()
     }
 }
 
@@ -725,6 +728,13 @@ impl Instance {
         self.subscription_name.as_deref()
     }
 }
+impl Instance {
+    /// Creates a new builder-style object to manufacture [`Instance`](crate::model::Instance).
+    pub fn builder() -> crate::model::instance::Builder {
+        crate::model::instance::Builder::default()
+    }
+}
+
 /// See [`Instance`](crate::model::Instance).
 pub mod instance {
 
@@ -880,11 +890,5 @@ pub mod instance {
                 subscription_name: self.subscription_name,
             }
         }
-    }
-}
-impl Instance {
-    /// Creates a new builder-style object to manufacture [`Instance`](crate::model::Instance).
-    pub fn builder() -> crate::model::instance::Builder {
-        crate::model::instance::Builder::default()
     }
 }

@@ -4,7 +4,7 @@
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`batch_put_metrics`](crate::client::Client::batch_put_metrics).
 ///
-/// See [`crate::client::fluent_builders::BatchPutMetrics`] for more details about the operation.
+/// `ParseStrictResponse` impl for `BatchPutMetrics`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct BatchPutMetrics {
     _private: (),

@@ -22,6 +22,13 @@ impl aws_http::request_id::RequestId for UpdateTrafficPolicyInstanceOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdateTrafficPolicyInstanceOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateTrafficPolicyInstanceOutput`](crate::output::UpdateTrafficPolicyInstanceOutput).
+    pub fn builder() -> crate::output::update_traffic_policy_instance_output::Builder {
+        crate::output::update_traffic_policy_instance_output::Builder::default()
+    }
+}
+
 /// See [`UpdateTrafficPolicyInstanceOutput`](crate::output::UpdateTrafficPolicyInstanceOutput).
 pub mod update_traffic_policy_instance_output {
 
@@ -68,12 +75,6 @@ pub mod update_traffic_policy_instance_output {
         }
     }
 }
-impl UpdateTrafficPolicyInstanceOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateTrafficPolicyInstanceOutput`](crate::output::UpdateTrafficPolicyInstanceOutput).
-    pub fn builder() -> crate::output::update_traffic_policy_instance_output::Builder {
-        crate::output::update_traffic_policy_instance_output::Builder::default()
-    }
-}
 
 /// <p>A complex type that contains the response information for the traffic policy.</p>
 #[non_exhaustive]
@@ -95,6 +96,13 @@ impl aws_http::request_id::RequestId for UpdateTrafficPolicyCommentOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdateTrafficPolicyCommentOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateTrafficPolicyCommentOutput`](crate::output::UpdateTrafficPolicyCommentOutput).
+    pub fn builder() -> crate::output::update_traffic_policy_comment_output::Builder {
+        crate::output::update_traffic_policy_comment_output::Builder::default()
+    }
+}
+
 /// See [`UpdateTrafficPolicyCommentOutput`](crate::output::UpdateTrafficPolicyCommentOutput).
 pub mod update_traffic_policy_comment_output {
 
@@ -137,12 +145,6 @@ pub mod update_traffic_policy_comment_output {
         }
     }
 }
-impl UpdateTrafficPolicyCommentOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateTrafficPolicyCommentOutput`](crate::output::UpdateTrafficPolicyCommentOutput).
-    pub fn builder() -> crate::output::update_traffic_policy_comment_output::Builder {
-        crate::output::update_traffic_policy_comment_output::Builder::default()
-    }
-}
 
 /// <p>A complex type that contains the response to the <code>UpdateHostedZoneComment</code> request.</p>
 #[non_exhaustive]
@@ -164,6 +166,13 @@ impl aws_http::request_id::RequestId for UpdateHostedZoneCommentOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdateHostedZoneCommentOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateHostedZoneCommentOutput`](crate::output::UpdateHostedZoneCommentOutput).
+    pub fn builder() -> crate::output::update_hosted_zone_comment_output::Builder {
+        crate::output::update_hosted_zone_comment_output::Builder::default()
+    }
+}
+
 /// See [`UpdateHostedZoneCommentOutput`](crate::output::UpdateHostedZoneCommentOutput).
 pub mod update_hosted_zone_comment_output {
 
@@ -206,12 +215,6 @@ pub mod update_hosted_zone_comment_output {
         }
     }
 }
-impl UpdateHostedZoneCommentOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateHostedZoneCommentOutput`](crate::output::UpdateHostedZoneCommentOutput).
-    pub fn builder() -> crate::output::update_hosted_zone_comment_output::Builder {
-        crate::output::update_hosted_zone_comment_output::Builder::default()
-    }
-}
 
 /// <p>A complex type that contains the response to the <code>UpdateHealthCheck</code> request.</p>
 #[non_exhaustive]
@@ -233,6 +236,13 @@ impl aws_http::request_id::RequestId for UpdateHealthCheckOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdateHealthCheckOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateHealthCheckOutput`](crate::output::UpdateHealthCheckOutput).
+    pub fn builder() -> crate::output::update_health_check_output::Builder {
+        crate::output::update_health_check_output::Builder::default()
+    }
+}
+
 /// See [`UpdateHealthCheckOutput`](crate::output::UpdateHealthCheckOutput).
 pub mod update_health_check_output {
 
@@ -273,12 +283,6 @@ pub mod update_health_check_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl UpdateHealthCheckOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateHealthCheckOutput`](crate::output::UpdateHealthCheckOutput).
-    pub fn builder() -> crate::output::update_health_check_output::Builder {
-        crate::output::update_health_check_output::Builder::default()
     }
 }
 
@@ -337,6 +341,13 @@ impl aws_http::request_id::RequestId for TestDnsAnswerOutput {
         self._request_id.as_deref()
     }
 }
+impl TestDnsAnswerOutput {
+    /// Creates a new builder-style object to manufacture [`TestDnsAnswerOutput`](crate::output::TestDnsAnswerOutput).
+    pub fn builder() -> crate::output::test_dns_answer_output::Builder {
+        crate::output::test_dns_answer_output::Builder::default()
+    }
+}
+
 /// See [`TestDnsAnswerOutput`](crate::output::TestDnsAnswerOutput).
 pub mod test_dns_answer_output {
 
@@ -448,12 +459,6 @@ pub mod test_dns_answer_output {
         }
     }
 }
-impl TestDnsAnswerOutput {
-    /// Creates a new builder-style object to manufacture [`TestDnsAnswerOutput`](crate::output::TestDnsAnswerOutput).
-    pub fn builder() -> crate::output::test_dns_answer_output::Builder {
-        crate::output::test_dns_answer_output::Builder::default()
-    }
-}
 
 /// <p>A complex type that contains the response information for the request.</p>
 #[non_exhaustive]
@@ -489,6 +494,13 @@ impl aws_http::request_id::RequestId for ListVpcAssociationAuthorizationsOutput 
         self._request_id.as_deref()
     }
 }
+impl ListVpcAssociationAuthorizationsOutput {
+    /// Creates a new builder-style object to manufacture [`ListVpcAssociationAuthorizationsOutput`](crate::output::ListVpcAssociationAuthorizationsOutput).
+    pub fn builder() -> crate::output::list_vpc_association_authorizations_output::Builder {
+        crate::output::list_vpc_association_authorizations_output::Builder::default()
+    }
+}
+
 /// See [`ListVpcAssociationAuthorizationsOutput`](crate::output::ListVpcAssociationAuthorizationsOutput).
 pub mod list_vpc_association_authorizations_output {
 
@@ -564,12 +576,6 @@ pub mod list_vpc_association_authorizations_output {
         }
     }
 }
-impl ListVpcAssociationAuthorizationsOutput {
-    /// Creates a new builder-style object to manufacture [`ListVpcAssociationAuthorizationsOutput`](crate::output::ListVpcAssociationAuthorizationsOutput).
-    pub fn builder() -> crate::output::list_vpc_association_authorizations_output::Builder {
-        crate::output::list_vpc_association_authorizations_output::Builder::default()
-    }
-}
 
 /// <p>A complex type that contains the response information for the request.</p>
 #[non_exhaustive]
@@ -614,6 +620,13 @@ impl aws_http::request_id::RequestId for ListTrafficPolicyVersionsOutput {
         self._request_id.as_deref()
     }
 }
+impl ListTrafficPolicyVersionsOutput {
+    /// Creates a new builder-style object to manufacture [`ListTrafficPolicyVersionsOutput`](crate::output::ListTrafficPolicyVersionsOutput).
+    pub fn builder() -> crate::output::list_traffic_policy_versions_output::Builder {
+        crate::output::list_traffic_policy_versions_output::Builder::default()
+    }
+}
+
 /// See [`ListTrafficPolicyVersionsOutput`](crate::output::ListTrafficPolicyVersionsOutput).
 pub mod list_traffic_policy_versions_output {
 
@@ -707,12 +720,6 @@ pub mod list_traffic_policy_versions_output {
         }
     }
 }
-impl ListTrafficPolicyVersionsOutput {
-    /// Creates a new builder-style object to manufacture [`ListTrafficPolicyVersionsOutput`](crate::output::ListTrafficPolicyVersionsOutput).
-    pub fn builder() -> crate::output::list_traffic_policy_versions_output::Builder {
-        crate::output::list_traffic_policy_versions_output::Builder::default()
-    }
-}
 
 /// <p>A complex type that contains the response information for the request.</p>
 #[non_exhaustive]
@@ -774,6 +781,13 @@ impl aws_http::request_id::RequestId for ListTrafficPolicyInstancesByPolicyOutpu
         self._request_id.as_deref()
     }
 }
+impl ListTrafficPolicyInstancesByPolicyOutput {
+    /// Creates a new builder-style object to manufacture [`ListTrafficPolicyInstancesByPolicyOutput`](crate::output::ListTrafficPolicyInstancesByPolicyOutput).
+    pub fn builder() -> crate::output::list_traffic_policy_instances_by_policy_output::Builder {
+        crate::output::list_traffic_policy_instances_by_policy_output::Builder::default()
+    }
+}
+
 /// See [`ListTrafficPolicyInstancesByPolicyOutput`](crate::output::ListTrafficPolicyInstancesByPolicyOutput).
 pub mod list_traffic_policy_instances_by_policy_output {
 
@@ -898,12 +912,6 @@ pub mod list_traffic_policy_instances_by_policy_output {
         }
     }
 }
-impl ListTrafficPolicyInstancesByPolicyOutput {
-    /// Creates a new builder-style object to manufacture [`ListTrafficPolicyInstancesByPolicyOutput`](crate::output::ListTrafficPolicyInstancesByPolicyOutput).
-    pub fn builder() -> crate::output::list_traffic_policy_instances_by_policy_output::Builder {
-        crate::output::list_traffic_policy_instances_by_policy_output::Builder::default()
-    }
-}
 
 /// <p>A complex type that contains the response information for the request.</p>
 #[non_exhaustive]
@@ -958,6 +966,14 @@ impl aws_http::request_id::RequestId for ListTrafficPolicyInstancesByHostedZoneO
         self._request_id.as_deref()
     }
 }
+impl ListTrafficPolicyInstancesByHostedZoneOutput {
+    /// Creates a new builder-style object to manufacture [`ListTrafficPolicyInstancesByHostedZoneOutput`](crate::output::ListTrafficPolicyInstancesByHostedZoneOutput).
+    pub fn builder() -> crate::output::list_traffic_policy_instances_by_hosted_zone_output::Builder
+    {
+        crate::output::list_traffic_policy_instances_by_hosted_zone_output::Builder::default()
+    }
+}
+
 /// See [`ListTrafficPolicyInstancesByHostedZoneOutput`](crate::output::ListTrafficPolicyInstancesByHostedZoneOutput).
 pub mod list_traffic_policy_instances_by_hosted_zone_output {
 
@@ -1067,13 +1083,6 @@ pub mod list_traffic_policy_instances_by_hosted_zone_output {
         }
     }
 }
-impl ListTrafficPolicyInstancesByHostedZoneOutput {
-    /// Creates a new builder-style object to manufacture [`ListTrafficPolicyInstancesByHostedZoneOutput`](crate::output::ListTrafficPolicyInstancesByHostedZoneOutput).
-    pub fn builder() -> crate::output::list_traffic_policy_instances_by_hosted_zone_output::Builder
-    {
-        crate::output::list_traffic_policy_instances_by_hosted_zone_output::Builder::default()
-    }
-}
 
 /// <p>A complex type that contains the response information for the request.</p>
 #[non_exhaustive]
@@ -1135,6 +1144,13 @@ impl aws_http::request_id::RequestId for ListTrafficPolicyInstancesOutput {
         self._request_id.as_deref()
     }
 }
+impl ListTrafficPolicyInstancesOutput {
+    /// Creates a new builder-style object to manufacture [`ListTrafficPolicyInstancesOutput`](crate::output::ListTrafficPolicyInstancesOutput).
+    pub fn builder() -> crate::output::list_traffic_policy_instances_output::Builder {
+        crate::output::list_traffic_policy_instances_output::Builder::default()
+    }
+}
+
 /// See [`ListTrafficPolicyInstancesOutput`](crate::output::ListTrafficPolicyInstancesOutput).
 pub mod list_traffic_policy_instances_output {
 
@@ -1259,12 +1275,6 @@ pub mod list_traffic_policy_instances_output {
         }
     }
 }
-impl ListTrafficPolicyInstancesOutput {
-    /// Creates a new builder-style object to manufacture [`ListTrafficPolicyInstancesOutput`](crate::output::ListTrafficPolicyInstancesOutput).
-    pub fn builder() -> crate::output::list_traffic_policy_instances_output::Builder {
-        crate::output::list_traffic_policy_instances_output::Builder::default()
-    }
-}
 
 /// <p>A complex type that contains the response information for the request.</p>
 #[non_exhaustive]
@@ -1310,6 +1320,13 @@ impl aws_http::request_id::RequestId for ListTrafficPoliciesOutput {
         self._request_id.as_deref()
     }
 }
+impl ListTrafficPoliciesOutput {
+    /// Creates a new builder-style object to manufacture [`ListTrafficPoliciesOutput`](crate::output::ListTrafficPoliciesOutput).
+    pub fn builder() -> crate::output::list_traffic_policies_output::Builder {
+        crate::output::list_traffic_policies_output::Builder::default()
+    }
+}
+
 /// See [`ListTrafficPoliciesOutput`](crate::output::ListTrafficPoliciesOutput).
 pub mod list_traffic_policies_output {
 
@@ -1401,12 +1418,6 @@ pub mod list_traffic_policies_output {
         }
     }
 }
-impl ListTrafficPoliciesOutput {
-    /// Creates a new builder-style object to manufacture [`ListTrafficPoliciesOutput`](crate::output::ListTrafficPoliciesOutput).
-    pub fn builder() -> crate::output::list_traffic_policies_output::Builder {
-        crate::output::list_traffic_policies_output::Builder::default()
-    }
-}
 
 /// <p>A complex type containing tags for the specified resources.</p>
 #[non_exhaustive]
@@ -1428,6 +1439,13 @@ impl aws_http::request_id::RequestId for ListTagsForResourcesOutput {
         self._request_id.as_deref()
     }
 }
+impl ListTagsForResourcesOutput {
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourcesOutput`](crate::output::ListTagsForResourcesOutput).
+    pub fn builder() -> crate::output::list_tags_for_resources_output::Builder {
+        crate::output::list_tags_for_resources_output::Builder::default()
+    }
+}
+
 /// See [`ListTagsForResourcesOutput`](crate::output::ListTagsForResourcesOutput).
 pub mod list_tags_for_resources_output {
 
@@ -1477,12 +1495,6 @@ pub mod list_tags_for_resources_output {
         }
     }
 }
-impl ListTagsForResourcesOutput {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourcesOutput`](crate::output::ListTagsForResourcesOutput).
-    pub fn builder() -> crate::output::list_tags_for_resources_output::Builder {
-        crate::output::list_tags_for_resources_output::Builder::default()
-    }
-}
 
 /// <p>A complex type that contains information about the health checks or hosted zones for which you want to list tags.</p>
 #[non_exhaustive]
@@ -1504,6 +1516,13 @@ impl aws_http::request_id::RequestId for ListTagsForResourceOutput {
         self._request_id.as_deref()
     }
 }
+impl ListTagsForResourceOutput {
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
+        crate::output::list_tags_for_resource_output::Builder::default()
+    }
+}
+
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
 
@@ -1544,12 +1563,6 @@ pub mod list_tags_for_resource_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl ListTagsForResourceOutput {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
-    pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
-        crate::output::list_tags_for_resource_output::Builder::default()
     }
 }
 
@@ -1601,6 +1614,13 @@ impl aws_http::request_id::RequestId for ListReusableDelegationSetsOutput {
         self._request_id.as_deref()
     }
 }
+impl ListReusableDelegationSetsOutput {
+    /// Creates a new builder-style object to manufacture [`ListReusableDelegationSetsOutput`](crate::output::ListReusableDelegationSetsOutput).
+    pub fn builder() -> crate::output::list_reusable_delegation_sets_output::Builder {
+        crate::output::list_reusable_delegation_sets_output::Builder::default()
+    }
+}
+
 /// See [`ListReusableDelegationSetsOutput`](crate::output::ListReusableDelegationSetsOutput).
 pub mod list_reusable_delegation_sets_output {
 
@@ -1697,12 +1717,6 @@ pub mod list_reusable_delegation_sets_output {
         }
     }
 }
-impl ListReusableDelegationSetsOutput {
-    /// Creates a new builder-style object to manufacture [`ListReusableDelegationSetsOutput`](crate::output::ListReusableDelegationSetsOutput).
-    pub fn builder() -> crate::output::list_reusable_delegation_sets_output::Builder {
-        crate::output::list_reusable_delegation_sets_output::Builder::default()
-    }
-}
 
 /// <p>A complex type that contains list information for the resource record set.</p>
 #[non_exhaustive]
@@ -1765,6 +1779,13 @@ impl aws_http::request_id::RequestId for ListResourceRecordSetsOutput {
         self._request_id.as_deref()
     }
 }
+impl ListResourceRecordSetsOutput {
+    /// Creates a new builder-style object to manufacture [`ListResourceRecordSetsOutput`](crate::output::ListResourceRecordSetsOutput).
+    pub fn builder() -> crate::output::list_resource_record_sets_output::Builder {
+        crate::output::list_resource_record_sets_output::Builder::default()
+    }
+}
+
 /// See [`ListResourceRecordSetsOutput`](crate::output::ListResourceRecordSetsOutput).
 pub mod list_resource_record_sets_output {
 
@@ -1889,12 +1910,6 @@ pub mod list_resource_record_sets_output {
         }
     }
 }
-impl ListResourceRecordSetsOutput {
-    /// Creates a new builder-style object to manufacture [`ListResourceRecordSetsOutput`](crate::output::ListResourceRecordSetsOutput).
-    pub fn builder() -> crate::output::list_resource_record_sets_output::Builder {
-        crate::output::list_resource_record_sets_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1927,6 +1942,13 @@ impl aws_http::request_id::RequestId for ListQueryLoggingConfigsOutput {
         self._request_id.as_deref()
     }
 }
+impl ListQueryLoggingConfigsOutput {
+    /// Creates a new builder-style object to manufacture [`ListQueryLoggingConfigsOutput`](crate::output::ListQueryLoggingConfigsOutput).
+    pub fn builder() -> crate::output::list_query_logging_configs_output::Builder {
+        crate::output::list_query_logging_configs_output::Builder::default()
+    }
+}
+
 /// See [`ListQueryLoggingConfigsOutput`](crate::output::ListQueryLoggingConfigsOutput).
 pub mod list_query_logging_configs_output {
 
@@ -1990,12 +2012,6 @@ pub mod list_query_logging_configs_output {
         }
     }
 }
-impl ListQueryLoggingConfigsOutput {
-    /// Creates a new builder-style object to manufacture [`ListQueryLoggingConfigsOutput`](crate::output::ListQueryLoggingConfigsOutput).
-    pub fn builder() -> crate::output::list_query_logging_configs_output::Builder {
-        crate::output::list_query_logging_configs_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2031,6 +2047,13 @@ impl aws_http::request_id::RequestId for ListHostedZonesByVpcOutput {
         self._request_id.as_deref()
     }
 }
+impl ListHostedZonesByVpcOutput {
+    /// Creates a new builder-style object to manufacture [`ListHostedZonesByVpcOutput`](crate::output::ListHostedZonesByVpcOutput).
+    pub fn builder() -> crate::output::list_hosted_zones_by_vpc_output::Builder {
+        crate::output::list_hosted_zones_by_vpc_output::Builder::default()
+    }
+}
+
 /// See [`ListHostedZonesByVpcOutput`](crate::output::ListHostedZonesByVpcOutput).
 pub mod list_hosted_zones_by_vpc_output {
 
@@ -2104,12 +2127,6 @@ pub mod list_hosted_zones_by_vpc_output {
         }
     }
 }
-impl ListHostedZonesByVpcOutput {
-    /// Creates a new builder-style object to manufacture [`ListHostedZonesByVpcOutput`](crate::output::ListHostedZonesByVpcOutput).
-    pub fn builder() -> crate::output::list_hosted_zones_by_vpc_output::Builder {
-        crate::output::list_hosted_zones_by_vpc_output::Builder::default()
-    }
-}
 
 /// <p>A complex type that contains the response information for the request.</p>
 #[non_exhaustive]
@@ -2177,6 +2194,13 @@ impl aws_http::request_id::RequestId for ListHostedZonesByNameOutput {
         self._request_id.as_deref()
     }
 }
+impl ListHostedZonesByNameOutput {
+    /// Creates a new builder-style object to manufacture [`ListHostedZonesByNameOutput`](crate::output::ListHostedZonesByNameOutput).
+    pub fn builder() -> crate::output::list_hosted_zones_by_name_output::Builder {
+        crate::output::list_hosted_zones_by_name_output::Builder::default()
+    }
+}
+
 /// See [`ListHostedZonesByNameOutput`](crate::output::ListHostedZonesByNameOutput).
 pub mod list_hosted_zones_by_name_output {
 
@@ -2310,12 +2334,6 @@ pub mod list_hosted_zones_by_name_output {
         }
     }
 }
-impl ListHostedZonesByNameOutput {
-    /// Creates a new builder-style object to manufacture [`ListHostedZonesByNameOutput`](crate::output::ListHostedZonesByNameOutput).
-    pub fn builder() -> crate::output::list_hosted_zones_by_name_output::Builder {
-        crate::output::list_hosted_zones_by_name_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2367,6 +2385,13 @@ impl aws_http::request_id::RequestId for ListHostedZonesOutput {
         self._request_id.as_deref()
     }
 }
+impl ListHostedZonesOutput {
+    /// Creates a new builder-style object to manufacture [`ListHostedZonesOutput`](crate::output::ListHostedZonesOutput).
+    pub fn builder() -> crate::output::list_hosted_zones_output::Builder {
+        crate::output::list_hosted_zones_output::Builder::default()
+    }
+}
+
 /// See [`ListHostedZonesOutput`](crate::output::ListHostedZonesOutput).
 pub mod list_hosted_zones_output {
 
@@ -2465,12 +2490,6 @@ pub mod list_hosted_zones_output {
         }
     }
 }
-impl ListHostedZonesOutput {
-    /// Creates a new builder-style object to manufacture [`ListHostedZonesOutput`](crate::output::ListHostedZonesOutput).
-    pub fn builder() -> crate::output::list_hosted_zones_output::Builder {
-        crate::output::list_hosted_zones_output::Builder::default()
-    }
-}
 
 /// <p>A complex type that contains the response to a <code>ListHealthChecks</code> request.</p>
 #[non_exhaustive]
@@ -2520,6 +2539,13 @@ impl aws_http::request_id::RequestId for ListHealthChecksOutput {
         self._request_id.as_deref()
     }
 }
+impl ListHealthChecksOutput {
+    /// Creates a new builder-style object to manufacture [`ListHealthChecksOutput`](crate::output::ListHealthChecksOutput).
+    pub fn builder() -> crate::output::list_health_checks_output::Builder {
+        crate::output::list_health_checks_output::Builder::default()
+    }
+}
+
 /// See [`ListHealthChecksOutput`](crate::output::ListHealthChecksOutput).
 pub mod list_health_checks_output {
 
@@ -2616,12 +2642,6 @@ pub mod list_health_checks_output {
         }
     }
 }
-impl ListHealthChecksOutput {
-    /// Creates a new builder-style object to manufacture [`ListHealthChecksOutput`](crate::output::ListHealthChecksOutput).
-    pub fn builder() -> crate::output::list_health_checks_output::Builder {
-        crate::output::list_health_checks_output::Builder::default()
-    }
-}
 
 /// <p>A complex type containing the response information for the request.</p>
 #[non_exhaustive]
@@ -2681,6 +2701,13 @@ impl aws_http::request_id::RequestId for ListGeoLocationsOutput {
         self._request_id.as_deref()
     }
 }
+impl ListGeoLocationsOutput {
+    /// Creates a new builder-style object to manufacture [`ListGeoLocationsOutput`](crate::output::ListGeoLocationsOutput).
+    pub fn builder() -> crate::output::list_geo_locations_output::Builder {
+        crate::output::list_geo_locations_output::Builder::default()
+    }
+}
+
 /// See [`ListGeoLocationsOutput`](crate::output::ListGeoLocationsOutput).
 pub mod list_geo_locations_output {
 
@@ -2802,12 +2829,6 @@ pub mod list_geo_locations_output {
         }
     }
 }
-impl ListGeoLocationsOutput {
-    /// Creates a new builder-style object to manufacture [`ListGeoLocationsOutput`](crate::output::ListGeoLocationsOutput).
-    pub fn builder() -> crate::output::list_geo_locations_output::Builder {
-        crate::output::list_geo_locations_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2838,6 +2859,13 @@ impl aws_http::request_id::RequestId for ListCidrLocationsOutput {
         self._request_id.as_deref()
     }
 }
+impl ListCidrLocationsOutput {
+    /// Creates a new builder-style object to manufacture [`ListCidrLocationsOutput`](crate::output::ListCidrLocationsOutput).
+    pub fn builder() -> crate::output::list_cidr_locations_output::Builder {
+        crate::output::list_cidr_locations_output::Builder::default()
+    }
+}
+
 /// See [`ListCidrLocationsOutput`](crate::output::ListCidrLocationsOutput).
 pub mod list_cidr_locations_output {
 
@@ -2901,12 +2929,6 @@ pub mod list_cidr_locations_output {
         }
     }
 }
-impl ListCidrLocationsOutput {
-    /// Creates a new builder-style object to manufacture [`ListCidrLocationsOutput`](crate::output::ListCidrLocationsOutput).
-    pub fn builder() -> crate::output::list_cidr_locations_output::Builder {
-        crate::output::list_cidr_locations_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2937,6 +2959,13 @@ impl aws_http::request_id::RequestId for ListCidrCollectionsOutput {
         self._request_id.as_deref()
     }
 }
+impl ListCidrCollectionsOutput {
+    /// Creates a new builder-style object to manufacture [`ListCidrCollectionsOutput`](crate::output::ListCidrCollectionsOutput).
+    pub fn builder() -> crate::output::list_cidr_collections_output::Builder {
+        crate::output::list_cidr_collections_output::Builder::default()
+    }
+}
+
 /// See [`ListCidrCollectionsOutput`](crate::output::ListCidrCollectionsOutput).
 pub mod list_cidr_collections_output {
 
@@ -3000,12 +3029,6 @@ pub mod list_cidr_collections_output {
         }
     }
 }
-impl ListCidrCollectionsOutput {
-    /// Creates a new builder-style object to manufacture [`ListCidrCollectionsOutput`](crate::output::ListCidrCollectionsOutput).
-    pub fn builder() -> crate::output::list_cidr_collections_output::Builder {
-        crate::output::list_cidr_collections_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3036,6 +3059,13 @@ impl aws_http::request_id::RequestId for ListCidrBlocksOutput {
         self._request_id.as_deref()
     }
 }
+impl ListCidrBlocksOutput {
+    /// Creates a new builder-style object to manufacture [`ListCidrBlocksOutput`](crate::output::ListCidrBlocksOutput).
+    pub fn builder() -> crate::output::list_cidr_blocks_output::Builder {
+        crate::output::list_cidr_blocks_output::Builder::default()
+    }
+}
+
 /// See [`ListCidrBlocksOutput`](crate::output::ListCidrBlocksOutput).
 pub mod list_cidr_blocks_output {
 
@@ -3098,12 +3128,6 @@ pub mod list_cidr_blocks_output {
         }
     }
 }
-impl ListCidrBlocksOutput {
-    /// Creates a new builder-style object to manufacture [`ListCidrBlocksOutput`](crate::output::ListCidrBlocksOutput).
-    pub fn builder() -> crate::output::list_cidr_blocks_output::Builder {
-        crate::output::list_cidr_blocks_output::Builder::default()
-    }
-}
 
 /// <p>A complex type that contains information about the resource record sets that Amazon Route 53 created based on a specified traffic policy.</p>
 #[non_exhaustive]
@@ -3125,6 +3149,13 @@ impl aws_http::request_id::RequestId for GetTrafficPolicyInstanceCountOutput {
         self._request_id.as_deref()
     }
 }
+impl GetTrafficPolicyInstanceCountOutput {
+    /// Creates a new builder-style object to manufacture [`GetTrafficPolicyInstanceCountOutput`](crate::output::GetTrafficPolicyInstanceCountOutput).
+    pub fn builder() -> crate::output::get_traffic_policy_instance_count_output::Builder {
+        crate::output::get_traffic_policy_instance_count_output::Builder::default()
+    }
+}
+
 /// See [`GetTrafficPolicyInstanceCountOutput`](crate::output::GetTrafficPolicyInstanceCountOutput).
 pub mod get_traffic_policy_instance_count_output {
 
@@ -3167,12 +3198,6 @@ pub mod get_traffic_policy_instance_count_output {
         }
     }
 }
-impl GetTrafficPolicyInstanceCountOutput {
-    /// Creates a new builder-style object to manufacture [`GetTrafficPolicyInstanceCountOutput`](crate::output::GetTrafficPolicyInstanceCountOutput).
-    pub fn builder() -> crate::output::get_traffic_policy_instance_count_output::Builder {
-        crate::output::get_traffic_policy_instance_count_output::Builder::default()
-    }
-}
 
 /// <p>A complex type that contains information about the resource record sets that Amazon Route 53 created based on a specified traffic policy.</p>
 #[non_exhaustive]
@@ -3196,6 +3221,13 @@ impl aws_http::request_id::RequestId for GetTrafficPolicyInstanceOutput {
         self._request_id.as_deref()
     }
 }
+impl GetTrafficPolicyInstanceOutput {
+    /// Creates a new builder-style object to manufacture [`GetTrafficPolicyInstanceOutput`](crate::output::GetTrafficPolicyInstanceOutput).
+    pub fn builder() -> crate::output::get_traffic_policy_instance_output::Builder {
+        crate::output::get_traffic_policy_instance_output::Builder::default()
+    }
+}
+
 /// See [`GetTrafficPolicyInstanceOutput`](crate::output::GetTrafficPolicyInstanceOutput).
 pub mod get_traffic_policy_instance_output {
 
@@ -3242,12 +3274,6 @@ pub mod get_traffic_policy_instance_output {
         }
     }
 }
-impl GetTrafficPolicyInstanceOutput {
-    /// Creates a new builder-style object to manufacture [`GetTrafficPolicyInstanceOutput`](crate::output::GetTrafficPolicyInstanceOutput).
-    pub fn builder() -> crate::output::get_traffic_policy_instance_output::Builder {
-        crate::output::get_traffic_policy_instance_output::Builder::default()
-    }
-}
 
 /// <p>A complex type that contains the response information for the request.</p>
 #[non_exhaustive]
@@ -3269,6 +3295,13 @@ impl aws_http::request_id::RequestId for GetTrafficPolicyOutput {
         self._request_id.as_deref()
     }
 }
+impl GetTrafficPolicyOutput {
+    /// Creates a new builder-style object to manufacture [`GetTrafficPolicyOutput`](crate::output::GetTrafficPolicyOutput).
+    pub fn builder() -> crate::output::get_traffic_policy_output::Builder {
+        crate::output::get_traffic_policy_output::Builder::default()
+    }
+}
+
 /// See [`GetTrafficPolicyOutput`](crate::output::GetTrafficPolicyOutput).
 pub mod get_traffic_policy_output {
 
@@ -3311,12 +3344,6 @@ pub mod get_traffic_policy_output {
         }
     }
 }
-impl GetTrafficPolicyOutput {
-    /// Creates a new builder-style object to manufacture [`GetTrafficPolicyOutput`](crate::output::GetTrafficPolicyOutput).
-    pub fn builder() -> crate::output::get_traffic_policy_output::Builder {
-        crate::output::get_traffic_policy_output::Builder::default()
-    }
-}
 
 /// <p>A complex type that contains the requested limit. </p>
 #[non_exhaustive]
@@ -3345,6 +3372,13 @@ impl aws_http::request_id::RequestId for GetReusableDelegationSetLimitOutput {
         self._request_id.as_deref()
     }
 }
+impl GetReusableDelegationSetLimitOutput {
+    /// Creates a new builder-style object to manufacture [`GetReusableDelegationSetLimitOutput`](crate::output::GetReusableDelegationSetLimitOutput).
+    pub fn builder() -> crate::output::get_reusable_delegation_set_limit_output::Builder {
+        crate::output::get_reusable_delegation_set_limit_output::Builder::default()
+    }
+}
+
 /// See [`GetReusableDelegationSetLimitOutput`](crate::output::GetReusableDelegationSetLimitOutput).
 pub mod get_reusable_delegation_set_limit_output {
 
@@ -3399,12 +3433,6 @@ pub mod get_reusable_delegation_set_limit_output {
         }
     }
 }
-impl GetReusableDelegationSetLimitOutput {
-    /// Creates a new builder-style object to manufacture [`GetReusableDelegationSetLimitOutput`](crate::output::GetReusableDelegationSetLimitOutput).
-    pub fn builder() -> crate::output::get_reusable_delegation_set_limit_output::Builder {
-        crate::output::get_reusable_delegation_set_limit_output::Builder::default()
-    }
-}
 
 /// <p>A complex type that contains the response to the <code>GetReusableDelegationSet</code> request.</p>
 #[non_exhaustive]
@@ -3426,6 +3454,13 @@ impl aws_http::request_id::RequestId for GetReusableDelegationSetOutput {
         self._request_id.as_deref()
     }
 }
+impl GetReusableDelegationSetOutput {
+    /// Creates a new builder-style object to manufacture [`GetReusableDelegationSetOutput`](crate::output::GetReusableDelegationSetOutput).
+    pub fn builder() -> crate::output::get_reusable_delegation_set_output::Builder {
+        crate::output::get_reusable_delegation_set_output::Builder::default()
+    }
+}
+
 /// See [`GetReusableDelegationSetOutput`](crate::output::GetReusableDelegationSetOutput).
 pub mod get_reusable_delegation_set_output {
 
@@ -3468,12 +3503,6 @@ pub mod get_reusable_delegation_set_output {
         }
     }
 }
-impl GetReusableDelegationSetOutput {
-    /// Creates a new builder-style object to manufacture [`GetReusableDelegationSetOutput`](crate::output::GetReusableDelegationSetOutput).
-    pub fn builder() -> crate::output::get_reusable_delegation_set_output::Builder {
-        crate::output::get_reusable_delegation_set_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3495,6 +3524,13 @@ impl aws_http::request_id::RequestId for GetQueryLoggingConfigOutput {
         self._request_id.as_deref()
     }
 }
+impl GetQueryLoggingConfigOutput {
+    /// Creates a new builder-style object to manufacture [`GetQueryLoggingConfigOutput`](crate::output::GetQueryLoggingConfigOutput).
+    pub fn builder() -> crate::output::get_query_logging_config_output::Builder {
+        crate::output::get_query_logging_config_output::Builder::default()
+    }
+}
+
 /// See [`GetQueryLoggingConfigOutput`](crate::output::GetQueryLoggingConfigOutput).
 pub mod get_query_logging_config_output {
 
@@ -3537,12 +3573,6 @@ pub mod get_query_logging_config_output {
         }
     }
 }
-impl GetQueryLoggingConfigOutput {
-    /// Creates a new builder-style object to manufacture [`GetQueryLoggingConfigOutput`](crate::output::GetQueryLoggingConfigOutput).
-    pub fn builder() -> crate::output::get_query_logging_config_output::Builder {
-        crate::output::get_query_logging_config_output::Builder::default()
-    }
-}
 
 /// <p>A complex type that contains the requested limit. </p>
 #[non_exhaustive]
@@ -3571,6 +3601,13 @@ impl aws_http::request_id::RequestId for GetHostedZoneLimitOutput {
         self._request_id.as_deref()
     }
 }
+impl GetHostedZoneLimitOutput {
+    /// Creates a new builder-style object to manufacture [`GetHostedZoneLimitOutput`](crate::output::GetHostedZoneLimitOutput).
+    pub fn builder() -> crate::output::get_hosted_zone_limit_output::Builder {
+        crate::output::get_hosted_zone_limit_output::Builder::default()
+    }
+}
+
 /// See [`GetHostedZoneLimitOutput`](crate::output::GetHostedZoneLimitOutput).
 pub mod get_hosted_zone_limit_output {
 
@@ -3625,12 +3662,6 @@ pub mod get_hosted_zone_limit_output {
         }
     }
 }
-impl GetHostedZoneLimitOutput {
-    /// Creates a new builder-style object to manufacture [`GetHostedZoneLimitOutput`](crate::output::GetHostedZoneLimitOutput).
-    pub fn builder() -> crate::output::get_hosted_zone_limit_output::Builder {
-        crate::output::get_hosted_zone_limit_output::Builder::default()
-    }
-}
 
 /// <p>A complex type that contains the response to a <code>GetHostedZoneCount</code> request.</p>
 #[non_exhaustive]
@@ -3652,6 +3683,13 @@ impl aws_http::request_id::RequestId for GetHostedZoneCountOutput {
         self._request_id.as_deref()
     }
 }
+impl GetHostedZoneCountOutput {
+    /// Creates a new builder-style object to manufacture [`GetHostedZoneCountOutput`](crate::output::GetHostedZoneCountOutput).
+    pub fn builder() -> crate::output::get_hosted_zone_count_output::Builder {
+        crate::output::get_hosted_zone_count_output::Builder::default()
+    }
+}
+
 /// See [`GetHostedZoneCountOutput`](crate::output::GetHostedZoneCountOutput).
 pub mod get_hosted_zone_count_output {
 
@@ -3691,12 +3729,6 @@ pub mod get_hosted_zone_count_output {
         }
     }
 }
-impl GetHostedZoneCountOutput {
-    /// Creates a new builder-style object to manufacture [`GetHostedZoneCountOutput`](crate::output::GetHostedZoneCountOutput).
-    pub fn builder() -> crate::output::get_hosted_zone_count_output::Builder {
-        crate::output::get_hosted_zone_count_output::Builder::default()
-    }
-}
 
 /// <p>A complex type that contain the response to a <code>GetHostedZone</code> request.</p>
 #[non_exhaustive]
@@ -3732,6 +3764,13 @@ impl aws_http::request_id::RequestId for GetHostedZoneOutput {
         self._request_id.as_deref()
     }
 }
+impl GetHostedZoneOutput {
+    /// Creates a new builder-style object to manufacture [`GetHostedZoneOutput`](crate::output::GetHostedZoneOutput).
+    pub fn builder() -> crate::output::get_hosted_zone_output::Builder {
+        crate::output::get_hosted_zone_output::Builder::default()
+    }
+}
+
 /// See [`GetHostedZoneOutput`](crate::output::GetHostedZoneOutput).
 pub mod get_hosted_zone_output {
 
@@ -3810,12 +3849,6 @@ pub mod get_hosted_zone_output {
         }
     }
 }
-impl GetHostedZoneOutput {
-    /// Creates a new builder-style object to manufacture [`GetHostedZoneOutput`](crate::output::GetHostedZoneOutput).
-    pub fn builder() -> crate::output::get_hosted_zone_output::Builder {
-        crate::output::get_hosted_zone_output::Builder::default()
-    }
-}
 
 /// <p>A complex type that contains the response to a <code>GetHealthCheck</code> request.</p>
 #[non_exhaustive]
@@ -3840,6 +3873,13 @@ impl aws_http::request_id::RequestId for GetHealthCheckStatusOutput {
         self._request_id.as_deref()
     }
 }
+impl GetHealthCheckStatusOutput {
+    /// Creates a new builder-style object to manufacture [`GetHealthCheckStatusOutput`](crate::output::GetHealthCheckStatusOutput).
+    pub fn builder() -> crate::output::get_health_check_status_output::Builder {
+        crate::output::get_health_check_status_output::Builder::default()
+    }
+}
+
 /// See [`GetHealthCheckStatusOutput`](crate::output::GetHealthCheckStatusOutput).
 pub mod get_health_check_status_output {
 
@@ -3892,12 +3932,6 @@ pub mod get_health_check_status_output {
         }
     }
 }
-impl GetHealthCheckStatusOutput {
-    /// Creates a new builder-style object to manufacture [`GetHealthCheckStatusOutput`](crate::output::GetHealthCheckStatusOutput).
-    pub fn builder() -> crate::output::get_health_check_status_output::Builder {
-        crate::output::get_health_check_status_output::Builder::default()
-    }
-}
 
 /// <p>A complex type that contains the response to a <code>GetHealthCheckLastFailureReason</code> request.</p>
 #[non_exhaustive]
@@ -3922,6 +3956,13 @@ impl aws_http::request_id::RequestId for GetHealthCheckLastFailureReasonOutput {
         self._request_id.as_deref()
     }
 }
+impl GetHealthCheckLastFailureReasonOutput {
+    /// Creates a new builder-style object to manufacture [`GetHealthCheckLastFailureReasonOutput`](crate::output::GetHealthCheckLastFailureReasonOutput).
+    pub fn builder() -> crate::output::get_health_check_last_failure_reason_output::Builder {
+        crate::output::get_health_check_last_failure_reason_output::Builder::default()
+    }
+}
+
 /// See [`GetHealthCheckLastFailureReasonOutput`](crate::output::GetHealthCheckLastFailureReasonOutput).
 pub mod get_health_check_last_failure_reason_output {
 
@@ -3974,12 +4015,6 @@ pub mod get_health_check_last_failure_reason_output {
         }
     }
 }
-impl GetHealthCheckLastFailureReasonOutput {
-    /// Creates a new builder-style object to manufacture [`GetHealthCheckLastFailureReasonOutput`](crate::output::GetHealthCheckLastFailureReasonOutput).
-    pub fn builder() -> crate::output::get_health_check_last_failure_reason_output::Builder {
-        crate::output::get_health_check_last_failure_reason_output::Builder::default()
-    }
-}
 
 /// <p>A complex type that contains the response to a <code>GetHealthCheckCount</code> request.</p>
 #[non_exhaustive]
@@ -4001,6 +4036,13 @@ impl aws_http::request_id::RequestId for GetHealthCheckCountOutput {
         self._request_id.as_deref()
     }
 }
+impl GetHealthCheckCountOutput {
+    /// Creates a new builder-style object to manufacture [`GetHealthCheckCountOutput`](crate::output::GetHealthCheckCountOutput).
+    pub fn builder() -> crate::output::get_health_check_count_output::Builder {
+        crate::output::get_health_check_count_output::Builder::default()
+    }
+}
+
 /// See [`GetHealthCheckCountOutput`](crate::output::GetHealthCheckCountOutput).
 pub mod get_health_check_count_output {
 
@@ -4040,12 +4082,6 @@ pub mod get_health_check_count_output {
         }
     }
 }
-impl GetHealthCheckCountOutput {
-    /// Creates a new builder-style object to manufacture [`GetHealthCheckCountOutput`](crate::output::GetHealthCheckCountOutput).
-    pub fn builder() -> crate::output::get_health_check_count_output::Builder {
-        crate::output::get_health_check_count_output::Builder::default()
-    }
-}
 
 /// <p>A complex type that contains the response to a <code>GetHealthCheck</code> request.</p>
 #[non_exhaustive]
@@ -4067,6 +4103,13 @@ impl aws_http::request_id::RequestId for GetHealthCheckOutput {
         self._request_id.as_deref()
     }
 }
+impl GetHealthCheckOutput {
+    /// Creates a new builder-style object to manufacture [`GetHealthCheckOutput`](crate::output::GetHealthCheckOutput).
+    pub fn builder() -> crate::output::get_health_check_output::Builder {
+        crate::output::get_health_check_output::Builder::default()
+    }
+}
+
 /// See [`GetHealthCheckOutput`](crate::output::GetHealthCheckOutput).
 pub mod get_health_check_output {
 
@@ -4109,12 +4152,6 @@ pub mod get_health_check_output {
         }
     }
 }
-impl GetHealthCheckOutput {
-    /// Creates a new builder-style object to manufacture [`GetHealthCheckOutput`](crate::output::GetHealthCheckOutput).
-    pub fn builder() -> crate::output::get_health_check_output::Builder {
-        crate::output::get_health_check_output::Builder::default()
-    }
-}
 
 /// <p>A complex type that contains the response information for the specified geolocation code.</p>
 #[non_exhaustive]
@@ -4136,6 +4173,13 @@ impl aws_http::request_id::RequestId for GetGeoLocationOutput {
         self._request_id.as_deref()
     }
 }
+impl GetGeoLocationOutput {
+    /// Creates a new builder-style object to manufacture [`GetGeoLocationOutput`](crate::output::GetGeoLocationOutput).
+    pub fn builder() -> crate::output::get_geo_location_output::Builder {
+        crate::output::get_geo_location_output::Builder::default()
+    }
+}
+
 /// See [`GetGeoLocationOutput`](crate::output::GetGeoLocationOutput).
 pub mod get_geo_location_output {
 
@@ -4178,12 +4222,6 @@ pub mod get_geo_location_output {
         }
     }
 }
-impl GetGeoLocationOutput {
-    /// Creates a new builder-style object to manufacture [`GetGeoLocationOutput`](crate::output::GetGeoLocationOutput).
-    pub fn builder() -> crate::output::get_geo_location_output::Builder {
-        crate::output::get_geo_location_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -4212,6 +4250,13 @@ impl aws_http::request_id::RequestId for GetDnssecOutput {
         self._request_id.as_deref()
     }
 }
+impl GetDnssecOutput {
+    /// Creates a new builder-style object to manufacture [`GetDnssecOutput`](crate::output::GetDnssecOutput).
+    pub fn builder() -> crate::output::get_dnssec_output::Builder {
+        crate::output::get_dnssec_output::Builder::default()
+    }
+}
+
 /// See [`GetDnssecOutput`](crate::output::GetDnssecOutput).
 pub mod get_dnssec_output {
 
@@ -4276,12 +4321,6 @@ pub mod get_dnssec_output {
         }
     }
 }
-impl GetDnssecOutput {
-    /// Creates a new builder-style object to manufacture [`GetDnssecOutput`](crate::output::GetDnssecOutput).
-    pub fn builder() -> crate::output::get_dnssec_output::Builder {
-        crate::output::get_dnssec_output::Builder::default()
-    }
-}
 
 /// <p>A complex type that contains the <code>CheckerIpRanges</code> element.</p>
 #[non_exhaustive]
@@ -4303,6 +4342,13 @@ impl aws_http::request_id::RequestId for GetCheckerIpRangesOutput {
         self._request_id.as_deref()
     }
 }
+impl GetCheckerIpRangesOutput {
+    /// Creates a new builder-style object to manufacture [`GetCheckerIpRangesOutput`](crate::output::GetCheckerIpRangesOutput).
+    pub fn builder() -> crate::output::get_checker_ip_ranges_output::Builder {
+        crate::output::get_checker_ip_ranges_output::Builder::default()
+    }
+}
+
 /// See [`GetCheckerIpRangesOutput`](crate::output::GetCheckerIpRangesOutput).
 pub mod get_checker_ip_ranges_output {
 
@@ -4351,12 +4397,6 @@ pub mod get_checker_ip_ranges_output {
         }
     }
 }
-impl GetCheckerIpRangesOutput {
-    /// Creates a new builder-style object to manufacture [`GetCheckerIpRangesOutput`](crate::output::GetCheckerIpRangesOutput).
-    pub fn builder() -> crate::output::get_checker_ip_ranges_output::Builder {
-        crate::output::get_checker_ip_ranges_output::Builder::default()
-    }
-}
 
 /// <p>A complex type that contains the <code>ChangeInfo</code> element.</p>
 #[non_exhaustive]
@@ -4378,6 +4418,13 @@ impl aws_http::request_id::RequestId for GetChangeOutput {
         self._request_id.as_deref()
     }
 }
+impl GetChangeOutput {
+    /// Creates a new builder-style object to manufacture [`GetChangeOutput`](crate::output::GetChangeOutput).
+    pub fn builder() -> crate::output::get_change_output::Builder {
+        crate::output::get_change_output::Builder::default()
+    }
+}
+
 /// See [`GetChangeOutput`](crate::output::GetChangeOutput).
 pub mod get_change_output {
 
@@ -4420,12 +4467,6 @@ pub mod get_change_output {
         }
     }
 }
-impl GetChangeOutput {
-    /// Creates a new builder-style object to manufacture [`GetChangeOutput`](crate::output::GetChangeOutput).
-    pub fn builder() -> crate::output::get_change_output::Builder {
-        crate::output::get_change_output::Builder::default()
-    }
-}
 
 /// <p>A complex type that contains the requested limit. </p>
 #[non_exhaustive]
@@ -4454,6 +4495,13 @@ impl aws_http::request_id::RequestId for GetAccountLimitOutput {
         self._request_id.as_deref()
     }
 }
+impl GetAccountLimitOutput {
+    /// Creates a new builder-style object to manufacture [`GetAccountLimitOutput`](crate::output::GetAccountLimitOutput).
+    pub fn builder() -> crate::output::get_account_limit_output::Builder {
+        crate::output::get_account_limit_output::Builder::default()
+    }
+}
+
 /// See [`GetAccountLimitOutput`](crate::output::GetAccountLimitOutput).
 pub mod get_account_limit_output {
 
@@ -4505,12 +4553,6 @@ pub mod get_account_limit_output {
         }
     }
 }
-impl GetAccountLimitOutput {
-    /// Creates a new builder-style object to manufacture [`GetAccountLimitOutput`](crate::output::GetAccountLimitOutput).
-    pub fn builder() -> crate::output::get_account_limit_output::Builder {
-        crate::output::get_account_limit_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -4532,6 +4574,13 @@ impl aws_http::request_id::RequestId for EnableHostedZoneDnssecOutput {
         self._request_id.as_deref()
     }
 }
+impl EnableHostedZoneDnssecOutput {
+    /// Creates a new builder-style object to manufacture [`EnableHostedZoneDnssecOutput`](crate::output::EnableHostedZoneDnssecOutput).
+    pub fn builder() -> crate::output::enable_hosted_zone_dnssec_output::Builder {
+        crate::output::enable_hosted_zone_dnssec_output::Builder::default()
+    }
+}
+
 /// See [`EnableHostedZoneDnssecOutput`](crate::output::EnableHostedZoneDnssecOutput).
 pub mod enable_hosted_zone_dnssec_output {
 
@@ -4574,12 +4623,6 @@ pub mod enable_hosted_zone_dnssec_output {
         }
     }
 }
-impl EnableHostedZoneDnssecOutput {
-    /// Creates a new builder-style object to manufacture [`EnableHostedZoneDnssecOutput`](crate::output::EnableHostedZoneDnssecOutput).
-    pub fn builder() -> crate::output::enable_hosted_zone_dnssec_output::Builder {
-        crate::output::enable_hosted_zone_dnssec_output::Builder::default()
-    }
-}
 
 /// <p>A complex type that contains the response information for the disassociate request.</p>
 #[non_exhaustive]
@@ -4601,6 +4644,13 @@ impl aws_http::request_id::RequestId for DisassociateVpcFromHostedZoneOutput {
         self._request_id.as_deref()
     }
 }
+impl DisassociateVpcFromHostedZoneOutput {
+    /// Creates a new builder-style object to manufacture [`DisassociateVpcFromHostedZoneOutput`](crate::output::DisassociateVpcFromHostedZoneOutput).
+    pub fn builder() -> crate::output::disassociate_vpc_from_hosted_zone_output::Builder {
+        crate::output::disassociate_vpc_from_hosted_zone_output::Builder::default()
+    }
+}
+
 /// See [`DisassociateVpcFromHostedZoneOutput`](crate::output::DisassociateVpcFromHostedZoneOutput).
 pub mod disassociate_vpc_from_hosted_zone_output {
 
@@ -4643,12 +4693,6 @@ pub mod disassociate_vpc_from_hosted_zone_output {
         }
     }
 }
-impl DisassociateVpcFromHostedZoneOutput {
-    /// Creates a new builder-style object to manufacture [`DisassociateVpcFromHostedZoneOutput`](crate::output::DisassociateVpcFromHostedZoneOutput).
-    pub fn builder() -> crate::output::disassociate_vpc_from_hosted_zone_output::Builder {
-        crate::output::disassociate_vpc_from_hosted_zone_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -4670,6 +4714,13 @@ impl aws_http::request_id::RequestId for DisableHostedZoneDnssecOutput {
         self._request_id.as_deref()
     }
 }
+impl DisableHostedZoneDnssecOutput {
+    /// Creates a new builder-style object to manufacture [`DisableHostedZoneDnssecOutput`](crate::output::DisableHostedZoneDnssecOutput).
+    pub fn builder() -> crate::output::disable_hosted_zone_dnssec_output::Builder {
+        crate::output::disable_hosted_zone_dnssec_output::Builder::default()
+    }
+}
+
 /// See [`DisableHostedZoneDnssecOutput`](crate::output::DisableHostedZoneDnssecOutput).
 pub mod disable_hosted_zone_dnssec_output {
 
@@ -4712,12 +4763,6 @@ pub mod disable_hosted_zone_dnssec_output {
         }
     }
 }
-impl DisableHostedZoneDnssecOutput {
-    /// Creates a new builder-style object to manufacture [`DisableHostedZoneDnssecOutput`](crate::output::DisableHostedZoneDnssecOutput).
-    pub fn builder() -> crate::output::disable_hosted_zone_dnssec_output::Builder {
-        crate::output::disable_hosted_zone_dnssec_output::Builder::default()
-    }
-}
 
 /// <p>Empty response for the request.</p>
 #[non_exhaustive]
@@ -4730,6 +4775,13 @@ impl aws_http::request_id::RequestId for DeleteVpcAssociationAuthorizationOutput
         self._request_id.as_deref()
     }
 }
+impl DeleteVpcAssociationAuthorizationOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteVpcAssociationAuthorizationOutput`](crate::output::DeleteVpcAssociationAuthorizationOutput).
+    pub fn builder() -> crate::output::delete_vpc_association_authorization_output::Builder {
+        crate::output::delete_vpc_association_authorization_output::Builder::default()
+    }
+}
+
 /// See [`DeleteVpcAssociationAuthorizationOutput`](crate::output::DeleteVpcAssociationAuthorizationOutput).
 pub mod delete_vpc_association_authorization_output {
 
@@ -4757,12 +4809,6 @@ pub mod delete_vpc_association_authorization_output {
         }
     }
 }
-impl DeleteVpcAssociationAuthorizationOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteVpcAssociationAuthorizationOutput`](crate::output::DeleteVpcAssociationAuthorizationOutput).
-    pub fn builder() -> crate::output::delete_vpc_association_authorization_output::Builder {
-        crate::output::delete_vpc_association_authorization_output::Builder::default()
-    }
-}
 
 /// <p>An empty element.</p>
 #[non_exhaustive]
@@ -4775,6 +4821,13 @@ impl aws_http::request_id::RequestId for DeleteTrafficPolicyInstanceOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteTrafficPolicyInstanceOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteTrafficPolicyInstanceOutput`](crate::output::DeleteTrafficPolicyInstanceOutput).
+    pub fn builder() -> crate::output::delete_traffic_policy_instance_output::Builder {
+        crate::output::delete_traffic_policy_instance_output::Builder::default()
+    }
+}
+
 /// See [`DeleteTrafficPolicyInstanceOutput`](crate::output::DeleteTrafficPolicyInstanceOutput).
 pub mod delete_traffic_policy_instance_output {
 
@@ -4802,12 +4855,6 @@ pub mod delete_traffic_policy_instance_output {
         }
     }
 }
-impl DeleteTrafficPolicyInstanceOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteTrafficPolicyInstanceOutput`](crate::output::DeleteTrafficPolicyInstanceOutput).
-    pub fn builder() -> crate::output::delete_traffic_policy_instance_output::Builder {
-        crate::output::delete_traffic_policy_instance_output::Builder::default()
-    }
-}
 
 /// <p>An empty element.</p>
 #[non_exhaustive]
@@ -4820,6 +4867,13 @@ impl aws_http::request_id::RequestId for DeleteTrafficPolicyOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteTrafficPolicyOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteTrafficPolicyOutput`](crate::output::DeleteTrafficPolicyOutput).
+    pub fn builder() -> crate::output::delete_traffic_policy_output::Builder {
+        crate::output::delete_traffic_policy_output::Builder::default()
+    }
+}
+
 /// See [`DeleteTrafficPolicyOutput`](crate::output::DeleteTrafficPolicyOutput).
 pub mod delete_traffic_policy_output {
 
@@ -4847,12 +4901,6 @@ pub mod delete_traffic_policy_output {
         }
     }
 }
-impl DeleteTrafficPolicyOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteTrafficPolicyOutput`](crate::output::DeleteTrafficPolicyOutput).
-    pub fn builder() -> crate::output::delete_traffic_policy_output::Builder {
-        crate::output::delete_traffic_policy_output::Builder::default()
-    }
-}
 
 /// <p>An empty element.</p>
 #[non_exhaustive]
@@ -4865,6 +4913,13 @@ impl aws_http::request_id::RequestId for DeleteReusableDelegationSetOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteReusableDelegationSetOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteReusableDelegationSetOutput`](crate::output::DeleteReusableDelegationSetOutput).
+    pub fn builder() -> crate::output::delete_reusable_delegation_set_output::Builder {
+        crate::output::delete_reusable_delegation_set_output::Builder::default()
+    }
+}
+
 /// See [`DeleteReusableDelegationSetOutput`](crate::output::DeleteReusableDelegationSetOutput).
 pub mod delete_reusable_delegation_set_output {
 
@@ -4892,12 +4947,6 @@ pub mod delete_reusable_delegation_set_output {
         }
     }
 }
-impl DeleteReusableDelegationSetOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteReusableDelegationSetOutput`](crate::output::DeleteReusableDelegationSetOutput).
-    pub fn builder() -> crate::output::delete_reusable_delegation_set_output::Builder {
-        crate::output::delete_reusable_delegation_set_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -4910,6 +4959,13 @@ impl aws_http::request_id::RequestId for DeleteQueryLoggingConfigOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteQueryLoggingConfigOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteQueryLoggingConfigOutput`](crate::output::DeleteQueryLoggingConfigOutput).
+    pub fn builder() -> crate::output::delete_query_logging_config_output::Builder {
+        crate::output::delete_query_logging_config_output::Builder::default()
+    }
+}
+
 /// See [`DeleteQueryLoggingConfigOutput`](crate::output::DeleteQueryLoggingConfigOutput).
 pub mod delete_query_logging_config_output {
 
@@ -4937,12 +4993,6 @@ pub mod delete_query_logging_config_output {
         }
     }
 }
-impl DeleteQueryLoggingConfigOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteQueryLoggingConfigOutput`](crate::output::DeleteQueryLoggingConfigOutput).
-    pub fn builder() -> crate::output::delete_query_logging_config_output::Builder {
-        crate::output::delete_query_logging_config_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -4964,6 +5014,13 @@ impl aws_http::request_id::RequestId for DeleteKeySigningKeyOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteKeySigningKeyOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteKeySigningKeyOutput`](crate::output::DeleteKeySigningKeyOutput).
+    pub fn builder() -> crate::output::delete_key_signing_key_output::Builder {
+        crate::output::delete_key_signing_key_output::Builder::default()
+    }
+}
+
 /// See [`DeleteKeySigningKeyOutput`](crate::output::DeleteKeySigningKeyOutput).
 pub mod delete_key_signing_key_output {
 
@@ -5006,12 +5063,6 @@ pub mod delete_key_signing_key_output {
         }
     }
 }
-impl DeleteKeySigningKeyOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteKeySigningKeyOutput`](crate::output::DeleteKeySigningKeyOutput).
-    pub fn builder() -> crate::output::delete_key_signing_key_output::Builder {
-        crate::output::delete_key_signing_key_output::Builder::default()
-    }
-}
 
 /// <p>A complex type that contains the response to a <code>DeleteHostedZone</code> request.</p>
 #[non_exhaustive]
@@ -5033,6 +5084,13 @@ impl aws_http::request_id::RequestId for DeleteHostedZoneOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteHostedZoneOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteHostedZoneOutput`](crate::output::DeleteHostedZoneOutput).
+    pub fn builder() -> crate::output::delete_hosted_zone_output::Builder {
+        crate::output::delete_hosted_zone_output::Builder::default()
+    }
+}
+
 /// See [`DeleteHostedZoneOutput`](crate::output::DeleteHostedZoneOutput).
 pub mod delete_hosted_zone_output {
 
@@ -5075,12 +5133,6 @@ pub mod delete_hosted_zone_output {
         }
     }
 }
-impl DeleteHostedZoneOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteHostedZoneOutput`](crate::output::DeleteHostedZoneOutput).
-    pub fn builder() -> crate::output::delete_hosted_zone_output::Builder {
-        crate::output::delete_hosted_zone_output::Builder::default()
-    }
-}
 
 /// <p>An empty element.</p>
 #[non_exhaustive]
@@ -5093,6 +5145,13 @@ impl aws_http::request_id::RequestId for DeleteHealthCheckOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteHealthCheckOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteHealthCheckOutput`](crate::output::DeleteHealthCheckOutput).
+    pub fn builder() -> crate::output::delete_health_check_output::Builder {
+        crate::output::delete_health_check_output::Builder::default()
+    }
+}
+
 /// See [`DeleteHealthCheckOutput`](crate::output::DeleteHealthCheckOutput).
 pub mod delete_health_check_output {
 
@@ -5120,12 +5179,6 @@ pub mod delete_health_check_output {
         }
     }
 }
-impl DeleteHealthCheckOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteHealthCheckOutput`](crate::output::DeleteHealthCheckOutput).
-    pub fn builder() -> crate::output::delete_health_check_output::Builder {
-        crate::output::delete_health_check_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -5138,6 +5191,13 @@ impl aws_http::request_id::RequestId for DeleteCidrCollectionOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteCidrCollectionOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteCidrCollectionOutput`](crate::output::DeleteCidrCollectionOutput).
+    pub fn builder() -> crate::output::delete_cidr_collection_output::Builder {
+        crate::output::delete_cidr_collection_output::Builder::default()
+    }
+}
+
 /// See [`DeleteCidrCollectionOutput`](crate::output::DeleteCidrCollectionOutput).
 pub mod delete_cidr_collection_output {
 
@@ -5165,12 +5225,6 @@ pub mod delete_cidr_collection_output {
         }
     }
 }
-impl DeleteCidrCollectionOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteCidrCollectionOutput`](crate::output::DeleteCidrCollectionOutput).
-    pub fn builder() -> crate::output::delete_cidr_collection_output::Builder {
-        crate::output::delete_cidr_collection_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -5192,6 +5246,13 @@ impl aws_http::request_id::RequestId for DeactivateKeySigningKeyOutput {
         self._request_id.as_deref()
     }
 }
+impl DeactivateKeySigningKeyOutput {
+    /// Creates a new builder-style object to manufacture [`DeactivateKeySigningKeyOutput`](crate::output::DeactivateKeySigningKeyOutput).
+    pub fn builder() -> crate::output::deactivate_key_signing_key_output::Builder {
+        crate::output::deactivate_key_signing_key_output::Builder::default()
+    }
+}
+
 /// See [`DeactivateKeySigningKeyOutput`](crate::output::DeactivateKeySigningKeyOutput).
 pub mod deactivate_key_signing_key_output {
 
@@ -5234,12 +5295,6 @@ pub mod deactivate_key_signing_key_output {
         }
     }
 }
-impl DeactivateKeySigningKeyOutput {
-    /// Creates a new builder-style object to manufacture [`DeactivateKeySigningKeyOutput`](crate::output::DeactivateKeySigningKeyOutput).
-    pub fn builder() -> crate::output::deactivate_key_signing_key_output::Builder {
-        crate::output::deactivate_key_signing_key_output::Builder::default()
-    }
-}
 
 /// <p>A complex type that contains the response information from a <code>CreateVPCAssociationAuthorization</code> request.</p>
 #[non_exhaustive]
@@ -5268,6 +5323,13 @@ impl aws_http::request_id::RequestId for CreateVpcAssociationAuthorizationOutput
         self._request_id.as_deref()
     }
 }
+impl CreateVpcAssociationAuthorizationOutput {
+    /// Creates a new builder-style object to manufacture [`CreateVpcAssociationAuthorizationOutput`](crate::output::CreateVpcAssociationAuthorizationOutput).
+    pub fn builder() -> crate::output::create_vpc_association_authorization_output::Builder {
+        crate::output::create_vpc_association_authorization_output::Builder::default()
+    }
+}
+
 /// See [`CreateVpcAssociationAuthorizationOutput`](crate::output::CreateVpcAssociationAuthorizationOutput).
 pub mod create_vpc_association_authorization_output {
 
@@ -5322,12 +5384,6 @@ pub mod create_vpc_association_authorization_output {
         }
     }
 }
-impl CreateVpcAssociationAuthorizationOutput {
-    /// Creates a new builder-style object to manufacture [`CreateVpcAssociationAuthorizationOutput`](crate::output::CreateVpcAssociationAuthorizationOutput).
-    pub fn builder() -> crate::output::create_vpc_association_authorization_output::Builder {
-        crate::output::create_vpc_association_authorization_output::Builder::default()
-    }
-}
 
 /// <p>A complex type that contains the response information for the <code>CreateTrafficPolicyVersion</code> request.</p>
 #[non_exhaustive]
@@ -5356,6 +5412,13 @@ impl aws_http::request_id::RequestId for CreateTrafficPolicyVersionOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateTrafficPolicyVersionOutput {
+    /// Creates a new builder-style object to manufacture [`CreateTrafficPolicyVersionOutput`](crate::output::CreateTrafficPolicyVersionOutput).
+    pub fn builder() -> crate::output::create_traffic_policy_version_output::Builder {
+        crate::output::create_traffic_policy_version_output::Builder::default()
+    }
+}
+
 /// See [`CreateTrafficPolicyVersionOutput`](crate::output::CreateTrafficPolicyVersionOutput).
 pub mod create_traffic_policy_version_output {
 
@@ -5410,12 +5473,6 @@ pub mod create_traffic_policy_version_output {
         }
     }
 }
-impl CreateTrafficPolicyVersionOutput {
-    /// Creates a new builder-style object to manufacture [`CreateTrafficPolicyVersionOutput`](crate::output::CreateTrafficPolicyVersionOutput).
-    pub fn builder() -> crate::output::create_traffic_policy_version_output::Builder {
-        crate::output::create_traffic_policy_version_output::Builder::default()
-    }
-}
 
 /// <p>A complex type that contains the response information for the <code>CreateTrafficPolicyInstance</code> request.</p>
 #[non_exhaustive]
@@ -5446,6 +5503,13 @@ impl aws_http::request_id::RequestId for CreateTrafficPolicyInstanceOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateTrafficPolicyInstanceOutput {
+    /// Creates a new builder-style object to manufacture [`CreateTrafficPolicyInstanceOutput`](crate::output::CreateTrafficPolicyInstanceOutput).
+    pub fn builder() -> crate::output::create_traffic_policy_instance_output::Builder {
+        crate::output::create_traffic_policy_instance_output::Builder::default()
+    }
+}
+
 /// See [`CreateTrafficPolicyInstanceOutput`](crate::output::CreateTrafficPolicyInstanceOutput).
 pub mod create_traffic_policy_instance_output {
 
@@ -5504,12 +5568,6 @@ pub mod create_traffic_policy_instance_output {
         }
     }
 }
-impl CreateTrafficPolicyInstanceOutput {
-    /// Creates a new builder-style object to manufacture [`CreateTrafficPolicyInstanceOutput`](crate::output::CreateTrafficPolicyInstanceOutput).
-    pub fn builder() -> crate::output::create_traffic_policy_instance_output::Builder {
-        crate::output::create_traffic_policy_instance_output::Builder::default()
-    }
-}
 
 /// <p>A complex type that contains the response information for the <code>CreateTrafficPolicy</code> request.</p>
 #[non_exhaustive]
@@ -5538,6 +5596,13 @@ impl aws_http::request_id::RequestId for CreateTrafficPolicyOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateTrafficPolicyOutput {
+    /// Creates a new builder-style object to manufacture [`CreateTrafficPolicyOutput`](crate::output::CreateTrafficPolicyOutput).
+    pub fn builder() -> crate::output::create_traffic_policy_output::Builder {
+        crate::output::create_traffic_policy_output::Builder::default()
+    }
+}
+
 /// See [`CreateTrafficPolicyOutput`](crate::output::CreateTrafficPolicyOutput).
 pub mod create_traffic_policy_output {
 
@@ -5592,12 +5657,6 @@ pub mod create_traffic_policy_output {
         }
     }
 }
-impl CreateTrafficPolicyOutput {
-    /// Creates a new builder-style object to manufacture [`CreateTrafficPolicyOutput`](crate::output::CreateTrafficPolicyOutput).
-    pub fn builder() -> crate::output::create_traffic_policy_output::Builder {
-        crate::output::create_traffic_policy_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -5626,6 +5685,13 @@ impl aws_http::request_id::RequestId for CreateReusableDelegationSetOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateReusableDelegationSetOutput {
+    /// Creates a new builder-style object to manufacture [`CreateReusableDelegationSetOutput`](crate::output::CreateReusableDelegationSetOutput).
+    pub fn builder() -> crate::output::create_reusable_delegation_set_output::Builder {
+        crate::output::create_reusable_delegation_set_output::Builder::default()
+    }
+}
+
 /// See [`CreateReusableDelegationSetOutput`](crate::output::CreateReusableDelegationSetOutput).
 pub mod create_reusable_delegation_set_output {
 
@@ -5680,12 +5746,6 @@ pub mod create_reusable_delegation_set_output {
         }
     }
 }
-impl CreateReusableDelegationSetOutput {
-    /// Creates a new builder-style object to manufacture [`CreateReusableDelegationSetOutput`](crate::output::CreateReusableDelegationSetOutput).
-    pub fn builder() -> crate::output::create_reusable_delegation_set_output::Builder {
-        crate::output::create_reusable_delegation_set_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -5714,6 +5774,13 @@ impl aws_http::request_id::RequestId for CreateQueryLoggingConfigOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateQueryLoggingConfigOutput {
+    /// Creates a new builder-style object to manufacture [`CreateQueryLoggingConfigOutput`](crate::output::CreateQueryLoggingConfigOutput).
+    pub fn builder() -> crate::output::create_query_logging_config_output::Builder {
+        crate::output::create_query_logging_config_output::Builder::default()
+    }
+}
+
 /// See [`CreateQueryLoggingConfigOutput`](crate::output::CreateQueryLoggingConfigOutput).
 pub mod create_query_logging_config_output {
 
@@ -5768,12 +5835,6 @@ pub mod create_query_logging_config_output {
         }
     }
 }
-impl CreateQueryLoggingConfigOutput {
-    /// Creates a new builder-style object to manufacture [`CreateQueryLoggingConfigOutput`](crate::output::CreateQueryLoggingConfigOutput).
-    pub fn builder() -> crate::output::create_query_logging_config_output::Builder {
-        crate::output::create_query_logging_config_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -5809,6 +5870,13 @@ impl aws_http::request_id::RequestId for CreateKeySigningKeyOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateKeySigningKeyOutput {
+    /// Creates a new builder-style object to manufacture [`CreateKeySigningKeyOutput`](crate::output::CreateKeySigningKeyOutput).
+    pub fn builder() -> crate::output::create_key_signing_key_output::Builder {
+        crate::output::create_key_signing_key_output::Builder::default()
+    }
+}
+
 /// See [`CreateKeySigningKeyOutput`](crate::output::CreateKeySigningKeyOutput).
 pub mod create_key_signing_key_output {
 
@@ -5878,12 +5946,6 @@ pub mod create_key_signing_key_output {
         }
     }
 }
-impl CreateKeySigningKeyOutput {
-    /// Creates a new builder-style object to manufacture [`CreateKeySigningKeyOutput`](crate::output::CreateKeySigningKeyOutput).
-    pub fn builder() -> crate::output::create_key_signing_key_output::Builder {
-        crate::output::create_key_signing_key_output::Builder::default()
-    }
-}
 
 /// <p>A complex type containing the response information for the hosted zone.</p>
 #[non_exhaustive]
@@ -5933,6 +5995,13 @@ impl aws_http::request_id::RequestId for CreateHostedZoneOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateHostedZoneOutput {
+    /// Creates a new builder-style object to manufacture [`CreateHostedZoneOutput`](crate::output::CreateHostedZoneOutput).
+    pub fn builder() -> crate::output::create_hosted_zone_output::Builder {
+        crate::output::create_hosted_zone_output::Builder::default()
+    }
+}
+
 /// See [`CreateHostedZoneOutput`](crate::output::CreateHostedZoneOutput).
 pub mod create_hosted_zone_output {
 
@@ -6029,12 +6098,6 @@ pub mod create_hosted_zone_output {
         }
     }
 }
-impl CreateHostedZoneOutput {
-    /// Creates a new builder-style object to manufacture [`CreateHostedZoneOutput`](crate::output::CreateHostedZoneOutput).
-    pub fn builder() -> crate::output::create_hosted_zone_output::Builder {
-        crate::output::create_hosted_zone_output::Builder::default()
-    }
-}
 
 /// <p>A complex type containing the response information for the new health check.</p>
 #[non_exhaustive]
@@ -6063,6 +6126,13 @@ impl aws_http::request_id::RequestId for CreateHealthCheckOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateHealthCheckOutput {
+    /// Creates a new builder-style object to manufacture [`CreateHealthCheckOutput`](crate::output::CreateHealthCheckOutput).
+    pub fn builder() -> crate::output::create_health_check_output::Builder {
+        crate::output::create_health_check_output::Builder::default()
+    }
+}
+
 /// See [`CreateHealthCheckOutput`](crate::output::CreateHealthCheckOutput).
 pub mod create_health_check_output {
 
@@ -6117,12 +6187,6 @@ pub mod create_health_check_output {
         }
     }
 }
-impl CreateHealthCheckOutput {
-    /// Creates a new builder-style object to manufacture [`CreateHealthCheckOutput`](crate::output::CreateHealthCheckOutput).
-    pub fn builder() -> crate::output::create_health_check_output::Builder {
-        crate::output::create_health_check_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -6151,6 +6215,13 @@ impl aws_http::request_id::RequestId for CreateCidrCollectionOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateCidrCollectionOutput {
+    /// Creates a new builder-style object to manufacture [`CreateCidrCollectionOutput`](crate::output::CreateCidrCollectionOutput).
+    pub fn builder() -> crate::output::create_cidr_collection_output::Builder {
+        crate::output::create_cidr_collection_output::Builder::default()
+    }
+}
+
 /// See [`CreateCidrCollectionOutput`](crate::output::CreateCidrCollectionOutput).
 pub mod create_cidr_collection_output {
 
@@ -6205,12 +6276,6 @@ pub mod create_cidr_collection_output {
         }
     }
 }
-impl CreateCidrCollectionOutput {
-    /// Creates a new builder-style object to manufacture [`CreateCidrCollectionOutput`](crate::output::CreateCidrCollectionOutput).
-    pub fn builder() -> crate::output::create_cidr_collection_output::Builder {
-        crate::output::create_cidr_collection_output::Builder::default()
-    }
-}
 
 /// <p>Empty response for the request.</p>
 #[non_exhaustive]
@@ -6223,6 +6288,13 @@ impl aws_http::request_id::RequestId for ChangeTagsForResourceOutput {
         self._request_id.as_deref()
     }
 }
+impl ChangeTagsForResourceOutput {
+    /// Creates a new builder-style object to manufacture [`ChangeTagsForResourceOutput`](crate::output::ChangeTagsForResourceOutput).
+    pub fn builder() -> crate::output::change_tags_for_resource_output::Builder {
+        crate::output::change_tags_for_resource_output::Builder::default()
+    }
+}
+
 /// See [`ChangeTagsForResourceOutput`](crate::output::ChangeTagsForResourceOutput).
 pub mod change_tags_for_resource_output {
 
@@ -6250,12 +6322,6 @@ pub mod change_tags_for_resource_output {
         }
     }
 }
-impl ChangeTagsForResourceOutput {
-    /// Creates a new builder-style object to manufacture [`ChangeTagsForResourceOutput`](crate::output::ChangeTagsForResourceOutput).
-    pub fn builder() -> crate::output::change_tags_for_resource_output::Builder {
-        crate::output::change_tags_for_resource_output::Builder::default()
-    }
-}
 
 /// <p>A complex type containing the response for the request.</p>
 #[non_exhaustive]
@@ -6279,6 +6345,13 @@ impl aws_http::request_id::RequestId for ChangeResourceRecordSetsOutput {
         self._request_id.as_deref()
     }
 }
+impl ChangeResourceRecordSetsOutput {
+    /// Creates a new builder-style object to manufacture [`ChangeResourceRecordSetsOutput`](crate::output::ChangeResourceRecordSetsOutput).
+    pub fn builder() -> crate::output::change_resource_record_sets_output::Builder {
+        crate::output::change_resource_record_sets_output::Builder::default()
+    }
+}
+
 /// See [`ChangeResourceRecordSetsOutput`](crate::output::ChangeResourceRecordSetsOutput).
 pub mod change_resource_record_sets_output {
 
@@ -6323,12 +6396,6 @@ pub mod change_resource_record_sets_output {
         }
     }
 }
-impl ChangeResourceRecordSetsOutput {
-    /// Creates a new builder-style object to manufacture [`ChangeResourceRecordSetsOutput`](crate::output::ChangeResourceRecordSetsOutput).
-    pub fn builder() -> crate::output::change_resource_record_sets_output::Builder {
-        crate::output::change_resource_record_sets_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -6350,6 +6417,13 @@ impl aws_http::request_id::RequestId for ChangeCidrCollectionOutput {
         self._request_id.as_deref()
     }
 }
+impl ChangeCidrCollectionOutput {
+    /// Creates a new builder-style object to manufacture [`ChangeCidrCollectionOutput`](crate::output::ChangeCidrCollectionOutput).
+    pub fn builder() -> crate::output::change_cidr_collection_output::Builder {
+        crate::output::change_cidr_collection_output::Builder::default()
+    }
+}
+
 /// See [`ChangeCidrCollectionOutput`](crate::output::ChangeCidrCollectionOutput).
 pub mod change_cidr_collection_output {
 
@@ -6389,12 +6463,6 @@ pub mod change_cidr_collection_output {
         }
     }
 }
-impl ChangeCidrCollectionOutput {
-    /// Creates a new builder-style object to manufacture [`ChangeCidrCollectionOutput`](crate::output::ChangeCidrCollectionOutput).
-    pub fn builder() -> crate::output::change_cidr_collection_output::Builder {
-        crate::output::change_cidr_collection_output::Builder::default()
-    }
-}
 
 /// <p>A complex type that contains the response information for the <code>AssociateVPCWithHostedZone</code> request.</p>
 #[non_exhaustive]
@@ -6416,6 +6484,13 @@ impl aws_http::request_id::RequestId for AssociateVpcWithHostedZoneOutput {
         self._request_id.as_deref()
     }
 }
+impl AssociateVpcWithHostedZoneOutput {
+    /// Creates a new builder-style object to manufacture [`AssociateVpcWithHostedZoneOutput`](crate::output::AssociateVpcWithHostedZoneOutput).
+    pub fn builder() -> crate::output::associate_vpc_with_hosted_zone_output::Builder {
+        crate::output::associate_vpc_with_hosted_zone_output::Builder::default()
+    }
+}
+
 /// See [`AssociateVpcWithHostedZoneOutput`](crate::output::AssociateVpcWithHostedZoneOutput).
 pub mod associate_vpc_with_hosted_zone_output {
 
@@ -6458,12 +6533,6 @@ pub mod associate_vpc_with_hosted_zone_output {
         }
     }
 }
-impl AssociateVpcWithHostedZoneOutput {
-    /// Creates a new builder-style object to manufacture [`AssociateVpcWithHostedZoneOutput`](crate::output::AssociateVpcWithHostedZoneOutput).
-    pub fn builder() -> crate::output::associate_vpc_with_hosted_zone_output::Builder {
-        crate::output::associate_vpc_with_hosted_zone_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -6485,6 +6554,13 @@ impl aws_http::request_id::RequestId for ActivateKeySigningKeyOutput {
         self._request_id.as_deref()
     }
 }
+impl ActivateKeySigningKeyOutput {
+    /// Creates a new builder-style object to manufacture [`ActivateKeySigningKeyOutput`](crate::output::ActivateKeySigningKeyOutput).
+    pub fn builder() -> crate::output::activate_key_signing_key_output::Builder {
+        crate::output::activate_key_signing_key_output::Builder::default()
+    }
+}
+
 /// See [`ActivateKeySigningKeyOutput`](crate::output::ActivateKeySigningKeyOutput).
 pub mod activate_key_signing_key_output {
 
@@ -6525,11 +6601,5 @@ pub mod activate_key_signing_key_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl ActivateKeySigningKeyOutput {
-    /// Creates a new builder-style object to manufacture [`ActivateKeySigningKeyOutput`](crate::output::ActivateKeySigningKeyOutput).
-    pub fn builder() -> crate::output::activate_key_signing_key_output::Builder {
-        crate::output::activate_key_signing_key_output::Builder::default()
     }
 }

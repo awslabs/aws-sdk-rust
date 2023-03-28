@@ -4,7 +4,7 @@
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`batch_acknowledge_alarm`](crate::client::Client::batch_acknowledge_alarm).
 ///
-/// See [`crate::client::fluent_builders::BatchAcknowledgeAlarm`] for more details about the operation.
+/// `ParseStrictResponse` impl for `BatchAcknowledgeAlarm`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct BatchAcknowledgeAlarm {
     _private: (),
@@ -39,7 +39,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchAcknowledgeAlarm {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`batch_delete_detector`](crate::client::Client::batch_delete_detector).
 ///
-/// See [`crate::client::fluent_builders::BatchDeleteDetector`] for more details about the operation.
+/// `ParseStrictResponse` impl for `BatchDeleteDetector`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct BatchDeleteDetector {
     _private: (),
@@ -74,7 +74,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchDeleteDetector {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`batch_disable_alarm`](crate::client::Client::batch_disable_alarm).
 ///
-/// See [`crate::client::fluent_builders::BatchDisableAlarm`] for more details about the operation.
+/// `ParseStrictResponse` impl for `BatchDisableAlarm`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct BatchDisableAlarm {
     _private: (),
@@ -109,7 +109,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchDisableAlarm {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`batch_enable_alarm`](crate::client::Client::batch_enable_alarm).
 ///
-/// See [`crate::client::fluent_builders::BatchEnableAlarm`] for more details about the operation.
+/// `ParseStrictResponse` impl for `BatchEnableAlarm`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct BatchEnableAlarm {
     _private: (),
@@ -144,7 +144,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchEnableAlarm {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`batch_put_message`](crate::client::Client::batch_put_message).
 ///
-/// See [`crate::client::fluent_builders::BatchPutMessage`] for more details about the operation.
+/// `ParseStrictResponse` impl for `BatchPutMessage`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct BatchPutMessage {
     _private: (),
@@ -179,7 +179,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchPutMessage {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`batch_reset_alarm`](crate::client::Client::batch_reset_alarm).
 ///
-/// See [`crate::client::fluent_builders::BatchResetAlarm`] for more details about the operation.
+/// `ParseStrictResponse` impl for `BatchResetAlarm`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct BatchResetAlarm {
     _private: (),
@@ -214,7 +214,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchResetAlarm {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`batch_snooze_alarm`](crate::client::Client::batch_snooze_alarm).
 ///
-/// See [`crate::client::fluent_builders::BatchSnoozeAlarm`] for more details about the operation.
+/// `ParseStrictResponse` impl for `BatchSnoozeAlarm`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct BatchSnoozeAlarm {
     _private: (),
@@ -249,7 +249,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchSnoozeAlarm {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`batch_update_detector`](crate::client::Client::batch_update_detector).
 ///
-/// See [`crate::client::fluent_builders::BatchUpdateDetector`] for more details about the operation.
+/// `ParseStrictResponse` impl for `BatchUpdateDetector`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct BatchUpdateDetector {
     _private: (),
@@ -284,7 +284,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchUpdateDetector {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`describe_alarm`](crate::client::Client::describe_alarm).
 ///
-/// See [`crate::client::fluent_builders::DescribeAlarm`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DescribeAlarm`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeAlarm {
     _private: (),
@@ -317,7 +317,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeAlarm {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`describe_detector`](crate::client::Client::describe_detector).
 ///
-/// See [`crate::client::fluent_builders::DescribeDetector`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DescribeDetector`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeDetector {
     _private: (),
@@ -352,7 +352,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeDetector {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_alarms`](crate::client::Client::list_alarms).
 ///
-/// See [`crate::client::fluent_builders::ListAlarms`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListAlarms`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListAlarms {
     _private: (),
@@ -385,7 +385,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAlarms {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_detectors`](crate::client::Client::list_detectors).
 ///
-/// See [`crate::client::fluent_builders::ListDetectors`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListDetectors`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListDetectors {
     _private: (),

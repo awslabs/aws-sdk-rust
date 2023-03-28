@@ -87,6 +87,13 @@ impl Version {
         self.template_url.as_deref()
     }
 }
+impl Version {
+    /// Creates a new builder-style object to manufacture [`Version`](crate::model::Version).
+    pub fn builder() -> crate::model::version::Builder {
+        crate::model::version::Builder::default()
+    }
+}
+
 /// See [`Version`](crate::model::Version).
 pub mod version {
 
@@ -258,12 +265,6 @@ pub mod version {
                 template_url: self.template_url,
             }
         }
-    }
-}
-impl Version {
-    /// Creates a new builder-style object to manufacture [`Version`](crate::model::Version).
-    pub fn builder() -> crate::model::version::Builder {
-        crate::model::version::Builder::default()
     }
 }
 
@@ -494,6 +495,13 @@ impl ParameterDefinition {
         self.r#type.as_deref()
     }
 }
+impl ParameterDefinition {
+    /// Creates a new builder-style object to manufacture [`ParameterDefinition`](crate::model::ParameterDefinition).
+    pub fn builder() -> crate::model::parameter_definition::Builder {
+        crate::model::parameter_definition::Builder::default()
+    }
+}
+
 /// See [`ParameterDefinition`](crate::model::ParameterDefinition).
 pub mod parameter_definition {
 
@@ -717,12 +725,6 @@ pub mod parameter_definition {
         }
     }
 }
-impl ParameterDefinition {
-    /// Creates a new builder-style object to manufacture [`ParameterDefinition`](crate::model::ParameterDefinition).
-    pub fn builder() -> crate::model::parameter_definition::Builder {
-        crate::model::parameter_definition::Builder::default()
-    }
-}
 
 /// <p>Policy statement applied to the application.</p>
 #[non_exhaustive]
@@ -759,6 +761,13 @@ impl ApplicationPolicyStatement {
         self.statement_id.as_deref()
     }
 }
+impl ApplicationPolicyStatement {
+    /// Creates a new builder-style object to manufacture [`ApplicationPolicyStatement`](crate::model::ApplicationPolicyStatement).
+    pub fn builder() -> crate::model::application_policy_statement::Builder {
+        crate::model::application_policy_statement::Builder::default()
+    }
+}
+
 /// See [`ApplicationPolicyStatement`](crate::model::ApplicationPolicyStatement).
 pub mod application_policy_statement {
 
@@ -850,12 +859,6 @@ pub mod application_policy_statement {
         }
     }
 }
-impl ApplicationPolicyStatement {
-    /// Creates a new builder-style object to manufacture [`ApplicationPolicyStatement`](crate::model::ApplicationPolicyStatement).
-    pub fn builder() -> crate::model::application_policy_statement::Builder {
-        crate::model::application_policy_statement::Builder::default()
-    }
-}
 
 /// <p>An application version summary.</p>
 #[non_exhaustive]
@@ -894,6 +897,13 @@ impl VersionSummary {
         self.source_code_url.as_deref()
     }
 }
+impl VersionSummary {
+    /// Creates a new builder-style object to manufacture [`VersionSummary`](crate::model::VersionSummary).
+    pub fn builder() -> crate::model::version_summary::Builder {
+        crate::model::version_summary::Builder::default()
+    }
+}
+
 /// See [`VersionSummary`](crate::model::VersionSummary).
 pub mod version_summary {
 
@@ -970,12 +980,6 @@ pub mod version_summary {
                 source_code_url: self.source_code_url,
             }
         }
-    }
-}
-impl VersionSummary {
-    /// Creates a new builder-style object to manufacture [`VersionSummary`](crate::model::VersionSummary).
-    pub fn builder() -> crate::model::version_summary::Builder {
-        crate::model::version_summary::Builder::default()
     }
 }
 
@@ -1056,6 +1060,13 @@ impl ApplicationSummary {
         self.spdx_license_id.as_deref()
     }
 }
+impl ApplicationSummary {
+    /// Creates a new builder-style object to manufacture [`ApplicationSummary`](crate::model::ApplicationSummary).
+    pub fn builder() -> crate::model::application_summary::Builder {
+        crate::model::application_summary::Builder::default()
+    }
+}
+
 /// See [`ApplicationSummary`](crate::model::ApplicationSummary).
 pub mod application_summary {
 
@@ -1203,12 +1214,6 @@ pub mod application_summary {
         }
     }
 }
-impl ApplicationSummary {
-    /// Creates a new builder-style object to manufacture [`ApplicationSummary`](crate::model::ApplicationSummary).
-    pub fn builder() -> crate::model::application_summary::Builder {
-        crate::model::application_summary::Builder::default()
-    }
-}
 
 /// <p>A nested application summary.</p>
 #[non_exhaustive]
@@ -1231,6 +1236,13 @@ impl ApplicationDependencySummary {
         self.semantic_version.as_deref()
     }
 }
+impl ApplicationDependencySummary {
+    /// Creates a new builder-style object to manufacture [`ApplicationDependencySummary`](crate::model::ApplicationDependencySummary).
+    pub fn builder() -> crate::model::application_dependency_summary::Builder {
+        crate::model::application_dependency_summary::Builder::default()
+    }
+}
+
 /// See [`ApplicationDependencySummary`](crate::model::ApplicationDependencySummary).
 pub mod application_dependency_summary {
 
@@ -1275,12 +1287,6 @@ pub mod application_dependency_summary {
                 semantic_version: self.semantic_version,
             }
         }
-    }
-}
-impl ApplicationDependencySummary {
-    /// Creates a new builder-style object to manufacture [`ApplicationDependencySummary`](crate::model::ApplicationDependencySummary).
-    pub fn builder() -> crate::model::application_dependency_summary::Builder {
-        crate::model::application_dependency_summary::Builder::default()
     }
 }
 
@@ -1400,6 +1406,13 @@ impl Tag {
         self.value.as_deref()
     }
 }
+impl Tag {
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
+    pub fn builder() -> crate::model::tag::Builder {
+        crate::model::tag::Builder::default()
+    }
+}
+
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
 
@@ -1440,12 +1453,6 @@ pub mod tag {
         }
     }
 }
-impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
-    pub fn builder() -> crate::model::tag::Builder {
-        crate::model::tag::Builder::default()
-    }
-}
 
 /// <p>This property corresponds to the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackConfiguration">RollbackConfiguration</a> </i> Data Type.</p>
 #[non_exhaustive]
@@ -1468,6 +1475,13 @@ impl RollbackConfiguration {
         self.rollback_triggers.as_deref()
     }
 }
+impl RollbackConfiguration {
+    /// Creates a new builder-style object to manufacture [`RollbackConfiguration`](crate::model::RollbackConfiguration).
+    pub fn builder() -> crate::model::rollback_configuration::Builder {
+        crate::model::rollback_configuration::Builder::default()
+    }
+}
+
 /// See [`RollbackConfiguration`](crate::model::RollbackConfiguration).
 pub mod rollback_configuration {
 
@@ -1518,12 +1532,6 @@ pub mod rollback_configuration {
         }
     }
 }
-impl RollbackConfiguration {
-    /// Creates a new builder-style object to manufacture [`RollbackConfiguration`](crate::model::RollbackConfiguration).
-    pub fn builder() -> crate::model::rollback_configuration::Builder {
-        crate::model::rollback_configuration::Builder::default()
-    }
-}
 
 /// <p>This property corresponds to the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackTrigger">RollbackTrigger</a> </i> Data Type.</p>
 #[non_exhaustive]
@@ -1546,6 +1554,13 @@ impl RollbackTrigger {
         self.r#type.as_deref()
     }
 }
+impl RollbackTrigger {
+    /// Creates a new builder-style object to manufacture [`RollbackTrigger`](crate::model::RollbackTrigger).
+    pub fn builder() -> crate::model::rollback_trigger::Builder {
+        crate::model::rollback_trigger::Builder::default()
+    }
+}
+
 /// See [`RollbackTrigger`](crate::model::RollbackTrigger).
 pub mod rollback_trigger {
 
@@ -1586,12 +1601,6 @@ pub mod rollback_trigger {
         }
     }
 }
-impl RollbackTrigger {
-    /// Creates a new builder-style object to manufacture [`RollbackTrigger`](crate::model::RollbackTrigger).
-    pub fn builder() -> crate::model::rollback_trigger::Builder {
-        crate::model::rollback_trigger::Builder::default()
-    }
-}
 
 /// <p>Parameter value of the application.</p>
 #[non_exhaustive]
@@ -1614,6 +1623,13 @@ impl ParameterValue {
         self.value.as_deref()
     }
 }
+impl ParameterValue {
+    /// Creates a new builder-style object to manufacture [`ParameterValue`](crate::model::ParameterValue).
+    pub fn builder() -> crate::model::parameter_value::Builder {
+        crate::model::parameter_value::Builder::default()
+    }
+}
+
 /// See [`ParameterValue`](crate::model::ParameterValue).
 pub mod parameter_value {
 
@@ -1652,11 +1668,5 @@ pub mod parameter_value {
                 value: self.value,
             }
         }
-    }
-}
-impl ParameterValue {
-    /// Creates a new builder-style object to manufacture [`ParameterValue`](crate::model::ParameterValue).
-    pub fn builder() -> crate::model::parameter_value::Builder {
-        crate::model::parameter_value::Builder::default()
     }
 }

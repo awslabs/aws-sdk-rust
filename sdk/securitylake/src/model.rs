@@ -21,6 +21,13 @@ impl ValidationExceptionField {
         self.message.as_deref()
     }
 }
+impl ValidationExceptionField {
+    /// Creates a new builder-style object to manufacture [`ValidationExceptionField`](crate::model::ValidationExceptionField).
+    pub fn builder() -> crate::model::validation_exception_field::Builder {
+        crate::model::validation_exception_field::Builder::default()
+    }
+}
+
 /// See [`ValidationExceptionField`](crate::model::ValidationExceptionField).
 pub mod validation_exception_field {
 
@@ -59,12 +66,6 @@ pub mod validation_exception_field {
                 message: self.message,
             }
         }
-    }
-}
-impl ValidationExceptionField {
-    /// Creates a new builder-style object to manufacture [`ValidationExceptionField`](crate::model::ValidationExceptionField).
-    pub fn builder() -> crate::model::validation_exception_field::Builder {
-        crate::model::validation_exception_field::Builder::default()
     }
 }
 
@@ -379,6 +380,13 @@ impl SubscriberResource {
         self.updated_at.as_ref()
     }
 }
+impl SubscriberResource {
+    /// Creates a new builder-style object to manufacture [`SubscriberResource`](crate::model::SubscriberResource).
+    pub fn builder() -> crate::model::subscriber_resource::Builder {
+        crate::model::subscriber_resource::Builder::default()
+    }
+}
+
 /// See [`SubscriberResource`](crate::model::SubscriberResource).
 pub mod subscriber_resource {
 
@@ -620,12 +628,6 @@ pub mod subscriber_resource {
                 updated_at: self.updated_at,
             }
         }
-    }
-}
-impl SubscriberResource {
-    /// Creates a new builder-style object to manufacture [`SubscriberResource`](crate::model::SubscriberResource).
-    pub fn builder() -> crate::model::subscriber_resource::Builder {
-        crate::model::subscriber_resource::Builder::default()
     }
 }
 
@@ -1249,6 +1251,13 @@ impl LakeConfigurationRequest {
         self.replication_role_arn.as_deref()
     }
 }
+impl LakeConfigurationRequest {
+    /// Creates a new builder-style object to manufacture [`LakeConfigurationRequest`](crate::model::LakeConfigurationRequest).
+    pub fn builder() -> crate::model::lake_configuration_request::Builder {
+        crate::model::lake_configuration_request::Builder::default()
+    }
+}
+
 /// See [`LakeConfigurationRequest`](crate::model::LakeConfigurationRequest).
 pub mod lake_configuration_request {
 
@@ -1368,12 +1377,6 @@ pub mod lake_configuration_request {
                 replication_role_arn: self.replication_role_arn,
             }
         }
-    }
-}
-impl LakeConfigurationRequest {
-    /// Creates a new builder-style object to manufacture [`LakeConfigurationRequest`](crate::model::LakeConfigurationRequest).
-    pub fn builder() -> crate::model::lake_configuration_request::Builder {
-        crate::model::lake_configuration_request::Builder::default()
     }
 }
 
@@ -1521,6 +1524,13 @@ impl RetentionSetting {
         self.retention_period
     }
 }
+impl RetentionSetting {
+    /// Creates a new builder-style object to manufacture [`RetentionSetting`](crate::model::RetentionSetting).
+    pub fn builder() -> crate::model::retention_setting::Builder {
+        crate::model::retention_setting::Builder::default()
+    }
+}
+
 /// See [`RetentionSetting`](crate::model::RetentionSetting).
 pub mod retention_setting {
 
@@ -1562,12 +1572,6 @@ pub mod retention_setting {
                 retention_period: self.retention_period,
             }
         }
-    }
-}
-impl RetentionSetting {
-    /// Creates a new builder-style object to manufacture [`RetentionSetting`](crate::model::RetentionSetting).
-    pub fn builder() -> crate::model::retention_setting::Builder {
-        crate::model::retention_setting::Builder::default()
     }
 }
 
@@ -1810,6 +1814,13 @@ impl FailuresResponse {
         self.failures.as_deref()
     }
 }
+impl FailuresResponse {
+    /// Creates a new builder-style object to manufacture [`FailuresResponse`](crate::model::FailuresResponse).
+    pub fn builder() -> crate::model::failures_response::Builder {
+        crate::model::failures_response::Builder::default()
+    }
+}
+
 /// See [`FailuresResponse`](crate::model::FailuresResponse).
 pub mod failures_response {
 
@@ -1859,12 +1870,6 @@ pub mod failures_response {
         }
     }
 }
-impl FailuresResponse {
-    /// Creates a new builder-style object to manufacture [`FailuresResponse`](crate::model::FailuresResponse).
-    pub fn builder() -> crate::model::failures_response::Builder {
-        crate::model::failures_response::Builder::default()
-    }
-}
 
 /// <p>List of all failures.</p>
 #[non_exhaustive]
@@ -1894,6 +1899,13 @@ impl Failures {
         self.timestamp.as_ref()
     }
 }
+impl Failures {
+    /// Creates a new builder-style object to manufacture [`Failures`](crate::model::Failures).
+    pub fn builder() -> crate::model::failures::Builder {
+        crate::model::failures::Builder::default()
+    }
+}
+
 /// See [`Failures`](crate::model::Failures).
 pub mod failures {
 
@@ -1952,12 +1964,6 @@ pub mod failures {
         }
     }
 }
-impl Failures {
-    /// Creates a new builder-style object to manufacture [`Failures`](crate::model::Failures).
-    pub fn builder() -> crate::model::failures::Builder {
-        crate::model::failures::Builder::default()
-    }
-}
 
 /// <p>Amazon Security Lake collects logs and events from supported Amazon Web Services and custom sources. For the list of supported Amazon Web Services, see the <a href="https://docs.aws.amazon.com/security-lake/latest/userguide/internal-sources.html">Amazon Security Lake User Guide</a>.</p>
 #[non_exhaustive]
@@ -1994,6 +2000,13 @@ impl AccountSources {
         self.event_class.as_ref()
     }
 }
+impl AccountSources {
+    /// Creates a new builder-style object to manufacture [`AccountSources`](crate::model::AccountSources).
+    pub fn builder() -> crate::model::account_sources::Builder {
+        crate::model::account_sources::Builder::default()
+    }
+}
+
 /// See [`AccountSources`](crate::model::AccountSources).
 pub mod account_sources {
 
@@ -2068,12 +2081,6 @@ pub mod account_sources {
                 event_class: self.event_class,
             }
         }
-    }
-}
-impl AccountSources {
-    /// Creates a new builder-style object to manufacture [`AccountSources`](crate::model::AccountSources).
-    pub fn builder() -> crate::model::account_sources::Builder {
-        crate::model::account_sources::Builder::default()
     }
 }
 
@@ -2377,6 +2384,13 @@ impl LogsStatus {
         self.health_status.as_ref()
     }
 }
+impl LogsStatus {
+    /// Creates a new builder-style object to manufacture [`LogsStatus`](crate::model::LogsStatus).
+    pub fn builder() -> crate::model::logs_status::Builder {
+        crate::model::logs_status::Builder::default()
+    }
+}
+
 /// See [`LogsStatus`](crate::model::LogsStatus).
 pub mod logs_status {
 
@@ -2418,12 +2432,6 @@ pub mod logs_status {
                 health_status: self.health_status,
             }
         }
-    }
-}
-impl LogsStatus {
-    /// Creates a new builder-style object to manufacture [`LogsStatus`](crate::model::LogsStatus).
-    pub fn builder() -> crate::model::logs_status::Builder {
-        crate::model::logs_status::Builder::default()
     }
 }
 
@@ -2543,6 +2551,13 @@ impl ProtocolAndNotificationEndpoint {
         self.endpoint.as_deref()
     }
 }
+impl ProtocolAndNotificationEndpoint {
+    /// Creates a new builder-style object to manufacture [`ProtocolAndNotificationEndpoint`](crate::model::ProtocolAndNotificationEndpoint).
+    pub fn builder() -> crate::model::protocol_and_notification_endpoint::Builder {
+        crate::model::protocol_and_notification_endpoint::Builder::default()
+    }
+}
+
 /// See [`ProtocolAndNotificationEndpoint`](crate::model::ProtocolAndNotificationEndpoint).
 pub mod protocol_and_notification_endpoint {
 
@@ -2583,12 +2598,6 @@ pub mod protocol_and_notification_endpoint {
         }
     }
 }
-impl ProtocolAndNotificationEndpoint {
-    /// Creates a new builder-style object to manufacture [`ProtocolAndNotificationEndpoint`](crate::model::ProtocolAndNotificationEndpoint).
-    pub fn builder() -> crate::model::protocol_and_notification_endpoint::Builder {
-        crate::model::protocol_and_notification_endpoint::Builder::default()
-    }
-}
 
 /// <p>Automatically enable new organization accounts as member accounts from an Amazon Security Lake administrator account.</p>
 #[non_exhaustive]
@@ -2611,6 +2620,13 @@ impl AutoEnableNewRegionConfiguration {
         self.sources.as_deref()
     }
 }
+impl AutoEnableNewRegionConfiguration {
+    /// Creates a new builder-style object to manufacture [`AutoEnableNewRegionConfiguration`](crate::model::AutoEnableNewRegionConfiguration).
+    pub fn builder() -> crate::model::auto_enable_new_region_configuration::Builder {
+        crate::model::auto_enable_new_region_configuration::Builder::default()
+    }
+}
+
 /// See [`AutoEnableNewRegionConfiguration`](crate::model::AutoEnableNewRegionConfiguration).
 pub mod auto_enable_new_region_configuration {
 
@@ -2658,12 +2674,6 @@ pub mod auto_enable_new_region_configuration {
                 sources: self.sources,
             }
         }
-    }
-}
-impl AutoEnableNewRegionConfiguration {
-    /// Creates a new builder-style object to manufacture [`AutoEnableNewRegionConfiguration`](crate::model::AutoEnableNewRegionConfiguration).
-    pub fn builder() -> crate::model::auto_enable_new_region_configuration::Builder {
-        crate::model::auto_enable_new_region_configuration::Builder::default()
     }
 }
 
@@ -2729,6 +2739,13 @@ impl LakeConfigurationResponse {
         self.status.as_ref()
     }
 }
+impl LakeConfigurationResponse {
+    /// Creates a new builder-style object to manufacture [`LakeConfigurationResponse`](crate::model::LakeConfigurationResponse).
+    pub fn builder() -> crate::model::lake_configuration_response::Builder {
+        crate::model::lake_configuration_response::Builder::default()
+    }
+}
+
 /// See [`LakeConfigurationResponse`](crate::model::LakeConfigurationResponse).
 pub mod lake_configuration_response {
 
@@ -2878,12 +2895,6 @@ pub mod lake_configuration_response {
                 status: self.status,
             }
         }
-    }
-}
-impl LakeConfigurationResponse {
-    /// Creates a new builder-style object to manufacture [`LakeConfigurationResponse`](crate::model::LakeConfigurationResponse).
-    pub fn builder() -> crate::model::lake_configuration_response::Builder {
-        crate::model::lake_configuration_response::Builder::default()
     }
 }
 

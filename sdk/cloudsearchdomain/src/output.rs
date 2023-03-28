@@ -41,6 +41,13 @@ impl aws_http::request_id::RequestId for UploadDocumentsOutput {
         self._request_id.as_deref()
     }
 }
+impl UploadDocumentsOutput {
+    /// Creates a new builder-style object to manufacture [`UploadDocumentsOutput`](crate::output::UploadDocumentsOutput).
+    pub fn builder() -> crate::output::upload_documents_output::Builder {
+        crate::output::upload_documents_output::Builder::default()
+    }
+}
+
 /// See [`UploadDocumentsOutput`](crate::output::UploadDocumentsOutput).
 pub mod upload_documents_output {
 
@@ -126,12 +133,6 @@ pub mod upload_documents_output {
         }
     }
 }
-impl UploadDocumentsOutput {
-    /// Creates a new builder-style object to manufacture [`UploadDocumentsOutput`](crate::output::UploadDocumentsOutput).
-    pub fn builder() -> crate::output::upload_documents_output::Builder {
-        crate::output::upload_documents_output::Builder::default()
-    }
-}
 
 /// <p>Contains the response to a <code>Suggest</code> request.</p>
 #[non_exhaustive]
@@ -160,6 +161,13 @@ impl aws_http::request_id::RequestId for SuggestOutput {
         self._request_id.as_deref()
     }
 }
+impl SuggestOutput {
+    /// Creates a new builder-style object to manufacture [`SuggestOutput`](crate::output::SuggestOutput).
+    pub fn builder() -> crate::output::suggest_output::Builder {
+        crate::output::suggest_output::Builder::default()
+    }
+}
+
 /// See [`SuggestOutput`](crate::output::SuggestOutput).
 pub mod suggest_output {
 
@@ -217,12 +225,6 @@ pub mod suggest_output {
         }
     }
 }
-impl SuggestOutput {
-    /// Creates a new builder-style object to manufacture [`SuggestOutput`](crate::output::SuggestOutput).
-    pub fn builder() -> crate::output::suggest_output::Builder {
-        crate::output::suggest_output::Builder::default()
-    }
-}
 
 /// <p>The result of a <code>Search</code> request. Contains the documents that match the specified search criteria and any requested fields, highlights, and facet information.</p>
 #[non_exhaustive]
@@ -277,6 +279,13 @@ impl aws_http::request_id::RequestId for SearchOutput {
         self._request_id.as_deref()
     }
 }
+impl SearchOutput {
+    /// Creates a new builder-style object to manufacture [`SearchOutput`](crate::output::SearchOutput).
+    pub fn builder() -> crate::output::search_output::Builder {
+        crate::output::search_output::Builder::default()
+    }
+}
+
 /// See [`SearchOutput`](crate::output::SearchOutput).
 pub mod search_output {
 
@@ -387,11 +396,5 @@ pub mod search_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl SearchOutput {
-    /// Creates a new builder-style object to manufacture [`SearchOutput`](crate::output::SearchOutput).
-    pub fn builder() -> crate::output::search_output::Builder {
-        crate::output::search_output::Builder::default()
     }
 }

@@ -21,6 +21,13 @@ impl ValidationErrorsEntry {
         self.error_message.as_deref()
     }
 }
+impl ValidationErrorsEntry {
+    /// Creates a new builder-style object to manufacture [`ValidationErrorsEntry`](crate::model::ValidationErrorsEntry).
+    pub fn builder() -> crate::model::validation_errors_entry::Builder {
+        crate::model::validation_errors_entry::Builder::default()
+    }
+}
+
 /// See [`ValidationErrorsEntry`](crate::model::ValidationErrorsEntry).
 pub mod validation_errors_entry {
 
@@ -64,12 +71,6 @@ pub mod validation_errors_entry {
         }
     }
 }
-impl ValidationErrorsEntry {
-    /// Creates a new builder-style object to manufacture [`ValidationErrorsEntry`](crate::model::ValidationErrorsEntry).
-    pub fn builder() -> crate::model::validation_errors_entry::Builder {
-        crate::model::validation_errors_entry::Builder::default()
-    }
-}
 
 /// <p>A structure that contains information about a tag.</p>
 #[non_exhaustive]
@@ -92,6 +93,13 @@ impl Tag {
         self.value.as_deref()
     }
 }
+impl Tag {
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
+    pub fn builder() -> crate::model::tag::Builder {
+        crate::model::tag::Builder::default()
+    }
+}
+
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
 
@@ -132,12 +140,6 @@ pub mod tag {
         }
     }
 }
-impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
-    pub fn builder() -> crate::model::tag::Builder {
-        crate::model::tag::Builder::default()
-    }
-}
 
 /// <p>A structure that defines the rotation configuration for the secret.</p>
 #[non_exhaustive]
@@ -173,6 +175,13 @@ impl RotationRulesType {
         self.schedule_expression.as_deref()
     }
 }
+impl RotationRulesType {
+    /// Creates a new builder-style object to manufacture [`RotationRulesType`](crate::model::RotationRulesType).
+    pub fn builder() -> crate::model::rotation_rules_type::Builder {
+        crate::model::rotation_rules_type::Builder::default()
+    }
+}
+
 /// See [`RotationRulesType`](crate::model::RotationRulesType).
 pub mod rotation_rules_type {
 
@@ -234,12 +243,6 @@ pub mod rotation_rules_type {
         }
     }
 }
-impl RotationRulesType {
-    /// Creates a new builder-style object to manufacture [`RotationRulesType`](crate::model::RotationRulesType).
-    pub fn builder() -> crate::model::rotation_rules_type::Builder {
-        crate::model::rotation_rules_type::Builder::default()
-    }
-}
 
 /// <p>A replication object consisting of a <code>RegionReplicationStatus</code> object and includes a Region, KMSKeyId, status, and status message.</p>
 #[non_exhaustive]
@@ -283,6 +286,13 @@ impl ReplicationStatusType {
         self.last_accessed_date.as_ref()
     }
 }
+impl ReplicationStatusType {
+    /// Creates a new builder-style object to manufacture [`ReplicationStatusType`](crate::model::ReplicationStatusType).
+    pub fn builder() -> crate::model::replication_status_type::Builder {
+        crate::model::replication_status_type::Builder::default()
+    }
+}
+
 /// See [`ReplicationStatusType`](crate::model::ReplicationStatusType).
 pub mod replication_status_type {
 
@@ -363,12 +373,6 @@ pub mod replication_status_type {
                 last_accessed_date: self.last_accessed_date,
             }
         }
-    }
-}
-impl ReplicationStatusType {
-    /// Creates a new builder-style object to manufacture [`ReplicationStatusType`](crate::model::ReplicationStatusType).
-    pub fn builder() -> crate::model::replication_status_type::Builder {
-        crate::model::replication_status_type::Builder::default()
     }
 }
 
@@ -488,6 +492,13 @@ impl ReplicaRegionType {
         self.kms_key_id.as_deref()
     }
 }
+impl ReplicaRegionType {
+    /// Creates a new builder-style object to manufacture [`ReplicaRegionType`](crate::model::ReplicaRegionType).
+    pub fn builder() -> crate::model::replica_region_type::Builder {
+        crate::model::replica_region_type::Builder::default()
+    }
+}
+
 /// See [`ReplicaRegionType`](crate::model::ReplicaRegionType).
 pub mod replica_region_type {
 
@@ -526,12 +537,6 @@ pub mod replica_region_type {
                 kms_key_id: self.kms_key_id,
             }
         }
-    }
-}
-impl ReplicaRegionType {
-    /// Creates a new builder-style object to manufacture [`ReplicaRegionType`](crate::model::ReplicaRegionType).
-    pub fn builder() -> crate::model::replica_region_type::Builder {
-        crate::model::replica_region_type::Builder::default()
     }
 }
 
@@ -577,6 +582,13 @@ impl SecretVersionsListEntry {
         self.kms_key_ids.as_deref()
     }
 }
+impl SecretVersionsListEntry {
+    /// Creates a new builder-style object to manufacture [`SecretVersionsListEntry`](crate::model::SecretVersionsListEntry).
+    pub fn builder() -> crate::model::secret_versions_list_entry::Builder {
+        crate::model::secret_versions_list_entry::Builder::default()
+    }
+}
+
 /// See [`SecretVersionsListEntry`](crate::model::SecretVersionsListEntry).
 pub mod secret_versions_list_entry {
 
@@ -675,12 +687,6 @@ pub mod secret_versions_list_entry {
                 kms_key_ids: self.kms_key_ids,
             }
         }
-    }
-}
-impl SecretVersionsListEntry {
-    /// Creates a new builder-style object to manufacture [`SecretVersionsListEntry`](crate::model::SecretVersionsListEntry).
-    pub fn builder() -> crate::model::secret_versions_list_entry::Builder {
-        crate::model::secret_versions_list_entry::Builder::default()
     }
 }
 
@@ -820,6 +826,13 @@ impl SecretListEntry {
         self.primary_region.as_deref()
     }
 }
+impl SecretListEntry {
+    /// Creates a new builder-style object to manufacture [`SecretListEntry`](crate::model::SecretListEntry).
+    pub fn builder() -> crate::model::secret_list_entry::Builder {
+        crate::model::secret_list_entry::Builder::default()
+    }
+}
+
 /// See [`SecretListEntry`](crate::model::SecretListEntry).
 pub mod secret_list_entry {
 
@@ -1100,12 +1113,6 @@ pub mod secret_list_entry {
         }
     }
 }
-impl SecretListEntry {
-    /// Creates a new builder-style object to manufacture [`SecretListEntry`](crate::model::SecretListEntry).
-    pub fn builder() -> crate::model::secret_list_entry::Builder {
-        crate::model::secret_list_entry::Builder::default()
-    }
-}
 
 /// When writing a match expression against `SortOrderType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -1238,6 +1245,13 @@ impl Filter {
         self.values.as_deref()
     }
 }
+impl Filter {
+    /// Creates a new builder-style object to manufacture [`Filter`](crate::model::Filter).
+    pub fn builder() -> crate::model::filter::Builder {
+        crate::model::filter::Builder::default()
+    }
+}
+
 /// See [`Filter`](crate::model::Filter).
 pub mod filter {
 
@@ -1308,12 +1322,6 @@ pub mod filter {
                 values: self.values,
             }
         }
-    }
-}
-impl Filter {
-    /// Creates a new builder-style object to manufacture [`Filter`](crate::model::Filter).
-    pub fn builder() -> crate::model::filter::Builder {
-        crate::model::filter::Builder::default()
     }
 }
 

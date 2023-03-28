@@ -260,6 +260,13 @@ impl ReplicationGroup {
         self.transit_encryption_mode.as_ref()
     }
 }
+impl ReplicationGroup {
+    /// Creates a new builder-style object to manufacture [`ReplicationGroup`](crate::model::ReplicationGroup).
+    pub fn builder() -> crate::model::replication_group::Builder {
+        crate::model::replication_group::Builder::default()
+    }
+}
+
 /// See [`ReplicationGroup`](crate::model::ReplicationGroup).
 pub mod replication_group {
 
@@ -772,12 +779,6 @@ pub mod replication_group {
         }
     }
 }
-impl ReplicationGroup {
-    /// Creates a new builder-style object to manufacture [`ReplicationGroup`](crate::model::ReplicationGroup).
-    pub fn builder() -> crate::model::replication_group::Builder {
-        crate::model::replication_group::Builder::default()
-    }
-}
 
 /// When writing a match expression against `TransitEncryptionMode`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -1197,6 +1198,13 @@ impl LogDeliveryConfiguration {
         self.message.as_deref()
     }
 }
+impl LogDeliveryConfiguration {
+    /// Creates a new builder-style object to manufacture [`LogDeliveryConfiguration`](crate::model::LogDeliveryConfiguration).
+    pub fn builder() -> crate::model::log_delivery_configuration::Builder {
+        crate::model::log_delivery_configuration::Builder::default()
+    }
+}
+
 /// See [`LogDeliveryConfiguration`](crate::model::LogDeliveryConfiguration).
 pub mod log_delivery_configuration {
 
@@ -1295,12 +1303,6 @@ pub mod log_delivery_configuration {
                 message: self.message,
             }
         }
-    }
-}
-impl LogDeliveryConfiguration {
-    /// Creates a new builder-style object to manufacture [`LogDeliveryConfiguration`](crate::model::LogDeliveryConfiguration).
-    pub fn builder() -> crate::model::log_delivery_configuration::Builder {
-        crate::model::log_delivery_configuration::Builder::default()
     }
 }
 
@@ -1528,6 +1530,13 @@ impl DestinationDetails {
         self.kinesis_firehose_details.as_ref()
     }
 }
+impl DestinationDetails {
+    /// Creates a new builder-style object to manufacture [`DestinationDetails`](crate::model::DestinationDetails).
+    pub fn builder() -> crate::model::destination_details::Builder {
+        crate::model::destination_details::Builder::default()
+    }
+}
+
 /// See [`DestinationDetails`](crate::model::DestinationDetails).
 pub mod destination_details {
 
@@ -1582,12 +1591,6 @@ pub mod destination_details {
         }
     }
 }
-impl DestinationDetails {
-    /// Creates a new builder-style object to manufacture [`DestinationDetails`](crate::model::DestinationDetails).
-    pub fn builder() -> crate::model::destination_details::Builder {
-        crate::model::destination_details::Builder::default()
-    }
-}
 
 /// <p>The configuration details of the Kinesis Data Firehose destination.</p>
 #[non_exhaustive]
@@ -1603,6 +1606,13 @@ impl KinesisFirehoseDestinationDetails {
         self.delivery_stream.as_deref()
     }
 }
+impl KinesisFirehoseDestinationDetails {
+    /// Creates a new builder-style object to manufacture [`KinesisFirehoseDestinationDetails`](crate::model::KinesisFirehoseDestinationDetails).
+    pub fn builder() -> crate::model::kinesis_firehose_destination_details::Builder {
+        crate::model::kinesis_firehose_destination_details::Builder::default()
+    }
+}
+
 /// See [`KinesisFirehoseDestinationDetails`](crate::model::KinesisFirehoseDestinationDetails).
 pub mod kinesis_firehose_destination_details {
 
@@ -1634,12 +1644,6 @@ pub mod kinesis_firehose_destination_details {
         }
     }
 }
-impl KinesisFirehoseDestinationDetails {
-    /// Creates a new builder-style object to manufacture [`KinesisFirehoseDestinationDetails`](crate::model::KinesisFirehoseDestinationDetails).
-    pub fn builder() -> crate::model::kinesis_firehose_destination_details::Builder {
-        crate::model::kinesis_firehose_destination_details::Builder::default()
-    }
-}
 
 /// <p>The configuration details of the CloudWatch Logs destination.</p>
 #[non_exhaustive]
@@ -1655,6 +1659,13 @@ impl CloudWatchLogsDestinationDetails {
         self.log_group.as_deref()
     }
 }
+impl CloudWatchLogsDestinationDetails {
+    /// Creates a new builder-style object to manufacture [`CloudWatchLogsDestinationDetails`](crate::model::CloudWatchLogsDestinationDetails).
+    pub fn builder() -> crate::model::cloud_watch_logs_destination_details::Builder {
+        crate::model::cloud_watch_logs_destination_details::Builder::default()
+    }
+}
+
 /// See [`CloudWatchLogsDestinationDetails`](crate::model::CloudWatchLogsDestinationDetails).
 pub mod cloud_watch_logs_destination_details {
 
@@ -1681,12 +1692,6 @@ pub mod cloud_watch_logs_destination_details {
                 log_group: self.log_group,
             }
         }
-    }
-}
-impl CloudWatchLogsDestinationDetails {
-    /// Creates a new builder-style object to manufacture [`CloudWatchLogsDestinationDetails`](crate::model::CloudWatchLogsDestinationDetails).
-    pub fn builder() -> crate::model::cloud_watch_logs_destination_details::Builder {
-        crate::model::cloud_watch_logs_destination_details::Builder::default()
     }
 }
 
@@ -1891,6 +1896,13 @@ impl Endpoint {
         self.port
     }
 }
+impl Endpoint {
+    /// Creates a new builder-style object to manufacture [`Endpoint`](crate::model::Endpoint).
+    pub fn builder() -> crate::model::endpoint::Builder {
+        crate::model::endpoint::Builder::default()
+    }
+}
+
 /// See [`Endpoint`](crate::model::Endpoint).
 pub mod endpoint {
 
@@ -1929,12 +1941,6 @@ pub mod endpoint {
                 port: self.port.unwrap_or_default(),
             }
         }
-    }
-}
-impl Endpoint {
-    /// Creates a new builder-style object to manufacture [`Endpoint`](crate::model::Endpoint).
-    pub fn builder() -> crate::model::endpoint::Builder {
-        crate::model::endpoint::Builder::default()
     }
 }
 
@@ -2179,6 +2185,13 @@ impl NodeGroup {
         self.node_group_members.as_deref()
     }
 }
+impl NodeGroup {
+    /// Creates a new builder-style object to manufacture [`NodeGroup`](crate::model::NodeGroup).
+    pub fn builder() -> crate::model::node_group::Builder {
+        crate::model::node_group::Builder::default()
+    }
+}
+
 /// See [`NodeGroup`](crate::model::NodeGroup).
 pub mod node_group {
 
@@ -2286,12 +2299,6 @@ pub mod node_group {
         }
     }
 }
-impl NodeGroup {
-    /// Creates a new builder-style object to manufacture [`NodeGroup`](crate::model::NodeGroup).
-    pub fn builder() -> crate::model::node_group::Builder {
-        crate::model::node_group::Builder::default()
-    }
-}
 
 /// <p>Represents a single node within a node group (shard).</p>
 #[non_exhaustive]
@@ -2342,6 +2349,13 @@ impl NodeGroupMember {
         self.current_role.as_deref()
     }
 }
+impl NodeGroupMember {
+    /// Creates a new builder-style object to manufacture [`NodeGroupMember`](crate::model::NodeGroupMember).
+    pub fn builder() -> crate::model::node_group_member::Builder {
+        crate::model::node_group_member::Builder::default()
+    }
+}
+
 /// See [`NodeGroupMember`](crate::model::NodeGroupMember).
 pub mod node_group_member {
 
@@ -2448,12 +2462,6 @@ pub mod node_group_member {
         }
     }
 }
-impl NodeGroupMember {
-    /// Creates a new builder-style object to manufacture [`NodeGroupMember`](crate::model::NodeGroupMember).
-    pub fn builder() -> crate::model::node_group_member::Builder {
-        crate::model::node_group_member::Builder::default()
-    }
-}
 
 /// <p>The settings to be applied to the Redis replication group, either immediately or during the next maintenance window.</p>
 #[non_exhaustive]
@@ -2526,6 +2534,13 @@ impl ReplicationGroupPendingModifiedValues {
         self.transit_encryption_mode.as_ref()
     }
 }
+impl ReplicationGroupPendingModifiedValues {
+    /// Creates a new builder-style object to manufacture [`ReplicationGroupPendingModifiedValues`](crate::model::ReplicationGroupPendingModifiedValues).
+    pub fn builder() -> crate::model::replication_group_pending_modified_values::Builder {
+        crate::model::replication_group_pending_modified_values::Builder::default()
+    }
+}
+
 /// See [`ReplicationGroupPendingModifiedValues`](crate::model::ReplicationGroupPendingModifiedValues).
 pub mod replication_group_pending_modified_values {
 
@@ -2679,12 +2694,6 @@ pub mod replication_group_pending_modified_values {
         }
     }
 }
-impl ReplicationGroupPendingModifiedValues {
-    /// Creates a new builder-style object to manufacture [`ReplicationGroupPendingModifiedValues`](crate::model::ReplicationGroupPendingModifiedValues).
-    pub fn builder() -> crate::model::replication_group_pending_modified_values::Builder {
-        crate::model::replication_group_pending_modified_values::Builder::default()
-    }
-}
 
 /// <p>The log delivery configurations being modified </p>
 #[non_exhaustive]
@@ -2721,6 +2730,13 @@ impl PendingLogDeliveryConfiguration {
         self.log_format.as_ref()
     }
 }
+impl PendingLogDeliveryConfiguration {
+    /// Creates a new builder-style object to manufacture [`PendingLogDeliveryConfiguration`](crate::model::PendingLogDeliveryConfiguration).
+    pub fn builder() -> crate::model::pending_log_delivery_configuration::Builder {
+        crate::model::pending_log_delivery_configuration::Builder::default()
+    }
+}
+
 /// See [`PendingLogDeliveryConfiguration`](crate::model::PendingLogDeliveryConfiguration).
 pub mod pending_log_delivery_configuration {
 
@@ -2794,12 +2810,6 @@ pub mod pending_log_delivery_configuration {
         }
     }
 }
-impl PendingLogDeliveryConfiguration {
-    /// Creates a new builder-style object to manufacture [`PendingLogDeliveryConfiguration`](crate::model::PendingLogDeliveryConfiguration).
-    pub fn builder() -> crate::model::pending_log_delivery_configuration::Builder {
-        crate::model::pending_log_delivery_configuration::Builder::default()
-    }
-}
 
 /// <p>The status of the user group update.</p>
 #[non_exhaustive]
@@ -2822,6 +2832,13 @@ impl UserGroupsUpdateStatus {
         self.user_group_ids_to_remove.as_deref()
     }
 }
+impl UserGroupsUpdateStatus {
+    /// Creates a new builder-style object to manufacture [`UserGroupsUpdateStatus`](crate::model::UserGroupsUpdateStatus).
+    pub fn builder() -> crate::model::user_groups_update_status::Builder {
+        crate::model::user_groups_update_status::Builder::default()
+    }
+}
+
 /// See [`UserGroupsUpdateStatus`](crate::model::UserGroupsUpdateStatus).
 pub mod user_groups_update_status {
 
@@ -2879,12 +2896,6 @@ pub mod user_groups_update_status {
                 user_group_ids_to_remove: self.user_group_ids_to_remove,
             }
         }
-    }
-}
-impl UserGroupsUpdateStatus {
-    /// Creates a new builder-style object to manufacture [`UserGroupsUpdateStatus`](crate::model::UserGroupsUpdateStatus).
-    pub fn builder() -> crate::model::user_groups_update_status::Builder {
-        crate::model::user_groups_update_status::Builder::default()
     }
 }
 
@@ -2994,6 +3005,13 @@ impl ReshardingStatus {
         self.slot_migration.as_ref()
     }
 }
+impl ReshardingStatus {
+    /// Creates a new builder-style object to manufacture [`ReshardingStatus`](crate::model::ReshardingStatus).
+    pub fn builder() -> crate::model::resharding_status::Builder {
+        crate::model::resharding_status::Builder::default()
+    }
+}
+
 /// See [`ReshardingStatus`](crate::model::ReshardingStatus).
 pub mod resharding_status {
 
@@ -3025,12 +3043,6 @@ pub mod resharding_status {
         }
     }
 }
-impl ReshardingStatus {
-    /// Creates a new builder-style object to manufacture [`ReshardingStatus`](crate::model::ReshardingStatus).
-    pub fn builder() -> crate::model::resharding_status::Builder {
-        crate::model::resharding_status::Builder::default()
-    }
-}
 
 /// <p>Represents the progress of an online resharding operation.</p>
 #[non_exhaustive]
@@ -3046,6 +3058,13 @@ impl SlotMigration {
         self.progress_percentage
     }
 }
+impl SlotMigration {
+    /// Creates a new builder-style object to manufacture [`SlotMigration`](crate::model::SlotMigration).
+    pub fn builder() -> crate::model::slot_migration::Builder {
+        crate::model::slot_migration::Builder::default()
+    }
+}
+
 /// See [`SlotMigration`](crate::model::SlotMigration).
 pub mod slot_migration {
 
@@ -3072,12 +3091,6 @@ pub mod slot_migration {
                 progress_percentage: self.progress_percentage.unwrap_or_default(),
             }
         }
-    }
-}
-impl SlotMigration {
-    /// Creates a new builder-style object to manufacture [`SlotMigration`](crate::model::SlotMigration).
-    pub fn builder() -> crate::model::slot_migration::Builder {
-        crate::model::slot_migration::Builder::default()
     }
 }
 
@@ -3194,6 +3207,13 @@ impl GlobalReplicationGroupInfo {
         self.global_replication_group_member_role.as_deref()
     }
 }
+impl GlobalReplicationGroupInfo {
+    /// Creates a new builder-style object to manufacture [`GlobalReplicationGroupInfo`](crate::model::GlobalReplicationGroupInfo).
+    pub fn builder() -> crate::model::global_replication_group_info::Builder {
+        crate::model::global_replication_group_info::Builder::default()
+    }
+}
+
 /// See [`GlobalReplicationGroupInfo`](crate::model::GlobalReplicationGroupInfo).
 pub mod global_replication_group_info {
 
@@ -3246,12 +3266,6 @@ pub mod global_replication_group_info {
         }
     }
 }
-impl GlobalReplicationGroupInfo {
-    /// Creates a new builder-style object to manufacture [`GlobalReplicationGroupInfo`](crate::model::GlobalReplicationGroupInfo).
-    pub fn builder() -> crate::model::global_replication_group_info::Builder {
-        crate::model::global_replication_group_info::Builder::default()
-    }
-}
 
 /// <p>The endpoint from which data should be migrated.</p>
 #[non_exhaustive]
@@ -3274,6 +3288,13 @@ impl CustomerNodeEndpoint {
         self.port
     }
 }
+impl CustomerNodeEndpoint {
+    /// Creates a new builder-style object to manufacture [`CustomerNodeEndpoint`](crate::model::CustomerNodeEndpoint).
+    pub fn builder() -> crate::model::customer_node_endpoint::Builder {
+        crate::model::customer_node_endpoint::Builder::default()
+    }
+}
+
 /// See [`CustomerNodeEndpoint`](crate::model::CustomerNodeEndpoint).
 pub mod customer_node_endpoint {
 
@@ -3312,12 +3333,6 @@ pub mod customer_node_endpoint {
                 port: self.port,
             }
         }
-    }
-}
-impl CustomerNodeEndpoint {
-    /// Creates a new builder-style object to manufacture [`CustomerNodeEndpoint`](crate::model::CustomerNodeEndpoint).
-    pub fn builder() -> crate::model::customer_node_endpoint::Builder {
-        crate::model::customer_node_endpoint::Builder::default()
     }
 }
 
@@ -3368,6 +3383,13 @@ impl CacheSecurityGroup {
         self.arn.as_deref()
     }
 }
+impl CacheSecurityGroup {
+    /// Creates a new builder-style object to manufacture [`CacheSecurityGroup`](crate::model::CacheSecurityGroup).
+    pub fn builder() -> crate::model::cache_security_group::Builder {
+        crate::model::cache_security_group::Builder::default()
+    }
+}
+
 /// See [`CacheSecurityGroup`](crate::model::CacheSecurityGroup).
 pub mod cache_security_group {
 
@@ -3457,12 +3479,6 @@ pub mod cache_security_group {
         }
     }
 }
-impl CacheSecurityGroup {
-    /// Creates a new builder-style object to manufacture [`CacheSecurityGroup`](crate::model::CacheSecurityGroup).
-    pub fn builder() -> crate::model::cache_security_group::Builder {
-        crate::model::cache_security_group::Builder::default()
-    }
-}
 
 /// <p>Provides ownership and status information for an Amazon EC2 security group.</p>
 #[non_exhaustive]
@@ -3492,6 +3508,13 @@ impl Ec2SecurityGroup {
         self.ec2_security_group_owner_id.as_deref()
     }
 }
+impl Ec2SecurityGroup {
+    /// Creates a new builder-style object to manufacture [`Ec2SecurityGroup`](crate::model::Ec2SecurityGroup).
+    pub fn builder() -> crate::model::ec2_security_group::Builder {
+        crate::model::ec2_security_group::Builder::default()
+    }
+}
+
 /// See [`Ec2SecurityGroup`](crate::model::Ec2SecurityGroup).
 pub mod ec2_security_group {
 
@@ -3553,12 +3576,6 @@ pub mod ec2_security_group {
         }
     }
 }
-impl Ec2SecurityGroup {
-    /// Creates a new builder-style object to manufacture [`Ec2SecurityGroup`](crate::model::Ec2SecurityGroup).
-    pub fn builder() -> crate::model::ec2_security_group::Builder {
-        crate::model::ec2_security_group::Builder::default()
-    }
-}
 
 /// <p>Describes a name-value pair that is used to update the value of a parameter.</p>
 #[non_exhaustive]
@@ -3581,6 +3598,13 @@ impl ParameterNameValue {
         self.parameter_value.as_deref()
     }
 }
+impl ParameterNameValue {
+    /// Creates a new builder-style object to manufacture [`ParameterNameValue`](crate::model::ParameterNameValue).
+    pub fn builder() -> crate::model::parameter_name_value::Builder {
+        crate::model::parameter_name_value::Builder::default()
+    }
+}
+
 /// See [`ParameterNameValue`](crate::model::ParameterNameValue).
 pub mod parameter_name_value {
 
@@ -3627,12 +3651,6 @@ pub mod parameter_name_value {
         }
     }
 }
-impl ParameterNameValue {
-    /// Creates a new builder-style object to manufacture [`ParameterNameValue`](crate::model::ParameterNameValue).
-    pub fn builder() -> crate::model::parameter_name_value::Builder {
-        crate::model::parameter_name_value::Builder::default()
-    }
-}
 
 /// <p>A tag that can be added to an ElastiCache cluster or replication group. Tags are composed of a Key/Value pair. You can use tags to categorize and track all your ElastiCache resources, with the exception of global replication group. When you add or remove tags on replication groups, those actions will be replicated to all nodes in the replication group. A tag with a null Value is permitted.</p>
 #[non_exhaustive]
@@ -3655,6 +3673,13 @@ impl Tag {
         self.value.as_deref()
     }
 }
+impl Tag {
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
+    pub fn builder() -> crate::model::tag::Builder {
+        crate::model::tag::Builder::default()
+    }
+}
+
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
 
@@ -3693,12 +3718,6 @@ pub mod tag {
                 value: self.value,
             }
         }
-    }
-}
-impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
-    pub fn builder() -> crate::model::tag::Builder {
-        crate::model::tag::Builder::default()
     }
 }
 
@@ -4056,6 +4075,13 @@ impl CacheCluster {
         self.transit_encryption_mode.as_ref()
     }
 }
+impl CacheCluster {
+    /// Creates a new builder-style object to manufacture [`CacheCluster`](crate::model::CacheCluster).
+    pub fn builder() -> crate::model::cache_cluster::Builder {
+        crate::model::cache_cluster::Builder::default()
+    }
+}
+
 /// See [`CacheCluster`](crate::model::CacheCluster).
 pub mod cache_cluster {
 
@@ -4703,12 +4729,6 @@ pub mod cache_cluster {
         }
     }
 }
-impl CacheCluster {
-    /// Creates a new builder-style object to manufacture [`CacheCluster`](crate::model::CacheCluster).
-    pub fn builder() -> crate::model::cache_cluster::Builder {
-        crate::model::cache_cluster::Builder::default()
-    }
-}
 
 /// <p>Represents a single cache security group and its status.</p>
 #[non_exhaustive]
@@ -4731,6 +4751,13 @@ impl SecurityGroupMembership {
         self.status.as_deref()
     }
 }
+impl SecurityGroupMembership {
+    /// Creates a new builder-style object to manufacture [`SecurityGroupMembership`](crate::model::SecurityGroupMembership).
+    pub fn builder() -> crate::model::security_group_membership::Builder {
+        crate::model::security_group_membership::Builder::default()
+    }
+}
+
 /// See [`SecurityGroupMembership`](crate::model::SecurityGroupMembership).
 pub mod security_group_membership {
 
@@ -4772,12 +4799,6 @@ pub mod security_group_membership {
                 status: self.status,
             }
         }
-    }
-}
-impl SecurityGroupMembership {
-    /// Creates a new builder-style object to manufacture [`SecurityGroupMembership`](crate::model::SecurityGroupMembership).
-    pub fn builder() -> crate::model::security_group_membership::Builder {
-        crate::model::security_group_membership::Builder::default()
     }
 }
 
@@ -4872,6 +4893,13 @@ impl CacheNode {
         self.customer_outpost_arn.as_deref()
     }
 }
+impl CacheNode {
+    /// Creates a new builder-style object to manufacture [`CacheNode`](crate::model::CacheNode).
+    pub fn builder() -> crate::model::cache_node::Builder {
+        crate::model::cache_node::Builder::default()
+    }
+}
+
 /// See [`CacheNode`](crate::model::CacheNode).
 pub mod cache_node {
 
@@ -5005,12 +5033,6 @@ pub mod cache_node {
         }
     }
 }
-impl CacheNode {
-    /// Creates a new builder-style object to manufacture [`CacheNode`](crate::model::CacheNode).
-    pub fn builder() -> crate::model::cache_node::Builder {
-        crate::model::cache_node::Builder::default()
-    }
-}
 
 /// <p>Status of the cache parameter group.</p>
 #[non_exhaustive]
@@ -5040,6 +5062,13 @@ impl CacheParameterGroupStatus {
         self.cache_node_ids_to_reboot.as_deref()
     }
 }
+impl CacheParameterGroupStatus {
+    /// Creates a new builder-style object to manufacture [`CacheParameterGroupStatus`](crate::model::CacheParameterGroupStatus).
+    pub fn builder() -> crate::model::cache_parameter_group_status::Builder {
+        crate::model::cache_parameter_group_status::Builder::default()
+    }
+}
+
 /// See [`CacheParameterGroupStatus`](crate::model::CacheParameterGroupStatus).
 pub mod cache_parameter_group_status {
 
@@ -5108,12 +5137,6 @@ pub mod cache_parameter_group_status {
         }
     }
 }
-impl CacheParameterGroupStatus {
-    /// Creates a new builder-style object to manufacture [`CacheParameterGroupStatus`](crate::model::CacheParameterGroupStatus).
-    pub fn builder() -> crate::model::cache_parameter_group_status::Builder {
-        crate::model::cache_parameter_group_status::Builder::default()
-    }
-}
 
 /// <p>Represents a cluster's status within a particular cache security group.</p>
 #[non_exhaustive]
@@ -5136,6 +5159,13 @@ impl CacheSecurityGroupMembership {
         self.status.as_deref()
     }
 }
+impl CacheSecurityGroupMembership {
+    /// Creates a new builder-style object to manufacture [`CacheSecurityGroupMembership`](crate::model::CacheSecurityGroupMembership).
+    pub fn builder() -> crate::model::cache_security_group_membership::Builder {
+        crate::model::cache_security_group_membership::Builder::default()
+    }
+}
+
 /// See [`CacheSecurityGroupMembership`](crate::model::CacheSecurityGroupMembership).
 pub mod cache_security_group_membership {
 
@@ -5179,12 +5209,6 @@ pub mod cache_security_group_membership {
         }
     }
 }
-impl CacheSecurityGroupMembership {
-    /// Creates a new builder-style object to manufacture [`CacheSecurityGroupMembership`](crate::model::CacheSecurityGroupMembership).
-    pub fn builder() -> crate::model::cache_security_group_membership::Builder {
-        crate::model::cache_security_group_membership::Builder::default()
-    }
-}
 
 /// <p>Describes a notification topic and its status. Notification topics are used for publishing ElastiCache events to subscribers using Amazon Simple Notification Service (SNS).</p>
 #[non_exhaustive]
@@ -5207,6 +5231,13 @@ impl NotificationConfiguration {
         self.topic_status.as_deref()
     }
 }
+impl NotificationConfiguration {
+    /// Creates a new builder-style object to manufacture [`NotificationConfiguration`](crate::model::NotificationConfiguration).
+    pub fn builder() -> crate::model::notification_configuration::Builder {
+        crate::model::notification_configuration::Builder::default()
+    }
+}
+
 /// See [`NotificationConfiguration`](crate::model::NotificationConfiguration).
 pub mod notification_configuration {
 
@@ -5245,12 +5276,6 @@ pub mod notification_configuration {
                 topic_status: self.topic_status,
             }
         }
-    }
-}
-impl NotificationConfiguration {
-    /// Creates a new builder-style object to manufacture [`NotificationConfiguration`](crate::model::NotificationConfiguration).
-    pub fn builder() -> crate::model::notification_configuration::Builder {
-        crate::model::notification_configuration::Builder::default()
     }
 }
 
@@ -5324,6 +5349,13 @@ impl PendingModifiedValues {
         self.transit_encryption_mode.as_ref()
     }
 }
+impl PendingModifiedValues {
+    /// Creates a new builder-style object to manufacture [`PendingModifiedValues`](crate::model::PendingModifiedValues).
+    pub fn builder() -> crate::model::pending_modified_values::Builder {
+        crate::model::pending_modified_values::Builder::default()
+    }
+}
+
 /// See [`PendingModifiedValues`](crate::model::PendingModifiedValues).
 pub mod pending_modified_values {
 
@@ -5479,12 +5511,6 @@ pub mod pending_modified_values {
         }
     }
 }
-impl PendingModifiedValues {
-    /// Creates a new builder-style object to manufacture [`PendingModifiedValues`](crate::model::PendingModifiedValues).
-    pub fn builder() -> crate::model::pending_modified_values::Builder {
-        crate::model::pending_modified_values::Builder::default()
-    }
-}
 
 /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary cluster automatically replicates updates to the secondary cluster.</p>
 /// <ul>
@@ -5595,6 +5621,13 @@ impl GlobalReplicationGroup {
         self.arn.as_deref()
     }
 }
+impl GlobalReplicationGroup {
+    /// Creates a new builder-style object to manufacture [`GlobalReplicationGroup`](crate::model::GlobalReplicationGroup).
+    pub fn builder() -> crate::model::global_replication_group::Builder {
+        crate::model::global_replication_group::Builder::default()
+    }
+}
+
 /// See [`GlobalReplicationGroup`](crate::model::GlobalReplicationGroup).
 pub mod global_replication_group {
 
@@ -5813,12 +5846,6 @@ pub mod global_replication_group {
         }
     }
 }
-impl GlobalReplicationGroup {
-    /// Creates a new builder-style object to manufacture [`GlobalReplicationGroup`](crate::model::GlobalReplicationGroup).
-    pub fn builder() -> crate::model::global_replication_group::Builder {
-        crate::model::global_replication_group::Builder::default()
-    }
-}
 
 /// <p>Indicates the slot configuration and global identifier for a slice group.</p>
 #[non_exhaustive]
@@ -5841,6 +5868,13 @@ impl GlobalNodeGroup {
         self.slots.as_deref()
     }
 }
+impl GlobalNodeGroup {
+    /// Creates a new builder-style object to manufacture [`GlobalNodeGroup`](crate::model::GlobalNodeGroup).
+    pub fn builder() -> crate::model::global_node_group::Builder {
+        crate::model::global_node_group::Builder::default()
+    }
+}
+
 /// See [`GlobalNodeGroup`](crate::model::GlobalNodeGroup).
 pub mod global_node_group {
 
@@ -5882,12 +5916,6 @@ pub mod global_node_group {
                 slots: self.slots,
             }
         }
-    }
-}
-impl GlobalNodeGroup {
-    /// Creates a new builder-style object to manufacture [`GlobalNodeGroup`](crate::model::GlobalNodeGroup).
-    pub fn builder() -> crate::model::global_node_group::Builder {
-        crate::model::global_node_group::Builder::default()
     }
 }
 
@@ -5935,6 +5963,13 @@ impl GlobalReplicationGroupMember {
         self.status.as_deref()
     }
 }
+impl GlobalReplicationGroupMember {
+    /// Creates a new builder-style object to manufacture [`GlobalReplicationGroupMember`](crate::model::GlobalReplicationGroupMember).
+    pub fn builder() -> crate::model::global_replication_group_member::Builder {
+        crate::model::global_replication_group_member::Builder::default()
+    }
+}
+
 /// See [`GlobalReplicationGroupMember`](crate::model::GlobalReplicationGroupMember).
 pub mod global_replication_group_member {
 
@@ -6018,12 +6053,6 @@ pub mod global_replication_group_member {
                 status: self.status,
             }
         }
-    }
-}
-impl GlobalReplicationGroupMember {
-    /// Creates a new builder-style object to manufacture [`GlobalReplicationGroupMember`](crate::model::GlobalReplicationGroupMember).
-    pub fn builder() -> crate::model::global_replication_group_member::Builder {
-        crate::model::global_replication_group_member::Builder::default()
     }
 }
 
@@ -6183,6 +6212,13 @@ impl ReservedCacheNode {
         self.reservation_arn.as_deref()
     }
 }
+impl ReservedCacheNode {
+    /// Creates a new builder-style object to manufacture [`ReservedCacheNode`](crate::model::ReservedCacheNode).
+    pub fn builder() -> crate::model::reserved_cache_node::Builder {
+        crate::model::reserved_cache_node::Builder::default()
+    }
+}
+
 /// See [`ReservedCacheNode`](crate::model::ReservedCacheNode).
 pub mod reserved_cache_node {
 
@@ -6447,12 +6483,6 @@ pub mod reserved_cache_node {
         }
     }
 }
-impl ReservedCacheNode {
-    /// Creates a new builder-style object to manufacture [`ReservedCacheNode`](crate::model::ReservedCacheNode).
-    pub fn builder() -> crate::model::reserved_cache_node::Builder {
-        crate::model::reserved_cache_node::Builder::default()
-    }
-}
 
 /// <p>Contains the specific price and frequency of a recurring charges for a reserved cache node, or for a reserved cache node offering.</p>
 #[non_exhaustive]
@@ -6475,6 +6505,13 @@ impl RecurringCharge {
         self.recurring_charge_frequency.as_deref()
     }
 }
+impl RecurringCharge {
+    /// Creates a new builder-style object to manufacture [`RecurringCharge`](crate::model::RecurringCharge).
+    pub fn builder() -> crate::model::recurring_charge::Builder {
+        crate::model::recurring_charge::Builder::default()
+    }
+}
+
 /// See [`RecurringCharge`](crate::model::RecurringCharge).
 pub mod recurring_charge {
 
@@ -6518,12 +6555,6 @@ pub mod recurring_charge {
         }
     }
 }
-impl RecurringCharge {
-    /// Creates a new builder-style object to manufacture [`RecurringCharge`](crate::model::RecurringCharge).
-    pub fn builder() -> crate::model::recurring_charge::Builder {
-        crate::model::recurring_charge::Builder::default()
-    }
-}
 
 /// <p>Returns the updates being applied to the user group.</p>
 #[non_exhaustive]
@@ -6546,6 +6577,13 @@ impl UserGroupPendingChanges {
         self.user_ids_to_add.as_deref()
     }
 }
+impl UserGroupPendingChanges {
+    /// Creates a new builder-style object to manufacture [`UserGroupPendingChanges`](crate::model::UserGroupPendingChanges).
+    pub fn builder() -> crate::model::user_group_pending_changes::Builder {
+        crate::model::user_group_pending_changes::Builder::default()
+    }
+}
+
 /// See [`UserGroupPendingChanges`](crate::model::UserGroupPendingChanges).
 pub mod user_group_pending_changes {
 
@@ -6604,12 +6642,6 @@ pub mod user_group_pending_changes {
         }
     }
 }
-impl UserGroupPendingChanges {
-    /// Creates a new builder-style object to manufacture [`UserGroupPendingChanges`](crate::model::UserGroupPendingChanges).
-    pub fn builder() -> crate::model::user_group_pending_changes::Builder {
-        crate::model::user_group_pending_changes::Builder::default()
-    }
-}
 
 /// <p>Indicates whether the user requires a password to authenticate.</p>
 #[non_exhaustive]
@@ -6632,6 +6664,13 @@ impl Authentication {
         self.password_count
     }
 }
+impl Authentication {
+    /// Creates a new builder-style object to manufacture [`Authentication`](crate::model::Authentication).
+    pub fn builder() -> crate::model::authentication::Builder {
+        crate::model::authentication::Builder::default()
+    }
+}
+
 /// See [`Authentication`](crate::model::Authentication).
 pub mod authentication {
 
@@ -6673,12 +6712,6 @@ pub mod authentication {
                 password_count: self.password_count,
             }
         }
-    }
-}
-impl Authentication {
-    /// Creates a new builder-style object to manufacture [`Authentication`](crate::model::Authentication).
-    pub fn builder() -> crate::model::authentication::Builder {
-        crate::model::authentication::Builder::default()
     }
 }
 
@@ -6800,6 +6833,13 @@ impl AuthenticationMode {
         self.passwords.as_deref()
     }
 }
+impl AuthenticationMode {
+    /// Creates a new builder-style object to manufacture [`AuthenticationMode`](crate::model::AuthenticationMode).
+    pub fn builder() -> crate::model::authentication_mode::Builder {
+        crate::model::authentication_mode::Builder::default()
+    }
+}
+
 /// See [`AuthenticationMode`](crate::model::AuthenticationMode).
 pub mod authentication_mode {
 
@@ -6850,12 +6890,6 @@ pub mod authentication_mode {
                 passwords: self.passwords,
             }
         }
-    }
-}
-impl AuthenticationMode {
-    /// Creates a new builder-style object to manufacture [`AuthenticationMode`](crate::model::AuthenticationMode).
-    pub fn builder() -> crate::model::authentication_mode::Builder {
-        crate::model::authentication_mode::Builder::default()
     }
 }
 
@@ -6977,6 +7011,13 @@ impl ReshardingConfiguration {
         self.preferred_availability_zones.as_deref()
     }
 }
+impl ReshardingConfiguration {
+    /// Creates a new builder-style object to manufacture [`ReshardingConfiguration`](crate::model::ReshardingConfiguration).
+    pub fn builder() -> crate::model::resharding_configuration::Builder {
+        crate::model::resharding_configuration::Builder::default()
+    }
+}
+
 /// See [`ReshardingConfiguration`](crate::model::ReshardingConfiguration).
 pub mod resharding_configuration {
 
@@ -7033,12 +7074,6 @@ pub mod resharding_configuration {
         }
     }
 }
-impl ReshardingConfiguration {
-    /// Creates a new builder-style object to manufacture [`ReshardingConfiguration`](crate::model::ReshardingConfiguration).
-    pub fn builder() -> crate::model::resharding_configuration::Builder {
-        crate::model::resharding_configuration::Builder::default()
-    }
-}
 
 /// <p>Specifies the destination, format and type of the logs. </p>
 #[non_exhaustive]
@@ -7082,6 +7117,13 @@ impl LogDeliveryConfigurationRequest {
         self.enabled
     }
 }
+impl LogDeliveryConfigurationRequest {
+    /// Creates a new builder-style object to manufacture [`LogDeliveryConfigurationRequest`](crate::model::LogDeliveryConfigurationRequest).
+    pub fn builder() -> crate::model::log_delivery_configuration_request::Builder {
+        crate::model::log_delivery_configuration_request::Builder::default()
+    }
+}
+
 /// See [`LogDeliveryConfigurationRequest`](crate::model::LogDeliveryConfigurationRequest).
 pub mod log_delivery_configuration_request {
 
@@ -7165,12 +7207,6 @@ pub mod log_delivery_configuration_request {
                 enabled: self.enabled,
             }
         }
-    }
-}
-impl LogDeliveryConfigurationRequest {
-    /// Creates a new builder-style object to manufacture [`LogDeliveryConfigurationRequest`](crate::model::LogDeliveryConfigurationRequest).
-    pub fn builder() -> crate::model::log_delivery_configuration_request::Builder {
-        crate::model::log_delivery_configuration_request::Builder::default()
     }
 }
 
@@ -7324,6 +7360,13 @@ impl CacheSubnetGroup {
         self.supported_network_types.as_deref()
     }
 }
+impl CacheSubnetGroup {
+    /// Creates a new builder-style object to manufacture [`CacheSubnetGroup`](crate::model::CacheSubnetGroup).
+    pub fn builder() -> crate::model::cache_subnet_group::Builder {
+        crate::model::cache_subnet_group::Builder::default()
+    }
+}
+
 /// See [`CacheSubnetGroup`](crate::model::CacheSubnetGroup).
 pub mod cache_subnet_group {
 
@@ -7440,12 +7483,6 @@ pub mod cache_subnet_group {
         }
     }
 }
-impl CacheSubnetGroup {
-    /// Creates a new builder-style object to manufacture [`CacheSubnetGroup`](crate::model::CacheSubnetGroup).
-    pub fn builder() -> crate::model::cache_subnet_group::Builder {
-        crate::model::cache_subnet_group::Builder::default()
-    }
-}
 
 /// <p>Represents the subnet associated with a cluster. This parameter refers to subnets defined in Amazon Virtual Private Cloud (Amazon VPC) and used with ElastiCache.</p>
 #[non_exhaustive]
@@ -7482,6 +7519,13 @@ impl Subnet {
         self.supported_network_types.as_deref()
     }
 }
+impl Subnet {
+    /// Creates a new builder-style object to manufacture [`Subnet`](crate::model::Subnet).
+    pub fn builder() -> crate::model::subnet::Builder {
+        crate::model::subnet::Builder::default()
+    }
+}
+
 /// See [`Subnet`](crate::model::Subnet).
 pub mod subnet {
 
@@ -7565,12 +7609,6 @@ pub mod subnet {
         }
     }
 }
-impl Subnet {
-    /// Creates a new builder-style object to manufacture [`Subnet`](crate::model::Subnet).
-    pub fn builder() -> crate::model::subnet::Builder {
-        crate::model::subnet::Builder::default()
-    }
-}
 
 /// <p>The ID of the outpost subnet.</p>
 #[non_exhaustive]
@@ -7586,6 +7624,13 @@ impl SubnetOutpost {
         self.subnet_outpost_arn.as_deref()
     }
 }
+impl SubnetOutpost {
+    /// Creates a new builder-style object to manufacture [`SubnetOutpost`](crate::model::SubnetOutpost).
+    pub fn builder() -> crate::model::subnet_outpost::Builder {
+        crate::model::subnet_outpost::Builder::default()
+    }
+}
+
 /// See [`SubnetOutpost`](crate::model::SubnetOutpost).
 pub mod subnet_outpost {
 
@@ -7617,12 +7662,6 @@ pub mod subnet_outpost {
         }
     }
 }
-impl SubnetOutpost {
-    /// Creates a new builder-style object to manufacture [`SubnetOutpost`](crate::model::SubnetOutpost).
-    pub fn builder() -> crate::model::subnet_outpost::Builder {
-        crate::model::subnet_outpost::Builder::default()
-    }
-}
 
 /// <p>Describes an Availability Zone in which the cluster is launched.</p>
 #[non_exhaustive]
@@ -7638,6 +7677,13 @@ impl AvailabilityZone {
         self.name.as_deref()
     }
 }
+impl AvailabilityZone {
+    /// Creates a new builder-style object to manufacture [`AvailabilityZone`](crate::model::AvailabilityZone).
+    pub fn builder() -> crate::model::availability_zone::Builder {
+        crate::model::availability_zone::Builder::default()
+    }
+}
+
 /// See [`AvailabilityZone`](crate::model::AvailabilityZone).
 pub mod availability_zone {
 
@@ -7662,12 +7708,6 @@ pub mod availability_zone {
         pub fn build(self) -> crate::model::AvailabilityZone {
             crate::model::AvailabilityZone { name: self.name }
         }
-    }
-}
-impl AvailabilityZone {
-    /// Creates a new builder-style object to manufacture [`AvailabilityZone`](crate::model::AvailabilityZone).
-    pub fn builder() -> crate::model::availability_zone::Builder {
-        crate::model::availability_zone::Builder::default()
     }
 }
 
@@ -7814,6 +7854,13 @@ impl ConfigureShard {
         self.preferred_outpost_arns.as_deref()
     }
 }
+impl ConfigureShard {
+    /// Creates a new builder-style object to manufacture [`ConfigureShard`](crate::model::ConfigureShard).
+    pub fn builder() -> crate::model::configure_shard::Builder {
+        crate::model::configure_shard::Builder::default()
+    }
+}
+
 /// See [`ConfigureShard`](crate::model::ConfigureShard).
 pub mod configure_shard {
 
@@ -7921,12 +7968,6 @@ pub mod configure_shard {
         }
     }
 }
-impl ConfigureShard {
-    /// Creates a new builder-style object to manufacture [`ConfigureShard`](crate::model::ConfigureShard).
-    pub fn builder() -> crate::model::configure_shard::Builder {
-        crate::model::configure_shard::Builder::default()
-    }
-}
 
 /// <p>A list of the replication groups </p>
 #[non_exhaustive]
@@ -7959,6 +8000,13 @@ impl RegionalConfiguration {
         self.resharding_configuration.as_deref()
     }
 }
+impl RegionalConfiguration {
+    /// Creates a new builder-style object to manufacture [`RegionalConfiguration`](crate::model::RegionalConfiguration).
+    pub fn builder() -> crate::model::regional_configuration::Builder {
+        crate::model::regional_configuration::Builder::default()
+    }
+}
+
 /// See [`RegionalConfiguration`](crate::model::RegionalConfiguration).
 pub mod regional_configuration {
 
@@ -8028,12 +8076,6 @@ pub mod regional_configuration {
                 resharding_configuration: self.resharding_configuration,
             }
         }
-    }
-}
-impl RegionalConfiguration {
-    /// Creates a new builder-style object to manufacture [`RegionalConfiguration`](crate::model::RegionalConfiguration).
-    pub fn builder() -> crate::model::regional_configuration::Builder {
-        crate::model::regional_configuration::Builder::default()
     }
 }
 
@@ -8107,6 +8149,13 @@ impl User {
         self.arn.as_deref()
     }
 }
+impl User {
+    /// Creates a new builder-style object to manufacture [`User`](crate::model::User).
+    pub fn builder() -> crate::model::user::Builder {
+        crate::model::user::Builder::default()
+    }
+}
+
 /// See [`User`](crate::model::User).
 pub mod user {
 
@@ -8249,12 +8298,6 @@ pub mod user {
         }
     }
 }
-impl User {
-    /// Creates a new builder-style object to manufacture [`User`](crate::model::User).
-    pub fn builder() -> crate::model::user::Builder {
-        crate::model::user::Builder::default()
-    }
-}
 
 /// <p>Used to streamline results of a search based on the property being filtered.</p>
 #[non_exhaustive]
@@ -8277,6 +8320,13 @@ impl Filter {
         self.values.as_deref()
     }
 }
+impl Filter {
+    /// Creates a new builder-style object to manufacture [`Filter`](crate::model::Filter).
+    pub fn builder() -> crate::model::filter::Builder {
+        crate::model::filter::Builder::default()
+    }
+}
+
 /// See [`Filter`](crate::model::Filter).
 pub mod filter {
 
@@ -8324,12 +8374,6 @@ pub mod filter {
                 values: self.values,
             }
         }
-    }
-}
-impl Filter {
-    /// Creates a new builder-style object to manufacture [`Filter`](crate::model::Filter).
-    pub fn builder() -> crate::model::filter::Builder {
-        crate::model::filter::Builder::default()
     }
 }
 
@@ -8396,6 +8440,13 @@ impl UserGroup {
         self.arn.as_deref()
     }
 }
+impl UserGroup {
+    /// Creates a new builder-style object to manufacture [`UserGroup`](crate::model::UserGroup).
+    pub fn builder() -> crate::model::user_group::Builder {
+        crate::model::user_group::Builder::default()
+    }
+}
+
 /// See [`UserGroup`](crate::model::UserGroup).
 pub mod user_group {
 
@@ -8533,12 +8584,6 @@ pub mod user_group {
                 arn: self.arn,
             }
         }
-    }
-}
-impl UserGroup {
-    /// Creates a new builder-style object to manufacture [`UserGroup`](crate::model::UserGroup).
-    pub fn builder() -> crate::model::user_group::Builder {
-        crate::model::user_group::Builder::default()
     }
 }
 
@@ -8680,6 +8725,13 @@ impl UpdateAction {
         self.engine.as_deref()
     }
 }
+impl UpdateAction {
+    /// Creates a new builder-style object to manufacture [`UpdateAction`](crate::model::UpdateAction).
+    pub fn builder() -> crate::model::update_action::Builder {
+        crate::model::update_action::Builder::default()
+    }
+}
+
 /// See [`UpdateAction`](crate::model::UpdateAction).
 pub mod update_action {
 
@@ -8978,12 +9030,6 @@ pub mod update_action {
         }
     }
 }
-impl UpdateAction {
-    /// Creates a new builder-style object to manufacture [`UpdateAction`](crate::model::UpdateAction).
-    pub fn builder() -> crate::model::update_action::Builder {
-        crate::model::update_action::Builder::default()
-    }
-}
 
 /// <p>The status of the service update on the cache node</p>
 #[non_exhaustive]
@@ -9052,6 +9098,13 @@ impl CacheNodeUpdateStatus {
         self.node_update_status_modified_date.as_ref()
     }
 }
+impl CacheNodeUpdateStatus {
+    /// Creates a new builder-style object to manufacture [`CacheNodeUpdateStatus`](crate::model::CacheNodeUpdateStatus).
+    pub fn builder() -> crate::model::cache_node_update_status::Builder {
+        crate::model::cache_node_update_status::Builder::default()
+    }
+}
+
 /// See [`CacheNodeUpdateStatus`](crate::model::CacheNodeUpdateStatus).
 pub mod cache_node_update_status {
 
@@ -9194,12 +9247,6 @@ pub mod cache_node_update_status {
                 node_update_status_modified_date: self.node_update_status_modified_date,
             }
         }
-    }
-}
-impl CacheNodeUpdateStatus {
-    /// Creates a new builder-style object to manufacture [`CacheNodeUpdateStatus`](crate::model::CacheNodeUpdateStatus).
-    pub fn builder() -> crate::model::cache_node_update_status::Builder {
-        crate::model::cache_node_update_status::Builder::default()
     }
 }
 
@@ -9436,6 +9483,13 @@ impl NodeGroupUpdateStatus {
         self.node_group_member_update_status.as_deref()
     }
 }
+impl NodeGroupUpdateStatus {
+    /// Creates a new builder-style object to manufacture [`NodeGroupUpdateStatus`](crate::model::NodeGroupUpdateStatus).
+    pub fn builder() -> crate::model::node_group_update_status::Builder {
+        crate::model::node_group_update_status::Builder::default()
+    }
+}
+
 /// See [`NodeGroupUpdateStatus`](crate::model::NodeGroupUpdateStatus).
 pub mod node_group_update_status {
 
@@ -9490,12 +9544,6 @@ pub mod node_group_update_status {
                 node_group_member_update_status: self.node_group_member_update_status,
             }
         }
-    }
-}
-impl NodeGroupUpdateStatus {
-    /// Creates a new builder-style object to manufacture [`NodeGroupUpdateStatus`](crate::model::NodeGroupUpdateStatus).
-    pub fn builder() -> crate::model::node_group_update_status::Builder {
-        crate::model::node_group_update_status::Builder::default()
     }
 }
 
@@ -9573,6 +9621,13 @@ impl NodeGroupMemberUpdateStatus {
         self.node_update_status_modified_date.as_ref()
     }
 }
+impl NodeGroupMemberUpdateStatus {
+    /// Creates a new builder-style object to manufacture [`NodeGroupMemberUpdateStatus`](crate::model::NodeGroupMemberUpdateStatus).
+    pub fn builder() -> crate::model::node_group_member_update_status::Builder {
+        crate::model::node_group_member_update_status::Builder::default()
+    }
+}
+
 /// See [`NodeGroupMemberUpdateStatus`](crate::model::NodeGroupMemberUpdateStatus).
 pub mod node_group_member_update_status {
 
@@ -9730,12 +9785,6 @@ pub mod node_group_member_update_status {
                 node_update_status_modified_date: self.node_update_status_modified_date,
             }
         }
-    }
-}
-impl NodeGroupMemberUpdateStatus {
-    /// Creates a new builder-style object to manufacture [`NodeGroupMemberUpdateStatus`](crate::model::NodeGroupMemberUpdateStatus).
-    pub fn builder() -> crate::model::node_group_member_update_status::Builder {
-        crate::model::node_group_member_update_status::Builder::default()
     }
 }
 
@@ -10278,6 +10327,13 @@ impl TimeRangeFilter {
         self.end_time.as_ref()
     }
 }
+impl TimeRangeFilter {
+    /// Creates a new builder-style object to manufacture [`TimeRangeFilter`](crate::model::TimeRangeFilter).
+    pub fn builder() -> crate::model::time_range_filter::Builder {
+        crate::model::time_range_filter::Builder::default()
+    }
+}
+
 /// See [`TimeRangeFilter`](crate::model::TimeRangeFilter).
 pub mod time_range_filter {
 
@@ -10322,12 +10378,6 @@ pub mod time_range_filter {
                 end_time: self.end_time,
             }
         }
-    }
-}
-impl TimeRangeFilter {
-    /// Creates a new builder-style object to manufacture [`TimeRangeFilter`](crate::model::TimeRangeFilter).
-    pub fn builder() -> crate::model::time_range_filter::Builder {
-        crate::model::time_range_filter::Builder::default()
     }
 }
 
@@ -10620,6 +10670,13 @@ impl Snapshot {
         self.data_tiering.as_ref()
     }
 }
+impl Snapshot {
+    /// Creates a new builder-style object to manufacture [`Snapshot`](crate::model::Snapshot).
+    pub fn builder() -> crate::model::snapshot::Builder {
+        crate::model::snapshot::Builder::default()
+    }
+}
+
 /// See [`Snapshot`](crate::model::Snapshot).
 pub mod snapshot {
 
@@ -11125,12 +11182,6 @@ pub mod snapshot {
         }
     }
 }
-impl Snapshot {
-    /// Creates a new builder-style object to manufacture [`Snapshot`](crate::model::Snapshot).
-    pub fn builder() -> crate::model::snapshot::Builder {
-        crate::model::snapshot::Builder::default()
-    }
-}
 
 /// <p>Represents an individual cache node in a snapshot of a cluster.</p>
 #[non_exhaustive]
@@ -11190,6 +11241,13 @@ impl NodeSnapshot {
         self.snapshot_create_time.as_ref()
     }
 }
+impl NodeSnapshot {
+    /// Creates a new builder-style object to manufacture [`NodeSnapshot`](crate::model::NodeSnapshot).
+    pub fn builder() -> crate::model::node_snapshot::Builder {
+        crate::model::node_snapshot::Builder::default()
+    }
+}
+
 /// See [`NodeSnapshot`](crate::model::NodeSnapshot).
 pub mod node_snapshot {
 
@@ -11312,12 +11370,6 @@ pub mod node_snapshot {
         }
     }
 }
-impl NodeSnapshot {
-    /// Creates a new builder-style object to manufacture [`NodeSnapshot`](crate::model::NodeSnapshot).
-    pub fn builder() -> crate::model::node_snapshot::Builder {
-        crate::model::node_snapshot::Builder::default()
-    }
-}
 
 /// <p>Node group (shard) configuration options. Each node group (shard) configuration has the following: <code>Slots</code>, <code>PrimaryAvailabilityZone</code>, <code>ReplicaAvailabilityZones</code>, <code>ReplicaCount</code>.</p>
 #[non_exhaustive]
@@ -11377,6 +11429,13 @@ impl NodeGroupConfiguration {
         self.replica_outpost_arns.as_deref()
     }
 }
+impl NodeGroupConfiguration {
+    /// Creates a new builder-style object to manufacture [`NodeGroupConfiguration`](crate::model::NodeGroupConfiguration).
+    pub fn builder() -> crate::model::node_group_configuration::Builder {
+        crate::model::node_group_configuration::Builder::default()
+    }
+}
+
 /// See [`NodeGroupConfiguration`](crate::model::NodeGroupConfiguration).
 pub mod node_group_configuration {
 
@@ -11507,12 +11566,6 @@ pub mod node_group_configuration {
         }
     }
 }
-impl NodeGroupConfiguration {
-    /// Creates a new builder-style object to manufacture [`NodeGroupConfiguration`](crate::model::NodeGroupConfiguration).
-    pub fn builder() -> crate::model::node_group_configuration::Builder {
-        crate::model::node_group_configuration::Builder::default()
-    }
-}
 
 /// <p>An update that you can apply to your Redis clusters.</p>
 #[non_exhaustive]
@@ -11609,6 +11662,13 @@ impl ServiceUpdate {
         self.estimated_update_time.as_deref()
     }
 }
+impl ServiceUpdate {
+    /// Creates a new builder-style object to manufacture [`ServiceUpdate`](crate::model::ServiceUpdate).
+    pub fn builder() -> crate::model::service_update::Builder {
+        crate::model::service_update::Builder::default()
+    }
+}
+
 /// See [`ServiceUpdate`](crate::model::ServiceUpdate).
 pub mod service_update {
 
@@ -11812,12 +11872,6 @@ pub mod service_update {
         }
     }
 }
-impl ServiceUpdate {
-    /// Creates a new builder-style object to manufacture [`ServiceUpdate`](crate::model::ServiceUpdate).
-    pub fn builder() -> crate::model::service_update::Builder {
-        crate::model::service_update::Builder::default()
-    }
-}
 
 /// <p>Describes all of the attributes of a reserved cache node offering.</p>
 #[non_exhaustive]
@@ -11938,6 +11992,13 @@ impl ReservedCacheNodesOffering {
         self.recurring_charges.as_deref()
     }
 }
+impl ReservedCacheNodesOffering {
+    /// Creates a new builder-style object to manufacture [`ReservedCacheNodesOffering`](crate::model::ReservedCacheNodesOffering).
+    pub fn builder() -> crate::model::reserved_cache_nodes_offering::Builder {
+        crate::model::reserved_cache_nodes_offering::Builder::default()
+    }
+}
+
 /// See [`ReservedCacheNodesOffering`](crate::model::ReservedCacheNodesOffering).
 pub mod reserved_cache_nodes_offering {
 
@@ -12131,12 +12192,6 @@ pub mod reserved_cache_nodes_offering {
         }
     }
 }
-impl ReservedCacheNodesOffering {
-    /// Creates a new builder-style object to manufacture [`ReservedCacheNodesOffering`](crate::model::ReservedCacheNodesOffering).
-    pub fn builder() -> crate::model::reserved_cache_nodes_offering::Builder {
-        crate::model::reserved_cache_nodes_offering::Builder::default()
-    }
-}
 
 /// <p>Represents a single occurrence of something interesting within the system. Some examples of events are creating a cluster, adding or removing a cache node, or rebooting a node.</p>
 #[non_exhaustive]
@@ -12173,6 +12228,13 @@ impl Event {
         self.date.as_ref()
     }
 }
+impl Event {
+    /// Creates a new builder-style object to manufacture [`Event`](crate::model::Event).
+    pub fn builder() -> crate::model::event::Builder {
+        crate::model::event::Builder::default()
+    }
+}
+
 /// See [`Event`](crate::model::Event).
 pub mod event {
 
@@ -12241,12 +12303,6 @@ pub mod event {
                 date: self.date,
             }
         }
-    }
-}
-impl Event {
-    /// Creates a new builder-style object to manufacture [`Event`](crate::model::Event).
-    pub fn builder() -> crate::model::event::Builder {
-        crate::model::event::Builder::default()
     }
 }
 
@@ -12413,6 +12469,13 @@ impl EngineDefaults {
         self.cache_node_type_specific_parameters.as_deref()
     }
 }
+impl EngineDefaults {
+    /// Creates a new builder-style object to manufacture [`EngineDefaults`](crate::model::EngineDefaults).
+    pub fn builder() -> crate::model::engine_defaults::Builder {
+        crate::model::engine_defaults::Builder::default()
+    }
+}
+
 /// See [`EngineDefaults`](crate::model::EngineDefaults).
 pub mod engine_defaults {
 
@@ -12507,12 +12570,6 @@ pub mod engine_defaults {
         }
     }
 }
-impl EngineDefaults {
-    /// Creates a new builder-style object to manufacture [`EngineDefaults`](crate::model::EngineDefaults).
-    pub fn builder() -> crate::model::engine_defaults::Builder {
-        crate::model::engine_defaults::Builder::default()
-    }
-}
 
 /// <p>A parameter that has a different value for each cache node type it is applied to. For example, in a Redis cluster, a <code>cache.m1.large</code> cache node type would have a larger <code>maxmemory</code> value than a <code>cache.m1.small</code> type.</p>
 #[non_exhaustive]
@@ -12587,6 +12644,13 @@ impl CacheNodeTypeSpecificParameter {
         self.change_type.as_ref()
     }
 }
+impl CacheNodeTypeSpecificParameter {
+    /// Creates a new builder-style object to manufacture [`CacheNodeTypeSpecificParameter`](crate::model::CacheNodeTypeSpecificParameter).
+    pub fn builder() -> crate::model::cache_node_type_specific_parameter::Builder {
+        crate::model::cache_node_type_specific_parameter::Builder::default()
+    }
+}
+
 /// See [`CacheNodeTypeSpecificParameter`](crate::model::CacheNodeTypeSpecificParameter).
 pub mod cache_node_type_specific_parameter {
 
@@ -12736,12 +12800,6 @@ pub mod cache_node_type_specific_parameter {
         }
     }
 }
-impl CacheNodeTypeSpecificParameter {
-    /// Creates a new builder-style object to manufacture [`CacheNodeTypeSpecificParameter`](crate::model::CacheNodeTypeSpecificParameter).
-    pub fn builder() -> crate::model::cache_node_type_specific_parameter::Builder {
-        crate::model::cache_node_type_specific_parameter::Builder::default()
-    }
-}
 
 /// When writing a match expression against `ChangeType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -12854,6 +12912,13 @@ impl CacheNodeTypeSpecificValue {
         self.value.as_deref()
     }
 }
+impl CacheNodeTypeSpecificValue {
+    /// Creates a new builder-style object to manufacture [`CacheNodeTypeSpecificValue`](crate::model::CacheNodeTypeSpecificValue).
+    pub fn builder() -> crate::model::cache_node_type_specific_value::Builder {
+        crate::model::cache_node_type_specific_value::Builder::default()
+    }
+}
+
 /// See [`CacheNodeTypeSpecificValue`](crate::model::CacheNodeTypeSpecificValue).
 pub mod cache_node_type_specific_value {
 
@@ -12895,12 +12960,6 @@ pub mod cache_node_type_specific_value {
                 value: self.value,
             }
         }
-    }
-}
-impl CacheNodeTypeSpecificValue {
-    /// Creates a new builder-style object to manufacture [`CacheNodeTypeSpecificValue`](crate::model::CacheNodeTypeSpecificValue).
-    pub fn builder() -> crate::model::cache_node_type_specific_value::Builder {
-        crate::model::cache_node_type_specific_value::Builder::default()
     }
 }
 
@@ -12974,6 +13033,13 @@ impl Parameter {
         self.change_type.as_ref()
     }
 }
+impl Parameter {
+    /// Creates a new builder-style object to manufacture [`Parameter`](crate::model::Parameter).
+    pub fn builder() -> crate::model::parameter::Builder {
+        crate::model::parameter::Builder::default()
+    }
+}
+
 /// See [`Parameter`](crate::model::Parameter).
 pub mod parameter {
 
@@ -13113,12 +13179,6 @@ pub mod parameter {
         }
     }
 }
-impl Parameter {
-    /// Creates a new builder-style object to manufacture [`Parameter`](crate::model::Parameter).
-    pub fn builder() -> crate::model::parameter::Builder {
-        crate::model::parameter::Builder::default()
-    }
-}
 
 /// <p>Represents the output of a <code>CreateCacheParameterGroup</code> operation.</p>
 #[non_exhaustive]
@@ -13164,6 +13224,13 @@ impl CacheParameterGroup {
         self.arn.as_deref()
     }
 }
+impl CacheParameterGroup {
+    /// Creates a new builder-style object to manufacture [`CacheParameterGroup`](crate::model::CacheParameterGroup).
+    pub fn builder() -> crate::model::cache_parameter_group::Builder {
+        crate::model::cache_parameter_group::Builder::default()
+    }
+}
+
 /// See [`CacheParameterGroup`](crate::model::CacheParameterGroup).
 pub mod cache_parameter_group {
 
@@ -13251,12 +13318,6 @@ pub mod cache_parameter_group {
         }
     }
 }
-impl CacheParameterGroup {
-    /// Creates a new builder-style object to manufacture [`CacheParameterGroup`](crate::model::CacheParameterGroup).
-    pub fn builder() -> crate::model::cache_parameter_group::Builder {
-        crate::model::cache_parameter_group::Builder::default()
-    }
-}
 
 /// <p>Provides all of the details about a particular cache engine version.</p>
 #[non_exhaustive]
@@ -13302,6 +13363,13 @@ impl CacheEngineVersion {
         self.cache_engine_version_description.as_deref()
     }
 }
+impl CacheEngineVersion {
+    /// Creates a new builder-style object to manufacture [`CacheEngineVersion`](crate::model::CacheEngineVersion).
+    pub fn builder() -> crate::model::cache_engine_version::Builder {
+        crate::model::cache_engine_version::Builder::default()
+    }
+}
+
 /// See [`CacheEngineVersion`](crate::model::CacheEngineVersion).
 pub mod cache_engine_version {
 
@@ -13396,12 +13464,6 @@ pub mod cache_engine_version {
                 cache_engine_version_description: self.cache_engine_version_description,
             }
         }
-    }
-}
-impl CacheEngineVersion {
-    /// Creates a new builder-style object to manufacture [`CacheEngineVersion`](crate::model::CacheEngineVersion).
-    pub fn builder() -> crate::model::cache_engine_version::Builder {
-        crate::model::cache_engine_version::Builder::default()
     }
 }
 
@@ -13537,6 +13599,13 @@ impl UnprocessedUpdateAction {
         self.error_message.as_deref()
     }
 }
+impl UnprocessedUpdateAction {
+    /// Creates a new builder-style object to manufacture [`UnprocessedUpdateAction`](crate::model::UnprocessedUpdateAction).
+    pub fn builder() -> crate::model::unprocessed_update_action::Builder {
+        crate::model::unprocessed_update_action::Builder::default()
+    }
+}
+
 /// See [`UnprocessedUpdateAction`](crate::model::UnprocessedUpdateAction).
 pub mod unprocessed_update_action {
 
@@ -13625,12 +13694,6 @@ pub mod unprocessed_update_action {
         }
     }
 }
-impl UnprocessedUpdateAction {
-    /// Creates a new builder-style object to manufacture [`UnprocessedUpdateAction`](crate::model::UnprocessedUpdateAction).
-    pub fn builder() -> crate::model::unprocessed_update_action::Builder {
-        crate::model::unprocessed_update_action::Builder::default()
-    }
-}
 
 /// <p>Update action that has been processed for the corresponding apply/stop request</p>
 #[non_exhaustive]
@@ -13667,6 +13730,13 @@ impl ProcessedUpdateAction {
         self.update_action_status.as_ref()
     }
 }
+impl ProcessedUpdateAction {
+    /// Creates a new builder-style object to manufacture [`ProcessedUpdateAction`](crate::model::ProcessedUpdateAction).
+    pub fn builder() -> crate::model::processed_update_action::Builder {
+        crate::model::processed_update_action::Builder::default()
+    }
+}
+
 /// See [`ProcessedUpdateAction`](crate::model::ProcessedUpdateAction).
 pub mod processed_update_action {
 
@@ -13741,11 +13811,5 @@ pub mod processed_update_action {
                 update_action_status: self.update_action_status,
             }
         }
-    }
-}
-impl ProcessedUpdateAction {
-    /// Creates a new builder-style object to manufacture [`ProcessedUpdateAction`](crate::model::ProcessedUpdateAction).
-    pub fn builder() -> crate::model::processed_update_action::Builder {
-        crate::model::processed_update_action::Builder::default()
     }
 }

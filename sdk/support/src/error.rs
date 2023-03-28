@@ -126,11 +126,41 @@ pub struct InternalServerError {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl InternalServerError {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for InternalServerError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "InternalServerError")?;
+        if let Some(inner_1) = &self.message {
+            {
+                write!(f, ": {}", inner_1)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for InternalServerError {}
+impl aws_http::request_id::RequestId for crate::error::InternalServerError {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InternalServerError {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl InternalServerError {
     /// Creates a new builder-style object to manufacture [`InternalServerError`](crate::error::InternalServerError).
     pub fn builder() -> crate::error::internal_server_error::Builder {
         crate::error::internal_server_error::Builder::default()
     }
 }
+
 /// See [`InternalServerError`](crate::error::InternalServerError).
 pub mod internal_server_error {
 
@@ -175,35 +205,6 @@ pub mod internal_server_error {
         }
     }
 }
-impl InternalServerError {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for InternalServerError {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "InternalServerError")?;
-        if let Some(inner_1) = &self.message {
-            {
-                write!(f, ": {}", inner_1)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for InternalServerError {}
-impl aws_http::request_id::RequestId for crate::error::InternalServerError {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InternalServerError {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>The requested <code>caseId</code> couldn't be located.</p>
 #[non_exhaustive]
@@ -215,11 +216,41 @@ pub struct CaseIdNotFound {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl CaseIdNotFound {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for CaseIdNotFound {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "CaseIdNotFound")?;
+        if let Some(inner_2) = &self.message {
+            {
+                write!(f, ": {}", inner_2)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for CaseIdNotFound {}
+impl aws_http::request_id::RequestId for crate::error::CaseIdNotFound {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for CaseIdNotFound {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl CaseIdNotFound {
     /// Creates a new builder-style object to manufacture [`CaseIdNotFound`](crate::error::CaseIdNotFound).
     pub fn builder() -> crate::error::case_id_not_found::Builder {
         crate::error::case_id_not_found::Builder::default()
     }
 }
+
 /// See [`CaseIdNotFound`](crate::error::CaseIdNotFound).
 pub mod case_id_not_found {
 
@@ -262,35 +293,6 @@ pub mod case_id_not_found {
                 meta: self.meta.unwrap_or_default(),
             }
         }
-    }
-}
-impl CaseIdNotFound {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for CaseIdNotFound {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "CaseIdNotFound")?;
-        if let Some(inner_2) = &self.message {
-            {
-                write!(f, ": {}", inner_2)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for CaseIdNotFound {}
-impl aws_http::request_id::RequestId for crate::error::CaseIdNotFound {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for CaseIdNotFound {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
     }
 }
 
@@ -1413,11 +1415,41 @@ pub struct DescribeAttachmentLimitExceeded {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl DescribeAttachmentLimitExceeded {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for DescribeAttachmentLimitExceeded {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "DescribeAttachmentLimitExceeded")?;
+        if let Some(inner_3) = &self.message {
+            {
+                write!(f, ": {}", inner_3)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for DescribeAttachmentLimitExceeded {}
+impl aws_http::request_id::RequestId for crate::error::DescribeAttachmentLimitExceeded {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for DescribeAttachmentLimitExceeded {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl DescribeAttachmentLimitExceeded {
     /// Creates a new builder-style object to manufacture [`DescribeAttachmentLimitExceeded`](crate::error::DescribeAttachmentLimitExceeded).
     pub fn builder() -> crate::error::describe_attachment_limit_exceeded::Builder {
         crate::error::describe_attachment_limit_exceeded::Builder::default()
     }
 }
+
 /// See [`DescribeAttachmentLimitExceeded`](crate::error::DescribeAttachmentLimitExceeded).
 pub mod describe_attachment_limit_exceeded {
 
@@ -1462,35 +1494,6 @@ pub mod describe_attachment_limit_exceeded {
         }
     }
 }
-impl DescribeAttachmentLimitExceeded {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for DescribeAttachmentLimitExceeded {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "DescribeAttachmentLimitExceeded")?;
-        if let Some(inner_3) = &self.message {
-            {
-                write!(f, ": {}", inner_3)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for DescribeAttachmentLimitExceeded {}
-impl aws_http::request_id::RequestId for crate::error::DescribeAttachmentLimitExceeded {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for DescribeAttachmentLimitExceeded {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>An attachment with the specified ID could not be found.</p>
 #[non_exhaustive]
@@ -1502,11 +1505,41 @@ pub struct AttachmentIdNotFound {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl AttachmentIdNotFound {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for AttachmentIdNotFound {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "AttachmentIdNotFound")?;
+        if let Some(inner_4) = &self.message {
+            {
+                write!(f, ": {}", inner_4)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for AttachmentIdNotFound {}
+impl aws_http::request_id::RequestId for crate::error::AttachmentIdNotFound {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for AttachmentIdNotFound {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl AttachmentIdNotFound {
     /// Creates a new builder-style object to manufacture [`AttachmentIdNotFound`](crate::error::AttachmentIdNotFound).
     pub fn builder() -> crate::error::attachment_id_not_found::Builder {
         crate::error::attachment_id_not_found::Builder::default()
     }
 }
+
 /// See [`AttachmentIdNotFound`](crate::error::AttachmentIdNotFound).
 pub mod attachment_id_not_found {
 
@@ -1549,35 +1582,6 @@ pub mod attachment_id_not_found {
                 meta: self.meta.unwrap_or_default(),
             }
         }
-    }
-}
-impl AttachmentIdNotFound {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for AttachmentIdNotFound {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "AttachmentIdNotFound")?;
-        if let Some(inner_4) = &self.message {
-            {
-                write!(f, ": {}", inner_4)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for AttachmentIdNotFound {}
-impl aws_http::request_id::RequestId for crate::error::AttachmentIdNotFound {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for AttachmentIdNotFound {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
     }
 }
 
@@ -1732,11 +1736,41 @@ pub struct CaseCreationLimitExceeded {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl CaseCreationLimitExceeded {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for CaseCreationLimitExceeded {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "CaseCreationLimitExceeded")?;
+        if let Some(inner_5) = &self.message {
+            {
+                write!(f, ": {}", inner_5)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for CaseCreationLimitExceeded {}
+impl aws_http::request_id::RequestId for crate::error::CaseCreationLimitExceeded {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for CaseCreationLimitExceeded {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl CaseCreationLimitExceeded {
     /// Creates a new builder-style object to manufacture [`CaseCreationLimitExceeded`](crate::error::CaseCreationLimitExceeded).
     pub fn builder() -> crate::error::case_creation_limit_exceeded::Builder {
         crate::error::case_creation_limit_exceeded::Builder::default()
     }
 }
+
 /// See [`CaseCreationLimitExceeded`](crate::error::CaseCreationLimitExceeded).
 pub mod case_creation_limit_exceeded {
 
@@ -1781,35 +1815,6 @@ pub mod case_creation_limit_exceeded {
         }
     }
 }
-impl CaseCreationLimitExceeded {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for CaseCreationLimitExceeded {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "CaseCreationLimitExceeded")?;
-        if let Some(inner_5) = &self.message {
-            {
-                write!(f, ": {}", inner_5)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for CaseCreationLimitExceeded {}
-impl aws_http::request_id::RequestId for crate::error::CaseCreationLimitExceeded {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for CaseCreationLimitExceeded {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>An attachment set with the specified ID could not be found.</p>
 #[non_exhaustive]
@@ -1821,11 +1826,41 @@ pub struct AttachmentSetIdNotFound {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl AttachmentSetIdNotFound {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for AttachmentSetIdNotFound {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "AttachmentSetIdNotFound")?;
+        if let Some(inner_6) = &self.message {
+            {
+                write!(f, ": {}", inner_6)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for AttachmentSetIdNotFound {}
+impl aws_http::request_id::RequestId for crate::error::AttachmentSetIdNotFound {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for AttachmentSetIdNotFound {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl AttachmentSetIdNotFound {
     /// Creates a new builder-style object to manufacture [`AttachmentSetIdNotFound`](crate::error::AttachmentSetIdNotFound).
     pub fn builder() -> crate::error::attachment_set_id_not_found::Builder {
         crate::error::attachment_set_id_not_found::Builder::default()
     }
 }
+
 /// See [`AttachmentSetIdNotFound`](crate::error::AttachmentSetIdNotFound).
 pub mod attachment_set_id_not_found {
 
@@ -1870,35 +1905,6 @@ pub mod attachment_set_id_not_found {
         }
     }
 }
-impl AttachmentSetIdNotFound {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for AttachmentSetIdNotFound {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "AttachmentSetIdNotFound")?;
-        if let Some(inner_6) = &self.message {
-            {
-                write!(f, ": {}", inner_6)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for AttachmentSetIdNotFound {}
-impl aws_http::request_id::RequestId for crate::error::AttachmentSetIdNotFound {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for AttachmentSetIdNotFound {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>The expiration time of the attachment set has passed. The set expires 1 hour after it is created.</p>
 #[non_exhaustive]
@@ -1910,11 +1916,41 @@ pub struct AttachmentSetExpired {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl AttachmentSetExpired {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for AttachmentSetExpired {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "AttachmentSetExpired")?;
+        if let Some(inner_7) = &self.message {
+            {
+                write!(f, ": {}", inner_7)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for AttachmentSetExpired {}
+impl aws_http::request_id::RequestId for crate::error::AttachmentSetExpired {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for AttachmentSetExpired {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl AttachmentSetExpired {
     /// Creates a new builder-style object to manufacture [`AttachmentSetExpired`](crate::error::AttachmentSetExpired).
     pub fn builder() -> crate::error::attachment_set_expired::Builder {
         crate::error::attachment_set_expired::Builder::default()
     }
 }
+
 /// See [`AttachmentSetExpired`](crate::error::AttachmentSetExpired).
 pub mod attachment_set_expired {
 
@@ -1957,35 +1993,6 @@ pub mod attachment_set_expired {
                 meta: self.meta.unwrap_or_default(),
             }
         }
-    }
-}
-impl AttachmentSetExpired {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for AttachmentSetExpired {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "AttachmentSetExpired")?;
-        if let Some(inner_7) = &self.message {
-            {
-                write!(f, ": {}", inner_7)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for AttachmentSetExpired {}
-impl aws_http::request_id::RequestId for crate::error::AttachmentSetExpired {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for AttachmentSetExpired {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
     }
 }
 
@@ -2293,11 +2300,41 @@ pub struct AttachmentSetSizeLimitExceeded {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl AttachmentSetSizeLimitExceeded {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for AttachmentSetSizeLimitExceeded {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "AttachmentSetSizeLimitExceeded")?;
+        if let Some(inner_8) = &self.message {
+            {
+                write!(f, ": {}", inner_8)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for AttachmentSetSizeLimitExceeded {}
+impl aws_http::request_id::RequestId for crate::error::AttachmentSetSizeLimitExceeded {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for AttachmentSetSizeLimitExceeded {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl AttachmentSetSizeLimitExceeded {
     /// Creates a new builder-style object to manufacture [`AttachmentSetSizeLimitExceeded`](crate::error::AttachmentSetSizeLimitExceeded).
     pub fn builder() -> crate::error::attachment_set_size_limit_exceeded::Builder {
         crate::error::attachment_set_size_limit_exceeded::Builder::default()
     }
 }
+
 /// See [`AttachmentSetSizeLimitExceeded`](crate::error::AttachmentSetSizeLimitExceeded).
 pub mod attachment_set_size_limit_exceeded {
 
@@ -2342,35 +2379,6 @@ pub mod attachment_set_size_limit_exceeded {
         }
     }
 }
-impl AttachmentSetSizeLimitExceeded {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for AttachmentSetSizeLimitExceeded {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "AttachmentSetSizeLimitExceeded")?;
-        if let Some(inner_8) = &self.message {
-            {
-                write!(f, ": {}", inner_8)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for AttachmentSetSizeLimitExceeded {}
-impl aws_http::request_id::RequestId for crate::error::AttachmentSetSizeLimitExceeded {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for AttachmentSetSizeLimitExceeded {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>The limit for the number of attachment sets created in a short period of time has been exceeded.</p>
 #[non_exhaustive]
@@ -2382,11 +2390,41 @@ pub struct AttachmentLimitExceeded {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl AttachmentLimitExceeded {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for AttachmentLimitExceeded {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "AttachmentLimitExceeded")?;
+        if let Some(inner_9) = &self.message {
+            {
+                write!(f, ": {}", inner_9)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for AttachmentLimitExceeded {}
+impl aws_http::request_id::RequestId for crate::error::AttachmentLimitExceeded {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for AttachmentLimitExceeded {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl AttachmentLimitExceeded {
     /// Creates a new builder-style object to manufacture [`AttachmentLimitExceeded`](crate::error::AttachmentLimitExceeded).
     pub fn builder() -> crate::error::attachment_limit_exceeded::Builder {
         crate::error::attachment_limit_exceeded::Builder::default()
     }
 }
+
 /// See [`AttachmentLimitExceeded`](crate::error::AttachmentLimitExceeded).
 pub mod attachment_limit_exceeded {
 
@@ -2429,34 +2467,5 @@ pub mod attachment_limit_exceeded {
                 meta: self.meta.unwrap_or_default(),
             }
         }
-    }
-}
-impl AttachmentLimitExceeded {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for AttachmentLimitExceeded {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "AttachmentLimitExceeded")?;
-        if let Some(inner_9) = &self.message {
-            {
-                write!(f, ": {}", inner_9)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for AttachmentLimitExceeded {}
-impl aws_http::request_id::RequestId for crate::error::AttachmentLimitExceeded {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for AttachmentLimitExceeded {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
     }
 }

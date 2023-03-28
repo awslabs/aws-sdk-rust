@@ -10,6 +10,13 @@ impl aws_http::request_id::RequestId for UpdateServiceIntegrationOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdateServiceIntegrationOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateServiceIntegrationOutput`](crate::output::UpdateServiceIntegrationOutput).
+    pub fn builder() -> crate::output::update_service_integration_output::Builder {
+        crate::output::update_service_integration_output::Builder::default()
+    }
+}
+
 /// See [`UpdateServiceIntegrationOutput`](crate::output::UpdateServiceIntegrationOutput).
 pub mod update_service_integration_output {
 
@@ -37,12 +44,6 @@ pub mod update_service_integration_output {
         }
     }
 }
-impl UpdateServiceIntegrationOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateServiceIntegrationOutput`](crate::output::UpdateServiceIntegrationOutput).
-    pub fn builder() -> crate::output::update_service_integration_output::Builder {
-        crate::output::update_service_integration_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -55,6 +56,13 @@ impl aws_http::request_id::RequestId for UpdateResourceCollectionOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdateResourceCollectionOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateResourceCollectionOutput`](crate::output::UpdateResourceCollectionOutput).
+    pub fn builder() -> crate::output::update_resource_collection_output::Builder {
+        crate::output::update_resource_collection_output::Builder::default()
+    }
+}
+
 /// See [`UpdateResourceCollectionOutput`](crate::output::UpdateResourceCollectionOutput).
 pub mod update_resource_collection_output {
 
@@ -82,12 +90,6 @@ pub mod update_resource_collection_output {
         }
     }
 }
-impl UpdateResourceCollectionOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateResourceCollectionOutput`](crate::output::UpdateResourceCollectionOutput).
-    pub fn builder() -> crate::output::update_resource_collection_output::Builder {
-        crate::output::update_resource_collection_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -100,6 +102,13 @@ impl aws_http::request_id::RequestId for UpdateEventSourcesConfigOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdateEventSourcesConfigOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateEventSourcesConfigOutput`](crate::output::UpdateEventSourcesConfigOutput).
+    pub fn builder() -> crate::output::update_event_sources_config_output::Builder {
+        crate::output::update_event_sources_config_output::Builder::default()
+    }
+}
+
 /// See [`UpdateEventSourcesConfigOutput`](crate::output::UpdateEventSourcesConfigOutput).
 pub mod update_event_sources_config_output {
 
@@ -127,12 +136,6 @@ pub mod update_event_sources_config_output {
         }
     }
 }
-impl UpdateEventSourcesConfigOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateEventSourcesConfigOutput`](crate::output::UpdateEventSourcesConfigOutput).
-    pub fn builder() -> crate::output::update_event_sources_config_output::Builder {
-        crate::output::update_event_sources_config_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -145,6 +148,13 @@ impl aws_http::request_id::RequestId for StartCostEstimationOutput {
         self._request_id.as_deref()
     }
 }
+impl StartCostEstimationOutput {
+    /// Creates a new builder-style object to manufacture [`StartCostEstimationOutput`](crate::output::StartCostEstimationOutput).
+    pub fn builder() -> crate::output::start_cost_estimation_output::Builder {
+        crate::output::start_cost_estimation_output::Builder::default()
+    }
+}
+
 /// See [`StartCostEstimationOutput`](crate::output::StartCostEstimationOutput).
 pub mod start_cost_estimation_output {
 
@@ -170,12 +180,6 @@ pub mod start_cost_estimation_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl StartCostEstimationOutput {
-    /// Creates a new builder-style object to manufacture [`StartCostEstimationOutput`](crate::output::StartCostEstimationOutput).
-    pub fn builder() -> crate::output::start_cost_estimation_output::Builder {
-        crate::output::start_cost_estimation_output::Builder::default()
     }
 }
 
@@ -218,6 +222,13 @@ impl aws_http::request_id::RequestId for SearchOrganizationInsightsOutput {
         self._request_id.as_deref()
     }
 }
+impl SearchOrganizationInsightsOutput {
+    /// Creates a new builder-style object to manufacture [`SearchOrganizationInsightsOutput`](crate::output::SearchOrganizationInsightsOutput).
+    pub fn builder() -> crate::output::search_organization_insights_output::Builder {
+        crate::output::search_organization_insights_output::Builder::default()
+    }
+}
+
 /// See [`SearchOrganizationInsightsOutput`](crate::output::SearchOrganizationInsightsOutput).
 pub mod search_organization_insights_output {
 
@@ -301,12 +312,6 @@ pub mod search_organization_insights_output {
         }
     }
 }
-impl SearchOrganizationInsightsOutput {
-    /// Creates a new builder-style object to manufacture [`SearchOrganizationInsightsOutput`](crate::output::SearchOrganizationInsightsOutput).
-    pub fn builder() -> crate::output::search_organization_insights_output::Builder {
-        crate::output::search_organization_insights_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -347,6 +352,13 @@ impl aws_http::request_id::RequestId for SearchInsightsOutput {
         self._request_id.as_deref()
     }
 }
+impl SearchInsightsOutput {
+    /// Creates a new builder-style object to manufacture [`SearchInsightsOutput`](crate::output::SearchInsightsOutput).
+    pub fn builder() -> crate::output::search_insights_output::Builder {
+        crate::output::search_insights_output::Builder::default()
+    }
+}
+
 /// See [`SearchInsightsOutput`](crate::output::SearchInsightsOutput).
 pub mod search_insights_output {
 
@@ -430,12 +442,6 @@ pub mod search_insights_output {
         }
     }
 }
-impl SearchInsightsOutput {
-    /// Creates a new builder-style object to manufacture [`SearchInsightsOutput`](crate::output::SearchInsightsOutput).
-    pub fn builder() -> crate::output::search_insights_output::Builder {
-        crate::output::search_insights_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -448,6 +454,13 @@ impl aws_http::request_id::RequestId for RemoveNotificationChannelOutput {
         self._request_id.as_deref()
     }
 }
+impl RemoveNotificationChannelOutput {
+    /// Creates a new builder-style object to manufacture [`RemoveNotificationChannelOutput`](crate::output::RemoveNotificationChannelOutput).
+    pub fn builder() -> crate::output::remove_notification_channel_output::Builder {
+        crate::output::remove_notification_channel_output::Builder::default()
+    }
+}
+
 /// See [`RemoveNotificationChannelOutput`](crate::output::RemoveNotificationChannelOutput).
 pub mod remove_notification_channel_output {
 
@@ -475,12 +488,6 @@ pub mod remove_notification_channel_output {
         }
     }
 }
-impl RemoveNotificationChannelOutput {
-    /// Creates a new builder-style object to manufacture [`RemoveNotificationChannelOutput`](crate::output::RemoveNotificationChannelOutput).
-    pub fn builder() -> crate::output::remove_notification_channel_output::Builder {
-        crate::output::remove_notification_channel_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -493,6 +500,13 @@ impl aws_http::request_id::RequestId for PutFeedbackOutput {
         self._request_id.as_deref()
     }
 }
+impl PutFeedbackOutput {
+    /// Creates a new builder-style object to manufacture [`PutFeedbackOutput`](crate::output::PutFeedbackOutput).
+    pub fn builder() -> crate::output::put_feedback_output::Builder {
+        crate::output::put_feedback_output::Builder::default()
+    }
+}
+
 /// See [`PutFeedbackOutput`](crate::output::PutFeedbackOutput).
 pub mod put_feedback_output {
 
@@ -518,12 +532,6 @@ pub mod put_feedback_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl PutFeedbackOutput {
-    /// Creates a new builder-style object to manufacture [`PutFeedbackOutput`](crate::output::PutFeedbackOutput).
-    pub fn builder() -> crate::output::put_feedback_output::Builder {
-        crate::output::put_feedback_output::Builder::default()
     }
 }
 
@@ -554,6 +562,13 @@ impl aws_http::request_id::RequestId for ListRecommendationsOutput {
         self._request_id.as_deref()
     }
 }
+impl ListRecommendationsOutput {
+    /// Creates a new builder-style object to manufacture [`ListRecommendationsOutput`](crate::output::ListRecommendationsOutput).
+    pub fn builder() -> crate::output::list_recommendations_output::Builder {
+        crate::output::list_recommendations_output::Builder::default()
+    }
+}
+
 /// See [`ListRecommendationsOutput`](crate::output::ListRecommendationsOutput).
 pub mod list_recommendations_output {
 
@@ -615,12 +630,6 @@ pub mod list_recommendations_output {
         }
     }
 }
-impl ListRecommendationsOutput {
-    /// Creates a new builder-style object to manufacture [`ListRecommendationsOutput`](crate::output::ListRecommendationsOutput).
-    pub fn builder() -> crate::output::list_recommendations_output::Builder {
-        crate::output::list_recommendations_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -662,6 +671,13 @@ impl aws_http::request_id::RequestId for ListOrganizationInsightsOutput {
         self._request_id.as_deref()
     }
 }
+impl ListOrganizationInsightsOutput {
+    /// Creates a new builder-style object to manufacture [`ListOrganizationInsightsOutput`](crate::output::ListOrganizationInsightsOutput).
+    pub fn builder() -> crate::output::list_organization_insights_output::Builder {
+        crate::output::list_organization_insights_output::Builder::default()
+    }
+}
+
 /// See [`ListOrganizationInsightsOutput`](crate::output::ListOrganizationInsightsOutput).
 pub mod list_organization_insights_output {
 
@@ -755,12 +771,6 @@ pub mod list_organization_insights_output {
         }
     }
 }
-impl ListOrganizationInsightsOutput {
-    /// Creates a new builder-style object to manufacture [`ListOrganizationInsightsOutput`](crate::output::ListOrganizationInsightsOutput).
-    pub fn builder() -> crate::output::list_organization_insights_output::Builder {
-        crate::output::list_organization_insights_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -789,6 +799,13 @@ impl aws_http::request_id::RequestId for ListNotificationChannelsOutput {
         self._request_id.as_deref()
     }
 }
+impl ListNotificationChannelsOutput {
+    /// Creates a new builder-style object to manufacture [`ListNotificationChannelsOutput`](crate::output::ListNotificationChannelsOutput).
+    pub fn builder() -> crate::output::list_notification_channels_output::Builder {
+        crate::output::list_notification_channels_output::Builder::default()
+    }
+}
+
 /// See [`ListNotificationChannelsOutput`](crate::output::ListNotificationChannelsOutput).
 pub mod list_notification_channels_output {
 
@@ -849,12 +866,6 @@ pub mod list_notification_channels_output {
         }
     }
 }
-impl ListNotificationChannelsOutput {
-    /// Creates a new builder-style object to manufacture [`ListNotificationChannelsOutput`](crate::output::ListNotificationChannelsOutput).
-    pub fn builder() -> crate::output::list_notification_channels_output::Builder {
-        crate::output::list_notification_channels_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -886,6 +897,13 @@ impl aws_http::request_id::RequestId for ListMonitoredResourcesOutput {
         self._request_id.as_deref()
     }
 }
+impl ListMonitoredResourcesOutput {
+    /// Creates a new builder-style object to manufacture [`ListMonitoredResourcesOutput`](crate::output::ListMonitoredResourcesOutput).
+    pub fn builder() -> crate::output::list_monitored_resources_output::Builder {
+        crate::output::list_monitored_resources_output::Builder::default()
+    }
+}
+
 /// See [`ListMonitoredResourcesOutput`](crate::output::ListMonitoredResourcesOutput).
 pub mod list_monitored_resources_output {
 
@@ -950,12 +968,6 @@ pub mod list_monitored_resources_output {
         }
     }
 }
-impl ListMonitoredResourcesOutput {
-    /// Creates a new builder-style object to manufacture [`ListMonitoredResourcesOutput`](crate::output::ListMonitoredResourcesOutput).
-    pub fn builder() -> crate::output::list_monitored_resources_output::Builder {
-        crate::output::list_monitored_resources_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -996,6 +1008,13 @@ impl aws_http::request_id::RequestId for ListInsightsOutput {
         self._request_id.as_deref()
     }
 }
+impl ListInsightsOutput {
+    /// Creates a new builder-style object to manufacture [`ListInsightsOutput`](crate::output::ListInsightsOutput).
+    pub fn builder() -> crate::output::list_insights_output::Builder {
+        crate::output::list_insights_output::Builder::default()
+    }
+}
+
 /// See [`ListInsightsOutput`](crate::output::ListInsightsOutput).
 pub mod list_insights_output {
 
@@ -1079,12 +1098,6 @@ pub mod list_insights_output {
         }
     }
 }
-impl ListInsightsOutput {
-    /// Creates a new builder-style object to manufacture [`ListInsightsOutput`](crate::output::ListInsightsOutput).
-    pub fn builder() -> crate::output::list_insights_output::Builder {
-        crate::output::list_insights_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1113,6 +1126,13 @@ impl aws_http::request_id::RequestId for ListEventsOutput {
         self._request_id.as_deref()
     }
 }
+impl ListEventsOutput {
+    /// Creates a new builder-style object to manufacture [`ListEventsOutput`](crate::output::ListEventsOutput).
+    pub fn builder() -> crate::output::list_events_output::Builder {
+        crate::output::list_events_output::Builder::default()
+    }
+}
+
 /// See [`ListEventsOutput`](crate::output::ListEventsOutput).
 pub mod list_events_output {
 
@@ -1173,12 +1193,6 @@ pub mod list_events_output {
         }
     }
 }
-impl ListEventsOutput {
-    /// Creates a new builder-style object to manufacture [`ListEventsOutput`](crate::output::ListEventsOutput).
-    pub fn builder() -> crate::output::list_events_output::Builder {
-        crate::output::list_events_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1214,6 +1228,13 @@ impl aws_http::request_id::RequestId for ListAnomalousLogGroupsOutput {
         self._request_id.as_deref()
     }
 }
+impl ListAnomalousLogGroupsOutput {
+    /// Creates a new builder-style object to manufacture [`ListAnomalousLogGroupsOutput`](crate::output::ListAnomalousLogGroupsOutput).
+    pub fn builder() -> crate::output::list_anomalous_log_groups_output::Builder {
+        crate::output::list_anomalous_log_groups_output::Builder::default()
+    }
+}
+
 /// See [`ListAnomalousLogGroupsOutput`](crate::output::ListAnomalousLogGroupsOutput).
 pub mod list_anomalous_log_groups_output {
 
@@ -1287,12 +1308,6 @@ pub mod list_anomalous_log_groups_output {
         }
     }
 }
-impl ListAnomalousLogGroupsOutput {
-    /// Creates a new builder-style object to manufacture [`ListAnomalousLogGroupsOutput`](crate::output::ListAnomalousLogGroupsOutput).
-    pub fn builder() -> crate::output::list_anomalous_log_groups_output::Builder {
-        crate::output::list_anomalous_log_groups_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1334,6 +1349,13 @@ impl aws_http::request_id::RequestId for ListAnomaliesForInsightOutput {
         self._request_id.as_deref()
     }
 }
+impl ListAnomaliesForInsightOutput {
+    /// Creates a new builder-style object to manufacture [`ListAnomaliesForInsightOutput`](crate::output::ListAnomaliesForInsightOutput).
+    pub fn builder() -> crate::output::list_anomalies_for_insight_output::Builder {
+        crate::output::list_anomalies_for_insight_output::Builder::default()
+    }
+}
+
 /// See [`ListAnomaliesForInsightOutput`](crate::output::ListAnomaliesForInsightOutput).
 pub mod list_anomalies_for_insight_output {
 
@@ -1417,12 +1439,6 @@ pub mod list_anomalies_for_insight_output {
         }
     }
 }
-impl ListAnomaliesForInsightOutput {
-    /// Creates a new builder-style object to manufacture [`ListAnomaliesForInsightOutput`](crate::output::ListAnomaliesForInsightOutput).
-    pub fn builder() -> crate::output::list_anomalies_for_insight_output::Builder {
-        crate::output::list_anomalies_for_insight_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1453,6 +1469,13 @@ impl aws_http::request_id::RequestId for GetResourceCollectionOutput {
         self._request_id.as_deref()
     }
 }
+impl GetResourceCollectionOutput {
+    /// Creates a new builder-style object to manufacture [`GetResourceCollectionOutput`](crate::output::GetResourceCollectionOutput).
+    pub fn builder() -> crate::output::get_resource_collection_output::Builder {
+        crate::output::get_resource_collection_output::Builder::default()
+    }
+}
+
 /// See [`GetResourceCollectionOutput`](crate::output::GetResourceCollectionOutput).
 pub mod get_resource_collection_output {
 
@@ -1508,12 +1531,6 @@ pub mod get_resource_collection_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl GetResourceCollectionOutput {
-    /// Creates a new builder-style object to manufacture [`GetResourceCollectionOutput`](crate::output::GetResourceCollectionOutput).
-    pub fn builder() -> crate::output::get_resource_collection_output::Builder {
-        crate::output::get_resource_collection_output::Builder::default()
     }
 }
 
@@ -1575,6 +1592,13 @@ impl aws_http::request_id::RequestId for GetCostEstimationOutput {
         self._request_id.as_deref()
     }
 }
+impl GetCostEstimationOutput {
+    /// Creates a new builder-style object to manufacture [`GetCostEstimationOutput`](crate::output::GetCostEstimationOutput).
+    pub fn builder() -> crate::output::get_cost_estimation_output::Builder {
+        crate::output::get_cost_estimation_output::Builder::default()
+    }
+}
+
 /// See [`GetCostEstimationOutput`](crate::output::GetCostEstimationOutput).
 pub mod get_cost_estimation_output {
 
@@ -1696,12 +1720,6 @@ pub mod get_cost_estimation_output {
         }
     }
 }
-impl GetCostEstimationOutput {
-    /// Creates a new builder-style object to manufacture [`GetCostEstimationOutput`](crate::output::GetCostEstimationOutput).
-    pub fn builder() -> crate::output::get_cost_estimation_output::Builder {
-        crate::output::get_cost_estimation_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1725,6 +1743,13 @@ impl aws_http::request_id::RequestId for DescribeServiceIntegrationOutput {
         self._request_id.as_deref()
     }
 }
+impl DescribeServiceIntegrationOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeServiceIntegrationOutput`](crate::output::DescribeServiceIntegrationOutput).
+    pub fn builder() -> crate::output::describe_service_integration_output::Builder {
+        crate::output::describe_service_integration_output::Builder::default()
+    }
+}
+
 /// See [`DescribeServiceIntegrationOutput`](crate::output::DescribeServiceIntegrationOutput).
 pub mod describe_service_integration_output {
 
@@ -1768,12 +1793,6 @@ pub mod describe_service_integration_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl DescribeServiceIntegrationOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeServiceIntegrationOutput`](crate::output::DescribeServiceIntegrationOutput).
-    pub fn builder() -> crate::output::describe_service_integration_output::Builder {
-        crate::output::describe_service_integration_output::Builder::default()
     }
 }
 
@@ -1836,6 +1855,13 @@ impl aws_http::request_id::RequestId for DescribeResourceCollectionHealthOutput 
         self._request_id.as_deref()
     }
 }
+impl DescribeResourceCollectionHealthOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeResourceCollectionHealthOutput`](crate::output::DescribeResourceCollectionHealthOutput).
+    pub fn builder() -> crate::output::describe_resource_collection_health_output::Builder {
+        crate::output::describe_resource_collection_health_output::Builder::default()
+    }
+}
+
 /// See [`DescribeResourceCollectionHealthOutput`](crate::output::DescribeResourceCollectionHealthOutput).
 pub mod describe_resource_collection_health_output {
 
@@ -1957,12 +1983,6 @@ pub mod describe_resource_collection_health_output {
         }
     }
 }
-impl DescribeResourceCollectionHealthOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeResourceCollectionHealthOutput`](crate::output::DescribeResourceCollectionHealthOutput).
-    pub fn builder() -> crate::output::describe_resource_collection_health_output::Builder {
-        crate::output::describe_resource_collection_health_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2028,6 +2048,14 @@ impl aws_http::request_id::RequestId for DescribeOrganizationResourceCollectionH
         self._request_id.as_deref()
     }
 }
+impl DescribeOrganizationResourceCollectionHealthOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeOrganizationResourceCollectionHealthOutput`](crate::output::DescribeOrganizationResourceCollectionHealthOutput).
+    pub fn builder(
+    ) -> crate::output::describe_organization_resource_collection_health_output::Builder {
+        crate::output::describe_organization_resource_collection_health_output::Builder::default()
+    }
+}
+
 /// See [`DescribeOrganizationResourceCollectionHealthOutput`](crate::output::DescribeOrganizationResourceCollectionHealthOutput).
 pub mod describe_organization_resource_collection_health_output {
 
@@ -2168,13 +2196,6 @@ pub mod describe_organization_resource_collection_health_output {
         }
     }
 }
-impl DescribeOrganizationResourceCollectionHealthOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeOrganizationResourceCollectionHealthOutput`](crate::output::DescribeOrganizationResourceCollectionHealthOutput).
-    pub fn builder(
-    ) -> crate::output::describe_organization_resource_collection_health_output::Builder {
-        crate::output::describe_organization_resource_collection_health_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2203,6 +2224,13 @@ impl aws_http::request_id::RequestId for DescribeOrganizationOverviewOutput {
         self._request_id.as_deref()
     }
 }
+impl DescribeOrganizationOverviewOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeOrganizationOverviewOutput`](crate::output::DescribeOrganizationOverviewOutput).
+    pub fn builder() -> crate::output::describe_organization_overview_output::Builder {
+        crate::output::describe_organization_overview_output::Builder::default()
+    }
+}
+
 /// See [`DescribeOrganizationOverviewOutput`](crate::output::DescribeOrganizationOverviewOutput).
 pub mod describe_organization_overview_output {
 
@@ -2254,12 +2282,6 @@ pub mod describe_organization_overview_output {
         }
     }
 }
-impl DescribeOrganizationOverviewOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeOrganizationOverviewOutput`](crate::output::DescribeOrganizationOverviewOutput).
-    pub fn builder() -> crate::output::describe_organization_overview_output::Builder {
-        crate::output::describe_organization_overview_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2302,6 +2324,13 @@ impl aws_http::request_id::RequestId for DescribeOrganizationHealthOutput {
         self._request_id.as_deref()
     }
 }
+impl DescribeOrganizationHealthOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeOrganizationHealthOutput`](crate::output::DescribeOrganizationHealthOutput).
+    pub fn builder() -> crate::output::describe_organization_health_output::Builder {
+        crate::output::describe_organization_health_output::Builder::default()
+    }
+}
+
 /// See [`DescribeOrganizationHealthOutput`](crate::output::DescribeOrganizationHealthOutput).
 pub mod describe_organization_health_output {
 
@@ -2377,12 +2406,6 @@ pub mod describe_organization_health_output {
         }
     }
 }
-impl DescribeOrganizationHealthOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeOrganizationHealthOutput`](crate::output::DescribeOrganizationHealthOutput).
-    pub fn builder() -> crate::output::describe_organization_health_output::Builder {
-        crate::output::describe_organization_health_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2411,6 +2434,13 @@ impl aws_http::request_id::RequestId for DescribeInsightOutput {
         self._request_id.as_deref()
     }
 }
+impl DescribeInsightOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeInsightOutput`](crate::output::DescribeInsightOutput).
+    pub fn builder() -> crate::output::describe_insight_output::Builder {
+        crate::output::describe_insight_output::Builder::default()
+    }
+}
+
 /// See [`DescribeInsightOutput`](crate::output::DescribeInsightOutput).
 pub mod describe_insight_output {
 
@@ -2468,12 +2498,6 @@ pub mod describe_insight_output {
         }
     }
 }
-impl DescribeInsightOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeInsightOutput`](crate::output::DescribeInsightOutput).
-    pub fn builder() -> crate::output::describe_insight_output::Builder {
-        crate::output::describe_insight_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2495,6 +2519,13 @@ impl aws_http::request_id::RequestId for DescribeFeedbackOutput {
         self._request_id.as_deref()
     }
 }
+impl DescribeFeedbackOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeFeedbackOutput`](crate::output::DescribeFeedbackOutput).
+    pub fn builder() -> crate::output::describe_feedback_output::Builder {
+        crate::output::describe_feedback_output::Builder::default()
+    }
+}
+
 /// See [`DescribeFeedbackOutput`](crate::output::DescribeFeedbackOutput).
 pub mod describe_feedback_output {
 
@@ -2537,12 +2568,6 @@ pub mod describe_feedback_output {
         }
     }
 }
-impl DescribeFeedbackOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeFeedbackOutput`](crate::output::DescribeFeedbackOutput).
-    pub fn builder() -> crate::output::describe_feedback_output::Builder {
-        crate::output::describe_feedback_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2564,6 +2589,13 @@ impl aws_http::request_id::RequestId for DescribeEventSourcesConfigOutput {
         self._request_id.as_deref()
     }
 }
+impl DescribeEventSourcesConfigOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeEventSourcesConfigOutput`](crate::output::DescribeEventSourcesConfigOutput).
+    pub fn builder() -> crate::output::describe_event_sources_config_output::Builder {
+        crate::output::describe_event_sources_config_output::Builder::default()
+    }
+}
+
 /// See [`DescribeEventSourcesConfigOutput`](crate::output::DescribeEventSourcesConfigOutput).
 pub mod describe_event_sources_config_output {
 
@@ -2606,12 +2638,6 @@ pub mod describe_event_sources_config_output {
         }
     }
 }
-impl DescribeEventSourcesConfigOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeEventSourcesConfigOutput`](crate::output::DescribeEventSourcesConfigOutput).
-    pub fn builder() -> crate::output::describe_event_sources_config_output::Builder {
-        crate::output::describe_event_sources_config_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2640,6 +2666,13 @@ impl aws_http::request_id::RequestId for DescribeAnomalyOutput {
         self._request_id.as_deref()
     }
 }
+impl DescribeAnomalyOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeAnomalyOutput`](crate::output::DescribeAnomalyOutput).
+    pub fn builder() -> crate::output::describe_anomaly_output::Builder {
+        crate::output::describe_anomaly_output::Builder::default()
+    }
+}
+
 /// See [`DescribeAnomalyOutput`](crate::output::DescribeAnomalyOutput).
 pub mod describe_anomaly_output {
 
@@ -2697,12 +2730,6 @@ pub mod describe_anomaly_output {
         }
     }
 }
-impl DescribeAnomalyOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeAnomalyOutput`](crate::output::DescribeAnomalyOutput).
-    pub fn builder() -> crate::output::describe_anomaly_output::Builder {
-        crate::output::describe_anomaly_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2738,6 +2765,13 @@ impl aws_http::request_id::RequestId for DescribeAccountOverviewOutput {
         self._request_id.as_deref()
     }
 }
+impl DescribeAccountOverviewOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeAccountOverviewOutput`](crate::output::DescribeAccountOverviewOutput).
+    pub fn builder() -> crate::output::describe_account_overview_output::Builder {
+        crate::output::describe_account_overview_output::Builder::default()
+    }
+}
+
 /// See [`DescribeAccountOverviewOutput`](crate::output::DescribeAccountOverviewOutput).
 pub mod describe_account_overview_output {
 
@@ -2804,12 +2838,6 @@ pub mod describe_account_overview_output {
         }
     }
 }
-impl DescribeAccountOverviewOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeAccountOverviewOutput`](crate::output::DescribeAccountOverviewOutput).
-    pub fn builder() -> crate::output::describe_account_overview_output::Builder {
-        crate::output::describe_account_overview_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2859,6 +2887,13 @@ impl aws_http::request_id::RequestId for DescribeAccountHealthOutput {
         self._request_id.as_deref()
     }
 }
+impl DescribeAccountHealthOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeAccountHealthOutput`](crate::output::DescribeAccountHealthOutput).
+    pub fn builder() -> crate::output::describe_account_health_output::Builder {
+        crate::output::describe_account_health_output::Builder::default()
+    }
+}
+
 /// See [`DescribeAccountHealthOutput`](crate::output::DescribeAccountHealthOutput).
 pub mod describe_account_health_output {
 
@@ -2946,12 +2981,6 @@ pub mod describe_account_health_output {
         }
     }
 }
-impl DescribeAccountHealthOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeAccountHealthOutput`](crate::output::DescribeAccountHealthOutput).
-    pub fn builder() -> crate::output::describe_account_health_output::Builder {
-        crate::output::describe_account_health_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2964,6 +2993,13 @@ impl aws_http::request_id::RequestId for DeleteInsightOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteInsightOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteInsightOutput`](crate::output::DeleteInsightOutput).
+    pub fn builder() -> crate::output::delete_insight_output::Builder {
+        crate::output::delete_insight_output::Builder::default()
+    }
+}
+
 /// See [`DeleteInsightOutput`](crate::output::DeleteInsightOutput).
 pub mod delete_insight_output {
 
@@ -2991,12 +3027,6 @@ pub mod delete_insight_output {
         }
     }
 }
-impl DeleteInsightOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteInsightOutput`](crate::output::DeleteInsightOutput).
-    pub fn builder() -> crate::output::delete_insight_output::Builder {
-        crate::output::delete_insight_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3018,6 +3048,13 @@ impl aws_http::request_id::RequestId for AddNotificationChannelOutput {
         self._request_id.as_deref()
     }
 }
+impl AddNotificationChannelOutput {
+    /// Creates a new builder-style object to manufacture [`AddNotificationChannelOutput`](crate::output::AddNotificationChannelOutput).
+    pub fn builder() -> crate::output::add_notification_channel_output::Builder {
+        crate::output::add_notification_channel_output::Builder::default()
+    }
+}
+
 /// See [`AddNotificationChannelOutput`](crate::output::AddNotificationChannelOutput).
 pub mod add_notification_channel_output {
 
@@ -3055,11 +3092,5 @@ pub mod add_notification_channel_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl AddNotificationChannelOutput {
-    /// Creates a new builder-style object to manufacture [`AddNotificationChannelOutput`](crate::output::AddNotificationChannelOutput).
-    pub fn builder() -> crate::output::add_notification_channel_output::Builder {
-        crate::output::add_notification_channel_output::Builder::default()
     }
 }

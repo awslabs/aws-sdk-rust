@@ -21,6 +21,13 @@ impl ValidationExceptionField {
         self.message.as_deref()
     }
 }
+impl ValidationExceptionField {
+    /// Creates a new builder-style object to manufacture [`ValidationExceptionField`](crate::model::ValidationExceptionField).
+    pub fn builder() -> crate::model::validation_exception_field::Builder {
+        crate::model::validation_exception_field::Builder::default()
+    }
+}
+
 /// See [`ValidationExceptionField`](crate::model::ValidationExceptionField).
 pub mod validation_exception_field {
 
@@ -61,12 +68,6 @@ pub mod validation_exception_field {
         }
     }
 }
-impl ValidationExceptionField {
-    /// Creates a new builder-style object to manufacture [`ValidationExceptionField`](crate::model::ValidationExceptionField).
-    pub fn builder() -> crate::model::validation_exception_field::Builder {
-        crate::model::validation_exception_field::Builder::default()
-    }
-}
 
 /// <p>A validation exception error argument.</p>
 #[non_exhaustive]
@@ -89,6 +90,13 @@ impl ValidationExceptionErrorArgument {
         self.value.as_deref()
     }
 }
+impl ValidationExceptionErrorArgument {
+    /// Creates a new builder-style object to manufacture [`ValidationExceptionErrorArgument`](crate::model::ValidationExceptionErrorArgument).
+    pub fn builder() -> crate::model::validation_exception_error_argument::Builder {
+        crate::model::validation_exception_error_argument::Builder::default()
+    }
+}
+
 /// See [`ValidationExceptionErrorArgument`](crate::model::ValidationExceptionErrorArgument).
 pub mod validation_exception_error_argument {
 
@@ -127,12 +135,6 @@ pub mod validation_exception_error_argument {
                 value: self.value,
             }
         }
-    }
-}
-impl ValidationExceptionErrorArgument {
-    /// Creates a new builder-style object to manufacture [`ValidationExceptionErrorArgument`](crate::model::ValidationExceptionErrorArgument).
-    pub fn builder() -> crate::model::validation_exception_error_argument::Builder {
-        crate::model::validation_exception_error_argument::Builder::default()
     }
 }
 
@@ -264,6 +266,13 @@ impl ConflictExceptionErrorArgument {
         self.value.as_deref()
     }
 }
+impl ConflictExceptionErrorArgument {
+    /// Creates a new builder-style object to manufacture [`ConflictExceptionErrorArgument`](crate::model::ConflictExceptionErrorArgument).
+    pub fn builder() -> crate::model::conflict_exception_error_argument::Builder {
+        crate::model::conflict_exception_error_argument::Builder::default()
+    }
+}
+
 /// See [`ConflictExceptionErrorArgument`](crate::model::ConflictExceptionErrorArgument).
 pub mod conflict_exception_error_argument {
 
@@ -304,12 +313,6 @@ pub mod conflict_exception_error_argument {
         }
     }
 }
-impl ConflictExceptionErrorArgument {
-    /// Creates a new builder-style object to manufacture [`ConflictExceptionErrorArgument`](crate::model::ConflictExceptionErrorArgument).
-    pub fn builder() -> crate::model::conflict_exception_error_argument::Builder {
-        crate::model::conflict_exception_error_argument::Builder::default()
-    }
-}
 
 /// <p>A signal to a camera node to start or stop processing video.</p>
 #[non_exhaustive]
@@ -332,6 +335,13 @@ impl NodeSignal {
         self.signal.as_ref()
     }
 }
+impl NodeSignal {
+    /// Creates a new builder-style object to manufacture [`NodeSignal`](crate::model::NodeSignal).
+    pub fn builder() -> crate::model::node_signal::Builder {
+        crate::model::node_signal::Builder::default()
+    }
+}
+
 /// See [`NodeSignal`](crate::model::NodeSignal).
 pub mod node_signal {
 
@@ -376,12 +386,6 @@ pub mod node_signal {
                 signal: self.signal,
             }
         }
-    }
-}
-impl NodeSignal {
-    /// Creates a new builder-style object to manufacture [`NodeSignal`](crate::model::NodeSignal).
-    pub fn builder() -> crate::model::node_signal::Builder {
-        crate::model::node_signal::Builder::default()
     }
 }
 
@@ -620,6 +624,13 @@ impl NetworkPayload {
         self.ntp.as_ref()
     }
 }
+impl NetworkPayload {
+    /// Creates a new builder-style object to manufacture [`NetworkPayload`](crate::model::NetworkPayload).
+    pub fn builder() -> crate::model::network_payload::Builder {
+        crate::model::network_payload::Builder::default()
+    }
+}
+
 /// See [`NetworkPayload`](crate::model::NetworkPayload).
 pub mod network_payload {
 
@@ -678,12 +689,6 @@ pub mod network_payload {
         }
     }
 }
-impl NetworkPayload {
-    /// Creates a new builder-style object to manufacture [`NetworkPayload`](crate::model::NetworkPayload).
-    pub fn builder() -> crate::model::network_payload::Builder {
-        crate::model::network_payload::Builder::default()
-    }
-}
 
 /// <p>Network time protocol (NTP) server settings. Use this option to connect to local NTP servers instead of <code>pool.ntp.org</code>.</p>
 #[non_exhaustive]
@@ -699,6 +704,13 @@ impl NtpPayload {
         self.ntp_servers.as_deref()
     }
 }
+impl NtpPayload {
+    /// Creates a new builder-style object to manufacture [`NtpPayload`](crate::model::NtpPayload).
+    pub fn builder() -> crate::model::ntp_payload::Builder {
+        crate::model::ntp_payload::Builder::default()
+    }
+}
+
 /// See [`NtpPayload`](crate::model::NtpPayload).
 pub mod ntp_payload {
 
@@ -736,12 +748,6 @@ pub mod ntp_payload {
         }
     }
 }
-impl NtpPayload {
-    /// Creates a new builder-style object to manufacture [`NtpPayload`](crate::model::NtpPayload).
-    pub fn builder() -> crate::model::ntp_payload::Builder {
-        crate::model::ntp_payload::Builder::default()
-    }
-}
 
 /// <p>A device's network configuration.</p>
 #[non_exhaustive]
@@ -766,6 +772,13 @@ impl EthernetPayload {
         self.static_ip_connection_info.as_ref()
     }
 }
+impl EthernetPayload {
+    /// Creates a new builder-style object to manufacture [`EthernetPayload`](crate::model::EthernetPayload).
+    pub fn builder() -> crate::model::ethernet_payload::Builder {
+        crate::model::ethernet_payload::Builder::default()
+    }
+}
+
 /// See [`EthernetPayload`](crate::model::EthernetPayload).
 pub mod ethernet_payload {
 
@@ -816,12 +829,6 @@ pub mod ethernet_payload {
         }
     }
 }
-impl EthernetPayload {
-    /// Creates a new builder-style object to manufacture [`EthernetPayload`](crate::model::EthernetPayload).
-    pub fn builder() -> crate::model::ethernet_payload::Builder {
-        crate::model::ethernet_payload::Builder::default()
-    }
-}
 
 /// <p>A static IP configuration.</p>
 #[non_exhaustive]
@@ -858,6 +865,13 @@ impl StaticIpConnectionInfo {
         self.default_gateway.as_deref()
     }
 }
+impl StaticIpConnectionInfo {
+    /// Creates a new builder-style object to manufacture [`StaticIpConnectionInfo`](crate::model::StaticIpConnectionInfo).
+    pub fn builder() -> crate::model::static_ip_connection_info::Builder {
+        crate::model::static_ip_connection_info::Builder::default()
+    }
+}
+
 /// See [`StaticIpConnectionInfo`](crate::model::StaticIpConnectionInfo).
 pub mod static_ip_connection_info {
 
@@ -932,12 +946,6 @@ pub mod static_ip_connection_info {
                 default_gateway: self.default_gateway,
             }
         }
-    }
-}
-impl StaticIpConnectionInfo {
-    /// Creates a new builder-style object to manufacture [`StaticIpConnectionInfo`](crate::model::StaticIpConnectionInfo).
-    pub fn builder() -> crate::model::static_ip_connection_info::Builder {
-        crate::model::static_ip_connection_info::Builder::default()
     }
 }
 
@@ -1077,6 +1085,13 @@ impl PackageListItem {
         self.tags.as_ref()
     }
 }
+impl PackageListItem {
+    /// Creates a new builder-style object to manufacture [`PackageListItem`](crate::model::PackageListItem).
+    pub fn builder() -> crate::model::package_list_item::Builder {
+        crate::model::package_list_item::Builder::default()
+    }
+}
+
 /// See [`PackageListItem`](crate::model::PackageListItem).
 pub mod package_list_item {
 
@@ -1173,12 +1188,6 @@ pub mod package_list_item {
         }
     }
 }
-impl PackageListItem {
-    /// Creates a new builder-style object to manufacture [`PackageListItem`](crate::model::PackageListItem).
-    pub fn builder() -> crate::model::package_list_item::Builder {
-        crate::model::package_list_item::Builder::default()
-    }
-}
 
 /// <p>A job to import a package version.</p>
 #[non_exhaustive]
@@ -1229,6 +1238,13 @@ impl PackageImportJob {
         self.last_updated_time.as_ref()
     }
 }
+impl PackageImportJob {
+    /// Creates a new builder-style object to manufacture [`PackageImportJob`](crate::model::PackageImportJob).
+    pub fn builder() -> crate::model::package_import_job::Builder {
+        crate::model::package_import_job::Builder::default()
+    }
+}
+
 /// See [`PackageImportJob`](crate::model::PackageImportJob).
 pub mod package_import_job {
 
@@ -1330,12 +1346,6 @@ pub mod package_import_job {
                 last_updated_time: self.last_updated_time,
             }
         }
-    }
-}
-impl PackageImportJob {
-    /// Creates a new builder-style object to manufacture [`PackageImportJob`](crate::model::PackageImportJob).
-    pub fn builder() -> crate::model::package_import_job::Builder {
-        crate::model::package_import_job::Builder::default()
     }
 }
 
@@ -1616,6 +1626,13 @@ impl Node {
         self.created_time.as_ref()
     }
 }
+impl Node {
+    /// Creates a new builder-style object to manufacture [`Node`](crate::model::Node).
+    pub fn builder() -> crate::model::node::Builder {
+        crate::model::node::Builder::default()
+    }
+}
+
 /// See [`Node`](crate::model::Node).
 pub mod node {
 
@@ -1779,12 +1796,6 @@ pub mod node {
         }
     }
 }
-impl Node {
-    /// Creates a new builder-style object to manufacture [`Node`](crate::model::Node).
-    pub fn builder() -> crate::model::node::Builder {
-        crate::model::node::Builder::default()
-    }
-}
 
 /// When writing a match expression against `NodeCategory`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -1935,6 +1946,13 @@ impl NodeFromTemplateJob {
         self.node_name.as_deref()
     }
 }
+impl NodeFromTemplateJob {
+    /// Creates a new builder-style object to manufacture [`NodeFromTemplateJob`](crate::model::NodeFromTemplateJob).
+    pub fn builder() -> crate::model::node_from_template_job::Builder {
+        crate::model::node_from_template_job::Builder::default()
+    }
+}
+
 /// See [`NodeFromTemplateJob`](crate::model::NodeFromTemplateJob).
 pub mod node_from_template_job {
 
@@ -2033,12 +2051,6 @@ pub mod node_from_template_job {
                 node_name: self.node_name,
             }
         }
-    }
-}
-impl NodeFromTemplateJob {
-    /// Creates a new builder-style object to manufacture [`NodeFromTemplateJob`](crate::model::NodeFromTemplateJob).
-    pub fn builder() -> crate::model::node_from_template_job::Builder {
-        crate::model::node_from_template_job::Builder::default()
     }
 }
 
@@ -2266,6 +2278,13 @@ impl DeviceJob {
         self.job_type.as_ref()
     }
 }
+impl DeviceJob {
+    /// Creates a new builder-style object to manufacture [`DeviceJob`](crate::model::DeviceJob).
+    pub fn builder() -> crate::model::device_job::Builder {
+        crate::model::device_job::Builder::default()
+    }
+}
+
 /// See [`DeviceJob`](crate::model::DeviceJob).
 pub mod device_job {
 
@@ -2343,12 +2362,6 @@ pub mod device_job {
                 job_type: self.job_type,
             }
         }
-    }
-}
-impl DeviceJob {
-    /// Creates a new builder-style object to manufacture [`DeviceJob`](crate::model::DeviceJob).
-    pub fn builder() -> crate::model::device_job::Builder {
-        crate::model::device_job::Builder::default()
     }
 }
 
@@ -2546,6 +2559,13 @@ impl Device {
         self.device_aggregated_status.as_ref()
     }
 }
+impl Device {
+    /// Creates a new builder-style object to manufacture [`Device`](crate::model::Device).
+    pub fn builder() -> crate::model::device::Builder {
+        crate::model::device::Builder::default()
+    }
+}
+
 /// See [`Device`](crate::model::Device).
 pub mod device {
 
@@ -2760,12 +2780,6 @@ pub mod device {
         }
     }
 }
-impl Device {
-    /// Creates a new builder-style object to manufacture [`Device`](crate::model::Device).
-    pub fn builder() -> crate::model::device::Builder {
-        crate::model::device::Builder::default()
-    }
-}
 
 /// When writing a match expression against `DeviceAggregatedStatus`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -2938,6 +2952,13 @@ impl LatestDeviceJob {
         self.job_type.as_ref()
     }
 }
+impl LatestDeviceJob {
+    /// Creates a new builder-style object to manufacture [`LatestDeviceJob`](crate::model::LatestDeviceJob).
+    pub fn builder() -> crate::model::latest_device_job::Builder {
+        crate::model::latest_device_job::Builder::default()
+    }
+}
+
 /// See [`LatestDeviceJob`](crate::model::LatestDeviceJob).
 pub mod latest_device_job {
 
@@ -2994,12 +3015,6 @@ pub mod latest_device_job {
                 job_type: self.job_type,
             }
         }
-    }
-}
-impl LatestDeviceJob {
-    /// Creates a new builder-style object to manufacture [`LatestDeviceJob`](crate::model::LatestDeviceJob).
-    pub fn builder() -> crate::model::latest_device_job::Builder {
-        crate::model::latest_device_job::Builder::default()
     }
 }
 
@@ -3603,6 +3618,13 @@ impl ApplicationInstance {
         self.runtime_context_states.as_deref()
     }
 }
+impl ApplicationInstance {
+    /// Creates a new builder-style object to manufacture [`ApplicationInstance`](crate::model::ApplicationInstance).
+    pub fn builder() -> crate::model::application_instance::Builder {
+        crate::model::application_instance::Builder::default()
+    }
+}
+
 /// See [`ApplicationInstance`](crate::model::ApplicationInstance).
 pub mod application_instance {
 
@@ -3824,12 +3846,6 @@ pub mod application_instance {
         }
     }
 }
-impl ApplicationInstance {
-    /// Creates a new builder-style object to manufacture [`ApplicationInstance`](crate::model::ApplicationInstance).
-    pub fn builder() -> crate::model::application_instance::Builder {
-        crate::model::application_instance::Builder::default()
-    }
-}
 
 /// <p>An application instance's state.</p>
 #[non_exhaustive]
@@ -3868,6 +3884,13 @@ impl ReportedRuntimeContextState {
         self.device_reported_time.as_ref()
     }
 }
+impl ReportedRuntimeContextState {
+    /// Creates a new builder-style object to manufacture [`ReportedRuntimeContextState`](crate::model::ReportedRuntimeContextState).
+    pub fn builder() -> crate::model::reported_runtime_context_state::Builder {
+        crate::model::reported_runtime_context_state::Builder::default()
+    }
+}
+
 /// See [`ReportedRuntimeContextState`](crate::model::ReportedRuntimeContextState).
 pub mod reported_runtime_context_state {
 
@@ -3942,12 +3965,6 @@ pub mod reported_runtime_context_state {
                 device_reported_time: self.device_reported_time,
             }
         }
-    }
-}
-impl ReportedRuntimeContextState {
-    /// Creates a new builder-style object to manufacture [`ReportedRuntimeContextState`](crate::model::ReportedRuntimeContextState).
-    pub fn builder() -> crate::model::reported_runtime_context_state::Builder {
-        crate::model::reported_runtime_context_state::Builder::default()
     }
 }
 
@@ -4620,6 +4637,13 @@ impl NodeInstance {
         self.current_status.as_ref()
     }
 }
+impl NodeInstance {
+    /// Creates a new builder-style object to manufacture [`NodeInstance`](crate::model::NodeInstance).
+    pub fn builder() -> crate::model::node_instance::Builder {
+        crate::model::node_instance::Builder::default()
+    }
+}
+
 /// See [`NodeInstance`](crate::model::NodeInstance).
 pub mod node_instance {
 
@@ -4730,12 +4754,6 @@ pub mod node_instance {
                 current_status: self.current_status,
             }
         }
-    }
-}
-impl NodeInstance {
-    /// Creates a new builder-style object to manufacture [`NodeInstance`](crate::model::NodeInstance).
-    pub fn builder() -> crate::model::node_instance::Builder {
-        crate::model::node_instance::Builder::default()
     }
 }
 
@@ -4869,6 +4887,13 @@ impl PackageObject {
         self.patch_version.as_deref()
     }
 }
+impl PackageObject {
+    /// Creates a new builder-style object to manufacture [`PackageObject`](crate::model::PackageObject).
+    pub fn builder() -> crate::model::package_object::Builder {
+        crate::model::package_object::Builder::default()
+    }
+}
+
 /// See [`PackageObject`](crate::model::PackageObject).
 pub mod package_object {
 
@@ -4925,12 +4950,6 @@ pub mod package_object {
                 patch_version: self.patch_version,
             }
         }
-    }
-}
-impl PackageObject {
-    /// Creates a new builder-style object to manufacture [`PackageObject`](crate::model::PackageObject).
-    pub fn builder() -> crate::model::package_object::Builder {
-        crate::model::package_object::Builder::default()
     }
 }
 
@@ -5066,6 +5085,13 @@ impl JobResourceTags {
         self.tags.as_ref()
     }
 }
+impl JobResourceTags {
+    /// Creates a new builder-style object to manufacture [`JobResourceTags`](crate::model::JobResourceTags).
+    pub fn builder() -> crate::model::job_resource_tags::Builder {
+        crate::model::job_resource_tags::Builder::default()
+    }
+}
+
 /// See [`JobResourceTags`](crate::model::JobResourceTags).
 pub mod job_resource_tags {
 
@@ -5124,12 +5150,6 @@ pub mod job_resource_tags {
                 tags: self.tags,
             }
         }
-    }
-}
-impl JobResourceTags {
-    /// Creates a new builder-style object to manufacture [`JobResourceTags`](crate::model::JobResourceTags).
-    pub fn builder() -> crate::model::job_resource_tags::Builder {
-        crate::model::job_resource_tags::Builder::default()
     }
 }
 
@@ -5253,6 +5273,13 @@ impl PackageImportJobOutput {
         self.output_s3_location.as_ref()
     }
 }
+impl PackageImportJobOutput {
+    /// Creates a new builder-style object to manufacture [`PackageImportJobOutput`](crate::model::PackageImportJobOutput).
+    pub fn builder() -> crate::model::package_import_job_output::Builder {
+        crate::model::package_import_job_output::Builder::default()
+    }
+}
+
 /// See [`PackageImportJobOutput`](crate::model::PackageImportJobOutput).
 pub mod package_import_job_output {
 
@@ -5326,12 +5353,6 @@ pub mod package_import_job_output {
         }
     }
 }
-impl PackageImportJobOutput {
-    /// Creates a new builder-style object to manufacture [`PackageImportJobOutput`](crate::model::PackageImportJobOutput).
-    pub fn builder() -> crate::model::package_import_job_output::Builder {
-        crate::model::package_import_job_output::Builder::default()
-    }
-}
 
 /// <p>The location of an output object in Amazon S3.</p>
 #[non_exhaustive]
@@ -5354,6 +5375,13 @@ impl OutPutS3Location {
         self.object_key.as_deref()
     }
 }
+impl OutPutS3Location {
+    /// Creates a new builder-style object to manufacture [`OutPutS3Location`](crate::model::OutPutS3Location).
+    pub fn builder() -> crate::model::out_put_s3_location::Builder {
+        crate::model::out_put_s3_location::Builder::default()
+    }
+}
+
 /// See [`OutPutS3Location`](crate::model::OutPutS3Location).
 pub mod out_put_s3_location {
 
@@ -5394,12 +5422,6 @@ pub mod out_put_s3_location {
         }
     }
 }
-impl OutPutS3Location {
-    /// Creates a new builder-style object to manufacture [`OutPutS3Location`](crate::model::OutPutS3Location).
-    pub fn builder() -> crate::model::out_put_s3_location::Builder {
-        crate::model::out_put_s3_location::Builder::default()
-    }
-}
 
 /// <p>An output configuration for a package import job.</p>
 #[non_exhaustive]
@@ -5418,6 +5440,13 @@ impl PackageImportJobOutputConfig {
         self.package_version_output_config.as_ref()
     }
 }
+impl PackageImportJobOutputConfig {
+    /// Creates a new builder-style object to manufacture [`PackageImportJobOutputConfig`](crate::model::PackageImportJobOutputConfig).
+    pub fn builder() -> crate::model::package_import_job_output_config::Builder {
+        crate::model::package_import_job_output_config::Builder::default()
+    }
+}
+
 /// See [`PackageImportJobOutputConfig`](crate::model::PackageImportJobOutputConfig).
 pub mod package_import_job_output_config {
 
@@ -5453,12 +5482,6 @@ pub mod package_import_job_output_config {
         }
     }
 }
-impl PackageImportJobOutputConfig {
-    /// Creates a new builder-style object to manufacture [`PackageImportJobOutputConfig`](crate::model::PackageImportJobOutputConfig).
-    pub fn builder() -> crate::model::package_import_job_output_config::Builder {
-        crate::model::package_import_job_output_config::Builder::default()
-    }
-}
 
 /// <p>A package version output configuration.</p>
 #[non_exhaustive]
@@ -5488,6 +5511,13 @@ impl PackageVersionOutputConfig {
         self.mark_latest
     }
 }
+impl PackageVersionOutputConfig {
+    /// Creates a new builder-style object to manufacture [`PackageVersionOutputConfig`](crate::model::PackageVersionOutputConfig).
+    pub fn builder() -> crate::model::package_version_output_config::Builder {
+        crate::model::package_version_output_config::Builder::default()
+    }
+}
+
 /// See [`PackageVersionOutputConfig`](crate::model::PackageVersionOutputConfig).
 pub mod package_version_output_config {
 
@@ -5543,12 +5573,6 @@ pub mod package_version_output_config {
         }
     }
 }
-impl PackageVersionOutputConfig {
-    /// Creates a new builder-style object to manufacture [`PackageVersionOutputConfig`](crate::model::PackageVersionOutputConfig).
-    pub fn builder() -> crate::model::package_version_output_config::Builder {
-        crate::model::package_version_output_config::Builder::default()
-    }
-}
 
 /// <p>A configuration for a package import job.</p>
 #[non_exhaustive]
@@ -5566,6 +5590,13 @@ impl PackageImportJobInputConfig {
         self.package_version_input_config.as_ref()
     }
 }
+impl PackageImportJobInputConfig {
+    /// Creates a new builder-style object to manufacture [`PackageImportJobInputConfig`](crate::model::PackageImportJobInputConfig).
+    pub fn builder() -> crate::model::package_import_job_input_config::Builder {
+        crate::model::package_import_job_input_config::Builder::default()
+    }
+}
+
 /// See [`PackageImportJobInputConfig`](crate::model::PackageImportJobInputConfig).
 pub mod package_import_job_input_config {
 
@@ -5601,12 +5632,6 @@ pub mod package_import_job_input_config {
         }
     }
 }
-impl PackageImportJobInputConfig {
-    /// Creates a new builder-style object to manufacture [`PackageImportJobInputConfig`](crate::model::PackageImportJobInputConfig).
-    pub fn builder() -> crate::model::package_import_job_input_config::Builder {
-        crate::model::package_import_job_input_config::Builder::default()
-    }
-}
 
 /// <p>A package version input configuration.</p>
 #[non_exhaustive]
@@ -5622,6 +5647,13 @@ impl PackageVersionInputConfig {
         self.s3_location.as_ref()
     }
 }
+impl PackageVersionInputConfig {
+    /// Creates a new builder-style object to manufacture [`PackageVersionInputConfig`](crate::model::PackageVersionInputConfig).
+    pub fn builder() -> crate::model::package_version_input_config::Builder {
+        crate::model::package_version_input_config::Builder::default()
+    }
+}
+
 /// See [`PackageVersionInputConfig`](crate::model::PackageVersionInputConfig).
 pub mod package_version_input_config {
 
@@ -5653,12 +5685,6 @@ pub mod package_version_input_config {
         }
     }
 }
-impl PackageVersionInputConfig {
-    /// Creates a new builder-style object to manufacture [`PackageVersionInputConfig`](crate::model::PackageVersionInputConfig).
-    pub fn builder() -> crate::model::package_version_input_config::Builder {
-        crate::model::package_version_input_config::Builder::default()
-    }
-}
 
 /// <p>A location in Amazon S3.</p>
 #[non_exhaustive]
@@ -5688,6 +5714,13 @@ impl S3Location {
         self.object_key.as_deref()
     }
 }
+impl S3Location {
+    /// Creates a new builder-style object to manufacture [`S3Location`](crate::model::S3Location).
+    pub fn builder() -> crate::model::s3_location::Builder {
+        crate::model::s3_location::Builder::default()
+    }
+}
+
 /// See [`S3Location`](crate::model::S3Location).
 pub mod s3_location {
 
@@ -5740,12 +5773,6 @@ pub mod s3_location {
         }
     }
 }
-impl S3Location {
-    /// Creates a new builder-style object to manufacture [`S3Location`](crate::model::S3Location).
-    pub fn builder() -> crate::model::s3_location::Builder {
-        crate::model::s3_location::Builder::default()
-    }
-}
 
 /// <p>A storage location.</p>
 #[non_exhaustive]
@@ -5789,6 +5816,13 @@ impl StorageLocation {
         self.manifest_prefix_location.as_deref()
     }
 }
+impl StorageLocation {
+    /// Creates a new builder-style object to manufacture [`StorageLocation`](crate::model::StorageLocation).
+    pub fn builder() -> crate::model::storage_location::Builder {
+        crate::model::storage_location::Builder::default()
+    }
+}
+
 /// See [`StorageLocation`](crate::model::StorageLocation).
 pub mod storage_location {
 
@@ -5877,12 +5911,6 @@ pub mod storage_location {
         }
     }
 }
-impl StorageLocation {
-    /// Creates a new builder-style object to manufacture [`StorageLocation`](crate::model::StorageLocation).
-    pub fn builder() -> crate::model::storage_location::Builder {
-        crate::model::storage_location::Builder::default()
-    }
-}
 
 /// <p>A node interface.</p>
 #[non_exhaustive]
@@ -5905,6 +5933,13 @@ impl NodeInterface {
         self.outputs.as_deref()
     }
 }
+impl NodeInterface {
+    /// Creates a new builder-style object to manufacture [`NodeInterface`](crate::model::NodeInterface).
+    pub fn builder() -> crate::model::node_interface::Builder {
+        crate::model::node_interface::Builder::default()
+    }
+}
+
 /// See [`NodeInterface`](crate::model::NodeInterface).
 pub mod node_interface {
 
@@ -5963,12 +5998,6 @@ pub mod node_interface {
         }
     }
 }
-impl NodeInterface {
-    /// Creates a new builder-style object to manufacture [`NodeInterface`](crate::model::NodeInterface).
-    pub fn builder() -> crate::model::node_interface::Builder {
-        crate::model::node_interface::Builder::default()
-    }
-}
 
 /// <p>A node output port.</p>
 #[non_exhaustive]
@@ -5998,6 +6027,13 @@ impl NodeOutputPort {
         self.r#type.as_ref()
     }
 }
+impl NodeOutputPort {
+    /// Creates a new builder-style object to manufacture [`NodeOutputPort`](crate::model::NodeOutputPort).
+    pub fn builder() -> crate::model::node_output_port::Builder {
+        crate::model::node_output_port::Builder::default()
+    }
+}
+
 /// See [`NodeOutputPort`](crate::model::NodeOutputPort).
 pub mod node_output_port {
 
@@ -6048,12 +6084,6 @@ pub mod node_output_port {
                 r#type: self.r#type,
             }
         }
-    }
-}
-impl NodeOutputPort {
-    /// Creates a new builder-style object to manufacture [`NodeOutputPort`](crate::model::NodeOutputPort).
-    pub fn builder() -> crate::model::node_output_port::Builder {
-        crate::model::node_output_port::Builder::default()
     }
 }
 
@@ -6204,6 +6234,13 @@ impl NodeInputPort {
         self.max_connections
     }
 }
+impl NodeInputPort {
+    /// Creates a new builder-style object to manufacture [`NodeInputPort`](crate::model::NodeInputPort).
+    pub fn builder() -> crate::model::node_input_port::Builder {
+        crate::model::node_input_port::Builder::default()
+    }
+}
+
 /// See [`NodeInputPort`](crate::model::NodeInputPort).
 pub mod node_input_port {
 
@@ -6283,12 +6320,6 @@ pub mod node_input_port {
         }
     }
 }
-impl NodeInputPort {
-    /// Creates a new builder-style object to manufacture [`NodeInputPort`](crate::model::NodeInputPort).
-    pub fn builder() -> crate::model::node_input_port::Builder {
-        crate::model::node_input_port::Builder::default()
-    }
-}
 
 /// <p>Details about a beta appliance software update.</p>
 #[non_exhaustive]
@@ -6304,6 +6335,13 @@ impl AlternateSoftwareMetadata {
         self.version.as_deref()
     }
 }
+impl AlternateSoftwareMetadata {
+    /// Creates a new builder-style object to manufacture [`AlternateSoftwareMetadata`](crate::model::AlternateSoftwareMetadata).
+    pub fn builder() -> crate::model::alternate_software_metadata::Builder {
+        crate::model::alternate_software_metadata::Builder::default()
+    }
+}
+
 /// See [`AlternateSoftwareMetadata`](crate::model::AlternateSoftwareMetadata).
 pub mod alternate_software_metadata {
 
@@ -6330,12 +6368,6 @@ pub mod alternate_software_metadata {
                 version: self.version,
             }
         }
-    }
-}
-impl AlternateSoftwareMetadata {
-    /// Creates a new builder-style object to manufacture [`AlternateSoftwareMetadata`](crate::model::AlternateSoftwareMetadata).
-    pub fn builder() -> crate::model::alternate_software_metadata::Builder {
-        crate::model::alternate_software_metadata::Builder::default()
     }
 }
 
@@ -6374,6 +6406,13 @@ impl NetworkStatus {
         self.last_updated_time.as_ref()
     }
 }
+impl NetworkStatus {
+    /// Creates a new builder-style object to manufacture [`NetworkStatus`](crate::model::NetworkStatus).
+    pub fn builder() -> crate::model::network_status::Builder {
+        crate::model::network_status::Builder::default()
+    }
+}
+
 /// See [`NetworkStatus`](crate::model::NetworkStatus).
 pub mod network_status {
 
@@ -6450,12 +6489,6 @@ pub mod network_status {
         }
     }
 }
-impl NetworkStatus {
-    /// Creates a new builder-style object to manufacture [`NetworkStatus`](crate::model::NetworkStatus).
-    pub fn builder() -> crate::model::network_status::Builder {
-        crate::model::network_status::Builder::default()
-    }
-}
 
 /// <p>Details about an NTP server connection.</p>
 #[non_exhaustive]
@@ -6485,6 +6518,13 @@ impl NtpStatus {
         self.ntp_server_name.as_deref()
     }
 }
+impl NtpStatus {
+    /// Creates a new builder-style object to manufacture [`NtpStatus`](crate::model::NtpStatus).
+    pub fn builder() -> crate::model::ntp_status::Builder {
+        crate::model::ntp_status::Builder::default()
+    }
+}
+
 /// See [`NtpStatus`](crate::model::NtpStatus).
 pub mod ntp_status {
 
@@ -6541,12 +6581,6 @@ pub mod ntp_status {
                 ntp_server_name: self.ntp_server_name,
             }
         }
-    }
-}
-impl NtpStatus {
-    /// Creates a new builder-style object to manufacture [`NtpStatus`](crate::model::NtpStatus).
-    pub fn builder() -> crate::model::ntp_status::Builder {
-        crate::model::ntp_status::Builder::default()
     }
 }
 
@@ -6675,6 +6709,13 @@ impl EthernetStatus {
         self.hw_address.as_deref()
     }
 }
+impl EthernetStatus {
+    /// Creates a new builder-style object to manufacture [`EthernetStatus`](crate::model::EthernetStatus).
+    pub fn builder() -> crate::model::ethernet_status::Builder {
+        crate::model::ethernet_status::Builder::default()
+    }
+}
+
 /// See [`EthernetStatus`](crate::model::EthernetStatus).
 pub mod ethernet_status {
 
@@ -6728,12 +6769,6 @@ pub mod ethernet_status {
                 hw_address: self.hw_address,
             }
         }
-    }
-}
-impl EthernetStatus {
-    /// Creates a new builder-style object to manufacture [`EthernetStatus`](crate::model::EthernetStatus).
-    pub fn builder() -> crate::model::ethernet_status::Builder {
-        crate::model::ethernet_status::Builder::default()
     }
 }
 
@@ -6945,6 +6980,13 @@ impl Job {
         self.device_id.as_deref()
     }
 }
+impl Job {
+    /// Creates a new builder-style object to manufacture [`Job`](crate::model::Job).
+    pub fn builder() -> crate::model::job::Builder {
+        crate::model::job::Builder::default()
+    }
+}
+
 /// See [`Job`](crate::model::Job).
 pub mod job {
 
@@ -6985,12 +7027,6 @@ pub mod job {
         }
     }
 }
-impl Job {
-    /// Creates a new builder-style object to manufacture [`Job`](crate::model::Job).
-    pub fn builder() -> crate::model::job::Builder {
-        crate::model::job::Builder::default()
-    }
-}
 
 /// <p>A job's configuration.</p>
 #[non_exhaustive]
@@ -7006,6 +7042,13 @@ impl DeviceJobConfig {
         self.ota_job_config.as_ref()
     }
 }
+impl DeviceJobConfig {
+    /// Creates a new builder-style object to manufacture [`DeviceJobConfig`](crate::model::DeviceJobConfig).
+    pub fn builder() -> crate::model::device_job_config::Builder {
+        crate::model::device_job_config::Builder::default()
+    }
+}
+
 /// See [`DeviceJobConfig`](crate::model::DeviceJobConfig).
 pub mod device_job_config {
 
@@ -7037,12 +7080,6 @@ pub mod device_job_config {
         }
     }
 }
-impl DeviceJobConfig {
-    /// Creates a new builder-style object to manufacture [`DeviceJobConfig`](crate::model::DeviceJobConfig).
-    pub fn builder() -> crate::model::device_job_config::Builder {
-        crate::model::device_job_config::Builder::default()
-    }
-}
 
 /// <p>An over-the-air update (OTA) job configuration.</p>
 #[non_exhaustive]
@@ -7065,6 +7102,13 @@ impl OtaJobConfig {
         self.allow_major_version_update
     }
 }
+impl OtaJobConfig {
+    /// Creates a new builder-style object to manufacture [`OtaJobConfig`](crate::model::OtaJobConfig).
+    pub fn builder() -> crate::model::ota_job_config::Builder {
+        crate::model::ota_job_config::Builder::default()
+    }
+}
+
 /// See [`OtaJobConfig`](crate::model::OtaJobConfig).
 pub mod ota_job_config {
 
@@ -7106,11 +7150,5 @@ pub mod ota_job_config {
                 allow_major_version_update: self.allow_major_version_update.unwrap_or_default(),
             }
         }
-    }
-}
-impl OtaJobConfig {
-    /// Creates a new builder-style object to manufacture [`OtaJobConfig`](crate::model::OtaJobConfig).
-    pub fn builder() -> crate::model::ota_job_config::Builder {
-        crate::model::ota_job_config::Builder::default()
     }
 }

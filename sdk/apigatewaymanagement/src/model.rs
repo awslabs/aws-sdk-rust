@@ -20,6 +20,13 @@ impl Identity {
         self.user_agent.as_deref()
     }
 }
+impl Identity {
+    /// Creates a new builder-style object to manufacture [`Identity`](crate::model::Identity).
+    pub fn builder() -> crate::model::identity::Builder {
+        crate::model::identity::Builder::default()
+    }
+}
+
 /// See [`Identity`](crate::model::Identity).
 pub mod identity {
 
@@ -58,11 +65,5 @@ pub mod identity {
                 user_agent: self.user_agent,
             }
         }
-    }
-}
-impl Identity {
-    /// Creates a new builder-style object to manufacture [`Identity`](crate::model::Identity).
-    pub fn builder() -> crate::model::identity::Builder {
-        crate::model::identity::Builder::default()
     }
 }

@@ -258,6 +258,13 @@ impl BatchResultErrorEntry {
         self.message.as_deref()
     }
 }
+impl BatchResultErrorEntry {
+    /// Creates a new builder-style object to manufacture [`BatchResultErrorEntry`](crate::model::BatchResultErrorEntry).
+    pub fn builder() -> crate::model::batch_result_error_entry::Builder {
+        crate::model::batch_result_error_entry::Builder::default()
+    }
+}
+
 /// See [`BatchResultErrorEntry`](crate::model::BatchResultErrorEntry).
 pub mod batch_result_error_entry {
 
@@ -322,12 +329,6 @@ pub mod batch_result_error_entry {
         }
     }
 }
-impl BatchResultErrorEntry {
-    /// Creates a new builder-style object to manufacture [`BatchResultErrorEntry`](crate::model::BatchResultErrorEntry).
-    pub fn builder() -> crate::model::batch_result_error_entry::Builder {
-        crate::model::batch_result_error_entry::Builder::default()
-    }
-}
 
 /// <p>Encloses a <code>MessageId</code> for a successfully-enqueued message in a <code> <code>SendMessageBatch</code>.</code> </p>
 #[non_exhaustive]
@@ -382,6 +383,13 @@ impl SendMessageBatchResultEntry {
         self.sequence_number.as_deref()
     }
 }
+impl SendMessageBatchResultEntry {
+    /// Creates a new builder-style object to manufacture [`SendMessageBatchResultEntry`](crate::model::SendMessageBatchResultEntry).
+    pub fn builder() -> crate::model::send_message_batch_result_entry::Builder {
+        crate::model::send_message_batch_result_entry::Builder::default()
+    }
+}
+
 /// See [`SendMessageBatchResultEntry`](crate::model::SendMessageBatchResultEntry).
 pub mod send_message_batch_result_entry {
 
@@ -487,12 +495,6 @@ pub mod send_message_batch_result_entry {
                 sequence_number: self.sequence_number,
             }
         }
-    }
-}
-impl SendMessageBatchResultEntry {
-    /// Creates a new builder-style object to manufacture [`SendMessageBatchResultEntry`](crate::model::SendMessageBatchResultEntry).
-    pub fn builder() -> crate::model::send_message_batch_result_entry::Builder {
-        crate::model::send_message_batch_result_entry::Builder::default()
     }
 }
 
@@ -644,6 +646,13 @@ impl SendMessageBatchRequestEntry {
         self.message_group_id.as_deref()
     }
 }
+impl SendMessageBatchRequestEntry {
+    /// Creates a new builder-style object to manufacture [`SendMessageBatchRequestEntry`](crate::model::SendMessageBatchRequestEntry).
+    pub fn builder() -> crate::model::send_message_batch_request_entry::Builder {
+        crate::model::send_message_batch_request_entry::Builder::default()
+    }
+}
+
 /// See [`SendMessageBatchRequestEntry`](crate::model::SendMessageBatchRequestEntry).
 pub mod send_message_batch_request_entry {
 
@@ -864,12 +873,6 @@ pub mod send_message_batch_request_entry {
         }
     }
 }
-impl SendMessageBatchRequestEntry {
-    /// Creates a new builder-style object to manufacture [`SendMessageBatchRequestEntry`](crate::model::SendMessageBatchRequestEntry).
-    pub fn builder() -> crate::model::send_message_batch_request_entry::Builder {
-        crate::model::send_message_batch_request_entry::Builder::default()
-    }
-}
 
 /// <p>The user-specified message system attribute value. For string data types, the <code>Value</code> attribute has the same restrictions on the content as the message body. For more information, see <code> <code>SendMessage</code>.</code> </p>
 /// <p> <code>Name</code>, <code>type</code>, <code>value</code> and the message body must not be empty or null.</p>
@@ -916,6 +919,13 @@ impl MessageSystemAttributeValue {
         self.data_type.as_deref()
     }
 }
+impl MessageSystemAttributeValue {
+    /// Creates a new builder-style object to manufacture [`MessageSystemAttributeValue`](crate::model::MessageSystemAttributeValue).
+    pub fn builder() -> crate::model::message_system_attribute_value::Builder {
+        crate::model::message_system_attribute_value::Builder::default()
+    }
+}
+
 /// See [`MessageSystemAttributeValue`](crate::model::MessageSystemAttributeValue).
 pub mod message_system_attribute_value {
 
@@ -1013,12 +1023,6 @@ pub mod message_system_attribute_value {
                 data_type: self.data_type,
             }
         }
-    }
-}
-impl MessageSystemAttributeValue {
-    /// Creates a new builder-style object to manufacture [`MessageSystemAttributeValue`](crate::model::MessageSystemAttributeValue).
-    pub fn builder() -> crate::model::message_system_attribute_value::Builder {
-        crate::model::message_system_attribute_value::Builder::default()
     }
 }
 
@@ -1154,6 +1158,13 @@ impl MessageAttributeValue {
         self.data_type.as_deref()
     }
 }
+impl MessageAttributeValue {
+    /// Creates a new builder-style object to manufacture [`MessageAttributeValue`](crate::model::MessageAttributeValue).
+    pub fn builder() -> crate::model::message_attribute_value::Builder {
+        crate::model::message_attribute_value::Builder::default()
+    }
+}
+
 /// See [`MessageAttributeValue`](crate::model::MessageAttributeValue).
 pub mod message_attribute_value {
 
@@ -1253,12 +1264,6 @@ pub mod message_attribute_value {
         }
     }
 }
-impl MessageAttributeValue {
-    /// Creates a new builder-style object to manufacture [`MessageAttributeValue`](crate::model::MessageAttributeValue).
-    pub fn builder() -> crate::model::message_attribute_value::Builder {
-        crate::model::message_attribute_value::Builder::default()
-    }
-}
 
 /// <p>An Amazon SQS message.</p>
 #[non_exhaustive]
@@ -1348,6 +1353,13 @@ impl Message {
         self.message_attributes.as_ref()
     }
 }
+impl Message {
+    /// Creates a new builder-style object to manufacture [`Message`](crate::model::Message).
+    pub fn builder() -> crate::model::message::Builder {
+        crate::model::message::Builder::default()
+    }
+}
+
 /// See [`Message`](crate::model::Message).
 pub mod message {
 
@@ -1514,12 +1526,6 @@ pub mod message {
         }
     }
 }
-impl Message {
-    /// Creates a new builder-style object to manufacture [`Message`](crate::model::Message).
-    pub fn builder() -> crate::model::message::Builder {
-        crate::model::message::Builder::default()
-    }
-}
 
 /// When writing a match expression against `MessageSystemAttributeName`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -1670,6 +1676,13 @@ impl DeleteMessageBatchResultEntry {
         self.id.as_deref()
     }
 }
+impl DeleteMessageBatchResultEntry {
+    /// Creates a new builder-style object to manufacture [`DeleteMessageBatchResultEntry`](crate::model::DeleteMessageBatchResultEntry).
+    pub fn builder() -> crate::model::delete_message_batch_result_entry::Builder {
+        crate::model::delete_message_batch_result_entry::Builder::default()
+    }
+}
+
 /// See [`DeleteMessageBatchResultEntry`](crate::model::DeleteMessageBatchResultEntry).
 pub mod delete_message_batch_result_entry {
 
@@ -1694,12 +1707,6 @@ pub mod delete_message_batch_result_entry {
         pub fn build(self) -> crate::model::DeleteMessageBatchResultEntry {
             crate::model::DeleteMessageBatchResultEntry { id: self.id }
         }
-    }
-}
-impl DeleteMessageBatchResultEntry {
-    /// Creates a new builder-style object to manufacture [`DeleteMessageBatchResultEntry`](crate::model::DeleteMessageBatchResultEntry).
-    pub fn builder() -> crate::model::delete_message_batch_result_entry::Builder {
-        crate::model::delete_message_batch_result_entry::Builder::default()
     }
 }
 
@@ -1730,6 +1737,13 @@ impl DeleteMessageBatchRequestEntry {
         self.receipt_handle.as_deref()
     }
 }
+impl DeleteMessageBatchRequestEntry {
+    /// Creates a new builder-style object to manufacture [`DeleteMessageBatchRequestEntry`](crate::model::DeleteMessageBatchRequestEntry).
+    pub fn builder() -> crate::model::delete_message_batch_request_entry::Builder {
+        crate::model::delete_message_batch_request_entry::Builder::default()
+    }
+}
+
 /// See [`DeleteMessageBatchRequestEntry`](crate::model::DeleteMessageBatchRequestEntry).
 pub mod delete_message_batch_request_entry {
 
@@ -1779,12 +1793,6 @@ pub mod delete_message_batch_request_entry {
         }
     }
 }
-impl DeleteMessageBatchRequestEntry {
-    /// Creates a new builder-style object to manufacture [`DeleteMessageBatchRequestEntry`](crate::model::DeleteMessageBatchRequestEntry).
-    pub fn builder() -> crate::model::delete_message_batch_request_entry::Builder {
-        crate::model::delete_message_batch_request_entry::Builder::default()
-    }
-}
 
 /// <p>Encloses the <code>Id</code> of an entry in <code> <code>ChangeMessageVisibilityBatch</code>.</code> </p>
 #[non_exhaustive]
@@ -1800,6 +1808,13 @@ impl ChangeMessageVisibilityBatchResultEntry {
         self.id.as_deref()
     }
 }
+impl ChangeMessageVisibilityBatchResultEntry {
+    /// Creates a new builder-style object to manufacture [`ChangeMessageVisibilityBatchResultEntry`](crate::model::ChangeMessageVisibilityBatchResultEntry).
+    pub fn builder() -> crate::model::change_message_visibility_batch_result_entry::Builder {
+        crate::model::change_message_visibility_batch_result_entry::Builder::default()
+    }
+}
+
 /// See [`ChangeMessageVisibilityBatchResultEntry`](crate::model::ChangeMessageVisibilityBatchResultEntry).
 pub mod change_message_visibility_batch_result_entry {
 
@@ -1824,12 +1839,6 @@ pub mod change_message_visibility_batch_result_entry {
         pub fn build(self) -> crate::model::ChangeMessageVisibilityBatchResultEntry {
             crate::model::ChangeMessageVisibilityBatchResultEntry { id: self.id }
         }
-    }
-}
-impl ChangeMessageVisibilityBatchResultEntry {
-    /// Creates a new builder-style object to manufacture [`ChangeMessageVisibilityBatchResultEntry`](crate::model::ChangeMessageVisibilityBatchResultEntry).
-    pub fn builder() -> crate::model::change_message_visibility_batch_result_entry::Builder {
-        crate::model::change_message_visibility_batch_result_entry::Builder::default()
     }
 }
 
@@ -1872,6 +1881,13 @@ impl ChangeMessageVisibilityBatchRequestEntry {
         self.visibility_timeout
     }
 }
+impl ChangeMessageVisibilityBatchRequestEntry {
+    /// Creates a new builder-style object to manufacture [`ChangeMessageVisibilityBatchRequestEntry`](crate::model::ChangeMessageVisibilityBatchRequestEntry).
+    pub fn builder() -> crate::model::change_message_visibility_batch_request_entry::Builder {
+        crate::model::change_message_visibility_batch_request_entry::Builder::default()
+    }
+}
+
 /// See [`ChangeMessageVisibilityBatchRequestEntry`](crate::model::ChangeMessageVisibilityBatchRequestEntry).
 pub mod change_message_visibility_batch_request_entry {
 
@@ -1931,11 +1947,5 @@ pub mod change_message_visibility_batch_request_entry {
                 visibility_timeout: self.visibility_timeout.unwrap_or_default(),
             }
         }
-    }
-}
-impl ChangeMessageVisibilityBatchRequestEntry {
-    /// Creates a new builder-style object to manufacture [`ChangeMessageVisibilityBatchRequestEntry`](crate::model::ChangeMessageVisibilityBatchRequestEntry).
-    pub fn builder() -> crate::model::change_message_visibility_batch_request_entry::Builder {
-        crate::model::change_message_visibility_batch_request_entry::Builder::default()
     }
 }

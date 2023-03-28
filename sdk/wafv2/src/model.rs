@@ -501,6 +501,13 @@ impl ChallengeConfig {
         self.immunity_time_property.as_ref()
     }
 }
+impl ChallengeConfig {
+    /// Creates a new builder-style object to manufacture [`ChallengeConfig`](crate::model::ChallengeConfig).
+    pub fn builder() -> crate::model::challenge_config::Builder {
+        crate::model::challenge_config::Builder::default()
+    }
+}
+
 /// See [`ChallengeConfig`](crate::model::ChallengeConfig).
 pub mod challenge_config {
 
@@ -532,12 +539,6 @@ pub mod challenge_config {
         }
     }
 }
-impl ChallengeConfig {
-    /// Creates a new builder-style object to manufacture [`ChallengeConfig`](crate::model::ChallengeConfig).
-    pub fn builder() -> crate::model::challenge_config::Builder {
-        crate::model::challenge_config::Builder::default()
-    }
-}
 
 /// <p>Used for CAPTCHA and challenge token settings. Determines how long a <code>CAPTCHA</code> or challenge timestamp remains valid after WAF updates it for a successful <code>CAPTCHA</code> or challenge response. </p>
 #[non_exhaustive]
@@ -555,6 +556,13 @@ impl ImmunityTimeProperty {
         self.immunity_time
     }
 }
+impl ImmunityTimeProperty {
+    /// Creates a new builder-style object to manufacture [`ImmunityTimeProperty`](crate::model::ImmunityTimeProperty).
+    pub fn builder() -> crate::model::immunity_time_property::Builder {
+        crate::model::immunity_time_property::Builder::default()
+    }
+}
+
 /// See [`ImmunityTimeProperty`](crate::model::ImmunityTimeProperty).
 pub mod immunity_time_property {
 
@@ -585,12 +593,6 @@ pub mod immunity_time_property {
         }
     }
 }
-impl ImmunityTimeProperty {
-    /// Creates a new builder-style object to manufacture [`ImmunityTimeProperty`](crate::model::ImmunityTimeProperty).
-    pub fn builder() -> crate::model::immunity_time_property::Builder {
-        crate::model::immunity_time_property::Builder::default()
-    }
-}
 
 /// <p>Specifies how WAF should handle <code>CAPTCHA</code> evaluations. This is available at the web ACL level and in each rule. </p>
 #[non_exhaustive]
@@ -608,6 +610,13 @@ impl CaptchaConfig {
         self.immunity_time_property.as_ref()
     }
 }
+impl CaptchaConfig {
+    /// Creates a new builder-style object to manufacture [`CaptchaConfig`](crate::model::CaptchaConfig).
+    pub fn builder() -> crate::model::captcha_config::Builder {
+        crate::model::captcha_config::Builder::default()
+    }
+}
+
 /// See [`CaptchaConfig`](crate::model::CaptchaConfig).
 pub mod captcha_config {
 
@@ -639,12 +648,6 @@ pub mod captcha_config {
         }
     }
 }
-impl CaptchaConfig {
-    /// Creates a new builder-style object to manufacture [`CaptchaConfig`](crate::model::CaptchaConfig).
-    pub fn builder() -> crate::model::captcha_config::Builder {
-        crate::model::captcha_config::Builder::default()
-    }
-}
 
 /// <p>The response body to use in a custom response to a web request. This is referenced by key from <code>CustomResponse</code> <code>CustomResponseBodyKey</code>.</p>
 #[non_exhaustive]
@@ -671,6 +674,13 @@ impl CustomResponseBody {
         self.content.as_deref()
     }
 }
+impl CustomResponseBody {
+    /// Creates a new builder-style object to manufacture [`CustomResponseBody`](crate::model::CustomResponseBody).
+    pub fn builder() -> crate::model::custom_response_body::Builder {
+        crate::model::custom_response_body::Builder::default()
+    }
+}
+
 /// See [`CustomResponseBody`](crate::model::CustomResponseBody).
 pub mod custom_response_body {
 
@@ -716,12 +726,6 @@ pub mod custom_response_body {
                 content: self.content,
             }
         }
-    }
-}
-impl CustomResponseBody {
-    /// Creates a new builder-style object to manufacture [`CustomResponseBody`](crate::model::CustomResponseBody).
-    pub fn builder() -> crate::model::custom_response_body::Builder {
-        crate::model::custom_response_body::Builder::default()
     }
 }
 
@@ -850,6 +854,13 @@ impl VisibilityConfig {
         self.metric_name.as_deref()
     }
 }
+impl VisibilityConfig {
+    /// Creates a new builder-style object to manufacture [`VisibilityConfig`](crate::model::VisibilityConfig).
+    pub fn builder() -> crate::model::visibility_config::Builder {
+        crate::model::visibility_config::Builder::default()
+    }
+}
+
 /// See [`VisibilityConfig`](crate::model::VisibilityConfig).
 pub mod visibility_config {
 
@@ -900,12 +911,6 @@ pub mod visibility_config {
                 metric_name: self.metric_name,
             }
         }
-    }
-}
-impl VisibilityConfig {
-    /// Creates a new builder-style object to manufacture [`VisibilityConfig`](crate::model::VisibilityConfig).
-    pub fn builder() -> crate::model::visibility_config::Builder {
-        crate::model::visibility_config::Builder::default()
     }
 }
 
@@ -1015,6 +1020,13 @@ impl Rule {
         self.challenge_config.as_ref()
     }
 }
+impl Rule {
+    /// Creates a new builder-style object to manufacture [`Rule`](crate::model::Rule).
+    pub fn builder() -> crate::model::rule::Builder {
+        crate::model::rule::Builder::default()
+    }
+}
+
 /// See [`Rule`](crate::model::Rule).
 pub mod rule {
 
@@ -1199,12 +1211,6 @@ pub mod rule {
         }
     }
 }
-impl Rule {
-    /// Creates a new builder-style object to manufacture [`Rule`](crate::model::Rule).
-    pub fn builder() -> crate::model::rule::Builder {
-        crate::model::rule::Builder::default()
-    }
-}
 
 /// <p>A single label container. This is used as an element of a label array in multiple contexts, for example, in <code>RuleLabels</code> inside a <code>Rule</code> and in <code>Labels</code> inside a <code>SampledHTTPRequest</code>. </p>
 #[non_exhaustive]
@@ -1220,6 +1226,13 @@ impl Label {
         self.name.as_deref()
     }
 }
+impl Label {
+    /// Creates a new builder-style object to manufacture [`Label`](crate::model::Label).
+    pub fn builder() -> crate::model::label::Builder {
+        crate::model::label::Builder::default()
+    }
+}
+
 /// See [`Label`](crate::model::Label).
 pub mod label {
 
@@ -1244,12 +1257,6 @@ pub mod label {
         pub fn build(self) -> crate::model::Label {
             crate::model::Label { name: self.name }
         }
-    }
-}
-impl Label {
-    /// Creates a new builder-style object to manufacture [`Label`](crate::model::Label).
-    pub fn builder() -> crate::model::label::Builder {
-        crate::model::label::Builder::default()
     }
 }
 
@@ -1281,6 +1288,13 @@ impl OverrideAction {
         self.none.as_ref()
     }
 }
+impl OverrideAction {
+    /// Creates a new builder-style object to manufacture [`OverrideAction`](crate::model::OverrideAction).
+    pub fn builder() -> crate::model::override_action::Builder {
+        crate::model::override_action::Builder::default()
+    }
+}
+
 /// See [`OverrideAction`](crate::model::OverrideAction).
 pub mod override_action {
 
@@ -1325,12 +1339,6 @@ pub mod override_action {
         }
     }
 }
-impl OverrideAction {
-    /// Creates a new builder-style object to manufacture [`OverrideAction`](crate::model::OverrideAction).
-    pub fn builder() -> crate::model::override_action::Builder {
-        crate::model::override_action::Builder::default()
-    }
-}
 
 /// <p>Specifies that WAF should do nothing. This is used for the <code>OverrideAction</code> setting on a <code>Rule</code> when the rule uses a rule group reference statement. </p>
 /// <p>This is used in the context of other settings, for example to specify values for <code>RuleAction</code> and web ACL <code>DefaultAction</code>. </p>
@@ -1338,6 +1346,13 @@ impl OverrideAction {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct NoneAction {}
+impl NoneAction {
+    /// Creates a new builder-style object to manufacture [`NoneAction`](crate::model::NoneAction).
+    pub fn builder() -> crate::model::none_action::Builder {
+        crate::model::none_action::Builder::default()
+    }
+}
+
 /// See [`NoneAction`](crate::model::NoneAction).
 pub mod none_action {
 
@@ -1350,12 +1365,6 @@ pub mod none_action {
         pub fn build(self) -> crate::model::NoneAction {
             crate::model::NoneAction {}
         }
-    }
-}
-impl NoneAction {
-    /// Creates a new builder-style object to manufacture [`NoneAction`](crate::model::NoneAction).
-    pub fn builder() -> crate::model::none_action::Builder {
-        crate::model::none_action::Builder::default()
     }
 }
 
@@ -1378,6 +1387,13 @@ impl CountAction {
         self.custom_request_handling.as_ref()
     }
 }
+impl CountAction {
+    /// Creates a new builder-style object to manufacture [`CountAction`](crate::model::CountAction).
+    pub fn builder() -> crate::model::count_action::Builder {
+        crate::model::count_action::Builder::default()
+    }
+}
+
 /// See [`CountAction`](crate::model::CountAction).
 pub mod count_action {
 
@@ -1415,12 +1431,6 @@ pub mod count_action {
         }
     }
 }
-impl CountAction {
-    /// Creates a new builder-style object to manufacture [`CountAction`](crate::model::CountAction).
-    pub fn builder() -> crate::model::count_action::Builder {
-        crate::model::count_action::Builder::default()
-    }
-}
 
 /// <p>Custom request handling behavior that inserts custom headers into a web request. You can add custom request handling for WAF to use when the rule action doesn't block the request. For example, <code>CaptchaAction</code> for requests with valid t okens, and <code>AllowAction</code>. </p>
 /// <p>For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
@@ -1439,6 +1449,13 @@ impl CustomRequestHandling {
         self.insert_headers.as_deref()
     }
 }
+impl CustomRequestHandling {
+    /// Creates a new builder-style object to manufacture [`CustomRequestHandling`](crate::model::CustomRequestHandling).
+    pub fn builder() -> crate::model::custom_request_handling::Builder {
+        crate::model::custom_request_handling::Builder::default()
+    }
+}
+
 /// See [`CustomRequestHandling`](crate::model::CustomRequestHandling).
 pub mod custom_request_handling {
 
@@ -1479,12 +1496,6 @@ pub mod custom_request_handling {
         }
     }
 }
-impl CustomRequestHandling {
-    /// Creates a new builder-style object to manufacture [`CustomRequestHandling`](crate::model::CustomRequestHandling).
-    pub fn builder() -> crate::model::custom_request_handling::Builder {
-        crate::model::custom_request_handling::Builder::default()
-    }
-}
 
 /// <p>A custom header for custom request and response handling. This is used in <code>CustomResponse</code> and <code>CustomRequestHandling</code>.</p>
 #[non_exhaustive]
@@ -1509,6 +1520,13 @@ impl CustomHttpHeader {
         self.value.as_deref()
     }
 }
+impl CustomHttpHeader {
+    /// Creates a new builder-style object to manufacture [`CustomHttpHeader`](crate::model::CustomHttpHeader).
+    pub fn builder() -> crate::model::custom_http_header::Builder {
+        crate::model::custom_http_header::Builder::default()
+    }
+}
+
 /// See [`CustomHttpHeader`](crate::model::CustomHttpHeader).
 pub mod custom_http_header {
 
@@ -1549,12 +1567,6 @@ pub mod custom_http_header {
                 value: self.value,
             }
         }
-    }
-}
-impl CustomHttpHeader {
-    /// Creates a new builder-style object to manufacture [`CustomHttpHeader`](crate::model::CustomHttpHeader).
-    pub fn builder() -> crate::model::custom_http_header::Builder {
-        crate::model::custom_http_header::Builder::default()
     }
 }
 
@@ -1600,6 +1612,13 @@ impl RuleAction {
         self.challenge.as_ref()
     }
 }
+impl RuleAction {
+    /// Creates a new builder-style object to manufacture [`RuleAction`](crate::model::RuleAction).
+    pub fn builder() -> crate::model::rule_action::Builder {
+        crate::model::rule_action::Builder::default()
+    }
+}
+
 /// See [`RuleAction`](crate::model::RuleAction).
 pub mod rule_action {
 
@@ -1682,12 +1701,6 @@ pub mod rule_action {
         }
     }
 }
-impl RuleAction {
-    /// Creates a new builder-style object to manufacture [`RuleAction`](crate::model::RuleAction).
-    pub fn builder() -> crate::model::rule_action::Builder {
-        crate::model::rule_action::Builder::default()
-    }
-}
 
 /// <p>Specifies that WAF should run a <code>Challenge</code> check against the request to verify that the request is coming from a legitimate client session: </p>
 /// <ul>
@@ -1718,6 +1731,13 @@ impl ChallengeAction {
         self.custom_request_handling.as_ref()
     }
 }
+impl ChallengeAction {
+    /// Creates a new builder-style object to manufacture [`ChallengeAction`](crate::model::ChallengeAction).
+    pub fn builder() -> crate::model::challenge_action::Builder {
+        crate::model::challenge_action::Builder::default()
+    }
+}
+
 /// See [`ChallengeAction`](crate::model::ChallengeAction).
 pub mod challenge_action {
 
@@ -1755,12 +1775,6 @@ pub mod challenge_action {
         }
     }
 }
-impl ChallengeAction {
-    /// Creates a new builder-style object to manufacture [`ChallengeAction`](crate::model::ChallengeAction).
-    pub fn builder() -> crate::model::challenge_action::Builder {
-        crate::model::challenge_action::Builder::default()
-    }
-}
 
 /// <p>Specifies that WAF should run a <code>CAPTCHA</code> check against the request: </p>
 /// <ul>
@@ -1791,6 +1805,13 @@ impl CaptchaAction {
         self.custom_request_handling.as_ref()
     }
 }
+impl CaptchaAction {
+    /// Creates a new builder-style object to manufacture [`CaptchaAction`](crate::model::CaptchaAction).
+    pub fn builder() -> crate::model::captcha_action::Builder {
+        crate::model::captcha_action::Builder::default()
+    }
+}
+
 /// See [`CaptchaAction`](crate::model::CaptchaAction).
 pub mod captcha_action {
 
@@ -1828,12 +1849,6 @@ pub mod captcha_action {
         }
     }
 }
-impl CaptchaAction {
-    /// Creates a new builder-style object to manufacture [`CaptchaAction`](crate::model::CaptchaAction).
-    pub fn builder() -> crate::model::captcha_action::Builder {
-        crate::model::captcha_action::Builder::default()
-    }
-}
 
 /// <p>Specifies that WAF should allow the request and optionally defines additional custom handling for the request.</p>
 /// <p>This is used in the context of other settings, for example to specify values for <code>RuleAction</code> and web ACL <code>DefaultAction</code>. </p>
@@ -1854,6 +1869,13 @@ impl AllowAction {
         self.custom_request_handling.as_ref()
     }
 }
+impl AllowAction {
+    /// Creates a new builder-style object to manufacture [`AllowAction`](crate::model::AllowAction).
+    pub fn builder() -> crate::model::allow_action::Builder {
+        crate::model::allow_action::Builder::default()
+    }
+}
+
 /// See [`AllowAction`](crate::model::AllowAction).
 pub mod allow_action {
 
@@ -1891,12 +1913,6 @@ pub mod allow_action {
         }
     }
 }
-impl AllowAction {
-    /// Creates a new builder-style object to manufacture [`AllowAction`](crate::model::AllowAction).
-    pub fn builder() -> crate::model::allow_action::Builder {
-        crate::model::allow_action::Builder::default()
-    }
-}
 
 /// <p>Specifies that WAF should block the request and optionally defines additional custom handling for the response to the web request.</p>
 /// <p>This is used in the context of other settings, for example to specify values for <code>RuleAction</code> and web ACL <code>DefaultAction</code>. </p>
@@ -1915,6 +1931,13 @@ impl BlockAction {
         self.custom_response.as_ref()
     }
 }
+impl BlockAction {
+    /// Creates a new builder-style object to manufacture [`BlockAction`](crate::model::BlockAction).
+    pub fn builder() -> crate::model::block_action::Builder {
+        crate::model::block_action::Builder::default()
+    }
+}
+
 /// See [`BlockAction`](crate::model::BlockAction).
 pub mod block_action {
 
@@ -1946,12 +1969,6 @@ pub mod block_action {
                 custom_response: self.custom_response,
             }
         }
-    }
-}
-impl BlockAction {
-    /// Creates a new builder-style object to manufacture [`BlockAction`](crate::model::BlockAction).
-    pub fn builder() -> crate::model::block_action::Builder {
-        crate::model::block_action::Builder::default()
     }
 }
 
@@ -1988,6 +2005,13 @@ impl CustomResponse {
         self.response_headers.as_deref()
     }
 }
+impl CustomResponse {
+    /// Creates a new builder-style object to manufacture [`CustomResponse`](crate::model::CustomResponse).
+    pub fn builder() -> crate::model::custom_response::Builder {
+        crate::model::custom_response::Builder::default()
+    }
+}
+
 /// See [`CustomResponse`](crate::model::CustomResponse).
 pub mod custom_response {
 
@@ -2055,12 +2079,6 @@ pub mod custom_response {
                 response_headers: self.response_headers,
             }
         }
-    }
-}
-impl CustomResponse {
-    /// Creates a new builder-style object to manufacture [`CustomResponse`](crate::model::CustomResponse).
-    pub fn builder() -> crate::model::custom_response::Builder {
-        crate::model::custom_response::Builder::default()
     }
 }
 
@@ -2261,6 +2279,13 @@ impl Statement {
         self.regex_match_statement.as_ref()
     }
 }
+impl Statement {
+    /// Creates a new builder-style object to manufacture [`Statement`](crate::model::Statement).
+    pub fn builder() -> crate::model::statement::Builder {
+        crate::model::statement::Builder::default()
+    }
+}
+
 /// See [`Statement`](crate::model::Statement).
 pub mod statement {
 
@@ -2594,12 +2619,6 @@ pub mod statement {
         }
     }
 }
-impl Statement {
-    /// Creates a new builder-style object to manufacture [`Statement`](crate::model::Statement).
-    pub fn builder() -> crate::model::statement::Builder {
-        crate::model::statement::Builder::default()
-    }
-}
 
 /// <p>A rule statement used to search web request components for a match against a single regular expression. </p>
 #[non_exhaustive]
@@ -2629,6 +2648,13 @@ impl RegexMatchStatement {
         self.text_transformations.as_deref()
     }
 }
+impl RegexMatchStatement {
+    /// Creates a new builder-style object to manufacture [`RegexMatchStatement`](crate::model::RegexMatchStatement).
+    pub fn builder() -> crate::model::regex_match_statement::Builder {
+        crate::model::regex_match_statement::Builder::default()
+    }
+}
+
 /// See [`RegexMatchStatement`](crate::model::RegexMatchStatement).
 pub mod regex_match_statement {
 
@@ -2692,12 +2718,6 @@ pub mod regex_match_statement {
                 text_transformations: self.text_transformations,
             }
         }
-    }
-}
-impl RegexMatchStatement {
-    /// Creates a new builder-style object to manufacture [`RegexMatchStatement`](crate::model::RegexMatchStatement).
-    pub fn builder() -> crate::model::regex_match_statement::Builder {
-        crate::model::regex_match_statement::Builder::default()
     }
 }
 
@@ -2812,6 +2832,13 @@ impl TextTransformation {
         self.r#type.as_ref()
     }
 }
+impl TextTransformation {
+    /// Creates a new builder-style object to manufacture [`TextTransformation`](crate::model::TextTransformation).
+    pub fn builder() -> crate::model::text_transformation::Builder {
+        crate::model::text_transformation::Builder::default()
+    }
+}
+
 /// See [`TextTransformation`](crate::model::TextTransformation).
 pub mod text_transformation {
 
@@ -2943,12 +2970,6 @@ pub mod text_transformation {
                 r#type: self.r#type,
             }
         }
-    }
-}
-impl TextTransformation {
-    /// Creates a new builder-style object to manufacture [`TextTransformation`](crate::model::TextTransformation).
-    pub fn builder() -> crate::model::text_transformation::Builder {
-        crate::model::text_transformation::Builder::default()
     }
 }
 
@@ -3256,6 +3277,13 @@ impl FieldToMatch {
         self.cookies.as_ref()
     }
 }
+impl FieldToMatch {
+    /// Creates a new builder-style object to manufacture [`FieldToMatch`](crate::model::FieldToMatch).
+    pub fn builder() -> crate::model::field_to_match::Builder {
+        crate::model::field_to_match::Builder::default()
+    }
+}
+
 /// See [`FieldToMatch`](crate::model::FieldToMatch).
 pub mod field_to_match {
 
@@ -3418,12 +3446,6 @@ pub mod field_to_match {
         }
     }
 }
-impl FieldToMatch {
-    /// Creates a new builder-style object to manufacture [`FieldToMatch`](crate::model::FieldToMatch).
-    pub fn builder() -> crate::model::field_to_match::Builder {
-        crate::model::field_to_match::Builder::default()
-    }
-}
 
 /// <p>Inspect the cookies in the web request. You can specify the parts of the cookies to inspect and you can narrow the set of cookies to inspect by including or excluding specific keys.</p>
 /// <p>This is used to indicate the web request component to inspect, in the <code>FieldToMatch</code> specification. </p>
@@ -3471,6 +3493,13 @@ impl Cookies {
         self.oversize_handling.as_ref()
     }
 }
+impl Cookies {
+    /// Creates a new builder-style object to manufacture [`Cookies`](crate::model::Cookies).
+    pub fn builder() -> crate::model::cookies::Builder {
+        crate::model::cookies::Builder::default()
+    }
+}
+
 /// See [`Cookies`](crate::model::Cookies).
 pub mod cookies {
 
@@ -3546,12 +3575,6 @@ pub mod cookies {
                 oversize_handling: self.oversize_handling,
             }
         }
-    }
-}
-impl Cookies {
-    /// Creates a new builder-style object to manufacture [`Cookies`](crate::model::Cookies).
-    pub fn builder() -> crate::model::cookies::Builder {
-        crate::model::cookies::Builder::default()
     }
 }
 
@@ -3775,6 +3798,13 @@ impl CookieMatchPattern {
         self.excluded_cookies.as_deref()
     }
 }
+impl CookieMatchPattern {
+    /// Creates a new builder-style object to manufacture [`CookieMatchPattern`](crate::model::CookieMatchPattern).
+    pub fn builder() -> crate::model::cookie_match_pattern::Builder {
+        crate::model::cookie_match_pattern::Builder::default()
+    }
+}
+
 /// See [`CookieMatchPattern`](crate::model::CookieMatchPattern).
 pub mod cookie_match_pattern {
 
@@ -3845,12 +3875,6 @@ pub mod cookie_match_pattern {
         }
     }
 }
-impl CookieMatchPattern {
-    /// Creates a new builder-style object to manufacture [`CookieMatchPattern`](crate::model::CookieMatchPattern).
-    pub fn builder() -> crate::model::cookie_match_pattern::Builder {
-        crate::model::cookie_match_pattern::Builder::default()
-    }
-}
 
 /// <p>Inspect all of the elements that WAF has parsed and extracted from the web request component that you've identified in your <code>FieldToMatch</code> specifications. </p>
 /// <p>This is used only in the <code>FieldToMatch</code> specification for some web request component types. </p>
@@ -3858,6 +3882,13 @@ impl CookieMatchPattern {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct All {}
+impl All {
+    /// Creates a new builder-style object to manufacture [`All`](crate::model::All).
+    pub fn builder() -> crate::model::all::Builder {
+        crate::model::all::Builder::default()
+    }
+}
+
 /// See [`All`](crate::model::All).
 pub mod all {
 
@@ -3870,12 +3901,6 @@ pub mod all {
         pub fn build(self) -> crate::model::All {
             crate::model::All {}
         }
-    }
-}
-impl All {
-    /// Creates a new builder-style object to manufacture [`All`](crate::model::All).
-    pub fn builder() -> crate::model::all::Builder {
-        crate::model::all::Builder::default()
     }
 }
 
@@ -3926,6 +3951,13 @@ impl Headers {
         self.oversize_handling.as_ref()
     }
 }
+impl Headers {
+    /// Creates a new builder-style object to manufacture [`Headers`](crate::model::Headers).
+    pub fn builder() -> crate::model::headers::Builder {
+        crate::model::headers::Builder::default()
+    }
+}
+
 /// See [`Headers`](crate::model::Headers).
 pub mod headers {
 
@@ -4003,12 +4035,6 @@ pub mod headers {
         }
     }
 }
-impl Headers {
-    /// Creates a new builder-style object to manufacture [`Headers`](crate::model::Headers).
-    pub fn builder() -> crate::model::headers::Builder {
-        crate::model::headers::Builder::default()
-    }
-}
 
 /// <p>The filter to use to identify the subset of headers to inspect in a web request. </p>
 /// <p>You must specify exactly one setting: either <code>All</code>, <code>IncludedHeaders</code>, or <code>ExcludedHeaders</code>.</p>
@@ -4040,6 +4066,13 @@ impl HeaderMatchPattern {
         self.excluded_headers.as_deref()
     }
 }
+impl HeaderMatchPattern {
+    /// Creates a new builder-style object to manufacture [`HeaderMatchPattern`](crate::model::HeaderMatchPattern).
+    pub fn builder() -> crate::model::header_match_pattern::Builder {
+        crate::model::header_match_pattern::Builder::default()
+    }
+}
+
 /// See [`HeaderMatchPattern`](crate::model::HeaderMatchPattern).
 pub mod header_match_pattern {
 
@@ -4108,12 +4141,6 @@ pub mod header_match_pattern {
                 excluded_headers: self.excluded_headers,
             }
         }
-    }
-}
-impl HeaderMatchPattern {
-    /// Creates a new builder-style object to manufacture [`HeaderMatchPattern`](crate::model::HeaderMatchPattern).
-    pub fn builder() -> crate::model::header_match_pattern::Builder {
-        crate::model::header_match_pattern::Builder::default()
     }
 }
 
@@ -4199,6 +4226,13 @@ impl JsonBody {
         self.oversize_handling.as_ref()
     }
 }
+impl JsonBody {
+    /// Creates a new builder-style object to manufacture [`JsonBody`](crate::model::JsonBody).
+    pub fn builder() -> crate::model::json_body::Builder {
+        crate::model::json_body::Builder::default()
+    }
+}
+
 /// See [`JsonBody`](crate::model::JsonBody).
 pub mod json_body {
 
@@ -4319,12 +4353,6 @@ pub mod json_body {
                 oversize_handling: self.oversize_handling,
             }
         }
-    }
-}
-impl JsonBody {
-    /// Creates a new builder-style object to manufacture [`JsonBody`](crate::model::JsonBody).
-    pub fn builder() -> crate::model::json_body::Builder {
-        crate::model::json_body::Builder::default()
     }
 }
 
@@ -4551,6 +4579,13 @@ impl JsonMatchPattern {
         self.included_paths.as_deref()
     }
 }
+impl JsonMatchPattern {
+    /// Creates a new builder-style object to manufacture [`JsonMatchPattern`](crate::model::JsonMatchPattern).
+    pub fn builder() -> crate::model::json_match_pattern::Builder {
+        crate::model::json_match_pattern::Builder::default()
+    }
+}
+
 /// See [`JsonMatchPattern`](crate::model::JsonMatchPattern).
 pub mod json_match_pattern {
 
@@ -4610,12 +4645,6 @@ pub mod json_match_pattern {
         }
     }
 }
-impl JsonMatchPattern {
-    /// Creates a new builder-style object to manufacture [`JsonMatchPattern`](crate::model::JsonMatchPattern).
-    pub fn builder() -> crate::model::json_match_pattern::Builder {
-        crate::model::json_match_pattern::Builder::default()
-    }
-}
 
 /// <p>Inspect the HTTP method of the web request. The method indicates the type of operation that the request is asking the origin to perform. </p>
 /// <p>This is used only in the <code>FieldToMatch</code> specification for some web request component types. </p>
@@ -4623,6 +4652,13 @@ impl JsonMatchPattern {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Method {}
+impl Method {
+    /// Creates a new builder-style object to manufacture [`Method`](crate::model::Method).
+    pub fn builder() -> crate::model::method::Builder {
+        crate::model::method::Builder::default()
+    }
+}
+
 /// See [`Method`](crate::model::Method).
 pub mod method {
 
@@ -4635,12 +4671,6 @@ pub mod method {
         pub fn build(self) -> crate::model::Method {
             crate::model::Method {}
         }
-    }
-}
-impl Method {
-    /// Creates a new builder-style object to manufacture [`Method`](crate::model::Method).
-    pub fn builder() -> crate::model::method::Builder {
-        crate::model::method::Builder::default()
     }
 }
 
@@ -4675,6 +4705,13 @@ impl Body {
         self.oversize_handling.as_ref()
     }
 }
+impl Body {
+    /// Creates a new builder-style object to manufacture [`Body`](crate::model::Body).
+    pub fn builder() -> crate::model::body::Builder {
+        crate::model::body::Builder::default()
+    }
+}
+
 /// See [`Body`](crate::model::Body).
 pub mod body {
 
@@ -4722,12 +4759,6 @@ pub mod body {
         }
     }
 }
-impl Body {
-    /// Creates a new builder-style object to manufacture [`Body`](crate::model::Body).
-    pub fn builder() -> crate::model::body::Builder {
-        crate::model::body::Builder::default()
-    }
-}
 
 /// <p>Inspect the query string of the web request. This is the part of a URL that appears after a <code>?</code> character, if any.</p>
 /// <p>This is used only in the <code>FieldToMatch</code> specification for some web request component types. </p>
@@ -4735,6 +4766,13 @@ impl Body {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct QueryString {}
+impl QueryString {
+    /// Creates a new builder-style object to manufacture [`QueryString`](crate::model::QueryString).
+    pub fn builder() -> crate::model::query_string::Builder {
+        crate::model::query_string::Builder::default()
+    }
+}
+
 /// See [`QueryString`](crate::model::QueryString).
 pub mod query_string {
 
@@ -4749,12 +4787,6 @@ pub mod query_string {
         }
     }
 }
-impl QueryString {
-    /// Creates a new builder-style object to manufacture [`QueryString`](crate::model::QueryString).
-    pub fn builder() -> crate::model::query_string::Builder {
-        crate::model::query_string::Builder::default()
-    }
-}
 
 /// <p>Inspect the path component of the URI of the web request. This is the part of the web request that identifies a resource. For example, <code>/images/daily-ad.jpg</code>.</p>
 /// <p>This is used only in the <code>FieldToMatch</code> specification for some web request component types. </p>
@@ -4762,6 +4794,13 @@ impl QueryString {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UriPath {}
+impl UriPath {
+    /// Creates a new builder-style object to manufacture [`UriPath`](crate::model::UriPath).
+    pub fn builder() -> crate::model::uri_path::Builder {
+        crate::model::uri_path::Builder::default()
+    }
+}
+
 /// See [`UriPath`](crate::model::UriPath).
 pub mod uri_path {
 
@@ -4776,12 +4815,6 @@ pub mod uri_path {
         }
     }
 }
-impl UriPath {
-    /// Creates a new builder-style object to manufacture [`UriPath`](crate::model::UriPath).
-    pub fn builder() -> crate::model::uri_path::Builder {
-        crate::model::uri_path::Builder::default()
-    }
-}
 
 /// <p>Inspect all query arguments of the web request. </p>
 /// <p>This is used only in the <code>FieldToMatch</code> specification for some web request component types. </p>
@@ -4789,6 +4822,13 @@ impl UriPath {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct AllQueryArguments {}
+impl AllQueryArguments {
+    /// Creates a new builder-style object to manufacture [`AllQueryArguments`](crate::model::AllQueryArguments).
+    pub fn builder() -> crate::model::all_query_arguments::Builder {
+        crate::model::all_query_arguments::Builder::default()
+    }
+}
+
 /// See [`AllQueryArguments`](crate::model::AllQueryArguments).
 pub mod all_query_arguments {
 
@@ -4801,12 +4841,6 @@ pub mod all_query_arguments {
         pub fn build(self) -> crate::model::AllQueryArguments {
             crate::model::AllQueryArguments {}
         }
-    }
-}
-impl AllQueryArguments {
-    /// Creates a new builder-style object to manufacture [`AllQueryArguments`](crate::model::AllQueryArguments).
-    pub fn builder() -> crate::model::all_query_arguments::Builder {
-        crate::model::all_query_arguments::Builder::default()
     }
 }
 
@@ -4826,6 +4860,13 @@ impl SingleQueryArgument {
         self.name.as_deref()
     }
 }
+impl SingleQueryArgument {
+    /// Creates a new builder-style object to manufacture [`SingleQueryArgument`](crate::model::SingleQueryArgument).
+    pub fn builder() -> crate::model::single_query_argument::Builder {
+        crate::model::single_query_argument::Builder::default()
+    }
+}
+
 /// See [`SingleQueryArgument`](crate::model::SingleQueryArgument).
 pub mod single_query_argument {
 
@@ -4852,12 +4893,6 @@ pub mod single_query_argument {
         }
     }
 }
-impl SingleQueryArgument {
-    /// Creates a new builder-style object to manufacture [`SingleQueryArgument`](crate::model::SingleQueryArgument).
-    pub fn builder() -> crate::model::single_query_argument::Builder {
-        crate::model::single_query_argument::Builder::default()
-    }
-}
 
 /// <p>Inspect one of the headers in the web request, identified by name, for example, <code>User-Agent</code> or <code>Referer</code>. The name isn't case sensitive.</p>
 /// <p>You can filter and inspect all headers with the <code>FieldToMatch</code> setting <code>Headers</code>.</p>
@@ -4876,6 +4911,13 @@ impl SingleHeader {
         self.name.as_deref()
     }
 }
+impl SingleHeader {
+    /// Creates a new builder-style object to manufacture [`SingleHeader`](crate::model::SingleHeader).
+    pub fn builder() -> crate::model::single_header::Builder {
+        crate::model::single_header::Builder::default()
+    }
+}
+
 /// See [`SingleHeader`](crate::model::SingleHeader).
 pub mod single_header {
 
@@ -4900,12 +4942,6 @@ pub mod single_header {
         pub fn build(self) -> crate::model::SingleHeader {
             crate::model::SingleHeader { name: self.name }
         }
-    }
-}
-impl SingleHeader {
-    /// Creates a new builder-style object to manufacture [`SingleHeader`](crate::model::SingleHeader).
-    pub fn builder() -> crate::model::single_header::Builder {
-        crate::model::single_header::Builder::default()
     }
 }
 
@@ -4941,6 +4977,13 @@ impl LabelMatchStatement {
         self.key.as_deref()
     }
 }
+impl LabelMatchStatement {
+    /// Creates a new builder-style object to manufacture [`LabelMatchStatement`](crate::model::LabelMatchStatement).
+    pub fn builder() -> crate::model::label_match_statement::Builder {
+        crate::model::label_match_statement::Builder::default()
+    }
+}
+
 /// See [`LabelMatchStatement`](crate::model::LabelMatchStatement).
 pub mod label_match_statement {
 
@@ -4992,12 +5035,6 @@ pub mod label_match_statement {
                 key: self.key,
             }
         }
-    }
-}
-impl LabelMatchStatement {
-    /// Creates a new builder-style object to manufacture [`LabelMatchStatement`](crate::model::LabelMatchStatement).
-    pub fn builder() -> crate::model::label_match_statement::Builder {
-        crate::model::label_match_statement::Builder::default()
     }
 }
 
@@ -5163,6 +5200,13 @@ impl ManagedRuleGroupStatement {
         self.rule_action_overrides.as_deref()
     }
 }
+impl ManagedRuleGroupStatement {
+    /// Creates a new builder-style object to manufacture [`ManagedRuleGroupStatement`](crate::model::ManagedRuleGroupStatement).
+    pub fn builder() -> crate::model::managed_rule_group_statement::Builder {
+        crate::model::managed_rule_group_statement::Builder::default()
+    }
+}
+
 /// See [`ManagedRuleGroupStatement`](crate::model::ManagedRuleGroupStatement).
 pub mod managed_rule_group_statement {
 
@@ -5310,12 +5354,6 @@ pub mod managed_rule_group_statement {
         }
     }
 }
-impl ManagedRuleGroupStatement {
-    /// Creates a new builder-style object to manufacture [`ManagedRuleGroupStatement`](crate::model::ManagedRuleGroupStatement).
-    pub fn builder() -> crate::model::managed_rule_group_statement::Builder {
-        crate::model::managed_rule_group_statement::Builder::default()
-    }
-}
 
 /// <p>Action setting to use in the place of a rule action that is configured inside the rule group. You specify one override for each rule whose action you want to change. </p>
 /// <p>You can use overrides for testing, for example you can override all of rule actions to <code>Count</code> and then monitor the resulting count metrics to understand how the rule group would handle your web traffic. You can also permanently override some or all actions, to modify how the rule group manages your web traffic.</p>
@@ -5339,6 +5377,13 @@ impl RuleActionOverride {
         self.action_to_use.as_ref()
     }
 }
+impl RuleActionOverride {
+    /// Creates a new builder-style object to manufacture [`RuleActionOverride`](crate::model::RuleActionOverride).
+    pub fn builder() -> crate::model::rule_action_override::Builder {
+        crate::model::rule_action_override::Builder::default()
+    }
+}
+
 /// See [`RuleActionOverride`](crate::model::RuleActionOverride).
 pub mod rule_action_override {
 
@@ -5380,12 +5425,6 @@ pub mod rule_action_override {
                 action_to_use: self.action_to_use,
             }
         }
-    }
-}
-impl RuleActionOverride {
-    /// Creates a new builder-style object to manufacture [`RuleActionOverride`](crate::model::RuleActionOverride).
-    pub fn builder() -> crate::model::rule_action_override::Builder {
-        crate::model::rule_action_override::Builder::default()
     }
 }
 
@@ -5436,6 +5475,13 @@ impl ManagedRuleGroupConfig {
         self.aws_managed_rules_bot_control_rule_set.as_ref()
     }
 }
+impl ManagedRuleGroupConfig {
+    /// Creates a new builder-style object to manufacture [`ManagedRuleGroupConfig`](crate::model::ManagedRuleGroupConfig).
+    pub fn builder() -> crate::model::managed_rule_group_config::Builder {
+        crate::model::managed_rule_group_config::Builder::default()
+    }
+}
+
 /// See [`ManagedRuleGroupConfig`](crate::model::ManagedRuleGroupConfig).
 pub mod managed_rule_group_config {
 
@@ -5528,12 +5574,6 @@ pub mod managed_rule_group_config {
         }
     }
 }
-impl ManagedRuleGroupConfig {
-    /// Creates a new builder-style object to manufacture [`ManagedRuleGroupConfig`](crate::model::ManagedRuleGroupConfig).
-    pub fn builder() -> crate::model::managed_rule_group_config::Builder {
-        crate::model::managed_rule_group_config::Builder::default()
-    }
-}
 
 /// <p>Details for your use of the Bot Control managed rule group, used in <code>ManagedRuleGroupConfig</code>. </p>
 #[non_exhaustive]
@@ -5549,6 +5589,13 @@ impl AwsManagedRulesBotControlRuleSet {
         self.inspection_level.as_ref()
     }
 }
+impl AwsManagedRulesBotControlRuleSet {
+    /// Creates a new builder-style object to manufacture [`AwsManagedRulesBotControlRuleSet`](crate::model::AwsManagedRulesBotControlRuleSet).
+    pub fn builder() -> crate::model::aws_managed_rules_bot_control_rule_set::Builder {
+        crate::model::aws_managed_rules_bot_control_rule_set::Builder::default()
+    }
+}
+
 /// See [`AwsManagedRulesBotControlRuleSet`](crate::model::AwsManagedRulesBotControlRuleSet).
 pub mod aws_managed_rules_bot_control_rule_set {
 
@@ -5578,12 +5625,6 @@ pub mod aws_managed_rules_bot_control_rule_set {
                 inspection_level: self.inspection_level,
             }
         }
-    }
-}
-impl AwsManagedRulesBotControlRuleSet {
-    /// Creates a new builder-style object to manufacture [`AwsManagedRulesBotControlRuleSet`](crate::model::AwsManagedRulesBotControlRuleSet).
-    pub fn builder() -> crate::model::aws_managed_rules_bot_control_rule_set::Builder {
-        crate::model::aws_managed_rules_bot_control_rule_set::Builder::default()
     }
 }
 
@@ -5691,6 +5732,13 @@ impl PasswordField {
         self.identifier.as_deref()
     }
 }
+impl PasswordField {
+    /// Creates a new builder-style object to manufacture [`PasswordField`](crate::model::PasswordField).
+    pub fn builder() -> crate::model::password_field::Builder {
+        crate::model::password_field::Builder::default()
+    }
+}
+
 /// See [`PasswordField`](crate::model::PasswordField).
 pub mod password_field {
 
@@ -5719,12 +5767,6 @@ pub mod password_field {
         }
     }
 }
-impl PasswordField {
-    /// Creates a new builder-style object to manufacture [`PasswordField`](crate::model::PasswordField).
-    pub fn builder() -> crate::model::password_field::Builder {
-        crate::model::password_field::Builder::default()
-    }
-}
 
 /// <p>Details about your login page username field, used in a <code>ManagedRuleGroupConfig</code>. </p>
 #[non_exhaustive]
@@ -5740,6 +5782,13 @@ impl UsernameField {
         self.identifier.as_deref()
     }
 }
+impl UsernameField {
+    /// Creates a new builder-style object to manufacture [`UsernameField`](crate::model::UsernameField).
+    pub fn builder() -> crate::model::username_field::Builder {
+        crate::model::username_field::Builder::default()
+    }
+}
+
 /// See [`UsernameField`](crate::model::UsernameField).
 pub mod username_field {
 
@@ -5766,12 +5815,6 @@ pub mod username_field {
                 identifier: self.identifier,
             }
         }
-    }
-}
-impl UsernameField {
-    /// Creates a new builder-style object to manufacture [`UsernameField`](crate::model::UsernameField).
-    pub fn builder() -> crate::model::username_field::Builder {
-        crate::model::username_field::Builder::default()
     }
 }
 
@@ -5881,6 +5924,13 @@ impl ExcludedRule {
         self.name.as_deref()
     }
 }
+impl ExcludedRule {
+    /// Creates a new builder-style object to manufacture [`ExcludedRule`](crate::model::ExcludedRule).
+    pub fn builder() -> crate::model::excluded_rule::Builder {
+        crate::model::excluded_rule::Builder::default()
+    }
+}
+
 /// See [`ExcludedRule`](crate::model::ExcludedRule).
 pub mod excluded_rule {
 
@@ -5907,12 +5957,6 @@ pub mod excluded_rule {
         }
     }
 }
-impl ExcludedRule {
-    /// Creates a new builder-style object to manufacture [`ExcludedRule`](crate::model::ExcludedRule).
-    pub fn builder() -> crate::model::excluded_rule::Builder {
-        crate::model::excluded_rule::Builder::default()
-    }
-}
 
 /// <p>A logical rule statement used to negate the results of another rule statement. You provide one <code>Statement</code> within the <code>NotStatement</code>.</p>
 #[non_exhaustive]
@@ -5928,6 +5972,13 @@ impl NotStatement {
         self.statement.as_deref()
     }
 }
+impl NotStatement {
+    /// Creates a new builder-style object to manufacture [`NotStatement`](crate::model::NotStatement).
+    pub fn builder() -> crate::model::not_statement::Builder {
+        crate::model::not_statement::Builder::default()
+    }
+}
+
 /// See [`NotStatement`](crate::model::NotStatement).
 pub mod not_statement {
 
@@ -5962,12 +6013,6 @@ pub mod not_statement {
         }
     }
 }
-impl NotStatement {
-    /// Creates a new builder-style object to manufacture [`NotStatement`](crate::model::NotStatement).
-    pub fn builder() -> crate::model::not_statement::Builder {
-        crate::model::not_statement::Builder::default()
-    }
-}
 
 /// <p>A logical rule statement used to combine other rule statements with OR logic. You provide more than one <code>Statement</code> within the <code>OrStatement</code>. </p>
 #[non_exhaustive]
@@ -5983,6 +6028,13 @@ impl OrStatement {
         self.statements.as_deref()
     }
 }
+impl OrStatement {
+    /// Creates a new builder-style object to manufacture [`OrStatement`](crate::model::OrStatement).
+    pub fn builder() -> crate::model::or_statement::Builder {
+        crate::model::or_statement::Builder::default()
+    }
+}
+
 /// See [`OrStatement`](crate::model::OrStatement).
 pub mod or_statement {
 
@@ -6020,12 +6072,6 @@ pub mod or_statement {
         }
     }
 }
-impl OrStatement {
-    /// Creates a new builder-style object to manufacture [`OrStatement`](crate::model::OrStatement).
-    pub fn builder() -> crate::model::or_statement::Builder {
-        crate::model::or_statement::Builder::default()
-    }
-}
 
 /// <p>A logical rule statement used to combine other rule statements with AND logic. You provide more than one <code>Statement</code> within the <code>AndStatement</code>. </p>
 #[non_exhaustive]
@@ -6041,6 +6087,13 @@ impl AndStatement {
         self.statements.as_deref()
     }
 }
+impl AndStatement {
+    /// Creates a new builder-style object to manufacture [`AndStatement`](crate::model::AndStatement).
+    pub fn builder() -> crate::model::and_statement::Builder {
+        crate::model::and_statement::Builder::default()
+    }
+}
+
 /// See [`AndStatement`](crate::model::AndStatement).
 pub mod and_statement {
 
@@ -6076,12 +6129,6 @@ pub mod and_statement {
                 statements: self.statements,
             }
         }
-    }
-}
-impl AndStatement {
-    /// Creates a new builder-style object to manufacture [`AndStatement`](crate::model::AndStatement).
-    pub fn builder() -> crate::model::and_statement::Builder {
-        crate::model::and_statement::Builder::default()
     }
 }
 
@@ -6145,6 +6192,13 @@ impl RateBasedStatement {
         self.forwarded_ip_config.as_ref()
     }
 }
+impl RateBasedStatement {
+    /// Creates a new builder-style object to manufacture [`RateBasedStatement`](crate::model::RateBasedStatement).
+    pub fn builder() -> crate::model::rate_based_statement::Builder {
+        crate::model::rate_based_statement::Builder::default()
+    }
+}
+
 /// See [`RateBasedStatement`](crate::model::RateBasedStatement).
 pub mod rate_based_statement {
 
@@ -6240,12 +6294,6 @@ pub mod rate_based_statement {
         }
     }
 }
-impl RateBasedStatement {
-    /// Creates a new builder-style object to manufacture [`RateBasedStatement`](crate::model::RateBasedStatement).
-    pub fn builder() -> crate::model::rate_based_statement::Builder {
-        crate::model::rate_based_statement::Builder::default()
-    }
-}
 
 /// <p>The configuration for inspecting IP addresses in an HTTP header that you specify, instead of using the IP address that's reported by the web request origin. Commonly, this is the X-Forwarded-For (XFF) header, but you can specify any header name. </p> <note>
 /// <p>If the specified header isn't present in the request, WAF doesn't apply the rule to the web request at all.</p>
@@ -6290,6 +6338,13 @@ impl ForwardedIpConfig {
         self.fallback_behavior.as_ref()
     }
 }
+impl ForwardedIpConfig {
+    /// Creates a new builder-style object to manufacture [`ForwardedIpConfig`](crate::model::ForwardedIpConfig).
+    pub fn builder() -> crate::model::forwarded_ip_config::Builder {
+        crate::model::forwarded_ip_config::Builder::default()
+    }
+}
+
 /// See [`ForwardedIpConfig`](crate::model::ForwardedIpConfig).
 pub mod forwarded_ip_config {
 
@@ -6349,12 +6404,6 @@ pub mod forwarded_ip_config {
                 fallback_behavior: self.fallback_behavior,
             }
         }
-    }
-}
-impl ForwardedIpConfig {
-    /// Creates a new builder-style object to manufacture [`ForwardedIpConfig`](crate::model::ForwardedIpConfig).
-    pub fn builder() -> crate::model::forwarded_ip_config::Builder {
-        crate::model::forwarded_ip_config::Builder::default()
     }
 }
 
@@ -6569,6 +6618,13 @@ impl RegexPatternSetReferenceStatement {
         self.text_transformations.as_deref()
     }
 }
+impl RegexPatternSetReferenceStatement {
+    /// Creates a new builder-style object to manufacture [`RegexPatternSetReferenceStatement`](crate::model::RegexPatternSetReferenceStatement).
+    pub fn builder() -> crate::model::regex_pattern_set_reference_statement::Builder {
+        crate::model::regex_pattern_set_reference_statement::Builder::default()
+    }
+}
+
 /// See [`RegexPatternSetReferenceStatement`](crate::model::RegexPatternSetReferenceStatement).
 pub mod regex_pattern_set_reference_statement {
 
@@ -6634,12 +6690,6 @@ pub mod regex_pattern_set_reference_statement {
         }
     }
 }
-impl RegexPatternSetReferenceStatement {
-    /// Creates a new builder-style object to manufacture [`RegexPatternSetReferenceStatement`](crate::model::RegexPatternSetReferenceStatement).
-    pub fn builder() -> crate::model::regex_pattern_set_reference_statement::Builder {
-        crate::model::regex_pattern_set_reference_statement::Builder::default()
-    }
-}
 
 /// <p>A rule statement used to detect web requests coming from particular IP addresses or address ranges. To use this, create an <code>IPSet</code> that specifies the addresses you want to detect, then use the ARN of that set in this statement. To create an IP set, see <code>CreateIPSet</code>.</p>
 /// <p>Each IP set rule statement references an IP set. You create and maintain the set independent of your rules. This allows you to use the single set in multiple rules. When you update the referenced set, WAF automatically updates all rules that reference it.</p>
@@ -6669,6 +6719,13 @@ impl IpSetReferenceStatement {
         self.ip_set_forwarded_ip_config.as_ref()
     }
 }
+impl IpSetReferenceStatement {
+    /// Creates a new builder-style object to manufacture [`IpSetReferenceStatement`](crate::model::IpSetReferenceStatement).
+    pub fn builder() -> crate::model::ip_set_reference_statement::Builder {
+        crate::model::ip_set_reference_statement::Builder::default()
+    }
+}
+
 /// See [`IpSetReferenceStatement`](crate::model::IpSetReferenceStatement).
 pub mod ip_set_reference_statement {
 
@@ -6718,12 +6775,6 @@ pub mod ip_set_reference_statement {
                 ip_set_forwarded_ip_config: self.ip_set_forwarded_ip_config,
             }
         }
-    }
-}
-impl IpSetReferenceStatement {
-    /// Creates a new builder-style object to manufacture [`IpSetReferenceStatement`](crate::model::IpSetReferenceStatement).
-    pub fn builder() -> crate::model::ip_set_reference_statement::Builder {
-        crate::model::ip_set_reference_statement::Builder::default()
     }
 }
 
@@ -6788,6 +6839,13 @@ impl IpSetForwardedIpConfig {
         self.position.as_ref()
     }
 }
+impl IpSetForwardedIpConfig {
+    /// Creates a new builder-style object to manufacture [`IpSetForwardedIpConfig`](crate::model::IpSetForwardedIpConfig).
+    pub fn builder() -> crate::model::ip_set_forwarded_ip_config::Builder {
+        crate::model::ip_set_forwarded_ip_config::Builder::default()
+    }
+}
+
 /// See [`IpSetForwardedIpConfig`](crate::model::IpSetForwardedIpConfig).
 pub mod ip_set_forwarded_ip_config {
 
@@ -6874,12 +6932,6 @@ pub mod ip_set_forwarded_ip_config {
                 position: self.position,
             }
         }
-    }
-}
-impl IpSetForwardedIpConfig {
-    /// Creates a new builder-style object to manufacture [`IpSetForwardedIpConfig`](crate::model::IpSetForwardedIpConfig).
-    pub fn builder() -> crate::model::ip_set_forwarded_ip_config::Builder {
-        crate::model::ip_set_forwarded_ip_config::Builder::default()
     }
 }
 
@@ -7017,6 +7069,13 @@ impl RuleGroupReferenceStatement {
         self.rule_action_overrides.as_deref()
     }
 }
+impl RuleGroupReferenceStatement {
+    /// Creates a new builder-style object to manufacture [`RuleGroupReferenceStatement`](crate::model::RuleGroupReferenceStatement).
+    pub fn builder() -> crate::model::rule_group_reference_statement::Builder {
+        crate::model::rule_group_reference_statement::Builder::default()
+    }
+}
+
 /// See [`RuleGroupReferenceStatement`](crate::model::RuleGroupReferenceStatement).
 pub mod rule_group_reference_statement {
 
@@ -7094,12 +7153,6 @@ pub mod rule_group_reference_statement {
         }
     }
 }
-impl RuleGroupReferenceStatement {
-    /// Creates a new builder-style object to manufacture [`RuleGroupReferenceStatement`](crate::model::RuleGroupReferenceStatement).
-    pub fn builder() -> crate::model::rule_group_reference_statement::Builder {
-        crate::model::rule_group_reference_statement::Builder::default()
-    }
-}
 
 /// <p>A rule statement that labels web requests by country and region and that matches against web requests based on country code. A geo match rule labels every request that it inspects regardless of whether it finds a match.</p>
 /// <ul>
@@ -7146,6 +7199,13 @@ impl GeoMatchStatement {
         self.forwarded_ip_config.as_ref()
     }
 }
+impl GeoMatchStatement {
+    /// Creates a new builder-style object to manufacture [`GeoMatchStatement`](crate::model::GeoMatchStatement).
+    pub fn builder() -> crate::model::geo_match_statement::Builder {
+        crate::model::geo_match_statement::Builder::default()
+    }
+}
+
 /// See [`GeoMatchStatement`](crate::model::GeoMatchStatement).
 pub mod geo_match_statement {
 
@@ -7202,12 +7262,6 @@ pub mod geo_match_statement {
                 forwarded_ip_config: self.forwarded_ip_config,
             }
         }
-    }
-}
-impl GeoMatchStatement {
-    /// Creates a new builder-style object to manufacture [`GeoMatchStatement`](crate::model::GeoMatchStatement).
-    pub fn builder() -> crate::model::geo_match_statement::Builder {
-        crate::model::geo_match_statement::Builder::default()
     }
 }
 
@@ -8597,6 +8651,13 @@ impl SizeConstraintStatement {
         self.text_transformations.as_deref()
     }
 }
+impl SizeConstraintStatement {
+    /// Creates a new builder-style object to manufacture [`SizeConstraintStatement`](crate::model::SizeConstraintStatement).
+    pub fn builder() -> crate::model::size_constraint_statement::Builder {
+        crate::model::size_constraint_statement::Builder::default()
+    }
+}
+
 /// See [`SizeConstraintStatement`](crate::model::SizeConstraintStatement).
 pub mod size_constraint_statement {
 
@@ -8675,12 +8736,6 @@ pub mod size_constraint_statement {
                 text_transformations: self.text_transformations,
             }
         }
-    }
-}
-impl SizeConstraintStatement {
-    /// Creates a new builder-style object to manufacture [`SizeConstraintStatement`](crate::model::SizeConstraintStatement).
-    pub fn builder() -> crate::model::size_constraint_statement::Builder {
-        crate::model::size_constraint_statement::Builder::default()
     }
 }
 
@@ -8817,6 +8872,13 @@ impl XssMatchStatement {
         self.text_transformations.as_deref()
     }
 }
+impl XssMatchStatement {
+    /// Creates a new builder-style object to manufacture [`XssMatchStatement`](crate::model::XssMatchStatement).
+    pub fn builder() -> crate::model::xss_match_statement::Builder {
+        crate::model::xss_match_statement::Builder::default()
+    }
+}
+
 /// See [`XssMatchStatement`](crate::model::XssMatchStatement).
 pub mod xss_match_statement {
 
@@ -8870,12 +8932,6 @@ pub mod xss_match_statement {
         }
     }
 }
-impl XssMatchStatement {
-    /// Creates a new builder-style object to manufacture [`XssMatchStatement`](crate::model::XssMatchStatement).
-    pub fn builder() -> crate::model::xss_match_statement::Builder {
-        crate::model::xss_match_statement::Builder::default()
-    }
-}
 
 /// <p>A rule statement that inspects for malicious SQL code. Attackers insert malicious SQL code into web requests to do things like modify your database or extract data from it. </p>
 #[non_exhaustive]
@@ -8911,6 +8967,13 @@ impl SqliMatchStatement {
         self.sensitivity_level.as_ref()
     }
 }
+impl SqliMatchStatement {
+    /// Creates a new builder-style object to manufacture [`SqliMatchStatement`](crate::model::SqliMatchStatement).
+    pub fn builder() -> crate::model::sqli_match_statement::Builder {
+        crate::model::sqli_match_statement::Builder::default()
+    }
+}
+
 /// See [`SqliMatchStatement`](crate::model::SqliMatchStatement).
 pub mod sqli_match_statement {
 
@@ -8983,12 +9046,6 @@ pub mod sqli_match_statement {
                 sensitivity_level: self.sensitivity_level,
             }
         }
-    }
-}
-impl SqliMatchStatement {
-    /// Creates a new builder-style object to manufacture [`SqliMatchStatement`](crate::model::SqliMatchStatement).
-    pub fn builder() -> crate::model::sqli_match_statement::Builder {
-        crate::model::sqli_match_statement::Builder::default()
     }
 }
 
@@ -9169,6 +9226,13 @@ impl ByteMatchStatement {
         self.positional_constraint.as_ref()
     }
 }
+impl ByteMatchStatement {
+    /// Creates a new builder-style object to manufacture [`ByteMatchStatement`](crate::model::ByteMatchStatement).
+    pub fn builder() -> crate::model::byte_match_statement::Builder {
+        crate::model::byte_match_statement::Builder::default()
+    }
+}
+
 /// See [`ByteMatchStatement`](crate::model::ByteMatchStatement).
 pub mod byte_match_statement {
 
@@ -9300,12 +9364,6 @@ pub mod byte_match_statement {
                 positional_constraint: self.positional_constraint,
             }
         }
-    }
-}
-impl ByteMatchStatement {
-    /// Creates a new builder-style object to manufacture [`ByteMatchStatement`](crate::model::ByteMatchStatement).
-    pub fn builder() -> crate::model::byte_match_statement::Builder {
-        crate::model::byte_match_statement::Builder::default()
     }
 }
 
@@ -9443,6 +9501,13 @@ impl DefaultAction {
         self.allow.as_ref()
     }
 }
+impl DefaultAction {
+    /// Creates a new builder-style object to manufacture [`DefaultAction`](crate::model::DefaultAction).
+    pub fn builder() -> crate::model::default_action::Builder {
+        crate::model::default_action::Builder::default()
+    }
+}
+
 /// See [`DefaultAction`](crate::model::DefaultAction).
 pub mod default_action {
 
@@ -9481,12 +9546,6 @@ pub mod default_action {
                 allow: self.allow,
             }
         }
-    }
-}
-impl DefaultAction {
-    /// Creates a new builder-style object to manufacture [`DefaultAction`](crate::model::DefaultAction).
-    pub fn builder() -> crate::model::default_action::Builder {
-        crate::model::default_action::Builder::default()
     }
 }
 
@@ -9594,6 +9653,13 @@ impl Regex {
         self.regex_string.as_deref()
     }
 }
+impl Regex {
+    /// Creates a new builder-style object to manufacture [`Regex`](crate::model::Regex).
+    pub fn builder() -> crate::model::regex::Builder {
+        crate::model::regex::Builder::default()
+    }
+}
+
 /// See [`Regex`](crate::model::Regex).
 pub mod regex {
 
@@ -9622,12 +9688,6 @@ pub mod regex {
         }
     }
 }
-impl Regex {
-    /// Creates a new builder-style object to manufacture [`Regex`](crate::model::Regex).
-    pub fn builder() -> crate::model::regex::Builder {
-        crate::model::regex::Builder::default()
-    }
-}
 
 /// <p>A tag associated with an Amazon Web Services resource. Tags are key:value pairs that you can use to categorize and manage your resources, for purposes like billing or other management. Typically, the tag key represents a category, such as "environment", and the tag value represents a specific value within that category, such as "test," "development," or "production". Or you might set the tag key to "customer" and the value to the customer name or ID. You can specify one or more tags to add to each Amazon Web Services resource, up to 50 tags for a resource.</p>
 /// <p>You can tag the Amazon Web Services resources that you manage through WAF: web ACLs, rule groups, IP sets, and regex pattern sets. You can't manage or view tags through the WAF console. </p>
@@ -9651,6 +9711,13 @@ impl Tag {
         self.value.as_deref()
     }
 }
+impl Tag {
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
+    pub fn builder() -> crate::model::tag::Builder {
+        crate::model::tag::Builder::default()
+    }
+}
+
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
 
@@ -9691,12 +9758,6 @@ pub mod tag {
         }
     }
 }
-impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
-    pub fn builder() -> crate::model::tag::Builder {
-        crate::model::tag::Builder::default()
-    }
-}
 
 /// <p>A version of the named managed rule group, that the rule group's vendor publishes for use by customers. </p> <note>
 /// <p>This is intended for use only by vendors of managed rule sets. Vendors are Amazon Web Services and Amazon Web Services Marketplace sellers. </p>
@@ -9722,6 +9783,13 @@ impl VersionToPublish {
         self.forecasted_lifetime
     }
 }
+impl VersionToPublish {
+    /// Creates a new builder-style object to manufacture [`VersionToPublish`](crate::model::VersionToPublish).
+    pub fn builder() -> crate::model::version_to_publish::Builder {
+        crate::model::version_to_publish::Builder::default()
+    }
+}
+
 /// See [`VersionToPublish`](crate::model::VersionToPublish).
 pub mod version_to_publish {
 
@@ -9763,12 +9831,6 @@ pub mod version_to_publish {
                 forecasted_lifetime: self.forecasted_lifetime,
             }
         }
-    }
-}
-impl VersionToPublish {
-    /// Creates a new builder-style object to manufacture [`VersionToPublish`](crate::model::VersionToPublish).
-    pub fn builder() -> crate::model::version_to_publish::Builder {
-        crate::model::version_to_publish::Builder::default()
     }
 }
 
@@ -9831,6 +9893,13 @@ impl LoggingConfiguration {
         self.logging_filter.as_ref()
     }
 }
+impl LoggingConfiguration {
+    /// Creates a new builder-style object to manufacture [`LoggingConfiguration`](crate::model::LoggingConfiguration).
+    pub fn builder() -> crate::model::logging_configuration::Builder {
+        crate::model::logging_configuration::Builder::default()
+    }
+}
+
 /// See [`LoggingConfiguration`](crate::model::LoggingConfiguration).
 pub mod logging_configuration {
 
@@ -9936,12 +10005,6 @@ pub mod logging_configuration {
         }
     }
 }
-impl LoggingConfiguration {
-    /// Creates a new builder-style object to manufacture [`LoggingConfiguration`](crate::model::LoggingConfiguration).
-    pub fn builder() -> crate::model::logging_configuration::Builder {
-        crate::model::logging_configuration::Builder::default()
-    }
-}
 
 /// <p>Filtering that specifies which web requests are kept in the logs and which are dropped, defined for a web ACL's <code>LoggingConfiguration</code>. </p>
 /// <p>You can filter on the rule action and on the web request labels that were applied by matching rules during web ACL evaluation. </p>
@@ -9965,6 +10028,13 @@ impl LoggingFilter {
         self.default_behavior.as_ref()
     }
 }
+impl LoggingFilter {
+    /// Creates a new builder-style object to manufacture [`LoggingFilter`](crate::model::LoggingFilter).
+    pub fn builder() -> crate::model::logging_filter::Builder {
+        crate::model::logging_filter::Builder::default()
+    }
+}
+
 /// See [`LoggingFilter`](crate::model::LoggingFilter).
 pub mod logging_filter {
 
@@ -10015,12 +10085,6 @@ pub mod logging_filter {
                 default_behavior: self.default_behavior,
             }
         }
-    }
-}
-impl LoggingFilter {
-    /// Creates a new builder-style object to manufacture [`LoggingFilter`](crate::model::LoggingFilter).
-    pub fn builder() -> crate::model::logging_filter::Builder {
-        crate::model::logging_filter::Builder::default()
     }
 }
 
@@ -10142,6 +10206,13 @@ impl Filter {
         self.conditions.as_deref()
     }
 }
+impl Filter {
+    /// Creates a new builder-style object to manufacture [`Filter`](crate::model::Filter).
+    pub fn builder() -> crate::model::filter::Builder {
+        crate::model::filter::Builder::default()
+    }
+}
+
 /// See [`Filter`](crate::model::Filter).
 pub mod filter {
 
@@ -10209,12 +10280,6 @@ pub mod filter {
         }
     }
 }
-impl Filter {
-    /// Creates a new builder-style object to manufacture [`Filter`](crate::model::Filter).
-    pub fn builder() -> crate::model::filter::Builder {
-        crate::model::filter::Builder::default()
-    }
-}
 
 /// <p>A single match condition for a <code>Filter</code>.</p>
 #[non_exhaustive]
@@ -10237,6 +10302,13 @@ impl Condition {
         self.label_name_condition.as_ref()
     }
 }
+impl Condition {
+    /// Creates a new builder-style object to manufacture [`Condition`](crate::model::Condition).
+    pub fn builder() -> crate::model::condition::Builder {
+        crate::model::condition::Builder::default()
+    }
+}
+
 /// See [`Condition`](crate::model::Condition).
 pub mod condition {
 
@@ -10283,12 +10355,6 @@ pub mod condition {
         }
     }
 }
-impl Condition {
-    /// Creates a new builder-style object to manufacture [`Condition`](crate::model::Condition).
-    pub fn builder() -> crate::model::condition::Builder {
-        crate::model::condition::Builder::default()
-    }
-}
 
 /// <p>A single label name condition for a <code>Condition</code> in a logging filter.</p>
 #[non_exhaustive]
@@ -10304,6 +10370,13 @@ impl LabelNameCondition {
         self.label_name.as_deref()
     }
 }
+impl LabelNameCondition {
+    /// Creates a new builder-style object to manufacture [`LabelNameCondition`](crate::model::LabelNameCondition).
+    pub fn builder() -> crate::model::label_name_condition::Builder {
+        crate::model::label_name_condition::Builder::default()
+    }
+}
+
 /// See [`LabelNameCondition`](crate::model::LabelNameCondition).
 pub mod label_name_condition {
 
@@ -10332,12 +10405,6 @@ pub mod label_name_condition {
         }
     }
 }
-impl LabelNameCondition {
-    /// Creates a new builder-style object to manufacture [`LabelNameCondition`](crate::model::LabelNameCondition).
-    pub fn builder() -> crate::model::label_name_condition::Builder {
-        crate::model::label_name_condition::Builder::default()
-    }
-}
 
 /// <p>A single action condition for a <code>Condition</code> in a logging filter.</p>
 #[non_exhaustive]
@@ -10355,6 +10422,13 @@ impl ActionCondition {
         self.action.as_ref()
     }
 }
+impl ActionCondition {
+    /// Creates a new builder-style object to manufacture [`ActionCondition`](crate::model::ActionCondition).
+    pub fn builder() -> crate::model::action_condition::Builder {
+        crate::model::action_condition::Builder::default()
+    }
+}
+
 /// See [`ActionCondition`](crate::model::ActionCondition).
 pub mod action_condition {
 
@@ -10383,12 +10457,6 @@ pub mod action_condition {
                 action: self.action,
             }
         }
-    }
-}
-impl ActionCondition {
-    /// Creates a new builder-style object to manufacture [`ActionCondition`](crate::model::ActionCondition).
-    pub fn builder() -> crate::model::action_condition::Builder {
-        crate::model::action_condition::Builder::default()
     }
 }
 
@@ -10643,6 +10711,13 @@ impl WebAclSummary {
         self.arn.as_deref()
     }
 }
+impl WebAclSummary {
+    /// Creates a new builder-style object to manufacture [`WebAclSummary`](crate::model::WebAclSummary).
+    pub fn builder() -> crate::model::web_acl_summary::Builder {
+        crate::model::web_acl_summary::Builder::default()
+    }
+}
+
 /// See [`WebAclSummary`](crate::model::WebAclSummary).
 pub mod web_acl_summary {
 
@@ -10719,12 +10794,6 @@ pub mod web_acl_summary {
         }
     }
 }
-impl WebAclSummary {
-    /// Creates a new builder-style object to manufacture [`WebAclSummary`](crate::model::WebAclSummary).
-    pub fn builder() -> crate::model::web_acl_summary::Builder {
-        crate::model::web_acl_summary::Builder::default()
-    }
-}
 
 /// <p>The collection of tagging definitions for an Amazon Web Services resource. Tags are key:value pairs that you can use to categorize and manage your resources, for purposes like billing or other management. Typically, the tag key represents a category, such as "environment", and the tag value represents a specific value within that category, such as "test," "development," or "production". Or you might set the tag key to "customer" and the value to the customer name or ID. You can specify one or more tags to add to each Amazon Web Services resource, up to 50 tags for a resource.</p>
 /// <p>You can tag the Amazon Web Services resources that you manage through WAF: web ACLs, rule groups, IP sets, and regex pattern sets. You can't manage or view tags through the WAF console. </p>
@@ -10748,6 +10817,13 @@ impl TagInfoForResource {
         self.tag_list.as_deref()
     }
 }
+impl TagInfoForResource {
+    /// Creates a new builder-style object to manufacture [`TagInfoForResource`](crate::model::TagInfoForResource).
+    pub fn builder() -> crate::model::tag_info_for_resource::Builder {
+        crate::model::tag_info_for_resource::Builder::default()
+    }
+}
+
 /// See [`TagInfoForResource`](crate::model::TagInfoForResource).
 pub mod tag_info_for_resource {
 
@@ -10797,12 +10873,6 @@ pub mod tag_info_for_resource {
         }
     }
 }
-impl TagInfoForResource {
-    /// Creates a new builder-style object to manufacture [`TagInfoForResource`](crate::model::TagInfoForResource).
-    pub fn builder() -> crate::model::tag_info_for_resource::Builder {
-        crate::model::tag_info_for_resource::Builder::default()
-    }
-}
 
 /// <p>High-level information about a <code>RuleGroup</code>, returned by operations like create and list. This provides information like the ID, that you can use to retrieve and manage a <code>RuleGroup</code>, and the ARN, that you provide to the <code>RuleGroupReferenceStatement</code> to use the rule group in a <code>Rule</code>.</p>
 #[non_exhaustive]
@@ -10846,6 +10916,13 @@ impl RuleGroupSummary {
         self.arn.as_deref()
     }
 }
+impl RuleGroupSummary {
+    /// Creates a new builder-style object to manufacture [`RuleGroupSummary`](crate::model::RuleGroupSummary).
+    pub fn builder() -> crate::model::rule_group_summary::Builder {
+        crate::model::rule_group_summary::Builder::default()
+    }
+}
+
 /// See [`RuleGroupSummary`](crate::model::RuleGroupSummary).
 pub mod rule_group_summary {
 
@@ -10920,12 +10997,6 @@ pub mod rule_group_summary {
                 arn: self.arn,
             }
         }
-    }
-}
-impl RuleGroupSummary {
-    /// Creates a new builder-style object to manufacture [`RuleGroupSummary`](crate::model::RuleGroupSummary).
-    pub fn builder() -> crate::model::rule_group_summary::Builder {
-        crate::model::rule_group_summary::Builder::default()
     }
 }
 
@@ -11076,6 +11147,13 @@ impl RegexPatternSetSummary {
         self.arn.as_deref()
     }
 }
+impl RegexPatternSetSummary {
+    /// Creates a new builder-style object to manufacture [`RegexPatternSetSummary`](crate::model::RegexPatternSetSummary).
+    pub fn builder() -> crate::model::regex_pattern_set_summary::Builder {
+        crate::model::regex_pattern_set_summary::Builder::default()
+    }
+}
+
 /// See [`RegexPatternSetSummary`](crate::model::RegexPatternSetSummary).
 pub mod regex_pattern_set_summary {
 
@@ -11152,12 +11230,6 @@ pub mod regex_pattern_set_summary {
         }
     }
 }
-impl RegexPatternSetSummary {
-    /// Creates a new builder-style object to manufacture [`RegexPatternSetSummary`](crate::model::RegexPatternSetSummary).
-    pub fn builder() -> crate::model::regex_pattern_set_summary::Builder {
-        crate::model::regex_pattern_set_summary::Builder::default()
-    }
-}
 
 /// <p>High level information for an SDK release. </p>
 #[non_exhaustive]
@@ -11180,6 +11252,13 @@ impl ReleaseSummary {
         self.timestamp.as_ref()
     }
 }
+impl ReleaseSummary {
+    /// Creates a new builder-style object to manufacture [`ReleaseSummary`](crate::model::ReleaseSummary).
+    pub fn builder() -> crate::model::release_summary::Builder {
+        crate::model::release_summary::Builder::default()
+    }
+}
+
 /// See [`ReleaseSummary`](crate::model::ReleaseSummary).
 pub mod release_summary {
 
@@ -11224,12 +11303,6 @@ pub mod release_summary {
                 timestamp: self.timestamp,
             }
         }
-    }
-}
-impl ReleaseSummary {
-    /// Creates a new builder-style object to manufacture [`ReleaseSummary`](crate::model::ReleaseSummary).
-    pub fn builder() -> crate::model::release_summary::Builder {
-        crate::model::release_summary::Builder::default()
     }
 }
 
@@ -11393,6 +11466,13 @@ impl ManagedRuleSetSummary {
         self.label_namespace.as_deref()
     }
 }
+impl ManagedRuleSetSummary {
+    /// Creates a new builder-style object to manufacture [`ManagedRuleSetSummary`](crate::model::ManagedRuleSetSummary).
+    pub fn builder() -> crate::model::managed_rule_set_summary::Builder {
+        crate::model::managed_rule_set_summary::Builder::default()
+    }
+}
+
 /// See [`ManagedRuleSetSummary`](crate::model::ManagedRuleSetSummary).
 pub mod managed_rule_set_summary {
 
@@ -11502,12 +11582,6 @@ pub mod managed_rule_set_summary {
         }
     }
 }
-impl ManagedRuleSetSummary {
-    /// Creates a new builder-style object to manufacture [`ManagedRuleSetSummary`](crate::model::ManagedRuleSetSummary).
-    pub fn builder() -> crate::model::managed_rule_set_summary::Builder {
-        crate::model::managed_rule_set_summary::Builder::default()
-    }
-}
 
 /// <p>High-level information about an <code>IPSet</code>, returned by operations like create and list. This provides information like the ID, that you can use to retrieve and manage an <code>IPSet</code>, and the ARN, that you provide to the <code>IPSetReferenceStatement</code> to use the address set in a <code>Rule</code>.</p>
 #[non_exhaustive]
@@ -11551,6 +11625,13 @@ impl IpSetSummary {
         self.arn.as_deref()
     }
 }
+impl IpSetSummary {
+    /// Creates a new builder-style object to manufacture [`IpSetSummary`](crate::model::IpSetSummary).
+    pub fn builder() -> crate::model::ip_set_summary::Builder {
+        crate::model::ip_set_summary::Builder::default()
+    }
+}
+
 /// See [`IpSetSummary`](crate::model::IpSetSummary).
 pub mod ip_set_summary {
 
@@ -11627,12 +11708,6 @@ pub mod ip_set_summary {
         }
     }
 }
-impl IpSetSummary {
-    /// Creates a new builder-style object to manufacture [`IpSetSummary`](crate::model::IpSetSummary).
-    pub fn builder() -> crate::model::ip_set_summary::Builder {
-        crate::model::ip_set_summary::Builder::default()
-    }
-}
 
 /// <p>Describes a single version of a managed rule group. </p>
 #[non_exhaustive]
@@ -11655,6 +11730,13 @@ impl ManagedRuleGroupVersion {
         self.last_update_timestamp.as_ref()
     }
 }
+impl ManagedRuleGroupVersion {
+    /// Creates a new builder-style object to manufacture [`ManagedRuleGroupVersion`](crate::model::ManagedRuleGroupVersion).
+    pub fn builder() -> crate::model::managed_rule_group_version::Builder {
+        crate::model::managed_rule_group_version::Builder::default()
+    }
+}
+
 /// See [`ManagedRuleGroupVersion`](crate::model::ManagedRuleGroupVersion).
 pub mod managed_rule_group_version {
 
@@ -11698,12 +11780,6 @@ pub mod managed_rule_group_version {
         }
     }
 }
-impl ManagedRuleGroupVersion {
-    /// Creates a new builder-style object to manufacture [`ManagedRuleGroupVersion`](crate::model::ManagedRuleGroupVersion).
-    pub fn builder() -> crate::model::managed_rule_group_version::Builder {
-        crate::model::managed_rule_group_version::Builder::default()
-    }
-}
 
 /// <p>High-level information about a managed rule group, returned by <code>ListAvailableManagedRuleGroups</code>. This provides information like the name and vendor name, that you provide when you add a <code>ManagedRuleGroupStatement</code> to a web ACL. Managed rule groups include Amazon Web Services Managed Rules rule groups, which are free of charge to WAF customers, and Amazon Web Services Marketplace managed rule groups, which you can subscribe to through Amazon Web Services Marketplace. </p>
 #[non_exhaustive]
@@ -11740,6 +11816,13 @@ impl ManagedRuleGroupSummary {
         self.description.as_deref()
     }
 }
+impl ManagedRuleGroupSummary {
+    /// Creates a new builder-style object to manufacture [`ManagedRuleGroupSummary`](crate::model::ManagedRuleGroupSummary).
+    pub fn builder() -> crate::model::managed_rule_group_summary::Builder {
+        crate::model::managed_rule_group_summary::Builder::default()
+    }
+}
+
 /// See [`ManagedRuleGroupSummary`](crate::model::ManagedRuleGroupSummary).
 pub mod managed_rule_group_summary {
 
@@ -11802,12 +11885,6 @@ pub mod managed_rule_group_summary {
                 description: self.description,
             }
         }
-    }
-}
-impl ManagedRuleGroupSummary {
-    /// Creates a new builder-style object to manufacture [`ManagedRuleGroupSummary`](crate::model::ManagedRuleGroupSummary).
-    pub fn builder() -> crate::model::managed_rule_group_summary::Builder {
-        crate::model::managed_rule_group_summary::Builder::default()
     }
 }
 
@@ -11972,6 +12049,13 @@ impl WebAcl {
         self.token_domains.as_deref()
     }
 }
+impl WebAcl {
+    /// Creates a new builder-style object to manufacture [`WebAcl`](crate::model::WebAcl).
+    pub fn builder() -> crate::model::web_acl::Builder {
+        crate::model::web_acl::Builder::default()
+    }
+}
+
 /// See [`WebAcl`](crate::model::WebAcl).
 pub mod web_acl {
 
@@ -12292,12 +12376,6 @@ pub mod web_acl {
         }
     }
 }
-impl WebAcl {
-    /// Creates a new builder-style object to manufacture [`WebAcl`](crate::model::WebAcl).
-    pub fn builder() -> crate::model::web_acl::Builder {
-        crate::model::web_acl::Builder::default()
-    }
-}
 
 /// <p>A rule group that's defined for an Firewall Manager WAF policy.</p>
 #[non_exhaustive]
@@ -12349,6 +12427,13 @@ impl FirewallManagerRuleGroup {
         self.visibility_config.as_ref()
     }
 }
+impl FirewallManagerRuleGroup {
+    /// Creates a new builder-style object to manufacture [`FirewallManagerRuleGroup`](crate::model::FirewallManagerRuleGroup).
+    pub fn builder() -> crate::model::firewall_manager_rule_group::Builder {
+        crate::model::firewall_manager_rule_group::Builder::default()
+    }
+}
+
 /// See [`FirewallManagerRuleGroup`](crate::model::FirewallManagerRuleGroup).
 pub mod firewall_manager_rule_group {
 
@@ -12444,12 +12529,6 @@ pub mod firewall_manager_rule_group {
         }
     }
 }
-impl FirewallManagerRuleGroup {
-    /// Creates a new builder-style object to manufacture [`FirewallManagerRuleGroup`](crate::model::FirewallManagerRuleGroup).
-    pub fn builder() -> crate::model::firewall_manager_rule_group::Builder {
-        crate::model::firewall_manager_rule_group::Builder::default()
-    }
-}
 
 /// <p>The processing guidance for an Firewall Manager rule. This is like a regular rule <code>Statement</code>, but it can only contain a rule group reference.</p>
 #[non_exhaustive]
@@ -12485,6 +12564,13 @@ impl FirewallManagerStatement {
         self.rule_group_reference_statement.as_ref()
     }
 }
+impl FirewallManagerStatement {
+    /// Creates a new builder-style object to manufacture [`FirewallManagerStatement`](crate::model::FirewallManagerStatement).
+    pub fn builder() -> crate::model::firewall_manager_statement::Builder {
+        crate::model::firewall_manager_statement::Builder::default()
+    }
+}
+
 /// See [`FirewallManagerStatement`](crate::model::FirewallManagerStatement).
 pub mod firewall_manager_statement {
 
@@ -12547,12 +12633,6 @@ pub mod firewall_manager_statement {
         }
     }
 }
-impl FirewallManagerStatement {
-    /// Creates a new builder-style object to manufacture [`FirewallManagerStatement`](crate::model::FirewallManagerStatement).
-    pub fn builder() -> crate::model::firewall_manager_statement::Builder {
-        crate::model::firewall_manager_statement::Builder::default()
-    }
-}
 
 /// <p>In a <code>GetSampledRequests</code> request, the <code>StartTime</code> and <code>EndTime</code> objects specify the time range for which you want WAF to return a sample of web requests.</p>
 /// <p>You must specify the times in Coordinated Universal Time (UTC) format. UTC format includes the special designator, <code>Z</code>. For example, <code>"2016-09-27T14:50Z"</code>. You can specify any time range in the previous three hours.</p>
@@ -12577,6 +12657,13 @@ impl TimeWindow {
         self.end_time.as_ref()
     }
 }
+impl TimeWindow {
+    /// Creates a new builder-style object to manufacture [`TimeWindow`](crate::model::TimeWindow).
+    pub fn builder() -> crate::model::time_window::Builder {
+        crate::model::time_window::Builder::default()
+    }
+}
+
 /// See [`TimeWindow`](crate::model::TimeWindow).
 pub mod time_window {
 
@@ -12621,12 +12708,6 @@ pub mod time_window {
                 end_time: self.end_time,
             }
         }
-    }
-}
-impl TimeWindow {
-    /// Creates a new builder-style object to manufacture [`TimeWindow`](crate::model::TimeWindow).
-    pub fn builder() -> crate::model::time_window::Builder {
-        crate::model::time_window::Builder::default()
     }
 }
 
@@ -12738,6 +12819,13 @@ impl SampledHttpRequest {
         self.overridden_action.as_deref()
     }
 }
+impl SampledHttpRequest {
+    /// Creates a new builder-style object to manufacture [`SampledHttpRequest`](crate::model::SampledHttpRequest).
+    pub fn builder() -> crate::model::sampled_http_request::Builder {
+        crate::model::sampled_http_request::Builder::default()
+    }
+}
+
 /// See [`SampledHttpRequest`](crate::model::SampledHttpRequest).
 pub mod sampled_http_request {
 
@@ -12950,12 +13038,6 @@ pub mod sampled_http_request {
         }
     }
 }
-impl SampledHttpRequest {
-    /// Creates a new builder-style object to manufacture [`SampledHttpRequest`](crate::model::SampledHttpRequest).
-    pub fn builder() -> crate::model::sampled_http_request::Builder {
-        crate::model::sampled_http_request::Builder::default()
-    }
-}
 
 /// <p>The result from the inspection of the web request for a valid challenge token. </p>
 #[non_exhaustive]
@@ -12985,6 +13067,13 @@ impl ChallengeResponse {
         self.failure_reason.as_ref()
     }
 }
+impl ChallengeResponse {
+    /// Creates a new builder-style object to manufacture [`ChallengeResponse`](crate::model::ChallengeResponse).
+    pub fn builder() -> crate::model::challenge_response::Builder {
+        crate::model::challenge_response::Builder::default()
+    }
+}
+
 /// See [`ChallengeResponse`](crate::model::ChallengeResponse).
 pub mod challenge_response {
 
@@ -13038,12 +13127,6 @@ pub mod challenge_response {
                 failure_reason: self.failure_reason,
             }
         }
-    }
-}
-impl ChallengeResponse {
-    /// Creates a new builder-style object to manufacture [`ChallengeResponse`](crate::model::ChallengeResponse).
-    pub fn builder() -> crate::model::challenge_response::Builder {
-        crate::model::challenge_response::Builder::default()
     }
 }
 
@@ -13180,6 +13263,13 @@ impl CaptchaResponse {
         self.failure_reason.as_ref()
     }
 }
+impl CaptchaResponse {
+    /// Creates a new builder-style object to manufacture [`CaptchaResponse`](crate::model::CaptchaResponse).
+    pub fn builder() -> crate::model::captcha_response::Builder {
+        crate::model::captcha_response::Builder::default()
+    }
+}
+
 /// See [`CaptchaResponse`](crate::model::CaptchaResponse).
 pub mod captcha_response {
 
@@ -13235,12 +13325,6 @@ pub mod captcha_response {
         }
     }
 }
-impl CaptchaResponse {
-    /// Creates a new builder-style object to manufacture [`CaptchaResponse`](crate::model::CaptchaResponse).
-    pub fn builder() -> crate::model::captcha_response::Builder {
-        crate::model::captcha_response::Builder::default()
-    }
-}
 
 /// <p>Part of the response from <code>GetSampledRequests</code>. This is a complex type that appears as <code>Headers</code> in the response syntax. <code>HTTPHeader</code> contains the names and values of all of the headers that appear in one of the web requests. </p>
 #[non_exhaustive]
@@ -13263,6 +13347,13 @@ impl HttpHeader {
         self.value.as_deref()
     }
 }
+impl HttpHeader {
+    /// Creates a new builder-style object to manufacture [`HttpHeader`](crate::model::HttpHeader).
+    pub fn builder() -> crate::model::http_header::Builder {
+        crate::model::http_header::Builder::default()
+    }
+}
+
 /// See [`HttpHeader`](crate::model::HttpHeader).
 pub mod http_header {
 
@@ -13301,12 +13392,6 @@ pub mod http_header {
                 value: self.value,
             }
         }
-    }
-}
-impl HttpHeader {
-    /// Creates a new builder-style object to manufacture [`HttpHeader`](crate::model::HttpHeader).
-    pub fn builder() -> crate::model::http_header::Builder {
-        crate::model::http_header::Builder::default()
     }
 }
 
@@ -13367,6 +13452,13 @@ impl HttpRequest {
         self.headers.as_deref()
     }
 }
+impl HttpRequest {
+    /// Creates a new builder-style object to manufacture [`HttpRequest`](crate::model::HttpRequest).
+    pub fn builder() -> crate::model::http_request::Builder {
+        crate::model::http_request::Builder::default()
+    }
+}
+
 /// See [`HttpRequest`](crate::model::HttpRequest).
 pub mod http_request {
 
@@ -13470,12 +13562,6 @@ pub mod http_request {
                 headers: self.headers,
             }
         }
-    }
-}
-impl HttpRequest {
-    /// Creates a new builder-style object to manufacture [`HttpRequest`](crate::model::HttpRequest).
-    pub fn builder() -> crate::model::http_request::Builder {
-        crate::model::http_request::Builder::default()
     }
 }
 
@@ -13597,6 +13683,13 @@ impl RuleGroup {
         self.consumed_labels.as_deref()
     }
 }
+impl RuleGroup {
+    /// Creates a new builder-style object to manufacture [`RuleGroup`](crate::model::RuleGroup).
+    pub fn builder() -> crate::model::rule_group::Builder {
+        crate::model::rule_group::Builder::default()
+    }
+}
+
 /// See [`RuleGroup`](crate::model::RuleGroup).
 pub mod rule_group {
 
@@ -13823,12 +13916,6 @@ pub mod rule_group {
         }
     }
 }
-impl RuleGroup {
-    /// Creates a new builder-style object to manufacture [`RuleGroup`](crate::model::RuleGroup).
-    pub fn builder() -> crate::model::rule_group::Builder {
-        crate::model::rule_group::Builder::default()
-    }
-}
 
 /// <p>List of labels used by one or more of the rules of a <code>RuleGroup</code>. This summary object is used for the following rule group lists: </p>
 /// <ul>
@@ -13848,6 +13935,13 @@ impl LabelSummary {
         self.name.as_deref()
     }
 }
+impl LabelSummary {
+    /// Creates a new builder-style object to manufacture [`LabelSummary`](crate::model::LabelSummary).
+    pub fn builder() -> crate::model::label_summary::Builder {
+        crate::model::label_summary::Builder::default()
+    }
+}
+
 /// See [`LabelSummary`](crate::model::LabelSummary).
 pub mod label_summary {
 
@@ -13872,12 +13966,6 @@ pub mod label_summary {
         pub fn build(self) -> crate::model::LabelSummary {
             crate::model::LabelSummary { name: self.name }
         }
-    }
-}
-impl LabelSummary {
-    /// Creates a new builder-style object to manufacture [`LabelSummary`](crate::model::LabelSummary).
-    pub fn builder() -> crate::model::label_summary::Builder {
-        crate::model::label_summary::Builder::default()
     }
 }
 
@@ -13924,6 +14012,13 @@ impl RegexPatternSet {
         self.regular_expression_list.as_deref()
     }
 }
+impl RegexPatternSet {
+    /// Creates a new builder-style object to manufacture [`RegexPatternSet`](crate::model::RegexPatternSet).
+    pub fn builder() -> crate::model::regex_pattern_set::Builder {
+        crate::model::regex_pattern_set::Builder::default()
+    }
+}
+
 /// See [`RegexPatternSet`](crate::model::RegexPatternSet).
 pub mod regex_pattern_set {
 
@@ -14009,12 +14104,6 @@ pub mod regex_pattern_set {
         }
     }
 }
-impl RegexPatternSet {
-    /// Creates a new builder-style object to manufacture [`RegexPatternSet`](crate::model::RegexPatternSet).
-    pub fn builder() -> crate::model::regex_pattern_set::Builder {
-        crate::model::regex_pattern_set::Builder::default()
-    }
-}
 
 /// <p>The set of IP addresses that are currently blocked for a <code>RateBasedStatement</code>.</p>
 #[non_exhaustive]
@@ -14037,6 +14126,13 @@ impl RateBasedStatementManagedKeysIpSet {
         self.addresses.as_deref()
     }
 }
+impl RateBasedStatementManagedKeysIpSet {
+    /// Creates a new builder-style object to manufacture [`RateBasedStatementManagedKeysIpSet`](crate::model::RateBasedStatementManagedKeysIpSet).
+    pub fn builder() -> crate::model::rate_based_statement_managed_keys_ip_set::Builder {
+        crate::model::rate_based_statement_managed_keys_ip_set::Builder::default()
+    }
+}
+
 /// See [`RateBasedStatementManagedKeysIpSet`](crate::model::RateBasedStatementManagedKeysIpSet).
 pub mod rate_based_statement_managed_keys_ip_set {
 
@@ -14087,12 +14183,6 @@ pub mod rate_based_statement_managed_keys_ip_set {
                 addresses: self.addresses,
             }
         }
-    }
-}
-impl RateBasedStatementManagedKeysIpSet {
-    /// Creates a new builder-style object to manufacture [`RateBasedStatementManagedKeysIpSet`](crate::model::RateBasedStatementManagedKeysIpSet).
-    pub fn builder() -> crate::model::rate_based_statement_managed_keys_ip_set::Builder {
-        crate::model::rate_based_statement_managed_keys_ip_set::Builder::default()
     }
 }
 
@@ -14222,6 +14312,13 @@ impl MobileSdkRelease {
         self.tags.as_deref()
     }
 }
+impl MobileSdkRelease {
+    /// Creates a new builder-style object to manufacture [`MobileSdkRelease`](crate::model::MobileSdkRelease).
+    pub fn builder() -> crate::model::mobile_sdk_release::Builder {
+        crate::model::mobile_sdk_release::Builder::default()
+    }
+}
+
 /// See [`MobileSdkRelease`](crate::model::MobileSdkRelease).
 pub mod mobile_sdk_release {
 
@@ -14302,12 +14399,6 @@ pub mod mobile_sdk_release {
                 tags: self.tags,
             }
         }
-    }
-}
-impl MobileSdkRelease {
-    /// Creates a new builder-style object to manufacture [`MobileSdkRelease`](crate::model::MobileSdkRelease).
-    pub fn builder() -> crate::model::mobile_sdk_release::Builder {
-        crate::model::mobile_sdk_release::Builder::default()
     }
 }
 
@@ -14394,6 +14485,13 @@ impl ManagedRuleSet {
         self.label_namespace.as_deref()
     }
 }
+impl ManagedRuleSet {
+    /// Creates a new builder-style object to manufacture [`ManagedRuleSet`](crate::model::ManagedRuleSet).
+    pub fn builder() -> crate::model::managed_rule_set::Builder {
+        crate::model::managed_rule_set::Builder::default()
+    }
+}
+
 /// See [`ManagedRuleSet`](crate::model::ManagedRuleSet).
 pub mod managed_rule_set {
 
@@ -14535,12 +14633,6 @@ pub mod managed_rule_set {
         }
     }
 }
-impl ManagedRuleSet {
-    /// Creates a new builder-style object to manufacture [`ManagedRuleSet`](crate::model::ManagedRuleSet).
-    pub fn builder() -> crate::model::managed_rule_set::Builder {
-        crate::model::managed_rule_set::Builder::default()
-    }
-}
 
 /// <p>Information for a single version of a managed rule set. </p> <note>
 /// <p>This is intended for use only by vendors of managed rule sets. Vendors are Amazon Web Services and Amazon Web Services Marketplace sellers. </p>
@@ -14602,6 +14694,13 @@ impl ManagedRuleSetVersion {
         self.expiry_timestamp.as_ref()
     }
 }
+impl ManagedRuleSetVersion {
+    /// Creates a new builder-style object to manufacture [`ManagedRuleSetVersion`](crate::model::ManagedRuleSetVersion).
+    pub fn builder() -> crate::model::managed_rule_set_version::Builder {
+        crate::model::managed_rule_set_version::Builder::default()
+    }
+}
+
 /// See [`ManagedRuleSetVersion`](crate::model::ManagedRuleSetVersion).
 pub mod managed_rule_set_version {
 
@@ -14710,12 +14809,6 @@ pub mod managed_rule_set_version {
         }
     }
 }
-impl ManagedRuleSetVersion {
-    /// Creates a new builder-style object to manufacture [`ManagedRuleSetVersion`](crate::model::ManagedRuleSetVersion).
-    pub fn builder() -> crate::model::managed_rule_set_version::Builder {
-        crate::model::managed_rule_set_version::Builder::default()
-    }
-}
 
 /// <p>Contains zero or more IP addresses or blocks of IP addresses specified in Classless Inter-Domain Routing (CIDR) notation. WAF supports all IPv4 and IPv6 CIDR ranges except for /0. For information about CIDR notation, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless Inter-Domain Routing</a>. </p>
 /// <p>WAF assigns an ARN to each <code>IPSet</code> that you create. To use an IP set in a rule, you provide the ARN to the <code>Rule</code> statement <code>IPSetReferenceStatement</code>. </p>
@@ -14797,6 +14890,13 @@ impl IpSet {
         self.addresses.as_deref()
     }
 }
+impl IpSet {
+    /// Creates a new builder-style object to manufacture [`IpSet`](crate::model::IpSet).
+    pub fn builder() -> crate::model::ip_set::Builder {
+        crate::model::ip_set::Builder::default()
+    }
+}
+
 /// See [`IpSet`](crate::model::IpSet).
 pub mod ip_set {
 
@@ -14927,12 +15027,6 @@ pub mod ip_set {
         }
     }
 }
-impl IpSet {
-    /// Creates a new builder-style object to manufacture [`IpSet`](crate::model::IpSet).
-    pub fn builder() -> crate::model::ip_set::Builder {
-        crate::model::ip_set::Builder::default()
-    }
-}
 
 /// <p>High-level information about a <code>Rule</code>, returned by operations like <code>DescribeManagedRuleGroup</code>. This provides information like the ID, that you can use to retrieve and manage a <code>RuleGroup</code>, and the ARN, that you provide to the <code>RuleGroupReferenceStatement</code> to use the rule group in a <code>Rule</code>.</p>
 #[non_exhaustive]
@@ -14955,6 +15049,13 @@ impl RuleSummary {
         self.action.as_ref()
     }
 }
+impl RuleSummary {
+    /// Creates a new builder-style object to manufacture [`RuleSummary`](crate::model::RuleSummary).
+    pub fn builder() -> crate::model::rule_summary::Builder {
+        crate::model::rule_summary::Builder::default()
+    }
+}
+
 /// See [`RuleSummary`](crate::model::RuleSummary).
 pub mod rule_summary {
 
@@ -14993,11 +15094,5 @@ pub mod rule_summary {
                 action: self.action,
             }
         }
-    }
-}
-impl RuleSummary {
-    /// Creates a new builder-style object to manufacture [`RuleSummary`](crate::model::RuleSummary).
-    pub fn builder() -> crate::model::rule_summary::Builder {
-        crate::model::rule_summary::Builder::default()
     }
 }

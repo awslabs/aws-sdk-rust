@@ -4,7 +4,7 @@
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`cancel_legal_hold`](crate::client::Client::cancel_legal_hold).
 ///
-/// See [`crate::client::fluent_builders::CancelLegalHold`] for more details about the operation.
+/// `ParseStrictResponse` impl for `CancelLegalHold`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CancelLegalHold {
     _private: (),
@@ -39,7 +39,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CancelLegalHold {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`create_backup_plan`](crate::client::Client::create_backup_plan).
 ///
-/// See [`crate::client::fluent_builders::CreateBackupPlan`] for more details about the operation.
+/// `ParseStrictResponse` impl for `CreateBackupPlan`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateBackupPlan {
     _private: (),
@@ -74,7 +74,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateBackupPlan {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`create_backup_selection`](crate::client::Client::create_backup_selection).
 ///
-/// See [`crate::client::fluent_builders::CreateBackupSelection`] for more details about the operation.
+/// `ParseStrictResponse` impl for `CreateBackupSelection`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateBackupSelection {
     _private: (),
@@ -109,7 +109,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateBackupSelection {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`create_backup_vault`](crate::client::Client::create_backup_vault).
 ///
-/// See [`crate::client::fluent_builders::CreateBackupVault`] for more details about the operation.
+/// `ParseStrictResponse` impl for `CreateBackupVault`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateBackupVault {
     _private: (),
@@ -144,7 +144,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateBackupVault {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`create_framework`](crate::client::Client::create_framework).
 ///
-/// See [`crate::client::fluent_builders::CreateFramework`] for more details about the operation.
+/// `ParseStrictResponse` impl for `CreateFramework`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateFramework {
     _private: (),
@@ -179,7 +179,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateFramework {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`create_legal_hold`](crate::client::Client::create_legal_hold).
 ///
-/// See [`crate::client::fluent_builders::CreateLegalHold`] for more details about the operation.
+/// `ParseStrictResponse` impl for `CreateLegalHold`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateLegalHold {
     _private: (),
@@ -214,7 +214,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateLegalHold {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`create_report_plan`](crate::client::Client::create_report_plan).
 ///
-/// See [`crate::client::fluent_builders::CreateReportPlan`] for more details about the operation.
+/// `ParseStrictResponse` impl for `CreateReportPlan`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateReportPlan {
     _private: (),
@@ -249,7 +249,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateReportPlan {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`delete_backup_plan`](crate::client::Client::delete_backup_plan).
 ///
-/// See [`crate::client::fluent_builders::DeleteBackupPlan`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DeleteBackupPlan`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteBackupPlan {
     _private: (),
@@ -284,7 +284,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteBackupPlan {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`delete_backup_selection`](crate::client::Client::delete_backup_selection).
 ///
-/// See [`crate::client::fluent_builders::DeleteBackupSelection`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DeleteBackupSelection`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteBackupSelection {
     _private: (),
@@ -319,7 +319,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteBackupSelection {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`delete_backup_vault`](crate::client::Client::delete_backup_vault).
 ///
-/// See [`crate::client::fluent_builders::DeleteBackupVault`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DeleteBackupVault`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteBackupVault {
     _private: (),
@@ -354,7 +354,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteBackupVault {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`delete_backup_vault_access_policy`](crate::client::Client::delete_backup_vault_access_policy).
 ///
-/// See [`crate::client::fluent_builders::DeleteBackupVaultAccessPolicy`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DeleteBackupVaultAccessPolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteBackupVaultAccessPolicy {
     _private: (),
@@ -389,7 +389,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteBackupVaultAccessP
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`delete_backup_vault_lock_configuration`](crate::client::Client::delete_backup_vault_lock_configuration).
 ///
-/// See [`crate::client::fluent_builders::DeleteBackupVaultLockConfiguration`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DeleteBackupVaultLockConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteBackupVaultLockConfiguration {
     _private: (),
@@ -424,7 +424,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteBackupVaultLockCon
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`delete_backup_vault_notifications`](crate::client::Client::delete_backup_vault_notifications).
 ///
-/// See [`crate::client::fluent_builders::DeleteBackupVaultNotifications`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DeleteBackupVaultNotifications`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteBackupVaultNotifications {
     _private: (),
@@ -459,7 +459,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteBackupVaultNotific
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`delete_framework`](crate::client::Client::delete_framework).
 ///
-/// See [`crate::client::fluent_builders::DeleteFramework`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DeleteFramework`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteFramework {
     _private: (),
@@ -494,7 +494,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteFramework {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`delete_recovery_point`](crate::client::Client::delete_recovery_point).
 ///
-/// See [`crate::client::fluent_builders::DeleteRecoveryPoint`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DeleteRecoveryPoint`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteRecoveryPoint {
     _private: (),
@@ -529,7 +529,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteRecoveryPoint {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`delete_report_plan`](crate::client::Client::delete_report_plan).
 ///
-/// See [`crate::client::fluent_builders::DeleteReportPlan`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DeleteReportPlan`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteReportPlan {
     _private: (),
@@ -564,7 +564,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteReportPlan {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`describe_backup_job`](crate::client::Client::describe_backup_job).
 ///
-/// See [`crate::client::fluent_builders::DescribeBackupJob`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DescribeBackupJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeBackupJob {
     _private: (),
@@ -599,7 +599,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeBackupJob {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`describe_backup_vault`](crate::client::Client::describe_backup_vault).
 ///
-/// See [`crate::client::fluent_builders::DescribeBackupVault`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DescribeBackupVault`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeBackupVault {
     _private: (),
@@ -634,7 +634,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeBackupVault {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`describe_copy_job`](crate::client::Client::describe_copy_job).
 ///
-/// See [`crate::client::fluent_builders::DescribeCopyJob`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DescribeCopyJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeCopyJob {
     _private: (),
@@ -669,7 +669,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeCopyJob {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`describe_framework`](crate::client::Client::describe_framework).
 ///
-/// See [`crate::client::fluent_builders::DescribeFramework`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DescribeFramework`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeFramework {
     _private: (),
@@ -704,7 +704,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeFramework {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`describe_global_settings`](crate::client::Client::describe_global_settings).
 ///
-/// See [`crate::client::fluent_builders::DescribeGlobalSettings`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DescribeGlobalSettings`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeGlobalSettings {
     _private: (),
@@ -739,7 +739,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeGlobalSettings {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`describe_protected_resource`](crate::client::Client::describe_protected_resource).
 ///
-/// See [`crate::client::fluent_builders::DescribeProtectedResource`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DescribeProtectedResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeProtectedResource {
     _private: (),
@@ -774,7 +774,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeProtectedResourc
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`describe_recovery_point`](crate::client::Client::describe_recovery_point).
 ///
-/// See [`crate::client::fluent_builders::DescribeRecoveryPoint`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DescribeRecoveryPoint`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeRecoveryPoint {
     _private: (),
@@ -809,7 +809,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeRecoveryPoint {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`describe_region_settings`](crate::client::Client::describe_region_settings).
 ///
-/// See [`crate::client::fluent_builders::DescribeRegionSettings`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DescribeRegionSettings`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeRegionSettings {
     _private: (),
@@ -844,7 +844,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeRegionSettings {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`describe_report_job`](crate::client::Client::describe_report_job).
 ///
-/// See [`crate::client::fluent_builders::DescribeReportJob`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DescribeReportJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeReportJob {
     _private: (),
@@ -879,7 +879,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeReportJob {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`describe_report_plan`](crate::client::Client::describe_report_plan).
 ///
-/// See [`crate::client::fluent_builders::DescribeReportPlan`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DescribeReportPlan`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeReportPlan {
     _private: (),
@@ -914,7 +914,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeReportPlan {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`describe_restore_job`](crate::client::Client::describe_restore_job).
 ///
-/// See [`crate::client::fluent_builders::DescribeRestoreJob`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DescribeRestoreJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeRestoreJob {
     _private: (),
@@ -949,7 +949,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeRestoreJob {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`disassociate_recovery_point`](crate::client::Client::disassociate_recovery_point).
 ///
-/// See [`crate::client::fluent_builders::DisassociateRecoveryPoint`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DisassociateRecoveryPoint`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DisassociateRecoveryPoint {
     _private: (),
@@ -984,7 +984,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateRecoveryPoin
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`disassociate_recovery_point_from_parent`](crate::client::Client::disassociate_recovery_point_from_parent).
 ///
-/// See [`crate::client::fluent_builders::DisassociateRecoveryPointFromParent`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DisassociateRecoveryPointFromParent`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DisassociateRecoveryPointFromParent {
     _private: (),
@@ -1019,7 +1019,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateRecoveryPoin
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`export_backup_plan_template`](crate::client::Client::export_backup_plan_template).
 ///
-/// See [`crate::client::fluent_builders::ExportBackupPlanTemplate`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ExportBackupPlanTemplate`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ExportBackupPlanTemplate {
     _private: (),
@@ -1054,7 +1054,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ExportBackupPlanTemplate
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`get_backup_plan`](crate::client::Client::get_backup_plan).
 ///
-/// See [`crate::client::fluent_builders::GetBackupPlan`] for more details about the operation.
+/// `ParseStrictResponse` impl for `GetBackupPlan`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetBackupPlan {
     _private: (),
@@ -1087,7 +1087,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetBackupPlan {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`get_backup_plan_from_json`](crate::client::Client::get_backup_plan_from_json).
 ///
-/// See [`crate::client::fluent_builders::GetBackupPlanFromJSON`] for more details about the operation.
+/// `ParseStrictResponse` impl for `GetBackupPlanFromJSON`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetBackupPlanFromJSON {
     _private: (),
@@ -1122,7 +1122,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetBackupPlanFromJSON {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`get_backup_plan_from_template`](crate::client::Client::get_backup_plan_from_template).
 ///
-/// See [`crate::client::fluent_builders::GetBackupPlanFromTemplate`] for more details about the operation.
+/// `ParseStrictResponse` impl for `GetBackupPlanFromTemplate`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetBackupPlanFromTemplate {
     _private: (),
@@ -1157,7 +1157,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetBackupPlanFromTemplat
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`get_backup_selection`](crate::client::Client::get_backup_selection).
 ///
-/// See [`crate::client::fluent_builders::GetBackupSelection`] for more details about the operation.
+/// `ParseStrictResponse` impl for `GetBackupSelection`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetBackupSelection {
     _private: (),
@@ -1192,7 +1192,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetBackupSelection {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`get_backup_vault_access_policy`](crate::client::Client::get_backup_vault_access_policy).
 ///
-/// See [`crate::client::fluent_builders::GetBackupVaultAccessPolicy`] for more details about the operation.
+/// `ParseStrictResponse` impl for `GetBackupVaultAccessPolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetBackupVaultAccessPolicy {
     _private: (),
@@ -1227,7 +1227,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetBackupVaultAccessPoli
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`get_backup_vault_notifications`](crate::client::Client::get_backup_vault_notifications).
 ///
-/// See [`crate::client::fluent_builders::GetBackupVaultNotifications`] for more details about the operation.
+/// `ParseStrictResponse` impl for `GetBackupVaultNotifications`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetBackupVaultNotifications {
     _private: (),
@@ -1262,7 +1262,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetBackupVaultNotificati
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`get_legal_hold`](crate::client::Client::get_legal_hold).
 ///
-/// See [`crate::client::fluent_builders::GetLegalHold`] for more details about the operation.
+/// `ParseStrictResponse` impl for `GetLegalHold`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetLegalHold {
     _private: (),
@@ -1295,7 +1295,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetLegalHold {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`get_recovery_point_restore_metadata`](crate::client::Client::get_recovery_point_restore_metadata).
 ///
-/// See [`crate::client::fluent_builders::GetRecoveryPointRestoreMetadata`] for more details about the operation.
+/// `ParseStrictResponse` impl for `GetRecoveryPointRestoreMetadata`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetRecoveryPointRestoreMetadata {
     _private: (),
@@ -1330,7 +1330,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetRecoveryPointRestoreM
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`get_supported_resource_types`](crate::client::Client::get_supported_resource_types).
 ///
-/// See [`crate::client::fluent_builders::GetSupportedResourceTypes`] for more details about the operation.
+/// `ParseStrictResponse` impl for `GetSupportedResourceTypes`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetSupportedResourceTypes {
     _private: (),
@@ -1365,7 +1365,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSupportedResourceType
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_backup_jobs`](crate::client::Client::list_backup_jobs).
 ///
-/// See [`crate::client::fluent_builders::ListBackupJobs`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListBackupJobs`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListBackupJobs {
     _private: (),
@@ -1398,7 +1398,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListBackupJobs {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_backup_plans`](crate::client::Client::list_backup_plans).
 ///
-/// See [`crate::client::fluent_builders::ListBackupPlans`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListBackupPlans`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListBackupPlans {
     _private: (),
@@ -1433,7 +1433,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListBackupPlans {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_backup_plan_templates`](crate::client::Client::list_backup_plan_templates).
 ///
-/// See [`crate::client::fluent_builders::ListBackupPlanTemplates`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListBackupPlanTemplates`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListBackupPlanTemplates {
     _private: (),
@@ -1468,7 +1468,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListBackupPlanTemplates 
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_backup_plan_versions`](crate::client::Client::list_backup_plan_versions).
 ///
-/// See [`crate::client::fluent_builders::ListBackupPlanVersions`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListBackupPlanVersions`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListBackupPlanVersions {
     _private: (),
@@ -1503,7 +1503,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListBackupPlanVersions {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_backup_selections`](crate::client::Client::list_backup_selections).
 ///
-/// See [`crate::client::fluent_builders::ListBackupSelections`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListBackupSelections`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListBackupSelections {
     _private: (),
@@ -1538,7 +1538,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListBackupSelections {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_backup_vaults`](crate::client::Client::list_backup_vaults).
 ///
-/// See [`crate::client::fluent_builders::ListBackupVaults`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListBackupVaults`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListBackupVaults {
     _private: (),
@@ -1573,7 +1573,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListBackupVaults {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_copy_jobs`](crate::client::Client::list_copy_jobs).
 ///
-/// See [`crate::client::fluent_builders::ListCopyJobs`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListCopyJobs`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListCopyJobs {
     _private: (),
@@ -1606,7 +1606,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListCopyJobs {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_frameworks`](crate::client::Client::list_frameworks).
 ///
-/// See [`crate::client::fluent_builders::ListFrameworks`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListFrameworks`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListFrameworks {
     _private: (),
@@ -1639,7 +1639,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListFrameworks {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_legal_holds`](crate::client::Client::list_legal_holds).
 ///
-/// See [`crate::client::fluent_builders::ListLegalHolds`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListLegalHolds`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListLegalHolds {
     _private: (),
@@ -1672,7 +1672,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListLegalHolds {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_protected_resources`](crate::client::Client::list_protected_resources).
 ///
-/// See [`crate::client::fluent_builders::ListProtectedResources`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListProtectedResources`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListProtectedResources {
     _private: (),
@@ -1707,7 +1707,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListProtectedResources {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_recovery_points_by_backup_vault`](crate::client::Client::list_recovery_points_by_backup_vault).
 ///
-/// See [`crate::client::fluent_builders::ListRecoveryPointsByBackupVault`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListRecoveryPointsByBackupVault`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListRecoveryPointsByBackupVault {
     _private: (),
@@ -1742,7 +1742,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListRecoveryPointsByBack
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_recovery_points_by_legal_hold`](crate::client::Client::list_recovery_points_by_legal_hold).
 ///
-/// See [`crate::client::fluent_builders::ListRecoveryPointsByLegalHold`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListRecoveryPointsByLegalHold`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListRecoveryPointsByLegalHold {
     _private: (),
@@ -1777,7 +1777,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListRecoveryPointsByLega
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_recovery_points_by_resource`](crate::client::Client::list_recovery_points_by_resource).
 ///
-/// See [`crate::client::fluent_builders::ListRecoveryPointsByResource`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListRecoveryPointsByResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListRecoveryPointsByResource {
     _private: (),
@@ -1812,7 +1812,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListRecoveryPointsByReso
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_report_jobs`](crate::client::Client::list_report_jobs).
 ///
-/// See [`crate::client::fluent_builders::ListReportJobs`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListReportJobs`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListReportJobs {
     _private: (),
@@ -1845,7 +1845,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListReportJobs {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_report_plans`](crate::client::Client::list_report_plans).
 ///
-/// See [`crate::client::fluent_builders::ListReportPlans`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListReportPlans`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListReportPlans {
     _private: (),
@@ -1880,7 +1880,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListReportPlans {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_restore_jobs`](crate::client::Client::list_restore_jobs).
 ///
-/// See [`crate::client::fluent_builders::ListRestoreJobs`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListRestoreJobs`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListRestoreJobs {
     _private: (),
@@ -1915,7 +1915,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListRestoreJobs {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_tags`](crate::client::Client::list_tags).
 ///
-/// See [`crate::client::fluent_builders::ListTags`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListTags`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTags {
     _private: (),
@@ -1947,7 +1947,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTags {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`put_backup_vault_access_policy`](crate::client::Client::put_backup_vault_access_policy).
 ///
-/// See [`crate::client::fluent_builders::PutBackupVaultAccessPolicy`] for more details about the operation.
+/// `ParseStrictResponse` impl for `PutBackupVaultAccessPolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutBackupVaultAccessPolicy {
     _private: (),
@@ -1982,7 +1982,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutBackupVaultAccessPoli
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`put_backup_vault_lock_configuration`](crate::client::Client::put_backup_vault_lock_configuration).
 ///
-/// See [`crate::client::fluent_builders::PutBackupVaultLockConfiguration`] for more details about the operation.
+/// `ParseStrictResponse` impl for `PutBackupVaultLockConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutBackupVaultLockConfiguration {
     _private: (),
@@ -2017,7 +2017,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutBackupVaultLockConfig
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`put_backup_vault_notifications`](crate::client::Client::put_backup_vault_notifications).
 ///
-/// See [`crate::client::fluent_builders::PutBackupVaultNotifications`] for more details about the operation.
+/// `ParseStrictResponse` impl for `PutBackupVaultNotifications`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutBackupVaultNotifications {
     _private: (),
@@ -2052,7 +2052,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutBackupVaultNotificati
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`start_backup_job`](crate::client::Client::start_backup_job).
 ///
-/// See [`crate::client::fluent_builders::StartBackupJob`] for more details about the operation.
+/// `ParseStrictResponse` impl for `StartBackupJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StartBackupJob {
     _private: (),
@@ -2085,7 +2085,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartBackupJob {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`start_copy_job`](crate::client::Client::start_copy_job).
 ///
-/// See [`crate::client::fluent_builders::StartCopyJob`] for more details about the operation.
+/// `ParseStrictResponse` impl for `StartCopyJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StartCopyJob {
     _private: (),
@@ -2118,7 +2118,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartCopyJob {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`start_report_job`](crate::client::Client::start_report_job).
 ///
-/// See [`crate::client::fluent_builders::StartReportJob`] for more details about the operation.
+/// `ParseStrictResponse` impl for `StartReportJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StartReportJob {
     _private: (),
@@ -2151,7 +2151,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartReportJob {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`start_restore_job`](crate::client::Client::start_restore_job).
 ///
-/// See [`crate::client::fluent_builders::StartRestoreJob`] for more details about the operation.
+/// `ParseStrictResponse` impl for `StartRestoreJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StartRestoreJob {
     _private: (),
@@ -2186,7 +2186,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartRestoreJob {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`stop_backup_job`](crate::client::Client::stop_backup_job).
 ///
-/// See [`crate::client::fluent_builders::StopBackupJob`] for more details about the operation.
+/// `ParseStrictResponse` impl for `StopBackupJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StopBackupJob {
     _private: (),
@@ -2219,7 +2219,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StopBackupJob {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`tag_resource`](crate::client::Client::tag_resource).
 ///
-/// See [`crate::client::fluent_builders::TagResource`] for more details about the operation.
+/// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct TagResource {
     _private: (),
@@ -2252,7 +2252,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`untag_resource`](crate::client::Client::untag_resource).
 ///
-/// See [`crate::client::fluent_builders::UntagResource`] for more details about the operation.
+/// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UntagResource {
     _private: (),
@@ -2285,7 +2285,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`update_backup_plan`](crate::client::Client::update_backup_plan).
 ///
-/// See [`crate::client::fluent_builders::UpdateBackupPlan`] for more details about the operation.
+/// `ParseStrictResponse` impl for `UpdateBackupPlan`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateBackupPlan {
     _private: (),
@@ -2320,7 +2320,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateBackupPlan {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`update_framework`](crate::client::Client::update_framework).
 ///
-/// See [`crate::client::fluent_builders::UpdateFramework`] for more details about the operation.
+/// `ParseStrictResponse` impl for `UpdateFramework`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateFramework {
     _private: (),
@@ -2355,7 +2355,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateFramework {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`update_global_settings`](crate::client::Client::update_global_settings).
 ///
-/// See [`crate::client::fluent_builders::UpdateGlobalSettings`] for more details about the operation.
+/// `ParseStrictResponse` impl for `UpdateGlobalSettings`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateGlobalSettings {
     _private: (),
@@ -2390,7 +2390,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateGlobalSettings {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`update_recovery_point_lifecycle`](crate::client::Client::update_recovery_point_lifecycle).
 ///
-/// See [`crate::client::fluent_builders::UpdateRecoveryPointLifecycle`] for more details about the operation.
+/// `ParseStrictResponse` impl for `UpdateRecoveryPointLifecycle`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateRecoveryPointLifecycle {
     _private: (),
@@ -2425,7 +2425,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateRecoveryPointLifec
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`update_region_settings`](crate::client::Client::update_region_settings).
 ///
-/// See [`crate::client::fluent_builders::UpdateRegionSettings`] for more details about the operation.
+/// `ParseStrictResponse` impl for `UpdateRegionSettings`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateRegionSettings {
     _private: (),
@@ -2460,7 +2460,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateRegionSettings {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`update_report_plan`](crate::client::Client::update_report_plan).
 ///
-/// See [`crate::client::fluent_builders::UpdateReportPlan`] for more details about the operation.
+/// `ParseStrictResponse` impl for `UpdateReportPlan`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateReportPlan {
     _private: (),

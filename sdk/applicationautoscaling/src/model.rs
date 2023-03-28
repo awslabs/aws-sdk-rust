@@ -28,6 +28,13 @@ impl SuspendedState {
         self.scheduled_scaling_suspended
     }
 }
+impl SuspendedState {
+    /// Creates a new builder-style object to manufacture [`SuspendedState`](crate::model::SuspendedState).
+    pub fn builder() -> crate::model::suspended_state::Builder {
+        crate::model::suspended_state::Builder::default()
+    }
+}
+
 /// See [`SuspendedState`](crate::model::SuspendedState).
 pub mod suspended_state {
 
@@ -84,12 +91,6 @@ pub mod suspended_state {
                 scheduled_scaling_suspended: self.scheduled_scaling_suspended,
             }
         }
-    }
-}
-impl SuspendedState {
-    /// Creates a new builder-style object to manufacture [`SuspendedState`](crate::model::SuspendedState).
-    pub fn builder() -> crate::model::suspended_state::Builder {
-        crate::model::suspended_state::Builder::default()
     }
 }
 
@@ -538,6 +539,13 @@ impl ScalableTargetAction {
         self.max_capacity
     }
 }
+impl ScalableTargetAction {
+    /// Creates a new builder-style object to manufacture [`ScalableTargetAction`](crate::model::ScalableTargetAction).
+    pub fn builder() -> crate::model::scalable_target_action::Builder {
+        crate::model::scalable_target_action::Builder::default()
+    }
+}
+
 /// See [`ScalableTargetAction`](crate::model::ScalableTargetAction).
 pub mod scalable_target_action {
 
@@ -582,12 +590,6 @@ pub mod scalable_target_action {
         }
     }
 }
-impl ScalableTargetAction {
-    /// Creates a new builder-style object to manufacture [`ScalableTargetAction`](crate::model::ScalableTargetAction).
-    pub fn builder() -> crate::model::scalable_target_action::Builder {
-        crate::model::scalable_target_action::Builder::default()
-    }
-}
 
 /// <p>Represents a CloudWatch alarm associated with a scaling policy.</p>
 #[non_exhaustive]
@@ -610,6 +612,13 @@ impl Alarm {
         self.alarm_arn.as_deref()
     }
 }
+impl Alarm {
+    /// Creates a new builder-style object to manufacture [`Alarm`](crate::model::Alarm).
+    pub fn builder() -> crate::model::alarm::Builder {
+        crate::model::alarm::Builder::default()
+    }
+}
+
 /// See [`Alarm`](crate::model::Alarm).
 pub mod alarm {
 
@@ -648,12 +657,6 @@ pub mod alarm {
                 alarm_arn: self.alarm_arn,
             }
         }
-    }
-}
-impl Alarm {
-    /// Creates a new builder-style object to manufacture [`Alarm`](crate::model::Alarm).
-    pub fn builder() -> crate::model::alarm::Builder {
-        crate::model::alarm::Builder::default()
     }
 }
 
@@ -796,6 +799,13 @@ impl TargetTrackingScalingPolicyConfiguration {
         self.disable_scale_in
     }
 }
+impl TargetTrackingScalingPolicyConfiguration {
+    /// Creates a new builder-style object to manufacture [`TargetTrackingScalingPolicyConfiguration`](crate::model::TargetTrackingScalingPolicyConfiguration).
+    pub fn builder() -> crate::model::target_tracking_scaling_policy_configuration::Builder {
+        crate::model::target_tracking_scaling_policy_configuration::Builder::default()
+    }
+}
+
 /// See [`TargetTrackingScalingPolicyConfiguration`](crate::model::TargetTrackingScalingPolicyConfiguration).
 pub mod target_tracking_scaling_policy_configuration {
 
@@ -982,12 +992,6 @@ pub mod target_tracking_scaling_policy_configuration {
         }
     }
 }
-impl TargetTrackingScalingPolicyConfiguration {
-    /// Creates a new builder-style object to manufacture [`TargetTrackingScalingPolicyConfiguration`](crate::model::TargetTrackingScalingPolicyConfiguration).
-    pub fn builder() -> crate::model::target_tracking_scaling_policy_configuration::Builder {
-        crate::model::target_tracking_scaling_policy_configuration::Builder::default()
-    }
-}
 
 /// <p>Represents a CloudWatch metric of your choosing for a target tracking scaling policy to use with Application Auto Scaling.</p>
 /// <p>For information about the available metrics for a service, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/aws-services-cloudwatch-metrics.html">Amazon Web Services services that publish CloudWatch metrics</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
@@ -1041,6 +1045,13 @@ impl CustomizedMetricSpecification {
         self.unit.as_deref()
     }
 }
+impl CustomizedMetricSpecification {
+    /// Creates a new builder-style object to manufacture [`CustomizedMetricSpecification`](crate::model::CustomizedMetricSpecification).
+    pub fn builder() -> crate::model::customized_metric_specification::Builder {
+        crate::model::customized_metric_specification::Builder::default()
+    }
+}
+
 /// See [`CustomizedMetricSpecification`](crate::model::CustomizedMetricSpecification).
 pub mod customized_metric_specification {
 
@@ -1129,12 +1140,6 @@ pub mod customized_metric_specification {
                 unit: self.unit,
             }
         }
-    }
-}
-impl CustomizedMetricSpecification {
-    /// Creates a new builder-style object to manufacture [`CustomizedMetricSpecification`](crate::model::CustomizedMetricSpecification).
-    pub fn builder() -> crate::model::customized_metric_specification::Builder {
-        crate::model::customized_metric_specification::Builder::default()
     }
 }
 
@@ -1264,6 +1269,13 @@ impl MetricDimension {
         self.value.as_deref()
     }
 }
+impl MetricDimension {
+    /// Creates a new builder-style object to manufacture [`MetricDimension`](crate::model::MetricDimension).
+    pub fn builder() -> crate::model::metric_dimension::Builder {
+        crate::model::metric_dimension::Builder::default()
+    }
+}
+
 /// See [`MetricDimension`](crate::model::MetricDimension).
 pub mod metric_dimension {
 
@@ -1302,12 +1314,6 @@ pub mod metric_dimension {
                 value: self.value,
             }
         }
-    }
-}
-impl MetricDimension {
-    /// Creates a new builder-style object to manufacture [`MetricDimension`](crate::model::MetricDimension).
-    pub fn builder() -> crate::model::metric_dimension::Builder {
-        crate::model::metric_dimension::Builder::default()
     }
 }
 
@@ -1369,6 +1375,13 @@ impl PredefinedMetricSpecification {
         self.resource_label.as_deref()
     }
 }
+impl PredefinedMetricSpecification {
+    /// Creates a new builder-style object to manufacture [`PredefinedMetricSpecification`](crate::model::PredefinedMetricSpecification).
+    pub fn builder() -> crate::model::predefined_metric_specification::Builder {
+        crate::model::predefined_metric_specification::Builder::default()
+    }
+}
+
 /// See [`PredefinedMetricSpecification`](crate::model::PredefinedMetricSpecification).
 pub mod predefined_metric_specification {
 
@@ -1449,12 +1462,6 @@ pub mod predefined_metric_specification {
                 resource_label: self.resource_label,
             }
         }
-    }
-}
-impl PredefinedMetricSpecification {
-    /// Creates a new builder-style object to manufacture [`PredefinedMetricSpecification`](crate::model::PredefinedMetricSpecification).
-    pub fn builder() -> crate::model::predefined_metric_specification::Builder {
-        crate::model::predefined_metric_specification::Builder::default()
     }
 }
 
@@ -1795,6 +1802,13 @@ impl StepScalingPolicyConfiguration {
         self.metric_aggregation_type.as_ref()
     }
 }
+impl StepScalingPolicyConfiguration {
+    /// Creates a new builder-style object to manufacture [`StepScalingPolicyConfiguration`](crate::model::StepScalingPolicyConfiguration).
+    pub fn builder() -> crate::model::step_scaling_policy_configuration::Builder {
+        crate::model::step_scaling_policy_configuration::Builder::default()
+    }
+}
+
 /// See [`StepScalingPolicyConfiguration`](crate::model::StepScalingPolicyConfiguration).
 pub mod step_scaling_policy_configuration {
 
@@ -1937,12 +1951,6 @@ pub mod step_scaling_policy_configuration {
         }
     }
 }
-impl StepScalingPolicyConfiguration {
-    /// Creates a new builder-style object to manufacture [`StepScalingPolicyConfiguration`](crate::model::StepScalingPolicyConfiguration).
-    pub fn builder() -> crate::model::step_scaling_policy_configuration::Builder {
-        crate::model::step_scaling_policy_configuration::Builder::default()
-    }
-}
 
 /// When writing a match expression against `MetricAggregationType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -2083,6 +2091,13 @@ impl StepAdjustment {
         self.scaling_adjustment
     }
 }
+impl StepAdjustment {
+    /// Creates a new builder-style object to manufacture [`StepAdjustment`](crate::model::StepAdjustment).
+    pub fn builder() -> crate::model::step_adjustment::Builder {
+        crate::model::step_adjustment::Builder::default()
+    }
+}
+
 /// See [`StepAdjustment`](crate::model::StepAdjustment).
 pub mod step_adjustment {
 
@@ -2135,12 +2150,6 @@ pub mod step_adjustment {
                 scaling_adjustment: self.scaling_adjustment,
             }
         }
-    }
-}
-impl StepAdjustment {
-    /// Creates a new builder-style object to manufacture [`StepAdjustment`](crate::model::StepAdjustment).
-    pub fn builder() -> crate::model::step_adjustment::Builder {
-        crate::model::step_adjustment::Builder::default()
     }
 }
 
@@ -2519,6 +2528,13 @@ impl ScheduledAction {
         self.creation_time.as_ref()
     }
 }
+impl ScheduledAction {
+    /// Creates a new builder-style object to manufacture [`ScheduledAction`](crate::model::ScheduledAction).
+    pub fn builder() -> crate::model::scheduled_action::Builder {
+        crate::model::scheduled_action::Builder::default()
+    }
+}
+
 /// See [`ScheduledAction`](crate::model::ScheduledAction).
 pub mod scheduled_action {
 
@@ -2791,12 +2807,6 @@ pub mod scheduled_action {
         }
     }
 }
-impl ScheduledAction {
-    /// Creates a new builder-style object to manufacture [`ScheduledAction`](crate::model::ScheduledAction).
-    pub fn builder() -> crate::model::scheduled_action::Builder {
-        crate::model::scheduled_action::Builder::default()
-    }
-}
 
 /// <p>Represents a scaling policy to use with Application Auto Scaling.</p>
 /// <p>For more information about configuring scaling policies for a specific service, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/integrated-services-list.html">Amazon Web Services services that you can use with Application Auto Scaling</a> in the <i>Application Auto Scaling User Guide</i>.</p>
@@ -2968,6 +2978,13 @@ impl ScalingPolicy {
         self.creation_time.as_ref()
     }
 }
+impl ScalingPolicy {
+    /// Creates a new builder-style object to manufacture [`ScalingPolicy`](crate::model::ScalingPolicy).
+    pub fn builder() -> crate::model::scaling_policy::Builder {
+        crate::model::scaling_policy::Builder::default()
+    }
+}
+
 /// See [`ScalingPolicy`](crate::model::ScalingPolicy).
 pub mod scaling_policy {
 
@@ -3226,12 +3243,6 @@ pub mod scaling_policy {
         }
     }
 }
-impl ScalingPolicy {
-    /// Creates a new builder-style object to manufacture [`ScalingPolicy`](crate::model::ScalingPolicy).
-    pub fn builder() -> crate::model::scaling_policy::Builder {
-        crate::model::scaling_policy::Builder::default()
-    }
-}
 
 /// <p>Represents a scaling activity.</p>
 #[non_exhaustive]
@@ -3404,6 +3415,13 @@ impl ScalingActivity {
         self.not_scaled_reasons.as_deref()
     }
 }
+impl ScalingActivity {
+    /// Creates a new builder-style object to manufacture [`ScalingActivity`](crate::model::ScalingActivity).
+    pub fn builder() -> crate::model::scaling_activity::Builder {
+        crate::model::scaling_activity::Builder::default()
+    }
+}
+
 /// See [`ScalingActivity`](crate::model::ScalingActivity).
 pub mod scaling_activity {
 
@@ -3672,12 +3690,6 @@ pub mod scaling_activity {
         }
     }
 }
-impl ScalingActivity {
-    /// Creates a new builder-style object to manufacture [`ScalingActivity`](crate::model::ScalingActivity).
-    pub fn builder() -> crate::model::scaling_activity::Builder {
-        crate::model::scaling_activity::Builder::default()
-    }
-}
 
 /// <p>Describes the reason for an activity that isn't scaled (<i>not scaled activity</i>), in machine-readable format. For help interpreting the not scaled reason details, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-scaling-activities.html">Scaling activities for Application Auto Scaling</a>.</p>
 #[non_exhaustive]
@@ -3730,6 +3742,13 @@ impl NotScaledReason {
         self.current_capacity
     }
 }
+impl NotScaledReason {
+    /// Creates a new builder-style object to manufacture [`NotScaledReason`](crate::model::NotScaledReason).
+    pub fn builder() -> crate::model::not_scaled_reason::Builder {
+        crate::model::not_scaled_reason::Builder::default()
+    }
+}
+
 /// See [`NotScaledReason`](crate::model::NotScaledReason).
 pub mod not_scaled_reason {
 
@@ -3808,12 +3827,6 @@ pub mod not_scaled_reason {
                 current_capacity: self.current_capacity,
             }
         }
-    }
-}
-impl NotScaledReason {
-    /// Creates a new builder-style object to manufacture [`NotScaledReason`](crate::model::NotScaledReason).
-    pub fn builder() -> crate::model::not_scaled_reason::Builder {
-        crate::model::not_scaled_reason::Builder::default()
     }
 }
 
@@ -4079,6 +4092,13 @@ impl ScalableTarget {
         self.suspended_state.as_ref()
     }
 }
+impl ScalableTarget {
+    /// Creates a new builder-style object to manufacture [`ScalableTarget`](crate::model::ScalableTarget).
+    pub fn builder() -> crate::model::scalable_target::Builder {
+        crate::model::scalable_target::Builder::default()
+    }
+}
+
 /// See [`ScalableTarget`](crate::model::ScalableTarget).
 pub mod scalable_target {
 
@@ -4281,11 +4301,5 @@ pub mod scalable_target {
                 suspended_state: self.suspended_state,
             }
         }
-    }
-}
-impl ScalableTarget {
-    /// Creates a new builder-style object to manufacture [`ScalableTarget`](crate::model::ScalableTarget).
-    pub fn builder() -> crate::model::scalable_target::Builder {
-        crate::model::scalable_target::Builder::default()
     }
 }

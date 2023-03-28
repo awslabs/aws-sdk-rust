@@ -10,6 +10,13 @@ impl aws_http::request_id::RequestId for UpdateDestinationOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdateDestinationOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateDestinationOutput`](crate::output::UpdateDestinationOutput).
+    pub fn builder() -> crate::output::update_destination_output::Builder {
+        crate::output::update_destination_output::Builder::default()
+    }
+}
+
 /// See [`UpdateDestinationOutput`](crate::output::UpdateDestinationOutput).
 pub mod update_destination_output {
 
@@ -37,12 +44,6 @@ pub mod update_destination_output {
         }
     }
 }
-impl UpdateDestinationOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateDestinationOutput`](crate::output::UpdateDestinationOutput).
-    pub fn builder() -> crate::output::update_destination_output::Builder {
-        crate::output::update_destination_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -55,6 +56,13 @@ impl aws_http::request_id::RequestId for UntagDeliveryStreamOutput {
         self._request_id.as_deref()
     }
 }
+impl UntagDeliveryStreamOutput {
+    /// Creates a new builder-style object to manufacture [`UntagDeliveryStreamOutput`](crate::output::UntagDeliveryStreamOutput).
+    pub fn builder() -> crate::output::untag_delivery_stream_output::Builder {
+        crate::output::untag_delivery_stream_output::Builder::default()
+    }
+}
+
 /// See [`UntagDeliveryStreamOutput`](crate::output::UntagDeliveryStreamOutput).
 pub mod untag_delivery_stream_output {
 
@@ -82,12 +90,6 @@ pub mod untag_delivery_stream_output {
         }
     }
 }
-impl UntagDeliveryStreamOutput {
-    /// Creates a new builder-style object to manufacture [`UntagDeliveryStreamOutput`](crate::output::UntagDeliveryStreamOutput).
-    pub fn builder() -> crate::output::untag_delivery_stream_output::Builder {
-        crate::output::untag_delivery_stream_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -100,6 +102,13 @@ impl aws_http::request_id::RequestId for TagDeliveryStreamOutput {
         self._request_id.as_deref()
     }
 }
+impl TagDeliveryStreamOutput {
+    /// Creates a new builder-style object to manufacture [`TagDeliveryStreamOutput`](crate::output::TagDeliveryStreamOutput).
+    pub fn builder() -> crate::output::tag_delivery_stream_output::Builder {
+        crate::output::tag_delivery_stream_output::Builder::default()
+    }
+}
+
 /// See [`TagDeliveryStreamOutput`](crate::output::TagDeliveryStreamOutput).
 pub mod tag_delivery_stream_output {
 
@@ -127,12 +136,6 @@ pub mod tag_delivery_stream_output {
         }
     }
 }
-impl TagDeliveryStreamOutput {
-    /// Creates a new builder-style object to manufacture [`TagDeliveryStreamOutput`](crate::output::TagDeliveryStreamOutput).
-    pub fn builder() -> crate::output::tag_delivery_stream_output::Builder {
-        crate::output::tag_delivery_stream_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -145,6 +148,13 @@ impl aws_http::request_id::RequestId for StopDeliveryStreamEncryptionOutput {
         self._request_id.as_deref()
     }
 }
+impl StopDeliveryStreamEncryptionOutput {
+    /// Creates a new builder-style object to manufacture [`StopDeliveryStreamEncryptionOutput`](crate::output::StopDeliveryStreamEncryptionOutput).
+    pub fn builder() -> crate::output::stop_delivery_stream_encryption_output::Builder {
+        crate::output::stop_delivery_stream_encryption_output::Builder::default()
+    }
+}
+
 /// See [`StopDeliveryStreamEncryptionOutput`](crate::output::StopDeliveryStreamEncryptionOutput).
 pub mod stop_delivery_stream_encryption_output {
 
@@ -172,12 +182,6 @@ pub mod stop_delivery_stream_encryption_output {
         }
     }
 }
-impl StopDeliveryStreamEncryptionOutput {
-    /// Creates a new builder-style object to manufacture [`StopDeliveryStreamEncryptionOutput`](crate::output::StopDeliveryStreamEncryptionOutput).
-    pub fn builder() -> crate::output::stop_delivery_stream_encryption_output::Builder {
-        crate::output::stop_delivery_stream_encryption_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -190,6 +194,13 @@ impl aws_http::request_id::RequestId for StartDeliveryStreamEncryptionOutput {
         self._request_id.as_deref()
     }
 }
+impl StartDeliveryStreamEncryptionOutput {
+    /// Creates a new builder-style object to manufacture [`StartDeliveryStreamEncryptionOutput`](crate::output::StartDeliveryStreamEncryptionOutput).
+    pub fn builder() -> crate::output::start_delivery_stream_encryption_output::Builder {
+        crate::output::start_delivery_stream_encryption_output::Builder::default()
+    }
+}
+
 /// See [`StartDeliveryStreamEncryptionOutput`](crate::output::StartDeliveryStreamEncryptionOutput).
 pub mod start_delivery_stream_encryption_output {
 
@@ -215,12 +226,6 @@ pub mod start_delivery_stream_encryption_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl StartDeliveryStreamEncryptionOutput {
-    /// Creates a new builder-style object to manufacture [`StartDeliveryStreamEncryptionOutput`](crate::output::StartDeliveryStreamEncryptionOutput).
-    pub fn builder() -> crate::output::start_delivery_stream_encryption_output::Builder {
-        crate::output::start_delivery_stream_encryption_output::Builder::default()
     }
 }
 
@@ -261,6 +266,13 @@ impl aws_http::request_id::RequestId for PutRecordBatchOutput {
         self._request_id.as_deref()
     }
 }
+impl PutRecordBatchOutput {
+    /// Creates a new builder-style object to manufacture [`PutRecordBatchOutput`](crate::output::PutRecordBatchOutput).
+    pub fn builder() -> crate::output::put_record_batch_output::Builder {
+        crate::output::put_record_batch_output::Builder::default()
+    }
+}
+
 /// See [`PutRecordBatchOutput`](crate::output::PutRecordBatchOutput).
 pub mod put_record_batch_output {
 
@@ -337,12 +349,6 @@ pub mod put_record_batch_output {
         }
     }
 }
-impl PutRecordBatchOutput {
-    /// Creates a new builder-style object to manufacture [`PutRecordBatchOutput`](crate::output::PutRecordBatchOutput).
-    pub fn builder() -> crate::output::put_record_batch_output::Builder {
-        crate::output::put_record_batch_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -371,6 +377,13 @@ impl aws_http::request_id::RequestId for PutRecordOutput {
         self._request_id.as_deref()
     }
 }
+impl PutRecordOutput {
+    /// Creates a new builder-style object to manufacture [`PutRecordOutput`](crate::output::PutRecordOutput).
+    pub fn builder() -> crate::output::put_record_output::Builder {
+        crate::output::put_record_output::Builder::default()
+    }
+}
+
 /// See [`PutRecordOutput`](crate::output::PutRecordOutput).
 pub mod put_record_output {
 
@@ -422,12 +435,6 @@ pub mod put_record_output {
         }
     }
 }
-impl PutRecordOutput {
-    /// Creates a new builder-style object to manufacture [`PutRecordOutput`](crate::output::PutRecordOutput).
-    pub fn builder() -> crate::output::put_record_output::Builder {
-        crate::output::put_record_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -456,6 +463,13 @@ impl aws_http::request_id::RequestId for ListTagsForDeliveryStreamOutput {
         self._request_id.as_deref()
     }
 }
+impl ListTagsForDeliveryStreamOutput {
+    /// Creates a new builder-style object to manufacture [`ListTagsForDeliveryStreamOutput`](crate::output::ListTagsForDeliveryStreamOutput).
+    pub fn builder() -> crate::output::list_tags_for_delivery_stream_output::Builder {
+        crate::output::list_tags_for_delivery_stream_output::Builder::default()
+    }
+}
+
 /// See [`ListTagsForDeliveryStreamOutput`](crate::output::ListTagsForDeliveryStreamOutput).
 pub mod list_tags_for_delivery_stream_output {
 
@@ -516,12 +530,6 @@ pub mod list_tags_for_delivery_stream_output {
         }
     }
 }
-impl ListTagsForDeliveryStreamOutput {
-    /// Creates a new builder-style object to manufacture [`ListTagsForDeliveryStreamOutput`](crate::output::ListTagsForDeliveryStreamOutput).
-    pub fn builder() -> crate::output::list_tags_for_delivery_stream_output::Builder {
-        crate::output::list_tags_for_delivery_stream_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -550,6 +558,13 @@ impl aws_http::request_id::RequestId for ListDeliveryStreamsOutput {
         self._request_id.as_deref()
     }
 }
+impl ListDeliveryStreamsOutput {
+    /// Creates a new builder-style object to manufacture [`ListDeliveryStreamsOutput`](crate::output::ListDeliveryStreamsOutput).
+    pub fn builder() -> crate::output::list_delivery_streams_output::Builder {
+        crate::output::list_delivery_streams_output::Builder::default()
+    }
+}
+
 /// See [`ListDeliveryStreamsOutput`](crate::output::ListDeliveryStreamsOutput).
 pub mod list_delivery_streams_output {
 
@@ -610,12 +625,6 @@ pub mod list_delivery_streams_output {
         }
     }
 }
-impl ListDeliveryStreamsOutput {
-    /// Creates a new builder-style object to manufacture [`ListDeliveryStreamsOutput`](crate::output::ListDeliveryStreamsOutput).
-    pub fn builder() -> crate::output::list_delivery_streams_output::Builder {
-        crate::output::list_delivery_streams_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -639,6 +648,13 @@ impl aws_http::request_id::RequestId for DescribeDeliveryStreamOutput {
         self._request_id.as_deref()
     }
 }
+impl DescribeDeliveryStreamOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeDeliveryStreamOutput`](crate::output::DescribeDeliveryStreamOutput).
+    pub fn builder() -> crate::output::describe_delivery_stream_output::Builder {
+        crate::output::describe_delivery_stream_output::Builder::default()
+    }
+}
+
 /// See [`DescribeDeliveryStreamOutput`](crate::output::DescribeDeliveryStreamOutput).
 pub mod describe_delivery_stream_output {
 
@@ -685,12 +701,6 @@ pub mod describe_delivery_stream_output {
         }
     }
 }
-impl DescribeDeliveryStreamOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeDeliveryStreamOutput`](crate::output::DescribeDeliveryStreamOutput).
-    pub fn builder() -> crate::output::describe_delivery_stream_output::Builder {
-        crate::output::describe_delivery_stream_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -703,6 +713,13 @@ impl aws_http::request_id::RequestId for DeleteDeliveryStreamOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteDeliveryStreamOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteDeliveryStreamOutput`](crate::output::DeleteDeliveryStreamOutput).
+    pub fn builder() -> crate::output::delete_delivery_stream_output::Builder {
+        crate::output::delete_delivery_stream_output::Builder::default()
+    }
+}
+
 /// See [`DeleteDeliveryStreamOutput`](crate::output::DeleteDeliveryStreamOutput).
 pub mod delete_delivery_stream_output {
 
@@ -730,12 +747,6 @@ pub mod delete_delivery_stream_output {
         }
     }
 }
-impl DeleteDeliveryStreamOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteDeliveryStreamOutput`](crate::output::DeleteDeliveryStreamOutput).
-    pub fn builder() -> crate::output::delete_delivery_stream_output::Builder {
-        crate::output::delete_delivery_stream_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -757,6 +768,13 @@ impl aws_http::request_id::RequestId for CreateDeliveryStreamOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateDeliveryStreamOutput {
+    /// Creates a new builder-style object to manufacture [`CreateDeliveryStreamOutput`](crate::output::CreateDeliveryStreamOutput).
+    pub fn builder() -> crate::output::create_delivery_stream_output::Builder {
+        crate::output::create_delivery_stream_output::Builder::default()
+    }
+}
+
 /// See [`CreateDeliveryStreamOutput`](crate::output::CreateDeliveryStreamOutput).
 pub mod create_delivery_stream_output {
 
@@ -797,11 +815,5 @@ pub mod create_delivery_stream_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl CreateDeliveryStreamOutput {
-    /// Creates a new builder-style object to manufacture [`CreateDeliveryStreamOutput`](crate::output::CreateDeliveryStreamOutput).
-    pub fn builder() -> crate::output::create_delivery_stream_output::Builder {
-        crate::output::create_delivery_stream_output::Builder::default()
     }
 }

@@ -10,6 +10,13 @@ impl aws_http::request_id::RequestId for SendHeartbeatOutput {
         self._request_id.as_deref()
     }
 }
+impl SendHeartbeatOutput {
+    /// Creates a new builder-style object to manufacture [`SendHeartbeatOutput`](crate::output::SendHeartbeatOutput).
+    pub fn builder() -> crate::output::send_heartbeat_output::Builder {
+        crate::output::send_heartbeat_output::Builder::default()
+    }
+}
+
 /// See [`SendHeartbeatOutput`](crate::output::SendHeartbeatOutput).
 pub mod send_heartbeat_output {
 
@@ -35,12 +42,6 @@ pub mod send_heartbeat_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl SendHeartbeatOutput {
-    /// Creates a new builder-style object to manufacture [`SendHeartbeatOutput`](crate::output::SendHeartbeatOutput).
-    pub fn builder() -> crate::output::send_heartbeat_output::Builder {
-        crate::output::send_heartbeat_output::Builder::default()
     }
 }
 
@@ -71,6 +72,13 @@ impl aws_http::request_id::RequestId for GetDeviceRegistrationOutput {
         self._request_id.as_deref()
     }
 }
+impl GetDeviceRegistrationOutput {
+    /// Creates a new builder-style object to manufacture [`GetDeviceRegistrationOutput`](crate::output::GetDeviceRegistrationOutput).
+    pub fn builder() -> crate::output::get_device_registration_output::Builder {
+        crate::output::get_device_registration_output::Builder::default()
+    }
+}
+
 /// See [`GetDeviceRegistrationOutput`](crate::output::GetDeviceRegistrationOutput).
 pub mod get_device_registration_output {
 
@@ -125,12 +133,6 @@ pub mod get_device_registration_output {
         }
     }
 }
-impl GetDeviceRegistrationOutput {
-    /// Creates a new builder-style object to manufacture [`GetDeviceRegistrationOutput`](crate::output::GetDeviceRegistrationOutput).
-    pub fn builder() -> crate::output::get_device_registration_output::Builder {
-        crate::output::get_device_registration_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -152,6 +154,13 @@ impl aws_http::request_id::RequestId for GetDeploymentsOutput {
         self._request_id.as_deref()
     }
 }
+impl GetDeploymentsOutput {
+    /// Creates a new builder-style object to manufacture [`GetDeploymentsOutput`](crate::output::GetDeploymentsOutput).
+    pub fn builder() -> crate::output::get_deployments_output::Builder {
+        crate::output::get_deployments_output::Builder::default()
+    }
+}
+
 /// See [`GetDeploymentsOutput`](crate::output::GetDeploymentsOutput).
 pub mod get_deployments_output {
 
@@ -198,11 +207,5 @@ pub mod get_deployments_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl GetDeploymentsOutput {
-    /// Creates a new builder-style object to manufacture [`GetDeploymentsOutput`](crate::output::GetDeploymentsOutput).
-    pub fn builder() -> crate::output::get_deployments_output::Builder {
-        crate::output::get_deployments_output::Builder::default()
     }
 }

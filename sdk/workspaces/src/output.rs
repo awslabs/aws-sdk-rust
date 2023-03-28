@@ -10,6 +10,13 @@ impl aws_http::request_id::RequestId for UpdateWorkspaceImagePermissionOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdateWorkspaceImagePermissionOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateWorkspaceImagePermissionOutput`](crate::output::UpdateWorkspaceImagePermissionOutput).
+    pub fn builder() -> crate::output::update_workspace_image_permission_output::Builder {
+        crate::output::update_workspace_image_permission_output::Builder::default()
+    }
+}
+
 /// See [`UpdateWorkspaceImagePermissionOutput`](crate::output::UpdateWorkspaceImagePermissionOutput).
 pub mod update_workspace_image_permission_output {
 
@@ -37,12 +44,6 @@ pub mod update_workspace_image_permission_output {
         }
     }
 }
-impl UpdateWorkspaceImagePermissionOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateWorkspaceImagePermissionOutput`](crate::output::UpdateWorkspaceImagePermissionOutput).
-    pub fn builder() -> crate::output::update_workspace_image_permission_output::Builder {
-        crate::output::update_workspace_image_permission_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -55,6 +56,13 @@ impl aws_http::request_id::RequestId for UpdateWorkspaceBundleOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdateWorkspaceBundleOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateWorkspaceBundleOutput`](crate::output::UpdateWorkspaceBundleOutput).
+    pub fn builder() -> crate::output::update_workspace_bundle_output::Builder {
+        crate::output::update_workspace_bundle_output::Builder::default()
+    }
+}
+
 /// See [`UpdateWorkspaceBundleOutput`](crate::output::UpdateWorkspaceBundleOutput).
 pub mod update_workspace_bundle_output {
 
@@ -82,12 +90,6 @@ pub mod update_workspace_bundle_output {
         }
     }
 }
-impl UpdateWorkspaceBundleOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateWorkspaceBundleOutput`](crate::output::UpdateWorkspaceBundleOutput).
-    pub fn builder() -> crate::output::update_workspace_bundle_output::Builder {
-        crate::output::update_workspace_bundle_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -100,6 +102,13 @@ impl aws_http::request_id::RequestId for UpdateRulesOfIpGroupOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdateRulesOfIpGroupOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateRulesOfIpGroupOutput`](crate::output::UpdateRulesOfIpGroupOutput).
+    pub fn builder() -> crate::output::update_rules_of_ip_group_output::Builder {
+        crate::output::update_rules_of_ip_group_output::Builder::default()
+    }
+}
+
 /// See [`UpdateRulesOfIpGroupOutput`](crate::output::UpdateRulesOfIpGroupOutput).
 pub mod update_rules_of_ip_group_output {
 
@@ -127,12 +136,6 @@ pub mod update_rules_of_ip_group_output {
         }
     }
 }
-impl UpdateRulesOfIpGroupOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateRulesOfIpGroupOutput`](crate::output::UpdateRulesOfIpGroupOutput).
-    pub fn builder() -> crate::output::update_rules_of_ip_group_output::Builder {
-        crate::output::update_rules_of_ip_group_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -145,6 +148,13 @@ impl aws_http::request_id::RequestId for UpdateConnectionAliasPermissionOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdateConnectionAliasPermissionOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateConnectionAliasPermissionOutput`](crate::output::UpdateConnectionAliasPermissionOutput).
+    pub fn builder() -> crate::output::update_connection_alias_permission_output::Builder {
+        crate::output::update_connection_alias_permission_output::Builder::default()
+    }
+}
+
 /// See [`UpdateConnectionAliasPermissionOutput`](crate::output::UpdateConnectionAliasPermissionOutput).
 pub mod update_connection_alias_permission_output {
 
@@ -172,12 +182,6 @@ pub mod update_connection_alias_permission_output {
         }
     }
 }
-impl UpdateConnectionAliasPermissionOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateConnectionAliasPermissionOutput`](crate::output::UpdateConnectionAliasPermissionOutput).
-    pub fn builder() -> crate::output::update_connection_alias_permission_output::Builder {
-        crate::output::update_connection_alias_permission_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -190,6 +194,13 @@ impl aws_http::request_id::RequestId for UpdateConnectClientAddInOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdateConnectClientAddInOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateConnectClientAddInOutput`](crate::output::UpdateConnectClientAddInOutput).
+    pub fn builder() -> crate::output::update_connect_client_add_in_output::Builder {
+        crate::output::update_connect_client_add_in_output::Builder::default()
+    }
+}
+
 /// See [`UpdateConnectClientAddInOutput`](crate::output::UpdateConnectClientAddInOutput).
 pub mod update_connect_client_add_in_output {
 
@@ -217,12 +228,6 @@ pub mod update_connect_client_add_in_output {
         }
     }
 }
-impl UpdateConnectClientAddInOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateConnectClientAddInOutput`](crate::output::UpdateConnectClientAddInOutput).
-    pub fn builder() -> crate::output::update_connect_client_add_in_output::Builder {
-        crate::output::update_connect_client_add_in_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -247,6 +252,13 @@ impl aws_http::request_id::RequestId for TerminateWorkspacesOutput {
         self._request_id.as_deref()
     }
 }
+impl TerminateWorkspacesOutput {
+    /// Creates a new builder-style object to manufacture [`TerminateWorkspacesOutput`](crate::output::TerminateWorkspacesOutput).
+    pub fn builder() -> crate::output::terminate_workspaces_output::Builder {
+        crate::output::terminate_workspaces_output::Builder::default()
+    }
+}
+
 /// See [`TerminateWorkspacesOutput`](crate::output::TerminateWorkspacesOutput).
 pub mod terminate_workspaces_output {
 
@@ -299,12 +311,6 @@ pub mod terminate_workspaces_output {
         }
     }
 }
-impl TerminateWorkspacesOutput {
-    /// Creates a new builder-style object to manufacture [`TerminateWorkspacesOutput`](crate::output::TerminateWorkspacesOutput).
-    pub fn builder() -> crate::output::terminate_workspaces_output::Builder {
-        crate::output::terminate_workspaces_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -329,6 +335,13 @@ impl aws_http::request_id::RequestId for StopWorkspacesOutput {
         self._request_id.as_deref()
     }
 }
+impl StopWorkspacesOutput {
+    /// Creates a new builder-style object to manufacture [`StopWorkspacesOutput`](crate::output::StopWorkspacesOutput).
+    pub fn builder() -> crate::output::stop_workspaces_output::Builder {
+        crate::output::stop_workspaces_output::Builder::default()
+    }
+}
+
 /// See [`StopWorkspacesOutput`](crate::output::StopWorkspacesOutput).
 pub mod stop_workspaces_output {
 
@@ -381,12 +394,6 @@ pub mod stop_workspaces_output {
         }
     }
 }
-impl StopWorkspacesOutput {
-    /// Creates a new builder-style object to manufacture [`StopWorkspacesOutput`](crate::output::StopWorkspacesOutput).
-    pub fn builder() -> crate::output::stop_workspaces_output::Builder {
-        crate::output::stop_workspaces_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -411,6 +418,13 @@ impl aws_http::request_id::RequestId for StartWorkspacesOutput {
         self._request_id.as_deref()
     }
 }
+impl StartWorkspacesOutput {
+    /// Creates a new builder-style object to manufacture [`StartWorkspacesOutput`](crate::output::StartWorkspacesOutput).
+    pub fn builder() -> crate::output::start_workspaces_output::Builder {
+        crate::output::start_workspaces_output::Builder::default()
+    }
+}
+
 /// See [`StartWorkspacesOutput`](crate::output::StartWorkspacesOutput).
 pub mod start_workspaces_output {
 
@@ -463,12 +477,6 @@ pub mod start_workspaces_output {
         }
     }
 }
-impl StartWorkspacesOutput {
-    /// Creates a new builder-style object to manufacture [`StartWorkspacesOutput`](crate::output::StartWorkspacesOutput).
-    pub fn builder() -> crate::output::start_workspaces_output::Builder {
-        crate::output::start_workspaces_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -481,6 +489,13 @@ impl aws_http::request_id::RequestId for RevokeIpRulesOutput {
         self._request_id.as_deref()
     }
 }
+impl RevokeIpRulesOutput {
+    /// Creates a new builder-style object to manufacture [`RevokeIpRulesOutput`](crate::output::RevokeIpRulesOutput).
+    pub fn builder() -> crate::output::revoke_ip_rules_output::Builder {
+        crate::output::revoke_ip_rules_output::Builder::default()
+    }
+}
+
 /// See [`RevokeIpRulesOutput`](crate::output::RevokeIpRulesOutput).
 pub mod revoke_ip_rules_output {
 
@@ -508,12 +523,6 @@ pub mod revoke_ip_rules_output {
         }
     }
 }
-impl RevokeIpRulesOutput {
-    /// Creates a new builder-style object to manufacture [`RevokeIpRulesOutput`](crate::output::RevokeIpRulesOutput).
-    pub fn builder() -> crate::output::revoke_ip_rules_output::Builder {
-        crate::output::revoke_ip_rules_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -526,6 +535,13 @@ impl aws_http::request_id::RequestId for RestoreWorkspaceOutput {
         self._request_id.as_deref()
     }
 }
+impl RestoreWorkspaceOutput {
+    /// Creates a new builder-style object to manufacture [`RestoreWorkspaceOutput`](crate::output::RestoreWorkspaceOutput).
+    pub fn builder() -> crate::output::restore_workspace_output::Builder {
+        crate::output::restore_workspace_output::Builder::default()
+    }
+}
+
 /// See [`RestoreWorkspaceOutput`](crate::output::RestoreWorkspaceOutput).
 pub mod restore_workspace_output {
 
@@ -553,12 +569,6 @@ pub mod restore_workspace_output {
         }
     }
 }
-impl RestoreWorkspaceOutput {
-    /// Creates a new builder-style object to manufacture [`RestoreWorkspaceOutput`](crate::output::RestoreWorkspaceOutput).
-    pub fn builder() -> crate::output::restore_workspace_output::Builder {
-        crate::output::restore_workspace_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -571,6 +581,13 @@ impl aws_http::request_id::RequestId for RegisterWorkspaceDirectoryOutput {
         self._request_id.as_deref()
     }
 }
+impl RegisterWorkspaceDirectoryOutput {
+    /// Creates a new builder-style object to manufacture [`RegisterWorkspaceDirectoryOutput`](crate::output::RegisterWorkspaceDirectoryOutput).
+    pub fn builder() -> crate::output::register_workspace_directory_output::Builder {
+        crate::output::register_workspace_directory_output::Builder::default()
+    }
+}
+
 /// See [`RegisterWorkspaceDirectoryOutput`](crate::output::RegisterWorkspaceDirectoryOutput).
 pub mod register_workspace_directory_output {
 
@@ -598,12 +615,6 @@ pub mod register_workspace_directory_output {
         }
     }
 }
-impl RegisterWorkspaceDirectoryOutput {
-    /// Creates a new builder-style object to manufacture [`RegisterWorkspaceDirectoryOutput`](crate::output::RegisterWorkspaceDirectoryOutput).
-    pub fn builder() -> crate::output::register_workspace_directory_output::Builder {
-        crate::output::register_workspace_directory_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -628,6 +639,13 @@ impl aws_http::request_id::RequestId for RebuildWorkspacesOutput {
         self._request_id.as_deref()
     }
 }
+impl RebuildWorkspacesOutput {
+    /// Creates a new builder-style object to manufacture [`RebuildWorkspacesOutput`](crate::output::RebuildWorkspacesOutput).
+    pub fn builder() -> crate::output::rebuild_workspaces_output::Builder {
+        crate::output::rebuild_workspaces_output::Builder::default()
+    }
+}
+
 /// See [`RebuildWorkspacesOutput`](crate::output::RebuildWorkspacesOutput).
 pub mod rebuild_workspaces_output {
 
@@ -680,12 +698,6 @@ pub mod rebuild_workspaces_output {
         }
     }
 }
-impl RebuildWorkspacesOutput {
-    /// Creates a new builder-style object to manufacture [`RebuildWorkspacesOutput`](crate::output::RebuildWorkspacesOutput).
-    pub fn builder() -> crate::output::rebuild_workspaces_output::Builder {
-        crate::output::rebuild_workspaces_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -710,6 +722,13 @@ impl aws_http::request_id::RequestId for RebootWorkspacesOutput {
         self._request_id.as_deref()
     }
 }
+impl RebootWorkspacesOutput {
+    /// Creates a new builder-style object to manufacture [`RebootWorkspacesOutput`](crate::output::RebootWorkspacesOutput).
+    pub fn builder() -> crate::output::reboot_workspaces_output::Builder {
+        crate::output::reboot_workspaces_output::Builder::default()
+    }
+}
+
 /// See [`RebootWorkspacesOutput`](crate::output::RebootWorkspacesOutput).
 pub mod reboot_workspaces_output {
 
@@ -762,12 +781,6 @@ pub mod reboot_workspaces_output {
         }
     }
 }
-impl RebootWorkspacesOutput {
-    /// Creates a new builder-style object to manufacture [`RebootWorkspacesOutput`](crate::output::RebootWorkspacesOutput).
-    pub fn builder() -> crate::output::reboot_workspaces_output::Builder {
-        crate::output::reboot_workspaces_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -780,6 +793,13 @@ impl aws_http::request_id::RequestId for ModifyWorkspaceStateOutput {
         self._request_id.as_deref()
     }
 }
+impl ModifyWorkspaceStateOutput {
+    /// Creates a new builder-style object to manufacture [`ModifyWorkspaceStateOutput`](crate::output::ModifyWorkspaceStateOutput).
+    pub fn builder() -> crate::output::modify_workspace_state_output::Builder {
+        crate::output::modify_workspace_state_output::Builder::default()
+    }
+}
+
 /// See [`ModifyWorkspaceStateOutput`](crate::output::ModifyWorkspaceStateOutput).
 pub mod modify_workspace_state_output {
 
@@ -807,12 +827,6 @@ pub mod modify_workspace_state_output {
         }
     }
 }
-impl ModifyWorkspaceStateOutput {
-    /// Creates a new builder-style object to manufacture [`ModifyWorkspaceStateOutput`](crate::output::ModifyWorkspaceStateOutput).
-    pub fn builder() -> crate::output::modify_workspace_state_output::Builder {
-        crate::output::modify_workspace_state_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -825,6 +839,13 @@ impl aws_http::request_id::RequestId for ModifyWorkspacePropertiesOutput {
         self._request_id.as_deref()
     }
 }
+impl ModifyWorkspacePropertiesOutput {
+    /// Creates a new builder-style object to manufacture [`ModifyWorkspacePropertiesOutput`](crate::output::ModifyWorkspacePropertiesOutput).
+    pub fn builder() -> crate::output::modify_workspace_properties_output::Builder {
+        crate::output::modify_workspace_properties_output::Builder::default()
+    }
+}
+
 /// See [`ModifyWorkspacePropertiesOutput`](crate::output::ModifyWorkspacePropertiesOutput).
 pub mod modify_workspace_properties_output {
 
@@ -852,12 +873,6 @@ pub mod modify_workspace_properties_output {
         }
     }
 }
-impl ModifyWorkspacePropertiesOutput {
-    /// Creates a new builder-style object to manufacture [`ModifyWorkspacePropertiesOutput`](crate::output::ModifyWorkspacePropertiesOutput).
-    pub fn builder() -> crate::output::modify_workspace_properties_output::Builder {
-        crate::output::modify_workspace_properties_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -870,6 +885,13 @@ impl aws_http::request_id::RequestId for ModifyWorkspaceCreationPropertiesOutput
         self._request_id.as_deref()
     }
 }
+impl ModifyWorkspaceCreationPropertiesOutput {
+    /// Creates a new builder-style object to manufacture [`ModifyWorkspaceCreationPropertiesOutput`](crate::output::ModifyWorkspaceCreationPropertiesOutput).
+    pub fn builder() -> crate::output::modify_workspace_creation_properties_output::Builder {
+        crate::output::modify_workspace_creation_properties_output::Builder::default()
+    }
+}
+
 /// See [`ModifyWorkspaceCreationPropertiesOutput`](crate::output::ModifyWorkspaceCreationPropertiesOutput).
 pub mod modify_workspace_creation_properties_output {
 
@@ -897,12 +919,6 @@ pub mod modify_workspace_creation_properties_output {
         }
     }
 }
-impl ModifyWorkspaceCreationPropertiesOutput {
-    /// Creates a new builder-style object to manufacture [`ModifyWorkspaceCreationPropertiesOutput`](crate::output::ModifyWorkspaceCreationPropertiesOutput).
-    pub fn builder() -> crate::output::modify_workspace_creation_properties_output::Builder {
-        crate::output::modify_workspace_creation_properties_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -915,6 +931,13 @@ impl aws_http::request_id::RequestId for ModifyWorkspaceAccessPropertiesOutput {
         self._request_id.as_deref()
     }
 }
+impl ModifyWorkspaceAccessPropertiesOutput {
+    /// Creates a new builder-style object to manufacture [`ModifyWorkspaceAccessPropertiesOutput`](crate::output::ModifyWorkspaceAccessPropertiesOutput).
+    pub fn builder() -> crate::output::modify_workspace_access_properties_output::Builder {
+        crate::output::modify_workspace_access_properties_output::Builder::default()
+    }
+}
+
 /// See [`ModifyWorkspaceAccessPropertiesOutput`](crate::output::ModifyWorkspaceAccessPropertiesOutput).
 pub mod modify_workspace_access_properties_output {
 
@@ -942,12 +965,6 @@ pub mod modify_workspace_access_properties_output {
         }
     }
 }
-impl ModifyWorkspaceAccessPropertiesOutput {
-    /// Creates a new builder-style object to manufacture [`ModifyWorkspaceAccessPropertiesOutput`](crate::output::ModifyWorkspaceAccessPropertiesOutput).
-    pub fn builder() -> crate::output::modify_workspace_access_properties_output::Builder {
-        crate::output::modify_workspace_access_properties_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -960,6 +977,13 @@ impl aws_http::request_id::RequestId for ModifySelfservicePermissionsOutput {
         self._request_id.as_deref()
     }
 }
+impl ModifySelfservicePermissionsOutput {
+    /// Creates a new builder-style object to manufacture [`ModifySelfservicePermissionsOutput`](crate::output::ModifySelfservicePermissionsOutput).
+    pub fn builder() -> crate::output::modify_selfservice_permissions_output::Builder {
+        crate::output::modify_selfservice_permissions_output::Builder::default()
+    }
+}
+
 /// See [`ModifySelfservicePermissionsOutput`](crate::output::ModifySelfservicePermissionsOutput).
 pub mod modify_selfservice_permissions_output {
 
@@ -987,12 +1011,6 @@ pub mod modify_selfservice_permissions_output {
         }
     }
 }
-impl ModifySelfservicePermissionsOutput {
-    /// Creates a new builder-style object to manufacture [`ModifySelfservicePermissionsOutput`](crate::output::ModifySelfservicePermissionsOutput).
-    pub fn builder() -> crate::output::modify_selfservice_permissions_output::Builder {
-        crate::output::modify_selfservice_permissions_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1005,6 +1023,13 @@ impl aws_http::request_id::RequestId for ModifySamlPropertiesOutput {
         self._request_id.as_deref()
     }
 }
+impl ModifySamlPropertiesOutput {
+    /// Creates a new builder-style object to manufacture [`ModifySamlPropertiesOutput`](crate::output::ModifySamlPropertiesOutput).
+    pub fn builder() -> crate::output::modify_saml_properties_output::Builder {
+        crate::output::modify_saml_properties_output::Builder::default()
+    }
+}
+
 /// See [`ModifySamlPropertiesOutput`](crate::output::ModifySamlPropertiesOutput).
 pub mod modify_saml_properties_output {
 
@@ -1032,12 +1057,6 @@ pub mod modify_saml_properties_output {
         }
     }
 }
-impl ModifySamlPropertiesOutput {
-    /// Creates a new builder-style object to manufacture [`ModifySamlPropertiesOutput`](crate::output::ModifySamlPropertiesOutput).
-    pub fn builder() -> crate::output::modify_saml_properties_output::Builder {
-        crate::output::modify_saml_properties_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1050,6 +1069,13 @@ impl aws_http::request_id::RequestId for ModifyClientPropertiesOutput {
         self._request_id.as_deref()
     }
 }
+impl ModifyClientPropertiesOutput {
+    /// Creates a new builder-style object to manufacture [`ModifyClientPropertiesOutput`](crate::output::ModifyClientPropertiesOutput).
+    pub fn builder() -> crate::output::modify_client_properties_output::Builder {
+        crate::output::modify_client_properties_output::Builder::default()
+    }
+}
+
 /// See [`ModifyClientPropertiesOutput`](crate::output::ModifyClientPropertiesOutput).
 pub mod modify_client_properties_output {
 
@@ -1077,12 +1103,6 @@ pub mod modify_client_properties_output {
         }
     }
 }
-impl ModifyClientPropertiesOutput {
-    /// Creates a new builder-style object to manufacture [`ModifyClientPropertiesOutput`](crate::output::ModifyClientPropertiesOutput).
-    pub fn builder() -> crate::output::modify_client_properties_output::Builder {
-        crate::output::modify_client_properties_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1095,6 +1115,13 @@ impl aws_http::request_id::RequestId for ModifyCertificateBasedAuthPropertiesOut
         self._request_id.as_deref()
     }
 }
+impl ModifyCertificateBasedAuthPropertiesOutput {
+    /// Creates a new builder-style object to manufacture [`ModifyCertificateBasedAuthPropertiesOutput`](crate::output::ModifyCertificateBasedAuthPropertiesOutput).
+    pub fn builder() -> crate::output::modify_certificate_based_auth_properties_output::Builder {
+        crate::output::modify_certificate_based_auth_properties_output::Builder::default()
+    }
+}
+
 /// See [`ModifyCertificateBasedAuthPropertiesOutput`](crate::output::ModifyCertificateBasedAuthPropertiesOutput).
 pub mod modify_certificate_based_auth_properties_output {
 
@@ -1122,12 +1149,6 @@ pub mod modify_certificate_based_auth_properties_output {
         }
     }
 }
-impl ModifyCertificateBasedAuthPropertiesOutput {
-    /// Creates a new builder-style object to manufacture [`ModifyCertificateBasedAuthPropertiesOutput`](crate::output::ModifyCertificateBasedAuthPropertiesOutput).
-    pub fn builder() -> crate::output::modify_certificate_based_auth_properties_output::Builder {
-        crate::output::modify_certificate_based_auth_properties_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1140,6 +1161,13 @@ impl aws_http::request_id::RequestId for ModifyAccountOutput {
         self._request_id.as_deref()
     }
 }
+impl ModifyAccountOutput {
+    /// Creates a new builder-style object to manufacture [`ModifyAccountOutput`](crate::output::ModifyAccountOutput).
+    pub fn builder() -> crate::output::modify_account_output::Builder {
+        crate::output::modify_account_output::Builder::default()
+    }
+}
+
 /// See [`ModifyAccountOutput`](crate::output::ModifyAccountOutput).
 pub mod modify_account_output {
 
@@ -1165,12 +1193,6 @@ pub mod modify_account_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl ModifyAccountOutput {
-    /// Creates a new builder-style object to manufacture [`ModifyAccountOutput`](crate::output::ModifyAccountOutput).
-    pub fn builder() -> crate::output::modify_account_output::Builder {
-        crate::output::modify_account_output::Builder::default()
     }
 }
 
@@ -1201,6 +1223,13 @@ impl aws_http::request_id::RequestId for MigrateWorkspaceOutput {
         self._request_id.as_deref()
     }
 }
+impl MigrateWorkspaceOutput {
+    /// Creates a new builder-style object to manufacture [`MigrateWorkspaceOutput`](crate::output::MigrateWorkspaceOutput).
+    pub fn builder() -> crate::output::migrate_workspace_output::Builder {
+        crate::output::migrate_workspace_output::Builder::default()
+    }
+}
+
 /// See [`MigrateWorkspaceOutput`](crate::output::MigrateWorkspaceOutput).
 pub mod migrate_workspace_output {
 
@@ -1258,12 +1287,6 @@ pub mod migrate_workspace_output {
         }
     }
 }
-impl MigrateWorkspaceOutput {
-    /// Creates a new builder-style object to manufacture [`MigrateWorkspaceOutput`](crate::output::MigrateWorkspaceOutput).
-    pub fn builder() -> crate::output::migrate_workspace_output::Builder {
-        crate::output::migrate_workspace_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1292,6 +1315,13 @@ impl aws_http::request_id::RequestId for ListAvailableManagementCidrRangesOutput
         self._request_id.as_deref()
     }
 }
+impl ListAvailableManagementCidrRangesOutput {
+    /// Creates a new builder-style object to manufacture [`ListAvailableManagementCidrRangesOutput`](crate::output::ListAvailableManagementCidrRangesOutput).
+    pub fn builder() -> crate::output::list_available_management_cidr_ranges_output::Builder {
+        crate::output::list_available_management_cidr_ranges_output::Builder::default()
+    }
+}
+
 /// See [`ListAvailableManagementCidrRangesOutput`](crate::output::ListAvailableManagementCidrRangesOutput).
 pub mod list_available_management_cidr_ranges_output {
 
@@ -1352,12 +1382,6 @@ pub mod list_available_management_cidr_ranges_output {
         }
     }
 }
-impl ListAvailableManagementCidrRangesOutput {
-    /// Creates a new builder-style object to manufacture [`ListAvailableManagementCidrRangesOutput`](crate::output::ListAvailableManagementCidrRangesOutput).
-    pub fn builder() -> crate::output::list_available_management_cidr_ranges_output::Builder {
-        crate::output::list_available_management_cidr_ranges_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1379,6 +1403,13 @@ impl aws_http::request_id::RequestId for ImportWorkspaceImageOutput {
         self._request_id.as_deref()
     }
 }
+impl ImportWorkspaceImageOutput {
+    /// Creates a new builder-style object to manufacture [`ImportWorkspaceImageOutput`](crate::output::ImportWorkspaceImageOutput).
+    pub fn builder() -> crate::output::import_workspace_image_output::Builder {
+        crate::output::import_workspace_image_output::Builder::default()
+    }
+}
+
 /// See [`ImportWorkspaceImageOutput`](crate::output::ImportWorkspaceImageOutput).
 pub mod import_workspace_image_output {
 
@@ -1416,12 +1447,6 @@ pub mod import_workspace_image_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl ImportWorkspaceImageOutput {
-    /// Creates a new builder-style object to manufacture [`ImportWorkspaceImageOutput`](crate::output::ImportWorkspaceImageOutput).
-    pub fn builder() -> crate::output::import_workspace_image_output::Builder {
-        crate::output::import_workspace_image_output::Builder::default()
     }
 }
 
@@ -1492,6 +1517,13 @@ impl aws_http::request_id::RequestId for ImportClientBrandingOutput {
         self._request_id.as_deref()
     }
 }
+impl ImportClientBrandingOutput {
+    /// Creates a new builder-style object to manufacture [`ImportClientBrandingOutput`](crate::output::ImportClientBrandingOutput).
+    pub fn builder() -> crate::output::import_client_branding_output::Builder {
+        crate::output::import_client_branding_output::Builder::default()
+    }
+}
+
 /// See [`ImportClientBrandingOutput`](crate::output::ImportClientBrandingOutput).
 pub mod import_client_branding_output {
 
@@ -1629,12 +1661,6 @@ pub mod import_client_branding_output {
         }
     }
 }
-impl ImportClientBrandingOutput {
-    /// Creates a new builder-style object to manufacture [`ImportClientBrandingOutput`](crate::output::ImportClientBrandingOutput).
-    pub fn builder() -> crate::output::import_client_branding_output::Builder {
-        crate::output::import_client_branding_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1647,6 +1673,13 @@ impl aws_http::request_id::RequestId for DisassociateIpGroupsOutput {
         self._request_id.as_deref()
     }
 }
+impl DisassociateIpGroupsOutput {
+    /// Creates a new builder-style object to manufacture [`DisassociateIpGroupsOutput`](crate::output::DisassociateIpGroupsOutput).
+    pub fn builder() -> crate::output::disassociate_ip_groups_output::Builder {
+        crate::output::disassociate_ip_groups_output::Builder::default()
+    }
+}
+
 /// See [`DisassociateIpGroupsOutput`](crate::output::DisassociateIpGroupsOutput).
 pub mod disassociate_ip_groups_output {
 
@@ -1674,12 +1707,6 @@ pub mod disassociate_ip_groups_output {
         }
     }
 }
-impl DisassociateIpGroupsOutput {
-    /// Creates a new builder-style object to manufacture [`DisassociateIpGroupsOutput`](crate::output::DisassociateIpGroupsOutput).
-    pub fn builder() -> crate::output::disassociate_ip_groups_output::Builder {
-        crate::output::disassociate_ip_groups_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1692,6 +1719,13 @@ impl aws_http::request_id::RequestId for DisassociateConnectionAliasOutput {
         self._request_id.as_deref()
     }
 }
+impl DisassociateConnectionAliasOutput {
+    /// Creates a new builder-style object to manufacture [`DisassociateConnectionAliasOutput`](crate::output::DisassociateConnectionAliasOutput).
+    pub fn builder() -> crate::output::disassociate_connection_alias_output::Builder {
+        crate::output::disassociate_connection_alias_output::Builder::default()
+    }
+}
+
 /// See [`DisassociateConnectionAliasOutput`](crate::output::DisassociateConnectionAliasOutput).
 pub mod disassociate_connection_alias_output {
 
@@ -1717,12 +1751,6 @@ pub mod disassociate_connection_alias_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl DisassociateConnectionAliasOutput {
-    /// Creates a new builder-style object to manufacture [`DisassociateConnectionAliasOutput`](crate::output::DisassociateConnectionAliasOutput).
-    pub fn builder() -> crate::output::disassociate_connection_alias_output::Builder {
-        crate::output::disassociate_connection_alias_output::Builder::default()
     }
 }
 
@@ -1753,6 +1781,13 @@ impl aws_http::request_id::RequestId for DescribeWorkspaceSnapshotsOutput {
         self._request_id.as_deref()
     }
 }
+impl DescribeWorkspaceSnapshotsOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeWorkspaceSnapshotsOutput`](crate::output::DescribeWorkspaceSnapshotsOutput).
+    pub fn builder() -> crate::output::describe_workspace_snapshots_output::Builder {
+        crate::output::describe_workspace_snapshots_output::Builder::default()
+    }
+}
+
 /// See [`DescribeWorkspaceSnapshotsOutput`](crate::output::DescribeWorkspaceSnapshotsOutput).
 pub mod describe_workspace_snapshots_output {
 
@@ -1822,12 +1857,6 @@ pub mod describe_workspace_snapshots_output {
         }
     }
 }
-impl DescribeWorkspaceSnapshotsOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeWorkspaceSnapshotsOutput`](crate::output::DescribeWorkspaceSnapshotsOutput).
-    pub fn builder() -> crate::output::describe_workspace_snapshots_output::Builder {
-        crate::output::describe_workspace_snapshots_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1859,6 +1888,13 @@ impl aws_http::request_id::RequestId for DescribeWorkspacesConnectionStatusOutpu
         self._request_id.as_deref()
     }
 }
+impl DescribeWorkspacesConnectionStatusOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeWorkspacesConnectionStatusOutput`](crate::output::DescribeWorkspacesConnectionStatusOutput).
+    pub fn builder() -> crate::output::describe_workspaces_connection_status_output::Builder {
+        crate::output::describe_workspaces_connection_status_output::Builder::default()
+    }
+}
+
 /// See [`DescribeWorkspacesConnectionStatusOutput`](crate::output::DescribeWorkspacesConnectionStatusOutput).
 pub mod describe_workspaces_connection_status_output {
 
@@ -1923,12 +1959,6 @@ pub mod describe_workspaces_connection_status_output {
         }
     }
 }
-impl DescribeWorkspacesConnectionStatusOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeWorkspacesConnectionStatusOutput`](crate::output::DescribeWorkspacesConnectionStatusOutput).
-    pub fn builder() -> crate::output::describe_workspaces_connection_status_output::Builder {
-        crate::output::describe_workspaces_connection_status_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1959,6 +1989,13 @@ impl aws_http::request_id::RequestId for DescribeWorkspacesOutput {
         self._request_id.as_deref()
     }
 }
+impl DescribeWorkspacesOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeWorkspacesOutput`](crate::output::DescribeWorkspacesOutput).
+    pub fn builder() -> crate::output::describe_workspaces_output::Builder {
+        crate::output::describe_workspaces_output::Builder::default()
+    }
+}
+
 /// See [`DescribeWorkspacesOutput`](crate::output::DescribeWorkspacesOutput).
 pub mod describe_workspaces_output {
 
@@ -2021,12 +2058,6 @@ pub mod describe_workspaces_output {
         }
     }
 }
-impl DescribeWorkspacesOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeWorkspacesOutput`](crate::output::DescribeWorkspacesOutput).
-    pub fn builder() -> crate::output::describe_workspaces_output::Builder {
-        crate::output::describe_workspaces_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2055,6 +2086,13 @@ impl aws_http::request_id::RequestId for DescribeWorkspaceImagesOutput {
         self._request_id.as_deref()
     }
 }
+impl DescribeWorkspaceImagesOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeWorkspaceImagesOutput`](crate::output::DescribeWorkspaceImagesOutput).
+    pub fn builder() -> crate::output::describe_workspace_images_output::Builder {
+        crate::output::describe_workspace_images_output::Builder::default()
+    }
+}
+
 /// See [`DescribeWorkspaceImagesOutput`](crate::output::DescribeWorkspaceImagesOutput).
 pub mod describe_workspace_images_output {
 
@@ -2115,12 +2153,6 @@ pub mod describe_workspace_images_output {
         }
     }
 }
-impl DescribeWorkspaceImagesOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeWorkspaceImagesOutput`](crate::output::DescribeWorkspaceImagesOutput).
-    pub fn builder() -> crate::output::describe_workspace_images_output::Builder {
-        crate::output::describe_workspace_images_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2156,6 +2188,13 @@ impl aws_http::request_id::RequestId for DescribeWorkspaceImagePermissionsOutput
         self._request_id.as_deref()
     }
 }
+impl DescribeWorkspaceImagePermissionsOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeWorkspaceImagePermissionsOutput`](crate::output::DescribeWorkspaceImagePermissionsOutput).
+    pub fn builder() -> crate::output::describe_workspace_image_permissions_output::Builder {
+        crate::output::describe_workspace_image_permissions_output::Builder::default()
+    }
+}
+
 /// See [`DescribeWorkspaceImagePermissionsOutput`](crate::output::DescribeWorkspaceImagePermissionsOutput).
 pub mod describe_workspace_image_permissions_output {
 
@@ -2229,12 +2268,6 @@ pub mod describe_workspace_image_permissions_output {
         }
     }
 }
-impl DescribeWorkspaceImagePermissionsOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeWorkspaceImagePermissionsOutput`](crate::output::DescribeWorkspaceImagePermissionsOutput).
-    pub fn builder() -> crate::output::describe_workspace_image_permissions_output::Builder {
-        crate::output::describe_workspace_image_permissions_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2263,6 +2296,13 @@ impl aws_http::request_id::RequestId for DescribeWorkspaceDirectoriesOutput {
         self._request_id.as_deref()
     }
 }
+impl DescribeWorkspaceDirectoriesOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeWorkspaceDirectoriesOutput`](crate::output::DescribeWorkspaceDirectoriesOutput).
+    pub fn builder() -> crate::output::describe_workspace_directories_output::Builder {
+        crate::output::describe_workspace_directories_output::Builder::default()
+    }
+}
+
 /// See [`DescribeWorkspaceDirectoriesOutput`](crate::output::DescribeWorkspaceDirectoriesOutput).
 pub mod describe_workspace_directories_output {
 
@@ -2324,12 +2364,6 @@ pub mod describe_workspace_directories_output {
         }
     }
 }
-impl DescribeWorkspaceDirectoriesOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeWorkspaceDirectoriesOutput`](crate::output::DescribeWorkspaceDirectoriesOutput).
-    pub fn builder() -> crate::output::describe_workspace_directories_output::Builder {
-        crate::output::describe_workspace_directories_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2358,6 +2392,13 @@ impl aws_http::request_id::RequestId for DescribeWorkspaceBundlesOutput {
         self._request_id.as_deref()
     }
 }
+impl DescribeWorkspaceBundlesOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeWorkspaceBundlesOutput`](crate::output::DescribeWorkspaceBundlesOutput).
+    pub fn builder() -> crate::output::describe_workspace_bundles_output::Builder {
+        crate::output::describe_workspace_bundles_output::Builder::default()
+    }
+}
+
 /// See [`DescribeWorkspaceBundlesOutput`](crate::output::DescribeWorkspaceBundlesOutput).
 pub mod describe_workspace_bundles_output {
 
@@ -2418,12 +2459,6 @@ pub mod describe_workspace_bundles_output {
         }
     }
 }
-impl DescribeWorkspaceBundlesOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeWorkspaceBundlesOutput`](crate::output::DescribeWorkspaceBundlesOutput).
-    pub fn builder() -> crate::output::describe_workspace_bundles_output::Builder {
-        crate::output::describe_workspace_bundles_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2445,6 +2480,13 @@ impl aws_http::request_id::RequestId for DescribeTagsOutput {
         self._request_id.as_deref()
     }
 }
+impl DescribeTagsOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeTagsOutput`](crate::output::DescribeTagsOutput).
+    pub fn builder() -> crate::output::describe_tags_output::Builder {
+        crate::output::describe_tags_output::Builder::default()
+    }
+}
+
 /// See [`DescribeTagsOutput`](crate::output::DescribeTagsOutput).
 pub mod describe_tags_output {
 
@@ -2493,12 +2535,6 @@ pub mod describe_tags_output {
         }
     }
 }
-impl DescribeTagsOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeTagsOutput`](crate::output::DescribeTagsOutput).
-    pub fn builder() -> crate::output::describe_tags_output::Builder {
-        crate::output::describe_tags_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2527,6 +2563,13 @@ impl aws_http::request_id::RequestId for DescribeIpGroupsOutput {
         self._request_id.as_deref()
     }
 }
+impl DescribeIpGroupsOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeIpGroupsOutput`](crate::output::DescribeIpGroupsOutput).
+    pub fn builder() -> crate::output::describe_ip_groups_output::Builder {
+        crate::output::describe_ip_groups_output::Builder::default()
+    }
+}
+
 /// See [`DescribeIpGroupsOutput`](crate::output::DescribeIpGroupsOutput).
 pub mod describe_ip_groups_output {
 
@@ -2587,12 +2630,6 @@ pub mod describe_ip_groups_output {
         }
     }
 }
-impl DescribeIpGroupsOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeIpGroupsOutput`](crate::output::DescribeIpGroupsOutput).
-    pub fn builder() -> crate::output::describe_ip_groups_output::Builder {
-        crate::output::describe_ip_groups_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2631,6 +2668,13 @@ impl aws_http::request_id::RequestId for DescribeConnectionAliasPermissionsOutpu
         self._request_id.as_deref()
     }
 }
+impl DescribeConnectionAliasPermissionsOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeConnectionAliasPermissionsOutput`](crate::output::DescribeConnectionAliasPermissionsOutput).
+    pub fn builder() -> crate::output::describe_connection_alias_permissions_output::Builder {
+        crate::output::describe_connection_alias_permissions_output::Builder::default()
+    }
+}
+
 /// See [`DescribeConnectionAliasPermissionsOutput`](crate::output::DescribeConnectionAliasPermissionsOutput).
 pub mod describe_connection_alias_permissions_output {
 
@@ -2707,12 +2751,6 @@ pub mod describe_connection_alias_permissions_output {
         }
     }
 }
-impl DescribeConnectionAliasPermissionsOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeConnectionAliasPermissionsOutput`](crate::output::DescribeConnectionAliasPermissionsOutput).
-    pub fn builder() -> crate::output::describe_connection_alias_permissions_output::Builder {
-        crate::output::describe_connection_alias_permissions_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2741,6 +2779,13 @@ impl aws_http::request_id::RequestId for DescribeConnectionAliasesOutput {
         self._request_id.as_deref()
     }
 }
+impl DescribeConnectionAliasesOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeConnectionAliasesOutput`](crate::output::DescribeConnectionAliasesOutput).
+    pub fn builder() -> crate::output::describe_connection_aliases_output::Builder {
+        crate::output::describe_connection_aliases_output::Builder::default()
+    }
+}
+
 /// See [`DescribeConnectionAliasesOutput`](crate::output::DescribeConnectionAliasesOutput).
 pub mod describe_connection_aliases_output {
 
@@ -2802,12 +2847,6 @@ pub mod describe_connection_aliases_output {
         }
     }
 }
-impl DescribeConnectionAliasesOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeConnectionAliasesOutput`](crate::output::DescribeConnectionAliasesOutput).
-    pub fn builder() -> crate::output::describe_connection_aliases_output::Builder {
-        crate::output::describe_connection_aliases_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2836,6 +2875,13 @@ impl aws_http::request_id::RequestId for DescribeConnectClientAddInsOutput {
         self._request_id.as_deref()
     }
 }
+impl DescribeConnectClientAddInsOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeConnectClientAddInsOutput`](crate::output::DescribeConnectClientAddInsOutput).
+    pub fn builder() -> crate::output::describe_connect_client_add_ins_output::Builder {
+        crate::output::describe_connect_client_add_ins_output::Builder::default()
+    }
+}
+
 /// See [`DescribeConnectClientAddInsOutput`](crate::output::DescribeConnectClientAddInsOutput).
 pub mod describe_connect_client_add_ins_output {
 
@@ -2896,12 +2942,6 @@ pub mod describe_connect_client_add_ins_output {
         }
     }
 }
-impl DescribeConnectClientAddInsOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeConnectClientAddInsOutput`](crate::output::DescribeConnectClientAddInsOutput).
-    pub fn builder() -> crate::output::describe_connect_client_add_ins_output::Builder {
-        crate::output::describe_connect_client_add_ins_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2926,6 +2966,13 @@ impl aws_http::request_id::RequestId for DescribeClientPropertiesOutput {
         self._request_id.as_deref()
     }
 }
+impl DescribeClientPropertiesOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeClientPropertiesOutput`](crate::output::DescribeClientPropertiesOutput).
+    pub fn builder() -> crate::output::describe_client_properties_output::Builder {
+        crate::output::describe_client_properties_output::Builder::default()
+    }
+}
+
 /// See [`DescribeClientPropertiesOutput`](crate::output::DescribeClientPropertiesOutput).
 pub mod describe_client_properties_output {
 
@@ -2976,12 +3023,6 @@ pub mod describe_client_properties_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl DescribeClientPropertiesOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeClientPropertiesOutput`](crate::output::DescribeClientPropertiesOutput).
-    pub fn builder() -> crate::output::describe_client_properties_output::Builder {
-        crate::output::describe_client_properties_output::Builder::default()
     }
 }
 
@@ -3052,6 +3093,13 @@ impl aws_http::request_id::RequestId for DescribeClientBrandingOutput {
         self._request_id.as_deref()
     }
 }
+impl DescribeClientBrandingOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeClientBrandingOutput`](crate::output::DescribeClientBrandingOutput).
+    pub fn builder() -> crate::output::describe_client_branding_output::Builder {
+        crate::output::describe_client_branding_output::Builder::default()
+    }
+}
+
 /// See [`DescribeClientBrandingOutput`](crate::output::DescribeClientBrandingOutput).
 pub mod describe_client_branding_output {
 
@@ -3189,12 +3237,6 @@ pub mod describe_client_branding_output {
         }
     }
 }
-impl DescribeClientBrandingOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeClientBrandingOutput`](crate::output::DescribeClientBrandingOutput).
-    pub fn builder() -> crate::output::describe_client_branding_output::Builder {
-        crate::output::describe_client_branding_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3226,6 +3268,13 @@ impl aws_http::request_id::RequestId for DescribeAccountModificationsOutput {
         self._request_id.as_deref()
     }
 }
+impl DescribeAccountModificationsOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeAccountModificationsOutput`](crate::output::DescribeAccountModificationsOutput).
+    pub fn builder() -> crate::output::describe_account_modifications_output::Builder {
+        crate::output::describe_account_modifications_output::Builder::default()
+    }
+}
+
 /// See [`DescribeAccountModificationsOutput`](crate::output::DescribeAccountModificationsOutput).
 pub mod describe_account_modifications_output {
 
@@ -3287,12 +3336,6 @@ pub mod describe_account_modifications_output {
         }
     }
 }
-impl DescribeAccountModificationsOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeAccountModificationsOutput`](crate::output::DescribeAccountModificationsOutput).
-    pub fn builder() -> crate::output::describe_account_modifications_output::Builder {
-        crate::output::describe_account_modifications_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3326,6 +3369,13 @@ impl aws_http::request_id::RequestId for DescribeAccountOutput {
         self._request_id.as_deref()
     }
 }
+impl DescribeAccountOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeAccountOutput`](crate::output::DescribeAccountOutput).
+    pub fn builder() -> crate::output::describe_account_output::Builder {
+        crate::output::describe_account_output::Builder::default()
+    }
+}
+
 /// See [`DescribeAccountOutput`](crate::output::DescribeAccountOutput).
 pub mod describe_account_output {
 
@@ -3394,12 +3444,6 @@ pub mod describe_account_output {
         }
     }
 }
-impl DescribeAccountOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeAccountOutput`](crate::output::DescribeAccountOutput).
-    pub fn builder() -> crate::output::describe_account_output::Builder {
-        crate::output::describe_account_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3412,6 +3456,13 @@ impl aws_http::request_id::RequestId for DeregisterWorkspaceDirectoryOutput {
         self._request_id.as_deref()
     }
 }
+impl DeregisterWorkspaceDirectoryOutput {
+    /// Creates a new builder-style object to manufacture [`DeregisterWorkspaceDirectoryOutput`](crate::output::DeregisterWorkspaceDirectoryOutput).
+    pub fn builder() -> crate::output::deregister_workspace_directory_output::Builder {
+        crate::output::deregister_workspace_directory_output::Builder::default()
+    }
+}
+
 /// See [`DeregisterWorkspaceDirectoryOutput`](crate::output::DeregisterWorkspaceDirectoryOutput).
 pub mod deregister_workspace_directory_output {
 
@@ -3439,12 +3490,6 @@ pub mod deregister_workspace_directory_output {
         }
     }
 }
-impl DeregisterWorkspaceDirectoryOutput {
-    /// Creates a new builder-style object to manufacture [`DeregisterWorkspaceDirectoryOutput`](crate::output::DeregisterWorkspaceDirectoryOutput).
-    pub fn builder() -> crate::output::deregister_workspace_directory_output::Builder {
-        crate::output::deregister_workspace_directory_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3457,6 +3502,13 @@ impl aws_http::request_id::RequestId for DeleteWorkspaceImageOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteWorkspaceImageOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteWorkspaceImageOutput`](crate::output::DeleteWorkspaceImageOutput).
+    pub fn builder() -> crate::output::delete_workspace_image_output::Builder {
+        crate::output::delete_workspace_image_output::Builder::default()
+    }
+}
+
 /// See [`DeleteWorkspaceImageOutput`](crate::output::DeleteWorkspaceImageOutput).
 pub mod delete_workspace_image_output {
 
@@ -3484,12 +3536,6 @@ pub mod delete_workspace_image_output {
         }
     }
 }
-impl DeleteWorkspaceImageOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteWorkspaceImageOutput`](crate::output::DeleteWorkspaceImageOutput).
-    pub fn builder() -> crate::output::delete_workspace_image_output::Builder {
-        crate::output::delete_workspace_image_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3502,6 +3548,13 @@ impl aws_http::request_id::RequestId for DeleteWorkspaceBundleOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteWorkspaceBundleOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteWorkspaceBundleOutput`](crate::output::DeleteWorkspaceBundleOutput).
+    pub fn builder() -> crate::output::delete_workspace_bundle_output::Builder {
+        crate::output::delete_workspace_bundle_output::Builder::default()
+    }
+}
+
 /// See [`DeleteWorkspaceBundleOutput`](crate::output::DeleteWorkspaceBundleOutput).
 pub mod delete_workspace_bundle_output {
 
@@ -3529,12 +3582,6 @@ pub mod delete_workspace_bundle_output {
         }
     }
 }
-impl DeleteWorkspaceBundleOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteWorkspaceBundleOutput`](crate::output::DeleteWorkspaceBundleOutput).
-    pub fn builder() -> crate::output::delete_workspace_bundle_output::Builder {
-        crate::output::delete_workspace_bundle_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3547,6 +3594,13 @@ impl aws_http::request_id::RequestId for DeleteTagsOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteTagsOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteTagsOutput`](crate::output::DeleteTagsOutput).
+    pub fn builder() -> crate::output::delete_tags_output::Builder {
+        crate::output::delete_tags_output::Builder::default()
+    }
+}
+
 /// See [`DeleteTagsOutput`](crate::output::DeleteTagsOutput).
 pub mod delete_tags_output {
 
@@ -3574,12 +3628,6 @@ pub mod delete_tags_output {
         }
     }
 }
-impl DeleteTagsOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteTagsOutput`](crate::output::DeleteTagsOutput).
-    pub fn builder() -> crate::output::delete_tags_output::Builder {
-        crate::output::delete_tags_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3592,6 +3640,13 @@ impl aws_http::request_id::RequestId for DeleteIpGroupOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteIpGroupOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteIpGroupOutput`](crate::output::DeleteIpGroupOutput).
+    pub fn builder() -> crate::output::delete_ip_group_output::Builder {
+        crate::output::delete_ip_group_output::Builder::default()
+    }
+}
+
 /// See [`DeleteIpGroupOutput`](crate::output::DeleteIpGroupOutput).
 pub mod delete_ip_group_output {
 
@@ -3619,12 +3674,6 @@ pub mod delete_ip_group_output {
         }
     }
 }
-impl DeleteIpGroupOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteIpGroupOutput`](crate::output::DeleteIpGroupOutput).
-    pub fn builder() -> crate::output::delete_ip_group_output::Builder {
-        crate::output::delete_ip_group_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3637,6 +3686,13 @@ impl aws_http::request_id::RequestId for DeleteConnectionAliasOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteConnectionAliasOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteConnectionAliasOutput`](crate::output::DeleteConnectionAliasOutput).
+    pub fn builder() -> crate::output::delete_connection_alias_output::Builder {
+        crate::output::delete_connection_alias_output::Builder::default()
+    }
+}
+
 /// See [`DeleteConnectionAliasOutput`](crate::output::DeleteConnectionAliasOutput).
 pub mod delete_connection_alias_output {
 
@@ -3664,12 +3720,6 @@ pub mod delete_connection_alias_output {
         }
     }
 }
-impl DeleteConnectionAliasOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteConnectionAliasOutput`](crate::output::DeleteConnectionAliasOutput).
-    pub fn builder() -> crate::output::delete_connection_alias_output::Builder {
-        crate::output::delete_connection_alias_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3682,6 +3732,13 @@ impl aws_http::request_id::RequestId for DeleteConnectClientAddInOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteConnectClientAddInOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteConnectClientAddInOutput`](crate::output::DeleteConnectClientAddInOutput).
+    pub fn builder() -> crate::output::delete_connect_client_add_in_output::Builder {
+        crate::output::delete_connect_client_add_in_output::Builder::default()
+    }
+}
+
 /// See [`DeleteConnectClientAddInOutput`](crate::output::DeleteConnectClientAddInOutput).
 pub mod delete_connect_client_add_in_output {
 
@@ -3709,12 +3766,6 @@ pub mod delete_connect_client_add_in_output {
         }
     }
 }
-impl DeleteConnectClientAddInOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteConnectClientAddInOutput`](crate::output::DeleteConnectClientAddInOutput).
-    pub fn builder() -> crate::output::delete_connect_client_add_in_output::Builder {
-        crate::output::delete_connect_client_add_in_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3727,6 +3778,13 @@ impl aws_http::request_id::RequestId for DeleteClientBrandingOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteClientBrandingOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteClientBrandingOutput`](crate::output::DeleteClientBrandingOutput).
+    pub fn builder() -> crate::output::delete_client_branding_output::Builder {
+        crate::output::delete_client_branding_output::Builder::default()
+    }
+}
+
 /// See [`DeleteClientBrandingOutput`](crate::output::DeleteClientBrandingOutput).
 pub mod delete_client_branding_output {
 
@@ -3752,12 +3810,6 @@ pub mod delete_client_branding_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl DeleteClientBrandingOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteClientBrandingOutput`](crate::output::DeleteClientBrandingOutput).
-    pub fn builder() -> crate::output::delete_client_branding_output::Builder {
-        crate::output::delete_client_branding_output::Builder::default()
     }
 }
 
@@ -3793,6 +3845,13 @@ impl aws_http::request_id::RequestId for CreateWorkspacesOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateWorkspacesOutput {
+    /// Creates a new builder-style object to manufacture [`CreateWorkspacesOutput`](crate::output::CreateWorkspacesOutput).
+    pub fn builder() -> crate::output::create_workspaces_output::Builder {
+        crate::output::create_workspaces_output::Builder::default()
+    }
+}
+
 /// See [`CreateWorkspacesOutput`](crate::output::CreateWorkspacesOutput).
 pub mod create_workspaces_output {
 
@@ -3868,12 +3927,6 @@ pub mod create_workspaces_output {
         }
     }
 }
-impl CreateWorkspacesOutput {
-    /// Creates a new builder-style object to manufacture [`CreateWorkspacesOutput`](crate::output::CreateWorkspacesOutput).
-    pub fn builder() -> crate::output::create_workspaces_output::Builder {
-        crate::output::create_workspaces_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3946,6 +3999,13 @@ impl aws_http::request_id::RequestId for CreateWorkspaceImageOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateWorkspaceImageOutput {
+    /// Creates a new builder-style object to manufacture [`CreateWorkspaceImageOutput`](crate::output::CreateWorkspaceImageOutput).
+    pub fn builder() -> crate::output::create_workspace_image_output::Builder {
+        crate::output::create_workspace_image_output::Builder::default()
+    }
+}
+
 /// See [`CreateWorkspaceImageOutput`](crate::output::CreateWorkspaceImageOutput).
 pub mod create_workspace_image_output {
 
@@ -4088,12 +4148,6 @@ pub mod create_workspace_image_output {
         }
     }
 }
-impl CreateWorkspaceImageOutput {
-    /// Creates a new builder-style object to manufacture [`CreateWorkspaceImageOutput`](crate::output::CreateWorkspaceImageOutput).
-    pub fn builder() -> crate::output::create_workspace_image_output::Builder {
-        crate::output::create_workspace_image_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -4115,6 +4169,13 @@ impl aws_http::request_id::RequestId for CreateWorkspaceBundleOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateWorkspaceBundleOutput {
+    /// Creates a new builder-style object to manufacture [`CreateWorkspaceBundleOutput`](crate::output::CreateWorkspaceBundleOutput).
+    pub fn builder() -> crate::output::create_workspace_bundle_output::Builder {
+        crate::output::create_workspace_bundle_output::Builder::default()
+    }
+}
+
 /// See [`CreateWorkspaceBundleOutput`](crate::output::CreateWorkspaceBundleOutput).
 pub mod create_workspace_bundle_output {
 
@@ -4157,12 +4218,6 @@ pub mod create_workspace_bundle_output {
         }
     }
 }
-impl CreateWorkspaceBundleOutput {
-    /// Creates a new builder-style object to manufacture [`CreateWorkspaceBundleOutput`](crate::output::CreateWorkspaceBundleOutput).
-    pub fn builder() -> crate::output::create_workspace_bundle_output::Builder {
-        crate::output::create_workspace_bundle_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -4184,6 +4239,13 @@ impl aws_http::request_id::RequestId for CreateUpdatedWorkspaceImageOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateUpdatedWorkspaceImageOutput {
+    /// Creates a new builder-style object to manufacture [`CreateUpdatedWorkspaceImageOutput`](crate::output::CreateUpdatedWorkspaceImageOutput).
+    pub fn builder() -> crate::output::create_updated_workspace_image_output::Builder {
+        crate::output::create_updated_workspace_image_output::Builder::default()
+    }
+}
+
 /// See [`CreateUpdatedWorkspaceImageOutput`](crate::output::CreateUpdatedWorkspaceImageOutput).
 pub mod create_updated_workspace_image_output {
 
@@ -4223,12 +4285,6 @@ pub mod create_updated_workspace_image_output {
         }
     }
 }
-impl CreateUpdatedWorkspaceImageOutput {
-    /// Creates a new builder-style object to manufacture [`CreateUpdatedWorkspaceImageOutput`](crate::output::CreateUpdatedWorkspaceImageOutput).
-    pub fn builder() -> crate::output::create_updated_workspace_image_output::Builder {
-        crate::output::create_updated_workspace_image_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -4241,6 +4297,13 @@ impl aws_http::request_id::RequestId for CreateTagsOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateTagsOutput {
+    /// Creates a new builder-style object to manufacture [`CreateTagsOutput`](crate::output::CreateTagsOutput).
+    pub fn builder() -> crate::output::create_tags_output::Builder {
+        crate::output::create_tags_output::Builder::default()
+    }
+}
+
 /// See [`CreateTagsOutput`](crate::output::CreateTagsOutput).
 pub mod create_tags_output {
 
@@ -4266,12 +4329,6 @@ pub mod create_tags_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl CreateTagsOutput {
-    /// Creates a new builder-style object to manufacture [`CreateTagsOutput`](crate::output::CreateTagsOutput).
-    pub fn builder() -> crate::output::create_tags_output::Builder {
-        crate::output::create_tags_output::Builder::default()
     }
 }
 
@@ -4308,6 +4365,13 @@ impl aws_http::request_id::RequestId for CreateStandbyWorkspacesOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateStandbyWorkspacesOutput {
+    /// Creates a new builder-style object to manufacture [`CreateStandbyWorkspacesOutput`](crate::output::CreateStandbyWorkspacesOutput).
+    pub fn builder() -> crate::output::create_standby_workspaces_output::Builder {
+        crate::output::create_standby_workspaces_output::Builder::default()
+    }
+}
+
 /// See [`CreateStandbyWorkspacesOutput`](crate::output::CreateStandbyWorkspacesOutput).
 pub mod create_standby_workspaces_output {
 
@@ -4389,12 +4453,6 @@ pub mod create_standby_workspaces_output {
         }
     }
 }
-impl CreateStandbyWorkspacesOutput {
-    /// Creates a new builder-style object to manufacture [`CreateStandbyWorkspacesOutput`](crate::output::CreateStandbyWorkspacesOutput).
-    pub fn builder() -> crate::output::create_standby_workspaces_output::Builder {
-        crate::output::create_standby_workspaces_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -4416,6 +4474,13 @@ impl aws_http::request_id::RequestId for CreateIpGroupOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateIpGroupOutput {
+    /// Creates a new builder-style object to manufacture [`CreateIpGroupOutput`](crate::output::CreateIpGroupOutput).
+    pub fn builder() -> crate::output::create_ip_group_output::Builder {
+        crate::output::create_ip_group_output::Builder::default()
+    }
+}
+
 /// See [`CreateIpGroupOutput`](crate::output::CreateIpGroupOutput).
 pub mod create_ip_group_output {
 
@@ -4455,12 +4520,6 @@ pub mod create_ip_group_output {
         }
     }
 }
-impl CreateIpGroupOutput {
-    /// Creates a new builder-style object to manufacture [`CreateIpGroupOutput`](crate::output::CreateIpGroupOutput).
-    pub fn builder() -> crate::output::create_ip_group_output::Builder {
-        crate::output::create_ip_group_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -4482,6 +4541,13 @@ impl aws_http::request_id::RequestId for CreateConnectionAliasOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateConnectionAliasOutput {
+    /// Creates a new builder-style object to manufacture [`CreateConnectionAliasOutput`](crate::output::CreateConnectionAliasOutput).
+    pub fn builder() -> crate::output::create_connection_alias_output::Builder {
+        crate::output::create_connection_alias_output::Builder::default()
+    }
+}
+
 /// See [`CreateConnectionAliasOutput`](crate::output::CreateConnectionAliasOutput).
 pub mod create_connection_alias_output {
 
@@ -4521,12 +4587,6 @@ pub mod create_connection_alias_output {
         }
     }
 }
-impl CreateConnectionAliasOutput {
-    /// Creates a new builder-style object to manufacture [`CreateConnectionAliasOutput`](crate::output::CreateConnectionAliasOutput).
-    pub fn builder() -> crate::output::create_connection_alias_output::Builder {
-        crate::output::create_connection_alias_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -4548,6 +4608,13 @@ impl aws_http::request_id::RequestId for CreateConnectClientAddInOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateConnectClientAddInOutput {
+    /// Creates a new builder-style object to manufacture [`CreateConnectClientAddInOutput`](crate::output::CreateConnectClientAddInOutput).
+    pub fn builder() -> crate::output::create_connect_client_add_in_output::Builder {
+        crate::output::create_connect_client_add_in_output::Builder::default()
+    }
+}
+
 /// See [`CreateConnectClientAddInOutput`](crate::output::CreateConnectClientAddInOutput).
 pub mod create_connect_client_add_in_output {
 
@@ -4587,12 +4654,6 @@ pub mod create_connect_client_add_in_output {
         }
     }
 }
-impl CreateConnectClientAddInOutput {
-    /// Creates a new builder-style object to manufacture [`CreateConnectClientAddInOutput`](crate::output::CreateConnectClientAddInOutput).
-    pub fn builder() -> crate::output::create_connect_client_add_in_output::Builder {
-        crate::output::create_connect_client_add_in_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -4614,6 +4675,13 @@ impl aws_http::request_id::RequestId for CopyWorkspaceImageOutput {
         self._request_id.as_deref()
     }
 }
+impl CopyWorkspaceImageOutput {
+    /// Creates a new builder-style object to manufacture [`CopyWorkspaceImageOutput`](crate::output::CopyWorkspaceImageOutput).
+    pub fn builder() -> crate::output::copy_workspace_image_output::Builder {
+        crate::output::copy_workspace_image_output::Builder::default()
+    }
+}
+
 /// See [`CopyWorkspaceImageOutput`](crate::output::CopyWorkspaceImageOutput).
 pub mod copy_workspace_image_output {
 
@@ -4653,12 +4721,6 @@ pub mod copy_workspace_image_output {
         }
     }
 }
-impl CopyWorkspaceImageOutput {
-    /// Creates a new builder-style object to manufacture [`CopyWorkspaceImageOutput`](crate::output::CopyWorkspaceImageOutput).
-    pub fn builder() -> crate::output::copy_workspace_image_output::Builder {
-        crate::output::copy_workspace_image_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -4671,6 +4733,13 @@ impl aws_http::request_id::RequestId for AuthorizeIpRulesOutput {
         self._request_id.as_deref()
     }
 }
+impl AuthorizeIpRulesOutput {
+    /// Creates a new builder-style object to manufacture [`AuthorizeIpRulesOutput`](crate::output::AuthorizeIpRulesOutput).
+    pub fn builder() -> crate::output::authorize_ip_rules_output::Builder {
+        crate::output::authorize_ip_rules_output::Builder::default()
+    }
+}
+
 /// See [`AuthorizeIpRulesOutput`](crate::output::AuthorizeIpRulesOutput).
 pub mod authorize_ip_rules_output {
 
@@ -4698,12 +4767,6 @@ pub mod authorize_ip_rules_output {
         }
     }
 }
-impl AuthorizeIpRulesOutput {
-    /// Creates a new builder-style object to manufacture [`AuthorizeIpRulesOutput`](crate::output::AuthorizeIpRulesOutput).
-    pub fn builder() -> crate::output::authorize_ip_rules_output::Builder {
-        crate::output::authorize_ip_rules_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -4716,6 +4779,13 @@ impl aws_http::request_id::RequestId for AssociateIpGroupsOutput {
         self._request_id.as_deref()
     }
 }
+impl AssociateIpGroupsOutput {
+    /// Creates a new builder-style object to manufacture [`AssociateIpGroupsOutput`](crate::output::AssociateIpGroupsOutput).
+    pub fn builder() -> crate::output::associate_ip_groups_output::Builder {
+        crate::output::associate_ip_groups_output::Builder::default()
+    }
+}
+
 /// See [`AssociateIpGroupsOutput`](crate::output::AssociateIpGroupsOutput).
 pub mod associate_ip_groups_output {
 
@@ -4743,12 +4813,6 @@ pub mod associate_ip_groups_output {
         }
     }
 }
-impl AssociateIpGroupsOutput {
-    /// Creates a new builder-style object to manufacture [`AssociateIpGroupsOutput`](crate::output::AssociateIpGroupsOutput).
-    pub fn builder() -> crate::output::associate_ip_groups_output::Builder {
-        crate::output::associate_ip_groups_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -4770,6 +4834,13 @@ impl aws_http::request_id::RequestId for AssociateConnectionAliasOutput {
         self._request_id.as_deref()
     }
 }
+impl AssociateConnectionAliasOutput {
+    /// Creates a new builder-style object to manufacture [`AssociateConnectionAliasOutput`](crate::output::AssociateConnectionAliasOutput).
+    pub fn builder() -> crate::output::associate_connection_alias_output::Builder {
+        crate::output::associate_connection_alias_output::Builder::default()
+    }
+}
+
 /// See [`AssociateConnectionAliasOutput`](crate::output::AssociateConnectionAliasOutput).
 pub mod associate_connection_alias_output {
 
@@ -4810,11 +4881,5 @@ pub mod associate_connection_alias_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl AssociateConnectionAliasOutput {
-    /// Creates a new builder-style object to manufacture [`AssociateConnectionAliasOutput`](crate::output::AssociateConnectionAliasOutput).
-    pub fn builder() -> crate::output::associate_connection_alias_output::Builder {
-        crate::output::associate_connection_alias_output::Builder::default()
     }
 }

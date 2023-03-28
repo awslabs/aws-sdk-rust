@@ -55,6 +55,13 @@ impl Rule {
         self.column_selectors.as_deref()
     }
 }
+impl Rule {
+    /// Creates a new builder-style object to manufacture [`Rule`](crate::model::Rule).
+    pub fn builder() -> crate::model::rule::Builder {
+        crate::model::rule::Builder::default()
+    }
+}
+
 /// See [`Rule`](crate::model::Rule).
 pub mod rule {
 
@@ -178,12 +185,6 @@ pub mod rule {
         }
     }
 }
-impl Rule {
-    /// Creates a new builder-style object to manufacture [`Rule`](crate::model::Rule).
-    pub fn builder() -> crate::model::rule::Builder {
-        crate::model::rule::Builder::default()
-    }
-}
 
 /// <p>Selector of a column from a dataset for profile job configuration. One selector includes either a column name or a regular expression.</p>
 #[non_exhaustive]
@@ -206,6 +207,13 @@ impl ColumnSelector {
         self.name.as_deref()
     }
 }
+impl ColumnSelector {
+    /// Creates a new builder-style object to manufacture [`ColumnSelector`](crate::model::ColumnSelector).
+    pub fn builder() -> crate::model::column_selector::Builder {
+        crate::model::column_selector::Builder::default()
+    }
+}
+
 /// See [`ColumnSelector`](crate::model::ColumnSelector).
 pub mod column_selector {
 
@@ -246,12 +254,6 @@ pub mod column_selector {
         }
     }
 }
-impl ColumnSelector {
-    /// Creates a new builder-style object to manufacture [`ColumnSelector`](crate::model::ColumnSelector).
-    pub fn builder() -> crate::model::column_selector::Builder {
-        crate::model::column_selector::Builder::default()
-    }
-}
 
 /// <p>The threshold used with a non-aggregate check expression. The non-aggregate check expression will be applied to each row in a specific column. Then the threshold will be used to determine whether the validation succeeds.</p>
 #[non_exhaustive]
@@ -281,6 +283,13 @@ impl Threshold {
         self.unit.as_ref()
     }
 }
+impl Threshold {
+    /// Creates a new builder-style object to manufacture [`Threshold`](crate::model::Threshold).
+    pub fn builder() -> crate::model::threshold::Builder {
+        crate::model::threshold::Builder::default()
+    }
+}
+
 /// See [`Threshold`](crate::model::Threshold).
 pub mod threshold {
 
@@ -331,12 +340,6 @@ pub mod threshold {
                 unit: self.unit,
             }
         }
-    }
-}
-impl Threshold {
-    /// Creates a new builder-style object to manufacture [`Threshold`](crate::model::Threshold).
-    pub fn builder() -> crate::model::threshold::Builder {
-        crate::model::threshold::Builder::default()
     }
 }
 
@@ -565,6 +568,13 @@ impl DatabaseOutput {
         self.database_output_mode.as_ref()
     }
 }
+impl DatabaseOutput {
+    /// Creates a new builder-style object to manufacture [`DatabaseOutput`](crate::model::DatabaseOutput).
+    pub fn builder() -> crate::model::database_output::Builder {
+        crate::model::database_output::Builder::default()
+    }
+}
+
 /// See [`DatabaseOutput`](crate::model::DatabaseOutput).
 pub mod database_output {
 
@@ -624,12 +634,6 @@ pub mod database_output {
                 database_output_mode: self.database_output_mode,
             }
         }
-    }
-}
-impl DatabaseOutput {
-    /// Creates a new builder-style object to manufacture [`DatabaseOutput`](crate::model::DatabaseOutput).
-    pub fn builder() -> crate::model::database_output::Builder {
-        crate::model::database_output::Builder::default()
     }
 }
 
@@ -741,6 +745,13 @@ impl DatabaseTableOutputOptions {
         self.table_name.as_deref()
     }
 }
+impl DatabaseTableOutputOptions {
+    /// Creates a new builder-style object to manufacture [`DatabaseTableOutputOptions`](crate::model::DatabaseTableOutputOptions).
+    pub fn builder() -> crate::model::database_table_output_options::Builder {
+        crate::model::database_table_output_options::Builder::default()
+    }
+}
+
 /// See [`DatabaseTableOutputOptions`](crate::model::DatabaseTableOutputOptions).
 pub mod database_table_output_options {
 
@@ -784,12 +795,6 @@ pub mod database_table_output_options {
         }
     }
 }
-impl DatabaseTableOutputOptions {
-    /// Creates a new builder-style object to manufacture [`DatabaseTableOutputOptions`](crate::model::DatabaseTableOutputOptions).
-    pub fn builder() -> crate::model::database_table_output_options::Builder {
-        crate::model::database_table_output_options::Builder::default()
-    }
-}
 
 /// <p>Represents an Amazon S3 location (bucket name, bucket owner, and object key) where DataBrew can read input data, or write output from a job.</p>
 #[non_exhaustive]
@@ -819,6 +824,13 @@ impl S3Location {
         self.bucket_owner.as_deref()
     }
 }
+impl S3Location {
+    /// Creates a new builder-style object to manufacture [`S3Location`](crate::model::S3Location).
+    pub fn builder() -> crate::model::s3_location::Builder {
+        crate::model::s3_location::Builder::default()
+    }
+}
+
 /// See [`S3Location`](crate::model::S3Location).
 pub mod s3_location {
 
@@ -869,12 +881,6 @@ pub mod s3_location {
                 bucket_owner: self.bucket_owner,
             }
         }
-    }
-}
-impl S3Location {
-    /// Creates a new builder-style object to manufacture [`S3Location`](crate::model::S3Location).
-    pub fn builder() -> crate::model::s3_location::Builder {
-        crate::model::s3_location::Builder::default()
     }
 }
 
@@ -929,6 +935,13 @@ impl DataCatalogOutput {
         self.overwrite
     }
 }
+impl DataCatalogOutput {
+    /// Creates a new builder-style object to manufacture [`DataCatalogOutput`](crate::model::DataCatalogOutput).
+    pub fn builder() -> crate::model::data_catalog_output::Builder {
+        crate::model::data_catalog_output::Builder::default()
+    }
+}
+
 /// See [`DataCatalogOutput`](crate::model::DataCatalogOutput).
 pub mod data_catalog_output {
 
@@ -1026,12 +1039,6 @@ pub mod data_catalog_output {
         }
     }
 }
-impl DataCatalogOutput {
-    /// Creates a new builder-style object to manufacture [`DataCatalogOutput`](crate::model::DataCatalogOutput).
-    pub fn builder() -> crate::model::data_catalog_output::Builder {
-        crate::model::data_catalog_output::Builder::default()
-    }
-}
 
 /// <p>Represents options that specify how and where DataBrew writes the Amazon S3 output generated by recipe jobs.</p>
 #[non_exhaustive]
@@ -1047,6 +1054,13 @@ impl S3TableOutputOptions {
         self.location.as_ref()
     }
 }
+impl S3TableOutputOptions {
+    /// Creates a new builder-style object to manufacture [`S3TableOutputOptions`](crate::model::S3TableOutputOptions).
+    pub fn builder() -> crate::model::s3_table_output_options::Builder {
+        crate::model::s3_table_output_options::Builder::default()
+    }
+}
+
 /// See [`S3TableOutputOptions`](crate::model::S3TableOutputOptions).
 pub mod s3_table_output_options {
 
@@ -1076,12 +1090,6 @@ pub mod s3_table_output_options {
                 location: self.location,
             }
         }
-    }
-}
-impl S3TableOutputOptions {
-    /// Creates a new builder-style object to manufacture [`S3TableOutputOptions`](crate::model::S3TableOutputOptions).
-    pub fn builder() -> crate::model::s3_table_output_options::Builder {
-        crate::model::s3_table_output_options::Builder::default()
     }
 }
 
@@ -1141,6 +1149,13 @@ impl Output {
         self.max_output_files
     }
 }
+impl Output {
+    /// Creates a new builder-style object to manufacture [`Output`](crate::model::Output).
+    pub fn builder() -> crate::model::output::Builder {
+        crate::model::output::Builder::default()
+    }
+}
+
 /// See [`Output`](crate::model::Output).
 pub mod output {
 
@@ -1262,12 +1277,6 @@ pub mod output {
         }
     }
 }
-impl Output {
-    /// Creates a new builder-style object to manufacture [`Output`](crate::model::Output).
-    pub fn builder() -> crate::model::output::Builder {
-        crate::model::output::Builder::default()
-    }
-}
 
 /// <p>Represents a set of options that define the structure of comma-separated (CSV) job output.</p>
 #[non_exhaustive]
@@ -1283,6 +1292,13 @@ impl OutputFormatOptions {
         self.csv.as_ref()
     }
 }
+impl OutputFormatOptions {
+    /// Creates a new builder-style object to manufacture [`OutputFormatOptions`](crate::model::OutputFormatOptions).
+    pub fn builder() -> crate::model::output_format_options::Builder {
+        crate::model::output_format_options::Builder::default()
+    }
+}
+
 /// See [`OutputFormatOptions`](crate::model::OutputFormatOptions).
 pub mod output_format_options {
 
@@ -1312,12 +1328,6 @@ pub mod output_format_options {
         }
     }
 }
-impl OutputFormatOptions {
-    /// Creates a new builder-style object to manufacture [`OutputFormatOptions`](crate::model::OutputFormatOptions).
-    pub fn builder() -> crate::model::output_format_options::Builder {
-        crate::model::output_format_options::Builder::default()
-    }
-}
 
 /// <p>Represents a set of options that define how DataBrew will write a comma-separated value (CSV) file.</p>
 #[non_exhaustive]
@@ -1333,6 +1343,13 @@ impl CsvOutputOptions {
         self.delimiter.as_deref()
     }
 }
+impl CsvOutputOptions {
+    /// Creates a new builder-style object to manufacture [`CsvOutputOptions`](crate::model::CsvOutputOptions).
+    pub fn builder() -> crate::model::csv_output_options::Builder {
+        crate::model::csv_output_options::Builder::default()
+    }
+}
+
 /// See [`CsvOutputOptions`](crate::model::CsvOutputOptions).
 pub mod csv_output_options {
 
@@ -1359,12 +1376,6 @@ pub mod csv_output_options {
                 delimiter: self.delimiter,
             }
         }
-    }
-}
-impl CsvOutputOptions {
-    /// Creates a new builder-style object to manufacture [`CsvOutputOptions`](crate::model::CsvOutputOptions).
-    pub fn builder() -> crate::model::csv_output_options::Builder {
-        crate::model::csv_output_options::Builder::default()
     }
 }
 
@@ -1834,6 +1845,13 @@ impl RecipeStep {
         self.condition_expressions.as_deref()
     }
 }
+impl RecipeStep {
+    /// Creates a new builder-style object to manufacture [`RecipeStep`](crate::model::RecipeStep).
+    pub fn builder() -> crate::model::recipe_step::Builder {
+        crate::model::recipe_step::Builder::default()
+    }
+}
+
 /// See [`RecipeStep`](crate::model::RecipeStep).
 pub mod recipe_step {
 
@@ -1891,12 +1909,6 @@ pub mod recipe_step {
         }
     }
 }
-impl RecipeStep {
-    /// Creates a new builder-style object to manufacture [`RecipeStep`](crate::model::RecipeStep).
-    pub fn builder() -> crate::model::recipe_step::Builder {
-        crate::model::recipe_step::Builder::default()
-    }
-}
 
 /// <p>Represents an individual condition that evaluates to true or false.</p>
 /// <p>Conditions are used with recipe actions. The action is only performed for column values where the condition evaluates to true.</p>
@@ -1928,6 +1940,13 @@ impl ConditionExpression {
         self.target_column.as_deref()
     }
 }
+impl ConditionExpression {
+    /// Creates a new builder-style object to manufacture [`ConditionExpression`](crate::model::ConditionExpression).
+    pub fn builder() -> crate::model::condition_expression::Builder {
+        crate::model::condition_expression::Builder::default()
+    }
+}
+
 /// See [`ConditionExpression`](crate::model::ConditionExpression).
 pub mod condition_expression {
 
@@ -1983,12 +2002,6 @@ pub mod condition_expression {
         }
     }
 }
-impl ConditionExpression {
-    /// Creates a new builder-style object to manufacture [`ConditionExpression`](crate::model::ConditionExpression).
-    pub fn builder() -> crate::model::condition_expression::Builder {
-        crate::model::condition_expression::Builder::default()
-    }
-}
 
 /// <p>Represents a transformation and associated parameters that are used to apply a change to a DataBrew dataset. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/recipe-actions-reference.html">Recipe actions reference</a>.</p>
 #[non_exhaustive]
@@ -2015,6 +2028,13 @@ impl RecipeAction {
         self.parameters.as_ref()
     }
 }
+impl RecipeAction {
+    /// Creates a new builder-style object to manufacture [`RecipeAction`](crate::model::RecipeAction).
+    pub fn builder() -> crate::model::recipe_action::Builder {
+        crate::model::recipe_action::Builder::default()
+    }
+}
+
 /// See [`RecipeAction`](crate::model::RecipeAction).
 pub mod recipe_action {
 
@@ -2072,12 +2092,6 @@ pub mod recipe_action {
         }
     }
 }
-impl RecipeAction {
-    /// Creates a new builder-style object to manufacture [`RecipeAction`](crate::model::RecipeAction).
-    pub fn builder() -> crate::model::recipe_action::Builder {
-        crate::model::recipe_action::Builder::default()
-    }
-}
 
 /// <p>Represents the sample size and sampling type for DataBrew to use for interactive data analysis.</p>
 #[non_exhaustive]
@@ -2100,6 +2114,13 @@ impl Sample {
         self.r#type.as_ref()
     }
 }
+impl Sample {
+    /// Creates a new builder-style object to manufacture [`Sample`](crate::model::Sample).
+    pub fn builder() -> crate::model::sample::Builder {
+        crate::model::sample::Builder::default()
+    }
+}
+
 /// See [`Sample`](crate::model::Sample).
 pub mod sample {
 
@@ -2138,12 +2159,6 @@ pub mod sample {
                 r#type: self.r#type,
             }
         }
-    }
-}
-impl Sample {
-    /// Creates a new builder-style object to manufacture [`Sample`](crate::model::Sample).
-    pub fn builder() -> crate::model::sample::Builder {
-        crate::model::sample::Builder::default()
     }
 }
 
@@ -2273,6 +2288,13 @@ impl JobSample {
         self.size
     }
 }
+impl JobSample {
+    /// Creates a new builder-style object to manufacture [`JobSample`](crate::model::JobSample).
+    pub fn builder() -> crate::model::job_sample::Builder {
+        crate::model::job_sample::Builder::default()
+    }
+}
+
 /// See [`JobSample`](crate::model::JobSample).
 pub mod job_sample {
 
@@ -2321,12 +2343,6 @@ pub mod job_sample {
                 size: self.size,
             }
         }
-    }
-}
-impl JobSample {
-    /// Creates a new builder-style object to manufacture [`JobSample`](crate::model::JobSample).
-    pub fn builder() -> crate::model::job_sample::Builder {
-        crate::model::job_sample::Builder::default()
     }
 }
 
@@ -2441,6 +2457,13 @@ impl ValidationConfiguration {
         self.validation_mode.as_ref()
     }
 }
+impl ValidationConfiguration {
+    /// Creates a new builder-style object to manufacture [`ValidationConfiguration`](crate::model::ValidationConfiguration).
+    pub fn builder() -> crate::model::validation_configuration::Builder {
+        crate::model::validation_configuration::Builder::default()
+    }
+}
+
 /// See [`ValidationConfiguration`](crate::model::ValidationConfiguration).
 pub mod validation_configuration {
 
@@ -2482,12 +2505,6 @@ pub mod validation_configuration {
                 validation_mode: self.validation_mode,
             }
         }
-    }
-}
-impl ValidationConfiguration {
-    /// Creates a new builder-style object to manufacture [`ValidationConfiguration`](crate::model::ValidationConfiguration).
-    pub fn builder() -> crate::model::validation_configuration::Builder {
-        crate::model::validation_configuration::Builder::default()
     }
 }
 
@@ -2620,6 +2637,13 @@ impl ProfileConfiguration {
         self.entity_detector_configuration.as_ref()
     }
 }
+impl ProfileConfiguration {
+    /// Creates a new builder-style object to manufacture [`ProfileConfiguration`](crate::model::ProfileConfiguration).
+    pub fn builder() -> crate::model::profile_configuration::Builder {
+        crate::model::profile_configuration::Builder::default()
+    }
+}
+
 /// See [`ProfileConfiguration`](crate::model::ProfileConfiguration).
 pub mod profile_configuration {
 
@@ -2721,12 +2745,6 @@ pub mod profile_configuration {
         }
     }
 }
-impl ProfileConfiguration {
-    /// Creates a new builder-style object to manufacture [`ProfileConfiguration`](crate::model::ProfileConfiguration).
-    pub fn builder() -> crate::model::profile_configuration::Builder {
-        crate::model::profile_configuration::Builder::default()
-    }
-}
 
 /// <p>Configuration of entity detection for a profile job. When undefined, entity detection is disabled.</p>
 #[non_exhaustive]
@@ -2793,6 +2811,13 @@ impl EntityDetectorConfiguration {
         self.allowed_statistics.as_deref()
     }
 }
+impl EntityDetectorConfiguration {
+    /// Creates a new builder-style object to manufacture [`EntityDetectorConfiguration`](crate::model::EntityDetectorConfiguration).
+    pub fn builder() -> crate::model::entity_detector_configuration::Builder {
+        crate::model::entity_detector_configuration::Builder::default()
+    }
+}
+
 /// See [`EntityDetectorConfiguration`](crate::model::EntityDetectorConfiguration).
 pub mod entity_detector_configuration {
 
@@ -2896,12 +2921,6 @@ pub mod entity_detector_configuration {
         }
     }
 }
-impl EntityDetectorConfiguration {
-    /// Creates a new builder-style object to manufacture [`EntityDetectorConfiguration`](crate::model::EntityDetectorConfiguration).
-    pub fn builder() -> crate::model::entity_detector_configuration::Builder {
-        crate::model::entity_detector_configuration::Builder::default()
-    }
-}
 
 /// <p>Configuration of statistics that are allowed to be run on columns that contain detected entities. When undefined, no statistics will be computed on columns that contain detected entities.</p>
 #[non_exhaustive]
@@ -2917,6 +2936,13 @@ impl AllowedStatistics {
         self.statistics.as_deref()
     }
 }
+impl AllowedStatistics {
+    /// Creates a new builder-style object to manufacture [`AllowedStatistics`](crate::model::AllowedStatistics).
+    pub fn builder() -> crate::model::allowed_statistics::Builder {
+        crate::model::allowed_statistics::Builder::default()
+    }
+}
+
 /// See [`AllowedStatistics`](crate::model::AllowedStatistics).
 pub mod allowed_statistics {
 
@@ -2954,12 +2980,6 @@ pub mod allowed_statistics {
         }
     }
 }
-impl AllowedStatistics {
-    /// Creates a new builder-style object to manufacture [`AllowedStatistics`](crate::model::AllowedStatistics).
-    pub fn builder() -> crate::model::allowed_statistics::Builder {
-        crate::model::allowed_statistics::Builder::default()
-    }
-}
 
 /// <p>Configuration for column evaluations for a profile job. ColumnStatisticsConfiguration can be used to select evaluations and override parameters of evaluations for particular columns. </p>
 #[non_exhaustive]
@@ -2982,6 +3002,13 @@ impl ColumnStatisticsConfiguration {
         self.statistics.as_ref()
     }
 }
+impl ColumnStatisticsConfiguration {
+    /// Creates a new builder-style object to manufacture [`ColumnStatisticsConfiguration`](crate::model::ColumnStatisticsConfiguration).
+    pub fn builder() -> crate::model::column_statistics_configuration::Builder {
+        crate::model::column_statistics_configuration::Builder::default()
+    }
+}
+
 /// See [`ColumnStatisticsConfiguration`](crate::model::ColumnStatisticsConfiguration).
 pub mod column_statistics_configuration {
 
@@ -3034,12 +3061,6 @@ pub mod column_statistics_configuration {
         }
     }
 }
-impl ColumnStatisticsConfiguration {
-    /// Creates a new builder-style object to manufacture [`ColumnStatisticsConfiguration`](crate::model::ColumnStatisticsConfiguration).
-    pub fn builder() -> crate::model::column_statistics_configuration::Builder {
-        crate::model::column_statistics_configuration::Builder::default()
-    }
-}
 
 /// <p>Configuration of evaluations for a profile job. This configuration can be used to select evaluations and override the parameters of selected evaluations. </p>
 #[non_exhaustive]
@@ -3062,6 +3083,13 @@ impl StatisticsConfiguration {
         self.overrides.as_deref()
     }
 }
+impl StatisticsConfiguration {
+    /// Creates a new builder-style object to manufacture [`StatisticsConfiguration`](crate::model::StatisticsConfiguration).
+    pub fn builder() -> crate::model::statistics_configuration::Builder {
+        crate::model::statistics_configuration::Builder::default()
+    }
+}
+
 /// See [`StatisticsConfiguration`](crate::model::StatisticsConfiguration).
 pub mod statistics_configuration {
 
@@ -3120,12 +3148,6 @@ pub mod statistics_configuration {
         }
     }
 }
-impl StatisticsConfiguration {
-    /// Creates a new builder-style object to manufacture [`StatisticsConfiguration`](crate::model::StatisticsConfiguration).
-    pub fn builder() -> crate::model::statistics_configuration::Builder {
-        crate::model::statistics_configuration::Builder::default()
-    }
-}
 
 /// <p>Override of a particular evaluation for a profile job. </p>
 #[non_exhaustive]
@@ -3152,6 +3174,13 @@ impl StatisticOverride {
         self.parameters.as_ref()
     }
 }
+impl StatisticOverride {
+    /// Creates a new builder-style object to manufacture [`StatisticOverride`](crate::model::StatisticOverride).
+    pub fn builder() -> crate::model::statistic_override::Builder {
+        crate::model::statistic_override::Builder::default()
+    }
+}
+
 /// See [`StatisticOverride`](crate::model::StatisticOverride).
 pub mod statistic_override {
 
@@ -3209,12 +3238,6 @@ pub mod statistic_override {
         }
     }
 }
-impl StatisticOverride {
-    /// Creates a new builder-style object to manufacture [`StatisticOverride`](crate::model::StatisticOverride).
-    pub fn builder() -> crate::model::statistic_override::Builder {
-        crate::model::statistic_override::Builder::default()
-    }
-}
 
 /// <p>Represents a set of options that define how DataBrew selects files for a given Amazon S3 path in a dataset.</p>
 #[non_exhaustive]
@@ -3252,6 +3275,13 @@ impl PathOptions {
         self.parameters.as_ref()
     }
 }
+impl PathOptions {
+    /// Creates a new builder-style object to manufacture [`PathOptions`](crate::model::PathOptions).
+    pub fn builder() -> crate::model::path_options::Builder {
+        crate::model::path_options::Builder::default()
+    }
+}
+
 /// See [`PathOptions`](crate::model::PathOptions).
 pub mod path_options {
 
@@ -3331,12 +3361,6 @@ pub mod path_options {
         }
     }
 }
-impl PathOptions {
-    /// Creates a new builder-style object to manufacture [`PathOptions`](crate::model::PathOptions).
-    pub fn builder() -> crate::model::path_options::Builder {
-        crate::model::path_options::Builder::default()
-    }
-}
 
 /// <p>Represents a dataset parameter that defines type and conditions for a parameter in the Amazon S3 path of the dataset.</p>
 #[non_exhaustive]
@@ -3380,6 +3404,13 @@ impl DatasetParameter {
         self.filter.as_ref()
     }
 }
+impl DatasetParameter {
+    /// Creates a new builder-style object to manufacture [`DatasetParameter`](crate::model::DatasetParameter).
+    pub fn builder() -> crate::model::dataset_parameter::Builder {
+        crate::model::dataset_parameter::Builder::default()
+    }
+}
+
 /// See [`DatasetParameter`](crate::model::DatasetParameter).
 pub mod dataset_parameter {
 
@@ -3462,12 +3493,6 @@ pub mod dataset_parameter {
         }
     }
 }
-impl DatasetParameter {
-    /// Creates a new builder-style object to manufacture [`DatasetParameter`](crate::model::DatasetParameter).
-    pub fn builder() -> crate::model::dataset_parameter::Builder {
-        crate::model::dataset_parameter::Builder::default()
-    }
-}
 
 /// <p>Represents a structure for defining parameter conditions. Supported conditions are described here: <a href="https://docs.aws.amazon.com/databrew/latest/dg/datasets.multiple-files.html#conditions.for.dynamic.datasets">Supported conditions for dynamic datasets</a> in the <i>Glue DataBrew Developer Guide</i>.</p>
 #[non_exhaustive]
@@ -3494,6 +3519,13 @@ impl FilterExpression {
         self.values_map.as_ref()
     }
 }
+impl FilterExpression {
+    /// Creates a new builder-style object to manufacture [`FilterExpression`](crate::model::FilterExpression).
+    pub fn builder() -> crate::model::filter_expression::Builder {
+        crate::model::filter_expression::Builder::default()
+    }
+}
+
 /// See [`FilterExpression`](crate::model::FilterExpression).
 pub mod filter_expression {
 
@@ -3551,12 +3583,6 @@ pub mod filter_expression {
         }
     }
 }
-impl FilterExpression {
-    /// Creates a new builder-style object to manufacture [`FilterExpression`](crate::model::FilterExpression).
-    pub fn builder() -> crate::model::filter_expression::Builder {
-        crate::model::filter_expression::Builder::default()
-    }
-}
 
 /// <p>Represents additional options for correct interpretation of datetime parameters used in the Amazon S3 path of a dataset.</p>
 #[non_exhaustive]
@@ -3586,6 +3612,13 @@ impl DatetimeOptions {
         self.locale_code.as_deref()
     }
 }
+impl DatetimeOptions {
+    /// Creates a new builder-style object to manufacture [`DatetimeOptions`](crate::model::DatetimeOptions).
+    pub fn builder() -> crate::model::datetime_options::Builder {
+        crate::model::datetime_options::Builder::default()
+    }
+}
+
 /// See [`DatetimeOptions`](crate::model::DatetimeOptions).
 pub mod datetime_options {
 
@@ -3639,12 +3672,6 @@ pub mod datetime_options {
                 locale_code: self.locale_code,
             }
         }
-    }
-}
-impl DatetimeOptions {
-    /// Creates a new builder-style object to manufacture [`DatetimeOptions`](crate::model::DatetimeOptions).
-    pub fn builder() -> crate::model::datetime_options::Builder {
-        crate::model::datetime_options::Builder::default()
     }
 }
 
@@ -3771,6 +3798,13 @@ impl FilesLimit {
         self.order.as_ref()
     }
 }
+impl FilesLimit {
+    /// Creates a new builder-style object to manufacture [`FilesLimit`](crate::model::FilesLimit).
+    pub fn builder() -> crate::model::files_limit::Builder {
+        crate::model::files_limit::Builder::default()
+    }
+}
+
 /// See [`FilesLimit`](crate::model::FilesLimit).
 pub mod files_limit {
 
@@ -3824,12 +3858,6 @@ pub mod files_limit {
                 order: self.order,
             }
         }
-    }
-}
-impl FilesLimit {
-    /// Creates a new builder-style object to manufacture [`FilesLimit`](crate::model::FilesLimit).
-    pub fn builder() -> crate::model::files_limit::Builder {
-        crate::model::files_limit::Builder::default()
     }
 }
 
@@ -4048,6 +4076,13 @@ impl Input {
         self.metadata.as_ref()
     }
 }
+impl Input {
+    /// Creates a new builder-style object to manufacture [`Input`](crate::model::Input).
+    pub fn builder() -> crate::model::input::Builder {
+        crate::model::input::Builder::default()
+    }
+}
+
 /// See [`Input`](crate::model::Input).
 pub mod input {
 
@@ -4129,12 +4164,6 @@ pub mod input {
         }
     }
 }
-impl Input {
-    /// Creates a new builder-style object to manufacture [`Input`](crate::model::Input).
-    pub fn builder() -> crate::model::input::Builder {
-        crate::model::input::Builder::default()
-    }
-}
 
 /// <p>Contains additional resource information needed for specific datasets.</p>
 #[non_exhaustive]
@@ -4150,6 +4179,13 @@ impl Metadata {
         self.source_arn.as_deref()
     }
 }
+impl Metadata {
+    /// Creates a new builder-style object to manufacture [`Metadata`](crate::model::Metadata).
+    pub fn builder() -> crate::model::metadata::Builder {
+        crate::model::metadata::Builder::default()
+    }
+}
+
 /// See [`Metadata`](crate::model::Metadata).
 pub mod metadata {
 
@@ -4176,12 +4212,6 @@ pub mod metadata {
                 source_arn: self.source_arn,
             }
         }
-    }
-}
-impl Metadata {
-    /// Creates a new builder-style object to manufacture [`Metadata`](crate::model::Metadata).
-    pub fn builder() -> crate::model::metadata::Builder {
-        crate::model::metadata::Builder::default()
     }
 }
 
@@ -4220,6 +4250,13 @@ impl DatabaseInputDefinition {
         self.query_string.as_deref()
     }
 }
+impl DatabaseInputDefinition {
+    /// Creates a new builder-style object to manufacture [`DatabaseInputDefinition`](crate::model::DatabaseInputDefinition).
+    pub fn builder() -> crate::model::database_input_definition::Builder {
+        crate::model::database_input_definition::Builder::default()
+    }
+}
+
 /// See [`DatabaseInputDefinition`](crate::model::DatabaseInputDefinition).
 pub mod database_input_definition {
 
@@ -4293,12 +4330,6 @@ pub mod database_input_definition {
         }
     }
 }
-impl DatabaseInputDefinition {
-    /// Creates a new builder-style object to manufacture [`DatabaseInputDefinition`](crate::model::DatabaseInputDefinition).
-    pub fn builder() -> crate::model::database_input_definition::Builder {
-        crate::model::database_input_definition::Builder::default()
-    }
-}
 
 /// <p>Represents how metadata stored in the Glue Data Catalog is defined in a DataBrew dataset. </p>
 #[non_exhaustive]
@@ -4335,6 +4366,13 @@ impl DataCatalogInputDefinition {
         self.temp_directory.as_ref()
     }
 }
+impl DataCatalogInputDefinition {
+    /// Creates a new builder-style object to manufacture [`DataCatalogInputDefinition`](crate::model::DataCatalogInputDefinition).
+    pub fn builder() -> crate::model::data_catalog_input_definition::Builder {
+        crate::model::data_catalog_input_definition::Builder::default()
+    }
+}
+
 /// See [`DataCatalogInputDefinition`](crate::model::DataCatalogInputDefinition).
 pub mod data_catalog_input_definition {
 
@@ -4405,12 +4443,6 @@ pub mod data_catalog_input_definition {
         }
     }
 }
-impl DataCatalogInputDefinition {
-    /// Creates a new builder-style object to manufacture [`DataCatalogInputDefinition`](crate::model::DataCatalogInputDefinition).
-    pub fn builder() -> crate::model::data_catalog_input_definition::Builder {
-        crate::model::data_catalog_input_definition::Builder::default()
-    }
-}
 
 /// <p>Represents a set of options that define the structure of either comma-separated value (CSV), Excel, or JSON input.</p>
 #[non_exhaustive]
@@ -4440,6 +4472,13 @@ impl FormatOptions {
         self.csv.as_ref()
     }
 }
+impl FormatOptions {
+    /// Creates a new builder-style object to manufacture [`FormatOptions`](crate::model::FormatOptions).
+    pub fn builder() -> crate::model::format_options::Builder {
+        crate::model::format_options::Builder::default()
+    }
+}
+
 /// See [`FormatOptions`](crate::model::FormatOptions).
 pub mod format_options {
 
@@ -4492,12 +4531,6 @@ pub mod format_options {
         }
     }
 }
-impl FormatOptions {
-    /// Creates a new builder-style object to manufacture [`FormatOptions`](crate::model::FormatOptions).
-    pub fn builder() -> crate::model::format_options::Builder {
-        crate::model::format_options::Builder::default()
-    }
-}
 
 /// <p>Represents a set of options that define how DataBrew will read a comma-separated value (CSV) file when creating a dataset from that file.</p>
 #[non_exhaustive]
@@ -4520,6 +4553,13 @@ impl CsvOptions {
         self.header_row
     }
 }
+impl CsvOptions {
+    /// Creates a new builder-style object to manufacture [`CsvOptions`](crate::model::CsvOptions).
+    pub fn builder() -> crate::model::csv_options::Builder {
+        crate::model::csv_options::Builder::default()
+    }
+}
+
 /// See [`CsvOptions`](crate::model::CsvOptions).
 pub mod csv_options {
 
@@ -4560,12 +4600,6 @@ pub mod csv_options {
         }
     }
 }
-impl CsvOptions {
-    /// Creates a new builder-style object to manufacture [`CsvOptions`](crate::model::CsvOptions).
-    pub fn builder() -> crate::model::csv_options::Builder {
-        crate::model::csv_options::Builder::default()
-    }
-}
 
 /// <p>Represents a set of options that define how DataBrew will interpret a Microsoft Excel file when creating a dataset from that file.</p>
 #[non_exhaustive]
@@ -4595,6 +4629,13 @@ impl ExcelOptions {
         self.header_row
     }
 }
+impl ExcelOptions {
+    /// Creates a new builder-style object to manufacture [`ExcelOptions`](crate::model::ExcelOptions).
+    pub fn builder() -> crate::model::excel_options::Builder {
+        crate::model::excel_options::Builder::default()
+    }
+}
+
 /// See [`ExcelOptions`](crate::model::ExcelOptions).
 pub mod excel_options {
 
@@ -4662,12 +4703,6 @@ pub mod excel_options {
         }
     }
 }
-impl ExcelOptions {
-    /// Creates a new builder-style object to manufacture [`ExcelOptions`](crate::model::ExcelOptions).
-    pub fn builder() -> crate::model::excel_options::Builder {
-        crate::model::excel_options::Builder::default()
-    }
-}
 
 /// <p>Represents the JSON-specific options that define how input is to be interpreted by Glue DataBrew.</p>
 #[non_exhaustive]
@@ -4683,6 +4718,13 @@ impl JsonOptions {
         self.multi_line
     }
 }
+impl JsonOptions {
+    /// Creates a new builder-style object to manufacture [`JsonOptions`](crate::model::JsonOptions).
+    pub fn builder() -> crate::model::json_options::Builder {
+        crate::model::json_options::Builder::default()
+    }
+}
+
 /// See [`JsonOptions`](crate::model::JsonOptions).
 pub mod json_options {
 
@@ -4709,12 +4751,6 @@ pub mod json_options {
                 multi_line: self.multi_line.unwrap_or_default(),
             }
         }
-    }
-}
-impl JsonOptions {
-    /// Creates a new builder-style object to manufacture [`JsonOptions`](crate::model::JsonOptions).
-    pub fn builder() -> crate::model::json_options::Builder {
-        crate::model::json_options::Builder::default()
     }
 }
 
@@ -4872,6 +4908,13 @@ impl ViewFrame {
         self.analytics.as_ref()
     }
 }
+impl ViewFrame {
+    /// Creates a new builder-style object to manufacture [`ViewFrame`](crate::model::ViewFrame).
+    pub fn builder() -> crate::model::view_frame::Builder {
+        crate::model::view_frame::Builder::default()
+    }
+}
+
 /// See [`ViewFrame`](crate::model::ViewFrame).
 pub mod view_frame {
 
@@ -4970,12 +5013,6 @@ pub mod view_frame {
                 analytics: self.analytics,
             }
         }
-    }
-}
-impl ViewFrame {
-    /// Creates a new builder-style object to manufacture [`ViewFrame`](crate::model::ViewFrame).
-    pub fn builder() -> crate::model::view_frame::Builder {
-        crate::model::view_frame::Builder::default()
     }
 }
 
@@ -5150,6 +5187,13 @@ impl Schedule {
         self.name.as_deref()
     }
 }
+impl Schedule {
+    /// Creates a new builder-style object to manufacture [`Schedule`](crate::model::Schedule).
+    pub fn builder() -> crate::model::schedule::Builder {
+        crate::model::schedule::Builder::default()
+    }
+}
+
 /// See [`Schedule`](crate::model::Schedule).
 pub mod schedule {
 
@@ -5324,12 +5368,6 @@ pub mod schedule {
         }
     }
 }
-impl Schedule {
-    /// Creates a new builder-style object to manufacture [`Schedule`](crate::model::Schedule).
-    pub fn builder() -> crate::model::schedule::Builder {
-        crate::model::schedule::Builder::default()
-    }
-}
 
 /// <p>Contains metadata about the ruleset.</p>
 #[non_exhaustive]
@@ -5419,6 +5457,13 @@ impl RulesetItem {
         self.target_arn.as_deref()
     }
 }
+impl RulesetItem {
+    /// Creates a new builder-style object to manufacture [`RulesetItem`](crate::model::RulesetItem).
+    pub fn builder() -> crate::model::ruleset_item::Builder {
+        crate::model::ruleset_item::Builder::default()
+    }
+}
+
 /// See [`RulesetItem`](crate::model::RulesetItem).
 pub mod ruleset_item {
 
@@ -5593,12 +5638,6 @@ pub mod ruleset_item {
         }
     }
 }
-impl RulesetItem {
-    /// Creates a new builder-style object to manufacture [`RulesetItem`](crate::model::RulesetItem).
-    pub fn builder() -> crate::model::ruleset_item::Builder {
-        crate::model::ruleset_item::Builder::default()
-    }
-}
 
 /// <p>Represents one or more actions to be performed on a DataBrew dataset.</p>
 #[non_exhaustive]
@@ -5712,6 +5751,13 @@ impl Recipe {
         self.recipe_version.as_deref()
     }
 }
+impl Recipe {
+    /// Creates a new builder-style object to manufacture [`Recipe`](crate::model::Recipe).
+    pub fn builder() -> crate::model::recipe::Builder {
+        crate::model::recipe::Builder::default()
+    }
+}
+
 /// See [`Recipe`](crate::model::Recipe).
 pub mod recipe {
 
@@ -5935,12 +5981,6 @@ pub mod recipe {
         }
     }
 }
-impl Recipe {
-    /// Creates a new builder-style object to manufacture [`Recipe`](crate::model::Recipe).
-    pub fn builder() -> crate::model::recipe::Builder {
-        crate::model::recipe::Builder::default()
-    }
-}
 
 /// <p>Represents all of the attributes of a DataBrew project.</p>
 #[non_exhaustive]
@@ -6051,6 +6091,13 @@ impl Project {
         self.open_date.as_ref()
     }
 }
+impl Project {
+    /// Creates a new builder-style object to manufacture [`Project`](crate::model::Project).
+    pub fn builder() -> crate::model::project::Builder {
+        crate::model::project::Builder::default()
+    }
+}
+
 /// See [`Project`](crate::model::Project).
 pub mod project {
 
@@ -6264,12 +6311,6 @@ pub mod project {
         }
     }
 }
-impl Project {
-    /// Creates a new builder-style object to manufacture [`Project`](crate::model::Project).
-    pub fn builder() -> crate::model::project::Builder {
-        crate::model::project::Builder::default()
-    }
-}
 
 /// <p>Represents all of the attributes of a DataBrew job.</p>
 #[non_exhaustive]
@@ -6469,6 +6510,13 @@ impl Job {
         self.validation_configurations.as_deref()
     }
 }
+impl Job {
+    /// Creates a new builder-style object to manufacture [`Job`](crate::model::Job).
+    pub fn builder() -> crate::model::job::Builder {
+        crate::model::job::Builder::default()
+    }
+}
+
 /// See [`Job`](crate::model::Job).
 pub mod job {
 
@@ -6872,12 +6920,6 @@ pub mod job {
         }
     }
 }
-impl Job {
-    /// Creates a new builder-style object to manufacture [`Job`](crate::model::Job).
-    pub fn builder() -> crate::model::job::Builder {
-        crate::model::job::Builder::default()
-    }
-}
 
 /// <p>Represents the name and version of a DataBrew recipe.</p>
 #[non_exhaustive]
@@ -6900,6 +6942,13 @@ impl RecipeReference {
         self.recipe_version.as_deref()
     }
 }
+impl RecipeReference {
+    /// Creates a new builder-style object to manufacture [`RecipeReference`](crate::model::RecipeReference).
+    pub fn builder() -> crate::model::recipe_reference::Builder {
+        crate::model::recipe_reference::Builder::default()
+    }
+}
+
 /// See [`RecipeReference`](crate::model::RecipeReference).
 pub mod recipe_reference {
 
@@ -6941,12 +6990,6 @@ pub mod recipe_reference {
                 recipe_version: self.recipe_version,
             }
         }
-    }
-}
-impl RecipeReference {
-    /// Creates a new builder-style object to manufacture [`RecipeReference`](crate::model::RecipeReference).
-    pub fn builder() -> crate::model::recipe_reference::Builder {
-        crate::model::recipe_reference::Builder::default()
     }
 }
 
@@ -7176,6 +7219,13 @@ impl JobRun {
         self.validation_configurations.as_deref()
     }
 }
+impl JobRun {
+    /// Creates a new builder-style object to manufacture [`JobRun`](crate::model::JobRun).
+    pub fn builder() -> crate::model::job_run::Builder {
+        crate::model::job_run::Builder::default()
+    }
+}
+
 /// See [`JobRun`](crate::model::JobRun).
 pub mod job_run {
 
@@ -7471,12 +7521,6 @@ pub mod job_run {
         }
     }
 }
-impl JobRun {
-    /// Creates a new builder-style object to manufacture [`JobRun`](crate::model::JobRun).
-    pub fn builder() -> crate::model::job_run::Builder {
-        crate::model::job_run::Builder::default()
-    }
-}
 
 /// When writing a match expression against `JobRunState`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -7703,6 +7747,13 @@ impl Dataset {
         self.resource_arn.as_deref()
     }
 }
+impl Dataset {
+    /// Creates a new builder-style object to manufacture [`Dataset`](crate::model::Dataset).
+    pub fn builder() -> crate::model::dataset::Builder {
+        crate::model::dataset::Builder::default()
+    }
+}
+
 /// See [`Dataset`](crate::model::Dataset).
 pub mod dataset {
 
@@ -7905,12 +7956,6 @@ pub mod dataset {
                 resource_arn: self.resource_arn,
             }
         }
-    }
-}
-impl Dataset {
-    /// Creates a new builder-style object to manufacture [`Dataset`](crate::model::Dataset).
-    pub fn builder() -> crate::model::dataset::Builder {
-        crate::model::dataset::Builder::default()
     }
 }
 
@@ -8178,6 +8223,13 @@ impl RecipeVersionErrorDetail {
         self.recipe_version.as_deref()
     }
 }
+impl RecipeVersionErrorDetail {
+    /// Creates a new builder-style object to manufacture [`RecipeVersionErrorDetail`](crate::model::RecipeVersionErrorDetail).
+    pub fn builder() -> crate::model::recipe_version_error_detail::Builder {
+        crate::model::recipe_version_error_detail::Builder::default()
+    }
+}
+
 /// See [`RecipeVersionErrorDetail`](crate::model::RecipeVersionErrorDetail).
 pub mod recipe_version_error_detail {
 
@@ -8234,11 +8286,5 @@ pub mod recipe_version_error_detail {
                 recipe_version: self.recipe_version,
             }
         }
-    }
-}
-impl RecipeVersionErrorDetail {
-    /// Creates a new builder-style object to manufacture [`RecipeVersionErrorDetail`](crate::model::RecipeVersionErrorDetail).
-    pub fn builder() -> crate::model::recipe_version_error_detail::Builder {
-        crate::model::recipe_version_error_detail::Builder::default()
     }
 }

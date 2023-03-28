@@ -84,6 +84,13 @@ impl PullRequest {
         self.approval_rules.as_deref()
     }
 }
+impl PullRequest {
+    /// Creates a new builder-style object to manufacture [`PullRequest`](crate::model::PullRequest).
+    pub fn builder() -> crate::model::pull_request::Builder {
+        crate::model::pull_request::Builder::default()
+    }
+}
+
 /// See [`PullRequest`](crate::model::PullRequest).
 pub mod pull_request {
 
@@ -266,12 +273,6 @@ pub mod pull_request {
         }
     }
 }
-impl PullRequest {
-    /// Creates a new builder-style object to manufacture [`PullRequest`](crate::model::PullRequest).
-    pub fn builder() -> crate::model::pull_request::Builder {
-        crate::model::pull_request::Builder::default()
-    }
-}
 
 /// <p>Returns information about an approval rule.</p>
 #[non_exhaustive]
@@ -339,6 +340,13 @@ impl ApprovalRule {
         self.origin_approval_rule_template.as_ref()
     }
 }
+impl ApprovalRule {
+    /// Creates a new builder-style object to manufacture [`ApprovalRule`](crate::model::ApprovalRule).
+    pub fn builder() -> crate::model::approval_rule::Builder {
+        crate::model::approval_rule::Builder::default()
+    }
+}
+
 /// See [`ApprovalRule`](crate::model::ApprovalRule).
 pub mod approval_rule {
 
@@ -479,12 +487,6 @@ pub mod approval_rule {
         }
     }
 }
-impl ApprovalRule {
-    /// Creates a new builder-style object to manufacture [`ApprovalRule`](crate::model::ApprovalRule).
-    pub fn builder() -> crate::model::approval_rule::Builder {
-        crate::model::approval_rule::Builder::default()
-    }
-}
 
 /// <p>Returns information about the template that created the approval rule for a pull request.</p>
 #[non_exhaustive]
@@ -507,6 +509,13 @@ impl OriginApprovalRuleTemplate {
         self.approval_rule_template_name.as_deref()
     }
 }
+impl OriginApprovalRuleTemplate {
+    /// Creates a new builder-style object to manufacture [`OriginApprovalRuleTemplate`](crate::model::OriginApprovalRuleTemplate).
+    pub fn builder() -> crate::model::origin_approval_rule_template::Builder {
+        crate::model::origin_approval_rule_template::Builder::default()
+    }
+}
+
 /// See [`OriginApprovalRuleTemplate`](crate::model::OriginApprovalRuleTemplate).
 pub mod origin_approval_rule_template {
 
@@ -554,12 +563,6 @@ pub mod origin_approval_rule_template {
                 approval_rule_template_name: self.approval_rule_template_name,
             }
         }
-    }
-}
-impl OriginApprovalRuleTemplate {
-    /// Creates a new builder-style object to manufacture [`OriginApprovalRuleTemplate`](crate::model::OriginApprovalRuleTemplate).
-    pub fn builder() -> crate::model::origin_approval_rule_template::Builder {
-        crate::model::origin_approval_rule_template::Builder::default()
     }
 }
 
@@ -619,6 +622,13 @@ impl PullRequestTarget {
         self.merge_metadata.as_ref()
     }
 }
+impl PullRequestTarget {
+    /// Creates a new builder-style object to manufacture [`PullRequestTarget`](crate::model::PullRequestTarget).
+    pub fn builder() -> crate::model::pull_request_target::Builder {
+        crate::model::pull_request_target::Builder::default()
+    }
+}
+
 /// See [`PullRequestTarget`](crate::model::PullRequestTarget).
 pub mod pull_request_target {
 
@@ -737,12 +747,6 @@ pub mod pull_request_target {
         }
     }
 }
-impl PullRequestTarget {
-    /// Creates a new builder-style object to manufacture [`PullRequestTarget`](crate::model::PullRequestTarget).
-    pub fn builder() -> crate::model::pull_request_target::Builder {
-        crate::model::pull_request_target::Builder::default()
-    }
-}
 
 /// <p>Returns information about a merge or potential merge between a source reference and a destination reference in a pull request.</p>
 #[non_exhaustive]
@@ -779,6 +783,13 @@ impl MergeMetadata {
         self.merge_option.as_ref()
     }
 }
+impl MergeMetadata {
+    /// Creates a new builder-style object to manufacture [`MergeMetadata`](crate::model::MergeMetadata).
+    pub fn builder() -> crate::model::merge_metadata::Builder {
+        crate::model::merge_metadata::Builder::default()
+    }
+}
+
 /// See [`MergeMetadata`](crate::model::MergeMetadata).
 pub mod merge_metadata {
 
@@ -847,12 +858,6 @@ pub mod merge_metadata {
                 merge_option: self.merge_option,
             }
         }
-    }
-}
-impl MergeMetadata {
-    /// Creates a new builder-style object to manufacture [`MergeMetadata`](crate::model::MergeMetadata).
-    pub fn builder() -> crate::model::merge_metadata::Builder {
-        crate::model::merge_metadata::Builder::default()
     }
 }
 
@@ -1214,6 +1219,13 @@ impl Comment {
         self.reaction_counts.as_ref()
     }
 }
+impl Comment {
+    /// Creates a new builder-style object to manufacture [`Comment`](crate::model::Comment).
+    pub fn builder() -> crate::model::comment::Builder {
+        crate::model::comment::Builder::default()
+    }
+}
+
 /// See [`Comment`](crate::model::Comment).
 pub mod comment {
 
@@ -1378,12 +1390,6 @@ pub mod comment {
         }
     }
 }
-impl Comment {
-    /// Creates a new builder-style object to manufacture [`Comment`](crate::model::Comment).
-    pub fn builder() -> crate::model::comment::Builder {
-        crate::model::comment::Builder::default()
-    }
-}
 
 /// <p>Returns information about an approval rule template.</p>
 #[non_exhaustive]
@@ -1448,6 +1454,13 @@ impl ApprovalRuleTemplate {
         self.last_modified_user.as_deref()
     }
 }
+impl ApprovalRuleTemplate {
+    /// Creates a new builder-style object to manufacture [`ApprovalRuleTemplate`](crate::model::ApprovalRuleTemplate).
+    pub fn builder() -> crate::model::approval_rule_template::Builder {
+        crate::model::approval_rule_template::Builder::default()
+    }
+}
+
 /// See [`ApprovalRuleTemplate`](crate::model::ApprovalRuleTemplate).
 pub mod approval_rule_template {
 
@@ -1593,12 +1606,6 @@ pub mod approval_rule_template {
         }
     }
 }
-impl ApprovalRuleTemplate {
-    /// Creates a new builder-style object to manufacture [`ApprovalRuleTemplate`](crate::model::ApprovalRuleTemplate).
-    pub fn builder() -> crate::model::approval_rule_template::Builder {
-        crate::model::approval_rule_template::Builder::default()
-    }
-}
 
 /// <p>A trigger failed to run.</p>
 #[non_exhaustive]
@@ -1621,6 +1628,13 @@ impl RepositoryTriggerExecutionFailure {
         self.failure_message.as_deref()
     }
 }
+impl RepositoryTriggerExecutionFailure {
+    /// Creates a new builder-style object to manufacture [`RepositoryTriggerExecutionFailure`](crate::model::RepositoryTriggerExecutionFailure).
+    pub fn builder() -> crate::model::repository_trigger_execution_failure::Builder {
+        crate::model::repository_trigger_execution_failure::Builder::default()
+    }
+}
+
 /// See [`RepositoryTriggerExecutionFailure`](crate::model::RepositoryTriggerExecutionFailure).
 pub mod repository_trigger_execution_failure {
 
@@ -1662,12 +1676,6 @@ pub mod repository_trigger_execution_failure {
                 failure_message: self.failure_message,
             }
         }
-    }
-}
-impl RepositoryTriggerExecutionFailure {
-    /// Creates a new builder-style object to manufacture [`RepositoryTriggerExecutionFailure`](crate::model::RepositoryTriggerExecutionFailure).
-    pub fn builder() -> crate::model::repository_trigger_execution_failure::Builder {
-        crate::model::repository_trigger_execution_failure::Builder::default()
     }
 }
 
@@ -1721,6 +1729,13 @@ impl RepositoryTrigger {
         self.events.as_deref()
     }
 }
+impl RepositoryTrigger {
+    /// Creates a new builder-style object to manufacture [`RepositoryTrigger`](crate::model::RepositoryTrigger).
+    pub fn builder() -> crate::model::repository_trigger::Builder {
+        crate::model::repository_trigger::Builder::default()
+    }
+}
+
 /// See [`RepositoryTrigger`](crate::model::RepositoryTrigger).
 pub mod repository_trigger {
 
@@ -1825,12 +1840,6 @@ pub mod repository_trigger {
                 events: self.events,
             }
         }
-    }
-}
-impl RepositoryTrigger {
-    /// Creates a new builder-style object to manufacture [`RepositoryTrigger`](crate::model::RepositoryTrigger).
-    pub fn builder() -> crate::model::repository_trigger::Builder {
-        crate::model::repository_trigger::Builder::default()
     }
 }
 
@@ -2066,6 +2075,13 @@ impl Location {
         self.relative_file_version.as_ref()
     }
 }
+impl Location {
+    /// Creates a new builder-style object to manufacture [`Location`](crate::model::Location).
+    pub fn builder() -> crate::model::location::Builder {
+        crate::model::location::Builder::default()
+    }
+}
+
 /// See [`Location`](crate::model::Location).
 pub mod location {
 
@@ -2123,12 +2139,6 @@ pub mod location {
                 relative_file_version: self.relative_file_version,
             }
         }
-    }
-}
-impl Location {
-    /// Creates a new builder-style object to manufacture [`Location`](crate::model::Location).
-    pub fn builder() -> crate::model::location::Builder {
-        crate::model::location::Builder::default()
     }
 }
 
@@ -2342,6 +2352,13 @@ impl ConflictResolution {
         self.set_file_modes.as_deref()
     }
 }
+impl ConflictResolution {
+    /// Creates a new builder-style object to manufacture [`ConflictResolution`](crate::model::ConflictResolution).
+    pub fn builder() -> crate::model::conflict_resolution::Builder {
+        crate::model::conflict_resolution::Builder::default()
+    }
+}
+
 /// See [`ConflictResolution`](crate::model::ConflictResolution).
 pub mod conflict_resolution {
 
@@ -2423,12 +2440,6 @@ pub mod conflict_resolution {
         }
     }
 }
-impl ConflictResolution {
-    /// Creates a new builder-style object to manufacture [`ConflictResolution`](crate::model::ConflictResolution).
-    pub fn builder() -> crate::model::conflict_resolution::Builder {
-        crate::model::conflict_resolution::Builder::default()
-    }
-}
 
 /// <p>Information about the file mode changes.</p>
 #[non_exhaustive]
@@ -2451,6 +2462,13 @@ impl SetFileModeEntry {
         self.file_mode.as_ref()
     }
 }
+impl SetFileModeEntry {
+    /// Creates a new builder-style object to manufacture [`SetFileModeEntry`](crate::model::SetFileModeEntry).
+    pub fn builder() -> crate::model::set_file_mode_entry::Builder {
+        crate::model::set_file_mode_entry::Builder::default()
+    }
+}
+
 /// See [`SetFileModeEntry`](crate::model::SetFileModeEntry).
 pub mod set_file_mode_entry {
 
@@ -2494,12 +2512,6 @@ pub mod set_file_mode_entry {
         }
     }
 }
-impl SetFileModeEntry {
-    /// Creates a new builder-style object to manufacture [`SetFileModeEntry`](crate::model::SetFileModeEntry).
-    pub fn builder() -> crate::model::set_file_mode_entry::Builder {
-        crate::model::set_file_mode_entry::Builder::default()
-    }
-}
 
 /// <p>A file that is deleted as part of a commit.</p>
 #[non_exhaustive]
@@ -2515,6 +2527,13 @@ impl DeleteFileEntry {
         self.file_path.as_deref()
     }
 }
+impl DeleteFileEntry {
+    /// Creates a new builder-style object to manufacture [`DeleteFileEntry`](crate::model::DeleteFileEntry).
+    pub fn builder() -> crate::model::delete_file_entry::Builder {
+        crate::model::delete_file_entry::Builder::default()
+    }
+}
+
 /// See [`DeleteFileEntry`](crate::model::DeleteFileEntry).
 pub mod delete_file_entry {
 
@@ -2541,12 +2560,6 @@ pub mod delete_file_entry {
                 file_path: self.file_path,
             }
         }
-    }
-}
-impl DeleteFileEntry {
-    /// Creates a new builder-style object to manufacture [`DeleteFileEntry`](crate::model::DeleteFileEntry).
-    pub fn builder() -> crate::model::delete_file_entry::Builder {
-        crate::model::delete_file_entry::Builder::default()
     }
 }
 
@@ -2585,6 +2598,13 @@ impl ReplaceContentEntry {
         self.file_mode.as_ref()
     }
 }
+impl ReplaceContentEntry {
+    /// Creates a new builder-style object to manufacture [`ReplaceContentEntry`](crate::model::ReplaceContentEntry).
+    pub fn builder() -> crate::model::replace_content_entry::Builder {
+        crate::model::replace_content_entry::Builder::default()
+    }
+}
+
 /// See [`ReplaceContentEntry`](crate::model::ReplaceContentEntry).
 pub mod replace_content_entry {
 
@@ -2653,12 +2673,6 @@ pub mod replace_content_entry {
                 file_mode: self.file_mode,
             }
         }
-    }
-}
-impl ReplaceContentEntry {
-    /// Creates a new builder-style object to manufacture [`ReplaceContentEntry`](crate::model::ReplaceContentEntry).
-    pub fn builder() -> crate::model::replace_content_entry::Builder {
-        crate::model::replace_content_entry::Builder::default()
     }
 }
 
@@ -2984,6 +2998,13 @@ impl RepositoryNameIdPair {
         self.repository_id.as_deref()
     }
 }
+impl RepositoryNameIdPair {
+    /// Creates a new builder-style object to manufacture [`RepositoryNameIdPair`](crate::model::RepositoryNameIdPair).
+    pub fn builder() -> crate::model::repository_name_id_pair::Builder {
+        crate::model::repository_name_id_pair::Builder::default()
+    }
+}
+
 /// See [`RepositoryNameIdPair`](crate::model::RepositoryNameIdPair).
 pub mod repository_name_id_pair {
 
@@ -3028,12 +3049,6 @@ pub mod repository_name_id_pair {
                 repository_id: self.repository_id,
             }
         }
-    }
-}
-impl RepositoryNameIdPair {
-    /// Creates a new builder-style object to manufacture [`RepositoryNameIdPair`](crate::model::RepositoryNameIdPair).
-    pub fn builder() -> crate::model::repository_name_id_pair::Builder {
-        crate::model::repository_name_id_pair::Builder::default()
     }
 }
 
@@ -3294,6 +3309,13 @@ impl RepositoryMetadata {
         self.arn.as_deref()
     }
 }
+impl RepositoryMetadata {
+    /// Creates a new builder-style object to manufacture [`RepositoryMetadata`](crate::model::RepositoryMetadata).
+    pub fn builder() -> crate::model::repository_metadata::Builder {
+        crate::model::repository_metadata::Builder::default()
+    }
+}
+
 /// See [`RepositoryMetadata`](crate::model::RepositoryMetadata).
 pub mod repository_metadata {
 
@@ -3454,12 +3476,6 @@ pub mod repository_metadata {
         }
     }
 }
-impl RepositoryMetadata {
-    /// Creates a new builder-style object to manufacture [`RepositoryMetadata`](crate::model::RepositoryMetadata).
-    pub fn builder() -> crate::model::repository_metadata::Builder {
-        crate::model::repository_metadata::Builder::default()
-    }
-}
 
 /// <p>Returns information about a specific approval on a pull request.</p>
 #[non_exhaustive]
@@ -3482,6 +3498,13 @@ impl Approval {
         self.approval_state.as_ref()
     }
 }
+impl Approval {
+    /// Creates a new builder-style object to manufacture [`Approval`](crate::model::Approval).
+    pub fn builder() -> crate::model::approval::Builder {
+        crate::model::approval::Builder::default()
+    }
+}
+
 /// See [`Approval`](crate::model::Approval).
 pub mod approval {
 
@@ -3523,12 +3546,6 @@ pub mod approval {
                 approval_state: self.approval_state,
             }
         }
-    }
-}
-impl Approval {
-    /// Creates a new builder-style object to manufacture [`Approval`](crate::model::Approval).
-    pub fn builder() -> crate::model::approval::Builder {
-        crate::model::approval::Builder::default()
     }
 }
 
@@ -3609,6 +3626,13 @@ impl ConflictMetadata {
         self.merge_operations.as_ref()
     }
 }
+impl ConflictMetadata {
+    /// Creates a new builder-style object to manufacture [`ConflictMetadata`](crate::model::ConflictMetadata).
+    pub fn builder() -> crate::model::conflict_metadata::Builder {
+        crate::model::conflict_metadata::Builder::default()
+    }
+}
+
 /// See [`ConflictMetadata`](crate::model::ConflictMetadata).
 pub mod conflict_metadata {
 
@@ -3760,12 +3784,6 @@ pub mod conflict_metadata {
         }
     }
 }
-impl ConflictMetadata {
-    /// Creates a new builder-style object to manufacture [`ConflictMetadata`](crate::model::ConflictMetadata).
-    pub fn builder() -> crate::model::conflict_metadata::Builder {
-        crate::model::conflict_metadata::Builder::default()
-    }
-}
 
 /// <p>Information about the file operation conflicts in a merge operation.</p>
 #[non_exhaustive]
@@ -3788,6 +3806,13 @@ impl MergeOperations {
         self.destination.as_ref()
     }
 }
+impl MergeOperations {
+    /// Creates a new builder-style object to manufacture [`MergeOperations`](crate::model::MergeOperations).
+    pub fn builder() -> crate::model::merge_operations::Builder {
+        crate::model::merge_operations::Builder::default()
+    }
+}
+
 /// See [`MergeOperations`](crate::model::MergeOperations).
 pub mod merge_operations {
 
@@ -3832,12 +3857,6 @@ pub mod merge_operations {
                 destination: self.destination,
             }
         }
-    }
-}
-impl MergeOperations {
-    /// Creates a new builder-style object to manufacture [`MergeOperations`](crate::model::MergeOperations).
-    pub fn builder() -> crate::model::merge_operations::Builder {
-        crate::model::merge_operations::Builder::default()
     }
 }
 
@@ -3964,6 +3983,13 @@ impl IsBinaryFile {
         self.base
     }
 }
+impl IsBinaryFile {
+    /// Creates a new builder-style object to manufacture [`IsBinaryFile`](crate::model::IsBinaryFile).
+    pub fn builder() -> crate::model::is_binary_file::Builder {
+        crate::model::is_binary_file::Builder::default()
+    }
+}
+
 /// See [`IsBinaryFile`](crate::model::IsBinaryFile).
 pub mod is_binary_file {
 
@@ -4016,12 +4042,6 @@ pub mod is_binary_file {
         }
     }
 }
-impl IsBinaryFile {
-    /// Creates a new builder-style object to manufacture [`IsBinaryFile`](crate::model::IsBinaryFile).
-    pub fn builder() -> crate::model::is_binary_file::Builder {
-        crate::model::is_binary_file::Builder::default()
-    }
-}
 
 /// <p>Information about the type of an object in a merge operation.</p>
 #[non_exhaustive]
@@ -4051,6 +4071,13 @@ impl ObjectTypes {
         self.base.as_ref()
     }
 }
+impl ObjectTypes {
+    /// Creates a new builder-style object to manufacture [`ObjectTypes`](crate::model::ObjectTypes).
+    pub fn builder() -> crate::model::object_types::Builder {
+        crate::model::object_types::Builder::default()
+    }
+}
+
 /// See [`ObjectTypes`](crate::model::ObjectTypes).
 pub mod object_types {
 
@@ -4110,12 +4137,6 @@ pub mod object_types {
                 base: self.base,
             }
         }
-    }
-}
-impl ObjectTypes {
-    /// Creates a new builder-style object to manufacture [`ObjectTypes`](crate::model::ObjectTypes).
-    pub fn builder() -> crate::model::object_types::Builder {
-        crate::model::object_types::Builder::default()
     }
 }
 
@@ -4247,6 +4268,13 @@ impl FileModes {
         self.base.as_ref()
     }
 }
+impl FileModes {
+    /// Creates a new builder-style object to manufacture [`FileModes`](crate::model::FileModes).
+    pub fn builder() -> crate::model::file_modes::Builder {
+        crate::model::file_modes::Builder::default()
+    }
+}
+
 /// See [`FileModes`](crate::model::FileModes).
 pub mod file_modes {
 
@@ -4308,12 +4336,6 @@ pub mod file_modes {
         }
     }
 }
-impl FileModes {
-    /// Creates a new builder-style object to manufacture [`FileModes`](crate::model::FileModes).
-    pub fn builder() -> crate::model::file_modes::Builder {
-        crate::model::file_modes::Builder::default()
-    }
-}
 
 /// <p>Information about the size of files in a merge or pull request.</p>
 #[non_exhaustive]
@@ -4343,6 +4365,13 @@ impl FileSizes {
         self.base
     }
 }
+impl FileSizes {
+    /// Creates a new builder-style object to manufacture [`FileSizes`](crate::model::FileSizes).
+    pub fn builder() -> crate::model::file_sizes::Builder {
+        crate::model::file_sizes::Builder::default()
+    }
+}
+
 /// See [`FileSizes`](crate::model::FileSizes).
 pub mod file_sizes {
 
@@ -4395,12 +4424,6 @@ pub mod file_sizes {
         }
     }
 }
-impl FileSizes {
-    /// Creates a new builder-style object to manufacture [`FileSizes`](crate::model::FileSizes).
-    pub fn builder() -> crate::model::file_sizes::Builder {
-        crate::model::file_sizes::Builder::default()
-    }
-}
 
 /// <p>Returns information about a submodule reference in a repository folder.</p>
 #[non_exhaustive]
@@ -4430,6 +4453,13 @@ impl SubModule {
         self.relative_path.as_deref()
     }
 }
+impl SubModule {
+    /// Creates a new builder-style object to manufacture [`SubModule`](crate::model::SubModule).
+    pub fn builder() -> crate::model::sub_module::Builder {
+        crate::model::sub_module::Builder::default()
+    }
+}
+
 /// See [`SubModule`](crate::model::SubModule).
 pub mod sub_module {
 
@@ -4488,12 +4518,6 @@ pub mod sub_module {
         }
     }
 }
-impl SubModule {
-    /// Creates a new builder-style object to manufacture [`SubModule`](crate::model::SubModule).
-    pub fn builder() -> crate::model::sub_module::Builder {
-        crate::model::sub_module::Builder::default()
-    }
-}
 
 /// <p>Returns information about a symbolic link in a repository folder.</p>
 #[non_exhaustive]
@@ -4530,6 +4554,13 @@ impl SymbolicLink {
         self.file_mode.as_ref()
     }
 }
+impl SymbolicLink {
+    /// Creates a new builder-style object to manufacture [`SymbolicLink`](crate::model::SymbolicLink).
+    pub fn builder() -> crate::model::symbolic_link::Builder {
+        crate::model::symbolic_link::Builder::default()
+    }
+}
+
 /// See [`SymbolicLink`](crate::model::SymbolicLink).
 pub mod symbolic_link {
 
@@ -4603,12 +4634,6 @@ pub mod symbolic_link {
         }
     }
 }
-impl SymbolicLink {
-    /// Creates a new builder-style object to manufacture [`SymbolicLink`](crate::model::SymbolicLink).
-    pub fn builder() -> crate::model::symbolic_link::Builder {
-        crate::model::symbolic_link::Builder::default()
-    }
-}
 
 /// <p>Returns information about a file in a repository.</p>
 #[non_exhaustive]
@@ -4645,6 +4670,13 @@ impl File {
         self.file_mode.as_ref()
     }
 }
+impl File {
+    /// Creates a new builder-style object to manufacture [`File`](crate::model::File).
+    pub fn builder() -> crate::model::file::Builder {
+        crate::model::file::Builder::default()
+    }
+}
+
 /// See [`File`](crate::model::File).
 pub mod file {
 
@@ -4718,12 +4750,6 @@ pub mod file {
         }
     }
 }
-impl File {
-    /// Creates a new builder-style object to manufacture [`File`](crate::model::File).
-    pub fn builder() -> crate::model::file::Builder {
-        crate::model::file::Builder::default()
-    }
-}
 
 /// <p>Returns information about a folder in a repository.</p>
 #[non_exhaustive]
@@ -4753,6 +4779,13 @@ impl Folder {
         self.relative_path.as_deref()
     }
 }
+impl Folder {
+    /// Creates a new builder-style object to manufacture [`Folder`](crate::model::Folder).
+    pub fn builder() -> crate::model::folder::Builder {
+        crate::model::folder::Builder::default()
+    }
+}
+
 /// See [`Folder`](crate::model::Folder).
 pub mod folder {
 
@@ -4811,12 +4844,6 @@ pub mod folder {
         }
     }
 }
-impl Folder {
-    /// Creates a new builder-style object to manufacture [`Folder`](crate::model::Folder).
-    pub fn builder() -> crate::model::folder::Builder {
-        crate::model::folder::Builder::default()
-    }
-}
 
 /// <p>Returns information about a set of differences for a commit specifier.</p>
 #[non_exhaustive]
@@ -4846,6 +4873,13 @@ impl Difference {
         self.change_type.as_ref()
     }
 }
+impl Difference {
+    /// Creates a new builder-style object to manufacture [`Difference`](crate::model::Difference).
+    pub fn builder() -> crate::model::difference::Builder {
+        crate::model::difference::Builder::default()
+    }
+}
+
 /// See [`Difference`](crate::model::Difference).
 pub mod difference {
 
@@ -4907,12 +4941,6 @@ pub mod difference {
         }
     }
 }
-impl Difference {
-    /// Creates a new builder-style object to manufacture [`Difference`](crate::model::Difference).
-    pub fn builder() -> crate::model::difference::Builder {
-        crate::model::difference::Builder::default()
-    }
-}
 
 /// <p>Returns information about a specific Git blob object.</p>
 #[non_exhaustive]
@@ -4954,6 +4982,13 @@ impl BlobMetadata {
         self.mode.as_deref()
     }
 }
+impl BlobMetadata {
+    /// Creates a new builder-style object to manufacture [`BlobMetadata`](crate::model::BlobMetadata).
+    pub fn builder() -> crate::model::blob_metadata::Builder {
+        crate::model::blob_metadata::Builder::default()
+    }
+}
+
 /// See [`BlobMetadata`](crate::model::BlobMetadata).
 pub mod blob_metadata {
 
@@ -5018,12 +5053,6 @@ pub mod blob_metadata {
         }
     }
 }
-impl BlobMetadata {
-    /// Creates a new builder-style object to manufacture [`BlobMetadata`](crate::model::BlobMetadata).
-    pub fn builder() -> crate::model::blob_metadata::Builder {
-        crate::model::blob_metadata::Builder::default()
-    }
-}
 
 /// <p>Returns information about a specific commit.</p>
 #[non_exhaustive]
@@ -5083,6 +5112,13 @@ impl Commit {
         self.additional_data.as_deref()
     }
 }
+impl Commit {
+    /// Creates a new builder-style object to manufacture [`Commit`](crate::model::Commit).
+    pub fn builder() -> crate::model::commit::Builder {
+        crate::model::commit::Builder::default()
+    }
+}
+
 /// See [`Commit`](crate::model::Commit).
 pub mod commit {
 
@@ -5197,12 +5233,6 @@ pub mod commit {
         }
     }
 }
-impl Commit {
-    /// Creates a new builder-style object to manufacture [`Commit`](crate::model::Commit).
-    pub fn builder() -> crate::model::commit::Builder {
-        crate::model::commit::Builder::default()
-    }
-}
 
 /// <p>Information about the user who made a specified commit.</p>
 #[non_exhaustive]
@@ -5232,6 +5262,13 @@ impl UserInfo {
         self.date.as_deref()
     }
 }
+impl UserInfo {
+    /// Creates a new builder-style object to manufacture [`UserInfo`](crate::model::UserInfo).
+    pub fn builder() -> crate::model::user_info::Builder {
+        crate::model::user_info::Builder::default()
+    }
+}
+
 /// See [`UserInfo`](crate::model::UserInfo).
 pub mod user_info {
 
@@ -5282,12 +5319,6 @@ pub mod user_info {
                 date: self.date,
             }
         }
-    }
-}
-impl UserInfo {
-    /// Creates a new builder-style object to manufacture [`UserInfo`](crate::model::UserInfo).
-    pub fn builder() -> crate::model::user_info::Builder {
-        crate::model::user_info::Builder::default()
     }
 }
 
@@ -5354,6 +5385,13 @@ impl CommentsForPullRequest {
         self.comments.as_deref()
     }
 }
+impl CommentsForPullRequest {
+    /// Creates a new builder-style object to manufacture [`CommentsForPullRequest`](crate::model::CommentsForPullRequest).
+    pub fn builder() -> crate::model::comments_for_pull_request::Builder {
+        crate::model::comments_for_pull_request::Builder::default()
+    }
+}
+
 /// See [`CommentsForPullRequest`](crate::model::CommentsForPullRequest).
 pub mod comments_for_pull_request {
 
@@ -5493,12 +5531,6 @@ pub mod comments_for_pull_request {
         }
     }
 }
-impl CommentsForPullRequest {
-    /// Creates a new builder-style object to manufacture [`CommentsForPullRequest`](crate::model::CommentsForPullRequest).
-    pub fn builder() -> crate::model::comments_for_pull_request::Builder {
-        crate::model::comments_for_pull_request::Builder::default()
-    }
-}
 
 /// <p>Returns information about comments on the comparison between two commits.</p>
 #[non_exhaustive]
@@ -5556,6 +5588,13 @@ impl CommentsForComparedCommit {
         self.comments.as_deref()
     }
 }
+impl CommentsForComparedCommit {
+    /// Creates a new builder-style object to manufacture [`CommentsForComparedCommit`](crate::model::CommentsForComparedCommit).
+    pub fn builder() -> crate::model::comments_for_compared_commit::Builder {
+        crate::model::comments_for_compared_commit::Builder::default()
+    }
+}
+
 /// See [`CommentsForComparedCommit`](crate::model::CommentsForComparedCommit).
 pub mod comments_for_compared_commit {
 
@@ -5680,12 +5719,6 @@ pub mod comments_for_compared_commit {
         }
     }
 }
-impl CommentsForComparedCommit {
-    /// Creates a new builder-style object to manufacture [`CommentsForComparedCommit`](crate::model::CommentsForComparedCommit).
-    pub fn builder() -> crate::model::comments_for_compared_commit::Builder {
-        crate::model::comments_for_compared_commit::Builder::default()
-    }
-}
 
 /// <p>Information about the reaction values provided by users on a comment.</p>
 #[non_exhaustive]
@@ -5715,6 +5748,13 @@ impl ReactionForComment {
         self.reactions_from_deleted_users_count
     }
 }
+impl ReactionForComment {
+    /// Creates a new builder-style object to manufacture [`ReactionForComment`](crate::model::ReactionForComment).
+    pub fn builder() -> crate::model::reaction_for_comment::Builder {
+        crate::model::reaction_for_comment::Builder::default()
+    }
+}
+
 /// See [`ReactionForComment`](crate::model::ReactionForComment).
 pub mod reaction_for_comment {
 
@@ -5782,12 +5822,6 @@ pub mod reaction_for_comment {
         }
     }
 }
-impl ReactionForComment {
-    /// Creates a new builder-style object to manufacture [`ReactionForComment`](crate::model::ReactionForComment).
-    pub fn builder() -> crate::model::reaction_for_comment::Builder {
-        crate::model::reaction_for_comment::Builder::default()
-    }
-}
 
 /// <p>Information about the values for reactions to a comment. AWS CodeCommit supports a limited set of reactions.</p>
 #[non_exhaustive]
@@ -5817,6 +5851,13 @@ impl ReactionValueFormats {
         self.unicode.as_deref()
     }
 }
+impl ReactionValueFormats {
+    /// Creates a new builder-style object to manufacture [`ReactionValueFormats`](crate::model::ReactionValueFormats).
+    pub fn builder() -> crate::model::reaction_value_formats::Builder {
+        crate::model::reaction_value_formats::Builder::default()
+    }
+}
+
 /// See [`ReactionValueFormats`](crate::model::ReactionValueFormats).
 pub mod reaction_value_formats {
 
@@ -5869,12 +5910,6 @@ pub mod reaction_value_formats {
         }
     }
 }
-impl ReactionValueFormats {
-    /// Creates a new builder-style object to manufacture [`ReactionValueFormats`](crate::model::ReactionValueFormats).
-    pub fn builder() -> crate::model::reaction_value_formats::Builder {
-        crate::model::reaction_value_formats::Builder::default()
-    }
-}
 
 /// <p>Returns information about a branch.</p>
 #[non_exhaustive]
@@ -5897,6 +5932,13 @@ impl BranchInfo {
         self.commit_id.as_deref()
     }
 }
+impl BranchInfo {
+    /// Creates a new builder-style object to manufacture [`BranchInfo`](crate::model::BranchInfo).
+    pub fn builder() -> crate::model::branch_info::Builder {
+        crate::model::branch_info::Builder::default()
+    }
+}
+
 /// See [`BranchInfo`](crate::model::BranchInfo).
 pub mod branch_info {
 
@@ -5937,12 +5979,6 @@ pub mod branch_info {
         }
     }
 }
-impl BranchInfo {
-    /// Creates a new builder-style object to manufacture [`BranchInfo`](crate::model::BranchInfo).
-    pub fn builder() -> crate::model::branch_info::Builder {
-        crate::model::branch_info::Builder::default()
-    }
-}
 
 /// <p>Returns information about the approval rules applied to a pull request and whether conditions have been met.</p>
 #[non_exhaustive]
@@ -5979,6 +6015,13 @@ impl Evaluation {
         self.approval_rules_not_satisfied.as_deref()
     }
 }
+impl Evaluation {
+    /// Creates a new builder-style object to manufacture [`Evaluation`](crate::model::Evaluation).
+    pub fn builder() -> crate::model::evaluation::Builder {
+        crate::model::evaluation::Builder::default()
+    }
+}
+
 /// See [`Evaluation`](crate::model::Evaluation).
 pub mod evaluation {
 
@@ -6064,12 +6107,6 @@ pub mod evaluation {
                 approval_rules_not_satisfied: self.approval_rules_not_satisfied,
             }
         }
-    }
-}
-impl Evaluation {
-    /// Creates a new builder-style object to manufacture [`Evaluation`](crate::model::Evaluation).
-    pub fn builder() -> crate::model::evaluation::Builder {
-        crate::model::evaluation::Builder::default()
     }
 }
 
@@ -6181,6 +6218,13 @@ impl PullRequestEvent {
         self.approval_rule_overridden_event_metadata.as_ref()
     }
 }
+impl PullRequestEvent {
+    /// Creates a new builder-style object to manufacture [`PullRequestEvent`](crate::model::PullRequestEvent).
+    pub fn builder() -> crate::model::pull_request_event::Builder {
+        crate::model::pull_request_event::Builder::default()
+    }
+}
+
 /// See [`PullRequestEvent`](crate::model::PullRequestEvent).
 pub mod pull_request_event {
 
@@ -6396,12 +6440,6 @@ pub mod pull_request_event {
         }
     }
 }
-impl PullRequestEvent {
-    /// Creates a new builder-style object to manufacture [`PullRequestEvent`](crate::model::PullRequestEvent).
-    pub fn builder() -> crate::model::pull_request_event::Builder {
-        crate::model::pull_request_event::Builder::default()
-    }
-}
 
 /// <p>Returns information about an override event for approval rules for a pull request.</p>
 #[non_exhaustive]
@@ -6424,6 +6462,13 @@ impl ApprovalRuleOverriddenEventMetadata {
         self.override_status.as_ref()
     }
 }
+impl ApprovalRuleOverriddenEventMetadata {
+    /// Creates a new builder-style object to manufacture [`ApprovalRuleOverriddenEventMetadata`](crate::model::ApprovalRuleOverriddenEventMetadata).
+    pub fn builder() -> crate::model::approval_rule_overridden_event_metadata::Builder {
+        crate::model::approval_rule_overridden_event_metadata::Builder::default()
+    }
+}
+
 /// See [`ApprovalRuleOverriddenEventMetadata`](crate::model::ApprovalRuleOverriddenEventMetadata).
 pub mod approval_rule_overridden_event_metadata {
 
@@ -6467,12 +6512,6 @@ pub mod approval_rule_overridden_event_metadata {
         }
     }
 }
-impl ApprovalRuleOverriddenEventMetadata {
-    /// Creates a new builder-style object to manufacture [`ApprovalRuleOverriddenEventMetadata`](crate::model::ApprovalRuleOverriddenEventMetadata).
-    pub fn builder() -> crate::model::approval_rule_overridden_event_metadata::Builder {
-        crate::model::approval_rule_overridden_event_metadata::Builder::default()
-    }
-}
 
 /// <p>Returns information about a change in the approval state for a pull request.</p>
 #[non_exhaustive]
@@ -6495,6 +6534,13 @@ impl ApprovalStateChangedEventMetadata {
         self.approval_status.as_ref()
     }
 }
+impl ApprovalStateChangedEventMetadata {
+    /// Creates a new builder-style object to manufacture [`ApprovalStateChangedEventMetadata`](crate::model::ApprovalStateChangedEventMetadata).
+    pub fn builder() -> crate::model::approval_state_changed_event_metadata::Builder {
+        crate::model::approval_state_changed_event_metadata::Builder::default()
+    }
+}
+
 /// See [`ApprovalStateChangedEventMetadata`](crate::model::ApprovalStateChangedEventMetadata).
 pub mod approval_state_changed_event_metadata {
 
@@ -6538,12 +6584,6 @@ pub mod approval_state_changed_event_metadata {
         }
     }
 }
-impl ApprovalStateChangedEventMetadata {
-    /// Creates a new builder-style object to manufacture [`ApprovalStateChangedEventMetadata`](crate::model::ApprovalStateChangedEventMetadata).
-    pub fn builder() -> crate::model::approval_state_changed_event_metadata::Builder {
-        crate::model::approval_state_changed_event_metadata::Builder::default()
-    }
-}
 
 /// <p>Returns information about an event for an approval rule.</p>
 #[non_exhaustive]
@@ -6573,6 +6613,13 @@ impl ApprovalRuleEventMetadata {
         self.approval_rule_content.as_deref()
     }
 }
+impl ApprovalRuleEventMetadata {
+    /// Creates a new builder-style object to manufacture [`ApprovalRuleEventMetadata`](crate::model::ApprovalRuleEventMetadata).
+    pub fn builder() -> crate::model::approval_rule_event_metadata::Builder {
+        crate::model::approval_rule_event_metadata::Builder::default()
+    }
+}
+
 /// See [`ApprovalRuleEventMetadata`](crate::model::ApprovalRuleEventMetadata).
 pub mod approval_rule_event_metadata {
 
@@ -6634,12 +6681,6 @@ pub mod approval_rule_event_metadata {
         }
     }
 }
-impl ApprovalRuleEventMetadata {
-    /// Creates a new builder-style object to manufacture [`ApprovalRuleEventMetadata`](crate::model::ApprovalRuleEventMetadata).
-    pub fn builder() -> crate::model::approval_rule_event_metadata::Builder {
-        crate::model::approval_rule_event_metadata::Builder::default()
-    }
-}
 
 /// <p>Returns information about the change in the merge state for a pull request event. </p>
 #[non_exhaustive]
@@ -6669,6 +6710,13 @@ impl PullRequestMergedStateChangedEventMetadata {
         self.merge_metadata.as_ref()
     }
 }
+impl PullRequestMergedStateChangedEventMetadata {
+    /// Creates a new builder-style object to manufacture [`PullRequestMergedStateChangedEventMetadata`](crate::model::PullRequestMergedStateChangedEventMetadata).
+    pub fn builder() -> crate::model::pull_request_merged_state_changed_event_metadata::Builder {
+        crate::model::pull_request_merged_state_changed_event_metadata::Builder::default()
+    }
+}
+
 /// See [`PullRequestMergedStateChangedEventMetadata`](crate::model::PullRequestMergedStateChangedEventMetadata).
 pub mod pull_request_merged_state_changed_event_metadata {
 
@@ -6730,12 +6778,6 @@ pub mod pull_request_merged_state_changed_event_metadata {
         }
     }
 }
-impl PullRequestMergedStateChangedEventMetadata {
-    /// Creates a new builder-style object to manufacture [`PullRequestMergedStateChangedEventMetadata`](crate::model::PullRequestMergedStateChangedEventMetadata).
-    pub fn builder() -> crate::model::pull_request_merged_state_changed_event_metadata::Builder {
-        crate::model::pull_request_merged_state_changed_event_metadata::Builder::default()
-    }
-}
 
 /// <p>Information about an update to the source branch of a pull request.</p>
 #[non_exhaustive]
@@ -6772,6 +6814,14 @@ impl PullRequestSourceReferenceUpdatedEventMetadata {
         self.merge_base.as_deref()
     }
 }
+impl PullRequestSourceReferenceUpdatedEventMetadata {
+    /// Creates a new builder-style object to manufacture [`PullRequestSourceReferenceUpdatedEventMetadata`](crate::model::PullRequestSourceReferenceUpdatedEventMetadata).
+    pub fn builder() -> crate::model::pull_request_source_reference_updated_event_metadata::Builder
+    {
+        crate::model::pull_request_source_reference_updated_event_metadata::Builder::default()
+    }
+}
+
 /// See [`PullRequestSourceReferenceUpdatedEventMetadata`](crate::model::PullRequestSourceReferenceUpdatedEventMetadata).
 pub mod pull_request_source_reference_updated_event_metadata {
 
@@ -6845,13 +6895,6 @@ pub mod pull_request_source_reference_updated_event_metadata {
         }
     }
 }
-impl PullRequestSourceReferenceUpdatedEventMetadata {
-    /// Creates a new builder-style object to manufacture [`PullRequestSourceReferenceUpdatedEventMetadata`](crate::model::PullRequestSourceReferenceUpdatedEventMetadata).
-    pub fn builder() -> crate::model::pull_request_source_reference_updated_event_metadata::Builder
-    {
-        crate::model::pull_request_source_reference_updated_event_metadata::Builder::default()
-    }
-}
 
 /// <p>Information about a change to the status of a pull request.</p>
 #[non_exhaustive]
@@ -6867,6 +6910,13 @@ impl PullRequestStatusChangedEventMetadata {
         self.pull_request_status.as_ref()
     }
 }
+impl PullRequestStatusChangedEventMetadata {
+    /// Creates a new builder-style object to manufacture [`PullRequestStatusChangedEventMetadata`](crate::model::PullRequestStatusChangedEventMetadata).
+    pub fn builder() -> crate::model::pull_request_status_changed_event_metadata::Builder {
+        crate::model::pull_request_status_changed_event_metadata::Builder::default()
+    }
+}
+
 /// See [`PullRequestStatusChangedEventMetadata`](crate::model::PullRequestStatusChangedEventMetadata).
 pub mod pull_request_status_changed_event_metadata {
 
@@ -6896,12 +6946,6 @@ pub mod pull_request_status_changed_event_metadata {
                 pull_request_status: self.pull_request_status,
             }
         }
-    }
-}
-impl PullRequestStatusChangedEventMetadata {
-    /// Creates a new builder-style object to manufacture [`PullRequestStatusChangedEventMetadata`](crate::model::PullRequestStatusChangedEventMetadata).
-    pub fn builder() -> crate::model::pull_request_status_changed_event_metadata::Builder {
-        crate::model::pull_request_status_changed_event_metadata::Builder::default()
     }
 }
 
@@ -6940,6 +6984,13 @@ impl PullRequestCreatedEventMetadata {
         self.merge_base.as_deref()
     }
 }
+impl PullRequestCreatedEventMetadata {
+    /// Creates a new builder-style object to manufacture [`PullRequestCreatedEventMetadata`](crate::model::PullRequestCreatedEventMetadata).
+    pub fn builder() -> crate::model::pull_request_created_event_metadata::Builder {
+        crate::model::pull_request_created_event_metadata::Builder::default()
+    }
+}
+
 /// See [`PullRequestCreatedEventMetadata`](crate::model::PullRequestCreatedEventMetadata).
 pub mod pull_request_created_event_metadata {
 
@@ -7011,12 +7062,6 @@ pub mod pull_request_created_event_metadata {
                 merge_base: self.merge_base,
             }
         }
-    }
-}
-impl PullRequestCreatedEventMetadata {
-    /// Creates a new builder-style object to manufacture [`PullRequestCreatedEventMetadata`](crate::model::PullRequestCreatedEventMetadata).
-    pub fn builder() -> crate::model::pull_request_created_event_metadata::Builder {
-        crate::model::pull_request_created_event_metadata::Builder::default()
     }
 }
 
@@ -7220,6 +7265,13 @@ impl MergeHunk {
         self.base.as_ref()
     }
 }
+impl MergeHunk {
+    /// Creates a new builder-style object to manufacture [`MergeHunk`](crate::model::MergeHunk).
+    pub fn builder() -> crate::model::merge_hunk::Builder {
+        crate::model::merge_hunk::Builder::default()
+    }
+}
+
 /// See [`MergeHunk`](crate::model::MergeHunk).
 pub mod merge_hunk {
 
@@ -7293,12 +7345,6 @@ pub mod merge_hunk {
         }
     }
 }
-impl MergeHunk {
-    /// Creates a new builder-style object to manufacture [`MergeHunk`](crate::model::MergeHunk).
-    pub fn builder() -> crate::model::merge_hunk::Builder {
-        crate::model::merge_hunk::Builder::default()
-    }
-}
 
 /// <p>Information about the details of a merge hunk that contains a conflict in a merge or pull request operation.</p>
 #[non_exhaustive]
@@ -7328,6 +7374,13 @@ impl MergeHunkDetail {
         self.hunk_content.as_deref()
     }
 }
+impl MergeHunkDetail {
+    /// Creates a new builder-style object to manufacture [`MergeHunkDetail`](crate::model::MergeHunkDetail).
+    pub fn builder() -> crate::model::merge_hunk_detail::Builder {
+        crate::model::merge_hunk_detail::Builder::default()
+    }
+}
+
 /// See [`MergeHunkDetail`](crate::model::MergeHunkDetail).
 pub mod merge_hunk_detail {
 
@@ -7380,12 +7433,6 @@ pub mod merge_hunk_detail {
         }
     }
 }
-impl MergeHunkDetail {
-    /// Creates a new builder-style object to manufacture [`MergeHunkDetail`](crate::model::MergeHunkDetail).
-    pub fn builder() -> crate::model::merge_hunk_detail::Builder {
-        crate::model::merge_hunk_detail::Builder::default()
-    }
-}
 
 /// <p>Returns information about a target for a pull request.</p>
 #[non_exhaustive]
@@ -7415,6 +7462,13 @@ impl Target {
         self.destination_reference.as_deref()
     }
 }
+impl Target {
+    /// Creates a new builder-style object to manufacture [`Target`](crate::model::Target).
+    pub fn builder() -> crate::model::target::Builder {
+        crate::model::target::Builder::default()
+    }
+}
+
 /// See [`Target`](crate::model::Target).
 pub mod target {
 
@@ -7476,12 +7530,6 @@ pub mod target {
         }
     }
 }
-impl Target {
-    /// Creates a new builder-style object to manufacture [`Target`](crate::model::Target).
-    pub fn builder() -> crate::model::target::Builder {
-        crate::model::target::Builder::default()
-    }
-}
 
 /// <p>A file to be added, updated, or deleted as part of a commit.</p>
 #[non_exhaustive]
@@ -7511,6 +7559,13 @@ impl FileMetadata {
         self.file_mode.as_ref()
     }
 }
+impl FileMetadata {
+    /// Creates a new builder-style object to manufacture [`FileMetadata`](crate::model::FileMetadata).
+    pub fn builder() -> crate::model::file_metadata::Builder {
+        crate::model::file_metadata::Builder::default()
+    }
+}
+
 /// See [`FileMetadata`](crate::model::FileMetadata).
 pub mod file_metadata {
 
@@ -7569,12 +7624,6 @@ pub mod file_metadata {
         }
     }
 }
-impl FileMetadata {
-    /// Creates a new builder-style object to manufacture [`FileMetadata`](crate::model::FileMetadata).
-    pub fn builder() -> crate::model::file_metadata::Builder {
-        crate::model::file_metadata::Builder::default()
-    }
-}
 
 /// <p>Information about a file added or updated as part of a commit.</p>
 #[non_exhaustive]
@@ -7611,6 +7660,13 @@ impl PutFileEntry {
         self.source_file.as_ref()
     }
 }
+impl PutFileEntry {
+    /// Creates a new builder-style object to manufacture [`PutFileEntry`](crate::model::PutFileEntry).
+    pub fn builder() -> crate::model::put_file_entry::Builder {
+        crate::model::put_file_entry::Builder::default()
+    }
+}
+
 /// See [`PutFileEntry`](crate::model::PutFileEntry).
 pub mod put_file_entry {
 
@@ -7684,12 +7740,6 @@ pub mod put_file_entry {
         }
     }
 }
-impl PutFileEntry {
-    /// Creates a new builder-style object to manufacture [`PutFileEntry`](crate::model::PutFileEntry).
-    pub fn builder() -> crate::model::put_file_entry::Builder {
-        crate::model::put_file_entry::Builder::default()
-    }
-}
 
 /// <p>Information about a source file that is part of changes made in a commit.</p>
 #[non_exhaustive]
@@ -7712,6 +7762,13 @@ impl SourceFileSpecifier {
         self.is_move
     }
 }
+impl SourceFileSpecifier {
+    /// Creates a new builder-style object to manufacture [`SourceFileSpecifier`](crate::model::SourceFileSpecifier).
+    pub fn builder() -> crate::model::source_file_specifier::Builder {
+        crate::model::source_file_specifier::Builder::default()
+    }
+}
+
 /// See [`SourceFileSpecifier`](crate::model::SourceFileSpecifier).
 pub mod source_file_specifier {
 
@@ -7752,12 +7809,6 @@ pub mod source_file_specifier {
         }
     }
 }
-impl SourceFileSpecifier {
-    /// Creates a new builder-style object to manufacture [`SourceFileSpecifier`](crate::model::SourceFileSpecifier).
-    pub fn builder() -> crate::model::source_file_specifier::Builder {
-        crate::model::source_file_specifier::Builder::default()
-    }
-}
 
 /// <p>Returns information about errors in a BatchGetCommits operation.</p>
 #[non_exhaustive]
@@ -7787,6 +7838,13 @@ impl BatchGetCommitsError {
         self.error_message.as_deref()
     }
 }
+impl BatchGetCommitsError {
+    /// Creates a new builder-style object to manufacture [`BatchGetCommitsError`](crate::model::BatchGetCommitsError).
+    pub fn builder() -> crate::model::batch_get_commits_error::Builder {
+        crate::model::batch_get_commits_error::Builder::default()
+    }
+}
+
 /// See [`BatchGetCommitsError`](crate::model::BatchGetCommitsError).
 pub mod batch_get_commits_error {
 
@@ -7842,12 +7900,6 @@ pub mod batch_get_commits_error {
         }
     }
 }
-impl BatchGetCommitsError {
-    /// Creates a new builder-style object to manufacture [`BatchGetCommitsError`](crate::model::BatchGetCommitsError).
-    pub fn builder() -> crate::model::batch_get_commits_error::Builder {
-        crate::model::batch_get_commits_error::Builder::default()
-    }
-}
 
 /// <p>Returns information about errors in a BatchDisassociateApprovalRuleTemplateFromRepositories operation.</p>
 #[non_exhaustive]
@@ -7877,6 +7929,15 @@ impl BatchDisassociateApprovalRuleTemplateFromRepositoriesError {
         self.error_message.as_deref()
     }
 }
+impl BatchDisassociateApprovalRuleTemplateFromRepositoriesError {
+    /// Creates a new builder-style object to manufacture [`BatchDisassociateApprovalRuleTemplateFromRepositoriesError`](crate::model::BatchDisassociateApprovalRuleTemplateFromRepositoriesError).
+    pub fn builder(
+    ) -> crate::model::batch_disassociate_approval_rule_template_from_repositories_error::Builder
+    {
+        crate::model::batch_disassociate_approval_rule_template_from_repositories_error::Builder::default()
+    }
+}
+
 /// See [`BatchDisassociateApprovalRuleTemplateFromRepositoriesError`](crate::model::BatchDisassociateApprovalRuleTemplateFromRepositoriesError).
 pub mod batch_disassociate_approval_rule_template_from_repositories_error {
 
@@ -7937,14 +7998,6 @@ pub mod batch_disassociate_approval_rule_template_from_repositories_error {
         }
     }
 }
-impl BatchDisassociateApprovalRuleTemplateFromRepositoriesError {
-    /// Creates a new builder-style object to manufacture [`BatchDisassociateApprovalRuleTemplateFromRepositoriesError`](crate::model::BatchDisassociateApprovalRuleTemplateFromRepositoriesError).
-    pub fn builder(
-    ) -> crate::model::batch_disassociate_approval_rule_template_from_repositories_error::Builder
-    {
-        crate::model::batch_disassociate_approval_rule_template_from_repositories_error::Builder::default()
-    }
-}
 
 /// <p>Returns information about errors in a BatchDescribeMergeConflicts operation.</p>
 #[non_exhaustive]
@@ -7974,6 +8027,13 @@ impl BatchDescribeMergeConflictsError {
         self.message.as_deref()
     }
 }
+impl BatchDescribeMergeConflictsError {
+    /// Creates a new builder-style object to manufacture [`BatchDescribeMergeConflictsError`](crate::model::BatchDescribeMergeConflictsError).
+    pub fn builder() -> crate::model::batch_describe_merge_conflicts_error::Builder {
+        crate::model::batch_describe_merge_conflicts_error::Builder::default()
+    }
+}
+
 /// See [`BatchDescribeMergeConflictsError`](crate::model::BatchDescribeMergeConflictsError).
 pub mod batch_describe_merge_conflicts_error {
 
@@ -8029,12 +8089,6 @@ pub mod batch_describe_merge_conflicts_error {
         }
     }
 }
-impl BatchDescribeMergeConflictsError {
-    /// Creates a new builder-style object to manufacture [`BatchDescribeMergeConflictsError`](crate::model::BatchDescribeMergeConflictsError).
-    pub fn builder() -> crate::model::batch_describe_merge_conflicts_error::Builder {
-        crate::model::batch_describe_merge_conflicts_error::Builder::default()
-    }
-}
 
 /// <p>Information about conflicts in a merge operation.</p>
 #[non_exhaustive]
@@ -8057,6 +8111,13 @@ impl Conflict {
         self.merge_hunks.as_deref()
     }
 }
+impl Conflict {
+    /// Creates a new builder-style object to manufacture [`Conflict`](crate::model::Conflict).
+    pub fn builder() -> crate::model::conflict::Builder {
+        crate::model::conflict::Builder::default()
+    }
+}
+
 /// See [`Conflict`](crate::model::Conflict).
 pub mod conflict {
 
@@ -8109,12 +8170,6 @@ pub mod conflict {
         }
     }
 }
-impl Conflict {
-    /// Creates a new builder-style object to manufacture [`Conflict`](crate::model::Conflict).
-    pub fn builder() -> crate::model::conflict::Builder {
-        crate::model::conflict::Builder::default()
-    }
-}
 
 /// <p>Returns information about errors in a BatchAssociateApprovalRuleTemplateWithRepositories operation.</p>
 #[non_exhaustive]
@@ -8144,6 +8199,14 @@ impl BatchAssociateApprovalRuleTemplateWithRepositoriesError {
         self.error_message.as_deref()
     }
 }
+impl BatchAssociateApprovalRuleTemplateWithRepositoriesError {
+    /// Creates a new builder-style object to manufacture [`BatchAssociateApprovalRuleTemplateWithRepositoriesError`](crate::model::BatchAssociateApprovalRuleTemplateWithRepositoriesError).
+    pub fn builder(
+    ) -> crate::model::batch_associate_approval_rule_template_with_repositories_error::Builder {
+        crate::model::batch_associate_approval_rule_template_with_repositories_error::Builder::default()
+    }
+}
+
 /// See [`BatchAssociateApprovalRuleTemplateWithRepositoriesError`](crate::model::BatchAssociateApprovalRuleTemplateWithRepositoriesError).
 pub mod batch_associate_approval_rule_template_with_repositories_error {
 
@@ -8202,12 +8265,5 @@ pub mod batch_associate_approval_rule_template_with_repositories_error {
                 error_message: self.error_message,
             }
         }
-    }
-}
-impl BatchAssociateApprovalRuleTemplateWithRepositoriesError {
-    /// Creates a new builder-style object to manufacture [`BatchAssociateApprovalRuleTemplateWithRepositoriesError`](crate::model::BatchAssociateApprovalRuleTemplateWithRepositoriesError).
-    pub fn builder(
-    ) -> crate::model::batch_associate_approval_rule_template_with_repositories_error::Builder {
-        crate::model::batch_associate_approval_rule_template_with_repositories_error::Builder::default()
     }
 }

@@ -21,6 +21,13 @@ impl ValidationExceptionField {
         self.message.as_deref()
     }
 }
+impl ValidationExceptionField {
+    /// Creates a new builder-style object to manufacture [`ValidationExceptionField`](crate::model::ValidationExceptionField).
+    pub fn builder() -> crate::model::validation_exception_field::Builder {
+        crate::model::validation_exception_field::Builder::default()
+    }
+}
+
 /// See [`ValidationExceptionField`](crate::model::ValidationExceptionField).
 pub mod validation_exception_field {
 
@@ -59,12 +66,6 @@ pub mod validation_exception_field {
                 message: self.message,
             }
         }
-    }
-}
-impl ValidationExceptionField {
-    /// Creates a new builder-style object to manufacture [`ValidationExceptionField`](crate::model::ValidationExceptionField).
-    pub fn builder() -> crate::model::validation_exception_field::Builder {
-        crate::model::validation_exception_field::Builder::default()
     }
 }
 
@@ -238,6 +239,13 @@ impl EnvironmentSummary {
         self.creation_time.as_ref()
     }
 }
+impl EnvironmentSummary {
+    /// Creates a new builder-style object to manufacture [`EnvironmentSummary`](crate::model::EnvironmentSummary).
+    pub fn builder() -> crate::model::environment_summary::Builder {
+        crate::model::environment_summary::Builder::default()
+    }
+}
+
 /// See [`EnvironmentSummary`](crate::model::EnvironmentSummary).
 pub mod environment_summary {
 
@@ -369,12 +377,6 @@ pub mod environment_summary {
                 creation_time: self.creation_time,
             }
         }
-    }
-}
-impl EnvironmentSummary {
-    /// Creates a new builder-style object to manufacture [`EnvironmentSummary`](crate::model::EnvironmentSummary).
-    pub fn builder() -> crate::model::environment_summary::Builder {
-        crate::model::environment_summary::Builder::default()
     }
 }
 
@@ -589,6 +591,13 @@ impl HighAvailabilityConfig {
         self.desired_capacity
     }
 }
+impl HighAvailabilityConfig {
+    /// Creates a new builder-style object to manufacture [`HighAvailabilityConfig`](crate::model::HighAvailabilityConfig).
+    pub fn builder() -> crate::model::high_availability_config::Builder {
+        crate::model::high_availability_config::Builder::default()
+    }
+}
+
 /// See [`HighAvailabilityConfig`](crate::model::HighAvailabilityConfig).
 pub mod high_availability_config {
 
@@ -615,12 +624,6 @@ pub mod high_availability_config {
                 desired_capacity: self.desired_capacity,
             }
         }
-    }
-}
-impl HighAvailabilityConfig {
-    /// Creates a new builder-style object to manufacture [`HighAvailabilityConfig`](crate::model::HighAvailabilityConfig).
-    pub fn builder() -> crate::model::high_availability_config::Builder {
-        crate::model::high_availability_config::Builder::default()
     }
 }
 
@@ -696,6 +699,13 @@ impl FsxStorageConfiguration {
         self.mount_point.as_deref()
     }
 }
+impl FsxStorageConfiguration {
+    /// Creates a new builder-style object to manufacture [`FsxStorageConfiguration`](crate::model::FsxStorageConfiguration).
+    pub fn builder() -> crate::model::fsx_storage_configuration::Builder {
+        crate::model::fsx_storage_configuration::Builder::default()
+    }
+}
+
 /// See [`FsxStorageConfiguration`](crate::model::FsxStorageConfiguration).
 pub mod fsx_storage_configuration {
 
@@ -739,12 +749,6 @@ pub mod fsx_storage_configuration {
         }
     }
 }
-impl FsxStorageConfiguration {
-    /// Creates a new builder-style object to manufacture [`FsxStorageConfiguration`](crate::model::FsxStorageConfiguration).
-    pub fn builder() -> crate::model::fsx_storage_configuration::Builder {
-        crate::model::fsx_storage_configuration::Builder::default()
-    }
-}
 
 /// <p>Defines the storage configuration for an Amazon EFS file system.</p>
 #[non_exhaustive]
@@ -767,6 +771,13 @@ impl EfsStorageConfiguration {
         self.mount_point.as_deref()
     }
 }
+impl EfsStorageConfiguration {
+    /// Creates a new builder-style object to manufacture [`EfsStorageConfiguration`](crate::model::EfsStorageConfiguration).
+    pub fn builder() -> crate::model::efs_storage_configuration::Builder {
+        crate::model::efs_storage_configuration::Builder::default()
+    }
+}
+
 /// See [`EfsStorageConfiguration`](crate::model::EfsStorageConfiguration).
 pub mod efs_storage_configuration {
 
@@ -810,12 +821,6 @@ pub mod efs_storage_configuration {
         }
     }
 }
-impl EfsStorageConfiguration {
-    /// Creates a new builder-style object to manufacture [`EfsStorageConfiguration`](crate::model::EfsStorageConfiguration).
-    pub fn builder() -> crate::model::efs_storage_configuration::Builder {
-        crate::model::efs_storage_configuration::Builder::default()
-    }
-}
 
 /// <p>The scheduled maintenance for a runtime engine.</p>
 #[non_exhaustive]
@@ -838,6 +843,13 @@ impl PendingMaintenance {
         self.engine_version.as_deref()
     }
 }
+impl PendingMaintenance {
+    /// Creates a new builder-style object to manufacture [`PendingMaintenance`](crate::model::PendingMaintenance).
+    pub fn builder() -> crate::model::pending_maintenance::Builder {
+        crate::model::pending_maintenance::Builder::default()
+    }
+}
+
 /// See [`PendingMaintenance`](crate::model::PendingMaintenance).
 pub mod pending_maintenance {
 
@@ -884,12 +896,6 @@ pub mod pending_maintenance {
         }
     }
 }
-impl PendingMaintenance {
-    /// Creates a new builder-style object to manufacture [`PendingMaintenance`](crate::model::PendingMaintenance).
-    pub fn builder() -> crate::model::pending_maintenance::Builder {
-        crate::model::pending_maintenance::Builder::default()
-    }
-}
 
 /// <p>The information about the maintenance schedule.</p>
 #[non_exhaustive]
@@ -912,6 +918,13 @@ impl MaintenanceSchedule {
         self.end_time.as_ref()
     }
 }
+impl MaintenanceSchedule {
+    /// Creates a new builder-style object to manufacture [`MaintenanceSchedule`](crate::model::MaintenanceSchedule).
+    pub fn builder() -> crate::model::maintenance_schedule::Builder {
+        crate::model::maintenance_schedule::Builder::default()
+    }
+}
+
 /// See [`MaintenanceSchedule`](crate::model::MaintenanceSchedule).
 pub mod maintenance_schedule {
 
@@ -956,12 +969,6 @@ pub mod maintenance_schedule {
                 end_time: self.end_time,
             }
         }
-    }
-}
-impl MaintenanceSchedule {
-    /// Creates a new builder-style object to manufacture [`MaintenanceSchedule`](crate::model::MaintenanceSchedule).
-    pub fn builder() -> crate::model::maintenance_schedule::Builder {
-        crate::model::maintenance_schedule::Builder::default()
     }
 }
 
@@ -1034,6 +1041,13 @@ impl ScriptBatchJobIdentifier {
         self.script_name.as_deref()
     }
 }
+impl ScriptBatchJobIdentifier {
+    /// Creates a new builder-style object to manufacture [`ScriptBatchJobIdentifier`](crate::model::ScriptBatchJobIdentifier).
+    pub fn builder() -> crate::model::script_batch_job_identifier::Builder {
+        crate::model::script_batch_job_identifier::Builder::default()
+    }
+}
+
 /// See [`ScriptBatchJobIdentifier`](crate::model::ScriptBatchJobIdentifier).
 pub mod script_batch_job_identifier {
 
@@ -1062,12 +1076,6 @@ pub mod script_batch_job_identifier {
         }
     }
 }
-impl ScriptBatchJobIdentifier {
-    /// Creates a new builder-style object to manufacture [`ScriptBatchJobIdentifier`](crate::model::ScriptBatchJobIdentifier).
-    pub fn builder() -> crate::model::script_batch_job_identifier::Builder {
-        crate::model::script_batch_job_identifier::Builder::default()
-    }
-}
 
 /// <p>A batch job identifier in which the batch job to run is identified by the file name and the relative path to the file name.</p>
 #[non_exhaustive]
@@ -1090,6 +1098,13 @@ impl FileBatchJobIdentifier {
         self.folder_path.as_deref()
     }
 }
+impl FileBatchJobIdentifier {
+    /// Creates a new builder-style object to manufacture [`FileBatchJobIdentifier`](crate::model::FileBatchJobIdentifier).
+    pub fn builder() -> crate::model::file_batch_job_identifier::Builder {
+        crate::model::file_batch_job_identifier::Builder::default()
+    }
+}
+
 /// See [`FileBatchJobIdentifier`](crate::model::FileBatchJobIdentifier).
 pub mod file_batch_job_identifier {
 
@@ -1128,12 +1143,6 @@ pub mod file_batch_job_identifier {
                 folder_path: self.folder_path,
             }
         }
-    }
-}
-impl FileBatchJobIdentifier {
-    /// Creates a new builder-style object to manufacture [`FileBatchJobIdentifier`](crate::model::FileBatchJobIdentifier).
-    pub fn builder() -> crate::model::file_batch_job_identifier::Builder {
-        crate::model::file_batch_job_identifier::Builder::default()
     }
 }
 
@@ -1193,6 +1202,13 @@ impl DeploymentSummary {
         self.status_reason.as_deref()
     }
 }
+impl DeploymentSummary {
+    /// Creates a new builder-style object to manufacture [`DeploymentSummary`](crate::model::DeploymentSummary).
+    pub fn builder() -> crate::model::deployment_summary::Builder {
+        crate::model::deployment_summary::Builder::default()
+    }
+}
+
 /// See [`DeploymentSummary`](crate::model::DeploymentSummary).
 pub mod deployment_summary {
 
@@ -1309,12 +1325,6 @@ pub mod deployment_summary {
                 status_reason: self.status_reason,
             }
         }
-    }
-}
-impl DeploymentSummary {
-    /// Creates a new builder-style object to manufacture [`DeploymentSummary`](crate::model::DeploymentSummary).
-    pub fn builder() -> crate::model::deployment_summary::Builder {
-        crate::model::deployment_summary::Builder::default()
     }
 }
 
@@ -1464,6 +1474,13 @@ impl DataSetSummary {
         self.last_referenced_time.as_ref()
     }
 }
+impl DataSetSummary {
+    /// Creates a new builder-style object to manufacture [`DataSetSummary`](crate::model::DataSetSummary).
+    pub fn builder() -> crate::model::data_set_summary::Builder {
+        crate::model::data_set_summary::Builder::default()
+    }
+}
+
 /// See [`DataSetSummary`](crate::model::DataSetSummary).
 pub mod data_set_summary {
 
@@ -1564,12 +1581,6 @@ pub mod data_set_summary {
         }
     }
 }
-impl DataSetSummary {
-    /// Creates a new builder-style object to manufacture [`DataSetSummary`](crate::model::DataSetSummary).
-    pub fn builder() -> crate::model::data_set_summary::Builder {
-        crate::model::data_set_summary::Builder::default()
-    }
-}
 
 /// <p>Contains information about a data set import task.</p>
 #[non_exhaustive]
@@ -1599,6 +1610,13 @@ impl DataSetImportTask {
         self.summary.as_ref()
     }
 }
+impl DataSetImportTask {
+    /// Creates a new builder-style object to manufacture [`DataSetImportTask`](crate::model::DataSetImportTask).
+    pub fn builder() -> crate::model::data_set_import_task::Builder {
+        crate::model::data_set_import_task::Builder::default()
+    }
+}
+
 /// See [`DataSetImportTask`](crate::model::DataSetImportTask).
 pub mod data_set_import_task {
 
@@ -1657,12 +1675,6 @@ pub mod data_set_import_task {
         }
     }
 }
-impl DataSetImportTask {
-    /// Creates a new builder-style object to manufacture [`DataSetImportTask`](crate::model::DataSetImportTask).
-    pub fn builder() -> crate::model::data_set_import_task::Builder {
-        crate::model::data_set_import_task::Builder::default()
-    }
-}
 
 /// <p>Represents a summary of data set imports.</p>
 #[non_exhaustive]
@@ -1706,6 +1718,13 @@ impl DataSetImportSummary {
         self.in_progress
     }
 }
+impl DataSetImportSummary {
+    /// Creates a new builder-style object to manufacture [`DataSetImportSummary`](crate::model::DataSetImportSummary).
+    pub fn builder() -> crate::model::data_set_import_summary::Builder {
+        crate::model::data_set_import_summary::Builder::default()
+    }
+}
+
 /// See [`DataSetImportSummary`](crate::model::DataSetImportSummary).
 pub mod data_set_import_summary {
 
@@ -1780,12 +1799,6 @@ pub mod data_set_import_summary {
                 in_progress: self.in_progress.unwrap_or_default(),
             }
         }
-    }
-}
-impl DataSetImportSummary {
-    /// Creates a new builder-style object to manufacture [`DataSetImportSummary`](crate::model::DataSetImportSummary).
-    pub fn builder() -> crate::model::data_set_import_summary::Builder {
-        crate::model::data_set_import_summary::Builder::default()
     }
 }
 
@@ -1949,6 +1962,13 @@ impl BatchJobExecutionSummary {
         self.end_time.as_ref()
     }
 }
+impl BatchJobExecutionSummary {
+    /// Creates a new builder-style object to manufacture [`BatchJobExecutionSummary`](crate::model::BatchJobExecutionSummary).
+    pub fn builder() -> crate::model::batch_job_execution_summary::Builder {
+        crate::model::batch_job_execution_summary::Builder::default()
+    }
+}
+
 /// See [`BatchJobExecutionSummary`](crate::model::BatchJobExecutionSummary).
 pub mod batch_job_execution_summary {
 
@@ -2074,12 +2094,6 @@ pub mod batch_job_execution_summary {
                 end_time: self.end_time,
             }
         }
-    }
-}
-impl BatchJobExecutionSummary {
-    /// Creates a new builder-style object to manufacture [`BatchJobExecutionSummary`](crate::model::BatchJobExecutionSummary).
-    pub fn builder() -> crate::model::batch_job_execution_summary::Builder {
-        crate::model::batch_job_execution_summary::Builder::default()
     }
 }
 
@@ -2384,6 +2398,13 @@ impl ScriptBatchJobDefinition {
         self.script_name.as_deref()
     }
 }
+impl ScriptBatchJobDefinition {
+    /// Creates a new builder-style object to manufacture [`ScriptBatchJobDefinition`](crate::model::ScriptBatchJobDefinition).
+    pub fn builder() -> crate::model::script_batch_job_definition::Builder {
+        crate::model::script_batch_job_definition::Builder::default()
+    }
+}
+
 /// See [`ScriptBatchJobDefinition`](crate::model::ScriptBatchJobDefinition).
 pub mod script_batch_job_definition {
 
@@ -2412,12 +2433,6 @@ pub mod script_batch_job_definition {
         }
     }
 }
-impl ScriptBatchJobDefinition {
-    /// Creates a new builder-style object to manufacture [`ScriptBatchJobDefinition`](crate::model::ScriptBatchJobDefinition).
-    pub fn builder() -> crate::model::script_batch_job_definition::Builder {
-        crate::model::script_batch_job_definition::Builder::default()
-    }
-}
 
 /// <p>A file containing a batch job definition.</p>
 #[non_exhaustive]
@@ -2440,6 +2455,13 @@ impl FileBatchJobDefinition {
         self.folder_path.as_deref()
     }
 }
+impl FileBatchJobDefinition {
+    /// Creates a new builder-style object to manufacture [`FileBatchJobDefinition`](crate::model::FileBatchJobDefinition).
+    pub fn builder() -> crate::model::file_batch_job_definition::Builder {
+        crate::model::file_batch_job_definition::Builder::default()
+    }
+}
+
 /// See [`FileBatchJobDefinition`](crate::model::FileBatchJobDefinition).
 pub mod file_batch_job_definition {
 
@@ -2480,12 +2502,6 @@ pub mod file_batch_job_definition {
         }
     }
 }
-impl FileBatchJobDefinition {
-    /// Creates a new builder-style object to manufacture [`FileBatchJobDefinition`](crate::model::FileBatchJobDefinition).
-    pub fn builder() -> crate::model::file_batch_job_definition::Builder {
-        crate::model::file_batch_job_definition::Builder::default()
-    }
-}
 
 /// <p>Defines an application version summary.</p>
 #[non_exhaustive]
@@ -2522,6 +2538,13 @@ impl ApplicationVersionSummary {
         self.creation_time.as_ref()
     }
 }
+impl ApplicationVersionSummary {
+    /// Creates a new builder-style object to manufacture [`ApplicationVersionSummary`](crate::model::ApplicationVersionSummary).
+    pub fn builder() -> crate::model::application_version_summary::Builder {
+        crate::model::application_version_summary::Builder::default()
+    }
+}
+
 /// See [`ApplicationVersionSummary`](crate::model::ApplicationVersionSummary).
 pub mod application_version_summary {
 
@@ -2593,12 +2616,6 @@ pub mod application_version_summary {
                 creation_time: self.creation_time,
             }
         }
-    }
-}
-impl ApplicationVersionSummary {
-    /// Creates a new builder-style object to manufacture [`ApplicationVersionSummary`](crate::model::ApplicationVersionSummary).
-    pub fn builder() -> crate::model::application_version_summary::Builder {
-        crate::model::application_version_summary::Builder::default()
     }
 }
 
@@ -2771,6 +2788,13 @@ impl GdgDetailAttributes {
         self.roll_disposition.as_deref()
     }
 }
+impl GdgDetailAttributes {
+    /// Creates a new builder-style object to manufacture [`GdgDetailAttributes`](crate::model::GdgDetailAttributes).
+    pub fn builder() -> crate::model::gdg_detail_attributes::Builder {
+        crate::model::gdg_detail_attributes::Builder::default()
+    }
+}
+
 /// See [`GdgDetailAttributes`](crate::model::GdgDetailAttributes).
 pub mod gdg_detail_attributes {
 
@@ -2812,12 +2836,6 @@ pub mod gdg_detail_attributes {
                 roll_disposition: self.roll_disposition,
             }
         }
-    }
-}
-impl GdgDetailAttributes {
-    /// Creates a new builder-style object to manufacture [`GdgDetailAttributes`](crate::model::GdgDetailAttributes).
-    pub fn builder() -> crate::model::gdg_detail_attributes::Builder {
-        crate::model::gdg_detail_attributes::Builder::default()
     }
 }
 
@@ -2870,6 +2888,13 @@ impl VsamDetailAttributes {
         self.alternate_keys.as_deref()
     }
 }
+impl VsamDetailAttributes {
+    /// Creates a new builder-style object to manufacture [`VsamDetailAttributes`](crate::model::VsamDetailAttributes).
+    pub fn builder() -> crate::model::vsam_detail_attributes::Builder {
+        crate::model::vsam_detail_attributes::Builder::default()
+    }
+}
+
 /// See [`VsamDetailAttributes`](crate::model::VsamDetailAttributes).
 pub mod vsam_detail_attributes {
 
@@ -2973,12 +2998,6 @@ pub mod vsam_detail_attributes {
         }
     }
 }
-impl VsamDetailAttributes {
-    /// Creates a new builder-style object to manufacture [`VsamDetailAttributes`](crate::model::VsamDetailAttributes).
-    pub fn builder() -> crate::model::vsam_detail_attributes::Builder {
-        crate::model::vsam_detail_attributes::Builder::default()
-    }
-}
 
 /// <p>Defines an alternate key. This value is optional. A legacy data set might not have any alternate key defined but if those alternate keys definitions exist, provide them, as some applications will make use of them.</p>
 #[non_exhaustive]
@@ -3015,6 +3034,13 @@ impl AlternateKey {
         self.allow_duplicates
     }
 }
+impl AlternateKey {
+    /// Creates a new builder-style object to manufacture [`AlternateKey`](crate::model::AlternateKey).
+    pub fn builder() -> crate::model::alternate_key::Builder {
+        crate::model::alternate_key::Builder::default()
+    }
+}
+
 /// See [`AlternateKey`](crate::model::AlternateKey).
 pub mod alternate_key {
 
@@ -3079,12 +3105,6 @@ pub mod alternate_key {
         }
     }
 }
-impl AlternateKey {
-    /// Creates a new builder-style object to manufacture [`AlternateKey`](crate::model::AlternateKey).
-    pub fn builder() -> crate::model::alternate_key::Builder {
-        crate::model::alternate_key::Builder::default()
-    }
-}
 
 /// <p>The primary key for a KSDS data set.</p>
 #[non_exhaustive]
@@ -3114,6 +3134,13 @@ impl PrimaryKey {
         self.length
     }
 }
+impl PrimaryKey {
+    /// Creates a new builder-style object to manufacture [`PrimaryKey`](crate::model::PrimaryKey).
+    pub fn builder() -> crate::model::primary_key::Builder {
+        crate::model::primary_key::Builder::default()
+    }
+}
+
 /// See [`PrimaryKey`](crate::model::PrimaryKey).
 pub mod primary_key {
 
@@ -3164,12 +3191,6 @@ pub mod primary_key {
                 length: self.length.unwrap_or_default(),
             }
         }
-    }
-}
-impl PrimaryKey {
-    /// Creates a new builder-style object to manufacture [`PrimaryKey`](crate::model::PrimaryKey).
-    pub fn builder() -> crate::model::primary_key::Builder {
-        crate::model::primary_key::Builder::default()
     }
 }
 
@@ -3247,6 +3268,13 @@ impl DataSetImportItem {
         self.external_location.as_ref()
     }
 }
+impl DataSetImportItem {
+    /// Creates a new builder-style object to manufacture [`DataSetImportItem`](crate::model::DataSetImportItem).
+    pub fn builder() -> crate::model::data_set_import_item::Builder {
+        crate::model::data_set_import_item::Builder::default()
+    }
+}
+
 /// See [`DataSetImportItem`](crate::model::DataSetImportItem).
 pub mod data_set_import_item {
 
@@ -3288,12 +3316,6 @@ pub mod data_set_import_item {
                 external_location: self.external_location,
             }
         }
-    }
-}
-impl DataSetImportItem {
-    /// Creates a new builder-style object to manufacture [`DataSetImportItem`](crate::model::DataSetImportItem).
-    pub fn builder() -> crate::model::data_set_import_item::Builder {
-        crate::model::data_set_import_item::Builder::default()
     }
 }
 
@@ -3376,6 +3398,13 @@ impl DataSet {
         self.record_length.as_ref()
     }
 }
+impl DataSet {
+    /// Creates a new builder-style object to manufacture [`DataSet`](crate::model::DataSet).
+    pub fn builder() -> crate::model::data_set::Builder {
+        crate::model::data_set::Builder::default()
+    }
+}
+
 /// See [`DataSet`](crate::model::DataSet).
 pub mod data_set {
 
@@ -3461,12 +3490,6 @@ pub mod data_set {
         }
     }
 }
-impl DataSet {
-    /// Creates a new builder-style object to manufacture [`DataSet`](crate::model::DataSet).
-    pub fn builder() -> crate::model::data_set::Builder {
-        crate::model::data_set::Builder::default()
-    }
-}
 
 /// <p>The length of the records in the data set.</p>
 #[non_exhaustive]
@@ -3489,6 +3512,13 @@ impl RecordLength {
         self.max
     }
 }
+impl RecordLength {
+    /// Creates a new builder-style object to manufacture [`RecordLength`](crate::model::RecordLength).
+    pub fn builder() -> crate::model::record_length::Builder {
+        crate::model::record_length::Builder::default()
+    }
+}
+
 /// See [`RecordLength`](crate::model::RecordLength).
 pub mod record_length {
 
@@ -3527,12 +3557,6 @@ pub mod record_length {
                 max: self.max.unwrap_or_default(),
             }
         }
-    }
-}
-impl RecordLength {
-    /// Creates a new builder-style object to manufacture [`RecordLength`](crate::model::RecordLength).
-    pub fn builder() -> crate::model::record_length::Builder {
-        crate::model::record_length::Builder::default()
     }
 }
 
@@ -3608,6 +3632,13 @@ impl GdgAttributes {
         self.roll_disposition.as_deref()
     }
 }
+impl GdgAttributes {
+    /// Creates a new builder-style object to manufacture [`GdgAttributes`](crate::model::GdgAttributes).
+    pub fn builder() -> crate::model::gdg_attributes::Builder {
+        crate::model::gdg_attributes::Builder::default()
+    }
+}
+
 /// See [`GdgAttributes`](crate::model::GdgAttributes).
 pub mod gdg_attributes {
 
@@ -3649,12 +3680,6 @@ pub mod gdg_attributes {
                 roll_disposition: self.roll_disposition,
             }
         }
-    }
-}
-impl GdgAttributes {
-    /// Creates a new builder-style object to manufacture [`GdgAttributes`](crate::model::GdgAttributes).
-    pub fn builder() -> crate::model::gdg_attributes::Builder {
-        crate::model::gdg_attributes::Builder::default()
     }
 }
 
@@ -3700,6 +3725,13 @@ impl VsamAttributes {
         self.alternate_keys.as_deref()
     }
 }
+impl VsamAttributes {
+    /// Creates a new builder-style object to manufacture [`VsamAttributes`](crate::model::VsamAttributes).
+    pub fn builder() -> crate::model::vsam_attributes::Builder {
+        crate::model::vsam_attributes::Builder::default()
+    }
+}
+
 /// See [`VsamAttributes`](crate::model::VsamAttributes).
 pub mod vsam_attributes {
 
@@ -3786,12 +3818,6 @@ pub mod vsam_attributes {
                 alternate_keys: self.alternate_keys,
             }
         }
-    }
-}
-impl VsamAttributes {
-    /// Creates a new builder-style object to manufacture [`VsamAttributes`](crate::model::VsamAttributes).
-    pub fn builder() -> crate::model::vsam_attributes::Builder {
-        crate::model::vsam_attributes::Builder::default()
     }
 }
 
@@ -3890,6 +3916,13 @@ impl ApplicationSummary {
         self.deployment_status.as_ref()
     }
 }
+impl ApplicationSummary {
+    /// Creates a new builder-style object to manufacture [`ApplicationSummary`](crate::model::ApplicationSummary).
+    pub fn builder() -> crate::model::application_summary::Builder {
+        crate::model::application_summary::Builder::default()
+    }
+}
+
 /// See [`ApplicationSummary`](crate::model::ApplicationSummary).
 pub mod application_summary {
 
@@ -4079,12 +4112,6 @@ pub mod application_summary {
                 deployment_status: self.deployment_status,
             }
         }
-    }
-}
-impl ApplicationSummary {
-    /// Creates a new builder-style object to manufacture [`ApplicationSummary`](crate::model::ApplicationSummary).
-    pub fn builder() -> crate::model::application_summary::Builder {
-        crate::model::application_summary::Builder::default()
     }
 }
 
@@ -4401,6 +4428,13 @@ impl LogGroupSummary {
         self.log_group_name.as_deref()
     }
 }
+impl LogGroupSummary {
+    /// Creates a new builder-style object to manufacture [`LogGroupSummary`](crate::model::LogGroupSummary).
+    pub fn builder() -> crate::model::log_group_summary::Builder {
+        crate::model::log_group_summary::Builder::default()
+    }
+}
+
 /// See [`LogGroupSummary`](crate::model::LogGroupSummary).
 pub mod log_group_summary {
 
@@ -4444,12 +4478,6 @@ pub mod log_group_summary {
         }
     }
 }
-impl LogGroupSummary {
-    /// Creates a new builder-style object to manufacture [`LogGroupSummary`](crate::model::LogGroupSummary).
-    pub fn builder() -> crate::model::log_group_summary::Builder {
-        crate::model::log_group_summary::Builder::default()
-    }
-}
 
 /// <p>Contains a summary of a deployed application.</p>
 #[non_exhaustive]
@@ -4479,6 +4507,13 @@ impl DeployedVersionSummary {
         self.status_reason.as_deref()
     }
 }
+impl DeployedVersionSummary {
+    /// Creates a new builder-style object to manufacture [`DeployedVersionSummary`](crate::model::DeployedVersionSummary).
+    pub fn builder() -> crate::model::deployed_version_summary::Builder {
+        crate::model::deployed_version_summary::Builder::default()
+    }
+}
+
 /// See [`DeployedVersionSummary`](crate::model::DeployedVersionSummary).
 pub mod deployed_version_summary {
 
@@ -4537,12 +4572,6 @@ pub mod deployed_version_summary {
         }
     }
 }
-impl DeployedVersionSummary {
-    /// Creates a new builder-style object to manufacture [`DeployedVersionSummary`](crate::model::DeployedVersionSummary).
-    pub fn builder() -> crate::model::deployed_version_summary::Builder {
-        crate::model::deployed_version_summary::Builder::default()
-    }
-}
 
 /// <p>A subset of information about the engine version for a specific application.</p>
 #[non_exhaustive]
@@ -4565,6 +4594,13 @@ impl EngineVersionsSummary {
         self.engine_version.as_deref()
     }
 }
+impl EngineVersionsSummary {
+    /// Creates a new builder-style object to manufacture [`EngineVersionsSummary`](crate::model::EngineVersionsSummary).
+    pub fn builder() -> crate::model::engine_versions_summary::Builder {
+        crate::model::engine_versions_summary::Builder::default()
+    }
+}
+
 /// See [`EngineVersionsSummary`](crate::model::EngineVersionsSummary).
 pub mod engine_versions_summary {
 
@@ -4606,11 +4642,5 @@ pub mod engine_versions_summary {
                 engine_version: self.engine_version,
             }
         }
-    }
-}
-impl EngineVersionsSummary {
-    /// Creates a new builder-style object to manufacture [`EngineVersionsSummary`](crate::model::EngineVersionsSummary).
-    pub fn builder() -> crate::model::engine_versions_summary::Builder {
-        crate::model::engine_versions_summary::Builder::default()
     }
 }

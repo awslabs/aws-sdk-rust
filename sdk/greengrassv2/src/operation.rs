@@ -4,7 +4,7 @@
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`associate_service_role_to_account`](crate::client::Client::associate_service_role_to_account).
 ///
-/// See [`crate::client::fluent_builders::AssociateServiceRoleToAccount`] for more details about the operation.
+/// `ParseStrictResponse` impl for `AssociateServiceRoleToAccount`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct AssociateServiceRoleToAccount {
     _private: (),
@@ -39,7 +39,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateServiceRoleToAc
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`batch_associate_client_device_with_core_device`](crate::client::Client::batch_associate_client_device_with_core_device).
 ///
-/// See [`crate::client::fluent_builders::BatchAssociateClientDeviceWithCoreDevice`] for more details about the operation.
+/// `ParseStrictResponse` impl for `BatchAssociateClientDeviceWithCoreDevice`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct BatchAssociateClientDeviceWithCoreDevice {
     _private: (),
@@ -79,7 +79,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchAssociateClientDevi
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`batch_disassociate_client_device_from_core_device`](crate::client::Client::batch_disassociate_client_device_from_core_device).
 ///
-/// See [`crate::client::fluent_builders::BatchDisassociateClientDeviceFromCoreDevice`] for more details about the operation.
+/// `ParseStrictResponse` impl for `BatchDisassociateClientDeviceFromCoreDevice`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct BatchDisassociateClientDeviceFromCoreDevice {
     _private: (),
@@ -121,7 +121,7 @@ impl aws_smithy_http::response::ParseStrictResponse
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`cancel_deployment`](crate::client::Client::cancel_deployment).
 ///
-/// See [`crate::client::fluent_builders::CancelDeployment`] for more details about the operation.
+/// `ParseStrictResponse` impl for `CancelDeployment`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CancelDeployment {
     _private: (),
@@ -156,7 +156,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CancelDeployment {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`create_component_version`](crate::client::Client::create_component_version).
 ///
-/// See [`crate::client::fluent_builders::CreateComponentVersion`] for more details about the operation.
+/// `ParseStrictResponse` impl for `CreateComponentVersion`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateComponentVersion {
     _private: (),
@@ -191,7 +191,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateComponentVersion {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`create_deployment`](crate::client::Client::create_deployment).
 ///
-/// See [`crate::client::fluent_builders::CreateDeployment`] for more details about the operation.
+/// `ParseStrictResponse` impl for `CreateDeployment`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateDeployment {
     _private: (),
@@ -226,7 +226,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateDeployment {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`delete_component`](crate::client::Client::delete_component).
 ///
-/// See [`crate::client::fluent_builders::DeleteComponent`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DeleteComponent`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteComponent {
     _private: (),
@@ -261,7 +261,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteComponent {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`delete_core_device`](crate::client::Client::delete_core_device).
 ///
-/// See [`crate::client::fluent_builders::DeleteCoreDevice`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DeleteCoreDevice`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteCoreDevice {
     _private: (),
@@ -296,7 +296,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteCoreDevice {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`delete_deployment`](crate::client::Client::delete_deployment).
 ///
-/// See [`crate::client::fluent_builders::DeleteDeployment`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DeleteDeployment`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteDeployment {
     _private: (),
@@ -331,7 +331,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteDeployment {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`describe_component`](crate::client::Client::describe_component).
 ///
-/// See [`crate::client::fluent_builders::DescribeComponent`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DescribeComponent`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeComponent {
     _private: (),
@@ -366,7 +366,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeComponent {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`disassociate_service_role_from_account`](crate::client::Client::disassociate_service_role_from_account).
 ///
-/// See [`crate::client::fluent_builders::DisassociateServiceRoleFromAccount`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DisassociateServiceRoleFromAccount`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DisassociateServiceRoleFromAccount {
     _private: (),
@@ -401,7 +401,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateServiceRoleF
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`get_component`](crate::client::Client::get_component).
 ///
-/// See [`crate::client::fluent_builders::GetComponent`] for more details about the operation.
+/// `ParseStrictResponse` impl for `GetComponent`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetComponent {
     _private: (),
@@ -434,7 +434,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetComponent {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`get_component_version_artifact`](crate::client::Client::get_component_version_artifact).
 ///
-/// See [`crate::client::fluent_builders::GetComponentVersionArtifact`] for more details about the operation.
+/// `ParseStrictResponse` impl for `GetComponentVersionArtifact`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetComponentVersionArtifact {
     _private: (),
@@ -469,7 +469,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetComponentVersionArtif
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`get_connectivity_info`](crate::client::Client::get_connectivity_info).
 ///
-/// See [`crate::client::fluent_builders::GetConnectivityInfo`] for more details about the operation.
+/// `ParseStrictResponse` impl for `GetConnectivityInfo`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetConnectivityInfo {
     _private: (),
@@ -504,7 +504,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetConnectivityInfo {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`get_core_device`](crate::client::Client::get_core_device).
 ///
-/// See [`crate::client::fluent_builders::GetCoreDevice`] for more details about the operation.
+/// `ParseStrictResponse` impl for `GetCoreDevice`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetCoreDevice {
     _private: (),
@@ -537,7 +537,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetCoreDevice {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`get_deployment`](crate::client::Client::get_deployment).
 ///
-/// See [`crate::client::fluent_builders::GetDeployment`] for more details about the operation.
+/// `ParseStrictResponse` impl for `GetDeployment`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetDeployment {
     _private: (),
@@ -570,7 +570,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDeployment {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`get_service_role_for_account`](crate::client::Client::get_service_role_for_account).
 ///
-/// See [`crate::client::fluent_builders::GetServiceRoleForAccount`] for more details about the operation.
+/// `ParseStrictResponse` impl for `GetServiceRoleForAccount`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetServiceRoleForAccount {
     _private: (),
@@ -605,7 +605,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetServiceRoleForAccount
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_client_devices_associated_with_core_device`](crate::client::Client::list_client_devices_associated_with_core_device).
 ///
-/// See [`crate::client::fluent_builders::ListClientDevicesAssociatedWithCoreDevice`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListClientDevicesAssociatedWithCoreDevice`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListClientDevicesAssociatedWithCoreDevice {
     _private: (),
@@ -645,7 +645,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListClientDevicesAssocia
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_components`](crate::client::Client::list_components).
 ///
-/// See [`crate::client::fluent_builders::ListComponents`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListComponents`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListComponents {
     _private: (),
@@ -678,7 +678,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListComponents {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_component_versions`](crate::client::Client::list_component_versions).
 ///
-/// See [`crate::client::fluent_builders::ListComponentVersions`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListComponentVersions`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListComponentVersions {
     _private: (),
@@ -713,7 +713,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListComponentVersions {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_core_devices`](crate::client::Client::list_core_devices).
 ///
-/// See [`crate::client::fluent_builders::ListCoreDevices`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListCoreDevices`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListCoreDevices {
     _private: (),
@@ -748,7 +748,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListCoreDevices {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_deployments`](crate::client::Client::list_deployments).
 ///
-/// See [`crate::client::fluent_builders::ListDeployments`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListDeployments`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListDeployments {
     _private: (),
@@ -783,7 +783,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListDeployments {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_effective_deployments`](crate::client::Client::list_effective_deployments).
 ///
-/// See [`crate::client::fluent_builders::ListEffectiveDeployments`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListEffectiveDeployments`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListEffectiveDeployments {
     _private: (),
@@ -818,7 +818,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListEffectiveDeployments
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_installed_components`](crate::client::Client::list_installed_components).
 ///
-/// See [`crate::client::fluent_builders::ListInstalledComponents`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListInstalledComponents`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListInstalledComponents {
     _private: (),
@@ -853,7 +853,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListInstalledComponents 
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
 ///
-/// See [`crate::client::fluent_builders::ListTagsForResource`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTagsForResource {
     _private: (),
@@ -888,7 +888,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`resolve_component_candidates`](crate::client::Client::resolve_component_candidates).
 ///
-/// See [`crate::client::fluent_builders::ResolveComponentCandidates`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ResolveComponentCandidates`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ResolveComponentCandidates {
     _private: (),
@@ -923,7 +923,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ResolveComponentCandidat
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`tag_resource`](crate::client::Client::tag_resource).
 ///
-/// See [`crate::client::fluent_builders::TagResource`] for more details about the operation.
+/// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct TagResource {
     _private: (),
@@ -956,7 +956,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`untag_resource`](crate::client::Client::untag_resource).
 ///
-/// See [`crate::client::fluent_builders::UntagResource`] for more details about the operation.
+/// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UntagResource {
     _private: (),
@@ -989,7 +989,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`update_connectivity_info`](crate::client::Client::update_connectivity_info).
 ///
-/// See [`crate::client::fluent_builders::UpdateConnectivityInfo`] for more details about the operation.
+/// `ParseStrictResponse` impl for `UpdateConnectivityInfo`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateConnectivityInfo {
     _private: (),

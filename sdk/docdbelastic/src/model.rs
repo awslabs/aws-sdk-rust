@@ -21,6 +21,13 @@ impl ValidationExceptionField {
         self.message.as_deref()
     }
 }
+impl ValidationExceptionField {
+    /// Creates a new builder-style object to manufacture [`ValidationExceptionField`](crate::model::ValidationExceptionField).
+    pub fn builder() -> crate::model::validation_exception_field::Builder {
+        crate::model::validation_exception_field::Builder::default()
+    }
+}
+
 /// See [`ValidationExceptionField`](crate::model::ValidationExceptionField).
 pub mod validation_exception_field {
 
@@ -59,12 +66,6 @@ pub mod validation_exception_field {
                 message: self.message,
             }
         }
-    }
-}
-impl ValidationExceptionField {
-    /// Creates a new builder-style object to manufacture [`ValidationExceptionField`](crate::model::ValidationExceptionField).
-    pub fn builder() -> crate::model::validation_exception_field::Builder {
-        crate::model::validation_exception_field::Builder::default()
     }
 }
 
@@ -275,6 +276,13 @@ impl Cluster {
         self.kms_key_id.as_deref()
     }
 }
+impl Cluster {
+    /// Creates a new builder-style object to manufacture [`Cluster`](crate::model::Cluster).
+    pub fn builder() -> crate::model::cluster::Builder {
+        crate::model::cluster::Builder::default()
+    }
+}
+
 /// See [`Cluster`](crate::model::Cluster).
 pub mod cluster {
 
@@ -477,12 +485,6 @@ pub mod cluster {
                 kms_key_id: self.kms_key_id,
             }
         }
-    }
-}
-impl Cluster {
-    /// Creates a new builder-style object to manufacture [`Cluster`](crate::model::Cluster).
-    pub fn builder() -> crate::model::cluster::Builder {
-        crate::model::cluster::Builder::default()
     }
 }
 
@@ -753,6 +755,13 @@ impl ClusterSnapshotInList {
         self.snapshot_creation_time.as_deref()
     }
 }
+impl ClusterSnapshotInList {
+    /// Creates a new builder-style object to manufacture [`ClusterSnapshotInList`](crate::model::ClusterSnapshotInList).
+    pub fn builder() -> crate::model::cluster_snapshot_in_list::Builder {
+        crate::model::cluster_snapshot_in_list::Builder::default()
+    }
+}
+
 /// See [`ClusterSnapshotInList`](crate::model::ClusterSnapshotInList).
 pub mod cluster_snapshot_in_list {
 
@@ -835,12 +844,6 @@ pub mod cluster_snapshot_in_list {
         }
     }
 }
-impl ClusterSnapshotInList {
-    /// Creates a new builder-style object to manufacture [`ClusterSnapshotInList`](crate::model::ClusterSnapshotInList).
-    pub fn builder() -> crate::model::cluster_snapshot_in_list::Builder {
-        crate::model::cluster_snapshot_in_list::Builder::default()
-    }
-}
 
 /// <p>A list of Elastic DocumentDB cluster.</p>
 #[non_exhaustive]
@@ -870,6 +873,13 @@ impl ClusterInList {
         self.status.as_ref()
     }
 }
+impl ClusterInList {
+    /// Creates a new builder-style object to manufacture [`ClusterInList`](crate::model::ClusterInList).
+    pub fn builder() -> crate::model::cluster_in_list::Builder {
+        crate::model::cluster_in_list::Builder::default()
+    }
+}
+
 /// See [`ClusterInList`](crate::model::ClusterInList).
 pub mod cluster_in_list {
 
@@ -920,12 +930,6 @@ pub mod cluster_in_list {
                 status: self.status,
             }
         }
-    }
-}
-impl ClusterInList {
-    /// Creates a new builder-style object to manufacture [`ClusterInList`](crate::model::ClusterInList).
-    pub fn builder() -> crate::model::cluster_in_list::Builder {
-        crate::model::cluster_in_list::Builder::default()
     }
 }
 
@@ -1006,6 +1010,13 @@ impl ClusterSnapshot {
         self.kms_key_id.as_deref()
     }
 }
+impl ClusterSnapshot {
+    /// Creates a new builder-style object to manufacture [`ClusterSnapshot`](crate::model::ClusterSnapshot).
+    pub fn builder() -> crate::model::cluster_snapshot::Builder {
+        crate::model::cluster_snapshot::Builder::default()
+    }
+}
+
 /// See [`ClusterSnapshot`](crate::model::ClusterSnapshot).
 pub mod cluster_snapshot {
 
@@ -1170,11 +1181,5 @@ pub mod cluster_snapshot {
                 kms_key_id: self.kms_key_id,
             }
         }
-    }
-}
-impl ClusterSnapshot {
-    /// Creates a new builder-style object to manufacture [`ClusterSnapshot`](crate::model::ClusterSnapshot).
-    pub fn builder() -> crate::model::cluster_snapshot::Builder {
-        crate::model::cluster_snapshot::Builder::default()
     }
 }

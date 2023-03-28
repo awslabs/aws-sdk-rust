@@ -422,6 +422,13 @@ impl CategoryProperties {
         self.input_type.as_ref()
     }
 }
+impl CategoryProperties {
+    /// Creates a new builder-style object to manufacture [`CategoryProperties`](crate::model::CategoryProperties).
+    pub fn builder() -> crate::model::category_properties::Builder {
+        crate::model::category_properties::Builder::default()
+    }
+}
+
 /// See [`CategoryProperties`](crate::model::CategoryProperties).
 pub mod category_properties {
 
@@ -521,12 +528,6 @@ pub mod category_properties {
                 input_type: self.input_type,
             }
         }
-    }
-}
-impl CategoryProperties {
-    /// Creates a new builder-style object to manufacture [`CategoryProperties`](crate::model::CategoryProperties).
-    pub fn builder() -> crate::model::category_properties::Builder {
-        crate::model::category_properties::Builder::default()
     }
 }
 
@@ -762,6 +763,13 @@ impl SentimentFilter {
         self.negate
     }
 }
+impl SentimentFilter {
+    /// Creates a new builder-style object to manufacture [`SentimentFilter`](crate::model::SentimentFilter).
+    pub fn builder() -> crate::model::sentiment_filter::Builder {
+        crate::model::sentiment_filter::Builder::default()
+    }
+}
+
 /// See [`SentimentFilter`](crate::model::SentimentFilter).
 pub mod sentiment_filter {
 
@@ -854,12 +862,6 @@ pub mod sentiment_filter {
                 negate: self.negate,
             }
         }
-    }
-}
-impl SentimentFilter {
-    /// Creates a new builder-style object to manufacture [`SentimentFilter`](crate::model::SentimentFilter).
-    pub fn builder() -> crate::model::sentiment_filter::Builder {
-        crate::model::sentiment_filter::Builder::default()
     }
 }
 
@@ -991,6 +993,13 @@ impl RelativeTimeRange {
         self.last
     }
 }
+impl RelativeTimeRange {
+    /// Creates a new builder-style object to manufacture [`RelativeTimeRange`](crate::model::RelativeTimeRange).
+    pub fn builder() -> crate::model::relative_time_range::Builder {
+        crate::model::relative_time_range::Builder::default()
+    }
+}
+
 /// See [`RelativeTimeRange`](crate::model::RelativeTimeRange).
 pub mod relative_time_range {
 
@@ -1055,12 +1064,6 @@ pub mod relative_time_range {
         }
     }
 }
-impl RelativeTimeRange {
-    /// Creates a new builder-style object to manufacture [`RelativeTimeRange`](crate::model::RelativeTimeRange).
-    pub fn builder() -> crate::model::relative_time_range::Builder {
-        crate::model::relative_time_range::Builder::default()
-    }
-}
 
 /// <p>A time range, in milliseconds, between two points in your media file.</p>
 /// <p>You can use <code>StartTime</code> and <code>EndTime</code> to search a custom segment. For example, setting <code>StartTime</code> to 10000 and <code>EndTime</code> to 50000 only searches for your specified criteria in the audio contained between the 10,000 millisecond mark and the 50,000 millisecond mark of your media file. You must use <code>StartTime</code> and <code>EndTime</code> as a set; that is, if you include one, you must include both.</p>
@@ -1100,6 +1103,13 @@ impl AbsoluteTimeRange {
         self.last
     }
 }
+impl AbsoluteTimeRange {
+    /// Creates a new builder-style object to manufacture [`AbsoluteTimeRange`](crate::model::AbsoluteTimeRange).
+    pub fn builder() -> crate::model::absolute_time_range::Builder {
+        crate::model::absolute_time_range::Builder::default()
+    }
+}
+
 /// See [`AbsoluteTimeRange`](crate::model::AbsoluteTimeRange).
 pub mod absolute_time_range {
 
@@ -1162,12 +1172,6 @@ pub mod absolute_time_range {
                 last: self.last,
             }
         }
-    }
-}
-impl AbsoluteTimeRange {
-    /// Creates a new builder-style object to manufacture [`AbsoluteTimeRange`](crate::model::AbsoluteTimeRange).
-    pub fn builder() -> crate::model::absolute_time_range::Builder {
-        crate::model::absolute_time_range::Builder::default()
     }
 }
 
@@ -1331,6 +1335,13 @@ impl TranscriptFilter {
         self.targets.as_deref()
     }
 }
+impl TranscriptFilter {
+    /// Creates a new builder-style object to manufacture [`TranscriptFilter`](crate::model::TranscriptFilter).
+    pub fn builder() -> crate::model::transcript_filter::Builder {
+        crate::model::transcript_filter::Builder::default()
+    }
+}
+
 /// See [`TranscriptFilter`](crate::model::TranscriptFilter).
 pub mod transcript_filter {
 
@@ -1440,12 +1451,6 @@ pub mod transcript_filter {
                 targets: self.targets,
             }
         }
-    }
-}
-impl TranscriptFilter {
-    /// Creates a new builder-style object to manufacture [`TranscriptFilter`](crate::model::TranscriptFilter).
-    pub fn builder() -> crate::model::transcript_filter::Builder {
-        crate::model::transcript_filter::Builder::default()
     }
 }
 
@@ -1586,6 +1591,13 @@ impl InterruptionFilter {
         self.negate
     }
 }
+impl InterruptionFilter {
+    /// Creates a new builder-style object to manufacture [`InterruptionFilter`](crate::model::InterruptionFilter).
+    pub fn builder() -> crate::model::interruption_filter::Builder {
+        crate::model::interruption_filter::Builder::default()
+    }
+}
+
 /// See [`InterruptionFilter`](crate::model::InterruptionFilter).
 pub mod interruption_filter {
 
@@ -1671,12 +1683,6 @@ pub mod interruption_filter {
         }
     }
 }
-impl InterruptionFilter {
-    /// Creates a new builder-style object to manufacture [`InterruptionFilter`](crate::model::InterruptionFilter).
-    pub fn builder() -> crate::model::interruption_filter::Builder {
-        crate::model::interruption_filter::Builder::default()
-    }
-}
 
 /// <p>Flag the presence or absence of periods of silence in your Call Analytics transcription output.</p>
 /// <p>Rules using <code>NonTalkTimeFilter</code> are designed to match:</p>
@@ -1719,6 +1725,13 @@ impl NonTalkTimeFilter {
         self.negate
     }
 }
+impl NonTalkTimeFilter {
+    /// Creates a new builder-style object to manufacture [`NonTalkTimeFilter`](crate::model::NonTalkTimeFilter).
+    pub fn builder() -> crate::model::non_talk_time_filter::Builder {
+        crate::model::non_talk_time_filter::Builder::default()
+    }
+}
+
 /// See [`NonTalkTimeFilter`](crate::model::NonTalkTimeFilter).
 pub mod non_talk_time_filter {
 
@@ -1789,12 +1802,6 @@ pub mod non_talk_time_filter {
         }
     }
 }
-impl NonTalkTimeFilter {
-    /// Creates a new builder-style object to manufacture [`NonTalkTimeFilter`](crate::model::NonTalkTimeFilter).
-    pub fn builder() -> crate::model::non_talk_time_filter::Builder {
-        crate::model::non_talk_time_filter::Builder::default()
-    }
-}
 
 /// <p>Adds metadata, in the form of a key:value pair, to the specified resource.</p>
 /// <p>For example, you could add the tag <code>Department:Sales</code> to a resource to indicate that it pertains to your organization's sales department. You can also use tags for tag-based access control.</p>
@@ -1821,6 +1828,13 @@ impl Tag {
         self.value.as_deref()
     }
 }
+impl Tag {
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
+    pub fn builder() -> crate::model::tag::Builder {
+        crate::model::tag::Builder::default()
+    }
+}
+
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
 
@@ -1861,12 +1875,6 @@ pub mod tag {
                 value: self.value,
             }
         }
-    }
-}
-impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
-    pub fn builder() -> crate::model::tag::Builder {
-        crate::model::tag::Builder::default()
     }
 }
 
@@ -2078,6 +2086,13 @@ impl TranscriptionJob {
         self.language_id_settings.as_ref()
     }
 }
+impl TranscriptionJob {
+    /// Creates a new builder-style object to manufacture [`TranscriptionJob`](crate::model::TranscriptionJob).
+    pub fn builder() -> crate::model::transcription_job::Builder {
+        crate::model::transcription_job::Builder::default()
+    }
+}
+
 /// See [`TranscriptionJob`](crate::model::TranscriptionJob).
 pub mod transcription_job {
 
@@ -2489,12 +2504,6 @@ pub mod transcription_job {
         }
     }
 }
-impl TranscriptionJob {
-    /// Creates a new builder-style object to manufacture [`TranscriptionJob`](crate::model::TranscriptionJob).
-    pub fn builder() -> crate::model::transcription_job::Builder {
-        crate::model::transcription_job::Builder::default()
-    }
-}
 
 /// <p>If using automatic language identification in your request and you want to apply a custom language model, a custom vocabulary, or a custom vocabulary filter, include <code>LanguageIdSettings</code> with the relevant sub-parameters (<code>VocabularyName</code>, <code>LanguageModelName</code>, and <code>VocabularyFilterName</code>). Note that multi-language identification (<code>IdentifyMultipleLanguages</code>) doesn't support custom language models.</p>
 /// <p> <code>LanguageIdSettings</code> supports two to five language codes. Each language code you include can have an associated custom language model, custom vocabulary, and custom vocabulary filter. The language codes that you specify must match the languages of the associated custom language models, custom vocabularies, and custom vocabulary filters.</p>
@@ -2535,6 +2544,13 @@ impl LanguageIdSettings {
         self.language_model_name.as_deref()
     }
 }
+impl LanguageIdSettings {
+    /// Creates a new builder-style object to manufacture [`LanguageIdSettings`](crate::model::LanguageIdSettings).
+    pub fn builder() -> crate::model::language_id_settings::Builder {
+        crate::model::language_id_settings::Builder::default()
+    }
+}
+
 /// See [`LanguageIdSettings`](crate::model::LanguageIdSettings).
 pub mod language_id_settings {
 
@@ -2604,12 +2620,6 @@ pub mod language_id_settings {
         }
     }
 }
-impl LanguageIdSettings {
-    /// Creates a new builder-style object to manufacture [`LanguageIdSettings`](crate::model::LanguageIdSettings).
-    pub fn builder() -> crate::model::language_id_settings::Builder {
-        crate::model::language_id_settings::Builder::default()
-    }
-}
 
 /// <p>Provides information about your subtitle file, including format, start index, and Amazon S3 location.</p>
 #[non_exhaustive]
@@ -2647,6 +2657,13 @@ impl SubtitlesOutput {
         self.output_start_index
     }
 }
+impl SubtitlesOutput {
+    /// Creates a new builder-style object to manufacture [`SubtitlesOutput`](crate::model::SubtitlesOutput).
+    pub fn builder() -> crate::model::subtitles_output::Builder {
+        crate::model::subtitles_output::Builder::default()
+    }
+}
+
 /// See [`SubtitlesOutput`](crate::model::SubtitlesOutput).
 pub mod subtitles_output {
 
@@ -2723,12 +2740,6 @@ pub mod subtitles_output {
                 output_start_index: self.output_start_index,
             }
         }
-    }
-}
-impl SubtitlesOutput {
-    /// Creates a new builder-style object to manufacture [`SubtitlesOutput`](crate::model::SubtitlesOutput).
-    pub fn builder() -> crate::model::subtitles_output::Builder {
-        crate::model::subtitles_output::Builder::default()
     }
 }
 
@@ -2843,6 +2854,13 @@ impl LanguageCodeItem {
         self.duration_in_seconds
     }
 }
+impl LanguageCodeItem {
+    /// Creates a new builder-style object to manufacture [`LanguageCodeItem`](crate::model::LanguageCodeItem).
+    pub fn builder() -> crate::model::language_code_item::Builder {
+        crate::model::language_code_item::Builder::default()
+    }
+}
+
 /// See [`LanguageCodeItem`](crate::model::LanguageCodeItem).
 pub mod language_code_item {
 
@@ -2886,12 +2904,6 @@ pub mod language_code_item {
         }
     }
 }
-impl LanguageCodeItem {
-    /// Creates a new builder-style object to manufacture [`LanguageCodeItem`](crate::model::LanguageCodeItem).
-    pub fn builder() -> crate::model::language_code_item::Builder {
-        crate::model::language_code_item::Builder::default()
-    }
-}
 
 /// <p>Makes it possible to redact or flag specified personally identifiable information (PII) in your transcript. If you use <code>ContentRedaction</code>, you must also include the sub-parameters: <code>PiiEntityTypes</code>, <code>RedactionOutput</code>, and <code>RedactionType</code>.</p>
 #[non_exhaustive]
@@ -2925,6 +2937,13 @@ impl ContentRedaction {
         self.pii_entity_types.as_deref()
     }
 }
+impl ContentRedaction {
+    /// Creates a new builder-style object to manufacture [`ContentRedaction`](crate::model::ContentRedaction).
+    pub fn builder() -> crate::model::content_redaction::Builder {
+        crate::model::content_redaction::Builder::default()
+    }
+}
+
 /// See [`ContentRedaction`](crate::model::ContentRedaction).
 pub mod content_redaction {
 
@@ -2995,12 +3014,6 @@ pub mod content_redaction {
                 pii_entity_types: self.pii_entity_types,
             }
         }
-    }
-}
-impl ContentRedaction {
-    /// Creates a new builder-style object to manufacture [`ContentRedaction`](crate::model::ContentRedaction).
-    pub fn builder() -> crate::model::content_redaction::Builder {
-        crate::model::content_redaction::Builder::default()
     }
 }
 
@@ -3362,6 +3375,13 @@ impl JobExecutionSettings {
         self.data_access_role_arn.as_deref()
     }
 }
+impl JobExecutionSettings {
+    /// Creates a new builder-style object to manufacture [`JobExecutionSettings`](crate::model::JobExecutionSettings).
+    pub fn builder() -> crate::model::job_execution_settings::Builder {
+        crate::model::job_execution_settings::Builder::default()
+    }
+}
+
 /// See [`JobExecutionSettings`](crate::model::JobExecutionSettings).
 pub mod job_execution_settings {
 
@@ -3413,12 +3433,6 @@ pub mod job_execution_settings {
         }
     }
 }
-impl JobExecutionSettings {
-    /// Creates a new builder-style object to manufacture [`JobExecutionSettings`](crate::model::JobExecutionSettings).
-    pub fn builder() -> crate::model::job_execution_settings::Builder {
-        crate::model::job_execution_settings::Builder::default()
-    }
-}
 
 /// <p>Provides the name of the custom language model that was included in the specified transcription job.</p>
 /// <p>Only use <code>ModelSettings</code> with the <code>LanguageModelName</code> sub-parameter if you're <b>not</b> using automatic language identification (<code></code>). If using <code>LanguageIdSettings</code> in your request, this parameter contains a <code>LanguageModelName</code> sub-parameter.</p>
@@ -3437,6 +3451,13 @@ impl ModelSettings {
         self.language_model_name.as_deref()
     }
 }
+impl ModelSettings {
+    /// Creates a new builder-style object to manufacture [`ModelSettings`](crate::model::ModelSettings).
+    pub fn builder() -> crate::model::model_settings::Builder {
+        crate::model::model_settings::Builder::default()
+    }
+}
+
 /// See [`ModelSettings`](crate::model::ModelSettings).
 pub mod model_settings {
 
@@ -3468,12 +3489,6 @@ pub mod model_settings {
                 language_model_name: self.language_model_name,
             }
         }
-    }
-}
-impl ModelSettings {
-    /// Creates a new builder-style object to manufacture [`ModelSettings`](crate::model::ModelSettings).
-    pub fn builder() -> crate::model::model_settings::Builder {
-        crate::model::model_settings::Builder::default()
     }
 }
 
@@ -3578,6 +3593,13 @@ impl Settings {
         self.vocabulary_filter_method.as_ref()
     }
 }
+impl Settings {
+    /// Creates a new builder-style object to manufacture [`Settings`](crate::model::Settings).
+    pub fn builder() -> crate::model::settings::Builder {
+        crate::model::settings::Builder::default()
+    }
+}
+
 /// See [`Settings`](crate::model::Settings).
 pub mod settings {
 
@@ -3739,12 +3761,6 @@ pub mod settings {
         }
     }
 }
-impl Settings {
-    /// Creates a new builder-style object to manufacture [`Settings`](crate::model::Settings).
-    pub fn builder() -> crate::model::settings::Builder {
-        crate::model::settings::Builder::default()
-    }
-}
 
 /// When writing a match expression against `VocabularyFilterMethod`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -3880,6 +3896,13 @@ impl Transcript {
         self.redacted_transcript_file_uri.as_deref()
     }
 }
+impl Transcript {
+    /// Creates a new builder-style object to manufacture [`Transcript`](crate::model::Transcript).
+    pub fn builder() -> crate::model::transcript::Builder {
+        crate::model::transcript::Builder::default()
+    }
+}
+
 /// See [`Transcript`](crate::model::Transcript).
 pub mod transcript {
 
@@ -3945,12 +3968,6 @@ pub mod transcript {
         }
     }
 }
-impl Transcript {
-    /// Creates a new builder-style object to manufacture [`Transcript`](crate::model::Transcript).
-    pub fn builder() -> crate::model::transcript::Builder {
-        crate::model::transcript::Builder::default()
-    }
-}
 
 /// <p>Describes the Amazon S3 location of the media file you want to use in your request.</p>
 /// <p>For information on supported media formats, refer to the <a href="https://docs.aws.amazon.com/APIReference/API_StartTranscriptionJob.html#transcribe-StartTranscriptionJob-request-MediaFormat">MediaFormat</a> parameter or the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-input.html#how-input-audio">Media formats</a> section in the Amazon S3 Developer Guide.</p>
@@ -3998,6 +4015,13 @@ impl Media {
         self.redacted_media_file_uri.as_deref()
     }
 }
+impl Media {
+    /// Creates a new builder-style object to manufacture [`Media`](crate::model::Media).
+    pub fn builder() -> crate::model::media::Builder {
+        crate::model::media::Builder::default()
+    }
+}
+
 /// See [`Media`](crate::model::Media).
 pub mod media {
 
@@ -4066,12 +4090,6 @@ pub mod media {
                 redacted_media_file_uri: self.redacted_media_file_uri,
             }
         }
-    }
-}
-impl Media {
-    /// Creates a new builder-style object to manufacture [`Media`](crate::model::Media).
-    pub fn builder() -> crate::model::media::Builder {
-        crate::model::media::Builder::default()
     }
 }
 
@@ -4317,6 +4335,13 @@ impl Subtitles {
         self.output_start_index
     }
 }
+impl Subtitles {
+    /// Creates a new builder-style object to manufacture [`Subtitles`](crate::model::Subtitles).
+    pub fn builder() -> crate::model::subtitles::Builder {
+        crate::model::subtitles::Builder::default()
+    }
+}
+
 /// See [`Subtitles`](crate::model::Subtitles).
 pub mod subtitles {
 
@@ -4366,12 +4391,6 @@ pub mod subtitles {
                 output_start_index: self.output_start_index,
             }
         }
-    }
-}
-impl Subtitles {
-    /// Creates a new builder-style object to manufacture [`Subtitles`](crate::model::Subtitles).
-    pub fn builder() -> crate::model::subtitles::Builder {
-        crate::model::subtitles::Builder::default()
     }
 }
 
@@ -4528,6 +4547,13 @@ impl MedicalTranscriptionJob {
         self.tags.as_deref()
     }
 }
+impl MedicalTranscriptionJob {
+    /// Creates a new builder-style object to manufacture [`MedicalTranscriptionJob`](crate::model::MedicalTranscriptionJob).
+    pub fn builder() -> crate::model::medical_transcription_job::Builder {
+        crate::model::medical_transcription_job::Builder::default()
+    }
+}
+
 /// See [`MedicalTranscriptionJob`](crate::model::MedicalTranscriptionJob).
 pub mod medical_transcription_job {
 
@@ -4818,12 +4844,6 @@ pub mod medical_transcription_job {
                 tags: self.tags,
             }
         }
-    }
-}
-impl MedicalTranscriptionJob {
-    /// Creates a new builder-style object to manufacture [`MedicalTranscriptionJob`](crate::model::MedicalTranscriptionJob).
-    pub fn builder() -> crate::model::medical_transcription_job::Builder {
-        crate::model::medical_transcription_job::Builder::default()
     }
 }
 
@@ -5168,6 +5188,13 @@ impl MedicalTranscriptionSetting {
         self.vocabulary_name.as_deref()
     }
 }
+impl MedicalTranscriptionSetting {
+    /// Creates a new builder-style object to manufacture [`MedicalTranscriptionSetting`](crate::model::MedicalTranscriptionSetting).
+    pub fn builder() -> crate::model::medical_transcription_setting::Builder {
+        crate::model::medical_transcription_setting::Builder::default()
+    }
+}
+
 /// See [`MedicalTranscriptionSetting`](crate::model::MedicalTranscriptionSetting).
 pub mod medical_transcription_setting {
 
@@ -5289,12 +5316,6 @@ pub mod medical_transcription_setting {
         }
     }
 }
-impl MedicalTranscriptionSetting {
-    /// Creates a new builder-style object to manufacture [`MedicalTranscriptionSetting`](crate::model::MedicalTranscriptionSetting).
-    pub fn builder() -> crate::model::medical_transcription_setting::Builder {
-        crate::model::medical_transcription_setting::Builder::default()
-    }
-}
 
 /// <p>Provides you with the Amazon S3 URI you can use to access your transcript.</p>
 #[non_exhaustive]
@@ -5312,6 +5333,13 @@ impl MedicalTranscript {
         self.transcript_file_uri.as_deref()
     }
 }
+impl MedicalTranscript {
+    /// Creates a new builder-style object to manufacture [`MedicalTranscript`](crate::model::MedicalTranscript).
+    pub fn builder() -> crate::model::medical_transcript::Builder {
+        crate::model::medical_transcript::Builder::default()
+    }
+}
+
 /// See [`MedicalTranscript`](crate::model::MedicalTranscript).
 pub mod medical_transcript {
 
@@ -5343,12 +5371,6 @@ pub mod medical_transcript {
                 transcript_file_uri: self.transcript_file_uri,
             }
         }
-    }
-}
-impl MedicalTranscript {
-    /// Creates a new builder-style object to manufacture [`MedicalTranscript`](crate::model::MedicalTranscript).
-    pub fn builder() -> crate::model::medical_transcript::Builder {
-        crate::model::medical_transcript::Builder::default()
     }
 }
 
@@ -5499,6 +5521,13 @@ impl CallAnalyticsJob {
         self.channel_definitions.as_deref()
     }
 }
+impl CallAnalyticsJob {
+    /// Creates a new builder-style object to manufacture [`CallAnalyticsJob`](crate::model::CallAnalyticsJob).
+    pub fn builder() -> crate::model::call_analytics_job::Builder {
+        crate::model::call_analytics_job::Builder::default()
+    }
+}
+
 /// See [`CallAnalyticsJob`](crate::model::CallAnalyticsJob).
 pub mod call_analytics_job {
 
@@ -5772,12 +5801,6 @@ pub mod call_analytics_job {
         }
     }
 }
-impl CallAnalyticsJob {
-    /// Creates a new builder-style object to manufacture [`CallAnalyticsJob`](crate::model::CallAnalyticsJob).
-    pub fn builder() -> crate::model::call_analytics_job::Builder {
-        crate::model::call_analytics_job::Builder::default()
-    }
-}
 
 /// <p>Makes it possible to specify which speaker is on which channel. For example, if your agent is the first participant to speak, you would set <code>ChannelId</code> to <code>0</code> (to indicate the first channel) and <code>ParticipantRole</code> to <code>AGENT</code> (to indicate that it's the agent speaking).</p>
 #[non_exhaustive]
@@ -5800,6 +5823,13 @@ impl ChannelDefinition {
         self.participant_role.as_ref()
     }
 }
+impl ChannelDefinition {
+    /// Creates a new builder-style object to manufacture [`ChannelDefinition`](crate::model::ChannelDefinition).
+    pub fn builder() -> crate::model::channel_definition::Builder {
+        crate::model::channel_definition::Builder::default()
+    }
+}
+
 /// See [`ChannelDefinition`](crate::model::ChannelDefinition).
 pub mod channel_definition {
 
@@ -5841,12 +5871,6 @@ pub mod channel_definition {
                 participant_role: self.participant_role,
             }
         }
-    }
-}
-impl ChannelDefinition {
-    /// Creates a new builder-style object to manufacture [`ChannelDefinition`](crate::model::ChannelDefinition).
-    pub fn builder() -> crate::model::channel_definition::Builder {
-        crate::model::channel_definition::Builder::default()
     }
 }
 
@@ -5938,6 +5962,13 @@ impl CallAnalyticsJobSettings {
         self.language_id_settings.as_ref()
     }
 }
+impl CallAnalyticsJobSettings {
+    /// Creates a new builder-style object to manufacture [`CallAnalyticsJobSettings`](crate::model::CallAnalyticsJobSettings).
+    pub fn builder() -> crate::model::call_analytics_job_settings::Builder {
+        crate::model::call_analytics_job_settings::Builder::default()
+    }
+}
+
 /// See [`CallAnalyticsJobSettings`](crate::model::CallAnalyticsJobSettings).
 pub mod call_analytics_job_settings {
 
@@ -6110,12 +6141,6 @@ pub mod call_analytics_job_settings {
         }
     }
 }
-impl CallAnalyticsJobSettings {
-    /// Creates a new builder-style object to manufacture [`CallAnalyticsJobSettings`](crate::model::CallAnalyticsJobSettings).
-    pub fn builder() -> crate::model::call_analytics_job_settings::Builder {
-        crate::model::call_analytics_job_settings::Builder::default()
-    }
-}
 
 /// When writing a match expression against `CallAnalyticsJobStatus`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -6253,6 +6278,13 @@ impl VocabularyFilterInfo {
         self.last_modified_time.as_ref()
     }
 }
+impl VocabularyFilterInfo {
+    /// Creates a new builder-style object to manufacture [`VocabularyFilterInfo`](crate::model::VocabularyFilterInfo).
+    pub fn builder() -> crate::model::vocabulary_filter_info::Builder {
+        crate::model::vocabulary_filter_info::Builder::default()
+    }
+}
+
 /// See [`VocabularyFilterInfo`](crate::model::VocabularyFilterInfo).
 pub mod vocabulary_filter_info {
 
@@ -6320,12 +6352,6 @@ pub mod vocabulary_filter_info {
         }
     }
 }
-impl VocabularyFilterInfo {
-    /// Creates a new builder-style object to manufacture [`VocabularyFilterInfo`](crate::model::VocabularyFilterInfo).
-    pub fn builder() -> crate::model::vocabulary_filter_info::Builder {
-        crate::model::vocabulary_filter_info::Builder::default()
-    }
-}
 
 /// <p>Provides information about a custom vocabulary, including the language of the custom vocabulary, when it was last modified, its name, and the processing state.</p>
 #[non_exhaustive]
@@ -6366,6 +6392,13 @@ impl VocabularyInfo {
         self.vocabulary_state.as_ref()
     }
 }
+impl VocabularyInfo {
+    /// Creates a new builder-style object to manufacture [`VocabularyInfo`](crate::model::VocabularyInfo).
+    pub fn builder() -> crate::model::vocabulary_info::Builder {
+        crate::model::vocabulary_info::Builder::default()
+    }
+}
+
 /// See [`VocabularyInfo`](crate::model::VocabularyInfo).
 pub mod vocabulary_info {
 
@@ -6444,12 +6477,6 @@ pub mod vocabulary_info {
                 vocabulary_state: self.vocabulary_state,
             }
         }
-    }
-}
-impl VocabularyInfo {
-    /// Creates a new builder-style object to manufacture [`VocabularyInfo`](crate::model::VocabularyInfo).
-    pub fn builder() -> crate::model::vocabulary_info::Builder {
-        crate::model::vocabulary_info::Builder::default()
     }
 }
 
@@ -6576,6 +6603,13 @@ impl TranscriptionJobSummary {
         self.language_codes.as_deref()
     }
 }
+impl TranscriptionJobSummary {
+    /// Creates a new builder-style object to manufacture [`TranscriptionJobSummary`](crate::model::TranscriptionJobSummary).
+    pub fn builder() -> crate::model::transcription_job_summary::Builder {
+        crate::model::transcription_job_summary::Builder::default()
+    }
+}
+
 /// See [`TranscriptionJobSummary`](crate::model::TranscriptionJobSummary).
 pub mod transcription_job_summary {
 
@@ -6820,12 +6854,6 @@ pub mod transcription_job_summary {
         }
     }
 }
-impl TranscriptionJobSummary {
-    /// Creates a new builder-style object to manufacture [`TranscriptionJobSummary`](crate::model::TranscriptionJobSummary).
-    pub fn builder() -> crate::model::transcription_job_summary::Builder {
-        crate::model::transcription_job_summary::Builder::default()
-    }
-}
 
 /// When writing a match expression against `OutputLocationType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -7020,6 +7048,13 @@ impl MedicalTranscriptionJobSummary {
         self.r#type.as_ref()
     }
 }
+impl MedicalTranscriptionJobSummary {
+    /// Creates a new builder-style object to manufacture [`MedicalTranscriptionJobSummary`](crate::model::MedicalTranscriptionJobSummary).
+    pub fn builder() -> crate::model::medical_transcription_job_summary::Builder {
+        crate::model::medical_transcription_job_summary::Builder::default()
+    }
+}
+
 /// See [`MedicalTranscriptionJobSummary`](crate::model::MedicalTranscriptionJobSummary).
 pub mod medical_transcription_job_summary {
 
@@ -7221,12 +7256,6 @@ pub mod medical_transcription_job_summary {
         }
     }
 }
-impl MedicalTranscriptionJobSummary {
-    /// Creates a new builder-style object to manufacture [`MedicalTranscriptionJobSummary`](crate::model::MedicalTranscriptionJobSummary).
-    pub fn builder() -> crate::model::medical_transcription_job_summary::Builder {
-        crate::model::medical_transcription_job_summary::Builder::default()
-    }
-}
 
 /// <p>Provides information about a custom language model, including the base model name, when the model was created, the location of the files used to train the model, when the model was last modified, the name you chose for the model, its language, its processing state, and if there is an upgrade available for the base model.</p>
 #[non_exhaustive]
@@ -7312,6 +7341,13 @@ impl LanguageModel {
         self.input_data_config.as_ref()
     }
 }
+impl LanguageModel {
+    /// Creates a new builder-style object to manufacture [`LanguageModel`](crate::model::LanguageModel).
+    pub fn builder() -> crate::model::language_model::Builder {
+        crate::model::language_model::Builder::default()
+    }
+}
+
 /// See [`LanguageModel`](crate::model::LanguageModel).
 pub mod language_model {
 
@@ -7471,12 +7507,6 @@ pub mod language_model {
         }
     }
 }
-impl LanguageModel {
-    /// Creates a new builder-style object to manufacture [`LanguageModel`](crate::model::LanguageModel).
-    pub fn builder() -> crate::model::language_model::Builder {
-        crate::model::language_model::Builder::default()
-    }
-}
 
 /// <p>Contains the Amazon S3 location of the training data you want to use to create a new custom language model, and permissions to access this location.</p>
 /// <p>When using <code>InputDataConfig</code>, you must include these sub-parameters: <code>S3Uri</code> and <code>DataAccessRoleArn</code>. You can optionally include <code>TuningDataS3Uri</code>.</p>
@@ -7515,6 +7545,13 @@ impl InputDataConfig {
         self.data_access_role_arn.as_deref()
     }
 }
+impl InputDataConfig {
+    /// Creates a new builder-style object to manufacture [`InputDataConfig`](crate::model::InputDataConfig).
+    pub fn builder() -> crate::model::input_data_config::Builder {
+        crate::model::input_data_config::Builder::default()
+    }
+}
+
 /// See [`InputDataConfig`](crate::model::InputDataConfig).
 pub mod input_data_config {
 
@@ -7579,12 +7616,6 @@ pub mod input_data_config {
                 data_access_role_arn: self.data_access_role_arn,
             }
         }
-    }
-}
-impl InputDataConfig {
-    /// Creates a new builder-style object to manufacture [`InputDataConfig`](crate::model::InputDataConfig).
-    pub fn builder() -> crate::model::input_data_config::Builder {
-        crate::model::input_data_config::Builder::default()
     }
 }
 
@@ -7956,6 +7987,13 @@ impl CallAnalyticsJobSummary {
         self.failure_reason.as_deref()
     }
 }
+impl CallAnalyticsJobSummary {
+    /// Creates a new builder-style object to manufacture [`CallAnalyticsJobSummary`](crate::model::CallAnalyticsJobSummary).
+    pub fn builder() -> crate::model::call_analytics_job_summary::Builder {
+        crate::model::call_analytics_job_summary::Builder::default()
+    }
+}
+
 /// See [`CallAnalyticsJobSummary`](crate::model::CallAnalyticsJobSummary).
 pub mod call_analytics_job_summary {
 
@@ -8087,11 +8125,5 @@ pub mod call_analytics_job_summary {
                 failure_reason: self.failure_reason,
             }
         }
-    }
-}
-impl CallAnalyticsJobSummary {
-    /// Creates a new builder-style object to manufacture [`CallAnalyticsJobSummary`](crate::model::CallAnalyticsJobSummary).
-    pub fn builder() -> crate::model::call_analytics_job_summary::Builder {
-        crate::model::call_analytics_job_summary::Builder::default()
     }
 }

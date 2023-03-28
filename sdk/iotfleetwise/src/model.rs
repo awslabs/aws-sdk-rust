@@ -21,6 +21,13 @@ impl ValidationExceptionField {
         self.message.as_deref()
     }
 }
+impl ValidationExceptionField {
+    /// Creates a new builder-style object to manufacture [`ValidationExceptionField`](crate::model::ValidationExceptionField).
+    pub fn builder() -> crate::model::validation_exception_field::Builder {
+        crate::model::validation_exception_field::Builder::default()
+    }
+}
+
 /// See [`ValidationExceptionField`](crate::model::ValidationExceptionField).
 pub mod validation_exception_field {
 
@@ -59,12 +66,6 @@ pub mod validation_exception_field {
                 message: self.message,
             }
         }
-    }
-}
-impl ValidationExceptionField {
-    /// Creates a new builder-style object to manufacture [`ValidationExceptionField`](crate::model::ValidationExceptionField).
-    pub fn builder() -> crate::model::validation_exception_field::Builder {
-        crate::model::validation_exception_field::Builder::default()
     }
 }
 
@@ -225,6 +226,13 @@ impl VehicleSummary {
         self.last_modification_time.as_ref()
     }
 }
+impl VehicleSummary {
+    /// Creates a new builder-style object to manufacture [`VehicleSummary`](crate::model::VehicleSummary).
+    pub fn builder() -> crate::model::vehicle_summary::Builder {
+        crate::model::vehicle_summary::Builder::default()
+    }
+}
+
 /// See [`VehicleSummary`](crate::model::VehicleSummary).
 pub mod vehicle_summary {
 
@@ -325,12 +333,6 @@ pub mod vehicle_summary {
         }
     }
 }
-impl VehicleSummary {
-    /// Creates a new builder-style object to manufacture [`VehicleSummary`](crate::model::VehicleSummary).
-    pub fn builder() -> crate::model::vehicle_summary::Builder {
-        crate::model::vehicle_summary::Builder::default()
-    }
-}
 
 /// <p>A set of key/value pairs that are used to manage the resource.</p>
 #[non_exhaustive]
@@ -353,6 +355,13 @@ impl Tag {
         self.value.as_deref()
     }
 }
+impl Tag {
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
+    pub fn builder() -> crate::model::tag::Builder {
+        crate::model::tag::Builder::default()
+    }
+}
+
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
 
@@ -391,12 +400,6 @@ pub mod tag {
                 value: self.value,
             }
         }
-    }
-}
-impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
-    pub fn builder() -> crate::model::tag::Builder {
-        crate::model::tag::Builder::default()
     }
 }
 
@@ -743,6 +746,13 @@ impl Attribute {
         self.default_value.as_deref()
     }
 }
+impl Attribute {
+    /// Creates a new builder-style object to manufacture [`Attribute`](crate::model::Attribute).
+    pub fn builder() -> crate::model::attribute::Builder {
+        crate::model::attribute::Builder::default()
+    }
+}
+
 /// See [`Attribute`](crate::model::Attribute).
 pub mod attribute {
 
@@ -888,12 +898,6 @@ pub mod attribute {
                 default_value: self.default_value,
             }
         }
-    }
-}
-impl Attribute {
-    /// Creates a new builder-style object to manufacture [`Attribute`](crate::model::Attribute).
-    pub fn builder() -> crate::model::attribute::Builder {
-        crate::model::attribute::Builder::default()
     }
 }
 
@@ -1207,6 +1211,13 @@ impl Actuator {
         self.assigned_value.as_deref()
     }
 }
+impl Actuator {
+    /// Creates a new builder-style object to manufacture [`Actuator`](crate::model::Actuator).
+    pub fn builder() -> crate::model::actuator::Builder {
+        crate::model::actuator::Builder::default()
+    }
+}
+
 /// See [`Actuator`](crate::model::Actuator).
 pub mod actuator {
 
@@ -1339,12 +1350,6 @@ pub mod actuator {
         }
     }
 }
-impl Actuator {
-    /// Creates a new builder-style object to manufacture [`Actuator`](crate::model::Actuator).
-    pub fn builder() -> crate::model::actuator::Builder {
-        crate::model::actuator::Builder::default()
-    }
-}
 
 /// <p>An input component that reports the environmental condition of a vehicle.</p> <note>
 /// <p>You can collect data about fluid levels, temperatures, vibrations, or battery voltage from sensors.</p>
@@ -1404,6 +1409,13 @@ impl Sensor {
         self.max
     }
 }
+impl Sensor {
+    /// Creates a new builder-style object to manufacture [`Sensor`](crate::model::Sensor).
+    pub fn builder() -> crate::model::sensor::Builder {
+        crate::model::sensor::Builder::default()
+    }
+}
+
 /// See [`Sensor`](crate::model::Sensor).
 pub mod sensor {
 
@@ -1519,12 +1531,6 @@ pub mod sensor {
         }
     }
 }
-impl Sensor {
-    /// Creates a new builder-style object to manufacture [`Sensor`](crate::model::Sensor).
-    pub fn builder() -> crate::model::sensor::Builder {
-        crate::model::sensor::Builder::default()
-    }
-}
 
 /// <p>A group of signals that are defined in a hierarchical structure.</p>
 #[non_exhaustive]
@@ -1547,6 +1553,13 @@ impl Branch {
         self.description.as_deref()
     }
 }
+impl Branch {
+    /// Creates a new builder-style object to manufacture [`Branch`](crate::model::Branch).
+    pub fn builder() -> crate::model::branch::Builder {
+        crate::model::branch::Builder::default()
+    }
+}
+
 /// See [`Branch`](crate::model::Branch).
 pub mod branch {
 
@@ -1590,12 +1603,6 @@ pub mod branch {
         }
     }
 }
-impl Branch {
-    /// Creates a new builder-style object to manufacture [`Branch`](crate::model::Branch).
-    pub fn builder() -> crate::model::branch::Builder {
-        crate::model::branch::Builder::default()
-    }
-}
 
 /// <p>A reason that a signal isn't valid.</p>
 #[non_exhaustive]
@@ -1618,6 +1625,13 @@ impl InvalidSignal {
         self.reason.as_deref()
     }
 }
+impl InvalidSignal {
+    /// Creates a new builder-style object to manufacture [`InvalidSignal`](crate::model::InvalidSignal).
+    pub fn builder() -> crate::model::invalid_signal::Builder {
+        crate::model::invalid_signal::Builder::default()
+    }
+}
+
 /// See [`InvalidSignal`](crate::model::InvalidSignal).
 pub mod invalid_signal {
 
@@ -1656,12 +1670,6 @@ pub mod invalid_signal {
                 reason: self.reason,
             }
         }
-    }
-}
-impl InvalidSignal {
-    /// Creates a new builder-style object to manufacture [`InvalidSignal`](crate::model::InvalidSignal).
-    pub fn builder() -> crate::model::invalid_signal::Builder {
-        crate::model::invalid_signal::Builder::default()
     }
 }
 
@@ -1737,6 +1745,13 @@ impl SignalCatalogSummary {
         self.last_modification_time.as_ref()
     }
 }
+impl SignalCatalogSummary {
+    /// Creates a new builder-style object to manufacture [`SignalCatalogSummary`](crate::model::SignalCatalogSummary).
+    pub fn builder() -> crate::model::signal_catalog_summary::Builder {
+        crate::model::signal_catalog_summary::Builder::default()
+    }
+}
+
 /// See [`SignalCatalogSummary`](crate::model::SignalCatalogSummary).
 pub mod signal_catalog_summary {
 
@@ -1807,12 +1822,6 @@ pub mod signal_catalog_summary {
         }
     }
 }
-impl SignalCatalogSummary {
-    /// Creates a new builder-style object to manufacture [`SignalCatalogSummary`](crate::model::SignalCatalogSummary).
-    pub fn builder() -> crate::model::signal_catalog_summary::Builder {
-        crate::model::signal_catalog_summary::Builder::default()
-    }
-}
 
 /// <p>Information about the number of nodes and node types in a vehicle network.</p>
 #[non_exhaustive]
@@ -1856,6 +1865,13 @@ impl NodeCounts {
         self.total_actuators
     }
 }
+impl NodeCounts {
+    /// Creates a new builder-style object to manufacture [`NodeCounts`](crate::model::NodeCounts).
+    pub fn builder() -> crate::model::node_counts::Builder {
+        crate::model::node_counts::Builder::default()
+    }
+}
+
 /// See [`NodeCounts`](crate::model::NodeCounts).
 pub mod node_counts {
 
@@ -1932,12 +1948,6 @@ pub mod node_counts {
         }
     }
 }
-impl NodeCounts {
-    /// Creates a new builder-style object to manufacture [`NodeCounts`](crate::model::NodeCounts).
-    pub fn builder() -> crate::model::node_counts::Builder {
-        crate::model::node_counts::Builder::default()
-    }
-}
 
 /// <p>Information about a vehicle model (model manifest). You can use the API operation to return this information about multiple vehicle models.</p>
 #[non_exhaustive]
@@ -1995,6 +2005,13 @@ impl ModelManifestSummary {
         self.last_modification_time.as_ref()
     }
 }
+impl ModelManifestSummary {
+    /// Creates a new builder-style object to manufacture [`ModelManifestSummary`](crate::model::ModelManifestSummary).
+    pub fn builder() -> crate::model::model_manifest_summary::Builder {
+        crate::model::model_manifest_summary::Builder::default()
+    }
+}
+
 /// See [`ModelManifestSummary`](crate::model::ModelManifestSummary).
 pub mod model_manifest_summary {
 
@@ -2105,12 +2122,6 @@ pub mod model_manifest_summary {
                 last_modification_time: self.last_modification_time,
             }
         }
-    }
-}
-impl ModelManifestSummary {
-    /// Creates a new builder-style object to manufacture [`ModelManifestSummary`](crate::model::ModelManifestSummary).
-    pub fn builder() -> crate::model::model_manifest_summary::Builder {
-        crate::model::model_manifest_summary::Builder::default()
     }
 }
 
@@ -2254,6 +2265,13 @@ impl FleetSummary {
         self.last_modification_time.as_ref()
     }
 }
+impl FleetSummary {
+    /// Creates a new builder-style object to manufacture [`FleetSummary`](crate::model::FleetSummary).
+    pub fn builder() -> crate::model::fleet_summary::Builder {
+        crate::model::fleet_summary::Builder::default()
+    }
+}
+
 /// See [`FleetSummary`](crate::model::FleetSummary).
 pub mod fleet_summary {
 
@@ -2351,12 +2369,6 @@ pub mod fleet_summary {
         }
     }
 }
-impl FleetSummary {
-    /// Creates a new builder-style object to manufacture [`FleetSummary`](crate::model::FleetSummary).
-    pub fn builder() -> crate::model::fleet_summary::Builder {
-        crate::model::fleet_summary::Builder::default()
-    }
-}
 
 /// <p>Information about a signal decoder.</p>
 #[non_exhaustive]
@@ -2400,6 +2412,13 @@ impl SignalDecoder {
         self.obd_signal.as_ref()
     }
 }
+impl SignalDecoder {
+    /// Creates a new builder-style object to manufacture [`SignalDecoder`](crate::model::SignalDecoder).
+    pub fn builder() -> crate::model::signal_decoder::Builder {
+        crate::model::signal_decoder::Builder::default()
+    }
+}
+
 /// See [`SignalDecoder`](crate::model::SignalDecoder).
 pub mod signal_decoder {
 
@@ -2488,12 +2507,6 @@ pub mod signal_decoder {
         }
     }
 }
-impl SignalDecoder {
-    /// Creates a new builder-style object to manufacture [`SignalDecoder`](crate::model::SignalDecoder).
-    pub fn builder() -> crate::model::signal_decoder::Builder {
-        crate::model::signal_decoder::Builder::default()
-    }
-}
 
 /// <p>Information about signal messages using the on-board diagnostics (OBD) II protocol in a vehicle.</p>
 #[non_exhaustive]
@@ -2565,6 +2578,13 @@ impl ObdSignal {
         self.bit_mask_length
     }
 }
+impl ObdSignal {
+    /// Creates a new builder-style object to manufacture [`ObdSignal`](crate::model::ObdSignal).
+    pub fn builder() -> crate::model::obd_signal::Builder {
+        crate::model::obd_signal::Builder::default()
+    }
+}
+
 /// See [`ObdSignal`](crate::model::ObdSignal).
 pub mod obd_signal {
 
@@ -2689,12 +2709,6 @@ pub mod obd_signal {
         }
     }
 }
-impl ObdSignal {
-    /// Creates a new builder-style object to manufacture [`ObdSignal`](crate::model::ObdSignal).
-    pub fn builder() -> crate::model::obd_signal::Builder {
-        crate::model::obd_signal::Builder::default()
-    }
-}
 
 /// <p>Information about a single controller area network (CAN) signal and the messages it receives and transmits.</p>
 #[non_exhaustive]
@@ -2759,6 +2773,13 @@ impl CanSignal {
         self.name.as_deref()
     }
 }
+impl CanSignal {
+    /// Creates a new builder-style object to manufacture [`CanSignal`](crate::model::CanSignal).
+    pub fn builder() -> crate::model::can_signal::Builder {
+        crate::model::can_signal::Builder::default()
+    }
+}
+
 /// See [`CanSignal`](crate::model::CanSignal).
 pub mod can_signal {
 
@@ -2869,12 +2890,6 @@ pub mod can_signal {
                 name: self.name,
             }
         }
-    }
-}
-impl CanSignal {
-    /// Creates a new builder-style object to manufacture [`CanSignal`](crate::model::CanSignal).
-    pub fn builder() -> crate::model::can_signal::Builder {
-        crate::model::can_signal::Builder::default()
     }
 }
 
@@ -3006,6 +3021,13 @@ impl NetworkInterface {
         self.obd_interface.as_ref()
     }
 }
+impl NetworkInterface {
+    /// Creates a new builder-style object to manufacture [`NetworkInterface`](crate::model::NetworkInterface).
+    pub fn builder() -> crate::model::network_interface::Builder {
+        crate::model::network_interface::Builder::default()
+    }
+}
+
 /// See [`NetworkInterface`](crate::model::NetworkInterface).
 pub mod network_interface {
 
@@ -3079,12 +3101,6 @@ pub mod network_interface {
         }
     }
 }
-impl NetworkInterface {
-    /// Creates a new builder-style object to manufacture [`NetworkInterface`](crate::model::NetworkInterface).
-    pub fn builder() -> crate::model::network_interface::Builder {
-        crate::model::network_interface::Builder::default()
-    }
-}
 
 /// <p>A network interface that specifies the On-board diagnostic (OBD) II network protocol.</p>
 #[non_exhaustive]
@@ -3142,6 +3158,13 @@ impl ObdInterface {
         self.has_transmission_ecu
     }
 }
+impl ObdInterface {
+    /// Creates a new builder-style object to manufacture [`ObdInterface`](crate::model::ObdInterface).
+    pub fn builder() -> crate::model::obd_interface::Builder {
+        crate::model::obd_interface::Builder::default()
+    }
+}
+
 /// See [`ObdInterface`](crate::model::ObdInterface).
 pub mod obd_interface {
 
@@ -3242,12 +3265,6 @@ pub mod obd_interface {
         }
     }
 }
-impl ObdInterface {
-    /// Creates a new builder-style object to manufacture [`ObdInterface`](crate::model::ObdInterface).
-    pub fn builder() -> crate::model::obd_interface::Builder {
-        crate::model::obd_interface::Builder::default()
-    }
-}
 
 /// <p>A single controller area network (CAN) device interface.</p>
 #[non_exhaustive]
@@ -3277,6 +3294,13 @@ impl CanInterface {
         self.protocol_version.as_deref()
     }
 }
+impl CanInterface {
+    /// Creates a new builder-style object to manufacture [`CanInterface`](crate::model::CanInterface).
+    pub fn builder() -> crate::model::can_interface::Builder {
+        crate::model::can_interface::Builder::default()
+    }
+}
+
 /// See [`CanInterface`](crate::model::CanInterface).
 pub mod can_interface {
 
@@ -3333,12 +3357,6 @@ pub mod can_interface {
                 protocol_version: self.protocol_version,
             }
         }
-    }
-}
-impl CanInterface {
-    /// Creates a new builder-style object to manufacture [`CanInterface`](crate::model::CanInterface).
-    pub fn builder() -> crate::model::can_interface::Builder {
-        crate::model::can_interface::Builder::default()
     }
 }
 
@@ -3455,6 +3473,13 @@ impl InvalidNetworkInterface {
         self.reason.as_ref()
     }
 }
+impl InvalidNetworkInterface {
+    /// Creates a new builder-style object to manufacture [`InvalidNetworkInterface`](crate::model::InvalidNetworkInterface).
+    pub fn builder() -> crate::model::invalid_network_interface::Builder {
+        crate::model::invalid_network_interface::Builder::default()
+    }
+}
+
 /// See [`InvalidNetworkInterface`](crate::model::InvalidNetworkInterface).
 pub mod invalid_network_interface {
 
@@ -3496,12 +3521,6 @@ pub mod invalid_network_interface {
                 reason: self.reason,
             }
         }
-    }
-}
-impl InvalidNetworkInterface {
-    /// Creates a new builder-style object to manufacture [`InvalidNetworkInterface`](crate::model::InvalidNetworkInterface).
-    pub fn builder() -> crate::model::invalid_network_interface::Builder {
-        crate::model::invalid_network_interface::Builder::default()
     }
 }
 
@@ -3665,6 +3684,13 @@ impl InvalidSignalDecoder {
         self.reason.as_ref()
     }
 }
+impl InvalidSignalDecoder {
+    /// Creates a new builder-style object to manufacture [`InvalidSignalDecoder`](crate::model::InvalidSignalDecoder).
+    pub fn builder() -> crate::model::invalid_signal_decoder::Builder {
+        crate::model::invalid_signal_decoder::Builder::default()
+    }
+}
+
 /// See [`InvalidSignalDecoder`](crate::model::InvalidSignalDecoder).
 pub mod invalid_signal_decoder {
 
@@ -3706,12 +3732,6 @@ pub mod invalid_signal_decoder {
                 reason: self.reason,
             }
         }
-    }
-}
-impl InvalidSignalDecoder {
-    /// Creates a new builder-style object to manufacture [`InvalidSignalDecoder`](crate::model::InvalidSignalDecoder).
-    pub fn builder() -> crate::model::invalid_signal_decoder::Builder {
-        crate::model::invalid_signal_decoder::Builder::default()
     }
 }
 
@@ -3933,6 +3953,13 @@ impl CanDbcDefinition {
         self.signals_map.as_ref()
     }
 }
+impl CanDbcDefinition {
+    /// Creates a new builder-style object to manufacture [`CanDbcDefinition`](crate::model::CanDbcDefinition).
+    pub fn builder() -> crate::model::can_dbc_definition::Builder {
+        crate::model::can_dbc_definition::Builder::default()
+    }
+}
+
 /// See [`CanDbcDefinition`](crate::model::CanDbcDefinition).
 pub mod can_dbc_definition {
 
@@ -4014,12 +4041,6 @@ pub mod can_dbc_definition {
         }
     }
 }
-impl CanDbcDefinition {
-    /// Creates a new builder-style object to manufacture [`CanDbcDefinition`](crate::model::CanDbcDefinition).
-    pub fn builder() -> crate::model::can_dbc_definition::Builder {
-        crate::model::can_dbc_definition::Builder::default()
-    }
-}
 
 /// <p>Information about a created decoder manifest. You can use the API operation to return this information about multiple decoder manifests.</p>
 #[non_exhaustive]
@@ -4077,6 +4098,13 @@ impl DecoderManifestSummary {
         self.last_modification_time.as_ref()
     }
 }
+impl DecoderManifestSummary {
+    /// Creates a new builder-style object to manufacture [`DecoderManifestSummary`](crate::model::DecoderManifestSummary).
+    pub fn builder() -> crate::model::decoder_manifest_summary::Builder {
+        crate::model::decoder_manifest_summary::Builder::default()
+    }
+}
+
 /// See [`DecoderManifestSummary`](crate::model::DecoderManifestSummary).
 pub mod decoder_manifest_summary {
 
@@ -4189,12 +4217,6 @@ pub mod decoder_manifest_summary {
         }
     }
 }
-impl DecoderManifestSummary {
-    /// Creates a new builder-style object to manufacture [`DecoderManifestSummary`](crate::model::DecoderManifestSummary).
-    pub fn builder() -> crate::model::decoder_manifest_summary::Builder {
-        crate::model::decoder_manifest_summary::Builder::default()
-    }
-}
 
 /// <p>Information about a campaign. </p>
 /// <p>You can use the API operation to return this information about multiple created campaigns.</p>
@@ -4272,6 +4294,13 @@ impl CampaignSummary {
         self.last_modification_time.as_ref()
     }
 }
+impl CampaignSummary {
+    /// Creates a new builder-style object to manufacture [`CampaignSummary`](crate::model::CampaignSummary).
+    pub fn builder() -> crate::model::campaign_summary::Builder {
+        crate::model::campaign_summary::Builder::default()
+    }
+}
+
 /// See [`CampaignSummary`](crate::model::CampaignSummary).
 pub mod campaign_summary {
 
@@ -4406,12 +4435,6 @@ pub mod campaign_summary {
                 last_modification_time: self.last_modification_time,
             }
         }
-    }
-}
-impl CampaignSummary {
-    /// Creates a new builder-style object to manufacture [`CampaignSummary`](crate::model::CampaignSummary).
-    pub fn builder() -> crate::model::campaign_summary::Builder {
-        crate::model::campaign_summary::Builder::default()
     }
 }
 
@@ -4609,6 +4632,13 @@ impl ConditionBasedCollectionScheme {
         self.condition_language_version
     }
 }
+impl ConditionBasedCollectionScheme {
+    /// Creates a new builder-style object to manufacture [`ConditionBasedCollectionScheme`](crate::model::ConditionBasedCollectionScheme).
+    pub fn builder() -> crate::model::condition_based_collection_scheme::Builder {
+        crate::model::condition_based_collection_scheme::Builder::default()
+    }
+}
+
 /// See [`ConditionBasedCollectionScheme`](crate::model::ConditionBasedCollectionScheme).
 pub mod condition_based_collection_scheme {
 
@@ -4678,12 +4708,6 @@ pub mod condition_based_collection_scheme {
                 condition_language_version: self.condition_language_version,
             }
         }
-    }
-}
-impl ConditionBasedCollectionScheme {
-    /// Creates a new builder-style object to manufacture [`ConditionBasedCollectionScheme`](crate::model::ConditionBasedCollectionScheme).
-    pub fn builder() -> crate::model::condition_based_collection_scheme::Builder {
-        crate::model::condition_based_collection_scheme::Builder::default()
     }
 }
 
@@ -4791,6 +4815,13 @@ impl TimeBasedCollectionScheme {
         self.period_ms
     }
 }
+impl TimeBasedCollectionScheme {
+    /// Creates a new builder-style object to manufacture [`TimeBasedCollectionScheme`](crate::model::TimeBasedCollectionScheme).
+    pub fn builder() -> crate::model::time_based_collection_scheme::Builder {
+        crate::model::time_based_collection_scheme::Builder::default()
+    }
+}
+
 /// See [`TimeBasedCollectionScheme`](crate::model::TimeBasedCollectionScheme).
 pub mod time_based_collection_scheme {
 
@@ -4817,12 +4848,6 @@ pub mod time_based_collection_scheme {
                 period_ms: self.period_ms,
             }
         }
-    }
-}
-impl TimeBasedCollectionScheme {
-    /// Creates a new builder-style object to manufacture [`TimeBasedCollectionScheme`](crate::model::TimeBasedCollectionScheme).
-    pub fn builder() -> crate::model::time_based_collection_scheme::Builder {
-        crate::model::time_based_collection_scheme::Builder::default()
     }
 }
 
@@ -4858,6 +4883,13 @@ impl SignalInformation {
         self.minimum_sampling_interval_ms
     }
 }
+impl SignalInformation {
+    /// Creates a new builder-style object to manufacture [`SignalInformation`](crate::model::SignalInformation).
+    pub fn builder() -> crate::model::signal_information::Builder {
+        crate::model::signal_information::Builder::default()
+    }
+}
+
 /// See [`SignalInformation`](crate::model::SignalInformation).
 pub mod signal_information {
 
@@ -4912,12 +4944,6 @@ pub mod signal_information {
                 minimum_sampling_interval_ms: self.minimum_sampling_interval_ms,
             }
         }
-    }
-}
-impl SignalInformation {
-    /// Creates a new builder-style object to manufacture [`SignalInformation`](crate::model::SignalInformation).
-    pub fn builder() -> crate::model::signal_information::Builder {
-        crate::model::signal_information::Builder::default()
     }
 }
 
@@ -5308,6 +5334,13 @@ impl IamResources {
         self.role_arn.as_deref()
     }
 }
+impl IamResources {
+    /// Creates a new builder-style object to manufacture [`IamResources`](crate::model::IamResources).
+    pub fn builder() -> crate::model::iam_resources::Builder {
+        crate::model::iam_resources::Builder::default()
+    }
+}
+
 /// See [`IamResources`](crate::model::IamResources).
 pub mod iam_resources {
 
@@ -5336,12 +5369,6 @@ pub mod iam_resources {
         }
     }
 }
-impl IamResources {
-    /// Creates a new builder-style object to manufacture [`IamResources`](crate::model::IamResources).
-    pub fn builder() -> crate::model::iam_resources::Builder {
-        crate::model::iam_resources::Builder::default()
-    }
-}
 
 /// <p>The registered Amazon Timestream resources that Amazon Web Services IoT FleetWise edge agent software can transfer your vehicle data to.</p>
 #[non_exhaustive]
@@ -5364,6 +5391,13 @@ impl TimestreamResources {
         self.timestream_table_name.as_deref()
     }
 }
+impl TimestreamResources {
+    /// Creates a new builder-style object to manufacture [`TimestreamResources`](crate::model::TimestreamResources).
+    pub fn builder() -> crate::model::timestream_resources::Builder {
+        crate::model::timestream_resources::Builder::default()
+    }
+}
+
 /// See [`TimestreamResources`](crate::model::TimestreamResources).
 pub mod timestream_resources {
 
@@ -5408,12 +5442,6 @@ pub mod timestream_resources {
                 timestream_table_name: self.timestream_table_name,
             }
         }
-    }
-}
-impl TimestreamResources {
-    /// Creates a new builder-style object to manufacture [`TimestreamResources`](crate::model::TimestreamResources).
-    pub fn builder() -> crate::model::timestream_resources::Builder {
-        crate::model::timestream_resources::Builder::default()
     }
 }
 
@@ -5539,6 +5567,13 @@ impl CloudWatchLogDeliveryOptions {
         self.log_group_name.as_deref()
     }
 }
+impl CloudWatchLogDeliveryOptions {
+    /// Creates a new builder-style object to manufacture [`CloudWatchLogDeliveryOptions`](crate::model::CloudWatchLogDeliveryOptions).
+    pub fn builder() -> crate::model::cloud_watch_log_delivery_options::Builder {
+        crate::model::cloud_watch_log_delivery_options::Builder::default()
+    }
+}
+
 /// See [`CloudWatchLogDeliveryOptions`](crate::model::CloudWatchLogDeliveryOptions).
 pub mod cloud_watch_log_delivery_options {
 
@@ -5580,12 +5615,6 @@ pub mod cloud_watch_log_delivery_options {
                 log_group_name: self.log_group_name,
             }
         }
-    }
-}
-impl CloudWatchLogDeliveryOptions {
-    /// Creates a new builder-style object to manufacture [`CloudWatchLogDeliveryOptions`](crate::model::CloudWatchLogDeliveryOptions).
-    pub fn builder() -> crate::model::cloud_watch_log_delivery_options::Builder {
-        crate::model::cloud_watch_log_delivery_options::Builder::default()
     }
 }
 
@@ -5721,6 +5750,13 @@ impl VehicleStatus {
         self.status.as_ref()
     }
 }
+impl VehicleStatus {
+    /// Creates a new builder-style object to manufacture [`VehicleStatus`](crate::model::VehicleStatus).
+    pub fn builder() -> crate::model::vehicle_status::Builder {
+        crate::model::vehicle_status::Builder::default()
+    }
+}
+
 /// See [`VehicleStatus`](crate::model::VehicleStatus).
 pub mod vehicle_status {
 
@@ -5791,12 +5827,6 @@ pub mod vehicle_status {
                 status: self.status,
             }
         }
-    }
-}
-impl VehicleStatus {
-    /// Creates a new builder-style object to manufacture [`VehicleStatus`](crate::model::VehicleStatus).
-    pub fn builder() -> crate::model::vehicle_status::Builder {
-        crate::model::vehicle_status::Builder::default()
     }
 }
 
@@ -5933,6 +5963,13 @@ impl IamRegistrationResponse {
         self.error_message.as_deref()
     }
 }
+impl IamRegistrationResponse {
+    /// Creates a new builder-style object to manufacture [`IamRegistrationResponse`](crate::model::IamRegistrationResponse).
+    pub fn builder() -> crate::model::iam_registration_response::Builder {
+        crate::model::iam_registration_response::Builder::default()
+    }
+}
+
 /// See [`IamRegistrationResponse`](crate::model::IamRegistrationResponse).
 pub mod iam_registration_response {
 
@@ -5991,12 +6028,6 @@ pub mod iam_registration_response {
         }
     }
 }
-impl IamRegistrationResponse {
-    /// Creates a new builder-style object to manufacture [`IamRegistrationResponse`](crate::model::IamRegistrationResponse).
-    pub fn builder() -> crate::model::iam_registration_response::Builder {
-        crate::model::iam_registration_response::Builder::default()
-    }
-}
 
 /// <p>Information about the registered Amazon Timestream resources or errors, if any.</p>
 #[non_exhaustive]
@@ -6047,6 +6078,13 @@ impl TimestreamRegistrationResponse {
         self.error_message.as_deref()
     }
 }
+impl TimestreamRegistrationResponse {
+    /// Creates a new builder-style object to manufacture [`TimestreamRegistrationResponse`](crate::model::TimestreamRegistrationResponse).
+    pub fn builder() -> crate::model::timestream_registration_response::Builder {
+        crate::model::timestream_registration_response::Builder::default()
+    }
+}
+
 /// See [`TimestreamRegistrationResponse`](crate::model::TimestreamRegistrationResponse).
 pub mod timestream_registration_response {
 
@@ -6153,12 +6191,6 @@ pub mod timestream_registration_response {
         }
     }
 }
-impl TimestreamRegistrationResponse {
-    /// Creates a new builder-style object to manufacture [`TimestreamRegistrationResponse`](crate::model::TimestreamRegistrationResponse).
-    pub fn builder() -> crate::model::timestream_registration_response::Builder {
-        crate::model::timestream_registration_response::Builder::default()
-    }
-}
 
 /// <p>An HTTP error resulting from updating the description for a vehicle.</p>
 #[non_exhaustive]
@@ -6188,6 +6220,13 @@ impl UpdateVehicleError {
         self.message.as_deref()
     }
 }
+impl UpdateVehicleError {
+    /// Creates a new builder-style object to manufacture [`UpdateVehicleError`](crate::model::UpdateVehicleError).
+    pub fn builder() -> crate::model::update_vehicle_error::Builder {
+        crate::model::update_vehicle_error::Builder::default()
+    }
+}
+
 /// See [`UpdateVehicleError`](crate::model::UpdateVehicleError).
 pub mod update_vehicle_error {
 
@@ -6240,12 +6279,6 @@ pub mod update_vehicle_error {
         }
     }
 }
-impl UpdateVehicleError {
-    /// Creates a new builder-style object to manufacture [`UpdateVehicleError`](crate::model::UpdateVehicleError).
-    pub fn builder() -> crate::model::update_vehicle_error::Builder {
-        crate::model::update_vehicle_error::Builder::default()
-    }
-}
 
 /// <p>Information about the updated vehicle.</p>
 #[non_exhaustive]
@@ -6268,6 +6301,13 @@ impl UpdateVehicleResponseItem {
         self.arn.as_deref()
     }
 }
+impl UpdateVehicleResponseItem {
+    /// Creates a new builder-style object to manufacture [`UpdateVehicleResponseItem`](crate::model::UpdateVehicleResponseItem).
+    pub fn builder() -> crate::model::update_vehicle_response_item::Builder {
+        crate::model::update_vehicle_response_item::Builder::default()
+    }
+}
+
 /// See [`UpdateVehicleResponseItem`](crate::model::UpdateVehicleResponseItem).
 pub mod update_vehicle_response_item {
 
@@ -6306,12 +6346,6 @@ pub mod update_vehicle_response_item {
                 arn: self.arn,
             }
         }
-    }
-}
-impl UpdateVehicleResponseItem {
-    /// Creates a new builder-style object to manufacture [`UpdateVehicleResponseItem`](crate::model::UpdateVehicleResponseItem).
-    pub fn builder() -> crate::model::update_vehicle_response_item::Builder {
-        crate::model::update_vehicle_response_item::Builder::default()
     }
 }
 
@@ -6365,6 +6399,13 @@ impl UpdateVehicleRequestItem {
         self.attribute_update_mode.as_ref()
     }
 }
+impl UpdateVehicleRequestItem {
+    /// Creates a new builder-style object to manufacture [`UpdateVehicleRequestItem`](crate::model::UpdateVehicleRequestItem).
+    pub fn builder() -> crate::model::update_vehicle_request_item::Builder {
+        crate::model::update_vehicle_request_item::Builder::default()
+    }
+}
+
 /// See [`UpdateVehicleRequestItem`](crate::model::UpdateVehicleRequestItem).
 pub mod update_vehicle_request_item {
 
@@ -6471,12 +6512,6 @@ pub mod update_vehicle_request_item {
         }
     }
 }
-impl UpdateVehicleRequestItem {
-    /// Creates a new builder-style object to manufacture [`UpdateVehicleRequestItem`](crate::model::UpdateVehicleRequestItem).
-    pub fn builder() -> crate::model::update_vehicle_request_item::Builder {
-        crate::model::update_vehicle_request_item::Builder::default()
-    }
-}
 
 /// <p>An HTTP error resulting from creating a vehicle.</p>
 #[non_exhaustive]
@@ -6506,6 +6541,13 @@ impl CreateVehicleError {
         self.message.as_deref()
     }
 }
+impl CreateVehicleError {
+    /// Creates a new builder-style object to manufacture [`CreateVehicleError`](crate::model::CreateVehicleError).
+    pub fn builder() -> crate::model::create_vehicle_error::Builder {
+        crate::model::create_vehicle_error::Builder::default()
+    }
+}
+
 /// See [`CreateVehicleError`](crate::model::CreateVehicleError).
 pub mod create_vehicle_error {
 
@@ -6558,12 +6600,6 @@ pub mod create_vehicle_error {
         }
     }
 }
-impl CreateVehicleError {
-    /// Creates a new builder-style object to manufacture [`CreateVehicleError`](crate::model::CreateVehicleError).
-    pub fn builder() -> crate::model::create_vehicle_error::Builder {
-        crate::model::create_vehicle_error::Builder::default()
-    }
-}
 
 /// <p>Information about a created vehicle.</p>
 #[non_exhaustive]
@@ -6593,6 +6629,13 @@ impl CreateVehicleResponseItem {
         self.thing_arn.as_deref()
     }
 }
+impl CreateVehicleResponseItem {
+    /// Creates a new builder-style object to manufacture [`CreateVehicleResponseItem`](crate::model::CreateVehicleResponseItem).
+    pub fn builder() -> crate::model::create_vehicle_response_item::Builder {
+        crate::model::create_vehicle_response_item::Builder::default()
+    }
+}
+
 /// See [`CreateVehicleResponseItem`](crate::model::CreateVehicleResponseItem).
 pub mod create_vehicle_response_item {
 
@@ -6643,12 +6686,6 @@ pub mod create_vehicle_response_item {
                 thing_arn: self.thing_arn,
             }
         }
-    }
-}
-impl CreateVehicleResponseItem {
-    /// Creates a new builder-style object to manufacture [`CreateVehicleResponseItem`](crate::model::CreateVehicleResponseItem).
-    pub fn builder() -> crate::model::create_vehicle_response_item::Builder {
-        crate::model::create_vehicle_response_item::Builder::default()
     }
 }
 
@@ -6707,6 +6744,13 @@ impl CreateVehicleRequestItem {
         self.tags.as_deref()
     }
 }
+impl CreateVehicleRequestItem {
+    /// Creates a new builder-style object to manufacture [`CreateVehicleRequestItem`](crate::model::CreateVehicleRequestItem).
+    pub fn builder() -> crate::model::create_vehicle_request_item::Builder {
+        crate::model::create_vehicle_request_item::Builder::default()
+    }
+}
+
 /// See [`CreateVehicleRequestItem`](crate::model::CreateVehicleRequestItem).
 pub mod create_vehicle_request_item {
 
@@ -6832,11 +6876,5 @@ pub mod create_vehicle_request_item {
                 tags: self.tags,
             }
         }
-    }
-}
-impl CreateVehicleRequestItem {
-    /// Creates a new builder-style object to manufacture [`CreateVehicleRequestItem`](crate::model::CreateVehicleRequestItem).
-    pub fn builder() -> crate::model::create_vehicle_request_item::Builder {
-        crate::model::create_vehicle_request_item::Builder::default()
     }
 }

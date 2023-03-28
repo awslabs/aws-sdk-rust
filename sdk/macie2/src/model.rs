@@ -30,6 +30,13 @@ impl SensitivityInspectionTemplateIncludes {
         self.managed_data_identifier_ids.as_deref()
     }
 }
+impl SensitivityInspectionTemplateIncludes {
+    /// Creates a new builder-style object to manufacture [`SensitivityInspectionTemplateIncludes`](crate::model::SensitivityInspectionTemplateIncludes).
+    pub fn builder() -> crate::model::sensitivity_inspection_template_includes::Builder {
+        crate::model::sensitivity_inspection_template_includes::Builder::default()
+    }
+}
+
 /// See [`SensitivityInspectionTemplateIncludes`](crate::model::SensitivityInspectionTemplateIncludes).
 pub mod sensitivity_inspection_template_includes {
 
@@ -116,12 +123,6 @@ pub mod sensitivity_inspection_template_includes {
         }
     }
 }
-impl SensitivityInspectionTemplateIncludes {
-    /// Creates a new builder-style object to manufacture [`SensitivityInspectionTemplateIncludes`](crate::model::SensitivityInspectionTemplateIncludes).
-    pub fn builder() -> crate::model::sensitivity_inspection_template_includes::Builder {
-        crate::model::sensitivity_inspection_template_includes::Builder::default()
-    }
-}
 
 /// <p>Specifies managed data identifiers to exclude (not use) when performing automated sensitive data discovery for an Amazon Macie account. For information about the managed data identifiers that Amazon Macie currently provides, see <a href="https://docs.aws.amazon.com/macie/latest/user/managed-data-identifiers.html">Using managed data identifiers</a> in the <i>Amazon Macie User Guide</i>.</p>
 #[non_exhaustive]
@@ -137,6 +138,13 @@ impl SensitivityInspectionTemplateExcludes {
         self.managed_data_identifier_ids.as_deref()
     }
 }
+impl SensitivityInspectionTemplateExcludes {
+    /// Creates a new builder-style object to manufacture [`SensitivityInspectionTemplateExcludes`](crate::model::SensitivityInspectionTemplateExcludes).
+    pub fn builder() -> crate::model::sensitivity_inspection_template_excludes::Builder {
+        crate::model::sensitivity_inspection_template_excludes::Builder::default()
+    }
+}
+
 /// See [`SensitivityInspectionTemplateExcludes`](crate::model::SensitivityInspectionTemplateExcludes).
 pub mod sensitivity_inspection_template_excludes {
 
@@ -178,12 +186,6 @@ pub mod sensitivity_inspection_template_excludes {
         }
     }
 }
-impl SensitivityInspectionTemplateExcludes {
-    /// Creates a new builder-style object to manufacture [`SensitivityInspectionTemplateExcludes`](crate::model::SensitivityInspectionTemplateExcludes).
-    pub fn builder() -> crate::model::sensitivity_inspection_template_excludes::Builder {
-        crate::model::sensitivity_inspection_template_excludes::Builder::default()
-    }
-}
 
 /// <p>Specifies the configuration settings for retrieving occurrences of sensitive data reported by findings, and the status of the configuration for an Amazon Macie account. When you enable the configuration for the first time, your request must specify an Key Management Service (KMS) key. Otherwise, an error occurs. Macie uses the specified key to encrypt the sensitive data that you retrieve.</p>
 #[non_exhaustive]
@@ -208,6 +210,13 @@ impl RevealConfiguration {
         self.status.as_ref()
     }
 }
+impl RevealConfiguration {
+    /// Creates a new builder-style object to manufacture [`RevealConfiguration`](crate::model::RevealConfiguration).
+    pub fn builder() -> crate::model::reveal_configuration::Builder {
+        crate::model::reveal_configuration::Builder::default()
+    }
+}
+
 /// See [`RevealConfiguration`](crate::model::RevealConfiguration).
 pub mod reveal_configuration {
 
@@ -251,12 +260,6 @@ pub mod reveal_configuration {
                 status: self.status,
             }
         }
-    }
-}
-impl RevealConfiguration {
-    /// Creates a new builder-style object to manufacture [`RevealConfiguration`](crate::model::RevealConfiguration).
-    pub fn builder() -> crate::model::reveal_configuration::Builder {
-        crate::model::reveal_configuration::Builder::default()
     }
 }
 
@@ -371,6 +374,13 @@ impl SuppressDataIdentifier {
         self.r#type.as_ref()
     }
 }
+impl SuppressDataIdentifier {
+    /// Creates a new builder-style object to manufacture [`SuppressDataIdentifier`](crate::model::SuppressDataIdentifier).
+    pub fn builder() -> crate::model::suppress_data_identifier::Builder {
+        crate::model::suppress_data_identifier::Builder::default()
+    }
+}
+
 /// See [`SuppressDataIdentifier`](crate::model::SuppressDataIdentifier).
 pub mod suppress_data_identifier {
 
@@ -412,12 +422,6 @@ pub mod suppress_data_identifier {
                 r#type: self.r#type,
             }
         }
-    }
-}
-impl SuppressDataIdentifier {
-    /// Creates a new builder-style object to manufacture [`SuppressDataIdentifier`](crate::model::SuppressDataIdentifier).
-    pub fn builder() -> crate::model::suppress_data_identifier::Builder {
-        crate::model::suppress_data_identifier::Builder::default()
     }
 }
 
@@ -723,6 +727,13 @@ impl FindingCriteria {
         self.criterion.as_ref()
     }
 }
+impl FindingCriteria {
+    /// Creates a new builder-style object to manufacture [`FindingCriteria`](crate::model::FindingCriteria).
+    pub fn builder() -> crate::model::finding_criteria::Builder {
+        crate::model::finding_criteria::Builder::default()
+    }
+}
+
 /// See [`FindingCriteria`](crate::model::FindingCriteria).
 pub mod finding_criteria {
 
@@ -772,12 +783,6 @@ pub mod finding_criteria {
                 criterion: self.criterion,
             }
         }
-    }
-}
-impl FindingCriteria {
-    /// Creates a new builder-style object to manufacture [`FindingCriteria`](crate::model::FindingCriteria).
-    pub fn builder() -> crate::model::finding_criteria::Builder {
-        crate::model::finding_criteria::Builder::default()
     }
 }
 
@@ -839,6 +844,13 @@ impl CriterionAdditionalProperties {
         self.neq.as_deref()
     }
 }
+impl CriterionAdditionalProperties {
+    /// Creates a new builder-style object to manufacture [`CriterionAdditionalProperties`](crate::model::CriterionAdditionalProperties).
+    pub fn builder() -> crate::model::criterion_additional_properties::Builder {
+        crate::model::criterion_additional_properties::Builder::default()
+    }
+}
+
 /// See [`CriterionAdditionalProperties`](crate::model::CriterionAdditionalProperties).
 pub mod criterion_additional_properties {
 
@@ -968,12 +980,6 @@ pub mod criterion_additional_properties {
         }
     }
 }
-impl CriterionAdditionalProperties {
-    /// Creates a new builder-style object to manufacture [`CriterionAdditionalProperties`](crate::model::CriterionAdditionalProperties).
-    pub fn builder() -> crate::model::criterion_additional_properties::Builder {
-        crate::model::criterion_additional_properties::Builder::default()
-    }
-}
 
 /// When writing a match expression against `FindingsFilterAction`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -1083,6 +1089,13 @@ impl S3ClassificationScopeUpdate {
         self.excludes.as_ref()
     }
 }
+impl S3ClassificationScopeUpdate {
+    /// Creates a new builder-style object to manufacture [`S3ClassificationScopeUpdate`](crate::model::S3ClassificationScopeUpdate).
+    pub fn builder() -> crate::model::s3_classification_scope_update::Builder {
+        crate::model::s3_classification_scope_update::Builder::default()
+    }
+}
+
 /// See [`S3ClassificationScopeUpdate`](crate::model::S3ClassificationScopeUpdate).
 pub mod s3_classification_scope_update {
 
@@ -1116,12 +1129,6 @@ pub mod s3_classification_scope_update {
                 excludes: self.excludes,
             }
         }
-    }
-}
-impl S3ClassificationScopeUpdate {
-    /// Creates a new builder-style object to manufacture [`S3ClassificationScopeUpdate`](crate::model::S3ClassificationScopeUpdate).
-    pub fn builder() -> crate::model::s3_classification_scope_update::Builder {
-        crate::model::s3_classification_scope_update::Builder::default()
     }
 }
 
@@ -1158,6 +1165,13 @@ impl S3ClassificationScopeExclusionUpdate {
         self.operation.as_ref()
     }
 }
+impl S3ClassificationScopeExclusionUpdate {
+    /// Creates a new builder-style object to manufacture [`S3ClassificationScopeExclusionUpdate`](crate::model::S3ClassificationScopeExclusionUpdate).
+    pub fn builder() -> crate::model::s3_classification_scope_exclusion_update::Builder {
+        crate::model::s3_classification_scope_exclusion_update::Builder::default()
+    }
+}
+
 /// See [`S3ClassificationScopeExclusionUpdate`](crate::model::S3ClassificationScopeExclusionUpdate).
 pub mod s3_classification_scope_exclusion_update {
 
@@ -1221,12 +1235,6 @@ pub mod s3_classification_scope_exclusion_update {
                 operation: self.operation,
             }
         }
-    }
-}
-impl S3ClassificationScopeExclusionUpdate {
-    /// Creates a new builder-style object to manufacture [`S3ClassificationScopeExclusionUpdate`](crate::model::S3ClassificationScopeExclusionUpdate).
-    pub fn builder() -> crate::model::s3_classification_scope_exclusion_update::Builder {
-        crate::model::s3_classification_scope_exclusion_update::Builder::default()
     }
 }
 
@@ -1557,6 +1565,13 @@ impl AllowListCriteria {
         self.s3_words_list.as_ref()
     }
 }
+impl AllowListCriteria {
+    /// Creates a new builder-style object to manufacture [`AllowListCriteria`](crate::model::AllowListCriteria).
+    pub fn builder() -> crate::model::allow_list_criteria::Builder {
+        crate::model::allow_list_criteria::Builder::default()
+    }
+}
+
 /// See [`AllowListCriteria`](crate::model::AllowListCriteria).
 pub mod allow_list_criteria {
 
@@ -1600,12 +1615,6 @@ pub mod allow_list_criteria {
         }
     }
 }
-impl AllowListCriteria {
-    /// Creates a new builder-style object to manufacture [`AllowListCriteria`](crate::model::AllowListCriteria).
-    pub fn builder() -> crate::model::allow_list_criteria::Builder {
-        crate::model::allow_list_criteria::Builder::default()
-    }
-}
 
 /// <p>Provides information about an S3 object that lists specific text to ignore.</p>
 #[non_exhaustive]
@@ -1628,6 +1637,13 @@ impl S3WordsList {
         self.object_key.as_deref()
     }
 }
+impl S3WordsList {
+    /// Creates a new builder-style object to manufacture [`S3WordsList`](crate::model::S3WordsList).
+    pub fn builder() -> crate::model::s3_words_list::Builder {
+        crate::model::s3_words_list::Builder::default()
+    }
+}
+
 /// See [`S3WordsList`](crate::model::S3WordsList).
 pub mod s3_words_list {
 
@@ -1668,12 +1684,6 @@ pub mod s3_words_list {
         }
     }
 }
-impl S3WordsList {
-    /// Creates a new builder-style object to manufacture [`S3WordsList`](crate::model::S3WordsList).
-    pub fn builder() -> crate::model::s3_words_list::Builder {
-        crate::model::s3_words_list::Builder::default()
-    }
-}
 
 /// <p>Provides statistical data and other information about an Amazon Web Services resource that Amazon Macie monitors and analyzes for your account.</p>
 #[non_exhaustive]
@@ -1689,6 +1699,13 @@ impl MatchingResource {
         self.matching_bucket.as_ref()
     }
 }
+impl MatchingResource {
+    /// Creates a new builder-style object to manufacture [`MatchingResource`](crate::model::MatchingResource).
+    pub fn builder() -> crate::model::matching_resource::Builder {
+        crate::model::matching_resource::Builder::default()
+    }
+}
+
 /// See [`MatchingResource`](crate::model::MatchingResource).
 pub mod matching_resource {
 
@@ -1718,12 +1735,6 @@ pub mod matching_resource {
                 matching_bucket: self.matching_bucket,
             }
         }
-    }
-}
-impl MatchingResource {
-    /// Creates a new builder-style object to manufacture [`MatchingResource`](crate::model::MatchingResource).
-    pub fn builder() -> crate::model::matching_resource::Builder {
-        crate::model::matching_resource::Builder::default()
     }
 }
 
@@ -1855,6 +1866,13 @@ impl MatchingBucket {
         self.unclassifiable_object_size_in_bytes.as_ref()
     }
 }
+impl MatchingBucket {
+    /// Creates a new builder-style object to manufacture [`MatchingBucket`](crate::model::MatchingBucket).
+    pub fn builder() -> crate::model::matching_bucket::Builder {
+        crate::model::matching_bucket::Builder::default()
+    }
+}
+
 /// See [`MatchingBucket`](crate::model::MatchingBucket).
 pub mod matching_bucket {
 
@@ -2090,12 +2108,6 @@ pub mod matching_bucket {
         }
     }
 }
-impl MatchingBucket {
-    /// Creates a new builder-style object to manufacture [`MatchingBucket`](crate::model::MatchingBucket).
-    pub fn builder() -> crate::model::matching_bucket::Builder {
-        crate::model::matching_bucket::Builder::default()
-    }
-}
 
 /// <p>Provides information about the total storage size (in bytes) or number of objects that Amazon Macie can't analyze in one or more S3 buckets. In a BucketMetadata or MatchingBucket object, this data is for a specific bucket. In a GetBucketStatisticsResponse object, this data is aggregated for all the buckets in the query results. If versioning is enabled for a bucket, storage size values are based on the size of the latest version of each applicable object in the bucket.</p>
 #[non_exhaustive]
@@ -2125,6 +2137,13 @@ impl ObjectLevelStatistics {
         self.total
     }
 }
+impl ObjectLevelStatistics {
+    /// Creates a new builder-style object to manufacture [`ObjectLevelStatistics`](crate::model::ObjectLevelStatistics).
+    pub fn builder() -> crate::model::object_level_statistics::Builder {
+        crate::model::object_level_statistics::Builder::default()
+    }
+}
+
 /// See [`ObjectLevelStatistics`](crate::model::ObjectLevelStatistics).
 pub mod object_level_statistics {
 
@@ -2177,12 +2196,6 @@ pub mod object_level_statistics {
         }
     }
 }
-impl ObjectLevelStatistics {
-    /// Creates a new builder-style object to manufacture [`ObjectLevelStatistics`](crate::model::ObjectLevelStatistics).
-    pub fn builder() -> crate::model::object_level_statistics::Builder {
-        crate::model::object_level_statistics::Builder::default()
-    }
-}
 
 /// <p>Provides information about the number of objects that are in an S3 bucket and use certain types of server-side encryption, use client-side encryption, or aren't encrypted.</p>
 #[non_exhaustive]
@@ -2226,6 +2239,13 @@ impl ObjectCountByEncryptionType {
         self.unknown
     }
 }
+impl ObjectCountByEncryptionType {
+    /// Creates a new builder-style object to manufacture [`ObjectCountByEncryptionType`](crate::model::ObjectCountByEncryptionType).
+    pub fn builder() -> crate::model::object_count_by_encryption_type::Builder {
+        crate::model::object_count_by_encryption_type::Builder::default()
+    }
+}
+
 /// See [`ObjectCountByEncryptionType`](crate::model::ObjectCountByEncryptionType).
 pub mod object_count_by_encryption_type {
 
@@ -2302,12 +2322,6 @@ pub mod object_count_by_encryption_type {
         }
     }
 }
-impl ObjectCountByEncryptionType {
-    /// Creates a new builder-style object to manufacture [`ObjectCountByEncryptionType`](crate::model::ObjectCountByEncryptionType).
-    pub fn builder() -> crate::model::object_count_by_encryption_type::Builder {
-        crate::model::object_count_by_encryption_type::Builder::default()
-    }
-}
 
 /// <p>Specifies whether any one-time or recurring classification jobs are configured to analyze data in an S3 bucket, and, if so, the details of the job that ran most recently.</p>
 #[non_exhaustive]
@@ -2368,6 +2382,13 @@ impl JobDetails {
         self.last_job_run_time.as_ref()
     }
 }
+impl JobDetails {
+    /// Creates a new builder-style object to manufacture [`JobDetails`](crate::model::JobDetails).
+    pub fn builder() -> crate::model::job_details::Builder {
+        crate::model::job_details::Builder::default()
+    }
+}
+
 /// See [`JobDetails`](crate::model::JobDetails).
 pub mod job_details {
 
@@ -2463,12 +2484,6 @@ pub mod job_details {
                 last_job_run_time: self.last_job_run_time,
             }
         }
-    }
-}
-impl JobDetails {
-    /// Creates a new builder-style object to manufacture [`JobDetails`](crate::model::JobDetails).
-    pub fn builder() -> crate::model::job_details::Builder {
-        crate::model::job_details::Builder::default()
     }
 }
 
@@ -2772,6 +2787,13 @@ impl SearchResourcesSortCriteria {
         self.order_by.as_ref()
     }
 }
+impl SearchResourcesSortCriteria {
+    /// Creates a new builder-style object to manufacture [`SearchResourcesSortCriteria`](crate::model::SearchResourcesSortCriteria).
+    pub fn builder() -> crate::model::search_resources_sort_criteria::Builder {
+        crate::model::search_resources_sort_criteria::Builder::default()
+    }
+}
+
 /// See [`SearchResourcesSortCriteria`](crate::model::SearchResourcesSortCriteria).
 pub mod search_resources_sort_criteria {
 
@@ -2817,12 +2839,6 @@ pub mod search_resources_sort_criteria {
                 order_by: self.order_by,
             }
         }
-    }
-}
-impl SearchResourcesSortCriteria {
-    /// Creates a new builder-style object to manufacture [`SearchResourcesSortCriteria`](crate::model::SearchResourcesSortCriteria).
-    pub fn builder() -> crate::model::search_resources_sort_criteria::Builder {
-        crate::model::search_resources_sort_criteria::Builder::default()
     }
 }
 
@@ -3052,6 +3068,13 @@ impl SearchResourcesBucketCriteria {
         self.includes.as_ref()
     }
 }
+impl SearchResourcesBucketCriteria {
+    /// Creates a new builder-style object to manufacture [`SearchResourcesBucketCriteria`](crate::model::SearchResourcesBucketCriteria).
+    pub fn builder() -> crate::model::search_resources_bucket_criteria::Builder {
+        crate::model::search_resources_bucket_criteria::Builder::default()
+    }
+}
+
 /// See [`SearchResourcesBucketCriteria`](crate::model::SearchResourcesBucketCriteria).
 pub mod search_resources_bucket_criteria {
 
@@ -3098,12 +3121,6 @@ pub mod search_resources_bucket_criteria {
         }
     }
 }
-impl SearchResourcesBucketCriteria {
-    /// Creates a new builder-style object to manufacture [`SearchResourcesBucketCriteria`](crate::model::SearchResourcesBucketCriteria).
-    pub fn builder() -> crate::model::search_resources_bucket_criteria::Builder {
-        crate::model::search_resources_bucket_criteria::Builder::default()
-    }
-}
 
 /// <p>Specifies property- and tag-based conditions that define filter criteria for including or excluding Amazon Web Services resources from the query results.</p>
 #[non_exhaustive]
@@ -3119,6 +3136,13 @@ impl SearchResourcesCriteriaBlock {
         self.and.as_deref()
     }
 }
+impl SearchResourcesCriteriaBlock {
+    /// Creates a new builder-style object to manufacture [`SearchResourcesCriteriaBlock`](crate::model::SearchResourcesCriteriaBlock).
+    pub fn builder() -> crate::model::search_resources_criteria_block::Builder {
+        crate::model::search_resources_criteria_block::Builder::default()
+    }
+}
+
 /// See [`SearchResourcesCriteriaBlock`](crate::model::SearchResourcesCriteriaBlock).
 pub mod search_resources_criteria_block {
 
@@ -3154,12 +3178,6 @@ pub mod search_resources_criteria_block {
         }
     }
 }
-impl SearchResourcesCriteriaBlock {
-    /// Creates a new builder-style object to manufacture [`SearchResourcesCriteriaBlock`](crate::model::SearchResourcesCriteriaBlock).
-    pub fn builder() -> crate::model::search_resources_criteria_block::Builder {
-        crate::model::search_resources_criteria_block::Builder::default()
-    }
-}
 
 /// <p>Specifies a property- or tag-based filter condition for including or excluding Amazon Web Services resources from the query results.</p>
 #[non_exhaustive]
@@ -3184,6 +3202,13 @@ impl SearchResourcesCriteria {
         self.tag_criterion.as_ref()
     }
 }
+impl SearchResourcesCriteria {
+    /// Creates a new builder-style object to manufacture [`SearchResourcesCriteria`](crate::model::SearchResourcesCriteria).
+    pub fn builder() -> crate::model::search_resources_criteria::Builder {
+        crate::model::search_resources_criteria::Builder::default()
+    }
+}
+
 /// See [`SearchResourcesCriteria`](crate::model::SearchResourcesCriteria).
 pub mod search_resources_criteria {
 
@@ -3234,12 +3259,6 @@ pub mod search_resources_criteria {
         }
     }
 }
-impl SearchResourcesCriteria {
-    /// Creates a new builder-style object to manufacture [`SearchResourcesCriteria`](crate::model::SearchResourcesCriteria).
-    pub fn builder() -> crate::model::search_resources_criteria::Builder {
-        crate::model::search_resources_criteria::Builder::default()
-    }
-}
 
 /// <p>Specifies a tag-based filter condition that determines which Amazon Web Services resources are included or excluded from the query results.</p>
 #[non_exhaustive]
@@ -3265,6 +3284,13 @@ impl SearchResourcesTagCriterion {
         self.tag_values.as_deref()
     }
 }
+impl SearchResourcesTagCriterion {
+    /// Creates a new builder-style object to manufacture [`SearchResourcesTagCriterion`](crate::model::SearchResourcesTagCriterion).
+    pub fn builder() -> crate::model::search_resources_tag_criterion::Builder {
+        crate::model::search_resources_tag_criterion::Builder::default()
+    }
+}
+
 /// See [`SearchResourcesTagCriterion`](crate::model::SearchResourcesTagCriterion).
 pub mod search_resources_tag_criterion {
 
@@ -3320,12 +3346,6 @@ pub mod search_resources_tag_criterion {
         }
     }
 }
-impl SearchResourcesTagCriterion {
-    /// Creates a new builder-style object to manufacture [`SearchResourcesTagCriterion`](crate::model::SearchResourcesTagCriterion).
-    pub fn builder() -> crate::model::search_resources_tag_criterion::Builder {
-        crate::model::search_resources_tag_criterion::Builder::default()
-    }
-}
 
 /// <p>Specifies a tag key, a tag value, or a tag key and value (as a pair) to use in a tag-based filter condition for a query. Tag keys and values are case sensitive. Also, Amazon Macie doesn't support use of partial values or wildcard characters in tag-based filter conditions.</p>
 #[non_exhaustive]
@@ -3348,6 +3368,13 @@ impl SearchResourcesTagCriterionPair {
         self.value.as_deref()
     }
 }
+impl SearchResourcesTagCriterionPair {
+    /// Creates a new builder-style object to manufacture [`SearchResourcesTagCriterionPair`](crate::model::SearchResourcesTagCriterionPair).
+    pub fn builder() -> crate::model::search_resources_tag_criterion_pair::Builder {
+        crate::model::search_resources_tag_criterion_pair::Builder::default()
+    }
+}
+
 /// See [`SearchResourcesTagCriterionPair`](crate::model::SearchResourcesTagCriterionPair).
 pub mod search_resources_tag_criterion_pair {
 
@@ -3386,12 +3413,6 @@ pub mod search_resources_tag_criterion_pair {
                 value: self.value,
             }
         }
-    }
-}
-impl SearchResourcesTagCriterionPair {
-    /// Creates a new builder-style object to manufacture [`SearchResourcesTagCriterionPair`](crate::model::SearchResourcesTagCriterionPair).
-    pub fn builder() -> crate::model::search_resources_tag_criterion_pair::Builder {
-        crate::model::search_resources_tag_criterion_pair::Builder::default()
     }
 }
 
@@ -3529,6 +3550,13 @@ impl SearchResourcesSimpleCriterion {
         self.values.as_deref()
     }
 }
+impl SearchResourcesSimpleCriterion {
+    /// Creates a new builder-style object to manufacture [`SearchResourcesSimpleCriterion`](crate::model::SearchResourcesSimpleCriterion).
+    pub fn builder() -> crate::model::search_resources_simple_criterion::Builder {
+        crate::model::search_resources_simple_criterion::Builder::default()
+    }
+}
+
 /// See [`SearchResourcesSimpleCriterion`](crate::model::SearchResourcesSimpleCriterion).
 pub mod search_resources_simple_criterion {
 
@@ -3608,12 +3636,6 @@ pub mod search_resources_simple_criterion {
                 values: self.values,
             }
         }
-    }
-}
-impl SearchResourcesSimpleCriterion {
-    /// Creates a new builder-style object to manufacture [`SearchResourcesSimpleCriterion`](crate::model::SearchResourcesSimpleCriterion).
-    pub fn builder() -> crate::model::search_resources_simple_criterion::Builder {
-        crate::model::search_resources_simple_criterion::Builder::default()
     }
 }
 
@@ -3749,6 +3771,13 @@ impl SecurityHubConfiguration {
         self.publish_policy_findings
     }
 }
+impl SecurityHubConfiguration {
+    /// Creates a new builder-style object to manufacture [`SecurityHubConfiguration`](crate::model::SecurityHubConfiguration).
+    pub fn builder() -> crate::model::security_hub_configuration::Builder {
+        crate::model::security_hub_configuration::Builder::default()
+    }
+}
+
 /// See [`SecurityHubConfiguration`](crate::model::SecurityHubConfiguration).
 pub mod security_hub_configuration {
 
@@ -3794,12 +3823,6 @@ pub mod security_hub_configuration {
         }
     }
 }
-impl SecurityHubConfiguration {
-    /// Creates a new builder-style object to manufacture [`SecurityHubConfiguration`](crate::model::SecurityHubConfiguration).
-    pub fn builder() -> crate::model::security_hub_configuration::Builder {
-        crate::model::security_hub_configuration::Builder::default()
-    }
-}
 
 /// <p>Specifies where to store data classification results, and the encryption settings to use when storing results in that location. The location must be an S3 bucket.</p>
 #[non_exhaustive]
@@ -3815,6 +3838,13 @@ impl ClassificationExportConfiguration {
         self.s3_destination.as_ref()
     }
 }
+impl ClassificationExportConfiguration {
+    /// Creates a new builder-style object to manufacture [`ClassificationExportConfiguration`](crate::model::ClassificationExportConfiguration).
+    pub fn builder() -> crate::model::classification_export_configuration::Builder {
+        crate::model::classification_export_configuration::Builder::default()
+    }
+}
+
 /// See [`ClassificationExportConfiguration`](crate::model::ClassificationExportConfiguration).
 pub mod classification_export_configuration {
 
@@ -3846,12 +3876,6 @@ pub mod classification_export_configuration {
         }
     }
 }
-impl ClassificationExportConfiguration {
-    /// Creates a new builder-style object to manufacture [`ClassificationExportConfiguration`](crate::model::ClassificationExportConfiguration).
-    pub fn builder() -> crate::model::classification_export_configuration::Builder {
-        crate::model::classification_export_configuration::Builder::default()
-    }
-}
 
 /// <p>Specifies an S3 bucket to store data classification results in, and the encryption settings to use when storing results in that bucket.</p>
 #[non_exhaustive]
@@ -3881,6 +3905,13 @@ impl S3Destination {
         self.kms_key_arn.as_deref()
     }
 }
+impl S3Destination {
+    /// Creates a new builder-style object to manufacture [`S3Destination`](crate::model::S3Destination).
+    pub fn builder() -> crate::model::s3_destination::Builder {
+        crate::model::s3_destination::Builder::default()
+    }
+}
+
 /// See [`S3Destination`](crate::model::S3Destination).
 pub mod s3_destination {
 
@@ -3933,12 +3964,6 @@ pub mod s3_destination {
         }
     }
 }
-impl S3Destination {
-    /// Creates a new builder-style object to manufacture [`S3Destination`](crate::model::S3Destination).
-    pub fn builder() -> crate::model::s3_destination::Builder {
-        crate::model::s3_destination::Builder::default()
-    }
-}
 
 /// <p>Provides information about the sensitivity inspection template for an Amazon Macie account. Macie uses the template's settings when it performs automated sensitive data discovery for the account.</p>
 #[non_exhaustive]
@@ -3961,6 +3986,13 @@ impl SensitivityInspectionTemplatesEntry {
         self.name.as_deref()
     }
 }
+impl SensitivityInspectionTemplatesEntry {
+    /// Creates a new builder-style object to manufacture [`SensitivityInspectionTemplatesEntry`](crate::model::SensitivityInspectionTemplatesEntry).
+    pub fn builder() -> crate::model::sensitivity_inspection_templates_entry::Builder {
+        crate::model::sensitivity_inspection_templates_entry::Builder::default()
+    }
+}
+
 /// See [`SensitivityInspectionTemplatesEntry`](crate::model::SensitivityInspectionTemplatesEntry).
 pub mod sensitivity_inspection_templates_entry {
 
@@ -3999,12 +4031,6 @@ pub mod sensitivity_inspection_templates_entry {
                 name: self.name,
             }
         }
-    }
-}
-impl SensitivityInspectionTemplatesEntry {
-    /// Creates a new builder-style object to manufacture [`SensitivityInspectionTemplatesEntry`](crate::model::SensitivityInspectionTemplatesEntry).
-    pub fn builder() -> crate::model::sensitivity_inspection_templates_entry::Builder {
-        crate::model::sensitivity_inspection_templates_entry::Builder::default()
     }
 }
 
@@ -4057,6 +4083,13 @@ impl Detection {
         self.r#type.as_ref()
     }
 }
+impl Detection {
+    /// Creates a new builder-style object to manufacture [`Detection`](crate::model::Detection).
+    pub fn builder() -> crate::model::detection::Builder {
+        crate::model::detection::Builder::default()
+    }
+}
+
 /// See [`Detection`](crate::model::Detection).
 pub mod detection {
 
@@ -4148,12 +4181,6 @@ pub mod detection {
         }
     }
 }
-impl Detection {
-    /// Creates a new builder-style object to manufacture [`Detection`](crate::model::Detection).
-    pub fn builder() -> crate::model::detection::Builder {
-        crate::model::detection::Builder::default()
-    }
-}
 
 /// <p>Provides information about an S3 object that Amazon Macie selected for analysis while performing automated sensitive data discovery for an S3 bucket, and the status and results of the analysis. This information is available only if automated sensitive data discovery is currently enabled for your account.</p>
 #[non_exhaustive]
@@ -4193,6 +4220,13 @@ impl ResourceProfileArtifact {
         self.sensitive
     }
 }
+impl ResourceProfileArtifact {
+    /// Creates a new builder-style object to manufacture [`ResourceProfileArtifact`](crate::model::ResourceProfileArtifact).
+    pub fn builder() -> crate::model::resource_profile_artifact::Builder {
+        crate::model::resource_profile_artifact::Builder::default()
+    }
+}
+
 /// See [`ResourceProfileArtifact`](crate::model::ResourceProfileArtifact).
 pub mod resource_profile_artifact {
 
@@ -4261,12 +4295,6 @@ pub mod resource_profile_artifact {
         }
     }
 }
-impl ResourceProfileArtifact {
-    /// Creates a new builder-style object to manufacture [`ResourceProfileArtifact`](crate::model::ResourceProfileArtifact).
-    pub fn builder() -> crate::model::resource_profile_artifact::Builder {
-        crate::model::resource_profile_artifact::Builder::default()
-    }
-}
 
 /// <p>Provides information about the delegated Amazon Macie administrator account for an organization in Organizations.</p>
 #[non_exhaustive]
@@ -4289,6 +4317,13 @@ impl AdminAccount {
         self.status.as_ref()
     }
 }
+impl AdminAccount {
+    /// Creates a new builder-style object to manufacture [`AdminAccount`](crate::model::AdminAccount).
+    pub fn builder() -> crate::model::admin_account::Builder {
+        crate::model::admin_account::Builder::default()
+    }
+}
+
 /// See [`AdminAccount`](crate::model::AdminAccount).
 pub mod admin_account {
 
@@ -4327,12 +4362,6 @@ pub mod admin_account {
                 status: self.status,
             }
         }
-    }
-}
-impl AdminAccount {
-    /// Creates a new builder-style object to manufacture [`AdminAccount`](crate::model::AdminAccount).
-    pub fn builder() -> crate::model::admin_account::Builder {
-        crate::model::admin_account::Builder::default()
     }
 }
 
@@ -4500,6 +4529,13 @@ impl Member {
         self.updated_at.as_ref()
     }
 }
+impl Member {
+    /// Creates a new builder-style object to manufacture [`Member`](crate::model::Member).
+    pub fn builder() -> crate::model::member::Builder {
+        crate::model::member::Builder::default()
+    }
+}
+
 /// See [`Member`](crate::model::Member).
 pub mod member {
 
@@ -4654,12 +4690,6 @@ pub mod member {
                 updated_at: self.updated_at,
             }
         }
-    }
-}
-impl Member {
-    /// Creates a new builder-style object to manufacture [`Member`](crate::model::Member).
-    pub fn builder() -> crate::model::member::Builder {
-        crate::model::member::Builder::default()
     }
 }
 
@@ -4827,6 +4857,13 @@ impl ManagedDataIdentifierSummary {
         self.id.as_deref()
     }
 }
+impl ManagedDataIdentifierSummary {
+    /// Creates a new builder-style object to manufacture [`ManagedDataIdentifierSummary`](crate::model::ManagedDataIdentifierSummary).
+    pub fn builder() -> crate::model::managed_data_identifier_summary::Builder {
+        crate::model::managed_data_identifier_summary::Builder::default()
+    }
+}
+
 /// See [`ManagedDataIdentifierSummary`](crate::model::ManagedDataIdentifierSummary).
 pub mod managed_data_identifier_summary {
 
@@ -4868,12 +4905,6 @@ pub mod managed_data_identifier_summary {
                 id: self.id,
             }
         }
-    }
-}
-impl ManagedDataIdentifierSummary {
-    /// Creates a new builder-style object to manufacture [`ManagedDataIdentifierSummary`](crate::model::ManagedDataIdentifierSummary).
-    pub fn builder() -> crate::model::managed_data_identifier_summary::Builder {
-        crate::model::managed_data_identifier_summary::Builder::default()
     }
 }
 
@@ -5019,6 +5050,13 @@ impl Invitation {
         self.relationship_status.as_ref()
     }
 }
+impl Invitation {
+    /// Creates a new builder-style object to manufacture [`Invitation`](crate::model::Invitation).
+    pub fn builder() -> crate::model::invitation::Builder {
+        crate::model::invitation::Builder::default()
+    }
+}
+
 /// See [`Invitation`](crate::model::Invitation).
 pub mod invitation {
 
@@ -5092,12 +5130,6 @@ pub mod invitation {
         }
     }
 }
-impl Invitation {
-    /// Creates a new builder-style object to manufacture [`Invitation`](crate::model::Invitation).
-    pub fn builder() -> crate::model::invitation::Builder {
-        crate::model::invitation::Builder::default()
-    }
-}
 
 /// <p>Provides information about a findings filter.</p>
 #[non_exhaustive]
@@ -5145,6 +5177,13 @@ impl FindingsFilterListItem {
         self.tags.as_ref()
     }
 }
+impl FindingsFilterListItem {
+    /// Creates a new builder-style object to manufacture [`FindingsFilterListItem`](crate::model::FindingsFilterListItem).
+    pub fn builder() -> crate::model::findings_filter_list_item::Builder {
+        crate::model::findings_filter_list_item::Builder::default()
+    }
+}
+
 /// See [`FindingsFilterListItem`](crate::model::FindingsFilterListItem).
 pub mod findings_filter_list_item {
 
@@ -5241,12 +5280,6 @@ pub mod findings_filter_list_item {
         }
     }
 }
-impl FindingsFilterListItem {
-    /// Creates a new builder-style object to manufacture [`FindingsFilterListItem`](crate::model::FindingsFilterListItem).
-    pub fn builder() -> crate::model::findings_filter_list_item::Builder {
-        crate::model::findings_filter_list_item::Builder::default()
-    }
-}
 
 /// <p>Specifies criteria for sorting the results of a request for findings.</p>
 #[non_exhaustive]
@@ -5269,6 +5302,13 @@ impl SortCriteria {
         self.order_by.as_ref()
     }
 }
+impl SortCriteria {
+    /// Creates a new builder-style object to manufacture [`SortCriteria`](crate::model::SortCriteria).
+    pub fn builder() -> crate::model::sort_criteria::Builder {
+        crate::model::sort_criteria::Builder::default()
+    }
+}
+
 /// See [`SortCriteria`](crate::model::SortCriteria).
 pub mod sort_criteria {
 
@@ -5310,12 +5350,6 @@ pub mod sort_criteria {
                 order_by: self.order_by,
             }
         }
-    }
-}
-impl SortCriteria {
-    /// Creates a new builder-style object to manufacture [`SortCriteria`](crate::model::SortCriteria).
-    pub fn builder() -> crate::model::sort_criteria::Builder {
-        crate::model::sort_criteria::Builder::default()
     }
 }
 
@@ -5361,6 +5395,13 @@ impl CustomDataIdentifierSummary {
         self.name.as_deref()
     }
 }
+impl CustomDataIdentifierSummary {
+    /// Creates a new builder-style object to manufacture [`CustomDataIdentifierSummary`](crate::model::CustomDataIdentifierSummary).
+    pub fn builder() -> crate::model::custom_data_identifier_summary::Builder {
+        crate::model::custom_data_identifier_summary::Builder::default()
+    }
+}
+
 /// See [`CustomDataIdentifierSummary`](crate::model::CustomDataIdentifierSummary).
 pub mod custom_data_identifier_summary {
 
@@ -5440,12 +5481,6 @@ pub mod custom_data_identifier_summary {
         }
     }
 }
-impl CustomDataIdentifierSummary {
-    /// Creates a new builder-style object to manufacture [`CustomDataIdentifierSummary`](crate::model::CustomDataIdentifierSummary).
-    pub fn builder() -> crate::model::custom_data_identifier_summary::Builder {
-        crate::model::custom_data_identifier_summary::Builder::default()
-    }
-}
 
 /// <p>Provides information about the classification scope for an Amazon Macie account. Macie uses the scope's settings when it performs automated sensitive data discovery for the account.</p>
 #[non_exhaustive]
@@ -5468,6 +5503,13 @@ impl ClassificationScopeSummary {
         self.name.as_deref()
     }
 }
+impl ClassificationScopeSummary {
+    /// Creates a new builder-style object to manufacture [`ClassificationScopeSummary`](crate::model::ClassificationScopeSummary).
+    pub fn builder() -> crate::model::classification_scope_summary::Builder {
+        crate::model::classification_scope_summary::Builder::default()
+    }
+}
+
 /// See [`ClassificationScopeSummary`](crate::model::ClassificationScopeSummary).
 pub mod classification_scope_summary {
 
@@ -5506,12 +5548,6 @@ pub mod classification_scope_summary {
                 name: self.name,
             }
         }
-    }
-}
-impl ClassificationScopeSummary {
-    /// Creates a new builder-style object to manufacture [`ClassificationScopeSummary`](crate::model::ClassificationScopeSummary).
-    pub fn builder() -> crate::model::classification_scope_summary::Builder {
-        crate::model::classification_scope_summary::Builder::default()
     }
 }
 
@@ -5612,6 +5648,13 @@ impl JobSummary {
         self.user_paused_details.as_ref()
     }
 }
+impl JobSummary {
+    /// Creates a new builder-style object to manufacture [`JobSummary`](crate::model::JobSummary).
+    pub fn builder() -> crate::model::job_summary::Builder {
+        crate::model::job_summary::Builder::default()
+    }
+}
+
 /// See [`JobSummary`](crate::model::JobSummary).
 pub mod job_summary {
 
@@ -5785,12 +5828,6 @@ pub mod job_summary {
         }
     }
 }
-impl JobSummary {
-    /// Creates a new builder-style object to manufacture [`JobSummary`](crate::model::JobSummary).
-    pub fn builder() -> crate::model::job_summary::Builder {
-        crate::model::job_summary::Builder::default()
-    }
-}
 
 /// <p>Provides information about when a classification job was paused. For a one-time job, this object also specifies when the job will expire and be cancelled if it isn't resumed. For a recurring job, this object also specifies when the paused job run will expire and be cancelled if it isn't resumed. This object is present only if a job's current status (jobStatus) is USER_PAUSED. The information in this object applies only to a job that was paused while it had a status of RUNNING.</p>
 #[non_exhaustive]
@@ -5820,6 +5857,13 @@ impl UserPausedDetails {
         self.job_paused_at.as_ref()
     }
 }
+impl UserPausedDetails {
+    /// Creates a new builder-style object to manufacture [`UserPausedDetails`](crate::model::UserPausedDetails).
+    pub fn builder() -> crate::model::user_paused_details::Builder {
+        crate::model::user_paused_details::Builder::default()
+    }
+}
+
 /// See [`UserPausedDetails`](crate::model::UserPausedDetails).
 pub mod user_paused_details {
 
@@ -5886,12 +5930,6 @@ pub mod user_paused_details {
         }
     }
 }
-impl UserPausedDetails {
-    /// Creates a new builder-style object to manufacture [`UserPausedDetails`](crate::model::UserPausedDetails).
-    pub fn builder() -> crate::model::user_paused_details::Builder {
-        crate::model::user_paused_details::Builder::default()
-    }
-}
 
 /// <p>Specifies whether any account- or bucket-level access errors occurred when a classification job ran. For information about using logging data to investigate these errors, see <a href="https://docs.aws.amazon.com/macie/latest/user/discovery-jobs-monitor-cw-logs.html">Monitoring sensitive data discovery jobs</a> in the <i>Amazon Macie User Guide</i>.</p>
 #[non_exhaustive]
@@ -5915,6 +5953,13 @@ impl LastRunErrorStatus {
         self.code.as_ref()
     }
 }
+impl LastRunErrorStatus {
+    /// Creates a new builder-style object to manufacture [`LastRunErrorStatus`](crate::model::LastRunErrorStatus).
+    pub fn builder() -> crate::model::last_run_error_status::Builder {
+        crate::model::last_run_error_status::Builder::default()
+    }
+}
+
 /// See [`LastRunErrorStatus`](crate::model::LastRunErrorStatus).
 pub mod last_run_error_status {
 
@@ -5950,12 +5995,6 @@ pub mod last_run_error_status {
         pub fn build(self) -> crate::model::LastRunErrorStatus {
             crate::model::LastRunErrorStatus { code: self.code }
         }
-    }
-}
-impl LastRunErrorStatus {
-    /// Creates a new builder-style object to manufacture [`LastRunErrorStatus`](crate::model::LastRunErrorStatus).
-    pub fn builder() -> crate::model::last_run_error_status::Builder {
-        crate::model::last_run_error_status::Builder::default()
     }
 }
 
@@ -6162,6 +6201,13 @@ impl S3BucketDefinitionForJob {
         self.buckets.as_deref()
     }
 }
+impl S3BucketDefinitionForJob {
+    /// Creates a new builder-style object to manufacture [`S3BucketDefinitionForJob`](crate::model::S3BucketDefinitionForJob).
+    pub fn builder() -> crate::model::s3_bucket_definition_for_job::Builder {
+        crate::model::s3_bucket_definition_for_job::Builder::default()
+    }
+}
+
 /// See [`S3BucketDefinitionForJob`](crate::model::S3BucketDefinitionForJob).
 pub mod s3_bucket_definition_for_job {
 
@@ -6211,12 +6257,6 @@ pub mod s3_bucket_definition_for_job {
         }
     }
 }
-impl S3BucketDefinitionForJob {
-    /// Creates a new builder-style object to manufacture [`S3BucketDefinitionForJob`](crate::model::S3BucketDefinitionForJob).
-    pub fn builder() -> crate::model::s3_bucket_definition_for_job::Builder {
-        crate::model::s3_bucket_definition_for_job::Builder::default()
-    }
-}
 
 /// <p>Specifies property- and tag-based conditions that define criteria for including or excluding S3 buckets from a classification job. Exclude conditions take precedence over include conditions.</p>
 #[non_exhaustive]
@@ -6239,6 +6279,13 @@ impl S3BucketCriteriaForJob {
         self.includes.as_ref()
     }
 }
+impl S3BucketCriteriaForJob {
+    /// Creates a new builder-style object to manufacture [`S3BucketCriteriaForJob`](crate::model::S3BucketCriteriaForJob).
+    pub fn builder() -> crate::model::s3_bucket_criteria_for_job::Builder {
+        crate::model::s3_bucket_criteria_for_job::Builder::default()
+    }
+}
+
 /// See [`S3BucketCriteriaForJob`](crate::model::S3BucketCriteriaForJob).
 pub mod s3_bucket_criteria_for_job {
 
@@ -6285,12 +6332,6 @@ pub mod s3_bucket_criteria_for_job {
         }
     }
 }
-impl S3BucketCriteriaForJob {
-    /// Creates a new builder-style object to manufacture [`S3BucketCriteriaForJob`](crate::model::S3BucketCriteriaForJob).
-    pub fn builder() -> crate::model::s3_bucket_criteria_for_job::Builder {
-        crate::model::s3_bucket_criteria_for_job::Builder::default()
-    }
-}
 
 /// <p>Specifies one or more property- and tag-based conditions that define criteria for including or excluding S3 buckets from a classification job.</p>
 #[non_exhaustive]
@@ -6306,6 +6347,13 @@ impl CriteriaBlockForJob {
         self.and.as_deref()
     }
 }
+impl CriteriaBlockForJob {
+    /// Creates a new builder-style object to manufacture [`CriteriaBlockForJob`](crate::model::CriteriaBlockForJob).
+    pub fn builder() -> crate::model::criteria_block_for_job::Builder {
+        crate::model::criteria_block_for_job::Builder::default()
+    }
+}
+
 /// See [`CriteriaBlockForJob`](crate::model::CriteriaBlockForJob).
 pub mod criteria_block_for_job {
 
@@ -6341,12 +6389,6 @@ pub mod criteria_block_for_job {
         }
     }
 }
-impl CriteriaBlockForJob {
-    /// Creates a new builder-style object to manufacture [`CriteriaBlockForJob`](crate::model::CriteriaBlockForJob).
-    pub fn builder() -> crate::model::criteria_block_for_job::Builder {
-        crate::model::criteria_block_for_job::Builder::default()
-    }
-}
 
 /// <p>Specifies a property- or tag-based condition that defines criteria for including or excluding S3 buckets from a classification job.</p>
 #[non_exhaustive]
@@ -6369,6 +6411,13 @@ impl CriteriaForJob {
         self.tag_criterion.as_ref()
     }
 }
+impl CriteriaForJob {
+    /// Creates a new builder-style object to manufacture [`CriteriaForJob`](crate::model::CriteriaForJob).
+    pub fn builder() -> crate::model::criteria_for_job::Builder {
+        crate::model::criteria_for_job::Builder::default()
+    }
+}
+
 /// See [`CriteriaForJob`](crate::model::CriteriaForJob).
 pub mod criteria_for_job {
 
@@ -6415,12 +6464,6 @@ pub mod criteria_for_job {
         }
     }
 }
-impl CriteriaForJob {
-    /// Creates a new builder-style object to manufacture [`CriteriaForJob`](crate::model::CriteriaForJob).
-    pub fn builder() -> crate::model::criteria_for_job::Builder {
-        crate::model::criteria_for_job::Builder::default()
-    }
-}
 
 /// <p>Specifies a tag-based condition that determines whether an S3 bucket is included or excluded from a classification job.</p>
 #[non_exhaustive]
@@ -6443,6 +6486,13 @@ impl TagCriterionForJob {
         self.tag_values.as_deref()
     }
 }
+impl TagCriterionForJob {
+    /// Creates a new builder-style object to manufacture [`TagCriterionForJob`](crate::model::TagCriterionForJob).
+    pub fn builder() -> crate::model::tag_criterion_for_job::Builder {
+        crate::model::tag_criterion_for_job::Builder::default()
+    }
+}
+
 /// See [`TagCriterionForJob`](crate::model::TagCriterionForJob).
 pub mod tag_criterion_for_job {
 
@@ -6496,12 +6546,6 @@ pub mod tag_criterion_for_job {
         }
     }
 }
-impl TagCriterionForJob {
-    /// Creates a new builder-style object to manufacture [`TagCriterionForJob`](crate::model::TagCriterionForJob).
-    pub fn builder() -> crate::model::tag_criterion_for_job::Builder {
-        crate::model::tag_criterion_for_job::Builder::default()
-    }
-}
 
 /// <p>Specifies a tag key, a tag value, or a tag key and value (as a pair) to use in a tag-based condition that determines whether an S3 bucket is included or excluded from a classification job. Tag keys and values are case sensitive. Also, Amazon Macie doesn't support use of partial values or wildcard characters in tag-based conditions.</p>
 #[non_exhaustive]
@@ -6524,6 +6568,13 @@ impl TagCriterionPairForJob {
         self.value.as_deref()
     }
 }
+impl TagCriterionPairForJob {
+    /// Creates a new builder-style object to manufacture [`TagCriterionPairForJob`](crate::model::TagCriterionPairForJob).
+    pub fn builder() -> crate::model::tag_criterion_pair_for_job::Builder {
+        crate::model::tag_criterion_pair_for_job::Builder::default()
+    }
+}
+
 /// See [`TagCriterionPairForJob`](crate::model::TagCriterionPairForJob).
 pub mod tag_criterion_pair_for_job {
 
@@ -6562,12 +6613,6 @@ pub mod tag_criterion_pair_for_job {
                 value: self.value,
             }
         }
-    }
-}
-impl TagCriterionPairForJob {
-    /// Creates a new builder-style object to manufacture [`TagCriterionPairForJob`](crate::model::TagCriterionPairForJob).
-    pub fn builder() -> crate::model::tag_criterion_pair_for_job::Builder {
-        crate::model::tag_criterion_pair_for_job::Builder::default()
     }
 }
 
@@ -6742,6 +6787,13 @@ impl SimpleCriterionForJob {
         self.values.as_deref()
     }
 }
+impl SimpleCriterionForJob {
+    /// Creates a new builder-style object to manufacture [`SimpleCriterionForJob`](crate::model::SimpleCriterionForJob).
+    pub fn builder() -> crate::model::simple_criterion_for_job::Builder {
+        crate::model::simple_criterion_for_job::Builder::default()
+    }
+}
+
 /// See [`SimpleCriterionForJob`](crate::model::SimpleCriterionForJob).
 pub mod simple_criterion_for_job {
 
@@ -6821,12 +6873,6 @@ pub mod simple_criterion_for_job {
                 values: self.values,
             }
         }
-    }
-}
-impl SimpleCriterionForJob {
-    /// Creates a new builder-style object to manufacture [`SimpleCriterionForJob`](crate::model::SimpleCriterionForJob).
-    pub fn builder() -> crate::model::simple_criterion_for_job::Builder {
-        crate::model::simple_criterion_for_job::Builder::default()
     }
 }
 
@@ -6962,6 +7008,13 @@ impl ListJobsSortCriteria {
         self.order_by.as_ref()
     }
 }
+impl ListJobsSortCriteria {
+    /// Creates a new builder-style object to manufacture [`ListJobsSortCriteria`](crate::model::ListJobsSortCriteria).
+    pub fn builder() -> crate::model::list_jobs_sort_criteria::Builder {
+        crate::model::list_jobs_sort_criteria::Builder::default()
+    }
+}
+
 /// See [`ListJobsSortCriteria`](crate::model::ListJobsSortCriteria).
 pub mod list_jobs_sort_criteria {
 
@@ -7003,12 +7056,6 @@ pub mod list_jobs_sort_criteria {
                 order_by: self.order_by,
             }
         }
-    }
-}
-impl ListJobsSortCriteria {
-    /// Creates a new builder-style object to manufacture [`ListJobsSortCriteria`](crate::model::ListJobsSortCriteria).
-    pub fn builder() -> crate::model::list_jobs_sort_criteria::Builder {
-        crate::model::list_jobs_sort_criteria::Builder::default()
     }
 }
 
@@ -7135,6 +7182,13 @@ impl ListJobsFilterCriteria {
         self.includes.as_deref()
     }
 }
+impl ListJobsFilterCriteria {
+    /// Creates a new builder-style object to manufacture [`ListJobsFilterCriteria`](crate::model::ListJobsFilterCriteria).
+    pub fn builder() -> crate::model::list_jobs_filter_criteria::Builder {
+        crate::model::list_jobs_filter_criteria::Builder::default()
+    }
+}
+
 /// See [`ListJobsFilterCriteria`](crate::model::ListJobsFilterCriteria).
 pub mod list_jobs_filter_criteria {
 
@@ -7193,12 +7247,6 @@ pub mod list_jobs_filter_criteria {
         }
     }
 }
-impl ListJobsFilterCriteria {
-    /// Creates a new builder-style object to manufacture [`ListJobsFilterCriteria`](crate::model::ListJobsFilterCriteria).
-    pub fn builder() -> crate::model::list_jobs_filter_criteria::Builder {
-        crate::model::list_jobs_filter_criteria::Builder::default()
-    }
-}
 
 /// <p>Specifies a condition that filters the results of a request for information about classification jobs. Each condition consists of a property, an operator, and one or more values.</p>
 #[non_exhaustive]
@@ -7228,6 +7276,13 @@ impl ListJobsFilterTerm {
         self.values.as_deref()
     }
 }
+impl ListJobsFilterTerm {
+    /// Creates a new builder-style object to manufacture [`ListJobsFilterTerm`](crate::model::ListJobsFilterTerm).
+    pub fn builder() -> crate::model::list_jobs_filter_term::Builder {
+        crate::model::list_jobs_filter_term::Builder::default()
+    }
+}
+
 /// See [`ListJobsFilterTerm`](crate::model::ListJobsFilterTerm).
 pub mod list_jobs_filter_term {
 
@@ -7293,12 +7348,6 @@ pub mod list_jobs_filter_term {
                 values: self.values,
             }
         }
-    }
-}
-impl ListJobsFilterTerm {
-    /// Creates a new builder-style object to manufacture [`ListJobsFilterTerm`](crate::model::ListJobsFilterTerm).
-    pub fn builder() -> crate::model::list_jobs_filter_term::Builder {
-        crate::model::list_jobs_filter_term::Builder::default()
     }
 }
 
@@ -7453,6 +7502,13 @@ impl AllowListSummary {
         self.updated_at.as_ref()
     }
 }
+impl AllowListSummary {
+    /// Creates a new builder-style object to manufacture [`AllowListSummary`](crate::model::AllowListSummary).
+    pub fn builder() -> crate::model::allow_list_summary::Builder {
+        crate::model::allow_list_summary::Builder::default()
+    }
+}
+
 /// See [`AllowListSummary`](crate::model::AllowListSummary).
 pub mod allow_list_summary {
 
@@ -7547,12 +7603,6 @@ pub mod allow_list_summary {
         }
     }
 }
-impl AllowListSummary {
-    /// Creates a new builder-style object to manufacture [`AllowListSummary`](crate::model::AllowListSummary).
-    pub fn builder() -> crate::model::allow_list_summary::Builder {
-        crate::model::allow_list_summary::Builder::default()
-    }
-}
 
 /// <p>Provides aggregated data for an Amazon Macie usage metric. The value for the metric reports estimated usage data for an account for the preceding 30 days or the current calendar month to date, depending on the time period (timeRange) specified in the request.</p>
 #[non_exhaustive]
@@ -7582,6 +7632,13 @@ impl UsageTotal {
         self.r#type.as_ref()
     }
 }
+impl UsageTotal {
+    /// Creates a new builder-style object to manufacture [`UsageTotal`](crate::model::UsageTotal).
+    pub fn builder() -> crate::model::usage_total::Builder {
+        crate::model::usage_total::Builder::default()
+    }
+}
+
 /// See [`UsageTotal`](crate::model::UsageTotal).
 pub mod usage_total {
 
@@ -7635,12 +7692,6 @@ pub mod usage_total {
                 r#type: self.r#type,
             }
         }
-    }
-}
-impl UsageTotal {
-    /// Creates a new builder-style object to manufacture [`UsageTotal`](crate::model::UsageTotal).
-    pub fn builder() -> crate::model::usage_total::Builder {
-        crate::model::usage_total::Builder::default()
     }
 }
 
@@ -7961,6 +8012,13 @@ impl UsageRecord {
         self.usage.as_deref()
     }
 }
+impl UsageRecord {
+    /// Creates a new builder-style object to manufacture [`UsageRecord`](crate::model::UsageRecord).
+    pub fn builder() -> crate::model::usage_record::Builder {
+        crate::model::usage_record::Builder::default()
+    }
+}
+
 /// See [`UsageRecord`](crate::model::UsageRecord).
 pub mod usage_record {
 
@@ -8045,12 +8103,6 @@ pub mod usage_record {
         }
     }
 }
-impl UsageRecord {
-    /// Creates a new builder-style object to manufacture [`UsageRecord`](crate::model::UsageRecord).
-    pub fn builder() -> crate::model::usage_record::Builder {
-        crate::model::usage_record::Builder::default()
-    }
-}
 
 /// <p>Provides data for a specific usage metric and the corresponding quota for an Amazon Macie account.</p>
 #[non_exhaustive]
@@ -8087,6 +8139,13 @@ impl UsageByAccount {
         self.r#type.as_ref()
     }
 }
+impl UsageByAccount {
+    /// Creates a new builder-style object to manufacture [`UsageByAccount`](crate::model::UsageByAccount).
+    pub fn builder() -> crate::model::usage_by_account::Builder {
+        crate::model::usage_by_account::Builder::default()
+    }
+}
+
 /// See [`UsageByAccount`](crate::model::UsageByAccount).
 pub mod usage_by_account {
 
@@ -8157,12 +8216,6 @@ pub mod usage_by_account {
         }
     }
 }
-impl UsageByAccount {
-    /// Creates a new builder-style object to manufacture [`UsageByAccount`](crate::model::UsageByAccount).
-    pub fn builder() -> crate::model::usage_by_account::Builder {
-        crate::model::usage_by_account::Builder::default()
-    }
-}
 
 /// <p>Specifies a current quota for an Amazon Macie account.</p>
 #[non_exhaustive]
@@ -8192,6 +8245,13 @@ impl ServiceLimit {
         self.value
     }
 }
+impl ServiceLimit {
+    /// Creates a new builder-style object to manufacture [`ServiceLimit`](crate::model::ServiceLimit).
+    pub fn builder() -> crate::model::service_limit::Builder {
+        crate::model::service_limit::Builder::default()
+    }
+}
+
 /// See [`ServiceLimit`](crate::model::ServiceLimit).
 pub mod service_limit {
 
@@ -8242,12 +8302,6 @@ pub mod service_limit {
                 value: self.value.unwrap_or_default(),
             }
         }
-    }
-}
-impl ServiceLimit {
-    /// Creates a new builder-style object to manufacture [`ServiceLimit`](crate::model::ServiceLimit).
-    pub fn builder() -> crate::model::service_limit::Builder {
-        crate::model::service_limit::Builder::default()
     }
 }
 
@@ -8357,6 +8411,13 @@ impl UsageStatisticsSortBy {
         self.order_by.as_ref()
     }
 }
+impl UsageStatisticsSortBy {
+    /// Creates a new builder-style object to manufacture [`UsageStatisticsSortBy`](crate::model::UsageStatisticsSortBy).
+    pub fn builder() -> crate::model::usage_statistics_sort_by::Builder {
+        crate::model::usage_statistics_sort_by::Builder::default()
+    }
+}
+
 /// See [`UsageStatisticsSortBy`](crate::model::UsageStatisticsSortBy).
 pub mod usage_statistics_sort_by {
 
@@ -8398,12 +8459,6 @@ pub mod usage_statistics_sort_by {
                 order_by: self.order_by,
             }
         }
-    }
-}
-impl UsageStatisticsSortBy {
-    /// Creates a new builder-style object to manufacture [`UsageStatisticsSortBy`](crate::model::UsageStatisticsSortBy).
-    pub fn builder() -> crate::model::usage_statistics_sort_by::Builder {
-        crate::model::usage_statistics_sort_by::Builder::default()
     }
 }
 
@@ -8558,6 +8613,13 @@ impl UsageStatisticsFilter {
         self.values.as_deref()
     }
 }
+impl UsageStatisticsFilter {
+    /// Creates a new builder-style object to manufacture [`UsageStatisticsFilter`](crate::model::UsageStatisticsFilter).
+    pub fn builder() -> crate::model::usage_statistics_filter::Builder {
+        crate::model::usage_statistics_filter::Builder::default()
+    }
+}
+
 /// See [`UsageStatisticsFilter`](crate::model::UsageStatisticsFilter).
 pub mod usage_statistics_filter {
 
@@ -8637,12 +8699,6 @@ pub mod usage_statistics_filter {
                 values: self.values,
             }
         }
-    }
-}
-impl UsageStatisticsFilter {
-    /// Creates a new builder-style object to manufacture [`UsageStatisticsFilter`](crate::model::UsageStatisticsFilter).
-    pub fn builder() -> crate::model::usage_statistics_filter::Builder {
-        crate::model::usage_statistics_filter::Builder::default()
     }
 }
 
@@ -9183,6 +9239,13 @@ impl DetectedDataDetails {
         self.value.as_deref()
     }
 }
+impl DetectedDataDetails {
+    /// Creates a new builder-style object to manufacture [`DetectedDataDetails`](crate::model::DetectedDataDetails).
+    pub fn builder() -> crate::model::detected_data_details::Builder {
+        crate::model::detected_data_details::Builder::default()
+    }
+}
+
 /// See [`DetectedDataDetails`](crate::model::DetectedDataDetails).
 pub mod detected_data_details {
 
@@ -9207,12 +9270,6 @@ pub mod detected_data_details {
         pub fn build(self) -> crate::model::DetectedDataDetails {
             crate::model::DetectedDataDetails { value: self.value }
         }
-    }
-}
-impl DetectedDataDetails {
-    /// Creates a new builder-style object to manufacture [`DetectedDataDetails`](crate::model::DetectedDataDetails).
-    pub fn builder() -> crate::model::detected_data_details::Builder {
-        crate::model::detected_data_details::Builder::default()
     }
 }
 
@@ -9286,6 +9343,13 @@ impl ResourceStatistics {
         self.total_items_skipped_permission_denied
     }
 }
+impl ResourceStatistics {
+    /// Creates a new builder-style object to manufacture [`ResourceStatistics`](crate::model::ResourceStatistics).
+    pub fn builder() -> crate::model::resource_statistics::Builder {
+        crate::model::resource_statistics::Builder::default()
+    }
+}
+
 /// See [`ResourceStatistics`](crate::model::ResourceStatistics).
 pub mod resource_statistics {
 
@@ -9425,12 +9489,6 @@ pub mod resource_statistics {
         }
     }
 }
-impl ResourceStatistics {
-    /// Creates a new builder-style object to manufacture [`ResourceStatistics`](crate::model::ResourceStatistics).
-    pub fn builder() -> crate::model::resource_statistics::Builder {
-        crate::model::resource_statistics::Builder::default()
-    }
-}
 
 /// <p>Provides a group of results for a query that retrieved aggregated statistical data about findings.</p>
 #[non_exhaustive]
@@ -9453,6 +9511,13 @@ impl GroupCount {
         self.group_key.as_deref()
     }
 }
+impl GroupCount {
+    /// Creates a new builder-style object to manufacture [`GroupCount`](crate::model::GroupCount).
+    pub fn builder() -> crate::model::group_count::Builder {
+        crate::model::group_count::Builder::default()
+    }
+}
+
 /// See [`GroupCount`](crate::model::GroupCount).
 pub mod group_count {
 
@@ -9493,12 +9558,6 @@ pub mod group_count {
         }
     }
 }
-impl GroupCount {
-    /// Creates a new builder-style object to manufacture [`GroupCount`](crate::model::GroupCount).
-    pub fn builder() -> crate::model::group_count::Builder {
-        crate::model::group_count::Builder::default()
-    }
-}
 
 /// <p>Specifies criteria for sorting the results of a query that retrieves aggregated statistical data about findings.</p>
 #[non_exhaustive]
@@ -9523,6 +9582,13 @@ impl FindingStatisticsSortCriteria {
         self.order_by.as_ref()
     }
 }
+impl FindingStatisticsSortCriteria {
+    /// Creates a new builder-style object to manufacture [`FindingStatisticsSortCriteria`](crate::model::FindingStatisticsSortCriteria).
+    pub fn builder() -> crate::model::finding_statistics_sort_criteria::Builder {
+        crate::model::finding_statistics_sort_criteria::Builder::default()
+    }
+}
+
 /// See [`FindingStatisticsSortCriteria`](crate::model::FindingStatisticsSortCriteria).
 pub mod finding_statistics_sort_criteria {
 
@@ -9568,12 +9634,6 @@ pub mod finding_statistics_sort_criteria {
                 order_by: self.order_by,
             }
         }
-    }
-}
-impl FindingStatisticsSortCriteria {
-    /// Creates a new builder-style object to manufacture [`FindingStatisticsSortCriteria`](crate::model::FindingStatisticsSortCriteria).
-    pub fn builder() -> crate::model::finding_statistics_sort_criteria::Builder {
-        crate::model::finding_statistics_sort_criteria::Builder::default()
     }
 }
 
@@ -9909,6 +9969,13 @@ impl Finding {
         self.updated_at.as_ref()
     }
 }
+impl Finding {
+    /// Creates a new builder-style object to manufacture [`Finding`](crate::model::Finding).
+    pub fn builder() -> crate::model::finding::Builder {
+        crate::model::finding::Builder::default()
+    }
+}
+
 /// See [`Finding`](crate::model::Finding).
 pub mod finding {
 
@@ -10165,12 +10232,6 @@ pub mod finding {
         }
     }
 }
-impl Finding {
-    /// Creates a new builder-style object to manufacture [`Finding`](crate::model::Finding).
-    pub fn builder() -> crate::model::finding::Builder {
-        crate::model::finding::Builder::default()
-    }
-}
 
 /// When writing a match expression against `FindingType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -10354,6 +10415,13 @@ impl Severity {
         self.score
     }
 }
+impl Severity {
+    /// Creates a new builder-style object to manufacture [`Severity`](crate::model::Severity).
+    pub fn builder() -> crate::model::severity::Builder {
+        crate::model::severity::Builder::default()
+    }
+}
+
 /// See [`Severity`](crate::model::Severity).
 pub mod severity {
 
@@ -10395,12 +10463,6 @@ pub mod severity {
                 score: self.score.unwrap_or_default(),
             }
         }
-    }
-}
-impl Severity {
-    /// Creates a new builder-style object to manufacture [`Severity`](crate::model::Severity).
-    pub fn builder() -> crate::model::severity::Builder {
-        crate::model::severity::Builder::default()
     }
 }
 
@@ -10522,6 +10584,13 @@ impl ResourcesAffected {
         self.s3_object.as_ref()
     }
 }
+impl ResourcesAffected {
+    /// Creates a new builder-style object to manufacture [`ResourcesAffected`](crate::model::ResourcesAffected).
+    pub fn builder() -> crate::model::resources_affected::Builder {
+        crate::model::resources_affected::Builder::default()
+    }
+}
+
 /// See [`ResourcesAffected`](crate::model::ResourcesAffected).
 pub mod resources_affected {
 
@@ -10560,12 +10629,6 @@ pub mod resources_affected {
                 s3_object: self.s3_object,
             }
         }
-    }
-}
-impl ResourcesAffected {
-    /// Creates a new builder-style object to manufacture [`ResourcesAffected`](crate::model::ResourcesAffected).
-    pub fn builder() -> crate::model::resources_affected::Builder {
-        crate::model::resources_affected::Builder::default()
     }
 }
 
@@ -10662,6 +10725,13 @@ impl S3Object {
         self.version_id.as_deref()
     }
 }
+impl S3Object {
+    /// Creates a new builder-style object to manufacture [`S3Object`](crate::model::S3Object).
+    pub fn builder() -> crate::model::s3_object::Builder {
+        crate::model::s3_object::Builder::default()
+    }
+}
+
 /// See [`S3Object`](crate::model::S3Object).
 pub mod s3_object {
 
@@ -10840,12 +10910,6 @@ pub mod s3_object {
         }
     }
 }
-impl S3Object {
-    /// Creates a new builder-style object to manufacture [`S3Object`](crate::model::S3Object).
-    pub fn builder() -> crate::model::s3_object::Builder {
-        crate::model::s3_object::Builder::default()
-    }
-}
 
 /// <p>Provides information about the tags that are associated with an S3 bucket or object. Each tag consists of a required tag key and an associated tag value.</p>
 #[non_exhaustive]
@@ -10868,6 +10932,13 @@ impl KeyValuePair {
         self.value.as_deref()
     }
 }
+impl KeyValuePair {
+    /// Creates a new builder-style object to manufacture [`KeyValuePair`](crate::model::KeyValuePair).
+    pub fn builder() -> crate::model::key_value_pair::Builder {
+        crate::model::key_value_pair::Builder::default()
+    }
+}
+
 /// See [`KeyValuePair`](crate::model::KeyValuePair).
 pub mod key_value_pair {
 
@@ -10906,12 +10977,6 @@ pub mod key_value_pair {
                 value: self.value,
             }
         }
-    }
-}
-impl KeyValuePair {
-    /// Creates a new builder-style object to manufacture [`KeyValuePair`](crate::model::KeyValuePair).
-    pub fn builder() -> crate::model::key_value_pair::Builder {
-        crate::model::key_value_pair::Builder::default()
     }
 }
 
@@ -11071,6 +11136,13 @@ impl ServerSideEncryption {
         self.kms_master_key_id.as_deref()
     }
 }
+impl ServerSideEncryption {
+    /// Creates a new builder-style object to manufacture [`ServerSideEncryption`](crate::model::ServerSideEncryption).
+    pub fn builder() -> crate::model::server_side_encryption::Builder {
+        crate::model::server_side_encryption::Builder::default()
+    }
+}
+
 /// See [`ServerSideEncryption`](crate::model::ServerSideEncryption).
 pub mod server_side_encryption {
 
@@ -11115,12 +11187,6 @@ pub mod server_side_encryption {
                 kms_master_key_id: self.kms_master_key_id,
             }
         }
-    }
-}
-impl ServerSideEncryption {
-    /// Creates a new builder-style object to manufacture [`ServerSideEncryption`](crate::model::ServerSideEncryption).
-    pub fn builder() -> crate::model::server_side_encryption::Builder {
-        crate::model::server_side_encryption::Builder::default()
     }
 }
 
@@ -11306,6 +11372,13 @@ impl S3Bucket {
         self.tags.as_deref()
     }
 }
+impl S3Bucket {
+    /// Creates a new builder-style object to manufacture [`S3Bucket`](crate::model::S3Bucket).
+    pub fn builder() -> crate::model::s3_bucket::Builder {
+        crate::model::s3_bucket::Builder::default()
+    }
+}
+
 /// See [`S3Bucket`](crate::model::S3Bucket).
 pub mod s3_bucket {
 
@@ -11462,12 +11535,6 @@ pub mod s3_bucket {
         }
     }
 }
-impl S3Bucket {
-    /// Creates a new builder-style object to manufacture [`S3Bucket`](crate::model::S3Bucket).
-    pub fn builder() -> crate::model::s3_bucket::Builder {
-        crate::model::s3_bucket::Builder::default()
-    }
-}
 
 /// <p>Provides information about the permissions settings that determine whether an S3 bucket is publicly accessible.</p>
 #[non_exhaustive]
@@ -11502,6 +11569,13 @@ impl BucketPublicAccess {
         self.permission_configuration.as_ref()
     }
 }
+impl BucketPublicAccess {
+    /// Creates a new builder-style object to manufacture [`BucketPublicAccess`](crate::model::BucketPublicAccess).
+    pub fn builder() -> crate::model::bucket_public_access::Builder {
+        crate::model::bucket_public_access::Builder::default()
+    }
+}
+
 /// See [`BucketPublicAccess`](crate::model::BucketPublicAccess).
 pub mod bucket_public_access {
 
@@ -11562,12 +11636,6 @@ pub mod bucket_public_access {
         }
     }
 }
-impl BucketPublicAccess {
-    /// Creates a new builder-style object to manufacture [`BucketPublicAccess`](crate::model::BucketPublicAccess).
-    pub fn builder() -> crate::model::bucket_public_access::Builder {
-        crate::model::bucket_public_access::Builder::default()
-    }
-}
 
 /// <p>Provides information about the account-level and bucket-level permissions settings for an S3 bucket.</p>
 #[non_exhaustive]
@@ -11594,6 +11662,13 @@ impl BucketPermissionConfiguration {
         self.bucket_level_permissions.as_ref()
     }
 }
+impl BucketPermissionConfiguration {
+    /// Creates a new builder-style object to manufacture [`BucketPermissionConfiguration`](crate::model::BucketPermissionConfiguration).
+    pub fn builder() -> crate::model::bucket_permission_configuration::Builder {
+        crate::model::bucket_permission_configuration::Builder::default()
+    }
+}
+
 /// See [`BucketPermissionConfiguration`](crate::model::BucketPermissionConfiguration).
 pub mod bucket_permission_configuration {
 
@@ -11648,12 +11723,6 @@ pub mod bucket_permission_configuration {
         }
     }
 }
-impl BucketPermissionConfiguration {
-    /// Creates a new builder-style object to manufacture [`BucketPermissionConfiguration`](crate::model::BucketPermissionConfiguration).
-    pub fn builder() -> crate::model::bucket_permission_configuration::Builder {
-        crate::model::bucket_permission_configuration::Builder::default()
-    }
-}
 
 /// <p>Provides information about the bucket-level permissions settings for an S3 bucket.</p>
 #[non_exhaustive]
@@ -11683,6 +11752,13 @@ impl BucketLevelPermissions {
         self.bucket_policy.as_ref()
     }
 }
+impl BucketLevelPermissions {
+    /// Creates a new builder-style object to manufacture [`BucketLevelPermissions`](crate::model::BucketLevelPermissions).
+    pub fn builder() -> crate::model::bucket_level_permissions::Builder {
+        crate::model::bucket_level_permissions::Builder::default()
+    }
+}
+
 /// See [`BucketLevelPermissions`](crate::model::BucketLevelPermissions).
 pub mod bucket_level_permissions {
 
@@ -11744,12 +11820,6 @@ pub mod bucket_level_permissions {
         }
     }
 }
-impl BucketLevelPermissions {
-    /// Creates a new builder-style object to manufacture [`BucketLevelPermissions`](crate::model::BucketLevelPermissions).
-    pub fn builder() -> crate::model::bucket_level_permissions::Builder {
-        crate::model::bucket_level_permissions::Builder::default()
-    }
-}
 
 /// <p>Provides information about the permissions settings of the bucket policy for an S3 bucket.</p>
 #[non_exhaustive]
@@ -11772,6 +11842,13 @@ impl BucketPolicy {
         self.allows_public_write_access
     }
 }
+impl BucketPolicy {
+    /// Creates a new builder-style object to manufacture [`BucketPolicy`](crate::model::BucketPolicy).
+    pub fn builder() -> crate::model::bucket_policy::Builder {
+        crate::model::bucket_policy::Builder::default()
+    }
+}
+
 /// See [`BucketPolicy`](crate::model::BucketPolicy).
 pub mod bucket_policy {
 
@@ -11812,12 +11889,6 @@ pub mod bucket_policy {
         }
     }
 }
-impl BucketPolicy {
-    /// Creates a new builder-style object to manufacture [`BucketPolicy`](crate::model::BucketPolicy).
-    pub fn builder() -> crate::model::bucket_policy::Builder {
-        crate::model::bucket_policy::Builder::default()
-    }
-}
 
 /// <p>Provides information about the block public access settings for an S3 bucket. These settings can apply to a bucket at the account or bucket level. For detailed information about each setting, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-control-block-public-access.html">Blocking public access to your Amazon S3 storage</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p>
 #[non_exhaustive]
@@ -11854,6 +11925,13 @@ impl BlockPublicAccess {
         self.restrict_public_buckets
     }
 }
+impl BlockPublicAccess {
+    /// Creates a new builder-style object to manufacture [`BlockPublicAccess`](crate::model::BlockPublicAccess).
+    pub fn builder() -> crate::model::block_public_access::Builder {
+        crate::model::block_public_access::Builder::default()
+    }
+}
+
 /// See [`BlockPublicAccess`](crate::model::BlockPublicAccess).
 pub mod block_public_access {
 
@@ -11918,12 +11996,6 @@ pub mod block_public_access {
         }
     }
 }
-impl BlockPublicAccess {
-    /// Creates a new builder-style object to manufacture [`BlockPublicAccess`](crate::model::BlockPublicAccess).
-    pub fn builder() -> crate::model::block_public_access::Builder {
-        crate::model::block_public_access::Builder::default()
-    }
-}
 
 /// <p>Provides information about the permissions settings of the bucket-level access control list (ACL) for an S3 bucket.</p>
 #[non_exhaustive]
@@ -11946,6 +12018,13 @@ impl AccessControlList {
         self.allows_public_write_access
     }
 }
+impl AccessControlList {
+    /// Creates a new builder-style object to manufacture [`AccessControlList`](crate::model::AccessControlList).
+    pub fn builder() -> crate::model::access_control_list::Builder {
+        crate::model::access_control_list::Builder::default()
+    }
+}
+
 /// See [`AccessControlList`](crate::model::AccessControlList).
 pub mod access_control_list {
 
@@ -11986,12 +12065,6 @@ pub mod access_control_list {
         }
     }
 }
-impl AccessControlList {
-    /// Creates a new builder-style object to manufacture [`AccessControlList`](crate::model::AccessControlList).
-    pub fn builder() -> crate::model::access_control_list::Builder {
-        crate::model::access_control_list::Builder::default()
-    }
-}
 
 /// <p>Provides information about the account-level permissions settings that apply to an S3 bucket.</p>
 #[non_exhaustive]
@@ -12007,6 +12080,13 @@ impl AccountLevelPermissions {
         self.block_public_access.as_ref()
     }
 }
+impl AccountLevelPermissions {
+    /// Creates a new builder-style object to manufacture [`AccountLevelPermissions`](crate::model::AccountLevelPermissions).
+    pub fn builder() -> crate::model::account_level_permissions::Builder {
+        crate::model::account_level_permissions::Builder::default()
+    }
+}
+
 /// See [`AccountLevelPermissions`](crate::model::AccountLevelPermissions).
 pub mod account_level_permissions {
 
@@ -12036,12 +12116,6 @@ pub mod account_level_permissions {
                 block_public_access: self.block_public_access,
             }
         }
-    }
-}
-impl AccountLevelPermissions {
-    /// Creates a new builder-style object to manufacture [`AccountLevelPermissions`](crate::model::AccountLevelPermissions).
-    pub fn builder() -> crate::model::account_level_permissions::Builder {
-        crate::model::account_level_permissions::Builder::default()
     }
 }
 
@@ -12163,6 +12237,13 @@ impl S3BucketOwner {
         self.id.as_deref()
     }
 }
+impl S3BucketOwner {
+    /// Creates a new builder-style object to manufacture [`S3BucketOwner`](crate::model::S3BucketOwner).
+    pub fn builder() -> crate::model::s3_bucket_owner::Builder {
+        crate::model::s3_bucket_owner::Builder::default()
+    }
+}
+
 /// See [`S3BucketOwner`](crate::model::S3BucketOwner).
 pub mod s3_bucket_owner {
 
@@ -12201,12 +12282,6 @@ pub mod s3_bucket_owner {
                 id: self.id,
             }
         }
-    }
-}
-impl S3BucketOwner {
-    /// Creates a new builder-style object to manufacture [`S3BucketOwner`](crate::model::S3BucketOwner).
-    pub fn builder() -> crate::model::s3_bucket_owner::Builder {
-        crate::model::s3_bucket_owner::Builder::default()
     }
 }
 
@@ -12328,6 +12403,13 @@ impl PolicyDetails {
         self.actor.as_ref()
     }
 }
+impl PolicyDetails {
+    /// Creates a new builder-style object to manufacture [`PolicyDetails`](crate::model::PolicyDetails).
+    pub fn builder() -> crate::model::policy_details::Builder {
+        crate::model::policy_details::Builder::default()
+    }
+}
+
 /// See [`PolicyDetails`](crate::model::PolicyDetails).
 pub mod policy_details {
 
@@ -12371,12 +12453,6 @@ pub mod policy_details {
         }
     }
 }
-impl PolicyDetails {
-    /// Creates a new builder-style object to manufacture [`PolicyDetails`](crate::model::PolicyDetails).
-    pub fn builder() -> crate::model::policy_details::Builder {
-        crate::model::policy_details::Builder::default()
-    }
-}
 
 /// <p>Provides information about an entity that performed an action that produced a policy finding for a resource.</p>
 #[non_exhaustive]
@@ -12406,6 +12482,13 @@ impl FindingActor {
         self.user_identity.as_ref()
     }
 }
+impl FindingActor {
+    /// Creates a new builder-style object to manufacture [`FindingActor`](crate::model::FindingActor).
+    pub fn builder() -> crate::model::finding_actor::Builder {
+        crate::model::finding_actor::Builder::default()
+    }
+}
+
 /// See [`FindingActor`](crate::model::FindingActor).
 pub mod finding_actor {
 
@@ -12467,12 +12550,6 @@ pub mod finding_actor {
         }
     }
 }
-impl FindingActor {
-    /// Creates a new builder-style object to manufacture [`FindingActor`](crate::model::FindingActor).
-    pub fn builder() -> crate::model::finding_actor::Builder {
-        crate::model::finding_actor::Builder::default()
-    }
-}
 
 /// <p>Provides information about the type and other characteristics of an entity that performed an action on an affected resource.</p>
 #[non_exhaustive]
@@ -12530,6 +12607,13 @@ impl UserIdentity {
         self.r#type.as_ref()
     }
 }
+impl UserIdentity {
+    /// Creates a new builder-style object to manufacture [`UserIdentity`](crate::model::UserIdentity).
+    pub fn builder() -> crate::model::user_identity::Builder {
+        crate::model::user_identity::Builder::default()
+    }
+}
+
 /// See [`UserIdentity`](crate::model::UserIdentity).
 pub mod user_identity {
 
@@ -12646,12 +12730,6 @@ pub mod user_identity {
                 r#type: self.r#type,
             }
         }
-    }
-}
-impl UserIdentity {
-    /// Creates a new builder-style object to manufacture [`UserIdentity`](crate::model::UserIdentity).
-    pub fn builder() -> crate::model::user_identity::Builder {
-        crate::model::user_identity::Builder::default()
     }
 }
 
@@ -12800,6 +12878,13 @@ impl UserIdentityRoot {
         self.principal_id.as_deref()
     }
 }
+impl UserIdentityRoot {
+    /// Creates a new builder-style object to manufacture [`UserIdentityRoot`](crate::model::UserIdentityRoot).
+    pub fn builder() -> crate::model::user_identity_root::Builder {
+        crate::model::user_identity_root::Builder::default()
+    }
+}
+
 /// See [`UserIdentityRoot`](crate::model::UserIdentityRoot).
 pub mod user_identity_root {
 
@@ -12852,12 +12937,6 @@ pub mod user_identity_root {
         }
     }
 }
-impl UserIdentityRoot {
-    /// Creates a new builder-style object to manufacture [`UserIdentityRoot`](crate::model::UserIdentityRoot).
-    pub fn builder() -> crate::model::user_identity_root::Builder {
-        crate::model::user_identity_root::Builder::default()
-    }
-}
 
 /// <p>Provides information about an Identity and Access Management (IAM) user who performed an action on an affected resource.</p>
 #[non_exhaustive]
@@ -12894,6 +12973,13 @@ impl IamUser {
         self.user_name.as_deref()
     }
 }
+impl IamUser {
+    /// Creates a new builder-style object to manufacture [`IamUser`](crate::model::IamUser).
+    pub fn builder() -> crate::model::iam_user::Builder {
+        crate::model::iam_user::Builder::default()
+    }
+}
+
 /// See [`IamUser`](crate::model::IamUser).
 pub mod iam_user {
 
@@ -12958,12 +13044,6 @@ pub mod iam_user {
         }
     }
 }
-impl IamUser {
-    /// Creates a new builder-style object to manufacture [`IamUser`](crate::model::IamUser).
-    pub fn builder() -> crate::model::iam_user::Builder {
-        crate::model::iam_user::Builder::default()
-    }
-}
 
 /// <p>Provides information about an identity that performed an action on an affected resource by using temporary security credentials. The credentials were obtained using the GetFederationToken operation of the Security Token Service (STS) API.</p>
 #[non_exhaustive]
@@ -13007,6 +13087,13 @@ impl FederatedUser {
         self.session_context.as_ref()
     }
 }
+impl FederatedUser {
+    /// Creates a new builder-style object to manufacture [`FederatedUser`](crate::model::FederatedUser).
+    pub fn builder() -> crate::model::federated_user::Builder {
+        crate::model::federated_user::Builder::default()
+    }
+}
+
 /// See [`FederatedUser`](crate::model::FederatedUser).
 pub mod federated_user {
 
@@ -13089,12 +13176,6 @@ pub mod federated_user {
         }
     }
 }
-impl FederatedUser {
-    /// Creates a new builder-style object to manufacture [`FederatedUser`](crate::model::FederatedUser).
-    pub fn builder() -> crate::model::federated_user::Builder {
-        crate::model::federated_user::Builder::default()
-    }
-}
 
 /// <p>Provides information about a session that was created for an entity that performed an action by using temporary security credentials.</p>
 #[non_exhaustive]
@@ -13117,6 +13198,13 @@ impl SessionContext {
         self.session_issuer.as_ref()
     }
 }
+impl SessionContext {
+    /// Creates a new builder-style object to manufacture [`SessionContext`](crate::model::SessionContext).
+    pub fn builder() -> crate::model::session_context::Builder {
+        crate::model::session_context::Builder::default()
+    }
+}
+
 /// See [`SessionContext`](crate::model::SessionContext).
 pub mod session_context {
 
@@ -13163,12 +13251,6 @@ pub mod session_context {
         }
     }
 }
-impl SessionContext {
-    /// Creates a new builder-style object to manufacture [`SessionContext`](crate::model::SessionContext).
-    pub fn builder() -> crate::model::session_context::Builder {
-        crate::model::session_context::Builder::default()
-    }
-}
 
 /// <p>Provides information about the source and type of temporary security credentials that were issued to an entity.</p>
 #[non_exhaustive]
@@ -13212,6 +13294,13 @@ impl SessionIssuer {
         self.user_name.as_deref()
     }
 }
+impl SessionIssuer {
+    /// Creates a new builder-style object to manufacture [`SessionIssuer`](crate::model::SessionIssuer).
+    pub fn builder() -> crate::model::session_issuer::Builder {
+        crate::model::session_issuer::Builder::default()
+    }
+}
+
 /// See [`SessionIssuer`](crate::model::SessionIssuer).
 pub mod session_issuer {
 
@@ -13288,12 +13377,6 @@ pub mod session_issuer {
         }
     }
 }
-impl SessionIssuer {
-    /// Creates a new builder-style object to manufacture [`SessionIssuer`](crate::model::SessionIssuer).
-    pub fn builder() -> crate::model::session_issuer::Builder {
-        crate::model::session_issuer::Builder::default()
-    }
-}
 
 /// <p>Provides information about the context in which temporary security credentials were issued to an entity.</p>
 #[non_exhaustive]
@@ -13316,6 +13399,13 @@ impl SessionContextAttributes {
         self.mfa_authenticated
     }
 }
+impl SessionContextAttributes {
+    /// Creates a new builder-style object to manufacture [`SessionContextAttributes`](crate::model::SessionContextAttributes).
+    pub fn builder() -> crate::model::session_context_attributes::Builder {
+        crate::model::session_context_attributes::Builder::default()
+    }
+}
+
 /// See [`SessionContextAttributes`](crate::model::SessionContextAttributes).
 pub mod session_context_attributes {
 
@@ -13359,12 +13449,6 @@ pub mod session_context_attributes {
         }
     }
 }
-impl SessionContextAttributes {
-    /// Creates a new builder-style object to manufacture [`SessionContextAttributes`](crate::model::SessionContextAttributes).
-    pub fn builder() -> crate::model::session_context_attributes::Builder {
-        crate::model::session_context_attributes::Builder::default()
-    }
-}
 
 /// <p>Provides information about an Amazon Web Service that performed an action on an affected resource.</p>
 #[non_exhaustive]
@@ -13380,6 +13464,13 @@ impl AwsService {
         self.invoked_by.as_deref()
     }
 }
+impl AwsService {
+    /// Creates a new builder-style object to manufacture [`AwsService`](crate::model::AwsService).
+    pub fn builder() -> crate::model::aws_service::Builder {
+        crate::model::aws_service::Builder::default()
+    }
+}
+
 /// See [`AwsService`](crate::model::AwsService).
 pub mod aws_service {
 
@@ -13408,12 +13499,6 @@ pub mod aws_service {
         }
     }
 }
-impl AwsService {
-    /// Creates a new builder-style object to manufacture [`AwsService`](crate::model::AwsService).
-    pub fn builder() -> crate::model::aws_service::Builder {
-        crate::model::aws_service::Builder::default()
-    }
-}
 
 /// <p>Provides information about an Amazon Web Services account and entity that performed an action on an affected resource. The action was performed using the credentials for an Amazon Web Services account other than your own account.</p>
 #[non_exhaustive]
@@ -13436,6 +13521,13 @@ impl AwsAccount {
         self.principal_id.as_deref()
     }
 }
+impl AwsAccount {
+    /// Creates a new builder-style object to manufacture [`AwsAccount`](crate::model::AwsAccount).
+    pub fn builder() -> crate::model::aws_account::Builder {
+        crate::model::aws_account::Builder::default()
+    }
+}
+
 /// See [`AwsAccount`](crate::model::AwsAccount).
 pub mod aws_account {
 
@@ -13474,12 +13566,6 @@ pub mod aws_account {
                 principal_id: self.principal_id,
             }
         }
-    }
-}
-impl AwsAccount {
-    /// Creates a new builder-style object to manufacture [`AwsAccount`](crate::model::AwsAccount).
-    pub fn builder() -> crate::model::aws_account::Builder {
-        crate::model::aws_account::Builder::default()
     }
 }
 
@@ -13525,6 +13611,13 @@ impl AssumedRole {
         self.session_context.as_ref()
     }
 }
+impl AssumedRole {
+    /// Creates a new builder-style object to manufacture [`AssumedRole`](crate::model::AssumedRole).
+    pub fn builder() -> crate::model::assumed_role::Builder {
+        crate::model::assumed_role::Builder::default()
+    }
+}
+
 /// See [`AssumedRole`](crate::model::AssumedRole).
 pub mod assumed_role {
 
@@ -13607,12 +13700,6 @@ pub mod assumed_role {
         }
     }
 }
-impl AssumedRole {
-    /// Creates a new builder-style object to manufacture [`AssumedRole`](crate::model::AssumedRole).
-    pub fn builder() -> crate::model::assumed_role::Builder {
-        crate::model::assumed_role::Builder::default()
-    }
-}
 
 /// <p>Provides information about the IP address of the device that an entity used to perform an action on an affected resource.</p>
 #[non_exhaustive]
@@ -13656,6 +13743,13 @@ impl IpAddressDetails {
         self.ip_owner.as_ref()
     }
 }
+impl IpAddressDetails {
+    /// Creates a new builder-style object to manufacture [`IpAddressDetails`](crate::model::IpAddressDetails).
+    pub fn builder() -> crate::model::ip_address_details::Builder {
+        crate::model::ip_address_details::Builder::default()
+    }
+}
+
 /// See [`IpAddressDetails`](crate::model::IpAddressDetails).
 pub mod ip_address_details {
 
@@ -13741,12 +13835,6 @@ pub mod ip_address_details {
         }
     }
 }
-impl IpAddressDetails {
-    /// Creates a new builder-style object to manufacture [`IpAddressDetails`](crate::model::IpAddressDetails).
-    pub fn builder() -> crate::model::ip_address_details::Builder {
-        crate::model::ip_address_details::Builder::default()
-    }
-}
 
 /// <p>Provides information about the registered owner of an IP address.</p>
 #[non_exhaustive]
@@ -13783,6 +13871,13 @@ impl IpOwner {
         self.org.as_deref()
     }
 }
+impl IpOwner {
+    /// Creates a new builder-style object to manufacture [`IpOwner`](crate::model::IpOwner).
+    pub fn builder() -> crate::model::ip_owner::Builder {
+        crate::model::ip_owner::Builder::default()
+    }
+}
+
 /// See [`IpOwner`](crate::model::IpOwner).
 pub mod ip_owner {
 
@@ -13847,12 +13942,6 @@ pub mod ip_owner {
         }
     }
 }
-impl IpOwner {
-    /// Creates a new builder-style object to manufacture [`IpOwner`](crate::model::IpOwner).
-    pub fn builder() -> crate::model::ip_owner::Builder {
-        crate::model::ip_owner::Builder::default()
-    }
-}
 
 /// <p>Provides geographic coordinates that indicate where a specified IP address originated from.</p>
 #[non_exhaustive]
@@ -13875,6 +13964,13 @@ impl IpGeoLocation {
         self.lon
     }
 }
+impl IpGeoLocation {
+    /// Creates a new builder-style object to manufacture [`IpGeoLocation`](crate::model::IpGeoLocation).
+    pub fn builder() -> crate::model::ip_geo_location::Builder {
+        crate::model::ip_geo_location::Builder::default()
+    }
+}
+
 /// See [`IpGeoLocation`](crate::model::IpGeoLocation).
 pub mod ip_geo_location {
 
@@ -13915,12 +14011,6 @@ pub mod ip_geo_location {
         }
     }
 }
-impl IpGeoLocation {
-    /// Creates a new builder-style object to manufacture [`IpGeoLocation`](crate::model::IpGeoLocation).
-    pub fn builder() -> crate::model::ip_geo_location::Builder {
-        crate::model::ip_geo_location::Builder::default()
-    }
-}
 
 /// <p>Provides information about the country that an IP address originated from.</p>
 #[non_exhaustive]
@@ -13943,6 +14033,13 @@ impl IpCountry {
         self.name.as_deref()
     }
 }
+impl IpCountry {
+    /// Creates a new builder-style object to manufacture [`IpCountry`](crate::model::IpCountry).
+    pub fn builder() -> crate::model::ip_country::Builder {
+        crate::model::ip_country::Builder::default()
+    }
+}
+
 /// See [`IpCountry`](crate::model::IpCountry).
 pub mod ip_country {
 
@@ -13983,12 +14080,6 @@ pub mod ip_country {
         }
     }
 }
-impl IpCountry {
-    /// Creates a new builder-style object to manufacture [`IpCountry`](crate::model::IpCountry).
-    pub fn builder() -> crate::model::ip_country::Builder {
-        crate::model::ip_country::Builder::default()
-    }
-}
 
 /// <p>Provides information about the city that an IP address originated from.</p>
 #[non_exhaustive]
@@ -14004,6 +14095,13 @@ impl IpCity {
         self.name.as_deref()
     }
 }
+impl IpCity {
+    /// Creates a new builder-style object to manufacture [`IpCity`](crate::model::IpCity).
+    pub fn builder() -> crate::model::ip_city::Builder {
+        crate::model::ip_city::Builder::default()
+    }
+}
+
 /// See [`IpCity`](crate::model::IpCity).
 pub mod ip_city {
 
@@ -14030,12 +14128,6 @@ pub mod ip_city {
         }
     }
 }
-impl IpCity {
-    /// Creates a new builder-style object to manufacture [`IpCity`](crate::model::IpCity).
-    pub fn builder() -> crate::model::ip_city::Builder {
-        crate::model::ip_city::Builder::default()
-    }
-}
 
 /// <p>Provides information about the domain name of the device that an entity used to perform an action on an affected resource.</p>
 #[non_exhaustive]
@@ -14051,6 +14143,13 @@ impl DomainDetails {
         self.domain_name.as_deref()
     }
 }
+impl DomainDetails {
+    /// Creates a new builder-style object to manufacture [`DomainDetails`](crate::model::DomainDetails).
+    pub fn builder() -> crate::model::domain_details::Builder {
+        crate::model::domain_details::Builder::default()
+    }
+}
+
 /// See [`DomainDetails`](crate::model::DomainDetails).
 pub mod domain_details {
 
@@ -14079,12 +14178,6 @@ pub mod domain_details {
         }
     }
 }
-impl DomainDetails {
-    /// Creates a new builder-style object to manufacture [`DomainDetails`](crate::model::DomainDetails).
-    pub fn builder() -> crate::model::domain_details::Builder {
-        crate::model::domain_details::Builder::default()
-    }
-}
 
 /// <p>Provides information about an action that occurred for a resource and produced a policy finding.</p>
 #[non_exhaustive]
@@ -14107,6 +14200,13 @@ impl FindingAction {
         self.api_call_details.as_ref()
     }
 }
+impl FindingAction {
+    /// Creates a new builder-style object to manufacture [`FindingAction`](crate::model::FindingAction).
+    pub fn builder() -> crate::model::finding_action::Builder {
+        crate::model::finding_action::Builder::default()
+    }
+}
+
 /// See [`FindingAction`](crate::model::FindingAction).
 pub mod finding_action {
 
@@ -14153,12 +14253,6 @@ pub mod finding_action {
         }
     }
 }
-impl FindingAction {
-    /// Creates a new builder-style object to manufacture [`FindingAction`](crate::model::FindingAction).
-    pub fn builder() -> crate::model::finding_action::Builder {
-        crate::model::finding_action::Builder::default()
-    }
-}
 
 /// <p>Provides information about an API operation that an entity invoked for an affected resource.</p>
 #[non_exhaustive]
@@ -14195,6 +14289,13 @@ impl ApiCallDetails {
         self.last_seen.as_ref()
     }
 }
+impl ApiCallDetails {
+    /// Creates a new builder-style object to manufacture [`ApiCallDetails`](crate::model::ApiCallDetails).
+    pub fn builder() -> crate::model::api_call_details::Builder {
+        crate::model::api_call_details::Builder::default()
+    }
+}
+
 /// See [`ApiCallDetails`](crate::model::ApiCallDetails).
 pub mod api_call_details {
 
@@ -14266,12 +14367,6 @@ pub mod api_call_details {
                 last_seen: self.last_seen,
             }
         }
-    }
-}
-impl ApiCallDetails {
-    /// Creates a new builder-style object to manufacture [`ApiCallDetails`](crate::model::ApiCallDetails).
-    pub fn builder() -> crate::model::api_call_details::Builder {
-        crate::model::api_call_details::Builder::default()
     }
 }
 
@@ -14404,6 +14499,13 @@ impl ClassificationDetails {
         self.result.as_ref()
     }
 }
+impl ClassificationDetails {
+    /// Creates a new builder-style object to manufacture [`ClassificationDetails`](crate::model::ClassificationDetails).
+    pub fn builder() -> crate::model::classification_details::Builder {
+        crate::model::classification_details::Builder::default()
+    }
+}
+
 /// See [`ClassificationDetails`](crate::model::ClassificationDetails).
 pub mod classification_details {
 
@@ -14489,12 +14591,6 @@ pub mod classification_details {
         }
     }
 }
-impl ClassificationDetails {
-    /// Creates a new builder-style object to manufacture [`ClassificationDetails`](crate::model::ClassificationDetails).
-    pub fn builder() -> crate::model::classification_details::Builder {
-        crate::model::classification_details::Builder::default()
-    }
-}
 
 /// <p>Provides the details of a sensitive data finding, including the types, number of occurrences, and locations of the sensitive data that was detected.</p>
 #[non_exhaustive]
@@ -14549,6 +14645,13 @@ impl ClassificationResult {
         self.status.as_ref()
     }
 }
+impl ClassificationResult {
+    /// Creates a new builder-style object to manufacture [`ClassificationResult`](crate::model::ClassificationResult).
+    pub fn builder() -> crate::model::classification_result::Builder {
+        crate::model::classification_result::Builder::default()
+    }
+}
+
 /// See [`ClassificationResult`](crate::model::ClassificationResult).
 pub mod classification_result {
 
@@ -14659,12 +14762,6 @@ pub mod classification_result {
         }
     }
 }
-impl ClassificationResult {
-    /// Creates a new builder-style object to manufacture [`ClassificationResult`](crate::model::ClassificationResult).
-    pub fn builder() -> crate::model::classification_result::Builder {
-        crate::model::classification_result::Builder::default()
-    }
-}
 
 /// <p>Provides information about the status of a sensitive data finding.</p>
 #[non_exhaustive]
@@ -14745,6 +14842,13 @@ impl ClassificationResultStatus {
         self.reason.as_deref()
     }
 }
+impl ClassificationResultStatus {
+    /// Creates a new builder-style object to manufacture [`ClassificationResultStatus`](crate::model::ClassificationResultStatus).
+    pub fn builder() -> crate::model::classification_result_status::Builder {
+        crate::model::classification_result_status::Builder::default()
+    }
+}
+
 /// See [`ClassificationResultStatus`](crate::model::ClassificationResultStatus).
 pub mod classification_result_status {
 
@@ -14843,12 +14947,6 @@ pub mod classification_result_status {
         }
     }
 }
-impl ClassificationResultStatus {
-    /// Creates a new builder-style object to manufacture [`ClassificationResultStatus`](crate::model::ClassificationResultStatus).
-    pub fn builder() -> crate::model::classification_result_status::Builder {
-        crate::model::classification_result_status::Builder::default()
-    }
-}
 
 /// <p>Provides information about the category, types, and occurrences of sensitive data that produced a sensitive data finding.</p>
 #[non_exhaustive]
@@ -14878,6 +14976,13 @@ impl SensitiveDataItem {
         self.total_count
     }
 }
+impl SensitiveDataItem {
+    /// Creates a new builder-style object to manufacture [`SensitiveDataItem`](crate::model::SensitiveDataItem).
+    pub fn builder() -> crate::model::sensitive_data_item::Builder {
+        crate::model::sensitive_data_item::Builder::default()
+    }
+}
+
 /// See [`SensitiveDataItem`](crate::model::SensitiveDataItem).
 pub mod sensitive_data_item {
 
@@ -14942,12 +15047,6 @@ pub mod sensitive_data_item {
         }
     }
 }
-impl SensitiveDataItem {
-    /// Creates a new builder-style object to manufacture [`SensitiveDataItem`](crate::model::SensitiveDataItem).
-    pub fn builder() -> crate::model::sensitive_data_item::Builder {
-        crate::model::sensitive_data_item::Builder::default()
-    }
-}
 
 /// <p>Provides information about a type of sensitive data that was detected by a managed data identifier and produced a sensitive data finding.</p>
 #[non_exhaustive]
@@ -14977,6 +15076,13 @@ impl DefaultDetection {
         self.r#type.as_deref()
     }
 }
+impl DefaultDetection {
+    /// Creates a new builder-style object to manufacture [`DefaultDetection`](crate::model::DefaultDetection).
+    pub fn builder() -> crate::model::default_detection::Builder {
+        crate::model::default_detection::Builder::default()
+    }
+}
+
 /// See [`DefaultDetection`](crate::model::DefaultDetection).
 pub mod default_detection {
 
@@ -15032,12 +15138,6 @@ pub mod default_detection {
         }
     }
 }
-impl DefaultDetection {
-    /// Creates a new builder-style object to manufacture [`DefaultDetection`](crate::model::DefaultDetection).
-    pub fn builder() -> crate::model::default_detection::Builder {
-        crate::model::default_detection::Builder::default()
-    }
-}
 
 /// <p>Specifies the location of 1-15 occurrences of sensitive data that was detected by a managed data identifier or a custom data identifier and produced a sensitive data finding.</p>
 #[non_exhaustive]
@@ -15089,6 +15189,13 @@ impl Occurrences {
         self.records.as_deref()
     }
 }
+impl Occurrences {
+    /// Creates a new builder-style object to manufacture [`Occurrences`](crate::model::Occurrences).
+    pub fn builder() -> crate::model::occurrences::Builder {
+        crate::model::occurrences::Builder::default()
+    }
+}
+
 /// See [`Occurrences`](crate::model::Occurrences).
 pub mod occurrences {
 
@@ -15218,12 +15325,6 @@ pub mod occurrences {
         }
     }
 }
-impl Occurrences {
-    /// Creates a new builder-style object to manufacture [`Occurrences`](crate::model::Occurrences).
-    pub fn builder() -> crate::model::occurrences::Builder {
-        crate::model::occurrences::Builder::default()
-    }
-}
 
 /// <p>Specifies the location of an occurrence of sensitive data in an Apache Avro object container, Apache Parquet file, JSON file, or JSON Lines file.</p>
 #[non_exhaustive]
@@ -15248,6 +15349,13 @@ impl Record {
         self.record_index
     }
 }
+impl Record {
+    /// Creates a new builder-style object to manufacture [`Record`](crate::model::Record).
+    pub fn builder() -> crate::model::record::Builder {
+        crate::model::record::Builder::default()
+    }
+}
+
 /// See [`Record`](crate::model::Record).
 pub mod record {
 
@@ -15290,12 +15398,6 @@ pub mod record {
         }
     }
 }
-impl Record {
-    /// Creates a new builder-style object to manufacture [`Record`](crate::model::Record).
-    pub fn builder() -> crate::model::record::Builder {
-        crate::model::record::Builder::default()
-    }
-}
 
 /// <p>Specifies the location of an occurrence of sensitive data in an Adobe Portable Document Format file.</p>
 #[non_exhaustive]
@@ -15325,6 +15427,13 @@ impl Page {
         self.page_number
     }
 }
+impl Page {
+    /// Creates a new builder-style object to manufacture [`Page`](crate::model::Page).
+    pub fn builder() -> crate::model::page::Builder {
+        crate::model::page::Builder::default()
+    }
+}
+
 /// See [`Page`](crate::model::Page).
 pub mod page {
 
@@ -15377,12 +15486,6 @@ pub mod page {
         }
     }
 }
-impl Page {
-    /// Creates a new builder-style object to manufacture [`Page`](crate::model::Page).
-    pub fn builder() -> crate::model::page::Builder {
-        crate::model::page::Builder::default()
-    }
-}
 
 /// <p>Specifies the location of an occurrence of sensitive data in a non-binary text file, such as an HTML, TXT, or XML file.</p>
 #[non_exhaustive]
@@ -15412,6 +15515,13 @@ impl Range {
         self.start_column
     }
 }
+impl Range {
+    /// Creates a new builder-style object to manufacture [`Range`](crate::model::Range).
+    pub fn builder() -> crate::model::range::Builder {
+        crate::model::range::Builder::default()
+    }
+}
+
 /// See [`Range`](crate::model::Range).
 pub mod range {
 
@@ -15464,12 +15574,6 @@ pub mod range {
         }
     }
 }
-impl Range {
-    /// Creates a new builder-style object to manufacture [`Range`](crate::model::Range).
-    pub fn builder() -> crate::model::range::Builder {
-        crate::model::range::Builder::default()
-    }
-}
 
 /// <p>Specifies the location of an occurrence of sensitive data in a Microsoft Excel workbook, CSV file, or TSV file.</p>
 #[non_exhaustive]
@@ -15506,6 +15610,13 @@ impl Cell {
         self.row
     }
 }
+impl Cell {
+    /// Creates a new builder-style object to manufacture [`Cell`](crate::model::Cell).
+    pub fn builder() -> crate::model::cell::Builder {
+        crate::model::cell::Builder::default()
+    }
+}
+
 /// See [`Cell`](crate::model::Cell).
 pub mod cell {
 
@@ -15573,12 +15684,6 @@ pub mod cell {
         }
     }
 }
-impl Cell {
-    /// Creates a new builder-style object to manufacture [`Cell`](crate::model::Cell).
-    pub fn builder() -> crate::model::cell::Builder {
-        crate::model::cell::Builder::default()
-    }
-}
 
 /// <p>Provides information about custom data identifiers that produced a sensitive data finding, and the number of occurrences of the data that they detected for the finding.</p>
 #[non_exhaustive]
@@ -15601,6 +15706,13 @@ impl CustomDataIdentifiers {
         self.total_count
     }
 }
+impl CustomDataIdentifiers {
+    /// Creates a new builder-style object to manufacture [`CustomDataIdentifiers`](crate::model::CustomDataIdentifiers).
+    pub fn builder() -> crate::model::custom_data_identifiers::Builder {
+        crate::model::custom_data_identifiers::Builder::default()
+    }
+}
+
 /// See [`CustomDataIdentifiers`](crate::model::CustomDataIdentifiers).
 pub mod custom_data_identifiers {
 
@@ -15650,12 +15762,6 @@ pub mod custom_data_identifiers {
         }
     }
 }
-impl CustomDataIdentifiers {
-    /// Creates a new builder-style object to manufacture [`CustomDataIdentifiers`](crate::model::CustomDataIdentifiers).
-    pub fn builder() -> crate::model::custom_data_identifiers::Builder {
-        crate::model::custom_data_identifiers::Builder::default()
-    }
-}
 
 /// <p>Provides information about a custom data identifier that produced a sensitive data finding, and the sensitive data that it detected for the finding.</p>
 #[non_exhaustive]
@@ -15692,6 +15798,13 @@ impl CustomDetection {
         self.occurrences.as_ref()
     }
 }
+impl CustomDetection {
+    /// Creates a new builder-style object to manufacture [`CustomDetection`](crate::model::CustomDetection).
+    pub fn builder() -> crate::model::custom_detection::Builder {
+        crate::model::custom_detection::Builder::default()
+    }
+}
+
 /// See [`CustomDetection`](crate::model::CustomDetection).
 pub mod custom_detection {
 
@@ -15757,12 +15870,6 @@ pub mod custom_detection {
                 occurrences: self.occurrences,
             }
         }
-    }
-}
-impl CustomDetection {
-    /// Creates a new builder-style object to manufacture [`CustomDetection`](crate::model::CustomDetection).
-    pub fn builder() -> crate::model::custom_detection::Builder {
-        crate::model::custom_detection::Builder::default()
     }
 }
 
@@ -15970,6 +16077,13 @@ impl SeverityLevel {
         self.severity.as_ref()
     }
 }
+impl SeverityLevel {
+    /// Creates a new builder-style object to manufacture [`SeverityLevel`](crate::model::SeverityLevel).
+    pub fn builder() -> crate::model::severity_level::Builder {
+        crate::model::severity_level::Builder::default()
+    }
+}
+
 /// See [`SeverityLevel`](crate::model::SeverityLevel).
 pub mod severity_level {
 
@@ -16011,12 +16125,6 @@ pub mod severity_level {
                 severity: self.severity,
             }
         }
-    }
-}
-impl SeverityLevel {
-    /// Creates a new builder-style object to manufacture [`SeverityLevel`](crate::model::SeverityLevel).
-    pub fn builder() -> crate::model::severity_level::Builder {
-        crate::model::severity_level::Builder::default()
     }
 }
 
@@ -16131,6 +16239,13 @@ impl S3ClassificationScope {
         self.excludes.as_ref()
     }
 }
+impl S3ClassificationScope {
+    /// Creates a new builder-style object to manufacture [`S3ClassificationScope`](crate::model::S3ClassificationScope).
+    pub fn builder() -> crate::model::s3_classification_scope::Builder {
+        crate::model::s3_classification_scope::Builder::default()
+    }
+}
+
 /// See [`S3ClassificationScope`](crate::model::S3ClassificationScope).
 pub mod s3_classification_scope {
 
@@ -16162,12 +16277,6 @@ pub mod s3_classification_scope {
         }
     }
 }
-impl S3ClassificationScope {
-    /// Creates a new builder-style object to manufacture [`S3ClassificationScope`](crate::model::S3ClassificationScope).
-    pub fn builder() -> crate::model::s3_classification_scope::Builder {
-        crate::model::s3_classification_scope::Builder::default()
-    }
-}
 
 /// <p>Specifies the names of the S3 buckets that are excluded from automated sensitive data discovery.</p>
 #[non_exhaustive]
@@ -16183,6 +16292,13 @@ impl S3ClassificationScopeExclusion {
         self.bucket_names.as_deref()
     }
 }
+impl S3ClassificationScopeExclusion {
+    /// Creates a new builder-style object to manufacture [`S3ClassificationScopeExclusion`](crate::model::S3ClassificationScopeExclusion).
+    pub fn builder() -> crate::model::s3_classification_scope_exclusion::Builder {
+        crate::model::s3_classification_scope_exclusion::Builder::default()
+    }
+}
+
 /// See [`S3ClassificationScopeExclusion`](crate::model::S3ClassificationScopeExclusion).
 pub mod s3_classification_scope_exclusion {
 
@@ -16218,12 +16334,6 @@ pub mod s3_classification_scope_exclusion {
                 bucket_names: self.bucket_names,
             }
         }
-    }
-}
-impl S3ClassificationScopeExclusion {
-    /// Creates a new builder-style object to manufacture [`S3ClassificationScopeExclusion`](crate::model::S3ClassificationScopeExclusion).
-    pub fn builder() -> crate::model::s3_classification_scope_exclusion::Builder {
-        crate::model::s3_classification_scope_exclusion::Builder::default()
     }
 }
 
@@ -16264,6 +16374,13 @@ impl BucketStatisticsBySensitivity {
         self.sensitive.as_ref()
     }
 }
+impl BucketStatisticsBySensitivity {
+    /// Creates a new builder-style object to manufacture [`BucketStatisticsBySensitivity`](crate::model::BucketStatisticsBySensitivity).
+    pub fn builder() -> crate::model::bucket_statistics_by_sensitivity::Builder {
+        crate::model::bucket_statistics_by_sensitivity::Builder::default()
+    }
+}
+
 /// See [`BucketStatisticsBySensitivity`](crate::model::BucketStatisticsBySensitivity).
 pub mod bucket_statistics_by_sensitivity {
 
@@ -16343,12 +16460,6 @@ pub mod bucket_statistics_by_sensitivity {
         }
     }
 }
-impl BucketStatisticsBySensitivity {
-    /// Creates a new builder-style object to manufacture [`BucketStatisticsBySensitivity`](crate::model::BucketStatisticsBySensitivity).
-    pub fn builder() -> crate::model::bucket_statistics_by_sensitivity::Builder {
-        crate::model::bucket_statistics_by_sensitivity::Builder::default()
-    }
-}
 
 /// <p>Provides aggregated statistical data for sensitive data discovery metrics that apply to S3 buckets. Each field contains aggregated data for all the buckets that have a sensitivity score (sensitivityScore) of a specified value or within a specified range (BucketStatisticsBySensitivity). If automated sensitive data discovery is currently disabled for your account, the value for each field is 0.</p>
 #[non_exhaustive]
@@ -16389,6 +16500,13 @@ impl SensitivityAggregations {
         self.total_size_in_bytes
     }
 }
+impl SensitivityAggregations {
+    /// Creates a new builder-style object to manufacture [`SensitivityAggregations`](crate::model::SensitivityAggregations).
+    pub fn builder() -> crate::model::sensitivity_aggregations::Builder {
+        crate::model::sensitivity_aggregations::Builder::default()
+    }
+}
+
 /// See [`SensitivityAggregations`](crate::model::SensitivityAggregations).
 pub mod sensitivity_aggregations {
 
@@ -16457,12 +16575,6 @@ pub mod sensitivity_aggregations {
         }
     }
 }
-impl SensitivityAggregations {
-    /// Creates a new builder-style object to manufacture [`SensitivityAggregations`](crate::model::SensitivityAggregations).
-    pub fn builder() -> crate::model::sensitivity_aggregations::Builder {
-        crate::model::sensitivity_aggregations::Builder::default()
-    }
-}
 
 /// <p>Provides information about the number of S3 buckets that are or aren't shared with other Amazon Web Services accounts.</p>
 #[non_exhaustive]
@@ -16499,6 +16611,13 @@ impl BucketCountBySharedAccessType {
         self.unknown
     }
 }
+impl BucketCountBySharedAccessType {
+    /// Creates a new builder-style object to manufacture [`BucketCountBySharedAccessType`](crate::model::BucketCountBySharedAccessType).
+    pub fn builder() -> crate::model::bucket_count_by_shared_access_type::Builder {
+        crate::model::bucket_count_by_shared_access_type::Builder::default()
+    }
+}
+
 /// See [`BucketCountBySharedAccessType`](crate::model::BucketCountBySharedAccessType).
 pub mod bucket_count_by_shared_access_type {
 
@@ -16563,12 +16682,6 @@ pub mod bucket_count_by_shared_access_type {
         }
     }
 }
-impl BucketCountBySharedAccessType {
-    /// Creates a new builder-style object to manufacture [`BucketCountBySharedAccessType`](crate::model::BucketCountBySharedAccessType).
-    pub fn builder() -> crate::model::bucket_count_by_shared_access_type::Builder {
-        crate::model::bucket_count_by_shared_access_type::Builder::default()
-    }
-}
 
 /// <p>Provides information about the number of S3 buckets whose bucket policies do or don't require server-side encryption of objects when objects are uploaded to the buckets.</p>
 #[non_exhaustive]
@@ -16598,6 +16711,14 @@ impl BucketCountPolicyAllowsUnencryptedObjectUploads {
         self.unknown
     }
 }
+impl BucketCountPolicyAllowsUnencryptedObjectUploads {
+    /// Creates a new builder-style object to manufacture [`BucketCountPolicyAllowsUnencryptedObjectUploads`](crate::model::BucketCountPolicyAllowsUnencryptedObjectUploads).
+    pub fn builder() -> crate::model::bucket_count_policy_allows_unencrypted_object_uploads::Builder
+    {
+        crate::model::bucket_count_policy_allows_unencrypted_object_uploads::Builder::default()
+    }
+}
+
 /// See [`BucketCountPolicyAllowsUnencryptedObjectUploads`](crate::model::BucketCountPolicyAllowsUnencryptedObjectUploads).
 pub mod bucket_count_policy_allows_unencrypted_object_uploads {
 
@@ -16660,13 +16781,6 @@ pub mod bucket_count_policy_allows_unencrypted_object_uploads {
         }
     }
 }
-impl BucketCountPolicyAllowsUnencryptedObjectUploads {
-    /// Creates a new builder-style object to manufacture [`BucketCountPolicyAllowsUnencryptedObjectUploads`](crate::model::BucketCountPolicyAllowsUnencryptedObjectUploads).
-    pub fn builder() -> crate::model::bucket_count_policy_allows_unencrypted_object_uploads::Builder
-    {
-        crate::model::bucket_count_policy_allows_unencrypted_object_uploads::Builder::default()
-    }
-}
 
 /// <p>Provides information about the number of S3 buckets that use certain types of server-side encryption by default or don't encrypt new objects by default. For detailed information about these settings, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucket-encryption.html">Setting default server-side encryption behavior for Amazon S3 buckets</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p>
 #[non_exhaustive]
@@ -16703,6 +16817,13 @@ impl BucketCountByEncryptionType {
         self.unknown
     }
 }
+impl BucketCountByEncryptionType {
+    /// Creates a new builder-style object to manufacture [`BucketCountByEncryptionType`](crate::model::BucketCountByEncryptionType).
+    pub fn builder() -> crate::model::bucket_count_by_encryption_type::Builder {
+        crate::model::bucket_count_by_encryption_type::Builder::default()
+    }
+}
+
 /// See [`BucketCountByEncryptionType`](crate::model::BucketCountByEncryptionType).
 pub mod bucket_count_by_encryption_type {
 
@@ -16767,12 +16888,6 @@ pub mod bucket_count_by_encryption_type {
         }
     }
 }
-impl BucketCountByEncryptionType {
-    /// Creates a new builder-style object to manufacture [`BucketCountByEncryptionType`](crate::model::BucketCountByEncryptionType).
-    pub fn builder() -> crate::model::bucket_count_by_encryption_type::Builder {
-        crate::model::bucket_count_by_encryption_type::Builder::default()
-    }
-}
 
 /// <p>Provides information about the number of S3 buckets that are publicly accessible based on a combination of permissions settings for each bucket.</p>
 #[non_exhaustive]
@@ -16809,6 +16924,13 @@ impl BucketCountByEffectivePermission {
         self.unknown
     }
 }
+impl BucketCountByEffectivePermission {
+    /// Creates a new builder-style object to manufacture [`BucketCountByEffectivePermission`](crate::model::BucketCountByEffectivePermission).
+    pub fn builder() -> crate::model::bucket_count_by_effective_permission::Builder {
+        crate::model::bucket_count_by_effective_permission::Builder::default()
+    }
+}
+
 /// See [`BucketCountByEffectivePermission`](crate::model::BucketCountByEffectivePermission).
 pub mod bucket_count_by_effective_permission {
 
@@ -16873,12 +16995,6 @@ pub mod bucket_count_by_effective_permission {
         }
     }
 }
-impl BucketCountByEffectivePermission {
-    /// Creates a new builder-style object to manufacture [`BucketCountByEffectivePermission`](crate::model::BucketCountByEffectivePermission).
-    pub fn builder() -> crate::model::bucket_count_by_effective_permission::Builder {
-        crate::model::bucket_count_by_effective_permission::Builder::default()
-    }
-}
 
 /// <p>Provides information about the current status of an allow list, which indicates whether Amazon Macie can access and use the list's criteria.</p>
 #[non_exhaustive]
@@ -16923,6 +17039,13 @@ impl AllowListStatus {
         self.description.as_deref()
     }
 }
+impl AllowListStatus {
+    /// Creates a new builder-style object to manufacture [`AllowListStatus`](crate::model::AllowListStatus).
+    pub fn builder() -> crate::model::allow_list_status::Builder {
+        crate::model::allow_list_status::Builder::default()
+    }
+}
+
 /// See [`AllowListStatus`](crate::model::AllowListStatus).
 pub mod allow_list_status {
 
@@ -16986,12 +17109,6 @@ pub mod allow_list_status {
                 description: self.description,
             }
         }
-    }
-}
-impl AllowListStatus {
-    /// Creates a new builder-style object to manufacture [`AllowListStatus`](crate::model::AllowListStatus).
-    pub fn builder() -> crate::model::allow_list_status::Builder {
-        crate::model::allow_list_status::Builder::default()
     }
 }
 
@@ -17147,6 +17264,13 @@ impl Statistics {
         self.number_of_runs
     }
 }
+impl Statistics {
+    /// Creates a new builder-style object to manufacture [`Statistics`](crate::model::Statistics).
+    pub fn builder() -> crate::model::statistics::Builder {
+        crate::model::statistics::Builder::default()
+    }
+}
+
 /// See [`Statistics`](crate::model::Statistics).
 pub mod statistics {
 
@@ -17192,12 +17316,6 @@ pub mod statistics {
         }
     }
 }
-impl Statistics {
-    /// Creates a new builder-style object to manufacture [`Statistics`](crate::model::Statistics).
-    pub fn builder() -> crate::model::statistics::Builder {
-        crate::model::statistics::Builder::default()
-    }
-}
 
 /// <p>Specifies the recurrence pattern for running a classification job.</p>
 #[non_exhaustive]
@@ -17227,6 +17345,13 @@ impl JobScheduleFrequency {
         self.weekly_schedule.as_ref()
     }
 }
+impl JobScheduleFrequency {
+    /// Creates a new builder-style object to manufacture [`JobScheduleFrequency`](crate::model::JobScheduleFrequency).
+    pub fn builder() -> crate::model::job_schedule_frequency::Builder {
+        crate::model::job_schedule_frequency::Builder::default()
+    }
+}
+
 /// See [`JobScheduleFrequency`](crate::model::JobScheduleFrequency).
 pub mod job_schedule_frequency {
 
@@ -17288,12 +17413,6 @@ pub mod job_schedule_frequency {
         }
     }
 }
-impl JobScheduleFrequency {
-    /// Creates a new builder-style object to manufacture [`JobScheduleFrequency`](crate::model::JobScheduleFrequency).
-    pub fn builder() -> crate::model::job_schedule_frequency::Builder {
-        crate::model::job_schedule_frequency::Builder::default()
-    }
-}
 
 /// <p>Specifies a weekly recurrence pattern for running a classification job.</p>
 #[non_exhaustive]
@@ -17309,6 +17428,13 @@ impl WeeklySchedule {
         self.day_of_week.as_ref()
     }
 }
+impl WeeklySchedule {
+    /// Creates a new builder-style object to manufacture [`WeeklySchedule`](crate::model::WeeklySchedule).
+    pub fn builder() -> crate::model::weekly_schedule::Builder {
+        crate::model::weekly_schedule::Builder::default()
+    }
+}
+
 /// See [`WeeklySchedule`](crate::model::WeeklySchedule).
 pub mod weekly_schedule {
 
@@ -17338,12 +17464,6 @@ pub mod weekly_schedule {
                 day_of_week: self.day_of_week,
             }
         }
-    }
-}
-impl WeeklySchedule {
-    /// Creates a new builder-style object to manufacture [`WeeklySchedule`](crate::model::WeeklySchedule).
-    pub fn builder() -> crate::model::weekly_schedule::Builder {
-        crate::model::weekly_schedule::Builder::default()
     }
 }
 
@@ -17486,6 +17606,13 @@ impl MonthlySchedule {
         self.day_of_month
     }
 }
+impl MonthlySchedule {
+    /// Creates a new builder-style object to manufacture [`MonthlySchedule`](crate::model::MonthlySchedule).
+    pub fn builder() -> crate::model::monthly_schedule::Builder {
+        crate::model::monthly_schedule::Builder::default()
+    }
+}
+
 /// See [`MonthlySchedule`](crate::model::MonthlySchedule).
 pub mod monthly_schedule {
 
@@ -17516,17 +17643,18 @@ pub mod monthly_schedule {
         }
     }
 }
-impl MonthlySchedule {
-    /// Creates a new builder-style object to manufacture [`MonthlySchedule`](crate::model::MonthlySchedule).
-    pub fn builder() -> crate::model::monthly_schedule::Builder {
-        crate::model::monthly_schedule::Builder::default()
-    }
-}
 
 /// <p>Specifies that a classification job runs once a day, every day. This is an empty object.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DailySchedule {}
+impl DailySchedule {
+    /// Creates a new builder-style object to manufacture [`DailySchedule`](crate::model::DailySchedule).
+    pub fn builder() -> crate::model::daily_schedule::Builder {
+        crate::model::daily_schedule::Builder::default()
+    }
+}
+
 /// See [`DailySchedule`](crate::model::DailySchedule).
 pub mod daily_schedule {
 
@@ -17539,12 +17667,6 @@ pub mod daily_schedule {
         pub fn build(self) -> crate::model::DailySchedule {
             crate::model::DailySchedule {}
         }
-    }
-}
-impl DailySchedule {
-    /// Creates a new builder-style object to manufacture [`DailySchedule`](crate::model::DailySchedule).
-    pub fn builder() -> crate::model::daily_schedule::Builder {
-        crate::model::daily_schedule::Builder::default()
     }
 }
 
@@ -17579,6 +17701,13 @@ impl S3JobDefinition {
         self.scoping.as_ref()
     }
 }
+impl S3JobDefinition {
+    /// Creates a new builder-style object to manufacture [`S3JobDefinition`](crate::model::S3JobDefinition).
+    pub fn builder() -> crate::model::s3_job_definition::Builder {
+        crate::model::s3_job_definition::Builder::default()
+    }
+}
+
 /// See [`S3JobDefinition`](crate::model::S3JobDefinition).
 pub mod s3_job_definition {
 
@@ -17644,12 +17773,6 @@ pub mod s3_job_definition {
         }
     }
 }
-impl S3JobDefinition {
-    /// Creates a new builder-style object to manufacture [`S3JobDefinition`](crate::model::S3JobDefinition).
-    pub fn builder() -> crate::model::s3_job_definition::Builder {
-        crate::model::s3_job_definition::Builder::default()
-    }
-}
 
 /// <p>Specifies one or more property- and tag-based conditions that define criteria for including or excluding S3 objects from a classification job. Exclude conditions take precedence over include conditions.</p>
 #[non_exhaustive]
@@ -17672,6 +17795,13 @@ impl Scoping {
         self.includes.as_ref()
     }
 }
+impl Scoping {
+    /// Creates a new builder-style object to manufacture [`Scoping`](crate::model::Scoping).
+    pub fn builder() -> crate::model::scoping::Builder {
+        crate::model::scoping::Builder::default()
+    }
+}
+
 /// See [`Scoping`](crate::model::Scoping).
 pub mod scoping {
 
@@ -17718,12 +17848,6 @@ pub mod scoping {
         }
     }
 }
-impl Scoping {
-    /// Creates a new builder-style object to manufacture [`Scoping`](crate::model::Scoping).
-    pub fn builder() -> crate::model::scoping::Builder {
-        crate::model::scoping::Builder::default()
-    }
-}
 
 /// <p>Specifies one or more property- and tag-based conditions that define criteria for including or excluding S3 objects from a classification job.</p>
 #[non_exhaustive]
@@ -17739,6 +17863,13 @@ impl JobScopingBlock {
         self.and.as_deref()
     }
 }
+impl JobScopingBlock {
+    /// Creates a new builder-style object to manufacture [`JobScopingBlock`](crate::model::JobScopingBlock).
+    pub fn builder() -> crate::model::job_scoping_block::Builder {
+        crate::model::job_scoping_block::Builder::default()
+    }
+}
+
 /// See [`JobScopingBlock`](crate::model::JobScopingBlock).
 pub mod job_scoping_block {
 
@@ -17774,12 +17905,6 @@ pub mod job_scoping_block {
         }
     }
 }
-impl JobScopingBlock {
-    /// Creates a new builder-style object to manufacture [`JobScopingBlock`](crate::model::JobScopingBlock).
-    pub fn builder() -> crate::model::job_scoping_block::Builder {
-        crate::model::job_scoping_block::Builder::default()
-    }
-}
 
 /// <p>Specifies a property- or tag-based condition that defines criteria for including or excluding S3 objects from a classification job. A JobScopeTerm object can contain only one simpleScopeTerm object or one tagScopeTerm object.</p>
 #[non_exhaustive]
@@ -17802,6 +17927,13 @@ impl JobScopeTerm {
         self.tag_scope_term.as_ref()
     }
 }
+impl JobScopeTerm {
+    /// Creates a new builder-style object to manufacture [`JobScopeTerm`](crate::model::JobScopeTerm).
+    pub fn builder() -> crate::model::job_scope_term::Builder {
+        crate::model::job_scope_term::Builder::default()
+    }
+}
+
 /// See [`JobScopeTerm`](crate::model::JobScopeTerm).
 pub mod job_scope_term {
 
@@ -17848,12 +17980,6 @@ pub mod job_scope_term {
         }
     }
 }
-impl JobScopeTerm {
-    /// Creates a new builder-style object to manufacture [`JobScopeTerm`](crate::model::JobScopeTerm).
-    pub fn builder() -> crate::model::job_scope_term::Builder {
-        crate::model::job_scope_term::Builder::default()
-    }
-}
 
 /// <p>Specifies a tag-based condition that determines whether an S3 object is included or excluded from a classification job.</p>
 #[non_exhaustive]
@@ -17890,6 +18016,13 @@ impl TagScopeTerm {
         self.target.as_ref()
     }
 }
+impl TagScopeTerm {
+    /// Creates a new builder-style object to manufacture [`TagScopeTerm`](crate::model::TagScopeTerm).
+    pub fn builder() -> crate::model::tag_scope_term::Builder {
+        crate::model::tag_scope_term::Builder::default()
+    }
+}
+
 /// See [`TagScopeTerm`](crate::model::TagScopeTerm).
 pub mod tag_scope_term {
 
@@ -17964,12 +18097,6 @@ pub mod tag_scope_term {
                 target: self.target,
             }
         }
-    }
-}
-impl TagScopeTerm {
-    /// Creates a new builder-style object to manufacture [`TagScopeTerm`](crate::model::TagScopeTerm).
-    pub fn builder() -> crate::model::tag_scope_term::Builder {
-        crate::model::tag_scope_term::Builder::default()
     }
 }
 
@@ -18079,6 +18206,13 @@ impl TagValuePair {
         self.value.as_deref()
     }
 }
+impl TagValuePair {
+    /// Creates a new builder-style object to manufacture [`TagValuePair`](crate::model::TagValuePair).
+    pub fn builder() -> crate::model::tag_value_pair::Builder {
+        crate::model::tag_value_pair::Builder::default()
+    }
+}
+
 /// See [`TagValuePair`](crate::model::TagValuePair).
 pub mod tag_value_pair {
 
@@ -18117,12 +18251,6 @@ pub mod tag_value_pair {
                 value: self.value,
             }
         }
-    }
-}
-impl TagValuePair {
-    /// Creates a new builder-style object to manufacture [`TagValuePair`](crate::model::TagValuePair).
-    pub fn builder() -> crate::model::tag_value_pair::Builder {
-        crate::model::tag_value_pair::Builder::default()
     }
 }
 
@@ -18182,6 +18310,13 @@ impl SimpleScopeTerm {
         self.values.as_deref()
     }
 }
+impl SimpleScopeTerm {
+    /// Creates a new builder-style object to manufacture [`SimpleScopeTerm`](crate::model::SimpleScopeTerm).
+    pub fn builder() -> crate::model::simple_scope_term::Builder {
+        crate::model::simple_scope_term::Builder::default()
+    }
+}
+
 /// See [`SimpleScopeTerm`](crate::model::SimpleScopeTerm).
 pub mod simple_scope_term {
 
@@ -18272,12 +18407,6 @@ pub mod simple_scope_term {
                 values: self.values,
             }
         }
-    }
-}
-impl SimpleScopeTerm {
-    /// Creates a new builder-style object to manufacture [`SimpleScopeTerm`](crate::model::SimpleScopeTerm).
-    pub fn builder() -> crate::model::simple_scope_term::Builder {
-        crate::model::simple_scope_term::Builder::default()
     }
 }
 
@@ -18722,6 +18851,13 @@ impl BucketMetadata {
         self.versioning
     }
 }
+impl BucketMetadata {
+    /// Creates a new builder-style object to manufacture [`BucketMetadata`](crate::model::BucketMetadata).
+    pub fn builder() -> crate::model::bucket_metadata::Builder {
+        crate::model::bucket_metadata::Builder::default()
+    }
+}
+
 /// See [`BucketMetadata`](crate::model::BucketMetadata).
 pub mod bucket_metadata {
 
@@ -19151,12 +19287,6 @@ pub mod bucket_metadata {
         }
     }
 }
-impl BucketMetadata {
-    /// Creates a new builder-style object to manufacture [`BucketMetadata`](crate::model::BucketMetadata).
-    pub fn builder() -> crate::model::bucket_metadata::Builder {
-        crate::model::bucket_metadata::Builder::default()
-    }
-}
 
 /// When writing a match expression against `SharedAccess`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -19289,6 +19419,13 @@ impl BucketServerSideEncryption {
         self.r#type.as_ref()
     }
 }
+impl BucketServerSideEncryption {
+    /// Creates a new builder-style object to manufacture [`BucketServerSideEncryption`](crate::model::BucketServerSideEncryption).
+    pub fn builder() -> crate::model::bucket_server_side_encryption::Builder {
+        crate::model::bucket_server_side_encryption::Builder::default()
+    }
+}
+
 /// See [`BucketServerSideEncryption`](crate::model::BucketServerSideEncryption).
 pub mod bucket_server_side_encryption {
 
@@ -19340,12 +19477,6 @@ pub mod bucket_server_side_encryption {
                 r#type: self.r#type,
             }
         }
-    }
-}
-impl BucketServerSideEncryption {
-    /// Creates a new builder-style object to manufacture [`BucketServerSideEncryption`](crate::model::BucketServerSideEncryption).
-    pub fn builder() -> crate::model::bucket_server_side_encryption::Builder {
-        crate::model::bucket_server_side_encryption::Builder::default()
     }
 }
 
@@ -19472,6 +19603,13 @@ impl ReplicationDetails {
         self.replication_accounts.as_deref()
     }
 }
+impl ReplicationDetails {
+    /// Creates a new builder-style object to manufacture [`ReplicationDetails`](crate::model::ReplicationDetails).
+    pub fn builder() -> crate::model::replication_details::Builder {
+        crate::model::replication_details::Builder::default()
+    }
+}
+
 /// See [`ReplicationDetails`](crate::model::ReplicationDetails).
 pub mod replication_details {
 
@@ -19533,12 +19671,6 @@ pub mod replication_details {
         }
     }
 }
-impl ReplicationDetails {
-    /// Creates a new builder-style object to manufacture [`ReplicationDetails`](crate::model::ReplicationDetails).
-    pub fn builder() -> crate::model::replication_details::Builder {
-        crate::model::replication_details::Builder::default()
-    }
-}
 
 /// <p>Specifies criteria for sorting the results of a query for information about S3 buckets.</p>
 #[non_exhaustive]
@@ -19561,6 +19693,13 @@ impl BucketSortCriteria {
         self.order_by.as_ref()
     }
 }
+impl BucketSortCriteria {
+    /// Creates a new builder-style object to manufacture [`BucketSortCriteria`](crate::model::BucketSortCriteria).
+    pub fn builder() -> crate::model::bucket_sort_criteria::Builder {
+        crate::model::bucket_sort_criteria::Builder::default()
+    }
+}
+
 /// See [`BucketSortCriteria`](crate::model::BucketSortCriteria).
 pub mod bucket_sort_criteria {
 
@@ -19602,12 +19741,6 @@ pub mod bucket_sort_criteria {
                 order_by: self.order_by,
             }
         }
-    }
-}
-impl BucketSortCriteria {
-    /// Creates a new builder-style object to manufacture [`BucketSortCriteria`](crate::model::BucketSortCriteria).
-    pub fn builder() -> crate::model::bucket_sort_criteria::Builder {
-        crate::model::bucket_sort_criteria::Builder::default()
     }
 }
 
@@ -19667,6 +19800,13 @@ impl BucketCriteriaAdditionalProperties {
         self.prefix.as_deref()
     }
 }
+impl BucketCriteriaAdditionalProperties {
+    /// Creates a new builder-style object to manufacture [`BucketCriteriaAdditionalProperties`](crate::model::BucketCriteriaAdditionalProperties).
+    pub fn builder() -> crate::model::bucket_criteria_additional_properties::Builder {
+        crate::model::bucket_criteria_additional_properties::Builder::default()
+    }
+}
+
 /// See [`BucketCriteriaAdditionalProperties`](crate::model::BucketCriteriaAdditionalProperties).
 pub mod bucket_criteria_additional_properties {
 
@@ -19785,12 +19925,6 @@ pub mod bucket_criteria_additional_properties {
         }
     }
 }
-impl BucketCriteriaAdditionalProperties {
-    /// Creates a new builder-style object to manufacture [`BucketCriteriaAdditionalProperties`](crate::model::BucketCriteriaAdditionalProperties).
-    pub fn builder() -> crate::model::bucket_criteria_additional_properties::Builder {
-        crate::model::bucket_criteria_additional_properties::Builder::default()
-    }
-}
 
 /// <p>Provides information about an account-related request that hasn't been processed.</p>
 #[non_exhaustive]
@@ -19820,6 +19954,13 @@ impl UnprocessedAccount {
         self.error_message.as_deref()
     }
 }
+impl UnprocessedAccount {
+    /// Creates a new builder-style object to manufacture [`UnprocessedAccount`](crate::model::UnprocessedAccount).
+    pub fn builder() -> crate::model::unprocessed_account::Builder {
+        crate::model::unprocessed_account::Builder::default()
+    }
+}
+
 /// See [`UnprocessedAccount`](crate::model::UnprocessedAccount).
 pub mod unprocessed_account {
 
@@ -19876,12 +20017,6 @@ pub mod unprocessed_account {
                 error_message: self.error_message,
             }
         }
-    }
-}
-impl UnprocessedAccount {
-    /// Creates a new builder-style object to manufacture [`UnprocessedAccount`](crate::model::UnprocessedAccount).
-    pub fn builder() -> crate::model::unprocessed_account::Builder {
-        crate::model::unprocessed_account::Builder::default()
     }
 }
 
@@ -19996,6 +20131,13 @@ impl AccountDetail {
         self.email.as_deref()
     }
 }
+impl AccountDetail {
+    /// Creates a new builder-style object to manufacture [`AccountDetail`](crate::model::AccountDetail).
+    pub fn builder() -> crate::model::account_detail::Builder {
+        crate::model::account_detail::Builder::default()
+    }
+}
+
 /// See [`AccountDetail`](crate::model::AccountDetail).
 pub mod account_detail {
 
@@ -20034,12 +20176,6 @@ pub mod account_detail {
                 email: self.email,
             }
         }
-    }
-}
-impl AccountDetail {
-    /// Creates a new builder-style object to manufacture [`AccountDetail`](crate::model::AccountDetail).
-    pub fn builder() -> crate::model::account_detail::Builder {
-        crate::model::account_detail::Builder::default()
     }
 }
 
@@ -20092,6 +20228,13 @@ impl BatchGetCustomDataIdentifierSummary {
         self.name.as_deref()
     }
 }
+impl BatchGetCustomDataIdentifierSummary {
+    /// Creates a new builder-style object to manufacture [`BatchGetCustomDataIdentifierSummary`](crate::model::BatchGetCustomDataIdentifierSummary).
+    pub fn builder() -> crate::model::batch_get_custom_data_identifier_summary::Builder {
+        crate::model::batch_get_custom_data_identifier_summary::Builder::default()
+    }
+}
+
 /// See [`BatchGetCustomDataIdentifierSummary`](crate::model::BatchGetCustomDataIdentifierSummary).
 pub mod batch_get_custom_data_identifier_summary {
 
@@ -20181,11 +20324,5 @@ pub mod batch_get_custom_data_identifier_summary {
                 name: self.name,
             }
         }
-    }
-}
-impl BatchGetCustomDataIdentifierSummary {
-    /// Creates a new builder-style object to manufacture [`BatchGetCustomDataIdentifierSummary`](crate::model::BatchGetCustomDataIdentifierSummary).
-    pub fn builder() -> crate::model::batch_get_custom_data_identifier_summary::Builder {
-        crate::model::batch_get_custom_data_identifier_summary::Builder::default()
     }
 }

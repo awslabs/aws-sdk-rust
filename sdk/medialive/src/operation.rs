@@ -4,7 +4,7 @@
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`accept_input_device_transfer`](crate::client::Client::accept_input_device_transfer).
 ///
-/// See [`crate::client::fluent_builders::AcceptInputDeviceTransfer`] for more details about the operation.
+/// `ParseStrictResponse` impl for `AcceptInputDeviceTransfer`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct AcceptInputDeviceTransfer {
     _private: (),
@@ -39,7 +39,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AcceptInputDeviceTransfe
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`batch_delete`](crate::client::Client::batch_delete).
 ///
-/// See [`crate::client::fluent_builders::BatchDelete`] for more details about the operation.
+/// `ParseStrictResponse` impl for `BatchDelete`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct BatchDelete {
     _private: (),
@@ -72,7 +72,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchDelete {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`batch_start`](crate::client::Client::batch_start).
 ///
-/// See [`crate::client::fluent_builders::BatchStart`] for more details about the operation.
+/// `ParseStrictResponse` impl for `BatchStart`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct BatchStart {
     _private: (),
@@ -105,7 +105,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchStart {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`batch_stop`](crate::client::Client::batch_stop).
 ///
-/// See [`crate::client::fluent_builders::BatchStop`] for more details about the operation.
+/// `ParseStrictResponse` impl for `BatchStop`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct BatchStop {
     _private: (),
@@ -137,7 +137,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchStop {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`batch_update_schedule`](crate::client::Client::batch_update_schedule).
 ///
-/// See [`crate::client::fluent_builders::BatchUpdateSchedule`] for more details about the operation.
+/// `ParseStrictResponse` impl for `BatchUpdateSchedule`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct BatchUpdateSchedule {
     _private: (),
@@ -172,7 +172,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchUpdateSchedule {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`cancel_input_device_transfer`](crate::client::Client::cancel_input_device_transfer).
 ///
-/// See [`crate::client::fluent_builders::CancelInputDeviceTransfer`] for more details about the operation.
+/// `ParseStrictResponse` impl for `CancelInputDeviceTransfer`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CancelInputDeviceTransfer {
     _private: (),
@@ -207,7 +207,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CancelInputDeviceTransfe
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`claim_device`](crate::client::Client::claim_device).
 ///
-/// See [`crate::client::fluent_builders::ClaimDevice`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ClaimDevice`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ClaimDevice {
     _private: (),
@@ -240,7 +240,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ClaimDevice {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`create_channel`](crate::client::Client::create_channel).
 ///
-/// See [`crate::client::fluent_builders::CreateChannel`] for more details about the operation.
+/// `ParseStrictResponse` impl for `CreateChannel`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateChannel {
     _private: (),
@@ -273,7 +273,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateChannel {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`create_input`](crate::client::Client::create_input).
 ///
-/// See [`crate::client::fluent_builders::CreateInput`] for more details about the operation.
+/// `ParseStrictResponse` impl for `CreateInput`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateInput {
     _private: (),
@@ -306,7 +306,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateInput {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`create_input_security_group`](crate::client::Client::create_input_security_group).
 ///
-/// See [`crate::client::fluent_builders::CreateInputSecurityGroup`] for more details about the operation.
+/// `ParseStrictResponse` impl for `CreateInputSecurityGroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateInputSecurityGroup {
     _private: (),
@@ -341,7 +341,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateInputSecurityGroup
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`create_multiplex`](crate::client::Client::create_multiplex).
 ///
-/// See [`crate::client::fluent_builders::CreateMultiplex`] for more details about the operation.
+/// `ParseStrictResponse` impl for `CreateMultiplex`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateMultiplex {
     _private: (),
@@ -376,7 +376,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateMultiplex {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`create_multiplex_program`](crate::client::Client::create_multiplex_program).
 ///
-/// See [`crate::client::fluent_builders::CreateMultiplexProgram`] for more details about the operation.
+/// `ParseStrictResponse` impl for `CreateMultiplexProgram`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateMultiplexProgram {
     _private: (),
@@ -411,7 +411,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateMultiplexProgram {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`create_partner_input`](crate::client::Client::create_partner_input).
 ///
-/// See [`crate::client::fluent_builders::CreatePartnerInput`] for more details about the operation.
+/// `ParseStrictResponse` impl for `CreatePartnerInput`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreatePartnerInput {
     _private: (),
@@ -446,7 +446,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreatePartnerInput {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`create_tags`](crate::client::Client::create_tags).
 ///
-/// See [`crate::client::fluent_builders::CreateTags`] for more details about the operation.
+/// `ParseStrictResponse` impl for `CreateTags`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateTags {
     _private: (),
@@ -479,7 +479,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateTags {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`delete_channel`](crate::client::Client::delete_channel).
 ///
-/// See [`crate::client::fluent_builders::DeleteChannel`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DeleteChannel`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteChannel {
     _private: (),
@@ -512,7 +512,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteChannel {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`delete_input`](crate::client::Client::delete_input).
 ///
-/// See [`crate::client::fluent_builders::DeleteInput`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DeleteInput`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteInput {
     _private: (),
@@ -545,7 +545,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteInput {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`delete_input_security_group`](crate::client::Client::delete_input_security_group).
 ///
-/// See [`crate::client::fluent_builders::DeleteInputSecurityGroup`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DeleteInputSecurityGroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteInputSecurityGroup {
     _private: (),
@@ -580,7 +580,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteInputSecurityGroup
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`delete_multiplex`](crate::client::Client::delete_multiplex).
 ///
-/// See [`crate::client::fluent_builders::DeleteMultiplex`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DeleteMultiplex`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteMultiplex {
     _private: (),
@@ -615,7 +615,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteMultiplex {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`delete_multiplex_program`](crate::client::Client::delete_multiplex_program).
 ///
-/// See [`crate::client::fluent_builders::DeleteMultiplexProgram`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DeleteMultiplexProgram`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteMultiplexProgram {
     _private: (),
@@ -650,7 +650,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteMultiplexProgram {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`delete_reservation`](crate::client::Client::delete_reservation).
 ///
-/// See [`crate::client::fluent_builders::DeleteReservation`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DeleteReservation`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteReservation {
     _private: (),
@@ -685,7 +685,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteReservation {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`delete_schedule`](crate::client::Client::delete_schedule).
 ///
-/// See [`crate::client::fluent_builders::DeleteSchedule`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DeleteSchedule`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteSchedule {
     _private: (),
@@ -718,7 +718,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteSchedule {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`delete_tags`](crate::client::Client::delete_tags).
 ///
-/// See [`crate::client::fluent_builders::DeleteTags`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DeleteTags`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteTags {
     _private: (),
@@ -751,7 +751,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteTags {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`describe_channel`](crate::client::Client::describe_channel).
 ///
-/// See [`crate::client::fluent_builders::DescribeChannel`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DescribeChannel`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeChannel {
     _private: (),
@@ -786,7 +786,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeChannel {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`describe_input`](crate::client::Client::describe_input).
 ///
-/// See [`crate::client::fluent_builders::DescribeInput`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DescribeInput`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeInput {
     _private: (),
@@ -819,7 +819,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeInput {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`describe_input_device`](crate::client::Client::describe_input_device).
 ///
-/// See [`crate::client::fluent_builders::DescribeInputDevice`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DescribeInputDevice`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeInputDevice {
     _private: (),
@@ -854,7 +854,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeInputDevice {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`describe_input_device_thumbnail`](crate::client::Client::describe_input_device_thumbnail).
 ///
-/// See [`crate::client::fluent_builders::DescribeInputDeviceThumbnail`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DescribeInputDeviceThumbnail`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeInputDeviceThumbnail {
     _private: (),
@@ -895,7 +895,7 @@ impl aws_smithy_http::response::ParseHttpResponse for DescribeInputDeviceThumbna
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`describe_input_security_group`](crate::client::Client::describe_input_security_group).
 ///
-/// See [`crate::client::fluent_builders::DescribeInputSecurityGroup`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DescribeInputSecurityGroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeInputSecurityGroup {
     _private: (),
@@ -930,7 +930,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeInputSecurityGro
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`describe_multiplex`](crate::client::Client::describe_multiplex).
 ///
-/// See [`crate::client::fluent_builders::DescribeMultiplex`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DescribeMultiplex`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeMultiplex {
     _private: (),
@@ -965,7 +965,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeMultiplex {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`describe_multiplex_program`](crate::client::Client::describe_multiplex_program).
 ///
-/// See [`crate::client::fluent_builders::DescribeMultiplexProgram`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DescribeMultiplexProgram`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeMultiplexProgram {
     _private: (),
@@ -1000,7 +1000,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeMultiplexProgram
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`describe_offering`](crate::client::Client::describe_offering).
 ///
-/// See [`crate::client::fluent_builders::DescribeOffering`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DescribeOffering`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeOffering {
     _private: (),
@@ -1035,7 +1035,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeOffering {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`describe_reservation`](crate::client::Client::describe_reservation).
 ///
-/// See [`crate::client::fluent_builders::DescribeReservation`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DescribeReservation`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeReservation {
     _private: (),
@@ -1070,7 +1070,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeReservation {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`describe_schedule`](crate::client::Client::describe_schedule).
 ///
-/// See [`crate::client::fluent_builders::DescribeSchedule`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DescribeSchedule`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeSchedule {
     _private: (),
@@ -1105,7 +1105,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeSchedule {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_channels`](crate::client::Client::list_channels).
 ///
-/// See [`crate::client::fluent_builders::ListChannels`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListChannels`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListChannels {
     _private: (),
@@ -1138,7 +1138,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListChannels {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_input_devices`](crate::client::Client::list_input_devices).
 ///
-/// See [`crate::client::fluent_builders::ListInputDevices`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListInputDevices`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListInputDevices {
     _private: (),
@@ -1173,7 +1173,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListInputDevices {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_input_device_transfers`](crate::client::Client::list_input_device_transfers).
 ///
-/// See [`crate::client::fluent_builders::ListInputDeviceTransfers`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListInputDeviceTransfers`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListInputDeviceTransfers {
     _private: (),
@@ -1208,7 +1208,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListInputDeviceTransfers
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_inputs`](crate::client::Client::list_inputs).
 ///
-/// See [`crate::client::fluent_builders::ListInputs`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListInputs`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListInputs {
     _private: (),
@@ -1241,7 +1241,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListInputs {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_input_security_groups`](crate::client::Client::list_input_security_groups).
 ///
-/// See [`crate::client::fluent_builders::ListInputSecurityGroups`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListInputSecurityGroups`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListInputSecurityGroups {
     _private: (),
@@ -1276,7 +1276,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListInputSecurityGroups 
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_multiplexes`](crate::client::Client::list_multiplexes).
 ///
-/// See [`crate::client::fluent_builders::ListMultiplexes`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListMultiplexes`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListMultiplexes {
     _private: (),
@@ -1311,7 +1311,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListMultiplexes {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_multiplex_programs`](crate::client::Client::list_multiplex_programs).
 ///
-/// See [`crate::client::fluent_builders::ListMultiplexPrograms`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListMultiplexPrograms`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListMultiplexPrograms {
     _private: (),
@@ -1346,7 +1346,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListMultiplexPrograms {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_offerings`](crate::client::Client::list_offerings).
 ///
-/// See [`crate::client::fluent_builders::ListOfferings`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListOfferings`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListOfferings {
     _private: (),
@@ -1379,7 +1379,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListOfferings {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_reservations`](crate::client::Client::list_reservations).
 ///
-/// See [`crate::client::fluent_builders::ListReservations`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListReservations`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListReservations {
     _private: (),
@@ -1414,7 +1414,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListReservations {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
 ///
-/// See [`crate::client::fluent_builders::ListTagsForResource`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTagsForResource {
     _private: (),
@@ -1449,7 +1449,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`purchase_offering`](crate::client::Client::purchase_offering).
 ///
-/// See [`crate::client::fluent_builders::PurchaseOffering`] for more details about the operation.
+/// `ParseStrictResponse` impl for `PurchaseOffering`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PurchaseOffering {
     _private: (),
@@ -1484,7 +1484,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PurchaseOffering {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`reboot_input_device`](crate::client::Client::reboot_input_device).
 ///
-/// See [`crate::client::fluent_builders::RebootInputDevice`] for more details about the operation.
+/// `ParseStrictResponse` impl for `RebootInputDevice`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct RebootInputDevice {
     _private: (),
@@ -1519,7 +1519,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RebootInputDevice {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`reject_input_device_transfer`](crate::client::Client::reject_input_device_transfer).
 ///
-/// See [`crate::client::fluent_builders::RejectInputDeviceTransfer`] for more details about the operation.
+/// `ParseStrictResponse` impl for `RejectInputDeviceTransfer`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct RejectInputDeviceTransfer {
     _private: (),
@@ -1554,7 +1554,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RejectInputDeviceTransfe
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`start_channel`](crate::client::Client::start_channel).
 ///
-/// See [`crate::client::fluent_builders::StartChannel`] for more details about the operation.
+/// `ParseStrictResponse` impl for `StartChannel`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StartChannel {
     _private: (),
@@ -1587,7 +1587,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartChannel {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`start_input_device_maintenance_window`](crate::client::Client::start_input_device_maintenance_window).
 ///
-/// See [`crate::client::fluent_builders::StartInputDeviceMaintenanceWindow`] for more details about the operation.
+/// `ParseStrictResponse` impl for `StartInputDeviceMaintenanceWindow`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StartInputDeviceMaintenanceWindow {
     _private: (),
@@ -1622,7 +1622,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartInputDeviceMaintena
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`start_multiplex`](crate::client::Client::start_multiplex).
 ///
-/// See [`crate::client::fluent_builders::StartMultiplex`] for more details about the operation.
+/// `ParseStrictResponse` impl for `StartMultiplex`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StartMultiplex {
     _private: (),
@@ -1655,7 +1655,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartMultiplex {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`stop_channel`](crate::client::Client::stop_channel).
 ///
-/// See [`crate::client::fluent_builders::StopChannel`] for more details about the operation.
+/// `ParseStrictResponse` impl for `StopChannel`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StopChannel {
     _private: (),
@@ -1688,7 +1688,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StopChannel {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`stop_multiplex`](crate::client::Client::stop_multiplex).
 ///
-/// See [`crate::client::fluent_builders::StopMultiplex`] for more details about the operation.
+/// `ParseStrictResponse` impl for `StopMultiplex`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StopMultiplex {
     _private: (),
@@ -1721,7 +1721,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StopMultiplex {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`transfer_input_device`](crate::client::Client::transfer_input_device).
 ///
-/// See [`crate::client::fluent_builders::TransferInputDevice`] for more details about the operation.
+/// `ParseStrictResponse` impl for `TransferInputDevice`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct TransferInputDevice {
     _private: (),
@@ -1756,7 +1756,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TransferInputDevice {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`update_channel`](crate::client::Client::update_channel).
 ///
-/// See [`crate::client::fluent_builders::UpdateChannel`] for more details about the operation.
+/// `ParseStrictResponse` impl for `UpdateChannel`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateChannel {
     _private: (),
@@ -1789,7 +1789,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateChannel {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`update_channel_class`](crate::client::Client::update_channel_class).
 ///
-/// See [`crate::client::fluent_builders::UpdateChannelClass`] for more details about the operation.
+/// `ParseStrictResponse` impl for `UpdateChannelClass`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateChannelClass {
     _private: (),
@@ -1824,7 +1824,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateChannelClass {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`update_input`](crate::client::Client::update_input).
 ///
-/// See [`crate::client::fluent_builders::UpdateInput`] for more details about the operation.
+/// `ParseStrictResponse` impl for `UpdateInput`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateInput {
     _private: (),
@@ -1857,7 +1857,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateInput {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`update_input_device`](crate::client::Client::update_input_device).
 ///
-/// See [`crate::client::fluent_builders::UpdateInputDevice`] for more details about the operation.
+/// `ParseStrictResponse` impl for `UpdateInputDevice`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateInputDevice {
     _private: (),
@@ -1892,7 +1892,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateInputDevice {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`update_input_security_group`](crate::client::Client::update_input_security_group).
 ///
-/// See [`crate::client::fluent_builders::UpdateInputSecurityGroup`] for more details about the operation.
+/// `ParseStrictResponse` impl for `UpdateInputSecurityGroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateInputSecurityGroup {
     _private: (),
@@ -1927,7 +1927,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateInputSecurityGroup
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`update_multiplex`](crate::client::Client::update_multiplex).
 ///
-/// See [`crate::client::fluent_builders::UpdateMultiplex`] for more details about the operation.
+/// `ParseStrictResponse` impl for `UpdateMultiplex`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateMultiplex {
     _private: (),
@@ -1962,7 +1962,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateMultiplex {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`update_multiplex_program`](crate::client::Client::update_multiplex_program).
 ///
-/// See [`crate::client::fluent_builders::UpdateMultiplexProgram`] for more details about the operation.
+/// `ParseStrictResponse` impl for `UpdateMultiplexProgram`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateMultiplexProgram {
     _private: (),
@@ -1997,7 +1997,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateMultiplexProgram {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`update_reservation`](crate::client::Client::update_reservation).
 ///
-/// See [`crate::client::fluent_builders::UpdateReservation`] for more details about the operation.
+/// `ParseStrictResponse` impl for `UpdateReservation`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateReservation {
     _private: (),

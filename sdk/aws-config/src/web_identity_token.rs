@@ -236,7 +236,7 @@ async fn load_credentials(
         .region(region.clone())
         .build();
 
-    let operation = aws_sdk_sts::operation::AssumeRoleWithWebIdentity::builder()
+    let operation = aws_sdk_sts::input::AssumeRoleWithWebIdentityInput::builder()
         .role_arn(role_arn)
         .role_session_name(session_name)
         .web_identity_token(token)

@@ -128,6 +128,13 @@ impl CapacityUpdate {
         self.provisioned_capacity.as_ref()
     }
 }
+impl CapacityUpdate {
+    /// Creates a new builder-style object to manufacture [`CapacityUpdate`](crate::model::CapacityUpdate).
+    pub fn builder() -> crate::model::capacity_update::Builder {
+        crate::model::capacity_update::Builder::default()
+    }
+}
+
 /// See [`CapacityUpdate`](crate::model::CapacityUpdate).
 pub mod capacity_update {
 
@@ -178,12 +185,6 @@ pub mod capacity_update {
         }
     }
 }
-impl CapacityUpdate {
-    /// Creates a new builder-style object to manufacture [`CapacityUpdate`](crate::model::CapacityUpdate).
-    pub fn builder() -> crate::model::capacity_update::Builder {
-        crate::model::capacity_update::Builder::default()
-    }
-}
 
 /// <p>An update to a connector's fixed capacity.</p>
 #[non_exhaustive]
@@ -206,6 +207,13 @@ impl ProvisionedCapacityUpdate {
         self.worker_count
     }
 }
+impl ProvisionedCapacityUpdate {
+    /// Creates a new builder-style object to manufacture [`ProvisionedCapacityUpdate`](crate::model::ProvisionedCapacityUpdate).
+    pub fn builder() -> crate::model::provisioned_capacity_update::Builder {
+        crate::model::provisioned_capacity_update::Builder::default()
+    }
+}
+
 /// See [`ProvisionedCapacityUpdate`](crate::model::ProvisionedCapacityUpdate).
 pub mod provisioned_capacity_update {
 
@@ -244,12 +252,6 @@ pub mod provisioned_capacity_update {
                 worker_count: self.worker_count.unwrap_or_default(),
             }
         }
-    }
-}
-impl ProvisionedCapacityUpdate {
-    /// Creates a new builder-style object to manufacture [`ProvisionedCapacityUpdate`](crate::model::ProvisionedCapacityUpdate).
-    pub fn builder() -> crate::model::provisioned_capacity_update::Builder {
-        crate::model::provisioned_capacity_update::Builder::default()
     }
 }
 
@@ -295,6 +297,13 @@ impl AutoScalingUpdate {
         self.scale_out_policy.as_ref()
     }
 }
+impl AutoScalingUpdate {
+    /// Creates a new builder-style object to manufacture [`AutoScalingUpdate`](crate::model::AutoScalingUpdate).
+    pub fn builder() -> crate::model::auto_scaling_update::Builder {
+        crate::model::auto_scaling_update::Builder::default()
+    }
+}
+
 /// See [`AutoScalingUpdate`](crate::model::AutoScalingUpdate).
 pub mod auto_scaling_update {
 
@@ -377,12 +386,6 @@ pub mod auto_scaling_update {
         }
     }
 }
-impl AutoScalingUpdate {
-    /// Creates a new builder-style object to manufacture [`AutoScalingUpdate`](crate::model::AutoScalingUpdate).
-    pub fn builder() -> crate::model::auto_scaling_update::Builder {
-        crate::model::auto_scaling_update::Builder::default()
-    }
-}
 
 /// <p>An update to the connector's scale-out policy.</p>
 #[non_exhaustive]
@@ -398,6 +401,13 @@ impl ScaleOutPolicyUpdate {
         self.cpu_utilization_percentage
     }
 }
+impl ScaleOutPolicyUpdate {
+    /// Creates a new builder-style object to manufacture [`ScaleOutPolicyUpdate`](crate::model::ScaleOutPolicyUpdate).
+    pub fn builder() -> crate::model::scale_out_policy_update::Builder {
+        crate::model::scale_out_policy_update::Builder::default()
+    }
+}
+
 /// See [`ScaleOutPolicyUpdate`](crate::model::ScaleOutPolicyUpdate).
 pub mod scale_out_policy_update {
 
@@ -426,12 +436,6 @@ pub mod scale_out_policy_update {
         }
     }
 }
-impl ScaleOutPolicyUpdate {
-    /// Creates a new builder-style object to manufacture [`ScaleOutPolicyUpdate`](crate::model::ScaleOutPolicyUpdate).
-    pub fn builder() -> crate::model::scale_out_policy_update::Builder {
-        crate::model::scale_out_policy_update::Builder::default()
-    }
-}
 
 /// <p>An update to the connector's scale-in policy.</p>
 #[non_exhaustive]
@@ -447,6 +451,13 @@ impl ScaleInPolicyUpdate {
         self.cpu_utilization_percentage
     }
 }
+impl ScaleInPolicyUpdate {
+    /// Creates a new builder-style object to manufacture [`ScaleInPolicyUpdate`](crate::model::ScaleInPolicyUpdate).
+    pub fn builder() -> crate::model::scale_in_policy_update::Builder {
+        crate::model::scale_in_policy_update::Builder::default()
+    }
+}
+
 /// See [`ScaleInPolicyUpdate`](crate::model::ScaleInPolicyUpdate).
 pub mod scale_in_policy_update {
 
@@ -473,12 +484,6 @@ pub mod scale_in_policy_update {
                 cpu_utilization_percentage: self.cpu_utilization_percentage.unwrap_or_default(),
             }
         }
-    }
-}
-impl ScaleInPolicyUpdate {
-    /// Creates a new builder-style object to manufacture [`ScaleInPolicyUpdate`](crate::model::ScaleInPolicyUpdate).
-    pub fn builder() -> crate::model::scale_in_policy_update::Builder {
-        crate::model::scale_in_policy_update::Builder::default()
     }
 }
 
@@ -526,6 +531,13 @@ impl WorkerConfigurationSummary {
         self.worker_configuration_arn.as_deref()
     }
 }
+impl WorkerConfigurationSummary {
+    /// Creates a new builder-style object to manufacture [`WorkerConfigurationSummary`](crate::model::WorkerConfigurationSummary).
+    pub fn builder() -> crate::model::worker_configuration_summary::Builder {
+        crate::model::worker_configuration_summary::Builder::default()
+    }
+}
+
 /// See [`WorkerConfigurationSummary`](crate::model::WorkerConfigurationSummary).
 pub mod worker_configuration_summary {
 
@@ -615,12 +627,6 @@ pub mod worker_configuration_summary {
         }
     }
 }
-impl WorkerConfigurationSummary {
-    /// Creates a new builder-style object to manufacture [`WorkerConfigurationSummary`](crate::model::WorkerConfigurationSummary).
-    pub fn builder() -> crate::model::worker_configuration_summary::Builder {
-        crate::model::worker_configuration_summary::Builder::default()
-    }
-}
 
 /// <p>The summary of a worker configuration revision.</p>
 #[non_exhaustive]
@@ -650,6 +656,13 @@ impl WorkerConfigurationRevisionSummary {
         self.revision
     }
 }
+impl WorkerConfigurationRevisionSummary {
+    /// Creates a new builder-style object to manufacture [`WorkerConfigurationRevisionSummary`](crate::model::WorkerConfigurationRevisionSummary).
+    pub fn builder() -> crate::model::worker_configuration_revision_summary::Builder {
+        crate::model::worker_configuration_revision_summary::Builder::default()
+    }
+}
+
 /// See [`WorkerConfigurationRevisionSummary`](crate::model::WorkerConfigurationRevisionSummary).
 pub mod worker_configuration_revision_summary {
 
@@ -705,12 +718,6 @@ pub mod worker_configuration_revision_summary {
         }
     }
 }
-impl WorkerConfigurationRevisionSummary {
-    /// Creates a new builder-style object to manufacture [`WorkerConfigurationRevisionSummary`](crate::model::WorkerConfigurationRevisionSummary).
-    pub fn builder() -> crate::model::worker_configuration_revision_summary::Builder {
-        crate::model::worker_configuration_revision_summary::Builder::default()
-    }
-}
 
 /// <p>A summary of the custom plugin.</p>
 #[non_exhaustive]
@@ -763,6 +770,13 @@ impl CustomPluginSummary {
         self.name.as_deref()
     }
 }
+impl CustomPluginSummary {
+    /// Creates a new builder-style object to manufacture [`CustomPluginSummary`](crate::model::CustomPluginSummary).
+    pub fn builder() -> crate::model::custom_plugin_summary::Builder {
+        crate::model::custom_plugin_summary::Builder::default()
+    }
+}
+
 /// See [`CustomPluginSummary`](crate::model::CustomPluginSummary).
 pub mod custom_plugin_summary {
 
@@ -863,12 +877,6 @@ pub mod custom_plugin_summary {
         }
     }
 }
-impl CustomPluginSummary {
-    /// Creates a new builder-style object to manufacture [`CustomPluginSummary`](crate::model::CustomPluginSummary).
-    pub fn builder() -> crate::model::custom_plugin_summary::Builder {
-        crate::model::custom_plugin_summary::Builder::default()
-    }
-}
 
 /// <p>Details about the revision of a custom plugin.</p>
 #[non_exhaustive]
@@ -921,6 +929,13 @@ impl CustomPluginRevisionSummary {
         self.revision
     }
 }
+impl CustomPluginRevisionSummary {
+    /// Creates a new builder-style object to manufacture [`CustomPluginRevisionSummary`](crate::model::CustomPluginRevisionSummary).
+    pub fn builder() -> crate::model::custom_plugin_revision_summary::Builder {
+        crate::model::custom_plugin_revision_summary::Builder::default()
+    }
+}
+
 /// See [`CustomPluginRevisionSummary`](crate::model::CustomPluginRevisionSummary).
 pub mod custom_plugin_revision_summary {
 
@@ -1024,12 +1039,6 @@ pub mod custom_plugin_revision_summary {
         }
     }
 }
-impl CustomPluginRevisionSummary {
-    /// Creates a new builder-style object to manufacture [`CustomPluginRevisionSummary`](crate::model::CustomPluginRevisionSummary).
-    pub fn builder() -> crate::model::custom_plugin_revision_summary::Builder {
-        crate::model::custom_plugin_revision_summary::Builder::default()
-    }
-}
 
 /// <p>Information about the location of a custom plugin.</p>
 #[non_exhaustive]
@@ -1045,6 +1054,13 @@ impl CustomPluginLocationDescription {
         self.s3_location.as_ref()
     }
 }
+impl CustomPluginLocationDescription {
+    /// Creates a new builder-style object to manufacture [`CustomPluginLocationDescription`](crate::model::CustomPluginLocationDescription).
+    pub fn builder() -> crate::model::custom_plugin_location_description::Builder {
+        crate::model::custom_plugin_location_description::Builder::default()
+    }
+}
+
 /// See [`CustomPluginLocationDescription`](crate::model::CustomPluginLocationDescription).
 pub mod custom_plugin_location_description {
 
@@ -1076,12 +1092,6 @@ pub mod custom_plugin_location_description {
         }
     }
 }
-impl CustomPluginLocationDescription {
-    /// Creates a new builder-style object to manufacture [`CustomPluginLocationDescription`](crate::model::CustomPluginLocationDescription).
-    pub fn builder() -> crate::model::custom_plugin_location_description::Builder {
-        crate::model::custom_plugin_location_description::Builder::default()
-    }
-}
 
 /// <p>The description of the location of an object in Amazon S3.</p>
 #[non_exhaustive]
@@ -1111,6 +1121,13 @@ impl S3LocationDescription {
         self.object_version.as_deref()
     }
 }
+impl S3LocationDescription {
+    /// Creates a new builder-style object to manufacture [`S3LocationDescription`](crate::model::S3LocationDescription).
+    pub fn builder() -> crate::model::s3_location_description::Builder {
+        crate::model::s3_location_description::Builder::default()
+    }
+}
+
 /// See [`S3LocationDescription`](crate::model::S3LocationDescription).
 pub mod s3_location_description {
 
@@ -1166,12 +1183,6 @@ pub mod s3_location_description {
         }
     }
 }
-impl S3LocationDescription {
-    /// Creates a new builder-style object to manufacture [`S3LocationDescription`](crate::model::S3LocationDescription).
-    pub fn builder() -> crate::model::s3_location_description::Builder {
-        crate::model::s3_location_description::Builder::default()
-    }
-}
 
 /// <p>Details about a custom plugin file.</p>
 #[non_exhaustive]
@@ -1194,6 +1205,13 @@ impl CustomPluginFileDescription {
         self.file_size
     }
 }
+impl CustomPluginFileDescription {
+    /// Creates a new builder-style object to manufacture [`CustomPluginFileDescription`](crate::model::CustomPluginFileDescription).
+    pub fn builder() -> crate::model::custom_plugin_file_description::Builder {
+        crate::model::custom_plugin_file_description::Builder::default()
+    }
+}
+
 /// See [`CustomPluginFileDescription`](crate::model::CustomPluginFileDescription).
 pub mod custom_plugin_file_description {
 
@@ -1232,12 +1250,6 @@ pub mod custom_plugin_file_description {
                 file_size: self.file_size.unwrap_or_default(),
             }
         }
-    }
-}
-impl CustomPluginFileDescription {
-    /// Creates a new builder-style object to manufacture [`CustomPluginFileDescription`](crate::model::CustomPluginFileDescription).
-    pub fn builder() -> crate::model::custom_plugin_file_description::Builder {
-        crate::model::custom_plugin_file_description::Builder::default()
     }
 }
 
@@ -1572,6 +1584,13 @@ impl ConnectorSummary {
         self.worker_configuration.as_ref()
     }
 }
+impl ConnectorSummary {
+    /// Creates a new builder-style object to manufacture [`ConnectorSummary`](crate::model::ConnectorSummary).
+    pub fn builder() -> crate::model::connector_summary::Builder {
+        crate::model::connector_summary::Builder::default()
+    }
+}
+
 /// See [`ConnectorSummary`](crate::model::ConnectorSummary).
 pub mod connector_summary {
 
@@ -1831,12 +1850,6 @@ pub mod connector_summary {
         }
     }
 }
-impl ConnectorSummary {
-    /// Creates a new builder-style object to manufacture [`ConnectorSummary`](crate::model::ConnectorSummary).
-    pub fn builder() -> crate::model::connector_summary::Builder {
-        crate::model::connector_summary::Builder::default()
-    }
-}
 
 /// <p>The description of the worker configuration.</p>
 #[non_exhaustive]
@@ -1859,6 +1872,13 @@ impl WorkerConfigurationDescription {
         self.worker_configuration_arn.as_deref()
     }
 }
+impl WorkerConfigurationDescription {
+    /// Creates a new builder-style object to manufacture [`WorkerConfigurationDescription`](crate::model::WorkerConfigurationDescription).
+    pub fn builder() -> crate::model::worker_configuration_description::Builder {
+        crate::model::worker_configuration_description::Builder::default()
+    }
+}
+
 /// See [`WorkerConfigurationDescription`](crate::model::WorkerConfigurationDescription).
 pub mod worker_configuration_description {
 
@@ -1902,12 +1922,6 @@ pub mod worker_configuration_description {
         }
     }
 }
-impl WorkerConfigurationDescription {
-    /// Creates a new builder-style object to manufacture [`WorkerConfigurationDescription`](crate::model::WorkerConfigurationDescription).
-    pub fn builder() -> crate::model::worker_configuration_description::Builder {
-        crate::model::worker_configuration_description::Builder::default()
-    }
-}
 
 /// <p>The description of the plugin.</p>
 #[non_exhaustive]
@@ -1923,6 +1937,13 @@ impl PluginDescription {
         self.custom_plugin.as_ref()
     }
 }
+impl PluginDescription {
+    /// Creates a new builder-style object to manufacture [`PluginDescription`](crate::model::PluginDescription).
+    pub fn builder() -> crate::model::plugin_description::Builder {
+        crate::model::plugin_description::Builder::default()
+    }
+}
+
 /// See [`PluginDescription`](crate::model::PluginDescription).
 pub mod plugin_description {
 
@@ -1954,12 +1975,6 @@ pub mod plugin_description {
         }
     }
 }
-impl PluginDescription {
-    /// Creates a new builder-style object to manufacture [`PluginDescription`](crate::model::PluginDescription).
-    pub fn builder() -> crate::model::plugin_description::Builder {
-        crate::model::plugin_description::Builder::default()
-    }
-}
 
 /// <p>Details about a custom plugin.</p>
 #[non_exhaustive]
@@ -1982,6 +1997,13 @@ impl CustomPluginDescription {
         self.revision
     }
 }
+impl CustomPluginDescription {
+    /// Creates a new builder-style object to manufacture [`CustomPluginDescription`](crate::model::CustomPluginDescription).
+    pub fn builder() -> crate::model::custom_plugin_description::Builder {
+        crate::model::custom_plugin_description::Builder::default()
+    }
+}
+
 /// See [`CustomPluginDescription`](crate::model::CustomPluginDescription).
 pub mod custom_plugin_description {
 
@@ -2025,12 +2047,6 @@ pub mod custom_plugin_description {
         }
     }
 }
-impl CustomPluginDescription {
-    /// Creates a new builder-style object to manufacture [`CustomPluginDescription`](crate::model::CustomPluginDescription).
-    pub fn builder() -> crate::model::custom_plugin_description::Builder {
-        crate::model::custom_plugin_description::Builder::default()
-    }
-}
 
 /// <p>The description of the log delivery settings.</p>
 #[non_exhaustive]
@@ -2048,6 +2064,13 @@ impl LogDeliveryDescription {
         self.worker_log_delivery.as_ref()
     }
 }
+impl LogDeliveryDescription {
+    /// Creates a new builder-style object to manufacture [`LogDeliveryDescription`](crate::model::LogDeliveryDescription).
+    pub fn builder() -> crate::model::log_delivery_description::Builder {
+        crate::model::log_delivery_description::Builder::default()
+    }
+}
+
 /// See [`LogDeliveryDescription`](crate::model::LogDeliveryDescription).
 pub mod log_delivery_description {
 
@@ -2083,12 +2106,6 @@ pub mod log_delivery_description {
         }
     }
 }
-impl LogDeliveryDescription {
-    /// Creates a new builder-style object to manufacture [`LogDeliveryDescription`](crate::model::LogDeliveryDescription).
-    pub fn builder() -> crate::model::log_delivery_description::Builder {
-        crate::model::log_delivery_description::Builder::default()
-    }
-}
 
 /// <p>Workers can send worker logs to different destination types. This configuration specifies the details of these destinations.</p>
 #[non_exhaustive]
@@ -2120,6 +2137,13 @@ impl WorkerLogDeliveryDescription {
         self.s3.as_ref()
     }
 }
+impl WorkerLogDeliveryDescription {
+    /// Creates a new builder-style object to manufacture [`WorkerLogDeliveryDescription`](crate::model::WorkerLogDeliveryDescription).
+    pub fn builder() -> crate::model::worker_log_delivery_description::Builder {
+        crate::model::worker_log_delivery_description::Builder::default()
+    }
+}
+
 /// See [`WorkerLogDeliveryDescription`](crate::model::WorkerLogDeliveryDescription).
 pub mod worker_log_delivery_description {
 
@@ -2185,12 +2209,6 @@ pub mod worker_log_delivery_description {
         }
     }
 }
-impl WorkerLogDeliveryDescription {
-    /// Creates a new builder-style object to manufacture [`WorkerLogDeliveryDescription`](crate::model::WorkerLogDeliveryDescription).
-    pub fn builder() -> crate::model::worker_log_delivery_description::Builder {
-        crate::model::worker_log_delivery_description::Builder::default()
-    }
-}
 
 /// <p>The description of the details about delivering logs to Amazon S3.</p>
 #[non_exhaustive]
@@ -2220,6 +2238,13 @@ impl S3LogDeliveryDescription {
         self.prefix.as_deref()
     }
 }
+impl S3LogDeliveryDescription {
+    /// Creates a new builder-style object to manufacture [`S3LogDeliveryDescription`](crate::model::S3LogDeliveryDescription).
+    pub fn builder() -> crate::model::s3_log_delivery_description::Builder {
+        crate::model::s3_log_delivery_description::Builder::default()
+    }
+}
+
 /// See [`S3LogDeliveryDescription`](crate::model::S3LogDeliveryDescription).
 pub mod s3_log_delivery_description {
 
@@ -2272,12 +2297,6 @@ pub mod s3_log_delivery_description {
         }
     }
 }
-impl S3LogDeliveryDescription {
-    /// Creates a new builder-style object to manufacture [`S3LogDeliveryDescription`](crate::model::S3LogDeliveryDescription).
-    pub fn builder() -> crate::model::s3_log_delivery_description::Builder {
-        crate::model::s3_log_delivery_description::Builder::default()
-    }
-}
 
 /// <p>A description of the settings for delivering logs to Amazon Kinesis Data Firehose.</p>
 #[non_exhaustive]
@@ -2300,6 +2319,13 @@ impl FirehoseLogDeliveryDescription {
         self.enabled
     }
 }
+impl FirehoseLogDeliveryDescription {
+    /// Creates a new builder-style object to manufacture [`FirehoseLogDeliveryDescription`](crate::model::FirehoseLogDeliveryDescription).
+    pub fn builder() -> crate::model::firehose_log_delivery_description::Builder {
+        crate::model::firehose_log_delivery_description::Builder::default()
+    }
+}
+
 /// See [`FirehoseLogDeliveryDescription`](crate::model::FirehoseLogDeliveryDescription).
 pub mod firehose_log_delivery_description {
 
@@ -2343,12 +2369,6 @@ pub mod firehose_log_delivery_description {
         }
     }
 }
-impl FirehoseLogDeliveryDescription {
-    /// Creates a new builder-style object to manufacture [`FirehoseLogDeliveryDescription`](crate::model::FirehoseLogDeliveryDescription).
-    pub fn builder() -> crate::model::firehose_log_delivery_description::Builder {
-        crate::model::firehose_log_delivery_description::Builder::default()
-    }
-}
 
 /// <p>A description of the log delivery settings.</p>
 #[non_exhaustive]
@@ -2371,6 +2391,13 @@ impl CloudWatchLogsLogDeliveryDescription {
         self.log_group.as_deref()
     }
 }
+impl CloudWatchLogsLogDeliveryDescription {
+    /// Creates a new builder-style object to manufacture [`CloudWatchLogsLogDeliveryDescription`](crate::model::CloudWatchLogsLogDeliveryDescription).
+    pub fn builder() -> crate::model::cloud_watch_logs_log_delivery_description::Builder {
+        crate::model::cloud_watch_logs_log_delivery_description::Builder::default()
+    }
+}
+
 /// See [`CloudWatchLogsLogDeliveryDescription`](crate::model::CloudWatchLogsLogDeliveryDescription).
 pub mod cloud_watch_logs_log_delivery_description {
 
@@ -2411,12 +2438,6 @@ pub mod cloud_watch_logs_log_delivery_description {
         }
     }
 }
-impl CloudWatchLogsLogDeliveryDescription {
-    /// Creates a new builder-style object to manufacture [`CloudWatchLogsLogDeliveryDescription`](crate::model::CloudWatchLogsLogDeliveryDescription).
-    pub fn builder() -> crate::model::cloud_watch_logs_log_delivery_description::Builder {
-        crate::model::cloud_watch_logs_log_delivery_description::Builder::default()
-    }
-}
 
 /// <p>The description of the encryption in transit to the Apache Kafka cluster.</p>
 #[non_exhaustive]
@@ -2434,6 +2455,13 @@ impl KafkaClusterEncryptionInTransitDescription {
         self.encryption_type.as_ref()
     }
 }
+impl KafkaClusterEncryptionInTransitDescription {
+    /// Creates a new builder-style object to manufacture [`KafkaClusterEncryptionInTransitDescription`](crate::model::KafkaClusterEncryptionInTransitDescription).
+    pub fn builder() -> crate::model::kafka_cluster_encryption_in_transit_description::Builder {
+        crate::model::kafka_cluster_encryption_in_transit_description::Builder::default()
+    }
+}
+
 /// See [`KafkaClusterEncryptionInTransitDescription`](crate::model::KafkaClusterEncryptionInTransitDescription).
 pub mod kafka_cluster_encryption_in_transit_description {
 
@@ -2467,12 +2495,6 @@ pub mod kafka_cluster_encryption_in_transit_description {
                 encryption_type: self.encryption_type,
             }
         }
-    }
-}
-impl KafkaClusterEncryptionInTransitDescription {
-    /// Creates a new builder-style object to manufacture [`KafkaClusterEncryptionInTransitDescription`](crate::model::KafkaClusterEncryptionInTransitDescription).
-    pub fn builder() -> crate::model::kafka_cluster_encryption_in_transit_description::Builder {
-        crate::model::kafka_cluster_encryption_in_transit_description::Builder::default()
     }
 }
 
@@ -2585,6 +2607,13 @@ impl KafkaClusterClientAuthenticationDescription {
         self.authentication_type.as_ref()
     }
 }
+impl KafkaClusterClientAuthenticationDescription {
+    /// Creates a new builder-style object to manufacture [`KafkaClusterClientAuthenticationDescription`](crate::model::KafkaClusterClientAuthenticationDescription).
+    pub fn builder() -> crate::model::kafka_cluster_client_authentication_description::Builder {
+        crate::model::kafka_cluster_client_authentication_description::Builder::default()
+    }
+}
+
 /// See [`KafkaClusterClientAuthenticationDescription`](crate::model::KafkaClusterClientAuthenticationDescription).
 pub mod kafka_cluster_client_authentication_description {
 
@@ -2618,12 +2647,6 @@ pub mod kafka_cluster_client_authentication_description {
                 authentication_type: self.authentication_type,
             }
         }
-    }
-}
-impl KafkaClusterClientAuthenticationDescription {
-    /// Creates a new builder-style object to manufacture [`KafkaClusterClientAuthenticationDescription`](crate::model::KafkaClusterClientAuthenticationDescription).
-    pub fn builder() -> crate::model::kafka_cluster_client_authentication_description::Builder {
-        crate::model::kafka_cluster_client_authentication_description::Builder::default()
     }
 }
 
@@ -2735,6 +2758,13 @@ impl KafkaClusterDescription {
         self.apache_kafka_cluster.as_ref()
     }
 }
+impl KafkaClusterDescription {
+    /// Creates a new builder-style object to manufacture [`KafkaClusterDescription`](crate::model::KafkaClusterDescription).
+    pub fn builder() -> crate::model::kafka_cluster_description::Builder {
+        crate::model::kafka_cluster_description::Builder::default()
+    }
+}
+
 /// See [`KafkaClusterDescription`](crate::model::KafkaClusterDescription).
 pub mod kafka_cluster_description {
 
@@ -2770,12 +2800,6 @@ pub mod kafka_cluster_description {
         }
     }
 }
-impl KafkaClusterDescription {
-    /// Creates a new builder-style object to manufacture [`KafkaClusterDescription`](crate::model::KafkaClusterDescription).
-    pub fn builder() -> crate::model::kafka_cluster_description::Builder {
-        crate::model::kafka_cluster_description::Builder::default()
-    }
-}
 
 /// <p>The description of the Apache Kafka cluster to which the connector is connected.</p>
 #[non_exhaustive]
@@ -2798,6 +2822,13 @@ impl ApacheKafkaClusterDescription {
         self.vpc.as_ref()
     }
 }
+impl ApacheKafkaClusterDescription {
+    /// Creates a new builder-style object to manufacture [`ApacheKafkaClusterDescription`](crate::model::ApacheKafkaClusterDescription).
+    pub fn builder() -> crate::model::apache_kafka_cluster_description::Builder {
+        crate::model::apache_kafka_cluster_description::Builder::default()
+    }
+}
+
 /// See [`ApacheKafkaClusterDescription`](crate::model::ApacheKafkaClusterDescription).
 pub mod apache_kafka_cluster_description {
 
@@ -2841,12 +2872,6 @@ pub mod apache_kafka_cluster_description {
         }
     }
 }
-impl ApacheKafkaClusterDescription {
-    /// Creates a new builder-style object to manufacture [`ApacheKafkaClusterDescription`](crate::model::ApacheKafkaClusterDescription).
-    pub fn builder() -> crate::model::apache_kafka_cluster_description::Builder {
-        crate::model::apache_kafka_cluster_description::Builder::default()
-    }
-}
 
 /// <p>The description of the VPC in which the connector resides.</p>
 #[non_exhaustive]
@@ -2869,6 +2894,13 @@ impl VpcDescription {
         self.subnets.as_deref()
     }
 }
+impl VpcDescription {
+    /// Creates a new builder-style object to manufacture [`VpcDescription`](crate::model::VpcDescription).
+    pub fn builder() -> crate::model::vpc_description::Builder {
+        crate::model::vpc_description::Builder::default()
+    }
+}
+
 /// See [`VpcDescription`](crate::model::VpcDescription).
 pub mod vpc_description {
 
@@ -2927,12 +2959,6 @@ pub mod vpc_description {
         }
     }
 }
-impl VpcDescription {
-    /// Creates a new builder-style object to manufacture [`VpcDescription`](crate::model::VpcDescription).
-    pub fn builder() -> crate::model::vpc_description::Builder {
-        crate::model::vpc_description::Builder::default()
-    }
-}
 
 /// <p>A description of the connector's capacity.</p>
 #[non_exhaustive]
@@ -2957,6 +2983,13 @@ impl CapacityDescription {
         self.provisioned_capacity.as_ref()
     }
 }
+impl CapacityDescription {
+    /// Creates a new builder-style object to manufacture [`CapacityDescription`](crate::model::CapacityDescription).
+    pub fn builder() -> crate::model::capacity_description::Builder {
+        crate::model::capacity_description::Builder::default()
+    }
+}
+
 /// See [`CapacityDescription`](crate::model::CapacityDescription).
 pub mod capacity_description {
 
@@ -3007,12 +3040,6 @@ pub mod capacity_description {
         }
     }
 }
-impl CapacityDescription {
-    /// Creates a new builder-style object to manufacture [`CapacityDescription`](crate::model::CapacityDescription).
-    pub fn builder() -> crate::model::capacity_description::Builder {
-        crate::model::capacity_description::Builder::default()
-    }
-}
 
 /// <p>The description of a connector's provisioned capacity.</p>
 #[non_exhaustive]
@@ -3035,6 +3062,13 @@ impl ProvisionedCapacityDescription {
         self.worker_count
     }
 }
+impl ProvisionedCapacityDescription {
+    /// Creates a new builder-style object to manufacture [`ProvisionedCapacityDescription`](crate::model::ProvisionedCapacityDescription).
+    pub fn builder() -> crate::model::provisioned_capacity_description::Builder {
+        crate::model::provisioned_capacity_description::Builder::default()
+    }
+}
+
 /// See [`ProvisionedCapacityDescription`](crate::model::ProvisionedCapacityDescription).
 pub mod provisioned_capacity_description {
 
@@ -3073,12 +3107,6 @@ pub mod provisioned_capacity_description {
                 worker_count: self.worker_count.unwrap_or_default(),
             }
         }
-    }
-}
-impl ProvisionedCapacityDescription {
-    /// Creates a new builder-style object to manufacture [`ProvisionedCapacityDescription`](crate::model::ProvisionedCapacityDescription).
-    pub fn builder() -> crate::model::provisioned_capacity_description::Builder {
-        crate::model::provisioned_capacity_description::Builder::default()
     }
 }
 
@@ -3126,6 +3154,13 @@ impl AutoScalingDescription {
         self.scale_out_policy.as_ref()
     }
 }
+impl AutoScalingDescription {
+    /// Creates a new builder-style object to manufacture [`AutoScalingDescription`](crate::model::AutoScalingDescription).
+    pub fn builder() -> crate::model::auto_scaling_description::Builder {
+        crate::model::auto_scaling_description::Builder::default()
+    }
+}
+
 /// See [`AutoScalingDescription`](crate::model::AutoScalingDescription).
 pub mod auto_scaling_description {
 
@@ -3208,12 +3243,6 @@ pub mod auto_scaling_description {
         }
     }
 }
-impl AutoScalingDescription {
-    /// Creates a new builder-style object to manufacture [`AutoScalingDescription`](crate::model::AutoScalingDescription).
-    pub fn builder() -> crate::model::auto_scaling_description::Builder {
-        crate::model::auto_scaling_description::Builder::default()
-    }
-}
 
 /// <p>The description of the scale-out policy for the connector.</p>
 #[non_exhaustive]
@@ -3229,6 +3258,13 @@ impl ScaleOutPolicyDescription {
         self.cpu_utilization_percentage
     }
 }
+impl ScaleOutPolicyDescription {
+    /// Creates a new builder-style object to manufacture [`ScaleOutPolicyDescription`](crate::model::ScaleOutPolicyDescription).
+    pub fn builder() -> crate::model::scale_out_policy_description::Builder {
+        crate::model::scale_out_policy_description::Builder::default()
+    }
+}
+
 /// See [`ScaleOutPolicyDescription`](crate::model::ScaleOutPolicyDescription).
 pub mod scale_out_policy_description {
 
@@ -3257,12 +3293,6 @@ pub mod scale_out_policy_description {
         }
     }
 }
-impl ScaleOutPolicyDescription {
-    /// Creates a new builder-style object to manufacture [`ScaleOutPolicyDescription`](crate::model::ScaleOutPolicyDescription).
-    pub fn builder() -> crate::model::scale_out_policy_description::Builder {
-        crate::model::scale_out_policy_description::Builder::default()
-    }
-}
 
 /// <p>The description of the scale-in policy for the connector.</p>
 #[non_exhaustive]
@@ -3278,6 +3308,13 @@ impl ScaleInPolicyDescription {
         self.cpu_utilization_percentage
     }
 }
+impl ScaleInPolicyDescription {
+    /// Creates a new builder-style object to manufacture [`ScaleInPolicyDescription`](crate::model::ScaleInPolicyDescription).
+    pub fn builder() -> crate::model::scale_in_policy_description::Builder {
+        crate::model::scale_in_policy_description::Builder::default()
+    }
+}
+
 /// See [`ScaleInPolicyDescription`](crate::model::ScaleInPolicyDescription).
 pub mod scale_in_policy_description {
 
@@ -3304,12 +3341,6 @@ pub mod scale_in_policy_description {
                 cpu_utilization_percentage: self.cpu_utilization_percentage.unwrap_or_default(),
             }
         }
-    }
-}
-impl ScaleInPolicyDescription {
-    /// Creates a new builder-style object to manufacture [`ScaleInPolicyDescription`](crate::model::ScaleInPolicyDescription).
-    pub fn builder() -> crate::model::scale_in_policy_description::Builder {
-        crate::model::scale_in_policy_description::Builder::default()
     }
 }
 
@@ -3361,6 +3392,13 @@ impl std::fmt::Debug for WorkerConfigurationRevisionDescription {
         formatter.finish()
     }
 }
+impl WorkerConfigurationRevisionDescription {
+    /// Creates a new builder-style object to manufacture [`WorkerConfigurationRevisionDescription`](crate::model::WorkerConfigurationRevisionDescription).
+    pub fn builder() -> crate::model::worker_configuration_revision_description::Builder {
+        crate::model::worker_configuration_revision_description::Builder::default()
+    }
+}
+
 /// See [`WorkerConfigurationRevisionDescription`](crate::model::WorkerConfigurationRevisionDescription).
 pub mod worker_configuration_revision_description {
 
@@ -3444,12 +3482,6 @@ pub mod worker_configuration_revision_description {
         }
     }
 }
-impl WorkerConfigurationRevisionDescription {
-    /// Creates a new builder-style object to manufacture [`WorkerConfigurationRevisionDescription`](crate::model::WorkerConfigurationRevisionDescription).
-    pub fn builder() -> crate::model::worker_configuration_revision_description::Builder {
-        crate::model::worker_configuration_revision_description::Builder::default()
-    }
-}
 
 /// <p>Details about the state of a resource.</p>
 #[non_exhaustive]
@@ -3472,6 +3504,13 @@ impl StateDescription {
         self.message.as_deref()
     }
 }
+impl StateDescription {
+    /// Creates a new builder-style object to manufacture [`StateDescription`](crate::model::StateDescription).
+    pub fn builder() -> crate::model::state_description::Builder {
+        crate::model::state_description::Builder::default()
+    }
+}
+
 /// See [`StateDescription`](crate::model::StateDescription).
 pub mod state_description {
 
@@ -3512,12 +3551,6 @@ pub mod state_description {
         }
     }
 }
-impl StateDescription {
-    /// Creates a new builder-style object to manufacture [`StateDescription`](crate::model::StateDescription).
-    pub fn builder() -> crate::model::state_description::Builder {
-        crate::model::state_description::Builder::default()
-    }
-}
 
 /// <p>Information about the location of a custom plugin.</p>
 #[non_exhaustive]
@@ -3533,6 +3566,13 @@ impl CustomPluginLocation {
         self.s3_location.as_ref()
     }
 }
+impl CustomPluginLocation {
+    /// Creates a new builder-style object to manufacture [`CustomPluginLocation`](crate::model::CustomPluginLocation).
+    pub fn builder() -> crate::model::custom_plugin_location::Builder {
+        crate::model::custom_plugin_location::Builder::default()
+    }
+}
+
 /// See [`CustomPluginLocation`](crate::model::CustomPluginLocation).
 pub mod custom_plugin_location {
 
@@ -3564,12 +3604,6 @@ pub mod custom_plugin_location {
         }
     }
 }
-impl CustomPluginLocation {
-    /// Creates a new builder-style object to manufacture [`CustomPluginLocation`](crate::model::CustomPluginLocation).
-    pub fn builder() -> crate::model::custom_plugin_location::Builder {
-        crate::model::custom_plugin_location::Builder::default()
-    }
-}
 
 /// <p>The location of an object in Amazon S3.</p>
 #[non_exhaustive]
@@ -3599,6 +3633,13 @@ impl S3Location {
         self.object_version.as_deref()
     }
 }
+impl S3Location {
+    /// Creates a new builder-style object to manufacture [`S3Location`](crate::model::S3Location).
+    pub fn builder() -> crate::model::s3_location::Builder {
+        crate::model::s3_location::Builder::default()
+    }
+}
+
 /// See [`S3Location`](crate::model::S3Location).
 pub mod s3_location {
 
@@ -3654,12 +3695,6 @@ pub mod s3_location {
         }
     }
 }
-impl S3Location {
-    /// Creates a new builder-style object to manufacture [`S3Location`](crate::model::S3Location).
-    pub fn builder() -> crate::model::s3_location::Builder {
-        crate::model::s3_location::Builder::default()
-    }
-}
 
 /// <p>The configuration of the workers, which are the processes that run the connector logic.</p>
 #[non_exhaustive]
@@ -3682,6 +3717,13 @@ impl WorkerConfiguration {
         self.worker_configuration_arn.as_deref()
     }
 }
+impl WorkerConfiguration {
+    /// Creates a new builder-style object to manufacture [`WorkerConfiguration`](crate::model::WorkerConfiguration).
+    pub fn builder() -> crate::model::worker_configuration::Builder {
+        crate::model::worker_configuration::Builder::default()
+    }
+}
+
 /// See [`WorkerConfiguration`](crate::model::WorkerConfiguration).
 pub mod worker_configuration {
 
@@ -3725,12 +3767,6 @@ pub mod worker_configuration {
         }
     }
 }
-impl WorkerConfiguration {
-    /// Creates a new builder-style object to manufacture [`WorkerConfiguration`](crate::model::WorkerConfiguration).
-    pub fn builder() -> crate::model::worker_configuration::Builder {
-        crate::model::worker_configuration::Builder::default()
-    }
-}
 
 /// <p>A plugin is an AWS resource that contains the code that defines your connector logic. </p>
 #[non_exhaustive]
@@ -3746,6 +3782,13 @@ impl Plugin {
         self.custom_plugin.as_ref()
     }
 }
+impl Plugin {
+    /// Creates a new builder-style object to manufacture [`Plugin`](crate::model::Plugin).
+    pub fn builder() -> crate::model::plugin::Builder {
+        crate::model::plugin::Builder::default()
+    }
+}
+
 /// See [`Plugin`](crate::model::Plugin).
 pub mod plugin {
 
@@ -3777,12 +3820,6 @@ pub mod plugin {
         }
     }
 }
-impl Plugin {
-    /// Creates a new builder-style object to manufacture [`Plugin`](crate::model::Plugin).
-    pub fn builder() -> crate::model::plugin::Builder {
-        crate::model::plugin::Builder::default()
-    }
-}
 
 /// <p>A plugin is an AWS resource that contains the code that defines a connector's logic.</p>
 #[non_exhaustive]
@@ -3805,6 +3842,13 @@ impl CustomPlugin {
         self.revision
     }
 }
+impl CustomPlugin {
+    /// Creates a new builder-style object to manufacture [`CustomPlugin`](crate::model::CustomPlugin).
+    pub fn builder() -> crate::model::custom_plugin::Builder {
+        crate::model::custom_plugin::Builder::default()
+    }
+}
+
 /// See [`CustomPlugin`](crate::model::CustomPlugin).
 pub mod custom_plugin {
 
@@ -3848,12 +3892,6 @@ pub mod custom_plugin {
         }
     }
 }
-impl CustomPlugin {
-    /// Creates a new builder-style object to manufacture [`CustomPlugin`](crate::model::CustomPlugin).
-    pub fn builder() -> crate::model::custom_plugin::Builder {
-        crate::model::custom_plugin::Builder::default()
-    }
-}
 
 /// <p>Details about log delivery.</p>
 #[non_exhaustive]
@@ -3869,6 +3907,13 @@ impl LogDelivery {
         self.worker_log_delivery.as_ref()
     }
 }
+impl LogDelivery {
+    /// Creates a new builder-style object to manufacture [`LogDelivery`](crate::model::LogDelivery).
+    pub fn builder() -> crate::model::log_delivery::Builder {
+        crate::model::log_delivery::Builder::default()
+    }
+}
+
 /// See [`LogDelivery`](crate::model::LogDelivery).
 pub mod log_delivery {
 
@@ -3898,12 +3943,6 @@ pub mod log_delivery {
                 worker_log_delivery: self.worker_log_delivery,
             }
         }
-    }
-}
-impl LogDelivery {
-    /// Creates a new builder-style object to manufacture [`LogDelivery`](crate::model::LogDelivery).
-    pub fn builder() -> crate::model::log_delivery::Builder {
-        crate::model::log_delivery::Builder::default()
     }
 }
 
@@ -3937,6 +3976,13 @@ impl WorkerLogDelivery {
         self.s3.as_ref()
     }
 }
+impl WorkerLogDelivery {
+    /// Creates a new builder-style object to manufacture [`WorkerLogDelivery`](crate::model::WorkerLogDelivery).
+    pub fn builder() -> crate::model::worker_log_delivery::Builder {
+        crate::model::worker_log_delivery::Builder::default()
+    }
+}
+
 /// See [`WorkerLogDelivery`](crate::model::WorkerLogDelivery).
 pub mod worker_log_delivery {
 
@@ -3995,12 +4041,6 @@ pub mod worker_log_delivery {
         }
     }
 }
-impl WorkerLogDelivery {
-    /// Creates a new builder-style object to manufacture [`WorkerLogDelivery`](crate::model::WorkerLogDelivery).
-    pub fn builder() -> crate::model::worker_log_delivery::Builder {
-        crate::model::worker_log_delivery::Builder::default()
-    }
-}
 
 /// <p>Details about delivering logs to Amazon S3.</p>
 #[non_exhaustive]
@@ -4030,6 +4070,13 @@ impl S3LogDelivery {
         self.prefix.as_deref()
     }
 }
+impl S3LogDelivery {
+    /// Creates a new builder-style object to manufacture [`S3LogDelivery`](crate::model::S3LogDelivery).
+    pub fn builder() -> crate::model::s3_log_delivery::Builder {
+        crate::model::s3_log_delivery::Builder::default()
+    }
+}
+
 /// See [`S3LogDelivery`](crate::model::S3LogDelivery).
 pub mod s3_log_delivery {
 
@@ -4082,12 +4129,6 @@ pub mod s3_log_delivery {
         }
     }
 }
-impl S3LogDelivery {
-    /// Creates a new builder-style object to manufacture [`S3LogDelivery`](crate::model::S3LogDelivery).
-    pub fn builder() -> crate::model::s3_log_delivery::Builder {
-        crate::model::s3_log_delivery::Builder::default()
-    }
-}
 
 /// <p>The settings for delivering logs to Amazon Kinesis Data Firehose.</p>
 #[non_exhaustive]
@@ -4110,6 +4151,13 @@ impl FirehoseLogDelivery {
         self.enabled
     }
 }
+impl FirehoseLogDelivery {
+    /// Creates a new builder-style object to manufacture [`FirehoseLogDelivery`](crate::model::FirehoseLogDelivery).
+    pub fn builder() -> crate::model::firehose_log_delivery::Builder {
+        crate::model::firehose_log_delivery::Builder::default()
+    }
+}
+
 /// See [`FirehoseLogDelivery`](crate::model::FirehoseLogDelivery).
 pub mod firehose_log_delivery {
 
@@ -4153,12 +4201,6 @@ pub mod firehose_log_delivery {
         }
     }
 }
-impl FirehoseLogDelivery {
-    /// Creates a new builder-style object to manufacture [`FirehoseLogDelivery`](crate::model::FirehoseLogDelivery).
-    pub fn builder() -> crate::model::firehose_log_delivery::Builder {
-        crate::model::firehose_log_delivery::Builder::default()
-    }
-}
 
 /// <p>The settings for delivering connector logs to Amazon CloudWatch Logs.</p>
 #[non_exhaustive]
@@ -4181,6 +4223,13 @@ impl CloudWatchLogsLogDelivery {
         self.log_group.as_deref()
     }
 }
+impl CloudWatchLogsLogDelivery {
+    /// Creates a new builder-style object to manufacture [`CloudWatchLogsLogDelivery`](crate::model::CloudWatchLogsLogDelivery).
+    pub fn builder() -> crate::model::cloud_watch_logs_log_delivery::Builder {
+        crate::model::cloud_watch_logs_log_delivery::Builder::default()
+    }
+}
+
 /// See [`CloudWatchLogsLogDelivery`](crate::model::CloudWatchLogsLogDelivery).
 pub mod cloud_watch_logs_log_delivery {
 
@@ -4221,12 +4270,6 @@ pub mod cloud_watch_logs_log_delivery {
         }
     }
 }
-impl CloudWatchLogsLogDelivery {
-    /// Creates a new builder-style object to manufacture [`CloudWatchLogsLogDelivery`](crate::model::CloudWatchLogsLogDelivery).
-    pub fn builder() -> crate::model::cloud_watch_logs_log_delivery::Builder {
-        crate::model::cloud_watch_logs_log_delivery::Builder::default()
-    }
-}
 
 /// <p>Details of encryption in transit to the Apache Kafka cluster.</p>
 #[non_exhaustive]
@@ -4244,6 +4287,13 @@ impl KafkaClusterEncryptionInTransit {
         self.encryption_type.as_ref()
     }
 }
+impl KafkaClusterEncryptionInTransit {
+    /// Creates a new builder-style object to manufacture [`KafkaClusterEncryptionInTransit`](crate::model::KafkaClusterEncryptionInTransit).
+    pub fn builder() -> crate::model::kafka_cluster_encryption_in_transit::Builder {
+        crate::model::kafka_cluster_encryption_in_transit::Builder::default()
+    }
+}
+
 /// See [`KafkaClusterEncryptionInTransit`](crate::model::KafkaClusterEncryptionInTransit).
 pub mod kafka_cluster_encryption_in_transit {
 
@@ -4279,12 +4329,6 @@ pub mod kafka_cluster_encryption_in_transit {
         }
     }
 }
-impl KafkaClusterEncryptionInTransit {
-    /// Creates a new builder-style object to manufacture [`KafkaClusterEncryptionInTransit`](crate::model::KafkaClusterEncryptionInTransit).
-    pub fn builder() -> crate::model::kafka_cluster_encryption_in_transit::Builder {
-        crate::model::kafka_cluster_encryption_in_transit::Builder::default()
-    }
-}
 
 /// <p>The client authentication information used in order to authenticate with the Apache Kafka cluster.</p>
 #[non_exhaustive]
@@ -4303,6 +4347,13 @@ impl KafkaClusterClientAuthentication {
         self.authentication_type.as_ref()
     }
 }
+impl KafkaClusterClientAuthentication {
+    /// Creates a new builder-style object to manufacture [`KafkaClusterClientAuthentication`](crate::model::KafkaClusterClientAuthentication).
+    pub fn builder() -> crate::model::kafka_cluster_client_authentication::Builder {
+        crate::model::kafka_cluster_client_authentication::Builder::default()
+    }
+}
+
 /// See [`KafkaClusterClientAuthentication`](crate::model::KafkaClusterClientAuthentication).
 pub mod kafka_cluster_client_authentication {
 
@@ -4338,12 +4389,6 @@ pub mod kafka_cluster_client_authentication {
         }
     }
 }
-impl KafkaClusterClientAuthentication {
-    /// Creates a new builder-style object to manufacture [`KafkaClusterClientAuthentication`](crate::model::KafkaClusterClientAuthentication).
-    pub fn builder() -> crate::model::kafka_cluster_client_authentication::Builder {
-        crate::model::kafka_cluster_client_authentication::Builder::default()
-    }
-}
 
 /// <p>The details of the Apache Kafka cluster to which the connector is connected.</p>
 #[non_exhaustive]
@@ -4359,6 +4404,13 @@ impl KafkaCluster {
         self.apache_kafka_cluster.as_ref()
     }
 }
+impl KafkaCluster {
+    /// Creates a new builder-style object to manufacture [`KafkaCluster`](crate::model::KafkaCluster).
+    pub fn builder() -> crate::model::kafka_cluster::Builder {
+        crate::model::kafka_cluster::Builder::default()
+    }
+}
+
 /// See [`KafkaCluster`](crate::model::KafkaCluster).
 pub mod kafka_cluster {
 
@@ -4390,12 +4442,6 @@ pub mod kafka_cluster {
         }
     }
 }
-impl KafkaCluster {
-    /// Creates a new builder-style object to manufacture [`KafkaCluster`](crate::model::KafkaCluster).
-    pub fn builder() -> crate::model::kafka_cluster::Builder {
-        crate::model::kafka_cluster::Builder::default()
-    }
-}
 
 /// <p>The details of the Apache Kafka cluster to which the connector is connected.</p>
 #[non_exhaustive]
@@ -4418,6 +4464,13 @@ impl ApacheKafkaCluster {
         self.vpc.as_ref()
     }
 }
+impl ApacheKafkaCluster {
+    /// Creates a new builder-style object to manufacture [`ApacheKafkaCluster`](crate::model::ApacheKafkaCluster).
+    pub fn builder() -> crate::model::apache_kafka_cluster::Builder {
+        crate::model::apache_kafka_cluster::Builder::default()
+    }
+}
+
 /// See [`ApacheKafkaCluster`](crate::model::ApacheKafkaCluster).
 pub mod apache_kafka_cluster {
 
@@ -4461,12 +4514,6 @@ pub mod apache_kafka_cluster {
         }
     }
 }
-impl ApacheKafkaCluster {
-    /// Creates a new builder-style object to manufacture [`ApacheKafkaCluster`](crate::model::ApacheKafkaCluster).
-    pub fn builder() -> crate::model::apache_kafka_cluster::Builder {
-        crate::model::apache_kafka_cluster::Builder::default()
-    }
-}
 
 /// <p>Information about the VPC in which the connector resides.</p>
 #[non_exhaustive]
@@ -4489,6 +4536,13 @@ impl Vpc {
         self.subnets.as_deref()
     }
 }
+impl Vpc {
+    /// Creates a new builder-style object to manufacture [`Vpc`](crate::model::Vpc).
+    pub fn builder() -> crate::model::vpc::Builder {
+        crate::model::vpc::Builder::default()
+    }
+}
+
 /// See [`Vpc`](crate::model::Vpc).
 pub mod vpc {
 
@@ -4547,12 +4601,6 @@ pub mod vpc {
         }
     }
 }
-impl Vpc {
-    /// Creates a new builder-style object to manufacture [`Vpc`](crate::model::Vpc).
-    pub fn builder() -> crate::model::vpc::Builder {
-        crate::model::vpc::Builder::default()
-    }
-}
 
 /// <p>Information about the capacity of the connector, whether it is auto scaled or provisioned.</p>
 #[non_exhaustive]
@@ -4575,6 +4623,13 @@ impl Capacity {
         self.provisioned_capacity.as_ref()
     }
 }
+impl Capacity {
+    /// Creates a new builder-style object to manufacture [`Capacity`](crate::model::Capacity).
+    pub fn builder() -> crate::model::capacity::Builder {
+        crate::model::capacity::Builder::default()
+    }
+}
+
 /// See [`Capacity`](crate::model::Capacity).
 pub mod capacity {
 
@@ -4621,12 +4676,6 @@ pub mod capacity {
         }
     }
 }
-impl Capacity {
-    /// Creates a new builder-style object to manufacture [`Capacity`](crate::model::Capacity).
-    pub fn builder() -> crate::model::capacity::Builder {
-        crate::model::capacity::Builder::default()
-    }
-}
 
 /// <p>Details about a connector's provisioned capacity.</p>
 #[non_exhaustive]
@@ -4649,6 +4698,13 @@ impl ProvisionedCapacity {
         self.worker_count
     }
 }
+impl ProvisionedCapacity {
+    /// Creates a new builder-style object to manufacture [`ProvisionedCapacity`](crate::model::ProvisionedCapacity).
+    pub fn builder() -> crate::model::provisioned_capacity::Builder {
+        crate::model::provisioned_capacity::Builder::default()
+    }
+}
+
 /// See [`ProvisionedCapacity`](crate::model::ProvisionedCapacity).
 pub mod provisioned_capacity {
 
@@ -4687,12 +4743,6 @@ pub mod provisioned_capacity {
                 worker_count: self.worker_count.unwrap_or_default(),
             }
         }
-    }
-}
-impl ProvisionedCapacity {
-    /// Creates a new builder-style object to manufacture [`ProvisionedCapacity`](crate::model::ProvisionedCapacity).
-    pub fn builder() -> crate::model::provisioned_capacity::Builder {
-        crate::model::provisioned_capacity::Builder::default()
     }
 }
 
@@ -4738,6 +4788,13 @@ impl AutoScaling {
         self.scale_out_policy.as_ref()
     }
 }
+impl AutoScaling {
+    /// Creates a new builder-style object to manufacture [`AutoScaling`](crate::model::AutoScaling).
+    pub fn builder() -> crate::model::auto_scaling::Builder {
+        crate::model::auto_scaling::Builder::default()
+    }
+}
+
 /// See [`AutoScaling`](crate::model::AutoScaling).
 pub mod auto_scaling {
 
@@ -4820,12 +4877,6 @@ pub mod auto_scaling {
         }
     }
 }
-impl AutoScaling {
-    /// Creates a new builder-style object to manufacture [`AutoScaling`](crate::model::AutoScaling).
-    pub fn builder() -> crate::model::auto_scaling::Builder {
-        crate::model::auto_scaling::Builder::default()
-    }
-}
 
 /// <p>The scale-out policy for the connector.</p>
 #[non_exhaustive]
@@ -4841,6 +4892,13 @@ impl ScaleOutPolicy {
         self.cpu_utilization_percentage
     }
 }
+impl ScaleOutPolicy {
+    /// Creates a new builder-style object to manufacture [`ScaleOutPolicy`](crate::model::ScaleOutPolicy).
+    pub fn builder() -> crate::model::scale_out_policy::Builder {
+        crate::model::scale_out_policy::Builder::default()
+    }
+}
+
 /// See [`ScaleOutPolicy`](crate::model::ScaleOutPolicy).
 pub mod scale_out_policy {
 
@@ -4869,12 +4927,6 @@ pub mod scale_out_policy {
         }
     }
 }
-impl ScaleOutPolicy {
-    /// Creates a new builder-style object to manufacture [`ScaleOutPolicy`](crate::model::ScaleOutPolicy).
-    pub fn builder() -> crate::model::scale_out_policy::Builder {
-        crate::model::scale_out_policy::Builder::default()
-    }
-}
 
 /// <p>The scale-in policy for the connector.</p>
 #[non_exhaustive]
@@ -4890,6 +4942,13 @@ impl ScaleInPolicy {
         self.cpu_utilization_percentage
     }
 }
+impl ScaleInPolicy {
+    /// Creates a new builder-style object to manufacture [`ScaleInPolicy`](crate::model::ScaleInPolicy).
+    pub fn builder() -> crate::model::scale_in_policy::Builder {
+        crate::model::scale_in_policy::Builder::default()
+    }
+}
+
 /// See [`ScaleInPolicy`](crate::model::ScaleInPolicy).
 pub mod scale_in_policy {
 
@@ -4916,11 +4975,5 @@ pub mod scale_in_policy {
                 cpu_utilization_percentage: self.cpu_utilization_percentage.unwrap_or_default(),
             }
         }
-    }
-}
-impl ScaleInPolicy {
-    /// Creates a new builder-style object to manufacture [`ScaleInPolicy`](crate::model::ScaleInPolicy).
-    pub fn builder() -> crate::model::scale_in_policy::Builder {
-        crate::model::scale_in_policy::Builder::default()
     }
 }

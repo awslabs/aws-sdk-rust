@@ -10,6 +10,13 @@ impl aws_http::request_id::RequestId for RegisterScalableTargetOutput {
         self._request_id.as_deref()
     }
 }
+impl RegisterScalableTargetOutput {
+    /// Creates a new builder-style object to manufacture [`RegisterScalableTargetOutput`](crate::output::RegisterScalableTargetOutput).
+    pub fn builder() -> crate::output::register_scalable_target_output::Builder {
+        crate::output::register_scalable_target_output::Builder::default()
+    }
+}
+
 /// See [`RegisterScalableTargetOutput`](crate::output::RegisterScalableTargetOutput).
 pub mod register_scalable_target_output {
 
@@ -37,12 +44,6 @@ pub mod register_scalable_target_output {
         }
     }
 }
-impl RegisterScalableTargetOutput {
-    /// Creates a new builder-style object to manufacture [`RegisterScalableTargetOutput`](crate::output::RegisterScalableTargetOutput).
-    pub fn builder() -> crate::output::register_scalable_target_output::Builder {
-        crate::output::register_scalable_target_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -55,6 +56,13 @@ impl aws_http::request_id::RequestId for PutScheduledActionOutput {
         self._request_id.as_deref()
     }
 }
+impl PutScheduledActionOutput {
+    /// Creates a new builder-style object to manufacture [`PutScheduledActionOutput`](crate::output::PutScheduledActionOutput).
+    pub fn builder() -> crate::output::put_scheduled_action_output::Builder {
+        crate::output::put_scheduled_action_output::Builder::default()
+    }
+}
+
 /// See [`PutScheduledActionOutput`](crate::output::PutScheduledActionOutput).
 pub mod put_scheduled_action_output {
 
@@ -80,12 +88,6 @@ pub mod put_scheduled_action_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl PutScheduledActionOutput {
-    /// Creates a new builder-style object to manufacture [`PutScheduledActionOutput`](crate::output::PutScheduledActionOutput).
-    pub fn builder() -> crate::output::put_scheduled_action_output::Builder {
-        crate::output::put_scheduled_action_output::Builder::default()
     }
 }
 
@@ -116,6 +118,13 @@ impl aws_http::request_id::RequestId for PutScalingPolicyOutput {
         self._request_id.as_deref()
     }
 }
+impl PutScalingPolicyOutput {
+    /// Creates a new builder-style object to manufacture [`PutScalingPolicyOutput`](crate::output::PutScalingPolicyOutput).
+    pub fn builder() -> crate::output::put_scaling_policy_output::Builder {
+        crate::output::put_scaling_policy_output::Builder::default()
+    }
+}
+
 /// See [`PutScalingPolicyOutput`](crate::output::PutScalingPolicyOutput).
 pub mod put_scaling_policy_output {
 
@@ -176,12 +185,6 @@ pub mod put_scaling_policy_output {
         }
     }
 }
-impl PutScalingPolicyOutput {
-    /// Creates a new builder-style object to manufacture [`PutScalingPolicyOutput`](crate::output::PutScalingPolicyOutput).
-    pub fn builder() -> crate::output::put_scaling_policy_output::Builder {
-        crate::output::put_scaling_policy_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -210,6 +213,13 @@ impl aws_http::request_id::RequestId for DescribeScheduledActionsOutput {
         self._request_id.as_deref()
     }
 }
+impl DescribeScheduledActionsOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeScheduledActionsOutput`](crate::output::DescribeScheduledActionsOutput).
+    pub fn builder() -> crate::output::describe_scheduled_actions_output::Builder {
+        crate::output::describe_scheduled_actions_output::Builder::default()
+    }
+}
+
 /// See [`DescribeScheduledActionsOutput`](crate::output::DescribeScheduledActionsOutput).
 pub mod describe_scheduled_actions_output {
 
@@ -271,12 +281,6 @@ pub mod describe_scheduled_actions_output {
         }
     }
 }
-impl DescribeScheduledActionsOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeScheduledActionsOutput`](crate::output::DescribeScheduledActionsOutput).
-    pub fn builder() -> crate::output::describe_scheduled_actions_output::Builder {
-        crate::output::describe_scheduled_actions_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -305,6 +309,13 @@ impl aws_http::request_id::RequestId for DescribeScalingPoliciesOutput {
         self._request_id.as_deref()
     }
 }
+impl DescribeScalingPoliciesOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeScalingPoliciesOutput`](crate::output::DescribeScalingPoliciesOutput).
+    pub fn builder() -> crate::output::describe_scaling_policies_output::Builder {
+        crate::output::describe_scaling_policies_output::Builder::default()
+    }
+}
+
 /// See [`DescribeScalingPoliciesOutput`](crate::output::DescribeScalingPoliciesOutput).
 pub mod describe_scaling_policies_output {
 
@@ -366,12 +377,6 @@ pub mod describe_scaling_policies_output {
         }
     }
 }
-impl DescribeScalingPoliciesOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeScalingPoliciesOutput`](crate::output::DescribeScalingPoliciesOutput).
-    pub fn builder() -> crate::output::describe_scaling_policies_output::Builder {
-        crate::output::describe_scaling_policies_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -400,6 +405,13 @@ impl aws_http::request_id::RequestId for DescribeScalingActivitiesOutput {
         self._request_id.as_deref()
     }
 }
+impl DescribeScalingActivitiesOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeScalingActivitiesOutput`](crate::output::DescribeScalingActivitiesOutput).
+    pub fn builder() -> crate::output::describe_scaling_activities_output::Builder {
+        crate::output::describe_scaling_activities_output::Builder::default()
+    }
+}
+
 /// See [`DescribeScalingActivitiesOutput`](crate::output::DescribeScalingActivitiesOutput).
 pub mod describe_scaling_activities_output {
 
@@ -461,12 +473,6 @@ pub mod describe_scaling_activities_output {
         }
     }
 }
-impl DescribeScalingActivitiesOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeScalingActivitiesOutput`](crate::output::DescribeScalingActivitiesOutput).
-    pub fn builder() -> crate::output::describe_scaling_activities_output::Builder {
-        crate::output::describe_scaling_activities_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -495,6 +501,13 @@ impl aws_http::request_id::RequestId for DescribeScalableTargetsOutput {
         self._request_id.as_deref()
     }
 }
+impl DescribeScalableTargetsOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeScalableTargetsOutput`](crate::output::DescribeScalableTargetsOutput).
+    pub fn builder() -> crate::output::describe_scalable_targets_output::Builder {
+        crate::output::describe_scalable_targets_output::Builder::default()
+    }
+}
+
 /// See [`DescribeScalableTargetsOutput`](crate::output::DescribeScalableTargetsOutput).
 pub mod describe_scalable_targets_output {
 
@@ -556,12 +569,6 @@ pub mod describe_scalable_targets_output {
         }
     }
 }
-impl DescribeScalableTargetsOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeScalableTargetsOutput`](crate::output::DescribeScalableTargetsOutput).
-    pub fn builder() -> crate::output::describe_scalable_targets_output::Builder {
-        crate::output::describe_scalable_targets_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -574,6 +581,13 @@ impl aws_http::request_id::RequestId for DeregisterScalableTargetOutput {
         self._request_id.as_deref()
     }
 }
+impl DeregisterScalableTargetOutput {
+    /// Creates a new builder-style object to manufacture [`DeregisterScalableTargetOutput`](crate::output::DeregisterScalableTargetOutput).
+    pub fn builder() -> crate::output::deregister_scalable_target_output::Builder {
+        crate::output::deregister_scalable_target_output::Builder::default()
+    }
+}
+
 /// See [`DeregisterScalableTargetOutput`](crate::output::DeregisterScalableTargetOutput).
 pub mod deregister_scalable_target_output {
 
@@ -601,12 +615,6 @@ pub mod deregister_scalable_target_output {
         }
     }
 }
-impl DeregisterScalableTargetOutput {
-    /// Creates a new builder-style object to manufacture [`DeregisterScalableTargetOutput`](crate::output::DeregisterScalableTargetOutput).
-    pub fn builder() -> crate::output::deregister_scalable_target_output::Builder {
-        crate::output::deregister_scalable_target_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -619,6 +627,13 @@ impl aws_http::request_id::RequestId for DeleteScheduledActionOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteScheduledActionOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteScheduledActionOutput`](crate::output::DeleteScheduledActionOutput).
+    pub fn builder() -> crate::output::delete_scheduled_action_output::Builder {
+        crate::output::delete_scheduled_action_output::Builder::default()
+    }
+}
+
 /// See [`DeleteScheduledActionOutput`](crate::output::DeleteScheduledActionOutput).
 pub mod delete_scheduled_action_output {
 
@@ -646,12 +661,6 @@ pub mod delete_scheduled_action_output {
         }
     }
 }
-impl DeleteScheduledActionOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteScheduledActionOutput`](crate::output::DeleteScheduledActionOutput).
-    pub fn builder() -> crate::output::delete_scheduled_action_output::Builder {
-        crate::output::delete_scheduled_action_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -664,6 +673,13 @@ impl aws_http::request_id::RequestId for DeleteScalingPolicyOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteScalingPolicyOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteScalingPolicyOutput`](crate::output::DeleteScalingPolicyOutput).
+    pub fn builder() -> crate::output::delete_scaling_policy_output::Builder {
+        crate::output::delete_scaling_policy_output::Builder::default()
+    }
+}
+
 /// See [`DeleteScalingPolicyOutput`](crate::output::DeleteScalingPolicyOutput).
 pub mod delete_scaling_policy_output {
 
@@ -689,11 +705,5 @@ pub mod delete_scaling_policy_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl DeleteScalingPolicyOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteScalingPolicyOutput`](crate::output::DeleteScalingPolicyOutput).
-    pub fn builder() -> crate::output::delete_scaling_policy_output::Builder {
-        crate::output::delete_scaling_policy_output::Builder::default()
     }
 }

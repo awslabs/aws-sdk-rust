@@ -39,6 +39,13 @@ impl aws_http::request_id::RequestId for UpdateNetworkSitePlanOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdateNetworkSitePlanOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateNetworkSitePlanOutput`](crate::output::UpdateNetworkSitePlanOutput).
+    pub fn builder() -> crate::output::update_network_site_plan_output::Builder {
+        crate::output::update_network_site_plan_output::Builder::default()
+    }
+}
+
 /// See [`UpdateNetworkSitePlanOutput`](crate::output::UpdateNetworkSitePlanOutput).
 pub mod update_network_site_plan_output {
 
@@ -119,12 +126,6 @@ pub mod update_network_site_plan_output {
         }
     }
 }
-impl UpdateNetworkSitePlanOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateNetworkSitePlanOutput`](crate::output::UpdateNetworkSitePlanOutput).
-    pub fn builder() -> crate::output::update_network_site_plan_output::Builder {
-        crate::output::update_network_site_plan_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -166,6 +167,13 @@ impl aws_http::request_id::RequestId for UpdateNetworkSiteOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdateNetworkSiteOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateNetworkSiteOutput`](crate::output::UpdateNetworkSiteOutput).
+    pub fn builder() -> crate::output::update_network_site_output::Builder {
+        crate::output::update_network_site_output::Builder::default()
+    }
+}
+
 /// See [`UpdateNetworkSiteOutput`](crate::output::UpdateNetworkSiteOutput).
 pub mod update_network_site_output {
 
@@ -246,12 +254,6 @@ pub mod update_network_site_output {
         }
     }
 }
-impl UpdateNetworkSiteOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateNetworkSiteOutput`](crate::output::UpdateNetworkSiteOutput).
-    pub fn builder() -> crate::output::update_network_site_output::Builder {
-        crate::output::update_network_site_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -264,6 +266,13 @@ impl aws_http::request_id::RequestId for UntagResourceOutput {
         self._request_id.as_deref()
     }
 }
+impl UntagResourceOutput {
+    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    pub fn builder() -> crate::output::untag_resource_output::Builder {
+        crate::output::untag_resource_output::Builder::default()
+    }
+}
+
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
 
@@ -291,12 +300,6 @@ pub mod untag_resource_output {
         }
     }
 }
-impl UntagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
-    pub fn builder() -> crate::output::untag_resource_output::Builder {
-        crate::output::untag_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -309,6 +312,13 @@ impl aws_http::request_id::RequestId for TagResourceOutput {
         self._request_id.as_deref()
     }
 }
+impl TagResourceOutput {
+    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
+    pub fn builder() -> crate::output::tag_resource_output::Builder {
+        crate::output::tag_resource_output::Builder::default()
+    }
+}
+
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
 
@@ -336,12 +346,6 @@ pub mod tag_resource_output {
         }
     }
 }
-impl TagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
-    pub fn builder() -> crate::output::tag_resource_output::Builder {
-        crate::output::tag_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -363,6 +367,13 @@ impl aws_http::request_id::RequestId for PingOutput {
         self._request_id.as_deref()
     }
 }
+impl PingOutput {
+    /// Creates a new builder-style object to manufacture [`PingOutput`](crate::output::PingOutput).
+    pub fn builder() -> crate::output::ping_output::Builder {
+        crate::output::ping_output::Builder::default()
+    }
+}
+
 /// See [`PingOutput`](crate::output::PingOutput).
 pub mod ping_output {
 
@@ -402,12 +413,6 @@ pub mod ping_output {
         }
     }
 }
-impl PingOutput {
-    /// Creates a new builder-style object to manufacture [`PingOutput`](crate::output::PingOutput).
-    pub fn builder() -> crate::output::ping_output::Builder {
-        crate::output::ping_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -441,6 +446,13 @@ impl aws_http::request_id::RequestId for ListTagsForResourceOutput {
         self._request_id.as_deref()
     }
 }
+impl ListTagsForResourceOutput {
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
+        crate::output::list_tags_for_resource_output::Builder::default()
+    }
+}
+
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
 
@@ -505,12 +517,6 @@ pub mod list_tags_for_resource_output {
         }
     }
 }
-impl ListTagsForResourceOutput {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
-    pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
-        crate::output::list_tags_for_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -539,6 +545,13 @@ impl aws_http::request_id::RequestId for ListOrdersOutput {
         self._request_id.as_deref()
     }
 }
+impl ListOrdersOutput {
+    /// Creates a new builder-style object to manufacture [`ListOrdersOutput`](crate::output::ListOrdersOutput).
+    pub fn builder() -> crate::output::list_orders_output::Builder {
+        crate::output::list_orders_output::Builder::default()
+    }
+}
+
 /// See [`ListOrdersOutput`](crate::output::ListOrdersOutput).
 pub mod list_orders_output {
 
@@ -599,12 +612,6 @@ pub mod list_orders_output {
         }
     }
 }
-impl ListOrdersOutput {
-    /// Creates a new builder-style object to manufacture [`ListOrdersOutput`](crate::output::ListOrdersOutput).
-    pub fn builder() -> crate::output::list_orders_output::Builder {
-        crate::output::list_orders_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -633,6 +640,13 @@ impl aws_http::request_id::RequestId for ListNetworkSitesOutput {
         self._request_id.as_deref()
     }
 }
+impl ListNetworkSitesOutput {
+    /// Creates a new builder-style object to manufacture [`ListNetworkSitesOutput`](crate::output::ListNetworkSitesOutput).
+    pub fn builder() -> crate::output::list_network_sites_output::Builder {
+        crate::output::list_network_sites_output::Builder::default()
+    }
+}
+
 /// See [`ListNetworkSitesOutput`](crate::output::ListNetworkSitesOutput).
 pub mod list_network_sites_output {
 
@@ -693,12 +707,6 @@ pub mod list_network_sites_output {
         }
     }
 }
-impl ListNetworkSitesOutput {
-    /// Creates a new builder-style object to manufacture [`ListNetworkSitesOutput`](crate::output::ListNetworkSitesOutput).
-    pub fn builder() -> crate::output::list_network_sites_output::Builder {
-        crate::output::list_network_sites_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -727,6 +735,13 @@ impl aws_http::request_id::RequestId for ListNetworksOutput {
         self._request_id.as_deref()
     }
 }
+impl ListNetworksOutput {
+    /// Creates a new builder-style object to manufacture [`ListNetworksOutput`](crate::output::ListNetworksOutput).
+    pub fn builder() -> crate::output::list_networks_output::Builder {
+        crate::output::list_networks_output::Builder::default()
+    }
+}
+
 /// See [`ListNetworksOutput`](crate::output::ListNetworksOutput).
 pub mod list_networks_output {
 
@@ -787,12 +802,6 @@ pub mod list_networks_output {
         }
     }
 }
-impl ListNetworksOutput {
-    /// Creates a new builder-style object to manufacture [`ListNetworksOutput`](crate::output::ListNetworksOutput).
-    pub fn builder() -> crate::output::list_networks_output::Builder {
-        crate::output::list_networks_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -821,6 +830,13 @@ impl aws_http::request_id::RequestId for ListNetworkResourcesOutput {
         self._request_id.as_deref()
     }
 }
+impl ListNetworkResourcesOutput {
+    /// Creates a new builder-style object to manufacture [`ListNetworkResourcesOutput`](crate::output::ListNetworkResourcesOutput).
+    pub fn builder() -> crate::output::list_network_resources_output::Builder {
+        crate::output::list_network_resources_output::Builder::default()
+    }
+}
+
 /// See [`ListNetworkResourcesOutput`](crate::output::ListNetworkResourcesOutput).
 pub mod list_network_resources_output {
 
@@ -882,12 +898,6 @@ pub mod list_network_resources_output {
         }
     }
 }
-impl ListNetworkResourcesOutput {
-    /// Creates a new builder-style object to manufacture [`ListNetworkResourcesOutput`](crate::output::ListNetworkResourcesOutput).
-    pub fn builder() -> crate::output::list_network_resources_output::Builder {
-        crate::output::list_network_resources_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -916,6 +926,13 @@ impl aws_http::request_id::RequestId for ListDeviceIdentifiersOutput {
         self._request_id.as_deref()
     }
 }
+impl ListDeviceIdentifiersOutput {
+    /// Creates a new builder-style object to manufacture [`ListDeviceIdentifiersOutput`](crate::output::ListDeviceIdentifiersOutput).
+    pub fn builder() -> crate::output::list_device_identifiers_output::Builder {
+        crate::output::list_device_identifiers_output::Builder::default()
+    }
+}
+
 /// See [`ListDeviceIdentifiersOutput`](crate::output::ListDeviceIdentifiersOutput).
 pub mod list_device_identifiers_output {
 
@@ -977,12 +994,6 @@ pub mod list_device_identifiers_output {
         }
     }
 }
-impl ListDeviceIdentifiersOutput {
-    /// Creates a new builder-style object to manufacture [`ListDeviceIdentifiersOutput`](crate::output::ListDeviceIdentifiersOutput).
-    pub fn builder() -> crate::output::list_device_identifiers_output::Builder {
-        crate::output::list_device_identifiers_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1024,6 +1035,13 @@ impl aws_http::request_id::RequestId for GetOrderOutput {
         self._request_id.as_deref()
     }
 }
+impl GetOrderOutput {
+    /// Creates a new builder-style object to manufacture [`GetOrderOutput`](crate::output::GetOrderOutput).
+    pub fn builder() -> crate::output::get_order_output::Builder {
+        crate::output::get_order_output::Builder::default()
+    }
+}
+
 /// See [`GetOrderOutput`](crate::output::GetOrderOutput).
 pub mod get_order_output {
 
@@ -1101,12 +1119,6 @@ pub mod get_order_output {
         }
     }
 }
-impl GetOrderOutput {
-    /// Creates a new builder-style object to manufacture [`GetOrderOutput`](crate::output::GetOrderOutput).
-    pub fn builder() -> crate::output::get_order_output::Builder {
-        crate::output::get_order_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1148,6 +1160,13 @@ impl aws_http::request_id::RequestId for GetNetworkSiteOutput {
         self._request_id.as_deref()
     }
 }
+impl GetNetworkSiteOutput {
+    /// Creates a new builder-style object to manufacture [`GetNetworkSiteOutput`](crate::output::GetNetworkSiteOutput).
+    pub fn builder() -> crate::output::get_network_site_output::Builder {
+        crate::output::get_network_site_output::Builder::default()
+    }
+}
+
 /// See [`GetNetworkSiteOutput`](crate::output::GetNetworkSiteOutput).
 pub mod get_network_site_output {
 
@@ -1228,12 +1247,6 @@ pub mod get_network_site_output {
         }
     }
 }
-impl GetNetworkSiteOutput {
-    /// Creates a new builder-style object to manufacture [`GetNetworkSiteOutput`](crate::output::GetNetworkSiteOutput).
-    pub fn builder() -> crate::output::get_network_site_output::Builder {
-        crate::output::get_network_site_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1275,6 +1288,13 @@ impl aws_http::request_id::RequestId for GetNetworkResourceOutput {
         self._request_id.as_deref()
     }
 }
+impl GetNetworkResourceOutput {
+    /// Creates a new builder-style object to manufacture [`GetNetworkResourceOutput`](crate::output::GetNetworkResourceOutput).
+    pub fn builder() -> crate::output::get_network_resource_output::Builder {
+        crate::output::get_network_resource_output::Builder::default()
+    }
+}
+
 /// See [`GetNetworkResourceOutput`](crate::output::GetNetworkResourceOutput).
 pub mod get_network_resource_output {
 
@@ -1355,12 +1375,6 @@ pub mod get_network_resource_output {
         }
     }
 }
-impl GetNetworkResourceOutput {
-    /// Creates a new builder-style object to manufacture [`GetNetworkResourceOutput`](crate::output::GetNetworkResourceOutput).
-    pub fn builder() -> crate::output::get_network_resource_output::Builder {
-        crate::output::get_network_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1402,6 +1416,13 @@ impl aws_http::request_id::RequestId for GetNetworkOutput {
         self._request_id.as_deref()
     }
 }
+impl GetNetworkOutput {
+    /// Creates a new builder-style object to manufacture [`GetNetworkOutput`](crate::output::GetNetworkOutput).
+    pub fn builder() -> crate::output::get_network_output::Builder {
+        crate::output::get_network_output::Builder::default()
+    }
+}
+
 /// See [`GetNetworkOutput`](crate::output::GetNetworkOutput).
 pub mod get_network_output {
 
@@ -1479,12 +1500,6 @@ pub mod get_network_output {
         }
     }
 }
-impl GetNetworkOutput {
-    /// Creates a new builder-style object to manufacture [`GetNetworkOutput`](crate::output::GetNetworkOutput).
-    pub fn builder() -> crate::output::get_network_output::Builder {
-        crate::output::get_network_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1526,6 +1541,13 @@ impl aws_http::request_id::RequestId for GetDeviceIdentifierOutput {
         self._request_id.as_deref()
     }
 }
+impl GetDeviceIdentifierOutput {
+    /// Creates a new builder-style object to manufacture [`GetDeviceIdentifierOutput`](crate::output::GetDeviceIdentifierOutput).
+    pub fn builder() -> crate::output::get_device_identifier_output::Builder {
+        crate::output::get_device_identifier_output::Builder::default()
+    }
+}
+
 /// See [`GetDeviceIdentifierOutput`](crate::output::GetDeviceIdentifierOutput).
 pub mod get_device_identifier_output {
 
@@ -1606,12 +1628,6 @@ pub mod get_device_identifier_output {
         }
     }
 }
-impl GetDeviceIdentifierOutput {
-    /// Creates a new builder-style object to manufacture [`GetDeviceIdentifierOutput`](crate::output::GetDeviceIdentifierOutput).
-    pub fn builder() -> crate::output::get_device_identifier_output::Builder {
-        crate::output::get_device_identifier_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1633,6 +1649,13 @@ impl aws_http::request_id::RequestId for DeleteNetworkSiteOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteNetworkSiteOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteNetworkSiteOutput`](crate::output::DeleteNetworkSiteOutput).
+    pub fn builder() -> crate::output::delete_network_site_output::Builder {
+        crate::output::delete_network_site_output::Builder::default()
+    }
+}
+
 /// See [`DeleteNetworkSiteOutput`](crate::output::DeleteNetworkSiteOutput).
 pub mod delete_network_site_output {
 
@@ -1675,12 +1698,6 @@ pub mod delete_network_site_output {
         }
     }
 }
-impl DeleteNetworkSiteOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteNetworkSiteOutput`](crate::output::DeleteNetworkSiteOutput).
-    pub fn builder() -> crate::output::delete_network_site_output::Builder {
-        crate::output::delete_network_site_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1702,6 +1719,13 @@ impl aws_http::request_id::RequestId for DeleteNetworkOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteNetworkOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteNetworkOutput`](crate::output::DeleteNetworkOutput).
+    pub fn builder() -> crate::output::delete_network_output::Builder {
+        crate::output::delete_network_output::Builder::default()
+    }
+}
+
 /// See [`DeleteNetworkOutput`](crate::output::DeleteNetworkOutput).
 pub mod delete_network_output {
 
@@ -1741,12 +1765,6 @@ pub mod delete_network_output {
         }
     }
 }
-impl DeleteNetworkOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteNetworkOutput`](crate::output::DeleteNetworkOutput).
-    pub fn builder() -> crate::output::delete_network_output::Builder {
-        crate::output::delete_network_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1768,6 +1786,13 @@ impl aws_http::request_id::RequestId for DeactivateDeviceIdentifierOutput {
         self._request_id.as_deref()
     }
 }
+impl DeactivateDeviceIdentifierOutput {
+    /// Creates a new builder-style object to manufacture [`DeactivateDeviceIdentifierOutput`](crate::output::DeactivateDeviceIdentifierOutput).
+    pub fn builder() -> crate::output::deactivate_device_identifier_output::Builder {
+        crate::output::deactivate_device_identifier_output::Builder::default()
+    }
+}
+
 /// See [`DeactivateDeviceIdentifierOutput`](crate::output::DeactivateDeviceIdentifierOutput).
 pub mod deactivate_device_identifier_output {
 
@@ -1808,12 +1833,6 @@ pub mod deactivate_device_identifier_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl DeactivateDeviceIdentifierOutput {
-    /// Creates a new builder-style object to manufacture [`DeactivateDeviceIdentifierOutput`](crate::output::DeactivateDeviceIdentifierOutput).
-    pub fn builder() -> crate::output::deactivate_device_identifier_output::Builder {
-        crate::output::deactivate_device_identifier_output::Builder::default()
     }
 }
 
@@ -1857,6 +1876,13 @@ impl aws_http::request_id::RequestId for CreateNetworkSiteOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateNetworkSiteOutput {
+    /// Creates a new builder-style object to manufacture [`CreateNetworkSiteOutput`](crate::output::CreateNetworkSiteOutput).
+    pub fn builder() -> crate::output::create_network_site_output::Builder {
+        crate::output::create_network_site_output::Builder::default()
+    }
+}
+
 /// See [`CreateNetworkSiteOutput`](crate::output::CreateNetworkSiteOutput).
 pub mod create_network_site_output {
 
@@ -1937,12 +1963,6 @@ pub mod create_network_site_output {
         }
     }
 }
-impl CreateNetworkSiteOutput {
-    /// Creates a new builder-style object to manufacture [`CreateNetworkSiteOutput`](crate::output::CreateNetworkSiteOutput).
-    pub fn builder() -> crate::output::create_network_site_output::Builder {
-        crate::output::create_network_site_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1984,6 +2004,13 @@ impl aws_http::request_id::RequestId for CreateNetworkOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateNetworkOutput {
+    /// Creates a new builder-style object to manufacture [`CreateNetworkOutput`](crate::output::CreateNetworkOutput).
+    pub fn builder() -> crate::output::create_network_output::Builder {
+        crate::output::create_network_output::Builder::default()
+    }
+}
+
 /// See [`CreateNetworkOutput`](crate::output::CreateNetworkOutput).
 pub mod create_network_output {
 
@@ -2061,12 +2088,6 @@ pub mod create_network_output {
         }
     }
 }
-impl CreateNetworkOutput {
-    /// Creates a new builder-style object to manufacture [`CreateNetworkOutput`](crate::output::CreateNetworkOutput).
-    pub fn builder() -> crate::output::create_network_output::Builder {
-        crate::output::create_network_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2088,6 +2109,13 @@ impl aws_http::request_id::RequestId for ConfigureAccessPointOutput {
         self._request_id.as_deref()
     }
 }
+impl ConfigureAccessPointOutput {
+    /// Creates a new builder-style object to manufacture [`ConfigureAccessPointOutput`](crate::output::ConfigureAccessPointOutput).
+    pub fn builder() -> crate::output::configure_access_point_output::Builder {
+        crate::output::configure_access_point_output::Builder::default()
+    }
+}
+
 /// See [`ConfigureAccessPointOutput`](crate::output::ConfigureAccessPointOutput).
 pub mod configure_access_point_output {
 
@@ -2130,12 +2158,6 @@ pub mod configure_access_point_output {
         }
     }
 }
-impl ConfigureAccessPointOutput {
-    /// Creates a new builder-style object to manufacture [`ConfigureAccessPointOutput`](crate::output::ConfigureAccessPointOutput).
-    pub fn builder() -> crate::output::configure_access_point_output::Builder {
-        crate::output::configure_access_point_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2157,6 +2179,13 @@ impl aws_http::request_id::RequestId for ActivateNetworkSiteOutput {
         self._request_id.as_deref()
     }
 }
+impl ActivateNetworkSiteOutput {
+    /// Creates a new builder-style object to manufacture [`ActivateNetworkSiteOutput`](crate::output::ActivateNetworkSiteOutput).
+    pub fn builder() -> crate::output::activate_network_site_output::Builder {
+        crate::output::activate_network_site_output::Builder::default()
+    }
+}
+
 /// See [`ActivateNetworkSiteOutput`](crate::output::ActivateNetworkSiteOutput).
 pub mod activate_network_site_output {
 
@@ -2197,12 +2226,6 @@ pub mod activate_network_site_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl ActivateNetworkSiteOutput {
-    /// Creates a new builder-style object to manufacture [`ActivateNetworkSiteOutput`](crate::output::ActivateNetworkSiteOutput).
-    pub fn builder() -> crate::output::activate_network_site_output::Builder {
-        crate::output::activate_network_site_output::Builder::default()
     }
 }
 
@@ -2246,6 +2269,13 @@ impl aws_http::request_id::RequestId for ActivateDeviceIdentifierOutput {
         self._request_id.as_deref()
     }
 }
+impl ActivateDeviceIdentifierOutput {
+    /// Creates a new builder-style object to manufacture [`ActivateDeviceIdentifierOutput`](crate::output::ActivateDeviceIdentifierOutput).
+    pub fn builder() -> crate::output::activate_device_identifier_output::Builder {
+        crate::output::activate_device_identifier_output::Builder::default()
+    }
+}
+
 /// See [`ActivateDeviceIdentifierOutput`](crate::output::ActivateDeviceIdentifierOutput).
 pub mod activate_device_identifier_output {
 
@@ -2326,12 +2356,6 @@ pub mod activate_device_identifier_output {
         }
     }
 }
-impl ActivateDeviceIdentifierOutput {
-    /// Creates a new builder-style object to manufacture [`ActivateDeviceIdentifierOutput`](crate::output::ActivateDeviceIdentifierOutput).
-    pub fn builder() -> crate::output::activate_device_identifier_output::Builder {
-        crate::output::activate_device_identifier_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2353,6 +2377,13 @@ impl aws_http::request_id::RequestId for AcknowledgeOrderReceiptOutput {
         self._request_id.as_deref()
     }
 }
+impl AcknowledgeOrderReceiptOutput {
+    /// Creates a new builder-style object to manufacture [`AcknowledgeOrderReceiptOutput`](crate::output::AcknowledgeOrderReceiptOutput).
+    pub fn builder() -> crate::output::acknowledge_order_receipt_output::Builder {
+        crate::output::acknowledge_order_receipt_output::Builder::default()
+    }
+}
+
 /// See [`AcknowledgeOrderReceiptOutput`](crate::output::AcknowledgeOrderReceiptOutput).
 pub mod acknowledge_order_receipt_output {
 
@@ -2390,11 +2421,5 @@ pub mod acknowledge_order_receipt_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl AcknowledgeOrderReceiptOutput {
-    /// Creates a new builder-style object to manufacture [`AcknowledgeOrderReceiptOutput`](crate::output::AcknowledgeOrderReceiptOutput).
-    pub fn builder() -> crate::output::acknowledge_order_receipt_output::Builder {
-        crate::output::acknowledge_order_receipt_output::Builder::default()
     }
 }

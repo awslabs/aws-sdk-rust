@@ -4,7 +4,7 @@
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`create_application`](crate::client::Client::create_application).
 ///
-/// See [`crate::client::fluent_builders::CreateApplication`] for more details about the operation.
+/// `ParseStrictResponse` impl for `CreateApplication`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateApplication {
     _private: (),
@@ -39,7 +39,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateApplication {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`create_application_version`](crate::client::Client::create_application_version).
 ///
-/// See [`crate::client::fluent_builders::CreateApplicationVersion`] for more details about the operation.
+/// `ParseStrictResponse` impl for `CreateApplicationVersion`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateApplicationVersion {
     _private: (),
@@ -74,7 +74,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateApplicationVersion
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`create_cloud_formation_change_set`](crate::client::Client::create_cloud_formation_change_set).
 ///
-/// See [`crate::client::fluent_builders::CreateCloudFormationChangeSet`] for more details about the operation.
+/// `ParseStrictResponse` impl for `CreateCloudFormationChangeSet`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateCloudFormationChangeSet {
     _private: (),
@@ -109,7 +109,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateCloudFormationChan
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`create_cloud_formation_template`](crate::client::Client::create_cloud_formation_template).
 ///
-/// See [`crate::client::fluent_builders::CreateCloudFormationTemplate`] for more details about the operation.
+/// `ParseStrictResponse` impl for `CreateCloudFormationTemplate`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateCloudFormationTemplate {
     _private: (),
@@ -144,7 +144,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateCloudFormationTemp
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`delete_application`](crate::client::Client::delete_application).
 ///
-/// See [`crate::client::fluent_builders::DeleteApplication`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DeleteApplication`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteApplication {
     _private: (),
@@ -179,7 +179,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteApplication {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`get_application`](crate::client::Client::get_application).
 ///
-/// See [`crate::client::fluent_builders::GetApplication`] for more details about the operation.
+/// `ParseStrictResponse` impl for `GetApplication`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetApplication {
     _private: (),
@@ -212,7 +212,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetApplication {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`get_application_policy`](crate::client::Client::get_application_policy).
 ///
-/// See [`crate::client::fluent_builders::GetApplicationPolicy`] for more details about the operation.
+/// `ParseStrictResponse` impl for `GetApplicationPolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetApplicationPolicy {
     _private: (),
@@ -247,7 +247,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetApplicationPolicy {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`get_cloud_formation_template`](crate::client::Client::get_cloud_formation_template).
 ///
-/// See [`crate::client::fluent_builders::GetCloudFormationTemplate`] for more details about the operation.
+/// `ParseStrictResponse` impl for `GetCloudFormationTemplate`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetCloudFormationTemplate {
     _private: (),
@@ -282,7 +282,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetCloudFormationTemplat
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_application_dependencies`](crate::client::Client::list_application_dependencies).
 ///
-/// See [`crate::client::fluent_builders::ListApplicationDependencies`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListApplicationDependencies`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListApplicationDependencies {
     _private: (),
@@ -317,7 +317,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListApplicationDependenc
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_applications`](crate::client::Client::list_applications).
 ///
-/// See [`crate::client::fluent_builders::ListApplications`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListApplications`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListApplications {
     _private: (),
@@ -352,7 +352,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListApplications {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_application_versions`](crate::client::Client::list_application_versions).
 ///
-/// See [`crate::client::fluent_builders::ListApplicationVersions`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListApplicationVersions`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListApplicationVersions {
     _private: (),
@@ -387,7 +387,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListApplicationVersions 
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`put_application_policy`](crate::client::Client::put_application_policy).
 ///
-/// See [`crate::client::fluent_builders::PutApplicationPolicy`] for more details about the operation.
+/// `ParseStrictResponse` impl for `PutApplicationPolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutApplicationPolicy {
     _private: (),
@@ -422,7 +422,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutApplicationPolicy {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`unshare_application`](crate::client::Client::unshare_application).
 ///
-/// See [`crate::client::fluent_builders::UnshareApplication`] for more details about the operation.
+/// `ParseStrictResponse` impl for `UnshareApplication`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UnshareApplication {
     _private: (),
@@ -457,7 +457,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UnshareApplication {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`update_application`](crate::client::Client::update_application).
 ///
-/// See [`crate::client::fluent_builders::UpdateApplication`] for more details about the operation.
+/// `ParseStrictResponse` impl for `UpdateApplication`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateApplication {
     _private: (),

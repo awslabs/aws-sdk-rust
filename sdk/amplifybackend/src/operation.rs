@@ -4,7 +4,7 @@
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`clone_backend`](crate::client::Client::clone_backend).
 ///
-/// See [`crate::client::fluent_builders::CloneBackend`] for more details about the operation.
+/// `ParseStrictResponse` impl for `CloneBackend`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CloneBackend {
     _private: (),
@@ -37,7 +37,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CloneBackend {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`create_backend`](crate::client::Client::create_backend).
 ///
-/// See [`crate::client::fluent_builders::CreateBackend`] for more details about the operation.
+/// `ParseStrictResponse` impl for `CreateBackend`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateBackend {
     _private: (),
@@ -70,7 +70,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateBackend {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`create_backend_api`](crate::client::Client::create_backend_api).
 ///
-/// See [`crate::client::fluent_builders::CreateBackendAPI`] for more details about the operation.
+/// `ParseStrictResponse` impl for `CreateBackendAPI`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateBackendAPI {
     _private: (),
@@ -105,7 +105,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateBackendAPI {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`create_backend_auth`](crate::client::Client::create_backend_auth).
 ///
-/// See [`crate::client::fluent_builders::CreateBackendAuth`] for more details about the operation.
+/// `ParseStrictResponse` impl for `CreateBackendAuth`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateBackendAuth {
     _private: (),
@@ -140,7 +140,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateBackendAuth {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`create_backend_config`](crate::client::Client::create_backend_config).
 ///
-/// See [`crate::client::fluent_builders::CreateBackendConfig`] for more details about the operation.
+/// `ParseStrictResponse` impl for `CreateBackendConfig`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateBackendConfig {
     _private: (),
@@ -175,7 +175,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateBackendConfig {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`create_backend_storage`](crate::client::Client::create_backend_storage).
 ///
-/// See [`crate::client::fluent_builders::CreateBackendStorage`] for more details about the operation.
+/// `ParseStrictResponse` impl for `CreateBackendStorage`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateBackendStorage {
     _private: (),
@@ -210,7 +210,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateBackendStorage {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`create_token`](crate::client::Client::create_token).
 ///
-/// See [`crate::client::fluent_builders::CreateToken`] for more details about the operation.
+/// `ParseStrictResponse` impl for `CreateToken`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateToken {
     _private: (),
@@ -243,7 +243,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateToken {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`delete_backend`](crate::client::Client::delete_backend).
 ///
-/// See [`crate::client::fluent_builders::DeleteBackend`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DeleteBackend`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteBackend {
     _private: (),
@@ -276,7 +276,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteBackend {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`delete_backend_api`](crate::client::Client::delete_backend_api).
 ///
-/// See [`crate::client::fluent_builders::DeleteBackendAPI`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DeleteBackendAPI`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteBackendAPI {
     _private: (),
@@ -311,7 +311,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteBackendAPI {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`delete_backend_auth`](crate::client::Client::delete_backend_auth).
 ///
-/// See [`crate::client::fluent_builders::DeleteBackendAuth`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DeleteBackendAuth`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteBackendAuth {
     _private: (),
@@ -346,7 +346,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteBackendAuth {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`delete_backend_storage`](crate::client::Client::delete_backend_storage).
 ///
-/// See [`crate::client::fluent_builders::DeleteBackendStorage`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DeleteBackendStorage`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteBackendStorage {
     _private: (),
@@ -381,7 +381,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteBackendStorage {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`delete_token`](crate::client::Client::delete_token).
 ///
-/// See [`crate::client::fluent_builders::DeleteToken`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DeleteToken`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteToken {
     _private: (),
@@ -414,7 +414,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteToken {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`generate_backend_api_models`](crate::client::Client::generate_backend_api_models).
 ///
-/// See [`crate::client::fluent_builders::GenerateBackendAPIModels`] for more details about the operation.
+/// `ParseStrictResponse` impl for `GenerateBackendAPIModels`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GenerateBackendAPIModels {
     _private: (),
@@ -449,7 +449,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GenerateBackendAPIModels
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`get_backend`](crate::client::Client::get_backend).
 ///
-/// See [`crate::client::fluent_builders::GetBackend`] for more details about the operation.
+/// `ParseStrictResponse` impl for `GetBackend`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetBackend {
     _private: (),
@@ -482,7 +482,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetBackend {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`get_backend_api`](crate::client::Client::get_backend_api).
 ///
-/// See [`crate::client::fluent_builders::GetBackendAPI`] for more details about the operation.
+/// `ParseStrictResponse` impl for `GetBackendAPI`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetBackendAPI {
     _private: (),
@@ -515,7 +515,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetBackendAPI {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`get_backend_api_models`](crate::client::Client::get_backend_api_models).
 ///
-/// See [`crate::client::fluent_builders::GetBackendAPIModels`] for more details about the operation.
+/// `ParseStrictResponse` impl for `GetBackendAPIModels`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetBackendAPIModels {
     _private: (),
@@ -550,7 +550,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetBackendAPIModels {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`get_backend_auth`](crate::client::Client::get_backend_auth).
 ///
-/// See [`crate::client::fluent_builders::GetBackendAuth`] for more details about the operation.
+/// `ParseStrictResponse` impl for `GetBackendAuth`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetBackendAuth {
     _private: (),
@@ -583,7 +583,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetBackendAuth {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`get_backend_job`](crate::client::Client::get_backend_job).
 ///
-/// See [`crate::client::fluent_builders::GetBackendJob`] for more details about the operation.
+/// `ParseStrictResponse` impl for `GetBackendJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetBackendJob {
     _private: (),
@@ -616,7 +616,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetBackendJob {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`get_backend_storage`](crate::client::Client::get_backend_storage).
 ///
-/// See [`crate::client::fluent_builders::GetBackendStorage`] for more details about the operation.
+/// `ParseStrictResponse` impl for `GetBackendStorage`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetBackendStorage {
     _private: (),
@@ -651,7 +651,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetBackendStorage {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`get_token`](crate::client::Client::get_token).
 ///
-/// See [`crate::client::fluent_builders::GetToken`] for more details about the operation.
+/// `ParseStrictResponse` impl for `GetToken`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetToken {
     _private: (),
@@ -683,7 +683,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetToken {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`import_backend_auth`](crate::client::Client::import_backend_auth).
 ///
-/// See [`crate::client::fluent_builders::ImportBackendAuth`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ImportBackendAuth`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ImportBackendAuth {
     _private: (),
@@ -718,7 +718,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ImportBackendAuth {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`import_backend_storage`](crate::client::Client::import_backend_storage).
 ///
-/// See [`crate::client::fluent_builders::ImportBackendStorage`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ImportBackendStorage`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ImportBackendStorage {
     _private: (),
@@ -753,7 +753,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ImportBackendStorage {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_backend_jobs`](crate::client::Client::list_backend_jobs).
 ///
-/// See [`crate::client::fluent_builders::ListBackendJobs`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListBackendJobs`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListBackendJobs {
     _private: (),
@@ -788,7 +788,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListBackendJobs {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_s3_buckets`](crate::client::Client::list_s3_buckets).
 ///
-/// See [`crate::client::fluent_builders::ListS3Buckets`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListS3Buckets`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListS3Buckets {
     _private: (),
@@ -821,7 +821,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListS3Buckets {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`remove_all_backends`](crate::client::Client::remove_all_backends).
 ///
-/// See [`crate::client::fluent_builders::RemoveAllBackends`] for more details about the operation.
+/// `ParseStrictResponse` impl for `RemoveAllBackends`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct RemoveAllBackends {
     _private: (),
@@ -856,7 +856,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RemoveAllBackends {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`remove_backend_config`](crate::client::Client::remove_backend_config).
 ///
-/// See [`crate::client::fluent_builders::RemoveBackendConfig`] for more details about the operation.
+/// `ParseStrictResponse` impl for `RemoveBackendConfig`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct RemoveBackendConfig {
     _private: (),
@@ -891,7 +891,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RemoveBackendConfig {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`update_backend_api`](crate::client::Client::update_backend_api).
 ///
-/// See [`crate::client::fluent_builders::UpdateBackendAPI`] for more details about the operation.
+/// `ParseStrictResponse` impl for `UpdateBackendAPI`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateBackendAPI {
     _private: (),
@@ -926,7 +926,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateBackendAPI {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`update_backend_auth`](crate::client::Client::update_backend_auth).
 ///
-/// See [`crate::client::fluent_builders::UpdateBackendAuth`] for more details about the operation.
+/// `ParseStrictResponse` impl for `UpdateBackendAuth`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateBackendAuth {
     _private: (),
@@ -961,7 +961,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateBackendAuth {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`update_backend_config`](crate::client::Client::update_backend_config).
 ///
-/// See [`crate::client::fluent_builders::UpdateBackendConfig`] for more details about the operation.
+/// `ParseStrictResponse` impl for `UpdateBackendConfig`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateBackendConfig {
     _private: (),
@@ -996,7 +996,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateBackendConfig {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`update_backend_job`](crate::client::Client::update_backend_job).
 ///
-/// See [`crate::client::fluent_builders::UpdateBackendJob`] for more details about the operation.
+/// `ParseStrictResponse` impl for `UpdateBackendJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateBackendJob {
     _private: (),
@@ -1031,7 +1031,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateBackendJob {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`update_backend_storage`](crate::client::Client::update_backend_storage).
 ///
-/// See [`crate::client::fluent_builders::UpdateBackendStorage`] for more details about the operation.
+/// `ParseStrictResponse` impl for `UpdateBackendStorage`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateBackendStorage {
     _private: (),

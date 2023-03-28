@@ -15,6 +15,13 @@ impl TimeToLive {
         self.status.as_ref()
     }
 }
+impl TimeToLive {
+    /// Creates a new builder-style object to manufacture [`TimeToLive`](crate::model::TimeToLive).
+    pub fn builder() -> crate::model::time_to_live::Builder {
+        crate::model::time_to_live::Builder::default()
+    }
+}
+
 /// See [`TimeToLive`](crate::model::TimeToLive).
 pub mod time_to_live {
 
@@ -44,12 +51,6 @@ pub mod time_to_live {
                 status: self.status,
             }
         }
-    }
-}
-impl TimeToLive {
-    /// Creates a new builder-style object to manufacture [`TimeToLive`](crate::model::TimeToLive).
-    pub fn builder() -> crate::model::time_to_live::Builder {
-        crate::model::time_to_live::Builder::default()
     }
 }
 
@@ -157,6 +158,13 @@ impl PointInTimeRecovery {
         self.status.as_ref()
     }
 }
+impl PointInTimeRecovery {
+    /// Creates a new builder-style object to manufacture [`PointInTimeRecovery`](crate::model::PointInTimeRecovery).
+    pub fn builder() -> crate::model::point_in_time_recovery::Builder {
+        crate::model::point_in_time_recovery::Builder::default()
+    }
+}
+
 /// See [`PointInTimeRecovery`](crate::model::PointInTimeRecovery).
 pub mod point_in_time_recovery {
 
@@ -190,12 +198,6 @@ pub mod point_in_time_recovery {
                 status: self.status,
             }
         }
-    }
-}
-impl PointInTimeRecovery {
-    /// Creates a new builder-style object to manufacture [`PointInTimeRecovery`](crate::model::PointInTimeRecovery).
-    pub fn builder() -> crate::model::point_in_time_recovery::Builder {
-        crate::model::point_in_time_recovery::Builder::default()
     }
 }
 
@@ -324,6 +326,13 @@ impl EncryptionSpecification {
         self.kms_key_identifier.as_deref()
     }
 }
+impl EncryptionSpecification {
+    /// Creates a new builder-style object to manufacture [`EncryptionSpecification`](crate::model::EncryptionSpecification).
+    pub fn builder() -> crate::model::encryption_specification::Builder {
+        crate::model::encryption_specification::Builder::default()
+    }
+}
+
 /// See [`EncryptionSpecification`](crate::model::EncryptionSpecification).
 pub mod encryption_specification {
 
@@ -376,12 +385,6 @@ pub mod encryption_specification {
                 kms_key_identifier: self.kms_key_identifier,
             }
         }
-    }
-}
-impl EncryptionSpecification {
-    /// Creates a new builder-style object to manufacture [`EncryptionSpecification`](crate::model::EncryptionSpecification).
-    pub fn builder() -> crate::model::encryption_specification::Builder {
-        crate::model::encryption_specification::Builder::default()
     }
 }
 
@@ -515,6 +518,13 @@ impl CapacitySpecification {
         self.write_capacity_units
     }
 }
+impl CapacitySpecification {
+    /// Creates a new builder-style object to manufacture [`CapacitySpecification`](crate::model::CapacitySpecification).
+    pub fn builder() -> crate::model::capacity_specification::Builder {
+        crate::model::capacity_specification::Builder::default()
+    }
+}
+
 /// See [`CapacitySpecification`](crate::model::CapacitySpecification).
 pub mod capacity_specification {
 
@@ -576,12 +586,6 @@ pub mod capacity_specification {
                 write_capacity_units: self.write_capacity_units,
             }
         }
-    }
-}
-impl CapacitySpecification {
-    /// Creates a new builder-style object to manufacture [`CapacitySpecification`](crate::model::CapacitySpecification).
-    pub fn builder() -> crate::model::capacity_specification::Builder {
-        crate::model::capacity_specification::Builder::default()
     }
 }
 
@@ -696,6 +700,13 @@ impl ColumnDefinition {
         self.r#type.as_deref()
     }
 }
+impl ColumnDefinition {
+    /// Creates a new builder-style object to manufacture [`ColumnDefinition`](crate::model::ColumnDefinition).
+    pub fn builder() -> crate::model::column_definition::Builder {
+        crate::model::column_definition::Builder::default()
+    }
+}
+
 /// See [`ColumnDefinition`](crate::model::ColumnDefinition).
 pub mod column_definition {
 
@@ -736,12 +747,6 @@ pub mod column_definition {
         }
     }
 }
-impl ColumnDefinition {
-    /// Creates a new builder-style object to manufacture [`ColumnDefinition`](crate::model::ColumnDefinition).
-    pub fn builder() -> crate::model::column_definition::Builder {
-        crate::model::column_definition::Builder::default()
-    }
-}
 
 /// <p>Describes a tag. A tag is a key-value pair. You can add up to 50 tags to a single Amazon Keyspaces resource.</p>
 /// <p>Amazon Web Services-assigned tag names and values are automatically assigned the <code>aws:</code> prefix, which the user cannot assign. Amazon Web Services-assigned tag names do not count towards the tag limit of 50. User-assigned tag names have the prefix <code>user:</code> in the Cost Allocation Report. You cannot backdate the application of a tag.</p>
@@ -766,6 +771,13 @@ impl Tag {
         self.value.as_deref()
     }
 }
+impl Tag {
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
+    pub fn builder() -> crate::model::tag::Builder {
+        crate::model::tag::Builder::default()
+    }
+}
+
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
 
@@ -806,12 +818,6 @@ pub mod tag {
         }
     }
 }
-impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
-    pub fn builder() -> crate::model::tag::Builder {
-        crate::model::tag::Builder::default()
-    }
-}
 
 /// <p>Returns the name of the specified table, the keyspace it is stored in, and the unique identifier in the format of an Amazon Resource Name (ARN).</p>
 #[non_exhaustive]
@@ -841,6 +847,13 @@ impl TableSummary {
         self.resource_arn.as_deref()
     }
 }
+impl TableSummary {
+    /// Creates a new builder-style object to manufacture [`TableSummary`](crate::model::TableSummary).
+    pub fn builder() -> crate::model::table_summary::Builder {
+        crate::model::table_summary::Builder::default()
+    }
+}
+
 /// See [`TableSummary`](crate::model::TableSummary).
 pub mod table_summary {
 
@@ -896,12 +909,6 @@ pub mod table_summary {
         }
     }
 }
-impl TableSummary {
-    /// Creates a new builder-style object to manufacture [`TableSummary`](crate::model::TableSummary).
-    pub fn builder() -> crate::model::table_summary::Builder {
-        crate::model::table_summary::Builder::default()
-    }
-}
 
 /// <p>Represents the properties of a keyspace.</p>
 #[non_exhaustive]
@@ -924,6 +931,13 @@ impl KeyspaceSummary {
         self.resource_arn.as_deref()
     }
 }
+impl KeyspaceSummary {
+    /// Creates a new builder-style object to manufacture [`KeyspaceSummary`](crate::model::KeyspaceSummary).
+    pub fn builder() -> crate::model::keyspace_summary::Builder {
+        crate::model::keyspace_summary::Builder::default()
+    }
+}
+
 /// See [`KeyspaceSummary`](crate::model::KeyspaceSummary).
 pub mod keyspace_summary {
 
@@ -967,12 +981,6 @@ pub mod keyspace_summary {
         }
     }
 }
-impl KeyspaceSummary {
-    /// Creates a new builder-style object to manufacture [`KeyspaceSummary`](crate::model::KeyspaceSummary).
-    pub fn builder() -> crate::model::keyspace_summary::Builder {
-        crate::model::keyspace_summary::Builder::default()
-    }
-}
 
 /// <p>An optional comment that describes the table.</p>
 #[non_exhaustive]
@@ -988,6 +996,13 @@ impl Comment {
         self.message.as_deref()
     }
 }
+impl Comment {
+    /// Creates a new builder-style object to manufacture [`Comment`](crate::model::Comment).
+    pub fn builder() -> crate::model::comment::Builder {
+        crate::model::comment::Builder::default()
+    }
+}
+
 /// See [`Comment`](crate::model::Comment).
 pub mod comment {
 
@@ -1016,12 +1031,6 @@ pub mod comment {
         }
     }
 }
-impl Comment {
-    /// Creates a new builder-style object to manufacture [`Comment`](crate::model::Comment).
-    pub fn builder() -> crate::model::comment::Builder {
-        crate::model::comment::Builder::default()
-    }
-}
 
 /// <p>The point-in-time recovery status of the specified table.</p>
 #[non_exhaustive]
@@ -1046,6 +1055,13 @@ impl PointInTimeRecoverySummary {
         self.earliest_restorable_timestamp.as_ref()
     }
 }
+impl PointInTimeRecoverySummary {
+    /// Creates a new builder-style object to manufacture [`PointInTimeRecoverySummary`](crate::model::PointInTimeRecoverySummary).
+    pub fn builder() -> crate::model::point_in_time_recovery_summary::Builder {
+        crate::model::point_in_time_recovery_summary::Builder::default()
+    }
+}
+
 /// See [`PointInTimeRecoverySummary`](crate::model::PointInTimeRecoverySummary).
 pub mod point_in_time_recovery_summary {
 
@@ -1090,12 +1106,6 @@ pub mod point_in_time_recovery_summary {
                 earliest_restorable_timestamp: self.earliest_restorable_timestamp,
             }
         }
-    }
-}
-impl PointInTimeRecoverySummary {
-    /// Creates a new builder-style object to manufacture [`PointInTimeRecoverySummary`](crate::model::PointInTimeRecoverySummary).
-    pub fn builder() -> crate::model::point_in_time_recovery_summary::Builder {
-        crate::model::point_in_time_recovery_summary::Builder::default()
     }
 }
 
@@ -1147,6 +1157,13 @@ impl CapacitySpecificationSummary {
         self.last_update_to_pay_per_request_timestamp.as_ref()
     }
 }
+impl CapacitySpecificationSummary {
+    /// Creates a new builder-style object to manufacture [`CapacitySpecificationSummary`](crate::model::CapacitySpecificationSummary).
+    pub fn builder() -> crate::model::capacity_specification_summary::Builder {
+        crate::model::capacity_specification_summary::Builder::default()
+    }
+}
+
 /// See [`CapacitySpecificationSummary`](crate::model::CapacitySpecificationSummary).
 pub mod capacity_specification_summary {
 
@@ -1230,12 +1247,6 @@ pub mod capacity_specification_summary {
         }
     }
 }
-impl CapacitySpecificationSummary {
-    /// Creates a new builder-style object to manufacture [`CapacitySpecificationSummary`](crate::model::CapacitySpecificationSummary).
-    pub fn builder() -> crate::model::capacity_specification_summary::Builder {
-        crate::model::capacity_specification_summary::Builder::default()
-    }
-}
 
 /// <p>Describes the schema of the table.</p>
 #[non_exhaustive]
@@ -1272,6 +1283,13 @@ impl SchemaDefinition {
         self.static_columns.as_deref()
     }
 }
+impl SchemaDefinition {
+    /// Creates a new builder-style object to manufacture [`SchemaDefinition`](crate::model::SchemaDefinition).
+    pub fn builder() -> crate::model::schema_definition::Builder {
+        crate::model::schema_definition::Builder::default()
+    }
+}
+
 /// See [`SchemaDefinition`](crate::model::SchemaDefinition).
 pub mod schema_definition {
 
@@ -1372,12 +1390,6 @@ pub mod schema_definition {
         }
     }
 }
-impl SchemaDefinition {
-    /// Creates a new builder-style object to manufacture [`SchemaDefinition`](crate::model::SchemaDefinition).
-    pub fn builder() -> crate::model::schema_definition::Builder {
-        crate::model::schema_definition::Builder::default()
-    }
-}
 
 /// <p>The static columns of the table. Static columns store values that are shared by all rows in the same partition.</p>
 #[non_exhaustive]
@@ -1393,6 +1405,13 @@ impl StaticColumn {
         self.name.as_deref()
     }
 }
+impl StaticColumn {
+    /// Creates a new builder-style object to manufacture [`StaticColumn`](crate::model::StaticColumn).
+    pub fn builder() -> crate::model::static_column::Builder {
+        crate::model::static_column::Builder::default()
+    }
+}
+
 /// See [`StaticColumn`](crate::model::StaticColumn).
 pub mod static_column {
 
@@ -1419,12 +1438,6 @@ pub mod static_column {
         }
     }
 }
-impl StaticColumn {
-    /// Creates a new builder-style object to manufacture [`StaticColumn`](crate::model::StaticColumn).
-    pub fn builder() -> crate::model::static_column::Builder {
-        crate::model::static_column::Builder::default()
-    }
-}
 
 /// <p>The optional clustering column portion of your primary key determines how the data is clustered and sorted within each partition.</p>
 #[non_exhaustive]
@@ -1447,6 +1460,13 @@ impl ClusteringKey {
         self.order_by.as_ref()
     }
 }
+impl ClusteringKey {
+    /// Creates a new builder-style object to manufacture [`ClusteringKey`](crate::model::ClusteringKey).
+    pub fn builder() -> crate::model::clustering_key::Builder {
+        crate::model::clustering_key::Builder::default()
+    }
+}
+
 /// See [`ClusteringKey`](crate::model::ClusteringKey).
 pub mod clustering_key {
 
@@ -1485,12 +1505,6 @@ pub mod clustering_key {
                 order_by: self.order_by,
             }
         }
-    }
-}
-impl ClusteringKey {
-    /// Creates a new builder-style object to manufacture [`ClusteringKey`](crate::model::ClusteringKey).
-    pub fn builder() -> crate::model::clustering_key::Builder {
-        crate::model::clustering_key::Builder::default()
     }
 }
 
@@ -1598,6 +1612,13 @@ impl PartitionKey {
         self.name.as_deref()
     }
 }
+impl PartitionKey {
+    /// Creates a new builder-style object to manufacture [`PartitionKey`](crate::model::PartitionKey).
+    pub fn builder() -> crate::model::partition_key::Builder {
+        crate::model::partition_key::Builder::default()
+    }
+}
+
 /// See [`PartitionKey`](crate::model::PartitionKey).
 pub mod partition_key {
 
@@ -1622,12 +1643,6 @@ pub mod partition_key {
         pub fn build(self) -> crate::model::PartitionKey {
             crate::model::PartitionKey { name: self.name }
         }
-    }
-}
-impl PartitionKey {
-    /// Creates a new builder-style object to manufacture [`PartitionKey`](crate::model::PartitionKey).
-    pub fn builder() -> crate::model::partition_key::Builder {
-        crate::model::partition_key::Builder::default()
     }
 }
 

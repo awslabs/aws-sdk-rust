@@ -21,6 +21,13 @@ impl Tag {
         self.value.as_deref()
     }
 }
+impl Tag {
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
+    pub fn builder() -> crate::model::tag::Builder {
+        crate::model::tag::Builder::default()
+    }
+}
+
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
 
@@ -59,12 +66,6 @@ pub mod tag {
                 value: self.value,
             }
         }
-    }
-}
-impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
-    pub fn builder() -> crate::model::tag::Builder {
-        crate::model::tag::Builder::default()
     }
 }
 
@@ -239,6 +240,13 @@ impl S3Configuration {
         self.kms_key_id.as_deref()
     }
 }
+impl S3Configuration {
+    /// Creates a new builder-style object to manufacture [`S3Configuration`](crate::model::S3Configuration).
+    pub fn builder() -> crate::model::s3_configuration::Builder {
+        crate::model::s3_configuration::Builder::default()
+    }
+}
+
 /// See [`S3Configuration`](crate::model::S3Configuration).
 pub mod s3_configuration {
 
@@ -277,12 +285,6 @@ pub mod s3_configuration {
                 kms_key_id: self.kms_key_id,
             }
         }
-    }
-}
-impl S3Configuration {
-    /// Creates a new builder-style object to manufacture [`S3Configuration`](crate::model::S3Configuration).
-    pub fn builder() -> crate::model::s3_configuration::Builder {
-        crate::model::s3_configuration::Builder::default()
     }
 }
 
@@ -400,6 +402,13 @@ impl ImportJobProperties {
         self.message.as_deref()
     }
 }
+impl ImportJobProperties {
+    /// Creates a new builder-style object to manufacture [`ImportJobProperties`](crate::model::ImportJobProperties).
+    pub fn builder() -> crate::model::import_job_properties::Builder {
+        crate::model::import_job_properties::Builder::default()
+    }
+}
+
 /// See [`ImportJobProperties`](crate::model::ImportJobProperties).
 pub mod import_job_properties {
 
@@ -554,12 +563,6 @@ pub mod import_job_properties {
         }
     }
 }
-impl ImportJobProperties {
-    /// Creates a new builder-style object to manufacture [`ImportJobProperties`](crate::model::ImportJobProperties).
-    pub fn builder() -> crate::model::import_job_properties::Builder {
-        crate::model::import_job_properties::Builder::default()
-    }
-}
 
 /// <p>The properties of a FHIR export job, including the ID, ARN, name, and the status of the job.</p>
 #[non_exhaustive]
@@ -631,6 +634,13 @@ impl ExportJobProperties {
         self.message.as_deref()
     }
 }
+impl ExportJobProperties {
+    /// Creates a new builder-style object to manufacture [`ExportJobProperties`](crate::model::ExportJobProperties).
+    pub fn builder() -> crate::model::export_job_properties::Builder {
+        crate::model::export_job_properties::Builder::default()
+    }
+}
+
 /// See [`ExportJobProperties`](crate::model::ExportJobProperties).
 pub mod export_job_properties {
 
@@ -770,12 +780,6 @@ pub mod export_job_properties {
         }
     }
 }
-impl ExportJobProperties {
-    /// Creates a new builder-style object to manufacture [`ExportJobProperties`](crate::model::ExportJobProperties).
-    pub fn builder() -> crate::model::export_job_properties::Builder {
-        crate::model::export_job_properties::Builder::default()
-    }
-}
 
 /// <p>Displays the properties of the Data Store, including the ID, Arn, name, and the status of the Data Store.</p>
 #[non_exhaustive]
@@ -847,6 +851,13 @@ impl DatastoreProperties {
         self.preload_data_config.as_ref()
     }
 }
+impl DatastoreProperties {
+    /// Creates a new builder-style object to manufacture [`DatastoreProperties`](crate::model::DatastoreProperties).
+    pub fn builder() -> crate::model::datastore_properties::Builder {
+        crate::model::datastore_properties::Builder::default()
+    }
+}
+
 /// See [`DatastoreProperties`](crate::model::DatastoreProperties).
 pub mod datastore_properties {
 
@@ -995,12 +1006,6 @@ pub mod datastore_properties {
         }
     }
 }
-impl DatastoreProperties {
-    /// Creates a new builder-style object to manufacture [`DatastoreProperties`](crate::model::DatastoreProperties).
-    pub fn builder() -> crate::model::datastore_properties::Builder {
-        crate::model::datastore_properties::Builder::default()
-    }
-}
 
 /// <p> The input properties for the preloaded Data Store. Only data preloaded from Synthea is supported.</p>
 #[non_exhaustive]
@@ -1016,6 +1021,13 @@ impl PreloadDataConfig {
         self.preload_data_type.as_ref()
     }
 }
+impl PreloadDataConfig {
+    /// Creates a new builder-style object to manufacture [`PreloadDataConfig`](crate::model::PreloadDataConfig).
+    pub fn builder() -> crate::model::preload_data_config::Builder {
+        crate::model::preload_data_config::Builder::default()
+    }
+}
+
 /// See [`PreloadDataConfig`](crate::model::PreloadDataConfig).
 pub mod preload_data_config {
 
@@ -1045,12 +1057,6 @@ pub mod preload_data_config {
                 preload_data_type: self.preload_data_type,
             }
         }
-    }
-}
-impl PreloadDataConfig {
-    /// Creates a new builder-style object to manufacture [`PreloadDataConfig`](crate::model::PreloadDataConfig).
-    pub fn builder() -> crate::model::preload_data_config::Builder {
-        crate::model::preload_data_config::Builder::default()
     }
 }
 
@@ -1153,6 +1159,13 @@ impl SseConfiguration {
         self.kms_encryption_config.as_ref()
     }
 }
+impl SseConfiguration {
+    /// Creates a new builder-style object to manufacture [`SseConfiguration`](crate::model::SseConfiguration).
+    pub fn builder() -> crate::model::sse_configuration::Builder {
+        crate::model::sse_configuration::Builder::default()
+    }
+}
+
 /// See [`SseConfiguration`](crate::model::SseConfiguration).
 pub mod sse_configuration {
 
@@ -1184,12 +1197,6 @@ pub mod sse_configuration {
         }
     }
 }
-impl SseConfiguration {
-    /// Creates a new builder-style object to manufacture [`SseConfiguration`](crate::model::SseConfiguration).
-    pub fn builder() -> crate::model::sse_configuration::Builder {
-        crate::model::sse_configuration::Builder::default()
-    }
-}
 
 /// <p> The customer-managed-key(CMK) used when creating a Data Store. If a customer owned key is not specified, an AWS owned key will be used for encryption. </p>
 #[non_exhaustive]
@@ -1212,6 +1219,13 @@ impl KmsEncryptionConfig {
         self.kms_key_id.as_deref()
     }
 }
+impl KmsEncryptionConfig {
+    /// Creates a new builder-style object to manufacture [`KmsEncryptionConfig`](crate::model::KmsEncryptionConfig).
+    pub fn builder() -> crate::model::kms_encryption_config::Builder {
+        crate::model::kms_encryption_config::Builder::default()
+    }
+}
+
 /// See [`KmsEncryptionConfig`](crate::model::KmsEncryptionConfig).
 pub mod kms_encryption_config {
 
@@ -1250,12 +1264,6 @@ pub mod kms_encryption_config {
                 kms_key_id: self.kms_key_id,
             }
         }
-    }
-}
-impl KmsEncryptionConfig {
-    /// Creates a new builder-style object to manufacture [`KmsEncryptionConfig`](crate::model::KmsEncryptionConfig).
-    pub fn builder() -> crate::model::kms_encryption_config::Builder {
-        crate::model::kms_encryption_config::Builder::default()
     }
 }
 
@@ -1569,6 +1577,13 @@ impl DatastoreFilter {
         self.created_after.as_ref()
     }
 }
+impl DatastoreFilter {
+    /// Creates a new builder-style object to manufacture [`DatastoreFilter`](crate::model::DatastoreFilter).
+    pub fn builder() -> crate::model::datastore_filter::Builder {
+        crate::model::datastore_filter::Builder::default()
+    }
+}
+
 /// See [`DatastoreFilter`](crate::model::DatastoreFilter).
 pub mod datastore_filter {
 
@@ -1643,11 +1658,5 @@ pub mod datastore_filter {
                 created_after: self.created_after,
             }
         }
-    }
-}
-impl DatastoreFilter {
-    /// Creates a new builder-style object to manufacture [`DatastoreFilter`](crate::model::DatastoreFilter).
-    pub fn builder() -> crate::model::datastore_filter::Builder {
-        crate::model::datastore_filter::Builder::default()
     }
 }

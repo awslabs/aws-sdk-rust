@@ -35,6 +35,13 @@ impl SpaceSummary {
         self.description.as_deref()
     }
 }
+impl SpaceSummary {
+    /// Creates a new builder-style object to manufacture [`SpaceSummary`](crate::model::SpaceSummary).
+    pub fn builder() -> crate::model::space_summary::Builder {
+        crate::model::space_summary::Builder::default()
+    }
+}
+
 /// See [`SpaceSummary`](crate::model::SpaceSummary).
 pub mod space_summary {
 
@@ -99,12 +106,6 @@ pub mod space_summary {
         }
     }
 }
-impl SpaceSummary {
-    /// Creates a new builder-style object to manufacture [`SpaceSummary`](crate::model::SpaceSummary).
-    pub fn builder() -> crate::model::space_summary::Builder {
-        crate::model::space_summary::Builder::default()
-    }
-}
 
 /// <p>Information about a project.</p>
 #[non_exhaustive]
@@ -134,6 +135,13 @@ impl ProjectSummary {
         self.description.as_deref()
     }
 }
+impl ProjectSummary {
+    /// Creates a new builder-style object to manufacture [`ProjectSummary`](crate::model::ProjectSummary).
+    pub fn builder() -> crate::model::project_summary::Builder {
+        crate::model::project_summary::Builder::default()
+    }
+}
+
 /// See [`ProjectSummary`](crate::model::ProjectSummary).
 pub mod project_summary {
 
@@ -186,12 +194,6 @@ pub mod project_summary {
         }
     }
 }
-impl ProjectSummary {
-    /// Creates a new builder-style object to manufacture [`ProjectSummary`](crate::model::ProjectSummary).
-    pub fn builder() -> crate::model::project_summary::Builder {
-        crate::model::project_summary::Builder::default()
-    }
-}
 
 /// <p>nformation about the filter used to narrow the results returned in a list of projects.</p>
 #[non_exhaustive]
@@ -221,6 +223,13 @@ impl ProjectListFilter {
         self.comparison_operator.as_ref()
     }
 }
+impl ProjectListFilter {
+    /// Creates a new builder-style object to manufacture [`ProjectListFilter`](crate::model::ProjectListFilter).
+    pub fn builder() -> crate::model::project_list_filter::Builder {
+        crate::model::project_list_filter::Builder::default()
+    }
+}
+
 /// See [`ProjectListFilter`](crate::model::ProjectListFilter).
 pub mod project_list_filter {
 
@@ -283,12 +292,6 @@ pub mod project_list_filter {
                 comparison_operator: self.comparison_operator,
             }
         }
-    }
-}
-impl ProjectListFilter {
-    /// Creates a new builder-style object to manufacture [`ProjectListFilter`](crate::model::ProjectListFilter).
-    pub fn builder() -> crate::model::project_list_filter::Builder {
-        crate::model::project_list_filter::Builder::default()
     }
 }
 
@@ -526,6 +529,13 @@ impl ListSourceRepositoriesItem {
         self.created_time.as_ref()
     }
 }
+impl ListSourceRepositoriesItem {
+    /// Creates a new builder-style object to manufacture [`ListSourceRepositoriesItem`](crate::model::ListSourceRepositoriesItem).
+    pub fn builder() -> crate::model::list_source_repositories_item::Builder {
+        crate::model::list_source_repositories_item::Builder::default()
+    }
+}
+
 /// See [`ListSourceRepositoriesItem`](crate::model::ListSourceRepositoriesItem).
 pub mod list_source_repositories_item {
 
@@ -608,12 +618,6 @@ pub mod list_source_repositories_item {
         }
     }
 }
-impl ListSourceRepositoriesItem {
-    /// Creates a new builder-style object to manufacture [`ListSourceRepositoriesItem`](crate::model::ListSourceRepositoriesItem).
-    pub fn builder() -> crate::model::list_source_repositories_item::Builder {
-        crate::model::list_source_repositories_item::Builder::default()
-    }
-}
 
 /// <p>Information about a branch of a source repository returned in a list of branches.</p>
 #[non_exhaustive]
@@ -650,6 +654,13 @@ impl ListSourceRepositoryBranchesItem {
         self.head_commit_id.as_deref()
     }
 }
+impl ListSourceRepositoryBranchesItem {
+    /// Creates a new builder-style object to manufacture [`ListSourceRepositoryBranchesItem`](crate::model::ListSourceRepositoryBranchesItem).
+    pub fn builder() -> crate::model::list_source_repository_branches_item::Builder {
+        crate::model::list_source_repository_branches_item::Builder::default()
+    }
+}
+
 /// See [`ListSourceRepositoryBranchesItem`](crate::model::ListSourceRepositoryBranchesItem).
 pub mod list_source_repository_branches_item {
 
@@ -718,12 +729,6 @@ pub mod list_source_repository_branches_item {
                 head_commit_id: self.head_commit_id,
             }
         }
-    }
-}
-impl ListSourceRepositoryBranchesItem {
-    /// Creates a new builder-style object to manufacture [`ListSourceRepositoryBranchesItem`](crate::model::ListSourceRepositoryBranchesItem).
-    pub fn builder() -> crate::model::list_source_repository_branches_item::Builder {
-        crate::model::list_source_repository_branches_item::Builder::default()
     }
 }
 
@@ -881,6 +886,13 @@ impl std::fmt::Debug for DevEnvironmentAccessDetails {
         formatter.finish()
     }
 }
+impl DevEnvironmentAccessDetails {
+    /// Creates a new builder-style object to manufacture [`DevEnvironmentAccessDetails`](crate::model::DevEnvironmentAccessDetails).
+    pub fn builder() -> crate::model::dev_environment_access_details::Builder {
+        crate::model::dev_environment_access_details::Builder::default()
+    }
+}
+
 /// See [`DevEnvironmentAccessDetails`](crate::model::DevEnvironmentAccessDetails).
 pub mod dev_environment_access_details {
 
@@ -929,12 +941,6 @@ pub mod dev_environment_access_details {
         }
     }
 }
-impl DevEnvironmentAccessDetails {
-    /// Creates a new builder-style object to manufacture [`DevEnvironmentAccessDetails`](crate::model::DevEnvironmentAccessDetails).
-    pub fn builder() -> crate::model::dev_environment_access_details::Builder {
-        crate::model::dev_environment_access_details::Builder::default()
-    }
-}
 
 /// <p>Information about the configuration of a Dev Environment session.</p>
 #[non_exhaustive]
@@ -960,6 +966,13 @@ impl DevEnvironmentSessionConfiguration {
         self.execute_command_session_configuration.as_ref()
     }
 }
+impl DevEnvironmentSessionConfiguration {
+    /// Creates a new builder-style object to manufacture [`DevEnvironmentSessionConfiguration`](crate::model::DevEnvironmentSessionConfiguration).
+    pub fn builder() -> crate::model::dev_environment_session_configuration::Builder {
+        crate::model::dev_environment_session_configuration::Builder::default()
+    }
+}
+
 /// See [`DevEnvironmentSessionConfiguration`](crate::model::DevEnvironmentSessionConfiguration).
 pub mod dev_environment_session_configuration {
 
@@ -1010,12 +1023,6 @@ pub mod dev_environment_session_configuration {
         }
     }
 }
-impl DevEnvironmentSessionConfiguration {
-    /// Creates a new builder-style object to manufacture [`DevEnvironmentSessionConfiguration`](crate::model::DevEnvironmentSessionConfiguration).
-    pub fn builder() -> crate::model::dev_environment_session_configuration::Builder {
-        crate::model::dev_environment_session_configuration::Builder::default()
-    }
-}
 
 /// <p>Information about the commands that will be run on a Dev Environment when an SSH session begins.</p>
 #[non_exhaustive]
@@ -1038,6 +1045,13 @@ impl ExecuteCommandSessionConfiguration {
         self.arguments.as_deref()
     }
 }
+impl ExecuteCommandSessionConfiguration {
+    /// Creates a new builder-style object to manufacture [`ExecuteCommandSessionConfiguration`](crate::model::ExecuteCommandSessionConfiguration).
+    pub fn builder() -> crate::model::execute_command_session_configuration::Builder {
+        crate::model::execute_command_session_configuration::Builder::default()
+    }
+}
+
 /// See [`ExecuteCommandSessionConfiguration`](crate::model::ExecuteCommandSessionConfiguration).
 pub mod execute_command_session_configuration {
 
@@ -1085,12 +1099,6 @@ pub mod execute_command_session_configuration {
                 arguments: self.arguments,
             }
         }
-    }
-}
-impl ExecuteCommandSessionConfiguration {
-    /// Creates a new builder-style object to manufacture [`ExecuteCommandSessionConfiguration`](crate::model::ExecuteCommandSessionConfiguration).
-    pub fn builder() -> crate::model::execute_command_session_configuration::Builder {
-        crate::model::execute_command_session_configuration::Builder::default()
     }
 }
 
@@ -1312,6 +1320,13 @@ impl IdeConfiguration {
         self.name.as_deref()
     }
 }
+impl IdeConfiguration {
+    /// Creates a new builder-style object to manufacture [`IdeConfiguration`](crate::model::IdeConfiguration).
+    pub fn builder() -> crate::model::ide_configuration::Builder {
+        crate::model::ide_configuration::Builder::default()
+    }
+}
+
 /// See [`IdeConfiguration`](crate::model::IdeConfiguration).
 pub mod ide_configuration {
 
@@ -1350,12 +1365,6 @@ pub mod ide_configuration {
                 name: self.name,
             }
         }
-    }
-}
-impl IdeConfiguration {
-    /// Creates a new builder-style object to manufacture [`IdeConfiguration`](crate::model::IdeConfiguration).
-    pub fn builder() -> crate::model::ide_configuration::Builder {
-        crate::model::ide_configuration::Builder::default()
     }
 }
 
@@ -1460,6 +1469,13 @@ impl DevEnvironmentSummary {
         self.persistent_storage.as_ref()
     }
 }
+impl DevEnvironmentSummary {
+    /// Creates a new builder-style object to manufacture [`DevEnvironmentSummary`](crate::model::DevEnvironmentSummary).
+    pub fn builder() -> crate::model::dev_environment_summary::Builder {
+        crate::model::dev_environment_summary::Builder::default()
+    }
+}
+
 /// See [`DevEnvironmentSummary`](crate::model::DevEnvironmentSummary).
 pub mod dev_environment_summary {
 
@@ -1671,12 +1687,6 @@ pub mod dev_environment_summary {
         }
     }
 }
-impl DevEnvironmentSummary {
-    /// Creates a new builder-style object to manufacture [`DevEnvironmentSummary`](crate::model::DevEnvironmentSummary).
-    pub fn builder() -> crate::model::dev_environment_summary::Builder {
-        crate::model::dev_environment_summary::Builder::default()
-    }
-}
 
 /// <p>Information about the persistent storage for a Dev Environment.</p>
 #[non_exhaustive]
@@ -1696,6 +1706,13 @@ impl PersistentStorage {
         self.size_in_gi_b
     }
 }
+impl PersistentStorage {
+    /// Creates a new builder-style object to manufacture [`PersistentStorage`](crate::model::PersistentStorage).
+    pub fn builder() -> crate::model::persistent_storage::Builder {
+        crate::model::persistent_storage::Builder::default()
+    }
+}
+
 /// See [`PersistentStorage`](crate::model::PersistentStorage).
 pub mod persistent_storage {
 
@@ -1728,12 +1745,6 @@ pub mod persistent_storage {
         }
     }
 }
-impl PersistentStorage {
-    /// Creates a new builder-style object to manufacture [`PersistentStorage`](crate::model::PersistentStorage).
-    pub fn builder() -> crate::model::persistent_storage::Builder {
-        crate::model::persistent_storage::Builder::default()
-    }
-}
 
 /// <p>Information about an integrated development environment (IDE) used in a Dev Environment.</p>
 #[non_exhaustive]
@@ -1756,6 +1767,13 @@ impl Ide {
         self.name.as_deref()
     }
 }
+impl Ide {
+    /// Creates a new builder-style object to manufacture [`Ide`](crate::model::Ide).
+    pub fn builder() -> crate::model::ide::Builder {
+        crate::model::ide::Builder::default()
+    }
+}
+
 /// See [`Ide`](crate::model::Ide).
 pub mod ide {
 
@@ -1796,12 +1814,6 @@ pub mod ide {
         }
     }
 }
-impl Ide {
-    /// Creates a new builder-style object to manufacture [`Ide`](crate::model::Ide).
-    pub fn builder() -> crate::model::ide::Builder {
-        crate::model::ide::Builder::default()
-    }
-}
 
 /// <p>Information about the source repsitory for a Dev Environment. </p>
 #[non_exhaustive]
@@ -1824,6 +1836,13 @@ impl DevEnvironmentRepositorySummary {
         self.branch_name.as_deref()
     }
 }
+impl DevEnvironmentRepositorySummary {
+    /// Creates a new builder-style object to manufacture [`DevEnvironmentRepositorySummary`](crate::model::DevEnvironmentRepositorySummary).
+    pub fn builder() -> crate::model::dev_environment_repository_summary::Builder {
+        crate::model::dev_environment_repository_summary::Builder::default()
+    }
+}
+
 /// See [`DevEnvironmentRepositorySummary`](crate::model::DevEnvironmentRepositorySummary).
 pub mod dev_environment_repository_summary {
 
@@ -1867,12 +1886,6 @@ pub mod dev_environment_repository_summary {
         }
     }
 }
-impl DevEnvironmentRepositorySummary {
-    /// Creates a new builder-style object to manufacture [`DevEnvironmentRepositorySummary`](crate::model::DevEnvironmentRepositorySummary).
-    pub fn builder() -> crate::model::dev_environment_repository_summary::Builder {
-        crate::model::dev_environment_repository_summary::Builder::default()
-    }
-}
 
 /// <p></p>
 #[non_exhaustive]
@@ -1902,6 +1915,13 @@ impl Filter {
         self.comparison_operator.as_deref()
     }
 }
+impl Filter {
+    /// Creates a new builder-style object to manufacture [`Filter`](crate::model::Filter).
+    pub fn builder() -> crate::model::filter::Builder {
+        crate::model::filter::Builder::default()
+    }
+}
+
 /// See [`Filter`](crate::model::Filter).
 pub mod filter {
 
@@ -1966,12 +1986,6 @@ pub mod filter {
         }
     }
 }
-impl Filter {
-    /// Creates a new builder-style object to manufacture [`Filter`](crate::model::Filter).
-    pub fn builder() -> crate::model::filter::Builder {
-        crate::model::filter::Builder::default()
-    }
-}
 
 /// <p>Information about the configuration of persistent storage for a Dev Environment. </p>
 #[non_exhaustive]
@@ -1991,6 +2005,13 @@ impl PersistentStorageConfiguration {
         self.size_in_gi_b
     }
 }
+impl PersistentStorageConfiguration {
+    /// Creates a new builder-style object to manufacture [`PersistentStorageConfiguration`](crate::model::PersistentStorageConfiguration).
+    pub fn builder() -> crate::model::persistent_storage_configuration::Builder {
+        crate::model::persistent_storage_configuration::Builder::default()
+    }
+}
+
 /// See [`PersistentStorageConfiguration`](crate::model::PersistentStorageConfiguration).
 pub mod persistent_storage_configuration {
 
@@ -2023,12 +2044,6 @@ pub mod persistent_storage_configuration {
         }
     }
 }
-impl PersistentStorageConfiguration {
-    /// Creates a new builder-style object to manufacture [`PersistentStorageConfiguration`](crate::model::PersistentStorageConfiguration).
-    pub fn builder() -> crate::model::persistent_storage_configuration::Builder {
-        crate::model::persistent_storage_configuration::Builder::default()
-    }
-}
 
 /// <p>Information about a repository that will be cloned to a Dev Environment.</p>
 #[non_exhaustive]
@@ -2051,6 +2066,13 @@ impl RepositoryInput {
         self.branch_name.as_deref()
     }
 }
+impl RepositoryInput {
+    /// Creates a new builder-style object to manufacture [`RepositoryInput`](crate::model::RepositoryInput).
+    pub fn builder() -> crate::model::repository_input::Builder {
+        crate::model::repository_input::Builder::default()
+    }
+}
+
 /// See [`RepositoryInput`](crate::model::RepositoryInput).
 pub mod repository_input {
 
@@ -2092,12 +2114,6 @@ pub mod repository_input {
                 branch_name: self.branch_name,
             }
         }
-    }
-}
-impl RepositoryInput {
-    /// Creates a new builder-style object to manufacture [`RepositoryInput`](crate::model::RepositoryInput).
-    pub fn builder() -> crate::model::repository_input::Builder {
-        crate::model::repository_input::Builder::default()
     }
 }
 
@@ -2213,6 +2229,13 @@ impl EventLogEntry {
         self.user_agent.as_deref()
     }
 }
+impl EventLogEntry {
+    /// Creates a new builder-style object to manufacture [`EventLogEntry`](crate::model::EventLogEntry).
+    pub fn builder() -> crate::model::event_log_entry::Builder {
+        crate::model::event_log_entry::Builder::default()
+    }
+}
+
 /// See [`EventLogEntry`](crate::model::EventLogEntry).
 pub mod event_log_entry {
 
@@ -2433,12 +2456,6 @@ pub mod event_log_entry {
         }
     }
 }
-impl EventLogEntry {
-    /// Creates a new builder-style object to manufacture [`EventLogEntry`](crate::model::EventLogEntry).
-    pub fn builder() -> crate::model::event_log_entry::Builder {
-        crate::model::event_log_entry::Builder::default()
-    }
-}
 
 /// <p>Information about the payload of an event recording Amazon CodeCatalyst activity.</p>
 #[non_exhaustive]
@@ -2461,6 +2478,13 @@ impl EventPayload {
         self.data.as_deref()
     }
 }
+impl EventPayload {
+    /// Creates a new builder-style object to manufacture [`EventPayload`](crate::model::EventPayload).
+    pub fn builder() -> crate::model::event_payload::Builder {
+        crate::model::event_payload::Builder::default()
+    }
+}
+
 /// See [`EventPayload`](crate::model::EventPayload).
 pub mod event_payload {
 
@@ -2501,12 +2525,6 @@ pub mod event_payload {
         }
     }
 }
-impl EventPayload {
-    /// Creates a new builder-style object to manufacture [`EventPayload`](crate::model::EventPayload).
-    pub fn builder() -> crate::model::event_payload::Builder {
-        crate::model::event_payload::Builder::default()
-    }
-}
 
 /// <p>Information about a project in a space.</p>
 #[non_exhaustive]
@@ -2529,6 +2547,13 @@ impl ProjectInformation {
         self.project_id.as_deref()
     }
 }
+impl ProjectInformation {
+    /// Creates a new builder-style object to manufacture [`ProjectInformation`](crate::model::ProjectInformation).
+    pub fn builder() -> crate::model::project_information::Builder {
+        crate::model::project_information::Builder::default()
+    }
+}
+
 /// See [`ProjectInformation`](crate::model::ProjectInformation).
 pub mod project_information {
 
@@ -2569,12 +2594,6 @@ pub mod project_information {
         }
     }
 }
-impl ProjectInformation {
-    /// Creates a new builder-style object to manufacture [`ProjectInformation`](crate::model::ProjectInformation).
-    pub fn builder() -> crate::model::project_information::Builder {
-        crate::model::project_information::Builder::default()
-    }
-}
 
 /// <p>Information about a user whose activity is recorded in an event for a space.</p>
 #[non_exhaustive]
@@ -2611,6 +2630,13 @@ impl UserIdentity {
         self.aws_account_id.as_deref()
     }
 }
+impl UserIdentity {
+    /// Creates a new builder-style object to manufacture [`UserIdentity`](crate::model::UserIdentity).
+    pub fn builder() -> crate::model::user_identity::Builder {
+        crate::model::user_identity::Builder::default()
+    }
+}
+
 /// See [`UserIdentity`](crate::model::UserIdentity).
 pub mod user_identity {
 
@@ -2676,12 +2702,6 @@ pub mod user_identity {
                 aws_account_id: self.aws_account_id,
             }
         }
-    }
-}
-impl UserIdentity {
-    /// Creates a new builder-style object to manufacture [`UserIdentity`](crate::model::UserIdentity).
-    pub fn builder() -> crate::model::user_identity::Builder {
-        crate::model::user_identity::Builder::default()
     }
 }
 
@@ -2990,6 +3010,13 @@ impl AccessTokenSummary {
         self.expires_time.as_ref()
     }
 }
+impl AccessTokenSummary {
+    /// Creates a new builder-style object to manufacture [`AccessTokenSummary`](crate::model::AccessTokenSummary).
+    pub fn builder() -> crate::model::access_token_summary::Builder {
+        crate::model::access_token_summary::Builder::default()
+    }
+}
+
 /// See [`AccessTokenSummary`](crate::model::AccessTokenSummary).
 pub mod access_token_summary {
 
@@ -3045,12 +3072,6 @@ pub mod access_token_summary {
         }
     }
 }
-impl AccessTokenSummary {
-    /// Creates a new builder-style object to manufacture [`AccessTokenSummary`](crate::model::AccessTokenSummary).
-    pub fn builder() -> crate::model::access_token_summary::Builder {
-        crate::model::access_token_summary::Builder::default()
-    }
-}
 
 /// <p>Information about an email address.</p>
 #[non_exhaustive]
@@ -3073,6 +3094,13 @@ impl EmailAddress {
         self.verified
     }
 }
+impl EmailAddress {
+    /// Creates a new builder-style object to manufacture [`EmailAddress`](crate::model::EmailAddress).
+    pub fn builder() -> crate::model::email_address::Builder {
+        crate::model::email_address::Builder::default()
+    }
+}
+
 /// See [`EmailAddress`](crate::model::EmailAddress).
 pub mod email_address {
 
@@ -3111,11 +3139,5 @@ pub mod email_address {
                 verified: self.verified,
             }
         }
-    }
-}
-impl EmailAddress {
-    /// Creates a new builder-style object to manufacture [`EmailAddress`](crate::model::EmailAddress).
-    pub fn builder() -> crate::model::email_address::Builder {
-        crate::model::email_address::Builder::default()
     }
 }

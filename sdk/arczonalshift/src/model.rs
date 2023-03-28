@@ -399,6 +399,13 @@ impl ZonalShiftSummary {
         self.comment.as_deref()
     }
 }
+impl ZonalShiftSummary {
+    /// Creates a new builder-style object to manufacture [`ZonalShiftSummary`](crate::model::ZonalShiftSummary).
+    pub fn builder() -> crate::model::zonal_shift_summary::Builder {
+        crate::model::zonal_shift_summary::Builder::default()
+    }
+}
+
 /// See [`ZonalShiftSummary`](crate::model::ZonalShiftSummary).
 pub mod zonal_shift_summary {
 
@@ -530,12 +537,6 @@ pub mod zonal_shift_summary {
         }
     }
 }
-impl ZonalShiftSummary {
-    /// Creates a new builder-style object to manufacture [`ZonalShiftSummary`](crate::model::ZonalShiftSummary).
-    pub fn builder() -> crate::model::zonal_shift_summary::Builder {
-        crate::model::zonal_shift_summary::Builder::default()
-    }
-}
 
 /// <p>A complex structure for a managed resource in an account.</p>
 /// <p>A managed resource is a Network Load Balancer or Application Load Balancer that has been registered with Route 53 ARC by Elastic Load Balancing. You can start a zonal shift in Route 53 ARC for a managed resource to temporarily move traffic for the resource away from an Availability Zone in an AWS Region.</p> <note>
@@ -568,6 +569,13 @@ impl ManagedResourceSummary {
         self.availability_zones.as_deref()
     }
 }
+impl ManagedResourceSummary {
+    /// Creates a new builder-style object to manufacture [`ManagedResourceSummary`](crate::model::ManagedResourceSummary).
+    pub fn builder() -> crate::model::managed_resource_summary::Builder {
+        crate::model::managed_resource_summary::Builder::default()
+    }
+}
+
 /// See [`ManagedResourceSummary`](crate::model::ManagedResourceSummary).
 pub mod managed_resource_summary {
 
@@ -627,12 +635,6 @@ pub mod managed_resource_summary {
                 availability_zones: self.availability_zones,
             }
         }
-    }
-}
-impl ManagedResourceSummary {
-    /// Creates a new builder-style object to manufacture [`ManagedResourceSummary`](crate::model::ManagedResourceSummary).
-    pub fn builder() -> crate::model::managed_resource_summary::Builder {
-        crate::model::managed_resource_summary::Builder::default()
     }
 }
 
@@ -696,6 +698,13 @@ impl ZonalShiftInResource {
         self.comment.as_deref()
     }
 }
+impl ZonalShiftInResource {
+    /// Creates a new builder-style object to manufacture [`ZonalShiftInResource`](crate::model::ZonalShiftInResource).
+    pub fn builder() -> crate::model::zonal_shift_in_resource::Builder {
+        crate::model::zonal_shift_in_resource::Builder::default()
+    }
+}
+
 /// See [`ZonalShiftInResource`](crate::model::ZonalShiftInResource).
 pub mod zonal_shift_in_resource {
 
@@ -813,12 +822,6 @@ pub mod zonal_shift_in_resource {
                 comment: self.comment,
             }
         }
-    }
-}
-impl ZonalShiftInResource {
-    /// Creates a new builder-style object to manufacture [`ZonalShiftInResource`](crate::model::ZonalShiftInResource).
-    pub fn builder() -> crate::model::zonal_shift_in_resource::Builder {
-        crate::model::zonal_shift_in_resource::Builder::default()
     }
 }
 

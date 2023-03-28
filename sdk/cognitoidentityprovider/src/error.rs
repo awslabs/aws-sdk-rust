@@ -258,11 +258,41 @@ pub struct UserNotFoundException {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl UserNotFoundException {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for UserNotFoundException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "UserNotFoundException")?;
+        if let Some(inner_1) = &self.message {
+            {
+                write!(f, ": {}", inner_1)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for UserNotFoundException {}
+impl aws_http::request_id::RequestId for crate::error::UserNotFoundException {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for UserNotFoundException {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl UserNotFoundException {
     /// Creates a new builder-style object to manufacture [`UserNotFoundException`](crate::error::UserNotFoundException).
     pub fn builder() -> crate::error::user_not_found_exception::Builder {
         crate::error::user_not_found_exception::Builder::default()
     }
 }
+
 /// See [`UserNotFoundException`](crate::error::UserNotFoundException).
 pub mod user_not_found_exception {
 
@@ -307,35 +337,6 @@ pub mod user_not_found_exception {
         }
     }
 }
-impl UserNotFoundException {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for UserNotFoundException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "UserNotFoundException")?;
-        if let Some(inner_1) = &self.message {
-            {
-                write!(f, ": {}", inner_1)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for UserNotFoundException {}
-impl aws_http::request_id::RequestId for crate::error::UserNotFoundException {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for UserNotFoundException {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>This exception is thrown when a user isn't confirmed successfully.</p>
 #[non_exhaustive]
@@ -347,11 +348,41 @@ pub struct UserNotConfirmedException {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl UserNotConfirmedException {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for UserNotConfirmedException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "UserNotConfirmedException")?;
+        if let Some(inner_2) = &self.message {
+            {
+                write!(f, ": {}", inner_2)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for UserNotConfirmedException {}
+impl aws_http::request_id::RequestId for crate::error::UserNotConfirmedException {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for UserNotConfirmedException {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl UserNotConfirmedException {
     /// Creates a new builder-style object to manufacture [`UserNotConfirmedException`](crate::error::UserNotConfirmedException).
     pub fn builder() -> crate::error::user_not_confirmed_exception::Builder {
         crate::error::user_not_confirmed_exception::Builder::default()
     }
 }
+
 /// See [`UserNotConfirmedException`](crate::error::UserNotConfirmedException).
 pub mod user_not_confirmed_exception {
 
@@ -396,35 +427,6 @@ pub mod user_not_confirmed_exception {
         }
     }
 }
-impl UserNotConfirmedException {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for UserNotConfirmedException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "UserNotConfirmedException")?;
-        if let Some(inner_2) = &self.message {
-            {
-                write!(f, ": {}", inner_2)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for UserNotConfirmedException {}
-impl aws_http::request_id::RequestId for crate::error::UserNotConfirmedException {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for UserNotConfirmedException {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>This exception is thrown when the user has made too many requests for a given operation.</p>
 #[non_exhaustive]
@@ -436,11 +438,41 @@ pub struct TooManyRequestsException {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl TooManyRequestsException {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for TooManyRequestsException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "TooManyRequestsException")?;
+        if let Some(inner_3) = &self.message {
+            {
+                write!(f, ": {}", inner_3)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for TooManyRequestsException {}
+impl aws_http::request_id::RequestId for crate::error::TooManyRequestsException {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for TooManyRequestsException {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl TooManyRequestsException {
     /// Creates a new builder-style object to manufacture [`TooManyRequestsException`](crate::error::TooManyRequestsException).
     pub fn builder() -> crate::error::too_many_requests_exception::Builder {
         crate::error::too_many_requests_exception::Builder::default()
     }
 }
+
 /// See [`TooManyRequestsException`](crate::error::TooManyRequestsException).
 pub mod too_many_requests_exception {
 
@@ -485,35 +517,6 @@ pub mod too_many_requests_exception {
         }
     }
 }
-impl TooManyRequestsException {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for TooManyRequestsException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "TooManyRequestsException")?;
-        if let Some(inner_3) = &self.message {
-            {
-                write!(f, ": {}", inner_3)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for TooManyRequestsException {}
-impl aws_http::request_id::RequestId for crate::error::TooManyRequestsException {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for TooManyRequestsException {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>This exception is thrown when the Amazon Cognito service can't find the requested resource.</p>
 #[non_exhaustive]
@@ -525,11 +528,41 @@ pub struct ResourceNotFoundException {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl ResourceNotFoundException {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for ResourceNotFoundException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "ResourceNotFoundException")?;
+        if let Some(inner_4) = &self.message {
+            {
+                write!(f, ": {}", inner_4)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for ResourceNotFoundException {}
+impl aws_http::request_id::RequestId for crate::error::ResourceNotFoundException {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for ResourceNotFoundException {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl ResourceNotFoundException {
     /// Creates a new builder-style object to manufacture [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
     pub fn builder() -> crate::error::resource_not_found_exception::Builder {
         crate::error::resource_not_found_exception::Builder::default()
     }
 }
+
 /// See [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
 pub mod resource_not_found_exception {
 
@@ -574,35 +607,6 @@ pub mod resource_not_found_exception {
         }
     }
 }
-impl ResourceNotFoundException {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for ResourceNotFoundException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "ResourceNotFoundException")?;
-        if let Some(inner_4) = &self.message {
-            {
-                write!(f, ": {}", inner_4)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for ResourceNotFoundException {}
-impl aws_http::request_id::RequestId for crate::error::ResourceNotFoundException {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for ResourceNotFoundException {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>This exception is thrown when a password reset is required.</p>
 #[non_exhaustive]
@@ -614,11 +618,41 @@ pub struct PasswordResetRequiredException {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl PasswordResetRequiredException {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for PasswordResetRequiredException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "PasswordResetRequiredException")?;
+        if let Some(inner_5) = &self.message {
+            {
+                write!(f, ": {}", inner_5)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for PasswordResetRequiredException {}
+impl aws_http::request_id::RequestId for crate::error::PasswordResetRequiredException {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for PasswordResetRequiredException {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl PasswordResetRequiredException {
     /// Creates a new builder-style object to manufacture [`PasswordResetRequiredException`](crate::error::PasswordResetRequiredException).
     pub fn builder() -> crate::error::password_reset_required_exception::Builder {
         crate::error::password_reset_required_exception::Builder::default()
     }
 }
+
 /// See [`PasswordResetRequiredException`](crate::error::PasswordResetRequiredException).
 pub mod password_reset_required_exception {
 
@@ -663,35 +697,6 @@ pub mod password_reset_required_exception {
         }
     }
 }
-impl PasswordResetRequiredException {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for PasswordResetRequiredException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "PasswordResetRequiredException")?;
-        if let Some(inner_5) = &self.message {
-            {
-                write!(f, ": {}", inner_5)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for PasswordResetRequiredException {}
-impl aws_http::request_id::RequestId for crate::error::PasswordResetRequiredException {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for PasswordResetRequiredException {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>This exception is thrown when a user isn't authorized.</p>
 #[non_exhaustive]
@@ -703,11 +708,41 @@ pub struct NotAuthorizedException {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl NotAuthorizedException {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for NotAuthorizedException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "NotAuthorizedException")?;
+        if let Some(inner_6) = &self.message {
+            {
+                write!(f, ": {}", inner_6)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for NotAuthorizedException {}
+impl aws_http::request_id::RequestId for crate::error::NotAuthorizedException {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for NotAuthorizedException {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl NotAuthorizedException {
     /// Creates a new builder-style object to manufacture [`NotAuthorizedException`](crate::error::NotAuthorizedException).
     pub fn builder() -> crate::error::not_authorized_exception::Builder {
         crate::error::not_authorized_exception::Builder::default()
     }
 }
+
 /// See [`NotAuthorizedException`](crate::error::NotAuthorizedException).
 pub mod not_authorized_exception {
 
@@ -752,35 +787,6 @@ pub mod not_authorized_exception {
         }
     }
 }
-impl NotAuthorizedException {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for NotAuthorizedException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "NotAuthorizedException")?;
-        if let Some(inner_6) = &self.message {
-            {
-                write!(f, ": {}", inner_6)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for NotAuthorizedException {}
-impl aws_http::request_id::RequestId for crate::error::NotAuthorizedException {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for NotAuthorizedException {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>This exception is thrown when a user exceeds the limit for a requested Amazon Web Services resource.</p>
 #[non_exhaustive]
@@ -792,11 +798,41 @@ pub struct LimitExceededException {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl LimitExceededException {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for LimitExceededException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "LimitExceededException")?;
+        if let Some(inner_7) = &self.message {
+            {
+                write!(f, ": {}", inner_7)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for LimitExceededException {}
+impl aws_http::request_id::RequestId for crate::error::LimitExceededException {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for LimitExceededException {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl LimitExceededException {
     /// Creates a new builder-style object to manufacture [`LimitExceededException`](crate::error::LimitExceededException).
     pub fn builder() -> crate::error::limit_exceeded_exception::Builder {
         crate::error::limit_exceeded_exception::Builder::default()
     }
 }
+
 /// See [`LimitExceededException`](crate::error::LimitExceededException).
 pub mod limit_exceeded_exception {
 
@@ -841,35 +877,6 @@ pub mod limit_exceeded_exception {
         }
     }
 }
-impl LimitExceededException {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for LimitExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "LimitExceededException")?;
-        if let Some(inner_7) = &self.message {
-            {
-                write!(f, ": {}", inner_7)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for LimitExceededException {}
-impl aws_http::request_id::RequestId for crate::error::LimitExceededException {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for LimitExceededException {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>This exception is thrown when the Amazon Cognito service encounters an invalid parameter.</p>
 #[non_exhaustive]
@@ -881,11 +888,41 @@ pub struct InvalidParameterException {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl InvalidParameterException {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for InvalidParameterException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "InvalidParameterException")?;
+        if let Some(inner_8) = &self.message {
+            {
+                write!(f, ": {}", inner_8)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for InvalidParameterException {}
+impl aws_http::request_id::RequestId for crate::error::InvalidParameterException {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidParameterException {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl InvalidParameterException {
     /// Creates a new builder-style object to manufacture [`InvalidParameterException`](crate::error::InvalidParameterException).
     pub fn builder() -> crate::error::invalid_parameter_exception::Builder {
         crate::error::invalid_parameter_exception::Builder::default()
     }
 }
+
 /// See [`InvalidParameterException`](crate::error::InvalidParameterException).
 pub mod invalid_parameter_exception {
 
@@ -930,35 +967,6 @@ pub mod invalid_parameter_exception {
         }
     }
 }
-impl InvalidParameterException {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for InvalidParameterException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "InvalidParameterException")?;
-        if let Some(inner_8) = &self.message {
-            {
-                write!(f, ": {}", inner_8)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for InvalidParameterException {}
-impl aws_http::request_id::RequestId for crate::error::InvalidParameterException {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidParameterException {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>This exception is thrown when Amazon Cognito encounters an internal error.</p>
 #[non_exhaustive]
@@ -970,11 +978,41 @@ pub struct InternalErrorException {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl InternalErrorException {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for InternalErrorException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "InternalErrorException")?;
+        if let Some(inner_9) = &self.message {
+            {
+                write!(f, ": {}", inner_9)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for InternalErrorException {}
+impl aws_http::request_id::RequestId for crate::error::InternalErrorException {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InternalErrorException {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl InternalErrorException {
     /// Creates a new builder-style object to manufacture [`InternalErrorException`](crate::error::InternalErrorException).
     pub fn builder() -> crate::error::internal_error_exception::Builder {
         crate::error::internal_error_exception::Builder::default()
     }
 }
+
 /// See [`InternalErrorException`](crate::error::InternalErrorException).
 pub mod internal_error_exception {
 
@@ -1019,35 +1057,6 @@ pub mod internal_error_exception {
         }
     }
 }
-impl InternalErrorException {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for InternalErrorException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "InternalErrorException")?;
-        if let Some(inner_9) = &self.message {
-            {
-                write!(f, ": {}", inner_9)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for InternalErrorException {}
-impl aws_http::request_id::RequestId for crate::error::InternalErrorException {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InternalErrorException {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>This exception is thrown when WAF doesn't allow your request based on a web ACL that's associated with your user pool.</p>
 #[non_exhaustive]
@@ -1059,11 +1068,41 @@ pub struct ForbiddenException {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl ForbiddenException {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for ForbiddenException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "ForbiddenException")?;
+        if let Some(inner_10) = &self.message {
+            {
+                write!(f, ": {}", inner_10)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for ForbiddenException {}
+impl aws_http::request_id::RequestId for crate::error::ForbiddenException {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for ForbiddenException {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl ForbiddenException {
     /// Creates a new builder-style object to manufacture [`ForbiddenException`](crate::error::ForbiddenException).
     pub fn builder() -> crate::error::forbidden_exception::Builder {
         crate::error::forbidden_exception::Builder::default()
     }
 }
+
 /// See [`ForbiddenException`](crate::error::ForbiddenException).
 pub mod forbidden_exception {
 
@@ -1108,35 +1147,6 @@ pub mod forbidden_exception {
         }
     }
 }
-impl ForbiddenException {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for ForbiddenException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "ForbiddenException")?;
-        if let Some(inner_10) = &self.message {
-            {
-                write!(f, ": {}", inner_10)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for ForbiddenException {}
-impl aws_http::request_id::RequestId for crate::error::ForbiddenException {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for ForbiddenException {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>This exception is thrown if a code has expired.</p>
 #[non_exhaustive]
@@ -1148,11 +1158,41 @@ pub struct ExpiredCodeException {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl ExpiredCodeException {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for ExpiredCodeException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "ExpiredCodeException")?;
+        if let Some(inner_11) = &self.message {
+            {
+                write!(f, ": {}", inner_11)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for ExpiredCodeException {}
+impl aws_http::request_id::RequestId for crate::error::ExpiredCodeException {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for ExpiredCodeException {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl ExpiredCodeException {
     /// Creates a new builder-style object to manufacture [`ExpiredCodeException`](crate::error::ExpiredCodeException).
     pub fn builder() -> crate::error::expired_code_exception::Builder {
         crate::error::expired_code_exception::Builder::default()
     }
 }
+
 /// See [`ExpiredCodeException`](crate::error::ExpiredCodeException).
 pub mod expired_code_exception {
 
@@ -1197,35 +1237,6 @@ pub mod expired_code_exception {
         }
     }
 }
-impl ExpiredCodeException {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for ExpiredCodeException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "ExpiredCodeException")?;
-        if let Some(inner_11) = &self.message {
-            {
-                write!(f, ": {}", inner_11)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for ExpiredCodeException {}
-impl aws_http::request_id::RequestId for crate::error::ExpiredCodeException {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for ExpiredCodeException {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>This exception is thrown if the provided code doesn't match what the server was expecting.</p>
 #[non_exhaustive]
@@ -1237,11 +1248,41 @@ pub struct CodeMismatchException {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl CodeMismatchException {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for CodeMismatchException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "CodeMismatchException")?;
+        if let Some(inner_12) = &self.message {
+            {
+                write!(f, ": {}", inner_12)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for CodeMismatchException {}
+impl aws_http::request_id::RequestId for crate::error::CodeMismatchException {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for CodeMismatchException {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl CodeMismatchException {
     /// Creates a new builder-style object to manufacture [`CodeMismatchException`](crate::error::CodeMismatchException).
     pub fn builder() -> crate::error::code_mismatch_exception::Builder {
         crate::error::code_mismatch_exception::Builder::default()
     }
 }
+
 /// See [`CodeMismatchException`](crate::error::CodeMismatchException).
 pub mod code_mismatch_exception {
 
@@ -1286,35 +1327,6 @@ pub mod code_mismatch_exception {
         }
     }
 }
-impl CodeMismatchException {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for CodeMismatchException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "CodeMismatchException")?;
-        if let Some(inner_12) = &self.message {
-            {
-                write!(f, ": {}", inner_12)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for CodeMismatchException {}
-impl aws_http::request_id::RequestId for crate::error::CodeMismatchException {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for CodeMismatchException {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>This exception is thrown when a user tries to confirm the account with an email address or phone number that has already been supplied as an alias for a different user profile. This exception indicates that an account with this email address or phone already exists in a user pool that you've configured to use email address or phone number as a sign-in alias.</p>
 #[non_exhaustive]
@@ -1326,11 +1338,41 @@ pub struct AliasExistsException {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl AliasExistsException {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for AliasExistsException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "AliasExistsException")?;
+        if let Some(inner_13) = &self.message {
+            {
+                write!(f, ": {}", inner_13)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for AliasExistsException {}
+impl aws_http::request_id::RequestId for crate::error::AliasExistsException {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for AliasExistsException {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl AliasExistsException {
     /// Creates a new builder-style object to manufacture [`AliasExistsException`](crate::error::AliasExistsException).
     pub fn builder() -> crate::error::alias_exists_exception::Builder {
         crate::error::alias_exists_exception::Builder::default()
     }
 }
+
 /// See [`AliasExistsException`](crate::error::AliasExistsException).
 pub mod alias_exists_exception {
 
@@ -1373,35 +1415,6 @@ pub mod alias_exists_exception {
                 meta: self.meta.unwrap_or_default(),
             }
         }
-    }
-}
-impl AliasExistsException {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for AliasExistsException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "AliasExistsException")?;
-        if let Some(inner_13) = &self.message {
-            {
-                write!(f, ": {}", inner_13)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for AliasExistsException {}
-impl aws_http::request_id::RequestId for crate::error::AliasExistsException {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for AliasExistsException {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
     }
 }
 
@@ -1664,11 +1677,44 @@ pub struct SoftwareTokenMfaNotFoundException {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl SoftwareTokenMfaNotFoundException {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for SoftwareTokenMfaNotFoundException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(
+            f,
+            "SoftwareTokenMfaNotFoundException [SoftwareTokenMFANotFoundException]"
+        )?;
+        if let Some(inner_14) = &self.message {
+            {
+                write!(f, ": {}", inner_14)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for SoftwareTokenMfaNotFoundException {}
+impl aws_http::request_id::RequestId for crate::error::SoftwareTokenMfaNotFoundException {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for SoftwareTokenMfaNotFoundException {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl SoftwareTokenMfaNotFoundException {
     /// Creates a new builder-style object to manufacture [`SoftwareTokenMfaNotFoundException`](crate::error::SoftwareTokenMfaNotFoundException).
     pub fn builder() -> crate::error::software_token_mfa_not_found_exception::Builder {
         crate::error::software_token_mfa_not_found_exception::Builder::default()
     }
 }
+
 /// See [`SoftwareTokenMfaNotFoundException`](crate::error::SoftwareTokenMfaNotFoundException).
 pub mod software_token_mfa_not_found_exception {
 
@@ -1713,38 +1759,6 @@ pub mod software_token_mfa_not_found_exception {
         }
     }
 }
-impl SoftwareTokenMfaNotFoundException {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for SoftwareTokenMfaNotFoundException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(
-            f,
-            "SoftwareTokenMfaNotFoundException [SoftwareTokenMFANotFoundException]"
-        )?;
-        if let Some(inner_14) = &self.message {
-            {
-                write!(f, ": {}", inner_14)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for SoftwareTokenMfaNotFoundException {}
-impl aws_http::request_id::RequestId for crate::error::SoftwareTokenMfaNotFoundException {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for SoftwareTokenMfaNotFoundException {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>This exception is thrown when the user pool configuration is not valid.</p>
 #[non_exhaustive]
@@ -1756,11 +1770,43 @@ pub struct InvalidUserPoolConfigurationException {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl InvalidUserPoolConfigurationException {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for InvalidUserPoolConfigurationException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "InvalidUserPoolConfigurationException")?;
+        if let Some(inner_15) = &self.message {
+            {
+                write!(f, ": {}", inner_15)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for InvalidUserPoolConfigurationException {}
+impl aws_http::request_id::RequestId for crate::error::InvalidUserPoolConfigurationException {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata
+    for InvalidUserPoolConfigurationException
+{
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl InvalidUserPoolConfigurationException {
     /// Creates a new builder-style object to manufacture [`InvalidUserPoolConfigurationException`](crate::error::InvalidUserPoolConfigurationException).
     pub fn builder() -> crate::error::invalid_user_pool_configuration_exception::Builder {
         crate::error::invalid_user_pool_configuration_exception::Builder::default()
     }
 }
+
 /// See [`InvalidUserPoolConfigurationException`](crate::error::InvalidUserPoolConfigurationException).
 pub mod invalid_user_pool_configuration_exception {
 
@@ -1805,37 +1851,6 @@ pub mod invalid_user_pool_configuration_exception {
         }
     }
 }
-impl InvalidUserPoolConfigurationException {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for InvalidUserPoolConfigurationException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "InvalidUserPoolConfigurationException")?;
-        if let Some(inner_15) = &self.message {
-            {
-                write!(f, ": {}", inner_15)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for InvalidUserPoolConfigurationException {}
-impl aws_http::request_id::RequestId for crate::error::InvalidUserPoolConfigurationException {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for InvalidUserPoolConfigurationException
-{
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>This exception is thrown when there is a code mismatch and the service fails to configure the software token TOTP multi-factor authentication (MFA).</p>
 #[non_exhaustive]
@@ -1847,11 +1862,44 @@ pub struct EnableSoftwareTokenMfaException {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl EnableSoftwareTokenMfaException {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for EnableSoftwareTokenMfaException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(
+            f,
+            "EnableSoftwareTokenMfaException [EnableSoftwareTokenMFAException]"
+        )?;
+        if let Some(inner_16) = &self.message {
+            {
+                write!(f, ": {}", inner_16)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for EnableSoftwareTokenMfaException {}
+impl aws_http::request_id::RequestId for crate::error::EnableSoftwareTokenMfaException {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for EnableSoftwareTokenMfaException {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl EnableSoftwareTokenMfaException {
     /// Creates a new builder-style object to manufacture [`EnableSoftwareTokenMfaException`](crate::error::EnableSoftwareTokenMfaException).
     pub fn builder() -> crate::error::enable_software_token_mfa_exception::Builder {
         crate::error::enable_software_token_mfa_exception::Builder::default()
     }
 }
+
 /// See [`EnableSoftwareTokenMfaException`](crate::error::EnableSoftwareTokenMfaException).
 pub mod enable_software_token_mfa_exception {
 
@@ -1894,38 +1942,6 @@ pub mod enable_software_token_mfa_exception {
                 meta: self.meta.unwrap_or_default(),
             }
         }
-    }
-}
-impl EnableSoftwareTokenMfaException {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for EnableSoftwareTokenMfaException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(
-            f,
-            "EnableSoftwareTokenMfaException [EnableSoftwareTokenMFAException]"
-        )?;
-        if let Some(inner_16) = &self.message {
-            {
-                write!(f, ": {}", inner_16)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for EnableSoftwareTokenMfaException {}
-impl aws_http::request_id::RequestId for crate::error::EnableSoftwareTokenMfaException {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for EnableSoftwareTokenMfaException {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
     }
 }
 
@@ -2281,11 +2297,41 @@ pub struct ScopeDoesNotExistException {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl ScopeDoesNotExistException {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for ScopeDoesNotExistException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "ScopeDoesNotExistException")?;
+        if let Some(inner_17) = &self.message {
+            {
+                write!(f, ": {}", inner_17)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for ScopeDoesNotExistException {}
+impl aws_http::request_id::RequestId for crate::error::ScopeDoesNotExistException {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for ScopeDoesNotExistException {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl ScopeDoesNotExistException {
     /// Creates a new builder-style object to manufacture [`ScopeDoesNotExistException`](crate::error::ScopeDoesNotExistException).
     pub fn builder() -> crate::error::scope_does_not_exist_exception::Builder {
         crate::error::scope_does_not_exist_exception::Builder::default()
     }
 }
+
 /// See [`ScopeDoesNotExistException`](crate::error::ScopeDoesNotExistException).
 pub mod scope_does_not_exist_exception {
 
@@ -2330,35 +2376,6 @@ pub mod scope_does_not_exist_exception {
         }
     }
 }
-impl ScopeDoesNotExistException {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for ScopeDoesNotExistException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "ScopeDoesNotExistException")?;
-        if let Some(inner_17) = &self.message {
-            {
-                write!(f, ": {}", inner_17)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for ScopeDoesNotExistException {}
-impl aws_http::request_id::RequestId for crate::error::ScopeDoesNotExistException {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for ScopeDoesNotExistException {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>This exception is thrown when the specified OAuth flow is not valid.</p>
 #[non_exhaustive]
@@ -2370,11 +2387,41 @@ pub struct InvalidOAuthFlowException {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl InvalidOAuthFlowException {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for InvalidOAuthFlowException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "InvalidOAuthFlowException")?;
+        if let Some(inner_18) = &self.message {
+            {
+                write!(f, ": {}", inner_18)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for InvalidOAuthFlowException {}
+impl aws_http::request_id::RequestId for crate::error::InvalidOAuthFlowException {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidOAuthFlowException {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl InvalidOAuthFlowException {
     /// Creates a new builder-style object to manufacture [`InvalidOAuthFlowException`](crate::error::InvalidOAuthFlowException).
     pub fn builder() -> crate::error::invalid_o_auth_flow_exception::Builder {
         crate::error::invalid_o_auth_flow_exception::Builder::default()
     }
 }
+
 /// See [`InvalidOAuthFlowException`](crate::error::InvalidOAuthFlowException).
 pub mod invalid_o_auth_flow_exception {
 
@@ -2419,35 +2466,6 @@ pub mod invalid_o_auth_flow_exception {
         }
     }
 }
-impl InvalidOAuthFlowException {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for InvalidOAuthFlowException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "InvalidOAuthFlowException")?;
-        if let Some(inner_18) = &self.message {
-            {
-                write!(f, ": {}", inner_18)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for InvalidOAuthFlowException {}
-impl aws_http::request_id::RequestId for crate::error::InvalidOAuthFlowException {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidOAuthFlowException {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>This exception is thrown if two or more modifications are happening concurrently.</p>
 #[non_exhaustive]
@@ -2459,11 +2477,41 @@ pub struct ConcurrentModificationException {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl ConcurrentModificationException {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for ConcurrentModificationException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "ConcurrentModificationException")?;
+        if let Some(inner_19) = &self.message {
+            {
+                write!(f, ": {}", inner_19)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for ConcurrentModificationException {}
+impl aws_http::request_id::RequestId for crate::error::ConcurrentModificationException {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for ConcurrentModificationException {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl ConcurrentModificationException {
     /// Creates a new builder-style object to manufacture [`ConcurrentModificationException`](crate::error::ConcurrentModificationException).
     pub fn builder() -> crate::error::concurrent_modification_exception::Builder {
         crate::error::concurrent_modification_exception::Builder::default()
     }
 }
+
 /// See [`ConcurrentModificationException`](crate::error::ConcurrentModificationException).
 pub mod concurrent_modification_exception {
 
@@ -2506,35 +2554,6 @@ pub mod concurrent_modification_exception {
                 meta: self.meta.unwrap_or_default(),
             }
         }
-    }
-}
-impl ConcurrentModificationException {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for ConcurrentModificationException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "ConcurrentModificationException")?;
-        if let Some(inner_19) = &self.message {
-            {
-                write!(f, ": {}", inner_19)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for ConcurrentModificationException {}
-impl aws_http::request_id::RequestId for crate::error::ConcurrentModificationException {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for ConcurrentModificationException {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
     }
 }
 
@@ -2775,11 +2794,41 @@ pub struct UserPoolTaggingException {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl UserPoolTaggingException {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for UserPoolTaggingException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "UserPoolTaggingException")?;
+        if let Some(inner_20) = &self.message {
+            {
+                write!(f, ": {}", inner_20)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for UserPoolTaggingException {}
+impl aws_http::request_id::RequestId for crate::error::UserPoolTaggingException {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for UserPoolTaggingException {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl UserPoolTaggingException {
     /// Creates a new builder-style object to manufacture [`UserPoolTaggingException`](crate::error::UserPoolTaggingException).
     pub fn builder() -> crate::error::user_pool_tagging_exception::Builder {
         crate::error::user_pool_tagging_exception::Builder::default()
     }
 }
+
 /// See [`UserPoolTaggingException`](crate::error::UserPoolTaggingException).
 pub mod user_pool_tagging_exception {
 
@@ -2824,35 +2873,6 @@ pub mod user_pool_tagging_exception {
         }
     }
 }
-impl UserPoolTaggingException {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for UserPoolTaggingException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "UserPoolTaggingException")?;
-        if let Some(inner_20) = &self.message {
-            {
-                write!(f, ": {}", inner_20)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for UserPoolTaggingException {}
-impl aws_http::request_id::RequestId for crate::error::UserPoolTaggingException {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for UserPoolTaggingException {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>This exception is thrown when you're trying to modify a user pool while a user import job is in progress for that pool.</p>
 #[non_exhaustive]
@@ -2864,11 +2884,41 @@ pub struct UserImportInProgressException {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl UserImportInProgressException {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for UserImportInProgressException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "UserImportInProgressException")?;
+        if let Some(inner_21) = &self.message {
+            {
+                write!(f, ": {}", inner_21)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for UserImportInProgressException {}
+impl aws_http::request_id::RequestId for crate::error::UserImportInProgressException {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for UserImportInProgressException {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl UserImportInProgressException {
     /// Creates a new builder-style object to manufacture [`UserImportInProgressException`](crate::error::UserImportInProgressException).
     pub fn builder() -> crate::error::user_import_in_progress_exception::Builder {
         crate::error::user_import_in_progress_exception::Builder::default()
     }
 }
+
 /// See [`UserImportInProgressException`](crate::error::UserImportInProgressException).
 pub mod user_import_in_progress_exception {
 
@@ -2913,35 +2963,6 @@ pub mod user_import_in_progress_exception {
         }
     }
 }
-impl UserImportInProgressException {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for UserImportInProgressException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "UserImportInProgressException")?;
-        if let Some(inner_21) = &self.message {
-            {
-                write!(f, ": {}", inner_21)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for UserImportInProgressException {}
-impl aws_http::request_id::RequestId for crate::error::UserImportInProgressException {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for UserImportInProgressException {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>This exception is thrown when the trust relationship is not valid for the role provided for SMS configuration. This can happen if you don't trust <code>cognito-idp.amazonaws.com</code> or the external ID provided in the role does not match what is provided in the SMS configuration for the user pool.</p>
 #[non_exhaustive]
@@ -2953,11 +2974,43 @@ pub struct InvalidSmsRoleTrustRelationshipException {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl InvalidSmsRoleTrustRelationshipException {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for InvalidSmsRoleTrustRelationshipException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "InvalidSmsRoleTrustRelationshipException")?;
+        if let Some(inner_22) = &self.message {
+            {
+                write!(f, ": {}", inner_22)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for InvalidSmsRoleTrustRelationshipException {}
+impl aws_http::request_id::RequestId for crate::error::InvalidSmsRoleTrustRelationshipException {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata
+    for InvalidSmsRoleTrustRelationshipException
+{
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl InvalidSmsRoleTrustRelationshipException {
     /// Creates a new builder-style object to manufacture [`InvalidSmsRoleTrustRelationshipException`](crate::error::InvalidSmsRoleTrustRelationshipException).
     pub fn builder() -> crate::error::invalid_sms_role_trust_relationship_exception::Builder {
         crate::error::invalid_sms_role_trust_relationship_exception::Builder::default()
     }
 }
+
 /// See [`InvalidSmsRoleTrustRelationshipException`](crate::error::InvalidSmsRoleTrustRelationshipException).
 pub mod invalid_sms_role_trust_relationship_exception {
 
@@ -3002,37 +3055,6 @@ pub mod invalid_sms_role_trust_relationship_exception {
         }
     }
 }
-impl InvalidSmsRoleTrustRelationshipException {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for InvalidSmsRoleTrustRelationshipException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "InvalidSmsRoleTrustRelationshipException")?;
-        if let Some(inner_22) = &self.message {
-            {
-                write!(f, ": {}", inner_22)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for InvalidSmsRoleTrustRelationshipException {}
-impl aws_http::request_id::RequestId for crate::error::InvalidSmsRoleTrustRelationshipException {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for InvalidSmsRoleTrustRelationshipException
-{
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>This exception is returned when the role provided for SMS configuration doesn't have permission to publish using Amazon SNS.</p>
 #[non_exhaustive]
@@ -3044,11 +3066,43 @@ pub struct InvalidSmsRoleAccessPolicyException {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl InvalidSmsRoleAccessPolicyException {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for InvalidSmsRoleAccessPolicyException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "InvalidSmsRoleAccessPolicyException")?;
+        if let Some(inner_23) = &self.message {
+            {
+                write!(f, ": {}", inner_23)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for InvalidSmsRoleAccessPolicyException {}
+impl aws_http::request_id::RequestId for crate::error::InvalidSmsRoleAccessPolicyException {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata
+    for InvalidSmsRoleAccessPolicyException
+{
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl InvalidSmsRoleAccessPolicyException {
     /// Creates a new builder-style object to manufacture [`InvalidSmsRoleAccessPolicyException`](crate::error::InvalidSmsRoleAccessPolicyException).
     pub fn builder() -> crate::error::invalid_sms_role_access_policy_exception::Builder {
         crate::error::invalid_sms_role_access_policy_exception::Builder::default()
     }
 }
+
 /// See [`InvalidSmsRoleAccessPolicyException`](crate::error::InvalidSmsRoleAccessPolicyException).
 pub mod invalid_sms_role_access_policy_exception {
 
@@ -3093,37 +3147,6 @@ pub mod invalid_sms_role_access_policy_exception {
         }
     }
 }
-impl InvalidSmsRoleAccessPolicyException {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for InvalidSmsRoleAccessPolicyException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "InvalidSmsRoleAccessPolicyException")?;
-        if let Some(inner_23) = &self.message {
-            {
-                write!(f, ": {}", inner_23)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for InvalidSmsRoleAccessPolicyException {}
-impl aws_http::request_id::RequestId for crate::error::InvalidSmsRoleAccessPolicyException {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for InvalidSmsRoleAccessPolicyException
-{
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>This exception is thrown when Amazon Cognito isn't allowed to use your email identity. HTTP status code: 400.</p>
 #[non_exhaustive]
@@ -3135,11 +3158,43 @@ pub struct InvalidEmailRoleAccessPolicyException {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl InvalidEmailRoleAccessPolicyException {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for InvalidEmailRoleAccessPolicyException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "InvalidEmailRoleAccessPolicyException")?;
+        if let Some(inner_24) = &self.message {
+            {
+                write!(f, ": {}", inner_24)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for InvalidEmailRoleAccessPolicyException {}
+impl aws_http::request_id::RequestId for crate::error::InvalidEmailRoleAccessPolicyException {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata
+    for InvalidEmailRoleAccessPolicyException
+{
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl InvalidEmailRoleAccessPolicyException {
     /// Creates a new builder-style object to manufacture [`InvalidEmailRoleAccessPolicyException`](crate::error::InvalidEmailRoleAccessPolicyException).
     pub fn builder() -> crate::error::invalid_email_role_access_policy_exception::Builder {
         crate::error::invalid_email_role_access_policy_exception::Builder::default()
     }
 }
+
 /// See [`InvalidEmailRoleAccessPolicyException`](crate::error::InvalidEmailRoleAccessPolicyException).
 pub mod invalid_email_role_access_policy_exception {
 
@@ -3182,37 +3237,6 @@ pub mod invalid_email_role_access_policy_exception {
                 meta: self.meta.unwrap_or_default(),
             }
         }
-    }
-}
-impl InvalidEmailRoleAccessPolicyException {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for InvalidEmailRoleAccessPolicyException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "InvalidEmailRoleAccessPolicyException")?;
-        if let Some(inner_24) = &self.message {
-            {
-                write!(f, ": {}", inner_24)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for InvalidEmailRoleAccessPolicyException {}
-impl aws_http::request_id::RequestId for crate::error::InvalidEmailRoleAccessPolicyException {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for InvalidEmailRoleAccessPolicyException
-{
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
     }
 }
 
@@ -3549,11 +3573,41 @@ pub struct UserLambdaValidationException {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl UserLambdaValidationException {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for UserLambdaValidationException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "UserLambdaValidationException")?;
+        if let Some(inner_25) = &self.message {
+            {
+                write!(f, ": {}", inner_25)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for UserLambdaValidationException {}
+impl aws_http::request_id::RequestId for crate::error::UserLambdaValidationException {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for UserLambdaValidationException {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl UserLambdaValidationException {
     /// Creates a new builder-style object to manufacture [`UserLambdaValidationException`](crate::error::UserLambdaValidationException).
     pub fn builder() -> crate::error::user_lambda_validation_exception::Builder {
         crate::error::user_lambda_validation_exception::Builder::default()
     }
 }
+
 /// See [`UserLambdaValidationException`](crate::error::UserLambdaValidationException).
 pub mod user_lambda_validation_exception {
 
@@ -3598,35 +3652,6 @@ pub mod user_lambda_validation_exception {
         }
     }
 }
-impl UserLambdaValidationException {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for UserLambdaValidationException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "UserLambdaValidationException")?;
-        if let Some(inner_25) = &self.message {
-            {
-                write!(f, ": {}", inner_25)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for UserLambdaValidationException {}
-impl aws_http::request_id::RequestId for crate::error::UserLambdaValidationException {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for UserLambdaValidationException {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>This exception is thrown when Amazon Cognito encounters an unexpected exception with Lambda.</p>
 #[non_exhaustive]
@@ -3638,11 +3663,41 @@ pub struct UnexpectedLambdaException {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl UnexpectedLambdaException {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for UnexpectedLambdaException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "UnexpectedLambdaException")?;
+        if let Some(inner_26) = &self.message {
+            {
+                write!(f, ": {}", inner_26)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for UnexpectedLambdaException {}
+impl aws_http::request_id::RequestId for crate::error::UnexpectedLambdaException {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for UnexpectedLambdaException {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl UnexpectedLambdaException {
     /// Creates a new builder-style object to manufacture [`UnexpectedLambdaException`](crate::error::UnexpectedLambdaException).
     pub fn builder() -> crate::error::unexpected_lambda_exception::Builder {
         crate::error::unexpected_lambda_exception::Builder::default()
     }
 }
+
 /// See [`UnexpectedLambdaException`](crate::error::UnexpectedLambdaException).
 pub mod unexpected_lambda_exception {
 
@@ -3687,35 +3742,6 @@ pub mod unexpected_lambda_exception {
         }
     }
 }
-impl UnexpectedLambdaException {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for UnexpectedLambdaException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "UnexpectedLambdaException")?;
-        if let Some(inner_26) = &self.message {
-            {
-                write!(f, ": {}", inner_26)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for UnexpectedLambdaException {}
-impl aws_http::request_id::RequestId for crate::error::UnexpectedLambdaException {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for UnexpectedLambdaException {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>This exception is thrown when Amazon Cognito encounters an invalid Lambda response.</p>
 #[non_exhaustive]
@@ -3727,11 +3753,41 @@ pub struct InvalidLambdaResponseException {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl InvalidLambdaResponseException {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for InvalidLambdaResponseException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "InvalidLambdaResponseException")?;
+        if let Some(inner_27) = &self.message {
+            {
+                write!(f, ": {}", inner_27)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for InvalidLambdaResponseException {}
+impl aws_http::request_id::RequestId for crate::error::InvalidLambdaResponseException {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidLambdaResponseException {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl InvalidLambdaResponseException {
     /// Creates a new builder-style object to manufacture [`InvalidLambdaResponseException`](crate::error::InvalidLambdaResponseException).
     pub fn builder() -> crate::error::invalid_lambda_response_exception::Builder {
         crate::error::invalid_lambda_response_exception::Builder::default()
     }
 }
+
 /// See [`InvalidLambdaResponseException`](crate::error::InvalidLambdaResponseException).
 pub mod invalid_lambda_response_exception {
 
@@ -3776,35 +3832,6 @@ pub mod invalid_lambda_response_exception {
         }
     }
 }
-impl InvalidLambdaResponseException {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for InvalidLambdaResponseException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "InvalidLambdaResponseException")?;
-        if let Some(inner_27) = &self.message {
-            {
-                write!(f, ": {}", inner_27)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for InvalidLambdaResponseException {}
-impl aws_http::request_id::RequestId for crate::error::InvalidLambdaResponseException {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidLambdaResponseException {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>This exception is thrown when a verification code fails to deliver successfully.</p>
 #[non_exhaustive]
@@ -3816,11 +3843,41 @@ pub struct CodeDeliveryFailureException {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl CodeDeliveryFailureException {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for CodeDeliveryFailureException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "CodeDeliveryFailureException")?;
+        if let Some(inner_28) = &self.message {
+            {
+                write!(f, ": {}", inner_28)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for CodeDeliveryFailureException {}
+impl aws_http::request_id::RequestId for crate::error::CodeDeliveryFailureException {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for CodeDeliveryFailureException {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl CodeDeliveryFailureException {
     /// Creates a new builder-style object to manufacture [`CodeDeliveryFailureException`](crate::error::CodeDeliveryFailureException).
     pub fn builder() -> crate::error::code_delivery_failure_exception::Builder {
         crate::error::code_delivery_failure_exception::Builder::default()
     }
 }
+
 /// See [`CodeDeliveryFailureException`](crate::error::CodeDeliveryFailureException).
 pub mod code_delivery_failure_exception {
 
@@ -3863,35 +3920,6 @@ pub mod code_delivery_failure_exception {
                 meta: self.meta.unwrap_or_default(),
             }
         }
-    }
-}
-impl CodeDeliveryFailureException {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for CodeDeliveryFailureException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "CodeDeliveryFailureException")?;
-        if let Some(inner_28) = &self.message {
-            {
-                write!(f, ": {}", inner_28)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for CodeDeliveryFailureException {}
-impl aws_http::request_id::RequestId for crate::error::CodeDeliveryFailureException {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for CodeDeliveryFailureException {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
     }
 }
 
@@ -4235,11 +4263,43 @@ pub struct UnsupportedIdentityProviderException {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl UnsupportedIdentityProviderException {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for UnsupportedIdentityProviderException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "UnsupportedIdentityProviderException")?;
+        if let Some(inner_29) = &self.message {
+            {
+                write!(f, ": {}", inner_29)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for UnsupportedIdentityProviderException {}
+impl aws_http::request_id::RequestId for crate::error::UnsupportedIdentityProviderException {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata
+    for UnsupportedIdentityProviderException
+{
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl UnsupportedIdentityProviderException {
     /// Creates a new builder-style object to manufacture [`UnsupportedIdentityProviderException`](crate::error::UnsupportedIdentityProviderException).
     pub fn builder() -> crate::error::unsupported_identity_provider_exception::Builder {
         crate::error::unsupported_identity_provider_exception::Builder::default()
     }
 }
+
 /// See [`UnsupportedIdentityProviderException`](crate::error::UnsupportedIdentityProviderException).
 pub mod unsupported_identity_provider_exception {
 
@@ -4282,37 +4342,6 @@ pub mod unsupported_identity_provider_exception {
                 meta: self.meta.unwrap_or_default(),
             }
         }
-    }
-}
-impl UnsupportedIdentityProviderException {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for UnsupportedIdentityProviderException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "UnsupportedIdentityProviderException")?;
-        if let Some(inner_29) = &self.message {
-            {
-                write!(f, ": {}", inner_29)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for UnsupportedIdentityProviderException {}
-impl aws_http::request_id::RequestId for crate::error::UnsupportedIdentityProviderException {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for UnsupportedIdentityProviderException
-{
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
     }
 }
 
@@ -4869,11 +4898,41 @@ pub struct UserPoolAddOnNotEnabledException {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl UserPoolAddOnNotEnabledException {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for UserPoolAddOnNotEnabledException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "UserPoolAddOnNotEnabledException")?;
+        if let Some(inner_30) = &self.message {
+            {
+                write!(f, ": {}", inner_30)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for UserPoolAddOnNotEnabledException {}
+impl aws_http::request_id::RequestId for crate::error::UserPoolAddOnNotEnabledException {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for UserPoolAddOnNotEnabledException {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl UserPoolAddOnNotEnabledException {
     /// Creates a new builder-style object to manufacture [`UserPoolAddOnNotEnabledException`](crate::error::UserPoolAddOnNotEnabledException).
     pub fn builder() -> crate::error::user_pool_add_on_not_enabled_exception::Builder {
         crate::error::user_pool_add_on_not_enabled_exception::Builder::default()
     }
 }
+
 /// See [`UserPoolAddOnNotEnabledException`](crate::error::UserPoolAddOnNotEnabledException).
 pub mod user_pool_add_on_not_enabled_exception {
 
@@ -4916,35 +4975,6 @@ pub mod user_pool_add_on_not_enabled_exception {
                 meta: self.meta.unwrap_or_default(),
             }
         }
-    }
-}
-impl UserPoolAddOnNotEnabledException {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for UserPoolAddOnNotEnabledException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "UserPoolAddOnNotEnabledException")?;
-        if let Some(inner_30) = &self.message {
-            {
-                write!(f, ": {}", inner_30)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for UserPoolAddOnNotEnabledException {}
-impl aws_http::request_id::RequestId for crate::error::UserPoolAddOnNotEnabledException {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for UserPoolAddOnNotEnabledException {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
     }
 }
 
@@ -5429,11 +5459,41 @@ pub struct PreconditionNotMetException {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl PreconditionNotMetException {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for PreconditionNotMetException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "PreconditionNotMetException")?;
+        if let Some(inner_31) = &self.message {
+            {
+                write!(f, ": {}", inner_31)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for PreconditionNotMetException {}
+impl aws_http::request_id::RequestId for crate::error::PreconditionNotMetException {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for PreconditionNotMetException {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl PreconditionNotMetException {
     /// Creates a new builder-style object to manufacture [`PreconditionNotMetException`](crate::error::PreconditionNotMetException).
     pub fn builder() -> crate::error::precondition_not_met_exception::Builder {
         crate::error::precondition_not_met_exception::Builder::default()
     }
 }
+
 /// See [`PreconditionNotMetException`](crate::error::PreconditionNotMetException).
 pub mod precondition_not_met_exception {
 
@@ -5476,35 +5536,6 @@ pub mod precondition_not_met_exception {
                 meta: self.meta.unwrap_or_default(),
             }
         }
-    }
-}
-impl PreconditionNotMetException {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for PreconditionNotMetException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "PreconditionNotMetException")?;
-        if let Some(inner_31) = &self.message {
-            {
-                write!(f, ": {}", inner_31)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for PreconditionNotMetException {}
-impl aws_http::request_id::RequestId for crate::error::PreconditionNotMetException {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for PreconditionNotMetException {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
     }
 }
 
@@ -5958,11 +5989,41 @@ pub struct UsernameExistsException {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl UsernameExistsException {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for UsernameExistsException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "UsernameExistsException")?;
+        if let Some(inner_32) = &self.message {
+            {
+                write!(f, ": {}", inner_32)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for UsernameExistsException {}
+impl aws_http::request_id::RequestId for crate::error::UsernameExistsException {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for UsernameExistsException {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl UsernameExistsException {
     /// Creates a new builder-style object to manufacture [`UsernameExistsException`](crate::error::UsernameExistsException).
     pub fn builder() -> crate::error::username_exists_exception::Builder {
         crate::error::username_exists_exception::Builder::default()
     }
 }
+
 /// See [`UsernameExistsException`](crate::error::UsernameExistsException).
 pub mod username_exists_exception {
 
@@ -6007,35 +6068,6 @@ pub mod username_exists_exception {
         }
     }
 }
-impl UsernameExistsException {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for UsernameExistsException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "UsernameExistsException")?;
-        if let Some(inner_32) = &self.message {
-            {
-                write!(f, ": {}", inner_32)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for UsernameExistsException {}
-impl aws_http::request_id::RequestId for crate::error::UsernameExistsException {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for UsernameExistsException {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>This exception is thrown when Amazon Cognito encounters an invalid password.</p>
 #[non_exhaustive]
@@ -6047,11 +6079,41 @@ pub struct InvalidPasswordException {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl InvalidPasswordException {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for InvalidPasswordException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "InvalidPasswordException")?;
+        if let Some(inner_33) = &self.message {
+            {
+                write!(f, ": {}", inner_33)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for InvalidPasswordException {}
+impl aws_http::request_id::RequestId for crate::error::InvalidPasswordException {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidPasswordException {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl InvalidPasswordException {
     /// Creates a new builder-style object to manufacture [`InvalidPasswordException`](crate::error::InvalidPasswordException).
     pub fn builder() -> crate::error::invalid_password_exception::Builder {
         crate::error::invalid_password_exception::Builder::default()
     }
 }
+
 /// See [`InvalidPasswordException`](crate::error::InvalidPasswordException).
 pub mod invalid_password_exception {
 
@@ -6094,35 +6156,6 @@ pub mod invalid_password_exception {
                 meta: self.meta.unwrap_or_default(),
             }
         }
-    }
-}
-impl InvalidPasswordException {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for InvalidPasswordException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "InvalidPasswordException")?;
-        if let Some(inner_33) = &self.message {
-            {
-                write!(f, ": {}", inner_33)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for InvalidPasswordException {}
-impl aws_http::request_id::RequestId for crate::error::InvalidPasswordException {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidPasswordException {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
     }
 }
 
@@ -7212,11 +7245,41 @@ pub struct UnsupportedTokenTypeException {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl UnsupportedTokenTypeException {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for UnsupportedTokenTypeException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "UnsupportedTokenTypeException")?;
+        if let Some(inner_34) = &self.message {
+            {
+                write!(f, ": {}", inner_34)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for UnsupportedTokenTypeException {}
+impl aws_http::request_id::RequestId for crate::error::UnsupportedTokenTypeException {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for UnsupportedTokenTypeException {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl UnsupportedTokenTypeException {
     /// Creates a new builder-style object to manufacture [`UnsupportedTokenTypeException`](crate::error::UnsupportedTokenTypeException).
     pub fn builder() -> crate::error::unsupported_token_type_exception::Builder {
         crate::error::unsupported_token_type_exception::Builder::default()
     }
 }
+
 /// See [`UnsupportedTokenTypeException`](crate::error::UnsupportedTokenTypeException).
 pub mod unsupported_token_type_exception {
 
@@ -7261,35 +7324,6 @@ pub mod unsupported_token_type_exception {
         }
     }
 }
-impl UnsupportedTokenTypeException {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for UnsupportedTokenTypeException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "UnsupportedTokenTypeException")?;
-        if let Some(inner_34) = &self.message {
-            {
-                write!(f, ": {}", inner_34)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for UnsupportedTokenTypeException {}
-impl aws_http::request_id::RequestId for crate::error::UnsupportedTokenTypeException {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for UnsupportedTokenTypeException {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>Exception that is thrown when you attempt to perform an operation that isn't enabled for the user pool client.</p>
 #[non_exhaustive]
@@ -7301,11 +7335,41 @@ pub struct UnsupportedOperationException {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl UnsupportedOperationException {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for UnsupportedOperationException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "UnsupportedOperationException")?;
+        if let Some(inner_35) = &self.message {
+            {
+                write!(f, ": {}", inner_35)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for UnsupportedOperationException {}
+impl aws_http::request_id::RequestId for crate::error::UnsupportedOperationException {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for UnsupportedOperationException {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl UnsupportedOperationException {
     /// Creates a new builder-style object to manufacture [`UnsupportedOperationException`](crate::error::UnsupportedOperationException).
     pub fn builder() -> crate::error::unsupported_operation_exception::Builder {
         crate::error::unsupported_operation_exception::Builder::default()
     }
 }
+
 /// See [`UnsupportedOperationException`](crate::error::UnsupportedOperationException).
 pub mod unsupported_operation_exception {
 
@@ -7350,35 +7414,6 @@ pub mod unsupported_operation_exception {
         }
     }
 }
-impl UnsupportedOperationException {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for UnsupportedOperationException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "UnsupportedOperationException")?;
-        if let Some(inner_35) = &self.message {
-            {
-                write!(f, ": {}", inner_35)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for UnsupportedOperationException {}
-impl aws_http::request_id::RequestId for crate::error::UnsupportedOperationException {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for UnsupportedOperationException {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>Exception that is thrown when the request isn't authorized. This can happen due to an invalid access token in the request.</p>
 #[non_exhaustive]
@@ -7390,11 +7425,41 @@ pub struct UnauthorizedException {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl UnauthorizedException {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for UnauthorizedException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "UnauthorizedException")?;
+        if let Some(inner_36) = &self.message {
+            {
+                write!(f, ": {}", inner_36)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for UnauthorizedException {}
+impl aws_http::request_id::RequestId for crate::error::UnauthorizedException {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for UnauthorizedException {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl UnauthorizedException {
     /// Creates a new builder-style object to manufacture [`UnauthorizedException`](crate::error::UnauthorizedException).
     pub fn builder() -> crate::error::unauthorized_exception::Builder {
         crate::error::unauthorized_exception::Builder::default()
     }
 }
+
 /// See [`UnauthorizedException`](crate::error::UnauthorizedException).
 pub mod unauthorized_exception {
 
@@ -7437,35 +7502,6 @@ pub mod unauthorized_exception {
                 meta: self.meta.unwrap_or_default(),
             }
         }
-    }
-}
-impl UnauthorizedException {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for UnauthorizedException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "UnauthorizedException")?;
-        if let Some(inner_36) = &self.message {
-            {
-                write!(f, ": {}", inner_36)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for UnauthorizedException {}
-impl aws_http::request_id::RequestId for crate::error::UnauthorizedException {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for UnauthorizedException {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
     }
 }
 
@@ -7826,11 +7862,41 @@ pub struct MfaMethodNotFoundException {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl MfaMethodNotFoundException {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for MfaMethodNotFoundException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "MfaMethodNotFoundException [MFAMethodNotFoundException]")?;
+        if let Some(inner_37) = &self.message {
+            {
+                write!(f, ": {}", inner_37)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for MfaMethodNotFoundException {}
+impl aws_http::request_id::RequestId for crate::error::MfaMethodNotFoundException {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for MfaMethodNotFoundException {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl MfaMethodNotFoundException {
     /// Creates a new builder-style object to manufacture [`MfaMethodNotFoundException`](crate::error::MfaMethodNotFoundException).
     pub fn builder() -> crate::error::mfa_method_not_found_exception::Builder {
         crate::error::mfa_method_not_found_exception::Builder::default()
     }
 }
+
 /// See [`MfaMethodNotFoundException`](crate::error::MfaMethodNotFoundException).
 pub mod mfa_method_not_found_exception {
 
@@ -7873,35 +7939,6 @@ pub mod mfa_method_not_found_exception {
                 meta: self.meta.unwrap_or_default(),
             }
         }
-    }
-}
-impl MfaMethodNotFoundException {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for MfaMethodNotFoundException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "MfaMethodNotFoundException [MFAMethodNotFoundException]")?;
-        if let Some(inner_37) = &self.message {
-            {
-                write!(f, ": {}", inner_37)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for MfaMethodNotFoundException {}
-impl aws_http::request_id::RequestId for crate::error::MfaMethodNotFoundException {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for MfaMethodNotFoundException {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
     }
 }
 
@@ -15834,11 +15871,41 @@ pub struct DuplicateProviderException {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl DuplicateProviderException {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for DuplicateProviderException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "DuplicateProviderException")?;
+        if let Some(inner_38) = &self.message {
+            {
+                write!(f, ": {}", inner_38)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for DuplicateProviderException {}
+impl aws_http::request_id::RequestId for crate::error::DuplicateProviderException {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for DuplicateProviderException {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl DuplicateProviderException {
     /// Creates a new builder-style object to manufacture [`DuplicateProviderException`](crate::error::DuplicateProviderException).
     pub fn builder() -> crate::error::duplicate_provider_exception::Builder {
         crate::error::duplicate_provider_exception::Builder::default()
     }
 }
+
 /// See [`DuplicateProviderException`](crate::error::DuplicateProviderException).
 pub mod duplicate_provider_exception {
 
@@ -15881,35 +15948,6 @@ pub mod duplicate_provider_exception {
                 meta: self.meta.unwrap_or_default(),
             }
         }
-    }
-}
-impl DuplicateProviderException {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for DuplicateProviderException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "DuplicateProviderException")?;
-        if let Some(inner_38) = &self.message {
-            {
-                write!(f, ": {}", inner_38)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for DuplicateProviderException {}
-impl aws_http::request_id::RequestId for crate::error::DuplicateProviderException {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for DuplicateProviderException {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
     }
 }
 
@@ -16100,11 +16138,41 @@ pub struct GroupExistsException {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl GroupExistsException {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for GroupExistsException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "GroupExistsException")?;
+        if let Some(inner_39) = &self.message {
+            {
+                write!(f, ": {}", inner_39)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for GroupExistsException {}
+impl aws_http::request_id::RequestId for crate::error::GroupExistsException {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for GroupExistsException {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl GroupExistsException {
     /// Creates a new builder-style object to manufacture [`GroupExistsException`](crate::error::GroupExistsException).
     pub fn builder() -> crate::error::group_exists_exception::Builder {
         crate::error::group_exists_exception::Builder::default()
     }
 }
+
 /// See [`GroupExistsException`](crate::error::GroupExistsException).
 pub mod group_exists_exception {
 
@@ -16147,35 +16215,6 @@ pub mod group_exists_exception {
                 meta: self.meta.unwrap_or_default(),
             }
         }
-    }
-}
-impl GroupExistsException {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for GroupExistsException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "GroupExistsException")?;
-        if let Some(inner_39) = &self.message {
-            {
-                write!(f, ": {}", inner_39)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for GroupExistsException {}
-impl aws_http::request_id::RequestId for crate::error::GroupExistsException {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for GroupExistsException {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
     }
 }
 
@@ -16462,11 +16501,41 @@ pub struct TooManyFailedAttemptsException {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl TooManyFailedAttemptsException {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for TooManyFailedAttemptsException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "TooManyFailedAttemptsException")?;
+        if let Some(inner_40) = &self.message {
+            {
+                write!(f, ": {}", inner_40)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for TooManyFailedAttemptsException {}
+impl aws_http::request_id::RequestId for crate::error::TooManyFailedAttemptsException {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for TooManyFailedAttemptsException {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl TooManyFailedAttemptsException {
     /// Creates a new builder-style object to manufacture [`TooManyFailedAttemptsException`](crate::error::TooManyFailedAttemptsException).
     pub fn builder() -> crate::error::too_many_failed_attempts_exception::Builder {
         crate::error::too_many_failed_attempts_exception::Builder::default()
     }
 }
+
 /// See [`TooManyFailedAttemptsException`](crate::error::TooManyFailedAttemptsException).
 pub mod too_many_failed_attempts_exception {
 
@@ -16509,35 +16578,6 @@ pub mod too_many_failed_attempts_exception {
                 meta: self.meta.unwrap_or_default(),
             }
         }
-    }
-}
-impl TooManyFailedAttemptsException {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for TooManyFailedAttemptsException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "TooManyFailedAttemptsException")?;
-        if let Some(inner_40) = &self.message {
-            {
-                write!(f, ": {}", inner_40)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for TooManyFailedAttemptsException {}
-impl aws_http::request_id::RequestId for crate::error::TooManyFailedAttemptsException {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for TooManyFailedAttemptsException {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
     }
 }
 
@@ -22117,11 +22157,41 @@ pub struct UnsupportedUserStateException {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl UnsupportedUserStateException {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for UnsupportedUserStateException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "UnsupportedUserStateException")?;
+        if let Some(inner_41) = &self.message {
+            {
+                write!(f, ": {}", inner_41)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for UnsupportedUserStateException {}
+impl aws_http::request_id::RequestId for crate::error::UnsupportedUserStateException {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for UnsupportedUserStateException {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl UnsupportedUserStateException {
     /// Creates a new builder-style object to manufacture [`UnsupportedUserStateException`](crate::error::UnsupportedUserStateException).
     pub fn builder() -> crate::error::unsupported_user_state_exception::Builder {
         crate::error::unsupported_user_state_exception::Builder::default()
     }
 }
+
 /// See [`UnsupportedUserStateException`](crate::error::UnsupportedUserStateException).
 pub mod unsupported_user_state_exception {
 
@@ -22164,35 +22234,6 @@ pub mod unsupported_user_state_exception {
                 meta: self.meta.unwrap_or_default(),
             }
         }
-    }
-}
-impl UnsupportedUserStateException {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for UnsupportedUserStateException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "UnsupportedUserStateException")?;
-        if let Some(inner_41) = &self.message {
-            {
-                write!(f, ": {}", inner_41)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for UnsupportedUserStateException {}
-impl aws_http::request_id::RequestId for crate::error::UnsupportedUserStateException {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for UnsupportedUserStateException {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
     }
 }
 

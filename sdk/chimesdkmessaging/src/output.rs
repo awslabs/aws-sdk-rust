@@ -26,6 +26,13 @@ impl aws_http::request_id::RequestId for UpdateChannelReadMarkerOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdateChannelReadMarkerOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateChannelReadMarkerOutput`](crate::output::UpdateChannelReadMarkerOutput).
+    pub fn builder() -> crate::output::update_channel_read_marker_output::Builder {
+        crate::output::update_channel_read_marker_output::Builder::default()
+    }
+}
+
 /// See [`UpdateChannelReadMarkerOutput`](crate::output::UpdateChannelReadMarkerOutput).
 pub mod update_channel_read_marker_output {
 
@@ -80,12 +87,6 @@ pub mod update_channel_read_marker_output {
         }
     }
 }
-impl UpdateChannelReadMarkerOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateChannelReadMarkerOutput`](crate::output::UpdateChannelReadMarkerOutput).
-    pub fn builder() -> crate::output::update_channel_read_marker_output::Builder {
-        crate::output::update_channel_read_marker_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -128,6 +129,13 @@ impl aws_http::request_id::RequestId for UpdateChannelMessageOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdateChannelMessageOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateChannelMessageOutput`](crate::output::UpdateChannelMessageOutput).
+    pub fn builder() -> crate::output::update_channel_message_output::Builder {
+        crate::output::update_channel_message_output::Builder::default()
+    }
+}
+
 /// See [`UpdateChannelMessageOutput`](crate::output::UpdateChannelMessageOutput).
 pub mod update_channel_message_output {
 
@@ -209,12 +217,6 @@ pub mod update_channel_message_output {
         }
     }
 }
-impl UpdateChannelMessageOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateChannelMessageOutput`](crate::output::UpdateChannelMessageOutput).
-    pub fn builder() -> crate::output::update_channel_message_output::Builder {
-        crate::output::update_channel_message_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -236,6 +238,13 @@ impl aws_http::request_id::RequestId for UpdateChannelFlowOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdateChannelFlowOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateChannelFlowOutput`](crate::output::UpdateChannelFlowOutput).
+    pub fn builder() -> crate::output::update_channel_flow_output::Builder {
+        crate::output::update_channel_flow_output::Builder::default()
+    }
+}
+
 /// See [`UpdateChannelFlowOutput`](crate::output::UpdateChannelFlowOutput).
 pub mod update_channel_flow_output {
 
@@ -278,12 +287,6 @@ pub mod update_channel_flow_output {
         }
     }
 }
-impl UpdateChannelFlowOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateChannelFlowOutput`](crate::output::UpdateChannelFlowOutput).
-    pub fn builder() -> crate::output::update_channel_flow_output::Builder {
-        crate::output::update_channel_flow_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -305,6 +308,13 @@ impl aws_http::request_id::RequestId for UpdateChannelOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdateChannelOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateChannelOutput`](crate::output::UpdateChannelOutput).
+    pub fn builder() -> crate::output::update_channel_output::Builder {
+        crate::output::update_channel_output::Builder::default()
+    }
+}
+
 /// See [`UpdateChannelOutput`](crate::output::UpdateChannelOutput).
 pub mod update_channel_output {
 
@@ -344,12 +354,6 @@ pub mod update_channel_output {
         }
     }
 }
-impl UpdateChannelOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateChannelOutput`](crate::output::UpdateChannelOutput).
-    pub fn builder() -> crate::output::update_channel_output::Builder {
-        crate::output::update_channel_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -362,6 +366,13 @@ impl aws_http::request_id::RequestId for UntagResourceOutput {
         self._request_id.as_deref()
     }
 }
+impl UntagResourceOutput {
+    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    pub fn builder() -> crate::output::untag_resource_output::Builder {
+        crate::output::untag_resource_output::Builder::default()
+    }
+}
+
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
 
@@ -389,12 +400,6 @@ pub mod untag_resource_output {
         }
     }
 }
-impl UntagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
-    pub fn builder() -> crate::output::untag_resource_output::Builder {
-        crate::output::untag_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -407,6 +412,13 @@ impl aws_http::request_id::RequestId for TagResourceOutput {
         self._request_id.as_deref()
     }
 }
+impl TagResourceOutput {
+    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
+    pub fn builder() -> crate::output::tag_resource_output::Builder {
+        crate::output::tag_resource_output::Builder::default()
+    }
+}
+
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
 
@@ -432,12 +444,6 @@ pub mod tag_resource_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl TagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
-    pub fn builder() -> crate::output::tag_resource_output::Builder {
-        crate::output::tag_resource_output::Builder::default()
     }
 }
 
@@ -482,6 +488,13 @@ impl aws_http::request_id::RequestId for SendChannelMessageOutput {
         self._request_id.as_deref()
     }
 }
+impl SendChannelMessageOutput {
+    /// Creates a new builder-style object to manufacture [`SendChannelMessageOutput`](crate::output::SendChannelMessageOutput).
+    pub fn builder() -> crate::output::send_channel_message_output::Builder {
+        crate::output::send_channel_message_output::Builder::default()
+    }
+}
+
 /// See [`SendChannelMessageOutput`](crate::output::SendChannelMessageOutput).
 pub mod send_channel_message_output {
 
@@ -563,12 +576,6 @@ pub mod send_channel_message_output {
         }
     }
 }
-impl SendChannelMessageOutput {
-    /// Creates a new builder-style object to manufacture [`SendChannelMessageOutput`](crate::output::SendChannelMessageOutput).
-    pub fn builder() -> crate::output::send_channel_message_output::Builder {
-        crate::output::send_channel_message_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -606,6 +613,13 @@ impl aws_http::request_id::RequestId for SearchChannelsOutput {
         self._request_id.as_deref()
     }
 }
+impl SearchChannelsOutput {
+    /// Creates a new builder-style object to manufacture [`SearchChannelsOutput`](crate::output::SearchChannelsOutput).
+    pub fn builder() -> crate::output::search_channels_output::Builder {
+        crate::output::search_channels_output::Builder::default()
+    }
+}
+
 /// See [`SearchChannelsOutput`](crate::output::SearchChannelsOutput).
 pub mod search_channels_output {
 
@@ -675,12 +689,6 @@ pub mod search_channels_output {
         }
     }
 }
-impl SearchChannelsOutput {
-    /// Creates a new builder-style object to manufacture [`SearchChannelsOutput`](crate::output::SearchChannelsOutput).
-    pub fn builder() -> crate::output::search_channels_output::Builder {
-        crate::output::search_channels_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -720,6 +728,13 @@ impl aws_http::request_id::RequestId for RedactChannelMessageOutput {
         self._request_id.as_deref()
     }
 }
+impl RedactChannelMessageOutput {
+    /// Creates a new builder-style object to manufacture [`RedactChannelMessageOutput`](crate::output::RedactChannelMessageOutput).
+    pub fn builder() -> crate::output::redact_channel_message_output::Builder {
+        crate::output::redact_channel_message_output::Builder::default()
+    }
+}
+
 /// See [`RedactChannelMessageOutput`](crate::output::RedactChannelMessageOutput).
 pub mod redact_channel_message_output {
 
@@ -790,12 +805,6 @@ pub mod redact_channel_message_output {
         }
     }
 }
-impl RedactChannelMessageOutput {
-    /// Creates a new builder-style object to manufacture [`RedactChannelMessageOutput`](crate::output::RedactChannelMessageOutput).
-    pub fn builder() -> crate::output::redact_channel_message_output::Builder {
-        crate::output::redact_channel_message_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -831,6 +840,13 @@ impl aws_http::request_id::RequestId for PutChannelMembershipPreferencesOutput {
         self._request_id.as_deref()
     }
 }
+impl PutChannelMembershipPreferencesOutput {
+    /// Creates a new builder-style object to manufacture [`PutChannelMembershipPreferencesOutput`](crate::output::PutChannelMembershipPreferencesOutput).
+    pub fn builder() -> crate::output::put_channel_membership_preferences_output::Builder {
+        crate::output::put_channel_membership_preferences_output::Builder::default()
+    }
+}
+
 /// See [`PutChannelMembershipPreferencesOutput`](crate::output::PutChannelMembershipPreferencesOutput).
 pub mod put_channel_membership_preferences_output {
 
@@ -897,12 +913,6 @@ pub mod put_channel_membership_preferences_output {
         }
     }
 }
-impl PutChannelMembershipPreferencesOutput {
-    /// Creates a new builder-style object to manufacture [`PutChannelMembershipPreferencesOutput`](crate::output::PutChannelMembershipPreferencesOutput).
-    pub fn builder() -> crate::output::put_channel_membership_preferences_output::Builder {
-        crate::output::put_channel_membership_preferences_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -924,6 +934,13 @@ impl aws_http::request_id::RequestId for ListTagsForResourceOutput {
         self._request_id.as_deref()
     }
 }
+impl ListTagsForResourceOutput {
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
+        crate::output::list_tags_for_resource_output::Builder::default()
+    }
+}
+
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
 
@@ -972,12 +989,6 @@ pub mod list_tags_for_resource_output {
         }
     }
 }
-impl ListTagsForResourceOutput {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
-    pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
-        crate::output::list_tags_for_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1023,6 +1034,13 @@ impl aws_http::request_id::RequestId for ListSubChannelsOutput {
         self._request_id.as_deref()
     }
 }
+impl ListSubChannelsOutput {
+    /// Creates a new builder-style object to manufacture [`ListSubChannelsOutput`](crate::output::ListSubChannelsOutput).
+    pub fn builder() -> crate::output::list_sub_channels_output::Builder {
+        crate::output::list_sub_channels_output::Builder::default()
+    }
+}
+
 /// See [`ListSubChannelsOutput`](crate::output::ListSubChannelsOutput).
 pub mod list_sub_channels_output {
 
@@ -1106,12 +1124,6 @@ pub mod list_sub_channels_output {
         }
     }
 }
-impl ListSubChannelsOutput {
-    /// Creates a new builder-style object to manufacture [`ListSubChannelsOutput`](crate::output::ListSubChannelsOutput).
-    pub fn builder() -> crate::output::list_sub_channels_output::Builder {
-        crate::output::list_sub_channels_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1152,6 +1164,14 @@ impl aws_http::request_id::RequestId for ListChannelsModeratedByAppInstanceUserO
         self._request_id.as_deref()
     }
 }
+impl ListChannelsModeratedByAppInstanceUserOutput {
+    /// Creates a new builder-style object to manufacture [`ListChannelsModeratedByAppInstanceUserOutput`](crate::output::ListChannelsModeratedByAppInstanceUserOutput).
+    pub fn builder() -> crate::output::list_channels_moderated_by_app_instance_user_output::Builder
+    {
+        crate::output::list_channels_moderated_by_app_instance_user_output::Builder::default()
+    }
+}
+
 /// See [`ListChannelsModeratedByAppInstanceUserOutput`](crate::output::ListChannelsModeratedByAppInstanceUserOutput).
 pub mod list_channels_moderated_by_app_instance_user_output {
 
@@ -1228,13 +1248,6 @@ pub mod list_channels_moderated_by_app_instance_user_output {
         }
     }
 }
-impl ListChannelsModeratedByAppInstanceUserOutput {
-    /// Creates a new builder-style object to manufacture [`ListChannelsModeratedByAppInstanceUserOutput`](crate::output::ListChannelsModeratedByAppInstanceUserOutput).
-    pub fn builder() -> crate::output::list_channels_moderated_by_app_instance_user_output::Builder
-    {
-        crate::output::list_channels_moderated_by_app_instance_user_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1275,6 +1288,13 @@ impl aws_http::request_id::RequestId for ListChannelsAssociatedWithChannelFlowOu
         self._request_id.as_deref()
     }
 }
+impl ListChannelsAssociatedWithChannelFlowOutput {
+    /// Creates a new builder-style object to manufacture [`ListChannelsAssociatedWithChannelFlowOutput`](crate::output::ListChannelsAssociatedWithChannelFlowOutput).
+    pub fn builder() -> crate::output::list_channels_associated_with_channel_flow_output::Builder {
+        crate::output::list_channels_associated_with_channel_flow_output::Builder::default()
+    }
+}
+
 /// See [`ListChannelsAssociatedWithChannelFlowOutput`](crate::output::ListChannelsAssociatedWithChannelFlowOutput).
 pub mod list_channels_associated_with_channel_flow_output {
 
@@ -1347,12 +1367,6 @@ pub mod list_channels_associated_with_channel_flow_output {
         }
     }
 }
-impl ListChannelsAssociatedWithChannelFlowOutput {
-    /// Creates a new builder-style object to manufacture [`ListChannelsAssociatedWithChannelFlowOutput`](crate::output::ListChannelsAssociatedWithChannelFlowOutput).
-    pub fn builder() -> crate::output::list_channels_associated_with_channel_flow_output::Builder {
-        crate::output::list_channels_associated_with_channel_flow_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1390,6 +1404,13 @@ impl aws_http::request_id::RequestId for ListChannelsOutput {
         self._request_id.as_deref()
     }
 }
+impl ListChannelsOutput {
+    /// Creates a new builder-style object to manufacture [`ListChannelsOutput`](crate::output::ListChannelsOutput).
+    pub fn builder() -> crate::output::list_channels_output::Builder {
+        crate::output::list_channels_output::Builder::default()
+    }
+}
+
 /// See [`ListChannelsOutput`](crate::output::ListChannelsOutput).
 pub mod list_channels_output {
 
@@ -1459,12 +1480,6 @@ pub mod list_channels_output {
         }
     }
 }
-impl ListChannelsOutput {
-    /// Creates a new builder-style object to manufacture [`ListChannelsOutput`](crate::output::ListChannelsOutput).
-    pub fn builder() -> crate::output::list_channels_output::Builder {
-        crate::output::list_channels_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1513,6 +1528,13 @@ impl aws_http::request_id::RequestId for ListChannelModeratorsOutput {
         self._request_id.as_deref()
     }
 }
+impl ListChannelModeratorsOutput {
+    /// Creates a new builder-style object to manufacture [`ListChannelModeratorsOutput`](crate::output::ListChannelModeratorsOutput).
+    pub fn builder() -> crate::output::list_channel_moderators_output::Builder {
+        crate::output::list_channel_moderators_output::Builder::default()
+    }
+}
+
 /// See [`ListChannelModeratorsOutput`](crate::output::ListChannelModeratorsOutput).
 pub mod list_channel_moderators_output {
 
@@ -1596,12 +1618,6 @@ pub mod list_channel_moderators_output {
         }
     }
 }
-impl ListChannelModeratorsOutput {
-    /// Creates a new builder-style object to manufacture [`ListChannelModeratorsOutput`](crate::output::ListChannelModeratorsOutput).
-    pub fn builder() -> crate::output::list_channel_moderators_output::Builder {
-        crate::output::list_channel_moderators_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1655,6 +1671,13 @@ impl aws_http::request_id::RequestId for ListChannelMessagesOutput {
         self._request_id.as_deref()
     }
 }
+impl ListChannelMessagesOutput {
+    /// Creates a new builder-style object to manufacture [`ListChannelMessagesOutput`](crate::output::ListChannelMessagesOutput).
+    pub fn builder() -> crate::output::list_channel_messages_output::Builder {
+        crate::output::list_channel_messages_output::Builder::default()
+    }
+}
+
 /// See [`ListChannelMessagesOutput`](crate::output::ListChannelMessagesOutput).
 pub mod list_channel_messages_output {
 
@@ -1754,12 +1777,6 @@ pub mod list_channel_messages_output {
         }
     }
 }
-impl ListChannelMessagesOutput {
-    /// Creates a new builder-style object to manufacture [`ListChannelMessagesOutput`](crate::output::ListChannelMessagesOutput).
-    pub fn builder() -> crate::output::list_channel_messages_output::Builder {
-        crate::output::list_channel_messages_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1801,6 +1818,14 @@ impl aws_http::request_id::RequestId for ListChannelMembershipsForAppInstanceUse
         self._request_id.as_deref()
     }
 }
+impl ListChannelMembershipsForAppInstanceUserOutput {
+    /// Creates a new builder-style object to manufacture [`ListChannelMembershipsForAppInstanceUserOutput`](crate::output::ListChannelMembershipsForAppInstanceUserOutput).
+    pub fn builder() -> crate::output::list_channel_memberships_for_app_instance_user_output::Builder
+    {
+        crate::output::list_channel_memberships_for_app_instance_user_output::Builder::default()
+    }
+}
+
 /// See [`ListChannelMembershipsForAppInstanceUserOutput`](crate::output::ListChannelMembershipsForAppInstanceUserOutput).
 pub mod list_channel_memberships_for_app_instance_user_output {
 
@@ -1877,13 +1902,6 @@ pub mod list_channel_memberships_for_app_instance_user_output {
         }
     }
 }
-impl ListChannelMembershipsForAppInstanceUserOutput {
-    /// Creates a new builder-style object to manufacture [`ListChannelMembershipsForAppInstanceUserOutput`](crate::output::ListChannelMembershipsForAppInstanceUserOutput).
-    pub fn builder() -> crate::output::list_channel_memberships_for_app_instance_user_output::Builder
-    {
-        crate::output::list_channel_memberships_for_app_instance_user_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1932,6 +1950,13 @@ impl aws_http::request_id::RequestId for ListChannelMembershipsOutput {
         self._request_id.as_deref()
     }
 }
+impl ListChannelMembershipsOutput {
+    /// Creates a new builder-style object to manufacture [`ListChannelMembershipsOutput`](crate::output::ListChannelMembershipsOutput).
+    pub fn builder() -> crate::output::list_channel_memberships_output::Builder {
+        crate::output::list_channel_memberships_output::Builder::default()
+    }
+}
+
 /// See [`ListChannelMembershipsOutput`](crate::output::ListChannelMembershipsOutput).
 pub mod list_channel_memberships_output {
 
@@ -2018,12 +2043,6 @@ pub mod list_channel_memberships_output {
         }
     }
 }
-impl ListChannelMembershipsOutput {
-    /// Creates a new builder-style object to manufacture [`ListChannelMembershipsOutput`](crate::output::ListChannelMembershipsOutput).
-    pub fn builder() -> crate::output::list_channel_memberships_output::Builder {
-        crate::output::list_channel_memberships_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2061,6 +2080,13 @@ impl aws_http::request_id::RequestId for ListChannelFlowsOutput {
         self._request_id.as_deref()
     }
 }
+impl ListChannelFlowsOutput {
+    /// Creates a new builder-style object to manufacture [`ListChannelFlowsOutput`](crate::output::ListChannelFlowsOutput).
+    pub fn builder() -> crate::output::list_channel_flows_output::Builder {
+        crate::output::list_channel_flows_output::Builder::default()
+    }
+}
+
 /// See [`ListChannelFlowsOutput`](crate::output::ListChannelFlowsOutput).
 pub mod list_channel_flows_output {
 
@@ -2131,12 +2157,6 @@ pub mod list_channel_flows_output {
         }
     }
 }
-impl ListChannelFlowsOutput {
-    /// Creates a new builder-style object to manufacture [`ListChannelFlowsOutput`](crate::output::ListChannelFlowsOutput).
-    pub fn builder() -> crate::output::list_channel_flows_output::Builder {
-        crate::output::list_channel_flows_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2182,6 +2202,13 @@ impl aws_http::request_id::RequestId for ListChannelBansOutput {
         self._request_id.as_deref()
     }
 }
+impl ListChannelBansOutput {
+    /// Creates a new builder-style object to manufacture [`ListChannelBansOutput`](crate::output::ListChannelBansOutput).
+    pub fn builder() -> crate::output::list_channel_bans_output::Builder {
+        crate::output::list_channel_bans_output::Builder::default()
+    }
+}
+
 /// See [`ListChannelBansOutput`](crate::output::ListChannelBansOutput).
 pub mod list_channel_bans_output {
 
@@ -2265,12 +2292,6 @@ pub mod list_channel_bans_output {
         }
     }
 }
-impl ListChannelBansOutput {
-    /// Creates a new builder-style object to manufacture [`ListChannelBansOutput`](crate::output::ListChannelBansOutput).
-    pub fn builder() -> crate::output::list_channel_bans_output::Builder {
-        crate::output::list_channel_bans_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2292,6 +2313,13 @@ impl aws_http::request_id::RequestId for GetMessagingSessionEndpointOutput {
         self._request_id.as_deref()
     }
 }
+impl GetMessagingSessionEndpointOutput {
+    /// Creates a new builder-style object to manufacture [`GetMessagingSessionEndpointOutput`](crate::output::GetMessagingSessionEndpointOutput).
+    pub fn builder() -> crate::output::get_messaging_session_endpoint_output::Builder {
+        crate::output::get_messaging_session_endpoint_output::Builder::default()
+    }
+}
+
 /// See [`GetMessagingSessionEndpointOutput`](crate::output::GetMessagingSessionEndpointOutput).
 pub mod get_messaging_session_endpoint_output {
 
@@ -2334,12 +2362,6 @@ pub mod get_messaging_session_endpoint_output {
         }
     }
 }
-impl GetMessagingSessionEndpointOutput {
-    /// Creates a new builder-style object to manufacture [`GetMessagingSessionEndpointOutput`](crate::output::GetMessagingSessionEndpointOutput).
-    pub fn builder() -> crate::output::get_messaging_session_endpoint_output::Builder {
-        crate::output::get_messaging_session_endpoint_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2361,6 +2383,13 @@ impl aws_http::request_id::RequestId for GetChannelMessageStatusOutput {
         self._request_id.as_deref()
     }
 }
+impl GetChannelMessageStatusOutput {
+    /// Creates a new builder-style object to manufacture [`GetChannelMessageStatusOutput`](crate::output::GetChannelMessageStatusOutput).
+    pub fn builder() -> crate::output::get_channel_message_status_output::Builder {
+        crate::output::get_channel_message_status_output::Builder::default()
+    }
+}
+
 /// See [`GetChannelMessageStatusOutput`](crate::output::GetChannelMessageStatusOutput).
 pub mod get_channel_message_status_output {
 
@@ -2403,12 +2432,6 @@ pub mod get_channel_message_status_output {
         }
     }
 }
-impl GetChannelMessageStatusOutput {
-    /// Creates a new builder-style object to manufacture [`GetChannelMessageStatusOutput`](crate::output::GetChannelMessageStatusOutput).
-    pub fn builder() -> crate::output::get_channel_message_status_output::Builder {
-        crate::output::get_channel_message_status_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2430,6 +2453,13 @@ impl aws_http::request_id::RequestId for GetChannelMessageOutput {
         self._request_id.as_deref()
     }
 }
+impl GetChannelMessageOutput {
+    /// Creates a new builder-style object to manufacture [`GetChannelMessageOutput`](crate::output::GetChannelMessageOutput).
+    pub fn builder() -> crate::output::get_channel_message_output::Builder {
+        crate::output::get_channel_message_output::Builder::default()
+    }
+}
+
 /// See [`GetChannelMessageOutput`](crate::output::GetChannelMessageOutput).
 pub mod get_channel_message_output {
 
@@ -2472,12 +2502,6 @@ pub mod get_channel_message_output {
         }
     }
 }
-impl GetChannelMessageOutput {
-    /// Creates a new builder-style object to manufacture [`GetChannelMessageOutput`](crate::output::GetChannelMessageOutput).
-    pub fn builder() -> crate::output::get_channel_message_output::Builder {
-        crate::output::get_channel_message_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2513,6 +2537,13 @@ impl aws_http::request_id::RequestId for GetChannelMembershipPreferencesOutput {
         self._request_id.as_deref()
     }
 }
+impl GetChannelMembershipPreferencesOutput {
+    /// Creates a new builder-style object to manufacture [`GetChannelMembershipPreferencesOutput`](crate::output::GetChannelMembershipPreferencesOutput).
+    pub fn builder() -> crate::output::get_channel_membership_preferences_output::Builder {
+        crate::output::get_channel_membership_preferences_output::Builder::default()
+    }
+}
+
 /// See [`GetChannelMembershipPreferencesOutput`](crate::output::GetChannelMembershipPreferencesOutput).
 pub mod get_channel_membership_preferences_output {
 
@@ -2579,12 +2610,6 @@ pub mod get_channel_membership_preferences_output {
         }
     }
 }
-impl GetChannelMembershipPreferencesOutput {
-    /// Creates a new builder-style object to manufacture [`GetChannelMembershipPreferencesOutput`](crate::output::GetChannelMembershipPreferencesOutput).
-    pub fn builder() -> crate::output::get_channel_membership_preferences_output::Builder {
-        crate::output::get_channel_membership_preferences_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2597,6 +2622,13 @@ impl aws_http::request_id::RequestId for DisassociateChannelFlowOutput {
         self._request_id.as_deref()
     }
 }
+impl DisassociateChannelFlowOutput {
+    /// Creates a new builder-style object to manufacture [`DisassociateChannelFlowOutput`](crate::output::DisassociateChannelFlowOutput).
+    pub fn builder() -> crate::output::disassociate_channel_flow_output::Builder {
+        crate::output::disassociate_channel_flow_output::Builder::default()
+    }
+}
+
 /// See [`DisassociateChannelFlowOutput`](crate::output::DisassociateChannelFlowOutput).
 pub mod disassociate_channel_flow_output {
 
@@ -2624,12 +2656,6 @@ pub mod disassociate_channel_flow_output {
         }
     }
 }
-impl DisassociateChannelFlowOutput {
-    /// Creates a new builder-style object to manufacture [`DisassociateChannelFlowOutput`](crate::output::DisassociateChannelFlowOutput).
-    pub fn builder() -> crate::output::disassociate_channel_flow_output::Builder {
-        crate::output::disassociate_channel_flow_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2651,6 +2677,13 @@ impl aws_http::request_id::RequestId for DescribeChannelModeratorOutput {
         self._request_id.as_deref()
     }
 }
+impl DescribeChannelModeratorOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeChannelModeratorOutput`](crate::output::DescribeChannelModeratorOutput).
+    pub fn builder() -> crate::output::describe_channel_moderator_output::Builder {
+        crate::output::describe_channel_moderator_output::Builder::default()
+    }
+}
+
 /// See [`DescribeChannelModeratorOutput`](crate::output::DescribeChannelModeratorOutput).
 pub mod describe_channel_moderator_output {
 
@@ -2693,12 +2726,6 @@ pub mod describe_channel_moderator_output {
         }
     }
 }
-impl DescribeChannelModeratorOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeChannelModeratorOutput`](crate::output::DescribeChannelModeratorOutput).
-    pub fn builder() -> crate::output::describe_channel_moderator_output::Builder {
-        crate::output::describe_channel_moderator_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2722,6 +2749,14 @@ impl aws_http::request_id::RequestId for DescribeChannelModeratedByAppInstanceUs
         self._request_id.as_deref()
     }
 }
+impl DescribeChannelModeratedByAppInstanceUserOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeChannelModeratedByAppInstanceUserOutput`](crate::output::DescribeChannelModeratedByAppInstanceUserOutput).
+    pub fn builder(
+    ) -> crate::output::describe_channel_moderated_by_app_instance_user_output::Builder {
+        crate::output::describe_channel_moderated_by_app_instance_user_output::Builder::default()
+    }
+}
+
 /// See [`DescribeChannelModeratedByAppInstanceUserOutput`](crate::output::DescribeChannelModeratedByAppInstanceUserOutput).
 pub mod describe_channel_moderated_by_app_instance_user_output {
 
@@ -2768,13 +2803,6 @@ pub mod describe_channel_moderated_by_app_instance_user_output {
         }
     }
 }
-impl DescribeChannelModeratedByAppInstanceUserOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeChannelModeratedByAppInstanceUserOutput`](crate::output::DescribeChannelModeratedByAppInstanceUserOutput).
-    pub fn builder(
-    ) -> crate::output::describe_channel_moderated_by_app_instance_user_output::Builder {
-        crate::output::describe_channel_moderated_by_app_instance_user_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2799,6 +2827,14 @@ impl aws_http::request_id::RequestId for DescribeChannelMembershipForAppInstance
         self._request_id.as_deref()
     }
 }
+impl DescribeChannelMembershipForAppInstanceUserOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeChannelMembershipForAppInstanceUserOutput`](crate::output::DescribeChannelMembershipForAppInstanceUserOutput).
+    pub fn builder(
+    ) -> crate::output::describe_channel_membership_for_app_instance_user_output::Builder {
+        crate::output::describe_channel_membership_for_app_instance_user_output::Builder::default()
+    }
+}
+
 /// See [`DescribeChannelMembershipForAppInstanceUserOutput`](crate::output::DescribeChannelMembershipForAppInstanceUserOutput).
 pub mod describe_channel_membership_for_app_instance_user_output {
 
@@ -2845,13 +2881,6 @@ pub mod describe_channel_membership_for_app_instance_user_output {
         }
     }
 }
-impl DescribeChannelMembershipForAppInstanceUserOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeChannelMembershipForAppInstanceUserOutput`](crate::output::DescribeChannelMembershipForAppInstanceUserOutput).
-    pub fn builder(
-    ) -> crate::output::describe_channel_membership_for_app_instance_user_output::Builder {
-        crate::output::describe_channel_membership_for_app_instance_user_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2873,6 +2902,13 @@ impl aws_http::request_id::RequestId for DescribeChannelMembershipOutput {
         self._request_id.as_deref()
     }
 }
+impl DescribeChannelMembershipOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeChannelMembershipOutput`](crate::output::DescribeChannelMembershipOutput).
+    pub fn builder() -> crate::output::describe_channel_membership_output::Builder {
+        crate::output::describe_channel_membership_output::Builder::default()
+    }
+}
+
 /// See [`DescribeChannelMembershipOutput`](crate::output::DescribeChannelMembershipOutput).
 pub mod describe_channel_membership_output {
 
@@ -2915,12 +2951,6 @@ pub mod describe_channel_membership_output {
         }
     }
 }
-impl DescribeChannelMembershipOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeChannelMembershipOutput`](crate::output::DescribeChannelMembershipOutput).
-    pub fn builder() -> crate::output::describe_channel_membership_output::Builder {
-        crate::output::describe_channel_membership_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2942,6 +2972,13 @@ impl aws_http::request_id::RequestId for DescribeChannelFlowOutput {
         self._request_id.as_deref()
     }
 }
+impl DescribeChannelFlowOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeChannelFlowOutput`](crate::output::DescribeChannelFlowOutput).
+    pub fn builder() -> crate::output::describe_channel_flow_output::Builder {
+        crate::output::describe_channel_flow_output::Builder::default()
+    }
+}
+
 /// See [`DescribeChannelFlowOutput`](crate::output::DescribeChannelFlowOutput).
 pub mod describe_channel_flow_output {
 
@@ -2984,12 +3021,6 @@ pub mod describe_channel_flow_output {
         }
     }
 }
-impl DescribeChannelFlowOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeChannelFlowOutput`](crate::output::DescribeChannelFlowOutput).
-    pub fn builder() -> crate::output::describe_channel_flow_output::Builder {
-        crate::output::describe_channel_flow_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3011,6 +3042,13 @@ impl aws_http::request_id::RequestId for DescribeChannelBanOutput {
         self._request_id.as_deref()
     }
 }
+impl DescribeChannelBanOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeChannelBanOutput`](crate::output::DescribeChannelBanOutput).
+    pub fn builder() -> crate::output::describe_channel_ban_output::Builder {
+        crate::output::describe_channel_ban_output::Builder::default()
+    }
+}
+
 /// See [`DescribeChannelBanOutput`](crate::output::DescribeChannelBanOutput).
 pub mod describe_channel_ban_output {
 
@@ -3053,12 +3091,6 @@ pub mod describe_channel_ban_output {
         }
     }
 }
-impl DescribeChannelBanOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeChannelBanOutput`](crate::output::DescribeChannelBanOutput).
-    pub fn builder() -> crate::output::describe_channel_ban_output::Builder {
-        crate::output::describe_channel_ban_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3080,6 +3112,13 @@ impl aws_http::request_id::RequestId for DescribeChannelOutput {
         self._request_id.as_deref()
     }
 }
+impl DescribeChannelOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeChannelOutput`](crate::output::DescribeChannelOutput).
+    pub fn builder() -> crate::output::describe_channel_output::Builder {
+        crate::output::describe_channel_output::Builder::default()
+    }
+}
+
 /// See [`DescribeChannelOutput`](crate::output::DescribeChannelOutput).
 pub mod describe_channel_output {
 
@@ -3119,12 +3158,6 @@ pub mod describe_channel_output {
         }
     }
 }
-impl DescribeChannelOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeChannelOutput`](crate::output::DescribeChannelOutput).
-    pub fn builder() -> crate::output::describe_channel_output::Builder {
-        crate::output::describe_channel_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3137,6 +3170,13 @@ impl aws_http::request_id::RequestId for DeleteChannelModeratorOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteChannelModeratorOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteChannelModeratorOutput`](crate::output::DeleteChannelModeratorOutput).
+    pub fn builder() -> crate::output::delete_channel_moderator_output::Builder {
+        crate::output::delete_channel_moderator_output::Builder::default()
+    }
+}
+
 /// See [`DeleteChannelModeratorOutput`](crate::output::DeleteChannelModeratorOutput).
 pub mod delete_channel_moderator_output {
 
@@ -3164,12 +3204,6 @@ pub mod delete_channel_moderator_output {
         }
     }
 }
-impl DeleteChannelModeratorOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteChannelModeratorOutput`](crate::output::DeleteChannelModeratorOutput).
-    pub fn builder() -> crate::output::delete_channel_moderator_output::Builder {
-        crate::output::delete_channel_moderator_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3182,6 +3216,13 @@ impl aws_http::request_id::RequestId for DeleteChannelMessageOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteChannelMessageOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteChannelMessageOutput`](crate::output::DeleteChannelMessageOutput).
+    pub fn builder() -> crate::output::delete_channel_message_output::Builder {
+        crate::output::delete_channel_message_output::Builder::default()
+    }
+}
+
 /// See [`DeleteChannelMessageOutput`](crate::output::DeleteChannelMessageOutput).
 pub mod delete_channel_message_output {
 
@@ -3209,12 +3250,6 @@ pub mod delete_channel_message_output {
         }
     }
 }
-impl DeleteChannelMessageOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteChannelMessageOutput`](crate::output::DeleteChannelMessageOutput).
-    pub fn builder() -> crate::output::delete_channel_message_output::Builder {
-        crate::output::delete_channel_message_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3227,6 +3262,13 @@ impl aws_http::request_id::RequestId for DeleteChannelMembershipOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteChannelMembershipOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteChannelMembershipOutput`](crate::output::DeleteChannelMembershipOutput).
+    pub fn builder() -> crate::output::delete_channel_membership_output::Builder {
+        crate::output::delete_channel_membership_output::Builder::default()
+    }
+}
+
 /// See [`DeleteChannelMembershipOutput`](crate::output::DeleteChannelMembershipOutput).
 pub mod delete_channel_membership_output {
 
@@ -3254,12 +3296,6 @@ pub mod delete_channel_membership_output {
         }
     }
 }
-impl DeleteChannelMembershipOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteChannelMembershipOutput`](crate::output::DeleteChannelMembershipOutput).
-    pub fn builder() -> crate::output::delete_channel_membership_output::Builder {
-        crate::output::delete_channel_membership_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3272,6 +3308,13 @@ impl aws_http::request_id::RequestId for DeleteChannelFlowOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteChannelFlowOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteChannelFlowOutput`](crate::output::DeleteChannelFlowOutput).
+    pub fn builder() -> crate::output::delete_channel_flow_output::Builder {
+        crate::output::delete_channel_flow_output::Builder::default()
+    }
+}
+
 /// See [`DeleteChannelFlowOutput`](crate::output::DeleteChannelFlowOutput).
 pub mod delete_channel_flow_output {
 
@@ -3299,12 +3342,6 @@ pub mod delete_channel_flow_output {
         }
     }
 }
-impl DeleteChannelFlowOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteChannelFlowOutput`](crate::output::DeleteChannelFlowOutput).
-    pub fn builder() -> crate::output::delete_channel_flow_output::Builder {
-        crate::output::delete_channel_flow_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3317,6 +3354,13 @@ impl aws_http::request_id::RequestId for DeleteChannelBanOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteChannelBanOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteChannelBanOutput`](crate::output::DeleteChannelBanOutput).
+    pub fn builder() -> crate::output::delete_channel_ban_output::Builder {
+        crate::output::delete_channel_ban_output::Builder::default()
+    }
+}
+
 /// See [`DeleteChannelBanOutput`](crate::output::DeleteChannelBanOutput).
 pub mod delete_channel_ban_output {
 
@@ -3344,12 +3388,6 @@ pub mod delete_channel_ban_output {
         }
     }
 }
-impl DeleteChannelBanOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteChannelBanOutput`](crate::output::DeleteChannelBanOutput).
-    pub fn builder() -> crate::output::delete_channel_ban_output::Builder {
-        crate::output::delete_channel_ban_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3362,6 +3400,13 @@ impl aws_http::request_id::RequestId for DeleteChannelOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteChannelOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteChannelOutput`](crate::output::DeleteChannelOutput).
+    pub fn builder() -> crate::output::delete_channel_output::Builder {
+        crate::output::delete_channel_output::Builder::default()
+    }
+}
+
 /// See [`DeleteChannelOutput`](crate::output::DeleteChannelOutput).
 pub mod delete_channel_output {
 
@@ -3387,12 +3432,6 @@ pub mod delete_channel_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl DeleteChannelOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteChannelOutput`](crate::output::DeleteChannelOutput).
-    pub fn builder() -> crate::output::delete_channel_output::Builder {
-        crate::output::delete_channel_output::Builder::default()
     }
 }
 
@@ -3423,6 +3462,13 @@ impl aws_http::request_id::RequestId for CreateChannelModeratorOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateChannelModeratorOutput {
+    /// Creates a new builder-style object to manufacture [`CreateChannelModeratorOutput`](crate::output::CreateChannelModeratorOutput).
+    pub fn builder() -> crate::output::create_channel_moderator_output::Builder {
+        crate::output::create_channel_moderator_output::Builder::default()
+    }
+}
+
 /// See [`CreateChannelModeratorOutput`](crate::output::CreateChannelModeratorOutput).
 pub mod create_channel_moderator_output {
 
@@ -3477,12 +3523,6 @@ pub mod create_channel_moderator_output {
         }
     }
 }
-impl CreateChannelModeratorOutput {
-    /// Creates a new builder-style object to manufacture [`CreateChannelModeratorOutput`](crate::output::CreateChannelModeratorOutput).
-    pub fn builder() -> crate::output::create_channel_moderator_output::Builder {
-        crate::output::create_channel_moderator_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3518,6 +3558,13 @@ impl aws_http::request_id::RequestId for CreateChannelMembershipOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateChannelMembershipOutput {
+    /// Creates a new builder-style object to manufacture [`CreateChannelMembershipOutput`](crate::output::CreateChannelMembershipOutput).
+    pub fn builder() -> crate::output::create_channel_membership_output::Builder {
+        crate::output::create_channel_membership_output::Builder::default()
+    }
+}
+
 /// See [`CreateChannelMembershipOutput`](crate::output::CreateChannelMembershipOutput).
 pub mod create_channel_membership_output {
 
@@ -3584,12 +3631,6 @@ pub mod create_channel_membership_output {
         }
     }
 }
-impl CreateChannelMembershipOutput {
-    /// Creates a new builder-style object to manufacture [`CreateChannelMembershipOutput`](crate::output::CreateChannelMembershipOutput).
-    pub fn builder() -> crate::output::create_channel_membership_output::Builder {
-        crate::output::create_channel_membership_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3611,6 +3652,13 @@ impl aws_http::request_id::RequestId for CreateChannelFlowOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateChannelFlowOutput {
+    /// Creates a new builder-style object to manufacture [`CreateChannelFlowOutput`](crate::output::CreateChannelFlowOutput).
+    pub fn builder() -> crate::output::create_channel_flow_output::Builder {
+        crate::output::create_channel_flow_output::Builder::default()
+    }
+}
+
 /// See [`CreateChannelFlowOutput`](crate::output::CreateChannelFlowOutput).
 pub mod create_channel_flow_output {
 
@@ -3653,12 +3701,6 @@ pub mod create_channel_flow_output {
         }
     }
 }
-impl CreateChannelFlowOutput {
-    /// Creates a new builder-style object to manufacture [`CreateChannelFlowOutput`](crate::output::CreateChannelFlowOutput).
-    pub fn builder() -> crate::output::create_channel_flow_output::Builder {
-        crate::output::create_channel_flow_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3687,6 +3729,13 @@ impl aws_http::request_id::RequestId for CreateChannelBanOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateChannelBanOutput {
+    /// Creates a new builder-style object to manufacture [`CreateChannelBanOutput`](crate::output::CreateChannelBanOutput).
+    pub fn builder() -> crate::output::create_channel_ban_output::Builder {
+        crate::output::create_channel_ban_output::Builder::default()
+    }
+}
+
 /// See [`CreateChannelBanOutput`](crate::output::CreateChannelBanOutput).
 pub mod create_channel_ban_output {
 
@@ -3738,12 +3787,6 @@ pub mod create_channel_ban_output {
         }
     }
 }
-impl CreateChannelBanOutput {
-    /// Creates a new builder-style object to manufacture [`CreateChannelBanOutput`](crate::output::CreateChannelBanOutput).
-    pub fn builder() -> crate::output::create_channel_ban_output::Builder {
-        crate::output::create_channel_ban_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3765,6 +3808,13 @@ impl aws_http::request_id::RequestId for CreateChannelOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateChannelOutput {
+    /// Creates a new builder-style object to manufacture [`CreateChannelOutput`](crate::output::CreateChannelOutput).
+    pub fn builder() -> crate::output::create_channel_output::Builder {
+        crate::output::create_channel_output::Builder::default()
+    }
+}
+
 /// See [`CreateChannelOutput`](crate::output::CreateChannelOutput).
 pub mod create_channel_output {
 
@@ -3804,12 +3854,6 @@ pub mod create_channel_output {
         }
     }
 }
-impl CreateChannelOutput {
-    /// Creates a new builder-style object to manufacture [`CreateChannelOutput`](crate::output::CreateChannelOutput).
-    pub fn builder() -> crate::output::create_channel_output::Builder {
-        crate::output::create_channel_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3838,6 +3882,13 @@ impl aws_http::request_id::RequestId for ChannelFlowCallbackOutput {
         self._request_id.as_deref()
     }
 }
+impl ChannelFlowCallbackOutput {
+    /// Creates a new builder-style object to manufacture [`ChannelFlowCallbackOutput`](crate::output::ChannelFlowCallbackOutput).
+    pub fn builder() -> crate::output::channel_flow_callback_output::Builder {
+        crate::output::channel_flow_callback_output::Builder::default()
+    }
+}
+
 /// See [`ChannelFlowCallbackOutput`](crate::output::ChannelFlowCallbackOutput).
 pub mod channel_flow_callback_output {
 
@@ -3889,12 +3940,6 @@ pub mod channel_flow_callback_output {
         }
     }
 }
-impl ChannelFlowCallbackOutput {
-    /// Creates a new builder-style object to manufacture [`ChannelFlowCallbackOutput`](crate::output::ChannelFlowCallbackOutput).
-    pub fn builder() -> crate::output::channel_flow_callback_output::Builder {
-        crate::output::channel_flow_callback_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3927,6 +3972,13 @@ impl aws_http::request_id::RequestId for BatchCreateChannelMembershipOutput {
         self._request_id.as_deref()
     }
 }
+impl BatchCreateChannelMembershipOutput {
+    /// Creates a new builder-style object to manufacture [`BatchCreateChannelMembershipOutput`](crate::output::BatchCreateChannelMembershipOutput).
+    pub fn builder() -> crate::output::batch_create_channel_membership_output::Builder {
+        crate::output::batch_create_channel_membership_output::Builder::default()
+    }
+}
+
 /// See [`BatchCreateChannelMembershipOutput`](crate::output::BatchCreateChannelMembershipOutput).
 pub mod batch_create_channel_membership_output {
 
@@ -3997,12 +4049,6 @@ pub mod batch_create_channel_membership_output {
         }
     }
 }
-impl BatchCreateChannelMembershipOutput {
-    /// Creates a new builder-style object to manufacture [`BatchCreateChannelMembershipOutput`](crate::output::BatchCreateChannelMembershipOutput).
-    pub fn builder() -> crate::output::batch_create_channel_membership_output::Builder {
-        crate::output::batch_create_channel_membership_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -4015,6 +4061,13 @@ impl aws_http::request_id::RequestId for AssociateChannelFlowOutput {
         self._request_id.as_deref()
     }
 }
+impl AssociateChannelFlowOutput {
+    /// Creates a new builder-style object to manufacture [`AssociateChannelFlowOutput`](crate::output::AssociateChannelFlowOutput).
+    pub fn builder() -> crate::output::associate_channel_flow_output::Builder {
+        crate::output::associate_channel_flow_output::Builder::default()
+    }
+}
+
 /// See [`AssociateChannelFlowOutput`](crate::output::AssociateChannelFlowOutput).
 pub mod associate_channel_flow_output {
 
@@ -4040,11 +4093,5 @@ pub mod associate_channel_flow_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl AssociateChannelFlowOutput {
-    /// Creates a new builder-style object to manufacture [`AssociateChannelFlowOutput`](crate::output::AssociateChannelFlowOutput).
-    pub fn builder() -> crate::output::associate_channel_flow_output::Builder {
-        crate::output::associate_channel_flow_output::Builder::default()
     }
 }

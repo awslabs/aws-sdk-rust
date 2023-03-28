@@ -111,6 +111,13 @@ impl ResolverRule {
         self.modification_time.as_deref()
     }
 }
+impl ResolverRule {
+    /// Creates a new builder-style object to manufacture [`ResolverRule`](crate::model::ResolverRule).
+    pub fn builder() -> crate::model::resolver_rule::Builder {
+        crate::model::resolver_rule::Builder::default()
+    }
+}
+
 /// See [`ResolverRule`](crate::model::ResolverRule).
 pub mod resolver_rule {
 
@@ -334,12 +341,6 @@ pub mod resolver_rule {
         }
     }
 }
-impl ResolverRule {
-    /// Creates a new builder-style object to manufacture [`ResolverRule`](crate::model::ResolverRule).
-    pub fn builder() -> crate::model::resolver_rule::Builder {
-        crate::model::resolver_rule::Builder::default()
-    }
-}
 
 /// When writing a match expression against `ShareStatus`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -457,6 +458,13 @@ impl TargetAddress {
         self.port
     }
 }
+impl TargetAddress {
+    /// Creates a new builder-style object to manufacture [`TargetAddress`](crate::model::TargetAddress).
+    pub fn builder() -> crate::model::target_address::Builder {
+        crate::model::target_address::Builder::default()
+    }
+}
+
 /// See [`TargetAddress`](crate::model::TargetAddress).
 pub mod target_address {
 
@@ -495,12 +503,6 @@ pub mod target_address {
                 port: self.port,
             }
         }
-    }
-}
-impl TargetAddress {
-    /// Creates a new builder-style object to manufacture [`TargetAddress`](crate::model::TargetAddress).
-    pub fn builder() -> crate::model::target_address::Builder {
-        crate::model::target_address::Builder::default()
     }
 }
 
@@ -729,6 +731,13 @@ impl ResolverRuleConfig {
         self.resolver_endpoint_id.as_deref()
     }
 }
+impl ResolverRuleConfig {
+    /// Creates a new builder-style object to manufacture [`ResolverRuleConfig`](crate::model::ResolverRuleConfig).
+    pub fn builder() -> crate::model::resolver_rule_config::Builder {
+        crate::model::resolver_rule_config::Builder::default()
+    }
+}
+
 /// See [`ResolverRuleConfig`](crate::model::ResolverRuleConfig).
 pub mod resolver_rule_config {
 
@@ -791,12 +800,6 @@ pub mod resolver_rule_config {
                 resolver_endpoint_id: self.resolver_endpoint_id,
             }
         }
-    }
-}
-impl ResolverRuleConfig {
-    /// Creates a new builder-style object to manufacture [`ResolverRuleConfig`](crate::model::ResolverRuleConfig).
-    pub fn builder() -> crate::model::resolver_rule_config::Builder {
-        crate::model::resolver_rule_config::Builder::default()
     }
 }
 
@@ -923,6 +926,13 @@ impl ResolverEndpoint {
         self.modification_time.as_deref()
     }
 }
+impl ResolverEndpoint {
+    /// Creates a new builder-style object to manufacture [`ResolverEndpoint`](crate::model::ResolverEndpoint).
+    pub fn builder() -> crate::model::resolver_endpoint::Builder {
+        crate::model::resolver_endpoint::Builder::default()
+    }
+}
+
 /// See [`ResolverEndpoint`](crate::model::ResolverEndpoint).
 pub mod resolver_endpoint {
 
@@ -1140,12 +1150,6 @@ pub mod resolver_endpoint {
                 modification_time: self.modification_time,
             }
         }
-    }
-}
-impl ResolverEndpoint {
-    /// Creates a new builder-style object to manufacture [`ResolverEndpoint`](crate::model::ResolverEndpoint).
-    pub fn builder() -> crate::model::resolver_endpoint::Builder {
-        crate::model::resolver_endpoint::Builder::default()
     }
 }
 
@@ -1409,6 +1413,13 @@ impl ResolverDnssecConfig {
         self.validation_status.as_ref()
     }
 }
+impl ResolverDnssecConfig {
+    /// Creates a new builder-style object to manufacture [`ResolverDnssecConfig`](crate::model::ResolverDnssecConfig).
+    pub fn builder() -> crate::model::resolver_dnssec_config::Builder {
+        crate::model::resolver_dnssec_config::Builder::default()
+    }
+}
+
 /// See [`ResolverDnssecConfig`](crate::model::ResolverDnssecConfig).
 pub mod resolver_dnssec_config {
 
@@ -1490,12 +1501,6 @@ pub mod resolver_dnssec_config {
                 validation_status: self.validation_status,
             }
         }
-    }
-}
-impl ResolverDnssecConfig {
-    /// Creates a new builder-style object to manufacture [`ResolverDnssecConfig`](crate::model::ResolverDnssecConfig).
-    pub fn builder() -> crate::model::resolver_dnssec_config::Builder {
-        crate::model::resolver_dnssec_config::Builder::default()
     }
 }
 
@@ -1742,6 +1747,13 @@ impl ResolverConfig {
         self.autodefined_reverse.as_ref()
     }
 }
+impl ResolverConfig {
+    /// Creates a new builder-style object to manufacture [`ResolverConfig`](crate::model::ResolverConfig).
+    pub fn builder() -> crate::model::resolver_config::Builder {
+        crate::model::resolver_config::Builder::default()
+    }
+}
+
 /// See [`ResolverConfig`](crate::model::ResolverConfig).
 pub mod resolver_config {
 
@@ -1825,12 +1837,6 @@ pub mod resolver_config {
                 autodefined_reverse: self.autodefined_reverse,
             }
         }
-    }
-}
-impl ResolverConfig {
-    /// Creates a new builder-style object to manufacture [`ResolverConfig`](crate::model::ResolverConfig).
-    pub fn builder() -> crate::model::resolver_config::Builder {
-        crate::model::resolver_config::Builder::default()
     }
 }
 
@@ -2128,6 +2134,13 @@ impl FirewallRuleGroupAssociation {
         self.modification_time.as_deref()
     }
 }
+impl FirewallRuleGroupAssociation {
+    /// Creates a new builder-style object to manufacture [`FirewallRuleGroupAssociation`](crate::model::FirewallRuleGroupAssociation).
+    pub fn builder() -> crate::model::firewall_rule_group_association::Builder {
+        crate::model::firewall_rule_group_association::Builder::default()
+    }
+}
+
 /// See [`FirewallRuleGroupAssociation`](crate::model::FirewallRuleGroupAssociation).
 pub mod firewall_rule_group_association {
 
@@ -2325,12 +2338,6 @@ pub mod firewall_rule_group_association {
                 modification_time: self.modification_time,
             }
         }
-    }
-}
-impl FirewallRuleGroupAssociation {
-    /// Creates a new builder-style object to manufacture [`FirewallRuleGroupAssociation`](crate::model::FirewallRuleGroupAssociation).
-    pub fn builder() -> crate::model::firewall_rule_group_association::Builder {
-        crate::model::firewall_rule_group_association::Builder::default()
     }
 }
 
@@ -2636,6 +2643,13 @@ impl FirewallRule {
         self.modification_time.as_deref()
     }
 }
+impl FirewallRule {
+    /// Creates a new builder-style object to manufacture [`FirewallRule`](crate::model::FirewallRule).
+    pub fn builder() -> crate::model::firewall_rule::Builder {
+        crate::model::firewall_rule::Builder::default()
+    }
+}
+
 /// See [`FirewallRule`](crate::model::FirewallRule).
 pub mod firewall_rule {
 
@@ -2841,12 +2855,6 @@ pub mod firewall_rule {
                 modification_time: self.modification_time,
             }
         }
-    }
-}
-impl FirewallRule {
-    /// Creates a new builder-style object to manufacture [`FirewallRule`](crate::model::FirewallRule).
-    pub fn builder() -> crate::model::firewall_rule::Builder {
-        crate::model::firewall_rule::Builder::default()
     }
 }
 
@@ -3382,6 +3390,13 @@ impl FirewallConfig {
         self.firewall_fail_open.as_ref()
     }
 }
+impl FirewallConfig {
+    /// Creates a new builder-style object to manufacture [`FirewallConfig`](crate::model::FirewallConfig).
+    pub fn builder() -> crate::model::firewall_config::Builder {
+        crate::model::firewall_config::Builder::default()
+    }
+}
+
 /// See [`FirewallConfig`](crate::model::FirewallConfig).
 pub mod firewall_config {
 
@@ -3457,12 +3472,6 @@ pub mod firewall_config {
                 firewall_fail_open: self.firewall_fail_open,
             }
         }
-    }
-}
-impl FirewallConfig {
-    /// Creates a new builder-style object to manufacture [`FirewallConfig`](crate::model::FirewallConfig).
-    pub fn builder() -> crate::model::firewall_config::Builder {
-        crate::model::firewall_config::Builder::default()
     }
 }
 
@@ -3579,6 +3588,13 @@ impl Tag {
         self.value.as_deref()
     }
 }
+impl Tag {
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
+    pub fn builder() -> crate::model::tag::Builder {
+        crate::model::tag::Builder::default()
+    }
+}
+
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
 
@@ -3617,12 +3633,6 @@ pub mod tag {
                 value: self.value,
             }
         }
-    }
-}
-impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
-    pub fn builder() -> crate::model::tag::Builder {
-        crate::model::tag::Builder::default()
     }
 }
 
@@ -3776,6 +3786,13 @@ impl Filter {
         self.values.as_deref()
     }
 }
+impl Filter {
+    /// Creates a new builder-style object to manufacture [`Filter`](crate::model::Filter).
+    pub fn builder() -> crate::model::filter::Builder {
+        crate::model::filter::Builder::default()
+    }
+}
+
 /// See [`Filter`](crate::model::Filter).
 pub mod filter {
 
@@ -3953,12 +3970,6 @@ pub mod filter {
         }
     }
 }
-impl Filter {
-    /// Creates a new builder-style object to manufacture [`Filter`](crate::model::Filter).
-    pub fn builder() -> crate::model::filter::Builder {
-        crate::model::filter::Builder::default()
-    }
-}
 
 /// <p>In the response to an <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_AssociateResolverRule.html">AssociateResolverRule</a>, <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_DisassociateResolverRule.html">DisassociateResolverRule</a>, or <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverRuleAssociations.html">ListResolverRuleAssociations</a> request, provides information about an association between a Resolver rule and a VPC. The association determines which DNS queries that originate in the VPC are forwarded to your network. </p>
 #[non_exhaustive]
@@ -4009,6 +4020,13 @@ impl ResolverRuleAssociation {
         self.status_message.as_deref()
     }
 }
+impl ResolverRuleAssociation {
+    /// Creates a new builder-style object to manufacture [`ResolverRuleAssociation`](crate::model::ResolverRuleAssociation).
+    pub fn builder() -> crate::model::resolver_rule_association::Builder {
+        crate::model::resolver_rule_association::Builder::default()
+    }
+}
+
 /// See [`ResolverRuleAssociation`](crate::model::ResolverRuleAssociation).
 pub mod resolver_rule_association {
 
@@ -4104,12 +4122,6 @@ pub mod resolver_rule_association {
                 status_message: self.status_message,
             }
         }
-    }
-}
-impl ResolverRuleAssociation {
-    /// Creates a new builder-style object to manufacture [`ResolverRuleAssociation`](crate::model::ResolverRuleAssociation).
-    pub fn builder() -> crate::model::resolver_rule_association::Builder {
-        crate::model::resolver_rule_association::Builder::default()
     }
 }
 
@@ -4317,6 +4329,13 @@ impl ResolverQueryLogConfig {
         self.creation_time.as_deref()
     }
 }
+impl ResolverQueryLogConfig {
+    /// Creates a new builder-style object to manufacture [`ResolverQueryLogConfig`](crate::model::ResolverQueryLogConfig).
+    pub fn builder() -> crate::model::resolver_query_log_config::Builder {
+        crate::model::resolver_query_log_config::Builder::default()
+    }
+}
+
 /// See [`ResolverQueryLogConfig`](crate::model::ResolverQueryLogConfig).
 pub mod resolver_query_log_config {
 
@@ -4486,12 +4505,6 @@ pub mod resolver_query_log_config {
                 creation_time: self.creation_time,
             }
         }
-    }
-}
-impl ResolverQueryLogConfig {
-    /// Creates a new builder-style object to manufacture [`ResolverQueryLogConfig`](crate::model::ResolverQueryLogConfig).
-    pub fn builder() -> crate::model::resolver_query_log_config::Builder {
-        crate::model::resolver_query_log_config::Builder::default()
     }
 }
 
@@ -4769,6 +4782,13 @@ impl ResolverQueryLogConfigAssociation {
         self.creation_time.as_deref()
     }
 }
+impl ResolverQueryLogConfigAssociation {
+    /// Creates a new builder-style object to manufacture [`ResolverQueryLogConfigAssociation`](crate::model::ResolverQueryLogConfigAssociation).
+    pub fn builder() -> crate::model::resolver_query_log_config_association::Builder {
+        crate::model::resolver_query_log_config_association::Builder::default()
+    }
+}
+
 /// See [`ResolverQueryLogConfigAssociation`](crate::model::ResolverQueryLogConfigAssociation).
 pub mod resolver_query_log_config_association {
 
@@ -4914,12 +4934,6 @@ pub mod resolver_query_log_config_association {
                 creation_time: self.creation_time,
             }
         }
-    }
-}
-impl ResolverQueryLogConfigAssociation {
-    /// Creates a new builder-style object to manufacture [`ResolverQueryLogConfigAssociation`](crate::model::ResolverQueryLogConfigAssociation).
-    pub fn builder() -> crate::model::resolver_query_log_config_association::Builder {
-        crate::model::resolver_query_log_config_association::Builder::default()
     }
 }
 
@@ -5197,6 +5211,13 @@ impl IpAddressResponse {
         self.modification_time.as_deref()
     }
 }
+impl IpAddressResponse {
+    /// Creates a new builder-style object to manufacture [`IpAddressResponse`](crate::model::IpAddressResponse).
+    pub fn builder() -> crate::model::ip_address_response::Builder {
+        crate::model::ip_address_response::Builder::default()
+    }
+}
+
 /// See [`IpAddressResponse`](crate::model::IpAddressResponse).
 pub mod ip_address_response {
 
@@ -5307,12 +5328,6 @@ pub mod ip_address_response {
                 modification_time: self.modification_time,
             }
         }
-    }
-}
-impl IpAddressResponse {
-    /// Creates a new builder-style object to manufacture [`IpAddressResponse`](crate::model::IpAddressResponse).
-    pub fn builder() -> crate::model::ip_address_response::Builder {
-        crate::model::ip_address_response::Builder::default()
     }
 }
 
@@ -5507,6 +5522,13 @@ impl FirewallRuleGroupMetadata {
         self.share_status.as_ref()
     }
 }
+impl FirewallRuleGroupMetadata {
+    /// Creates a new builder-style object to manufacture [`FirewallRuleGroupMetadata`](crate::model::FirewallRuleGroupMetadata).
+    pub fn builder() -> crate::model::firewall_rule_group_metadata::Builder {
+        crate::model::firewall_rule_group_metadata::Builder::default()
+    }
+}
+
 /// See [`FirewallRuleGroupMetadata`](crate::model::FirewallRuleGroupMetadata).
 pub mod firewall_rule_group_metadata {
 
@@ -5601,12 +5623,6 @@ pub mod firewall_rule_group_metadata {
         }
     }
 }
-impl FirewallRuleGroupMetadata {
-    /// Creates a new builder-style object to manufacture [`FirewallRuleGroupMetadata`](crate::model::FirewallRuleGroupMetadata).
-    pub fn builder() -> crate::model::firewall_rule_group_metadata::Builder {
-        crate::model::firewall_rule_group_metadata::Builder::default()
-    }
-}
 
 /// <p>Minimal high-level information for a firewall domain list. The action <code>ListFirewallDomainLists</code> returns an array of these objects. </p>
 /// <p>To retrieve full information for a firewall domain list, call <code>GetFirewallDomainList</code> and <code>ListFirewallDomains</code>.</p>
@@ -5651,6 +5667,13 @@ impl FirewallDomainListMetadata {
         self.managed_owner_name.as_deref()
     }
 }
+impl FirewallDomainListMetadata {
+    /// Creates a new builder-style object to manufacture [`FirewallDomainListMetadata`](crate::model::FirewallDomainListMetadata).
+    pub fn builder() -> crate::model::firewall_domain_list_metadata::Builder {
+        crate::model::firewall_domain_list_metadata::Builder::default()
+    }
+}
+
 /// See [`FirewallDomainListMetadata`](crate::model::FirewallDomainListMetadata).
 pub mod firewall_domain_list_metadata {
 
@@ -5731,12 +5754,6 @@ pub mod firewall_domain_list_metadata {
                 managed_owner_name: self.managed_owner_name,
             }
         }
-    }
-}
-impl FirewallDomainListMetadata {
-    /// Creates a new builder-style object to manufacture [`FirewallDomainListMetadata`](crate::model::FirewallDomainListMetadata).
-    pub fn builder() -> crate::model::firewall_domain_list_metadata::Builder {
-        crate::model::firewall_domain_list_metadata::Builder::default()
     }
 }
 
@@ -5911,6 +5928,13 @@ impl FirewallRuleGroup {
         self.modification_time.as_deref()
     }
 }
+impl FirewallRuleGroup {
+    /// Creates a new builder-style object to manufacture [`FirewallRuleGroup`](crate::model::FirewallRuleGroup).
+    pub fn builder() -> crate::model::firewall_rule_group::Builder {
+        crate::model::firewall_rule_group::Builder::default()
+    }
+}
+
 /// See [`FirewallRuleGroup`](crate::model::FirewallRuleGroup).
 pub mod firewall_rule_group {
 
@@ -6075,12 +6099,6 @@ pub mod firewall_rule_group {
                 modification_time: self.modification_time,
             }
         }
-    }
-}
-impl FirewallRuleGroup {
-    /// Creates a new builder-style object to manufacture [`FirewallRuleGroup`](crate::model::FirewallRuleGroup).
-    pub fn builder() -> crate::model::firewall_rule_group::Builder {
-        crate::model::firewall_rule_group::Builder::default()
     }
 }
 
@@ -6259,6 +6277,13 @@ impl FirewallDomainList {
         self.modification_time.as_deref()
     }
 }
+impl FirewallDomainList {
+    /// Creates a new builder-style object to manufacture [`FirewallDomainList`](crate::model::FirewallDomainList).
+    pub fn builder() -> crate::model::firewall_domain_list::Builder {
+        crate::model::firewall_domain_list::Builder::default()
+    }
+}
+
 /// See [`FirewallDomainList`](crate::model::FirewallDomainList).
 pub mod firewall_domain_list {
 
@@ -6413,12 +6438,6 @@ pub mod firewall_domain_list {
         }
     }
 }
-impl FirewallDomainList {
-    /// Creates a new builder-style object to manufacture [`FirewallDomainList`](crate::model::FirewallDomainList).
-    pub fn builder() -> crate::model::firewall_domain_list::Builder {
-        crate::model::firewall_domain_list::Builder::default()
-    }
-}
 
 /// <p>In an <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_UpdateResolverEndpoint.html">UpdateResolverEndpoint</a> request, information about an IP address to update.</p>
 #[non_exhaustive]
@@ -6448,6 +6467,13 @@ impl IpAddressUpdate {
         self.ip.as_deref()
     }
 }
+impl IpAddressUpdate {
+    /// Creates a new builder-style object to manufacture [`IpAddressUpdate`](crate::model::IpAddressUpdate).
+    pub fn builder() -> crate::model::ip_address_update::Builder {
+        crate::model::ip_address_update::Builder::default()
+    }
+}
+
 /// See [`IpAddressUpdate`](crate::model::IpAddressUpdate).
 pub mod ip_address_update {
 
@@ -6500,12 +6526,6 @@ pub mod ip_address_update {
         }
     }
 }
-impl IpAddressUpdate {
-    /// Creates a new builder-style object to manufacture [`IpAddressUpdate`](crate::model::IpAddressUpdate).
-    pub fn builder() -> crate::model::ip_address_update::Builder {
-        crate::model::ip_address_update::Builder::default()
-    }
-}
 
 /// <p>In a <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_CreateResolverEndpoint.html">CreateResolverEndpoint</a> request, the IP address that DNS queries originate from (for outbound endpoints) or that you forward DNS queries to (for inbound endpoints). <code>IpAddressRequest</code> also includes the ID of the subnet that contains the IP address.</p>
 #[non_exhaustive]
@@ -6528,6 +6548,13 @@ impl IpAddressRequest {
         self.ip.as_deref()
     }
 }
+impl IpAddressRequest {
+    /// Creates a new builder-style object to manufacture [`IpAddressRequest`](crate::model::IpAddressRequest).
+    pub fn builder() -> crate::model::ip_address_request::Builder {
+        crate::model::ip_address_request::Builder::default()
+    }
+}
+
 /// See [`IpAddressRequest`](crate::model::IpAddressRequest).
 pub mod ip_address_request {
 
@@ -6566,11 +6593,5 @@ pub mod ip_address_request {
                 ip: self.ip,
             }
         }
-    }
-}
-impl IpAddressRequest {
-    /// Creates a new builder-style object to manufacture [`IpAddressRequest`](crate::model::IpAddressRequest).
-    pub fn builder() -> crate::model::ip_address_request::Builder {
-        crate::model::ip_address_request::Builder::default()
     }
 }

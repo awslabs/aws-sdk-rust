@@ -4,7 +4,7 @@
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`associate_default_view`](crate::client::Client::associate_default_view).
 ///
-/// See [`crate::client::fluent_builders::AssociateDefaultView`] for more details about the operation.
+/// `ParseStrictResponse` impl for `AssociateDefaultView`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct AssociateDefaultView {
     _private: (),
@@ -39,7 +39,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateDefaultView {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`batch_get_view`](crate::client::Client::batch_get_view).
 ///
-/// See [`crate::client::fluent_builders::BatchGetView`] for more details about the operation.
+/// `ParseStrictResponse` impl for `BatchGetView`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct BatchGetView {
     _private: (),
@@ -72,7 +72,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchGetView {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`create_index`](crate::client::Client::create_index).
 ///
-/// See [`crate::client::fluent_builders::CreateIndex`] for more details about the operation.
+/// `ParseStrictResponse` impl for `CreateIndex`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateIndex {
     _private: (),
@@ -105,7 +105,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateIndex {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`create_view`](crate::client::Client::create_view).
 ///
-/// See [`crate::client::fluent_builders::CreateView`] for more details about the operation.
+/// `ParseStrictResponse` impl for `CreateView`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateView {
     _private: (),
@@ -138,7 +138,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateView {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`delete_index`](crate::client::Client::delete_index).
 ///
-/// See [`crate::client::fluent_builders::DeleteIndex`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DeleteIndex`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteIndex {
     _private: (),
@@ -171,7 +171,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteIndex {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`delete_view`](crate::client::Client::delete_view).
 ///
-/// See [`crate::client::fluent_builders::DeleteView`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DeleteView`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteView {
     _private: (),
@@ -204,7 +204,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteView {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`disassociate_default_view`](crate::client::Client::disassociate_default_view).
 ///
-/// See [`crate::client::fluent_builders::DisassociateDefaultView`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DisassociateDefaultView`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DisassociateDefaultView {
     _private: (),
@@ -239,7 +239,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateDefaultView 
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`get_default_view`](crate::client::Client::get_default_view).
 ///
-/// See [`crate::client::fluent_builders::GetDefaultView`] for more details about the operation.
+/// `ParseStrictResponse` impl for `GetDefaultView`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetDefaultView {
     _private: (),
@@ -272,7 +272,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDefaultView {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`get_index`](crate::client::Client::get_index).
 ///
-/// See [`crate::client::fluent_builders::GetIndex`] for more details about the operation.
+/// `ParseStrictResponse` impl for `GetIndex`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetIndex {
     _private: (),
@@ -304,7 +304,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetIndex {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`get_view`](crate::client::Client::get_view).
 ///
-/// See [`crate::client::fluent_builders::GetView`] for more details about the operation.
+/// `ParseStrictResponse` impl for `GetView`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetView {
     _private: (),
@@ -336,7 +336,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetView {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_indexes`](crate::client::Client::list_indexes).
 ///
-/// See [`crate::client::fluent_builders::ListIndexes`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListIndexes`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListIndexes {
     _private: (),
@@ -369,7 +369,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListIndexes {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_supported_resource_types`](crate::client::Client::list_supported_resource_types).
 ///
-/// See [`crate::client::fluent_builders::ListSupportedResourceTypes`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListSupportedResourceTypes`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListSupportedResourceTypes {
     _private: (),
@@ -404,7 +404,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListSupportedResourceTyp
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
 ///
-/// See [`crate::client::fluent_builders::ListTagsForResource`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTagsForResource {
     _private: (),
@@ -439,7 +439,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_views`](crate::client::Client::list_views).
 ///
-/// See [`crate::client::fluent_builders::ListViews`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListViews`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListViews {
     _private: (),
@@ -471,7 +471,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListViews {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`search`](crate::client::Client::search).
 ///
-/// See [`crate::client::fluent_builders::Search`] for more details about the operation.
+/// `ParseStrictResponse` impl for `Search`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct Search {
     _private: (),
@@ -503,7 +503,7 @@ impl aws_smithy_http::response::ParseStrictResponse for Search {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`tag_resource`](crate::client::Client::tag_resource).
 ///
-/// See [`crate::client::fluent_builders::TagResource`] for more details about the operation.
+/// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct TagResource {
     _private: (),
@@ -536,7 +536,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`untag_resource`](crate::client::Client::untag_resource).
 ///
-/// See [`crate::client::fluent_builders::UntagResource`] for more details about the operation.
+/// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UntagResource {
     _private: (),
@@ -569,7 +569,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`update_index_type`](crate::client::Client::update_index_type).
 ///
-/// See [`crate::client::fluent_builders::UpdateIndexType`] for more details about the operation.
+/// `ParseStrictResponse` impl for `UpdateIndexType`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateIndexType {
     _private: (),
@@ -604,7 +604,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateIndexType {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`update_view`](crate::client::Client::update_view).
 ///
-/// See [`crate::client::fluent_builders::UpdateView`] for more details about the operation.
+/// `ParseStrictResponse` impl for `UpdateView`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateView {
     _private: (),

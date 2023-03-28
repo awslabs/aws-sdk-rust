@@ -133,6 +133,13 @@ impl LedgerEncryptionDescription {
         self.inaccessible_kms_key_date_time.as_ref()
     }
 }
+impl LedgerEncryptionDescription {
+    /// Creates a new builder-style object to manufacture [`LedgerEncryptionDescription`](crate::model::LedgerEncryptionDescription).
+    pub fn builder() -> crate::model::ledger_encryption_description::Builder {
+        crate::model::ledger_encryption_description::Builder::default()
+    }
+}
+
 /// See [`LedgerEncryptionDescription`](crate::model::LedgerEncryptionDescription).
 pub mod ledger_encryption_description {
 
@@ -201,12 +208,6 @@ pub mod ledger_encryption_description {
                 inaccessible_kms_key_date_time: self.inaccessible_kms_key_date_time,
             }
         }
-    }
-}
-impl LedgerEncryptionDescription {
-    /// Creates a new builder-style object to manufacture [`LedgerEncryptionDescription`](crate::model::LedgerEncryptionDescription).
-    pub fn builder() -> crate::model::ledger_encryption_description::Builder {
-        crate::model::ledger_encryption_description::Builder::default()
     }
 }
 
@@ -428,6 +429,13 @@ impl KinesisConfiguration {
         self.aggregation_enabled
     }
 }
+impl KinesisConfiguration {
+    /// Creates a new builder-style object to manufacture [`KinesisConfiguration`](crate::model::KinesisConfiguration).
+    pub fn builder() -> crate::model::kinesis_configuration::Builder {
+        crate::model::kinesis_configuration::Builder::default()
+    }
+}
+
 /// See [`KinesisConfiguration`](crate::model::KinesisConfiguration).
 pub mod kinesis_configuration {
 
@@ -470,12 +478,6 @@ pub mod kinesis_configuration {
         }
     }
 }
-impl KinesisConfiguration {
-    /// Creates a new builder-style object to manufacture [`KinesisConfiguration`](crate::model::KinesisConfiguration).
-    pub fn builder() -> crate::model::kinesis_configuration::Builder {
-        crate::model::kinesis_configuration::Builder::default()
-    }
-}
 
 /// <p>Information about a ledger, including its name, state, and when it was created.</p>
 #[non_exhaustive]
@@ -505,6 +507,13 @@ impl LedgerSummary {
         self.creation_date_time.as_ref()
     }
 }
+impl LedgerSummary {
+    /// Creates a new builder-style object to manufacture [`LedgerSummary`](crate::model::LedgerSummary).
+    pub fn builder() -> crate::model::ledger_summary::Builder {
+        crate::model::ledger_summary::Builder::default()
+    }
+}
+
 /// See [`LedgerSummary`](crate::model::LedgerSummary).
 pub mod ledger_summary {
 
@@ -558,12 +567,6 @@ pub mod ledger_summary {
                 creation_date_time: self.creation_date_time,
             }
         }
-    }
-}
-impl LedgerSummary {
-    /// Creates a new builder-style object to manufacture [`LedgerSummary`](crate::model::LedgerSummary).
-    pub fn builder() -> crate::model::ledger_summary::Builder {
-        crate::model::ledger_summary::Builder::default()
     }
 }
 
@@ -647,6 +650,13 @@ impl JournalS3ExportDescription {
         self.output_format.as_ref()
     }
 }
+impl JournalS3ExportDescription {
+    /// Creates a new builder-style object to manufacture [`JournalS3ExportDescription`](crate::model::JournalS3ExportDescription).
+    pub fn builder() -> crate::model::journal_s3_export_description::Builder {
+        crate::model::journal_s3_export_description::Builder::default()
+    }
+}
+
 /// See [`JournalS3ExportDescription`](crate::model::JournalS3ExportDescription).
 pub mod journal_s3_export_description {
 
@@ -801,12 +811,6 @@ pub mod journal_s3_export_description {
         }
     }
 }
-impl JournalS3ExportDescription {
-    /// Creates a new builder-style object to manufacture [`JournalS3ExportDescription`](crate::model::JournalS3ExportDescription).
-    pub fn builder() -> crate::model::journal_s3_export_description::Builder {
-        crate::model::journal_s3_export_description::Builder::default()
-    }
-}
 
 /// When writing a match expression against `OutputFormat`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -949,6 +953,13 @@ impl S3ExportConfiguration {
         self.encryption_configuration.as_ref()
     }
 }
+impl S3ExportConfiguration {
+    /// Creates a new builder-style object to manufacture [`S3ExportConfiguration`](crate::model::S3ExportConfiguration).
+    pub fn builder() -> crate::model::s3_export_configuration::Builder {
+        crate::model::s3_export_configuration::Builder::default()
+    }
+}
+
 /// See [`S3ExportConfiguration`](crate::model::S3ExportConfiguration).
 pub mod s3_export_configuration {
 
@@ -1024,12 +1035,6 @@ pub mod s3_export_configuration {
         }
     }
 }
-impl S3ExportConfiguration {
-    /// Creates a new builder-style object to manufacture [`S3ExportConfiguration`](crate::model::S3ExportConfiguration).
-    pub fn builder() -> crate::model::s3_export_configuration::Builder {
-        crate::model::s3_export_configuration::Builder::default()
-    }
-}
 
 /// <p>The encryption settings that are used by a journal export job to write data in an Amazon Simple Storage Service (Amazon S3) bucket.</p>
 #[non_exhaustive]
@@ -1060,6 +1065,13 @@ impl S3EncryptionConfiguration {
         self.kms_key_arn.as_deref()
     }
 }
+impl S3EncryptionConfiguration {
+    /// Creates a new builder-style object to manufacture [`S3EncryptionConfiguration`](crate::model::S3EncryptionConfiguration).
+    pub fn builder() -> crate::model::s3_encryption_configuration::Builder {
+        crate::model::s3_encryption_configuration::Builder::default()
+    }
+}
+
 /// See [`S3EncryptionConfiguration`](crate::model::S3EncryptionConfiguration).
 pub mod s3_encryption_configuration {
 
@@ -1111,12 +1123,6 @@ pub mod s3_encryption_configuration {
                 kms_key_arn: self.kms_key_arn,
             }
         }
-    }
-}
-impl S3EncryptionConfiguration {
-    /// Creates a new builder-style object to manufacture [`S3EncryptionConfiguration`](crate::model::S3EncryptionConfiguration).
-    pub fn builder() -> crate::model::s3_encryption_configuration::Builder {
-        crate::model::s3_encryption_configuration::Builder::default()
     }
 }
 
@@ -1398,6 +1404,13 @@ impl JournalKinesisStreamDescription {
         self.stream_name.as_deref()
     }
 }
+impl JournalKinesisStreamDescription {
+    /// Creates a new builder-style object to manufacture [`JournalKinesisStreamDescription`](crate::model::JournalKinesisStreamDescription).
+    pub fn builder() -> crate::model::journal_kinesis_stream_description::Builder {
+        crate::model::journal_kinesis_stream_description::Builder::default()
+    }
+}
+
 /// See [`JournalKinesisStreamDescription`](crate::model::JournalKinesisStreamDescription).
 pub mod journal_kinesis_stream_description {
 
@@ -1562,12 +1575,6 @@ pub mod journal_kinesis_stream_description {
                 stream_name: self.stream_name,
             }
         }
-    }
-}
-impl JournalKinesisStreamDescription {
-    /// Creates a new builder-style object to manufacture [`JournalKinesisStreamDescription`](crate::model::JournalKinesisStreamDescription).
-    pub fn builder() -> crate::model::journal_kinesis_stream_description::Builder {
-        crate::model::journal_kinesis_stream_description::Builder::default()
     }
 }
 
@@ -1787,6 +1794,13 @@ impl std::fmt::Debug for ValueHolder {
         formatter.finish()
     }
 }
+impl ValueHolder {
+    /// Creates a new builder-style object to manufacture [`ValueHolder`](crate::model::ValueHolder).
+    pub fn builder() -> crate::model::value_holder::Builder {
+        crate::model::value_holder::Builder::default()
+    }
+}
+
 /// See [`ValueHolder`](crate::model::ValueHolder).
 pub mod value_holder {
 
@@ -1820,11 +1834,5 @@ pub mod value_holder {
             formatter.field("ion_text", &"*** Sensitive Data Redacted ***");
             formatter.finish()
         }
-    }
-}
-impl ValueHolder {
-    /// Creates a new builder-style object to manufacture [`ValueHolder`](crate::model::ValueHolder).
-    pub fn builder() -> crate::model::value_holder::Builder {
-        crate::model::value_holder::Builder::default()
     }
 }

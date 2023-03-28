@@ -4,7 +4,7 @@
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`complete_snapshot`](crate::client::Client::complete_snapshot).
 ///
-/// See [`crate::client::fluent_builders::CompleteSnapshot`] for more details about the operation.
+/// `ParseStrictResponse` impl for `CompleteSnapshot`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CompleteSnapshot {
     _private: (),
@@ -139,7 +139,7 @@ mod complete_snapshot_request_test {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`get_snapshot_block`](crate::client::Client::get_snapshot_block).
 ///
-/// See [`crate::client::fluent_builders::GetSnapshotBlock`] for more details about the operation.
+/// `ParseStrictResponse` impl for `GetSnapshotBlock`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetSnapshotBlock {
     _private: (),
@@ -280,7 +280,7 @@ mod get_snapshot_block_request_test {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_changed_blocks`](crate::client::Client::list_changed_blocks).
 ///
-/// See [`crate::client::fluent_builders::ListChangedBlocks`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListChangedBlocks`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListChangedBlocks {
     _private: (),
@@ -415,7 +415,7 @@ mod list_changed_blocks_request_test {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_snapshot_blocks`](crate::client::Client::list_snapshot_blocks).
 ///
-/// See [`crate::client::fluent_builders::ListSnapshotBlocks`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListSnapshotBlocks`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListSnapshotBlocks {
     _private: (),
@@ -550,7 +550,7 @@ mod list_snapshot_blocks_request_test {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`put_snapshot_block`](crate::client::Client::put_snapshot_block).
 ///
-/// See [`crate::client::fluent_builders::PutSnapshotBlock`] for more details about the operation.
+/// `ParseStrictResponse` impl for `PutSnapshotBlock`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutSnapshotBlock {
     _private: (),
@@ -685,7 +685,7 @@ mod put_snapshot_block_request_test {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`start_snapshot`](crate::client::Client::start_snapshot).
 ///
-/// See [`crate::client::fluent_builders::StartSnapshot`] for more details about the operation.
+/// `ParseStrictResponse` impl for `StartSnapshot`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StartSnapshot {
     _private: (),

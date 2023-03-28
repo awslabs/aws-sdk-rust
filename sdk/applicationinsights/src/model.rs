@@ -35,6 +35,13 @@ impl LogPattern {
         self.rank
     }
 }
+impl LogPattern {
+    /// Creates a new builder-style object to manufacture [`LogPattern`](crate::model::LogPattern).
+    pub fn builder() -> crate::model::log_pattern::Builder {
+        crate::model::log_pattern::Builder::default()
+    }
+}
+
 /// See [`LogPattern`](crate::model::LogPattern).
 pub mod log_pattern {
 
@@ -100,12 +107,6 @@ pub mod log_pattern {
                 rank: self.rank.unwrap_or_default(),
             }
         }
-    }
-}
-impl LogPattern {
-    /// Creates a new builder-style object to manufacture [`LogPattern`](crate::model::LogPattern).
-    pub fn builder() -> crate::model::log_pattern::Builder {
-        crate::model::log_pattern::Builder::default()
     }
 }
 
@@ -369,6 +370,13 @@ impl ApplicationInfo {
         self.discovery_type.as_ref()
     }
 }
+impl ApplicationInfo {
+    /// Creates a new builder-style object to manufacture [`ApplicationInfo`](crate::model::ApplicationInfo).
+    pub fn builder() -> crate::model::application_info::Builder {
+        crate::model::application_info::Builder::default()
+    }
+}
+
 /// See [`ApplicationInfo`](crate::model::ApplicationInfo).
 pub mod application_info {
 
@@ -498,12 +506,6 @@ pub mod application_info {
         }
     }
 }
-impl ApplicationInfo {
-    /// Creates a new builder-style object to manufacture [`ApplicationInfo`](crate::model::ApplicationInfo).
-    pub fn builder() -> crate::model::application_info::Builder {
-        crate::model::application_info::Builder::default()
-    }
-}
 
 /// When writing a match expression against `DiscoveryType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -622,6 +624,13 @@ impl Tag {
         self.value.as_deref()
     }
 }
+impl Tag {
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
+    pub fn builder() -> crate::model::tag::Builder {
+        crate::model::tag::Builder::default()
+    }
+}
+
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
 
@@ -660,12 +669,6 @@ pub mod tag {
                 value: self.value,
             }
         }
-    }
-}
-impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
-    pub fn builder() -> crate::model::tag::Builder {
-        crate::model::tag::Builder::default()
     }
 }
 
@@ -766,6 +769,13 @@ impl Problem {
         self.last_recurrence_time.as_ref()
     }
 }
+impl Problem {
+    /// Creates a new builder-style object to manufacture [`Problem`](crate::model::Problem).
+    pub fn builder() -> crate::model::problem::Builder {
+        crate::model::problem::Builder::default()
+    }
+}
+
 /// See [`Problem`](crate::model::Problem).
 pub mod problem {
 
@@ -959,12 +969,6 @@ pub mod problem {
                 last_recurrence_time: self.last_recurrence_time,
             }
         }
-    }
-}
-impl Problem {
-    /// Creates a new builder-style object to manufacture [`Problem`](crate::model::Problem).
-    pub fn builder() -> crate::model::problem::Builder {
-        crate::model::problem::Builder::default()
     }
 }
 
@@ -1399,6 +1403,13 @@ impl ConfigurationEvent {
         self.event_resource_name.as_deref()
     }
 }
+impl ConfigurationEvent {
+    /// Creates a new builder-style object to manufacture [`ConfigurationEvent`](crate::model::ConfigurationEvent).
+    pub fn builder() -> crate::model::configuration_event::Builder {
+        crate::model::configuration_event::Builder::default()
+    }
+}
+
 /// See [`ConfigurationEvent`](crate::model::ConfigurationEvent).
 pub mod configuration_event {
 
@@ -1504,12 +1515,6 @@ pub mod configuration_event {
                 event_resource_name: self.event_resource_name,
             }
         }
-    }
-}
-impl ConfigurationEvent {
-    /// Creates a new builder-style object to manufacture [`ConfigurationEvent`](crate::model::ConfigurationEvent).
-    pub fn builder() -> crate::model::configuration_event::Builder {
-        crate::model::configuration_event::Builder::default()
     }
 }
 
@@ -1785,6 +1790,13 @@ impl ApplicationComponent {
         self.detected_workload.as_ref()
     }
 }
+impl ApplicationComponent {
+    /// Creates a new builder-style object to manufacture [`ApplicationComponent`](crate::model::ApplicationComponent).
+    pub fn builder() -> crate::model::application_component::Builder {
+        crate::model::application_component::Builder::default()
+    }
+}
+
 /// See [`ApplicationComponent`](crate::model::ApplicationComponent).
 pub mod application_component {
 
@@ -1917,12 +1929,6 @@ pub mod application_component {
         }
     }
 }
-impl ApplicationComponent {
-    /// Creates a new builder-style object to manufacture [`ApplicationComponent`](crate::model::ApplicationComponent).
-    pub fn builder() -> crate::model::application_component::Builder {
-        crate::model::application_component::Builder::default()
-    }
-}
 
 /// When writing a match expression against `OsType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -2028,6 +2034,13 @@ impl RelatedObservations {
         self.observation_list.as_deref()
     }
 }
+impl RelatedObservations {
+    /// Creates a new builder-style object to manufacture [`RelatedObservations`](crate::model::RelatedObservations).
+    pub fn builder() -> crate::model::related_observations::Builder {
+        crate::model::related_observations::Builder::default()
+    }
+}
+
 /// See [`RelatedObservations`](crate::model::RelatedObservations).
 pub mod related_observations {
 
@@ -2063,12 +2076,6 @@ pub mod related_observations {
                 observation_list: self.observation_list,
             }
         }
-    }
-}
-impl RelatedObservations {
-    /// Creates a new builder-style object to manufacture [`RelatedObservations`](crate::model::RelatedObservations).
-    pub fn builder() -> crate::model::related_observations::Builder {
-        crate::model::related_observations::Builder::default()
     }
 }
 
@@ -2396,6 +2403,13 @@ impl Observation {
         self.x_ray_node_type.as_deref()
     }
 }
+impl Observation {
+    /// Creates a new builder-style object to manufacture [`Observation`](crate::model::Observation).
+    pub fn builder() -> crate::model::observation::Builder {
+        crate::model::observation::Builder::default()
+    }
+}
+
 /// See [`Observation`](crate::model::Observation).
 pub mod observation {
 
@@ -3044,12 +3058,6 @@ pub mod observation {
                 x_ray_node_type: self.x_ray_node_type,
             }
         }
-    }
-}
-impl Observation {
-    /// Creates a new builder-style object to manufacture [`Observation`](crate::model::Observation).
-    pub fn builder() -> crate::model::observation::Builder {
-        crate::model::observation::Builder::default()
     }
 }
 

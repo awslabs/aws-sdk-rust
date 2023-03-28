@@ -27,6 +27,13 @@ impl aws_http::request_id::RequestId for ViewBillingOutput {
         self._request_id.as_deref()
     }
 }
+impl ViewBillingOutput {
+    /// Creates a new builder-style object to manufacture [`ViewBillingOutput`](crate::output::ViewBillingOutput).
+    pub fn builder() -> crate::output::view_billing_output::Builder {
+        crate::output::view_billing_output::Builder::default()
+    }
+}
+
 /// See [`ViewBillingOutput`](crate::output::ViewBillingOutput).
 pub mod view_billing_output {
 
@@ -90,12 +97,6 @@ pub mod view_billing_output {
         }
     }
 }
-impl ViewBillingOutput {
-    /// Creates a new builder-style object to manufacture [`ViewBillingOutput`](crate::output::ViewBillingOutput).
-    pub fn builder() -> crate::output::view_billing_output::Builder {
-        crate::output::view_billing_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -108,6 +109,13 @@ impl aws_http::request_id::RequestId for UpdateTagsForDomainOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdateTagsForDomainOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateTagsForDomainOutput`](crate::output::UpdateTagsForDomainOutput).
+    pub fn builder() -> crate::output::update_tags_for_domain_output::Builder {
+        crate::output::update_tags_for_domain_output::Builder::default()
+    }
+}
+
 /// See [`UpdateTagsForDomainOutput`](crate::output::UpdateTagsForDomainOutput).
 pub mod update_tags_for_domain_output {
 
@@ -135,12 +143,6 @@ pub mod update_tags_for_domain_output {
         }
     }
 }
-impl UpdateTagsForDomainOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateTagsForDomainOutput`](crate::output::UpdateTagsForDomainOutput).
-    pub fn builder() -> crate::output::update_tags_for_domain_output::Builder {
-        crate::output::update_tags_for_domain_output::Builder::default()
-    }
-}
 
 /// <p>The UpdateDomainNameservers response includes the following element.</p>
 #[non_exhaustive]
@@ -162,6 +164,13 @@ impl aws_http::request_id::RequestId for UpdateDomainNameserversOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdateDomainNameserversOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateDomainNameserversOutput`](crate::output::UpdateDomainNameserversOutput).
+    pub fn builder() -> crate::output::update_domain_nameservers_output::Builder {
+        crate::output::update_domain_nameservers_output::Builder::default()
+    }
+}
+
 /// See [`UpdateDomainNameserversOutput`](crate::output::UpdateDomainNameserversOutput).
 pub mod update_domain_nameservers_output {
 
@@ -201,12 +210,6 @@ pub mod update_domain_nameservers_output {
         }
     }
 }
-impl UpdateDomainNameserversOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateDomainNameserversOutput`](crate::output::UpdateDomainNameserversOutput).
-    pub fn builder() -> crate::output::update_domain_nameservers_output::Builder {
-        crate::output::update_domain_nameservers_output::Builder::default()
-    }
-}
 
 /// <p>The UpdateDomainContactPrivacy response includes the following element.</p>
 #[non_exhaustive]
@@ -228,6 +231,13 @@ impl aws_http::request_id::RequestId for UpdateDomainContactPrivacyOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdateDomainContactPrivacyOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateDomainContactPrivacyOutput`](crate::output::UpdateDomainContactPrivacyOutput).
+    pub fn builder() -> crate::output::update_domain_contact_privacy_output::Builder {
+        crate::output::update_domain_contact_privacy_output::Builder::default()
+    }
+}
+
 /// See [`UpdateDomainContactPrivacyOutput`](crate::output::UpdateDomainContactPrivacyOutput).
 pub mod update_domain_contact_privacy_output {
 
@@ -267,12 +277,6 @@ pub mod update_domain_contact_privacy_output {
         }
     }
 }
-impl UpdateDomainContactPrivacyOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateDomainContactPrivacyOutput`](crate::output::UpdateDomainContactPrivacyOutput).
-    pub fn builder() -> crate::output::update_domain_contact_privacy_output::Builder {
-        crate::output::update_domain_contact_privacy_output::Builder::default()
-    }
-}
 
 /// <p>The UpdateDomainContact response includes the following element.</p>
 #[non_exhaustive]
@@ -294,6 +298,13 @@ impl aws_http::request_id::RequestId for UpdateDomainContactOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdateDomainContactOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateDomainContactOutput`](crate::output::UpdateDomainContactOutput).
+    pub fn builder() -> crate::output::update_domain_contact_output::Builder {
+        crate::output::update_domain_contact_output::Builder::default()
+    }
+}
+
 /// See [`UpdateDomainContactOutput`](crate::output::UpdateDomainContactOutput).
 pub mod update_domain_contact_output {
 
@@ -333,12 +344,6 @@ pub mod update_domain_contact_output {
         }
     }
 }
-impl UpdateDomainContactOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateDomainContactOutput`](crate::output::UpdateDomainContactOutput).
-    pub fn builder() -> crate::output::update_domain_contact_output::Builder {
-        crate::output::update_domain_contact_output::Builder::default()
-    }
-}
 
 /// <p>The <code>TransferDomainToAnotherAwsAccount</code> response includes the following elements.</p>
 #[non_exhaustive]
@@ -367,6 +372,13 @@ impl aws_http::request_id::RequestId for TransferDomainToAnotherAwsAccountOutput
         self._request_id.as_deref()
     }
 }
+impl TransferDomainToAnotherAwsAccountOutput {
+    /// Creates a new builder-style object to manufacture [`TransferDomainToAnotherAwsAccountOutput`](crate::output::TransferDomainToAnotherAwsAccountOutput).
+    pub fn builder() -> crate::output::transfer_domain_to_another_aws_account_output::Builder {
+        crate::output::transfer_domain_to_another_aws_account_output::Builder::default()
+    }
+}
+
 /// See [`TransferDomainToAnotherAwsAccountOutput`](crate::output::TransferDomainToAnotherAwsAccountOutput).
 pub mod transfer_domain_to_another_aws_account_output {
 
@@ -418,12 +430,6 @@ pub mod transfer_domain_to_another_aws_account_output {
         }
     }
 }
-impl TransferDomainToAnotherAwsAccountOutput {
-    /// Creates a new builder-style object to manufacture [`TransferDomainToAnotherAwsAccountOutput`](crate::output::TransferDomainToAnotherAwsAccountOutput).
-    pub fn builder() -> crate::output::transfer_domain_to_another_aws_account_output::Builder {
-        crate::output::transfer_domain_to_another_aws_account_output::Builder::default()
-    }
-}
 
 /// <p>The TransferDomain response includes the following element.</p>
 #[non_exhaustive]
@@ -445,6 +451,13 @@ impl aws_http::request_id::RequestId for TransferDomainOutput {
         self._request_id.as_deref()
     }
 }
+impl TransferDomainOutput {
+    /// Creates a new builder-style object to manufacture [`TransferDomainOutput`](crate::output::TransferDomainOutput).
+    pub fn builder() -> crate::output::transfer_domain_output::Builder {
+        crate::output::transfer_domain_output::Builder::default()
+    }
+}
+
 /// See [`TransferDomainOutput`](crate::output::TransferDomainOutput).
 pub mod transfer_domain_output {
 
@@ -484,12 +497,6 @@ pub mod transfer_domain_output {
         }
     }
 }
-impl TransferDomainOutput {
-    /// Creates a new builder-style object to manufacture [`TransferDomainOutput`](crate::output::TransferDomainOutput).
-    pub fn builder() -> crate::output::transfer_domain_output::Builder {
-        crate::output::transfer_domain_output::Builder::default()
-    }
-}
 
 /// <p>The RetrieveDomainAuthCode response includes the following element.</p>
 #[non_exhaustive]
@@ -519,6 +526,13 @@ impl aws_http::request_id::RequestId for RetrieveDomainAuthCodeOutput {
         self._request_id.as_deref()
     }
 }
+impl RetrieveDomainAuthCodeOutput {
+    /// Creates a new builder-style object to manufacture [`RetrieveDomainAuthCodeOutput`](crate::output::RetrieveDomainAuthCodeOutput).
+    pub fn builder() -> crate::output::retrieve_domain_auth_code_output::Builder {
+        crate::output::retrieve_domain_auth_code_output::Builder::default()
+    }
+}
+
 /// See [`RetrieveDomainAuthCodeOutput`](crate::output::RetrieveDomainAuthCodeOutput).
 pub mod retrieve_domain_auth_code_output {
 
@@ -566,12 +580,6 @@ pub mod retrieve_domain_auth_code_output {
         }
     }
 }
-impl RetrieveDomainAuthCodeOutput {
-    /// Creates a new builder-style object to manufacture [`RetrieveDomainAuthCodeOutput`](crate::output::RetrieveDomainAuthCodeOutput).
-    pub fn builder() -> crate::output::retrieve_domain_auth_code_output::Builder {
-        crate::output::retrieve_domain_auth_code_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -584,6 +592,13 @@ impl aws_http::request_id::RequestId for ResendOperationAuthorizationOutput {
         self._request_id.as_deref()
     }
 }
+impl ResendOperationAuthorizationOutput {
+    /// Creates a new builder-style object to manufacture [`ResendOperationAuthorizationOutput`](crate::output::ResendOperationAuthorizationOutput).
+    pub fn builder() -> crate::output::resend_operation_authorization_output::Builder {
+        crate::output::resend_operation_authorization_output::Builder::default()
+    }
+}
+
 /// See [`ResendOperationAuthorizationOutput`](crate::output::ResendOperationAuthorizationOutput).
 pub mod resend_operation_authorization_output {
 
@@ -609,12 +624,6 @@ pub mod resend_operation_authorization_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl ResendOperationAuthorizationOutput {
-    /// Creates a new builder-style object to manufacture [`ResendOperationAuthorizationOutput`](crate::output::ResendOperationAuthorizationOutput).
-    pub fn builder() -> crate::output::resend_operation_authorization_output::Builder {
-        crate::output::resend_operation_authorization_output::Builder::default()
     }
 }
 
@@ -652,6 +661,13 @@ impl aws_http::request_id::RequestId for ResendContactReachabilityEmailOutput {
         self._request_id.as_deref()
     }
 }
+impl ResendContactReachabilityEmailOutput {
+    /// Creates a new builder-style object to manufacture [`ResendContactReachabilityEmailOutput`](crate::output::ResendContactReachabilityEmailOutput).
+    pub fn builder() -> crate::output::resend_contact_reachability_email_output::Builder {
+        crate::output::resend_contact_reachability_email_output::Builder::default()
+    }
+}
+
 /// See [`ResendContactReachabilityEmailOutput`](crate::output::ResendContactReachabilityEmailOutput).
 pub mod resend_contact_reachability_email_output {
 
@@ -718,12 +734,6 @@ pub mod resend_contact_reachability_email_output {
         }
     }
 }
-impl ResendContactReachabilityEmailOutput {
-    /// Creates a new builder-style object to manufacture [`ResendContactReachabilityEmailOutput`](crate::output::ResendContactReachabilityEmailOutput).
-    pub fn builder() -> crate::output::resend_contact_reachability_email_output::Builder {
-        crate::output::resend_contact_reachability_email_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -745,6 +755,13 @@ impl aws_http::request_id::RequestId for RenewDomainOutput {
         self._request_id.as_deref()
     }
 }
+impl RenewDomainOutput {
+    /// Creates a new builder-style object to manufacture [`RenewDomainOutput`](crate::output::RenewDomainOutput).
+    pub fn builder() -> crate::output::renew_domain_output::Builder {
+        crate::output::renew_domain_output::Builder::default()
+    }
+}
+
 /// See [`RenewDomainOutput`](crate::output::RenewDomainOutput).
 pub mod renew_domain_output {
 
@@ -784,12 +801,6 @@ pub mod renew_domain_output {
         }
     }
 }
-impl RenewDomainOutput {
-    /// Creates a new builder-style object to manufacture [`RenewDomainOutput`](crate::output::RenewDomainOutput).
-    pub fn builder() -> crate::output::renew_domain_output::Builder {
-        crate::output::renew_domain_output::Builder::default()
-    }
-}
 
 /// <p>The RejectDomainTransferFromAnotherAwsAccount response includes the following element.</p>
 #[non_exhaustive]
@@ -811,6 +822,14 @@ impl aws_http::request_id::RequestId for RejectDomainTransferFromAnotherAwsAccou
         self._request_id.as_deref()
     }
 }
+impl RejectDomainTransferFromAnotherAwsAccountOutput {
+    /// Creates a new builder-style object to manufacture [`RejectDomainTransferFromAnotherAwsAccountOutput`](crate::output::RejectDomainTransferFromAnotherAwsAccountOutput).
+    pub fn builder(
+    ) -> crate::output::reject_domain_transfer_from_another_aws_account_output::Builder {
+        crate::output::reject_domain_transfer_from_another_aws_account_output::Builder::default()
+    }
+}
+
 /// See [`RejectDomainTransferFromAnotherAwsAccountOutput`](crate::output::RejectDomainTransferFromAnotherAwsAccountOutput).
 pub mod reject_domain_transfer_from_another_aws_account_output {
 
@@ -850,13 +869,6 @@ pub mod reject_domain_transfer_from_another_aws_account_output {
         }
     }
 }
-impl RejectDomainTransferFromAnotherAwsAccountOutput {
-    /// Creates a new builder-style object to manufacture [`RejectDomainTransferFromAnotherAwsAccountOutput`](crate::output::RejectDomainTransferFromAnotherAwsAccountOutput).
-    pub fn builder(
-    ) -> crate::output::reject_domain_transfer_from_another_aws_account_output::Builder {
-        crate::output::reject_domain_transfer_from_another_aws_account_output::Builder::default()
-    }
-}
 
 /// <p>The RegisterDomain response includes the following element.</p>
 #[non_exhaustive]
@@ -878,6 +890,13 @@ impl aws_http::request_id::RequestId for RegisterDomainOutput {
         self._request_id.as_deref()
     }
 }
+impl RegisterDomainOutput {
+    /// Creates a new builder-style object to manufacture [`RegisterDomainOutput`](crate::output::RegisterDomainOutput).
+    pub fn builder() -> crate::output::register_domain_output::Builder {
+        crate::output::register_domain_output::Builder::default()
+    }
+}
+
 /// See [`RegisterDomainOutput`](crate::output::RegisterDomainOutput).
 pub mod register_domain_output {
 
@@ -917,12 +936,6 @@ pub mod register_domain_output {
         }
     }
 }
-impl RegisterDomainOutput {
-    /// Creates a new builder-style object to manufacture [`RegisterDomainOutput`](crate::output::RegisterDomainOutput).
-    pub fn builder() -> crate::output::register_domain_output::Builder {
-        crate::output::register_domain_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -935,6 +948,13 @@ impl aws_http::request_id::RequestId for PushDomainOutput {
         self._request_id.as_deref()
     }
 }
+impl PushDomainOutput {
+    /// Creates a new builder-style object to manufacture [`PushDomainOutput`](crate::output::PushDomainOutput).
+    pub fn builder() -> crate::output::push_domain_output::Builder {
+        crate::output::push_domain_output::Builder::default()
+    }
+}
+
 /// See [`PushDomainOutput`](crate::output::PushDomainOutput).
 pub mod push_domain_output {
 
@@ -962,12 +982,6 @@ pub mod push_domain_output {
         }
     }
 }
-impl PushDomainOutput {
-    /// Creates a new builder-style object to manufacture [`PushDomainOutput`](crate::output::PushDomainOutput).
-    pub fn builder() -> crate::output::push_domain_output::Builder {
-        crate::output::push_domain_output::Builder::default()
-    }
-}
 
 /// <p>The ListTagsForDomain response includes the following elements.</p>
 #[non_exhaustive]
@@ -989,6 +1003,13 @@ impl aws_http::request_id::RequestId for ListTagsForDomainOutput {
         self._request_id.as_deref()
     }
 }
+impl ListTagsForDomainOutput {
+    /// Creates a new builder-style object to manufacture [`ListTagsForDomainOutput`](crate::output::ListTagsForDomainOutput).
+    pub fn builder() -> crate::output::list_tags_for_domain_output::Builder {
+        crate::output::list_tags_for_domain_output::Builder::default()
+    }
+}
+
 /// See [`ListTagsForDomainOutput`](crate::output::ListTagsForDomainOutput).
 pub mod list_tags_for_domain_output {
 
@@ -1037,12 +1058,6 @@ pub mod list_tags_for_domain_output {
         }
     }
 }
-impl ListTagsForDomainOutput {
-    /// Creates a new builder-style object to manufacture [`ListTagsForDomainOutput`](crate::output::ListTagsForDomainOutput).
-    pub fn builder() -> crate::output::list_tags_for_domain_output::Builder {
-        crate::output::list_tags_for_domain_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1073,6 +1088,13 @@ impl aws_http::request_id::RequestId for ListPricesOutput {
         self._request_id.as_deref()
     }
 }
+impl ListPricesOutput {
+    /// Creates a new builder-style object to manufacture [`ListPricesOutput`](crate::output::ListPricesOutput).
+    pub fn builder() -> crate::output::list_prices_output::Builder {
+        crate::output::list_prices_output::Builder::default()
+    }
+}
+
 /// See [`ListPricesOutput`](crate::output::ListPricesOutput).
 pub mod list_prices_output {
 
@@ -1138,12 +1160,6 @@ pub mod list_prices_output {
         }
     }
 }
-impl ListPricesOutput {
-    /// Creates a new builder-style object to manufacture [`ListPricesOutput`](crate::output::ListPricesOutput).
-    pub fn builder() -> crate::output::list_prices_output::Builder {
-        crate::output::list_prices_output::Builder::default()
-    }
-}
 
 /// <p>The ListOperations response includes the following elements.</p>
 #[non_exhaustive]
@@ -1172,6 +1188,13 @@ impl aws_http::request_id::RequestId for ListOperationsOutput {
         self._request_id.as_deref()
     }
 }
+impl ListOperationsOutput {
+    /// Creates a new builder-style object to manufacture [`ListOperationsOutput`](crate::output::ListOperationsOutput).
+    pub fn builder() -> crate::output::list_operations_output::Builder {
+        crate::output::list_operations_output::Builder::default()
+    }
+}
+
 /// See [`ListOperationsOutput`](crate::output::ListOperationsOutput).
 pub mod list_operations_output {
 
@@ -1235,12 +1258,6 @@ pub mod list_operations_output {
         }
     }
 }
-impl ListOperationsOutput {
-    /// Creates a new builder-style object to manufacture [`ListOperationsOutput`](crate::output::ListOperationsOutput).
-    pub fn builder() -> crate::output::list_operations_output::Builder {
-        crate::output::list_operations_output::Builder::default()
-    }
-}
 
 /// <p>The ListDomains response includes the following elements.</p>
 #[non_exhaustive]
@@ -1269,6 +1286,13 @@ impl aws_http::request_id::RequestId for ListDomainsOutput {
         self._request_id.as_deref()
     }
 }
+impl ListDomainsOutput {
+    /// Creates a new builder-style object to manufacture [`ListDomainsOutput`](crate::output::ListDomainsOutput).
+    pub fn builder() -> crate::output::list_domains_output::Builder {
+        crate::output::list_domains_output::Builder::default()
+    }
+}
+
 /// See [`ListDomainsOutput`](crate::output::ListDomainsOutput).
 pub mod list_domains_output {
 
@@ -1330,12 +1354,6 @@ pub mod list_domains_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl ListDomainsOutput {
-    /// Creates a new builder-style object to manufacture [`ListDomainsOutput`](crate::output::ListDomainsOutput).
-    pub fn builder() -> crate::output::list_domains_output::Builder {
-        crate::output::list_domains_output::Builder::default()
     }
 }
 
@@ -1422,6 +1440,13 @@ impl aws_http::request_id::RequestId for GetOperationDetailOutput {
         self._request_id.as_deref()
     }
 }
+impl GetOperationDetailOutput {
+    /// Creates a new builder-style object to manufacture [`GetOperationDetailOutput`](crate::output::GetOperationDetailOutput).
+    pub fn builder() -> crate::output::get_operation_detail_output::Builder {
+        crate::output::get_operation_detail_output::Builder::default()
+    }
+}
+
 /// See [`GetOperationDetailOutput`](crate::output::GetOperationDetailOutput).
 pub mod get_operation_detail_output {
 
@@ -1571,12 +1596,6 @@ pub mod get_operation_detail_output {
         }
     }
 }
-impl GetOperationDetailOutput {
-    /// Creates a new builder-style object to manufacture [`GetOperationDetailOutput`](crate::output::GetOperationDetailOutput).
-    pub fn builder() -> crate::output::get_operation_detail_output::Builder {
-        crate::output::get_operation_detail_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1598,6 +1617,13 @@ impl aws_http::request_id::RequestId for GetDomainSuggestionsOutput {
         self._request_id.as_deref()
     }
 }
+impl GetDomainSuggestionsOutput {
+    /// Creates a new builder-style object to manufacture [`GetDomainSuggestionsOutput`](crate::output::GetDomainSuggestionsOutput).
+    pub fn builder() -> crate::output::get_domain_suggestions_output::Builder {
+        crate::output::get_domain_suggestions_output::Builder::default()
+    }
+}
+
 /// See [`GetDomainSuggestionsOutput`](crate::output::GetDomainSuggestionsOutput).
 pub mod get_domain_suggestions_output {
 
@@ -1645,12 +1671,6 @@ pub mod get_domain_suggestions_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl GetDomainSuggestionsOutput {
-    /// Creates a new builder-style object to manufacture [`GetDomainSuggestionsOutput`](crate::output::GetDomainSuggestionsOutput).
-    pub fn builder() -> crate::output::get_domain_suggestions_output::Builder {
-        crate::output::get_domain_suggestions_output::Builder::default()
     }
 }
 
@@ -1854,6 +1874,13 @@ impl aws_http::request_id::RequestId for GetDomainDetailOutput {
         self._request_id.as_deref()
     }
 }
+impl GetDomainDetailOutput {
+    /// Creates a new builder-style object to manufacture [`GetDomainDetailOutput`](crate::output::GetDomainDetailOutput).
+    pub fn builder() -> crate::output::get_domain_detail_output::Builder {
+        crate::output::get_domain_detail_output::Builder::default()
+    }
+}
+
 /// See [`GetDomainDetailOutput`](crate::output::GetDomainDetailOutput).
 pub mod get_domain_detail_output {
 
@@ -2241,12 +2268,6 @@ pub mod get_domain_detail_output {
         }
     }
 }
-impl GetDomainDetailOutput {
-    /// Creates a new builder-style object to manufacture [`GetDomainDetailOutput`](crate::output::GetDomainDetailOutput).
-    pub fn builder() -> crate::output::get_domain_detail_output::Builder {
-        crate::output::get_domain_detail_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2315,6 +2336,13 @@ impl aws_http::request_id::RequestId for GetContactReachabilityStatusOutput {
         self._request_id.as_deref()
     }
 }
+impl GetContactReachabilityStatusOutput {
+    /// Creates a new builder-style object to manufacture [`GetContactReachabilityStatusOutput`](crate::output::GetContactReachabilityStatusOutput).
+    pub fn builder() -> crate::output::get_contact_reachability_status_output::Builder {
+        crate::output::get_contact_reachability_status_output::Builder::default()
+    }
+}
+
 /// See [`GetContactReachabilityStatusOutput`](crate::output::GetContactReachabilityStatusOutput).
 pub mod get_contact_reachability_status_output {
 
@@ -2409,12 +2437,6 @@ pub mod get_contact_reachability_status_output {
         }
     }
 }
-impl GetContactReachabilityStatusOutput {
-    /// Creates a new builder-style object to manufacture [`GetContactReachabilityStatusOutput`](crate::output::GetContactReachabilityStatusOutput).
-    pub fn builder() -> crate::output::get_contact_reachability_status_output::Builder {
-        crate::output::get_contact_reachability_status_output::Builder::default()
-    }
-}
 
 /// <p>The EnableDomainTransferLock response includes the following elements.</p>
 #[non_exhaustive]
@@ -2436,6 +2458,13 @@ impl aws_http::request_id::RequestId for EnableDomainTransferLockOutput {
         self._request_id.as_deref()
     }
 }
+impl EnableDomainTransferLockOutput {
+    /// Creates a new builder-style object to manufacture [`EnableDomainTransferLockOutput`](crate::output::EnableDomainTransferLockOutput).
+    pub fn builder() -> crate::output::enable_domain_transfer_lock_output::Builder {
+        crate::output::enable_domain_transfer_lock_output::Builder::default()
+    }
+}
+
 /// See [`EnableDomainTransferLockOutput`](crate::output::EnableDomainTransferLockOutput).
 pub mod enable_domain_transfer_lock_output {
 
@@ -2475,12 +2504,6 @@ pub mod enable_domain_transfer_lock_output {
         }
     }
 }
-impl EnableDomainTransferLockOutput {
-    /// Creates a new builder-style object to manufacture [`EnableDomainTransferLockOutput`](crate::output::EnableDomainTransferLockOutput).
-    pub fn builder() -> crate::output::enable_domain_transfer_lock_output::Builder {
-        crate::output::enable_domain_transfer_lock_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2493,6 +2516,13 @@ impl aws_http::request_id::RequestId for EnableDomainAutoRenewOutput {
         self._request_id.as_deref()
     }
 }
+impl EnableDomainAutoRenewOutput {
+    /// Creates a new builder-style object to manufacture [`EnableDomainAutoRenewOutput`](crate::output::EnableDomainAutoRenewOutput).
+    pub fn builder() -> crate::output::enable_domain_auto_renew_output::Builder {
+        crate::output::enable_domain_auto_renew_output::Builder::default()
+    }
+}
+
 /// See [`EnableDomainAutoRenewOutput`](crate::output::EnableDomainAutoRenewOutput).
 pub mod enable_domain_auto_renew_output {
 
@@ -2520,12 +2550,6 @@ pub mod enable_domain_auto_renew_output {
         }
     }
 }
-impl EnableDomainAutoRenewOutput {
-    /// Creates a new builder-style object to manufacture [`EnableDomainAutoRenewOutput`](crate::output::EnableDomainAutoRenewOutput).
-    pub fn builder() -> crate::output::enable_domain_auto_renew_output::Builder {
-        crate::output::enable_domain_auto_renew_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2547,6 +2571,13 @@ impl aws_http::request_id::RequestId for DisassociateDelegationSignerFromDomainO
         self._request_id.as_deref()
     }
 }
+impl DisassociateDelegationSignerFromDomainOutput {
+    /// Creates a new builder-style object to manufacture [`DisassociateDelegationSignerFromDomainOutput`](crate::output::DisassociateDelegationSignerFromDomainOutput).
+    pub fn builder() -> crate::output::disassociate_delegation_signer_from_domain_output::Builder {
+        crate::output::disassociate_delegation_signer_from_domain_output::Builder::default()
+    }
+}
+
 /// See [`DisassociateDelegationSignerFromDomainOutput`](crate::output::DisassociateDelegationSignerFromDomainOutput).
 pub mod disassociate_delegation_signer_from_domain_output {
 
@@ -2586,12 +2617,6 @@ pub mod disassociate_delegation_signer_from_domain_output {
         }
     }
 }
-impl DisassociateDelegationSignerFromDomainOutput {
-    /// Creates a new builder-style object to manufacture [`DisassociateDelegationSignerFromDomainOutput`](crate::output::DisassociateDelegationSignerFromDomainOutput).
-    pub fn builder() -> crate::output::disassociate_delegation_signer_from_domain_output::Builder {
-        crate::output::disassociate_delegation_signer_from_domain_output::Builder::default()
-    }
-}
 
 /// <p>The DisableDomainTransferLock response includes the following element.</p>
 #[non_exhaustive]
@@ -2613,6 +2638,13 @@ impl aws_http::request_id::RequestId for DisableDomainTransferLockOutput {
         self._request_id.as_deref()
     }
 }
+impl DisableDomainTransferLockOutput {
+    /// Creates a new builder-style object to manufacture [`DisableDomainTransferLockOutput`](crate::output::DisableDomainTransferLockOutput).
+    pub fn builder() -> crate::output::disable_domain_transfer_lock_output::Builder {
+        crate::output::disable_domain_transfer_lock_output::Builder::default()
+    }
+}
+
 /// See [`DisableDomainTransferLockOutput`](crate::output::DisableDomainTransferLockOutput).
 pub mod disable_domain_transfer_lock_output {
 
@@ -2652,12 +2684,6 @@ pub mod disable_domain_transfer_lock_output {
         }
     }
 }
-impl DisableDomainTransferLockOutput {
-    /// Creates a new builder-style object to manufacture [`DisableDomainTransferLockOutput`](crate::output::DisableDomainTransferLockOutput).
-    pub fn builder() -> crate::output::disable_domain_transfer_lock_output::Builder {
-        crate::output::disable_domain_transfer_lock_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2670,6 +2696,13 @@ impl aws_http::request_id::RequestId for DisableDomainAutoRenewOutput {
         self._request_id.as_deref()
     }
 }
+impl DisableDomainAutoRenewOutput {
+    /// Creates a new builder-style object to manufacture [`DisableDomainAutoRenewOutput`](crate::output::DisableDomainAutoRenewOutput).
+    pub fn builder() -> crate::output::disable_domain_auto_renew_output::Builder {
+        crate::output::disable_domain_auto_renew_output::Builder::default()
+    }
+}
+
 /// See [`DisableDomainAutoRenewOutput`](crate::output::DisableDomainAutoRenewOutput).
 pub mod disable_domain_auto_renew_output {
 
@@ -2697,12 +2730,6 @@ pub mod disable_domain_auto_renew_output {
         }
     }
 }
-impl DisableDomainAutoRenewOutput {
-    /// Creates a new builder-style object to manufacture [`DisableDomainAutoRenewOutput`](crate::output::DisableDomainAutoRenewOutput).
-    pub fn builder() -> crate::output::disable_domain_auto_renew_output::Builder {
-        crate::output::disable_domain_auto_renew_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2715,6 +2742,13 @@ impl aws_http::request_id::RequestId for DeleteTagsForDomainOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteTagsForDomainOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteTagsForDomainOutput`](crate::output::DeleteTagsForDomainOutput).
+    pub fn builder() -> crate::output::delete_tags_for_domain_output::Builder {
+        crate::output::delete_tags_for_domain_output::Builder::default()
+    }
+}
+
 /// See [`DeleteTagsForDomainOutput`](crate::output::DeleteTagsForDomainOutput).
 pub mod delete_tags_for_domain_output {
 
@@ -2742,12 +2776,6 @@ pub mod delete_tags_for_domain_output {
         }
     }
 }
-impl DeleteTagsForDomainOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteTagsForDomainOutput`](crate::output::DeleteTagsForDomainOutput).
-    pub fn builder() -> crate::output::delete_tags_for_domain_output::Builder {
-        crate::output::delete_tags_for_domain_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2769,6 +2797,13 @@ impl aws_http::request_id::RequestId for DeleteDomainOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteDomainOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteDomainOutput`](crate::output::DeleteDomainOutput).
+    pub fn builder() -> crate::output::delete_domain_output::Builder {
+        crate::output::delete_domain_output::Builder::default()
+    }
+}
+
 /// See [`DeleteDomainOutput`](crate::output::DeleteDomainOutput).
 pub mod delete_domain_output {
 
@@ -2808,12 +2843,6 @@ pub mod delete_domain_output {
         }
     }
 }
-impl DeleteDomainOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteDomainOutput`](crate::output::DeleteDomainOutput).
-    pub fn builder() -> crate::output::delete_domain_output::Builder {
-        crate::output::delete_domain_output::Builder::default()
-    }
-}
 
 /// <p>The CheckDomainTransferability response includes the following elements.</p>
 #[non_exhaustive]
@@ -2835,6 +2864,13 @@ impl aws_http::request_id::RequestId for CheckDomainTransferabilityOutput {
         self._request_id.as_deref()
     }
 }
+impl CheckDomainTransferabilityOutput {
+    /// Creates a new builder-style object to manufacture [`CheckDomainTransferabilityOutput`](crate::output::CheckDomainTransferabilityOutput).
+    pub fn builder() -> crate::output::check_domain_transferability_output::Builder {
+        crate::output::check_domain_transferability_output::Builder::default()
+    }
+}
+
 /// See [`CheckDomainTransferabilityOutput`](crate::output::CheckDomainTransferabilityOutput).
 pub mod check_domain_transferability_output {
 
@@ -2875,12 +2911,6 @@ pub mod check_domain_transferability_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl CheckDomainTransferabilityOutput {
-    /// Creates a new builder-style object to manufacture [`CheckDomainTransferabilityOutput`](crate::output::CheckDomainTransferabilityOutput).
-    pub fn builder() -> crate::output::check_domain_transferability_output::Builder {
-        crate::output::check_domain_transferability_output::Builder::default()
     }
 }
 
@@ -3022,6 +3052,13 @@ impl aws_http::request_id::RequestId for CheckDomainAvailabilityOutput {
         self._request_id.as_deref()
     }
 }
+impl CheckDomainAvailabilityOutput {
+    /// Creates a new builder-style object to manufacture [`CheckDomainAvailabilityOutput`](crate::output::CheckDomainAvailabilityOutput).
+    pub fn builder() -> crate::output::check_domain_availability_output::Builder {
+        crate::output::check_domain_availability_output::Builder::default()
+    }
+}
+
 /// See [`CheckDomainAvailabilityOutput`](crate::output::CheckDomainAvailabilityOutput).
 pub mod check_domain_availability_output {
 
@@ -3182,12 +3219,6 @@ pub mod check_domain_availability_output {
         }
     }
 }
-impl CheckDomainAvailabilityOutput {
-    /// Creates a new builder-style object to manufacture [`CheckDomainAvailabilityOutput`](crate::output::CheckDomainAvailabilityOutput).
-    pub fn builder() -> crate::output::check_domain_availability_output::Builder {
-        crate::output::check_domain_availability_output::Builder::default()
-    }
-}
 
 /// <p>The <code>CancelDomainTransferToAnotherAwsAccount</code> response includes the following element.</p>
 #[non_exhaustive]
@@ -3209,6 +3240,14 @@ impl aws_http::request_id::RequestId for CancelDomainTransferToAnotherAwsAccount
         self._request_id.as_deref()
     }
 }
+impl CancelDomainTransferToAnotherAwsAccountOutput {
+    /// Creates a new builder-style object to manufacture [`CancelDomainTransferToAnotherAwsAccountOutput`](crate::output::CancelDomainTransferToAnotherAwsAccountOutput).
+    pub fn builder() -> crate::output::cancel_domain_transfer_to_another_aws_account_output::Builder
+    {
+        crate::output::cancel_domain_transfer_to_another_aws_account_output::Builder::default()
+    }
+}
+
 /// See [`CancelDomainTransferToAnotherAwsAccountOutput`](crate::output::CancelDomainTransferToAnotherAwsAccountOutput).
 pub mod cancel_domain_transfer_to_another_aws_account_output {
 
@@ -3248,13 +3287,6 @@ pub mod cancel_domain_transfer_to_another_aws_account_output {
         }
     }
 }
-impl CancelDomainTransferToAnotherAwsAccountOutput {
-    /// Creates a new builder-style object to manufacture [`CancelDomainTransferToAnotherAwsAccountOutput`](crate::output::CancelDomainTransferToAnotherAwsAccountOutput).
-    pub fn builder() -> crate::output::cancel_domain_transfer_to_another_aws_account_output::Builder
-    {
-        crate::output::cancel_domain_transfer_to_another_aws_account_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3276,6 +3308,13 @@ impl aws_http::request_id::RequestId for AssociateDelegationSignerToDomainOutput
         self._request_id.as_deref()
     }
 }
+impl AssociateDelegationSignerToDomainOutput {
+    /// Creates a new builder-style object to manufacture [`AssociateDelegationSignerToDomainOutput`](crate::output::AssociateDelegationSignerToDomainOutput).
+    pub fn builder() -> crate::output::associate_delegation_signer_to_domain_output::Builder {
+        crate::output::associate_delegation_signer_to_domain_output::Builder::default()
+    }
+}
+
 /// See [`AssociateDelegationSignerToDomainOutput`](crate::output::AssociateDelegationSignerToDomainOutput).
 pub mod associate_delegation_signer_to_domain_output {
 
@@ -3315,12 +3354,6 @@ pub mod associate_delegation_signer_to_domain_output {
         }
     }
 }
-impl AssociateDelegationSignerToDomainOutput {
-    /// Creates a new builder-style object to manufacture [`AssociateDelegationSignerToDomainOutput`](crate::output::AssociateDelegationSignerToDomainOutput).
-    pub fn builder() -> crate::output::associate_delegation_signer_to_domain_output::Builder {
-        crate::output::associate_delegation_signer_to_domain_output::Builder::default()
-    }
-}
 
 /// <p>The AcceptDomainTransferFromAnotherAwsAccount response includes the following element.</p>
 #[non_exhaustive]
@@ -3342,6 +3375,14 @@ impl aws_http::request_id::RequestId for AcceptDomainTransferFromAnotherAwsAccou
         self._request_id.as_deref()
     }
 }
+impl AcceptDomainTransferFromAnotherAwsAccountOutput {
+    /// Creates a new builder-style object to manufacture [`AcceptDomainTransferFromAnotherAwsAccountOutput`](crate::output::AcceptDomainTransferFromAnotherAwsAccountOutput).
+    pub fn builder(
+    ) -> crate::output::accept_domain_transfer_from_another_aws_account_output::Builder {
+        crate::output::accept_domain_transfer_from_another_aws_account_output::Builder::default()
+    }
+}
+
 /// See [`AcceptDomainTransferFromAnotherAwsAccountOutput`](crate::output::AcceptDomainTransferFromAnotherAwsAccountOutput).
 pub mod accept_domain_transfer_from_another_aws_account_output {
 
@@ -3379,12 +3420,5 @@ pub mod accept_domain_transfer_from_another_aws_account_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl AcceptDomainTransferFromAnotherAwsAccountOutput {
-    /// Creates a new builder-style object to manufacture [`AcceptDomainTransferFromAnotherAwsAccountOutput`](crate::output::AcceptDomainTransferFromAnotherAwsAccountOutput).
-    pub fn builder(
-    ) -> crate::output::accept_domain_transfer_from_another_aws_account_output::Builder {
-        crate::output::accept_domain_transfer_from_another_aws_account_output::Builder::default()
     }
 }

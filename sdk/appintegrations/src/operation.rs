@@ -4,7 +4,7 @@
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`create_data_integration`](crate::client::Client::create_data_integration).
 ///
-/// See [`crate::client::fluent_builders::CreateDataIntegration`] for more details about the operation.
+/// `ParseStrictResponse` impl for `CreateDataIntegration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateDataIntegration {
     _private: (),
@@ -39,7 +39,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateDataIntegration {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`create_event_integration`](crate::client::Client::create_event_integration).
 ///
-/// See [`crate::client::fluent_builders::CreateEventIntegration`] for more details about the operation.
+/// `ParseStrictResponse` impl for `CreateEventIntegration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateEventIntegration {
     _private: (),
@@ -74,7 +74,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateEventIntegration {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`delete_data_integration`](crate::client::Client::delete_data_integration).
 ///
-/// See [`crate::client::fluent_builders::DeleteDataIntegration`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DeleteDataIntegration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteDataIntegration {
     _private: (),
@@ -109,7 +109,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteDataIntegration {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`delete_event_integration`](crate::client::Client::delete_event_integration).
 ///
-/// See [`crate::client::fluent_builders::DeleteEventIntegration`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DeleteEventIntegration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteEventIntegration {
     _private: (),
@@ -144,7 +144,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteEventIntegration {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`get_data_integration`](crate::client::Client::get_data_integration).
 ///
-/// See [`crate::client::fluent_builders::GetDataIntegration`] for more details about the operation.
+/// `ParseStrictResponse` impl for `GetDataIntegration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetDataIntegration {
     _private: (),
@@ -179,7 +179,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDataIntegration {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`get_event_integration`](crate::client::Client::get_event_integration).
 ///
-/// See [`crate::client::fluent_builders::GetEventIntegration`] for more details about the operation.
+/// `ParseStrictResponse` impl for `GetEventIntegration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetEventIntegration {
     _private: (),
@@ -214,7 +214,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetEventIntegration {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_data_integration_associations`](crate::client::Client::list_data_integration_associations).
 ///
-/// See [`crate::client::fluent_builders::ListDataIntegrationAssociations`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListDataIntegrationAssociations`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListDataIntegrationAssociations {
     _private: (),
@@ -249,7 +249,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListDataIntegrationAssoc
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_data_integrations`](crate::client::Client::list_data_integrations).
 ///
-/// See [`crate::client::fluent_builders::ListDataIntegrations`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListDataIntegrations`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListDataIntegrations {
     _private: (),
@@ -284,7 +284,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListDataIntegrations {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_event_integration_associations`](crate::client::Client::list_event_integration_associations).
 ///
-/// See [`crate::client::fluent_builders::ListEventIntegrationAssociations`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListEventIntegrationAssociations`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListEventIntegrationAssociations {
     _private: (),
@@ -319,7 +319,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListEventIntegrationAsso
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_event_integrations`](crate::client::Client::list_event_integrations).
 ///
-/// See [`crate::client::fluent_builders::ListEventIntegrations`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListEventIntegrations`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListEventIntegrations {
     _private: (),
@@ -354,7 +354,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListEventIntegrations {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
 ///
-/// See [`crate::client::fluent_builders::ListTagsForResource`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTagsForResource {
     _private: (),
@@ -389,7 +389,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`tag_resource`](crate::client::Client::tag_resource).
 ///
-/// See [`crate::client::fluent_builders::TagResource`] for more details about the operation.
+/// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct TagResource {
     _private: (),
@@ -422,7 +422,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`untag_resource`](crate::client::Client::untag_resource).
 ///
-/// See [`crate::client::fluent_builders::UntagResource`] for more details about the operation.
+/// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UntagResource {
     _private: (),
@@ -455,7 +455,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`update_data_integration`](crate::client::Client::update_data_integration).
 ///
-/// See [`crate::client::fluent_builders::UpdateDataIntegration`] for more details about the operation.
+/// `ParseStrictResponse` impl for `UpdateDataIntegration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateDataIntegration {
     _private: (),
@@ -490,7 +490,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateDataIntegration {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`update_event_integration`](crate::client::Client::update_event_integration).
 ///
-/// See [`crate::client::fluent_builders::UpdateEventIntegration`] for more details about the operation.
+/// `ParseStrictResponse` impl for `UpdateEventIntegration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateEventIntegration {
     _private: (),

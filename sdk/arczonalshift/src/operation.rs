@@ -4,7 +4,7 @@
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`cancel_zonal_shift`](crate::client::Client::cancel_zonal_shift).
 ///
-/// See [`crate::client::fluent_builders::CancelZonalShift`] for more details about the operation.
+/// `ParseStrictResponse` impl for `CancelZonalShift`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CancelZonalShift {
     _private: (),
@@ -39,7 +39,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CancelZonalShift {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`get_managed_resource`](crate::client::Client::get_managed_resource).
 ///
-/// See [`crate::client::fluent_builders::GetManagedResource`] for more details about the operation.
+/// `ParseStrictResponse` impl for `GetManagedResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetManagedResource {
     _private: (),
@@ -74,7 +74,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetManagedResource {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_managed_resources`](crate::client::Client::list_managed_resources).
 ///
-/// See [`crate::client::fluent_builders::ListManagedResources`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListManagedResources`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListManagedResources {
     _private: (),
@@ -109,7 +109,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListManagedResources {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_zonal_shifts`](crate::client::Client::list_zonal_shifts).
 ///
-/// See [`crate::client::fluent_builders::ListZonalShifts`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListZonalShifts`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListZonalShifts {
     _private: (),
@@ -144,7 +144,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListZonalShifts {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`start_zonal_shift`](crate::client::Client::start_zonal_shift).
 ///
-/// See [`crate::client::fluent_builders::StartZonalShift`] for more details about the operation.
+/// `ParseStrictResponse` impl for `StartZonalShift`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StartZonalShift {
     _private: (),
@@ -179,7 +179,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartZonalShift {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`update_zonal_shift`](crate::client::Client::update_zonal_shift).
 ///
-/// See [`crate::client::fluent_builders::UpdateZonalShift`] for more details about the operation.
+/// `ParseStrictResponse` impl for `UpdateZonalShift`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateZonalShift {
     _private: (),

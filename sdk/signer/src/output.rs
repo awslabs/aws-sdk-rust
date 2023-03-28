@@ -10,6 +10,13 @@ impl aws_http::request_id::RequestId for UntagResourceOutput {
         self._request_id.as_deref()
     }
 }
+impl UntagResourceOutput {
+    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    pub fn builder() -> crate::output::untag_resource_output::Builder {
+        crate::output::untag_resource_output::Builder::default()
+    }
+}
+
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
 
@@ -37,12 +44,6 @@ pub mod untag_resource_output {
         }
     }
 }
-impl UntagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
-    pub fn builder() -> crate::output::untag_resource_output::Builder {
-        crate::output::untag_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -55,6 +56,13 @@ impl aws_http::request_id::RequestId for TagResourceOutput {
         self._request_id.as_deref()
     }
 }
+impl TagResourceOutput {
+    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
+    pub fn builder() -> crate::output::tag_resource_output::Builder {
+        crate::output::tag_resource_output::Builder::default()
+    }
+}
+
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
 
@@ -80,12 +88,6 @@ pub mod tag_resource_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl TagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
-    pub fn builder() -> crate::output::tag_resource_output::Builder {
-        crate::output::tag_resource_output::Builder::default()
     }
 }
 
@@ -116,6 +118,13 @@ impl aws_http::request_id::RequestId for StartSigningJobOutput {
         self._request_id.as_deref()
     }
 }
+impl StartSigningJobOutput {
+    /// Creates a new builder-style object to manufacture [`StartSigningJobOutput`](crate::output::StartSigningJobOutput).
+    pub fn builder() -> crate::output::start_signing_job_output::Builder {
+        crate::output::start_signing_job_output::Builder::default()
+    }
+}
+
 /// See [`StartSigningJobOutput`](crate::output::StartSigningJobOutput).
 pub mod start_signing_job_output {
 
@@ -167,12 +176,6 @@ pub mod start_signing_job_output {
         }
     }
 }
-impl StartSigningJobOutput {
-    /// Creates a new builder-style object to manufacture [`StartSigningJobOutput`](crate::output::StartSigningJobOutput).
-    pub fn builder() -> crate::output::start_signing_job_output::Builder {
-        crate::output::start_signing_job_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -185,6 +188,13 @@ impl aws_http::request_id::RequestId for RevokeSigningProfileOutput {
         self._request_id.as_deref()
     }
 }
+impl RevokeSigningProfileOutput {
+    /// Creates a new builder-style object to manufacture [`RevokeSigningProfileOutput`](crate::output::RevokeSigningProfileOutput).
+    pub fn builder() -> crate::output::revoke_signing_profile_output::Builder {
+        crate::output::revoke_signing_profile_output::Builder::default()
+    }
+}
+
 /// See [`RevokeSigningProfileOutput`](crate::output::RevokeSigningProfileOutput).
 pub mod revoke_signing_profile_output {
 
@@ -212,12 +222,6 @@ pub mod revoke_signing_profile_output {
         }
     }
 }
-impl RevokeSigningProfileOutput {
-    /// Creates a new builder-style object to manufacture [`RevokeSigningProfileOutput`](crate::output::RevokeSigningProfileOutput).
-    pub fn builder() -> crate::output::revoke_signing_profile_output::Builder {
-        crate::output::revoke_signing_profile_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -230,6 +234,13 @@ impl aws_http::request_id::RequestId for RevokeSignatureOutput {
         self._request_id.as_deref()
     }
 }
+impl RevokeSignatureOutput {
+    /// Creates a new builder-style object to manufacture [`RevokeSignatureOutput`](crate::output::RevokeSignatureOutput).
+    pub fn builder() -> crate::output::revoke_signature_output::Builder {
+        crate::output::revoke_signature_output::Builder::default()
+    }
+}
+
 /// See [`RevokeSignatureOutput`](crate::output::RevokeSignatureOutput).
 pub mod revoke_signature_output {
 
@@ -257,12 +268,6 @@ pub mod revoke_signature_output {
         }
     }
 }
-impl RevokeSignatureOutput {
-    /// Creates a new builder-style object to manufacture [`RevokeSignatureOutput`](crate::output::RevokeSignatureOutput).
-    pub fn builder() -> crate::output::revoke_signature_output::Builder {
-        crate::output::revoke_signature_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -284,6 +289,13 @@ impl aws_http::request_id::RequestId for RemoveProfilePermissionOutput {
         self._request_id.as_deref()
     }
 }
+impl RemoveProfilePermissionOutput {
+    /// Creates a new builder-style object to manufacture [`RemoveProfilePermissionOutput`](crate::output::RemoveProfilePermissionOutput).
+    pub fn builder() -> crate::output::remove_profile_permission_output::Builder {
+        crate::output::remove_profile_permission_output::Builder::default()
+    }
+}
+
 /// See [`RemoveProfilePermissionOutput`](crate::output::RemoveProfilePermissionOutput).
 pub mod remove_profile_permission_output {
 
@@ -323,12 +335,6 @@ pub mod remove_profile_permission_output {
         }
     }
 }
-impl RemoveProfilePermissionOutput {
-    /// Creates a new builder-style object to manufacture [`RemoveProfilePermissionOutput`](crate::output::RemoveProfilePermissionOutput).
-    pub fn builder() -> crate::output::remove_profile_permission_output::Builder {
-        crate::output::remove_profile_permission_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -364,6 +370,13 @@ impl aws_http::request_id::RequestId for PutSigningProfileOutput {
         self._request_id.as_deref()
     }
 }
+impl PutSigningProfileOutput {
+    /// Creates a new builder-style object to manufacture [`PutSigningProfileOutput`](crate::output::PutSigningProfileOutput).
+    pub fn builder() -> crate::output::put_signing_profile_output::Builder {
+        crate::output::put_signing_profile_output::Builder::default()
+    }
+}
+
 /// See [`PutSigningProfileOutput`](crate::output::PutSigningProfileOutput).
 pub mod put_signing_profile_output {
 
@@ -433,12 +446,6 @@ pub mod put_signing_profile_output {
         }
     }
 }
-impl PutSigningProfileOutput {
-    /// Creates a new builder-style object to manufacture [`PutSigningProfileOutput`](crate::output::PutSigningProfileOutput).
-    pub fn builder() -> crate::output::put_signing_profile_output::Builder {
-        crate::output::put_signing_profile_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -464,6 +471,13 @@ impl aws_http::request_id::RequestId for ListTagsForResourceOutput {
         self._request_id.as_deref()
     }
 }
+impl ListTagsForResourceOutput {
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
+        crate::output::list_tags_for_resource_output::Builder::default()
+    }
+}
+
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
 
@@ -520,12 +534,6 @@ pub mod list_tags_for_resource_output {
         }
     }
 }
-impl ListTagsForResourceOutput {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
-    pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
-        crate::output::list_tags_for_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -554,6 +562,13 @@ impl aws_http::request_id::RequestId for ListSigningProfilesOutput {
         self._request_id.as_deref()
     }
 }
+impl ListSigningProfilesOutput {
+    /// Creates a new builder-style object to manufacture [`ListSigningProfilesOutput`](crate::output::ListSigningProfilesOutput).
+    pub fn builder() -> crate::output::list_signing_profiles_output::Builder {
+        crate::output::list_signing_profiles_output::Builder::default()
+    }
+}
+
 /// See [`ListSigningProfilesOutput`](crate::output::ListSigningProfilesOutput).
 pub mod list_signing_profiles_output {
 
@@ -614,12 +629,6 @@ pub mod list_signing_profiles_output {
         }
     }
 }
-impl ListSigningProfilesOutput {
-    /// Creates a new builder-style object to manufacture [`ListSigningProfilesOutput`](crate::output::ListSigningProfilesOutput).
-    pub fn builder() -> crate::output::list_signing_profiles_output::Builder {
-        crate::output::list_signing_profiles_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -648,6 +657,13 @@ impl aws_http::request_id::RequestId for ListSigningPlatformsOutput {
         self._request_id.as_deref()
     }
 }
+impl ListSigningPlatformsOutput {
+    /// Creates a new builder-style object to manufacture [`ListSigningPlatformsOutput`](crate::output::ListSigningPlatformsOutput).
+    pub fn builder() -> crate::output::list_signing_platforms_output::Builder {
+        crate::output::list_signing_platforms_output::Builder::default()
+    }
+}
+
 /// See [`ListSigningPlatformsOutput`](crate::output::ListSigningPlatformsOutput).
 pub mod list_signing_platforms_output {
 
@@ -708,12 +724,6 @@ pub mod list_signing_platforms_output {
         }
     }
 }
-impl ListSigningPlatformsOutput {
-    /// Creates a new builder-style object to manufacture [`ListSigningPlatformsOutput`](crate::output::ListSigningPlatformsOutput).
-    pub fn builder() -> crate::output::list_signing_platforms_output::Builder {
-        crate::output::list_signing_platforms_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -742,6 +752,13 @@ impl aws_http::request_id::RequestId for ListSigningJobsOutput {
         self._request_id.as_deref()
     }
 }
+impl ListSigningJobsOutput {
+    /// Creates a new builder-style object to manufacture [`ListSigningJobsOutput`](crate::output::ListSigningJobsOutput).
+    pub fn builder() -> crate::output::list_signing_jobs_output::Builder {
+        crate::output::list_signing_jobs_output::Builder::default()
+    }
+}
+
 /// See [`ListSigningJobsOutput`](crate::output::ListSigningJobsOutput).
 pub mod list_signing_jobs_output {
 
@@ -802,12 +819,6 @@ pub mod list_signing_jobs_output {
         }
     }
 }
-impl ListSigningJobsOutput {
-    /// Creates a new builder-style object to manufacture [`ListSigningJobsOutput`](crate::output::ListSigningJobsOutput).
-    pub fn builder() -> crate::output::list_signing_jobs_output::Builder {
-        crate::output::list_signing_jobs_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -850,6 +861,13 @@ impl aws_http::request_id::RequestId for ListProfilePermissionsOutput {
         self._request_id.as_deref()
     }
 }
+impl ListProfilePermissionsOutput {
+    /// Creates a new builder-style object to manufacture [`ListProfilePermissionsOutput`](crate::output::ListProfilePermissionsOutput).
+    pub fn builder() -> crate::output::list_profile_permissions_output::Builder {
+        crate::output::list_profile_permissions_output::Builder::default()
+    }
+}
+
 /// See [`ListProfilePermissionsOutput`](crate::output::ListProfilePermissionsOutput).
 pub mod list_profile_permissions_output {
 
@@ -932,12 +950,6 @@ pub mod list_profile_permissions_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl ListProfilePermissionsOutput {
-    /// Creates a new builder-style object to manufacture [`ListProfilePermissionsOutput`](crate::output::ListProfilePermissionsOutput).
-    pub fn builder() -> crate::output::list_profile_permissions_output::Builder {
-        crate::output::list_profile_permissions_output::Builder::default()
     }
 }
 
@@ -1064,6 +1076,13 @@ impl aws_http::request_id::RequestId for GetSigningProfileOutput {
         self._request_id.as_deref()
     }
 }
+impl GetSigningProfileOutput {
+    /// Creates a new builder-style object to manufacture [`GetSigningProfileOutput`](crate::output::GetSigningProfileOutput).
+    pub fn builder() -> crate::output::get_signing_profile_output::Builder {
+        crate::output::get_signing_profile_output::Builder::default()
+    }
+}
+
 /// See [`GetSigningProfileOutput`](crate::output::GetSigningProfileOutput).
 pub mod get_signing_profile_output {
 
@@ -1328,12 +1347,6 @@ pub mod get_signing_profile_output {
         }
     }
 }
-impl GetSigningProfileOutput {
-    /// Creates a new builder-style object to manufacture [`GetSigningProfileOutput`](crate::output::GetSigningProfileOutput).
-    pub fn builder() -> crate::output::get_signing_profile_output::Builder {
-        crate::output::get_signing_profile_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1413,6 +1426,13 @@ impl aws_http::request_id::RequestId for GetSigningPlatformOutput {
         self._request_id.as_deref()
     }
 }
+impl GetSigningPlatformOutput {
+    /// Creates a new builder-style object to manufacture [`GetSigningPlatformOutput`](crate::output::GetSigningPlatformOutput).
+    pub fn builder() -> crate::output::get_signing_platform_output::Builder {
+        crate::output::get_signing_platform_output::Builder::default()
+    }
+}
+
 /// See [`GetSigningPlatformOutput`](crate::output::GetSigningPlatformOutput).
 pub mod get_signing_platform_output {
 
@@ -1552,12 +1572,6 @@ pub mod get_signing_platform_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl GetSigningPlatformOutput {
-    /// Creates a new builder-style object to manufacture [`GetSigningPlatformOutput`](crate::output::GetSigningPlatformOutput).
-    pub fn builder() -> crate::output::get_signing_platform_output::Builder {
-        crate::output::get_signing_platform_output::Builder::default()
     }
 }
 
@@ -1713,6 +1727,13 @@ impl aws_http::request_id::RequestId for DescribeSigningJobOutput {
         self._request_id.as_deref()
     }
 }
+impl DescribeSigningJobOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeSigningJobOutput`](crate::output::DescribeSigningJobOutput).
+    pub fn builder() -> crate::output::describe_signing_job_output::Builder {
+        crate::output::describe_signing_job_output::Builder::default()
+    }
+}
+
 /// See [`DescribeSigningJobOutput`](crate::output::DescribeSigningJobOutput).
 pub mod describe_signing_job_output {
 
@@ -2021,12 +2042,6 @@ pub mod describe_signing_job_output {
         }
     }
 }
-impl DescribeSigningJobOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeSigningJobOutput`](crate::output::DescribeSigningJobOutput).
-    pub fn builder() -> crate::output::describe_signing_job_output::Builder {
-        crate::output::describe_signing_job_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2039,6 +2054,13 @@ impl aws_http::request_id::RequestId for CancelSigningProfileOutput {
         self._request_id.as_deref()
     }
 }
+impl CancelSigningProfileOutput {
+    /// Creates a new builder-style object to manufacture [`CancelSigningProfileOutput`](crate::output::CancelSigningProfileOutput).
+    pub fn builder() -> crate::output::cancel_signing_profile_output::Builder {
+        crate::output::cancel_signing_profile_output::Builder::default()
+    }
+}
+
 /// See [`CancelSigningProfileOutput`](crate::output::CancelSigningProfileOutput).
 pub mod cancel_signing_profile_output {
 
@@ -2066,12 +2088,6 @@ pub mod cancel_signing_profile_output {
         }
     }
 }
-impl CancelSigningProfileOutput {
-    /// Creates a new builder-style object to manufacture [`CancelSigningProfileOutput`](crate::output::CancelSigningProfileOutput).
-    pub fn builder() -> crate::output::cancel_signing_profile_output::Builder {
-        crate::output::cancel_signing_profile_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2093,6 +2109,13 @@ impl aws_http::request_id::RequestId for AddProfilePermissionOutput {
         self._request_id.as_deref()
     }
 }
+impl AddProfilePermissionOutput {
+    /// Creates a new builder-style object to manufacture [`AddProfilePermissionOutput`](crate::output::AddProfilePermissionOutput).
+    pub fn builder() -> crate::output::add_profile_permission_output::Builder {
+        crate::output::add_profile_permission_output::Builder::default()
+    }
+}
+
 /// See [`AddProfilePermissionOutput`](crate::output::AddProfilePermissionOutput).
 pub mod add_profile_permission_output {
 
@@ -2130,11 +2153,5 @@ pub mod add_profile_permission_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl AddProfilePermissionOutput {
-    /// Creates a new builder-style object to manufacture [`AddProfilePermissionOutput`](crate::output::AddProfilePermissionOutput).
-    pub fn builder() -> crate::output::add_profile_permission_output::Builder {
-        crate::output::add_profile_permission_output::Builder::default()
     }
 }

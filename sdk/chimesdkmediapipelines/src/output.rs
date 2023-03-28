@@ -10,6 +10,13 @@ impl aws_http::request_id::RequestId for UntagResourceOutput {
         self._request_id.as_deref()
     }
 }
+impl UntagResourceOutput {
+    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    pub fn builder() -> crate::output::untag_resource_output::Builder {
+        crate::output::untag_resource_output::Builder::default()
+    }
+}
+
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
 
@@ -37,12 +44,6 @@ pub mod untag_resource_output {
         }
     }
 }
-impl UntagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
-    pub fn builder() -> crate::output::untag_resource_output::Builder {
-        crate::output::untag_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -55,6 +56,13 @@ impl aws_http::request_id::RequestId for TagResourceOutput {
         self._request_id.as_deref()
     }
 }
+impl TagResourceOutput {
+    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
+    pub fn builder() -> crate::output::tag_resource_output::Builder {
+        crate::output::tag_resource_output::Builder::default()
+    }
+}
+
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
 
@@ -82,12 +90,6 @@ pub mod tag_resource_output {
         }
     }
 }
-impl TagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
-    pub fn builder() -> crate::output::tag_resource_output::Builder {
-        crate::output::tag_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -109,6 +111,13 @@ impl aws_http::request_id::RequestId for ListTagsForResourceOutput {
         self._request_id.as_deref()
     }
 }
+impl ListTagsForResourceOutput {
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
+        crate::output::list_tags_for_resource_output::Builder::default()
+    }
+}
+
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
 
@@ -157,12 +166,6 @@ pub mod list_tags_for_resource_output {
         }
     }
 }
-impl ListTagsForResourceOutput {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
-    pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
-        crate::output::list_tags_for_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -191,6 +194,13 @@ impl aws_http::request_id::RequestId for ListMediaPipelinesOutput {
         self._request_id.as_deref()
     }
 }
+impl ListMediaPipelinesOutput {
+    /// Creates a new builder-style object to manufacture [`ListMediaPipelinesOutput`](crate::output::ListMediaPipelinesOutput).
+    pub fn builder() -> crate::output::list_media_pipelines_output::Builder {
+        crate::output::list_media_pipelines_output::Builder::default()
+    }
+}
+
 /// See [`ListMediaPipelinesOutput`](crate::output::ListMediaPipelinesOutput).
 pub mod list_media_pipelines_output {
 
@@ -252,12 +262,6 @@ pub mod list_media_pipelines_output {
         }
     }
 }
-impl ListMediaPipelinesOutput {
-    /// Creates a new builder-style object to manufacture [`ListMediaPipelinesOutput`](crate::output::ListMediaPipelinesOutput).
-    pub fn builder() -> crate::output::list_media_pipelines_output::Builder {
-        crate::output::list_media_pipelines_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -289,6 +293,13 @@ impl aws_http::request_id::RequestId for ListMediaCapturePipelinesOutput {
         self._request_id.as_deref()
     }
 }
+impl ListMediaCapturePipelinesOutput {
+    /// Creates a new builder-style object to manufacture [`ListMediaCapturePipelinesOutput`](crate::output::ListMediaCapturePipelinesOutput).
+    pub fn builder() -> crate::output::list_media_capture_pipelines_output::Builder {
+        crate::output::list_media_capture_pipelines_output::Builder::default()
+    }
+}
+
 /// See [`ListMediaCapturePipelinesOutput`](crate::output::ListMediaCapturePipelinesOutput).
 pub mod list_media_capture_pipelines_output {
 
@@ -353,12 +364,6 @@ pub mod list_media_capture_pipelines_output {
         }
     }
 }
-impl ListMediaCapturePipelinesOutput {
-    /// Creates a new builder-style object to manufacture [`ListMediaCapturePipelinesOutput`](crate::output::ListMediaCapturePipelinesOutput).
-    pub fn builder() -> crate::output::list_media_capture_pipelines_output::Builder {
-        crate::output::list_media_capture_pipelines_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -380,6 +385,13 @@ impl aws_http::request_id::RequestId for GetMediaPipelineOutput {
         self._request_id.as_deref()
     }
 }
+impl GetMediaPipelineOutput {
+    /// Creates a new builder-style object to manufacture [`GetMediaPipelineOutput`](crate::output::GetMediaPipelineOutput).
+    pub fn builder() -> crate::output::get_media_pipeline_output::Builder {
+        crate::output::get_media_pipeline_output::Builder::default()
+    }
+}
+
 /// See [`GetMediaPipelineOutput`](crate::output::GetMediaPipelineOutput).
 pub mod get_media_pipeline_output {
 
@@ -422,12 +434,6 @@ pub mod get_media_pipeline_output {
         }
     }
 }
-impl GetMediaPipelineOutput {
-    /// Creates a new builder-style object to manufacture [`GetMediaPipelineOutput`](crate::output::GetMediaPipelineOutput).
-    pub fn builder() -> crate::output::get_media_pipeline_output::Builder {
-        crate::output::get_media_pipeline_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -451,6 +457,13 @@ impl aws_http::request_id::RequestId for GetMediaCapturePipelineOutput {
         self._request_id.as_deref()
     }
 }
+impl GetMediaCapturePipelineOutput {
+    /// Creates a new builder-style object to manufacture [`GetMediaCapturePipelineOutput`](crate::output::GetMediaCapturePipelineOutput).
+    pub fn builder() -> crate::output::get_media_capture_pipeline_output::Builder {
+        crate::output::get_media_capture_pipeline_output::Builder::default()
+    }
+}
+
 /// See [`GetMediaCapturePipelineOutput`](crate::output::GetMediaCapturePipelineOutput).
 pub mod get_media_capture_pipeline_output {
 
@@ -493,12 +506,6 @@ pub mod get_media_capture_pipeline_output {
         }
     }
 }
-impl GetMediaCapturePipelineOutput {
-    /// Creates a new builder-style object to manufacture [`GetMediaCapturePipelineOutput`](crate::output::GetMediaCapturePipelineOutput).
-    pub fn builder() -> crate::output::get_media_capture_pipeline_output::Builder {
-        crate::output::get_media_capture_pipeline_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -511,6 +518,13 @@ impl aws_http::request_id::RequestId for DeleteMediaPipelineOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteMediaPipelineOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteMediaPipelineOutput`](crate::output::DeleteMediaPipelineOutput).
+    pub fn builder() -> crate::output::delete_media_pipeline_output::Builder {
+        crate::output::delete_media_pipeline_output::Builder::default()
+    }
+}
+
 /// See [`DeleteMediaPipelineOutput`](crate::output::DeleteMediaPipelineOutput).
 pub mod delete_media_pipeline_output {
 
@@ -538,12 +552,6 @@ pub mod delete_media_pipeline_output {
         }
     }
 }
-impl DeleteMediaPipelineOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteMediaPipelineOutput`](crate::output::DeleteMediaPipelineOutput).
-    pub fn builder() -> crate::output::delete_media_pipeline_output::Builder {
-        crate::output::delete_media_pipeline_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -556,6 +564,13 @@ impl aws_http::request_id::RequestId for DeleteMediaCapturePipelineOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteMediaCapturePipelineOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteMediaCapturePipelineOutput`](crate::output::DeleteMediaCapturePipelineOutput).
+    pub fn builder() -> crate::output::delete_media_capture_pipeline_output::Builder {
+        crate::output::delete_media_capture_pipeline_output::Builder::default()
+    }
+}
+
 /// See [`DeleteMediaCapturePipelineOutput`](crate::output::DeleteMediaCapturePipelineOutput).
 pub mod delete_media_capture_pipeline_output {
 
@@ -583,12 +598,6 @@ pub mod delete_media_capture_pipeline_output {
         }
     }
 }
-impl DeleteMediaCapturePipelineOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteMediaCapturePipelineOutput`](crate::output::DeleteMediaCapturePipelineOutput).
-    pub fn builder() -> crate::output::delete_media_capture_pipeline_output::Builder {
-        crate::output::delete_media_capture_pipeline_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -613,6 +622,13 @@ impl aws_http::request_id::RequestId for CreateMediaLiveConnectorPipelineOutput 
         self._request_id.as_deref()
     }
 }
+impl CreateMediaLiveConnectorPipelineOutput {
+    /// Creates a new builder-style object to manufacture [`CreateMediaLiveConnectorPipelineOutput`](crate::output::CreateMediaLiveConnectorPipelineOutput).
+    pub fn builder() -> crate::output::create_media_live_connector_pipeline_output::Builder {
+        crate::output::create_media_live_connector_pipeline_output::Builder::default()
+    }
+}
+
 /// See [`CreateMediaLiveConnectorPipelineOutput`](crate::output::CreateMediaLiveConnectorPipelineOutput).
 pub mod create_media_live_connector_pipeline_output {
 
@@ -659,12 +675,6 @@ pub mod create_media_live_connector_pipeline_output {
         }
     }
 }
-impl CreateMediaLiveConnectorPipelineOutput {
-    /// Creates a new builder-style object to manufacture [`CreateMediaLiveConnectorPipelineOutput`](crate::output::CreateMediaLiveConnectorPipelineOutput).
-    pub fn builder() -> crate::output::create_media_live_connector_pipeline_output::Builder {
-        crate::output::create_media_live_connector_pipeline_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -688,6 +698,13 @@ impl aws_http::request_id::RequestId for CreateMediaConcatenationPipelineOutput 
         self._request_id.as_deref()
     }
 }
+impl CreateMediaConcatenationPipelineOutput {
+    /// Creates a new builder-style object to manufacture [`CreateMediaConcatenationPipelineOutput`](crate::output::CreateMediaConcatenationPipelineOutput).
+    pub fn builder() -> crate::output::create_media_concatenation_pipeline_output::Builder {
+        crate::output::create_media_concatenation_pipeline_output::Builder::default()
+    }
+}
+
 /// See [`CreateMediaConcatenationPipelineOutput`](crate::output::CreateMediaConcatenationPipelineOutput).
 pub mod create_media_concatenation_pipeline_output {
 
@@ -734,12 +751,6 @@ pub mod create_media_concatenation_pipeline_output {
         }
     }
 }
-impl CreateMediaConcatenationPipelineOutput {
-    /// Creates a new builder-style object to manufacture [`CreateMediaConcatenationPipelineOutput`](crate::output::CreateMediaConcatenationPipelineOutput).
-    pub fn builder() -> crate::output::create_media_concatenation_pipeline_output::Builder {
-        crate::output::create_media_concatenation_pipeline_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -763,6 +774,13 @@ impl aws_http::request_id::RequestId for CreateMediaCapturePipelineOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateMediaCapturePipelineOutput {
+    /// Creates a new builder-style object to manufacture [`CreateMediaCapturePipelineOutput`](crate::output::CreateMediaCapturePipelineOutput).
+    pub fn builder() -> crate::output::create_media_capture_pipeline_output::Builder {
+        crate::output::create_media_capture_pipeline_output::Builder::default()
+    }
+}
+
 /// See [`CreateMediaCapturePipelineOutput`](crate::output::CreateMediaCapturePipelineOutput).
 pub mod create_media_capture_pipeline_output {
 
@@ -803,11 +821,5 @@ pub mod create_media_capture_pipeline_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl CreateMediaCapturePipelineOutput {
-    /// Creates a new builder-style object to manufacture [`CreateMediaCapturePipelineOutput`](crate::output::CreateMediaCapturePipelineOutput).
-    pub fn builder() -> crate::output::create_media_capture_pipeline_output::Builder {
-        crate::output::create_media_capture_pipeline_output::Builder::default()
     }
 }

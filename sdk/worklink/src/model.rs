@@ -115,6 +115,13 @@ impl WebsiteCaSummary {
         self.display_name.as_deref()
     }
 }
+impl WebsiteCaSummary {
+    /// Creates a new builder-style object to manufacture [`WebsiteCaSummary`](crate::model::WebsiteCaSummary).
+    pub fn builder() -> crate::model::website_ca_summary::Builder {
+        crate::model::website_ca_summary::Builder::default()
+    }
+}
+
 /// See [`WebsiteCaSummary`](crate::model::WebsiteCaSummary).
 pub mod website_ca_summary {
 
@@ -173,12 +180,6 @@ pub mod website_ca_summary {
         }
     }
 }
-impl WebsiteCaSummary {
-    /// Creates a new builder-style object to manufacture [`WebsiteCaSummary`](crate::model::WebsiteCaSummary).
-    pub fn builder() -> crate::model::website_ca_summary::Builder {
-        crate::model::website_ca_summary::Builder::default()
-    }
-}
 
 /// <p>The summary of the website authorization provider.</p>
 #[non_exhaustive]
@@ -217,6 +218,13 @@ impl WebsiteAuthorizationProviderSummary {
         self.created_time.as_ref()
     }
 }
+impl WebsiteAuthorizationProviderSummary {
+    /// Creates a new builder-style object to manufacture [`WebsiteAuthorizationProviderSummary`](crate::model::WebsiteAuthorizationProviderSummary).
+    pub fn builder() -> crate::model::website_authorization_provider_summary::Builder {
+        crate::model::website_authorization_provider_summary::Builder::default()
+    }
+}
+
 /// See [`WebsiteAuthorizationProviderSummary`](crate::model::WebsiteAuthorizationProviderSummary).
 pub mod website_authorization_provider_summary {
 
@@ -292,12 +300,6 @@ pub mod website_authorization_provider_summary {
                 created_time: self.created_time,
             }
         }
-    }
-}
-impl WebsiteAuthorizationProviderSummary {
-    /// Creates a new builder-style object to manufacture [`WebsiteAuthorizationProviderSummary`](crate::model::WebsiteAuthorizationProviderSummary).
-    pub fn builder() -> crate::model::website_authorization_provider_summary::Builder {
-        crate::model::website_authorization_provider_summary::Builder::default()
     }
 }
 
@@ -455,6 +457,13 @@ impl FleetSummary {
         self.tags.as_ref()
     }
 }
+impl FleetSummary {
+    /// Creates a new builder-style object to manufacture [`FleetSummary`](crate::model::FleetSummary).
+    pub fn builder() -> crate::model::fleet_summary::Builder {
+        crate::model::fleet_summary::Builder::default()
+    }
+}
+
 /// See [`FleetSummary`](crate::model::FleetSummary).
 pub mod fleet_summary {
 
@@ -591,12 +600,6 @@ pub mod fleet_summary {
                 tags: self.tags,
             }
         }
-    }
-}
-impl FleetSummary {
-    /// Creates a new builder-style object to manufacture [`FleetSummary`](crate::model::FleetSummary).
-    pub fn builder() -> crate::model::fleet_summary::Builder {
-        crate::model::fleet_summary::Builder::default()
     }
 }
 
@@ -752,6 +755,13 @@ impl DomainSummary {
         self.domain_status.as_ref()
     }
 }
+impl DomainSummary {
+    /// Creates a new builder-style object to manufacture [`DomainSummary`](crate::model::DomainSummary).
+    pub fn builder() -> crate::model::domain_summary::Builder {
+        crate::model::domain_summary::Builder::default()
+    }
+}
+
 /// See [`DomainSummary`](crate::model::DomainSummary).
 pub mod domain_summary {
 
@@ -820,12 +830,6 @@ pub mod domain_summary {
                 domain_status: self.domain_status,
             }
         }
-    }
-}
-impl DomainSummary {
-    /// Creates a new builder-style object to manufacture [`DomainSummary`](crate::model::DomainSummary).
-    pub fn builder() -> crate::model::domain_summary::Builder {
-        crate::model::domain_summary::Builder::default()
     }
 }
 
@@ -979,6 +983,13 @@ impl DeviceSummary {
         self.device_status.as_ref()
     }
 }
+impl DeviceSummary {
+    /// Creates a new builder-style object to manufacture [`DeviceSummary`](crate::model::DeviceSummary).
+    pub fn builder() -> crate::model::device_summary::Builder {
+        crate::model::device_summary::Builder::default()
+    }
+}
+
 /// See [`DeviceSummary`](crate::model::DeviceSummary).
 pub mod device_summary {
 
@@ -1020,12 +1031,6 @@ pub mod device_summary {
                 device_status: self.device_status,
             }
         }
-    }
-}
-impl DeviceSummary {
-    /// Creates a new builder-style object to manufacture [`DeviceSummary`](crate::model::DeviceSummary).
-    pub fn builder() -> crate::model::device_summary::Builder {
-        crate::model::device_summary::Builder::default()
     }
 }
 

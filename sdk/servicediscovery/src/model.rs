@@ -28,6 +28,13 @@ impl ServiceChange {
         self.health_check_config.as_ref()
     }
 }
+impl ServiceChange {
+    /// Creates a new builder-style object to manufacture [`ServiceChange`](crate::model::ServiceChange).
+    pub fn builder() -> crate::model::service_change::Builder {
+        crate::model::service_change::Builder::default()
+    }
+}
+
 /// See [`ServiceChange`](crate::model::ServiceChange).
 pub mod service_change {
 
@@ -84,12 +91,6 @@ pub mod service_change {
                 health_check_config: self.health_check_config,
             }
         }
-    }
-}
-impl ServiceChange {
-    /// Creates a new builder-style object to manufacture [`ServiceChange`](crate::model::ServiceChange).
-    pub fn builder() -> crate::model::service_change::Builder {
-        crate::model::service_change::Builder::default()
     }
 }
 
@@ -191,6 +192,13 @@ impl HealthCheckConfig {
         self.failure_threshold
     }
 }
+impl HealthCheckConfig {
+    /// Creates a new builder-style object to manufacture [`HealthCheckConfig`](crate::model::HealthCheckConfig).
+    pub fn builder() -> crate::model::health_check_config::Builder {
+        crate::model::health_check_config::Builder::default()
+    }
+}
+
 /// See [`HealthCheckConfig`](crate::model::HealthCheckConfig).
 pub mod health_check_config {
 
@@ -271,12 +279,6 @@ pub mod health_check_config {
                 failure_threshold: self.failure_threshold,
             }
         }
-    }
-}
-impl HealthCheckConfig {
-    /// Creates a new builder-style object to manufacture [`HealthCheckConfig`](crate::model::HealthCheckConfig).
-    pub fn builder() -> crate::model::health_check_config::Builder {
-        crate::model::health_check_config::Builder::default()
     }
 }
 
@@ -389,6 +391,13 @@ impl DnsConfigChange {
         self.dns_records.as_deref()
     }
 }
+impl DnsConfigChange {
+    /// Creates a new builder-style object to manufacture [`DnsConfigChange`](crate::model::DnsConfigChange).
+    pub fn builder() -> crate::model::dns_config_change::Builder {
+        crate::model::dns_config_change::Builder::default()
+    }
+}
+
 /// See [`DnsConfigChange`](crate::model::DnsConfigChange).
 pub mod dns_config_change {
 
@@ -424,12 +433,6 @@ pub mod dns_config_change {
                 dns_records: self.dns_records,
             }
         }
-    }
-}
-impl DnsConfigChange {
-    /// Creates a new builder-style object to manufacture [`DnsConfigChange`](crate::model::DnsConfigChange).
-    pub fn builder() -> crate::model::dns_config_change::Builder {
-        crate::model::dns_config_change::Builder::default()
     }
 }
 
@@ -574,6 +577,13 @@ impl DnsRecord {
         self.ttl
     }
 }
+impl DnsRecord {
+    /// Creates a new builder-style object to manufacture [`DnsRecord`](crate::model::DnsRecord).
+    pub fn builder() -> crate::model::dns_record::Builder {
+        crate::model::dns_record::Builder::default()
+    }
+}
+
 /// See [`DnsRecord`](crate::model::DnsRecord).
 pub mod dns_record {
 
@@ -734,12 +744,6 @@ pub mod dns_record {
         }
     }
 }
-impl DnsRecord {
-    /// Creates a new builder-style object to manufacture [`DnsRecord`](crate::model::DnsRecord).
-    pub fn builder() -> crate::model::dns_record::Builder {
-        crate::model::dns_record::Builder::default()
-    }
-}
 
 /// When writing a match expression against `RecordType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -864,6 +868,13 @@ impl PublicDnsNamespaceChange {
         self.properties.as_ref()
     }
 }
+impl PublicDnsNamespaceChange {
+    /// Creates a new builder-style object to manufacture [`PublicDnsNamespaceChange`](crate::model::PublicDnsNamespaceChange).
+    pub fn builder() -> crate::model::public_dns_namespace_change::Builder {
+        crate::model::public_dns_namespace_change::Builder::default()
+    }
+}
+
 /// See [`PublicDnsNamespaceChange`](crate::model::PublicDnsNamespaceChange).
 pub mod public_dns_namespace_change {
 
@@ -911,12 +922,6 @@ pub mod public_dns_namespace_change {
         }
     }
 }
-impl PublicDnsNamespaceChange {
-    /// Creates a new builder-style object to manufacture [`PublicDnsNamespaceChange`](crate::model::PublicDnsNamespaceChange).
-    pub fn builder() -> crate::model::public_dns_namespace_change::Builder {
-        crate::model::public_dns_namespace_change::Builder::default()
-    }
-}
 
 /// <p>Updated properties for the public DNS namespace.</p>
 #[non_exhaustive]
@@ -934,6 +939,13 @@ impl PublicDnsNamespacePropertiesChange {
         self.dns_properties.as_ref()
     }
 }
+impl PublicDnsNamespacePropertiesChange {
+    /// Creates a new builder-style object to manufacture [`PublicDnsNamespacePropertiesChange`](crate::model::PublicDnsNamespacePropertiesChange).
+    pub fn builder() -> crate::model::public_dns_namespace_properties_change::Builder {
+        crate::model::public_dns_namespace_properties_change::Builder::default()
+    }
+}
+
 /// See [`PublicDnsNamespacePropertiesChange`](crate::model::PublicDnsNamespacePropertiesChange).
 pub mod public_dns_namespace_properties_change {
 
@@ -969,12 +981,6 @@ pub mod public_dns_namespace_properties_change {
         }
     }
 }
-impl PublicDnsNamespacePropertiesChange {
-    /// Creates a new builder-style object to manufacture [`PublicDnsNamespacePropertiesChange`](crate::model::PublicDnsNamespacePropertiesChange).
-    pub fn builder() -> crate::model::public_dns_namespace_properties_change::Builder {
-        crate::model::public_dns_namespace_properties_change::Builder::default()
-    }
-}
 
 /// <p>Updated DNS properties for the public DNS namespace.</p>
 #[non_exhaustive]
@@ -990,6 +996,13 @@ impl PublicDnsPropertiesMutableChange {
         self.soa.as_ref()
     }
 }
+impl PublicDnsPropertiesMutableChange {
+    /// Creates a new builder-style object to manufacture [`PublicDnsPropertiesMutableChange`](crate::model::PublicDnsPropertiesMutableChange).
+    pub fn builder() -> crate::model::public_dns_properties_mutable_change::Builder {
+        crate::model::public_dns_properties_mutable_change::Builder::default()
+    }
+}
+
 /// See [`PublicDnsPropertiesMutableChange`](crate::model::PublicDnsPropertiesMutableChange).
 pub mod public_dns_properties_mutable_change {
 
@@ -1016,12 +1029,6 @@ pub mod public_dns_properties_mutable_change {
         }
     }
 }
-impl PublicDnsPropertiesMutableChange {
-    /// Creates a new builder-style object to manufacture [`PublicDnsPropertiesMutableChange`](crate::model::PublicDnsPropertiesMutableChange).
-    pub fn builder() -> crate::model::public_dns_properties_mutable_change::Builder {
-        crate::model::public_dns_properties_mutable_change::Builder::default()
-    }
-}
 
 /// <p>Updated Start of Authority (SOA) properties for a public or private DNS namespace.</p>
 #[non_exhaustive]
@@ -1037,6 +1044,13 @@ impl SoaChange {
         self.ttl
     }
 }
+impl SoaChange {
+    /// Creates a new builder-style object to manufacture [`SoaChange`](crate::model::SoaChange).
+    pub fn builder() -> crate::model::soa_change::Builder {
+        crate::model::soa_change::Builder::default()
+    }
+}
+
 /// See [`SoaChange`](crate::model::SoaChange).
 pub mod soa_change {
 
@@ -1063,12 +1077,6 @@ pub mod soa_change {
         }
     }
 }
-impl SoaChange {
-    /// Creates a new builder-style object to manufacture [`SoaChange`](crate::model::SoaChange).
-    pub fn builder() -> crate::model::soa_change::Builder {
-        crate::model::soa_change::Builder::default()
-    }
-}
 
 /// <p>Updated properties for the private DNS namespace.</p>
 #[non_exhaustive]
@@ -1093,6 +1101,13 @@ impl PrivateDnsNamespaceChange {
         self.properties.as_ref()
     }
 }
+impl PrivateDnsNamespaceChange {
+    /// Creates a new builder-style object to manufacture [`PrivateDnsNamespaceChange`](crate::model::PrivateDnsNamespaceChange).
+    pub fn builder() -> crate::model::private_dns_namespace_change::Builder {
+        crate::model::private_dns_namespace_change::Builder::default()
+    }
+}
+
 /// See [`PrivateDnsNamespaceChange`](crate::model::PrivateDnsNamespaceChange).
 pub mod private_dns_namespace_change {
 
@@ -1140,12 +1155,6 @@ pub mod private_dns_namespace_change {
         }
     }
 }
-impl PrivateDnsNamespaceChange {
-    /// Creates a new builder-style object to manufacture [`PrivateDnsNamespaceChange`](crate::model::PrivateDnsNamespaceChange).
-    pub fn builder() -> crate::model::private_dns_namespace_change::Builder {
-        crate::model::private_dns_namespace_change::Builder::default()
-    }
-}
 
 /// <p>Updated properties for the private DNS namespace.</p>
 #[non_exhaustive]
@@ -1163,6 +1172,13 @@ impl PrivateDnsNamespacePropertiesChange {
         self.dns_properties.as_ref()
     }
 }
+impl PrivateDnsNamespacePropertiesChange {
+    /// Creates a new builder-style object to manufacture [`PrivateDnsNamespacePropertiesChange`](crate::model::PrivateDnsNamespacePropertiesChange).
+    pub fn builder() -> crate::model::private_dns_namespace_properties_change::Builder {
+        crate::model::private_dns_namespace_properties_change::Builder::default()
+    }
+}
+
 /// See [`PrivateDnsNamespacePropertiesChange`](crate::model::PrivateDnsNamespacePropertiesChange).
 pub mod private_dns_namespace_properties_change {
 
@@ -1198,12 +1214,6 @@ pub mod private_dns_namespace_properties_change {
         }
     }
 }
-impl PrivateDnsNamespacePropertiesChange {
-    /// Creates a new builder-style object to manufacture [`PrivateDnsNamespacePropertiesChange`](crate::model::PrivateDnsNamespacePropertiesChange).
-    pub fn builder() -> crate::model::private_dns_namespace_properties_change::Builder {
-        crate::model::private_dns_namespace_properties_change::Builder::default()
-    }
-}
 
 /// <p>Updated DNS properties for the private DNS namespace.</p>
 #[non_exhaustive]
@@ -1219,6 +1229,13 @@ impl PrivateDnsPropertiesMutableChange {
         self.soa.as_ref()
     }
 }
+impl PrivateDnsPropertiesMutableChange {
+    /// Creates a new builder-style object to manufacture [`PrivateDnsPropertiesMutableChange`](crate::model::PrivateDnsPropertiesMutableChange).
+    pub fn builder() -> crate::model::private_dns_properties_mutable_change::Builder {
+        crate::model::private_dns_properties_mutable_change::Builder::default()
+    }
+}
+
 /// See [`PrivateDnsPropertiesMutableChange`](crate::model::PrivateDnsPropertiesMutableChange).
 pub mod private_dns_properties_mutable_change {
 
@@ -1243,12 +1260,6 @@ pub mod private_dns_properties_mutable_change {
         pub fn build(self) -> crate::model::PrivateDnsPropertiesMutableChange {
             crate::model::PrivateDnsPropertiesMutableChange { soa: self.soa }
         }
-    }
-}
-impl PrivateDnsPropertiesMutableChange {
-    /// Creates a new builder-style object to manufacture [`PrivateDnsPropertiesMutableChange`](crate::model::PrivateDnsPropertiesMutableChange).
-    pub fn builder() -> crate::model::private_dns_properties_mutable_change::Builder {
-        crate::model::private_dns_properties_mutable_change::Builder::default()
     }
 }
 
@@ -1358,6 +1369,13 @@ impl HttpNamespaceChange {
         self.description.as_deref()
     }
 }
+impl HttpNamespaceChange {
+    /// Creates a new builder-style object to manufacture [`HttpNamespaceChange`](crate::model::HttpNamespaceChange).
+    pub fn builder() -> crate::model::http_namespace_change::Builder {
+        crate::model::http_namespace_change::Builder::default()
+    }
+}
+
 /// See [`HttpNamespaceChange`](crate::model::HttpNamespaceChange).
 pub mod http_namespace_change {
 
@@ -1386,12 +1404,6 @@ pub mod http_namespace_change {
         }
     }
 }
-impl HttpNamespaceChange {
-    /// Creates a new builder-style object to manufacture [`HttpNamespaceChange`](crate::model::HttpNamespaceChange).
-    pub fn builder() -> crate::model::http_namespace_change::Builder {
-        crate::model::http_namespace_change::Builder::default()
-    }
-}
 
 /// <p>A custom key-value pair that's associated with a resource.</p>
 #[non_exhaustive]
@@ -1414,6 +1426,13 @@ impl Tag {
         self.value.as_deref()
     }
 }
+impl Tag {
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
+    pub fn builder() -> crate::model::tag::Builder {
+        crate::model::tag::Builder::default()
+    }
+}
+
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
 
@@ -1452,12 +1471,6 @@ pub mod tag {
                 value: self.value,
             }
         }
-    }
-}
-impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
-    pub fn builder() -> crate::model::tag::Builder {
-        crate::model::tag::Builder::default()
     }
 }
 
@@ -1592,6 +1605,13 @@ impl ServiceSummary {
         self.create_date.as_ref()
     }
 }
+impl ServiceSummary {
+    /// Creates a new builder-style object to manufacture [`ServiceSummary`](crate::model::ServiceSummary).
+    pub fn builder() -> crate::model::service_summary::Builder {
+        crate::model::service_summary::Builder::default()
+    }
+}
+
 /// See [`ServiceSummary`](crate::model::ServiceSummary).
 pub mod service_summary {
 
@@ -1796,12 +1816,6 @@ pub mod service_summary {
         }
     }
 }
-impl ServiceSummary {
-    /// Creates a new builder-style object to manufacture [`ServiceSummary`](crate::model::ServiceSummary).
-    pub fn builder() -> crate::model::service_summary::Builder {
-        crate::model::service_summary::Builder::default()
-    }
-}
 
 /// <p>A complex type that contains information about an optional custom health check. A custom health check, which requires that you use a third-party health checker to evaluate the health of your resources, is useful in the following circumstances:</p>
 /// <ul>
@@ -1850,6 +1864,13 @@ impl HealthCheckCustomConfig {
         self.failure_threshold
     }
 }
+impl HealthCheckCustomConfig {
+    /// Creates a new builder-style object to manufacture [`HealthCheckCustomConfig`](crate::model::HealthCheckCustomConfig).
+    pub fn builder() -> crate::model::health_check_custom_config::Builder {
+        crate::model::health_check_custom_config::Builder::default()
+    }
+}
+
 /// See [`HealthCheckCustomConfig`](crate::model::HealthCheckCustomConfig).
 pub mod health_check_custom_config {
 
@@ -1890,12 +1911,6 @@ pub mod health_check_custom_config {
                 failure_threshold: self.failure_threshold,
             }
         }
-    }
-}
-impl HealthCheckCustomConfig {
-    /// Creates a new builder-style object to manufacture [`HealthCheckCustomConfig`](crate::model::HealthCheckCustomConfig).
-    pub fn builder() -> crate::model::health_check_custom_config::Builder {
-        crate::model::health_check_custom_config::Builder::default()
     }
 }
 
@@ -1979,6 +1994,13 @@ impl DnsConfig {
         self.dns_records.as_deref()
     }
 }
+impl DnsConfig {
+    /// Creates a new builder-style object to manufacture [`DnsConfig`](crate::model::DnsConfig).
+    pub fn builder() -> crate::model::dns_config::Builder {
+        crate::model::dns_config::Builder::default()
+    }
+}
+
 /// See [`DnsConfig`](crate::model::DnsConfig).
 pub mod dns_config {
 
@@ -2095,12 +2117,6 @@ pub mod dns_config {
                 dns_records: self.dns_records,
             }
         }
-    }
-}
-impl DnsConfig {
-    /// Creates a new builder-style object to manufacture [`DnsConfig`](crate::model::DnsConfig).
-    pub fn builder() -> crate::model::dns_config::Builder {
-        crate::model::dns_config::Builder::default()
     }
 }
 
@@ -2323,6 +2339,13 @@ impl ServiceFilter {
         self.condition.as_ref()
     }
 }
+impl ServiceFilter {
+    /// Creates a new builder-style object to manufacture [`ServiceFilter`](crate::model::ServiceFilter).
+    pub fn builder() -> crate::model::service_filter::Builder {
+        crate::model::service_filter::Builder::default()
+    }
+}
+
 /// See [`ServiceFilter`](crate::model::ServiceFilter).
 pub mod service_filter {
 
@@ -2394,12 +2417,6 @@ pub mod service_filter {
                 condition: self.condition,
             }
         }
-    }
-}
-impl ServiceFilter {
-    /// Creates a new builder-style object to manufacture [`ServiceFilter`](crate::model::ServiceFilter).
-    pub fn builder() -> crate::model::service_filter::Builder {
-        crate::model::service_filter::Builder::default()
     }
 }
 
@@ -2623,6 +2640,13 @@ impl OperationSummary {
         self.status.as_ref()
     }
 }
+impl OperationSummary {
+    /// Creates a new builder-style object to manufacture [`OperationSummary`](crate::model::OperationSummary).
+    pub fn builder() -> crate::model::operation_summary::Builder {
+        crate::model::operation_summary::Builder::default()
+    }
+}
+
 /// See [`OperationSummary`](crate::model::OperationSummary).
 pub mod operation_summary {
 
@@ -2676,12 +2700,6 @@ pub mod operation_summary {
                 status: self.status,
             }
         }
-    }
-}
-impl OperationSummary {
-    /// Creates a new builder-style object to manufacture [`OperationSummary`](crate::model::OperationSummary).
-    pub fn builder() -> crate::model::operation_summary::Builder {
-        crate::model::operation_summary::Builder::default()
     }
 }
 
@@ -2851,6 +2869,13 @@ impl OperationFilter {
         self.condition.as_ref()
     }
 }
+impl OperationFilter {
+    /// Creates a new builder-style object to manufacture [`OperationFilter`](crate::model::OperationFilter).
+    pub fn builder() -> crate::model::operation_filter::Builder {
+        crate::model::operation_filter::Builder::default()
+    }
+}
+
 /// See [`OperationFilter`](crate::model::OperationFilter).
 pub mod operation_filter {
 
@@ -2954,12 +2979,6 @@ pub mod operation_filter {
                 condition: self.condition,
             }
         }
-    }
-}
-impl OperationFilter {
-    /// Creates a new builder-style object to manufacture [`OperationFilter`](crate::model::OperationFilter).
-    pub fn builder() -> crate::model::operation_filter::Builder {
-        crate::model::operation_filter::Builder::default()
     }
 }
 
@@ -3139,6 +3158,13 @@ impl NamespaceSummary {
         self.create_date.as_ref()
     }
 }
+impl NamespaceSummary {
+    /// Creates a new builder-style object to manufacture [`NamespaceSummary`](crate::model::NamespaceSummary).
+    pub fn builder() -> crate::model::namespace_summary::Builder {
+        crate::model::namespace_summary::Builder::default()
+    }
+}
+
 /// See [`NamespaceSummary`](crate::model::NamespaceSummary).
 pub mod namespace_summary {
 
@@ -3257,12 +3283,6 @@ pub mod namespace_summary {
         }
     }
 }
-impl NamespaceSummary {
-    /// Creates a new builder-style object to manufacture [`NamespaceSummary`](crate::model::NamespaceSummary).
-    pub fn builder() -> crate::model::namespace_summary::Builder {
-        crate::model::namespace_summary::Builder::default()
-    }
-}
 
 /// <p>A complex type that contains information that's specific to the namespace type.</p>
 #[non_exhaustive]
@@ -3285,6 +3305,13 @@ impl NamespaceProperties {
         self.http_properties.as_ref()
     }
 }
+impl NamespaceProperties {
+    /// Creates a new builder-style object to manufacture [`NamespaceProperties`](crate::model::NamespaceProperties).
+    pub fn builder() -> crate::model::namespace_properties::Builder {
+        crate::model::namespace_properties::Builder::default()
+    }
+}
+
 /// See [`NamespaceProperties`](crate::model::NamespaceProperties).
 pub mod namespace_properties {
 
@@ -3331,12 +3358,6 @@ pub mod namespace_properties {
         }
     }
 }
-impl NamespaceProperties {
-    /// Creates a new builder-style object to manufacture [`NamespaceProperties`](crate::model::NamespaceProperties).
-    pub fn builder() -> crate::model::namespace_properties::Builder {
-        crate::model::namespace_properties::Builder::default()
-    }
-}
 
 /// <p>A complex type that contains the name of an HTTP namespace.</p>
 #[non_exhaustive]
@@ -3352,6 +3373,13 @@ impl HttpProperties {
         self.http_name.as_deref()
     }
 }
+impl HttpProperties {
+    /// Creates a new builder-style object to manufacture [`HttpProperties`](crate::model::HttpProperties).
+    pub fn builder() -> crate::model::http_properties::Builder {
+        crate::model::http_properties::Builder::default()
+    }
+}
+
 /// See [`HttpProperties`](crate::model::HttpProperties).
 pub mod http_properties {
 
@@ -3380,12 +3408,6 @@ pub mod http_properties {
         }
     }
 }
-impl HttpProperties {
-    /// Creates a new builder-style object to manufacture [`HttpProperties`](crate::model::HttpProperties).
-    pub fn builder() -> crate::model::http_properties::Builder {
-        crate::model::http_properties::Builder::default()
-    }
-}
 
 /// <p>A complex type that contains the ID for the Route&nbsp;53 hosted zone that Cloud Map creates when you create a namespace.</p>
 #[non_exhaustive]
@@ -3408,6 +3430,13 @@ impl DnsProperties {
         self.soa.as_ref()
     }
 }
+impl DnsProperties {
+    /// Creates a new builder-style object to manufacture [`DnsProperties`](crate::model::DnsProperties).
+    pub fn builder() -> crate::model::dns_properties::Builder {
+        crate::model::dns_properties::Builder::default()
+    }
+}
+
 /// See [`DnsProperties`](crate::model::DnsProperties).
 pub mod dns_properties {
 
@@ -3451,12 +3480,6 @@ pub mod dns_properties {
         }
     }
 }
-impl DnsProperties {
-    /// Creates a new builder-style object to manufacture [`DnsProperties`](crate::model::DnsProperties).
-    pub fn builder() -> crate::model::dns_properties::Builder {
-        crate::model::dns_properties::Builder::default()
-    }
-}
 
 /// <p>Start of Authority (SOA) properties for a public or private DNS namespace.</p>
 #[non_exhaustive]
@@ -3472,6 +3495,13 @@ impl Soa {
         self.ttl
     }
 }
+impl Soa {
+    /// Creates a new builder-style object to manufacture [`Soa`](crate::model::Soa).
+    pub fn builder() -> crate::model::soa::Builder {
+        crate::model::soa::Builder::default()
+    }
+}
+
 /// See [`Soa`](crate::model::Soa).
 pub mod soa {
 
@@ -3496,12 +3526,6 @@ pub mod soa {
         pub fn build(self) -> crate::model::Soa {
             crate::model::Soa { ttl: self.ttl }
         }
-    }
-}
-impl Soa {
-    /// Creates a new builder-style object to manufacture [`Soa`](crate::model::Soa).
-    pub fn builder() -> crate::model::soa::Builder {
-        crate::model::soa::Builder::default()
     }
 }
 
@@ -3656,6 +3680,13 @@ impl NamespaceFilter {
         self.condition.as_ref()
     }
 }
+impl NamespaceFilter {
+    /// Creates a new builder-style object to manufacture [`NamespaceFilter`](crate::model::NamespaceFilter).
+    pub fn builder() -> crate::model::namespace_filter::Builder {
+        crate::model::namespace_filter::Builder::default()
+    }
+}
+
 /// See [`NamespaceFilter`](crate::model::NamespaceFilter).
 pub mod namespace_filter {
 
@@ -3749,12 +3780,6 @@ pub mod namespace_filter {
                 condition: self.condition,
             }
         }
-    }
-}
-impl NamespaceFilter {
-    /// Creates a new builder-style object to manufacture [`NamespaceFilter`](crate::model::NamespaceFilter).
-    pub fn builder() -> crate::model::namespace_filter::Builder {
-        crate::model::namespace_filter::Builder::default()
     }
 }
 
@@ -3978,6 +4003,13 @@ impl InstanceSummary {
         self.attributes.as_ref()
     }
 }
+impl InstanceSummary {
+    /// Creates a new builder-style object to manufacture [`InstanceSummary`](crate::model::InstanceSummary).
+    pub fn builder() -> crate::model::instance_summary::Builder {
+        crate::model::instance_summary::Builder::default()
+    }
+}
+
 /// See [`InstanceSummary`](crate::model::InstanceSummary).
 pub mod instance_summary {
 
@@ -4133,12 +4165,6 @@ pub mod instance_summary {
         }
     }
 }
-impl InstanceSummary {
-    /// Creates a new builder-style object to manufacture [`InstanceSummary`](crate::model::InstanceSummary).
-    pub fn builder() -> crate::model::instance_summary::Builder {
-        crate::model::instance_summary::Builder::default()
-    }
-}
 
 /// <p>A complex type that contains information about the specified service.</p>
 #[non_exhaustive]
@@ -4283,6 +4309,13 @@ impl Service {
         self.creator_request_id.as_deref()
     }
 }
+impl Service {
+    /// Creates a new builder-style object to manufacture [`Service`](crate::model::Service).
+    pub fn builder() -> crate::model::service::Builder {
+        crate::model::service::Builder::default()
+    }
+}
+
 /// See [`Service`](crate::model::Service).
 pub mod service {
 
@@ -4512,12 +4545,6 @@ pub mod service {
         }
     }
 }
-impl Service {
-    /// Creates a new builder-style object to manufacture [`Service`](crate::model::Service).
-    pub fn builder() -> crate::model::service::Builder {
-        crate::model::service::Builder::default()
-    }
-}
 
 /// <p>A complex type that contains information about a specified operation.</p>
 #[non_exhaustive]
@@ -4698,6 +4725,13 @@ impl Operation {
         self.targets.as_ref()
     }
 }
+impl Operation {
+    /// Creates a new builder-style object to manufacture [`Operation`](crate::model::Operation).
+    pub fn builder() -> crate::model::operation::Builder {
+        crate::model::operation::Builder::default()
+    }
+}
+
 /// See [`Operation`](crate::model::Operation).
 pub mod operation {
 
@@ -4947,12 +4981,6 @@ pub mod operation {
                 targets: self.targets,
             }
         }
-    }
-}
-impl Operation {
-    /// Creates a new builder-style object to manufacture [`Operation`](crate::model::Operation).
-    pub fn builder() -> crate::model::operation::Builder {
-        crate::model::operation::Builder::default()
     }
 }
 
@@ -5280,6 +5308,13 @@ impl Namespace {
         self.creator_request_id.as_deref()
     }
 }
+impl Namespace {
+    /// Creates a new builder-style object to manufacture [`Namespace`](crate::model::Namespace).
+    pub fn builder() -> crate::model::namespace::Builder {
+        crate::model::namespace::Builder::default()
+    }
+}
+
 /// See [`Namespace`](crate::model::Namespace).
 pub mod namespace {
 
@@ -5451,12 +5486,6 @@ pub mod namespace {
                 creator_request_id: self.creator_request_id,
             }
         }
-    }
-}
-impl Namespace {
-    /// Creates a new builder-style object to manufacture [`Namespace`](crate::model::Namespace).
-    pub fn builder() -> crate::model::namespace::Builder {
-        crate::model::namespace::Builder::default()
     }
 }
 
@@ -5731,6 +5760,13 @@ impl Instance {
         self.attributes.as_ref()
     }
 }
+impl Instance {
+    /// Creates a new builder-style object to manufacture [`Instance`](crate::model::Instance).
+    pub fn builder() -> crate::model::instance::Builder {
+        crate::model::instance::Builder::default()
+    }
+}
+
 /// See [`Instance`](crate::model::Instance).
 pub mod instance {
 
@@ -5947,12 +5983,6 @@ pub mod instance {
         }
     }
 }
-impl Instance {
-    /// Creates a new builder-style object to manufacture [`Instance`](crate::model::Instance).
-    pub fn builder() -> crate::model::instance::Builder {
-        crate::model::instance::Builder::default()
-    }
-}
 
 /// <p>In a response to a <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_DiscoverInstances.html">DiscoverInstances</a> request, <code>HttpInstanceSummary</code> contains information about one instance that matches the values that you specified in the request.</p>
 #[non_exhaustive]
@@ -6002,6 +6032,13 @@ impl HttpInstanceSummary {
         self.attributes.as_ref()
     }
 }
+impl HttpInstanceSummary {
+    /// Creates a new builder-style object to manufacture [`HttpInstanceSummary`](crate::model::HttpInstanceSummary).
+    pub fn builder() -> crate::model::http_instance_summary::Builder {
+        crate::model::http_instance_summary::Builder::default()
+    }
+}
+
 /// See [`HttpInstanceSummary`](crate::model::HttpInstanceSummary).
 pub mod http_instance_summary {
 
@@ -6101,12 +6138,6 @@ pub mod http_instance_summary {
                 attributes: self.attributes,
             }
         }
-    }
-}
-impl HttpInstanceSummary {
-    /// Creates a new builder-style object to manufacture [`HttpInstanceSummary`](crate::model::HttpInstanceSummary).
-    pub fn builder() -> crate::model::http_instance_summary::Builder {
-        crate::model::http_instance_summary::Builder::default()
     }
 }
 
@@ -6313,6 +6344,13 @@ impl PublicDnsNamespaceProperties {
         self.dns_properties.as_ref()
     }
 }
+impl PublicDnsNamespaceProperties {
+    /// Creates a new builder-style object to manufacture [`PublicDnsNamespaceProperties`](crate::model::PublicDnsNamespaceProperties).
+    pub fn builder() -> crate::model::public_dns_namespace_properties::Builder {
+        crate::model::public_dns_namespace_properties::Builder::default()
+    }
+}
+
 /// See [`PublicDnsNamespaceProperties`](crate::model::PublicDnsNamespaceProperties).
 pub mod public_dns_namespace_properties {
 
@@ -6344,12 +6382,6 @@ pub mod public_dns_namespace_properties {
         }
     }
 }
-impl PublicDnsNamespaceProperties {
-    /// Creates a new builder-style object to manufacture [`PublicDnsNamespaceProperties`](crate::model::PublicDnsNamespaceProperties).
-    pub fn builder() -> crate::model::public_dns_namespace_properties::Builder {
-        crate::model::public_dns_namespace_properties::Builder::default()
-    }
-}
 
 /// <p>DNS properties for the public DNS namespace.</p>
 #[non_exhaustive]
@@ -6365,6 +6397,13 @@ impl PublicDnsPropertiesMutable {
         self.soa.as_ref()
     }
 }
+impl PublicDnsPropertiesMutable {
+    /// Creates a new builder-style object to manufacture [`PublicDnsPropertiesMutable`](crate::model::PublicDnsPropertiesMutable).
+    pub fn builder() -> crate::model::public_dns_properties_mutable::Builder {
+        crate::model::public_dns_properties_mutable::Builder::default()
+    }
+}
+
 /// See [`PublicDnsPropertiesMutable`](crate::model::PublicDnsPropertiesMutable).
 pub mod public_dns_properties_mutable {
 
@@ -6391,12 +6430,6 @@ pub mod public_dns_properties_mutable {
         }
     }
 }
-impl PublicDnsPropertiesMutable {
-    /// Creates a new builder-style object to manufacture [`PublicDnsPropertiesMutable`](crate::model::PublicDnsPropertiesMutable).
-    pub fn builder() -> crate::model::public_dns_properties_mutable::Builder {
-        crate::model::public_dns_properties_mutable::Builder::default()
-    }
-}
 
 /// <p>DNS properties for the private DNS namespace.</p>
 #[non_exhaustive]
@@ -6414,6 +6447,13 @@ impl PrivateDnsNamespaceProperties {
         self.dns_properties.as_ref()
     }
 }
+impl PrivateDnsNamespaceProperties {
+    /// Creates a new builder-style object to manufacture [`PrivateDnsNamespaceProperties`](crate::model::PrivateDnsNamespaceProperties).
+    pub fn builder() -> crate::model::private_dns_namespace_properties::Builder {
+        crate::model::private_dns_namespace_properties::Builder::default()
+    }
+}
+
 /// See [`PrivateDnsNamespaceProperties`](crate::model::PrivateDnsNamespaceProperties).
 pub mod private_dns_namespace_properties {
 
@@ -6445,12 +6485,6 @@ pub mod private_dns_namespace_properties {
         }
     }
 }
-impl PrivateDnsNamespaceProperties {
-    /// Creates a new builder-style object to manufacture [`PrivateDnsNamespaceProperties`](crate::model::PrivateDnsNamespaceProperties).
-    pub fn builder() -> crate::model::private_dns_namespace_properties::Builder {
-        crate::model::private_dns_namespace_properties::Builder::default()
-    }
-}
 
 /// <p>DNS properties for the private DNS namespace.</p>
 #[non_exhaustive]
@@ -6466,6 +6500,13 @@ impl PrivateDnsPropertiesMutable {
         self.soa.as_ref()
     }
 }
+impl PrivateDnsPropertiesMutable {
+    /// Creates a new builder-style object to manufacture [`PrivateDnsPropertiesMutable`](crate::model::PrivateDnsPropertiesMutable).
+    pub fn builder() -> crate::model::private_dns_properties_mutable::Builder {
+        crate::model::private_dns_properties_mutable::Builder::default()
+    }
+}
+
 /// See [`PrivateDnsPropertiesMutable`](crate::model::PrivateDnsPropertiesMutable).
 pub mod private_dns_properties_mutable {
 
@@ -6490,11 +6531,5 @@ pub mod private_dns_properties_mutable {
         pub fn build(self) -> crate::model::PrivateDnsPropertiesMutable {
             crate::model::PrivateDnsPropertiesMutable { soa: self.soa }
         }
-    }
-}
-impl PrivateDnsPropertiesMutable {
-    /// Creates a new builder-style object to manufacture [`PrivateDnsPropertiesMutable`](crate::model::PrivateDnsPropertiesMutable).
-    pub fn builder() -> crate::model::private_dns_properties_mutable::Builder {
-        crate::model::private_dns_properties_mutable::Builder::default()
     }
 }

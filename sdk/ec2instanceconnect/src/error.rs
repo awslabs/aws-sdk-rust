@@ -186,11 +186,41 @@ pub struct ThrottlingException {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl ThrottlingException {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for ThrottlingException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "ThrottlingException")?;
+        if let Some(inner_1) = &self.message {
+            {
+                write!(f, ": {}", inner_1)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for ThrottlingException {}
+impl aws_http::request_id::RequestId for crate::error::ThrottlingException {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for ThrottlingException {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl ThrottlingException {
     /// Creates a new builder-style object to manufacture [`ThrottlingException`](crate::error::ThrottlingException).
     pub fn builder() -> crate::error::throttling_exception::Builder {
         crate::error::throttling_exception::Builder::default()
     }
 }
+
 /// See [`ThrottlingException`](crate::error::ThrottlingException).
 pub mod throttling_exception {
 
@@ -235,35 +265,6 @@ pub mod throttling_exception {
         }
     }
 }
-impl ThrottlingException {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for ThrottlingException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "ThrottlingException")?;
-        if let Some(inner_1) = &self.message {
-            {
-                write!(f, ": {}", inner_1)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for ThrottlingException {}
-impl aws_http::request_id::RequestId for crate::error::ThrottlingException {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for ThrottlingException {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>The service encountered an error. Follow the instructions in the error message and try again.</p>
 #[non_exhaustive]
@@ -275,11 +276,41 @@ pub struct ServiceException {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl ServiceException {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for ServiceException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "ServiceException")?;
+        if let Some(inner_2) = &self.message {
+            {
+                write!(f, ": {}", inner_2)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for ServiceException {}
+impl aws_http::request_id::RequestId for crate::error::ServiceException {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for ServiceException {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl ServiceException {
     /// Creates a new builder-style object to manufacture [`ServiceException`](crate::error::ServiceException).
     pub fn builder() -> crate::error::service_exception::Builder {
         crate::error::service_exception::Builder::default()
     }
 }
+
 /// See [`ServiceException`](crate::error::ServiceException).
 pub mod service_exception {
 
@@ -324,35 +355,6 @@ pub mod service_exception {
         }
     }
 }
-impl ServiceException {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for ServiceException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "ServiceException")?;
-        if let Some(inner_2) = &self.message {
-            {
-                write!(f, ": {}", inner_2)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for ServiceException {}
-impl aws_http::request_id::RequestId for crate::error::ServiceException {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for ServiceException {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>One of the parameters is not valid.</p>
 #[non_exhaustive]
@@ -364,11 +366,41 @@ pub struct InvalidArgsException {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl InvalidArgsException {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for InvalidArgsException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "InvalidArgsException")?;
+        if let Some(inner_3) = &self.message {
+            {
+                write!(f, ": {}", inner_3)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for InvalidArgsException {}
+impl aws_http::request_id::RequestId for crate::error::InvalidArgsException {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidArgsException {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl InvalidArgsException {
     /// Creates a new builder-style object to manufacture [`InvalidArgsException`](crate::error::InvalidArgsException).
     pub fn builder() -> crate::error::invalid_args_exception::Builder {
         crate::error::invalid_args_exception::Builder::default()
     }
 }
+
 /// See [`InvalidArgsException`](crate::error::InvalidArgsException).
 pub mod invalid_args_exception {
 
@@ -413,35 +445,6 @@ pub mod invalid_args_exception {
         }
     }
 }
-impl InvalidArgsException {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for InvalidArgsException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "InvalidArgsException")?;
-        if let Some(inner_3) = &self.message {
-            {
-                write!(f, ": {}", inner_3)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for InvalidArgsException {}
-impl aws_http::request_id::RequestId for crate::error::InvalidArgsException {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidArgsException {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>The instance is currently unavailable. Wait a few minutes and try again.</p>
 #[non_exhaustive]
@@ -453,11 +456,44 @@ pub struct Ec2InstanceUnavailableException {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl Ec2InstanceUnavailableException {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for Ec2InstanceUnavailableException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(
+            f,
+            "Ec2InstanceUnavailableException [EC2InstanceUnavailableException]"
+        )?;
+        if let Some(inner_4) = &self.message {
+            {
+                write!(f, ": {}", inner_4)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for Ec2InstanceUnavailableException {}
+impl aws_http::request_id::RequestId for crate::error::Ec2InstanceUnavailableException {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for Ec2InstanceUnavailableException {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl Ec2InstanceUnavailableException {
     /// Creates a new builder-style object to manufacture [`Ec2InstanceUnavailableException`](crate::error::Ec2InstanceUnavailableException).
     pub fn builder() -> crate::error::ec2_instance_unavailable_exception::Builder {
         crate::error::ec2_instance_unavailable_exception::Builder::default()
     }
 }
+
 /// See [`Ec2InstanceUnavailableException`](crate::error::Ec2InstanceUnavailableException).
 pub mod ec2_instance_unavailable_exception {
 
@@ -502,38 +538,6 @@ pub mod ec2_instance_unavailable_exception {
         }
     }
 }
-impl Ec2InstanceUnavailableException {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for Ec2InstanceUnavailableException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(
-            f,
-            "Ec2InstanceUnavailableException [EC2InstanceUnavailableException]"
-        )?;
-        if let Some(inner_4) = &self.message {
-            {
-                write!(f, ": {}", inner_4)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for Ec2InstanceUnavailableException {}
-impl aws_http::request_id::RequestId for crate::error::Ec2InstanceUnavailableException {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for Ec2InstanceUnavailableException {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>Unable to connect because the instance is not in a valid state. Connecting to a stopped or terminated instance is not supported. If the instance is stopped, start your instance, and try to connect again.</p>
 #[non_exhaustive]
@@ -545,11 +549,44 @@ pub struct Ec2InstanceStateInvalidException {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl Ec2InstanceStateInvalidException {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for Ec2InstanceStateInvalidException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(
+            f,
+            "Ec2InstanceStateInvalidException [EC2InstanceStateInvalidException]"
+        )?;
+        if let Some(inner_5) = &self.message {
+            {
+                write!(f, ": {}", inner_5)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for Ec2InstanceStateInvalidException {}
+impl aws_http::request_id::RequestId for crate::error::Ec2InstanceStateInvalidException {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for Ec2InstanceStateInvalidException {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl Ec2InstanceStateInvalidException {
     /// Creates a new builder-style object to manufacture [`Ec2InstanceStateInvalidException`](crate::error::Ec2InstanceStateInvalidException).
     pub fn builder() -> crate::error::ec2_instance_state_invalid_exception::Builder {
         crate::error::ec2_instance_state_invalid_exception::Builder::default()
     }
 }
+
 /// See [`Ec2InstanceStateInvalidException`](crate::error::Ec2InstanceStateInvalidException).
 pub mod ec2_instance_state_invalid_exception {
 
@@ -594,38 +631,6 @@ pub mod ec2_instance_state_invalid_exception {
         }
     }
 }
-impl Ec2InstanceStateInvalidException {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for Ec2InstanceStateInvalidException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(
-            f,
-            "Ec2InstanceStateInvalidException [EC2InstanceStateInvalidException]"
-        )?;
-        if let Some(inner_5) = &self.message {
-            {
-                write!(f, ": {}", inner_5)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for Ec2InstanceStateInvalidException {}
-impl aws_http::request_id::RequestId for crate::error::Ec2InstanceStateInvalidException {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for Ec2InstanceStateInvalidException {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>The specified instance was not found.</p>
 #[non_exhaustive]
@@ -637,11 +642,44 @@ pub struct Ec2InstanceNotFoundException {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl Ec2InstanceNotFoundException {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for Ec2InstanceNotFoundException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(
+            f,
+            "Ec2InstanceNotFoundException [EC2InstanceNotFoundException]"
+        )?;
+        if let Some(inner_6) = &self.message {
+            {
+                write!(f, ": {}", inner_6)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for Ec2InstanceNotFoundException {}
+impl aws_http::request_id::RequestId for crate::error::Ec2InstanceNotFoundException {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for Ec2InstanceNotFoundException {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl Ec2InstanceNotFoundException {
     /// Creates a new builder-style object to manufacture [`Ec2InstanceNotFoundException`](crate::error::Ec2InstanceNotFoundException).
     pub fn builder() -> crate::error::ec2_instance_not_found_exception::Builder {
         crate::error::ec2_instance_not_found_exception::Builder::default()
     }
 }
+
 /// See [`Ec2InstanceNotFoundException`](crate::error::Ec2InstanceNotFoundException).
 pub mod ec2_instance_not_found_exception {
 
@@ -686,38 +724,6 @@ pub mod ec2_instance_not_found_exception {
         }
     }
 }
-impl Ec2InstanceNotFoundException {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for Ec2InstanceNotFoundException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(
-            f,
-            "Ec2InstanceNotFoundException [EC2InstanceNotFoundException]"
-        )?;
-        if let Some(inner_6) = &self.message {
-            {
-                write!(f, ": {}", inner_6)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for Ec2InstanceNotFoundException {}
-impl aws_http::request_id::RequestId for crate::error::Ec2InstanceNotFoundException {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for Ec2InstanceNotFoundException {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>Either your AWS credentials are not valid or you do not have access to the EC2 instance.</p>
 #[non_exhaustive]
@@ -729,11 +735,41 @@ pub struct AuthException {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl AuthException {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for AuthException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "AuthException")?;
+        if let Some(inner_7) = &self.message {
+            {
+                write!(f, ": {}", inner_7)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for AuthException {}
+impl aws_http::request_id::RequestId for crate::error::AuthException {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for AuthException {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl AuthException {
     /// Creates a new builder-style object to manufacture [`AuthException`](crate::error::AuthException).
     pub fn builder() -> crate::error::auth_exception::Builder {
         crate::error::auth_exception::Builder::default()
     }
 }
+
 /// See [`AuthException`](crate::error::AuthException).
 pub mod auth_exception {
 
@@ -776,35 +812,6 @@ pub mod auth_exception {
                 meta: self.meta.unwrap_or_default(),
             }
         }
-    }
-}
-impl AuthException {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for AuthException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "AuthException")?;
-        if let Some(inner_7) = &self.message {
-            {
-                write!(f, ": {}", inner_7)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for AuthException {}
-impl aws_http::request_id::RequestId for crate::error::AuthException {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for AuthException {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
     }
 }
 
@@ -1049,11 +1056,43 @@ pub struct SerialConsoleSessionUnavailableException {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl SerialConsoleSessionUnavailableException {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for SerialConsoleSessionUnavailableException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "SerialConsoleSessionUnavailableException")?;
+        if let Some(inner_8) = &self.message {
+            {
+                write!(f, ": {}", inner_8)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for SerialConsoleSessionUnavailableException {}
+impl aws_http::request_id::RequestId for crate::error::SerialConsoleSessionUnavailableException {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata
+    for SerialConsoleSessionUnavailableException
+{
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl SerialConsoleSessionUnavailableException {
     /// Creates a new builder-style object to manufacture [`SerialConsoleSessionUnavailableException`](crate::error::SerialConsoleSessionUnavailableException).
     pub fn builder() -> crate::error::serial_console_session_unavailable_exception::Builder {
         crate::error::serial_console_session_unavailable_exception::Builder::default()
     }
 }
+
 /// See [`SerialConsoleSessionUnavailableException`](crate::error::SerialConsoleSessionUnavailableException).
 pub mod serial_console_session_unavailable_exception {
 
@@ -1098,37 +1137,6 @@ pub mod serial_console_session_unavailable_exception {
         }
     }
 }
-impl SerialConsoleSessionUnavailableException {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for SerialConsoleSessionUnavailableException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "SerialConsoleSessionUnavailableException")?;
-        if let Some(inner_8) = &self.message {
-            {
-                write!(f, ": {}", inner_8)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for SerialConsoleSessionUnavailableException {}
-impl aws_http::request_id::RequestId for crate::error::SerialConsoleSessionUnavailableException {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for SerialConsoleSessionUnavailableException
-{
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>The instance currently has 1 active serial console session. Only 1 session is supported at a time.</p>
 #[non_exhaustive]
@@ -1140,11 +1148,43 @@ pub struct SerialConsoleSessionLimitExceededException {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl SerialConsoleSessionLimitExceededException {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for SerialConsoleSessionLimitExceededException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "SerialConsoleSessionLimitExceededException")?;
+        if let Some(inner_9) = &self.message {
+            {
+                write!(f, ": {}", inner_9)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for SerialConsoleSessionLimitExceededException {}
+impl aws_http::request_id::RequestId for crate::error::SerialConsoleSessionLimitExceededException {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata
+    for SerialConsoleSessionLimitExceededException
+{
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl SerialConsoleSessionLimitExceededException {
     /// Creates a new builder-style object to manufacture [`SerialConsoleSessionLimitExceededException`](crate::error::SerialConsoleSessionLimitExceededException).
     pub fn builder() -> crate::error::serial_console_session_limit_exceeded_exception::Builder {
         crate::error::serial_console_session_limit_exceeded_exception::Builder::default()
     }
 }
+
 /// See [`SerialConsoleSessionLimitExceededException`](crate::error::SerialConsoleSessionLimitExceededException).
 pub mod serial_console_session_limit_exceeded_exception {
 
@@ -1189,37 +1229,6 @@ pub mod serial_console_session_limit_exceeded_exception {
         }
     }
 }
-impl SerialConsoleSessionLimitExceededException {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for SerialConsoleSessionLimitExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "SerialConsoleSessionLimitExceededException")?;
-        if let Some(inner_9) = &self.message {
-            {
-                write!(f, ": {}", inner_9)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for SerialConsoleSessionLimitExceededException {}
-impl aws_http::request_id::RequestId for crate::error::SerialConsoleSessionLimitExceededException {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for SerialConsoleSessionLimitExceededException
-{
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>Your account is not authorized to use the EC2 Serial Console. To authorize your account, run the EnableSerialConsoleAccess API. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EnableSerialConsoleAccess.html">EnableSerialConsoleAccess</a> in the <i>Amazon EC2 API Reference</i>.</p>
 #[non_exhaustive]
@@ -1231,11 +1240,43 @@ pub struct SerialConsoleAccessDisabledException {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl SerialConsoleAccessDisabledException {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for SerialConsoleAccessDisabledException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "SerialConsoleAccessDisabledException")?;
+        if let Some(inner_10) = &self.message {
+            {
+                write!(f, ": {}", inner_10)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for SerialConsoleAccessDisabledException {}
+impl aws_http::request_id::RequestId for crate::error::SerialConsoleAccessDisabledException {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata
+    for SerialConsoleAccessDisabledException
+{
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl SerialConsoleAccessDisabledException {
     /// Creates a new builder-style object to manufacture [`SerialConsoleAccessDisabledException`](crate::error::SerialConsoleAccessDisabledException).
     pub fn builder() -> crate::error::serial_console_access_disabled_exception::Builder {
         crate::error::serial_console_access_disabled_exception::Builder::default()
     }
 }
+
 /// See [`SerialConsoleAccessDisabledException`](crate::error::SerialConsoleAccessDisabledException).
 pub mod serial_console_access_disabled_exception {
 
@@ -1280,37 +1321,6 @@ pub mod serial_console_access_disabled_exception {
         }
     }
 }
-impl SerialConsoleAccessDisabledException {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for SerialConsoleAccessDisabledException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "SerialConsoleAccessDisabledException")?;
-        if let Some(inner_10) = &self.message {
-            {
-                write!(f, ": {}", inner_10)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for SerialConsoleAccessDisabledException {}
-impl aws_http::request_id::RequestId for crate::error::SerialConsoleAccessDisabledException {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for SerialConsoleAccessDisabledException
-{
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>The instance type is not supported for connecting via the serial console. Only Nitro instance types are currently supported.</p>
 #[non_exhaustive]
@@ -1322,11 +1332,44 @@ pub struct Ec2InstanceTypeInvalidException {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl Ec2InstanceTypeInvalidException {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for Ec2InstanceTypeInvalidException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(
+            f,
+            "Ec2InstanceTypeInvalidException [EC2InstanceTypeInvalidException]"
+        )?;
+        if let Some(inner_11) = &self.message {
+            {
+                write!(f, ": {}", inner_11)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for Ec2InstanceTypeInvalidException {}
+impl aws_http::request_id::RequestId for crate::error::Ec2InstanceTypeInvalidException {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for Ec2InstanceTypeInvalidException {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl Ec2InstanceTypeInvalidException {
     /// Creates a new builder-style object to manufacture [`Ec2InstanceTypeInvalidException`](crate::error::Ec2InstanceTypeInvalidException).
     pub fn builder() -> crate::error::ec2_instance_type_invalid_exception::Builder {
         crate::error::ec2_instance_type_invalid_exception::Builder::default()
     }
 }
+
 /// See [`Ec2InstanceTypeInvalidException`](crate::error::Ec2InstanceTypeInvalidException).
 pub mod ec2_instance_type_invalid_exception {
 
@@ -1369,37 +1412,5 @@ pub mod ec2_instance_type_invalid_exception {
                 meta: self.meta.unwrap_or_default(),
             }
         }
-    }
-}
-impl Ec2InstanceTypeInvalidException {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for Ec2InstanceTypeInvalidException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(
-            f,
-            "Ec2InstanceTypeInvalidException [EC2InstanceTypeInvalidException]"
-        )?;
-        if let Some(inner_11) = &self.message {
-            {
-                write!(f, ": {}", inner_11)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for Ec2InstanceTypeInvalidException {}
-impl aws_http::request_id::RequestId for crate::error::Ec2InstanceTypeInvalidException {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for Ec2InstanceTypeInvalidException {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
     }
 }

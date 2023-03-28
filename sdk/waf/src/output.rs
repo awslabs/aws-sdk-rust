@@ -20,6 +20,13 @@ impl aws_http::request_id::RequestId for UpdateXssMatchSetOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdateXssMatchSetOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateXssMatchSetOutput`](crate::output::UpdateXssMatchSetOutput).
+    pub fn builder() -> crate::output::update_xss_match_set_output::Builder {
+        crate::output::update_xss_match_set_output::Builder::default()
+    }
+}
+
 /// See [`UpdateXssMatchSetOutput`](crate::output::UpdateXssMatchSetOutput).
 pub mod update_xss_match_set_output {
 
@@ -59,12 +66,6 @@ pub mod update_xss_match_set_output {
         }
     }
 }
-impl UpdateXssMatchSetOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateXssMatchSetOutput`](crate::output::UpdateXssMatchSetOutput).
-    pub fn builder() -> crate::output::update_xss_match_set_output::Builder {
-        crate::output::update_xss_match_set_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -86,6 +87,13 @@ impl aws_http::request_id::RequestId for UpdateWebAclOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdateWebAclOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateWebAclOutput`](crate::output::UpdateWebAclOutput).
+    pub fn builder() -> crate::output::update_web_acl_output::Builder {
+        crate::output::update_web_acl_output::Builder::default()
+    }
+}
+
 /// See [`UpdateWebAclOutput`](crate::output::UpdateWebAclOutput).
 pub mod update_web_acl_output {
 
@@ -125,12 +133,6 @@ pub mod update_web_acl_output {
         }
     }
 }
-impl UpdateWebAclOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateWebAclOutput`](crate::output::UpdateWebAclOutput).
-    pub fn builder() -> crate::output::update_web_acl_output::Builder {
-        crate::output::update_web_acl_output::Builder::default()
-    }
-}
 
 /// <p>The response to an <code>UpdateSqlInjectionMatchSets</code> request.</p>
 #[non_exhaustive]
@@ -152,6 +154,13 @@ impl aws_http::request_id::RequestId for UpdateSqlInjectionMatchSetOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdateSqlInjectionMatchSetOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateSqlInjectionMatchSetOutput`](crate::output::UpdateSqlInjectionMatchSetOutput).
+    pub fn builder() -> crate::output::update_sql_injection_match_set_output::Builder {
+        crate::output::update_sql_injection_match_set_output::Builder::default()
+    }
+}
+
 /// See [`UpdateSqlInjectionMatchSetOutput`](crate::output::UpdateSqlInjectionMatchSetOutput).
 pub mod update_sql_injection_match_set_output {
 
@@ -191,12 +200,6 @@ pub mod update_sql_injection_match_set_output {
         }
     }
 }
-impl UpdateSqlInjectionMatchSetOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateSqlInjectionMatchSetOutput`](crate::output::UpdateSqlInjectionMatchSetOutput).
-    pub fn builder() -> crate::output::update_sql_injection_match_set_output::Builder {
-        crate::output::update_sql_injection_match_set_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -218,6 +221,13 @@ impl aws_http::request_id::RequestId for UpdateSizeConstraintSetOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdateSizeConstraintSetOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateSizeConstraintSetOutput`](crate::output::UpdateSizeConstraintSetOutput).
+    pub fn builder() -> crate::output::update_size_constraint_set_output::Builder {
+        crate::output::update_size_constraint_set_output::Builder::default()
+    }
+}
+
 /// See [`UpdateSizeConstraintSetOutput`](crate::output::UpdateSizeConstraintSetOutput).
 pub mod update_size_constraint_set_output {
 
@@ -257,12 +267,6 @@ pub mod update_size_constraint_set_output {
         }
     }
 }
-impl UpdateSizeConstraintSetOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateSizeConstraintSetOutput`](crate::output::UpdateSizeConstraintSetOutput).
-    pub fn builder() -> crate::output::update_size_constraint_set_output::Builder {
-        crate::output::update_size_constraint_set_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -284,6 +288,13 @@ impl aws_http::request_id::RequestId for UpdateRuleGroupOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdateRuleGroupOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateRuleGroupOutput`](crate::output::UpdateRuleGroupOutput).
+    pub fn builder() -> crate::output::update_rule_group_output::Builder {
+        crate::output::update_rule_group_output::Builder::default()
+    }
+}
+
 /// See [`UpdateRuleGroupOutput`](crate::output::UpdateRuleGroupOutput).
 pub mod update_rule_group_output {
 
@@ -323,12 +334,6 @@ pub mod update_rule_group_output {
         }
     }
 }
-impl UpdateRuleGroupOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateRuleGroupOutput`](crate::output::UpdateRuleGroupOutput).
-    pub fn builder() -> crate::output::update_rule_group_output::Builder {
-        crate::output::update_rule_group_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -350,6 +355,13 @@ impl aws_http::request_id::RequestId for UpdateRuleOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdateRuleOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateRuleOutput`](crate::output::UpdateRuleOutput).
+    pub fn builder() -> crate::output::update_rule_output::Builder {
+        crate::output::update_rule_output::Builder::default()
+    }
+}
+
 /// See [`UpdateRuleOutput`](crate::output::UpdateRuleOutput).
 pub mod update_rule_output {
 
@@ -389,12 +401,6 @@ pub mod update_rule_output {
         }
     }
 }
-impl UpdateRuleOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateRuleOutput`](crate::output::UpdateRuleOutput).
-    pub fn builder() -> crate::output::update_rule_output::Builder {
-        crate::output::update_rule_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -416,6 +422,13 @@ impl aws_http::request_id::RequestId for UpdateRegexPatternSetOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdateRegexPatternSetOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateRegexPatternSetOutput`](crate::output::UpdateRegexPatternSetOutput).
+    pub fn builder() -> crate::output::update_regex_pattern_set_output::Builder {
+        crate::output::update_regex_pattern_set_output::Builder::default()
+    }
+}
+
 /// See [`UpdateRegexPatternSetOutput`](crate::output::UpdateRegexPatternSetOutput).
 pub mod update_regex_pattern_set_output {
 
@@ -455,12 +468,6 @@ pub mod update_regex_pattern_set_output {
         }
     }
 }
-impl UpdateRegexPatternSetOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateRegexPatternSetOutput`](crate::output::UpdateRegexPatternSetOutput).
-    pub fn builder() -> crate::output::update_regex_pattern_set_output::Builder {
-        crate::output::update_regex_pattern_set_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -482,6 +489,13 @@ impl aws_http::request_id::RequestId for UpdateRegexMatchSetOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdateRegexMatchSetOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateRegexMatchSetOutput`](crate::output::UpdateRegexMatchSetOutput).
+    pub fn builder() -> crate::output::update_regex_match_set_output::Builder {
+        crate::output::update_regex_match_set_output::Builder::default()
+    }
+}
+
 /// See [`UpdateRegexMatchSetOutput`](crate::output::UpdateRegexMatchSetOutput).
 pub mod update_regex_match_set_output {
 
@@ -521,12 +535,6 @@ pub mod update_regex_match_set_output {
         }
     }
 }
-impl UpdateRegexMatchSetOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateRegexMatchSetOutput`](crate::output::UpdateRegexMatchSetOutput).
-    pub fn builder() -> crate::output::update_regex_match_set_output::Builder {
-        crate::output::update_regex_match_set_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -548,6 +556,13 @@ impl aws_http::request_id::RequestId for UpdateRateBasedRuleOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdateRateBasedRuleOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateRateBasedRuleOutput`](crate::output::UpdateRateBasedRuleOutput).
+    pub fn builder() -> crate::output::update_rate_based_rule_output::Builder {
+        crate::output::update_rate_based_rule_output::Builder::default()
+    }
+}
+
 /// See [`UpdateRateBasedRuleOutput`](crate::output::UpdateRateBasedRuleOutput).
 pub mod update_rate_based_rule_output {
 
@@ -587,12 +602,6 @@ pub mod update_rate_based_rule_output {
         }
     }
 }
-impl UpdateRateBasedRuleOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateRateBasedRuleOutput`](crate::output::UpdateRateBasedRuleOutput).
-    pub fn builder() -> crate::output::update_rate_based_rule_output::Builder {
-        crate::output::update_rate_based_rule_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -614,6 +623,13 @@ impl aws_http::request_id::RequestId for UpdateIpSetOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdateIpSetOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateIpSetOutput`](crate::output::UpdateIpSetOutput).
+    pub fn builder() -> crate::output::update_ip_set_output::Builder {
+        crate::output::update_ip_set_output::Builder::default()
+    }
+}
+
 /// See [`UpdateIpSetOutput`](crate::output::UpdateIpSetOutput).
 pub mod update_ip_set_output {
 
@@ -653,12 +669,6 @@ pub mod update_ip_set_output {
         }
     }
 }
-impl UpdateIpSetOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateIpSetOutput`](crate::output::UpdateIpSetOutput).
-    pub fn builder() -> crate::output::update_ip_set_output::Builder {
-        crate::output::update_ip_set_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -680,6 +690,13 @@ impl aws_http::request_id::RequestId for UpdateGeoMatchSetOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdateGeoMatchSetOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateGeoMatchSetOutput`](crate::output::UpdateGeoMatchSetOutput).
+    pub fn builder() -> crate::output::update_geo_match_set_output::Builder {
+        crate::output::update_geo_match_set_output::Builder::default()
+    }
+}
+
 /// See [`UpdateGeoMatchSetOutput`](crate::output::UpdateGeoMatchSetOutput).
 pub mod update_geo_match_set_output {
 
@@ -719,12 +736,6 @@ pub mod update_geo_match_set_output {
         }
     }
 }
-impl UpdateGeoMatchSetOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateGeoMatchSetOutput`](crate::output::UpdateGeoMatchSetOutput).
-    pub fn builder() -> crate::output::update_geo_match_set_output::Builder {
-        crate::output::update_geo_match_set_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -746,6 +757,13 @@ impl aws_http::request_id::RequestId for UpdateByteMatchSetOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdateByteMatchSetOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateByteMatchSetOutput`](crate::output::UpdateByteMatchSetOutput).
+    pub fn builder() -> crate::output::update_byte_match_set_output::Builder {
+        crate::output::update_byte_match_set_output::Builder::default()
+    }
+}
+
 /// See [`UpdateByteMatchSetOutput`](crate::output::UpdateByteMatchSetOutput).
 pub mod update_byte_match_set_output {
 
@@ -785,12 +803,6 @@ pub mod update_byte_match_set_output {
         }
     }
 }
-impl UpdateByteMatchSetOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateByteMatchSetOutput`](crate::output::UpdateByteMatchSetOutput).
-    pub fn builder() -> crate::output::update_byte_match_set_output::Builder {
-        crate::output::update_byte_match_set_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -803,6 +815,13 @@ impl aws_http::request_id::RequestId for UntagResourceOutput {
         self._request_id.as_deref()
     }
 }
+impl UntagResourceOutput {
+    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    pub fn builder() -> crate::output::untag_resource_output::Builder {
+        crate::output::untag_resource_output::Builder::default()
+    }
+}
+
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
 
@@ -830,12 +849,6 @@ pub mod untag_resource_output {
         }
     }
 }
-impl UntagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
-    pub fn builder() -> crate::output::untag_resource_output::Builder {
-        crate::output::untag_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -848,6 +861,13 @@ impl aws_http::request_id::RequestId for TagResourceOutput {
         self._request_id.as_deref()
     }
 }
+impl TagResourceOutput {
+    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
+    pub fn builder() -> crate::output::tag_resource_output::Builder {
+        crate::output::tag_resource_output::Builder::default()
+    }
+}
+
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
 
@@ -875,12 +895,6 @@ pub mod tag_resource_output {
         }
     }
 }
-impl TagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
-    pub fn builder() -> crate::output::tag_resource_output::Builder {
-        crate::output::tag_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -893,6 +907,13 @@ impl aws_http::request_id::RequestId for PutPermissionPolicyOutput {
         self._request_id.as_deref()
     }
 }
+impl PutPermissionPolicyOutput {
+    /// Creates a new builder-style object to manufacture [`PutPermissionPolicyOutput`](crate::output::PutPermissionPolicyOutput).
+    pub fn builder() -> crate::output::put_permission_policy_output::Builder {
+        crate::output::put_permission_policy_output::Builder::default()
+    }
+}
+
 /// See [`PutPermissionPolicyOutput`](crate::output::PutPermissionPolicyOutput).
 pub mod put_permission_policy_output {
 
@@ -920,12 +941,6 @@ pub mod put_permission_policy_output {
         }
     }
 }
-impl PutPermissionPolicyOutput {
-    /// Creates a new builder-style object to manufacture [`PutPermissionPolicyOutput`](crate::output::PutPermissionPolicyOutput).
-    pub fn builder() -> crate::output::put_permission_policy_output::Builder {
-        crate::output::put_permission_policy_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -949,6 +964,13 @@ impl aws_http::request_id::RequestId for PutLoggingConfigurationOutput {
         self._request_id.as_deref()
     }
 }
+impl PutLoggingConfigurationOutput {
+    /// Creates a new builder-style object to manufacture [`PutLoggingConfigurationOutput`](crate::output::PutLoggingConfigurationOutput).
+    pub fn builder() -> crate::output::put_logging_configuration_output::Builder {
+        crate::output::put_logging_configuration_output::Builder::default()
+    }
+}
+
 /// See [`PutLoggingConfigurationOutput`](crate::output::PutLoggingConfigurationOutput).
 pub mod put_logging_configuration_output {
 
@@ -991,12 +1013,6 @@ pub mod put_logging_configuration_output {
         }
     }
 }
-impl PutLoggingConfigurationOutput {
-    /// Creates a new builder-style object to manufacture [`PutLoggingConfigurationOutput`](crate::output::PutLoggingConfigurationOutput).
-    pub fn builder() -> crate::output::put_logging_configuration_output::Builder {
-        crate::output::put_logging_configuration_output::Builder::default()
-    }
-}
 
 /// <p>The response to a <code>ListXssMatchSets</code> request.</p>
 #[non_exhaustive]
@@ -1025,6 +1041,13 @@ impl aws_http::request_id::RequestId for ListXssMatchSetsOutput {
         self._request_id.as_deref()
     }
 }
+impl ListXssMatchSetsOutput {
+    /// Creates a new builder-style object to manufacture [`ListXssMatchSetsOutput`](crate::output::ListXssMatchSetsOutput).
+    pub fn builder() -> crate::output::list_xss_match_sets_output::Builder {
+        crate::output::list_xss_match_sets_output::Builder::default()
+    }
+}
+
 /// See [`ListXssMatchSetsOutput`](crate::output::ListXssMatchSetsOutput).
 pub mod list_xss_match_sets_output {
 
@@ -1086,12 +1109,6 @@ pub mod list_xss_match_sets_output {
         }
     }
 }
-impl ListXssMatchSetsOutput {
-    /// Creates a new builder-style object to manufacture [`ListXssMatchSetsOutput`](crate::output::ListXssMatchSetsOutput).
-    pub fn builder() -> crate::output::list_xss_match_sets_output::Builder {
-        crate::output::list_xss_match_sets_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1120,6 +1137,13 @@ impl aws_http::request_id::RequestId for ListWebAcLsOutput {
         self._request_id.as_deref()
     }
 }
+impl ListWebAcLsOutput {
+    /// Creates a new builder-style object to manufacture [`ListWebAcLsOutput`](crate::output::ListWebAcLsOutput).
+    pub fn builder() -> crate::output::list_web_ac_ls_output::Builder {
+        crate::output::list_web_ac_ls_output::Builder::default()
+    }
+}
+
 /// See [`ListWebAcLsOutput`](crate::output::ListWebAcLsOutput).
 pub mod list_web_ac_ls_output {
 
@@ -1180,12 +1204,6 @@ pub mod list_web_ac_ls_output {
         }
     }
 }
-impl ListWebAcLsOutput {
-    /// Creates a new builder-style object to manufacture [`ListWebAcLsOutput`](crate::output::ListWebAcLsOutput).
-    pub fn builder() -> crate::output::list_web_ac_ls_output::Builder {
-        crate::output::list_web_ac_ls_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1214,6 +1232,13 @@ impl aws_http::request_id::RequestId for ListTagsForResourceOutput {
         self._request_id.as_deref()
     }
 }
+impl ListTagsForResourceOutput {
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
+        crate::output::list_tags_for_resource_output::Builder::default()
+    }
+}
+
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
 
@@ -1268,12 +1293,6 @@ pub mod list_tags_for_resource_output {
         }
     }
 }
-impl ListTagsForResourceOutput {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
-    pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
-        crate::output::list_tags_for_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1302,6 +1321,13 @@ impl aws_http::request_id::RequestId for ListSubscribedRuleGroupsOutput {
         self._request_id.as_deref()
     }
 }
+impl ListSubscribedRuleGroupsOutput {
+    /// Creates a new builder-style object to manufacture [`ListSubscribedRuleGroupsOutput`](crate::output::ListSubscribedRuleGroupsOutput).
+    pub fn builder() -> crate::output::list_subscribed_rule_groups_output::Builder {
+        crate::output::list_subscribed_rule_groups_output::Builder::default()
+    }
+}
+
 /// See [`ListSubscribedRuleGroupsOutput`](crate::output::ListSubscribedRuleGroupsOutput).
 pub mod list_subscribed_rule_groups_output {
 
@@ -1363,12 +1389,6 @@ pub mod list_subscribed_rule_groups_output {
         }
     }
 }
-impl ListSubscribedRuleGroupsOutput {
-    /// Creates a new builder-style object to manufacture [`ListSubscribedRuleGroupsOutput`](crate::output::ListSubscribedRuleGroupsOutput).
-    pub fn builder() -> crate::output::list_subscribed_rule_groups_output::Builder {
-        crate::output::list_subscribed_rule_groups_output::Builder::default()
-    }
-}
 
 /// <p>The response to a <code>ListSqlInjectionMatchSets</code> request.</p>
 #[non_exhaustive]
@@ -1400,6 +1420,13 @@ impl aws_http::request_id::RequestId for ListSqlInjectionMatchSetsOutput {
         self._request_id.as_deref()
     }
 }
+impl ListSqlInjectionMatchSetsOutput {
+    /// Creates a new builder-style object to manufacture [`ListSqlInjectionMatchSetsOutput`](crate::output::ListSqlInjectionMatchSetsOutput).
+    pub fn builder() -> crate::output::list_sql_injection_match_sets_output::Builder {
+        crate::output::list_sql_injection_match_sets_output::Builder::default()
+    }
+}
+
 /// See [`ListSqlInjectionMatchSetsOutput`](crate::output::ListSqlInjectionMatchSetsOutput).
 pub mod list_sql_injection_match_sets_output {
 
@@ -1464,12 +1491,6 @@ pub mod list_sql_injection_match_sets_output {
         }
     }
 }
-impl ListSqlInjectionMatchSetsOutput {
-    /// Creates a new builder-style object to manufacture [`ListSqlInjectionMatchSetsOutput`](crate::output::ListSqlInjectionMatchSetsOutput).
-    pub fn builder() -> crate::output::list_sql_injection_match_sets_output::Builder {
-        crate::output::list_sql_injection_match_sets_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1501,6 +1522,13 @@ impl aws_http::request_id::RequestId for ListSizeConstraintSetsOutput {
         self._request_id.as_deref()
     }
 }
+impl ListSizeConstraintSetsOutput {
+    /// Creates a new builder-style object to manufacture [`ListSizeConstraintSetsOutput`](crate::output::ListSizeConstraintSetsOutput).
+    pub fn builder() -> crate::output::list_size_constraint_sets_output::Builder {
+        crate::output::list_size_constraint_sets_output::Builder::default()
+    }
+}
+
 /// See [`ListSizeConstraintSetsOutput`](crate::output::ListSizeConstraintSetsOutput).
 pub mod list_size_constraint_sets_output {
 
@@ -1565,12 +1593,6 @@ pub mod list_size_constraint_sets_output {
         }
     }
 }
-impl ListSizeConstraintSetsOutput {
-    /// Creates a new builder-style object to manufacture [`ListSizeConstraintSetsOutput`](crate::output::ListSizeConstraintSetsOutput).
-    pub fn builder() -> crate::output::list_size_constraint_sets_output::Builder {
-        crate::output::list_size_constraint_sets_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1599,6 +1621,13 @@ impl aws_http::request_id::RequestId for ListRulesOutput {
         self._request_id.as_deref()
     }
 }
+impl ListRulesOutput {
+    /// Creates a new builder-style object to manufacture [`ListRulesOutput`](crate::output::ListRulesOutput).
+    pub fn builder() -> crate::output::list_rules_output::Builder {
+        crate::output::list_rules_output::Builder::default()
+    }
+}
+
 /// See [`ListRulesOutput`](crate::output::ListRulesOutput).
 pub mod list_rules_output {
 
@@ -1659,12 +1688,6 @@ pub mod list_rules_output {
         }
     }
 }
-impl ListRulesOutput {
-    /// Creates a new builder-style object to manufacture [`ListRulesOutput`](crate::output::ListRulesOutput).
-    pub fn builder() -> crate::output::list_rules_output::Builder {
-        crate::output::list_rules_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1693,6 +1716,13 @@ impl aws_http::request_id::RequestId for ListRuleGroupsOutput {
         self._request_id.as_deref()
     }
 }
+impl ListRuleGroupsOutput {
+    /// Creates a new builder-style object to manufacture [`ListRuleGroupsOutput`](crate::output::ListRuleGroupsOutput).
+    pub fn builder() -> crate::output::list_rule_groups_output::Builder {
+        crate::output::list_rule_groups_output::Builder::default()
+    }
+}
+
 /// See [`ListRuleGroupsOutput`](crate::output::ListRuleGroupsOutput).
 pub mod list_rule_groups_output {
 
@@ -1753,12 +1783,6 @@ pub mod list_rule_groups_output {
         }
     }
 }
-impl ListRuleGroupsOutput {
-    /// Creates a new builder-style object to manufacture [`ListRuleGroupsOutput`](crate::output::ListRuleGroupsOutput).
-    pub fn builder() -> crate::output::list_rule_groups_output::Builder {
-        crate::output::list_rule_groups_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1790,6 +1814,13 @@ impl aws_http::request_id::RequestId for ListRegexPatternSetsOutput {
         self._request_id.as_deref()
     }
 }
+impl ListRegexPatternSetsOutput {
+    /// Creates a new builder-style object to manufacture [`ListRegexPatternSetsOutput`](crate::output::ListRegexPatternSetsOutput).
+    pub fn builder() -> crate::output::list_regex_pattern_sets_output::Builder {
+        crate::output::list_regex_pattern_sets_output::Builder::default()
+    }
+}
+
 /// See [`ListRegexPatternSetsOutput`](crate::output::ListRegexPatternSetsOutput).
 pub mod list_regex_pattern_sets_output {
 
@@ -1851,12 +1882,6 @@ pub mod list_regex_pattern_sets_output {
         }
     }
 }
-impl ListRegexPatternSetsOutput {
-    /// Creates a new builder-style object to manufacture [`ListRegexPatternSetsOutput`](crate::output::ListRegexPatternSetsOutput).
-    pub fn builder() -> crate::output::list_regex_pattern_sets_output::Builder {
-        crate::output::list_regex_pattern_sets_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1885,6 +1910,13 @@ impl aws_http::request_id::RequestId for ListRegexMatchSetsOutput {
         self._request_id.as_deref()
     }
 }
+impl ListRegexMatchSetsOutput {
+    /// Creates a new builder-style object to manufacture [`ListRegexMatchSetsOutput`](crate::output::ListRegexMatchSetsOutput).
+    pub fn builder() -> crate::output::list_regex_match_sets_output::Builder {
+        crate::output::list_regex_match_sets_output::Builder::default()
+    }
+}
+
 /// See [`ListRegexMatchSetsOutput`](crate::output::ListRegexMatchSetsOutput).
 pub mod list_regex_match_sets_output {
 
@@ -1946,12 +1978,6 @@ pub mod list_regex_match_sets_output {
         }
     }
 }
-impl ListRegexMatchSetsOutput {
-    /// Creates a new builder-style object to manufacture [`ListRegexMatchSetsOutput`](crate::output::ListRegexMatchSetsOutput).
-    pub fn builder() -> crate::output::list_regex_match_sets_output::Builder {
-        crate::output::list_regex_match_sets_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1980,6 +2006,13 @@ impl aws_http::request_id::RequestId for ListRateBasedRulesOutput {
         self._request_id.as_deref()
     }
 }
+impl ListRateBasedRulesOutput {
+    /// Creates a new builder-style object to manufacture [`ListRateBasedRulesOutput`](crate::output::ListRateBasedRulesOutput).
+    pub fn builder() -> crate::output::list_rate_based_rules_output::Builder {
+        crate::output::list_rate_based_rules_output::Builder::default()
+    }
+}
+
 /// See [`ListRateBasedRulesOutput`](crate::output::ListRateBasedRulesOutput).
 pub mod list_rate_based_rules_output {
 
@@ -2040,12 +2073,6 @@ pub mod list_rate_based_rules_output {
         }
     }
 }
-impl ListRateBasedRulesOutput {
-    /// Creates a new builder-style object to manufacture [`ListRateBasedRulesOutput`](crate::output::ListRateBasedRulesOutput).
-    pub fn builder() -> crate::output::list_rate_based_rules_output::Builder {
-        crate::output::list_rate_based_rules_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2077,6 +2104,13 @@ impl aws_http::request_id::RequestId for ListLoggingConfigurationsOutput {
         self._request_id.as_deref()
     }
 }
+impl ListLoggingConfigurationsOutput {
+    /// Creates a new builder-style object to manufacture [`ListLoggingConfigurationsOutput`](crate::output::ListLoggingConfigurationsOutput).
+    pub fn builder() -> crate::output::list_logging_configurations_output::Builder {
+        crate::output::list_logging_configurations_output::Builder::default()
+    }
+}
+
 /// See [`ListLoggingConfigurationsOutput`](crate::output::ListLoggingConfigurationsOutput).
 pub mod list_logging_configurations_output {
 
@@ -2138,12 +2172,6 @@ pub mod list_logging_configurations_output {
         }
     }
 }
-impl ListLoggingConfigurationsOutput {
-    /// Creates a new builder-style object to manufacture [`ListLoggingConfigurationsOutput`](crate::output::ListLoggingConfigurationsOutput).
-    pub fn builder() -> crate::output::list_logging_configurations_output::Builder {
-        crate::output::list_logging_configurations_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2172,6 +2200,13 @@ impl aws_http::request_id::RequestId for ListIpSetsOutput {
         self._request_id.as_deref()
     }
 }
+impl ListIpSetsOutput {
+    /// Creates a new builder-style object to manufacture [`ListIpSetsOutput`](crate::output::ListIpSetsOutput).
+    pub fn builder() -> crate::output::list_ip_sets_output::Builder {
+        crate::output::list_ip_sets_output::Builder::default()
+    }
+}
+
 /// See [`ListIpSetsOutput`](crate::output::ListIpSetsOutput).
 pub mod list_ip_sets_output {
 
@@ -2232,12 +2267,6 @@ pub mod list_ip_sets_output {
         }
     }
 }
-impl ListIpSetsOutput {
-    /// Creates a new builder-style object to manufacture [`ListIpSetsOutput`](crate::output::ListIpSetsOutput).
-    pub fn builder() -> crate::output::list_ip_sets_output::Builder {
-        crate::output::list_ip_sets_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2266,6 +2295,13 @@ impl aws_http::request_id::RequestId for ListGeoMatchSetsOutput {
         self._request_id.as_deref()
     }
 }
+impl ListGeoMatchSetsOutput {
+    /// Creates a new builder-style object to manufacture [`ListGeoMatchSetsOutput`](crate::output::ListGeoMatchSetsOutput).
+    pub fn builder() -> crate::output::list_geo_match_sets_output::Builder {
+        crate::output::list_geo_match_sets_output::Builder::default()
+    }
+}
+
 /// See [`ListGeoMatchSetsOutput`](crate::output::ListGeoMatchSetsOutput).
 pub mod list_geo_match_sets_output {
 
@@ -2327,12 +2363,6 @@ pub mod list_geo_match_sets_output {
         }
     }
 }
-impl ListGeoMatchSetsOutput {
-    /// Creates a new builder-style object to manufacture [`ListGeoMatchSetsOutput`](crate::output::ListGeoMatchSetsOutput).
-    pub fn builder() -> crate::output::list_geo_match_sets_output::Builder {
-        crate::output::list_geo_match_sets_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2361,6 +2391,13 @@ impl aws_http::request_id::RequestId for ListByteMatchSetsOutput {
         self._request_id.as_deref()
     }
 }
+impl ListByteMatchSetsOutput {
+    /// Creates a new builder-style object to manufacture [`ListByteMatchSetsOutput`](crate::output::ListByteMatchSetsOutput).
+    pub fn builder() -> crate::output::list_byte_match_sets_output::Builder {
+        crate::output::list_byte_match_sets_output::Builder::default()
+    }
+}
+
 /// See [`ListByteMatchSetsOutput`](crate::output::ListByteMatchSetsOutput).
 pub mod list_byte_match_sets_output {
 
@@ -2422,12 +2459,6 @@ pub mod list_byte_match_sets_output {
         }
     }
 }
-impl ListByteMatchSetsOutput {
-    /// Creates a new builder-style object to manufacture [`ListByteMatchSetsOutput`](crate::output::ListByteMatchSetsOutput).
-    pub fn builder() -> crate::output::list_byte_match_sets_output::Builder {
-        crate::output::list_byte_match_sets_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2456,6 +2487,13 @@ impl aws_http::request_id::RequestId for ListActivatedRulesInRuleGroupOutput {
         self._request_id.as_deref()
     }
 }
+impl ListActivatedRulesInRuleGroupOutput {
+    /// Creates a new builder-style object to manufacture [`ListActivatedRulesInRuleGroupOutput`](crate::output::ListActivatedRulesInRuleGroupOutput).
+    pub fn builder() -> crate::output::list_activated_rules_in_rule_group_output::Builder {
+        crate::output::list_activated_rules_in_rule_group_output::Builder::default()
+    }
+}
+
 /// See [`ListActivatedRulesInRuleGroupOutput`](crate::output::ListActivatedRulesInRuleGroupOutput).
 pub mod list_activated_rules_in_rule_group_output {
 
@@ -2516,12 +2554,6 @@ pub mod list_activated_rules_in_rule_group_output {
         }
     }
 }
-impl ListActivatedRulesInRuleGroupOutput {
-    /// Creates a new builder-style object to manufacture [`ListActivatedRulesInRuleGroupOutput`](crate::output::ListActivatedRulesInRuleGroupOutput).
-    pub fn builder() -> crate::output::list_activated_rules_in_rule_group_output::Builder {
-        crate::output::list_activated_rules_in_rule_group_output::Builder::default()
-    }
-}
 
 /// <p>The response to a <code>GetXssMatchSet</code> request.</p>
 #[non_exhaustive]
@@ -2553,6 +2585,13 @@ impl aws_http::request_id::RequestId for GetXssMatchSetOutput {
         self._request_id.as_deref()
     }
 }
+impl GetXssMatchSetOutput {
+    /// Creates a new builder-style object to manufacture [`GetXssMatchSetOutput`](crate::output::GetXssMatchSetOutput).
+    pub fn builder() -> crate::output::get_xss_match_set_output::Builder {
+        crate::output::get_xss_match_set_output::Builder::default()
+    }
+}
+
 /// See [`GetXssMatchSetOutput`](crate::output::GetXssMatchSetOutput).
 pub mod get_xss_match_set_output {
 
@@ -2605,12 +2644,6 @@ pub mod get_xss_match_set_output {
         }
     }
 }
-impl GetXssMatchSetOutput {
-    /// Creates a new builder-style object to manufacture [`GetXssMatchSetOutput`](crate::output::GetXssMatchSetOutput).
-    pub fn builder() -> crate::output::get_xss_match_set_output::Builder {
-        crate::output::get_xss_match_set_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2644,6 +2677,13 @@ impl aws_http::request_id::RequestId for GetWebAclOutput {
         self._request_id.as_deref()
     }
 }
+impl GetWebAclOutput {
+    /// Creates a new builder-style object to manufacture [`GetWebAclOutput`](crate::output::GetWebAclOutput).
+    pub fn builder() -> crate::output::get_web_acl_output::Builder {
+        crate::output::get_web_acl_output::Builder::default()
+    }
+}
+
 /// See [`GetWebAclOutput`](crate::output::GetWebAclOutput).
 pub mod get_web_acl_output {
 
@@ -2695,12 +2735,6 @@ pub mod get_web_acl_output {
         }
     }
 }
-impl GetWebAclOutput {
-    /// Creates a new builder-style object to manufacture [`GetWebAclOutput`](crate::output::GetWebAclOutput).
-    pub fn builder() -> crate::output::get_web_acl_output::Builder {
-        crate::output::get_web_acl_output::Builder::default()
-    }
-}
 
 /// <p>The response to a <code>GetSqlInjectionMatchSet</code> request.</p>
 #[non_exhaustive]
@@ -2734,6 +2768,13 @@ impl aws_http::request_id::RequestId for GetSqlInjectionMatchSetOutput {
         self._request_id.as_deref()
     }
 }
+impl GetSqlInjectionMatchSetOutput {
+    /// Creates a new builder-style object to manufacture [`GetSqlInjectionMatchSetOutput`](crate::output::GetSqlInjectionMatchSetOutput).
+    pub fn builder() -> crate::output::get_sql_injection_match_set_output::Builder {
+        crate::output::get_sql_injection_match_set_output::Builder::default()
+    }
+}
+
 /// See [`GetSqlInjectionMatchSetOutput`](crate::output::GetSqlInjectionMatchSetOutput).
 pub mod get_sql_injection_match_set_output {
 
@@ -2789,12 +2830,6 @@ pub mod get_sql_injection_match_set_output {
         }
     }
 }
-impl GetSqlInjectionMatchSetOutput {
-    /// Creates a new builder-style object to manufacture [`GetSqlInjectionMatchSetOutput`](crate::output::GetSqlInjectionMatchSetOutput).
-    pub fn builder() -> crate::output::get_sql_injection_match_set_output::Builder {
-        crate::output::get_sql_injection_match_set_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2826,6 +2861,13 @@ impl aws_http::request_id::RequestId for GetSizeConstraintSetOutput {
         self._request_id.as_deref()
     }
 }
+impl GetSizeConstraintSetOutput {
+    /// Creates a new builder-style object to manufacture [`GetSizeConstraintSetOutput`](crate::output::GetSizeConstraintSetOutput).
+    pub fn builder() -> crate::output::get_size_constraint_set_output::Builder {
+        crate::output::get_size_constraint_set_output::Builder::default()
+    }
+}
+
 /// See [`GetSizeConstraintSetOutput`](crate::output::GetSizeConstraintSetOutput).
 pub mod get_size_constraint_set_output {
 
@@ -2878,12 +2920,6 @@ pub mod get_size_constraint_set_output {
         }
     }
 }
-impl GetSizeConstraintSetOutput {
-    /// Creates a new builder-style object to manufacture [`GetSizeConstraintSetOutput`](crate::output::GetSizeConstraintSetOutput).
-    pub fn builder() -> crate::output::get_size_constraint_set_output::Builder {
-        crate::output::get_size_constraint_set_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2919,6 +2955,13 @@ impl aws_http::request_id::RequestId for GetSampledRequestsOutput {
         self._request_id.as_deref()
     }
 }
+impl GetSampledRequestsOutput {
+    /// Creates a new builder-style object to manufacture [`GetSampledRequestsOutput`](crate::output::GetSampledRequestsOutput).
+    pub fn builder() -> crate::output::get_sampled_requests_output::Builder {
+        crate::output::get_sampled_requests_output::Builder::default()
+    }
+}
+
 /// See [`GetSampledRequestsOutput`](crate::output::GetSampledRequestsOutput).
 pub mod get_sampled_requests_output {
 
@@ -2995,12 +3038,6 @@ pub mod get_sampled_requests_output {
         }
     }
 }
-impl GetSampledRequestsOutput {
-    /// Creates a new builder-style object to manufacture [`GetSampledRequestsOutput`](crate::output::GetSampledRequestsOutput).
-    pub fn builder() -> crate::output::get_sampled_requests_output::Builder {
-        crate::output::get_sampled_requests_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3022,6 +3059,13 @@ impl aws_http::request_id::RequestId for GetRuleGroupOutput {
         self._request_id.as_deref()
     }
 }
+impl GetRuleGroupOutput {
+    /// Creates a new builder-style object to manufacture [`GetRuleGroupOutput`](crate::output::GetRuleGroupOutput).
+    pub fn builder() -> crate::output::get_rule_group_output::Builder {
+        crate::output::get_rule_group_output::Builder::default()
+    }
+}
+
 /// See [`GetRuleGroupOutput`](crate::output::GetRuleGroupOutput).
 pub mod get_rule_group_output {
 
@@ -3064,12 +3108,6 @@ pub mod get_rule_group_output {
         }
     }
 }
-impl GetRuleGroupOutput {
-    /// Creates a new builder-style object to manufacture [`GetRuleGroupOutput`](crate::output::GetRuleGroupOutput).
-    pub fn builder() -> crate::output::get_rule_group_output::Builder {
-        crate::output::get_rule_group_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3099,6 +3137,13 @@ impl aws_http::request_id::RequestId for GetRuleOutput {
         self._request_id.as_deref()
     }
 }
+impl GetRuleOutput {
+    /// Creates a new builder-style object to manufacture [`GetRuleOutput`](crate::output::GetRuleOutput).
+    pub fn builder() -> crate::output::get_rule_output::Builder {
+        crate::output::get_rule_output::Builder::default()
+    }
+}
+
 /// See [`GetRuleOutput`](crate::output::GetRuleOutput).
 pub mod get_rule_output {
 
@@ -3146,12 +3191,6 @@ pub mod get_rule_output {
         }
     }
 }
-impl GetRuleOutput {
-    /// Creates a new builder-style object to manufacture [`GetRuleOutput`](crate::output::GetRuleOutput).
-    pub fn builder() -> crate::output::get_rule_output::Builder {
-        crate::output::get_rule_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3173,6 +3212,13 @@ impl aws_http::request_id::RequestId for GetRegexPatternSetOutput {
         self._request_id.as_deref()
     }
 }
+impl GetRegexPatternSetOutput {
+    /// Creates a new builder-style object to manufacture [`GetRegexPatternSetOutput`](crate::output::GetRegexPatternSetOutput).
+    pub fn builder() -> crate::output::get_regex_pattern_set_output::Builder {
+        crate::output::get_regex_pattern_set_output::Builder::default()
+    }
+}
+
 /// See [`GetRegexPatternSetOutput`](crate::output::GetRegexPatternSetOutput).
 pub mod get_regex_pattern_set_output {
 
@@ -3215,12 +3261,6 @@ pub mod get_regex_pattern_set_output {
         }
     }
 }
-impl GetRegexPatternSetOutput {
-    /// Creates a new builder-style object to manufacture [`GetRegexPatternSetOutput`](crate::output::GetRegexPatternSetOutput).
-    pub fn builder() -> crate::output::get_regex_pattern_set_output::Builder {
-        crate::output::get_regex_pattern_set_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3242,6 +3282,13 @@ impl aws_http::request_id::RequestId for GetRegexMatchSetOutput {
         self._request_id.as_deref()
     }
 }
+impl GetRegexMatchSetOutput {
+    /// Creates a new builder-style object to manufacture [`GetRegexMatchSetOutput`](crate::output::GetRegexMatchSetOutput).
+    pub fn builder() -> crate::output::get_regex_match_set_output::Builder {
+        crate::output::get_regex_match_set_output::Builder::default()
+    }
+}
+
 /// See [`GetRegexMatchSetOutput`](crate::output::GetRegexMatchSetOutput).
 pub mod get_regex_match_set_output {
 
@@ -3284,12 +3331,6 @@ pub mod get_regex_match_set_output {
         }
     }
 }
-impl GetRegexMatchSetOutput {
-    /// Creates a new builder-style object to manufacture [`GetRegexMatchSetOutput`](crate::output::GetRegexMatchSetOutput).
-    pub fn builder() -> crate::output::get_regex_match_set_output::Builder {
-        crate::output::get_regex_match_set_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3318,6 +3359,13 @@ impl aws_http::request_id::RequestId for GetRateBasedRuleManagedKeysOutput {
         self._request_id.as_deref()
     }
 }
+impl GetRateBasedRuleManagedKeysOutput {
+    /// Creates a new builder-style object to manufacture [`GetRateBasedRuleManagedKeysOutput`](crate::output::GetRateBasedRuleManagedKeysOutput).
+    pub fn builder() -> crate::output::get_rate_based_rule_managed_keys_output::Builder {
+        crate::output::get_rate_based_rule_managed_keys_output::Builder::default()
+    }
+}
+
 /// See [`GetRateBasedRuleManagedKeysOutput`](crate::output::GetRateBasedRuleManagedKeysOutput).
 pub mod get_rate_based_rule_managed_keys_output {
 
@@ -3378,12 +3426,6 @@ pub mod get_rate_based_rule_managed_keys_output {
         }
     }
 }
-impl GetRateBasedRuleManagedKeysOutput {
-    /// Creates a new builder-style object to manufacture [`GetRateBasedRuleManagedKeysOutput`](crate::output::GetRateBasedRuleManagedKeysOutput).
-    pub fn builder() -> crate::output::get_rate_based_rule_managed_keys_output::Builder {
-        crate::output::get_rate_based_rule_managed_keys_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3405,6 +3447,13 @@ impl aws_http::request_id::RequestId for GetRateBasedRuleOutput {
         self._request_id.as_deref()
     }
 }
+impl GetRateBasedRuleOutput {
+    /// Creates a new builder-style object to manufacture [`GetRateBasedRuleOutput`](crate::output::GetRateBasedRuleOutput).
+    pub fn builder() -> crate::output::get_rate_based_rule_output::Builder {
+        crate::output::get_rate_based_rule_output::Builder::default()
+    }
+}
+
 /// See [`GetRateBasedRuleOutput`](crate::output::GetRateBasedRuleOutput).
 pub mod get_rate_based_rule_output {
 
@@ -3444,12 +3493,6 @@ pub mod get_rate_based_rule_output {
         }
     }
 }
-impl GetRateBasedRuleOutput {
-    /// Creates a new builder-style object to manufacture [`GetRateBasedRuleOutput`](crate::output::GetRateBasedRuleOutput).
-    pub fn builder() -> crate::output::get_rate_based_rule_output::Builder {
-        crate::output::get_rate_based_rule_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3471,6 +3514,13 @@ impl aws_http::request_id::RequestId for GetPermissionPolicyOutput {
         self._request_id.as_deref()
     }
 }
+impl GetPermissionPolicyOutput {
+    /// Creates a new builder-style object to manufacture [`GetPermissionPolicyOutput`](crate::output::GetPermissionPolicyOutput).
+    pub fn builder() -> crate::output::get_permission_policy_output::Builder {
+        crate::output::get_permission_policy_output::Builder::default()
+    }
+}
+
 /// See [`GetPermissionPolicyOutput`](crate::output::GetPermissionPolicyOutput).
 pub mod get_permission_policy_output {
 
@@ -3510,12 +3560,6 @@ pub mod get_permission_policy_output {
         }
     }
 }
-impl GetPermissionPolicyOutput {
-    /// Creates a new builder-style object to manufacture [`GetPermissionPolicyOutput`](crate::output::GetPermissionPolicyOutput).
-    pub fn builder() -> crate::output::get_permission_policy_output::Builder {
-        crate::output::get_permission_policy_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3539,6 +3583,13 @@ impl aws_http::request_id::RequestId for GetLoggingConfigurationOutput {
         self._request_id.as_deref()
     }
 }
+impl GetLoggingConfigurationOutput {
+    /// Creates a new builder-style object to manufacture [`GetLoggingConfigurationOutput`](crate::output::GetLoggingConfigurationOutput).
+    pub fn builder() -> crate::output::get_logging_configuration_output::Builder {
+        crate::output::get_logging_configuration_output::Builder::default()
+    }
+}
+
 /// See [`GetLoggingConfigurationOutput`](crate::output::GetLoggingConfigurationOutput).
 pub mod get_logging_configuration_output {
 
@@ -3581,12 +3632,6 @@ pub mod get_logging_configuration_output {
         }
     }
 }
-impl GetLoggingConfigurationOutput {
-    /// Creates a new builder-style object to manufacture [`GetLoggingConfigurationOutput`](crate::output::GetLoggingConfigurationOutput).
-    pub fn builder() -> crate::output::get_logging_configuration_output::Builder {
-        crate::output::get_logging_configuration_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3616,6 +3661,13 @@ impl aws_http::request_id::RequestId for GetIpSetOutput {
         self._request_id.as_deref()
     }
 }
+impl GetIpSetOutput {
+    /// Creates a new builder-style object to manufacture [`GetIpSetOutput`](crate::output::GetIpSetOutput).
+    pub fn builder() -> crate::output::get_ip_set_output::Builder {
+        crate::output::get_ip_set_output::Builder::default()
+    }
+}
+
 /// See [`GetIpSetOutput`](crate::output::GetIpSetOutput).
 pub mod get_ip_set_output {
 
@@ -3663,12 +3715,6 @@ pub mod get_ip_set_output {
         }
     }
 }
-impl GetIpSetOutput {
-    /// Creates a new builder-style object to manufacture [`GetIpSetOutput`](crate::output::GetIpSetOutput).
-    pub fn builder() -> crate::output::get_ip_set_output::Builder {
-        crate::output::get_ip_set_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3690,6 +3736,13 @@ impl aws_http::request_id::RequestId for GetGeoMatchSetOutput {
         self._request_id.as_deref()
     }
 }
+impl GetGeoMatchSetOutput {
+    /// Creates a new builder-style object to manufacture [`GetGeoMatchSetOutput`](crate::output::GetGeoMatchSetOutput).
+    pub fn builder() -> crate::output::get_geo_match_set_output::Builder {
+        crate::output::get_geo_match_set_output::Builder::default()
+    }
+}
+
 /// See [`GetGeoMatchSetOutput`](crate::output::GetGeoMatchSetOutput).
 pub mod get_geo_match_set_output {
 
@@ -3732,12 +3785,6 @@ pub mod get_geo_match_set_output {
         }
     }
 }
-impl GetGeoMatchSetOutput {
-    /// Creates a new builder-style object to manufacture [`GetGeoMatchSetOutput`](crate::output::GetGeoMatchSetOutput).
-    pub fn builder() -> crate::output::get_geo_match_set_output::Builder {
-        crate::output::get_geo_match_set_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3759,6 +3806,13 @@ impl aws_http::request_id::RequestId for GetChangeTokenStatusOutput {
         self._request_id.as_deref()
     }
 }
+impl GetChangeTokenStatusOutput {
+    /// Creates a new builder-style object to manufacture [`GetChangeTokenStatusOutput`](crate::output::GetChangeTokenStatusOutput).
+    pub fn builder() -> crate::output::get_change_token_status_output::Builder {
+        crate::output::get_change_token_status_output::Builder::default()
+    }
+}
+
 /// See [`GetChangeTokenStatusOutput`](crate::output::GetChangeTokenStatusOutput).
 pub mod get_change_token_status_output {
 
@@ -3801,12 +3855,6 @@ pub mod get_change_token_status_output {
         }
     }
 }
-impl GetChangeTokenStatusOutput {
-    /// Creates a new builder-style object to manufacture [`GetChangeTokenStatusOutput`](crate::output::GetChangeTokenStatusOutput).
-    pub fn builder() -> crate::output::get_change_token_status_output::Builder {
-        crate::output::get_change_token_status_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3828,6 +3876,13 @@ impl aws_http::request_id::RequestId for GetChangeTokenOutput {
         self._request_id.as_deref()
     }
 }
+impl GetChangeTokenOutput {
+    /// Creates a new builder-style object to manufacture [`GetChangeTokenOutput`](crate::output::GetChangeTokenOutput).
+    pub fn builder() -> crate::output::get_change_token_output::Builder {
+        crate::output::get_change_token_output::Builder::default()
+    }
+}
+
 /// See [`GetChangeTokenOutput`](crate::output::GetChangeTokenOutput).
 pub mod get_change_token_output {
 
@@ -3867,12 +3922,6 @@ pub mod get_change_token_output {
         }
     }
 }
-impl GetChangeTokenOutput {
-    /// Creates a new builder-style object to manufacture [`GetChangeTokenOutput`](crate::output::GetChangeTokenOutput).
-    pub fn builder() -> crate::output::get_change_token_output::Builder {
-        crate::output::get_change_token_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3904,6 +3953,13 @@ impl aws_http::request_id::RequestId for GetByteMatchSetOutput {
         self._request_id.as_deref()
     }
 }
+impl GetByteMatchSetOutput {
+    /// Creates a new builder-style object to manufacture [`GetByteMatchSetOutput`](crate::output::GetByteMatchSetOutput).
+    pub fn builder() -> crate::output::get_byte_match_set_output::Builder {
+        crate::output::get_byte_match_set_output::Builder::default()
+    }
+}
+
 /// See [`GetByteMatchSetOutput`](crate::output::GetByteMatchSetOutput).
 pub mod get_byte_match_set_output {
 
@@ -3956,12 +4012,6 @@ pub mod get_byte_match_set_output {
         }
     }
 }
-impl GetByteMatchSetOutput {
-    /// Creates a new builder-style object to manufacture [`GetByteMatchSetOutput`](crate::output::GetByteMatchSetOutput).
-    pub fn builder() -> crate::output::get_byte_match_set_output::Builder {
-        crate::output::get_byte_match_set_output::Builder::default()
-    }
-}
 
 /// <p>The response to a request to delete an <code>XssMatchSet</code> from AWS WAF.</p>
 #[non_exhaustive]
@@ -3983,6 +4033,13 @@ impl aws_http::request_id::RequestId for DeleteXssMatchSetOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteXssMatchSetOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteXssMatchSetOutput`](crate::output::DeleteXssMatchSetOutput).
+    pub fn builder() -> crate::output::delete_xss_match_set_output::Builder {
+        crate::output::delete_xss_match_set_output::Builder::default()
+    }
+}
+
 /// See [`DeleteXssMatchSetOutput`](crate::output::DeleteXssMatchSetOutput).
 pub mod delete_xss_match_set_output {
 
@@ -4022,12 +4079,6 @@ pub mod delete_xss_match_set_output {
         }
     }
 }
-impl DeleteXssMatchSetOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteXssMatchSetOutput`](crate::output::DeleteXssMatchSetOutput).
-    pub fn builder() -> crate::output::delete_xss_match_set_output::Builder {
-        crate::output::delete_xss_match_set_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -4049,6 +4100,13 @@ impl aws_http::request_id::RequestId for DeleteWebAclOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteWebAclOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteWebAclOutput`](crate::output::DeleteWebAclOutput).
+    pub fn builder() -> crate::output::delete_web_acl_output::Builder {
+        crate::output::delete_web_acl_output::Builder::default()
+    }
+}
+
 /// See [`DeleteWebAclOutput`](crate::output::DeleteWebAclOutput).
 pub mod delete_web_acl_output {
 
@@ -4088,12 +4146,6 @@ pub mod delete_web_acl_output {
         }
     }
 }
-impl DeleteWebAclOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteWebAclOutput`](crate::output::DeleteWebAclOutput).
-    pub fn builder() -> crate::output::delete_web_acl_output::Builder {
-        crate::output::delete_web_acl_output::Builder::default()
-    }
-}
 
 /// <p>The response to a request to delete a <code>SqlInjectionMatchSet</code> from AWS WAF.</p>
 #[non_exhaustive]
@@ -4115,6 +4167,13 @@ impl aws_http::request_id::RequestId for DeleteSqlInjectionMatchSetOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteSqlInjectionMatchSetOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteSqlInjectionMatchSetOutput`](crate::output::DeleteSqlInjectionMatchSetOutput).
+    pub fn builder() -> crate::output::delete_sql_injection_match_set_output::Builder {
+        crate::output::delete_sql_injection_match_set_output::Builder::default()
+    }
+}
+
 /// See [`DeleteSqlInjectionMatchSetOutput`](crate::output::DeleteSqlInjectionMatchSetOutput).
 pub mod delete_sql_injection_match_set_output {
 
@@ -4154,12 +4213,6 @@ pub mod delete_sql_injection_match_set_output {
         }
     }
 }
-impl DeleteSqlInjectionMatchSetOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteSqlInjectionMatchSetOutput`](crate::output::DeleteSqlInjectionMatchSetOutput).
-    pub fn builder() -> crate::output::delete_sql_injection_match_set_output::Builder {
-        crate::output::delete_sql_injection_match_set_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -4181,6 +4234,13 @@ impl aws_http::request_id::RequestId for DeleteSizeConstraintSetOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteSizeConstraintSetOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteSizeConstraintSetOutput`](crate::output::DeleteSizeConstraintSetOutput).
+    pub fn builder() -> crate::output::delete_size_constraint_set_output::Builder {
+        crate::output::delete_size_constraint_set_output::Builder::default()
+    }
+}
+
 /// See [`DeleteSizeConstraintSetOutput`](crate::output::DeleteSizeConstraintSetOutput).
 pub mod delete_size_constraint_set_output {
 
@@ -4220,12 +4280,6 @@ pub mod delete_size_constraint_set_output {
         }
     }
 }
-impl DeleteSizeConstraintSetOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteSizeConstraintSetOutput`](crate::output::DeleteSizeConstraintSetOutput).
-    pub fn builder() -> crate::output::delete_size_constraint_set_output::Builder {
-        crate::output::delete_size_constraint_set_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -4247,6 +4301,13 @@ impl aws_http::request_id::RequestId for DeleteRuleGroupOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteRuleGroupOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteRuleGroupOutput`](crate::output::DeleteRuleGroupOutput).
+    pub fn builder() -> crate::output::delete_rule_group_output::Builder {
+        crate::output::delete_rule_group_output::Builder::default()
+    }
+}
+
 /// See [`DeleteRuleGroupOutput`](crate::output::DeleteRuleGroupOutput).
 pub mod delete_rule_group_output {
 
@@ -4286,12 +4347,6 @@ pub mod delete_rule_group_output {
         }
     }
 }
-impl DeleteRuleGroupOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteRuleGroupOutput`](crate::output::DeleteRuleGroupOutput).
-    pub fn builder() -> crate::output::delete_rule_group_output::Builder {
-        crate::output::delete_rule_group_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -4313,6 +4368,13 @@ impl aws_http::request_id::RequestId for DeleteRuleOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteRuleOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteRuleOutput`](crate::output::DeleteRuleOutput).
+    pub fn builder() -> crate::output::delete_rule_output::Builder {
+        crate::output::delete_rule_output::Builder::default()
+    }
+}
+
 /// See [`DeleteRuleOutput`](crate::output::DeleteRuleOutput).
 pub mod delete_rule_output {
 
@@ -4352,12 +4414,6 @@ pub mod delete_rule_output {
         }
     }
 }
-impl DeleteRuleOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteRuleOutput`](crate::output::DeleteRuleOutput).
-    pub fn builder() -> crate::output::delete_rule_output::Builder {
-        crate::output::delete_rule_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -4379,6 +4435,13 @@ impl aws_http::request_id::RequestId for DeleteRegexPatternSetOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteRegexPatternSetOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteRegexPatternSetOutput`](crate::output::DeleteRegexPatternSetOutput).
+    pub fn builder() -> crate::output::delete_regex_pattern_set_output::Builder {
+        crate::output::delete_regex_pattern_set_output::Builder::default()
+    }
+}
+
 /// See [`DeleteRegexPatternSetOutput`](crate::output::DeleteRegexPatternSetOutput).
 pub mod delete_regex_pattern_set_output {
 
@@ -4418,12 +4481,6 @@ pub mod delete_regex_pattern_set_output {
         }
     }
 }
-impl DeleteRegexPatternSetOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteRegexPatternSetOutput`](crate::output::DeleteRegexPatternSetOutput).
-    pub fn builder() -> crate::output::delete_regex_pattern_set_output::Builder {
-        crate::output::delete_regex_pattern_set_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -4445,6 +4502,13 @@ impl aws_http::request_id::RequestId for DeleteRegexMatchSetOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteRegexMatchSetOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteRegexMatchSetOutput`](crate::output::DeleteRegexMatchSetOutput).
+    pub fn builder() -> crate::output::delete_regex_match_set_output::Builder {
+        crate::output::delete_regex_match_set_output::Builder::default()
+    }
+}
+
 /// See [`DeleteRegexMatchSetOutput`](crate::output::DeleteRegexMatchSetOutput).
 pub mod delete_regex_match_set_output {
 
@@ -4484,12 +4548,6 @@ pub mod delete_regex_match_set_output {
         }
     }
 }
-impl DeleteRegexMatchSetOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteRegexMatchSetOutput`](crate::output::DeleteRegexMatchSetOutput).
-    pub fn builder() -> crate::output::delete_regex_match_set_output::Builder {
-        crate::output::delete_regex_match_set_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -4511,6 +4569,13 @@ impl aws_http::request_id::RequestId for DeleteRateBasedRuleOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteRateBasedRuleOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteRateBasedRuleOutput`](crate::output::DeleteRateBasedRuleOutput).
+    pub fn builder() -> crate::output::delete_rate_based_rule_output::Builder {
+        crate::output::delete_rate_based_rule_output::Builder::default()
+    }
+}
+
 /// See [`DeleteRateBasedRuleOutput`](crate::output::DeleteRateBasedRuleOutput).
 pub mod delete_rate_based_rule_output {
 
@@ -4550,12 +4615,6 @@ pub mod delete_rate_based_rule_output {
         }
     }
 }
-impl DeleteRateBasedRuleOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteRateBasedRuleOutput`](crate::output::DeleteRateBasedRuleOutput).
-    pub fn builder() -> crate::output::delete_rate_based_rule_output::Builder {
-        crate::output::delete_rate_based_rule_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -4568,6 +4627,13 @@ impl aws_http::request_id::RequestId for DeletePermissionPolicyOutput {
         self._request_id.as_deref()
     }
 }
+impl DeletePermissionPolicyOutput {
+    /// Creates a new builder-style object to manufacture [`DeletePermissionPolicyOutput`](crate::output::DeletePermissionPolicyOutput).
+    pub fn builder() -> crate::output::delete_permission_policy_output::Builder {
+        crate::output::delete_permission_policy_output::Builder::default()
+    }
+}
+
 /// See [`DeletePermissionPolicyOutput`](crate::output::DeletePermissionPolicyOutput).
 pub mod delete_permission_policy_output {
 
@@ -4595,12 +4661,6 @@ pub mod delete_permission_policy_output {
         }
     }
 }
-impl DeletePermissionPolicyOutput {
-    /// Creates a new builder-style object to manufacture [`DeletePermissionPolicyOutput`](crate::output::DeletePermissionPolicyOutput).
-    pub fn builder() -> crate::output::delete_permission_policy_output::Builder {
-        crate::output::delete_permission_policy_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -4613,6 +4673,13 @@ impl aws_http::request_id::RequestId for DeleteLoggingConfigurationOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteLoggingConfigurationOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteLoggingConfigurationOutput`](crate::output::DeleteLoggingConfigurationOutput).
+    pub fn builder() -> crate::output::delete_logging_configuration_output::Builder {
+        crate::output::delete_logging_configuration_output::Builder::default()
+    }
+}
+
 /// See [`DeleteLoggingConfigurationOutput`](crate::output::DeleteLoggingConfigurationOutput).
 pub mod delete_logging_configuration_output {
 
@@ -4640,12 +4707,6 @@ pub mod delete_logging_configuration_output {
         }
     }
 }
-impl DeleteLoggingConfigurationOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteLoggingConfigurationOutput`](crate::output::DeleteLoggingConfigurationOutput).
-    pub fn builder() -> crate::output::delete_logging_configuration_output::Builder {
-        crate::output::delete_logging_configuration_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -4667,6 +4728,13 @@ impl aws_http::request_id::RequestId for DeleteIpSetOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteIpSetOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteIpSetOutput`](crate::output::DeleteIpSetOutput).
+    pub fn builder() -> crate::output::delete_ip_set_output::Builder {
+        crate::output::delete_ip_set_output::Builder::default()
+    }
+}
+
 /// See [`DeleteIpSetOutput`](crate::output::DeleteIpSetOutput).
 pub mod delete_ip_set_output {
 
@@ -4706,12 +4774,6 @@ pub mod delete_ip_set_output {
         }
     }
 }
-impl DeleteIpSetOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteIpSetOutput`](crate::output::DeleteIpSetOutput).
-    pub fn builder() -> crate::output::delete_ip_set_output::Builder {
-        crate::output::delete_ip_set_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -4733,6 +4795,13 @@ impl aws_http::request_id::RequestId for DeleteGeoMatchSetOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteGeoMatchSetOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteGeoMatchSetOutput`](crate::output::DeleteGeoMatchSetOutput).
+    pub fn builder() -> crate::output::delete_geo_match_set_output::Builder {
+        crate::output::delete_geo_match_set_output::Builder::default()
+    }
+}
+
 /// See [`DeleteGeoMatchSetOutput`](crate::output::DeleteGeoMatchSetOutput).
 pub mod delete_geo_match_set_output {
 
@@ -4772,12 +4841,6 @@ pub mod delete_geo_match_set_output {
         }
     }
 }
-impl DeleteGeoMatchSetOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteGeoMatchSetOutput`](crate::output::DeleteGeoMatchSetOutput).
-    pub fn builder() -> crate::output::delete_geo_match_set_output::Builder {
-        crate::output::delete_geo_match_set_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -4799,6 +4862,13 @@ impl aws_http::request_id::RequestId for DeleteByteMatchSetOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteByteMatchSetOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteByteMatchSetOutput`](crate::output::DeleteByteMatchSetOutput).
+    pub fn builder() -> crate::output::delete_byte_match_set_output::Builder {
+        crate::output::delete_byte_match_set_output::Builder::default()
+    }
+}
+
 /// See [`DeleteByteMatchSetOutput`](crate::output::DeleteByteMatchSetOutput).
 pub mod delete_byte_match_set_output {
 
@@ -4838,12 +4908,6 @@ pub mod delete_byte_match_set_output {
         }
     }
 }
-impl DeleteByteMatchSetOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteByteMatchSetOutput`](crate::output::DeleteByteMatchSetOutput).
-    pub fn builder() -> crate::output::delete_byte_match_set_output::Builder {
-        crate::output::delete_byte_match_set_output::Builder::default()
-    }
-}
 
 /// <p>The response to a <code>CreateXssMatchSet</code> request.</p>
 #[non_exhaustive]
@@ -4872,6 +4936,13 @@ impl aws_http::request_id::RequestId for CreateXssMatchSetOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateXssMatchSetOutput {
+    /// Creates a new builder-style object to manufacture [`CreateXssMatchSetOutput`](crate::output::CreateXssMatchSetOutput).
+    pub fn builder() -> crate::output::create_xss_match_set_output::Builder {
+        crate::output::create_xss_match_set_output::Builder::default()
+    }
+}
+
 /// See [`CreateXssMatchSetOutput`](crate::output::CreateXssMatchSetOutput).
 pub mod create_xss_match_set_output {
 
@@ -4926,12 +4997,6 @@ pub mod create_xss_match_set_output {
         }
     }
 }
-impl CreateXssMatchSetOutput {
-    /// Creates a new builder-style object to manufacture [`CreateXssMatchSetOutput`](crate::output::CreateXssMatchSetOutput).
-    pub fn builder() -> crate::output::create_xss_match_set_output::Builder {
-        crate::output::create_xss_match_set_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -4953,6 +5018,13 @@ impl aws_http::request_id::RequestId for CreateWebAclMigrationStackOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateWebAclMigrationStackOutput {
+    /// Creates a new builder-style object to manufacture [`CreateWebAclMigrationStackOutput`](crate::output::CreateWebAclMigrationStackOutput).
+    pub fn builder() -> crate::output::create_web_acl_migration_stack_output::Builder {
+        crate::output::create_web_acl_migration_stack_output::Builder::default()
+    }
+}
+
 /// See [`CreateWebAclMigrationStackOutput`](crate::output::CreateWebAclMigrationStackOutput).
 pub mod create_web_acl_migration_stack_output {
 
@@ -4995,12 +5067,6 @@ pub mod create_web_acl_migration_stack_output {
         }
     }
 }
-impl CreateWebAclMigrationStackOutput {
-    /// Creates a new builder-style object to manufacture [`CreateWebAclMigrationStackOutput`](crate::output::CreateWebAclMigrationStackOutput).
-    pub fn builder() -> crate::output::create_web_acl_migration_stack_output::Builder {
-        crate::output::create_web_acl_migration_stack_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -5029,6 +5095,13 @@ impl aws_http::request_id::RequestId for CreateWebAclOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateWebAclOutput {
+    /// Creates a new builder-style object to manufacture [`CreateWebAclOutput`](crate::output::CreateWebAclOutput).
+    pub fn builder() -> crate::output::create_web_acl_output::Builder {
+        crate::output::create_web_acl_output::Builder::default()
+    }
+}
+
 /// See [`CreateWebAclOutput`](crate::output::CreateWebAclOutput).
 pub mod create_web_acl_output {
 
@@ -5080,12 +5153,6 @@ pub mod create_web_acl_output {
         }
     }
 }
-impl CreateWebAclOutput {
-    /// Creates a new builder-style object to manufacture [`CreateWebAclOutput`](crate::output::CreateWebAclOutput).
-    pub fn builder() -> crate::output::create_web_acl_output::Builder {
-        crate::output::create_web_acl_output::Builder::default()
-    }
-}
 
 /// <p>The response to a <code>CreateSqlInjectionMatchSet</code> request.</p>
 #[non_exhaustive]
@@ -5116,6 +5183,13 @@ impl aws_http::request_id::RequestId for CreateSqlInjectionMatchSetOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateSqlInjectionMatchSetOutput {
+    /// Creates a new builder-style object to manufacture [`CreateSqlInjectionMatchSetOutput`](crate::output::CreateSqlInjectionMatchSetOutput).
+    pub fn builder() -> crate::output::create_sql_injection_match_set_output::Builder {
+        crate::output::create_sql_injection_match_set_output::Builder::default()
+    }
+}
+
 /// See [`CreateSqlInjectionMatchSetOutput`](crate::output::CreateSqlInjectionMatchSetOutput).
 pub mod create_sql_injection_match_set_output {
 
@@ -5173,12 +5247,6 @@ pub mod create_sql_injection_match_set_output {
         }
     }
 }
-impl CreateSqlInjectionMatchSetOutput {
-    /// Creates a new builder-style object to manufacture [`CreateSqlInjectionMatchSetOutput`](crate::output::CreateSqlInjectionMatchSetOutput).
-    pub fn builder() -> crate::output::create_sql_injection_match_set_output::Builder {
-        crate::output::create_sql_injection_match_set_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -5207,6 +5275,13 @@ impl aws_http::request_id::RequestId for CreateSizeConstraintSetOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateSizeConstraintSetOutput {
+    /// Creates a new builder-style object to manufacture [`CreateSizeConstraintSetOutput`](crate::output::CreateSizeConstraintSetOutput).
+    pub fn builder() -> crate::output::create_size_constraint_set_output::Builder {
+        crate::output::create_size_constraint_set_output::Builder::default()
+    }
+}
+
 /// See [`CreateSizeConstraintSetOutput`](crate::output::CreateSizeConstraintSetOutput).
 pub mod create_size_constraint_set_output {
 
@@ -5261,12 +5336,6 @@ pub mod create_size_constraint_set_output {
         }
     }
 }
-impl CreateSizeConstraintSetOutput {
-    /// Creates a new builder-style object to manufacture [`CreateSizeConstraintSetOutput`](crate::output::CreateSizeConstraintSetOutput).
-    pub fn builder() -> crate::output::create_size_constraint_set_output::Builder {
-        crate::output::create_size_constraint_set_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -5295,6 +5364,13 @@ impl aws_http::request_id::RequestId for CreateRuleGroupOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateRuleGroupOutput {
+    /// Creates a new builder-style object to manufacture [`CreateRuleGroupOutput`](crate::output::CreateRuleGroupOutput).
+    pub fn builder() -> crate::output::create_rule_group_output::Builder {
+        crate::output::create_rule_group_output::Builder::default()
+    }
+}
+
 /// See [`CreateRuleGroupOutput`](crate::output::CreateRuleGroupOutput).
 pub mod create_rule_group_output {
 
@@ -5349,12 +5425,6 @@ pub mod create_rule_group_output {
         }
     }
 }
-impl CreateRuleGroupOutput {
-    /// Creates a new builder-style object to manufacture [`CreateRuleGroupOutput`](crate::output::CreateRuleGroupOutput).
-    pub fn builder() -> crate::output::create_rule_group_output::Builder {
-        crate::output::create_rule_group_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -5383,6 +5453,13 @@ impl aws_http::request_id::RequestId for CreateRuleOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateRuleOutput {
+    /// Creates a new builder-style object to manufacture [`CreateRuleOutput`](crate::output::CreateRuleOutput).
+    pub fn builder() -> crate::output::create_rule_output::Builder {
+        crate::output::create_rule_output::Builder::default()
+    }
+}
+
 /// See [`CreateRuleOutput`](crate::output::CreateRuleOutput).
 pub mod create_rule_output {
 
@@ -5434,12 +5511,6 @@ pub mod create_rule_output {
         }
     }
 }
-impl CreateRuleOutput {
-    /// Creates a new builder-style object to manufacture [`CreateRuleOutput`](crate::output::CreateRuleOutput).
-    pub fn builder() -> crate::output::create_rule_output::Builder {
-        crate::output::create_rule_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -5468,6 +5539,13 @@ impl aws_http::request_id::RequestId for CreateRegexPatternSetOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateRegexPatternSetOutput {
+    /// Creates a new builder-style object to manufacture [`CreateRegexPatternSetOutput`](crate::output::CreateRegexPatternSetOutput).
+    pub fn builder() -> crate::output::create_regex_pattern_set_output::Builder {
+        crate::output::create_regex_pattern_set_output::Builder::default()
+    }
+}
+
 /// See [`CreateRegexPatternSetOutput`](crate::output::CreateRegexPatternSetOutput).
 pub mod create_regex_pattern_set_output {
 
@@ -5522,12 +5600,6 @@ pub mod create_regex_pattern_set_output {
         }
     }
 }
-impl CreateRegexPatternSetOutput {
-    /// Creates a new builder-style object to manufacture [`CreateRegexPatternSetOutput`](crate::output::CreateRegexPatternSetOutput).
-    pub fn builder() -> crate::output::create_regex_pattern_set_output::Builder {
-        crate::output::create_regex_pattern_set_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -5556,6 +5628,13 @@ impl aws_http::request_id::RequestId for CreateRegexMatchSetOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateRegexMatchSetOutput {
+    /// Creates a new builder-style object to manufacture [`CreateRegexMatchSetOutput`](crate::output::CreateRegexMatchSetOutput).
+    pub fn builder() -> crate::output::create_regex_match_set_output::Builder {
+        crate::output::create_regex_match_set_output::Builder::default()
+    }
+}
+
 /// See [`CreateRegexMatchSetOutput`](crate::output::CreateRegexMatchSetOutput).
 pub mod create_regex_match_set_output {
 
@@ -5610,12 +5689,6 @@ pub mod create_regex_match_set_output {
         }
     }
 }
-impl CreateRegexMatchSetOutput {
-    /// Creates a new builder-style object to manufacture [`CreateRegexMatchSetOutput`](crate::output::CreateRegexMatchSetOutput).
-    pub fn builder() -> crate::output::create_regex_match_set_output::Builder {
-        crate::output::create_regex_match_set_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -5644,6 +5717,13 @@ impl aws_http::request_id::RequestId for CreateRateBasedRuleOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateRateBasedRuleOutput {
+    /// Creates a new builder-style object to manufacture [`CreateRateBasedRuleOutput`](crate::output::CreateRateBasedRuleOutput).
+    pub fn builder() -> crate::output::create_rate_based_rule_output::Builder {
+        crate::output::create_rate_based_rule_output::Builder::default()
+    }
+}
+
 /// See [`CreateRateBasedRuleOutput`](crate::output::CreateRateBasedRuleOutput).
 pub mod create_rate_based_rule_output {
 
@@ -5695,12 +5775,6 @@ pub mod create_rate_based_rule_output {
         }
     }
 }
-impl CreateRateBasedRuleOutput {
-    /// Creates a new builder-style object to manufacture [`CreateRateBasedRuleOutput`](crate::output::CreateRateBasedRuleOutput).
-    pub fn builder() -> crate::output::create_rate_based_rule_output::Builder {
-        crate::output::create_rate_based_rule_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -5729,6 +5803,13 @@ impl aws_http::request_id::RequestId for CreateIpSetOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateIpSetOutput {
+    /// Creates a new builder-style object to manufacture [`CreateIpSetOutput`](crate::output::CreateIpSetOutput).
+    pub fn builder() -> crate::output::create_ip_set_output::Builder {
+        crate::output::create_ip_set_output::Builder::default()
+    }
+}
+
 /// See [`CreateIpSetOutput`](crate::output::CreateIpSetOutput).
 pub mod create_ip_set_output {
 
@@ -5780,12 +5861,6 @@ pub mod create_ip_set_output {
         }
     }
 }
-impl CreateIpSetOutput {
-    /// Creates a new builder-style object to manufacture [`CreateIpSetOutput`](crate::output::CreateIpSetOutput).
-    pub fn builder() -> crate::output::create_ip_set_output::Builder {
-        crate::output::create_ip_set_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -5814,6 +5889,13 @@ impl aws_http::request_id::RequestId for CreateGeoMatchSetOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateGeoMatchSetOutput {
+    /// Creates a new builder-style object to manufacture [`CreateGeoMatchSetOutput`](crate::output::CreateGeoMatchSetOutput).
+    pub fn builder() -> crate::output::create_geo_match_set_output::Builder {
+        crate::output::create_geo_match_set_output::Builder::default()
+    }
+}
+
 /// See [`CreateGeoMatchSetOutput`](crate::output::CreateGeoMatchSetOutput).
 pub mod create_geo_match_set_output {
 
@@ -5868,12 +5950,6 @@ pub mod create_geo_match_set_output {
         }
     }
 }
-impl CreateGeoMatchSetOutput {
-    /// Creates a new builder-style object to manufacture [`CreateGeoMatchSetOutput`](crate::output::CreateGeoMatchSetOutput).
-    pub fn builder() -> crate::output::create_geo_match_set_output::Builder {
-        crate::output::create_geo_match_set_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -5902,6 +5978,13 @@ impl aws_http::request_id::RequestId for CreateByteMatchSetOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateByteMatchSetOutput {
+    /// Creates a new builder-style object to manufacture [`CreateByteMatchSetOutput`](crate::output::CreateByteMatchSetOutput).
+    pub fn builder() -> crate::output::create_byte_match_set_output::Builder {
+        crate::output::create_byte_match_set_output::Builder::default()
+    }
+}
+
 /// See [`CreateByteMatchSetOutput`](crate::output::CreateByteMatchSetOutput).
 pub mod create_byte_match_set_output {
 
@@ -5954,11 +6037,5 @@ pub mod create_byte_match_set_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl CreateByteMatchSetOutput {
-    /// Creates a new builder-style object to manufacture [`CreateByteMatchSetOutput`](crate::output::CreateByteMatchSetOutput).
-    pub fn builder() -> crate::output::create_byte_match_set_output::Builder {
-        crate::output::create_byte_match_set_output::Builder::default()
     }
 }

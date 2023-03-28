@@ -472,6 +472,13 @@ impl ResourceTag {
         self.resource_tag_value.as_deref()
     }
 }
+impl ResourceTag {
+    /// Creates a new builder-style object to manufacture [`ResourceTag`](crate::model::ResourceTag).
+    pub fn builder() -> crate::model::resource_tag::Builder {
+        crate::model::resource_tag::Builder::default()
+    }
+}
+
 /// See [`ResourceTag`](crate::model::ResourceTag).
 pub mod resource_tag {
 
@@ -516,12 +523,6 @@ pub mod resource_tag {
                 resource_tag_value: self.resource_tag_value,
             }
         }
-    }
-}
-impl ResourceTag {
-    /// Creates a new builder-style object to manufacture [`ResourceTag`](crate::model::ResourceTag).
-    pub fn builder() -> crate::model::resource_tag::Builder {
-        crate::model::resource_tag::Builder::default()
     }
 }
 
@@ -636,6 +637,13 @@ impl RetentionPeriod {
         self.retention_period_unit.as_ref()
     }
 }
+impl RetentionPeriod {
+    /// Creates a new builder-style object to manufacture [`RetentionPeriod`](crate::model::RetentionPeriod).
+    pub fn builder() -> crate::model::retention_period::Builder {
+        crate::model::retention_period::Builder::default()
+    }
+}
+
 /// See [`RetentionPeriod`](crate::model::RetentionPeriod).
 pub mod retention_period {
 
@@ -677,12 +685,6 @@ pub mod retention_period {
                 retention_period_unit: self.retention_period_unit,
             }
         }
-    }
-}
-impl RetentionPeriod {
-    /// Creates a new builder-style object to manufacture [`RetentionPeriod`](crate::model::RetentionPeriod).
-    pub fn builder() -> crate::model::retention_period::Builder {
-        crate::model::retention_period::Builder::default()
     }
 }
 
@@ -787,6 +789,13 @@ impl LockConfiguration {
         self.unlock_delay.as_ref()
     }
 }
+impl LockConfiguration {
+    /// Creates a new builder-style object to manufacture [`LockConfiguration`](crate::model::LockConfiguration).
+    pub fn builder() -> crate::model::lock_configuration::Builder {
+        crate::model::lock_configuration::Builder::default()
+    }
+}
+
 /// See [`LockConfiguration`](crate::model::LockConfiguration).
 pub mod lock_configuration {
 
@@ -818,12 +827,6 @@ pub mod lock_configuration {
         }
     }
 }
-impl LockConfiguration {
-    /// Creates a new builder-style object to manufacture [`LockConfiguration`](crate::model::LockConfiguration).
-    pub fn builder() -> crate::model::lock_configuration::Builder {
-        crate::model::lock_configuration::Builder::default()
-    }
-}
 
 /// <p>Information about the retention rule unlock delay. The unlock delay is the period after which a retention rule can be modified or edited after it has been unlocked by a user with the required permissions. The retention rule can't be modified or deleted during the unlock delay.</p>
 #[non_exhaustive]
@@ -846,6 +849,13 @@ impl UnlockDelay {
         self.unlock_delay_unit.as_ref()
     }
 }
+impl UnlockDelay {
+    /// Creates a new builder-style object to manufacture [`UnlockDelay`](crate::model::UnlockDelay).
+    pub fn builder() -> crate::model::unlock_delay::Builder {
+        crate::model::unlock_delay::Builder::default()
+    }
+}
+
 /// See [`UnlockDelay`](crate::model::UnlockDelay).
 pub mod unlock_delay {
 
@@ -887,12 +897,6 @@ pub mod unlock_delay {
                 unlock_delay_unit: self.unlock_delay_unit,
             }
         }
-    }
-}
-impl UnlockDelay {
-    /// Creates a new builder-style object to manufacture [`UnlockDelay`](crate::model::UnlockDelay).
-    pub fn builder() -> crate::model::unlock_delay::Builder {
-        crate::model::unlock_delay::Builder::default()
     }
 }
 
@@ -1089,6 +1093,13 @@ impl Tag {
         self.value.as_deref()
     }
 }
+impl Tag {
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
+    pub fn builder() -> crate::model::tag::Builder {
+        crate::model::tag::Builder::default()
+    }
+}
+
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
 
@@ -1127,12 +1138,6 @@ pub mod tag {
                 value: self.value,
             }
         }
-    }
-}
-impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
-    pub fn builder() -> crate::model::tag::Builder {
-        crate::model::tag::Builder::default()
     }
 }
 
@@ -1183,6 +1188,13 @@ impl RuleSummary {
         self.lock_state.as_ref()
     }
 }
+impl RuleSummary {
+    /// Creates a new builder-style object to manufacture [`RuleSummary`](crate::model::RuleSummary).
+    pub fn builder() -> crate::model::rule_summary::Builder {
+        crate::model::rule_summary::Builder::default()
+    }
+}
+
 /// See [`RuleSummary`](crate::model::RuleSummary).
 pub mod rule_summary {
 
@@ -1263,11 +1275,5 @@ pub mod rule_summary {
                 lock_state: self.lock_state,
             }
         }
-    }
-}
-impl RuleSummary {
-    /// Creates a new builder-style object to manufacture [`RuleSummary`](crate::model::RuleSummary).
-    pub fn builder() -> crate::model::rule_summary::Builder {
-        crate::model::rule_summary::Builder::default()
     }
 }

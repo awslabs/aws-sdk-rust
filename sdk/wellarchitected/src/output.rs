@@ -10,6 +10,13 @@ impl aws_http::request_id::RequestId for UpgradeLensReviewOutput {
         self._request_id.as_deref()
     }
 }
+impl UpgradeLensReviewOutput {
+    /// Creates a new builder-style object to manufacture [`UpgradeLensReviewOutput`](crate::output::UpgradeLensReviewOutput).
+    pub fn builder() -> crate::output::upgrade_lens_review_output::Builder {
+        crate::output::upgrade_lens_review_output::Builder::default()
+    }
+}
+
 /// See [`UpgradeLensReviewOutput`](crate::output::UpgradeLensReviewOutput).
 pub mod upgrade_lens_review_output {
 
@@ -35,12 +42,6 @@ pub mod upgrade_lens_review_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl UpgradeLensReviewOutput {
-    /// Creates a new builder-style object to manufacture [`UpgradeLensReviewOutput`](crate::output::UpgradeLensReviewOutput).
-    pub fn builder() -> crate::output::upgrade_lens_review_output::Builder {
-        crate::output::upgrade_lens_review_output::Builder::default()
     }
 }
 
@@ -71,6 +72,13 @@ impl aws_http::request_id::RequestId for UpdateWorkloadShareOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdateWorkloadShareOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateWorkloadShareOutput`](crate::output::UpdateWorkloadShareOutput).
+    pub fn builder() -> crate::output::update_workload_share_output::Builder {
+        crate::output::update_workload_share_output::Builder::default()
+    }
+}
+
 /// See [`UpdateWorkloadShareOutput`](crate::output::UpdateWorkloadShareOutput).
 pub mod update_workload_share_output {
 
@@ -125,12 +133,6 @@ pub mod update_workload_share_output {
         }
     }
 }
-impl UpdateWorkloadShareOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateWorkloadShareOutput`](crate::output::UpdateWorkloadShareOutput).
-    pub fn builder() -> crate::output::update_workload_share_output::Builder {
-        crate::output::update_workload_share_output::Builder::default()
-    }
-}
 
 /// <p>Output of an update workload call.</p>
 #[non_exhaustive]
@@ -152,6 +154,13 @@ impl aws_http::request_id::RequestId for UpdateWorkloadOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdateWorkloadOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateWorkloadOutput`](crate::output::UpdateWorkloadOutput).
+    pub fn builder() -> crate::output::update_workload_output::Builder {
+        crate::output::update_workload_output::Builder::default()
+    }
+}
+
 /// See [`UpdateWorkloadOutput`](crate::output::UpdateWorkloadOutput).
 pub mod update_workload_output {
 
@@ -191,12 +200,6 @@ pub mod update_workload_output {
         }
     }
 }
-impl UpdateWorkloadOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateWorkloadOutput`](crate::output::UpdateWorkloadOutput).
-    pub fn builder() -> crate::output::update_workload_output::Builder {
-        crate::output::update_workload_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -218,6 +221,13 @@ impl aws_http::request_id::RequestId for UpdateShareInvitationOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdateShareInvitationOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateShareInvitationOutput`](crate::output::UpdateShareInvitationOutput).
+    pub fn builder() -> crate::output::update_share_invitation_output::Builder {
+        crate::output::update_share_invitation_output::Builder::default()
+    }
+}
+
 /// See [`UpdateShareInvitationOutput`](crate::output::UpdateShareInvitationOutput).
 pub mod update_share_invitation_output {
 
@@ -260,12 +270,6 @@ pub mod update_share_invitation_output {
         }
     }
 }
-impl UpdateShareInvitationOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateShareInvitationOutput`](crate::output::UpdateShareInvitationOutput).
-    pub fn builder() -> crate::output::update_share_invitation_output::Builder {
-        crate::output::update_share_invitation_output::Builder::default()
-    }
-}
 
 /// <p>Output of a update lens review call.</p>
 #[non_exhaustive]
@@ -294,6 +298,13 @@ impl aws_http::request_id::RequestId for UpdateLensReviewOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdateLensReviewOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateLensReviewOutput`](crate::output::UpdateLensReviewOutput).
+    pub fn builder() -> crate::output::update_lens_review_output::Builder {
+        crate::output::update_lens_review_output::Builder::default()
+    }
+}
+
 /// See [`UpdateLensReviewOutput`](crate::output::UpdateLensReviewOutput).
 pub mod update_lens_review_output {
 
@@ -348,12 +359,6 @@ pub mod update_lens_review_output {
         }
     }
 }
-impl UpdateLensReviewOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateLensReviewOutput`](crate::output::UpdateLensReviewOutput).
-    pub fn builder() -> crate::output::update_lens_review_output::Builder {
-        crate::output::update_lens_review_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -366,6 +371,13 @@ impl aws_http::request_id::RequestId for UpdateGlobalSettingsOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdateGlobalSettingsOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateGlobalSettingsOutput`](crate::output::UpdateGlobalSettingsOutput).
+    pub fn builder() -> crate::output::update_global_settings_output::Builder {
+        crate::output::update_global_settings_output::Builder::default()
+    }
+}
+
 /// See [`UpdateGlobalSettingsOutput`](crate::output::UpdateGlobalSettingsOutput).
 pub mod update_global_settings_output {
 
@@ -391,12 +403,6 @@ pub mod update_global_settings_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl UpdateGlobalSettingsOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateGlobalSettingsOutput`](crate::output::UpdateGlobalSettingsOutput).
-    pub fn builder() -> crate::output::update_global_settings_output::Builder {
-        crate::output::update_global_settings_output::Builder::default()
     }
 }
 
@@ -447,6 +453,13 @@ impl aws_http::request_id::RequestId for UpdateAnswerOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdateAnswerOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateAnswerOutput`](crate::output::UpdateAnswerOutput).
+    pub fn builder() -> crate::output::update_answer_output::Builder {
+        crate::output::update_answer_output::Builder::default()
+    }
+}
+
 /// See [`UpdateAnswerOutput`](crate::output::UpdateAnswerOutput).
 pub mod update_answer_output {
 
@@ -528,12 +541,6 @@ pub mod update_answer_output {
         }
     }
 }
-impl UpdateAnswerOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateAnswerOutput`](crate::output::UpdateAnswerOutput).
-    pub fn builder() -> crate::output::update_answer_output::Builder {
-        crate::output::update_answer_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -546,6 +553,13 @@ impl aws_http::request_id::RequestId for UntagResourceOutput {
         self._request_id.as_deref()
     }
 }
+impl UntagResourceOutput {
+    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    pub fn builder() -> crate::output::untag_resource_output::Builder {
+        crate::output::untag_resource_output::Builder::default()
+    }
+}
+
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
 
@@ -573,12 +587,6 @@ pub mod untag_resource_output {
         }
     }
 }
-impl UntagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
-    pub fn builder() -> crate::output::untag_resource_output::Builder {
-        crate::output::untag_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -591,6 +599,13 @@ impl aws_http::request_id::RequestId for TagResourceOutput {
         self._request_id.as_deref()
     }
 }
+impl TagResourceOutput {
+    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
+    pub fn builder() -> crate::output::tag_resource_output::Builder {
+        crate::output::tag_resource_output::Builder::default()
+    }
+}
+
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
 
@@ -616,12 +631,6 @@ pub mod tag_resource_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl TagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
-    pub fn builder() -> crate::output::tag_resource_output::Builder {
-        crate::output::tag_resource_output::Builder::default()
     }
 }
 
@@ -662,6 +671,13 @@ impl aws_http::request_id::RequestId for ListWorkloadSharesOutput {
         self._request_id.as_deref()
     }
 }
+impl ListWorkloadSharesOutput {
+    /// Creates a new builder-style object to manufacture [`ListWorkloadSharesOutput`](crate::output::ListWorkloadSharesOutput).
+    pub fn builder() -> crate::output::list_workload_shares_output::Builder {
+        crate::output::list_workload_shares_output::Builder::default()
+    }
+}
+
 /// See [`ListWorkloadSharesOutput`](crate::output::ListWorkloadSharesOutput).
 pub mod list_workload_shares_output {
 
@@ -738,12 +754,6 @@ pub mod list_workload_shares_output {
         }
     }
 }
-impl ListWorkloadSharesOutput {
-    /// Creates a new builder-style object to manufacture [`ListWorkloadSharesOutput`](crate::output::ListWorkloadSharesOutput).
-    pub fn builder() -> crate::output::list_workload_shares_output::Builder {
-        crate::output::list_workload_shares_output::Builder::default()
-    }
-}
 
 /// <p>Output of a list workloads call.</p>
 #[non_exhaustive]
@@ -772,6 +782,13 @@ impl aws_http::request_id::RequestId for ListWorkloadsOutput {
         self._request_id.as_deref()
     }
 }
+impl ListWorkloadsOutput {
+    /// Creates a new builder-style object to manufacture [`ListWorkloadsOutput`](crate::output::ListWorkloadsOutput).
+    pub fn builder() -> crate::output::list_workloads_output::Builder {
+        crate::output::list_workloads_output::Builder::default()
+    }
+}
+
 /// See [`ListWorkloadsOutput`](crate::output::ListWorkloadsOutput).
 pub mod list_workloads_output {
 
@@ -833,12 +850,6 @@ pub mod list_workloads_output {
         }
     }
 }
-impl ListWorkloadsOutput {
-    /// Creates a new builder-style object to manufacture [`ListWorkloadsOutput`](crate::output::ListWorkloadsOutput).
-    pub fn builder() -> crate::output::list_workloads_output::Builder {
-        crate::output::list_workloads_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -864,6 +875,13 @@ impl aws_http::request_id::RequestId for ListTagsForResourceOutput {
         self._request_id.as_deref()
     }
 }
+impl ListTagsForResourceOutput {
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
+        crate::output::list_tags_for_resource_output::Builder::default()
+    }
+}
+
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
 
@@ -920,12 +938,6 @@ pub mod list_tags_for_resource_output {
         }
     }
 }
-impl ListTagsForResourceOutput {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
-    pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
-        crate::output::list_tags_for_resource_output::Builder::default()
-    }
-}
 
 /// <p>Input for List Share Invitations</p>
 #[non_exhaustive]
@@ -957,6 +969,13 @@ impl aws_http::request_id::RequestId for ListShareInvitationsOutput {
         self._request_id.as_deref()
     }
 }
+impl ListShareInvitationsOutput {
+    /// Creates a new builder-style object to manufacture [`ListShareInvitationsOutput`](crate::output::ListShareInvitationsOutput).
+    pub fn builder() -> crate::output::list_share_invitations_output::Builder {
+        crate::output::list_share_invitations_output::Builder::default()
+    }
+}
+
 /// See [`ListShareInvitationsOutput`](crate::output::ListShareInvitationsOutput).
 pub mod list_share_invitations_output {
 
@@ -1021,12 +1040,6 @@ pub mod list_share_invitations_output {
         }
     }
 }
-impl ListShareInvitationsOutput {
-    /// Creates a new builder-style object to manufacture [`ListShareInvitationsOutput`](crate::output::ListShareInvitationsOutput).
-    pub fn builder() -> crate::output::list_share_invitations_output::Builder {
-        crate::output::list_share_invitations_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1058,6 +1071,13 @@ impl aws_http::request_id::RequestId for ListNotificationsOutput {
         self._request_id.as_deref()
     }
 }
+impl ListNotificationsOutput {
+    /// Creates a new builder-style object to manufacture [`ListNotificationsOutput`](crate::output::ListNotificationsOutput).
+    pub fn builder() -> crate::output::list_notifications_output::Builder {
+        crate::output::list_notifications_output::Builder::default()
+    }
+}
+
 /// See [`ListNotificationsOutput`](crate::output::ListNotificationsOutput).
 pub mod list_notifications_output {
 
@@ -1119,12 +1139,6 @@ pub mod list_notifications_output {
         }
     }
 }
-impl ListNotificationsOutput {
-    /// Creates a new builder-style object to manufacture [`ListNotificationsOutput`](crate::output::ListNotificationsOutput).
-    pub fn builder() -> crate::output::list_notifications_output::Builder {
-        crate::output::list_notifications_output::Builder::default()
-    }
-}
 
 /// <p>Output of a list milestones call.</p>
 #[non_exhaustive]
@@ -1160,6 +1174,13 @@ impl aws_http::request_id::RequestId for ListMilestonesOutput {
         self._request_id.as_deref()
     }
 }
+impl ListMilestonesOutput {
+    /// Creates a new builder-style object to manufacture [`ListMilestonesOutput`](crate::output::ListMilestonesOutput).
+    pub fn builder() -> crate::output::list_milestones_output::Builder {
+        crate::output::list_milestones_output::Builder::default()
+    }
+}
+
 /// See [`ListMilestonesOutput`](crate::output::ListMilestonesOutput).
 pub mod list_milestones_output {
 
@@ -1233,12 +1254,6 @@ pub mod list_milestones_output {
         }
     }
 }
-impl ListMilestonesOutput {
-    /// Creates a new builder-style object to manufacture [`ListMilestonesOutput`](crate::output::ListMilestonesOutput).
-    pub fn builder() -> crate::output::list_milestones_output::Builder {
-        crate::output::list_milestones_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1267,6 +1282,13 @@ impl aws_http::request_id::RequestId for ListLensSharesOutput {
         self._request_id.as_deref()
     }
 }
+impl ListLensSharesOutput {
+    /// Creates a new builder-style object to manufacture [`ListLensSharesOutput`](crate::output::ListLensSharesOutput).
+    pub fn builder() -> crate::output::list_lens_shares_output::Builder {
+        crate::output::list_lens_shares_output::Builder::default()
+    }
+}
+
 /// See [`ListLensSharesOutput`](crate::output::ListLensSharesOutput).
 pub mod list_lens_shares_output {
 
@@ -1328,12 +1350,6 @@ pub mod list_lens_shares_output {
         }
     }
 }
-impl ListLensSharesOutput {
-    /// Creates a new builder-style object to manufacture [`ListLensSharesOutput`](crate::output::ListLensSharesOutput).
-    pub fn builder() -> crate::output::list_lens_shares_output::Builder {
-        crate::output::list_lens_shares_output::Builder::default()
-    }
-}
 
 /// <p>Output of a list lens reviews call.</p>
 #[non_exhaustive]
@@ -1378,6 +1394,13 @@ impl aws_http::request_id::RequestId for ListLensReviewsOutput {
         self._request_id.as_deref()
     }
 }
+impl ListLensReviewsOutput {
+    /// Creates a new builder-style object to manufacture [`ListLensReviewsOutput`](crate::output::ListLensReviewsOutput).
+    pub fn builder() -> crate::output::list_lens_reviews_output::Builder {
+        crate::output::list_lens_reviews_output::Builder::default()
+    }
+}
+
 /// See [`ListLensReviewsOutput`](crate::output::ListLensReviewsOutput).
 pub mod list_lens_reviews_output {
 
@@ -1465,12 +1488,6 @@ pub mod list_lens_reviews_output {
         }
     }
 }
-impl ListLensReviewsOutput {
-    /// Creates a new builder-style object to manufacture [`ListLensReviewsOutput`](crate::output::ListLensReviewsOutput).
-    pub fn builder() -> crate::output::list_lens_reviews_output::Builder {
-        crate::output::list_lens_reviews_output::Builder::default()
-    }
-}
 
 /// <p>Output of a list lens review improvements call.</p>
 #[non_exhaustive]
@@ -1537,6 +1554,13 @@ impl aws_http::request_id::RequestId for ListLensReviewImprovementsOutput {
         self._request_id.as_deref()
     }
 }
+impl ListLensReviewImprovementsOutput {
+    /// Creates a new builder-style object to manufacture [`ListLensReviewImprovementsOutput`](crate::output::ListLensReviewImprovementsOutput).
+    pub fn builder() -> crate::output::list_lens_review_improvements_output::Builder {
+        crate::output::list_lens_review_improvements_output::Builder::default()
+    }
+}
+
 /// See [`ListLensReviewImprovementsOutput`](crate::output::ListLensReviewImprovementsOutput).
 pub mod list_lens_review_improvements_output {
 
@@ -1654,12 +1678,6 @@ pub mod list_lens_review_improvements_output {
         }
     }
 }
-impl ListLensReviewImprovementsOutput {
-    /// Creates a new builder-style object to manufacture [`ListLensReviewImprovementsOutput`](crate::output::ListLensReviewImprovementsOutput).
-    pub fn builder() -> crate::output::list_lens_review_improvements_output::Builder {
-        crate::output::list_lens_review_improvements_output::Builder::default()
-    }
-}
 
 /// <p>Output of a list lenses call.</p>
 #[non_exhaustive]
@@ -1688,6 +1706,13 @@ impl aws_http::request_id::RequestId for ListLensesOutput {
         self._request_id.as_deref()
     }
 }
+impl ListLensesOutput {
+    /// Creates a new builder-style object to manufacture [`ListLensesOutput`](crate::output::ListLensesOutput).
+    pub fn builder() -> crate::output::list_lenses_output::Builder {
+        crate::output::list_lenses_output::Builder::default()
+    }
+}
+
 /// See [`ListLensesOutput`](crate::output::ListLensesOutput).
 pub mod list_lenses_output {
 
@@ -1748,12 +1773,6 @@ pub mod list_lenses_output {
         }
     }
 }
-impl ListLensesOutput {
-    /// Creates a new builder-style object to manufacture [`ListLensesOutput`](crate::output::ListLensesOutput).
-    pub fn builder() -> crate::output::list_lenses_output::Builder {
-        crate::output::list_lenses_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1782,6 +1801,13 @@ impl aws_http::request_id::RequestId for ListCheckSummariesOutput {
         self._request_id.as_deref()
     }
 }
+impl ListCheckSummariesOutput {
+    /// Creates a new builder-style object to manufacture [`ListCheckSummariesOutput`](crate::output::ListCheckSummariesOutput).
+    pub fn builder() -> crate::output::list_check_summaries_output::Builder {
+        crate::output::list_check_summaries_output::Builder::default()
+    }
+}
+
 /// See [`ListCheckSummariesOutput`](crate::output::ListCheckSummariesOutput).
 pub mod list_check_summaries_output {
 
@@ -1842,12 +1868,6 @@ pub mod list_check_summaries_output {
         }
     }
 }
-impl ListCheckSummariesOutput {
-    /// Creates a new builder-style object to manufacture [`ListCheckSummariesOutput`](crate::output::ListCheckSummariesOutput).
-    pub fn builder() -> crate::output::list_check_summaries_output::Builder {
-        crate::output::list_check_summaries_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1876,6 +1896,13 @@ impl aws_http::request_id::RequestId for ListCheckDetailsOutput {
         self._request_id.as_deref()
     }
 }
+impl ListCheckDetailsOutput {
+    /// Creates a new builder-style object to manufacture [`ListCheckDetailsOutput`](crate::output::ListCheckDetailsOutput).
+    pub fn builder() -> crate::output::list_check_details_output::Builder {
+        crate::output::list_check_details_output::Builder::default()
+    }
+}
+
 /// See [`ListCheckDetailsOutput`](crate::output::ListCheckDetailsOutput).
 pub mod list_check_details_output {
 
@@ -1934,12 +1961,6 @@ pub mod list_check_details_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl ListCheckDetailsOutput {
-    /// Creates a new builder-style object to manufacture [`ListCheckDetailsOutput`](crate::output::ListCheckDetailsOutput).
-    pub fn builder() -> crate::output::list_check_details_output::Builder {
-        crate::output::list_check_details_output::Builder::default()
     }
 }
 
@@ -2006,6 +2027,13 @@ impl aws_http::request_id::RequestId for ListAnswersOutput {
         self._request_id.as_deref()
     }
 }
+impl ListAnswersOutput {
+    /// Creates a new builder-style object to manufacture [`ListAnswersOutput`](crate::output::ListAnswersOutput).
+    pub fn builder() -> crate::output::list_answers_output::Builder {
+        crate::output::list_answers_output::Builder::default()
+    }
+}
+
 /// See [`ListAnswersOutput`](crate::output::ListAnswersOutput).
 pub mod list_answers_output {
 
@@ -2123,12 +2151,6 @@ pub mod list_answers_output {
         }
     }
 }
-impl ListAnswersOutput {
-    /// Creates a new builder-style object to manufacture [`ListAnswersOutput`](crate::output::ListAnswersOutput).
-    pub fn builder() -> crate::output::list_answers_output::Builder {
-        crate::output::list_answers_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2157,6 +2179,13 @@ impl aws_http::request_id::RequestId for ImportLensOutput {
         self._request_id.as_deref()
     }
 }
+impl ImportLensOutput {
+    /// Creates a new builder-style object to manufacture [`ImportLensOutput`](crate::output::ImportLensOutput).
+    pub fn builder() -> crate::output::import_lens_output::Builder {
+        crate::output::import_lens_output::Builder::default()
+    }
+}
+
 /// See [`ImportLensOutput`](crate::output::ImportLensOutput).
 pub mod import_lens_output {
 
@@ -2211,12 +2240,6 @@ pub mod import_lens_output {
         }
     }
 }
-impl ImportLensOutput {
-    /// Creates a new builder-style object to manufacture [`ImportLensOutput`](crate::output::ImportLensOutput).
-    pub fn builder() -> crate::output::import_lens_output::Builder {
-        crate::output::import_lens_output::Builder::default()
-    }
-}
 
 /// <p>Output of a get workload call.</p>
 #[non_exhaustive]
@@ -2238,6 +2261,13 @@ impl aws_http::request_id::RequestId for GetWorkloadOutput {
         self._request_id.as_deref()
     }
 }
+impl GetWorkloadOutput {
+    /// Creates a new builder-style object to manufacture [`GetWorkloadOutput`](crate::output::GetWorkloadOutput).
+    pub fn builder() -> crate::output::get_workload_output::Builder {
+        crate::output::get_workload_output::Builder::default()
+    }
+}
+
 /// See [`GetWorkloadOutput`](crate::output::GetWorkloadOutput).
 pub mod get_workload_output {
 
@@ -2277,12 +2307,6 @@ pub mod get_workload_output {
         }
     }
 }
-impl GetWorkloadOutput {
-    /// Creates a new builder-style object to manufacture [`GetWorkloadOutput`](crate::output::GetWorkloadOutput).
-    pub fn builder() -> crate::output::get_workload_output::Builder {
-        crate::output::get_workload_output::Builder::default()
-    }
-}
 
 /// <p>Output of a get milestone call.</p>
 #[non_exhaustive]
@@ -2311,6 +2335,13 @@ impl aws_http::request_id::RequestId for GetMilestoneOutput {
         self._request_id.as_deref()
     }
 }
+impl GetMilestoneOutput {
+    /// Creates a new builder-style object to manufacture [`GetMilestoneOutput`](crate::output::GetMilestoneOutput).
+    pub fn builder() -> crate::output::get_milestone_output::Builder {
+        crate::output::get_milestone_output::Builder::default()
+    }
+}
+
 /// See [`GetMilestoneOutput`](crate::output::GetMilestoneOutput).
 pub mod get_milestone_output {
 
@@ -2363,12 +2394,6 @@ pub mod get_milestone_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl GetMilestoneOutput {
-    /// Creates a new builder-style object to manufacture [`GetMilestoneOutput`](crate::output::GetMilestoneOutput).
-    pub fn builder() -> crate::output::get_milestone_output::Builder {
-        crate::output::get_milestone_output::Builder::default()
     }
 }
 
@@ -2433,6 +2458,13 @@ impl aws_http::request_id::RequestId for GetLensVersionDifferenceOutput {
         self._request_id.as_deref()
     }
 }
+impl GetLensVersionDifferenceOutput {
+    /// Creates a new builder-style object to manufacture [`GetLensVersionDifferenceOutput`](crate::output::GetLensVersionDifferenceOutput).
+    pub fn builder() -> crate::output::get_lens_version_difference_output::Builder {
+        crate::output::get_lens_version_difference_output::Builder::default()
+    }
+}
+
 /// See [`GetLensVersionDifferenceOutput`](crate::output::GetLensVersionDifferenceOutput).
 pub mod get_lens_version_difference_output {
 
@@ -2550,12 +2582,6 @@ pub mod get_lens_version_difference_output {
         }
     }
 }
-impl GetLensVersionDifferenceOutput {
-    /// Creates a new builder-style object to manufacture [`GetLensVersionDifferenceOutput`](crate::output::GetLensVersionDifferenceOutput).
-    pub fn builder() -> crate::output::get_lens_version_difference_output::Builder {
-        crate::output::get_lens_version_difference_output::Builder::default()
-    }
-}
 
 /// <p>Output of a get lens review report call.</p>
 #[non_exhaustive]
@@ -2593,6 +2619,13 @@ impl aws_http::request_id::RequestId for GetLensReviewReportOutput {
         self._request_id.as_deref()
     }
 }
+impl GetLensReviewReportOutput {
+    /// Creates a new builder-style object to manufacture [`GetLensReviewReportOutput`](crate::output::GetLensReviewReportOutput).
+    pub fn builder() -> crate::output::get_lens_review_report_output::Builder {
+        crate::output::get_lens_review_report_output::Builder::default()
+    }
+}
+
 /// See [`GetLensReviewReportOutput`](crate::output::GetLensReviewReportOutput).
 pub mod get_lens_review_report_output {
 
@@ -2661,12 +2694,6 @@ pub mod get_lens_review_report_output {
         }
     }
 }
-impl GetLensReviewReportOutput {
-    /// Creates a new builder-style object to manufacture [`GetLensReviewReportOutput`](crate::output::GetLensReviewReportOutput).
-    pub fn builder() -> crate::output::get_lens_review_report_output::Builder {
-        crate::output::get_lens_review_report_output::Builder::default()
-    }
-}
 
 /// <p>Output of a get lens review call.</p>
 #[non_exhaustive]
@@ -2704,6 +2731,13 @@ impl aws_http::request_id::RequestId for GetLensReviewOutput {
         self._request_id.as_deref()
     }
 }
+impl GetLensReviewOutput {
+    /// Creates a new builder-style object to manufacture [`GetLensReviewOutput`](crate::output::GetLensReviewOutput).
+    pub fn builder() -> crate::output::get_lens_review_output::Builder {
+        crate::output::get_lens_review_output::Builder::default()
+    }
+}
+
 /// See [`GetLensReviewOutput`](crate::output::GetLensReviewOutput).
 pub mod get_lens_review_output {
 
@@ -2772,12 +2806,6 @@ pub mod get_lens_review_output {
         }
     }
 }
-impl GetLensReviewOutput {
-    /// Creates a new builder-style object to manufacture [`GetLensReviewOutput`](crate::output::GetLensReviewOutput).
-    pub fn builder() -> crate::output::get_lens_review_output::Builder {
-        crate::output::get_lens_review_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2799,6 +2827,13 @@ impl aws_http::request_id::RequestId for GetLensOutput {
         self._request_id.as_deref()
     }
 }
+impl GetLensOutput {
+    /// Creates a new builder-style object to manufacture [`GetLensOutput`](crate::output::GetLensOutput).
+    pub fn builder() -> crate::output::get_lens_output::Builder {
+        crate::output::get_lens_output::Builder::default()
+    }
+}
+
 /// See [`GetLensOutput`](crate::output::GetLensOutput).
 pub mod get_lens_output {
 
@@ -2836,12 +2871,6 @@ pub mod get_lens_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl GetLensOutput {
-    /// Creates a new builder-style object to manufacture [`GetLensOutput`](crate::output::GetLensOutput).
-    pub fn builder() -> crate::output::get_lens_output::Builder {
-        crate::output::get_lens_output::Builder::default()
     }
 }
 
@@ -2901,6 +2930,13 @@ impl aws_http::request_id::RequestId for GetAnswerOutput {
         self._request_id.as_deref()
     }
 }
+impl GetAnswerOutput {
+    /// Creates a new builder-style object to manufacture [`GetAnswerOutput`](crate::output::GetAnswerOutput).
+    pub fn builder() -> crate::output::get_answer_output::Builder {
+        crate::output::get_answer_output::Builder::default()
+    }
+}
+
 /// See [`GetAnswerOutput`](crate::output::GetAnswerOutput).
 pub mod get_answer_output {
 
@@ -2996,12 +3032,6 @@ pub mod get_answer_output {
         }
     }
 }
-impl GetAnswerOutput {
-    /// Creates a new builder-style object to manufacture [`GetAnswerOutput`](crate::output::GetAnswerOutput).
-    pub fn builder() -> crate::output::get_answer_output::Builder {
-        crate::output::get_answer_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3023,6 +3053,13 @@ impl aws_http::request_id::RequestId for ExportLensOutput {
         self._request_id.as_deref()
     }
 }
+impl ExportLensOutput {
+    /// Creates a new builder-style object to manufacture [`ExportLensOutput`](crate::output::ExportLensOutput).
+    pub fn builder() -> crate::output::export_lens_output::Builder {
+        crate::output::export_lens_output::Builder::default()
+    }
+}
+
 /// See [`ExportLensOutput`](crate::output::ExportLensOutput).
 pub mod export_lens_output {
 
@@ -3062,12 +3099,6 @@ pub mod export_lens_output {
         }
     }
 }
-impl ExportLensOutput {
-    /// Creates a new builder-style object to manufacture [`ExportLensOutput`](crate::output::ExportLensOutput).
-    pub fn builder() -> crate::output::export_lens_output::Builder {
-        crate::output::export_lens_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3080,6 +3111,13 @@ impl aws_http::request_id::RequestId for DisassociateLensesOutput {
         self._request_id.as_deref()
     }
 }
+impl DisassociateLensesOutput {
+    /// Creates a new builder-style object to manufacture [`DisassociateLensesOutput`](crate::output::DisassociateLensesOutput).
+    pub fn builder() -> crate::output::disassociate_lenses_output::Builder {
+        crate::output::disassociate_lenses_output::Builder::default()
+    }
+}
+
 /// See [`DisassociateLensesOutput`](crate::output::DisassociateLensesOutput).
 pub mod disassociate_lenses_output {
 
@@ -3107,12 +3145,6 @@ pub mod disassociate_lenses_output {
         }
     }
 }
-impl DisassociateLensesOutput {
-    /// Creates a new builder-style object to manufacture [`DisassociateLensesOutput`](crate::output::DisassociateLensesOutput).
-    pub fn builder() -> crate::output::disassociate_lenses_output::Builder {
-        crate::output::disassociate_lenses_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3125,6 +3157,13 @@ impl aws_http::request_id::RequestId for DeleteWorkloadShareOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteWorkloadShareOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteWorkloadShareOutput`](crate::output::DeleteWorkloadShareOutput).
+    pub fn builder() -> crate::output::delete_workload_share_output::Builder {
+        crate::output::delete_workload_share_output::Builder::default()
+    }
+}
+
 /// See [`DeleteWorkloadShareOutput`](crate::output::DeleteWorkloadShareOutput).
 pub mod delete_workload_share_output {
 
@@ -3152,12 +3191,6 @@ pub mod delete_workload_share_output {
         }
     }
 }
-impl DeleteWorkloadShareOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteWorkloadShareOutput`](crate::output::DeleteWorkloadShareOutput).
-    pub fn builder() -> crate::output::delete_workload_share_output::Builder {
-        crate::output::delete_workload_share_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3170,6 +3203,13 @@ impl aws_http::request_id::RequestId for DeleteWorkloadOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteWorkloadOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteWorkloadOutput`](crate::output::DeleteWorkloadOutput).
+    pub fn builder() -> crate::output::delete_workload_output::Builder {
+        crate::output::delete_workload_output::Builder::default()
+    }
+}
+
 /// See [`DeleteWorkloadOutput`](crate::output::DeleteWorkloadOutput).
 pub mod delete_workload_output {
 
@@ -3197,12 +3237,6 @@ pub mod delete_workload_output {
         }
     }
 }
-impl DeleteWorkloadOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteWorkloadOutput`](crate::output::DeleteWorkloadOutput).
-    pub fn builder() -> crate::output::delete_workload_output::Builder {
-        crate::output::delete_workload_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3215,6 +3249,13 @@ impl aws_http::request_id::RequestId for DeleteLensShareOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteLensShareOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteLensShareOutput`](crate::output::DeleteLensShareOutput).
+    pub fn builder() -> crate::output::delete_lens_share_output::Builder {
+        crate::output::delete_lens_share_output::Builder::default()
+    }
+}
+
 /// See [`DeleteLensShareOutput`](crate::output::DeleteLensShareOutput).
 pub mod delete_lens_share_output {
 
@@ -3242,12 +3283,6 @@ pub mod delete_lens_share_output {
         }
     }
 }
-impl DeleteLensShareOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteLensShareOutput`](crate::output::DeleteLensShareOutput).
-    pub fn builder() -> crate::output::delete_lens_share_output::Builder {
-        crate::output::delete_lens_share_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3260,6 +3295,13 @@ impl aws_http::request_id::RequestId for DeleteLensOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteLensOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteLensOutput`](crate::output::DeleteLensOutput).
+    pub fn builder() -> crate::output::delete_lens_output::Builder {
+        crate::output::delete_lens_output::Builder::default()
+    }
+}
+
 /// See [`DeleteLensOutput`](crate::output::DeleteLensOutput).
 pub mod delete_lens_output {
 
@@ -3285,12 +3327,6 @@ pub mod delete_lens_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl DeleteLensOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteLensOutput`](crate::output::DeleteLensOutput).
-    pub fn builder() -> crate::output::delete_lens_output::Builder {
-        crate::output::delete_lens_output::Builder::default()
     }
 }
 
@@ -3321,6 +3357,13 @@ impl aws_http::request_id::RequestId for CreateWorkloadShareOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateWorkloadShareOutput {
+    /// Creates a new builder-style object to manufacture [`CreateWorkloadShareOutput`](crate::output::CreateWorkloadShareOutput).
+    pub fn builder() -> crate::output::create_workload_share_output::Builder {
+        crate::output::create_workload_share_output::Builder::default()
+    }
+}
+
 /// See [`CreateWorkloadShareOutput`](crate::output::CreateWorkloadShareOutput).
 pub mod create_workload_share_output {
 
@@ -3372,12 +3415,6 @@ pub mod create_workload_share_output {
         }
     }
 }
-impl CreateWorkloadShareOutput {
-    /// Creates a new builder-style object to manufacture [`CreateWorkloadShareOutput`](crate::output::CreateWorkloadShareOutput).
-    pub fn builder() -> crate::output::create_workload_share_output::Builder {
-        crate::output::create_workload_share_output::Builder::default()
-    }
-}
 
 /// <p>Output of a create workload call.</p>
 #[non_exhaustive]
@@ -3406,6 +3443,13 @@ impl aws_http::request_id::RequestId for CreateWorkloadOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateWorkloadOutput {
+    /// Creates a new builder-style object to manufacture [`CreateWorkloadOutput`](crate::output::CreateWorkloadOutput).
+    pub fn builder() -> crate::output::create_workload_output::Builder {
+        crate::output::create_workload_output::Builder::default()
+    }
+}
+
 /// See [`CreateWorkloadOutput`](crate::output::CreateWorkloadOutput).
 pub mod create_workload_output {
 
@@ -3457,12 +3501,6 @@ pub mod create_workload_output {
         }
     }
 }
-impl CreateWorkloadOutput {
-    /// Creates a new builder-style object to manufacture [`CreateWorkloadOutput`](crate::output::CreateWorkloadOutput).
-    pub fn builder() -> crate::output::create_workload_output::Builder {
-        crate::output::create_workload_output::Builder::default()
-    }
-}
 
 /// <p>Output of a create milestone call.</p>
 #[non_exhaustive]
@@ -3493,6 +3531,13 @@ impl aws_http::request_id::RequestId for CreateMilestoneOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateMilestoneOutput {
+    /// Creates a new builder-style object to manufacture [`CreateMilestoneOutput`](crate::output::CreateMilestoneOutput).
+    pub fn builder() -> crate::output::create_milestone_output::Builder {
+        crate::output::create_milestone_output::Builder::default()
+    }
+}
+
 /// See [`CreateMilestoneOutput`](crate::output::CreateMilestoneOutput).
 pub mod create_milestone_output {
 
@@ -3546,12 +3591,6 @@ pub mod create_milestone_output {
         }
     }
 }
-impl CreateMilestoneOutput {
-    /// Creates a new builder-style object to manufacture [`CreateMilestoneOutput`](crate::output::CreateMilestoneOutput).
-    pub fn builder() -> crate::output::create_milestone_output::Builder {
-        crate::output::create_milestone_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3580,6 +3619,13 @@ impl aws_http::request_id::RequestId for CreateLensVersionOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateLensVersionOutput {
+    /// Creates a new builder-style object to manufacture [`CreateLensVersionOutput`](crate::output::CreateLensVersionOutput).
+    pub fn builder() -> crate::output::create_lens_version_output::Builder {
+        crate::output::create_lens_version_output::Builder::default()
+    }
+}
+
 /// See [`CreateLensVersionOutput`](crate::output::CreateLensVersionOutput).
 pub mod create_lens_version_output {
 
@@ -3631,12 +3677,6 @@ pub mod create_lens_version_output {
         }
     }
 }
-impl CreateLensVersionOutput {
-    /// Creates a new builder-style object to manufacture [`CreateLensVersionOutput`](crate::output::CreateLensVersionOutput).
-    pub fn builder() -> crate::output::create_lens_version_output::Builder {
-        crate::output::create_lens_version_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3658,6 +3698,13 @@ impl aws_http::request_id::RequestId for CreateLensShareOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateLensShareOutput {
+    /// Creates a new builder-style object to manufacture [`CreateLensShareOutput`](crate::output::CreateLensShareOutput).
+    pub fn builder() -> crate::output::create_lens_share_output::Builder {
+        crate::output::create_lens_share_output::Builder::default()
+    }
+}
+
 /// See [`CreateLensShareOutput`](crate::output::CreateLensShareOutput).
 pub mod create_lens_share_output {
 
@@ -3697,12 +3744,6 @@ pub mod create_lens_share_output {
         }
     }
 }
-impl CreateLensShareOutput {
-    /// Creates a new builder-style object to manufacture [`CreateLensShareOutput`](crate::output::CreateLensShareOutput).
-    pub fn builder() -> crate::output::create_lens_share_output::Builder {
-        crate::output::create_lens_share_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3715,6 +3756,13 @@ impl aws_http::request_id::RequestId for AssociateLensesOutput {
         self._request_id.as_deref()
     }
 }
+impl AssociateLensesOutput {
+    /// Creates a new builder-style object to manufacture [`AssociateLensesOutput`](crate::output::AssociateLensesOutput).
+    pub fn builder() -> crate::output::associate_lenses_output::Builder {
+        crate::output::associate_lenses_output::Builder::default()
+    }
+}
+
 /// See [`AssociateLensesOutput`](crate::output::AssociateLensesOutput).
 pub mod associate_lenses_output {
 
@@ -3740,11 +3788,5 @@ pub mod associate_lenses_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl AssociateLensesOutput {
-    /// Creates a new builder-style object to manufacture [`AssociateLensesOutput`](crate::output::AssociateLensesOutput).
-    pub fn builder() -> crate::output::associate_lenses_output::Builder {
-        crate::output::associate_lenses_output::Builder::default()
     }
 }

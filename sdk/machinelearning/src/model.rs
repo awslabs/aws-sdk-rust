@@ -49,6 +49,13 @@ impl Prediction {
         self.details.as_ref()
     }
 }
+impl Prediction {
+    /// Creates a new builder-style object to manufacture [`Prediction`](crate::model::Prediction).
+    pub fn builder() -> crate::model::prediction::Builder {
+        crate::model::prediction::Builder::default()
+    }
+}
+
 /// See [`Prediction`](crate::model::Prediction).
 pub mod prediction {
 
@@ -141,12 +148,6 @@ pub mod prediction {
                 details: self.details,
             }
         }
-    }
-}
-impl Prediction {
-    /// Creates a new builder-style object to manufacture [`Prediction`](crate::model::Prediction).
-    pub fn builder() -> crate::model::prediction::Builder {
-        crate::model::prediction::Builder::default()
     }
 }
 
@@ -394,6 +395,13 @@ impl RealtimeEndpointInfo {
         self.endpoint_status.as_ref()
     }
 }
+impl RealtimeEndpointInfo {
+    /// Creates a new builder-style object to manufacture [`RealtimeEndpointInfo`](crate::model::RealtimeEndpointInfo).
+    pub fn builder() -> crate::model::realtime_endpoint_info::Builder {
+        crate::model::realtime_endpoint_info::Builder::default()
+    }
+}
+
 /// See [`RealtimeEndpointInfo`](crate::model::RealtimeEndpointInfo).
 pub mod realtime_endpoint_info {
 
@@ -474,12 +482,6 @@ pub mod realtime_endpoint_info {
                 endpoint_status: self.endpoint_status,
             }
         }
-    }
-}
-impl RealtimeEndpointInfo {
-    /// Creates a new builder-style object to manufacture [`RealtimeEndpointInfo`](crate::model::RealtimeEndpointInfo).
-    pub fn builder() -> crate::model::realtime_endpoint_info::Builder {
-        crate::model::realtime_endpoint_info::Builder::default()
     }
 }
 
@@ -741,6 +743,13 @@ impl PerformanceMetrics {
         self.properties.as_ref()
     }
 }
+impl PerformanceMetrics {
+    /// Creates a new builder-style object to manufacture [`PerformanceMetrics`](crate::model::PerformanceMetrics).
+    pub fn builder() -> crate::model::performance_metrics::Builder {
+        crate::model::performance_metrics::Builder::default()
+    }
+}
+
 /// See [`PerformanceMetrics`](crate::model::PerformanceMetrics).
 pub mod performance_metrics {
 
@@ -783,12 +792,6 @@ pub mod performance_metrics {
                 properties: self.properties,
             }
         }
-    }
-}
-impl PerformanceMetrics {
-    /// Creates a new builder-style object to manufacture [`PerformanceMetrics`](crate::model::PerformanceMetrics).
-    pub fn builder() -> crate::model::performance_metrics::Builder {
-        crate::model::performance_metrics::Builder::default()
     }
 }
 
@@ -841,6 +844,13 @@ impl RdsMetadata {
         self.data_pipeline_id.as_deref()
     }
 }
+impl RdsMetadata {
+    /// Creates a new builder-style object to manufacture [`RdsMetadata`](crate::model::RdsMetadata).
+    pub fn builder() -> crate::model::rds_metadata::Builder {
+        crate::model::rds_metadata::Builder::default()
+    }
+}
+
 /// See [`RdsMetadata`](crate::model::RdsMetadata).
 pub mod rds_metadata {
 
@@ -944,12 +954,6 @@ pub mod rds_metadata {
         }
     }
 }
-impl RdsMetadata {
-    /// Creates a new builder-style object to manufacture [`RdsMetadata`](crate::model::RdsMetadata).
-    pub fn builder() -> crate::model::rds_metadata::Builder {
-        crate::model::rds_metadata::Builder::default()
-    }
-}
 
 /// <p>The database details of an Amazon RDS database.</p>
 #[non_exhaustive]
@@ -972,6 +976,13 @@ impl RdsDatabase {
         self.database_name.as_deref()
     }
 }
+impl RdsDatabase {
+    /// Creates a new builder-style object to manufacture [`RdsDatabase`](crate::model::RdsDatabase).
+    pub fn builder() -> crate::model::rds_database::Builder {
+        crate::model::rds_database::Builder::default()
+    }
+}
+
 /// See [`RdsDatabase`](crate::model::RdsDatabase).
 pub mod rds_database {
 
@@ -1018,12 +1029,6 @@ pub mod rds_database {
         }
     }
 }
-impl RdsDatabase {
-    /// Creates a new builder-style object to manufacture [`RdsDatabase`](crate::model::RdsDatabase).
-    pub fn builder() -> crate::model::rds_database::Builder {
-        crate::model::rds_database::Builder::default()
-    }
-}
 
 /// <p>Describes the <code>DataSource</code> details specific to Amazon Redshift.</p>
 #[non_exhaustive]
@@ -1053,6 +1058,13 @@ impl RedshiftMetadata {
         self.select_sql_query.as_deref()
     }
 }
+impl RedshiftMetadata {
+    /// Creates a new builder-style object to manufacture [`RedshiftMetadata`](crate::model::RedshiftMetadata).
+    pub fn builder() -> crate::model::redshift_metadata::Builder {
+        crate::model::redshift_metadata::Builder::default()
+    }
+}
+
 /// See [`RedshiftMetadata`](crate::model::RedshiftMetadata).
 pub mod redshift_metadata {
 
@@ -1114,12 +1126,6 @@ pub mod redshift_metadata {
         }
     }
 }
-impl RedshiftMetadata {
-    /// Creates a new builder-style object to manufacture [`RedshiftMetadata`](crate::model::RedshiftMetadata).
-    pub fn builder() -> crate::model::redshift_metadata::Builder {
-        crate::model::redshift_metadata::Builder::default()
-    }
-}
 
 /// <p>Describes the database details required to connect to an Amazon Redshift database.</p>
 #[non_exhaustive]
@@ -1142,6 +1148,13 @@ impl RedshiftDatabase {
         self.cluster_identifier.as_deref()
     }
 }
+impl RedshiftDatabase {
+    /// Creates a new builder-style object to manufacture [`RedshiftDatabase`](crate::model::RedshiftDatabase).
+    pub fn builder() -> crate::model::redshift_database::Builder {
+        crate::model::redshift_database::Builder::default()
+    }
+}
+
 /// See [`RedshiftDatabase`](crate::model::RedshiftDatabase).
 pub mod redshift_database {
 
@@ -1188,12 +1201,6 @@ pub mod redshift_database {
         }
     }
 }
-impl RedshiftDatabase {
-    /// Creates a new builder-style object to manufacture [`RedshiftDatabase`](crate::model::RedshiftDatabase).
-    pub fn builder() -> crate::model::redshift_database::Builder {
-        crate::model::redshift_database::Builder::default()
-    }
-}
 
 /// <p>A custom key-value pair associated with an ML object, such as an ML model.</p>
 #[non_exhaustive]
@@ -1216,6 +1223,13 @@ impl Tag {
         self.value.as_deref()
     }
 }
+impl Tag {
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
+    pub fn builder() -> crate::model::tag::Builder {
+        crate::model::tag::Builder::default()
+    }
+}
+
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
 
@@ -1254,12 +1268,6 @@ pub mod tag {
                 value: self.value,
             }
         }
-    }
-}
-impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
-    pub fn builder() -> crate::model::tag::Builder {
-        crate::model::tag::Builder::default()
     }
 }
 
@@ -1558,6 +1566,13 @@ impl MlModel {
         self.started_at.as_ref()
     }
 }
+impl MlModel {
+    /// Creates a new builder-style object to manufacture [`MlModel`](crate::model::MlModel).
+    pub fn builder() -> crate::model::ml_model::Builder {
+        crate::model::ml_model::Builder::default()
+    }
+}
+
 /// See [`MlModel`](crate::model::MlModel).
 pub mod ml_model {
 
@@ -1902,12 +1917,6 @@ pub mod ml_model {
                 started_at: self.started_at,
             }
         }
-    }
-}
-impl MlModel {
-    /// Creates a new builder-style object to manufacture [`MlModel`](crate::model::MlModel).
-    pub fn builder() -> crate::model::ml_model::Builder {
-        crate::model::ml_model::Builder::default()
     }
 }
 
@@ -2381,6 +2390,13 @@ impl Evaluation {
         self.started_at.as_ref()
     }
 }
+impl Evaluation {
+    /// Creates a new builder-style object to manufacture [`Evaluation`](crate::model::Evaluation).
+    pub fn builder() -> crate::model::evaluation::Builder {
+        crate::model::evaluation::Builder::default()
+    }
+}
+
 /// See [`Evaluation`](crate::model::Evaluation).
 pub mod evaluation {
 
@@ -2619,12 +2635,6 @@ pub mod evaluation {
                 started_at: self.started_at,
             }
         }
-    }
-}
-impl Evaluation {
-    /// Creates a new builder-style object to manufacture [`Evaluation`](crate::model::Evaluation).
-    pub fn builder() -> crate::model::evaluation::Builder {
-        crate::model::evaluation::Builder::default()
     }
 }
 
@@ -2939,6 +2949,13 @@ impl DataSource {
         self.started_at.as_ref()
     }
 }
+impl DataSource {
+    /// Creates a new builder-style object to manufacture [`DataSource`](crate::model::DataSource).
+    pub fn builder() -> crate::model::data_source::Builder {
+        crate::model::data_source::Builder::default()
+    }
+}
+
 /// See [`DataSource`](crate::model::DataSource).
 pub mod data_source {
 
@@ -3216,12 +3233,6 @@ pub mod data_source {
                 started_at: self.started_at,
             }
         }
-    }
-}
-impl DataSource {
-    /// Creates a new builder-style object to manufacture [`DataSource`](crate::model::DataSource).
-    pub fn builder() -> crate::model::data_source::Builder {
-        crate::model::data_source::Builder::default()
     }
 }
 
@@ -3505,6 +3516,13 @@ impl BatchPrediction {
         self.invalid_record_count
     }
 }
+impl BatchPrediction {
+    /// Creates a new builder-style object to manufacture [`BatchPrediction`](crate::model::BatchPrediction).
+    pub fn builder() -> crate::model::batch_prediction::Builder {
+        crate::model::batch_prediction::Builder::default()
+    }
+}
+
 /// See [`BatchPrediction`](crate::model::BatchPrediction).
 pub mod batch_prediction {
 
@@ -3757,12 +3775,6 @@ pub mod batch_prediction {
         }
     }
 }
-impl BatchPrediction {
-    /// Creates a new builder-style object to manufacture [`BatchPrediction`](crate::model::BatchPrediction).
-    pub fn builder() -> crate::model::batch_prediction::Builder {
-        crate::model::batch_prediction::Builder::default()
-    }
-}
 
 /// When writing a match expression against `BatchPredictionFilterVariable`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -3998,6 +4010,13 @@ impl S3DataSpec {
         self.data_schema_location_s3.as_deref()
     }
 }
+impl S3DataSpec {
+    /// Creates a new builder-style object to manufacture [`S3DataSpec`](crate::model::S3DataSpec).
+    pub fn builder() -> crate::model::s3_data_spec::Builder {
+        crate::model::s3_data_spec::Builder::default()
+    }
+}
+
 /// See [`S3DataSpec`](crate::model::S3DataSpec).
 pub mod s3_data_spec {
 
@@ -4107,12 +4126,6 @@ pub mod s3_data_spec {
         }
     }
 }
-impl S3DataSpec {
-    /// Creates a new builder-style object to manufacture [`S3DataSpec`](crate::model::S3DataSpec).
-    pub fn builder() -> crate::model::s3_data_spec::Builder {
-        crate::model::s3_data_spec::Builder::default()
-    }
-}
 
 /// <p>Describes the data specification of an Amazon Redshift <code>DataSource</code>.</p>
 #[non_exhaustive]
@@ -4208,6 +4221,13 @@ impl RedshiftDataSpec {
         self.data_schema_uri.as_deref()
     }
 }
+impl RedshiftDataSpec {
+    /// Creates a new builder-style object to manufacture [`RedshiftDataSpec`](crate::model::RedshiftDataSpec).
+    pub fn builder() -> crate::model::redshift_data_spec::Builder {
+        crate::model::redshift_data_spec::Builder::default()
+    }
+}
+
 /// See [`RedshiftDataSpec`](crate::model::RedshiftDataSpec).
 pub mod redshift_data_spec {
 
@@ -4366,12 +4386,6 @@ pub mod redshift_data_spec {
         }
     }
 }
-impl RedshiftDataSpec {
-    /// Creates a new builder-style object to manufacture [`RedshiftDataSpec`](crate::model::RedshiftDataSpec).
-    pub fn builder() -> crate::model::redshift_data_spec::Builder {
-        crate::model::redshift_data_spec::Builder::default()
-    }
-}
 
 /// <p>Describes the database credentials for connecting to a database on an Amazon Redshift cluster.</p>
 #[non_exhaustive]
@@ -4394,6 +4408,13 @@ impl RedshiftDatabaseCredentials {
         self.password.as_deref()
     }
 }
+impl RedshiftDatabaseCredentials {
+    /// Creates a new builder-style object to manufacture [`RedshiftDatabaseCredentials`](crate::model::RedshiftDatabaseCredentials).
+    pub fn builder() -> crate::model::redshift_database_credentials::Builder {
+        crate::model::redshift_database_credentials::Builder::default()
+    }
+}
+
 /// See [`RedshiftDatabaseCredentials`](crate::model::RedshiftDatabaseCredentials).
 pub mod redshift_database_credentials {
 
@@ -4432,12 +4453,6 @@ pub mod redshift_database_credentials {
                 password: self.password,
             }
         }
-    }
-}
-impl RedshiftDatabaseCredentials {
-    /// Creates a new builder-style object to manufacture [`RedshiftDatabaseCredentials`](crate::model::RedshiftDatabaseCredentials).
-    pub fn builder() -> crate::model::redshift_database_credentials::Builder {
-        crate::model::redshift_database_credentials::Builder::default()
     }
 }
 
@@ -4563,6 +4578,13 @@ impl RdsDataSpec {
         self.security_group_ids.as_deref()
     }
 }
+impl RdsDataSpec {
+    /// Creates a new builder-style object to manufacture [`RdsDataSpec`](crate::model::RdsDataSpec).
+    pub fn builder() -> crate::model::rds_data_spec::Builder {
+        crate::model::rds_data_spec::Builder::default()
+    }
+}
+
 /// See [`RdsDataSpec`](crate::model::RdsDataSpec).
 pub mod rds_data_spec {
 
@@ -4777,12 +4799,6 @@ pub mod rds_data_spec {
         }
     }
 }
-impl RdsDataSpec {
-    /// Creates a new builder-style object to manufacture [`RdsDataSpec`](crate::model::RdsDataSpec).
-    pub fn builder() -> crate::model::rds_data_spec::Builder {
-        crate::model::rds_data_spec::Builder::default()
-    }
-}
 
 /// <p>The database credentials to connect to a database on an RDS DB instance.</p>
 #[non_exhaustive]
@@ -4805,6 +4821,13 @@ impl RdsDatabaseCredentials {
         self.password.as_deref()
     }
 }
+impl RdsDatabaseCredentials {
+    /// Creates a new builder-style object to manufacture [`RdsDatabaseCredentials`](crate::model::RdsDatabaseCredentials).
+    pub fn builder() -> crate::model::rds_database_credentials::Builder {
+        crate::model::rds_database_credentials::Builder::default()
+    }
+}
+
 /// See [`RdsDatabaseCredentials`](crate::model::RdsDatabaseCredentials).
 pub mod rds_database_credentials {
 
@@ -4843,11 +4866,5 @@ pub mod rds_database_credentials {
                 password: self.password,
             }
         }
-    }
-}
-impl RdsDatabaseCredentials {
-    /// Creates a new builder-style object to manufacture [`RdsDatabaseCredentials`](crate::model::RdsDatabaseCredentials).
-    pub fn builder() -> crate::model::rds_database_credentials::Builder {
-        crate::model::rds_database_credentials::Builder::default()
     }
 }

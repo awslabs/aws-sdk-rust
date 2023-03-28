@@ -4,7 +4,7 @@
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`delete_object`](crate::client::Client::delete_object).
 ///
-/// See [`crate::client::fluent_builders::DeleteObject`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DeleteObject`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteObject {
     _private: (),
@@ -37,7 +37,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteObject {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`describe_object`](crate::client::Client::describe_object).
 ///
-/// See [`crate::client::fluent_builders::DescribeObject`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DescribeObject`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeObject {
     _private: (),
@@ -70,7 +70,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeObject {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`get_object`](crate::client::Client::get_object).
 ///
-/// See [`crate::client::fluent_builders::GetObject`] for more details about the operation.
+/// `ParseStrictResponse` impl for `GetObject`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetObject {
     _private: (),
@@ -108,7 +108,7 @@ impl aws_smithy_http::response::ParseHttpResponse for GetObject {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_items`](crate::client::Client::list_items).
 ///
-/// See [`crate::client::fluent_builders::ListItems`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListItems`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListItems {
     _private: (),
@@ -140,7 +140,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListItems {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`put_object`](crate::client::Client::put_object).
 ///
-/// See [`crate::client::fluent_builders::PutObject`] for more details about the operation.
+/// `ParseStrictResponse` impl for `PutObject`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutObject {
     _private: (),

@@ -460,6 +460,13 @@ impl std::fmt::Debug for XksProxyAuthenticationCredentialType {
         formatter.finish()
     }
 }
+impl XksProxyAuthenticationCredentialType {
+    /// Creates a new builder-style object to manufacture [`XksProxyAuthenticationCredentialType`](crate::model::XksProxyAuthenticationCredentialType).
+    pub fn builder() -> crate::model::xks_proxy_authentication_credential_type::Builder {
+        crate::model::xks_proxy_authentication_credential_type::Builder::default()
+    }
+}
+
 /// See [`XksProxyAuthenticationCredentialType`](crate::model::XksProxyAuthenticationCredentialType).
 pub mod xks_proxy_authentication_credential_type {
 
@@ -514,12 +521,6 @@ pub mod xks_proxy_authentication_credential_type {
         }
     }
 }
-impl XksProxyAuthenticationCredentialType {
-    /// Creates a new builder-style object to manufacture [`XksProxyAuthenticationCredentialType`](crate::model::XksProxyAuthenticationCredentialType).
-    pub fn builder() -> crate::model::xks_proxy_authentication_credential_type::Builder {
-        crate::model::xks_proxy_authentication_credential_type::Builder::default()
-    }
-}
 
 /// <p>A key-value pair. A tag consists of a tag key and a tag value. Tag keys and tag values are both required, but tag values can be empty (null) strings.</p>
 /// <p>For information about the rules that apply to tag keys and tag values, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/allocation-tag-restrictions.html">User-Defined Tag Restrictions</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.</p>
@@ -543,6 +544,13 @@ impl Tag {
         self.tag_value.as_deref()
     }
 }
+impl Tag {
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
+    pub fn builder() -> crate::model::tag::Builder {
+        crate::model::tag::Builder::default()
+    }
+}
+
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
 
@@ -581,12 +589,6 @@ pub mod tag {
                 tag_value: self.tag_value,
             }
         }
-    }
-}
-impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
-    pub fn builder() -> crate::model::tag::Builder {
-        crate::model::tag::Builder::default()
     }
 }
 
@@ -936,6 +938,13 @@ impl KeyMetadata {
         self.xks_key_configuration.as_ref()
     }
 }
+impl KeyMetadata {
+    /// Creates a new builder-style object to manufacture [`KeyMetadata`](crate::model::KeyMetadata).
+    pub fn builder() -> crate::model::key_metadata::Builder {
+        crate::model::key_metadata::Builder::default()
+    }
+}
+
 /// See [`KeyMetadata`](crate::model::KeyMetadata).
 pub mod key_metadata {
 
@@ -1356,12 +1365,6 @@ pub mod key_metadata {
         }
     }
 }
-impl KeyMetadata {
-    /// Creates a new builder-style object to manufacture [`KeyMetadata`](crate::model::KeyMetadata).
-    pub fn builder() -> crate::model::key_metadata::Builder {
-        crate::model::key_metadata::Builder::default()
-    }
-}
 
 /// <p>Information about the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/keystore-external.html#concept-external-key">external key </a>that is associated with a KMS key in an external key store. </p>
 /// <p>This element appears in a <code>CreateKey</code> or <code>DescribeKey</code> response only for a KMS key in an external key store.</p>
@@ -1379,6 +1382,13 @@ impl XksKeyConfigurationType {
         self.id.as_deref()
     }
 }
+impl XksKeyConfigurationType {
+    /// Creates a new builder-style object to manufacture [`XksKeyConfigurationType`](crate::model::XksKeyConfigurationType).
+    pub fn builder() -> crate::model::xks_key_configuration_type::Builder {
+        crate::model::xks_key_configuration_type::Builder::default()
+    }
+}
+
 /// See [`XksKeyConfigurationType`](crate::model::XksKeyConfigurationType).
 pub mod xks_key_configuration_type {
 
@@ -1403,12 +1413,6 @@ pub mod xks_key_configuration_type {
         pub fn build(self) -> crate::model::XksKeyConfigurationType {
             crate::model::XksKeyConfigurationType { id: self.id }
         }
-    }
-}
-impl XksKeyConfigurationType {
-    /// Creates a new builder-style object to manufacture [`XksKeyConfigurationType`](crate::model::XksKeyConfigurationType).
-    pub fn builder() -> crate::model::xks_key_configuration_type::Builder {
-        crate::model::xks_key_configuration_type::Builder::default()
     }
 }
 
@@ -1441,6 +1445,13 @@ impl MultiRegionConfiguration {
         self.replica_keys.as_deref()
     }
 }
+impl MultiRegionConfiguration {
+    /// Creates a new builder-style object to manufacture [`MultiRegionConfiguration`](crate::model::MultiRegionConfiguration).
+    pub fn builder() -> crate::model::multi_region_configuration::Builder {
+        crate::model::multi_region_configuration::Builder::default()
+    }
+}
+
 /// See [`MultiRegionConfiguration`](crate::model::MultiRegionConfiguration).
 pub mod multi_region_configuration {
 
@@ -1508,12 +1519,6 @@ pub mod multi_region_configuration {
         }
     }
 }
-impl MultiRegionConfiguration {
-    /// Creates a new builder-style object to manufacture [`MultiRegionConfiguration`](crate::model::MultiRegionConfiguration).
-    pub fn builder() -> crate::model::multi_region_configuration::Builder {
-        crate::model::multi_region_configuration::Builder::default()
-    }
-}
 
 /// <p>Describes the primary or replica key in a multi-Region key.</p>
 #[non_exhaustive]
@@ -1536,6 +1541,13 @@ impl MultiRegionKey {
         self.region.as_deref()
     }
 }
+impl MultiRegionKey {
+    /// Creates a new builder-style object to manufacture [`MultiRegionKey`](crate::model::MultiRegionKey).
+    pub fn builder() -> crate::model::multi_region_key::Builder {
+        crate::model::multi_region_key::Builder::default()
+    }
+}
+
 /// See [`MultiRegionKey`](crate::model::MultiRegionKey).
 pub mod multi_region_key {
 
@@ -1574,12 +1586,6 @@ pub mod multi_region_key {
                 region: self.region,
             }
         }
-    }
-}
-impl MultiRegionKey {
-    /// Creates a new builder-style object to manufacture [`MultiRegionKey`](crate::model::MultiRegionKey).
-    pub fn builder() -> crate::model::multi_region_key::Builder {
-        crate::model::multi_region_key::Builder::default()
     }
 }
 
@@ -2552,6 +2558,13 @@ impl GrantListEntry {
         self.constraints.as_ref()
     }
 }
+impl GrantListEntry {
+    /// Creates a new builder-style object to manufacture [`GrantListEntry`](crate::model::GrantListEntry).
+    pub fn builder() -> crate::model::grant_list_entry::Builder {
+        crate::model::grant_list_entry::Builder::default()
+    }
+}
+
 /// See [`GrantListEntry`](crate::model::GrantListEntry).
 pub mod grant_list_entry {
 
@@ -2702,12 +2715,6 @@ pub mod grant_list_entry {
         }
     }
 }
-impl GrantListEntry {
-    /// Creates a new builder-style object to manufacture [`GrantListEntry`](crate::model::GrantListEntry).
-    pub fn builder() -> crate::model::grant_list_entry::Builder {
-        crate::model::grant_list_entry::Builder::default()
-    }
-}
 
 /// <p>Use this structure to allow <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operations</a> in the grant only when the operation request includes the specified <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">encryption context</a>. </p>
 /// <p>KMS applies the grant constraints only to cryptographic operations that support an encryption context, that is, all cryptographic operations with a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symm-asymm-concepts.html#symmetric-cmks">symmetric KMS key</a>. Grant constraints are not applied to operations that do not support an encryption context, such as cryptographic operations with asymmetric KMS keys and management operations, such as <code>DescribeKey</code> or <code>RetireGrant</code>.</p> <important>
@@ -2743,6 +2750,13 @@ impl GrantConstraints {
         self.encryption_context_equals.as_ref()
     }
 }
+impl GrantConstraints {
+    /// Creates a new builder-style object to manufacture [`GrantConstraints`](crate::model::GrantConstraints).
+    pub fn builder() -> crate::model::grant_constraints::Builder {
+        crate::model::grant_constraints::Builder::default()
+    }
+}
+
 /// See [`GrantConstraints`](crate::model::GrantConstraints).
 pub mod grant_constraints {
 
@@ -2815,12 +2829,6 @@ pub mod grant_constraints {
                 encryption_context_equals: self.encryption_context_equals,
             }
         }
-    }
-}
-impl GrantConstraints {
-    /// Creates a new builder-style object to manufacture [`GrantConstraints`](crate::model::GrantConstraints).
-    pub fn builder() -> crate::model::grant_constraints::Builder {
-        crate::model::grant_constraints::Builder::default()
     }
 }
 
@@ -3026,6 +3034,13 @@ impl KeyListEntry {
         self.key_arn.as_deref()
     }
 }
+impl KeyListEntry {
+    /// Creates a new builder-style object to manufacture [`KeyListEntry`](crate::model::KeyListEntry).
+    pub fn builder() -> crate::model::key_list_entry::Builder {
+        crate::model::key_list_entry::Builder::default()
+    }
+}
+
 /// See [`KeyListEntry`](crate::model::KeyListEntry).
 pub mod key_list_entry {
 
@@ -3064,12 +3079,6 @@ pub mod key_list_entry {
                 key_arn: self.key_arn,
             }
         }
-    }
-}
-impl KeyListEntry {
-    /// Creates a new builder-style object to manufacture [`KeyListEntry`](crate::model::KeyListEntry).
-    pub fn builder() -> crate::model::key_list_entry::Builder {
-        crate::model::key_list_entry::Builder::default()
     }
 }
 
@@ -3115,6 +3124,13 @@ impl AliasListEntry {
         self.last_updated_date.as_ref()
     }
 }
+impl AliasListEntry {
+    /// Creates a new builder-style object to manufacture [`AliasListEntry`](crate::model::AliasListEntry).
+    pub fn builder() -> crate::model::alias_list_entry::Builder {
+        crate::model::alias_list_entry::Builder::default()
+    }
+}
+
 /// See [`AliasListEntry`](crate::model::AliasListEntry).
 pub mod alias_list_entry {
 
@@ -3198,12 +3214,6 @@ pub mod alias_list_entry {
                 last_updated_date: self.last_updated_date,
             }
         }
-    }
-}
-impl AliasListEntry {
-    /// Creates a new builder-style object to manufacture [`AliasListEntry`](crate::model::AliasListEntry).
-    pub fn builder() -> crate::model::alias_list_entry::Builder {
-        crate::model::alias_list_entry::Builder::default()
     }
 }
 
@@ -3772,6 +3782,13 @@ impl CustomKeyStoresListEntry {
         self.xks_proxy_configuration.as_ref()
     }
 }
+impl CustomKeyStoresListEntry {
+    /// Creates a new builder-style object to manufacture [`CustomKeyStoresListEntry`](crate::model::CustomKeyStoresListEntry).
+    pub fn builder() -> crate::model::custom_key_stores_list_entry::Builder {
+        crate::model::custom_key_stores_list_entry::Builder::default()
+    }
+}
+
 /// See [`CustomKeyStoresListEntry`](crate::model::CustomKeyStoresListEntry).
 pub mod custom_key_stores_list_entry {
 
@@ -4023,12 +4040,6 @@ pub mod custom_key_stores_list_entry {
         }
     }
 }
-impl CustomKeyStoresListEntry {
-    /// Creates a new builder-style object to manufacture [`CustomKeyStoresListEntry`](crate::model::CustomKeyStoresListEntry).
-    pub fn builder() -> crate::model::custom_key_stores_list_entry::Builder {
-        crate::model::custom_key_stores_list_entry::Builder::default()
-    }
-}
 
 /// <p>Detailed information about the external key store proxy (XKS proxy). Your external key store proxy translates KMS requests into a format that your external key manager can understand. These fields appear in a <code>DescribeCustomKeyStores</code> response only when the <code>CustomKeyStoreType</code> is <code>EXTERNAL_KEY_STORE</code>.</p>
 #[non_exhaustive]
@@ -4087,6 +4098,13 @@ impl std::fmt::Debug for XksProxyConfigurationType {
         formatter.finish()
     }
 }
+impl XksProxyConfigurationType {
+    /// Creates a new builder-style object to manufacture [`XksProxyConfigurationType`](crate::model::XksProxyConfigurationType).
+    pub fn builder() -> crate::model::xks_proxy_configuration_type::Builder {
+        crate::model::xks_proxy_configuration_type::Builder::default()
+    }
+}
+
 /// See [`XksProxyConfigurationType`](crate::model::XksProxyConfigurationType).
 pub mod xks_proxy_configuration_type {
 
@@ -4185,12 +4203,6 @@ pub mod xks_proxy_configuration_type {
             formatter.field("vpc_endpoint_service_name", &self.vpc_endpoint_service_name);
             formatter.finish()
         }
-    }
-}
-impl XksProxyConfigurationType {
-    /// Creates a new builder-style object to manufacture [`XksProxyConfigurationType`](crate::model::XksProxyConfigurationType).
-    pub fn builder() -> crate::model::xks_proxy_configuration_type::Builder {
-        crate::model::xks_proxy_configuration_type::Builder::default()
     }
 }
 

@@ -29,6 +29,13 @@ impl aws_http::request_id::RequestId for ListWorkflowStepGroupsOutput {
         self._request_id.as_deref()
     }
 }
+impl ListWorkflowStepGroupsOutput {
+    /// Creates a new builder-style object to manufacture [`ListWorkflowStepGroupsOutput`](crate::output::ListWorkflowStepGroupsOutput).
+    pub fn builder() -> crate::output::list_workflow_step_groups_output::Builder {
+        crate::output::list_workflow_step_groups_output::Builder::default()
+    }
+}
+
 /// See [`ListWorkflowStepGroupsOutput`](crate::output::ListWorkflowStepGroupsOutput).
 pub mod list_workflow_step_groups_output {
 
@@ -91,12 +98,6 @@ pub mod list_workflow_step_groups_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl ListWorkflowStepGroupsOutput {
-    /// Creates a new builder-style object to manufacture [`ListWorkflowStepGroupsOutput`](crate::output::ListWorkflowStepGroupsOutput).
-    pub fn builder() -> crate::output::list_workflow_step_groups_output::Builder {
-        crate::output::list_workflow_step_groups_output::Builder::default()
     }
 }
 
@@ -169,6 +170,13 @@ impl aws_http::request_id::RequestId for CreateWorkflowStepGroupOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateWorkflowStepGroupOutput {
+    /// Creates a new builder-style object to manufacture [`CreateWorkflowStepGroupOutput`](crate::output::CreateWorkflowStepGroupOutput).
+    pub fn builder() -> crate::output::create_workflow_step_group_output::Builder {
+        crate::output::create_workflow_step_group_output::Builder::default()
+    }
+}
+
 /// See [`CreateWorkflowStepGroupOutput`](crate::output::CreateWorkflowStepGroupOutput).
 pub mod create_workflow_step_group_output {
 
@@ -322,12 +330,6 @@ pub mod create_workflow_step_group_output {
         }
     }
 }
-impl CreateWorkflowStepGroupOutput {
-    /// Creates a new builder-style object to manufacture [`CreateWorkflowStepGroupOutput`](crate::output::CreateWorkflowStepGroupOutput).
-    pub fn builder() -> crate::output::create_workflow_step_group_output::Builder {
-        crate::output::create_workflow_step_group_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -340,6 +342,13 @@ impl aws_http::request_id::RequestId for DeleteWorkflowStepGroupOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteWorkflowStepGroupOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteWorkflowStepGroupOutput`](crate::output::DeleteWorkflowStepGroupOutput).
+    pub fn builder() -> crate::output::delete_workflow_step_group_output::Builder {
+        crate::output::delete_workflow_step_group_output::Builder::default()
+    }
+}
+
 /// See [`DeleteWorkflowStepGroupOutput`](crate::output::DeleteWorkflowStepGroupOutput).
 pub mod delete_workflow_step_group_output {
 
@@ -365,12 +374,6 @@ pub mod delete_workflow_step_group_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl DeleteWorkflowStepGroupOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteWorkflowStepGroupOutput`](crate::output::DeleteWorkflowStepGroupOutput).
-    pub fn builder() -> crate::output::delete_workflow_step_group_output::Builder {
-        crate::output::delete_workflow_step_group_output::Builder::default()
     }
 }
 
@@ -443,6 +446,13 @@ impl aws_http::request_id::RequestId for UpdateWorkflowStepGroupOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdateWorkflowStepGroupOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateWorkflowStepGroupOutput`](crate::output::UpdateWorkflowStepGroupOutput).
+    pub fn builder() -> crate::output::update_workflow_step_group_output::Builder {
+        crate::output::update_workflow_step_group_output::Builder::default()
+    }
+}
+
 /// See [`UpdateWorkflowStepGroupOutput`](crate::output::UpdateWorkflowStepGroupOutput).
 pub mod update_workflow_step_group_output {
 
@@ -596,12 +606,6 @@ pub mod update_workflow_step_group_output {
         }
     }
 }
-impl UpdateWorkflowStepGroupOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateWorkflowStepGroupOutput`](crate::output::UpdateWorkflowStepGroupOutput).
-    pub fn builder() -> crate::output::update_workflow_step_group_output::Builder {
-        crate::output::update_workflow_step_group_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -700,6 +704,13 @@ impl aws_http::request_id::RequestId for GetWorkflowStepGroupOutput {
         self._request_id.as_deref()
     }
 }
+impl GetWorkflowStepGroupOutput {
+    /// Creates a new builder-style object to manufacture [`GetWorkflowStepGroupOutput`](crate::output::GetWorkflowStepGroupOutput).
+    pub fn builder() -> crate::output::get_workflow_step_group_output::Builder {
+        crate::output::get_workflow_step_group_output::Builder::default()
+    }
+}
+
 /// See [`GetWorkflowStepGroupOutput`](crate::output::GetWorkflowStepGroupOutput).
 pub mod get_workflow_step_group_output {
 
@@ -910,12 +921,6 @@ pub mod get_workflow_step_group_output {
         }
     }
 }
-impl GetWorkflowStepGroupOutput {
-    /// Creates a new builder-style object to manufacture [`GetWorkflowStepGroupOutput`](crate::output::GetWorkflowStepGroupOutput).
-    pub fn builder() -> crate::output::get_workflow_step_group_output::Builder {
-        crate::output::get_workflow_step_group_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -958,6 +963,13 @@ impl aws_http::request_id::RequestId for RetryWorkflowStepOutput {
         self._request_id.as_deref()
     }
 }
+impl RetryWorkflowStepOutput {
+    /// Creates a new builder-style object to manufacture [`RetryWorkflowStepOutput`](crate::output::RetryWorkflowStepOutput).
+    pub fn builder() -> crate::output::retry_workflow_step_output::Builder {
+        crate::output::retry_workflow_step_output::Builder::default()
+    }
+}
+
 /// See [`RetryWorkflowStepOutput`](crate::output::RetryWorkflowStepOutput).
 pub mod retry_workflow_step_output {
 
@@ -1036,12 +1048,6 @@ pub mod retry_workflow_step_output {
         }
     }
 }
-impl RetryWorkflowStepOutput {
-    /// Creates a new builder-style object to manufacture [`RetryWorkflowStepOutput`](crate::output::RetryWorkflowStepOutput).
-    pub fn builder() -> crate::output::retry_workflow_step_output::Builder {
-        crate::output::retry_workflow_step_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1073,6 +1079,13 @@ impl aws_http::request_id::RequestId for ListWorkflowStepsOutput {
         self._request_id.as_deref()
     }
 }
+impl ListWorkflowStepsOutput {
+    /// Creates a new builder-style object to manufacture [`ListWorkflowStepsOutput`](crate::output::ListWorkflowStepsOutput).
+    pub fn builder() -> crate::output::list_workflow_steps_output::Builder {
+        crate::output::list_workflow_steps_output::Builder::default()
+    }
+}
+
 /// See [`ListWorkflowStepsOutput`](crate::output::ListWorkflowStepsOutput).
 pub mod list_workflow_steps_output {
 
@@ -1134,12 +1147,6 @@ pub mod list_workflow_steps_output {
         }
     }
 }
-impl ListWorkflowStepsOutput {
-    /// Creates a new builder-style object to manufacture [`ListWorkflowStepsOutput`](crate::output::ListWorkflowStepsOutput).
-    pub fn builder() -> crate::output::list_workflow_steps_output::Builder {
-        crate::output::list_workflow_steps_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1182,6 +1189,13 @@ impl aws_http::request_id::RequestId for CreateWorkflowStepOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateWorkflowStepOutput {
+    /// Creates a new builder-style object to manufacture [`CreateWorkflowStepOutput`](crate::output::CreateWorkflowStepOutput).
+    pub fn builder() -> crate::output::create_workflow_step_output::Builder {
+        crate::output::create_workflow_step_output::Builder::default()
+    }
+}
+
 /// See [`CreateWorkflowStepOutput`](crate::output::CreateWorkflowStepOutput).
 pub mod create_workflow_step_output {
 
@@ -1260,12 +1274,6 @@ pub mod create_workflow_step_output {
         }
     }
 }
-impl CreateWorkflowStepOutput {
-    /// Creates a new builder-style object to manufacture [`CreateWorkflowStepOutput`](crate::output::CreateWorkflowStepOutput).
-    pub fn builder() -> crate::output::create_workflow_step_output::Builder {
-        crate::output::create_workflow_step_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1278,6 +1286,13 @@ impl aws_http::request_id::RequestId for DeleteWorkflowStepOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteWorkflowStepOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteWorkflowStepOutput`](crate::output::DeleteWorkflowStepOutput).
+    pub fn builder() -> crate::output::delete_workflow_step_output::Builder {
+        crate::output::delete_workflow_step_output::Builder::default()
+    }
+}
+
 /// See [`DeleteWorkflowStepOutput`](crate::output::DeleteWorkflowStepOutput).
 pub mod delete_workflow_step_output {
 
@@ -1303,12 +1318,6 @@ pub mod delete_workflow_step_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl DeleteWorkflowStepOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteWorkflowStepOutput`](crate::output::DeleteWorkflowStepOutput).
-    pub fn builder() -> crate::output::delete_workflow_step_output::Builder {
-        crate::output::delete_workflow_step_output::Builder::default()
     }
 }
 
@@ -1353,6 +1362,13 @@ impl aws_http::request_id::RequestId for UpdateWorkflowStepOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdateWorkflowStepOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateWorkflowStepOutput`](crate::output::UpdateWorkflowStepOutput).
+    pub fn builder() -> crate::output::update_workflow_step_output::Builder {
+        crate::output::update_workflow_step_output::Builder::default()
+    }
+}
+
 /// See [`UpdateWorkflowStepOutput`](crate::output::UpdateWorkflowStepOutput).
 pub mod update_workflow_step_output {
 
@@ -1429,12 +1445,6 @@ pub mod update_workflow_step_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl UpdateWorkflowStepOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateWorkflowStepOutput`](crate::output::UpdateWorkflowStepOutput).
-    pub fn builder() -> crate::output::update_workflow_step_output::Builder {
-        crate::output::update_workflow_step_output::Builder::default()
     }
 }
 
@@ -1601,6 +1611,13 @@ impl aws_http::request_id::RequestId for GetWorkflowStepOutput {
         self._request_id.as_deref()
     }
 }
+impl GetWorkflowStepOutput {
+    /// Creates a new builder-style object to manufacture [`GetWorkflowStepOutput`](crate::output::GetWorkflowStepOutput).
+    pub fn builder() -> crate::output::get_workflow_step_output::Builder {
+        crate::output::get_workflow_step_output::Builder::default()
+    }
+}
+
 /// See [`GetWorkflowStepOutput`](crate::output::GetWorkflowStepOutput).
 pub mod get_workflow_step_output {
 
@@ -1944,12 +1961,6 @@ pub mod get_workflow_step_output {
         }
     }
 }
-impl GetWorkflowStepOutput {
-    /// Creates a new builder-style object to manufacture [`GetWorkflowStepOutput`](crate::output::GetWorkflowStepOutput).
-    pub fn builder() -> crate::output::get_workflow_step_output::Builder {
-        crate::output::get_workflow_step_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1981,6 +1992,13 @@ impl aws_http::request_id::RequestId for ListTemplateStepGroupsOutput {
         self._request_id.as_deref()
     }
 }
+impl ListTemplateStepGroupsOutput {
+    /// Creates a new builder-style object to manufacture [`ListTemplateStepGroupsOutput`](crate::output::ListTemplateStepGroupsOutput).
+    pub fn builder() -> crate::output::list_template_step_groups_output::Builder {
+        crate::output::list_template_step_groups_output::Builder::default()
+    }
+}
+
 /// See [`ListTemplateStepGroupsOutput`](crate::output::ListTemplateStepGroupsOutput).
 pub mod list_template_step_groups_output {
 
@@ -2043,12 +2061,6 @@ pub mod list_template_step_groups_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl ListTemplateStepGroupsOutput {
-    /// Creates a new builder-style object to manufacture [`ListTemplateStepGroupsOutput`](crate::output::ListTemplateStepGroupsOutput).
-    pub fn builder() -> crate::output::list_template_step_groups_output::Builder {
-        crate::output::list_template_step_groups_output::Builder::default()
     }
 }
 
@@ -2135,6 +2147,13 @@ impl aws_http::request_id::RequestId for GetTemplateStepGroupOutput {
         self._request_id.as_deref()
     }
 }
+impl GetTemplateStepGroupOutput {
+    /// Creates a new builder-style object to manufacture [`GetTemplateStepGroupOutput`](crate::output::GetTemplateStepGroupOutput).
+    pub fn builder() -> crate::output::get_template_step_group_output::Builder {
+        crate::output::get_template_step_group_output::Builder::default()
+    }
+}
+
 /// See [`GetTemplateStepGroupOutput`](crate::output::GetTemplateStepGroupOutput).
 pub mod get_template_step_group_output {
 
@@ -2318,12 +2337,6 @@ pub mod get_template_step_group_output {
         }
     }
 }
-impl GetTemplateStepGroupOutput {
-    /// Creates a new builder-style object to manufacture [`GetTemplateStepGroupOutput`](crate::output::GetTemplateStepGroupOutput).
-    pub fn builder() -> crate::output::get_template_step_group_output::Builder {
-        crate::output::get_template_step_group_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2355,6 +2368,13 @@ impl aws_http::request_id::RequestId for ListTemplateStepsOutput {
         self._request_id.as_deref()
     }
 }
+impl ListTemplateStepsOutput {
+    /// Creates a new builder-style object to manufacture [`ListTemplateStepsOutput`](crate::output::ListTemplateStepsOutput).
+    pub fn builder() -> crate::output::list_template_steps_output::Builder {
+        crate::output::list_template_steps_output::Builder::default()
+    }
+}
+
 /// See [`ListTemplateStepsOutput`](crate::output::ListTemplateStepsOutput).
 pub mod list_template_steps_output {
 
@@ -2417,12 +2437,6 @@ pub mod list_template_steps_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl ListTemplateStepsOutput {
-    /// Creates a new builder-style object to manufacture [`ListTemplateStepsOutput`](crate::output::ListTemplateStepsOutput).
-    pub fn builder() -> crate::output::list_template_steps_output::Builder {
-        crate::output::list_template_steps_output::Builder::default()
     }
 }
 
@@ -2519,6 +2533,13 @@ impl aws_http::request_id::RequestId for GetTemplateStepOutput {
         self._request_id.as_deref()
     }
 }
+impl GetTemplateStepOutput {
+    /// Creates a new builder-style object to manufacture [`GetTemplateStepOutput`](crate::output::GetTemplateStepOutput).
+    pub fn builder() -> crate::output::get_template_step_output::Builder {
+        crate::output::get_template_step_output::Builder::default()
+    }
+}
+
 /// See [`GetTemplateStepOutput`](crate::output::GetTemplateStepOutput).
 pub mod get_template_step_output {
 
@@ -2721,12 +2742,6 @@ pub mod get_template_step_output {
         }
     }
 }
-impl GetTemplateStepOutput {
-    /// Creates a new builder-style object to manufacture [`GetTemplateStepOutput`](crate::output::GetTemplateStepOutput).
-    pub fn builder() -> crate::output::get_template_step_output::Builder {
-        crate::output::get_template_step_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2755,6 +2770,13 @@ impl aws_http::request_id::RequestId for ListPluginsOutput {
         self._request_id.as_deref()
     }
 }
+impl ListPluginsOutput {
+    /// Creates a new builder-style object to manufacture [`ListPluginsOutput`](crate::output::ListPluginsOutput).
+    pub fn builder() -> crate::output::list_plugins_output::Builder {
+        crate::output::list_plugins_output::Builder::default()
+    }
+}
+
 /// See [`ListPluginsOutput`](crate::output::ListPluginsOutput).
 pub mod list_plugins_output {
 
@@ -2815,12 +2837,6 @@ pub mod list_plugins_output {
         }
     }
 }
-impl ListPluginsOutput {
-    /// Creates a new builder-style object to manufacture [`ListPluginsOutput`](crate::output::ListPluginsOutput).
-    pub fn builder() -> crate::output::list_plugins_output::Builder {
-        crate::output::list_plugins_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2849,6 +2865,13 @@ impl aws_http::request_id::RequestId for ListTemplatesOutput {
         self._request_id.as_deref()
     }
 }
+impl ListTemplatesOutput {
+    /// Creates a new builder-style object to manufacture [`ListTemplatesOutput`](crate::output::ListTemplatesOutput).
+    pub fn builder() -> crate::output::list_templates_output::Builder {
+        crate::output::list_templates_output::Builder::default()
+    }
+}
+
 /// See [`ListTemplatesOutput`](crate::output::ListTemplatesOutput).
 pub mod list_templates_output {
 
@@ -2908,12 +2931,6 @@ pub mod list_templates_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl ListTemplatesOutput {
-    /// Creates a new builder-style object to manufacture [`ListTemplatesOutput`](crate::output::ListTemplatesOutput).
-    pub fn builder() -> crate::output::list_templates_output::Builder {
-        crate::output::list_templates_output::Builder::default()
     }
 }
 
@@ -2979,6 +2996,13 @@ impl aws_http::request_id::RequestId for GetTemplateOutput {
         self._request_id.as_deref()
     }
 }
+impl GetTemplateOutput {
+    /// Creates a new builder-style object to manufacture [`GetTemplateOutput`](crate::output::GetTemplateOutput).
+    pub fn builder() -> crate::output::get_template_output::Builder {
+        crate::output::get_template_output::Builder::default()
+    }
+}
+
 /// See [`GetTemplateOutput`](crate::output::GetTemplateOutput).
 pub mod get_template_output {
 
@@ -3114,12 +3138,6 @@ pub mod get_template_output {
         }
     }
 }
-impl GetTemplateOutput {
-    /// Creates a new builder-style object to manufacture [`GetTemplateOutput`](crate::output::GetTemplateOutput).
-    pub fn builder() -> crate::output::get_template_output::Builder {
-        crate::output::get_template_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3169,6 +3187,13 @@ impl aws_http::request_id::RequestId for StopWorkflowOutput {
         self._request_id.as_deref()
     }
 }
+impl StopWorkflowOutput {
+    /// Creates a new builder-style object to manufacture [`StopWorkflowOutput`](crate::output::StopWorkflowOutput).
+    pub fn builder() -> crate::output::stop_workflow_output::Builder {
+        crate::output::stop_workflow_output::Builder::default()
+    }
+}
+
 /// See [`StopWorkflowOutput`](crate::output::StopWorkflowOutput).
 pub mod stop_workflow_output {
 
@@ -3265,12 +3290,6 @@ pub mod stop_workflow_output {
         }
     }
 }
-impl StopWorkflowOutput {
-    /// Creates a new builder-style object to manufacture [`StopWorkflowOutput`](crate::output::StopWorkflowOutput).
-    pub fn builder() -> crate::output::stop_workflow_output::Builder {
-        crate::output::stop_workflow_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3320,6 +3339,13 @@ impl aws_http::request_id::RequestId for StartWorkflowOutput {
         self._request_id.as_deref()
     }
 }
+impl StartWorkflowOutput {
+    /// Creates a new builder-style object to manufacture [`StartWorkflowOutput`](crate::output::StartWorkflowOutput).
+    pub fn builder() -> crate::output::start_workflow_output::Builder {
+        crate::output::start_workflow_output::Builder::default()
+    }
+}
+
 /// See [`StartWorkflowOutput`](crate::output::StartWorkflowOutput).
 pub mod start_workflow_output {
 
@@ -3416,12 +3442,6 @@ pub mod start_workflow_output {
         }
     }
 }
-impl StartWorkflowOutput {
-    /// Creates a new builder-style object to manufacture [`StartWorkflowOutput`](crate::output::StartWorkflowOutput).
-    pub fn builder() -> crate::output::start_workflow_output::Builder {
-        crate::output::start_workflow_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3453,6 +3473,13 @@ impl aws_http::request_id::RequestId for ListWorkflowsOutput {
         self._request_id.as_deref()
     }
 }
+impl ListWorkflowsOutput {
+    /// Creates a new builder-style object to manufacture [`ListWorkflowsOutput`](crate::output::ListWorkflowsOutput).
+    pub fn builder() -> crate::output::list_workflows_output::Builder {
+        crate::output::list_workflows_output::Builder::default()
+    }
+}
+
 /// See [`ListWorkflowsOutput`](crate::output::ListWorkflowsOutput).
 pub mod list_workflows_output {
 
@@ -3515,12 +3542,6 @@ pub mod list_workflows_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl ListWorkflowsOutput {
-    /// Creates a new builder-style object to manufacture [`ListWorkflowsOutput`](crate::output::ListWorkflowsOutput).
-    pub fn builder() -> crate::output::list_workflows_output::Builder {
-        crate::output::list_workflows_output::Builder::default()
     }
 }
 
@@ -3644,6 +3665,13 @@ impl aws_http::request_id::RequestId for CreateWorkflowOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateWorkflowOutput {
+    /// Creates a new builder-style object to manufacture [`CreateWorkflowOutput`](crate::output::CreateWorkflowOutput).
+    pub fn builder() -> crate::output::create_workflow_output::Builder {
+        crate::output::create_workflow_output::Builder::default()
+    }
+}
+
 /// See [`CreateWorkflowOutput`](crate::output::CreateWorkflowOutput).
 pub mod create_workflow_output {
 
@@ -3879,12 +3907,6 @@ pub mod create_workflow_output {
         }
     }
 }
-impl CreateWorkflowOutput {
-    /// Creates a new builder-style object to manufacture [`CreateWorkflowOutput`](crate::output::CreateWorkflowOutput).
-    pub fn builder() -> crate::output::create_workflow_output::Builder {
-        crate::output::create_workflow_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3920,6 +3942,13 @@ impl aws_http::request_id::RequestId for DeleteWorkflowOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteWorkflowOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteWorkflowOutput`](crate::output::DeleteWorkflowOutput).
+    pub fn builder() -> crate::output::delete_workflow_output::Builder {
+        crate::output::delete_workflow_output::Builder::default()
+    }
+}
+
 /// See [`DeleteWorkflowOutput`](crate::output::DeleteWorkflowOutput).
 pub mod delete_workflow_output {
 
@@ -3984,12 +4013,6 @@ pub mod delete_workflow_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl DeleteWorkflowOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteWorkflowOutput`](crate::output::DeleteWorkflowOutput).
-    pub fn builder() -> crate::output::delete_workflow_output::Builder {
-        crate::output::delete_workflow_output::Builder::default()
     }
 }
 
@@ -4121,6 +4144,13 @@ impl aws_http::request_id::RequestId for UpdateWorkflowOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdateWorkflowOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateWorkflowOutput`](crate::output::UpdateWorkflowOutput).
+    pub fn builder() -> crate::output::update_workflow_output::Builder {
+        crate::output::update_workflow_output::Builder::default()
+    }
+}
+
 /// See [`UpdateWorkflowOutput`](crate::output::UpdateWorkflowOutput).
 pub mod update_workflow_output {
 
@@ -4372,12 +4402,6 @@ pub mod update_workflow_output {
         }
     }
 }
-impl UpdateWorkflowOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateWorkflowOutput`](crate::output::UpdateWorkflowOutput).
-    pub fn builder() -> crate::output::update_workflow_output::Builder {
-        crate::output::update_workflow_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -4571,6 +4595,13 @@ impl aws_http::request_id::RequestId for GetWorkflowOutput {
         self._request_id.as_deref()
     }
 }
+impl GetWorkflowOutput {
+    /// Creates a new builder-style object to manufacture [`GetWorkflowOutput`](crate::output::GetWorkflowOutput).
+    pub fn builder() -> crate::output::get_workflow_output::Builder {
+        crate::output::get_workflow_output::Builder::default()
+    }
+}
+
 /// See [`GetWorkflowOutput`](crate::output::GetWorkflowOutput).
 pub mod get_workflow_output {
 
@@ -4944,12 +4975,6 @@ pub mod get_workflow_output {
         }
     }
 }
-impl GetWorkflowOutput {
-    /// Creates a new builder-style object to manufacture [`GetWorkflowOutput`](crate::output::GetWorkflowOutput).
-    pub fn builder() -> crate::output::get_workflow_output::Builder {
-        crate::output::get_workflow_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -4962,6 +4987,13 @@ impl aws_http::request_id::RequestId for UntagResourceOutput {
         self._request_id.as_deref()
     }
 }
+impl UntagResourceOutput {
+    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    pub fn builder() -> crate::output::untag_resource_output::Builder {
+        crate::output::untag_resource_output::Builder::default()
+    }
+}
+
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
 
@@ -4989,12 +5021,6 @@ pub mod untag_resource_output {
         }
     }
 }
-impl UntagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
-    pub fn builder() -> crate::output::untag_resource_output::Builder {
-        crate::output::untag_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -5007,6 +5033,13 @@ impl aws_http::request_id::RequestId for TagResourceOutput {
         self._request_id.as_deref()
     }
 }
+impl TagResourceOutput {
+    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
+    pub fn builder() -> crate::output::tag_resource_output::Builder {
+        crate::output::tag_resource_output::Builder::default()
+    }
+}
+
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
 
@@ -5034,12 +5067,6 @@ pub mod tag_resource_output {
         }
     }
 }
-impl TagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
-    pub fn builder() -> crate::output::tag_resource_output::Builder {
-        crate::output::tag_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -5065,6 +5092,13 @@ impl aws_http::request_id::RequestId for ListTagsForResourceOutput {
         self._request_id.as_deref()
     }
 }
+impl ListTagsForResourceOutput {
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
+        crate::output::list_tags_for_resource_output::Builder::default()
+    }
+}
+
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
 
@@ -5119,11 +5153,5 @@ pub mod list_tags_for_resource_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl ListTagsForResourceOutput {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
-    pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
-        crate::output::list_tags_for_resource_output::Builder::default()
     }
 }

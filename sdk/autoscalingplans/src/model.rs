@@ -192,6 +192,13 @@ impl ScalingInstruction {
         self.disable_dynamic_scaling
     }
 }
+impl ScalingInstruction {
+    /// Creates a new builder-style object to manufacture [`ScalingInstruction`](crate::model::ScalingInstruction).
+    pub fn builder() -> crate::model::scaling_instruction::Builder {
+        crate::model::scaling_instruction::Builder::default()
+    }
+}
+
 /// See [`ScalingInstruction`](crate::model::ScalingInstruction).
 pub mod scaling_instruction {
 
@@ -498,12 +505,6 @@ pub mod scaling_instruction {
                 disable_dynamic_scaling: self.disable_dynamic_scaling,
             }
         }
-    }
-}
-impl ScalingInstruction {
-    /// Creates a new builder-style object to manufacture [`ScalingInstruction`](crate::model::ScalingInstruction).
-    pub fn builder() -> crate::model::scaling_instruction::Builder {
-        crate::model::scaling_instruction::Builder::default()
     }
 }
 
@@ -853,6 +854,13 @@ impl CustomizedLoadMetricSpecification {
         self.unit.as_deref()
     }
 }
+impl CustomizedLoadMetricSpecification {
+    /// Creates a new builder-style object to manufacture [`CustomizedLoadMetricSpecification`](crate::model::CustomizedLoadMetricSpecification).
+    pub fn builder() -> crate::model::customized_load_metric_specification::Builder {
+        crate::model::customized_load_metric_specification::Builder::default()
+    }
+}
+
 /// See [`CustomizedLoadMetricSpecification`](crate::model::CustomizedLoadMetricSpecification).
 pub mod customized_load_metric_specification {
 
@@ -941,12 +949,6 @@ pub mod customized_load_metric_specification {
                 unit: self.unit,
             }
         }
-    }
-}
-impl CustomizedLoadMetricSpecification {
-    /// Creates a new builder-style object to manufacture [`CustomizedLoadMetricSpecification`](crate::model::CustomizedLoadMetricSpecification).
-    pub fn builder() -> crate::model::customized_load_metric_specification::Builder {
-        crate::model::customized_load_metric_specification::Builder::default()
     }
 }
 
@@ -1076,6 +1078,13 @@ impl MetricDimension {
         self.value.as_deref()
     }
 }
+impl MetricDimension {
+    /// Creates a new builder-style object to manufacture [`MetricDimension`](crate::model::MetricDimension).
+    pub fn builder() -> crate::model::metric_dimension::Builder {
+        crate::model::metric_dimension::Builder::default()
+    }
+}
+
 /// See [`MetricDimension`](crate::model::MetricDimension).
 pub mod metric_dimension {
 
@@ -1114,12 +1123,6 @@ pub mod metric_dimension {
                 value: self.value,
             }
         }
-    }
-}
-impl MetricDimension {
-    /// Creates a new builder-style object to manufacture [`MetricDimension`](crate::model::MetricDimension).
-    pub fn builder() -> crate::model::metric_dimension::Builder {
-        crate::model::metric_dimension::Builder::default()
     }
 }
 
@@ -1203,6 +1206,13 @@ impl PredefinedLoadMetricSpecification {
         self.resource_label.as_deref()
     }
 }
+impl PredefinedLoadMetricSpecification {
+    /// Creates a new builder-style object to manufacture [`PredefinedLoadMetricSpecification`](crate::model::PredefinedLoadMetricSpecification).
+    pub fn builder() -> crate::model::predefined_load_metric_specification::Builder {
+        crate::model::predefined_load_metric_specification::Builder::default()
+    }
+}
+
 /// See [`PredefinedLoadMetricSpecification`](crate::model::PredefinedLoadMetricSpecification).
 pub mod predefined_load_metric_specification {
 
@@ -1303,12 +1313,6 @@ pub mod predefined_load_metric_specification {
                 resource_label: self.resource_label,
             }
         }
-    }
-}
-impl PredefinedLoadMetricSpecification {
-    /// Creates a new builder-style object to manufacture [`PredefinedLoadMetricSpecification`](crate::model::PredefinedLoadMetricSpecification).
-    pub fn builder() -> crate::model::predefined_load_metric_specification::Builder {
-        crate::model::predefined_load_metric_specification::Builder::default()
     }
 }
 
@@ -1485,6 +1489,13 @@ impl TargetTrackingConfiguration {
         self.estimated_instance_warmup
     }
 }
+impl TargetTrackingConfiguration {
+    /// Creates a new builder-style object to manufacture [`TargetTrackingConfiguration`](crate::model::TargetTrackingConfiguration).
+    pub fn builder() -> crate::model::target_tracking_configuration::Builder {
+        crate::model::target_tracking_configuration::Builder::default()
+    }
+}
+
 /// See [`TargetTrackingConfiguration`](crate::model::TargetTrackingConfiguration).
 pub mod target_tracking_configuration {
 
@@ -1607,12 +1618,6 @@ pub mod target_tracking_configuration {
         }
     }
 }
-impl TargetTrackingConfiguration {
-    /// Creates a new builder-style object to manufacture [`TargetTrackingConfiguration`](crate::model::TargetTrackingConfiguration).
-    pub fn builder() -> crate::model::target_tracking_configuration::Builder {
-        crate::model::target_tracking_configuration::Builder::default()
-    }
-}
 
 /// <p>Represents a CloudWatch metric of your choosing that can be used for dynamic scaling as part of a target tracking scaling policy. </p>
 /// <p>To create your customized scaling metric specification:</p>
@@ -1664,6 +1669,13 @@ impl CustomizedScalingMetricSpecification {
         self.unit.as_deref()
     }
 }
+impl CustomizedScalingMetricSpecification {
+    /// Creates a new builder-style object to manufacture [`CustomizedScalingMetricSpecification`](crate::model::CustomizedScalingMetricSpecification).
+    pub fn builder() -> crate::model::customized_scaling_metric_specification::Builder {
+        crate::model::customized_scaling_metric_specification::Builder::default()
+    }
+}
+
 /// See [`CustomizedScalingMetricSpecification`](crate::model::CustomizedScalingMetricSpecification).
 pub mod customized_scaling_metric_specification {
 
@@ -1754,12 +1766,6 @@ pub mod customized_scaling_metric_specification {
         }
     }
 }
-impl CustomizedScalingMetricSpecification {
-    /// Creates a new builder-style object to manufacture [`CustomizedScalingMetricSpecification`](crate::model::CustomizedScalingMetricSpecification).
-    pub fn builder() -> crate::model::customized_scaling_metric_specification::Builder {
-        crate::model::customized_scaling_metric_specification::Builder::default()
-    }
-}
 
 /// <p>Represents a predefined metric that can be used for dynamic scaling as part of a target tracking scaling policy.</p>
 #[non_exhaustive]
@@ -1840,6 +1846,13 @@ impl PredefinedScalingMetricSpecification {
         self.resource_label.as_deref()
     }
 }
+impl PredefinedScalingMetricSpecification {
+    /// Creates a new builder-style object to manufacture [`PredefinedScalingMetricSpecification`](crate::model::PredefinedScalingMetricSpecification).
+    pub fn builder() -> crate::model::predefined_scaling_metric_specification::Builder {
+        crate::model::predefined_scaling_metric_specification::Builder::default()
+    }
+}
+
 /// See [`PredefinedScalingMetricSpecification`](crate::model::PredefinedScalingMetricSpecification).
 pub mod predefined_scaling_metric_specification {
 
@@ -1944,12 +1957,6 @@ pub mod predefined_scaling_metric_specification {
                 resource_label: self.resource_label,
             }
         }
-    }
-}
-impl PredefinedScalingMetricSpecification {
-    /// Creates a new builder-style object to manufacture [`PredefinedScalingMetricSpecification`](crate::model::PredefinedScalingMetricSpecification).
-    pub fn builder() -> crate::model::predefined_scaling_metric_specification::Builder {
-        crate::model::predefined_scaling_metric_specification::Builder::default()
     }
 }
 
@@ -2411,6 +2418,13 @@ impl ApplicationSource {
         self.tag_filters.as_deref()
     }
 }
+impl ApplicationSource {
+    /// Creates a new builder-style object to manufacture [`ApplicationSource`](crate::model::ApplicationSource).
+    pub fn builder() -> crate::model::application_source::Builder {
+        crate::model::application_source::Builder::default()
+    }
+}
+
 /// See [`ApplicationSource`](crate::model::ApplicationSource).
 pub mod application_source {
 
@@ -2463,12 +2477,6 @@ pub mod application_source {
         }
     }
 }
-impl ApplicationSource {
-    /// Creates a new builder-style object to manufacture [`ApplicationSource`](crate::model::ApplicationSource).
-    pub fn builder() -> crate::model::application_source::Builder {
-        crate::model::application_source::Builder::default()
-    }
-}
 
 /// <p>Represents a tag.</p>
 #[non_exhaustive]
@@ -2491,6 +2499,13 @@ impl TagFilter {
         self.values.as_deref()
     }
 }
+impl TagFilter {
+    /// Creates a new builder-style object to manufacture [`TagFilter`](crate::model::TagFilter).
+    pub fn builder() -> crate::model::tag_filter::Builder {
+        crate::model::tag_filter::Builder::default()
+    }
+}
+
 /// See [`TagFilter`](crate::model::TagFilter).
 pub mod tag_filter {
 
@@ -2540,12 +2555,6 @@ pub mod tag_filter {
         }
     }
 }
-impl TagFilter {
-    /// Creates a new builder-style object to manufacture [`TagFilter`](crate::model::TagFilter).
-    pub fn builder() -> crate::model::tag_filter::Builder {
-        crate::model::tag_filter::Builder::default()
-    }
-}
 
 /// <p>Represents a single value in the forecast data used for predictive scaling.</p>
 #[non_exhaustive]
@@ -2568,6 +2577,13 @@ impl Datapoint {
         self.value
     }
 }
+impl Datapoint {
+    /// Creates a new builder-style object to manufacture [`Datapoint`](crate::model::Datapoint).
+    pub fn builder() -> crate::model::datapoint::Builder {
+        crate::model::datapoint::Builder::default()
+    }
+}
+
 /// See [`Datapoint`](crate::model::Datapoint).
 pub mod datapoint {
 
@@ -2609,12 +2625,6 @@ pub mod datapoint {
                 value: self.value,
             }
         }
-    }
-}
-impl Datapoint {
-    /// Creates a new builder-style object to manufacture [`Datapoint`](crate::model::Datapoint).
-    pub fn builder() -> crate::model::datapoint::Builder {
-        crate::model::datapoint::Builder::default()
     }
 }
 
@@ -2806,6 +2816,13 @@ impl ScalingPlan {
         self.creation_time.as_ref()
     }
 }
+impl ScalingPlan {
+    /// Creates a new builder-style object to manufacture [`ScalingPlan`](crate::model::ScalingPlan).
+    pub fn builder() -> crate::model::scaling_plan::Builder {
+        crate::model::scaling_plan::Builder::default()
+    }
+}
+
 /// See [`ScalingPlan`](crate::model::ScalingPlan).
 pub mod scaling_plan {
 
@@ -2964,12 +2981,6 @@ pub mod scaling_plan {
                 creation_time: self.creation_time,
             }
         }
-    }
-}
-impl ScalingPlan {
-    /// Creates a new builder-style object to manufacture [`ScalingPlan`](crate::model::ScalingPlan).
-    pub fn builder() -> crate::model::scaling_plan::Builder {
-        crate::model::scaling_plan::Builder::default()
     }
 }
 
@@ -3213,6 +3224,13 @@ impl ScalingPlanResource {
         self.scaling_status_message.as_deref()
     }
 }
+impl ScalingPlanResource {
+    /// Creates a new builder-style object to manufacture [`ScalingPlanResource`](crate::model::ScalingPlanResource).
+    pub fn builder() -> crate::model::scaling_plan_resource::Builder {
+        crate::model::scaling_plan_resource::Builder::default()
+    }
+}
+
 /// See [`ScalingPlanResource`](crate::model::ScalingPlanResource).
 pub mod scaling_plan_resource {
 
@@ -3396,12 +3414,6 @@ pub mod scaling_plan_resource {
         }
     }
 }
-impl ScalingPlanResource {
-    /// Creates a new builder-style object to manufacture [`ScalingPlanResource`](crate::model::ScalingPlanResource).
-    pub fn builder() -> crate::model::scaling_plan_resource::Builder {
-        crate::model::scaling_plan_resource::Builder::default()
-    }
-}
 
 /// When writing a match expression against `ScalingStatusCode`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -3531,6 +3543,13 @@ impl ScalingPolicy {
         self.target_tracking_configuration.as_ref()
     }
 }
+impl ScalingPolicy {
+    /// Creates a new builder-style object to manufacture [`ScalingPolicy`](crate::model::ScalingPolicy).
+    pub fn builder() -> crate::model::scaling_policy::Builder {
+        crate::model::scaling_policy::Builder::default()
+    }
+}
+
 /// See [`ScalingPolicy`](crate::model::ScalingPolicy).
 pub mod scaling_policy {
 
@@ -3591,12 +3610,6 @@ pub mod scaling_policy {
                 target_tracking_configuration: self.target_tracking_configuration,
             }
         }
-    }
-}
-impl ScalingPolicy {
-    /// Creates a new builder-style object to manufacture [`ScalingPolicy`](crate::model::ScalingPolicy).
-    pub fn builder() -> crate::model::scaling_policy::Builder {
-        crate::model::scaling_policy::Builder::default()
     }
 }
 

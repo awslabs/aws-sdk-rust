@@ -125,6 +125,13 @@ impl MssPackage {
         self.stream_selection.as_ref()
     }
 }
+impl MssPackage {
+    /// Creates a new builder-style object to manufacture [`MssPackage`](crate::model::MssPackage).
+    pub fn builder() -> crate::model::mss_package::Builder {
+        crate::model::mss_package::Builder::default()
+    }
+}
+
 /// See [`MssPackage`](crate::model::MssPackage).
 pub mod mss_package {
 
@@ -195,12 +202,6 @@ pub mod mss_package {
         }
     }
 }
-impl MssPackage {
-    /// Creates a new builder-style object to manufacture [`MssPackage`](crate::model::MssPackage).
-    pub fn builder() -> crate::model::mss_package::Builder {
-        crate::model::mss_package::Builder::default()
-    }
-}
 
 /// A StreamSelection configuration.
 #[non_exhaustive]
@@ -230,6 +231,13 @@ impl StreamSelection {
         self.stream_order.as_ref()
     }
 }
+impl StreamSelection {
+    /// Creates a new builder-style object to manufacture [`StreamSelection`](crate::model::StreamSelection).
+    pub fn builder() -> crate::model::stream_selection::Builder {
+        crate::model::stream_selection::Builder::default()
+    }
+}
+
 /// See [`StreamSelection`](crate::model::StreamSelection).
 pub mod stream_selection {
 
@@ -283,12 +291,6 @@ pub mod stream_selection {
                 stream_order: self.stream_order,
             }
         }
-    }
-}
-impl StreamSelection {
-    /// Creates a new builder-style object to manufacture [`StreamSelection`](crate::model::StreamSelection).
-    pub fn builder() -> crate::model::stream_selection::Builder {
-        crate::model::stream_selection::Builder::default()
     }
 }
 
@@ -405,6 +407,13 @@ impl MssEncryption {
         self.speke_key_provider.as_ref()
     }
 }
+impl MssEncryption {
+    /// Creates a new builder-style object to manufacture [`MssEncryption`](crate::model::MssEncryption).
+    pub fn builder() -> crate::model::mss_encryption::Builder {
+        crate::model::mss_encryption::Builder::default()
+    }
+}
+
 /// See [`MssEncryption`](crate::model::MssEncryption).
 pub mod mss_encryption {
 
@@ -434,12 +443,6 @@ pub mod mss_encryption {
                 speke_key_provider: self.speke_key_provider,
             }
         }
-    }
-}
-impl MssEncryption {
-    /// Creates a new builder-style object to manufacture [`MssEncryption`](crate::model::MssEncryption).
-    pub fn builder() -> crate::model::mss_encryption::Builder {
-        crate::model::mss_encryption::Builder::default()
     }
 }
 
@@ -495,6 +498,13 @@ impl SpekeKeyProvider {
         self.url.as_deref()
     }
 }
+impl SpekeKeyProvider {
+    /// Creates a new builder-style object to manufacture [`SpekeKeyProvider`](crate::model::SpekeKeyProvider).
+    pub fn builder() -> crate::model::speke_key_provider::Builder {
+        crate::model::speke_key_provider::Builder::default()
+    }
+}
+
 /// See [`SpekeKeyProvider`](crate::model::SpekeKeyProvider).
 pub mod speke_key_provider {
 
@@ -602,12 +612,6 @@ pub mod speke_key_provider {
         }
     }
 }
-impl SpekeKeyProvider {
-    /// Creates a new builder-style object to manufacture [`SpekeKeyProvider`](crate::model::SpekeKeyProvider).
-    pub fn builder() -> crate::model::speke_key_provider::Builder {
-        crate::model::speke_key_provider::Builder::default()
-    }
-}
 
 /// Use encryptionContractConfiguration to configure one or more content encryption keys for your endpoints that use SPEKE 2.0. The encryption contract defines which content keys are used to encrypt the audio and video tracks in your stream. To configure the encryption contract, specify which audio and video encryption presets to use. Note the following considerations when using encryptionContractConfiguration: encryptionContractConfiguration can be used for DASH or CMAF endpoints that use SPEKE 2.0. SPEKE 2.0 relies on the CPIX 2.3 specification. You must disable key rotation for this endpoint by setting keyRotationIntervalSeconds to 0.
 #[non_exhaustive]
@@ -630,6 +634,13 @@ impl EncryptionContractConfiguration {
         self.preset_speke20_video.as_ref()
     }
 }
+impl EncryptionContractConfiguration {
+    /// Creates a new builder-style object to manufacture [`EncryptionContractConfiguration`](crate::model::EncryptionContractConfiguration).
+    pub fn builder() -> crate::model::encryption_contract_configuration::Builder {
+        crate::model::encryption_contract_configuration::Builder::default()
+    }
+}
+
 /// See [`EncryptionContractConfiguration`](crate::model::EncryptionContractConfiguration).
 pub mod encryption_contract_configuration {
 
@@ -674,12 +685,6 @@ pub mod encryption_contract_configuration {
                 preset_speke20_video: self.preset_speke20_video,
             }
         }
-    }
-}
-impl EncryptionContractConfiguration {
-    /// Creates a new builder-style object to manufacture [`EncryptionContractConfiguration`](crate::model::EncryptionContractConfiguration).
-    pub fn builder() -> crate::model::encryption_contract_configuration::Builder {
-        crate::model::encryption_contract_configuration::Builder::default()
     }
 }
 
@@ -1032,6 +1037,13 @@ impl HlsPackage {
         self.use_audio_rendition_group
     }
 }
+impl HlsPackage {
+    /// Creates a new builder-style object to manufacture [`HlsPackage`](crate::model::HlsPackage).
+    pub fn builder() -> crate::model::hls_package::Builder {
+        crate::model::hls_package::Builder::default()
+    }
+}
+
 /// See [`HlsPackage`](crate::model::HlsPackage).
 pub mod hls_package {
 
@@ -1225,12 +1237,6 @@ pub mod hls_package {
         }
     }
 }
-impl HlsPackage {
-    /// Creates a new builder-style object to manufacture [`HlsPackage`](crate::model::HlsPackage).
-    pub fn builder() -> crate::model::hls_package::Builder {
-        crate::model::hls_package::Builder::default()
-    }
-}
 
 /// When writing a match expression against `PlaylistType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -1369,6 +1375,13 @@ impl HlsEncryption {
         self.speke_key_provider.as_ref()
     }
 }
+impl HlsEncryption {
+    /// Creates a new builder-style object to manufacture [`HlsEncryption`](crate::model::HlsEncryption).
+    pub fn builder() -> crate::model::hls_encryption::Builder {
+        crate::model::hls_encryption::Builder::default()
+    }
+}
+
 /// See [`HlsEncryption`](crate::model::HlsEncryption).
 pub mod hls_encryption {
 
@@ -1460,12 +1473,6 @@ pub mod hls_encryption {
                 speke_key_provider: self.speke_key_provider,
             }
         }
-    }
-}
-impl HlsEncryption {
-    /// Creates a new builder-style object to manufacture [`HlsEncryption`](crate::model::HlsEncryption).
-    pub fn builder() -> crate::model::hls_encryption::Builder {
-        crate::model::hls_encryption::Builder::default()
     }
 }
 
@@ -2034,6 +2041,13 @@ impl DashPackage {
         self.utc_timing_uri.as_deref()
     }
 }
+impl DashPackage {
+    /// Creates a new builder-style object to manufacture [`DashPackage`](crate::model::DashPackage).
+    pub fn builder() -> crate::model::dash_package::Builder {
+        crate::model::dash_package::Builder::default()
+    }
+}
+
 /// See [`DashPackage`](crate::model::DashPackage).
 pub mod dash_package {
 
@@ -2293,12 +2307,6 @@ pub mod dash_package {
                 utc_timing_uri: self.utc_timing_uri,
             }
         }
-    }
-}
-impl DashPackage {
-    /// Creates a new builder-style object to manufacture [`DashPackage`](crate::model::DashPackage).
-    pub fn builder() -> crate::model::dash_package::Builder {
-        crate::model::dash_package::Builder::default()
     }
 }
 
@@ -2801,6 +2809,13 @@ impl DashEncryption {
         self.speke_key_provider.as_ref()
     }
 }
+impl DashEncryption {
+    /// Creates a new builder-style object to manufacture [`DashEncryption`](crate::model::DashEncryption).
+    pub fn builder() -> crate::model::dash_encryption::Builder {
+        crate::model::dash_encryption::Builder::default()
+    }
+}
+
 /// See [`DashEncryption`](crate::model::DashEncryption).
 pub mod dash_encryption {
 
@@ -2849,12 +2864,6 @@ pub mod dash_encryption {
         }
     }
 }
-impl DashEncryption {
-    /// Creates a new builder-style object to manufacture [`DashEncryption`](crate::model::DashEncryption).
-    pub fn builder() -> crate::model::dash_encryption::Builder {
-        crate::model::dash_encryption::Builder::default()
-    }
-}
 
 /// A Common Media Application Format (CMAF) packaging configuration.
 #[non_exhaustive]
@@ -2898,6 +2907,13 @@ impl CmafPackage {
         self.stream_selection.as_ref()
     }
 }
+impl CmafPackage {
+    /// Creates a new builder-style object to manufacture [`CmafPackage`](crate::model::CmafPackage).
+    pub fn builder() -> crate::model::cmaf_package::Builder {
+        crate::model::cmaf_package::Builder::default()
+    }
+}
+
 /// See [`CmafPackage`](crate::model::CmafPackage).
 pub mod cmaf_package {
 
@@ -2992,12 +3008,6 @@ pub mod cmaf_package {
         }
     }
 }
-impl CmafPackage {
-    /// Creates a new builder-style object to manufacture [`CmafPackage`](crate::model::CmafPackage).
-    pub fn builder() -> crate::model::cmaf_package::Builder {
-        crate::model::cmaf_package::Builder::default()
-    }
-}
 
 /// A HTTP Live Streaming (HLS) manifest configuration.
 #[non_exhaustive]
@@ -3078,6 +3088,13 @@ impl HlsManifest {
         self.ads_on_delivery_restrictions.as_ref()
     }
 }
+impl HlsManifest {
+    /// Creates a new builder-style object to manufacture [`HlsManifest`](crate::model::HlsManifest).
+    pub fn builder() -> crate::model::hls_manifest::Builder {
+        crate::model::hls_manifest::Builder::default()
+    }
+}
+
 /// See [`HlsManifest`](crate::model::HlsManifest).
 pub mod hls_manifest {
 
@@ -3244,12 +3261,6 @@ pub mod hls_manifest {
         }
     }
 }
-impl HlsManifest {
-    /// Creates a new builder-style object to manufacture [`HlsManifest`](crate::model::HlsManifest).
-    pub fn builder() -> crate::model::hls_manifest::Builder {
-        crate::model::hls_manifest::Builder::default()
-    }
-}
 
 /// A Common Media Application Format (CMAF) encryption configuration.
 #[non_exhaustive]
@@ -3286,6 +3297,13 @@ impl CmafEncryption {
         self.speke_key_provider.as_ref()
     }
 }
+impl CmafEncryption {
+    /// Creates a new builder-style object to manufacture [`CmafEncryption`](crate::model::CmafEncryption).
+    pub fn builder() -> crate::model::cmaf_encryption::Builder {
+        crate::model::cmaf_encryption::Builder::default()
+    }
+}
+
 /// See [`CmafEncryption`](crate::model::CmafEncryption).
 pub mod cmaf_encryption {
 
@@ -3365,12 +3383,6 @@ pub mod cmaf_encryption {
                 speke_key_provider: self.speke_key_provider,
             }
         }
-    }
-}
-impl CmafEncryption {
-    /// Creates a new builder-style object to manufacture [`CmafEncryption`](crate::model::CmafEncryption).
-    pub fn builder() -> crate::model::cmaf_encryption::Builder {
-        crate::model::cmaf_encryption::Builder::default()
     }
 }
 
@@ -3487,6 +3499,13 @@ impl Authorization {
         self.secrets_role_arn.as_deref()
     }
 }
+impl Authorization {
+    /// Creates a new builder-style object to manufacture [`Authorization`](crate::model::Authorization).
+    pub fn builder() -> crate::model::authorization::Builder {
+        crate::model::authorization::Builder::default()
+    }
+}
+
 /// See [`Authorization`](crate::model::Authorization).
 pub mod authorization {
 
@@ -3531,12 +3550,6 @@ pub mod authorization {
                 secrets_role_arn: self.secrets_role_arn,
             }
         }
-    }
-}
-impl Authorization {
-    /// Creates a new builder-style object to manufacture [`Authorization`](crate::model::Authorization).
-    pub fn builder() -> crate::model::authorization::Builder {
-        crate::model::authorization::Builder::default()
     }
 }
 
@@ -3585,6 +3598,13 @@ impl CmafPackageCreateOrUpdateParameters {
         self.stream_selection.as_ref()
     }
 }
+impl CmafPackageCreateOrUpdateParameters {
+    /// Creates a new builder-style object to manufacture [`CmafPackageCreateOrUpdateParameters`](crate::model::CmafPackageCreateOrUpdateParameters).
+    pub fn builder() -> crate::model::cmaf_package_create_or_update_parameters::Builder {
+        crate::model::cmaf_package_create_or_update_parameters::Builder::default()
+    }
+}
+
 /// See [`CmafPackageCreateOrUpdateParameters`](crate::model::CmafPackageCreateOrUpdateParameters).
 pub mod cmaf_package_create_or_update_parameters {
 
@@ -3685,12 +3705,6 @@ pub mod cmaf_package_create_or_update_parameters {
         }
     }
 }
-impl CmafPackageCreateOrUpdateParameters {
-    /// Creates a new builder-style object to manufacture [`CmafPackageCreateOrUpdateParameters`](crate::model::CmafPackageCreateOrUpdateParameters).
-    pub fn builder() -> crate::model::cmaf_package_create_or_update_parameters::Builder {
-        crate::model::cmaf_package_create_or_update_parameters::Builder::default()
-    }
-}
 
 /// A HTTP Live Streaming (HLS) manifest configuration.
 #[non_exhaustive]
@@ -3764,6 +3778,13 @@ impl HlsManifestCreateOrUpdateParameters {
         self.program_date_time_interval_seconds
     }
 }
+impl HlsManifestCreateOrUpdateParameters {
+    /// Creates a new builder-style object to manufacture [`HlsManifestCreateOrUpdateParameters`](crate::model::HlsManifestCreateOrUpdateParameters).
+    pub fn builder() -> crate::model::hls_manifest_create_or_update_parameters::Builder {
+        crate::model::hls_manifest_create_or_update_parameters::Builder::default()
+    }
+}
+
 /// See [`HlsManifestCreateOrUpdateParameters`](crate::model::HlsManifestCreateOrUpdateParameters).
 pub mod hls_manifest_create_or_update_parameters {
 
@@ -3918,12 +3939,6 @@ pub mod hls_manifest_create_or_update_parameters {
         }
     }
 }
-impl HlsManifestCreateOrUpdateParameters {
-    /// Creates a new builder-style object to manufacture [`HlsManifestCreateOrUpdateParameters`](crate::model::HlsManifestCreateOrUpdateParameters).
-    pub fn builder() -> crate::model::hls_manifest_create_or_update_parameters::Builder {
-        crate::model::hls_manifest_create_or_update_parameters::Builder::default()
-    }
-}
 
 /// Configure ingress access logging.
 #[non_exhaustive]
@@ -3939,6 +3954,13 @@ impl IngressAccessLogs {
         self.log_group_name.as_deref()
     }
 }
+impl IngressAccessLogs {
+    /// Creates a new builder-style object to manufacture [`IngressAccessLogs`](crate::model::IngressAccessLogs).
+    pub fn builder() -> crate::model::ingress_access_logs::Builder {
+        crate::model::ingress_access_logs::Builder::default()
+    }
+}
+
 /// See [`IngressAccessLogs`](crate::model::IngressAccessLogs).
 pub mod ingress_access_logs {
 
@@ -3970,12 +3992,6 @@ pub mod ingress_access_logs {
         }
     }
 }
-impl IngressAccessLogs {
-    /// Creates a new builder-style object to manufacture [`IngressAccessLogs`](crate::model::IngressAccessLogs).
-    pub fn builder() -> crate::model::ingress_access_logs::Builder {
-        crate::model::ingress_access_logs::Builder::default()
-    }
-}
 
 /// An HTTP Live Streaming (HLS) ingest resource configuration.
 #[non_exhaustive]
@@ -3991,6 +4007,13 @@ impl HlsIngest {
         self.ingest_endpoints.as_deref()
     }
 }
+impl HlsIngest {
+    /// Creates a new builder-style object to manufacture [`HlsIngest`](crate::model::HlsIngest).
+    pub fn builder() -> crate::model::hls_ingest::Builder {
+        crate::model::hls_ingest::Builder::default()
+    }
+}
+
 /// See [`HlsIngest`](crate::model::HlsIngest).
 pub mod hls_ingest {
 
@@ -4029,12 +4052,6 @@ pub mod hls_ingest {
         }
     }
 }
-impl HlsIngest {
-    /// Creates a new builder-style object to manufacture [`HlsIngest`](crate::model::HlsIngest).
-    pub fn builder() -> crate::model::hls_ingest::Builder {
-        crate::model::hls_ingest::Builder::default()
-    }
-}
 
 /// An endpoint for ingesting source content for a Channel.
 #[non_exhaustive]
@@ -4071,6 +4088,13 @@ impl IngestEndpoint {
         self.username.as_deref()
     }
 }
+impl IngestEndpoint {
+    /// Creates a new builder-style object to manufacture [`IngestEndpoint`](crate::model::IngestEndpoint).
+    pub fn builder() -> crate::model::ingest_endpoint::Builder {
+        crate::model::ingest_endpoint::Builder::default()
+    }
+}
+
 /// See [`IngestEndpoint`](crate::model::IngestEndpoint).
 pub mod ingest_endpoint {
 
@@ -4135,12 +4159,6 @@ pub mod ingest_endpoint {
         }
     }
 }
-impl IngestEndpoint {
-    /// Creates a new builder-style object to manufacture [`IngestEndpoint`](crate::model::IngestEndpoint).
-    pub fn builder() -> crate::model::ingest_endpoint::Builder {
-        crate::model::ingest_endpoint::Builder::default()
-    }
-}
 
 /// Configure egress access logging.
 #[non_exhaustive]
@@ -4156,6 +4174,13 @@ impl EgressAccessLogs {
         self.log_group_name.as_deref()
     }
 }
+impl EgressAccessLogs {
+    /// Creates a new builder-style object to manufacture [`EgressAccessLogs`](crate::model::EgressAccessLogs).
+    pub fn builder() -> crate::model::egress_access_logs::Builder {
+        crate::model::egress_access_logs::Builder::default()
+    }
+}
+
 /// See [`EgressAccessLogs`](crate::model::EgressAccessLogs).
 pub mod egress_access_logs {
 
@@ -4185,12 +4210,6 @@ pub mod egress_access_logs {
                 log_group_name: self.log_group_name,
             }
         }
-    }
-}
-impl EgressAccessLogs {
-    /// Creates a new builder-style object to manufacture [`EgressAccessLogs`](crate::model::EgressAccessLogs).
-    pub fn builder() -> crate::model::egress_access_logs::Builder {
-        crate::model::egress_access_logs::Builder::default()
     }
 }
 
@@ -4317,6 +4336,13 @@ impl OriginEndpoint {
         self.whitelist.as_deref()
     }
 }
+impl OriginEndpoint {
+    /// Creates a new builder-style object to manufacture [`OriginEndpoint`](crate::model::OriginEndpoint).
+    pub fn builder() -> crate::model::origin_endpoint::Builder {
+        crate::model::origin_endpoint::Builder::default()
+    }
+}
+
 /// See [`OriginEndpoint`](crate::model::OriginEndpoint).
 pub mod origin_endpoint {
 
@@ -4572,12 +4598,6 @@ pub mod origin_endpoint {
         }
     }
 }
-impl OriginEndpoint {
-    /// Creates a new builder-style object to manufacture [`OriginEndpoint`](crate::model::OriginEndpoint).
-    pub fn builder() -> crate::model::origin_endpoint::Builder {
-        crate::model::origin_endpoint::Builder::default()
-    }
-}
 
 /// A HarvestJob resource configuration
 #[non_exhaustive]
@@ -4649,6 +4669,13 @@ impl HarvestJob {
         self.status.as_ref()
     }
 }
+impl HarvestJob {
+    /// Creates a new builder-style object to manufacture [`HarvestJob`](crate::model::HarvestJob).
+    pub fn builder() -> crate::model::harvest_job::Builder {
+        crate::model::harvest_job::Builder::default()
+    }
+}
+
 /// See [`HarvestJob`](crate::model::HarvestJob).
 pub mod harvest_job {
 
@@ -4779,12 +4806,6 @@ pub mod harvest_job {
         }
     }
 }
-impl HarvestJob {
-    /// Creates a new builder-style object to manufacture [`HarvestJob`](crate::model::HarvestJob).
-    pub fn builder() -> crate::model::harvest_job::Builder {
-        crate::model::harvest_job::Builder::default()
-    }
-}
 
 /// When writing a match expression against `Status`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -4909,6 +4930,13 @@ impl S3Destination {
         self.role_arn.as_deref()
     }
 }
+impl S3Destination {
+    /// Creates a new builder-style object to manufacture [`S3Destination`](crate::model::S3Destination).
+    pub fn builder() -> crate::model::s3_destination::Builder {
+        crate::model::s3_destination::Builder::default()
+    }
+}
+
 /// See [`S3Destination`](crate::model::S3Destination).
 pub mod s3_destination {
 
@@ -4959,12 +4987,6 @@ pub mod s3_destination {
                 role_arn: self.role_arn,
             }
         }
-    }
-}
-impl S3Destination {
-    /// Creates a new builder-style object to manufacture [`S3Destination`](crate::model::S3Destination).
-    pub fn builder() -> crate::model::s3_destination::Builder {
-        crate::model::s3_destination::Builder::default()
     }
 }
 
@@ -5028,6 +5050,13 @@ impl Channel {
         self.tags.as_ref()
     }
 }
+impl Channel {
+    /// Creates a new builder-style object to manufacture [`Channel`](crate::model::Channel).
+    pub fn builder() -> crate::model::channel::Builder {
+        crate::model::channel::Builder::default()
+    }
+}
+
 /// See [`Channel`](crate::model::Channel).
 pub mod channel {
 
@@ -5152,11 +5181,5 @@ pub mod channel {
                 tags: self.tags,
             }
         }
-    }
-}
-impl Channel {
-    /// Creates a new builder-style object to manufacture [`Channel`](crate::model::Channel).
-    pub fn builder() -> crate::model::channel::Builder {
-        crate::model::channel::Builder::default()
     }
 }

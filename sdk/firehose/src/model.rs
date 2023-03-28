@@ -72,6 +72,13 @@ impl AmazonOpenSearchServerlessDestinationUpdate {
         self.cloud_watch_logging_options.as_ref()
     }
 }
+impl AmazonOpenSearchServerlessDestinationUpdate {
+    /// Creates a new builder-style object to manufacture [`AmazonOpenSearchServerlessDestinationUpdate`](crate::model::AmazonOpenSearchServerlessDestinationUpdate).
+    pub fn builder() -> crate::model::amazon_open_search_serverless_destination_update::Builder {
+        crate::model::amazon_open_search_serverless_destination_update::Builder::default()
+    }
+}
+
 /// See [`AmazonOpenSearchServerlessDestinationUpdate`](crate::model::AmazonOpenSearchServerlessDestinationUpdate).
 pub mod amazon_open_search_serverless_destination_update {
 
@@ -218,12 +225,6 @@ pub mod amazon_open_search_serverless_destination_update {
         }
     }
 }
-impl AmazonOpenSearchServerlessDestinationUpdate {
-    /// Creates a new builder-style object to manufacture [`AmazonOpenSearchServerlessDestinationUpdate`](crate::model::AmazonOpenSearchServerlessDestinationUpdate).
-    pub fn builder() -> crate::model::amazon_open_search_serverless_destination_update::Builder {
-        crate::model::amazon_open_search_serverless_destination_update::Builder::default()
-    }
-}
 
 /// <p>Describes the Amazon CloudWatch logging options for your delivery stream.</p>
 #[non_exhaustive]
@@ -253,6 +254,13 @@ impl CloudWatchLoggingOptions {
         self.log_stream_name.as_deref()
     }
 }
+impl CloudWatchLoggingOptions {
+    /// Creates a new builder-style object to manufacture [`CloudWatchLoggingOptions`](crate::model::CloudWatchLoggingOptions).
+    pub fn builder() -> crate::model::cloud_watch_logging_options::Builder {
+        crate::model::cloud_watch_logging_options::Builder::default()
+    }
+}
+
 /// See [`CloudWatchLoggingOptions`](crate::model::CloudWatchLoggingOptions).
 pub mod cloud_watch_logging_options {
 
@@ -311,12 +319,6 @@ pub mod cloud_watch_logging_options {
         }
     }
 }
-impl CloudWatchLoggingOptions {
-    /// Creates a new builder-style object to manufacture [`CloudWatchLoggingOptions`](crate::model::CloudWatchLoggingOptions).
-    pub fn builder() -> crate::model::cloud_watch_logging_options::Builder {
-        crate::model::cloud_watch_logging_options::Builder::default()
-    }
-}
 
 /// <p>Describes a data processing configuration.</p>
 #[non_exhaustive]
@@ -339,6 +341,13 @@ impl ProcessingConfiguration {
         self.processors.as_deref()
     }
 }
+impl ProcessingConfiguration {
+    /// Creates a new builder-style object to manufacture [`ProcessingConfiguration`](crate::model::ProcessingConfiguration).
+    pub fn builder() -> crate::model::processing_configuration::Builder {
+        crate::model::processing_configuration::Builder::default()
+    }
+}
+
 /// See [`ProcessingConfiguration`](crate::model::ProcessingConfiguration).
 pub mod processing_configuration {
 
@@ -388,12 +397,6 @@ pub mod processing_configuration {
         }
     }
 }
-impl ProcessingConfiguration {
-    /// Creates a new builder-style object to manufacture [`ProcessingConfiguration`](crate::model::ProcessingConfiguration).
-    pub fn builder() -> crate::model::processing_configuration::Builder {
-        crate::model::processing_configuration::Builder::default()
-    }
-}
 
 /// <p>Describes a data processor.</p>
 #[non_exhaustive]
@@ -416,6 +419,13 @@ impl Processor {
         self.parameters.as_deref()
     }
 }
+impl Processor {
+    /// Creates a new builder-style object to manufacture [`Processor`](crate::model::Processor).
+    pub fn builder() -> crate::model::processor::Builder {
+        crate::model::processor::Builder::default()
+    }
+}
+
 /// See [`Processor`](crate::model::Processor).
 pub mod processor {
 
@@ -465,12 +475,6 @@ pub mod processor {
         }
     }
 }
-impl Processor {
-    /// Creates a new builder-style object to manufacture [`Processor`](crate::model::Processor).
-    pub fn builder() -> crate::model::processor::Builder {
-        crate::model::processor::Builder::default()
-    }
-}
 
 /// <p>Describes the processor parameter. </p>
 #[non_exhaustive]
@@ -493,6 +497,13 @@ impl ProcessorParameter {
         self.parameter_value.as_deref()
     }
 }
+impl ProcessorParameter {
+    /// Creates a new builder-style object to manufacture [`ProcessorParameter`](crate::model::ProcessorParameter).
+    pub fn builder() -> crate::model::processor_parameter::Builder {
+        crate::model::processor_parameter::Builder::default()
+    }
+}
+
 /// See [`ProcessorParameter`](crate::model::ProcessorParameter).
 pub mod processor_parameter {
 
@@ -537,12 +548,6 @@ pub mod processor_parameter {
                 parameter_value: self.parameter_value,
             }
         }
-    }
-}
-impl ProcessorParameter {
-    /// Creates a new builder-style object to manufacture [`ProcessorParameter`](crate::model::ProcessorParameter).
-    pub fn builder() -> crate::model::processor_parameter::Builder {
-        crate::model::processor_parameter::Builder::default()
     }
 }
 
@@ -857,6 +862,13 @@ impl S3DestinationUpdate {
         self.cloud_watch_logging_options.as_ref()
     }
 }
+impl S3DestinationUpdate {
+    /// Creates a new builder-style object to manufacture [`S3DestinationUpdate`](crate::model::S3DestinationUpdate).
+    pub fn builder() -> crate::model::s3_destination_update::Builder {
+        crate::model::s3_destination_update::Builder::default()
+    }
+}
+
 /// See [`S3DestinationUpdate`](crate::model::S3DestinationUpdate).
 pub mod s3_destination_update {
 
@@ -994,12 +1006,6 @@ pub mod s3_destination_update {
         }
     }
 }
-impl S3DestinationUpdate {
-    /// Creates a new builder-style object to manufacture [`S3DestinationUpdate`](crate::model::S3DestinationUpdate).
-    pub fn builder() -> crate::model::s3_destination_update::Builder {
-        crate::model::s3_destination_update::Builder::default()
-    }
-}
 
 /// <p>Describes the encryption for a destination in Amazon S3.</p>
 #[non_exhaustive]
@@ -1022,6 +1028,13 @@ impl EncryptionConfiguration {
         self.kms_encryption_config.as_ref()
     }
 }
+impl EncryptionConfiguration {
+    /// Creates a new builder-style object to manufacture [`EncryptionConfiguration`](crate::model::EncryptionConfiguration).
+    pub fn builder() -> crate::model::encryption_configuration::Builder {
+        crate::model::encryption_configuration::Builder::default()
+    }
+}
+
 /// See [`EncryptionConfiguration`](crate::model::EncryptionConfiguration).
 pub mod encryption_configuration {
 
@@ -1068,12 +1081,6 @@ pub mod encryption_configuration {
         }
     }
 }
-impl EncryptionConfiguration {
-    /// Creates a new builder-style object to manufacture [`EncryptionConfiguration`](crate::model::EncryptionConfiguration).
-    pub fn builder() -> crate::model::encryption_configuration::Builder {
-        crate::model::encryption_configuration::Builder::default()
-    }
-}
 
 /// <p>Describes an encryption key for a destination in Amazon S3.</p>
 #[non_exhaustive]
@@ -1089,6 +1096,13 @@ impl KmsEncryptionConfig {
         self.awskms_key_arn.as_deref()
     }
 }
+impl KmsEncryptionConfig {
+    /// Creates a new builder-style object to manufacture [`KmsEncryptionConfig`](crate::model::KmsEncryptionConfig).
+    pub fn builder() -> crate::model::kms_encryption_config::Builder {
+        crate::model::kms_encryption_config::Builder::default()
+    }
+}
+
 /// See [`KmsEncryptionConfig`](crate::model::KmsEncryptionConfig).
 pub mod kms_encryption_config {
 
@@ -1118,12 +1132,6 @@ pub mod kms_encryption_config {
                 awskms_key_arn: self.awskms_key_arn,
             }
         }
-    }
-}
-impl KmsEncryptionConfig {
-    /// Creates a new builder-style object to manufacture [`KmsEncryptionConfig`](crate::model::KmsEncryptionConfig).
-    pub fn builder() -> crate::model::kms_encryption_config::Builder {
-        crate::model::kms_encryption_config::Builder::default()
     }
 }
 
@@ -1344,6 +1352,13 @@ impl BufferingHints {
         self.interval_in_seconds
     }
 }
+impl BufferingHints {
+    /// Creates a new builder-style object to manufacture [`BufferingHints`](crate::model::BufferingHints).
+    pub fn builder() -> crate::model::buffering_hints::Builder {
+        crate::model::buffering_hints::Builder::default()
+    }
+}
+
 /// See [`BufferingHints`](crate::model::BufferingHints).
 pub mod buffering_hints {
 
@@ -1386,12 +1401,6 @@ pub mod buffering_hints {
         }
     }
 }
-impl BufferingHints {
-    /// Creates a new builder-style object to manufacture [`BufferingHints`](crate::model::BufferingHints).
-    pub fn builder() -> crate::model::buffering_hints::Builder {
-        crate::model::buffering_hints::Builder::default()
-    }
-}
 
 /// <p>Configures retry behavior in case Kinesis Data Firehose is unable to deliver documents to the Serverless offering for Amazon OpenSearch Service.</p>
 #[non_exhaustive]
@@ -1407,6 +1416,13 @@ impl AmazonOpenSearchServerlessRetryOptions {
         self.duration_in_seconds
     }
 }
+impl AmazonOpenSearchServerlessRetryOptions {
+    /// Creates a new builder-style object to manufacture [`AmazonOpenSearchServerlessRetryOptions`](crate::model::AmazonOpenSearchServerlessRetryOptions).
+    pub fn builder() -> crate::model::amazon_open_search_serverless_retry_options::Builder {
+        crate::model::amazon_open_search_serverless_retry_options::Builder::default()
+    }
+}
+
 /// See [`AmazonOpenSearchServerlessRetryOptions`](crate::model::AmazonOpenSearchServerlessRetryOptions).
 pub mod amazon_open_search_serverless_retry_options {
 
@@ -1435,12 +1451,6 @@ pub mod amazon_open_search_serverless_retry_options {
         }
     }
 }
-impl AmazonOpenSearchServerlessRetryOptions {
-    /// Creates a new builder-style object to manufacture [`AmazonOpenSearchServerlessRetryOptions`](crate::model::AmazonOpenSearchServerlessRetryOptions).
-    pub fn builder() -> crate::model::amazon_open_search_serverless_retry_options::Builder {
-        crate::model::amazon_open_search_serverless_retry_options::Builder::default()
-    }
-}
 
 /// <p>Describes the buffering to perform before delivering data to the Serverless offering for Amazon OpenSearch Service destination.</p>
 #[non_exhaustive]
@@ -1465,6 +1475,13 @@ impl AmazonOpenSearchServerlessBufferingHints {
         self.size_in_m_bs
     }
 }
+impl AmazonOpenSearchServerlessBufferingHints {
+    /// Creates a new builder-style object to manufacture [`AmazonOpenSearchServerlessBufferingHints`](crate::model::AmazonOpenSearchServerlessBufferingHints).
+    pub fn builder() -> crate::model::amazon_open_search_serverless_buffering_hints::Builder {
+        crate::model::amazon_open_search_serverless_buffering_hints::Builder::default()
+    }
+}
+
 /// See [`AmazonOpenSearchServerlessBufferingHints`](crate::model::AmazonOpenSearchServerlessBufferingHints).
 pub mod amazon_open_search_serverless_buffering_hints {
 
@@ -1505,12 +1522,6 @@ pub mod amazon_open_search_serverless_buffering_hints {
                 size_in_m_bs: self.size_in_m_bs,
             }
         }
-    }
-}
-impl AmazonOpenSearchServerlessBufferingHints {
-    /// Creates a new builder-style object to manufacture [`AmazonOpenSearchServerlessBufferingHints`](crate::model::AmazonOpenSearchServerlessBufferingHints).
-    pub fn builder() -> crate::model::amazon_open_search_serverless_buffering_hints::Builder {
-        crate::model::amazon_open_search_serverless_buffering_hints::Builder::default()
     }
 }
 
@@ -1594,6 +1605,13 @@ impl HttpEndpointDestinationUpdate {
         self.s3_update.as_ref()
     }
 }
+impl HttpEndpointDestinationUpdate {
+    /// Creates a new builder-style object to manufacture [`HttpEndpointDestinationUpdate`](crate::model::HttpEndpointDestinationUpdate).
+    pub fn builder() -> crate::model::http_endpoint_destination_update::Builder {
+        crate::model::http_endpoint_destination_update::Builder::default()
+    }
+}
+
 /// See [`HttpEndpointDestinationUpdate`](crate::model::HttpEndpointDestinationUpdate).
 pub mod http_endpoint_destination_update {
 
@@ -1758,12 +1776,6 @@ pub mod http_endpoint_destination_update {
         }
     }
 }
-impl HttpEndpointDestinationUpdate {
-    /// Creates a new builder-style object to manufacture [`HttpEndpointDestinationUpdate`](crate::model::HttpEndpointDestinationUpdate).
-    pub fn builder() -> crate::model::http_endpoint_destination_update::Builder {
-        crate::model::http_endpoint_destination_update::Builder::default()
-    }
-}
 
 /// When writing a match expression against `HttpEndpointS3BackupMode`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -1871,6 +1883,13 @@ impl HttpEndpointRetryOptions {
         self.duration_in_seconds
     }
 }
+impl HttpEndpointRetryOptions {
+    /// Creates a new builder-style object to manufacture [`HttpEndpointRetryOptions`](crate::model::HttpEndpointRetryOptions).
+    pub fn builder() -> crate::model::http_endpoint_retry_options::Builder {
+        crate::model::http_endpoint_retry_options::Builder::default()
+    }
+}
+
 /// See [`HttpEndpointRetryOptions`](crate::model::HttpEndpointRetryOptions).
 pub mod http_endpoint_retry_options {
 
@@ -1899,12 +1918,6 @@ pub mod http_endpoint_retry_options {
         }
     }
 }
-impl HttpEndpointRetryOptions {
-    /// Creates a new builder-style object to manufacture [`HttpEndpointRetryOptions`](crate::model::HttpEndpointRetryOptions).
-    pub fn builder() -> crate::model::http_endpoint_retry_options::Builder {
-        crate::model::http_endpoint_retry_options::Builder::default()
-    }
-}
 
 /// <p>The configuration of the HTTP endpoint request.</p>
 #[non_exhaustive]
@@ -1930,6 +1943,13 @@ impl HttpEndpointRequestConfiguration {
         self.common_attributes.as_deref()
     }
 }
+impl HttpEndpointRequestConfiguration {
+    /// Creates a new builder-style object to manufacture [`HttpEndpointRequestConfiguration`](crate::model::HttpEndpointRequestConfiguration).
+    pub fn builder() -> crate::model::http_endpoint_request_configuration::Builder {
+        crate::model::http_endpoint_request_configuration::Builder::default()
+    }
+}
+
 /// See [`HttpEndpointRequestConfiguration`](crate::model::HttpEndpointRequestConfiguration).
 pub mod http_endpoint_request_configuration {
 
@@ -1986,12 +2006,6 @@ pub mod http_endpoint_request_configuration {
         }
     }
 }
-impl HttpEndpointRequestConfiguration {
-    /// Creates a new builder-style object to manufacture [`HttpEndpointRequestConfiguration`](crate::model::HttpEndpointRequestConfiguration).
-    pub fn builder() -> crate::model::http_endpoint_request_configuration::Builder {
-        crate::model::http_endpoint_request_configuration::Builder::default()
-    }
-}
 
 /// <p>Describes the metadata that's delivered to the specified HTTP endpoint destination.</p>
 #[non_exhaustive]
@@ -2022,6 +2036,13 @@ impl std::fmt::Debug for HttpEndpointCommonAttribute {
         formatter.finish()
     }
 }
+impl HttpEndpointCommonAttribute {
+    /// Creates a new builder-style object to manufacture [`HttpEndpointCommonAttribute`](crate::model::HttpEndpointCommonAttribute).
+    pub fn builder() -> crate::model::http_endpoint_common_attribute::Builder {
+        crate::model::http_endpoint_common_attribute::Builder::default()
+    }
+}
+
 /// See [`HttpEndpointCommonAttribute`](crate::model::HttpEndpointCommonAttribute).
 pub mod http_endpoint_common_attribute {
 
@@ -2074,12 +2095,6 @@ pub mod http_endpoint_common_attribute {
             formatter.field("attribute_value", &"*** Sensitive Data Redacted ***");
             formatter.finish()
         }
-    }
-}
-impl HttpEndpointCommonAttribute {
-    /// Creates a new builder-style object to manufacture [`HttpEndpointCommonAttribute`](crate::model::HttpEndpointCommonAttribute).
-    pub fn builder() -> crate::model::http_endpoint_common_attribute::Builder {
-        crate::model::http_endpoint_common_attribute::Builder::default()
     }
 }
 
@@ -2196,6 +2211,13 @@ impl HttpEndpointBufferingHints {
         self.interval_in_seconds
     }
 }
+impl HttpEndpointBufferingHints {
+    /// Creates a new builder-style object to manufacture [`HttpEndpointBufferingHints`](crate::model::HttpEndpointBufferingHints).
+    pub fn builder() -> crate::model::http_endpoint_buffering_hints::Builder {
+        crate::model::http_endpoint_buffering_hints::Builder::default()
+    }
+}
+
 /// See [`HttpEndpointBufferingHints`](crate::model::HttpEndpointBufferingHints).
 pub mod http_endpoint_buffering_hints {
 
@@ -2236,12 +2258,6 @@ pub mod http_endpoint_buffering_hints {
                 interval_in_seconds: self.interval_in_seconds,
             }
         }
-    }
-}
-impl HttpEndpointBufferingHints {
-    /// Creates a new builder-style object to manufacture [`HttpEndpointBufferingHints`](crate::model::HttpEndpointBufferingHints).
-    pub fn builder() -> crate::model::http_endpoint_buffering_hints::Builder {
-        crate::model::http_endpoint_buffering_hints::Builder::default()
     }
 }
 
@@ -2286,6 +2302,13 @@ impl std::fmt::Debug for HttpEndpointConfiguration {
         formatter.finish()
     }
 }
+impl HttpEndpointConfiguration {
+    /// Creates a new builder-style object to manufacture [`HttpEndpointConfiguration`](crate::model::HttpEndpointConfiguration).
+    pub fn builder() -> crate::model::http_endpoint_configuration::Builder {
+        crate::model::http_endpoint_configuration::Builder::default()
+    }
+}
+
 /// See [`HttpEndpointConfiguration`](crate::model::HttpEndpointConfiguration).
 pub mod http_endpoint_configuration {
 
@@ -2349,12 +2372,6 @@ pub mod http_endpoint_configuration {
             formatter.field("access_key", &"*** Sensitive Data Redacted ***");
             formatter.finish()
         }
-    }
-}
-impl HttpEndpointConfiguration {
-    /// Creates a new builder-style object to manufacture [`HttpEndpointConfiguration`](crate::model::HttpEndpointConfiguration).
-    pub fn builder() -> crate::model::http_endpoint_configuration::Builder {
-        crate::model::http_endpoint_configuration::Builder::default()
     }
 }
 
@@ -2434,6 +2451,13 @@ impl SplunkDestinationUpdate {
         self.cloud_watch_logging_options.as_ref()
     }
 }
+impl SplunkDestinationUpdate {
+    /// Creates a new builder-style object to manufacture [`SplunkDestinationUpdate`](crate::model::SplunkDestinationUpdate).
+    pub fn builder() -> crate::model::splunk_destination_update::Builder {
+        crate::model::splunk_destination_update::Builder::default()
+    }
+}
+
 /// See [`SplunkDestinationUpdate`](crate::model::SplunkDestinationUpdate).
 pub mod splunk_destination_update {
 
@@ -2589,12 +2613,6 @@ pub mod splunk_destination_update {
         }
     }
 }
-impl SplunkDestinationUpdate {
-    /// Creates a new builder-style object to manufacture [`SplunkDestinationUpdate`](crate::model::SplunkDestinationUpdate).
-    pub fn builder() -> crate::model::splunk_destination_update::Builder {
-        crate::model::splunk_destination_update::Builder::default()
-    }
-}
 
 /// When writing a match expression against `SplunkS3BackupMode`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -2702,6 +2720,13 @@ impl SplunkRetryOptions {
         self.duration_in_seconds
     }
 }
+impl SplunkRetryOptions {
+    /// Creates a new builder-style object to manufacture [`SplunkRetryOptions`](crate::model::SplunkRetryOptions).
+    pub fn builder() -> crate::model::splunk_retry_options::Builder {
+        crate::model::splunk_retry_options::Builder::default()
+    }
+}
+
 /// See [`SplunkRetryOptions`](crate::model::SplunkRetryOptions).
 pub mod splunk_retry_options {
 
@@ -2728,12 +2753,6 @@ pub mod splunk_retry_options {
                 duration_in_seconds: self.duration_in_seconds,
             }
         }
-    }
-}
-impl SplunkRetryOptions {
-    /// Creates a new builder-style object to manufacture [`SplunkRetryOptions`](crate::model::SplunkRetryOptions).
-    pub fn builder() -> crate::model::splunk_retry_options::Builder {
-        crate::model::splunk_retry_options::Builder::default()
     }
 }
 
@@ -2924,6 +2943,13 @@ impl AmazonopensearchserviceDestinationUpdate {
         self.cloud_watch_logging_options.as_ref()
     }
 }
+impl AmazonopensearchserviceDestinationUpdate {
+    /// Creates a new builder-style object to manufacture [`AmazonopensearchserviceDestinationUpdate`](crate::model::AmazonopensearchserviceDestinationUpdate).
+    pub fn builder() -> crate::model::amazonopensearchservice_destination_update::Builder {
+        crate::model::amazonopensearchservice_destination_update::Builder::default()
+    }
+}
+
 /// See [`AmazonopensearchserviceDestinationUpdate`](crate::model::AmazonopensearchserviceDestinationUpdate).
 pub mod amazonopensearchservice_destination_update {
 
@@ -3115,12 +3141,6 @@ pub mod amazonopensearchservice_destination_update {
         }
     }
 }
-impl AmazonopensearchserviceDestinationUpdate {
-    /// Creates a new builder-style object to manufacture [`AmazonopensearchserviceDestinationUpdate`](crate::model::AmazonopensearchserviceDestinationUpdate).
-    pub fn builder() -> crate::model::amazonopensearchservice_destination_update::Builder {
-        crate::model::amazonopensearchservice_destination_update::Builder::default()
-    }
-}
 
 /// <p>Configures retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon OpenSearch Service. </p>
 #[non_exhaustive]
@@ -3136,6 +3156,13 @@ impl AmazonopensearchserviceRetryOptions {
         self.duration_in_seconds
     }
 }
+impl AmazonopensearchserviceRetryOptions {
+    /// Creates a new builder-style object to manufacture [`AmazonopensearchserviceRetryOptions`](crate::model::AmazonopensearchserviceRetryOptions).
+    pub fn builder() -> crate::model::amazonopensearchservice_retry_options::Builder {
+        crate::model::amazonopensearchservice_retry_options::Builder::default()
+    }
+}
+
 /// See [`AmazonopensearchserviceRetryOptions`](crate::model::AmazonopensearchserviceRetryOptions).
 pub mod amazonopensearchservice_retry_options {
 
@@ -3164,12 +3191,6 @@ pub mod amazonopensearchservice_retry_options {
         }
     }
 }
-impl AmazonopensearchserviceRetryOptions {
-    /// Creates a new builder-style object to manufacture [`AmazonopensearchserviceRetryOptions`](crate::model::AmazonopensearchserviceRetryOptions).
-    pub fn builder() -> crate::model::amazonopensearchservice_retry_options::Builder {
-        crate::model::amazonopensearchservice_retry_options::Builder::default()
-    }
-}
 
 /// <p>Describes the buffering to perform before delivering data to the Amazon OpenSearch Service destination. </p>
 #[non_exhaustive]
@@ -3194,6 +3215,13 @@ impl AmazonopensearchserviceBufferingHints {
         self.size_in_m_bs
     }
 }
+impl AmazonopensearchserviceBufferingHints {
+    /// Creates a new builder-style object to manufacture [`AmazonopensearchserviceBufferingHints`](crate::model::AmazonopensearchserviceBufferingHints).
+    pub fn builder() -> crate::model::amazonopensearchservice_buffering_hints::Builder {
+        crate::model::amazonopensearchservice_buffering_hints::Builder::default()
+    }
+}
+
 /// See [`AmazonopensearchserviceBufferingHints`](crate::model::AmazonopensearchserviceBufferingHints).
 pub mod amazonopensearchservice_buffering_hints {
 
@@ -3234,12 +3262,6 @@ pub mod amazonopensearchservice_buffering_hints {
                 size_in_m_bs: self.size_in_m_bs,
             }
         }
-    }
-}
-impl AmazonopensearchserviceBufferingHints {
-    /// Creates a new builder-style object to manufacture [`AmazonopensearchserviceBufferingHints`](crate::model::AmazonopensearchserviceBufferingHints).
-    pub fn builder() -> crate::model::amazonopensearchservice_buffering_hints::Builder {
-        crate::model::amazonopensearchservice_buffering_hints::Builder::default()
     }
 }
 
@@ -3446,6 +3468,13 @@ impl ElasticsearchDestinationUpdate {
         self.cloud_watch_logging_options.as_ref()
     }
 }
+impl ElasticsearchDestinationUpdate {
+    /// Creates a new builder-style object to manufacture [`ElasticsearchDestinationUpdate`](crate::model::ElasticsearchDestinationUpdate).
+    pub fn builder() -> crate::model::elasticsearch_destination_update::Builder {
+        crate::model::elasticsearch_destination_update::Builder::default()
+    }
+}
+
 /// See [`ElasticsearchDestinationUpdate`](crate::model::ElasticsearchDestinationUpdate).
 pub mod elasticsearch_destination_update {
 
@@ -3631,12 +3660,6 @@ pub mod elasticsearch_destination_update {
         }
     }
 }
-impl ElasticsearchDestinationUpdate {
-    /// Creates a new builder-style object to manufacture [`ElasticsearchDestinationUpdate`](crate::model::ElasticsearchDestinationUpdate).
-    pub fn builder() -> crate::model::elasticsearch_destination_update::Builder {
-        crate::model::elasticsearch_destination_update::Builder::default()
-    }
-}
 
 /// <p>Configures retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon ES.</p>
 #[non_exhaustive]
@@ -3652,6 +3675,13 @@ impl ElasticsearchRetryOptions {
         self.duration_in_seconds
     }
 }
+impl ElasticsearchRetryOptions {
+    /// Creates a new builder-style object to manufacture [`ElasticsearchRetryOptions`](crate::model::ElasticsearchRetryOptions).
+    pub fn builder() -> crate::model::elasticsearch_retry_options::Builder {
+        crate::model::elasticsearch_retry_options::Builder::default()
+    }
+}
+
 /// See [`ElasticsearchRetryOptions`](crate::model::ElasticsearchRetryOptions).
 pub mod elasticsearch_retry_options {
 
@@ -3680,12 +3710,6 @@ pub mod elasticsearch_retry_options {
         }
     }
 }
-impl ElasticsearchRetryOptions {
-    /// Creates a new builder-style object to manufacture [`ElasticsearchRetryOptions`](crate::model::ElasticsearchRetryOptions).
-    pub fn builder() -> crate::model::elasticsearch_retry_options::Builder {
-        crate::model::elasticsearch_retry_options::Builder::default()
-    }
-}
 
 /// <p>Describes the buffering to perform before delivering data to the Amazon ES destination.</p>
 #[non_exhaustive]
@@ -3710,6 +3734,13 @@ impl ElasticsearchBufferingHints {
         self.size_in_m_bs
     }
 }
+impl ElasticsearchBufferingHints {
+    /// Creates a new builder-style object to manufacture [`ElasticsearchBufferingHints`](crate::model::ElasticsearchBufferingHints).
+    pub fn builder() -> crate::model::elasticsearch_buffering_hints::Builder {
+        crate::model::elasticsearch_buffering_hints::Builder::default()
+    }
+}
+
 /// See [`ElasticsearchBufferingHints`](crate::model::ElasticsearchBufferingHints).
 pub mod elasticsearch_buffering_hints {
 
@@ -3750,12 +3781,6 @@ pub mod elasticsearch_buffering_hints {
                 size_in_m_bs: self.size_in_m_bs,
             }
         }
-    }
-}
-impl ElasticsearchBufferingHints {
-    /// Creates a new builder-style object to manufacture [`ElasticsearchBufferingHints`](crate::model::ElasticsearchBufferingHints).
-    pub fn builder() -> crate::model::elasticsearch_buffering_hints::Builder {
-        crate::model::elasticsearch_buffering_hints::Builder::default()
     }
 }
 
@@ -3976,6 +4001,13 @@ impl std::fmt::Debug for RedshiftDestinationUpdate {
         formatter.finish()
     }
 }
+impl RedshiftDestinationUpdate {
+    /// Creates a new builder-style object to manufacture [`RedshiftDestinationUpdate`](crate::model::RedshiftDestinationUpdate).
+    pub fn builder() -> crate::model::redshift_destination_update::Builder {
+        crate::model::redshift_destination_update::Builder::default()
+    }
+}
+
 /// See [`RedshiftDestinationUpdate`](crate::model::RedshiftDestinationUpdate).
 pub mod redshift_destination_update {
 
@@ -4178,12 +4210,6 @@ pub mod redshift_destination_update {
         }
     }
 }
-impl RedshiftDestinationUpdate {
-    /// Creates a new builder-style object to manufacture [`RedshiftDestinationUpdate`](crate::model::RedshiftDestinationUpdate).
-    pub fn builder() -> crate::model::redshift_destination_update::Builder {
-        crate::model::redshift_destination_update::Builder::default()
-    }
-}
 
 /// When writing a match expression against `RedshiftS3BackupMode`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -4291,6 +4317,13 @@ impl RedshiftRetryOptions {
         self.duration_in_seconds
     }
 }
+impl RedshiftRetryOptions {
+    /// Creates a new builder-style object to manufacture [`RedshiftRetryOptions`](crate::model::RedshiftRetryOptions).
+    pub fn builder() -> crate::model::redshift_retry_options::Builder {
+        crate::model::redshift_retry_options::Builder::default()
+    }
+}
+
 /// See [`RedshiftRetryOptions`](crate::model::RedshiftRetryOptions).
 pub mod redshift_retry_options {
 
@@ -4317,12 +4350,6 @@ pub mod redshift_retry_options {
                 duration_in_seconds: self.duration_in_seconds,
             }
         }
-    }
-}
-impl RedshiftRetryOptions {
-    /// Creates a new builder-style object to manufacture [`RedshiftRetryOptions`](crate::model::RedshiftRetryOptions).
-    pub fn builder() -> crate::model::redshift_retry_options::Builder {
-        crate::model::redshift_retry_options::Builder::default()
     }
 }
 
@@ -4366,6 +4393,13 @@ impl CopyCommand {
         self.copy_options.as_deref()
     }
 }
+impl CopyCommand {
+    /// Creates a new builder-style object to manufacture [`CopyCommand`](crate::model::CopyCommand).
+    pub fn builder() -> crate::model::copy_command::Builder {
+        crate::model::copy_command::Builder::default()
+    }
+}
+
 /// See [`CopyCommand`](crate::model::CopyCommand).
 pub mod copy_command {
 
@@ -4434,12 +4468,6 @@ pub mod copy_command {
                 copy_options: self.copy_options,
             }
         }
-    }
-}
-impl CopyCommand {
-    /// Creates a new builder-style object to manufacture [`CopyCommand`](crate::model::CopyCommand).
-    pub fn builder() -> crate::model::copy_command::Builder {
-        crate::model::copy_command::Builder::default()
     }
 }
 
@@ -4553,6 +4581,13 @@ impl ExtendedS3DestinationUpdate {
         self.dynamic_partitioning_configuration.as_ref()
     }
 }
+impl ExtendedS3DestinationUpdate {
+    /// Creates a new builder-style object to manufacture [`ExtendedS3DestinationUpdate`](crate::model::ExtendedS3DestinationUpdate).
+    pub fn builder() -> crate::model::extended_s3_destination_update::Builder {
+        crate::model::extended_s3_destination_update::Builder::default()
+    }
+}
+
 /// See [`ExtendedS3DestinationUpdate`](crate::model::ExtendedS3DestinationUpdate).
 pub mod extended_s3_destination_update {
 
@@ -4775,12 +4810,6 @@ pub mod extended_s3_destination_update {
         }
     }
 }
-impl ExtendedS3DestinationUpdate {
-    /// Creates a new builder-style object to manufacture [`ExtendedS3DestinationUpdate`](crate::model::ExtendedS3DestinationUpdate).
-    pub fn builder() -> crate::model::extended_s3_destination_update::Builder {
-        crate::model::extended_s3_destination_update::Builder::default()
-    }
-}
 
 /// <p>The configuration of the dynamic partitioning mechanism that creates smaller data sets from the streaming data by partitioning it based on partition keys. Currently, dynamic partitioning is only supported for Amazon S3 destinations. </p>
 #[non_exhaustive]
@@ -4803,6 +4832,13 @@ impl DynamicPartitioningConfiguration {
         self.enabled
     }
 }
+impl DynamicPartitioningConfiguration {
+    /// Creates a new builder-style object to manufacture [`DynamicPartitioningConfiguration`](crate::model::DynamicPartitioningConfiguration).
+    pub fn builder() -> crate::model::dynamic_partitioning_configuration::Builder {
+        crate::model::dynamic_partitioning_configuration::Builder::default()
+    }
+}
+
 /// See [`DynamicPartitioningConfiguration`](crate::model::DynamicPartitioningConfiguration).
 pub mod dynamic_partitioning_configuration {
 
@@ -4846,12 +4882,6 @@ pub mod dynamic_partitioning_configuration {
         }
     }
 }
-impl DynamicPartitioningConfiguration {
-    /// Creates a new builder-style object to manufacture [`DynamicPartitioningConfiguration`](crate::model::DynamicPartitioningConfiguration).
-    pub fn builder() -> crate::model::dynamic_partitioning_configuration::Builder {
-        crate::model::dynamic_partitioning_configuration::Builder::default()
-    }
-}
 
 /// <p> The retry behavior in case Kinesis Data Firehose is unable to deliver data to an Amazon S3 prefix.</p>
 #[non_exhaustive]
@@ -4867,6 +4897,13 @@ impl RetryOptions {
         self.duration_in_seconds
     }
 }
+impl RetryOptions {
+    /// Creates a new builder-style object to manufacture [`RetryOptions`](crate::model::RetryOptions).
+    pub fn builder() -> crate::model::retry_options::Builder {
+        crate::model::retry_options::Builder::default()
+    }
+}
+
 /// See [`RetryOptions`](crate::model::RetryOptions).
 pub mod retry_options {
 
@@ -4893,12 +4930,6 @@ pub mod retry_options {
                 duration_in_seconds: self.duration_in_seconds,
             }
         }
-    }
-}
-impl RetryOptions {
-    /// Creates a new builder-style object to manufacture [`RetryOptions`](crate::model::RetryOptions).
-    pub fn builder() -> crate::model::retry_options::Builder {
-        crate::model::retry_options::Builder::default()
     }
 }
 
@@ -4941,6 +4972,13 @@ impl DataFormatConversionConfiguration {
         self.enabled
     }
 }
+impl DataFormatConversionConfiguration {
+    /// Creates a new builder-style object to manufacture [`DataFormatConversionConfiguration`](crate::model::DataFormatConversionConfiguration).
+    pub fn builder() -> crate::model::data_format_conversion_configuration::Builder {
+        crate::model::data_format_conversion_configuration::Builder::default()
+    }
+}
+
 /// See [`DataFormatConversionConfiguration`](crate::model::DataFormatConversionConfiguration).
 pub mod data_format_conversion_configuration {
 
@@ -5022,12 +5060,6 @@ pub mod data_format_conversion_configuration {
         }
     }
 }
-impl DataFormatConversionConfiguration {
-    /// Creates a new builder-style object to manufacture [`DataFormatConversionConfiguration`](crate::model::DataFormatConversionConfiguration).
-    pub fn builder() -> crate::model::data_format_conversion_configuration::Builder {
-        crate::model::data_format_conversion_configuration::Builder::default()
-    }
-}
 
 /// <p>Specifies the serializer that you want Kinesis Data Firehose to use to convert the format of your data before it writes it to Amazon S3. This parameter is required if <code>Enabled</code> is set to true.</p>
 #[non_exhaustive]
@@ -5043,6 +5075,13 @@ impl OutputFormatConfiguration {
         self.serializer.as_ref()
     }
 }
+impl OutputFormatConfiguration {
+    /// Creates a new builder-style object to manufacture [`OutputFormatConfiguration`](crate::model::OutputFormatConfiguration).
+    pub fn builder() -> crate::model::output_format_configuration::Builder {
+        crate::model::output_format_configuration::Builder::default()
+    }
+}
+
 /// See [`OutputFormatConfiguration`](crate::model::OutputFormatConfiguration).
 pub mod output_format_configuration {
 
@@ -5074,12 +5113,6 @@ pub mod output_format_configuration {
         }
     }
 }
-impl OutputFormatConfiguration {
-    /// Creates a new builder-style object to manufacture [`OutputFormatConfiguration`](crate::model::OutputFormatConfiguration).
-    pub fn builder() -> crate::model::output_format_configuration::Builder {
-        crate::model::output_format_configuration::Builder::default()
-    }
-}
 
 /// <p>The serializer that you want Kinesis Data Firehose to use to convert data to the target format before writing it to Amazon S3. Kinesis Data Firehose supports two types of serializers: the <a href="https://hive.apache.org/javadocs/r1.2.2/api/org/apache/hadoop/hive/ql/io/orc/OrcSerde.html">ORC SerDe</a> and the <a href="https://hive.apache.org/javadocs/r1.2.2/api/org/apache/hadoop/hive/ql/io/parquet/serde/ParquetHiveSerDe.html">Parquet SerDe</a>.</p>
 #[non_exhaustive]
@@ -5102,6 +5135,13 @@ impl Serializer {
         self.orc_ser_de.as_ref()
     }
 }
+impl Serializer {
+    /// Creates a new builder-style object to manufacture [`Serializer`](crate::model::Serializer).
+    pub fn builder() -> crate::model::serializer::Builder {
+        crate::model::serializer::Builder::default()
+    }
+}
+
 /// See [`Serializer`](crate::model::Serializer).
 pub mod serializer {
 
@@ -5146,12 +5186,6 @@ pub mod serializer {
                 orc_ser_de: self.orc_ser_de,
             }
         }
-    }
-}
-impl Serializer {
-    /// Creates a new builder-style object to manufacture [`Serializer`](crate::model::Serializer).
-    pub fn builder() -> crate::model::serializer::Builder {
-        crate::model::serializer::Builder::default()
     }
 }
 
@@ -5236,6 +5270,13 @@ impl OrcSerDe {
         self.format_version.as_ref()
     }
 }
+impl OrcSerDe {
+    /// Creates a new builder-style object to manufacture [`OrcSerDe`](crate::model::OrcSerDe).
+    pub fn builder() -> crate::model::orc_ser_de::Builder {
+        crate::model::orc_ser_de::Builder::default()
+    }
+}
+
 /// See [`OrcSerDe`](crate::model::OrcSerDe).
 pub mod orc_ser_de {
 
@@ -5393,12 +5434,6 @@ pub mod orc_ser_de {
                 format_version: self.format_version,
             }
         }
-    }
-}
-impl OrcSerDe {
-    /// Creates a new builder-style object to manufacture [`OrcSerDe`](crate::model::OrcSerDe).
-    pub fn builder() -> crate::model::orc_ser_de::Builder {
-        crate::model::orc_ser_de::Builder::default()
     }
 }
 
@@ -5636,6 +5671,13 @@ impl ParquetSerDe {
         self.writer_version.as_ref()
     }
 }
+impl ParquetSerDe {
+    /// Creates a new builder-style object to manufacture [`ParquetSerDe`](crate::model::ParquetSerDe).
+    pub fn builder() -> crate::model::parquet_ser_de::Builder {
+        crate::model::parquet_ser_de::Builder::default()
+    }
+}
+
 /// See [`ParquetSerDe`](crate::model::ParquetSerDe).
 pub mod parquet_ser_de {
 
@@ -5731,12 +5773,6 @@ pub mod parquet_ser_de {
                 writer_version: self.writer_version,
             }
         }
-    }
-}
-impl ParquetSerDe {
-    /// Creates a new builder-style object to manufacture [`ParquetSerDe`](crate::model::ParquetSerDe).
-    pub fn builder() -> crate::model::parquet_ser_de::Builder {
-        crate::model::parquet_ser_de::Builder::default()
     }
 }
 
@@ -5943,6 +5979,13 @@ impl InputFormatConfiguration {
         self.deserializer.as_ref()
     }
 }
+impl InputFormatConfiguration {
+    /// Creates a new builder-style object to manufacture [`InputFormatConfiguration`](crate::model::InputFormatConfiguration).
+    pub fn builder() -> crate::model::input_format_configuration::Builder {
+        crate::model::input_format_configuration::Builder::default()
+    }
+}
+
 /// See [`InputFormatConfiguration`](crate::model::InputFormatConfiguration).
 pub mod input_format_configuration {
 
@@ -5974,12 +6017,6 @@ pub mod input_format_configuration {
         }
     }
 }
-impl InputFormatConfiguration {
-    /// Creates a new builder-style object to manufacture [`InputFormatConfiguration`](crate::model::InputFormatConfiguration).
-    pub fn builder() -> crate::model::input_format_configuration::Builder {
-        crate::model::input_format_configuration::Builder::default()
-    }
-}
 
 /// <p>The deserializer you want Kinesis Data Firehose to use for converting the input data from JSON. Kinesis Data Firehose then serializes the data to its final format using the <code>Serializer</code>. Kinesis Data Firehose supports two types of deserializers: the <a href="https://cwiki.apache.org/confluence/display/Hive/LanguageManual+DDL#LanguageManualDDL-JSON">Apache Hive JSON SerDe</a> and the <a href="https://github.com/rcongiu/Hive-JSON-Serde">OpenX JSON SerDe</a>.</p>
 #[non_exhaustive]
@@ -6002,6 +6039,13 @@ impl Deserializer {
         self.hive_json_ser_de.as_ref()
     }
 }
+impl Deserializer {
+    /// Creates a new builder-style object to manufacture [`Deserializer`](crate::model::Deserializer).
+    pub fn builder() -> crate::model::deserializer::Builder {
+        crate::model::deserializer::Builder::default()
+    }
+}
+
 /// See [`Deserializer`](crate::model::Deserializer).
 pub mod deserializer {
 
@@ -6048,12 +6092,6 @@ pub mod deserializer {
         }
     }
 }
-impl Deserializer {
-    /// Creates a new builder-style object to manufacture [`Deserializer`](crate::model::Deserializer).
-    pub fn builder() -> crate::model::deserializer::Builder {
-        crate::model::deserializer::Builder::default()
-    }
-}
 
 /// <p>The native Hive / HCatalog JsonSerDe. Used by Kinesis Data Firehose for deserializing data, which means converting it from the JSON format in preparation for serializing it to the Parquet or ORC format. This is one of two deserializers you can choose, depending on which one offers the functionality you need. The other option is the OpenX SerDe.</p>
 #[non_exhaustive]
@@ -6069,6 +6107,13 @@ impl HiveJsonSerDe {
         self.timestamp_formats.as_deref()
     }
 }
+impl HiveJsonSerDe {
+    /// Creates a new builder-style object to manufacture [`HiveJsonSerDe`](crate::model::HiveJsonSerDe).
+    pub fn builder() -> crate::model::hive_json_ser_de::Builder {
+        crate::model::hive_json_ser_de::Builder::default()
+    }
+}
+
 /// See [`HiveJsonSerDe`](crate::model::HiveJsonSerDe).
 pub mod hive_json_ser_de {
 
@@ -6106,12 +6151,6 @@ pub mod hive_json_ser_de {
         }
     }
 }
-impl HiveJsonSerDe {
-    /// Creates a new builder-style object to manufacture [`HiveJsonSerDe`](crate::model::HiveJsonSerDe).
-    pub fn builder() -> crate::model::hive_json_ser_de::Builder {
-        crate::model::hive_json_ser_de::Builder::default()
-    }
-}
 
 /// <p>The OpenX SerDe. Used by Kinesis Data Firehose for deserializing data, which means converting it from the JSON format in preparation for serializing it to the Parquet or ORC format. This is one of two deserializers you can choose, depending on which one offers the functionality you need. The other option is the native Hive / HCatalog JsonSerDe.</p>
 #[non_exhaustive]
@@ -6147,6 +6186,13 @@ impl OpenXJsonSerDe {
         self.column_to_json_key_mappings.as_ref()
     }
 }
+impl OpenXJsonSerDe {
+    /// Creates a new builder-style object to manufacture [`OpenXJsonSerDe`](crate::model::OpenXJsonSerDe).
+    pub fn builder() -> crate::model::open_x_json_ser_de::Builder {
+        crate::model::open_x_json_ser_de::Builder::default()
+    }
+}
+
 /// See [`OpenXJsonSerDe`](crate::model::OpenXJsonSerDe).
 pub mod open_x_json_ser_de {
 
@@ -6222,12 +6268,6 @@ pub mod open_x_json_ser_de {
         }
     }
 }
-impl OpenXJsonSerDe {
-    /// Creates a new builder-style object to manufacture [`OpenXJsonSerDe`](crate::model::OpenXJsonSerDe).
-    pub fn builder() -> crate::model::open_x_json_ser_de::Builder {
-        crate::model::open_x_json_ser_de::Builder::default()
-    }
-}
 
 /// <p>Specifies the schema to which you want Kinesis Data Firehose to configure your data before it writes it to Amazon S3. This parameter is required if <code>Enabled</code> is set to true.</p>
 #[non_exhaustive]
@@ -6290,6 +6330,13 @@ impl SchemaConfiguration {
         self.version_id.as_deref()
     }
 }
+impl SchemaConfiguration {
+    /// Creates a new builder-style object to manufacture [`SchemaConfiguration`](crate::model::SchemaConfiguration).
+    pub fn builder() -> crate::model::schema_configuration::Builder {
+        crate::model::schema_configuration::Builder::default()
+    }
+}
+
 /// See [`SchemaConfiguration`](crate::model::SchemaConfiguration).
 pub mod schema_configuration {
 
@@ -6391,12 +6438,6 @@ pub mod schema_configuration {
                 version_id: self.version_id,
             }
         }
-    }
-}
-impl SchemaConfiguration {
-    /// Creates a new builder-style object to manufacture [`SchemaConfiguration`](crate::model::SchemaConfiguration).
-    pub fn builder() -> crate::model::schema_configuration::Builder {
-        crate::model::schema_configuration::Builder::default()
     }
 }
 
@@ -6511,6 +6552,13 @@ impl Tag {
         self.value.as_deref()
     }
 }
+impl Tag {
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
+    pub fn builder() -> crate::model::tag::Builder {
+        crate::model::tag::Builder::default()
+    }
+}
+
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
 
@@ -6551,12 +6599,6 @@ pub mod tag {
         }
     }
 }
-impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
-    pub fn builder() -> crate::model::tag::Builder {
-        crate::model::tag::Builder::default()
-    }
-}
 
 /// <p>Specifies the type and Amazon Resource Name (ARN) of the CMK to use for Server-Side Encryption (SSE). </p>
 #[non_exhaustive]
@@ -6587,6 +6629,13 @@ impl DeliveryStreamEncryptionConfigurationInput {
         self.key_type.as_ref()
     }
 }
+impl DeliveryStreamEncryptionConfigurationInput {
+    /// Creates a new builder-style object to manufacture [`DeliveryStreamEncryptionConfigurationInput`](crate::model::DeliveryStreamEncryptionConfigurationInput).
+    pub fn builder() -> crate::model::delivery_stream_encryption_configuration_input::Builder {
+        crate::model::delivery_stream_encryption_configuration_input::Builder::default()
+    }
+}
+
 /// See [`DeliveryStreamEncryptionConfigurationInput`](crate::model::DeliveryStreamEncryptionConfigurationInput).
 pub mod delivery_stream_encryption_configuration_input {
 
@@ -6633,12 +6682,6 @@ pub mod delivery_stream_encryption_configuration_input {
                 key_type: self.key_type,
             }
         }
-    }
-}
-impl DeliveryStreamEncryptionConfigurationInput {
-    /// Creates a new builder-style object to manufacture [`DeliveryStreamEncryptionConfigurationInput`](crate::model::DeliveryStreamEncryptionConfigurationInput).
-    pub fn builder() -> crate::model::delivery_stream_encryption_configuration_input::Builder {
-        crate::model::delivery_stream_encryption_configuration_input::Builder::default()
     }
 }
 
@@ -6760,6 +6803,13 @@ impl PutRecordBatchResponseEntry {
         self.error_message.as_deref()
     }
 }
+impl PutRecordBatchResponseEntry {
+    /// Creates a new builder-style object to manufacture [`PutRecordBatchResponseEntry`](crate::model::PutRecordBatchResponseEntry).
+    pub fn builder() -> crate::model::put_record_batch_response_entry::Builder {
+        crate::model::put_record_batch_response_entry::Builder::default()
+    }
+}
+
 /// See [`PutRecordBatchResponseEntry`](crate::model::PutRecordBatchResponseEntry).
 pub mod put_record_batch_response_entry {
 
@@ -6815,12 +6865,6 @@ pub mod put_record_batch_response_entry {
         }
     }
 }
-impl PutRecordBatchResponseEntry {
-    /// Creates a new builder-style object to manufacture [`PutRecordBatchResponseEntry`](crate::model::PutRecordBatchResponseEntry).
-    pub fn builder() -> crate::model::put_record_batch_response_entry::Builder {
-        crate::model::put_record_batch_response_entry::Builder::default()
-    }
-}
 
 /// <p>The unit of data in a delivery stream.</p>
 #[non_exhaustive]
@@ -6836,6 +6880,13 @@ impl Record {
         self.data.as_ref()
     }
 }
+impl Record {
+    /// Creates a new builder-style object to manufacture [`Record`](crate::model::Record).
+    pub fn builder() -> crate::model::record::Builder {
+        crate::model::record::Builder::default()
+    }
+}
+
 /// See [`Record`](crate::model::Record).
 pub mod record {
 
@@ -6860,12 +6911,6 @@ pub mod record {
         pub fn build(self) -> crate::model::Record {
             crate::model::Record { data: self.data }
         }
-    }
-}
-impl Record {
-    /// Creates a new builder-style object to manufacture [`Record`](crate::model::Record).
-    pub fn builder() -> crate::model::record::Builder {
-        crate::model::record::Builder::default()
     }
 }
 
@@ -7065,6 +7110,13 @@ impl DeliveryStreamDescription {
         self.has_more_destinations
     }
 }
+impl DeliveryStreamDescription {
+    /// Creates a new builder-style object to manufacture [`DeliveryStreamDescription`](crate::model::DeliveryStreamDescription).
+    pub fn builder() -> crate::model::delivery_stream_description::Builder {
+        crate::model::delivery_stream_description::Builder::default()
+    }
+}
+
 /// See [`DeliveryStreamDescription`](crate::model::DeliveryStreamDescription).
 pub mod delivery_stream_description {
 
@@ -7275,12 +7327,6 @@ pub mod delivery_stream_description {
         }
     }
 }
-impl DeliveryStreamDescription {
-    /// Creates a new builder-style object to manufacture [`DeliveryStreamDescription`](crate::model::DeliveryStreamDescription).
-    pub fn builder() -> crate::model::delivery_stream_description::Builder {
-        crate::model::delivery_stream_description::Builder::default()
-    }
-}
 
 /// <p>Describes the destination for a delivery stream.</p>
 #[non_exhaustive]
@@ -7377,6 +7423,13 @@ impl DestinationDescription {
             .as_ref()
     }
 }
+impl DestinationDescription {
+    /// Creates a new builder-style object to manufacture [`DestinationDescription`](crate::model::DestinationDescription).
+    pub fn builder() -> crate::model::destination_description::Builder {
+        crate::model::destination_description::Builder::default()
+    }
+}
+
 /// See [`DestinationDescription`](crate::model::DestinationDescription).
 pub mod destination_description {
 
@@ -7564,12 +7617,6 @@ pub mod destination_description {
         }
     }
 }
-impl DestinationDescription {
-    /// Creates a new builder-style object to manufacture [`DestinationDescription`](crate::model::DestinationDescription).
-    pub fn builder() -> crate::model::destination_description::Builder {
-        crate::model::destination_description::Builder::default()
-    }
-}
 
 /// <p>The destination description in the Serverless offering for Amazon OpenSearch Service.</p>
 #[non_exhaustive]
@@ -7664,6 +7711,14 @@ impl AmazonOpenSearchServerlessDestinationDescription {
         self.vpc_configuration_description.as_ref()
     }
 }
+impl AmazonOpenSearchServerlessDestinationDescription {
+    /// Creates a new builder-style object to manufacture [`AmazonOpenSearchServerlessDestinationDescription`](crate::model::AmazonOpenSearchServerlessDestinationDescription).
+    pub fn builder() -> crate::model::amazon_open_search_serverless_destination_description::Builder
+    {
+        crate::model::amazon_open_search_serverless_destination_description::Builder::default()
+    }
+}
+
 /// See [`AmazonOpenSearchServerlessDestinationDescription`](crate::model::AmazonOpenSearchServerlessDestinationDescription).
 pub mod amazon_open_search_serverless_destination_description {
 
@@ -7852,13 +7907,6 @@ pub mod amazon_open_search_serverless_destination_description {
         }
     }
 }
-impl AmazonOpenSearchServerlessDestinationDescription {
-    /// Creates a new builder-style object to manufacture [`AmazonOpenSearchServerlessDestinationDescription`](crate::model::AmazonOpenSearchServerlessDestinationDescription).
-    pub fn builder() -> crate::model::amazon_open_search_serverless_destination_description::Builder
-    {
-        crate::model::amazon_open_search_serverless_destination_description::Builder::default()
-    }
-}
 
 /// <p>The details of the VPC of the Amazon ES destination.</p>
 #[non_exhaustive]
@@ -7919,6 +7967,13 @@ impl VpcConfigurationDescription {
         self.vpc_id.as_deref()
     }
 }
+impl VpcConfigurationDescription {
+    /// Creates a new builder-style object to manufacture [`VpcConfigurationDescription`](crate::model::VpcConfigurationDescription).
+    pub fn builder() -> crate::model::vpc_configuration_description::Builder {
+        crate::model::vpc_configuration_description::Builder::default()
+    }
+}
+
 /// See [`VpcConfigurationDescription`](crate::model::VpcConfigurationDescription).
 pub mod vpc_configuration_description {
 
@@ -8025,12 +8080,6 @@ pub mod vpc_configuration_description {
         }
     }
 }
-impl VpcConfigurationDescription {
-    /// Creates a new builder-style object to manufacture [`VpcConfigurationDescription`](crate::model::VpcConfigurationDescription).
-    pub fn builder() -> crate::model::vpc_configuration_description::Builder {
-        crate::model::vpc_configuration_description::Builder::default()
-    }
-}
 
 /// <p>Describes a destination in Amazon S3.</p>
 #[non_exhaustive]
@@ -8099,6 +8148,13 @@ impl S3DestinationDescription {
         self.cloud_watch_logging_options.as_ref()
     }
 }
+impl S3DestinationDescription {
+    /// Creates a new builder-style object to manufacture [`S3DestinationDescription`](crate::model::S3DestinationDescription).
+    pub fn builder() -> crate::model::s3_destination_description::Builder {
+        crate::model::s3_destination_description::Builder::default()
+    }
+}
+
 /// See [`S3DestinationDescription`](crate::model::S3DestinationDescription).
 pub mod s3_destination_description {
 
@@ -8232,12 +8288,6 @@ pub mod s3_destination_description {
                 cloud_watch_logging_options: self.cloud_watch_logging_options,
             }
         }
-    }
-}
-impl S3DestinationDescription {
-    /// Creates a new builder-style object to manufacture [`S3DestinationDescription`](crate::model::S3DestinationDescription).
-    pub fn builder() -> crate::model::s3_destination_description::Builder {
-        crate::model::s3_destination_description::Builder::default()
     }
 }
 
@@ -8415,6 +8465,13 @@ impl HttpEndpointDestinationDescription {
         self.s3_destination_description.as_ref()
     }
 }
+impl HttpEndpointDestinationDescription {
+    /// Creates a new builder-style object to manufacture [`HttpEndpointDestinationDescription`](crate::model::HttpEndpointDestinationDescription).
+    pub fn builder() -> crate::model::http_endpoint_destination_description::Builder {
+        crate::model::http_endpoint_destination_description::Builder::default()
+    }
+}
+
 /// See [`HttpEndpointDestinationDescription`](crate::model::HttpEndpointDestinationDescription).
 pub mod http_endpoint_destination_description {
 
@@ -8583,12 +8640,6 @@ pub mod http_endpoint_destination_description {
         }
     }
 }
-impl HttpEndpointDestinationDescription {
-    /// Creates a new builder-style object to manufacture [`HttpEndpointDestinationDescription`](crate::model::HttpEndpointDestinationDescription).
-    pub fn builder() -> crate::model::http_endpoint_destination_description::Builder {
-        crate::model::http_endpoint_destination_description::Builder::default()
-    }
-}
 
 /// <p>Describes the HTTP endpoint selected as the destination. </p>
 #[non_exhaustive]
@@ -8619,6 +8670,13 @@ impl std::fmt::Debug for HttpEndpointDescription {
         formatter.finish()
     }
 }
+impl HttpEndpointDescription {
+    /// Creates a new builder-style object to manufacture [`HttpEndpointDescription`](crate::model::HttpEndpointDescription).
+    pub fn builder() -> crate::model::http_endpoint_description::Builder {
+        crate::model::http_endpoint_description::Builder::default()
+    }
+}
+
 /// See [`HttpEndpointDescription`](crate::model::HttpEndpointDescription).
 pub mod http_endpoint_description {
 
@@ -8665,12 +8723,6 @@ pub mod http_endpoint_description {
             formatter.field("name", &self.name);
             formatter.finish()
         }
-    }
-}
-impl HttpEndpointDescription {
-    /// Creates a new builder-style object to manufacture [`HttpEndpointDescription`](crate::model::HttpEndpointDescription).
-    pub fn builder() -> crate::model::http_endpoint_description::Builder {
-        crate::model::http_endpoint_description::Builder::default()
     }
 }
 
@@ -8750,6 +8802,13 @@ impl SplunkDestinationDescription {
         self.cloud_watch_logging_options.as_ref()
     }
 }
+impl SplunkDestinationDescription {
+    /// Creates a new builder-style object to manufacture [`SplunkDestinationDescription`](crate::model::SplunkDestinationDescription).
+    pub fn builder() -> crate::model::splunk_destination_description::Builder {
+        crate::model::splunk_destination_description::Builder::default()
+    }
+}
+
 /// See [`SplunkDestinationDescription`](crate::model::SplunkDestinationDescription).
 pub mod splunk_destination_description {
 
@@ -8907,12 +8966,6 @@ pub mod splunk_destination_description {
         }
     }
 }
-impl SplunkDestinationDescription {
-    /// Creates a new builder-style object to manufacture [`SplunkDestinationDescription`](crate::model::SplunkDestinationDescription).
-    pub fn builder() -> crate::model::splunk_destination_description::Builder {
-        crate::model::splunk_destination_description::Builder::default()
-    }
-}
 
 /// <p>The destination description in Amazon OpenSearch Service.</p>
 #[non_exhaustive]
@@ -9030,6 +9083,13 @@ impl AmazonopensearchserviceDestinationDescription {
         self.vpc_configuration_description.as_ref()
     }
 }
+impl AmazonopensearchserviceDestinationDescription {
+    /// Creates a new builder-style object to manufacture [`AmazonopensearchserviceDestinationDescription`](crate::model::AmazonopensearchserviceDestinationDescription).
+    pub fn builder() -> crate::model::amazonopensearchservice_destination_description::Builder {
+        crate::model::amazonopensearchservice_destination_description::Builder::default()
+    }
+}
+
 /// See [`AmazonopensearchserviceDestinationDescription`](crate::model::AmazonopensearchserviceDestinationDescription).
 pub mod amazonopensearchservice_destination_description {
 
@@ -9261,12 +9321,6 @@ pub mod amazonopensearchservice_destination_description {
         }
     }
 }
-impl AmazonopensearchserviceDestinationDescription {
-    /// Creates a new builder-style object to manufacture [`AmazonopensearchserviceDestinationDescription`](crate::model::AmazonopensearchserviceDestinationDescription).
-    pub fn builder() -> crate::model::amazonopensearchservice_destination_description::Builder {
-        crate::model::amazonopensearchservice_destination_description::Builder::default()
-    }
-}
 
 /// When writing a match expression against `AmazonopensearchserviceS3BackupMode`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -9473,6 +9527,13 @@ impl ElasticsearchDestinationDescription {
         self.vpc_configuration_description.as_ref()
     }
 }
+impl ElasticsearchDestinationDescription {
+    /// Creates a new builder-style object to manufacture [`ElasticsearchDestinationDescription`](crate::model::ElasticsearchDestinationDescription).
+    pub fn builder() -> crate::model::elasticsearch_destination_description::Builder {
+        crate::model::elasticsearch_destination_description::Builder::default()
+    }
+}
+
 /// See [`ElasticsearchDestinationDescription`](crate::model::ElasticsearchDestinationDescription).
 pub mod elasticsearch_destination_description {
 
@@ -9694,12 +9755,6 @@ pub mod elasticsearch_destination_description {
         }
     }
 }
-impl ElasticsearchDestinationDescription {
-    /// Creates a new builder-style object to manufacture [`ElasticsearchDestinationDescription`](crate::model::ElasticsearchDestinationDescription).
-    pub fn builder() -> crate::model::elasticsearch_destination_description::Builder {
-        crate::model::elasticsearch_destination_description::Builder::default()
-    }
-}
 
 /// When writing a match expression against `ElasticsearchS3BackupMode`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -9900,6 +9955,13 @@ impl std::fmt::Debug for RedshiftDestinationDescription {
         formatter.finish()
     }
 }
+impl RedshiftDestinationDescription {
+    /// Creates a new builder-style object to manufacture [`RedshiftDestinationDescription`](crate::model::RedshiftDestinationDescription).
+    pub fn builder() -> crate::model::redshift_destination_description::Builder {
+        crate::model::redshift_destination_description::Builder::default()
+    }
+}
+
 /// See [`RedshiftDestinationDescription`](crate::model::RedshiftDestinationDescription).
 pub mod redshift_destination_description {
 
@@ -10098,12 +10160,6 @@ pub mod redshift_destination_description {
         }
     }
 }
-impl RedshiftDestinationDescription {
-    /// Creates a new builder-style object to manufacture [`RedshiftDestinationDescription`](crate::model::RedshiftDestinationDescription).
-    pub fn builder() -> crate::model::redshift_destination_description::Builder {
-        crate::model::redshift_destination_description::Builder::default()
-    }
-}
 
 /// <p>Describes a destination in Amazon S3.</p>
 #[non_exhaustive]
@@ -10217,6 +10273,13 @@ impl ExtendedS3DestinationDescription {
         self.dynamic_partitioning_configuration.as_ref()
     }
 }
+impl ExtendedS3DestinationDescription {
+    /// Creates a new builder-style object to manufacture [`ExtendedS3DestinationDescription`](crate::model::ExtendedS3DestinationDescription).
+    pub fn builder() -> crate::model::extended_s3_destination_description::Builder {
+        crate::model::extended_s3_destination_description::Builder::default()
+    }
+}
+
 /// See [`ExtendedS3DestinationDescription`](crate::model::ExtendedS3DestinationDescription).
 pub mod extended_s3_destination_description {
 
@@ -10443,12 +10506,6 @@ pub mod extended_s3_destination_description {
         }
     }
 }
-impl ExtendedS3DestinationDescription {
-    /// Creates a new builder-style object to manufacture [`ExtendedS3DestinationDescription`](crate::model::ExtendedS3DestinationDescription).
-    pub fn builder() -> crate::model::extended_s3_destination_description::Builder {
-        crate::model::extended_s3_destination_description::Builder::default()
-    }
-}
 
 /// <p>Details about a Kinesis data stream used as the source for a Kinesis Data Firehose delivery stream.</p>
 #[non_exhaustive]
@@ -10467,6 +10524,13 @@ impl SourceDescription {
         self.kinesis_stream_source_description.as_ref()
     }
 }
+impl SourceDescription {
+    /// Creates a new builder-style object to manufacture [`SourceDescription`](crate::model::SourceDescription).
+    pub fn builder() -> crate::model::source_description::Builder {
+        crate::model::source_description::Builder::default()
+    }
+}
+
 /// See [`SourceDescription`](crate::model::SourceDescription).
 pub mod source_description {
 
@@ -10502,12 +10566,6 @@ pub mod source_description {
         }
     }
 }
-impl SourceDescription {
-    /// Creates a new builder-style object to manufacture [`SourceDescription`](crate::model::SourceDescription).
-    pub fn builder() -> crate::model::source_description::Builder {
-        crate::model::source_description::Builder::default()
-    }
-}
 
 /// <p>Details about a Kinesis data stream used as the source for a Kinesis Data Firehose delivery stream.</p>
 #[non_exhaustive]
@@ -10537,6 +10595,13 @@ impl KinesisStreamSourceDescription {
         self.delivery_start_timestamp.as_ref()
     }
 }
+impl KinesisStreamSourceDescription {
+    /// Creates a new builder-style object to manufacture [`KinesisStreamSourceDescription`](crate::model::KinesisStreamSourceDescription).
+    pub fn builder() -> crate::model::kinesis_stream_source_description::Builder {
+        crate::model::kinesis_stream_source_description::Builder::default()
+    }
+}
+
 /// See [`KinesisStreamSourceDescription`](crate::model::KinesisStreamSourceDescription).
 pub mod kinesis_stream_source_description {
 
@@ -10595,12 +10660,6 @@ pub mod kinesis_stream_source_description {
         }
     }
 }
-impl KinesisStreamSourceDescription {
-    /// Creates a new builder-style object to manufacture [`KinesisStreamSourceDescription`](crate::model::KinesisStreamSourceDescription).
-    pub fn builder() -> crate::model::kinesis_stream_source_description::Builder {
-        crate::model::kinesis_stream_source_description::Builder::default()
-    }
-}
 
 /// <p>Contains information about the server-side encryption (SSE) status for the delivery stream, the type customer master key (CMK) in use, if any, and the ARN of the CMK. You can get <code>DeliveryStreamEncryptionConfiguration</code> by invoking the <code>DescribeDeliveryStream</code> operation. </p>
 #[non_exhaustive]
@@ -10637,6 +10696,13 @@ impl DeliveryStreamEncryptionConfiguration {
         self.failure_description.as_ref()
     }
 }
+impl DeliveryStreamEncryptionConfiguration {
+    /// Creates a new builder-style object to manufacture [`DeliveryStreamEncryptionConfiguration`](crate::model::DeliveryStreamEncryptionConfiguration).
+    pub fn builder() -> crate::model::delivery_stream_encryption_configuration::Builder {
+        crate::model::delivery_stream_encryption_configuration::Builder::default()
+    }
+}
+
 /// See [`DeliveryStreamEncryptionConfiguration`](crate::model::DeliveryStreamEncryptionConfiguration).
 pub mod delivery_stream_encryption_configuration {
 
@@ -10707,12 +10773,6 @@ pub mod delivery_stream_encryption_configuration {
         }
     }
 }
-impl DeliveryStreamEncryptionConfiguration {
-    /// Creates a new builder-style object to manufacture [`DeliveryStreamEncryptionConfiguration`](crate::model::DeliveryStreamEncryptionConfiguration).
-    pub fn builder() -> crate::model::delivery_stream_encryption_configuration::Builder {
-        crate::model::delivery_stream_encryption_configuration::Builder::default()
-    }
-}
 
 /// <p>Provides details in case one of the following operations fails due to an error related to KMS: <code>CreateDeliveryStream</code>, <code>DeleteDeliveryStream</code>, <code>StartDeliveryStreamEncryption</code>, <code>StopDeliveryStreamEncryption</code>.</p>
 #[non_exhaustive]
@@ -10735,6 +10795,13 @@ impl FailureDescription {
         self.details.as_deref()
     }
 }
+impl FailureDescription {
+    /// Creates a new builder-style object to manufacture [`FailureDescription`](crate::model::FailureDescription).
+    pub fn builder() -> crate::model::failure_description::Builder {
+        crate::model::failure_description::Builder::default()
+    }
+}
+
 /// See [`FailureDescription`](crate::model::FailureDescription).
 pub mod failure_description {
 
@@ -10776,12 +10843,6 @@ pub mod failure_description {
                 details: self.details,
             }
         }
-    }
-}
-impl FailureDescription {
-    /// Creates a new builder-style object to manufacture [`FailureDescription`](crate::model::FailureDescription).
-    pub fn builder() -> crate::model::failure_description::Builder {
-        crate::model::failure_description::Builder::default()
     }
 }
 
@@ -11280,6 +11341,14 @@ impl AmazonOpenSearchServerlessDestinationConfiguration {
         self.vpc_configuration.as_ref()
     }
 }
+impl AmazonOpenSearchServerlessDestinationConfiguration {
+    /// Creates a new builder-style object to manufacture [`AmazonOpenSearchServerlessDestinationConfiguration`](crate::model::AmazonOpenSearchServerlessDestinationConfiguration).
+    pub fn builder(
+    ) -> crate::model::amazon_open_search_serverless_destination_configuration::Builder {
+        crate::model::amazon_open_search_serverless_destination_configuration::Builder::default()
+    }
+}
+
 /// See [`AmazonOpenSearchServerlessDestinationConfiguration`](crate::model::AmazonOpenSearchServerlessDestinationConfiguration).
 pub mod amazon_open_search_serverless_destination_configuration {
 
@@ -11460,13 +11529,6 @@ pub mod amazon_open_search_serverless_destination_configuration {
         }
     }
 }
-impl AmazonOpenSearchServerlessDestinationConfiguration {
-    /// Creates a new builder-style object to manufacture [`AmazonOpenSearchServerlessDestinationConfiguration`](crate::model::AmazonOpenSearchServerlessDestinationConfiguration).
-    pub fn builder(
-    ) -> crate::model::amazon_open_search_serverless_destination_configuration::Builder {
-        crate::model::amazon_open_search_serverless_destination_configuration::Builder::default()
-    }
-}
 
 /// <p>The details of the VPC of the Amazon ES destination.</p>
 #[non_exhaustive]
@@ -11520,6 +11582,13 @@ impl VpcConfiguration {
         self.security_group_ids.as_deref()
     }
 }
+impl VpcConfiguration {
+    /// Creates a new builder-style object to manufacture [`VpcConfiguration`](crate::model::VpcConfiguration).
+    pub fn builder() -> crate::model::vpc_configuration::Builder {
+        crate::model::vpc_configuration::Builder::default()
+    }
+}
+
 /// See [`VpcConfiguration`](crate::model::VpcConfiguration).
 pub mod vpc_configuration {
 
@@ -11614,12 +11683,6 @@ pub mod vpc_configuration {
         }
     }
 }
-impl VpcConfiguration {
-    /// Creates a new builder-style object to manufacture [`VpcConfiguration`](crate::model::VpcConfiguration).
-    pub fn builder() -> crate::model::vpc_configuration::Builder {
-        crate::model::vpc_configuration::Builder::default()
-    }
-}
 
 /// <p>Describes the configuration of a destination in Amazon S3.</p>
 #[non_exhaustive]
@@ -11690,6 +11753,13 @@ impl S3DestinationConfiguration {
         self.cloud_watch_logging_options.as_ref()
     }
 }
+impl S3DestinationConfiguration {
+    /// Creates a new builder-style object to manufacture [`S3DestinationConfiguration`](crate::model::S3DestinationConfiguration).
+    pub fn builder() -> crate::model::s3_destination_configuration::Builder {
+        crate::model::s3_destination_configuration::Builder::default()
+    }
+}
+
 /// See [`S3DestinationConfiguration`](crate::model::S3DestinationConfiguration).
 pub mod s3_destination_configuration {
 
@@ -11827,12 +11897,6 @@ pub mod s3_destination_configuration {
         }
     }
 }
-impl S3DestinationConfiguration {
-    /// Creates a new builder-style object to manufacture [`S3DestinationConfiguration`](crate::model::S3DestinationConfiguration).
-    pub fn builder() -> crate::model::s3_destination_configuration::Builder {
-        crate::model::s3_destination_configuration::Builder::default()
-    }
-}
 
 /// <p>Describes the configuration of the HTTP endpoint destination.</p>
 #[non_exhaustive]
@@ -11916,6 +11980,13 @@ impl HttpEndpointDestinationConfiguration {
         self.s3_configuration.as_ref()
     }
 }
+impl HttpEndpointDestinationConfiguration {
+    /// Creates a new builder-style object to manufacture [`HttpEndpointDestinationConfiguration`](crate::model::HttpEndpointDestinationConfiguration).
+    pub fn builder() -> crate::model::http_endpoint_destination_configuration::Builder {
+        crate::model::http_endpoint_destination_configuration::Builder::default()
+    }
+}
+
 /// See [`HttpEndpointDestinationConfiguration`](crate::model::HttpEndpointDestinationConfiguration).
 pub mod http_endpoint_destination_configuration {
 
@@ -12080,12 +12151,6 @@ pub mod http_endpoint_destination_configuration {
         }
     }
 }
-impl HttpEndpointDestinationConfiguration {
-    /// Creates a new builder-style object to manufacture [`HttpEndpointDestinationConfiguration`](crate::model::HttpEndpointDestinationConfiguration).
-    pub fn builder() -> crate::model::http_endpoint_destination_configuration::Builder {
-        crate::model::http_endpoint_destination_configuration::Builder::default()
-    }
-}
 
 /// <p>Describes the configuration of a destination in Splunk.</p>
 #[non_exhaustive]
@@ -12165,6 +12230,13 @@ impl SplunkDestinationConfiguration {
         self.cloud_watch_logging_options.as_ref()
     }
 }
+impl SplunkDestinationConfiguration {
+    /// Creates a new builder-style object to manufacture [`SplunkDestinationConfiguration`](crate::model::SplunkDestinationConfiguration).
+    pub fn builder() -> crate::model::splunk_destination_configuration::Builder {
+        crate::model::splunk_destination_configuration::Builder::default()
+    }
+}
+
 /// See [`SplunkDestinationConfiguration`](crate::model::SplunkDestinationConfiguration).
 pub mod splunk_destination_configuration {
 
@@ -12320,12 +12392,6 @@ pub mod splunk_destination_configuration {
         }
     }
 }
-impl SplunkDestinationConfiguration {
-    /// Creates a new builder-style object to manufacture [`SplunkDestinationConfiguration`](crate::model::SplunkDestinationConfiguration).
-    pub fn builder() -> crate::model::splunk_destination_configuration::Builder {
-        crate::model::splunk_destination_configuration::Builder::default()
-    }
-}
 
 /// <p>Describes the configuration of a destination in Amazon OpenSearch Service</p>
 #[non_exhaustive]
@@ -12440,6 +12506,13 @@ impl AmazonopensearchserviceDestinationConfiguration {
         self.vpc_configuration.as_ref()
     }
 }
+impl AmazonopensearchserviceDestinationConfiguration {
+    /// Creates a new builder-style object to manufacture [`AmazonopensearchserviceDestinationConfiguration`](crate::model::AmazonopensearchserviceDestinationConfiguration).
+    pub fn builder() -> crate::model::amazonopensearchservice_destination_configuration::Builder {
+        crate::model::amazonopensearchservice_destination_configuration::Builder::default()
+    }
+}
+
 /// See [`AmazonopensearchserviceDestinationConfiguration`](crate::model::AmazonopensearchserviceDestinationConfiguration).
 pub mod amazonopensearchservice_destination_configuration {
 
@@ -12663,12 +12736,6 @@ pub mod amazonopensearchservice_destination_configuration {
         }
     }
 }
-impl AmazonopensearchserviceDestinationConfiguration {
-    /// Creates a new builder-style object to manufacture [`AmazonopensearchserviceDestinationConfiguration`](crate::model::AmazonopensearchserviceDestinationConfiguration).
-    pub fn builder() -> crate::model::amazonopensearchservice_destination_configuration::Builder {
-        crate::model::amazonopensearchservice_destination_configuration::Builder::default()
-    }
-}
 
 /// <p>Describes the configuration of a destination in Amazon ES.</p>
 #[non_exhaustive]
@@ -12784,6 +12851,13 @@ impl ElasticsearchDestinationConfiguration {
         self.vpc_configuration.as_ref()
     }
 }
+impl ElasticsearchDestinationConfiguration {
+    /// Creates a new builder-style object to manufacture [`ElasticsearchDestinationConfiguration`](crate::model::ElasticsearchDestinationConfiguration).
+    pub fn builder() -> crate::model::elasticsearch_destination_configuration::Builder {
+        crate::model::elasticsearch_destination_configuration::Builder::default()
+    }
+}
+
 /// See [`ElasticsearchDestinationConfiguration`](crate::model::ElasticsearchDestinationConfiguration).
 pub mod elasticsearch_destination_configuration {
 
@@ -13001,12 +13075,6 @@ pub mod elasticsearch_destination_configuration {
         }
     }
 }
-impl ElasticsearchDestinationConfiguration {
-    /// Creates a new builder-style object to manufacture [`ElasticsearchDestinationConfiguration`](crate::model::ElasticsearchDestinationConfiguration).
-    pub fn builder() -> crate::model::elasticsearch_destination_configuration::Builder {
-        crate::model::elasticsearch_destination_configuration::Builder::default()
-    }
-}
 
 /// <p>Describes the configuration of a destination in Amazon Redshift.</p>
 #[non_exhaustive]
@@ -13122,6 +13190,13 @@ impl std::fmt::Debug for RedshiftDestinationConfiguration {
         formatter.finish()
     }
 }
+impl RedshiftDestinationConfiguration {
+    /// Creates a new builder-style object to manufacture [`RedshiftDestinationConfiguration`](crate::model::RedshiftDestinationConfiguration).
+    pub fn builder() -> crate::model::redshift_destination_configuration::Builder {
+        crate::model::redshift_destination_configuration::Builder::default()
+    }
+}
+
 /// See [`RedshiftDestinationConfiguration`](crate::model::RedshiftDestinationConfiguration).
 pub mod redshift_destination_configuration {
 
@@ -13328,12 +13403,6 @@ pub mod redshift_destination_configuration {
         }
     }
 }
-impl RedshiftDestinationConfiguration {
-    /// Creates a new builder-style object to manufacture [`RedshiftDestinationConfiguration`](crate::model::RedshiftDestinationConfiguration).
-    pub fn builder() -> crate::model::redshift_destination_configuration::Builder {
-        crate::model::redshift_destination_configuration::Builder::default()
-    }
-}
 
 /// <p>Describes the configuration of a destination in Amazon S3.</p>
 #[non_exhaustive]
@@ -13447,6 +13516,13 @@ impl ExtendedS3DestinationConfiguration {
         self.dynamic_partitioning_configuration.as_ref()
     }
 }
+impl ExtendedS3DestinationConfiguration {
+    /// Creates a new builder-style object to manufacture [`ExtendedS3DestinationConfiguration`](crate::model::ExtendedS3DestinationConfiguration).
+    pub fn builder() -> crate::model::extended_s3_destination_configuration::Builder {
+        crate::model::extended_s3_destination_configuration::Builder::default()
+    }
+}
+
 /// See [`ExtendedS3DestinationConfiguration`](crate::model::ExtendedS3DestinationConfiguration).
 pub mod extended_s3_destination_configuration {
 
@@ -13673,12 +13749,6 @@ pub mod extended_s3_destination_configuration {
         }
     }
 }
-impl ExtendedS3DestinationConfiguration {
-    /// Creates a new builder-style object to manufacture [`ExtendedS3DestinationConfiguration`](crate::model::ExtendedS3DestinationConfiguration).
-    pub fn builder() -> crate::model::extended_s3_destination_configuration::Builder {
-        crate::model::extended_s3_destination_configuration::Builder::default()
-    }
-}
 
 /// <p>The stream and role Amazon Resource Names (ARNs) for a Kinesis data stream used as the source for a delivery stream.</p>
 #[non_exhaustive]
@@ -13701,6 +13771,13 @@ impl KinesisStreamSourceConfiguration {
         self.role_arn.as_deref()
     }
 }
+impl KinesisStreamSourceConfiguration {
+    /// Creates a new builder-style object to manufacture [`KinesisStreamSourceConfiguration`](crate::model::KinesisStreamSourceConfiguration).
+    pub fn builder() -> crate::model::kinesis_stream_source_configuration::Builder {
+        crate::model::kinesis_stream_source_configuration::Builder::default()
+    }
+}
+
 /// See [`KinesisStreamSourceConfiguration`](crate::model::KinesisStreamSourceConfiguration).
 pub mod kinesis_stream_source_configuration {
 
@@ -13742,11 +13819,5 @@ pub mod kinesis_stream_source_configuration {
                 role_arn: self.role_arn,
             }
         }
-    }
-}
-impl KinesisStreamSourceConfiguration {
-    /// Creates a new builder-style object to manufacture [`KinesisStreamSourceConfiguration`](crate::model::KinesisStreamSourceConfiguration).
-    pub fn builder() -> crate::model::kinesis_stream_source_configuration::Builder {
-        crate::model::kinesis_stream_source_configuration::Builder::default()
     }
 }

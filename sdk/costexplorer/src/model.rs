@@ -44,6 +44,13 @@ impl CostCategorySplitChargeRule {
         self.parameters.as_deref()
     }
 }
+impl CostCategorySplitChargeRule {
+    /// Creates a new builder-style object to manufacture [`CostCategorySplitChargeRule`](crate::model::CostCategorySplitChargeRule).
+    pub fn builder() -> crate::model::cost_category_split_charge_rule::Builder {
+        crate::model::cost_category_split_charge_rule::Builder::default()
+    }
+}
+
 /// See [`CostCategorySplitChargeRule`](crate::model::CostCategorySplitChargeRule).
 pub mod cost_category_split_charge_rule {
 
@@ -141,12 +148,6 @@ pub mod cost_category_split_charge_rule {
         }
     }
 }
-impl CostCategorySplitChargeRule {
-    /// Creates a new builder-style object to manufacture [`CostCategorySplitChargeRule`](crate::model::CostCategorySplitChargeRule).
-    pub fn builder() -> crate::model::cost_category_split_charge_rule::Builder {
-        crate::model::cost_category_split_charge_rule::Builder::default()
-    }
-}
 
 /// <p>The parameters for a split charge method. </p>
 #[non_exhaustive]
@@ -171,6 +172,13 @@ impl CostCategorySplitChargeRuleParameter {
         self.values.as_deref()
     }
 }
+impl CostCategorySplitChargeRuleParameter {
+    /// Creates a new builder-style object to manufacture [`CostCategorySplitChargeRuleParameter`](crate::model::CostCategorySplitChargeRuleParameter).
+    pub fn builder() -> crate::model::cost_category_split_charge_rule_parameter::Builder {
+        crate::model::cost_category_split_charge_rule_parameter::Builder::default()
+    }
+}
+
 /// See [`CostCategorySplitChargeRuleParameter`](crate::model::CostCategorySplitChargeRuleParameter).
 pub mod cost_category_split_charge_rule_parameter {
 
@@ -225,12 +233,6 @@ pub mod cost_category_split_charge_rule_parameter {
                 values: self.values,
             }
         }
-    }
-}
-impl CostCategorySplitChargeRuleParameter {
-    /// Creates a new builder-style object to manufacture [`CostCategorySplitChargeRuleParameter`](crate::model::CostCategorySplitChargeRuleParameter).
-    pub fn builder() -> crate::model::cost_category_split_charge_rule_parameter::Builder {
-        crate::model::cost_category_split_charge_rule_parameter::Builder::default()
     }
 }
 
@@ -463,6 +465,13 @@ impl CostCategoryRule {
         self.r#type.as_ref()
     }
 }
+impl CostCategoryRule {
+    /// Creates a new builder-style object to manufacture [`CostCategoryRule`](crate::model::CostCategoryRule).
+    pub fn builder() -> crate::model::cost_category_rule::Builder {
+        crate::model::cost_category_rule::Builder::default()
+    }
+}
+
 /// See [`CostCategoryRule`](crate::model::CostCategoryRule).
 pub mod cost_category_rule {
 
@@ -539,12 +548,6 @@ pub mod cost_category_rule {
                 r#type: self.r#type,
             }
         }
-    }
-}
-impl CostCategoryRule {
-    /// Creates a new builder-style object to manufacture [`CostCategoryRule`](crate::model::CostCategoryRule).
-    pub fn builder() -> crate::model::cost_category_rule::Builder {
-        crate::model::cost_category_rule::Builder::default()
     }
 }
 
@@ -665,6 +668,13 @@ impl CostCategoryInheritedValueDimension {
         self.dimension_key.as_deref()
     }
 }
+impl CostCategoryInheritedValueDimension {
+    /// Creates a new builder-style object to manufacture [`CostCategoryInheritedValueDimension`](crate::model::CostCategoryInheritedValueDimension).
+    pub fn builder() -> crate::model::cost_category_inherited_value_dimension::Builder {
+        crate::model::cost_category_inherited_value_dimension::Builder::default()
+    }
+}
+
 /// See [`CostCategoryInheritedValueDimension`](crate::model::CostCategoryInheritedValueDimension).
 pub mod cost_category_inherited_value_dimension {
 
@@ -715,12 +725,6 @@ pub mod cost_category_inherited_value_dimension {
                 dimension_key: self.dimension_key,
             }
         }
-    }
-}
-impl CostCategoryInheritedValueDimension {
-    /// Creates a new builder-style object to manufacture [`CostCategoryInheritedValueDimension`](crate::model::CostCategoryInheritedValueDimension).
-    pub fn builder() -> crate::model::cost_category_inherited_value_dimension::Builder {
-        crate::model::cost_category_inherited_value_dimension::Builder::default()
     }
 }
 
@@ -901,6 +905,13 @@ impl Expression {
         self.cost_categories.as_ref()
     }
 }
+impl Expression {
+    /// Creates a new builder-style object to manufacture [`Expression`](crate::model::Expression).
+    pub fn builder() -> crate::model::expression::Builder {
+        crate::model::expression::Builder::default()
+    }
+}
+
 /// See [`Expression`](crate::model::Expression).
 pub mod expression {
 
@@ -1016,12 +1027,6 @@ pub mod expression {
         }
     }
 }
-impl Expression {
-    /// Creates a new builder-style object to manufacture [`Expression`](crate::model::Expression).
-    pub fn builder() -> crate::model::expression::Builder {
-        crate::model::expression::Builder::default()
-    }
-}
 
 /// <p>The Cost Categories values used for filtering the costs.</p>
 /// <p>If <code>Values</code> and <code>Key</code> are not specified, the <code>ABSENT</code> <code>MatchOption</code> is applied to all Cost Categories. That is, it filters on resources that aren't mapped to any Cost Categories.</p>
@@ -1053,6 +1058,13 @@ impl CostCategoryValues {
         self.match_options.as_deref()
     }
 }
+impl CostCategoryValues {
+    /// Creates a new builder-style object to manufacture [`CostCategoryValues`](crate::model::CostCategoryValues).
+    pub fn builder() -> crate::model::cost_category_values::Builder {
+        crate::model::cost_category_values::Builder::default()
+    }
+}
+
 /// See [`CostCategoryValues`](crate::model::CostCategoryValues).
 pub mod cost_category_values {
 
@@ -1121,12 +1133,6 @@ pub mod cost_category_values {
                 match_options: self.match_options,
             }
         }
-    }
-}
-impl CostCategoryValues {
-    /// Creates a new builder-style object to manufacture [`CostCategoryValues`](crate::model::CostCategoryValues).
-    pub fn builder() -> crate::model::cost_category_values::Builder {
-        crate::model::cost_category_values::Builder::default()
     }
 }
 
@@ -1289,6 +1295,13 @@ impl TagValues {
         self.match_options.as_deref()
     }
 }
+impl TagValues {
+    /// Creates a new builder-style object to manufacture [`TagValues`](crate::model::TagValues).
+    pub fn builder() -> crate::model::tag_values::Builder {
+        crate::model::tag_values::Builder::default()
+    }
+}
+
 /// See [`TagValues`](crate::model::TagValues).
 pub mod tag_values {
 
@@ -1359,12 +1372,6 @@ pub mod tag_values {
         }
     }
 }
-impl TagValues {
-    /// Creates a new builder-style object to manufacture [`TagValues`](crate::model::TagValues).
-    pub fn builder() -> crate::model::tag_values::Builder {
-        crate::model::tag_values::Builder::default()
-    }
-}
 
 /// <p>The metadata that you can use to filter and group your results. You can use <code>GetDimensionValues</code> to find specific values.</p>
 #[non_exhaustive]
@@ -1404,6 +1411,13 @@ impl DimensionValues {
         self.match_options.as_deref()
     }
 }
+impl DimensionValues {
+    /// Creates a new builder-style object to manufacture [`DimensionValues`](crate::model::DimensionValues).
+    pub fn builder() -> crate::model::dimension_values::Builder {
+        crate::model::dimension_values::Builder::default()
+    }
+}
+
 /// See [`DimensionValues`](crate::model::DimensionValues).
 pub mod dimension_values {
 
@@ -1482,12 +1496,6 @@ pub mod dimension_values {
                 match_options: self.match_options,
             }
         }
-    }
-}
-impl DimensionValues {
-    /// Creates a new builder-style object to manufacture [`DimensionValues`](crate::model::DimensionValues).
-    pub fn builder() -> crate::model::dimension_values::Builder {
-        crate::model::dimension_values::Builder::default()
     }
 }
 
@@ -1891,6 +1899,13 @@ impl UpdateCostAllocationTagsStatusError {
         self.message.as_deref()
     }
 }
+impl UpdateCostAllocationTagsStatusError {
+    /// Creates a new builder-style object to manufacture [`UpdateCostAllocationTagsStatusError`](crate::model::UpdateCostAllocationTagsStatusError).
+    pub fn builder() -> crate::model::update_cost_allocation_tags_status_error::Builder {
+        crate::model::update_cost_allocation_tags_status_error::Builder::default()
+    }
+}
+
 /// See [`UpdateCostAllocationTagsStatusError`](crate::model::UpdateCostAllocationTagsStatusError).
 pub mod update_cost_allocation_tags_status_error {
 
@@ -1943,12 +1958,6 @@ pub mod update_cost_allocation_tags_status_error {
         }
     }
 }
-impl UpdateCostAllocationTagsStatusError {
-    /// Creates a new builder-style object to manufacture [`UpdateCostAllocationTagsStatusError`](crate::model::UpdateCostAllocationTagsStatusError).
-    pub fn builder() -> crate::model::update_cost_allocation_tags_status_error::Builder {
-        crate::model::update_cost_allocation_tags_status_error::Builder::default()
-    }
-}
 
 /// <p>The cost allocation tag status. The status of a key can either be active or inactive. </p>
 #[non_exhaustive]
@@ -1971,6 +1980,13 @@ impl CostAllocationTagStatusEntry {
         self.status.as_ref()
     }
 }
+impl CostAllocationTagStatusEntry {
+    /// Creates a new builder-style object to manufacture [`CostAllocationTagStatusEntry`](crate::model::CostAllocationTagStatusEntry).
+    pub fn builder() -> crate::model::cost_allocation_tag_status_entry::Builder {
+        crate::model::cost_allocation_tag_status_entry::Builder::default()
+    }
+}
+
 /// See [`CostAllocationTagStatusEntry`](crate::model::CostAllocationTagStatusEntry).
 pub mod cost_allocation_tag_status_entry {
 
@@ -2012,12 +2028,6 @@ pub mod cost_allocation_tag_status_entry {
                 status: self.status,
             }
         }
-    }
-}
-impl CostAllocationTagStatusEntry {
-    /// Creates a new builder-style object to manufacture [`CostAllocationTagStatusEntry`](crate::model::CostAllocationTagStatusEntry).
-    pub fn builder() -> crate::model::cost_allocation_tag_status_entry::Builder {
-        crate::model::cost_allocation_tag_status_entry::Builder::default()
     }
 }
 
@@ -2141,6 +2151,13 @@ impl Subscriber {
         self.status.as_ref()
     }
 }
+impl Subscriber {
+    /// Creates a new builder-style object to manufacture [`Subscriber`](crate::model::Subscriber).
+    pub fn builder() -> crate::model::subscriber::Builder {
+        crate::model::subscriber::Builder::default()
+    }
+}
+
 /// See [`Subscriber`](crate::model::Subscriber).
 pub mod subscriber {
 
@@ -2197,12 +2214,6 @@ pub mod subscriber {
                 status: self.status,
             }
         }
-    }
-}
-impl Subscriber {
-    /// Creates a new builder-style object to manufacture [`Subscriber`](crate::model::Subscriber).
-    pub fn builder() -> crate::model::subscriber::Builder {
-        crate::model::subscriber::Builder::default()
     }
 }
 
@@ -2506,6 +2517,13 @@ impl ResourceTag {
         self.value.as_deref()
     }
 }
+impl ResourceTag {
+    /// Creates a new builder-style object to manufacture [`ResourceTag`](crate::model::ResourceTag).
+    pub fn builder() -> crate::model::resource_tag::Builder {
+        crate::model::resource_tag::Builder::default()
+    }
+}
+
 /// See [`ResourceTag`](crate::model::ResourceTag).
 pub mod resource_tag {
 
@@ -2544,12 +2562,6 @@ pub mod resource_tag {
                 value: self.value,
             }
         }
-    }
-}
-impl ResourceTag {
-    /// Creates a new builder-style object to manufacture [`ResourceTag`](crate::model::ResourceTag).
-    pub fn builder() -> crate::model::resource_tag::Builder {
-        crate::model::resource_tag::Builder::default()
     }
 }
 
@@ -2692,6 +2704,13 @@ impl GenerationSummary {
         self.estimated_completion_time.as_deref()
     }
 }
+impl GenerationSummary {
+    /// Creates a new builder-style object to manufacture [`GenerationSummary`](crate::model::GenerationSummary).
+    pub fn builder() -> crate::model::generation_summary::Builder {
+        crate::model::generation_summary::Builder::default()
+    }
+}
+
 /// See [`GenerationSummary`](crate::model::GenerationSummary).
 pub mod generation_summary {
 
@@ -2781,12 +2800,6 @@ pub mod generation_summary {
                 estimated_completion_time: self.estimated_completion_time,
             }
         }
-    }
-}
-impl GenerationSummary {
-    /// Creates a new builder-style object to manufacture [`GenerationSummary`](crate::model::GenerationSummary).
-    pub fn builder() -> crate::model::generation_summary::Builder {
-        crate::model::generation_summary::Builder::default()
     }
 }
 
@@ -2952,6 +2965,13 @@ impl CostCategoryReference {
         self.default_value.as_deref()
     }
 }
+impl CostCategoryReference {
+    /// Creates a new builder-style object to manufacture [`CostCategoryReference`](crate::model::CostCategoryReference).
+    pub fn builder() -> crate::model::cost_category_reference::Builder {
+        crate::model::cost_category_reference::Builder::default()
+    }
+}
+
 /// See [`CostCategoryReference`](crate::model::CostCategoryReference).
 pub mod cost_category_reference {
 
@@ -3098,12 +3118,6 @@ pub mod cost_category_reference {
         }
     }
 }
-impl CostCategoryReference {
-    /// Creates a new builder-style object to manufacture [`CostCategoryReference`](crate::model::CostCategoryReference).
-    pub fn builder() -> crate::model::cost_category_reference::Builder {
-        crate::model::cost_category_reference::Builder::default()
-    }
-}
 
 /// <p>The list of processing statuses for Cost Management products for a specific cost category. </p>
 #[non_exhaustive]
@@ -3126,6 +3140,13 @@ impl CostCategoryProcessingStatus {
         self.status.as_ref()
     }
 }
+impl CostCategoryProcessingStatus {
+    /// Creates a new builder-style object to manufacture [`CostCategoryProcessingStatus`](crate::model::CostCategoryProcessingStatus).
+    pub fn builder() -> crate::model::cost_category_processing_status::Builder {
+        crate::model::cost_category_processing_status::Builder::default()
+    }
+}
+
 /// See [`CostCategoryProcessingStatus`](crate::model::CostCategoryProcessingStatus).
 pub mod cost_category_processing_status {
 
@@ -3170,12 +3191,6 @@ pub mod cost_category_processing_status {
                 status: self.status,
             }
         }
-    }
-}
-impl CostCategoryProcessingStatus {
-    /// Creates a new builder-style object to manufacture [`CostCategoryProcessingStatus`](crate::model::CostCategoryProcessingStatus).
-    pub fn builder() -> crate::model::cost_category_processing_status::Builder {
-        crate::model::cost_category_processing_status::Builder::default()
     }
 }
 
@@ -3386,6 +3401,13 @@ impl CostAllocationTag {
         self.status.as_ref()
     }
 }
+impl CostAllocationTag {
+    /// Creates a new builder-style object to manufacture [`CostAllocationTag`](crate::model::CostAllocationTag).
+    pub fn builder() -> crate::model::cost_allocation_tag::Builder {
+        crate::model::cost_allocation_tag::Builder::default()
+    }
+}
+
 /// See [`CostAllocationTag`](crate::model::CostAllocationTag).
 pub mod cost_allocation_tag {
 
@@ -3442,12 +3464,6 @@ pub mod cost_allocation_tag {
                 status: self.status,
             }
         }
-    }
-}
-impl CostAllocationTag {
-    /// Creates a new builder-style object to manufacture [`CostAllocationTag`](crate::model::CostAllocationTag).
-    pub fn builder() -> crate::model::cost_allocation_tag::Builder {
-        crate::model::cost_allocation_tag::Builder::default()
     }
 }
 
@@ -3578,6 +3594,13 @@ impl ForecastResult {
         self.prediction_interval_upper_bound.as_deref()
     }
 }
+impl ForecastResult {
+    /// Creates a new builder-style object to manufacture [`ForecastResult`](crate::model::ForecastResult).
+    pub fn builder() -> crate::model::forecast_result::Builder {
+        crate::model::forecast_result::Builder::default()
+    }
+}
+
 /// See [`ForecastResult`](crate::model::ForecastResult).
 pub mod forecast_result {
 
@@ -3657,12 +3680,6 @@ pub mod forecast_result {
         }
     }
 }
-impl ForecastResult {
-    /// Creates a new builder-style object to manufacture [`ForecastResult`](crate::model::ForecastResult).
-    pub fn builder() -> crate::model::forecast_result::Builder {
-        crate::model::forecast_result::Builder::default()
-    }
-}
 
 /// <p>The time period of the request. </p>
 #[non_exhaustive]
@@ -3685,6 +3702,13 @@ impl DateInterval {
         self.end.as_deref()
     }
 }
+impl DateInterval {
+    /// Creates a new builder-style object to manufacture [`DateInterval`](crate::model::DateInterval).
+    pub fn builder() -> crate::model::date_interval::Builder {
+        crate::model::date_interval::Builder::default()
+    }
+}
+
 /// See [`DateInterval`](crate::model::DateInterval).
 pub mod date_interval {
 
@@ -3725,12 +3749,6 @@ pub mod date_interval {
         }
     }
 }
-impl DateInterval {
-    /// Creates a new builder-style object to manufacture [`DateInterval`](crate::model::DateInterval).
-    pub fn builder() -> crate::model::date_interval::Builder {
-        crate::model::date_interval::Builder::default()
-    }
-}
 
 /// <p>The aggregated value for a metric.</p>
 #[non_exhaustive]
@@ -3753,6 +3771,13 @@ impl MetricValue {
         self.unit.as_deref()
     }
 }
+impl MetricValue {
+    /// Creates a new builder-style object to manufacture [`MetricValue`](crate::model::MetricValue).
+    pub fn builder() -> crate::model::metric_value::Builder {
+        crate::model::metric_value::Builder::default()
+    }
+}
+
 /// See [`MetricValue`](crate::model::MetricValue).
 pub mod metric_value {
 
@@ -3791,12 +3816,6 @@ pub mod metric_value {
                 unit: self.unit,
             }
         }
-    }
-}
-impl MetricValue {
-    /// Creates a new builder-style object to manufacture [`MetricValue`](crate::model::MetricValue).
-    pub fn builder() -> crate::model::metric_value::Builder {
-        crate::model::metric_value::Builder::default()
     }
 }
 
@@ -4039,6 +4058,13 @@ impl SortDefinition {
         self.sort_order.as_ref()
     }
 }
+impl SortDefinition {
+    /// Creates a new builder-style object to manufacture [`SortDefinition`](crate::model::SortDefinition).
+    pub fn builder() -> crate::model::sort_definition::Builder {
+        crate::model::sort_definition::Builder::default()
+    }
+}
+
 /// See [`SortDefinition`](crate::model::SortDefinition).
 pub mod sort_definition {
 
@@ -4080,12 +4106,6 @@ pub mod sort_definition {
                 sort_order: self.sort_order,
             }
         }
-    }
-}
-impl SortDefinition {
-    /// Creates a new builder-style object to manufacture [`SortDefinition`](crate::model::SortDefinition).
-    pub fn builder() -> crate::model::sort_definition::Builder {
-        crate::model::sort_definition::Builder::default()
     }
 }
 
@@ -4209,6 +4229,13 @@ impl SavingsPlansUtilizationAggregates {
         self.amortized_commitment.as_ref()
     }
 }
+impl SavingsPlansUtilizationAggregates {
+    /// Creates a new builder-style object to manufacture [`SavingsPlansUtilizationAggregates`](crate::model::SavingsPlansUtilizationAggregates).
+    pub fn builder() -> crate::model::savings_plans_utilization_aggregates::Builder {
+        crate::model::savings_plans_utilization_aggregates::Builder::default()
+    }
+}
+
 /// See [`SavingsPlansUtilizationAggregates`](crate::model::SavingsPlansUtilizationAggregates).
 pub mod savings_plans_utilization_aggregates {
 
@@ -4274,12 +4301,6 @@ pub mod savings_plans_utilization_aggregates {
         }
     }
 }
-impl SavingsPlansUtilizationAggregates {
-    /// Creates a new builder-style object to manufacture [`SavingsPlansUtilizationAggregates`](crate::model::SavingsPlansUtilizationAggregates).
-    pub fn builder() -> crate::model::savings_plans_utilization_aggregates::Builder {
-        crate::model::savings_plans_utilization_aggregates::Builder::default()
-    }
-}
 
 /// <p>The amortized amount of Savings Plans purchased in a specific account during a specific time interval.</p>
 #[non_exhaustive]
@@ -4309,6 +4330,13 @@ impl SavingsPlansAmortizedCommitment {
         self.total_amortized_commitment.as_deref()
     }
 }
+impl SavingsPlansAmortizedCommitment {
+    /// Creates a new builder-style object to manufacture [`SavingsPlansAmortizedCommitment`](crate::model::SavingsPlansAmortizedCommitment).
+    pub fn builder() -> crate::model::savings_plans_amortized_commitment::Builder {
+        crate::model::savings_plans_amortized_commitment::Builder::default()
+    }
+}
+
 /// See [`SavingsPlansAmortizedCommitment`](crate::model::SavingsPlansAmortizedCommitment).
 pub mod savings_plans_amortized_commitment {
 
@@ -4376,12 +4404,6 @@ pub mod savings_plans_amortized_commitment {
         }
     }
 }
-impl SavingsPlansAmortizedCommitment {
-    /// Creates a new builder-style object to manufacture [`SavingsPlansAmortizedCommitment`](crate::model::SavingsPlansAmortizedCommitment).
-    pub fn builder() -> crate::model::savings_plans_amortized_commitment::Builder {
-        crate::model::savings_plans_amortized_commitment::Builder::default()
-    }
-}
 
 /// <p>The amount of savings that you're accumulating, against the public On-Demand rate of the usage accrued in an account.</p>
 #[non_exhaustive]
@@ -4404,6 +4426,13 @@ impl SavingsPlansSavings {
         self.on_demand_cost_equivalent.as_deref()
     }
 }
+impl SavingsPlansSavings {
+    /// Creates a new builder-style object to manufacture [`SavingsPlansSavings`](crate::model::SavingsPlansSavings).
+    pub fn builder() -> crate::model::savings_plans_savings::Builder {
+        crate::model::savings_plans_savings::Builder::default()
+    }
+}
+
 /// See [`SavingsPlansSavings`](crate::model::SavingsPlansSavings).
 pub mod savings_plans_savings {
 
@@ -4447,12 +4476,6 @@ pub mod savings_plans_savings {
         }
     }
 }
-impl SavingsPlansSavings {
-    /// Creates a new builder-style object to manufacture [`SavingsPlansSavings`](crate::model::SavingsPlansSavings).
-    pub fn builder() -> crate::model::savings_plans_savings::Builder {
-        crate::model::savings_plans_savings::Builder::default()
-    }
-}
 
 /// <p>The measurement of how well you're using your existing Savings Plans.</p>
 #[non_exhaustive]
@@ -4489,6 +4512,13 @@ impl SavingsPlansUtilization {
         self.utilization_percentage.as_deref()
     }
 }
+impl SavingsPlansUtilization {
+    /// Creates a new builder-style object to manufacture [`SavingsPlansUtilization`](crate::model::SavingsPlansUtilization).
+    pub fn builder() -> crate::model::savings_plans_utilization::Builder {
+        crate::model::savings_plans_utilization::Builder::default()
+    }
+}
+
 /// See [`SavingsPlansUtilization`](crate::model::SavingsPlansUtilization).
 pub mod savings_plans_utilization {
 
@@ -4565,12 +4595,6 @@ pub mod savings_plans_utilization {
         }
     }
 }
-impl SavingsPlansUtilization {
-    /// Creates a new builder-style object to manufacture [`SavingsPlansUtilization`](crate::model::SavingsPlansUtilization).
-    pub fn builder() -> crate::model::savings_plans_utilization::Builder {
-        crate::model::savings_plans_utilization::Builder::default()
-    }
-}
 
 /// <p>A single daily or monthly Savings Plans utilization rate and details for your account. A management account in an organization have access to member accounts. You can use <code>GetDimensionValues</code> to determine the possible dimension values. </p>
 #[non_exhaustive]
@@ -4620,6 +4644,13 @@ impl SavingsPlansUtilizationDetail {
         self.amortized_commitment.as_ref()
     }
 }
+impl SavingsPlansUtilizationDetail {
+    /// Creates a new builder-style object to manufacture [`SavingsPlansUtilizationDetail`](crate::model::SavingsPlansUtilizationDetail).
+    pub fn builder() -> crate::model::savings_plans_utilization_detail::Builder {
+        crate::model::savings_plans_utilization_detail::Builder::default()
+    }
+}
+
 /// See [`SavingsPlansUtilizationDetail`](crate::model::SavingsPlansUtilizationDetail).
 pub mod savings_plans_utilization_detail {
 
@@ -4727,12 +4758,6 @@ pub mod savings_plans_utilization_detail {
                 amortized_commitment: self.amortized_commitment,
             }
         }
-    }
-}
-impl SavingsPlansUtilizationDetail {
-    /// Creates a new builder-style object to manufacture [`SavingsPlansUtilizationDetail`](crate::model::SavingsPlansUtilizationDetail).
-    pub fn builder() -> crate::model::savings_plans_utilization_detail::Builder {
-        crate::model::savings_plans_utilization_detail::Builder::default()
     }
 }
 
@@ -4880,6 +4905,13 @@ impl SavingsPlansUtilizationByTime {
         self.amortized_commitment.as_ref()
     }
 }
+impl SavingsPlansUtilizationByTime {
+    /// Creates a new builder-style object to manufacture [`SavingsPlansUtilizationByTime`](crate::model::SavingsPlansUtilizationByTime).
+    pub fn builder() -> crate::model::savings_plans_utilization_by_time::Builder {
+        crate::model::savings_plans_utilization_by_time::Builder::default()
+    }
+}
+
 /// See [`SavingsPlansUtilizationByTime`](crate::model::SavingsPlansUtilizationByTime).
 pub mod savings_plans_utilization_by_time {
 
@@ -4960,12 +4992,6 @@ pub mod savings_plans_utilization_by_time {
         }
     }
 }
-impl SavingsPlansUtilizationByTime {
-    /// Creates a new builder-style object to manufacture [`SavingsPlansUtilizationByTime`](crate::model::SavingsPlansUtilizationByTime).
-    pub fn builder() -> crate::model::savings_plans_utilization_by_time::Builder {
-        crate::model::savings_plans_utilization_by_time::Builder::default()
-    }
-}
 
 /// <p>Contains your request parameters, Savings Plan Recommendations Summary, and Details.</p>
 #[non_exhaustive]
@@ -5034,6 +5060,13 @@ impl SavingsPlansPurchaseRecommendation {
         self.savings_plans_purchase_recommendation_summary.as_ref()
     }
 }
+impl SavingsPlansPurchaseRecommendation {
+    /// Creates a new builder-style object to manufacture [`SavingsPlansPurchaseRecommendation`](crate::model::SavingsPlansPurchaseRecommendation).
+    pub fn builder() -> crate::model::savings_plans_purchase_recommendation::Builder {
+        crate::model::savings_plans_purchase_recommendation::Builder::default()
+    }
+}
+
 /// See [`SavingsPlansPurchaseRecommendation`](crate::model::SavingsPlansPurchaseRecommendation).
 pub mod savings_plans_purchase_recommendation {
 
@@ -5182,12 +5215,6 @@ pub mod savings_plans_purchase_recommendation {
         }
     }
 }
-impl SavingsPlansPurchaseRecommendation {
-    /// Creates a new builder-style object to manufacture [`SavingsPlansPurchaseRecommendation`](crate::model::SavingsPlansPurchaseRecommendation).
-    pub fn builder() -> crate::model::savings_plans_purchase_recommendation::Builder {
-        crate::model::savings_plans_purchase_recommendation::Builder::default()
-    }
-}
 
 /// <p>Summary metrics for your Savings Plans Purchase Recommendations.</p>
 #[non_exhaustive]
@@ -5274,6 +5301,13 @@ impl SavingsPlansPurchaseRecommendationSummary {
             .as_deref()
     }
 }
+impl SavingsPlansPurchaseRecommendationSummary {
+    /// Creates a new builder-style object to manufacture [`SavingsPlansPurchaseRecommendationSummary`](crate::model::SavingsPlansPurchaseRecommendationSummary).
+    pub fn builder() -> crate::model::savings_plans_purchase_recommendation_summary::Builder {
+        crate::model::savings_plans_purchase_recommendation_summary::Builder::default()
+    }
+}
+
 /// See [`SavingsPlansPurchaseRecommendationSummary`](crate::model::SavingsPlansPurchaseRecommendationSummary).
 pub mod savings_plans_purchase_recommendation_summary {
 
@@ -5472,12 +5506,6 @@ pub mod savings_plans_purchase_recommendation_summary {
         }
     }
 }
-impl SavingsPlansPurchaseRecommendationSummary {
-    /// Creates a new builder-style object to manufacture [`SavingsPlansPurchaseRecommendationSummary`](crate::model::SavingsPlansPurchaseRecommendationSummary).
-    pub fn builder() -> crate::model::savings_plans_purchase_recommendation_summary::Builder {
-        crate::model::savings_plans_purchase_recommendation_summary::Builder::default()
-    }
-}
 
 /// <p>Details for your recommended Savings Plans.</p>
 #[non_exhaustive]
@@ -5599,6 +5627,13 @@ impl SavingsPlansPurchaseRecommendationDetail {
         self.current_average_hourly_on_demand_spend.as_deref()
     }
 }
+impl SavingsPlansPurchaseRecommendationDetail {
+    /// Creates a new builder-style object to manufacture [`SavingsPlansPurchaseRecommendationDetail`](crate::model::SavingsPlansPurchaseRecommendationDetail).
+    pub fn builder() -> crate::model::savings_plans_purchase_recommendation_detail::Builder {
+        crate::model::savings_plans_purchase_recommendation_detail::Builder::default()
+    }
+}
+
 /// See [`SavingsPlansPurchaseRecommendationDetail`](crate::model::SavingsPlansPurchaseRecommendationDetail).
 pub mod savings_plans_purchase_recommendation_detail {
 
@@ -5875,12 +5910,6 @@ pub mod savings_plans_purchase_recommendation_detail {
         }
     }
 }
-impl SavingsPlansPurchaseRecommendationDetail {
-    /// Creates a new builder-style object to manufacture [`SavingsPlansPurchaseRecommendationDetail`](crate::model::SavingsPlansPurchaseRecommendationDetail).
-    pub fn builder() -> crate::model::savings_plans_purchase_recommendation_detail::Builder {
-        crate::model::savings_plans_purchase_recommendation_detail::Builder::default()
-    }
-}
 
 /// <p>The attribute details on a specific Savings Plan.</p>
 #[non_exhaustive]
@@ -5910,6 +5939,13 @@ impl SavingsPlansDetails {
         self.offering_id.as_deref()
     }
 }
+impl SavingsPlansDetails {
+    /// Creates a new builder-style object to manufacture [`SavingsPlansDetails`](crate::model::SavingsPlansDetails).
+    pub fn builder() -> crate::model::savings_plans_details::Builder {
+        crate::model::savings_plans_details::Builder::default()
+    }
+}
+
 /// See [`SavingsPlansDetails`](crate::model::SavingsPlansDetails).
 pub mod savings_plans_details {
 
@@ -5963,12 +5999,6 @@ pub mod savings_plans_details {
                 offering_id: self.offering_id,
             }
         }
-    }
-}
-impl SavingsPlansDetails {
-    /// Creates a new builder-style object to manufacture [`SavingsPlansDetails`](crate::model::SavingsPlansDetails).
-    pub fn builder() -> crate::model::savings_plans_details::Builder {
-        crate::model::savings_plans_details::Builder::default()
     }
 }
 
@@ -6491,6 +6521,13 @@ impl SavingsPlansPurchaseRecommendationMetadata {
         self.additional_metadata.as_deref()
     }
 }
+impl SavingsPlansPurchaseRecommendationMetadata {
+    /// Creates a new builder-style object to manufacture [`SavingsPlansPurchaseRecommendationMetadata`](crate::model::SavingsPlansPurchaseRecommendationMetadata).
+    pub fn builder() -> crate::model::savings_plans_purchase_recommendation_metadata::Builder {
+        crate::model::savings_plans_purchase_recommendation_metadata::Builder::default()
+    }
+}
+
 /// See [`SavingsPlansPurchaseRecommendationMetadata`](crate::model::SavingsPlansPurchaseRecommendationMetadata).
 pub mod savings_plans_purchase_recommendation_metadata {
 
@@ -6552,12 +6589,6 @@ pub mod savings_plans_purchase_recommendation_metadata {
         }
     }
 }
-impl SavingsPlansPurchaseRecommendationMetadata {
-    /// Creates a new builder-style object to manufacture [`SavingsPlansPurchaseRecommendationMetadata`](crate::model::SavingsPlansPurchaseRecommendationMetadata).
-    pub fn builder() -> crate::model::savings_plans_purchase_recommendation_metadata::Builder {
-        crate::model::savings_plans_purchase_recommendation_metadata::Builder::default()
-    }
-}
 
 /// <p>The amount of Savings Plans eligible usage that's covered by Savings Plans. All calculations consider the On-Demand equivalent of your Savings Plans usage.</p>
 #[non_exhaustive]
@@ -6591,6 +6622,13 @@ impl SavingsPlansCoverage {
         self.time_period.as_ref()
     }
 }
+impl SavingsPlansCoverage {
+    /// Creates a new builder-style object to manufacture [`SavingsPlansCoverage`](crate::model::SavingsPlansCoverage).
+    pub fn builder() -> crate::model::savings_plans_coverage::Builder {
+        crate::model::savings_plans_coverage::Builder::default()
+    }
+}
+
 /// See [`SavingsPlansCoverage`](crate::model::SavingsPlansCoverage).
 pub mod savings_plans_coverage {
 
@@ -6666,12 +6704,6 @@ pub mod savings_plans_coverage {
         }
     }
 }
-impl SavingsPlansCoverage {
-    /// Creates a new builder-style object to manufacture [`SavingsPlansCoverage`](crate::model::SavingsPlansCoverage).
-    pub fn builder() -> crate::model::savings_plans_coverage::Builder {
-        crate::model::savings_plans_coverage::Builder::default()
-    }
-}
 
 /// <p>Specific coverage percentage, On-Demand costs, and spend covered by Savings Plans, and total Savings Plans costs for an account.</p>
 #[non_exhaustive]
@@ -6708,6 +6740,13 @@ impl SavingsPlansCoverageData {
         self.coverage_percentage.as_deref()
     }
 }
+impl SavingsPlansCoverageData {
+    /// Creates a new builder-style object to manufacture [`SavingsPlansCoverageData`](crate::model::SavingsPlansCoverageData).
+    pub fn builder() -> crate::model::savings_plans_coverage_data::Builder {
+        crate::model::savings_plans_coverage_data::Builder::default()
+    }
+}
+
 /// See [`SavingsPlansCoverageData`](crate::model::SavingsPlansCoverageData).
 pub mod savings_plans_coverage_data {
 
@@ -6784,12 +6823,6 @@ pub mod savings_plans_coverage_data {
         }
     }
 }
-impl SavingsPlansCoverageData {
-    /// Creates a new builder-style object to manufacture [`SavingsPlansCoverageData`](crate::model::SavingsPlansCoverageData).
-    pub fn builder() -> crate::model::savings_plans_coverage_data::Builder {
-        crate::model::savings_plans_coverage_data::Builder::default()
-    }
-}
 
 /// <p>Represents a group when you specify a group by criteria or in the response to a query with a specific grouping.</p>
 #[non_exhaustive]
@@ -6812,6 +6845,13 @@ impl GroupDefinition {
         self.key.as_deref()
     }
 }
+impl GroupDefinition {
+    /// Creates a new builder-style object to manufacture [`GroupDefinition`](crate::model::GroupDefinition).
+    pub fn builder() -> crate::model::group_definition::Builder {
+        crate::model::group_definition::Builder::default()
+    }
+}
+
 /// See [`GroupDefinition`](crate::model::GroupDefinition).
 pub mod group_definition {
 
@@ -6853,12 +6893,6 @@ pub mod group_definition {
                 key: self.key,
             }
         }
-    }
-}
-impl GroupDefinition {
-    /// Creates a new builder-style object to manufacture [`GroupDefinition`](crate::model::GroupDefinition).
-    pub fn builder() -> crate::model::group_definition::Builder {
-        crate::model::group_definition::Builder::default()
     }
 }
 
@@ -6982,6 +7016,13 @@ impl RightsizingRecommendationConfiguration {
         self.benefits_considered
     }
 }
+impl RightsizingRecommendationConfiguration {
+    /// Creates a new builder-style object to manufacture [`RightsizingRecommendationConfiguration`](crate::model::RightsizingRecommendationConfiguration).
+    pub fn builder() -> crate::model::rightsizing_recommendation_configuration::Builder {
+        crate::model::rightsizing_recommendation_configuration::Builder::default()
+    }
+}
+
 /// See [`RightsizingRecommendationConfiguration`](crate::model::RightsizingRecommendationConfiguration).
 pub mod rightsizing_recommendation_configuration {
 
@@ -7023,12 +7064,6 @@ pub mod rightsizing_recommendation_configuration {
                 benefits_considered: self.benefits_considered.unwrap_or_default(),
             }
         }
-    }
-}
-impl RightsizingRecommendationConfiguration {
-    /// Creates a new builder-style object to manufacture [`RightsizingRecommendationConfiguration`](crate::model::RightsizingRecommendationConfiguration).
-    pub fn builder() -> crate::model::rightsizing_recommendation_configuration::Builder {
-        crate::model::rightsizing_recommendation_configuration::Builder::default()
     }
 }
 
@@ -7178,6 +7213,13 @@ impl RightsizingRecommendation {
         self.finding_reason_codes.as_deref()
     }
 }
+impl RightsizingRecommendation {
+    /// Creates a new builder-style object to manufacture [`RightsizingRecommendation`](crate::model::RightsizingRecommendation).
+    pub fn builder() -> crate::model::rightsizing_recommendation::Builder {
+        crate::model::rightsizing_recommendation::Builder::default()
+    }
+}
+
 /// See [`RightsizingRecommendation`](crate::model::RightsizingRecommendation).
 pub mod rightsizing_recommendation {
 
@@ -7294,12 +7336,6 @@ pub mod rightsizing_recommendation {
                 finding_reason_codes: self.finding_reason_codes,
             }
         }
-    }
-}
-impl RightsizingRecommendation {
-    /// Creates a new builder-style object to manufacture [`RightsizingRecommendation`](crate::model::RightsizingRecommendation).
-    pub fn builder() -> crate::model::rightsizing_recommendation::Builder {
-        crate::model::rightsizing_recommendation::Builder::default()
     }
 }
 
@@ -7515,6 +7551,13 @@ impl TerminateRecommendationDetail {
         self.currency_code.as_deref()
     }
 }
+impl TerminateRecommendationDetail {
+    /// Creates a new builder-style object to manufacture [`TerminateRecommendationDetail`](crate::model::TerminateRecommendationDetail).
+    pub fn builder() -> crate::model::terminate_recommendation_detail::Builder {
+        crate::model::terminate_recommendation_detail::Builder::default()
+    }
+}
+
 /// See [`TerminateRecommendationDetail`](crate::model::TerminateRecommendationDetail).
 pub mod terminate_recommendation_detail {
 
@@ -7561,12 +7604,6 @@ pub mod terminate_recommendation_detail {
         }
     }
 }
-impl TerminateRecommendationDetail {
-    /// Creates a new builder-style object to manufacture [`TerminateRecommendationDetail`](crate::model::TerminateRecommendationDetail).
-    pub fn builder() -> crate::model::terminate_recommendation_detail::Builder {
-        crate::model::terminate_recommendation_detail::Builder::default()
-    }
-}
 
 /// <p>Details for the modification recommendation.</p>
 #[non_exhaustive]
@@ -7582,6 +7619,13 @@ impl ModifyRecommendationDetail {
         self.target_instances.as_deref()
     }
 }
+impl ModifyRecommendationDetail {
+    /// Creates a new builder-style object to manufacture [`ModifyRecommendationDetail`](crate::model::ModifyRecommendationDetail).
+    pub fn builder() -> crate::model::modify_recommendation_detail::Builder {
+        crate::model::modify_recommendation_detail::Builder::default()
+    }
+}
+
 /// See [`ModifyRecommendationDetail`](crate::model::ModifyRecommendationDetail).
 pub mod modify_recommendation_detail {
 
@@ -7618,12 +7662,6 @@ pub mod modify_recommendation_detail {
                 target_instances: self.target_instances,
             }
         }
-    }
-}
-impl ModifyRecommendationDetail {
-    /// Creates a new builder-style object to manufacture [`ModifyRecommendationDetail`](crate::model::ModifyRecommendationDetail).
-    pub fn builder() -> crate::model::modify_recommendation_detail::Builder {
-        crate::model::modify_recommendation_detail::Builder::default()
     }
 }
 
@@ -7685,6 +7723,13 @@ impl TargetInstance {
         self.platform_differences.as_deref()
     }
 }
+impl TargetInstance {
+    /// Creates a new builder-style object to manufacture [`TargetInstance`](crate::model::TargetInstance).
+    pub fn builder() -> crate::model::target_instance::Builder {
+        crate::model::target_instance::Builder::default()
+    }
+}
+
 /// See [`TargetInstance`](crate::model::TargetInstance).
 pub mod target_instance {
 
@@ -7812,12 +7857,6 @@ pub mod target_instance {
                 platform_differences: self.platform_differences,
             }
         }
-    }
-}
-impl TargetInstance {
-    /// Creates a new builder-style object to manufacture [`TargetInstance`](crate::model::TargetInstance).
-    pub fn builder() -> crate::model::target_instance::Builder {
-        crate::model::target_instance::Builder::default()
     }
 }
 
@@ -7950,6 +7989,13 @@ impl ResourceUtilization {
         self.ec2_resource_utilization.as_ref()
     }
 }
+impl ResourceUtilization {
+    /// Creates a new builder-style object to manufacture [`ResourceUtilization`](crate::model::ResourceUtilization).
+    pub fn builder() -> crate::model::resource_utilization::Builder {
+        crate::model::resource_utilization::Builder::default()
+    }
+}
+
 /// See [`ResourceUtilization`](crate::model::ResourceUtilization).
 pub mod resource_utilization {
 
@@ -7983,12 +8029,6 @@ pub mod resource_utilization {
                 ec2_resource_utilization: self.ec2_resource_utilization,
             }
         }
-    }
-}
-impl ResourceUtilization {
-    /// Creates a new builder-style object to manufacture [`ResourceUtilization`](crate::model::ResourceUtilization).
-    pub fn builder() -> crate::model::resource_utilization::Builder {
-        crate::model::resource_utilization::Builder::default()
     }
 }
 
@@ -8047,6 +8087,13 @@ impl Ec2ResourceUtilization {
         self.network_resource_utilization.as_ref()
     }
 }
+impl Ec2ResourceUtilization {
+    /// Creates a new builder-style object to manufacture [`Ec2ResourceUtilization`](crate::model::Ec2ResourceUtilization).
+    pub fn builder() -> crate::model::ec2_resource_utilization::Builder {
+        crate::model::ec2_resource_utilization::Builder::default()
+    }
+}
+
 /// See [`Ec2ResourceUtilization`](crate::model::Ec2ResourceUtilization).
 pub mod ec2_resource_utilization {
 
@@ -8174,12 +8221,6 @@ pub mod ec2_resource_utilization {
         }
     }
 }
-impl Ec2ResourceUtilization {
-    /// Creates a new builder-style object to manufacture [`Ec2ResourceUtilization`](crate::model::Ec2ResourceUtilization).
-    pub fn builder() -> crate::model::ec2_resource_utilization::Builder {
-        crate::model::ec2_resource_utilization::Builder::default()
-    }
-}
 
 /// <p>The network field that contains a list of network metrics that are associated with the current instance. </p>
 #[non_exhaustive]
@@ -8216,6 +8257,13 @@ impl NetworkResourceUtilization {
         self.network_packets_out_per_second.as_deref()
     }
 }
+impl NetworkResourceUtilization {
+    /// Creates a new builder-style object to manufacture [`NetworkResourceUtilization`](crate::model::NetworkResourceUtilization).
+    pub fn builder() -> crate::model::network_resource_utilization::Builder {
+        crate::model::network_resource_utilization::Builder::default()
+    }
+}
+
 /// See [`NetworkResourceUtilization`](crate::model::NetworkResourceUtilization).
 pub mod network_resource_utilization {
 
@@ -8304,12 +8352,6 @@ pub mod network_resource_utilization {
         }
     }
 }
-impl NetworkResourceUtilization {
-    /// Creates a new builder-style object to manufacture [`NetworkResourceUtilization`](crate::model::NetworkResourceUtilization).
-    pub fn builder() -> crate::model::network_resource_utilization::Builder {
-        crate::model::network_resource_utilization::Builder::default()
-    }
-}
 
 /// <p>The field that contains a list of disk (local storage) metrics that are associated with the current instance. </p>
 #[non_exhaustive]
@@ -8346,6 +8388,13 @@ impl DiskResourceUtilization {
         self.disk_write_bytes_per_second.as_deref()
     }
 }
+impl DiskResourceUtilization {
+    /// Creates a new builder-style object to manufacture [`DiskResourceUtilization`](crate::model::DiskResourceUtilization).
+    pub fn builder() -> crate::model::disk_resource_utilization::Builder {
+        crate::model::disk_resource_utilization::Builder::default()
+    }
+}
+
 /// See [`DiskResourceUtilization`](crate::model::DiskResourceUtilization).
 pub mod disk_resource_utilization {
 
@@ -8425,12 +8474,6 @@ pub mod disk_resource_utilization {
         }
     }
 }
-impl DiskResourceUtilization {
-    /// Creates a new builder-style object to manufacture [`DiskResourceUtilization`](crate::model::DiskResourceUtilization).
-    pub fn builder() -> crate::model::disk_resource_utilization::Builder {
-        crate::model::disk_resource_utilization::Builder::default()
-    }
-}
 
 /// <p>The EBS field that contains a list of EBS metrics that are associated with the current instance. </p>
 #[non_exhaustive]
@@ -8467,6 +8510,13 @@ impl EbsResourceUtilization {
         self.ebs_write_bytes_per_second.as_deref()
     }
 }
+impl EbsResourceUtilization {
+    /// Creates a new builder-style object to manufacture [`EbsResourceUtilization`](crate::model::EbsResourceUtilization).
+    pub fn builder() -> crate::model::ebs_resource_utilization::Builder {
+        crate::model::ebs_resource_utilization::Builder::default()
+    }
+}
+
 /// See [`EbsResourceUtilization`](crate::model::EbsResourceUtilization).
 pub mod ebs_resource_utilization {
 
@@ -8543,12 +8593,6 @@ pub mod ebs_resource_utilization {
         }
     }
 }
-impl EbsResourceUtilization {
-    /// Creates a new builder-style object to manufacture [`EbsResourceUtilization`](crate::model::EbsResourceUtilization).
-    pub fn builder() -> crate::model::ebs_resource_utilization::Builder {
-        crate::model::ebs_resource_utilization::Builder::default()
-    }
-}
 
 /// <p>Details for the resource.</p>
 #[non_exhaustive]
@@ -8564,6 +8608,13 @@ impl ResourceDetails {
         self.ec2_resource_details.as_ref()
     }
 }
+impl ResourceDetails {
+    /// Creates a new builder-style object to manufacture [`ResourceDetails`](crate::model::ResourceDetails).
+    pub fn builder() -> crate::model::resource_details::Builder {
+        crate::model::resource_details::Builder::default()
+    }
+}
+
 /// See [`ResourceDetails`](crate::model::ResourceDetails).
 pub mod resource_details {
 
@@ -8593,12 +8644,6 @@ pub mod resource_details {
                 ec2_resource_details: self.ec2_resource_details,
             }
         }
-    }
-}
-impl ResourceDetails {
-    /// Creates a new builder-style object to manufacture [`ResourceDetails`](crate::model::ResourceDetails).
-    pub fn builder() -> crate::model::resource_details::Builder {
-        crate::model::resource_details::Builder::default()
     }
 }
 
@@ -8672,6 +8717,13 @@ impl Ec2ResourceDetails {
         self.vcpu.as_deref()
     }
 }
+impl Ec2ResourceDetails {
+    /// Creates a new builder-style object to manufacture [`Ec2ResourceDetails`](crate::model::Ec2ResourceDetails).
+    pub fn builder() -> crate::model::ec2_resource_details::Builder {
+        crate::model::ec2_resource_details::Builder::default()
+    }
+}
+
 /// See [`Ec2ResourceDetails`](crate::model::Ec2ResourceDetails).
 pub mod ec2_resource_details {
 
@@ -8803,12 +8855,6 @@ pub mod ec2_resource_details {
                 vcpu: self.vcpu,
             }
         }
-    }
-}
-impl Ec2ResourceDetails {
-    /// Creates a new builder-style object to manufacture [`Ec2ResourceDetails`](crate::model::Ec2ResourceDetails).
-    pub fn builder() -> crate::model::ec2_resource_details::Builder {
-        crate::model::ec2_resource_details::Builder::default()
     }
 }
 
@@ -8987,6 +9033,13 @@ impl CurrentInstance {
         self.currency_code.as_deref()
     }
 }
+impl CurrentInstance {
+    /// Creates a new builder-style object to manufacture [`CurrentInstance`](crate::model::CurrentInstance).
+    pub fn builder() -> crate::model::current_instance::Builder {
+        crate::model::current_instance::Builder::default()
+    }
+}
+
 /// See [`CurrentInstance`](crate::model::CurrentInstance).
 pub mod current_instance {
 
@@ -9184,12 +9237,6 @@ pub mod current_instance {
         }
     }
 }
-impl CurrentInstance {
-    /// Creates a new builder-style object to manufacture [`CurrentInstance`](crate::model::CurrentInstance).
-    pub fn builder() -> crate::model::current_instance::Builder {
-        crate::model::current_instance::Builder::default()
-    }
-}
 
 /// <p>The summary of rightsizing recommendations </p>
 #[non_exhaustive]
@@ -9226,6 +9273,13 @@ impl RightsizingRecommendationSummary {
         self.savings_percentage.as_deref()
     }
 }
+impl RightsizingRecommendationSummary {
+    /// Creates a new builder-style object to manufacture [`RightsizingRecommendationSummary`](crate::model::RightsizingRecommendationSummary).
+    pub fn builder() -> crate::model::rightsizing_recommendation_summary::Builder {
+        crate::model::rightsizing_recommendation_summary::Builder::default()
+    }
+}
+
 /// See [`RightsizingRecommendationSummary`](crate::model::RightsizingRecommendationSummary).
 pub mod rightsizing_recommendation_summary {
 
@@ -9305,12 +9359,6 @@ pub mod rightsizing_recommendation_summary {
         }
     }
 }
-impl RightsizingRecommendationSummary {
-    /// Creates a new builder-style object to manufacture [`RightsizingRecommendationSummary`](crate::model::RightsizingRecommendationSummary).
-    pub fn builder() -> crate::model::rightsizing_recommendation_summary::Builder {
-        crate::model::rightsizing_recommendation_summary::Builder::default()
-    }
-}
 
 /// <p>Metadata for this recommendation set.</p>
 #[non_exhaustive]
@@ -9349,6 +9397,13 @@ impl RightsizingRecommendationMetadata {
         self.additional_metadata.as_deref()
     }
 }
+impl RightsizingRecommendationMetadata {
+    /// Creates a new builder-style object to manufacture [`RightsizingRecommendationMetadata`](crate::model::RightsizingRecommendationMetadata).
+    pub fn builder() -> crate::model::rightsizing_recommendation_metadata::Builder {
+        crate::model::rightsizing_recommendation_metadata::Builder::default()
+    }
+}
+
 /// See [`RightsizingRecommendationMetadata`](crate::model::RightsizingRecommendationMetadata).
 pub mod rightsizing_recommendation_metadata {
 
@@ -9426,12 +9481,6 @@ pub mod rightsizing_recommendation_metadata {
                 additional_metadata: self.additional_metadata,
             }
         }
-    }
-}
-impl RightsizingRecommendationMetadata {
-    /// Creates a new builder-style object to manufacture [`RightsizingRecommendationMetadata`](crate::model::RightsizingRecommendationMetadata).
-    pub fn builder() -> crate::model::rightsizing_recommendation_metadata::Builder {
-        crate::model::rightsizing_recommendation_metadata::Builder::default()
     }
 }
 
@@ -9561,6 +9610,13 @@ impl ReservationAggregates {
         self.unrealized_savings.as_deref()
     }
 }
+impl ReservationAggregates {
+    /// Creates a new builder-style object to manufacture [`ReservationAggregates`](crate::model::ReservationAggregates).
+    pub fn builder() -> crate::model::reservation_aggregates::Builder {
+        crate::model::reservation_aggregates::Builder::default()
+    }
+}
+
 /// See [`ReservationAggregates`](crate::model::ReservationAggregates).
 pub mod reservation_aggregates {
 
@@ -9832,12 +9888,6 @@ pub mod reservation_aggregates {
         }
     }
 }
-impl ReservationAggregates {
-    /// Creates a new builder-style object to manufacture [`ReservationAggregates`](crate::model::ReservationAggregates).
-    pub fn builder() -> crate::model::reservation_aggregates::Builder {
-        crate::model::reservation_aggregates::Builder::default()
-    }
-}
 
 /// <p>The amount of utilization, in hours.</p>
 #[non_exhaustive]
@@ -9867,6 +9917,13 @@ impl UtilizationByTime {
         self.total.as_ref()
     }
 }
+impl UtilizationByTime {
+    /// Creates a new builder-style object to manufacture [`UtilizationByTime`](crate::model::UtilizationByTime).
+    pub fn builder() -> crate::model::utilization_by_time::Builder {
+        crate::model::utilization_by_time::Builder::default()
+    }
+}
+
 /// See [`UtilizationByTime`](crate::model::UtilizationByTime).
 pub mod utilization_by_time {
 
@@ -9935,12 +9992,6 @@ pub mod utilization_by_time {
         }
     }
 }
-impl UtilizationByTime {
-    /// Creates a new builder-style object to manufacture [`UtilizationByTime`](crate::model::UtilizationByTime).
-    pub fn builder() -> crate::model::utilization_by_time::Builder {
-        crate::model::utilization_by_time::Builder::default()
-    }
-}
 
 /// <p>A group of reservations that share a set of attributes.</p>
 #[non_exhaustive]
@@ -9981,6 +10032,13 @@ impl ReservationUtilizationGroup {
         self.utilization.as_ref()
     }
 }
+impl ReservationUtilizationGroup {
+    /// Creates a new builder-style object to manufacture [`ReservationUtilizationGroup`](crate::model::ReservationUtilizationGroup).
+    pub fn builder() -> crate::model::reservation_utilization_group::Builder {
+        crate::model::reservation_utilization_group::Builder::default()
+    }
+}
+
 /// See [`ReservationUtilizationGroup`](crate::model::ReservationUtilizationGroup).
 pub mod reservation_utilization_group {
 
@@ -10065,12 +10123,6 @@ pub mod reservation_utilization_group {
         }
     }
 }
-impl ReservationUtilizationGroup {
-    /// Creates a new builder-style object to manufacture [`ReservationUtilizationGroup`](crate::model::ReservationUtilizationGroup).
-    pub fn builder() -> crate::model::reservation_utilization_group::Builder {
-        crate::model::reservation_utilization_group::Builder::default()
-    }
-}
 
 /// <p>A specific reservation that Amazon Web Services recommends for purchase.</p>
 #[non_exhaustive]
@@ -10138,6 +10190,13 @@ impl ReservationPurchaseRecommendation {
         self.recommendation_summary.as_ref()
     }
 }
+impl ReservationPurchaseRecommendation {
+    /// Creates a new builder-style object to manufacture [`ReservationPurchaseRecommendation`](crate::model::ReservationPurchaseRecommendation).
+    pub fn builder() -> crate::model::reservation_purchase_recommendation::Builder {
+        crate::model::reservation_purchase_recommendation::Builder::default()
+    }
+}
+
 /// See [`ReservationPurchaseRecommendation`](crate::model::ReservationPurchaseRecommendation).
 pub mod reservation_purchase_recommendation {
 
@@ -10279,12 +10338,6 @@ pub mod reservation_purchase_recommendation {
         }
     }
 }
-impl ReservationPurchaseRecommendation {
-    /// Creates a new builder-style object to manufacture [`ReservationPurchaseRecommendation`](crate::model::ReservationPurchaseRecommendation).
-    pub fn builder() -> crate::model::reservation_purchase_recommendation::Builder {
-        crate::model::reservation_purchase_recommendation::Builder::default()
-    }
-}
 
 /// <p>A summary about this recommendation, such as the currency code, the amount that Amazon Web Services estimates that you could save, and the total amount of reservation to purchase.</p>
 #[non_exhaustive]
@@ -10314,6 +10367,13 @@ impl ReservationPurchaseRecommendationSummary {
         self.currency_code.as_deref()
     }
 }
+impl ReservationPurchaseRecommendationSummary {
+    /// Creates a new builder-style object to manufacture [`ReservationPurchaseRecommendationSummary`](crate::model::ReservationPurchaseRecommendationSummary).
+    pub fn builder() -> crate::model::reservation_purchase_recommendation_summary::Builder {
+        crate::model::reservation_purchase_recommendation_summary::Builder::default()
+    }
+}
+
 /// See [`ReservationPurchaseRecommendationSummary`](crate::model::ReservationPurchaseRecommendationSummary).
 pub mod reservation_purchase_recommendation_summary {
 
@@ -10381,12 +10441,6 @@ pub mod reservation_purchase_recommendation_summary {
                 currency_code: self.currency_code,
             }
         }
-    }
-}
-impl ReservationPurchaseRecommendationSummary {
-    /// Creates a new builder-style object to manufacture [`ReservationPurchaseRecommendationSummary`](crate::model::ReservationPurchaseRecommendationSummary).
-    pub fn builder() -> crate::model::reservation_purchase_recommendation_summary::Builder {
-        crate::model::reservation_purchase_recommendation_summary::Builder::default()
     }
 }
 
@@ -10531,6 +10585,13 @@ impl ReservationPurchaseRecommendationDetail {
         self.recurring_standard_monthly_cost.as_deref()
     }
 }
+impl ReservationPurchaseRecommendationDetail {
+    /// Creates a new builder-style object to manufacture [`ReservationPurchaseRecommendationDetail`](crate::model::ReservationPurchaseRecommendationDetail).
+    pub fn builder() -> crate::model::reservation_purchase_recommendation_detail::Builder {
+        crate::model::reservation_purchase_recommendation_detail::Builder::default()
+    }
+}
+
 /// See [`ReservationPurchaseRecommendationDetail`](crate::model::ReservationPurchaseRecommendationDetail).
 pub mod reservation_purchase_recommendation_detail {
 
@@ -10880,12 +10941,6 @@ pub mod reservation_purchase_recommendation_detail {
         }
     }
 }
-impl ReservationPurchaseRecommendationDetail {
-    /// Creates a new builder-style object to manufacture [`ReservationPurchaseRecommendationDetail`](crate::model::ReservationPurchaseRecommendationDetail).
-    pub fn builder() -> crate::model::reservation_purchase_recommendation_detail::Builder {
-        crate::model::reservation_purchase_recommendation_detail::Builder::default()
-    }
-}
 
 /// <p>Details about the instances that Amazon Web Services recommends that you purchase.</p>
 #[non_exhaustive]
@@ -10934,6 +10989,13 @@ impl InstanceDetails {
         self.es_instance_details.as_ref()
     }
 }
+impl InstanceDetails {
+    /// Creates a new builder-style object to manufacture [`InstanceDetails`](crate::model::InstanceDetails).
+    pub fn builder() -> crate::model::instance_details::Builder {
+        crate::model::instance_details::Builder::default()
+    }
+}
+
 /// See [`InstanceDetails`](crate::model::InstanceDetails).
 pub mod instance_details {
 
@@ -11033,12 +11095,6 @@ pub mod instance_details {
         }
     }
 }
-impl InstanceDetails {
-    /// Creates a new builder-style object to manufacture [`InstanceDetails`](crate::model::InstanceDetails).
-    pub fn builder() -> crate::model::instance_details::Builder {
-        crate::model::instance_details::Builder::default()
-    }
-}
 
 /// <p>Details about the Amazon OpenSearch Service instances that Amazon Web Services recommends that you purchase.</p>
 #[non_exhaustive]
@@ -11082,6 +11138,13 @@ impl EsInstanceDetails {
         self.size_flex_eligible
     }
 }
+impl EsInstanceDetails {
+    /// Creates a new builder-style object to manufacture [`EsInstanceDetails`](crate::model::EsInstanceDetails).
+    pub fn builder() -> crate::model::es_instance_details::Builder {
+        crate::model::es_instance_details::Builder::default()
+    }
+}
+
 /// See [`EsInstanceDetails`](crate::model::EsInstanceDetails).
 pub mod es_instance_details {
 
@@ -11164,12 +11227,6 @@ pub mod es_instance_details {
         }
     }
 }
-impl EsInstanceDetails {
-    /// Creates a new builder-style object to manufacture [`EsInstanceDetails`](crate::model::EsInstanceDetails).
-    pub fn builder() -> crate::model::es_instance_details::Builder {
-        crate::model::es_instance_details::Builder::default()
-    }
-}
 
 /// <p>Details about the Amazon ElastiCache instances that Amazon Web Services recommends that you purchase.</p>
 #[non_exhaustive]
@@ -11220,6 +11277,13 @@ impl ElastiCacheInstanceDetails {
         self.size_flex_eligible
     }
 }
+impl ElastiCacheInstanceDetails {
+    /// Creates a new builder-style object to manufacture [`ElastiCacheInstanceDetails`](crate::model::ElastiCacheInstanceDetails).
+    pub fn builder() -> crate::model::elasti_cache_instance_details::Builder {
+        crate::model::elasti_cache_instance_details::Builder::default()
+    }
+}
+
 /// See [`ElastiCacheInstanceDetails`](crate::model::ElastiCacheInstanceDetails).
 pub mod elasti_cache_instance_details {
 
@@ -11311,12 +11375,6 @@ pub mod elasti_cache_instance_details {
         }
     }
 }
-impl ElastiCacheInstanceDetails {
-    /// Creates a new builder-style object to manufacture [`ElastiCacheInstanceDetails`](crate::model::ElastiCacheInstanceDetails).
-    pub fn builder() -> crate::model::elasti_cache_instance_details::Builder {
-        crate::model::elasti_cache_instance_details::Builder::default()
-    }
-}
 
 /// <p>Details about the Amazon Redshift instances that Amazon Web Services recommends that you purchase.</p>
 #[non_exhaustive]
@@ -11360,6 +11418,13 @@ impl RedshiftInstanceDetails {
         self.size_flex_eligible
     }
 }
+impl RedshiftInstanceDetails {
+    /// Creates a new builder-style object to manufacture [`RedshiftInstanceDetails`](crate::model::RedshiftInstanceDetails).
+    pub fn builder() -> crate::model::redshift_instance_details::Builder {
+        crate::model::redshift_instance_details::Builder::default()
+    }
+}
+
 /// See [`RedshiftInstanceDetails`](crate::model::RedshiftInstanceDetails).
 pub mod redshift_instance_details {
 
@@ -11436,12 +11501,6 @@ pub mod redshift_instance_details {
         }
     }
 }
-impl RedshiftInstanceDetails {
-    /// Creates a new builder-style object to manufacture [`RedshiftInstanceDetails`](crate::model::RedshiftInstanceDetails).
-    pub fn builder() -> crate::model::redshift_instance_details::Builder {
-        crate::model::redshift_instance_details::Builder::default()
-    }
-}
 
 /// <p>Details about the Amazon RDS instances that Amazon Web Services recommends that you purchase.</p>
 #[non_exhaustive]
@@ -11513,6 +11572,13 @@ impl RdsInstanceDetails {
         self.size_flex_eligible
     }
 }
+impl RdsInstanceDetails {
+    /// Creates a new builder-style object to manufacture [`RdsInstanceDetails`](crate::model::RdsInstanceDetails).
+    pub fn builder() -> crate::model::rds_instance_details::Builder {
+        crate::model::rds_instance_details::Builder::default()
+    }
+}
+
 /// See [`RdsInstanceDetails`](crate::model::RdsInstanceDetails).
 pub mod rds_instance_details {
 
@@ -11652,12 +11718,6 @@ pub mod rds_instance_details {
         }
     }
 }
-impl RdsInstanceDetails {
-    /// Creates a new builder-style object to manufacture [`RdsInstanceDetails`](crate::model::RdsInstanceDetails).
-    pub fn builder() -> crate::model::rds_instance_details::Builder {
-        crate::model::rds_instance_details::Builder::default()
-    }
-}
 
 /// <p>Details about the Amazon EC2 instances that Amazon Web Services recommends that you purchase.</p>
 #[non_exhaustive]
@@ -11722,6 +11782,13 @@ impl Ec2InstanceDetails {
         self.size_flex_eligible
     }
 }
+impl Ec2InstanceDetails {
+    /// Creates a new builder-style object to manufacture [`Ec2InstanceDetails`](crate::model::Ec2InstanceDetails).
+    pub fn builder() -> crate::model::ec2_instance_details::Builder {
+        crate::model::ec2_instance_details::Builder::default()
+    }
+}
+
 /// See [`Ec2InstanceDetails`](crate::model::Ec2InstanceDetails).
 pub mod ec2_instance_details {
 
@@ -11840,12 +11907,6 @@ pub mod ec2_instance_details {
         }
     }
 }
-impl Ec2InstanceDetails {
-    /// Creates a new builder-style object to manufacture [`Ec2InstanceDetails`](crate::model::Ec2InstanceDetails).
-    pub fn builder() -> crate::model::ec2_instance_details::Builder {
-        crate::model::ec2_instance_details::Builder::default()
-    }
-}
 
 /// <p>Hardware specifications for the service that you want recommendations for.</p>
 #[non_exhaustive]
@@ -11861,6 +11922,13 @@ impl ServiceSpecification {
         self.ec2_specification.as_ref()
     }
 }
+impl ServiceSpecification {
+    /// Creates a new builder-style object to manufacture [`ServiceSpecification`](crate::model::ServiceSpecification).
+    pub fn builder() -> crate::model::service_specification::Builder {
+        crate::model::service_specification::Builder::default()
+    }
+}
+
 /// See [`ServiceSpecification`](crate::model::ServiceSpecification).
 pub mod service_specification {
 
@@ -11892,12 +11960,6 @@ pub mod service_specification {
         }
     }
 }
-impl ServiceSpecification {
-    /// Creates a new builder-style object to manufacture [`ServiceSpecification`](crate::model::ServiceSpecification).
-    pub fn builder() -> crate::model::service_specification::Builder {
-        crate::model::service_specification::Builder::default()
-    }
-}
 
 /// <p>The Amazon EC2 hardware specifications that you want Amazon Web Services to provide recommendations for.</p>
 #[non_exhaustive]
@@ -11913,6 +11975,13 @@ impl Ec2Specification {
         self.offering_class.as_ref()
     }
 }
+impl Ec2Specification {
+    /// Creates a new builder-style object to manufacture [`Ec2Specification`](crate::model::Ec2Specification).
+    pub fn builder() -> crate::model::ec2_specification::Builder {
+        crate::model::ec2_specification::Builder::default()
+    }
+}
+
 /// See [`Ec2Specification`](crate::model::Ec2Specification).
 pub mod ec2_specification {
 
@@ -11942,12 +12011,6 @@ pub mod ec2_specification {
                 offering_class: self.offering_class,
             }
         }
-    }
-}
-impl Ec2Specification {
-    /// Creates a new builder-style object to manufacture [`Ec2Specification`](crate::model::Ec2Specification).
-    pub fn builder() -> crate::model::ec2_specification::Builder {
-        crate::model::ec2_specification::Builder::default()
     }
 }
 
@@ -12062,6 +12125,13 @@ impl ReservationPurchaseRecommendationMetadata {
         self.generation_timestamp.as_deref()
     }
 }
+impl ReservationPurchaseRecommendationMetadata {
+    /// Creates a new builder-style object to manufacture [`ReservationPurchaseRecommendationMetadata`](crate::model::ReservationPurchaseRecommendationMetadata).
+    pub fn builder() -> crate::model::reservation_purchase_recommendation_metadata::Builder {
+        crate::model::reservation_purchase_recommendation_metadata::Builder::default()
+    }
+}
+
 /// See [`ReservationPurchaseRecommendationMetadata`](crate::model::ReservationPurchaseRecommendationMetadata).
 pub mod reservation_purchase_recommendation_metadata {
 
@@ -12108,12 +12178,6 @@ pub mod reservation_purchase_recommendation_metadata {
         }
     }
 }
-impl ReservationPurchaseRecommendationMetadata {
-    /// Creates a new builder-style object to manufacture [`ReservationPurchaseRecommendationMetadata`](crate::model::ReservationPurchaseRecommendationMetadata).
-    pub fn builder() -> crate::model::reservation_purchase_recommendation_metadata::Builder {
-        crate::model::reservation_purchase_recommendation_metadata::Builder::default()
-    }
-}
 
 /// <p>The amount of instance usage that a reservation covered.</p>
 #[non_exhaustive]
@@ -12145,6 +12209,13 @@ impl Coverage {
         self.coverage_cost.as_ref()
     }
 }
+impl Coverage {
+    /// Creates a new builder-style object to manufacture [`Coverage`](crate::model::Coverage).
+    pub fn builder() -> crate::model::coverage::Builder {
+        crate::model::coverage::Builder::default()
+    }
+}
+
 /// See [`Coverage`](crate::model::Coverage).
 pub mod coverage {
 
@@ -12210,12 +12281,6 @@ pub mod coverage {
         }
     }
 }
-impl Coverage {
-    /// Creates a new builder-style object to manufacture [`Coverage`](crate::model::Coverage).
-    pub fn builder() -> crate::model::coverage::Builder {
-        crate::model::coverage::Builder::default()
-    }
-}
 
 /// <p>How much it costs to run an instance.</p>
 #[non_exhaustive]
@@ -12231,6 +12296,13 @@ impl CoverageCost {
         self.on_demand_cost.as_deref()
     }
 }
+impl CoverageCost {
+    /// Creates a new builder-style object to manufacture [`CoverageCost`](crate::model::CoverageCost).
+    pub fn builder() -> crate::model::coverage_cost::Builder {
+        crate::model::coverage_cost::Builder::default()
+    }
+}
+
 /// See [`CoverageCost`](crate::model::CoverageCost).
 pub mod coverage_cost {
 
@@ -12260,12 +12332,6 @@ pub mod coverage_cost {
                 on_demand_cost: self.on_demand_cost,
             }
         }
-    }
-}
-impl CoverageCost {
-    /// Creates a new builder-style object to manufacture [`CoverageCost`](crate::model::CoverageCost).
-    pub fn builder() -> crate::model::coverage_cost::Builder {
-        crate::model::coverage_cost::Builder::default()
     }
 }
 
@@ -12305,6 +12371,13 @@ impl CoverageNormalizedUnits {
         self.coverage_normalized_units_percentage.as_deref()
     }
 }
+impl CoverageNormalizedUnits {
+    /// Creates a new builder-style object to manufacture [`CoverageNormalizedUnits`](crate::model::CoverageNormalizedUnits).
+    pub fn builder() -> crate::model::coverage_normalized_units::Builder {
+        crate::model::coverage_normalized_units::Builder::default()
+    }
+}
+
 /// See [`CoverageNormalizedUnits`](crate::model::CoverageNormalizedUnits).
 pub mod coverage_normalized_units {
 
@@ -12387,12 +12460,6 @@ pub mod coverage_normalized_units {
         }
     }
 }
-impl CoverageNormalizedUnits {
-    /// Creates a new builder-style object to manufacture [`CoverageNormalizedUnits`](crate::model::CoverageNormalizedUnits).
-    pub fn builder() -> crate::model::coverage_normalized_units::Builder {
-        crate::model::coverage_normalized_units::Builder::default()
-    }
-}
 
 /// <p>How long a running instance either used a reservation or was On-Demand.</p>
 #[non_exhaustive]
@@ -12429,6 +12496,13 @@ impl CoverageHours {
         self.coverage_hours_percentage.as_deref()
     }
 }
+impl CoverageHours {
+    /// Creates a new builder-style object to manufacture [`CoverageHours`](crate::model::CoverageHours).
+    pub fn builder() -> crate::model::coverage_hours::Builder {
+        crate::model::coverage_hours::Builder::default()
+    }
+}
+
 /// See [`CoverageHours`](crate::model::CoverageHours).
 pub mod coverage_hours {
 
@@ -12505,12 +12579,6 @@ pub mod coverage_hours {
         }
     }
 }
-impl CoverageHours {
-    /// Creates a new builder-style object to manufacture [`CoverageHours`](crate::model::CoverageHours).
-    pub fn builder() -> crate::model::coverage_hours::Builder {
-        crate::model::coverage_hours::Builder::default()
-    }
-}
 
 /// <p>Reservation coverage for a specified period, in hours.</p>
 #[non_exhaustive]
@@ -12540,6 +12608,13 @@ impl CoverageByTime {
         self.total.as_ref()
     }
 }
+impl CoverageByTime {
+    /// Creates a new builder-style object to manufacture [`CoverageByTime`](crate::model::CoverageByTime).
+    pub fn builder() -> crate::model::coverage_by_time::Builder {
+        crate::model::coverage_by_time::Builder::default()
+    }
+}
+
 /// See [`CoverageByTime`](crate::model::CoverageByTime).
 pub mod coverage_by_time {
 
@@ -12605,12 +12680,6 @@ pub mod coverage_by_time {
         }
     }
 }
-impl CoverageByTime {
-    /// Creates a new builder-style object to manufacture [`CoverageByTime`](crate::model::CoverageByTime).
-    pub fn builder() -> crate::model::coverage_by_time::Builder {
-        crate::model::coverage_by_time::Builder::default()
-    }
-}
 
 /// <p>A group of reservations that share a set of attributes.</p>
 #[non_exhaustive]
@@ -12637,6 +12706,13 @@ impl ReservationCoverageGroup {
         self.coverage.as_ref()
     }
 }
+impl ReservationCoverageGroup {
+    /// Creates a new builder-style object to manufacture [`ReservationCoverageGroup`](crate::model::ReservationCoverageGroup).
+    pub fn builder() -> crate::model::reservation_coverage_group::Builder {
+        crate::model::reservation_coverage_group::Builder::default()
+    }
+}
+
 /// See [`ReservationCoverageGroup`](crate::model::ReservationCoverageGroup).
 pub mod reservation_coverage_group {
 
@@ -12694,12 +12770,6 @@ pub mod reservation_coverage_group {
         }
     }
 }
-impl ReservationCoverageGroup {
-    /// Creates a new builder-style object to manufacture [`ReservationCoverageGroup`](crate::model::ReservationCoverageGroup).
-    pub fn builder() -> crate::model::reservation_coverage_group::Builder {
-        crate::model::reservation_coverage_group::Builder::default()
-    }
-}
 
 /// <p>The metadata of a specific type that you can use to filter and group your results. You can use <code>GetDimensionValues</code> to find specific values.</p>
 #[non_exhaustive]
@@ -12726,6 +12796,13 @@ impl DimensionValuesWithAttributes {
         self.attributes.as_ref()
     }
 }
+impl DimensionValuesWithAttributes {
+    /// Creates a new builder-style object to manufacture [`DimensionValuesWithAttributes`](crate::model::DimensionValuesWithAttributes).
+    pub fn builder() -> crate::model::dimension_values_with_attributes::Builder {
+        crate::model::dimension_values_with_attributes::Builder::default()
+    }
+}
+
 /// See [`DimensionValuesWithAttributes`](crate::model::DimensionValuesWithAttributes).
 pub mod dimension_values_with_attributes {
 
@@ -12781,12 +12858,6 @@ pub mod dimension_values_with_attributes {
                 attributes: self.attributes,
             }
         }
-    }
-}
-impl DimensionValuesWithAttributes {
-    /// Creates a new builder-style object to manufacture [`DimensionValuesWithAttributes`](crate::model::DimensionValuesWithAttributes).
-    pub fn builder() -> crate::model::dimension_values_with_attributes::Builder {
-        crate::model::dimension_values_with_attributes::Builder::default()
     }
 }
 
@@ -12926,6 +12997,13 @@ impl ResultByTime {
         self.estimated
     }
 }
+impl ResultByTime {
+    /// Creates a new builder-style object to manufacture [`ResultByTime`](crate::model::ResultByTime).
+    pub fn builder() -> crate::model::result_by_time::Builder {
+        crate::model::result_by_time::Builder::default()
+    }
+}
+
 /// See [`ResultByTime`](crate::model::ResultByTime).
 pub mod result_by_time {
 
@@ -13019,12 +13097,6 @@ pub mod result_by_time {
         }
     }
 }
-impl ResultByTime {
-    /// Creates a new builder-style object to manufacture [`ResultByTime`](crate::model::ResultByTime).
-    pub fn builder() -> crate::model::result_by_time::Builder {
-        crate::model::result_by_time::Builder::default()
-    }
-}
 
 /// <p>One level of grouped data in the results.</p>
 #[non_exhaustive]
@@ -13053,6 +13125,13 @@ impl Group {
         self.metrics.as_ref()
     }
 }
+impl Group {
+    /// Creates a new builder-style object to manufacture [`Group`](crate::model::Group).
+    pub fn builder() -> crate::model::group::Builder {
+        crate::model::group::Builder::default()
+    }
+}
+
 /// See [`Group`](crate::model::Group).
 pub mod group {
 
@@ -13117,12 +13196,6 @@ pub mod group {
                 metrics: self.metrics,
             }
         }
-    }
-}
-impl Group {
-    /// Creates a new builder-style object to manufacture [`Group`](crate::model::Group).
-    pub fn builder() -> crate::model::group::Builder {
-        crate::model::group::Builder::default()
     }
 }
 
@@ -13213,6 +13286,13 @@ impl AnomalySubscription {
         self.threshold_expression.as_ref()
     }
 }
+impl AnomalySubscription {
+    /// Creates a new builder-style object to manufacture [`AnomalySubscription`](crate::model::AnomalySubscription).
+    pub fn builder() -> crate::model::anomaly_subscription::Builder {
+        crate::model::anomaly_subscription::Builder::default()
+    }
+}
+
 /// See [`AnomalySubscription`](crate::model::AnomalySubscription).
 pub mod anomaly_subscription {
 
@@ -13379,12 +13459,6 @@ pub mod anomaly_subscription {
         }
     }
 }
-impl AnomalySubscription {
-    /// Creates a new builder-style object to manufacture [`AnomalySubscription`](crate::model::AnomalySubscription).
-    pub fn builder() -> crate::model::anomaly_subscription::Builder {
-        crate::model::anomaly_subscription::Builder::default()
-    }
-}
 
 /// <p>This object continuously inspects your account's cost data for anomalies. It's based on <code>MonitorType</code> and <code>MonitorSpecification</code>. The content consists of detailed metadata and the current status of the monitor object. </p>
 #[non_exhaustive]
@@ -13528,6 +13602,13 @@ impl AnomalyMonitor {
         self.dimensional_value_count
     }
 }
+impl AnomalyMonitor {
+    /// Creates a new builder-style object to manufacture [`AnomalyMonitor`](crate::model::AnomalyMonitor).
+    pub fn builder() -> crate::model::anomaly_monitor::Builder {
+        crate::model::anomaly_monitor::Builder::default()
+    }
+}
+
 /// See [`AnomalyMonitor`](crate::model::AnomalyMonitor).
 pub mod anomaly_monitor {
 
@@ -13740,12 +13821,6 @@ pub mod anomaly_monitor {
                 dimensional_value_count: self.dimensional_value_count.unwrap_or_default(),
             }
         }
-    }
-}
-impl AnomalyMonitor {
-    /// Creates a new builder-style object to manufacture [`AnomalyMonitor`](crate::model::AnomalyMonitor).
-    pub fn builder() -> crate::model::anomaly_monitor::Builder {
-        crate::model::anomaly_monitor::Builder::default()
     }
 }
 
@@ -13994,6 +14069,13 @@ impl Anomaly {
         self.feedback.as_ref()
     }
 }
+impl Anomaly {
+    /// Creates a new builder-style object to manufacture [`Anomaly`](crate::model::Anomaly).
+    pub fn builder() -> crate::model::anomaly::Builder {
+        crate::model::anomaly::Builder::default()
+    }
+}
+
 /// See [`Anomaly`](crate::model::Anomaly).
 pub mod anomaly {
 
@@ -14142,12 +14224,6 @@ pub mod anomaly {
         }
     }
 }
-impl Anomaly {
-    /// Creates a new builder-style object to manufacture [`Anomaly`](crate::model::Anomaly).
-    pub fn builder() -> crate::model::anomaly::Builder {
-        crate::model::anomaly::Builder::default()
-    }
-}
 
 /// <p>The dollar value of the anomaly. </p>
 #[non_exhaustive]
@@ -14191,6 +14267,13 @@ impl Impact {
         self.total_impact_percentage
     }
 }
+impl Impact {
+    /// Creates a new builder-style object to manufacture [`Impact`](crate::model::Impact).
+    pub fn builder() -> crate::model::impact::Builder {
+        crate::model::impact::Builder::default()
+    }
+}
+
 /// See [`Impact`](crate::model::Impact).
 pub mod impact {
 
@@ -14267,12 +14350,6 @@ pub mod impact {
         }
     }
 }
-impl Impact {
-    /// Creates a new builder-style object to manufacture [`Impact`](crate::model::Impact).
-    pub fn builder() -> crate::model::impact::Builder {
-        crate::model::impact::Builder::default()
-    }
-}
 
 /// <p>Quantifies the anomaly. The higher score means that it's more anomalous. </p>
 #[non_exhaustive]
@@ -14295,6 +14372,13 @@ impl AnomalyScore {
         self.current_score
     }
 }
+impl AnomalyScore {
+    /// Creates a new builder-style object to manufacture [`AnomalyScore`](crate::model::AnomalyScore).
+    pub fn builder() -> crate::model::anomaly_score::Builder {
+        crate::model::anomaly_score::Builder::default()
+    }
+}
+
 /// See [`AnomalyScore`](crate::model::AnomalyScore).
 pub mod anomaly_score {
 
@@ -14333,12 +14417,6 @@ pub mod anomaly_score {
                 current_score: self.current_score.unwrap_or_default(),
             }
         }
-    }
-}
-impl AnomalyScore {
-    /// Creates a new builder-style object to manufacture [`AnomalyScore`](crate::model::AnomalyScore).
-    pub fn builder() -> crate::model::anomaly_score::Builder {
-        crate::model::anomaly_score::Builder::default()
     }
 }
 
@@ -14384,6 +14462,13 @@ impl RootCause {
         self.linked_account_name.as_deref()
     }
 }
+impl RootCause {
+    /// Creates a new builder-style object to manufacture [`RootCause`](crate::model::RootCause).
+    pub fn builder() -> crate::model::root_cause::Builder {
+        crate::model::root_cause::Builder::default()
+    }
+}
+
 /// See [`RootCause`](crate::model::RootCause).
 pub mod root_cause {
 
@@ -14466,12 +14551,6 @@ pub mod root_cause {
         }
     }
 }
-impl RootCause {
-    /// Creates a new builder-style object to manufacture [`RootCause`](crate::model::RootCause).
-    pub fn builder() -> crate::model::root_cause::Builder {
-        crate::model::root_cause::Builder::default()
-    }
-}
 
 /// <p>Filters cost anomalies based on the total impact. </p>
 #[non_exhaustive]
@@ -14501,6 +14580,13 @@ impl TotalImpactFilter {
         self.end_value
     }
 }
+impl TotalImpactFilter {
+    /// Creates a new builder-style object to manufacture [`TotalImpactFilter`](crate::model::TotalImpactFilter).
+    pub fn builder() -> crate::model::total_impact_filter::Builder {
+        crate::model::total_impact_filter::Builder::default()
+    }
+}
+
 /// See [`TotalImpactFilter`](crate::model::TotalImpactFilter).
 pub mod total_impact_filter {
 
@@ -14554,12 +14640,6 @@ pub mod total_impact_filter {
                 end_value: self.end_value.unwrap_or_default(),
             }
         }
-    }
-}
-impl TotalImpactFilter {
-    /// Creates a new builder-style object to manufacture [`TotalImpactFilter`](crate::model::TotalImpactFilter).
-    pub fn builder() -> crate::model::total_impact_filter::Builder {
-        crate::model::total_impact_filter::Builder::default()
     }
 }
 
@@ -14701,6 +14781,13 @@ impl AnomalyDateInterval {
         self.end_date.as_deref()
     }
 }
+impl AnomalyDateInterval {
+    /// Creates a new builder-style object to manufacture [`AnomalyDateInterval`](crate::model::AnomalyDateInterval).
+    pub fn builder() -> crate::model::anomaly_date_interval::Builder {
+        crate::model::anomaly_date_interval::Builder::default()
+    }
+}
+
 /// See [`AnomalyDateInterval`](crate::model::AnomalyDateInterval).
 pub mod anomaly_date_interval {
 
@@ -14739,12 +14826,6 @@ pub mod anomaly_date_interval {
                 end_date: self.end_date,
             }
         }
-    }
-}
-impl AnomalyDateInterval {
-    /// Creates a new builder-style object to manufacture [`AnomalyDateInterval`](crate::model::AnomalyDateInterval).
-    pub fn builder() -> crate::model::anomaly_date_interval::Builder {
-        crate::model::anomaly_date_interval::Builder::default()
     }
 }
 
@@ -14824,6 +14905,13 @@ impl CostCategory {
         self.default_value.as_deref()
     }
 }
+impl CostCategory {
+    /// Creates a new builder-style object to manufacture [`CostCategory`](crate::model::CostCategory).
+    pub fn builder() -> crate::model::cost_category::Builder {
+        crate::model::cost_category::Builder::default()
+    }
+}
+
 /// See [`CostCategory`](crate::model::CostCategory).
 pub mod cost_category {
 
@@ -14996,11 +15084,5 @@ pub mod cost_category {
                 default_value: self.default_value,
             }
         }
-    }
-}
-impl CostCategory {
-    /// Creates a new builder-style object to manufacture [`CostCategory`](crate::model::CostCategory).
-    pub fn builder() -> crate::model::cost_category::Builder {
-        crate::model::cost_category::Builder::default()
     }
 }

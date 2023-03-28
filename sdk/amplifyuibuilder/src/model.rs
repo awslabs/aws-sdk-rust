@@ -74,6 +74,13 @@ impl Theme {
         self.tags.as_ref()
     }
 }
+impl Theme {
+    /// Creates a new builder-style object to manufacture [`Theme`](crate::model::Theme).
+    pub fn builder() -> crate::model::theme::Builder {
+        crate::model::theme::Builder::default()
+    }
+}
+
 /// See [`Theme`](crate::model::Theme).
 pub mod theme {
 
@@ -242,12 +249,6 @@ pub mod theme {
         }
     }
 }
-impl Theme {
-    /// Creates a new builder-style object to manufacture [`Theme`](crate::model::Theme).
-    pub fn builder() -> crate::model::theme::Builder {
-        crate::model::theme::Builder::default()
-    }
-}
 
 /// <p>A key-value pair that defines a property of a theme.</p>
 #[non_exhaustive]
@@ -270,6 +271,13 @@ impl ThemeValues {
         self.value.as_ref()
     }
 }
+impl ThemeValues {
+    /// Creates a new builder-style object to manufacture [`ThemeValues`](crate::model::ThemeValues).
+    pub fn builder() -> crate::model::theme_values::Builder {
+        crate::model::theme_values::Builder::default()
+    }
+}
+
 /// See [`ThemeValues`](crate::model::ThemeValues).
 pub mod theme_values {
 
@@ -310,12 +318,6 @@ pub mod theme_values {
         }
     }
 }
-impl ThemeValues {
-    /// Creates a new builder-style object to manufacture [`ThemeValues`](crate::model::ThemeValues).
-    pub fn builder() -> crate::model::theme_values::Builder {
-        crate::model::theme_values::Builder::default()
-    }
-}
 
 /// <p>Describes the configuration of a theme's properties.</p>
 #[non_exhaustive]
@@ -338,6 +340,13 @@ impl ThemeValue {
         self.children.as_deref()
     }
 }
+impl ThemeValue {
+    /// Creates a new builder-style object to manufacture [`ThemeValue`](crate::model::ThemeValue).
+    pub fn builder() -> crate::model::theme_value::Builder {
+        crate::model::theme_value::Builder::default()
+    }
+}
+
 /// See [`ThemeValue`](crate::model::ThemeValue).
 pub mod theme_value {
 
@@ -387,12 +396,6 @@ pub mod theme_value {
         }
     }
 }
-impl ThemeValue {
-    /// Creates a new builder-style object to manufacture [`ThemeValue`](crate::model::ThemeValue).
-    pub fn builder() -> crate::model::theme_value::Builder {
-        crate::model::theme_value::Builder::default()
-    }
-}
 
 /// <p>Describes the basic information about a theme.</p>
 #[non_exhaustive]
@@ -429,6 +432,13 @@ impl ThemeSummary {
         self.name.as_deref()
     }
 }
+impl ThemeSummary {
+    /// Creates a new builder-style object to manufacture [`ThemeSummary`](crate::model::ThemeSummary).
+    pub fn builder() -> crate::model::theme_summary::Builder {
+        crate::model::theme_summary::Builder::default()
+    }
+}
+
 /// See [`ThemeSummary`](crate::model::ThemeSummary).
 pub mod theme_summary {
 
@@ -496,12 +506,6 @@ pub mod theme_summary {
         }
     }
 }
-impl ThemeSummary {
-    /// Creates a new builder-style object to manufacture [`ThemeSummary`](crate::model::ThemeSummary).
-    pub fn builder() -> crate::model::theme_summary::Builder {
-        crate::model::theme_summary::Builder::default()
-    }
-}
 
 /// <p>Represents all of the information that is required to create a theme.</p>
 #[non_exhaustive]
@@ -542,6 +546,13 @@ impl CreateThemeData {
         self.tags.as_ref()
     }
 }
+impl CreateThemeData {
+    /// Creates a new builder-style object to manufacture [`CreateThemeData`](crate::model::CreateThemeData).
+    pub fn builder() -> crate::model::create_theme_data::Builder {
+        crate::model::create_theme_data::Builder::default()
+    }
+}
+
 /// See [`CreateThemeData`](crate::model::CreateThemeData).
 pub mod create_theme_data {
 
@@ -641,12 +652,6 @@ pub mod create_theme_data {
         }
     }
 }
-impl CreateThemeData {
-    /// Creates a new builder-style object to manufacture [`CreateThemeData`](crate::model::CreateThemeData).
-    pub fn builder() -> crate::model::create_theme_data::Builder {
-        crate::model::create_theme_data::Builder::default()
-    }
-}
 
 /// <p>Saves the data binding information for a theme.</p>
 #[non_exhaustive]
@@ -683,6 +688,13 @@ impl UpdateThemeData {
         self.overrides.as_deref()
     }
 }
+impl UpdateThemeData {
+    /// Creates a new builder-style object to manufacture [`UpdateThemeData`](crate::model::UpdateThemeData).
+    pub fn builder() -> crate::model::update_theme_data::Builder {
+        crate::model::update_theme_data::Builder::default()
+    }
+}
+
 /// See [`UpdateThemeData`](crate::model::UpdateThemeData).
 pub mod update_theme_data {
 
@@ -763,12 +775,6 @@ pub mod update_theme_data {
                 overrides: self.overrides,
             }
         }
-    }
-}
-impl UpdateThemeData {
-    /// Creates a new builder-style object to manufacture [`UpdateThemeData`](crate::model::UpdateThemeData).
-    pub fn builder() -> crate::model::update_theme_data::Builder {
-        crate::model::update_theme_data::Builder::default()
     }
 }
 
@@ -879,6 +885,13 @@ impl Form {
         self.cta.as_ref()
     }
 }
+impl Form {
+    /// Creates a new builder-style object to manufacture [`Form`](crate::model::Form).
+    pub fn builder() -> crate::model::form::Builder {
+        crate::model::form::Builder::default()
+    }
+}
+
 /// See [`Form`](crate::model::Form).
 pub mod form {
 
@@ -1102,12 +1115,6 @@ pub mod form {
         }
     }
 }
-impl Form {
-    /// Creates a new builder-style object to manufacture [`Form`](crate::model::Form).
-    pub fn builder() -> crate::model::form::Builder {
-        crate::model::form::Builder::default()
-    }
-}
 
 /// <p>Describes the call to action button configuration for the form.</p>
 #[non_exhaustive]
@@ -1144,6 +1151,13 @@ impl FormCta {
         self.submit.as_ref()
     }
 }
+impl FormCta {
+    /// Creates a new builder-style object to manufacture [`FormCta`](crate::model::FormCta).
+    pub fn builder() -> crate::model::form_cta::Builder {
+        crate::model::form_cta::Builder::default()
+    }
+}
+
 /// See [`FormCta`](crate::model::FormCta).
 pub mod form_cta {
 
@@ -1211,12 +1225,6 @@ pub mod form_cta {
         }
     }
 }
-impl FormCta {
-    /// Creates a new builder-style object to manufacture [`FormCta`](crate::model::FormCta).
-    pub fn builder() -> crate::model::form_cta::Builder {
-        crate::model::form_cta::Builder::default()
-    }
-}
 
 /// <p>Describes the configuration for a button UI element that is a part of a form.</p>
 #[non_exhaustive]
@@ -1246,6 +1254,13 @@ impl FormButton {
         self.position.as_ref()
     }
 }
+impl FormButton {
+    /// Creates a new builder-style object to manufacture [`FormButton`](crate::model::FormButton).
+    pub fn builder() -> crate::model::form_button::Builder {
+        crate::model::form_button::Builder::default()
+    }
+}
+
 /// See [`FormButton`](crate::model::FormButton).
 pub mod form_button {
 
@@ -1299,12 +1314,6 @@ pub mod form_button {
                 position: self.position,
             }
         }
-    }
-}
-impl FormButton {
-    /// Creates a new builder-style object to manufacture [`FormButton`](crate::model::FormButton).
-    pub fn builder() -> crate::model::form_button::Builder {
-        crate::model::form_button::Builder::default()
     }
 }
 
@@ -1598,6 +1607,13 @@ impl SectionalElement {
         self.orientation.as_deref()
     }
 }
+impl SectionalElement {
+    /// Creates a new builder-style object to manufacture [`SectionalElement`](crate::model::SectionalElement).
+    pub fn builder() -> crate::model::sectional_element::Builder {
+        crate::model::sectional_element::Builder::default()
+    }
+}
+
 /// See [`SectionalElement`](crate::model::SectionalElement).
 pub mod sectional_element {
 
@@ -1677,12 +1693,6 @@ pub mod sectional_element {
         }
     }
 }
-impl SectionalElement {
-    /// Creates a new builder-style object to manufacture [`SectionalElement`](crate::model::SectionalElement).
-    pub fn builder() -> crate::model::sectional_element::Builder {
-        crate::model::sectional_element::Builder::default()
-    }
-}
 
 /// <p>Describes the configuration information for a field in a table.</p>
 #[non_exhaustive]
@@ -1728,6 +1738,13 @@ impl FieldConfig {
         self.validations.as_deref()
     }
 }
+impl FieldConfig {
+    /// Creates a new builder-style object to manufacture [`FieldConfig`](crate::model::FieldConfig).
+    pub fn builder() -> crate::model::field_config::Builder {
+        crate::model::field_config::Builder::default()
+    }
+}
+
 /// See [`FieldConfig`](crate::model::FieldConfig).
 pub mod field_config {
 
@@ -1820,12 +1837,6 @@ pub mod field_config {
         }
     }
 }
-impl FieldConfig {
-    /// Creates a new builder-style object to manufacture [`FieldConfig`](crate::model::FieldConfig).
-    pub fn builder() -> crate::model::field_config::Builder {
-        crate::model::field_config::Builder::default()
-    }
-}
 
 /// <p>Describes the validation configuration for a field.</p>
 #[non_exhaustive]
@@ -1862,6 +1873,13 @@ impl FieldValidationConfiguration {
         self.validation_message.as_deref()
     }
 }
+impl FieldValidationConfiguration {
+    /// Creates a new builder-style object to manufacture [`FieldValidationConfiguration`](crate::model::FieldValidationConfiguration).
+    pub fn builder() -> crate::model::field_validation_configuration::Builder {
+        crate::model::field_validation_configuration::Builder::default()
+    }
+}
+
 /// See [`FieldValidationConfiguration`](crate::model::FieldValidationConfiguration).
 pub mod field_validation_configuration {
 
@@ -1942,12 +1960,6 @@ pub mod field_validation_configuration {
                 validation_message: self.validation_message,
             }
         }
-    }
-}
-impl FieldValidationConfiguration {
-    /// Creates a new builder-style object to manufacture [`FieldValidationConfiguration`](crate::model::FieldValidationConfiguration).
-    pub fn builder() -> crate::model::field_validation_configuration::Builder {
-        crate::model::field_validation_configuration::Builder::default()
     }
 }
 
@@ -2063,6 +2075,13 @@ impl FieldInputConfig {
         self.is_array
     }
 }
+impl FieldInputConfig {
+    /// Creates a new builder-style object to manufacture [`FieldInputConfig`](crate::model::FieldInputConfig).
+    pub fn builder() -> crate::model::field_input_config::Builder {
+        crate::model::field_input_config::Builder::default()
+    }
+}
+
 /// See [`FieldInputConfig`](crate::model::FieldInputConfig).
 pub mod field_input_config {
 
@@ -2271,12 +2290,6 @@ pub mod field_input_config {
         }
     }
 }
-impl FieldInputConfig {
-    /// Creates a new builder-style object to manufacture [`FieldInputConfig`](crate::model::FieldInputConfig).
-    pub fn builder() -> crate::model::field_input_config::Builder {
-        crate::model::field_input_config::Builder::default()
-    }
-}
 
 /// <p>Represents the data binding configuration for a value map.</p>
 #[non_exhaustive]
@@ -2292,6 +2305,13 @@ impl ValueMappings {
         self.values.as_deref()
     }
 }
+impl ValueMappings {
+    /// Creates a new builder-style object to manufacture [`ValueMappings`](crate::model::ValueMappings).
+    pub fn builder() -> crate::model::value_mappings::Builder {
+        crate::model::value_mappings::Builder::default()
+    }
+}
+
 /// See [`ValueMappings`](crate::model::ValueMappings).
 pub mod value_mappings {
 
@@ -2329,12 +2349,6 @@ pub mod value_mappings {
         }
     }
 }
-impl ValueMappings {
-    /// Creates a new builder-style object to manufacture [`ValueMappings`](crate::model::ValueMappings).
-    pub fn builder() -> crate::model::value_mappings::Builder {
-        crate::model::value_mappings::Builder::default()
-    }
-}
 
 /// <p>Associates a complex object with a display value. Use <code>ValueMapping</code> to store how to represent complex objects when they are displayed.</p>
 #[non_exhaustive]
@@ -2357,6 +2371,13 @@ impl ValueMapping {
         self.value.as_ref()
     }
 }
+impl ValueMapping {
+    /// Creates a new builder-style object to manufacture [`ValueMapping`](crate::model::ValueMapping).
+    pub fn builder() -> crate::model::value_mapping::Builder {
+        crate::model::value_mapping::Builder::default()
+    }
+}
+
 /// See [`ValueMapping`](crate::model::ValueMapping).
 pub mod value_mapping {
 
@@ -2403,12 +2424,6 @@ pub mod value_mapping {
         }
     }
 }
-impl ValueMapping {
-    /// Creates a new builder-style object to manufacture [`ValueMapping`](crate::model::ValueMapping).
-    pub fn builder() -> crate::model::value_mapping::Builder {
-        crate::model::value_mapping::Builder::default()
-    }
-}
 
 /// <p>Describes the configuration for an input field on a form. Use <code>FormInputValueProperty</code> to specify the values to render or bind by default.</p>
 #[non_exhaustive]
@@ -2424,6 +2439,13 @@ impl FormInputValueProperty {
         self.value.as_deref()
     }
 }
+impl FormInputValueProperty {
+    /// Creates a new builder-style object to manufacture [`FormInputValueProperty`](crate::model::FormInputValueProperty).
+    pub fn builder() -> crate::model::form_input_value_property::Builder {
+        crate::model::form_input_value_property::Builder::default()
+    }
+}
+
 /// See [`FormInputValueProperty`](crate::model::FormInputValueProperty).
 pub mod form_input_value_property {
 
@@ -2450,12 +2472,6 @@ pub mod form_input_value_property {
         }
     }
 }
-impl FormInputValueProperty {
-    /// Creates a new builder-style object to manufacture [`FormInputValueProperty`](crate::model::FormInputValueProperty).
-    pub fn builder() -> crate::model::form_input_value_property::Builder {
-        crate::model::form_input_value_property::Builder::default()
-    }
-}
 
 /// <p>Describes the data type configuration for the data source associated with a form.</p>
 #[non_exhaustive]
@@ -2478,6 +2494,13 @@ impl FormDataTypeConfig {
         self.data_type_name.as_deref()
     }
 }
+impl FormDataTypeConfig {
+    /// Creates a new builder-style object to manufacture [`FormDataTypeConfig`](crate::model::FormDataTypeConfig).
+    pub fn builder() -> crate::model::form_data_type_config::Builder {
+        crate::model::form_data_type_config::Builder::default()
+    }
+}
+
 /// See [`FormDataTypeConfig`](crate::model::FormDataTypeConfig).
 pub mod form_data_type_config {
 
@@ -2522,12 +2545,6 @@ pub mod form_data_type_config {
                 data_type_name: self.data_type_name,
             }
         }
-    }
-}
-impl FormDataTypeConfig {
-    /// Creates a new builder-style object to manufacture [`FormDataTypeConfig`](crate::model::FormDataTypeConfig).
-    pub fn builder() -> crate::model::form_data_type_config::Builder {
-        crate::model::form_data_type_config::Builder::default()
     }
 }
 
@@ -2651,6 +2668,13 @@ impl FormStyle {
         self.outer_padding.as_ref()
     }
 }
+impl FormStyle {
+    /// Creates a new builder-style object to manufacture [`FormStyle`](crate::model::FormStyle).
+    pub fn builder() -> crate::model::form_style::Builder {
+        crate::model::form_style::Builder::default()
+    }
+}
+
 /// See [`FormStyle`](crate::model::FormStyle).
 pub mod form_style {
 
@@ -2710,12 +2734,6 @@ pub mod form_style {
                 outer_padding: self.outer_padding,
             }
         }
-    }
-}
-impl FormStyle {
-    /// Creates a new builder-style object to manufacture [`FormStyle`](crate::model::FormStyle).
-    pub fn builder() -> crate::model::form_style::Builder {
-        crate::model::form_style::Builder::default()
     }
 }
 
@@ -2909,6 +2927,13 @@ impl FormSummary {
         self.name.as_deref()
     }
 }
+impl FormSummary {
+    /// Creates a new builder-style object to manufacture [`FormSummary`](crate::model::FormSummary).
+    pub fn builder() -> crate::model::form_summary::Builder {
+        crate::model::form_summary::Builder::default()
+    }
+}
+
 /// See [`FormSummary`](crate::model::FormSummary).
 pub mod form_summary {
 
@@ -3006,12 +3031,6 @@ pub mod form_summary {
         }
     }
 }
-impl FormSummary {
-    /// Creates a new builder-style object to manufacture [`FormSummary`](crate::model::FormSummary).
-    pub fn builder() -> crate::model::form_summary::Builder {
-        crate::model::form_summary::Builder::default()
-    }
-}
 
 /// <p>Represents all of the information that is required to create a form.</p>
 #[non_exhaustive]
@@ -3099,6 +3118,13 @@ impl CreateFormData {
         self.tags.as_ref()
     }
 }
+impl CreateFormData {
+    /// Creates a new builder-style object to manufacture [`CreateFormData`](crate::model::CreateFormData).
+    pub fn builder() -> crate::model::create_form_data::Builder {
+        crate::model::create_form_data::Builder::default()
+    }
+}
+
 /// See [`CreateFormData`](crate::model::CreateFormData).
 pub mod create_form_data {
 
@@ -3283,12 +3309,6 @@ pub mod create_form_data {
         }
     }
 }
-impl CreateFormData {
-    /// Creates a new builder-style object to manufacture [`CreateFormData`](crate::model::CreateFormData).
-    pub fn builder() -> crate::model::create_form_data::Builder {
-        crate::model::create_form_data::Builder::default()
-    }
-}
 
 /// <p>Updates and saves all of the information about a form, based on form ID.</p>
 #[non_exhaustive]
@@ -3365,6 +3385,13 @@ impl UpdateFormData {
         self.cta.as_ref()
     }
 }
+impl UpdateFormData {
+    /// Creates a new builder-style object to manufacture [`UpdateFormData`](crate::model::UpdateFormData).
+    pub fn builder() -> crate::model::update_form_data::Builder {
+        crate::model::update_form_data::Builder::default()
+    }
+}
+
 /// See [`UpdateFormData`](crate::model::UpdateFormData).
 pub mod update_form_data {
 
@@ -3518,12 +3545,6 @@ pub mod update_form_data {
                 cta: self.cta,
             }
         }
-    }
-}
-impl UpdateFormData {
-    /// Creates a new builder-style object to manufacture [`UpdateFormData`](crate::model::UpdateFormData).
-    pub fn builder() -> crate::model::update_form_data::Builder {
-        crate::model::update_form_data::Builder::default()
     }
 }
 
@@ -3701,6 +3722,13 @@ impl Component {
         self.schema_version.as_deref()
     }
 }
+impl Component {
+    /// Creates a new builder-style object to manufacture [`Component`](crate::model::Component).
+    pub fn builder() -> crate::model::component::Builder {
+        crate::model::component::Builder::default()
+    }
+}
+
 /// See [`Component`](crate::model::Component).
 pub mod component {
 
@@ -4076,12 +4104,6 @@ pub mod component {
         }
     }
 }
-impl Component {
-    /// Creates a new builder-style object to manufacture [`Component`](crate::model::Component).
-    pub fn builder() -> crate::model::component::Builder {
-        crate::model::component::Builder::default()
-    }
-}
 
 /// <p>Describes the configuration of an event. You can bind an event and a corresponding action to a <code>Component</code> or a <code>ComponentChild</code>. A button click is an example of an event. </p>
 #[non_exhaustive]
@@ -4111,6 +4133,13 @@ impl ComponentEvent {
         self.binding_event.as_deref()
     }
 }
+impl ComponentEvent {
+    /// Creates a new builder-style object to manufacture [`ComponentEvent`](crate::model::ComponentEvent).
+    pub fn builder() -> crate::model::component_event::Builder {
+        crate::model::component_event::Builder::default()
+    }
+}
+
 /// See [`ComponentEvent`](crate::model::ComponentEvent).
 pub mod component_event {
 
@@ -4167,12 +4196,6 @@ pub mod component_event {
                 binding_event: self.binding_event,
             }
         }
-    }
-}
-impl ComponentEvent {
-    /// Creates a new builder-style object to manufacture [`ComponentEvent`](crate::model::ComponentEvent).
-    pub fn builder() -> crate::model::component_event::Builder {
-        crate::model::component_event::Builder::default()
     }
 }
 
@@ -4252,6 +4275,13 @@ impl ActionParameters {
         self.state.as_ref()
     }
 }
+impl ActionParameters {
+    /// Creates a new builder-style object to manufacture [`ActionParameters`](crate::model::ActionParameters).
+    pub fn builder() -> crate::model::action_parameters::Builder {
+        crate::model::action_parameters::Builder::default()
+    }
+}
+
 /// See [`ActionParameters`](crate::model::ActionParameters).
 pub mod action_parameters {
 
@@ -4414,12 +4444,6 @@ pub mod action_parameters {
         }
     }
 }
-impl ActionParameters {
-    /// Creates a new builder-style object to manufacture [`ActionParameters`](crate::model::ActionParameters).
-    pub fn builder() -> crate::model::action_parameters::Builder {
-        crate::model::action_parameters::Builder::default()
-    }
-}
 
 /// <p>Represents the state configuration when an action modifies a property of another element within the same component.</p>
 #[non_exhaustive]
@@ -4449,6 +4473,13 @@ impl MutationActionSetStateParameter {
         self.set.as_ref()
     }
 }
+impl MutationActionSetStateParameter {
+    /// Creates a new builder-style object to manufacture [`MutationActionSetStateParameter`](crate::model::MutationActionSetStateParameter).
+    pub fn builder() -> crate::model::mutation_action_set_state_parameter::Builder {
+        crate::model::mutation_action_set_state_parameter::Builder::default()
+    }
+}
+
 /// See [`MutationActionSetStateParameter`](crate::model::MutationActionSetStateParameter).
 pub mod mutation_action_set_state_parameter {
 
@@ -4505,12 +4536,6 @@ pub mod mutation_action_set_state_parameter {
                 set: self.set,
             }
         }
-    }
-}
-impl MutationActionSetStateParameter {
-    /// Creates a new builder-style object to manufacture [`MutationActionSetStateParameter`](crate::model::MutationActionSetStateParameter).
-    pub fn builder() -> crate::model::mutation_action_set_state_parameter::Builder {
-        crate::model::mutation_action_set_state_parameter::Builder::default()
     }
 }
 
@@ -4637,6 +4662,13 @@ impl ComponentProperty {
         self.property.as_deref()
     }
 }
+impl ComponentProperty {
+    /// Creates a new builder-style object to manufacture [`ComponentProperty`](crate::model::ComponentProperty).
+    pub fn builder() -> crate::model::component_property::Builder {
+        crate::model::component_property::Builder::default()
+    }
+}
+
 /// See [`ComponentProperty`](crate::model::ComponentProperty).
 pub mod component_property {
 
@@ -4888,12 +4920,6 @@ pub mod component_property {
         }
     }
 }
-impl ComponentProperty {
-    /// Creates a new builder-style object to manufacture [`ComponentProperty`](crate::model::ComponentProperty).
-    pub fn builder() -> crate::model::component_property::Builder {
-        crate::model::component_property::Builder::default()
-    }
-}
 
 /// <p>Represents a conditional expression to set a component property. Use <code>ComponentConditionProperty</code> to set a property to different values conditionally, based on the value of another property.</p>
 #[non_exhaustive]
@@ -4951,6 +4977,13 @@ impl ComponentConditionProperty {
         self.operand_type.as_deref()
     }
 }
+impl ComponentConditionProperty {
+    /// Creates a new builder-style object to manufacture [`ComponentConditionProperty`](crate::model::ComponentConditionProperty).
+    pub fn builder() -> crate::model::component_condition_property::Builder {
+        crate::model::component_condition_property::Builder::default()
+    }
+}
+
 /// See [`ComponentConditionProperty`](crate::model::ComponentConditionProperty).
 pub mod component_condition_property {
 
@@ -5063,12 +5096,6 @@ pub mod component_condition_property {
         }
     }
 }
-impl ComponentConditionProperty {
-    /// Creates a new builder-style object to manufacture [`ComponentConditionProperty`](crate::model::ComponentConditionProperty).
-    pub fn builder() -> crate::model::component_condition_property::Builder {
-        crate::model::component_condition_property::Builder::default()
-    }
-}
 
 /// <p>Describes how to bind a component property to form data.</p>
 #[non_exhaustive]
@@ -5091,6 +5118,13 @@ impl FormBindingElement {
         self.property.as_deref()
     }
 }
+impl FormBindingElement {
+    /// Creates a new builder-style object to manufacture [`FormBindingElement`](crate::model::FormBindingElement).
+    pub fn builder() -> crate::model::form_binding_element::Builder {
+        crate::model::form_binding_element::Builder::default()
+    }
+}
+
 /// See [`FormBindingElement`](crate::model::FormBindingElement).
 pub mod form_binding_element {
 
@@ -5131,12 +5165,6 @@ pub mod form_binding_element {
         }
     }
 }
-impl FormBindingElement {
-    /// Creates a new builder-style object to manufacture [`FormBindingElement`](crate::model::FormBindingElement).
-    pub fn builder() -> crate::model::form_binding_element::Builder {
-        crate::model::form_binding_element::Builder::default()
-    }
-}
 
 /// <p>Associates a component property to a binding property. This enables exposed properties on the top level component to propagate data to the component's property values.</p>
 #[non_exhaustive]
@@ -5159,6 +5187,13 @@ impl ComponentPropertyBindingProperties {
         self.field.as_deref()
     }
 }
+impl ComponentPropertyBindingProperties {
+    /// Creates a new builder-style object to manufacture [`ComponentPropertyBindingProperties`](crate::model::ComponentPropertyBindingProperties).
+    pub fn builder() -> crate::model::component_property_binding_properties::Builder {
+        crate::model::component_property_binding_properties::Builder::default()
+    }
+}
+
 /// See [`ComponentPropertyBindingProperties`](crate::model::ComponentPropertyBindingProperties).
 pub mod component_property_binding_properties {
 
@@ -5199,12 +5234,6 @@ pub mod component_property_binding_properties {
         }
     }
 }
-impl ComponentPropertyBindingProperties {
-    /// Creates a new builder-style object to manufacture [`ComponentPropertyBindingProperties`](crate::model::ComponentPropertyBindingProperties).
-    pub fn builder() -> crate::model::component_property_binding_properties::Builder {
-        crate::model::component_property_binding_properties::Builder::default()
-    }
-}
 
 /// <p>Describes the configuration for binding a component's properties to data.</p>
 #[non_exhaustive]
@@ -5241,6 +5270,13 @@ impl ComponentDataConfiguration {
         self.identifiers.as_deref()
     }
 }
+impl ComponentDataConfiguration {
+    /// Creates a new builder-style object to manufacture [`ComponentDataConfiguration`](crate::model::ComponentDataConfiguration).
+    pub fn builder() -> crate::model::component_data_configuration::Builder {
+        crate::model::component_data_configuration::Builder::default()
+    }
+}
+
 /// See [`ComponentDataConfiguration`](crate::model::ComponentDataConfiguration).
 pub mod component_data_configuration {
 
@@ -5326,12 +5362,6 @@ pub mod component_data_configuration {
         }
     }
 }
-impl ComponentDataConfiguration {
-    /// Creates a new builder-style object to manufacture [`ComponentDataConfiguration`](crate::model::ComponentDataConfiguration).
-    pub fn builder() -> crate::model::component_data_configuration::Builder {
-        crate::model::component_data_configuration::Builder::default()
-    }
-}
 
 /// <p>Stores information for generating Amplify DataStore queries. Use a <code>Predicate</code> to retrieve a subset of the data in a collection.</p>
 #[non_exhaustive]
@@ -5375,6 +5405,13 @@ impl Predicate {
         self.operand.as_deref()
     }
 }
+impl Predicate {
+    /// Creates a new builder-style object to manufacture [`Predicate`](crate::model::Predicate).
+    pub fn builder() -> crate::model::predicate::Builder {
+        crate::model::predicate::Builder::default()
+    }
+}
+
 /// See [`Predicate`](crate::model::Predicate).
 pub mod predicate {
 
@@ -5469,12 +5506,6 @@ pub mod predicate {
         }
     }
 }
-impl Predicate {
-    /// Creates a new builder-style object to manufacture [`Predicate`](crate::model::Predicate).
-    pub fn builder() -> crate::model::predicate::Builder {
-        crate::model::predicate::Builder::default()
-    }
-}
 
 /// <p>Describes how to sort the data that you bind to a component.</p>
 #[non_exhaustive]
@@ -5497,6 +5528,13 @@ impl SortProperty {
         self.direction.as_ref()
     }
 }
+impl SortProperty {
+    /// Creates a new builder-style object to manufacture [`SortProperty`](crate::model::SortProperty).
+    pub fn builder() -> crate::model::sort_property::Builder {
+        crate::model::sort_property::Builder::default()
+    }
+}
+
 /// See [`SortProperty`](crate::model::SortProperty).
 pub mod sort_property {
 
@@ -5538,12 +5576,6 @@ pub mod sort_property {
                 direction: self.direction,
             }
         }
-    }
-}
-impl SortProperty {
-    /// Creates a new builder-style object to manufacture [`SortProperty`](crate::model::SortProperty).
-    pub fn builder() -> crate::model::sort_property::Builder {
-        crate::model::sort_property::Builder::default()
     }
 }
 
@@ -5609,6 +5641,13 @@ impl ComponentBindingPropertiesValue {
         self.default_value.as_deref()
     }
 }
+impl ComponentBindingPropertiesValue {
+    /// Creates a new builder-style object to manufacture [`ComponentBindingPropertiesValue`](crate::model::ComponentBindingPropertiesValue).
+    pub fn builder() -> crate::model::component_binding_properties_value::Builder {
+        crate::model::component_binding_properties_value::Builder::default()
+    }
+}
+
 /// See [`ComponentBindingPropertiesValue`](crate::model::ComponentBindingPropertiesValue).
 pub mod component_binding_properties_value {
 
@@ -5669,12 +5708,6 @@ pub mod component_binding_properties_value {
                 default_value: self.default_value,
             }
         }
-    }
-}
-impl ComponentBindingPropertiesValue {
-    /// Creates a new builder-style object to manufacture [`ComponentBindingPropertiesValue`](crate::model::ComponentBindingPropertiesValue).
-    pub fn builder() -> crate::model::component_binding_properties_value::Builder {
-        crate::model::component_binding_properties_value::Builder::default()
     }
 }
 
@@ -5741,6 +5774,13 @@ impl ComponentBindingPropertiesValueProperties {
         self.slot_name.as_deref()
     }
 }
+impl ComponentBindingPropertiesValueProperties {
+    /// Creates a new builder-style object to manufacture [`ComponentBindingPropertiesValueProperties`](crate::model::ComponentBindingPropertiesValueProperties).
+    pub fn builder() -> crate::model::component_binding_properties_value_properties::Builder {
+        crate::model::component_binding_properties_value_properties::Builder::default()
+    }
+}
+
 /// See [`ComponentBindingPropertiesValueProperties`](crate::model::ComponentBindingPropertiesValueProperties).
 pub mod component_binding_properties_value_properties {
 
@@ -5868,12 +5908,6 @@ pub mod component_binding_properties_value_properties {
         }
     }
 }
-impl ComponentBindingPropertiesValueProperties {
-    /// Creates a new builder-style object to manufacture [`ComponentBindingPropertiesValueProperties`](crate::model::ComponentBindingPropertiesValueProperties).
-    pub fn builder() -> crate::model::component_binding_properties_value_properties::Builder {
-        crate::model::component_binding_properties_value_properties::Builder::default()
-    }
-}
 
 /// <p>Describes the style configuration of a unique variation of a main component.</p>
 #[non_exhaustive]
@@ -5912,6 +5946,13 @@ impl ComponentVariant {
         self.overrides.as_ref()
     }
 }
+impl ComponentVariant {
+    /// Creates a new builder-style object to manufacture [`ComponentVariant`](crate::model::ComponentVariant).
+    pub fn builder() -> crate::model::component_variant::Builder {
+        crate::model::component_variant::Builder::default()
+    }
+}
+
 /// See [`ComponentVariant`](crate::model::ComponentVariant).
 pub mod component_variant {
 
@@ -5992,12 +6033,6 @@ pub mod component_variant {
         }
     }
 }
-impl ComponentVariant {
-    /// Creates a new builder-style object to manufacture [`ComponentVariant`](crate::model::ComponentVariant).
-    pub fn builder() -> crate::model::component_variant::Builder {
-        crate::model::component_variant::Builder::default()
-    }
-}
 
 /// <p>A nested UI configuration within a parent <code>Component</code>.</p>
 #[non_exhaustive]
@@ -6060,6 +6095,13 @@ impl ComponentChild {
         self.source_id.as_deref()
     }
 }
+impl ComponentChild {
+    /// Creates a new builder-style object to manufacture [`ComponentChild`](crate::model::ComponentChild).
+    pub fn builder() -> crate::model::component_child::Builder {
+        crate::model::component_child::Builder::default()
+    }
+}
+
 /// See [`ComponentChild`](crate::model::ComponentChild).
 pub mod component_child {
 
@@ -6194,12 +6236,6 @@ pub mod component_child {
         }
     }
 }
-impl ComponentChild {
-    /// Creates a new builder-style object to manufacture [`ComponentChild`](crate::model::ComponentChild).
-    pub fn builder() -> crate::model::component_child::Builder {
-        crate::model::component_child::Builder::default()
-    }
-}
 
 /// <p>Contains a summary of a component. This is a read-only data type that is returned by <code>ListComponents</code>.</p>
 #[non_exhaustive]
@@ -6243,6 +6279,13 @@ impl ComponentSummary {
         self.component_type.as_deref()
     }
 }
+impl ComponentSummary {
+    /// Creates a new builder-style object to manufacture [`ComponentSummary`](crate::model::ComponentSummary).
+    pub fn builder() -> crate::model::component_summary::Builder {
+        crate::model::component_summary::Builder::default()
+    }
+}
+
 /// See [`ComponentSummary`](crate::model::ComponentSummary).
 pub mod component_summary {
 
@@ -6323,12 +6366,6 @@ pub mod component_summary {
                 component_type: self.component_type,
             }
         }
-    }
-}
-impl ComponentSummary {
-    /// Creates a new builder-style object to manufacture [`ComponentSummary`](crate::model::ComponentSummary).
-    pub fn builder() -> crate::model::component_summary::Builder {
-        crate::model::component_summary::Builder::default()
     }
 }
 
@@ -6469,6 +6506,13 @@ impl CreateComponentData {
         self.schema_version.as_deref()
     }
 }
+impl CreateComponentData {
+    /// Creates a new builder-style object to manufacture [`CreateComponentData`](crate::model::CreateComponentData).
+    pub fn builder() -> crate::model::create_component_data::Builder {
+        crate::model::create_component_data::Builder::default()
+    }
+}
+
 /// See [`CreateComponentData`](crate::model::CreateComponentData).
 pub mod create_component_data {
 
@@ -6773,12 +6817,6 @@ pub mod create_component_data {
         }
     }
 }
-impl CreateComponentData {
-    /// Creates a new builder-style object to manufacture [`CreateComponentData`](crate::model::CreateComponentData).
-    pub fn builder() -> crate::model::create_component_data::Builder {
-        crate::model::create_component_data::Builder::default()
-    }
-}
 
 /// <p>Updates and saves all of the information about a component, based on component ID.</p>
 #[non_exhaustive]
@@ -6913,6 +6951,13 @@ impl UpdateComponentData {
         self.schema_version.as_deref()
     }
 }
+impl UpdateComponentData {
+    /// Creates a new builder-style object to manufacture [`UpdateComponentData`](crate::model::UpdateComponentData).
+    pub fn builder() -> crate::model::update_component_data::Builder {
+        crate::model::update_component_data::Builder::default()
+    }
+}
+
 /// See [`UpdateComponentData`](crate::model::UpdateComponentData).
 pub mod update_component_data {
 
@@ -7200,12 +7245,6 @@ pub mod update_component_data {
         }
     }
 }
-impl UpdateComponentData {
-    /// Creates a new builder-style object to manufacture [`UpdateComponentData`](crate::model::UpdateComponentData).
-    pub fn builder() -> crate::model::update_component_data::Builder {
-        crate::model::update_component_data::Builder::default()
-    }
-}
 
 /// <p>Describes a refresh token.</p>
 #[non_exhaustive]
@@ -7228,6 +7267,13 @@ impl std::fmt::Debug for RefreshTokenRequestBody {
         formatter.finish()
     }
 }
+impl RefreshTokenRequestBody {
+    /// Creates a new builder-style object to manufacture [`RefreshTokenRequestBody`](crate::model::RefreshTokenRequestBody).
+    pub fn builder() -> crate::model::refresh_token_request_body::Builder {
+        crate::model::refresh_token_request_body::Builder::default()
+    }
+}
+
 /// See [`RefreshTokenRequestBody`](crate::model::RefreshTokenRequestBody).
 pub mod refresh_token_request_body {
 
@@ -7259,12 +7305,6 @@ pub mod refresh_token_request_body {
             formatter.field("token", &"*** Sensitive Data Redacted ***");
             formatter.finish()
         }
-    }
-}
-impl RefreshTokenRequestBody {
-    /// Creates a new builder-style object to manufacture [`RefreshTokenRequestBody`](crate::model::RefreshTokenRequestBody).
-    pub fn builder() -> crate::model::refresh_token_request_body::Builder {
-        crate::model::refresh_token_request_body::Builder::default()
     }
 }
 
@@ -7367,6 +7407,13 @@ impl PutMetadataFlagBody {
         self.new_value.as_deref()
     }
 }
+impl PutMetadataFlagBody {
+    /// Creates a new builder-style object to manufacture [`PutMetadataFlagBody`](crate::model::PutMetadataFlagBody).
+    pub fn builder() -> crate::model::put_metadata_flag_body::Builder {
+        crate::model::put_metadata_flag_body::Builder::default()
+    }
+}
+
 /// See [`PutMetadataFlagBody`](crate::model::PutMetadataFlagBody).
 pub mod put_metadata_flag_body {
 
@@ -7393,12 +7440,6 @@ pub mod put_metadata_flag_body {
                 new_value: self.new_value,
             }
         }
-    }
-}
-impl PutMetadataFlagBody {
-    /// Creates a new builder-style object to manufacture [`PutMetadataFlagBody`](crate::model::PutMetadataFlagBody).
-    pub fn builder() -> crate::model::put_metadata_flag_body::Builder {
-        crate::model::put_metadata_flag_body::Builder::default()
     }
 }
 
@@ -7431,6 +7472,13 @@ impl std::fmt::Debug for ExchangeCodeForTokenRequestBody {
         formatter.finish()
     }
 }
+impl ExchangeCodeForTokenRequestBody {
+    /// Creates a new builder-style object to manufacture [`ExchangeCodeForTokenRequestBody`](crate::model::ExchangeCodeForTokenRequestBody).
+    pub fn builder() -> crate::model::exchange_code_for_token_request_body::Builder {
+        crate::model::exchange_code_for_token_request_body::Builder::default()
+    }
+}
+
 /// See [`ExchangeCodeForTokenRequestBody`](crate::model::ExchangeCodeForTokenRequestBody).
 pub mod exchange_code_for_token_request_body {
 
@@ -7477,11 +7525,5 @@ pub mod exchange_code_for_token_request_body {
             formatter.field("redirect_uri", &self.redirect_uri);
             formatter.finish()
         }
-    }
-}
-impl ExchangeCodeForTokenRequestBody {
-    /// Creates a new builder-style object to manufacture [`ExchangeCodeForTokenRequestBody`](crate::model::ExchangeCodeForTokenRequestBody).
-    pub fn builder() -> crate::model::exchange_code_for_token_request_body::Builder {
-        crate::model::exchange_code_for_token_request_body::Builder::default()
     }
 }

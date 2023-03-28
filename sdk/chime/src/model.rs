@@ -244,6 +244,13 @@ impl std::fmt::Debug for CandidateAddress {
         formatter.finish()
     }
 }
+impl CandidateAddress {
+    /// Creates a new builder-style object to manufacture [`CandidateAddress`](crate::model::CandidateAddress).
+    pub fn builder() -> crate::model::candidate_address::Builder {
+        crate::model::candidate_address::Builder::default()
+    }
+}
+
 /// See [`CandidateAddress`](crate::model::CandidateAddress).
 pub mod candidate_address {
 
@@ -363,12 +370,6 @@ pub mod candidate_address {
         }
     }
 }
-impl CandidateAddress {
-    /// Creates a new builder-style object to manufacture [`CandidateAddress`](crate::model::CandidateAddress).
-    pub fn builder() -> crate::model::candidate_address::Builder {
-        crate::model::candidate_address::Builder::default()
-    }
-}
 
 /// <p>A validated address.</p>
 #[non_exhaustive]
@@ -463,6 +464,13 @@ impl std::fmt::Debug for Address {
         formatter.finish()
     }
 }
+impl Address {
+    /// Creates a new builder-style object to manufacture [`Address`](crate::model::Address).
+    pub fn builder() -> crate::model::address::Builder {
+        crate::model::address::Builder::default()
+    }
+}
+
 /// See [`Address`](crate::model::Address).
 pub mod address {
 
@@ -630,12 +638,6 @@ pub mod address {
         }
     }
 }
-impl Address {
-    /// Creates a new builder-style object to manufacture [`Address`](crate::model::Address).
-    pub fn builder() -> crate::model::address::Builder {
-        crate::model::address::Builder::default()
-    }
-}
 
 /// <p>The Amazon Chime Voice Connector group configuration, including associated Amazon Chime Voice Connectors. You can include Amazon Chime Voice Connectors from different AWS Regions in your group. This creates a fault tolerant mechanism for fallback in case of availability events.</p>
 #[non_exhaustive]
@@ -688,6 +690,13 @@ impl VoiceConnectorGroup {
         self.voice_connector_group_arn.as_deref()
     }
 }
+impl VoiceConnectorGroup {
+    /// Creates a new builder-style object to manufacture [`VoiceConnectorGroup`](crate::model::VoiceConnectorGroup).
+    pub fn builder() -> crate::model::voice_connector_group::Builder {
+        crate::model::voice_connector_group::Builder::default()
+    }
+}
+
 /// See [`VoiceConnectorGroup`](crate::model::VoiceConnectorGroup).
 pub mod voice_connector_group {
 
@@ -798,12 +807,6 @@ pub mod voice_connector_group {
         }
     }
 }
-impl VoiceConnectorGroup {
-    /// Creates a new builder-style object to manufacture [`VoiceConnectorGroup`](crate::model::VoiceConnectorGroup).
-    pub fn builder() -> crate::model::voice_connector_group::Builder {
-        crate::model::voice_connector_group::Builder::default()
-    }
-}
 
 /// <p>For Amazon Chime Voice Connector groups, the Amazon Chime Voice Connectors to which to route inbound calls. Includes priority configuration settings. Limit: 3 <code>VoiceConnectorItems</code> per Amazon Chime Voice Connector group.</p>
 #[non_exhaustive]
@@ -826,6 +829,13 @@ impl VoiceConnectorItem {
         self.priority
     }
 }
+impl VoiceConnectorItem {
+    /// Creates a new builder-style object to manufacture [`VoiceConnectorItem`](crate::model::VoiceConnectorItem).
+    pub fn builder() -> crate::model::voice_connector_item::Builder {
+        crate::model::voice_connector_item::Builder::default()
+    }
+}
+
 /// See [`VoiceConnectorItem`](crate::model::VoiceConnectorItem).
 pub mod voice_connector_item {
 
@@ -867,12 +877,6 @@ pub mod voice_connector_item {
                 priority: self.priority,
             }
         }
-    }
-}
-impl VoiceConnectorItem {
-    /// Creates a new builder-style object to manufacture [`VoiceConnectorItem`](crate::model::VoiceConnectorItem).
-    pub fn builder() -> crate::model::voice_connector_item::Builder {
-        crate::model::voice_connector_item::Builder::default()
     }
 }
 
@@ -939,6 +943,13 @@ impl VoiceConnector {
         self.voice_connector_arn.as_deref()
     }
 }
+impl VoiceConnector {
+    /// Creates a new builder-style object to manufacture [`VoiceConnector`](crate::model::VoiceConnector).
+    pub fn builder() -> crate::model::voice_connector::Builder {
+        crate::model::voice_connector::Builder::default()
+    }
+}
+
 /// See [`VoiceConnector`](crate::model::VoiceConnector).
 pub mod voice_connector {
 
@@ -1069,12 +1080,6 @@ pub mod voice_connector {
         }
     }
 }
-impl VoiceConnector {
-    /// Creates a new builder-style object to manufacture [`VoiceConnector`](crate::model::VoiceConnector).
-    pub fn builder() -> crate::model::voice_connector::Builder {
-        crate::model::voice_connector::Builder::default()
-    }
-}
 
 /// When writing a match expression against `VoiceConnectorAwsRegion`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -1182,6 +1187,13 @@ impl UserSettings {
         self.telephony.as_ref()
     }
 }
+impl UserSettings {
+    /// Creates a new builder-style object to manufacture [`UserSettings`](crate::model::UserSettings).
+    pub fn builder() -> crate::model::user_settings::Builder {
+        crate::model::user_settings::Builder::default()
+    }
+}
+
 /// See [`UserSettings`](crate::model::UserSettings).
 pub mod user_settings {
 
@@ -1213,12 +1225,6 @@ pub mod user_settings {
         }
     }
 }
-impl UserSettings {
-    /// Creates a new builder-style object to manufacture [`UserSettings`](crate::model::UserSettings).
-    pub fn builder() -> crate::model::user_settings::Builder {
-        crate::model::user_settings::Builder::default()
-    }
-}
 
 /// <p>Settings that allow management of telephony permissions for an Amazon Chime user, such as inbound and outbound calling and text messaging.</p>
 #[non_exhaustive]
@@ -1248,6 +1254,13 @@ impl TelephonySettings {
         self.sms
     }
 }
+impl TelephonySettings {
+    /// Creates a new builder-style object to manufacture [`TelephonySettings`](crate::model::TelephonySettings).
+    pub fn builder() -> crate::model::telephony_settings::Builder {
+        crate::model::telephony_settings::Builder::default()
+    }
+}
+
 /// See [`TelephonySettings`](crate::model::TelephonySettings).
 pub mod telephony_settings {
 
@@ -1298,12 +1311,6 @@ pub mod telephony_settings {
                 sms: self.sms,
             }
         }
-    }
-}
-impl TelephonySettings {
-    /// Creates a new builder-style object to manufacture [`TelephonySettings`](crate::model::TelephonySettings).
-    pub fn builder() -> crate::model::telephony_settings::Builder {
-        crate::model::telephony_settings::Builder::default()
     }
 }
 
@@ -1434,6 +1441,13 @@ impl std::fmt::Debug for User {
         formatter.finish()
     }
 }
+impl User {
+    /// Creates a new builder-style object to manufacture [`User`](crate::model::User).
+    pub fn builder() -> crate::model::user::Builder {
+        crate::model::user::Builder::default()
+    }
+}
+
 /// See [`User`](crate::model::User).
 pub mod user {
 
@@ -1659,12 +1673,6 @@ pub mod user {
         }
     }
 }
-impl User {
-    /// Creates a new builder-style object to manufacture [`User`](crate::model::User).
-    pub fn builder() -> crate::model::user::Builder {
-        crate::model::user::Builder::default()
-    }
-}
 
 /// <p>The Alexa for Business metadata associated with an Amazon Chime user, used to integrate Alexa for Business with a device.</p>
 #[non_exhaustive]
@@ -1701,6 +1709,13 @@ impl std::fmt::Debug for AlexaForBusinessMetadata {
         formatter.finish()
     }
 }
+impl AlexaForBusinessMetadata {
+    /// Creates a new builder-style object to manufacture [`AlexaForBusinessMetadata`](crate::model::AlexaForBusinessMetadata).
+    pub fn builder() -> crate::model::alexa_for_business_metadata::Builder {
+        crate::model::alexa_for_business_metadata::Builder::default()
+    }
+}
+
 /// See [`AlexaForBusinessMetadata`](crate::model::AlexaForBusinessMetadata).
 pub mod alexa_for_business_metadata {
 
@@ -1762,12 +1777,6 @@ pub mod alexa_for_business_metadata {
             );
             formatter.finish()
         }
-    }
-}
-impl AlexaForBusinessMetadata {
-    /// Creates a new builder-style object to manufacture [`AlexaForBusinessMetadata`](crate::model::AlexaForBusinessMetadata).
-    pub fn builder() -> crate::model::alexa_for_business_metadata::Builder {
-        crate::model::alexa_for_business_metadata::Builder::default()
     }
 }
 
@@ -2219,6 +2228,13 @@ impl SipRule {
         self.updated_timestamp.as_ref()
     }
 }
+impl SipRule {
+    /// Creates a new builder-style object to manufacture [`SipRule`](crate::model::SipRule).
+    pub fn builder() -> crate::model::sip_rule::Builder {
+        crate::model::sip_rule::Builder::default()
+    }
+}
+
 /// See [`SipRule`](crate::model::SipRule).
 pub mod sip_rule {
 
@@ -2356,12 +2372,6 @@ pub mod sip_rule {
         }
     }
 }
-impl SipRule {
-    /// Creates a new builder-style object to manufacture [`SipRule`](crate::model::SipRule).
-    pub fn builder() -> crate::model::sip_rule::Builder {
-        crate::model::sip_rule::Builder::default()
-    }
-}
 
 /// <p>Target SIP media application and other details, such as priority and AWS Region, to be specified in the SIP rule. Only one SIP rule per AWS Region can be provided.</p>
 #[non_exhaustive]
@@ -2391,6 +2401,13 @@ impl SipRuleTargetApplication {
         self.aws_region.as_deref()
     }
 }
+impl SipRuleTargetApplication {
+    /// Creates a new builder-style object to manufacture [`SipRuleTargetApplication`](crate::model::SipRuleTargetApplication).
+    pub fn builder() -> crate::model::sip_rule_target_application::Builder {
+        crate::model::sip_rule_target_application::Builder::default()
+    }
+}
+
 /// See [`SipRuleTargetApplication`](crate::model::SipRuleTargetApplication).
 pub mod sip_rule_target_application {
 
@@ -2444,12 +2461,6 @@ pub mod sip_rule_target_application {
                 aws_region: self.aws_region,
             }
         }
-    }
-}
-impl SipRuleTargetApplication {
-    /// Creates a new builder-style object to manufacture [`SipRuleTargetApplication`](crate::model::SipRuleTargetApplication).
-    pub fn builder() -> crate::model::sip_rule_target_application::Builder {
-        crate::model::sip_rule_target_application::Builder::default()
     }
 }
 
@@ -2559,6 +2570,13 @@ impl SipMediaApplicationCall {
         self.transaction_id.as_deref()
     }
 }
+impl SipMediaApplicationCall {
+    /// Creates a new builder-style object to manufacture [`SipMediaApplicationCall`](crate::model::SipMediaApplicationCall).
+    pub fn builder() -> crate::model::sip_media_application_call::Builder {
+        crate::model::sip_media_application_call::Builder::default()
+    }
+}
+
 /// See [`SipMediaApplicationCall`](crate::model::SipMediaApplicationCall).
 pub mod sip_media_application_call {
 
@@ -2588,12 +2606,6 @@ pub mod sip_media_application_call {
                 transaction_id: self.transaction_id,
             }
         }
-    }
-}
-impl SipMediaApplicationCall {
-    /// Creates a new builder-style object to manufacture [`SipMediaApplicationCall`](crate::model::SipMediaApplicationCall).
-    pub fn builder() -> crate::model::sip_media_application_call::Builder {
-        crate::model::sip_media_application_call::Builder::default()
     }
 }
 
@@ -2646,6 +2658,13 @@ impl SipMediaApplication {
         self.updated_timestamp.as_ref()
     }
 }
+impl SipMediaApplication {
+    /// Creates a new builder-style object to manufacture [`SipMediaApplication`](crate::model::SipMediaApplication).
+    pub fn builder() -> crate::model::sip_media_application::Builder {
+        crate::model::sip_media_application::Builder::default()
+    }
+}
+
 /// See [`SipMediaApplication`](crate::model::SipMediaApplication).
 pub mod sip_media_application {
 
@@ -2753,12 +2772,6 @@ pub mod sip_media_application {
         }
     }
 }
-impl SipMediaApplication {
-    /// Creates a new builder-style object to manufacture [`SipMediaApplication`](crate::model::SipMediaApplication).
-    pub fn builder() -> crate::model::sip_media_application::Builder {
-        crate::model::sip_media_application::Builder::default()
-    }
-}
 
 /// <p>The endpoint assigned to the SIP media application.</p>
 #[non_exhaustive]
@@ -2781,6 +2794,13 @@ impl std::fmt::Debug for SipMediaApplicationEndpoint {
         formatter.finish()
     }
 }
+impl SipMediaApplicationEndpoint {
+    /// Creates a new builder-style object to manufacture [`SipMediaApplicationEndpoint`](crate::model::SipMediaApplicationEndpoint).
+    pub fn builder() -> crate::model::sip_media_application_endpoint::Builder {
+        crate::model::sip_media_application_endpoint::Builder::default()
+    }
+}
+
 /// See [`SipMediaApplicationEndpoint`](crate::model::SipMediaApplicationEndpoint).
 pub mod sip_media_application_endpoint {
 
@@ -2814,12 +2834,6 @@ pub mod sip_media_application_endpoint {
             formatter.field("lambda_arn", &"*** Sensitive Data Redacted ***");
             formatter.finish()
         }
-    }
-}
-impl SipMediaApplicationEndpoint {
-    /// Creates a new builder-style object to manufacture [`SipMediaApplicationEndpoint`](crate::model::SipMediaApplicationEndpoint).
-    pub fn builder() -> crate::model::sip_media_application_endpoint::Builder {
-        crate::model::sip_media_application_endpoint::Builder::default()
     }
 }
 
@@ -2865,6 +2879,13 @@ impl RoomMembership {
         self.updated_timestamp.as_ref()
     }
 }
+impl RoomMembership {
+    /// Creates a new builder-style object to manufacture [`RoomMembership`](crate::model::RoomMembership).
+    pub fn builder() -> crate::model::room_membership::Builder {
+        crate::model::room_membership::Builder::default()
+    }
+}
+
 /// See [`RoomMembership`](crate::model::RoomMembership).
 pub mod room_membership {
 
@@ -2945,12 +2966,6 @@ pub mod room_membership {
                 updated_timestamp: self.updated_timestamp,
             }
         }
-    }
-}
-impl RoomMembership {
-    /// Creates a new builder-style object to manufacture [`RoomMembership`](crate::model::RoomMembership).
-    pub fn builder() -> crate::model::room_membership::Builder {
-        crate::model::room_membership::Builder::default()
     }
 }
 
@@ -3099,6 +3114,13 @@ impl std::fmt::Debug for Member {
         formatter.finish()
     }
 }
+impl Member {
+    /// Creates a new builder-style object to manufacture [`Member`](crate::model::Member).
+    pub fn builder() -> crate::model::member::Builder {
+        crate::model::member::Builder::default()
+    }
+}
+
 /// See [`Member`](crate::model::Member).
 pub mod member {
 
@@ -3187,12 +3209,6 @@ pub mod member {
             formatter.field("account_id", &self.account_id);
             formatter.finish()
         }
-    }
-}
-impl Member {
-    /// Creates a new builder-style object to manufacture [`Member`](crate::model::Member).
-    pub fn builder() -> crate::model::member::Builder {
-        crate::model::member::Builder::default()
     }
 }
 
@@ -3352,6 +3368,13 @@ impl std::fmt::Debug for Room {
         formatter.finish()
     }
 }
+impl Room {
+    /// Creates a new builder-style object to manufacture [`Room`](crate::model::Room).
+    pub fn builder() -> crate::model::room::Builder {
+        crate::model::room::Builder::default()
+    }
+}
+
 /// See [`Room`](crate::model::Room).
 pub mod room {
 
@@ -3458,12 +3481,6 @@ pub mod room {
         }
     }
 }
-impl Room {
-    /// Creates a new builder-style object to manufacture [`Room`](crate::model::Room).
-    pub fn builder() -> crate::model::room::Builder {
-        crate::model::room::Builder::default()
-    }
-}
 
 /// <p>The proxy session for an Amazon Chime Voice Connector.</p>
 #[non_exhaustive]
@@ -3565,6 +3582,13 @@ impl ProxySession {
         self.geo_match_params.as_ref()
     }
 }
+impl ProxySession {
+    /// Creates a new builder-style object to manufacture [`ProxySession`](crate::model::ProxySession).
+    pub fn builder() -> crate::model::proxy_session::Builder {
+        crate::model::proxy_session::Builder::default()
+    }
+}
+
 /// See [`ProxySession`](crate::model::ProxySession).
 pub mod proxy_session {
 
@@ -3786,12 +3810,6 @@ pub mod proxy_session {
         }
     }
 }
-impl ProxySession {
-    /// Creates a new builder-style object to manufacture [`ProxySession`](crate::model::ProxySession).
-    pub fn builder() -> crate::model::proxy_session::Builder {
-        crate::model::proxy_session::Builder::default()
-    }
-}
 
 /// <p>The country and area code for a proxy phone number in a proxy phone session.</p>
 #[non_exhaustive]
@@ -3814,6 +3832,13 @@ impl GeoMatchParams {
         self.area_code.as_deref()
     }
 }
+impl GeoMatchParams {
+    /// Creates a new builder-style object to manufacture [`GeoMatchParams`](crate::model::GeoMatchParams).
+    pub fn builder() -> crate::model::geo_match_params::Builder {
+        crate::model::geo_match_params::Builder::default()
+    }
+}
+
 /// See [`GeoMatchParams`](crate::model::GeoMatchParams).
 pub mod geo_match_params {
 
@@ -3852,12 +3877,6 @@ pub mod geo_match_params {
                 area_code: self.area_code,
             }
         }
-    }
-}
-impl GeoMatchParams {
-    /// Creates a new builder-style object to manufacture [`GeoMatchParams`](crate::model::GeoMatchParams).
-    pub fn builder() -> crate::model::geo_match_params::Builder {
-        crate::model::geo_match_params::Builder::default()
     }
 }
 
@@ -4072,6 +4091,13 @@ impl std::fmt::Debug for Participant {
         formatter.finish()
     }
 }
+impl Participant {
+    /// Creates a new builder-style object to manufacture [`Participant`](crate::model::Participant).
+    pub fn builder() -> crate::model::participant::Builder {
+        crate::model::participant::Builder::default()
+    }
+}
+
 /// See [`Participant`](crate::model::Participant).
 pub mod participant {
 
@@ -4121,12 +4147,6 @@ pub mod participant {
             formatter.field("proxy_phone_number", &"*** Sensitive Data Redacted ***");
             formatter.finish()
         }
-    }
-}
-impl Participant {
-    /// Creates a new builder-style object to manufacture [`Participant`](crate::model::Participant).
-    pub fn builder() -> crate::model::participant::Builder {
-        crate::model::participant::Builder::default()
     }
 }
 
@@ -4434,6 +4454,13 @@ impl std::fmt::Debug for PhoneNumber {
         formatter.finish()
     }
 }
+impl PhoneNumber {
+    /// Creates a new builder-style object to manufacture [`PhoneNumber`](crate::model::PhoneNumber).
+    pub fn builder() -> crate::model::phone_number::Builder {
+        crate::model::phone_number::Builder::default()
+    }
+}
+
 /// See [`PhoneNumber`](crate::model::PhoneNumber).
 pub mod phone_number {
 
@@ -4665,12 +4692,6 @@ pub mod phone_number {
         }
     }
 }
-impl PhoneNumber {
-    /// Creates a new builder-style object to manufacture [`PhoneNumber`](crate::model::PhoneNumber).
-    pub fn builder() -> crate::model::phone_number::Builder {
-        crate::model::phone_number::Builder::default()
-    }
-}
 
 /// When writing a match expression against `CallingNameStatus`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -4807,6 +4828,13 @@ impl PhoneNumberAssociation {
         self.associated_timestamp.as_ref()
     }
 }
+impl PhoneNumberAssociation {
+    /// Creates a new builder-style object to manufacture [`PhoneNumberAssociation`](crate::model::PhoneNumberAssociation).
+    pub fn builder() -> crate::model::phone_number_association::Builder {
+        crate::model::phone_number_association::Builder::default()
+    }
+}
+
 /// See [`PhoneNumberAssociation`](crate::model::PhoneNumberAssociation).
 pub mod phone_number_association {
 
@@ -4863,12 +4891,6 @@ pub mod phone_number_association {
                 associated_timestamp: self.associated_timestamp,
             }
         }
-    }
-}
-impl PhoneNumberAssociation {
-    /// Creates a new builder-style object to manufacture [`PhoneNumberAssociation`](crate::model::PhoneNumberAssociation).
-    pub fn builder() -> crate::model::phone_number_association::Builder {
-        crate::model::phone_number_association::Builder::default()
     }
 }
 
@@ -5034,6 +5056,13 @@ impl PhoneNumberCapabilities {
         self.outbound_mms
     }
 }
+impl PhoneNumberCapabilities {
+    /// Creates a new builder-style object to manufacture [`PhoneNumberCapabilities`](crate::model::PhoneNumberCapabilities).
+    pub fn builder() -> crate::model::phone_number_capabilities::Builder {
+        crate::model::phone_number_capabilities::Builder::default()
+    }
+}
+
 /// See [`PhoneNumberCapabilities`](crate::model::PhoneNumberCapabilities).
 pub mod phone_number_capabilities {
 
@@ -5120,12 +5149,6 @@ pub mod phone_number_capabilities {
                 outbound_mms: self.outbound_mms,
             }
         }
-    }
-}
-impl PhoneNumberCapabilities {
-    /// Creates a new builder-style object to manufacture [`PhoneNumberCapabilities`](crate::model::PhoneNumberCapabilities).
-    pub fn builder() -> crate::model::phone_number_capabilities::Builder {
-        crate::model::phone_number_capabilities::Builder::default()
     }
 }
 
@@ -5465,6 +5488,13 @@ impl VoiceConnectorSettings {
         self.cdr_bucket.as_deref()
     }
 }
+impl VoiceConnectorSettings {
+    /// Creates a new builder-style object to manufacture [`VoiceConnectorSettings`](crate::model::VoiceConnectorSettings).
+    pub fn builder() -> crate::model::voice_connector_settings::Builder {
+        crate::model::voice_connector_settings::Builder::default()
+    }
+}
+
 /// See [`VoiceConnectorSettings`](crate::model::VoiceConnectorSettings).
 pub mod voice_connector_settings {
 
@@ -5493,12 +5523,6 @@ pub mod voice_connector_settings {
         }
     }
 }
-impl VoiceConnectorSettings {
-    /// Creates a new builder-style object to manufacture [`VoiceConnectorSettings`](crate::model::VoiceConnectorSettings).
-    pub fn builder() -> crate::model::voice_connector_settings::Builder {
-        crate::model::voice_connector_settings::Builder::default()
-    }
-}
 
 /// <p>The Amazon Chime Business Calling settings for the administrator's AWS account. Includes any Amazon S3 buckets designated for storing call detail records.</p>
 #[non_exhaustive]
@@ -5514,6 +5538,13 @@ impl BusinessCallingSettings {
         self.cdr_bucket.as_deref()
     }
 }
+impl BusinessCallingSettings {
+    /// Creates a new builder-style object to manufacture [`BusinessCallingSettings`](crate::model::BusinessCallingSettings).
+    pub fn builder() -> crate::model::business_calling_settings::Builder {
+        crate::model::business_calling_settings::Builder::default()
+    }
+}
+
 /// See [`BusinessCallingSettings`](crate::model::BusinessCallingSettings).
 pub mod business_calling_settings {
 
@@ -5540,12 +5571,6 @@ pub mod business_calling_settings {
                 cdr_bucket: self.cdr_bucket,
             }
         }
-    }
-}
-impl BusinessCallingSettings {
-    /// Creates a new builder-style object to manufacture [`BusinessCallingSettings`](crate::model::BusinessCallingSettings).
-    pub fn builder() -> crate::model::business_calling_settings::Builder {
-        crate::model::business_calling_settings::Builder::default()
     }
 }
 
@@ -5724,6 +5749,13 @@ impl std::fmt::Debug for Bot {
         formatter.finish()
     }
 }
+impl Bot {
+    /// Creates a new builder-style object to manufacture [`Bot`](crate::model::Bot).
+    pub fn builder() -> crate::model::bot::Builder {
+        crate::model::bot::Builder::default()
+    }
+}
+
 /// See [`Bot`](crate::model::Bot).
 pub mod bot {
 
@@ -5872,12 +5904,6 @@ pub mod bot {
         }
     }
 }
-impl Bot {
-    /// Creates a new builder-style object to manufacture [`Bot`](crate::model::Bot).
-    pub fn builder() -> crate::model::bot::Builder {
-        crate::model::bot::Builder::default()
-    }
-}
 
 /// When writing a match expression against `BotType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -5985,6 +6011,13 @@ impl AccountSettings {
         self.enable_dial_out
     }
 }
+impl AccountSettings {
+    /// Creates a new builder-style object to manufacture [`AccountSettings`](crate::model::AccountSettings).
+    pub fn builder() -> crate::model::account_settings::Builder {
+        crate::model::account_settings::Builder::default()
+    }
+}
+
 /// See [`AccountSettings`](crate::model::AccountSettings).
 pub mod account_settings {
 
@@ -6023,12 +6056,6 @@ pub mod account_settings {
                 enable_dial_out: self.enable_dial_out,
             }
         }
-    }
-}
-impl AccountSettings {
-    /// Creates a new builder-style object to manufacture [`AccountSettings`](crate::model::AccountSettings).
-    pub fn builder() -> crate::model::account_settings::Builder {
-        crate::model::account_settings::Builder::default()
     }
 }
 
@@ -6105,6 +6132,13 @@ impl Account {
         self.signin_delegate_groups.as_deref()
     }
 }
+impl Account {
+    /// Creates a new builder-style object to manufacture [`Account`](crate::model::Account).
+    pub fn builder() -> crate::model::account::Builder {
+        crate::model::account::Builder::default()
+    }
+}
+
 /// See [`Account`](crate::model::Account).
 pub mod account {
 
@@ -6263,12 +6297,6 @@ pub mod account {
         }
     }
 }
-impl Account {
-    /// Creates a new builder-style object to manufacture [`Account`](crate::model::Account).
-    pub fn builder() -> crate::model::account::Builder {
-        crate::model::account::Builder::default()
-    }
-}
 
 /// <p>An Active Directory (AD) group whose members are granted permission to act as delegates.</p>
 #[non_exhaustive]
@@ -6284,6 +6312,13 @@ impl SigninDelegateGroup {
         self.group_name.as_deref()
     }
 }
+impl SigninDelegateGroup {
+    /// Creates a new builder-style object to manufacture [`SigninDelegateGroup`](crate::model::SigninDelegateGroup).
+    pub fn builder() -> crate::model::signin_delegate_group::Builder {
+        crate::model::signin_delegate_group::Builder::default()
+    }
+}
+
 /// See [`SigninDelegateGroup`](crate::model::SigninDelegateGroup).
 pub mod signin_delegate_group {
 
@@ -6310,12 +6345,6 @@ pub mod signin_delegate_group {
                 group_name: self.group_name,
             }
         }
-    }
-}
-impl SigninDelegateGroup {
-    /// Creates a new builder-style object to manufacture [`SigninDelegateGroup`](crate::model::SigninDelegateGroup).
-    pub fn builder() -> crate::model::signin_delegate_group::Builder {
-        crate::model::signin_delegate_group::Builder::default()
     }
 }
 
@@ -6543,6 +6572,13 @@ impl std::fmt::Debug for Tag {
         formatter.finish()
     }
 }
+impl Tag {
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
+    pub fn builder() -> crate::model::tag::Builder {
+        crate::model::tag::Builder::default()
+    }
+}
+
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
 
@@ -6591,12 +6627,6 @@ pub mod tag {
         }
     }
 }
-impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
-    pub fn builder() -> crate::model::tag::Builder {
-        crate::model::tag::Builder::default()
-    }
-}
 
 /// <p>The configuration for the current transcription operation. Must contain <code>EngineTranscribeSettings</code> or <code>EngineTranscribeMedicalSettings</code>.</p>
 #[non_exhaustive]
@@ -6624,6 +6654,13 @@ impl TranscriptionConfiguration {
         self.engine_transcribe_medical_settings.as_ref()
     }
 }
+impl TranscriptionConfiguration {
+    /// Creates a new builder-style object to manufacture [`TranscriptionConfiguration`](crate::model::TranscriptionConfiguration).
+    pub fn builder() -> crate::model::transcription_configuration::Builder {
+        crate::model::transcription_configuration::Builder::default()
+    }
+}
+
 /// See [`TranscriptionConfiguration`](crate::model::TranscriptionConfiguration).
 pub mod transcription_configuration {
 
@@ -6676,12 +6713,6 @@ pub mod transcription_configuration {
                 engine_transcribe_medical_settings: self.engine_transcribe_medical_settings,
             }
         }
-    }
-}
-impl TranscriptionConfiguration {
-    /// Creates a new builder-style object to manufacture [`TranscriptionConfiguration`](crate::model::TranscriptionConfiguration).
-    pub fn builder() -> crate::model::transcription_configuration::Builder {
-        crate::model::transcription_configuration::Builder::default()
     }
 }
 
@@ -6739,6 +6770,13 @@ impl EngineTranscribeMedicalSettings {
         self.content_identification_type.as_ref()
     }
 }
+impl EngineTranscribeMedicalSettings {
+    /// Creates a new builder-style object to manufacture [`EngineTranscribeMedicalSettings`](crate::model::EngineTranscribeMedicalSettings).
+    pub fn builder() -> crate::model::engine_transcribe_medical_settings::Builder {
+        crate::model::engine_transcribe_medical_settings::Builder::default()
+    }
+}
+
 /// See [`EngineTranscribeMedicalSettings`](crate::model::EngineTranscribeMedicalSettings).
 pub mod engine_transcribe_medical_settings {
 
@@ -6847,12 +6885,6 @@ pub mod engine_transcribe_medical_settings {
                 content_identification_type: self.content_identification_type,
             }
         }
-    }
-}
-impl EngineTranscribeMedicalSettings {
-    /// Creates a new builder-style object to manufacture [`EngineTranscribeMedicalSettings`](crate::model::EngineTranscribeMedicalSettings).
-    pub fn builder() -> crate::model::engine_transcribe_medical_settings::Builder {
-        crate::model::engine_transcribe_medical_settings::Builder::default()
     }
 }
 
@@ -7465,6 +7497,13 @@ impl EngineTranscribeSettings {
         self.language_model_name.as_deref()
     }
 }
+impl EngineTranscribeSettings {
+    /// Creates a new builder-style object to manufacture [`EngineTranscribeSettings`](crate::model::EngineTranscribeSettings).
+    pub fn builder() -> crate::model::engine_transcribe_settings::Builder {
+        crate::model::engine_transcribe_settings::Builder::default()
+    }
+}
+
 /// See [`EngineTranscribeSettings`](crate::model::EngineTranscribeSettings).
 pub mod engine_transcribe_settings {
 
@@ -7664,12 +7703,6 @@ pub mod engine_transcribe_settings {
                 language_model_name: self.language_model_name,
             }
         }
-    }
-}
-impl EngineTranscribeSettings {
-    /// Creates a new builder-style object to manufacture [`EngineTranscribeSettings`](crate::model::EngineTranscribeSettings).
-    pub fn builder() -> crate::model::engine_transcribe_settings::Builder {
-        crate::model::engine_transcribe_settings::Builder::default()
     }
 }
 
@@ -8552,6 +8585,13 @@ impl std::fmt::Debug for Credential {
         formatter.finish()
     }
 }
+impl Credential {
+    /// Creates a new builder-style object to manufacture [`Credential`](crate::model::Credential).
+    pub fn builder() -> crate::model::credential::Builder {
+        crate::model::credential::Builder::default()
+    }
+}
+
 /// See [`Credential`](crate::model::Credential).
 pub mod credential {
 
@@ -8598,12 +8638,6 @@ pub mod credential {
             formatter.field("password", &"*** Sensitive Data Redacted ***");
             formatter.finish()
         }
-    }
-}
-impl Credential {
-    /// Creates a new builder-style object to manufacture [`Credential`](crate::model::Credential).
-    pub fn builder() -> crate::model::credential::Builder {
-        crate::model::credential::Builder::default()
     }
 }
 
@@ -8660,6 +8694,13 @@ impl std::fmt::Debug for Termination {
         formatter.finish()
     }
 }
+impl Termination {
+    /// Creates a new builder-style object to manufacture [`Termination`](crate::model::Termination).
+    pub fn builder() -> crate::model::termination::Builder {
+        crate::model::termination::Builder::default()
+    }
+}
+
 /// See [`Termination`](crate::model::Termination).
 pub mod termination {
 
@@ -8768,12 +8809,6 @@ pub mod termination {
         }
     }
 }
-impl Termination {
-    /// Creates a new builder-style object to manufacture [`Termination`](crate::model::Termination).
-    pub fn builder() -> crate::model::termination::Builder {
-        crate::model::termination::Builder::default()
-    }
-}
 
 /// <p>The streaming configuration associated with an Amazon Chime Voice Connector. Specifies whether media streaming is enabled for sending to Amazon Kinesis, and shows the retention period for the Amazon Kinesis data, in hours.</p>
 #[non_exhaustive]
@@ -8806,6 +8841,13 @@ impl StreamingConfiguration {
         self.streaming_notification_targets.as_deref()
     }
 }
+impl StreamingConfiguration {
+    /// Creates a new builder-style object to manufacture [`StreamingConfiguration`](crate::model::StreamingConfiguration).
+    pub fn builder() -> crate::model::streaming_configuration::Builder {
+        crate::model::streaming_configuration::Builder::default()
+    }
+}
+
 /// See [`StreamingConfiguration`](crate::model::StreamingConfiguration).
 pub mod streaming_configuration {
 
@@ -8871,12 +8913,6 @@ pub mod streaming_configuration {
         }
     }
 }
-impl StreamingConfiguration {
-    /// Creates a new builder-style object to manufacture [`StreamingConfiguration`](crate::model::StreamingConfiguration).
-    pub fn builder() -> crate::model::streaming_configuration::Builder {
-        crate::model::streaming_configuration::Builder::default()
-    }
-}
 
 /// <p>The targeted recipient for a streaming configuration notification.</p>
 #[non_exhaustive]
@@ -8892,6 +8928,13 @@ impl StreamingNotificationTarget {
         self.notification_target.as_ref()
     }
 }
+impl StreamingNotificationTarget {
+    /// Creates a new builder-style object to manufacture [`StreamingNotificationTarget`](crate::model::StreamingNotificationTarget).
+    pub fn builder() -> crate::model::streaming_notification_target::Builder {
+        crate::model::streaming_notification_target::Builder::default()
+    }
+}
+
 /// See [`StreamingNotificationTarget`](crate::model::StreamingNotificationTarget).
 pub mod streaming_notification_target {
 
@@ -8921,12 +8964,6 @@ pub mod streaming_notification_target {
                 notification_target: self.notification_target,
             }
         }
-    }
-}
-impl StreamingNotificationTarget {
-    /// Creates a new builder-style object to manufacture [`StreamingNotificationTarget`](crate::model::StreamingNotificationTarget).
-    pub fn builder() -> crate::model::streaming_notification_target::Builder {
-        crate::model::streaming_notification_target::Builder::default()
     }
 }
 
@@ -9075,6 +9112,13 @@ impl std::fmt::Debug for Proxy {
         formatter.finish()
     }
 }
+impl Proxy {
+    /// Creates a new builder-style object to manufacture [`Proxy`](crate::model::Proxy).
+    pub fn builder() -> crate::model::proxy::Builder {
+        crate::model::proxy::Builder::default()
+    }
+}
+
 /// See [`Proxy`](crate::model::Proxy).
 pub mod proxy {
 
@@ -9167,12 +9211,6 @@ pub mod proxy {
         }
     }
 }
-impl Proxy {
-    /// Creates a new builder-style object to manufacture [`Proxy`](crate::model::Proxy).
-    pub fn builder() -> crate::model::proxy::Builder {
-        crate::model::proxy::Builder::default()
-    }
-}
 
 /// <p>Origination settings enable your SIP hosts to receive inbound calls using your Amazon Chime Voice Connector.</p> <note>
 /// <p>The parameters listed below are not required, but you must use at least one. </p>
@@ -9197,6 +9235,13 @@ impl Origination {
         self.disabled
     }
 }
+impl Origination {
+    /// Creates a new builder-style object to manufacture [`Origination`](crate::model::Origination).
+    pub fn builder() -> crate::model::origination::Builder {
+        crate::model::origination::Builder::default()
+    }
+}
+
 /// See [`Origination`](crate::model::Origination).
 pub mod origination {
 
@@ -9246,12 +9291,6 @@ pub mod origination {
         }
     }
 }
-impl Origination {
-    /// Creates a new builder-style object to manufacture [`Origination`](crate::model::Origination).
-    pub fn builder() -> crate::model::origination::Builder {
-        crate::model::origination::Builder::default()
-    }
-}
 
 /// <p>Origination routes define call distribution properties for your SIP hosts to receive inbound calls using your Amazon Chime Voice Connector. Limit: Ten origination routes for each Amazon Chime Voice Connector.</p> <note>
 /// <p>The parameters listed below are not required, but you must use at least one. </p>
@@ -9297,6 +9336,13 @@ impl OriginationRoute {
         self.weight
     }
 }
+impl OriginationRoute {
+    /// Creates a new builder-style object to manufacture [`OriginationRoute`](crate::model::OriginationRoute).
+    pub fn builder() -> crate::model::origination_route::Builder {
+        crate::model::origination_route::Builder::default()
+    }
+}
+
 /// See [`OriginationRoute`](crate::model::OriginationRoute).
 pub mod origination_route {
 
@@ -9374,12 +9420,6 @@ pub mod origination_route {
                 weight: self.weight,
             }
         }
-    }
-}
-impl OriginationRoute {
-    /// Creates a new builder-style object to manufacture [`OriginationRoute`](crate::model::OriginationRoute).
-    pub fn builder() -> crate::model::origination_route::Builder {
-        crate::model::origination_route::Builder::default()
     }
 }
 
@@ -9496,6 +9536,13 @@ impl LoggingConfiguration {
         self.enable_media_metric_logs
     }
 }
+impl LoggingConfiguration {
+    /// Creates a new builder-style object to manufacture [`LoggingConfiguration`](crate::model::LoggingConfiguration).
+    pub fn builder() -> crate::model::logging_configuration::Builder {
+        crate::model::logging_configuration::Builder::default()
+    }
+}
+
 /// See [`LoggingConfiguration`](crate::model::LoggingConfiguration).
 pub mod logging_configuration {
 
@@ -9536,12 +9583,6 @@ pub mod logging_configuration {
         }
     }
 }
-impl LoggingConfiguration {
-    /// Creates a new builder-style object to manufacture [`LoggingConfiguration`](crate::model::LoggingConfiguration).
-    pub fn builder() -> crate::model::logging_configuration::Builder {
-        crate::model::logging_configuration::Builder::default()
-    }
-}
 
 /// <p>The emergency calling configuration details associated with an Amazon Chime Voice Connector.</p>
 #[non_exhaustive]
@@ -9557,6 +9598,13 @@ impl EmergencyCallingConfiguration {
         self.dnis.as_deref()
     }
 }
+impl EmergencyCallingConfiguration {
+    /// Creates a new builder-style object to manufacture [`EmergencyCallingConfiguration`](crate::model::EmergencyCallingConfiguration).
+    pub fn builder() -> crate::model::emergency_calling_configuration::Builder {
+        crate::model::emergency_calling_configuration::Builder::default()
+    }
+}
+
 /// See [`EmergencyCallingConfiguration`](crate::model::EmergencyCallingConfiguration).
 pub mod emergency_calling_configuration {
 
@@ -9593,12 +9641,6 @@ pub mod emergency_calling_configuration {
         pub fn build(self) -> crate::model::EmergencyCallingConfiguration {
             crate::model::EmergencyCallingConfiguration { dnis: self.dnis }
         }
-    }
-}
-impl EmergencyCallingConfiguration {
-    /// Creates a new builder-style object to manufacture [`EmergencyCallingConfiguration`](crate::model::EmergencyCallingConfiguration).
-    pub fn builder() -> crate::model::emergency_calling_configuration::Builder {
-        crate::model::emergency_calling_configuration::Builder::default()
     }
 }
 
@@ -9639,6 +9681,13 @@ impl std::fmt::Debug for DnisEmergencyCallingConfiguration {
         formatter.finish()
     }
 }
+impl DnisEmergencyCallingConfiguration {
+    /// Creates a new builder-style object to manufacture [`DnisEmergencyCallingConfiguration`](crate::model::DnisEmergencyCallingConfiguration).
+    pub fn builder() -> crate::model::dnis_emergency_calling_configuration::Builder {
+        crate::model::dnis_emergency_calling_configuration::Builder::default()
+    }
+}
+
 /// See [`DnisEmergencyCallingConfiguration`](crate::model::DnisEmergencyCallingConfiguration).
 pub mod dnis_emergency_calling_configuration {
 
@@ -9709,12 +9758,6 @@ pub mod dnis_emergency_calling_configuration {
         }
     }
 }
-impl DnisEmergencyCallingConfiguration {
-    /// Creates a new builder-style object to manufacture [`DnisEmergencyCallingConfiguration`](crate::model::DnisEmergencyCallingConfiguration).
-    pub fn builder() -> crate::model::dnis_emergency_calling_configuration::Builder {
-        crate::model::dnis_emergency_calling_configuration::Builder::default()
-    }
-}
 
 /// <p>Logging configuration of the SIP media application.</p>
 #[non_exhaustive]
@@ -9730,6 +9773,13 @@ impl SipMediaApplicationLoggingConfiguration {
         self.enable_sip_media_application_message_logs
     }
 }
+impl SipMediaApplicationLoggingConfiguration {
+    /// Creates a new builder-style object to manufacture [`SipMediaApplicationLoggingConfiguration`](crate::model::SipMediaApplicationLoggingConfiguration).
+    pub fn builder() -> crate::model::sip_media_application_logging_configuration::Builder {
+        crate::model::sip_media_application_logging_configuration::Builder::default()
+    }
+}
+
 /// See [`SipMediaApplicationLoggingConfiguration`](crate::model::SipMediaApplicationLoggingConfiguration).
 pub mod sip_media_application_logging_configuration {
 
@@ -9762,12 +9812,6 @@ pub mod sip_media_application_logging_configuration {
         }
     }
 }
-impl SipMediaApplicationLoggingConfiguration {
-    /// Creates a new builder-style object to manufacture [`SipMediaApplicationLoggingConfiguration`](crate::model::SipMediaApplicationLoggingConfiguration).
-    pub fn builder() -> crate::model::sip_media_application_logging_configuration::Builder {
-        crate::model::sip_media_application_logging_configuration::Builder::default()
-    }
-}
 
 /// <p>The retention settings for an Amazon Chime Enterprise account that determine how long to retain items such as chat-room messages and chat-conversation messages.</p>
 #[non_exhaustive]
@@ -9795,6 +9839,13 @@ impl RetentionSettings {
         self.conversation_retention_settings.as_ref()
     }
 }
+impl RetentionSettings {
+    /// Creates a new builder-style object to manufacture [`RetentionSettings`](crate::model::RetentionSettings).
+    pub fn builder() -> crate::model::retention_settings::Builder {
+        crate::model::retention_settings::Builder::default()
+    }
+}
+
 /// See [`RetentionSettings`](crate::model::RetentionSettings).
 pub mod retention_settings {
 
@@ -9849,12 +9900,6 @@ pub mod retention_settings {
         }
     }
 }
-impl RetentionSettings {
-    /// Creates a new builder-style object to manufacture [`RetentionSettings`](crate::model::RetentionSettings).
-    pub fn builder() -> crate::model::retention_settings::Builder {
-        crate::model::retention_settings::Builder::default()
-    }
-}
 
 /// <p>The retention settings that determine how long to retain conversation messages for an Amazon Chime Enterprise account.</p>
 #[non_exhaustive]
@@ -9870,6 +9915,13 @@ impl ConversationRetentionSettings {
         self.retention_days
     }
 }
+impl ConversationRetentionSettings {
+    /// Creates a new builder-style object to manufacture [`ConversationRetentionSettings`](crate::model::ConversationRetentionSettings).
+    pub fn builder() -> crate::model::conversation_retention_settings::Builder {
+        crate::model::conversation_retention_settings::Builder::default()
+    }
+}
+
 /// See [`ConversationRetentionSettings`](crate::model::ConversationRetentionSettings).
 pub mod conversation_retention_settings {
 
@@ -9898,12 +9950,6 @@ pub mod conversation_retention_settings {
         }
     }
 }
-impl ConversationRetentionSettings {
-    /// Creates a new builder-style object to manufacture [`ConversationRetentionSettings`](crate::model::ConversationRetentionSettings).
-    pub fn builder() -> crate::model::conversation_retention_settings::Builder {
-        crate::model::conversation_retention_settings::Builder::default()
-    }
-}
 
 /// <p>The retention settings that determine how long to retain chat-room messages for an Amazon Chime Enterprise account.</p>
 #[non_exhaustive]
@@ -9919,6 +9965,13 @@ impl RoomRetentionSettings {
         self.retention_days
     }
 }
+impl RoomRetentionSettings {
+    /// Creates a new builder-style object to manufacture [`RoomRetentionSettings`](crate::model::RoomRetentionSettings).
+    pub fn builder() -> crate::model::room_retention_settings::Builder {
+        crate::model::room_retention_settings::Builder::default()
+    }
+}
+
 /// See [`RoomRetentionSettings`](crate::model::RoomRetentionSettings).
 pub mod room_retention_settings {
 
@@ -9945,12 +9998,6 @@ pub mod room_retention_settings {
                 retention_days: self.retention_days,
             }
         }
-    }
-}
-impl RoomRetentionSettings {
-    /// Creates a new builder-style object to manufacture [`RoomRetentionSettings`](crate::model::RoomRetentionSettings).
-    pub fn builder() -> crate::model::room_retention_settings::Builder {
-        crate::model::room_retention_settings::Builder::default()
     }
 }
 
@@ -9994,6 +10041,13 @@ impl std::fmt::Debug for EventsConfiguration {
         formatter.finish()
     }
 }
+impl EventsConfiguration {
+    /// Creates a new builder-style object to manufacture [`EventsConfiguration`](crate::model::EventsConfiguration).
+    pub fn builder() -> crate::model::events_configuration::Builder {
+        crate::model::events_configuration::Builder::default()
+    }
+}
+
 /// See [`EventsConfiguration`](crate::model::EventsConfiguration).
 pub mod events_configuration {
 
@@ -10067,12 +10121,6 @@ pub mod events_configuration {
         }
     }
 }
-impl EventsConfiguration {
-    /// Creates a new builder-style object to manufacture [`EventsConfiguration`](crate::model::EventsConfiguration).
-    pub fn builder() -> crate::model::events_configuration::Builder {
-        crate::model::events_configuration::Builder::default()
-    }
-}
 
 /// <p>The details of the streaming configuration of an <code>AppInstance</code>.</p>
 #[non_exhaustive]
@@ -10105,6 +10153,13 @@ impl std::fmt::Debug for AppInstanceStreamingConfiguration {
         formatter.finish()
     }
 }
+impl AppInstanceStreamingConfiguration {
+    /// Creates a new builder-style object to manufacture [`AppInstanceStreamingConfiguration`](crate::model::AppInstanceStreamingConfiguration).
+    pub fn builder() -> crate::model::app_instance_streaming_configuration::Builder {
+        crate::model::app_instance_streaming_configuration::Builder::default()
+    }
+}
+
 /// See [`AppInstanceStreamingConfiguration`](crate::model::AppInstanceStreamingConfiguration).
 pub mod app_instance_streaming_configuration {
 
@@ -10154,12 +10209,6 @@ pub mod app_instance_streaming_configuration {
             formatter.field("resource_arn", &"*** Sensitive Data Redacted ***");
             formatter.finish()
         }
-    }
-}
-impl AppInstanceStreamingConfiguration {
-    /// Creates a new builder-style object to manufacture [`AppInstanceStreamingConfiguration`](crate::model::AppInstanceStreamingConfiguration).
-    pub fn builder() -> crate::model::app_instance_streaming_configuration::Builder {
-        crate::model::app_instance_streaming_configuration::Builder::default()
     }
 }
 
@@ -10271,6 +10320,13 @@ impl AppInstanceRetentionSettings {
         self.channel_retention_settings.as_ref()
     }
 }
+impl AppInstanceRetentionSettings {
+    /// Creates a new builder-style object to manufacture [`AppInstanceRetentionSettings`](crate::model::AppInstanceRetentionSettings).
+    pub fn builder() -> crate::model::app_instance_retention_settings::Builder {
+        crate::model::app_instance_retention_settings::Builder::default()
+    }
+}
+
 /// See [`AppInstanceRetentionSettings`](crate::model::AppInstanceRetentionSettings).
 pub mod app_instance_retention_settings {
 
@@ -10306,12 +10362,6 @@ pub mod app_instance_retention_settings {
         }
     }
 }
-impl AppInstanceRetentionSettings {
-    /// Creates a new builder-style object to manufacture [`AppInstanceRetentionSettings`](crate::model::AppInstanceRetentionSettings).
-    pub fn builder() -> crate::model::app_instance_retention_settings::Builder {
-        crate::model::app_instance_retention_settings::Builder::default()
-    }
-}
 
 /// <p>The details of the retention settings for a channel.</p>
 #[non_exhaustive]
@@ -10327,6 +10377,13 @@ impl ChannelRetentionSettings {
         self.retention_days
     }
 }
+impl ChannelRetentionSettings {
+    /// Creates a new builder-style object to manufacture [`ChannelRetentionSettings`](crate::model::ChannelRetentionSettings).
+    pub fn builder() -> crate::model::channel_retention_settings::Builder {
+        crate::model::channel_retention_settings::Builder::default()
+    }
+}
+
 /// See [`ChannelRetentionSettings`](crate::model::ChannelRetentionSettings).
 pub mod channel_retention_settings {
 
@@ -10355,12 +10412,6 @@ pub mod channel_retention_settings {
         }
     }
 }
-impl ChannelRetentionSettings {
-    /// Creates a new builder-style object to manufacture [`ChannelRetentionSettings`](crate::model::ChannelRetentionSettings).
-    pub fn builder() -> crate::model::channel_retention_settings::Builder {
-        crate::model::channel_retention_settings::Builder::default()
-    }
-}
 
 /// <p>The phone number country.</p>
 #[non_exhaustive]
@@ -10386,6 +10437,13 @@ impl PhoneNumberCountry {
         self.supported_phone_number_types.as_deref()
     }
 }
+impl PhoneNumberCountry {
+    /// Creates a new builder-style object to manufacture [`PhoneNumberCountry`](crate::model::PhoneNumberCountry).
+    pub fn builder() -> crate::model::phone_number_country::Builder {
+        crate::model::phone_number_country::Builder::default()
+    }
+}
+
 /// See [`PhoneNumberCountry`](crate::model::PhoneNumberCountry).
 pub mod phone_number_country {
 
@@ -10437,12 +10495,6 @@ pub mod phone_number_country {
                 supported_phone_number_types: self.supported_phone_number_types,
             }
         }
-    }
-}
-impl PhoneNumberCountry {
-    /// Creates a new builder-style object to manufacture [`PhoneNumberCountry`](crate::model::PhoneNumberCountry).
-    pub fn builder() -> crate::model::phone_number_country::Builder {
-        crate::model::phone_number_country::Builder::default()
     }
 }
 
@@ -10497,6 +10549,13 @@ impl PhoneNumberOrder {
         self.updated_timestamp.as_ref()
     }
 }
+impl PhoneNumberOrder {
+    /// Creates a new builder-style object to manufacture [`PhoneNumberOrder`](crate::model::PhoneNumberOrder).
+    pub fn builder() -> crate::model::phone_number_order::Builder {
+        crate::model::phone_number_order::Builder::default()
+    }
+}
+
 /// See [`PhoneNumberOrder`](crate::model::PhoneNumberOrder).
 pub mod phone_number_order {
 
@@ -10610,12 +10669,6 @@ pub mod phone_number_order {
         }
     }
 }
-impl PhoneNumberOrder {
-    /// Creates a new builder-style object to manufacture [`PhoneNumberOrder`](crate::model::PhoneNumberOrder).
-    pub fn builder() -> crate::model::phone_number_order::Builder {
-        crate::model::phone_number_order::Builder::default()
-    }
-}
 
 /// <p>A phone number for which an order has been placed.</p>
 #[non_exhaustive]
@@ -10646,6 +10699,13 @@ impl std::fmt::Debug for OrderedPhoneNumber {
         formatter.finish()
     }
 }
+impl OrderedPhoneNumber {
+    /// Creates a new builder-style object to manufacture [`OrderedPhoneNumber`](crate::model::OrderedPhoneNumber).
+    pub fn builder() -> crate::model::ordered_phone_number::Builder {
+        crate::model::ordered_phone_number::Builder::default()
+    }
+}
+
 /// See [`OrderedPhoneNumber`](crate::model::OrderedPhoneNumber).
 pub mod ordered_phone_number {
 
@@ -10698,12 +10758,6 @@ pub mod ordered_phone_number {
             formatter.field("status", &self.status);
             formatter.finish()
         }
-    }
-}
-impl OrderedPhoneNumber {
-    /// Creates a new builder-style object to manufacture [`OrderedPhoneNumber`](crate::model::OrderedPhoneNumber).
-    pub fn builder() -> crate::model::ordered_phone_number::Builder {
-        crate::model::ordered_phone_number::Builder::default()
     }
 }
 
@@ -10951,6 +11005,13 @@ impl std::fmt::Debug for Meeting {
         formatter.finish()
     }
 }
+impl Meeting {
+    /// Creates a new builder-style object to manufacture [`Meeting`](crate::model::Meeting).
+    pub fn builder() -> crate::model::meeting::Builder {
+        crate::model::meeting::Builder::default()
+    }
+}
+
 /// See [`Meeting`](crate::model::Meeting).
 pub mod meeting {
 
@@ -11031,12 +11092,6 @@ pub mod meeting {
         }
     }
 }
-impl Meeting {
-    /// Creates a new builder-style object to manufacture [`Meeting`](crate::model::Meeting).
-    pub fn builder() -> crate::model::meeting::Builder {
-        crate::model::meeting::Builder::default()
-    }
-}
 
 /// <p>A set of endpoints used by clients to connect to the media service group for an Amazon Chime SDK meeting.</p>
 #[non_exhaustive]
@@ -11101,6 +11156,13 @@ impl MediaPlacement {
         self.event_ingestion_url.as_deref()
     }
 }
+impl MediaPlacement {
+    /// Creates a new builder-style object to manufacture [`MediaPlacement`](crate::model::MediaPlacement).
+    pub fn builder() -> crate::model::media_placement::Builder {
+        crate::model::media_placement::Builder::default()
+    }
+}
+
 /// See [`MediaPlacement`](crate::model::MediaPlacement).
 pub mod media_placement {
 
@@ -11237,12 +11299,6 @@ pub mod media_placement {
         }
     }
 }
-impl MediaPlacement {
-    /// Creates a new builder-style object to manufacture [`MediaPlacement`](crate::model::MediaPlacement).
-    pub fn builder() -> crate::model::media_placement::Builder {
-        crate::model::media_placement::Builder::default()
-    }
-}
 
 /// <p>A media capture pipeline object consisting of an ID, source type, source ARN, a sink type, a sink ARN, and a configuration object.</p>
 #[non_exhaustive]
@@ -11335,6 +11391,13 @@ impl std::fmt::Debug for MediaCapturePipeline {
         formatter.finish()
     }
 }
+impl MediaCapturePipeline {
+    /// Creates a new builder-style object to manufacture [`MediaCapturePipeline`](crate::model::MediaCapturePipeline).
+    pub fn builder() -> crate::model::media_capture_pipeline::Builder {
+        crate::model::media_capture_pipeline::Builder::default()
+    }
+}
+
 /// See [`MediaCapturePipeline`](crate::model::MediaCapturePipeline).
 pub mod media_capture_pipeline {
 
@@ -11502,12 +11565,6 @@ pub mod media_capture_pipeline {
         }
     }
 }
-impl MediaCapturePipeline {
-    /// Creates a new builder-style object to manufacture [`MediaCapturePipeline`](crate::model::MediaCapturePipeline).
-    pub fn builder() -> crate::model::media_capture_pipeline::Builder {
-        crate::model::media_capture_pipeline::Builder::default()
-    }
-}
 
 /// <p>The configuration object of the Amazon Chime SDK meeting for a specified media capture pipeline. <code>SourceType</code> must be <code>ChimeSdkMeeting</code>.</p>
 #[non_exhaustive]
@@ -11532,6 +11589,13 @@ impl ChimeSdkMeetingConfiguration {
         self.artifacts_configuration.as_ref()
     }
 }
+impl ChimeSdkMeetingConfiguration {
+    /// Creates a new builder-style object to manufacture [`ChimeSdkMeetingConfiguration`](crate::model::ChimeSdkMeetingConfiguration).
+    pub fn builder() -> crate::model::chime_sdk_meeting_configuration::Builder {
+        crate::model::chime_sdk_meeting_configuration::Builder::default()
+    }
+}
+
 /// See [`ChimeSdkMeetingConfiguration`](crate::model::ChimeSdkMeetingConfiguration).
 pub mod chime_sdk_meeting_configuration {
 
@@ -11582,12 +11646,6 @@ pub mod chime_sdk_meeting_configuration {
         }
     }
 }
-impl ChimeSdkMeetingConfiguration {
-    /// Creates a new builder-style object to manufacture [`ChimeSdkMeetingConfiguration`](crate::model::ChimeSdkMeetingConfiguration).
-    pub fn builder() -> crate::model::chime_sdk_meeting_configuration::Builder {
-        crate::model::chime_sdk_meeting_configuration::Builder::default()
-    }
-}
 
 /// <p>The configuration for the artifacts.</p>
 #[non_exhaustive]
@@ -11617,6 +11675,13 @@ impl ArtifactsConfiguration {
         self.content.as_ref()
     }
 }
+impl ArtifactsConfiguration {
+    /// Creates a new builder-style object to manufacture [`ArtifactsConfiguration`](crate::model::ArtifactsConfiguration).
+    pub fn builder() -> crate::model::artifacts_configuration::Builder {
+        crate::model::artifacts_configuration::Builder::default()
+    }
+}
+
 /// See [`ArtifactsConfiguration`](crate::model::ArtifactsConfiguration).
 pub mod artifacts_configuration {
 
@@ -11678,12 +11743,6 @@ pub mod artifacts_configuration {
         }
     }
 }
-impl ArtifactsConfiguration {
-    /// Creates a new builder-style object to manufacture [`ArtifactsConfiguration`](crate::model::ArtifactsConfiguration).
-    pub fn builder() -> crate::model::artifacts_configuration::Builder {
-        crate::model::artifacts_configuration::Builder::default()
-    }
-}
 
 /// <p>The content artifact object.</p>
 #[non_exhaustive]
@@ -11706,6 +11765,13 @@ impl ContentArtifactsConfiguration {
         self.mux_type.as_ref()
     }
 }
+impl ContentArtifactsConfiguration {
+    /// Creates a new builder-style object to manufacture [`ContentArtifactsConfiguration`](crate::model::ContentArtifactsConfiguration).
+    pub fn builder() -> crate::model::content_artifacts_configuration::Builder {
+        crate::model::content_artifacts_configuration::Builder::default()
+    }
+}
+
 /// See [`ContentArtifactsConfiguration`](crate::model::ContentArtifactsConfiguration).
 pub mod content_artifacts_configuration {
 
@@ -11750,12 +11816,6 @@ pub mod content_artifacts_configuration {
                 mux_type: self.mux_type,
             }
         }
-    }
-}
-impl ContentArtifactsConfiguration {
-    /// Creates a new builder-style object to manufacture [`ContentArtifactsConfiguration`](crate::model::ContentArtifactsConfiguration).
-    pub fn builder() -> crate::model::content_artifacts_configuration::Builder {
-        crate::model::content_artifacts_configuration::Builder::default()
     }
 }
 
@@ -11955,6 +12015,13 @@ impl VideoArtifactsConfiguration {
         self.mux_type.as_ref()
     }
 }
+impl VideoArtifactsConfiguration {
+    /// Creates a new builder-style object to manufacture [`VideoArtifactsConfiguration`](crate::model::VideoArtifactsConfiguration).
+    pub fn builder() -> crate::model::video_artifacts_configuration::Builder {
+        crate::model::video_artifacts_configuration::Builder::default()
+    }
+}
+
 /// See [`VideoArtifactsConfiguration`](crate::model::VideoArtifactsConfiguration).
 pub mod video_artifacts_configuration {
 
@@ -11999,12 +12066,6 @@ pub mod video_artifacts_configuration {
                 mux_type: self.mux_type,
             }
         }
-    }
-}
-impl VideoArtifactsConfiguration {
-    /// Creates a new builder-style object to manufacture [`VideoArtifactsConfiguration`](crate::model::VideoArtifactsConfiguration).
-    pub fn builder() -> crate::model::video_artifacts_configuration::Builder {
-        crate::model::video_artifacts_configuration::Builder::default()
     }
 }
 
@@ -12107,6 +12168,13 @@ impl AudioArtifactsConfiguration {
         self.mux_type.as_ref()
     }
 }
+impl AudioArtifactsConfiguration {
+    /// Creates a new builder-style object to manufacture [`AudioArtifactsConfiguration`](crate::model::AudioArtifactsConfiguration).
+    pub fn builder() -> crate::model::audio_artifacts_configuration::Builder {
+        crate::model::audio_artifacts_configuration::Builder::default()
+    }
+}
+
 /// See [`AudioArtifactsConfiguration`](crate::model::AudioArtifactsConfiguration).
 pub mod audio_artifacts_configuration {
 
@@ -12136,12 +12204,6 @@ pub mod audio_artifacts_configuration {
                 mux_type: self.mux_type,
             }
         }
-    }
-}
-impl AudioArtifactsConfiguration {
-    /// Creates a new builder-style object to manufacture [`AudioArtifactsConfiguration`](crate::model::AudioArtifactsConfiguration).
-    pub fn builder() -> crate::model::audio_artifacts_configuration::Builder {
-        crate::model::audio_artifacts_configuration::Builder::default()
     }
 }
 
@@ -12251,6 +12313,13 @@ impl SourceConfiguration {
         self.selected_video_streams.as_ref()
     }
 }
+impl SourceConfiguration {
+    /// Creates a new builder-style object to manufacture [`SourceConfiguration`](crate::model::SourceConfiguration).
+    pub fn builder() -> crate::model::source_configuration::Builder {
+        crate::model::source_configuration::Builder::default()
+    }
+}
+
 /// See [`SourceConfiguration`](crate::model::SourceConfiguration).
 pub mod source_configuration {
 
@@ -12282,12 +12351,6 @@ pub mod source_configuration {
         }
     }
 }
-impl SourceConfiguration {
-    /// Creates a new builder-style object to manufacture [`SourceConfiguration`](crate::model::SourceConfiguration).
-    pub fn builder() -> crate::model::source_configuration::Builder {
-        crate::model::source_configuration::Builder::default()
-    }
-}
 
 /// <p>The video streams to capture for a specified media capture pipeline. The total number of video streams can't exceed 25.</p>
 #[non_exhaustive]
@@ -12310,6 +12373,13 @@ impl SelectedVideoStreams {
         self.external_user_ids.as_deref()
     }
 }
+impl SelectedVideoStreams {
+    /// Creates a new builder-style object to manufacture [`SelectedVideoStreams`](crate::model::SelectedVideoStreams).
+    pub fn builder() -> crate::model::selected_video_streams::Builder {
+        crate::model::selected_video_streams::Builder::default()
+    }
+}
+
 /// See [`SelectedVideoStreams`](crate::model::SelectedVideoStreams).
 pub mod selected_video_streams {
 
@@ -12366,12 +12436,6 @@ pub mod selected_video_streams {
                 external_user_ids: self.external_user_ids,
             }
         }
-    }
-}
-impl SelectedVideoStreams {
-    /// Creates a new builder-style object to manufacture [`SelectedVideoStreams`](crate::model::SelectedVideoStreams).
-    pub fn builder() -> crate::model::selected_video_streams::Builder {
-        crate::model::selected_video_streams::Builder::default()
     }
 }
 
@@ -12676,6 +12740,13 @@ impl ChannelModeratedByAppInstanceUserSummary {
         self.channel_summary.as_ref()
     }
 }
+impl ChannelModeratedByAppInstanceUserSummary {
+    /// Creates a new builder-style object to manufacture [`ChannelModeratedByAppInstanceUserSummary`](crate::model::ChannelModeratedByAppInstanceUserSummary).
+    pub fn builder() -> crate::model::channel_moderated_by_app_instance_user_summary::Builder {
+        crate::model::channel_moderated_by_app_instance_user_summary::Builder::default()
+    }
+}
+
 /// See [`ChannelModeratedByAppInstanceUserSummary`](crate::model::ChannelModeratedByAppInstanceUserSummary).
 pub mod channel_moderated_by_app_instance_user_summary {
 
@@ -12705,12 +12776,6 @@ pub mod channel_moderated_by_app_instance_user_summary {
                 channel_summary: self.channel_summary,
             }
         }
-    }
-}
-impl ChannelModeratedByAppInstanceUserSummary {
-    /// Creates a new builder-style object to manufacture [`ChannelModeratedByAppInstanceUserSummary`](crate::model::ChannelModeratedByAppInstanceUserSummary).
-    pub fn builder() -> crate::model::channel_moderated_by_app_instance_user_summary::Builder {
-        crate::model::channel_moderated_by_app_instance_user_summary::Builder::default()
     }
 }
 
@@ -12775,6 +12840,13 @@ impl std::fmt::Debug for ChannelSummary {
         formatter.finish()
     }
 }
+impl ChannelSummary {
+    /// Creates a new builder-style object to manufacture [`ChannelSummary`](crate::model::ChannelSummary).
+    pub fn builder() -> crate::model::channel_summary::Builder {
+        crate::model::channel_summary::Builder::default()
+    }
+}
+
 /// See [`ChannelSummary`](crate::model::ChannelSummary).
 pub mod channel_summary {
 
@@ -12879,12 +12951,6 @@ pub mod channel_summary {
             formatter.field("last_message_timestamp", &self.last_message_timestamp);
             formatter.finish()
         }
-    }
-}
-impl ChannelSummary {
-    /// Creates a new builder-style object to manufacture [`ChannelSummary`](crate::model::ChannelSummary).
-    pub fn builder() -> crate::model::channel_summary::Builder {
-        crate::model::channel_summary::Builder::default()
     }
 }
 
@@ -12992,6 +13058,13 @@ impl ChannelModeratorSummary {
         self.moderator.as_ref()
     }
 }
+impl ChannelModeratorSummary {
+    /// Creates a new builder-style object to manufacture [`ChannelModeratorSummary`](crate::model::ChannelModeratorSummary).
+    pub fn builder() -> crate::model::channel_moderator_summary::Builder {
+        crate::model::channel_moderator_summary::Builder::default()
+    }
+}
+
 /// See [`ChannelModeratorSummary`](crate::model::ChannelModeratorSummary).
 pub mod channel_moderator_summary {
 
@@ -13018,12 +13091,6 @@ pub mod channel_moderator_summary {
                 moderator: self.moderator,
             }
         }
-    }
-}
-impl ChannelModeratorSummary {
-    /// Creates a new builder-style object to manufacture [`ChannelModeratorSummary`](crate::model::ChannelModeratorSummary).
-    pub fn builder() -> crate::model::channel_moderator_summary::Builder {
-        crate::model::channel_moderator_summary::Builder::default()
     }
 }
 
@@ -13056,6 +13123,13 @@ impl std::fmt::Debug for Identity {
         formatter.finish()
     }
 }
+impl Identity {
+    /// Creates a new builder-style object to manufacture [`Identity`](crate::model::Identity).
+    pub fn builder() -> crate::model::identity::Builder {
+        crate::model::identity::Builder::default()
+    }
+}
+
 /// See [`Identity`](crate::model::Identity).
 pub mod identity {
 
@@ -13102,12 +13176,6 @@ pub mod identity {
             formatter.field("name", &"*** Sensitive Data Redacted ***");
             formatter.finish()
         }
-    }
-}
-impl Identity {
-    /// Creates a new builder-style object to manufacture [`Identity`](crate::model::Identity).
-    pub fn builder() -> crate::model::identity::Builder {
-        crate::model::identity::Builder::default()
     }
 }
 
@@ -13196,6 +13264,13 @@ impl std::fmt::Debug for ChannelMessageSummary {
         formatter.finish()
     }
 }
+impl ChannelMessageSummary {
+    /// Creates a new builder-style object to manufacture [`ChannelMessageSummary`](crate::model::ChannelMessageSummary).
+    pub fn builder() -> crate::model::channel_message_summary::Builder {
+        crate::model::channel_message_summary::Builder::default()
+    }
+}
+
 /// See [`ChannelMessageSummary`](crate::model::ChannelMessageSummary).
 pub mod channel_message_summary {
 
@@ -13347,12 +13422,6 @@ pub mod channel_message_summary {
         }
     }
 }
-impl ChannelMessageSummary {
-    /// Creates a new builder-style object to manufacture [`ChannelMessageSummary`](crate::model::ChannelMessageSummary).
-    pub fn builder() -> crate::model::channel_message_summary::Builder {
-        crate::model::channel_message_summary::Builder::default()
-    }
-}
 
 /// When writing a match expression against `SortOrder`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -13468,6 +13537,13 @@ impl ChannelMembershipForAppInstanceUserSummary {
         self.app_instance_user_membership_summary.as_ref()
     }
 }
+impl ChannelMembershipForAppInstanceUserSummary {
+    /// Creates a new builder-style object to manufacture [`ChannelMembershipForAppInstanceUserSummary`](crate::model::ChannelMembershipForAppInstanceUserSummary).
+    pub fn builder() -> crate::model::channel_membership_for_app_instance_user_summary::Builder {
+        crate::model::channel_membership_for_app_instance_user_summary::Builder::default()
+    }
+}
+
 /// See [`ChannelMembershipForAppInstanceUserSummary`](crate::model::ChannelMembershipForAppInstanceUserSummary).
 pub mod channel_membership_for_app_instance_user_summary {
 
@@ -13518,12 +13594,6 @@ pub mod channel_membership_for_app_instance_user_summary {
         }
     }
 }
-impl ChannelMembershipForAppInstanceUserSummary {
-    /// Creates a new builder-style object to manufacture [`ChannelMembershipForAppInstanceUserSummary`](crate::model::ChannelMembershipForAppInstanceUserSummary).
-    pub fn builder() -> crate::model::channel_membership_for_app_instance_user_summary::Builder {
-        crate::model::channel_membership_for_app_instance_user_summary::Builder::default()
-    }
-}
 
 /// <p>Summary of the membership details of an <code>AppInstanceUser</code>.</p>
 #[non_exhaustive]
@@ -13546,6 +13616,13 @@ impl AppInstanceUserMembershipSummary {
         self.read_marker_timestamp.as_ref()
     }
 }
+impl AppInstanceUserMembershipSummary {
+    /// Creates a new builder-style object to manufacture [`AppInstanceUserMembershipSummary`](crate::model::AppInstanceUserMembershipSummary).
+    pub fn builder() -> crate::model::app_instance_user_membership_summary::Builder {
+        crate::model::app_instance_user_membership_summary::Builder::default()
+    }
+}
+
 /// See [`AppInstanceUserMembershipSummary`](crate::model::AppInstanceUserMembershipSummary).
 pub mod app_instance_user_membership_summary {
 
@@ -13590,12 +13667,6 @@ pub mod app_instance_user_membership_summary {
                 read_marker_timestamp: self.read_marker_timestamp,
             }
         }
-    }
-}
-impl AppInstanceUserMembershipSummary {
-    /// Creates a new builder-style object to manufacture [`AppInstanceUserMembershipSummary`](crate::model::AppInstanceUserMembershipSummary).
-    pub fn builder() -> crate::model::app_instance_user_membership_summary::Builder {
-        crate::model::app_instance_user_membership_summary::Builder::default()
     }
 }
 
@@ -13705,6 +13776,13 @@ impl ChannelMembershipSummary {
         self.member.as_ref()
     }
 }
+impl ChannelMembershipSummary {
+    /// Creates a new builder-style object to manufacture [`ChannelMembershipSummary`](crate::model::ChannelMembershipSummary).
+    pub fn builder() -> crate::model::channel_membership_summary::Builder {
+        crate::model::channel_membership_summary::Builder::default()
+    }
+}
+
 /// See [`ChannelMembershipSummary`](crate::model::ChannelMembershipSummary).
 pub mod channel_membership_summary {
 
@@ -13733,12 +13811,6 @@ pub mod channel_membership_summary {
         }
     }
 }
-impl ChannelMembershipSummary {
-    /// Creates a new builder-style object to manufacture [`ChannelMembershipSummary`](crate::model::ChannelMembershipSummary).
-    pub fn builder() -> crate::model::channel_membership_summary::Builder {
-        crate::model::channel_membership_summary::Builder::default()
-    }
-}
 
 /// <p>Summary of the details of a <code>ChannelBan</code>.</p>
 #[non_exhaustive]
@@ -13754,6 +13826,13 @@ impl ChannelBanSummary {
         self.member.as_ref()
     }
 }
+impl ChannelBanSummary {
+    /// Creates a new builder-style object to manufacture [`ChannelBanSummary`](crate::model::ChannelBanSummary).
+    pub fn builder() -> crate::model::channel_ban_summary::Builder {
+        crate::model::channel_ban_summary::Builder::default()
+    }
+}
+
 /// See [`ChannelBanSummary`](crate::model::ChannelBanSummary).
 pub mod channel_ban_summary {
 
@@ -13780,12 +13859,6 @@ pub mod channel_ban_summary {
                 member: self.member,
             }
         }
-    }
-}
-impl ChannelBanSummary {
-    /// Creates a new builder-style object to manufacture [`ChannelBanSummary`](crate::model::ChannelBanSummary).
-    pub fn builder() -> crate::model::channel_ban_summary::Builder {
-        crate::model::channel_ban_summary::Builder::default()
     }
 }
 
@@ -13827,6 +13900,13 @@ impl std::fmt::Debug for Attendee {
         formatter.finish()
     }
 }
+impl Attendee {
+    /// Creates a new builder-style object to manufacture [`Attendee`](crate::model::Attendee).
+    pub fn builder() -> crate::model::attendee::Builder {
+        crate::model::attendee::Builder::default()
+    }
+}
+
 /// See [`Attendee`](crate::model::Attendee).
 pub mod attendee {
 
@@ -13891,12 +13971,6 @@ pub mod attendee {
         }
     }
 }
-impl Attendee {
-    /// Creates a new builder-style object to manufacture [`Attendee`](crate::model::Attendee).
-    pub fn builder() -> crate::model::attendee::Builder {
-        crate::model::attendee::Builder::default()
-    }
-}
 
 /// <p>Summary of the details of an <code>AppInstanceUser</code>.</p>
 #[non_exhaustive]
@@ -13935,6 +14009,13 @@ impl std::fmt::Debug for AppInstanceUserSummary {
         formatter.finish()
     }
 }
+impl AppInstanceUserSummary {
+    /// Creates a new builder-style object to manufacture [`AppInstanceUserSummary`](crate::model::AppInstanceUserSummary).
+    pub fn builder() -> crate::model::app_instance_user_summary::Builder {
+        crate::model::app_instance_user_summary::Builder::default()
+    }
+}
+
 /// See [`AppInstanceUserSummary`](crate::model::AppInstanceUserSummary).
 pub mod app_instance_user_summary {
 
@@ -13999,12 +14080,6 @@ pub mod app_instance_user_summary {
         }
     }
 }
-impl AppInstanceUserSummary {
-    /// Creates a new builder-style object to manufacture [`AppInstanceUserSummary`](crate::model::AppInstanceUserSummary).
-    pub fn builder() -> crate::model::app_instance_user_summary::Builder {
-        crate::model::app_instance_user_summary::Builder::default()
-    }
-}
 
 /// <p>Summary of the data for an <code>AppInstance</code>.</p>
 #[non_exhaustive]
@@ -14043,6 +14118,13 @@ impl std::fmt::Debug for AppInstanceSummary {
         formatter.finish()
     }
 }
+impl AppInstanceSummary {
+    /// Creates a new builder-style object to manufacture [`AppInstanceSummary`](crate::model::AppInstanceSummary).
+    pub fn builder() -> crate::model::app_instance_summary::Builder {
+        crate::model::app_instance_summary::Builder::default()
+    }
+}
+
 /// See [`AppInstanceSummary`](crate::model::AppInstanceSummary).
 pub mod app_instance_summary {
 
@@ -14107,12 +14189,6 @@ pub mod app_instance_summary {
         }
     }
 }
-impl AppInstanceSummary {
-    /// Creates a new builder-style object to manufacture [`AppInstanceSummary`](crate::model::AppInstanceSummary).
-    pub fn builder() -> crate::model::app_instance_summary::Builder {
-        crate::model::app_instance_summary::Builder::default()
-    }
-}
 
 /// <p>Summary of the details of an <code>AppInstanceAdmin</code>.</p>
 #[non_exhaustive]
@@ -14128,6 +14204,13 @@ impl AppInstanceAdminSummary {
         self.admin.as_ref()
     }
 }
+impl AppInstanceAdminSummary {
+    /// Creates a new builder-style object to manufacture [`AppInstanceAdminSummary`](crate::model::AppInstanceAdminSummary).
+    pub fn builder() -> crate::model::app_instance_admin_summary::Builder {
+        crate::model::app_instance_admin_summary::Builder::default()
+    }
+}
+
 /// See [`AppInstanceAdminSummary`](crate::model::AppInstanceAdminSummary).
 pub mod app_instance_admin_summary {
 
@@ -14152,12 +14235,6 @@ pub mod app_instance_admin_summary {
         pub fn build(self) -> crate::model::AppInstanceAdminSummary {
             crate::model::AppInstanceAdminSummary { admin: self.admin }
         }
-    }
-}
-impl AppInstanceAdminSummary {
-    /// Creates a new builder-style object to manufacture [`AppInstanceAdminSummary`](crate::model::AppInstanceAdminSummary).
-    pub fn builder() -> crate::model::app_instance_admin_summary::Builder {
-        crate::model::app_instance_admin_summary::Builder::default()
     }
 }
 
@@ -14206,6 +14283,13 @@ impl std::fmt::Debug for Invite {
         formatter.finish()
     }
 }
+impl Invite {
+    /// Creates a new builder-style object to manufacture [`Invite`](crate::model::Invite).
+    pub fn builder() -> crate::model::invite::Builder {
+        crate::model::invite::Builder::default()
+    }
+}
+
 /// See [`Invite`](crate::model::Invite).
 pub mod invite {
 
@@ -14287,12 +14371,6 @@ pub mod invite {
             formatter.field("email_status", &self.email_status);
             formatter.finish()
         }
-    }
-}
-impl Invite {
-    /// Creates a new builder-style object to manufacture [`Invite`](crate::model::Invite).
-    pub fn builder() -> crate::model::invite::Builder {
-        crate::model::invite::Builder::default()
     }
 }
 
@@ -14412,6 +14490,13 @@ impl TerminationHealth {
         self.source.as_deref()
     }
 }
+impl TerminationHealth {
+    /// Creates a new builder-style object to manufacture [`TerminationHealth`](crate::model::TerminationHealth).
+    pub fn builder() -> crate::model::termination_health::Builder {
+        crate::model::termination_health::Builder::default()
+    }
+}
+
 /// See [`TerminationHealth`](crate::model::TerminationHealth).
 pub mod termination_health {
 
@@ -14455,12 +14540,6 @@ pub mod termination_health {
         }
     }
 }
-impl TerminationHealth {
-    /// Creates a new builder-style object to manufacture [`TerminationHealth`](crate::model::TerminationHealth).
-    pub fn builder() -> crate::model::termination_health::Builder {
-        crate::model::termination_health::Builder::default()
-    }
-}
 
 /// <p>The websocket endpoint used to connect to Amazon Chime SDK messaging.</p>
 #[non_exhaustive]
@@ -14476,6 +14555,13 @@ impl MessagingSessionEndpoint {
         self.url.as_deref()
     }
 }
+impl MessagingSessionEndpoint {
+    /// Creates a new builder-style object to manufacture [`MessagingSessionEndpoint`](crate::model::MessagingSessionEndpoint).
+    pub fn builder() -> crate::model::messaging_session_endpoint::Builder {
+        crate::model::messaging_session_endpoint::Builder::default()
+    }
+}
+
 /// See [`MessagingSessionEndpoint`](crate::model::MessagingSessionEndpoint).
 pub mod messaging_session_endpoint {
 
@@ -14500,12 +14586,6 @@ pub mod messaging_session_endpoint {
         pub fn build(self) -> crate::model::MessagingSessionEndpoint {
             crate::model::MessagingSessionEndpoint { url: self.url }
         }
-    }
-}
-impl MessagingSessionEndpoint {
-    /// Creates a new builder-style object to manufacture [`MessagingSessionEndpoint`](crate::model::MessagingSessionEndpoint).
-    pub fn builder() -> crate::model::messaging_session_endpoint::Builder {
-        crate::model::messaging_session_endpoint::Builder::default()
     }
 }
 
@@ -14610,6 +14690,13 @@ impl std::fmt::Debug for ChannelMessage {
         formatter.finish()
     }
 }
+impl ChannelMessage {
+    /// Creates a new builder-style object to manufacture [`ChannelMessage`](crate::model::ChannelMessage).
+    pub fn builder() -> crate::model::channel_message::Builder {
+        crate::model::channel_message::Builder::default()
+    }
+}
+
 /// See [`ChannelMessage`](crate::model::ChannelMessage).
 pub mod channel_message {
 
@@ -14790,12 +14877,6 @@ pub mod channel_message {
         }
     }
 }
-impl ChannelMessage {
-    /// Creates a new builder-style object to manufacture [`ChannelMessage`](crate::model::ChannelMessage).
-    pub fn builder() -> crate::model::channel_message::Builder {
-        crate::model::channel_message::Builder::default()
-    }
-}
 
 /// <p>If the phone number action fails for one or more of the phone numbers in the request, a list of the phone numbers is returned, along with error codes and error messages.</p>
 #[non_exhaustive]
@@ -14825,6 +14906,13 @@ impl PhoneNumberError {
         self.error_message.as_deref()
     }
 }
+impl PhoneNumberError {
+    /// Creates a new builder-style object to manufacture [`PhoneNumberError`](crate::model::PhoneNumberError).
+    pub fn builder() -> crate::model::phone_number_error::Builder {
+        crate::model::phone_number_error::Builder::default()
+    }
+}
+
 /// See [`PhoneNumberError`](crate::model::PhoneNumberError).
 pub mod phone_number_error {
 
@@ -14886,12 +14974,6 @@ pub mod phone_number_error {
         }
     }
 }
-impl PhoneNumberError {
-    /// Creates a new builder-style object to manufacture [`PhoneNumberError`](crate::model::PhoneNumberError).
-    pub fn builder() -> crate::model::phone_number_error::Builder {
-        crate::model::phone_number_error::Builder::default()
-    }
-}
 
 /// <p>The details of a channel moderator.</p>
 #[non_exhaustive]
@@ -14928,6 +15010,13 @@ impl ChannelModerator {
         self.created_by.as_ref()
     }
 }
+impl ChannelModerator {
+    /// Creates a new builder-style object to manufacture [`ChannelModerator`](crate::model::ChannelModerator).
+    pub fn builder() -> crate::model::channel_moderator::Builder {
+        crate::model::channel_moderator::Builder::default()
+    }
+}
+
 /// See [`ChannelModerator`](crate::model::ChannelModerator).
 pub mod channel_moderator {
 
@@ -14998,12 +15087,6 @@ pub mod channel_moderator {
         }
     }
 }
-impl ChannelModerator {
-    /// Creates a new builder-style object to manufacture [`ChannelModerator`](crate::model::ChannelModerator).
-    pub fn builder() -> crate::model::channel_moderator::Builder {
-        crate::model::channel_moderator::Builder::default()
-    }
-}
 
 /// <p>The details of a channel member.</p>
 #[non_exhaustive]
@@ -15054,6 +15137,13 @@ impl ChannelMembership {
         self.last_updated_timestamp.as_ref()
     }
 }
+impl ChannelMembership {
+    /// Creates a new builder-style object to manufacture [`ChannelMembership`](crate::model::ChannelMembership).
+    pub fn builder() -> crate::model::channel_membership::Builder {
+        crate::model::channel_membership::Builder::default()
+    }
+}
+
 /// See [`ChannelMembership`](crate::model::ChannelMembership).
 pub mod channel_membership {
 
@@ -15154,12 +15244,6 @@ pub mod channel_membership {
         }
     }
 }
-impl ChannelMembership {
-    /// Creates a new builder-style object to manufacture [`ChannelMembership`](crate::model::ChannelMembership).
-    pub fn builder() -> crate::model::channel_membership::Builder {
-        crate::model::channel_membership::Builder::default()
-    }
-}
 
 /// <p>The details of a channel ban.</p>
 #[non_exhaustive]
@@ -15196,6 +15280,13 @@ impl ChannelBan {
         self.created_by.as_ref()
     }
 }
+impl ChannelBan {
+    /// Creates a new builder-style object to manufacture [`ChannelBan`](crate::model::ChannelBan).
+    pub fn builder() -> crate::model::channel_ban::Builder {
+        crate::model::channel_ban::Builder::default()
+    }
+}
+
 /// See [`ChannelBan`](crate::model::ChannelBan).
 pub mod channel_ban {
 
@@ -15264,12 +15355,6 @@ pub mod channel_ban {
                 created_by: self.created_by,
             }
         }
-    }
-}
-impl ChannelBan {
-    /// Creates a new builder-style object to manufacture [`ChannelBan`](crate::model::ChannelBan).
-    pub fn builder() -> crate::model::channel_ban::Builder {
-        crate::model::channel_ban::Builder::default()
     }
 }
 
@@ -15358,6 +15443,13 @@ impl std::fmt::Debug for Channel {
         formatter.finish()
     }
 }
+impl Channel {
+    /// Creates a new builder-style object to manufacture [`Channel`](crate::model::Channel).
+    pub fn builder() -> crate::model::channel::Builder {
+        crate::model::channel::Builder::default()
+    }
+}
+
 /// See [`Channel`](crate::model::Channel).
 pub mod channel {
 
@@ -15512,12 +15604,6 @@ pub mod channel {
         }
     }
 }
-impl Channel {
-    /// Creates a new builder-style object to manufacture [`Channel`](crate::model::Channel).
-    pub fn builder() -> crate::model::channel::Builder {
-        crate::model::channel::Builder::default()
-    }
-}
 
 /// <p>The details of an <code>AppInstanceUser</code>.</p>
 #[non_exhaustive]
@@ -15572,6 +15658,13 @@ impl std::fmt::Debug for AppInstanceUser {
         formatter.finish()
     }
 }
+impl AppInstanceUser {
+    /// Creates a new builder-style object to manufacture [`AppInstanceUser`](crate::model::AppInstanceUser).
+    pub fn builder() -> crate::model::app_instance_user::Builder {
+        crate::model::app_instance_user::Builder::default()
+    }
+}
+
 /// See [`AppInstanceUser`](crate::model::AppInstanceUser).
 pub mod app_instance_user {
 
@@ -15668,12 +15761,6 @@ pub mod app_instance_user {
         }
     }
 }
-impl AppInstanceUser {
-    /// Creates a new builder-style object to manufacture [`AppInstanceUser`](crate::model::AppInstanceUser).
-    pub fn builder() -> crate::model::app_instance_user::Builder {
-        crate::model::app_instance_user::Builder::default()
-    }
-}
 
 /// <p>The details of an <code>AppInstanceAdmin</code>.</p>
 #[non_exhaustive]
@@ -15703,6 +15790,13 @@ impl AppInstanceAdmin {
         self.created_timestamp.as_ref()
     }
 }
+impl AppInstanceAdmin {
+    /// Creates a new builder-style object to manufacture [`AppInstanceAdmin`](crate::model::AppInstanceAdmin).
+    pub fn builder() -> crate::model::app_instance_admin::Builder {
+        crate::model::app_instance_admin::Builder::default()
+    }
+}
+
 /// See [`AppInstanceAdmin`](crate::model::AppInstanceAdmin).
 pub mod app_instance_admin {
 
@@ -15761,12 +15855,6 @@ pub mod app_instance_admin {
         }
     }
 }
-impl AppInstanceAdmin {
-    /// Creates a new builder-style object to manufacture [`AppInstanceAdmin`](crate::model::AppInstanceAdmin).
-    pub fn builder() -> crate::model::app_instance_admin::Builder {
-        crate::model::app_instance_admin::Builder::default()
-    }
-}
 
 /// <p>The details of an <code>AppInstance</code>, an instance of an Amazon Chime SDK messaging application.</p>
 #[non_exhaustive]
@@ -15821,6 +15909,13 @@ impl std::fmt::Debug for AppInstance {
         formatter.finish()
     }
 }
+impl AppInstance {
+    /// Creates a new builder-style object to manufacture [`AppInstance`](crate::model::AppInstance).
+    pub fn builder() -> crate::model::app_instance::Builder {
+        crate::model::app_instance::Builder::default()
+    }
+}
+
 /// See [`AppInstance`](crate::model::AppInstance).
 pub mod app_instance {
 
@@ -15917,12 +16012,6 @@ pub mod app_instance {
         }
     }
 }
-impl AppInstance {
-    /// Creates a new builder-style object to manufacture [`AppInstance`](crate::model::AppInstance).
-    pub fn builder() -> crate::model::app_instance::Builder {
-        crate::model::app_instance::Builder::default()
-    }
-}
 
 /// <p>The list of errors returned when errors are encountered during the BatchCreateAttendee and CreateAttendee actions. This includes external user IDs, error codes, and error messages.</p>
 #[non_exhaustive]
@@ -15961,6 +16050,13 @@ impl std::fmt::Debug for CreateAttendeeError {
         formatter.finish()
     }
 }
+impl CreateAttendeeError {
+    /// Creates a new builder-style object to manufacture [`CreateAttendeeError`](crate::model::CreateAttendeeError).
+    pub fn builder() -> crate::model::create_attendee_error::Builder {
+        crate::model::create_attendee_error::Builder::default()
+    }
+}
+
 /// See [`CreateAttendeeError`](crate::model::CreateAttendeeError).
 pub mod create_attendee_error {
 
@@ -16028,12 +16124,6 @@ pub mod create_attendee_error {
         }
     }
 }
-impl CreateAttendeeError {
-    /// Creates a new builder-style object to manufacture [`CreateAttendeeError`](crate::model::CreateAttendeeError).
-    pub fn builder() -> crate::model::create_attendee_error::Builder {
-        crate::model::create_attendee_error::Builder::default()
-    }
-}
 
 /// <p>The Amazon Chime SDK attendee fields to create, used with the BatchCreateAttendee action.</p>
 #[non_exhaustive]
@@ -16064,6 +16154,13 @@ impl std::fmt::Debug for CreateAttendeeRequestItem {
         formatter.finish()
     }
 }
+impl CreateAttendeeRequestItem {
+    /// Creates a new builder-style object to manufacture [`CreateAttendeeRequestItem`](crate::model::CreateAttendeeRequestItem).
+    pub fn builder() -> crate::model::create_attendee_request_item::Builder {
+        crate::model::create_attendee_request_item::Builder::default()
+    }
+}
+
 /// See [`CreateAttendeeRequestItem`](crate::model::CreateAttendeeRequestItem).
 pub mod create_attendee_request_item {
 
@@ -16124,12 +16221,6 @@ pub mod create_attendee_request_item {
         }
     }
 }
-impl CreateAttendeeRequestItem {
-    /// Creates a new builder-style object to manufacture [`CreateAttendeeRequestItem`](crate::model::CreateAttendeeRequestItem).
-    pub fn builder() -> crate::model::create_attendee_request_item::Builder {
-        crate::model::create_attendee_request_item::Builder::default()
-    }
-}
 
 /// <p> The resource target configurations for receiving Amazon Chime SDK meeting and attendee event notifications. The Amazon Chime SDK supports resource targets located in the US East (N. Virginia) AWS Region (<code>us-east-1</code>). </p>
 #[non_exhaustive]
@@ -16160,6 +16251,13 @@ impl std::fmt::Debug for MeetingNotificationConfiguration {
         formatter.finish()
     }
 }
+impl MeetingNotificationConfiguration {
+    /// Creates a new builder-style object to manufacture [`MeetingNotificationConfiguration`](crate::model::MeetingNotificationConfiguration).
+    pub fn builder() -> crate::model::meeting_notification_configuration::Builder {
+        crate::model::meeting_notification_configuration::Builder::default()
+    }
+}
+
 /// See [`MeetingNotificationConfiguration`](crate::model::MeetingNotificationConfiguration).
 pub mod meeting_notification_configuration {
 
@@ -16214,12 +16312,6 @@ pub mod meeting_notification_configuration {
         }
     }
 }
-impl MeetingNotificationConfiguration {
-    /// Creates a new builder-style object to manufacture [`MeetingNotificationConfiguration`](crate::model::MeetingNotificationConfiguration).
-    pub fn builder() -> crate::model::meeting_notification_configuration::Builder {
-        crate::model::meeting_notification_configuration::Builder::default()
-    }
-}
 
 /// <p>The list of errors returned when errors are encountered during the <code>BatchSuspendUser</code>, <code>BatchUnsuspendUser</code>, or <code>BatchUpdateUser</code> actions. This includes user IDs, error codes, and error messages.</p>
 #[non_exhaustive]
@@ -16249,6 +16341,13 @@ impl UserError {
         self.error_message.as_deref()
     }
 }
+impl UserError {
+    /// Creates a new builder-style object to manufacture [`UserError`](crate::model::UserError).
+    pub fn builder() -> crate::model::user_error::Builder {
+        crate::model::user_error::Builder::default()
+    }
+}
+
 /// See [`UserError`](crate::model::UserError).
 pub mod user_error {
 
@@ -16307,12 +16406,6 @@ pub mod user_error {
         }
     }
 }
-impl UserError {
-    /// Creates a new builder-style object to manufacture [`UserError`](crate::model::UserError).
-    pub fn builder() -> crate::model::user_error::Builder {
-        crate::model::user_error::Builder::default()
-    }
-}
 
 /// <p>The user ID and user fields to update, used with the <code>BatchUpdateUser</code> action.</p>
 #[non_exhaustive]
@@ -16351,6 +16444,13 @@ impl UpdateUserRequestItem {
         self.alexa_for_business_metadata.as_ref()
     }
 }
+impl UpdateUserRequestItem {
+    /// Creates a new builder-style object to manufacture [`UpdateUserRequestItem`](crate::model::UpdateUserRequestItem).
+    pub fn builder() -> crate::model::update_user_request_item::Builder {
+        crate::model::update_user_request_item::Builder::default()
+    }
+}
+
 /// See [`UpdateUserRequestItem`](crate::model::UpdateUserRequestItem).
 pub mod update_user_request_item {
 
@@ -16425,12 +16525,6 @@ pub mod update_user_request_item {
         }
     }
 }
-impl UpdateUserRequestItem {
-    /// Creates a new builder-style object to manufacture [`UpdateUserRequestItem`](crate::model::UpdateUserRequestItem).
-    pub fn builder() -> crate::model::update_user_request_item::Builder {
-        crate::model::update_user_request_item::Builder::default()
-    }
-}
 
 /// <p>The phone number ID, product type, or calling name fields to update, used with the <code>BatchUpdatePhoneNumber</code> and <code>UpdatePhoneNumber</code> actions.</p>
 #[non_exhaustive]
@@ -16469,6 +16563,13 @@ impl std::fmt::Debug for UpdatePhoneNumberRequestItem {
         formatter.finish()
     }
 }
+impl UpdatePhoneNumberRequestItem {
+    /// Creates a new builder-style object to manufacture [`UpdatePhoneNumberRequestItem`](crate::model::UpdatePhoneNumberRequestItem).
+    pub fn builder() -> crate::model::update_phone_number_request_item::Builder {
+        crate::model::update_phone_number_request_item::Builder::default()
+    }
+}
+
 /// See [`UpdatePhoneNumberRequestItem`](crate::model::UpdatePhoneNumberRequestItem).
 pub mod update_phone_number_request_item {
 
@@ -16536,12 +16637,6 @@ pub mod update_phone_number_request_item {
         }
     }
 }
-impl UpdatePhoneNumberRequestItem {
-    /// Creates a new builder-style object to manufacture [`UpdatePhoneNumberRequestItem`](crate::model::UpdatePhoneNumberRequestItem).
-    pub fn builder() -> crate::model::update_phone_number_request_item::Builder {
-        crate::model::update_phone_number_request_item::Builder::default()
-    }
-}
 
 /// <p>The list of errors returned when a member action results in an error.</p>
 #[non_exhaustive]
@@ -16571,6 +16666,13 @@ impl MemberError {
         self.error_message.as_deref()
     }
 }
+impl MemberError {
+    /// Creates a new builder-style object to manufacture [`MemberError`](crate::model::MemberError).
+    pub fn builder() -> crate::model::member_error::Builder {
+        crate::model::member_error::Builder::default()
+    }
+}
+
 /// See [`MemberError`](crate::model::MemberError).
 pub mod member_error {
 
@@ -16629,12 +16731,6 @@ pub mod member_error {
         }
     }
 }
-impl MemberError {
-    /// Creates a new builder-style object to manufacture [`MemberError`](crate::model::MemberError).
-    pub fn builder() -> crate::model::member_error::Builder {
-        crate::model::member_error::Builder::default()
-    }
-}
 
 /// <p>Membership details, such as member ID and member role.</p>
 #[non_exhaustive]
@@ -16657,6 +16753,13 @@ impl MembershipItem {
         self.role.as_ref()
     }
 }
+impl MembershipItem {
+    /// Creates a new builder-style object to manufacture [`MembershipItem`](crate::model::MembershipItem).
+    pub fn builder() -> crate::model::membership_item::Builder {
+        crate::model::membership_item::Builder::default()
+    }
+}
+
 /// See [`MembershipItem`](crate::model::MembershipItem).
 pub mod membership_item {
 
@@ -16700,12 +16803,6 @@ pub mod membership_item {
         }
     }
 }
-impl MembershipItem {
-    /// Creates a new builder-style object to manufacture [`MembershipItem`](crate::model::MembershipItem).
-    pub fn builder() -> crate::model::membership_item::Builder {
-        crate::model::membership_item::Builder::default()
-    }
-}
 
 /// <p>A list of failed member ARNs, error codes, and error messages.</p>
 #[non_exhaustive]
@@ -16735,6 +16832,13 @@ impl BatchCreateChannelMembershipError {
         self.error_message.as_deref()
     }
 }
+impl BatchCreateChannelMembershipError {
+    /// Creates a new builder-style object to manufacture [`BatchCreateChannelMembershipError`](crate::model::BatchCreateChannelMembershipError).
+    pub fn builder() -> crate::model::batch_create_channel_membership_error::Builder {
+        crate::model::batch_create_channel_membership_error::Builder::default()
+    }
+}
+
 /// See [`BatchCreateChannelMembershipError`](crate::model::BatchCreateChannelMembershipError).
 pub mod batch_create_channel_membership_error {
 
@@ -16793,12 +16897,6 @@ pub mod batch_create_channel_membership_error {
         }
     }
 }
-impl BatchCreateChannelMembershipError {
-    /// Creates a new builder-style object to manufacture [`BatchCreateChannelMembershipError`](crate::model::BatchCreateChannelMembershipError).
-    pub fn builder() -> crate::model::batch_create_channel_membership_error::Builder {
-        crate::model::batch_create_channel_membership_error::Builder::default()
-    }
-}
 
 /// <p>The membership information, including member ARNs, the channel ARN, and membership types.</p>
 #[non_exhaustive]
@@ -16835,6 +16933,13 @@ impl BatchChannelMemberships {
         self.channel_arn.as_deref()
     }
 }
+impl BatchChannelMemberships {
+    /// Creates a new builder-style object to manufacture [`BatchChannelMemberships`](crate::model::BatchChannelMemberships).
+    pub fn builder() -> crate::model::batch_channel_memberships::Builder {
+        crate::model::batch_channel_memberships::Builder::default()
+    }
+}
+
 /// See [`BatchChannelMemberships`](crate::model::BatchChannelMemberships).
 pub mod batch_channel_memberships {
 
@@ -16912,11 +17017,5 @@ pub mod batch_channel_memberships {
                 channel_arn: self.channel_arn,
             }
         }
-    }
-}
-impl BatchChannelMemberships {
-    /// Creates a new builder-style object to manufacture [`BatchChannelMemberships`](crate::model::BatchChannelMemberships).
-    pub fn builder() -> crate::model::batch_channel_memberships::Builder {
-        crate::model::batch_channel_memberships::Builder::default()
     }
 }

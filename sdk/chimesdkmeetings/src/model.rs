@@ -62,6 +62,13 @@ impl std::fmt::Debug for Attendee {
         formatter.finish()
     }
 }
+impl Attendee {
+    /// Creates a new builder-style object to manufacture [`Attendee`](crate::model::Attendee).
+    pub fn builder() -> crate::model::attendee::Builder {
+        crate::model::attendee::Builder::default()
+    }
+}
+
 /// See [`Attendee`](crate::model::Attendee).
 pub mod attendee {
 
@@ -158,12 +165,6 @@ pub mod attendee {
         }
     }
 }
-impl Attendee {
-    /// Creates a new builder-style object to manufacture [`Attendee`](crate::model::Attendee).
-    pub fn builder() -> crate::model::attendee::Builder {
-        crate::model::attendee::Builder::default()
-    }
-}
 
 /// <p>The media capabilities of an attendee: audio, video, or content. </p> <note>
 /// <p>You use the capabilities with a set of values that control what the capabilities can do, such as <code>SendReceive</code> data. For more information about those values, see .</p>
@@ -201,6 +202,13 @@ impl AttendeeCapabilities {
         self.content.as_ref()
     }
 }
+impl AttendeeCapabilities {
+    /// Creates a new builder-style object to manufacture [`AttendeeCapabilities`](crate::model::AttendeeCapabilities).
+    pub fn builder() -> crate::model::attendee_capabilities::Builder {
+        crate::model::attendee_capabilities::Builder::default()
+    }
+}
+
 /// See [`AttendeeCapabilities`](crate::model::AttendeeCapabilities).
 pub mod attendee_capabilities {
 
@@ -260,12 +268,6 @@ pub mod attendee_capabilities {
                 content: self.content,
             }
         }
-    }
-}
-impl AttendeeCapabilities {
-    /// Creates a new builder-style object to manufacture [`AttendeeCapabilities`](crate::model::AttendeeCapabilities).
-    pub fn builder() -> crate::model::attendee_capabilities::Builder {
-        crate::model::attendee_capabilities::Builder::default()
     }
 }
 
@@ -392,6 +394,13 @@ impl Tag {
         self.value.as_deref()
     }
 }
+impl Tag {
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
+    pub fn builder() -> crate::model::tag::Builder {
+        crate::model::tag::Builder::default()
+    }
+}
+
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
 
@@ -432,12 +441,6 @@ pub mod tag {
         }
     }
 }
-impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
-    pub fn builder() -> crate::model::tag::Builder {
-        crate::model::tag::Builder::default()
-    }
-}
 
 /// <p>The configuration for the current transcription operation. Must contain <code>EngineTranscribeSettings</code> or <code>EngineTranscribeMedicalSettings</code>.</p>
 #[non_exhaustive]
@@ -465,6 +468,13 @@ impl TranscriptionConfiguration {
         self.engine_transcribe_medical_settings.as_ref()
     }
 }
+impl TranscriptionConfiguration {
+    /// Creates a new builder-style object to manufacture [`TranscriptionConfiguration`](crate::model::TranscriptionConfiguration).
+    pub fn builder() -> crate::model::transcription_configuration::Builder {
+        crate::model::transcription_configuration::Builder::default()
+    }
+}
+
 /// See [`TranscriptionConfiguration`](crate::model::TranscriptionConfiguration).
 pub mod transcription_configuration {
 
@@ -517,12 +527,6 @@ pub mod transcription_configuration {
                 engine_transcribe_medical_settings: self.engine_transcribe_medical_settings,
             }
         }
-    }
-}
-impl TranscriptionConfiguration {
-    /// Creates a new builder-style object to manufacture [`TranscriptionConfiguration`](crate::model::TranscriptionConfiguration).
-    pub fn builder() -> crate::model::transcription_configuration::Builder {
-        crate::model::transcription_configuration::Builder::default()
     }
 }
 
@@ -580,6 +584,13 @@ impl EngineTranscribeMedicalSettings {
         self.content_identification_type.as_ref()
     }
 }
+impl EngineTranscribeMedicalSettings {
+    /// Creates a new builder-style object to manufacture [`EngineTranscribeMedicalSettings`](crate::model::EngineTranscribeMedicalSettings).
+    pub fn builder() -> crate::model::engine_transcribe_medical_settings::Builder {
+        crate::model::engine_transcribe_medical_settings::Builder::default()
+    }
+}
+
 /// See [`EngineTranscribeMedicalSettings`](crate::model::EngineTranscribeMedicalSettings).
 pub mod engine_transcribe_medical_settings {
 
@@ -688,12 +699,6 @@ pub mod engine_transcribe_medical_settings {
                 content_identification_type: self.content_identification_type,
             }
         }
-    }
-}
-impl EngineTranscribeMedicalSettings {
-    /// Creates a new builder-style object to manufacture [`EngineTranscribeMedicalSettings`](crate::model::EngineTranscribeMedicalSettings).
-    pub fn builder() -> crate::model::engine_transcribe_medical_settings::Builder {
-        crate::model::engine_transcribe_medical_settings::Builder::default()
     }
 }
 
@@ -1329,6 +1334,13 @@ impl EngineTranscribeSettings {
         self.preferred_language.as_ref()
     }
 }
+impl EngineTranscribeSettings {
+    /// Creates a new builder-style object to manufacture [`EngineTranscribeSettings`](crate::model::EngineTranscribeSettings).
+    pub fn builder() -> crate::model::engine_transcribe_settings::Builder {
+        crate::model::engine_transcribe_settings::Builder::default()
+    }
+}
+
 /// See [`EngineTranscribeSettings`](crate::model::EngineTranscribeSettings).
 pub mod engine_transcribe_settings {
 
@@ -1574,12 +1586,6 @@ pub mod engine_transcribe_settings {
                 preferred_language: self.preferred_language,
             }
         }
-    }
-}
-impl EngineTranscribeSettings {
-    /// Creates a new builder-style object to manufacture [`EngineTranscribeSettings`](crate::model::EngineTranscribeSettings).
-    pub fn builder() -> crate::model::engine_transcribe_settings::Builder {
-        crate::model::engine_transcribe_settings::Builder::default()
     }
 }
 
@@ -2344,6 +2350,13 @@ impl std::fmt::Debug for Meeting {
         formatter.finish()
     }
 }
+impl Meeting {
+    /// Creates a new builder-style object to manufacture [`Meeting`](crate::model::Meeting).
+    pub fn builder() -> crate::model::meeting::Builder {
+        crate::model::meeting::Builder::default()
+    }
+}
+
 /// See [`Meeting`](crate::model::Meeting).
 pub mod meeting {
 
@@ -2513,12 +2526,6 @@ pub mod meeting {
         }
     }
 }
-impl Meeting {
-    /// Creates a new builder-style object to manufacture [`Meeting`](crate::model::Meeting).
-    pub fn builder() -> crate::model::meeting::Builder {
-        crate::model::meeting::Builder::default()
-    }
-}
 
 /// <p>The configuration settings of the features available to a meeting.&gt;</p>
 #[non_exhaustive]
@@ -2534,6 +2541,13 @@ impl MeetingFeaturesConfiguration {
         self.audio.as_ref()
     }
 }
+impl MeetingFeaturesConfiguration {
+    /// Creates a new builder-style object to manufacture [`MeetingFeaturesConfiguration`](crate::model::MeetingFeaturesConfiguration).
+    pub fn builder() -> crate::model::meeting_features_configuration::Builder {
+        crate::model::meeting_features_configuration::Builder::default()
+    }
+}
+
 /// See [`MeetingFeaturesConfiguration`](crate::model::MeetingFeaturesConfiguration).
 pub mod meeting_features_configuration {
 
@@ -2563,12 +2577,6 @@ pub mod meeting_features_configuration {
         }
     }
 }
-impl MeetingFeaturesConfiguration {
-    /// Creates a new builder-style object to manufacture [`MeetingFeaturesConfiguration`](crate::model::MeetingFeaturesConfiguration).
-    pub fn builder() -> crate::model::meeting_features_configuration::Builder {
-        crate::model::meeting_features_configuration::Builder::default()
-    }
-}
 
 /// <p>An optional category of meeting features that contains audio-specific configurations, such as operating parameters for Amazon Voice Focus. </p>
 #[non_exhaustive]
@@ -2584,6 +2592,13 @@ impl AudioFeatures {
         self.echo_reduction.as_ref()
     }
 }
+impl AudioFeatures {
+    /// Creates a new builder-style object to manufacture [`AudioFeatures`](crate::model::AudioFeatures).
+    pub fn builder() -> crate::model::audio_features::Builder {
+        crate::model::audio_features::Builder::default()
+    }
+}
+
 /// See [`AudioFeatures`](crate::model::AudioFeatures).
 pub mod audio_features {
 
@@ -2613,12 +2628,6 @@ pub mod audio_features {
                 echo_reduction: self.echo_reduction,
             }
         }
-    }
-}
-impl AudioFeatures {
-    /// Creates a new builder-style object to manufacture [`AudioFeatures`](crate::model::AudioFeatures).
-    pub fn builder() -> crate::model::audio_features::Builder {
-        crate::model::audio_features::Builder::default()
     }
 }
 
@@ -2777,6 +2786,13 @@ impl MediaPlacement {
         self.event_ingestion_url.as_deref()
     }
 }
+impl MediaPlacement {
+    /// Creates a new builder-style object to manufacture [`MediaPlacement`](crate::model::MediaPlacement).
+    pub fn builder() -> crate::model::media_placement::Builder {
+        crate::model::media_placement::Builder::default()
+    }
+}
+
 /// See [`MediaPlacement`](crate::model::MediaPlacement).
 pub mod media_placement {
 
@@ -2913,12 +2929,6 @@ pub mod media_placement {
         }
     }
 }
-impl MediaPlacement {
-    /// Creates a new builder-style object to manufacture [`MediaPlacement`](crate::model::MediaPlacement).
-    pub fn builder() -> crate::model::media_placement::Builder {
-        crate::model::media_placement::Builder::default()
-    }
-}
 
 /// <p>The list of errors returned when errors are encountered during the BatchCreateAttendee and CreateAttendee actions. This includes external user IDs, error codes, and error messages.</p>
 #[non_exhaustive]
@@ -2957,6 +2967,13 @@ impl std::fmt::Debug for CreateAttendeeError {
         formatter.finish()
     }
 }
+impl CreateAttendeeError {
+    /// Creates a new builder-style object to manufacture [`CreateAttendeeError`](crate::model::CreateAttendeeError).
+    pub fn builder() -> crate::model::create_attendee_error::Builder {
+        crate::model::create_attendee_error::Builder::default()
+    }
+}
+
 /// See [`CreateAttendeeError`](crate::model::CreateAttendeeError).
 pub mod create_attendee_error {
 
@@ -3024,12 +3041,6 @@ pub mod create_attendee_error {
         }
     }
 }
-impl CreateAttendeeError {
-    /// Creates a new builder-style object to manufacture [`CreateAttendeeError`](crate::model::CreateAttendeeError).
-    pub fn builder() -> crate::model::create_attendee_error::Builder {
-        crate::model::create_attendee_error::Builder::default()
-    }
-}
 
 /// <p>The Amazon Chime SDK attendee fields to create, used with the BatchCreateAttendee action.</p>
 #[non_exhaustive]
@@ -3060,6 +3071,13 @@ impl std::fmt::Debug for CreateAttendeeRequestItem {
         formatter.finish()
     }
 }
+impl CreateAttendeeRequestItem {
+    /// Creates a new builder-style object to manufacture [`CreateAttendeeRequestItem`](crate::model::CreateAttendeeRequestItem).
+    pub fn builder() -> crate::model::create_attendee_request_item::Builder {
+        crate::model::create_attendee_request_item::Builder::default()
+    }
+}
+
 /// See [`CreateAttendeeRequestItem`](crate::model::CreateAttendeeRequestItem).
 pub mod create_attendee_request_item {
 
@@ -3114,12 +3132,6 @@ pub mod create_attendee_request_item {
         }
     }
 }
-impl CreateAttendeeRequestItem {
-    /// Creates a new builder-style object to manufacture [`CreateAttendeeRequestItem`](crate::model::CreateAttendeeRequestItem).
-    pub fn builder() -> crate::model::create_attendee_request_item::Builder {
-        crate::model::create_attendee_request_item::Builder::default()
-    }
-}
 
 /// <p>The configuration for resource targets to receive notifications when meeting and attendee events occur.</p>
 #[non_exhaustive]
@@ -3158,6 +3170,13 @@ impl std::fmt::Debug for NotificationsConfiguration {
         formatter.finish()
     }
 }
+impl NotificationsConfiguration {
+    /// Creates a new builder-style object to manufacture [`NotificationsConfiguration`](crate::model::NotificationsConfiguration).
+    pub fn builder() -> crate::model::notifications_configuration::Builder {
+        crate::model::notifications_configuration::Builder::default()
+    }
+}
+
 /// See [`NotificationsConfiguration`](crate::model::NotificationsConfiguration).
 pub mod notifications_configuration {
 
@@ -3228,12 +3247,6 @@ pub mod notifications_configuration {
         }
     }
 }
-impl NotificationsConfiguration {
-    /// Creates a new builder-style object to manufacture [`NotificationsConfiguration`](crate::model::NotificationsConfiguration).
-    pub fn builder() -> crate::model::notifications_configuration::Builder {
-        crate::model::notifications_configuration::Builder::default()
-    }
-}
 
 /// <p>A structure that contains one or more attendee IDs.</p>
 #[non_exhaustive]
@@ -3249,6 +3262,13 @@ impl AttendeeIdItem {
         self.attendee_id.as_deref()
     }
 }
+impl AttendeeIdItem {
+    /// Creates a new builder-style object to manufacture [`AttendeeIdItem`](crate::model::AttendeeIdItem).
+    pub fn builder() -> crate::model::attendee_id_item::Builder {
+        crate::model::attendee_id_item::Builder::default()
+    }
+}
+
 /// See [`AttendeeIdItem`](crate::model::AttendeeIdItem).
 pub mod attendee_id_item {
 
@@ -3275,11 +3295,5 @@ pub mod attendee_id_item {
                 attendee_id: self.attendee_id,
             }
         }
-    }
-}
-impl AttendeeIdItem {
-    /// Creates a new builder-style object to manufacture [`AttendeeIdItem`](crate::model::AttendeeIdItem).
-    pub fn builder() -> crate::model::attendee_id_item::Builder {
-        crate::model::attendee_id_item::Builder::default()
     }
 }

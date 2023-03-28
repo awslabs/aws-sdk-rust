@@ -144,6 +144,13 @@ impl Tag {
         self.value.as_deref()
     }
 }
+impl Tag {
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
+    pub fn builder() -> crate::model::tag::Builder {
+        crate::model::tag::Builder::default()
+    }
+}
+
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
 
@@ -184,12 +191,6 @@ pub mod tag {
         }
     }
 }
-impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
-    pub fn builder() -> crate::model::tag::Builder {
-        crate::model::tag::Builder::default()
-    }
-}
 
 /// <p>The summary of the media pipeline.</p>
 #[non_exhaustive]
@@ -212,6 +213,13 @@ impl MediaPipelineSummary {
         self.media_pipeline_arn.as_deref()
     }
 }
+impl MediaPipelineSummary {
+    /// Creates a new builder-style object to manufacture [`MediaPipelineSummary`](crate::model::MediaPipelineSummary).
+    pub fn builder() -> crate::model::media_pipeline_summary::Builder {
+        crate::model::media_pipeline_summary::Builder::default()
+    }
+}
+
 /// See [`MediaPipelineSummary`](crate::model::MediaPipelineSummary).
 pub mod media_pipeline_summary {
 
@@ -258,12 +266,6 @@ pub mod media_pipeline_summary {
         }
     }
 }
-impl MediaPipelineSummary {
-    /// Creates a new builder-style object to manufacture [`MediaPipelineSummary`](crate::model::MediaPipelineSummary).
-    pub fn builder() -> crate::model::media_pipeline_summary::Builder {
-        crate::model::media_pipeline_summary::Builder::default()
-    }
-}
 
 /// <p>The summary data of a media capture pipeline.</p>
 #[non_exhaustive]
@@ -286,6 +288,13 @@ impl MediaCapturePipelineSummary {
         self.media_pipeline_arn.as_deref()
     }
 }
+impl MediaCapturePipelineSummary {
+    /// Creates a new builder-style object to manufacture [`MediaCapturePipelineSummary`](crate::model::MediaCapturePipelineSummary).
+    pub fn builder() -> crate::model::media_capture_pipeline_summary::Builder {
+        crate::model::media_capture_pipeline_summary::Builder::default()
+    }
+}
+
 /// See [`MediaCapturePipelineSummary`](crate::model::MediaCapturePipelineSummary).
 pub mod media_capture_pipeline_summary {
 
@@ -332,12 +341,6 @@ pub mod media_capture_pipeline_summary {
         }
     }
 }
-impl MediaCapturePipelineSummary {
-    /// Creates a new builder-style object to manufacture [`MediaCapturePipelineSummary`](crate::model::MediaCapturePipelineSummary).
-    pub fn builder() -> crate::model::media_capture_pipeline_summary::Builder {
-        crate::model::media_capture_pipeline_summary::Builder::default()
-    }
-}
 
 /// <p>A pipeline consisting of a media capture, media concatenation, or live-streaming pipeline.</p>
 #[non_exhaustive]
@@ -374,6 +377,13 @@ impl MediaPipeline {
         self.media_concatenation_pipeline.as_ref()
     }
 }
+impl MediaPipeline {
+    /// Creates a new builder-style object to manufacture [`MediaPipeline`](crate::model::MediaPipeline).
+    pub fn builder() -> crate::model::media_pipeline::Builder {
+        crate::model::media_pipeline::Builder::default()
+    }
+}
+
 /// See [`MediaPipeline`](crate::model::MediaPipeline).
 pub mod media_pipeline {
 
@@ -443,12 +453,6 @@ pub mod media_pipeline {
         }
     }
 }
-impl MediaPipeline {
-    /// Creates a new builder-style object to manufacture [`MediaPipeline`](crate::model::MediaPipeline).
-    pub fn builder() -> crate::model::media_pipeline::Builder {
-        crate::model::media_pipeline::Builder::default()
-    }
-}
 
 /// <p>Concatenates audio and video data from one or more data streams.</p>
 #[non_exhaustive]
@@ -506,6 +510,13 @@ impl MediaConcatenationPipeline {
         self.updated_timestamp.as_ref()
     }
 }
+impl MediaConcatenationPipeline {
+    /// Creates a new builder-style object to manufacture [`MediaConcatenationPipeline`](crate::model::MediaConcatenationPipeline).
+    pub fn builder() -> crate::model::media_concatenation_pipeline::Builder {
+        crate::model::media_concatenation_pipeline::Builder::default()
+    }
+}
+
 /// See [`MediaConcatenationPipeline`](crate::model::MediaConcatenationPipeline).
 pub mod media_concatenation_pipeline {
 
@@ -637,12 +648,6 @@ pub mod media_concatenation_pipeline {
                 updated_timestamp: self.updated_timestamp,
             }
         }
-    }
-}
-impl MediaConcatenationPipeline {
-    /// Creates a new builder-style object to manufacture [`MediaConcatenationPipeline`](crate::model::MediaConcatenationPipeline).
-    pub fn builder() -> crate::model::media_concatenation_pipeline::Builder {
-        crate::model::media_concatenation_pipeline::Builder::default()
     }
 }
 
@@ -782,6 +787,13 @@ impl ConcatenationSink {
         self.s3_bucket_sink_configuration.as_ref()
     }
 }
+impl ConcatenationSink {
+    /// Creates a new builder-style object to manufacture [`ConcatenationSink`](crate::model::ConcatenationSink).
+    pub fn builder() -> crate::model::concatenation_sink::Builder {
+        crate::model::concatenation_sink::Builder::default()
+    }
+}
+
 /// See [`ConcatenationSink`](crate::model::ConcatenationSink).
 pub mod concatenation_sink {
 
@@ -832,12 +844,6 @@ pub mod concatenation_sink {
         }
     }
 }
-impl ConcatenationSink {
-    /// Creates a new builder-style object to manufacture [`ConcatenationSink`](crate::model::ConcatenationSink).
-    pub fn builder() -> crate::model::concatenation_sink::Builder {
-        crate::model::concatenation_sink::Builder::default()
-    }
-}
 
 /// <p>The configuration settings for the S3 bucket.</p>
 #[non_exhaustive]
@@ -860,6 +866,13 @@ impl std::fmt::Debug for S3BucketSinkConfiguration {
         formatter.finish()
     }
 }
+impl S3BucketSinkConfiguration {
+    /// Creates a new builder-style object to manufacture [`S3BucketSinkConfiguration`](crate::model::S3BucketSinkConfiguration).
+    pub fn builder() -> crate::model::s3_bucket_sink_configuration::Builder {
+        crate::model::s3_bucket_sink_configuration::Builder::default()
+    }
+}
+
 /// See [`S3BucketSinkConfiguration`](crate::model::S3BucketSinkConfiguration).
 pub mod s3_bucket_sink_configuration {
 
@@ -893,12 +906,6 @@ pub mod s3_bucket_sink_configuration {
             formatter.field("destination", &"*** Sensitive Data Redacted ***");
             formatter.finish()
         }
-    }
-}
-impl S3BucketSinkConfiguration {
-    /// Creates a new builder-style object to manufacture [`S3BucketSinkConfiguration`](crate::model::S3BucketSinkConfiguration).
-    pub fn builder() -> crate::model::s3_bucket_sink_configuration::Builder {
-        crate::model::s3_bucket_sink_configuration::Builder::default()
     }
 }
 
@@ -1013,6 +1020,13 @@ impl ConcatenationSource {
         self.media_capture_pipeline_source_configuration.as_ref()
     }
 }
+impl ConcatenationSource {
+    /// Creates a new builder-style object to manufacture [`ConcatenationSource`](crate::model::ConcatenationSource).
+    pub fn builder() -> crate::model::concatenation_source::Builder {
+        crate::model::concatenation_source::Builder::default()
+    }
+}
+
 /// See [`ConcatenationSource`](crate::model::ConcatenationSource).
 pub mod concatenation_source {
 
@@ -1064,12 +1078,6 @@ pub mod concatenation_source {
         }
     }
 }
-impl ConcatenationSource {
-    /// Creates a new builder-style object to manufacture [`ConcatenationSource`](crate::model::ConcatenationSource).
-    pub fn builder() -> crate::model::concatenation_source::Builder {
-        crate::model::concatenation_source::Builder::default()
-    }
-}
 
 /// <p>The source configuration object of a media capture pipeline.</p>
 #[non_exhaustive]
@@ -1106,6 +1114,13 @@ impl std::fmt::Debug for MediaCapturePipelineSourceConfiguration {
         formatter.finish()
     }
 }
+impl MediaCapturePipelineSourceConfiguration {
+    /// Creates a new builder-style object to manufacture [`MediaCapturePipelineSourceConfiguration`](crate::model::MediaCapturePipelineSourceConfiguration).
+    pub fn builder() -> crate::model::media_capture_pipeline_source_configuration::Builder {
+        crate::model::media_capture_pipeline_source_configuration::Builder::default()
+    }
+}
+
 /// See [`MediaCapturePipelineSourceConfiguration`](crate::model::MediaCapturePipelineSourceConfiguration).
 pub mod media_capture_pipeline_source_configuration {
 
@@ -1167,12 +1182,6 @@ pub mod media_capture_pipeline_source_configuration {
         }
     }
 }
-impl MediaCapturePipelineSourceConfiguration {
-    /// Creates a new builder-style object to manufacture [`MediaCapturePipelineSourceConfiguration`](crate::model::MediaCapturePipelineSourceConfiguration).
-    pub fn builder() -> crate::model::media_capture_pipeline_source_configuration::Builder {
-        crate::model::media_capture_pipeline_source_configuration::Builder::default()
-    }
-}
 
 /// <p>The configuration object of the Amazon Chime SDK meeting concatenation for a specified media pipeline.</p>
 #[non_exhaustive]
@@ -1191,6 +1200,13 @@ impl ChimeSdkMeetingConcatenationConfiguration {
         self.artifacts_configuration.as_ref()
     }
 }
+impl ChimeSdkMeetingConcatenationConfiguration {
+    /// Creates a new builder-style object to manufacture [`ChimeSdkMeetingConcatenationConfiguration`](crate::model::ChimeSdkMeetingConcatenationConfiguration).
+    pub fn builder() -> crate::model::chime_sdk_meeting_concatenation_configuration::Builder {
+        crate::model::chime_sdk_meeting_concatenation_configuration::Builder::default()
+    }
+}
+
 /// See [`ChimeSdkMeetingConcatenationConfiguration`](crate::model::ChimeSdkMeetingConcatenationConfiguration).
 pub mod chime_sdk_meeting_concatenation_configuration {
 
@@ -1224,12 +1240,6 @@ pub mod chime_sdk_meeting_concatenation_configuration {
                 artifacts_configuration: self.artifacts_configuration,
             }
         }
-    }
-}
-impl ChimeSdkMeetingConcatenationConfiguration {
-    /// Creates a new builder-style object to manufacture [`ChimeSdkMeetingConcatenationConfiguration`](crate::model::ChimeSdkMeetingConcatenationConfiguration).
-    pub fn builder() -> crate::model::chime_sdk_meeting_concatenation_configuration::Builder {
-        crate::model::chime_sdk_meeting_concatenation_configuration::Builder::default()
     }
 }
 
@@ -1299,6 +1309,13 @@ impl ArtifactsConcatenationConfiguration {
         self.composited_video.as_ref()
     }
 }
+impl ArtifactsConcatenationConfiguration {
+    /// Creates a new builder-style object to manufacture [`ArtifactsConcatenationConfiguration`](crate::model::ArtifactsConcatenationConfiguration).
+    pub fn builder() -> crate::model::artifacts_concatenation_configuration::Builder {
+        crate::model::artifacts_concatenation_configuration::Builder::default()
+    }
+}
+
 /// See [`ArtifactsConcatenationConfiguration`](crate::model::ArtifactsConcatenationConfiguration).
 pub mod artifacts_concatenation_configuration {
 
@@ -1438,12 +1455,6 @@ pub mod artifacts_concatenation_configuration {
         }
     }
 }
-impl ArtifactsConcatenationConfiguration {
-    /// Creates a new builder-style object to manufacture [`ArtifactsConcatenationConfiguration`](crate::model::ArtifactsConcatenationConfiguration).
-    pub fn builder() -> crate::model::artifacts_concatenation_configuration::Builder {
-        crate::model::artifacts_concatenation_configuration::Builder::default()
-    }
-}
 
 /// <p>The composited video configuration object for a specified media pipeline. <code>SourceType</code> must be <code>ChimeSdkMeeting</code>.</p>
 #[non_exhaustive]
@@ -1459,6 +1470,13 @@ impl CompositedVideoConcatenationConfiguration {
         self.state.as_ref()
     }
 }
+impl CompositedVideoConcatenationConfiguration {
+    /// Creates a new builder-style object to manufacture [`CompositedVideoConcatenationConfiguration`](crate::model::CompositedVideoConcatenationConfiguration).
+    pub fn builder() -> crate::model::composited_video_concatenation_configuration::Builder {
+        crate::model::composited_video_concatenation_configuration::Builder::default()
+    }
+}
+
 /// See [`CompositedVideoConcatenationConfiguration`](crate::model::CompositedVideoConcatenationConfiguration).
 pub mod composited_video_concatenation_configuration {
 
@@ -1486,12 +1504,6 @@ pub mod composited_video_concatenation_configuration {
         pub fn build(self) -> crate::model::CompositedVideoConcatenationConfiguration {
             crate::model::CompositedVideoConcatenationConfiguration { state: self.state }
         }
-    }
-}
-impl CompositedVideoConcatenationConfiguration {
-    /// Creates a new builder-style object to manufacture [`CompositedVideoConcatenationConfiguration`](crate::model::CompositedVideoConcatenationConfiguration).
-    pub fn builder() -> crate::model::composited_video_concatenation_configuration::Builder {
-        crate::model::composited_video_concatenation_configuration::Builder::default()
     }
 }
 
@@ -1601,6 +1613,13 @@ impl MeetingEventsConcatenationConfiguration {
         self.state.as_ref()
     }
 }
+impl MeetingEventsConcatenationConfiguration {
+    /// Creates a new builder-style object to manufacture [`MeetingEventsConcatenationConfiguration`](crate::model::MeetingEventsConcatenationConfiguration).
+    pub fn builder() -> crate::model::meeting_events_concatenation_configuration::Builder {
+        crate::model::meeting_events_concatenation_configuration::Builder::default()
+    }
+}
+
 /// See [`MeetingEventsConcatenationConfiguration`](crate::model::MeetingEventsConcatenationConfiguration).
 pub mod meeting_events_concatenation_configuration {
 
@@ -1630,12 +1649,6 @@ pub mod meeting_events_concatenation_configuration {
         }
     }
 }
-impl MeetingEventsConcatenationConfiguration {
-    /// Creates a new builder-style object to manufacture [`MeetingEventsConcatenationConfiguration`](crate::model::MeetingEventsConcatenationConfiguration).
-    pub fn builder() -> crate::model::meeting_events_concatenation_configuration::Builder {
-        crate::model::meeting_events_concatenation_configuration::Builder::default()
-    }
-}
 
 /// <p>The configuration object for concatenating transcription messages.</p>
 #[non_exhaustive]
@@ -1651,6 +1664,13 @@ impl TranscriptionMessagesConcatenationConfiguration {
         self.state.as_ref()
     }
 }
+impl TranscriptionMessagesConcatenationConfiguration {
+    /// Creates a new builder-style object to manufacture [`TranscriptionMessagesConcatenationConfiguration`](crate::model::TranscriptionMessagesConcatenationConfiguration).
+    pub fn builder() -> crate::model::transcription_messages_concatenation_configuration::Builder {
+        crate::model::transcription_messages_concatenation_configuration::Builder::default()
+    }
+}
+
 /// See [`TranscriptionMessagesConcatenationConfiguration`](crate::model::TranscriptionMessagesConcatenationConfiguration).
 pub mod transcription_messages_concatenation_configuration {
 
@@ -1680,12 +1700,6 @@ pub mod transcription_messages_concatenation_configuration {
         }
     }
 }
-impl TranscriptionMessagesConcatenationConfiguration {
-    /// Creates a new builder-style object to manufacture [`TranscriptionMessagesConcatenationConfiguration`](crate::model::TranscriptionMessagesConcatenationConfiguration).
-    pub fn builder() -> crate::model::transcription_messages_concatenation_configuration::Builder {
-        crate::model::transcription_messages_concatenation_configuration::Builder::default()
-    }
-}
 
 /// <p>The content configuration object's data channel.</p>
 #[non_exhaustive]
@@ -1701,6 +1715,13 @@ impl DataChannelConcatenationConfiguration {
         self.state.as_ref()
     }
 }
+impl DataChannelConcatenationConfiguration {
+    /// Creates a new builder-style object to manufacture [`DataChannelConcatenationConfiguration`](crate::model::DataChannelConcatenationConfiguration).
+    pub fn builder() -> crate::model::data_channel_concatenation_configuration::Builder {
+        crate::model::data_channel_concatenation_configuration::Builder::default()
+    }
+}
+
 /// See [`DataChannelConcatenationConfiguration`](crate::model::DataChannelConcatenationConfiguration).
 pub mod data_channel_concatenation_configuration {
 
@@ -1730,12 +1751,6 @@ pub mod data_channel_concatenation_configuration {
         }
     }
 }
-impl DataChannelConcatenationConfiguration {
-    /// Creates a new builder-style object to manufacture [`DataChannelConcatenationConfiguration`](crate::model::DataChannelConcatenationConfiguration).
-    pub fn builder() -> crate::model::data_channel_concatenation_configuration::Builder {
-        crate::model::data_channel_concatenation_configuration::Builder::default()
-    }
-}
 
 /// <p>The composited content configuration object for a specified media pipeline. </p>
 #[non_exhaustive]
@@ -1751,6 +1766,13 @@ impl ContentConcatenationConfiguration {
         self.state.as_ref()
     }
 }
+impl ContentConcatenationConfiguration {
+    /// Creates a new builder-style object to manufacture [`ContentConcatenationConfiguration`](crate::model::ContentConcatenationConfiguration).
+    pub fn builder() -> crate::model::content_concatenation_configuration::Builder {
+        crate::model::content_concatenation_configuration::Builder::default()
+    }
+}
+
 /// See [`ContentConcatenationConfiguration`](crate::model::ContentConcatenationConfiguration).
 pub mod content_concatenation_configuration {
 
@@ -1780,12 +1802,6 @@ pub mod content_concatenation_configuration {
         }
     }
 }
-impl ContentConcatenationConfiguration {
-    /// Creates a new builder-style object to manufacture [`ContentConcatenationConfiguration`](crate::model::ContentConcatenationConfiguration).
-    pub fn builder() -> crate::model::content_concatenation_configuration::Builder {
-        crate::model::content_concatenation_configuration::Builder::default()
-    }
-}
 
 /// <p>The configuration object of a video contacatentation pipeline.</p>
 #[non_exhaustive]
@@ -1801,6 +1817,13 @@ impl VideoConcatenationConfiguration {
         self.state.as_ref()
     }
 }
+impl VideoConcatenationConfiguration {
+    /// Creates a new builder-style object to manufacture [`VideoConcatenationConfiguration`](crate::model::VideoConcatenationConfiguration).
+    pub fn builder() -> crate::model::video_concatenation_configuration::Builder {
+        crate::model::video_concatenation_configuration::Builder::default()
+    }
+}
+
 /// See [`VideoConcatenationConfiguration`](crate::model::VideoConcatenationConfiguration).
 pub mod video_concatenation_configuration {
 
@@ -1830,12 +1853,6 @@ pub mod video_concatenation_configuration {
         }
     }
 }
-impl VideoConcatenationConfiguration {
-    /// Creates a new builder-style object to manufacture [`VideoConcatenationConfiguration`](crate::model::VideoConcatenationConfiguration).
-    pub fn builder() -> crate::model::video_concatenation_configuration::Builder {
-        crate::model::video_concatenation_configuration::Builder::default()
-    }
-}
 
 /// <p>The audio artifact concatenation configuration object.</p>
 #[non_exhaustive]
@@ -1851,6 +1868,13 @@ impl AudioConcatenationConfiguration {
         self.state.as_ref()
     }
 }
+impl AudioConcatenationConfiguration {
+    /// Creates a new builder-style object to manufacture [`AudioConcatenationConfiguration`](crate::model::AudioConcatenationConfiguration).
+    pub fn builder() -> crate::model::audio_concatenation_configuration::Builder {
+        crate::model::audio_concatenation_configuration::Builder::default()
+    }
+}
+
 /// See [`AudioConcatenationConfiguration`](crate::model::AudioConcatenationConfiguration).
 pub mod audio_concatenation_configuration {
 
@@ -1878,12 +1902,6 @@ pub mod audio_concatenation_configuration {
         pub fn build(self) -> crate::model::AudioConcatenationConfiguration {
             crate::model::AudioConcatenationConfiguration { state: self.state }
         }
-    }
-}
-impl AudioConcatenationConfiguration {
-    /// Creates a new builder-style object to manufacture [`AudioConcatenationConfiguration`](crate::model::AudioConcatenationConfiguration).
-    pub fn builder() -> crate::model::audio_concatenation_configuration::Builder {
-        crate::model::audio_concatenation_configuration::Builder::default()
     }
 }
 
@@ -2119,6 +2137,13 @@ impl MediaLiveConnectorPipeline {
         self.updated_timestamp.as_ref()
     }
 }
+impl MediaLiveConnectorPipeline {
+    /// Creates a new builder-style object to manufacture [`MediaLiveConnectorPipeline`](crate::model::MediaLiveConnectorPipeline).
+    pub fn builder() -> crate::model::media_live_connector_pipeline::Builder {
+        crate::model::media_live_connector_pipeline::Builder::default()
+    }
+}
+
 /// See [`MediaLiveConnectorPipeline`](crate::model::MediaLiveConnectorPipeline).
 pub mod media_live_connector_pipeline {
 
@@ -2256,12 +2281,6 @@ pub mod media_live_connector_pipeline {
         }
     }
 }
-impl MediaLiveConnectorPipeline {
-    /// Creates a new builder-style object to manufacture [`MediaLiveConnectorPipeline`](crate::model::MediaLiveConnectorPipeline).
-    pub fn builder() -> crate::model::media_live_connector_pipeline::Builder {
-        crate::model::media_live_connector_pipeline::Builder::default()
-    }
-}
 
 /// <p>The media pipeline's sink configuration settings.</p>
 #[non_exhaustive]
@@ -2286,6 +2305,13 @@ impl LiveConnectorSinkConfiguration {
         self.rtmp_configuration.as_ref()
     }
 }
+impl LiveConnectorSinkConfiguration {
+    /// Creates a new builder-style object to manufacture [`LiveConnectorSinkConfiguration`](crate::model::LiveConnectorSinkConfiguration).
+    pub fn builder() -> crate::model::live_connector_sink_configuration::Builder {
+        crate::model::live_connector_sink_configuration::Builder::default()
+    }
+}
+
 /// See [`LiveConnectorSinkConfiguration`](crate::model::LiveConnectorSinkConfiguration).
 pub mod live_connector_sink_configuration {
 
@@ -2336,12 +2362,6 @@ pub mod live_connector_sink_configuration {
         }
     }
 }
-impl LiveConnectorSinkConfiguration {
-    /// Creates a new builder-style object to manufacture [`LiveConnectorSinkConfiguration`](crate::model::LiveConnectorSinkConfiguration).
-    pub fn builder() -> crate::model::live_connector_sink_configuration::Builder {
-        crate::model::live_connector_sink_configuration::Builder::default()
-    }
-}
 
 /// <p>The media pipeline's RTMP configuration object.</p>
 #[non_exhaustive]
@@ -2380,6 +2400,13 @@ impl std::fmt::Debug for LiveConnectorRtmpConfiguration {
         formatter.finish()
     }
 }
+impl LiveConnectorRtmpConfiguration {
+    /// Creates a new builder-style object to manufacture [`LiveConnectorRtmpConfiguration`](crate::model::LiveConnectorRtmpConfiguration).
+    pub fn builder() -> crate::model::live_connector_rtmp_configuration::Builder {
+        crate::model::live_connector_rtmp_configuration::Builder::default()
+    }
+}
+
 /// See [`LiveConnectorRtmpConfiguration`](crate::model::LiveConnectorRtmpConfiguration).
 pub mod live_connector_rtmp_configuration {
 
@@ -2445,12 +2472,6 @@ pub mod live_connector_rtmp_configuration {
             formatter.field("audio_sample_rate", &self.audio_sample_rate);
             formatter.finish()
         }
-    }
-}
-impl LiveConnectorRtmpConfiguration {
-    /// Creates a new builder-style object to manufacture [`LiveConnectorRtmpConfiguration`](crate::model::LiveConnectorRtmpConfiguration).
-    pub fn builder() -> crate::model::live_connector_rtmp_configuration::Builder {
-        crate::model::live_connector_rtmp_configuration::Builder::default()
     }
 }
 
@@ -2657,6 +2678,13 @@ impl LiveConnectorSourceConfiguration {
         self.chime_sdk_meeting_live_connector_configuration.as_ref()
     }
 }
+impl LiveConnectorSourceConfiguration {
+    /// Creates a new builder-style object to manufacture [`LiveConnectorSourceConfiguration`](crate::model::LiveConnectorSourceConfiguration).
+    pub fn builder() -> crate::model::live_connector_source_configuration::Builder {
+        crate::model::live_connector_source_configuration::Builder::default()
+    }
+}
+
 /// See [`LiveConnectorSourceConfiguration`](crate::model::LiveConnectorSourceConfiguration).
 pub mod live_connector_source_configuration {
 
@@ -2708,12 +2736,6 @@ pub mod live_connector_source_configuration {
         }
     }
 }
-impl LiveConnectorSourceConfiguration {
-    /// Creates a new builder-style object to manufacture [`LiveConnectorSourceConfiguration`](crate::model::LiveConnectorSourceConfiguration).
-    pub fn builder() -> crate::model::live_connector_source_configuration::Builder {
-        crate::model::live_connector_source_configuration::Builder::default()
-    }
-}
 
 /// <p>The media pipeline's configuration object.</p>
 #[non_exhaustive]
@@ -2762,6 +2784,13 @@ impl std::fmt::Debug for ChimeSdkMeetingLiveConnectorConfiguration {
         formatter.finish()
     }
 }
+impl ChimeSdkMeetingLiveConnectorConfiguration {
+    /// Creates a new builder-style object to manufacture [`ChimeSdkMeetingLiveConnectorConfiguration`](crate::model::ChimeSdkMeetingLiveConnectorConfiguration).
+    pub fn builder() -> crate::model::chime_sdk_meeting_live_connector_configuration::Builder {
+        crate::model::chime_sdk_meeting_live_connector_configuration::Builder::default()
+    }
+}
+
 /// See [`ChimeSdkMeetingLiveConnectorConfiguration`](crate::model::ChimeSdkMeetingLiveConnectorConfiguration).
 pub mod chime_sdk_meeting_live_connector_configuration {
 
@@ -2849,12 +2878,6 @@ pub mod chime_sdk_meeting_live_connector_configuration {
         }
     }
 }
-impl ChimeSdkMeetingLiveConnectorConfiguration {
-    /// Creates a new builder-style object to manufacture [`ChimeSdkMeetingLiveConnectorConfiguration`](crate::model::ChimeSdkMeetingLiveConnectorConfiguration).
-    pub fn builder() -> crate::model::chime_sdk_meeting_live_connector_configuration::Builder {
-        crate::model::chime_sdk_meeting_live_connector_configuration::Builder::default()
-    }
-}
 
 /// <p>Source configuration for a specified media pipeline.</p>
 #[non_exhaustive]
@@ -2872,6 +2895,13 @@ impl SourceConfiguration {
         self.selected_video_streams.as_ref()
     }
 }
+impl SourceConfiguration {
+    /// Creates a new builder-style object to manufacture [`SourceConfiguration`](crate::model::SourceConfiguration).
+    pub fn builder() -> crate::model::source_configuration::Builder {
+        crate::model::source_configuration::Builder::default()
+    }
+}
+
 /// See [`SourceConfiguration`](crate::model::SourceConfiguration).
 pub mod source_configuration {
 
@@ -2903,12 +2933,6 @@ pub mod source_configuration {
         }
     }
 }
-impl SourceConfiguration {
-    /// Creates a new builder-style object to manufacture [`SourceConfiguration`](crate::model::SourceConfiguration).
-    pub fn builder() -> crate::model::source_configuration::Builder {
-        crate::model::source_configuration::Builder::default()
-    }
-}
 
 /// <p>The video streams for a specified media pipeline. The total number of video streams can't exceed 25.</p>
 #[non_exhaustive]
@@ -2931,6 +2955,13 @@ impl SelectedVideoStreams {
         self.external_user_ids.as_deref()
     }
 }
+impl SelectedVideoStreams {
+    /// Creates a new builder-style object to manufacture [`SelectedVideoStreams`](crate::model::SelectedVideoStreams).
+    pub fn builder() -> crate::model::selected_video_streams::Builder {
+        crate::model::selected_video_streams::Builder::default()
+    }
+}
+
 /// See [`SelectedVideoStreams`](crate::model::SelectedVideoStreams).
 pub mod selected_video_streams {
 
@@ -2989,12 +3020,6 @@ pub mod selected_video_streams {
         }
     }
 }
-impl SelectedVideoStreams {
-    /// Creates a new builder-style object to manufacture [`SelectedVideoStreams`](crate::model::SelectedVideoStreams).
-    pub fn builder() -> crate::model::selected_video_streams::Builder {
-        crate::model::selected_video_streams::Builder::default()
-    }
-}
 
 /// <p>Describes the configuration for the composited video artifacts.</p>
 #[non_exhaustive]
@@ -3026,6 +3051,13 @@ impl CompositedVideoArtifactsConfiguration {
         self.grid_view_configuration.as_ref()
     }
 }
+impl CompositedVideoArtifactsConfiguration {
+    /// Creates a new builder-style object to manufacture [`CompositedVideoArtifactsConfiguration`](crate::model::CompositedVideoArtifactsConfiguration).
+    pub fn builder() -> crate::model::composited_video_artifacts_configuration::Builder {
+        crate::model::composited_video_artifacts_configuration::Builder::default()
+    }
+}
+
 /// See [`CompositedVideoArtifactsConfiguration`](crate::model::CompositedVideoArtifactsConfiguration).
 pub mod composited_video_artifacts_configuration {
 
@@ -3091,12 +3123,6 @@ pub mod composited_video_artifacts_configuration {
         }
     }
 }
-impl CompositedVideoArtifactsConfiguration {
-    /// Creates a new builder-style object to manufacture [`CompositedVideoArtifactsConfiguration`](crate::model::CompositedVideoArtifactsConfiguration).
-    pub fn builder() -> crate::model::composited_video_artifacts_configuration::Builder {
-        crate::model::composited_video_artifacts_configuration::Builder::default()
-    }
-}
 
 /// <p>Specifies the type of grid layout.</p>
 #[non_exhaustive]
@@ -3123,6 +3149,13 @@ impl GridViewConfiguration {
         self.presenter_only_configuration.as_ref()
     }
 }
+impl GridViewConfiguration {
+    /// Creates a new builder-style object to manufacture [`GridViewConfiguration`](crate::model::GridViewConfiguration).
+    pub fn builder() -> crate::model::grid_view_configuration::Builder {
+        crate::model::grid_view_configuration::Builder::default()
+    }
+}
+
 /// See [`GridViewConfiguration`](crate::model::GridViewConfiguration).
 pub mod grid_view_configuration {
 
@@ -3177,12 +3210,6 @@ pub mod grid_view_configuration {
         }
     }
 }
-impl GridViewConfiguration {
-    /// Creates a new builder-style object to manufacture [`GridViewConfiguration`](crate::model::GridViewConfiguration).
-    pub fn builder() -> crate::model::grid_view_configuration::Builder {
-        crate::model::grid_view_configuration::Builder::default()
-    }
-}
 
 /// <p>Defines the configuration for a presenter only video tile.</p>
 #[non_exhaustive]
@@ -3198,6 +3225,13 @@ impl PresenterOnlyConfiguration {
         self.presenter_position.as_ref()
     }
 }
+impl PresenterOnlyConfiguration {
+    /// Creates a new builder-style object to manufacture [`PresenterOnlyConfiguration`](crate::model::PresenterOnlyConfiguration).
+    pub fn builder() -> crate::model::presenter_only_configuration::Builder {
+        crate::model::presenter_only_configuration::Builder::default()
+    }
+}
+
 /// See [`PresenterOnlyConfiguration`](crate::model::PresenterOnlyConfiguration).
 pub mod presenter_only_configuration {
 
@@ -3227,12 +3261,6 @@ pub mod presenter_only_configuration {
                 presenter_position: self.presenter_position,
             }
         }
-    }
-}
-impl PresenterOnlyConfiguration {
-    /// Creates a new builder-style object to manufacture [`PresenterOnlyConfiguration`](crate::model::PresenterOnlyConfiguration).
-    pub fn builder() -> crate::model::presenter_only_configuration::Builder {
-        crate::model::presenter_only_configuration::Builder::default()
     }
 }
 
@@ -3888,6 +3916,13 @@ impl std::fmt::Debug for MediaCapturePipeline {
         formatter.finish()
     }
 }
+impl MediaCapturePipeline {
+    /// Creates a new builder-style object to manufacture [`MediaCapturePipeline`](crate::model::MediaCapturePipeline).
+    pub fn builder() -> crate::model::media_capture_pipeline::Builder {
+        crate::model::media_capture_pipeline::Builder::default()
+    }
+}
+
 /// See [`MediaCapturePipeline`](crate::model::MediaCapturePipeline).
 pub mod media_capture_pipeline {
 
@@ -4071,12 +4106,6 @@ pub mod media_capture_pipeline {
         }
     }
 }
-impl MediaCapturePipeline {
-    /// Creates a new builder-style object to manufacture [`MediaCapturePipeline`](crate::model::MediaCapturePipeline).
-    pub fn builder() -> crate::model::media_capture_pipeline::Builder {
-        crate::model::media_capture_pipeline::Builder::default()
-    }
-}
 
 /// <p>The configuration object of the Amazon Chime SDK meeting for a specified media pipeline. <code>SourceType</code> must be <code>ChimeSdkMeeting</code>.</p>
 #[non_exhaustive]
@@ -4101,6 +4130,13 @@ impl ChimeSdkMeetingConfiguration {
         self.artifacts_configuration.as_ref()
     }
 }
+impl ChimeSdkMeetingConfiguration {
+    /// Creates a new builder-style object to manufacture [`ChimeSdkMeetingConfiguration`](crate::model::ChimeSdkMeetingConfiguration).
+    pub fn builder() -> crate::model::chime_sdk_meeting_configuration::Builder {
+        crate::model::chime_sdk_meeting_configuration::Builder::default()
+    }
+}
+
 /// See [`ChimeSdkMeetingConfiguration`](crate::model::ChimeSdkMeetingConfiguration).
 pub mod chime_sdk_meeting_configuration {
 
@@ -4151,12 +4187,6 @@ pub mod chime_sdk_meeting_configuration {
         }
     }
 }
-impl ChimeSdkMeetingConfiguration {
-    /// Creates a new builder-style object to manufacture [`ChimeSdkMeetingConfiguration`](crate::model::ChimeSdkMeetingConfiguration).
-    pub fn builder() -> crate::model::chime_sdk_meeting_configuration::Builder {
-        crate::model::chime_sdk_meeting_configuration::Builder::default()
-    }
-}
 
 /// <p>The configuration for the artifacts.</p>
 #[non_exhaustive]
@@ -4195,6 +4225,13 @@ impl ArtifactsConfiguration {
         self.composited_video.as_ref()
     }
 }
+impl ArtifactsConfiguration {
+    /// Creates a new builder-style object to manufacture [`ArtifactsConfiguration`](crate::model::ArtifactsConfiguration).
+    pub fn builder() -> crate::model::artifacts_configuration::Builder {
+        crate::model::artifacts_configuration::Builder::default()
+    }
+}
+
 /// See [`ArtifactsConfiguration`](crate::model::ArtifactsConfiguration).
 pub mod artifacts_configuration {
 
@@ -4275,12 +4312,6 @@ pub mod artifacts_configuration {
         }
     }
 }
-impl ArtifactsConfiguration {
-    /// Creates a new builder-style object to manufacture [`ArtifactsConfiguration`](crate::model::ArtifactsConfiguration).
-    pub fn builder() -> crate::model::artifacts_configuration::Builder {
-        crate::model::artifacts_configuration::Builder::default()
-    }
-}
 
 /// <p>The content artifact object.</p>
 #[non_exhaustive]
@@ -4303,6 +4334,13 @@ impl ContentArtifactsConfiguration {
         self.mux_type.as_ref()
     }
 }
+impl ContentArtifactsConfiguration {
+    /// Creates a new builder-style object to manufacture [`ContentArtifactsConfiguration`](crate::model::ContentArtifactsConfiguration).
+    pub fn builder() -> crate::model::content_artifacts_configuration::Builder {
+        crate::model::content_artifacts_configuration::Builder::default()
+    }
+}
+
 /// See [`ContentArtifactsConfiguration`](crate::model::ContentArtifactsConfiguration).
 pub mod content_artifacts_configuration {
 
@@ -4347,12 +4385,6 @@ pub mod content_artifacts_configuration {
                 mux_type: self.mux_type,
             }
         }
-    }
-}
-impl ContentArtifactsConfiguration {
-    /// Creates a new builder-style object to manufacture [`ContentArtifactsConfiguration`](crate::model::ContentArtifactsConfiguration).
-    pub fn builder() -> crate::model::content_artifacts_configuration::Builder {
-        crate::model::content_artifacts_configuration::Builder::default()
     }
 }
 
@@ -4552,6 +4584,13 @@ impl VideoArtifactsConfiguration {
         self.mux_type.as_ref()
     }
 }
+impl VideoArtifactsConfiguration {
+    /// Creates a new builder-style object to manufacture [`VideoArtifactsConfiguration`](crate::model::VideoArtifactsConfiguration).
+    pub fn builder() -> crate::model::video_artifacts_configuration::Builder {
+        crate::model::video_artifacts_configuration::Builder::default()
+    }
+}
+
 /// See [`VideoArtifactsConfiguration`](crate::model::VideoArtifactsConfiguration).
 pub mod video_artifacts_configuration {
 
@@ -4596,12 +4635,6 @@ pub mod video_artifacts_configuration {
                 mux_type: self.mux_type,
             }
         }
-    }
-}
-impl VideoArtifactsConfiguration {
-    /// Creates a new builder-style object to manufacture [`VideoArtifactsConfiguration`](crate::model::VideoArtifactsConfiguration).
-    pub fn builder() -> crate::model::video_artifacts_configuration::Builder {
-        crate::model::video_artifacts_configuration::Builder::default()
     }
 }
 
@@ -4704,6 +4737,13 @@ impl AudioArtifactsConfiguration {
         self.mux_type.as_ref()
     }
 }
+impl AudioArtifactsConfiguration {
+    /// Creates a new builder-style object to manufacture [`AudioArtifactsConfiguration`](crate::model::AudioArtifactsConfiguration).
+    pub fn builder() -> crate::model::audio_artifacts_configuration::Builder {
+        crate::model::audio_artifacts_configuration::Builder::default()
+    }
+}
+
 /// See [`AudioArtifactsConfiguration`](crate::model::AudioArtifactsConfiguration).
 pub mod audio_artifacts_configuration {
 
@@ -4733,12 +4773,6 @@ pub mod audio_artifacts_configuration {
                 mux_type: self.mux_type,
             }
         }
-    }
-}
-impl AudioArtifactsConfiguration {
-    /// Creates a new builder-style object to manufacture [`AudioArtifactsConfiguration`](crate::model::AudioArtifactsConfiguration).
-    pub fn builder() -> crate::model::audio_artifacts_configuration::Builder {
-        crate::model::audio_artifacts_configuration::Builder::default()
     }
 }
 

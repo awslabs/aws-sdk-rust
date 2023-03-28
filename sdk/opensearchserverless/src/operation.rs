@@ -4,7 +4,7 @@
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`batch_get_collection`](crate::client::Client::batch_get_collection).
 ///
-/// See [`crate::client::fluent_builders::BatchGetCollection`] for more details about the operation.
+/// `ParseStrictResponse` impl for `BatchGetCollection`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct BatchGetCollection {
     _private: (),
@@ -39,7 +39,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchGetCollection {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`batch_get_vpc_endpoint`](crate::client::Client::batch_get_vpc_endpoint).
 ///
-/// See [`crate::client::fluent_builders::BatchGetVpcEndpoint`] for more details about the operation.
+/// `ParseStrictResponse` impl for `BatchGetVpcEndpoint`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct BatchGetVpcEndpoint {
     _private: (),
@@ -74,7 +74,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchGetVpcEndpoint {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`create_access_policy`](crate::client::Client::create_access_policy).
 ///
-/// See [`crate::client::fluent_builders::CreateAccessPolicy`] for more details about the operation.
+/// `ParseStrictResponse` impl for `CreateAccessPolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateAccessPolicy {
     _private: (),
@@ -109,7 +109,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateAccessPolicy {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`create_collection`](crate::client::Client::create_collection).
 ///
-/// See [`crate::client::fluent_builders::CreateCollection`] for more details about the operation.
+/// `ParseStrictResponse` impl for `CreateCollection`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateCollection {
     _private: (),
@@ -144,7 +144,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateCollection {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`create_security_config`](crate::client::Client::create_security_config).
 ///
-/// See [`crate::client::fluent_builders::CreateSecurityConfig`] for more details about the operation.
+/// `ParseStrictResponse` impl for `CreateSecurityConfig`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateSecurityConfig {
     _private: (),
@@ -179,7 +179,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateSecurityConfig {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`create_security_policy`](crate::client::Client::create_security_policy).
 ///
-/// See [`crate::client::fluent_builders::CreateSecurityPolicy`] for more details about the operation.
+/// `ParseStrictResponse` impl for `CreateSecurityPolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateSecurityPolicy {
     _private: (),
@@ -214,7 +214,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateSecurityPolicy {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`create_vpc_endpoint`](crate::client::Client::create_vpc_endpoint).
 ///
-/// See [`crate::client::fluent_builders::CreateVpcEndpoint`] for more details about the operation.
+/// `ParseStrictResponse` impl for `CreateVpcEndpoint`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateVpcEndpoint {
     _private: (),
@@ -249,7 +249,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateVpcEndpoint {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`delete_access_policy`](crate::client::Client::delete_access_policy).
 ///
-/// See [`crate::client::fluent_builders::DeleteAccessPolicy`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DeleteAccessPolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteAccessPolicy {
     _private: (),
@@ -284,7 +284,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteAccessPolicy {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`delete_collection`](crate::client::Client::delete_collection).
 ///
-/// See [`crate::client::fluent_builders::DeleteCollection`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DeleteCollection`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteCollection {
     _private: (),
@@ -319,7 +319,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteCollection {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`delete_security_config`](crate::client::Client::delete_security_config).
 ///
-/// See [`crate::client::fluent_builders::DeleteSecurityConfig`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DeleteSecurityConfig`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteSecurityConfig {
     _private: (),
@@ -354,7 +354,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteSecurityConfig {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`delete_security_policy`](crate::client::Client::delete_security_policy).
 ///
-/// See [`crate::client::fluent_builders::DeleteSecurityPolicy`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DeleteSecurityPolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteSecurityPolicy {
     _private: (),
@@ -389,7 +389,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteSecurityPolicy {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`delete_vpc_endpoint`](crate::client::Client::delete_vpc_endpoint).
 ///
-/// See [`crate::client::fluent_builders::DeleteVpcEndpoint`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DeleteVpcEndpoint`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteVpcEndpoint {
     _private: (),
@@ -424,7 +424,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteVpcEndpoint {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`get_access_policy`](crate::client::Client::get_access_policy).
 ///
-/// See [`crate::client::fluent_builders::GetAccessPolicy`] for more details about the operation.
+/// `ParseStrictResponse` impl for `GetAccessPolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetAccessPolicy {
     _private: (),
@@ -459,7 +459,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAccessPolicy {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`get_account_settings`](crate::client::Client::get_account_settings).
 ///
-/// See [`crate::client::fluent_builders::GetAccountSettings`] for more details about the operation.
+/// `ParseStrictResponse` impl for `GetAccountSettings`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetAccountSettings {
     _private: (),
@@ -494,7 +494,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAccountSettings {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`get_policies_stats`](crate::client::Client::get_policies_stats).
 ///
-/// See [`crate::client::fluent_builders::GetPoliciesStats`] for more details about the operation.
+/// `ParseStrictResponse` impl for `GetPoliciesStats`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetPoliciesStats {
     _private: (),
@@ -529,7 +529,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetPoliciesStats {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`get_security_config`](crate::client::Client::get_security_config).
 ///
-/// See [`crate::client::fluent_builders::GetSecurityConfig`] for more details about the operation.
+/// `ParseStrictResponse` impl for `GetSecurityConfig`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetSecurityConfig {
     _private: (),
@@ -564,7 +564,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSecurityConfig {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`get_security_policy`](crate::client::Client::get_security_policy).
 ///
-/// See [`crate::client::fluent_builders::GetSecurityPolicy`] for more details about the operation.
+/// `ParseStrictResponse` impl for `GetSecurityPolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetSecurityPolicy {
     _private: (),
@@ -599,7 +599,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSecurityPolicy {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_access_policies`](crate::client::Client::list_access_policies).
 ///
-/// See [`crate::client::fluent_builders::ListAccessPolicies`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListAccessPolicies`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListAccessPolicies {
     _private: (),
@@ -634,7 +634,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAccessPolicies {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_collections`](crate::client::Client::list_collections).
 ///
-/// See [`crate::client::fluent_builders::ListCollections`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListCollections`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListCollections {
     _private: (),
@@ -669,7 +669,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListCollections {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_security_configs`](crate::client::Client::list_security_configs).
 ///
-/// See [`crate::client::fluent_builders::ListSecurityConfigs`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListSecurityConfigs`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListSecurityConfigs {
     _private: (),
@@ -704,7 +704,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListSecurityConfigs {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_security_policies`](crate::client::Client::list_security_policies).
 ///
-/// See [`crate::client::fluent_builders::ListSecurityPolicies`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListSecurityPolicies`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListSecurityPolicies {
     _private: (),
@@ -739,7 +739,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListSecurityPolicies {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
 ///
-/// See [`crate::client::fluent_builders::ListTagsForResource`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTagsForResource {
     _private: (),
@@ -774,7 +774,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_vpc_endpoints`](crate::client::Client::list_vpc_endpoints).
 ///
-/// See [`crate::client::fluent_builders::ListVpcEndpoints`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListVpcEndpoints`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListVpcEndpoints {
     _private: (),
@@ -809,7 +809,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListVpcEndpoints {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`tag_resource`](crate::client::Client::tag_resource).
 ///
-/// See [`crate::client::fluent_builders::TagResource`] for more details about the operation.
+/// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct TagResource {
     _private: (),
@@ -842,7 +842,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`untag_resource`](crate::client::Client::untag_resource).
 ///
-/// See [`crate::client::fluent_builders::UntagResource`] for more details about the operation.
+/// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UntagResource {
     _private: (),
@@ -875,7 +875,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`update_access_policy`](crate::client::Client::update_access_policy).
 ///
-/// See [`crate::client::fluent_builders::UpdateAccessPolicy`] for more details about the operation.
+/// `ParseStrictResponse` impl for `UpdateAccessPolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateAccessPolicy {
     _private: (),
@@ -910,7 +910,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateAccessPolicy {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`update_account_settings`](crate::client::Client::update_account_settings).
 ///
-/// See [`crate::client::fluent_builders::UpdateAccountSettings`] for more details about the operation.
+/// `ParseStrictResponse` impl for `UpdateAccountSettings`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateAccountSettings {
     _private: (),
@@ -945,7 +945,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateAccountSettings {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`update_collection`](crate::client::Client::update_collection).
 ///
-/// See [`crate::client::fluent_builders::UpdateCollection`] for more details about the operation.
+/// `ParseStrictResponse` impl for `UpdateCollection`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateCollection {
     _private: (),
@@ -980,7 +980,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateCollection {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`update_security_config`](crate::client::Client::update_security_config).
 ///
-/// See [`crate::client::fluent_builders::UpdateSecurityConfig`] for more details about the operation.
+/// `ParseStrictResponse` impl for `UpdateSecurityConfig`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateSecurityConfig {
     _private: (),
@@ -1015,7 +1015,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateSecurityConfig {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`update_security_policy`](crate::client::Client::update_security_policy).
 ///
-/// See [`crate::client::fluent_builders::UpdateSecurityPolicy`] for more details about the operation.
+/// `ParseStrictResponse` impl for `UpdateSecurityPolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateSecurityPolicy {
     _private: (),
@@ -1050,7 +1050,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateSecurityPolicy {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`update_vpc_endpoint`](crate::client::Client::update_vpc_endpoint).
 ///
-/// See [`crate::client::fluent_builders::UpdateVpcEndpoint`] for more details about the operation.
+/// `ParseStrictResponse` impl for `UpdateVpcEndpoint`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateVpcEndpoint {
     _private: (),

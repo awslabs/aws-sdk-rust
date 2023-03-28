@@ -4,7 +4,7 @@
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`delete_scaling_policy`](crate::client::Client::delete_scaling_policy).
 ///
-/// See [`crate::client::fluent_builders::DeleteScalingPolicy`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DeleteScalingPolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteScalingPolicy {
     _private: (),
@@ -39,7 +39,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteScalingPolicy {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`delete_scheduled_action`](crate::client::Client::delete_scheduled_action).
 ///
-/// See [`crate::client::fluent_builders::DeleteScheduledAction`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DeleteScheduledAction`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteScheduledAction {
     _private: (),
@@ -74,7 +74,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteScheduledAction {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`deregister_scalable_target`](crate::client::Client::deregister_scalable_target).
 ///
-/// See [`crate::client::fluent_builders::DeregisterScalableTarget`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DeregisterScalableTarget`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeregisterScalableTarget {
     _private: (),
@@ -109,7 +109,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeregisterScalableTarget
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`describe_scalable_targets`](crate::client::Client::describe_scalable_targets).
 ///
-/// See [`crate::client::fluent_builders::DescribeScalableTargets`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DescribeScalableTargets`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeScalableTargets {
     _private: (),
@@ -144,7 +144,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeScalableTargets 
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`describe_scaling_activities`](crate::client::Client::describe_scaling_activities).
 ///
-/// See [`crate::client::fluent_builders::DescribeScalingActivities`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DescribeScalingActivities`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeScalingActivities {
     _private: (),
@@ -179,7 +179,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeScalingActivitie
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`describe_scaling_policies`](crate::client::Client::describe_scaling_policies).
 ///
-/// See [`crate::client::fluent_builders::DescribeScalingPolicies`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DescribeScalingPolicies`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeScalingPolicies {
     _private: (),
@@ -214,7 +214,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeScalingPolicies 
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`describe_scheduled_actions`](crate::client::Client::describe_scheduled_actions).
 ///
-/// See [`crate::client::fluent_builders::DescribeScheduledActions`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DescribeScheduledActions`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeScheduledActions {
     _private: (),
@@ -249,7 +249,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeScheduledActions
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`put_scaling_policy`](crate::client::Client::put_scaling_policy).
 ///
-/// See [`crate::client::fluent_builders::PutScalingPolicy`] for more details about the operation.
+/// `ParseStrictResponse` impl for `PutScalingPolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutScalingPolicy {
     _private: (),
@@ -284,7 +284,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutScalingPolicy {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`put_scheduled_action`](crate::client::Client::put_scheduled_action).
 ///
-/// See [`crate::client::fluent_builders::PutScheduledAction`] for more details about the operation.
+/// `ParseStrictResponse` impl for `PutScheduledAction`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutScheduledAction {
     _private: (),
@@ -319,7 +319,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutScheduledAction {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`register_scalable_target`](crate::client::Client::register_scalable_target).
 ///
-/// See [`crate::client::fluent_builders::RegisterScalableTarget`] for more details about the operation.
+/// `ParseStrictResponse` impl for `RegisterScalableTarget`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct RegisterScalableTarget {
     _private: (),

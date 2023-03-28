@@ -57,6 +57,13 @@ impl aws_http::request_id::RequestId for UpdateServiceSettingsOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdateServiceSettingsOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateServiceSettingsOutput`](crate::output::UpdateServiceSettingsOutput).
+    pub fn builder() -> crate::output::update_service_settings_output::Builder {
+        crate::output::update_service_settings_output::Builder::default()
+    }
+}
+
 /// See [`UpdateServiceSettingsOutput`](crate::output::UpdateServiceSettingsOutput).
 pub mod update_service_settings_output {
 
@@ -184,12 +191,6 @@ pub mod update_service_settings_output {
         }
     }
 }
-impl UpdateServiceSettingsOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateServiceSettingsOutput`](crate::output::UpdateServiceSettingsOutput).
-    pub fn builder() -> crate::output::update_service_settings_output::Builder {
-        crate::output::update_service_settings_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -218,6 +219,13 @@ impl aws_http::request_id::RequestId for ListLinuxSubscriptionsOutput {
         self._request_id.as_deref()
     }
 }
+impl ListLinuxSubscriptionsOutput {
+    /// Creates a new builder-style object to manufacture [`ListLinuxSubscriptionsOutput`](crate::output::ListLinuxSubscriptionsOutput).
+    pub fn builder() -> crate::output::list_linux_subscriptions_output::Builder {
+        crate::output::list_linux_subscriptions_output::Builder::default()
+    }
+}
+
 /// See [`ListLinuxSubscriptionsOutput`](crate::output::ListLinuxSubscriptionsOutput).
 pub mod list_linux_subscriptions_output {
 
@@ -278,12 +286,6 @@ pub mod list_linux_subscriptions_output {
         }
     }
 }
-impl ListLinuxSubscriptionsOutput {
-    /// Creates a new builder-style object to manufacture [`ListLinuxSubscriptionsOutput`](crate::output::ListLinuxSubscriptionsOutput).
-    pub fn builder() -> crate::output::list_linux_subscriptions_output::Builder {
-        crate::output::list_linux_subscriptions_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -312,6 +314,13 @@ impl aws_http::request_id::RequestId for ListLinuxSubscriptionInstancesOutput {
         self._request_id.as_deref()
     }
 }
+impl ListLinuxSubscriptionInstancesOutput {
+    /// Creates a new builder-style object to manufacture [`ListLinuxSubscriptionInstancesOutput`](crate::output::ListLinuxSubscriptionInstancesOutput).
+    pub fn builder() -> crate::output::list_linux_subscription_instances_output::Builder {
+        crate::output::list_linux_subscription_instances_output::Builder::default()
+    }
+}
+
 /// See [`ListLinuxSubscriptionInstancesOutput`](crate::output::ListLinuxSubscriptionInstancesOutput).
 pub mod list_linux_subscription_instances_output {
 
@@ -370,12 +379,6 @@ pub mod list_linux_subscription_instances_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl ListLinuxSubscriptionInstancesOutput {
-    /// Creates a new builder-style object to manufacture [`ListLinuxSubscriptionInstancesOutput`](crate::output::ListLinuxSubscriptionInstancesOutput).
-    pub fn builder() -> crate::output::list_linux_subscription_instances_output::Builder {
-        crate::output::list_linux_subscription_instances_output::Builder::default()
     }
 }
 
@@ -437,6 +440,13 @@ impl aws_http::request_id::RequestId for GetServiceSettingsOutput {
         self._request_id.as_deref()
     }
 }
+impl GetServiceSettingsOutput {
+    /// Creates a new builder-style object to manufacture [`GetServiceSettingsOutput`](crate::output::GetServiceSettingsOutput).
+    pub fn builder() -> crate::output::get_service_settings_output::Builder {
+        crate::output::get_service_settings_output::Builder::default()
+    }
+}
+
 /// See [`GetServiceSettingsOutput`](crate::output::GetServiceSettingsOutput).
 pub mod get_service_settings_output {
 
@@ -562,11 +572,5 @@ pub mod get_service_settings_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl GetServiceSettingsOutput {
-    /// Creates a new builder-style object to manufacture [`GetServiceSettingsOutput`](crate::output::GetServiceSettingsOutput).
-    pub fn builder() -> crate::output::get_service_settings_output::Builder {
-        crate::output::get_service_settings_output::Builder::default()
     }
 }

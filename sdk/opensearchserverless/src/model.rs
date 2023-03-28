@@ -28,6 +28,13 @@ impl VpcEndpointSummary {
         self.status.as_ref()
     }
 }
+impl VpcEndpointSummary {
+    /// Creates a new builder-style object to manufacture [`VpcEndpointSummary`](crate::model::VpcEndpointSummary).
+    pub fn builder() -> crate::model::vpc_endpoint_summary::Builder {
+        crate::model::vpc_endpoint_summary::Builder::default()
+    }
+}
+
 /// See [`VpcEndpointSummary`](crate::model::VpcEndpointSummary).
 pub mod vpc_endpoint_summary {
 
@@ -81,12 +88,6 @@ pub mod vpc_endpoint_summary {
                 status: self.status,
             }
         }
-    }
-}
-impl VpcEndpointSummary {
-    /// Creates a new builder-style object to manufacture [`VpcEndpointSummary`](crate::model::VpcEndpointSummary).
-    pub fn builder() -> crate::model::vpc_endpoint_summary::Builder {
-        crate::model::vpc_endpoint_summary::Builder::default()
     }
 }
 
@@ -206,6 +207,13 @@ impl VpcEndpointFilters {
         self.status.as_ref()
     }
 }
+impl VpcEndpointFilters {
+    /// Creates a new builder-style object to manufacture [`VpcEndpointFilters`](crate::model::VpcEndpointFilters).
+    pub fn builder() -> crate::model::vpc_endpoint_filters::Builder {
+        crate::model::vpc_endpoint_filters::Builder::default()
+    }
+}
+
 /// See [`VpcEndpointFilters`](crate::model::VpcEndpointFilters).
 pub mod vpc_endpoint_filters {
 
@@ -237,12 +245,6 @@ pub mod vpc_endpoint_filters {
         }
     }
 }
-impl VpcEndpointFilters {
-    /// Creates a new builder-style object to manufacture [`VpcEndpointFilters`](crate::model::VpcEndpointFilters).
-    pub fn builder() -> crate::model::vpc_endpoint_filters::Builder {
-        crate::model::vpc_endpoint_filters::Builder::default()
-    }
-}
 
 /// <p>Creation details for an OpenSearch Serverless-managed interface endpoint. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-vpc.html">Access Amazon OpenSearch Serverless using an interface endpoint</a>.</p>
 #[non_exhaustive]
@@ -272,6 +274,13 @@ impl CreateVpcEndpointDetail {
         self.status.as_ref()
     }
 }
+impl CreateVpcEndpointDetail {
+    /// Creates a new builder-style object to manufacture [`CreateVpcEndpointDetail`](crate::model::CreateVpcEndpointDetail).
+    pub fn builder() -> crate::model::create_vpc_endpoint_detail::Builder {
+        crate::model::create_vpc_endpoint_detail::Builder::default()
+    }
+}
+
 /// See [`CreateVpcEndpointDetail`](crate::model::CreateVpcEndpointDetail).
 pub mod create_vpc_endpoint_detail {
 
@@ -327,12 +336,6 @@ pub mod create_vpc_endpoint_detail {
         }
     }
 }
-impl CreateVpcEndpointDetail {
-    /// Creates a new builder-style object to manufacture [`CreateVpcEndpointDetail`](crate::model::CreateVpcEndpointDetail).
-    pub fn builder() -> crate::model::create_vpc_endpoint_detail::Builder {
-        crate::model::create_vpc_endpoint_detail::Builder::default()
-    }
-}
 
 /// <p>Deletion details for an OpenSearch Serverless-managed interface endpoint.</p>
 #[non_exhaustive]
@@ -362,6 +365,13 @@ impl DeleteVpcEndpointDetail {
         self.status.as_ref()
     }
 }
+impl DeleteVpcEndpointDetail {
+    /// Creates a new builder-style object to manufacture [`DeleteVpcEndpointDetail`](crate::model::DeleteVpcEndpointDetail).
+    pub fn builder() -> crate::model::delete_vpc_endpoint_detail::Builder {
+        crate::model::delete_vpc_endpoint_detail::Builder::default()
+    }
+}
+
 /// See [`DeleteVpcEndpointDetail`](crate::model::DeleteVpcEndpointDetail).
 pub mod delete_vpc_endpoint_detail {
 
@@ -417,12 +427,6 @@ pub mod delete_vpc_endpoint_detail {
         }
     }
 }
-impl DeleteVpcEndpointDetail {
-    /// Creates a new builder-style object to manufacture [`DeleteVpcEndpointDetail`](crate::model::DeleteVpcEndpointDetail).
-    pub fn builder() -> crate::model::delete_vpc_endpoint_detail::Builder {
-        crate::model::delete_vpc_endpoint_detail::Builder::default()
-    }
-}
 
 /// <p>A summary of a security policy for OpenSearch Serverless.</p>
 #[non_exhaustive]
@@ -473,6 +477,13 @@ impl SecurityPolicySummary {
         self.last_modified_date
     }
 }
+impl SecurityPolicySummary {
+    /// Creates a new builder-style object to manufacture [`SecurityPolicySummary`](crate::model::SecurityPolicySummary).
+    pub fn builder() -> crate::model::security_policy_summary::Builder {
+        crate::model::security_policy_summary::Builder::default()
+    }
+}
+
 /// See [`SecurityPolicySummary`](crate::model::SecurityPolicySummary).
 pub mod security_policy_summary {
 
@@ -565,12 +576,6 @@ pub mod security_policy_summary {
                 last_modified_date: self.last_modified_date,
             }
         }
-    }
-}
-impl SecurityPolicySummary {
-    /// Creates a new builder-style object to manufacture [`SecurityPolicySummary`](crate::model::SecurityPolicySummary).
-    pub fn builder() -> crate::model::security_policy_summary::Builder {
-        crate::model::security_policy_summary::Builder::default()
     }
 }
 
@@ -722,6 +727,13 @@ impl SecurityPolicyDetail {
         self.last_modified_date
     }
 }
+impl SecurityPolicyDetail {
+    /// Creates a new builder-style object to manufacture [`SecurityPolicyDetail`](crate::model::SecurityPolicyDetail).
+    pub fn builder() -> crate::model::security_policy_detail::Builder {
+        crate::model::security_policy_detail::Builder::default()
+    }
+}
+
 /// See [`SecurityPolicyDetail`](crate::model::SecurityPolicyDetail).
 pub mod security_policy_detail {
 
@@ -831,12 +843,6 @@ pub mod security_policy_detail {
         }
     }
 }
-impl SecurityPolicyDetail {
-    /// Creates a new builder-style object to manufacture [`SecurityPolicyDetail`](crate::model::SecurityPolicyDetail).
-    pub fn builder() -> crate::model::security_policy_detail::Builder {
-        crate::model::security_policy_detail::Builder::default()
-    }
-}
 
 /// <p>A summary of a security configuration for OpenSearch Serverless.</p>
 #[non_exhaustive]
@@ -887,6 +893,13 @@ impl SecurityConfigSummary {
         self.last_modified_date
     }
 }
+impl SecurityConfigSummary {
+    /// Creates a new builder-style object to manufacture [`SecurityConfigSummary`](crate::model::SecurityConfigSummary).
+    pub fn builder() -> crate::model::security_config_summary::Builder {
+        crate::model::security_config_summary::Builder::default()
+    }
+}
+
 /// See [`SecurityConfigSummary`](crate::model::SecurityConfigSummary).
 pub mod security_config_summary {
 
@@ -979,12 +992,6 @@ pub mod security_config_summary {
                 last_modified_date: self.last_modified_date,
             }
         }
-    }
-}
-impl SecurityConfigSummary {
-    /// Creates a new builder-style object to manufacture [`SecurityConfigSummary`](crate::model::SecurityConfigSummary).
-    pub fn builder() -> crate::model::security_config_summary::Builder {
-        crate::model::security_config_summary::Builder::default()
     }
 }
 
@@ -1131,6 +1138,13 @@ impl SecurityConfigDetail {
         self.last_modified_date
     }
 }
+impl SecurityConfigDetail {
+    /// Creates a new builder-style object to manufacture [`SecurityConfigDetail`](crate::model::SecurityConfigDetail).
+    pub fn builder() -> crate::model::security_config_detail::Builder {
+        crate::model::security_config_detail::Builder::default()
+    }
+}
+
 /// See [`SecurityConfigDetail`](crate::model::SecurityConfigDetail).
 pub mod security_config_detail {
 
@@ -1240,12 +1254,6 @@ pub mod security_config_detail {
         }
     }
 }
-impl SecurityConfigDetail {
-    /// Creates a new builder-style object to manufacture [`SecurityConfigDetail`](crate::model::SecurityConfigDetail).
-    pub fn builder() -> crate::model::security_config_detail::Builder {
-        crate::model::security_config_detail::Builder::default()
-    }
-}
 
 /// <p>Describes SAML options for an OpenSearch Serverless security configuration in the form of a key-value map.</p>
 #[non_exhaustive]
@@ -1282,6 +1290,13 @@ impl SamlConfigOptions {
         self.session_timeout
     }
 }
+impl SamlConfigOptions {
+    /// Creates a new builder-style object to manufacture [`SamlConfigOptions`](crate::model::SamlConfigOptions).
+    pub fn builder() -> crate::model::saml_config_options::Builder {
+        crate::model::saml_config_options::Builder::default()
+    }
+}
+
 /// See [`SamlConfigOptions`](crate::model::SamlConfigOptions).
 pub mod saml_config_options {
 
@@ -1352,12 +1367,6 @@ pub mod saml_config_options {
         }
     }
 }
-impl SamlConfigOptions {
-    /// Creates a new builder-style object to manufacture [`SamlConfigOptions`](crate::model::SamlConfigOptions).
-    pub fn builder() -> crate::model::saml_config_options::Builder {
-        crate::model::saml_config_options::Builder::default()
-    }
-}
 
 /// <p>Details about each OpenSearch Serverless collection.</p>
 #[non_exhaustive]
@@ -1394,6 +1403,13 @@ impl CollectionSummary {
         self.arn.as_deref()
     }
 }
+impl CollectionSummary {
+    /// Creates a new builder-style object to manufacture [`CollectionSummary`](crate::model::CollectionSummary).
+    pub fn builder() -> crate::model::collection_summary::Builder {
+        crate::model::collection_summary::Builder::default()
+    }
+}
+
 /// See [`CollectionSummary`](crate::model::CollectionSummary).
 pub mod collection_summary {
 
@@ -1459,12 +1475,6 @@ pub mod collection_summary {
                 arn: self.arn,
             }
         }
-    }
-}
-impl CollectionSummary {
-    /// Creates a new builder-style object to manufacture [`CollectionSummary`](crate::model::CollectionSummary).
-    pub fn builder() -> crate::model::collection_summary::Builder {
-        crate::model::collection_summary::Builder::default()
     }
 }
 
@@ -1589,6 +1599,13 @@ impl CollectionFilters {
         self.status.as_ref()
     }
 }
+impl CollectionFilters {
+    /// Creates a new builder-style object to manufacture [`CollectionFilters`](crate::model::CollectionFilters).
+    pub fn builder() -> crate::model::collection_filters::Builder {
+        crate::model::collection_filters::Builder::default()
+    }
+}
+
 /// See [`CollectionFilters`](crate::model::CollectionFilters).
 pub mod collection_filters {
 
@@ -1630,12 +1647,6 @@ pub mod collection_filters {
                 status: self.status,
             }
         }
-    }
-}
-impl CollectionFilters {
-    /// Creates a new builder-style object to manufacture [`CollectionFilters`](crate::model::CollectionFilters).
-    pub fn builder() -> crate::model::collection_filters::Builder {
-        crate::model::collection_filters::Builder::default()
     }
 }
 
@@ -1709,6 +1720,13 @@ impl CreateCollectionDetail {
         self.last_modified_date
     }
 }
+impl CreateCollectionDetail {
+    /// Creates a new builder-style object to manufacture [`CreateCollectionDetail`](crate::model::CreateCollectionDetail).
+    pub fn builder() -> crate::model::create_collection_detail::Builder {
+        crate::model::create_collection_detail::Builder::default()
+    }
+}
+
 /// See [`CreateCollectionDetail`](crate::model::CreateCollectionDetail).
 pub mod create_collection_detail {
 
@@ -1839,12 +1857,6 @@ pub mod create_collection_detail {
         }
     }
 }
-impl CreateCollectionDetail {
-    /// Creates a new builder-style object to manufacture [`CreateCollectionDetail`](crate::model::CreateCollectionDetail).
-    pub fn builder() -> crate::model::create_collection_detail::Builder {
-        crate::model::create_collection_detail::Builder::default()
-    }
-}
 
 /// When writing a match expression against `CollectionType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -1957,6 +1969,13 @@ impl Tag {
         self.value.as_deref()
     }
 }
+impl Tag {
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
+    pub fn builder() -> crate::model::tag::Builder {
+        crate::model::tag::Builder::default()
+    }
+}
+
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
 
@@ -1997,12 +2016,6 @@ pub mod tag {
         }
     }
 }
-impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
-    pub fn builder() -> crate::model::tag::Builder {
-        crate::model::tag::Builder::default()
-    }
-}
 
 /// <p>Details about a deleted OpenSearch Serverless collection.</p>
 #[non_exhaustive]
@@ -2032,6 +2045,13 @@ impl DeleteCollectionDetail {
         self.status.as_ref()
     }
 }
+impl DeleteCollectionDetail {
+    /// Creates a new builder-style object to manufacture [`DeleteCollectionDetail`](crate::model::DeleteCollectionDetail).
+    pub fn builder() -> crate::model::delete_collection_detail::Builder {
+        crate::model::delete_collection_detail::Builder::default()
+    }
+}
+
 /// See [`DeleteCollectionDetail`](crate::model::DeleteCollectionDetail).
 pub mod delete_collection_detail {
 
@@ -2085,12 +2105,6 @@ pub mod delete_collection_detail {
                 status: self.status,
             }
         }
-    }
-}
-impl DeleteCollectionDetail {
-    /// Creates a new builder-style object to manufacture [`DeleteCollectionDetail`](crate::model::DeleteCollectionDetail).
-    pub fn builder() -> crate::model::delete_collection_detail::Builder {
-        crate::model::delete_collection_detail::Builder::default()
     }
 }
 
@@ -2157,6 +2171,13 @@ impl UpdateCollectionDetail {
         self.last_modified_date
     }
 }
+impl UpdateCollectionDetail {
+    /// Creates a new builder-style object to manufacture [`UpdateCollectionDetail`](crate::model::UpdateCollectionDetail).
+    pub fn builder() -> crate::model::update_collection_detail::Builder {
+        crate::model::update_collection_detail::Builder::default()
+    }
+}
+
 /// See [`UpdateCollectionDetail`](crate::model::UpdateCollectionDetail).
 pub mod update_collection_detail {
 
@@ -2275,12 +2296,6 @@ pub mod update_collection_detail {
         }
     }
 }
-impl UpdateCollectionDetail {
-    /// Creates a new builder-style object to manufacture [`UpdateCollectionDetail`](crate::model::UpdateCollectionDetail).
-    pub fn builder() -> crate::model::update_collection_detail::Builder {
-        crate::model::update_collection_detail::Builder::default()
-    }
-}
 
 /// <p>A summary of the data access policy.</p>
 #[non_exhaustive]
@@ -2331,6 +2346,13 @@ impl AccessPolicySummary {
         self.last_modified_date
     }
 }
+impl AccessPolicySummary {
+    /// Creates a new builder-style object to manufacture [`AccessPolicySummary`](crate::model::AccessPolicySummary).
+    pub fn builder() -> crate::model::access_policy_summary::Builder {
+        crate::model::access_policy_summary::Builder::default()
+    }
+}
+
 /// See [`AccessPolicySummary`](crate::model::AccessPolicySummary).
 pub mod access_policy_summary {
 
@@ -2423,12 +2445,6 @@ pub mod access_policy_summary {
                 last_modified_date: self.last_modified_date,
             }
         }
-    }
-}
-impl AccessPolicySummary {
-    /// Creates a new builder-style object to manufacture [`AccessPolicySummary`](crate::model::AccessPolicySummary).
-    pub fn builder() -> crate::model::access_policy_summary::Builder {
-        crate::model::access_policy_summary::Builder::default()
     }
 }
 
@@ -2573,6 +2589,13 @@ impl AccessPolicyDetail {
         self.last_modified_date
     }
 }
+impl AccessPolicyDetail {
+    /// Creates a new builder-style object to manufacture [`AccessPolicyDetail`](crate::model::AccessPolicyDetail).
+    pub fn builder() -> crate::model::access_policy_detail::Builder {
+        crate::model::access_policy_detail::Builder::default()
+    }
+}
+
 /// See [`AccessPolicyDetail`](crate::model::AccessPolicyDetail).
 pub mod access_policy_detail {
 
@@ -2682,12 +2705,6 @@ pub mod access_policy_detail {
         }
     }
 }
-impl AccessPolicyDetail {
-    /// Creates a new builder-style object to manufacture [`AccessPolicyDetail`](crate::model::AccessPolicyDetail).
-    pub fn builder() -> crate::model::access_policy_detail::Builder {
-        crate::model::access_policy_detail::Builder::default()
-    }
-}
 
 /// <p>Update details for an OpenSearch Serverless-managed interface endpoint.</p>
 #[non_exhaustive]
@@ -2738,6 +2755,13 @@ impl UpdateVpcEndpointDetail {
         self.last_modified_date
     }
 }
+impl UpdateVpcEndpointDetail {
+    /// Creates a new builder-style object to manufacture [`UpdateVpcEndpointDetail`](crate::model::UpdateVpcEndpointDetail).
+    pub fn builder() -> crate::model::update_vpc_endpoint_detail::Builder {
+        crate::model::update_vpc_endpoint_detail::Builder::default()
+    }
+}
+
 /// See [`UpdateVpcEndpointDetail`](crate::model::UpdateVpcEndpointDetail).
 pub mod update_vpc_endpoint_detail {
 
@@ -2847,12 +2871,6 @@ pub mod update_vpc_endpoint_detail {
         }
     }
 }
-impl UpdateVpcEndpointDetail {
-    /// Creates a new builder-style object to manufacture [`UpdateVpcEndpointDetail`](crate::model::UpdateVpcEndpointDetail).
-    pub fn builder() -> crate::model::update_vpc_endpoint_detail::Builder {
-        crate::model::update_vpc_endpoint_detail::Builder::default()
-    }
-}
 
 /// <p>OpenSearch Serverless-related information for the current account.</p>
 #[non_exhaustive]
@@ -2868,6 +2886,13 @@ impl AccountSettingsDetail {
         self.capacity_limits.as_ref()
     }
 }
+impl AccountSettingsDetail {
+    /// Creates a new builder-style object to manufacture [`AccountSettingsDetail`](crate::model::AccountSettingsDetail).
+    pub fn builder() -> crate::model::account_settings_detail::Builder {
+        crate::model::account_settings_detail::Builder::default()
+    }
+}
+
 /// See [`AccountSettingsDetail`](crate::model::AccountSettingsDetail).
 pub mod account_settings_detail {
 
@@ -2899,12 +2924,6 @@ pub mod account_settings_detail {
         }
     }
 }
-impl AccountSettingsDetail {
-    /// Creates a new builder-style object to manufacture [`AccountSettingsDetail`](crate::model::AccountSettingsDetail).
-    pub fn builder() -> crate::model::account_settings_detail::Builder {
-        crate::model::account_settings_detail::Builder::default()
-    }
-}
 
 /// <p>The maximum capacity limits for all OpenSearch Serverless collections, in OpenSearch Compute Units (OCUs). These limits are used to scale your collections based on the current workload. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-overview.html#serverless-scaling">Autoscaling</a>.</p>
 #[non_exhaustive]
@@ -2927,6 +2946,13 @@ impl CapacityLimits {
         self.max_search_capacity_in_ocu
     }
 }
+impl CapacityLimits {
+    /// Creates a new builder-style object to manufacture [`CapacityLimits`](crate::model::CapacityLimits).
+    pub fn builder() -> crate::model::capacity_limits::Builder {
+        crate::model::capacity_limits::Builder::default()
+    }
+}
+
 /// See [`CapacityLimits`](crate::model::CapacityLimits).
 pub mod capacity_limits {
 
@@ -2967,12 +2993,6 @@ pub mod capacity_limits {
         }
     }
 }
-impl CapacityLimits {
-    /// Creates a new builder-style object to manufacture [`CapacityLimits`](crate::model::CapacityLimits).
-    pub fn builder() -> crate::model::capacity_limits::Builder {
-        crate::model::capacity_limits::Builder::default()
-    }
-}
 
 /// <p>Statistics for an OpenSearch Serverless security configuration.</p>
 #[non_exhaustive]
@@ -2988,6 +3008,13 @@ impl SecurityConfigStats {
         self.saml_config_count
     }
 }
+impl SecurityConfigStats {
+    /// Creates a new builder-style object to manufacture [`SecurityConfigStats`](crate::model::SecurityConfigStats).
+    pub fn builder() -> crate::model::security_config_stats::Builder {
+        crate::model::security_config_stats::Builder::default()
+    }
+}
+
 /// See [`SecurityConfigStats`](crate::model::SecurityConfigStats).
 pub mod security_config_stats {
 
@@ -3016,12 +3043,6 @@ pub mod security_config_stats {
         }
     }
 }
-impl SecurityConfigStats {
-    /// Creates a new builder-style object to manufacture [`SecurityConfigStats`](crate::model::SecurityConfigStats).
-    pub fn builder() -> crate::model::security_config_stats::Builder {
-        crate::model::security_config_stats::Builder::default()
-    }
-}
 
 /// <p>Statistics for an OpenSearch Serverless security policy.</p>
 #[non_exhaustive]
@@ -3044,6 +3065,13 @@ impl SecurityPolicyStats {
         self.network_policy_count
     }
 }
+impl SecurityPolicyStats {
+    /// Creates a new builder-style object to manufacture [`SecurityPolicyStats`](crate::model::SecurityPolicyStats).
+    pub fn builder() -> crate::model::security_policy_stats::Builder {
+        crate::model::security_policy_stats::Builder::default()
+    }
+}
+
 /// See [`SecurityPolicyStats`](crate::model::SecurityPolicyStats).
 pub mod security_policy_stats {
 
@@ -3084,12 +3112,6 @@ pub mod security_policy_stats {
         }
     }
 }
-impl SecurityPolicyStats {
-    /// Creates a new builder-style object to manufacture [`SecurityPolicyStats`](crate::model::SecurityPolicyStats).
-    pub fn builder() -> crate::model::security_policy_stats::Builder {
-        crate::model::security_policy_stats::Builder::default()
-    }
-}
 
 /// <p>Statistics for an OpenSearch Serverless access policy.</p>
 #[non_exhaustive]
@@ -3105,6 +3127,13 @@ impl AccessPolicyStats {
         self.data_policy_count
     }
 }
+impl AccessPolicyStats {
+    /// Creates a new builder-style object to manufacture [`AccessPolicyStats`](crate::model::AccessPolicyStats).
+    pub fn builder() -> crate::model::access_policy_stats::Builder {
+        crate::model::access_policy_stats::Builder::default()
+    }
+}
+
 /// See [`AccessPolicyStats`](crate::model::AccessPolicyStats).
 pub mod access_policy_stats {
 
@@ -3131,12 +3160,6 @@ pub mod access_policy_stats {
                 data_policy_count: self.data_policy_count,
             }
         }
-    }
-}
-impl AccessPolicyStats {
-    /// Creates a new builder-style object to manufacture [`AccessPolicyStats`](crate::model::AccessPolicyStats).
-    pub fn builder() -> crate::model::access_policy_stats::Builder {
-        crate::model::access_policy_stats::Builder::default()
     }
 }
 
@@ -3168,6 +3191,13 @@ impl VpcEndpointErrorDetail {
         self.error_code.as_deref()
     }
 }
+impl VpcEndpointErrorDetail {
+    /// Creates a new builder-style object to manufacture [`VpcEndpointErrorDetail`](crate::model::VpcEndpointErrorDetail).
+    pub fn builder() -> crate::model::vpc_endpoint_error_detail::Builder {
+        crate::model::vpc_endpoint_error_detail::Builder::default()
+    }
+}
+
 /// See [`VpcEndpointErrorDetail`](crate::model::VpcEndpointErrorDetail).
 pub mod vpc_endpoint_error_detail {
 
@@ -3221,12 +3251,6 @@ pub mod vpc_endpoint_error_detail {
                 error_code: self.error_code,
             }
         }
-    }
-}
-impl VpcEndpointErrorDetail {
-    /// Creates a new builder-style object to manufacture [`VpcEndpointErrorDetail`](crate::model::VpcEndpointErrorDetail).
-    pub fn builder() -> crate::model::vpc_endpoint_error_detail::Builder {
-        crate::model::vpc_endpoint_error_detail::Builder::default()
     }
 }
 
@@ -3286,6 +3310,13 @@ impl VpcEndpointDetail {
         self.created_date
     }
 }
+impl VpcEndpointDetail {
+    /// Creates a new builder-style object to manufacture [`VpcEndpointDetail`](crate::model::VpcEndpointDetail).
+    pub fn builder() -> crate::model::vpc_endpoint_detail::Builder {
+        crate::model::vpc_endpoint_detail::Builder::default()
+    }
+}
+
 /// See [`VpcEndpointDetail`](crate::model::VpcEndpointDetail).
 pub mod vpc_endpoint_detail {
 
@@ -3407,12 +3438,6 @@ pub mod vpc_endpoint_detail {
         }
     }
 }
-impl VpcEndpointDetail {
-    /// Creates a new builder-style object to manufacture [`VpcEndpointDetail`](crate::model::VpcEndpointDetail).
-    pub fn builder() -> crate::model::vpc_endpoint_detail::Builder {
-        crate::model::vpc_endpoint_detail::Builder::default()
-    }
-}
 
 /// <p>Error information for an OpenSearch Serverless request.</p>
 #[non_exhaustive]
@@ -3449,6 +3474,13 @@ impl CollectionErrorDetail {
         self.error_code.as_deref()
     }
 }
+impl CollectionErrorDetail {
+    /// Creates a new builder-style object to manufacture [`CollectionErrorDetail`](crate::model::CollectionErrorDetail).
+    pub fn builder() -> crate::model::collection_error_detail::Builder {
+        crate::model::collection_error_detail::Builder::default()
+    }
+}
+
 /// See [`CollectionErrorDetail`](crate::model::CollectionErrorDetail).
 pub mod collection_error_detail {
 
@@ -3514,12 +3546,6 @@ pub mod collection_error_detail {
                 error_code: self.error_code,
             }
         }
-    }
-}
-impl CollectionErrorDetail {
-    /// Creates a new builder-style object to manufacture [`CollectionErrorDetail`](crate::model::CollectionErrorDetail).
-    pub fn builder() -> crate::model::collection_error_detail::Builder {
-        crate::model::collection_error_detail::Builder::default()
     }
 }
 
@@ -3607,6 +3633,13 @@ impl CollectionDetail {
         self.dashboard_endpoint.as_deref()
     }
 }
+impl CollectionDetail {
+    /// Creates a new builder-style object to manufacture [`CollectionDetail`](crate::model::CollectionDetail).
+    pub fn builder() -> crate::model::collection_detail::Builder {
+        crate::model::collection_detail::Builder::default()
+    }
+}
+
 /// See [`CollectionDetail`](crate::model::CollectionDetail).
 pub mod collection_detail {
 
@@ -3765,11 +3798,5 @@ pub mod collection_detail {
                 dashboard_endpoint: self.dashboard_endpoint,
             }
         }
-    }
-}
-impl CollectionDetail {
-    /// Creates a new builder-style object to manufacture [`CollectionDetail`](crate::model::CollectionDetail).
-    pub fn builder() -> crate::model::collection_detail::Builder {
-        crate::model::collection_detail::Builder::default()
     }
 }

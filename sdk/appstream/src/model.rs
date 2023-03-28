@@ -110,6 +110,13 @@ impl Stack {
         self.streaming_experience_settings.as_ref()
     }
 }
+impl Stack {
+    /// Creates a new builder-style object to manufacture [`Stack`](crate::model::Stack).
+    pub fn builder() -> crate::model::stack::Builder {
+        crate::model::stack::Builder::default()
+    }
+}
+
 /// See [`Stack`](crate::model::Stack).
 pub mod stack {
 
@@ -358,12 +365,6 @@ pub mod stack {
         }
     }
 }
-impl Stack {
-    /// Creates a new builder-style object to manufacture [`Stack`](crate::model::Stack).
-    pub fn builder() -> crate::model::stack::Builder {
-        crate::model::stack::Builder::default()
-    }
-}
 
 /// <p>The streaming protocol you want your stack to prefer. This can be UDP or TCP. Currently, UDP is only supported in the Windows native client.</p>
 #[non_exhaustive]
@@ -379,6 +380,13 @@ impl StreamingExperienceSettings {
         self.preferred_protocol.as_ref()
     }
 }
+impl StreamingExperienceSettings {
+    /// Creates a new builder-style object to manufacture [`StreamingExperienceSettings`](crate::model::StreamingExperienceSettings).
+    pub fn builder() -> crate::model::streaming_experience_settings::Builder {
+        crate::model::streaming_experience_settings::Builder::default()
+    }
+}
+
 /// See [`StreamingExperienceSettings`](crate::model::StreamingExperienceSettings).
 pub mod streaming_experience_settings {
 
@@ -408,12 +416,6 @@ pub mod streaming_experience_settings {
                 preferred_protocol: self.preferred_protocol,
             }
         }
-    }
-}
-impl StreamingExperienceSettings {
-    /// Creates a new builder-style object to manufacture [`StreamingExperienceSettings`](crate::model::StreamingExperienceSettings).
-    pub fn builder() -> crate::model::streaming_experience_settings::Builder {
-        crate::model::streaming_experience_settings::Builder::default()
     }
 }
 
@@ -530,6 +532,13 @@ impl AccessEndpoint {
         self.vpce_id.as_deref()
     }
 }
+impl AccessEndpoint {
+    /// Creates a new builder-style object to manufacture [`AccessEndpoint`](crate::model::AccessEndpoint).
+    pub fn builder() -> crate::model::access_endpoint::Builder {
+        crate::model::access_endpoint::Builder::default()
+    }
+}
+
 /// See [`AccessEndpoint`](crate::model::AccessEndpoint).
 pub mod access_endpoint {
 
@@ -571,12 +580,6 @@ pub mod access_endpoint {
                 vpce_id: self.vpce_id,
             }
         }
-    }
-}
-impl AccessEndpoint {
-    /// Creates a new builder-style object to manufacture [`AccessEndpoint`](crate::model::AccessEndpoint).
-    pub fn builder() -> crate::model::access_endpoint::Builder {
-        crate::model::access_endpoint::Builder::default()
     }
 }
 
@@ -695,6 +698,13 @@ impl ApplicationSettingsResponse {
         self.s3_bucket_name.as_deref()
     }
 }
+impl ApplicationSettingsResponse {
+    /// Creates a new builder-style object to manufacture [`ApplicationSettingsResponse`](crate::model::ApplicationSettingsResponse).
+    pub fn builder() -> crate::model::application_settings_response::Builder {
+        crate::model::application_settings_response::Builder::default()
+    }
+}
+
 /// See [`ApplicationSettingsResponse`](crate::model::ApplicationSettingsResponse).
 pub mod application_settings_response {
 
@@ -753,12 +763,6 @@ pub mod application_settings_response {
         }
     }
 }
-impl ApplicationSettingsResponse {
-    /// Creates a new builder-style object to manufacture [`ApplicationSettingsResponse`](crate::model::ApplicationSettingsResponse).
-    pub fn builder() -> crate::model::application_settings_response::Builder {
-        crate::model::application_settings_response::Builder::default()
-    }
-}
 
 /// <p>Describes an action and whether the action is enabled or disabled for users during their streaming sessions.</p>
 #[non_exhaustive]
@@ -781,6 +785,13 @@ impl UserSetting {
         self.permission.as_ref()
     }
 }
+impl UserSetting {
+    /// Creates a new builder-style object to manufacture [`UserSetting`](crate::model::UserSetting).
+    pub fn builder() -> crate::model::user_setting::Builder {
+        crate::model::user_setting::Builder::default()
+    }
+}
+
 /// See [`UserSetting`](crate::model::UserSetting).
 pub mod user_setting {
 
@@ -822,12 +833,6 @@ pub mod user_setting {
                 permission: self.permission,
             }
         }
-    }
-}
-impl UserSetting {
-    /// Creates a new builder-style object to manufacture [`UserSetting`](crate::model::UserSetting).
-    pub fn builder() -> crate::model::user_setting::Builder {
-        crate::model::user_setting::Builder::default()
     }
 }
 
@@ -1065,6 +1070,13 @@ impl StackError {
         self.error_message.as_deref()
     }
 }
+impl StackError {
+    /// Creates a new builder-style object to manufacture [`StackError`](crate::model::StackError).
+    pub fn builder() -> crate::model::stack_error::Builder {
+        crate::model::stack_error::Builder::default()
+    }
+}
+
 /// See [`StackError`](crate::model::StackError).
 pub mod stack_error {
 
@@ -1109,12 +1121,6 @@ pub mod stack_error {
                 error_message: self.error_message,
             }
         }
-    }
-}
-impl StackError {
-    /// Creates a new builder-style object to manufacture [`StackError`](crate::model::StackError).
-    pub fn builder() -> crate::model::stack_error::Builder {
-        crate::model::stack_error::Builder::default()
     }
 }
 
@@ -1236,6 +1242,13 @@ impl StorageConnector {
         self.domains.as_deref()
     }
 }
+impl StorageConnector {
+    /// Creates a new builder-style object to manufacture [`StorageConnector`](crate::model::StorageConnector).
+    pub fn builder() -> crate::model::storage_connector::Builder {
+        crate::model::storage_connector::Builder::default()
+    }
+}
+
 /// See [`StorageConnector`](crate::model::StorageConnector).
 pub mod storage_connector {
 
@@ -1301,12 +1314,6 @@ pub mod storage_connector {
                 domains: self.domains,
             }
         }
-    }
-}
-impl StorageConnector {
-    /// Creates a new builder-style object to manufacture [`StorageConnector`](crate::model::StorageConnector).
-    pub fn builder() -> crate::model::storage_connector::Builder {
-        crate::model::storage_connector::Builder::default()
     }
 }
 
@@ -1428,6 +1435,13 @@ impl ApplicationSettings {
         self.settings_group.as_deref()
     }
 }
+impl ApplicationSettings {
+    /// Creates a new builder-style object to manufacture [`ApplicationSettings`](crate::model::ApplicationSettings).
+    pub fn builder() -> crate::model::application_settings::Builder {
+        crate::model::application_settings::Builder::default()
+    }
+}
+
 /// See [`ApplicationSettings`](crate::model::ApplicationSettings).
 pub mod application_settings {
 
@@ -1469,12 +1483,6 @@ pub mod application_settings {
                 settings_group: self.settings_group,
             }
         }
-    }
-}
-impl ApplicationSettings {
-    /// Creates a new builder-style object to manufacture [`ApplicationSettings`](crate::model::ApplicationSettings).
-    pub fn builder() -> crate::model::application_settings::Builder {
-        crate::model::application_settings::Builder::default()
     }
 }
 
@@ -1652,6 +1660,13 @@ impl ImagePermissions {
         self.allow_image_builder
     }
 }
+impl ImagePermissions {
+    /// Creates a new builder-style object to manufacture [`ImagePermissions`](crate::model::ImagePermissions).
+    pub fn builder() -> crate::model::image_permissions::Builder {
+        crate::model::image_permissions::Builder::default()
+    }
+}
+
 /// See [`ImagePermissions`](crate::model::ImagePermissions).
 pub mod image_permissions {
 
@@ -1690,12 +1705,6 @@ pub mod image_permissions {
                 allow_image_builder: self.allow_image_builder,
             }
         }
-    }
-}
-impl ImagePermissions {
-    /// Creates a new builder-style object to manufacture [`ImagePermissions`](crate::model::ImagePermissions).
-    pub fn builder() -> crate::model::image_permissions::Builder {
-        crate::model::image_permissions::Builder::default()
     }
 }
 
@@ -1988,6 +1997,13 @@ impl Fleet {
         self.session_script_s3_location.as_ref()
     }
 }
+impl Fleet {
+    /// Creates a new builder-style object to manufacture [`Fleet`](crate::model::Fleet).
+    pub fn builder() -> crate::model::fleet::Builder {
+        crate::model::fleet::Builder::default()
+    }
+}
+
 /// See [`Fleet`](crate::model::Fleet).
 pub mod fleet {
 
@@ -2463,12 +2479,6 @@ pub mod fleet {
         }
     }
 }
-impl Fleet {
-    /// Creates a new builder-style object to manufacture [`Fleet`](crate::model::Fleet).
-    pub fn builder() -> crate::model::fleet::Builder {
-        crate::model::fleet::Builder::default()
-    }
-}
 
 /// <p>Describes the S3 location.</p>
 #[non_exhaustive]
@@ -2491,6 +2501,13 @@ impl S3Location {
         self.s3_key.as_deref()
     }
 }
+impl S3Location {
+    /// Creates a new builder-style object to manufacture [`S3Location`](crate::model::S3Location).
+    pub fn builder() -> crate::model::s3_location::Builder {
+        crate::model::s3_location::Builder::default()
+    }
+}
+
 /// See [`S3Location`](crate::model::S3Location).
 pub mod s3_location {
 
@@ -2529,12 +2546,6 @@ pub mod s3_location {
                 s3_key: self.s3_key,
             }
         }
-    }
-}
-impl S3Location {
-    /// Creates a new builder-style object to manufacture [`S3Location`](crate::model::S3Location).
-    pub fn builder() -> crate::model::s3_location::Builder {
-        crate::model::s3_location::Builder::default()
     }
 }
 
@@ -2754,6 +2765,13 @@ impl DomainJoinInfo {
         self.organizational_unit_distinguished_name.as_deref()
     }
 }
+impl DomainJoinInfo {
+    /// Creates a new builder-style object to manufacture [`DomainJoinInfo`](crate::model::DomainJoinInfo).
+    pub fn builder() -> crate::model::domain_join_info::Builder {
+        crate::model::domain_join_info::Builder::default()
+    }
+}
+
 /// See [`DomainJoinInfo`](crate::model::DomainJoinInfo).
 pub mod domain_join_info {
 
@@ -2803,12 +2821,6 @@ pub mod domain_join_info {
         }
     }
 }
-impl DomainJoinInfo {
-    /// Creates a new builder-style object to manufacture [`DomainJoinInfo`](crate::model::DomainJoinInfo).
-    pub fn builder() -> crate::model::domain_join_info::Builder {
-        crate::model::domain_join_info::Builder::default()
-    }
-}
 
 /// <p>Describes a fleet error.</p>
 #[non_exhaustive]
@@ -2831,6 +2843,13 @@ impl FleetError {
         self.error_message.as_deref()
     }
 }
+impl FleetError {
+    /// Creates a new builder-style object to manufacture [`FleetError`](crate::model::FleetError).
+    pub fn builder() -> crate::model::fleet_error::Builder {
+        crate::model::fleet_error::Builder::default()
+    }
+}
+
 /// See [`FleetError`](crate::model::FleetError).
 pub mod fleet_error {
 
@@ -2875,12 +2894,6 @@ pub mod fleet_error {
                 error_message: self.error_message,
             }
         }
-    }
-}
-impl FleetError {
-    /// Creates a new builder-style object to manufacture [`FleetError`](crate::model::FleetError).
-    pub fn builder() -> crate::model::fleet_error::Builder {
-        crate::model::fleet_error::Builder::default()
     }
 }
 
@@ -3210,6 +3223,13 @@ impl VpcConfig {
         self.security_group_ids.as_deref()
     }
 }
+impl VpcConfig {
+    /// Creates a new builder-style object to manufacture [`VpcConfig`](crate::model::VpcConfig).
+    pub fn builder() -> crate::model::vpc_config::Builder {
+        crate::model::vpc_config::Builder::default()
+    }
+}
+
 /// See [`VpcConfig`](crate::model::VpcConfig).
 pub mod vpc_config {
 
@@ -3266,12 +3286,6 @@ pub mod vpc_config {
                 security_group_ids: self.security_group_ids,
             }
         }
-    }
-}
-impl VpcConfig {
-    /// Creates a new builder-style object to manufacture [`VpcConfig`](crate::model::VpcConfig).
-    pub fn builder() -> crate::model::vpc_config::Builder {
-        crate::model::vpc_config::Builder::default()
     }
 }
 
@@ -3410,6 +3424,13 @@ impl ComputeCapacityStatus {
         self.available
     }
 }
+impl ComputeCapacityStatus {
+    /// Creates a new builder-style object to manufacture [`ComputeCapacityStatus`](crate::model::ComputeCapacityStatus).
+    pub fn builder() -> crate::model::compute_capacity_status::Builder {
+        crate::model::compute_capacity_status::Builder::default()
+    }
+}
+
 /// See [`ComputeCapacityStatus`](crate::model::ComputeCapacityStatus).
 pub mod compute_capacity_status {
 
@@ -3472,12 +3493,6 @@ pub mod compute_capacity_status {
                 available: self.available,
             }
         }
-    }
-}
-impl ComputeCapacityStatus {
-    /// Creates a new builder-style object to manufacture [`ComputeCapacityStatus`](crate::model::ComputeCapacityStatus).
-    pub fn builder() -> crate::model::compute_capacity_status::Builder {
-        crate::model::compute_capacity_status::Builder::default()
     }
 }
 
@@ -3711,6 +3726,13 @@ impl ComputeCapacity {
         self.desired_instances
     }
 }
+impl ComputeCapacity {
+    /// Creates a new builder-style object to manufacture [`ComputeCapacity`](crate::model::ComputeCapacity).
+    pub fn builder() -> crate::model::compute_capacity::Builder {
+        crate::model::compute_capacity::Builder::default()
+    }
+}
+
 /// See [`ComputeCapacity`](crate::model::ComputeCapacity).
 pub mod compute_capacity {
 
@@ -3737,12 +3759,6 @@ pub mod compute_capacity {
                 desired_instances: self.desired_instances,
             }
         }
-    }
-}
-impl ComputeCapacity {
-    /// Creates a new builder-style object to manufacture [`ComputeCapacity`](crate::model::ComputeCapacity).
-    pub fn builder() -> crate::model::compute_capacity::Builder {
-        crate::model::compute_capacity::Builder::default()
     }
 }
 
@@ -3802,6 +3818,13 @@ impl Entitlement {
         self.last_modified_time.as_ref()
     }
 }
+impl Entitlement {
+    /// Creates a new builder-style object to manufacture [`Entitlement`](crate::model::Entitlement).
+    pub fn builder() -> crate::model::entitlement::Builder {
+        crate::model::entitlement::Builder::default()
+    }
+}
+
 /// See [`Entitlement`](crate::model::Entitlement).
 pub mod entitlement {
 
@@ -3921,12 +3944,6 @@ pub mod entitlement {
         }
     }
 }
-impl Entitlement {
-    /// Creates a new builder-style object to manufacture [`Entitlement`](crate::model::Entitlement).
-    pub fn builder() -> crate::model::entitlement::Builder {
-        crate::model::entitlement::Builder::default()
-    }
-}
 
 /// <p>An attribute associated with an entitlement. Application entitlements work by matching a supported SAML 2.0 attribute name to a value when a user identity federates to an Amazon AppStream 2.0 SAML application.</p>
 #[non_exhaustive]
@@ -3971,6 +3988,13 @@ impl EntitlementAttribute {
         self.value.as_deref()
     }
 }
+impl EntitlementAttribute {
+    /// Creates a new builder-style object to manufacture [`EntitlementAttribute`](crate::model::EntitlementAttribute).
+    pub fn builder() -> crate::model::entitlement_attribute::Builder {
+        crate::model::entitlement_attribute::Builder::default()
+    }
+}
+
 /// See [`EntitlementAttribute`](crate::model::EntitlementAttribute).
 pub mod entitlement_attribute {
 
@@ -4031,12 +4055,6 @@ pub mod entitlement_attribute {
                 value: self.value,
             }
         }
-    }
-}
-impl EntitlementAttribute {
-    /// Creates a new builder-style object to manufacture [`EntitlementAttribute`](crate::model::EntitlementAttribute).
-    pub fn builder() -> crate::model::entitlement_attribute::Builder {
-        crate::model::entitlement_attribute::Builder::default()
     }
 }
 
@@ -4180,6 +4198,13 @@ impl DirectoryConfig {
         self.certificate_based_auth_properties.as_ref()
     }
 }
+impl DirectoryConfig {
+    /// Creates a new builder-style object to manufacture [`DirectoryConfig`](crate::model::DirectoryConfig).
+    pub fn builder() -> crate::model::directory_config::Builder {
+        crate::model::directory_config::Builder::default()
+    }
+}
+
 /// See [`DirectoryConfig`](crate::model::DirectoryConfig).
 pub mod directory_config {
 
@@ -4292,12 +4317,6 @@ pub mod directory_config {
         }
     }
 }
-impl DirectoryConfig {
-    /// Creates a new builder-style object to manufacture [`DirectoryConfig`](crate::model::DirectoryConfig).
-    pub fn builder() -> crate::model::directory_config::Builder {
-        crate::model::directory_config::Builder::default()
-    }
-}
 
 /// <p>The certificate-based authentication properties used to authenticate SAML 2.0 Identity Provider (IdP) user identities to Active Directory domain-joined streaming instances. Fallback is turned on by default when certificate-based authentication is <b>Enabled</b> . Fallback allows users to log in using their AD domain password if certificate-based authentication is unsuccessful, or to unlock a desktop lock screen. <b>Enabled_no_directory_login_fallback</b> enables certificate-based authentication, but does not allow users to log in using their AD domain password. Users will be disconnected to re-authenticate using certificates.</p>
 #[non_exhaustive]
@@ -4320,6 +4339,13 @@ impl CertificateBasedAuthProperties {
         self.certificate_authority_arn.as_deref()
     }
 }
+impl CertificateBasedAuthProperties {
+    /// Creates a new builder-style object to manufacture [`CertificateBasedAuthProperties`](crate::model::CertificateBasedAuthProperties).
+    pub fn builder() -> crate::model::certificate_based_auth_properties::Builder {
+        crate::model::certificate_based_auth_properties::Builder::default()
+    }
+}
+
 /// See [`CertificateBasedAuthProperties`](crate::model::CertificateBasedAuthProperties).
 pub mod certificate_based_auth_properties {
 
@@ -4364,12 +4390,6 @@ pub mod certificate_based_auth_properties {
                 certificate_authority_arn: self.certificate_authority_arn,
             }
         }
-    }
-}
-impl CertificateBasedAuthProperties {
-    /// Creates a new builder-style object to manufacture [`CertificateBasedAuthProperties`](crate::model::CertificateBasedAuthProperties).
-    pub fn builder() -> crate::model::certificate_based_auth_properties::Builder {
-        crate::model::certificate_based_auth_properties::Builder::default()
     }
 }
 
@@ -4503,6 +4523,13 @@ impl std::fmt::Debug for ServiceAccountCredentials {
         formatter.finish()
     }
 }
+impl ServiceAccountCredentials {
+    /// Creates a new builder-style object to manufacture [`ServiceAccountCredentials`](crate::model::ServiceAccountCredentials).
+    pub fn builder() -> crate::model::service_account_credentials::Builder {
+        crate::model::service_account_credentials::Builder::default()
+    }
+}
+
 /// See [`ServiceAccountCredentials`](crate::model::ServiceAccountCredentials).
 pub mod service_account_credentials {
 
@@ -4552,12 +4579,6 @@ pub mod service_account_credentials {
             formatter.field("account_password", &"*** Sensitive Data Redacted ***");
             formatter.finish()
         }
-    }
-}
-impl ServiceAccountCredentials {
-    /// Creates a new builder-style object to manufacture [`ServiceAccountCredentials`](crate::model::ServiceAccountCredentials).
-    pub fn builder() -> crate::model::service_account_credentials::Builder {
-        crate::model::service_account_credentials::Builder::default()
     }
 }
 
@@ -4677,6 +4698,13 @@ impl Application {
         self.created_time.as_ref()
     }
 }
+impl Application {
+    /// Creates a new builder-style object to manufacture [`Application`](crate::model::Application).
+    pub fn builder() -> crate::model::application::Builder {
+        crate::model::application::Builder::default()
+    }
+}
+
 /// See [`Application`](crate::model::Application).
 pub mod application {
 
@@ -4921,12 +4949,6 @@ pub mod application {
                 created_time: self.created_time,
             }
         }
-    }
-}
-impl Application {
-    /// Creates a new builder-style object to manufacture [`Application`](crate::model::Application).
-    pub fn builder() -> crate::model::application::Builder {
-        crate::model::application::Builder::default()
     }
 }
 
@@ -5231,6 +5253,13 @@ impl ImageBuilder {
         self.access_endpoints.as_deref()
     }
 }
+impl ImageBuilder {
+    /// Creates a new builder-style object to manufacture [`ImageBuilder`](crate::model::ImageBuilder).
+    pub fn builder() -> crate::model::image_builder::Builder {
+        crate::model::image_builder::Builder::default()
+    }
+}
+
 /// See [`ImageBuilder`](crate::model::ImageBuilder).
 pub mod image_builder {
 
@@ -5593,12 +5622,6 @@ pub mod image_builder {
         }
     }
 }
-impl ImageBuilder {
-    /// Creates a new builder-style object to manufacture [`ImageBuilder`](crate::model::ImageBuilder).
-    pub fn builder() -> crate::model::image_builder::Builder {
-        crate::model::image_builder::Builder::default()
-    }
-}
 
 /// <p>Describes a resource error.</p>
 #[non_exhaustive]
@@ -5628,6 +5651,13 @@ impl ResourceError {
         self.error_timestamp.as_ref()
     }
 }
+impl ResourceError {
+    /// Creates a new builder-style object to manufacture [`ResourceError`](crate::model::ResourceError).
+    pub fn builder() -> crate::model::resource_error::Builder {
+        crate::model::resource_error::Builder::default()
+    }
+}
+
 /// See [`ResourceError`](crate::model::ResourceError).
 pub mod resource_error {
 
@@ -5689,12 +5719,6 @@ pub mod resource_error {
         }
     }
 }
-impl ResourceError {
-    /// Creates a new builder-style object to manufacture [`ResourceError`](crate::model::ResourceError).
-    pub fn builder() -> crate::model::resource_error::Builder {
-        crate::model::resource_error::Builder::default()
-    }
-}
 
 /// <p>Describes the network details of the fleet or image builder instance.</p>
 #[non_exhaustive]
@@ -5717,6 +5741,13 @@ impl NetworkAccessConfiguration {
         self.eni_id.as_deref()
     }
 }
+impl NetworkAccessConfiguration {
+    /// Creates a new builder-style object to manufacture [`NetworkAccessConfiguration`](crate::model::NetworkAccessConfiguration).
+    pub fn builder() -> crate::model::network_access_configuration::Builder {
+        crate::model::network_access_configuration::Builder::default()
+    }
+}
+
 /// See [`NetworkAccessConfiguration`](crate::model::NetworkAccessConfiguration).
 pub mod network_access_configuration {
 
@@ -5760,12 +5791,6 @@ pub mod network_access_configuration {
         }
     }
 }
-impl NetworkAccessConfiguration {
-    /// Creates a new builder-style object to manufacture [`NetworkAccessConfiguration`](crate::model::NetworkAccessConfiguration).
-    pub fn builder() -> crate::model::network_access_configuration::Builder {
-        crate::model::network_access_configuration::Builder::default()
-    }
-}
 
 /// <p>Describes the reason why the last image builder state change occurred.</p>
 #[non_exhaustive]
@@ -5788,6 +5813,13 @@ impl ImageBuilderStateChangeReason {
         self.message.as_deref()
     }
 }
+impl ImageBuilderStateChangeReason {
+    /// Creates a new builder-style object to manufacture [`ImageBuilderStateChangeReason`](crate::model::ImageBuilderStateChangeReason).
+    pub fn builder() -> crate::model::image_builder_state_change_reason::Builder {
+        crate::model::image_builder_state_change_reason::Builder::default()
+    }
+}
+
 /// See [`ImageBuilderStateChangeReason`](crate::model::ImageBuilderStateChangeReason).
 pub mod image_builder_state_change_reason {
 
@@ -5829,12 +5861,6 @@ pub mod image_builder_state_change_reason {
                 message: self.message,
             }
         }
-    }
-}
-impl ImageBuilderStateChangeReason {
-    /// Creates a new builder-style object to manufacture [`ImageBuilderStateChangeReason`](crate::model::ImageBuilderStateChangeReason).
-    pub fn builder() -> crate::model::image_builder_state_change_reason::Builder {
-        crate::model::image_builder_state_change_reason::Builder::default()
     }
 }
 
@@ -6093,6 +6119,13 @@ impl EntitledApplication {
         self.application_identifier.as_deref()
     }
 }
+impl EntitledApplication {
+    /// Creates a new builder-style object to manufacture [`EntitledApplication`](crate::model::EntitledApplication).
+    pub fn builder() -> crate::model::entitled_application::Builder {
+        crate::model::entitled_application::Builder::default()
+    }
+}
+
 /// See [`EntitledApplication`](crate::model::EntitledApplication).
 pub mod entitled_application {
 
@@ -6122,12 +6155,6 @@ pub mod entitled_application {
                 application_identifier: self.application_identifier,
             }
         }
-    }
-}
-impl EntitledApplication {
-    /// Creates a new builder-style object to manufacture [`EntitledApplication`](crate::model::EntitledApplication).
-    pub fn builder() -> crate::model::entitled_application::Builder {
-        crate::model::entitled_application::Builder::default()
     }
 }
 
@@ -6282,6 +6309,13 @@ impl std::fmt::Debug for UserStackAssociation {
         formatter.finish()
     }
 }
+impl UserStackAssociation {
+    /// Creates a new builder-style object to manufacture [`UserStackAssociation`](crate::model::UserStackAssociation).
+    pub fn builder() -> crate::model::user_stack_association::Builder {
+        crate::model::user_stack_association::Builder::default()
+    }
+}
+
 /// See [`UserStackAssociation`](crate::model::UserStackAssociation).
 pub mod user_stack_association {
 
@@ -6361,12 +6395,6 @@ pub mod user_stack_association {
             formatter.field("send_email_notification", &self.send_email_notification);
             formatter.finish()
         }
-    }
-}
-impl UserStackAssociation {
-    /// Creates a new builder-style object to manufacture [`UserStackAssociation`](crate::model::UserStackAssociation).
-    pub fn builder() -> crate::model::user_stack_association::Builder {
-        crate::model::user_stack_association::Builder::default()
     }
 }
 
@@ -6465,6 +6493,13 @@ impl std::fmt::Debug for User {
         formatter.finish()
     }
 }
+impl User {
+    /// Creates a new builder-style object to manufacture [`User`](crate::model::User).
+    pub fn builder() -> crate::model::user::Builder {
+        crate::model::user::Builder::default()
+    }
+}
+
 /// See [`User`](crate::model::User).
 pub mod user {
 
@@ -6615,12 +6650,6 @@ pub mod user {
         }
     }
 }
-impl User {
-    /// Creates a new builder-style object to manufacture [`User`](crate::model::User).
-    pub fn builder() -> crate::model::user::Builder {
-        crate::model::user::Builder::default()
-    }
-}
 
 /// <p>Describes information about the usage report subscription.</p>
 #[non_exhaustive]
@@ -6662,6 +6691,13 @@ impl UsageReportSubscription {
         self.subscription_errors.as_deref()
     }
 }
+impl UsageReportSubscription {
+    /// Creates a new builder-style object to manufacture [`UsageReportSubscription`](crate::model::UsageReportSubscription).
+    pub fn builder() -> crate::model::usage_report_subscription::Builder {
+        crate::model::usage_report_subscription::Builder::default()
+    }
+}
+
 /// See [`UsageReportSubscription`](crate::model::UsageReportSubscription).
 pub mod usage_report_subscription {
 
@@ -6752,12 +6788,6 @@ pub mod usage_report_subscription {
         }
     }
 }
-impl UsageReportSubscription {
-    /// Creates a new builder-style object to manufacture [`UsageReportSubscription`](crate::model::UsageReportSubscription).
-    pub fn builder() -> crate::model::usage_report_subscription::Builder {
-        crate::model::usage_report_subscription::Builder::default()
-    }
-}
 
 /// <p>Describes the error that is returned when a usage report can't be generated.</p>
 #[non_exhaustive]
@@ -6780,6 +6810,13 @@ impl LastReportGenerationExecutionError {
         self.error_message.as_deref()
     }
 }
+impl LastReportGenerationExecutionError {
+    /// Creates a new builder-style object to manufacture [`LastReportGenerationExecutionError`](crate::model::LastReportGenerationExecutionError).
+    pub fn builder() -> crate::model::last_report_generation_execution_error::Builder {
+        crate::model::last_report_generation_execution_error::Builder::default()
+    }
+}
+
 /// See [`LastReportGenerationExecutionError`](crate::model::LastReportGenerationExecutionError).
 pub mod last_report_generation_execution_error {
 
@@ -6824,12 +6861,6 @@ pub mod last_report_generation_execution_error {
                 error_message: self.error_message,
             }
         }
-    }
-}
-impl LastReportGenerationExecutionError {
-    /// Creates a new builder-style object to manufacture [`LastReportGenerationExecutionError`](crate::model::LastReportGenerationExecutionError).
-    pub fn builder() -> crate::model::last_report_generation_execution_error::Builder {
-        crate::model::last_report_generation_execution_error::Builder::default()
     }
 }
 
@@ -7100,6 +7131,13 @@ impl Session {
         self.network_access_configuration.as_ref()
     }
 }
+impl Session {
+    /// Creates a new builder-style object to manufacture [`Session`](crate::model::Session).
+    pub fn builder() -> crate::model::session::Builder {
+        crate::model::session::Builder::default()
+    }
+}
+
 /// See [`Session`](crate::model::Session).
 pub mod session {
 
@@ -7253,12 +7291,6 @@ pub mod session {
                 network_access_configuration: self.network_access_configuration,
             }
         }
-    }
-}
-impl Session {
-    /// Creates a new builder-style object to manufacture [`Session`](crate::model::Session).
-    pub fn builder() -> crate::model::session::Builder {
-        crate::model::session::Builder::default()
     }
 }
 
@@ -7579,6 +7611,13 @@ impl Image {
         self.image_errors.as_deref()
     }
 }
+impl Image {
+    /// Creates a new builder-style object to manufacture [`Image`](crate::model::Image).
+    pub fn builder() -> crate::model::image::Builder {
+        crate::model::image::Builder::default()
+    }
+}
+
 /// See [`Image`](crate::model::Image).
 pub mod image {
 
@@ -7847,12 +7886,6 @@ pub mod image {
         }
     }
 }
-impl Image {
-    /// Creates a new builder-style object to manufacture [`Image`](crate::model::Image).
-    pub fn builder() -> crate::model::image::Builder {
-        crate::model::image::Builder::default()
-    }
-}
 
 /// <p>Describes the reason why the last image state change occurred.</p>
 #[non_exhaustive]
@@ -7875,6 +7908,13 @@ impl ImageStateChangeReason {
         self.message.as_deref()
     }
 }
+impl ImageStateChangeReason {
+    /// Creates a new builder-style object to manufacture [`ImageStateChangeReason`](crate::model::ImageStateChangeReason).
+    pub fn builder() -> crate::model::image_state_change_reason::Builder {
+        crate::model::image_state_change_reason::Builder::default()
+    }
+}
+
 /// See [`ImageStateChangeReason`](crate::model::ImageStateChangeReason).
 pub mod image_state_change_reason {
 
@@ -7916,12 +7956,6 @@ pub mod image_state_change_reason {
                 message: self.message,
             }
         }
-    }
-}
-impl ImageStateChangeReason {
-    /// Creates a new builder-style object to manufacture [`ImageStateChangeReason`](crate::model::ImageStateChangeReason).
-    pub fn builder() -> crate::model::image_state_change_reason::Builder {
-        crate::model::image_state_change_reason::Builder::default()
     }
 }
 
@@ -8265,6 +8299,13 @@ impl SharedImagePermissions {
         self.image_permissions.as_ref()
     }
 }
+impl SharedImagePermissions {
+    /// Creates a new builder-style object to manufacture [`SharedImagePermissions`](crate::model::SharedImagePermissions).
+    pub fn builder() -> crate::model::shared_image_permissions::Builder {
+        crate::model::shared_image_permissions::Builder::default()
+    }
+}
+
 /// See [`SharedImagePermissions`](crate::model::SharedImagePermissions).
 pub mod shared_image_permissions {
 
@@ -8311,12 +8352,6 @@ pub mod shared_image_permissions {
         }
     }
 }
-impl SharedImagePermissions {
-    /// Creates a new builder-style object to manufacture [`SharedImagePermissions`](crate::model::SharedImagePermissions).
-    pub fn builder() -> crate::model::shared_image_permissions::Builder {
-        crate::model::shared_image_permissions::Builder::default()
-    }
-}
 
 /// <p>Describes the application fleet association.</p>
 #[non_exhaustive]
@@ -8339,6 +8374,13 @@ impl ApplicationFleetAssociation {
         self.application_arn.as_deref()
     }
 }
+impl ApplicationFleetAssociation {
+    /// Creates a new builder-style object to manufacture [`ApplicationFleetAssociation`](crate::model::ApplicationFleetAssociation).
+    pub fn builder() -> crate::model::application_fleet_association::Builder {
+        crate::model::application_fleet_association::Builder::default()
+    }
+}
+
 /// See [`ApplicationFleetAssociation`](crate::model::ApplicationFleetAssociation).
 pub mod application_fleet_association {
 
@@ -8380,12 +8422,6 @@ pub mod application_fleet_association {
                 application_arn: self.application_arn,
             }
         }
-    }
-}
-impl ApplicationFleetAssociation {
-    /// Creates a new builder-style object to manufacture [`ApplicationFleetAssociation`](crate::model::ApplicationFleetAssociation).
-    pub fn builder() -> crate::model::application_fleet_association::Builder {
-        crate::model::application_fleet_association::Builder::default()
     }
 }
 
@@ -8447,6 +8483,13 @@ impl AppBlock {
         self.created_time.as_ref()
     }
 }
+impl AppBlock {
+    /// Creates a new builder-style object to manufacture [`AppBlock`](crate::model::AppBlock).
+    pub fn builder() -> crate::model::app_block::Builder {
+        crate::model::app_block::Builder::default()
+    }
+}
+
 /// See [`AppBlock`](crate::model::AppBlock).
 pub mod app_block {
 
@@ -8556,12 +8599,6 @@ pub mod app_block {
         }
     }
 }
-impl AppBlock {
-    /// Creates a new builder-style object to manufacture [`AppBlock`](crate::model::AppBlock).
-    pub fn builder() -> crate::model::app_block::Builder {
-        crate::model::app_block::Builder::default()
-    }
-}
 
 /// <p>Describes the details of the script.</p>
 #[non_exhaustive]
@@ -8598,6 +8635,13 @@ impl ScriptDetails {
         self.timeout_in_seconds
     }
 }
+impl ScriptDetails {
+    /// Creates a new builder-style object to manufacture [`ScriptDetails`](crate::model::ScriptDetails).
+    pub fn builder() -> crate::model::script_details::Builder {
+        crate::model::script_details::Builder::default()
+    }
+}
+
 /// See [`ScriptDetails`](crate::model::ScriptDetails).
 pub mod script_details {
 
@@ -8669,12 +8713,6 @@ pub mod script_details {
                 timeout_in_seconds: self.timeout_in_seconds,
             }
         }
-    }
-}
-impl ScriptDetails {
-    /// Creates a new builder-style object to manufacture [`ScriptDetails`](crate::model::ScriptDetails).
-    pub fn builder() -> crate::model::script_details::Builder {
-        crate::model::script_details::Builder::default()
     }
 }
 
@@ -8798,6 +8836,13 @@ impl UserStackAssociationError {
         self.error_message.as_deref()
     }
 }
+impl UserStackAssociationError {
+    /// Creates a new builder-style object to manufacture [`UserStackAssociationError`](crate::model::UserStackAssociationError).
+    pub fn builder() -> crate::model::user_stack_association_error::Builder {
+        crate::model::user_stack_association_error::Builder::default()
+    }
+}
+
 /// See [`UserStackAssociationError`](crate::model::UserStackAssociationError).
 pub mod user_stack_association_error {
 
@@ -8857,12 +8902,6 @@ pub mod user_stack_association_error {
                 error_message: self.error_message,
             }
         }
-    }
-}
-impl UserStackAssociationError {
-    /// Creates a new builder-style object to manufacture [`UserStackAssociationError`](crate::model::UserStackAssociationError).
-    pub fn builder() -> crate::model::user_stack_association_error::Builder {
-        crate::model::user_stack_association_error::Builder::default()
     }
 }
 

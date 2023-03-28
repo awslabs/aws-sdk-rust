@@ -270,11 +270,41 @@ pub struct TrustedSignerDoesNotExist {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl TrustedSignerDoesNotExist {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for TrustedSignerDoesNotExist {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "TrustedSignerDoesNotExist")?;
+        if let Some(inner_1) = &self.message {
+            {
+                write!(f, ": {}", inner_1)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for TrustedSignerDoesNotExist {}
+impl aws_http::request_id::RequestId for crate::error::TrustedSignerDoesNotExist {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for TrustedSignerDoesNotExist {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl TrustedSignerDoesNotExist {
     /// Creates a new builder-style object to manufacture [`TrustedSignerDoesNotExist`](crate::error::TrustedSignerDoesNotExist).
     pub fn builder() -> crate::error::trusted_signer_does_not_exist::Builder {
         crate::error::trusted_signer_does_not_exist::Builder::default()
     }
 }
+
 /// See [`TrustedSignerDoesNotExist`](crate::error::TrustedSignerDoesNotExist).
 pub mod trusted_signer_does_not_exist {
 
@@ -319,35 +349,6 @@ pub mod trusted_signer_does_not_exist {
         }
     }
 }
-impl TrustedSignerDoesNotExist {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for TrustedSignerDoesNotExist {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "TrustedSignerDoesNotExist")?;
-        if let Some(inner_1) = &self.message {
-            {
-                write!(f, ": {}", inner_1)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for TrustedSignerDoesNotExist {}
-impl aws_http::request_id::RequestId for crate::error::TrustedSignerDoesNotExist {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for TrustedSignerDoesNotExist {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>Your request contains more trusted signers than are allowed per distribution.</p>
 #[non_exhaustive]
@@ -359,11 +360,41 @@ pub struct TooManyTrustedSigners {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl TooManyTrustedSigners {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for TooManyTrustedSigners {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "TooManyTrustedSigners")?;
+        if let Some(inner_2) = &self.message {
+            {
+                write!(f, ": {}", inner_2)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for TooManyTrustedSigners {}
+impl aws_http::request_id::RequestId for crate::error::TooManyTrustedSigners {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for TooManyTrustedSigners {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl TooManyTrustedSigners {
     /// Creates a new builder-style object to manufacture [`TooManyTrustedSigners`](crate::error::TooManyTrustedSigners).
     pub fn builder() -> crate::error::too_many_trusted_signers::Builder {
         crate::error::too_many_trusted_signers::Builder::default()
     }
 }
+
 /// See [`TooManyTrustedSigners`](crate::error::TooManyTrustedSigners).
 pub mod too_many_trusted_signers {
 
@@ -408,35 +439,6 @@ pub mod too_many_trusted_signers {
         }
     }
 }
-impl TooManyTrustedSigners {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for TooManyTrustedSigners {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "TooManyTrustedSigners")?;
-        if let Some(inner_2) = &self.message {
-            {
-                write!(f, ": {}", inner_2)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for TooManyTrustedSigners {}
-impl aws_http::request_id::RequestId for crate::error::TooManyTrustedSigners {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for TooManyTrustedSigners {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>Your request contains more CNAMEs than are allowed per distribution.</p>
 #[non_exhaustive]
@@ -448,11 +450,46 @@ pub struct TooManyStreamingDistributionCnamEs {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl TooManyStreamingDistributionCnamEs {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for TooManyStreamingDistributionCnamEs {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(
+            f,
+            "TooManyStreamingDistributionCnamEs [TooManyStreamingDistributionCNAMEs]"
+        )?;
+        if let Some(inner_3) = &self.message {
+            {
+                write!(f, ": {}", inner_3)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for TooManyStreamingDistributionCnamEs {}
+impl aws_http::request_id::RequestId for crate::error::TooManyStreamingDistributionCnamEs {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata
+    for TooManyStreamingDistributionCnamEs
+{
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl TooManyStreamingDistributionCnamEs {
     /// Creates a new builder-style object to manufacture [`TooManyStreamingDistributionCnamEs`](crate::error::TooManyStreamingDistributionCnamEs).
     pub fn builder() -> crate::error::too_many_streaming_distribution_cnam_es::Builder {
         crate::error::too_many_streaming_distribution_cnam_es::Builder::default()
     }
 }
+
 /// See [`TooManyStreamingDistributionCnamEs`](crate::error::TooManyStreamingDistributionCnamEs).
 pub mod too_many_streaming_distribution_cnam_es {
 
@@ -497,40 +534,6 @@ pub mod too_many_streaming_distribution_cnam_es {
         }
     }
 }
-impl TooManyStreamingDistributionCnamEs {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for TooManyStreamingDistributionCnamEs {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(
-            f,
-            "TooManyStreamingDistributionCnamEs [TooManyStreamingDistributionCNAMEs]"
-        )?;
-        if let Some(inner_3) = &self.message {
-            {
-                write!(f, ": {}", inner_3)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for TooManyStreamingDistributionCnamEs {}
-impl aws_http::request_id::RequestId for crate::error::TooManyStreamingDistributionCnamEs {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for TooManyStreamingDistributionCnamEs
-{
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>The precondition in one or more of the request fields evaluated to <code>false</code>.</p>
 #[non_exhaustive]
@@ -542,11 +545,41 @@ pub struct PreconditionFailed {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl PreconditionFailed {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for PreconditionFailed {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "PreconditionFailed")?;
+        if let Some(inner_4) = &self.message {
+            {
+                write!(f, ": {}", inner_4)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for PreconditionFailed {}
+impl aws_http::request_id::RequestId for crate::error::PreconditionFailed {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for PreconditionFailed {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl PreconditionFailed {
     /// Creates a new builder-style object to manufacture [`PreconditionFailed`](crate::error::PreconditionFailed).
     pub fn builder() -> crate::error::precondition_failed::Builder {
         crate::error::precondition_failed::Builder::default()
     }
 }
+
 /// See [`PreconditionFailed`](crate::error::PreconditionFailed).
 pub mod precondition_failed {
 
@@ -591,35 +624,6 @@ pub mod precondition_failed {
         }
     }
 }
-impl PreconditionFailed {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for PreconditionFailed {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "PreconditionFailed")?;
-        if let Some(inner_4) = &self.message {
-            {
-                write!(f, ": {}", inner_4)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for PreconditionFailed {}
-impl aws_http::request_id::RequestId for crate::error::PreconditionFailed {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for PreconditionFailed {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>The specified streaming distribution does not exist.</p>
 #[non_exhaustive]
@@ -631,11 +635,41 @@ pub struct NoSuchStreamingDistribution {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl NoSuchStreamingDistribution {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for NoSuchStreamingDistribution {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "NoSuchStreamingDistribution")?;
+        if let Some(inner_5) = &self.message {
+            {
+                write!(f, ": {}", inner_5)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for NoSuchStreamingDistribution {}
+impl aws_http::request_id::RequestId for crate::error::NoSuchStreamingDistribution {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for NoSuchStreamingDistribution {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl NoSuchStreamingDistribution {
     /// Creates a new builder-style object to manufacture [`NoSuchStreamingDistribution`](crate::error::NoSuchStreamingDistribution).
     pub fn builder() -> crate::error::no_such_streaming_distribution::Builder {
         crate::error::no_such_streaming_distribution::Builder::default()
     }
 }
+
 /// See [`NoSuchStreamingDistribution`](crate::error::NoSuchStreamingDistribution).
 pub mod no_such_streaming_distribution {
 
@@ -680,35 +714,6 @@ pub mod no_such_streaming_distribution {
         }
     }
 }
-impl NoSuchStreamingDistribution {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for NoSuchStreamingDistribution {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "NoSuchStreamingDistribution")?;
-        if let Some(inner_5) = &self.message {
-            {
-                write!(f, ": {}", inner_5)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for NoSuchStreamingDistribution {}
-impl aws_http::request_id::RequestId for crate::error::NoSuchStreamingDistribution {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for NoSuchStreamingDistribution {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>This operation requires a body. Ensure that the body is present and the <code>Content-Type</code> header is set.</p>
 #[non_exhaustive]
@@ -720,11 +725,41 @@ pub struct MissingBody {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl MissingBody {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for MissingBody {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "MissingBody")?;
+        if let Some(inner_6) = &self.message {
+            {
+                write!(f, ": {}", inner_6)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for MissingBody {}
+impl aws_http::request_id::RequestId for crate::error::MissingBody {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for MissingBody {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl MissingBody {
     /// Creates a new builder-style object to manufacture [`MissingBody`](crate::error::MissingBody).
     pub fn builder() -> crate::error::missing_body::Builder {
         crate::error::missing_body::Builder::default()
     }
 }
+
 /// See [`MissingBody`](crate::error::MissingBody).
 pub mod missing_body {
 
@@ -769,35 +804,6 @@ pub mod missing_body {
         }
     }
 }
-impl MissingBody {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for MissingBody {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "MissingBody")?;
-        if let Some(inner_6) = &self.message {
-            {
-                write!(f, ": {}", inner_6)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for MissingBody {}
-impl aws_http::request_id::RequestId for crate::error::MissingBody {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for MissingBody {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>The origin access identity is not valid or doesn't exist.</p>
 #[non_exhaustive]
@@ -809,11 +815,41 @@ pub struct InvalidOriginAccessIdentity {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl InvalidOriginAccessIdentity {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for InvalidOriginAccessIdentity {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "InvalidOriginAccessIdentity")?;
+        if let Some(inner_7) = &self.message {
+            {
+                write!(f, ": {}", inner_7)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for InvalidOriginAccessIdentity {}
+impl aws_http::request_id::RequestId for crate::error::InvalidOriginAccessIdentity {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidOriginAccessIdentity {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl InvalidOriginAccessIdentity {
     /// Creates a new builder-style object to manufacture [`InvalidOriginAccessIdentity`](crate::error::InvalidOriginAccessIdentity).
     pub fn builder() -> crate::error::invalid_origin_access_identity::Builder {
         crate::error::invalid_origin_access_identity::Builder::default()
     }
 }
+
 /// See [`InvalidOriginAccessIdentity`](crate::error::InvalidOriginAccessIdentity).
 pub mod invalid_origin_access_identity {
 
@@ -858,35 +894,6 @@ pub mod invalid_origin_access_identity {
         }
     }
 }
-impl InvalidOriginAccessIdentity {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for InvalidOriginAccessIdentity {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "InvalidOriginAccessIdentity")?;
-        if let Some(inner_7) = &self.message {
-            {
-                write!(f, ": {}", inner_7)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for InvalidOriginAccessIdentity {}
-impl aws_http::request_id::RequestId for crate::error::InvalidOriginAccessIdentity {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidOriginAccessIdentity {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>The origin access control is not valid.</p>
 #[non_exhaustive]
@@ -898,11 +905,41 @@ pub struct InvalidOriginAccessControl {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl InvalidOriginAccessControl {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for InvalidOriginAccessControl {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "InvalidOriginAccessControl")?;
+        if let Some(inner_8) = &self.message {
+            {
+                write!(f, ": {}", inner_8)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for InvalidOriginAccessControl {}
+impl aws_http::request_id::RequestId for crate::error::InvalidOriginAccessControl {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidOriginAccessControl {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl InvalidOriginAccessControl {
     /// Creates a new builder-style object to manufacture [`InvalidOriginAccessControl`](crate::error::InvalidOriginAccessControl).
     pub fn builder() -> crate::error::invalid_origin_access_control::Builder {
         crate::error::invalid_origin_access_control::Builder::default()
     }
 }
+
 /// See [`InvalidOriginAccessControl`](crate::error::InvalidOriginAccessControl).
 pub mod invalid_origin_access_control {
 
@@ -947,35 +984,6 @@ pub mod invalid_origin_access_control {
         }
     }
 }
-impl InvalidOriginAccessControl {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for InvalidOriginAccessControl {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "InvalidOriginAccessControl")?;
-        if let Some(inner_8) = &self.message {
-            {
-                write!(f, ": {}", inner_8)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for InvalidOriginAccessControl {}
-impl aws_http::request_id::RequestId for crate::error::InvalidOriginAccessControl {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidOriginAccessControl {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>The <code>If-Match</code> version is missing or not valid.</p>
 #[non_exhaustive]
@@ -987,11 +995,41 @@ pub struct InvalidIfMatchVersion {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl InvalidIfMatchVersion {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for InvalidIfMatchVersion {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "InvalidIfMatchVersion")?;
+        if let Some(inner_9) = &self.message {
+            {
+                write!(f, ": {}", inner_9)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for InvalidIfMatchVersion {}
+impl aws_http::request_id::RequestId for crate::error::InvalidIfMatchVersion {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidIfMatchVersion {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl InvalidIfMatchVersion {
     /// Creates a new builder-style object to manufacture [`InvalidIfMatchVersion`](crate::error::InvalidIfMatchVersion).
     pub fn builder() -> crate::error::invalid_if_match_version::Builder {
         crate::error::invalid_if_match_version::Builder::default()
     }
 }
+
 /// See [`InvalidIfMatchVersion`](crate::error::InvalidIfMatchVersion).
 pub mod invalid_if_match_version {
 
@@ -1036,35 +1074,6 @@ pub mod invalid_if_match_version {
         }
     }
 }
-impl InvalidIfMatchVersion {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for InvalidIfMatchVersion {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "InvalidIfMatchVersion")?;
-        if let Some(inner_9) = &self.message {
-            {
-                write!(f, ": {}", inner_9)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for InvalidIfMatchVersion {}
-impl aws_http::request_id::RequestId for crate::error::InvalidIfMatchVersion {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidIfMatchVersion {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>An argument is invalid.</p>
 #[non_exhaustive]
@@ -1076,11 +1085,41 @@ pub struct InvalidArgument {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl InvalidArgument {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for InvalidArgument {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "InvalidArgument")?;
+        if let Some(inner_10) = &self.message {
+            {
+                write!(f, ": {}", inner_10)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for InvalidArgument {}
+impl aws_http::request_id::RequestId for crate::error::InvalidArgument {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidArgument {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl InvalidArgument {
     /// Creates a new builder-style object to manufacture [`InvalidArgument`](crate::error::InvalidArgument).
     pub fn builder() -> crate::error::invalid_argument::Builder {
         crate::error::invalid_argument::Builder::default()
     }
 }
+
 /// See [`InvalidArgument`](crate::error::InvalidArgument).
 pub mod invalid_argument {
 
@@ -1125,35 +1164,6 @@ pub mod invalid_argument {
         }
     }
 }
-impl InvalidArgument {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for InvalidArgument {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "InvalidArgument")?;
-        if let Some(inner_10) = &self.message {
-            {
-                write!(f, ": {}", inner_10)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for InvalidArgument {}
-impl aws_http::request_id::RequestId for crate::error::InvalidArgument {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidArgument {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>The value of <code>Quantity</code> and the size of <code>Items</code> don't match.</p>
 #[non_exhaustive]
@@ -1165,11 +1175,41 @@ pub struct InconsistentQuantities {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl InconsistentQuantities {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for InconsistentQuantities {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "InconsistentQuantities")?;
+        if let Some(inner_11) = &self.message {
+            {
+                write!(f, ": {}", inner_11)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for InconsistentQuantities {}
+impl aws_http::request_id::RequestId for crate::error::InconsistentQuantities {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InconsistentQuantities {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl InconsistentQuantities {
     /// Creates a new builder-style object to manufacture [`InconsistentQuantities`](crate::error::InconsistentQuantities).
     pub fn builder() -> crate::error::inconsistent_quantities::Builder {
         crate::error::inconsistent_quantities::Builder::default()
     }
 }
+
 /// See [`InconsistentQuantities`](crate::error::InconsistentQuantities).
 pub mod inconsistent_quantities {
 
@@ -1214,35 +1254,6 @@ pub mod inconsistent_quantities {
         }
     }
 }
-impl InconsistentQuantities {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for InconsistentQuantities {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "InconsistentQuantities")?;
-        if let Some(inner_11) = &self.message {
-            {
-                write!(f, ": {}", inner_11)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for InconsistentQuantities {}
-impl aws_http::request_id::RequestId for crate::error::InconsistentQuantities {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InconsistentQuantities {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>The update contains modifications that are not allowed.</p>
 #[non_exhaustive]
@@ -1254,11 +1265,41 @@ pub struct IllegalUpdate {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl IllegalUpdate {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for IllegalUpdate {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "IllegalUpdate")?;
+        if let Some(inner_12) = &self.message {
+            {
+                write!(f, ": {}", inner_12)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for IllegalUpdate {}
+impl aws_http::request_id::RequestId for crate::error::IllegalUpdate {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for IllegalUpdate {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl IllegalUpdate {
     /// Creates a new builder-style object to manufacture [`IllegalUpdate`](crate::error::IllegalUpdate).
     pub fn builder() -> crate::error::illegal_update::Builder {
         crate::error::illegal_update::Builder::default()
     }
 }
+
 /// See [`IllegalUpdate`](crate::error::IllegalUpdate).
 pub mod illegal_update {
 
@@ -1303,35 +1344,6 @@ pub mod illegal_update {
         }
     }
 }
-impl IllegalUpdate {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for IllegalUpdate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "IllegalUpdate")?;
-        if let Some(inner_12) = &self.message {
-            {
-                write!(f, ": {}", inner_12)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for IllegalUpdate {}
-impl aws_http::request_id::RequestId for crate::error::IllegalUpdate {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for IllegalUpdate {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>The CNAME specified is already defined for CloudFront.</p>
 #[non_exhaustive]
@@ -1343,11 +1355,41 @@ pub struct CnameAlreadyExists {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl CnameAlreadyExists {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for CnameAlreadyExists {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "CnameAlreadyExists [CNAMEAlreadyExists]")?;
+        if let Some(inner_13) = &self.message {
+            {
+                write!(f, ": {}", inner_13)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for CnameAlreadyExists {}
+impl aws_http::request_id::RequestId for crate::error::CnameAlreadyExists {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for CnameAlreadyExists {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl CnameAlreadyExists {
     /// Creates a new builder-style object to manufacture [`CnameAlreadyExists`](crate::error::CnameAlreadyExists).
     pub fn builder() -> crate::error::cname_already_exists::Builder {
         crate::error::cname_already_exists::Builder::default()
     }
 }
+
 /// See [`CnameAlreadyExists`](crate::error::CnameAlreadyExists).
 pub mod cname_already_exists {
 
@@ -1392,35 +1434,6 @@ pub mod cname_already_exists {
         }
     }
 }
-impl CnameAlreadyExists {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for CnameAlreadyExists {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "CnameAlreadyExists [CNAMEAlreadyExists]")?;
-        if let Some(inner_13) = &self.message {
-            {
-                write!(f, ": {}", inner_13)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for CnameAlreadyExists {}
-impl aws_http::request_id::RequestId for crate::error::CnameAlreadyExists {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for CnameAlreadyExists {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>Access denied.</p>
 #[non_exhaustive]
@@ -1432,11 +1445,41 @@ pub struct AccessDenied {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl AccessDenied {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for AccessDenied {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "AccessDenied")?;
+        if let Some(inner_14) = &self.message {
+            {
+                write!(f, ": {}", inner_14)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for AccessDenied {}
+impl aws_http::request_id::RequestId for crate::error::AccessDenied {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for AccessDenied {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl AccessDenied {
     /// Creates a new builder-style object to manufacture [`AccessDenied`](crate::error::AccessDenied).
     pub fn builder() -> crate::error::access_denied::Builder {
         crate::error::access_denied::Builder::default()
     }
 }
+
 /// See [`AccessDenied`](crate::error::AccessDenied).
 pub mod access_denied {
 
@@ -1479,35 +1522,6 @@ pub mod access_denied {
                 meta: self.meta.unwrap_or_default(),
             }
         }
-    }
-}
-impl AccessDenied {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for AccessDenied {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "AccessDenied")?;
-        if let Some(inner_14) = &self.message {
-            {
-                write!(f, ": {}", inner_14)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for AccessDenied {}
-impl aws_http::request_id::RequestId for crate::error::AccessDenied {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for AccessDenied {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
     }
 }
 
@@ -1754,11 +1768,43 @@ pub struct TooManyRemoveHeadersInResponseHeadersPolicy {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl TooManyRemoveHeadersInResponseHeadersPolicy {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for TooManyRemoveHeadersInResponseHeadersPolicy {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "TooManyRemoveHeadersInResponseHeadersPolicy")?;
+        if let Some(inner_15) = &self.message {
+            {
+                write!(f, ": {}", inner_15)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for TooManyRemoveHeadersInResponseHeadersPolicy {}
+impl aws_http::request_id::RequestId for crate::error::TooManyRemoveHeadersInResponseHeadersPolicy {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata
+    for TooManyRemoveHeadersInResponseHeadersPolicy
+{
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl TooManyRemoveHeadersInResponseHeadersPolicy {
     /// Creates a new builder-style object to manufacture [`TooManyRemoveHeadersInResponseHeadersPolicy`](crate::error::TooManyRemoveHeadersInResponseHeadersPolicy).
     pub fn builder() -> crate::error::too_many_remove_headers_in_response_headers_policy::Builder {
         crate::error::too_many_remove_headers_in_response_headers_policy::Builder::default()
     }
 }
+
 /// See [`TooManyRemoveHeadersInResponseHeadersPolicy`](crate::error::TooManyRemoveHeadersInResponseHeadersPolicy).
 pub mod too_many_remove_headers_in_response_headers_policy {
 
@@ -1803,37 +1849,6 @@ pub mod too_many_remove_headers_in_response_headers_policy {
         }
     }
 }
-impl TooManyRemoveHeadersInResponseHeadersPolicy {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for TooManyRemoveHeadersInResponseHeadersPolicy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "TooManyRemoveHeadersInResponseHeadersPolicy")?;
-        if let Some(inner_15) = &self.message {
-            {
-                write!(f, ": {}", inner_15)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for TooManyRemoveHeadersInResponseHeadersPolicy {}
-impl aws_http::request_id::RequestId for crate::error::TooManyRemoveHeadersInResponseHeadersPolicy {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for TooManyRemoveHeadersInResponseHeadersPolicy
-{
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>The number of custom headers in the response headers policy exceeds the maximum.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.</p>
@@ -1846,11 +1861,43 @@ pub struct TooManyCustomHeadersInResponseHeadersPolicy {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl TooManyCustomHeadersInResponseHeadersPolicy {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for TooManyCustomHeadersInResponseHeadersPolicy {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "TooManyCustomHeadersInResponseHeadersPolicy")?;
+        if let Some(inner_16) = &self.message {
+            {
+                write!(f, ": {}", inner_16)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for TooManyCustomHeadersInResponseHeadersPolicy {}
+impl aws_http::request_id::RequestId for crate::error::TooManyCustomHeadersInResponseHeadersPolicy {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata
+    for TooManyCustomHeadersInResponseHeadersPolicy
+{
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl TooManyCustomHeadersInResponseHeadersPolicy {
     /// Creates a new builder-style object to manufacture [`TooManyCustomHeadersInResponseHeadersPolicy`](crate::error::TooManyCustomHeadersInResponseHeadersPolicy).
     pub fn builder() -> crate::error::too_many_custom_headers_in_response_headers_policy::Builder {
         crate::error::too_many_custom_headers_in_response_headers_policy::Builder::default()
     }
 }
+
 /// See [`TooManyCustomHeadersInResponseHeadersPolicy`](crate::error::TooManyCustomHeadersInResponseHeadersPolicy).
 pub mod too_many_custom_headers_in_response_headers_policy {
 
@@ -1895,37 +1942,6 @@ pub mod too_many_custom_headers_in_response_headers_policy {
         }
     }
 }
-impl TooManyCustomHeadersInResponseHeadersPolicy {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for TooManyCustomHeadersInResponseHeadersPolicy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "TooManyCustomHeadersInResponseHeadersPolicy")?;
-        if let Some(inner_16) = &self.message {
-            {
-                write!(f, ": {}", inner_16)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for TooManyCustomHeadersInResponseHeadersPolicy {}
-impl aws_http::request_id::RequestId for crate::error::TooManyCustomHeadersInResponseHeadersPolicy {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for TooManyCustomHeadersInResponseHeadersPolicy
-{
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>The length of the <code>Content-Security-Policy</code> header value in the response headers policy exceeds the maximum.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.</p>
@@ -1938,11 +1954,44 @@ pub struct TooLongCspInResponseHeadersPolicy {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl TooLongCspInResponseHeadersPolicy {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for TooLongCspInResponseHeadersPolicy {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(
+            f,
+            "TooLongCspInResponseHeadersPolicy [TooLongCSPInResponseHeadersPolicy]"
+        )?;
+        if let Some(inner_17) = &self.message {
+            {
+                write!(f, ": {}", inner_17)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for TooLongCspInResponseHeadersPolicy {}
+impl aws_http::request_id::RequestId for crate::error::TooLongCspInResponseHeadersPolicy {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for TooLongCspInResponseHeadersPolicy {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl TooLongCspInResponseHeadersPolicy {
     /// Creates a new builder-style object to manufacture [`TooLongCspInResponseHeadersPolicy`](crate::error::TooLongCspInResponseHeadersPolicy).
     pub fn builder() -> crate::error::too_long_csp_in_response_headers_policy::Builder {
         crate::error::too_long_csp_in_response_headers_policy::Builder::default()
     }
 }
+
 /// See [`TooLongCspInResponseHeadersPolicy`](crate::error::TooLongCspInResponseHeadersPolicy).
 pub mod too_long_csp_in_response_headers_policy {
 
@@ -1987,38 +2036,6 @@ pub mod too_long_csp_in_response_headers_policy {
         }
     }
 }
-impl TooLongCspInResponseHeadersPolicy {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for TooLongCspInResponseHeadersPolicy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(
-            f,
-            "TooLongCspInResponseHeadersPolicy [TooLongCSPInResponseHeadersPolicy]"
-        )?;
-        if let Some(inner_17) = &self.message {
-            {
-                write!(f, ": {}", inner_17)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for TooLongCspInResponseHeadersPolicy {}
-impl aws_http::request_id::RequestId for crate::error::TooLongCspInResponseHeadersPolicy {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for TooLongCspInResponseHeadersPolicy {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>A response headers policy with this name already exists. You must provide a unique name. To modify an existing response headers policy, use <code>UpdateResponseHeadersPolicy</code>.</p>
 #[non_exhaustive]
@@ -2030,11 +2047,43 @@ pub struct ResponseHeadersPolicyAlreadyExists {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl ResponseHeadersPolicyAlreadyExists {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for ResponseHeadersPolicyAlreadyExists {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "ResponseHeadersPolicyAlreadyExists")?;
+        if let Some(inner_18) = &self.message {
+            {
+                write!(f, ": {}", inner_18)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for ResponseHeadersPolicyAlreadyExists {}
+impl aws_http::request_id::RequestId for crate::error::ResponseHeadersPolicyAlreadyExists {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata
+    for ResponseHeadersPolicyAlreadyExists
+{
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl ResponseHeadersPolicyAlreadyExists {
     /// Creates a new builder-style object to manufacture [`ResponseHeadersPolicyAlreadyExists`](crate::error::ResponseHeadersPolicyAlreadyExists).
     pub fn builder() -> crate::error::response_headers_policy_already_exists::Builder {
         crate::error::response_headers_policy_already_exists::Builder::default()
     }
 }
+
 /// See [`ResponseHeadersPolicyAlreadyExists`](crate::error::ResponseHeadersPolicyAlreadyExists).
 pub mod response_headers_policy_already_exists {
 
@@ -2079,37 +2128,6 @@ pub mod response_headers_policy_already_exists {
         }
     }
 }
-impl ResponseHeadersPolicyAlreadyExists {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for ResponseHeadersPolicyAlreadyExists {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "ResponseHeadersPolicyAlreadyExists")?;
-        if let Some(inner_18) = &self.message {
-            {
-                write!(f, ": {}", inner_18)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for ResponseHeadersPolicyAlreadyExists {}
-impl aws_http::request_id::RequestId for crate::error::ResponseHeadersPolicyAlreadyExists {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for ResponseHeadersPolicyAlreadyExists
-{
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>The response headers policy does not exist.</p>
 #[non_exhaustive]
@@ -2121,11 +2139,41 @@ pub struct NoSuchResponseHeadersPolicy {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl NoSuchResponseHeadersPolicy {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for NoSuchResponseHeadersPolicy {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "NoSuchResponseHeadersPolicy")?;
+        if let Some(inner_19) = &self.message {
+            {
+                write!(f, ": {}", inner_19)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for NoSuchResponseHeadersPolicy {}
+impl aws_http::request_id::RequestId for crate::error::NoSuchResponseHeadersPolicy {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for NoSuchResponseHeadersPolicy {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl NoSuchResponseHeadersPolicy {
     /// Creates a new builder-style object to manufacture [`NoSuchResponseHeadersPolicy`](crate::error::NoSuchResponseHeadersPolicy).
     pub fn builder() -> crate::error::no_such_response_headers_policy::Builder {
         crate::error::no_such_response_headers_policy::Builder::default()
     }
 }
+
 /// See [`NoSuchResponseHeadersPolicy`](crate::error::NoSuchResponseHeadersPolicy).
 pub mod no_such_response_headers_policy {
 
@@ -2168,35 +2216,6 @@ pub mod no_such_response_headers_policy {
                 meta: self.meta.unwrap_or_default(),
             }
         }
-    }
-}
-impl NoSuchResponseHeadersPolicy {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for NoSuchResponseHeadersPolicy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "NoSuchResponseHeadersPolicy")?;
-        if let Some(inner_19) = &self.message {
-            {
-                write!(f, ": {}", inner_19)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for NoSuchResponseHeadersPolicy {}
-impl aws_http::request_id::RequestId for crate::error::NoSuchResponseHeadersPolicy {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for NoSuchResponseHeadersPolicy {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
     }
 }
 
@@ -2339,11 +2358,41 @@ pub struct NoSuchRealtimeLogConfig {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl NoSuchRealtimeLogConfig {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for NoSuchRealtimeLogConfig {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "NoSuchRealtimeLogConfig")?;
+        if let Some(inner_20) = &self.message {
+            {
+                write!(f, ": {}", inner_20)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for NoSuchRealtimeLogConfig {}
+impl aws_http::request_id::RequestId for crate::error::NoSuchRealtimeLogConfig {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for NoSuchRealtimeLogConfig {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl NoSuchRealtimeLogConfig {
     /// Creates a new builder-style object to manufacture [`NoSuchRealtimeLogConfig`](crate::error::NoSuchRealtimeLogConfig).
     pub fn builder() -> crate::error::no_such_realtime_log_config::Builder {
         crate::error::no_such_realtime_log_config::Builder::default()
     }
 }
+
 /// See [`NoSuchRealtimeLogConfig`](crate::error::NoSuchRealtimeLogConfig).
 pub mod no_such_realtime_log_config {
 
@@ -2386,35 +2435,6 @@ pub mod no_such_realtime_log_config {
                 meta: self.meta.unwrap_or_default(),
             }
         }
-    }
-}
-impl NoSuchRealtimeLogConfig {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for NoSuchRealtimeLogConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "NoSuchRealtimeLogConfig")?;
-        if let Some(inner_20) = &self.message {
-            {
-                write!(f, ": {}", inner_20)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for NoSuchRealtimeLogConfig {}
-impl aws_http::request_id::RequestId for crate::error::NoSuchRealtimeLogConfig {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for NoSuchRealtimeLogConfig {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
     }
 }
 
@@ -2605,11 +2625,41 @@ pub struct NoSuchPublicKey {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl NoSuchPublicKey {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for NoSuchPublicKey {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "NoSuchPublicKey")?;
+        if let Some(inner_21) = &self.message {
+            {
+                write!(f, ": {}", inner_21)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for NoSuchPublicKey {}
+impl aws_http::request_id::RequestId for crate::error::NoSuchPublicKey {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for NoSuchPublicKey {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl NoSuchPublicKey {
     /// Creates a new builder-style object to manufacture [`NoSuchPublicKey`](crate::error::NoSuchPublicKey).
     pub fn builder() -> crate::error::no_such_public_key::Builder {
         crate::error::no_such_public_key::Builder::default()
     }
 }
+
 /// See [`NoSuchPublicKey`](crate::error::NoSuchPublicKey).
 pub mod no_such_public_key {
 
@@ -2654,35 +2704,6 @@ pub mod no_such_public_key {
         }
     }
 }
-impl NoSuchPublicKey {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for NoSuchPublicKey {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "NoSuchPublicKey")?;
-        if let Some(inner_21) = &self.message {
-            {
-                write!(f, ": {}", inner_21)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for NoSuchPublicKey {}
-impl aws_http::request_id::RequestId for crate::error::NoSuchPublicKey {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for NoSuchPublicKey {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>You can't change the value of a public key.</p>
 #[non_exhaustive]
@@ -2694,11 +2715,43 @@ pub struct CannotChangeImmutablePublicKeyFields {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl CannotChangeImmutablePublicKeyFields {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for CannotChangeImmutablePublicKeyFields {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "CannotChangeImmutablePublicKeyFields")?;
+        if let Some(inner_22) = &self.message {
+            {
+                write!(f, ": {}", inner_22)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for CannotChangeImmutablePublicKeyFields {}
+impl aws_http::request_id::RequestId for crate::error::CannotChangeImmutablePublicKeyFields {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata
+    for CannotChangeImmutablePublicKeyFields
+{
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl CannotChangeImmutablePublicKeyFields {
     /// Creates a new builder-style object to manufacture [`CannotChangeImmutablePublicKeyFields`](crate::error::CannotChangeImmutablePublicKeyFields).
     pub fn builder() -> crate::error::cannot_change_immutable_public_key_fields::Builder {
         crate::error::cannot_change_immutable_public_key_fields::Builder::default()
     }
 }
+
 /// See [`CannotChangeImmutablePublicKeyFields`](crate::error::CannotChangeImmutablePublicKeyFields).
 pub mod cannot_change_immutable_public_key_fields {
 
@@ -2741,37 +2794,6 @@ pub mod cannot_change_immutable_public_key_fields {
                 meta: self.meta.unwrap_or_default(),
             }
         }
-    }
-}
-impl CannotChangeImmutablePublicKeyFields {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for CannotChangeImmutablePublicKeyFields {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "CannotChangeImmutablePublicKeyFields")?;
-        if let Some(inner_22) = &self.message {
-            {
-                write!(f, ": {}", inner_22)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for CannotChangeImmutablePublicKeyFields {}
-impl aws_http::request_id::RequestId for crate::error::CannotChangeImmutablePublicKeyFields {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for CannotChangeImmutablePublicKeyFields
-{
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
     }
 }
 
@@ -3012,11 +3034,43 @@ pub struct TooManyQueryStringsInOriginRequestPolicy {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl TooManyQueryStringsInOriginRequestPolicy {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for TooManyQueryStringsInOriginRequestPolicy {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "TooManyQueryStringsInOriginRequestPolicy")?;
+        if let Some(inner_23) = &self.message {
+            {
+                write!(f, ": {}", inner_23)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for TooManyQueryStringsInOriginRequestPolicy {}
+impl aws_http::request_id::RequestId for crate::error::TooManyQueryStringsInOriginRequestPolicy {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata
+    for TooManyQueryStringsInOriginRequestPolicy
+{
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl TooManyQueryStringsInOriginRequestPolicy {
     /// Creates a new builder-style object to manufacture [`TooManyQueryStringsInOriginRequestPolicy`](crate::error::TooManyQueryStringsInOriginRequestPolicy).
     pub fn builder() -> crate::error::too_many_query_strings_in_origin_request_policy::Builder {
         crate::error::too_many_query_strings_in_origin_request_policy::Builder::default()
     }
 }
+
 /// See [`TooManyQueryStringsInOriginRequestPolicy`](crate::error::TooManyQueryStringsInOriginRequestPolicy).
 pub mod too_many_query_strings_in_origin_request_policy {
 
@@ -3061,37 +3115,6 @@ pub mod too_many_query_strings_in_origin_request_policy {
         }
     }
 }
-impl TooManyQueryStringsInOriginRequestPolicy {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for TooManyQueryStringsInOriginRequestPolicy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "TooManyQueryStringsInOriginRequestPolicy")?;
-        if let Some(inner_23) = &self.message {
-            {
-                write!(f, ": {}", inner_23)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for TooManyQueryStringsInOriginRequestPolicy {}
-impl aws_http::request_id::RequestId for crate::error::TooManyQueryStringsInOriginRequestPolicy {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for TooManyQueryStringsInOriginRequestPolicy
-{
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>The number of headers in the origin request policy exceeds the maximum. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.</p>
 #[non_exhaustive]
@@ -3103,11 +3126,43 @@ pub struct TooManyHeadersInOriginRequestPolicy {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl TooManyHeadersInOriginRequestPolicy {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for TooManyHeadersInOriginRequestPolicy {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "TooManyHeadersInOriginRequestPolicy")?;
+        if let Some(inner_24) = &self.message {
+            {
+                write!(f, ": {}", inner_24)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for TooManyHeadersInOriginRequestPolicy {}
+impl aws_http::request_id::RequestId for crate::error::TooManyHeadersInOriginRequestPolicy {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata
+    for TooManyHeadersInOriginRequestPolicy
+{
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl TooManyHeadersInOriginRequestPolicy {
     /// Creates a new builder-style object to manufacture [`TooManyHeadersInOriginRequestPolicy`](crate::error::TooManyHeadersInOriginRequestPolicy).
     pub fn builder() -> crate::error::too_many_headers_in_origin_request_policy::Builder {
         crate::error::too_many_headers_in_origin_request_policy::Builder::default()
     }
 }
+
 /// See [`TooManyHeadersInOriginRequestPolicy`](crate::error::TooManyHeadersInOriginRequestPolicy).
 pub mod too_many_headers_in_origin_request_policy {
 
@@ -3152,37 +3207,6 @@ pub mod too_many_headers_in_origin_request_policy {
         }
     }
 }
-impl TooManyHeadersInOriginRequestPolicy {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for TooManyHeadersInOriginRequestPolicy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "TooManyHeadersInOriginRequestPolicy")?;
-        if let Some(inner_24) = &self.message {
-            {
-                write!(f, ": {}", inner_24)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for TooManyHeadersInOriginRequestPolicy {}
-impl aws_http::request_id::RequestId for crate::error::TooManyHeadersInOriginRequestPolicy {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for TooManyHeadersInOriginRequestPolicy
-{
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>The number of cookies in the origin request policy exceeds the maximum. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.</p>
 #[non_exhaustive]
@@ -3194,11 +3218,43 @@ pub struct TooManyCookiesInOriginRequestPolicy {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl TooManyCookiesInOriginRequestPolicy {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for TooManyCookiesInOriginRequestPolicy {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "TooManyCookiesInOriginRequestPolicy")?;
+        if let Some(inner_25) = &self.message {
+            {
+                write!(f, ": {}", inner_25)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for TooManyCookiesInOriginRequestPolicy {}
+impl aws_http::request_id::RequestId for crate::error::TooManyCookiesInOriginRequestPolicy {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata
+    for TooManyCookiesInOriginRequestPolicy
+{
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl TooManyCookiesInOriginRequestPolicy {
     /// Creates a new builder-style object to manufacture [`TooManyCookiesInOriginRequestPolicy`](crate::error::TooManyCookiesInOriginRequestPolicy).
     pub fn builder() -> crate::error::too_many_cookies_in_origin_request_policy::Builder {
         crate::error::too_many_cookies_in_origin_request_policy::Builder::default()
     }
 }
+
 /// See [`TooManyCookiesInOriginRequestPolicy`](crate::error::TooManyCookiesInOriginRequestPolicy).
 pub mod too_many_cookies_in_origin_request_policy {
 
@@ -3243,37 +3299,6 @@ pub mod too_many_cookies_in_origin_request_policy {
         }
     }
 }
-impl TooManyCookiesInOriginRequestPolicy {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for TooManyCookiesInOriginRequestPolicy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "TooManyCookiesInOriginRequestPolicy")?;
-        if let Some(inner_25) = &self.message {
-            {
-                write!(f, ": {}", inner_25)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for TooManyCookiesInOriginRequestPolicy {}
-impl aws_http::request_id::RequestId for crate::error::TooManyCookiesInOriginRequestPolicy {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for TooManyCookiesInOriginRequestPolicy
-{
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>An origin request policy with this name already exists. You must provide a unique name. To modify an existing origin request policy, use <code>UpdateOriginRequestPolicy</code>.</p>
 #[non_exhaustive]
@@ -3285,11 +3310,41 @@ pub struct OriginRequestPolicyAlreadyExists {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl OriginRequestPolicyAlreadyExists {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for OriginRequestPolicyAlreadyExists {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "OriginRequestPolicyAlreadyExists")?;
+        if let Some(inner_26) = &self.message {
+            {
+                write!(f, ": {}", inner_26)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for OriginRequestPolicyAlreadyExists {}
+impl aws_http::request_id::RequestId for crate::error::OriginRequestPolicyAlreadyExists {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for OriginRequestPolicyAlreadyExists {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl OriginRequestPolicyAlreadyExists {
     /// Creates a new builder-style object to manufacture [`OriginRequestPolicyAlreadyExists`](crate::error::OriginRequestPolicyAlreadyExists).
     pub fn builder() -> crate::error::origin_request_policy_already_exists::Builder {
         crate::error::origin_request_policy_already_exists::Builder::default()
     }
 }
+
 /// See [`OriginRequestPolicyAlreadyExists`](crate::error::OriginRequestPolicyAlreadyExists).
 pub mod origin_request_policy_already_exists {
 
@@ -3334,35 +3389,6 @@ pub mod origin_request_policy_already_exists {
         }
     }
 }
-impl OriginRequestPolicyAlreadyExists {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for OriginRequestPolicyAlreadyExists {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "OriginRequestPolicyAlreadyExists")?;
-        if let Some(inner_26) = &self.message {
-            {
-                write!(f, ": {}", inner_26)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for OriginRequestPolicyAlreadyExists {}
-impl aws_http::request_id::RequestId for crate::error::OriginRequestPolicyAlreadyExists {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for OriginRequestPolicyAlreadyExists {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>The origin request policy does not exist.</p>
 #[non_exhaustive]
@@ -3374,11 +3400,41 @@ pub struct NoSuchOriginRequestPolicy {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl NoSuchOriginRequestPolicy {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for NoSuchOriginRequestPolicy {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "NoSuchOriginRequestPolicy")?;
+        if let Some(inner_27) = &self.message {
+            {
+                write!(f, ": {}", inner_27)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for NoSuchOriginRequestPolicy {}
+impl aws_http::request_id::RequestId for crate::error::NoSuchOriginRequestPolicy {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for NoSuchOriginRequestPolicy {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl NoSuchOriginRequestPolicy {
     /// Creates a new builder-style object to manufacture [`NoSuchOriginRequestPolicy`](crate::error::NoSuchOriginRequestPolicy).
     pub fn builder() -> crate::error::no_such_origin_request_policy::Builder {
         crate::error::no_such_origin_request_policy::Builder::default()
     }
 }
+
 /// See [`NoSuchOriginRequestPolicy`](crate::error::NoSuchOriginRequestPolicy).
 pub mod no_such_origin_request_policy {
 
@@ -3421,35 +3477,6 @@ pub mod no_such_origin_request_policy {
                 meta: self.meta.unwrap_or_default(),
             }
         }
-    }
-}
-impl NoSuchOriginRequestPolicy {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for NoSuchOriginRequestPolicy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "NoSuchOriginRequestPolicy")?;
-        if let Some(inner_27) = &self.message {
-            {
-                write!(f, ": {}", inner_27)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for NoSuchOriginRequestPolicy {}
-impl aws_http::request_id::RequestId for crate::error::NoSuchOriginRequestPolicy {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for NoSuchOriginRequestPolicy {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
     }
 }
 
@@ -3640,11 +3667,41 @@ pub struct OriginAccessControlAlreadyExists {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl OriginAccessControlAlreadyExists {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for OriginAccessControlAlreadyExists {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "OriginAccessControlAlreadyExists")?;
+        if let Some(inner_28) = &self.message {
+            {
+                write!(f, ": {}", inner_28)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for OriginAccessControlAlreadyExists {}
+impl aws_http::request_id::RequestId for crate::error::OriginAccessControlAlreadyExists {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for OriginAccessControlAlreadyExists {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl OriginAccessControlAlreadyExists {
     /// Creates a new builder-style object to manufacture [`OriginAccessControlAlreadyExists`](crate::error::OriginAccessControlAlreadyExists).
     pub fn builder() -> crate::error::origin_access_control_already_exists::Builder {
         crate::error::origin_access_control_already_exists::Builder::default()
     }
 }
+
 /// See [`OriginAccessControlAlreadyExists`](crate::error::OriginAccessControlAlreadyExists).
 pub mod origin_access_control_already_exists {
 
@@ -3689,35 +3746,6 @@ pub mod origin_access_control_already_exists {
         }
     }
 }
-impl OriginAccessControlAlreadyExists {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for OriginAccessControlAlreadyExists {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "OriginAccessControlAlreadyExists")?;
-        if let Some(inner_28) = &self.message {
-            {
-                write!(f, ": {}", inner_28)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for OriginAccessControlAlreadyExists {}
-impl aws_http::request_id::RequestId for crate::error::OriginAccessControlAlreadyExists {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for OriginAccessControlAlreadyExists {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>The origin access control does not exist.</p>
 #[non_exhaustive]
@@ -3729,11 +3757,41 @@ pub struct NoSuchOriginAccessControl {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl NoSuchOriginAccessControl {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for NoSuchOriginAccessControl {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "NoSuchOriginAccessControl")?;
+        if let Some(inner_29) = &self.message {
+            {
+                write!(f, ": {}", inner_29)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for NoSuchOriginAccessControl {}
+impl aws_http::request_id::RequestId for crate::error::NoSuchOriginAccessControl {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for NoSuchOriginAccessControl {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl NoSuchOriginAccessControl {
     /// Creates a new builder-style object to manufacture [`NoSuchOriginAccessControl`](crate::error::NoSuchOriginAccessControl).
     pub fn builder() -> crate::error::no_such_origin_access_control::Builder {
         crate::error::no_such_origin_access_control::Builder::default()
     }
 }
+
 /// See [`NoSuchOriginAccessControl`](crate::error::NoSuchOriginAccessControl).
 pub mod no_such_origin_access_control {
 
@@ -3776,35 +3834,6 @@ pub mod no_such_origin_access_control {
                 meta: self.meta.unwrap_or_default(),
             }
         }
-    }
-}
-impl NoSuchOriginAccessControl {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for NoSuchOriginAccessControl {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "NoSuchOriginAccessControl")?;
-        if let Some(inner_29) = &self.message {
-            {
-                write!(f, ": {}", inner_29)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for NoSuchOriginAccessControl {}
-impl aws_http::request_id::RequestId for crate::error::NoSuchOriginAccessControl {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for NoSuchOriginAccessControl {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
     }
 }
 
@@ -3983,11 +4012,41 @@ pub struct TooManyPublicKeysInKeyGroup {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl TooManyPublicKeysInKeyGroup {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for TooManyPublicKeysInKeyGroup {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "TooManyPublicKeysInKeyGroup")?;
+        if let Some(inner_30) = &self.message {
+            {
+                write!(f, ": {}", inner_30)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for TooManyPublicKeysInKeyGroup {}
+impl aws_http::request_id::RequestId for crate::error::TooManyPublicKeysInKeyGroup {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for TooManyPublicKeysInKeyGroup {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl TooManyPublicKeysInKeyGroup {
     /// Creates a new builder-style object to manufacture [`TooManyPublicKeysInKeyGroup`](crate::error::TooManyPublicKeysInKeyGroup).
     pub fn builder() -> crate::error::too_many_public_keys_in_key_group::Builder {
         crate::error::too_many_public_keys_in_key_group::Builder::default()
     }
 }
+
 /// See [`TooManyPublicKeysInKeyGroup`](crate::error::TooManyPublicKeysInKeyGroup).
 pub mod too_many_public_keys_in_key_group {
 
@@ -4032,35 +4091,6 @@ pub mod too_many_public_keys_in_key_group {
         }
     }
 }
-impl TooManyPublicKeysInKeyGroup {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for TooManyPublicKeysInKeyGroup {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "TooManyPublicKeysInKeyGroup")?;
-        if let Some(inner_30) = &self.message {
-            {
-                write!(f, ": {}", inner_30)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for TooManyPublicKeysInKeyGroup {}
-impl aws_http::request_id::RequestId for crate::error::TooManyPublicKeysInKeyGroup {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for TooManyPublicKeysInKeyGroup {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>A resource that was specified is not valid.</p>
 #[non_exhaustive]
@@ -4072,11 +4102,41 @@ pub struct NoSuchResource {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl NoSuchResource {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for NoSuchResource {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "NoSuchResource")?;
+        if let Some(inner_31) = &self.message {
+            {
+                write!(f, ": {}", inner_31)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for NoSuchResource {}
+impl aws_http::request_id::RequestId for crate::error::NoSuchResource {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for NoSuchResource {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl NoSuchResource {
     /// Creates a new builder-style object to manufacture [`NoSuchResource`](crate::error::NoSuchResource).
     pub fn builder() -> crate::error::no_such_resource::Builder {
         crate::error::no_such_resource::Builder::default()
     }
 }
+
 /// See [`NoSuchResource`](crate::error::NoSuchResource).
 pub mod no_such_resource {
 
@@ -4121,35 +4181,6 @@ pub mod no_such_resource {
         }
     }
 }
-impl NoSuchResource {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for NoSuchResource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "NoSuchResource")?;
-        if let Some(inner_31) = &self.message {
-            {
-                write!(f, ": {}", inner_31)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for NoSuchResource {}
-impl aws_http::request_id::RequestId for crate::error::NoSuchResource {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for NoSuchResource {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>A key group with this name already exists. You must provide a unique name. To modify an existing key group, use <code>UpdateKeyGroup</code>.</p>
 #[non_exhaustive]
@@ -4161,11 +4192,41 @@ pub struct KeyGroupAlreadyExists {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl KeyGroupAlreadyExists {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for KeyGroupAlreadyExists {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "KeyGroupAlreadyExists")?;
+        if let Some(inner_32) = &self.message {
+            {
+                write!(f, ": {}", inner_32)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for KeyGroupAlreadyExists {}
+impl aws_http::request_id::RequestId for crate::error::KeyGroupAlreadyExists {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for KeyGroupAlreadyExists {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl KeyGroupAlreadyExists {
     /// Creates a new builder-style object to manufacture [`KeyGroupAlreadyExists`](crate::error::KeyGroupAlreadyExists).
     pub fn builder() -> crate::error::key_group_already_exists::Builder {
         crate::error::key_group_already_exists::Builder::default()
     }
 }
+
 /// See [`KeyGroupAlreadyExists`](crate::error::KeyGroupAlreadyExists).
 pub mod key_group_already_exists {
 
@@ -4208,35 +4269,6 @@ pub mod key_group_already_exists {
                 meta: self.meta.unwrap_or_default(),
             }
         }
-    }
-}
-impl KeyGroupAlreadyExists {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for KeyGroupAlreadyExists {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "KeyGroupAlreadyExists")?;
-        if let Some(inner_32) = &self.message {
-            {
-                write!(f, ": {}", inner_32)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for KeyGroupAlreadyExists {}
-impl aws_http::request_id::RequestId for crate::error::KeyGroupAlreadyExists {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for KeyGroupAlreadyExists {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
     }
 }
 
@@ -4415,11 +4447,41 @@ pub struct UnsupportedOperation {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl UnsupportedOperation {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for UnsupportedOperation {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "UnsupportedOperation")?;
+        if let Some(inner_33) = &self.message {
+            {
+                write!(f, ": {}", inner_33)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for UnsupportedOperation {}
+impl aws_http::request_id::RequestId for crate::error::UnsupportedOperation {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for UnsupportedOperation {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl UnsupportedOperation {
     /// Creates a new builder-style object to manufacture [`UnsupportedOperation`](crate::error::UnsupportedOperation).
     pub fn builder() -> crate::error::unsupported_operation::Builder {
         crate::error::unsupported_operation::Builder::default()
     }
 }
+
 /// See [`UnsupportedOperation`](crate::error::UnsupportedOperation).
 pub mod unsupported_operation {
 
@@ -4464,35 +4526,6 @@ pub mod unsupported_operation {
         }
     }
 }
-impl UnsupportedOperation {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for UnsupportedOperation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "UnsupportedOperation")?;
-        if let Some(inner_33) = &self.message {
-            {
-                write!(f, ": {}", inner_33)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for UnsupportedOperation {}
-impl aws_http::request_id::RequestId for crate::error::UnsupportedOperation {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for UnsupportedOperation {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>The function does not exist.</p>
 #[non_exhaustive]
@@ -4504,11 +4537,41 @@ pub struct NoSuchFunctionExists {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl NoSuchFunctionExists {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for NoSuchFunctionExists {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "NoSuchFunctionExists")?;
+        if let Some(inner_34) = &self.message {
+            {
+                write!(f, ": {}", inner_34)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for NoSuchFunctionExists {}
+impl aws_http::request_id::RequestId for crate::error::NoSuchFunctionExists {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for NoSuchFunctionExists {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl NoSuchFunctionExists {
     /// Creates a new builder-style object to manufacture [`NoSuchFunctionExists`](crate::error::NoSuchFunctionExists).
     pub fn builder() -> crate::error::no_such_function_exists::Builder {
         crate::error::no_such_function_exists::Builder::default()
     }
 }
+
 /// See [`NoSuchFunctionExists`](crate::error::NoSuchFunctionExists).
 pub mod no_such_function_exists {
 
@@ -4553,35 +4616,6 @@ pub mod no_such_function_exists {
         }
     }
 }
-impl NoSuchFunctionExists {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for NoSuchFunctionExists {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "NoSuchFunctionExists")?;
-        if let Some(inner_34) = &self.message {
-            {
-                write!(f, ": {}", inner_34)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for NoSuchFunctionExists {}
-impl aws_http::request_id::RequestId for crate::error::NoSuchFunctionExists {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for NoSuchFunctionExists {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>The function is too large. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.</p>
 #[non_exhaustive]
@@ -4593,11 +4627,41 @@ pub struct FunctionSizeLimitExceeded {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl FunctionSizeLimitExceeded {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for FunctionSizeLimitExceeded {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "FunctionSizeLimitExceeded")?;
+        if let Some(inner_35) = &self.message {
+            {
+                write!(f, ": {}", inner_35)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for FunctionSizeLimitExceeded {}
+impl aws_http::request_id::RequestId for crate::error::FunctionSizeLimitExceeded {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for FunctionSizeLimitExceeded {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl FunctionSizeLimitExceeded {
     /// Creates a new builder-style object to manufacture [`FunctionSizeLimitExceeded`](crate::error::FunctionSizeLimitExceeded).
     pub fn builder() -> crate::error::function_size_limit_exceeded::Builder {
         crate::error::function_size_limit_exceeded::Builder::default()
     }
 }
+
 /// See [`FunctionSizeLimitExceeded`](crate::error::FunctionSizeLimitExceeded).
 pub mod function_size_limit_exceeded {
 
@@ -4640,35 +4704,6 @@ pub mod function_size_limit_exceeded {
                 meta: self.meta.unwrap_or_default(),
             }
         }
-    }
-}
-impl FunctionSizeLimitExceeded {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for FunctionSizeLimitExceeded {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "FunctionSizeLimitExceeded")?;
-        if let Some(inner_35) = &self.message {
-            {
-                write!(f, ": {}", inner_35)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for FunctionSizeLimitExceeded {}
-impl aws_http::request_id::RequestId for crate::error::FunctionSizeLimitExceeded {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for FunctionSizeLimitExceeded {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
     }
 }
 
@@ -4927,11 +4962,43 @@ pub struct TooManyFieldLevelEncryptionFieldPatterns {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl TooManyFieldLevelEncryptionFieldPatterns {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for TooManyFieldLevelEncryptionFieldPatterns {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "TooManyFieldLevelEncryptionFieldPatterns")?;
+        if let Some(inner_36) = &self.message {
+            {
+                write!(f, ": {}", inner_36)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for TooManyFieldLevelEncryptionFieldPatterns {}
+impl aws_http::request_id::RequestId for crate::error::TooManyFieldLevelEncryptionFieldPatterns {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata
+    for TooManyFieldLevelEncryptionFieldPatterns
+{
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl TooManyFieldLevelEncryptionFieldPatterns {
     /// Creates a new builder-style object to manufacture [`TooManyFieldLevelEncryptionFieldPatterns`](crate::error::TooManyFieldLevelEncryptionFieldPatterns).
     pub fn builder() -> crate::error::too_many_field_level_encryption_field_patterns::Builder {
         crate::error::too_many_field_level_encryption_field_patterns::Builder::default()
     }
 }
+
 /// See [`TooManyFieldLevelEncryptionFieldPatterns`](crate::error::TooManyFieldLevelEncryptionFieldPatterns).
 pub mod too_many_field_level_encryption_field_patterns {
 
@@ -4976,37 +5043,6 @@ pub mod too_many_field_level_encryption_field_patterns {
         }
     }
 }
-impl TooManyFieldLevelEncryptionFieldPatterns {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for TooManyFieldLevelEncryptionFieldPatterns {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "TooManyFieldLevelEncryptionFieldPatterns")?;
-        if let Some(inner_36) = &self.message {
-            {
-                write!(f, ": {}", inner_36)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for TooManyFieldLevelEncryptionFieldPatterns {}
-impl aws_http::request_id::RequestId for crate::error::TooManyFieldLevelEncryptionFieldPatterns {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for TooManyFieldLevelEncryptionFieldPatterns
-{
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>The maximum number of encryption entities for field-level encryption have been created.</p>
 #[non_exhaustive]
@@ -5018,11 +5054,45 @@ pub struct TooManyFieldLevelEncryptionEncryptionEntities {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl TooManyFieldLevelEncryptionEncryptionEntities {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for TooManyFieldLevelEncryptionEncryptionEntities {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "TooManyFieldLevelEncryptionEncryptionEntities")?;
+        if let Some(inner_37) = &self.message {
+            {
+                write!(f, ": {}", inner_37)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for TooManyFieldLevelEncryptionEncryptionEntities {}
+impl aws_http::request_id::RequestId
+    for crate::error::TooManyFieldLevelEncryptionEncryptionEntities
+{
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata
+    for TooManyFieldLevelEncryptionEncryptionEntities
+{
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl TooManyFieldLevelEncryptionEncryptionEntities {
     /// Creates a new builder-style object to manufacture [`TooManyFieldLevelEncryptionEncryptionEntities`](crate::error::TooManyFieldLevelEncryptionEncryptionEntities).
     pub fn builder() -> crate::error::too_many_field_level_encryption_encryption_entities::Builder {
         crate::error::too_many_field_level_encryption_encryption_entities::Builder::default()
     }
 }
+
 /// See [`TooManyFieldLevelEncryptionEncryptionEntities`](crate::error::TooManyFieldLevelEncryptionEncryptionEntities).
 pub mod too_many_field_level_encryption_encryption_entities {
 
@@ -5067,39 +5137,6 @@ pub mod too_many_field_level_encryption_encryption_entities {
         }
     }
 }
-impl TooManyFieldLevelEncryptionEncryptionEntities {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for TooManyFieldLevelEncryptionEncryptionEntities {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "TooManyFieldLevelEncryptionEncryptionEntities")?;
-        if let Some(inner_37) = &self.message {
-            {
-                write!(f, ": {}", inner_37)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for TooManyFieldLevelEncryptionEncryptionEntities {}
-impl aws_http::request_id::RequestId
-    for crate::error::TooManyFieldLevelEncryptionEncryptionEntities
-{
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for TooManyFieldLevelEncryptionEncryptionEntities
-{
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>The specified profile for field-level encryption doesn't exist.</p>
 #[non_exhaustive]
@@ -5111,11 +5148,41 @@ pub struct NoSuchFieldLevelEncryptionProfile {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl NoSuchFieldLevelEncryptionProfile {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for NoSuchFieldLevelEncryptionProfile {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "NoSuchFieldLevelEncryptionProfile")?;
+        if let Some(inner_38) = &self.message {
+            {
+                write!(f, ": {}", inner_38)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for NoSuchFieldLevelEncryptionProfile {}
+impl aws_http::request_id::RequestId for crate::error::NoSuchFieldLevelEncryptionProfile {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for NoSuchFieldLevelEncryptionProfile {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl NoSuchFieldLevelEncryptionProfile {
     /// Creates a new builder-style object to manufacture [`NoSuchFieldLevelEncryptionProfile`](crate::error::NoSuchFieldLevelEncryptionProfile).
     pub fn builder() -> crate::error::no_such_field_level_encryption_profile::Builder {
         crate::error::no_such_field_level_encryption_profile::Builder::default()
     }
 }
+
 /// See [`NoSuchFieldLevelEncryptionProfile`](crate::error::NoSuchFieldLevelEncryptionProfile).
 pub mod no_such_field_level_encryption_profile {
 
@@ -5160,35 +5227,6 @@ pub mod no_such_field_level_encryption_profile {
         }
     }
 }
-impl NoSuchFieldLevelEncryptionProfile {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for NoSuchFieldLevelEncryptionProfile {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "NoSuchFieldLevelEncryptionProfile")?;
-        if let Some(inner_38) = &self.message {
-            {
-                write!(f, ": {}", inner_38)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for NoSuchFieldLevelEncryptionProfile {}
-impl aws_http::request_id::RequestId for crate::error::NoSuchFieldLevelEncryptionProfile {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for NoSuchFieldLevelEncryptionProfile {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>The maximum size of a profile for field-level encryption was exceeded.</p>
 #[non_exhaustive]
@@ -5200,11 +5238,43 @@ pub struct FieldLevelEncryptionProfileSizeExceeded {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl FieldLevelEncryptionProfileSizeExceeded {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for FieldLevelEncryptionProfileSizeExceeded {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "FieldLevelEncryptionProfileSizeExceeded")?;
+        if let Some(inner_39) = &self.message {
+            {
+                write!(f, ": {}", inner_39)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for FieldLevelEncryptionProfileSizeExceeded {}
+impl aws_http::request_id::RequestId for crate::error::FieldLevelEncryptionProfileSizeExceeded {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata
+    for FieldLevelEncryptionProfileSizeExceeded
+{
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl FieldLevelEncryptionProfileSizeExceeded {
     /// Creates a new builder-style object to manufacture [`FieldLevelEncryptionProfileSizeExceeded`](crate::error::FieldLevelEncryptionProfileSizeExceeded).
     pub fn builder() -> crate::error::field_level_encryption_profile_size_exceeded::Builder {
         crate::error::field_level_encryption_profile_size_exceeded::Builder::default()
     }
 }
+
 /// See [`FieldLevelEncryptionProfileSizeExceeded`](crate::error::FieldLevelEncryptionProfileSizeExceeded).
 pub mod field_level_encryption_profile_size_exceeded {
 
@@ -5249,37 +5319,6 @@ pub mod field_level_encryption_profile_size_exceeded {
         }
     }
 }
-impl FieldLevelEncryptionProfileSizeExceeded {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for FieldLevelEncryptionProfileSizeExceeded {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "FieldLevelEncryptionProfileSizeExceeded")?;
-        if let Some(inner_39) = &self.message {
-            {
-                write!(f, ": {}", inner_39)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for FieldLevelEncryptionProfileSizeExceeded {}
-impl aws_http::request_id::RequestId for crate::error::FieldLevelEncryptionProfileSizeExceeded {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for FieldLevelEncryptionProfileSizeExceeded
-{
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>The specified profile for field-level encryption already exists.</p>
 #[non_exhaustive]
@@ -5291,11 +5330,43 @@ pub struct FieldLevelEncryptionProfileAlreadyExists {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl FieldLevelEncryptionProfileAlreadyExists {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for FieldLevelEncryptionProfileAlreadyExists {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "FieldLevelEncryptionProfileAlreadyExists")?;
+        if let Some(inner_40) = &self.message {
+            {
+                write!(f, ": {}", inner_40)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for FieldLevelEncryptionProfileAlreadyExists {}
+impl aws_http::request_id::RequestId for crate::error::FieldLevelEncryptionProfileAlreadyExists {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata
+    for FieldLevelEncryptionProfileAlreadyExists
+{
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl FieldLevelEncryptionProfileAlreadyExists {
     /// Creates a new builder-style object to manufacture [`FieldLevelEncryptionProfileAlreadyExists`](crate::error::FieldLevelEncryptionProfileAlreadyExists).
     pub fn builder() -> crate::error::field_level_encryption_profile_already_exists::Builder {
         crate::error::field_level_encryption_profile_already_exists::Builder::default()
     }
 }
+
 /// See [`FieldLevelEncryptionProfileAlreadyExists`](crate::error::FieldLevelEncryptionProfileAlreadyExists).
 pub mod field_level_encryption_profile_already_exists {
 
@@ -5338,37 +5409,6 @@ pub mod field_level_encryption_profile_already_exists {
                 meta: self.meta.unwrap_or_default(),
             }
         }
-    }
-}
-impl FieldLevelEncryptionProfileAlreadyExists {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for FieldLevelEncryptionProfileAlreadyExists {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "FieldLevelEncryptionProfileAlreadyExists")?;
-        if let Some(inner_40) = &self.message {
-            {
-                write!(f, ": {}", inner_40)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for FieldLevelEncryptionProfileAlreadyExists {}
-impl aws_http::request_id::RequestId for crate::error::FieldLevelEncryptionProfileAlreadyExists {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for FieldLevelEncryptionProfileAlreadyExists
-{
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
     }
 }
 
@@ -5616,11 +5656,43 @@ pub struct TooManyFieldLevelEncryptionQueryArgProfiles {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl TooManyFieldLevelEncryptionQueryArgProfiles {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for TooManyFieldLevelEncryptionQueryArgProfiles {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "TooManyFieldLevelEncryptionQueryArgProfiles")?;
+        if let Some(inner_41) = &self.message {
+            {
+                write!(f, ": {}", inner_41)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for TooManyFieldLevelEncryptionQueryArgProfiles {}
+impl aws_http::request_id::RequestId for crate::error::TooManyFieldLevelEncryptionQueryArgProfiles {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata
+    for TooManyFieldLevelEncryptionQueryArgProfiles
+{
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl TooManyFieldLevelEncryptionQueryArgProfiles {
     /// Creates a new builder-style object to manufacture [`TooManyFieldLevelEncryptionQueryArgProfiles`](crate::error::TooManyFieldLevelEncryptionQueryArgProfiles).
     pub fn builder() -> crate::error::too_many_field_level_encryption_query_arg_profiles::Builder {
         crate::error::too_many_field_level_encryption_query_arg_profiles::Builder::default()
     }
 }
+
 /// See [`TooManyFieldLevelEncryptionQueryArgProfiles`](crate::error::TooManyFieldLevelEncryptionQueryArgProfiles).
 pub mod too_many_field_level_encryption_query_arg_profiles {
 
@@ -5665,37 +5737,6 @@ pub mod too_many_field_level_encryption_query_arg_profiles {
         }
     }
 }
-impl TooManyFieldLevelEncryptionQueryArgProfiles {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for TooManyFieldLevelEncryptionQueryArgProfiles {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "TooManyFieldLevelEncryptionQueryArgProfiles")?;
-        if let Some(inner_41) = &self.message {
-            {
-                write!(f, ": {}", inner_41)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for TooManyFieldLevelEncryptionQueryArgProfiles {}
-impl aws_http::request_id::RequestId for crate::error::TooManyFieldLevelEncryptionQueryArgProfiles {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for TooManyFieldLevelEncryptionQueryArgProfiles
-{
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>The maximum number of content type profiles for field-level encryption have been created.</p>
 #[non_exhaustive]
@@ -5707,12 +5748,46 @@ pub struct TooManyFieldLevelEncryptionContentTypeProfiles {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl TooManyFieldLevelEncryptionContentTypeProfiles {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for TooManyFieldLevelEncryptionContentTypeProfiles {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "TooManyFieldLevelEncryptionContentTypeProfiles")?;
+        if let Some(inner_42) = &self.message {
+            {
+                write!(f, ": {}", inner_42)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for TooManyFieldLevelEncryptionContentTypeProfiles {}
+impl aws_http::request_id::RequestId
+    for crate::error::TooManyFieldLevelEncryptionContentTypeProfiles
+{
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata
+    for TooManyFieldLevelEncryptionContentTypeProfiles
+{
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl TooManyFieldLevelEncryptionContentTypeProfiles {
     /// Creates a new builder-style object to manufacture [`TooManyFieldLevelEncryptionContentTypeProfiles`](crate::error::TooManyFieldLevelEncryptionContentTypeProfiles).
     pub fn builder() -> crate::error::too_many_field_level_encryption_content_type_profiles::Builder
     {
         crate::error::too_many_field_level_encryption_content_type_profiles::Builder::default()
     }
 }
+
 /// See [`TooManyFieldLevelEncryptionContentTypeProfiles`](crate::error::TooManyFieldLevelEncryptionContentTypeProfiles).
 pub mod too_many_field_level_encryption_content_type_profiles {
 
@@ -5757,39 +5832,6 @@ pub mod too_many_field_level_encryption_content_type_profiles {
         }
     }
 }
-impl TooManyFieldLevelEncryptionContentTypeProfiles {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for TooManyFieldLevelEncryptionContentTypeProfiles {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "TooManyFieldLevelEncryptionContentTypeProfiles")?;
-        if let Some(inner_42) = &self.message {
-            {
-                write!(f, ": {}", inner_42)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for TooManyFieldLevelEncryptionContentTypeProfiles {}
-impl aws_http::request_id::RequestId
-    for crate::error::TooManyFieldLevelEncryptionContentTypeProfiles
-{
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for TooManyFieldLevelEncryptionContentTypeProfiles
-{
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>No profile specified for the field-level encryption query argument.</p>
 #[non_exhaustive]
@@ -5801,11 +5843,41 @@ pub struct QueryArgProfileEmpty {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl QueryArgProfileEmpty {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for QueryArgProfileEmpty {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "QueryArgProfileEmpty")?;
+        if let Some(inner_43) = &self.message {
+            {
+                write!(f, ": {}", inner_43)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for QueryArgProfileEmpty {}
+impl aws_http::request_id::RequestId for crate::error::QueryArgProfileEmpty {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for QueryArgProfileEmpty {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl QueryArgProfileEmpty {
     /// Creates a new builder-style object to manufacture [`QueryArgProfileEmpty`](crate::error::QueryArgProfileEmpty).
     pub fn builder() -> crate::error::query_arg_profile_empty::Builder {
         crate::error::query_arg_profile_empty::Builder::default()
     }
 }
+
 /// See [`QueryArgProfileEmpty`](crate::error::QueryArgProfileEmpty).
 pub mod query_arg_profile_empty {
 
@@ -5850,35 +5922,6 @@ pub mod query_arg_profile_empty {
         }
     }
 }
-impl QueryArgProfileEmpty {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for QueryArgProfileEmpty {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "QueryArgProfileEmpty")?;
-        if let Some(inner_43) = &self.message {
-            {
-                write!(f, ": {}", inner_43)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for QueryArgProfileEmpty {}
-impl aws_http::request_id::RequestId for crate::error::QueryArgProfileEmpty {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for QueryArgProfileEmpty {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>The specified configuration for field-level encryption doesn't exist.</p>
 #[non_exhaustive]
@@ -5890,11 +5933,41 @@ pub struct NoSuchFieldLevelEncryptionConfig {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl NoSuchFieldLevelEncryptionConfig {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for NoSuchFieldLevelEncryptionConfig {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "NoSuchFieldLevelEncryptionConfig")?;
+        if let Some(inner_44) = &self.message {
+            {
+                write!(f, ": {}", inner_44)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for NoSuchFieldLevelEncryptionConfig {}
+impl aws_http::request_id::RequestId for crate::error::NoSuchFieldLevelEncryptionConfig {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for NoSuchFieldLevelEncryptionConfig {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl NoSuchFieldLevelEncryptionConfig {
     /// Creates a new builder-style object to manufacture [`NoSuchFieldLevelEncryptionConfig`](crate::error::NoSuchFieldLevelEncryptionConfig).
     pub fn builder() -> crate::error::no_such_field_level_encryption_config::Builder {
         crate::error::no_such_field_level_encryption_config::Builder::default()
     }
 }
+
 /// See [`NoSuchFieldLevelEncryptionConfig`](crate::error::NoSuchFieldLevelEncryptionConfig).
 pub mod no_such_field_level_encryption_config {
 
@@ -5937,35 +6010,6 @@ pub mod no_such_field_level_encryption_config {
                 meta: self.meta.unwrap_or_default(),
             }
         }
-    }
-}
-impl NoSuchFieldLevelEncryptionConfig {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for NoSuchFieldLevelEncryptionConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "NoSuchFieldLevelEncryptionConfig")?;
-        if let Some(inner_44) = &self.message {
-            {
-                write!(f, ": {}", inner_44)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for NoSuchFieldLevelEncryptionConfig {}
-impl aws_http::request_id::RequestId for crate::error::NoSuchFieldLevelEncryptionConfig {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for NoSuchFieldLevelEncryptionConfig {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
     }
 }
 
@@ -6835,11 +6879,41 @@ pub struct TrustedKeyGroupDoesNotExist {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl TrustedKeyGroupDoesNotExist {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for TrustedKeyGroupDoesNotExist {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "TrustedKeyGroupDoesNotExist")?;
+        if let Some(inner_45) = &self.message {
+            {
+                write!(f, ": {}", inner_45)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for TrustedKeyGroupDoesNotExist {}
+impl aws_http::request_id::RequestId for crate::error::TrustedKeyGroupDoesNotExist {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for TrustedKeyGroupDoesNotExist {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl TrustedKeyGroupDoesNotExist {
     /// Creates a new builder-style object to manufacture [`TrustedKeyGroupDoesNotExist`](crate::error::TrustedKeyGroupDoesNotExist).
     pub fn builder() -> crate::error::trusted_key_group_does_not_exist::Builder {
         crate::error::trusted_key_group_does_not_exist::Builder::default()
     }
 }
+
 /// See [`TrustedKeyGroupDoesNotExist`](crate::error::TrustedKeyGroupDoesNotExist).
 pub mod trusted_key_group_does_not_exist {
 
@@ -6884,35 +6958,6 @@ pub mod trusted_key_group_does_not_exist {
         }
     }
 }
-impl TrustedKeyGroupDoesNotExist {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for TrustedKeyGroupDoesNotExist {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "TrustedKeyGroupDoesNotExist")?;
-        if let Some(inner_45) = &self.message {
-            {
-                write!(f, ": {}", inner_45)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for TrustedKeyGroupDoesNotExist {}
-impl aws_http::request_id::RequestId for crate::error::TrustedKeyGroupDoesNotExist {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for TrustedKeyGroupDoesNotExist {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>Your request contains too many query string parameters.</p>
 #[non_exhaustive]
@@ -6924,11 +6969,41 @@ pub struct TooManyQueryStringParameters {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl TooManyQueryStringParameters {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for TooManyQueryStringParameters {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "TooManyQueryStringParameters")?;
+        if let Some(inner_46) = &self.message {
+            {
+                write!(f, ": {}", inner_46)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for TooManyQueryStringParameters {}
+impl aws_http::request_id::RequestId for crate::error::TooManyQueryStringParameters {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for TooManyQueryStringParameters {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl TooManyQueryStringParameters {
     /// Creates a new builder-style object to manufacture [`TooManyQueryStringParameters`](crate::error::TooManyQueryStringParameters).
     pub fn builder() -> crate::error::too_many_query_string_parameters::Builder {
         crate::error::too_many_query_string_parameters::Builder::default()
     }
 }
+
 /// See [`TooManyQueryStringParameters`](crate::error::TooManyQueryStringParameters).
 pub mod too_many_query_string_parameters {
 
@@ -6973,35 +7048,6 @@ pub mod too_many_query_string_parameters {
         }
     }
 }
-impl TooManyQueryStringParameters {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for TooManyQueryStringParameters {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "TooManyQueryStringParameters")?;
-        if let Some(inner_46) = &self.message {
-            {
-                write!(f, ": {}", inner_46)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for TooManyQueryStringParameters {}
-impl aws_http::request_id::RequestId for crate::error::TooManyQueryStringParameters {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for TooManyQueryStringParameters {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>You cannot create more origins for the distribution.</p>
 #[non_exhaustive]
@@ -7013,11 +7059,41 @@ pub struct TooManyOrigins {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl TooManyOrigins {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for TooManyOrigins {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "TooManyOrigins")?;
+        if let Some(inner_47) = &self.message {
+            {
+                write!(f, ": {}", inner_47)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for TooManyOrigins {}
+impl aws_http::request_id::RequestId for crate::error::TooManyOrigins {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for TooManyOrigins {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl TooManyOrigins {
     /// Creates a new builder-style object to manufacture [`TooManyOrigins`](crate::error::TooManyOrigins).
     pub fn builder() -> crate::error::too_many_origins::Builder {
         crate::error::too_many_origins::Builder::default()
     }
 }
+
 /// See [`TooManyOrigins`](crate::error::TooManyOrigins).
 pub mod too_many_origins {
 
@@ -7062,35 +7138,6 @@ pub mod too_many_origins {
         }
     }
 }
-impl TooManyOrigins {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for TooManyOrigins {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "TooManyOrigins")?;
-        if let Some(inner_47) = &self.message {
-            {
-                write!(f, ": {}", inner_47)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for TooManyOrigins {}
-impl aws_http::request_id::RequestId for crate::error::TooManyOrigins {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for TooManyOrigins {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>Processing your request would cause you to exceed the maximum number of origin groups allowed.</p>
 #[non_exhaustive]
@@ -7102,11 +7149,43 @@ pub struct TooManyOriginGroupsPerDistribution {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl TooManyOriginGroupsPerDistribution {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for TooManyOriginGroupsPerDistribution {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "TooManyOriginGroupsPerDistribution")?;
+        if let Some(inner_48) = &self.message {
+            {
+                write!(f, ": {}", inner_48)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for TooManyOriginGroupsPerDistribution {}
+impl aws_http::request_id::RequestId for crate::error::TooManyOriginGroupsPerDistribution {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata
+    for TooManyOriginGroupsPerDistribution
+{
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl TooManyOriginGroupsPerDistribution {
     /// Creates a new builder-style object to manufacture [`TooManyOriginGroupsPerDistribution`](crate::error::TooManyOriginGroupsPerDistribution).
     pub fn builder() -> crate::error::too_many_origin_groups_per_distribution::Builder {
         crate::error::too_many_origin_groups_per_distribution::Builder::default()
     }
 }
+
 /// See [`TooManyOriginGroupsPerDistribution`](crate::error::TooManyOriginGroupsPerDistribution).
 pub mod too_many_origin_groups_per_distribution {
 
@@ -7151,37 +7230,6 @@ pub mod too_many_origin_groups_per_distribution {
         }
     }
 }
-impl TooManyOriginGroupsPerDistribution {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for TooManyOriginGroupsPerDistribution {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "TooManyOriginGroupsPerDistribution")?;
-        if let Some(inner_48) = &self.message {
-            {
-                write!(f, ": {}", inner_48)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for TooManyOriginGroupsPerDistribution {}
-impl aws_http::request_id::RequestId for crate::error::TooManyOriginGroupsPerDistribution {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for TooManyOriginGroupsPerDistribution
-{
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>Your request contains too many origin custom headers.</p>
 #[non_exhaustive]
@@ -7193,11 +7241,41 @@ pub struct TooManyOriginCustomHeaders {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl TooManyOriginCustomHeaders {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for TooManyOriginCustomHeaders {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "TooManyOriginCustomHeaders")?;
+        if let Some(inner_49) = &self.message {
+            {
+                write!(f, ": {}", inner_49)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for TooManyOriginCustomHeaders {}
+impl aws_http::request_id::RequestId for crate::error::TooManyOriginCustomHeaders {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for TooManyOriginCustomHeaders {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl TooManyOriginCustomHeaders {
     /// Creates a new builder-style object to manufacture [`TooManyOriginCustomHeaders`](crate::error::TooManyOriginCustomHeaders).
     pub fn builder() -> crate::error::too_many_origin_custom_headers::Builder {
         crate::error::too_many_origin_custom_headers::Builder::default()
     }
 }
+
 /// See [`TooManyOriginCustomHeaders`](crate::error::TooManyOriginCustomHeaders).
 pub mod too_many_origin_custom_headers {
 
@@ -7242,35 +7320,6 @@ pub mod too_many_origin_custom_headers {
         }
     }
 }
-impl TooManyOriginCustomHeaders {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for TooManyOriginCustomHeaders {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "TooManyOriginCustomHeaders")?;
-        if let Some(inner_49) = &self.message {
-            {
-                write!(f, ": {}", inner_49)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for TooManyOriginCustomHeaders {}
-impl aws_http::request_id::RequestId for crate::error::TooManyOriginCustomHeaders {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for TooManyOriginCustomHeaders {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>Your request contains more Lambda@Edge function associations than are allowed per distribution.</p>
 #[non_exhaustive]
@@ -7282,11 +7331,41 @@ pub struct TooManyLambdaFunctionAssociations {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl TooManyLambdaFunctionAssociations {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for TooManyLambdaFunctionAssociations {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "TooManyLambdaFunctionAssociations")?;
+        if let Some(inner_50) = &self.message {
+            {
+                write!(f, ": {}", inner_50)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for TooManyLambdaFunctionAssociations {}
+impl aws_http::request_id::RequestId for crate::error::TooManyLambdaFunctionAssociations {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for TooManyLambdaFunctionAssociations {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl TooManyLambdaFunctionAssociations {
     /// Creates a new builder-style object to manufacture [`TooManyLambdaFunctionAssociations`](crate::error::TooManyLambdaFunctionAssociations).
     pub fn builder() -> crate::error::too_many_lambda_function_associations::Builder {
         crate::error::too_many_lambda_function_associations::Builder::default()
     }
 }
+
 /// See [`TooManyLambdaFunctionAssociations`](crate::error::TooManyLambdaFunctionAssociations).
 pub mod too_many_lambda_function_associations {
 
@@ -7331,35 +7410,6 @@ pub mod too_many_lambda_function_associations {
         }
     }
 }
-impl TooManyLambdaFunctionAssociations {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for TooManyLambdaFunctionAssociations {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "TooManyLambdaFunctionAssociations")?;
-        if let Some(inner_50) = &self.message {
-            {
-                write!(f, ": {}", inner_50)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for TooManyLambdaFunctionAssociations {}
-impl aws_http::request_id::RequestId for crate::error::TooManyLambdaFunctionAssociations {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for TooManyLambdaFunctionAssociations {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>The number of key groups referenced by this distribution is more than the maximum allowed. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.</p>
 #[non_exhaustive]
@@ -7371,11 +7421,43 @@ pub struct TooManyKeyGroupsAssociatedToDistribution {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl TooManyKeyGroupsAssociatedToDistribution {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for TooManyKeyGroupsAssociatedToDistribution {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "TooManyKeyGroupsAssociatedToDistribution")?;
+        if let Some(inner_51) = &self.message {
+            {
+                write!(f, ": {}", inner_51)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for TooManyKeyGroupsAssociatedToDistribution {}
+impl aws_http::request_id::RequestId for crate::error::TooManyKeyGroupsAssociatedToDistribution {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata
+    for TooManyKeyGroupsAssociatedToDistribution
+{
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl TooManyKeyGroupsAssociatedToDistribution {
     /// Creates a new builder-style object to manufacture [`TooManyKeyGroupsAssociatedToDistribution`](crate::error::TooManyKeyGroupsAssociatedToDistribution).
     pub fn builder() -> crate::error::too_many_key_groups_associated_to_distribution::Builder {
         crate::error::too_many_key_groups_associated_to_distribution::Builder::default()
     }
 }
+
 /// See [`TooManyKeyGroupsAssociatedToDistribution`](crate::error::TooManyKeyGroupsAssociatedToDistribution).
 pub mod too_many_key_groups_associated_to_distribution {
 
@@ -7420,37 +7502,6 @@ pub mod too_many_key_groups_associated_to_distribution {
         }
     }
 }
-impl TooManyKeyGroupsAssociatedToDistribution {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for TooManyKeyGroupsAssociatedToDistribution {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "TooManyKeyGroupsAssociatedToDistribution")?;
-        if let Some(inner_51) = &self.message {
-            {
-                write!(f, ": {}", inner_51)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for TooManyKeyGroupsAssociatedToDistribution {}
-impl aws_http::request_id::RequestId for crate::error::TooManyKeyGroupsAssociatedToDistribution {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for TooManyKeyGroupsAssociatedToDistribution
-{
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>Your request contains too many headers in forwarded values.</p>
 #[non_exhaustive]
@@ -7462,11 +7513,41 @@ pub struct TooManyHeadersInForwardedValues {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl TooManyHeadersInForwardedValues {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for TooManyHeadersInForwardedValues {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "TooManyHeadersInForwardedValues")?;
+        if let Some(inner_52) = &self.message {
+            {
+                write!(f, ": {}", inner_52)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for TooManyHeadersInForwardedValues {}
+impl aws_http::request_id::RequestId for crate::error::TooManyHeadersInForwardedValues {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for TooManyHeadersInForwardedValues {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl TooManyHeadersInForwardedValues {
     /// Creates a new builder-style object to manufacture [`TooManyHeadersInForwardedValues`](crate::error::TooManyHeadersInForwardedValues).
     pub fn builder() -> crate::error::too_many_headers_in_forwarded_values::Builder {
         crate::error::too_many_headers_in_forwarded_values::Builder::default()
     }
 }
+
 /// See [`TooManyHeadersInForwardedValues`](crate::error::TooManyHeadersInForwardedValues).
 pub mod too_many_headers_in_forwarded_values {
 
@@ -7511,35 +7592,6 @@ pub mod too_many_headers_in_forwarded_values {
         }
     }
 }
-impl TooManyHeadersInForwardedValues {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for TooManyHeadersInForwardedValues {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "TooManyHeadersInForwardedValues")?;
-        if let Some(inner_52) = &self.message {
-            {
-                write!(f, ": {}", inner_52)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for TooManyHeadersInForwardedValues {}
-impl aws_http::request_id::RequestId for crate::error::TooManyHeadersInForwardedValues {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for TooManyHeadersInForwardedValues {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>You have reached the maximum number of CloudFront function associations for this distribution. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.</p>
 #[non_exhaustive]
@@ -7551,11 +7603,41 @@ pub struct TooManyFunctionAssociations {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl TooManyFunctionAssociations {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for TooManyFunctionAssociations {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "TooManyFunctionAssociations")?;
+        if let Some(inner_53) = &self.message {
+            {
+                write!(f, ": {}", inner_53)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for TooManyFunctionAssociations {}
+impl aws_http::request_id::RequestId for crate::error::TooManyFunctionAssociations {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for TooManyFunctionAssociations {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl TooManyFunctionAssociations {
     /// Creates a new builder-style object to manufacture [`TooManyFunctionAssociations`](crate::error::TooManyFunctionAssociations).
     pub fn builder() -> crate::error::too_many_function_associations::Builder {
         crate::error::too_many_function_associations::Builder::default()
     }
 }
+
 /// See [`TooManyFunctionAssociations`](crate::error::TooManyFunctionAssociations).
 pub mod too_many_function_associations {
 
@@ -7600,35 +7682,6 @@ pub mod too_many_function_associations {
         }
     }
 }
-impl TooManyFunctionAssociations {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for TooManyFunctionAssociations {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "TooManyFunctionAssociations")?;
-        if let Some(inner_53) = &self.message {
-            {
-                write!(f, ": {}", inner_53)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for TooManyFunctionAssociations {}
-impl aws_http::request_id::RequestId for crate::error::TooManyFunctionAssociations {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for TooManyFunctionAssociations {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>The maximum number of distributions have been associated with the specified Lambda@Edge function.</p>
 #[non_exhaustive]
@@ -7640,11 +7693,46 @@ pub struct TooManyDistributionsWithSingleFunctionArn {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl TooManyDistributionsWithSingleFunctionArn {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for TooManyDistributionsWithSingleFunctionArn {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(
+            f,
+            "TooManyDistributionsWithSingleFunctionArn [TooManyDistributionsWithSingleFunctionARN]"
+        )?;
+        if let Some(inner_54) = &self.message {
+            {
+                write!(f, ": {}", inner_54)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for TooManyDistributionsWithSingleFunctionArn {}
+impl aws_http::request_id::RequestId for crate::error::TooManyDistributionsWithSingleFunctionArn {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata
+    for TooManyDistributionsWithSingleFunctionArn
+{
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl TooManyDistributionsWithSingleFunctionArn {
     /// Creates a new builder-style object to manufacture [`TooManyDistributionsWithSingleFunctionArn`](crate::error::TooManyDistributionsWithSingleFunctionArn).
     pub fn builder() -> crate::error::too_many_distributions_with_single_function_arn::Builder {
         crate::error::too_many_distributions_with_single_function_arn::Builder::default()
     }
 }
+
 /// See [`TooManyDistributionsWithSingleFunctionArn`](crate::error::TooManyDistributionsWithSingleFunctionArn).
 pub mod too_many_distributions_with_single_function_arn {
 
@@ -7689,40 +7777,6 @@ pub mod too_many_distributions_with_single_function_arn {
         }
     }
 }
-impl TooManyDistributionsWithSingleFunctionArn {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for TooManyDistributionsWithSingleFunctionArn {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(
-            f,
-            "TooManyDistributionsWithSingleFunctionArn [TooManyDistributionsWithSingleFunctionARN]"
-        )?;
-        if let Some(inner_54) = &self.message {
-            {
-                write!(f, ": {}", inner_54)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for TooManyDistributionsWithSingleFunctionArn {}
-impl aws_http::request_id::RequestId for crate::error::TooManyDistributionsWithSingleFunctionArn {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for TooManyDistributionsWithSingleFunctionArn
-{
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>Processing your request would cause the maximum number of distributions with Lambda@Edge function associations per owner to be exceeded.</p>
 #[non_exhaustive]
@@ -7734,11 +7788,43 @@ pub struct TooManyDistributionsWithLambdaAssociations {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl TooManyDistributionsWithLambdaAssociations {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for TooManyDistributionsWithLambdaAssociations {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "TooManyDistributionsWithLambdaAssociations")?;
+        if let Some(inner_55) = &self.message {
+            {
+                write!(f, ": {}", inner_55)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for TooManyDistributionsWithLambdaAssociations {}
+impl aws_http::request_id::RequestId for crate::error::TooManyDistributionsWithLambdaAssociations {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata
+    for TooManyDistributionsWithLambdaAssociations
+{
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl TooManyDistributionsWithLambdaAssociations {
     /// Creates a new builder-style object to manufacture [`TooManyDistributionsWithLambdaAssociations`](crate::error::TooManyDistributionsWithLambdaAssociations).
     pub fn builder() -> crate::error::too_many_distributions_with_lambda_associations::Builder {
         crate::error::too_many_distributions_with_lambda_associations::Builder::default()
     }
 }
+
 /// See [`TooManyDistributionsWithLambdaAssociations`](crate::error::TooManyDistributionsWithLambdaAssociations).
 pub mod too_many_distributions_with_lambda_associations {
 
@@ -7783,37 +7869,6 @@ pub mod too_many_distributions_with_lambda_associations {
         }
     }
 }
-impl TooManyDistributionsWithLambdaAssociations {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for TooManyDistributionsWithLambdaAssociations {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "TooManyDistributionsWithLambdaAssociations")?;
-        if let Some(inner_55) = &self.message {
-            {
-                write!(f, ": {}", inner_55)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for TooManyDistributionsWithLambdaAssociations {}
-impl aws_http::request_id::RequestId for crate::error::TooManyDistributionsWithLambdaAssociations {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for TooManyDistributionsWithLambdaAssociations
-{
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>You have reached the maximum number of distributions that are associated with a CloudFront function. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.</p>
 #[non_exhaustive]
@@ -7825,11 +7880,45 @@ pub struct TooManyDistributionsWithFunctionAssociations {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl TooManyDistributionsWithFunctionAssociations {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for TooManyDistributionsWithFunctionAssociations {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "TooManyDistributionsWithFunctionAssociations")?;
+        if let Some(inner_56) = &self.message {
+            {
+                write!(f, ": {}", inner_56)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for TooManyDistributionsWithFunctionAssociations {}
+impl aws_http::request_id::RequestId
+    for crate::error::TooManyDistributionsWithFunctionAssociations
+{
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata
+    for TooManyDistributionsWithFunctionAssociations
+{
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl TooManyDistributionsWithFunctionAssociations {
     /// Creates a new builder-style object to manufacture [`TooManyDistributionsWithFunctionAssociations`](crate::error::TooManyDistributionsWithFunctionAssociations).
     pub fn builder() -> crate::error::too_many_distributions_with_function_associations::Builder {
         crate::error::too_many_distributions_with_function_associations::Builder::default()
     }
 }
+
 /// See [`TooManyDistributionsWithFunctionAssociations`](crate::error::TooManyDistributionsWithFunctionAssociations).
 pub mod too_many_distributions_with_function_associations {
 
@@ -7874,39 +7963,6 @@ pub mod too_many_distributions_with_function_associations {
         }
     }
 }
-impl TooManyDistributionsWithFunctionAssociations {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for TooManyDistributionsWithFunctionAssociations {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "TooManyDistributionsWithFunctionAssociations")?;
-        if let Some(inner_56) = &self.message {
-            {
-                write!(f, ": {}", inner_56)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for TooManyDistributionsWithFunctionAssociations {}
-impl aws_http::request_id::RequestId
-    for crate::error::TooManyDistributionsWithFunctionAssociations
-{
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for TooManyDistributionsWithFunctionAssociations
-{
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>The maximum number of distributions have been associated with the specified response headers policy.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.</p>
@@ -7919,6 +7975,39 @@ pub struct TooManyDistributionsAssociatedToResponseHeadersPolicy {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl TooManyDistributionsAssociatedToResponseHeadersPolicy {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for TooManyDistributionsAssociatedToResponseHeadersPolicy {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "TooManyDistributionsAssociatedToResponseHeadersPolicy")?;
+        if let Some(inner_57) = &self.message {
+            {
+                write!(f, ": {}", inner_57)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for TooManyDistributionsAssociatedToResponseHeadersPolicy {}
+impl aws_http::request_id::RequestId
+    for crate::error::TooManyDistributionsAssociatedToResponseHeadersPolicy
+{
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata
+    for TooManyDistributionsAssociatedToResponseHeadersPolicy
+{
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl TooManyDistributionsAssociatedToResponseHeadersPolicy {
     /// Creates a new builder-style object to manufacture [`TooManyDistributionsAssociatedToResponseHeadersPolicy`](crate::error::TooManyDistributionsAssociatedToResponseHeadersPolicy).
     pub fn builder(
     ) -> crate::error::too_many_distributions_associated_to_response_headers_policy::Builder {
@@ -7926,6 +8015,7 @@ impl TooManyDistributionsAssociatedToResponseHeadersPolicy {
         )
     }
 }
+
 /// See [`TooManyDistributionsAssociatedToResponseHeadersPolicy`](crate::error::TooManyDistributionsAssociatedToResponseHeadersPolicy).
 pub mod too_many_distributions_associated_to_response_headers_policy {
 
@@ -7970,39 +8060,6 @@ pub mod too_many_distributions_associated_to_response_headers_policy {
         }
     }
 }
-impl TooManyDistributionsAssociatedToResponseHeadersPolicy {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for TooManyDistributionsAssociatedToResponseHeadersPolicy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "TooManyDistributionsAssociatedToResponseHeadersPolicy")?;
-        if let Some(inner_57) = &self.message {
-            {
-                write!(f, ": {}", inner_57)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for TooManyDistributionsAssociatedToResponseHeadersPolicy {}
-impl aws_http::request_id::RequestId
-    for crate::error::TooManyDistributionsAssociatedToResponseHeadersPolicy
-{
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for TooManyDistributionsAssociatedToResponseHeadersPolicy
-{
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>The maximum number of distributions have been associated with the specified origin request policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.</p>
 #[non_exhaustive]
@@ -8014,12 +8071,46 @@ pub struct TooManyDistributionsAssociatedToOriginRequestPolicy {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl TooManyDistributionsAssociatedToOriginRequestPolicy {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for TooManyDistributionsAssociatedToOriginRequestPolicy {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "TooManyDistributionsAssociatedToOriginRequestPolicy")?;
+        if let Some(inner_58) = &self.message {
+            {
+                write!(f, ": {}", inner_58)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for TooManyDistributionsAssociatedToOriginRequestPolicy {}
+impl aws_http::request_id::RequestId
+    for crate::error::TooManyDistributionsAssociatedToOriginRequestPolicy
+{
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata
+    for TooManyDistributionsAssociatedToOriginRequestPolicy
+{
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl TooManyDistributionsAssociatedToOriginRequestPolicy {
     /// Creates a new builder-style object to manufacture [`TooManyDistributionsAssociatedToOriginRequestPolicy`](crate::error::TooManyDistributionsAssociatedToOriginRequestPolicy).
     pub fn builder(
     ) -> crate::error::too_many_distributions_associated_to_origin_request_policy::Builder {
         crate::error::too_many_distributions_associated_to_origin_request_policy::Builder::default()
     }
 }
+
 /// See [`TooManyDistributionsAssociatedToOriginRequestPolicy`](crate::error::TooManyDistributionsAssociatedToOriginRequestPolicy).
 pub mod too_many_distributions_associated_to_origin_request_policy {
 
@@ -8064,39 +8155,6 @@ pub mod too_many_distributions_associated_to_origin_request_policy {
         }
     }
 }
-impl TooManyDistributionsAssociatedToOriginRequestPolicy {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for TooManyDistributionsAssociatedToOriginRequestPolicy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "TooManyDistributionsAssociatedToOriginRequestPolicy")?;
-        if let Some(inner_58) = &self.message {
-            {
-                write!(f, ": {}", inner_58)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for TooManyDistributionsAssociatedToOriginRequestPolicy {}
-impl aws_http::request_id::RequestId
-    for crate::error::TooManyDistributionsAssociatedToOriginRequestPolicy
-{
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for TooManyDistributionsAssociatedToOriginRequestPolicy
-{
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>The number of distributions that reference this key group is more than the maximum allowed. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.</p>
 #[non_exhaustive]
@@ -8108,11 +8166,43 @@ pub struct TooManyDistributionsAssociatedToKeyGroup {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl TooManyDistributionsAssociatedToKeyGroup {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for TooManyDistributionsAssociatedToKeyGroup {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "TooManyDistributionsAssociatedToKeyGroup")?;
+        if let Some(inner_59) = &self.message {
+            {
+                write!(f, ": {}", inner_59)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for TooManyDistributionsAssociatedToKeyGroup {}
+impl aws_http::request_id::RequestId for crate::error::TooManyDistributionsAssociatedToKeyGroup {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata
+    for TooManyDistributionsAssociatedToKeyGroup
+{
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl TooManyDistributionsAssociatedToKeyGroup {
     /// Creates a new builder-style object to manufacture [`TooManyDistributionsAssociatedToKeyGroup`](crate::error::TooManyDistributionsAssociatedToKeyGroup).
     pub fn builder() -> crate::error::too_many_distributions_associated_to_key_group::Builder {
         crate::error::too_many_distributions_associated_to_key_group::Builder::default()
     }
 }
+
 /// See [`TooManyDistributionsAssociatedToKeyGroup`](crate::error::TooManyDistributionsAssociatedToKeyGroup).
 pub mod too_many_distributions_associated_to_key_group {
 
@@ -8157,37 +8247,6 @@ pub mod too_many_distributions_associated_to_key_group {
         }
     }
 }
-impl TooManyDistributionsAssociatedToKeyGroup {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for TooManyDistributionsAssociatedToKeyGroup {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "TooManyDistributionsAssociatedToKeyGroup")?;
-        if let Some(inner_59) = &self.message {
-            {
-                write!(f, ": {}", inner_59)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for TooManyDistributionsAssociatedToKeyGroup {}
-impl aws_http::request_id::RequestId for crate::error::TooManyDistributionsAssociatedToKeyGroup {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for TooManyDistributionsAssociatedToKeyGroup
-{
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>The maximum number of distributions have been associated with the specified configuration for field-level encryption.</p>
 #[non_exhaustive]
@@ -8199,6 +8258,42 @@ pub struct TooManyDistributionsAssociatedToFieldLevelEncryptionConfig {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl TooManyDistributionsAssociatedToFieldLevelEncryptionConfig {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for TooManyDistributionsAssociatedToFieldLevelEncryptionConfig {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(
+            f,
+            "TooManyDistributionsAssociatedToFieldLevelEncryptionConfig"
+        )?;
+        if let Some(inner_60) = &self.message {
+            {
+                write!(f, ": {}", inner_60)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for TooManyDistributionsAssociatedToFieldLevelEncryptionConfig {}
+impl aws_http::request_id::RequestId
+    for crate::error::TooManyDistributionsAssociatedToFieldLevelEncryptionConfig
+{
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata
+    for TooManyDistributionsAssociatedToFieldLevelEncryptionConfig
+{
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl TooManyDistributionsAssociatedToFieldLevelEncryptionConfig {
     /// Creates a new builder-style object to manufacture [`TooManyDistributionsAssociatedToFieldLevelEncryptionConfig`](crate::error::TooManyDistributionsAssociatedToFieldLevelEncryptionConfig).
     pub fn builder(
     ) -> crate::error::too_many_distributions_associated_to_field_level_encryption_config::Builder
@@ -8206,6 +8301,7 @@ impl TooManyDistributionsAssociatedToFieldLevelEncryptionConfig {
         crate::error::too_many_distributions_associated_to_field_level_encryption_config::Builder::default()
     }
 }
+
 /// See [`TooManyDistributionsAssociatedToFieldLevelEncryptionConfig`](crate::error::TooManyDistributionsAssociatedToFieldLevelEncryptionConfig).
 pub mod too_many_distributions_associated_to_field_level_encryption_config {
 
@@ -8252,42 +8348,6 @@ pub mod too_many_distributions_associated_to_field_level_encryption_config {
         }
     }
 }
-impl TooManyDistributionsAssociatedToFieldLevelEncryptionConfig {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for TooManyDistributionsAssociatedToFieldLevelEncryptionConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(
-            f,
-            "TooManyDistributionsAssociatedToFieldLevelEncryptionConfig"
-        )?;
-        if let Some(inner_60) = &self.message {
-            {
-                write!(f, ": {}", inner_60)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for TooManyDistributionsAssociatedToFieldLevelEncryptionConfig {}
-impl aws_http::request_id::RequestId
-    for crate::error::TooManyDistributionsAssociatedToFieldLevelEncryptionConfig
-{
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for TooManyDistributionsAssociatedToFieldLevelEncryptionConfig
-{
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>The maximum number of distributions have been associated with the specified cache policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.</p>
 #[non_exhaustive]
@@ -8299,11 +8359,43 @@ pub struct TooManyDistributionsAssociatedToCachePolicy {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl TooManyDistributionsAssociatedToCachePolicy {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for TooManyDistributionsAssociatedToCachePolicy {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "TooManyDistributionsAssociatedToCachePolicy")?;
+        if let Some(inner_61) = &self.message {
+            {
+                write!(f, ": {}", inner_61)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for TooManyDistributionsAssociatedToCachePolicy {}
+impl aws_http::request_id::RequestId for crate::error::TooManyDistributionsAssociatedToCachePolicy {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata
+    for TooManyDistributionsAssociatedToCachePolicy
+{
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl TooManyDistributionsAssociatedToCachePolicy {
     /// Creates a new builder-style object to manufacture [`TooManyDistributionsAssociatedToCachePolicy`](crate::error::TooManyDistributionsAssociatedToCachePolicy).
     pub fn builder() -> crate::error::too_many_distributions_associated_to_cache_policy::Builder {
         crate::error::too_many_distributions_associated_to_cache_policy::Builder::default()
     }
 }
+
 /// See [`TooManyDistributionsAssociatedToCachePolicy`](crate::error::TooManyDistributionsAssociatedToCachePolicy).
 pub mod too_many_distributions_associated_to_cache_policy {
 
@@ -8348,37 +8440,6 @@ pub mod too_many_distributions_associated_to_cache_policy {
         }
     }
 }
-impl TooManyDistributionsAssociatedToCachePolicy {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for TooManyDistributionsAssociatedToCachePolicy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "TooManyDistributionsAssociatedToCachePolicy")?;
-        if let Some(inner_61) = &self.message {
-            {
-                write!(f, ": {}", inner_61)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for TooManyDistributionsAssociatedToCachePolicy {}
-impl aws_http::request_id::RequestId for crate::error::TooManyDistributionsAssociatedToCachePolicy {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for TooManyDistributionsAssociatedToCachePolicy
-{
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>Your request contains more CNAMEs than are allowed per distribution.</p>
 #[non_exhaustive]
@@ -8390,11 +8451,41 @@ pub struct TooManyDistributionCnamEs {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl TooManyDistributionCnamEs {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for TooManyDistributionCnamEs {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "TooManyDistributionCnamEs [TooManyDistributionCNAMEs]")?;
+        if let Some(inner_62) = &self.message {
+            {
+                write!(f, ": {}", inner_62)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for TooManyDistributionCnamEs {}
+impl aws_http::request_id::RequestId for crate::error::TooManyDistributionCnamEs {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for TooManyDistributionCnamEs {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl TooManyDistributionCnamEs {
     /// Creates a new builder-style object to manufacture [`TooManyDistributionCnamEs`](crate::error::TooManyDistributionCnamEs).
     pub fn builder() -> crate::error::too_many_distribution_cnam_es::Builder {
         crate::error::too_many_distribution_cnam_es::Builder::default()
     }
 }
+
 /// See [`TooManyDistributionCnamEs`](crate::error::TooManyDistributionCnamEs).
 pub mod too_many_distribution_cnam_es {
 
@@ -8439,35 +8530,6 @@ pub mod too_many_distribution_cnam_es {
         }
     }
 }
-impl TooManyDistributionCnamEs {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for TooManyDistributionCnamEs {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "TooManyDistributionCnamEs [TooManyDistributionCNAMEs]")?;
-        if let Some(inner_62) = &self.message {
-            {
-                write!(f, ": {}", inner_62)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for TooManyDistributionCnamEs {}
-impl aws_http::request_id::RequestId for crate::error::TooManyDistributionCnamEs {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for TooManyDistributionCnamEs {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>Your request contains more cookie names in the whitelist than are allowed per cache behavior.</p>
 #[non_exhaustive]
@@ -8479,11 +8541,41 @@ pub struct TooManyCookieNamesInWhiteList {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl TooManyCookieNamesInWhiteList {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for TooManyCookieNamesInWhiteList {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "TooManyCookieNamesInWhiteList")?;
+        if let Some(inner_63) = &self.message {
+            {
+                write!(f, ": {}", inner_63)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for TooManyCookieNamesInWhiteList {}
+impl aws_http::request_id::RequestId for crate::error::TooManyCookieNamesInWhiteList {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for TooManyCookieNamesInWhiteList {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl TooManyCookieNamesInWhiteList {
     /// Creates a new builder-style object to manufacture [`TooManyCookieNamesInWhiteList`](crate::error::TooManyCookieNamesInWhiteList).
     pub fn builder() -> crate::error::too_many_cookie_names_in_white_list::Builder {
         crate::error::too_many_cookie_names_in_white_list::Builder::default()
     }
 }
+
 /// See [`TooManyCookieNamesInWhiteList`](crate::error::TooManyCookieNamesInWhiteList).
 pub mod too_many_cookie_names_in_white_list {
 
@@ -8528,35 +8620,6 @@ pub mod too_many_cookie_names_in_white_list {
         }
     }
 }
-impl TooManyCookieNamesInWhiteList {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for TooManyCookieNamesInWhiteList {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "TooManyCookieNamesInWhiteList")?;
-        if let Some(inner_63) = &self.message {
-            {
-                write!(f, ": {}", inner_63)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for TooManyCookieNamesInWhiteList {}
-impl aws_http::request_id::RequestId for crate::error::TooManyCookieNamesInWhiteList {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for TooManyCookieNamesInWhiteList {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>You cannot create anymore custom SSL/TLS certificates.</p>
 #[non_exhaustive]
@@ -8568,11 +8631,41 @@ pub struct TooManyCertificates {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl TooManyCertificates {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for TooManyCertificates {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "TooManyCertificates")?;
+        if let Some(inner_64) = &self.message {
+            {
+                write!(f, ": {}", inner_64)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for TooManyCertificates {}
+impl aws_http::request_id::RequestId for crate::error::TooManyCertificates {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for TooManyCertificates {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl TooManyCertificates {
     /// Creates a new builder-style object to manufacture [`TooManyCertificates`](crate::error::TooManyCertificates).
     pub fn builder() -> crate::error::too_many_certificates::Builder {
         crate::error::too_many_certificates::Builder::default()
     }
 }
+
 /// See [`TooManyCertificates`](crate::error::TooManyCertificates).
 pub mod too_many_certificates {
 
@@ -8617,35 +8710,6 @@ pub mod too_many_certificates {
         }
     }
 }
-impl TooManyCertificates {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for TooManyCertificates {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "TooManyCertificates")?;
-        if let Some(inner_64) = &self.message {
-            {
-                write!(f, ": {}", inner_64)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for TooManyCertificates {}
-impl aws_http::request_id::RequestId for crate::error::TooManyCertificates {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for TooManyCertificates {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>You cannot create more cache behaviors for the distribution.</p>
 #[non_exhaustive]
@@ -8657,11 +8721,41 @@ pub struct TooManyCacheBehaviors {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl TooManyCacheBehaviors {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for TooManyCacheBehaviors {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "TooManyCacheBehaviors")?;
+        if let Some(inner_65) = &self.message {
+            {
+                write!(f, ": {}", inner_65)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for TooManyCacheBehaviors {}
+impl aws_http::request_id::RequestId for crate::error::TooManyCacheBehaviors {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for TooManyCacheBehaviors {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl TooManyCacheBehaviors {
     /// Creates a new builder-style object to manufacture [`TooManyCacheBehaviors`](crate::error::TooManyCacheBehaviors).
     pub fn builder() -> crate::error::too_many_cache_behaviors::Builder {
         crate::error::too_many_cache_behaviors::Builder::default()
     }
 }
+
 /// See [`TooManyCacheBehaviors`](crate::error::TooManyCacheBehaviors).
 pub mod too_many_cache_behaviors {
 
@@ -8706,35 +8800,6 @@ pub mod too_many_cache_behaviors {
         }
     }
 }
-impl TooManyCacheBehaviors {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for TooManyCacheBehaviors {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "TooManyCacheBehaviors")?;
-        if let Some(inner_65) = &self.message {
-            {
-                write!(f, ": {}", inner_65)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for TooManyCacheBehaviors {}
-impl aws_http::request_id::RequestId for crate::error::TooManyCacheBehaviors {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for TooManyCacheBehaviors {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>The specified real-time log configuration belongs to a different Amazon Web Services account.</p>
 #[non_exhaustive]
@@ -8746,11 +8811,41 @@ pub struct RealtimeLogConfigOwnerMismatch {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl RealtimeLogConfigOwnerMismatch {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for RealtimeLogConfigOwnerMismatch {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "RealtimeLogConfigOwnerMismatch")?;
+        if let Some(inner_66) = &self.message {
+            {
+                write!(f, ": {}", inner_66)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for RealtimeLogConfigOwnerMismatch {}
+impl aws_http::request_id::RequestId for crate::error::RealtimeLogConfigOwnerMismatch {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for RealtimeLogConfigOwnerMismatch {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl RealtimeLogConfigOwnerMismatch {
     /// Creates a new builder-style object to manufacture [`RealtimeLogConfigOwnerMismatch`](crate::error::RealtimeLogConfigOwnerMismatch).
     pub fn builder() -> crate::error::realtime_log_config_owner_mismatch::Builder {
         crate::error::realtime_log_config_owner_mismatch::Builder::default()
     }
 }
+
 /// See [`RealtimeLogConfigOwnerMismatch`](crate::error::RealtimeLogConfigOwnerMismatch).
 pub mod realtime_log_config_owner_mismatch {
 
@@ -8795,35 +8890,6 @@ pub mod realtime_log_config_owner_mismatch {
         }
     }
 }
-impl RealtimeLogConfigOwnerMismatch {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for RealtimeLogConfigOwnerMismatch {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "RealtimeLogConfigOwnerMismatch")?;
-        if let Some(inner_66) = &self.message {
-            {
-                write!(f, ": {}", inner_66)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for RealtimeLogConfigOwnerMismatch {}
-impl aws_http::request_id::RequestId for crate::error::RealtimeLogConfigOwnerMismatch {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for RealtimeLogConfigOwnerMismatch {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>No origin exists with the specified <code>Origin Id</code>.</p>
 #[non_exhaustive]
@@ -8835,11 +8901,41 @@ pub struct NoSuchOrigin {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl NoSuchOrigin {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for NoSuchOrigin {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "NoSuchOrigin")?;
+        if let Some(inner_67) = &self.message {
+            {
+                write!(f, ": {}", inner_67)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for NoSuchOrigin {}
+impl aws_http::request_id::RequestId for crate::error::NoSuchOrigin {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for NoSuchOrigin {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl NoSuchOrigin {
     /// Creates a new builder-style object to manufacture [`NoSuchOrigin`](crate::error::NoSuchOrigin).
     pub fn builder() -> crate::error::no_such_origin::Builder {
         crate::error::no_such_origin::Builder::default()
     }
 }
+
 /// See [`NoSuchOrigin`](crate::error::NoSuchOrigin).
 pub mod no_such_origin {
 
@@ -8884,35 +8980,6 @@ pub mod no_such_origin {
         }
     }
 }
-impl NoSuchOrigin {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for NoSuchOrigin {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "NoSuchOrigin")?;
-        if let Some(inner_67) = &self.message {
-            {
-                write!(f, ": {}", inner_67)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for NoSuchOrigin {}
-impl aws_http::request_id::RequestId for crate::error::NoSuchOrigin {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for NoSuchOrigin {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>The specified distribution does not exist.</p>
 #[non_exhaustive]
@@ -8924,11 +8991,41 @@ pub struct NoSuchDistribution {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl NoSuchDistribution {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for NoSuchDistribution {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "NoSuchDistribution")?;
+        if let Some(inner_68) = &self.message {
+            {
+                write!(f, ": {}", inner_68)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for NoSuchDistribution {}
+impl aws_http::request_id::RequestId for crate::error::NoSuchDistribution {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for NoSuchDistribution {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl NoSuchDistribution {
     /// Creates a new builder-style object to manufacture [`NoSuchDistribution`](crate::error::NoSuchDistribution).
     pub fn builder() -> crate::error::no_such_distribution::Builder {
         crate::error::no_such_distribution::Builder::default()
     }
 }
+
 /// See [`NoSuchDistribution`](crate::error::NoSuchDistribution).
 pub mod no_such_distribution {
 
@@ -8973,35 +9070,6 @@ pub mod no_such_distribution {
         }
     }
 }
-impl NoSuchDistribution {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for NoSuchDistribution {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "NoSuchDistribution")?;
-        if let Some(inner_68) = &self.message {
-            {
-                write!(f, ": {}", inner_68)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for NoSuchDistribution {}
-impl aws_http::request_id::RequestId for crate::error::NoSuchDistribution {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for NoSuchDistribution {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>The cache policy does not exist.</p>
 #[non_exhaustive]
@@ -9013,11 +9081,41 @@ pub struct NoSuchCachePolicy {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl NoSuchCachePolicy {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for NoSuchCachePolicy {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "NoSuchCachePolicy")?;
+        if let Some(inner_69) = &self.message {
+            {
+                write!(f, ": {}", inner_69)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for NoSuchCachePolicy {}
+impl aws_http::request_id::RequestId for crate::error::NoSuchCachePolicy {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for NoSuchCachePolicy {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl NoSuchCachePolicy {
     /// Creates a new builder-style object to manufacture [`NoSuchCachePolicy`](crate::error::NoSuchCachePolicy).
     pub fn builder() -> crate::error::no_such_cache_policy::Builder {
         crate::error::no_such_cache_policy::Builder::default()
     }
 }
+
 /// See [`NoSuchCachePolicy`](crate::error::NoSuchCachePolicy).
 pub mod no_such_cache_policy {
 
@@ -9062,35 +9160,6 @@ pub mod no_such_cache_policy {
         }
     }
 }
-impl NoSuchCachePolicy {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for NoSuchCachePolicy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "NoSuchCachePolicy")?;
-        if let Some(inner_69) = &self.message {
-            {
-                write!(f, ": {}", inner_69)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for NoSuchCachePolicy {}
-impl aws_http::request_id::RequestId for crate::error::NoSuchCachePolicy {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for NoSuchCachePolicy {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>A web ACL ID specified is not valid. To specify a web ACL created using the latest version of WAF, use the ACL ARN, for example <code>arn:aws:wafv2:us-east-1:123456789012:global/webacl/ExampleWebACL/473e64fd-f30b-4765-81a0-62ad96dd167a</code>. To specify a web ACL created using WAF Classic, use the ACL ID, for example <code>473e64fd-f30b-4765-81a0-62ad96dd167a</code>.</p>
 #[non_exhaustive]
@@ -9102,11 +9171,41 @@ pub struct InvalidWebAclId {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl InvalidWebAclId {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for InvalidWebAclId {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "InvalidWebAclId [InvalidWebACLId]")?;
+        if let Some(inner_70) = &self.message {
+            {
+                write!(f, ": {}", inner_70)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for InvalidWebAclId {}
+impl aws_http::request_id::RequestId for crate::error::InvalidWebAclId {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidWebAclId {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl InvalidWebAclId {
     /// Creates a new builder-style object to manufacture [`InvalidWebAclId`](crate::error::InvalidWebAclId).
     pub fn builder() -> crate::error::invalid_web_acl_id::Builder {
         crate::error::invalid_web_acl_id::Builder::default()
     }
 }
+
 /// See [`InvalidWebAclId`](crate::error::InvalidWebAclId).
 pub mod invalid_web_acl_id {
 
@@ -9151,35 +9250,6 @@ pub mod invalid_web_acl_id {
         }
     }
 }
-impl InvalidWebAclId {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for InvalidWebAclId {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "InvalidWebAclId [InvalidWebACLId]")?;
-        if let Some(inner_70) = &self.message {
-            {
-                write!(f, ": {}", inner_70)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for InvalidWebAclId {}
-impl aws_http::request_id::RequestId for crate::error::InvalidWebAclId {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidWebAclId {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>A viewer certificate specified is not valid.</p>
 #[non_exhaustive]
@@ -9191,11 +9261,41 @@ pub struct InvalidViewerCertificate {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl InvalidViewerCertificate {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for InvalidViewerCertificate {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "InvalidViewerCertificate")?;
+        if let Some(inner_71) = &self.message {
+            {
+                write!(f, ": {}", inner_71)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for InvalidViewerCertificate {}
+impl aws_http::request_id::RequestId for crate::error::InvalidViewerCertificate {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidViewerCertificate {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl InvalidViewerCertificate {
     /// Creates a new builder-style object to manufacture [`InvalidViewerCertificate`](crate::error::InvalidViewerCertificate).
     pub fn builder() -> crate::error::invalid_viewer_certificate::Builder {
         crate::error::invalid_viewer_certificate::Builder::default()
     }
 }
+
 /// See [`InvalidViewerCertificate`](crate::error::InvalidViewerCertificate).
 pub mod invalid_viewer_certificate {
 
@@ -9240,35 +9340,6 @@ pub mod invalid_viewer_certificate {
         }
     }
 }
-impl InvalidViewerCertificate {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for InvalidViewerCertificate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "InvalidViewerCertificate")?;
-        if let Some(inner_71) = &self.message {
-            {
-                write!(f, ": {}", inner_71)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for InvalidViewerCertificate {}
-impl aws_http::request_id::RequestId for crate::error::InvalidViewerCertificate {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidViewerCertificate {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>The TTL order specified is not valid.</p>
 #[non_exhaustive]
@@ -9280,11 +9351,41 @@ pub struct InvalidTtlOrder {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl InvalidTtlOrder {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for InvalidTtlOrder {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "InvalidTtlOrder [InvalidTTLOrder]")?;
+        if let Some(inner_72) = &self.message {
+            {
+                write!(f, ": {}", inner_72)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for InvalidTtlOrder {}
+impl aws_http::request_id::RequestId for crate::error::InvalidTtlOrder {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidTtlOrder {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl InvalidTtlOrder {
     /// Creates a new builder-style object to manufacture [`InvalidTtlOrder`](crate::error::InvalidTtlOrder).
     pub fn builder() -> crate::error::invalid_ttl_order::Builder {
         crate::error::invalid_ttl_order::Builder::default()
     }
 }
+
 /// See [`InvalidTtlOrder`](crate::error::InvalidTtlOrder).
 pub mod invalid_ttl_order {
 
@@ -9329,35 +9430,6 @@ pub mod invalid_ttl_order {
         }
     }
 }
-impl InvalidTtlOrder {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for InvalidTtlOrder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "InvalidTtlOrder [InvalidTTLOrder]")?;
-        if let Some(inner_72) = &self.message {
-            {
-                write!(f, ": {}", inner_72)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for InvalidTtlOrder {}
-impl aws_http::request_id::RequestId for crate::error::InvalidTtlOrder {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidTtlOrder {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>A response code is not valid.</p>
 #[non_exhaustive]
@@ -9369,11 +9441,41 @@ pub struct InvalidResponseCode {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl InvalidResponseCode {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for InvalidResponseCode {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "InvalidResponseCode")?;
+        if let Some(inner_73) = &self.message {
+            {
+                write!(f, ": {}", inner_73)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for InvalidResponseCode {}
+impl aws_http::request_id::RequestId for crate::error::InvalidResponseCode {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidResponseCode {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl InvalidResponseCode {
     /// Creates a new builder-style object to manufacture [`InvalidResponseCode`](crate::error::InvalidResponseCode).
     pub fn builder() -> crate::error::invalid_response_code::Builder {
         crate::error::invalid_response_code::Builder::default()
     }
 }
+
 /// See [`InvalidResponseCode`](crate::error::InvalidResponseCode).
 pub mod invalid_response_code {
 
@@ -9418,35 +9520,6 @@ pub mod invalid_response_code {
         }
     }
 }
-impl InvalidResponseCode {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for InvalidResponseCode {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "InvalidResponseCode")?;
-        if let Some(inner_73) = &self.message {
-            {
-                write!(f, ": {}", inner_73)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for InvalidResponseCode {}
-impl aws_http::request_id::RequestId for crate::error::InvalidResponseCode {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidResponseCode {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>This operation requires the HTTPS protocol. Ensure that you specify the HTTPS protocol in your request, or omit the <code>RequiredProtocols</code> element from your distribution configuration.</p>
 #[non_exhaustive]
@@ -9458,11 +9531,41 @@ pub struct InvalidRequiredProtocol {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl InvalidRequiredProtocol {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for InvalidRequiredProtocol {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "InvalidRequiredProtocol")?;
+        if let Some(inner_74) = &self.message {
+            {
+                write!(f, ": {}", inner_74)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for InvalidRequiredProtocol {}
+impl aws_http::request_id::RequestId for crate::error::InvalidRequiredProtocol {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidRequiredProtocol {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl InvalidRequiredProtocol {
     /// Creates a new builder-style object to manufacture [`InvalidRequiredProtocol`](crate::error::InvalidRequiredProtocol).
     pub fn builder() -> crate::error::invalid_required_protocol::Builder {
         crate::error::invalid_required_protocol::Builder::default()
     }
 }
+
 /// See [`InvalidRequiredProtocol`](crate::error::InvalidRequiredProtocol).
 pub mod invalid_required_protocol {
 
@@ -9507,35 +9610,6 @@ pub mod invalid_required_protocol {
         }
     }
 }
-impl InvalidRequiredProtocol {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for InvalidRequiredProtocol {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "InvalidRequiredProtocol")?;
-        if let Some(inner_74) = &self.message {
-            {
-                write!(f, ": {}", inner_74)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for InvalidRequiredProtocol {}
-impl aws_http::request_id::RequestId for crate::error::InvalidRequiredProtocol {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidRequiredProtocol {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>The relative path is too big, is not URL-encoded, or does not begin with a slash (/).</p>
 #[non_exhaustive]
@@ -9547,11 +9621,41 @@ pub struct InvalidRelativePath {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl InvalidRelativePath {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for InvalidRelativePath {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "InvalidRelativePath")?;
+        if let Some(inner_75) = &self.message {
+            {
+                write!(f, ": {}", inner_75)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for InvalidRelativePath {}
+impl aws_http::request_id::RequestId for crate::error::InvalidRelativePath {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidRelativePath {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl InvalidRelativePath {
     /// Creates a new builder-style object to manufacture [`InvalidRelativePath`](crate::error::InvalidRelativePath).
     pub fn builder() -> crate::error::invalid_relative_path::Builder {
         crate::error::invalid_relative_path::Builder::default()
     }
 }
+
 /// See [`InvalidRelativePath`](crate::error::InvalidRelativePath).
 pub mod invalid_relative_path {
 
@@ -9596,35 +9700,6 @@ pub mod invalid_relative_path {
         }
     }
 }
-impl InvalidRelativePath {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for InvalidRelativePath {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "InvalidRelativePath")?;
-        if let Some(inner_75) = &self.message {
-            {
-                write!(f, ": {}", inner_75)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for InvalidRelativePath {}
-impl aws_http::request_id::RequestId for crate::error::InvalidRelativePath {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidRelativePath {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>The query string parameters specified are not valid.</p>
 #[non_exhaustive]
@@ -9636,11 +9711,41 @@ pub struct InvalidQueryStringParameters {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl InvalidQueryStringParameters {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for InvalidQueryStringParameters {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "InvalidQueryStringParameters")?;
+        if let Some(inner_76) = &self.message {
+            {
+                write!(f, ": {}", inner_76)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for InvalidQueryStringParameters {}
+impl aws_http::request_id::RequestId for crate::error::InvalidQueryStringParameters {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidQueryStringParameters {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl InvalidQueryStringParameters {
     /// Creates a new builder-style object to manufacture [`InvalidQueryStringParameters`](crate::error::InvalidQueryStringParameters).
     pub fn builder() -> crate::error::invalid_query_string_parameters::Builder {
         crate::error::invalid_query_string_parameters::Builder::default()
     }
 }
+
 /// See [`InvalidQueryStringParameters`](crate::error::InvalidQueryStringParameters).
 pub mod invalid_query_string_parameters {
 
@@ -9685,35 +9790,6 @@ pub mod invalid_query_string_parameters {
         }
     }
 }
-impl InvalidQueryStringParameters {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for InvalidQueryStringParameters {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "InvalidQueryStringParameters")?;
-        if let Some(inner_76) = &self.message {
-            {
-                write!(f, ": {}", inner_76)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for InvalidQueryStringParameters {}
-impl aws_http::request_id::RequestId for crate::error::InvalidQueryStringParameters {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidQueryStringParameters {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>The read timeout specified for the origin is not valid.</p>
 #[non_exhaustive]
@@ -9725,11 +9801,41 @@ pub struct InvalidOriginReadTimeout {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl InvalidOriginReadTimeout {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for InvalidOriginReadTimeout {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "InvalidOriginReadTimeout")?;
+        if let Some(inner_77) = &self.message {
+            {
+                write!(f, ": {}", inner_77)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for InvalidOriginReadTimeout {}
+impl aws_http::request_id::RequestId for crate::error::InvalidOriginReadTimeout {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidOriginReadTimeout {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl InvalidOriginReadTimeout {
     /// Creates a new builder-style object to manufacture [`InvalidOriginReadTimeout`](crate::error::InvalidOriginReadTimeout).
     pub fn builder() -> crate::error::invalid_origin_read_timeout::Builder {
         crate::error::invalid_origin_read_timeout::Builder::default()
     }
 }
+
 /// See [`InvalidOriginReadTimeout`](crate::error::InvalidOriginReadTimeout).
 pub mod invalid_origin_read_timeout {
 
@@ -9774,35 +9880,6 @@ pub mod invalid_origin_read_timeout {
         }
     }
 }
-impl InvalidOriginReadTimeout {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for InvalidOriginReadTimeout {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "InvalidOriginReadTimeout")?;
-        if let Some(inner_77) = &self.message {
-            {
-                write!(f, ": {}", inner_77)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for InvalidOriginReadTimeout {}
-impl aws_http::request_id::RequestId for crate::error::InvalidOriginReadTimeout {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidOriginReadTimeout {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>The keep alive timeout specified for the origin is not valid.</p>
 #[non_exhaustive]
@@ -9814,11 +9891,41 @@ pub struct InvalidOriginKeepaliveTimeout {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl InvalidOriginKeepaliveTimeout {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for InvalidOriginKeepaliveTimeout {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "InvalidOriginKeepaliveTimeout")?;
+        if let Some(inner_78) = &self.message {
+            {
+                write!(f, ": {}", inner_78)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for InvalidOriginKeepaliveTimeout {}
+impl aws_http::request_id::RequestId for crate::error::InvalidOriginKeepaliveTimeout {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidOriginKeepaliveTimeout {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl InvalidOriginKeepaliveTimeout {
     /// Creates a new builder-style object to manufacture [`InvalidOriginKeepaliveTimeout`](crate::error::InvalidOriginKeepaliveTimeout).
     pub fn builder() -> crate::error::invalid_origin_keepalive_timeout::Builder {
         crate::error::invalid_origin_keepalive_timeout::Builder::default()
     }
 }
+
 /// See [`InvalidOriginKeepaliveTimeout`](crate::error::InvalidOriginKeepaliveTimeout).
 pub mod invalid_origin_keepalive_timeout {
 
@@ -9863,35 +9970,6 @@ pub mod invalid_origin_keepalive_timeout {
         }
     }
 }
-impl InvalidOriginKeepaliveTimeout {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for InvalidOriginKeepaliveTimeout {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "InvalidOriginKeepaliveTimeout")?;
-        if let Some(inner_78) = &self.message {
-            {
-                write!(f, ": {}", inner_78)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for InvalidOriginKeepaliveTimeout {}
-impl aws_http::request_id::RequestId for crate::error::InvalidOriginKeepaliveTimeout {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidOriginKeepaliveTimeout {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>The minimum protocol version specified is not valid.</p>
 #[non_exhaustive]
@@ -9903,11 +9981,41 @@ pub struct InvalidMinimumProtocolVersion {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl InvalidMinimumProtocolVersion {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for InvalidMinimumProtocolVersion {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "InvalidMinimumProtocolVersion")?;
+        if let Some(inner_79) = &self.message {
+            {
+                write!(f, ": {}", inner_79)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for InvalidMinimumProtocolVersion {}
+impl aws_http::request_id::RequestId for crate::error::InvalidMinimumProtocolVersion {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidMinimumProtocolVersion {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl InvalidMinimumProtocolVersion {
     /// Creates a new builder-style object to manufacture [`InvalidMinimumProtocolVersion`](crate::error::InvalidMinimumProtocolVersion).
     pub fn builder() -> crate::error::invalid_minimum_protocol_version::Builder {
         crate::error::invalid_minimum_protocol_version::Builder::default()
     }
 }
+
 /// See [`InvalidMinimumProtocolVersion`](crate::error::InvalidMinimumProtocolVersion).
 pub mod invalid_minimum_protocol_version {
 
@@ -9952,35 +10060,6 @@ pub mod invalid_minimum_protocol_version {
         }
     }
 }
-impl InvalidMinimumProtocolVersion {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for InvalidMinimumProtocolVersion {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "InvalidMinimumProtocolVersion")?;
-        if let Some(inner_79) = &self.message {
-            {
-                write!(f, ": {}", inner_79)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for InvalidMinimumProtocolVersion {}
-impl aws_http::request_id::RequestId for crate::error::InvalidMinimumProtocolVersion {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidMinimumProtocolVersion {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>The location code specified is not valid.</p>
 #[non_exhaustive]
@@ -9992,11 +10071,41 @@ pub struct InvalidLocationCode {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl InvalidLocationCode {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for InvalidLocationCode {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "InvalidLocationCode")?;
+        if let Some(inner_80) = &self.message {
+            {
+                write!(f, ": {}", inner_80)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for InvalidLocationCode {}
+impl aws_http::request_id::RequestId for crate::error::InvalidLocationCode {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidLocationCode {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl InvalidLocationCode {
     /// Creates a new builder-style object to manufacture [`InvalidLocationCode`](crate::error::InvalidLocationCode).
     pub fn builder() -> crate::error::invalid_location_code::Builder {
         crate::error::invalid_location_code::Builder::default()
     }
 }
+
 /// See [`InvalidLocationCode`](crate::error::InvalidLocationCode).
 pub mod invalid_location_code {
 
@@ -10041,35 +10150,6 @@ pub mod invalid_location_code {
         }
     }
 }
-impl InvalidLocationCode {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for InvalidLocationCode {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "InvalidLocationCode")?;
-        if let Some(inner_80) = &self.message {
-            {
-                write!(f, ": {}", inner_80)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for InvalidLocationCode {}
-impl aws_http::request_id::RequestId for crate::error::InvalidLocationCode {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidLocationCode {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>The specified Lambda@Edge function association is invalid.</p>
 #[non_exhaustive]
@@ -10081,11 +10161,41 @@ pub struct InvalidLambdaFunctionAssociation {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl InvalidLambdaFunctionAssociation {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for InvalidLambdaFunctionAssociation {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "InvalidLambdaFunctionAssociation")?;
+        if let Some(inner_81) = &self.message {
+            {
+                write!(f, ": {}", inner_81)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for InvalidLambdaFunctionAssociation {}
+impl aws_http::request_id::RequestId for crate::error::InvalidLambdaFunctionAssociation {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidLambdaFunctionAssociation {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl InvalidLambdaFunctionAssociation {
     /// Creates a new builder-style object to manufacture [`InvalidLambdaFunctionAssociation`](crate::error::InvalidLambdaFunctionAssociation).
     pub fn builder() -> crate::error::invalid_lambda_function_association::Builder {
         crate::error::invalid_lambda_function_association::Builder::default()
     }
 }
+
 /// See [`InvalidLambdaFunctionAssociation`](crate::error::InvalidLambdaFunctionAssociation).
 pub mod invalid_lambda_function_association {
 
@@ -10130,35 +10240,6 @@ pub mod invalid_lambda_function_association {
         }
     }
 }
-impl InvalidLambdaFunctionAssociation {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for InvalidLambdaFunctionAssociation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "InvalidLambdaFunctionAssociation")?;
-        if let Some(inner_81) = &self.message {
-            {
-                write!(f, ": {}", inner_81)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for InvalidLambdaFunctionAssociation {}
-impl aws_http::request_id::RequestId for crate::error::InvalidLambdaFunctionAssociation {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidLambdaFunctionAssociation {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>The headers specified are not valid for an Amazon S3 origin.</p>
 #[non_exhaustive]
@@ -10170,11 +10251,41 @@ pub struct InvalidHeadersForS3Origin {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl InvalidHeadersForS3Origin {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for InvalidHeadersForS3Origin {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "InvalidHeadersForS3Origin")?;
+        if let Some(inner_82) = &self.message {
+            {
+                write!(f, ": {}", inner_82)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for InvalidHeadersForS3Origin {}
+impl aws_http::request_id::RequestId for crate::error::InvalidHeadersForS3Origin {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidHeadersForS3Origin {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl InvalidHeadersForS3Origin {
     /// Creates a new builder-style object to manufacture [`InvalidHeadersForS3Origin`](crate::error::InvalidHeadersForS3Origin).
     pub fn builder() -> crate::error::invalid_headers_for_s3_origin::Builder {
         crate::error::invalid_headers_for_s3_origin::Builder::default()
     }
 }
+
 /// See [`InvalidHeadersForS3Origin`](crate::error::InvalidHeadersForS3Origin).
 pub mod invalid_headers_for_s3_origin {
 
@@ -10219,35 +10330,6 @@ pub mod invalid_headers_for_s3_origin {
         }
     }
 }
-impl InvalidHeadersForS3Origin {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for InvalidHeadersForS3Origin {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "InvalidHeadersForS3Origin")?;
-        if let Some(inner_82) = &self.message {
-            {
-                write!(f, ": {}", inner_82)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for InvalidHeadersForS3Origin {}
-impl aws_http::request_id::RequestId for crate::error::InvalidHeadersForS3Origin {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidHeadersForS3Origin {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>The specified geo restriction parameter is not valid.</p>
 #[non_exhaustive]
@@ -10259,11 +10341,41 @@ pub struct InvalidGeoRestrictionParameter {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl InvalidGeoRestrictionParameter {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for InvalidGeoRestrictionParameter {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "InvalidGeoRestrictionParameter")?;
+        if let Some(inner_83) = &self.message {
+            {
+                write!(f, ": {}", inner_83)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for InvalidGeoRestrictionParameter {}
+impl aws_http::request_id::RequestId for crate::error::InvalidGeoRestrictionParameter {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidGeoRestrictionParameter {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl InvalidGeoRestrictionParameter {
     /// Creates a new builder-style object to manufacture [`InvalidGeoRestrictionParameter`](crate::error::InvalidGeoRestrictionParameter).
     pub fn builder() -> crate::error::invalid_geo_restriction_parameter::Builder {
         crate::error::invalid_geo_restriction_parameter::Builder::default()
     }
 }
+
 /// See [`InvalidGeoRestrictionParameter`](crate::error::InvalidGeoRestrictionParameter).
 pub mod invalid_geo_restriction_parameter {
 
@@ -10308,35 +10420,6 @@ pub mod invalid_geo_restriction_parameter {
         }
     }
 }
-impl InvalidGeoRestrictionParameter {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for InvalidGeoRestrictionParameter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "InvalidGeoRestrictionParameter")?;
-        if let Some(inner_83) = &self.message {
-            {
-                write!(f, ": {}", inner_83)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for InvalidGeoRestrictionParameter {}
-impl aws_http::request_id::RequestId for crate::error::InvalidGeoRestrictionParameter {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidGeoRestrictionParameter {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>A CloudFront function association is invalid.</p>
 #[non_exhaustive]
@@ -10348,11 +10431,41 @@ pub struct InvalidFunctionAssociation {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl InvalidFunctionAssociation {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for InvalidFunctionAssociation {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "InvalidFunctionAssociation")?;
+        if let Some(inner_84) = &self.message {
+            {
+                write!(f, ": {}", inner_84)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for InvalidFunctionAssociation {}
+impl aws_http::request_id::RequestId for crate::error::InvalidFunctionAssociation {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidFunctionAssociation {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl InvalidFunctionAssociation {
     /// Creates a new builder-style object to manufacture [`InvalidFunctionAssociation`](crate::error::InvalidFunctionAssociation).
     pub fn builder() -> crate::error::invalid_function_association::Builder {
         crate::error::invalid_function_association::Builder::default()
     }
 }
+
 /// See [`InvalidFunctionAssociation`](crate::error::InvalidFunctionAssociation).
 pub mod invalid_function_association {
 
@@ -10397,35 +10510,6 @@ pub mod invalid_function_association {
         }
     }
 }
-impl InvalidFunctionAssociation {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for InvalidFunctionAssociation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "InvalidFunctionAssociation")?;
-        if let Some(inner_84) = &self.message {
-            {
-                write!(f, ": {}", inner_84)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for InvalidFunctionAssociation {}
-impl aws_http::request_id::RequestId for crate::error::InvalidFunctionAssociation {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidFunctionAssociation {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>Your request contains forward cookies option which doesn't match with the expectation for the <code>whitelisted</code> list of cookie names. Either list of cookie names has been specified when not allowed or list of cookie names is missing when expected.</p>
 #[non_exhaustive]
@@ -10437,11 +10521,41 @@ pub struct InvalidForwardCookies {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl InvalidForwardCookies {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for InvalidForwardCookies {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "InvalidForwardCookies")?;
+        if let Some(inner_85) = &self.message {
+            {
+                write!(f, ": {}", inner_85)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for InvalidForwardCookies {}
+impl aws_http::request_id::RequestId for crate::error::InvalidForwardCookies {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidForwardCookies {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl InvalidForwardCookies {
     /// Creates a new builder-style object to manufacture [`InvalidForwardCookies`](crate::error::InvalidForwardCookies).
     pub fn builder() -> crate::error::invalid_forward_cookies::Builder {
         crate::error::invalid_forward_cookies::Builder::default()
     }
 }
+
 /// See [`InvalidForwardCookies`](crate::error::InvalidForwardCookies).
 pub mod invalid_forward_cookies {
 
@@ -10486,35 +10600,6 @@ pub mod invalid_forward_cookies {
         }
     }
 }
-impl InvalidForwardCookies {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for InvalidForwardCookies {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "InvalidForwardCookies")?;
-        if let Some(inner_85) = &self.message {
-            {
-                write!(f, ": {}", inner_85)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for InvalidForwardCookies {}
-impl aws_http::request_id::RequestId for crate::error::InvalidForwardCookies {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidForwardCookies {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>An invalid error code was specified.</p>
 #[non_exhaustive]
@@ -10526,11 +10611,41 @@ pub struct InvalidErrorCode {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl InvalidErrorCode {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for InvalidErrorCode {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "InvalidErrorCode")?;
+        if let Some(inner_86) = &self.message {
+            {
+                write!(f, ": {}", inner_86)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for InvalidErrorCode {}
+impl aws_http::request_id::RequestId for crate::error::InvalidErrorCode {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidErrorCode {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl InvalidErrorCode {
     /// Creates a new builder-style object to manufacture [`InvalidErrorCode`](crate::error::InvalidErrorCode).
     pub fn builder() -> crate::error::invalid_error_code::Builder {
         crate::error::invalid_error_code::Builder::default()
     }
 }
+
 /// See [`InvalidErrorCode`](crate::error::InvalidErrorCode).
 pub mod invalid_error_code {
 
@@ -10575,35 +10690,6 @@ pub mod invalid_error_code {
         }
     }
 }
-impl InvalidErrorCode {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for InvalidErrorCode {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "InvalidErrorCode")?;
-        if let Some(inner_86) = &self.message {
-            {
-                write!(f, ": {}", inner_86)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for InvalidErrorCode {}
-impl aws_http::request_id::RequestId for crate::error::InvalidErrorCode {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidErrorCode {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>The default root object file name is too big or contains an invalid character.</p>
 #[non_exhaustive]
@@ -10615,11 +10701,41 @@ pub struct InvalidDefaultRootObject {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl InvalidDefaultRootObject {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for InvalidDefaultRootObject {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "InvalidDefaultRootObject")?;
+        if let Some(inner_87) = &self.message {
+            {
+                write!(f, ": {}", inner_87)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for InvalidDefaultRootObject {}
+impl aws_http::request_id::RequestId for crate::error::InvalidDefaultRootObject {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidDefaultRootObject {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl InvalidDefaultRootObject {
     /// Creates a new builder-style object to manufacture [`InvalidDefaultRootObject`](crate::error::InvalidDefaultRootObject).
     pub fn builder() -> crate::error::invalid_default_root_object::Builder {
         crate::error::invalid_default_root_object::Builder::default()
     }
 }
+
 /// See [`InvalidDefaultRootObject`](crate::error::InvalidDefaultRootObject).
 pub mod invalid_default_root_object {
 
@@ -10664,35 +10780,6 @@ pub mod invalid_default_root_object {
         }
     }
 }
-impl InvalidDefaultRootObject {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for InvalidDefaultRootObject {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "InvalidDefaultRootObject")?;
-        if let Some(inner_87) = &self.message {
-            {
-                write!(f, ": {}", inner_87)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for InvalidDefaultRootObject {}
-impl aws_http::request_id::RequestId for crate::error::InvalidDefaultRootObject {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidDefaultRootObject {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>The specified configuration for field-level encryption can't be associated with the specified cache behavior.</p>
 #[non_exhaustive]
@@ -10704,6 +10791,42 @@ pub struct IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(
+            f,
+            "IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior"
+        )?;
+        if let Some(inner_88) = &self.message {
+            {
+                write!(f, ": {}", inner_88)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior {}
+impl aws_http::request_id::RequestId
+    for crate::error::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior
+{
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata
+    for IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior
+{
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior {
     /// Creates a new builder-style object to manufacture [`IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior`](crate::error::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior).
     pub fn builder(
     ) -> crate::error::illegal_field_level_encryption_config_association_with_cache_behavior::Builder
@@ -10711,6 +10834,7 @@ impl IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior {
         crate::error::illegal_field_level_encryption_config_association_with_cache_behavior::Builder::default()
     }
 }
+
 /// See [`IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior`](crate::error::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior).
 pub mod illegal_field_level_encryption_config_association_with_cache_behavior {
 
@@ -10755,42 +10879,6 @@ pub mod illegal_field_level_encryption_config_association_with_cache_behavior {
                 meta: self.meta.unwrap_or_default(),
             }
         }
-    }
-}
-impl IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(
-            f,
-            "IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior"
-        )?;
-        if let Some(inner_88) = &self.message {
-            {
-                write!(f, ": {}", inner_88)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior {}
-impl aws_http::request_id::RequestId
-    for crate::error::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior
-{
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior
-{
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
     }
 }
 
@@ -11718,11 +11806,41 @@ pub struct StagingDistributionInUse {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl StagingDistributionInUse {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for StagingDistributionInUse {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "StagingDistributionInUse")?;
+        if let Some(inner_89) = &self.message {
+            {
+                write!(f, ": {}", inner_89)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for StagingDistributionInUse {}
+impl aws_http::request_id::RequestId for crate::error::StagingDistributionInUse {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for StagingDistributionInUse {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl StagingDistributionInUse {
     /// Creates a new builder-style object to manufacture [`StagingDistributionInUse`](crate::error::StagingDistributionInUse).
     pub fn builder() -> crate::error::staging_distribution_in_use::Builder {
         crate::error::staging_distribution_in_use::Builder::default()
     }
 }
+
 /// See [`StagingDistributionInUse`](crate::error::StagingDistributionInUse).
 pub mod staging_distribution_in_use {
 
@@ -11767,35 +11885,6 @@ pub mod staging_distribution_in_use {
         }
     }
 }
-impl StagingDistributionInUse {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for StagingDistributionInUse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "StagingDistributionInUse")?;
-        if let Some(inner_89) = &self.message {
-            {
-                write!(f, ": {}", inner_89)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for StagingDistributionInUse {}
-impl aws_http::request_id::RequestId for crate::error::StagingDistributionInUse {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for StagingDistributionInUse {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>The continuous deployment policy doesn't exist.</p>
 #[non_exhaustive]
@@ -11807,11 +11896,41 @@ pub struct NoSuchContinuousDeploymentPolicy {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl NoSuchContinuousDeploymentPolicy {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for NoSuchContinuousDeploymentPolicy {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "NoSuchContinuousDeploymentPolicy")?;
+        if let Some(inner_90) = &self.message {
+            {
+                write!(f, ": {}", inner_90)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for NoSuchContinuousDeploymentPolicy {}
+impl aws_http::request_id::RequestId for crate::error::NoSuchContinuousDeploymentPolicy {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for NoSuchContinuousDeploymentPolicy {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl NoSuchContinuousDeploymentPolicy {
     /// Creates a new builder-style object to manufacture [`NoSuchContinuousDeploymentPolicy`](crate::error::NoSuchContinuousDeploymentPolicy).
     pub fn builder() -> crate::error::no_such_continuous_deployment_policy::Builder {
         crate::error::no_such_continuous_deployment_policy::Builder::default()
     }
 }
+
 /// See [`NoSuchContinuousDeploymentPolicy`](crate::error::NoSuchContinuousDeploymentPolicy).
 pub mod no_such_continuous_deployment_policy {
 
@@ -11856,35 +11975,6 @@ pub mod no_such_continuous_deployment_policy {
         }
     }
 }
-impl NoSuchContinuousDeploymentPolicy {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for NoSuchContinuousDeploymentPolicy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "NoSuchContinuousDeploymentPolicy")?;
-        if let Some(inner_90) = &self.message {
-            {
-                write!(f, ": {}", inner_90)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for NoSuchContinuousDeploymentPolicy {}
-impl aws_http::request_id::RequestId for crate::error::NoSuchContinuousDeploymentPolicy {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for NoSuchContinuousDeploymentPolicy {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>An origin access control is associated with an origin whose domain name is not supported.</p>
 #[non_exhaustive]
@@ -11896,11 +11986,43 @@ pub struct InvalidDomainNameForOriginAccessControl {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl InvalidDomainNameForOriginAccessControl {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for InvalidDomainNameForOriginAccessControl {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "InvalidDomainNameForOriginAccessControl")?;
+        if let Some(inner_91) = &self.message {
+            {
+                write!(f, ": {}", inner_91)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for InvalidDomainNameForOriginAccessControl {}
+impl aws_http::request_id::RequestId for crate::error::InvalidDomainNameForOriginAccessControl {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata
+    for InvalidDomainNameForOriginAccessControl
+{
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl InvalidDomainNameForOriginAccessControl {
     /// Creates a new builder-style object to manufacture [`InvalidDomainNameForOriginAccessControl`](crate::error::InvalidDomainNameForOriginAccessControl).
     pub fn builder() -> crate::error::invalid_domain_name_for_origin_access_control::Builder {
         crate::error::invalid_domain_name_for_origin_access_control::Builder::default()
     }
 }
+
 /// See [`InvalidDomainNameForOriginAccessControl`](crate::error::InvalidDomainNameForOriginAccessControl).
 pub mod invalid_domain_name_for_origin_access_control {
 
@@ -11945,37 +12067,6 @@ pub mod invalid_domain_name_for_origin_access_control {
         }
     }
 }
-impl InvalidDomainNameForOriginAccessControl {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for InvalidDomainNameForOriginAccessControl {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "InvalidDomainNameForOriginAccessControl")?;
-        if let Some(inner_91) = &self.message {
-            {
-                write!(f, ": {}", inner_91)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for InvalidDomainNameForOriginAccessControl {}
-impl aws_http::request_id::RequestId for crate::error::InvalidDomainNameForOriginAccessControl {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for InvalidDomainNameForOriginAccessControl
-{
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>An origin cannot contain both an origin access control (OAC) and an origin access identity (OAI).</p>
 #[non_exhaustive]
@@ -11987,11 +12078,41 @@ pub struct IllegalOriginAccessConfiguration {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl IllegalOriginAccessConfiguration {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for IllegalOriginAccessConfiguration {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "IllegalOriginAccessConfiguration")?;
+        if let Some(inner_92) = &self.message {
+            {
+                write!(f, ": {}", inner_92)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for IllegalOriginAccessConfiguration {}
+impl aws_http::request_id::RequestId for crate::error::IllegalOriginAccessConfiguration {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for IllegalOriginAccessConfiguration {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl IllegalOriginAccessConfiguration {
     /// Creates a new builder-style object to manufacture [`IllegalOriginAccessConfiguration`](crate::error::IllegalOriginAccessConfiguration).
     pub fn builder() -> crate::error::illegal_origin_access_configuration::Builder {
         crate::error::illegal_origin_access_configuration::Builder::default()
     }
 }
+
 /// See [`IllegalOriginAccessConfiguration`](crate::error::IllegalOriginAccessConfiguration).
 pub mod illegal_origin_access_configuration {
 
@@ -12036,35 +12157,6 @@ pub mod illegal_origin_access_configuration {
         }
     }
 }
-impl IllegalOriginAccessConfiguration {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for IllegalOriginAccessConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "IllegalOriginAccessConfiguration")?;
-        if let Some(inner_92) = &self.message {
-            {
-                write!(f, ": {}", inner_92)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for IllegalOriginAccessConfiguration {}
-impl aws_http::request_id::RequestId for crate::error::IllegalOriginAccessConfiguration {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for IllegalOriginAccessConfiguration {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>You cannot delete a continuous deployment policy that is associated with a primary distribution.</p>
 #[non_exhaustive]
@@ -12076,11 +12168,41 @@ pub struct ContinuousDeploymentPolicyInUse {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl ContinuousDeploymentPolicyInUse {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for ContinuousDeploymentPolicyInUse {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "ContinuousDeploymentPolicyInUse")?;
+        if let Some(inner_93) = &self.message {
+            {
+                write!(f, ": {}", inner_93)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for ContinuousDeploymentPolicyInUse {}
+impl aws_http::request_id::RequestId for crate::error::ContinuousDeploymentPolicyInUse {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for ContinuousDeploymentPolicyInUse {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl ContinuousDeploymentPolicyInUse {
     /// Creates a new builder-style object to manufacture [`ContinuousDeploymentPolicyInUse`](crate::error::ContinuousDeploymentPolicyInUse).
     pub fn builder() -> crate::error::continuous_deployment_policy_in_use::Builder {
         crate::error::continuous_deployment_policy_in_use::Builder::default()
     }
 }
+
 /// See [`ContinuousDeploymentPolicyInUse`](crate::error::ContinuousDeploymentPolicyInUse).
 pub mod continuous_deployment_policy_in_use {
 
@@ -12123,35 +12245,6 @@ pub mod continuous_deployment_policy_in_use {
                 meta: self.meta.unwrap_or_default(),
             }
         }
-    }
-}
-impl ContinuousDeploymentPolicyInUse {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for ContinuousDeploymentPolicyInUse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "ContinuousDeploymentPolicyInUse")?;
-        if let Some(inner_93) = &self.message {
-            {
-                write!(f, ": {}", inner_93)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for ContinuousDeploymentPolicyInUse {}
-impl aws_http::request_id::RequestId for crate::error::ContinuousDeploymentPolicyInUse {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for ContinuousDeploymentPolicyInUse {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
     }
 }
 
@@ -12535,11 +12628,43 @@ pub struct NoSuchCloudFrontOriginAccessIdentity {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl NoSuchCloudFrontOriginAccessIdentity {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for NoSuchCloudFrontOriginAccessIdentity {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "NoSuchCloudFrontOriginAccessIdentity")?;
+        if let Some(inner_94) = &self.message {
+            {
+                write!(f, ": {}", inner_94)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for NoSuchCloudFrontOriginAccessIdentity {}
+impl aws_http::request_id::RequestId for crate::error::NoSuchCloudFrontOriginAccessIdentity {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata
+    for NoSuchCloudFrontOriginAccessIdentity
+{
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl NoSuchCloudFrontOriginAccessIdentity {
     /// Creates a new builder-style object to manufacture [`NoSuchCloudFrontOriginAccessIdentity`](crate::error::NoSuchCloudFrontOriginAccessIdentity).
     pub fn builder() -> crate::error::no_such_cloud_front_origin_access_identity::Builder {
         crate::error::no_such_cloud_front_origin_access_identity::Builder::default()
     }
 }
+
 /// See [`NoSuchCloudFrontOriginAccessIdentity`](crate::error::NoSuchCloudFrontOriginAccessIdentity).
 pub mod no_such_cloud_front_origin_access_identity {
 
@@ -12582,37 +12707,6 @@ pub mod no_such_cloud_front_origin_access_identity {
                 meta: self.meta.unwrap_or_default(),
             }
         }
-    }
-}
-impl NoSuchCloudFrontOriginAccessIdentity {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for NoSuchCloudFrontOriginAccessIdentity {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "NoSuchCloudFrontOriginAccessIdentity")?;
-        if let Some(inner_94) = &self.message {
-            {
-                write!(f, ": {}", inner_94)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for NoSuchCloudFrontOriginAccessIdentity {}
-impl aws_http::request_id::RequestId for crate::error::NoSuchCloudFrontOriginAccessIdentity {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for NoSuchCloudFrontOriginAccessIdentity
-{
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
     }
 }
 
@@ -12851,11 +12945,41 @@ pub struct TooManyQueryStringsInCachePolicy {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl TooManyQueryStringsInCachePolicy {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for TooManyQueryStringsInCachePolicy {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "TooManyQueryStringsInCachePolicy")?;
+        if let Some(inner_95) = &self.message {
+            {
+                write!(f, ": {}", inner_95)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for TooManyQueryStringsInCachePolicy {}
+impl aws_http::request_id::RequestId for crate::error::TooManyQueryStringsInCachePolicy {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for TooManyQueryStringsInCachePolicy {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl TooManyQueryStringsInCachePolicy {
     /// Creates a new builder-style object to manufacture [`TooManyQueryStringsInCachePolicy`](crate::error::TooManyQueryStringsInCachePolicy).
     pub fn builder() -> crate::error::too_many_query_strings_in_cache_policy::Builder {
         crate::error::too_many_query_strings_in_cache_policy::Builder::default()
     }
 }
+
 /// See [`TooManyQueryStringsInCachePolicy`](crate::error::TooManyQueryStringsInCachePolicy).
 pub mod too_many_query_strings_in_cache_policy {
 
@@ -12900,35 +13024,6 @@ pub mod too_many_query_strings_in_cache_policy {
         }
     }
 }
-impl TooManyQueryStringsInCachePolicy {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for TooManyQueryStringsInCachePolicy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "TooManyQueryStringsInCachePolicy")?;
-        if let Some(inner_95) = &self.message {
-            {
-                write!(f, ": {}", inner_95)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for TooManyQueryStringsInCachePolicy {}
-impl aws_http::request_id::RequestId for crate::error::TooManyQueryStringsInCachePolicy {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for TooManyQueryStringsInCachePolicy {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>The number of headers in the cache policy exceeds the maximum. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.</p>
 #[non_exhaustive]
@@ -12940,11 +13035,41 @@ pub struct TooManyHeadersInCachePolicy {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl TooManyHeadersInCachePolicy {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for TooManyHeadersInCachePolicy {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "TooManyHeadersInCachePolicy")?;
+        if let Some(inner_96) = &self.message {
+            {
+                write!(f, ": {}", inner_96)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for TooManyHeadersInCachePolicy {}
+impl aws_http::request_id::RequestId for crate::error::TooManyHeadersInCachePolicy {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for TooManyHeadersInCachePolicy {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl TooManyHeadersInCachePolicy {
     /// Creates a new builder-style object to manufacture [`TooManyHeadersInCachePolicy`](crate::error::TooManyHeadersInCachePolicy).
     pub fn builder() -> crate::error::too_many_headers_in_cache_policy::Builder {
         crate::error::too_many_headers_in_cache_policy::Builder::default()
     }
 }
+
 /// See [`TooManyHeadersInCachePolicy`](crate::error::TooManyHeadersInCachePolicy).
 pub mod too_many_headers_in_cache_policy {
 
@@ -12989,35 +13114,6 @@ pub mod too_many_headers_in_cache_policy {
         }
     }
 }
-impl TooManyHeadersInCachePolicy {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for TooManyHeadersInCachePolicy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "TooManyHeadersInCachePolicy")?;
-        if let Some(inner_96) = &self.message {
-            {
-                write!(f, ": {}", inner_96)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for TooManyHeadersInCachePolicy {}
-impl aws_http::request_id::RequestId for crate::error::TooManyHeadersInCachePolicy {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for TooManyHeadersInCachePolicy {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>The number of cookies in the cache policy exceeds the maximum. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.</p>
 #[non_exhaustive]
@@ -13029,11 +13125,41 @@ pub struct TooManyCookiesInCachePolicy {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl TooManyCookiesInCachePolicy {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for TooManyCookiesInCachePolicy {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "TooManyCookiesInCachePolicy")?;
+        if let Some(inner_97) = &self.message {
+            {
+                write!(f, ": {}", inner_97)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for TooManyCookiesInCachePolicy {}
+impl aws_http::request_id::RequestId for crate::error::TooManyCookiesInCachePolicy {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for TooManyCookiesInCachePolicy {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl TooManyCookiesInCachePolicy {
     /// Creates a new builder-style object to manufacture [`TooManyCookiesInCachePolicy`](crate::error::TooManyCookiesInCachePolicy).
     pub fn builder() -> crate::error::too_many_cookies_in_cache_policy::Builder {
         crate::error::too_many_cookies_in_cache_policy::Builder::default()
     }
 }
+
 /// See [`TooManyCookiesInCachePolicy`](crate::error::TooManyCookiesInCachePolicy).
 pub mod too_many_cookies_in_cache_policy {
 
@@ -13078,35 +13204,6 @@ pub mod too_many_cookies_in_cache_policy {
         }
     }
 }
-impl TooManyCookiesInCachePolicy {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for TooManyCookiesInCachePolicy {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "TooManyCookiesInCachePolicy")?;
-        if let Some(inner_97) = &self.message {
-            {
-                write!(f, ": {}", inner_97)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for TooManyCookiesInCachePolicy {}
-impl aws_http::request_id::RequestId for crate::error::TooManyCookiesInCachePolicy {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for TooManyCookiesInCachePolicy {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>A cache policy with this name already exists. You must provide a unique name. To modify an existing cache policy, use <code>UpdateCachePolicy</code>.</p>
 #[non_exhaustive]
@@ -13118,11 +13215,41 @@ pub struct CachePolicyAlreadyExists {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl CachePolicyAlreadyExists {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for CachePolicyAlreadyExists {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "CachePolicyAlreadyExists")?;
+        if let Some(inner_98) = &self.message {
+            {
+                write!(f, ": {}", inner_98)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for CachePolicyAlreadyExists {}
+impl aws_http::request_id::RequestId for crate::error::CachePolicyAlreadyExists {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for CachePolicyAlreadyExists {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl CachePolicyAlreadyExists {
     /// Creates a new builder-style object to manufacture [`CachePolicyAlreadyExists`](crate::error::CachePolicyAlreadyExists).
     pub fn builder() -> crate::error::cache_policy_already_exists::Builder {
         crate::error::cache_policy_already_exists::Builder::default()
     }
 }
+
 /// See [`CachePolicyAlreadyExists`](crate::error::CachePolicyAlreadyExists).
 pub mod cache_policy_already_exists {
 
@@ -13165,35 +13292,6 @@ pub mod cache_policy_already_exists {
                 meta: self.meta.unwrap_or_default(),
             }
         }
-    }
-}
-impl CachePolicyAlreadyExists {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for CachePolicyAlreadyExists {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "CachePolicyAlreadyExists")?;
-        if let Some(inner_98) = &self.message {
-            {
-                write!(f, ": {}", inner_98)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for CachePolicyAlreadyExists {}
-impl aws_http::request_id::RequestId for crate::error::CachePolicyAlreadyExists {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for CachePolicyAlreadyExists {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
     }
 }
 
@@ -13348,11 +13446,41 @@ pub struct InvalidTagging {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl InvalidTagging {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for InvalidTagging {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "InvalidTagging")?;
+        if let Some(inner_99) = &self.message {
+            {
+                write!(f, ": {}", inner_99)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for InvalidTagging {}
+impl aws_http::request_id::RequestId for crate::error::InvalidTagging {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidTagging {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl InvalidTagging {
     /// Creates a new builder-style object to manufacture [`InvalidTagging`](crate::error::InvalidTagging).
     pub fn builder() -> crate::error::invalid_tagging::Builder {
         crate::error::invalid_tagging::Builder::default()
     }
 }
+
 /// See [`InvalidTagging`](crate::error::InvalidTagging).
 pub mod invalid_tagging {
 
@@ -13395,35 +13523,6 @@ pub mod invalid_tagging {
                 meta: self.meta.unwrap_or_default(),
             }
         }
-    }
-}
-impl InvalidTagging {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for InvalidTagging {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "InvalidTagging")?;
-        if let Some(inner_99) = &self.message {
-            {
-                write!(f, ": {}", inner_99)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for InvalidTagging {}
-impl aws_http::request_id::RequestId for crate::error::InvalidTagging {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidTagging {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
     }
 }
 
@@ -13590,11 +13689,41 @@ pub struct TestFunctionFailed {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl TestFunctionFailed {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for TestFunctionFailed {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "TestFunctionFailed")?;
+        if let Some(inner_100) = &self.message {
+            {
+                write!(f, ": {}", inner_100)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for TestFunctionFailed {}
+impl aws_http::request_id::RequestId for crate::error::TestFunctionFailed {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for TestFunctionFailed {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl TestFunctionFailed {
     /// Creates a new builder-style object to manufacture [`TestFunctionFailed`](crate::error::TestFunctionFailed).
     pub fn builder() -> crate::error::test_function_failed::Builder {
         crate::error::test_function_failed::Builder::default()
     }
 }
+
 /// See [`TestFunctionFailed`](crate::error::TestFunctionFailed).
 pub mod test_function_failed {
 
@@ -13637,35 +13766,6 @@ pub mod test_function_failed {
                 meta: self.meta.unwrap_or_default(),
             }
         }
-    }
-}
-impl TestFunctionFailed {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for TestFunctionFailed {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "TestFunctionFailed")?;
-        if let Some(inner_100) = &self.message {
-            {
-                write!(f, ": {}", inner_100)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for TestFunctionFailed {}
-impl aws_http::request_id::RequestId for crate::error::TestFunctionFailed {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for TestFunctionFailed {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
     }
 }
 
@@ -18158,11 +18258,41 @@ pub struct NoSuchMonitoringSubscription {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl NoSuchMonitoringSubscription {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for NoSuchMonitoringSubscription {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "NoSuchMonitoringSubscription")?;
+        if let Some(inner_101) = &self.message {
+            {
+                write!(f, ": {}", inner_101)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for NoSuchMonitoringSubscription {}
+impl aws_http::request_id::RequestId for crate::error::NoSuchMonitoringSubscription {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for NoSuchMonitoringSubscription {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl NoSuchMonitoringSubscription {
     /// Creates a new builder-style object to manufacture [`NoSuchMonitoringSubscription`](crate::error::NoSuchMonitoringSubscription).
     pub fn builder() -> crate::error::no_such_monitoring_subscription::Builder {
         crate::error::no_such_monitoring_subscription::Builder::default()
     }
 }
+
 /// See [`NoSuchMonitoringSubscription`](crate::error::NoSuchMonitoringSubscription).
 pub mod no_such_monitoring_subscription {
 
@@ -18205,35 +18335,6 @@ pub mod no_such_monitoring_subscription {
                 meta: self.meta.unwrap_or_default(),
             }
         }
-    }
-}
-impl NoSuchMonitoringSubscription {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for NoSuchMonitoringSubscription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "NoSuchMonitoringSubscription")?;
-        if let Some(inner_101) = &self.message {
-            {
-                write!(f, ": {}", inner_101)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for NoSuchMonitoringSubscription {}
-impl aws_http::request_id::RequestId for crate::error::NoSuchMonitoringSubscription {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for NoSuchMonitoringSubscription {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
     }
 }
 
@@ -18586,11 +18687,41 @@ pub struct NoSuchInvalidation {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl NoSuchInvalidation {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for NoSuchInvalidation {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "NoSuchInvalidation")?;
+        if let Some(inner_102) = &self.message {
+            {
+                write!(f, ": {}", inner_102)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for NoSuchInvalidation {}
+impl aws_http::request_id::RequestId for crate::error::NoSuchInvalidation {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for NoSuchInvalidation {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl NoSuchInvalidation {
     /// Creates a new builder-style object to manufacture [`NoSuchInvalidation`](crate::error::NoSuchInvalidation).
     pub fn builder() -> crate::error::no_such_invalidation::Builder {
         crate::error::no_such_invalidation::Builder::default()
     }
 }
+
 /// See [`NoSuchInvalidation`](crate::error::NoSuchInvalidation).
 pub mod no_such_invalidation {
 
@@ -18633,35 +18764,6 @@ pub mod no_such_invalidation {
                 meta: self.meta.unwrap_or_default(),
             }
         }
-    }
-}
-impl NoSuchInvalidation {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for NoSuchInvalidation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "NoSuchInvalidation")?;
-        if let Some(inner_102) = &self.message {
-            {
-                write!(f, ": {}", inner_102)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for NoSuchInvalidation {}
-impl aws_http::request_id::RequestId for crate::error::NoSuchInvalidation {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for NoSuchInvalidation {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
     }
 }
 
@@ -20485,11 +20587,41 @@ pub struct StreamingDistributionNotDisabled {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl StreamingDistributionNotDisabled {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for StreamingDistributionNotDisabled {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "StreamingDistributionNotDisabled")?;
+        if let Some(inner_103) = &self.message {
+            {
+                write!(f, ": {}", inner_103)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for StreamingDistributionNotDisabled {}
+impl aws_http::request_id::RequestId for crate::error::StreamingDistributionNotDisabled {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for StreamingDistributionNotDisabled {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl StreamingDistributionNotDisabled {
     /// Creates a new builder-style object to manufacture [`StreamingDistributionNotDisabled`](crate::error::StreamingDistributionNotDisabled).
     pub fn builder() -> crate::error::streaming_distribution_not_disabled::Builder {
         crate::error::streaming_distribution_not_disabled::Builder::default()
     }
 }
+
 /// See [`StreamingDistributionNotDisabled`](crate::error::StreamingDistributionNotDisabled).
 pub mod streaming_distribution_not_disabled {
 
@@ -20532,35 +20664,6 @@ pub mod streaming_distribution_not_disabled {
                 meta: self.meta.unwrap_or_default(),
             }
         }
-    }
-}
-impl StreamingDistributionNotDisabled {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for StreamingDistributionNotDisabled {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "StreamingDistributionNotDisabled")?;
-        if let Some(inner_103) = &self.message {
-            {
-                write!(f, ": {}", inner_103)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for StreamingDistributionNotDisabled {}
-impl aws_http::request_id::RequestId for crate::error::StreamingDistributionNotDisabled {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for StreamingDistributionNotDisabled {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
     }
 }
 
@@ -20739,11 +20842,41 @@ pub struct ResponseHeadersPolicyInUse {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl ResponseHeadersPolicyInUse {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for ResponseHeadersPolicyInUse {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "ResponseHeadersPolicyInUse")?;
+        if let Some(inner_104) = &self.message {
+            {
+                write!(f, ": {}", inner_104)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for ResponseHeadersPolicyInUse {}
+impl aws_http::request_id::RequestId for crate::error::ResponseHeadersPolicyInUse {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for ResponseHeadersPolicyInUse {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl ResponseHeadersPolicyInUse {
     /// Creates a new builder-style object to manufacture [`ResponseHeadersPolicyInUse`](crate::error::ResponseHeadersPolicyInUse).
     pub fn builder() -> crate::error::response_headers_policy_in_use::Builder {
         crate::error::response_headers_policy_in_use::Builder::default()
     }
 }
+
 /// See [`ResponseHeadersPolicyInUse`](crate::error::ResponseHeadersPolicyInUse).
 pub mod response_headers_policy_in_use {
 
@@ -20788,35 +20921,6 @@ pub mod response_headers_policy_in_use {
         }
     }
 }
-impl ResponseHeadersPolicyInUse {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for ResponseHeadersPolicyInUse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "ResponseHeadersPolicyInUse")?;
-        if let Some(inner_104) = &self.message {
-            {
-                write!(f, ": {}", inner_104)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for ResponseHeadersPolicyInUse {}
-impl aws_http::request_id::RequestId for crate::error::ResponseHeadersPolicyInUse {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for ResponseHeadersPolicyInUse {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>You cannot delete a managed policy.</p>
 #[non_exhaustive]
@@ -20828,11 +20932,41 @@ pub struct IllegalDelete {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl IllegalDelete {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for IllegalDelete {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "IllegalDelete")?;
+        if let Some(inner_105) = &self.message {
+            {
+                write!(f, ": {}", inner_105)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for IllegalDelete {}
+impl aws_http::request_id::RequestId for crate::error::IllegalDelete {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for IllegalDelete {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl IllegalDelete {
     /// Creates a new builder-style object to manufacture [`IllegalDelete`](crate::error::IllegalDelete).
     pub fn builder() -> crate::error::illegal_delete::Builder {
         crate::error::illegal_delete::Builder::default()
     }
 }
+
 /// See [`IllegalDelete`](crate::error::IllegalDelete).
 pub mod illegal_delete {
 
@@ -20875,35 +21009,6 @@ pub mod illegal_delete {
                 meta: self.meta.unwrap_or_default(),
             }
         }
-    }
-}
-impl IllegalDelete {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for IllegalDelete {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "IllegalDelete")?;
-        if let Some(inner_105) = &self.message {
-            {
-                write!(f, ": {}", inner_105)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for IllegalDelete {}
-impl aws_http::request_id::RequestId for crate::error::IllegalDelete {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for IllegalDelete {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
     }
 }
 
@@ -21058,11 +21163,41 @@ pub struct RealtimeLogConfigInUse {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl RealtimeLogConfigInUse {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for RealtimeLogConfigInUse {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "RealtimeLogConfigInUse")?;
+        if let Some(inner_106) = &self.message {
+            {
+                write!(f, ": {}", inner_106)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for RealtimeLogConfigInUse {}
+impl aws_http::request_id::RequestId for crate::error::RealtimeLogConfigInUse {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for RealtimeLogConfigInUse {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl RealtimeLogConfigInUse {
     /// Creates a new builder-style object to manufacture [`RealtimeLogConfigInUse`](crate::error::RealtimeLogConfigInUse).
     pub fn builder() -> crate::error::realtime_log_config_in_use::Builder {
         crate::error::realtime_log_config_in_use::Builder::default()
     }
 }
+
 /// See [`RealtimeLogConfigInUse`](crate::error::RealtimeLogConfigInUse).
 pub mod realtime_log_config_in_use {
 
@@ -21105,35 +21240,6 @@ pub mod realtime_log_config_in_use {
                 meta: self.meta.unwrap_or_default(),
             }
         }
-    }
-}
-impl RealtimeLogConfigInUse {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for RealtimeLogConfigInUse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "RealtimeLogConfigInUse")?;
-        if let Some(inner_106) = &self.message {
-            {
-                write!(f, ": {}", inner_106)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for RealtimeLogConfigInUse {}
-impl aws_http::request_id::RequestId for crate::error::RealtimeLogConfigInUse {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for RealtimeLogConfigInUse {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
     }
 }
 
@@ -21300,11 +21406,41 @@ pub struct PublicKeyInUse {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl PublicKeyInUse {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for PublicKeyInUse {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "PublicKeyInUse")?;
+        if let Some(inner_107) = &self.message {
+            {
+                write!(f, ": {}", inner_107)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for PublicKeyInUse {}
+impl aws_http::request_id::RequestId for crate::error::PublicKeyInUse {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for PublicKeyInUse {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl PublicKeyInUse {
     /// Creates a new builder-style object to manufacture [`PublicKeyInUse`](crate::error::PublicKeyInUse).
     pub fn builder() -> crate::error::public_key_in_use::Builder {
         crate::error::public_key_in_use::Builder::default()
     }
 }
+
 /// See [`PublicKeyInUse`](crate::error::PublicKeyInUse).
 pub mod public_key_in_use {
 
@@ -21347,35 +21483,6 @@ pub mod public_key_in_use {
                 meta: self.meta.unwrap_or_default(),
             }
         }
-    }
-}
-impl PublicKeyInUse {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for PublicKeyInUse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "PublicKeyInUse")?;
-        if let Some(inner_107) = &self.message {
-            {
-                write!(f, ": {}", inner_107)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for PublicKeyInUse {}
-impl aws_http::request_id::RequestId for crate::error::PublicKeyInUse {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for PublicKeyInUse {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
     }
 }
 
@@ -21554,11 +21661,41 @@ pub struct OriginRequestPolicyInUse {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl OriginRequestPolicyInUse {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for OriginRequestPolicyInUse {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "OriginRequestPolicyInUse")?;
+        if let Some(inner_108) = &self.message {
+            {
+                write!(f, ": {}", inner_108)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for OriginRequestPolicyInUse {}
+impl aws_http::request_id::RequestId for crate::error::OriginRequestPolicyInUse {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for OriginRequestPolicyInUse {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl OriginRequestPolicyInUse {
     /// Creates a new builder-style object to manufacture [`OriginRequestPolicyInUse`](crate::error::OriginRequestPolicyInUse).
     pub fn builder() -> crate::error::origin_request_policy_in_use::Builder {
         crate::error::origin_request_policy_in_use::Builder::default()
     }
 }
+
 /// See [`OriginRequestPolicyInUse`](crate::error::OriginRequestPolicyInUse).
 pub mod origin_request_policy_in_use {
 
@@ -21601,35 +21738,6 @@ pub mod origin_request_policy_in_use {
                 meta: self.meta.unwrap_or_default(),
             }
         }
-    }
-}
-impl OriginRequestPolicyInUse {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for OriginRequestPolicyInUse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "OriginRequestPolicyInUse")?;
-        if let Some(inner_108) = &self.message {
-            {
-                write!(f, ": {}", inner_108)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for OriginRequestPolicyInUse {}
-impl aws_http::request_id::RequestId for crate::error::OriginRequestPolicyInUse {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for OriginRequestPolicyInUse {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
     }
 }
 
@@ -21796,11 +21904,41 @@ pub struct OriginAccessControlInUse {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl OriginAccessControlInUse {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for OriginAccessControlInUse {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "OriginAccessControlInUse")?;
+        if let Some(inner_109) = &self.message {
+            {
+                write!(f, ": {}", inner_109)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for OriginAccessControlInUse {}
+impl aws_http::request_id::RequestId for crate::error::OriginAccessControlInUse {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for OriginAccessControlInUse {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl OriginAccessControlInUse {
     /// Creates a new builder-style object to manufacture [`OriginAccessControlInUse`](crate::error::OriginAccessControlInUse).
     pub fn builder() -> crate::error::origin_access_control_in_use::Builder {
         crate::error::origin_access_control_in_use::Builder::default()
     }
 }
+
 /// See [`OriginAccessControlInUse`](crate::error::OriginAccessControlInUse).
 pub mod origin_access_control_in_use {
 
@@ -21843,35 +21981,6 @@ pub mod origin_access_control_in_use {
                 meta: self.meta.unwrap_or_default(),
             }
         }
-    }
-}
-impl OriginAccessControlInUse {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for OriginAccessControlInUse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "OriginAccessControlInUse")?;
-        if let Some(inner_109) = &self.message {
-            {
-                write!(f, ": {}", inner_109)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for OriginAccessControlInUse {}
-impl aws_http::request_id::RequestId for crate::error::OriginAccessControlInUse {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for OriginAccessControlInUse {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
     }
 }
 
@@ -22167,11 +22276,41 @@ pub struct ResourceInUse {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl ResourceInUse {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for ResourceInUse {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "ResourceInUse")?;
+        if let Some(inner_110) = &self.message {
+            {
+                write!(f, ": {}", inner_110)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for ResourceInUse {}
+impl aws_http::request_id::RequestId for crate::error::ResourceInUse {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for ResourceInUse {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl ResourceInUse {
     /// Creates a new builder-style object to manufacture [`ResourceInUse`](crate::error::ResourceInUse).
     pub fn builder() -> crate::error::resource_in_use::Builder {
         crate::error::resource_in_use::Builder::default()
     }
 }
+
 /// See [`ResourceInUse`](crate::error::ResourceInUse).
 pub mod resource_in_use {
 
@@ -22214,35 +22353,6 @@ pub mod resource_in_use {
                 meta: self.meta.unwrap_or_default(),
             }
         }
-    }
-}
-impl ResourceInUse {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for ResourceInUse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "ResourceInUse")?;
-        if let Some(inner_110) = &self.message {
-            {
-                write!(f, ": {}", inner_110)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for ResourceInUse {}
-impl aws_http::request_id::RequestId for crate::error::ResourceInUse {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for ResourceInUse {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
     }
 }
 
@@ -22409,11 +22519,41 @@ pub struct FunctionInUse {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl FunctionInUse {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for FunctionInUse {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "FunctionInUse")?;
+        if let Some(inner_111) = &self.message {
+            {
+                write!(f, ": {}", inner_111)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for FunctionInUse {}
+impl aws_http::request_id::RequestId for crate::error::FunctionInUse {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for FunctionInUse {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl FunctionInUse {
     /// Creates a new builder-style object to manufacture [`FunctionInUse`](crate::error::FunctionInUse).
     pub fn builder() -> crate::error::function_in_use::Builder {
         crate::error::function_in_use::Builder::default()
     }
 }
+
 /// See [`FunctionInUse`](crate::error::FunctionInUse).
 pub mod function_in_use {
 
@@ -22456,35 +22596,6 @@ pub mod function_in_use {
                 meta: self.meta.unwrap_or_default(),
             }
         }
-    }
-}
-impl FunctionInUse {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for FunctionInUse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "FunctionInUse")?;
-        if let Some(inner_111) = &self.message {
-            {
-                write!(f, ": {}", inner_111)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for FunctionInUse {}
-impl aws_http::request_id::RequestId for crate::error::FunctionInUse {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for FunctionInUse {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
     }
 }
 
@@ -22653,11 +22764,41 @@ pub struct FieldLevelEncryptionProfileInUse {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl FieldLevelEncryptionProfileInUse {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for FieldLevelEncryptionProfileInUse {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "FieldLevelEncryptionProfileInUse")?;
+        if let Some(inner_112) = &self.message {
+            {
+                write!(f, ": {}", inner_112)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for FieldLevelEncryptionProfileInUse {}
+impl aws_http::request_id::RequestId for crate::error::FieldLevelEncryptionProfileInUse {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for FieldLevelEncryptionProfileInUse {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl FieldLevelEncryptionProfileInUse {
     /// Creates a new builder-style object to manufacture [`FieldLevelEncryptionProfileInUse`](crate::error::FieldLevelEncryptionProfileInUse).
     pub fn builder() -> crate::error::field_level_encryption_profile_in_use::Builder {
         crate::error::field_level_encryption_profile_in_use::Builder::default()
     }
 }
+
 /// See [`FieldLevelEncryptionProfileInUse`](crate::error::FieldLevelEncryptionProfileInUse).
 pub mod field_level_encryption_profile_in_use {
 
@@ -22700,35 +22841,6 @@ pub mod field_level_encryption_profile_in_use {
                 meta: self.meta.unwrap_or_default(),
             }
         }
-    }
-}
-impl FieldLevelEncryptionProfileInUse {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for FieldLevelEncryptionProfileInUse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "FieldLevelEncryptionProfileInUse")?;
-        if let Some(inner_112) = &self.message {
-            {
-                write!(f, ": {}", inner_112)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for FieldLevelEncryptionProfileInUse {}
-impl aws_http::request_id::RequestId for crate::error::FieldLevelEncryptionProfileInUse {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for FieldLevelEncryptionProfileInUse {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
     }
 }
 
@@ -22897,11 +23009,41 @@ pub struct FieldLevelEncryptionConfigInUse {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl FieldLevelEncryptionConfigInUse {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for FieldLevelEncryptionConfigInUse {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "FieldLevelEncryptionConfigInUse")?;
+        if let Some(inner_113) = &self.message {
+            {
+                write!(f, ": {}", inner_113)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for FieldLevelEncryptionConfigInUse {}
+impl aws_http::request_id::RequestId for crate::error::FieldLevelEncryptionConfigInUse {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for FieldLevelEncryptionConfigInUse {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl FieldLevelEncryptionConfigInUse {
     /// Creates a new builder-style object to manufacture [`FieldLevelEncryptionConfigInUse`](crate::error::FieldLevelEncryptionConfigInUse).
     pub fn builder() -> crate::error::field_level_encryption_config_in_use::Builder {
         crate::error::field_level_encryption_config_in_use::Builder::default()
     }
 }
+
 /// See [`FieldLevelEncryptionConfigInUse`](crate::error::FieldLevelEncryptionConfigInUse).
 pub mod field_level_encryption_config_in_use {
 
@@ -22944,35 +23086,6 @@ pub mod field_level_encryption_config_in_use {
                 meta: self.meta.unwrap_or_default(),
             }
         }
-    }
-}
-impl FieldLevelEncryptionConfigInUse {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for FieldLevelEncryptionConfigInUse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "FieldLevelEncryptionConfigInUse")?;
-        if let Some(inner_113) = &self.message {
-            {
-                write!(f, ": {}", inner_113)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for FieldLevelEncryptionConfigInUse {}
-impl aws_http::request_id::RequestId for crate::error::FieldLevelEncryptionConfigInUse {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for FieldLevelEncryptionConfigInUse {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
     }
 }
 
@@ -23139,11 +23252,41 @@ pub struct DistributionNotDisabled {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl DistributionNotDisabled {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for DistributionNotDisabled {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "DistributionNotDisabled")?;
+        if let Some(inner_114) = &self.message {
+            {
+                write!(f, ": {}", inner_114)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for DistributionNotDisabled {}
+impl aws_http::request_id::RequestId for crate::error::DistributionNotDisabled {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for DistributionNotDisabled {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl DistributionNotDisabled {
     /// Creates a new builder-style object to manufacture [`DistributionNotDisabled`](crate::error::DistributionNotDisabled).
     pub fn builder() -> crate::error::distribution_not_disabled::Builder {
         crate::error::distribution_not_disabled::Builder::default()
     }
 }
+
 /// See [`DistributionNotDisabled`](crate::error::DistributionNotDisabled).
 pub mod distribution_not_disabled {
 
@@ -23186,35 +23329,6 @@ pub mod distribution_not_disabled {
                 meta: self.meta.unwrap_or_default(),
             }
         }
-    }
-}
-impl DistributionNotDisabled {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for DistributionNotDisabled {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "DistributionNotDisabled")?;
-        if let Some(inner_114) = &self.message {
-            {
-                write!(f, ": {}", inner_114)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for DistributionNotDisabled {}
-impl aws_http::request_id::RequestId for crate::error::DistributionNotDisabled {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for DistributionNotDisabled {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
     }
 }
 
@@ -23550,11 +23664,43 @@ pub struct CloudFrontOriginAccessIdentityInUse {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl CloudFrontOriginAccessIdentityInUse {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for CloudFrontOriginAccessIdentityInUse {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "CloudFrontOriginAccessIdentityInUse")?;
+        if let Some(inner_115) = &self.message {
+            {
+                write!(f, ": {}", inner_115)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for CloudFrontOriginAccessIdentityInUse {}
+impl aws_http::request_id::RequestId for crate::error::CloudFrontOriginAccessIdentityInUse {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata
+    for CloudFrontOriginAccessIdentityInUse
+{
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl CloudFrontOriginAccessIdentityInUse {
     /// Creates a new builder-style object to manufacture [`CloudFrontOriginAccessIdentityInUse`](crate::error::CloudFrontOriginAccessIdentityInUse).
     pub fn builder() -> crate::error::cloud_front_origin_access_identity_in_use::Builder {
         crate::error::cloud_front_origin_access_identity_in_use::Builder::default()
     }
 }
+
 /// See [`CloudFrontOriginAccessIdentityInUse`](crate::error::CloudFrontOriginAccessIdentityInUse).
 pub mod cloud_front_origin_access_identity_in_use {
 
@@ -23597,37 +23743,6 @@ pub mod cloud_front_origin_access_identity_in_use {
                 meta: self.meta.unwrap_or_default(),
             }
         }
-    }
-}
-impl CloudFrontOriginAccessIdentityInUse {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for CloudFrontOriginAccessIdentityInUse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "CloudFrontOriginAccessIdentityInUse")?;
-        if let Some(inner_115) = &self.message {
-            {
-                write!(f, ": {}", inner_115)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for CloudFrontOriginAccessIdentityInUse {}
-impl aws_http::request_id::RequestId for crate::error::CloudFrontOriginAccessIdentityInUse {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for CloudFrontOriginAccessIdentityInUse
-{
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
     }
 }
 
@@ -23806,11 +23921,41 @@ pub struct CachePolicyInUse {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl CachePolicyInUse {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for CachePolicyInUse {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "CachePolicyInUse")?;
+        if let Some(inner_116) = &self.message {
+            {
+                write!(f, ": {}", inner_116)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for CachePolicyInUse {}
+impl aws_http::request_id::RequestId for crate::error::CachePolicyInUse {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for CachePolicyInUse {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl CachePolicyInUse {
     /// Creates a new builder-style object to manufacture [`CachePolicyInUse`](crate::error::CachePolicyInUse).
     pub fn builder() -> crate::error::cache_policy_in_use::Builder {
         crate::error::cache_policy_in_use::Builder::default()
     }
 }
+
 /// See [`CachePolicyInUse`](crate::error::CachePolicyInUse).
 pub mod cache_policy_in_use {
 
@@ -23853,35 +23998,6 @@ pub mod cache_policy_in_use {
                 meta: self.meta.unwrap_or_default(),
             }
         }
-    }
-}
-impl CachePolicyInUse {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for CachePolicyInUse {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "CachePolicyInUse")?;
-        if let Some(inner_116) = &self.message {
-            {
-                write!(f, ": {}", inner_116)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for CachePolicyInUse {}
-impl aws_http::request_id::RequestId for crate::error::CachePolicyInUse {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for CachePolicyInUse {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
     }
 }
 
@@ -24158,11 +24274,41 @@ pub struct TooManyStreamingDistributions {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl TooManyStreamingDistributions {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for TooManyStreamingDistributions {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "TooManyStreamingDistributions")?;
+        if let Some(inner_117) = &self.message {
+            {
+                write!(f, ": {}", inner_117)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for TooManyStreamingDistributions {}
+impl aws_http::request_id::RequestId for crate::error::TooManyStreamingDistributions {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for TooManyStreamingDistributions {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl TooManyStreamingDistributions {
     /// Creates a new builder-style object to manufacture [`TooManyStreamingDistributions`](crate::error::TooManyStreamingDistributions).
     pub fn builder() -> crate::error::too_many_streaming_distributions::Builder {
         crate::error::too_many_streaming_distributions::Builder::default()
     }
 }
+
 /// See [`TooManyStreamingDistributions`](crate::error::TooManyStreamingDistributions).
 pub mod too_many_streaming_distributions {
 
@@ -24207,35 +24353,6 @@ pub mod too_many_streaming_distributions {
         }
     }
 }
-impl TooManyStreamingDistributions {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for TooManyStreamingDistributions {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "TooManyStreamingDistributions")?;
-        if let Some(inner_117) = &self.message {
-            {
-                write!(f, ": {}", inner_117)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for TooManyStreamingDistributions {}
-impl aws_http::request_id::RequestId for crate::error::TooManyStreamingDistributions {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for TooManyStreamingDistributions {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>The caller reference you attempted to create the streaming distribution with is associated with another distribution</p>
 #[non_exhaustive]
@@ -24247,11 +24364,43 @@ pub struct StreamingDistributionAlreadyExists {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl StreamingDistributionAlreadyExists {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for StreamingDistributionAlreadyExists {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "StreamingDistributionAlreadyExists")?;
+        if let Some(inner_118) = &self.message {
+            {
+                write!(f, ": {}", inner_118)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for StreamingDistributionAlreadyExists {}
+impl aws_http::request_id::RequestId for crate::error::StreamingDistributionAlreadyExists {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata
+    for StreamingDistributionAlreadyExists
+{
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl StreamingDistributionAlreadyExists {
     /// Creates a new builder-style object to manufacture [`StreamingDistributionAlreadyExists`](crate::error::StreamingDistributionAlreadyExists).
     pub fn builder() -> crate::error::streaming_distribution_already_exists::Builder {
         crate::error::streaming_distribution_already_exists::Builder::default()
     }
 }
+
 /// See [`StreamingDistributionAlreadyExists`](crate::error::StreamingDistributionAlreadyExists).
 pub mod streaming_distribution_already_exists {
 
@@ -24296,37 +24445,6 @@ pub mod streaming_distribution_already_exists {
         }
     }
 }
-impl StreamingDistributionAlreadyExists {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for StreamingDistributionAlreadyExists {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "StreamingDistributionAlreadyExists")?;
-        if let Some(inner_118) = &self.message {
-            {
-                write!(f, ": {}", inner_118)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for StreamingDistributionAlreadyExists {}
-impl aws_http::request_id::RequestId for crate::error::StreamingDistributionAlreadyExists {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for StreamingDistributionAlreadyExists
-{
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>The Amazon S3 origin server specified does not refer to a valid Amazon S3 bucket.</p>
 #[non_exhaustive]
@@ -24338,11 +24456,41 @@ pub struct InvalidOrigin {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl InvalidOrigin {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for InvalidOrigin {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "InvalidOrigin")?;
+        if let Some(inner_119) = &self.message {
+            {
+                write!(f, ": {}", inner_119)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for InvalidOrigin {}
+impl aws_http::request_id::RequestId for crate::error::InvalidOrigin {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidOrigin {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl InvalidOrigin {
     /// Creates a new builder-style object to manufacture [`InvalidOrigin`](crate::error::InvalidOrigin).
     pub fn builder() -> crate::error::invalid_origin::Builder {
         crate::error::invalid_origin::Builder::default()
     }
 }
+
 /// See [`InvalidOrigin`](crate::error::InvalidOrigin).
 pub mod invalid_origin {
 
@@ -24385,35 +24533,6 @@ pub mod invalid_origin {
                 meta: self.meta.unwrap_or_default(),
             }
         }
-    }
-}
-impl InvalidOrigin {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for InvalidOrigin {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "InvalidOrigin")?;
-        if let Some(inner_119) = &self.message {
-            {
-                write!(f, ": {}", inner_119)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for InvalidOrigin {}
-impl aws_http::request_id::RequestId for crate::error::InvalidOrigin {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidOrigin {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
     }
 }
 
@@ -24874,11 +24993,41 @@ pub struct TooManyResponseHeadersPolicies {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl TooManyResponseHeadersPolicies {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for TooManyResponseHeadersPolicies {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "TooManyResponseHeadersPolicies")?;
+        if let Some(inner_120) = &self.message {
+            {
+                write!(f, ": {}", inner_120)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for TooManyResponseHeadersPolicies {}
+impl aws_http::request_id::RequestId for crate::error::TooManyResponseHeadersPolicies {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for TooManyResponseHeadersPolicies {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl TooManyResponseHeadersPolicies {
     /// Creates a new builder-style object to manufacture [`TooManyResponseHeadersPolicies`](crate::error::TooManyResponseHeadersPolicies).
     pub fn builder() -> crate::error::too_many_response_headers_policies::Builder {
         crate::error::too_many_response_headers_policies::Builder::default()
     }
 }
+
 /// See [`TooManyResponseHeadersPolicies`](crate::error::TooManyResponseHeadersPolicies).
 pub mod too_many_response_headers_policies {
 
@@ -24921,35 +25070,6 @@ pub mod too_many_response_headers_policies {
                 meta: self.meta.unwrap_or_default(),
             }
         }
-    }
-}
-impl TooManyResponseHeadersPolicies {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for TooManyResponseHeadersPolicies {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "TooManyResponseHeadersPolicies")?;
-        if let Some(inner_120) = &self.message {
-            {
-                write!(f, ": {}", inner_120)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for TooManyResponseHeadersPolicies {}
-impl aws_http::request_id::RequestId for crate::error::TooManyResponseHeadersPolicies {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for TooManyResponseHeadersPolicies {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
     }
 }
 
@@ -25104,11 +25224,41 @@ pub struct TooManyRealtimeLogConfigs {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl TooManyRealtimeLogConfigs {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for TooManyRealtimeLogConfigs {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "TooManyRealtimeLogConfigs")?;
+        if let Some(inner_121) = &self.message {
+            {
+                write!(f, ": {}", inner_121)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for TooManyRealtimeLogConfigs {}
+impl aws_http::request_id::RequestId for crate::error::TooManyRealtimeLogConfigs {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for TooManyRealtimeLogConfigs {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl TooManyRealtimeLogConfigs {
     /// Creates a new builder-style object to manufacture [`TooManyRealtimeLogConfigs`](crate::error::TooManyRealtimeLogConfigs).
     pub fn builder() -> crate::error::too_many_realtime_log_configs::Builder {
         crate::error::too_many_realtime_log_configs::Builder::default()
     }
 }
+
 /// See [`TooManyRealtimeLogConfigs`](crate::error::TooManyRealtimeLogConfigs).
 pub mod too_many_realtime_log_configs {
 
@@ -25153,35 +25303,6 @@ pub mod too_many_realtime_log_configs {
         }
     }
 }
-impl TooManyRealtimeLogConfigs {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for TooManyRealtimeLogConfigs {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "TooManyRealtimeLogConfigs")?;
-        if let Some(inner_121) = &self.message {
-            {
-                write!(f, ": {}", inner_121)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for TooManyRealtimeLogConfigs {}
-impl aws_http::request_id::RequestId for crate::error::TooManyRealtimeLogConfigs {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for TooManyRealtimeLogConfigs {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>A real-time log configuration with this name already exists. You must provide a unique name. To modify an existing real-time log configuration, use <code>UpdateRealtimeLogConfig</code>.</p>
 #[non_exhaustive]
@@ -25193,11 +25314,41 @@ pub struct RealtimeLogConfigAlreadyExists {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl RealtimeLogConfigAlreadyExists {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for RealtimeLogConfigAlreadyExists {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "RealtimeLogConfigAlreadyExists")?;
+        if let Some(inner_122) = &self.message {
+            {
+                write!(f, ": {}", inner_122)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for RealtimeLogConfigAlreadyExists {}
+impl aws_http::request_id::RequestId for crate::error::RealtimeLogConfigAlreadyExists {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for RealtimeLogConfigAlreadyExists {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl RealtimeLogConfigAlreadyExists {
     /// Creates a new builder-style object to manufacture [`RealtimeLogConfigAlreadyExists`](crate::error::RealtimeLogConfigAlreadyExists).
     pub fn builder() -> crate::error::realtime_log_config_already_exists::Builder {
         crate::error::realtime_log_config_already_exists::Builder::default()
     }
 }
+
 /// See [`RealtimeLogConfigAlreadyExists`](crate::error::RealtimeLogConfigAlreadyExists).
 pub mod realtime_log_config_already_exists {
 
@@ -25240,35 +25391,6 @@ pub mod realtime_log_config_already_exists {
                 meta: self.meta.unwrap_or_default(),
             }
         }
-    }
-}
-impl RealtimeLogConfigAlreadyExists {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for RealtimeLogConfigAlreadyExists {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "RealtimeLogConfigAlreadyExists")?;
-        if let Some(inner_122) = &self.message {
-            {
-                write!(f, ": {}", inner_122)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for RealtimeLogConfigAlreadyExists {}
-impl aws_http::request_id::RequestId for crate::error::RealtimeLogConfigAlreadyExists {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for RealtimeLogConfigAlreadyExists {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
     }
 }
 
@@ -25411,11 +25533,41 @@ pub struct TooManyPublicKeys {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl TooManyPublicKeys {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for TooManyPublicKeys {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "TooManyPublicKeys")?;
+        if let Some(inner_123) = &self.message {
+            {
+                write!(f, ": {}", inner_123)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for TooManyPublicKeys {}
+impl aws_http::request_id::RequestId for crate::error::TooManyPublicKeys {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for TooManyPublicKeys {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl TooManyPublicKeys {
     /// Creates a new builder-style object to manufacture [`TooManyPublicKeys`](crate::error::TooManyPublicKeys).
     pub fn builder() -> crate::error::too_many_public_keys::Builder {
         crate::error::too_many_public_keys::Builder::default()
     }
 }
+
 /// See [`TooManyPublicKeys`](crate::error::TooManyPublicKeys).
 pub mod too_many_public_keys {
 
@@ -25460,35 +25612,6 @@ pub mod too_many_public_keys {
         }
     }
 }
-impl TooManyPublicKeys {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for TooManyPublicKeys {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "TooManyPublicKeys")?;
-        if let Some(inner_123) = &self.message {
-            {
-                write!(f, ": {}", inner_123)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for TooManyPublicKeys {}
-impl aws_http::request_id::RequestId for crate::error::TooManyPublicKeys {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for TooManyPublicKeys {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>The specified public key already exists.</p>
 #[non_exhaustive]
@@ -25500,11 +25623,41 @@ pub struct PublicKeyAlreadyExists {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl PublicKeyAlreadyExists {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for PublicKeyAlreadyExists {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "PublicKeyAlreadyExists")?;
+        if let Some(inner_124) = &self.message {
+            {
+                write!(f, ": {}", inner_124)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for PublicKeyAlreadyExists {}
+impl aws_http::request_id::RequestId for crate::error::PublicKeyAlreadyExists {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for PublicKeyAlreadyExists {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl PublicKeyAlreadyExists {
     /// Creates a new builder-style object to manufacture [`PublicKeyAlreadyExists`](crate::error::PublicKeyAlreadyExists).
     pub fn builder() -> crate::error::public_key_already_exists::Builder {
         crate::error::public_key_already_exists::Builder::default()
     }
 }
+
 /// See [`PublicKeyAlreadyExists`](crate::error::PublicKeyAlreadyExists).
 pub mod public_key_already_exists {
 
@@ -25547,35 +25700,6 @@ pub mod public_key_already_exists {
                 meta: self.meta.unwrap_or_default(),
             }
         }
-    }
-}
-impl PublicKeyAlreadyExists {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for PublicKeyAlreadyExists {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "PublicKeyAlreadyExists")?;
-        if let Some(inner_124) = &self.message {
-            {
-                write!(f, ": {}", inner_124)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for PublicKeyAlreadyExists {}
-impl aws_http::request_id::RequestId for crate::error::PublicKeyAlreadyExists {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for PublicKeyAlreadyExists {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
     }
 }
 
@@ -25780,11 +25904,41 @@ pub struct TooManyOriginRequestPolicies {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl TooManyOriginRequestPolicies {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for TooManyOriginRequestPolicies {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "TooManyOriginRequestPolicies")?;
+        if let Some(inner_125) = &self.message {
+            {
+                write!(f, ": {}", inner_125)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for TooManyOriginRequestPolicies {}
+impl aws_http::request_id::RequestId for crate::error::TooManyOriginRequestPolicies {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for TooManyOriginRequestPolicies {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl TooManyOriginRequestPolicies {
     /// Creates a new builder-style object to manufacture [`TooManyOriginRequestPolicies`](crate::error::TooManyOriginRequestPolicies).
     pub fn builder() -> crate::error::too_many_origin_request_policies::Builder {
         crate::error::too_many_origin_request_policies::Builder::default()
     }
 }
+
 /// See [`TooManyOriginRequestPolicies`](crate::error::TooManyOriginRequestPolicies).
 pub mod too_many_origin_request_policies {
 
@@ -25827,35 +25981,6 @@ pub mod too_many_origin_request_policies {
                 meta: self.meta.unwrap_or_default(),
             }
         }
-    }
-}
-impl TooManyOriginRequestPolicies {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for TooManyOriginRequestPolicies {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "TooManyOriginRequestPolicies")?;
-        if let Some(inner_125) = &self.message {
-            {
-                write!(f, ": {}", inner_125)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for TooManyOriginRequestPolicies {}
-impl aws_http::request_id::RequestId for crate::error::TooManyOriginRequestPolicies {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for TooManyOriginRequestPolicies {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
     }
 }
 
@@ -26000,11 +26125,41 @@ pub struct TooManyOriginAccessControls {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl TooManyOriginAccessControls {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for TooManyOriginAccessControls {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "TooManyOriginAccessControls")?;
+        if let Some(inner_126) = &self.message {
+            {
+                write!(f, ": {}", inner_126)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for TooManyOriginAccessControls {}
+impl aws_http::request_id::RequestId for crate::error::TooManyOriginAccessControls {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for TooManyOriginAccessControls {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl TooManyOriginAccessControls {
     /// Creates a new builder-style object to manufacture [`TooManyOriginAccessControls`](crate::error::TooManyOriginAccessControls).
     pub fn builder() -> crate::error::too_many_origin_access_controls::Builder {
         crate::error::too_many_origin_access_controls::Builder::default()
     }
 }
+
 /// See [`TooManyOriginAccessControls`](crate::error::TooManyOriginAccessControls).
 pub mod too_many_origin_access_controls {
 
@@ -26047,35 +26202,6 @@ pub mod too_many_origin_access_controls {
                 meta: self.meta.unwrap_or_default(),
             }
         }
-    }
-}
-impl TooManyOriginAccessControls {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for TooManyOriginAccessControls {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "TooManyOriginAccessControls")?;
-        if let Some(inner_126) = &self.message {
-            {
-                write!(f, ": {}", inner_126)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for TooManyOriginAccessControls {}
-impl aws_http::request_id::RequestId for crate::error::TooManyOriginAccessControls {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for TooManyOriginAccessControls {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
     }
 }
 
@@ -26230,11 +26356,43 @@ pub struct MonitoringSubscriptionAlreadyExists {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl MonitoringSubscriptionAlreadyExists {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for MonitoringSubscriptionAlreadyExists {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "MonitoringSubscriptionAlreadyExists")?;
+        if let Some(inner_127) = &self.message {
+            {
+                write!(f, ": {}", inner_127)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for MonitoringSubscriptionAlreadyExists {}
+impl aws_http::request_id::RequestId for crate::error::MonitoringSubscriptionAlreadyExists {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata
+    for MonitoringSubscriptionAlreadyExists
+{
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl MonitoringSubscriptionAlreadyExists {
     /// Creates a new builder-style object to manufacture [`MonitoringSubscriptionAlreadyExists`](crate::error::MonitoringSubscriptionAlreadyExists).
     pub fn builder() -> crate::error::monitoring_subscription_already_exists::Builder {
         crate::error::monitoring_subscription_already_exists::Builder::default()
     }
 }
+
 /// See [`MonitoringSubscriptionAlreadyExists`](crate::error::MonitoringSubscriptionAlreadyExists).
 pub mod monitoring_subscription_already_exists {
 
@@ -26277,37 +26435,6 @@ pub mod monitoring_subscription_already_exists {
                 meta: self.meta.unwrap_or_default(),
             }
         }
-    }
-}
-impl MonitoringSubscriptionAlreadyExists {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for MonitoringSubscriptionAlreadyExists {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "MonitoringSubscriptionAlreadyExists")?;
-        if let Some(inner_127) = &self.message {
-            {
-                write!(f, ": {}", inner_127)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for MonitoringSubscriptionAlreadyExists {}
-impl aws_http::request_id::RequestId for crate::error::MonitoringSubscriptionAlreadyExists {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for MonitoringSubscriptionAlreadyExists
-{
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
     }
 }
 
@@ -26462,11 +26589,41 @@ pub struct TooManyKeyGroups {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl TooManyKeyGroups {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for TooManyKeyGroups {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "TooManyKeyGroups")?;
+        if let Some(inner_128) = &self.message {
+            {
+                write!(f, ": {}", inner_128)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for TooManyKeyGroups {}
+impl aws_http::request_id::RequestId for crate::error::TooManyKeyGroups {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for TooManyKeyGroups {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl TooManyKeyGroups {
     /// Creates a new builder-style object to manufacture [`TooManyKeyGroups`](crate::error::TooManyKeyGroups).
     pub fn builder() -> crate::error::too_many_key_groups::Builder {
         crate::error::too_many_key_groups::Builder::default()
     }
 }
+
 /// See [`TooManyKeyGroups`](crate::error::TooManyKeyGroups).
 pub mod too_many_key_groups {
 
@@ -26509,35 +26666,6 @@ pub mod too_many_key_groups {
                 meta: self.meta.unwrap_or_default(),
             }
         }
-    }
-}
-impl TooManyKeyGroups {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for TooManyKeyGroups {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "TooManyKeyGroups")?;
-        if let Some(inner_128) = &self.message {
-            {
-                write!(f, ": {}", inner_128)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for TooManyKeyGroups {}
-impl aws_http::request_id::RequestId for crate::error::TooManyKeyGroups {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for TooManyKeyGroups {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
     }
 }
 
@@ -26728,11 +26856,41 @@ pub struct TooManyInvalidationsInProgress {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl TooManyInvalidationsInProgress {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for TooManyInvalidationsInProgress {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "TooManyInvalidationsInProgress")?;
+        if let Some(inner_129) = &self.message {
+            {
+                write!(f, ": {}", inner_129)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for TooManyInvalidationsInProgress {}
+impl aws_http::request_id::RequestId for crate::error::TooManyInvalidationsInProgress {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for TooManyInvalidationsInProgress {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl TooManyInvalidationsInProgress {
     /// Creates a new builder-style object to manufacture [`TooManyInvalidationsInProgress`](crate::error::TooManyInvalidationsInProgress).
     pub fn builder() -> crate::error::too_many_invalidations_in_progress::Builder {
         crate::error::too_many_invalidations_in_progress::Builder::default()
     }
 }
+
 /// See [`TooManyInvalidationsInProgress`](crate::error::TooManyInvalidationsInProgress).
 pub mod too_many_invalidations_in_progress {
 
@@ -26777,35 +26935,6 @@ pub mod too_many_invalidations_in_progress {
         }
     }
 }
-impl TooManyInvalidationsInProgress {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for TooManyInvalidationsInProgress {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "TooManyInvalidationsInProgress")?;
-        if let Some(inner_129) = &self.message {
-            {
-                write!(f, ": {}", inner_129)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for TooManyInvalidationsInProgress {}
-impl aws_http::request_id::RequestId for crate::error::TooManyInvalidationsInProgress {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for TooManyInvalidationsInProgress {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>Invalidation batch specified is too large.</p>
 #[non_exhaustive]
@@ -26817,11 +26946,41 @@ pub struct BatchTooLarge {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl BatchTooLarge {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for BatchTooLarge {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "BatchTooLarge")?;
+        if let Some(inner_130) = &self.message {
+            {
+                write!(f, ": {}", inner_130)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for BatchTooLarge {}
+impl aws_http::request_id::RequestId for crate::error::BatchTooLarge {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for BatchTooLarge {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl BatchTooLarge {
     /// Creates a new builder-style object to manufacture [`BatchTooLarge`](crate::error::BatchTooLarge).
     pub fn builder() -> crate::error::batch_too_large::Builder {
         crate::error::batch_too_large::Builder::default()
     }
 }
+
 /// See [`BatchTooLarge`](crate::error::BatchTooLarge).
 pub mod batch_too_large {
 
@@ -26864,35 +27023,6 @@ pub mod batch_too_large {
                 meta: self.meta.unwrap_or_default(),
             }
         }
-    }
-}
-impl BatchTooLarge {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for BatchTooLarge {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "BatchTooLarge")?;
-        if let Some(inner_130) = &self.message {
-            {
-                write!(f, ": {}", inner_130)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for BatchTooLarge {}
-impl aws_http::request_id::RequestId for crate::error::BatchTooLarge {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for BatchTooLarge {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
     }
 }
 
@@ -27059,11 +27189,41 @@ pub struct TooManyFunctions {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl TooManyFunctions {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for TooManyFunctions {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "TooManyFunctions")?;
+        if let Some(inner_131) = &self.message {
+            {
+                write!(f, ": {}", inner_131)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for TooManyFunctions {}
+impl aws_http::request_id::RequestId for crate::error::TooManyFunctions {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for TooManyFunctions {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl TooManyFunctions {
     /// Creates a new builder-style object to manufacture [`TooManyFunctions`](crate::error::TooManyFunctions).
     pub fn builder() -> crate::error::too_many_functions::Builder {
         crate::error::too_many_functions::Builder::default()
     }
 }
+
 /// See [`TooManyFunctions`](crate::error::TooManyFunctions).
 pub mod too_many_functions {
 
@@ -27108,35 +27268,6 @@ pub mod too_many_functions {
         }
     }
 }
-impl TooManyFunctions {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for TooManyFunctions {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "TooManyFunctions")?;
-        if let Some(inner_131) = &self.message {
-            {
-                write!(f, ": {}", inner_131)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for TooManyFunctions {}
-impl aws_http::request_id::RequestId for crate::error::TooManyFunctions {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for TooManyFunctions {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>A function with the same name already exists in this Amazon Web Services account. To create a function, you must provide a unique name. To update an existing function, use <code>UpdateFunction</code>.</p>
 #[non_exhaustive]
@@ -27148,11 +27279,41 @@ pub struct FunctionAlreadyExists {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl FunctionAlreadyExists {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for FunctionAlreadyExists {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "FunctionAlreadyExists")?;
+        if let Some(inner_132) = &self.message {
+            {
+                write!(f, ": {}", inner_132)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for FunctionAlreadyExists {}
+impl aws_http::request_id::RequestId for crate::error::FunctionAlreadyExists {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for FunctionAlreadyExists {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl FunctionAlreadyExists {
     /// Creates a new builder-style object to manufacture [`FunctionAlreadyExists`](crate::error::FunctionAlreadyExists).
     pub fn builder() -> crate::error::function_already_exists::Builder {
         crate::error::function_already_exists::Builder::default()
     }
 }
+
 /// See [`FunctionAlreadyExists`](crate::error::FunctionAlreadyExists).
 pub mod function_already_exists {
 
@@ -27195,35 +27356,6 @@ pub mod function_already_exists {
                 meta: self.meta.unwrap_or_default(),
             }
         }
-    }
-}
-impl FunctionAlreadyExists {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for FunctionAlreadyExists {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "FunctionAlreadyExists")?;
-        if let Some(inner_132) = &self.message {
-            {
-                write!(f, ": {}", inner_132)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for FunctionAlreadyExists {}
-impl aws_http::request_id::RequestId for crate::error::FunctionAlreadyExists {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for FunctionAlreadyExists {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
     }
 }
 
@@ -27434,11 +27566,43 @@ pub struct TooManyFieldLevelEncryptionProfiles {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl TooManyFieldLevelEncryptionProfiles {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for TooManyFieldLevelEncryptionProfiles {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "TooManyFieldLevelEncryptionProfiles")?;
+        if let Some(inner_133) = &self.message {
+            {
+                write!(f, ": {}", inner_133)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for TooManyFieldLevelEncryptionProfiles {}
+impl aws_http::request_id::RequestId for crate::error::TooManyFieldLevelEncryptionProfiles {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata
+    for TooManyFieldLevelEncryptionProfiles
+{
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl TooManyFieldLevelEncryptionProfiles {
     /// Creates a new builder-style object to manufacture [`TooManyFieldLevelEncryptionProfiles`](crate::error::TooManyFieldLevelEncryptionProfiles).
     pub fn builder() -> crate::error::too_many_field_level_encryption_profiles::Builder {
         crate::error::too_many_field_level_encryption_profiles::Builder::default()
     }
 }
+
 /// See [`TooManyFieldLevelEncryptionProfiles`](crate::error::TooManyFieldLevelEncryptionProfiles).
 pub mod too_many_field_level_encryption_profiles {
 
@@ -27481,37 +27645,6 @@ pub mod too_many_field_level_encryption_profiles {
                 meta: self.meta.unwrap_or_default(),
             }
         }
-    }
-}
-impl TooManyFieldLevelEncryptionProfiles {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for TooManyFieldLevelEncryptionProfiles {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "TooManyFieldLevelEncryptionProfiles")?;
-        if let Some(inner_133) = &self.message {
-            {
-                write!(f, ": {}", inner_133)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for TooManyFieldLevelEncryptionProfiles {}
-impl aws_http::request_id::RequestId for crate::error::TooManyFieldLevelEncryptionProfiles {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for TooManyFieldLevelEncryptionProfiles
-{
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
     }
 }
 
@@ -27723,11 +27856,43 @@ pub struct TooManyFieldLevelEncryptionConfigs {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl TooManyFieldLevelEncryptionConfigs {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for TooManyFieldLevelEncryptionConfigs {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "TooManyFieldLevelEncryptionConfigs")?;
+        if let Some(inner_134) = &self.message {
+            {
+                write!(f, ": {}", inner_134)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for TooManyFieldLevelEncryptionConfigs {}
+impl aws_http::request_id::RequestId for crate::error::TooManyFieldLevelEncryptionConfigs {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata
+    for TooManyFieldLevelEncryptionConfigs
+{
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl TooManyFieldLevelEncryptionConfigs {
     /// Creates a new builder-style object to manufacture [`TooManyFieldLevelEncryptionConfigs`](crate::error::TooManyFieldLevelEncryptionConfigs).
     pub fn builder() -> crate::error::too_many_field_level_encryption_configs::Builder {
         crate::error::too_many_field_level_encryption_configs::Builder::default()
     }
 }
+
 /// See [`TooManyFieldLevelEncryptionConfigs`](crate::error::TooManyFieldLevelEncryptionConfigs).
 pub mod too_many_field_level_encryption_configs {
 
@@ -27772,37 +27937,6 @@ pub mod too_many_field_level_encryption_configs {
         }
     }
 }
-impl TooManyFieldLevelEncryptionConfigs {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for TooManyFieldLevelEncryptionConfigs {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "TooManyFieldLevelEncryptionConfigs")?;
-        if let Some(inner_134) = &self.message {
-            {
-                write!(f, ": {}", inner_134)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for TooManyFieldLevelEncryptionConfigs {}
-impl aws_http::request_id::RequestId for crate::error::TooManyFieldLevelEncryptionConfigs {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for TooManyFieldLevelEncryptionConfigs
-{
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>The specified configuration for field-level encryption already exists.</p>
 #[non_exhaustive]
@@ -27814,11 +27948,43 @@ pub struct FieldLevelEncryptionConfigAlreadyExists {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl FieldLevelEncryptionConfigAlreadyExists {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for FieldLevelEncryptionConfigAlreadyExists {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "FieldLevelEncryptionConfigAlreadyExists")?;
+        if let Some(inner_135) = &self.message {
+            {
+                write!(f, ": {}", inner_135)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for FieldLevelEncryptionConfigAlreadyExists {}
+impl aws_http::request_id::RequestId for crate::error::FieldLevelEncryptionConfigAlreadyExists {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata
+    for FieldLevelEncryptionConfigAlreadyExists
+{
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl FieldLevelEncryptionConfigAlreadyExists {
     /// Creates a new builder-style object to manufacture [`FieldLevelEncryptionConfigAlreadyExists`](crate::error::FieldLevelEncryptionConfigAlreadyExists).
     pub fn builder() -> crate::error::field_level_encryption_config_already_exists::Builder {
         crate::error::field_level_encryption_config_already_exists::Builder::default()
     }
 }
+
 /// See [`FieldLevelEncryptionConfigAlreadyExists`](crate::error::FieldLevelEncryptionConfigAlreadyExists).
 pub mod field_level_encryption_config_already_exists {
 
@@ -27861,37 +28027,6 @@ pub mod field_level_encryption_config_already_exists {
                 meta: self.meta.unwrap_or_default(),
             }
         }
-    }
-}
-impl FieldLevelEncryptionConfigAlreadyExists {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for FieldLevelEncryptionConfigAlreadyExists {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "FieldLevelEncryptionConfigAlreadyExists")?;
-        if let Some(inner_135) = &self.message {
-            {
-                write!(f, ": {}", inner_135)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for FieldLevelEncryptionConfigAlreadyExists {}
-impl aws_http::request_id::RequestId for crate::error::FieldLevelEncryptionConfigAlreadyExists {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for FieldLevelEncryptionConfigAlreadyExists
-{
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
     }
 }
 
@@ -28807,11 +28942,41 @@ pub struct TooManyDistributions {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl TooManyDistributions {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for TooManyDistributions {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "TooManyDistributions")?;
+        if let Some(inner_136) = &self.message {
+            {
+                write!(f, ": {}", inner_136)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for TooManyDistributions {}
+impl aws_http::request_id::RequestId for crate::error::TooManyDistributions {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for TooManyDistributions {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl TooManyDistributions {
     /// Creates a new builder-style object to manufacture [`TooManyDistributions`](crate::error::TooManyDistributions).
     pub fn builder() -> crate::error::too_many_distributions::Builder {
         crate::error::too_many_distributions::Builder::default()
     }
 }
+
 /// See [`TooManyDistributions`](crate::error::TooManyDistributions).
 pub mod too_many_distributions {
 
@@ -28856,35 +29021,6 @@ pub mod too_many_distributions {
         }
     }
 }
-impl TooManyDistributions {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for TooManyDistributions {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "TooManyDistributions")?;
-        if let Some(inner_136) = &self.message {
-            {
-                write!(f, ": {}", inner_136)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for TooManyDistributions {}
-impl aws_http::request_id::RequestId for crate::error::TooManyDistributions {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for TooManyDistributions {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>You cannot specify SSLv3 as the minimum protocol version if you only want to support only clients that support Server Name Indication (SNI).</p>
 #[non_exhaustive]
@@ -28896,11 +29032,41 @@ pub struct InvalidProtocolSettings {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl InvalidProtocolSettings {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for InvalidProtocolSettings {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "InvalidProtocolSettings")?;
+        if let Some(inner_137) = &self.message {
+            {
+                write!(f, ": {}", inner_137)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for InvalidProtocolSettings {}
+impl aws_http::request_id::RequestId for crate::error::InvalidProtocolSettings {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidProtocolSettings {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl InvalidProtocolSettings {
     /// Creates a new builder-style object to manufacture [`InvalidProtocolSettings`](crate::error::InvalidProtocolSettings).
     pub fn builder() -> crate::error::invalid_protocol_settings::Builder {
         crate::error::invalid_protocol_settings::Builder::default()
     }
 }
+
 /// See [`InvalidProtocolSettings`](crate::error::InvalidProtocolSettings).
 pub mod invalid_protocol_settings {
 
@@ -28945,35 +29111,6 @@ pub mod invalid_protocol_settings {
         }
     }
 }
-impl InvalidProtocolSettings {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for InvalidProtocolSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "InvalidProtocolSettings")?;
-        if let Some(inner_137) = &self.message {
-            {
-                write!(f, ": {}", inner_137)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for InvalidProtocolSettings {}
-impl aws_http::request_id::RequestId for crate::error::InvalidProtocolSettings {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidProtocolSettings {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>The caller reference you attempted to create the distribution with is associated with another distribution.</p>
 #[non_exhaustive]
@@ -28985,11 +29122,41 @@ pub struct DistributionAlreadyExists {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl DistributionAlreadyExists {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for DistributionAlreadyExists {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "DistributionAlreadyExists")?;
+        if let Some(inner_138) = &self.message {
+            {
+                write!(f, ": {}", inner_138)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for DistributionAlreadyExists {}
+impl aws_http::request_id::RequestId for crate::error::DistributionAlreadyExists {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for DistributionAlreadyExists {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl DistributionAlreadyExists {
     /// Creates a new builder-style object to manufacture [`DistributionAlreadyExists`](crate::error::DistributionAlreadyExists).
     pub fn builder() -> crate::error::distribution_already_exists::Builder {
         crate::error::distribution_already_exists::Builder::default()
     }
 }
+
 /// See [`DistributionAlreadyExists`](crate::error::DistributionAlreadyExists).
 pub mod distribution_already_exists {
 
@@ -29032,35 +29199,6 @@ pub mod distribution_already_exists {
                 meta: self.meta.unwrap_or_default(),
             }
         }
-    }
-}
-impl DistributionAlreadyExists {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for DistributionAlreadyExists {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "DistributionAlreadyExists")?;
-        if let Some(inner_138) = &self.message {
-            {
-                write!(f, ": {}", inner_138)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for DistributionAlreadyExists {}
-impl aws_http::request_id::RequestId for crate::error::DistributionAlreadyExists {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for DistributionAlreadyExists {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
     }
 }
 
@@ -29995,12 +30133,46 @@ pub struct TooManyDistributionsAssociatedToOriginAccessControl {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl TooManyDistributionsAssociatedToOriginAccessControl {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for TooManyDistributionsAssociatedToOriginAccessControl {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "TooManyDistributionsAssociatedToOriginAccessControl")?;
+        if let Some(inner_139) = &self.message {
+            {
+                write!(f, ": {}", inner_139)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for TooManyDistributionsAssociatedToOriginAccessControl {}
+impl aws_http::request_id::RequestId
+    for crate::error::TooManyDistributionsAssociatedToOriginAccessControl
+{
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata
+    for TooManyDistributionsAssociatedToOriginAccessControl
+{
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl TooManyDistributionsAssociatedToOriginAccessControl {
     /// Creates a new builder-style object to manufacture [`TooManyDistributionsAssociatedToOriginAccessControl`](crate::error::TooManyDistributionsAssociatedToOriginAccessControl).
     pub fn builder(
     ) -> crate::error::too_many_distributions_associated_to_origin_access_control::Builder {
         crate::error::too_many_distributions_associated_to_origin_access_control::Builder::default()
     }
 }
+
 /// See [`TooManyDistributionsAssociatedToOriginAccessControl`](crate::error::TooManyDistributionsAssociatedToOriginAccessControl).
 pub mod too_many_distributions_associated_to_origin_access_control {
 
@@ -30043,39 +30215,6 @@ pub mod too_many_distributions_associated_to_origin_access_control {
                 meta: self.meta.unwrap_or_default(),
             }
         }
-    }
-}
-impl TooManyDistributionsAssociatedToOriginAccessControl {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for TooManyDistributionsAssociatedToOriginAccessControl {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "TooManyDistributionsAssociatedToOriginAccessControl")?;
-        if let Some(inner_139) = &self.message {
-            {
-                write!(f, ": {}", inner_139)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for TooManyDistributionsAssociatedToOriginAccessControl {}
-impl aws_http::request_id::RequestId
-    for crate::error::TooManyDistributionsAssociatedToOriginAccessControl
-{
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for TooManyDistributionsAssociatedToOriginAccessControl
-{
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
     }
 }
 
@@ -30256,11 +30395,43 @@ pub struct TooManyContinuousDeploymentPolicies {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl TooManyContinuousDeploymentPolicies {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for TooManyContinuousDeploymentPolicies {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "TooManyContinuousDeploymentPolicies")?;
+        if let Some(inner_140) = &self.message {
+            {
+                write!(f, ": {}", inner_140)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for TooManyContinuousDeploymentPolicies {}
+impl aws_http::request_id::RequestId for crate::error::TooManyContinuousDeploymentPolicies {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata
+    for TooManyContinuousDeploymentPolicies
+{
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl TooManyContinuousDeploymentPolicies {
     /// Creates a new builder-style object to manufacture [`TooManyContinuousDeploymentPolicies`](crate::error::TooManyContinuousDeploymentPolicies).
     pub fn builder() -> crate::error::too_many_continuous_deployment_policies::Builder {
         crate::error::too_many_continuous_deployment_policies::Builder::default()
     }
 }
+
 /// See [`TooManyContinuousDeploymentPolicies`](crate::error::TooManyContinuousDeploymentPolicies).
 pub mod too_many_continuous_deployment_policies {
 
@@ -30305,37 +30476,6 @@ pub mod too_many_continuous_deployment_policies {
         }
     }
 }
-impl TooManyContinuousDeploymentPolicies {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for TooManyContinuousDeploymentPolicies {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "TooManyContinuousDeploymentPolicies")?;
-        if let Some(inner_140) = &self.message {
-            {
-                write!(f, ": {}", inner_140)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for TooManyContinuousDeploymentPolicies {}
-impl aws_http::request_id::RequestId for crate::error::TooManyContinuousDeploymentPolicies {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for TooManyContinuousDeploymentPolicies
-{
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>A continuous deployment policy with this configuration already exists.</p>
 #[non_exhaustive]
@@ -30347,11 +30487,43 @@ pub struct ContinuousDeploymentPolicyAlreadyExists {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl ContinuousDeploymentPolicyAlreadyExists {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for ContinuousDeploymentPolicyAlreadyExists {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "ContinuousDeploymentPolicyAlreadyExists")?;
+        if let Some(inner_141) = &self.message {
+            {
+                write!(f, ": {}", inner_141)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for ContinuousDeploymentPolicyAlreadyExists {}
+impl aws_http::request_id::RequestId for crate::error::ContinuousDeploymentPolicyAlreadyExists {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata
+    for ContinuousDeploymentPolicyAlreadyExists
+{
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl ContinuousDeploymentPolicyAlreadyExists {
     /// Creates a new builder-style object to manufacture [`ContinuousDeploymentPolicyAlreadyExists`](crate::error::ContinuousDeploymentPolicyAlreadyExists).
     pub fn builder() -> crate::error::continuous_deployment_policy_already_exists::Builder {
         crate::error::continuous_deployment_policy_already_exists::Builder::default()
     }
 }
+
 /// See [`ContinuousDeploymentPolicyAlreadyExists`](crate::error::ContinuousDeploymentPolicyAlreadyExists).
 pub mod continuous_deployment_policy_already_exists {
 
@@ -30394,37 +30566,6 @@ pub mod continuous_deployment_policy_already_exists {
                 meta: self.meta.unwrap_or_default(),
             }
         }
-    }
-}
-impl ContinuousDeploymentPolicyAlreadyExists {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for ContinuousDeploymentPolicyAlreadyExists {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "ContinuousDeploymentPolicyAlreadyExists")?;
-        if let Some(inner_141) = &self.message {
-            {
-                write!(f, ": {}", inner_141)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for ContinuousDeploymentPolicyAlreadyExists {}
-impl aws_http::request_id::RequestId for crate::error::ContinuousDeploymentPolicyAlreadyExists {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for ContinuousDeploymentPolicyAlreadyExists
-{
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
     }
 }
 
@@ -30595,11 +30736,43 @@ pub struct TooManyCloudFrontOriginAccessIdentities {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl TooManyCloudFrontOriginAccessIdentities {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for TooManyCloudFrontOriginAccessIdentities {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "TooManyCloudFrontOriginAccessIdentities")?;
+        if let Some(inner_142) = &self.message {
+            {
+                write!(f, ": {}", inner_142)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for TooManyCloudFrontOriginAccessIdentities {}
+impl aws_http::request_id::RequestId for crate::error::TooManyCloudFrontOriginAccessIdentities {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata
+    for TooManyCloudFrontOriginAccessIdentities
+{
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl TooManyCloudFrontOriginAccessIdentities {
     /// Creates a new builder-style object to manufacture [`TooManyCloudFrontOriginAccessIdentities`](crate::error::TooManyCloudFrontOriginAccessIdentities).
     pub fn builder() -> crate::error::too_many_cloud_front_origin_access_identities::Builder {
         crate::error::too_many_cloud_front_origin_access_identities::Builder::default()
     }
 }
+
 /// See [`TooManyCloudFrontOriginAccessIdentities`](crate::error::TooManyCloudFrontOriginAccessIdentities).
 pub mod too_many_cloud_front_origin_access_identities {
 
@@ -30644,37 +30817,6 @@ pub mod too_many_cloud_front_origin_access_identities {
         }
     }
 }
-impl TooManyCloudFrontOriginAccessIdentities {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for TooManyCloudFrontOriginAccessIdentities {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "TooManyCloudFrontOriginAccessIdentities")?;
-        if let Some(inner_142) = &self.message {
-            {
-                write!(f, ": {}", inner_142)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for TooManyCloudFrontOriginAccessIdentities {}
-impl aws_http::request_id::RequestId for crate::error::TooManyCloudFrontOriginAccessIdentities {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for TooManyCloudFrontOriginAccessIdentities
-{
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>If the <code>CallerReference</code> is a value you already sent in a previous request to create an identity but the content of the <code>CloudFrontOriginAccessIdentityConfig</code> is different from the original request, CloudFront returns a <code>CloudFrontOriginAccessIdentityAlreadyExists</code> error. </p>
 #[non_exhaustive]
@@ -30686,11 +30828,43 @@ pub struct CloudFrontOriginAccessIdentityAlreadyExists {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl CloudFrontOriginAccessIdentityAlreadyExists {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for CloudFrontOriginAccessIdentityAlreadyExists {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "CloudFrontOriginAccessIdentityAlreadyExists")?;
+        if let Some(inner_143) = &self.message {
+            {
+                write!(f, ": {}", inner_143)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for CloudFrontOriginAccessIdentityAlreadyExists {}
+impl aws_http::request_id::RequestId for crate::error::CloudFrontOriginAccessIdentityAlreadyExists {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata
+    for CloudFrontOriginAccessIdentityAlreadyExists
+{
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl CloudFrontOriginAccessIdentityAlreadyExists {
     /// Creates a new builder-style object to manufacture [`CloudFrontOriginAccessIdentityAlreadyExists`](crate::error::CloudFrontOriginAccessIdentityAlreadyExists).
     pub fn builder() -> crate::error::cloud_front_origin_access_identity_already_exists::Builder {
         crate::error::cloud_front_origin_access_identity_already_exists::Builder::default()
     }
 }
+
 /// See [`CloudFrontOriginAccessIdentityAlreadyExists`](crate::error::CloudFrontOriginAccessIdentityAlreadyExists).
 pub mod cloud_front_origin_access_identity_already_exists {
 
@@ -30733,37 +30907,6 @@ pub mod cloud_front_origin_access_identity_already_exists {
                 meta: self.meta.unwrap_or_default(),
             }
         }
-    }
-}
-impl CloudFrontOriginAccessIdentityAlreadyExists {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for CloudFrontOriginAccessIdentityAlreadyExists {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "CloudFrontOriginAccessIdentityAlreadyExists")?;
-        if let Some(inner_143) = &self.message {
-            {
-                write!(f, ": {}", inner_143)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for CloudFrontOriginAccessIdentityAlreadyExists {}
-impl aws_http::request_id::RequestId for crate::error::CloudFrontOriginAccessIdentityAlreadyExists {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for CloudFrontOriginAccessIdentityAlreadyExists
-{
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
     }
 }
 
@@ -30966,11 +31109,41 @@ pub struct TooManyCachePolicies {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl TooManyCachePolicies {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for TooManyCachePolicies {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "TooManyCachePolicies")?;
+        if let Some(inner_144) = &self.message {
+            {
+                write!(f, ": {}", inner_144)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for TooManyCachePolicies {}
+impl aws_http::request_id::RequestId for crate::error::TooManyCachePolicies {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for TooManyCachePolicies {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl TooManyCachePolicies {
     /// Creates a new builder-style object to manufacture [`TooManyCachePolicies`](crate::error::TooManyCachePolicies).
     pub fn builder() -> crate::error::too_many_cache_policies::Builder {
         crate::error::too_many_cache_policies::Builder::default()
     }
 }
+
 /// See [`TooManyCachePolicies`](crate::error::TooManyCachePolicies).
 pub mod too_many_cache_policies {
 
@@ -31013,35 +31186,6 @@ pub mod too_many_cache_policies {
                 meta: self.meta.unwrap_or_default(),
             }
         }
-    }
-}
-impl TooManyCachePolicies {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for TooManyCachePolicies {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "TooManyCachePolicies")?;
-        if let Some(inner_144) = &self.message {
-            {
-                write!(f, ": {}", inner_144)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for TooManyCachePolicies {}
-impl aws_http::request_id::RequestId for crate::error::TooManyCachePolicies {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for TooManyCachePolicies {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
     }
 }
 

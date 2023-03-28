@@ -20,6 +20,13 @@ impl aws_http::request_id::RequestId for UpdateReservationOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdateReservationOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateReservationOutput`](crate::output::UpdateReservationOutput).
+    pub fn builder() -> crate::output::update_reservation_output::Builder {
+        crate::output::update_reservation_output::Builder::default()
+    }
+}
+
 /// See [`UpdateReservationOutput`](crate::output::UpdateReservationOutput).
 pub mod update_reservation_output {
 
@@ -62,12 +69,6 @@ pub mod update_reservation_output {
         }
     }
 }
-impl UpdateReservationOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateReservationOutput`](crate::output::UpdateReservationOutput).
-    pub fn builder() -> crate::output::update_reservation_output::Builder {
-        crate::output::update_reservation_output::Builder::default()
-    }
-}
 
 /// Placeholder documentation for UpdateMultiplexProgramResponse
 #[non_exhaustive]
@@ -89,6 +90,13 @@ impl aws_http::request_id::RequestId for UpdateMultiplexProgramOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdateMultiplexProgramOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateMultiplexProgramOutput`](crate::output::UpdateMultiplexProgramOutput).
+    pub fn builder() -> crate::output::update_multiplex_program_output::Builder {
+        crate::output::update_multiplex_program_output::Builder::default()
+    }
+}
+
 /// See [`UpdateMultiplexProgramOutput`](crate::output::UpdateMultiplexProgramOutput).
 pub mod update_multiplex_program_output {
 
@@ -131,12 +139,6 @@ pub mod update_multiplex_program_output {
         }
     }
 }
-impl UpdateMultiplexProgramOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateMultiplexProgramOutput`](crate::output::UpdateMultiplexProgramOutput).
-    pub fn builder() -> crate::output::update_multiplex_program_output::Builder {
-        crate::output::update_multiplex_program_output::Builder::default()
-    }
-}
 
 /// Placeholder documentation for UpdateMultiplexResponse
 #[non_exhaustive]
@@ -158,6 +160,13 @@ impl aws_http::request_id::RequestId for UpdateMultiplexOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdateMultiplexOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateMultiplexOutput`](crate::output::UpdateMultiplexOutput).
+    pub fn builder() -> crate::output::update_multiplex_output::Builder {
+        crate::output::update_multiplex_output::Builder::default()
+    }
+}
+
 /// See [`UpdateMultiplexOutput`](crate::output::UpdateMultiplexOutput).
 pub mod update_multiplex_output {
 
@@ -200,12 +209,6 @@ pub mod update_multiplex_output {
         }
     }
 }
-impl UpdateMultiplexOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateMultiplexOutput`](crate::output::UpdateMultiplexOutput).
-    pub fn builder() -> crate::output::update_multiplex_output::Builder {
-        crate::output::update_multiplex_output::Builder::default()
-    }
-}
 
 /// Placeholder documentation for UpdateInputSecurityGroupResponse
 #[non_exhaustive]
@@ -227,6 +230,13 @@ impl aws_http::request_id::RequestId for UpdateInputSecurityGroupOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdateInputSecurityGroupOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateInputSecurityGroupOutput`](crate::output::UpdateInputSecurityGroupOutput).
+    pub fn builder() -> crate::output::update_input_security_group_output::Builder {
+        crate::output::update_input_security_group_output::Builder::default()
+    }
+}
+
 /// See [`UpdateInputSecurityGroupOutput`](crate::output::UpdateInputSecurityGroupOutput).
 pub mod update_input_security_group_output {
 
@@ -267,12 +277,6 @@ pub mod update_input_security_group_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl UpdateInputSecurityGroupOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateInputSecurityGroupOutput`](crate::output::UpdateInputSecurityGroupOutput).
-    pub fn builder() -> crate::output::update_input_security_group_output::Builder {
-        crate::output::update_input_security_group_output::Builder::default()
     }
 }
 
@@ -381,6 +385,13 @@ impl aws_http::request_id::RequestId for UpdateInputDeviceOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdateInputDeviceOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateInputDeviceOutput`](crate::output::UpdateInputDeviceOutput).
+    pub fn builder() -> crate::output::update_input_device_output::Builder {
+        crate::output::update_input_device_output::Builder::default()
+    }
+}
+
 /// See [`UpdateInputDeviceOutput`](crate::output::UpdateInputDeviceOutput).
 pub mod update_input_device_output {
 
@@ -580,12 +591,6 @@ pub mod update_input_device_output {
         }
     }
 }
-impl UpdateInputDeviceOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateInputDeviceOutput`](crate::output::UpdateInputDeviceOutput).
-    pub fn builder() -> crate::output::update_input_device_output::Builder {
-        crate::output::update_input_device_output::Builder::default()
-    }
-}
 
 /// Placeholder documentation for UpdateInputResponse
 #[non_exhaustive]
@@ -607,6 +612,13 @@ impl aws_http::request_id::RequestId for UpdateInputOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdateInputOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateInputOutput`](crate::output::UpdateInputOutput).
+    pub fn builder() -> crate::output::update_input_output::Builder {
+        crate::output::update_input_output::Builder::default()
+    }
+}
+
 /// See [`UpdateInputOutput`](crate::output::UpdateInputOutput).
 pub mod update_input_output {
 
@@ -646,12 +658,6 @@ pub mod update_input_output {
         }
     }
 }
-impl UpdateInputOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateInputOutput`](crate::output::UpdateInputOutput).
-    pub fn builder() -> crate::output::update_input_output::Builder {
-        crate::output::update_input_output::Builder::default()
-    }
-}
 
 /// Placeholder documentation for UpdateChannelClassResponse
 #[non_exhaustive]
@@ -673,6 +679,13 @@ impl aws_http::request_id::RequestId for UpdateChannelClassOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdateChannelClassOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateChannelClassOutput`](crate::output::UpdateChannelClassOutput).
+    pub fn builder() -> crate::output::update_channel_class_output::Builder {
+        crate::output::update_channel_class_output::Builder::default()
+    }
+}
+
 /// See [`UpdateChannelClassOutput`](crate::output::UpdateChannelClassOutput).
 pub mod update_channel_class_output {
 
@@ -712,12 +725,6 @@ pub mod update_channel_class_output {
         }
     }
 }
-impl UpdateChannelClassOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateChannelClassOutput`](crate::output::UpdateChannelClassOutput).
-    pub fn builder() -> crate::output::update_channel_class_output::Builder {
-        crate::output::update_channel_class_output::Builder::default()
-    }
-}
 
 /// Placeholder documentation for UpdateChannelResponse
 #[non_exhaustive]
@@ -739,6 +746,13 @@ impl aws_http::request_id::RequestId for UpdateChannelOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdateChannelOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateChannelOutput`](crate::output::UpdateChannelOutput).
+    pub fn builder() -> crate::output::update_channel_output::Builder {
+        crate::output::update_channel_output::Builder::default()
+    }
+}
+
 /// See [`UpdateChannelOutput`](crate::output::UpdateChannelOutput).
 pub mod update_channel_output {
 
@@ -778,12 +792,6 @@ pub mod update_channel_output {
         }
     }
 }
-impl UpdateChannelOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateChannelOutput`](crate::output::UpdateChannelOutput).
-    pub fn builder() -> crate::output::update_channel_output::Builder {
-        crate::output::update_channel_output::Builder::default()
-    }
-}
 
 /// Placeholder documentation for TransferInputDeviceResponse
 #[non_exhaustive]
@@ -796,6 +804,13 @@ impl aws_http::request_id::RequestId for TransferInputDeviceOutput {
         self._request_id.as_deref()
     }
 }
+impl TransferInputDeviceOutput {
+    /// Creates a new builder-style object to manufacture [`TransferInputDeviceOutput`](crate::output::TransferInputDeviceOutput).
+    pub fn builder() -> crate::output::transfer_input_device_output::Builder {
+        crate::output::transfer_input_device_output::Builder::default()
+    }
+}
+
 /// See [`TransferInputDeviceOutput`](crate::output::TransferInputDeviceOutput).
 pub mod transfer_input_device_output {
 
@@ -821,12 +836,6 @@ pub mod transfer_input_device_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl TransferInputDeviceOutput {
-    /// Creates a new builder-style object to manufacture [`TransferInputDeviceOutput`](crate::output::TransferInputDeviceOutput).
-    pub fn builder() -> crate::output::transfer_input_device_output::Builder {
-        crate::output::transfer_input_device_output::Builder::default()
     }
 }
 
@@ -917,6 +926,13 @@ impl aws_http::request_id::RequestId for StopMultiplexOutput {
         self._request_id.as_deref()
     }
 }
+impl StopMultiplexOutput {
+    /// Creates a new builder-style object to manufacture [`StopMultiplexOutput`](crate::output::StopMultiplexOutput).
+    pub fn builder() -> crate::output::stop_multiplex_output::Builder {
+        crate::output::stop_multiplex_output::Builder::default()
+    }
+}
+
 /// See [`StopMultiplexOutput`](crate::output::StopMultiplexOutput).
 pub mod stop_multiplex_output {
 
@@ -1106,12 +1122,6 @@ pub mod stop_multiplex_output {
         }
     }
 }
-impl StopMultiplexOutput {
-    /// Creates a new builder-style object to manufacture [`StopMultiplexOutput`](crate::output::StopMultiplexOutput).
-    pub fn builder() -> crate::output::stop_multiplex_output::Builder {
-        crate::output::stop_multiplex_output::Builder::default()
-    }
-}
 
 /// Placeholder documentation for StopChannelResponse
 #[non_exhaustive]
@@ -1258,6 +1268,13 @@ impl aws_http::request_id::RequestId for StopChannelOutput {
         self._request_id.as_deref()
     }
 }
+impl StopChannelOutput {
+    /// Creates a new builder-style object to manufacture [`StopChannelOutput`](crate::output::StopChannelOutput).
+    pub fn builder() -> crate::output::stop_channel_output::Builder {
+        crate::output::stop_channel_output::Builder::default()
+    }
+}
+
 /// See [`StopChannelOutput`](crate::output::StopChannelOutput).
 pub mod stop_channel_output {
 
@@ -1580,12 +1597,6 @@ pub mod stop_channel_output {
         }
     }
 }
-impl StopChannelOutput {
-    /// Creates a new builder-style object to manufacture [`StopChannelOutput`](crate::output::StopChannelOutput).
-    pub fn builder() -> crate::output::stop_channel_output::Builder {
-        crate::output::stop_channel_output::Builder::default()
-    }
-}
 
 /// Placeholder documentation for StartMultiplexResponse
 #[non_exhaustive]
@@ -1674,6 +1685,13 @@ impl aws_http::request_id::RequestId for StartMultiplexOutput {
         self._request_id.as_deref()
     }
 }
+impl StartMultiplexOutput {
+    /// Creates a new builder-style object to manufacture [`StartMultiplexOutput`](crate::output::StartMultiplexOutput).
+    pub fn builder() -> crate::output::start_multiplex_output::Builder {
+        crate::output::start_multiplex_output::Builder::default()
+    }
+}
+
 /// See [`StartMultiplexOutput`](crate::output::StartMultiplexOutput).
 pub mod start_multiplex_output {
 
@@ -1863,12 +1881,6 @@ pub mod start_multiplex_output {
         }
     }
 }
-impl StartMultiplexOutput {
-    /// Creates a new builder-style object to manufacture [`StartMultiplexOutput`](crate::output::StartMultiplexOutput).
-    pub fn builder() -> crate::output::start_multiplex_output::Builder {
-        crate::output::start_multiplex_output::Builder::default()
-    }
-}
 
 /// Placeholder documentation for StartInputDeviceMaintenanceWindowResponse
 #[non_exhaustive]
@@ -1881,6 +1893,13 @@ impl aws_http::request_id::RequestId for StartInputDeviceMaintenanceWindowOutput
         self._request_id.as_deref()
     }
 }
+impl StartInputDeviceMaintenanceWindowOutput {
+    /// Creates a new builder-style object to manufacture [`StartInputDeviceMaintenanceWindowOutput`](crate::output::StartInputDeviceMaintenanceWindowOutput).
+    pub fn builder() -> crate::output::start_input_device_maintenance_window_output::Builder {
+        crate::output::start_input_device_maintenance_window_output::Builder::default()
+    }
+}
+
 /// See [`StartInputDeviceMaintenanceWindowOutput`](crate::output::StartInputDeviceMaintenanceWindowOutput).
 pub mod start_input_device_maintenance_window_output {
 
@@ -1906,12 +1925,6 @@ pub mod start_input_device_maintenance_window_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl StartInputDeviceMaintenanceWindowOutput {
-    /// Creates a new builder-style object to manufacture [`StartInputDeviceMaintenanceWindowOutput`](crate::output::StartInputDeviceMaintenanceWindowOutput).
-    pub fn builder() -> crate::output::start_input_device_maintenance_window_output::Builder {
-        crate::output::start_input_device_maintenance_window_output::Builder::default()
     }
 }
 
@@ -2060,6 +2073,13 @@ impl aws_http::request_id::RequestId for StartChannelOutput {
         self._request_id.as_deref()
     }
 }
+impl StartChannelOutput {
+    /// Creates a new builder-style object to manufacture [`StartChannelOutput`](crate::output::StartChannelOutput).
+    pub fn builder() -> crate::output::start_channel_output::Builder {
+        crate::output::start_channel_output::Builder::default()
+    }
+}
+
 /// See [`StartChannelOutput`](crate::output::StartChannelOutput).
 pub mod start_channel_output {
 
@@ -2382,12 +2402,6 @@ pub mod start_channel_output {
         }
     }
 }
-impl StartChannelOutput {
-    /// Creates a new builder-style object to manufacture [`StartChannelOutput`](crate::output::StartChannelOutput).
-    pub fn builder() -> crate::output::start_channel_output::Builder {
-        crate::output::start_channel_output::Builder::default()
-    }
-}
 
 /// Placeholder documentation for RejectInputDeviceTransferResponse
 #[non_exhaustive]
@@ -2400,6 +2414,13 @@ impl aws_http::request_id::RequestId for RejectInputDeviceTransferOutput {
         self._request_id.as_deref()
     }
 }
+impl RejectInputDeviceTransferOutput {
+    /// Creates a new builder-style object to manufacture [`RejectInputDeviceTransferOutput`](crate::output::RejectInputDeviceTransferOutput).
+    pub fn builder() -> crate::output::reject_input_device_transfer_output::Builder {
+        crate::output::reject_input_device_transfer_output::Builder::default()
+    }
+}
+
 /// See [`RejectInputDeviceTransferOutput`](crate::output::RejectInputDeviceTransferOutput).
 pub mod reject_input_device_transfer_output {
 
@@ -2427,12 +2448,6 @@ pub mod reject_input_device_transfer_output {
         }
     }
 }
-impl RejectInputDeviceTransferOutput {
-    /// Creates a new builder-style object to manufacture [`RejectInputDeviceTransferOutput`](crate::output::RejectInputDeviceTransferOutput).
-    pub fn builder() -> crate::output::reject_input_device_transfer_output::Builder {
-        crate::output::reject_input_device_transfer_output::Builder::default()
-    }
-}
 
 /// Placeholder documentation for RebootInputDeviceResponse
 #[non_exhaustive]
@@ -2445,6 +2460,13 @@ impl aws_http::request_id::RequestId for RebootInputDeviceOutput {
         self._request_id.as_deref()
     }
 }
+impl RebootInputDeviceOutput {
+    /// Creates a new builder-style object to manufacture [`RebootInputDeviceOutput`](crate::output::RebootInputDeviceOutput).
+    pub fn builder() -> crate::output::reboot_input_device_output::Builder {
+        crate::output::reboot_input_device_output::Builder::default()
+    }
+}
+
 /// See [`RebootInputDeviceOutput`](crate::output::RebootInputDeviceOutput).
 pub mod reboot_input_device_output {
 
@@ -2472,12 +2494,6 @@ pub mod reboot_input_device_output {
         }
     }
 }
-impl RebootInputDeviceOutput {
-    /// Creates a new builder-style object to manufacture [`RebootInputDeviceOutput`](crate::output::RebootInputDeviceOutput).
-    pub fn builder() -> crate::output::reboot_input_device_output::Builder {
-        crate::output::reboot_input_device_output::Builder::default()
-    }
-}
 
 /// Placeholder documentation for PurchaseOfferingResponse
 #[non_exhaustive]
@@ -2499,6 +2515,13 @@ impl aws_http::request_id::RequestId for PurchaseOfferingOutput {
         self._request_id.as_deref()
     }
 }
+impl PurchaseOfferingOutput {
+    /// Creates a new builder-style object to manufacture [`PurchaseOfferingOutput`](crate::output::PurchaseOfferingOutput).
+    pub fn builder() -> crate::output::purchase_offering_output::Builder {
+        crate::output::purchase_offering_output::Builder::default()
+    }
+}
+
 /// See [`PurchaseOfferingOutput`](crate::output::PurchaseOfferingOutput).
 pub mod purchase_offering_output {
 
@@ -2541,12 +2564,6 @@ pub mod purchase_offering_output {
         }
     }
 }
-impl PurchaseOfferingOutput {
-    /// Creates a new builder-style object to manufacture [`PurchaseOfferingOutput`](crate::output::PurchaseOfferingOutput).
-    pub fn builder() -> crate::output::purchase_offering_output::Builder {
-        crate::output::purchase_offering_output::Builder::default()
-    }
-}
 
 /// Placeholder documentation for ListTagsForResourceResponse
 #[non_exhaustive]
@@ -2572,6 +2589,13 @@ impl aws_http::request_id::RequestId for ListTagsForResourceOutput {
         self._request_id.as_deref()
     }
 }
+impl ListTagsForResourceOutput {
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
+        crate::output::list_tags_for_resource_output::Builder::default()
+    }
+}
+
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
 
@@ -2628,12 +2652,6 @@ pub mod list_tags_for_resource_output {
         }
     }
 }
-impl ListTagsForResourceOutput {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
-    pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
-        crate::output::list_tags_for_resource_output::Builder::default()
-    }
-}
 
 /// Placeholder documentation for ListReservationsResponse
 #[non_exhaustive]
@@ -2662,6 +2680,13 @@ impl aws_http::request_id::RequestId for ListReservationsOutput {
         self._request_id.as_deref()
     }
 }
+impl ListReservationsOutput {
+    /// Creates a new builder-style object to manufacture [`ListReservationsOutput`](crate::output::ListReservationsOutput).
+    pub fn builder() -> crate::output::list_reservations_output::Builder {
+        crate::output::list_reservations_output::Builder::default()
+    }
+}
+
 /// See [`ListReservationsOutput`](crate::output::ListReservationsOutput).
 pub mod list_reservations_output {
 
@@ -2722,12 +2747,6 @@ pub mod list_reservations_output {
         }
     }
 }
-impl ListReservationsOutput {
-    /// Creates a new builder-style object to manufacture [`ListReservationsOutput`](crate::output::ListReservationsOutput).
-    pub fn builder() -> crate::output::list_reservations_output::Builder {
-        crate::output::list_reservations_output::Builder::default()
-    }
-}
 
 /// Placeholder documentation for ListOfferingsResponse
 #[non_exhaustive]
@@ -2756,6 +2775,13 @@ impl aws_http::request_id::RequestId for ListOfferingsOutput {
         self._request_id.as_deref()
     }
 }
+impl ListOfferingsOutput {
+    /// Creates a new builder-style object to manufacture [`ListOfferingsOutput`](crate::output::ListOfferingsOutput).
+    pub fn builder() -> crate::output::list_offerings_output::Builder {
+        crate::output::list_offerings_output::Builder::default()
+    }
+}
+
 /// See [`ListOfferingsOutput`](crate::output::ListOfferingsOutput).
 pub mod list_offerings_output {
 
@@ -2816,12 +2842,6 @@ pub mod list_offerings_output {
         }
     }
 }
-impl ListOfferingsOutput {
-    /// Creates a new builder-style object to manufacture [`ListOfferingsOutput`](crate::output::ListOfferingsOutput).
-    pub fn builder() -> crate::output::list_offerings_output::Builder {
-        crate::output::list_offerings_output::Builder::default()
-    }
-}
 
 /// Placeholder documentation for ListMultiplexProgramsResponse
 #[non_exhaustive]
@@ -2853,6 +2873,13 @@ impl aws_http::request_id::RequestId for ListMultiplexProgramsOutput {
         self._request_id.as_deref()
     }
 }
+impl ListMultiplexProgramsOutput {
+    /// Creates a new builder-style object to manufacture [`ListMultiplexProgramsOutput`](crate::output::ListMultiplexProgramsOutput).
+    pub fn builder() -> crate::output::list_multiplex_programs_output::Builder {
+        crate::output::list_multiplex_programs_output::Builder::default()
+    }
+}
+
 /// See [`ListMultiplexProgramsOutput`](crate::output::ListMultiplexProgramsOutput).
 pub mod list_multiplex_programs_output {
 
@@ -2914,12 +2941,6 @@ pub mod list_multiplex_programs_output {
         }
     }
 }
-impl ListMultiplexProgramsOutput {
-    /// Creates a new builder-style object to manufacture [`ListMultiplexProgramsOutput`](crate::output::ListMultiplexProgramsOutput).
-    pub fn builder() -> crate::output::list_multiplex_programs_output::Builder {
-        crate::output::list_multiplex_programs_output::Builder::default()
-    }
-}
 
 /// Placeholder documentation for ListMultiplexesResponse
 #[non_exhaustive]
@@ -2948,6 +2969,13 @@ impl aws_http::request_id::RequestId for ListMultiplexesOutput {
         self._request_id.as_deref()
     }
 }
+impl ListMultiplexesOutput {
+    /// Creates a new builder-style object to manufacture [`ListMultiplexesOutput`](crate::output::ListMultiplexesOutput).
+    pub fn builder() -> crate::output::list_multiplexes_output::Builder {
+        crate::output::list_multiplexes_output::Builder::default()
+    }
+}
+
 /// See [`ListMultiplexesOutput`](crate::output::ListMultiplexesOutput).
 pub mod list_multiplexes_output {
 
@@ -3008,12 +3036,6 @@ pub mod list_multiplexes_output {
         }
     }
 }
-impl ListMultiplexesOutput {
-    /// Creates a new builder-style object to manufacture [`ListMultiplexesOutput`](crate::output::ListMultiplexesOutput).
-    pub fn builder() -> crate::output::list_multiplexes_output::Builder {
-        crate::output::list_multiplexes_output::Builder::default()
-    }
-}
 
 /// Placeholder documentation for ListInputSecurityGroupsResponse
 #[non_exhaustive]
@@ -3044,6 +3066,13 @@ impl aws_http::request_id::RequestId for ListInputSecurityGroupsOutput {
         self._request_id.as_deref()
     }
 }
+impl ListInputSecurityGroupsOutput {
+    /// Creates a new builder-style object to manufacture [`ListInputSecurityGroupsOutput`](crate::output::ListInputSecurityGroupsOutput).
+    pub fn builder() -> crate::output::list_input_security_groups_output::Builder {
+        crate::output::list_input_security_groups_output::Builder::default()
+    }
+}
+
 /// See [`ListInputSecurityGroupsOutput`](crate::output::ListInputSecurityGroupsOutput).
 pub mod list_input_security_groups_output {
 
@@ -3105,12 +3134,6 @@ pub mod list_input_security_groups_output {
         }
     }
 }
-impl ListInputSecurityGroupsOutput {
-    /// Creates a new builder-style object to manufacture [`ListInputSecurityGroupsOutput`](crate::output::ListInputSecurityGroupsOutput).
-    pub fn builder() -> crate::output::list_input_security_groups_output::Builder {
-        crate::output::list_input_security_groups_output::Builder::default()
-    }
-}
 
 /// Placeholder documentation for ListInputsResponse
 #[non_exhaustive]
@@ -3139,6 +3162,13 @@ impl aws_http::request_id::RequestId for ListInputsOutput {
         self._request_id.as_deref()
     }
 }
+impl ListInputsOutput {
+    /// Creates a new builder-style object to manufacture [`ListInputsOutput`](crate::output::ListInputsOutput).
+    pub fn builder() -> crate::output::list_inputs_output::Builder {
+        crate::output::list_inputs_output::Builder::default()
+    }
+}
+
 /// See [`ListInputsOutput`](crate::output::ListInputsOutput).
 pub mod list_inputs_output {
 
@@ -3199,12 +3229,6 @@ pub mod list_inputs_output {
         }
     }
 }
-impl ListInputsOutput {
-    /// Creates a new builder-style object to manufacture [`ListInputsOutput`](crate::output::ListInputsOutput).
-    pub fn builder() -> crate::output::list_inputs_output::Builder {
-        crate::output::list_inputs_output::Builder::default()
-    }
-}
 
 /// Placeholder documentation for ListInputDeviceTransfersResponse
 #[non_exhaustive]
@@ -3236,6 +3260,13 @@ impl aws_http::request_id::RequestId for ListInputDeviceTransfersOutput {
         self._request_id.as_deref()
     }
 }
+impl ListInputDeviceTransfersOutput {
+    /// Creates a new builder-style object to manufacture [`ListInputDeviceTransfersOutput`](crate::output::ListInputDeviceTransfersOutput).
+    pub fn builder() -> crate::output::list_input_device_transfers_output::Builder {
+        crate::output::list_input_device_transfers_output::Builder::default()
+    }
+}
+
 /// See [`ListInputDeviceTransfersOutput`](crate::output::ListInputDeviceTransfersOutput).
 pub mod list_input_device_transfers_output {
 
@@ -3300,12 +3331,6 @@ pub mod list_input_device_transfers_output {
         }
     }
 }
-impl ListInputDeviceTransfersOutput {
-    /// Creates a new builder-style object to manufacture [`ListInputDeviceTransfersOutput`](crate::output::ListInputDeviceTransfersOutput).
-    pub fn builder() -> crate::output::list_input_device_transfers_output::Builder {
-        crate::output::list_input_device_transfers_output::Builder::default()
-    }
-}
 
 /// Placeholder documentation for ListInputDevicesResponse
 #[non_exhaustive]
@@ -3334,6 +3359,13 @@ impl aws_http::request_id::RequestId for ListInputDevicesOutput {
         self._request_id.as_deref()
     }
 }
+impl ListInputDevicesOutput {
+    /// Creates a new builder-style object to manufacture [`ListInputDevicesOutput`](crate::output::ListInputDevicesOutput).
+    pub fn builder() -> crate::output::list_input_devices_output::Builder {
+        crate::output::list_input_devices_output::Builder::default()
+    }
+}
+
 /// See [`ListInputDevicesOutput`](crate::output::ListInputDevicesOutput).
 pub mod list_input_devices_output {
 
@@ -3395,12 +3427,6 @@ pub mod list_input_devices_output {
         }
     }
 }
-impl ListInputDevicesOutput {
-    /// Creates a new builder-style object to manufacture [`ListInputDevicesOutput`](crate::output::ListInputDevicesOutput).
-    pub fn builder() -> crate::output::list_input_devices_output::Builder {
-        crate::output::list_input_devices_output::Builder::default()
-    }
-}
 
 /// Placeholder documentation for ListChannelsResponse
 #[non_exhaustive]
@@ -3429,6 +3455,13 @@ impl aws_http::request_id::RequestId for ListChannelsOutput {
         self._request_id.as_deref()
     }
 }
+impl ListChannelsOutput {
+    /// Creates a new builder-style object to manufacture [`ListChannelsOutput`](crate::output::ListChannelsOutput).
+    pub fn builder() -> crate::output::list_channels_output::Builder {
+        crate::output::list_channels_output::Builder::default()
+    }
+}
+
 /// See [`ListChannelsOutput`](crate::output::ListChannelsOutput).
 pub mod list_channels_output {
 
@@ -3489,12 +3522,6 @@ pub mod list_channels_output {
         }
     }
 }
-impl ListChannelsOutput {
-    /// Creates a new builder-style object to manufacture [`ListChannelsOutput`](crate::output::ListChannelsOutput).
-    pub fn builder() -> crate::output::list_channels_output::Builder {
-        crate::output::list_channels_output::Builder::default()
-    }
-}
 
 /// Placeholder documentation for DescribeScheduleResponse
 #[non_exhaustive]
@@ -3523,6 +3550,13 @@ impl aws_http::request_id::RequestId for DescribeScheduleOutput {
         self._request_id.as_deref()
     }
 }
+impl DescribeScheduleOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeScheduleOutput`](crate::output::DescribeScheduleOutput).
+    pub fn builder() -> crate::output::describe_schedule_output::Builder {
+        crate::output::describe_schedule_output::Builder::default()
+    }
+}
+
 /// See [`DescribeScheduleOutput`](crate::output::DescribeScheduleOutput).
 pub mod describe_schedule_output {
 
@@ -3582,12 +3616,6 @@ pub mod describe_schedule_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl DescribeScheduleOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeScheduleOutput`](crate::output::DescribeScheduleOutput).
-    pub fn builder() -> crate::output::describe_schedule_output::Builder {
-        crate::output::describe_schedule_output::Builder::default()
     }
 }
 
@@ -3743,6 +3771,13 @@ impl aws_http::request_id::RequestId for DescribeReservationOutput {
         self._request_id.as_deref()
     }
 }
+impl DescribeReservationOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeReservationOutput`](crate::output::DescribeReservationOutput).
+    pub fn builder() -> crate::output::describe_reservation_output::Builder {
+        crate::output::describe_reservation_output::Builder::default()
+    }
+}
+
 /// See [`DescribeReservationOutput`](crate::output::DescribeReservationOutput).
 pub mod describe_reservation_output {
 
@@ -4043,12 +4078,6 @@ pub mod describe_reservation_output {
         }
     }
 }
-impl DescribeReservationOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeReservationOutput`](crate::output::DescribeReservationOutput).
-    pub fn builder() -> crate::output::describe_reservation_output::Builder {
-        crate::output::describe_reservation_output::Builder::default()
-    }
-}
 
 /// Placeholder documentation for DescribeOfferingResponse
 #[non_exhaustive]
@@ -4142,6 +4171,13 @@ impl aws_http::request_id::RequestId for DescribeOfferingOutput {
         self._request_id.as_deref()
     }
 }
+impl DescribeOfferingOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeOfferingOutput`](crate::output::DescribeOfferingOutput).
+    pub fn builder() -> crate::output::describe_offering_output::Builder {
+        crate::output::describe_offering_output::Builder::default()
+    }
+}
+
 /// See [`DescribeOfferingOutput`](crate::output::DescribeOfferingOutput).
 pub mod describe_offering_output {
 
@@ -4320,12 +4356,6 @@ pub mod describe_offering_output {
         }
     }
 }
-impl DescribeOfferingOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeOfferingOutput`](crate::output::DescribeOfferingOutput).
-    pub fn builder() -> crate::output::describe_offering_output::Builder {
-        crate::output::describe_offering_output::Builder::default()
-    }
-}
 
 /// Placeholder documentation for DescribeMultiplexProgramResponse
 #[non_exhaustive]
@@ -4383,6 +4413,13 @@ impl aws_http::request_id::RequestId for DescribeMultiplexProgramOutput {
         self._request_id.as_deref()
     }
 }
+impl DescribeMultiplexProgramOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeMultiplexProgramOutput`](crate::output::DescribeMultiplexProgramOutput).
+    pub fn builder() -> crate::output::describe_multiplex_program_output::Builder {
+        crate::output::describe_multiplex_program_output::Builder::default()
+    }
+}
+
 /// See [`DescribeMultiplexProgramOutput`](crate::output::DescribeMultiplexProgramOutput).
 pub mod describe_multiplex_program_output {
 
@@ -4497,12 +4534,6 @@ pub mod describe_multiplex_program_output {
         }
     }
 }
-impl DescribeMultiplexProgramOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeMultiplexProgramOutput`](crate::output::DescribeMultiplexProgramOutput).
-    pub fn builder() -> crate::output::describe_multiplex_program_output::Builder {
-        crate::output::describe_multiplex_program_output::Builder::default()
-    }
-}
 
 /// Placeholder documentation for DescribeMultiplexResponse
 #[non_exhaustive]
@@ -4591,6 +4622,13 @@ impl aws_http::request_id::RequestId for DescribeMultiplexOutput {
         self._request_id.as_deref()
     }
 }
+impl DescribeMultiplexOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeMultiplexOutput`](crate::output::DescribeMultiplexOutput).
+    pub fn builder() -> crate::output::describe_multiplex_output::Builder {
+        crate::output::describe_multiplex_output::Builder::default()
+    }
+}
+
 /// See [`DescribeMultiplexOutput`](crate::output::DescribeMultiplexOutput).
 pub mod describe_multiplex_output {
 
@@ -4780,12 +4818,6 @@ pub mod describe_multiplex_output {
         }
     }
 }
-impl DescribeMultiplexOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeMultiplexOutput`](crate::output::DescribeMultiplexOutput).
-    pub fn builder() -> crate::output::describe_multiplex_output::Builder {
-        crate::output::describe_multiplex_output::Builder::default()
-    }
-}
 
 /// Placeholder documentation for DescribeInputSecurityGroupResponse
 #[non_exhaustive]
@@ -4846,6 +4878,13 @@ impl aws_http::request_id::RequestId for DescribeInputSecurityGroupOutput {
         self._request_id.as_deref()
     }
 }
+impl DescribeInputSecurityGroupOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeInputSecurityGroupOutput`](crate::output::DescribeInputSecurityGroupOutput).
+    pub fn builder() -> crate::output::describe_input_security_group_output::Builder {
+        crate::output::describe_input_security_group_output::Builder::default()
+    }
+}
+
 /// See [`DescribeInputSecurityGroupOutput`](crate::output::DescribeInputSecurityGroupOutput).
 pub mod describe_input_security_group_output {
 
@@ -4984,12 +5023,6 @@ pub mod describe_input_security_group_output {
         }
     }
 }
-impl DescribeInputSecurityGroupOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeInputSecurityGroupOutput`](crate::output::DescribeInputSecurityGroupOutput).
-    pub fn builder() -> crate::output::describe_input_security_group_output::Builder {
-        crate::output::describe_input_security_group_output::Builder::default()
-    }
-}
 
 /// Placeholder documentation for DescribeInputDeviceThumbnailResponse
 #[non_exhaustive]
@@ -5038,6 +5071,13 @@ impl aws_http::request_id::RequestId for DescribeInputDeviceThumbnailOutput {
         self._request_id.as_deref()
     }
 }
+impl DescribeInputDeviceThumbnailOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeInputDeviceThumbnailOutput`](crate::output::DescribeInputDeviceThumbnailOutput).
+    pub fn builder() -> crate::output::describe_input_device_thumbnail_output::Builder {
+        crate::output::describe_input_device_thumbnail_output::Builder::default()
+    }
+}
+
 /// See [`DescribeInputDeviceThumbnailOutput`](crate::output::DescribeInputDeviceThumbnailOutput).
 pub mod describe_input_device_thumbnail_output {
 
@@ -5132,12 +5172,6 @@ pub mod describe_input_device_thumbnail_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl DescribeInputDeviceThumbnailOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeInputDeviceThumbnailOutput`](crate::output::DescribeInputDeviceThumbnailOutput).
-    pub fn builder() -> crate::output::describe_input_device_thumbnail_output::Builder {
-        crate::output::describe_input_device_thumbnail_output::Builder::default()
     }
 }
 
@@ -5246,6 +5280,13 @@ impl aws_http::request_id::RequestId for DescribeInputDeviceOutput {
         self._request_id.as_deref()
     }
 }
+impl DescribeInputDeviceOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeInputDeviceOutput`](crate::output::DescribeInputDeviceOutput).
+    pub fn builder() -> crate::output::describe_input_device_output::Builder {
+        crate::output::describe_input_device_output::Builder::default()
+    }
+}
+
 /// See [`DescribeInputDeviceOutput`](crate::output::DescribeInputDeviceOutput).
 pub mod describe_input_device_output {
 
@@ -5445,12 +5486,6 @@ pub mod describe_input_device_output {
         }
     }
 }
-impl DescribeInputDeviceOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeInputDeviceOutput`](crate::output::DescribeInputDeviceOutput).
-    pub fn builder() -> crate::output::describe_input_device_output::Builder {
-        crate::output::describe_input_device_output::Builder::default()
-    }
-}
 
 /// Placeholder documentation for DescribeInputResponse
 #[non_exhaustive]
@@ -5581,6 +5616,13 @@ impl aws_http::request_id::RequestId for DescribeInputOutput {
         self._request_id.as_deref()
     }
 }
+impl DescribeInputOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeInputOutput`](crate::output::DescribeInputOutput).
+    pub fn builder() -> crate::output::describe_input_output::Builder {
+        crate::output::describe_input_output::Builder::default()
+    }
+}
+
 /// See [`DescribeInputOutput`](crate::output::DescribeInputOutput).
 pub mod describe_input_output {
 
@@ -5888,12 +5930,6 @@ pub mod describe_input_output {
         }
     }
 }
-impl DescribeInputOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeInputOutput`](crate::output::DescribeInputOutput).
-    pub fn builder() -> crate::output::describe_input_output::Builder {
-        crate::output::describe_input_output::Builder::default()
-    }
-}
 
 /// Placeholder documentation for DescribeChannelResponse
 #[non_exhaustive]
@@ -6040,6 +6076,13 @@ impl aws_http::request_id::RequestId for DescribeChannelOutput {
         self._request_id.as_deref()
     }
 }
+impl DescribeChannelOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeChannelOutput`](crate::output::DescribeChannelOutput).
+    pub fn builder() -> crate::output::describe_channel_output::Builder {
+        crate::output::describe_channel_output::Builder::default()
+    }
+}
+
 /// See [`DescribeChannelOutput`](crate::output::DescribeChannelOutput).
 pub mod describe_channel_output {
 
@@ -6362,12 +6405,6 @@ pub mod describe_channel_output {
         }
     }
 }
-impl DescribeChannelOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeChannelOutput`](crate::output::DescribeChannelOutput).
-    pub fn builder() -> crate::output::describe_channel_output::Builder {
-        crate::output::describe_channel_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -6380,6 +6417,13 @@ impl aws_http::request_id::RequestId for DeleteTagsOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteTagsOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteTagsOutput`](crate::output::DeleteTagsOutput).
+    pub fn builder() -> crate::output::delete_tags_output::Builder {
+        crate::output::delete_tags_output::Builder::default()
+    }
+}
+
 /// See [`DeleteTagsOutput`](crate::output::DeleteTagsOutput).
 pub mod delete_tags_output {
 
@@ -6407,12 +6451,6 @@ pub mod delete_tags_output {
         }
     }
 }
-impl DeleteTagsOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteTagsOutput`](crate::output::DeleteTagsOutput).
-    pub fn builder() -> crate::output::delete_tags_output::Builder {
-        crate::output::delete_tags_output::Builder::default()
-    }
-}
 
 /// Placeholder documentation for DeleteScheduleResponse
 #[non_exhaustive]
@@ -6425,6 +6463,13 @@ impl aws_http::request_id::RequestId for DeleteScheduleOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteScheduleOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteScheduleOutput`](crate::output::DeleteScheduleOutput).
+    pub fn builder() -> crate::output::delete_schedule_output::Builder {
+        crate::output::delete_schedule_output::Builder::default()
+    }
+}
+
 /// See [`DeleteScheduleOutput`](crate::output::DeleteScheduleOutput).
 pub mod delete_schedule_output {
 
@@ -6450,12 +6495,6 @@ pub mod delete_schedule_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl DeleteScheduleOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteScheduleOutput`](crate::output::DeleteScheduleOutput).
-    pub fn builder() -> crate::output::delete_schedule_output::Builder {
-        crate::output::delete_schedule_output::Builder::default()
     }
 }
 
@@ -6611,6 +6650,13 @@ impl aws_http::request_id::RequestId for DeleteReservationOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteReservationOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteReservationOutput`](crate::output::DeleteReservationOutput).
+    pub fn builder() -> crate::output::delete_reservation_output::Builder {
+        crate::output::delete_reservation_output::Builder::default()
+    }
+}
+
 /// See [`DeleteReservationOutput`](crate::output::DeleteReservationOutput).
 pub mod delete_reservation_output {
 
@@ -6911,12 +6957,6 @@ pub mod delete_reservation_output {
         }
     }
 }
-impl DeleteReservationOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteReservationOutput`](crate::output::DeleteReservationOutput).
-    pub fn builder() -> crate::output::delete_reservation_output::Builder {
-        crate::output::delete_reservation_output::Builder::default()
-    }
-}
 
 /// Placeholder documentation for DeleteMultiplexProgramResponse
 #[non_exhaustive]
@@ -6974,6 +7014,13 @@ impl aws_http::request_id::RequestId for DeleteMultiplexProgramOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteMultiplexProgramOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteMultiplexProgramOutput`](crate::output::DeleteMultiplexProgramOutput).
+    pub fn builder() -> crate::output::delete_multiplex_program_output::Builder {
+        crate::output::delete_multiplex_program_output::Builder::default()
+    }
+}
+
 /// See [`DeleteMultiplexProgramOutput`](crate::output::DeleteMultiplexProgramOutput).
 pub mod delete_multiplex_program_output {
 
@@ -7088,12 +7135,6 @@ pub mod delete_multiplex_program_output {
         }
     }
 }
-impl DeleteMultiplexProgramOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteMultiplexProgramOutput`](crate::output::DeleteMultiplexProgramOutput).
-    pub fn builder() -> crate::output::delete_multiplex_program_output::Builder {
-        crate::output::delete_multiplex_program_output::Builder::default()
-    }
-}
 
 /// Placeholder documentation for DeleteMultiplexResponse
 #[non_exhaustive]
@@ -7182,6 +7223,13 @@ impl aws_http::request_id::RequestId for DeleteMultiplexOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteMultiplexOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteMultiplexOutput`](crate::output::DeleteMultiplexOutput).
+    pub fn builder() -> crate::output::delete_multiplex_output::Builder {
+        crate::output::delete_multiplex_output::Builder::default()
+    }
+}
+
 /// See [`DeleteMultiplexOutput`](crate::output::DeleteMultiplexOutput).
 pub mod delete_multiplex_output {
 
@@ -7371,12 +7419,6 @@ pub mod delete_multiplex_output {
         }
     }
 }
-impl DeleteMultiplexOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteMultiplexOutput`](crate::output::DeleteMultiplexOutput).
-    pub fn builder() -> crate::output::delete_multiplex_output::Builder {
-        crate::output::delete_multiplex_output::Builder::default()
-    }
-}
 
 /// Placeholder documentation for DeleteInputSecurityGroupResponse
 #[non_exhaustive]
@@ -7389,6 +7431,13 @@ impl aws_http::request_id::RequestId for DeleteInputSecurityGroupOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteInputSecurityGroupOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteInputSecurityGroupOutput`](crate::output::DeleteInputSecurityGroupOutput).
+    pub fn builder() -> crate::output::delete_input_security_group_output::Builder {
+        crate::output::delete_input_security_group_output::Builder::default()
+    }
+}
+
 /// See [`DeleteInputSecurityGroupOutput`](crate::output::DeleteInputSecurityGroupOutput).
 pub mod delete_input_security_group_output {
 
@@ -7416,12 +7465,6 @@ pub mod delete_input_security_group_output {
         }
     }
 }
-impl DeleteInputSecurityGroupOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteInputSecurityGroupOutput`](crate::output::DeleteInputSecurityGroupOutput).
-    pub fn builder() -> crate::output::delete_input_security_group_output::Builder {
-        crate::output::delete_input_security_group_output::Builder::default()
-    }
-}
 
 /// Placeholder documentation for DeleteInputResponse
 #[non_exhaustive]
@@ -7434,6 +7477,13 @@ impl aws_http::request_id::RequestId for DeleteInputOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteInputOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteInputOutput`](crate::output::DeleteInputOutput).
+    pub fn builder() -> crate::output::delete_input_output::Builder {
+        crate::output::delete_input_output::Builder::default()
+    }
+}
+
 /// See [`DeleteInputOutput`](crate::output::DeleteInputOutput).
 pub mod delete_input_output {
 
@@ -7459,12 +7509,6 @@ pub mod delete_input_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl DeleteInputOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteInputOutput`](crate::output::DeleteInputOutput).
-    pub fn builder() -> crate::output::delete_input_output::Builder {
-        crate::output::delete_input_output::Builder::default()
     }
 }
 
@@ -7613,6 +7657,13 @@ impl aws_http::request_id::RequestId for DeleteChannelOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteChannelOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteChannelOutput`](crate::output::DeleteChannelOutput).
+    pub fn builder() -> crate::output::delete_channel_output::Builder {
+        crate::output::delete_channel_output::Builder::default()
+    }
+}
+
 /// See [`DeleteChannelOutput`](crate::output::DeleteChannelOutput).
 pub mod delete_channel_output {
 
@@ -7935,12 +7986,6 @@ pub mod delete_channel_output {
         }
     }
 }
-impl DeleteChannelOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteChannelOutput`](crate::output::DeleteChannelOutput).
-    pub fn builder() -> crate::output::delete_channel_output::Builder {
-        crate::output::delete_channel_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -7953,6 +7998,13 @@ impl aws_http::request_id::RequestId for CreateTagsOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateTagsOutput {
+    /// Creates a new builder-style object to manufacture [`CreateTagsOutput`](crate::output::CreateTagsOutput).
+    pub fn builder() -> crate::output::create_tags_output::Builder {
+        crate::output::create_tags_output::Builder::default()
+    }
+}
+
 /// See [`CreateTagsOutput`](crate::output::CreateTagsOutput).
 pub mod create_tags_output {
 
@@ -7980,12 +8032,6 @@ pub mod create_tags_output {
         }
     }
 }
-impl CreateTagsOutput {
-    /// Creates a new builder-style object to manufacture [`CreateTagsOutput`](crate::output::CreateTagsOutput).
-    pub fn builder() -> crate::output::create_tags_output::Builder {
-        crate::output::create_tags_output::Builder::default()
-    }
-}
 
 /// Placeholder documentation for CreatePartnerInputResponse
 #[non_exhaustive]
@@ -8007,6 +8053,13 @@ impl aws_http::request_id::RequestId for CreatePartnerInputOutput {
         self._request_id.as_deref()
     }
 }
+impl CreatePartnerInputOutput {
+    /// Creates a new builder-style object to manufacture [`CreatePartnerInputOutput`](crate::output::CreatePartnerInputOutput).
+    pub fn builder() -> crate::output::create_partner_input_output::Builder {
+        crate::output::create_partner_input_output::Builder::default()
+    }
+}
+
 /// See [`CreatePartnerInputOutput`](crate::output::CreatePartnerInputOutput).
 pub mod create_partner_input_output {
 
@@ -8046,12 +8099,6 @@ pub mod create_partner_input_output {
         }
     }
 }
-impl CreatePartnerInputOutput {
-    /// Creates a new builder-style object to manufacture [`CreatePartnerInputOutput`](crate::output::CreatePartnerInputOutput).
-    pub fn builder() -> crate::output::create_partner_input_output::Builder {
-        crate::output::create_partner_input_output::Builder::default()
-    }
-}
 
 /// Placeholder documentation for CreateMultiplexProgramResponse
 #[non_exhaustive]
@@ -8073,6 +8120,13 @@ impl aws_http::request_id::RequestId for CreateMultiplexProgramOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateMultiplexProgramOutput {
+    /// Creates a new builder-style object to manufacture [`CreateMultiplexProgramOutput`](crate::output::CreateMultiplexProgramOutput).
+    pub fn builder() -> crate::output::create_multiplex_program_output::Builder {
+        crate::output::create_multiplex_program_output::Builder::default()
+    }
+}
+
 /// See [`CreateMultiplexProgramOutput`](crate::output::CreateMultiplexProgramOutput).
 pub mod create_multiplex_program_output {
 
@@ -8115,12 +8169,6 @@ pub mod create_multiplex_program_output {
         }
     }
 }
-impl CreateMultiplexProgramOutput {
-    /// Creates a new builder-style object to manufacture [`CreateMultiplexProgramOutput`](crate::output::CreateMultiplexProgramOutput).
-    pub fn builder() -> crate::output::create_multiplex_program_output::Builder {
-        crate::output::create_multiplex_program_output::Builder::default()
-    }
-}
 
 /// Placeholder documentation for CreateMultiplexResponse
 #[non_exhaustive]
@@ -8142,6 +8190,13 @@ impl aws_http::request_id::RequestId for CreateMultiplexOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateMultiplexOutput {
+    /// Creates a new builder-style object to manufacture [`CreateMultiplexOutput`](crate::output::CreateMultiplexOutput).
+    pub fn builder() -> crate::output::create_multiplex_output::Builder {
+        crate::output::create_multiplex_output::Builder::default()
+    }
+}
+
 /// See [`CreateMultiplexOutput`](crate::output::CreateMultiplexOutput).
 pub mod create_multiplex_output {
 
@@ -8184,12 +8239,6 @@ pub mod create_multiplex_output {
         }
     }
 }
-impl CreateMultiplexOutput {
-    /// Creates a new builder-style object to manufacture [`CreateMultiplexOutput`](crate::output::CreateMultiplexOutput).
-    pub fn builder() -> crate::output::create_multiplex_output::Builder {
-        crate::output::create_multiplex_output::Builder::default()
-    }
-}
 
 /// Placeholder documentation for CreateInputSecurityGroupResponse
 #[non_exhaustive]
@@ -8211,6 +8260,13 @@ impl aws_http::request_id::RequestId for CreateInputSecurityGroupOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateInputSecurityGroupOutput {
+    /// Creates a new builder-style object to manufacture [`CreateInputSecurityGroupOutput`](crate::output::CreateInputSecurityGroupOutput).
+    pub fn builder() -> crate::output::create_input_security_group_output::Builder {
+        crate::output::create_input_security_group_output::Builder::default()
+    }
+}
+
 /// See [`CreateInputSecurityGroupOutput`](crate::output::CreateInputSecurityGroupOutput).
 pub mod create_input_security_group_output {
 
@@ -8253,12 +8309,6 @@ pub mod create_input_security_group_output {
         }
     }
 }
-impl CreateInputSecurityGroupOutput {
-    /// Creates a new builder-style object to manufacture [`CreateInputSecurityGroupOutput`](crate::output::CreateInputSecurityGroupOutput).
-    pub fn builder() -> crate::output::create_input_security_group_output::Builder {
-        crate::output::create_input_security_group_output::Builder::default()
-    }
-}
 
 /// Placeholder documentation for CreateInputResponse
 #[non_exhaustive]
@@ -8280,6 +8330,13 @@ impl aws_http::request_id::RequestId for CreateInputOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateInputOutput {
+    /// Creates a new builder-style object to manufacture [`CreateInputOutput`](crate::output::CreateInputOutput).
+    pub fn builder() -> crate::output::create_input_output::Builder {
+        crate::output::create_input_output::Builder::default()
+    }
+}
+
 /// See [`CreateInputOutput`](crate::output::CreateInputOutput).
 pub mod create_input_output {
 
@@ -8319,12 +8376,6 @@ pub mod create_input_output {
         }
     }
 }
-impl CreateInputOutput {
-    /// Creates a new builder-style object to manufacture [`CreateInputOutput`](crate::output::CreateInputOutput).
-    pub fn builder() -> crate::output::create_input_output::Builder {
-        crate::output::create_input_output::Builder::default()
-    }
-}
 
 /// Placeholder documentation for CreateChannelResponse
 #[non_exhaustive]
@@ -8346,6 +8397,13 @@ impl aws_http::request_id::RequestId for CreateChannelOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateChannelOutput {
+    /// Creates a new builder-style object to manufacture [`CreateChannelOutput`](crate::output::CreateChannelOutput).
+    pub fn builder() -> crate::output::create_channel_output::Builder {
+        crate::output::create_channel_output::Builder::default()
+    }
+}
+
 /// See [`CreateChannelOutput`](crate::output::CreateChannelOutput).
 pub mod create_channel_output {
 
@@ -8385,12 +8443,6 @@ pub mod create_channel_output {
         }
     }
 }
-impl CreateChannelOutput {
-    /// Creates a new builder-style object to manufacture [`CreateChannelOutput`](crate::output::CreateChannelOutput).
-    pub fn builder() -> crate::output::create_channel_output::Builder {
-        crate::output::create_channel_output::Builder::default()
-    }
-}
 
 /// Placeholder documentation for ClaimDeviceResponse
 #[non_exhaustive]
@@ -8403,6 +8455,13 @@ impl aws_http::request_id::RequestId for ClaimDeviceOutput {
         self._request_id.as_deref()
     }
 }
+impl ClaimDeviceOutput {
+    /// Creates a new builder-style object to manufacture [`ClaimDeviceOutput`](crate::output::ClaimDeviceOutput).
+    pub fn builder() -> crate::output::claim_device_output::Builder {
+        crate::output::claim_device_output::Builder::default()
+    }
+}
+
 /// See [`ClaimDeviceOutput`](crate::output::ClaimDeviceOutput).
 pub mod claim_device_output {
 
@@ -8430,12 +8489,6 @@ pub mod claim_device_output {
         }
     }
 }
-impl ClaimDeviceOutput {
-    /// Creates a new builder-style object to manufacture [`ClaimDeviceOutput`](crate::output::ClaimDeviceOutput).
-    pub fn builder() -> crate::output::claim_device_output::Builder {
-        crate::output::claim_device_output::Builder::default()
-    }
-}
 
 /// Placeholder documentation for CancelInputDeviceTransferResponse
 #[non_exhaustive]
@@ -8448,6 +8501,13 @@ impl aws_http::request_id::RequestId for CancelInputDeviceTransferOutput {
         self._request_id.as_deref()
     }
 }
+impl CancelInputDeviceTransferOutput {
+    /// Creates a new builder-style object to manufacture [`CancelInputDeviceTransferOutput`](crate::output::CancelInputDeviceTransferOutput).
+    pub fn builder() -> crate::output::cancel_input_device_transfer_output::Builder {
+        crate::output::cancel_input_device_transfer_output::Builder::default()
+    }
+}
+
 /// See [`CancelInputDeviceTransferOutput`](crate::output::CancelInputDeviceTransferOutput).
 pub mod cancel_input_device_transfer_output {
 
@@ -8473,12 +8533,6 @@ pub mod cancel_input_device_transfer_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl CancelInputDeviceTransferOutput {
-    /// Creates a new builder-style object to manufacture [`CancelInputDeviceTransferOutput`](crate::output::CancelInputDeviceTransferOutput).
-    pub fn builder() -> crate::output::cancel_input_device_transfer_output::Builder {
-        crate::output::cancel_input_device_transfer_output::Builder::default()
     }
 }
 
@@ -8509,6 +8563,13 @@ impl aws_http::request_id::RequestId for BatchUpdateScheduleOutput {
         self._request_id.as_deref()
     }
 }
+impl BatchUpdateScheduleOutput {
+    /// Creates a new builder-style object to manufacture [`BatchUpdateScheduleOutput`](crate::output::BatchUpdateScheduleOutput).
+    pub fn builder() -> crate::output::batch_update_schedule_output::Builder {
+        crate::output::batch_update_schedule_output::Builder::default()
+    }
+}
+
 /// See [`BatchUpdateScheduleOutput`](crate::output::BatchUpdateScheduleOutput).
 pub mod batch_update_schedule_output {
 
@@ -8566,12 +8627,6 @@ pub mod batch_update_schedule_output {
         }
     }
 }
-impl BatchUpdateScheduleOutput {
-    /// Creates a new builder-style object to manufacture [`BatchUpdateScheduleOutput`](crate::output::BatchUpdateScheduleOutput).
-    pub fn builder() -> crate::output::batch_update_schedule_output::Builder {
-        crate::output::batch_update_schedule_output::Builder::default()
-    }
-}
 
 /// Placeholder documentation for BatchStopResponse
 #[non_exhaustive]
@@ -8600,6 +8655,13 @@ impl aws_http::request_id::RequestId for BatchStopOutput {
         self._request_id.as_deref()
     }
 }
+impl BatchStopOutput {
+    /// Creates a new builder-style object to manufacture [`BatchStopOutput`](crate::output::BatchStopOutput).
+    pub fn builder() -> crate::output::batch_stop_output::Builder {
+        crate::output::batch_stop_output::Builder::default()
+    }
+}
+
 /// See [`BatchStopOutput`](crate::output::BatchStopOutput).
 pub mod batch_stop_output {
 
@@ -8670,12 +8732,6 @@ pub mod batch_stop_output {
         }
     }
 }
-impl BatchStopOutput {
-    /// Creates a new builder-style object to manufacture [`BatchStopOutput`](crate::output::BatchStopOutput).
-    pub fn builder() -> crate::output::batch_stop_output::Builder {
-        crate::output::batch_stop_output::Builder::default()
-    }
-}
 
 /// Placeholder documentation for BatchStartResponse
 #[non_exhaustive]
@@ -8704,6 +8760,13 @@ impl aws_http::request_id::RequestId for BatchStartOutput {
         self._request_id.as_deref()
     }
 }
+impl BatchStartOutput {
+    /// Creates a new builder-style object to manufacture [`BatchStartOutput`](crate::output::BatchStartOutput).
+    pub fn builder() -> crate::output::batch_start_output::Builder {
+        crate::output::batch_start_output::Builder::default()
+    }
+}
+
 /// See [`BatchStartOutput`](crate::output::BatchStartOutput).
 pub mod batch_start_output {
 
@@ -8774,12 +8837,6 @@ pub mod batch_start_output {
         }
     }
 }
-impl BatchStartOutput {
-    /// Creates a new builder-style object to manufacture [`BatchStartOutput`](crate::output::BatchStartOutput).
-    pub fn builder() -> crate::output::batch_start_output::Builder {
-        crate::output::batch_start_output::Builder::default()
-    }
-}
 
 /// Placeholder documentation for BatchDeleteResponse
 #[non_exhaustive]
@@ -8808,6 +8865,13 @@ impl aws_http::request_id::RequestId for BatchDeleteOutput {
         self._request_id.as_deref()
     }
 }
+impl BatchDeleteOutput {
+    /// Creates a new builder-style object to manufacture [`BatchDeleteOutput`](crate::output::BatchDeleteOutput).
+    pub fn builder() -> crate::output::batch_delete_output::Builder {
+        crate::output::batch_delete_output::Builder::default()
+    }
+}
+
 /// See [`BatchDeleteOutput`](crate::output::BatchDeleteOutput).
 pub mod batch_delete_output {
 
@@ -8878,12 +8942,6 @@ pub mod batch_delete_output {
         }
     }
 }
-impl BatchDeleteOutput {
-    /// Creates a new builder-style object to manufacture [`BatchDeleteOutput`](crate::output::BatchDeleteOutput).
-    pub fn builder() -> crate::output::batch_delete_output::Builder {
-        crate::output::batch_delete_output::Builder::default()
-    }
-}
 
 /// Placeholder documentation for AcceptInputDeviceTransferResponse
 #[non_exhaustive]
@@ -8896,6 +8954,13 @@ impl aws_http::request_id::RequestId for AcceptInputDeviceTransferOutput {
         self._request_id.as_deref()
     }
 }
+impl AcceptInputDeviceTransferOutput {
+    /// Creates a new builder-style object to manufacture [`AcceptInputDeviceTransferOutput`](crate::output::AcceptInputDeviceTransferOutput).
+    pub fn builder() -> crate::output::accept_input_device_transfer_output::Builder {
+        crate::output::accept_input_device_transfer_output::Builder::default()
+    }
+}
+
 /// See [`AcceptInputDeviceTransferOutput`](crate::output::AcceptInputDeviceTransferOutput).
 pub mod accept_input_device_transfer_output {
 
@@ -8921,11 +8986,5 @@ pub mod accept_input_device_transfer_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl AcceptInputDeviceTransferOutput {
-    /// Creates a new builder-style object to manufacture [`AcceptInputDeviceTransferOutput`](crate::output::AcceptInputDeviceTransferOutput).
-    pub fn builder() -> crate::output::accept_input_device_transfer_output::Builder {
-        crate::output::accept_input_device_transfer_output::Builder::default()
     }
 }

@@ -218,6 +218,13 @@ impl SearchSchemaSummary {
         self.schema_versions.as_deref()
     }
 }
+impl SearchSchemaSummary {
+    /// Creates a new builder-style object to manufacture [`SearchSchemaSummary`](crate::model::SearchSchemaSummary).
+    pub fn builder() -> crate::model::search_schema_summary::Builder {
+        crate::model::search_schema_summary::Builder::default()
+    }
+}
+
 /// See [`SearchSchemaSummary`](crate::model::SearchSchemaSummary).
 pub mod search_schema_summary {
 
@@ -295,12 +302,6 @@ pub mod search_schema_summary {
         }
     }
 }
-impl SearchSchemaSummary {
-    /// Creates a new builder-style object to manufacture [`SearchSchemaSummary`](crate::model::SearchSchemaSummary).
-    pub fn builder() -> crate::model::search_schema_summary::Builder {
-        crate::model::search_schema_summary::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -330,6 +331,13 @@ impl SearchSchemaVersionSummary {
         self.r#type.as_ref()
     }
 }
+impl SearchSchemaVersionSummary {
+    /// Creates a new builder-style object to manufacture [`SearchSchemaVersionSummary`](crate::model::SearchSchemaVersionSummary).
+    pub fn builder() -> crate::model::search_schema_version_summary::Builder {
+        crate::model::search_schema_version_summary::Builder::default()
+    }
+}
+
 /// See [`SearchSchemaVersionSummary`](crate::model::SearchSchemaVersionSummary).
 pub mod search_schema_version_summary {
 
@@ -386,12 +394,6 @@ pub mod search_schema_version_summary {
                 r#type: self.r#type,
             }
         }
-    }
-}
-impl SearchSchemaVersionSummary {
-    /// Creates a new builder-style object to manufacture [`SearchSchemaVersionSummary`](crate::model::SearchSchemaVersionSummary).
-    pub fn builder() -> crate::model::search_schema_version_summary::Builder {
-        crate::model::search_schema_version_summary::Builder::default()
     }
 }
 
@@ -527,6 +529,13 @@ impl SchemaVersionSummary {
         self.r#type.as_ref()
     }
 }
+impl SchemaVersionSummary {
+    /// Creates a new builder-style object to manufacture [`SchemaVersionSummary`](crate::model::SchemaVersionSummary).
+    pub fn builder() -> crate::model::schema_version_summary::Builder {
+        crate::model::schema_version_summary::Builder::default()
+    }
+}
+
 /// See [`SchemaVersionSummary`](crate::model::SchemaVersionSummary).
 pub mod schema_version_summary {
 
@@ -594,12 +603,6 @@ pub mod schema_version_summary {
         }
     }
 }
-impl SchemaVersionSummary {
-    /// Creates a new builder-style object to manufacture [`SchemaVersionSummary`](crate::model::SchemaVersionSummary).
-    pub fn builder() -> crate::model::schema_version_summary::Builder {
-        crate::model::schema_version_summary::Builder::default()
-    }
-}
 
 /// <p>A summary of schema details.</p>
 #[non_exhaustive]
@@ -647,6 +650,13 @@ impl SchemaSummary {
         self.version_count
     }
 }
+impl SchemaSummary {
+    /// Creates a new builder-style object to manufacture [`SchemaSummary`](crate::model::SchemaSummary).
+    pub fn builder() -> crate::model::schema_summary::Builder {
+        crate::model::schema_summary::Builder::default()
+    }
+}
+
 /// See [`SchemaSummary`](crate::model::SchemaSummary).
 pub mod schema_summary {
 
@@ -743,12 +753,6 @@ pub mod schema_summary {
         }
     }
 }
-impl SchemaSummary {
-    /// Creates a new builder-style object to manufacture [`SchemaSummary`](crate::model::SchemaSummary).
-    pub fn builder() -> crate::model::schema_summary::Builder {
-        crate::model::schema_summary::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -782,6 +786,13 @@ impl RegistrySummary {
         self.tags.as_ref()
     }
 }
+impl RegistrySummary {
+    /// Creates a new builder-style object to manufacture [`RegistrySummary`](crate::model::RegistrySummary).
+    pub fn builder() -> crate::model::registry_summary::Builder {
+        crate::model::registry_summary::Builder::default()
+    }
+}
+
 /// See [`RegistrySummary`](crate::model::RegistrySummary).
 pub mod registry_summary {
 
@@ -854,12 +865,6 @@ pub mod registry_summary {
         }
     }
 }
-impl RegistrySummary {
-    /// Creates a new builder-style object to manufacture [`RegistrySummary`](crate::model::RegistrySummary).
-    pub fn builder() -> crate::model::registry_summary::Builder {
-        crate::model::registry_summary::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -914,6 +919,13 @@ impl DiscovererSummary {
         self.tags.as_ref()
     }
 }
+impl DiscovererSummary {
+    /// Creates a new builder-style object to manufacture [`DiscovererSummary`](crate::model::DiscovererSummary).
+    pub fn builder() -> crate::model::discoverer_summary::Builder {
+        crate::model::discoverer_summary::Builder::default()
+    }
+}
+
 /// See [`DiscovererSummary`](crate::model::DiscovererSummary).
 pub mod discoverer_summary {
 
@@ -1026,11 +1038,5 @@ pub mod discoverer_summary {
                 tags: self.tags,
             }
         }
-    }
-}
-impl DiscovererSummary {
-    /// Creates a new builder-style object to manufacture [`DiscovererSummary`](crate::model::DiscovererSummary).
-    pub fn builder() -> crate::model::discoverer_summary::Builder {
-        crate::model::discoverer_summary::Builder::default()
     }
 }

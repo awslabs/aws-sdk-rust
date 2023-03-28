@@ -4,7 +4,7 @@
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`get_ice_server_config`](crate::client::Client::get_ice_server_config).
 ///
-/// See [`crate::client::fluent_builders::GetIceServerConfig`] for more details about the operation.
+/// `ParseStrictResponse` impl for `GetIceServerConfig`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetIceServerConfig {
     _private: (),
@@ -39,7 +39,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetIceServerConfig {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`send_alexa_offer_to_master`](crate::client::Client::send_alexa_offer_to_master).
 ///
-/// See [`crate::client::fluent_builders::SendAlexaOfferToMaster`] for more details about the operation.
+/// `ParseStrictResponse` impl for `SendAlexaOfferToMaster`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct SendAlexaOfferToMaster {
     _private: (),

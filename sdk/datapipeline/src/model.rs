@@ -21,6 +21,13 @@ impl ValidationWarning {
         self.warnings.as_deref()
     }
 }
+impl ValidationWarning {
+    /// Creates a new builder-style object to manufacture [`ValidationWarning`](crate::model::ValidationWarning).
+    pub fn builder() -> crate::model::validation_warning::Builder {
+        crate::model::validation_warning::Builder::default()
+    }
+}
+
 /// See [`ValidationWarning`](crate::model::ValidationWarning).
 pub mod validation_warning {
 
@@ -70,12 +77,6 @@ pub mod validation_warning {
         }
     }
 }
-impl ValidationWarning {
-    /// Creates a new builder-style object to manufacture [`ValidationWarning`](crate::model::ValidationWarning).
-    pub fn builder() -> crate::model::validation_warning::Builder {
-        crate::model::validation_warning::Builder::default()
-    }
-}
 
 /// <p>Defines a validation error. Validation errors prevent pipeline activation. The set of validation errors that can be returned are defined by AWS Data Pipeline.</p>
 #[non_exhaustive]
@@ -98,6 +99,13 @@ impl ValidationError {
         self.errors.as_deref()
     }
 }
+impl ValidationError {
+    /// Creates a new builder-style object to manufacture [`ValidationError`](crate::model::ValidationError).
+    pub fn builder() -> crate::model::validation_error::Builder {
+        crate::model::validation_error::Builder::default()
+    }
+}
+
 /// See [`ValidationError`](crate::model::ValidationError).
 pub mod validation_error {
 
@@ -147,12 +155,6 @@ pub mod validation_error {
         }
     }
 }
-impl ValidationError {
-    /// Creates a new builder-style object to manufacture [`ValidationError`](crate::model::ValidationError).
-    pub fn builder() -> crate::model::validation_error::Builder {
-        crate::model::validation_error::Builder::default()
-    }
-}
 
 /// <p>A value or list of parameter values. </p>
 #[non_exhaustive]
@@ -175,6 +177,13 @@ impl ParameterValue {
         self.string_value.as_deref()
     }
 }
+impl ParameterValue {
+    /// Creates a new builder-style object to manufacture [`ParameterValue`](crate::model::ParameterValue).
+    pub fn builder() -> crate::model::parameter_value::Builder {
+        crate::model::parameter_value::Builder::default()
+    }
+}
+
 /// See [`ParameterValue`](crate::model::ParameterValue).
 pub mod parameter_value {
 
@@ -215,12 +224,6 @@ pub mod parameter_value {
         }
     }
 }
-impl ParameterValue {
-    /// Creates a new builder-style object to manufacture [`ParameterValue`](crate::model::ParameterValue).
-    pub fn builder() -> crate::model::parameter_value::Builder {
-        crate::model::parameter_value::Builder::default()
-    }
-}
 
 /// <p>Contains information about a parameter object.</p>
 #[non_exhaustive]
@@ -243,6 +246,13 @@ impl ParameterObject {
         self.attributes.as_deref()
     }
 }
+impl ParameterObject {
+    /// Creates a new builder-style object to manufacture [`ParameterObject`](crate::model::ParameterObject).
+    pub fn builder() -> crate::model::parameter_object::Builder {
+        crate::model::parameter_object::Builder::default()
+    }
+}
+
 /// See [`ParameterObject`](crate::model::ParameterObject).
 pub mod parameter_object {
 
@@ -292,12 +302,6 @@ pub mod parameter_object {
         }
     }
 }
-impl ParameterObject {
-    /// Creates a new builder-style object to manufacture [`ParameterObject`](crate::model::ParameterObject).
-    pub fn builder() -> crate::model::parameter_object::Builder {
-        crate::model::parameter_object::Builder::default()
-    }
-}
 
 /// <p>The attributes allowed or specified with a parameter object.</p>
 #[non_exhaustive]
@@ -320,6 +324,13 @@ impl ParameterAttribute {
         self.string_value.as_deref()
     }
 }
+impl ParameterAttribute {
+    /// Creates a new builder-style object to manufacture [`ParameterAttribute`](crate::model::ParameterAttribute).
+    pub fn builder() -> crate::model::parameter_attribute::Builder {
+        crate::model::parameter_attribute::Builder::default()
+    }
+}
+
 /// See [`ParameterAttribute`](crate::model::ParameterAttribute).
 pub mod parameter_attribute {
 
@@ -360,12 +371,6 @@ pub mod parameter_attribute {
         }
     }
 }
-impl ParameterAttribute {
-    /// Creates a new builder-style object to manufacture [`ParameterAttribute`](crate::model::ParameterAttribute).
-    pub fn builder() -> crate::model::parameter_attribute::Builder {
-        crate::model::parameter_attribute::Builder::default()
-    }
-}
 
 /// <p>Contains information about a pipeline object. This can be a logical, physical, or physical attempt pipeline object. The complete set of components of a pipeline defines the pipeline.</p>
 #[non_exhaustive]
@@ -395,6 +400,13 @@ impl PipelineObject {
         self.fields.as_deref()
     }
 }
+impl PipelineObject {
+    /// Creates a new builder-style object to manufacture [`PipelineObject`](crate::model::PipelineObject).
+    pub fn builder() -> crate::model::pipeline_object::Builder {
+        crate::model::pipeline_object::Builder::default()
+    }
+}
+
 /// See [`PipelineObject`](crate::model::PipelineObject).
 pub mod pipeline_object {
 
@@ -456,12 +468,6 @@ pub mod pipeline_object {
         }
     }
 }
-impl PipelineObject {
-    /// Creates a new builder-style object to manufacture [`PipelineObject`](crate::model::PipelineObject).
-    pub fn builder() -> crate::model::pipeline_object::Builder {
-        crate::model::pipeline_object::Builder::default()
-    }
-}
 
 /// <p>A key-value pair that describes a property of a pipeline object. The value is specified as either a string value (<code>StringValue</code>) or a reference to another object (<code>RefValue</code>) but not as both.</p>
 #[non_exhaustive]
@@ -491,6 +497,13 @@ impl Field {
         self.ref_value.as_deref()
     }
 }
+impl Field {
+    /// Creates a new builder-style object to manufacture [`Field`](crate::model::Field).
+    pub fn builder() -> crate::model::field::Builder {
+        crate::model::field::Builder::default()
+    }
+}
+
 /// See [`Field`](crate::model::Field).
 pub mod field {
 
@@ -541,12 +554,6 @@ pub mod field {
                 ref_value: self.ref_value,
             }
         }
-    }
-}
-impl Field {
-    /// Creates a new builder-style object to manufacture [`Field`](crate::model::Field).
-    pub fn builder() -> crate::model::field::Builder {
-        crate::model::field::Builder::default()
     }
 }
 
@@ -659,6 +666,13 @@ impl Query {
         self.selectors.as_deref()
     }
 }
+impl Query {
+    /// Creates a new builder-style object to manufacture [`Query`](crate::model::Query).
+    pub fn builder() -> crate::model::query::Builder {
+        crate::model::query::Builder::default()
+    }
+}
+
 /// See [`Query`](crate::model::Query).
 pub mod query {
 
@@ -696,12 +710,6 @@ pub mod query {
         }
     }
 }
-impl Query {
-    /// Creates a new builder-style object to manufacture [`Query`](crate::model::Query).
-    pub fn builder() -> crate::model::query::Builder {
-        crate::model::query::Builder::default()
-    }
-}
 
 /// <p>A comparision that is used to determine whether a query should return this object.</p>
 #[non_exhaustive]
@@ -724,6 +732,13 @@ impl Selector {
         self.operator.as_ref()
     }
 }
+impl Selector {
+    /// Creates a new builder-style object to manufacture [`Selector`](crate::model::Selector).
+    pub fn builder() -> crate::model::selector::Builder {
+        crate::model::selector::Builder::default()
+    }
+}
+
 /// See [`Selector`](crate::model::Selector).
 pub mod selector {
 
@@ -762,12 +777,6 @@ pub mod selector {
                 operator: self.operator,
             }
         }
-    }
-}
-impl Selector {
-    /// Creates a new builder-style object to manufacture [`Selector`](crate::model::Selector).
-    pub fn builder() -> crate::model::selector::Builder {
-        crate::model::selector::Builder::default()
     }
 }
 
@@ -834,6 +843,13 @@ impl Operator {
         self.values.as_deref()
     }
 }
+impl Operator {
+    /// Creates a new builder-style object to manufacture [`Operator`](crate::model::Operator).
+    pub fn builder() -> crate::model::operator::Builder {
+        crate::model::operator::Builder::default()
+    }
+}
+
 /// See [`Operator`](crate::model::Operator).
 pub mod operator {
 
@@ -923,12 +939,6 @@ pub mod operator {
                 values: self.values,
             }
         }
-    }
-}
-impl Operator {
-    /// Creates a new builder-style object to manufacture [`Operator`](crate::model::Operator).
-    pub fn builder() -> crate::model::operator::Builder {
-        crate::model::operator::Builder::default()
     }
 }
 
@@ -1078,6 +1088,13 @@ impl TaskObject {
         self.objects.as_ref()
     }
 }
+impl TaskObject {
+    /// Creates a new builder-style object to manufacture [`TaskObject`](crate::model::TaskObject).
+    pub fn builder() -> crate::model::task_object::Builder {
+        crate::model::task_object::Builder::default()
+    }
+}
+
 /// See [`TaskObject`](crate::model::TaskObject).
 pub mod task_object {
 
@@ -1159,12 +1176,6 @@ pub mod task_object {
         }
     }
 }
-impl TaskObject {
-    /// Creates a new builder-style object to manufacture [`TaskObject`](crate::model::TaskObject).
-    pub fn builder() -> crate::model::task_object::Builder {
-        crate::model::task_object::Builder::default()
-    }
-}
 
 /// <p></p>
 /// <p>Identity information for the EC2 instance that is hosting the task runner. You can get this value by calling a metadata URI from the EC2 instance. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AESDG-chapter-instancedata.html">Instance Metadata</a> in the <i>Amazon Elastic Compute Cloud User Guide.</i> Passing in this value proves that your task runner is running on an EC2 instance, and ensures the proper AWS Data Pipeline service charges are applied to your pipeline.</p>
@@ -1189,6 +1200,13 @@ impl InstanceIdentity {
         self.signature.as_deref()
     }
 }
+impl InstanceIdentity {
+    /// Creates a new builder-style object to manufacture [`InstanceIdentity`](crate::model::InstanceIdentity).
+    pub fn builder() -> crate::model::instance_identity::Builder {
+        crate::model::instance_identity::Builder::default()
+    }
+}
+
 /// See [`InstanceIdentity`](crate::model::InstanceIdentity).
 pub mod instance_identity {
 
@@ -1229,12 +1247,6 @@ pub mod instance_identity {
         }
     }
 }
-impl InstanceIdentity {
-    /// Creates a new builder-style object to manufacture [`InstanceIdentity`](crate::model::InstanceIdentity).
-    pub fn builder() -> crate::model::instance_identity::Builder {
-        crate::model::instance_identity::Builder::default()
-    }
-}
 
 /// <p>Contains the name and identifier of a pipeline.</p>
 #[non_exhaustive]
@@ -1257,6 +1269,13 @@ impl PipelineIdName {
         self.name.as_deref()
     }
 }
+impl PipelineIdName {
+    /// Creates a new builder-style object to manufacture [`PipelineIdName`](crate::model::PipelineIdName).
+    pub fn builder() -> crate::model::pipeline_id_name::Builder {
+        crate::model::pipeline_id_name::Builder::default()
+    }
+}
+
 /// See [`PipelineIdName`](crate::model::PipelineIdName).
 pub mod pipeline_id_name {
 
@@ -1295,12 +1314,6 @@ pub mod pipeline_id_name {
                 name: self.name,
             }
         }
-    }
-}
-impl PipelineIdName {
-    /// Creates a new builder-style object to manufacture [`PipelineIdName`](crate::model::PipelineIdName).
-    pub fn builder() -> crate::model::pipeline_id_name::Builder {
-        crate::model::pipeline_id_name::Builder::default()
     }
 }
 
@@ -1346,6 +1359,13 @@ impl PipelineDescription {
         self.tags.as_deref()
     }
 }
+impl PipelineDescription {
+    /// Creates a new builder-style object to manufacture [`PipelineDescription`](crate::model::PipelineDescription).
+    pub fn builder() -> crate::model::pipeline_description::Builder {
+        crate::model::pipeline_description::Builder::default()
+    }
+}
+
 /// See [`PipelineDescription`](crate::model::PipelineDescription).
 pub mod pipeline_description {
 
@@ -1440,12 +1460,6 @@ pub mod pipeline_description {
         }
     }
 }
-impl PipelineDescription {
-    /// Creates a new builder-style object to manufacture [`PipelineDescription`](crate::model::PipelineDescription).
-    pub fn builder() -> crate::model::pipeline_description::Builder {
-        crate::model::pipeline_description::Builder::default()
-    }
-}
 
 /// <p>Tags are key/value pairs defined by a user and associated with a pipeline to control access. AWS Data Pipeline allows you to associate ten tags per pipeline. For more information, see <a href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html">Controlling User Access to Pipelines</a> in the <i>AWS Data Pipeline Developer Guide</i>.</p>
 #[non_exhaustive]
@@ -1468,6 +1482,13 @@ impl Tag {
         self.value.as_deref()
     }
 }
+impl Tag {
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
+    pub fn builder() -> crate::model::tag::Builder {
+        crate::model::tag::Builder::default()
+    }
+}
+
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
 
@@ -1506,11 +1527,5 @@ pub mod tag {
                 value: self.value,
             }
         }
-    }
-}
-impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
-    pub fn builder() -> crate::model::tag::Builder {
-        crate::model::tag::Builder::default()
     }
 }

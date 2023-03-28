@@ -209,6 +209,13 @@ impl Event {
         self.revision_published.as_ref()
     }
 }
+impl Event {
+    /// Creates a new builder-style object to manufacture [`Event`](crate::model::Event).
+    pub fn builder() -> crate::model::event::Builder {
+        crate::model::event::Builder::default()
+    }
+}
+
 /// See [`Event`](crate::model::Event).
 pub mod event {
 
@@ -240,12 +247,6 @@ pub mod event {
         }
     }
 }
-impl Event {
-    /// Creates a new builder-style object to manufacture [`Event`](crate::model::Event).
-    pub fn builder() -> crate::model::event::Builder {
-        crate::model::event::Builder::default()
-    }
-}
 
 /// <p>Information about the published revision.</p>
 #[non_exhaustive]
@@ -261,6 +262,13 @@ impl RevisionPublished {
         self.data_set_id.as_deref()
     }
 }
+impl RevisionPublished {
+    /// Creates a new builder-style object to manufacture [`RevisionPublished`](crate::model::RevisionPublished).
+    pub fn builder() -> crate::model::revision_published::Builder {
+        crate::model::revision_published::Builder::default()
+    }
+}
+
 /// See [`RevisionPublished`](crate::model::RevisionPublished).
 pub mod revision_published {
 
@@ -289,12 +297,6 @@ pub mod revision_published {
         }
     }
 }
-impl RevisionPublished {
-    /// Creates a new builder-style object to manufacture [`RevisionPublished`](crate::model::RevisionPublished).
-    pub fn builder() -> crate::model::revision_published::Builder {
-        crate::model::revision_published::Builder::default()
-    }
-}
 
 /// <p>What occurs after a certain event.</p>
 #[non_exhaustive]
@@ -313,6 +315,13 @@ impl Action {
         self.export_revision_to_s3.as_ref()
     }
 }
+impl Action {
+    /// Creates a new builder-style object to manufacture [`Action`](crate::model::Action).
+    pub fn builder() -> crate::model::action::Builder {
+        crate::model::action::Builder::default()
+    }
+}
+
 /// See [`Action`](crate::model::Action).
 pub mod action {
 
@@ -348,12 +357,6 @@ pub mod action {
         }
     }
 }
-impl Action {
-    /// Creates a new builder-style object to manufacture [`Action`](crate::model::Action).
-    pub fn builder() -> crate::model::action::Builder {
-        crate::model::action::Builder::default()
-    }
-}
 
 /// <p>Details of the operation to be performed by the job.</p>
 #[non_exhaustive]
@@ -378,6 +381,13 @@ impl AutoExportRevisionToS3RequestDetails {
         self.revision_destination.as_ref()
     }
 }
+impl AutoExportRevisionToS3RequestDetails {
+    /// Creates a new builder-style object to manufacture [`AutoExportRevisionToS3RequestDetails`](crate::model::AutoExportRevisionToS3RequestDetails).
+    pub fn builder() -> crate::model::auto_export_revision_to_s3_request_details::Builder {
+        crate::model::auto_export_revision_to_s3_request_details::Builder::default()
+    }
+}
+
 /// See [`AutoExportRevisionToS3RequestDetails`](crate::model::AutoExportRevisionToS3RequestDetails).
 pub mod auto_export_revision_to_s3_request_details {
 
@@ -428,12 +438,6 @@ pub mod auto_export_revision_to_s3_request_details {
         }
     }
 }
-impl AutoExportRevisionToS3RequestDetails {
-    /// Creates a new builder-style object to manufacture [`AutoExportRevisionToS3RequestDetails`](crate::model::AutoExportRevisionToS3RequestDetails).
-    pub fn builder() -> crate::model::auto_export_revision_to_s3_request_details::Builder {
-        crate::model::auto_export_revision_to_s3_request_details::Builder::default()
-    }
-}
 
 /// <p>A revision destination is the Amazon S3 bucket folder destination to where the export will be sent.</p>
 #[non_exhaustive]
@@ -456,6 +460,13 @@ impl AutoExportRevisionDestinationEntry {
         self.key_pattern.as_deref()
     }
 }
+impl AutoExportRevisionDestinationEntry {
+    /// Creates a new builder-style object to manufacture [`AutoExportRevisionDestinationEntry`](crate::model::AutoExportRevisionDestinationEntry).
+    pub fn builder() -> crate::model::auto_export_revision_destination_entry::Builder {
+        crate::model::auto_export_revision_destination_entry::Builder::default()
+    }
+}
+
 /// See [`AutoExportRevisionDestinationEntry`](crate::model::AutoExportRevisionDestinationEntry).
 pub mod auto_export_revision_destination_entry {
 
@@ -496,12 +507,6 @@ pub mod auto_export_revision_destination_entry {
         }
     }
 }
-impl AutoExportRevisionDestinationEntry {
-    /// Creates a new builder-style object to manufacture [`AutoExportRevisionDestinationEntry`](crate::model::AutoExportRevisionDestinationEntry).
-    pub fn builder() -> crate::model::auto_export_revision_destination_entry::Builder {
-        crate::model::auto_export_revision_destination_entry::Builder::default()
-    }
-}
 
 /// <p>Encryption configuration of the export job. Includes the encryption type in addition to the AWS KMS key. The KMS key is only necessary if you chose the KMS encryption type.</p>
 #[non_exhaustive]
@@ -524,6 +529,13 @@ impl ExportServerSideEncryption {
         self.r#type.as_ref()
     }
 }
+impl ExportServerSideEncryption {
+    /// Creates a new builder-style object to manufacture [`ExportServerSideEncryption`](crate::model::ExportServerSideEncryption).
+    pub fn builder() -> crate::model::export_server_side_encryption::Builder {
+        crate::model::export_server_side_encryption::Builder::default()
+    }
+}
+
 /// See [`ExportServerSideEncryption`](crate::model::ExportServerSideEncryption).
 pub mod export_server_side_encryption {
 
@@ -565,12 +577,6 @@ pub mod export_server_side_encryption {
                 r#type: self.r#type,
             }
         }
-    }
-}
-impl ExportServerSideEncryption {
-    /// Creates a new builder-style object to manufacture [`ExportServerSideEncryption`](crate::model::ExportServerSideEncryption).
-    pub fn builder() -> crate::model::export_server_side_encryption::Builder {
-        crate::model::export_server_side_encryption::Builder::default()
     }
 }
 
@@ -680,6 +686,13 @@ impl OriginDetails {
         self.product_id.as_deref()
     }
 }
+impl OriginDetails {
+    /// Creates a new builder-style object to manufacture [`OriginDetails`](crate::model::OriginDetails).
+    pub fn builder() -> crate::model::origin_details::Builder {
+        crate::model::origin_details::Builder::default()
+    }
+}
+
 /// See [`OriginDetails`](crate::model::OriginDetails).
 pub mod origin_details {
 
@@ -706,12 +719,6 @@ pub mod origin_details {
                 product_id: self.product_id,
             }
         }
-    }
-}
-impl OriginDetails {
-    /// Creates a new builder-style object to manufacture [`OriginDetails`](crate::model::OriginDetails).
-    pub fn builder() -> crate::model::origin_details::Builder {
-        crate::model::origin_details::Builder::default()
     }
 }
 
@@ -963,6 +970,13 @@ impl AssetDetails {
         self.lake_formation_data_permission_asset.as_ref()
     }
 }
+impl AssetDetails {
+    /// Creates a new builder-style object to manufacture [`AssetDetails`](crate::model::AssetDetails).
+    pub fn builder() -> crate::model::asset_details::Builder {
+        crate::model::asset_details::Builder::default()
+    }
+}
+
 /// See [`AssetDetails`](crate::model::AssetDetails).
 pub mod asset_details {
 
@@ -1062,12 +1076,6 @@ pub mod asset_details {
         }
     }
 }
-impl AssetDetails {
-    /// Creates a new builder-style object to manufacture [`AssetDetails`](crate::model::AssetDetails).
-    pub fn builder() -> crate::model::asset_details::Builder {
-        crate::model::asset_details::Builder::default()
-    }
-}
 
 /// <p>The AWS Lake Formation data permission asset.</p>
 #[non_exhaustive]
@@ -1110,6 +1118,13 @@ impl LakeFormationDataPermissionAsset {
         self.role_arn.as_deref()
     }
 }
+impl LakeFormationDataPermissionAsset {
+    /// Creates a new builder-style object to manufacture [`LakeFormationDataPermissionAsset`](crate::model::LakeFormationDataPermissionAsset).
+    pub fn builder() -> crate::model::lake_formation_data_permission_asset::Builder {
+        crate::model::lake_formation_data_permission_asset::Builder::default()
+    }
+}
+
 /// See [`LakeFormationDataPermissionAsset`](crate::model::LakeFormationDataPermissionAsset).
 pub mod lake_formation_data_permission_asset {
 
@@ -1195,12 +1210,6 @@ pub mod lake_formation_data_permission_asset {
                 role_arn: self.role_arn,
             }
         }
-    }
-}
-impl LakeFormationDataPermissionAsset {
-    /// Creates a new builder-style object to manufacture [`LakeFormationDataPermissionAsset`](crate::model::LakeFormationDataPermissionAsset).
-    pub fn builder() -> crate::model::lake_formation_data_permission_asset::Builder {
-        crate::model::lake_formation_data_permission_asset::Builder::default()
     }
 }
 
@@ -1395,6 +1404,13 @@ impl LakeFormationDataPermissionDetails {
         self.lf_tag_policy.as_ref()
     }
 }
+impl LakeFormationDataPermissionDetails {
+    /// Creates a new builder-style object to manufacture [`LakeFormationDataPermissionDetails`](crate::model::LakeFormationDataPermissionDetails).
+    pub fn builder() -> crate::model::lake_formation_data_permission_details::Builder {
+        crate::model::lake_formation_data_permission_details::Builder::default()
+    }
+}
+
 /// See [`LakeFormationDataPermissionDetails`](crate::model::LakeFormationDataPermissionDetails).
 pub mod lake_formation_data_permission_details {
 
@@ -1426,12 +1442,6 @@ pub mod lake_formation_data_permission_details {
         }
     }
 }
-impl LakeFormationDataPermissionDetails {
-    /// Creates a new builder-style object to manufacture [`LakeFormationDataPermissionDetails`](crate::model::LakeFormationDataPermissionDetails).
-    pub fn builder() -> crate::model::lake_formation_data_permission_details::Builder {
-        crate::model::lake_formation_data_permission_details::Builder::default()
-    }
-}
 
 /// <p>Details about the LF-tag policy.</p>
 #[non_exhaustive]
@@ -1461,6 +1471,13 @@ impl LfTagPolicyDetails {
         self.resource_details.as_ref()
     }
 }
+impl LfTagPolicyDetails {
+    /// Creates a new builder-style object to manufacture [`LfTagPolicyDetails`](crate::model::LfTagPolicyDetails).
+    pub fn builder() -> crate::model::lf_tag_policy_details::Builder {
+        crate::model::lf_tag_policy_details::Builder::default()
+    }
+}
+
 /// See [`LfTagPolicyDetails`](crate::model::LfTagPolicyDetails).
 pub mod lf_tag_policy_details {
 
@@ -1519,12 +1536,6 @@ pub mod lf_tag_policy_details {
         }
     }
 }
-impl LfTagPolicyDetails {
-    /// Creates a new builder-style object to manufacture [`LfTagPolicyDetails`](crate::model::LfTagPolicyDetails).
-    pub fn builder() -> crate::model::lf_tag_policy_details::Builder {
-        crate::model::lf_tag_policy_details::Builder::default()
-    }
-}
 
 /// <p>Details about the AWS Lake Formation resource (Table or Database) included in the AWS Lake Formation data permission.</p>
 #[non_exhaustive]
@@ -1547,6 +1558,13 @@ impl LfResourceDetails {
         self.table.as_ref()
     }
 }
+impl LfResourceDetails {
+    /// Creates a new builder-style object to manufacture [`LfResourceDetails`](crate::model::LfResourceDetails).
+    pub fn builder() -> crate::model::lf_resource_details::Builder {
+        crate::model::lf_resource_details::Builder::default()
+    }
+}
+
 /// See [`LfResourceDetails`](crate::model::LfResourceDetails).
 pub mod lf_resource_details {
 
@@ -1593,12 +1611,6 @@ pub mod lf_resource_details {
         }
     }
 }
-impl LfResourceDetails {
-    /// Creates a new builder-style object to manufacture [`LfResourceDetails`](crate::model::LfResourceDetails).
-    pub fn builder() -> crate::model::lf_resource_details::Builder {
-        crate::model::lf_resource_details::Builder::default()
-    }
-}
 
 /// <p>The LF-tag policy for a table resource.</p>
 #[non_exhaustive]
@@ -1614,6 +1626,13 @@ impl TableLfTagPolicy {
         self.expression.as_deref()
     }
 }
+impl TableLfTagPolicy {
+    /// Creates a new builder-style object to manufacture [`TableLfTagPolicy`](crate::model::TableLfTagPolicy).
+    pub fn builder() -> crate::model::table_lf_tag_policy::Builder {
+        crate::model::table_lf_tag_policy::Builder::default()
+    }
+}
+
 /// See [`TableLfTagPolicy`](crate::model::TableLfTagPolicy).
 pub mod table_lf_tag_policy {
 
@@ -1651,12 +1670,6 @@ pub mod table_lf_tag_policy {
         }
     }
 }
-impl TableLfTagPolicy {
-    /// Creates a new builder-style object to manufacture [`TableLfTagPolicy`](crate::model::TableLfTagPolicy).
-    pub fn builder() -> crate::model::table_lf_tag_policy::Builder {
-        crate::model::table_lf_tag_policy::Builder::default()
-    }
-}
 
 /// <p>A structure that allows an LF-admin to grant permissions on certain conditions.</p>
 #[non_exhaustive]
@@ -1679,6 +1692,13 @@ impl LfTag {
         self.tag_values.as_deref()
     }
 }
+impl LfTag {
+    /// Creates a new builder-style object to manufacture [`LfTag`](crate::model::LfTag).
+    pub fn builder() -> crate::model::lf_tag::Builder {
+        crate::model::lf_tag::Builder::default()
+    }
+}
+
 /// See [`LfTag`](crate::model::LfTag).
 pub mod lf_tag {
 
@@ -1728,12 +1748,6 @@ pub mod lf_tag {
         }
     }
 }
-impl LfTag {
-    /// Creates a new builder-style object to manufacture [`LfTag`](crate::model::LfTag).
-    pub fn builder() -> crate::model::lf_tag::Builder {
-        crate::model::lf_tag::Builder::default()
-    }
-}
 
 /// <p>The LF-tag policy for database resources.</p>
 #[non_exhaustive]
@@ -1749,6 +1763,13 @@ impl DatabaseLfTagPolicy {
         self.expression.as_deref()
     }
 }
+impl DatabaseLfTagPolicy {
+    /// Creates a new builder-style object to manufacture [`DatabaseLfTagPolicy`](crate::model::DatabaseLfTagPolicy).
+    pub fn builder() -> crate::model::database_lf_tag_policy::Builder {
+        crate::model::database_lf_tag_policy::Builder::default()
+    }
+}
+
 /// See [`DatabaseLfTagPolicy`](crate::model::DatabaseLfTagPolicy).
 pub mod database_lf_tag_policy {
 
@@ -1784,12 +1805,6 @@ pub mod database_lf_tag_policy {
                 expression: self.expression,
             }
         }
-    }
-}
-impl DatabaseLfTagPolicy {
-    /// Creates a new builder-style object to manufacture [`DatabaseLfTagPolicy`](crate::model::DatabaseLfTagPolicy).
-    pub fn builder() -> crate::model::database_lf_tag_policy::Builder {
-        crate::model::database_lf_tag_policy::Builder::default()
     }
 }
 
@@ -1925,6 +1940,13 @@ impl S3DataAccessAsset {
         self.s3_access_point_arn.as_deref()
     }
 }
+impl S3DataAccessAsset {
+    /// Creates a new builder-style object to manufacture [`S3DataAccessAsset`](crate::model::S3DataAccessAsset).
+    pub fn builder() -> crate::model::s3_data_access_asset::Builder {
+        crate::model::s3_data_access_asset::Builder::default()
+    }
+}
+
 /// See [`S3DataAccessAsset`](crate::model::S3DataAccessAsset).
 pub mod s3_data_access_asset {
 
@@ -2025,12 +2047,6 @@ pub mod s3_data_access_asset {
         }
     }
 }
-impl S3DataAccessAsset {
-    /// Creates a new builder-style object to manufacture [`S3DataAccessAsset`](crate::model::S3DataAccessAsset).
-    pub fn builder() -> crate::model::s3_data_access_asset::Builder {
-        crate::model::s3_data_access_asset::Builder::default()
-    }
-}
 
 /// <p>The API Gateway API that is the asset.</p>
 #[non_exhaustive]
@@ -2104,6 +2120,13 @@ impl ApiGatewayApiAsset {
         self.stage.as_deref()
     }
 }
+impl ApiGatewayApiAsset {
+    /// Creates a new builder-style object to manufacture [`ApiGatewayApiAsset`](crate::model::ApiGatewayApiAsset).
+    pub fn builder() -> crate::model::api_gateway_api_asset::Builder {
+        crate::model::api_gateway_api_asset::Builder::default()
+    }
+}
+
 /// See [`ApiGatewayApiAsset`](crate::model::ApiGatewayApiAsset).
 pub mod api_gateway_api_asset {
 
@@ -2248,12 +2271,6 @@ pub mod api_gateway_api_asset {
         }
     }
 }
-impl ApiGatewayApiAsset {
-    /// Creates a new builder-style object to manufacture [`ApiGatewayApiAsset`](crate::model::ApiGatewayApiAsset).
-    pub fn builder() -> crate::model::api_gateway_api_asset::Builder {
-        crate::model::api_gateway_api_asset::Builder::default()
-    }
-}
 
 /// When writing a match expression against `ProtocolType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -2354,6 +2371,13 @@ impl RedshiftDataShareAsset {
         self.arn.as_deref()
     }
 }
+impl RedshiftDataShareAsset {
+    /// Creates a new builder-style object to manufacture [`RedshiftDataShareAsset`](crate::model::RedshiftDataShareAsset).
+    pub fn builder() -> crate::model::redshift_data_share_asset::Builder {
+        crate::model::redshift_data_share_asset::Builder::default()
+    }
+}
+
 /// See [`RedshiftDataShareAsset`](crate::model::RedshiftDataShareAsset).
 pub mod redshift_data_share_asset {
 
@@ -2380,12 +2404,6 @@ pub mod redshift_data_share_asset {
         }
     }
 }
-impl RedshiftDataShareAsset {
-    /// Creates a new builder-style object to manufacture [`RedshiftDataShareAsset`](crate::model::RedshiftDataShareAsset).
-    pub fn builder() -> crate::model::redshift_data_share_asset::Builder {
-        crate::model::redshift_data_share_asset::Builder::default()
-    }
-}
 
 /// <p>The Amazon S3 object that is the asset.</p>
 #[non_exhaustive]
@@ -2401,6 +2419,13 @@ impl S3SnapshotAsset {
         self.size
     }
 }
+impl S3SnapshotAsset {
+    /// Creates a new builder-style object to manufacture [`S3SnapshotAsset`](crate::model::S3SnapshotAsset).
+    pub fn builder() -> crate::model::s3_snapshot_asset::Builder {
+        crate::model::s3_snapshot_asset::Builder::default()
+    }
+}
+
 /// See [`S3SnapshotAsset`](crate::model::S3SnapshotAsset).
 pub mod s3_snapshot_asset {
 
@@ -2427,12 +2452,6 @@ pub mod s3_snapshot_asset {
                 size: self.size.unwrap_or_default(),
             }
         }
-    }
-}
-impl S3SnapshotAsset {
-    /// Creates a new builder-style object to manufacture [`S3SnapshotAsset`](crate::model::S3SnapshotAsset).
-    pub fn builder() -> crate::model::s3_snapshot_asset::Builder {
-        crate::model::s3_snapshot_asset::Builder::default()
     }
 }
 
@@ -2513,6 +2532,13 @@ impl AssetEntry {
         self.updated_at.as_ref()
     }
 }
+impl AssetEntry {
+    /// Creates a new builder-style object to manufacture [`AssetEntry`](crate::model::AssetEntry).
+    pub fn builder() -> crate::model::asset_entry::Builder {
+        crate::model::asset_entry::Builder::default()
+    }
+}
+
 /// See [`AssetEntry`](crate::model::AssetEntry).
 pub mod asset_entry {
 
@@ -2661,12 +2687,6 @@ pub mod asset_entry {
         }
     }
 }
-impl AssetEntry {
-    /// Creates a new builder-style object to manufacture [`AssetEntry`](crate::model::AssetEntry).
-    pub fn builder() -> crate::model::asset_entry::Builder {
-        crate::model::asset_entry::Builder::default()
-    }
-}
 
 /// <p>AWS Data Exchange Jobs are asynchronous import or export operations used to create or copy assets. A data set owner can both import and export as they see fit. Someone with an entitlement to a data set can only export. Jobs are deleted 90 days after they are created.</p>
 #[non_exhaustive]
@@ -2731,6 +2751,13 @@ impl JobEntry {
         self.updated_at.as_ref()
     }
 }
+impl JobEntry {
+    /// Creates a new builder-style object to manufacture [`JobEntry`](crate::model::JobEntry).
+    pub fn builder() -> crate::model::job_entry::Builder {
+        crate::model::job_entry::Builder::default()
+    }
+}
+
 /// See [`JobEntry`](crate::model::JobEntry).
 pub mod job_entry {
 
@@ -2859,12 +2886,6 @@ pub mod job_entry {
                 updated_at: self.updated_at,
             }
         }
-    }
-}
-impl JobEntry {
-    /// Creates a new builder-style object to manufacture [`JobEntry`](crate::model::JobEntry).
-    pub fn builder() -> crate::model::job_entry::Builder {
-        crate::model::job_entry::Builder::default()
     }
 }
 
@@ -3180,6 +3201,13 @@ impl JobError {
         self.resource_type.as_ref()
     }
 }
+impl JobError {
+    /// Creates a new builder-style object to manufacture [`JobError`](crate::model::JobError).
+    pub fn builder() -> crate::model::job_error::Builder {
+        crate::model::job_error::Builder::default()
+    }
+}
+
 /// See [`JobError`](crate::model::JobError).
 pub mod job_error {
 
@@ -3284,12 +3312,6 @@ pub mod job_error {
                 resource_type: self.resource_type,
             }
         }
-    }
-}
-impl JobError {
-    /// Creates a new builder-style object to manufacture [`JobError`](crate::model::JobError).
-    pub fn builder() -> crate::model::job_error::Builder {
-        crate::model::job_error::Builder::default()
     }
 }
 
@@ -3542,6 +3564,13 @@ impl Details {
         self.import_assets_from_s3_job_error_details.as_deref()
     }
 }
+impl Details {
+    /// Creates a new builder-style object to manufacture [`Details`](crate::model::Details).
+    pub fn builder() -> crate::model::details::Builder {
+        crate::model::details::Builder::default()
+    }
+}
+
 /// See [`Details`](crate::model::Details).
 pub mod details {
 
@@ -3606,12 +3635,6 @@ pub mod details {
         }
     }
 }
-impl Details {
-    /// Creates a new builder-style object to manufacture [`Details`](crate::model::Details).
-    pub fn builder() -> crate::model::details::Builder {
-        crate::model::details::Builder::default()
-    }
-}
 
 /// <p>The source of the assets.</p>
 #[non_exhaustive]
@@ -3634,6 +3657,13 @@ impl AssetSourceEntry {
         self.key.as_deref()
     }
 }
+impl AssetSourceEntry {
+    /// Creates a new builder-style object to manufacture [`AssetSourceEntry`](crate::model::AssetSourceEntry).
+    pub fn builder() -> crate::model::asset_source_entry::Builder {
+        crate::model::asset_source_entry::Builder::default()
+    }
+}
+
 /// See [`AssetSourceEntry`](crate::model::AssetSourceEntry).
 pub mod asset_source_entry {
 
@@ -3674,12 +3704,6 @@ pub mod asset_source_entry {
         }
     }
 }
-impl AssetSourceEntry {
-    /// Creates a new builder-style object to manufacture [`AssetSourceEntry`](crate::model::AssetSourceEntry).
-    pub fn builder() -> crate::model::asset_source_entry::Builder {
-        crate::model::asset_source_entry::Builder::default()
-    }
-}
 
 /// <p>Details about the job error.</p>
 #[non_exhaustive]
@@ -3695,6 +3719,13 @@ impl ImportAssetFromSignedUrlJobErrorDetails {
         self.asset_name.as_deref()
     }
 }
+impl ImportAssetFromSignedUrlJobErrorDetails {
+    /// Creates a new builder-style object to manufacture [`ImportAssetFromSignedUrlJobErrorDetails`](crate::model::ImportAssetFromSignedUrlJobErrorDetails).
+    pub fn builder() -> crate::model::import_asset_from_signed_url_job_error_details::Builder {
+        crate::model::import_asset_from_signed_url_job_error_details::Builder::default()
+    }
+}
+
 /// See [`ImportAssetFromSignedUrlJobErrorDetails`](crate::model::ImportAssetFromSignedUrlJobErrorDetails).
 pub mod import_asset_from_signed_url_job_error_details {
 
@@ -3721,12 +3752,6 @@ pub mod import_asset_from_signed_url_job_error_details {
                 asset_name: self.asset_name,
             }
         }
-    }
-}
-impl ImportAssetFromSignedUrlJobErrorDetails {
-    /// Creates a new builder-style object to manufacture [`ImportAssetFromSignedUrlJobErrorDetails`](crate::model::ImportAssetFromSignedUrlJobErrorDetails).
-    pub fn builder() -> crate::model::import_asset_from_signed_url_job_error_details::Builder {
-        crate::model::import_asset_from_signed_url_job_error_details::Builder::default()
     }
 }
 
@@ -3949,6 +3974,13 @@ impl ResponseDetails {
         self.import_assets_from_lake_formation_tag_policy.as_ref()
     }
 }
+impl ResponseDetails {
+    /// Creates a new builder-style object to manufacture [`ResponseDetails`](crate::model::ResponseDetails).
+    pub fn builder() -> crate::model::response_details::Builder {
+        crate::model::response_details::Builder::default()
+    }
+}
+
 /// See [`ResponseDetails`](crate::model::ResponseDetails).
 pub mod response_details {
 
@@ -4143,12 +4175,6 @@ pub mod response_details {
         }
     }
 }
-impl ResponseDetails {
-    /// Creates a new builder-style object to manufacture [`ResponseDetails`](crate::model::ResponseDetails).
-    pub fn builder() -> crate::model::response_details::Builder {
-        crate::model::response_details::Builder::default()
-    }
-}
 
 /// <p>Details from an import AWS Lake Formation tag policy job response.</p>
 #[non_exhaustive]
@@ -4201,6 +4227,14 @@ impl ImportAssetsFromLakeFormationTagPolicyResponseDetails {
         self.revision_id.as_deref()
     }
 }
+impl ImportAssetsFromLakeFormationTagPolicyResponseDetails {
+    /// Creates a new builder-style object to manufacture [`ImportAssetsFromLakeFormationTagPolicyResponseDetails`](crate::model::ImportAssetsFromLakeFormationTagPolicyResponseDetails).
+    pub fn builder(
+    ) -> crate::model::import_assets_from_lake_formation_tag_policy_response_details::Builder {
+        crate::model::import_assets_from_lake_formation_tag_policy_response_details::Builder::default()
+    }
+}
+
 /// See [`ImportAssetsFromLakeFormationTagPolicyResponseDetails`](crate::model::ImportAssetsFromLakeFormationTagPolicyResponseDetails).
 pub mod import_assets_from_lake_formation_tag_policy_response_details {
 
@@ -4295,13 +4329,6 @@ pub mod import_assets_from_lake_formation_tag_policy_response_details {
         }
     }
 }
-impl ImportAssetsFromLakeFormationTagPolicyResponseDetails {
-    /// Creates a new builder-style object to manufacture [`ImportAssetsFromLakeFormationTagPolicyResponseDetails`](crate::model::ImportAssetsFromLakeFormationTagPolicyResponseDetails).
-    pub fn builder(
-    ) -> crate::model::import_assets_from_lake_formation_tag_policy_response_details::Builder {
-        crate::model::import_assets_from_lake_formation_tag_policy_response_details::Builder::default()
-    }
-}
 
 /// <p>The LF-tag policy and permissions that apply to table resources.</p>
 #[non_exhaustive]
@@ -4324,6 +4351,13 @@ impl TableLfTagPolicyAndPermissions {
         self.permissions.as_deref()
     }
 }
+impl TableLfTagPolicyAndPermissions {
+    /// Creates a new builder-style object to manufacture [`TableLfTagPolicyAndPermissions`](crate::model::TableLfTagPolicyAndPermissions).
+    pub fn builder() -> crate::model::table_lf_tag_policy_and_permissions::Builder {
+        crate::model::table_lf_tag_policy_and_permissions::Builder::default()
+    }
+}
+
 /// See [`TableLfTagPolicyAndPermissions`](crate::model::TableLfTagPolicyAndPermissions).
 pub mod table_lf_tag_policy_and_permissions {
 
@@ -4381,12 +4415,6 @@ pub mod table_lf_tag_policy_and_permissions {
                 permissions: self.permissions,
             }
         }
-    }
-}
-impl TableLfTagPolicyAndPermissions {
-    /// Creates a new builder-style object to manufacture [`TableLfTagPolicyAndPermissions`](crate::model::TableLfTagPolicyAndPermissions).
-    pub fn builder() -> crate::model::table_lf_tag_policy_and_permissions::Builder {
-        crate::model::table_lf_tag_policy_and_permissions::Builder::default()
     }
 }
 
@@ -4506,6 +4534,13 @@ impl DatabaseLfTagPolicyAndPermissions {
         self.permissions.as_deref()
     }
 }
+impl DatabaseLfTagPolicyAndPermissions {
+    /// Creates a new builder-style object to manufacture [`DatabaseLfTagPolicyAndPermissions`](crate::model::DatabaseLfTagPolicyAndPermissions).
+    pub fn builder() -> crate::model::database_lf_tag_policy_and_permissions::Builder {
+        crate::model::database_lf_tag_policy_and_permissions::Builder::default()
+    }
+}
+
 /// See [`DatabaseLfTagPolicyAndPermissions`](crate::model::DatabaseLfTagPolicyAndPermissions).
 pub mod database_lf_tag_policy_and_permissions {
 
@@ -4563,12 +4598,6 @@ pub mod database_lf_tag_policy_and_permissions {
                 permissions: self.permissions,
             }
         }
-    }
-}
-impl DatabaseLfTagPolicyAndPermissions {
-    /// Creates a new builder-style object to manufacture [`DatabaseLfTagPolicyAndPermissions`](crate::model::DatabaseLfTagPolicyAndPermissions).
-    pub fn builder() -> crate::model::database_lf_tag_policy_and_permissions::Builder {
-        crate::model::database_lf_tag_policy_and_permissions::Builder::default()
     }
 }
 
@@ -4687,6 +4716,14 @@ impl CreateS3DataAccessFromS3BucketResponseDetails {
         self.revision_id.as_deref()
     }
 }
+impl CreateS3DataAccessFromS3BucketResponseDetails {
+    /// Creates a new builder-style object to manufacture [`CreateS3DataAccessFromS3BucketResponseDetails`](crate::model::CreateS3DataAccessFromS3BucketResponseDetails).
+    pub fn builder() -> crate::model::create_s3_data_access_from_s3_bucket_response_details::Builder
+    {
+        crate::model::create_s3_data_access_from_s3_bucket_response_details::Builder::default()
+    }
+}
+
 /// See [`CreateS3DataAccessFromS3BucketResponseDetails`](crate::model::CreateS3DataAccessFromS3BucketResponseDetails).
 pub mod create_s3_data_access_from_s3_bucket_response_details {
 
@@ -4742,13 +4779,6 @@ pub mod create_s3_data_access_from_s3_bucket_response_details {
         }
     }
 }
-impl CreateS3DataAccessFromS3BucketResponseDetails {
-    /// Creates a new builder-style object to manufacture [`CreateS3DataAccessFromS3BucketResponseDetails`](crate::model::CreateS3DataAccessFromS3BucketResponseDetails).
-    pub fn builder() -> crate::model::create_s3_data_access_from_s3_bucket_response_details::Builder
-    {
-        crate::model::create_s3_data_access_from_s3_bucket_response_details::Builder::default()
-    }
-}
 
 /// <p>Source details for an Amazon S3 data access asset.</p>
 #[non_exhaustive]
@@ -4778,6 +4808,13 @@ impl S3DataAccessAssetSourceEntry {
         self.keys.as_deref()
     }
 }
+impl S3DataAccessAssetSourceEntry {
+    /// Creates a new builder-style object to manufacture [`S3DataAccessAssetSourceEntry`](crate::model::S3DataAccessAssetSourceEntry).
+    pub fn builder() -> crate::model::s3_data_access_asset_source_entry::Builder {
+        crate::model::s3_data_access_asset_source_entry::Builder::default()
+    }
+}
+
 /// See [`S3DataAccessAssetSourceEntry`](crate::model::S3DataAccessAssetSourceEntry).
 pub mod s3_data_access_asset_source_entry {
 
@@ -4846,12 +4883,6 @@ pub mod s3_data_access_asset_source_entry {
                 keys: self.keys,
             }
         }
-    }
-}
-impl S3DataAccessAssetSourceEntry {
-    /// Creates a new builder-style object to manufacture [`S3DataAccessAssetSourceEntry`](crate::model::S3DataAccessAssetSourceEntry).
-    pub fn builder() -> crate::model::s3_data_access_asset_source_entry::Builder {
-        crate::model::s3_data_access_asset_source_entry::Builder::default()
     }
 }
 
@@ -4941,6 +4972,13 @@ impl ImportAssetFromApiGatewayApiResponseDetails {
         self.stage.as_deref()
     }
 }
+impl ImportAssetFromApiGatewayApiResponseDetails {
+    /// Creates a new builder-style object to manufacture [`ImportAssetFromApiGatewayApiResponseDetails`](crate::model::ImportAssetFromApiGatewayApiResponseDetails).
+    pub fn builder() -> crate::model::import_asset_from_api_gateway_api_response_details::Builder {
+        crate::model::import_asset_from_api_gateway_api_response_details::Builder::default()
+    }
+}
+
 /// See [`ImportAssetFromApiGatewayApiResponseDetails`](crate::model::ImportAssetFromApiGatewayApiResponseDetails).
 pub mod import_asset_from_api_gateway_api_response_details {
 
@@ -5112,12 +5150,6 @@ pub mod import_asset_from_api_gateway_api_response_details {
         }
     }
 }
-impl ImportAssetFromApiGatewayApiResponseDetails {
-    /// Creates a new builder-style object to manufacture [`ImportAssetFromApiGatewayApiResponseDetails`](crate::model::ImportAssetFromApiGatewayApiResponseDetails).
-    pub fn builder() -> crate::model::import_asset_from_api_gateway_api_response_details::Builder {
-        crate::model::import_asset_from_api_gateway_api_response_details::Builder::default()
-    }
-}
 
 /// <p>Details from an import from Amazon Redshift datashare response.</p>
 #[non_exhaustive]
@@ -5150,6 +5182,14 @@ impl ImportAssetsFromRedshiftDataSharesResponseDetails {
         self.revision_id.as_deref()
     }
 }
+impl ImportAssetsFromRedshiftDataSharesResponseDetails {
+    /// Creates a new builder-style object to manufacture [`ImportAssetsFromRedshiftDataSharesResponseDetails`](crate::model::ImportAssetsFromRedshiftDataSharesResponseDetails).
+    pub fn builder(
+    ) -> crate::model::import_assets_from_redshift_data_shares_response_details::Builder {
+        crate::model::import_assets_from_redshift_data_shares_response_details::Builder::default()
+    }
+}
+
 /// See [`ImportAssetsFromRedshiftDataSharesResponseDetails`](crate::model::ImportAssetsFromRedshiftDataSharesResponseDetails).
 pub mod import_assets_from_redshift_data_shares_response_details {
 
@@ -5217,13 +5257,6 @@ pub mod import_assets_from_redshift_data_shares_response_details {
         }
     }
 }
-impl ImportAssetsFromRedshiftDataSharesResponseDetails {
-    /// Creates a new builder-style object to manufacture [`ImportAssetsFromRedshiftDataSharesResponseDetails`](crate::model::ImportAssetsFromRedshiftDataSharesResponseDetails).
-    pub fn builder(
-    ) -> crate::model::import_assets_from_redshift_data_shares_response_details::Builder {
-        crate::model::import_assets_from_redshift_data_shares_response_details::Builder::default()
-    }
-}
 
 /// <p>The source of the Amazon Redshift datashare asset.</p>
 #[non_exhaustive]
@@ -5239,6 +5272,13 @@ impl RedshiftDataShareAssetSourceEntry {
         self.data_share_arn.as_deref()
     }
 }
+impl RedshiftDataShareAssetSourceEntry {
+    /// Creates a new builder-style object to manufacture [`RedshiftDataShareAssetSourceEntry`](crate::model::RedshiftDataShareAssetSourceEntry).
+    pub fn builder() -> crate::model::redshift_data_share_asset_source_entry::Builder {
+        crate::model::redshift_data_share_asset_source_entry::Builder::default()
+    }
+}
+
 /// See [`RedshiftDataShareAssetSourceEntry`](crate::model::RedshiftDataShareAssetSourceEntry).
 pub mod redshift_data_share_asset_source_entry {
 
@@ -5270,12 +5310,6 @@ pub mod redshift_data_share_asset_source_entry {
         }
     }
 }
-impl RedshiftDataShareAssetSourceEntry {
-    /// Creates a new builder-style object to manufacture [`RedshiftDataShareAssetSourceEntry`](crate::model::RedshiftDataShareAssetSourceEntry).
-    pub fn builder() -> crate::model::redshift_data_share_asset_source_entry::Builder {
-        crate::model::redshift_data_share_asset_source_entry::Builder::default()
-    }
-}
 
 /// <p>Details from an import from Amazon S3 response.</p>
 #[non_exhaustive]
@@ -5305,6 +5339,13 @@ impl ImportAssetsFromS3ResponseDetails {
         self.revision_id.as_deref()
     }
 }
+impl ImportAssetsFromS3ResponseDetails {
+    /// Creates a new builder-style object to manufacture [`ImportAssetsFromS3ResponseDetails`](crate::model::ImportAssetsFromS3ResponseDetails).
+    pub fn builder() -> crate::model::import_assets_from_s3_response_details::Builder {
+        crate::model::import_assets_from_s3_response_details::Builder::default()
+    }
+}
+
 /// See [`ImportAssetsFromS3ResponseDetails`](crate::model::ImportAssetsFromS3ResponseDetails).
 pub mod import_assets_from_s3_response_details {
 
@@ -5367,12 +5408,6 @@ pub mod import_assets_from_s3_response_details {
         }
     }
 }
-impl ImportAssetsFromS3ResponseDetails {
-    /// Creates a new builder-style object to manufacture [`ImportAssetsFromS3ResponseDetails`](crate::model::ImportAssetsFromS3ResponseDetails).
-    pub fn builder() -> crate::model::import_assets_from_s3_response_details::Builder {
-        crate::model::import_assets_from_s3_response_details::Builder::default()
-    }
-}
 
 /// <p>The details in the response for an import request, including the signed URL and other information.</p>
 #[non_exhaustive]
@@ -5423,6 +5458,13 @@ impl ImportAssetFromSignedUrlResponseDetails {
         self.signed_url_expires_at.as_ref()
     }
 }
+impl ImportAssetFromSignedUrlResponseDetails {
+    /// Creates a new builder-style object to manufacture [`ImportAssetFromSignedUrlResponseDetails`](crate::model::ImportAssetFromSignedUrlResponseDetails).
+    pub fn builder() -> crate::model::import_asset_from_signed_url_response_details::Builder {
+        crate::model::import_asset_from_signed_url_response_details::Builder::default()
+    }
+}
+
 /// See [`ImportAssetFromSignedUrlResponseDetails`](crate::model::ImportAssetFromSignedUrlResponseDetails).
 pub mod import_asset_from_signed_url_response_details {
 
@@ -5514,12 +5556,6 @@ pub mod import_asset_from_signed_url_response_details {
         }
     }
 }
-impl ImportAssetFromSignedUrlResponseDetails {
-    /// Creates a new builder-style object to manufacture [`ImportAssetFromSignedUrlResponseDetails`](crate::model::ImportAssetFromSignedUrlResponseDetails).
-    pub fn builder() -> crate::model::import_asset_from_signed_url_response_details::Builder {
-        crate::model::import_asset_from_signed_url_response_details::Builder::default()
-    }
-}
 
 /// <p>Details about the export revisions to Amazon S3 response.</p>
 #[non_exhaustive]
@@ -5559,6 +5595,13 @@ impl ExportRevisionsToS3ResponseDetails {
         self.event_action_arn.as_deref()
     }
 }
+impl ExportRevisionsToS3ResponseDetails {
+    /// Creates a new builder-style object to manufacture [`ExportRevisionsToS3ResponseDetails`](crate::model::ExportRevisionsToS3ResponseDetails).
+    pub fn builder() -> crate::model::export_revisions_to_s3_response_details::Builder {
+        crate::model::export_revisions_to_s3_response_details::Builder::default()
+    }
+}
+
 /// See [`ExportRevisionsToS3ResponseDetails`](crate::model::ExportRevisionsToS3ResponseDetails).
 pub mod export_revisions_to_s3_response_details {
 
@@ -5642,12 +5685,6 @@ pub mod export_revisions_to_s3_response_details {
         }
     }
 }
-impl ExportRevisionsToS3ResponseDetails {
-    /// Creates a new builder-style object to manufacture [`ExportRevisionsToS3ResponseDetails`](crate::model::ExportRevisionsToS3ResponseDetails).
-    pub fn builder() -> crate::model::export_revisions_to_s3_response_details::Builder {
-        crate::model::export_revisions_to_s3_response_details::Builder::default()
-    }
-}
 
 /// <p>The destination where the assets in the revision will be exported.</p>
 #[non_exhaustive]
@@ -5677,6 +5714,13 @@ impl RevisionDestinationEntry {
         self.revision_id.as_deref()
     }
 }
+impl RevisionDestinationEntry {
+    /// Creates a new builder-style object to manufacture [`RevisionDestinationEntry`](crate::model::RevisionDestinationEntry).
+    pub fn builder() -> crate::model::revision_destination_entry::Builder {
+        crate::model::revision_destination_entry::Builder::default()
+    }
+}
+
 /// See [`RevisionDestinationEntry`](crate::model::RevisionDestinationEntry).
 pub mod revision_destination_entry {
 
@@ -5729,12 +5773,6 @@ pub mod revision_destination_entry {
         }
     }
 }
-impl RevisionDestinationEntry {
-    /// Creates a new builder-style object to manufacture [`RevisionDestinationEntry`](crate::model::RevisionDestinationEntry).
-    pub fn builder() -> crate::model::revision_destination_entry::Builder {
-        crate::model::revision_destination_entry::Builder::default()
-    }
-}
 
 /// <p>Details about the export to Amazon S3 response.</p>
 #[non_exhaustive]
@@ -5773,6 +5811,13 @@ impl ExportAssetsToS3ResponseDetails {
         self.revision_id.as_deref()
     }
 }
+impl ExportAssetsToS3ResponseDetails {
+    /// Creates a new builder-style object to manufacture [`ExportAssetsToS3ResponseDetails`](crate::model::ExportAssetsToS3ResponseDetails).
+    pub fn builder() -> crate::model::export_assets_to_s3_response_details::Builder {
+        crate::model::export_assets_to_s3_response_details::Builder::default()
+    }
+}
+
 /// See [`ExportAssetsToS3ResponseDetails`](crate::model::ExportAssetsToS3ResponseDetails).
 pub mod export_assets_to_s3_response_details {
 
@@ -5850,12 +5895,6 @@ pub mod export_assets_to_s3_response_details {
         }
     }
 }
-impl ExportAssetsToS3ResponseDetails {
-    /// Creates a new builder-style object to manufacture [`ExportAssetsToS3ResponseDetails`](crate::model::ExportAssetsToS3ResponseDetails).
-    pub fn builder() -> crate::model::export_assets_to_s3_response_details::Builder {
-        crate::model::export_assets_to_s3_response_details::Builder::default()
-    }
-}
 
 /// <p>The destination for the asset.</p>
 #[non_exhaustive]
@@ -5885,6 +5924,13 @@ impl AssetDestinationEntry {
         self.key.as_deref()
     }
 }
+impl AssetDestinationEntry {
+    /// Creates a new builder-style object to manufacture [`AssetDestinationEntry`](crate::model::AssetDestinationEntry).
+    pub fn builder() -> crate::model::asset_destination_entry::Builder {
+        crate::model::asset_destination_entry::Builder::default()
+    }
+}
+
 /// See [`AssetDestinationEntry`](crate::model::AssetDestinationEntry).
 pub mod asset_destination_entry {
 
@@ -5937,12 +5983,6 @@ pub mod asset_destination_entry {
         }
     }
 }
-impl AssetDestinationEntry {
-    /// Creates a new builder-style object to manufacture [`AssetDestinationEntry`](crate::model::AssetDestinationEntry).
-    pub fn builder() -> crate::model::asset_destination_entry::Builder {
-        crate::model::asset_destination_entry::Builder::default()
-    }
-}
 
 /// <p>The details of the export to signed URL response.</p>
 #[non_exhaustive]
@@ -5986,6 +6026,13 @@ impl ExportAssetToSignedUrlResponseDetails {
         self.signed_url_expires_at.as_ref()
     }
 }
+impl ExportAssetToSignedUrlResponseDetails {
+    /// Creates a new builder-style object to manufacture [`ExportAssetToSignedUrlResponseDetails`](crate::model::ExportAssetToSignedUrlResponseDetails).
+    pub fn builder() -> crate::model::export_asset_to_signed_url_response_details::Builder {
+        crate::model::export_asset_to_signed_url_response_details::Builder::default()
+    }
+}
+
 /// See [`ExportAssetToSignedUrlResponseDetails`](crate::model::ExportAssetToSignedUrlResponseDetails).
 pub mod export_asset_to_signed_url_response_details {
 
@@ -6065,12 +6112,6 @@ pub mod export_asset_to_signed_url_response_details {
         }
     }
 }
-impl ExportAssetToSignedUrlResponseDetails {
-    /// Creates a new builder-style object to manufacture [`ExportAssetToSignedUrlResponseDetails`](crate::model::ExportAssetToSignedUrlResponseDetails).
-    pub fn builder() -> crate::model::export_asset_to_signed_url_response_details::Builder {
-        crate::model::export_asset_to_signed_url_response_details::Builder::default()
-    }
-}
 
 /// <p>An event action is an object that defines the relationship between a specific event and an automated action that will be taken on behalf of the customer.</p>
 #[non_exhaustive]
@@ -6121,6 +6162,13 @@ impl EventActionEntry {
         self.updated_at.as_ref()
     }
 }
+impl EventActionEntry {
+    /// Creates a new builder-style object to manufacture [`EventActionEntry`](crate::model::EventActionEntry).
+    pub fn builder() -> crate::model::event_action_entry::Builder {
+        crate::model::event_action_entry::Builder::default()
+    }
+}
+
 /// See [`EventActionEntry`](crate::model::EventActionEntry).
 pub mod event_action_entry {
 
@@ -6215,12 +6263,6 @@ pub mod event_action_entry {
         }
     }
 }
-impl EventActionEntry {
-    /// Creates a new builder-style object to manufacture [`EventActionEntry`](crate::model::EventActionEntry).
-    pub fn builder() -> crate::model::event_action_entry::Builder {
-        crate::model::event_action_entry::Builder::default()
-    }
-}
 
 /// <p>A data set is an AWS resource with one or more revisions.</p>
 #[non_exhaustive]
@@ -6299,6 +6341,13 @@ impl DataSetEntry {
         self.updated_at.as_ref()
     }
 }
+impl DataSetEntry {
+    /// Creates a new builder-style object to manufacture [`DataSetEntry`](crate::model::DataSetEntry).
+    pub fn builder() -> crate::model::data_set_entry::Builder {
+        crate::model::data_set_entry::Builder::default()
+    }
+}
+
 /// See [`DataSetEntry`](crate::model::DataSetEntry).
 pub mod data_set_entry {
 
@@ -6447,12 +6496,6 @@ pub mod data_set_entry {
         }
     }
 }
-impl DataSetEntry {
-    /// Creates a new builder-style object to manufacture [`DataSetEntry`](crate::model::DataSetEntry).
-    pub fn builder() -> crate::model::data_set_entry::Builder {
-        crate::model::data_set_entry::Builder::default()
-    }
-}
 
 /// <p>A revision is a container for one or more assets.</p>
 #[non_exhaustive]
@@ -6538,6 +6581,13 @@ impl RevisionEntry {
         self.revoked_at.as_ref()
     }
 }
+impl RevisionEntry {
+    /// Creates a new builder-style object to manufacture [`RevisionEntry`](crate::model::RevisionEntry).
+    pub fn builder() -> crate::model::revision_entry::Builder {
+        crate::model::revision_entry::Builder::default()
+    }
+}
+
 /// See [`RevisionEntry`](crate::model::RevisionEntry).
 pub mod revision_entry {
 
@@ -6698,12 +6748,6 @@ pub mod revision_entry {
         }
     }
 }
-impl RevisionEntry {
-    /// Creates a new builder-style object to manufacture [`RevisionEntry`](crate::model::RevisionEntry).
-    pub fn builder() -> crate::model::revision_entry::Builder {
-        crate::model::revision_entry::Builder::default()
-    }
-}
 
 /// <p>The details for the request.</p>
 #[non_exhaustive]
@@ -6801,6 +6845,13 @@ impl RequestDetails {
         self.import_assets_from_lake_formation_tag_policy.as_ref()
     }
 }
+impl RequestDetails {
+    /// Creates a new builder-style object to manufacture [`RequestDetails`](crate::model::RequestDetails).
+    pub fn builder() -> crate::model::request_details::Builder {
+        crate::model::request_details::Builder::default()
+    }
+}
+
 /// See [`RequestDetails`](crate::model::RequestDetails).
 pub mod request_details {
 
@@ -6994,12 +7045,6 @@ pub mod request_details {
         }
     }
 }
-impl RequestDetails {
-    /// Creates a new builder-style object to manufacture [`RequestDetails`](crate::model::RequestDetails).
-    pub fn builder() -> crate::model::request_details::Builder {
-        crate::model::request_details::Builder::default()
-    }
-}
 
 /// <p>Details about the assets imported from an AWS Lake Formation tag policy request.</p>
 #[non_exhaustive]
@@ -7052,6 +7097,15 @@ impl ImportAssetsFromLakeFormationTagPolicyRequestDetails {
         self.revision_id.as_deref()
     }
 }
+impl ImportAssetsFromLakeFormationTagPolicyRequestDetails {
+    /// Creates a new builder-style object to manufacture [`ImportAssetsFromLakeFormationTagPolicyRequestDetails`](crate::model::ImportAssetsFromLakeFormationTagPolicyRequestDetails).
+    pub fn builder(
+    ) -> crate::model::import_assets_from_lake_formation_tag_policy_request_details::Builder {
+        crate::model::import_assets_from_lake_formation_tag_policy_request_details::Builder::default(
+        )
+    }
+}
+
 /// See [`ImportAssetsFromLakeFormationTagPolicyRequestDetails`](crate::model::ImportAssetsFromLakeFormationTagPolicyRequestDetails).
 pub mod import_assets_from_lake_formation_tag_policy_request_details {
 
@@ -7146,14 +7200,6 @@ pub mod import_assets_from_lake_formation_tag_policy_request_details {
         }
     }
 }
-impl ImportAssetsFromLakeFormationTagPolicyRequestDetails {
-    /// Creates a new builder-style object to manufacture [`ImportAssetsFromLakeFormationTagPolicyRequestDetails`](crate::model::ImportAssetsFromLakeFormationTagPolicyRequestDetails).
-    pub fn builder(
-    ) -> crate::model::import_assets_from_lake_formation_tag_policy_request_details::Builder {
-        crate::model::import_assets_from_lake_formation_tag_policy_request_details::Builder::default(
-        )
-    }
-}
 
 /// <p>Details of the operation to create an Amazon S3 data access from an S3 bucket.</p>
 #[non_exhaustive]
@@ -7183,6 +7229,14 @@ impl CreateS3DataAccessFromS3BucketRequestDetails {
         self.revision_id.as_deref()
     }
 }
+impl CreateS3DataAccessFromS3BucketRequestDetails {
+    /// Creates a new builder-style object to manufacture [`CreateS3DataAccessFromS3BucketRequestDetails`](crate::model::CreateS3DataAccessFromS3BucketRequestDetails).
+    pub fn builder() -> crate::model::create_s3_data_access_from_s3_bucket_request_details::Builder
+    {
+        crate::model::create_s3_data_access_from_s3_bucket_request_details::Builder::default()
+    }
+}
+
 /// See [`CreateS3DataAccessFromS3BucketRequestDetails`](crate::model::CreateS3DataAccessFromS3BucketRequestDetails).
 pub mod create_s3_data_access_from_s3_bucket_request_details {
 
@@ -7236,13 +7290,6 @@ pub mod create_s3_data_access_from_s3_bucket_request_details {
                 revision_id: self.revision_id,
             }
         }
-    }
-}
-impl CreateS3DataAccessFromS3BucketRequestDetails {
-    /// Creates a new builder-style object to manufacture [`CreateS3DataAccessFromS3BucketRequestDetails`](crate::model::CreateS3DataAccessFromS3BucketRequestDetails).
-    pub fn builder() -> crate::model::create_s3_data_access_from_s3_bucket_request_details::Builder
-    {
-        crate::model::create_s3_data_access_from_s3_bucket_request_details::Builder::default()
     }
 }
 
@@ -7316,6 +7363,13 @@ impl ImportAssetFromApiGatewayApiRequestDetails {
         self.stage.as_deref()
     }
 }
+impl ImportAssetFromApiGatewayApiRequestDetails {
+    /// Creates a new builder-style object to manufacture [`ImportAssetFromApiGatewayApiRequestDetails`](crate::model::ImportAssetFromApiGatewayApiRequestDetails).
+    pub fn builder() -> crate::model::import_asset_from_api_gateway_api_request_details::Builder {
+        crate::model::import_asset_from_api_gateway_api_request_details::Builder::default()
+    }
+}
+
 /// See [`ImportAssetFromApiGatewayApiRequestDetails`](crate::model::ImportAssetFromApiGatewayApiRequestDetails).
 pub mod import_asset_from_api_gateway_api_request_details {
 
@@ -7449,12 +7503,6 @@ pub mod import_asset_from_api_gateway_api_request_details {
         }
     }
 }
-impl ImportAssetFromApiGatewayApiRequestDetails {
-    /// Creates a new builder-style object to manufacture [`ImportAssetFromApiGatewayApiRequestDetails`](crate::model::ImportAssetFromApiGatewayApiRequestDetails).
-    pub fn builder() -> crate::model::import_asset_from_api_gateway_api_request_details::Builder {
-        crate::model::import_asset_from_api_gateway_api_request_details::Builder::default()
-    }
-}
 
 /// <p>Details from an import from Amazon Redshift datashare request.</p>
 #[non_exhaustive]
@@ -7487,6 +7535,14 @@ impl ImportAssetsFromRedshiftDataSharesRequestDetails {
         self.revision_id.as_deref()
     }
 }
+impl ImportAssetsFromRedshiftDataSharesRequestDetails {
+    /// Creates a new builder-style object to manufacture [`ImportAssetsFromRedshiftDataSharesRequestDetails`](crate::model::ImportAssetsFromRedshiftDataSharesRequestDetails).
+    pub fn builder(
+    ) -> crate::model::import_assets_from_redshift_data_shares_request_details::Builder {
+        crate::model::import_assets_from_redshift_data_shares_request_details::Builder::default()
+    }
+}
+
 /// See [`ImportAssetsFromRedshiftDataSharesRequestDetails`](crate::model::ImportAssetsFromRedshiftDataSharesRequestDetails).
 pub mod import_assets_from_redshift_data_shares_request_details {
 
@@ -7554,13 +7610,6 @@ pub mod import_assets_from_redshift_data_shares_request_details {
         }
     }
 }
-impl ImportAssetsFromRedshiftDataSharesRequestDetails {
-    /// Creates a new builder-style object to manufacture [`ImportAssetsFromRedshiftDataSharesRequestDetails`](crate::model::ImportAssetsFromRedshiftDataSharesRequestDetails).
-    pub fn builder(
-    ) -> crate::model::import_assets_from_redshift_data_shares_request_details::Builder {
-        crate::model::import_assets_from_redshift_data_shares_request_details::Builder::default()
-    }
-}
 
 /// <p>Details of the operation to be performed by the job.</p>
 #[non_exhaustive]
@@ -7590,6 +7639,13 @@ impl ImportAssetsFromS3RequestDetails {
         self.revision_id.as_deref()
     }
 }
+impl ImportAssetsFromS3RequestDetails {
+    /// Creates a new builder-style object to manufacture [`ImportAssetsFromS3RequestDetails`](crate::model::ImportAssetsFromS3RequestDetails).
+    pub fn builder() -> crate::model::import_assets_from_s3_request_details::Builder {
+        crate::model::import_assets_from_s3_request_details::Builder::default()
+    }
+}
+
 /// See [`ImportAssetsFromS3RequestDetails`](crate::model::ImportAssetsFromS3RequestDetails).
 pub mod import_assets_from_s3_request_details {
 
@@ -7652,12 +7708,6 @@ pub mod import_assets_from_s3_request_details {
         }
     }
 }
-impl ImportAssetsFromS3RequestDetails {
-    /// Creates a new builder-style object to manufacture [`ImportAssetsFromS3RequestDetails`](crate::model::ImportAssetsFromS3RequestDetails).
-    pub fn builder() -> crate::model::import_assets_from_s3_request_details::Builder {
-        crate::model::import_assets_from_s3_request_details::Builder::default()
-    }
-}
 
 /// <p>Details of the operation to be performed by the job.</p>
 #[non_exhaustive]
@@ -7694,6 +7744,13 @@ impl ImportAssetFromSignedUrlRequestDetails {
         self.revision_id.as_deref()
     }
 }
+impl ImportAssetFromSignedUrlRequestDetails {
+    /// Creates a new builder-style object to manufacture [`ImportAssetFromSignedUrlRequestDetails`](crate::model::ImportAssetFromSignedUrlRequestDetails).
+    pub fn builder() -> crate::model::import_asset_from_signed_url_request_details::Builder {
+        crate::model::import_asset_from_signed_url_request_details::Builder::default()
+    }
+}
+
 /// See [`ImportAssetFromSignedUrlRequestDetails`](crate::model::ImportAssetFromSignedUrlRequestDetails).
 pub mod import_asset_from_signed_url_request_details {
 
@@ -7758,12 +7815,6 @@ pub mod import_asset_from_signed_url_request_details {
         }
     }
 }
-impl ImportAssetFromSignedUrlRequestDetails {
-    /// Creates a new builder-style object to manufacture [`ImportAssetFromSignedUrlRequestDetails`](crate::model::ImportAssetFromSignedUrlRequestDetails).
-    pub fn builder() -> crate::model::import_asset_from_signed_url_request_details::Builder {
-        crate::model::import_asset_from_signed_url_request_details::Builder::default()
-    }
-}
 
 /// <p>Details of the operation to be performed by the job.</p>
 #[non_exhaustive]
@@ -7796,6 +7847,13 @@ impl ExportRevisionsToS3RequestDetails {
         self.revision_destinations.as_deref()
     }
 }
+impl ExportRevisionsToS3RequestDetails {
+    /// Creates a new builder-style object to manufacture [`ExportRevisionsToS3RequestDetails`](crate::model::ExportRevisionsToS3RequestDetails).
+    pub fn builder() -> crate::model::export_revisions_to_s3_request_details::Builder {
+        crate::model::export_revisions_to_s3_request_details::Builder::default()
+    }
+}
+
 /// See [`ExportRevisionsToS3RequestDetails`](crate::model::ExportRevisionsToS3RequestDetails).
 pub mod export_revisions_to_s3_request_details {
 
@@ -7864,12 +7922,6 @@ pub mod export_revisions_to_s3_request_details {
         }
     }
 }
-impl ExportRevisionsToS3RequestDetails {
-    /// Creates a new builder-style object to manufacture [`ExportRevisionsToS3RequestDetails`](crate::model::ExportRevisionsToS3RequestDetails).
-    pub fn builder() -> crate::model::export_revisions_to_s3_request_details::Builder {
-        crate::model::export_revisions_to_s3_request_details::Builder::default()
-    }
-}
 
 /// <p>Details of the operation to be performed by the job.</p>
 #[non_exhaustive]
@@ -7908,6 +7960,13 @@ impl ExportAssetsToS3RequestDetails {
         self.revision_id.as_deref()
     }
 }
+impl ExportAssetsToS3RequestDetails {
+    /// Creates a new builder-style object to manufacture [`ExportAssetsToS3RequestDetails`](crate::model::ExportAssetsToS3RequestDetails).
+    pub fn builder() -> crate::model::export_assets_to_s3_request_details::Builder {
+        crate::model::export_assets_to_s3_request_details::Builder::default()
+    }
+}
+
 /// See [`ExportAssetsToS3RequestDetails`](crate::model::ExportAssetsToS3RequestDetails).
 pub mod export_assets_to_s3_request_details {
 
@@ -7985,12 +8044,6 @@ pub mod export_assets_to_s3_request_details {
         }
     }
 }
-impl ExportAssetsToS3RequestDetails {
-    /// Creates a new builder-style object to manufacture [`ExportAssetsToS3RequestDetails`](crate::model::ExportAssetsToS3RequestDetails).
-    pub fn builder() -> crate::model::export_assets_to_s3_request_details::Builder {
-        crate::model::export_assets_to_s3_request_details::Builder::default()
-    }
-}
 
 /// <p>Details of the operation to be performed by the job.</p>
 #[non_exhaustive]
@@ -8020,6 +8073,13 @@ impl ExportAssetToSignedUrlRequestDetails {
         self.revision_id.as_deref()
     }
 }
+impl ExportAssetToSignedUrlRequestDetails {
+    /// Creates a new builder-style object to manufacture [`ExportAssetToSignedUrlRequestDetails`](crate::model::ExportAssetToSignedUrlRequestDetails).
+    pub fn builder() -> crate::model::export_asset_to_signed_url_request_details::Builder {
+        crate::model::export_asset_to_signed_url_request_details::Builder::default()
+    }
+}
+
 /// See [`ExportAssetToSignedUrlRequestDetails`](crate::model::ExportAssetToSignedUrlRequestDetails).
 pub mod export_asset_to_signed_url_request_details {
 
@@ -8070,12 +8130,6 @@ pub mod export_asset_to_signed_url_request_details {
                 revision_id: self.revision_id,
             }
         }
-    }
-}
-impl ExportAssetToSignedUrlRequestDetails {
-    /// Creates a new builder-style object to manufacture [`ExportAssetToSignedUrlRequestDetails`](crate::model::ExportAssetToSignedUrlRequestDetails).
-    pub fn builder() -> crate::model::export_asset_to_signed_url_request_details::Builder {
-        crate::model::export_asset_to_signed_url_request_details::Builder::default()
     }
 }
 

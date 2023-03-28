@@ -10,6 +10,13 @@ impl aws_http::request_id::RequestId for UpdateScalingPlanOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdateScalingPlanOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateScalingPlanOutput`](crate::output::UpdateScalingPlanOutput).
+    pub fn builder() -> crate::output::update_scaling_plan_output::Builder {
+        crate::output::update_scaling_plan_output::Builder::default()
+    }
+}
+
 /// See [`UpdateScalingPlanOutput`](crate::output::UpdateScalingPlanOutput).
 pub mod update_scaling_plan_output {
 
@@ -37,12 +44,6 @@ pub mod update_scaling_plan_output {
         }
     }
 }
-impl UpdateScalingPlanOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateScalingPlanOutput`](crate::output::UpdateScalingPlanOutput).
-    pub fn builder() -> crate::output::update_scaling_plan_output::Builder {
-        crate::output::update_scaling_plan_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -64,6 +65,13 @@ impl aws_http::request_id::RequestId for GetScalingPlanResourceForecastDataOutpu
         self._request_id.as_deref()
     }
 }
+impl GetScalingPlanResourceForecastDataOutput {
+    /// Creates a new builder-style object to manufacture [`GetScalingPlanResourceForecastDataOutput`](crate::output::GetScalingPlanResourceForecastDataOutput).
+    pub fn builder() -> crate::output::get_scaling_plan_resource_forecast_data_output::Builder {
+        crate::output::get_scaling_plan_resource_forecast_data_output::Builder::default()
+    }
+}
+
 /// See [`GetScalingPlanResourceForecastDataOutput`](crate::output::GetScalingPlanResourceForecastDataOutput).
 pub mod get_scaling_plan_resource_forecast_data_output {
 
@@ -112,12 +120,6 @@ pub mod get_scaling_plan_resource_forecast_data_output {
         }
     }
 }
-impl GetScalingPlanResourceForecastDataOutput {
-    /// Creates a new builder-style object to manufacture [`GetScalingPlanResourceForecastDataOutput`](crate::output::GetScalingPlanResourceForecastDataOutput).
-    pub fn builder() -> crate::output::get_scaling_plan_resource_forecast_data_output::Builder {
-        crate::output::get_scaling_plan_resource_forecast_data_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -146,6 +148,13 @@ impl aws_http::request_id::RequestId for DescribeScalingPlansOutput {
         self._request_id.as_deref()
     }
 }
+impl DescribeScalingPlansOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeScalingPlansOutput`](crate::output::DescribeScalingPlansOutput).
+    pub fn builder() -> crate::output::describe_scaling_plans_output::Builder {
+        crate::output::describe_scaling_plans_output::Builder::default()
+    }
+}
+
 /// See [`DescribeScalingPlansOutput`](crate::output::DescribeScalingPlansOutput).
 pub mod describe_scaling_plans_output {
 
@@ -206,12 +215,6 @@ pub mod describe_scaling_plans_output {
         }
     }
 }
-impl DescribeScalingPlansOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeScalingPlansOutput`](crate::output::DescribeScalingPlansOutput).
-    pub fn builder() -> crate::output::describe_scaling_plans_output::Builder {
-        crate::output::describe_scaling_plans_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -243,6 +246,13 @@ impl aws_http::request_id::RequestId for DescribeScalingPlanResourcesOutput {
         self._request_id.as_deref()
     }
 }
+impl DescribeScalingPlanResourcesOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeScalingPlanResourcesOutput`](crate::output::DescribeScalingPlanResourcesOutput).
+    pub fn builder() -> crate::output::describe_scaling_plan_resources_output::Builder {
+        crate::output::describe_scaling_plan_resources_output::Builder::default()
+    }
+}
+
 /// See [`DescribeScalingPlanResourcesOutput`](crate::output::DescribeScalingPlanResourcesOutput).
 pub mod describe_scaling_plan_resources_output {
 
@@ -304,12 +314,6 @@ pub mod describe_scaling_plan_resources_output {
         }
     }
 }
-impl DescribeScalingPlanResourcesOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeScalingPlanResourcesOutput`](crate::output::DescribeScalingPlanResourcesOutput).
-    pub fn builder() -> crate::output::describe_scaling_plan_resources_output::Builder {
-        crate::output::describe_scaling_plan_resources_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -322,6 +326,13 @@ impl aws_http::request_id::RequestId for DeleteScalingPlanOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteScalingPlanOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteScalingPlanOutput`](crate::output::DeleteScalingPlanOutput).
+    pub fn builder() -> crate::output::delete_scaling_plan_output::Builder {
+        crate::output::delete_scaling_plan_output::Builder::default()
+    }
+}
+
 /// See [`DeleteScalingPlanOutput`](crate::output::DeleteScalingPlanOutput).
 pub mod delete_scaling_plan_output {
 
@@ -349,12 +360,6 @@ pub mod delete_scaling_plan_output {
         }
     }
 }
-impl DeleteScalingPlanOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteScalingPlanOutput`](crate::output::DeleteScalingPlanOutput).
-    pub fn builder() -> crate::output::delete_scaling_plan_output::Builder {
-        crate::output::delete_scaling_plan_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -376,6 +381,13 @@ impl aws_http::request_id::RequestId for CreateScalingPlanOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateScalingPlanOutput {
+    /// Creates a new builder-style object to manufacture [`CreateScalingPlanOutput`](crate::output::CreateScalingPlanOutput).
+    pub fn builder() -> crate::output::create_scaling_plan_output::Builder {
+        crate::output::create_scaling_plan_output::Builder::default()
+    }
+}
+
 /// See [`CreateScalingPlanOutput`](crate::output::CreateScalingPlanOutput).
 pub mod create_scaling_plan_output {
 
@@ -413,11 +425,5 @@ pub mod create_scaling_plan_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl CreateScalingPlanOutput {
-    /// Creates a new builder-style object to manufacture [`CreateScalingPlanOutput`](crate::output::CreateScalingPlanOutput).
-    pub fn builder() -> crate::output::create_scaling_plan_output::Builder {
-        crate::output::create_scaling_plan_output::Builder::default()
     }
 }

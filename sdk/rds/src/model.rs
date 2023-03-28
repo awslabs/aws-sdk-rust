@@ -712,6 +712,13 @@ impl DbInstance {
         self.certificate_details.as_ref()
     }
 }
+impl DbInstance {
+    /// Creates a new builder-style object to manufacture [`DbInstance`](crate::model::DbInstance).
+    pub fn builder() -> crate::model::db_instance::Builder {
+        crate::model::db_instance::Builder::default()
+    }
+}
+
 /// See [`DbInstance`](crate::model::DbInstance).
 pub mod db_instance {
 
@@ -2132,12 +2139,6 @@ pub mod db_instance {
         }
     }
 }
-impl DbInstance {
-    /// Creates a new builder-style object to manufacture [`DbInstance`](crate::model::DbInstance).
-    pub fn builder() -> crate::model::db_instance::Builder {
-        crate::model::db_instance::Builder::default()
-    }
-}
 
 /// <p>Returns the details of the DB instance’s server certificate.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
@@ -2161,6 +2162,13 @@ impl CertificateDetails {
         self.valid_till.as_ref()
     }
 }
+impl CertificateDetails {
+    /// Creates a new builder-style object to manufacture [`CertificateDetails`](crate::model::CertificateDetails).
+    pub fn builder() -> crate::model::certificate_details::Builder {
+        crate::model::certificate_details::Builder::default()
+    }
+}
+
 /// See [`CertificateDetails`](crate::model::CertificateDetails).
 pub mod certificate_details {
 
@@ -2207,12 +2215,6 @@ pub mod certificate_details {
         }
     }
 }
-impl CertificateDetails {
-    /// Creates a new builder-style object to manufacture [`CertificateDetails`](crate::model::CertificateDetails).
-    pub fn builder() -> crate::model::certificate_details::Builder {
-        crate::model::certificate_details::Builder::default()
-    }
-}
 
 /// <p>Contains the secret managed by RDS in Amazon Web Services Secrets Manager for the master user password.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon Aurora User Guide.</i> </p>
@@ -2257,6 +2259,13 @@ impl MasterUserSecret {
         self.kms_key_id.as_deref()
     }
 }
+impl MasterUserSecret {
+    /// Creates a new builder-style object to manufacture [`MasterUserSecret`](crate::model::MasterUserSecret).
+    pub fn builder() -> crate::model::master_user_secret::Builder {
+        crate::model::master_user_secret::Builder::default()
+    }
+}
+
 /// See [`MasterUserSecret`](crate::model::MasterUserSecret).
 pub mod master_user_secret {
 
@@ -2324,12 +2333,6 @@ pub mod master_user_secret {
                 kms_key_id: self.kms_key_id,
             }
         }
-    }
-}
-impl MasterUserSecret {
-    /// Creates a new builder-style object to manufacture [`MasterUserSecret`](crate::model::MasterUserSecret).
-    pub fn builder() -> crate::model::master_user_secret::Builder {
-        crate::model::master_user_secret::Builder::default()
     }
 }
 
@@ -2733,6 +2736,13 @@ impl DbInstanceAutomatedBackupsReplication {
         self.db_instance_automated_backups_arn.as_deref()
     }
 }
+impl DbInstanceAutomatedBackupsReplication {
+    /// Creates a new builder-style object to manufacture [`DbInstanceAutomatedBackupsReplication`](crate::model::DbInstanceAutomatedBackupsReplication).
+    pub fn builder() -> crate::model::db_instance_automated_backups_replication::Builder {
+        crate::model::db_instance_automated_backups_replication::Builder::default()
+    }
+}
+
 /// See [`DbInstanceAutomatedBackupsReplication`](crate::model::DbInstanceAutomatedBackupsReplication).
 pub mod db_instance_automated_backups_replication {
 
@@ -2767,12 +2777,6 @@ pub mod db_instance_automated_backups_replication {
         }
     }
 }
-impl DbInstanceAutomatedBackupsReplication {
-    /// Creates a new builder-style object to manufacture [`DbInstanceAutomatedBackupsReplication`](crate::model::DbInstanceAutomatedBackupsReplication).
-    pub fn builder() -> crate::model::db_instance_automated_backups_replication::Builder {
-        crate::model::db_instance_automated_backups_replication::Builder::default()
-    }
-}
 
 /// <p>Metadata assigned to an Amazon RDS resource consisting of a key-value pair.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
@@ -2796,6 +2800,13 @@ impl Tag {
         self.value.as_deref()
     }
 }
+impl Tag {
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
+    pub fn builder() -> crate::model::tag::Builder {
+        crate::model::tag::Builder::default()
+    }
+}
+
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
 
@@ -2836,12 +2847,6 @@ pub mod tag {
         }
     }
 }
-impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
-    pub fn builder() -> crate::model::tag::Builder {
-        crate::model::tag::Builder::default()
-    }
-}
 
 /// <p>This data type represents the information you need to connect to an Amazon RDS DB instance. This data type is used as a response element in the following actions:</p>
 /// <ul>
@@ -2877,6 +2882,13 @@ impl Endpoint {
         self.hosted_zone_id.as_deref()
     }
 }
+impl Endpoint {
+    /// Creates a new builder-style object to manufacture [`Endpoint`](crate::model::Endpoint).
+    pub fn builder() -> crate::model::endpoint::Builder {
+        crate::model::endpoint::Builder::default()
+    }
+}
+
 /// See [`Endpoint`](crate::model::Endpoint).
 pub mod endpoint {
 
@@ -2932,12 +2944,6 @@ pub mod endpoint {
         }
     }
 }
-impl Endpoint {
-    /// Creates a new builder-style object to manufacture [`Endpoint`](crate::model::Endpoint).
-    pub fn builder() -> crate::model::endpoint::Builder {
-        crate::model::endpoint::Builder::default()
-    }
-}
 
 /// <p>Describes an Amazon Web Services Identity and Access Management (IAM) role that is associated with a DB instance.</p>
 #[non_exhaustive]
@@ -2977,6 +2983,13 @@ impl DbInstanceRole {
         self.status.as_deref()
     }
 }
+impl DbInstanceRole {
+    /// Creates a new builder-style object to manufacture [`DbInstanceRole`](crate::model::DbInstanceRole).
+    pub fn builder() -> crate::model::db_instance_role::Builder {
+        crate::model::db_instance_role::Builder::default()
+    }
+}
+
 /// See [`DbInstanceRole`](crate::model::DbInstanceRole).
 pub mod db_instance_role {
 
@@ -3039,12 +3052,6 @@ pub mod db_instance_role {
         }
     }
 }
-impl DbInstanceRole {
-    /// Creates a new builder-style object to manufacture [`DbInstanceRole`](crate::model::DbInstanceRole).
-    pub fn builder() -> crate::model::db_instance_role::Builder {
-        crate::model::db_instance_role::Builder::default()
-    }
-}
 
 /// <p>Contains the processor features of a DB instance class.</p>
 /// <p>To specify the number of CPU cores, use the <code>coreCount</code> feature name for the <code>Name</code> parameter. To specify the number of threads per core, use the <code>threadsPerCore</code> feature name for the <code>Name</code> parameter.</p>
@@ -3090,6 +3097,13 @@ impl ProcessorFeature {
         self.value.as_deref()
     }
 }
+impl ProcessorFeature {
+    /// Creates a new builder-style object to manufacture [`ProcessorFeature`](crate::model::ProcessorFeature).
+    pub fn builder() -> crate::model::processor_feature::Builder {
+        crate::model::processor_feature::Builder::default()
+    }
+}
+
 /// See [`ProcessorFeature`](crate::model::ProcessorFeature).
 pub mod processor_feature {
 
@@ -3130,12 +3144,6 @@ pub mod processor_feature {
         }
     }
 }
-impl ProcessorFeature {
-    /// Creates a new builder-style object to manufacture [`ProcessorFeature`](crate::model::ProcessorFeature).
-    pub fn builder() -> crate::model::processor_feature::Builder {
-        crate::model::processor_feature::Builder::default()
-    }
-}
 
 /// <p>An Active Directory Domain membership record associated with the DB instance or cluster.</p>
 #[non_exhaustive]
@@ -3172,6 +3180,13 @@ impl DomainMembership {
         self.iam_role_name.as_deref()
     }
 }
+impl DomainMembership {
+    /// Creates a new builder-style object to manufacture [`DomainMembership`](crate::model::DomainMembership).
+    pub fn builder() -> crate::model::domain_membership::Builder {
+        crate::model::domain_membership::Builder::default()
+    }
+}
+
 /// See [`DomainMembership`](crate::model::DomainMembership).
 pub mod domain_membership {
 
@@ -3239,12 +3254,6 @@ pub mod domain_membership {
         }
     }
 }
-impl DomainMembership {
-    /// Creates a new builder-style object to manufacture [`DomainMembership`](crate::model::DomainMembership).
-    pub fn builder() -> crate::model::domain_membership::Builder {
-        crate::model::domain_membership::Builder::default()
-    }
-}
 
 /// <p>Provides a list of status information for a DB instance.</p>
 #[non_exhaustive]
@@ -3281,6 +3290,13 @@ impl DbInstanceStatusInfo {
         self.message.as_deref()
     }
 }
+impl DbInstanceStatusInfo {
+    /// Creates a new builder-style object to manufacture [`DbInstanceStatusInfo`](crate::model::DbInstanceStatusInfo).
+    pub fn builder() -> crate::model::db_instance_status_info::Builder {
+        crate::model::db_instance_status_info::Builder::default()
+    }
+}
+
 /// See [`DbInstanceStatusInfo`](crate::model::DbInstanceStatusInfo).
 pub mod db_instance_status_info {
 
@@ -3345,12 +3361,6 @@ pub mod db_instance_status_info {
         }
     }
 }
-impl DbInstanceStatusInfo {
-    /// Creates a new builder-style object to manufacture [`DbInstanceStatusInfo`](crate::model::DbInstanceStatusInfo).
-    pub fn builder() -> crate::model::db_instance_status_info::Builder {
-        crate::model::db_instance_status_info::Builder::default()
-    }
-}
 
 /// <p>Provides information on the option groups the DB instance is a member of.</p>
 #[non_exhaustive]
@@ -3373,6 +3383,13 @@ impl OptionGroupMembership {
         self.status.as_deref()
     }
 }
+impl OptionGroupMembership {
+    /// Creates a new builder-style object to manufacture [`OptionGroupMembership`](crate::model::OptionGroupMembership).
+    pub fn builder() -> crate::model::option_group_membership::Builder {
+        crate::model::option_group_membership::Builder::default()
+    }
+}
+
 /// See [`OptionGroupMembership`](crate::model::OptionGroupMembership).
 pub mod option_group_membership {
 
@@ -3414,12 +3431,6 @@ pub mod option_group_membership {
                 status: self.status,
             }
         }
-    }
-}
-impl OptionGroupMembership {
-    /// Creates a new builder-style object to manufacture [`OptionGroupMembership`](crate::model::OptionGroupMembership).
-    pub fn builder() -> crate::model::option_group_membership::Builder {
-        crate::model::option_group_membership::Builder::default()
     }
 }
 
@@ -3662,6 +3673,13 @@ impl PendingModifiedValues {
         self.storage_throughput
     }
 }
+impl PendingModifiedValues {
+    /// Creates a new builder-style object to manufacture [`PendingModifiedValues`](crate::model::PendingModifiedValues).
+    pub fn builder() -> crate::model::pending_modified_values::Builder {
+        crate::model::pending_modified_values::Builder::default()
+    }
+}
+
 /// See [`PendingModifiedValues`](crate::model::PendingModifiedValues).
 pub mod pending_modified_values {
 
@@ -3961,12 +3979,6 @@ pub mod pending_modified_values {
         }
     }
 }
-impl PendingModifiedValues {
-    /// Creates a new builder-style object to manufacture [`PendingModifiedValues`](crate::model::PendingModifiedValues).
-    pub fn builder() -> crate::model::pending_modified_values::Builder {
-        crate::model::pending_modified_values::Builder::default()
-    }
-}
 
 /// <p>A list of the log types whose configuration is still pending. In other words, these log types are in the process of being activated or deactivated.</p>
 #[non_exhaustive]
@@ -3989,6 +4001,13 @@ impl PendingCloudwatchLogsExports {
         self.log_types_to_disable.as_deref()
     }
 }
+impl PendingCloudwatchLogsExports {
+    /// Creates a new builder-style object to manufacture [`PendingCloudwatchLogsExports`](crate::model::PendingCloudwatchLogsExports).
+    pub fn builder() -> crate::model::pending_cloudwatch_logs_exports::Builder {
+        crate::model::pending_cloudwatch_logs_exports::Builder::default()
+    }
+}
+
 /// See [`PendingCloudwatchLogsExports`](crate::model::PendingCloudwatchLogsExports).
 pub mod pending_cloudwatch_logs_exports {
 
@@ -4045,12 +4064,6 @@ pub mod pending_cloudwatch_logs_exports {
                 log_types_to_disable: self.log_types_to_disable,
             }
         }
-    }
-}
-impl PendingCloudwatchLogsExports {
-    /// Creates a new builder-style object to manufacture [`PendingCloudwatchLogsExports`](crate::model::PendingCloudwatchLogsExports).
-    pub fn builder() -> crate::model::pending_cloudwatch_logs_exports::Builder {
-        crate::model::pending_cloudwatch_logs_exports::Builder::default()
     }
 }
 
@@ -4125,6 +4138,13 @@ impl DbSubnetGroup {
         self.supported_network_types.as_deref()
     }
 }
+impl DbSubnetGroup {
+    /// Creates a new builder-style object to manufacture [`DbSubnetGroup`](crate::model::DbSubnetGroup).
+    pub fn builder() -> crate::model::db_subnet_group::Builder {
+        crate::model::db_subnet_group::Builder::default()
+    }
+}
+
 /// See [`DbSubnetGroup`](crate::model::DbSubnetGroup).
 pub mod db_subnet_group {
 
@@ -4272,12 +4292,6 @@ pub mod db_subnet_group {
         }
     }
 }
-impl DbSubnetGroup {
-    /// Creates a new builder-style object to manufacture [`DbSubnetGroup`](crate::model::DbSubnetGroup).
-    pub fn builder() -> crate::model::db_subnet_group::Builder {
-        crate::model::db_subnet_group::Builder::default()
-    }
-}
 
 /// <p>This data type is used as a response element for the <code>DescribeDBSubnetGroups</code> operation.</p>
 #[non_exhaustive]
@@ -4318,6 +4332,13 @@ impl Subnet {
         self.subnet_status.as_deref()
     }
 }
+impl Subnet {
+    /// Creates a new builder-style object to manufacture [`Subnet`](crate::model::Subnet).
+    pub fn builder() -> crate::model::subnet::Builder {
+        crate::model::subnet::Builder::default()
+    }
+}
+
 /// See [`Subnet`](crate::model::Subnet).
 pub mod subnet {
 
@@ -4398,12 +4419,6 @@ pub mod subnet {
         }
     }
 }
-impl Subnet {
-    /// Creates a new builder-style object to manufacture [`Subnet`](crate::model::Subnet).
-    pub fn builder() -> crate::model::subnet::Builder {
-        crate::model::subnet::Builder::default()
-    }
-}
 
 /// <p>A data type that represents an Outpost.</p>
 /// <p>For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide.</i> </p>
@@ -4420,6 +4435,13 @@ impl Outpost {
         self.arn.as_deref()
     }
 }
+impl Outpost {
+    /// Creates a new builder-style object to manufacture [`Outpost`](crate::model::Outpost).
+    pub fn builder() -> crate::model::outpost::Builder {
+        crate::model::outpost::Builder::default()
+    }
+}
+
 /// See [`Outpost`](crate::model::Outpost).
 pub mod outpost {
 
@@ -4446,12 +4468,6 @@ pub mod outpost {
         }
     }
 }
-impl Outpost {
-    /// Creates a new builder-style object to manufacture [`Outpost`](crate::model::Outpost).
-    pub fn builder() -> crate::model::outpost::Builder {
-        crate::model::outpost::Builder::default()
-    }
-}
 
 /// <p>Contains Availability Zone information.</p>
 /// <p>This data type is used as an element in the <code>OrderableDBInstanceOption</code> data type.</p>
@@ -4468,6 +4484,13 @@ impl AvailabilityZone {
         self.name.as_deref()
     }
 }
+impl AvailabilityZone {
+    /// Creates a new builder-style object to manufacture [`AvailabilityZone`](crate::model::AvailabilityZone).
+    pub fn builder() -> crate::model::availability_zone::Builder {
+        crate::model::availability_zone::Builder::default()
+    }
+}
+
 /// See [`AvailabilityZone`](crate::model::AvailabilityZone).
 pub mod availability_zone {
 
@@ -4492,12 +4515,6 @@ pub mod availability_zone {
         pub fn build(self) -> crate::model::AvailabilityZone {
             crate::model::AvailabilityZone { name: self.name }
         }
-    }
-}
-impl AvailabilityZone {
-    /// Creates a new builder-style object to manufacture [`AvailabilityZone`](crate::model::AvailabilityZone).
-    pub fn builder() -> crate::model::availability_zone::Builder {
-        crate::model::availability_zone::Builder::default()
     }
 }
 
@@ -4531,6 +4548,13 @@ impl DbParameterGroupStatus {
         self.parameter_apply_status.as_deref()
     }
 }
+impl DbParameterGroupStatus {
+    /// Creates a new builder-style object to manufacture [`DbParameterGroupStatus`](crate::model::DbParameterGroupStatus).
+    pub fn builder() -> crate::model::db_parameter_group_status::Builder {
+        crate::model::db_parameter_group_status::Builder::default()
+    }
+}
+
 /// See [`DbParameterGroupStatus`](crate::model::DbParameterGroupStatus).
 pub mod db_parameter_group_status {
 
@@ -4577,12 +4601,6 @@ pub mod db_parameter_group_status {
         }
     }
 }
-impl DbParameterGroupStatus {
-    /// Creates a new builder-style object to manufacture [`DbParameterGroupStatus`](crate::model::DbParameterGroupStatus).
-    pub fn builder() -> crate::model::db_parameter_group_status::Builder {
-        crate::model::db_parameter_group_status::Builder::default()
-    }
-}
 
 /// <p>This data type is used as a response element for queries on VPC security group membership.</p>
 #[non_exhaustive]
@@ -4607,6 +4625,13 @@ impl VpcSecurityGroupMembership {
         self.status.as_deref()
     }
 }
+impl VpcSecurityGroupMembership {
+    /// Creates a new builder-style object to manufacture [`VpcSecurityGroupMembership`](crate::model::VpcSecurityGroupMembership).
+    pub fn builder() -> crate::model::vpc_security_group_membership::Builder {
+        crate::model::vpc_security_group_membership::Builder::default()
+    }
+}
+
 /// See [`VpcSecurityGroupMembership`](crate::model::VpcSecurityGroupMembership).
 pub mod vpc_security_group_membership {
 
@@ -4652,12 +4677,6 @@ pub mod vpc_security_group_membership {
         }
     }
 }
-impl VpcSecurityGroupMembership {
-    /// Creates a new builder-style object to manufacture [`VpcSecurityGroupMembership`](crate::model::VpcSecurityGroupMembership).
-    pub fn builder() -> crate::model::vpc_security_group_membership::Builder {
-        crate::model::vpc_security_group_membership::Builder::default()
-    }
-}
 
 /// <p>This data type is used as a response element in the following actions:</p>
 /// <ul>
@@ -4686,6 +4705,13 @@ impl DbSecurityGroupMembership {
         self.status.as_deref()
     }
 }
+impl DbSecurityGroupMembership {
+    /// Creates a new builder-style object to manufacture [`DbSecurityGroupMembership`](crate::model::DbSecurityGroupMembership).
+    pub fn builder() -> crate::model::db_security_group_membership::Builder {
+        crate::model::db_security_group_membership::Builder::default()
+    }
+}
+
 /// See [`DbSecurityGroupMembership`](crate::model::DbSecurityGroupMembership).
 pub mod db_security_group_membership {
 
@@ -4727,12 +4753,6 @@ pub mod db_security_group_membership {
                 status: self.status,
             }
         }
-    }
-}
-impl DbSecurityGroupMembership {
-    /// Creates a new builder-style object to manufacture [`DbSecurityGroupMembership`](crate::model::DbSecurityGroupMembership).
-    pub fn builder() -> crate::model::db_security_group_membership::Builder {
-        crate::model::db_security_group_membership::Builder::default()
     }
 }
 
@@ -4845,6 +4865,13 @@ impl BlueGreenDeployment {
         self.tag_list.as_deref()
     }
 }
+impl BlueGreenDeployment {
+    /// Creates a new builder-style object to manufacture [`BlueGreenDeployment`](crate::model::BlueGreenDeployment).
+    pub fn builder() -> crate::model::blue_green_deployment::Builder {
+        crate::model::blue_green_deployment::Builder::default()
+    }
+}
+
 /// See [`BlueGreenDeployment`](crate::model::BlueGreenDeployment).
 pub mod blue_green_deployment {
 
@@ -5063,12 +5090,6 @@ pub mod blue_green_deployment {
         }
     }
 }
-impl BlueGreenDeployment {
-    /// Creates a new builder-style object to manufacture [`BlueGreenDeployment`](crate::model::BlueGreenDeployment).
-    pub fn builder() -> crate::model::blue_green_deployment::Builder {
-        crate::model::blue_green_deployment::Builder::default()
-    }
-}
 
 /// <p>Contains the details about a task for a blue/green deployment.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/blue-green-deployments.html">Using Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/blue-green-deployments.html"> Using Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon Aurora User Guide</i>.</p>
@@ -5106,6 +5127,13 @@ impl BlueGreenDeploymentTask {
         self.status.as_deref()
     }
 }
+impl BlueGreenDeploymentTask {
+    /// Creates a new builder-style object to manufacture [`BlueGreenDeploymentTask`](crate::model::BlueGreenDeploymentTask).
+    pub fn builder() -> crate::model::blue_green_deployment_task::Builder {
+        crate::model::blue_green_deployment_task::Builder::default()
+    }
+}
+
 /// See [`BlueGreenDeploymentTask`](crate::model::BlueGreenDeploymentTask).
 pub mod blue_green_deployment_task {
 
@@ -5160,12 +5188,6 @@ pub mod blue_green_deployment_task {
         }
     }
 }
-impl BlueGreenDeploymentTask {
-    /// Creates a new builder-style object to manufacture [`BlueGreenDeploymentTask`](crate::model::BlueGreenDeploymentTask).
-    pub fn builder() -> crate::model::blue_green_deployment_task::Builder {
-        crate::model::blue_green_deployment_task::Builder::default()
-    }
-}
 
 /// <p>Contains the details about a blue/green deployment.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/blue-green-deployments.html">Using Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/blue-green-deployments.html"> Using Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon Aurora User Guide</i>.</p>
@@ -5212,6 +5234,13 @@ impl SwitchoverDetail {
         self.status.as_deref()
     }
 }
+impl SwitchoverDetail {
+    /// Creates a new builder-style object to manufacture [`SwitchoverDetail`](crate::model::SwitchoverDetail).
+    pub fn builder() -> crate::model::switchover_detail::Builder {
+        crate::model::switchover_detail::Builder::default()
+    }
+}
+
 /// See [`SwitchoverDetail`](crate::model::SwitchoverDetail).
 pub mod switchover_detail {
 
@@ -5284,12 +5313,6 @@ pub mod switchover_detail {
                 status: self.status,
             }
         }
-    }
-}
-impl SwitchoverDetail {
-    /// Creates a new builder-style object to manufacture [`SwitchoverDetail`](crate::model::SwitchoverDetail).
-    pub fn builder() -> crate::model::switchover_detail::Builder {
-        crate::model::switchover_detail::Builder::default()
     }
 }
 
@@ -5515,6 +5538,13 @@ impl DbInstanceAutomatedBackup {
         self.storage_throughput
     }
 }
+impl DbInstanceAutomatedBackup {
+    /// Creates a new builder-style object to manufacture [`DbInstanceAutomatedBackup`](crate::model::DbInstanceAutomatedBackup).
+    pub fn builder() -> crate::model::db_instance_automated_backup::Builder {
+        crate::model::db_instance_automated_backup::Builder::default()
+    }
+}
+
 /// See [`DbInstanceAutomatedBackup`](crate::model::DbInstanceAutomatedBackup).
 pub mod db_instance_automated_backup {
 
@@ -5948,12 +5978,6 @@ pub mod db_instance_automated_backup {
         }
     }
 }
-impl DbInstanceAutomatedBackup {
-    /// Creates a new builder-style object to manufacture [`DbInstanceAutomatedBackup`](crate::model::DbInstanceAutomatedBackup).
-    pub fn builder() -> crate::model::db_instance_automated_backup::Builder {
-        crate::model::db_instance_automated_backup::Builder::default()
-    }
-}
 
 /// <p>Earliest and latest time an instance can be restored to:</p>
 #[non_exhaustive]
@@ -5976,6 +6000,13 @@ impl RestoreWindow {
         self.latest_time.as_ref()
     }
 }
+impl RestoreWindow {
+    /// Creates a new builder-style object to manufacture [`RestoreWindow`](crate::model::RestoreWindow).
+    pub fn builder() -> crate::model::restore_window::Builder {
+        crate::model::restore_window::Builder::default()
+    }
+}
+
 /// See [`RestoreWindow`](crate::model::RestoreWindow).
 pub mod restore_window {
 
@@ -6020,12 +6051,6 @@ pub mod restore_window {
                 latest_time: self.latest_time,
             }
         }
-    }
-}
-impl RestoreWindow {
-    /// Creates a new builder-style object to manufacture [`RestoreWindow`](crate::model::RestoreWindow).
-    pub fn builder() -> crate::model::restore_window::Builder {
-        crate::model::restore_window::Builder::default()
     }
 }
 
@@ -6644,6 +6669,13 @@ impl DbCluster {
         self.master_user_secret.as_ref()
     }
 }
+impl DbCluster {
+    /// Creates a new builder-style object to manufacture [`DbCluster`](crate::model::DbCluster).
+    pub fn builder() -> crate::model::db_cluster::Builder {
+        crate::model::db_cluster::Builder::default()
+    }
+}
+
 /// See [`DbCluster`](crate::model::DbCluster).
 pub mod db_cluster {
 
@@ -7850,12 +7882,6 @@ pub mod db_cluster {
         }
     }
 }
-impl DbCluster {
-    /// Creates a new builder-style object to manufacture [`DbCluster`](crate::model::DbCluster).
-    pub fn builder() -> crate::model::db_cluster::Builder {
-        crate::model::db_cluster::Builder::default()
-    }
-}
 
 /// <p>Shows the scaling configuration for an Aurora Serverless v2 DB cluster.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html">Using Amazon Aurora Serverless v2</a> in the <i>Amazon Aurora User Guide</i>.</p>
@@ -7879,6 +7905,13 @@ impl ServerlessV2ScalingConfigurationInfo {
         self.max_capacity
     }
 }
+impl ServerlessV2ScalingConfigurationInfo {
+    /// Creates a new builder-style object to manufacture [`ServerlessV2ScalingConfigurationInfo`](crate::model::ServerlessV2ScalingConfigurationInfo).
+    pub fn builder() -> crate::model::serverless_v2_scaling_configuration_info::Builder {
+        crate::model::serverless_v2_scaling_configuration_info::Builder::default()
+    }
+}
+
 /// See [`ServerlessV2ScalingConfigurationInfo`](crate::model::ServerlessV2ScalingConfigurationInfo).
 pub mod serverless_v2_scaling_configuration_info {
 
@@ -7917,12 +7950,6 @@ pub mod serverless_v2_scaling_configuration_info {
                 max_capacity: self.max_capacity,
             }
         }
-    }
-}
-impl ServerlessV2ScalingConfigurationInfo {
-    /// Creates a new builder-style object to manufacture [`ServerlessV2ScalingConfigurationInfo`](crate::model::ServerlessV2ScalingConfigurationInfo).
-    pub fn builder() -> crate::model::serverless_v2_scaling_configuration_info::Builder {
-        crate::model::serverless_v2_scaling_configuration_info::Builder::default()
     }
 }
 
@@ -7992,6 +8019,13 @@ impl ClusterPendingModifiedValues {
         self.iops
     }
 }
+impl ClusterPendingModifiedValues {
+    /// Creates a new builder-style object to manufacture [`ClusterPendingModifiedValues`](crate::model::ClusterPendingModifiedValues).
+    pub fn builder() -> crate::model::cluster_pending_modified_values::Builder {
+        crate::model::cluster_pending_modified_values::Builder::default()
+    }
+}
+
 /// See [`ClusterPendingModifiedValues`](crate::model::ClusterPendingModifiedValues).
 pub mod cluster_pending_modified_values {
 
@@ -8121,12 +8155,6 @@ pub mod cluster_pending_modified_values {
                 iops: self.iops,
             }
         }
-    }
-}
-impl ClusterPendingModifiedValues {
-    /// Creates a new builder-style object to manufacture [`ClusterPendingModifiedValues`](crate::model::ClusterPendingModifiedValues).
-    pub fn builder() -> crate::model::cluster_pending_modified_values::Builder {
-        crate::model::cluster_pending_modified_values::Builder::default()
     }
 }
 
@@ -8293,6 +8321,13 @@ impl ScalingConfigurationInfo {
         self.seconds_before_timeout
     }
 }
+impl ScalingConfigurationInfo {
+    /// Creates a new builder-style object to manufacture [`ScalingConfigurationInfo`](crate::model::ScalingConfigurationInfo).
+    pub fn builder() -> crate::model::scaling_configuration_info::Builder {
+        crate::model::scaling_configuration_info::Builder::default()
+    }
+}
+
 /// See [`ScalingConfigurationInfo`](crate::model::ScalingConfigurationInfo).
 pub mod scaling_configuration_info {
 
@@ -8390,12 +8425,6 @@ pub mod scaling_configuration_info {
         }
     }
 }
-impl ScalingConfigurationInfo {
-    /// Creates a new builder-style object to manufacture [`ScalingConfigurationInfo`](crate::model::ScalingConfigurationInfo).
-    pub fn builder() -> crate::model::scaling_configuration_info::Builder {
-        crate::model::scaling_configuration_info::Builder::default()
-    }
-}
 
 /// <p>Describes an Amazon Web Services Identity and Access Management (IAM) role that is associated with a DB cluster.</p>
 #[non_exhaustive]
@@ -8435,6 +8464,13 @@ impl DbClusterRole {
         self.feature_name.as_deref()
     }
 }
+impl DbClusterRole {
+    /// Creates a new builder-style object to manufacture [`DbClusterRole`](crate::model::DbClusterRole).
+    pub fn builder() -> crate::model::db_cluster_role::Builder {
+        crate::model::db_cluster_role::Builder::default()
+    }
+}
+
 /// See [`DbClusterRole`](crate::model::DbClusterRole).
 pub mod db_cluster_role {
 
@@ -8497,12 +8533,6 @@ pub mod db_cluster_role {
         }
     }
 }
-impl DbClusterRole {
-    /// Creates a new builder-style object to manufacture [`DbClusterRole`](crate::model::DbClusterRole).
-    pub fn builder() -> crate::model::db_cluster_role::Builder {
-        crate::model::db_cluster_role::Builder::default()
-    }
-}
 
 /// <p>Contains information about an instance that is part of a DB cluster.</p>
 #[non_exhaustive]
@@ -8539,6 +8569,13 @@ impl DbClusterMember {
         self.promotion_tier
     }
 }
+impl DbClusterMember {
+    /// Creates a new builder-style object to manufacture [`DbClusterMember`](crate::model::DbClusterMember).
+    pub fn builder() -> crate::model::db_cluster_member::Builder {
+        crate::model::db_cluster_member::Builder::default()
+    }
+}
+
 /// See [`DbClusterMember`](crate::model::DbClusterMember).
 pub mod db_cluster_member {
 
@@ -8612,12 +8649,6 @@ pub mod db_cluster_member {
         }
     }
 }
-impl DbClusterMember {
-    /// Creates a new builder-style object to manufacture [`DbClusterMember`](crate::model::DbClusterMember).
-    pub fn builder() -> crate::model::db_cluster_member::Builder {
-        crate::model::db_cluster_member::Builder::default()
-    }
-}
 
 /// <p>Contains status information for a DB cluster option group.</p>
 #[non_exhaustive]
@@ -8640,6 +8671,13 @@ impl DbClusterOptionGroupStatus {
         self.status.as_deref()
     }
 }
+impl DbClusterOptionGroupStatus {
+    /// Creates a new builder-style object to manufacture [`DbClusterOptionGroupStatus`](crate::model::DbClusterOptionGroupStatus).
+    pub fn builder() -> crate::model::db_cluster_option_group_status::Builder {
+        crate::model::db_cluster_option_group_status::Builder::default()
+    }
+}
+
 /// See [`DbClusterOptionGroupStatus`](crate::model::DbClusterOptionGroupStatus).
 pub mod db_cluster_option_group_status {
 
@@ -8684,12 +8722,6 @@ pub mod db_cluster_option_group_status {
                 status: self.status,
             }
         }
-    }
-}
-impl DbClusterOptionGroupStatus {
-    /// Creates a new builder-style object to manufacture [`DbClusterOptionGroupStatus`](crate::model::DbClusterOptionGroupStatus).
-    pub fn builder() -> crate::model::db_cluster_option_group_status::Builder {
-        crate::model::db_cluster_option_group_status::Builder::default()
     }
 }
 
@@ -8840,6 +8872,13 @@ impl DbSecurityGroup {
         self.db_security_group_arn.as_deref()
     }
 }
+impl DbSecurityGroup {
+    /// Creates a new builder-style object to manufacture [`DbSecurityGroup`](crate::model::DbSecurityGroup).
+    pub fn builder() -> crate::model::db_security_group::Builder {
+        crate::model::db_security_group::Builder::default()
+    }
+}
+
 /// See [`DbSecurityGroup`](crate::model::DbSecurityGroup).
 pub mod db_security_group {
 
@@ -8971,12 +9010,6 @@ pub mod db_security_group {
         }
     }
 }
-impl DbSecurityGroup {
-    /// Creates a new builder-style object to manufacture [`DbSecurityGroup`](crate::model::DbSecurityGroup).
-    pub fn builder() -> crate::model::db_security_group::Builder {
-        crate::model::db_security_group::Builder::default()
-    }
-}
 
 /// <p>This data type is used as a response element in the <code>DescribeDBSecurityGroups</code> action.</p>
 #[non_exhaustive]
@@ -8999,6 +9032,13 @@ impl IpRange {
         self.cidrip.as_deref()
     }
 }
+impl IpRange {
+    /// Creates a new builder-style object to manufacture [`IpRange`](crate::model::IpRange).
+    pub fn builder() -> crate::model::ip_range::Builder {
+        crate::model::ip_range::Builder::default()
+    }
+}
+
 /// See [`IpRange`](crate::model::IpRange).
 pub mod ip_range {
 
@@ -9037,12 +9077,6 @@ pub mod ip_range {
                 cidrip: self.cidrip,
             }
         }
-    }
-}
-impl IpRange {
-    /// Creates a new builder-style object to manufacture [`IpRange`](crate::model::IpRange).
-    pub fn builder() -> crate::model::ip_range::Builder {
-        crate::model::ip_range::Builder::default()
     }
 }
 
@@ -9086,6 +9120,13 @@ impl Ec2SecurityGroup {
         self.ec2_security_group_owner_id.as_deref()
     }
 }
+impl Ec2SecurityGroup {
+    /// Creates a new builder-style object to manufacture [`Ec2SecurityGroup`](crate::model::Ec2SecurityGroup).
+    pub fn builder() -> crate::model::ec2_security_group::Builder {
+        crate::model::ec2_security_group::Builder::default()
+    }
+}
+
 /// See [`Ec2SecurityGroup`](crate::model::Ec2SecurityGroup).
 pub mod ec2_security_group {
 
@@ -9162,12 +9203,6 @@ pub mod ec2_security_group {
         }
     }
 }
-impl Ec2SecurityGroup {
-    /// Creates a new builder-style object to manufacture [`Ec2SecurityGroup`](crate::model::Ec2SecurityGroup).
-    pub fn builder() -> crate::model::ec2_security_group::Builder {
-        crate::model::ec2_security_group::Builder::default()
-    }
-}
 
 /// <p>Contains the scaling configuration of an Aurora Serverless v2 DB cluster.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html">Using Amazon Aurora Serverless v2</a> in the <i>Amazon Aurora User Guide</i>.</p>
@@ -9191,6 +9226,13 @@ impl ServerlessV2ScalingConfiguration {
         self.max_capacity
     }
 }
+impl ServerlessV2ScalingConfiguration {
+    /// Creates a new builder-style object to manufacture [`ServerlessV2ScalingConfiguration`](crate::model::ServerlessV2ScalingConfiguration).
+    pub fn builder() -> crate::model::serverless_v2_scaling_configuration::Builder {
+        crate::model::serverless_v2_scaling_configuration::Builder::default()
+    }
+}
+
 /// See [`ServerlessV2ScalingConfiguration`](crate::model::ServerlessV2ScalingConfiguration).
 pub mod serverless_v2_scaling_configuration {
 
@@ -9229,12 +9271,6 @@ pub mod serverless_v2_scaling_configuration {
                 max_capacity: self.max_capacity,
             }
         }
-    }
-}
-impl ServerlessV2ScalingConfiguration {
-    /// Creates a new builder-style object to manufacture [`ServerlessV2ScalingConfiguration`](crate::model::ServerlessV2ScalingConfiguration).
-    pub fn builder() -> crate::model::serverless_v2_scaling_configuration::Builder {
-        crate::model::serverless_v2_scaling_configuration::Builder::default()
     }
 }
 
@@ -9318,6 +9354,13 @@ impl ScalingConfiguration {
         self.seconds_before_timeout
     }
 }
+impl ScalingConfiguration {
+    /// Creates a new builder-style object to manufacture [`ScalingConfiguration`](crate::model::ScalingConfiguration).
+    pub fn builder() -> crate::model::scaling_configuration::Builder {
+        crate::model::scaling_configuration::Builder::default()
+    }
+}
+
 /// See [`ScalingConfiguration`](crate::model::ScalingConfiguration).
 pub mod scaling_configuration {
 
@@ -9439,12 +9482,6 @@ pub mod scaling_configuration {
         }
     }
 }
-impl ScalingConfiguration {
-    /// Creates a new builder-style object to manufacture [`ScalingConfiguration`](crate::model::ScalingConfiguration).
-    pub fn builder() -> crate::model::scaling_configuration::Builder {
-        crate::model::scaling_configuration::Builder::default()
-    }
-}
 
 /// <p>This data type is used as a request parameter in the <code>ModifyDBParameterGroup</code> and <code>ResetDBParameterGroup</code> actions.</p>
 /// <p>This data type is used as a response element in the <code>DescribeEngineDefaultParameters</code> and <code>DescribeDBParameters</code> actions.</p>
@@ -9531,6 +9568,13 @@ impl Parameter {
         self.supported_engine_modes.as_deref()
     }
 }
+impl Parameter {
+    /// Creates a new builder-style object to manufacture [`Parameter`](crate::model::Parameter).
+    pub fn builder() -> crate::model::parameter::Builder {
+        crate::model::parameter::Builder::default()
+    }
+}
+
 /// See [`Parameter`](crate::model::Parameter).
 pub mod parameter {
 
@@ -9701,12 +9745,6 @@ pub mod parameter {
                 supported_engine_modes: self.supported_engine_modes,
             }
         }
-    }
-}
-impl Parameter {
-    /// Creates a new builder-style object to manufacture [`Parameter`](crate::model::Parameter).
-    pub fn builder() -> crate::model::parameter::Builder {
-        crate::model::parameter::Builder::default()
     }
 }
 
@@ -9883,6 +9921,13 @@ impl EventSubscription {
         self.event_subscription_arn.as_deref()
     }
 }
+impl EventSubscription {
+    /// Creates a new builder-style object to manufacture [`EventSubscription`](crate::model::EventSubscription).
+    pub fn builder() -> crate::model::event_subscription::Builder {
+        crate::model::event_subscription::Builder::default()
+    }
+}
+
 /// See [`EventSubscription`](crate::model::EventSubscription).
 pub mod event_subscription {
 
@@ -10058,12 +10103,6 @@ pub mod event_subscription {
         }
     }
 }
-impl EventSubscription {
-    /// Creates a new builder-style object to manufacture [`EventSubscription`](crate::model::EventSubscription).
-    pub fn builder() -> crate::model::event_subscription::Builder {
-        crate::model::event_subscription::Builder::default()
-    }
-}
 
 /// <p>A data type representing an Aurora global database.</p>
 #[non_exhaustive]
@@ -10152,6 +10191,13 @@ impl GlobalCluster {
         self.failover_state.as_ref()
     }
 }
+impl GlobalCluster {
+    /// Creates a new builder-style object to manufacture [`GlobalCluster`](crate::model::GlobalCluster).
+    pub fn builder() -> crate::model::global_cluster::Builder {
+        crate::model::global_cluster::Builder::default()
+    }
+}
+
 /// See [`GlobalCluster`](crate::model::GlobalCluster).
 pub mod global_cluster {
 
@@ -10328,12 +10374,6 @@ pub mod global_cluster {
         }
     }
 }
-impl GlobalCluster {
-    /// Creates a new builder-style object to manufacture [`GlobalCluster`](crate::model::GlobalCluster).
-    pub fn builder() -> crate::model::global_cluster::Builder {
-        crate::model::global_cluster::Builder::default()
-    }
-}
 
 /// <p>Contains the state of scheduled or in-process failover operations on an Aurora global database (<code>GlobalCluster</code>). This Data type is empty unless a failover operation is scheduled or is currently underway on the Aurora global database.</p>
 #[non_exhaustive]
@@ -10373,6 +10413,13 @@ impl FailoverState {
         self.to_db_cluster_arn.as_deref()
     }
 }
+impl FailoverState {
+    /// Creates a new builder-style object to manufacture [`FailoverState`](crate::model::FailoverState).
+    pub fn builder() -> crate::model::failover_state::Builder {
+        crate::model::failover_state::Builder::default()
+    }
+}
+
 /// See [`FailoverState`](crate::model::FailoverState).
 pub mod failover_state {
 
@@ -10442,12 +10489,6 @@ pub mod failover_state {
                 to_db_cluster_arn: self.to_db_cluster_arn,
             }
         }
-    }
-}
-impl FailoverState {
-    /// Creates a new builder-style object to manufacture [`FailoverState`](crate::model::FailoverState).
-    pub fn builder() -> crate::model::failover_state::Builder {
-        crate::model::failover_state::Builder::default()
     }
 }
 
@@ -10583,6 +10624,13 @@ impl GlobalClusterMember {
         self.global_write_forwarding_status.as_ref()
     }
 }
+impl GlobalClusterMember {
+    /// Creates a new builder-style object to manufacture [`GlobalClusterMember`](crate::model::GlobalClusterMember).
+    pub fn builder() -> crate::model::global_cluster_member::Builder {
+        crate::model::global_cluster_member::Builder::default()
+    }
+}
+
 /// See [`GlobalClusterMember`](crate::model::GlobalClusterMember).
 pub mod global_cluster_member {
 
@@ -10666,12 +10714,6 @@ pub mod global_cluster_member {
         }
     }
 }
-impl GlobalClusterMember {
-    /// Creates a new builder-style object to manufacture [`GlobalClusterMember`](crate::model::GlobalClusterMember).
-    pub fn builder() -> crate::model::global_cluster_member::Builder {
-        crate::model::global_cluster_member::Builder::default()
-    }
-}
 
 /// <p>Contains the details for an RDS Proxy target. It represents an RDS DB instance or Aurora DB cluster that the proxy can connect to. One or more targets are associated with an RDS Proxy target group.</p>
 /// <p>This data type is used as a response element in the <code>DescribeDBProxyTargets</code> action.</p>
@@ -10737,6 +10779,13 @@ impl DbProxyTarget {
         self.target_health.as_ref()
     }
 }
+impl DbProxyTarget {
+    /// Creates a new builder-style object to manufacture [`DbProxyTarget`](crate::model::DbProxyTarget).
+    pub fn builder() -> crate::model::db_proxy_target::Builder {
+        crate::model::db_proxy_target::Builder::default()
+    }
+}
+
 /// See [`DbProxyTarget`](crate::model::DbProxyTarget).
 pub mod db_proxy_target {
 
@@ -10858,12 +10907,6 @@ pub mod db_proxy_target {
         }
     }
 }
-impl DbProxyTarget {
-    /// Creates a new builder-style object to manufacture [`DbProxyTarget`](crate::model::DbProxyTarget).
-    pub fn builder() -> crate::model::db_proxy_target::Builder {
-        crate::model::db_proxy_target::Builder::default()
-    }
-}
 
 /// <p>Information about the connection health of an RDS Proxy target.</p>
 #[non_exhaustive]
@@ -10895,6 +10938,13 @@ impl TargetHealth {
         self.description.as_deref()
     }
 }
+impl TargetHealth {
+    /// Creates a new builder-style object to manufacture [`TargetHealth`](crate::model::TargetHealth).
+    pub fn builder() -> crate::model::target_health::Builder {
+        crate::model::target_health::Builder::default()
+    }
+}
+
 /// See [`TargetHealth`](crate::model::TargetHealth).
 pub mod target_health {
 
@@ -10950,12 +11000,6 @@ pub mod target_health {
                 description: self.description,
             }
         }
-    }
-}
-impl TargetHealth {
-    /// Creates a new builder-style object to manufacture [`TargetHealth`](crate::model::TargetHealth).
-    pub fn builder() -> crate::model::target_health::Builder {
-        crate::model::target_health::Builder::default()
     }
 }
 
@@ -11480,6 +11524,13 @@ impl ReservedDbInstance {
         self.lease_id.as_deref()
     }
 }
+impl ReservedDbInstance {
+    /// Creates a new builder-style object to manufacture [`ReservedDbInstance`](crate::model::ReservedDbInstance).
+    pub fn builder() -> crate::model::reserved_db_instance::Builder {
+        crate::model::reserved_db_instance::Builder::default()
+    }
+}
+
 /// See [`ReservedDbInstance`](crate::model::ReservedDbInstance).
 pub mod reserved_db_instance {
 
@@ -11729,12 +11780,6 @@ pub mod reserved_db_instance {
         }
     }
 }
-impl ReservedDbInstance {
-    /// Creates a new builder-style object to manufacture [`ReservedDbInstance`](crate::model::ReservedDbInstance).
-    pub fn builder() -> crate::model::reserved_db_instance::Builder {
-        crate::model::reserved_db_instance::Builder::default()
-    }
-}
 
 /// <p>This data type is used as a response element in the <code>DescribeReservedDBInstances</code> and <code>DescribeReservedDBInstancesOfferings</code> actions.</p>
 #[non_exhaustive]
@@ -11757,6 +11802,13 @@ impl RecurringCharge {
         self.recurring_charge_frequency.as_deref()
     }
 }
+impl RecurringCharge {
+    /// Creates a new builder-style object to manufacture [`RecurringCharge`](crate::model::RecurringCharge).
+    pub fn builder() -> crate::model::recurring_charge::Builder {
+        crate::model::recurring_charge::Builder::default()
+    }
+}
+
 /// See [`RecurringCharge`](crate::model::RecurringCharge).
 pub mod recurring_charge {
 
@@ -11798,12 +11850,6 @@ pub mod recurring_charge {
                 recurring_charge_frequency: self.recurring_charge_frequency,
             }
         }
-    }
-}
-impl RecurringCharge {
-    /// Creates a new builder-style object to manufacture [`RecurringCharge`](crate::model::RecurringCharge).
-    pub fn builder() -> crate::model::recurring_charge::Builder {
-        crate::model::recurring_charge::Builder::default()
     }
 }
 
@@ -11891,6 +11937,13 @@ impl OptionGroup {
         self.copy_timestamp.as_ref()
     }
 }
+impl OptionGroup {
+    /// Creates a new builder-style object to manufacture [`OptionGroup`](crate::model::OptionGroup).
+    pub fn builder() -> crate::model::option_group::Builder {
+        crate::model::option_group::Builder::default()
+    }
+}
+
 /// See [`OptionGroup`](crate::model::OptionGroup).
 pub mod option_group {
 
@@ -12074,12 +12127,6 @@ pub mod option_group {
         }
     }
 }
-impl OptionGroup {
-    /// Creates a new builder-style object to manufacture [`OptionGroup`](crate::model::OptionGroup).
-    pub fn builder() -> crate::model::option_group::Builder {
-        crate::model::option_group::Builder::default()
-    }
-}
 
 /// <p>Option details.</p>
 #[non_exhaustive]
@@ -12157,6 +12204,13 @@ impl Option {
         self.vpc_security_group_memberships.as_deref()
     }
 }
+impl Option {
+    /// Creates a new builder-style object to manufacture [`Option`](crate::model::Option).
+    pub fn builder() -> crate::model::option::Builder {
+        crate::model::option::Builder::default()
+    }
+}
+
 /// See [`Option`](crate::model::Option).
 pub mod option {
 
@@ -12322,12 +12376,6 @@ pub mod option {
         }
     }
 }
-impl Option {
-    /// Creates a new builder-style object to manufacture [`Option`](crate::model::Option).
-    pub fn builder() -> crate::model::option::Builder {
-        crate::model::option::Builder::default()
-    }
-}
 
 /// <p>Option settings are the actual settings being applied or configured for that option. It is used when you modify an option group or describe option groups. For example, the NATIVE_NETWORK_ENCRYPTION option has a setting called SQLNET.ENCRYPTION_SERVER that can have several different values.</p>
 #[non_exhaustive]
@@ -12399,6 +12447,13 @@ impl OptionSetting {
         self.is_collection
     }
 }
+impl OptionSetting {
+    /// Creates a new builder-style object to manufacture [`OptionSetting`](crate::model::OptionSetting).
+    pub fn builder() -> crate::model::option_setting::Builder {
+        crate::model::option_setting::Builder::default()
+    }
+}
+
 /// See [`OptionSetting`](crate::model::OptionSetting).
 pub mod option_setting {
 
@@ -12529,12 +12584,6 @@ pub mod option_setting {
         }
     }
 }
-impl OptionSetting {
-    /// Creates a new builder-style object to manufacture [`OptionSetting`](crate::model::OptionSetting).
-    pub fn builder() -> crate::model::option_setting::Builder {
-        crate::model::option_setting::Builder::default()
-    }
-}
 
 /// <p>A list of all available options</p>
 #[non_exhaustive]
@@ -12585,6 +12634,13 @@ impl OptionConfiguration {
         self.option_settings.as_deref()
     }
 }
+impl OptionConfiguration {
+    /// Creates a new builder-style object to manufacture [`OptionConfiguration`](crate::model::OptionConfiguration).
+    pub fn builder() -> crate::model::option_configuration::Builder {
+        crate::model::option_configuration::Builder::default()
+    }
+}
+
 /// See [`OptionConfiguration`](crate::model::OptionConfiguration).
 pub mod option_configuration {
 
@@ -12711,12 +12767,6 @@ pub mod option_configuration {
         }
     }
 }
-impl OptionConfiguration {
-    /// Creates a new builder-style object to manufacture [`OptionConfiguration`](crate::model::OptionConfiguration).
-    pub fn builder() -> crate::model::option_configuration::Builder {
-        crate::model::option_configuration::Builder::default()
-    }
-}
 
 /// <p>Contains the results of a successful call to the <code>DescribeDBSnapshotAttributes</code> API action.</p>
 /// <p>Manual DB snapshot attributes are used to authorize other Amazon Web Services accounts to copy or restore a manual DB snapshot. For more information, see the <code>ModifyDBSnapshotAttribute</code> API action.</p>
@@ -12743,6 +12793,13 @@ impl DbSnapshotAttributesResult {
         self.db_snapshot_attributes.as_deref()
     }
 }
+impl DbSnapshotAttributesResult {
+    /// Creates a new builder-style object to manufacture [`DbSnapshotAttributesResult`](crate::model::DbSnapshotAttributesResult).
+    pub fn builder() -> crate::model::db_snapshot_attributes_result::Builder {
+        crate::model::db_snapshot_attributes_result::Builder::default()
+    }
+}
+
 /// See [`DbSnapshotAttributesResult`](crate::model::DbSnapshotAttributesResult).
 pub mod db_snapshot_attributes_result {
 
@@ -12796,12 +12853,6 @@ pub mod db_snapshot_attributes_result {
         }
     }
 }
-impl DbSnapshotAttributesResult {
-    /// Creates a new builder-style object to manufacture [`DbSnapshotAttributesResult`](crate::model::DbSnapshotAttributesResult).
-    pub fn builder() -> crate::model::db_snapshot_attributes_result::Builder {
-        crate::model::db_snapshot_attributes_result::Builder::default()
-    }
-}
 
 /// <p>Contains the name and values of a manual DB snapshot attribute</p>
 /// <p>Manual DB snapshot attributes are used to authorize other Amazon Web Services accounts to restore a manual DB snapshot. For more information, see the <code>ModifyDBSnapshotAttribute</code> API.</p>
@@ -12829,6 +12880,13 @@ impl DbSnapshotAttribute {
         self.attribute_values.as_deref()
     }
 }
+impl DbSnapshotAttribute {
+    /// Creates a new builder-style object to manufacture [`DbSnapshotAttribute`](crate::model::DbSnapshotAttribute).
+    pub fn builder() -> crate::model::db_snapshot_attribute::Builder {
+        crate::model::db_snapshot_attribute::Builder::default()
+    }
+}
+
 /// See [`DbSnapshotAttribute`](crate::model::DbSnapshotAttribute).
 pub mod db_snapshot_attribute {
 
@@ -12883,12 +12941,6 @@ pub mod db_snapshot_attribute {
                 attribute_values: self.attribute_values,
             }
         }
-    }
-}
-impl DbSnapshotAttribute {
-    /// Creates a new builder-style object to manufacture [`DbSnapshotAttribute`](crate::model::DbSnapshotAttribute).
-    pub fn builder() -> crate::model::db_snapshot_attribute::Builder {
-        crate::model::db_snapshot_attribute::Builder::default()
     }
 }
 
@@ -13137,6 +13189,13 @@ impl DbSnapshot {
         self.storage_throughput
     }
 }
+impl DbSnapshot {
+    /// Creates a new builder-style object to manufacture [`DbSnapshot`](crate::model::DbSnapshot).
+    pub fn builder() -> crate::model::db_snapshot::Builder {
+        crate::model::db_snapshot::Builder::default()
+    }
+}
+
 /// See [`DbSnapshot`](crate::model::DbSnapshot).
 pub mod db_snapshot {
 
@@ -13634,12 +13693,6 @@ pub mod db_snapshot {
         }
     }
 }
-impl DbSnapshot {
-    /// Creates a new builder-style object to manufacture [`DbSnapshot`](crate::model::DbSnapshot).
-    pub fn builder() -> crate::model::db_snapshot::Builder {
-        crate::model::db_snapshot::Builder::default()
-    }
-}
 
 /// <p>Represents a set of RDS DB instances, Aurora DB clusters, or both that a proxy can connect to. Currently, each target group is associated with exactly one RDS DB instance or Aurora DB cluster.</p>
 /// <p>This data type is used as a response element in the <code>DescribeDBProxyTargetGroups</code> action.</p>
@@ -13707,6 +13760,13 @@ impl DbProxyTargetGroup {
         self.updated_date.as_ref()
     }
 }
+impl DbProxyTargetGroup {
+    /// Creates a new builder-style object to manufacture [`DbProxyTargetGroup`](crate::model::DbProxyTargetGroup).
+    pub fn builder() -> crate::model::db_proxy_target_group::Builder {
+        crate::model::db_proxy_target_group::Builder::default()
+    }
+}
+
 /// See [`DbProxyTargetGroup`](crate::model::DbProxyTargetGroup).
 pub mod db_proxy_target_group {
 
@@ -13841,12 +13901,6 @@ pub mod db_proxy_target_group {
         }
     }
 }
-impl DbProxyTargetGroup {
-    /// Creates a new builder-style object to manufacture [`DbProxyTargetGroup`](crate::model::DbProxyTargetGroup).
-    pub fn builder() -> crate::model::db_proxy_target_group::Builder {
-        crate::model::db_proxy_target_group::Builder::default()
-    }
-}
 
 /// <p>Displays the settings that control the size and behavior of the connection pool associated with a <code>DBProxyTarget</code>.</p>
 #[non_exhaustive]
@@ -13890,6 +13944,13 @@ impl ConnectionPoolConfigurationInfo {
         self.init_query.as_deref()
     }
 }
+impl ConnectionPoolConfigurationInfo {
+    /// Creates a new builder-style object to manufacture [`ConnectionPoolConfigurationInfo`](crate::model::ConnectionPoolConfigurationInfo).
+    pub fn builder() -> crate::model::connection_pool_configuration_info::Builder {
+        crate::model::connection_pool_configuration_info::Builder::default()
+    }
+}
+
 /// See [`ConnectionPoolConfigurationInfo`](crate::model::ConnectionPoolConfigurationInfo).
 pub mod connection_pool_configuration_info {
 
@@ -13975,12 +14036,6 @@ pub mod connection_pool_configuration_info {
         }
     }
 }
-impl ConnectionPoolConfigurationInfo {
-    /// Creates a new builder-style object to manufacture [`ConnectionPoolConfigurationInfo`](crate::model::ConnectionPoolConfigurationInfo).
-    pub fn builder() -> crate::model::connection_pool_configuration_info::Builder {
-        crate::model::connection_pool_configuration_info::Builder::default()
-    }
-}
 
 /// <p>Specifies the settings that control the size and behavior of the connection pool associated with a <code>DBProxyTargetGroup</code>.</p>
 #[non_exhaustive]
@@ -14044,6 +14099,13 @@ impl ConnectionPoolConfiguration {
         self.init_query.as_deref()
     }
 }
+impl ConnectionPoolConfiguration {
+    /// Creates a new builder-style object to manufacture [`ConnectionPoolConfiguration`](crate::model::ConnectionPoolConfiguration).
+    pub fn builder() -> crate::model::connection_pool_configuration::Builder {
+        crate::model::connection_pool_configuration::Builder::default()
+    }
+}
+
 /// See [`ConnectionPoolConfiguration`](crate::model::ConnectionPoolConfiguration).
 pub mod connection_pool_configuration {
 
@@ -14149,12 +14211,6 @@ pub mod connection_pool_configuration {
         }
     }
 }
-impl ConnectionPoolConfiguration {
-    /// Creates a new builder-style object to manufacture [`ConnectionPoolConfiguration`](crate::model::ConnectionPoolConfiguration).
-    pub fn builder() -> crate::model::connection_pool_configuration::Builder {
-        crate::model::connection_pool_configuration::Builder::default()
-    }
-}
 
 /// <p>The data structure representing an endpoint associated with a DB proxy. RDS automatically creates one endpoint for each DB proxy. For Aurora DB clusters, you can associate additional endpoints with the same DB proxy. These endpoints can be read/write or read-only. They can also reside in different VPCs than the associated DB proxy.</p>
 /// <p>This data type is used as a response element in the <code>DescribeDBProxyEndpoints</code> operation.</p>
@@ -14241,6 +14297,13 @@ impl DbProxyEndpoint {
         self.is_default
     }
 }
+impl DbProxyEndpoint {
+    /// Creates a new builder-style object to manufacture [`DbProxyEndpoint`](crate::model::DbProxyEndpoint).
+    pub fn builder() -> crate::model::db_proxy_endpoint::Builder {
+        crate::model::db_proxy_endpoint::Builder::default()
+    }
+}
+
 /// See [`DbProxyEndpoint`](crate::model::DbProxyEndpoint).
 pub mod db_proxy_endpoint {
 
@@ -14423,12 +14486,6 @@ pub mod db_proxy_endpoint {
                 is_default: self.is_default.unwrap_or_default(),
             }
         }
-    }
-}
-impl DbProxyEndpoint {
-    /// Creates a new builder-style object to manufacture [`DbProxyEndpoint`](crate::model::DbProxyEndpoint).
-    pub fn builder() -> crate::model::db_proxy_endpoint::Builder {
-        crate::model::db_proxy_endpoint::Builder::default()
     }
 }
 
@@ -14760,6 +14817,13 @@ impl DbProxy {
         self.updated_date.as_ref()
     }
 }
+impl DbProxy {
+    /// Creates a new builder-style object to manufacture [`DbProxy`](crate::model::DbProxy).
+    pub fn builder() -> crate::model::db_proxy::Builder {
+        crate::model::db_proxy::Builder::default()
+    }
+}
+
 /// See [`DbProxy`](crate::model::DbProxy).
 pub mod db_proxy {
 
@@ -15002,12 +15066,6 @@ pub mod db_proxy {
         }
     }
 }
-impl DbProxy {
-    /// Creates a new builder-style object to manufacture [`DbProxy`](crate::model::DbProxy).
-    pub fn builder() -> crate::model::db_proxy::Builder {
-        crate::model::db_proxy::Builder::default()
-    }
-}
 
 /// <p>Returns the details of authentication used by a proxy to log in as a specific database user.</p>
 #[non_exhaustive]
@@ -15060,6 +15118,13 @@ impl UserAuthConfigInfo {
         self.client_password_auth_type.as_ref()
     }
 }
+impl UserAuthConfigInfo {
+    /// Creates a new builder-style object to manufacture [`UserAuthConfigInfo`](crate::model::UserAuthConfigInfo).
+    pub fn builder() -> crate::model::user_auth_config_info::Builder {
+        crate::model::user_auth_config_info::Builder::default()
+    }
+}
+
 /// See [`UserAuthConfigInfo`](crate::model::UserAuthConfigInfo).
 pub mod user_auth_config_info {
 
@@ -15159,12 +15224,6 @@ pub mod user_auth_config_info {
                 client_password_auth_type: self.client_password_auth_type,
             }
         }
-    }
-}
-impl UserAuthConfigInfo {
-    /// Creates a new builder-style object to manufacture [`UserAuthConfigInfo`](crate::model::UserAuthConfigInfo).
-    pub fn builder() -> crate::model::user_auth_config_info::Builder {
-        crate::model::user_auth_config_info::Builder::default()
     }
 }
 
@@ -15641,6 +15700,13 @@ impl UserAuthConfig {
         self.client_password_auth_type.as_ref()
     }
 }
+impl UserAuthConfig {
+    /// Creates a new builder-style object to manufacture [`UserAuthConfig`](crate::model::UserAuthConfig).
+    pub fn builder() -> crate::model::user_auth_config::Builder {
+        crate::model::user_auth_config::Builder::default()
+    }
+}
+
 /// See [`UserAuthConfig`](crate::model::UserAuthConfig).
 pub mod user_auth_config {
 
@@ -15742,12 +15808,6 @@ pub mod user_auth_config {
         }
     }
 }
-impl UserAuthConfig {
-    /// Creates a new builder-style object to manufacture [`UserAuthConfig`](crate::model::UserAuthConfig).
-    pub fn builder() -> crate::model::user_auth_config::Builder {
-        crate::model::user_auth_config::Builder::default()
-    }
-}
 
 /// <p>The configuration setting for the log types to be enabled for export to CloudWatch Logs for a specific DB instance or DB cluster.</p>
 /// <p>The <code>EnableLogTypes</code> and <code>DisableLogTypes</code> arrays determine which logs will be exported (or not exported) to CloudWatch Logs. The values within these arrays depend on the DB engine being used.</p>
@@ -15773,6 +15833,13 @@ impl CloudwatchLogsExportConfiguration {
         self.disable_log_types.as_deref()
     }
 }
+impl CloudwatchLogsExportConfiguration {
+    /// Creates a new builder-style object to manufacture [`CloudwatchLogsExportConfiguration`](crate::model::CloudwatchLogsExportConfiguration).
+    pub fn builder() -> crate::model::cloudwatch_logs_export_configuration::Builder {
+        crate::model::cloudwatch_logs_export_configuration::Builder::default()
+    }
+}
+
 /// See [`CloudwatchLogsExportConfiguration`](crate::model::CloudwatchLogsExportConfiguration).
 pub mod cloudwatch_logs_export_configuration {
 
@@ -15831,12 +15898,6 @@ pub mod cloudwatch_logs_export_configuration {
         }
     }
 }
-impl CloudwatchLogsExportConfiguration {
-    /// Creates a new builder-style object to manufacture [`CloudwatchLogsExportConfiguration`](crate::model::CloudwatchLogsExportConfiguration).
-    pub fn builder() -> crate::model::cloudwatch_logs_export_configuration::Builder {
-        crate::model::cloudwatch_logs_export_configuration::Builder::default()
-    }
-}
 
 /// <p>Contains the results of a successful call to the <code>DescribeDBClusterSnapshotAttributes</code> API action.</p>
 /// <p>Manual DB cluster snapshot attributes are used to authorize other Amazon Web Services accounts to copy or restore a manual DB cluster snapshot. For more information, see the <code>ModifyDBClusterSnapshotAttribute</code> API action.</p>
@@ -15863,6 +15924,13 @@ impl DbClusterSnapshotAttributesResult {
         self.db_cluster_snapshot_attributes.as_deref()
     }
 }
+impl DbClusterSnapshotAttributesResult {
+    /// Creates a new builder-style object to manufacture [`DbClusterSnapshotAttributesResult`](crate::model::DbClusterSnapshotAttributesResult).
+    pub fn builder() -> crate::model::db_cluster_snapshot_attributes_result::Builder {
+        crate::model::db_cluster_snapshot_attributes_result::Builder::default()
+    }
+}
+
 /// See [`DbClusterSnapshotAttributesResult`](crate::model::DbClusterSnapshotAttributesResult).
 pub mod db_cluster_snapshot_attributes_result {
 
@@ -15922,12 +15990,6 @@ pub mod db_cluster_snapshot_attributes_result {
         }
     }
 }
-impl DbClusterSnapshotAttributesResult {
-    /// Creates a new builder-style object to manufacture [`DbClusterSnapshotAttributesResult`](crate::model::DbClusterSnapshotAttributesResult).
-    pub fn builder() -> crate::model::db_cluster_snapshot_attributes_result::Builder {
-        crate::model::db_cluster_snapshot_attributes_result::Builder::default()
-    }
-}
 
 /// <p>Contains the name and values of a manual DB cluster snapshot attribute.</p>
 /// <p>Manual DB cluster snapshot attributes are used to authorize other Amazon Web Services accounts to restore a manual DB cluster snapshot. For more information, see the <code>ModifyDBClusterSnapshotAttribute</code> API action.</p>
@@ -15955,6 +16017,13 @@ impl DbClusterSnapshotAttribute {
         self.attribute_values.as_deref()
     }
 }
+impl DbClusterSnapshotAttribute {
+    /// Creates a new builder-style object to manufacture [`DbClusterSnapshotAttribute`](crate::model::DbClusterSnapshotAttribute).
+    pub fn builder() -> crate::model::db_cluster_snapshot_attribute::Builder {
+        crate::model::db_cluster_snapshot_attribute::Builder::default()
+    }
+}
+
 /// See [`DbClusterSnapshotAttribute`](crate::model::DbClusterSnapshotAttribute).
 pub mod db_cluster_snapshot_attribute {
 
@@ -16011,12 +16080,6 @@ pub mod db_cluster_snapshot_attribute {
         }
     }
 }
-impl DbClusterSnapshotAttribute {
-    /// Creates a new builder-style object to manufacture [`DbClusterSnapshotAttribute`](crate::model::DbClusterSnapshotAttribute).
-    pub fn builder() -> crate::model::db_cluster_snapshot_attribute::Builder {
-        crate::model::db_cluster_snapshot_attribute::Builder::default()
-    }
-}
 
 /// <p>A time zone associated with a <code>DBInstance</code> or a <code>DBSnapshot</code>. This data type is an element in the response to the <code>DescribeDBInstances</code>, the <code>DescribeDBSnapshots</code>, and the <code>DescribeDBEngineVersions</code> actions.</p>
 #[non_exhaustive]
@@ -16032,6 +16095,13 @@ impl Timezone {
         self.timezone_name.as_deref()
     }
 }
+impl Timezone {
+    /// Creates a new builder-style object to manufacture [`Timezone`](crate::model::Timezone).
+    pub fn builder() -> crate::model::timezone::Builder {
+        crate::model::timezone::Builder::default()
+    }
+}
+
 /// See [`Timezone`](crate::model::Timezone).
 pub mod timezone {
 
@@ -16061,12 +16131,6 @@ pub mod timezone {
                 timezone_name: self.timezone_name,
             }
         }
-    }
-}
-impl Timezone {
-    /// Creates a new builder-style object to manufacture [`Timezone`](crate::model::Timezone).
-    pub fn builder() -> crate::model::timezone::Builder {
-        crate::model::timezone::Builder::default()
     }
 }
 
@@ -16140,6 +16204,13 @@ impl UpgradeTarget {
         self.supports_babelfish
     }
 }
+impl UpgradeTarget {
+    /// Creates a new builder-style object to manufacture [`UpgradeTarget`](crate::model::UpgradeTarget).
+    pub fn builder() -> crate::model::upgrade_target::Builder {
+        crate::model::upgrade_target::Builder::default()
+    }
+}
+
 /// See [`UpgradeTarget`](crate::model::UpgradeTarget).
 pub mod upgrade_target {
 
@@ -16276,12 +16347,6 @@ pub mod upgrade_target {
         }
     }
 }
-impl UpgradeTarget {
-    /// Creates a new builder-style object to manufacture [`UpgradeTarget`](crate::model::UpgradeTarget).
-    pub fn builder() -> crate::model::upgrade_target::Builder {
-        crate::model::upgrade_target::Builder::default()
-    }
-}
 
 /// <p>This data type is used as a response element in the action <code>DescribeDBEngineVersions</code>.</p>
 #[non_exhaustive]
@@ -16304,6 +16369,13 @@ impl CharacterSet {
         self.character_set_description.as_deref()
     }
 }
+impl CharacterSet {
+    /// Creates a new builder-style object to manufacture [`CharacterSet`](crate::model::CharacterSet).
+    pub fn builder() -> crate::model::character_set::Builder {
+        crate::model::character_set::Builder::default()
+    }
+}
+
 /// See [`CharacterSet`](crate::model::CharacterSet).
 pub mod character_set {
 
@@ -16350,12 +16422,6 @@ pub mod character_set {
         }
     }
 }
-impl CharacterSet {
-    /// Creates a new builder-style object to manufacture [`CharacterSet`](crate::model::CharacterSet).
-    pub fn builder() -> crate::model::character_set::Builder {
-        crate::model::character_set::Builder::default()
-    }
-}
 
 /// <p>A value that indicates the AMI information.</p>
 #[non_exhaustive]
@@ -16378,6 +16444,13 @@ impl CustomDbEngineVersionAmi {
         self.status.as_deref()
     }
 }
+impl CustomDbEngineVersionAmi {
+    /// Creates a new builder-style object to manufacture [`CustomDbEngineVersionAmi`](crate::model::CustomDbEngineVersionAmi).
+    pub fn builder() -> crate::model::custom_db_engine_version_ami::Builder {
+        crate::model::custom_db_engine_version_ami::Builder::default()
+    }
+}
+
 /// See [`CustomDbEngineVersionAmi`](crate::model::CustomDbEngineVersionAmi).
 pub mod custom_db_engine_version_ami {
 
@@ -16416,12 +16489,6 @@ pub mod custom_db_engine_version_ami {
                 status: self.status,
             }
         }
-    }
-}
-impl CustomDbEngineVersionAmi {
-    /// Creates a new builder-style object to manufacture [`CustomDbEngineVersionAmi`](crate::model::CustomDbEngineVersionAmi).
-    pub fn builder() -> crate::model::custom_db_engine_version_ami::Builder {
-        crate::model::custom_db_engine_version_ami::Builder::default()
     }
 }
 
@@ -16586,6 +16653,13 @@ impl Certificate {
         self.customer_override_valid_till.as_ref()
     }
 }
+impl Certificate {
+    /// Creates a new builder-style object to manufacture [`Certificate`](crate::model::Certificate).
+    pub fn builder() -> crate::model::certificate::Builder {
+        crate::model::certificate::Builder::default()
+    }
+}
+
 /// See [`Certificate`](crate::model::Certificate).
 pub mod certificate {
 
@@ -16716,12 +16790,6 @@ pub mod certificate {
         }
     }
 }
-impl Certificate {
-    /// Creates a new builder-style object to manufacture [`Certificate`](crate::model::Certificate).
-    pub fn builder() -> crate::model::certificate::Builder {
-        crate::model::certificate::Builder::default()
-    }
-}
 
 /// When writing a match expression against `AuditPolicyState`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -16844,6 +16912,13 @@ impl Filter {
         self.values.as_deref()
     }
 }
+impl Filter {
+    /// Creates a new builder-style object to manufacture [`Filter`](crate::model::Filter).
+    pub fn builder() -> crate::model::filter::Builder {
+        crate::model::filter::Builder::default()
+    }
+}
+
 /// See [`Filter`](crate::model::Filter).
 pub mod filter {
 
@@ -16893,12 +16968,6 @@ pub mod filter {
         }
     }
 }
-impl Filter {
-    /// Creates a new builder-style object to manufacture [`Filter`](crate::model::Filter).
-    pub fn builder() -> crate::model::filter::Builder {
-        crate::model::filter::Builder::default()
-    }
-}
 
 /// <p>Information about valid modifications that you can make to your DB instance. Contains the result of a successful call to the <code>DescribeValidDBInstanceModifications</code> action. You can use this information when you call <code>ModifyDBInstance</code>.</p>
 #[non_exhaustive]
@@ -16924,6 +16993,13 @@ impl ValidDbInstanceModificationsMessage {
         self.valid_processor_features.as_deref()
     }
 }
+impl ValidDbInstanceModificationsMessage {
+    /// Creates a new builder-style object to manufacture [`ValidDbInstanceModificationsMessage`](crate::model::ValidDbInstanceModificationsMessage).
+    pub fn builder() -> crate::model::valid_db_instance_modifications_message::Builder {
+        crate::model::valid_db_instance_modifications_message::Builder::default()
+    }
+}
+
 /// See [`ValidDbInstanceModificationsMessage`](crate::model::ValidDbInstanceModificationsMessage).
 pub mod valid_db_instance_modifications_message {
 
@@ -16986,12 +17062,6 @@ pub mod valid_db_instance_modifications_message {
         }
     }
 }
-impl ValidDbInstanceModificationsMessage {
-    /// Creates a new builder-style object to manufacture [`ValidDbInstanceModificationsMessage`](crate::model::ValidDbInstanceModificationsMessage).
-    pub fn builder() -> crate::model::valid_db_instance_modifications_message::Builder {
-        crate::model::valid_db_instance_modifications_message::Builder::default()
-    }
-}
 
 /// <p>Contains the available processor feature information for the DB instance class of a DB instance.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html#USER_ConfigureProcessor">Configuring the Processor of the DB Instance Class</a> in the <i>Amazon RDS User Guide. </i> </p>
@@ -17022,6 +17092,13 @@ impl AvailableProcessorFeature {
         self.allowed_values.as_deref()
     }
 }
+impl AvailableProcessorFeature {
+    /// Creates a new builder-style object to manufacture [`AvailableProcessorFeature`](crate::model::AvailableProcessorFeature).
+    pub fn builder() -> crate::model::available_processor_feature::Builder {
+        crate::model::available_processor_feature::Builder::default()
+    }
+}
+
 /// See [`AvailableProcessorFeature`](crate::model::AvailableProcessorFeature).
 pub mod available_processor_feature {
 
@@ -17078,12 +17155,6 @@ pub mod available_processor_feature {
                 allowed_values: self.allowed_values,
             }
         }
-    }
-}
-impl AvailableProcessorFeature {
-    /// Creates a new builder-style object to manufacture [`AvailableProcessorFeature`](crate::model::AvailableProcessorFeature).
-    pub fn builder() -> crate::model::available_processor_feature::Builder {
-        crate::model::available_processor_feature::Builder::default()
     }
 }
 
@@ -17146,6 +17217,13 @@ impl ValidStorageOptions {
         self.storage_throughput_to_iops_ratio.as_deref()
     }
 }
+impl ValidStorageOptions {
+    /// Creates a new builder-style object to manufacture [`ValidStorageOptions`](crate::model::ValidStorageOptions).
+    pub fn builder() -> crate::model::valid_storage_options::Builder {
+        crate::model::valid_storage_options::Builder::default()
+    }
+}
+
 /// See [`ValidStorageOptions`](crate::model::ValidStorageOptions).
 pub mod valid_storage_options {
 
@@ -17300,12 +17378,6 @@ pub mod valid_storage_options {
         }
     }
 }
-impl ValidStorageOptions {
-    /// Creates a new builder-style object to manufacture [`ValidStorageOptions`](crate::model::ValidStorageOptions).
-    pub fn builder() -> crate::model::valid_storage_options::Builder {
-        crate::model::valid_storage_options::Builder::default()
-    }
-}
 
 /// <p>A range of double values.</p>
 #[non_exhaustive]
@@ -17328,6 +17400,13 @@ impl DoubleRange {
         self.to
     }
 }
+impl DoubleRange {
+    /// Creates a new builder-style object to manufacture [`DoubleRange`](crate::model::DoubleRange).
+    pub fn builder() -> crate::model::double_range::Builder {
+        crate::model::double_range::Builder::default()
+    }
+}
+
 /// See [`DoubleRange`](crate::model::DoubleRange).
 pub mod double_range {
 
@@ -17368,12 +17447,6 @@ pub mod double_range {
         }
     }
 }
-impl DoubleRange {
-    /// Creates a new builder-style object to manufacture [`DoubleRange`](crate::model::DoubleRange).
-    pub fn builder() -> crate::model::double_range::Builder {
-        crate::model::double_range::Builder::default()
-    }
-}
 
 /// <p>A range of integer values.</p>
 #[non_exhaustive]
@@ -17403,6 +17476,13 @@ impl Range {
         self.step
     }
 }
+impl Range {
+    /// Creates a new builder-style object to manufacture [`Range`](crate::model::Range).
+    pub fn builder() -> crate::model::range::Builder {
+        crate::model::range::Builder::default()
+    }
+}
+
 /// See [`Range`](crate::model::Range).
 pub mod range {
 
@@ -17455,12 +17535,6 @@ pub mod range {
         }
     }
 }
-impl Range {
-    /// Creates a new builder-style object to manufacture [`Range`](crate::model::Range).
-    pub fn builder() -> crate::model::range::Builder {
-        crate::model::range::Builder::default()
-    }
-}
 
 /// <p>Contains an Amazon Web Services Region name as the result of a successful call to the <code>DescribeSourceRegions</code> action.</p>
 #[non_exhaustive]
@@ -17497,6 +17571,13 @@ impl SourceRegion {
         self.supports_db_instance_automated_backups_replication
     }
 }
+impl SourceRegion {
+    /// Creates a new builder-style object to manufacture [`SourceRegion`](crate::model::SourceRegion).
+    pub fn builder() -> crate::model::source_region::Builder {
+        crate::model::source_region::Builder::default()
+    }
+}
+
 /// See [`SourceRegion`](crate::model::SourceRegion).
 pub mod source_region {
 
@@ -17564,12 +17645,6 @@ pub mod source_region {
                     .unwrap_or_default(),
             }
         }
-    }
-}
-impl SourceRegion {
-    /// Creates a new builder-style object to manufacture [`SourceRegion`](crate::model::SourceRegion).
-    pub fn builder() -> crate::model::source_region::Builder {
-        crate::model::source_region::Builder::default()
     }
 }
 
@@ -17650,6 +17725,13 @@ impl ReservedDbInstancesOffering {
         self.recurring_charges.as_deref()
     }
 }
+impl ReservedDbInstancesOffering {
+    /// Creates a new builder-style object to manufacture [`ReservedDbInstancesOffering`](crate::model::ReservedDbInstancesOffering).
+    pub fn builder() -> crate::model::reserved_db_instances_offering::Builder {
+        crate::model::reserved_db_instances_offering::Builder::default()
+    }
+}
+
 /// See [`ReservedDbInstancesOffering`](crate::model::ReservedDbInstancesOffering).
 pub mod reserved_db_instances_offering {
 
@@ -17814,12 +17896,6 @@ pub mod reserved_db_instances_offering {
         }
     }
 }
-impl ReservedDbInstancesOffering {
-    /// Creates a new builder-style object to manufacture [`ReservedDbInstancesOffering`](crate::model::ReservedDbInstancesOffering).
-    pub fn builder() -> crate::model::reserved_db_instances_offering::Builder {
-        crate::model::reserved_db_instances_offering::Builder::default()
-    }
-}
 
 /// <p>Describes the pending maintenance actions for a resource.</p>
 #[non_exhaustive]
@@ -17845,6 +17921,13 @@ impl ResourcePendingMaintenanceActions {
         self.pending_maintenance_action_details.as_deref()
     }
 }
+impl ResourcePendingMaintenanceActions {
+    /// Creates a new builder-style object to manufacture [`ResourcePendingMaintenanceActions`](crate::model::ResourcePendingMaintenanceActions).
+    pub fn builder() -> crate::model::resource_pending_maintenance_actions::Builder {
+        crate::model::resource_pending_maintenance_actions::Builder::default()
+    }
+}
+
 /// See [`ResourcePendingMaintenanceActions`](crate::model::ResourcePendingMaintenanceActions).
 pub mod resource_pending_maintenance_actions {
 
@@ -17901,12 +17984,6 @@ pub mod resource_pending_maintenance_actions {
         }
     }
 }
-impl ResourcePendingMaintenanceActions {
-    /// Creates a new builder-style object to manufacture [`ResourcePendingMaintenanceActions`](crate::model::ResourcePendingMaintenanceActions).
-    pub fn builder() -> crate::model::resource_pending_maintenance_actions::Builder {
-        crate::model::resource_pending_maintenance_actions::Builder::default()
-    }
-}
 
 /// <p>Provides information about a pending maintenance action for a resource.</p>
 #[non_exhaustive]
@@ -17959,6 +18036,13 @@ impl PendingMaintenanceAction {
         self.description.as_deref()
     }
 }
+impl PendingMaintenanceAction {
+    /// Creates a new builder-style object to manufacture [`PendingMaintenanceAction`](crate::model::PendingMaintenanceAction).
+    pub fn builder() -> crate::model::pending_maintenance_action::Builder {
+        crate::model::pending_maintenance_action::Builder::default()
+    }
+}
+
 /// See [`PendingMaintenanceAction`](crate::model::PendingMaintenanceAction).
 pub mod pending_maintenance_action {
 
@@ -18059,12 +18143,6 @@ pub mod pending_maintenance_action {
                 description: self.description,
             }
         }
-    }
-}
-impl PendingMaintenanceAction {
-    /// Creates a new builder-style object to manufacture [`PendingMaintenanceAction`](crate::model::PendingMaintenanceAction).
-    pub fn builder() -> crate::model::pending_maintenance_action::Builder {
-        crate::model::pending_maintenance_action::Builder::default()
     }
 }
 
@@ -18332,6 +18410,13 @@ impl OrderableDbInstanceOption {
         self.max_storage_throughput_per_iops
     }
 }
+impl OrderableDbInstanceOption {
+    /// Creates a new builder-style object to manufacture [`OrderableDbInstanceOption`](crate::model::OrderableDbInstanceOption).
+    pub fn builder() -> crate::model::orderable_db_instance_option::Builder {
+        crate::model::orderable_db_instance_option::Builder::default()
+    }
+}
+
 /// See [`OrderableDbInstanceOption`](crate::model::OrderableDbInstanceOption).
 pub mod orderable_db_instance_option {
 
@@ -18873,12 +18958,6 @@ pub mod orderable_db_instance_option {
         }
     }
 }
-impl OrderableDbInstanceOption {
-    /// Creates a new builder-style object to manufacture [`OrderableDbInstanceOption`](crate::model::OrderableDbInstanceOption).
-    pub fn builder() -> crate::model::orderable_db_instance_option::Builder {
-        crate::model::orderable_db_instance_option::Builder::default()
-    }
-}
 
 /// <p>Available option.</p>
 #[non_exhaustive]
@@ -19012,6 +19091,13 @@ impl OptionGroupOption {
         self.copyable_cross_account
     }
 }
+impl OptionGroupOption {
+    /// Creates a new builder-style object to manufacture [`OptionGroupOption`](crate::model::OptionGroupOption).
+    pub fn builder() -> crate::model::option_group_option::Builder {
+        crate::model::option_group_option::Builder::default()
+    }
+}
+
 /// See [`OptionGroupOption`](crate::model::OptionGroupOption).
 pub mod option_group_option {
 
@@ -19290,12 +19376,6 @@ pub mod option_group_option {
         }
     }
 }
-impl OptionGroupOption {
-    /// Creates a new builder-style object to manufacture [`OptionGroupOption`](crate::model::OptionGroupOption).
-    pub fn builder() -> crate::model::option_group_option::Builder {
-        crate::model::option_group_option::Builder::default()
-    }
-}
 
 /// <p>The version for an option. Option group option versions are returned by the <code>DescribeOptionGroupOptions</code> action.</p>
 #[non_exhaustive]
@@ -19318,6 +19398,13 @@ impl OptionVersion {
         self.is_default
     }
 }
+impl OptionVersion {
+    /// Creates a new builder-style object to manufacture [`OptionVersion`](crate::model::OptionVersion).
+    pub fn builder() -> crate::model::option_version::Builder {
+        crate::model::option_version::Builder::default()
+    }
+}
+
 /// See [`OptionVersion`](crate::model::OptionVersion).
 pub mod option_version {
 
@@ -19356,12 +19443,6 @@ pub mod option_version {
                 is_default: self.is_default.unwrap_or_default(),
             }
         }
-    }
-}
-impl OptionVersion {
-    /// Creates a new builder-style object to manufacture [`OptionVersion`](crate::model::OptionVersion).
-    pub fn builder() -> crate::model::option_version::Builder {
-        crate::model::option_version::Builder::default()
     }
 }
 
@@ -19431,6 +19512,13 @@ impl OptionGroupOptionSetting {
         self.minimum_engine_version_per_allowed_value.as_deref()
     }
 }
+impl OptionGroupOptionSetting {
+    /// Creates a new builder-style object to manufacture [`OptionGroupOptionSetting`](crate::model::OptionGroupOptionSetting).
+    pub fn builder() -> crate::model::option_group_option_setting::Builder {
+        crate::model::option_group_option_setting::Builder::default()
+    }
+}
+
 /// See [`OptionGroupOptionSetting`](crate::model::OptionGroupOptionSetting).
 pub mod option_group_option_setting {
 
@@ -19570,12 +19658,6 @@ pub mod option_group_option_setting {
         }
     }
 }
-impl OptionGroupOptionSetting {
-    /// Creates a new builder-style object to manufacture [`OptionGroupOptionSetting`](crate::model::OptionGroupOptionSetting).
-    pub fn builder() -> crate::model::option_group_option_setting::Builder {
-        crate::model::option_group_option_setting::Builder::default()
-    }
-}
 
 /// <p>The minimum DB engine version required for each corresponding allowed value for an option setting.</p>
 #[non_exhaustive]
@@ -19598,6 +19680,13 @@ impl MinimumEngineVersionPerAllowedValue {
         self.minimum_engine_version.as_deref()
     }
 }
+impl MinimumEngineVersionPerAllowedValue {
+    /// Creates a new builder-style object to manufacture [`MinimumEngineVersionPerAllowedValue`](crate::model::MinimumEngineVersionPerAllowedValue).
+    pub fn builder() -> crate::model::minimum_engine_version_per_allowed_value::Builder {
+        crate::model::minimum_engine_version_per_allowed_value::Builder::default()
+    }
+}
+
 /// See [`MinimumEngineVersionPerAllowedValue`](crate::model::MinimumEngineVersionPerAllowedValue).
 pub mod minimum_engine_version_per_allowed_value {
 
@@ -19642,12 +19731,6 @@ pub mod minimum_engine_version_per_allowed_value {
                 minimum_engine_version: self.minimum_engine_version,
             }
         }
-    }
-}
-impl MinimumEngineVersionPerAllowedValue {
-    /// Creates a new builder-style object to manufacture [`MinimumEngineVersionPerAllowedValue`](crate::model::MinimumEngineVersionPerAllowedValue).
-    pub fn builder() -> crate::model::minimum_engine_version_per_allowed_value::Builder {
-        crate::model::minimum_engine_version_per_allowed_value::Builder::default()
     }
 }
 
@@ -19783,6 +19866,13 @@ impl ExportTask {
         self.source_type.as_ref()
     }
 }
+impl ExportTask {
+    /// Creates a new builder-style object to manufacture [`ExportTask`](crate::model::ExportTask).
+    pub fn builder() -> crate::model::export_task::Builder {
+        crate::model::export_task::Builder::default()
+    }
+}
+
 /// See [`ExportTask`](crate::model::ExportTask).
 pub mod export_task {
 
@@ -20033,12 +20123,6 @@ pub mod export_task {
         }
     }
 }
-impl ExportTask {
-    /// Creates a new builder-style object to manufacture [`ExportTask`](crate::model::ExportTask).
-    pub fn builder() -> crate::model::export_task::Builder {
-        crate::model::export_task::Builder::default()
-    }
-}
 
 /// <p>This data type is used as a response element in the <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeEvents.html">DescribeEvents</a> action.</p>
 #[non_exhaustive]
@@ -20089,6 +20173,13 @@ impl Event {
         self.source_arn.as_deref()
     }
 }
+impl Event {
+    /// Creates a new builder-style object to manufacture [`Event`](crate::model::Event).
+    pub fn builder() -> crate::model::event::Builder {
+        crate::model::event::Builder::default()
+    }
+}
+
 /// See [`Event`](crate::model::Event).
 pub mod event {
 
@@ -20190,12 +20281,6 @@ pub mod event {
                 source_arn: self.source_arn,
             }
         }
-    }
-}
-impl Event {
-    /// Creates a new builder-style object to manufacture [`Event`](crate::model::Event).
-    pub fn builder() -> crate::model::event::Builder {
-        crate::model::event::Builder::default()
     }
 }
 
@@ -20355,6 +20440,13 @@ impl EventCategoriesMap {
         self.event_categories.as_deref()
     }
 }
+impl EventCategoriesMap {
+    /// Creates a new builder-style object to manufacture [`EventCategoriesMap`](crate::model::EventCategoriesMap).
+    pub fn builder() -> crate::model::event_categories_map::Builder {
+        crate::model::event_categories_map::Builder::default()
+    }
+}
+
 /// See [`EventCategoriesMap`](crate::model::EventCategoriesMap).
 pub mod event_categories_map {
 
@@ -20404,12 +20496,6 @@ pub mod event_categories_map {
         }
     }
 }
-impl EventCategoriesMap {
-    /// Creates a new builder-style object to manufacture [`EventCategoriesMap`](crate::model::EventCategoriesMap).
-    pub fn builder() -> crate::model::event_categories_map::Builder {
-        crate::model::event_categories_map::Builder::default()
-    }
-}
 
 /// <p>Contains the result of a successful invocation of the <code>DescribeEngineDefaultParameters</code> action.</p>
 #[non_exhaustive]
@@ -20439,6 +20525,13 @@ impl EngineDefaults {
         self.parameters.as_deref()
     }
 }
+impl EngineDefaults {
+    /// Creates a new builder-style object to manufacture [`EngineDefaults`](crate::model::EngineDefaults).
+    pub fn builder() -> crate::model::engine_defaults::Builder {
+        crate::model::engine_defaults::Builder::default()
+    }
+}
+
 /// See [`EngineDefaults`](crate::model::EngineDefaults).
 pub mod engine_defaults {
 
@@ -20503,12 +20596,6 @@ pub mod engine_defaults {
         }
     }
 }
-impl EngineDefaults {
-    /// Creates a new builder-style object to manufacture [`EngineDefaults`](crate::model::EngineDefaults).
-    pub fn builder() -> crate::model::engine_defaults::Builder {
-        crate::model::engine_defaults::Builder::default()
-    }
-}
 
 /// <p>Contains the details of an Amazon RDS DB parameter group.</p>
 /// <p>This data type is used as a response element in the <code>DescribeDBParameterGroups</code> action.</p>
@@ -20546,6 +20633,13 @@ impl DbParameterGroup {
         self.db_parameter_group_arn.as_deref()
     }
 }
+impl DbParameterGroup {
+    /// Creates a new builder-style object to manufacture [`DbParameterGroup`](crate::model::DbParameterGroup).
+    pub fn builder() -> crate::model::db_parameter_group::Builder {
+        crate::model::db_parameter_group::Builder::default()
+    }
+}
+
 /// See [`DbParameterGroup`](crate::model::DbParameterGroup).
 pub mod db_parameter_group {
 
@@ -20619,12 +20713,6 @@ pub mod db_parameter_group {
         }
     }
 }
-impl DbParameterGroup {
-    /// Creates a new builder-style object to manufacture [`DbParameterGroup`](crate::model::DbParameterGroup).
-    pub fn builder() -> crate::model::db_parameter_group::Builder {
-        crate::model::db_parameter_group::Builder::default()
-    }
-}
 
 /// <p>This data type is used as a response element to <code>DescribeDBLogFiles</code>.</p>
 #[non_exhaustive]
@@ -20654,6 +20742,13 @@ impl DescribeDbLogFilesDetails {
         self.size
     }
 }
+impl DescribeDbLogFilesDetails {
+    /// Creates a new builder-style object to manufacture [`DescribeDbLogFilesDetails`](crate::model::DescribeDbLogFilesDetails).
+    pub fn builder() -> crate::model::describe_db_log_files_details::Builder {
+        crate::model::describe_db_log_files_details::Builder::default()
+    }
+}
+
 /// See [`DescribeDbLogFilesDetails`](crate::model::DescribeDbLogFilesDetails).
 pub mod describe_db_log_files_details {
 
@@ -20707,12 +20802,6 @@ pub mod describe_db_log_files_details {
                 size: self.size.unwrap_or_default(),
             }
         }
-    }
-}
-impl DescribeDbLogFilesDetails {
-    /// Creates a new builder-style object to manufacture [`DescribeDbLogFilesDetails`](crate::model::DescribeDbLogFilesDetails).
-    pub fn builder() -> crate::model::describe_db_log_files_details::Builder {
-        crate::model::describe_db_log_files_details::Builder::default()
     }
 }
 
@@ -20968,6 +21057,13 @@ impl DbEngineVersion {
         self.supported_ca_certificate_identifiers.as_deref()
     }
 }
+impl DbEngineVersion {
+    /// Creates a new builder-style object to manufacture [`DbEngineVersion`](crate::model::DbEngineVersion).
+    pub fn builder() -> crate::model::db_engine_version::Builder {
+        crate::model::db_engine_version::Builder::default()
+    }
+}
+
 /// See [`DbEngineVersion`](crate::model::DbEngineVersion).
 pub mod db_engine_version {
 
@@ -21530,12 +21626,6 @@ pub mod db_engine_version {
         }
     }
 }
-impl DbEngineVersion {
-    /// Creates a new builder-style object to manufacture [`DbEngineVersion`](crate::model::DbEngineVersion).
-    pub fn builder() -> crate::model::db_engine_version::Builder {
-        crate::model::db_engine_version::Builder::default()
-    }
-}
 
 /// <p>Contains the details for an Amazon RDS DB cluster snapshot</p>
 /// <p>This data type is used as a response element in the <code>DescribeDBClusterSnapshots</code> action.</p>
@@ -21718,6 +21808,13 @@ impl DbClusterSnapshot {
         self.db_system_id.as_deref()
     }
 }
+impl DbClusterSnapshot {
+    /// Creates a new builder-style object to manufacture [`DbClusterSnapshot`](crate::model::DbClusterSnapshot).
+    pub fn builder() -> crate::model::db_cluster_snapshot::Builder {
+        crate::model::db_cluster_snapshot::Builder::default()
+    }
+}
+
 /// See [`DbClusterSnapshot`](crate::model::DbClusterSnapshot).
 pub mod db_cluster_snapshot {
 
@@ -22081,12 +22178,6 @@ pub mod db_cluster_snapshot {
         }
     }
 }
-impl DbClusterSnapshot {
-    /// Creates a new builder-style object to manufacture [`DbClusterSnapshot`](crate::model::DbClusterSnapshot).
-    pub fn builder() -> crate::model::db_cluster_snapshot::Builder {
-        crate::model::db_cluster_snapshot::Builder::default()
-    }
-}
 
 /// <p>Contains the details of an Amazon RDS DB cluster parameter group.</p>
 /// <p>This data type is used as a response element in the <code>DescribeDBClusterParameterGroups</code> action.</p>
@@ -22124,6 +22215,13 @@ impl DbClusterParameterGroup {
         self.db_cluster_parameter_group_arn.as_deref()
     }
 }
+impl DbClusterParameterGroup {
+    /// Creates a new builder-style object to manufacture [`DbClusterParameterGroup`](crate::model::DbClusterParameterGroup).
+    pub fn builder() -> crate::model::db_cluster_parameter_group::Builder {
+        crate::model::db_cluster_parameter_group::Builder::default()
+    }
+}
+
 /// See [`DbClusterParameterGroup`](crate::model::DbClusterParameterGroup).
 pub mod db_cluster_parameter_group {
 
@@ -22201,12 +22299,6 @@ pub mod db_cluster_parameter_group {
                 db_cluster_parameter_group_arn: self.db_cluster_parameter_group_arn,
             }
         }
-    }
-}
-impl DbClusterParameterGroup {
-    /// Creates a new builder-style object to manufacture [`DbClusterParameterGroup`](crate::model::DbClusterParameterGroup).
-    pub fn builder() -> crate::model::db_cluster_parameter_group::Builder {
-        crate::model::db_cluster_parameter_group::Builder::default()
     }
 }
 
@@ -22294,6 +22386,13 @@ impl DbClusterEndpoint {
         self.db_cluster_endpoint_arn.as_deref()
     }
 }
+impl DbClusterEndpoint {
+    /// Creates a new builder-style object to manufacture [`DbClusterEndpoint`](crate::model::DbClusterEndpoint).
+    pub fn builder() -> crate::model::db_cluster_endpoint::Builder {
+        crate::model::db_cluster_endpoint::Builder::default()
+    }
+}
+
 /// See [`DbClusterEndpoint`](crate::model::DbClusterEndpoint).
 pub mod db_cluster_endpoint {
 
@@ -22474,12 +22573,6 @@ pub mod db_cluster_endpoint {
         }
     }
 }
-impl DbClusterEndpoint {
-    /// Creates a new builder-style object to manufacture [`DbClusterEndpoint`](crate::model::DbClusterEndpoint).
-    pub fn builder() -> crate::model::db_cluster_endpoint::Builder {
-        crate::model::db_cluster_endpoint::Builder::default()
-    }
-}
 
 /// <p>This data type is used as a response element in the <code>DescribeDBClusterBacktracks</code> action.</p>
 #[non_exhaustive]
@@ -22544,6 +22637,13 @@ impl DbClusterBacktrack {
         self.status.as_deref()
     }
 }
+impl DbClusterBacktrack {
+    /// Creates a new builder-style object to manufacture [`DbClusterBacktrack`](crate::model::DbClusterBacktrack).
+    pub fn builder() -> crate::model::db_cluster_backtrack::Builder {
+        crate::model::db_cluster_backtrack::Builder::default()
+    }
+}
+
 /// See [`DbClusterBacktrack`](crate::model::DbClusterBacktrack).
 pub mod db_cluster_backtrack {
 
@@ -22662,12 +22762,6 @@ pub mod db_cluster_backtrack {
         }
     }
 }
-impl DbClusterBacktrack {
-    /// Creates a new builder-style object to manufacture [`DbClusterBacktrack`](crate::model::DbClusterBacktrack).
-    pub fn builder() -> crate::model::db_cluster_backtrack::Builder {
-        crate::model::db_cluster_backtrack::Builder::default()
-    }
-}
 
 /// <p>Describes a quota for an Amazon Web Services account.</p>
 /// <p>The following are account quotas:</p>
@@ -22719,6 +22813,13 @@ impl AccountQuota {
         self.max
     }
 }
+impl AccountQuota {
+    /// Creates a new builder-style object to manufacture [`AccountQuota`](crate::model::AccountQuota).
+    pub fn builder() -> crate::model::account_quota::Builder {
+        crate::model::account_quota::Builder::default()
+    }
+}
+
 /// See [`AccountQuota`](crate::model::AccountQuota).
 pub mod account_quota {
 
@@ -22772,12 +22873,6 @@ pub mod account_quota {
                 max: self.max.unwrap_or_default(),
             }
         }
-    }
-}
-impl AccountQuota {
-    /// Creates a new builder-style object to manufacture [`AccountQuota`](crate::model::AccountQuota).
-    pub fn builder() -> crate::model::account_quota::Builder {
-        crate::model::account_quota::Builder::default()
     }
 }
 

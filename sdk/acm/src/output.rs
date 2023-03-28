@@ -10,6 +10,13 @@ impl aws_http::request_id::RequestId for UpdateCertificateOptionsOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdateCertificateOptionsOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateCertificateOptionsOutput`](crate::output::UpdateCertificateOptionsOutput).
+    pub fn builder() -> crate::output::update_certificate_options_output::Builder {
+        crate::output::update_certificate_options_output::Builder::default()
+    }
+}
+
 /// See [`UpdateCertificateOptionsOutput`](crate::output::UpdateCertificateOptionsOutput).
 pub mod update_certificate_options_output {
 
@@ -37,12 +44,6 @@ pub mod update_certificate_options_output {
         }
     }
 }
-impl UpdateCertificateOptionsOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateCertificateOptionsOutput`](crate::output::UpdateCertificateOptionsOutput).
-    pub fn builder() -> crate::output::update_certificate_options_output::Builder {
-        crate::output::update_certificate_options_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -55,6 +56,13 @@ impl aws_http::request_id::RequestId for ResendValidationEmailOutput {
         self._request_id.as_deref()
     }
 }
+impl ResendValidationEmailOutput {
+    /// Creates a new builder-style object to manufacture [`ResendValidationEmailOutput`](crate::output::ResendValidationEmailOutput).
+    pub fn builder() -> crate::output::resend_validation_email_output::Builder {
+        crate::output::resend_validation_email_output::Builder::default()
+    }
+}
+
 /// See [`ResendValidationEmailOutput`](crate::output::ResendValidationEmailOutput).
 pub mod resend_validation_email_output {
 
@@ -82,12 +90,6 @@ pub mod resend_validation_email_output {
         }
     }
 }
-impl ResendValidationEmailOutput {
-    /// Creates a new builder-style object to manufacture [`ResendValidationEmailOutput`](crate::output::ResendValidationEmailOutput).
-    pub fn builder() -> crate::output::resend_validation_email_output::Builder {
-        crate::output::resend_validation_email_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -111,6 +113,13 @@ impl aws_http::request_id::RequestId for RequestCertificateOutput {
         self._request_id.as_deref()
     }
 }
+impl RequestCertificateOutput {
+    /// Creates a new builder-style object to manufacture [`RequestCertificateOutput`](crate::output::RequestCertificateOutput).
+    pub fn builder() -> crate::output::request_certificate_output::Builder {
+        crate::output::request_certificate_output::Builder::default()
+    }
+}
+
 /// See [`RequestCertificateOutput`](crate::output::RequestCertificateOutput).
 pub mod request_certificate_output {
 
@@ -155,12 +164,6 @@ pub mod request_certificate_output {
         }
     }
 }
-impl RequestCertificateOutput {
-    /// Creates a new builder-style object to manufacture [`RequestCertificateOutput`](crate::output::RequestCertificateOutput).
-    pub fn builder() -> crate::output::request_certificate_output::Builder {
-        crate::output::request_certificate_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -173,6 +176,13 @@ impl aws_http::request_id::RequestId for RenewCertificateOutput {
         self._request_id.as_deref()
     }
 }
+impl RenewCertificateOutput {
+    /// Creates a new builder-style object to manufacture [`RenewCertificateOutput`](crate::output::RenewCertificateOutput).
+    pub fn builder() -> crate::output::renew_certificate_output::Builder {
+        crate::output::renew_certificate_output::Builder::default()
+    }
+}
+
 /// See [`RenewCertificateOutput`](crate::output::RenewCertificateOutput).
 pub mod renew_certificate_output {
 
@@ -200,12 +210,6 @@ pub mod renew_certificate_output {
         }
     }
 }
-impl RenewCertificateOutput {
-    /// Creates a new builder-style object to manufacture [`RenewCertificateOutput`](crate::output::RenewCertificateOutput).
-    pub fn builder() -> crate::output::renew_certificate_output::Builder {
-        crate::output::renew_certificate_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -218,6 +222,13 @@ impl aws_http::request_id::RequestId for RemoveTagsFromCertificateOutput {
         self._request_id.as_deref()
     }
 }
+impl RemoveTagsFromCertificateOutput {
+    /// Creates a new builder-style object to manufacture [`RemoveTagsFromCertificateOutput`](crate::output::RemoveTagsFromCertificateOutput).
+    pub fn builder() -> crate::output::remove_tags_from_certificate_output::Builder {
+        crate::output::remove_tags_from_certificate_output::Builder::default()
+    }
+}
+
 /// See [`RemoveTagsFromCertificateOutput`](crate::output::RemoveTagsFromCertificateOutput).
 pub mod remove_tags_from_certificate_output {
 
@@ -245,12 +256,6 @@ pub mod remove_tags_from_certificate_output {
         }
     }
 }
-impl RemoveTagsFromCertificateOutput {
-    /// Creates a new builder-style object to manufacture [`RemoveTagsFromCertificateOutput`](crate::output::RemoveTagsFromCertificateOutput).
-    pub fn builder() -> crate::output::remove_tags_from_certificate_output::Builder {
-        crate::output::remove_tags_from_certificate_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -263,6 +268,13 @@ impl aws_http::request_id::RequestId for PutAccountConfigurationOutput {
         self._request_id.as_deref()
     }
 }
+impl PutAccountConfigurationOutput {
+    /// Creates a new builder-style object to manufacture [`PutAccountConfigurationOutput`](crate::output::PutAccountConfigurationOutput).
+    pub fn builder() -> crate::output::put_account_configuration_output::Builder {
+        crate::output::put_account_configuration_output::Builder::default()
+    }
+}
+
 /// See [`PutAccountConfigurationOutput`](crate::output::PutAccountConfigurationOutput).
 pub mod put_account_configuration_output {
 
@@ -290,12 +302,6 @@ pub mod put_account_configuration_output {
         }
     }
 }
-impl PutAccountConfigurationOutput {
-    /// Creates a new builder-style object to manufacture [`PutAccountConfigurationOutput`](crate::output::PutAccountConfigurationOutput).
-    pub fn builder() -> crate::output::put_account_configuration_output::Builder {
-        crate::output::put_account_configuration_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -317,6 +323,13 @@ impl aws_http::request_id::RequestId for ListTagsForCertificateOutput {
         self._request_id.as_deref()
     }
 }
+impl ListTagsForCertificateOutput {
+    /// Creates a new builder-style object to manufacture [`ListTagsForCertificateOutput`](crate::output::ListTagsForCertificateOutput).
+    pub fn builder() -> crate::output::list_tags_for_certificate_output::Builder {
+        crate::output::list_tags_for_certificate_output::Builder::default()
+    }
+}
+
 /// See [`ListTagsForCertificateOutput`](crate::output::ListTagsForCertificateOutput).
 pub mod list_tags_for_certificate_output {
 
@@ -365,12 +378,6 @@ pub mod list_tags_for_certificate_output {
         }
     }
 }
-impl ListTagsForCertificateOutput {
-    /// Creates a new builder-style object to manufacture [`ListTagsForCertificateOutput`](crate::output::ListTagsForCertificateOutput).
-    pub fn builder() -> crate::output::list_tags_for_certificate_output::Builder {
-        crate::output::list_tags_for_certificate_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -402,6 +409,13 @@ impl aws_http::request_id::RequestId for ListCertificatesOutput {
         self._request_id.as_deref()
     }
 }
+impl ListCertificatesOutput {
+    /// Creates a new builder-style object to manufacture [`ListCertificatesOutput`](crate::output::ListCertificatesOutput).
+    pub fn builder() -> crate::output::list_certificates_output::Builder {
+        crate::output::list_certificates_output::Builder::default()
+    }
+}
+
 /// See [`ListCertificatesOutput`](crate::output::ListCertificatesOutput).
 pub mod list_certificates_output {
 
@@ -463,12 +477,6 @@ pub mod list_certificates_output {
         }
     }
 }
-impl ListCertificatesOutput {
-    /// Creates a new builder-style object to manufacture [`ListCertificatesOutput`](crate::output::ListCertificatesOutput).
-    pub fn builder() -> crate::output::list_certificates_output::Builder {
-        crate::output::list_certificates_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -490,6 +498,13 @@ impl aws_http::request_id::RequestId for ImportCertificateOutput {
         self._request_id.as_deref()
     }
 }
+impl ImportCertificateOutput {
+    /// Creates a new builder-style object to manufacture [`ImportCertificateOutput`](crate::output::ImportCertificateOutput).
+    pub fn builder() -> crate::output::import_certificate_output::Builder {
+        crate::output::import_certificate_output::Builder::default()
+    }
+}
+
 /// See [`ImportCertificateOutput`](crate::output::ImportCertificateOutput).
 pub mod import_certificate_output {
 
@@ -532,12 +547,6 @@ pub mod import_certificate_output {
         }
     }
 }
-impl ImportCertificateOutput {
-    /// Creates a new builder-style object to manufacture [`ImportCertificateOutput`](crate::output::ImportCertificateOutput).
-    pub fn builder() -> crate::output::import_certificate_output::Builder {
-        crate::output::import_certificate_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -566,6 +575,13 @@ impl aws_http::request_id::RequestId for GetCertificateOutput {
         self._request_id.as_deref()
     }
 }
+impl GetCertificateOutput {
+    /// Creates a new builder-style object to manufacture [`GetCertificateOutput`](crate::output::GetCertificateOutput).
+    pub fn builder() -> crate::output::get_certificate_output::Builder {
+        crate::output::get_certificate_output::Builder::default()
+    }
+}
+
 /// See [`GetCertificateOutput`](crate::output::GetCertificateOutput).
 pub mod get_certificate_output {
 
@@ -620,12 +636,6 @@ pub mod get_certificate_output {
         }
     }
 }
-impl GetCertificateOutput {
-    /// Creates a new builder-style object to manufacture [`GetCertificateOutput`](crate::output::GetCertificateOutput).
-    pub fn builder() -> crate::output::get_certificate_output::Builder {
-        crate::output::get_certificate_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -647,6 +657,13 @@ impl aws_http::request_id::RequestId for GetAccountConfigurationOutput {
         self._request_id.as_deref()
     }
 }
+impl GetAccountConfigurationOutput {
+    /// Creates a new builder-style object to manufacture [`GetAccountConfigurationOutput`](crate::output::GetAccountConfigurationOutput).
+    pub fn builder() -> crate::output::get_account_configuration_output::Builder {
+        crate::output::get_account_configuration_output::Builder::default()
+    }
+}
+
 /// See [`GetAccountConfigurationOutput`](crate::output::GetAccountConfigurationOutput).
 pub mod get_account_configuration_output {
 
@@ -687,12 +704,6 @@ pub mod get_account_configuration_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl GetAccountConfigurationOutput {
-    /// Creates a new builder-style object to manufacture [`GetAccountConfigurationOutput`](crate::output::GetAccountConfigurationOutput).
-    pub fn builder() -> crate::output::get_account_configuration_output::Builder {
-        crate::output::get_account_configuration_output::Builder::default()
     }
 }
 
@@ -740,6 +751,13 @@ impl aws_http::request_id::RequestId for ExportCertificateOutput {
         self._request_id.as_deref()
     }
 }
+impl ExportCertificateOutput {
+    /// Creates a new builder-style object to manufacture [`ExportCertificateOutput`](crate::output::ExportCertificateOutput).
+    pub fn builder() -> crate::output::export_certificate_output::Builder {
+        crate::output::export_certificate_output::Builder::default()
+    }
+}
+
 /// See [`ExportCertificateOutput`](crate::output::ExportCertificateOutput).
 pub mod export_certificate_output {
 
@@ -816,12 +834,6 @@ pub mod export_certificate_output {
         }
     }
 }
-impl ExportCertificateOutput {
-    /// Creates a new builder-style object to manufacture [`ExportCertificateOutput`](crate::output::ExportCertificateOutput).
-    pub fn builder() -> crate::output::export_certificate_output::Builder {
-        crate::output::export_certificate_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -843,6 +855,13 @@ impl aws_http::request_id::RequestId for DescribeCertificateOutput {
         self._request_id.as_deref()
     }
 }
+impl DescribeCertificateOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeCertificateOutput`](crate::output::DescribeCertificateOutput).
+    pub fn builder() -> crate::output::describe_certificate_output::Builder {
+        crate::output::describe_certificate_output::Builder::default()
+    }
+}
+
 /// See [`DescribeCertificateOutput`](crate::output::DescribeCertificateOutput).
 pub mod describe_certificate_output {
 
@@ -885,12 +904,6 @@ pub mod describe_certificate_output {
         }
     }
 }
-impl DescribeCertificateOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeCertificateOutput`](crate::output::DescribeCertificateOutput).
-    pub fn builder() -> crate::output::describe_certificate_output::Builder {
-        crate::output::describe_certificate_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -903,6 +916,13 @@ impl aws_http::request_id::RequestId for DeleteCertificateOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteCertificateOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteCertificateOutput`](crate::output::DeleteCertificateOutput).
+    pub fn builder() -> crate::output::delete_certificate_output::Builder {
+        crate::output::delete_certificate_output::Builder::default()
+    }
+}
+
 /// See [`DeleteCertificateOutput`](crate::output::DeleteCertificateOutput).
 pub mod delete_certificate_output {
 
@@ -930,12 +950,6 @@ pub mod delete_certificate_output {
         }
     }
 }
-impl DeleteCertificateOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteCertificateOutput`](crate::output::DeleteCertificateOutput).
-    pub fn builder() -> crate::output::delete_certificate_output::Builder {
-        crate::output::delete_certificate_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -948,6 +962,13 @@ impl aws_http::request_id::RequestId for AddTagsToCertificateOutput {
         self._request_id.as_deref()
     }
 }
+impl AddTagsToCertificateOutput {
+    /// Creates a new builder-style object to manufacture [`AddTagsToCertificateOutput`](crate::output::AddTagsToCertificateOutput).
+    pub fn builder() -> crate::output::add_tags_to_certificate_output::Builder {
+        crate::output::add_tags_to_certificate_output::Builder::default()
+    }
+}
+
 /// See [`AddTagsToCertificateOutput`](crate::output::AddTagsToCertificateOutput).
 pub mod add_tags_to_certificate_output {
 
@@ -973,11 +994,5 @@ pub mod add_tags_to_certificate_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl AddTagsToCertificateOutput {
-    /// Creates a new builder-style object to manufacture [`AddTagsToCertificateOutput`](crate::output::AddTagsToCertificateOutput).
-    pub fn builder() -> crate::output::add_tags_to_certificate_output::Builder {
-        crate::output::add_tags_to_certificate_output::Builder::default()
     }
 }

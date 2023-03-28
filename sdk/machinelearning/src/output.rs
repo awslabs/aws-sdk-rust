@@ -21,6 +21,13 @@ impl aws_http::request_id::RequestId for UpdateMlModelOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdateMlModelOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateMlModelOutput`](crate::output::UpdateMlModelOutput).
+    pub fn builder() -> crate::output::update_ml_model_output::Builder {
+        crate::output::update_ml_model_output::Builder::default()
+    }
+}
+
 /// See [`UpdateMlModelOutput`](crate::output::UpdateMlModelOutput).
 pub mod update_ml_model_output {
 
@@ -60,12 +67,6 @@ pub mod update_ml_model_output {
         }
     }
 }
-impl UpdateMlModelOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateMlModelOutput`](crate::output::UpdateMlModelOutput).
-    pub fn builder() -> crate::output::update_ml_model_output::Builder {
-        crate::output::update_ml_model_output::Builder::default()
-    }
-}
 
 /// <p>Represents the output of an <code>UpdateEvaluation</code> operation.</p>
 /// <p>You can see the updated content by using the <code>GetEvaluation</code> operation.</p>
@@ -88,6 +89,13 @@ impl aws_http::request_id::RequestId for UpdateEvaluationOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdateEvaluationOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateEvaluationOutput`](crate::output::UpdateEvaluationOutput).
+    pub fn builder() -> crate::output::update_evaluation_output::Builder {
+        crate::output::update_evaluation_output::Builder::default()
+    }
+}
+
 /// See [`UpdateEvaluationOutput`](crate::output::UpdateEvaluationOutput).
 pub mod update_evaluation_output {
 
@@ -130,12 +138,6 @@ pub mod update_evaluation_output {
         }
     }
 }
-impl UpdateEvaluationOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateEvaluationOutput`](crate::output::UpdateEvaluationOutput).
-    pub fn builder() -> crate::output::update_evaluation_output::Builder {
-        crate::output::update_evaluation_output::Builder::default()
-    }
-}
 
 /// <p>Represents the output of an <code>UpdateDataSource</code> operation.</p>
 /// <p>You can see the updated content by using the <code>GetBatchPrediction</code> operation.</p>
@@ -158,6 +160,13 @@ impl aws_http::request_id::RequestId for UpdateDataSourceOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdateDataSourceOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateDataSourceOutput`](crate::output::UpdateDataSourceOutput).
+    pub fn builder() -> crate::output::update_data_source_output::Builder {
+        crate::output::update_data_source_output::Builder::default()
+    }
+}
+
 /// See [`UpdateDataSourceOutput`](crate::output::UpdateDataSourceOutput).
 pub mod update_data_source_output {
 
@@ -200,12 +209,6 @@ pub mod update_data_source_output {
         }
     }
 }
-impl UpdateDataSourceOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateDataSourceOutput`](crate::output::UpdateDataSourceOutput).
-    pub fn builder() -> crate::output::update_data_source_output::Builder {
-        crate::output::update_data_source_output::Builder::default()
-    }
-}
 
 /// <p>Represents the output of an <code>UpdateBatchPrediction</code> operation.</p>
 /// <p>You can see the updated content by using the <code>GetBatchPrediction</code> operation.</p>
@@ -228,6 +231,13 @@ impl aws_http::request_id::RequestId for UpdateBatchPredictionOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdateBatchPredictionOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateBatchPredictionOutput`](crate::output::UpdateBatchPredictionOutput).
+    pub fn builder() -> crate::output::update_batch_prediction_output::Builder {
+        crate::output::update_batch_prediction_output::Builder::default()
+    }
+}
+
 /// See [`UpdateBatchPredictionOutput`](crate::output::UpdateBatchPredictionOutput).
 pub mod update_batch_prediction_output {
 
@@ -270,12 +280,6 @@ pub mod update_batch_prediction_output {
         }
     }
 }
-impl UpdateBatchPredictionOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateBatchPredictionOutput`](crate::output::UpdateBatchPredictionOutput).
-    pub fn builder() -> crate::output::update_batch_prediction_output::Builder {
-        crate::output::update_batch_prediction_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -309,6 +313,13 @@ impl aws_http::request_id::RequestId for PredictOutput {
         self._request_id.as_deref()
     }
 }
+impl PredictOutput {
+    /// Creates a new builder-style object to manufacture [`PredictOutput`](crate::output::PredictOutput).
+    pub fn builder() -> crate::output::predict_output::Builder {
+        crate::output::predict_output::Builder::default()
+    }
+}
+
 /// See [`PredictOutput`](crate::output::PredictOutput).
 pub mod predict_output {
 
@@ -361,12 +372,6 @@ pub mod predict_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl PredictOutput {
-    /// Creates a new builder-style object to manufacture [`PredictOutput`](crate::output::PredictOutput).
-    pub fn builder() -> crate::output::predict_output::Builder {
-        crate::output::predict_output::Builder::default()
     }
 }
 
@@ -582,6 +587,13 @@ impl aws_http::request_id::RequestId for GetMlModelOutput {
         self._request_id.as_deref()
     }
 }
+impl GetMlModelOutput {
+    /// Creates a new builder-style object to manufacture [`GetMlModelOutput`](crate::output::GetMlModelOutput).
+    pub fn builder() -> crate::output::get_ml_model_output::Builder {
+        crate::output::get_ml_model_output::Builder::default()
+    }
+}
+
 /// See [`GetMlModelOutput`](crate::output::GetMlModelOutput).
 pub mod get_ml_model_output {
 
@@ -960,12 +972,6 @@ pub mod get_ml_model_output {
         }
     }
 }
-impl GetMlModelOutput {
-    /// Creates a new builder-style object to manufacture [`GetMlModelOutput`](crate::output::GetMlModelOutput).
-    pub fn builder() -> crate::output::get_ml_model_output::Builder {
-        crate::output::get_ml_model_output::Builder::default()
-    }
-}
 
 /// <p>Represents the output of a <code>GetEvaluation</code> operation and describes an <code>Evaluation</code>.</p>
 #[non_exhaustive]
@@ -1111,6 +1117,13 @@ impl aws_http::request_id::RequestId for GetEvaluationOutput {
         self._request_id.as_deref()
     }
 }
+impl GetEvaluationOutput {
+    /// Creates a new builder-style object to manufacture [`GetEvaluationOutput`](crate::output::GetEvaluationOutput).
+    pub fn builder() -> crate::output::get_evaluation_output::Builder {
+        crate::output::get_evaluation_output::Builder::default()
+    }
+}
+
 /// See [`GetEvaluationOutput`](crate::output::GetEvaluationOutput).
 pub mod get_evaluation_output {
 
@@ -1374,12 +1387,6 @@ pub mod get_evaluation_output {
         }
     }
 }
-impl GetEvaluationOutput {
-    /// Creates a new builder-style object to manufacture [`GetEvaluationOutput`](crate::output::GetEvaluationOutput).
-    pub fn builder() -> crate::output::get_evaluation_output::Builder {
-        crate::output::get_evaluation_output::Builder::default()
-    }
-}
 
 /// <p>Represents the output of a <code>GetDataSource</code> operation and describes a <code>DataSource</code>.</p>
 #[non_exhaustive]
@@ -1550,6 +1557,13 @@ impl aws_http::request_id::RequestId for GetDataSourceOutput {
         self._request_id.as_deref()
     }
 }
+impl GetDataSourceOutput {
+    /// Creates a new builder-style object to manufacture [`GetDataSourceOutput`](crate::output::GetDataSourceOutput).
+    pub fn builder() -> crate::output::get_data_source_output::Builder {
+        crate::output::get_data_source_output::Builder::default()
+    }
+}
+
 /// See [`GetDataSourceOutput`](crate::output::GetDataSourceOutput).
 pub mod get_data_source_output {
 
@@ -1869,12 +1883,6 @@ pub mod get_data_source_output {
         }
     }
 }
-impl GetDataSourceOutput {
-    /// Creates a new builder-style object to manufacture [`GetDataSourceOutput`](crate::output::GetDataSourceOutput).
-    pub fn builder() -> crate::output::get_data_source_output::Builder {
-        crate::output::get_data_source_output::Builder::default()
-    }
-}
 
 /// <p>Represents the output of a <code>GetBatchPrediction</code> operation and describes a <code>BatchPrediction</code>.</p>
 #[non_exhaustive]
@@ -2022,6 +2030,13 @@ impl aws_http::request_id::RequestId for GetBatchPredictionOutput {
         self._request_id.as_deref()
     }
 }
+impl GetBatchPredictionOutput {
+    /// Creates a new builder-style object to manufacture [`GetBatchPredictionOutput`](crate::output::GetBatchPredictionOutput).
+    pub fn builder() -> crate::output::get_batch_prediction_output::Builder {
+        crate::output::get_batch_prediction_output::Builder::default()
+    }
+}
+
 /// See [`GetBatchPredictionOutput`](crate::output::GetBatchPredictionOutput).
 pub mod get_batch_prediction_output {
 
@@ -2297,12 +2312,6 @@ pub mod get_batch_prediction_output {
         }
     }
 }
-impl GetBatchPredictionOutput {
-    /// Creates a new builder-style object to manufacture [`GetBatchPredictionOutput`](crate::output::GetBatchPredictionOutput).
-    pub fn builder() -> crate::output::get_batch_prediction_output::Builder {
-        crate::output::get_batch_prediction_output::Builder::default()
-    }
-}
 
 /// <p>Amazon ML returns the following elements.</p>
 #[non_exhaustive]
@@ -2338,6 +2347,13 @@ impl aws_http::request_id::RequestId for DescribeTagsOutput {
         self._request_id.as_deref()
     }
 }
+impl DescribeTagsOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeTagsOutput`](crate::output::DescribeTagsOutput).
+    pub fn builder() -> crate::output::describe_tags_output::Builder {
+        crate::output::describe_tags_output::Builder::default()
+    }
+}
+
 /// See [`DescribeTagsOutput`](crate::output::DescribeTagsOutput).
 pub mod describe_tags_output {
 
@@ -2413,12 +2429,6 @@ pub mod describe_tags_output {
         }
     }
 }
-impl DescribeTagsOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeTagsOutput`](crate::output::DescribeTagsOutput).
-    pub fn builder() -> crate::output::describe_tags_output::Builder {
-        crate::output::describe_tags_output::Builder::default()
-    }
-}
 
 /// <p>Represents the output of a <code>DescribeMLModels</code> operation. The content is essentially a list of <code>MLModel</code>.</p>
 #[non_exhaustive]
@@ -2447,6 +2457,13 @@ impl aws_http::request_id::RequestId for DescribeMlModelsOutput {
         self._request_id.as_deref()
     }
 }
+impl DescribeMlModelsOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeMlModelsOutput`](crate::output::DescribeMlModelsOutput).
+    pub fn builder() -> crate::output::describe_ml_models_output::Builder {
+        crate::output::describe_ml_models_output::Builder::default()
+    }
+}
+
 /// See [`DescribeMlModelsOutput`](crate::output::DescribeMlModelsOutput).
 pub mod describe_ml_models_output {
 
@@ -2507,12 +2524,6 @@ pub mod describe_ml_models_output {
         }
     }
 }
-impl DescribeMlModelsOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeMlModelsOutput`](crate::output::DescribeMlModelsOutput).
-    pub fn builder() -> crate::output::describe_ml_models_output::Builder {
-        crate::output::describe_ml_models_output::Builder::default()
-    }
-}
 
 /// <p>Represents the query results from a <code>DescribeEvaluations</code> operation. The content is essentially a list of <code>Evaluation</code>.</p>
 #[non_exhaustive]
@@ -2541,6 +2552,13 @@ impl aws_http::request_id::RequestId for DescribeEvaluationsOutput {
         self._request_id.as_deref()
     }
 }
+impl DescribeEvaluationsOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeEvaluationsOutput`](crate::output::DescribeEvaluationsOutput).
+    pub fn builder() -> crate::output::describe_evaluations_output::Builder {
+        crate::output::describe_evaluations_output::Builder::default()
+    }
+}
+
 /// See [`DescribeEvaluationsOutput`](crate::output::DescribeEvaluationsOutput).
 pub mod describe_evaluations_output {
 
@@ -2601,12 +2619,6 @@ pub mod describe_evaluations_output {
         }
     }
 }
-impl DescribeEvaluationsOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeEvaluationsOutput`](crate::output::DescribeEvaluationsOutput).
-    pub fn builder() -> crate::output::describe_evaluations_output::Builder {
-        crate::output::describe_evaluations_output::Builder::default()
-    }
-}
 
 /// <p>Represents the query results from a <code>DescribeDataSources</code> operation. The content is essentially a list of <code>DataSource</code>.</p>
 #[non_exhaustive]
@@ -2635,6 +2647,13 @@ impl aws_http::request_id::RequestId for DescribeDataSourcesOutput {
         self._request_id.as_deref()
     }
 }
+impl DescribeDataSourcesOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeDataSourcesOutput`](crate::output::DescribeDataSourcesOutput).
+    pub fn builder() -> crate::output::describe_data_sources_output::Builder {
+        crate::output::describe_data_sources_output::Builder::default()
+    }
+}
+
 /// See [`DescribeDataSourcesOutput`](crate::output::DescribeDataSourcesOutput).
 pub mod describe_data_sources_output {
 
@@ -2695,12 +2714,6 @@ pub mod describe_data_sources_output {
         }
     }
 }
-impl DescribeDataSourcesOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeDataSourcesOutput`](crate::output::DescribeDataSourcesOutput).
-    pub fn builder() -> crate::output::describe_data_sources_output::Builder {
-        crate::output::describe_data_sources_output::Builder::default()
-    }
-}
 
 /// <p>Represents the output of a <code>DescribeBatchPredictions</code> operation. The content is essentially a list of <code>BatchPrediction</code>s.</p>
 #[non_exhaustive]
@@ -2729,6 +2742,13 @@ impl aws_http::request_id::RequestId for DescribeBatchPredictionsOutput {
         self._request_id.as_deref()
     }
 }
+impl DescribeBatchPredictionsOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeBatchPredictionsOutput`](crate::output::DescribeBatchPredictionsOutput).
+    pub fn builder() -> crate::output::describe_batch_predictions_output::Builder {
+        crate::output::describe_batch_predictions_output::Builder::default()
+    }
+}
+
 /// See [`DescribeBatchPredictionsOutput`](crate::output::DescribeBatchPredictionsOutput).
 pub mod describe_batch_predictions_output {
 
@@ -2789,12 +2809,6 @@ pub mod describe_batch_predictions_output {
         }
     }
 }
-impl DescribeBatchPredictionsOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeBatchPredictionsOutput`](crate::output::DescribeBatchPredictionsOutput).
-    pub fn builder() -> crate::output::describe_batch_predictions_output::Builder {
-        crate::output::describe_batch_predictions_output::Builder::default()
-    }
-}
 
 /// <p>Amazon ML returns the following elements.</p>
 #[non_exhaustive]
@@ -2823,6 +2837,13 @@ impl aws_http::request_id::RequestId for DeleteTagsOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteTagsOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteTagsOutput`](crate::output::DeleteTagsOutput).
+    pub fn builder() -> crate::output::delete_tags_output::Builder {
+        crate::output::delete_tags_output::Builder::default()
+    }
+}
+
 /// See [`DeleteTagsOutput`](crate::output::DeleteTagsOutput).
 pub mod delete_tags_output {
 
@@ -2877,12 +2898,6 @@ pub mod delete_tags_output {
         }
     }
 }
-impl DeleteTagsOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteTagsOutput`](crate::output::DeleteTagsOutput).
-    pub fn builder() -> crate::output::delete_tags_output::Builder {
-        crate::output::delete_tags_output::Builder::default()
-    }
-}
 
 /// <p>Represents the output of an <code>DeleteRealtimeEndpoint</code> operation.</p>
 /// <p>The result contains the <code>MLModelId</code> and the endpoint information for the <code>MLModel</code>. </p>
@@ -2914,6 +2929,13 @@ impl aws_http::request_id::RequestId for DeleteRealtimeEndpointOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteRealtimeEndpointOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteRealtimeEndpointOutput`](crate::output::DeleteRealtimeEndpointOutput).
+    pub fn builder() -> crate::output::delete_realtime_endpoint_output::Builder {
+        crate::output::delete_realtime_endpoint_output::Builder::default()
+    }
+}
+
 /// See [`DeleteRealtimeEndpointOutput`](crate::output::DeleteRealtimeEndpointOutput).
 pub mod delete_realtime_endpoint_output {
 
@@ -2968,12 +2990,6 @@ pub mod delete_realtime_endpoint_output {
         }
     }
 }
-impl DeleteRealtimeEndpointOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteRealtimeEndpointOutput`](crate::output::DeleteRealtimeEndpointOutput).
-    pub fn builder() -> crate::output::delete_realtime_endpoint_output::Builder {
-        crate::output::delete_realtime_endpoint_output::Builder::default()
-    }
-}
 
 /// <p>Represents the output of a <code>DeleteMLModel</code> operation.</p>
 /// <p>You can use the <code>GetMLModel</code> operation and check the value of the <code>Status</code> parameter to see whether an <code>MLModel</code> is marked as <code>DELETED</code>.</p>
@@ -2996,6 +3012,13 @@ impl aws_http::request_id::RequestId for DeleteMlModelOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteMlModelOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteMlModelOutput`](crate::output::DeleteMlModelOutput).
+    pub fn builder() -> crate::output::delete_ml_model_output::Builder {
+        crate::output::delete_ml_model_output::Builder::default()
+    }
+}
+
 /// See [`DeleteMlModelOutput`](crate::output::DeleteMlModelOutput).
 pub mod delete_ml_model_output {
 
@@ -3035,12 +3058,6 @@ pub mod delete_ml_model_output {
         }
     }
 }
-impl DeleteMlModelOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteMlModelOutput`](crate::output::DeleteMlModelOutput).
-    pub fn builder() -> crate::output::delete_ml_model_output::Builder {
-        crate::output::delete_ml_model_output::Builder::default()
-    }
-}
 
 /// <p> Represents the output of a <code>DeleteEvaluation</code> operation. The output indicates that Amazon Machine Learning (Amazon ML) received the request.</p>
 /// <p>You can use the <code>GetEvaluation</code> operation and check the value of the <code>Status</code> parameter to see whether an <code>Evaluation</code> is marked as <code>DELETED</code>.</p>
@@ -3063,6 +3080,13 @@ impl aws_http::request_id::RequestId for DeleteEvaluationOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteEvaluationOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteEvaluationOutput`](crate::output::DeleteEvaluationOutput).
+    pub fn builder() -> crate::output::delete_evaluation_output::Builder {
+        crate::output::delete_evaluation_output::Builder::default()
+    }
+}
+
 /// See [`DeleteEvaluationOutput`](crate::output::DeleteEvaluationOutput).
 pub mod delete_evaluation_output {
 
@@ -3105,12 +3129,6 @@ pub mod delete_evaluation_output {
         }
     }
 }
-impl DeleteEvaluationOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteEvaluationOutput`](crate::output::DeleteEvaluationOutput).
-    pub fn builder() -> crate::output::delete_evaluation_output::Builder {
-        crate::output::delete_evaluation_output::Builder::default()
-    }
-}
 
 /// <p> Represents the output of a <code>DeleteDataSource</code> operation.</p>
 #[non_exhaustive]
@@ -3132,6 +3150,13 @@ impl aws_http::request_id::RequestId for DeleteDataSourceOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteDataSourceOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteDataSourceOutput`](crate::output::DeleteDataSourceOutput).
+    pub fn builder() -> crate::output::delete_data_source_output::Builder {
+        crate::output::delete_data_source_output::Builder::default()
+    }
+}
+
 /// See [`DeleteDataSourceOutput`](crate::output::DeleteDataSourceOutput).
 pub mod delete_data_source_output {
 
@@ -3174,12 +3199,6 @@ pub mod delete_data_source_output {
         }
     }
 }
-impl DeleteDataSourceOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteDataSourceOutput`](crate::output::DeleteDataSourceOutput).
-    pub fn builder() -> crate::output::delete_data_source_output::Builder {
-        crate::output::delete_data_source_output::Builder::default()
-    }
-}
 
 /// <p> Represents the output of a <code>DeleteBatchPrediction</code> operation.</p>
 /// <p>You can use the <code>GetBatchPrediction</code> operation and check the value of the <code>Status</code> parameter to see whether a <code>BatchPrediction</code> is marked as <code>DELETED</code>.</p>
@@ -3202,6 +3221,13 @@ impl aws_http::request_id::RequestId for DeleteBatchPredictionOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteBatchPredictionOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteBatchPredictionOutput`](crate::output::DeleteBatchPredictionOutput).
+    pub fn builder() -> crate::output::delete_batch_prediction_output::Builder {
+        crate::output::delete_batch_prediction_output::Builder::default()
+    }
+}
+
 /// See [`DeleteBatchPredictionOutput`](crate::output::DeleteBatchPredictionOutput).
 pub mod delete_batch_prediction_output {
 
@@ -3244,12 +3270,6 @@ pub mod delete_batch_prediction_output {
         }
     }
 }
-impl DeleteBatchPredictionOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteBatchPredictionOutput`](crate::output::DeleteBatchPredictionOutput).
-    pub fn builder() -> crate::output::delete_batch_prediction_output::Builder {
-        crate::output::delete_batch_prediction_output::Builder::default()
-    }
-}
 
 /// <p>Represents the output of an <code>CreateRealtimeEndpoint</code> operation.</p>
 /// <p>The result contains the <code>MLModelId</code> and the endpoint information for the <code>MLModel</code>.</p>
@@ -3282,6 +3302,13 @@ impl aws_http::request_id::RequestId for CreateRealtimeEndpointOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateRealtimeEndpointOutput {
+    /// Creates a new builder-style object to manufacture [`CreateRealtimeEndpointOutput`](crate::output::CreateRealtimeEndpointOutput).
+    pub fn builder() -> crate::output::create_realtime_endpoint_output::Builder {
+        crate::output::create_realtime_endpoint_output::Builder::default()
+    }
+}
+
 /// See [`CreateRealtimeEndpointOutput`](crate::output::CreateRealtimeEndpointOutput).
 pub mod create_realtime_endpoint_output {
 
@@ -3336,12 +3363,6 @@ pub mod create_realtime_endpoint_output {
         }
     }
 }
-impl CreateRealtimeEndpointOutput {
-    /// Creates a new builder-style object to manufacture [`CreateRealtimeEndpointOutput`](crate::output::CreateRealtimeEndpointOutput).
-    pub fn builder() -> crate::output::create_realtime_endpoint_output::Builder {
-        crate::output::create_realtime_endpoint_output::Builder::default()
-    }
-}
 
 /// <p> Represents the output of a <code>CreateMLModel</code> operation, and is an acknowledgement that Amazon ML received the request.</p>
 /// <p>The <code>CreateMLModel</code> operation is asynchronous. You can poll for status updates by using the <code>GetMLModel</code> operation and checking the <code>Status</code> parameter. </p>
@@ -3364,6 +3385,13 @@ impl aws_http::request_id::RequestId for CreateMlModelOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateMlModelOutput {
+    /// Creates a new builder-style object to manufacture [`CreateMlModelOutput`](crate::output::CreateMlModelOutput).
+    pub fn builder() -> crate::output::create_ml_model_output::Builder {
+        crate::output::create_ml_model_output::Builder::default()
+    }
+}
+
 /// See [`CreateMlModelOutput`](crate::output::CreateMlModelOutput).
 pub mod create_ml_model_output {
 
@@ -3403,12 +3431,6 @@ pub mod create_ml_model_output {
         }
     }
 }
-impl CreateMlModelOutput {
-    /// Creates a new builder-style object to manufacture [`CreateMlModelOutput`](crate::output::CreateMlModelOutput).
-    pub fn builder() -> crate::output::create_ml_model_output::Builder {
-        crate::output::create_ml_model_output::Builder::default()
-    }
-}
 
 /// <p> Represents the output of a <code>CreateEvaluation</code> operation, and is an acknowledgement that Amazon ML received the request.</p>
 /// <p> <code>CreateEvaluation</code> operation is asynchronous. You can poll for status updates by using the <code>GetEvcaluation</code> operation and checking the <code>Status</code> parameter. </p>
@@ -3431,6 +3453,13 @@ impl aws_http::request_id::RequestId for CreateEvaluationOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateEvaluationOutput {
+    /// Creates a new builder-style object to manufacture [`CreateEvaluationOutput`](crate::output::CreateEvaluationOutput).
+    pub fn builder() -> crate::output::create_evaluation_output::Builder {
+        crate::output::create_evaluation_output::Builder::default()
+    }
+}
+
 /// See [`CreateEvaluationOutput`](crate::output::CreateEvaluationOutput).
 pub mod create_evaluation_output {
 
@@ -3473,12 +3502,6 @@ pub mod create_evaluation_output {
         }
     }
 }
-impl CreateEvaluationOutput {
-    /// Creates a new builder-style object to manufacture [`CreateEvaluationOutput`](crate::output::CreateEvaluationOutput).
-    pub fn builder() -> crate::output::create_evaluation_output::Builder {
-        crate::output::create_evaluation_output::Builder::default()
-    }
-}
 
 /// <p> Represents the output of a <code>CreateDataSourceFromS3</code> operation, and is an acknowledgement that Amazon ML received the request.</p>
 /// <p>The <code>CreateDataSourceFromS3</code> operation is asynchronous. You can poll for updates by using the <code>GetBatchPrediction</code> operation and checking the <code>Status</code> parameter. </p>
@@ -3501,6 +3524,13 @@ impl aws_http::request_id::RequestId for CreateDataSourceFromS3Output {
         self._request_id.as_deref()
     }
 }
+impl CreateDataSourceFromS3Output {
+    /// Creates a new builder-style object to manufacture [`CreateDataSourceFromS3Output`](crate::output::CreateDataSourceFromS3Output).
+    pub fn builder() -> crate::output::create_data_source_from_s3_output::Builder {
+        crate::output::create_data_source_from_s3_output::Builder::default()
+    }
+}
+
 /// See [`CreateDataSourceFromS3Output`](crate::output::CreateDataSourceFromS3Output).
 pub mod create_data_source_from_s3_output {
 
@@ -3543,12 +3573,6 @@ pub mod create_data_source_from_s3_output {
         }
     }
 }
-impl CreateDataSourceFromS3Output {
-    /// Creates a new builder-style object to manufacture [`CreateDataSourceFromS3Output`](crate::output::CreateDataSourceFromS3Output).
-    pub fn builder() -> crate::output::create_data_source_from_s3_output::Builder {
-        crate::output::create_data_source_from_s3_output::Builder::default()
-    }
-}
 
 /// <p> Represents the output of a <code>CreateDataSourceFromRedshift</code> operation, and is an acknowledgement that Amazon ML received the request.</p>
 /// <p>The <code>CreateDataSourceFromRedshift</code> operation is asynchronous. You can poll for updates by using the <code>GetBatchPrediction</code> operation and checking the <code>Status</code> parameter. </p>
@@ -3571,6 +3595,13 @@ impl aws_http::request_id::RequestId for CreateDataSourceFromRedshiftOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateDataSourceFromRedshiftOutput {
+    /// Creates a new builder-style object to manufacture [`CreateDataSourceFromRedshiftOutput`](crate::output::CreateDataSourceFromRedshiftOutput).
+    pub fn builder() -> crate::output::create_data_source_from_redshift_output::Builder {
+        crate::output::create_data_source_from_redshift_output::Builder::default()
+    }
+}
+
 /// See [`CreateDataSourceFromRedshiftOutput`](crate::output::CreateDataSourceFromRedshiftOutput).
 pub mod create_data_source_from_redshift_output {
 
@@ -3613,12 +3644,6 @@ pub mod create_data_source_from_redshift_output {
         }
     }
 }
-impl CreateDataSourceFromRedshiftOutput {
-    /// Creates a new builder-style object to manufacture [`CreateDataSourceFromRedshiftOutput`](crate::output::CreateDataSourceFromRedshiftOutput).
-    pub fn builder() -> crate::output::create_data_source_from_redshift_output::Builder {
-        crate::output::create_data_source_from_redshift_output::Builder::default()
-    }
-}
 
 /// <p> Represents the output of a <code>CreateDataSourceFromRDS</code> operation, and is an acknowledgement that Amazon ML received the request.</p>
 /// <p>The <code>CreateDataSourceFromRDS</code>&gt; operation is asynchronous. You can poll for updates by using the <code>GetBatchPrediction</code> operation and checking the <code>Status</code> parameter. You can inspect the <code>Message</code> when <code>Status</code> shows up as <code>FAILED</code>. You can also check the progress of the copy operation by going to the <code>DataPipeline</code> console and looking up the pipeline using the <code>pipelineId </code> from the describe call.</p>
@@ -3641,6 +3666,13 @@ impl aws_http::request_id::RequestId for CreateDataSourceFromRdsOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateDataSourceFromRdsOutput {
+    /// Creates a new builder-style object to manufacture [`CreateDataSourceFromRdsOutput`](crate::output::CreateDataSourceFromRdsOutput).
+    pub fn builder() -> crate::output::create_data_source_from_rds_output::Builder {
+        crate::output::create_data_source_from_rds_output::Builder::default()
+    }
+}
+
 /// See [`CreateDataSourceFromRdsOutput`](crate::output::CreateDataSourceFromRdsOutput).
 pub mod create_data_source_from_rds_output {
 
@@ -3683,12 +3715,6 @@ pub mod create_data_source_from_rds_output {
         }
     }
 }
-impl CreateDataSourceFromRdsOutput {
-    /// Creates a new builder-style object to manufacture [`CreateDataSourceFromRdsOutput`](crate::output::CreateDataSourceFromRdsOutput).
-    pub fn builder() -> crate::output::create_data_source_from_rds_output::Builder {
-        crate::output::create_data_source_from_rds_output::Builder::default()
-    }
-}
 
 /// <p> Represents the output of a <code>CreateBatchPrediction</code> operation, and is an acknowledgement that Amazon ML received the request.</p>
 /// <p>The <code>CreateBatchPrediction</code> operation is asynchronous. You can poll for status updates by using the <code>&gt;GetBatchPrediction</code> operation and checking the <code>Status</code> parameter of the result. </p>
@@ -3711,6 +3737,13 @@ impl aws_http::request_id::RequestId for CreateBatchPredictionOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateBatchPredictionOutput {
+    /// Creates a new builder-style object to manufacture [`CreateBatchPredictionOutput`](crate::output::CreateBatchPredictionOutput).
+    pub fn builder() -> crate::output::create_batch_prediction_output::Builder {
+        crate::output::create_batch_prediction_output::Builder::default()
+    }
+}
+
 /// See [`CreateBatchPredictionOutput`](crate::output::CreateBatchPredictionOutput).
 pub mod create_batch_prediction_output {
 
@@ -3753,12 +3786,6 @@ pub mod create_batch_prediction_output {
         }
     }
 }
-impl CreateBatchPredictionOutput {
-    /// Creates a new builder-style object to manufacture [`CreateBatchPredictionOutput`](crate::output::CreateBatchPredictionOutput).
-    pub fn builder() -> crate::output::create_batch_prediction_output::Builder {
-        crate::output::create_batch_prediction_output::Builder::default()
-    }
-}
 
 /// <p>Amazon ML returns the following elements.</p>
 #[non_exhaustive]
@@ -3787,6 +3814,13 @@ impl aws_http::request_id::RequestId for AddTagsOutput {
         self._request_id.as_deref()
     }
 }
+impl AddTagsOutput {
+    /// Creates a new builder-style object to manufacture [`AddTagsOutput`](crate::output::AddTagsOutput).
+    pub fn builder() -> crate::output::add_tags_output::Builder {
+        crate::output::add_tags_output::Builder::default()
+    }
+}
+
 /// See [`AddTagsOutput`](crate::output::AddTagsOutput).
 pub mod add_tags_output {
 
@@ -3839,11 +3873,5 @@ pub mod add_tags_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl AddTagsOutput {
-    /// Creates a new builder-style object to manufacture [`AddTagsOutput`](crate::output::AddTagsOutput).
-    pub fn builder() -> crate::output::add_tags_output::Builder {
-        crate::output::add_tags_output::Builder::default()
     }
 }

@@ -4,7 +4,7 @@
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`query_forecast`](crate::client::Client::query_forecast).
 ///
-/// See [`crate::client::fluent_builders::QueryForecast`] for more details about the operation.
+/// `ParseStrictResponse` impl for `QueryForecast`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct QueryForecast {
     _private: (),
@@ -37,7 +37,7 @@ impl aws_smithy_http::response::ParseStrictResponse for QueryForecast {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`query_what_if_forecast`](crate::client::Client::query_what_if_forecast).
 ///
-/// See [`crate::client::fluent_builders::QueryWhatIfForecast`] for more details about the operation.
+/// `ParseStrictResponse` impl for `QueryWhatIfForecast`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct QueryWhatIfForecast {
     _private: (),

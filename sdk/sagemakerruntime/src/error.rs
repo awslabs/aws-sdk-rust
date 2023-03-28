@@ -138,11 +138,41 @@ pub struct ValidationError {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl ValidationError {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for ValidationError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "ValidationError")?;
+        if let Some(inner_1) = &self.message {
+            {
+                write!(f, ": {}", inner_1)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for ValidationError {}
+impl aws_http::request_id::RequestId for crate::error::ValidationError {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for ValidationError {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl ValidationError {
     /// Creates a new builder-style object to manufacture [`ValidationError`](crate::error::ValidationError).
     pub fn builder() -> crate::error::validation_error::Builder {
         crate::error::validation_error::Builder::default()
     }
 }
+
 /// See [`ValidationError`](crate::error::ValidationError).
 pub mod validation_error {
 
@@ -187,35 +217,6 @@ pub mod validation_error {
         }
     }
 }
-impl ValidationError {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for ValidationError {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "ValidationError")?;
-        if let Some(inner_1) = &self.message {
-            {
-                write!(f, ": {}", inner_1)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for ValidationError {}
-impl aws_http::request_id::RequestId for crate::error::ValidationError {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for ValidationError {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p> The service is unavailable. Try your call again. </p>
 #[non_exhaustive]
@@ -227,11 +228,41 @@ pub struct ServiceUnavailable {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl ServiceUnavailable {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for ServiceUnavailable {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "ServiceUnavailable")?;
+        if let Some(inner_2) = &self.message {
+            {
+                write!(f, ": {}", inner_2)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for ServiceUnavailable {}
+impl aws_http::request_id::RequestId for crate::error::ServiceUnavailable {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for ServiceUnavailable {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl ServiceUnavailable {
     /// Creates a new builder-style object to manufacture [`ServiceUnavailable`](crate::error::ServiceUnavailable).
     pub fn builder() -> crate::error::service_unavailable::Builder {
         crate::error::service_unavailable::Builder::default()
     }
 }
+
 /// See [`ServiceUnavailable`](crate::error::ServiceUnavailable).
 pub mod service_unavailable {
 
@@ -276,35 +307,6 @@ pub mod service_unavailable {
         }
     }
 }
-impl ServiceUnavailable {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for ServiceUnavailable {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "ServiceUnavailable")?;
-        if let Some(inner_2) = &self.message {
-            {
-                write!(f, ": {}", inner_2)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for ServiceUnavailable {}
-impl aws_http::request_id::RequestId for crate::error::ServiceUnavailable {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for ServiceUnavailable {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p> An internal failure occurred. </p>
 #[non_exhaustive]
@@ -316,11 +318,41 @@ pub struct InternalFailure {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl InternalFailure {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for InternalFailure {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "InternalFailure")?;
+        if let Some(inner_3) = &self.message {
+            {
+                write!(f, ": {}", inner_3)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for InternalFailure {}
+impl aws_http::request_id::RequestId for crate::error::InternalFailure {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InternalFailure {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl InternalFailure {
     /// Creates a new builder-style object to manufacture [`InternalFailure`](crate::error::InternalFailure).
     pub fn builder() -> crate::error::internal_failure::Builder {
         crate::error::internal_failure::Builder::default()
     }
 }
+
 /// See [`InternalFailure`](crate::error::InternalFailure).
 pub mod internal_failure {
 
@@ -363,35 +395,6 @@ pub mod internal_failure {
                 meta: self.meta.unwrap_or_default(),
             }
         }
-    }
-}
-impl InternalFailure {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for InternalFailure {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "InternalFailure")?;
-        if let Some(inner_3) = &self.message {
-            {
-                write!(f, ": {}", inner_3)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for InternalFailure {}
-impl aws_http::request_id::RequestId for crate::error::InternalFailure {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InternalFailure {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
     }
 }
 
@@ -570,11 +573,41 @@ pub struct ModelNotReadyException {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl ModelNotReadyException {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for ModelNotReadyException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "ModelNotReadyException")?;
+        if let Some(inner_4) = &self.message {
+            {
+                write!(f, ": {}", inner_4)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for ModelNotReadyException {}
+impl aws_http::request_id::RequestId for crate::error::ModelNotReadyException {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for ModelNotReadyException {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl ModelNotReadyException {
     /// Creates a new builder-style object to manufacture [`ModelNotReadyException`](crate::error::ModelNotReadyException).
     pub fn builder() -> crate::error::model_not_ready_exception::Builder {
         crate::error::model_not_ready_exception::Builder::default()
     }
 }
+
 /// See [`ModelNotReadyException`](crate::error::ModelNotReadyException).
 pub mod model_not_ready_exception {
 
@@ -619,35 +652,6 @@ pub mod model_not_ready_exception {
         }
     }
 }
-impl ModelNotReadyException {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for ModelNotReadyException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "ModelNotReadyException")?;
-        if let Some(inner_4) = &self.message {
-            {
-                write!(f, ": {}", inner_4)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for ModelNotReadyException {}
-impl aws_http::request_id::RequestId for crate::error::ModelNotReadyException {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for ModelNotReadyException {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p> Model (owned by the customer in the container) returned 4xx or 5xx error code. </p>
 #[non_exhaustive]
@@ -682,11 +686,41 @@ impl ModelError {
     }
 }
 impl ModelError {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for ModelError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "ModelError")?;
+        if let Some(inner_5) = &self.message {
+            {
+                write!(f, ": {}", inner_5)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for ModelError {}
+impl aws_http::request_id::RequestId for crate::error::ModelError {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for ModelError {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl ModelError {
     /// Creates a new builder-style object to manufacture [`ModelError`](crate::error::ModelError).
     pub fn builder() -> crate::error::model_error::Builder {
         crate::error::model_error::Builder::default()
     }
 }
+
 /// See [`ModelError`](crate::error::ModelError).
 pub mod model_error {
 
@@ -773,35 +807,6 @@ pub mod model_error {
         }
     }
 }
-impl ModelError {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for ModelError {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "ModelError")?;
-        if let Some(inner_5) = &self.message {
-            {
-                write!(f, ": {}", inner_5)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for ModelError {}
-impl aws_http::request_id::RequestId for crate::error::ModelError {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for ModelError {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>Your request caused an exception with an internal dependency. Contact customer support. </p>
 #[non_exhaustive]
@@ -813,11 +818,41 @@ pub struct InternalDependencyException {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl InternalDependencyException {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for InternalDependencyException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "InternalDependencyException")?;
+        if let Some(inner_6) = &self.message {
+            {
+                write!(f, ": {}", inner_6)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for InternalDependencyException {}
+impl aws_http::request_id::RequestId for crate::error::InternalDependencyException {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InternalDependencyException {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl InternalDependencyException {
     /// Creates a new builder-style object to manufacture [`InternalDependencyException`](crate::error::InternalDependencyException).
     pub fn builder() -> crate::error::internal_dependency_exception::Builder {
         crate::error::internal_dependency_exception::Builder::default()
     }
 }
+
 /// See [`InternalDependencyException`](crate::error::InternalDependencyException).
 pub mod internal_dependency_exception {
 
@@ -860,34 +895,5 @@ pub mod internal_dependency_exception {
                 meta: self.meta.unwrap_or_default(),
             }
         }
-    }
-}
-impl InternalDependencyException {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for InternalDependencyException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "InternalDependencyException")?;
-        if let Some(inner_6) = &self.message {
-            {
-                write!(f, ": {}", inner_6)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for InternalDependencyException {}
-impl aws_http::request_id::RequestId for crate::error::InternalDependencyException {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InternalDependencyException {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
     }
 }

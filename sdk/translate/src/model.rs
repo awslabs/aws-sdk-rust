@@ -128,6 +128,13 @@ impl ParallelDataConfig {
         self.format.as_ref()
     }
 }
+impl ParallelDataConfig {
+    /// Creates a new builder-style object to manufacture [`ParallelDataConfig`](crate::model::ParallelDataConfig).
+    pub fn builder() -> crate::model::parallel_data_config::Builder {
+        crate::model::parallel_data_config::Builder::default()
+    }
+}
+
 /// See [`ParallelDataConfig`](crate::model::ParallelDataConfig).
 pub mod parallel_data_config {
 
@@ -169,12 +176,6 @@ pub mod parallel_data_config {
                 format: self.format,
             }
         }
-    }
-}
-impl ParallelDataConfig {
-    /// Creates a new builder-style object to manufacture [`ParallelDataConfig`](crate::model::ParallelDataConfig).
-    pub fn builder() -> crate::model::parallel_data_config::Builder {
-        crate::model::parallel_data_config::Builder::default()
     }
 }
 
@@ -306,6 +307,13 @@ impl TranslationSettings {
         self.profanity.as_ref()
     }
 }
+impl TranslationSettings {
+    /// Creates a new builder-style object to manufacture [`TranslationSettings`](crate::model::TranslationSettings).
+    pub fn builder() -> crate::model::translation_settings::Builder {
+        crate::model::translation_settings::Builder::default()
+    }
+}
+
 /// See [`TranslationSettings`](crate::model::TranslationSettings).
 pub mod translation_settings {
 
@@ -360,12 +368,6 @@ pub mod translation_settings {
                 profanity: self.profanity,
             }
         }
-    }
-}
-impl TranslationSettings {
-    /// Creates a new builder-style object to manufacture [`TranslationSettings`](crate::model::TranslationSettings).
-    pub fn builder() -> crate::model::translation_settings::Builder {
-        crate::model::translation_settings::Builder::default()
     }
 }
 
@@ -565,6 +567,13 @@ impl AppliedTerminology {
         self.terms.as_deref()
     }
 }
+impl AppliedTerminology {
+    /// Creates a new builder-style object to manufacture [`AppliedTerminology`](crate::model::AppliedTerminology).
+    pub fn builder() -> crate::model::applied_terminology::Builder {
+        crate::model::applied_terminology::Builder::default()
+    }
+}
+
 /// See [`AppliedTerminology`](crate::model::AppliedTerminology).
 pub mod applied_terminology {
 
@@ -614,12 +623,6 @@ pub mod applied_terminology {
         }
     }
 }
-impl AppliedTerminology {
-    /// Creates a new builder-style object to manufacture [`AppliedTerminology`](crate::model::AppliedTerminology).
-    pub fn builder() -> crate::model::applied_terminology::Builder {
-        crate::model::applied_terminology::Builder::default()
-    }
-}
 
 /// <p>The term being translated by the custom terminology.</p>
 #[non_exhaustive]
@@ -642,6 +645,13 @@ impl Term {
         self.target_text.as_deref()
     }
 }
+impl Term {
+    /// Creates a new builder-style object to manufacture [`Term`](crate::model::Term).
+    pub fn builder() -> crate::model::term::Builder {
+        crate::model::term::Builder::default()
+    }
+}
+
 /// See [`Term`](crate::model::Term).
 pub mod term {
 
@@ -682,12 +692,6 @@ pub mod term {
         }
     }
 }
-impl Term {
-    /// Creates a new builder-style object to manufacture [`Term`](crate::model::Term).
-    pub fn builder() -> crate::model::term::Builder {
-        crate::model::term::Builder::default()
-    }
-}
 
 /// <p>A key-value pair that adds as a metadata to a resource used by Amazon Translate. </p>
 #[non_exhaustive]
@@ -710,6 +714,13 @@ impl Tag {
         self.value.as_deref()
     }
 }
+impl Tag {
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
+    pub fn builder() -> crate::model::tag::Builder {
+        crate::model::tag::Builder::default()
+    }
+}
+
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
 
@@ -748,12 +759,6 @@ pub mod tag {
                 value: self.value,
             }
         }
-    }
-}
-impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
-    pub fn builder() -> crate::model::tag::Builder {
-        crate::model::tag::Builder::default()
     }
 }
 
@@ -901,6 +906,13 @@ impl OutputDataConfig {
         self.encryption_key.as_ref()
     }
 }
+impl OutputDataConfig {
+    /// Creates a new builder-style object to manufacture [`OutputDataConfig`](crate::model::OutputDataConfig).
+    pub fn builder() -> crate::model::output_data_config::Builder {
+        crate::model::output_data_config::Builder::default()
+    }
+}
+
 /// See [`OutputDataConfig`](crate::model::OutputDataConfig).
 pub mod output_data_config {
 
@@ -944,12 +956,6 @@ pub mod output_data_config {
         }
     }
 }
-impl OutputDataConfig {
-    /// Creates a new builder-style object to manufacture [`OutputDataConfig`](crate::model::OutputDataConfig).
-    pub fn builder() -> crate::model::output_data_config::Builder {
-        crate::model::output_data_config::Builder::default()
-    }
-}
 
 /// <p>The encryption key used to encrypt this object.</p>
 #[non_exhaustive]
@@ -972,6 +978,13 @@ impl EncryptionKey {
         self.id.as_deref()
     }
 }
+impl EncryptionKey {
+    /// Creates a new builder-style object to manufacture [`EncryptionKey`](crate::model::EncryptionKey).
+    pub fn builder() -> crate::model::encryption_key::Builder {
+        crate::model::encryption_key::Builder::default()
+    }
+}
+
 /// See [`EncryptionKey`](crate::model::EncryptionKey).
 pub mod encryption_key {
 
@@ -1013,12 +1026,6 @@ pub mod encryption_key {
                 id: self.id,
             }
         }
-    }
-}
-impl EncryptionKey {
-    /// Creates a new builder-style object to manufacture [`EncryptionKey`](crate::model::EncryptionKey).
-    pub fn builder() -> crate::model::encryption_key::Builder {
-        crate::model::encryption_key::Builder::default()
     }
 }
 
@@ -1150,6 +1157,13 @@ impl InputDataConfig {
         self.content_type.as_deref()
     }
 }
+impl InputDataConfig {
+    /// Creates a new builder-style object to manufacture [`InputDataConfig`](crate::model::InputDataConfig).
+    pub fn builder() -> crate::model::input_data_config::Builder {
+        crate::model::input_data_config::Builder::default()
+    }
+}
+
 /// See [`InputDataConfig`](crate::model::InputDataConfig).
 pub mod input_data_config {
 
@@ -1208,12 +1222,6 @@ pub mod input_data_config {
                 content_type: self.content_type,
             }
         }
-    }
-}
-impl InputDataConfig {
-    /// Creates a new builder-style object to manufacture [`InputDataConfig`](crate::model::InputDataConfig).
-    pub fn builder() -> crate::model::input_data_config::Builder {
-        crate::model::input_data_config::Builder::default()
     }
 }
 
@@ -1329,6 +1337,13 @@ impl TextTranslationJobProperties {
         self.settings.as_ref()
     }
 }
+impl TextTranslationJobProperties {
+    /// Creates a new builder-style object to manufacture [`TextTranslationJobProperties`](crate::model::TextTranslationJobProperties).
+    pub fn builder() -> crate::model::text_translation_job_properties::Builder {
+        crate::model::text_translation_job_properties::Builder::default()
+    }
+}
+
 /// See [`TextTranslationJobProperties`](crate::model::TextTranslationJobProperties).
 pub mod text_translation_job_properties {
 
@@ -1579,12 +1594,6 @@ pub mod text_translation_job_properties {
         }
     }
 }
-impl TextTranslationJobProperties {
-    /// Creates a new builder-style object to manufacture [`TextTranslationJobProperties`](crate::model::TextTranslationJobProperties).
-    pub fn builder() -> crate::model::text_translation_job_properties::Builder {
-        crate::model::text_translation_job_properties::Builder::default()
-    }
-}
 
 /// <p>The number of documents successfully and unsuccessfully processed during a translation job.</p>
 #[non_exhaustive]
@@ -1614,6 +1623,13 @@ impl JobDetails {
         self.input_documents_count
     }
 }
+impl JobDetails {
+    /// Creates a new builder-style object to manufacture [`JobDetails`](crate::model::JobDetails).
+    pub fn builder() -> crate::model::job_details::Builder {
+        crate::model::job_details::Builder::default()
+    }
+}
+
 /// See [`JobDetails`](crate::model::JobDetails).
 pub mod job_details {
 
@@ -1666,12 +1682,6 @@ pub mod job_details {
         }
     }
 }
-impl JobDetails {
-    /// Creates a new builder-style object to manufacture [`JobDetails`](crate::model::JobDetails).
-    pub fn builder() -> crate::model::job_details::Builder {
-        crate::model::job_details::Builder::default()
-    }
-}
 
 /// <p>Provides information for filtering a list of translation jobs. For more information, see <code>ListTextTranslationJobs</code>.</p>
 #[non_exhaustive]
@@ -1708,6 +1718,13 @@ impl TextTranslationJobFilter {
         self.submitted_after_time.as_ref()
     }
 }
+impl TextTranslationJobFilter {
+    /// Creates a new builder-style object to manufacture [`TextTranslationJobFilter`](crate::model::TextTranslationJobFilter).
+    pub fn builder() -> crate::model::text_translation_job_filter::Builder {
+        crate::model::text_translation_job_filter::Builder::default()
+    }
+}
+
 /// See [`TextTranslationJobFilter`](crate::model::TextTranslationJobFilter).
 pub mod text_translation_job_filter {
 
@@ -1779,12 +1796,6 @@ pub mod text_translation_job_filter {
                 submitted_after_time: self.submitted_after_time,
             }
         }
-    }
-}
-impl TextTranslationJobFilter {
-    /// Creates a new builder-style object to manufacture [`TextTranslationJobFilter`](crate::model::TextTranslationJobFilter).
-    pub fn builder() -> crate::model::text_translation_job_filter::Builder {
-        crate::model::text_translation_job_filter::Builder::default()
     }
 }
 
@@ -1921,6 +1932,13 @@ impl TerminologyProperties {
         self.format.as_ref()
     }
 }
+impl TerminologyProperties {
+    /// Creates a new builder-style object to manufacture [`TerminologyProperties`](crate::model::TerminologyProperties).
+    pub fn builder() -> crate::model::terminology_properties::Builder {
+        crate::model::terminology_properties::Builder::default()
+    }
+}
+
 /// See [`TerminologyProperties`](crate::model::TerminologyProperties).
 pub mod terminology_properties {
 
@@ -2158,12 +2176,6 @@ pub mod terminology_properties {
                 format: self.format,
             }
         }
-    }
-}
-impl TerminologyProperties {
-    /// Creates a new builder-style object to manufacture [`TerminologyProperties`](crate::model::TerminologyProperties).
-    pub fn builder() -> crate::model::terminology_properties::Builder {
-        crate::model::terminology_properties::Builder::default()
     }
 }
 
@@ -2482,6 +2494,13 @@ impl ParallelDataProperties {
         self.latest_update_attempt_at.as_ref()
     }
 }
+impl ParallelDataProperties {
+    /// Creates a new builder-style object to manufacture [`ParallelDataProperties`](crate::model::ParallelDataProperties).
+    pub fn builder() -> crate::model::parallel_data_properties::Builder {
+        crate::model::parallel_data_properties::Builder::default()
+    }
+}
+
 /// See [`ParallelDataProperties`](crate::model::ParallelDataProperties).
 pub mod parallel_data_properties {
 
@@ -2739,12 +2758,6 @@ pub mod parallel_data_properties {
         }
     }
 }
-impl ParallelDataProperties {
-    /// Creates a new builder-style object to manufacture [`ParallelDataProperties`](crate::model::ParallelDataProperties).
-    pub fn builder() -> crate::model::parallel_data_properties::Builder {
-        crate::model::parallel_data_properties::Builder::default()
-    }
-}
 
 /// When writing a match expression against `DisplayLanguageCode`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -2901,6 +2914,13 @@ impl Language {
         self.language_code.as_deref()
     }
 }
+impl Language {
+    /// Creates a new builder-style object to manufacture [`Language`](crate::model::Language).
+    pub fn builder() -> crate::model::language::Builder {
+        crate::model::language::Builder::default()
+    }
+}
+
 /// See [`Language`](crate::model::Language).
 pub mod language {
 
@@ -2947,12 +2967,6 @@ pub mod language {
         }
     }
 }
-impl Language {
-    /// Creates a new builder-style object to manufacture [`Language`](crate::model::Language).
-    pub fn builder() -> crate::model::language::Builder {
-        crate::model::language::Builder::default()
-    }
-}
 
 /// <p>The location of the custom terminology data.</p>
 #[non_exhaustive]
@@ -2983,6 +2997,13 @@ impl TerminologyDataLocation {
         self.location.as_deref()
     }
 }
+impl TerminologyDataLocation {
+    /// Creates a new builder-style object to manufacture [`TerminologyDataLocation`](crate::model::TerminologyDataLocation).
+    pub fn builder() -> crate::model::terminology_data_location::Builder {
+        crate::model::terminology_data_location::Builder::default()
+    }
+}
+
 /// See [`TerminologyDataLocation`](crate::model::TerminologyDataLocation).
 pub mod terminology_data_location {
 
@@ -3032,12 +3053,6 @@ pub mod terminology_data_location {
                 location: self.location,
             }
         }
-    }
-}
-impl TerminologyDataLocation {
-    /// Creates a new builder-style object to manufacture [`TerminologyDataLocation`](crate::model::TerminologyDataLocation).
-    pub fn builder() -> crate::model::terminology_data_location::Builder {
-        crate::model::terminology_data_location::Builder::default()
     }
 }
 
@@ -3108,6 +3123,13 @@ impl std::fmt::Debug for TerminologyData {
         formatter.finish()
     }
 }
+impl TerminologyData {
+    /// Creates a new builder-style object to manufacture [`TerminologyData`](crate::model::TerminologyData).
+    pub fn builder() -> crate::model::terminology_data::Builder {
+        crate::model::terminology_data::Builder::default()
+    }
+}
+
 /// See [`TerminologyData`](crate::model::TerminologyData).
 pub mod terminology_data {
 
@@ -3203,12 +3225,6 @@ pub mod terminology_data {
             formatter.field("directionality", &self.directionality);
             formatter.finish()
         }
-    }
-}
-impl TerminologyData {
-    /// Creates a new builder-style object to manufacture [`TerminologyData`](crate::model::TerminologyData).
-    pub fn builder() -> crate::model::terminology_data::Builder {
-        crate::model::terminology_data::Builder::default()
     }
 }
 
@@ -3326,6 +3342,13 @@ impl ParallelDataDataLocation {
         self.location.as_deref()
     }
 }
+impl ParallelDataDataLocation {
+    /// Creates a new builder-style object to manufacture [`ParallelDataDataLocation`](crate::model::ParallelDataDataLocation).
+    pub fn builder() -> crate::model::parallel_data_data_location::Builder {
+        crate::model::parallel_data_data_location::Builder::default()
+    }
+}
+
 /// See [`ParallelDataDataLocation`](crate::model::ParallelDataDataLocation).
 pub mod parallel_data_data_location {
 
@@ -3375,11 +3398,5 @@ pub mod parallel_data_data_location {
                 location: self.location,
             }
         }
-    }
-}
-impl ParallelDataDataLocation {
-    /// Creates a new builder-style object to manufacture [`ParallelDataDataLocation`](crate::model::ParallelDataDataLocation).
-    pub fn builder() -> crate::model::parallel_data_data_location::Builder {
-        crate::model::parallel_data_data_location::Builder::default()
     }
 }

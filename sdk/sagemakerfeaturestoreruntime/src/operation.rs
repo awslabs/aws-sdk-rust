@@ -4,7 +4,7 @@
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`batch_get_record`](crate::client::Client::batch_get_record).
 ///
-/// See [`crate::client::fluent_builders::BatchGetRecord`] for more details about the operation.
+/// `ParseStrictResponse` impl for `BatchGetRecord`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct BatchGetRecord {
     _private: (),
@@ -37,7 +37,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchGetRecord {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`delete_record`](crate::client::Client::delete_record).
 ///
-/// See [`crate::client::fluent_builders::DeleteRecord`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DeleteRecord`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteRecord {
     _private: (),
@@ -70,7 +70,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteRecord {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`get_record`](crate::client::Client::get_record).
 ///
-/// See [`crate::client::fluent_builders::GetRecord`] for more details about the operation.
+/// `ParseStrictResponse` impl for `GetRecord`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetRecord {
     _private: (),
@@ -102,7 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetRecord {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`put_record`](crate::client::Client::put_record).
 ///
-/// See [`crate::client::fluent_builders::PutRecord`] for more details about the operation.
+/// `ParseStrictResponse` impl for `PutRecord`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutRecord {
     _private: (),

@@ -4,7 +4,7 @@
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`cancel_change_set`](crate::client::Client::cancel_change_set).
 ///
-/// See [`crate::client::fluent_builders::CancelChangeSet`] for more details about the operation.
+/// `ParseStrictResponse` impl for `CancelChangeSet`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CancelChangeSet {
     _private: (),
@@ -39,7 +39,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CancelChangeSet {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`describe_change_set`](crate::client::Client::describe_change_set).
 ///
-/// See [`crate::client::fluent_builders::DescribeChangeSet`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DescribeChangeSet`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeChangeSet {
     _private: (),
@@ -74,7 +74,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeChangeSet {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`describe_entity`](crate::client::Client::describe_entity).
 ///
-/// See [`crate::client::fluent_builders::DescribeEntity`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DescribeEntity`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeEntity {
     _private: (),
@@ -107,7 +107,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeEntity {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_change_sets`](crate::client::Client::list_change_sets).
 ///
-/// See [`crate::client::fluent_builders::ListChangeSets`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListChangeSets`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListChangeSets {
     _private: (),
@@ -140,7 +140,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListChangeSets {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_entities`](crate::client::Client::list_entities).
 ///
-/// See [`crate::client::fluent_builders::ListEntities`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListEntities`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListEntities {
     _private: (),
@@ -173,7 +173,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListEntities {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
 ///
-/// See [`crate::client::fluent_builders::ListTagsForResource`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTagsForResource {
     _private: (),
@@ -208,7 +208,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`start_change_set`](crate::client::Client::start_change_set).
 ///
-/// See [`crate::client::fluent_builders::StartChangeSet`] for more details about the operation.
+/// `ParseStrictResponse` impl for `StartChangeSet`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StartChangeSet {
     _private: (),
@@ -241,7 +241,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartChangeSet {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`tag_resource`](crate::client::Client::tag_resource).
 ///
-/// See [`crate::client::fluent_builders::TagResource`] for more details about the operation.
+/// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct TagResource {
     _private: (),
@@ -274,7 +274,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`untag_resource`](crate::client::Client::untag_resource).
 ///
-/// See [`crate::client::fluent_builders::UntagResource`] for more details about the operation.
+/// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UntagResource {
     _private: (),

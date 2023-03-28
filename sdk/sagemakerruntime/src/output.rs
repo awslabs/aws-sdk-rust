@@ -26,6 +26,13 @@ impl aws_http::request_id::RequestId for InvokeEndpointAsyncOutput {
         self._request_id.as_deref()
     }
 }
+impl InvokeEndpointAsyncOutput {
+    /// Creates a new builder-style object to manufacture [`InvokeEndpointAsyncOutput`](crate::output::InvokeEndpointAsyncOutput).
+    pub fn builder() -> crate::output::invoke_endpoint_async_output::Builder {
+        crate::output::invoke_endpoint_async_output::Builder::default()
+    }
+}
+
 /// See [`InvokeEndpointAsyncOutput`](crate::output::InvokeEndpointAsyncOutput).
 pub mod invoke_endpoint_async_output {
 
@@ -78,12 +85,6 @@ pub mod invoke_endpoint_async_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl InvokeEndpointAsyncOutput {
-    /// Creates a new builder-style object to manufacture [`InvokeEndpointAsyncOutput`](crate::output::InvokeEndpointAsyncOutput).
-    pub fn builder() -> crate::output::invoke_endpoint_async_output::Builder {
-        crate::output::invoke_endpoint_async_output::Builder::default()
     }
 }
 
@@ -150,6 +151,13 @@ impl aws_http::request_id::RequestId for InvokeEndpointOutput {
         self._request_id.as_deref()
     }
 }
+impl InvokeEndpointOutput {
+    /// Creates a new builder-style object to manufacture [`InvokeEndpointOutput`](crate::output::InvokeEndpointOutput).
+    pub fn builder() -> crate::output::invoke_endpoint_output::Builder {
+        crate::output::invoke_endpoint_output::Builder::default()
+    }
+}
+
 /// See [`InvokeEndpointOutput`](crate::output::InvokeEndpointOutput).
 pub mod invoke_endpoint_output {
 
@@ -251,11 +259,5 @@ pub mod invoke_endpoint_output {
             formatter.field("_request_id", &self._request_id);
             formatter.finish()
         }
-    }
-}
-impl InvokeEndpointOutput {
-    /// Creates a new builder-style object to manufacture [`InvokeEndpointOutput`](crate::output::InvokeEndpointOutput).
-    pub fn builder() -> crate::output::invoke_endpoint_output::Builder {
-        crate::output::invoke_endpoint_output::Builder::default()
     }
 }

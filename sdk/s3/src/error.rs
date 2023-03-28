@@ -611,11 +611,47 @@ pub struct ObjectAlreadyInActiveTierError {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl ObjectAlreadyInActiveTierError {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for ObjectAlreadyInActiveTierError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "ObjectAlreadyInActiveTierError")?;
+        if let Some(inner_1) = &self.message {
+            {
+                write!(f, ": {}", inner_1)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for ObjectAlreadyInActiveTierError {}
+impl crate::s3_request_id::RequestIdExt for crate::error::ObjectAlreadyInActiveTierError {
+    fn extended_request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().extended_request_id()
+    }
+}
+impl aws_http::request_id::RequestId for crate::error::ObjectAlreadyInActiveTierError {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for ObjectAlreadyInActiveTierError {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl ObjectAlreadyInActiveTierError {
     /// Creates a new builder-style object to manufacture [`ObjectAlreadyInActiveTierError`](crate::error::ObjectAlreadyInActiveTierError).
     pub fn builder() -> crate::error::object_already_in_active_tier_error::Builder {
         crate::error::object_already_in_active_tier_error::Builder::default()
     }
 }
+
 /// See [`ObjectAlreadyInActiveTierError`](crate::error::ObjectAlreadyInActiveTierError).
 pub mod object_already_in_active_tier_error {
 
@@ -658,41 +694,6 @@ pub mod object_already_in_active_tier_error {
                 meta: self.meta.unwrap_or_default(),
             }
         }
-    }
-}
-impl ObjectAlreadyInActiveTierError {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for ObjectAlreadyInActiveTierError {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "ObjectAlreadyInActiveTierError")?;
-        if let Some(inner_1) = &self.message {
-            {
-                write!(f, ": {}", inner_1)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for ObjectAlreadyInActiveTierError {}
-impl crate::s3_request_id::RequestIdExt for crate::error::ObjectAlreadyInActiveTierError {
-    fn extended_request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().extended_request_id()
-    }
-}
-impl aws_http::request_id::RequestId for crate::error::ObjectAlreadyInActiveTierError {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for ObjectAlreadyInActiveTierError {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
     }
 }
 
@@ -1306,11 +1307,47 @@ pub struct NoSuchKey {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl NoSuchKey {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for NoSuchKey {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "NoSuchKey")?;
+        if let Some(inner_2) = &self.message {
+            {
+                write!(f, ": {}", inner_2)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for NoSuchKey {}
+impl crate::s3_request_id::RequestIdExt for crate::error::NoSuchKey {
+    fn extended_request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().extended_request_id()
+    }
+}
+impl aws_http::request_id::RequestId for crate::error::NoSuchKey {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for NoSuchKey {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl NoSuchKey {
     /// Creates a new builder-style object to manufacture [`NoSuchKey`](crate::error::NoSuchKey).
     pub fn builder() -> crate::error::no_such_key::Builder {
         crate::error::no_such_key::Builder::default()
     }
 }
+
 /// See [`NoSuchKey`](crate::error::NoSuchKey).
 pub mod no_such_key {
 
@@ -1353,41 +1390,6 @@ pub mod no_such_key {
                 meta: self.meta.unwrap_or_default(),
             }
         }
-    }
-}
-impl NoSuchKey {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for NoSuchKey {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "NoSuchKey")?;
-        if let Some(inner_2) = &self.message {
-            {
-                write!(f, ": {}", inner_2)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for NoSuchKey {}
-impl crate::s3_request_id::RequestIdExt for crate::error::NoSuchKey {
-    fn extended_request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().extended_request_id()
-    }
-}
-impl aws_http::request_id::RequestId for crate::error::NoSuchKey {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for NoSuchKey {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
     }
 }
 
@@ -3590,11 +3592,47 @@ pub struct NoSuchBucket {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl NoSuchBucket {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for NoSuchBucket {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "NoSuchBucket")?;
+        if let Some(inner_3) = &self.message {
+            {
+                write!(f, ": {}", inner_3)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for NoSuchBucket {}
+impl crate::s3_request_id::RequestIdExt for crate::error::NoSuchBucket {
+    fn extended_request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().extended_request_id()
+    }
+}
+impl aws_http::request_id::RequestId for crate::error::NoSuchBucket {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for NoSuchBucket {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl NoSuchBucket {
     /// Creates a new builder-style object to manufacture [`NoSuchBucket`](crate::error::NoSuchBucket).
     pub fn builder() -> crate::error::no_such_bucket::Builder {
         crate::error::no_such_bucket::Builder::default()
     }
 }
+
 /// See [`NoSuchBucket`](crate::error::NoSuchBucket).
 pub mod no_such_bucket {
 
@@ -3637,41 +3675,6 @@ pub mod no_such_bucket {
                 meta: self.meta.unwrap_or_default(),
             }
         }
-    }
-}
-impl NoSuchBucket {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for NoSuchBucket {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "NoSuchBucket")?;
-        if let Some(inner_3) = &self.message {
-            {
-                write!(f, ": {}", inner_3)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for NoSuchBucket {}
-impl crate::s3_request_id::RequestIdExt for crate::error::NoSuchBucket {
-    fn extended_request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().extended_request_id()
-    }
-}
-impl aws_http::request_id::RequestId for crate::error::NoSuchBucket {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for NoSuchBucket {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
     }
 }
 
@@ -4508,11 +4511,47 @@ pub struct NotFound {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl NotFound {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for NotFound {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "NotFound")?;
+        if let Some(inner_4) = &self.message {
+            {
+                write!(f, ": {}", inner_4)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for NotFound {}
+impl crate::s3_request_id::RequestIdExt for crate::error::NotFound {
+    fn extended_request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().extended_request_id()
+    }
+}
+impl aws_http::request_id::RequestId for crate::error::NotFound {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for NotFound {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl NotFound {
     /// Creates a new builder-style object to manufacture [`NotFound`](crate::error::NotFound).
     pub fn builder() -> crate::error::not_found::Builder {
         crate::error::not_found::Builder::default()
     }
 }
+
 /// See [`NotFound`](crate::error::NotFound).
 pub mod not_found {
 
@@ -4555,41 +4594,6 @@ pub mod not_found {
                 meta: self.meta.unwrap_or_default(),
             }
         }
-    }
-}
-impl NotFound {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for NotFound {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "NotFound")?;
-        if let Some(inner_4) = &self.message {
-            {
-                write!(f, ": {}", inner_4)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for NotFound {}
-impl crate::s3_request_id::RequestIdExt for crate::error::NotFound {
-    fn extended_request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().extended_request_id()
-    }
-}
-impl aws_http::request_id::RequestId for crate::error::NotFound {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for NotFound {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
     }
 }
 
@@ -5659,11 +5663,47 @@ impl InvalidObjectState {
     }
 }
 impl InvalidObjectState {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for InvalidObjectState {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "InvalidObjectState")?;
+        if let Some(inner_5) = &self.message {
+            {
+                write!(f, ": {}", inner_5)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for InvalidObjectState {}
+impl crate::s3_request_id::RequestIdExt for crate::error::InvalidObjectState {
+    fn extended_request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().extended_request_id()
+    }
+}
+impl aws_http::request_id::RequestId for crate::error::InvalidObjectState {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidObjectState {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl InvalidObjectState {
     /// Creates a new builder-style object to manufacture [`InvalidObjectState`](crate::error::InvalidObjectState).
     pub fn builder() -> crate::error::invalid_object_state::Builder {
         crate::error::invalid_object_state::Builder::default()
     }
 }
+
 /// See [`InvalidObjectState`](crate::error::InvalidObjectState).
 pub mod invalid_object_state {
 
@@ -5736,41 +5776,6 @@ pub mod invalid_object_state {
                 meta: self.meta.unwrap_or_default(),
             }
         }
-    }
-}
-impl InvalidObjectState {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for InvalidObjectState {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "InvalidObjectState")?;
-        if let Some(inner_5) = &self.message {
-            {
-                write!(f, ": {}", inner_5)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for InvalidObjectState {}
-impl crate::s3_request_id::RequestIdExt for crate::error::InvalidObjectState {
-    fn extended_request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().extended_request_id()
-    }
-}
-impl aws_http::request_id::RequestId for crate::error::InvalidObjectState {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidObjectState {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
     }
 }
 
@@ -9670,11 +9675,47 @@ pub struct BucketAlreadyOwnedByYou {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl BucketAlreadyOwnedByYou {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for BucketAlreadyOwnedByYou {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "BucketAlreadyOwnedByYou")?;
+        if let Some(inner_6) = &self.message {
+            {
+                write!(f, ": {}", inner_6)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for BucketAlreadyOwnedByYou {}
+impl crate::s3_request_id::RequestIdExt for crate::error::BucketAlreadyOwnedByYou {
+    fn extended_request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().extended_request_id()
+    }
+}
+impl aws_http::request_id::RequestId for crate::error::BucketAlreadyOwnedByYou {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for BucketAlreadyOwnedByYou {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl BucketAlreadyOwnedByYou {
     /// Creates a new builder-style object to manufacture [`BucketAlreadyOwnedByYou`](crate::error::BucketAlreadyOwnedByYou).
     pub fn builder() -> crate::error::bucket_already_owned_by_you::Builder {
         crate::error::bucket_already_owned_by_you::Builder::default()
     }
 }
+
 /// See [`BucketAlreadyOwnedByYou`](crate::error::BucketAlreadyOwnedByYou).
 pub mod bucket_already_owned_by_you {
 
@@ -9719,41 +9760,6 @@ pub mod bucket_already_owned_by_you {
         }
     }
 }
-impl BucketAlreadyOwnedByYou {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for BucketAlreadyOwnedByYou {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "BucketAlreadyOwnedByYou")?;
-        if let Some(inner_6) = &self.message {
-            {
-                write!(f, ": {}", inner_6)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for BucketAlreadyOwnedByYou {}
-impl crate::s3_request_id::RequestIdExt for crate::error::BucketAlreadyOwnedByYou {
-    fn extended_request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().extended_request_id()
-    }
-}
-impl aws_http::request_id::RequestId for crate::error::BucketAlreadyOwnedByYou {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for BucketAlreadyOwnedByYou {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
-}
 
 /// <p>The requested bucket name is not available. The bucket namespace is shared by all users of the system. Select a different name and try again.</p>
 #[non_exhaustive]
@@ -9765,11 +9771,47 @@ pub struct BucketAlreadyExists {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl BucketAlreadyExists {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for BucketAlreadyExists {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "BucketAlreadyExists")?;
+        if let Some(inner_7) = &self.message {
+            {
+                write!(f, ": {}", inner_7)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for BucketAlreadyExists {}
+impl crate::s3_request_id::RequestIdExt for crate::error::BucketAlreadyExists {
+    fn extended_request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().extended_request_id()
+    }
+}
+impl aws_http::request_id::RequestId for crate::error::BucketAlreadyExists {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for BucketAlreadyExists {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl BucketAlreadyExists {
     /// Creates a new builder-style object to manufacture [`BucketAlreadyExists`](crate::error::BucketAlreadyExists).
     pub fn builder() -> crate::error::bucket_already_exists::Builder {
         crate::error::bucket_already_exists::Builder::default()
     }
 }
+
 /// See [`BucketAlreadyExists`](crate::error::BucketAlreadyExists).
 pub mod bucket_already_exists {
 
@@ -9812,41 +9854,6 @@ pub mod bucket_already_exists {
                 meta: self.meta.unwrap_or_default(),
             }
         }
-    }
-}
-impl BucketAlreadyExists {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for BucketAlreadyExists {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "BucketAlreadyExists")?;
-        if let Some(inner_7) = &self.message {
-            {
-                write!(f, ": {}", inner_7)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for BucketAlreadyExists {}
-impl crate::s3_request_id::RequestIdExt for crate::error::BucketAlreadyExists {
-    fn extended_request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().extended_request_id()
-    }
-}
-impl aws_http::request_id::RequestId for crate::error::BucketAlreadyExists {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for BucketAlreadyExists {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
     }
 }
 
@@ -9970,11 +9977,47 @@ pub struct ObjectNotInActiveTierError {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl ObjectNotInActiveTierError {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for ObjectNotInActiveTierError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "ObjectNotInActiveTierError")?;
+        if let Some(inner_8) = &self.message {
+            {
+                write!(f, ": {}", inner_8)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for ObjectNotInActiveTierError {}
+impl crate::s3_request_id::RequestIdExt for crate::error::ObjectNotInActiveTierError {
+    fn extended_request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().extended_request_id()
+    }
+}
+impl aws_http::request_id::RequestId for crate::error::ObjectNotInActiveTierError {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for ObjectNotInActiveTierError {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl ObjectNotInActiveTierError {
     /// Creates a new builder-style object to manufacture [`ObjectNotInActiveTierError`](crate::error::ObjectNotInActiveTierError).
     pub fn builder() -> crate::error::object_not_in_active_tier_error::Builder {
         crate::error::object_not_in_active_tier_error::Builder::default()
     }
 }
+
 /// See [`ObjectNotInActiveTierError`](crate::error::ObjectNotInActiveTierError).
 pub mod object_not_in_active_tier_error {
 
@@ -10017,41 +10060,6 @@ pub mod object_not_in_active_tier_error {
                 meta: self.meta.unwrap_or_default(),
             }
         }
-    }
-}
-impl ObjectNotInActiveTierError {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for ObjectNotInActiveTierError {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "ObjectNotInActiveTierError")?;
-        if let Some(inner_8) = &self.message {
-            {
-                write!(f, ": {}", inner_8)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for ObjectNotInActiveTierError {}
-impl crate::s3_request_id::RequestIdExt for crate::error::ObjectNotInActiveTierError {
-    fn extended_request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().extended_request_id()
-    }
-}
-impl aws_http::request_id::RequestId for crate::error::ObjectNotInActiveTierError {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for ObjectNotInActiveTierError {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
     }
 }
 
@@ -10273,11 +10281,47 @@ pub struct NoSuchUpload {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl NoSuchUpload {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for NoSuchUpload {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "NoSuchUpload")?;
+        if let Some(inner_9) = &self.message {
+            {
+                write!(f, ": {}", inner_9)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for NoSuchUpload {}
+impl crate::s3_request_id::RequestIdExt for crate::error::NoSuchUpload {
+    fn extended_request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().extended_request_id()
+    }
+}
+impl aws_http::request_id::RequestId for crate::error::NoSuchUpload {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for NoSuchUpload {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl NoSuchUpload {
     /// Creates a new builder-style object to manufacture [`NoSuchUpload`](crate::error::NoSuchUpload).
     pub fn builder() -> crate::error::no_such_upload::Builder {
         crate::error::no_such_upload::Builder::default()
     }
 }
+
 /// See [`NoSuchUpload`](crate::error::NoSuchUpload).
 pub mod no_such_upload {
 
@@ -10320,40 +10364,5 @@ pub mod no_such_upload {
                 meta: self.meta.unwrap_or_default(),
             }
         }
-    }
-}
-impl NoSuchUpload {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for NoSuchUpload {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "NoSuchUpload")?;
-        if let Some(inner_9) = &self.message {
-            {
-                write!(f, ": {}", inner_9)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for NoSuchUpload {}
-impl crate::s3_request_id::RequestIdExt for crate::error::NoSuchUpload {
-    fn extended_request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().extended_request_id()
-    }
-}
-impl aws_http::request_id::RequestId for crate::error::NoSuchUpload {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for NoSuchUpload {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
     }
 }

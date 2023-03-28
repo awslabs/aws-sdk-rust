@@ -30,6 +30,14 @@ impl aws_http::request_id::RequestId for UpdateApplicationMaintenanceConfigurati
         self._request_id.as_deref()
     }
 }
+impl UpdateApplicationMaintenanceConfigurationOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateApplicationMaintenanceConfigurationOutput`](crate::output::UpdateApplicationMaintenanceConfigurationOutput).
+    pub fn builder() -> crate::output::update_application_maintenance_configuration_output::Builder
+    {
+        crate::output::update_application_maintenance_configuration_output::Builder::default()
+    }
+}
+
 /// See [`UpdateApplicationMaintenanceConfigurationOutput`](crate::output::UpdateApplicationMaintenanceConfigurationOutput).
 pub mod update_application_maintenance_configuration_output {
 
@@ -94,13 +102,6 @@ pub mod update_application_maintenance_configuration_output {
         }
     }
 }
-impl UpdateApplicationMaintenanceConfigurationOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateApplicationMaintenanceConfigurationOutput`](crate::output::UpdateApplicationMaintenanceConfigurationOutput).
-    pub fn builder() -> crate::output::update_application_maintenance_configuration_output::Builder
-    {
-        crate::output::update_application_maintenance_configuration_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -122,6 +123,13 @@ impl aws_http::request_id::RequestId for UpdateApplicationOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdateApplicationOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateApplicationOutput`](crate::output::UpdateApplicationOutput).
+    pub fn builder() -> crate::output::update_application_output::Builder {
+        crate::output::update_application_output::Builder::default()
+    }
+}
+
 /// See [`UpdateApplicationOutput`](crate::output::UpdateApplicationOutput).
 pub mod update_application_output {
 
@@ -164,12 +172,6 @@ pub mod update_application_output {
         }
     }
 }
-impl UpdateApplicationOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateApplicationOutput`](crate::output::UpdateApplicationOutput).
-    pub fn builder() -> crate::output::update_application_output::Builder {
-        crate::output::update_application_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -182,6 +184,13 @@ impl aws_http::request_id::RequestId for UntagResourceOutput {
         self._request_id.as_deref()
     }
 }
+impl UntagResourceOutput {
+    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    pub fn builder() -> crate::output::untag_resource_output::Builder {
+        crate::output::untag_resource_output::Builder::default()
+    }
+}
+
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
 
@@ -209,12 +218,6 @@ pub mod untag_resource_output {
         }
     }
 }
-impl UntagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
-    pub fn builder() -> crate::output::untag_resource_output::Builder {
-        crate::output::untag_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -227,6 +230,13 @@ impl aws_http::request_id::RequestId for TagResourceOutput {
         self._request_id.as_deref()
     }
 }
+impl TagResourceOutput {
+    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
+    pub fn builder() -> crate::output::tag_resource_output::Builder {
+        crate::output::tag_resource_output::Builder::default()
+    }
+}
+
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
 
@@ -254,12 +264,6 @@ pub mod tag_resource_output {
         }
     }
 }
-impl TagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
-    pub fn builder() -> crate::output::tag_resource_output::Builder {
-        crate::output::tag_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -272,6 +276,13 @@ impl aws_http::request_id::RequestId for StopApplicationOutput {
         self._request_id.as_deref()
     }
 }
+impl StopApplicationOutput {
+    /// Creates a new builder-style object to manufacture [`StopApplicationOutput`](crate::output::StopApplicationOutput).
+    pub fn builder() -> crate::output::stop_application_output::Builder {
+        crate::output::stop_application_output::Builder::default()
+    }
+}
+
 /// See [`StopApplicationOutput`](crate::output::StopApplicationOutput).
 pub mod stop_application_output {
 
@@ -299,12 +310,6 @@ pub mod stop_application_output {
         }
     }
 }
-impl StopApplicationOutput {
-    /// Creates a new builder-style object to manufacture [`StopApplicationOutput`](crate::output::StopApplicationOutput).
-    pub fn builder() -> crate::output::stop_application_output::Builder {
-        crate::output::stop_application_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -317,6 +322,13 @@ impl aws_http::request_id::RequestId for StartApplicationOutput {
         self._request_id.as_deref()
     }
 }
+impl StartApplicationOutput {
+    /// Creates a new builder-style object to manufacture [`StartApplicationOutput`](crate::output::StartApplicationOutput).
+    pub fn builder() -> crate::output::start_application_output::Builder {
+        crate::output::start_application_output::Builder::default()
+    }
+}
+
 /// See [`StartApplicationOutput`](crate::output::StartApplicationOutput).
 pub mod start_application_output {
 
@@ -344,12 +356,6 @@ pub mod start_application_output {
         }
     }
 }
-impl StartApplicationOutput {
-    /// Creates a new builder-style object to manufacture [`StartApplicationOutput`](crate::output::StartApplicationOutput).
-    pub fn builder() -> crate::output::start_application_output::Builder {
-        crate::output::start_application_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -371,6 +377,13 @@ impl aws_http::request_id::RequestId for RollbackApplicationOutput {
         self._request_id.as_deref()
     }
 }
+impl RollbackApplicationOutput {
+    /// Creates a new builder-style object to manufacture [`RollbackApplicationOutput`](crate::output::RollbackApplicationOutput).
+    pub fn builder() -> crate::output::rollback_application_output::Builder {
+        crate::output::rollback_application_output::Builder::default()
+    }
+}
+
 /// See [`RollbackApplicationOutput`](crate::output::RollbackApplicationOutput).
 pub mod rollback_application_output {
 
@@ -413,12 +426,6 @@ pub mod rollback_application_output {
         }
     }
 }
-impl RollbackApplicationOutput {
-    /// Creates a new builder-style object to manufacture [`RollbackApplicationOutput`](crate::output::RollbackApplicationOutput).
-    pub fn builder() -> crate::output::rollback_application_output::Builder {
-        crate::output::rollback_application_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -440,6 +447,13 @@ impl aws_http::request_id::RequestId for ListTagsForResourceOutput {
         self._request_id.as_deref()
     }
 }
+impl ListTagsForResourceOutput {
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
+        crate::output::list_tags_for_resource_output::Builder::default()
+    }
+}
+
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
 
@@ -488,12 +502,6 @@ pub mod list_tags_for_resource_output {
         }
     }
 }
-impl ListTagsForResourceOutput {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
-    pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
-        crate::output::list_tags_for_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -527,6 +535,13 @@ impl aws_http::request_id::RequestId for ListApplicationVersionsOutput {
         self._request_id.as_deref()
     }
 }
+impl ListApplicationVersionsOutput {
+    /// Creates a new builder-style object to manufacture [`ListApplicationVersionsOutput`](crate::output::ListApplicationVersionsOutput).
+    pub fn builder() -> crate::output::list_application_versions_output::Builder {
+        crate::output::list_application_versions_output::Builder::default()
+    }
+}
+
 /// See [`ListApplicationVersionsOutput`](crate::output::ListApplicationVersionsOutput).
 pub mod list_application_versions_output {
 
@@ -593,12 +608,6 @@ pub mod list_application_versions_output {
         }
     }
 }
-impl ListApplicationVersionsOutput {
-    /// Creates a new builder-style object to manufacture [`ListApplicationVersionsOutput`](crate::output::ListApplicationVersionsOutput).
-    pub fn builder() -> crate::output::list_application_versions_output::Builder {
-        crate::output::list_application_versions_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -627,6 +636,13 @@ impl aws_http::request_id::RequestId for ListApplicationSnapshotsOutput {
         self._request_id.as_deref()
     }
 }
+impl ListApplicationSnapshotsOutput {
+    /// Creates a new builder-style object to manufacture [`ListApplicationSnapshotsOutput`](crate::output::ListApplicationSnapshotsOutput).
+    pub fn builder() -> crate::output::list_application_snapshots_output::Builder {
+        crate::output::list_application_snapshots_output::Builder::default()
+    }
+}
+
 /// See [`ListApplicationSnapshotsOutput`](crate::output::ListApplicationSnapshotsOutput).
 pub mod list_application_snapshots_output {
 
@@ -688,12 +704,6 @@ pub mod list_application_snapshots_output {
         }
     }
 }
-impl ListApplicationSnapshotsOutput {
-    /// Creates a new builder-style object to manufacture [`ListApplicationSnapshotsOutput`](crate::output::ListApplicationSnapshotsOutput).
-    pub fn builder() -> crate::output::list_application_snapshots_output::Builder {
-        crate::output::list_application_snapshots_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -724,6 +734,13 @@ impl aws_http::request_id::RequestId for ListApplicationsOutput {
         self._request_id.as_deref()
     }
 }
+impl ListApplicationsOutput {
+    /// Creates a new builder-style object to manufacture [`ListApplicationsOutput`](crate::output::ListApplicationsOutput).
+    pub fn builder() -> crate::output::list_applications_output::Builder {
+        crate::output::list_applications_output::Builder::default()
+    }
+}
+
 /// See [`ListApplicationsOutput`](crate::output::ListApplicationsOutput).
 pub mod list_applications_output {
 
@@ -785,12 +802,6 @@ pub mod list_applications_output {
         }
     }
 }
-impl ListApplicationsOutput {
-    /// Creates a new builder-style object to manufacture [`ListApplicationsOutput`](crate::output::ListApplicationsOutput).
-    pub fn builder() -> crate::output::list_applications_output::Builder {
-        crate::output::list_applications_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -836,6 +847,13 @@ impl aws_http::request_id::RequestId for DiscoverInputSchemaOutput {
         self._request_id.as_deref()
     }
 }
+impl DiscoverInputSchemaOutput {
+    /// Creates a new builder-style object to manufacture [`DiscoverInputSchemaOutput`](crate::output::DiscoverInputSchemaOutput).
+    pub fn builder() -> crate::output::discover_input_schema_output::Builder {
+        crate::output::discover_input_schema_output::Builder::default()
+    }
+}
+
 /// See [`DiscoverInputSchemaOutput`](crate::output::DiscoverInputSchemaOutput).
 pub mod discover_input_schema_output {
 
@@ -942,12 +960,6 @@ pub mod discover_input_schema_output {
         }
     }
 }
-impl DiscoverInputSchemaOutput {
-    /// Creates a new builder-style object to manufacture [`DiscoverInputSchemaOutput`](crate::output::DiscoverInputSchemaOutput).
-    pub fn builder() -> crate::output::discover_input_schema_output::Builder {
-        crate::output::discover_input_schema_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -971,6 +983,13 @@ impl aws_http::request_id::RequestId for DescribeApplicationVersionOutput {
         self._request_id.as_deref()
     }
 }
+impl DescribeApplicationVersionOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeApplicationVersionOutput`](crate::output::DescribeApplicationVersionOutput).
+    pub fn builder() -> crate::output::describe_application_version_output::Builder {
+        crate::output::describe_application_version_output::Builder::default()
+    }
+}
+
 /// See [`DescribeApplicationVersionOutput`](crate::output::DescribeApplicationVersionOutput).
 pub mod describe_application_version_output {
 
@@ -1016,12 +1035,6 @@ pub mod describe_application_version_output {
         }
     }
 }
-impl DescribeApplicationVersionOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeApplicationVersionOutput`](crate::output::DescribeApplicationVersionOutput).
-    pub fn builder() -> crate::output::describe_application_version_output::Builder {
-        crate::output::describe_application_version_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1043,6 +1056,13 @@ impl aws_http::request_id::RequestId for DescribeApplicationSnapshotOutput {
         self._request_id.as_deref()
     }
 }
+impl DescribeApplicationSnapshotOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeApplicationSnapshotOutput`](crate::output::DescribeApplicationSnapshotOutput).
+    pub fn builder() -> crate::output::describe_application_snapshot_output::Builder {
+        crate::output::describe_application_snapshot_output::Builder::default()
+    }
+}
+
 /// See [`DescribeApplicationSnapshotOutput`](crate::output::DescribeApplicationSnapshotOutput).
 pub mod describe_application_snapshot_output {
 
@@ -1085,12 +1105,6 @@ pub mod describe_application_snapshot_output {
         }
     }
 }
-impl DescribeApplicationSnapshotOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeApplicationSnapshotOutput`](crate::output::DescribeApplicationSnapshotOutput).
-    pub fn builder() -> crate::output::describe_application_snapshot_output::Builder {
-        crate::output::describe_application_snapshot_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1112,6 +1126,13 @@ impl aws_http::request_id::RequestId for DescribeApplicationOutput {
         self._request_id.as_deref()
     }
 }
+impl DescribeApplicationOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeApplicationOutput`](crate::output::DescribeApplicationOutput).
+    pub fn builder() -> crate::output::describe_application_output::Builder {
+        crate::output::describe_application_output::Builder::default()
+    }
+}
+
 /// See [`DescribeApplicationOutput`](crate::output::DescribeApplicationOutput).
 pub mod describe_application_output {
 
@@ -1154,12 +1175,6 @@ pub mod describe_application_output {
         }
     }
 }
-impl DescribeApplicationOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeApplicationOutput`](crate::output::DescribeApplicationOutput).
-    pub fn builder() -> crate::output::describe_application_output::Builder {
-        crate::output::describe_application_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1188,6 +1203,13 @@ impl aws_http::request_id::RequestId for DeleteApplicationVpcConfigurationOutput
         self._request_id.as_deref()
     }
 }
+impl DeleteApplicationVpcConfigurationOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteApplicationVpcConfigurationOutput`](crate::output::DeleteApplicationVpcConfigurationOutput).
+    pub fn builder() -> crate::output::delete_application_vpc_configuration_output::Builder {
+        crate::output::delete_application_vpc_configuration_output::Builder::default()
+    }
+}
+
 /// See [`DeleteApplicationVpcConfigurationOutput`](crate::output::DeleteApplicationVpcConfigurationOutput).
 pub mod delete_application_vpc_configuration_output {
 
@@ -1242,12 +1264,6 @@ pub mod delete_application_vpc_configuration_output {
         }
     }
 }
-impl DeleteApplicationVpcConfigurationOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteApplicationVpcConfigurationOutput`](crate::output::DeleteApplicationVpcConfigurationOutput).
-    pub fn builder() -> crate::output::delete_application_vpc_configuration_output::Builder {
-        crate::output::delete_application_vpc_configuration_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1260,6 +1276,13 @@ impl aws_http::request_id::RequestId for DeleteApplicationSnapshotOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteApplicationSnapshotOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteApplicationSnapshotOutput`](crate::output::DeleteApplicationSnapshotOutput).
+    pub fn builder() -> crate::output::delete_application_snapshot_output::Builder {
+        crate::output::delete_application_snapshot_output::Builder::default()
+    }
+}
+
 /// See [`DeleteApplicationSnapshotOutput`](crate::output::DeleteApplicationSnapshotOutput).
 pub mod delete_application_snapshot_output {
 
@@ -1285,12 +1308,6 @@ pub mod delete_application_snapshot_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl DeleteApplicationSnapshotOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteApplicationSnapshotOutput`](crate::output::DeleteApplicationSnapshotOutput).
-    pub fn builder() -> crate::output::delete_application_snapshot_output::Builder {
-        crate::output::delete_application_snapshot_output::Builder::default()
     }
 }
 
@@ -1321,6 +1338,13 @@ impl aws_http::request_id::RequestId for DeleteApplicationReferenceDataSourceOut
         self._request_id.as_deref()
     }
 }
+impl DeleteApplicationReferenceDataSourceOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteApplicationReferenceDataSourceOutput`](crate::output::DeleteApplicationReferenceDataSourceOutput).
+    pub fn builder() -> crate::output::delete_application_reference_data_source_output::Builder {
+        crate::output::delete_application_reference_data_source_output::Builder::default()
+    }
+}
+
 /// See [`DeleteApplicationReferenceDataSourceOutput`](crate::output::DeleteApplicationReferenceDataSourceOutput).
 pub mod delete_application_reference_data_source_output {
 
@@ -1375,12 +1399,6 @@ pub mod delete_application_reference_data_source_output {
         }
     }
 }
-impl DeleteApplicationReferenceDataSourceOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteApplicationReferenceDataSourceOutput`](crate::output::DeleteApplicationReferenceDataSourceOutput).
-    pub fn builder() -> crate::output::delete_application_reference_data_source_output::Builder {
-        crate::output::delete_application_reference_data_source_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1409,6 +1427,13 @@ impl aws_http::request_id::RequestId for DeleteApplicationOutputOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteApplicationOutputOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteApplicationOutputOutput`](crate::output::DeleteApplicationOutputOutput).
+    pub fn builder() -> crate::output::delete_application_output_output::Builder {
+        crate::output::delete_application_output_output::Builder::default()
+    }
+}
+
 /// See [`DeleteApplicationOutputOutput`](crate::output::DeleteApplicationOutputOutput).
 pub mod delete_application_output_output {
 
@@ -1463,12 +1488,6 @@ pub mod delete_application_output_output {
         }
     }
 }
-impl DeleteApplicationOutputOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteApplicationOutputOutput`](crate::output::DeleteApplicationOutputOutput).
-    pub fn builder() -> crate::output::delete_application_output_output::Builder {
-        crate::output::delete_application_output_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1497,6 +1516,14 @@ impl aws_http::request_id::RequestId for DeleteApplicationInputProcessingConfigu
         self._request_id.as_deref()
     }
 }
+impl DeleteApplicationInputProcessingConfigurationOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteApplicationInputProcessingConfigurationOutput`](crate::output::DeleteApplicationInputProcessingConfigurationOutput).
+    pub fn builder(
+    ) -> crate::output::delete_application_input_processing_configuration_output::Builder {
+        crate::output::delete_application_input_processing_configuration_output::Builder::default()
+    }
+}
+
 /// See [`DeleteApplicationInputProcessingConfigurationOutput`](crate::output::DeleteApplicationInputProcessingConfigurationOutput).
 pub mod delete_application_input_processing_configuration_output {
 
@@ -1551,13 +1578,6 @@ pub mod delete_application_input_processing_configuration_output {
         }
     }
 }
-impl DeleteApplicationInputProcessingConfigurationOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteApplicationInputProcessingConfigurationOutput`](crate::output::DeleteApplicationInputProcessingConfigurationOutput).
-    pub fn builder(
-    ) -> crate::output::delete_application_input_processing_configuration_output::Builder {
-        crate::output::delete_application_input_processing_configuration_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1596,6 +1616,14 @@ impl aws_http::request_id::RequestId for DeleteApplicationCloudWatchLoggingOptio
         self._request_id.as_deref()
     }
 }
+impl DeleteApplicationCloudWatchLoggingOptionOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteApplicationCloudWatchLoggingOptionOutput`](crate::output::DeleteApplicationCloudWatchLoggingOptionOutput).
+    pub fn builder() -> crate::output::delete_application_cloud_watch_logging_option_output::Builder
+    {
+        crate::output::delete_application_cloud_watch_logging_option_output::Builder::default()
+    }
+}
+
 /// See [`DeleteApplicationCloudWatchLoggingOptionOutput`](crate::output::DeleteApplicationCloudWatchLoggingOptionOutput).
 pub mod delete_application_cloud_watch_logging_option_output {
 
@@ -1680,13 +1708,6 @@ pub mod delete_application_cloud_watch_logging_option_output {
         }
     }
 }
-impl DeleteApplicationCloudWatchLoggingOptionOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteApplicationCloudWatchLoggingOptionOutput`](crate::output::DeleteApplicationCloudWatchLoggingOptionOutput).
-    pub fn builder() -> crate::output::delete_application_cloud_watch_logging_option_output::Builder
-    {
-        crate::output::delete_application_cloud_watch_logging_option_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1699,6 +1720,13 @@ impl aws_http::request_id::RequestId for DeleteApplicationOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteApplicationOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteApplicationOutput`](crate::output::DeleteApplicationOutput).
+    pub fn builder() -> crate::output::delete_application_output::Builder {
+        crate::output::delete_application_output::Builder::default()
+    }
+}
+
 /// See [`DeleteApplicationOutput`](crate::output::DeleteApplicationOutput).
 pub mod delete_application_output {
 
@@ -1726,12 +1754,6 @@ pub mod delete_application_output {
         }
     }
 }
-impl DeleteApplicationOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteApplicationOutput`](crate::output::DeleteApplicationOutput).
-    pub fn builder() -> crate::output::delete_application_output::Builder {
-        crate::output::delete_application_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1744,6 +1766,13 @@ impl aws_http::request_id::RequestId for CreateApplicationSnapshotOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateApplicationSnapshotOutput {
+    /// Creates a new builder-style object to manufacture [`CreateApplicationSnapshotOutput`](crate::output::CreateApplicationSnapshotOutput).
+    pub fn builder() -> crate::output::create_application_snapshot_output::Builder {
+        crate::output::create_application_snapshot_output::Builder::default()
+    }
+}
+
 /// See [`CreateApplicationSnapshotOutput`](crate::output::CreateApplicationSnapshotOutput).
 pub mod create_application_snapshot_output {
 
@@ -1771,12 +1800,6 @@ pub mod create_application_snapshot_output {
         }
     }
 }
-impl CreateApplicationSnapshotOutput {
-    /// Creates a new builder-style object to manufacture [`CreateApplicationSnapshotOutput`](crate::output::CreateApplicationSnapshotOutput).
-    pub fn builder() -> crate::output::create_application_snapshot_output::Builder {
-        crate::output::create_application_snapshot_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1798,6 +1821,13 @@ impl aws_http::request_id::RequestId for CreateApplicationPresignedUrlOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateApplicationPresignedUrlOutput {
+    /// Creates a new builder-style object to manufacture [`CreateApplicationPresignedUrlOutput`](crate::output::CreateApplicationPresignedUrlOutput).
+    pub fn builder() -> crate::output::create_application_presigned_url_output::Builder {
+        crate::output::create_application_presigned_url_output::Builder::default()
+    }
+}
+
 /// See [`CreateApplicationPresignedUrlOutput`](crate::output::CreateApplicationPresignedUrlOutput).
 pub mod create_application_presigned_url_output {
 
@@ -1840,12 +1870,6 @@ pub mod create_application_presigned_url_output {
         }
     }
 }
-impl CreateApplicationPresignedUrlOutput {
-    /// Creates a new builder-style object to manufacture [`CreateApplicationPresignedUrlOutput`](crate::output::CreateApplicationPresignedUrlOutput).
-    pub fn builder() -> crate::output::create_application_presigned_url_output::Builder {
-        crate::output::create_application_presigned_url_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1867,6 +1891,13 @@ impl aws_http::request_id::RequestId for CreateApplicationOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateApplicationOutput {
+    /// Creates a new builder-style object to manufacture [`CreateApplicationOutput`](crate::output::CreateApplicationOutput).
+    pub fn builder() -> crate::output::create_application_output::Builder {
+        crate::output::create_application_output::Builder::default()
+    }
+}
+
 /// See [`CreateApplicationOutput`](crate::output::CreateApplicationOutput).
 pub mod create_application_output {
 
@@ -1909,12 +1940,6 @@ pub mod create_application_output {
         }
     }
 }
-impl CreateApplicationOutput {
-    /// Creates a new builder-style object to manufacture [`CreateApplicationOutput`](crate::output::CreateApplicationOutput).
-    pub fn builder() -> crate::output::create_application_output::Builder {
-        crate::output::create_application_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1953,6 +1978,13 @@ impl aws_http::request_id::RequestId for AddApplicationVpcConfigurationOutput {
         self._request_id.as_deref()
     }
 }
+impl AddApplicationVpcConfigurationOutput {
+    /// Creates a new builder-style object to manufacture [`AddApplicationVpcConfigurationOutput`](crate::output::AddApplicationVpcConfigurationOutput).
+    pub fn builder() -> crate::output::add_application_vpc_configuration_output::Builder {
+        crate::output::add_application_vpc_configuration_output::Builder::default()
+    }
+}
+
 /// See [`AddApplicationVpcConfigurationOutput`](crate::output::AddApplicationVpcConfigurationOutput).
 pub mod add_application_vpc_configuration_output {
 
@@ -2026,12 +2058,6 @@ pub mod add_application_vpc_configuration_output {
         }
     }
 }
-impl AddApplicationVpcConfigurationOutput {
-    /// Creates a new builder-style object to manufacture [`AddApplicationVpcConfigurationOutput`](crate::output::AddApplicationVpcConfigurationOutput).
-    pub fn builder() -> crate::output::add_application_vpc_configuration_output::Builder {
-        crate::output::add_application_vpc_configuration_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2070,6 +2096,13 @@ impl aws_http::request_id::RequestId for AddApplicationReferenceDataSourceOutput
         self._request_id.as_deref()
     }
 }
+impl AddApplicationReferenceDataSourceOutput {
+    /// Creates a new builder-style object to manufacture [`AddApplicationReferenceDataSourceOutput`](crate::output::AddApplicationReferenceDataSourceOutput).
+    pub fn builder() -> crate::output::add_application_reference_data_source_output::Builder {
+        crate::output::add_application_reference_data_source_output::Builder::default()
+    }
+}
+
 /// See [`AddApplicationReferenceDataSourceOutput`](crate::output::AddApplicationReferenceDataSourceOutput).
 pub mod add_application_reference_data_source_output {
 
@@ -2149,12 +2182,6 @@ pub mod add_application_reference_data_source_output {
         }
     }
 }
-impl AddApplicationReferenceDataSourceOutput {
-    /// Creates a new builder-style object to manufacture [`AddApplicationReferenceDataSourceOutput`](crate::output::AddApplicationReferenceDataSourceOutput).
-    pub fn builder() -> crate::output::add_application_reference_data_source_output::Builder {
-        crate::output::add_application_reference_data_source_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2190,6 +2217,13 @@ impl aws_http::request_id::RequestId for AddApplicationOutputOutput {
         self._request_id.as_deref()
     }
 }
+impl AddApplicationOutputOutput {
+    /// Creates a new builder-style object to manufacture [`AddApplicationOutputOutput`](crate::output::AddApplicationOutputOutput).
+    pub fn builder() -> crate::output::add_application_output_output::Builder {
+        crate::output::add_application_output_output::Builder::default()
+    }
+}
+
 /// See [`AddApplicationOutputOutput`](crate::output::AddApplicationOutputOutput).
 pub mod add_application_output_output {
 
@@ -2266,12 +2300,6 @@ pub mod add_application_output_output {
         }
     }
 }
-impl AddApplicationOutputOutput {
-    /// Creates a new builder-style object to manufacture [`AddApplicationOutputOutput`](crate::output::AddApplicationOutputOutput).
-    pub fn builder() -> crate::output::add_application_output_output::Builder {
-        crate::output::add_application_output_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2317,6 +2345,14 @@ impl aws_http::request_id::RequestId for AddApplicationInputProcessingConfigurat
         self._request_id.as_deref()
     }
 }
+impl AddApplicationInputProcessingConfigurationOutput {
+    /// Creates a new builder-style object to manufacture [`AddApplicationInputProcessingConfigurationOutput`](crate::output::AddApplicationInputProcessingConfigurationOutput).
+    pub fn builder() -> crate::output::add_application_input_processing_configuration_output::Builder
+    {
+        crate::output::add_application_input_processing_configuration_output::Builder::default()
+    }
+}
+
 /// See [`AddApplicationInputProcessingConfigurationOutput`](crate::output::AddApplicationInputProcessingConfigurationOutput).
 pub mod add_application_input_processing_configuration_output {
 
@@ -2403,13 +2439,6 @@ pub mod add_application_input_processing_configuration_output {
         }
     }
 }
-impl AddApplicationInputProcessingConfigurationOutput {
-    /// Creates a new builder-style object to manufacture [`AddApplicationInputProcessingConfigurationOutput`](crate::output::AddApplicationInputProcessingConfigurationOutput).
-    pub fn builder() -> crate::output::add_application_input_processing_configuration_output::Builder
-    {
-        crate::output::add_application_input_processing_configuration_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2445,6 +2474,13 @@ impl aws_http::request_id::RequestId for AddApplicationInputOutput {
         self._request_id.as_deref()
     }
 }
+impl AddApplicationInputOutput {
+    /// Creates a new builder-style object to manufacture [`AddApplicationInputOutput`](crate::output::AddApplicationInputOutput).
+    pub fn builder() -> crate::output::add_application_input_output::Builder {
+        crate::output::add_application_input_output::Builder::default()
+    }
+}
+
 /// See [`AddApplicationInputOutput`](crate::output::AddApplicationInputOutput).
 pub mod add_application_input_output {
 
@@ -2521,12 +2557,6 @@ pub mod add_application_input_output {
         }
     }
 }
-impl AddApplicationInputOutput {
-    /// Creates a new builder-style object to manufacture [`AddApplicationInputOutput`](crate::output::AddApplicationInputOutput).
-    pub fn builder() -> crate::output::add_application_input_output::Builder {
-        crate::output::add_application_input_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2565,6 +2595,13 @@ impl aws_http::request_id::RequestId for AddApplicationCloudWatchLoggingOptionOu
         self._request_id.as_deref()
     }
 }
+impl AddApplicationCloudWatchLoggingOptionOutput {
+    /// Creates a new builder-style object to manufacture [`AddApplicationCloudWatchLoggingOptionOutput`](crate::output::AddApplicationCloudWatchLoggingOptionOutput).
+    pub fn builder() -> crate::output::add_application_cloud_watch_logging_option_output::Builder {
+        crate::output::add_application_cloud_watch_logging_option_output::Builder::default()
+    }
+}
+
 /// See [`AddApplicationCloudWatchLoggingOptionOutput`](crate::output::AddApplicationCloudWatchLoggingOptionOutput).
 pub mod add_application_cloud_watch_logging_option_output {
 
@@ -2647,11 +2684,5 @@ pub mod add_application_cloud_watch_logging_option_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl AddApplicationCloudWatchLoggingOptionOutput {
-    /// Creates a new builder-style object to manufacture [`AddApplicationCloudWatchLoggingOptionOutput`](crate::output::AddApplicationCloudWatchLoggingOptionOutput).
-    pub fn builder() -> crate::output::add_application_cloud_watch_logging_option_output::Builder {
-        crate::output::add_application_cloud_watch_logging_option_output::Builder::default()
     }
 }

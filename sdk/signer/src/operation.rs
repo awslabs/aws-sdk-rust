@@ -4,7 +4,7 @@
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`add_profile_permission`](crate::client::Client::add_profile_permission).
 ///
-/// See [`crate::client::fluent_builders::AddProfilePermission`] for more details about the operation.
+/// `ParseStrictResponse` impl for `AddProfilePermission`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct AddProfilePermission {
     _private: (),
@@ -39,7 +39,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AddProfilePermission {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`cancel_signing_profile`](crate::client::Client::cancel_signing_profile).
 ///
-/// See [`crate::client::fluent_builders::CancelSigningProfile`] for more details about the operation.
+/// `ParseStrictResponse` impl for `CancelSigningProfile`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CancelSigningProfile {
     _private: (),
@@ -74,7 +74,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CancelSigningProfile {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`describe_signing_job`](crate::client::Client::describe_signing_job).
 ///
-/// See [`crate::client::fluent_builders::DescribeSigningJob`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DescribeSigningJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeSigningJob {
     _private: (),
@@ -109,7 +109,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeSigningJob {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`get_signing_platform`](crate::client::Client::get_signing_platform).
 ///
-/// See [`crate::client::fluent_builders::GetSigningPlatform`] for more details about the operation.
+/// `ParseStrictResponse` impl for `GetSigningPlatform`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetSigningPlatform {
     _private: (),
@@ -144,7 +144,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSigningPlatform {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`get_signing_profile`](crate::client::Client::get_signing_profile).
 ///
-/// See [`crate::client::fluent_builders::GetSigningProfile`] for more details about the operation.
+/// `ParseStrictResponse` impl for `GetSigningProfile`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetSigningProfile {
     _private: (),
@@ -179,7 +179,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSigningProfile {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_profile_permissions`](crate::client::Client::list_profile_permissions).
 ///
-/// See [`crate::client::fluent_builders::ListProfilePermissions`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListProfilePermissions`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListProfilePermissions {
     _private: (),
@@ -214,7 +214,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListProfilePermissions {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_signing_jobs`](crate::client::Client::list_signing_jobs).
 ///
-/// See [`crate::client::fluent_builders::ListSigningJobs`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListSigningJobs`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListSigningJobs {
     _private: (),
@@ -249,7 +249,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListSigningJobs {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_signing_platforms`](crate::client::Client::list_signing_platforms).
 ///
-/// See [`crate::client::fluent_builders::ListSigningPlatforms`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListSigningPlatforms`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListSigningPlatforms {
     _private: (),
@@ -284,7 +284,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListSigningPlatforms {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_signing_profiles`](crate::client::Client::list_signing_profiles).
 ///
-/// See [`crate::client::fluent_builders::ListSigningProfiles`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListSigningProfiles`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListSigningProfiles {
     _private: (),
@@ -319,7 +319,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListSigningProfiles {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
 ///
-/// See [`crate::client::fluent_builders::ListTagsForResource`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTagsForResource {
     _private: (),
@@ -354,7 +354,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`put_signing_profile`](crate::client::Client::put_signing_profile).
 ///
-/// See [`crate::client::fluent_builders::PutSigningProfile`] for more details about the operation.
+/// `ParseStrictResponse` impl for `PutSigningProfile`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutSigningProfile {
     _private: (),
@@ -389,7 +389,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutSigningProfile {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`remove_profile_permission`](crate::client::Client::remove_profile_permission).
 ///
-/// See [`crate::client::fluent_builders::RemoveProfilePermission`] for more details about the operation.
+/// `ParseStrictResponse` impl for `RemoveProfilePermission`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct RemoveProfilePermission {
     _private: (),
@@ -424,7 +424,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RemoveProfilePermission 
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`revoke_signature`](crate::client::Client::revoke_signature).
 ///
-/// See [`crate::client::fluent_builders::RevokeSignature`] for more details about the operation.
+/// `ParseStrictResponse` impl for `RevokeSignature`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct RevokeSignature {
     _private: (),
@@ -459,7 +459,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RevokeSignature {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`revoke_signing_profile`](crate::client::Client::revoke_signing_profile).
 ///
-/// See [`crate::client::fluent_builders::RevokeSigningProfile`] for more details about the operation.
+/// `ParseStrictResponse` impl for `RevokeSigningProfile`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct RevokeSigningProfile {
     _private: (),
@@ -494,7 +494,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RevokeSigningProfile {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`start_signing_job`](crate::client::Client::start_signing_job).
 ///
-/// See [`crate::client::fluent_builders::StartSigningJob`] for more details about the operation.
+/// `ParseStrictResponse` impl for `StartSigningJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StartSigningJob {
     _private: (),
@@ -529,7 +529,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartSigningJob {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`tag_resource`](crate::client::Client::tag_resource).
 ///
-/// See [`crate::client::fluent_builders::TagResource`] for more details about the operation.
+/// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct TagResource {
     _private: (),
@@ -562,7 +562,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`untag_resource`](crate::client::Client::untag_resource).
 ///
-/// See [`crate::client::fluent_builders::UntagResource`] for more details about the operation.
+/// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UntagResource {
     _private: (),

@@ -21,6 +21,13 @@ impl ValidationExceptionField {
         self.message.as_deref()
     }
 }
+impl ValidationExceptionField {
+    /// Creates a new builder-style object to manufacture [`ValidationExceptionField`](crate::model::ValidationExceptionField).
+    pub fn builder() -> crate::model::validation_exception_field::Builder {
+        crate::model::validation_exception_field::Builder::default()
+    }
+}
+
 /// See [`ValidationExceptionField`](crate::model::ValidationExceptionField).
 pub mod validation_exception_field {
 
@@ -59,12 +66,6 @@ pub mod validation_exception_field {
                 message: self.message,
             }
         }
-    }
-}
-impl ValidationExceptionField {
-    /// Creates a new builder-style object to manufacture [`ValidationExceptionField`](crate::model::ValidationExceptionField).
-    pub fn builder() -> crate::model::validation_exception_field::Builder {
-        crate::model::validation_exception_field::Builder::default()
     }
 }
 
@@ -265,6 +266,13 @@ impl NetworkSite {
         self.availability_zone_id.as_deref()
     }
 }
+impl NetworkSite {
+    /// Creates a new builder-style object to manufacture [`NetworkSite`](crate::model::NetworkSite).
+    pub fn builder() -> crate::model::network_site::Builder {
+        crate::model::network_site::Builder::default()
+    }
+}
+
 /// See [`NetworkSite`](crate::model::NetworkSite).
 pub mod network_site {
 
@@ -440,12 +448,6 @@ pub mod network_site {
         }
     }
 }
-impl NetworkSite {
-    /// Creates a new builder-style object to manufacture [`NetworkSite`](crate::model::NetworkSite).
-    pub fn builder() -> crate::model::network_site::Builder {
-        crate::model::network_site::Builder::default()
-    }
-}
 
 /// <p>Information about a site plan.</p>
 #[non_exhaustive]
@@ -471,6 +473,13 @@ impl SitePlan {
         self.options.as_deref()
     }
 }
+impl SitePlan {
+    /// Creates a new builder-style object to manufacture [`SitePlan`](crate::model::SitePlan).
+    pub fn builder() -> crate::model::site_plan::Builder {
+        crate::model::site_plan::Builder::default()
+    }
+}
+
 /// See [`SitePlan`](crate::model::SitePlan).
 pub mod site_plan {
 
@@ -533,12 +542,6 @@ pub mod site_plan {
         }
     }
 }
-impl SitePlan {
-    /// Creates a new builder-style object to manufacture [`SitePlan`](crate::model::SitePlan).
-    pub fn builder() -> crate::model::site_plan::Builder {
-        crate::model::site_plan::Builder::default()
-    }
-}
 
 /// <p>Information about a name/value pair.</p>
 #[non_exhaustive]
@@ -561,6 +564,13 @@ impl NameValuePair {
         self.value.as_deref()
     }
 }
+impl NameValuePair {
+    /// Creates a new builder-style object to manufacture [`NameValuePair`](crate::model::NameValuePair).
+    pub fn builder() -> crate::model::name_value_pair::Builder {
+        crate::model::name_value_pair::Builder::default()
+    }
+}
+
 /// See [`NameValuePair`](crate::model::NameValuePair).
 pub mod name_value_pair {
 
@@ -601,12 +611,6 @@ pub mod name_value_pair {
         }
     }
 }
-impl NameValuePair {
-    /// Creates a new builder-style object to manufacture [`NameValuePair`](crate::model::NameValuePair).
-    pub fn builder() -> crate::model::name_value_pair::Builder {
-        crate::model::name_value_pair::Builder::default()
-    }
-}
 
 /// <p>Information about a network resource definition.</p>
 #[non_exhaustive]
@@ -636,6 +640,13 @@ impl NetworkResourceDefinition {
         self.count
     }
 }
+impl NetworkResourceDefinition {
+    /// Creates a new builder-style object to manufacture [`NetworkResourceDefinition`](crate::model::NetworkResourceDefinition).
+    pub fn builder() -> crate::model::network_resource_definition::Builder {
+        crate::model::network_resource_definition::Builder::default()
+    }
+}
+
 /// See [`NetworkResourceDefinition`](crate::model::NetworkResourceDefinition).
 pub mod network_resource_definition {
 
@@ -698,12 +709,6 @@ pub mod network_resource_definition {
                 count: self.count,
             }
         }
-    }
-}
-impl NetworkResourceDefinition {
-    /// Creates a new builder-style object to manufacture [`NetworkResourceDefinition`](crate::model::NetworkResourceDefinition).
-    pub fn builder() -> crate::model::network_resource_definition::Builder {
-        crate::model::network_resource_definition::Builder::default()
     }
 }
 
@@ -972,6 +977,13 @@ impl Order {
         self.created_at.as_ref()
     }
 }
+impl Order {
+    /// Creates a new builder-style object to manufacture [`Order`](crate::model::Order).
+    pub fn builder() -> crate::model::order::Builder {
+        crate::model::order::Builder::default()
+    }
+}
+
 /// See [`Order`](crate::model::Order).
 pub mod order {
 
@@ -1094,12 +1106,6 @@ pub mod order {
         }
     }
 }
-impl Order {
-    /// Creates a new builder-style object to manufacture [`Order`](crate::model::Order).
-    pub fn builder() -> crate::model::order::Builder {
-        crate::model::order::Builder::default()
-    }
-}
 
 /// When writing a match expression against `AcknowledgmentStatus`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -1212,6 +1218,13 @@ impl TrackingInformation {
         self.tracking_number.as_deref()
     }
 }
+impl TrackingInformation {
+    /// Creates a new builder-style object to manufacture [`TrackingInformation`](crate::model::TrackingInformation).
+    pub fn builder() -> crate::model::tracking_information::Builder {
+        crate::model::tracking_information::Builder::default()
+    }
+}
+
 /// See [`TrackingInformation`](crate::model::TrackingInformation).
 pub mod tracking_information {
 
@@ -1241,12 +1254,6 @@ pub mod tracking_information {
                 tracking_number: self.tracking_number,
             }
         }
-    }
-}
-impl TrackingInformation {
-    /// Creates a new builder-style object to manufacture [`TrackingInformation`](crate::model::TrackingInformation).
-    pub fn builder() -> crate::model::tracking_information::Builder {
-        crate::model::tracking_information::Builder::default()
     }
 }
 
@@ -1343,6 +1350,13 @@ impl std::fmt::Debug for Address {
         formatter.finish()
     }
 }
+impl Address {
+    /// Creates a new builder-style object to manufacture [`Address`](crate::model::Address).
+    pub fn builder() -> crate::model::address::Builder {
+        crate::model::address::Builder::default()
+    }
+}
+
 /// See [`Address`](crate::model::Address).
 pub mod address {
 
@@ -1496,12 +1510,6 @@ pub mod address {
             formatter.field("street3", &"*** Sensitive Data Redacted ***");
             formatter.finish()
         }
-    }
-}
-impl Address {
-    /// Creates a new builder-style object to manufacture [`Address`](crate::model::Address).
-    pub fn builder() -> crate::model::address::Builder {
-        crate::model::address::Builder::default()
     }
 }
 
@@ -1731,6 +1739,13 @@ impl Network {
         self.created_at.as_ref()
     }
 }
+impl Network {
+    /// Creates a new builder-style object to manufacture [`Network`](crate::model::Network).
+    pub fn builder() -> crate::model::network::Builder {
+        crate::model::network::Builder::default()
+    }
+}
+
 /// See [`Network`](crate::model::Network).
 pub mod network {
 
@@ -1826,12 +1841,6 @@ pub mod network {
                 created_at: self.created_at,
             }
         }
-    }
-}
-impl Network {
-    /// Creates a new builder-style object to manufacture [`Network`](crate::model::Network).
-    pub fn builder() -> crate::model::network::Builder {
-        crate::model::network::Builder::default()
     }
 }
 
@@ -2145,6 +2154,13 @@ impl NetworkResource {
         self.created_at.as_ref()
     }
 }
+impl NetworkResource {
+    /// Creates a new builder-style object to manufacture [`NetworkResource`](crate::model::NetworkResource).
+    pub fn builder() -> crate::model::network_resource::Builder {
+        crate::model::network_resource::Builder::default()
+    }
+}
+
 /// See [`NetworkResource`](crate::model::NetworkResource).
 pub mod network_resource {
 
@@ -2374,12 +2390,6 @@ pub mod network_resource {
         }
     }
 }
-impl NetworkResource {
-    /// Creates a new builder-style object to manufacture [`NetworkResource`](crate::model::NetworkResource).
-    pub fn builder() -> crate::model::network_resource::Builder {
-        crate::model::network_resource::Builder::default()
-    }
-}
 
 /// <p>Information about a position.</p>
 #[non_exhaustive]
@@ -2423,6 +2433,13 @@ impl Position {
         self.elevation_reference.as_ref()
     }
 }
+impl Position {
+    /// Creates a new builder-style object to manufacture [`Position`](crate::model::Position).
+    pub fn builder() -> crate::model::position::Builder {
+        crate::model::position::Builder::default()
+    }
+}
+
 /// See [`Position`](crate::model::Position).
 pub mod position {
 
@@ -2503,12 +2520,6 @@ pub mod position {
                 elevation_reference: self.elevation_reference,
             }
         }
-    }
-}
-impl Position {
-    /// Creates a new builder-style object to manufacture [`Position`](crate::model::Position).
-    pub fn builder() -> crate::model::position::Builder {
-        crate::model::position::Builder::default()
     }
 }
 
@@ -3179,6 +3190,13 @@ impl std::fmt::Debug for DeviceIdentifier {
         formatter.finish()
     }
 }
+impl DeviceIdentifier {
+    /// Creates a new builder-style object to manufacture [`DeviceIdentifier`](crate::model::DeviceIdentifier).
+    pub fn builder() -> crate::model::device_identifier::Builder {
+        crate::model::device_identifier::Builder::default()
+    }
+}
+
 /// See [`DeviceIdentifier`](crate::model::DeviceIdentifier).
 pub mod device_identifier {
 
@@ -3328,12 +3346,6 @@ pub mod device_identifier {
             formatter.field("created_at", &self.created_at);
             formatter.finish()
         }
-    }
-}
-impl DeviceIdentifier {
-    /// Creates a new builder-style object to manufacture [`DeviceIdentifier`](crate::model::DeviceIdentifier).
-    pub fn builder() -> crate::model::device_identifier::Builder {
-        crate::model::device_identifier::Builder::default()
     }
 }
 

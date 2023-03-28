@@ -10,6 +10,13 @@ impl aws_http::request_id::RequestId for UpdateWirelessGatewayOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdateWirelessGatewayOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateWirelessGatewayOutput`](crate::output::UpdateWirelessGatewayOutput).
+    pub fn builder() -> crate::output::update_wireless_gateway_output::Builder {
+        crate::output::update_wireless_gateway_output::Builder::default()
+    }
+}
+
 /// See [`UpdateWirelessGatewayOutput`](crate::output::UpdateWirelessGatewayOutput).
 pub mod update_wireless_gateway_output {
 
@@ -37,12 +44,6 @@ pub mod update_wireless_gateway_output {
         }
     }
 }
-impl UpdateWirelessGatewayOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateWirelessGatewayOutput`](crate::output::UpdateWirelessGatewayOutput).
-    pub fn builder() -> crate::output::update_wireless_gateway_output::Builder {
-        crate::output::update_wireless_gateway_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -55,6 +56,13 @@ impl aws_http::request_id::RequestId for UpdateWirelessDeviceOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdateWirelessDeviceOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateWirelessDeviceOutput`](crate::output::UpdateWirelessDeviceOutput).
+    pub fn builder() -> crate::output::update_wireless_device_output::Builder {
+        crate::output::update_wireless_device_output::Builder::default()
+    }
+}
+
 /// See [`UpdateWirelessDeviceOutput`](crate::output::UpdateWirelessDeviceOutput).
 pub mod update_wireless_device_output {
 
@@ -82,12 +90,6 @@ pub mod update_wireless_device_output {
         }
     }
 }
-impl UpdateWirelessDeviceOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateWirelessDeviceOutput`](crate::output::UpdateWirelessDeviceOutput).
-    pub fn builder() -> crate::output::update_wireless_device_output::Builder {
-        crate::output::update_wireless_device_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -100,6 +102,13 @@ impl aws_http::request_id::RequestId for UpdateResourcePositionOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdateResourcePositionOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateResourcePositionOutput`](crate::output::UpdateResourcePositionOutput).
+    pub fn builder() -> crate::output::update_resource_position_output::Builder {
+        crate::output::update_resource_position_output::Builder::default()
+    }
+}
+
 /// See [`UpdateResourcePositionOutput`](crate::output::UpdateResourcePositionOutput).
 pub mod update_resource_position_output {
 
@@ -127,12 +136,6 @@ pub mod update_resource_position_output {
         }
     }
 }
-impl UpdateResourcePositionOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateResourcePositionOutput`](crate::output::UpdateResourcePositionOutput).
-    pub fn builder() -> crate::output::update_resource_position_output::Builder {
-        crate::output::update_resource_position_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -145,6 +148,13 @@ impl aws_http::request_id::RequestId for UpdateResourceEventConfigurationOutput 
         self._request_id.as_deref()
     }
 }
+impl UpdateResourceEventConfigurationOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateResourceEventConfigurationOutput`](crate::output::UpdateResourceEventConfigurationOutput).
+    pub fn builder() -> crate::output::update_resource_event_configuration_output::Builder {
+        crate::output::update_resource_event_configuration_output::Builder::default()
+    }
+}
+
 /// See [`UpdateResourceEventConfigurationOutput`](crate::output::UpdateResourceEventConfigurationOutput).
 pub mod update_resource_event_configuration_output {
 
@@ -172,12 +182,6 @@ pub mod update_resource_event_configuration_output {
         }
     }
 }
-impl UpdateResourceEventConfigurationOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateResourceEventConfigurationOutput`](crate::output::UpdateResourceEventConfigurationOutput).
-    pub fn builder() -> crate::output::update_resource_event_configuration_output::Builder {
-        crate::output::update_resource_event_configuration_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[deprecated(note = "This operation is no longer supported.")]
@@ -191,6 +195,13 @@ impl aws_http::request_id::RequestId for UpdatePositionOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdatePositionOutput {
+    /// Creates a new builder-style object to manufacture [`UpdatePositionOutput`](crate::output::UpdatePositionOutput).
+    pub fn builder() -> crate::output::update_position_output::Builder {
+        crate::output::update_position_output::Builder::default()
+    }
+}
+
 /// See [`UpdatePositionOutput`](crate::output::UpdatePositionOutput).
 pub mod update_position_output {
 
@@ -218,12 +229,6 @@ pub mod update_position_output {
         }
     }
 }
-impl UpdatePositionOutput {
-    /// Creates a new builder-style object to manufacture [`UpdatePositionOutput`](crate::output::UpdatePositionOutput).
-    pub fn builder() -> crate::output::update_position_output::Builder {
-        crate::output::update_position_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -236,6 +241,13 @@ impl aws_http::request_id::RequestId for UpdatePartnerAccountOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdatePartnerAccountOutput {
+    /// Creates a new builder-style object to manufacture [`UpdatePartnerAccountOutput`](crate::output::UpdatePartnerAccountOutput).
+    pub fn builder() -> crate::output::update_partner_account_output::Builder {
+        crate::output::update_partner_account_output::Builder::default()
+    }
+}
+
 /// See [`UpdatePartnerAccountOutput`](crate::output::UpdatePartnerAccountOutput).
 pub mod update_partner_account_output {
 
@@ -263,12 +275,6 @@ pub mod update_partner_account_output {
         }
     }
 }
-impl UpdatePartnerAccountOutput {
-    /// Creates a new builder-style object to manufacture [`UpdatePartnerAccountOutput`](crate::output::UpdatePartnerAccountOutput).
-    pub fn builder() -> crate::output::update_partner_account_output::Builder {
-        crate::output::update_partner_account_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -281,6 +287,13 @@ impl aws_http::request_id::RequestId for UpdateNetworkAnalyzerConfigurationOutpu
         self._request_id.as_deref()
     }
 }
+impl UpdateNetworkAnalyzerConfigurationOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateNetworkAnalyzerConfigurationOutput`](crate::output::UpdateNetworkAnalyzerConfigurationOutput).
+    pub fn builder() -> crate::output::update_network_analyzer_configuration_output::Builder {
+        crate::output::update_network_analyzer_configuration_output::Builder::default()
+    }
+}
+
 /// See [`UpdateNetworkAnalyzerConfigurationOutput`](crate::output::UpdateNetworkAnalyzerConfigurationOutput).
 pub mod update_network_analyzer_configuration_output {
 
@@ -308,12 +321,6 @@ pub mod update_network_analyzer_configuration_output {
         }
     }
 }
-impl UpdateNetworkAnalyzerConfigurationOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateNetworkAnalyzerConfigurationOutput`](crate::output::UpdateNetworkAnalyzerConfigurationOutput).
-    pub fn builder() -> crate::output::update_network_analyzer_configuration_output::Builder {
-        crate::output::update_network_analyzer_configuration_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -326,6 +333,13 @@ impl aws_http::request_id::RequestId for UpdateMulticastGroupOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdateMulticastGroupOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateMulticastGroupOutput`](crate::output::UpdateMulticastGroupOutput).
+    pub fn builder() -> crate::output::update_multicast_group_output::Builder {
+        crate::output::update_multicast_group_output::Builder::default()
+    }
+}
+
 /// See [`UpdateMulticastGroupOutput`](crate::output::UpdateMulticastGroupOutput).
 pub mod update_multicast_group_output {
 
@@ -353,12 +367,6 @@ pub mod update_multicast_group_output {
         }
     }
 }
-impl UpdateMulticastGroupOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateMulticastGroupOutput`](crate::output::UpdateMulticastGroupOutput).
-    pub fn builder() -> crate::output::update_multicast_group_output::Builder {
-        crate::output::update_multicast_group_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -371,6 +379,13 @@ impl aws_http::request_id::RequestId for UpdateLogLevelsByResourceTypesOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdateLogLevelsByResourceTypesOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateLogLevelsByResourceTypesOutput`](crate::output::UpdateLogLevelsByResourceTypesOutput).
+    pub fn builder() -> crate::output::update_log_levels_by_resource_types_output::Builder {
+        crate::output::update_log_levels_by_resource_types_output::Builder::default()
+    }
+}
+
 /// See [`UpdateLogLevelsByResourceTypesOutput`](crate::output::UpdateLogLevelsByResourceTypesOutput).
 pub mod update_log_levels_by_resource_types_output {
 
@@ -398,12 +413,6 @@ pub mod update_log_levels_by_resource_types_output {
         }
     }
 }
-impl UpdateLogLevelsByResourceTypesOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateLogLevelsByResourceTypesOutput`](crate::output::UpdateLogLevelsByResourceTypesOutput).
-    pub fn builder() -> crate::output::update_log_levels_by_resource_types_output::Builder {
-        crate::output::update_log_levels_by_resource_types_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -416,6 +425,13 @@ impl aws_http::request_id::RequestId for UpdateFuotaTaskOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdateFuotaTaskOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateFuotaTaskOutput`](crate::output::UpdateFuotaTaskOutput).
+    pub fn builder() -> crate::output::update_fuota_task_output::Builder {
+        crate::output::update_fuota_task_output::Builder::default()
+    }
+}
+
 /// See [`UpdateFuotaTaskOutput`](crate::output::UpdateFuotaTaskOutput).
 pub mod update_fuota_task_output {
 
@@ -443,12 +459,6 @@ pub mod update_fuota_task_output {
         }
     }
 }
-impl UpdateFuotaTaskOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateFuotaTaskOutput`](crate::output::UpdateFuotaTaskOutput).
-    pub fn builder() -> crate::output::update_fuota_task_output::Builder {
-        crate::output::update_fuota_task_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -461,6 +471,14 @@ impl aws_http::request_id::RequestId for UpdateEventConfigurationByResourceTypes
         self._request_id.as_deref()
     }
 }
+impl UpdateEventConfigurationByResourceTypesOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateEventConfigurationByResourceTypesOutput`](crate::output::UpdateEventConfigurationByResourceTypesOutput).
+    pub fn builder() -> crate::output::update_event_configuration_by_resource_types_output::Builder
+    {
+        crate::output::update_event_configuration_by_resource_types_output::Builder::default()
+    }
+}
+
 /// See [`UpdateEventConfigurationByResourceTypesOutput`](crate::output::UpdateEventConfigurationByResourceTypesOutput).
 pub mod update_event_configuration_by_resource_types_output {
 
@@ -488,13 +506,6 @@ pub mod update_event_configuration_by_resource_types_output {
         }
     }
 }
-impl UpdateEventConfigurationByResourceTypesOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateEventConfigurationByResourceTypesOutput`](crate::output::UpdateEventConfigurationByResourceTypesOutput).
-    pub fn builder() -> crate::output::update_event_configuration_by_resource_types_output::Builder
-    {
-        crate::output::update_event_configuration_by_resource_types_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -507,6 +518,13 @@ impl aws_http::request_id::RequestId for UpdateDestinationOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdateDestinationOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateDestinationOutput`](crate::output::UpdateDestinationOutput).
+    pub fn builder() -> crate::output::update_destination_output::Builder {
+        crate::output::update_destination_output::Builder::default()
+    }
+}
+
 /// See [`UpdateDestinationOutput`](crate::output::UpdateDestinationOutput).
 pub mod update_destination_output {
 
@@ -534,12 +552,6 @@ pub mod update_destination_output {
         }
     }
 }
-impl UpdateDestinationOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateDestinationOutput`](crate::output::UpdateDestinationOutput).
-    pub fn builder() -> crate::output::update_destination_output::Builder {
-        crate::output::update_destination_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -552,6 +564,13 @@ impl aws_http::request_id::RequestId for UntagResourceOutput {
         self._request_id.as_deref()
     }
 }
+impl UntagResourceOutput {
+    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    pub fn builder() -> crate::output::untag_resource_output::Builder {
+        crate::output::untag_resource_output::Builder::default()
+    }
+}
+
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
 
@@ -579,12 +598,6 @@ pub mod untag_resource_output {
         }
     }
 }
-impl UntagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
-    pub fn builder() -> crate::output::untag_resource_output::Builder {
-        crate::output::untag_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -606,6 +619,13 @@ impl aws_http::request_id::RequestId for TestWirelessDeviceOutput {
         self._request_id.as_deref()
     }
 }
+impl TestWirelessDeviceOutput {
+    /// Creates a new builder-style object to manufacture [`TestWirelessDeviceOutput`](crate::output::TestWirelessDeviceOutput).
+    pub fn builder() -> crate::output::test_wireless_device_output::Builder {
+        crate::output::test_wireless_device_output::Builder::default()
+    }
+}
+
 /// See [`TestWirelessDeviceOutput`](crate::output::TestWirelessDeviceOutput).
 pub mod test_wireless_device_output {
 
@@ -645,12 +665,6 @@ pub mod test_wireless_device_output {
         }
     }
 }
-impl TestWirelessDeviceOutput {
-    /// Creates a new builder-style object to manufacture [`TestWirelessDeviceOutput`](crate::output::TestWirelessDeviceOutput).
-    pub fn builder() -> crate::output::test_wireless_device_output::Builder {
-        crate::output::test_wireless_device_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -663,6 +677,13 @@ impl aws_http::request_id::RequestId for TagResourceOutput {
         self._request_id.as_deref()
     }
 }
+impl TagResourceOutput {
+    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
+    pub fn builder() -> crate::output::tag_resource_output::Builder {
+        crate::output::tag_resource_output::Builder::default()
+    }
+}
+
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
 
@@ -690,12 +711,6 @@ pub mod tag_resource_output {
         }
     }
 }
-impl TagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
-    pub fn builder() -> crate::output::tag_resource_output::Builder {
-        crate::output::tag_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -708,6 +723,13 @@ impl aws_http::request_id::RequestId for StartMulticastGroupSessionOutput {
         self._request_id.as_deref()
     }
 }
+impl StartMulticastGroupSessionOutput {
+    /// Creates a new builder-style object to manufacture [`StartMulticastGroupSessionOutput`](crate::output::StartMulticastGroupSessionOutput).
+    pub fn builder() -> crate::output::start_multicast_group_session_output::Builder {
+        crate::output::start_multicast_group_session_output::Builder::default()
+    }
+}
+
 /// See [`StartMulticastGroupSessionOutput`](crate::output::StartMulticastGroupSessionOutput).
 pub mod start_multicast_group_session_output {
 
@@ -735,12 +757,6 @@ pub mod start_multicast_group_session_output {
         }
     }
 }
-impl StartMulticastGroupSessionOutput {
-    /// Creates a new builder-style object to manufacture [`StartMulticastGroupSessionOutput`](crate::output::StartMulticastGroupSessionOutput).
-    pub fn builder() -> crate::output::start_multicast_group_session_output::Builder {
-        crate::output::start_multicast_group_session_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -753,6 +769,13 @@ impl aws_http::request_id::RequestId for StartFuotaTaskOutput {
         self._request_id.as_deref()
     }
 }
+impl StartFuotaTaskOutput {
+    /// Creates a new builder-style object to manufacture [`StartFuotaTaskOutput`](crate::output::StartFuotaTaskOutput).
+    pub fn builder() -> crate::output::start_fuota_task_output::Builder {
+        crate::output::start_fuota_task_output::Builder::default()
+    }
+}
+
 /// See [`StartFuotaTaskOutput`](crate::output::StartFuotaTaskOutput).
 pub mod start_fuota_task_output {
 
@@ -780,12 +803,6 @@ pub mod start_fuota_task_output {
         }
     }
 }
-impl StartFuotaTaskOutput {
-    /// Creates a new builder-style object to manufacture [`StartFuotaTaskOutput`](crate::output::StartFuotaTaskOutput).
-    pub fn builder() -> crate::output::start_fuota_task_output::Builder {
-        crate::output::start_fuota_task_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -800,6 +817,15 @@ impl aws_http::request_id::RequestId
         self._request_id.as_deref()
     }
 }
+impl StartBulkDisassociateWirelessDeviceFromMulticastGroupOutput {
+    /// Creates a new builder-style object to manufacture [`StartBulkDisassociateWirelessDeviceFromMulticastGroupOutput`](crate::output::StartBulkDisassociateWirelessDeviceFromMulticastGroupOutput).
+    pub fn builder(
+    ) -> crate::output::start_bulk_disassociate_wireless_device_from_multicast_group_output::Builder
+    {
+        crate::output::start_bulk_disassociate_wireless_device_from_multicast_group_output::Builder::default()
+    }
+}
+
 /// See [`StartBulkDisassociateWirelessDeviceFromMulticastGroupOutput`](crate::output::StartBulkDisassociateWirelessDeviceFromMulticastGroupOutput).
 pub mod start_bulk_disassociate_wireless_device_from_multicast_group_output {
 
@@ -829,14 +855,6 @@ pub mod start_bulk_disassociate_wireless_device_from_multicast_group_output {
         }
     }
 }
-impl StartBulkDisassociateWirelessDeviceFromMulticastGroupOutput {
-    /// Creates a new builder-style object to manufacture [`StartBulkDisassociateWirelessDeviceFromMulticastGroupOutput`](crate::output::StartBulkDisassociateWirelessDeviceFromMulticastGroupOutput).
-    pub fn builder(
-    ) -> crate::output::start_bulk_disassociate_wireless_device_from_multicast_group_output::Builder
-    {
-        crate::output::start_bulk_disassociate_wireless_device_from_multicast_group_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -849,6 +867,15 @@ impl aws_http::request_id::RequestId for StartBulkAssociateWirelessDeviceWithMul
         self._request_id.as_deref()
     }
 }
+impl StartBulkAssociateWirelessDeviceWithMulticastGroupOutput {
+    /// Creates a new builder-style object to manufacture [`StartBulkAssociateWirelessDeviceWithMulticastGroupOutput`](crate::output::StartBulkAssociateWirelessDeviceWithMulticastGroupOutput).
+    pub fn builder(
+    ) -> crate::output::start_bulk_associate_wireless_device_with_multicast_group_output::Builder
+    {
+        crate::output::start_bulk_associate_wireless_device_with_multicast_group_output::Builder::default()
+    }
+}
+
 /// See [`StartBulkAssociateWirelessDeviceWithMulticastGroupOutput`](crate::output::StartBulkAssociateWirelessDeviceWithMulticastGroupOutput).
 pub mod start_bulk_associate_wireless_device_with_multicast_group_output {
 
@@ -878,14 +905,6 @@ pub mod start_bulk_associate_wireless_device_with_multicast_group_output {
         }
     }
 }
-impl StartBulkAssociateWirelessDeviceWithMulticastGroupOutput {
-    /// Creates a new builder-style object to manufacture [`StartBulkAssociateWirelessDeviceWithMulticastGroupOutput`](crate::output::StartBulkAssociateWirelessDeviceWithMulticastGroupOutput).
-    pub fn builder(
-    ) -> crate::output::start_bulk_associate_wireless_device_with_multicast_group_output::Builder
-    {
-        crate::output::start_bulk_associate_wireless_device_with_multicast_group_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -907,6 +926,13 @@ impl aws_http::request_id::RequestId for SendDataToWirelessDeviceOutput {
         self._request_id.as_deref()
     }
 }
+impl SendDataToWirelessDeviceOutput {
+    /// Creates a new builder-style object to manufacture [`SendDataToWirelessDeviceOutput`](crate::output::SendDataToWirelessDeviceOutput).
+    pub fn builder() -> crate::output::send_data_to_wireless_device_output::Builder {
+        crate::output::send_data_to_wireless_device_output::Builder::default()
+    }
+}
+
 /// See [`SendDataToWirelessDeviceOutput`](crate::output::SendDataToWirelessDeviceOutput).
 pub mod send_data_to_wireless_device_output {
 
@@ -946,12 +972,6 @@ pub mod send_data_to_wireless_device_output {
         }
     }
 }
-impl SendDataToWirelessDeviceOutput {
-    /// Creates a new builder-style object to manufacture [`SendDataToWirelessDeviceOutput`](crate::output::SendDataToWirelessDeviceOutput).
-    pub fn builder() -> crate::output::send_data_to_wireless_device_output::Builder {
-        crate::output::send_data_to_wireless_device_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -973,6 +993,13 @@ impl aws_http::request_id::RequestId for SendDataToMulticastGroupOutput {
         self._request_id.as_deref()
     }
 }
+impl SendDataToMulticastGroupOutput {
+    /// Creates a new builder-style object to manufacture [`SendDataToMulticastGroupOutput`](crate::output::SendDataToMulticastGroupOutput).
+    pub fn builder() -> crate::output::send_data_to_multicast_group_output::Builder {
+        crate::output::send_data_to_multicast_group_output::Builder::default()
+    }
+}
+
 /// See [`SendDataToMulticastGroupOutput`](crate::output::SendDataToMulticastGroupOutput).
 pub mod send_data_to_multicast_group_output {
 
@@ -1012,12 +1039,6 @@ pub mod send_data_to_multicast_group_output {
         }
     }
 }
-impl SendDataToMulticastGroupOutput {
-    /// Creates a new builder-style object to manufacture [`SendDataToMulticastGroupOutput`](crate::output::SendDataToMulticastGroupOutput).
-    pub fn builder() -> crate::output::send_data_to_multicast_group_output::Builder {
-        crate::output::send_data_to_multicast_group_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1030,6 +1051,13 @@ impl aws_http::request_id::RequestId for ResetResourceLogLevelOutput {
         self._request_id.as_deref()
     }
 }
+impl ResetResourceLogLevelOutput {
+    /// Creates a new builder-style object to manufacture [`ResetResourceLogLevelOutput`](crate::output::ResetResourceLogLevelOutput).
+    pub fn builder() -> crate::output::reset_resource_log_level_output::Builder {
+        crate::output::reset_resource_log_level_output::Builder::default()
+    }
+}
+
 /// See [`ResetResourceLogLevelOutput`](crate::output::ResetResourceLogLevelOutput).
 pub mod reset_resource_log_level_output {
 
@@ -1057,12 +1085,6 @@ pub mod reset_resource_log_level_output {
         }
     }
 }
-impl ResetResourceLogLevelOutput {
-    /// Creates a new builder-style object to manufacture [`ResetResourceLogLevelOutput`](crate::output::ResetResourceLogLevelOutput).
-    pub fn builder() -> crate::output::reset_resource_log_level_output::Builder {
-        crate::output::reset_resource_log_level_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1075,6 +1097,13 @@ impl aws_http::request_id::RequestId for ResetAllResourceLogLevelsOutput {
         self._request_id.as_deref()
     }
 }
+impl ResetAllResourceLogLevelsOutput {
+    /// Creates a new builder-style object to manufacture [`ResetAllResourceLogLevelsOutput`](crate::output::ResetAllResourceLogLevelsOutput).
+    pub fn builder() -> crate::output::reset_all_resource_log_levels_output::Builder {
+        crate::output::reset_all_resource_log_levels_output::Builder::default()
+    }
+}
+
 /// See [`ResetAllResourceLogLevelsOutput`](crate::output::ResetAllResourceLogLevelsOutput).
 pub mod reset_all_resource_log_levels_output {
 
@@ -1102,12 +1131,6 @@ pub mod reset_all_resource_log_levels_output {
         }
     }
 }
-impl ResetAllResourceLogLevelsOutput {
-    /// Creates a new builder-style object to manufacture [`ResetAllResourceLogLevelsOutput`](crate::output::ResetAllResourceLogLevelsOutput).
-    pub fn builder() -> crate::output::reset_all_resource_log_levels_output::Builder {
-        crate::output::reset_all_resource_log_levels_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1120,6 +1143,13 @@ impl aws_http::request_id::RequestId for PutResourceLogLevelOutput {
         self._request_id.as_deref()
     }
 }
+impl PutResourceLogLevelOutput {
+    /// Creates a new builder-style object to manufacture [`PutResourceLogLevelOutput`](crate::output::PutResourceLogLevelOutput).
+    pub fn builder() -> crate::output::put_resource_log_level_output::Builder {
+        crate::output::put_resource_log_level_output::Builder::default()
+    }
+}
+
 /// See [`PutResourceLogLevelOutput`](crate::output::PutResourceLogLevelOutput).
 pub mod put_resource_log_level_output {
 
@@ -1147,12 +1177,6 @@ pub mod put_resource_log_level_output {
         }
     }
 }
-impl PutResourceLogLevelOutput {
-    /// Creates a new builder-style object to manufacture [`PutResourceLogLevelOutput`](crate::output::PutResourceLogLevelOutput).
-    pub fn builder() -> crate::output::put_resource_log_level_output::Builder {
-        crate::output::put_resource_log_level_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[deprecated(note = "This operation is no longer supported.")]
@@ -1166,6 +1190,13 @@ impl aws_http::request_id::RequestId for PutPositionConfigurationOutput {
         self._request_id.as_deref()
     }
 }
+impl PutPositionConfigurationOutput {
+    /// Creates a new builder-style object to manufacture [`PutPositionConfigurationOutput`](crate::output::PutPositionConfigurationOutput).
+    pub fn builder() -> crate::output::put_position_configuration_output::Builder {
+        crate::output::put_position_configuration_output::Builder::default()
+    }
+}
+
 /// See [`PutPositionConfigurationOutput`](crate::output::PutPositionConfigurationOutput).
 pub mod put_position_configuration_output {
 
@@ -1191,12 +1222,6 @@ pub mod put_position_configuration_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl PutPositionConfigurationOutput {
-    /// Creates a new builder-style object to manufacture [`PutPositionConfigurationOutput`](crate::output::PutPositionConfigurationOutput).
-    pub fn builder() -> crate::output::put_position_configuration_output::Builder {
-        crate::output::put_position_configuration_output::Builder::default()
     }
 }
 
@@ -1230,6 +1255,13 @@ impl aws_http::request_id::RequestId for ListWirelessGatewayTaskDefinitionsOutpu
         self._request_id.as_deref()
     }
 }
+impl ListWirelessGatewayTaskDefinitionsOutput {
+    /// Creates a new builder-style object to manufacture [`ListWirelessGatewayTaskDefinitionsOutput`](crate::output::ListWirelessGatewayTaskDefinitionsOutput).
+    pub fn builder() -> crate::output::list_wireless_gateway_task_definitions_output::Builder {
+        crate::output::list_wireless_gateway_task_definitions_output::Builder::default()
+    }
+}
+
 /// See [`ListWirelessGatewayTaskDefinitionsOutput`](crate::output::ListWirelessGatewayTaskDefinitionsOutput).
 pub mod list_wireless_gateway_task_definitions_output {
 
@@ -1294,12 +1326,6 @@ pub mod list_wireless_gateway_task_definitions_output {
         }
     }
 }
-impl ListWirelessGatewayTaskDefinitionsOutput {
-    /// Creates a new builder-style object to manufacture [`ListWirelessGatewayTaskDefinitionsOutput`](crate::output::ListWirelessGatewayTaskDefinitionsOutput).
-    pub fn builder() -> crate::output::list_wireless_gateway_task_definitions_output::Builder {
-        crate::output::list_wireless_gateway_task_definitions_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1331,6 +1357,13 @@ impl aws_http::request_id::RequestId for ListWirelessGatewaysOutput {
         self._request_id.as_deref()
     }
 }
+impl ListWirelessGatewaysOutput {
+    /// Creates a new builder-style object to manufacture [`ListWirelessGatewaysOutput`](crate::output::ListWirelessGatewaysOutput).
+    pub fn builder() -> crate::output::list_wireless_gateways_output::Builder {
+        crate::output::list_wireless_gateways_output::Builder::default()
+    }
+}
+
 /// See [`ListWirelessGatewaysOutput`](crate::output::ListWirelessGatewaysOutput).
 pub mod list_wireless_gateways_output {
 
@@ -1395,12 +1428,6 @@ pub mod list_wireless_gateways_output {
         }
     }
 }
-impl ListWirelessGatewaysOutput {
-    /// Creates a new builder-style object to manufacture [`ListWirelessGatewaysOutput`](crate::output::ListWirelessGatewaysOutput).
-    pub fn builder() -> crate::output::list_wireless_gateways_output::Builder {
-        crate::output::list_wireless_gateways_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1432,6 +1459,13 @@ impl aws_http::request_id::RequestId for ListWirelessDevicesOutput {
         self._request_id.as_deref()
     }
 }
+impl ListWirelessDevicesOutput {
+    /// Creates a new builder-style object to manufacture [`ListWirelessDevicesOutput`](crate::output::ListWirelessDevicesOutput).
+    pub fn builder() -> crate::output::list_wireless_devices_output::Builder {
+        crate::output::list_wireless_devices_output::Builder::default()
+    }
+}
+
 /// See [`ListWirelessDevicesOutput`](crate::output::ListWirelessDevicesOutput).
 pub mod list_wireless_devices_output {
 
@@ -1496,12 +1530,6 @@ pub mod list_wireless_devices_output {
         }
     }
 }
-impl ListWirelessDevicesOutput {
-    /// Creates a new builder-style object to manufacture [`ListWirelessDevicesOutput`](crate::output::ListWirelessDevicesOutput).
-    pub fn builder() -> crate::output::list_wireless_devices_output::Builder {
-        crate::output::list_wireless_devices_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1523,6 +1551,13 @@ impl aws_http::request_id::RequestId for ListTagsForResourceOutput {
         self._request_id.as_deref()
     }
 }
+impl ListTagsForResourceOutput {
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
+        crate::output::list_tags_for_resource_output::Builder::default()
+    }
+}
+
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
 
@@ -1571,12 +1606,6 @@ pub mod list_tags_for_resource_output {
         }
     }
 }
-impl ListTagsForResourceOutput {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
-    pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
-        crate::output::list_tags_for_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1605,6 +1634,13 @@ impl aws_http::request_id::RequestId for ListServiceProfilesOutput {
         self._request_id.as_deref()
     }
 }
+impl ListServiceProfilesOutput {
+    /// Creates a new builder-style object to manufacture [`ListServiceProfilesOutput`](crate::output::ListServiceProfilesOutput).
+    pub fn builder() -> crate::output::list_service_profiles_output::Builder {
+        crate::output::list_service_profiles_output::Builder::default()
+    }
+}
+
 /// See [`ListServiceProfilesOutput`](crate::output::ListServiceProfilesOutput).
 pub mod list_service_profiles_output {
 
@@ -1666,12 +1702,6 @@ pub mod list_service_profiles_output {
         }
     }
 }
-impl ListServiceProfilesOutput {
-    /// Creates a new builder-style object to manufacture [`ListServiceProfilesOutput`](crate::output::ListServiceProfilesOutput).
-    pub fn builder() -> crate::output::list_service_profiles_output::Builder {
-        crate::output::list_service_profiles_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1703,6 +1733,13 @@ impl aws_http::request_id::RequestId for ListQueuedMessagesOutput {
         self._request_id.as_deref()
     }
 }
+impl ListQueuedMessagesOutput {
+    /// Creates a new builder-style object to manufacture [`ListQueuedMessagesOutput`](crate::output::ListQueuedMessagesOutput).
+    pub fn builder() -> crate::output::list_queued_messages_output::Builder {
+        crate::output::list_queued_messages_output::Builder::default()
+    }
+}
+
 /// See [`ListQueuedMessagesOutput`](crate::output::ListQueuedMessagesOutput).
 pub mod list_queued_messages_output {
 
@@ -1767,12 +1804,6 @@ pub mod list_queued_messages_output {
         }
     }
 }
-impl ListQueuedMessagesOutput {
-    /// Creates a new builder-style object to manufacture [`ListQueuedMessagesOutput`](crate::output::ListQueuedMessagesOutput).
-    pub fn builder() -> crate::output::list_queued_messages_output::Builder {
-        crate::output::list_queued_messages_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[deprecated(note = "This operation is no longer supported.")]
@@ -1805,6 +1836,13 @@ impl aws_http::request_id::RequestId for ListPositionConfigurationsOutput {
         self._request_id.as_deref()
     }
 }
+impl ListPositionConfigurationsOutput {
+    /// Creates a new builder-style object to manufacture [`ListPositionConfigurationsOutput`](crate::output::ListPositionConfigurationsOutput).
+    pub fn builder() -> crate::output::list_position_configurations_output::Builder {
+        crate::output::list_position_configurations_output::Builder::default()
+    }
+}
+
 /// See [`ListPositionConfigurationsOutput`](crate::output::ListPositionConfigurationsOutput).
 pub mod list_position_configurations_output {
 
@@ -1869,12 +1907,6 @@ pub mod list_position_configurations_output {
         }
     }
 }
-impl ListPositionConfigurationsOutput {
-    /// Creates a new builder-style object to manufacture [`ListPositionConfigurationsOutput`](crate::output::ListPositionConfigurationsOutput).
-    pub fn builder() -> crate::output::list_position_configurations_output::Builder {
-        crate::output::list_position_configurations_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1906,6 +1938,13 @@ impl aws_http::request_id::RequestId for ListPartnerAccountsOutput {
         self._request_id.as_deref()
     }
 }
+impl ListPartnerAccountsOutput {
+    /// Creates a new builder-style object to manufacture [`ListPartnerAccountsOutput`](crate::output::ListPartnerAccountsOutput).
+    pub fn builder() -> crate::output::list_partner_accounts_output::Builder {
+        crate::output::list_partner_accounts_output::Builder::default()
+    }
+}
+
 /// See [`ListPartnerAccountsOutput`](crate::output::ListPartnerAccountsOutput).
 pub mod list_partner_accounts_output {
 
@@ -1969,12 +2008,6 @@ pub mod list_partner_accounts_output {
         }
     }
 }
-impl ListPartnerAccountsOutput {
-    /// Creates a new builder-style object to manufacture [`ListPartnerAccountsOutput`](crate::output::ListPartnerAccountsOutput).
-    pub fn builder() -> crate::output::list_partner_accounts_output::Builder {
-        crate::output::list_partner_accounts_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2006,6 +2039,13 @@ impl aws_http::request_id::RequestId for ListNetworkAnalyzerConfigurationsOutput
         self._request_id.as_deref()
     }
 }
+impl ListNetworkAnalyzerConfigurationsOutput {
+    /// Creates a new builder-style object to manufacture [`ListNetworkAnalyzerConfigurationsOutput`](crate::output::ListNetworkAnalyzerConfigurationsOutput).
+    pub fn builder() -> crate::output::list_network_analyzer_configurations_output::Builder {
+        crate::output::list_network_analyzer_configurations_output::Builder::default()
+    }
+}
+
 /// See [`ListNetworkAnalyzerConfigurationsOutput`](crate::output::ListNetworkAnalyzerConfigurationsOutput).
 pub mod list_network_analyzer_configurations_output {
 
@@ -2070,12 +2110,6 @@ pub mod list_network_analyzer_configurations_output {
         }
     }
 }
-impl ListNetworkAnalyzerConfigurationsOutput {
-    /// Creates a new builder-style object to manufacture [`ListNetworkAnalyzerConfigurationsOutput`](crate::output::ListNetworkAnalyzerConfigurationsOutput).
-    pub fn builder() -> crate::output::list_network_analyzer_configurations_output::Builder {
-        crate::output::list_network_analyzer_configurations_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2107,6 +2141,13 @@ impl aws_http::request_id::RequestId for ListMulticastGroupsByFuotaTaskOutput {
         self._request_id.as_deref()
     }
 }
+impl ListMulticastGroupsByFuotaTaskOutput {
+    /// Creates a new builder-style object to manufacture [`ListMulticastGroupsByFuotaTaskOutput`](crate::output::ListMulticastGroupsByFuotaTaskOutput).
+    pub fn builder() -> crate::output::list_multicast_groups_by_fuota_task_output::Builder {
+        crate::output::list_multicast_groups_by_fuota_task_output::Builder::default()
+    }
+}
+
 /// See [`ListMulticastGroupsByFuotaTaskOutput`](crate::output::ListMulticastGroupsByFuotaTaskOutput).
 pub mod list_multicast_groups_by_fuota_task_output {
 
@@ -2171,12 +2212,6 @@ pub mod list_multicast_groups_by_fuota_task_output {
         }
     }
 }
-impl ListMulticastGroupsByFuotaTaskOutput {
-    /// Creates a new builder-style object to manufacture [`ListMulticastGroupsByFuotaTaskOutput`](crate::output::ListMulticastGroupsByFuotaTaskOutput).
-    pub fn builder() -> crate::output::list_multicast_groups_by_fuota_task_output::Builder {
-        crate::output::list_multicast_groups_by_fuota_task_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2205,6 +2240,13 @@ impl aws_http::request_id::RequestId for ListMulticastGroupsOutput {
         self._request_id.as_deref()
     }
 }
+impl ListMulticastGroupsOutput {
+    /// Creates a new builder-style object to manufacture [`ListMulticastGroupsOutput`](crate::output::ListMulticastGroupsOutput).
+    pub fn builder() -> crate::output::list_multicast_groups_output::Builder {
+        crate::output::list_multicast_groups_output::Builder::default()
+    }
+}
+
 /// See [`ListMulticastGroupsOutput`](crate::output::ListMulticastGroupsOutput).
 pub mod list_multicast_groups_output {
 
@@ -2266,12 +2308,6 @@ pub mod list_multicast_groups_output {
         }
     }
 }
-impl ListMulticastGroupsOutput {
-    /// Creates a new builder-style object to manufacture [`ListMulticastGroupsOutput`](crate::output::ListMulticastGroupsOutput).
-    pub fn builder() -> crate::output::list_multicast_groups_output::Builder {
-        crate::output::list_multicast_groups_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2300,6 +2336,13 @@ impl aws_http::request_id::RequestId for ListFuotaTasksOutput {
         self._request_id.as_deref()
     }
 }
+impl ListFuotaTasksOutput {
+    /// Creates a new builder-style object to manufacture [`ListFuotaTasksOutput`](crate::output::ListFuotaTasksOutput).
+    pub fn builder() -> crate::output::list_fuota_tasks_output::Builder {
+        crate::output::list_fuota_tasks_output::Builder::default()
+    }
+}
+
 /// See [`ListFuotaTasksOutput`](crate::output::ListFuotaTasksOutput).
 pub mod list_fuota_tasks_output {
 
@@ -2360,12 +2403,6 @@ pub mod list_fuota_tasks_output {
         }
     }
 }
-impl ListFuotaTasksOutput {
-    /// Creates a new builder-style object to manufacture [`ListFuotaTasksOutput`](crate::output::ListFuotaTasksOutput).
-    pub fn builder() -> crate::output::list_fuota_tasks_output::Builder {
-        crate::output::list_fuota_tasks_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2397,6 +2434,13 @@ impl aws_http::request_id::RequestId for ListEventConfigurationsOutput {
         self._request_id.as_deref()
     }
 }
+impl ListEventConfigurationsOutput {
+    /// Creates a new builder-style object to manufacture [`ListEventConfigurationsOutput`](crate::output::ListEventConfigurationsOutput).
+    pub fn builder() -> crate::output::list_event_configurations_output::Builder {
+        crate::output::list_event_configurations_output::Builder::default()
+    }
+}
+
 /// See [`ListEventConfigurationsOutput`](crate::output::ListEventConfigurationsOutput).
 pub mod list_event_configurations_output {
 
@@ -2461,12 +2505,6 @@ pub mod list_event_configurations_output {
         }
     }
 }
-impl ListEventConfigurationsOutput {
-    /// Creates a new builder-style object to manufacture [`ListEventConfigurationsOutput`](crate::output::ListEventConfigurationsOutput).
-    pub fn builder() -> crate::output::list_event_configurations_output::Builder {
-        crate::output::list_event_configurations_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2495,6 +2533,13 @@ impl aws_http::request_id::RequestId for ListDeviceProfilesOutput {
         self._request_id.as_deref()
     }
 }
+impl ListDeviceProfilesOutput {
+    /// Creates a new builder-style object to manufacture [`ListDeviceProfilesOutput`](crate::output::ListDeviceProfilesOutput).
+    pub fn builder() -> crate::output::list_device_profiles_output::Builder {
+        crate::output::list_device_profiles_output::Builder::default()
+    }
+}
+
 /// See [`ListDeviceProfilesOutput`](crate::output::ListDeviceProfilesOutput).
 pub mod list_device_profiles_output {
 
@@ -2556,12 +2601,6 @@ pub mod list_device_profiles_output {
         }
     }
 }
-impl ListDeviceProfilesOutput {
-    /// Creates a new builder-style object to manufacture [`ListDeviceProfilesOutput`](crate::output::ListDeviceProfilesOutput).
-    pub fn builder() -> crate::output::list_device_profiles_output::Builder {
-        crate::output::list_device_profiles_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2590,6 +2629,13 @@ impl aws_http::request_id::RequestId for ListDestinationsOutput {
         self._request_id.as_deref()
     }
 }
+impl ListDestinationsOutput {
+    /// Creates a new builder-style object to manufacture [`ListDestinationsOutput`](crate::output::ListDestinationsOutput).
+    pub fn builder() -> crate::output::list_destinations_output::Builder {
+        crate::output::list_destinations_output::Builder::default()
+    }
+}
+
 /// See [`ListDestinationsOutput`](crate::output::ListDestinationsOutput).
 pub mod list_destinations_output {
 
@@ -2650,12 +2696,6 @@ pub mod list_destinations_output {
         }
     }
 }
-impl ListDestinationsOutput {
-    /// Creates a new builder-style object to manufacture [`ListDestinationsOutput`](crate::output::ListDestinationsOutput).
-    pub fn builder() -> crate::output::list_destinations_output::Builder {
-        crate::output::list_destinations_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2698,6 +2738,13 @@ impl aws_http::request_id::RequestId for GetWirelessGatewayTaskDefinitionOutput 
         self._request_id.as_deref()
     }
 }
+impl GetWirelessGatewayTaskDefinitionOutput {
+    /// Creates a new builder-style object to manufacture [`GetWirelessGatewayTaskDefinitionOutput`](crate::output::GetWirelessGatewayTaskDefinitionOutput).
+    pub fn builder() -> crate::output::get_wireless_gateway_task_definition_output::Builder {
+        crate::output::get_wireless_gateway_task_definition_output::Builder::default()
+    }
+}
+
 /// See [`GetWirelessGatewayTaskDefinitionOutput`](crate::output::GetWirelessGatewayTaskDefinitionOutput).
 pub mod get_wireless_gateway_task_definition_output {
 
@@ -2776,12 +2823,6 @@ pub mod get_wireless_gateway_task_definition_output {
         }
     }
 }
-impl GetWirelessGatewayTaskDefinitionOutput {
-    /// Creates a new builder-style object to manufacture [`GetWirelessGatewayTaskDefinitionOutput`](crate::output::GetWirelessGatewayTaskDefinitionOutput).
-    pub fn builder() -> crate::output::get_wireless_gateway_task_definition_output::Builder {
-        crate::output::get_wireless_gateway_task_definition_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2831,6 +2872,13 @@ impl aws_http::request_id::RequestId for GetWirelessGatewayTaskOutput {
         self._request_id.as_deref()
     }
 }
+impl GetWirelessGatewayTaskOutput {
+    /// Creates a new builder-style object to manufacture [`GetWirelessGatewayTaskOutput`](crate::output::GetWirelessGatewayTaskOutput).
+    pub fn builder() -> crate::output::get_wireless_gateway_task_output::Builder {
+        crate::output::get_wireless_gateway_task_output::Builder::default()
+    }
+}
+
 /// See [`GetWirelessGatewayTaskOutput`](crate::output::GetWirelessGatewayTaskOutput).
 pub mod get_wireless_gateway_task_output {
 
@@ -2936,12 +2984,6 @@ pub mod get_wireless_gateway_task_output {
         }
     }
 }
-impl GetWirelessGatewayTaskOutput {
-    /// Creates a new builder-style object to manufacture [`GetWirelessGatewayTaskOutput`](crate::output::GetWirelessGatewayTaskOutput).
-    pub fn builder() -> crate::output::get_wireless_gateway_task_output::Builder {
-        crate::output::get_wireless_gateway_task_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2977,6 +3019,13 @@ impl aws_http::request_id::RequestId for GetWirelessGatewayStatisticsOutput {
         self._request_id.as_deref()
     }
 }
+impl GetWirelessGatewayStatisticsOutput {
+    /// Creates a new builder-style object to manufacture [`GetWirelessGatewayStatisticsOutput`](crate::output::GetWirelessGatewayStatisticsOutput).
+    pub fn builder() -> crate::output::get_wireless_gateway_statistics_output::Builder {
+        crate::output::get_wireless_gateway_statistics_output::Builder::default()
+    }
+}
+
 /// See [`GetWirelessGatewayStatisticsOutput`](crate::output::GetWirelessGatewayStatisticsOutput).
 pub mod get_wireless_gateway_statistics_output {
 
@@ -3049,12 +3098,6 @@ pub mod get_wireless_gateway_statistics_output {
         }
     }
 }
-impl GetWirelessGatewayStatisticsOutput {
-    /// Creates a new builder-style object to manufacture [`GetWirelessGatewayStatisticsOutput`](crate::output::GetWirelessGatewayStatisticsOutput).
-    pub fn builder() -> crate::output::get_wireless_gateway_statistics_output::Builder {
-        crate::output::get_wireless_gateway_statistics_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3076,6 +3119,13 @@ impl aws_http::request_id::RequestId for GetWirelessGatewayFirmwareInformationOu
         self._request_id.as_deref()
     }
 }
+impl GetWirelessGatewayFirmwareInformationOutput {
+    /// Creates a new builder-style object to manufacture [`GetWirelessGatewayFirmwareInformationOutput`](crate::output::GetWirelessGatewayFirmwareInformationOutput).
+    pub fn builder() -> crate::output::get_wireless_gateway_firmware_information_output::Builder {
+        crate::output::get_wireless_gateway_firmware_information_output::Builder::default()
+    }
+}
+
 /// See [`GetWirelessGatewayFirmwareInformationOutput`](crate::output::GetWirelessGatewayFirmwareInformationOutput).
 pub mod get_wireless_gateway_firmware_information_output {
 
@@ -3118,12 +3168,6 @@ pub mod get_wireless_gateway_firmware_information_output {
         }
     }
 }
-impl GetWirelessGatewayFirmwareInformationOutput {
-    /// Creates a new builder-style object to manufacture [`GetWirelessGatewayFirmwareInformationOutput`](crate::output::GetWirelessGatewayFirmwareInformationOutput).
-    pub fn builder() -> crate::output::get_wireless_gateway_firmware_information_output::Builder {
-        crate::output::get_wireless_gateway_firmware_information_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3152,6 +3196,13 @@ impl aws_http::request_id::RequestId for GetWirelessGatewayCertificateOutput {
         self._request_id.as_deref()
     }
 }
+impl GetWirelessGatewayCertificateOutput {
+    /// Creates a new builder-style object to manufacture [`GetWirelessGatewayCertificateOutput`](crate::output::GetWirelessGatewayCertificateOutput).
+    pub fn builder() -> crate::output::get_wireless_gateway_certificate_output::Builder {
+        crate::output::get_wireless_gateway_certificate_output::Builder::default()
+    }
+}
+
 /// See [`GetWirelessGatewayCertificateOutput`](crate::output::GetWirelessGatewayCertificateOutput).
 pub mod get_wireless_gateway_certificate_output {
 
@@ -3212,12 +3263,6 @@ pub mod get_wireless_gateway_certificate_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl GetWirelessGatewayCertificateOutput {
-    /// Creates a new builder-style object to manufacture [`GetWirelessGatewayCertificateOutput`](crate::output::GetWirelessGatewayCertificateOutput).
-    pub fn builder() -> crate::output::get_wireless_gateway_certificate_output::Builder {
-        crate::output::get_wireless_gateway_certificate_output::Builder::default()
     }
 }
 
@@ -3283,6 +3328,13 @@ impl aws_http::request_id::RequestId for GetWirelessGatewayOutput {
         self._request_id.as_deref()
     }
 }
+impl GetWirelessGatewayOutput {
+    /// Creates a new builder-style object to manufacture [`GetWirelessGatewayOutput`](crate::output::GetWirelessGatewayOutput).
+    pub fn builder() -> crate::output::get_wireless_gateway_output::Builder {
+        crate::output::get_wireless_gateway_output::Builder::default()
+    }
+}
+
 /// See [`GetWirelessGatewayOutput`](crate::output::GetWirelessGatewayOutput).
 pub mod get_wireless_gateway_output {
 
@@ -3397,12 +3449,6 @@ pub mod get_wireless_gateway_output {
         }
     }
 }
-impl GetWirelessGatewayOutput {
-    /// Creates a new builder-style object to manufacture [`GetWirelessGatewayOutput`](crate::output::GetWirelessGatewayOutput).
-    pub fn builder() -> crate::output::get_wireless_gateway_output::Builder {
-        crate::output::get_wireless_gateway_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3445,6 +3491,13 @@ impl aws_http::request_id::RequestId for GetWirelessDeviceStatisticsOutput {
         self._request_id.as_deref()
     }
 }
+impl GetWirelessDeviceStatisticsOutput {
+    /// Creates a new builder-style object to manufacture [`GetWirelessDeviceStatisticsOutput`](crate::output::GetWirelessDeviceStatisticsOutput).
+    pub fn builder() -> crate::output::get_wireless_device_statistics_output::Builder {
+        crate::output::get_wireless_device_statistics_output::Builder::default()
+    }
+}
+
 /// See [`GetWirelessDeviceStatisticsOutput`](crate::output::GetWirelessDeviceStatisticsOutput).
 pub mod get_wireless_device_statistics_output {
 
@@ -3530,12 +3583,6 @@ pub mod get_wireless_device_statistics_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl GetWirelessDeviceStatisticsOutput {
-    /// Creates a new builder-style object to manufacture [`GetWirelessDeviceStatisticsOutput`](crate::output::GetWirelessDeviceStatisticsOutput).
-    pub fn builder() -> crate::output::get_wireless_device_statistics_output::Builder {
-        crate::output::get_wireless_device_statistics_output::Builder::default()
     }
 }
 
@@ -3629,6 +3676,13 @@ impl aws_http::request_id::RequestId for GetWirelessDeviceOutput {
         self._request_id.as_deref()
     }
 }
+impl GetWirelessDeviceOutput {
+    /// Creates a new builder-style object to manufacture [`GetWirelessDeviceOutput`](crate::output::GetWirelessDeviceOutput).
+    pub fn builder() -> crate::output::get_wireless_device_output::Builder {
+        crate::output::get_wireless_device_output::Builder::default()
+    }
+}
+
 /// See [`GetWirelessDeviceOutput`](crate::output::GetWirelessDeviceOutput).
 pub mod get_wireless_device_output {
 
@@ -3803,12 +3857,6 @@ pub mod get_wireless_device_output {
         }
     }
 }
-impl GetWirelessDeviceOutput {
-    /// Creates a new builder-style object to manufacture [`GetWirelessDeviceOutput`](crate::output::GetWirelessDeviceOutput).
-    pub fn builder() -> crate::output::get_wireless_device_output::Builder {
-        crate::output::get_wireless_device_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3851,6 +3899,13 @@ impl aws_http::request_id::RequestId for GetServiceProfileOutput {
         self._request_id.as_deref()
     }
 }
+impl GetServiceProfileOutput {
+    /// Creates a new builder-style object to manufacture [`GetServiceProfileOutput`](crate::output::GetServiceProfileOutput).
+    pub fn builder() -> crate::output::get_service_profile_output::Builder {
+        crate::output::get_service_profile_output::Builder::default()
+    }
+}
+
 /// See [`GetServiceProfileOutput`](crate::output::GetServiceProfileOutput).
 pub mod get_service_profile_output {
 
@@ -3929,12 +3984,6 @@ pub mod get_service_profile_output {
         }
     }
 }
-impl GetServiceProfileOutput {
-    /// Creates a new builder-style object to manufacture [`GetServiceProfileOutput`](crate::output::GetServiceProfileOutput).
-    pub fn builder() -> crate::output::get_service_profile_output::Builder {
-        crate::output::get_service_profile_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3970,6 +4019,13 @@ impl aws_http::request_id::RequestId for GetServiceEndpointOutput {
         self._request_id.as_deref()
     }
 }
+impl GetServiceEndpointOutput {
+    /// Creates a new builder-style object to manufacture [`GetServiceEndpointOutput`](crate::output::GetServiceEndpointOutput).
+    pub fn builder() -> crate::output::get_service_endpoint_output::Builder {
+        crate::output::get_service_endpoint_output::Builder::default()
+    }
+}
+
 /// See [`GetServiceEndpointOutput`](crate::output::GetServiceEndpointOutput).
 pub mod get_service_endpoint_output {
 
@@ -4039,12 +4095,6 @@ pub mod get_service_endpoint_output {
         }
     }
 }
-impl GetServiceEndpointOutput {
-    /// Creates a new builder-style object to manufacture [`GetServiceEndpointOutput`](crate::output::GetServiceEndpointOutput).
-    pub fn builder() -> crate::output::get_service_endpoint_output::Builder {
-        crate::output::get_service_endpoint_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -4066,6 +4116,13 @@ impl aws_http::request_id::RequestId for GetResourcePositionOutput {
         self._request_id.as_deref()
     }
 }
+impl GetResourcePositionOutput {
+    /// Creates a new builder-style object to manufacture [`GetResourcePositionOutput`](crate::output::GetResourcePositionOutput).
+    pub fn builder() -> crate::output::get_resource_position_output::Builder {
+        crate::output::get_resource_position_output::Builder::default()
+    }
+}
+
 /// See [`GetResourcePositionOutput`](crate::output::GetResourcePositionOutput).
 pub mod get_resource_position_output {
 
@@ -4108,12 +4165,6 @@ pub mod get_resource_position_output {
         }
     }
 }
-impl GetResourcePositionOutput {
-    /// Creates a new builder-style object to manufacture [`GetResourcePositionOutput`](crate::output::GetResourcePositionOutput).
-    pub fn builder() -> crate::output::get_resource_position_output::Builder {
-        crate::output::get_resource_position_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -4135,6 +4186,13 @@ impl aws_http::request_id::RequestId for GetResourceLogLevelOutput {
         self._request_id.as_deref()
     }
 }
+impl GetResourceLogLevelOutput {
+    /// Creates a new builder-style object to manufacture [`GetResourceLogLevelOutput`](crate::output::GetResourceLogLevelOutput).
+    pub fn builder() -> crate::output::get_resource_log_level_output::Builder {
+        crate::output::get_resource_log_level_output::Builder::default()
+    }
+}
+
 /// See [`GetResourceLogLevelOutput`](crate::output::GetResourceLogLevelOutput).
 pub mod get_resource_log_level_output {
 
@@ -4172,12 +4230,6 @@ pub mod get_resource_log_level_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl GetResourceLogLevelOutput {
-    /// Creates a new builder-style object to manufacture [`GetResourceLogLevelOutput`](crate::output::GetResourceLogLevelOutput).
-    pub fn builder() -> crate::output::get_resource_log_level_output::Builder {
-        crate::output::get_resource_log_level_output::Builder::default()
     }
 }
 
@@ -4237,6 +4289,13 @@ impl aws_http::request_id::RequestId for GetResourceEventConfigurationOutput {
         self._request_id.as_deref()
     }
 }
+impl GetResourceEventConfigurationOutput {
+    /// Creates a new builder-style object to manufacture [`GetResourceEventConfigurationOutput`](crate::output::GetResourceEventConfigurationOutput).
+    pub fn builder() -> crate::output::get_resource_event_configuration_output::Builder {
+        crate::output::get_resource_event_configuration_output::Builder::default()
+    }
+}
+
 /// See [`GetResourceEventConfigurationOutput`](crate::output::GetResourceEventConfigurationOutput).
 pub mod get_resource_event_configuration_output {
 
@@ -4351,12 +4410,6 @@ pub mod get_resource_event_configuration_output {
         }
     }
 }
-impl GetResourceEventConfigurationOutput {
-    /// Creates a new builder-style object to manufacture [`GetResourceEventConfigurationOutput`](crate::output::GetResourceEventConfigurationOutput).
-    pub fn builder() -> crate::output::get_resource_event_configuration_output::Builder {
-        crate::output::get_resource_event_configuration_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -4378,6 +4431,13 @@ impl aws_http::request_id::RequestId for GetPositionEstimateOutput {
         self._request_id.as_deref()
     }
 }
+impl GetPositionEstimateOutput {
+    /// Creates a new builder-style object to manufacture [`GetPositionEstimateOutput`](crate::output::GetPositionEstimateOutput).
+    pub fn builder() -> crate::output::get_position_estimate_output::Builder {
+        crate::output::get_position_estimate_output::Builder::default()
+    }
+}
+
 /// See [`GetPositionEstimateOutput`](crate::output::GetPositionEstimateOutput).
 pub mod get_position_estimate_output {
 
@@ -4420,12 +4480,6 @@ pub mod get_position_estimate_output {
         }
     }
 }
-impl GetPositionEstimateOutput {
-    /// Creates a new builder-style object to manufacture [`GetPositionEstimateOutput`](crate::output::GetPositionEstimateOutput).
-    pub fn builder() -> crate::output::get_position_estimate_output::Builder {
-        crate::output::get_position_estimate_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[deprecated(note = "This operation is no longer supported.")]
@@ -4455,6 +4509,13 @@ impl aws_http::request_id::RequestId for GetPositionConfigurationOutput {
         self._request_id.as_deref()
     }
 }
+impl GetPositionConfigurationOutput {
+    /// Creates a new builder-style object to manufacture [`GetPositionConfigurationOutput`](crate::output::GetPositionConfigurationOutput).
+    pub fn builder() -> crate::output::get_position_configuration_output::Builder {
+        crate::output::get_position_configuration_output::Builder::default()
+    }
+}
+
 /// See [`GetPositionConfigurationOutput`](crate::output::GetPositionConfigurationOutput).
 pub mod get_position_configuration_output {
 
@@ -4507,12 +4568,6 @@ pub mod get_position_configuration_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl GetPositionConfigurationOutput {
-    /// Creates a new builder-style object to manufacture [`GetPositionConfigurationOutput`](crate::output::GetPositionConfigurationOutput).
-    pub fn builder() -> crate::output::get_position_configuration_output::Builder {
-        crate::output::get_position_configuration_output::Builder::default()
     }
 }
 
@@ -4572,6 +4627,13 @@ impl aws_http::request_id::RequestId for GetPositionOutput {
         self._request_id.as_deref()
     }
 }
+impl GetPositionOutput {
+    /// Creates a new builder-style object to manufacture [`GetPositionOutput`](crate::output::GetPositionOutput).
+    pub fn builder() -> crate::output::get_position_output::Builder {
+        crate::output::get_position_output::Builder::default()
+    }
+}
+
 /// See [`GetPositionOutput`](crate::output::GetPositionOutput).
 pub mod get_position_output {
 
@@ -4686,12 +4748,6 @@ pub mod get_position_output {
         }
     }
 }
-impl GetPositionOutput {
-    /// Creates a new builder-style object to manufacture [`GetPositionOutput`](crate::output::GetPositionOutput).
-    pub fn builder() -> crate::output::get_position_output::Builder {
-        crate::output::get_position_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -4722,6 +4778,13 @@ impl aws_http::request_id::RequestId for GetPartnerAccountOutput {
         self._request_id.as_deref()
     }
 }
+impl GetPartnerAccountOutput {
+    /// Creates a new builder-style object to manufacture [`GetPartnerAccountOutput`](crate::output::GetPartnerAccountOutput).
+    pub fn builder() -> crate::output::get_partner_account_output::Builder {
+        crate::output::get_partner_account_output::Builder::default()
+    }
+}
+
 /// See [`GetPartnerAccountOutput`](crate::output::GetPartnerAccountOutput).
 pub mod get_partner_account_output {
 
@@ -4774,12 +4837,6 @@ pub mod get_partner_account_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl GetPartnerAccountOutput {
-    /// Creates a new builder-style object to manufacture [`GetPartnerAccountOutput`](crate::output::GetPartnerAccountOutput).
-    pub fn builder() -> crate::output::get_partner_account_output::Builder {
-        crate::output::get_partner_account_output::Builder::default()
     }
 }
 
@@ -4838,6 +4895,13 @@ impl aws_http::request_id::RequestId for GetNetworkAnalyzerConfigurationOutput {
         self._request_id.as_deref()
     }
 }
+impl GetNetworkAnalyzerConfigurationOutput {
+    /// Creates a new builder-style object to manufacture [`GetNetworkAnalyzerConfigurationOutput`](crate::output::GetNetworkAnalyzerConfigurationOutput).
+    pub fn builder() -> crate::output::get_network_analyzer_configuration_output::Builder {
+        crate::output::get_network_analyzer_configuration_output::Builder::default()
+    }
+}
+
 /// See [`GetNetworkAnalyzerConfigurationOutput`](crate::output::GetNetworkAnalyzerConfigurationOutput).
 pub mod get_network_analyzer_configuration_output {
 
@@ -4958,12 +5022,6 @@ pub mod get_network_analyzer_configuration_output {
         }
     }
 }
-impl GetNetworkAnalyzerConfigurationOutput {
-    /// Creates a new builder-style object to manufacture [`GetNetworkAnalyzerConfigurationOutput`](crate::output::GetNetworkAnalyzerConfigurationOutput).
-    pub fn builder() -> crate::output::get_network_analyzer_configuration_output::Builder {
-        crate::output::get_network_analyzer_configuration_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -4985,6 +5043,13 @@ impl aws_http::request_id::RequestId for GetMulticastGroupSessionOutput {
         self._request_id.as_deref()
     }
 }
+impl GetMulticastGroupSessionOutput {
+    /// Creates a new builder-style object to manufacture [`GetMulticastGroupSessionOutput`](crate::output::GetMulticastGroupSessionOutput).
+    pub fn builder() -> crate::output::get_multicast_group_session_output::Builder {
+        crate::output::get_multicast_group_session_output::Builder::default()
+    }
+}
+
 /// See [`GetMulticastGroupSessionOutput`](crate::output::GetMulticastGroupSessionOutput).
 pub mod get_multicast_group_session_output {
 
@@ -5025,12 +5090,6 @@ pub mod get_multicast_group_session_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl GetMulticastGroupSessionOutput {
-    /// Creates a new builder-style object to manufacture [`GetMulticastGroupSessionOutput`](crate::output::GetMulticastGroupSessionOutput).
-    pub fn builder() -> crate::output::get_multicast_group_session_output::Builder {
-        crate::output::get_multicast_group_session_output::Builder::default()
     }
 }
 
@@ -5096,6 +5155,13 @@ impl aws_http::request_id::RequestId for GetMulticastGroupOutput {
         self._request_id.as_deref()
     }
 }
+impl GetMulticastGroupOutput {
+    /// Creates a new builder-style object to manufacture [`GetMulticastGroupOutput`](crate::output::GetMulticastGroupOutput).
+    pub fn builder() -> crate::output::get_multicast_group_output::Builder {
+        crate::output::get_multicast_group_output::Builder::default()
+    }
+}
+
 /// See [`GetMulticastGroupOutput`](crate::output::GetMulticastGroupOutput).
 pub mod get_multicast_group_output {
 
@@ -5213,12 +5279,6 @@ pub mod get_multicast_group_output {
         }
     }
 }
-impl GetMulticastGroupOutput {
-    /// Creates a new builder-style object to manufacture [`GetMulticastGroupOutput`](crate::output::GetMulticastGroupOutput).
-    pub fn builder() -> crate::output::get_multicast_group_output::Builder {
-        crate::output::get_multicast_group_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -5260,6 +5320,13 @@ impl aws_http::request_id::RequestId for GetLogLevelsByResourceTypesOutput {
         self._request_id.as_deref()
     }
 }
+impl GetLogLevelsByResourceTypesOutput {
+    /// Creates a new builder-style object to manufacture [`GetLogLevelsByResourceTypesOutput`](crate::output::GetLogLevelsByResourceTypesOutput).
+    pub fn builder() -> crate::output::get_log_levels_by_resource_types_output::Builder {
+        crate::output::get_log_levels_by_resource_types_output::Builder::default()
+    }
+}
+
 /// See [`GetLogLevelsByResourceTypesOutput`](crate::output::GetLogLevelsByResourceTypesOutput).
 pub mod get_log_levels_by_resource_types_output {
 
@@ -5352,12 +5419,6 @@ pub mod get_log_levels_by_resource_types_output {
         }
     }
 }
-impl GetLogLevelsByResourceTypesOutput {
-    /// Creates a new builder-style object to manufacture [`GetLogLevelsByResourceTypesOutput`](crate::output::GetLogLevelsByResourceTypesOutput).
-    pub fn builder() -> crate::output::get_log_levels_by_resource_types_output::Builder {
-        crate::output::get_log_levels_by_resource_types_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -5435,6 +5496,13 @@ impl aws_http::request_id::RequestId for GetFuotaTaskOutput {
         self._request_id.as_deref()
     }
 }
+impl GetFuotaTaskOutput {
+    /// Creates a new builder-style object to manufacture [`GetFuotaTaskOutput`](crate::output::GetFuotaTaskOutput).
+    pub fn builder() -> crate::output::get_fuota_task_output::Builder {
+        crate::output::get_fuota_task_output::Builder::default()
+    }
+}
+
 /// See [`GetFuotaTaskOutput`](crate::output::GetFuotaTaskOutput).
 pub mod get_fuota_task_output {
 
@@ -5585,12 +5653,6 @@ pub mod get_fuota_task_output {
         }
     }
 }
-impl GetFuotaTaskOutput {
-    /// Creates a new builder-style object to manufacture [`GetFuotaTaskOutput`](crate::output::GetFuotaTaskOutput).
-    pub fn builder() -> crate::output::get_fuota_task_output::Builder {
-        crate::output::get_fuota_task_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -5653,6 +5715,13 @@ impl aws_http::request_id::RequestId for GetEventConfigurationByResourceTypesOut
         self._request_id.as_deref()
     }
 }
+impl GetEventConfigurationByResourceTypesOutput {
+    /// Creates a new builder-style object to manufacture [`GetEventConfigurationByResourceTypesOutput`](crate::output::GetEventConfigurationByResourceTypesOutput).
+    pub fn builder() -> crate::output::get_event_configuration_by_resource_types_output::Builder {
+        crate::output::get_event_configuration_by_resource_types_output::Builder::default()
+    }
+}
+
 /// See [`GetEventConfigurationByResourceTypesOutput`](crate::output::GetEventConfigurationByResourceTypesOutput).
 pub mod get_event_configuration_by_resource_types_output {
 
@@ -5778,12 +5847,6 @@ pub mod get_event_configuration_by_resource_types_output {
         }
     }
 }
-impl GetEventConfigurationByResourceTypesOutput {
-    /// Creates a new builder-style object to manufacture [`GetEventConfigurationByResourceTypesOutput`](crate::output::GetEventConfigurationByResourceTypesOutput).
-    pub fn builder() -> crate::output::get_event_configuration_by_resource_types_output::Builder {
-        crate::output::get_event_configuration_by_resource_types_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -5826,6 +5889,13 @@ impl aws_http::request_id::RequestId for GetDeviceProfileOutput {
         self._request_id.as_deref()
     }
 }
+impl GetDeviceProfileOutput {
+    /// Creates a new builder-style object to manufacture [`GetDeviceProfileOutput`](crate::output::GetDeviceProfileOutput).
+    pub fn builder() -> crate::output::get_device_profile_output::Builder {
+        crate::output::get_device_profile_output::Builder::default()
+    }
+}
+
 /// See [`GetDeviceProfileOutput`](crate::output::GetDeviceProfileOutput).
 pub mod get_device_profile_output {
 
@@ -5904,12 +5974,6 @@ pub mod get_device_profile_output {
         }
     }
 }
-impl GetDeviceProfileOutput {
-    /// Creates a new builder-style object to manufacture [`GetDeviceProfileOutput`](crate::output::GetDeviceProfileOutput).
-    pub fn builder() -> crate::output::get_device_profile_output::Builder {
-        crate::output::get_device_profile_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -5966,6 +6030,13 @@ impl aws_http::request_id::RequestId for GetDestinationOutput {
         self._request_id.as_deref()
     }
 }
+impl GetDestinationOutput {
+    /// Creates a new builder-style object to manufacture [`GetDestinationOutput`](crate::output::GetDestinationOutput).
+    pub fn builder() -> crate::output::get_destination_output::Builder {
+        crate::output::get_destination_output::Builder::default()
+    }
+}
+
 /// See [`GetDestinationOutput`](crate::output::GetDestinationOutput).
 pub mod get_destination_output {
 
@@ -6068,12 +6139,6 @@ pub mod get_destination_output {
         }
     }
 }
-impl GetDestinationOutput {
-    /// Creates a new builder-style object to manufacture [`GetDestinationOutput`](crate::output::GetDestinationOutput).
-    pub fn builder() -> crate::output::get_destination_output::Builder {
-        crate::output::get_destination_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -6086,6 +6151,13 @@ impl aws_http::request_id::RequestId for DisassociateWirelessGatewayFromThingOut
         self._request_id.as_deref()
     }
 }
+impl DisassociateWirelessGatewayFromThingOutput {
+    /// Creates a new builder-style object to manufacture [`DisassociateWirelessGatewayFromThingOutput`](crate::output::DisassociateWirelessGatewayFromThingOutput).
+    pub fn builder() -> crate::output::disassociate_wireless_gateway_from_thing_output::Builder {
+        crate::output::disassociate_wireless_gateway_from_thing_output::Builder::default()
+    }
+}
+
 /// See [`DisassociateWirelessGatewayFromThingOutput`](crate::output::DisassociateWirelessGatewayFromThingOutput).
 pub mod disassociate_wireless_gateway_from_thing_output {
 
@@ -6113,12 +6185,6 @@ pub mod disassociate_wireless_gateway_from_thing_output {
         }
     }
 }
-impl DisassociateWirelessGatewayFromThingOutput {
-    /// Creates a new builder-style object to manufacture [`DisassociateWirelessGatewayFromThingOutput`](crate::output::DisassociateWirelessGatewayFromThingOutput).
-    pub fn builder() -> crate::output::disassociate_wireless_gateway_from_thing_output::Builder {
-        crate::output::disassociate_wireless_gateway_from_thing_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -6131,6 +6197,14 @@ impl aws_http::request_id::RequestId for DisassociateWirelessGatewayFromCertific
         self._request_id.as_deref()
     }
 }
+impl DisassociateWirelessGatewayFromCertificateOutput {
+    /// Creates a new builder-style object to manufacture [`DisassociateWirelessGatewayFromCertificateOutput`](crate::output::DisassociateWirelessGatewayFromCertificateOutput).
+    pub fn builder() -> crate::output::disassociate_wireless_gateway_from_certificate_output::Builder
+    {
+        crate::output::disassociate_wireless_gateway_from_certificate_output::Builder::default()
+    }
+}
+
 /// See [`DisassociateWirelessGatewayFromCertificateOutput`](crate::output::DisassociateWirelessGatewayFromCertificateOutput).
 pub mod disassociate_wireless_gateway_from_certificate_output {
 
@@ -6158,13 +6232,6 @@ pub mod disassociate_wireless_gateway_from_certificate_output {
         }
     }
 }
-impl DisassociateWirelessGatewayFromCertificateOutput {
-    /// Creates a new builder-style object to manufacture [`DisassociateWirelessGatewayFromCertificateOutput`](crate::output::DisassociateWirelessGatewayFromCertificateOutput).
-    pub fn builder() -> crate::output::disassociate_wireless_gateway_from_certificate_output::Builder
-    {
-        crate::output::disassociate_wireless_gateway_from_certificate_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -6177,6 +6244,13 @@ impl aws_http::request_id::RequestId for DisassociateWirelessDeviceFromThingOutp
         self._request_id.as_deref()
     }
 }
+impl DisassociateWirelessDeviceFromThingOutput {
+    /// Creates a new builder-style object to manufacture [`DisassociateWirelessDeviceFromThingOutput`](crate::output::DisassociateWirelessDeviceFromThingOutput).
+    pub fn builder() -> crate::output::disassociate_wireless_device_from_thing_output::Builder {
+        crate::output::disassociate_wireless_device_from_thing_output::Builder::default()
+    }
+}
+
 /// See [`DisassociateWirelessDeviceFromThingOutput`](crate::output::DisassociateWirelessDeviceFromThingOutput).
 pub mod disassociate_wireless_device_from_thing_output {
 
@@ -6204,12 +6278,6 @@ pub mod disassociate_wireless_device_from_thing_output {
         }
     }
 }
-impl DisassociateWirelessDeviceFromThingOutput {
-    /// Creates a new builder-style object to manufacture [`DisassociateWirelessDeviceFromThingOutput`](crate::output::DisassociateWirelessDeviceFromThingOutput).
-    pub fn builder() -> crate::output::disassociate_wireless_device_from_thing_output::Builder {
-        crate::output::disassociate_wireless_device_from_thing_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -6222,6 +6290,14 @@ impl aws_http::request_id::RequestId for DisassociateWirelessDeviceFromMulticast
         self._request_id.as_deref()
     }
 }
+impl DisassociateWirelessDeviceFromMulticastGroupOutput {
+    /// Creates a new builder-style object to manufacture [`DisassociateWirelessDeviceFromMulticastGroupOutput`](crate::output::DisassociateWirelessDeviceFromMulticastGroupOutput).
+    pub fn builder(
+    ) -> crate::output::disassociate_wireless_device_from_multicast_group_output::Builder {
+        crate::output::disassociate_wireless_device_from_multicast_group_output::Builder::default()
+    }
+}
+
 /// See [`DisassociateWirelessDeviceFromMulticastGroupOutput`](crate::output::DisassociateWirelessDeviceFromMulticastGroupOutput).
 pub mod disassociate_wireless_device_from_multicast_group_output {
 
@@ -6249,13 +6325,6 @@ pub mod disassociate_wireless_device_from_multicast_group_output {
         }
     }
 }
-impl DisassociateWirelessDeviceFromMulticastGroupOutput {
-    /// Creates a new builder-style object to manufacture [`DisassociateWirelessDeviceFromMulticastGroupOutput`](crate::output::DisassociateWirelessDeviceFromMulticastGroupOutput).
-    pub fn builder(
-    ) -> crate::output::disassociate_wireless_device_from_multicast_group_output::Builder {
-        crate::output::disassociate_wireless_device_from_multicast_group_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -6268,6 +6337,14 @@ impl aws_http::request_id::RequestId for DisassociateWirelessDeviceFromFuotaTask
         self._request_id.as_deref()
     }
 }
+impl DisassociateWirelessDeviceFromFuotaTaskOutput {
+    /// Creates a new builder-style object to manufacture [`DisassociateWirelessDeviceFromFuotaTaskOutput`](crate::output::DisassociateWirelessDeviceFromFuotaTaskOutput).
+    pub fn builder() -> crate::output::disassociate_wireless_device_from_fuota_task_output::Builder
+    {
+        crate::output::disassociate_wireless_device_from_fuota_task_output::Builder::default()
+    }
+}
+
 /// See [`DisassociateWirelessDeviceFromFuotaTaskOutput`](crate::output::DisassociateWirelessDeviceFromFuotaTaskOutput).
 pub mod disassociate_wireless_device_from_fuota_task_output {
 
@@ -6295,13 +6372,6 @@ pub mod disassociate_wireless_device_from_fuota_task_output {
         }
     }
 }
-impl DisassociateWirelessDeviceFromFuotaTaskOutput {
-    /// Creates a new builder-style object to manufacture [`DisassociateWirelessDeviceFromFuotaTaskOutput`](crate::output::DisassociateWirelessDeviceFromFuotaTaskOutput).
-    pub fn builder() -> crate::output::disassociate_wireless_device_from_fuota_task_output::Builder
-    {
-        crate::output::disassociate_wireless_device_from_fuota_task_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -6314,6 +6384,14 @@ impl aws_http::request_id::RequestId for DisassociateMulticastGroupFromFuotaTask
         self._request_id.as_deref()
     }
 }
+impl DisassociateMulticastGroupFromFuotaTaskOutput {
+    /// Creates a new builder-style object to manufacture [`DisassociateMulticastGroupFromFuotaTaskOutput`](crate::output::DisassociateMulticastGroupFromFuotaTaskOutput).
+    pub fn builder() -> crate::output::disassociate_multicast_group_from_fuota_task_output::Builder
+    {
+        crate::output::disassociate_multicast_group_from_fuota_task_output::Builder::default()
+    }
+}
+
 /// See [`DisassociateMulticastGroupFromFuotaTaskOutput`](crate::output::DisassociateMulticastGroupFromFuotaTaskOutput).
 pub mod disassociate_multicast_group_from_fuota_task_output {
 
@@ -6341,13 +6419,6 @@ pub mod disassociate_multicast_group_from_fuota_task_output {
         }
     }
 }
-impl DisassociateMulticastGroupFromFuotaTaskOutput {
-    /// Creates a new builder-style object to manufacture [`DisassociateMulticastGroupFromFuotaTaskOutput`](crate::output::DisassociateMulticastGroupFromFuotaTaskOutput).
-    pub fn builder() -> crate::output::disassociate_multicast_group_from_fuota_task_output::Builder
-    {
-        crate::output::disassociate_multicast_group_from_fuota_task_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -6360,6 +6431,14 @@ impl aws_http::request_id::RequestId for DisassociateAwsAccountFromPartnerAccoun
         self._request_id.as_deref()
     }
 }
+impl DisassociateAwsAccountFromPartnerAccountOutput {
+    /// Creates a new builder-style object to manufacture [`DisassociateAwsAccountFromPartnerAccountOutput`](crate::output::DisassociateAwsAccountFromPartnerAccountOutput).
+    pub fn builder() -> crate::output::disassociate_aws_account_from_partner_account_output::Builder
+    {
+        crate::output::disassociate_aws_account_from_partner_account_output::Builder::default()
+    }
+}
+
 /// See [`DisassociateAwsAccountFromPartnerAccountOutput`](crate::output::DisassociateAwsAccountFromPartnerAccountOutput).
 pub mod disassociate_aws_account_from_partner_account_output {
 
@@ -6387,13 +6466,6 @@ pub mod disassociate_aws_account_from_partner_account_output {
         }
     }
 }
-impl DisassociateAwsAccountFromPartnerAccountOutput {
-    /// Creates a new builder-style object to manufacture [`DisassociateAwsAccountFromPartnerAccountOutput`](crate::output::DisassociateAwsAccountFromPartnerAccountOutput).
-    pub fn builder() -> crate::output::disassociate_aws_account_from_partner_account_output::Builder
-    {
-        crate::output::disassociate_aws_account_from_partner_account_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -6406,6 +6478,13 @@ impl aws_http::request_id::RequestId for DeleteWirelessGatewayTaskDefinitionOutp
         self._request_id.as_deref()
     }
 }
+impl DeleteWirelessGatewayTaskDefinitionOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteWirelessGatewayTaskDefinitionOutput`](crate::output::DeleteWirelessGatewayTaskDefinitionOutput).
+    pub fn builder() -> crate::output::delete_wireless_gateway_task_definition_output::Builder {
+        crate::output::delete_wireless_gateway_task_definition_output::Builder::default()
+    }
+}
+
 /// See [`DeleteWirelessGatewayTaskDefinitionOutput`](crate::output::DeleteWirelessGatewayTaskDefinitionOutput).
 pub mod delete_wireless_gateway_task_definition_output {
 
@@ -6433,12 +6512,6 @@ pub mod delete_wireless_gateway_task_definition_output {
         }
     }
 }
-impl DeleteWirelessGatewayTaskDefinitionOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteWirelessGatewayTaskDefinitionOutput`](crate::output::DeleteWirelessGatewayTaskDefinitionOutput).
-    pub fn builder() -> crate::output::delete_wireless_gateway_task_definition_output::Builder {
-        crate::output::delete_wireless_gateway_task_definition_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -6451,6 +6524,13 @@ impl aws_http::request_id::RequestId for DeleteWirelessGatewayTaskOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteWirelessGatewayTaskOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteWirelessGatewayTaskOutput`](crate::output::DeleteWirelessGatewayTaskOutput).
+    pub fn builder() -> crate::output::delete_wireless_gateway_task_output::Builder {
+        crate::output::delete_wireless_gateway_task_output::Builder::default()
+    }
+}
+
 /// See [`DeleteWirelessGatewayTaskOutput`](crate::output::DeleteWirelessGatewayTaskOutput).
 pub mod delete_wireless_gateway_task_output {
 
@@ -6478,12 +6558,6 @@ pub mod delete_wireless_gateway_task_output {
         }
     }
 }
-impl DeleteWirelessGatewayTaskOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteWirelessGatewayTaskOutput`](crate::output::DeleteWirelessGatewayTaskOutput).
-    pub fn builder() -> crate::output::delete_wireless_gateway_task_output::Builder {
-        crate::output::delete_wireless_gateway_task_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -6496,6 +6570,13 @@ impl aws_http::request_id::RequestId for DeleteWirelessGatewayOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteWirelessGatewayOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteWirelessGatewayOutput`](crate::output::DeleteWirelessGatewayOutput).
+    pub fn builder() -> crate::output::delete_wireless_gateway_output::Builder {
+        crate::output::delete_wireless_gateway_output::Builder::default()
+    }
+}
+
 /// See [`DeleteWirelessGatewayOutput`](crate::output::DeleteWirelessGatewayOutput).
 pub mod delete_wireless_gateway_output {
 
@@ -6523,12 +6604,6 @@ pub mod delete_wireless_gateway_output {
         }
     }
 }
-impl DeleteWirelessGatewayOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteWirelessGatewayOutput`](crate::output::DeleteWirelessGatewayOutput).
-    pub fn builder() -> crate::output::delete_wireless_gateway_output::Builder {
-        crate::output::delete_wireless_gateway_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -6541,6 +6616,13 @@ impl aws_http::request_id::RequestId for DeleteWirelessDeviceOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteWirelessDeviceOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteWirelessDeviceOutput`](crate::output::DeleteWirelessDeviceOutput).
+    pub fn builder() -> crate::output::delete_wireless_device_output::Builder {
+        crate::output::delete_wireless_device_output::Builder::default()
+    }
+}
+
 /// See [`DeleteWirelessDeviceOutput`](crate::output::DeleteWirelessDeviceOutput).
 pub mod delete_wireless_device_output {
 
@@ -6568,12 +6650,6 @@ pub mod delete_wireless_device_output {
         }
     }
 }
-impl DeleteWirelessDeviceOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteWirelessDeviceOutput`](crate::output::DeleteWirelessDeviceOutput).
-    pub fn builder() -> crate::output::delete_wireless_device_output::Builder {
-        crate::output::delete_wireless_device_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -6586,6 +6662,13 @@ impl aws_http::request_id::RequestId for DeleteServiceProfileOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteServiceProfileOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteServiceProfileOutput`](crate::output::DeleteServiceProfileOutput).
+    pub fn builder() -> crate::output::delete_service_profile_output::Builder {
+        crate::output::delete_service_profile_output::Builder::default()
+    }
+}
+
 /// See [`DeleteServiceProfileOutput`](crate::output::DeleteServiceProfileOutput).
 pub mod delete_service_profile_output {
 
@@ -6613,12 +6696,6 @@ pub mod delete_service_profile_output {
         }
     }
 }
-impl DeleteServiceProfileOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteServiceProfileOutput`](crate::output::DeleteServiceProfileOutput).
-    pub fn builder() -> crate::output::delete_service_profile_output::Builder {
-        crate::output::delete_service_profile_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -6631,6 +6708,13 @@ impl aws_http::request_id::RequestId for DeleteQueuedMessagesOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteQueuedMessagesOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteQueuedMessagesOutput`](crate::output::DeleteQueuedMessagesOutput).
+    pub fn builder() -> crate::output::delete_queued_messages_output::Builder {
+        crate::output::delete_queued_messages_output::Builder::default()
+    }
+}
+
 /// See [`DeleteQueuedMessagesOutput`](crate::output::DeleteQueuedMessagesOutput).
 pub mod delete_queued_messages_output {
 
@@ -6658,12 +6742,6 @@ pub mod delete_queued_messages_output {
         }
     }
 }
-impl DeleteQueuedMessagesOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteQueuedMessagesOutput`](crate::output::DeleteQueuedMessagesOutput).
-    pub fn builder() -> crate::output::delete_queued_messages_output::Builder {
-        crate::output::delete_queued_messages_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -6676,6 +6754,13 @@ impl aws_http::request_id::RequestId for DeleteNetworkAnalyzerConfigurationOutpu
         self._request_id.as_deref()
     }
 }
+impl DeleteNetworkAnalyzerConfigurationOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteNetworkAnalyzerConfigurationOutput`](crate::output::DeleteNetworkAnalyzerConfigurationOutput).
+    pub fn builder() -> crate::output::delete_network_analyzer_configuration_output::Builder {
+        crate::output::delete_network_analyzer_configuration_output::Builder::default()
+    }
+}
+
 /// See [`DeleteNetworkAnalyzerConfigurationOutput`](crate::output::DeleteNetworkAnalyzerConfigurationOutput).
 pub mod delete_network_analyzer_configuration_output {
 
@@ -6703,12 +6788,6 @@ pub mod delete_network_analyzer_configuration_output {
         }
     }
 }
-impl DeleteNetworkAnalyzerConfigurationOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteNetworkAnalyzerConfigurationOutput`](crate::output::DeleteNetworkAnalyzerConfigurationOutput).
-    pub fn builder() -> crate::output::delete_network_analyzer_configuration_output::Builder {
-        crate::output::delete_network_analyzer_configuration_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -6721,6 +6800,13 @@ impl aws_http::request_id::RequestId for DeleteMulticastGroupOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteMulticastGroupOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteMulticastGroupOutput`](crate::output::DeleteMulticastGroupOutput).
+    pub fn builder() -> crate::output::delete_multicast_group_output::Builder {
+        crate::output::delete_multicast_group_output::Builder::default()
+    }
+}
+
 /// See [`DeleteMulticastGroupOutput`](crate::output::DeleteMulticastGroupOutput).
 pub mod delete_multicast_group_output {
 
@@ -6748,12 +6834,6 @@ pub mod delete_multicast_group_output {
         }
     }
 }
-impl DeleteMulticastGroupOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteMulticastGroupOutput`](crate::output::DeleteMulticastGroupOutput).
-    pub fn builder() -> crate::output::delete_multicast_group_output::Builder {
-        crate::output::delete_multicast_group_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -6766,6 +6846,13 @@ impl aws_http::request_id::RequestId for DeleteFuotaTaskOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteFuotaTaskOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteFuotaTaskOutput`](crate::output::DeleteFuotaTaskOutput).
+    pub fn builder() -> crate::output::delete_fuota_task_output::Builder {
+        crate::output::delete_fuota_task_output::Builder::default()
+    }
+}
+
 /// See [`DeleteFuotaTaskOutput`](crate::output::DeleteFuotaTaskOutput).
 pub mod delete_fuota_task_output {
 
@@ -6793,12 +6880,6 @@ pub mod delete_fuota_task_output {
         }
     }
 }
-impl DeleteFuotaTaskOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteFuotaTaskOutput`](crate::output::DeleteFuotaTaskOutput).
-    pub fn builder() -> crate::output::delete_fuota_task_output::Builder {
-        crate::output::delete_fuota_task_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -6811,6 +6892,13 @@ impl aws_http::request_id::RequestId for DeleteDeviceProfileOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteDeviceProfileOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteDeviceProfileOutput`](crate::output::DeleteDeviceProfileOutput).
+    pub fn builder() -> crate::output::delete_device_profile_output::Builder {
+        crate::output::delete_device_profile_output::Builder::default()
+    }
+}
+
 /// See [`DeleteDeviceProfileOutput`](crate::output::DeleteDeviceProfileOutput).
 pub mod delete_device_profile_output {
 
@@ -6838,12 +6926,6 @@ pub mod delete_device_profile_output {
         }
     }
 }
-impl DeleteDeviceProfileOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteDeviceProfileOutput`](crate::output::DeleteDeviceProfileOutput).
-    pub fn builder() -> crate::output::delete_device_profile_output::Builder {
-        crate::output::delete_device_profile_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -6856,6 +6938,13 @@ impl aws_http::request_id::RequestId for DeleteDestinationOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteDestinationOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteDestinationOutput`](crate::output::DeleteDestinationOutput).
+    pub fn builder() -> crate::output::delete_destination_output::Builder {
+        crate::output::delete_destination_output::Builder::default()
+    }
+}
+
 /// See [`DeleteDestinationOutput`](crate::output::DeleteDestinationOutput).
 pub mod delete_destination_output {
 
@@ -6881,12 +6970,6 @@ pub mod delete_destination_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl DeleteDestinationOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteDestinationOutput`](crate::output::DeleteDestinationOutput).
-    pub fn builder() -> crate::output::delete_destination_output::Builder {
-        crate::output::delete_destination_output::Builder::default()
     }
 }
 
@@ -6917,6 +7000,13 @@ impl aws_http::request_id::RequestId for CreateWirelessGatewayTaskDefinitionOutp
         self._request_id.as_deref()
     }
 }
+impl CreateWirelessGatewayTaskDefinitionOutput {
+    /// Creates a new builder-style object to manufacture [`CreateWirelessGatewayTaskDefinitionOutput`](crate::output::CreateWirelessGatewayTaskDefinitionOutput).
+    pub fn builder() -> crate::output::create_wireless_gateway_task_definition_output::Builder {
+        crate::output::create_wireless_gateway_task_definition_output::Builder::default()
+    }
+}
+
 /// See [`CreateWirelessGatewayTaskDefinitionOutput`](crate::output::CreateWirelessGatewayTaskDefinitionOutput).
 pub mod create_wireless_gateway_task_definition_output {
 
@@ -6968,12 +7058,6 @@ pub mod create_wireless_gateway_task_definition_output {
         }
     }
 }
-impl CreateWirelessGatewayTaskDefinitionOutput {
-    /// Creates a new builder-style object to manufacture [`CreateWirelessGatewayTaskDefinitionOutput`](crate::output::CreateWirelessGatewayTaskDefinitionOutput).
-    pub fn builder() -> crate::output::create_wireless_gateway_task_definition_output::Builder {
-        crate::output::create_wireless_gateway_task_definition_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -7002,6 +7086,13 @@ impl aws_http::request_id::RequestId for CreateWirelessGatewayTaskOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateWirelessGatewayTaskOutput {
+    /// Creates a new builder-style object to manufacture [`CreateWirelessGatewayTaskOutput`](crate::output::CreateWirelessGatewayTaskOutput).
+    pub fn builder() -> crate::output::create_wireless_gateway_task_output::Builder {
+        crate::output::create_wireless_gateway_task_output::Builder::default()
+    }
+}
+
 /// See [`CreateWirelessGatewayTaskOutput`](crate::output::CreateWirelessGatewayTaskOutput).
 pub mod create_wireless_gateway_task_output {
 
@@ -7062,12 +7153,6 @@ pub mod create_wireless_gateway_task_output {
         }
     }
 }
-impl CreateWirelessGatewayTaskOutput {
-    /// Creates a new builder-style object to manufacture [`CreateWirelessGatewayTaskOutput`](crate::output::CreateWirelessGatewayTaskOutput).
-    pub fn builder() -> crate::output::create_wireless_gateway_task_output::Builder {
-        crate::output::create_wireless_gateway_task_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -7096,6 +7181,13 @@ impl aws_http::request_id::RequestId for CreateWirelessGatewayOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateWirelessGatewayOutput {
+    /// Creates a new builder-style object to manufacture [`CreateWirelessGatewayOutput`](crate::output::CreateWirelessGatewayOutput).
+    pub fn builder() -> crate::output::create_wireless_gateway_output::Builder {
+        crate::output::create_wireless_gateway_output::Builder::default()
+    }
+}
+
 /// See [`CreateWirelessGatewayOutput`](crate::output::CreateWirelessGatewayOutput).
 pub mod create_wireless_gateway_output {
 
@@ -7147,12 +7239,6 @@ pub mod create_wireless_gateway_output {
         }
     }
 }
-impl CreateWirelessGatewayOutput {
-    /// Creates a new builder-style object to manufacture [`CreateWirelessGatewayOutput`](crate::output::CreateWirelessGatewayOutput).
-    pub fn builder() -> crate::output::create_wireless_gateway_output::Builder {
-        crate::output::create_wireless_gateway_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -7181,6 +7267,13 @@ impl aws_http::request_id::RequestId for CreateWirelessDeviceOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateWirelessDeviceOutput {
+    /// Creates a new builder-style object to manufacture [`CreateWirelessDeviceOutput`](crate::output::CreateWirelessDeviceOutput).
+    pub fn builder() -> crate::output::create_wireless_device_output::Builder {
+        crate::output::create_wireless_device_output::Builder::default()
+    }
+}
+
 /// See [`CreateWirelessDeviceOutput`](crate::output::CreateWirelessDeviceOutput).
 pub mod create_wireless_device_output {
 
@@ -7232,12 +7325,6 @@ pub mod create_wireless_device_output {
         }
     }
 }
-impl CreateWirelessDeviceOutput {
-    /// Creates a new builder-style object to manufacture [`CreateWirelessDeviceOutput`](crate::output::CreateWirelessDeviceOutput).
-    pub fn builder() -> crate::output::create_wireless_device_output::Builder {
-        crate::output::create_wireless_device_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -7266,6 +7353,13 @@ impl aws_http::request_id::RequestId for CreateServiceProfileOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateServiceProfileOutput {
+    /// Creates a new builder-style object to manufacture [`CreateServiceProfileOutput`](crate::output::CreateServiceProfileOutput).
+    pub fn builder() -> crate::output::create_service_profile_output::Builder {
+        crate::output::create_service_profile_output::Builder::default()
+    }
+}
+
 /// See [`CreateServiceProfileOutput`](crate::output::CreateServiceProfileOutput).
 pub mod create_service_profile_output {
 
@@ -7317,12 +7411,6 @@ pub mod create_service_profile_output {
         }
     }
 }
-impl CreateServiceProfileOutput {
-    /// Creates a new builder-style object to manufacture [`CreateServiceProfileOutput`](crate::output::CreateServiceProfileOutput).
-    pub fn builder() -> crate::output::create_service_profile_output::Builder {
-        crate::output::create_service_profile_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -7351,6 +7439,13 @@ impl aws_http::request_id::RequestId for CreateNetworkAnalyzerConfigurationOutpu
         self._request_id.as_deref()
     }
 }
+impl CreateNetworkAnalyzerConfigurationOutput {
+    /// Creates a new builder-style object to manufacture [`CreateNetworkAnalyzerConfigurationOutput`](crate::output::CreateNetworkAnalyzerConfigurationOutput).
+    pub fn builder() -> crate::output::create_network_analyzer_configuration_output::Builder {
+        crate::output::create_network_analyzer_configuration_output::Builder::default()
+    }
+}
+
 /// See [`CreateNetworkAnalyzerConfigurationOutput`](crate::output::CreateNetworkAnalyzerConfigurationOutput).
 pub mod create_network_analyzer_configuration_output {
 
@@ -7402,12 +7497,6 @@ pub mod create_network_analyzer_configuration_output {
         }
     }
 }
-impl CreateNetworkAnalyzerConfigurationOutput {
-    /// Creates a new builder-style object to manufacture [`CreateNetworkAnalyzerConfigurationOutput`](crate::output::CreateNetworkAnalyzerConfigurationOutput).
-    pub fn builder() -> crate::output::create_network_analyzer_configuration_output::Builder {
-        crate::output::create_network_analyzer_configuration_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -7436,6 +7525,13 @@ impl aws_http::request_id::RequestId for CreateMulticastGroupOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateMulticastGroupOutput {
+    /// Creates a new builder-style object to manufacture [`CreateMulticastGroupOutput`](crate::output::CreateMulticastGroupOutput).
+    pub fn builder() -> crate::output::create_multicast_group_output::Builder {
+        crate::output::create_multicast_group_output::Builder::default()
+    }
+}
+
 /// See [`CreateMulticastGroupOutput`](crate::output::CreateMulticastGroupOutput).
 pub mod create_multicast_group_output {
 
@@ -7487,12 +7583,6 @@ pub mod create_multicast_group_output {
         }
     }
 }
-impl CreateMulticastGroupOutput {
-    /// Creates a new builder-style object to manufacture [`CreateMulticastGroupOutput`](crate::output::CreateMulticastGroupOutput).
-    pub fn builder() -> crate::output::create_multicast_group_output::Builder {
-        crate::output::create_multicast_group_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -7521,6 +7611,13 @@ impl aws_http::request_id::RequestId for CreateFuotaTaskOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateFuotaTaskOutput {
+    /// Creates a new builder-style object to manufacture [`CreateFuotaTaskOutput`](crate::output::CreateFuotaTaskOutput).
+    pub fn builder() -> crate::output::create_fuota_task_output::Builder {
+        crate::output::create_fuota_task_output::Builder::default()
+    }
+}
+
 /// See [`CreateFuotaTaskOutput`](crate::output::CreateFuotaTaskOutput).
 pub mod create_fuota_task_output {
 
@@ -7572,12 +7669,6 @@ pub mod create_fuota_task_output {
         }
     }
 }
-impl CreateFuotaTaskOutput {
-    /// Creates a new builder-style object to manufacture [`CreateFuotaTaskOutput`](crate::output::CreateFuotaTaskOutput).
-    pub fn builder() -> crate::output::create_fuota_task_output::Builder {
-        crate::output::create_fuota_task_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -7606,6 +7697,13 @@ impl aws_http::request_id::RequestId for CreateDeviceProfileOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateDeviceProfileOutput {
+    /// Creates a new builder-style object to manufacture [`CreateDeviceProfileOutput`](crate::output::CreateDeviceProfileOutput).
+    pub fn builder() -> crate::output::create_device_profile_output::Builder {
+        crate::output::create_device_profile_output::Builder::default()
+    }
+}
+
 /// See [`CreateDeviceProfileOutput`](crate::output::CreateDeviceProfileOutput).
 pub mod create_device_profile_output {
 
@@ -7657,12 +7755,6 @@ pub mod create_device_profile_output {
         }
     }
 }
-impl CreateDeviceProfileOutput {
-    /// Creates a new builder-style object to manufacture [`CreateDeviceProfileOutput`](crate::output::CreateDeviceProfileOutput).
-    pub fn builder() -> crate::output::create_device_profile_output::Builder {
-        crate::output::create_device_profile_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -7691,6 +7783,13 @@ impl aws_http::request_id::RequestId for CreateDestinationOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateDestinationOutput {
+    /// Creates a new builder-style object to manufacture [`CreateDestinationOutput`](crate::output::CreateDestinationOutput).
+    pub fn builder() -> crate::output::create_destination_output::Builder {
+        crate::output::create_destination_output::Builder::default()
+    }
+}
+
 /// See [`CreateDestinationOutput`](crate::output::CreateDestinationOutput).
 pub mod create_destination_output {
 
@@ -7742,12 +7841,6 @@ pub mod create_destination_output {
         }
     }
 }
-impl CreateDestinationOutput {
-    /// Creates a new builder-style object to manufacture [`CreateDestinationOutput`](crate::output::CreateDestinationOutput).
-    pub fn builder() -> crate::output::create_destination_output::Builder {
-        crate::output::create_destination_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -7760,6 +7853,13 @@ impl aws_http::request_id::RequestId for CancelMulticastGroupSessionOutput {
         self._request_id.as_deref()
     }
 }
+impl CancelMulticastGroupSessionOutput {
+    /// Creates a new builder-style object to manufacture [`CancelMulticastGroupSessionOutput`](crate::output::CancelMulticastGroupSessionOutput).
+    pub fn builder() -> crate::output::cancel_multicast_group_session_output::Builder {
+        crate::output::cancel_multicast_group_session_output::Builder::default()
+    }
+}
+
 /// See [`CancelMulticastGroupSessionOutput`](crate::output::CancelMulticastGroupSessionOutput).
 pub mod cancel_multicast_group_session_output {
 
@@ -7787,12 +7887,6 @@ pub mod cancel_multicast_group_session_output {
         }
     }
 }
-impl CancelMulticastGroupSessionOutput {
-    /// Creates a new builder-style object to manufacture [`CancelMulticastGroupSessionOutput`](crate::output::CancelMulticastGroupSessionOutput).
-    pub fn builder() -> crate::output::cancel_multicast_group_session_output::Builder {
-        crate::output::cancel_multicast_group_session_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -7805,6 +7899,13 @@ impl aws_http::request_id::RequestId for AssociateWirelessGatewayWithThingOutput
         self._request_id.as_deref()
     }
 }
+impl AssociateWirelessGatewayWithThingOutput {
+    /// Creates a new builder-style object to manufacture [`AssociateWirelessGatewayWithThingOutput`](crate::output::AssociateWirelessGatewayWithThingOutput).
+    pub fn builder() -> crate::output::associate_wireless_gateway_with_thing_output::Builder {
+        crate::output::associate_wireless_gateway_with_thing_output::Builder::default()
+    }
+}
+
 /// See [`AssociateWirelessGatewayWithThingOutput`](crate::output::AssociateWirelessGatewayWithThingOutput).
 pub mod associate_wireless_gateway_with_thing_output {
 
@@ -7832,12 +7933,6 @@ pub mod associate_wireless_gateway_with_thing_output {
         }
     }
 }
-impl AssociateWirelessGatewayWithThingOutput {
-    /// Creates a new builder-style object to manufacture [`AssociateWirelessGatewayWithThingOutput`](crate::output::AssociateWirelessGatewayWithThingOutput).
-    pub fn builder() -> crate::output::associate_wireless_gateway_with_thing_output::Builder {
-        crate::output::associate_wireless_gateway_with_thing_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -7859,6 +7954,13 @@ impl aws_http::request_id::RequestId for AssociateWirelessGatewayWithCertificate
         self._request_id.as_deref()
     }
 }
+impl AssociateWirelessGatewayWithCertificateOutput {
+    /// Creates a new builder-style object to manufacture [`AssociateWirelessGatewayWithCertificateOutput`](crate::output::AssociateWirelessGatewayWithCertificateOutput).
+    pub fn builder() -> crate::output::associate_wireless_gateway_with_certificate_output::Builder {
+        crate::output::associate_wireless_gateway_with_certificate_output::Builder::default()
+    }
+}
+
 /// See [`AssociateWirelessGatewayWithCertificateOutput`](crate::output::AssociateWirelessGatewayWithCertificateOutput).
 pub mod associate_wireless_gateway_with_certificate_output {
 
@@ -7901,12 +8003,6 @@ pub mod associate_wireless_gateway_with_certificate_output {
         }
     }
 }
-impl AssociateWirelessGatewayWithCertificateOutput {
-    /// Creates a new builder-style object to manufacture [`AssociateWirelessGatewayWithCertificateOutput`](crate::output::AssociateWirelessGatewayWithCertificateOutput).
-    pub fn builder() -> crate::output::associate_wireless_gateway_with_certificate_output::Builder {
-        crate::output::associate_wireless_gateway_with_certificate_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -7919,6 +8015,13 @@ impl aws_http::request_id::RequestId for AssociateWirelessDeviceWithThingOutput 
         self._request_id.as_deref()
     }
 }
+impl AssociateWirelessDeviceWithThingOutput {
+    /// Creates a new builder-style object to manufacture [`AssociateWirelessDeviceWithThingOutput`](crate::output::AssociateWirelessDeviceWithThingOutput).
+    pub fn builder() -> crate::output::associate_wireless_device_with_thing_output::Builder {
+        crate::output::associate_wireless_device_with_thing_output::Builder::default()
+    }
+}
+
 /// See [`AssociateWirelessDeviceWithThingOutput`](crate::output::AssociateWirelessDeviceWithThingOutput).
 pub mod associate_wireless_device_with_thing_output {
 
@@ -7946,12 +8049,6 @@ pub mod associate_wireless_device_with_thing_output {
         }
     }
 }
-impl AssociateWirelessDeviceWithThingOutput {
-    /// Creates a new builder-style object to manufacture [`AssociateWirelessDeviceWithThingOutput`](crate::output::AssociateWirelessDeviceWithThingOutput).
-    pub fn builder() -> crate::output::associate_wireless_device_with_thing_output::Builder {
-        crate::output::associate_wireless_device_with_thing_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -7964,6 +8061,14 @@ impl aws_http::request_id::RequestId for AssociateWirelessDeviceWithMulticastGro
         self._request_id.as_deref()
     }
 }
+impl AssociateWirelessDeviceWithMulticastGroupOutput {
+    /// Creates a new builder-style object to manufacture [`AssociateWirelessDeviceWithMulticastGroupOutput`](crate::output::AssociateWirelessDeviceWithMulticastGroupOutput).
+    pub fn builder() -> crate::output::associate_wireless_device_with_multicast_group_output::Builder
+    {
+        crate::output::associate_wireless_device_with_multicast_group_output::Builder::default()
+    }
+}
+
 /// See [`AssociateWirelessDeviceWithMulticastGroupOutput`](crate::output::AssociateWirelessDeviceWithMulticastGroupOutput).
 pub mod associate_wireless_device_with_multicast_group_output {
 
@@ -7991,13 +8096,6 @@ pub mod associate_wireless_device_with_multicast_group_output {
         }
     }
 }
-impl AssociateWirelessDeviceWithMulticastGroupOutput {
-    /// Creates a new builder-style object to manufacture [`AssociateWirelessDeviceWithMulticastGroupOutput`](crate::output::AssociateWirelessDeviceWithMulticastGroupOutput).
-    pub fn builder() -> crate::output::associate_wireless_device_with_multicast_group_output::Builder
-    {
-        crate::output::associate_wireless_device_with_multicast_group_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -8010,6 +8108,13 @@ impl aws_http::request_id::RequestId for AssociateWirelessDeviceWithFuotaTaskOut
         self._request_id.as_deref()
     }
 }
+impl AssociateWirelessDeviceWithFuotaTaskOutput {
+    /// Creates a new builder-style object to manufacture [`AssociateWirelessDeviceWithFuotaTaskOutput`](crate::output::AssociateWirelessDeviceWithFuotaTaskOutput).
+    pub fn builder() -> crate::output::associate_wireless_device_with_fuota_task_output::Builder {
+        crate::output::associate_wireless_device_with_fuota_task_output::Builder::default()
+    }
+}
+
 /// See [`AssociateWirelessDeviceWithFuotaTaskOutput`](crate::output::AssociateWirelessDeviceWithFuotaTaskOutput).
 pub mod associate_wireless_device_with_fuota_task_output {
 
@@ -8037,12 +8142,6 @@ pub mod associate_wireless_device_with_fuota_task_output {
         }
     }
 }
-impl AssociateWirelessDeviceWithFuotaTaskOutput {
-    /// Creates a new builder-style object to manufacture [`AssociateWirelessDeviceWithFuotaTaskOutput`](crate::output::AssociateWirelessDeviceWithFuotaTaskOutput).
-    pub fn builder() -> crate::output::associate_wireless_device_with_fuota_task_output::Builder {
-        crate::output::associate_wireless_device_with_fuota_task_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -8055,6 +8154,13 @@ impl aws_http::request_id::RequestId for AssociateMulticastGroupWithFuotaTaskOut
         self._request_id.as_deref()
     }
 }
+impl AssociateMulticastGroupWithFuotaTaskOutput {
+    /// Creates a new builder-style object to manufacture [`AssociateMulticastGroupWithFuotaTaskOutput`](crate::output::AssociateMulticastGroupWithFuotaTaskOutput).
+    pub fn builder() -> crate::output::associate_multicast_group_with_fuota_task_output::Builder {
+        crate::output::associate_multicast_group_with_fuota_task_output::Builder::default()
+    }
+}
+
 /// See [`AssociateMulticastGroupWithFuotaTaskOutput`](crate::output::AssociateMulticastGroupWithFuotaTaskOutput).
 pub mod associate_multicast_group_with_fuota_task_output {
 
@@ -8080,12 +8186,6 @@ pub mod associate_multicast_group_with_fuota_task_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl AssociateMulticastGroupWithFuotaTaskOutput {
-    /// Creates a new builder-style object to manufacture [`AssociateMulticastGroupWithFuotaTaskOutput`](crate::output::AssociateMulticastGroupWithFuotaTaskOutput).
-    pub fn builder() -> crate::output::associate_multicast_group_with_fuota_task_output::Builder {
-        crate::output::associate_multicast_group_with_fuota_task_output::Builder::default()
     }
 }
 
@@ -8116,6 +8216,13 @@ impl aws_http::request_id::RequestId for AssociateAwsAccountWithPartnerAccountOu
         self._request_id.as_deref()
     }
 }
+impl AssociateAwsAccountWithPartnerAccountOutput {
+    /// Creates a new builder-style object to manufacture [`AssociateAwsAccountWithPartnerAccountOutput`](crate::output::AssociateAwsAccountWithPartnerAccountOutput).
+    pub fn builder() -> crate::output::associate_aws_account_with_partner_account_output::Builder {
+        crate::output::associate_aws_account_with_partner_account_output::Builder::default()
+    }
+}
+
 /// See [`AssociateAwsAccountWithPartnerAccountOutput`](crate::output::AssociateAwsAccountWithPartnerAccountOutput).
 pub mod associate_aws_account_with_partner_account_output {
 
@@ -8168,11 +8275,5 @@ pub mod associate_aws_account_with_partner_account_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl AssociateAwsAccountWithPartnerAccountOutput {
-    /// Creates a new builder-style object to manufacture [`AssociateAwsAccountWithPartnerAccountOutput`](crate::output::AssociateAwsAccountWithPartnerAccountOutput).
-    pub fn builder() -> crate::output::associate_aws_account_with_partner_account_output::Builder {
-        crate::output::associate_aws_account_with_partner_account_output::Builder::default()
     }
 }

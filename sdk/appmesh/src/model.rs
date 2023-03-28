@@ -56,6 +56,13 @@ impl MeshRef {
         self.last_updated_at.as_ref()
     }
 }
+impl MeshRef {
+    /// Creates a new builder-style object to manufacture [`MeshRef`](crate::model::MeshRef).
+    pub fn builder() -> crate::model::mesh_ref::Builder {
+        crate::model::mesh_ref::Builder::default()
+    }
+}
+
 /// See [`MeshRef`](crate::model::MeshRef).
 pub mod mesh_ref {
 
@@ -165,12 +172,6 @@ pub mod mesh_ref {
         }
     }
 }
-impl MeshRef {
-    /// Creates a new builder-style object to manufacture [`MeshRef`](crate::model::MeshRef).
-    pub fn builder() -> crate::model::mesh_ref::Builder {
-        crate::model::mesh_ref::Builder::default()
-    }
-}
 
 /// <p>An object that represents a service mesh returned by a describe operation.</p>
 #[non_exhaustive]
@@ -207,6 +208,13 @@ impl MeshData {
         self.status.as_ref()
     }
 }
+impl MeshData {
+    /// Creates a new builder-style object to manufacture [`MeshData`](crate::model::MeshData).
+    pub fn builder() -> crate::model::mesh_data::Builder {
+        crate::model::mesh_data::Builder::default()
+    }
+}
+
 /// See [`MeshData`](crate::model::MeshData).
 pub mod mesh_data {
 
@@ -274,12 +282,6 @@ pub mod mesh_data {
         }
     }
 }
-impl MeshData {
-    /// Creates a new builder-style object to manufacture [`MeshData`](crate::model::MeshData).
-    pub fn builder() -> crate::model::mesh_data::Builder {
-        crate::model::mesh_data::Builder::default()
-    }
-}
 
 /// <p>An object that represents the status of a service mesh.</p>
 #[non_exhaustive]
@@ -295,6 +297,13 @@ impl MeshStatus {
         self.status.as_ref()
     }
 }
+impl MeshStatus {
+    /// Creates a new builder-style object to manufacture [`MeshStatus`](crate::model::MeshStatus).
+    pub fn builder() -> crate::model::mesh_status::Builder {
+        crate::model::mesh_status::Builder::default()
+    }
+}
+
 /// See [`MeshStatus`](crate::model::MeshStatus).
 pub mod mesh_status {
 
@@ -324,12 +333,6 @@ pub mod mesh_status {
                 status: self.status,
             }
         }
-    }
-}
-impl MeshStatus {
-    /// Creates a new builder-style object to manufacture [`MeshStatus`](crate::model::MeshStatus).
-    pub fn builder() -> crate::model::mesh_status::Builder {
-        crate::model::mesh_status::Builder::default()
     }
 }
 
@@ -484,6 +487,13 @@ impl ResourceMetadata {
         self.resource_owner.as_deref()
     }
 }
+impl ResourceMetadata {
+    /// Creates a new builder-style object to manufacture [`ResourceMetadata`](crate::model::ResourceMetadata).
+    pub fn builder() -> crate::model::resource_metadata::Builder {
+        crate::model::resource_metadata::Builder::default()
+    }
+}
+
 /// See [`ResourceMetadata`](crate::model::ResourceMetadata).
 pub mod resource_metadata {
 
@@ -593,12 +603,6 @@ pub mod resource_metadata {
         }
     }
 }
-impl ResourceMetadata {
-    /// Creates a new builder-style object to manufacture [`ResourceMetadata`](crate::model::ResourceMetadata).
-    pub fn builder() -> crate::model::resource_metadata::Builder {
-        crate::model::resource_metadata::Builder::default()
-    }
-}
 
 /// <p>An object that represents the specification of a service mesh.</p>
 #[non_exhaustive]
@@ -621,6 +625,13 @@ impl MeshSpec {
         self.service_discovery.as_ref()
     }
 }
+impl MeshSpec {
+    /// Creates a new builder-style object to manufacture [`MeshSpec`](crate::model::MeshSpec).
+    pub fn builder() -> crate::model::mesh_spec::Builder {
+        crate::model::mesh_spec::Builder::default()
+    }
+}
+
 /// See [`MeshSpec`](crate::model::MeshSpec).
 pub mod mesh_spec {
 
@@ -667,12 +678,6 @@ pub mod mesh_spec {
         }
     }
 }
-impl MeshSpec {
-    /// Creates a new builder-style object to manufacture [`MeshSpec`](crate::model::MeshSpec).
-    pub fn builder() -> crate::model::mesh_spec::Builder {
-        crate::model::mesh_spec::Builder::default()
-    }
-}
 
 /// <p>An object that represents the service discovery information for a service mesh.</p>
 #[non_exhaustive]
@@ -688,6 +693,13 @@ impl MeshServiceDiscovery {
         self.ip_preference.as_ref()
     }
 }
+impl MeshServiceDiscovery {
+    /// Creates a new builder-style object to manufacture [`MeshServiceDiscovery`](crate::model::MeshServiceDiscovery).
+    pub fn builder() -> crate::model::mesh_service_discovery::Builder {
+        crate::model::mesh_service_discovery::Builder::default()
+    }
+}
+
 /// See [`MeshServiceDiscovery`](crate::model::MeshServiceDiscovery).
 pub mod mesh_service_discovery {
 
@@ -717,12 +729,6 @@ pub mod mesh_service_discovery {
                 ip_preference: self.ip_preference,
             }
         }
-    }
-}
-impl MeshServiceDiscovery {
-    /// Creates a new builder-style object to manufacture [`MeshServiceDiscovery`](crate::model::MeshServiceDiscovery).
-    pub fn builder() -> crate::model::mesh_service_discovery::Builder {
-        crate::model::mesh_service_discovery::Builder::default()
     }
 }
 
@@ -840,6 +846,13 @@ impl EgressFilter {
         self.r#type.as_ref()
     }
 }
+impl EgressFilter {
+    /// Creates a new builder-style object to manufacture [`EgressFilter`](crate::model::EgressFilter).
+    pub fn builder() -> crate::model::egress_filter::Builder {
+        crate::model::egress_filter::Builder::default()
+    }
+}
+
 /// See [`EgressFilter`](crate::model::EgressFilter).
 pub mod egress_filter {
 
@@ -869,12 +882,6 @@ pub mod egress_filter {
                 r#type: self.r#type,
             }
         }
-    }
-}
-impl EgressFilter {
-    /// Creates a new builder-style object to manufacture [`EgressFilter`](crate::model::EgressFilter).
-    pub fn builder() -> crate::model::egress_filter::Builder {
-        crate::model::egress_filter::Builder::default()
     }
 }
 
@@ -989,6 +996,13 @@ impl TagRef {
         self.value.as_deref()
     }
 }
+impl TagRef {
+    /// Creates a new builder-style object to manufacture [`TagRef`](crate::model::TagRef).
+    pub fn builder() -> crate::model::tag_ref::Builder {
+        crate::model::tag_ref::Builder::default()
+    }
+}
+
 /// See [`TagRef`](crate::model::TagRef).
 pub mod tag_ref {
 
@@ -1027,12 +1041,6 @@ pub mod tag_ref {
                 value: self.value,
             }
         }
-    }
-}
-impl TagRef {
-    /// Creates a new builder-style object to manufacture [`TagRef`](crate::model::TagRef).
-    pub fn builder() -> crate::model::tag_ref::Builder {
-        crate::model::tag_ref::Builder::default()
     }
 }
 
@@ -1099,6 +1107,13 @@ impl VirtualServiceRef {
         self.last_updated_at.as_ref()
     }
 }
+impl VirtualServiceRef {
+    /// Creates a new builder-style object to manufacture [`VirtualServiceRef`](crate::model::VirtualServiceRef).
+    pub fn builder() -> crate::model::virtual_service_ref::Builder {
+        crate::model::virtual_service_ref::Builder::default()
+    }
+}
+
 /// See [`VirtualServiceRef`](crate::model::VirtualServiceRef).
 pub mod virtual_service_ref {
 
@@ -1223,12 +1238,6 @@ pub mod virtual_service_ref {
         }
     }
 }
-impl VirtualServiceRef {
-    /// Creates a new builder-style object to manufacture [`VirtualServiceRef`](crate::model::VirtualServiceRef).
-    pub fn builder() -> crate::model::virtual_service_ref::Builder {
-        crate::model::virtual_service_ref::Builder::default()
-    }
-}
 
 /// <p>An object that represents a virtual service returned by a describe operation.</p>
 #[non_exhaustive]
@@ -1272,6 +1281,13 @@ impl VirtualServiceData {
         self.status.as_ref()
     }
 }
+impl VirtualServiceData {
+    /// Creates a new builder-style object to manufacture [`VirtualServiceData`](crate::model::VirtualServiceData).
+    pub fn builder() -> crate::model::virtual_service_data::Builder {
+        crate::model::virtual_service_data::Builder::default()
+    }
+}
+
 /// See [`VirtualServiceData`](crate::model::VirtualServiceData).
 pub mod virtual_service_data {
 
@@ -1360,12 +1376,6 @@ pub mod virtual_service_data {
         }
     }
 }
-impl VirtualServiceData {
-    /// Creates a new builder-style object to manufacture [`VirtualServiceData`](crate::model::VirtualServiceData).
-    pub fn builder() -> crate::model::virtual_service_data::Builder {
-        crate::model::virtual_service_data::Builder::default()
-    }
-}
 
 /// <p>An object that represents the status of a virtual service.</p>
 #[non_exhaustive]
@@ -1381,6 +1391,13 @@ impl VirtualServiceStatus {
         self.status.as_ref()
     }
 }
+impl VirtualServiceStatus {
+    /// Creates a new builder-style object to manufacture [`VirtualServiceStatus`](crate::model::VirtualServiceStatus).
+    pub fn builder() -> crate::model::virtual_service_status::Builder {
+        crate::model::virtual_service_status::Builder::default()
+    }
+}
+
 /// See [`VirtualServiceStatus`](crate::model::VirtualServiceStatus).
 pub mod virtual_service_status {
 
@@ -1410,12 +1427,6 @@ pub mod virtual_service_status {
                 status: self.status,
             }
         }
-    }
-}
-impl VirtualServiceStatus {
-    /// Creates a new builder-style object to manufacture [`VirtualServiceStatus`](crate::model::VirtualServiceStatus).
-    pub fn builder() -> crate::model::virtual_service_status::Builder {
-        crate::model::virtual_service_status::Builder::default()
     }
 }
 
@@ -1530,6 +1541,13 @@ impl VirtualServiceSpec {
         self.provider.as_ref()
     }
 }
+impl VirtualServiceSpec {
+    /// Creates a new builder-style object to manufacture [`VirtualServiceSpec`](crate::model::VirtualServiceSpec).
+    pub fn builder() -> crate::model::virtual_service_spec::Builder {
+        crate::model::virtual_service_spec::Builder::default()
+    }
+}
+
 /// See [`VirtualServiceSpec`](crate::model::VirtualServiceSpec).
 pub mod virtual_service_spec {
 
@@ -1559,12 +1577,6 @@ pub mod virtual_service_spec {
                 provider: self.provider,
             }
         }
-    }
-}
-impl VirtualServiceSpec {
-    /// Creates a new builder-style object to manufacture [`VirtualServiceSpec`](crate::model::VirtualServiceSpec).
-    pub fn builder() -> crate::model::virtual_service_spec::Builder {
-        crate::model::virtual_service_spec::Builder::default()
     }
 }
 
@@ -1637,6 +1649,13 @@ impl VirtualRouterServiceProvider {
         self.virtual_router_name.as_deref()
     }
 }
+impl VirtualRouterServiceProvider {
+    /// Creates a new builder-style object to manufacture [`VirtualRouterServiceProvider`](crate::model::VirtualRouterServiceProvider).
+    pub fn builder() -> crate::model::virtual_router_service_provider::Builder {
+        crate::model::virtual_router_service_provider::Builder::default()
+    }
+}
+
 /// See [`VirtualRouterServiceProvider`](crate::model::VirtualRouterServiceProvider).
 pub mod virtual_router_service_provider {
 
@@ -1668,12 +1687,6 @@ pub mod virtual_router_service_provider {
         }
     }
 }
-impl VirtualRouterServiceProvider {
-    /// Creates a new builder-style object to manufacture [`VirtualRouterServiceProvider`](crate::model::VirtualRouterServiceProvider).
-    pub fn builder() -> crate::model::virtual_router_service_provider::Builder {
-        crate::model::virtual_router_service_provider::Builder::default()
-    }
-}
 
 /// <p>An object that represents a virtual node service provider.</p>
 #[non_exhaustive]
@@ -1689,6 +1702,13 @@ impl VirtualNodeServiceProvider {
         self.virtual_node_name.as_deref()
     }
 }
+impl VirtualNodeServiceProvider {
+    /// Creates a new builder-style object to manufacture [`VirtualNodeServiceProvider`](crate::model::VirtualNodeServiceProvider).
+    pub fn builder() -> crate::model::virtual_node_service_provider::Builder {
+        crate::model::virtual_node_service_provider::Builder::default()
+    }
+}
+
 /// See [`VirtualNodeServiceProvider`](crate::model::VirtualNodeServiceProvider).
 pub mod virtual_node_service_provider {
 
@@ -1718,12 +1738,6 @@ pub mod virtual_node_service_provider {
                 virtual_node_name: self.virtual_node_name,
             }
         }
-    }
-}
-impl VirtualNodeServiceProvider {
-    /// Creates a new builder-style object to manufacture [`VirtualNodeServiceProvider`](crate::model::VirtualNodeServiceProvider).
-    pub fn builder() -> crate::model::virtual_node_service_provider::Builder {
-        crate::model::virtual_node_service_provider::Builder::default()
     }
 }
 
@@ -1790,6 +1804,13 @@ impl VirtualRouterRef {
         self.last_updated_at.as_ref()
     }
 }
+impl VirtualRouterRef {
+    /// Creates a new builder-style object to manufacture [`VirtualRouterRef`](crate::model::VirtualRouterRef).
+    pub fn builder() -> crate::model::virtual_router_ref::Builder {
+        crate::model::virtual_router_ref::Builder::default()
+    }
+}
+
 /// See [`VirtualRouterRef`](crate::model::VirtualRouterRef).
 pub mod virtual_router_ref {
 
@@ -1914,12 +1935,6 @@ pub mod virtual_router_ref {
         }
     }
 }
-impl VirtualRouterRef {
-    /// Creates a new builder-style object to manufacture [`VirtualRouterRef`](crate::model::VirtualRouterRef).
-    pub fn builder() -> crate::model::virtual_router_ref::Builder {
-        crate::model::virtual_router_ref::Builder::default()
-    }
-}
 
 /// <p>An object that represents a virtual router returned by a describe operation.</p>
 #[non_exhaustive]
@@ -1963,6 +1978,13 @@ impl VirtualRouterData {
         self.status.as_ref()
     }
 }
+impl VirtualRouterData {
+    /// Creates a new builder-style object to manufacture [`VirtualRouterData`](crate::model::VirtualRouterData).
+    pub fn builder() -> crate::model::virtual_router_data::Builder {
+        crate::model::virtual_router_data::Builder::default()
+    }
+}
+
 /// See [`VirtualRouterData`](crate::model::VirtualRouterData).
 pub mod virtual_router_data {
 
@@ -2051,12 +2073,6 @@ pub mod virtual_router_data {
         }
     }
 }
-impl VirtualRouterData {
-    /// Creates a new builder-style object to manufacture [`VirtualRouterData`](crate::model::VirtualRouterData).
-    pub fn builder() -> crate::model::virtual_router_data::Builder {
-        crate::model::virtual_router_data::Builder::default()
-    }
-}
 
 /// <p>An object that represents the status of a virtual router. </p>
 #[non_exhaustive]
@@ -2072,6 +2088,13 @@ impl VirtualRouterStatus {
         self.status.as_ref()
     }
 }
+impl VirtualRouterStatus {
+    /// Creates a new builder-style object to manufacture [`VirtualRouterStatus`](crate::model::VirtualRouterStatus).
+    pub fn builder() -> crate::model::virtual_router_status::Builder {
+        crate::model::virtual_router_status::Builder::default()
+    }
+}
+
 /// See [`VirtualRouterStatus`](crate::model::VirtualRouterStatus).
 pub mod virtual_router_status {
 
@@ -2101,12 +2124,6 @@ pub mod virtual_router_status {
                 status: self.status,
             }
         }
-    }
-}
-impl VirtualRouterStatus {
-    /// Creates a new builder-style object to manufacture [`VirtualRouterStatus`](crate::model::VirtualRouterStatus).
-    pub fn builder() -> crate::model::virtual_router_status::Builder {
-        crate::model::virtual_router_status::Builder::default()
     }
 }
 
@@ -2221,6 +2238,13 @@ impl VirtualRouterSpec {
         self.listeners.as_deref()
     }
 }
+impl VirtualRouterSpec {
+    /// Creates a new builder-style object to manufacture [`VirtualRouterSpec`](crate::model::VirtualRouterSpec).
+    pub fn builder() -> crate::model::virtual_router_spec::Builder {
+        crate::model::virtual_router_spec::Builder::default()
+    }
+}
+
 /// See [`VirtualRouterSpec`](crate::model::VirtualRouterSpec).
 pub mod virtual_router_spec {
 
@@ -2259,12 +2283,6 @@ pub mod virtual_router_spec {
         }
     }
 }
-impl VirtualRouterSpec {
-    /// Creates a new builder-style object to manufacture [`VirtualRouterSpec`](crate::model::VirtualRouterSpec).
-    pub fn builder() -> crate::model::virtual_router_spec::Builder {
-        crate::model::virtual_router_spec::Builder::default()
-    }
-}
 
 /// <p>An object that represents a virtual router listener.</p>
 #[non_exhaustive]
@@ -2280,6 +2298,13 @@ impl VirtualRouterListener {
         self.port_mapping.as_ref()
     }
 }
+impl VirtualRouterListener {
+    /// Creates a new builder-style object to manufacture [`VirtualRouterListener`](crate::model::VirtualRouterListener).
+    pub fn builder() -> crate::model::virtual_router_listener::Builder {
+        crate::model::virtual_router_listener::Builder::default()
+    }
+}
+
 /// See [`VirtualRouterListener`](crate::model::VirtualRouterListener).
 pub mod virtual_router_listener {
 
@@ -2311,12 +2336,6 @@ pub mod virtual_router_listener {
         }
     }
 }
-impl VirtualRouterListener {
-    /// Creates a new builder-style object to manufacture [`VirtualRouterListener`](crate::model::VirtualRouterListener).
-    pub fn builder() -> crate::model::virtual_router_listener::Builder {
-        crate::model::virtual_router_listener::Builder::default()
-    }
-}
 
 /// <p>An object that represents a port mapping.</p>
 #[non_exhaustive]
@@ -2339,6 +2358,13 @@ impl PortMapping {
         self.protocol.as_ref()
     }
 }
+impl PortMapping {
+    /// Creates a new builder-style object to manufacture [`PortMapping`](crate::model::PortMapping).
+    pub fn builder() -> crate::model::port_mapping::Builder {
+        crate::model::port_mapping::Builder::default()
+    }
+}
+
 /// See [`PortMapping`](crate::model::PortMapping).
 pub mod port_mapping {
 
@@ -2380,12 +2406,6 @@ pub mod port_mapping {
                 protocol: self.protocol,
             }
         }
-    }
-}
-impl PortMapping {
-    /// Creates a new builder-style object to manufacture [`PortMapping`](crate::model::PortMapping).
-    pub fn builder() -> crate::model::port_mapping::Builder {
-        crate::model::port_mapping::Builder::default()
     }
 }
 
@@ -2559,6 +2579,13 @@ impl RouteRef {
         self.last_updated_at.as_ref()
     }
 }
+impl RouteRef {
+    /// Creates a new builder-style object to manufacture [`RouteRef`](crate::model::RouteRef).
+    pub fn builder() -> crate::model::route_ref::Builder {
+        crate::model::route_ref::Builder::default()
+    }
+}
+
 /// See [`RouteRef`](crate::model::RouteRef).
 pub mod route_ref {
 
@@ -2695,12 +2722,6 @@ pub mod route_ref {
         }
     }
 }
-impl RouteRef {
-    /// Creates a new builder-style object to manufacture [`RouteRef`](crate::model::RouteRef).
-    pub fn builder() -> crate::model::route_ref::Builder {
-        crate::model::route_ref::Builder::default()
-    }
-}
 
 /// <p>An object that represents a route returned by a describe operation.</p>
 #[non_exhaustive]
@@ -2751,6 +2772,13 @@ impl RouteData {
         self.status.as_ref()
     }
 }
+impl RouteData {
+    /// Creates a new builder-style object to manufacture [`RouteData`](crate::model::RouteData).
+    pub fn builder() -> crate::model::route_data::Builder {
+        crate::model::route_data::Builder::default()
+    }
+}
+
 /// See [`RouteData`](crate::model::RouteData).
 pub mod route_data {
 
@@ -2845,12 +2873,6 @@ pub mod route_data {
         }
     }
 }
-impl RouteData {
-    /// Creates a new builder-style object to manufacture [`RouteData`](crate::model::RouteData).
-    pub fn builder() -> crate::model::route_data::Builder {
-        crate::model::route_data::Builder::default()
-    }
-}
 
 /// <p>An object that represents the current status of a route.</p>
 #[non_exhaustive]
@@ -2866,6 +2888,13 @@ impl RouteStatus {
         self.status.as_ref()
     }
 }
+impl RouteStatus {
+    /// Creates a new builder-style object to manufacture [`RouteStatus`](crate::model::RouteStatus).
+    pub fn builder() -> crate::model::route_status::Builder {
+        crate::model::route_status::Builder::default()
+    }
+}
+
 /// See [`RouteStatus`](crate::model::RouteStatus).
 pub mod route_status {
 
@@ -2895,12 +2924,6 @@ pub mod route_status {
                 status: self.status,
             }
         }
-    }
-}
-impl RouteStatus {
-    /// Creates a new builder-style object to manufacture [`RouteStatus`](crate::model::RouteStatus).
-    pub fn builder() -> crate::model::route_status::Builder {
-        crate::model::route_status::Builder::default()
     }
 }
 
@@ -3041,6 +3064,13 @@ impl RouteSpec {
         self.grpc_route.as_ref()
     }
 }
+impl RouteSpec {
+    /// Creates a new builder-style object to manufacture [`RouteSpec`](crate::model::RouteSpec).
+    pub fn builder() -> crate::model::route_spec::Builder {
+        crate::model::route_spec::Builder::default()
+    }
+}
+
 /// See [`RouteSpec`](crate::model::RouteSpec).
 pub mod route_spec {
 
@@ -3126,12 +3156,6 @@ pub mod route_spec {
         }
     }
 }
-impl RouteSpec {
-    /// Creates a new builder-style object to manufacture [`RouteSpec`](crate::model::RouteSpec).
-    pub fn builder() -> crate::model::route_spec::Builder {
-        crate::model::route_spec::Builder::default()
-    }
-}
 
 /// <p>An object that represents a gRPC route type.</p>
 #[non_exhaustive]
@@ -3168,6 +3192,13 @@ impl GrpcRoute {
         self.timeout.as_ref()
     }
 }
+impl GrpcRoute {
+    /// Creates a new builder-style object to manufacture [`GrpcRoute`](crate::model::GrpcRoute).
+    pub fn builder() -> crate::model::grpc_route::Builder {
+        crate::model::grpc_route::Builder::default()
+    }
+}
+
 /// See [`GrpcRoute`](crate::model::GrpcRoute).
 pub mod grpc_route {
 
@@ -3244,12 +3275,6 @@ pub mod grpc_route {
         }
     }
 }
-impl GrpcRoute {
-    /// Creates a new builder-style object to manufacture [`GrpcRoute`](crate::model::GrpcRoute).
-    pub fn builder() -> crate::model::grpc_route::Builder {
-        crate::model::grpc_route::Builder::default()
-    }
-}
 
 /// <p>An object that represents types of timeouts. </p>
 #[non_exhaustive]
@@ -3272,6 +3297,13 @@ impl GrpcTimeout {
         self.idle.as_ref()
     }
 }
+impl GrpcTimeout {
+    /// Creates a new builder-style object to manufacture [`GrpcTimeout`](crate::model::GrpcTimeout).
+    pub fn builder() -> crate::model::grpc_timeout::Builder {
+        crate::model::grpc_timeout::Builder::default()
+    }
+}
+
 /// See [`GrpcTimeout`](crate::model::GrpcTimeout).
 pub mod grpc_timeout {
 
@@ -3315,12 +3347,6 @@ pub mod grpc_timeout {
         }
     }
 }
-impl GrpcTimeout {
-    /// Creates a new builder-style object to manufacture [`GrpcTimeout`](crate::model::GrpcTimeout).
-    pub fn builder() -> crate::model::grpc_timeout::Builder {
-        crate::model::grpc_timeout::Builder::default()
-    }
-}
 
 /// <p>An object that represents a duration of time.</p>
 #[non_exhaustive]
@@ -3343,6 +3369,13 @@ impl Duration {
         self.unit.as_ref()
     }
 }
+impl Duration {
+    /// Creates a new builder-style object to manufacture [`Duration`](crate::model::Duration).
+    pub fn builder() -> crate::model::duration::Builder {
+        crate::model::duration::Builder::default()
+    }
+}
+
 /// See [`Duration`](crate::model::Duration).
 pub mod duration {
 
@@ -3381,12 +3414,6 @@ pub mod duration {
                 unit: self.unit,
             }
         }
-    }
-}
-impl Duration {
-    /// Creates a new builder-style object to manufacture [`Duration`](crate::model::Duration).
-    pub fn builder() -> crate::model::duration::Builder {
-        crate::model::duration::Builder::default()
     }
 }
 
@@ -3534,6 +3561,13 @@ impl GrpcRetryPolicy {
         self.grpc_retry_events.as_deref()
     }
 }
+impl GrpcRetryPolicy {
+    /// Creates a new builder-style object to manufacture [`GrpcRetryPolicy`](crate::model::GrpcRetryPolicy).
+    pub fn builder() -> crate::model::grpc_retry_policy::Builder {
+        crate::model::grpc_retry_policy::Builder::default()
+    }
+}
+
 /// See [`GrpcRetryPolicy`](crate::model::GrpcRetryPolicy).
 pub mod grpc_retry_policy {
 
@@ -3652,12 +3686,6 @@ pub mod grpc_retry_policy {
                 grpc_retry_events: self.grpc_retry_events,
             }
         }
-    }
-}
-impl GrpcRetryPolicy {
-    /// Creates a new builder-style object to manufacture [`GrpcRetryPolicy`](crate::model::GrpcRetryPolicy).
-    pub fn builder() -> crate::model::grpc_retry_policy::Builder {
-        crate::model::grpc_retry_policy::Builder::default()
     }
 }
 
@@ -3896,6 +3924,13 @@ impl GrpcRouteMatch {
         self.port
     }
 }
+impl GrpcRouteMatch {
+    /// Creates a new builder-style object to manufacture [`GrpcRouteMatch`](crate::model::GrpcRouteMatch).
+    pub fn builder() -> crate::model::grpc_route_match::Builder {
+        crate::model::grpc_route_match::Builder::default()
+    }
+}
+
 /// See [`GrpcRouteMatch`](crate::model::GrpcRouteMatch).
 pub mod grpc_route_match {
 
@@ -3969,12 +4004,6 @@ pub mod grpc_route_match {
         }
     }
 }
-impl GrpcRouteMatch {
-    /// Creates a new builder-style object to manufacture [`GrpcRouteMatch`](crate::model::GrpcRouteMatch).
-    pub fn builder() -> crate::model::grpc_route_match::Builder {
-        crate::model::grpc_route_match::Builder::default()
-    }
-}
 
 /// <p>An object that represents the match metadata for the route.</p>
 #[non_exhaustive]
@@ -4004,6 +4033,13 @@ impl GrpcRouteMetadata {
         self.r#match.as_ref()
     }
 }
+impl GrpcRouteMetadata {
+    /// Creates a new builder-style object to manufacture [`GrpcRouteMetadata`](crate::model::GrpcRouteMetadata).
+    pub fn builder() -> crate::model::grpc_route_metadata::Builder {
+        crate::model::grpc_route_metadata::Builder::default()
+    }
+}
+
 /// See [`GrpcRouteMetadata`](crate::model::GrpcRouteMetadata).
 pub mod grpc_route_metadata {
 
@@ -4057,12 +4093,6 @@ pub mod grpc_route_metadata {
                 r#match: self.r#match,
             }
         }
-    }
-}
-impl GrpcRouteMetadata {
-    /// Creates a new builder-style object to manufacture [`GrpcRouteMetadata`](crate::model::GrpcRouteMetadata).
-    pub fn builder() -> crate::model::grpc_route_metadata::Builder {
-        crate::model::grpc_route_metadata::Builder::default()
     }
 }
 
@@ -4183,6 +4213,13 @@ impl MatchRange {
         self.end
     }
 }
+impl MatchRange {
+    /// Creates a new builder-style object to manufacture [`MatchRange`](crate::model::MatchRange).
+    pub fn builder() -> crate::model::match_range::Builder {
+        crate::model::match_range::Builder::default()
+    }
+}
+
 /// See [`MatchRange`](crate::model::MatchRange).
 pub mod match_range {
 
@@ -4223,12 +4260,6 @@ pub mod match_range {
         }
     }
 }
-impl MatchRange {
-    /// Creates a new builder-style object to manufacture [`MatchRange`](crate::model::MatchRange).
-    pub fn builder() -> crate::model::match_range::Builder {
-        crate::model::match_range::Builder::default()
-    }
-}
 
 /// <p>An object that represents the action to take if a match is determined.</p>
 #[non_exhaustive]
@@ -4244,6 +4275,13 @@ impl GrpcRouteAction {
         self.weighted_targets.as_deref()
     }
 }
+impl GrpcRouteAction {
+    /// Creates a new builder-style object to manufacture [`GrpcRouteAction`](crate::model::GrpcRouteAction).
+    pub fn builder() -> crate::model::grpc_route_action::Builder {
+        crate::model::grpc_route_action::Builder::default()
+    }
+}
+
 /// See [`GrpcRouteAction`](crate::model::GrpcRouteAction).
 pub mod grpc_route_action {
 
@@ -4282,12 +4320,6 @@ pub mod grpc_route_action {
         }
     }
 }
-impl GrpcRouteAction {
-    /// Creates a new builder-style object to manufacture [`GrpcRouteAction`](crate::model::GrpcRouteAction).
-    pub fn builder() -> crate::model::grpc_route_action::Builder {
-        crate::model::grpc_route_action::Builder::default()
-    }
-}
 
 /// <p>An object that represents a target and its relative weight. Traffic is distributed across targets according to their relative weight. For example, a weighted target with a relative weight of 50 receives five times as much traffic as one with a relative weight of 10. The total weight for all targets combined must be less than or equal to 100.</p>
 #[non_exhaustive]
@@ -4317,6 +4349,13 @@ impl WeightedTarget {
         self.port
     }
 }
+impl WeightedTarget {
+    /// Creates a new builder-style object to manufacture [`WeightedTarget`](crate::model::WeightedTarget).
+    pub fn builder() -> crate::model::weighted_target::Builder {
+        crate::model::weighted_target::Builder::default()
+    }
+}
+
 /// See [`WeightedTarget`](crate::model::WeightedTarget).
 pub mod weighted_target {
 
@@ -4369,12 +4408,6 @@ pub mod weighted_target {
         }
     }
 }
-impl WeightedTarget {
-    /// Creates a new builder-style object to manufacture [`WeightedTarget`](crate::model::WeightedTarget).
-    pub fn builder() -> crate::model::weighted_target::Builder {
-        crate::model::weighted_target::Builder::default()
-    }
-}
 
 /// <p>An object that represents an HTTP or HTTP/2 route type.</p>
 #[non_exhaustive]
@@ -4411,6 +4444,13 @@ impl HttpRoute {
         self.timeout.as_ref()
     }
 }
+impl HttpRoute {
+    /// Creates a new builder-style object to manufacture [`HttpRoute`](crate::model::HttpRoute).
+    pub fn builder() -> crate::model::http_route::Builder {
+        crate::model::http_route::Builder::default()
+    }
+}
+
 /// See [`HttpRoute`](crate::model::HttpRoute).
 pub mod http_route {
 
@@ -4487,12 +4527,6 @@ pub mod http_route {
         }
     }
 }
-impl HttpRoute {
-    /// Creates a new builder-style object to manufacture [`HttpRoute`](crate::model::HttpRoute).
-    pub fn builder() -> crate::model::http_route::Builder {
-        crate::model::http_route::Builder::default()
-    }
-}
 
 /// <p>An object that represents types of timeouts. </p>
 #[non_exhaustive]
@@ -4515,6 +4549,13 @@ impl HttpTimeout {
         self.idle.as_ref()
     }
 }
+impl HttpTimeout {
+    /// Creates a new builder-style object to manufacture [`HttpTimeout`](crate::model::HttpTimeout).
+    pub fn builder() -> crate::model::http_timeout::Builder {
+        crate::model::http_timeout::Builder::default()
+    }
+}
+
 /// See [`HttpTimeout`](crate::model::HttpTimeout).
 pub mod http_timeout {
 
@@ -4556,12 +4597,6 @@ pub mod http_timeout {
                 idle: self.idle,
             }
         }
-    }
-}
-impl HttpTimeout {
-    /// Creates a new builder-style object to manufacture [`HttpTimeout`](crate::model::HttpTimeout).
-    pub fn builder() -> crate::model::http_timeout::Builder {
-        crate::model::http_timeout::Builder::default()
     }
 }
 
@@ -4612,6 +4647,13 @@ impl HttpRetryPolicy {
         self.tcp_retry_events.as_deref()
     }
 }
+impl HttpRetryPolicy {
+    /// Creates a new builder-style object to manufacture [`HttpRetryPolicy`](crate::model::HttpRetryPolicy).
+    pub fn builder() -> crate::model::http_retry_policy::Builder {
+        crate::model::http_retry_policy::Builder::default()
+    }
+}
+
 /// See [`HttpRetryPolicy`](crate::model::HttpRetryPolicy).
 pub mod http_retry_policy {
 
@@ -4710,12 +4752,6 @@ pub mod http_retry_policy {
         }
     }
 }
-impl HttpRetryPolicy {
-    /// Creates a new builder-style object to manufacture [`HttpRetryPolicy`](crate::model::HttpRetryPolicy).
-    pub fn builder() -> crate::model::http_retry_policy::Builder {
-        crate::model::http_retry_policy::Builder::default()
-    }
-}
 
 /// <p>An object that represents the action to take if a match is determined.</p>
 #[non_exhaustive]
@@ -4731,6 +4767,13 @@ impl HttpRouteAction {
         self.weighted_targets.as_deref()
     }
 }
+impl HttpRouteAction {
+    /// Creates a new builder-style object to manufacture [`HttpRouteAction`](crate::model::HttpRouteAction).
+    pub fn builder() -> crate::model::http_route_action::Builder {
+        crate::model::http_route_action::Builder::default()
+    }
+}
+
 /// See [`HttpRouteAction`](crate::model::HttpRouteAction).
 pub mod http_route_action {
 
@@ -4767,12 +4810,6 @@ pub mod http_route_action {
                 weighted_targets: self.weighted_targets,
             }
         }
-    }
-}
-impl HttpRouteAction {
-    /// Creates a new builder-style object to manufacture [`HttpRouteAction`](crate::model::HttpRouteAction).
-    pub fn builder() -> crate::model::http_route_action::Builder {
-        crate::model::http_route_action::Builder::default()
     }
 }
 
@@ -4832,6 +4869,13 @@ impl HttpRouteMatch {
         self.port
     }
 }
+impl HttpRouteMatch {
+    /// Creates a new builder-style object to manufacture [`HttpRouteMatch`](crate::model::HttpRouteMatch).
+    pub fn builder() -> crate::model::http_route_match::Builder {
+        crate::model::http_route_match::Builder::default()
+    }
+}
+
 /// See [`HttpRouteMatch`](crate::model::HttpRouteMatch).
 pub mod http_route_match {
 
@@ -4951,12 +4995,6 @@ pub mod http_route_match {
         }
     }
 }
-impl HttpRouteMatch {
-    /// Creates a new builder-style object to manufacture [`HttpRouteMatch`](crate::model::HttpRouteMatch).
-    pub fn builder() -> crate::model::http_route_match::Builder {
-        crate::model::http_route_match::Builder::default()
-    }
-}
 
 /// <p>An object that represents the HTTP header in the request.</p>
 #[non_exhaustive]
@@ -4986,6 +5024,13 @@ impl HttpRouteHeader {
         self.r#match.as_ref()
     }
 }
+impl HttpRouteHeader {
+    /// Creates a new builder-style object to manufacture [`HttpRouteHeader`](crate::model::HttpRouteHeader).
+    pub fn builder() -> crate::model::http_route_header::Builder {
+        crate::model::http_route_header::Builder::default()
+    }
+}
+
 /// See [`HttpRouteHeader`](crate::model::HttpRouteHeader).
 pub mod http_route_header {
 
@@ -5039,12 +5084,6 @@ pub mod http_route_header {
                 r#match: self.r#match,
             }
         }
-    }
-}
-impl HttpRouteHeader {
-    /// Creates a new builder-style object to manufacture [`HttpRouteHeader`](crate::model::HttpRouteHeader).
-    pub fn builder() -> crate::model::http_route_header::Builder {
-        crate::model::http_route_header::Builder::default()
     }
 }
 
@@ -5382,6 +5421,13 @@ impl HttpQueryParameter {
         self.r#match.as_ref()
     }
 }
+impl HttpQueryParameter {
+    /// Creates a new builder-style object to manufacture [`HttpQueryParameter`](crate::model::HttpQueryParameter).
+    pub fn builder() -> crate::model::http_query_parameter::Builder {
+        crate::model::http_query_parameter::Builder::default()
+    }
+}
+
 /// See [`HttpQueryParameter`](crate::model::HttpQueryParameter).
 pub mod http_query_parameter {
 
@@ -5425,12 +5471,6 @@ pub mod http_query_parameter {
         }
     }
 }
-impl HttpQueryParameter {
-    /// Creates a new builder-style object to manufacture [`HttpQueryParameter`](crate::model::HttpQueryParameter).
-    pub fn builder() -> crate::model::http_query_parameter::Builder {
-        crate::model::http_query_parameter::Builder::default()
-    }
-}
 
 /// <p>An object representing the query parameter to match.</p>
 #[non_exhaustive]
@@ -5446,6 +5486,13 @@ impl QueryParameterMatch {
         self.exact.as_deref()
     }
 }
+impl QueryParameterMatch {
+    /// Creates a new builder-style object to manufacture [`QueryParameterMatch`](crate::model::QueryParameterMatch).
+    pub fn builder() -> crate::model::query_parameter_match::Builder {
+        crate::model::query_parameter_match::Builder::default()
+    }
+}
+
 /// See [`QueryParameterMatch`](crate::model::QueryParameterMatch).
 pub mod query_parameter_match {
 
@@ -5472,12 +5519,6 @@ pub mod query_parameter_match {
         }
     }
 }
-impl QueryParameterMatch {
-    /// Creates a new builder-style object to manufacture [`QueryParameterMatch`](crate::model::QueryParameterMatch).
-    pub fn builder() -> crate::model::query_parameter_match::Builder {
-        crate::model::query_parameter_match::Builder::default()
-    }
-}
 
 /// <p>An object representing the path to match in the request.</p>
 #[non_exhaustive]
@@ -5500,6 +5541,13 @@ impl HttpPathMatch {
         self.regex.as_deref()
     }
 }
+impl HttpPathMatch {
+    /// Creates a new builder-style object to manufacture [`HttpPathMatch`](crate::model::HttpPathMatch).
+    pub fn builder() -> crate::model::http_path_match::Builder {
+        crate::model::http_path_match::Builder::default()
+    }
+}
+
 /// See [`HttpPathMatch`](crate::model::HttpPathMatch).
 pub mod http_path_match {
 
@@ -5540,12 +5588,6 @@ pub mod http_path_match {
         }
     }
 }
-impl HttpPathMatch {
-    /// Creates a new builder-style object to manufacture [`HttpPathMatch`](crate::model::HttpPathMatch).
-    pub fn builder() -> crate::model::http_path_match::Builder {
-        crate::model::http_path_match::Builder::default()
-    }
-}
 
 /// <p>An object that represents a TCP route type.</p>
 #[non_exhaustive]
@@ -5575,6 +5617,13 @@ impl TcpRoute {
         self.r#match.as_ref()
     }
 }
+impl TcpRoute {
+    /// Creates a new builder-style object to manufacture [`TcpRoute`](crate::model::TcpRoute).
+    pub fn builder() -> crate::model::tcp_route::Builder {
+        crate::model::tcp_route::Builder::default()
+    }
+}
+
 /// See [`TcpRoute`](crate::model::TcpRoute).
 pub mod tcp_route {
 
@@ -5633,12 +5682,6 @@ pub mod tcp_route {
         }
     }
 }
-impl TcpRoute {
-    /// Creates a new builder-style object to manufacture [`TcpRoute`](crate::model::TcpRoute).
-    pub fn builder() -> crate::model::tcp_route::Builder {
-        crate::model::tcp_route::Builder::default()
-    }
-}
 
 /// <p>An object representing the TCP route to match.</p>
 #[non_exhaustive]
@@ -5654,6 +5697,13 @@ impl TcpRouteMatch {
         self.port
     }
 }
+impl TcpRouteMatch {
+    /// Creates a new builder-style object to manufacture [`TcpRouteMatch`](crate::model::TcpRouteMatch).
+    pub fn builder() -> crate::model::tcp_route_match::Builder {
+        crate::model::tcp_route_match::Builder::default()
+    }
+}
+
 /// See [`TcpRouteMatch`](crate::model::TcpRouteMatch).
 pub mod tcp_route_match {
 
@@ -5680,12 +5730,6 @@ pub mod tcp_route_match {
         }
     }
 }
-impl TcpRouteMatch {
-    /// Creates a new builder-style object to manufacture [`TcpRouteMatch`](crate::model::TcpRouteMatch).
-    pub fn builder() -> crate::model::tcp_route_match::Builder {
-        crate::model::tcp_route_match::Builder::default()
-    }
-}
 
 /// <p>An object that represents types of timeouts. </p>
 #[non_exhaustive]
@@ -5701,6 +5745,13 @@ impl TcpTimeout {
         self.idle.as_ref()
     }
 }
+impl TcpTimeout {
+    /// Creates a new builder-style object to manufacture [`TcpTimeout`](crate::model::TcpTimeout).
+    pub fn builder() -> crate::model::tcp_timeout::Builder {
+        crate::model::tcp_timeout::Builder::default()
+    }
+}
+
 /// See [`TcpTimeout`](crate::model::TcpTimeout).
 pub mod tcp_timeout {
 
@@ -5727,12 +5778,6 @@ pub mod tcp_timeout {
         }
     }
 }
-impl TcpTimeout {
-    /// Creates a new builder-style object to manufacture [`TcpTimeout`](crate::model::TcpTimeout).
-    pub fn builder() -> crate::model::tcp_timeout::Builder {
-        crate::model::tcp_timeout::Builder::default()
-    }
-}
 
 /// <p>An object that represents the action to take if a match is determined.</p>
 #[non_exhaustive]
@@ -5748,6 +5793,13 @@ impl TcpRouteAction {
         self.weighted_targets.as_deref()
     }
 }
+impl TcpRouteAction {
+    /// Creates a new builder-style object to manufacture [`TcpRouteAction`](crate::model::TcpRouteAction).
+    pub fn builder() -> crate::model::tcp_route_action::Builder {
+        crate::model::tcp_route_action::Builder::default()
+    }
+}
+
 /// See [`TcpRouteAction`](crate::model::TcpRouteAction).
 pub mod tcp_route_action {
 
@@ -5784,12 +5836,6 @@ pub mod tcp_route_action {
                 weighted_targets: self.weighted_targets,
             }
         }
-    }
-}
-impl TcpRouteAction {
-    /// Creates a new builder-style object to manufacture [`TcpRouteAction`](crate::model::TcpRouteAction).
-    pub fn builder() -> crate::model::tcp_route_action::Builder {
-        crate::model::tcp_route_action::Builder::default()
     }
 }
 
@@ -5856,6 +5902,13 @@ impl VirtualNodeRef {
         self.last_updated_at.as_ref()
     }
 }
+impl VirtualNodeRef {
+    /// Creates a new builder-style object to manufacture [`VirtualNodeRef`](crate::model::VirtualNodeRef).
+    pub fn builder() -> crate::model::virtual_node_ref::Builder {
+        crate::model::virtual_node_ref::Builder::default()
+    }
+}
+
 /// See [`VirtualNodeRef`](crate::model::VirtualNodeRef).
 pub mod virtual_node_ref {
 
@@ -5980,12 +6033,6 @@ pub mod virtual_node_ref {
         }
     }
 }
-impl VirtualNodeRef {
-    /// Creates a new builder-style object to manufacture [`VirtualNodeRef`](crate::model::VirtualNodeRef).
-    pub fn builder() -> crate::model::virtual_node_ref::Builder {
-        crate::model::virtual_node_ref::Builder::default()
-    }
-}
 
 /// <p>An object that represents a virtual node returned by a describe operation.</p>
 #[non_exhaustive]
@@ -6029,6 +6076,13 @@ impl VirtualNodeData {
         self.status.as_ref()
     }
 }
+impl VirtualNodeData {
+    /// Creates a new builder-style object to manufacture [`VirtualNodeData`](crate::model::VirtualNodeData).
+    pub fn builder() -> crate::model::virtual_node_data::Builder {
+        crate::model::virtual_node_data::Builder::default()
+    }
+}
+
 /// See [`VirtualNodeData`](crate::model::VirtualNodeData).
 pub mod virtual_node_data {
 
@@ -6117,12 +6171,6 @@ pub mod virtual_node_data {
         }
     }
 }
-impl VirtualNodeData {
-    /// Creates a new builder-style object to manufacture [`VirtualNodeData`](crate::model::VirtualNodeData).
-    pub fn builder() -> crate::model::virtual_node_data::Builder {
-        crate::model::virtual_node_data::Builder::default()
-    }
-}
 
 /// <p>An object that represents the current status of the virtual node.</p>
 #[non_exhaustive]
@@ -6138,6 +6186,13 @@ impl VirtualNodeStatus {
         self.status.as_ref()
     }
 }
+impl VirtualNodeStatus {
+    /// Creates a new builder-style object to manufacture [`VirtualNodeStatus`](crate::model::VirtualNodeStatus).
+    pub fn builder() -> crate::model::virtual_node_status::Builder {
+        crate::model::virtual_node_status::Builder::default()
+    }
+}
+
 /// See [`VirtualNodeStatus`](crate::model::VirtualNodeStatus).
 pub mod virtual_node_status {
 
@@ -6167,12 +6222,6 @@ pub mod virtual_node_status {
                 status: self.status,
             }
         }
-    }
-}
-impl VirtualNodeStatus {
-    /// Creates a new builder-style object to manufacture [`VirtualNodeStatus`](crate::model::VirtualNodeStatus).
-    pub fn builder() -> crate::model::virtual_node_status::Builder {
-        crate::model::virtual_node_status::Builder::default()
     }
 }
 
@@ -6315,6 +6364,13 @@ impl VirtualNodeSpec {
         self.logging.as_ref()
     }
 }
+impl VirtualNodeSpec {
+    /// Creates a new builder-style object to manufacture [`VirtualNodeSpec`](crate::model::VirtualNodeSpec).
+    pub fn builder() -> crate::model::virtual_node_spec::Builder {
+        crate::model::virtual_node_spec::Builder::default()
+    }
+}
+
 /// See [`VirtualNodeSpec`](crate::model::VirtualNodeSpec).
 pub mod virtual_node_spec {
 
@@ -6415,12 +6471,6 @@ pub mod virtual_node_spec {
         }
     }
 }
-impl VirtualNodeSpec {
-    /// Creates a new builder-style object to manufacture [`VirtualNodeSpec`](crate::model::VirtualNodeSpec).
-    pub fn builder() -> crate::model::virtual_node_spec::Builder {
-        crate::model::virtual_node_spec::Builder::default()
-    }
-}
 
 /// <p>An object that represents the logging information for a virtual node.</p>
 #[non_exhaustive]
@@ -6436,6 +6486,13 @@ impl Logging {
         self.access_log.as_ref()
     }
 }
+impl Logging {
+    /// Creates a new builder-style object to manufacture [`Logging`](crate::model::Logging).
+    pub fn builder() -> crate::model::logging::Builder {
+        crate::model::logging::Builder::default()
+    }
+}
+
 /// See [`Logging`](crate::model::Logging).
 pub mod logging {
 
@@ -6465,12 +6522,6 @@ pub mod logging {
                 access_log: self.access_log,
             }
         }
-    }
-}
-impl Logging {
-    /// Creates a new builder-style object to manufacture [`Logging`](crate::model::Logging).
-    pub fn builder() -> crate::model::logging::Builder {
-        crate::model::logging::Builder::default()
     }
 }
 
@@ -6536,6 +6587,13 @@ impl FileAccessLog {
         self.format.as_ref()
     }
 }
+impl FileAccessLog {
+    /// Creates a new builder-style object to manufacture [`FileAccessLog`](crate::model::FileAccessLog).
+    pub fn builder() -> crate::model::file_access_log::Builder {
+        crate::model::file_access_log::Builder::default()
+    }
+}
+
 /// See [`FileAccessLog`](crate::model::FileAccessLog).
 pub mod file_access_log {
 
@@ -6581,12 +6639,6 @@ pub mod file_access_log {
                 format: self.format,
             }
         }
-    }
-}
-impl FileAccessLog {
-    /// Creates a new builder-style object to manufacture [`FileAccessLog`](crate::model::FileAccessLog).
-    pub fn builder() -> crate::model::file_access_log::Builder {
-        crate::model::file_access_log::Builder::default()
     }
 }
 
@@ -6664,6 +6716,13 @@ impl JsonFormatRef {
         self.value.as_deref()
     }
 }
+impl JsonFormatRef {
+    /// Creates a new builder-style object to manufacture [`JsonFormatRef`](crate::model::JsonFormatRef).
+    pub fn builder() -> crate::model::json_format_ref::Builder {
+        crate::model::json_format_ref::Builder::default()
+    }
+}
+
 /// See [`JsonFormatRef`](crate::model::JsonFormatRef).
 pub mod json_format_ref {
 
@@ -6704,12 +6763,6 @@ pub mod json_format_ref {
         }
     }
 }
-impl JsonFormatRef {
-    /// Creates a new builder-style object to manufacture [`JsonFormatRef`](crate::model::JsonFormatRef).
-    pub fn builder() -> crate::model::json_format_ref::Builder {
-        crate::model::json_format_ref::Builder::default()
-    }
-}
 
 /// <p>An object that represents the default properties for a backend.</p>
 #[non_exhaustive]
@@ -6725,6 +6778,13 @@ impl BackendDefaults {
         self.client_policy.as_ref()
     }
 }
+impl BackendDefaults {
+    /// Creates a new builder-style object to manufacture [`BackendDefaults`](crate::model::BackendDefaults).
+    pub fn builder() -> crate::model::backend_defaults::Builder {
+        crate::model::backend_defaults::Builder::default()
+    }
+}
+
 /// See [`BackendDefaults`](crate::model::BackendDefaults).
 pub mod backend_defaults {
 
@@ -6756,12 +6816,6 @@ pub mod backend_defaults {
         }
     }
 }
-impl BackendDefaults {
-    /// Creates a new builder-style object to manufacture [`BackendDefaults`](crate::model::BackendDefaults).
-    pub fn builder() -> crate::model::backend_defaults::Builder {
-        crate::model::backend_defaults::Builder::default()
-    }
-}
 
 /// <p>An object that represents a client policy.</p>
 #[non_exhaustive]
@@ -6777,6 +6831,13 @@ impl ClientPolicy {
         self.tls.as_ref()
     }
 }
+impl ClientPolicy {
+    /// Creates a new builder-style object to manufacture [`ClientPolicy`](crate::model::ClientPolicy).
+    pub fn builder() -> crate::model::client_policy::Builder {
+        crate::model::client_policy::Builder::default()
+    }
+}
+
 /// See [`ClientPolicy`](crate::model::ClientPolicy).
 pub mod client_policy {
 
@@ -6804,12 +6865,6 @@ pub mod client_policy {
         pub fn build(self) -> crate::model::ClientPolicy {
             crate::model::ClientPolicy { tls: self.tls }
         }
-    }
-}
-impl ClientPolicy {
-    /// Creates a new builder-style object to manufacture [`ClientPolicy`](crate::model::ClientPolicy).
-    pub fn builder() -> crate::model::client_policy::Builder {
-        crate::model::client_policy::Builder::default()
     }
 }
 
@@ -6848,6 +6903,13 @@ impl ClientPolicyTls {
         self.validation.as_ref()
     }
 }
+impl ClientPolicyTls {
+    /// Creates a new builder-style object to manufacture [`ClientPolicyTls`](crate::model::ClientPolicyTls).
+    pub fn builder() -> crate::model::client_policy_tls::Builder {
+        crate::model::client_policy_tls::Builder::default()
+    }
+}
+
 /// See [`ClientPolicyTls`](crate::model::ClientPolicyTls).
 pub mod client_policy_tls {
 
@@ -6924,12 +6986,6 @@ pub mod client_policy_tls {
         }
     }
 }
-impl ClientPolicyTls {
-    /// Creates a new builder-style object to manufacture [`ClientPolicyTls`](crate::model::ClientPolicyTls).
-    pub fn builder() -> crate::model::client_policy_tls::Builder {
-        crate::model::client_policy_tls::Builder::default()
-    }
-}
 
 /// <p>An object that represents how the proxy will validate its peer during Transport Layer Security (TLS) negotiation.</p>
 #[non_exhaustive]
@@ -6954,6 +7010,13 @@ impl TlsValidationContext {
         self.subject_alternative_names.as_ref()
     }
 }
+impl TlsValidationContext {
+    /// Creates a new builder-style object to manufacture [`TlsValidationContext`](crate::model::TlsValidationContext).
+    pub fn builder() -> crate::model::tls_validation_context::Builder {
+        crate::model::tls_validation_context::Builder::default()
+    }
+}
+
 /// See [`TlsValidationContext`](crate::model::TlsValidationContext).
 pub mod tls_validation_context {
 
@@ -7004,12 +7067,6 @@ pub mod tls_validation_context {
         }
     }
 }
-impl TlsValidationContext {
-    /// Creates a new builder-style object to manufacture [`TlsValidationContext`](crate::model::TlsValidationContext).
-    pub fn builder() -> crate::model::tls_validation_context::Builder {
-        crate::model::tls_validation_context::Builder::default()
-    }
-}
 
 /// <p>An object that represents the subject alternative names secured by the certificate.</p>
 #[non_exhaustive]
@@ -7025,6 +7082,13 @@ impl SubjectAlternativeNames {
         self.r#match.as_ref()
     }
 }
+impl SubjectAlternativeNames {
+    /// Creates a new builder-style object to manufacture [`SubjectAlternativeNames`](crate::model::SubjectAlternativeNames).
+    pub fn builder() -> crate::model::subject_alternative_names::Builder {
+        crate::model::subject_alternative_names::Builder::default()
+    }
+}
+
 /// See [`SubjectAlternativeNames`](crate::model::SubjectAlternativeNames).
 pub mod subject_alternative_names {
 
@@ -7056,12 +7120,6 @@ pub mod subject_alternative_names {
         }
     }
 }
-impl SubjectAlternativeNames {
-    /// Creates a new builder-style object to manufacture [`SubjectAlternativeNames`](crate::model::SubjectAlternativeNames).
-    pub fn builder() -> crate::model::subject_alternative_names::Builder {
-        crate::model::subject_alternative_names::Builder::default()
-    }
-}
 
 /// <p>An object that represents the methods by which a subject alternative name on a peer Transport Layer Security (TLS) certificate can be matched.</p>
 #[non_exhaustive]
@@ -7077,6 +7135,13 @@ impl SubjectAlternativeNameMatchers {
         self.exact.as_deref()
     }
 }
+impl SubjectAlternativeNameMatchers {
+    /// Creates a new builder-style object to manufacture [`SubjectAlternativeNameMatchers`](crate::model::SubjectAlternativeNameMatchers).
+    pub fn builder() -> crate::model::subject_alternative_name_matchers::Builder {
+        crate::model::subject_alternative_name_matchers::Builder::default()
+    }
+}
+
 /// See [`SubjectAlternativeNameMatchers`](crate::model::SubjectAlternativeNameMatchers).
 pub mod subject_alternative_name_matchers {
 
@@ -7110,12 +7175,6 @@ pub mod subject_alternative_name_matchers {
         pub fn build(self) -> crate::model::SubjectAlternativeNameMatchers {
             crate::model::SubjectAlternativeNameMatchers { exact: self.exact }
         }
-    }
-}
-impl SubjectAlternativeNameMatchers {
-    /// Creates a new builder-style object to manufacture [`SubjectAlternativeNameMatchers`](crate::model::SubjectAlternativeNameMatchers).
-    pub fn builder() -> crate::model::subject_alternative_name_matchers::Builder {
-        crate::model::subject_alternative_name_matchers::Builder::default()
     }
 }
 
@@ -7205,6 +7264,13 @@ impl TlsValidationContextSdsTrust {
         self.secret_name.as_deref()
     }
 }
+impl TlsValidationContextSdsTrust {
+    /// Creates a new builder-style object to manufacture [`TlsValidationContextSdsTrust`](crate::model::TlsValidationContextSdsTrust).
+    pub fn builder() -> crate::model::tls_validation_context_sds_trust::Builder {
+        crate::model::tls_validation_context_sds_trust::Builder::default()
+    }
+}
+
 /// See [`TlsValidationContextSdsTrust`](crate::model::TlsValidationContextSdsTrust).
 pub mod tls_validation_context_sds_trust {
 
@@ -7233,12 +7299,6 @@ pub mod tls_validation_context_sds_trust {
         }
     }
 }
-impl TlsValidationContextSdsTrust {
-    /// Creates a new builder-style object to manufacture [`TlsValidationContextSdsTrust`](crate::model::TlsValidationContextSdsTrust).
-    pub fn builder() -> crate::model::tls_validation_context_sds_trust::Builder {
-        crate::model::tls_validation_context_sds_trust::Builder::default()
-    }
-}
 
 /// <p>An object that represents a Transport Layer Security (TLS) validation context trust for a local file.</p>
 #[non_exhaustive]
@@ -7254,6 +7314,13 @@ impl TlsValidationContextFileTrust {
         self.certificate_chain.as_deref()
     }
 }
+impl TlsValidationContextFileTrust {
+    /// Creates a new builder-style object to manufacture [`TlsValidationContextFileTrust`](crate::model::TlsValidationContextFileTrust).
+    pub fn builder() -> crate::model::tls_validation_context_file_trust::Builder {
+        crate::model::tls_validation_context_file_trust::Builder::default()
+    }
+}
+
 /// See [`TlsValidationContextFileTrust`](crate::model::TlsValidationContextFileTrust).
 pub mod tls_validation_context_file_trust {
 
@@ -7285,12 +7352,6 @@ pub mod tls_validation_context_file_trust {
         }
     }
 }
-impl TlsValidationContextFileTrust {
-    /// Creates a new builder-style object to manufacture [`TlsValidationContextFileTrust`](crate::model::TlsValidationContextFileTrust).
-    pub fn builder() -> crate::model::tls_validation_context_file_trust::Builder {
-        crate::model::tls_validation_context_file_trust::Builder::default()
-    }
-}
 
 /// <p>An object that represents a Transport Layer Security (TLS) validation context trust for an Certificate Manager certificate.</p>
 #[non_exhaustive]
@@ -7306,6 +7367,13 @@ impl TlsValidationContextAcmTrust {
         self.certificate_authority_arns.as_deref()
     }
 }
+impl TlsValidationContextAcmTrust {
+    /// Creates a new builder-style object to manufacture [`TlsValidationContextAcmTrust`](crate::model::TlsValidationContextAcmTrust).
+    pub fn builder() -> crate::model::tls_validation_context_acm_trust::Builder {
+        crate::model::tls_validation_context_acm_trust::Builder::default()
+    }
+}
+
 /// See [`TlsValidationContextAcmTrust`](crate::model::TlsValidationContextAcmTrust).
 pub mod tls_validation_context_acm_trust {
 
@@ -7342,12 +7410,6 @@ pub mod tls_validation_context_acm_trust {
                 certificate_authority_arns: self.certificate_authority_arns,
             }
         }
-    }
-}
-impl TlsValidationContextAcmTrust {
-    /// Creates a new builder-style object to manufacture [`TlsValidationContextAcmTrust`](crate::model::TlsValidationContextAcmTrust).
-    pub fn builder() -> crate::model::tls_validation_context_acm_trust::Builder {
-        crate::model::tls_validation_context_acm_trust::Builder::default()
     }
 }
 
@@ -7416,6 +7478,13 @@ impl ListenerTlsSdsCertificate {
         self.secret_name.as_deref()
     }
 }
+impl ListenerTlsSdsCertificate {
+    /// Creates a new builder-style object to manufacture [`ListenerTlsSdsCertificate`](crate::model::ListenerTlsSdsCertificate).
+    pub fn builder() -> crate::model::listener_tls_sds_certificate::Builder {
+        crate::model::listener_tls_sds_certificate::Builder::default()
+    }
+}
+
 /// See [`ListenerTlsSdsCertificate`](crate::model::ListenerTlsSdsCertificate).
 pub mod listener_tls_sds_certificate {
 
@@ -7444,12 +7513,6 @@ pub mod listener_tls_sds_certificate {
         }
     }
 }
-impl ListenerTlsSdsCertificate {
-    /// Creates a new builder-style object to manufacture [`ListenerTlsSdsCertificate`](crate::model::ListenerTlsSdsCertificate).
-    pub fn builder() -> crate::model::listener_tls_sds_certificate::Builder {
-        crate::model::listener_tls_sds_certificate::Builder::default()
-    }
-}
 
 /// <p>An object that represents a local file certificate. The certificate must meet specific requirements and you must have proxy authorization enabled. For more information, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/tls.html#virtual-node-tls-prerequisites">Transport Layer Security (TLS)</a>.</p>
 #[non_exhaustive]
@@ -7472,6 +7535,13 @@ impl ListenerTlsFileCertificate {
         self.private_key.as_deref()
     }
 }
+impl ListenerTlsFileCertificate {
+    /// Creates a new builder-style object to manufacture [`ListenerTlsFileCertificate`](crate::model::ListenerTlsFileCertificate).
+    pub fn builder() -> crate::model::listener_tls_file_certificate::Builder {
+        crate::model::listener_tls_file_certificate::Builder::default()
+    }
+}
+
 /// See [`ListenerTlsFileCertificate`](crate::model::ListenerTlsFileCertificate).
 pub mod listener_tls_file_certificate {
 
@@ -7513,12 +7583,6 @@ pub mod listener_tls_file_certificate {
                 private_key: self.private_key,
             }
         }
-    }
-}
-impl ListenerTlsFileCertificate {
-    /// Creates a new builder-style object to manufacture [`ListenerTlsFileCertificate`](crate::model::ListenerTlsFileCertificate).
-    pub fn builder() -> crate::model::listener_tls_file_certificate::Builder {
-        crate::model::listener_tls_file_certificate::Builder::default()
     }
 }
 
@@ -7582,6 +7646,13 @@ impl VirtualServiceBackend {
         self.client_policy.as_ref()
     }
 }
+impl VirtualServiceBackend {
+    /// Creates a new builder-style object to manufacture [`VirtualServiceBackend`](crate::model::VirtualServiceBackend).
+    pub fn builder() -> crate::model::virtual_service_backend::Builder {
+        crate::model::virtual_service_backend::Builder::default()
+    }
+}
+
 /// See [`VirtualServiceBackend`](crate::model::VirtualServiceBackend).
 pub mod virtual_service_backend {
 
@@ -7626,12 +7697,6 @@ pub mod virtual_service_backend {
                 client_policy: self.client_policy,
             }
         }
-    }
-}
-impl VirtualServiceBackend {
-    /// Creates a new builder-style object to manufacture [`VirtualServiceBackend`](crate::model::VirtualServiceBackend).
-    pub fn builder() -> crate::model::virtual_service_backend::Builder {
-        crate::model::virtual_service_backend::Builder::default()
     }
 }
 
@@ -7684,6 +7749,13 @@ impl Listener {
         self.connection_pool.as_ref()
     }
 }
+impl Listener {
+    /// Creates a new builder-style object to manufacture [`Listener`](crate::model::Listener).
+    pub fn builder() -> crate::model::listener::Builder {
+        crate::model::listener::Builder::default()
+    }
+}
+
 /// See [`Listener`](crate::model::Listener).
 pub mod listener {
 
@@ -7785,12 +7857,6 @@ pub mod listener {
                 connection_pool: self.connection_pool,
             }
         }
-    }
-}
-impl Listener {
-    /// Creates a new builder-style object to manufacture [`Listener`](crate::model::Listener).
-    pub fn builder() -> crate::model::listener::Builder {
-        crate::model::listener::Builder::default()
     }
 }
 
@@ -7900,6 +7966,13 @@ impl VirtualNodeGrpcConnectionPool {
         self.max_requests
     }
 }
+impl VirtualNodeGrpcConnectionPool {
+    /// Creates a new builder-style object to manufacture [`VirtualNodeGrpcConnectionPool`](crate::model::VirtualNodeGrpcConnectionPool).
+    pub fn builder() -> crate::model::virtual_node_grpc_connection_pool::Builder {
+        crate::model::virtual_node_grpc_connection_pool::Builder::default()
+    }
+}
+
 /// See [`VirtualNodeGrpcConnectionPool`](crate::model::VirtualNodeGrpcConnectionPool).
 pub mod virtual_node_grpc_connection_pool {
 
@@ -7928,12 +8001,6 @@ pub mod virtual_node_grpc_connection_pool {
         }
     }
 }
-impl VirtualNodeGrpcConnectionPool {
-    /// Creates a new builder-style object to manufacture [`VirtualNodeGrpcConnectionPool`](crate::model::VirtualNodeGrpcConnectionPool).
-    pub fn builder() -> crate::model::virtual_node_grpc_connection_pool::Builder {
-        crate::model::virtual_node_grpc_connection_pool::Builder::default()
-    }
-}
 
 /// <p>An object that represents a type of connection pool.</p>
 #[non_exhaustive]
@@ -7949,6 +8016,13 @@ impl VirtualNodeHttp2ConnectionPool {
         self.max_requests
     }
 }
+impl VirtualNodeHttp2ConnectionPool {
+    /// Creates a new builder-style object to manufacture [`VirtualNodeHttp2ConnectionPool`](crate::model::VirtualNodeHttp2ConnectionPool).
+    pub fn builder() -> crate::model::virtual_node_http2_connection_pool::Builder {
+        crate::model::virtual_node_http2_connection_pool::Builder::default()
+    }
+}
+
 /// See [`VirtualNodeHttp2ConnectionPool`](crate::model::VirtualNodeHttp2ConnectionPool).
 pub mod virtual_node_http2_connection_pool {
 
@@ -7977,12 +8051,6 @@ pub mod virtual_node_http2_connection_pool {
         }
     }
 }
-impl VirtualNodeHttp2ConnectionPool {
-    /// Creates a new builder-style object to manufacture [`VirtualNodeHttp2ConnectionPool`](crate::model::VirtualNodeHttp2ConnectionPool).
-    pub fn builder() -> crate::model::virtual_node_http2_connection_pool::Builder {
-        crate::model::virtual_node_http2_connection_pool::Builder::default()
-    }
-}
 
 /// <p>An object that represents a type of connection pool.</p>
 #[non_exhaustive]
@@ -8005,6 +8073,13 @@ impl VirtualNodeHttpConnectionPool {
         self.max_pending_requests
     }
 }
+impl VirtualNodeHttpConnectionPool {
+    /// Creates a new builder-style object to manufacture [`VirtualNodeHttpConnectionPool`](crate::model::VirtualNodeHttpConnectionPool).
+    pub fn builder() -> crate::model::virtual_node_http_connection_pool::Builder {
+        crate::model::virtual_node_http_connection_pool::Builder::default()
+    }
+}
+
 /// See [`VirtualNodeHttpConnectionPool`](crate::model::VirtualNodeHttpConnectionPool).
 pub mod virtual_node_http_connection_pool {
 
@@ -8045,12 +8120,6 @@ pub mod virtual_node_http_connection_pool {
         }
     }
 }
-impl VirtualNodeHttpConnectionPool {
-    /// Creates a new builder-style object to manufacture [`VirtualNodeHttpConnectionPool`](crate::model::VirtualNodeHttpConnectionPool).
-    pub fn builder() -> crate::model::virtual_node_http_connection_pool::Builder {
-        crate::model::virtual_node_http_connection_pool::Builder::default()
-    }
-}
 
 /// <p>An object that represents a type of connection pool.</p>
 #[non_exhaustive]
@@ -8066,6 +8135,13 @@ impl VirtualNodeTcpConnectionPool {
         self.max_connections
     }
 }
+impl VirtualNodeTcpConnectionPool {
+    /// Creates a new builder-style object to manufacture [`VirtualNodeTcpConnectionPool`](crate::model::VirtualNodeTcpConnectionPool).
+    pub fn builder() -> crate::model::virtual_node_tcp_connection_pool::Builder {
+        crate::model::virtual_node_tcp_connection_pool::Builder::default()
+    }
+}
+
 /// See [`VirtualNodeTcpConnectionPool`](crate::model::VirtualNodeTcpConnectionPool).
 pub mod virtual_node_tcp_connection_pool {
 
@@ -8092,12 +8168,6 @@ pub mod virtual_node_tcp_connection_pool {
                 max_connections: self.max_connections.unwrap_or_default(),
             }
         }
-    }
-}
-impl VirtualNodeTcpConnectionPool {
-    /// Creates a new builder-style object to manufacture [`VirtualNodeTcpConnectionPool`](crate::model::VirtualNodeTcpConnectionPool).
-    pub fn builder() -> crate::model::virtual_node_tcp_connection_pool::Builder {
-        crate::model::virtual_node_tcp_connection_pool::Builder::default()
     }
 }
 
@@ -8136,6 +8206,13 @@ impl OutlierDetection {
         self.max_ejection_percent
     }
 }
+impl OutlierDetection {
+    /// Creates a new builder-style object to manufacture [`OutlierDetection`](crate::model::OutlierDetection).
+    pub fn builder() -> crate::model::outlier_detection::Builder {
+        crate::model::outlier_detection::Builder::default()
+    }
+}
+
 /// See [`OutlierDetection`](crate::model::OutlierDetection).
 pub mod outlier_detection {
 
@@ -8201,12 +8278,6 @@ pub mod outlier_detection {
                 max_ejection_percent: self.max_ejection_percent,
             }
         }
-    }
-}
-impl OutlierDetection {
-    /// Creates a new builder-style object to manufacture [`OutlierDetection`](crate::model::OutlierDetection).
-    pub fn builder() -> crate::model::outlier_detection::Builder {
-        crate::model::outlier_detection::Builder::default()
     }
 }
 
@@ -8347,6 +8418,13 @@ impl HealthCheckPolicy {
         self.unhealthy_threshold
     }
 }
+impl HealthCheckPolicy {
+    /// Creates a new builder-style object to manufacture [`HealthCheckPolicy`](crate::model::HealthCheckPolicy).
+    pub fn builder() -> crate::model::health_check_policy::Builder {
+        crate::model::health_check_policy::Builder::default()
+    }
+}
+
 /// See [`HealthCheckPolicy`](crate::model::HealthCheckPolicy).
 pub mod health_check_policy {
 
@@ -8450,12 +8528,6 @@ pub mod health_check_policy {
         }
     }
 }
-impl HealthCheckPolicy {
-    /// Creates a new builder-style object to manufacture [`HealthCheckPolicy`](crate::model::HealthCheckPolicy).
-    pub fn builder() -> crate::model::health_check_policy::Builder {
-        crate::model::health_check_policy::Builder::default()
-    }
-}
 
 /// <p>An object that represents the Transport Layer Security (TLS) properties for a listener.</p>
 #[non_exhaustive]
@@ -8495,6 +8567,13 @@ impl ListenerTls {
         self.validation.as_ref()
     }
 }
+impl ListenerTls {
+    /// Creates a new builder-style object to manufacture [`ListenerTls`](crate::model::ListenerTls).
+    pub fn builder() -> crate::model::listener_tls::Builder {
+        crate::model::listener_tls::Builder::default()
+    }
+}
+
 /// See [`ListenerTls`](crate::model::ListenerTls).
 pub mod listener_tls {
 
@@ -8566,12 +8645,6 @@ pub mod listener_tls {
         }
     }
 }
-impl ListenerTls {
-    /// Creates a new builder-style object to manufacture [`ListenerTls`](crate::model::ListenerTls).
-    pub fn builder() -> crate::model::listener_tls::Builder {
-        crate::model::listener_tls::Builder::default()
-    }
-}
 
 /// <p>An object that represents a listener's Transport Layer Security (TLS) validation context.</p>
 #[non_exhaustive]
@@ -8596,6 +8669,13 @@ impl ListenerTlsValidationContext {
         self.subject_alternative_names.as_ref()
     }
 }
+impl ListenerTlsValidationContext {
+    /// Creates a new builder-style object to manufacture [`ListenerTlsValidationContext`](crate::model::ListenerTlsValidationContext).
+    pub fn builder() -> crate::model::listener_tls_validation_context::Builder {
+        crate::model::listener_tls_validation_context::Builder::default()
+    }
+}
+
 /// See [`ListenerTlsValidationContext`](crate::model::ListenerTlsValidationContext).
 pub mod listener_tls_validation_context {
 
@@ -8644,12 +8724,6 @@ pub mod listener_tls_validation_context {
                 subject_alternative_names: self.subject_alternative_names,
             }
         }
-    }
-}
-impl ListenerTlsValidationContext {
-    /// Creates a new builder-style object to manufacture [`ListenerTlsValidationContext`](crate::model::ListenerTlsValidationContext).
-    pub fn builder() -> crate::model::listener_tls_validation_context::Builder {
-        crate::model::listener_tls_validation_context::Builder::default()
     }
 }
 
@@ -8788,6 +8862,13 @@ impl ListenerTlsAcmCertificate {
         self.certificate_arn.as_deref()
     }
 }
+impl ListenerTlsAcmCertificate {
+    /// Creates a new builder-style object to manufacture [`ListenerTlsAcmCertificate`](crate::model::ListenerTlsAcmCertificate).
+    pub fn builder() -> crate::model::listener_tls_acm_certificate::Builder {
+        crate::model::listener_tls_acm_certificate::Builder::default()
+    }
+}
+
 /// See [`ListenerTlsAcmCertificate`](crate::model::ListenerTlsAcmCertificate).
 pub mod listener_tls_acm_certificate {
 
@@ -8817,12 +8898,6 @@ pub mod listener_tls_acm_certificate {
                 certificate_arn: self.certificate_arn,
             }
         }
-    }
-}
-impl ListenerTlsAcmCertificate {
-    /// Creates a new builder-style object to manufacture [`ListenerTlsAcmCertificate`](crate::model::ListenerTlsAcmCertificate).
-    pub fn builder() -> crate::model::listener_tls_acm_certificate::Builder {
-        crate::model::listener_tls_acm_certificate::Builder::default()
     }
 }
 
@@ -9011,6 +9086,13 @@ impl AwsCloudMapServiceDiscovery {
         self.ip_preference.as_ref()
     }
 }
+impl AwsCloudMapServiceDiscovery {
+    /// Creates a new builder-style object to manufacture [`AwsCloudMapServiceDiscovery`](crate::model::AwsCloudMapServiceDiscovery).
+    pub fn builder() -> crate::model::aws_cloud_map_service_discovery::Builder {
+        crate::model::aws_cloud_map_service_discovery::Builder::default()
+    }
+}
+
 /// See [`AwsCloudMapServiceDiscovery`](crate::model::AwsCloudMapServiceDiscovery).
 pub mod aws_cloud_map_service_discovery {
 
@@ -9091,12 +9173,6 @@ pub mod aws_cloud_map_service_discovery {
         }
     }
 }
-impl AwsCloudMapServiceDiscovery {
-    /// Creates a new builder-style object to manufacture [`AwsCloudMapServiceDiscovery`](crate::model::AwsCloudMapServiceDiscovery).
-    pub fn builder() -> crate::model::aws_cloud_map_service_discovery::Builder {
-        crate::model::aws_cloud_map_service_discovery::Builder::default()
-    }
-}
 
 /// <p>An object that represents the Cloud Map attribute information for your virtual node.</p> <note>
 /// <p>Cloud Map is not available in the eu-south-1 Region.</p>
@@ -9121,6 +9197,13 @@ impl AwsCloudMapInstanceAttribute {
         self.value.as_deref()
     }
 }
+impl AwsCloudMapInstanceAttribute {
+    /// Creates a new builder-style object to manufacture [`AwsCloudMapInstanceAttribute`](crate::model::AwsCloudMapInstanceAttribute).
+    pub fn builder() -> crate::model::aws_cloud_map_instance_attribute::Builder {
+        crate::model::aws_cloud_map_instance_attribute::Builder::default()
+    }
+}
+
 /// See [`AwsCloudMapInstanceAttribute`](crate::model::AwsCloudMapInstanceAttribute).
 pub mod aws_cloud_map_instance_attribute {
 
@@ -9161,12 +9244,6 @@ pub mod aws_cloud_map_instance_attribute {
         }
     }
 }
-impl AwsCloudMapInstanceAttribute {
-    /// Creates a new builder-style object to manufacture [`AwsCloudMapInstanceAttribute`](crate::model::AwsCloudMapInstanceAttribute).
-    pub fn builder() -> crate::model::aws_cloud_map_instance_attribute::Builder {
-        crate::model::aws_cloud_map_instance_attribute::Builder::default()
-    }
-}
 
 /// <p>An object that represents the DNS service discovery information for your virtual node.</p>
 #[non_exhaustive]
@@ -9196,6 +9273,13 @@ impl DnsServiceDiscovery {
         self.ip_preference.as_ref()
     }
 }
+impl DnsServiceDiscovery {
+    /// Creates a new builder-style object to manufacture [`DnsServiceDiscovery`](crate::model::DnsServiceDiscovery).
+    pub fn builder() -> crate::model::dns_service_discovery::Builder {
+        crate::model::dns_service_discovery::Builder::default()
+    }
+}
+
 /// See [`DnsServiceDiscovery`](crate::model::DnsServiceDiscovery).
 pub mod dns_service_discovery {
 
@@ -9252,12 +9336,6 @@ pub mod dns_service_discovery {
                 ip_preference: self.ip_preference,
             }
         }
-    }
-}
-impl DnsServiceDiscovery {
-    /// Creates a new builder-style object to manufacture [`DnsServiceDiscovery`](crate::model::DnsServiceDiscovery).
-    pub fn builder() -> crate::model::dns_service_discovery::Builder {
-        crate::model::dns_service_discovery::Builder::default()
     }
 }
 
@@ -9414,6 +9492,13 @@ impl VirtualGatewayRef {
         self.last_updated_at.as_ref()
     }
 }
+impl VirtualGatewayRef {
+    /// Creates a new builder-style object to manufacture [`VirtualGatewayRef`](crate::model::VirtualGatewayRef).
+    pub fn builder() -> crate::model::virtual_gateway_ref::Builder {
+        crate::model::virtual_gateway_ref::Builder::default()
+    }
+}
+
 /// See [`VirtualGatewayRef`](crate::model::VirtualGatewayRef).
 pub mod virtual_gateway_ref {
 
@@ -9538,12 +9623,6 @@ pub mod virtual_gateway_ref {
         }
     }
 }
-impl VirtualGatewayRef {
-    /// Creates a new builder-style object to manufacture [`VirtualGatewayRef`](crate::model::VirtualGatewayRef).
-    pub fn builder() -> crate::model::virtual_gateway_ref::Builder {
-        crate::model::virtual_gateway_ref::Builder::default()
-    }
-}
 
 /// <p>An object that represents a virtual gateway returned by a describe operation.</p>
 #[non_exhaustive]
@@ -9587,6 +9666,13 @@ impl VirtualGatewayData {
         self.status.as_ref()
     }
 }
+impl VirtualGatewayData {
+    /// Creates a new builder-style object to manufacture [`VirtualGatewayData`](crate::model::VirtualGatewayData).
+    pub fn builder() -> crate::model::virtual_gateway_data::Builder {
+        crate::model::virtual_gateway_data::Builder::default()
+    }
+}
+
 /// See [`VirtualGatewayData`](crate::model::VirtualGatewayData).
 pub mod virtual_gateway_data {
 
@@ -9675,12 +9761,6 @@ pub mod virtual_gateway_data {
         }
     }
 }
-impl VirtualGatewayData {
-    /// Creates a new builder-style object to manufacture [`VirtualGatewayData`](crate::model::VirtualGatewayData).
-    pub fn builder() -> crate::model::virtual_gateway_data::Builder {
-        crate::model::virtual_gateway_data::Builder::default()
-    }
-}
 
 /// <p>An object that represents the status of the mesh resource.</p>
 #[non_exhaustive]
@@ -9696,6 +9776,13 @@ impl VirtualGatewayStatus {
         self.status.as_ref()
     }
 }
+impl VirtualGatewayStatus {
+    /// Creates a new builder-style object to manufacture [`VirtualGatewayStatus`](crate::model::VirtualGatewayStatus).
+    pub fn builder() -> crate::model::virtual_gateway_status::Builder {
+        crate::model::virtual_gateway_status::Builder::default()
+    }
+}
+
 /// See [`VirtualGatewayStatus`](crate::model::VirtualGatewayStatus).
 pub mod virtual_gateway_status {
 
@@ -9725,12 +9812,6 @@ pub mod virtual_gateway_status {
                 status: self.status,
             }
         }
-    }
-}
-impl VirtualGatewayStatus {
-    /// Creates a new builder-style object to manufacture [`VirtualGatewayStatus`](crate::model::VirtualGatewayStatus).
-    pub fn builder() -> crate::model::virtual_gateway_status::Builder {
-        crate::model::virtual_gateway_status::Builder::default()
     }
 }
 
@@ -9861,6 +9942,13 @@ impl VirtualGatewaySpec {
         self.logging.as_ref()
     }
 }
+impl VirtualGatewaySpec {
+    /// Creates a new builder-style object to manufacture [`VirtualGatewaySpec`](crate::model::VirtualGatewaySpec).
+    pub fn builder() -> crate::model::virtual_gateway_spec::Builder {
+        crate::model::virtual_gateway_spec::Builder::default()
+    }
+}
+
 /// See [`VirtualGatewaySpec`](crate::model::VirtualGatewaySpec).
 pub mod virtual_gateway_spec {
 
@@ -9933,12 +10021,6 @@ pub mod virtual_gateway_spec {
         }
     }
 }
-impl VirtualGatewaySpec {
-    /// Creates a new builder-style object to manufacture [`VirtualGatewaySpec`](crate::model::VirtualGatewaySpec).
-    pub fn builder() -> crate::model::virtual_gateway_spec::Builder {
-        crate::model::virtual_gateway_spec::Builder::default()
-    }
-}
 
 /// <p>An object that represents logging information.</p>
 #[non_exhaustive]
@@ -9954,6 +10036,13 @@ impl VirtualGatewayLogging {
         self.access_log.as_ref()
     }
 }
+impl VirtualGatewayLogging {
+    /// Creates a new builder-style object to manufacture [`VirtualGatewayLogging`](crate::model::VirtualGatewayLogging).
+    pub fn builder() -> crate::model::virtual_gateway_logging::Builder {
+        crate::model::virtual_gateway_logging::Builder::default()
+    }
+}
+
 /// See [`VirtualGatewayLogging`](crate::model::VirtualGatewayLogging).
 pub mod virtual_gateway_logging {
 
@@ -9983,12 +10072,6 @@ pub mod virtual_gateway_logging {
                 access_log: self.access_log,
             }
         }
-    }
-}
-impl VirtualGatewayLogging {
-    /// Creates a new builder-style object to manufacture [`VirtualGatewayLogging`](crate::model::VirtualGatewayLogging).
-    pub fn builder() -> crate::model::virtual_gateway_logging::Builder {
-        crate::model::virtual_gateway_logging::Builder::default()
     }
 }
 
@@ -10052,6 +10135,13 @@ impl VirtualGatewayFileAccessLog {
         self.format.as_ref()
     }
 }
+impl VirtualGatewayFileAccessLog {
+    /// Creates a new builder-style object to manufacture [`VirtualGatewayFileAccessLog`](crate::model::VirtualGatewayFileAccessLog).
+    pub fn builder() -> crate::model::virtual_gateway_file_access_log::Builder {
+        crate::model::virtual_gateway_file_access_log::Builder::default()
+    }
+}
+
 /// See [`VirtualGatewayFileAccessLog`](crate::model::VirtualGatewayFileAccessLog).
 pub mod virtual_gateway_file_access_log {
 
@@ -10095,12 +10185,6 @@ pub mod virtual_gateway_file_access_log {
         }
     }
 }
-impl VirtualGatewayFileAccessLog {
-    /// Creates a new builder-style object to manufacture [`VirtualGatewayFileAccessLog`](crate::model::VirtualGatewayFileAccessLog).
-    pub fn builder() -> crate::model::virtual_gateway_file_access_log::Builder {
-        crate::model::virtual_gateway_file_access_log::Builder::default()
-    }
-}
 
 /// <p>An object that represents a listener for a virtual gateway.</p>
 #[non_exhaustive]
@@ -10141,6 +10225,13 @@ impl VirtualGatewayListener {
         self.connection_pool.as_ref()
     }
 }
+impl VirtualGatewayListener {
+    /// Creates a new builder-style object to manufacture [`VirtualGatewayListener`](crate::model::VirtualGatewayListener).
+    pub fn builder() -> crate::model::virtual_gateway_listener::Builder {
+        crate::model::virtual_gateway_listener::Builder::default()
+    }
+}
+
 /// See [`VirtualGatewayListener`](crate::model::VirtualGatewayListener).
 pub mod virtual_gateway_listener {
 
@@ -10221,12 +10312,6 @@ pub mod virtual_gateway_listener {
                 connection_pool: self.connection_pool,
             }
         }
-    }
-}
-impl VirtualGatewayListener {
-    /// Creates a new builder-style object to manufacture [`VirtualGatewayListener`](crate::model::VirtualGatewayListener).
-    pub fn builder() -> crate::model::virtual_gateway_listener::Builder {
-        crate::model::virtual_gateway_listener::Builder::default()
     }
 }
 
@@ -10318,6 +10403,13 @@ impl VirtualGatewayGrpcConnectionPool {
         self.max_requests
     }
 }
+impl VirtualGatewayGrpcConnectionPool {
+    /// Creates a new builder-style object to manufacture [`VirtualGatewayGrpcConnectionPool`](crate::model::VirtualGatewayGrpcConnectionPool).
+    pub fn builder() -> crate::model::virtual_gateway_grpc_connection_pool::Builder {
+        crate::model::virtual_gateway_grpc_connection_pool::Builder::default()
+    }
+}
+
 /// See [`VirtualGatewayGrpcConnectionPool`](crate::model::VirtualGatewayGrpcConnectionPool).
 pub mod virtual_gateway_grpc_connection_pool {
 
@@ -10346,12 +10438,6 @@ pub mod virtual_gateway_grpc_connection_pool {
         }
     }
 }
-impl VirtualGatewayGrpcConnectionPool {
-    /// Creates a new builder-style object to manufacture [`VirtualGatewayGrpcConnectionPool`](crate::model::VirtualGatewayGrpcConnectionPool).
-    pub fn builder() -> crate::model::virtual_gateway_grpc_connection_pool::Builder {
-        crate::model::virtual_gateway_grpc_connection_pool::Builder::default()
-    }
-}
 
 /// <p>An object that represents a type of connection pool.</p>
 #[non_exhaustive]
@@ -10367,6 +10453,13 @@ impl VirtualGatewayHttp2ConnectionPool {
         self.max_requests
     }
 }
+impl VirtualGatewayHttp2ConnectionPool {
+    /// Creates a new builder-style object to manufacture [`VirtualGatewayHttp2ConnectionPool`](crate::model::VirtualGatewayHttp2ConnectionPool).
+    pub fn builder() -> crate::model::virtual_gateway_http2_connection_pool::Builder {
+        crate::model::virtual_gateway_http2_connection_pool::Builder::default()
+    }
+}
+
 /// See [`VirtualGatewayHttp2ConnectionPool`](crate::model::VirtualGatewayHttp2ConnectionPool).
 pub mod virtual_gateway_http2_connection_pool {
 
@@ -10395,12 +10488,6 @@ pub mod virtual_gateway_http2_connection_pool {
         }
     }
 }
-impl VirtualGatewayHttp2ConnectionPool {
-    /// Creates a new builder-style object to manufacture [`VirtualGatewayHttp2ConnectionPool`](crate::model::VirtualGatewayHttp2ConnectionPool).
-    pub fn builder() -> crate::model::virtual_gateway_http2_connection_pool::Builder {
-        crate::model::virtual_gateway_http2_connection_pool::Builder::default()
-    }
-}
 
 /// <p>An object that represents a type of connection pool.</p>
 #[non_exhaustive]
@@ -10423,6 +10510,13 @@ impl VirtualGatewayHttpConnectionPool {
         self.max_pending_requests
     }
 }
+impl VirtualGatewayHttpConnectionPool {
+    /// Creates a new builder-style object to manufacture [`VirtualGatewayHttpConnectionPool`](crate::model::VirtualGatewayHttpConnectionPool).
+    pub fn builder() -> crate::model::virtual_gateway_http_connection_pool::Builder {
+        crate::model::virtual_gateway_http_connection_pool::Builder::default()
+    }
+}
+
 /// See [`VirtualGatewayHttpConnectionPool`](crate::model::VirtualGatewayHttpConnectionPool).
 pub mod virtual_gateway_http_connection_pool {
 
@@ -10461,12 +10555,6 @@ pub mod virtual_gateway_http_connection_pool {
                 max_pending_requests: self.max_pending_requests,
             }
         }
-    }
-}
-impl VirtualGatewayHttpConnectionPool {
-    /// Creates a new builder-style object to manufacture [`VirtualGatewayHttpConnectionPool`](crate::model::VirtualGatewayHttpConnectionPool).
-    pub fn builder() -> crate::model::virtual_gateway_http_connection_pool::Builder {
-        crate::model::virtual_gateway_http_connection_pool::Builder::default()
     }
 }
 
@@ -10512,6 +10600,13 @@ impl VirtualGatewayListenerTls {
         self.certificate.as_ref()
     }
 }
+impl VirtualGatewayListenerTls {
+    /// Creates a new builder-style object to manufacture [`VirtualGatewayListenerTls`](crate::model::VirtualGatewayListenerTls).
+    pub fn builder() -> crate::model::virtual_gateway_listener_tls::Builder {
+        crate::model::virtual_gateway_listener_tls::Builder::default()
+    }
+}
+
 /// See [`VirtualGatewayListenerTls`](crate::model::VirtualGatewayListenerTls).
 pub mod virtual_gateway_listener_tls {
 
@@ -10589,12 +10684,6 @@ pub mod virtual_gateway_listener_tls {
                 certificate: self.certificate,
             }
         }
-    }
-}
-impl VirtualGatewayListenerTls {
-    /// Creates a new builder-style object to manufacture [`VirtualGatewayListenerTls`](crate::model::VirtualGatewayListenerTls).
-    pub fn builder() -> crate::model::virtual_gateway_listener_tls::Builder {
-        crate::model::virtual_gateway_listener_tls::Builder::default()
     }
 }
 
@@ -10684,6 +10773,13 @@ impl VirtualGatewayListenerTlsSdsCertificate {
         self.secret_name.as_deref()
     }
 }
+impl VirtualGatewayListenerTlsSdsCertificate {
+    /// Creates a new builder-style object to manufacture [`VirtualGatewayListenerTlsSdsCertificate`](crate::model::VirtualGatewayListenerTlsSdsCertificate).
+    pub fn builder() -> crate::model::virtual_gateway_listener_tls_sds_certificate::Builder {
+        crate::model::virtual_gateway_listener_tls_sds_certificate::Builder::default()
+    }
+}
+
 /// See [`VirtualGatewayListenerTlsSdsCertificate`](crate::model::VirtualGatewayListenerTlsSdsCertificate).
 pub mod virtual_gateway_listener_tls_sds_certificate {
 
@@ -10712,12 +10808,6 @@ pub mod virtual_gateway_listener_tls_sds_certificate {
         }
     }
 }
-impl VirtualGatewayListenerTlsSdsCertificate {
-    /// Creates a new builder-style object to manufacture [`VirtualGatewayListenerTlsSdsCertificate`](crate::model::VirtualGatewayListenerTlsSdsCertificate).
-    pub fn builder() -> crate::model::virtual_gateway_listener_tls_sds_certificate::Builder {
-        crate::model::virtual_gateway_listener_tls_sds_certificate::Builder::default()
-    }
-}
 
 /// <p>An object that represents a local file certificate. The certificate must meet specific requirements and you must have proxy authorization enabled. For more information, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/tls.html#virtual-node-tls-prerequisites">Transport Layer Security (TLS)</a>.</p>
 #[non_exhaustive]
@@ -10740,6 +10830,13 @@ impl VirtualGatewayListenerTlsFileCertificate {
         self.private_key.as_deref()
     }
 }
+impl VirtualGatewayListenerTlsFileCertificate {
+    /// Creates a new builder-style object to manufacture [`VirtualGatewayListenerTlsFileCertificate`](crate::model::VirtualGatewayListenerTlsFileCertificate).
+    pub fn builder() -> crate::model::virtual_gateway_listener_tls_file_certificate::Builder {
+        crate::model::virtual_gateway_listener_tls_file_certificate::Builder::default()
+    }
+}
+
 /// See [`VirtualGatewayListenerTlsFileCertificate`](crate::model::VirtualGatewayListenerTlsFileCertificate).
 pub mod virtual_gateway_listener_tls_file_certificate {
 
@@ -10783,12 +10880,6 @@ pub mod virtual_gateway_listener_tls_file_certificate {
         }
     }
 }
-impl VirtualGatewayListenerTlsFileCertificate {
-    /// Creates a new builder-style object to manufacture [`VirtualGatewayListenerTlsFileCertificate`](crate::model::VirtualGatewayListenerTlsFileCertificate).
-    pub fn builder() -> crate::model::virtual_gateway_listener_tls_file_certificate::Builder {
-        crate::model::virtual_gateway_listener_tls_file_certificate::Builder::default()
-    }
-}
 
 /// <p>An object that represents an Certificate Manager certificate.</p>
 #[non_exhaustive]
@@ -10804,6 +10895,13 @@ impl VirtualGatewayListenerTlsAcmCertificate {
         self.certificate_arn.as_deref()
     }
 }
+impl VirtualGatewayListenerTlsAcmCertificate {
+    /// Creates a new builder-style object to manufacture [`VirtualGatewayListenerTlsAcmCertificate`](crate::model::VirtualGatewayListenerTlsAcmCertificate).
+    pub fn builder() -> crate::model::virtual_gateway_listener_tls_acm_certificate::Builder {
+        crate::model::virtual_gateway_listener_tls_acm_certificate::Builder::default()
+    }
+}
+
 /// See [`VirtualGatewayListenerTlsAcmCertificate`](crate::model::VirtualGatewayListenerTlsAcmCertificate).
 pub mod virtual_gateway_listener_tls_acm_certificate {
 
@@ -10835,12 +10933,6 @@ pub mod virtual_gateway_listener_tls_acm_certificate {
         }
     }
 }
-impl VirtualGatewayListenerTlsAcmCertificate {
-    /// Creates a new builder-style object to manufacture [`VirtualGatewayListenerTlsAcmCertificate`](crate::model::VirtualGatewayListenerTlsAcmCertificate).
-    pub fn builder() -> crate::model::virtual_gateway_listener_tls_acm_certificate::Builder {
-        crate::model::virtual_gateway_listener_tls_acm_certificate::Builder::default()
-    }
-}
 
 /// <p>An object that represents a virtual gateway's listener's Transport Layer Security (TLS) validation context.</p>
 #[non_exhaustive]
@@ -10867,6 +10959,13 @@ impl VirtualGatewayListenerTlsValidationContext {
         self.subject_alternative_names.as_ref()
     }
 }
+impl VirtualGatewayListenerTlsValidationContext {
+    /// Creates a new builder-style object to manufacture [`VirtualGatewayListenerTlsValidationContext`](crate::model::VirtualGatewayListenerTlsValidationContext).
+    pub fn builder() -> crate::model::virtual_gateway_listener_tls_validation_context::Builder {
+        crate::model::virtual_gateway_listener_tls_validation_context::Builder::default()
+    }
+}
+
 /// See [`VirtualGatewayListenerTlsValidationContext`](crate::model::VirtualGatewayListenerTlsValidationContext).
 pub mod virtual_gateway_listener_tls_validation_context {
 
@@ -10921,12 +11020,6 @@ pub mod virtual_gateway_listener_tls_validation_context {
                 subject_alternative_names: self.subject_alternative_names,
             }
         }
-    }
-}
-impl VirtualGatewayListenerTlsValidationContext {
-    /// Creates a new builder-style object to manufacture [`VirtualGatewayListenerTlsValidationContext`](crate::model::VirtualGatewayListenerTlsValidationContext).
-    pub fn builder() -> crate::model::virtual_gateway_listener_tls_validation_context::Builder {
-        crate::model::virtual_gateway_listener_tls_validation_context::Builder::default()
     }
 }
 
@@ -11000,6 +11093,13 @@ impl VirtualGatewayTlsValidationContextSdsTrust {
         self.secret_name.as_deref()
     }
 }
+impl VirtualGatewayTlsValidationContextSdsTrust {
+    /// Creates a new builder-style object to manufacture [`VirtualGatewayTlsValidationContextSdsTrust`](crate::model::VirtualGatewayTlsValidationContextSdsTrust).
+    pub fn builder() -> crate::model::virtual_gateway_tls_validation_context_sds_trust::Builder {
+        crate::model::virtual_gateway_tls_validation_context_sds_trust::Builder::default()
+    }
+}
+
 /// See [`VirtualGatewayTlsValidationContextSdsTrust`](crate::model::VirtualGatewayTlsValidationContextSdsTrust).
 pub mod virtual_gateway_tls_validation_context_sds_trust {
 
@@ -11028,12 +11128,6 @@ pub mod virtual_gateway_tls_validation_context_sds_trust {
         }
     }
 }
-impl VirtualGatewayTlsValidationContextSdsTrust {
-    /// Creates a new builder-style object to manufacture [`VirtualGatewayTlsValidationContextSdsTrust`](crate::model::VirtualGatewayTlsValidationContextSdsTrust).
-    pub fn builder() -> crate::model::virtual_gateway_tls_validation_context_sds_trust::Builder {
-        crate::model::virtual_gateway_tls_validation_context_sds_trust::Builder::default()
-    }
-}
 
 /// <p>An object that represents a Transport Layer Security (TLS) validation context trust for a local file.</p>
 #[non_exhaustive]
@@ -11049,6 +11143,13 @@ impl VirtualGatewayTlsValidationContextFileTrust {
         self.certificate_chain.as_deref()
     }
 }
+impl VirtualGatewayTlsValidationContextFileTrust {
+    /// Creates a new builder-style object to manufacture [`VirtualGatewayTlsValidationContextFileTrust`](crate::model::VirtualGatewayTlsValidationContextFileTrust).
+    pub fn builder() -> crate::model::virtual_gateway_tls_validation_context_file_trust::Builder {
+        crate::model::virtual_gateway_tls_validation_context_file_trust::Builder::default()
+    }
+}
+
 /// See [`VirtualGatewayTlsValidationContextFileTrust`](crate::model::VirtualGatewayTlsValidationContextFileTrust).
 pub mod virtual_gateway_tls_validation_context_file_trust {
 
@@ -11078,12 +11179,6 @@ pub mod virtual_gateway_tls_validation_context_file_trust {
                 certificate_chain: self.certificate_chain,
             }
         }
-    }
-}
-impl VirtualGatewayTlsValidationContextFileTrust {
-    /// Creates a new builder-style object to manufacture [`VirtualGatewayTlsValidationContextFileTrust`](crate::model::VirtualGatewayTlsValidationContextFileTrust).
-    pub fn builder() -> crate::model::virtual_gateway_tls_validation_context_file_trust::Builder {
-        crate::model::virtual_gateway_tls_validation_context_file_trust::Builder::default()
     }
 }
 
@@ -11205,6 +11300,13 @@ impl VirtualGatewayPortMapping {
         self.protocol.as_ref()
     }
 }
+impl VirtualGatewayPortMapping {
+    /// Creates a new builder-style object to manufacture [`VirtualGatewayPortMapping`](crate::model::VirtualGatewayPortMapping).
+    pub fn builder() -> crate::model::virtual_gateway_port_mapping::Builder {
+        crate::model::virtual_gateway_port_mapping::Builder::default()
+    }
+}
+
 /// See [`VirtualGatewayPortMapping`](crate::model::VirtualGatewayPortMapping).
 pub mod virtual_gateway_port_mapping {
 
@@ -11246,12 +11348,6 @@ pub mod virtual_gateway_port_mapping {
                 protocol: self.protocol,
             }
         }
-    }
-}
-impl VirtualGatewayPortMapping {
-    /// Creates a new builder-style object to manufacture [`VirtualGatewayPortMapping`](crate::model::VirtualGatewayPortMapping).
-    pub fn builder() -> crate::model::virtual_gateway_port_mapping::Builder {
-        crate::model::virtual_gateway_port_mapping::Builder::default()
     }
 }
 
@@ -11408,6 +11504,13 @@ impl VirtualGatewayHealthCheckPolicy {
         self.unhealthy_threshold
     }
 }
+impl VirtualGatewayHealthCheckPolicy {
+    /// Creates a new builder-style object to manufacture [`VirtualGatewayHealthCheckPolicy`](crate::model::VirtualGatewayHealthCheckPolicy).
+    pub fn builder() -> crate::model::virtual_gateway_health_check_policy::Builder {
+        crate::model::virtual_gateway_health_check_policy::Builder::default()
+    }
+}
+
 /// See [`VirtualGatewayHealthCheckPolicy`](crate::model::VirtualGatewayHealthCheckPolicy).
 pub mod virtual_gateway_health_check_policy {
 
@@ -11511,12 +11614,6 @@ pub mod virtual_gateway_health_check_policy {
         }
     }
 }
-impl VirtualGatewayHealthCheckPolicy {
-    /// Creates a new builder-style object to manufacture [`VirtualGatewayHealthCheckPolicy`](crate::model::VirtualGatewayHealthCheckPolicy).
-    pub fn builder() -> crate::model::virtual_gateway_health_check_policy::Builder {
-        crate::model::virtual_gateway_health_check_policy::Builder::default()
-    }
-}
 
 /// <p>An object that represents the default properties for a backend.</p>
 #[non_exhaustive]
@@ -11532,6 +11629,13 @@ impl VirtualGatewayBackendDefaults {
         self.client_policy.as_ref()
     }
 }
+impl VirtualGatewayBackendDefaults {
+    /// Creates a new builder-style object to manufacture [`VirtualGatewayBackendDefaults`](crate::model::VirtualGatewayBackendDefaults).
+    pub fn builder() -> crate::model::virtual_gateway_backend_defaults::Builder {
+        crate::model::virtual_gateway_backend_defaults::Builder::default()
+    }
+}
+
 /// See [`VirtualGatewayBackendDefaults`](crate::model::VirtualGatewayBackendDefaults).
 pub mod virtual_gateway_backend_defaults {
 
@@ -11563,12 +11667,6 @@ pub mod virtual_gateway_backend_defaults {
         }
     }
 }
-impl VirtualGatewayBackendDefaults {
-    /// Creates a new builder-style object to manufacture [`VirtualGatewayBackendDefaults`](crate::model::VirtualGatewayBackendDefaults).
-    pub fn builder() -> crate::model::virtual_gateway_backend_defaults::Builder {
-        crate::model::virtual_gateway_backend_defaults::Builder::default()
-    }
-}
 
 /// <p>An object that represents a client policy.</p>
 #[non_exhaustive]
@@ -11584,6 +11682,13 @@ impl VirtualGatewayClientPolicy {
         self.tls.as_ref()
     }
 }
+impl VirtualGatewayClientPolicy {
+    /// Creates a new builder-style object to manufacture [`VirtualGatewayClientPolicy`](crate::model::VirtualGatewayClientPolicy).
+    pub fn builder() -> crate::model::virtual_gateway_client_policy::Builder {
+        crate::model::virtual_gateway_client_policy::Builder::default()
+    }
+}
+
 /// See [`VirtualGatewayClientPolicy`](crate::model::VirtualGatewayClientPolicy).
 pub mod virtual_gateway_client_policy {
 
@@ -11611,12 +11716,6 @@ pub mod virtual_gateway_client_policy {
         pub fn build(self) -> crate::model::VirtualGatewayClientPolicy {
             crate::model::VirtualGatewayClientPolicy { tls: self.tls }
         }
-    }
-}
-impl VirtualGatewayClientPolicy {
-    /// Creates a new builder-style object to manufacture [`VirtualGatewayClientPolicy`](crate::model::VirtualGatewayClientPolicy).
-    pub fn builder() -> crate::model::virtual_gateway_client_policy::Builder {
-        crate::model::virtual_gateway_client_policy::Builder::default()
     }
 }
 
@@ -11659,6 +11758,13 @@ impl VirtualGatewayClientPolicyTls {
         self.validation.as_ref()
     }
 }
+impl VirtualGatewayClientPolicyTls {
+    /// Creates a new builder-style object to manufacture [`VirtualGatewayClientPolicyTls`](crate::model::VirtualGatewayClientPolicyTls).
+    pub fn builder() -> crate::model::virtual_gateway_client_policy_tls::Builder {
+        crate::model::virtual_gateway_client_policy_tls::Builder::default()
+    }
+}
+
 /// See [`VirtualGatewayClientPolicyTls`](crate::model::VirtualGatewayClientPolicyTls).
 pub mod virtual_gateway_client_policy_tls {
 
@@ -11743,12 +11849,6 @@ pub mod virtual_gateway_client_policy_tls {
         }
     }
 }
-impl VirtualGatewayClientPolicyTls {
-    /// Creates a new builder-style object to manufacture [`VirtualGatewayClientPolicyTls`](crate::model::VirtualGatewayClientPolicyTls).
-    pub fn builder() -> crate::model::virtual_gateway_client_policy_tls::Builder {
-        crate::model::virtual_gateway_client_policy_tls::Builder::default()
-    }
-}
 
 /// <p>An object that represents a Transport Layer Security (TLS) validation context.</p>
 #[non_exhaustive]
@@ -11775,6 +11875,13 @@ impl VirtualGatewayTlsValidationContext {
         self.subject_alternative_names.as_ref()
     }
 }
+impl VirtualGatewayTlsValidationContext {
+    /// Creates a new builder-style object to manufacture [`VirtualGatewayTlsValidationContext`](crate::model::VirtualGatewayTlsValidationContext).
+    pub fn builder() -> crate::model::virtual_gateway_tls_validation_context::Builder {
+        crate::model::virtual_gateway_tls_validation_context::Builder::default()
+    }
+}
+
 /// See [`VirtualGatewayTlsValidationContext`](crate::model::VirtualGatewayTlsValidationContext).
 pub mod virtual_gateway_tls_validation_context {
 
@@ -11827,12 +11934,6 @@ pub mod virtual_gateway_tls_validation_context {
                 subject_alternative_names: self.subject_alternative_names,
             }
         }
-    }
-}
-impl VirtualGatewayTlsValidationContext {
-    /// Creates a new builder-style object to manufacture [`VirtualGatewayTlsValidationContext`](crate::model::VirtualGatewayTlsValidationContext).
-    pub fn builder() -> crate::model::virtual_gateway_tls_validation_context::Builder {
-        crate::model::virtual_gateway_tls_validation_context::Builder::default()
     }
 }
 
@@ -11923,6 +12024,13 @@ impl VirtualGatewayTlsValidationContextAcmTrust {
         self.certificate_authority_arns.as_deref()
     }
 }
+impl VirtualGatewayTlsValidationContextAcmTrust {
+    /// Creates a new builder-style object to manufacture [`VirtualGatewayTlsValidationContextAcmTrust`](crate::model::VirtualGatewayTlsValidationContextAcmTrust).
+    pub fn builder() -> crate::model::virtual_gateway_tls_validation_context_acm_trust::Builder {
+        crate::model::virtual_gateway_tls_validation_context_acm_trust::Builder::default()
+    }
+}
+
 /// See [`VirtualGatewayTlsValidationContextAcmTrust`](crate::model::VirtualGatewayTlsValidationContextAcmTrust).
 pub mod virtual_gateway_tls_validation_context_acm_trust {
 
@@ -11959,12 +12067,6 @@ pub mod virtual_gateway_tls_validation_context_acm_trust {
                 certificate_authority_arns: self.certificate_authority_arns,
             }
         }
-    }
-}
-impl VirtualGatewayTlsValidationContextAcmTrust {
-    /// Creates a new builder-style object to manufacture [`VirtualGatewayTlsValidationContextAcmTrust`](crate::model::VirtualGatewayTlsValidationContextAcmTrust).
-    pub fn builder() -> crate::model::virtual_gateway_tls_validation_context_acm_trust::Builder {
-        crate::model::virtual_gateway_tls_validation_context_acm_trust::Builder::default()
     }
 }
 
@@ -12093,6 +12195,13 @@ impl GatewayRouteRef {
         self.last_updated_at.as_ref()
     }
 }
+impl GatewayRouteRef {
+    /// Creates a new builder-style object to manufacture [`GatewayRouteRef`](crate::model::GatewayRouteRef).
+    pub fn builder() -> crate::model::gateway_route_ref::Builder {
+        crate::model::gateway_route_ref::Builder::default()
+    }
+}
+
 /// See [`GatewayRouteRef`](crate::model::GatewayRouteRef).
 pub mod gateway_route_ref {
 
@@ -12232,12 +12341,6 @@ pub mod gateway_route_ref {
         }
     }
 }
-impl GatewayRouteRef {
-    /// Creates a new builder-style object to manufacture [`GatewayRouteRef`](crate::model::GatewayRouteRef).
-    pub fn builder() -> crate::model::gateway_route_ref::Builder {
-        crate::model::gateway_route_ref::Builder::default()
-    }
-}
 
 /// <p>An object that represents a gateway route returned by a describe operation.</p>
 #[non_exhaustive]
@@ -12288,6 +12391,13 @@ impl GatewayRouteData {
         self.status.as_ref()
     }
 }
+impl GatewayRouteData {
+    /// Creates a new builder-style object to manufacture [`GatewayRouteData`](crate::model::GatewayRouteData).
+    pub fn builder() -> crate::model::gateway_route_data::Builder {
+        crate::model::gateway_route_data::Builder::default()
+    }
+}
+
 /// See [`GatewayRouteData`](crate::model::GatewayRouteData).
 pub mod gateway_route_data {
 
@@ -12391,12 +12501,6 @@ pub mod gateway_route_data {
         }
     }
 }
-impl GatewayRouteData {
-    /// Creates a new builder-style object to manufacture [`GatewayRouteData`](crate::model::GatewayRouteData).
-    pub fn builder() -> crate::model::gateway_route_data::Builder {
-        crate::model::gateway_route_data::Builder::default()
-    }
-}
 
 /// <p>An object that represents the current status of a gateway route.</p>
 #[non_exhaustive]
@@ -12412,6 +12516,13 @@ impl GatewayRouteStatus {
         self.status.as_ref()
     }
 }
+impl GatewayRouteStatus {
+    /// Creates a new builder-style object to manufacture [`GatewayRouteStatus`](crate::model::GatewayRouteStatus).
+    pub fn builder() -> crate::model::gateway_route_status::Builder {
+        crate::model::gateway_route_status::Builder::default()
+    }
+}
+
 /// See [`GatewayRouteStatus`](crate::model::GatewayRouteStatus).
 pub mod gateway_route_status {
 
@@ -12441,12 +12552,6 @@ pub mod gateway_route_status {
                 status: self.status,
             }
         }
-    }
-}
-impl GatewayRouteStatus {
-    /// Creates a new builder-style object to manufacture [`GatewayRouteStatus`](crate::model::GatewayRouteStatus).
-    pub fn builder() -> crate::model::gateway_route_status::Builder {
-        crate::model::gateway_route_status::Builder::default()
     }
 }
 
@@ -12582,6 +12687,13 @@ impl GatewayRouteSpec {
         self.grpc_route.as_ref()
     }
 }
+impl GatewayRouteSpec {
+    /// Creates a new builder-style object to manufacture [`GatewayRouteSpec`](crate::model::GatewayRouteSpec).
+    pub fn builder() -> crate::model::gateway_route_spec::Builder {
+        crate::model::gateway_route_spec::Builder::default()
+    }
+}
+
 /// See [`GatewayRouteSpec`](crate::model::GatewayRouteSpec).
 pub mod gateway_route_spec {
 
@@ -12655,12 +12767,6 @@ pub mod gateway_route_spec {
         }
     }
 }
-impl GatewayRouteSpec {
-    /// Creates a new builder-style object to manufacture [`GatewayRouteSpec`](crate::model::GatewayRouteSpec).
-    pub fn builder() -> crate::model::gateway_route_spec::Builder {
-        crate::model::gateway_route_spec::Builder::default()
-    }
-}
 
 /// <p>An object that represents a gRPC gateway route.</p>
 #[non_exhaustive]
@@ -12683,6 +12789,13 @@ impl GrpcGatewayRoute {
         self.action.as_ref()
     }
 }
+impl GrpcGatewayRoute {
+    /// Creates a new builder-style object to manufacture [`GrpcGatewayRoute`](crate::model::GrpcGatewayRoute).
+    pub fn builder() -> crate::model::grpc_gateway_route::Builder {
+        crate::model::grpc_gateway_route::Builder::default()
+    }
+}
+
 /// See [`GrpcGatewayRoute`](crate::model::GrpcGatewayRoute).
 pub mod grpc_gateway_route {
 
@@ -12729,12 +12842,6 @@ pub mod grpc_gateway_route {
         }
     }
 }
-impl GrpcGatewayRoute {
-    /// Creates a new builder-style object to manufacture [`GrpcGatewayRoute`](crate::model::GrpcGatewayRoute).
-    pub fn builder() -> crate::model::grpc_gateway_route::Builder {
-        crate::model::grpc_gateway_route::Builder::default()
-    }
-}
 
 /// <p>An object that represents the action to take if a match is determined.</p>
 #[non_exhaustive]
@@ -12757,6 +12864,13 @@ impl GrpcGatewayRouteAction {
         self.rewrite.as_ref()
     }
 }
+impl GrpcGatewayRouteAction {
+    /// Creates a new builder-style object to manufacture [`GrpcGatewayRouteAction`](crate::model::GrpcGatewayRouteAction).
+    pub fn builder() -> crate::model::grpc_gateway_route_action::Builder {
+        crate::model::grpc_gateway_route_action::Builder::default()
+    }
+}
+
 /// See [`GrpcGatewayRouteAction`](crate::model::GrpcGatewayRouteAction).
 pub mod grpc_gateway_route_action {
 
@@ -12803,12 +12917,6 @@ pub mod grpc_gateway_route_action {
         }
     }
 }
-impl GrpcGatewayRouteAction {
-    /// Creates a new builder-style object to manufacture [`GrpcGatewayRouteAction`](crate::model::GrpcGatewayRouteAction).
-    pub fn builder() -> crate::model::grpc_gateway_route_action::Builder {
-        crate::model::grpc_gateway_route_action::Builder::default()
-    }
-}
 
 /// <p>An object that represents the gateway route to rewrite.</p>
 #[non_exhaustive]
@@ -12824,6 +12932,13 @@ impl GrpcGatewayRouteRewrite {
         self.hostname.as_ref()
     }
 }
+impl GrpcGatewayRouteRewrite {
+    /// Creates a new builder-style object to manufacture [`GrpcGatewayRouteRewrite`](crate::model::GrpcGatewayRouteRewrite).
+    pub fn builder() -> crate::model::grpc_gateway_route_rewrite::Builder {
+        crate::model::grpc_gateway_route_rewrite::Builder::default()
+    }
+}
+
 /// See [`GrpcGatewayRouteRewrite`](crate::model::GrpcGatewayRouteRewrite).
 pub mod grpc_gateway_route_rewrite {
 
@@ -12855,12 +12970,6 @@ pub mod grpc_gateway_route_rewrite {
         }
     }
 }
-impl GrpcGatewayRouteRewrite {
-    /// Creates a new builder-style object to manufacture [`GrpcGatewayRouteRewrite`](crate::model::GrpcGatewayRouteRewrite).
-    pub fn builder() -> crate::model::grpc_gateway_route_rewrite::Builder {
-        crate::model::grpc_gateway_route_rewrite::Builder::default()
-    }
-}
 
 /// <p>An object representing the gateway route host name to rewrite.</p>
 #[non_exhaustive]
@@ -12878,6 +12987,13 @@ impl GatewayRouteHostnameRewrite {
         self.default_target_hostname.as_ref()
     }
 }
+impl GatewayRouteHostnameRewrite {
+    /// Creates a new builder-style object to manufacture [`GatewayRouteHostnameRewrite`](crate::model::GatewayRouteHostnameRewrite).
+    pub fn builder() -> crate::model::gateway_route_hostname_rewrite::Builder {
+        crate::model::gateway_route_hostname_rewrite::Builder::default()
+    }
+}
+
 /// See [`GatewayRouteHostnameRewrite`](crate::model::GatewayRouteHostnameRewrite).
 pub mod gateway_route_hostname_rewrite {
 
@@ -12911,12 +13027,6 @@ pub mod gateway_route_hostname_rewrite {
                 default_target_hostname: self.default_target_hostname,
             }
         }
-    }
-}
-impl GatewayRouteHostnameRewrite {
-    /// Creates a new builder-style object to manufacture [`GatewayRouteHostnameRewrite`](crate::model::GatewayRouteHostnameRewrite).
-    pub fn builder() -> crate::model::gateway_route_hostname_rewrite::Builder {
-        crate::model::gateway_route_hostname_rewrite::Builder::default()
     }
 }
 
@@ -13035,6 +13145,13 @@ impl GatewayRouteTarget {
         self.port
     }
 }
+impl GatewayRouteTarget {
+    /// Creates a new builder-style object to manufacture [`GatewayRouteTarget`](crate::model::GatewayRouteTarget).
+    pub fn builder() -> crate::model::gateway_route_target::Builder {
+        crate::model::gateway_route_target::Builder::default()
+    }
+}
+
 /// See [`GatewayRouteTarget`](crate::model::GatewayRouteTarget).
 pub mod gateway_route_target {
 
@@ -13078,12 +13195,6 @@ pub mod gateway_route_target {
         }
     }
 }
-impl GatewayRouteTarget {
-    /// Creates a new builder-style object to manufacture [`GatewayRouteTarget`](crate::model::GatewayRouteTarget).
-    pub fn builder() -> crate::model::gateway_route_target::Builder {
-        crate::model::gateway_route_target::Builder::default()
-    }
-}
 
 /// <p>An object that represents the virtual service that traffic is routed to.</p>
 #[non_exhaustive]
@@ -13099,6 +13210,13 @@ impl GatewayRouteVirtualService {
         self.virtual_service_name.as_deref()
     }
 }
+impl GatewayRouteVirtualService {
+    /// Creates a new builder-style object to manufacture [`GatewayRouteVirtualService`](crate::model::GatewayRouteVirtualService).
+    pub fn builder() -> crate::model::gateway_route_virtual_service::Builder {
+        crate::model::gateway_route_virtual_service::Builder::default()
+    }
+}
+
 /// See [`GatewayRouteVirtualService`](crate::model::GatewayRouteVirtualService).
 pub mod gateway_route_virtual_service {
 
@@ -13128,12 +13246,6 @@ pub mod gateway_route_virtual_service {
                 virtual_service_name: self.virtual_service_name,
             }
         }
-    }
-}
-impl GatewayRouteVirtualService {
-    /// Creates a new builder-style object to manufacture [`GatewayRouteVirtualService`](crate::model::GatewayRouteVirtualService).
-    pub fn builder() -> crate::model::gateway_route_virtual_service::Builder {
-        crate::model::gateway_route_virtual_service::Builder::default()
     }
 }
 
@@ -13172,6 +13284,13 @@ impl GrpcGatewayRouteMatch {
         self.port
     }
 }
+impl GrpcGatewayRouteMatch {
+    /// Creates a new builder-style object to manufacture [`GrpcGatewayRouteMatch`](crate::model::GrpcGatewayRouteMatch).
+    pub fn builder() -> crate::model::grpc_gateway_route_match::Builder {
+        crate::model::grpc_gateway_route_match::Builder::default()
+    }
+}
+
 /// See [`GrpcGatewayRouteMatch`](crate::model::GrpcGatewayRouteMatch).
 pub mod grpc_gateway_route_match {
 
@@ -13249,12 +13368,6 @@ pub mod grpc_gateway_route_match {
         }
     }
 }
-impl GrpcGatewayRouteMatch {
-    /// Creates a new builder-style object to manufacture [`GrpcGatewayRouteMatch`](crate::model::GrpcGatewayRouteMatch).
-    pub fn builder() -> crate::model::grpc_gateway_route_match::Builder {
-        crate::model::grpc_gateway_route_match::Builder::default()
-    }
-}
 
 /// <p>An object representing the metadata of the gateway route.</p>
 #[non_exhaustive]
@@ -13284,6 +13397,13 @@ impl GrpcGatewayRouteMetadata {
         self.r#match.as_ref()
     }
 }
+impl GrpcGatewayRouteMetadata {
+    /// Creates a new builder-style object to manufacture [`GrpcGatewayRouteMetadata`](crate::model::GrpcGatewayRouteMetadata).
+    pub fn builder() -> crate::model::grpc_gateway_route_metadata::Builder {
+        crate::model::grpc_gateway_route_metadata::Builder::default()
+    }
+}
+
 /// See [`GrpcGatewayRouteMetadata`](crate::model::GrpcGatewayRouteMetadata).
 pub mod grpc_gateway_route_metadata {
 
@@ -13337,12 +13457,6 @@ pub mod grpc_gateway_route_metadata {
                 r#match: self.r#match,
             }
         }
-    }
-}
-impl GrpcGatewayRouteMetadata {
-    /// Creates a new builder-style object to manufacture [`GrpcGatewayRouteMetadata`](crate::model::GrpcGatewayRouteMetadata).
-    pub fn builder() -> crate::model::grpc_gateway_route_metadata::Builder {
-        crate::model::grpc_gateway_route_metadata::Builder::default()
     }
 }
 
@@ -13463,6 +13577,13 @@ impl GatewayRouteHostnameMatch {
         self.suffix.as_deref()
     }
 }
+impl GatewayRouteHostnameMatch {
+    /// Creates a new builder-style object to manufacture [`GatewayRouteHostnameMatch`](crate::model::GatewayRouteHostnameMatch).
+    pub fn builder() -> crate::model::gateway_route_hostname_match::Builder {
+        crate::model::gateway_route_hostname_match::Builder::default()
+    }
+}
+
 /// See [`GatewayRouteHostnameMatch`](crate::model::GatewayRouteHostnameMatch).
 pub mod gateway_route_hostname_match {
 
@@ -13503,12 +13624,6 @@ pub mod gateway_route_hostname_match {
         }
     }
 }
-impl GatewayRouteHostnameMatch {
-    /// Creates a new builder-style object to manufacture [`GatewayRouteHostnameMatch`](crate::model::GatewayRouteHostnameMatch).
-    pub fn builder() -> crate::model::gateway_route_hostname_match::Builder {
-        crate::model::gateway_route_hostname_match::Builder::default()
-    }
-}
 
 /// <p>An object that represents an HTTP gateway route.</p>
 #[non_exhaustive]
@@ -13531,6 +13646,13 @@ impl HttpGatewayRoute {
         self.action.as_ref()
     }
 }
+impl HttpGatewayRoute {
+    /// Creates a new builder-style object to manufacture [`HttpGatewayRoute`](crate::model::HttpGatewayRoute).
+    pub fn builder() -> crate::model::http_gateway_route::Builder {
+        crate::model::http_gateway_route::Builder::default()
+    }
+}
+
 /// See [`HttpGatewayRoute`](crate::model::HttpGatewayRoute).
 pub mod http_gateway_route {
 
@@ -13577,12 +13699,6 @@ pub mod http_gateway_route {
         }
     }
 }
-impl HttpGatewayRoute {
-    /// Creates a new builder-style object to manufacture [`HttpGatewayRoute`](crate::model::HttpGatewayRoute).
-    pub fn builder() -> crate::model::http_gateway_route::Builder {
-        crate::model::http_gateway_route::Builder::default()
-    }
-}
 
 /// <p>An object that represents the action to take if a match is determined.</p>
 #[non_exhaustive]
@@ -13605,6 +13721,13 @@ impl HttpGatewayRouteAction {
         self.rewrite.as_ref()
     }
 }
+impl HttpGatewayRouteAction {
+    /// Creates a new builder-style object to manufacture [`HttpGatewayRouteAction`](crate::model::HttpGatewayRouteAction).
+    pub fn builder() -> crate::model::http_gateway_route_action::Builder {
+        crate::model::http_gateway_route_action::Builder::default()
+    }
+}
+
 /// See [`HttpGatewayRouteAction`](crate::model::HttpGatewayRouteAction).
 pub mod http_gateway_route_action {
 
@@ -13651,12 +13774,6 @@ pub mod http_gateway_route_action {
         }
     }
 }
-impl HttpGatewayRouteAction {
-    /// Creates a new builder-style object to manufacture [`HttpGatewayRouteAction`](crate::model::HttpGatewayRouteAction).
-    pub fn builder() -> crate::model::http_gateway_route_action::Builder {
-        crate::model::http_gateway_route_action::Builder::default()
-    }
-}
 
 /// <p>An object representing the gateway route to rewrite.</p>
 #[non_exhaustive]
@@ -13686,6 +13803,13 @@ impl HttpGatewayRouteRewrite {
         self.hostname.as_ref()
     }
 }
+impl HttpGatewayRouteRewrite {
+    /// Creates a new builder-style object to manufacture [`HttpGatewayRouteRewrite`](crate::model::HttpGatewayRouteRewrite).
+    pub fn builder() -> crate::model::http_gateway_route_rewrite::Builder {
+        crate::model::http_gateway_route_rewrite::Builder::default()
+    }
+}
+
 /// See [`HttpGatewayRouteRewrite`](crate::model::HttpGatewayRouteRewrite).
 pub mod http_gateway_route_rewrite {
 
@@ -13747,12 +13871,6 @@ pub mod http_gateway_route_rewrite {
         }
     }
 }
-impl HttpGatewayRouteRewrite {
-    /// Creates a new builder-style object to manufacture [`HttpGatewayRouteRewrite`](crate::model::HttpGatewayRouteRewrite).
-    pub fn builder() -> crate::model::http_gateway_route_rewrite::Builder {
-        crate::model::http_gateway_route_rewrite::Builder::default()
-    }
-}
 
 /// <p>An object that represents the path to rewrite.</p>
 #[non_exhaustive]
@@ -13768,6 +13886,13 @@ impl HttpGatewayRoutePathRewrite {
         self.exact.as_deref()
     }
 }
+impl HttpGatewayRoutePathRewrite {
+    /// Creates a new builder-style object to manufacture [`HttpGatewayRoutePathRewrite`](crate::model::HttpGatewayRoutePathRewrite).
+    pub fn builder() -> crate::model::http_gateway_route_path_rewrite::Builder {
+        crate::model::http_gateway_route_path_rewrite::Builder::default()
+    }
+}
+
 /// See [`HttpGatewayRoutePathRewrite`](crate::model::HttpGatewayRoutePathRewrite).
 pub mod http_gateway_route_path_rewrite {
 
@@ -13794,12 +13919,6 @@ pub mod http_gateway_route_path_rewrite {
         }
     }
 }
-impl HttpGatewayRoutePathRewrite {
-    /// Creates a new builder-style object to manufacture [`HttpGatewayRoutePathRewrite`](crate::model::HttpGatewayRoutePathRewrite).
-    pub fn builder() -> crate::model::http_gateway_route_path_rewrite::Builder {
-        crate::model::http_gateway_route_path_rewrite::Builder::default()
-    }
-}
 
 /// <p>An object representing the beginning characters of the route to rewrite.</p>
 #[non_exhaustive]
@@ -13822,6 +13941,13 @@ impl HttpGatewayRoutePrefixRewrite {
         self.value.as_deref()
     }
 }
+impl HttpGatewayRoutePrefixRewrite {
+    /// Creates a new builder-style object to manufacture [`HttpGatewayRoutePrefixRewrite`](crate::model::HttpGatewayRoutePrefixRewrite).
+    pub fn builder() -> crate::model::http_gateway_route_prefix_rewrite::Builder {
+        crate::model::http_gateway_route_prefix_rewrite::Builder::default()
+    }
+}
+
 /// See [`HttpGatewayRoutePrefixRewrite`](crate::model::HttpGatewayRoutePrefixRewrite).
 pub mod http_gateway_route_prefix_rewrite {
 
@@ -13863,12 +13989,6 @@ pub mod http_gateway_route_prefix_rewrite {
                 value: self.value,
             }
         }
-    }
-}
-impl HttpGatewayRoutePrefixRewrite {
-    /// Creates a new builder-style object to manufacture [`HttpGatewayRoutePrefixRewrite`](crate::model::HttpGatewayRoutePrefixRewrite).
-    pub fn builder() -> crate::model::http_gateway_route_prefix_rewrite::Builder {
-        crate::model::http_gateway_route_prefix_rewrite::Builder::default()
     }
 }
 
@@ -13928,6 +14048,13 @@ impl HttpGatewayRouteMatch {
         self.port
     }
 }
+impl HttpGatewayRouteMatch {
+    /// Creates a new builder-style object to manufacture [`HttpGatewayRouteMatch`](crate::model::HttpGatewayRouteMatch).
+    pub fn builder() -> crate::model::http_gateway_route_match::Builder {
+        crate::model::http_gateway_route_match::Builder::default()
+    }
+}
+
 /// See [`HttpGatewayRouteMatch`](crate::model::HttpGatewayRouteMatch).
 pub mod http_gateway_route_match {
 
@@ -14051,12 +14178,6 @@ pub mod http_gateway_route_match {
         }
     }
 }
-impl HttpGatewayRouteMatch {
-    /// Creates a new builder-style object to manufacture [`HttpGatewayRouteMatch`](crate::model::HttpGatewayRouteMatch).
-    pub fn builder() -> crate::model::http_gateway_route_match::Builder {
-        crate::model::http_gateway_route_match::Builder::default()
-    }
-}
 
 /// <p>An object that represents the HTTP header in the gateway route.</p>
 #[non_exhaustive]
@@ -14086,6 +14207,13 @@ impl HttpGatewayRouteHeader {
         self.r#match.as_ref()
     }
 }
+impl HttpGatewayRouteHeader {
+    /// Creates a new builder-style object to manufacture [`HttpGatewayRouteHeader`](crate::model::HttpGatewayRouteHeader).
+    pub fn builder() -> crate::model::http_gateway_route_header::Builder {
+        crate::model::http_gateway_route_header::Builder::default()
+    }
+}
+
 /// See [`HttpGatewayRouteHeader`](crate::model::HttpGatewayRouteHeader).
 pub mod http_gateway_route_header {
 
@@ -14139,11 +14267,5 @@ pub mod http_gateway_route_header {
                 r#match: self.r#match,
             }
         }
-    }
-}
-impl HttpGatewayRouteHeader {
-    /// Creates a new builder-style object to manufacture [`HttpGatewayRouteHeader`](crate::model::HttpGatewayRouteHeader).
-    pub fn builder() -> crate::model::http_gateway_route_header::Builder {
-        crate::model::http_gateway_route_header::Builder::default()
     }
 }

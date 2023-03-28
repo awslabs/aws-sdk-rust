@@ -34,6 +34,13 @@ impl FairsharePolicy {
         self.share_distribution.as_deref()
     }
 }
+impl FairsharePolicy {
+    /// Creates a new builder-style object to manufacture [`FairsharePolicy`](crate::model::FairsharePolicy).
+    pub fn builder() -> crate::model::fairshare_policy::Builder {
+        crate::model::fairshare_policy::Builder::default()
+    }
+}
+
 /// See [`FairsharePolicy`](crate::model::FairsharePolicy).
 pub mod fairshare_policy {
 
@@ -102,12 +109,6 @@ pub mod fairshare_policy {
         }
     }
 }
-impl FairsharePolicy {
-    /// Creates a new builder-style object to manufacture [`FairsharePolicy`](crate::model::FairsharePolicy).
-    pub fn builder() -> crate::model::fairshare_policy::Builder {
-        crate::model::fairshare_policy::Builder::default()
-    }
-}
 
 /// <p>Specifies the weights for the fair share identifiers for the fair share policy. Fair share identifiers that aren't included have a default weight of <code>1.0</code>.</p>
 #[non_exhaustive]
@@ -136,6 +137,13 @@ impl ShareAttributes {
         self.weight_factor
     }
 }
+impl ShareAttributes {
+    /// Creates a new builder-style object to manufacture [`ShareAttributes`](crate::model::ShareAttributes).
+    pub fn builder() -> crate::model::share_attributes::Builder {
+        crate::model::share_attributes::Builder::default()
+    }
+}
+
 /// See [`ShareAttributes`](crate::model::ShareAttributes).
 pub mod share_attributes {
 
@@ -185,12 +193,6 @@ pub mod share_attributes {
         }
     }
 }
-impl ShareAttributes {
-    /// Creates a new builder-style object to manufacture [`ShareAttributes`](crate::model::ShareAttributes).
-    pub fn builder() -> crate::model::share_attributes::Builder {
-        crate::model::share_attributes::Builder::default()
-    }
-}
 
 /// <p>The order that compute environments are tried in for job placement within a queue. Compute environments are tried in ascending order. For example, if two compute environments are associated with a job queue, the compute environment with a lower order integer value is tried for job placement first. Compute environments must be in the <code>VALID</code> state before you can associate them with a job queue. All of the compute environments must be either EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments can't be mixed.</p> <note>
 /// <p>All compute environments that are associated with a job queue must share the same architecture. Batch doesn't support mixing compute environment architecture types in a single job queue.</p>
@@ -215,6 +217,13 @@ impl ComputeEnvironmentOrder {
         self.compute_environment.as_deref()
     }
 }
+impl ComputeEnvironmentOrder {
+    /// Creates a new builder-style object to manufacture [`ComputeEnvironmentOrder`](crate::model::ComputeEnvironmentOrder).
+    pub fn builder() -> crate::model::compute_environment_order::Builder {
+        crate::model::compute_environment_order::Builder::default()
+    }
+}
+
 /// See [`ComputeEnvironmentOrder`](crate::model::ComputeEnvironmentOrder).
 pub mod compute_environment_order {
 
@@ -256,12 +265,6 @@ pub mod compute_environment_order {
                 compute_environment: self.compute_environment,
             }
         }
-    }
-}
-impl ComputeEnvironmentOrder {
-    /// Creates a new builder-style object to manufacture [`ComputeEnvironmentOrder`](crate::model::ComputeEnvironmentOrder).
-    pub fn builder() -> crate::model::compute_environment_order::Builder {
-        crate::model::compute_environment_order::Builder::default()
     }
 }
 
@@ -376,6 +379,13 @@ impl UpdatePolicy {
         self.job_execution_timeout_minutes
     }
 }
+impl UpdatePolicy {
+    /// Creates a new builder-style object to manufacture [`UpdatePolicy`](crate::model::UpdatePolicy).
+    pub fn builder() -> crate::model::update_policy::Builder {
+        crate::model::update_policy::Builder::default()
+    }
+}
+
 /// See [`UpdatePolicy`](crate::model::UpdatePolicy).
 pub mod update_policy {
 
@@ -419,12 +429,6 @@ pub mod update_policy {
                     .unwrap_or_default(),
             }
         }
-    }
-}
-impl UpdatePolicy {
-    /// Creates a new builder-style object to manufacture [`UpdatePolicy`](crate::model::UpdatePolicy).
-    pub fn builder() -> crate::model::update_policy::Builder {
-        crate::model::update_policy::Builder::default()
     }
 }
 
@@ -704,6 +708,13 @@ impl ComputeResourceUpdate {
         self.image_id.as_deref()
     }
 }
+impl ComputeResourceUpdate {
+    /// Creates a new builder-style object to manufacture [`ComputeResourceUpdate`](crate::model::ComputeResourceUpdate).
+    pub fn builder() -> crate::model::compute_resource_update::Builder {
+        crate::model::compute_resource_update::Builder::default()
+    }
+}
+
 /// See [`ComputeResourceUpdate`](crate::model::ComputeResourceUpdate).
 pub mod compute_resource_update {
 
@@ -1139,12 +1150,6 @@ pub mod compute_resource_update {
         }
     }
 }
-impl ComputeResourceUpdate {
-    /// Creates a new builder-style object to manufacture [`ComputeResourceUpdate`](crate::model::ComputeResourceUpdate).
-    pub fn builder() -> crate::model::compute_resource_update::Builder {
-        crate::model::compute_resource_update::Builder::default()
-    }
-}
 
 /// When writing a match expression against `CrType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -1376,6 +1381,13 @@ impl Ec2Configuration {
         self.image_kubernetes_version.as_deref()
     }
 }
+impl Ec2Configuration {
+    /// Creates a new builder-style object to manufacture [`Ec2Configuration`](crate::model::Ec2Configuration).
+    pub fn builder() -> crate::model::ec2_configuration::Builder {
+        crate::model::ec2_configuration::Builder::default()
+    }
+}
+
 /// See [`Ec2Configuration`](crate::model::Ec2Configuration).
 pub mod ec2_configuration {
 
@@ -1534,12 +1546,6 @@ pub mod ec2_configuration {
         }
     }
 }
-impl Ec2Configuration {
-    /// Creates a new builder-style object to manufacture [`Ec2Configuration`](crate::model::Ec2Configuration).
-    pub fn builder() -> crate::model::ec2_configuration::Builder {
-        crate::model::ec2_configuration::Builder::default()
-    }
-}
 
 /// <p>An object that represents a launch template that's associated with a compute resource. You must specify either the launch template ID or launch template name in the request, but not both.</p>
 /// <p>If security groups are specified using both the <code>securityGroupIds</code> parameter of <code>CreateComputeEnvironment</code> and the launch template, the values in the <code>securityGroupIds</code> parameter of <code>CreateComputeEnvironment</code> will be used.</p> <note>
@@ -1580,6 +1586,13 @@ impl LaunchTemplateSpecification {
         self.version.as_deref()
     }
 }
+impl LaunchTemplateSpecification {
+    /// Creates a new builder-style object to manufacture [`LaunchTemplateSpecification`](crate::model::LaunchTemplateSpecification).
+    pub fn builder() -> crate::model::launch_template_specification::Builder {
+        crate::model::launch_template_specification::Builder::default()
+    }
+}
+
 /// See [`LaunchTemplateSpecification`](crate::model::LaunchTemplateSpecification).
 pub mod launch_template_specification {
 
@@ -1644,12 +1657,6 @@ pub mod launch_template_specification {
                 version: self.version,
             }
         }
-    }
-}
-impl LaunchTemplateSpecification {
-    /// Creates a new builder-style object to manufacture [`LaunchTemplateSpecification`](crate::model::LaunchTemplateSpecification).
-    pub fn builder() -> crate::model::launch_template_specification::Builder {
-        crate::model::launch_template_specification::Builder::default()
     }
 }
 
@@ -1849,6 +1856,13 @@ impl EksPropertiesOverride {
         self.pod_properties.as_ref()
     }
 }
+impl EksPropertiesOverride {
+    /// Creates a new builder-style object to manufacture [`EksPropertiesOverride`](crate::model::EksPropertiesOverride).
+    pub fn builder() -> crate::model::eks_properties_override::Builder {
+        crate::model::eks_properties_override::Builder::default()
+    }
+}
+
 /// See [`EksPropertiesOverride`](crate::model::EksPropertiesOverride).
 pub mod eks_properties_override {
 
@@ -1880,12 +1894,6 @@ pub mod eks_properties_override {
         }
     }
 }
-impl EksPropertiesOverride {
-    /// Creates a new builder-style object to manufacture [`EksPropertiesOverride`](crate::model::EksPropertiesOverride).
-    pub fn builder() -> crate::model::eks_properties_override::Builder {
-        crate::model::eks_properties_override::Builder::default()
-    }
-}
 
 /// <p>An object that contains overrides for the Kubernetes pod properties of a job.</p>
 #[non_exhaustive]
@@ -1901,6 +1909,13 @@ impl EksPodPropertiesOverride {
         self.containers.as_deref()
     }
 }
+impl EksPodPropertiesOverride {
+    /// Creates a new builder-style object to manufacture [`EksPodPropertiesOverride`](crate::model::EksPodPropertiesOverride).
+    pub fn builder() -> crate::model::eks_pod_properties_override::Builder {
+        crate::model::eks_pod_properties_override::Builder::default()
+    }
+}
+
 /// See [`EksPodPropertiesOverride`](crate::model::EksPodPropertiesOverride).
 pub mod eks_pod_properties_override {
 
@@ -1937,12 +1952,6 @@ pub mod eks_pod_properties_override {
                 containers: self.containers,
             }
         }
-    }
-}
-impl EksPodPropertiesOverride {
-    /// Creates a new builder-style object to manufacture [`EksPodPropertiesOverride`](crate::model::EksPodPropertiesOverride).
-    pub fn builder() -> crate::model::eks_pod_properties_override::Builder {
-        crate::model::eks_pod_properties_override::Builder::default()
     }
 }
 
@@ -1994,6 +2003,13 @@ impl EksContainerOverride {
         self.resources.as_ref()
     }
 }
+impl EksContainerOverride {
+    /// Creates a new builder-style object to manufacture [`EksContainerOverride`](crate::model::EksContainerOverride).
+    pub fn builder() -> crate::model::eks_container_override::Builder {
+        crate::model::eks_container_override::Builder::default()
+    }
+}
+
 /// See [`EksContainerOverride`](crate::model::EksContainerOverride).
 pub mod eks_container_override {
 
@@ -2105,12 +2121,6 @@ pub mod eks_container_override {
                 resources: self.resources,
             }
         }
-    }
-}
-impl EksContainerOverride {
-    /// Creates a new builder-style object to manufacture [`EksContainerOverride`](crate::model::EksContainerOverride).
-    pub fn builder() -> crate::model::eks_container_override::Builder {
-        crate::model::eks_container_override::Builder::default()
     }
 }
 
@@ -2231,6 +2241,13 @@ impl EksContainerResourceRequirements {
         self.requests.as_ref()
     }
 }
+impl EksContainerResourceRequirements {
+    /// Creates a new builder-style object to manufacture [`EksContainerResourceRequirements`](crate::model::EksContainerResourceRequirements).
+    pub fn builder() -> crate::model::eks_container_resource_requirements::Builder {
+        crate::model::eks_container_resource_requirements::Builder::default()
+    }
+}
+
 /// See [`EksContainerResourceRequirements`](crate::model::EksContainerResourceRequirements).
 pub mod eks_container_resource_requirements {
 
@@ -2393,12 +2410,6 @@ pub mod eks_container_resource_requirements {
         }
     }
 }
-impl EksContainerResourceRequirements {
-    /// Creates a new builder-style object to manufacture [`EksContainerResourceRequirements`](crate::model::EksContainerResourceRequirements).
-    pub fn builder() -> crate::model::eks_container_resource_requirements::Builder {
-        crate::model::eks_container_resource_requirements::Builder::default()
-    }
-}
 
 /// <p>An environment variable.</p>
 #[non_exhaustive]
@@ -2421,6 +2432,13 @@ impl EksContainerEnvironmentVariable {
         self.value.as_deref()
     }
 }
+impl EksContainerEnvironmentVariable {
+    /// Creates a new builder-style object to manufacture [`EksContainerEnvironmentVariable`](crate::model::EksContainerEnvironmentVariable).
+    pub fn builder() -> crate::model::eks_container_environment_variable::Builder {
+        crate::model::eks_container_environment_variable::Builder::default()
+    }
+}
+
 /// See [`EksContainerEnvironmentVariable`](crate::model::EksContainerEnvironmentVariable).
 pub mod eks_container_environment_variable {
 
@@ -2461,12 +2479,6 @@ pub mod eks_container_environment_variable {
         }
     }
 }
-impl EksContainerEnvironmentVariable {
-    /// Creates a new builder-style object to manufacture [`EksContainerEnvironmentVariable`](crate::model::EksContainerEnvironmentVariable).
-    pub fn builder() -> crate::model::eks_container_environment_variable::Builder {
-        crate::model::eks_container_environment_variable::Builder::default()
-    }
-}
 
 /// <p>An object that represents a job timeout configuration.</p>
 #[non_exhaustive]
@@ -2486,6 +2498,13 @@ impl JobTimeout {
         self.attempt_duration_seconds
     }
 }
+impl JobTimeout {
+    /// Creates a new builder-style object to manufacture [`JobTimeout`](crate::model::JobTimeout).
+    pub fn builder() -> crate::model::job_timeout::Builder {
+        crate::model::job_timeout::Builder::default()
+    }
+}
+
 /// See [`JobTimeout`](crate::model::JobTimeout).
 pub mod job_timeout {
 
@@ -2518,12 +2537,6 @@ pub mod job_timeout {
         }
     }
 }
-impl JobTimeout {
-    /// Creates a new builder-style object to manufacture [`JobTimeout`](crate::model::JobTimeout).
-    pub fn builder() -> crate::model::job_timeout::Builder {
-        crate::model::job_timeout::Builder::default()
-    }
-}
 
 /// <p>The retry strategy that's associated with a job. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/job_retries.html">Automated job retries</a> in the <i>Batch User Guide</i>.</p>
 #[non_exhaustive]
@@ -2546,6 +2559,13 @@ impl RetryStrategy {
         self.evaluate_on_exit.as_deref()
     }
 }
+impl RetryStrategy {
+    /// Creates a new builder-style object to manufacture [`RetryStrategy`](crate::model::RetryStrategy).
+    pub fn builder() -> crate::model::retry_strategy::Builder {
+        crate::model::retry_strategy::Builder::default()
+    }
+}
+
 /// See [`RetryStrategy`](crate::model::RetryStrategy).
 pub mod retry_strategy {
 
@@ -2596,12 +2616,6 @@ pub mod retry_strategy {
         }
     }
 }
-impl RetryStrategy {
-    /// Creates a new builder-style object to manufacture [`RetryStrategy`](crate::model::RetryStrategy).
-    pub fn builder() -> crate::model::retry_strategy::Builder {
-        crate::model::retry_strategy::Builder::default()
-    }
-}
 
 /// <p>Specifies an array of up to 5 conditions to be met, and an action to take (<code>RETRY</code> or <code>EXIT</code>) if all conditions are met. If none of the <code>EvaluateOnExit</code> conditions in a <code>RetryStrategy</code> match, then the job is retried.</p>
 #[non_exhaustive]
@@ -2640,6 +2654,13 @@ impl EvaluateOnExit {
         self.action.as_ref()
     }
 }
+impl EvaluateOnExit {
+    /// Creates a new builder-style object to manufacture [`EvaluateOnExit`](crate::model::EvaluateOnExit).
+    pub fn builder() -> crate::model::evaluate_on_exit::Builder {
+        crate::model::evaluate_on_exit::Builder::default()
+    }
+}
+
 /// See [`EvaluateOnExit`](crate::model::EvaluateOnExit).
 pub mod evaluate_on_exit {
 
@@ -2707,12 +2728,6 @@ pub mod evaluate_on_exit {
                 action: self.action,
             }
         }
-    }
-}
-impl EvaluateOnExit {
-    /// Creates a new builder-style object to manufacture [`EvaluateOnExit`](crate::model::EvaluateOnExit).
-    pub fn builder() -> crate::model::evaluate_on_exit::Builder {
-        crate::model::evaluate_on_exit::Builder::default()
     }
 }
 
@@ -2842,6 +2857,13 @@ impl NodeOverrides {
         self.node_property_overrides.as_deref()
     }
 }
+impl NodeOverrides {
+    /// Creates a new builder-style object to manufacture [`NodeOverrides`](crate::model::NodeOverrides).
+    pub fn builder() -> crate::model::node_overrides::Builder {
+        crate::model::node_overrides::Builder::default()
+    }
+}
+
 /// See [`NodeOverrides`](crate::model::NodeOverrides).
 pub mod node_overrides {
 
@@ -2905,12 +2927,6 @@ pub mod node_overrides {
         }
     }
 }
-impl NodeOverrides {
-    /// Creates a new builder-style object to manufacture [`NodeOverrides`](crate::model::NodeOverrides).
-    pub fn builder() -> crate::model::node_overrides::Builder {
-        crate::model::node_overrides::Builder::default()
-    }
-}
 
 /// <p>The object that represents any node overrides to a job definition that's used in a <code>SubmitJob</code> API operation.</p>
 #[non_exhaustive]
@@ -2933,6 +2949,13 @@ impl NodePropertyOverride {
         self.container_overrides.as_ref()
     }
 }
+impl NodePropertyOverride {
+    /// Creates a new builder-style object to manufacture [`NodePropertyOverride`](crate::model::NodePropertyOverride).
+    pub fn builder() -> crate::model::node_property_override::Builder {
+        crate::model::node_property_override::Builder::default()
+    }
+}
+
 /// See [`NodePropertyOverride`](crate::model::NodePropertyOverride).
 pub mod node_property_override {
 
@@ -2974,12 +2997,6 @@ pub mod node_property_override {
                 container_overrides: self.container_overrides,
             }
         }
-    }
-}
-impl NodePropertyOverride {
-    /// Creates a new builder-style object to manufacture [`NodePropertyOverride`](crate::model::NodePropertyOverride).
-    pub fn builder() -> crate::model::node_property_override::Builder {
-        crate::model::node_property_override::Builder::default()
     }
 }
 
@@ -3047,6 +3064,13 @@ impl ContainerOverrides {
         self.resource_requirements.as_deref()
     }
 }
+impl ContainerOverrides {
+    /// Creates a new builder-style object to manufacture [`ContainerOverrides`](crate::model::ContainerOverrides).
+    pub fn builder() -> crate::model::container_overrides::Builder {
+        crate::model::container_overrides::Builder::default()
+    }
+}
+
 /// See [`ContainerOverrides`](crate::model::ContainerOverrides).
 pub mod container_overrides {
 
@@ -3176,12 +3200,6 @@ pub mod container_overrides {
                 resource_requirements: self.resource_requirements,
             }
         }
-    }
-}
-impl ContainerOverrides {
-    /// Creates a new builder-style object to manufacture [`ContainerOverrides`](crate::model::ContainerOverrides).
-    pub fn builder() -> crate::model::container_overrides::Builder {
-        crate::model::container_overrides::Builder::default()
     }
 }
 
@@ -3520,6 +3538,13 @@ impl ResourceRequirement {
         self.r#type.as_ref()
     }
 }
+impl ResourceRequirement {
+    /// Creates a new builder-style object to manufacture [`ResourceRequirement`](crate::model::ResourceRequirement).
+    pub fn builder() -> crate::model::resource_requirement::Builder {
+        crate::model::resource_requirement::Builder::default()
+    }
+}
+
 /// See [`ResourceRequirement`](crate::model::ResourceRequirement).
 pub mod resource_requirement {
 
@@ -3874,12 +3899,6 @@ pub mod resource_requirement {
         }
     }
 }
-impl ResourceRequirement {
-    /// Creates a new builder-style object to manufacture [`ResourceRequirement`](crate::model::ResourceRequirement).
-    pub fn builder() -> crate::model::resource_requirement::Builder {
-        crate::model::resource_requirement::Builder::default()
-    }
-}
 
 /// When writing a match expression against `ResourceType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -3997,6 +4016,13 @@ impl KeyValuePair {
         self.value.as_deref()
     }
 }
+impl KeyValuePair {
+    /// Creates a new builder-style object to manufacture [`KeyValuePair`](crate::model::KeyValuePair).
+    pub fn builder() -> crate::model::key_value_pair::Builder {
+        crate::model::key_value_pair::Builder::default()
+    }
+}
+
 /// See [`KeyValuePair`](crate::model::KeyValuePair).
 pub mod key_value_pair {
 
@@ -4037,12 +4063,6 @@ pub mod key_value_pair {
         }
     }
 }
-impl KeyValuePair {
-    /// Creates a new builder-style object to manufacture [`KeyValuePair`](crate::model::KeyValuePair).
-    pub fn builder() -> crate::model::key_value_pair::Builder {
-        crate::model::key_value_pair::Builder::default()
-    }
-}
 
 /// <p>An object that represents an Batch job dependency.</p>
 #[non_exhaustive]
@@ -4065,6 +4085,13 @@ impl JobDependency {
         self.r#type.as_ref()
     }
 }
+impl JobDependency {
+    /// Creates a new builder-style object to manufacture [`JobDependency`](crate::model::JobDependency).
+    pub fn builder() -> crate::model::job_dependency::Builder {
+        crate::model::job_dependency::Builder::default()
+    }
+}
+
 /// See [`JobDependency`](crate::model::JobDependency).
 pub mod job_dependency {
 
@@ -4106,12 +4133,6 @@ pub mod job_dependency {
                 r#type: self.r#type,
             }
         }
-    }
-}
-impl JobDependency {
-    /// Creates a new builder-style object to manufacture [`JobDependency`](crate::model::JobDependency).
-    pub fn builder() -> crate::model::job_dependency::Builder {
-        crate::model::job_dependency::Builder::default()
     }
 }
 
@@ -4221,6 +4242,13 @@ impl ArrayProperties {
         self.size
     }
 }
+impl ArrayProperties {
+    /// Creates a new builder-style object to manufacture [`ArrayProperties`](crate::model::ArrayProperties).
+    pub fn builder() -> crate::model::array_properties::Builder {
+        crate::model::array_properties::Builder::default()
+    }
+}
+
 /// See [`ArrayProperties`](crate::model::ArrayProperties).
 pub mod array_properties {
 
@@ -4247,12 +4275,6 @@ pub mod array_properties {
         }
     }
 }
-impl ArrayProperties {
-    /// Creates a new builder-style object to manufacture [`ArrayProperties`](crate::model::ArrayProperties).
-    pub fn builder() -> crate::model::array_properties::Builder {
-        crate::model::array_properties::Builder::default()
-    }
-}
 
 /// <p>An object that contains the properties for the Kubernetes resources of a job.</p>
 #[non_exhaustive]
@@ -4268,6 +4290,13 @@ impl EksProperties {
         self.pod_properties.as_ref()
     }
 }
+impl EksProperties {
+    /// Creates a new builder-style object to manufacture [`EksProperties`](crate::model::EksProperties).
+    pub fn builder() -> crate::model::eks_properties::Builder {
+        crate::model::eks_properties::Builder::default()
+    }
+}
+
 /// See [`EksProperties`](crate::model::EksProperties).
 pub mod eks_properties {
 
@@ -4297,12 +4326,6 @@ pub mod eks_properties {
                 pod_properties: self.pod_properties,
             }
         }
-    }
-}
-impl EksProperties {
-    /// Creates a new builder-style object to manufacture [`EksProperties`](crate::model::EksProperties).
-    pub fn builder() -> crate::model::eks_properties::Builder {
-        crate::model::eks_properties::Builder::default()
     }
 }
 
@@ -4350,6 +4373,13 @@ impl EksPodProperties {
         self.volumes.as_deref()
     }
 }
+impl EksPodProperties {
+    /// Creates a new builder-style object to manufacture [`EksPodProperties`](crate::model::EksPodProperties).
+    pub fn builder() -> crate::model::eks_pod_properties::Builder {
+        crate::model::eks_pod_properties::Builder::default()
+    }
+}
+
 /// See [`EksPodProperties`](crate::model::EksPodProperties).
 pub mod eks_pod_properties {
 
@@ -4449,12 +4479,6 @@ pub mod eks_pod_properties {
         }
     }
 }
-impl EksPodProperties {
-    /// Creates a new builder-style object to manufacture [`EksPodProperties`](crate::model::EksPodProperties).
-    pub fn builder() -> crate::model::eks_pod_properties::Builder {
-        crate::model::eks_pod_properties::Builder::default()
-    }
-}
 
 /// <p>Specifies an Amazon EKS volume for a job definition.</p>
 #[non_exhaustive]
@@ -4491,6 +4515,13 @@ impl EksVolume {
         self.secret.as_ref()
     }
 }
+impl EksVolume {
+    /// Creates a new builder-style object to manufacture [`EksVolume`](crate::model::EksVolume).
+    pub fn builder() -> crate::model::eks_volume::Builder {
+        crate::model::eks_volume::Builder::default()
+    }
+}
+
 /// See [`EksVolume`](crate::model::EksVolume).
 pub mod eks_volume {
 
@@ -4561,12 +4592,6 @@ pub mod eks_volume {
         }
     }
 }
-impl EksVolume {
-    /// Creates a new builder-style object to manufacture [`EksVolume`](crate::model::EksVolume).
-    pub fn builder() -> crate::model::eks_volume::Builder {
-        crate::model::eks_volume::Builder::default()
-    }
-}
 
 /// <p>Specifies the configuration of a Kubernetes <code>secret</code> volume. For more information, see <a href="https://kubernetes.io/docs/concepts/storage/volumes/#secret">secret</a> in the <i>Kubernetes documentation</i>.</p>
 #[non_exhaustive]
@@ -4589,6 +4614,13 @@ impl EksSecret {
         self.optional
     }
 }
+impl EksSecret {
+    /// Creates a new builder-style object to manufacture [`EksSecret`](crate::model::EksSecret).
+    pub fn builder() -> crate::model::eks_secret::Builder {
+        crate::model::eks_secret::Builder::default()
+    }
+}
+
 /// See [`EksSecret`](crate::model::EksSecret).
 pub mod eks_secret {
 
@@ -4627,12 +4659,6 @@ pub mod eks_secret {
                 optional: self.optional,
             }
         }
-    }
-}
-impl EksSecret {
-    /// Creates a new builder-style object to manufacture [`EksSecret`](crate::model::EksSecret).
-    pub fn builder() -> crate::model::eks_secret::Builder {
-        crate::model::eks_secret::Builder::default()
     }
 }
 
@@ -4685,6 +4711,13 @@ impl EksEmptyDir {
         self.size_limit.as_deref()
     }
 }
+impl EksEmptyDir {
+    /// Creates a new builder-style object to manufacture [`EksEmptyDir`](crate::model::EksEmptyDir).
+    pub fn builder() -> crate::model::eks_empty_dir::Builder {
+        crate::model::eks_empty_dir::Builder::default()
+    }
+}
+
 /// See [`EksEmptyDir`](crate::model::EksEmptyDir).
 pub mod eks_empty_dir {
 
@@ -4753,12 +4786,6 @@ pub mod eks_empty_dir {
         }
     }
 }
-impl EksEmptyDir {
-    /// Creates a new builder-style object to manufacture [`EksEmptyDir`](crate::model::EksEmptyDir).
-    pub fn builder() -> crate::model::eks_empty_dir::Builder {
-        crate::model::eks_empty_dir::Builder::default()
-    }
-}
 
 /// <p>Specifies the configuration of a Kubernetes <code>hostPath</code> volume. A <code>hostPath</code> volume mounts an existing file or directory from the host node's filesystem into your pod. For more information, see <a href="https://kubernetes.io/docs/concepts/storage/volumes/#hostpath">hostPath</a> in the <i>Kubernetes documentation</i>.</p>
 #[non_exhaustive]
@@ -4774,6 +4801,13 @@ impl EksHostPath {
         self.path.as_deref()
     }
 }
+impl EksHostPath {
+    /// Creates a new builder-style object to manufacture [`EksHostPath`](crate::model::EksHostPath).
+    pub fn builder() -> crate::model::eks_host_path::Builder {
+        crate::model::eks_host_path::Builder::default()
+    }
+}
+
 /// See [`EksHostPath`](crate::model::EksHostPath).
 pub mod eks_host_path {
 
@@ -4798,12 +4832,6 @@ pub mod eks_host_path {
         pub fn build(self) -> crate::model::EksHostPath {
             crate::model::EksHostPath { path: self.path }
         }
-    }
-}
-impl EksHostPath {
-    /// Creates a new builder-style object to manufacture [`EksHostPath`](crate::model::EksHostPath).
-    pub fn builder() -> crate::model::eks_host_path::Builder {
-        crate::model::eks_host_path::Builder::default()
     }
 }
 
@@ -4889,6 +4917,13 @@ impl EksContainer {
         self.security_context.as_ref()
     }
 }
+impl EksContainer {
+    /// Creates a new builder-style object to manufacture [`EksContainer`](crate::model::EksContainer).
+    pub fn builder() -> crate::model::eks_container::Builder {
+        crate::model::eks_container::Builder::default()
+    }
+}
+
 /// See [`EksContainer`](crate::model::EksContainer).
 pub mod eks_container {
 
@@ -5073,12 +5108,6 @@ pub mod eks_container {
         }
     }
 }
-impl EksContainer {
-    /// Creates a new builder-style object to manufacture [`EksContainer`](crate::model::EksContainer).
-    pub fn builder() -> crate::model::eks_container::Builder {
-        crate::model::eks_container::Builder::default()
-    }
-}
 
 /// <p>The security context for a job. For more information, see <a href="https://kubernetes.io/docs/tasks/configure-pod-container/security-context/">Configure a security context for a pod or container</a> in the <i>Kubernetes documentation</i>.</p>
 #[non_exhaustive]
@@ -5122,6 +5151,13 @@ impl EksContainerSecurityContext {
         self.run_as_non_root
     }
 }
+impl EksContainerSecurityContext {
+    /// Creates a new builder-style object to manufacture [`EksContainerSecurityContext`](crate::model::EksContainerSecurityContext).
+    pub fn builder() -> crate::model::eks_container_security_context::Builder {
+        crate::model::eks_container_security_context::Builder::default()
+    }
+}
+
 /// See [`EksContainerSecurityContext`](crate::model::EksContainerSecurityContext).
 pub mod eks_container_security_context {
 
@@ -5198,12 +5234,6 @@ pub mod eks_container_security_context {
         }
     }
 }
-impl EksContainerSecurityContext {
-    /// Creates a new builder-style object to manufacture [`EksContainerSecurityContext`](crate::model::EksContainerSecurityContext).
-    pub fn builder() -> crate::model::eks_container_security_context::Builder {
-        crate::model::eks_container_security_context::Builder::default()
-    }
-}
 
 /// <p>The volume mounts for a container for an Amazon EKS job. For more information about volumes and volume mounts in Kubernetes, see <a href="https://kubernetes.io/docs/concepts/storage/volumes/">Volumes</a> in the <i>Kubernetes documentation</i>.</p>
 #[non_exhaustive]
@@ -5233,6 +5263,13 @@ impl EksContainerVolumeMount {
         self.read_only
     }
 }
+impl EksContainerVolumeMount {
+    /// Creates a new builder-style object to manufacture [`EksContainerVolumeMount`](crate::model::EksContainerVolumeMount).
+    pub fn builder() -> crate::model::eks_container_volume_mount::Builder {
+        crate::model::eks_container_volume_mount::Builder::default()
+    }
+}
+
 /// See [`EksContainerVolumeMount`](crate::model::EksContainerVolumeMount).
 pub mod eks_container_volume_mount {
 
@@ -5283,12 +5320,6 @@ pub mod eks_container_volume_mount {
                 read_only: self.read_only,
             }
         }
-    }
-}
-impl EksContainerVolumeMount {
-    /// Creates a new builder-style object to manufacture [`EksContainerVolumeMount`](crate::model::EksContainerVolumeMount).
-    pub fn builder() -> crate::model::eks_container_volume_mount::Builder {
-        crate::model::eks_container_volume_mount::Builder::default()
     }
 }
 
@@ -5414,6 +5445,13 @@ impl NodeProperties {
         self.node_range_properties.as_deref()
     }
 }
+impl NodeProperties {
+    /// Creates a new builder-style object to manufacture [`NodeProperties`](crate::model::NodeProperties).
+    pub fn builder() -> crate::model::node_properties::Builder {
+        crate::model::node_properties::Builder::default()
+    }
+}
+
 /// See [`NodeProperties`](crate::model::NodeProperties).
 pub mod node_properties {
 
@@ -5476,12 +5514,6 @@ pub mod node_properties {
         }
     }
 }
-impl NodeProperties {
-    /// Creates a new builder-style object to manufacture [`NodeProperties`](crate::model::NodeProperties).
-    pub fn builder() -> crate::model::node_properties::Builder {
-        crate::model::node_properties::Builder::default()
-    }
-}
 
 /// <p>An object that represents the properties of the node range for a multi-node parallel job.</p>
 #[non_exhaustive]
@@ -5504,6 +5536,13 @@ impl NodeRangeProperty {
         self.container.as_ref()
     }
 }
+impl NodeRangeProperty {
+    /// Creates a new builder-style object to manufacture [`NodeRangeProperty`](crate::model::NodeRangeProperty).
+    pub fn builder() -> crate::model::node_range_property::Builder {
+        crate::model::node_range_property::Builder::default()
+    }
+}
+
 /// See [`NodeRangeProperty`](crate::model::NodeRangeProperty).
 pub mod node_range_property {
 
@@ -5545,12 +5584,6 @@ pub mod node_range_property {
                 container: self.container,
             }
         }
-    }
-}
-impl NodeRangeProperty {
-    /// Creates a new builder-style object to manufacture [`NodeRangeProperty`](crate::model::NodeRangeProperty).
-    pub fn builder() -> crate::model::node_range_property::Builder {
-        crate::model::node_range_property::Builder::default()
     }
 }
 
@@ -5773,6 +5806,13 @@ impl ContainerProperties {
         self.fargate_platform_configuration.as_ref()
     }
 }
+impl ContainerProperties {
+    /// Creates a new builder-style object to manufacture [`ContainerProperties`](crate::model::ContainerProperties).
+    pub fn builder() -> crate::model::container_properties::Builder {
+        crate::model::container_properties::Builder::default()
+    }
+}
+
 /// See [`ContainerProperties`](crate::model::ContainerProperties).
 pub mod container_properties {
 
@@ -6179,12 +6219,6 @@ pub mod container_properties {
         }
     }
 }
-impl ContainerProperties {
-    /// Creates a new builder-style object to manufacture [`ContainerProperties`](crate::model::ContainerProperties).
-    pub fn builder() -> crate::model::container_properties::Builder {
-        crate::model::container_properties::Builder::default()
-    }
-}
 
 /// <p>The platform configuration for jobs that are running on Fargate resources. Jobs that run on EC2 resources must not specify this parameter.</p>
 #[non_exhaustive]
@@ -6200,6 +6234,13 @@ impl FargatePlatformConfiguration {
         self.platform_version.as_deref()
     }
 }
+impl FargatePlatformConfiguration {
+    /// Creates a new builder-style object to manufacture [`FargatePlatformConfiguration`](crate::model::FargatePlatformConfiguration).
+    pub fn builder() -> crate::model::fargate_platform_configuration::Builder {
+        crate::model::fargate_platform_configuration::Builder::default()
+    }
+}
+
 /// See [`FargatePlatformConfiguration`](crate::model::FargatePlatformConfiguration).
 pub mod fargate_platform_configuration {
 
@@ -6231,12 +6272,6 @@ pub mod fargate_platform_configuration {
         }
     }
 }
-impl FargatePlatformConfiguration {
-    /// Creates a new builder-style object to manufacture [`FargatePlatformConfiguration`](crate::model::FargatePlatformConfiguration).
-    pub fn builder() -> crate::model::fargate_platform_configuration::Builder {
-        crate::model::fargate_platform_configuration::Builder::default()
-    }
-}
 
 /// <p>The network configuration for jobs that are running on Fargate resources. Jobs that are running on EC2 resources must not specify this parameter.</p>
 #[non_exhaustive]
@@ -6252,6 +6287,13 @@ impl NetworkConfiguration {
         self.assign_public_ip.as_ref()
     }
 }
+impl NetworkConfiguration {
+    /// Creates a new builder-style object to manufacture [`NetworkConfiguration`](crate::model::NetworkConfiguration).
+    pub fn builder() -> crate::model::network_configuration::Builder {
+        crate::model::network_configuration::Builder::default()
+    }
+}
+
 /// See [`NetworkConfiguration`](crate::model::NetworkConfiguration).
 pub mod network_configuration {
 
@@ -6281,12 +6323,6 @@ pub mod network_configuration {
                 assign_public_ip: self.assign_public_ip,
             }
         }
-    }
-}
-impl NetworkConfiguration {
-    /// Creates a new builder-style object to manufacture [`NetworkConfiguration`](crate::model::NetworkConfiguration).
-    pub fn builder() -> crate::model::network_configuration::Builder {
-        crate::model::network_configuration::Builder::default()
     }
 }
 
@@ -6410,6 +6446,13 @@ impl Secret {
         self.value_from.as_deref()
     }
 }
+impl Secret {
+    /// Creates a new builder-style object to manufacture [`Secret`](crate::model::Secret).
+    pub fn builder() -> crate::model::secret::Builder {
+        crate::model::secret::Builder::default()
+    }
+}
+
 /// See [`Secret`](crate::model::Secret).
 pub mod secret {
 
@@ -6452,12 +6495,6 @@ pub mod secret {
                 value_from: self.value_from,
             }
         }
-    }
-}
-impl Secret {
-    /// Creates a new builder-style object to manufacture [`Secret`](crate::model::Secret).
-    pub fn builder() -> crate::model::secret::Builder {
-        crate::model::secret::Builder::default()
     }
 }
 
@@ -6593,6 +6630,13 @@ impl LogConfiguration {
         self.secret_options.as_deref()
     }
 }
+impl LogConfiguration {
+    /// Creates a new builder-style object to manufacture [`LogConfiguration`](crate::model::LogConfiguration).
+    pub fn builder() -> crate::model::log_configuration::Builder {
+        crate::model::log_configuration::Builder::default()
+    }
+}
+
 /// See [`LogConfiguration`](crate::model::LogConfiguration).
 pub mod log_configuration {
 
@@ -6772,12 +6816,6 @@ pub mod log_configuration {
                 secret_options: self.secret_options,
             }
         }
-    }
-}
-impl LogConfiguration {
-    /// Creates a new builder-style object to manufacture [`LogConfiguration`](crate::model::LogConfiguration).
-    pub fn builder() -> crate::model::log_configuration::Builder {
-        crate::model::log_configuration::Builder::default()
     }
 }
 
@@ -6991,6 +7029,13 @@ impl LinuxParameters {
         self.swappiness
     }
 }
+impl LinuxParameters {
+    /// Creates a new builder-style object to manufacture [`LinuxParameters`](crate::model::LinuxParameters).
+    pub fn builder() -> crate::model::linux_parameters::Builder {
+        crate::model::linux_parameters::Builder::default()
+    }
+}
+
 /// See [`LinuxParameters`](crate::model::LinuxParameters).
 pub mod linux_parameters {
 
@@ -7135,12 +7180,6 @@ pub mod linux_parameters {
         }
     }
 }
-impl LinuxParameters {
-    /// Creates a new builder-style object to manufacture [`LinuxParameters`](crate::model::LinuxParameters).
-    pub fn builder() -> crate::model::linux_parameters::Builder {
-        crate::model::linux_parameters::Builder::default()
-    }
-}
 
 /// <p>The container path, mount options, and size of the <code>tmpfs</code> mount.</p> <note>
 /// <p>This object isn't applicable to jobs that are running on Fargate resources.</p>
@@ -7174,6 +7213,13 @@ impl Tmpfs {
         self.mount_options.as_deref()
     }
 }
+impl Tmpfs {
+    /// Creates a new builder-style object to manufacture [`Tmpfs`](crate::model::Tmpfs).
+    pub fn builder() -> crate::model::tmpfs::Builder {
+        crate::model::tmpfs::Builder::default()
+    }
+}
+
 /// See [`Tmpfs`](crate::model::Tmpfs).
 pub mod tmpfs {
 
@@ -7240,12 +7286,6 @@ pub mod tmpfs {
         }
     }
 }
-impl Tmpfs {
-    /// Creates a new builder-style object to manufacture [`Tmpfs`](crate::model::Tmpfs).
-    pub fn builder() -> crate::model::tmpfs::Builder {
-        crate::model::tmpfs::Builder::default()
-    }
-}
 
 /// <p>An object that represents a container instance host device.</p> <note>
 /// <p>This object isn't applicable to jobs that are running on Fargate resources and shouldn't be provided.</p>
@@ -7277,6 +7317,13 @@ impl Device {
         self.permissions.as_deref()
     }
 }
+impl Device {
+    /// Creates a new builder-style object to manufacture [`Device`](crate::model::Device).
+    pub fn builder() -> crate::model::device::Builder {
+        crate::model::device::Builder::default()
+    }
+}
+
 /// See [`Device`](crate::model::Device).
 pub mod device {
 
@@ -7340,12 +7387,6 @@ pub mod device {
                 permissions: self.permissions,
             }
         }
-    }
-}
-impl Device {
-    /// Creates a new builder-style object to manufacture [`Device`](crate::model::Device).
-    pub fn builder() -> crate::model::device::Builder {
-        crate::model::device::Builder::default()
     }
 }
 
@@ -7476,6 +7517,13 @@ impl Ulimit {
         self.soft_limit
     }
 }
+impl Ulimit {
+    /// Creates a new builder-style object to manufacture [`Ulimit`](crate::model::Ulimit).
+    pub fn builder() -> crate::model::ulimit::Builder {
+        crate::model::ulimit::Builder::default()
+    }
+}
+
 /// See [`Ulimit`](crate::model::Ulimit).
 pub mod ulimit {
 
@@ -7528,12 +7576,6 @@ pub mod ulimit {
         }
     }
 }
-impl Ulimit {
-    /// Creates a new builder-style object to manufacture [`Ulimit`](crate::model::Ulimit).
-    pub fn builder() -> crate::model::ulimit::Builder {
-        crate::model::ulimit::Builder::default()
-    }
-}
 
 /// <p>Details for a Docker volume mount point that's used in a job's container properties. This parameter maps to <code>Volumes</code> in the <a href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.19/#create-a-container">Create a container</a> section of the <i>Docker Remote API</i> and the <code>--volume</code> option to docker run.</p>
 #[non_exhaustive]
@@ -7563,6 +7605,13 @@ impl MountPoint {
         self.source_volume.as_deref()
     }
 }
+impl MountPoint {
+    /// Creates a new builder-style object to manufacture [`MountPoint`](crate::model::MountPoint).
+    pub fn builder() -> crate::model::mount_point::Builder {
+        crate::model::mount_point::Builder::default()
+    }
+}
+
 /// See [`MountPoint`](crate::model::MountPoint).
 pub mod mount_point {
 
@@ -7621,12 +7670,6 @@ pub mod mount_point {
         }
     }
 }
-impl MountPoint {
-    /// Creates a new builder-style object to manufacture [`MountPoint`](crate::model::MountPoint).
-    pub fn builder() -> crate::model::mount_point::Builder {
-        crate::model::mount_point::Builder::default()
-    }
-}
 
 /// <p>A data volume that's used in a job's container properties.</p>
 #[non_exhaustive]
@@ -7662,6 +7705,13 @@ impl Volume {
         self.efs_volume_configuration.as_ref()
     }
 }
+impl Volume {
+    /// Creates a new builder-style object to manufacture [`Volume`](crate::model::Volume).
+    pub fn builder() -> crate::model::volume::Builder {
+        crate::model::volume::Builder::default()
+    }
+}
+
 /// See [`Volume`](crate::model::Volume).
 pub mod volume {
 
@@ -7725,12 +7775,6 @@ pub mod volume {
         }
     }
 }
-impl Volume {
-    /// Creates a new builder-style object to manufacture [`Volume`](crate::model::Volume).
-    pub fn builder() -> crate::model::volume::Builder {
-        crate::model::volume::Builder::default()
-    }
-}
 
 /// <p>This is used when you're using an Amazon Elastic File System file system for job storage. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/efs-volumes.html">Amazon EFS Volumes</a> in the <i>Batch User Guide</i>.</p>
 #[non_exhaustive]
@@ -7780,6 +7824,13 @@ impl EfsVolumeConfiguration {
         self.authorization_config.as_ref()
     }
 }
+impl EfsVolumeConfiguration {
+    /// Creates a new builder-style object to manufacture [`EfsVolumeConfiguration`](crate::model::EfsVolumeConfiguration).
+    pub fn builder() -> crate::model::efs_volume_configuration::Builder {
+        crate::model::efs_volume_configuration::Builder::default()
+    }
+}
+
 /// See [`EfsVolumeConfiguration`](crate::model::EfsVolumeConfiguration).
 pub mod efs_volume_configuration {
 
@@ -7872,12 +7923,6 @@ pub mod efs_volume_configuration {
         }
     }
 }
-impl EfsVolumeConfiguration {
-    /// Creates a new builder-style object to manufacture [`EfsVolumeConfiguration`](crate::model::EfsVolumeConfiguration).
-    pub fn builder() -> crate::model::efs_volume_configuration::Builder {
-        crate::model::efs_volume_configuration::Builder::default()
-    }
-}
 
 /// <p>The authorization configuration details for the Amazon EFS file system.</p>
 #[non_exhaustive]
@@ -7900,6 +7945,13 @@ impl EfsAuthorizationConfig {
         self.iam.as_ref()
     }
 }
+impl EfsAuthorizationConfig {
+    /// Creates a new builder-style object to manufacture [`EfsAuthorizationConfig`](crate::model::EfsAuthorizationConfig).
+    pub fn builder() -> crate::model::efs_authorization_config::Builder {
+        crate::model::efs_authorization_config::Builder::default()
+    }
+}
+
 /// See [`EfsAuthorizationConfig`](crate::model::EfsAuthorizationConfig).
 pub mod efs_authorization_config {
 
@@ -7944,12 +7996,6 @@ pub mod efs_authorization_config {
                 iam: self.iam,
             }
         }
-    }
-}
-impl EfsAuthorizationConfig {
-    /// Creates a new builder-style object to manufacture [`EfsAuthorizationConfig`](crate::model::EfsAuthorizationConfig).
-    pub fn builder() -> crate::model::efs_authorization_config::Builder {
-        crate::model::efs_authorization_config::Builder::default()
     }
 }
 
@@ -8155,6 +8201,13 @@ impl Host {
         self.source_path.as_deref()
     }
 }
+impl Host {
+    /// Creates a new builder-style object to manufacture [`Host`](crate::model::Host).
+    pub fn builder() -> crate::model::host::Builder {
+        crate::model::host::Builder::default()
+    }
+}
+
 /// See [`Host`](crate::model::Host).
 pub mod host {
 
@@ -8185,12 +8238,6 @@ pub mod host {
                 source_path: self.source_path,
             }
         }
-    }
-}
-impl Host {
-    /// Creates a new builder-style object to manufacture [`Host`](crate::model::Host).
-    pub fn builder() -> crate::model::host::Builder {
-        crate::model::host::Builder::default()
     }
 }
 
@@ -8300,6 +8347,13 @@ impl SchedulingPolicyListingDetail {
         self.arn.as_deref()
     }
 }
+impl SchedulingPolicyListingDetail {
+    /// Creates a new builder-style object to manufacture [`SchedulingPolicyListingDetail`](crate::model::SchedulingPolicyListingDetail).
+    pub fn builder() -> crate::model::scheduling_policy_listing_detail::Builder {
+        crate::model::scheduling_policy_listing_detail::Builder::default()
+    }
+}
+
 /// See [`SchedulingPolicyListingDetail`](crate::model::SchedulingPolicyListingDetail).
 pub mod scheduling_policy_listing_detail {
 
@@ -8324,12 +8378,6 @@ pub mod scheduling_policy_listing_detail {
         pub fn build(self) -> crate::model::SchedulingPolicyListingDetail {
             crate::model::SchedulingPolicyListingDetail { arn: self.arn }
         }
-    }
-}
-impl SchedulingPolicyListingDetail {
-    /// Creates a new builder-style object to manufacture [`SchedulingPolicyListingDetail`](crate::model::SchedulingPolicyListingDetail).
-    pub fn builder() -> crate::model::scheduling_policy_listing_detail::Builder {
-        crate::model::scheduling_policy_listing_detail::Builder::default()
     }
 }
 
@@ -8428,6 +8476,13 @@ impl JobSummary {
         self.job_definition.as_deref()
     }
 }
+impl JobSummary {
+    /// Creates a new builder-style object to manufacture [`JobSummary`](crate::model::JobSummary).
+    pub fn builder() -> crate::model::job_summary::Builder {
+        crate::model::job_summary::Builder::default()
+    }
+}
+
 /// See [`JobSummary`](crate::model::JobSummary).
 pub mod job_summary {
 
@@ -8607,12 +8662,6 @@ pub mod job_summary {
         }
     }
 }
-impl JobSummary {
-    /// Creates a new builder-style object to manufacture [`JobSummary`](crate::model::JobSummary).
-    pub fn builder() -> crate::model::job_summary::Builder {
-        crate::model::job_summary::Builder::default()
-    }
-}
 
 /// <p>An object that represents the properties of a node that's associated with a multi-node parallel job.</p>
 #[non_exhaustive]
@@ -8642,6 +8691,13 @@ impl NodePropertiesSummary {
         self.node_index
     }
 }
+impl NodePropertiesSummary {
+    /// Creates a new builder-style object to manufacture [`NodePropertiesSummary`](crate::model::NodePropertiesSummary).
+    pub fn builder() -> crate::model::node_properties_summary::Builder {
+        crate::model::node_properties_summary::Builder::default()
+    }
+}
+
 /// See [`NodePropertiesSummary`](crate::model::NodePropertiesSummary).
 pub mod node_properties_summary {
 
@@ -8694,12 +8750,6 @@ pub mod node_properties_summary {
         }
     }
 }
-impl NodePropertiesSummary {
-    /// Creates a new builder-style object to manufacture [`NodePropertiesSummary`](crate::model::NodePropertiesSummary).
-    pub fn builder() -> crate::model::node_properties_summary::Builder {
-        crate::model::node_properties_summary::Builder::default()
-    }
-}
 
 /// <p>An object that represents the array properties of a job.</p>
 #[non_exhaustive]
@@ -8722,6 +8772,13 @@ impl ArrayPropertiesSummary {
         self.index
     }
 }
+impl ArrayPropertiesSummary {
+    /// Creates a new builder-style object to manufacture [`ArrayPropertiesSummary`](crate::model::ArrayPropertiesSummary).
+    pub fn builder() -> crate::model::array_properties_summary::Builder {
+        crate::model::array_properties_summary::Builder::default()
+    }
+}
+
 /// See [`ArrayPropertiesSummary`](crate::model::ArrayPropertiesSummary).
 pub mod array_properties_summary {
 
@@ -8762,12 +8819,6 @@ pub mod array_properties_summary {
         }
     }
 }
-impl ArrayPropertiesSummary {
-    /// Creates a new builder-style object to manufacture [`ArrayPropertiesSummary`](crate::model::ArrayPropertiesSummary).
-    pub fn builder() -> crate::model::array_properties_summary::Builder {
-        crate::model::array_properties_summary::Builder::default()
-    }
-}
 
 /// <p>An object that represents summary details of a container within a job.</p>
 #[non_exhaustive]
@@ -8790,6 +8841,13 @@ impl ContainerSummary {
         self.reason.as_deref()
     }
 }
+impl ContainerSummary {
+    /// Creates a new builder-style object to manufacture [`ContainerSummary`](crate::model::ContainerSummary).
+    pub fn builder() -> crate::model::container_summary::Builder {
+        crate::model::container_summary::Builder::default()
+    }
+}
+
 /// See [`ContainerSummary`](crate::model::ContainerSummary).
 pub mod container_summary {
 
@@ -8828,12 +8886,6 @@ pub mod container_summary {
                 reason: self.reason,
             }
         }
-    }
-}
-impl ContainerSummary {
-    /// Creates a new builder-style object to manufacture [`ContainerSummary`](crate::model::ContainerSummary).
-    pub fn builder() -> crate::model::container_summary::Builder {
-        crate::model::container_summary::Builder::default()
     }
 }
 
@@ -8981,6 +9033,13 @@ impl KeyValuesPair {
         self.values.as_deref()
     }
 }
+impl KeyValuesPair {
+    /// Creates a new builder-style object to manufacture [`KeyValuesPair`](crate::model::KeyValuesPair).
+    pub fn builder() -> crate::model::key_values_pair::Builder {
+        crate::model::key_values_pair::Builder::default()
+    }
+}
+
 /// See [`KeyValuesPair`](crate::model::KeyValuesPair).
 pub mod key_values_pair {
 
@@ -9030,12 +9089,6 @@ pub mod key_values_pair {
         }
     }
 }
-impl KeyValuesPair {
-    /// Creates a new builder-style object to manufacture [`KeyValuesPair`](crate::model::KeyValuesPair).
-    pub fn builder() -> crate::model::key_values_pair::Builder {
-        crate::model::key_values_pair::Builder::default()
-    }
-}
 
 /// <p>An object that represents a scheduling policy.</p>
 #[non_exhaustive]
@@ -9076,6 +9129,13 @@ impl SchedulingPolicyDetail {
         self.tags.as_ref()
     }
 }
+impl SchedulingPolicyDetail {
+    /// Creates a new builder-style object to manufacture [`SchedulingPolicyDetail`](crate::model::SchedulingPolicyDetail).
+    pub fn builder() -> crate::model::scheduling_policy_detail::Builder {
+        crate::model::scheduling_policy_detail::Builder::default()
+    }
+}
+
 /// See [`SchedulingPolicyDetail`](crate::model::SchedulingPolicyDetail).
 pub mod scheduling_policy_detail {
 
@@ -9158,12 +9218,6 @@ pub mod scheduling_policy_detail {
                 tags: self.tags,
             }
         }
-    }
-}
-impl SchedulingPolicyDetail {
-    /// Creates a new builder-style object to manufacture [`SchedulingPolicyDetail`](crate::model::SchedulingPolicyDetail).
-    pub fn builder() -> crate::model::scheduling_policy_detail::Builder {
-        crate::model::scheduling_policy_detail::Builder::default()
     }
 }
 
@@ -9388,6 +9442,13 @@ impl JobDetail {
         self.is_terminated
     }
 }
+impl JobDetail {
+    /// Creates a new builder-style object to manufacture [`JobDetail`](crate::model::JobDetail).
+    pub fn builder() -> crate::model::job_detail::Builder {
+        crate::model::job_detail::Builder::default()
+    }
+}
+
 /// See [`JobDetail`](crate::model::JobDetail).
 pub mod job_detail {
 
@@ -9846,12 +9907,6 @@ pub mod job_detail {
         }
     }
 }
-impl JobDetail {
-    /// Creates a new builder-style object to manufacture [`JobDetail`](crate::model::JobDetail).
-    pub fn builder() -> crate::model::job_detail::Builder {
-        crate::model::job_detail::Builder::default()
-    }
-}
 
 /// <p>An object that represents the details of a job attempt for a job attempt by an Amazon EKS container.</p>
 #[non_exhaustive]
@@ -9902,6 +9957,13 @@ impl EksAttemptDetail {
         self.status_reason.as_deref()
     }
 }
+impl EksAttemptDetail {
+    /// Creates a new builder-style object to manufacture [`EksAttemptDetail`](crate::model::EksAttemptDetail).
+    pub fn builder() -> crate::model::eks_attempt_detail::Builder {
+        crate::model::eks_attempt_detail::Builder::default()
+    }
+}
+
 /// See [`EksAttemptDetail`](crate::model::EksAttemptDetail).
 pub mod eks_attempt_detail {
 
@@ -10003,12 +10065,6 @@ pub mod eks_attempt_detail {
         }
     }
 }
-impl EksAttemptDetail {
-    /// Creates a new builder-style object to manufacture [`EksAttemptDetail`](crate::model::EksAttemptDetail).
-    pub fn builder() -> crate::model::eks_attempt_detail::Builder {
-        crate::model::eks_attempt_detail::Builder::default()
-    }
-}
 
 /// <p>An object that represents the details for an attempt for a job attempt that an Amazon EKS container runs.</p>
 #[non_exhaustive]
@@ -10031,6 +10087,13 @@ impl EksAttemptContainerDetail {
         self.reason.as_deref()
     }
 }
+impl EksAttemptContainerDetail {
+    /// Creates a new builder-style object to manufacture [`EksAttemptContainerDetail`](crate::model::EksAttemptContainerDetail).
+    pub fn builder() -> crate::model::eks_attempt_container_detail::Builder {
+        crate::model::eks_attempt_container_detail::Builder::default()
+    }
+}
+
 /// See [`EksAttemptContainerDetail`](crate::model::EksAttemptContainerDetail).
 pub mod eks_attempt_container_detail {
 
@@ -10071,12 +10134,6 @@ pub mod eks_attempt_container_detail {
         }
     }
 }
-impl EksAttemptContainerDetail {
-    /// Creates a new builder-style object to manufacture [`EksAttemptContainerDetail`](crate::model::EksAttemptContainerDetail).
-    pub fn builder() -> crate::model::eks_attempt_container_detail::Builder {
-        crate::model::eks_attempt_container_detail::Builder::default()
-    }
-}
 
 /// <p>An object that contains the details for the Kubernetes resources of a job.</p>
 #[non_exhaustive]
@@ -10092,6 +10149,13 @@ impl EksPropertiesDetail {
         self.pod_properties.as_ref()
     }
 }
+impl EksPropertiesDetail {
+    /// Creates a new builder-style object to manufacture [`EksPropertiesDetail`](crate::model::EksPropertiesDetail).
+    pub fn builder() -> crate::model::eks_properties_detail::Builder {
+        crate::model::eks_properties_detail::Builder::default()
+    }
+}
+
 /// See [`EksPropertiesDetail`](crate::model::EksPropertiesDetail).
 pub mod eks_properties_detail {
 
@@ -10121,12 +10185,6 @@ pub mod eks_properties_detail {
                 pod_properties: self.pod_properties,
             }
         }
-    }
-}
-impl EksPropertiesDetail {
-    /// Creates a new builder-style object to manufacture [`EksPropertiesDetail`](crate::model::EksPropertiesDetail).
-    pub fn builder() -> crate::model::eks_properties_detail::Builder {
-        crate::model::eks_properties_detail::Builder::default()
     }
 }
 
@@ -10188,6 +10246,13 @@ impl EksPodPropertiesDetail {
         self.node_name.as_deref()
     }
 }
+impl EksPodPropertiesDetail {
+    /// Creates a new builder-style object to manufacture [`EksPodPropertiesDetail`](crate::model::EksPodPropertiesDetail).
+    pub fn builder() -> crate::model::eks_pod_properties_detail::Builder {
+        crate::model::eks_pod_properties_detail::Builder::default()
+    }
+}
+
 /// See [`EksPodPropertiesDetail`](crate::model::EksPodPropertiesDetail).
 pub mod eks_pod_properties_detail {
 
@@ -10311,12 +10376,6 @@ pub mod eks_pod_properties_detail {
         }
     }
 }
-impl EksPodPropertiesDetail {
-    /// Creates a new builder-style object to manufacture [`EksPodPropertiesDetail`](crate::model::EksPodPropertiesDetail).
-    pub fn builder() -> crate::model::eks_pod_properties_detail::Builder {
-        crate::model::eks_pod_properties_detail::Builder::default()
-    }
-}
 
 /// <p>The details for container properties that are returned by <code>DescribeJobs</code> for jobs that use Amazon EKS.</p>
 #[non_exhaustive]
@@ -10412,6 +10471,13 @@ impl EksContainerDetail {
         self.security_context.as_ref()
     }
 }
+impl EksContainerDetail {
+    /// Creates a new builder-style object to manufacture [`EksContainerDetail`](crate::model::EksContainerDetail).
+    pub fn builder() -> crate::model::eks_container_detail::Builder {
+        crate::model::eks_container_detail::Builder::default()
+    }
+}
+
 /// See [`EksContainerDetail`](crate::model::EksContainerDetail).
 pub mod eks_container_detail {
 
@@ -10618,12 +10684,6 @@ pub mod eks_container_detail {
         }
     }
 }
-impl EksContainerDetail {
-    /// Creates a new builder-style object to manufacture [`EksContainerDetail`](crate::model::EksContainerDetail).
-    pub fn builder() -> crate::model::eks_container_detail::Builder {
-        crate::model::eks_container_detail::Builder::default()
-    }
-}
 
 /// <p>An object that represents the array properties of a job.</p>
 #[non_exhaustive]
@@ -10655,6 +10715,13 @@ impl ArrayPropertiesDetail {
         self.index
     }
 }
+impl ArrayPropertiesDetail {
+    /// Creates a new builder-style object to manufacture [`ArrayPropertiesDetail`](crate::model::ArrayPropertiesDetail).
+    pub fn builder() -> crate::model::array_properties_detail::Builder {
+        crate::model::array_properties_detail::Builder::default()
+    }
+}
+
 /// See [`ArrayPropertiesDetail`](crate::model::ArrayPropertiesDetail).
 pub mod array_properties_detail {
 
@@ -10717,12 +10784,6 @@ pub mod array_properties_detail {
         }
     }
 }
-impl ArrayPropertiesDetail {
-    /// Creates a new builder-style object to manufacture [`ArrayPropertiesDetail`](crate::model::ArrayPropertiesDetail).
-    pub fn builder() -> crate::model::array_properties_detail::Builder {
-        crate::model::array_properties_detail::Builder::default()
-    }
-}
 
 /// <p>An object that represents the details of a multi-node parallel job node.</p>
 #[non_exhaustive]
@@ -10745,6 +10806,13 @@ impl NodeDetails {
         self.is_main_node
     }
 }
+impl NodeDetails {
+    /// Creates a new builder-style object to manufacture [`NodeDetails`](crate::model::NodeDetails).
+    pub fn builder() -> crate::model::node_details::Builder {
+        crate::model::node_details::Builder::default()
+    }
+}
+
 /// See [`NodeDetails`](crate::model::NodeDetails).
 pub mod node_details {
 
@@ -10783,12 +10851,6 @@ pub mod node_details {
                 is_main_node: self.is_main_node,
             }
         }
-    }
-}
-impl NodeDetails {
-    /// Creates a new builder-style object to manufacture [`NodeDetails`](crate::model::NodeDetails).
-    pub fn builder() -> crate::model::node_details::Builder {
-        crate::model::node_details::Builder::default()
     }
 }
 
@@ -11021,6 +11083,13 @@ impl ContainerDetail {
         self.fargate_platform_configuration.as_ref()
     }
 }
+impl ContainerDetail {
+    /// Creates a new builder-style object to manufacture [`ContainerDetail`](crate::model::ContainerDetail).
+    pub fn builder() -> crate::model::container_detail::Builder {
+        crate::model::container_detail::Builder::default()
+    }
+}
+
 /// See [`ContainerDetail`](crate::model::ContainerDetail).
 pub mod container_detail {
 
@@ -11483,12 +11552,6 @@ pub mod container_detail {
         }
     }
 }
-impl ContainerDetail {
-    /// Creates a new builder-style object to manufacture [`ContainerDetail`](crate::model::ContainerDetail).
-    pub fn builder() -> crate::model::container_detail::Builder {
-        crate::model::container_detail::Builder::default()
-    }
-}
 
 /// <p>An object that represents the elastic network interface for a multi-node parallel job node.</p>
 #[non_exhaustive]
@@ -11518,6 +11581,13 @@ impl NetworkInterface {
         self.private_ipv4_address.as_deref()
     }
 }
+impl NetworkInterface {
+    /// Creates a new builder-style object to manufacture [`NetworkInterface`](crate::model::NetworkInterface).
+    pub fn builder() -> crate::model::network_interface::Builder {
+        crate::model::network_interface::Builder::default()
+    }
+}
+
 /// See [`NetworkInterface`](crate::model::NetworkInterface).
 pub mod network_interface {
 
@@ -11576,12 +11646,6 @@ pub mod network_interface {
         }
     }
 }
-impl NetworkInterface {
-    /// Creates a new builder-style object to manufacture [`NetworkInterface`](crate::model::NetworkInterface).
-    pub fn builder() -> crate::model::network_interface::Builder {
-        crate::model::network_interface::Builder::default()
-    }
-}
 
 /// <p>An object that represents a job attempt.</p>
 #[non_exhaustive]
@@ -11618,6 +11682,13 @@ impl AttemptDetail {
         self.status_reason.as_deref()
     }
 }
+impl AttemptDetail {
+    /// Creates a new builder-style object to manufacture [`AttemptDetail`](crate::model::AttemptDetail).
+    pub fn builder() -> crate::model::attempt_detail::Builder {
+        crate::model::attempt_detail::Builder::default()
+    }
+}
+
 /// See [`AttemptDetail`](crate::model::AttemptDetail).
 pub mod attempt_detail {
 
@@ -11688,12 +11759,6 @@ pub mod attempt_detail {
         }
     }
 }
-impl AttemptDetail {
-    /// Creates a new builder-style object to manufacture [`AttemptDetail`](crate::model::AttemptDetail).
-    pub fn builder() -> crate::model::attempt_detail::Builder {
-        crate::model::attempt_detail::Builder::default()
-    }
-}
 
 /// <p>An object that represents the details of a container that's part of a job attempt.</p>
 #[non_exhaustive]
@@ -11744,6 +11809,13 @@ impl AttemptContainerDetail {
         self.network_interfaces.as_deref()
     }
 }
+impl AttemptContainerDetail {
+    /// Creates a new builder-style object to manufacture [`AttemptContainerDetail`](crate::model::AttemptContainerDetail).
+    pub fn builder() -> crate::model::attempt_container_detail::Builder {
+        crate::model::attempt_container_detail::Builder::default()
+    }
+}
+
 /// See [`AttemptContainerDetail`](crate::model::AttemptContainerDetail).
 pub mod attempt_container_detail {
 
@@ -11848,12 +11920,6 @@ pub mod attempt_container_detail {
         }
     }
 }
-impl AttemptContainerDetail {
-    /// Creates a new builder-style object to manufacture [`AttemptContainerDetail`](crate::model::AttemptContainerDetail).
-    pub fn builder() -> crate::model::attempt_container_detail::Builder {
-        crate::model::attempt_container_detail::Builder::default()
-    }
-}
 
 /// <p>An object that represents the details for an Batch job queue.</p>
 #[non_exhaustive]
@@ -11932,6 +11998,13 @@ impl JobQueueDetail {
         self.tags.as_ref()
     }
 }
+impl JobQueueDetail {
+    /// Creates a new builder-style object to manufacture [`JobQueueDetail`](crate::model::JobQueueDetail).
+    pub fn builder() -> crate::model::job_queue_detail::Builder {
+        crate::model::job_queue_detail::Builder::default()
+    }
+}
+
 /// See [`JobQueueDetail`](crate::model::JobQueueDetail).
 pub mod job_queue_detail {
 
@@ -12096,12 +12169,6 @@ pub mod job_queue_detail {
                 tags: self.tags,
             }
         }
-    }
-}
-impl JobQueueDetail {
-    /// Creates a new builder-style object to manufacture [`JobQueueDetail`](crate::model::JobQueueDetail).
-    pub fn builder() -> crate::model::job_queue_detail::Builder {
-        crate::model::job_queue_detail::Builder::default()
     }
 }
 
@@ -12352,6 +12419,13 @@ impl JobDefinition {
         self.container_orchestration_type.as_ref()
     }
 }
+impl JobDefinition {
+    /// Creates a new builder-style object to manufacture [`JobDefinition`](crate::model::JobDefinition).
+    pub fn builder() -> crate::model::job_definition::Builder {
+        crate::model::job_definition::Builder::default()
+    }
+}
+
 /// See [`JobDefinition`](crate::model::JobDefinition).
 pub mod job_definition {
 
@@ -12633,12 +12707,6 @@ pub mod job_definition {
         }
     }
 }
-impl JobDefinition {
-    /// Creates a new builder-style object to manufacture [`JobDefinition`](crate::model::JobDefinition).
-    pub fn builder() -> crate::model::job_definition::Builder {
-        crate::model::job_definition::Builder::default()
-    }
-}
 
 /// When writing a match expression against `OrchestrationType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -12854,6 +12922,13 @@ impl ComputeEnvironmentDetail {
         self.uuid.as_deref()
     }
 }
+impl ComputeEnvironmentDetail {
+    /// Creates a new builder-style object to manufacture [`ComputeEnvironmentDetail`](crate::model::ComputeEnvironmentDetail).
+    pub fn builder() -> crate::model::compute_environment_detail::Builder {
+        crate::model::compute_environment_detail::Builder::default()
+    }
+}
+
 /// See [`ComputeEnvironmentDetail`](crate::model::ComputeEnvironmentDetail).
 pub mod compute_environment_detail {
 
@@ -13099,12 +13174,6 @@ pub mod compute_environment_detail {
         }
     }
 }
-impl ComputeEnvironmentDetail {
-    /// Creates a new builder-style object to manufacture [`ComputeEnvironmentDetail`](crate::model::ComputeEnvironmentDetail).
-    pub fn builder() -> crate::model::compute_environment_detail::Builder {
-        crate::model::compute_environment_detail::Builder::default()
-    }
-}
 
 /// <p>Configuration for the Amazon EKS cluster that supports the Batch compute environment. The cluster must exist before the compute environment can be created.</p>
 #[non_exhaustive]
@@ -13127,6 +13196,13 @@ impl EksConfiguration {
         self.kubernetes_namespace.as_deref()
     }
 }
+impl EksConfiguration {
+    /// Creates a new builder-style object to manufacture [`EksConfiguration`](crate::model::EksConfiguration).
+    pub fn builder() -> crate::model::eks_configuration::Builder {
+        crate::model::eks_configuration::Builder::default()
+    }
+}
+
 /// See [`EksConfiguration`](crate::model::EksConfiguration).
 pub mod eks_configuration {
 
@@ -13171,12 +13247,6 @@ pub mod eks_configuration {
                 kubernetes_namespace: self.kubernetes_namespace,
             }
         }
-    }
-}
-impl EksConfiguration {
-    /// Creates a new builder-style object to manufacture [`EksConfiguration`](crate::model::EksConfiguration).
-    pub fn builder() -> crate::model::eks_configuration::Builder {
-        crate::model::eks_configuration::Builder::default()
     }
 }
 
@@ -13444,6 +13514,13 @@ impl ComputeResource {
         self.ec2_configuration.as_deref()
     }
 }
+impl ComputeResource {
+    /// Creates a new builder-style object to manufacture [`ComputeResource`](crate::model::ComputeResource).
+    pub fn builder() -> crate::model::compute_resource::Builder {
+        crate::model::compute_resource::Builder::default()
+    }
+}
+
 /// See [`ComputeResource`](crate::model::ComputeResource).
 pub mod compute_resource {
 
@@ -13863,12 +13940,6 @@ pub mod compute_resource {
                 ec2_configuration: self.ec2_configuration,
             }
         }
-    }
-}
-impl ComputeResource {
-    /// Creates a new builder-style object to manufacture [`ComputeResource`](crate::model::ComputeResource).
-    pub fn builder() -> crate::model::compute_resource::Builder {
-        crate::model::compute_resource::Builder::default()
     }
 }
 

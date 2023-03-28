@@ -4,7 +4,7 @@
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`analyze_document`](crate::client::Client::analyze_document).
 ///
-/// See [`crate::client::fluent_builders::AnalyzeDocument`] for more details about the operation.
+/// `ParseStrictResponse` impl for `AnalyzeDocument`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct AnalyzeDocument {
     _private: (),
@@ -39,7 +39,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AnalyzeDocument {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`analyze_expense`](crate::client::Client::analyze_expense).
 ///
-/// See [`crate::client::fluent_builders::AnalyzeExpense`] for more details about the operation.
+/// `ParseStrictResponse` impl for `AnalyzeExpense`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct AnalyzeExpense {
     _private: (),
@@ -72,7 +72,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AnalyzeExpense {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`analyze_id`](crate::client::Client::analyze_id).
 ///
-/// See [`crate::client::fluent_builders::AnalyzeID`] for more details about the operation.
+/// `ParseStrictResponse` impl for `AnalyzeID`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct AnalyzeID {
     _private: (),
@@ -104,7 +104,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AnalyzeID {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`detect_document_text`](crate::client::Client::detect_document_text).
 ///
-/// See [`crate::client::fluent_builders::DetectDocumentText`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DetectDocumentText`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DetectDocumentText {
     _private: (),
@@ -139,7 +139,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DetectDocumentText {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`get_document_analysis`](crate::client::Client::get_document_analysis).
 ///
-/// See [`crate::client::fluent_builders::GetDocumentAnalysis`] for more details about the operation.
+/// `ParseStrictResponse` impl for `GetDocumentAnalysis`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetDocumentAnalysis {
     _private: (),
@@ -174,7 +174,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDocumentAnalysis {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`get_document_text_detection`](crate::client::Client::get_document_text_detection).
 ///
-/// See [`crate::client::fluent_builders::GetDocumentTextDetection`] for more details about the operation.
+/// `ParseStrictResponse` impl for `GetDocumentTextDetection`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetDocumentTextDetection {
     _private: (),
@@ -209,7 +209,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDocumentTextDetection
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`get_expense_analysis`](crate::client::Client::get_expense_analysis).
 ///
-/// See [`crate::client::fluent_builders::GetExpenseAnalysis`] for more details about the operation.
+/// `ParseStrictResponse` impl for `GetExpenseAnalysis`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetExpenseAnalysis {
     _private: (),
@@ -244,7 +244,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetExpenseAnalysis {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`get_lending_analysis`](crate::client::Client::get_lending_analysis).
 ///
-/// See [`crate::client::fluent_builders::GetLendingAnalysis`] for more details about the operation.
+/// `ParseStrictResponse` impl for `GetLendingAnalysis`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetLendingAnalysis {
     _private: (),
@@ -279,7 +279,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetLendingAnalysis {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`get_lending_analysis_summary`](crate::client::Client::get_lending_analysis_summary).
 ///
-/// See [`crate::client::fluent_builders::GetLendingAnalysisSummary`] for more details about the operation.
+/// `ParseStrictResponse` impl for `GetLendingAnalysisSummary`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetLendingAnalysisSummary {
     _private: (),
@@ -314,7 +314,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetLendingAnalysisSummar
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`start_document_analysis`](crate::client::Client::start_document_analysis).
 ///
-/// See [`crate::client::fluent_builders::StartDocumentAnalysis`] for more details about the operation.
+/// `ParseStrictResponse` impl for `StartDocumentAnalysis`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StartDocumentAnalysis {
     _private: (),
@@ -349,7 +349,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartDocumentAnalysis {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`start_document_text_detection`](crate::client::Client::start_document_text_detection).
 ///
-/// See [`crate::client::fluent_builders::StartDocumentTextDetection`] for more details about the operation.
+/// `ParseStrictResponse` impl for `StartDocumentTextDetection`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StartDocumentTextDetection {
     _private: (),
@@ -384,7 +384,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartDocumentTextDetecti
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`start_expense_analysis`](crate::client::Client::start_expense_analysis).
 ///
-/// See [`crate::client::fluent_builders::StartExpenseAnalysis`] for more details about the operation.
+/// `ParseStrictResponse` impl for `StartExpenseAnalysis`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StartExpenseAnalysis {
     _private: (),
@@ -419,7 +419,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartExpenseAnalysis {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`start_lending_analysis`](crate::client::Client::start_lending_analysis).
 ///
-/// See [`crate::client::fluent_builders::StartLendingAnalysis`] for more details about the operation.
+/// `ParseStrictResponse` impl for `StartLendingAnalysis`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StartLendingAnalysis {
     _private: (),

@@ -31,6 +31,13 @@ impl std::fmt::Debug for User {
         formatter.finish()
     }
 }
+impl User {
+    /// Creates a new builder-style object to manufacture [`User`](crate::model::User).
+    pub fn builder() -> crate::model::user::Builder {
+        crate::model::user::Builder::default()
+    }
+}
+
 /// See [`User`](crate::model::User).
 pub mod user {
 
@@ -81,12 +88,6 @@ pub mod user {
         }
     }
 }
-impl User {
-    /// Creates a new builder-style object to manufacture [`User`](crate::model::User).
-    pub fn builder() -> crate::model::user::Builder {
-        crate::model::user::Builder::default()
-    }
-}
 
 /// <p>Represents item metadata added to an Items dataset using the <code>PutItems</code> API. For more information see <a href="https://docs.aws.amazon.com/personalize/latest/dg/importing-items.html">Importing Items Incrementally</a>. </p>
 #[non_exhaustive]
@@ -119,6 +120,13 @@ impl std::fmt::Debug for Item {
         formatter.finish()
     }
 }
+impl Item {
+    /// Creates a new builder-style object to manufacture [`Item`](crate::model::Item).
+    pub fn builder() -> crate::model::item::Builder {
+        crate::model::item::Builder::default()
+    }
+}
+
 /// See [`Item`](crate::model::Item).
 pub mod item {
 
@@ -167,12 +175,6 @@ pub mod item {
             formatter.field("properties", &"*** Sensitive Data Redacted ***");
             formatter.finish()
         }
-    }
-}
-impl Item {
-    /// Creates a new builder-style object to manufacture [`Item`](crate::model::Item).
-    pub fn builder() -> crate::model::item::Builder {
-        crate::model::item::Builder::default()
     }
 }
 
@@ -269,6 +271,13 @@ impl std::fmt::Debug for Event {
         formatter.finish()
     }
 }
+impl Event {
+    /// Creates a new builder-style object to manufacture [`Event`](crate::model::Event).
+    pub fn builder() -> crate::model::event::Builder {
+        crate::model::event::Builder::default()
+    }
+}
+
 /// See [`Event`](crate::model::Event).
 pub mod event {
 
@@ -434,12 +443,6 @@ pub mod event {
         }
     }
 }
-impl Event {
-    /// Creates a new builder-style object to manufacture [`Event`](crate::model::Event).
-    pub fn builder() -> crate::model::event::Builder {
-        crate::model::event::Builder::default()
-    }
-}
 
 /// <p>Contains information about a metric attribution associated with an event. For more information about metric attributions, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/measuring-recommendation-impact.html">Measuring impact of recommendations</a>.</p>
 #[non_exhaustive]
@@ -455,6 +458,13 @@ impl MetricAttribution {
         self.event_attribution_source.as_deref()
     }
 }
+impl MetricAttribution {
+    /// Creates a new builder-style object to manufacture [`MetricAttribution`](crate::model::MetricAttribution).
+    pub fn builder() -> crate::model::metric_attribution::Builder {
+        crate::model::metric_attribution::Builder::default()
+    }
+}
+
 /// See [`MetricAttribution`](crate::model::MetricAttribution).
 pub mod metric_attribution {
 
@@ -484,11 +494,5 @@ pub mod metric_attribution {
                 event_attribution_source: self.event_attribution_source,
             }
         }
-    }
-}
-impl MetricAttribution {
-    /// Creates a new builder-style object to manufacture [`MetricAttribution`](crate::model::MetricAttribution).
-    pub fn builder() -> crate::model::metric_attribution::Builder {
-        crate::model::metric_attribution::Builder::default()
     }
 }

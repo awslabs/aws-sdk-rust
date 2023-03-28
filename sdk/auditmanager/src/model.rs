@@ -21,6 +21,13 @@ impl ValidationExceptionField {
         self.message.as_deref()
     }
 }
+impl ValidationExceptionField {
+    /// Creates a new builder-style object to manufacture [`ValidationExceptionField`](crate::model::ValidationExceptionField).
+    pub fn builder() -> crate::model::validation_exception_field::Builder {
+        crate::model::validation_exception_field::Builder::default()
+    }
+}
+
 /// See [`ValidationExceptionField`](crate::model::ValidationExceptionField).
 pub mod validation_exception_field {
 
@@ -59,12 +66,6 @@ pub mod validation_exception_field {
                 message: self.message,
             }
         }
-    }
-}
-impl ValidationExceptionField {
-    /// Creates a new builder-style object to manufacture [`ValidationExceptionField`](crate::model::ValidationExceptionField).
-    pub fn builder() -> crate::model::validation_exception_field::Builder {
-        crate::model::validation_exception_field::Builder::default()
     }
 }
 
@@ -238,6 +239,13 @@ impl Settings {
         self.deregistration_policy.as_ref()
     }
 }
+impl Settings {
+    /// Creates a new builder-style object to manufacture [`Settings`](crate::model::Settings).
+    pub fn builder() -> crate::model::settings::Builder {
+        crate::model::settings::Builder::default()
+    }
+}
+
 /// See [`Settings`](crate::model::Settings).
 pub mod settings {
 
@@ -364,12 +372,6 @@ pub mod settings {
         }
     }
 }
-impl Settings {
-    /// Creates a new builder-style object to manufacture [`Settings`](crate::model::Settings).
-    pub fn builder() -> crate::model::settings::Builder {
-        crate::model::settings::Builder::default()
-    }
-}
 
 /// <p>The deregistration policy for the data that's stored in Audit Manager. You can use this attribute to determine how your data is handled when you <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_DeregisterAccount.html">deregister Audit Manager</a>.</p>
 /// <p>By default, Audit Manager retains evidence data for two years from the time of its creation. Other Audit Manager resources (including assessments, custom controls, and custom frameworks) remain in Audit Manager indefinitely, and are available if you <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_RegisterAccount.html">re-register Audit Manager</a> in the future. For more information about data retention, see <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/data-protection.html">Data Protection</a> in the <i>Audit Manager User Guide</i>.</p> <important>
@@ -396,6 +398,13 @@ impl DeregistrationPolicy {
         self.delete_resources.as_ref()
     }
 }
+impl DeregistrationPolicy {
+    /// Creates a new builder-style object to manufacture [`DeregistrationPolicy`](crate::model::DeregistrationPolicy).
+    pub fn builder() -> crate::model::deregistration_policy::Builder {
+        crate::model::deregistration_policy::Builder::default()
+    }
+}
+
 /// See [`DeregistrationPolicy`](crate::model::DeregistrationPolicy).
 pub mod deregistration_policy {
 
@@ -433,12 +442,6 @@ pub mod deregistration_policy {
                 delete_resources: self.delete_resources,
             }
         }
-    }
-}
-impl DeregistrationPolicy {
-    /// Creates a new builder-style object to manufacture [`DeregistrationPolicy`](crate::model::DeregistrationPolicy).
-    pub fn builder() -> crate::model::deregistration_policy::Builder {
-        crate::model::deregistration_policy::Builder::default()
     }
 }
 
@@ -595,6 +598,13 @@ impl EvidenceFinderEnablement {
         self.error.as_deref()
     }
 }
+impl EvidenceFinderEnablement {
+    /// Creates a new builder-style object to manufacture [`EvidenceFinderEnablement`](crate::model::EvidenceFinderEnablement).
+    pub fn builder() -> crate::model::evidence_finder_enablement::Builder {
+        crate::model::evidence_finder_enablement::Builder::default()
+    }
+}
+
 /// See [`EvidenceFinderEnablement`](crate::model::EvidenceFinderEnablement).
 pub mod evidence_finder_enablement {
 
@@ -697,12 +707,6 @@ pub mod evidence_finder_enablement {
                 error: self.error,
             }
         }
-    }
-}
-impl EvidenceFinderEnablement {
-    /// Creates a new builder-style object to manufacture [`EvidenceFinderEnablement`](crate::model::EvidenceFinderEnablement).
-    pub fn builder() -> crate::model::evidence_finder_enablement::Builder {
-        crate::model::evidence_finder_enablement::Builder::default()
     }
 }
 
@@ -939,6 +943,13 @@ impl Role {
         self.role_arn.as_deref()
     }
 }
+impl Role {
+    /// Creates a new builder-style object to manufacture [`Role`](crate::model::Role).
+    pub fn builder() -> crate::model::role::Builder {
+        crate::model::role::Builder::default()
+    }
+}
+
 /// See [`Role`](crate::model::Role).
 pub mod role {
 
@@ -985,12 +996,6 @@ pub mod role {
                 role_arn: self.role_arn,
             }
         }
-    }
-}
-impl Role {
-    /// Creates a new builder-style object to manufacture [`Role`](crate::model::Role).
-    pub fn builder() -> crate::model::role::Builder {
-        crate::model::role::Builder::default()
     }
 }
 
@@ -1107,6 +1112,13 @@ impl AssessmentReportsDestination {
         self.destination.as_deref()
     }
 }
+impl AssessmentReportsDestination {
+    /// Creates a new builder-style object to manufacture [`AssessmentReportsDestination`](crate::model::AssessmentReportsDestination).
+    pub fn builder() -> crate::model::assessment_reports_destination::Builder {
+        crate::model::assessment_reports_destination::Builder::default()
+    }
+}
+
 /// See [`AssessmentReportsDestination`](crate::model::AssessmentReportsDestination).
 pub mod assessment_reports_destination {
 
@@ -1152,12 +1164,6 @@ pub mod assessment_reports_destination {
                 destination: self.destination,
             }
         }
-    }
-}
-impl AssessmentReportsDestination {
-    /// Creates a new builder-style object to manufacture [`AssessmentReportsDestination`](crate::model::AssessmentReportsDestination).
-    pub fn builder() -> crate::model::assessment_reports_destination::Builder {
-        crate::model::assessment_reports_destination::Builder::default()
     }
 }
 
@@ -1367,6 +1373,13 @@ impl Control {
         self.tags.as_ref()
     }
 }
+impl Control {
+    /// Creates a new builder-style object to manufacture [`Control`](crate::model::Control).
+    pub fn builder() -> crate::model::control::Builder {
+        crate::model::control::Builder::default()
+    }
+}
+
 /// See [`Control`](crate::model::Control).
 pub mod control {
 
@@ -1614,12 +1627,6 @@ pub mod control {
         }
     }
 }
-impl Control {
-    /// Creates a new builder-style object to manufacture [`Control`](crate::model::Control).
-    pub fn builder() -> crate::model::control::Builder {
-        crate::model::control::Builder::default()
-    }
-}
 
 /// <p> The data source that determines where Audit Manager collects evidence from for the control. </p>
 #[non_exhaustive]
@@ -1698,6 +1705,13 @@ impl ControlMappingSource {
         self.troubleshooting_text.as_deref()
     }
 }
+impl ControlMappingSource {
+    /// Creates a new builder-style object to manufacture [`ControlMappingSource`](crate::model::ControlMappingSource).
+    pub fn builder() -> crate::model::control_mapping_source::Builder {
+        crate::model::control_mapping_source::Builder::default()
+    }
+}
+
 /// See [`ControlMappingSource`](crate::model::ControlMappingSource).
 pub mod control_mapping_source {
 
@@ -1840,12 +1854,6 @@ pub mod control_mapping_source {
                 troubleshooting_text: self.troubleshooting_text,
             }
         }
-    }
-}
-impl ControlMappingSource {
-    /// Creates a new builder-style object to manufacture [`ControlMappingSource`](crate::model::ControlMappingSource).
-    pub fn builder() -> crate::model::control_mapping_source::Builder {
-        crate::model::control_mapping_source::Builder::default()
     }
 }
 
@@ -2004,6 +2012,13 @@ impl SourceKeyword {
         self.keyword_value.as_deref()
     }
 }
+impl SourceKeyword {
+    /// Creates a new builder-style object to manufacture [`SourceKeyword`](crate::model::SourceKeyword).
+    pub fn builder() -> crate::model::source_keyword::Builder {
+        crate::model::source_keyword::Builder::default()
+    }
+}
+
 /// See [`SourceKeyword`](crate::model::SourceKeyword).
 pub mod source_keyword {
 
@@ -2080,12 +2095,6 @@ pub mod source_keyword {
                 keyword_value: self.keyword_value,
             }
         }
-    }
-}
-impl SourceKeyword {
-    /// Creates a new builder-style object to manufacture [`SourceKeyword`](crate::model::SourceKeyword).
-    pub fn builder() -> crate::model::source_keyword::Builder {
-        crate::model::source_keyword::Builder::default()
     }
 }
 
@@ -2513,6 +2522,13 @@ impl Assessment {
         self.tags.as_ref()
     }
 }
+impl Assessment {
+    /// Creates a new builder-style object to manufacture [`Assessment`](crate::model::Assessment).
+    pub fn builder() -> crate::model::assessment::Builder {
+        crate::model::assessment::Builder::default()
+    }
+}
+
 /// See [`Assessment`](crate::model::Assessment).
 pub mod assessment {
 
@@ -2615,12 +2631,6 @@ pub mod assessment {
         }
     }
 }
-impl Assessment {
-    /// Creates a new builder-style object to manufacture [`Assessment`](crate::model::Assessment).
-    pub fn builder() -> crate::model::assessment::Builder {
-        crate::model::assessment::Builder::default()
-    }
-}
 
 /// <p> The file used to structure and automate Audit Manager assessments for a given compliance standard. </p>
 #[non_exhaustive]
@@ -2657,6 +2667,13 @@ impl AssessmentFramework {
         self.control_sets.as_deref()
     }
 }
+impl AssessmentFramework {
+    /// Creates a new builder-style object to manufacture [`AssessmentFramework`](crate::model::AssessmentFramework).
+    pub fn builder() -> crate::model::assessment_framework::Builder {
+        crate::model::assessment_framework::Builder::default()
+    }
+}
+
 /// See [`AssessmentFramework`](crate::model::AssessmentFramework).
 pub mod assessment_framework {
 
@@ -2734,12 +2751,6 @@ pub mod assessment_framework {
         }
     }
 }
-impl AssessmentFramework {
-    /// Creates a new builder-style object to manufacture [`AssessmentFramework`](crate::model::AssessmentFramework).
-    pub fn builder() -> crate::model::assessment_framework::Builder {
-        crate::model::assessment_framework::Builder::default()
-    }
-}
 
 /// <p> Represents a set of controls in an Audit Manager assessment. </p>
 #[non_exhaustive]
@@ -2804,6 +2815,13 @@ impl AssessmentControlSet {
         self.manual_evidence_count
     }
 }
+impl AssessmentControlSet {
+    /// Creates a new builder-style object to manufacture [`AssessmentControlSet`](crate::model::AssessmentControlSet).
+    pub fn builder() -> crate::model::assessment_control_set::Builder {
+        crate::model::assessment_control_set::Builder::default()
+    }
+}
+
 /// See [`AssessmentControlSet`](crate::model::AssessmentControlSet).
 pub mod assessment_control_set {
 
@@ -2946,12 +2964,6 @@ pub mod assessment_control_set {
         }
     }
 }
-impl AssessmentControlSet {
-    /// Creates a new builder-style object to manufacture [`AssessmentControlSet`](crate::model::AssessmentControlSet).
-    pub fn builder() -> crate::model::assessment_control_set::Builder {
-        crate::model::assessment_control_set::Builder::default()
-    }
-}
 
 /// <p> The assignment of a control set to a delegate for review. </p>
 #[non_exhaustive]
@@ -3045,6 +3057,13 @@ impl Delegation {
         self.created_by.as_deref()
     }
 }
+impl Delegation {
+    /// Creates a new builder-style object to manufacture [`Delegation`](crate::model::Delegation).
+    pub fn builder() -> crate::model::delegation::Builder {
+        crate::model::delegation::Builder::default()
+    }
+}
+
 /// See [`Delegation`](crate::model::Delegation).
 pub mod delegation {
 
@@ -3219,12 +3238,6 @@ pub mod delegation {
         }
     }
 }
-impl Delegation {
-    /// Creates a new builder-style object to manufacture [`Delegation`](crate::model::Delegation).
-    pub fn builder() -> crate::model::delegation::Builder {
-        crate::model::delegation::Builder::default()
-    }
-}
 
 /// When writing a match expression against `DelegationStatus`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -3391,6 +3404,13 @@ impl AssessmentControl {
         self.assessment_report_evidence_count
     }
 }
+impl AssessmentControl {
+    /// Creates a new builder-style object to manufacture [`AssessmentControl`](crate::model::AssessmentControl).
+    pub fn builder() -> crate::model::assessment_control::Builder {
+        crate::model::assessment_control::Builder::default()
+    }
+}
+
 /// See [`AssessmentControl`](crate::model::AssessmentControl).
 pub mod assessment_control {
 
@@ -3544,12 +3564,6 @@ pub mod assessment_control {
         }
     }
 }
-impl AssessmentControl {
-    /// Creates a new builder-style object to manufacture [`AssessmentControl`](crate::model::AssessmentControl).
-    pub fn builder() -> crate::model::assessment_control::Builder {
-        crate::model::assessment_control::Builder::default()
-    }
-}
 
 /// <p> A comment that's posted by a user on a control. This includes the author's name, the comment text, and a timestamp. </p>
 #[non_exhaustive]
@@ -3579,6 +3593,13 @@ impl ControlComment {
         self.posted_date.as_ref()
     }
 }
+impl ControlComment {
+    /// Creates a new builder-style object to manufacture [`ControlComment`](crate::model::ControlComment).
+    pub fn builder() -> crate::model::control_comment::Builder {
+        crate::model::control_comment::Builder::default()
+    }
+}
+
 /// See [`ControlComment`](crate::model::ControlComment).
 pub mod control_comment {
 
@@ -3632,12 +3653,6 @@ pub mod control_comment {
                 posted_date: self.posted_date,
             }
         }
-    }
-}
-impl ControlComment {
-    /// Creates a new builder-style object to manufacture [`ControlComment`](crate::model::ControlComment).
-    pub fn builder() -> crate::model::control_comment::Builder {
-        crate::model::control_comment::Builder::default()
     }
 }
 
@@ -3966,6 +3981,13 @@ impl FrameworkMetadata {
         self.compliance_type.as_deref()
     }
 }
+impl FrameworkMetadata {
+    /// Creates a new builder-style object to manufacture [`FrameworkMetadata`](crate::model::FrameworkMetadata).
+    pub fn builder() -> crate::model::framework_metadata::Builder {
+        crate::model::framework_metadata::Builder::default()
+    }
+}
+
 /// See [`FrameworkMetadata`](crate::model::FrameworkMetadata).
 pub mod framework_metadata {
 
@@ -4031,12 +4053,6 @@ pub mod framework_metadata {
                 compliance_type: self.compliance_type,
             }
         }
-    }
-}
-impl FrameworkMetadata {
-    /// Creates a new builder-style object to manufacture [`FrameworkMetadata`](crate::model::FrameworkMetadata).
-    pub fn builder() -> crate::model::framework_metadata::Builder {
-        crate::model::framework_metadata::Builder::default()
     }
 }
 
@@ -4127,6 +4143,13 @@ impl AssessmentMetadata {
         self.last_updated.as_ref()
     }
 }
+impl AssessmentMetadata {
+    /// Creates a new builder-style object to manufacture [`AssessmentMetadata`](crate::model::AssessmentMetadata).
+    pub fn builder() -> crate::model::assessment_metadata::Builder {
+        crate::model::assessment_metadata::Builder::default()
+    }
+}
+
 /// See [`AssessmentMetadata`](crate::model::AssessmentMetadata).
 pub mod assessment_metadata {
 
@@ -4312,12 +4335,6 @@ pub mod assessment_metadata {
         }
     }
 }
-impl AssessmentMetadata {
-    /// Creates a new builder-style object to manufacture [`AssessmentMetadata`](crate::model::AssessmentMetadata).
-    pub fn builder() -> crate::model::assessment_metadata::Builder {
-        crate::model::assessment_metadata::Builder::default()
-    }
-}
 
 /// <p> The wrapper that contains the Amazon Web Services accounts and services that are in scope for the assessment. </p>
 #[non_exhaustive]
@@ -4340,6 +4357,13 @@ impl Scope {
         self.aws_services.as_deref()
     }
 }
+impl Scope {
+    /// Creates a new builder-style object to manufacture [`Scope`](crate::model::Scope).
+    pub fn builder() -> crate::model::scope::Builder {
+        crate::model::scope::Builder::default()
+    }
+}
+
 /// See [`Scope`](crate::model::Scope).
 pub mod scope {
 
@@ -4398,12 +4422,6 @@ pub mod scope {
         }
     }
 }
-impl Scope {
-    /// Creates a new builder-style object to manufacture [`Scope`](crate::model::Scope).
-    pub fn builder() -> crate::model::scope::Builder {
-        crate::model::scope::Builder::default()
-    }
-}
 
 /// <p> An Amazon Web Service such as Amazon S3 or CloudTrail. </p>
 #[non_exhaustive]
@@ -4419,6 +4437,13 @@ impl AwsService {
         self.service_name.as_deref()
     }
 }
+impl AwsService {
+    /// Creates a new builder-style object to manufacture [`AwsService`](crate::model::AwsService).
+    pub fn builder() -> crate::model::aws_service::Builder {
+        crate::model::aws_service::Builder::default()
+    }
+}
+
 /// See [`AwsService`](crate::model::AwsService).
 pub mod aws_service {
 
@@ -4445,12 +4470,6 @@ pub mod aws_service {
                 service_name: self.service_name,
             }
         }
-    }
-}
-impl AwsService {
-    /// Creates a new builder-style object to manufacture [`AwsService`](crate::model::AwsService).
-    pub fn builder() -> crate::model::aws_service::Builder {
-        crate::model::aws_service::Builder::default()
     }
 }
 
@@ -4482,6 +4501,13 @@ impl AwsAccount {
         self.name.as_deref()
     }
 }
+impl AwsAccount {
+    /// Creates a new builder-style object to manufacture [`AwsAccount`](crate::model::AwsAccount).
+    pub fn builder() -> crate::model::aws_account::Builder {
+        crate::model::aws_account::Builder::default()
+    }
+}
+
 /// See [`AwsAccount`](crate::model::AwsAccount).
 pub mod aws_account {
 
@@ -4535,12 +4561,6 @@ pub mod aws_account {
                 name: self.name,
             }
         }
-    }
-}
-impl AwsAccount {
-    /// Creates a new builder-style object to manufacture [`AwsAccount`](crate::model::AwsAccount).
-    pub fn builder() -> crate::model::aws_account::Builder {
-        crate::model::aws_account::Builder::default()
     }
 }
 
@@ -4746,6 +4766,13 @@ impl AssessmentFrameworkShareRequest {
         self.compliance_type.as_deref()
     }
 }
+impl AssessmentFrameworkShareRequest {
+    /// Creates a new builder-style object to manufacture [`AssessmentFrameworkShareRequest`](crate::model::AssessmentFrameworkShareRequest).
+    pub fn builder() -> crate::model::assessment_framework_share_request::Builder {
+        crate::model::assessment_framework_share_request::Builder::default()
+    }
+}
+
 /// See [`AssessmentFrameworkShareRequest`](crate::model::AssessmentFrameworkShareRequest).
 pub mod assessment_framework_share_request {
 
@@ -4970,12 +4997,6 @@ pub mod assessment_framework_share_request {
                 compliance_type: self.compliance_type,
             }
         }
-    }
-}
-impl AssessmentFrameworkShareRequest {
-    /// Creates a new builder-style object to manufacture [`AssessmentFrameworkShareRequest`](crate::model::AssessmentFrameworkShareRequest).
-    pub fn builder() -> crate::model::assessment_framework_share_request::Builder {
-        crate::model::assessment_framework_share_request::Builder::default()
     }
 }
 
@@ -5406,6 +5427,13 @@ impl Framework {
         self.tags.as_ref()
     }
 }
+impl Framework {
+    /// Creates a new builder-style object to manufacture [`Framework`](crate::model::Framework).
+    pub fn builder() -> crate::model::framework::Builder {
+        crate::model::framework::Builder::default()
+    }
+}
+
 /// See [`Framework`](crate::model::Framework).
 pub mod framework {
 
@@ -5631,12 +5659,6 @@ pub mod framework {
         }
     }
 }
-impl Framework {
-    /// Creates a new builder-style object to manufacture [`Framework`](crate::model::Framework).
-    pub fn builder() -> crate::model::framework::Builder {
-        crate::model::framework::Builder::default()
-    }
-}
 
 /// <p> A set of controls in Audit Manager. </p>
 #[non_exhaustive]
@@ -5666,6 +5688,13 @@ impl ControlSet {
         self.controls.as_deref()
     }
 }
+impl ControlSet {
+    /// Creates a new builder-style object to manufacture [`ControlSet`](crate::model::ControlSet).
+    pub fn builder() -> crate::model::control_set::Builder {
+        crate::model::control_set::Builder::default()
+    }
+}
+
 /// See [`ControlSet`](crate::model::ControlSet).
 pub mod control_set {
 
@@ -5725,12 +5754,6 @@ pub mod control_set {
                 controls: self.controls,
             }
         }
-    }
-}
-impl ControlSet {
-    /// Creates a new builder-style object to manufacture [`ControlSet`](crate::model::ControlSet).
-    pub fn builder() -> crate::model::control_set::Builder {
-        crate::model::control_set::Builder::default()
     }
 }
 
@@ -5855,6 +5878,13 @@ impl UpdateAssessmentFrameworkControlSet {
         self.controls.as_deref()
     }
 }
+impl UpdateAssessmentFrameworkControlSet {
+    /// Creates a new builder-style object to manufacture [`UpdateAssessmentFrameworkControlSet`](crate::model::UpdateAssessmentFrameworkControlSet).
+    pub fn builder() -> crate::model::update_assessment_framework_control_set::Builder {
+        crate::model::update_assessment_framework_control_set::Builder::default()
+    }
+}
+
 /// See [`UpdateAssessmentFrameworkControlSet`](crate::model::UpdateAssessmentFrameworkControlSet).
 pub mod update_assessment_framework_control_set {
 
@@ -5919,12 +5949,6 @@ pub mod update_assessment_framework_control_set {
         }
     }
 }
-impl UpdateAssessmentFrameworkControlSet {
-    /// Creates a new builder-style object to manufacture [`UpdateAssessmentFrameworkControlSet`](crate::model::UpdateAssessmentFrameworkControlSet).
-    pub fn builder() -> crate::model::update_assessment_framework_control_set::Builder {
-        crate::model::update_assessment_framework_control_set::Builder::default()
-    }
-}
 
 /// <p> The control entity attributes that uniquely identify an existing control to be added to a framework in Audit Manager. </p>
 #[non_exhaustive]
@@ -5940,6 +5964,13 @@ impl CreateAssessmentFrameworkControl {
         self.id.as_deref()
     }
 }
+impl CreateAssessmentFrameworkControl {
+    /// Creates a new builder-style object to manufacture [`CreateAssessmentFrameworkControl`](crate::model::CreateAssessmentFrameworkControl).
+    pub fn builder() -> crate::model::create_assessment_framework_control::Builder {
+        crate::model::create_assessment_framework_control::Builder::default()
+    }
+}
+
 /// See [`CreateAssessmentFrameworkControl`](crate::model::CreateAssessmentFrameworkControl).
 pub mod create_assessment_framework_control {
 
@@ -5964,12 +5995,6 @@ pub mod create_assessment_framework_control {
         pub fn build(self) -> crate::model::CreateAssessmentFrameworkControl {
             crate::model::CreateAssessmentFrameworkControl { id: self.id }
         }
-    }
-}
-impl CreateAssessmentFrameworkControl {
-    /// Creates a new builder-style object to manufacture [`CreateAssessmentFrameworkControl`](crate::model::CreateAssessmentFrameworkControl).
-    pub fn builder() -> crate::model::create_assessment_framework_control::Builder {
-        crate::model::create_assessment_framework_control::Builder::default()
     }
 }
 
@@ -6131,6 +6156,13 @@ impl Notification {
         self.source.as_deref()
     }
 }
+impl Notification {
+    /// Creates a new builder-style object to manufacture [`Notification`](crate::model::Notification).
+    pub fn builder() -> crate::model::notification::Builder {
+        crate::model::notification::Builder::default()
+    }
+}
+
 /// See [`Notification`](crate::model::Notification).
 pub mod notification {
 
@@ -6258,12 +6290,6 @@ pub mod notification {
         }
     }
 }
-impl Notification {
-    /// Creates a new builder-style object to manufacture [`Notification`](crate::model::Notification).
-    pub fn builder() -> crate::model::notification::Builder {
-        crate::model::notification::Builder::default()
-    }
-}
 
 /// <p> The metadata that's associated with the standard control or custom control. </p>
 #[non_exhaustive]
@@ -6314,6 +6340,13 @@ impl ControlMetadata {
         self.last_updated_at.as_ref()
     }
 }
+impl ControlMetadata {
+    /// Creates a new builder-style object to manufacture [`ControlMetadata`](crate::model::ControlMetadata).
+    pub fn builder() -> crate::model::control_metadata::Builder {
+        crate::model::control_metadata::Builder::default()
+    }
+}
+
 /// See [`ControlMetadata`](crate::model::ControlMetadata).
 pub mod control_metadata {
 
@@ -6411,12 +6444,6 @@ pub mod control_metadata {
         }
     }
 }
-impl ControlMetadata {
-    /// Creates a new builder-style object to manufacture [`ControlMetadata`](crate::model::ControlMetadata).
-    pub fn builder() -> crate::model::control_metadata::Builder {
-        crate::model::control_metadata::Builder::default()
-    }
-}
 
 /// <p>A summary of the latest analytics data for a specific control. </p>
 /// <p>This data reflects the total counts for the specified control across all active assessments. Control insights are grouped by control domain, and ranked by the highest total count of non-compliant evidence.</p>
@@ -6454,6 +6481,13 @@ impl ControlInsightsMetadataItem {
         self.last_updated.as_ref()
     }
 }
+impl ControlInsightsMetadataItem {
+    /// Creates a new builder-style object to manufacture [`ControlInsightsMetadataItem`](crate::model::ControlInsightsMetadataItem).
+    pub fn builder() -> crate::model::control_insights_metadata_item::Builder {
+        crate::model::control_insights_metadata_item::Builder::default()
+    }
+}
+
 /// See [`ControlInsightsMetadataItem`](crate::model::ControlInsightsMetadataItem).
 pub mod control_insights_metadata_item {
 
@@ -6524,12 +6558,6 @@ pub mod control_insights_metadata_item {
         }
     }
 }
-impl ControlInsightsMetadataItem {
-    /// Creates a new builder-style object to manufacture [`ControlInsightsMetadataItem`](crate::model::ControlInsightsMetadataItem).
-    pub fn builder() -> crate::model::control_insights_metadata_item::Builder {
-        crate::model::control_insights_metadata_item::Builder::default()
-    }
-}
 
 /// <p>A breakdown of the latest compliance check status for the evidence in your Audit Manager assessments. </p>
 #[non_exhaustive]
@@ -6563,6 +6591,13 @@ impl EvidenceInsights {
         self.inconclusive_evidence_count
     }
 }
+impl EvidenceInsights {
+    /// Creates a new builder-style object to manufacture [`EvidenceInsights`](crate::model::EvidenceInsights).
+    pub fn builder() -> crate::model::evidence_insights::Builder {
+        crate::model::evidence_insights::Builder::default()
+    }
+}
+
 /// See [`EvidenceInsights`](crate::model::EvidenceInsights).
 pub mod evidence_insights {
 
@@ -6619,12 +6654,6 @@ pub mod evidence_insights {
         }
     }
 }
-impl EvidenceInsights {
-    /// Creates a new builder-style object to manufacture [`EvidenceInsights`](crate::model::EvidenceInsights).
-    pub fn builder() -> crate::model::evidence_insights::Builder {
-        crate::model::evidence_insights::Builder::default()
-    }
-}
 
 /// <p>A summary of the latest analytics data for a specific control domain.</p>
 /// <p>Control domain insights are grouped by control domain, and ranked by the highest total count of non-compliant evidence.</p>
@@ -6676,6 +6705,13 @@ impl ControlDomainInsights {
         self.last_updated.as_ref()
     }
 }
+impl ControlDomainInsights {
+    /// Creates a new builder-style object to manufacture [`ControlDomainInsights`](crate::model::ControlDomainInsights).
+    pub fn builder() -> crate::model::control_domain_insights::Builder {
+        crate::model::control_domain_insights::Builder::default()
+    }
+}
+
 /// See [`ControlDomainInsights`](crate::model::ControlDomainInsights).
 pub mod control_domain_insights {
 
@@ -6774,12 +6810,6 @@ pub mod control_domain_insights {
         }
     }
 }
-impl ControlDomainInsights {
-    /// Creates a new builder-style object to manufacture [`ControlDomainInsights`](crate::model::ControlDomainInsights).
-    pub fn builder() -> crate::model::control_domain_insights::Builder {
-        crate::model::control_domain_insights::Builder::default()
-    }
-}
 
 /// <p> A metadata object that's associated with an assessment in Audit Manager. </p>
 #[non_exhaustive]
@@ -6844,6 +6874,13 @@ impl AssessmentMetadataItem {
         self.last_updated.as_ref()
     }
 }
+impl AssessmentMetadataItem {
+    /// Creates a new builder-style object to manufacture [`AssessmentMetadataItem`](crate::model::AssessmentMetadataItem).
+    pub fn builder() -> crate::model::assessment_metadata_item::Builder {
+        crate::model::assessment_metadata_item::Builder::default()
+    }
+}
+
 /// See [`AssessmentMetadataItem`](crate::model::AssessmentMetadataItem).
 pub mod assessment_metadata_item {
 
@@ -6986,12 +7023,6 @@ pub mod assessment_metadata_item {
         }
     }
 }
-impl AssessmentMetadataItem {
-    /// Creates a new builder-style object to manufacture [`AssessmentMetadataItem`](crate::model::AssessmentMetadataItem).
-    pub fn builder() -> crate::model::assessment_metadata_item::Builder {
-        crate::model::assessment_metadata_item::Builder::default()
-    }
-}
 
 /// <p> The metadata objects that are associated with the specified assessment report. </p>
 #[non_exhaustive]
@@ -7056,6 +7087,13 @@ impl AssessmentReportMetadata {
         self.creation_time.as_ref()
     }
 }
+impl AssessmentReportMetadata {
+    /// Creates a new builder-style object to manufacture [`AssessmentReportMetadata`](crate::model::AssessmentReportMetadata).
+    pub fn builder() -> crate::model::assessment_report_metadata::Builder {
+        crate::model::assessment_report_metadata::Builder::default()
+    }
+}
+
 /// See [`AssessmentReportMetadata`](crate::model::AssessmentReportMetadata).
 pub mod assessment_report_metadata {
 
@@ -7178,12 +7216,6 @@ pub mod assessment_report_metadata {
                 creation_time: self.creation_time,
             }
         }
-    }
-}
-impl AssessmentReportMetadata {
-    /// Creates a new builder-style object to manufacture [`AssessmentReportMetadata`](crate::model::AssessmentReportMetadata).
-    pub fn builder() -> crate::model::assessment_report_metadata::Builder {
-        crate::model::assessment_report_metadata::Builder::default()
     }
 }
 
@@ -7368,6 +7400,13 @@ impl AssessmentFrameworkMetadata {
         self.last_updated_at.as_ref()
     }
 }
+impl AssessmentFrameworkMetadata {
+    /// Creates a new builder-style object to manufacture [`AssessmentFrameworkMetadata`](crate::model::AssessmentFrameworkMetadata).
+    pub fn builder() -> crate::model::assessment_framework_metadata::Builder {
+        crate::model::assessment_framework_metadata::Builder::default()
+    }
+}
+
 /// See [`AssessmentFrameworkMetadata`](crate::model::AssessmentFrameworkMetadata).
 pub mod assessment_framework_metadata {
 
@@ -7525,12 +7564,6 @@ pub mod assessment_framework_metadata {
         }
     }
 }
-impl AssessmentFrameworkMetadata {
-    /// Creates a new builder-style object to manufacture [`AssessmentFrameworkMetadata`](crate::model::AssessmentFrameworkMetadata).
-    pub fn builder() -> crate::model::assessment_framework_metadata::Builder {
-        crate::model::assessment_framework_metadata::Builder::default()
-    }
-}
 
 /// <p>A summary of the latest analytics data for a specific control in a specific active assessment.</p>
 /// <p>Control insights are grouped by control domain, and ranked by the highest total count of non-compliant evidence. </p>
@@ -7575,6 +7608,13 @@ impl ControlInsightsMetadataByAssessmentItem {
         self.last_updated.as_ref()
     }
 }
+impl ControlInsightsMetadataByAssessmentItem {
+    /// Creates a new builder-style object to manufacture [`ControlInsightsMetadataByAssessmentItem`](crate::model::ControlInsightsMetadataByAssessmentItem).
+    pub fn builder() -> crate::model::control_insights_metadata_by_assessment_item::Builder {
+        crate::model::control_insights_metadata_by_assessment_item::Builder::default()
+    }
+}
+
 /// See [`ControlInsightsMetadataByAssessmentItem`](crate::model::ControlInsightsMetadataByAssessmentItem).
 pub mod control_insights_metadata_by_assessment_item {
 
@@ -7658,12 +7698,6 @@ pub mod control_insights_metadata_by_assessment_item {
                 last_updated: self.last_updated,
             }
         }
-    }
-}
-impl ControlInsightsMetadataByAssessmentItem {
-    /// Creates a new builder-style object to manufacture [`ControlInsightsMetadataByAssessmentItem`](crate::model::ControlInsightsMetadataByAssessmentItem).
-    pub fn builder() -> crate::model::control_insights_metadata_by_assessment_item::Builder {
-        crate::model::control_insights_metadata_by_assessment_item::Builder::default()
     }
 }
 
@@ -7829,6 +7863,13 @@ impl ServiceMetadata {
         self.category.as_deref()
     }
 }
+impl ServiceMetadata {
+    /// Creates a new builder-style object to manufacture [`ServiceMetadata`](crate::model::ServiceMetadata).
+    pub fn builder() -> crate::model::service_metadata::Builder {
+        crate::model::service_metadata::Builder::default()
+    }
+}
+
 /// See [`ServiceMetadata`](crate::model::ServiceMetadata).
 pub mod service_metadata {
 
@@ -7893,12 +7934,6 @@ pub mod service_metadata {
         }
     }
 }
-impl ServiceMetadata {
-    /// Creates a new builder-style object to manufacture [`ServiceMetadata`](crate::model::ServiceMetadata).
-    pub fn builder() -> crate::model::service_metadata::Builder {
-        crate::model::service_metadata::Builder::default()
-    }
-}
 
 /// <p>A summary of the latest analytics data for a specific active assessment.</p>
 /// <p>This summary is a snapshot of the data that was collected on the <code>lastUpdated</code> date. It’s important to understand that the totals in <code>InsightsByAssessment</code> are daily counts based on this date — they aren’t a total sum to date. </p>
@@ -7961,6 +7996,13 @@ impl InsightsByAssessment {
         self.last_updated.as_ref()
     }
 }
+impl InsightsByAssessment {
+    /// Creates a new builder-style object to manufacture [`InsightsByAssessment`](crate::model::InsightsByAssessment).
+    pub fn builder() -> crate::model::insights_by_assessment::Builder {
+        crate::model::insights_by_assessment::Builder::default()
+    }
+}
+
 /// See [`InsightsByAssessment`](crate::model::InsightsByAssessment).
 pub mod insights_by_assessment {
 
@@ -8063,12 +8105,6 @@ pub mod insights_by_assessment {
         }
     }
 }
-impl InsightsByAssessment {
-    /// Creates a new builder-style object to manufacture [`InsightsByAssessment`](crate::model::InsightsByAssessment).
-    pub fn builder() -> crate::model::insights_by_assessment::Builder {
-        crate::model::insights_by_assessment::Builder::default()
-    }
-}
 
 /// <p>A summary of the latest analytics data for all your active assessments. </p>
 /// <p>This summary is a snapshot of the data that your active assessments collected on the <code>lastUpdated</code> date. It’s important to understand that the following totals are daily counts based on this date — they aren’t a total sum to date. </p>
@@ -8138,6 +8174,13 @@ impl Insights {
         self.last_updated.as_ref()
     }
 }
+impl Insights {
+    /// Creates a new builder-style object to manufacture [`Insights`](crate::model::Insights).
+    pub fn builder() -> crate::model::insights::Builder {
+        crate::model::insights::Builder::default()
+    }
+}
+
 /// See [`Insights`](crate::model::Insights).
 pub mod insights {
 
@@ -8250,12 +8293,6 @@ pub mod insights {
                 last_updated: self.last_updated,
             }
         }
-    }
-}
-impl Insights {
-    /// Creates a new builder-style object to manufacture [`Insights`](crate::model::Insights).
-    pub fn builder() -> crate::model::insights::Builder {
-        crate::model::insights::Builder::default()
     }
 }
 
@@ -8392,6 +8429,13 @@ impl AssessmentEvidenceFolder {
         self.evidence_aws_service_source_count
     }
 }
+impl AssessmentEvidenceFolder {
+    /// Creates a new builder-style object to manufacture [`AssessmentEvidenceFolder`](crate::model::AssessmentEvidenceFolder).
+    pub fn builder() -> crate::model::assessment_evidence_folder::Builder {
+        crate::model::assessment_evidence_folder::Builder::default()
+    }
+}
+
 /// See [`AssessmentEvidenceFolder`](crate::model::AssessmentEvidenceFolder).
 pub mod assessment_evidence_folder {
 
@@ -8670,12 +8714,6 @@ pub mod assessment_evidence_folder {
         }
     }
 }
-impl AssessmentEvidenceFolder {
-    /// Creates a new builder-style object to manufacture [`AssessmentEvidenceFolder`](crate::model::AssessmentEvidenceFolder).
-    pub fn builder() -> crate::model::assessment_evidence_folder::Builder {
-        crate::model::assessment_evidence_folder::Builder::default()
-    }
-}
 
 /// <p> A record that contains the information needed to demonstrate compliance with the requirements specified by a control. Examples of evidence include change activity invoked by a user, or a system configuration snapshot. </p>
 #[non_exhaustive]
@@ -8803,6 +8841,13 @@ impl Evidence {
         self.assessment_report_selection.as_deref()
     }
 }
+impl Evidence {
+    /// Creates a new builder-style object to manufacture [`Evidence`](crate::model::Evidence).
+    pub fn builder() -> crate::model::evidence::Builder {
+        crate::model::evidence::Builder::default()
+    }
+}
+
 /// See [`Evidence`](crate::model::Evidence).
 pub mod evidence {
 
@@ -9059,12 +9104,6 @@ pub mod evidence {
         }
     }
 }
-impl Evidence {
-    /// Creates a new builder-style object to manufacture [`Evidence`](crate::model::Evidence).
-    pub fn builder() -> crate::model::evidence::Builder {
-        crate::model::evidence::Builder::default()
-    }
-}
 
 /// <p> A system asset that's evaluated in an Audit Manager assessment. </p>
 #[non_exhaustive]
@@ -9104,6 +9143,13 @@ impl Resource {
         self.compliance_check.as_deref()
     }
 }
+impl Resource {
+    /// Creates a new builder-style object to manufacture [`Resource`](crate::model::Resource).
+    pub fn builder() -> crate::model::resource::Builder {
+        crate::model::resource::Builder::default()
+    }
+}
+
 /// See [`Resource`](crate::model::Resource).
 pub mod resource {
 
@@ -9169,12 +9215,6 @@ pub mod resource {
         }
     }
 }
-impl Resource {
-    /// Creates a new builder-style object to manufacture [`Resource`](crate::model::Resource).
-    pub fn builder() -> crate::model::resource::Builder {
-        crate::model::resource::Builder::default()
-    }
-}
 
 /// <p> The metadata that's associated with the delegation. </p>
 #[non_exhaustive]
@@ -9232,6 +9272,13 @@ impl DelegationMetadata {
         self.control_set_name.as_deref()
     }
 }
+impl DelegationMetadata {
+    /// Creates a new builder-style object to manufacture [`DelegationMetadata`](crate::model::DelegationMetadata).
+    pub fn builder() -> crate::model::delegation_metadata::Builder {
+        crate::model::delegation_metadata::Builder::default()
+    }
+}
+
 /// See [`DelegationMetadata`](crate::model::DelegationMetadata).
 pub mod delegation_metadata {
 
@@ -9347,12 +9394,6 @@ pub mod delegation_metadata {
         }
     }
 }
-impl DelegationMetadata {
-    /// Creates a new builder-style object to manufacture [`DelegationMetadata`](crate::model::DelegationMetadata).
-    pub fn builder() -> crate::model::delegation_metadata::Builder {
-        crate::model::delegation_metadata::Builder::default()
-    }
-}
 
 /// <p> The record of a change within Audit Manager. For example, this could be the status change of an assessment or the delegation of a control set. </p>
 #[non_exhaustive]
@@ -9396,6 +9437,13 @@ impl ChangeLog {
         self.created_by.as_deref()
     }
 }
+impl ChangeLog {
+    /// Creates a new builder-style object to manufacture [`ChangeLog`](crate::model::ChangeLog).
+    pub fn builder() -> crate::model::change_log::Builder {
+        crate::model::change_log::Builder::default()
+    }
+}
+
 /// See [`ChangeLog`](crate::model::ChangeLog).
 pub mod change_log {
 
@@ -9476,12 +9524,6 @@ pub mod change_log {
                 created_by: self.created_by,
             }
         }
-    }
-}
-impl ChangeLog {
-    /// Creates a new builder-style object to manufacture [`ChangeLog`](crate::model::ChangeLog).
-    pub fn builder() -> crate::model::change_log::Builder {
-        crate::model::change_log::Builder::default()
     }
 }
 
@@ -9746,6 +9788,13 @@ impl Url {
         self.link.as_deref()
     }
 }
+impl Url {
+    /// Creates a new builder-style object to manufacture [`Url`](crate::model::Url).
+    pub fn builder() -> crate::model::url::Builder {
+        crate::model::url::Builder::default()
+    }
+}
+
 /// See [`Url`](crate::model::Url).
 pub mod url {
 
@@ -9787,12 +9836,6 @@ pub mod url {
                 link: self.link,
             }
         }
-    }
-}
-impl Url {
-    /// Creates a new builder-style object to manufacture [`Url`](crate::model::Url).
-    pub fn builder() -> crate::model::url::Builder {
-        crate::model::url::Builder::default()
     }
 }
 
@@ -9866,6 +9909,13 @@ impl CreateControlMappingSource {
         self.troubleshooting_text.as_deref()
     }
 }
+impl CreateControlMappingSource {
+    /// Creates a new builder-style object to manufacture [`CreateControlMappingSource`](crate::model::CreateControlMappingSource).
+    pub fn builder() -> crate::model::create_control_mapping_source::Builder {
+        crate::model::create_control_mapping_source::Builder::default()
+    }
+}
+
 /// See [`CreateControlMappingSource`](crate::model::CreateControlMappingSource).
 pub mod create_control_mapping_source {
 
@@ -9998,12 +10048,6 @@ pub mod create_control_mapping_source {
         }
     }
 }
-impl CreateControlMappingSource {
-    /// Creates a new builder-style object to manufacture [`CreateControlMappingSource`](crate::model::CreateControlMappingSource).
-    pub fn builder() -> crate::model::create_control_mapping_source::Builder {
-        crate::model::create_control_mapping_source::Builder::default()
-    }
-}
 
 /// <p> A finalized document that's generated from an Audit Manager assessment. These reports summarize the relevant evidence that was collected for your audit, and link to the relevant evidence folders. These evidence folders are named and organized according to the controls that are specified in your assessment. </p>
 #[non_exhaustive]
@@ -10075,6 +10119,13 @@ impl AssessmentReport {
         self.creation_time.as_ref()
     }
 }
+impl AssessmentReport {
+    /// Creates a new builder-style object to manufacture [`AssessmentReport`](crate::model::AssessmentReport).
+    pub fn builder() -> crate::model::assessment_report::Builder {
+        crate::model::assessment_report::Builder::default()
+    }
+}
+
 /// See [`AssessmentReport`](crate::model::AssessmentReport).
 pub mod assessment_report {
 
@@ -10214,12 +10265,6 @@ pub mod assessment_report {
         }
     }
 }
-impl AssessmentReport {
-    /// Creates a new builder-style object to manufacture [`AssessmentReport`](crate::model::AssessmentReport).
-    pub fn builder() -> crate::model::assessment_report::Builder {
-        crate::model::assessment_report::Builder::default()
-    }
-}
 
 /// <p> A <code>controlSet</code> entity that represents a collection of controls in Audit Manager. This doesn't contain the control set ID. </p>
 #[non_exhaustive]
@@ -10245,6 +10290,13 @@ impl CreateAssessmentFrameworkControlSet {
         self.controls.as_deref()
     }
 }
+impl CreateAssessmentFrameworkControlSet {
+    /// Creates a new builder-style object to manufacture [`CreateAssessmentFrameworkControlSet`](crate::model::CreateAssessmentFrameworkControlSet).
+    pub fn builder() -> crate::model::create_assessment_framework_control_set::Builder {
+        crate::model::create_assessment_framework_control_set::Builder::default()
+    }
+}
+
 /// See [`CreateAssessmentFrameworkControlSet`](crate::model::CreateAssessmentFrameworkControlSet).
 pub mod create_assessment_framework_control_set {
 
@@ -10297,12 +10349,6 @@ pub mod create_assessment_framework_control_set {
         }
     }
 }
-impl CreateAssessmentFrameworkControlSet {
-    /// Creates a new builder-style object to manufacture [`CreateAssessmentFrameworkControlSet`](crate::model::CreateAssessmentFrameworkControlSet).
-    pub fn builder() -> crate::model::create_assessment_framework_control_set::Builder {
-        crate::model::create_assessment_framework_control_set::Builder::default()
-    }
-}
 
 /// <p> An error entity for the <code>BatchImportEvidenceToAssessmentControl</code> API. This is used to provide more meaningful errors than a simple string message. </p>
 #[non_exhaustive]
@@ -10332,6 +10378,13 @@ impl BatchImportEvidenceToAssessmentControlError {
         self.error_message.as_deref()
     }
 }
+impl BatchImportEvidenceToAssessmentControlError {
+    /// Creates a new builder-style object to manufacture [`BatchImportEvidenceToAssessmentControlError`](crate::model::BatchImportEvidenceToAssessmentControlError).
+    pub fn builder() -> crate::model::batch_import_evidence_to_assessment_control_error::Builder {
+        crate::model::batch_import_evidence_to_assessment_control_error::Builder::default()
+    }
+}
+
 /// See [`BatchImportEvidenceToAssessmentControlError`](crate::model::BatchImportEvidenceToAssessmentControlError).
 pub mod batch_import_evidence_to_assessment_control_error {
 
@@ -10390,12 +10443,6 @@ pub mod batch_import_evidence_to_assessment_control_error {
         }
     }
 }
-impl BatchImportEvidenceToAssessmentControlError {
-    /// Creates a new builder-style object to manufacture [`BatchImportEvidenceToAssessmentControlError`](crate::model::BatchImportEvidenceToAssessmentControlError).
-    pub fn builder() -> crate::model::batch_import_evidence_to_assessment_control_error::Builder {
-        crate::model::batch_import_evidence_to_assessment_control_error::Builder::default()
-    }
-}
 
 /// <p> Evidence that's uploaded to Audit Manager manually. </p>
 #[non_exhaustive]
@@ -10411,6 +10458,13 @@ impl ManualEvidence {
         self.s3_resource_path.as_deref()
     }
 }
+impl ManualEvidence {
+    /// Creates a new builder-style object to manufacture [`ManualEvidence`](crate::model::ManualEvidence).
+    pub fn builder() -> crate::model::manual_evidence::Builder {
+        crate::model::manual_evidence::Builder::default()
+    }
+}
+
 /// See [`ManualEvidence`](crate::model::ManualEvidence).
 pub mod manual_evidence {
 
@@ -10442,12 +10496,6 @@ pub mod manual_evidence {
         }
     }
 }
-impl ManualEvidence {
-    /// Creates a new builder-style object to manufacture [`ManualEvidence`](crate::model::ManualEvidence).
-    pub fn builder() -> crate::model::manual_evidence::Builder {
-        crate::model::manual_evidence::Builder::default()
-    }
-}
 
 /// <p> An error entity for assessment report evidence errors. This is used to provide more meaningful errors than a simple string message. </p>
 #[non_exhaustive]
@@ -10477,6 +10525,13 @@ impl AssessmentReportEvidenceError {
         self.error_message.as_deref()
     }
 }
+impl AssessmentReportEvidenceError {
+    /// Creates a new builder-style object to manufacture [`AssessmentReportEvidenceError`](crate::model::AssessmentReportEvidenceError).
+    pub fn builder() -> crate::model::assessment_report_evidence_error::Builder {
+        crate::model::assessment_report_evidence_error::Builder::default()
+    }
+}
+
 /// See [`AssessmentReportEvidenceError`](crate::model::AssessmentReportEvidenceError).
 pub mod assessment_report_evidence_error {
 
@@ -10532,12 +10587,6 @@ pub mod assessment_report_evidence_error {
         }
     }
 }
-impl AssessmentReportEvidenceError {
-    /// Creates a new builder-style object to manufacture [`AssessmentReportEvidenceError`](crate::model::AssessmentReportEvidenceError).
-    pub fn builder() -> crate::model::assessment_report_evidence_error::Builder {
-        crate::model::assessment_report_evidence_error::Builder::default()
-    }
-}
 
 /// <p> An error entity for the <code>BatchDeleteDelegationByAssessment</code> API. This is used to provide more meaningful errors than a simple string message. </p>
 #[non_exhaustive]
@@ -10567,6 +10616,13 @@ impl BatchDeleteDelegationByAssessmentError {
         self.error_message.as_deref()
     }
 }
+impl BatchDeleteDelegationByAssessmentError {
+    /// Creates a new builder-style object to manufacture [`BatchDeleteDelegationByAssessmentError`](crate::model::BatchDeleteDelegationByAssessmentError).
+    pub fn builder() -> crate::model::batch_delete_delegation_by_assessment_error::Builder {
+        crate::model::batch_delete_delegation_by_assessment_error::Builder::default()
+    }
+}
+
 /// See [`BatchDeleteDelegationByAssessmentError`](crate::model::BatchDeleteDelegationByAssessmentError).
 pub mod batch_delete_delegation_by_assessment_error {
 
@@ -10625,12 +10681,6 @@ pub mod batch_delete_delegation_by_assessment_error {
         }
     }
 }
-impl BatchDeleteDelegationByAssessmentError {
-    /// Creates a new builder-style object to manufacture [`BatchDeleteDelegationByAssessmentError`](crate::model::BatchDeleteDelegationByAssessmentError).
-    pub fn builder() -> crate::model::batch_delete_delegation_by_assessment_error::Builder {
-        crate::model::batch_delete_delegation_by_assessment_error::Builder::default()
-    }
-}
 
 /// <p> An error entity for the <code>BatchCreateDelegationByAssessment</code> API. This is used to provide more meaningful errors than a simple string message. </p>
 #[non_exhaustive]
@@ -10662,6 +10712,13 @@ impl BatchCreateDelegationByAssessmentError {
         self.error_message.as_deref()
     }
 }
+impl BatchCreateDelegationByAssessmentError {
+    /// Creates a new builder-style object to manufacture [`BatchCreateDelegationByAssessmentError`](crate::model::BatchCreateDelegationByAssessmentError).
+    pub fn builder() -> crate::model::batch_create_delegation_by_assessment_error::Builder {
+        crate::model::batch_create_delegation_by_assessment_error::Builder::default()
+    }
+}
+
 /// See [`BatchCreateDelegationByAssessmentError`](crate::model::BatchCreateDelegationByAssessmentError).
 pub mod batch_create_delegation_by_assessment_error {
 
@@ -10724,12 +10781,6 @@ pub mod batch_create_delegation_by_assessment_error {
         }
     }
 }
-impl BatchCreateDelegationByAssessmentError {
-    /// Creates a new builder-style object to manufacture [`BatchCreateDelegationByAssessmentError`](crate::model::BatchCreateDelegationByAssessmentError).
-    pub fn builder() -> crate::model::batch_create_delegation_by_assessment_error::Builder {
-        crate::model::batch_create_delegation_by_assessment_error::Builder::default()
-    }
-}
 
 /// <p> A collection of attributes that's used to create a delegation for an assessment in Audit Manager. </p>
 #[non_exhaustive]
@@ -10774,6 +10825,13 @@ impl CreateDelegationRequest {
         self.role_type.as_ref()
     }
 }
+impl CreateDelegationRequest {
+    /// Creates a new builder-style object to manufacture [`CreateDelegationRequest`](crate::model::CreateDelegationRequest).
+    pub fn builder() -> crate::model::create_delegation_request::Builder {
+        crate::model::create_delegation_request::Builder::default()
+    }
+}
+
 /// See [`CreateDelegationRequest`](crate::model::CreateDelegationRequest).
 pub mod create_delegation_request {
 
@@ -10847,11 +10905,5 @@ pub mod create_delegation_request {
                 role_type: self.role_type,
             }
         }
-    }
-}
-impl CreateDelegationRequest {
-    /// Creates a new builder-style object to manufacture [`CreateDelegationRequest`](crate::model::CreateDelegationRequest).
-    pub fn builder() -> crate::model::create_delegation_request::Builder {
-        crate::model::create_delegation_request::Builder::default()
     }
 }

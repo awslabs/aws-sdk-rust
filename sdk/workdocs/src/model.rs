@@ -133,6 +133,13 @@ impl std::fmt::Debug for User {
         formatter.finish()
     }
 }
+impl User {
+    /// Creates a new builder-style object to manufacture [`User`](crate::model::User).
+    pub fn builder() -> crate::model::user::Builder {
+        crate::model::user::Builder::default()
+    }
+}
+
 /// See [`User`](crate::model::User).
 pub mod user {
 
@@ -374,12 +381,6 @@ pub mod user {
         }
     }
 }
-impl User {
-    /// Creates a new builder-style object to manufacture [`User`](crate::model::User).
-    pub fn builder() -> crate::model::user::Builder {
-        crate::model::user::Builder::default()
-    }
-}
 
 /// <p>Describes the storage for a user.</p>
 #[non_exhaustive]
@@ -402,6 +403,13 @@ impl UserStorageMetadata {
         self.storage_rule.as_ref()
     }
 }
+impl UserStorageMetadata {
+    /// Creates a new builder-style object to manufacture [`UserStorageMetadata`](crate::model::UserStorageMetadata).
+    pub fn builder() -> crate::model::user_storage_metadata::Builder {
+        crate::model::user_storage_metadata::Builder::default()
+    }
+}
+
 /// See [`UserStorageMetadata`](crate::model::UserStorageMetadata).
 pub mod user_storage_metadata {
 
@@ -445,12 +453,6 @@ pub mod user_storage_metadata {
         }
     }
 }
-impl UserStorageMetadata {
-    /// Creates a new builder-style object to manufacture [`UserStorageMetadata`](crate::model::UserStorageMetadata).
-    pub fn builder() -> crate::model::user_storage_metadata::Builder {
-        crate::model::user_storage_metadata::Builder::default()
-    }
-}
 
 /// <p>Describes the storage for a user.</p>
 #[non_exhaustive]
@@ -473,6 +475,13 @@ impl StorageRuleType {
         self.storage_type.as_ref()
     }
 }
+impl StorageRuleType {
+    /// Creates a new builder-style object to manufacture [`StorageRuleType`](crate::model::StorageRuleType).
+    pub fn builder() -> crate::model::storage_rule_type::Builder {
+        crate::model::storage_rule_type::Builder::default()
+    }
+}
+
 /// See [`StorageRuleType`](crate::model::StorageRuleType).
 pub mod storage_rule_type {
 
@@ -514,12 +523,6 @@ pub mod storage_rule_type {
                 storage_type: self.storage_type,
             }
         }
-    }
-}
-impl StorageRuleType {
-    /// Creates a new builder-style object to manufacture [`StorageRuleType`](crate::model::StorageRuleType).
-    pub fn builder() -> crate::model::storage_rule_type::Builder {
-        crate::model::storage_rule_type::Builder::default()
     }
 }
 
@@ -1373,6 +1376,13 @@ impl std::fmt::Debug for UploadMetadata {
         formatter.finish()
     }
 }
+impl UploadMetadata {
+    /// Creates a new builder-style object to manufacture [`UploadMetadata`](crate::model::UploadMetadata).
+    pub fn builder() -> crate::model::upload_metadata::Builder {
+        crate::model::upload_metadata::Builder::default()
+    }
+}
+
 /// See [`UploadMetadata`](crate::model::UploadMetadata).
 pub mod upload_metadata {
 
@@ -1436,12 +1446,6 @@ pub mod upload_metadata {
             formatter.field("signed_headers", &self.signed_headers);
             formatter.finish()
         }
-    }
-}
-impl UploadMetadata {
-    /// Creates a new builder-style object to manufacture [`UploadMetadata`](crate::model::UploadMetadata).
-    pub fn builder() -> crate::model::upload_metadata::Builder {
-        crate::model::upload_metadata::Builder::default()
     }
 }
 
@@ -1510,6 +1514,13 @@ impl DocumentMetadata {
         self.labels.as_deref()
     }
 }
+impl DocumentMetadata {
+    /// Creates a new builder-style object to manufacture [`DocumentMetadata`](crate::model::DocumentMetadata).
+    pub fn builder() -> crate::model::document_metadata::Builder {
+        crate::model::document_metadata::Builder::default()
+    }
+}
+
 /// See [`DocumentMetadata`](crate::model::DocumentMetadata).
 pub mod document_metadata {
 
@@ -1650,12 +1661,6 @@ pub mod document_metadata {
         }
     }
 }
-impl DocumentMetadata {
-    /// Creates a new builder-style object to manufacture [`DocumentMetadata`](crate::model::DocumentMetadata).
-    pub fn builder() -> crate::model::document_metadata::Builder {
-        crate::model::document_metadata::Builder::default()
-    }
-}
 
 /// <p>Describes a version of a document.</p>
 #[non_exhaustive]
@@ -1767,6 +1772,13 @@ impl DocumentVersionMetadata {
         self.source.as_ref()
     }
 }
+impl DocumentVersionMetadata {
+    /// Creates a new builder-style object to manufacture [`DocumentVersionMetadata`](crate::model::DocumentVersionMetadata).
+    pub fn builder() -> crate::model::document_version_metadata::Builder {
+        crate::model::document_version_metadata::Builder::default()
+    }
+}
+
 /// See [`DocumentVersionMetadata`](crate::model::DocumentVersionMetadata).
 pub mod document_version_metadata {
 
@@ -1986,12 +1998,6 @@ pub mod document_version_metadata {
                 source: self.source,
             }
         }
-    }
-}
-impl DocumentVersionMetadata {
-    /// Creates a new builder-style object to manufacture [`DocumentVersionMetadata`](crate::model::DocumentVersionMetadata).
-    pub fn builder() -> crate::model::document_version_metadata::Builder {
-        crate::model::document_version_metadata::Builder::default()
     }
 }
 
@@ -2360,6 +2366,13 @@ impl FolderMetadata {
         self.latest_version_size
     }
 }
+impl FolderMetadata {
+    /// Creates a new builder-style object to manufacture [`FolderMetadata`](crate::model::FolderMetadata).
+    pub fn builder() -> crate::model::folder_metadata::Builder {
+        crate::model::folder_metadata::Builder::default()
+    }
+}
+
 /// See [`FolderMetadata`](crate::model::FolderMetadata).
 pub mod folder_metadata {
 
@@ -2529,12 +2542,6 @@ pub mod folder_metadata {
         }
     }
 }
-impl FolderMetadata {
-    /// Creates a new builder-style object to manufacture [`FolderMetadata`](crate::model::FolderMetadata).
-    pub fn builder() -> crate::model::folder_metadata::Builder {
-        crate::model::folder_metadata::Builder::default()
-    }
-}
 
 /// When writing a match expression against `ResourceCollectionType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -2637,6 +2644,13 @@ impl ResourcePath {
         self.components.as_deref()
     }
 }
+impl ResourcePath {
+    /// Creates a new builder-style object to manufacture [`ResourcePath`](crate::model::ResourcePath).
+    pub fn builder() -> crate::model::resource_path::Builder {
+        crate::model::resource_path::Builder::default()
+    }
+}
+
 /// See [`ResourcePath`](crate::model::ResourcePath).
 pub mod resource_path {
 
@@ -2675,12 +2689,6 @@ pub mod resource_path {
         }
     }
 }
-impl ResourcePath {
-    /// Creates a new builder-style object to manufacture [`ResourcePath`](crate::model::ResourcePath).
-    pub fn builder() -> crate::model::resource_path::Builder {
-        crate::model::resource_path::Builder::default()
-    }
-}
 
 /// <p>Describes the resource path.</p>
 #[non_exhaustive]
@@ -2703,6 +2711,13 @@ impl ResourcePathComponent {
         self.name.as_deref()
     }
 }
+impl ResourcePathComponent {
+    /// Creates a new builder-style object to manufacture [`ResourcePathComponent`](crate::model::ResourcePathComponent).
+    pub fn builder() -> crate::model::resource_path_component::Builder {
+        crate::model::resource_path_component::Builder::default()
+    }
+}
+
 /// See [`ResourcePathComponent`](crate::model::ResourcePathComponent).
 pub mod resource_path_component {
 
@@ -2741,12 +2756,6 @@ pub mod resource_path_component {
                 name: self.name,
             }
         }
-    }
-}
-impl ResourcePathComponent {
-    /// Creates a new builder-style object to manufacture [`ResourcePathComponent`](crate::model::ResourcePathComponent).
-    pub fn builder() -> crate::model::resource_path_component::Builder {
-        crate::model::resource_path_component::Builder::default()
     }
 }
 
@@ -3069,6 +3078,13 @@ impl Principal {
         self.roles.as_deref()
     }
 }
+impl Principal {
+    /// Creates a new builder-style object to manufacture [`Principal`](crate::model::Principal).
+    pub fn builder() -> crate::model::principal::Builder {
+        crate::model::principal::Builder::default()
+    }
+}
+
 /// See [`Principal`](crate::model::Principal).
 pub mod principal {
 
@@ -3130,12 +3146,6 @@ pub mod principal {
         }
     }
 }
-impl Principal {
-    /// Creates a new builder-style object to manufacture [`Principal`](crate::model::Principal).
-    pub fn builder() -> crate::model::principal::Builder {
-        crate::model::principal::Builder::default()
-    }
-}
 
 /// <p>Describes the permissions.</p>
 #[non_exhaustive]
@@ -3158,6 +3168,13 @@ impl PermissionInfo {
         self.r#type.as_ref()
     }
 }
+impl PermissionInfo {
+    /// Creates a new builder-style object to manufacture [`PermissionInfo`](crate::model::PermissionInfo).
+    pub fn builder() -> crate::model::permission_info::Builder {
+        crate::model::permission_info::Builder::default()
+    }
+}
+
 /// See [`PermissionInfo`](crate::model::PermissionInfo).
 pub mod permission_info {
 
@@ -3199,12 +3216,6 @@ pub mod permission_info {
                 r#type: self.r#type,
             }
         }
-    }
-}
-impl PermissionInfo {
-    /// Creates a new builder-style object to manufacture [`PermissionInfo`](crate::model::PermissionInfo).
-    pub fn builder() -> crate::model::permission_info::Builder {
-        crate::model::permission_info::Builder::default()
     }
 }
 
@@ -3428,6 +3439,13 @@ impl Subscription {
         self.protocol.as_ref()
     }
 }
+impl Subscription {
+    /// Creates a new builder-style object to manufacture [`Subscription`](crate::model::Subscription).
+    pub fn builder() -> crate::model::subscription::Builder {
+        crate::model::subscription::Builder::default()
+    }
+}
+
 /// See [`Subscription`](crate::model::Subscription).
 pub mod subscription {
 
@@ -3484,12 +3502,6 @@ pub mod subscription {
                 protocol: self.protocol,
             }
         }
-    }
-}
-impl Subscription {
-    /// Creates a new builder-style object to manufacture [`Subscription`](crate::model::Subscription).
-    pub fn builder() -> crate::model::subscription::Builder {
-        crate::model::subscription::Builder::default()
     }
 }
 
@@ -3606,6 +3618,13 @@ impl GroupMetadata {
         self.name.as_deref()
     }
 }
+impl GroupMetadata {
+    /// Creates a new builder-style object to manufacture [`GroupMetadata`](crate::model::GroupMetadata).
+    pub fn builder() -> crate::model::group_metadata::Builder {
+        crate::model::group_metadata::Builder::default()
+    }
+}
+
 /// See [`GroupMetadata`](crate::model::GroupMetadata).
 pub mod group_metadata {
 
@@ -3644,12 +3663,6 @@ pub mod group_metadata {
                 name: self.name,
             }
         }
-    }
-}
-impl GroupMetadata {
-    /// Creates a new builder-style object to manufacture [`GroupMetadata`](crate::model::GroupMetadata).
-    pub fn builder() -> crate::model::group_metadata::Builder {
-        crate::model::group_metadata::Builder::default()
     }
 }
 
@@ -3925,6 +3938,13 @@ impl std::fmt::Debug for Comment {
         formatter.finish()
     }
 }
+impl Comment {
+    /// Creates a new builder-style object to manufacture [`Comment`](crate::model::Comment).
+    pub fn builder() -> crate::model::comment::Builder {
+        crate::model::comment::Builder::default()
+    }
+}
+
 /// See [`Comment`](crate::model::Comment).
 pub mod comment {
 
@@ -4071,12 +4091,6 @@ pub mod comment {
             formatter.field("recipient_id", &self.recipient_id);
             formatter.finish()
         }
-    }
-}
-impl Comment {
-    /// Creates a new builder-style object to manufacture [`Comment`](crate::model::Comment).
-    pub fn builder() -> crate::model::comment::Builder {
-        crate::model::comment::Builder::default()
     }
 }
 
@@ -4339,6 +4353,13 @@ impl Activity {
         self.comment_metadata.as_ref()
     }
 }
+impl Activity {
+    /// Creates a new builder-style object to manufacture [`Activity`](crate::model::Activity).
+    pub fn builder() -> crate::model::activity::Builder {
+        crate::model::activity::Builder::default()
+    }
+}
+
 /// See [`Activity`](crate::model::Activity).
 pub mod activity {
 
@@ -4484,12 +4505,6 @@ pub mod activity {
         }
     }
 }
-impl Activity {
-    /// Creates a new builder-style object to manufacture [`Activity`](crate::model::Activity).
-    pub fn builder() -> crate::model::activity::Builder {
-        crate::model::activity::Builder::default()
-    }
-}
 
 /// <p>Describes the metadata of a comment.</p>
 #[non_exhaustive]
@@ -4533,6 +4548,13 @@ impl CommentMetadata {
         self.recipient_id.as_deref()
     }
 }
+impl CommentMetadata {
+    /// Creates a new builder-style object to manufacture [`CommentMetadata`](crate::model::CommentMetadata).
+    pub fn builder() -> crate::model::comment_metadata::Builder {
+        crate::model::comment_metadata::Builder::default()
+    }
+}
+
 /// See [`CommentMetadata`](crate::model::CommentMetadata).
 pub mod comment_metadata {
 
@@ -4615,12 +4637,6 @@ pub mod comment_metadata {
         }
     }
 }
-impl CommentMetadata {
-    /// Creates a new builder-style object to manufacture [`CommentMetadata`](crate::model::CommentMetadata).
-    pub fn builder() -> crate::model::comment_metadata::Builder {
-        crate::model::comment_metadata::Builder::default()
-    }
-}
 
 /// <p>Describes the metadata of a resource.</p>
 #[non_exhaustive]
@@ -4678,6 +4694,13 @@ impl ResourceMetadata {
         self.parent_id.as_deref()
     }
 }
+impl ResourceMetadata {
+    /// Creates a new builder-style object to manufacture [`ResourceMetadata`](crate::model::ResourceMetadata).
+    pub fn builder() -> crate::model::resource_metadata::Builder {
+        crate::model::resource_metadata::Builder::default()
+    }
+}
+
 /// See [`ResourceMetadata`](crate::model::ResourceMetadata).
 pub mod resource_metadata {
 
@@ -4781,12 +4804,6 @@ pub mod resource_metadata {
         }
     }
 }
-impl ResourceMetadata {
-    /// Creates a new builder-style object to manufacture [`ResourceMetadata`](crate::model::ResourceMetadata).
-    pub fn builder() -> crate::model::resource_metadata::Builder {
-        crate::model::resource_metadata::Builder::default()
-    }
-}
 
 /// <p>Describes the metadata of the user.</p>
 #[non_exhaustive]
@@ -4841,6 +4858,13 @@ impl std::fmt::Debug for UserMetadata {
         formatter.finish()
     }
 }
+impl UserMetadata {
+    /// Creates a new builder-style object to manufacture [`UserMetadata`](crate::model::UserMetadata).
+    pub fn builder() -> crate::model::user_metadata::Builder {
+        crate::model::user_metadata::Builder::default()
+    }
+}
+
 /// See [`UserMetadata`](crate::model::UserMetadata).
 pub mod user_metadata {
 
@@ -4929,12 +4953,6 @@ pub mod user_metadata {
             formatter.field("email_address", &"*** Sensitive Data Redacted ***");
             formatter.finish()
         }
-    }
-}
-impl UserMetadata {
-    /// Creates a new builder-style object to manufacture [`UserMetadata`](crate::model::UserMetadata).
-    pub fn builder() -> crate::model::user_metadata::Builder {
-        crate::model::user_metadata::Builder::default()
     }
 }
 
@@ -5049,6 +5067,13 @@ impl Participants {
         self.groups.as_deref()
     }
 }
+impl Participants {
+    /// Creates a new builder-style object to manufacture [`Participants`](crate::model::Participants).
+    pub fn builder() -> crate::model::participants::Builder {
+        crate::model::participants::Builder::default()
+    }
+}
+
 /// See [`Participants`](crate::model::Participants).
 pub mod participants {
 
@@ -5105,12 +5130,6 @@ pub mod participants {
                 groups: self.groups,
             }
         }
-    }
-}
-impl Participants {
-    /// Creates a new builder-style object to manufacture [`Participants`](crate::model::Participants).
-    pub fn builder() -> crate::model::participants::Builder {
-        crate::model::participants::Builder::default()
     }
 }
 
@@ -5547,6 +5566,13 @@ impl std::fmt::Debug for ShareResult {
         formatter.finish()
     }
 }
+impl ShareResult {
+    /// Creates a new builder-style object to manufacture [`ShareResult`](crate::model::ShareResult).
+    pub fn builder() -> crate::model::share_result::Builder {
+        crate::model::share_result::Builder::default()
+    }
+}
+
 /// See [`ShareResult`](crate::model::ShareResult).
 pub mod share_result {
 
@@ -5654,12 +5680,6 @@ pub mod share_result {
             formatter.field("status_message", &"*** Sensitive Data Redacted ***");
             formatter.finish()
         }
-    }
-}
-impl ShareResult {
-    /// Creates a new builder-style object to manufacture [`ShareResult`](crate::model::ShareResult).
-    pub fn builder() -> crate::model::share_result::Builder {
-        crate::model::share_result::Builder::default()
     }
 }
 
@@ -5782,6 +5802,13 @@ impl std::fmt::Debug for NotificationOptions {
         formatter.finish()
     }
 }
+impl NotificationOptions {
+    /// Creates a new builder-style object to manufacture [`NotificationOptions`](crate::model::NotificationOptions).
+    pub fn builder() -> crate::model::notification_options::Builder {
+        crate::model::notification_options::Builder::default()
+    }
+}
+
 /// See [`NotificationOptions`](crate::model::NotificationOptions).
 pub mod notification_options {
 
@@ -5833,12 +5860,6 @@ pub mod notification_options {
         }
     }
 }
-impl NotificationOptions {
-    /// Creates a new builder-style object to manufacture [`NotificationOptions`](crate::model::NotificationOptions).
-    pub fn builder() -> crate::model::notification_options::Builder {
-        crate::model::notification_options::Builder::default()
-    }
-}
 
 /// <p>Describes the recipient type and ID, if available.</p>
 #[non_exhaustive]
@@ -5868,6 +5889,13 @@ impl SharePrincipal {
         self.role.as_ref()
     }
 }
+impl SharePrincipal {
+    /// Creates a new builder-style object to manufacture [`SharePrincipal`](crate::model::SharePrincipal).
+    pub fn builder() -> crate::model::share_principal::Builder {
+        crate::model::share_principal::Builder::default()
+    }
+}
+
 /// See [`SharePrincipal`](crate::model::SharePrincipal).
 pub mod share_principal {
 
@@ -5918,11 +5946,5 @@ pub mod share_principal {
                 role: self.role,
             }
         }
-    }
-}
-impl SharePrincipal {
-    /// Creates a new builder-style object to manufacture [`SharePrincipal`](crate::model::SharePrincipal).
-    pub fn builder() -> crate::model::share_principal::Builder {
-        crate::model::share_principal::Builder::default()
     }
 }

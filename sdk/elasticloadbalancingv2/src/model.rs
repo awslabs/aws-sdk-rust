@@ -128,6 +128,13 @@ impl AvailabilityZone {
         self.load_balancer_addresses.as_deref()
     }
 }
+impl AvailabilityZone {
+    /// Creates a new builder-style object to manufacture [`AvailabilityZone`](crate::model::AvailabilityZone).
+    pub fn builder() -> crate::model::availability_zone::Builder {
+        crate::model::availability_zone::Builder::default()
+    }
+}
+
 /// See [`AvailabilityZone`](crate::model::AvailabilityZone).
 pub mod availability_zone {
 
@@ -202,12 +209,6 @@ pub mod availability_zone {
         }
     }
 }
-impl AvailabilityZone {
-    /// Creates a new builder-style object to manufacture [`AvailabilityZone`](crate::model::AvailabilityZone).
-    pub fn builder() -> crate::model::availability_zone::Builder {
-        crate::model::availability_zone::Builder::default()
-    }
-}
 
 /// <p>Information about a static IP address for a load balancer.</p>
 #[non_exhaustive]
@@ -244,6 +245,13 @@ impl LoadBalancerAddress {
         self.i_pv6_address.as_deref()
     }
 }
+impl LoadBalancerAddress {
+    /// Creates a new builder-style object to manufacture [`LoadBalancerAddress`](crate::model::LoadBalancerAddress).
+    pub fn builder() -> crate::model::load_balancer_address::Builder {
+        crate::model::load_balancer_address::Builder::default()
+    }
+}
+
 /// See [`LoadBalancerAddress`](crate::model::LoadBalancerAddress).
 pub mod load_balancer_address {
 
@@ -317,12 +325,6 @@ pub mod load_balancer_address {
         }
     }
 }
-impl LoadBalancerAddress {
-    /// Creates a new builder-style object to manufacture [`LoadBalancerAddress`](crate::model::LoadBalancerAddress).
-    pub fn builder() -> crate::model::load_balancer_address::Builder {
-        crate::model::load_balancer_address::Builder::default()
-    }
-}
 
 /// <p>Information about a subnet mapping.</p>
 #[non_exhaustive]
@@ -359,6 +361,13 @@ impl SubnetMapping {
         self.i_pv6_address.as_deref()
     }
 }
+impl SubnetMapping {
+    /// Creates a new builder-style object to manufacture [`SubnetMapping`](crate::model::SubnetMapping).
+    pub fn builder() -> crate::model::subnet_mapping::Builder {
+        crate::model::subnet_mapping::Builder::default()
+    }
+}
+
 /// See [`SubnetMapping`](crate::model::SubnetMapping).
 pub mod subnet_mapping {
 
@@ -432,12 +441,6 @@ pub mod subnet_mapping {
         }
     }
 }
-impl SubnetMapping {
-    /// Creates a new builder-style object to manufacture [`SubnetMapping`](crate::model::SubnetMapping).
-    pub fn builder() -> crate::model::subnet_mapping::Builder {
-        crate::model::subnet_mapping::Builder::default()
-    }
-}
 
 /// <p>Information about a rule.</p>
 #[non_exhaustive]
@@ -481,6 +484,13 @@ impl Rule {
         self.is_default
     }
 }
+impl Rule {
+    /// Creates a new builder-style object to manufacture [`Rule`](crate::model::Rule).
+    pub fn builder() -> crate::model::rule::Builder {
+        crate::model::rule::Builder::default()
+    }
+}
+
 /// See [`Rule`](crate::model::Rule).
 pub mod rule {
 
@@ -575,12 +585,6 @@ pub mod rule {
         }
     }
 }
-impl Rule {
-    /// Creates a new builder-style object to manufacture [`Rule`](crate::model::Rule).
-    pub fn builder() -> crate::model::rule::Builder {
-        crate::model::rule::Builder::default()
-    }
-}
 
 /// <p>Information about an action.</p>
 /// <p>Each rule must include exactly one of the following types of actions: <code>forward</code>, <code>fixed-response</code>, or <code>redirect</code>, and it must be the last action to be performed.</p>
@@ -653,6 +657,13 @@ impl Action {
         self.forward_config.as_ref()
     }
 }
+impl Action {
+    /// Creates a new builder-style object to manufacture [`Action`](crate::model::Action).
+    pub fn builder() -> crate::model::action::Builder {
+        crate::model::action::Builder::default()
+    }
+}
+
 /// See [`Action`](crate::model::Action).
 pub mod action {
 
@@ -798,12 +809,6 @@ pub mod action {
         }
     }
 }
-impl Action {
-    /// Creates a new builder-style object to manufacture [`Action`](crate::model::Action).
-    pub fn builder() -> crate::model::action::Builder {
-        crate::model::action::Builder::default()
-    }
-}
 
 /// <p>Information about a forward action.</p>
 #[non_exhaustive]
@@ -829,6 +834,13 @@ impl ForwardActionConfig {
         self.target_group_stickiness_config.as_ref()
     }
 }
+impl ForwardActionConfig {
+    /// Creates a new builder-style object to manufacture [`ForwardActionConfig`](crate::model::ForwardActionConfig).
+    pub fn builder() -> crate::model::forward_action_config::Builder {
+        crate::model::forward_action_config::Builder::default()
+    }
+}
+
 /// See [`ForwardActionConfig`](crate::model::ForwardActionConfig).
 pub mod forward_action_config {
 
@@ -886,12 +898,6 @@ pub mod forward_action_config {
         }
     }
 }
-impl ForwardActionConfig {
-    /// Creates a new builder-style object to manufacture [`ForwardActionConfig`](crate::model::ForwardActionConfig).
-    pub fn builder() -> crate::model::forward_action_config::Builder {
-        crate::model::forward_action_config::Builder::default()
-    }
-}
 
 /// <p>Information about the target group stickiness for a rule.</p>
 #[non_exhaustive]
@@ -914,6 +920,13 @@ impl TargetGroupStickinessConfig {
         self.duration_seconds
     }
 }
+impl TargetGroupStickinessConfig {
+    /// Creates a new builder-style object to manufacture [`TargetGroupStickinessConfig`](crate::model::TargetGroupStickinessConfig).
+    pub fn builder() -> crate::model::target_group_stickiness_config::Builder {
+        crate::model::target_group_stickiness_config::Builder::default()
+    }
+}
+
 /// See [`TargetGroupStickinessConfig`](crate::model::TargetGroupStickinessConfig).
 pub mod target_group_stickiness_config {
 
@@ -954,12 +967,6 @@ pub mod target_group_stickiness_config {
         }
     }
 }
-impl TargetGroupStickinessConfig {
-    /// Creates a new builder-style object to manufacture [`TargetGroupStickinessConfig`](crate::model::TargetGroupStickinessConfig).
-    pub fn builder() -> crate::model::target_group_stickiness_config::Builder {
-        crate::model::target_group_stickiness_config::Builder::default()
-    }
-}
 
 /// <p>Information about how traffic will be distributed between multiple target groups in a forward rule.</p>
 #[non_exhaustive]
@@ -982,6 +989,13 @@ impl TargetGroupTuple {
         self.weight
     }
 }
+impl TargetGroupTuple {
+    /// Creates a new builder-style object to manufacture [`TargetGroupTuple`](crate::model::TargetGroupTuple).
+    pub fn builder() -> crate::model::target_group_tuple::Builder {
+        crate::model::target_group_tuple::Builder::default()
+    }
+}
+
 /// See [`TargetGroupTuple`](crate::model::TargetGroupTuple).
 pub mod target_group_tuple {
 
@@ -1025,12 +1039,6 @@ pub mod target_group_tuple {
         }
     }
 }
-impl TargetGroupTuple {
-    /// Creates a new builder-style object to manufacture [`TargetGroupTuple`](crate::model::TargetGroupTuple).
-    pub fn builder() -> crate::model::target_group_tuple::Builder {
-        crate::model::target_group_tuple::Builder::default()
-    }
-}
 
 /// <p>Information about an action that returns a custom HTTP response.</p>
 #[non_exhaustive]
@@ -1062,6 +1070,13 @@ impl FixedResponseActionConfig {
         self.content_type.as_deref()
     }
 }
+impl FixedResponseActionConfig {
+    /// Creates a new builder-style object to manufacture [`FixedResponseActionConfig`](crate::model::FixedResponseActionConfig).
+    pub fn builder() -> crate::model::fixed_response_action_config::Builder {
+        crate::model::fixed_response_action_config::Builder::default()
+    }
+}
+
 /// See [`FixedResponseActionConfig`](crate::model::FixedResponseActionConfig).
 pub mod fixed_response_action_config {
 
@@ -1114,12 +1129,6 @@ pub mod fixed_response_action_config {
                 content_type: self.content_type,
             }
         }
-    }
-}
-impl FixedResponseActionConfig {
-    /// Creates a new builder-style object to manufacture [`FixedResponseActionConfig`](crate::model::FixedResponseActionConfig).
-    pub fn builder() -> crate::model::fixed_response_action_config::Builder {
-        crate::model::fixed_response_action_config::Builder::default()
     }
 }
 
@@ -1182,6 +1191,13 @@ impl RedirectActionConfig {
         self.status_code.as_ref()
     }
 }
+impl RedirectActionConfig {
+    /// Creates a new builder-style object to manufacture [`RedirectActionConfig`](crate::model::RedirectActionConfig).
+    pub fn builder() -> crate::model::redirect_action_config::Builder {
+        crate::model::redirect_action_config::Builder::default()
+    }
+}
+
 /// See [`RedirectActionConfig`](crate::model::RedirectActionConfig).
 pub mod redirect_action_config {
 
@@ -1271,12 +1287,6 @@ pub mod redirect_action_config {
                 status_code: self.status_code,
             }
         }
-    }
-}
-impl RedirectActionConfig {
-    /// Creates a new builder-style object to manufacture [`RedirectActionConfig`](crate::model::RedirectActionConfig).
-    pub fn builder() -> crate::model::redirect_action_config::Builder {
-        crate::model::redirect_action_config::Builder::default()
     }
 }
 
@@ -1454,6 +1464,13 @@ impl AuthenticateCognitoActionConfig {
         self.on_unauthenticated_request.as_ref()
     }
 }
+impl AuthenticateCognitoActionConfig {
+    /// Creates a new builder-style object to manufacture [`AuthenticateCognitoActionConfig`](crate::model::AuthenticateCognitoActionConfig).
+    pub fn builder() -> crate::model::authenticate_cognito_action_config::Builder {
+        crate::model::authenticate_cognito_action_config::Builder::default()
+    }
+}
+
 /// See [`AuthenticateCognitoActionConfig`](crate::model::AuthenticateCognitoActionConfig).
 pub mod authenticate_cognito_action_config {
 
@@ -1614,12 +1631,6 @@ pub mod authenticate_cognito_action_config {
                 on_unauthenticated_request: self.on_unauthenticated_request,
             }
         }
-    }
-}
-impl AuthenticateCognitoActionConfig {
-    /// Creates a new builder-style object to manufacture [`AuthenticateCognitoActionConfig`](crate::model::AuthenticateCognitoActionConfig).
-    pub fn builder() -> crate::model::authenticate_cognito_action_config::Builder {
-        crate::model::authenticate_cognito_action_config::Builder::default()
     }
 }
 
@@ -1830,6 +1841,13 @@ impl AuthenticateOidcActionConfig {
         self.use_existing_client_secret
     }
 }
+impl AuthenticateOidcActionConfig {
+    /// Creates a new builder-style object to manufacture [`AuthenticateOidcActionConfig`](crate::model::AuthenticateOidcActionConfig).
+    pub fn builder() -> crate::model::authenticate_oidc_action_config::Builder {
+        crate::model::authenticate_oidc_action_config::Builder::default()
+    }
+}
+
 /// See [`AuthenticateOidcActionConfig`](crate::model::AuthenticateOidcActionConfig).
 pub mod authenticate_oidc_action_config {
 
@@ -2039,12 +2057,6 @@ pub mod authenticate_oidc_action_config {
                 use_existing_client_secret: self.use_existing_client_secret,
             }
         }
-    }
-}
-impl AuthenticateOidcActionConfig {
-    /// Creates a new builder-style object to manufacture [`AuthenticateOidcActionConfig`](crate::model::AuthenticateOidcActionConfig).
-    pub fn builder() -> crate::model::authenticate_oidc_action_config::Builder {
-        crate::model::authenticate_oidc_action_config::Builder::default()
     }
 }
 
@@ -2377,6 +2389,13 @@ impl RuleCondition {
         self.source_ip_config.as_ref()
     }
 }
+impl RuleCondition {
+    /// Creates a new builder-style object to manufacture [`RuleCondition`](crate::model::RuleCondition).
+    pub fn builder() -> crate::model::rule_condition::Builder {
+        crate::model::rule_condition::Builder::default()
+    }
+}
+
 /// See [`RuleCondition`](crate::model::RuleCondition).
 pub mod rule_condition {
 
@@ -2580,12 +2599,6 @@ pub mod rule_condition {
         }
     }
 }
-impl RuleCondition {
-    /// Creates a new builder-style object to manufacture [`RuleCondition`](crate::model::RuleCondition).
-    pub fn builder() -> crate::model::rule_condition::Builder {
-        crate::model::rule_condition::Builder::default()
-    }
-}
 
 /// <p>Information about a source IP condition.</p>
 /// <p>You can use this condition to route based on the IP address of the source that connects to the load balancer. If a client is behind a proxy, this is the IP address of the proxy not the IP address of the client.</p>
@@ -2604,6 +2617,13 @@ impl SourceIpConditionConfig {
         self.values.as_deref()
     }
 }
+impl SourceIpConditionConfig {
+    /// Creates a new builder-style object to manufacture [`SourceIpConditionConfig`](crate::model::SourceIpConditionConfig).
+    pub fn builder() -> crate::model::source_ip_condition_config::Builder {
+        crate::model::source_ip_condition_config::Builder::default()
+    }
+}
+
 /// See [`SourceIpConditionConfig`](crate::model::SourceIpConditionConfig).
 pub mod source_ip_condition_config {
 
@@ -2643,12 +2663,6 @@ pub mod source_ip_condition_config {
         }
     }
 }
-impl SourceIpConditionConfig {
-    /// Creates a new builder-style object to manufacture [`SourceIpConditionConfig`](crate::model::SourceIpConditionConfig).
-    pub fn builder() -> crate::model::source_ip_condition_config::Builder {
-        crate::model::source_ip_condition_config::Builder::default()
-    }
-}
 
 /// <p>Information about an HTTP method condition.</p>
 /// <p>HTTP defines a set of request methods, also referred to as HTTP verbs. For more information, see the <a href="https://www.iana.org/assignments/http-methods/http-methods.xhtml">HTTP Method Registry</a>. You can also define custom HTTP methods.</p>
@@ -2667,6 +2681,13 @@ impl HttpRequestMethodConditionConfig {
         self.values.as_deref()
     }
 }
+impl HttpRequestMethodConditionConfig {
+    /// Creates a new builder-style object to manufacture [`HttpRequestMethodConditionConfig`](crate::model::HttpRequestMethodConditionConfig).
+    pub fn builder() -> crate::model::http_request_method_condition_config::Builder {
+        crate::model::http_request_method_condition_config::Builder::default()
+    }
+}
+
 /// See [`HttpRequestMethodConditionConfig`](crate::model::HttpRequestMethodConditionConfig).
 pub mod http_request_method_condition_config {
 
@@ -2706,12 +2727,6 @@ pub mod http_request_method_condition_config {
         }
     }
 }
-impl HttpRequestMethodConditionConfig {
-    /// Creates a new builder-style object to manufacture [`HttpRequestMethodConditionConfig`](crate::model::HttpRequestMethodConditionConfig).
-    pub fn builder() -> crate::model::http_request_method_condition_config::Builder {
-        crate::model::http_request_method_condition_config::Builder::default()
-    }
-}
 
 /// <p>Information about a query string condition.</p>
 /// <p>The query string component of a URI starts after the first '?' character and is terminated by either a '#' character or the end of the URI. A typical query string contains key/value pairs separated by '&amp;' characters. The allowed characters are specified by RFC 3986. Any character can be percentage encoded.</p>
@@ -2730,6 +2745,13 @@ impl QueryStringConditionConfig {
         self.values.as_deref()
     }
 }
+impl QueryStringConditionConfig {
+    /// Creates a new builder-style object to manufacture [`QueryStringConditionConfig`](crate::model::QueryStringConditionConfig).
+    pub fn builder() -> crate::model::query_string_condition_config::Builder {
+        crate::model::query_string_condition_config::Builder::default()
+    }
+}
+
 /// See [`QueryStringConditionConfig`](crate::model::QueryStringConditionConfig).
 pub mod query_string_condition_config {
 
@@ -2770,12 +2792,6 @@ pub mod query_string_condition_config {
         }
     }
 }
-impl QueryStringConditionConfig {
-    /// Creates a new builder-style object to manufacture [`QueryStringConditionConfig`](crate::model::QueryStringConditionConfig).
-    pub fn builder() -> crate::model::query_string_condition_config::Builder {
-        crate::model::query_string_condition_config::Builder::default()
-    }
-}
 
 /// <p>Information about a key/value pair.</p>
 #[non_exhaustive]
@@ -2798,6 +2814,13 @@ impl QueryStringKeyValuePair {
         self.value.as_deref()
     }
 }
+impl QueryStringKeyValuePair {
+    /// Creates a new builder-style object to manufacture [`QueryStringKeyValuePair`](crate::model::QueryStringKeyValuePair).
+    pub fn builder() -> crate::model::query_string_key_value_pair::Builder {
+        crate::model::query_string_key_value_pair::Builder::default()
+    }
+}
+
 /// See [`QueryStringKeyValuePair`](crate::model::QueryStringKeyValuePair).
 pub mod query_string_key_value_pair {
 
@@ -2838,12 +2861,6 @@ pub mod query_string_key_value_pair {
         }
     }
 }
-impl QueryStringKeyValuePair {
-    /// Creates a new builder-style object to manufacture [`QueryStringKeyValuePair`](crate::model::QueryStringKeyValuePair).
-    pub fn builder() -> crate::model::query_string_key_value_pair::Builder {
-        crate::model::query_string_key_value_pair::Builder::default()
-    }
-}
 
 /// <p>Information about an HTTP header condition.</p>
 /// <p>There is a set of standard HTTP header fields. You can also define custom HTTP header fields.</p>
@@ -2873,6 +2890,13 @@ impl HttpHeaderConditionConfig {
         self.values.as_deref()
     }
 }
+impl HttpHeaderConditionConfig {
+    /// Creates a new builder-style object to manufacture [`HttpHeaderConditionConfig`](crate::model::HttpHeaderConditionConfig).
+    pub fn builder() -> crate::model::http_header_condition_config::Builder {
+        crate::model::http_header_condition_config::Builder::default()
+    }
+}
+
 /// See [`HttpHeaderConditionConfig`](crate::model::HttpHeaderConditionConfig).
 pub mod http_header_condition_config {
 
@@ -2931,12 +2955,6 @@ pub mod http_header_condition_config {
         }
     }
 }
-impl HttpHeaderConditionConfig {
-    /// Creates a new builder-style object to manufacture [`HttpHeaderConditionConfig`](crate::model::HttpHeaderConditionConfig).
-    pub fn builder() -> crate::model::http_header_condition_config::Builder {
-        crate::model::http_header_condition_config::Builder::default()
-    }
-}
 
 /// <p>Information about a path pattern condition.</p>
 #[non_exhaustive]
@@ -2954,6 +2972,13 @@ impl PathPatternConditionConfig {
         self.values.as_deref()
     }
 }
+impl PathPatternConditionConfig {
+    /// Creates a new builder-style object to manufacture [`PathPatternConditionConfig`](crate::model::PathPatternConditionConfig).
+    pub fn builder() -> crate::model::path_pattern_condition_config::Builder {
+        crate::model::path_pattern_condition_config::Builder::default()
+    }
+}
+
 /// See [`PathPatternConditionConfig`](crate::model::PathPatternConditionConfig).
 pub mod path_pattern_condition_config {
 
@@ -2993,12 +3018,6 @@ pub mod path_pattern_condition_config {
         }
     }
 }
-impl PathPatternConditionConfig {
-    /// Creates a new builder-style object to manufacture [`PathPatternConditionConfig`](crate::model::PathPatternConditionConfig).
-    pub fn builder() -> crate::model::path_pattern_condition_config::Builder {
-        crate::model::path_pattern_condition_config::Builder::default()
-    }
-}
 
 /// <p>Information about a host header condition.</p>
 #[non_exhaustive]
@@ -3016,6 +3035,13 @@ impl HostHeaderConditionConfig {
         self.values.as_deref()
     }
 }
+impl HostHeaderConditionConfig {
+    /// Creates a new builder-style object to manufacture [`HostHeaderConditionConfig`](crate::model::HostHeaderConditionConfig).
+    pub fn builder() -> crate::model::host_header_condition_config::Builder {
+        crate::model::host_header_condition_config::Builder::default()
+    }
+}
+
 /// See [`HostHeaderConditionConfig`](crate::model::HostHeaderConditionConfig).
 pub mod host_header_condition_config {
 
@@ -3055,12 +3081,6 @@ pub mod host_header_condition_config {
         }
     }
 }
-impl HostHeaderConditionConfig {
-    /// Creates a new builder-style object to manufacture [`HostHeaderConditionConfig`](crate::model::HostHeaderConditionConfig).
-    pub fn builder() -> crate::model::host_header_condition_config::Builder {
-        crate::model::host_header_condition_config::Builder::default()
-    }
-}
 
 /// <p>Information about the priorities for the rules for a listener.</p>
 #[non_exhaustive]
@@ -3083,6 +3103,13 @@ impl RulePriorityPair {
         self.priority
     }
 }
+impl RulePriorityPair {
+    /// Creates a new builder-style object to manufacture [`RulePriorityPair`](crate::model::RulePriorityPair).
+    pub fn builder() -> crate::model::rule_priority_pair::Builder {
+        crate::model::rule_priority_pair::Builder::default()
+    }
+}
+
 /// See [`RulePriorityPair`](crate::model::RulePriorityPair).
 pub mod rule_priority_pair {
 
@@ -3123,12 +3150,6 @@ pub mod rule_priority_pair {
         }
     }
 }
-impl RulePriorityPair {
-    /// Creates a new builder-style object to manufacture [`RulePriorityPair`](crate::model::RulePriorityPair).
-    pub fn builder() -> crate::model::rule_priority_pair::Builder {
-        crate::model::rule_priority_pair::Builder::default()
-    }
-}
 
 /// <p>Information about an SSL server certificate.</p>
 #[non_exhaustive]
@@ -3151,6 +3172,13 @@ impl Certificate {
         self.is_default
     }
 }
+impl Certificate {
+    /// Creates a new builder-style object to manufacture [`Certificate`](crate::model::Certificate).
+    pub fn builder() -> crate::model::certificate::Builder {
+        crate::model::certificate::Builder::default()
+    }
+}
+
 /// See [`Certificate`](crate::model::Certificate).
 pub mod certificate {
 
@@ -3194,12 +3222,6 @@ pub mod certificate {
         }
     }
 }
-impl Certificate {
-    /// Creates a new builder-style object to manufacture [`Certificate`](crate::model::Certificate).
-    pub fn builder() -> crate::model::certificate::Builder {
-        crate::model::certificate::Builder::default()
-    }
-}
 
 /// <p>Information about a target.</p>
 #[non_exhaustive]
@@ -3239,6 +3261,13 @@ impl TargetDescription {
         self.availability_zone.as_deref()
     }
 }
+impl TargetDescription {
+    /// Creates a new builder-style object to manufacture [`TargetDescription`](crate::model::TargetDescription).
+    pub fn builder() -> crate::model::target_description::Builder {
+        crate::model::target_description::Builder::default()
+    }
+}
+
 /// See [`TargetDescription`](crate::model::TargetDescription).
 pub mod target_description {
 
@@ -3302,12 +3331,6 @@ pub mod target_description {
                 availability_zone: self.availability_zone,
             }
         }
-    }
-}
-impl TargetDescription {
-    /// Creates a new builder-style object to manufacture [`TargetDescription`](crate::model::TargetDescription).
-    pub fn builder() -> crate::model::target_description::Builder {
-        crate::model::target_description::Builder::default()
     }
 }
 
@@ -3416,6 +3439,13 @@ impl TargetGroupAttribute {
         self.value.as_deref()
     }
 }
+impl TargetGroupAttribute {
+    /// Creates a new builder-style object to manufacture [`TargetGroupAttribute`](crate::model::TargetGroupAttribute).
+    pub fn builder() -> crate::model::target_group_attribute::Builder {
+        crate::model::target_group_attribute::Builder::default()
+    }
+}
+
 /// See [`TargetGroupAttribute`](crate::model::TargetGroupAttribute).
 pub mod target_group_attribute {
 
@@ -3538,12 +3568,6 @@ pub mod target_group_attribute {
                 value: self.value,
             }
         }
-    }
-}
-impl TargetGroupAttribute {
-    /// Creates a new builder-style object to manufacture [`TargetGroupAttribute`](crate::model::TargetGroupAttribute).
-    pub fn builder() -> crate::model::target_group_attribute::Builder {
-        crate::model::target_group_attribute::Builder::default()
     }
 }
 
@@ -3682,6 +3706,13 @@ impl TargetGroup {
         self.ip_address_type.as_ref()
     }
 }
+impl TargetGroup {
+    /// Creates a new builder-style object to manufacture [`TargetGroup`](crate::model::TargetGroup).
+    pub fn builder() -> crate::model::target_group::Builder {
+        crate::model::target_group::Builder::default()
+    }
+}
+
 /// See [`TargetGroup`](crate::model::TargetGroup).
 pub mod target_group {
 
@@ -3956,12 +3987,6 @@ pub mod target_group {
         }
     }
 }
-impl TargetGroup {
-    /// Creates a new builder-style object to manufacture [`TargetGroup`](crate::model::TargetGroup).
-    pub fn builder() -> crate::model::target_group::Builder {
-        crate::model::target_group::Builder::default()
-    }
-}
 
 /// When writing a match expression against `TargetGroupIpAddressTypeEnum`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -4182,6 +4207,13 @@ impl Matcher {
         self.grpc_code.as_deref()
     }
 }
+impl Matcher {
+    /// Creates a new builder-style object to manufacture [`Matcher`](crate::model::Matcher).
+    pub fn builder() -> crate::model::matcher::Builder {
+        crate::model::matcher::Builder::default()
+    }
+}
+
 /// See [`Matcher`](crate::model::Matcher).
 pub mod matcher {
 
@@ -4226,12 +4258,6 @@ pub mod matcher {
                 grpc_code: self.grpc_code,
             }
         }
-    }
-}
-impl Matcher {
-    /// Creates a new builder-style object to manufacture [`Matcher`](crate::model::Matcher).
-    pub fn builder() -> crate::model::matcher::Builder {
-        crate::model::matcher::Builder::default()
     }
 }
 
@@ -4429,6 +4455,13 @@ impl LoadBalancerAttribute {
         self.value.as_deref()
     }
 }
+impl LoadBalancerAttribute {
+    /// Creates a new builder-style object to manufacture [`LoadBalancerAttribute`](crate::model::LoadBalancerAttribute).
+    pub fn builder() -> crate::model::load_balancer_attribute::Builder {
+        crate::model::load_balancer_attribute::Builder::default()
+    }
+}
+
 /// See [`LoadBalancerAttribute`](crate::model::LoadBalancerAttribute).
 pub mod load_balancer_attribute {
 
@@ -4527,12 +4560,6 @@ pub mod load_balancer_attribute {
         }
     }
 }
-impl LoadBalancerAttribute {
-    /// Creates a new builder-style object to manufacture [`LoadBalancerAttribute`](crate::model::LoadBalancerAttribute).
-    pub fn builder() -> crate::model::load_balancer_attribute::Builder {
-        crate::model::load_balancer_attribute::Builder::default()
-    }
-}
 
 /// <p>Information about a listener.</p>
 #[non_exhaustive]
@@ -4597,6 +4624,13 @@ impl Listener {
         self.alpn_policy.as_deref()
     }
 }
+impl Listener {
+    /// Creates a new builder-style object to manufacture [`Listener`](crate::model::Listener).
+    pub fn builder() -> crate::model::listener::Builder {
+        crate::model::listener::Builder::default()
+    }
+}
+
 /// See [`Listener`](crate::model::Listener).
 pub mod listener {
 
@@ -4742,12 +4776,6 @@ pub mod listener {
         }
     }
 }
-impl Listener {
-    /// Creates a new builder-style object to manufacture [`Listener`](crate::model::Listener).
-    pub fn builder() -> crate::model::listener::Builder {
-        crate::model::listener::Builder::default()
-    }
-}
 
 /// <p>Information about the health of a target.</p>
 #[non_exhaustive]
@@ -4777,6 +4805,13 @@ impl TargetHealthDescription {
         self.target_health.as_ref()
     }
 }
+impl TargetHealthDescription {
+    /// Creates a new builder-style object to manufacture [`TargetHealthDescription`](crate::model::TargetHealthDescription).
+    pub fn builder() -> crate::model::target_health_description::Builder {
+        crate::model::target_health_description::Builder::default()
+    }
+}
+
 /// See [`TargetHealthDescription`](crate::model::TargetHealthDescription).
 pub mod target_health_description {
 
@@ -4836,12 +4871,6 @@ pub mod target_health_description {
                 target_health: self.target_health,
             }
         }
-    }
-}
-impl TargetHealthDescription {
-    /// Creates a new builder-style object to manufacture [`TargetHealthDescription`](crate::model::TargetHealthDescription).
-    pub fn builder() -> crate::model::target_health_description::Builder {
-        crate::model::target_health_description::Builder::default()
     }
 }
 
@@ -4931,6 +4960,13 @@ impl TargetHealth {
         self.description.as_deref()
     }
 }
+impl TargetHealth {
+    /// Creates a new builder-style object to manufacture [`TargetHealth`](crate::model::TargetHealth).
+    pub fn builder() -> crate::model::target_health::Builder {
+        crate::model::target_health::Builder::default()
+    }
+}
+
 /// See [`TargetHealth`](crate::model::TargetHealth).
 pub mod target_health {
 
@@ -5045,12 +5081,6 @@ pub mod target_health {
                 description: self.description,
             }
         }
-    }
-}
-impl TargetHealth {
-    /// Creates a new builder-style object to manufacture [`TargetHealth`](crate::model::TargetHealth).
-    pub fn builder() -> crate::model::target_health::Builder {
-        crate::model::target_health::Builder::default()
     }
 }
 
@@ -5349,6 +5379,13 @@ impl TagDescription {
         self.tags.as_deref()
     }
 }
+impl TagDescription {
+    /// Creates a new builder-style object to manufacture [`TagDescription`](crate::model::TagDescription).
+    pub fn builder() -> crate::model::tag_description::Builder {
+        crate::model::tag_description::Builder::default()
+    }
+}
+
 /// See [`TagDescription`](crate::model::TagDescription).
 pub mod tag_description {
 
@@ -5398,12 +5435,6 @@ pub mod tag_description {
         }
     }
 }
-impl TagDescription {
-    /// Creates a new builder-style object to manufacture [`TagDescription`](crate::model::TagDescription).
-    pub fn builder() -> crate::model::tag_description::Builder {
-        crate::model::tag_description::Builder::default()
-    }
-}
 
 /// <p>Information about a tag.</p>
 #[non_exhaustive]
@@ -5426,6 +5457,13 @@ impl Tag {
         self.value.as_deref()
     }
 }
+impl Tag {
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
+    pub fn builder() -> crate::model::tag::Builder {
+        crate::model::tag::Builder::default()
+    }
+}
+
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
 
@@ -5466,12 +5504,6 @@ pub mod tag {
         }
     }
 }
-impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
-    pub fn builder() -> crate::model::tag::Builder {
-        crate::model::tag::Builder::default()
-    }
-}
 
 /// <p>Information about a policy used for SSL negotiation.</p>
 #[non_exhaustive]
@@ -5508,6 +5540,13 @@ impl SslPolicy {
         self.supported_load_balancer_types.as_deref()
     }
 }
+impl SslPolicy {
+    /// Creates a new builder-style object to manufacture [`SslPolicy`](crate::model::SslPolicy).
+    pub fn builder() -> crate::model::ssl_policy::Builder {
+        crate::model::ssl_policy::Builder::default()
+    }
+}
+
 /// See [`SslPolicy`](crate::model::SslPolicy).
 pub mod ssl_policy {
 
@@ -5603,12 +5642,6 @@ pub mod ssl_policy {
         }
     }
 }
-impl SslPolicy {
-    /// Creates a new builder-style object to manufacture [`SslPolicy`](crate::model::SslPolicy).
-    pub fn builder() -> crate::model::ssl_policy::Builder {
-        crate::model::ssl_policy::Builder::default()
-    }
-}
 
 /// <p>Information about a cipher used in a policy.</p>
 #[non_exhaustive]
@@ -5631,6 +5664,13 @@ impl Cipher {
         self.priority
     }
 }
+impl Cipher {
+    /// Creates a new builder-style object to manufacture [`Cipher`](crate::model::Cipher).
+    pub fn builder() -> crate::model::cipher::Builder {
+        crate::model::cipher::Builder::default()
+    }
+}
+
 /// See [`Cipher`](crate::model::Cipher).
 pub mod cipher {
 
@@ -5669,12 +5709,6 @@ pub mod cipher {
                 priority: self.priority.unwrap_or_default(),
             }
         }
-    }
-}
-impl Cipher {
-    /// Creates a new builder-style object to manufacture [`Cipher`](crate::model::Cipher).
-    pub fn builder() -> crate::model::cipher::Builder {
-        crate::model::cipher::Builder::default()
     }
 }
 
@@ -5875,6 +5909,13 @@ impl LoadBalancer {
         self.customer_owned_ipv4_pool.as_deref()
     }
 }
+impl LoadBalancer {
+    /// Creates a new builder-style object to manufacture [`LoadBalancer`](crate::model::LoadBalancer).
+    pub fn builder() -> crate::model::load_balancer::Builder {
+        crate::model::load_balancer::Builder::default()
+    }
+}
+
 /// See [`LoadBalancer`](crate::model::LoadBalancer).
 pub mod load_balancer {
 
@@ -6095,12 +6136,6 @@ pub mod load_balancer {
         }
     }
 }
-impl LoadBalancer {
-    /// Creates a new builder-style object to manufacture [`LoadBalancer`](crate::model::LoadBalancer).
-    pub fn builder() -> crate::model::load_balancer::Builder {
-        crate::model::load_balancer::Builder::default()
-    }
-}
 
 /// <p>Information about the state of the load balancer.</p>
 #[non_exhaustive]
@@ -6123,6 +6158,13 @@ impl LoadBalancerState {
         self.reason.as_deref()
     }
 }
+impl LoadBalancerState {
+    /// Creates a new builder-style object to manufacture [`LoadBalancerState`](crate::model::LoadBalancerState).
+    pub fn builder() -> crate::model::load_balancer_state::Builder {
+        crate::model::load_balancer_state::Builder::default()
+    }
+}
+
 /// See [`LoadBalancerState`](crate::model::LoadBalancerState).
 pub mod load_balancer_state {
 
@@ -6164,12 +6206,6 @@ pub mod load_balancer_state {
                 reason: self.reason,
             }
         }
-    }
-}
-impl LoadBalancerState {
-    /// Creates a new builder-style object to manufacture [`LoadBalancerState`](crate::model::LoadBalancerState).
-    pub fn builder() -> crate::model::load_balancer_state::Builder {
-        crate::model::load_balancer_state::Builder::default()
     }
 }
 
@@ -6428,6 +6464,13 @@ impl Limit {
         self.max.as_deref()
     }
 }
+impl Limit {
+    /// Creates a new builder-style object to manufacture [`Limit`](crate::model::Limit).
+    pub fn builder() -> crate::model::limit::Builder {
+        crate::model::limit::Builder::default()
+    }
+}
+
 /// See [`Limit`](crate::model::Limit).
 pub mod limit {
 
@@ -6506,11 +6549,5 @@ pub mod limit {
                 max: self.max,
             }
         }
-    }
-}
-impl Limit {
-    /// Creates a new builder-style object to manufacture [`Limit`](crate::model::Limit).
-    pub fn builder() -> crate::model::limit::Builder {
-        crate::model::limit::Builder::default()
     }
 }

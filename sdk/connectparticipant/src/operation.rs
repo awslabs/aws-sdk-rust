@@ -4,7 +4,7 @@
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`complete_attachment_upload`](crate::client::Client::complete_attachment_upload).
 ///
-/// See [`crate::client::fluent_builders::CompleteAttachmentUpload`] for more details about the operation.
+/// `ParseStrictResponse` impl for `CompleteAttachmentUpload`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CompleteAttachmentUpload {
     _private: (),
@@ -39,7 +39,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CompleteAttachmentUpload
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`create_participant_connection`](crate::client::Client::create_participant_connection).
 ///
-/// See [`crate::client::fluent_builders::CreateParticipantConnection`] for more details about the operation.
+/// `ParseStrictResponse` impl for `CreateParticipantConnection`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateParticipantConnection {
     _private: (),
@@ -74,7 +74,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateParticipantConnect
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`disconnect_participant`](crate::client::Client::disconnect_participant).
 ///
-/// See [`crate::client::fluent_builders::DisconnectParticipant`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DisconnectParticipant`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DisconnectParticipant {
     _private: (),
@@ -109,7 +109,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisconnectParticipant {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`get_attachment`](crate::client::Client::get_attachment).
 ///
-/// See [`crate::client::fluent_builders::GetAttachment`] for more details about the operation.
+/// `ParseStrictResponse` impl for `GetAttachment`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetAttachment {
     _private: (),
@@ -142,7 +142,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAttachment {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`get_transcript`](crate::client::Client::get_transcript).
 ///
-/// See [`crate::client::fluent_builders::GetTranscript`] for more details about the operation.
+/// `ParseStrictResponse` impl for `GetTranscript`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetTranscript {
     _private: (),
@@ -175,7 +175,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetTranscript {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`send_event`](crate::client::Client::send_event).
 ///
-/// See [`crate::client::fluent_builders::SendEvent`] for more details about the operation.
+/// `ParseStrictResponse` impl for `SendEvent`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct SendEvent {
     _private: (),
@@ -207,7 +207,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SendEvent {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`send_message`](crate::client::Client::send_message).
 ///
-/// See [`crate::client::fluent_builders::SendMessage`] for more details about the operation.
+/// `ParseStrictResponse` impl for `SendMessage`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct SendMessage {
     _private: (),
@@ -240,7 +240,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SendMessage {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`start_attachment_upload`](crate::client::Client::start_attachment_upload).
 ///
-/// See [`crate::client::fluent_builders::StartAttachmentUpload`] for more details about the operation.
+/// `ParseStrictResponse` impl for `StartAttachmentUpload`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StartAttachmentUpload {
     _private: (),

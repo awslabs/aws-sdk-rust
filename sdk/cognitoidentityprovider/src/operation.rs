@@ -4,7 +4,7 @@
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`add_custom_attributes`](crate::client::Client::add_custom_attributes).
 ///
-/// See [`crate::client::fluent_builders::AddCustomAttributes`] for more details about the operation.
+/// `ParseStrictResponse` impl for `AddCustomAttributes`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct AddCustomAttributes {
     _private: (),
@@ -39,7 +39,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AddCustomAttributes {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`admin_add_user_to_group`](crate::client::Client::admin_add_user_to_group).
 ///
-/// See [`crate::client::fluent_builders::AdminAddUserToGroup`] for more details about the operation.
+/// `ParseStrictResponse` impl for `AdminAddUserToGroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct AdminAddUserToGroup {
     _private: (),
@@ -74,7 +74,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AdminAddUserToGroup {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`admin_confirm_sign_up`](crate::client::Client::admin_confirm_sign_up).
 ///
-/// See [`crate::client::fluent_builders::AdminConfirmSignUp`] for more details about the operation.
+/// `ParseStrictResponse` impl for `AdminConfirmSignUp`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct AdminConfirmSignUp {
     _private: (),
@@ -109,7 +109,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AdminConfirmSignUp {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`admin_create_user`](crate::client::Client::admin_create_user).
 ///
-/// See [`crate::client::fluent_builders::AdminCreateUser`] for more details about the operation.
+/// `ParseStrictResponse` impl for `AdminCreateUser`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct AdminCreateUser {
     _private: (),
@@ -144,7 +144,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AdminCreateUser {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`admin_delete_user`](crate::client::Client::admin_delete_user).
 ///
-/// See [`crate::client::fluent_builders::AdminDeleteUser`] for more details about the operation.
+/// `ParseStrictResponse` impl for `AdminDeleteUser`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct AdminDeleteUser {
     _private: (),
@@ -179,7 +179,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AdminDeleteUser {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`admin_delete_user_attributes`](crate::client::Client::admin_delete_user_attributes).
 ///
-/// See [`crate::client::fluent_builders::AdminDeleteUserAttributes`] for more details about the operation.
+/// `ParseStrictResponse` impl for `AdminDeleteUserAttributes`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct AdminDeleteUserAttributes {
     _private: (),
@@ -214,7 +214,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AdminDeleteUserAttribute
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`admin_disable_provider_for_user`](crate::client::Client::admin_disable_provider_for_user).
 ///
-/// See [`crate::client::fluent_builders::AdminDisableProviderForUser`] for more details about the operation.
+/// `ParseStrictResponse` impl for `AdminDisableProviderForUser`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct AdminDisableProviderForUser {
     _private: (),
@@ -249,7 +249,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AdminDisableProviderForU
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`admin_disable_user`](crate::client::Client::admin_disable_user).
 ///
-/// See [`crate::client::fluent_builders::AdminDisableUser`] for more details about the operation.
+/// `ParseStrictResponse` impl for `AdminDisableUser`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct AdminDisableUser {
     _private: (),
@@ -284,7 +284,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AdminDisableUser {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`admin_enable_user`](crate::client::Client::admin_enable_user).
 ///
-/// See [`crate::client::fluent_builders::AdminEnableUser`] for more details about the operation.
+/// `ParseStrictResponse` impl for `AdminEnableUser`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct AdminEnableUser {
     _private: (),
@@ -319,7 +319,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AdminEnableUser {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`admin_forget_device`](crate::client::Client::admin_forget_device).
 ///
-/// See [`crate::client::fluent_builders::AdminForgetDevice`] for more details about the operation.
+/// `ParseStrictResponse` impl for `AdminForgetDevice`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct AdminForgetDevice {
     _private: (),
@@ -354,7 +354,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AdminForgetDevice {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`admin_get_device`](crate::client::Client::admin_get_device).
 ///
-/// See [`crate::client::fluent_builders::AdminGetDevice`] for more details about the operation.
+/// `ParseStrictResponse` impl for `AdminGetDevice`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct AdminGetDevice {
     _private: (),
@@ -387,7 +387,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AdminGetDevice {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`admin_get_user`](crate::client::Client::admin_get_user).
 ///
-/// See [`crate::client::fluent_builders::AdminGetUser`] for more details about the operation.
+/// `ParseStrictResponse` impl for `AdminGetUser`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct AdminGetUser {
     _private: (),
@@ -420,7 +420,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AdminGetUser {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`admin_initiate_auth`](crate::client::Client::admin_initiate_auth).
 ///
-/// See [`crate::client::fluent_builders::AdminInitiateAuth`] for more details about the operation.
+/// `ParseStrictResponse` impl for `AdminInitiateAuth`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct AdminInitiateAuth {
     _private: (),
@@ -455,7 +455,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AdminInitiateAuth {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`admin_link_provider_for_user`](crate::client::Client::admin_link_provider_for_user).
 ///
-/// See [`crate::client::fluent_builders::AdminLinkProviderForUser`] for more details about the operation.
+/// `ParseStrictResponse` impl for `AdminLinkProviderForUser`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct AdminLinkProviderForUser {
     _private: (),
@@ -490,7 +490,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AdminLinkProviderForUser
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`admin_list_devices`](crate::client::Client::admin_list_devices).
 ///
-/// See [`crate::client::fluent_builders::AdminListDevices`] for more details about the operation.
+/// `ParseStrictResponse` impl for `AdminListDevices`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct AdminListDevices {
     _private: (),
@@ -525,7 +525,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AdminListDevices {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`admin_list_groups_for_user`](crate::client::Client::admin_list_groups_for_user).
 ///
-/// See [`crate::client::fluent_builders::AdminListGroupsForUser`] for more details about the operation.
+/// `ParseStrictResponse` impl for `AdminListGroupsForUser`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct AdminListGroupsForUser {
     _private: (),
@@ -560,7 +560,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AdminListGroupsForUser {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`admin_list_user_auth_events`](crate::client::Client::admin_list_user_auth_events).
 ///
-/// See [`crate::client::fluent_builders::AdminListUserAuthEvents`] for more details about the operation.
+/// `ParseStrictResponse` impl for `AdminListUserAuthEvents`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct AdminListUserAuthEvents {
     _private: (),
@@ -595,7 +595,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AdminListUserAuthEvents 
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`admin_remove_user_from_group`](crate::client::Client::admin_remove_user_from_group).
 ///
-/// See [`crate::client::fluent_builders::AdminRemoveUserFromGroup`] for more details about the operation.
+/// `ParseStrictResponse` impl for `AdminRemoveUserFromGroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct AdminRemoveUserFromGroup {
     _private: (),
@@ -630,7 +630,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AdminRemoveUserFromGroup
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`admin_reset_user_password`](crate::client::Client::admin_reset_user_password).
 ///
-/// See [`crate::client::fluent_builders::AdminResetUserPassword`] for more details about the operation.
+/// `ParseStrictResponse` impl for `AdminResetUserPassword`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct AdminResetUserPassword {
     _private: (),
@@ -665,7 +665,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AdminResetUserPassword {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`admin_respond_to_auth_challenge`](crate::client::Client::admin_respond_to_auth_challenge).
 ///
-/// See [`crate::client::fluent_builders::AdminRespondToAuthChallenge`] for more details about the operation.
+/// `ParseStrictResponse` impl for `AdminRespondToAuthChallenge`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct AdminRespondToAuthChallenge {
     _private: (),
@@ -700,7 +700,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AdminRespondToAuthChalle
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`admin_set_user_mfa_preference`](crate::client::Client::admin_set_user_mfa_preference).
 ///
-/// See [`crate::client::fluent_builders::AdminSetUserMFAPreference`] for more details about the operation.
+/// `ParseStrictResponse` impl for `AdminSetUserMFAPreference`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct AdminSetUserMFAPreference {
     _private: (),
@@ -735,7 +735,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AdminSetUserMFAPreferenc
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`admin_set_user_password`](crate::client::Client::admin_set_user_password).
 ///
-/// See [`crate::client::fluent_builders::AdminSetUserPassword`] for more details about the operation.
+/// `ParseStrictResponse` impl for `AdminSetUserPassword`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct AdminSetUserPassword {
     _private: (),
@@ -770,7 +770,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AdminSetUserPassword {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`admin_set_user_settings`](crate::client::Client::admin_set_user_settings).
 ///
-/// See [`crate::client::fluent_builders::AdminSetUserSettings`] for more details about the operation.
+/// `ParseStrictResponse` impl for `AdminSetUserSettings`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct AdminSetUserSettings {
     _private: (),
@@ -805,7 +805,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AdminSetUserSettings {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`admin_update_auth_event_feedback`](crate::client::Client::admin_update_auth_event_feedback).
 ///
-/// See [`crate::client::fluent_builders::AdminUpdateAuthEventFeedback`] for more details about the operation.
+/// `ParseStrictResponse` impl for `AdminUpdateAuthEventFeedback`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct AdminUpdateAuthEventFeedback {
     _private: (),
@@ -840,7 +840,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AdminUpdateAuthEventFeed
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`admin_update_device_status`](crate::client::Client::admin_update_device_status).
 ///
-/// See [`crate::client::fluent_builders::AdminUpdateDeviceStatus`] for more details about the operation.
+/// `ParseStrictResponse` impl for `AdminUpdateDeviceStatus`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct AdminUpdateDeviceStatus {
     _private: (),
@@ -875,7 +875,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AdminUpdateDeviceStatus 
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`admin_update_user_attributes`](crate::client::Client::admin_update_user_attributes).
 ///
-/// See [`crate::client::fluent_builders::AdminUpdateUserAttributes`] for more details about the operation.
+/// `ParseStrictResponse` impl for `AdminUpdateUserAttributes`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct AdminUpdateUserAttributes {
     _private: (),
@@ -910,7 +910,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AdminUpdateUserAttribute
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`admin_user_global_sign_out`](crate::client::Client::admin_user_global_sign_out).
 ///
-/// See [`crate::client::fluent_builders::AdminUserGlobalSignOut`] for more details about the operation.
+/// `ParseStrictResponse` impl for `AdminUserGlobalSignOut`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct AdminUserGlobalSignOut {
     _private: (),
@@ -945,7 +945,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AdminUserGlobalSignOut {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`associate_software_token`](crate::client::Client::associate_software_token).
 ///
-/// See [`crate::client::fluent_builders::AssociateSoftwareToken`] for more details about the operation.
+/// `ParseStrictResponse` impl for `AssociateSoftwareToken`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct AssociateSoftwareToken {
     _private: (),
@@ -980,7 +980,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateSoftwareToken {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`change_password`](crate::client::Client::change_password).
 ///
-/// See [`crate::client::fluent_builders::ChangePassword`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ChangePassword`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ChangePassword {
     _private: (),
@@ -1013,7 +1013,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ChangePassword {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`confirm_device`](crate::client::Client::confirm_device).
 ///
-/// See [`crate::client::fluent_builders::ConfirmDevice`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ConfirmDevice`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ConfirmDevice {
     _private: (),
@@ -1046,7 +1046,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ConfirmDevice {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`confirm_forgot_password`](crate::client::Client::confirm_forgot_password).
 ///
-/// See [`crate::client::fluent_builders::ConfirmForgotPassword`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ConfirmForgotPassword`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ConfirmForgotPassword {
     _private: (),
@@ -1081,7 +1081,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ConfirmForgotPassword {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`confirm_sign_up`](crate::client::Client::confirm_sign_up).
 ///
-/// See [`crate::client::fluent_builders::ConfirmSignUp`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ConfirmSignUp`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ConfirmSignUp {
     _private: (),
@@ -1114,7 +1114,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ConfirmSignUp {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`create_group`](crate::client::Client::create_group).
 ///
-/// See [`crate::client::fluent_builders::CreateGroup`] for more details about the operation.
+/// `ParseStrictResponse` impl for `CreateGroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateGroup {
     _private: (),
@@ -1147,7 +1147,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateGroup {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`create_identity_provider`](crate::client::Client::create_identity_provider).
 ///
-/// See [`crate::client::fluent_builders::CreateIdentityProvider`] for more details about the operation.
+/// `ParseStrictResponse` impl for `CreateIdentityProvider`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateIdentityProvider {
     _private: (),
@@ -1182,7 +1182,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateIdentityProvider {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`create_resource_server`](crate::client::Client::create_resource_server).
 ///
-/// See [`crate::client::fluent_builders::CreateResourceServer`] for more details about the operation.
+/// `ParseStrictResponse` impl for `CreateResourceServer`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateResourceServer {
     _private: (),
@@ -1217,7 +1217,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateResourceServer {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`create_user_import_job`](crate::client::Client::create_user_import_job).
 ///
-/// See [`crate::client::fluent_builders::CreateUserImportJob`] for more details about the operation.
+/// `ParseStrictResponse` impl for `CreateUserImportJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateUserImportJob {
     _private: (),
@@ -1252,7 +1252,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateUserImportJob {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`create_user_pool`](crate::client::Client::create_user_pool).
 ///
-/// See [`crate::client::fluent_builders::CreateUserPool`] for more details about the operation.
+/// `ParseStrictResponse` impl for `CreateUserPool`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateUserPool {
     _private: (),
@@ -1285,7 +1285,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateUserPool {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`create_user_pool_client`](crate::client::Client::create_user_pool_client).
 ///
-/// See [`crate::client::fluent_builders::CreateUserPoolClient`] for more details about the operation.
+/// `ParseStrictResponse` impl for `CreateUserPoolClient`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateUserPoolClient {
     _private: (),
@@ -1320,7 +1320,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateUserPoolClient {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`create_user_pool_domain`](crate::client::Client::create_user_pool_domain).
 ///
-/// See [`crate::client::fluent_builders::CreateUserPoolDomain`] for more details about the operation.
+/// `ParseStrictResponse` impl for `CreateUserPoolDomain`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateUserPoolDomain {
     _private: (),
@@ -1355,7 +1355,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateUserPoolDomain {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`delete_group`](crate::client::Client::delete_group).
 ///
-/// See [`crate::client::fluent_builders::DeleteGroup`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DeleteGroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteGroup {
     _private: (),
@@ -1388,7 +1388,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteGroup {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`delete_identity_provider`](crate::client::Client::delete_identity_provider).
 ///
-/// See [`crate::client::fluent_builders::DeleteIdentityProvider`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DeleteIdentityProvider`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteIdentityProvider {
     _private: (),
@@ -1423,7 +1423,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteIdentityProvider {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`delete_resource_server`](crate::client::Client::delete_resource_server).
 ///
-/// See [`crate::client::fluent_builders::DeleteResourceServer`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DeleteResourceServer`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteResourceServer {
     _private: (),
@@ -1458,7 +1458,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteResourceServer {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`delete_user`](crate::client::Client::delete_user).
 ///
-/// See [`crate::client::fluent_builders::DeleteUser`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DeleteUser`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteUser {
     _private: (),
@@ -1491,7 +1491,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteUser {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`delete_user_attributes`](crate::client::Client::delete_user_attributes).
 ///
-/// See [`crate::client::fluent_builders::DeleteUserAttributes`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DeleteUserAttributes`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteUserAttributes {
     _private: (),
@@ -1526,7 +1526,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteUserAttributes {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`delete_user_pool`](crate::client::Client::delete_user_pool).
 ///
-/// See [`crate::client::fluent_builders::DeleteUserPool`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DeleteUserPool`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteUserPool {
     _private: (),
@@ -1559,7 +1559,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteUserPool {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`delete_user_pool_client`](crate::client::Client::delete_user_pool_client).
 ///
-/// See [`crate::client::fluent_builders::DeleteUserPoolClient`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DeleteUserPoolClient`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteUserPoolClient {
     _private: (),
@@ -1594,7 +1594,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteUserPoolClient {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`delete_user_pool_domain`](crate::client::Client::delete_user_pool_domain).
 ///
-/// See [`crate::client::fluent_builders::DeleteUserPoolDomain`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DeleteUserPoolDomain`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteUserPoolDomain {
     _private: (),
@@ -1629,7 +1629,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteUserPoolDomain {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`describe_identity_provider`](crate::client::Client::describe_identity_provider).
 ///
-/// See [`crate::client::fluent_builders::DescribeIdentityProvider`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DescribeIdentityProvider`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeIdentityProvider {
     _private: (),
@@ -1664,7 +1664,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeIdentityProvider
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`describe_resource_server`](crate::client::Client::describe_resource_server).
 ///
-/// See [`crate::client::fluent_builders::DescribeResourceServer`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DescribeResourceServer`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeResourceServer {
     _private: (),
@@ -1699,7 +1699,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeResourceServer {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`describe_risk_configuration`](crate::client::Client::describe_risk_configuration).
 ///
-/// See [`crate::client::fluent_builders::DescribeRiskConfiguration`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DescribeRiskConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeRiskConfiguration {
     _private: (),
@@ -1734,7 +1734,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeRiskConfiguratio
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`describe_user_import_job`](crate::client::Client::describe_user_import_job).
 ///
-/// See [`crate::client::fluent_builders::DescribeUserImportJob`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DescribeUserImportJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeUserImportJob {
     _private: (),
@@ -1769,7 +1769,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeUserImportJob {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`describe_user_pool`](crate::client::Client::describe_user_pool).
 ///
-/// See [`crate::client::fluent_builders::DescribeUserPool`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DescribeUserPool`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeUserPool {
     _private: (),
@@ -1804,7 +1804,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeUserPool {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`describe_user_pool_client`](crate::client::Client::describe_user_pool_client).
 ///
-/// See [`crate::client::fluent_builders::DescribeUserPoolClient`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DescribeUserPoolClient`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeUserPoolClient {
     _private: (),
@@ -1839,7 +1839,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeUserPoolClient {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`describe_user_pool_domain`](crate::client::Client::describe_user_pool_domain).
 ///
-/// See [`crate::client::fluent_builders::DescribeUserPoolDomain`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DescribeUserPoolDomain`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeUserPoolDomain {
     _private: (),
@@ -1874,7 +1874,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeUserPoolDomain {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`forget_device`](crate::client::Client::forget_device).
 ///
-/// See [`crate::client::fluent_builders::ForgetDevice`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ForgetDevice`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ForgetDevice {
     _private: (),
@@ -1907,7 +1907,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ForgetDevice {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`forgot_password`](crate::client::Client::forgot_password).
 ///
-/// See [`crate::client::fluent_builders::ForgotPassword`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ForgotPassword`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ForgotPassword {
     _private: (),
@@ -1940,7 +1940,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ForgotPassword {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`get_csv_header`](crate::client::Client::get_csv_header).
 ///
-/// See [`crate::client::fluent_builders::GetCSVHeader`] for more details about the operation.
+/// `ParseStrictResponse` impl for `GetCSVHeader`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetCSVHeader {
     _private: (),
@@ -1973,7 +1973,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetCSVHeader {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`get_device`](crate::client::Client::get_device).
 ///
-/// See [`crate::client::fluent_builders::GetDevice`] for more details about the operation.
+/// `ParseStrictResponse` impl for `GetDevice`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetDevice {
     _private: (),
@@ -2005,7 +2005,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDevice {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`get_group`](crate::client::Client::get_group).
 ///
-/// See [`crate::client::fluent_builders::GetGroup`] for more details about the operation.
+/// `ParseStrictResponse` impl for `GetGroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetGroup {
     _private: (),
@@ -2037,7 +2037,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetGroup {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`get_identity_provider_by_identifier`](crate::client::Client::get_identity_provider_by_identifier).
 ///
-/// See [`crate::client::fluent_builders::GetIdentityProviderByIdentifier`] for more details about the operation.
+/// `ParseStrictResponse` impl for `GetIdentityProviderByIdentifier`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetIdentityProviderByIdentifier {
     _private: (),
@@ -2072,7 +2072,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetIdentityProviderByIde
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`get_signing_certificate`](crate::client::Client::get_signing_certificate).
 ///
-/// See [`crate::client::fluent_builders::GetSigningCertificate`] for more details about the operation.
+/// `ParseStrictResponse` impl for `GetSigningCertificate`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetSigningCertificate {
     _private: (),
@@ -2107,7 +2107,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSigningCertificate {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`get_ui_customization`](crate::client::Client::get_ui_customization).
 ///
-/// See [`crate::client::fluent_builders::GetUICustomization`] for more details about the operation.
+/// `ParseStrictResponse` impl for `GetUICustomization`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetUICustomization {
     _private: (),
@@ -2142,7 +2142,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetUICustomization {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`get_user`](crate::client::Client::get_user).
 ///
-/// See [`crate::client::fluent_builders::GetUser`] for more details about the operation.
+/// `ParseStrictResponse` impl for `GetUser`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetUser {
     _private: (),
@@ -2174,7 +2174,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetUser {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`get_user_attribute_verification_code`](crate::client::Client::get_user_attribute_verification_code).
 ///
-/// See [`crate::client::fluent_builders::GetUserAttributeVerificationCode`] for more details about the operation.
+/// `ParseStrictResponse` impl for `GetUserAttributeVerificationCode`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetUserAttributeVerificationCode {
     _private: (),
@@ -2209,7 +2209,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetUserAttributeVerifica
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`get_user_pool_mfa_config`](crate::client::Client::get_user_pool_mfa_config).
 ///
-/// See [`crate::client::fluent_builders::GetUserPoolMfaConfig`] for more details about the operation.
+/// `ParseStrictResponse` impl for `GetUserPoolMfaConfig`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetUserPoolMfaConfig {
     _private: (),
@@ -2244,7 +2244,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetUserPoolMfaConfig {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`global_sign_out`](crate::client::Client::global_sign_out).
 ///
-/// See [`crate::client::fluent_builders::GlobalSignOut`] for more details about the operation.
+/// `ParseStrictResponse` impl for `GlobalSignOut`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GlobalSignOut {
     _private: (),
@@ -2277,7 +2277,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GlobalSignOut {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`initiate_auth`](crate::client::Client::initiate_auth).
 ///
-/// See [`crate::client::fluent_builders::InitiateAuth`] for more details about the operation.
+/// `ParseStrictResponse` impl for `InitiateAuth`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct InitiateAuth {
     _private: (),
@@ -2310,7 +2310,7 @@ impl aws_smithy_http::response::ParseStrictResponse for InitiateAuth {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_devices`](crate::client::Client::list_devices).
 ///
-/// See [`crate::client::fluent_builders::ListDevices`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListDevices`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListDevices {
     _private: (),
@@ -2343,7 +2343,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListDevices {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_groups`](crate::client::Client::list_groups).
 ///
-/// See [`crate::client::fluent_builders::ListGroups`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListGroups`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListGroups {
     _private: (),
@@ -2376,7 +2376,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListGroups {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_identity_providers`](crate::client::Client::list_identity_providers).
 ///
-/// See [`crate::client::fluent_builders::ListIdentityProviders`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListIdentityProviders`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListIdentityProviders {
     _private: (),
@@ -2411,7 +2411,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListIdentityProviders {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_resource_servers`](crate::client::Client::list_resource_servers).
 ///
-/// See [`crate::client::fluent_builders::ListResourceServers`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListResourceServers`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListResourceServers {
     _private: (),
@@ -2446,7 +2446,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListResourceServers {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
 ///
-/// See [`crate::client::fluent_builders::ListTagsForResource`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTagsForResource {
     _private: (),
@@ -2481,7 +2481,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_user_import_jobs`](crate::client::Client::list_user_import_jobs).
 ///
-/// See [`crate::client::fluent_builders::ListUserImportJobs`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListUserImportJobs`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListUserImportJobs {
     _private: (),
@@ -2516,7 +2516,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListUserImportJobs {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_user_pool_clients`](crate::client::Client::list_user_pool_clients).
 ///
-/// See [`crate::client::fluent_builders::ListUserPoolClients`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListUserPoolClients`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListUserPoolClients {
     _private: (),
@@ -2551,7 +2551,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListUserPoolClients {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_user_pools`](crate::client::Client::list_user_pools).
 ///
-/// See [`crate::client::fluent_builders::ListUserPools`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListUserPools`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListUserPools {
     _private: (),
@@ -2584,7 +2584,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListUserPools {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_users`](crate::client::Client::list_users).
 ///
-/// See [`crate::client::fluent_builders::ListUsers`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListUsers`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListUsers {
     _private: (),
@@ -2616,7 +2616,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListUsers {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_users_in_group`](crate::client::Client::list_users_in_group).
 ///
-/// See [`crate::client::fluent_builders::ListUsersInGroup`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListUsersInGroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListUsersInGroup {
     _private: (),
@@ -2651,7 +2651,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListUsersInGroup {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`resend_confirmation_code`](crate::client::Client::resend_confirmation_code).
 ///
-/// See [`crate::client::fluent_builders::ResendConfirmationCode`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ResendConfirmationCode`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ResendConfirmationCode {
     _private: (),
@@ -2686,7 +2686,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ResendConfirmationCode {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`respond_to_auth_challenge`](crate::client::Client::respond_to_auth_challenge).
 ///
-/// See [`crate::client::fluent_builders::RespondToAuthChallenge`] for more details about the operation.
+/// `ParseStrictResponse` impl for `RespondToAuthChallenge`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct RespondToAuthChallenge {
     _private: (),
@@ -2721,7 +2721,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RespondToAuthChallenge {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`revoke_token`](crate::client::Client::revoke_token).
 ///
-/// See [`crate::client::fluent_builders::RevokeToken`] for more details about the operation.
+/// `ParseStrictResponse` impl for `RevokeToken`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct RevokeToken {
     _private: (),
@@ -2754,7 +2754,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RevokeToken {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`set_risk_configuration`](crate::client::Client::set_risk_configuration).
 ///
-/// See [`crate::client::fluent_builders::SetRiskConfiguration`] for more details about the operation.
+/// `ParseStrictResponse` impl for `SetRiskConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct SetRiskConfiguration {
     _private: (),
@@ -2789,7 +2789,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SetRiskConfiguration {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`set_ui_customization`](crate::client::Client::set_ui_customization).
 ///
-/// See [`crate::client::fluent_builders::SetUICustomization`] for more details about the operation.
+/// `ParseStrictResponse` impl for `SetUICustomization`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct SetUICustomization {
     _private: (),
@@ -2824,7 +2824,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SetUICustomization {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`set_user_mfa_preference`](crate::client::Client::set_user_mfa_preference).
 ///
-/// See [`crate::client::fluent_builders::SetUserMFAPreference`] for more details about the operation.
+/// `ParseStrictResponse` impl for `SetUserMFAPreference`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct SetUserMFAPreference {
     _private: (),
@@ -2859,7 +2859,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SetUserMFAPreference {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`set_user_pool_mfa_config`](crate::client::Client::set_user_pool_mfa_config).
 ///
-/// See [`crate::client::fluent_builders::SetUserPoolMfaConfig`] for more details about the operation.
+/// `ParseStrictResponse` impl for `SetUserPoolMfaConfig`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct SetUserPoolMfaConfig {
     _private: (),
@@ -2894,7 +2894,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SetUserPoolMfaConfig {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`set_user_settings`](crate::client::Client::set_user_settings).
 ///
-/// See [`crate::client::fluent_builders::SetUserSettings`] for more details about the operation.
+/// `ParseStrictResponse` impl for `SetUserSettings`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct SetUserSettings {
     _private: (),
@@ -2929,7 +2929,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SetUserSettings {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`sign_up`](crate::client::Client::sign_up).
 ///
-/// See [`crate::client::fluent_builders::SignUp`] for more details about the operation.
+/// `ParseStrictResponse` impl for `SignUp`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct SignUp {
     _private: (),
@@ -2961,7 +2961,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SignUp {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`start_user_import_job`](crate::client::Client::start_user_import_job).
 ///
-/// See [`crate::client::fluent_builders::StartUserImportJob`] for more details about the operation.
+/// `ParseStrictResponse` impl for `StartUserImportJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StartUserImportJob {
     _private: (),
@@ -2996,7 +2996,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartUserImportJob {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`stop_user_import_job`](crate::client::Client::stop_user_import_job).
 ///
-/// See [`crate::client::fluent_builders::StopUserImportJob`] for more details about the operation.
+/// `ParseStrictResponse` impl for `StopUserImportJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StopUserImportJob {
     _private: (),
@@ -3031,7 +3031,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StopUserImportJob {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`tag_resource`](crate::client::Client::tag_resource).
 ///
-/// See [`crate::client::fluent_builders::TagResource`] for more details about the operation.
+/// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct TagResource {
     _private: (),
@@ -3064,7 +3064,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`untag_resource`](crate::client::Client::untag_resource).
 ///
-/// See [`crate::client::fluent_builders::UntagResource`] for more details about the operation.
+/// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UntagResource {
     _private: (),
@@ -3097,7 +3097,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`update_auth_event_feedback`](crate::client::Client::update_auth_event_feedback).
 ///
-/// See [`crate::client::fluent_builders::UpdateAuthEventFeedback`] for more details about the operation.
+/// `ParseStrictResponse` impl for `UpdateAuthEventFeedback`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateAuthEventFeedback {
     _private: (),
@@ -3132,7 +3132,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateAuthEventFeedback 
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`update_device_status`](crate::client::Client::update_device_status).
 ///
-/// See [`crate::client::fluent_builders::UpdateDeviceStatus`] for more details about the operation.
+/// `ParseStrictResponse` impl for `UpdateDeviceStatus`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateDeviceStatus {
     _private: (),
@@ -3167,7 +3167,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateDeviceStatus {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`update_group`](crate::client::Client::update_group).
 ///
-/// See [`crate::client::fluent_builders::UpdateGroup`] for more details about the operation.
+/// `ParseStrictResponse` impl for `UpdateGroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateGroup {
     _private: (),
@@ -3200,7 +3200,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateGroup {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`update_identity_provider`](crate::client::Client::update_identity_provider).
 ///
-/// See [`crate::client::fluent_builders::UpdateIdentityProvider`] for more details about the operation.
+/// `ParseStrictResponse` impl for `UpdateIdentityProvider`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateIdentityProvider {
     _private: (),
@@ -3235,7 +3235,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateIdentityProvider {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`update_resource_server`](crate::client::Client::update_resource_server).
 ///
-/// See [`crate::client::fluent_builders::UpdateResourceServer`] for more details about the operation.
+/// `ParseStrictResponse` impl for `UpdateResourceServer`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateResourceServer {
     _private: (),
@@ -3270,7 +3270,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateResourceServer {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`update_user_attributes`](crate::client::Client::update_user_attributes).
 ///
-/// See [`crate::client::fluent_builders::UpdateUserAttributes`] for more details about the operation.
+/// `ParseStrictResponse` impl for `UpdateUserAttributes`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateUserAttributes {
     _private: (),
@@ -3305,7 +3305,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateUserAttributes {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`update_user_pool`](crate::client::Client::update_user_pool).
 ///
-/// See [`crate::client::fluent_builders::UpdateUserPool`] for more details about the operation.
+/// `ParseStrictResponse` impl for `UpdateUserPool`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateUserPool {
     _private: (),
@@ -3338,7 +3338,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateUserPool {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`update_user_pool_client`](crate::client::Client::update_user_pool_client).
 ///
-/// See [`crate::client::fluent_builders::UpdateUserPoolClient`] for more details about the operation.
+/// `ParseStrictResponse` impl for `UpdateUserPoolClient`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateUserPoolClient {
     _private: (),
@@ -3373,7 +3373,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateUserPoolClient {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`update_user_pool_domain`](crate::client::Client::update_user_pool_domain).
 ///
-/// See [`crate::client::fluent_builders::UpdateUserPoolDomain`] for more details about the operation.
+/// `ParseStrictResponse` impl for `UpdateUserPoolDomain`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateUserPoolDomain {
     _private: (),
@@ -3408,7 +3408,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateUserPoolDomain {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`verify_software_token`](crate::client::Client::verify_software_token).
 ///
-/// See [`crate::client::fluent_builders::VerifySoftwareToken`] for more details about the operation.
+/// `ParseStrictResponse` impl for `VerifySoftwareToken`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct VerifySoftwareToken {
     _private: (),
@@ -3443,7 +3443,7 @@ impl aws_smithy_http::response::ParseStrictResponse for VerifySoftwareToken {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`verify_user_attribute`](crate::client::Client::verify_user_attribute).
 ///
-/// See [`crate::client::fluent_builders::VerifyUserAttribute`] for more details about the operation.
+/// `ParseStrictResponse` impl for `VerifyUserAttribute`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct VerifyUserAttribute {
     _private: (),

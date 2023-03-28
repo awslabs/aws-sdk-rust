@@ -19,6 +19,14 @@ impl aws_http::request_id::RequestId for UpdateSubscriptionNotificationConfigura
         self._request_id.as_deref()
     }
 }
+impl UpdateSubscriptionNotificationConfigurationOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateSubscriptionNotificationConfigurationOutput`](crate::output::UpdateSubscriptionNotificationConfigurationOutput).
+    pub fn builder() -> crate::output::update_subscription_notification_configuration_output::Builder
+    {
+        crate::output::update_subscription_notification_configuration_output::Builder::default()
+    }
+}
+
 /// See [`UpdateSubscriptionNotificationConfigurationOutput`](crate::output::UpdateSubscriptionNotificationConfigurationOutput).
 pub mod update_subscription_notification_configuration_output {
 
@@ -58,13 +66,6 @@ pub mod update_subscription_notification_configuration_output {
         }
     }
 }
-impl UpdateSubscriptionNotificationConfigurationOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateSubscriptionNotificationConfigurationOutput`](crate::output::UpdateSubscriptionNotificationConfigurationOutput).
-    pub fn builder() -> crate::output::update_subscription_notification_configuration_output::Builder
-    {
-        crate::output::update_subscription_notification_configuration_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -86,6 +87,13 @@ impl aws_http::request_id::RequestId for UpdateSubscriberOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdateSubscriberOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateSubscriberOutput`](crate::output::UpdateSubscriberOutput).
+    pub fn builder() -> crate::output::update_subscriber_output::Builder {
+        crate::output::update_subscriber_output::Builder::default()
+    }
+}
+
 /// See [`UpdateSubscriberOutput`](crate::output::UpdateSubscriberOutput).
 pub mod update_subscriber_output {
 
@@ -128,12 +136,6 @@ pub mod update_subscriber_output {
         }
     }
 }
-impl UpdateSubscriberOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateSubscriberOutput`](crate::output::UpdateSubscriberOutput).
-    pub fn builder() -> crate::output::update_subscriber_output::Builder {
-        crate::output::update_subscriber_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -146,6 +148,13 @@ impl aws_http::request_id::RequestId for UpdateDatalakeExceptionsSubscriptionOut
         self._request_id.as_deref()
     }
 }
+impl UpdateDatalakeExceptionsSubscriptionOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateDatalakeExceptionsSubscriptionOutput`](crate::output::UpdateDatalakeExceptionsSubscriptionOutput).
+    pub fn builder() -> crate::output::update_datalake_exceptions_subscription_output::Builder {
+        crate::output::update_datalake_exceptions_subscription_output::Builder::default()
+    }
+}
+
 /// See [`UpdateDatalakeExceptionsSubscriptionOutput`](crate::output::UpdateDatalakeExceptionsSubscriptionOutput).
 pub mod update_datalake_exceptions_subscription_output {
 
@@ -173,12 +182,6 @@ pub mod update_datalake_exceptions_subscription_output {
         }
     }
 }
-impl UpdateDatalakeExceptionsSubscriptionOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateDatalakeExceptionsSubscriptionOutput`](crate::output::UpdateDatalakeExceptionsSubscriptionOutput).
-    pub fn builder() -> crate::output::update_datalake_exceptions_subscription_output::Builder {
-        crate::output::update_datalake_exceptions_subscription_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -191,6 +194,13 @@ impl aws_http::request_id::RequestId for UpdateDatalakeExceptionsExpiryOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdateDatalakeExceptionsExpiryOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateDatalakeExceptionsExpiryOutput`](crate::output::UpdateDatalakeExceptionsExpiryOutput).
+    pub fn builder() -> crate::output::update_datalake_exceptions_expiry_output::Builder {
+        crate::output::update_datalake_exceptions_expiry_output::Builder::default()
+    }
+}
+
 /// See [`UpdateDatalakeExceptionsExpiryOutput`](crate::output::UpdateDatalakeExceptionsExpiryOutput).
 pub mod update_datalake_exceptions_expiry_output {
 
@@ -218,12 +228,6 @@ pub mod update_datalake_exceptions_expiry_output {
         }
     }
 }
-impl UpdateDatalakeExceptionsExpiryOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateDatalakeExceptionsExpiryOutput`](crate::output::UpdateDatalakeExceptionsExpiryOutput).
-    pub fn builder() -> crate::output::update_datalake_exceptions_expiry_output::Builder {
-        crate::output::update_datalake_exceptions_expiry_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -236,6 +240,13 @@ impl aws_http::request_id::RequestId for UpdateDatalakeOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdateDatalakeOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateDatalakeOutput`](crate::output::UpdateDatalakeOutput).
+    pub fn builder() -> crate::output::update_datalake_output::Builder {
+        crate::output::update_datalake_output::Builder::default()
+    }
+}
+
 /// See [`UpdateDatalakeOutput`](crate::output::UpdateDatalakeOutput).
 pub mod update_datalake_output {
 
@@ -261,12 +272,6 @@ pub mod update_datalake_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl UpdateDatalakeOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateDatalakeOutput`](crate::output::UpdateDatalakeOutput).
-    pub fn builder() -> crate::output::update_datalake_output::Builder {
-        crate::output::update_datalake_output::Builder::default()
     }
 }
 
@@ -297,6 +302,13 @@ impl aws_http::request_id::RequestId for ListSubscribersOutput {
         self._request_id.as_deref()
     }
 }
+impl ListSubscribersOutput {
+    /// Creates a new builder-style object to manufacture [`ListSubscribersOutput`](crate::output::ListSubscribersOutput).
+    pub fn builder() -> crate::output::list_subscribers_output::Builder {
+        crate::output::list_subscribers_output::Builder::default()
+    }
+}
+
 /// See [`ListSubscribersOutput`](crate::output::ListSubscribersOutput).
 pub mod list_subscribers_output {
 
@@ -358,12 +370,6 @@ pub mod list_subscribers_output {
         }
     }
 }
-impl ListSubscribersOutput {
-    /// Creates a new builder-style object to manufacture [`ListSubscribersOutput`](crate::output::ListSubscribersOutput).
-    pub fn builder() -> crate::output::list_subscribers_output::Builder {
-        crate::output::list_subscribers_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -406,6 +412,13 @@ impl aws_http::request_id::RequestId for ListLogSourcesOutput {
         self._request_id.as_deref()
     }
 }
+impl ListLogSourcesOutput {
+    /// Creates a new builder-style object to manufacture [`ListLogSourcesOutput`](crate::output::ListLogSourcesOutput).
+    pub fn builder() -> crate::output::list_log_sources_output::Builder {
+        crate::output::list_log_sources_output::Builder::default()
+    }
+}
+
 /// See [`ListLogSourcesOutput`](crate::output::ListLogSourcesOutput).
 pub mod list_log_sources_output {
 
@@ -492,12 +505,6 @@ pub mod list_log_sources_output {
         }
     }
 }
-impl ListLogSourcesOutput {
-    /// Creates a new builder-style object to manufacture [`ListLogSourcesOutput`](crate::output::ListLogSourcesOutput).
-    pub fn builder() -> crate::output::list_log_sources_output::Builder {
-        crate::output::list_log_sources_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -528,6 +535,13 @@ impl aws_http::request_id::RequestId for ListDatalakeExceptionsOutput {
         self._request_id.as_deref()
     }
 }
+impl ListDatalakeExceptionsOutput {
+    /// Creates a new builder-style object to manufacture [`ListDatalakeExceptionsOutput`](crate::output::ListDatalakeExceptionsOutput).
+    pub fn builder() -> crate::output::list_datalake_exceptions_output::Builder {
+        crate::output::list_datalake_exceptions_output::Builder::default()
+    }
+}
+
 /// See [`ListDatalakeExceptionsOutput`](crate::output::ListDatalakeExceptionsOutput).
 pub mod list_datalake_exceptions_output {
 
@@ -591,12 +605,6 @@ pub mod list_datalake_exceptions_output {
         }
     }
 }
-impl ListDatalakeExceptionsOutput {
-    /// Creates a new builder-style object to manufacture [`ListDatalakeExceptionsOutput`](crate::output::ListDatalakeExceptionsOutput).
-    pub fn builder() -> crate::output::list_datalake_exceptions_output::Builder {
-        crate::output::list_datalake_exceptions_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -618,6 +626,13 @@ impl aws_http::request_id::RequestId for GetSubscriberOutput {
         self._request_id.as_deref()
     }
 }
+impl GetSubscriberOutput {
+    /// Creates a new builder-style object to manufacture [`GetSubscriberOutput`](crate::output::GetSubscriberOutput).
+    pub fn builder() -> crate::output::get_subscriber_output::Builder {
+        crate::output::get_subscriber_output::Builder::default()
+    }
+}
+
 /// See [`GetSubscriberOutput`](crate::output::GetSubscriberOutput).
 pub mod get_subscriber_output {
 
@@ -660,12 +675,6 @@ pub mod get_subscriber_output {
         }
     }
 }
-impl GetSubscriberOutput {
-    /// Creates a new builder-style object to manufacture [`GetSubscriberOutput`](crate::output::GetSubscriberOutput).
-    pub fn builder() -> crate::output::get_subscriber_output::Builder {
-        crate::output::get_subscriber_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -696,6 +705,13 @@ impl aws_http::request_id::RequestId for GetDatalakeStatusOutput {
         self._request_id.as_deref()
     }
 }
+impl GetDatalakeStatusOutput {
+    /// Creates a new builder-style object to manufacture [`GetDatalakeStatusOutput`](crate::output::GetDatalakeStatusOutput).
+    pub fn builder() -> crate::output::get_datalake_status_output::Builder {
+        crate::output::get_datalake_status_output::Builder::default()
+    }
+}
+
 /// See [`GetDatalakeStatusOutput`](crate::output::GetDatalakeStatusOutput).
 pub mod get_datalake_status_output {
 
@@ -759,12 +775,6 @@ pub mod get_datalake_status_output {
         }
     }
 }
-impl GetDatalakeStatusOutput {
-    /// Creates a new builder-style object to manufacture [`GetDatalakeStatusOutput`](crate::output::GetDatalakeStatusOutput).
-    pub fn builder() -> crate::output::get_datalake_status_output::Builder {
-        crate::output::get_datalake_status_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -789,6 +799,13 @@ impl aws_http::request_id::RequestId for GetDatalakeExceptionsSubscriptionOutput
         self._request_id.as_deref()
     }
 }
+impl GetDatalakeExceptionsSubscriptionOutput {
+    /// Creates a new builder-style object to manufacture [`GetDatalakeExceptionsSubscriptionOutput`](crate::output::GetDatalakeExceptionsSubscriptionOutput).
+    pub fn builder() -> crate::output::get_datalake_exceptions_subscription_output::Builder {
+        crate::output::get_datalake_exceptions_subscription_output::Builder::default()
+    }
+}
+
 /// See [`GetDatalakeExceptionsSubscriptionOutput`](crate::output::GetDatalakeExceptionsSubscriptionOutput).
 pub mod get_datalake_exceptions_subscription_output {
 
@@ -835,12 +852,6 @@ pub mod get_datalake_exceptions_subscription_output {
         }
     }
 }
-impl GetDatalakeExceptionsSubscriptionOutput {
-    /// Creates a new builder-style object to manufacture [`GetDatalakeExceptionsSubscriptionOutput`](crate::output::GetDatalakeExceptionsSubscriptionOutput).
-    pub fn builder() -> crate::output::get_datalake_exceptions_subscription_output::Builder {
-        crate::output::get_datalake_exceptions_subscription_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -862,6 +873,13 @@ impl aws_http::request_id::RequestId for GetDatalakeExceptionsExpiryOutput {
         self._request_id.as_deref()
     }
 }
+impl GetDatalakeExceptionsExpiryOutput {
+    /// Creates a new builder-style object to manufacture [`GetDatalakeExceptionsExpiryOutput`](crate::output::GetDatalakeExceptionsExpiryOutput).
+    pub fn builder() -> crate::output::get_datalake_exceptions_expiry_output::Builder {
+        crate::output::get_datalake_exceptions_expiry_output::Builder::default()
+    }
+}
+
 /// See [`GetDatalakeExceptionsExpiryOutput`](crate::output::GetDatalakeExceptionsExpiryOutput).
 pub mod get_datalake_exceptions_expiry_output {
 
@@ -901,12 +919,6 @@ pub mod get_datalake_exceptions_expiry_output {
         }
     }
 }
-impl GetDatalakeExceptionsExpiryOutput {
-    /// Creates a new builder-style object to manufacture [`GetDatalakeExceptionsExpiryOutput`](crate::output::GetDatalakeExceptionsExpiryOutput).
-    pub fn builder() -> crate::output::get_datalake_exceptions_expiry_output::Builder {
-        crate::output::get_datalake_exceptions_expiry_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -931,6 +943,13 @@ impl aws_http::request_id::RequestId for GetDatalakeAutoEnableOutput {
         self._request_id.as_deref()
     }
 }
+impl GetDatalakeAutoEnableOutput {
+    /// Creates a new builder-style object to manufacture [`GetDatalakeAutoEnableOutput`](crate::output::GetDatalakeAutoEnableOutput).
+    pub fn builder() -> crate::output::get_datalake_auto_enable_output::Builder {
+        crate::output::get_datalake_auto_enable_output::Builder::default()
+    }
+}
+
 /// See [`GetDatalakeAutoEnableOutput`](crate::output::GetDatalakeAutoEnableOutput).
 pub mod get_datalake_auto_enable_output {
 
@@ -985,12 +1004,6 @@ pub mod get_datalake_auto_enable_output {
         }
     }
 }
-impl GetDatalakeAutoEnableOutput {
-    /// Creates a new builder-style object to manufacture [`GetDatalakeAutoEnableOutput`](crate::output::GetDatalakeAutoEnableOutput).
-    pub fn builder() -> crate::output::get_datalake_auto_enable_output::Builder {
-        crate::output::get_datalake_auto_enable_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1018,6 +1031,13 @@ impl aws_http::request_id::RequestId for GetDatalakeOutput {
         self._request_id.as_deref()
     }
 }
+impl GetDatalakeOutput {
+    /// Creates a new builder-style object to manufacture [`GetDatalakeOutput`](crate::output::GetDatalakeOutput).
+    pub fn builder() -> crate::output::get_datalake_output::Builder {
+        crate::output::get_datalake_output::Builder::default()
+    }
+}
+
 /// See [`GetDatalakeOutput`](crate::output::GetDatalakeOutput).
 pub mod get_datalake_output {
 
@@ -1080,12 +1100,6 @@ pub mod get_datalake_output {
         }
     }
 }
-impl GetDatalakeOutput {
-    /// Creates a new builder-style object to manufacture [`GetDatalakeOutput`](crate::output::GetDatalakeOutput).
-    pub fn builder() -> crate::output::get_datalake_output::Builder {
-        crate::output::get_datalake_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1098,6 +1112,14 @@ impl aws_http::request_id::RequestId for DeleteSubscriptionNotificationConfigura
         self._request_id.as_deref()
     }
 }
+impl DeleteSubscriptionNotificationConfigurationOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteSubscriptionNotificationConfigurationOutput`](crate::output::DeleteSubscriptionNotificationConfigurationOutput).
+    pub fn builder() -> crate::output::delete_subscription_notification_configuration_output::Builder
+    {
+        crate::output::delete_subscription_notification_configuration_output::Builder::default()
+    }
+}
+
 /// See [`DeleteSubscriptionNotificationConfigurationOutput`](crate::output::DeleteSubscriptionNotificationConfigurationOutput).
 pub mod delete_subscription_notification_configuration_output {
 
@@ -1125,13 +1147,6 @@ pub mod delete_subscription_notification_configuration_output {
         }
     }
 }
-impl DeleteSubscriptionNotificationConfigurationOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteSubscriptionNotificationConfigurationOutput`](crate::output::DeleteSubscriptionNotificationConfigurationOutput).
-    pub fn builder() -> crate::output::delete_subscription_notification_configuration_output::Builder
-    {
-        crate::output::delete_subscription_notification_configuration_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1144,6 +1159,13 @@ impl aws_http::request_id::RequestId for DeleteSubscriberOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteSubscriberOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteSubscriberOutput`](crate::output::DeleteSubscriberOutput).
+    pub fn builder() -> crate::output::delete_subscriber_output::Builder {
+        crate::output::delete_subscriber_output::Builder::default()
+    }
+}
+
 /// See [`DeleteSubscriberOutput`](crate::output::DeleteSubscriberOutput).
 pub mod delete_subscriber_output {
 
@@ -1171,12 +1193,6 @@ pub mod delete_subscriber_output {
         }
     }
 }
-impl DeleteSubscriberOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteSubscriberOutput`](crate::output::DeleteSubscriberOutput).
-    pub fn builder() -> crate::output::delete_subscriber_output::Builder {
-        crate::output::delete_subscriber_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1198,6 +1214,13 @@ impl aws_http::request_id::RequestId for DeleteDatalakeExceptionsSubscriptionOut
         self._request_id.as_deref()
     }
 }
+impl DeleteDatalakeExceptionsSubscriptionOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteDatalakeExceptionsSubscriptionOutput`](crate::output::DeleteDatalakeExceptionsSubscriptionOutput).
+    pub fn builder() -> crate::output::delete_datalake_exceptions_subscription_output::Builder {
+        crate::output::delete_datalake_exceptions_subscription_output::Builder::default()
+    }
+}
+
 /// See [`DeleteDatalakeExceptionsSubscriptionOutput`](crate::output::DeleteDatalakeExceptionsSubscriptionOutput).
 pub mod delete_datalake_exceptions_subscription_output {
 
@@ -1237,12 +1260,6 @@ pub mod delete_datalake_exceptions_subscription_output {
         }
     }
 }
-impl DeleteDatalakeExceptionsSubscriptionOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteDatalakeExceptionsSubscriptionOutput`](crate::output::DeleteDatalakeExceptionsSubscriptionOutput).
-    pub fn builder() -> crate::output::delete_datalake_exceptions_subscription_output::Builder {
-        crate::output::delete_datalake_exceptions_subscription_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1255,6 +1272,13 @@ impl aws_http::request_id::RequestId for DeleteDatalakeDelegatedAdminOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteDatalakeDelegatedAdminOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteDatalakeDelegatedAdminOutput`](crate::output::DeleteDatalakeDelegatedAdminOutput).
+    pub fn builder() -> crate::output::delete_datalake_delegated_admin_output::Builder {
+        crate::output::delete_datalake_delegated_admin_output::Builder::default()
+    }
+}
+
 /// See [`DeleteDatalakeDelegatedAdminOutput`](crate::output::DeleteDatalakeDelegatedAdminOutput).
 pub mod delete_datalake_delegated_admin_output {
 
@@ -1282,12 +1306,6 @@ pub mod delete_datalake_delegated_admin_output {
         }
     }
 }
-impl DeleteDatalakeDelegatedAdminOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteDatalakeDelegatedAdminOutput`](crate::output::DeleteDatalakeDelegatedAdminOutput).
-    pub fn builder() -> crate::output::delete_datalake_delegated_admin_output::Builder {
-        crate::output::delete_datalake_delegated_admin_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1300,6 +1318,13 @@ impl aws_http::request_id::RequestId for DeleteDatalakeAutoEnableOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteDatalakeAutoEnableOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteDatalakeAutoEnableOutput`](crate::output::DeleteDatalakeAutoEnableOutput).
+    pub fn builder() -> crate::output::delete_datalake_auto_enable_output::Builder {
+        crate::output::delete_datalake_auto_enable_output::Builder::default()
+    }
+}
+
 /// See [`DeleteDatalakeAutoEnableOutput`](crate::output::DeleteDatalakeAutoEnableOutput).
 pub mod delete_datalake_auto_enable_output {
 
@@ -1327,12 +1352,6 @@ pub mod delete_datalake_auto_enable_output {
         }
     }
 }
-impl DeleteDatalakeAutoEnableOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteDatalakeAutoEnableOutput`](crate::output::DeleteDatalakeAutoEnableOutput).
-    pub fn builder() -> crate::output::delete_datalake_auto_enable_output::Builder {
-        crate::output::delete_datalake_auto_enable_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1345,6 +1364,13 @@ impl aws_http::request_id::RequestId for DeleteDatalakeOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteDatalakeOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteDatalakeOutput`](crate::output::DeleteDatalakeOutput).
+    pub fn builder() -> crate::output::delete_datalake_output::Builder {
+        crate::output::delete_datalake_output::Builder::default()
+    }
+}
+
 /// See [`DeleteDatalakeOutput`](crate::output::DeleteDatalakeOutput).
 pub mod delete_datalake_output {
 
@@ -1372,12 +1398,6 @@ pub mod delete_datalake_output {
         }
     }
 }
-impl DeleteDatalakeOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteDatalakeOutput`](crate::output::DeleteDatalakeOutput).
-    pub fn builder() -> crate::output::delete_datalake_output::Builder {
-        crate::output::delete_datalake_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1399,6 +1419,13 @@ impl aws_http::request_id::RequestId for DeleteCustomLogSourceOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteCustomLogSourceOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteCustomLogSourceOutput`](crate::output::DeleteCustomLogSourceOutput).
+    pub fn builder() -> crate::output::delete_custom_log_source_output::Builder {
+        crate::output::delete_custom_log_source_output::Builder::default()
+    }
+}
+
 /// See [`DeleteCustomLogSourceOutput`](crate::output::DeleteCustomLogSourceOutput).
 pub mod delete_custom_log_source_output {
 
@@ -1441,12 +1468,6 @@ pub mod delete_custom_log_source_output {
         }
     }
 }
-impl DeleteCustomLogSourceOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteCustomLogSourceOutput`](crate::output::DeleteCustomLogSourceOutput).
-    pub fn builder() -> crate::output::delete_custom_log_source_output::Builder {
-        crate::output::delete_custom_log_source_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1475,6 +1496,13 @@ impl aws_http::request_id::RequestId for DeleteAwsLogSourceOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteAwsLogSourceOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteAwsLogSourceOutput`](crate::output::DeleteAwsLogSourceOutput).
+    pub fn builder() -> crate::output::delete_aws_log_source_output::Builder {
+        crate::output::delete_aws_log_source_output::Builder::default()
+    }
+}
+
 /// See [`DeleteAwsLogSourceOutput`](crate::output::DeleteAwsLogSourceOutput).
 pub mod delete_aws_log_source_output {
 
@@ -1544,12 +1572,6 @@ pub mod delete_aws_log_source_output {
         }
     }
 }
-impl DeleteAwsLogSourceOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteAwsLogSourceOutput`](crate::output::DeleteAwsLogSourceOutput).
-    pub fn builder() -> crate::output::delete_aws_log_source_output::Builder {
-        crate::output::delete_aws_log_source_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1571,6 +1593,14 @@ impl aws_http::request_id::RequestId for CreateSubscriptionNotificationConfigura
         self._request_id.as_deref()
     }
 }
+impl CreateSubscriptionNotificationConfigurationOutput {
+    /// Creates a new builder-style object to manufacture [`CreateSubscriptionNotificationConfigurationOutput`](crate::output::CreateSubscriptionNotificationConfigurationOutput).
+    pub fn builder() -> crate::output::create_subscription_notification_configuration_output::Builder
+    {
+        crate::output::create_subscription_notification_configuration_output::Builder::default()
+    }
+}
+
 /// See [`CreateSubscriptionNotificationConfigurationOutput`](crate::output::CreateSubscriptionNotificationConfigurationOutput).
 pub mod create_subscription_notification_configuration_output {
 
@@ -1608,13 +1638,6 @@ pub mod create_subscription_notification_configuration_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl CreateSubscriptionNotificationConfigurationOutput {
-    /// Creates a new builder-style object to manufacture [`CreateSubscriptionNotificationConfigurationOutput`](crate::output::CreateSubscriptionNotificationConfigurationOutput).
-    pub fn builder() -> crate::output::create_subscription_notification_configuration_output::Builder
-    {
-        crate::output::create_subscription_notification_configuration_output::Builder::default()
     }
 }
 
@@ -1659,6 +1682,13 @@ impl aws_http::request_id::RequestId for CreateSubscriberOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateSubscriberOutput {
+    /// Creates a new builder-style object to manufacture [`CreateSubscriberOutput`](crate::output::CreateSubscriberOutput).
+    pub fn builder() -> crate::output::create_subscriber_output::Builder {
+        crate::output::create_subscriber_output::Builder::default()
+    }
+}
+
 /// See [`CreateSubscriberOutput`](crate::output::CreateSubscriberOutput).
 pub mod create_subscriber_output {
 
@@ -1740,12 +1770,6 @@ pub mod create_subscriber_output {
         }
     }
 }
-impl CreateSubscriberOutput {
-    /// Creates a new builder-style object to manufacture [`CreateSubscriberOutput`](crate::output::CreateSubscriberOutput).
-    pub fn builder() -> crate::output::create_subscriber_output::Builder {
-        crate::output::create_subscriber_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1758,6 +1782,13 @@ impl aws_http::request_id::RequestId for CreateDatalakeExceptionsSubscriptionOut
         self._request_id.as_deref()
     }
 }
+impl CreateDatalakeExceptionsSubscriptionOutput {
+    /// Creates a new builder-style object to manufacture [`CreateDatalakeExceptionsSubscriptionOutput`](crate::output::CreateDatalakeExceptionsSubscriptionOutput).
+    pub fn builder() -> crate::output::create_datalake_exceptions_subscription_output::Builder {
+        crate::output::create_datalake_exceptions_subscription_output::Builder::default()
+    }
+}
+
 /// See [`CreateDatalakeExceptionsSubscriptionOutput`](crate::output::CreateDatalakeExceptionsSubscriptionOutput).
 pub mod create_datalake_exceptions_subscription_output {
 
@@ -1785,12 +1816,6 @@ pub mod create_datalake_exceptions_subscription_output {
         }
     }
 }
-impl CreateDatalakeExceptionsSubscriptionOutput {
-    /// Creates a new builder-style object to manufacture [`CreateDatalakeExceptionsSubscriptionOutput`](crate::output::CreateDatalakeExceptionsSubscriptionOutput).
-    pub fn builder() -> crate::output::create_datalake_exceptions_subscription_output::Builder {
-        crate::output::create_datalake_exceptions_subscription_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1803,6 +1828,13 @@ impl aws_http::request_id::RequestId for CreateDatalakeDelegatedAdminOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateDatalakeDelegatedAdminOutput {
+    /// Creates a new builder-style object to manufacture [`CreateDatalakeDelegatedAdminOutput`](crate::output::CreateDatalakeDelegatedAdminOutput).
+    pub fn builder() -> crate::output::create_datalake_delegated_admin_output::Builder {
+        crate::output::create_datalake_delegated_admin_output::Builder::default()
+    }
+}
+
 /// See [`CreateDatalakeDelegatedAdminOutput`](crate::output::CreateDatalakeDelegatedAdminOutput).
 pub mod create_datalake_delegated_admin_output {
 
@@ -1830,12 +1862,6 @@ pub mod create_datalake_delegated_admin_output {
         }
     }
 }
-impl CreateDatalakeDelegatedAdminOutput {
-    /// Creates a new builder-style object to manufacture [`CreateDatalakeDelegatedAdminOutput`](crate::output::CreateDatalakeDelegatedAdminOutput).
-    pub fn builder() -> crate::output::create_datalake_delegated_admin_output::Builder {
-        crate::output::create_datalake_delegated_admin_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1848,6 +1874,13 @@ impl aws_http::request_id::RequestId for CreateDatalakeAutoEnableOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateDatalakeAutoEnableOutput {
+    /// Creates a new builder-style object to manufacture [`CreateDatalakeAutoEnableOutput`](crate::output::CreateDatalakeAutoEnableOutput).
+    pub fn builder() -> crate::output::create_datalake_auto_enable_output::Builder {
+        crate::output::create_datalake_auto_enable_output::Builder::default()
+    }
+}
+
 /// See [`CreateDatalakeAutoEnableOutput`](crate::output::CreateDatalakeAutoEnableOutput).
 pub mod create_datalake_auto_enable_output {
 
@@ -1875,12 +1908,6 @@ pub mod create_datalake_auto_enable_output {
         }
     }
 }
-impl CreateDatalakeAutoEnableOutput {
-    /// Creates a new builder-style object to manufacture [`CreateDatalakeAutoEnableOutput`](crate::output::CreateDatalakeAutoEnableOutput).
-    pub fn builder() -> crate::output::create_datalake_auto_enable_output::Builder {
-        crate::output::create_datalake_auto_enable_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1893,6 +1920,13 @@ impl aws_http::request_id::RequestId for CreateDatalakeOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateDatalakeOutput {
+    /// Creates a new builder-style object to manufacture [`CreateDatalakeOutput`](crate::output::CreateDatalakeOutput).
+    pub fn builder() -> crate::output::create_datalake_output::Builder {
+        crate::output::create_datalake_output::Builder::default()
+    }
+}
+
 /// See [`CreateDatalakeOutput`](crate::output::CreateDatalakeOutput).
 pub mod create_datalake_output {
 
@@ -1918,12 +1952,6 @@ pub mod create_datalake_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl CreateDatalakeOutput {
-    /// Creates a new builder-style object to manufacture [`CreateDatalakeOutput`](crate::output::CreateDatalakeOutput).
-    pub fn builder() -> crate::output::create_datalake_output::Builder {
-        crate::output::create_datalake_output::Builder::default()
     }
 }
 
@@ -1975,6 +2003,13 @@ impl aws_http::request_id::RequestId for CreateCustomLogSourceOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateCustomLogSourceOutput {
+    /// Creates a new builder-style object to manufacture [`CreateCustomLogSourceOutput`](crate::output::CreateCustomLogSourceOutput).
+    pub fn builder() -> crate::output::create_custom_log_source_output::Builder {
+        crate::output::create_custom_log_source_output::Builder::default()
+    }
+}
+
 /// See [`CreateCustomLogSourceOutput`](crate::output::CreateCustomLogSourceOutput).
 pub mod create_custom_log_source_output {
 
@@ -2080,12 +2115,6 @@ pub mod create_custom_log_source_output {
         }
     }
 }
-impl CreateCustomLogSourceOutput {
-    /// Creates a new builder-style object to manufacture [`CreateCustomLogSourceOutput`](crate::output::CreateCustomLogSourceOutput).
-    pub fn builder() -> crate::output::create_custom_log_source_output::Builder {
-        crate::output::create_custom_log_source_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2114,6 +2143,13 @@ impl aws_http::request_id::RequestId for CreateAwsLogSourceOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateAwsLogSourceOutput {
+    /// Creates a new builder-style object to manufacture [`CreateAwsLogSourceOutput`](crate::output::CreateAwsLogSourceOutput).
+    pub fn builder() -> crate::output::create_aws_log_source_output::Builder {
+        crate::output::create_aws_log_source_output::Builder::default()
+    }
+}
+
 /// See [`CreateAwsLogSourceOutput`](crate::output::CreateAwsLogSourceOutput).
 pub mod create_aws_log_source_output {
 
@@ -2181,11 +2217,5 @@ pub mod create_aws_log_source_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl CreateAwsLogSourceOutput {
-    /// Creates a new builder-style object to manufacture [`CreateAwsLogSourceOutput`](crate::output::CreateAwsLogSourceOutput).
-    pub fn builder() -> crate::output::create_aws_log_source_output::Builder {
-        crate::output::create_aws_log_source_output::Builder::default()
     }
 }

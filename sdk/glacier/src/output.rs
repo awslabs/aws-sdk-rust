@@ -20,6 +20,13 @@ impl aws_http::request_id::RequestId for UploadMultipartPartOutput {
         self._request_id.as_deref()
     }
 }
+impl UploadMultipartPartOutput {
+    /// Creates a new builder-style object to manufacture [`UploadMultipartPartOutput`](crate::output::UploadMultipartPartOutput).
+    pub fn builder() -> crate::output::upload_multipart_part_output::Builder {
+        crate::output::upload_multipart_part_output::Builder::default()
+    }
+}
+
 /// See [`UploadMultipartPartOutput`](crate::output::UploadMultipartPartOutput).
 pub mod upload_multipart_part_output {
 
@@ -59,12 +66,6 @@ pub mod upload_multipart_part_output {
         }
     }
 }
-impl UploadMultipartPartOutput {
-    /// Creates a new builder-style object to manufacture [`UploadMultipartPartOutput`](crate::output::UploadMultipartPartOutput).
-    pub fn builder() -> crate::output::upload_multipart_part_output::Builder {
-        crate::output::upload_multipart_part_output::Builder::default()
-    }
-}
 
 /// <p>Contains the Amazon S3 Glacier response to your request.</p>
 /// <p>For information about the underlying REST API, see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/api-archive-post.html">Upload Archive</a>. For conceptual information, see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/working-with-archives.html">Working with Archives in Amazon S3 Glacier</a>.</p>
@@ -101,6 +102,13 @@ impl aws_http::request_id::RequestId for UploadArchiveOutput {
         self._request_id.as_deref()
     }
 }
+impl UploadArchiveOutput {
+    /// Creates a new builder-style object to manufacture [`UploadArchiveOutput`](crate::output::UploadArchiveOutput).
+    pub fn builder() -> crate::output::upload_archive_output::Builder {
+        crate::output::upload_archive_output::Builder::default()
+    }
+}
+
 /// See [`UploadArchiveOutput`](crate::output::UploadArchiveOutput).
 pub mod upload_archive_output {
 
@@ -164,12 +172,6 @@ pub mod upload_archive_output {
         }
     }
 }
-impl UploadArchiveOutput {
-    /// Creates a new builder-style object to manufacture [`UploadArchiveOutput`](crate::output::UploadArchiveOutput).
-    pub fn builder() -> crate::output::upload_archive_output::Builder {
-        crate::output::upload_archive_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -182,6 +184,13 @@ impl aws_http::request_id::RequestId for SetVaultNotificationsOutput {
         self._request_id.as_deref()
     }
 }
+impl SetVaultNotificationsOutput {
+    /// Creates a new builder-style object to manufacture [`SetVaultNotificationsOutput`](crate::output::SetVaultNotificationsOutput).
+    pub fn builder() -> crate::output::set_vault_notifications_output::Builder {
+        crate::output::set_vault_notifications_output::Builder::default()
+    }
+}
+
 /// See [`SetVaultNotificationsOutput`](crate::output::SetVaultNotificationsOutput).
 pub mod set_vault_notifications_output {
 
@@ -209,12 +218,6 @@ pub mod set_vault_notifications_output {
         }
     }
 }
-impl SetVaultNotificationsOutput {
-    /// Creates a new builder-style object to manufacture [`SetVaultNotificationsOutput`](crate::output::SetVaultNotificationsOutput).
-    pub fn builder() -> crate::output::set_vault_notifications_output::Builder {
-        crate::output::set_vault_notifications_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -227,6 +230,13 @@ impl aws_http::request_id::RequestId for SetVaultAccessPolicyOutput {
         self._request_id.as_deref()
     }
 }
+impl SetVaultAccessPolicyOutput {
+    /// Creates a new builder-style object to manufacture [`SetVaultAccessPolicyOutput`](crate::output::SetVaultAccessPolicyOutput).
+    pub fn builder() -> crate::output::set_vault_access_policy_output::Builder {
+        crate::output::set_vault_access_policy_output::Builder::default()
+    }
+}
+
 /// See [`SetVaultAccessPolicyOutput`](crate::output::SetVaultAccessPolicyOutput).
 pub mod set_vault_access_policy_output {
 
@@ -254,12 +264,6 @@ pub mod set_vault_access_policy_output {
         }
     }
 }
-impl SetVaultAccessPolicyOutput {
-    /// Creates a new builder-style object to manufacture [`SetVaultAccessPolicyOutput`](crate::output::SetVaultAccessPolicyOutput).
-    pub fn builder() -> crate::output::set_vault_access_policy_output::Builder {
-        crate::output::set_vault_access_policy_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -272,6 +276,13 @@ impl aws_http::request_id::RequestId for SetDataRetrievalPolicyOutput {
         self._request_id.as_deref()
     }
 }
+impl SetDataRetrievalPolicyOutput {
+    /// Creates a new builder-style object to manufacture [`SetDataRetrievalPolicyOutput`](crate::output::SetDataRetrievalPolicyOutput).
+    pub fn builder() -> crate::output::set_data_retrieval_policy_output::Builder {
+        crate::output::set_data_retrieval_policy_output::Builder::default()
+    }
+}
+
 /// See [`SetDataRetrievalPolicyOutput`](crate::output::SetDataRetrievalPolicyOutput).
 pub mod set_data_retrieval_policy_output {
 
@@ -299,12 +310,6 @@ pub mod set_data_retrieval_policy_output {
         }
     }
 }
-impl SetDataRetrievalPolicyOutput {
-    /// Creates a new builder-style object to manufacture [`SetDataRetrievalPolicyOutput`](crate::output::SetDataRetrievalPolicyOutput).
-    pub fn builder() -> crate::output::set_data_retrieval_policy_output::Builder {
-        crate::output::set_data_retrieval_policy_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -317,6 +322,13 @@ impl aws_http::request_id::RequestId for RemoveTagsFromVaultOutput {
         self._request_id.as_deref()
     }
 }
+impl RemoveTagsFromVaultOutput {
+    /// Creates a new builder-style object to manufacture [`RemoveTagsFromVaultOutput`](crate::output::RemoveTagsFromVaultOutput).
+    pub fn builder() -> crate::output::remove_tags_from_vault_output::Builder {
+        crate::output::remove_tags_from_vault_output::Builder::default()
+    }
+}
+
 /// See [`RemoveTagsFromVaultOutput`](crate::output::RemoveTagsFromVaultOutput).
 pub mod remove_tags_from_vault_output {
 
@@ -344,12 +356,6 @@ pub mod remove_tags_from_vault_output {
         }
     }
 }
-impl RemoveTagsFromVaultOutput {
-    /// Creates a new builder-style object to manufacture [`RemoveTagsFromVaultOutput`](crate::output::RemoveTagsFromVaultOutput).
-    pub fn builder() -> crate::output::remove_tags_from_vault_output::Builder {
-        crate::output::remove_tags_from_vault_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -371,6 +377,13 @@ impl aws_http::request_id::RequestId for PurchaseProvisionedCapacityOutput {
         self._request_id.as_deref()
     }
 }
+impl PurchaseProvisionedCapacityOutput {
+    /// Creates a new builder-style object to manufacture [`PurchaseProvisionedCapacityOutput`](crate::output::PurchaseProvisionedCapacityOutput).
+    pub fn builder() -> crate::output::purchase_provisioned_capacity_output::Builder {
+        crate::output::purchase_provisioned_capacity_output::Builder::default()
+    }
+}
+
 /// See [`PurchaseProvisionedCapacityOutput`](crate::output::PurchaseProvisionedCapacityOutput).
 pub mod purchase_provisioned_capacity_output {
 
@@ -410,12 +423,6 @@ pub mod purchase_provisioned_capacity_output {
         }
     }
 }
-impl PurchaseProvisionedCapacityOutput {
-    /// Creates a new builder-style object to manufacture [`PurchaseProvisionedCapacityOutput`](crate::output::PurchaseProvisionedCapacityOutput).
-    pub fn builder() -> crate::output::purchase_provisioned_capacity_output::Builder {
-        crate::output::purchase_provisioned_capacity_output::Builder::default()
-    }
-}
 
 /// <p>Contains the Amazon S3 Glacier response to your request.</p>
 #[non_exhaustive]
@@ -444,6 +451,13 @@ impl aws_http::request_id::RequestId for ListVaultsOutput {
         self._request_id.as_deref()
     }
 }
+impl ListVaultsOutput {
+    /// Creates a new builder-style object to manufacture [`ListVaultsOutput`](crate::output::ListVaultsOutput).
+    pub fn builder() -> crate::output::list_vaults_output::Builder {
+        crate::output::list_vaults_output::Builder::default()
+    }
+}
+
 /// See [`ListVaultsOutput`](crate::output::ListVaultsOutput).
 pub mod list_vaults_output {
 
@@ -505,12 +519,6 @@ pub mod list_vaults_output {
         }
     }
 }
-impl ListVaultsOutput {
-    /// Creates a new builder-style object to manufacture [`ListVaultsOutput`](crate::output::ListVaultsOutput).
-    pub fn builder() -> crate::output::list_vaults_output::Builder {
-        crate::output::list_vaults_output::Builder::default()
-    }
-}
 
 /// <p>Contains the Amazon S3 Glacier response to your request.</p>
 #[non_exhaustive]
@@ -536,6 +544,13 @@ impl aws_http::request_id::RequestId for ListTagsForVaultOutput {
         self._request_id.as_deref()
     }
 }
+impl ListTagsForVaultOutput {
+    /// Creates a new builder-style object to manufacture [`ListTagsForVaultOutput`](crate::output::ListTagsForVaultOutput).
+    pub fn builder() -> crate::output::list_tags_for_vault_output::Builder {
+        crate::output::list_tags_for_vault_output::Builder::default()
+    }
+}
+
 /// See [`ListTagsForVaultOutput`](crate::output::ListTagsForVaultOutput).
 pub mod list_tags_for_vault_output {
 
@@ -592,12 +607,6 @@ pub mod list_tags_for_vault_output {
         }
     }
 }
-impl ListTagsForVaultOutput {
-    /// Creates a new builder-style object to manufacture [`ListTagsForVaultOutput`](crate::output::ListTagsForVaultOutput).
-    pub fn builder() -> crate::output::list_tags_for_vault_output::Builder {
-        crate::output::list_tags_for_vault_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -622,6 +631,13 @@ impl aws_http::request_id::RequestId for ListProvisionedCapacityOutput {
         self._request_id.as_deref()
     }
 }
+impl ListProvisionedCapacityOutput {
+    /// Creates a new builder-style object to manufacture [`ListProvisionedCapacityOutput`](crate::output::ListProvisionedCapacityOutput).
+    pub fn builder() -> crate::output::list_provisioned_capacity_output::Builder {
+        crate::output::list_provisioned_capacity_output::Builder::default()
+    }
+}
+
 /// See [`ListProvisionedCapacityOutput`](crate::output::ListProvisionedCapacityOutput).
 pub mod list_provisioned_capacity_output {
 
@@ -672,12 +688,6 @@ pub mod list_provisioned_capacity_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl ListProvisionedCapacityOutput {
-    /// Creates a new builder-style object to manufacture [`ListProvisionedCapacityOutput`](crate::output::ListProvisionedCapacityOutput).
-    pub fn builder() -> crate::output::list_provisioned_capacity_output::Builder {
-        crate::output::list_provisioned_capacity_output::Builder::default()
     }
 }
 
@@ -743,6 +753,13 @@ impl aws_http::request_id::RequestId for ListPartsOutput {
         self._request_id.as_deref()
     }
 }
+impl ListPartsOutput {
+    /// Creates a new builder-style object to manufacture [`ListPartsOutput`](crate::output::ListPartsOutput).
+    pub fn builder() -> crate::output::list_parts_output::Builder {
+        crate::output::list_parts_output::Builder::default()
+    }
+}
+
 /// See [`ListPartsOutput`](crate::output::ListPartsOutput).
 pub mod list_parts_output {
 
@@ -872,12 +889,6 @@ pub mod list_parts_output {
         }
     }
 }
-impl ListPartsOutput {
-    /// Creates a new builder-style object to manufacture [`ListPartsOutput`](crate::output::ListPartsOutput).
-    pub fn builder() -> crate::output::list_parts_output::Builder {
-        crate::output::list_parts_output::Builder::default()
-    }
-}
 
 /// <p>Contains the Amazon S3 Glacier response to your request.</p>
 #[non_exhaustive]
@@ -906,6 +917,13 @@ impl aws_http::request_id::RequestId for ListMultipartUploadsOutput {
         self._request_id.as_deref()
     }
 }
+impl ListMultipartUploadsOutput {
+    /// Creates a new builder-style object to manufacture [`ListMultipartUploadsOutput`](crate::output::ListMultipartUploadsOutput).
+    pub fn builder() -> crate::output::list_multipart_uploads_output::Builder {
+        crate::output::list_multipart_uploads_output::Builder::default()
+    }
+}
+
 /// See [`ListMultipartUploadsOutput`](crate::output::ListMultipartUploadsOutput).
 pub mod list_multipart_uploads_output {
 
@@ -967,12 +985,6 @@ pub mod list_multipart_uploads_output {
         }
     }
 }
-impl ListMultipartUploadsOutput {
-    /// Creates a new builder-style object to manufacture [`ListMultipartUploadsOutput`](crate::output::ListMultipartUploadsOutput).
-    pub fn builder() -> crate::output::list_multipart_uploads_output::Builder {
-        crate::output::list_multipart_uploads_output::Builder::default()
-    }
-}
 
 /// <p>Contains the Amazon S3 Glacier response to your request.</p>
 #[non_exhaustive]
@@ -1001,6 +1013,13 @@ impl aws_http::request_id::RequestId for ListJobsOutput {
         self._request_id.as_deref()
     }
 }
+impl ListJobsOutput {
+    /// Creates a new builder-style object to manufacture [`ListJobsOutput`](crate::output::ListJobsOutput).
+    pub fn builder() -> crate::output::list_jobs_output::Builder {
+        crate::output::list_jobs_output::Builder::default()
+    }
+}
+
 /// See [`ListJobsOutput`](crate::output::ListJobsOutput).
 pub mod list_jobs_output {
 
@@ -1062,12 +1081,6 @@ pub mod list_jobs_output {
         }
     }
 }
-impl ListJobsOutput {
-    /// Creates a new builder-style object to manufacture [`ListJobsOutput`](crate::output::ListJobsOutput).
-    pub fn builder() -> crate::output::list_jobs_output::Builder {
-        crate::output::list_jobs_output::Builder::default()
-    }
-}
 
 /// <p>Contains the Amazon S3 Glacier response to your request.</p>
 #[non_exhaustive]
@@ -1089,6 +1102,13 @@ impl aws_http::request_id::RequestId for InitiateVaultLockOutput {
         self._request_id.as_deref()
     }
 }
+impl InitiateVaultLockOutput {
+    /// Creates a new builder-style object to manufacture [`InitiateVaultLockOutput`](crate::output::InitiateVaultLockOutput).
+    pub fn builder() -> crate::output::initiate_vault_lock_output::Builder {
+        crate::output::initiate_vault_lock_output::Builder::default()
+    }
+}
+
 /// See [`InitiateVaultLockOutput`](crate::output::InitiateVaultLockOutput).
 pub mod initiate_vault_lock_output {
 
@@ -1128,12 +1148,6 @@ pub mod initiate_vault_lock_output {
         }
     }
 }
-impl InitiateVaultLockOutput {
-    /// Creates a new builder-style object to manufacture [`InitiateVaultLockOutput`](crate::output::InitiateVaultLockOutput).
-    pub fn builder() -> crate::output::initiate_vault_lock_output::Builder {
-        crate::output::initiate_vault_lock_output::Builder::default()
-    }
-}
 
 /// <p>The Amazon S3 Glacier response to your request.</p>
 #[non_exhaustive]
@@ -1162,6 +1176,13 @@ impl aws_http::request_id::RequestId for InitiateMultipartUploadOutput {
         self._request_id.as_deref()
     }
 }
+impl InitiateMultipartUploadOutput {
+    /// Creates a new builder-style object to manufacture [`InitiateMultipartUploadOutput`](crate::output::InitiateMultipartUploadOutput).
+    pub fn builder() -> crate::output::initiate_multipart_upload_output::Builder {
+        crate::output::initiate_multipart_upload_output::Builder::default()
+    }
+}
+
 /// See [`InitiateMultipartUploadOutput`](crate::output::InitiateMultipartUploadOutput).
 pub mod initiate_multipart_upload_output {
 
@@ -1213,12 +1234,6 @@ pub mod initiate_multipart_upload_output {
         }
     }
 }
-impl InitiateMultipartUploadOutput {
-    /// Creates a new builder-style object to manufacture [`InitiateMultipartUploadOutput`](crate::output::InitiateMultipartUploadOutput).
-    pub fn builder() -> crate::output::initiate_multipart_upload_output::Builder {
-        crate::output::initiate_multipart_upload_output::Builder::default()
-    }
-}
 
 /// <p>Contains the Amazon S3 Glacier response to your request.</p>
 #[non_exhaustive]
@@ -1254,6 +1269,13 @@ impl aws_http::request_id::RequestId for InitiateJobOutput {
         self._request_id.as_deref()
     }
 }
+impl InitiateJobOutput {
+    /// Creates a new builder-style object to manufacture [`InitiateJobOutput`](crate::output::InitiateJobOutput).
+    pub fn builder() -> crate::output::initiate_job_output::Builder {
+        crate::output::initiate_job_output::Builder::default()
+    }
+}
+
 /// See [`InitiateJobOutput`](crate::output::InitiateJobOutput).
 pub mod initiate_job_output {
 
@@ -1320,12 +1342,6 @@ pub mod initiate_job_output {
         }
     }
 }
-impl InitiateJobOutput {
-    /// Creates a new builder-style object to manufacture [`InitiateJobOutput`](crate::output::InitiateJobOutput).
-    pub fn builder() -> crate::output::initiate_job_output::Builder {
-        crate::output::initiate_job_output::Builder::default()
-    }
-}
 
 /// <p>Contains the Amazon S3 Glacier response to your request.</p>
 #[non_exhaustive]
@@ -1349,6 +1365,13 @@ impl aws_http::request_id::RequestId for GetVaultNotificationsOutput {
         self._request_id.as_deref()
     }
 }
+impl GetVaultNotificationsOutput {
+    /// Creates a new builder-style object to manufacture [`GetVaultNotificationsOutput`](crate::output::GetVaultNotificationsOutput).
+    pub fn builder() -> crate::output::get_vault_notifications_output::Builder {
+        crate::output::get_vault_notifications_output::Builder::default()
+    }
+}
+
 /// See [`GetVaultNotificationsOutput`](crate::output::GetVaultNotificationsOutput).
 pub mod get_vault_notifications_output {
 
@@ -1395,12 +1418,6 @@ pub mod get_vault_notifications_output {
         }
     }
 }
-impl GetVaultNotificationsOutput {
-    /// Creates a new builder-style object to manufacture [`GetVaultNotificationsOutput`](crate::output::GetVaultNotificationsOutput).
-    pub fn builder() -> crate::output::get_vault_notifications_output::Builder {
-        crate::output::get_vault_notifications_output::Builder::default()
-    }
-}
 
 /// <p>Contains the Amazon S3 Glacier response to your request.</p>
 #[non_exhaustive]
@@ -1443,6 +1460,13 @@ impl aws_http::request_id::RequestId for GetVaultLockOutput {
         self._request_id.as_deref()
     }
 }
+impl GetVaultLockOutput {
+    /// Creates a new builder-style object to manufacture [`GetVaultLockOutput`](crate::output::GetVaultLockOutput).
+    pub fn builder() -> crate::output::get_vault_lock_output::Builder {
+        crate::output::get_vault_lock_output::Builder::default()
+    }
+}
+
 /// See [`GetVaultLockOutput`](crate::output::GetVaultLockOutput).
 pub mod get_vault_lock_output {
 
@@ -1524,12 +1548,6 @@ pub mod get_vault_lock_output {
         }
     }
 }
-impl GetVaultLockOutput {
-    /// Creates a new builder-style object to manufacture [`GetVaultLockOutput`](crate::output::GetVaultLockOutput).
-    pub fn builder() -> crate::output::get_vault_lock_output::Builder {
-        crate::output::get_vault_lock_output::Builder::default()
-    }
-}
 
 /// <p>Output for GetVaultAccessPolicy.</p>
 #[non_exhaustive]
@@ -1551,6 +1569,13 @@ impl aws_http::request_id::RequestId for GetVaultAccessPolicyOutput {
         self._request_id.as_deref()
     }
 }
+impl GetVaultAccessPolicyOutput {
+    /// Creates a new builder-style object to manufacture [`GetVaultAccessPolicyOutput`](crate::output::GetVaultAccessPolicyOutput).
+    pub fn builder() -> crate::output::get_vault_access_policy_output::Builder {
+        crate::output::get_vault_access_policy_output::Builder::default()
+    }
+}
+
 /// See [`GetVaultAccessPolicyOutput`](crate::output::GetVaultAccessPolicyOutput).
 pub mod get_vault_access_policy_output {
 
@@ -1591,12 +1616,6 @@ pub mod get_vault_access_policy_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl GetVaultAccessPolicyOutput {
-    /// Creates a new builder-style object to manufacture [`GetVaultAccessPolicyOutput`](crate::output::GetVaultAccessPolicyOutput).
-    pub fn builder() -> crate::output::get_vault_access_policy_output::Builder {
-        crate::output::get_vault_access_policy_output::Builder::default()
     }
 }
 
@@ -1671,6 +1690,13 @@ impl aws_http::request_id::RequestId for GetJobOutputOutput {
         self._request_id.as_deref()
     }
 }
+impl GetJobOutputOutput {
+    /// Creates a new builder-style object to manufacture [`GetJobOutputOutput`](crate::output::GetJobOutputOutput).
+    pub fn builder() -> crate::output::get_job_output_output::Builder {
+        crate::output::get_job_output_output::Builder::default()
+    }
+}
+
 /// See [`GetJobOutputOutput`](crate::output::GetJobOutputOutput).
 pub mod get_job_output_output {
 
@@ -1804,12 +1830,6 @@ pub mod get_job_output_output {
         }
     }
 }
-impl GetJobOutputOutput {
-    /// Creates a new builder-style object to manufacture [`GetJobOutputOutput`](crate::output::GetJobOutputOutput).
-    pub fn builder() -> crate::output::get_job_output_output::Builder {
-        crate::output::get_job_output_output::Builder::default()
-    }
-}
 
 /// <p>Contains the Amazon S3 Glacier response to the <code>GetDataRetrievalPolicy</code> request.</p>
 #[non_exhaustive]
@@ -1831,6 +1851,13 @@ impl aws_http::request_id::RequestId for GetDataRetrievalPolicyOutput {
         self._request_id.as_deref()
     }
 }
+impl GetDataRetrievalPolicyOutput {
+    /// Creates a new builder-style object to manufacture [`GetDataRetrievalPolicyOutput`](crate::output::GetDataRetrievalPolicyOutput).
+    pub fn builder() -> crate::output::get_data_retrieval_policy_output::Builder {
+        crate::output::get_data_retrieval_policy_output::Builder::default()
+    }
+}
+
 /// See [`GetDataRetrievalPolicyOutput`](crate::output::GetDataRetrievalPolicyOutput).
 pub mod get_data_retrieval_policy_output {
 
@@ -1871,12 +1898,6 @@ pub mod get_data_retrieval_policy_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl GetDataRetrievalPolicyOutput {
-    /// Creates a new builder-style object to manufacture [`GetDataRetrievalPolicyOutput`](crate::output::GetDataRetrievalPolicyOutput).
-    pub fn builder() -> crate::output::get_data_retrieval_policy_output::Builder {
-        crate::output::get_data_retrieval_policy_output::Builder::default()
     }
 }
 
@@ -1935,6 +1956,13 @@ impl aws_http::request_id::RequestId for DescribeVaultOutput {
         self._request_id.as_deref()
     }
 }
+impl DescribeVaultOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeVaultOutput`](crate::output::DescribeVaultOutput).
+    pub fn builder() -> crate::output::describe_vault_output::Builder {
+        crate::output::describe_vault_output::Builder::default()
+    }
+}
+
 /// See [`DescribeVaultOutput`](crate::output::DescribeVaultOutput).
 pub mod describe_vault_output {
 
@@ -2038,12 +2066,6 @@ pub mod describe_vault_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl DescribeVaultOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeVaultOutput`](crate::output::DescribeVaultOutput).
-    pub fn builder() -> crate::output::describe_vault_output::Builder {
-        crate::output::describe_vault_output::Builder::default()
     }
 }
 
@@ -2236,6 +2258,13 @@ impl aws_http::request_id::RequestId for DescribeJobOutput {
         self._request_id.as_deref()
     }
 }
+impl DescribeJobOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeJobOutput`](crate::output::DescribeJobOutput).
+    pub fn builder() -> crate::output::describe_job_output::Builder {
+        crate::output::describe_job_output::Builder::default()
+    }
+}
+
 /// See [`DescribeJobOutput`](crate::output::DescribeJobOutput).
 pub mod describe_job_output {
 
@@ -2581,12 +2610,6 @@ pub mod describe_job_output {
         }
     }
 }
-impl DescribeJobOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeJobOutput`](crate::output::DescribeJobOutput).
-    pub fn builder() -> crate::output::describe_job_output::Builder {
-        crate::output::describe_job_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2599,6 +2622,13 @@ impl aws_http::request_id::RequestId for DeleteVaultNotificationsOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteVaultNotificationsOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteVaultNotificationsOutput`](crate::output::DeleteVaultNotificationsOutput).
+    pub fn builder() -> crate::output::delete_vault_notifications_output::Builder {
+        crate::output::delete_vault_notifications_output::Builder::default()
+    }
+}
+
 /// See [`DeleteVaultNotificationsOutput`](crate::output::DeleteVaultNotificationsOutput).
 pub mod delete_vault_notifications_output {
 
@@ -2626,12 +2656,6 @@ pub mod delete_vault_notifications_output {
         }
     }
 }
-impl DeleteVaultNotificationsOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteVaultNotificationsOutput`](crate::output::DeleteVaultNotificationsOutput).
-    pub fn builder() -> crate::output::delete_vault_notifications_output::Builder {
-        crate::output::delete_vault_notifications_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2644,6 +2668,13 @@ impl aws_http::request_id::RequestId for DeleteVaultAccessPolicyOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteVaultAccessPolicyOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteVaultAccessPolicyOutput`](crate::output::DeleteVaultAccessPolicyOutput).
+    pub fn builder() -> crate::output::delete_vault_access_policy_output::Builder {
+        crate::output::delete_vault_access_policy_output::Builder::default()
+    }
+}
+
 /// See [`DeleteVaultAccessPolicyOutput`](crate::output::DeleteVaultAccessPolicyOutput).
 pub mod delete_vault_access_policy_output {
 
@@ -2671,12 +2702,6 @@ pub mod delete_vault_access_policy_output {
         }
     }
 }
-impl DeleteVaultAccessPolicyOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteVaultAccessPolicyOutput`](crate::output::DeleteVaultAccessPolicyOutput).
-    pub fn builder() -> crate::output::delete_vault_access_policy_output::Builder {
-        crate::output::delete_vault_access_policy_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2689,6 +2714,13 @@ impl aws_http::request_id::RequestId for DeleteVaultOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteVaultOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteVaultOutput`](crate::output::DeleteVaultOutput).
+    pub fn builder() -> crate::output::delete_vault_output::Builder {
+        crate::output::delete_vault_output::Builder::default()
+    }
+}
+
 /// See [`DeleteVaultOutput`](crate::output::DeleteVaultOutput).
 pub mod delete_vault_output {
 
@@ -2716,12 +2748,6 @@ pub mod delete_vault_output {
         }
     }
 }
-impl DeleteVaultOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteVaultOutput`](crate::output::DeleteVaultOutput).
-    pub fn builder() -> crate::output::delete_vault_output::Builder {
-        crate::output::delete_vault_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2734,6 +2760,13 @@ impl aws_http::request_id::RequestId for DeleteArchiveOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteArchiveOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteArchiveOutput`](crate::output::DeleteArchiveOutput).
+    pub fn builder() -> crate::output::delete_archive_output::Builder {
+        crate::output::delete_archive_output::Builder::default()
+    }
+}
+
 /// See [`DeleteArchiveOutput`](crate::output::DeleteArchiveOutput).
 pub mod delete_archive_output {
 
@@ -2761,12 +2794,6 @@ pub mod delete_archive_output {
         }
     }
 }
-impl DeleteArchiveOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteArchiveOutput`](crate::output::DeleteArchiveOutput).
-    pub fn builder() -> crate::output::delete_archive_output::Builder {
-        crate::output::delete_archive_output::Builder::default()
-    }
-}
 
 /// <p>Contains the Amazon S3 Glacier response to your request.</p>
 #[non_exhaustive]
@@ -2788,6 +2815,13 @@ impl aws_http::request_id::RequestId for CreateVaultOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateVaultOutput {
+    /// Creates a new builder-style object to manufacture [`CreateVaultOutput`](crate::output::CreateVaultOutput).
+    pub fn builder() -> crate::output::create_vault_output::Builder {
+        crate::output::create_vault_output::Builder::default()
+    }
+}
+
 /// See [`CreateVaultOutput`](crate::output::CreateVaultOutput).
 pub mod create_vault_output {
 
@@ -2827,12 +2861,6 @@ pub mod create_vault_output {
         }
     }
 }
-impl CreateVaultOutput {
-    /// Creates a new builder-style object to manufacture [`CreateVaultOutput`](crate::output::CreateVaultOutput).
-    pub fn builder() -> crate::output::create_vault_output::Builder {
-        crate::output::create_vault_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2845,6 +2873,13 @@ impl aws_http::request_id::RequestId for CompleteVaultLockOutput {
         self._request_id.as_deref()
     }
 }
+impl CompleteVaultLockOutput {
+    /// Creates a new builder-style object to manufacture [`CompleteVaultLockOutput`](crate::output::CompleteVaultLockOutput).
+    pub fn builder() -> crate::output::complete_vault_lock_output::Builder {
+        crate::output::complete_vault_lock_output::Builder::default()
+    }
+}
+
 /// See [`CompleteVaultLockOutput`](crate::output::CompleteVaultLockOutput).
 pub mod complete_vault_lock_output {
 
@@ -2870,12 +2905,6 @@ pub mod complete_vault_lock_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl CompleteVaultLockOutput {
-    /// Creates a new builder-style object to manufacture [`CompleteVaultLockOutput`](crate::output::CompleteVaultLockOutput).
-    pub fn builder() -> crate::output::complete_vault_lock_output::Builder {
-        crate::output::complete_vault_lock_output::Builder::default()
     }
 }
 
@@ -2914,6 +2943,13 @@ impl aws_http::request_id::RequestId for CompleteMultipartUploadOutput {
         self._request_id.as_deref()
     }
 }
+impl CompleteMultipartUploadOutput {
+    /// Creates a new builder-style object to manufacture [`CompleteMultipartUploadOutput`](crate::output::CompleteMultipartUploadOutput).
+    pub fn builder() -> crate::output::complete_multipart_upload_output::Builder {
+        crate::output::complete_multipart_upload_output::Builder::default()
+    }
+}
+
 /// See [`CompleteMultipartUploadOutput`](crate::output::CompleteMultipartUploadOutput).
 pub mod complete_multipart_upload_output {
 
@@ -2977,12 +3013,6 @@ pub mod complete_multipart_upload_output {
         }
     }
 }
-impl CompleteMultipartUploadOutput {
-    /// Creates a new builder-style object to manufacture [`CompleteMultipartUploadOutput`](crate::output::CompleteMultipartUploadOutput).
-    pub fn builder() -> crate::output::complete_multipart_upload_output::Builder {
-        crate::output::complete_multipart_upload_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2995,6 +3025,13 @@ impl aws_http::request_id::RequestId for AddTagsToVaultOutput {
         self._request_id.as_deref()
     }
 }
+impl AddTagsToVaultOutput {
+    /// Creates a new builder-style object to manufacture [`AddTagsToVaultOutput`](crate::output::AddTagsToVaultOutput).
+    pub fn builder() -> crate::output::add_tags_to_vault_output::Builder {
+        crate::output::add_tags_to_vault_output::Builder::default()
+    }
+}
+
 /// See [`AddTagsToVaultOutput`](crate::output::AddTagsToVaultOutput).
 pub mod add_tags_to_vault_output {
 
@@ -3022,12 +3059,6 @@ pub mod add_tags_to_vault_output {
         }
     }
 }
-impl AddTagsToVaultOutput {
-    /// Creates a new builder-style object to manufacture [`AddTagsToVaultOutput`](crate::output::AddTagsToVaultOutput).
-    pub fn builder() -> crate::output::add_tags_to_vault_output::Builder {
-        crate::output::add_tags_to_vault_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3040,6 +3071,13 @@ impl aws_http::request_id::RequestId for AbortVaultLockOutput {
         self._request_id.as_deref()
     }
 }
+impl AbortVaultLockOutput {
+    /// Creates a new builder-style object to manufacture [`AbortVaultLockOutput`](crate::output::AbortVaultLockOutput).
+    pub fn builder() -> crate::output::abort_vault_lock_output::Builder {
+        crate::output::abort_vault_lock_output::Builder::default()
+    }
+}
+
 /// See [`AbortVaultLockOutput`](crate::output::AbortVaultLockOutput).
 pub mod abort_vault_lock_output {
 
@@ -3067,12 +3105,6 @@ pub mod abort_vault_lock_output {
         }
     }
 }
-impl AbortVaultLockOutput {
-    /// Creates a new builder-style object to manufacture [`AbortVaultLockOutput`](crate::output::AbortVaultLockOutput).
-    pub fn builder() -> crate::output::abort_vault_lock_output::Builder {
-        crate::output::abort_vault_lock_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3085,6 +3117,13 @@ impl aws_http::request_id::RequestId for AbortMultipartUploadOutput {
         self._request_id.as_deref()
     }
 }
+impl AbortMultipartUploadOutput {
+    /// Creates a new builder-style object to manufacture [`AbortMultipartUploadOutput`](crate::output::AbortMultipartUploadOutput).
+    pub fn builder() -> crate::output::abort_multipart_upload_output::Builder {
+        crate::output::abort_multipart_upload_output::Builder::default()
+    }
+}
+
 /// See [`AbortMultipartUploadOutput`](crate::output::AbortMultipartUploadOutput).
 pub mod abort_multipart_upload_output {
 
@@ -3110,11 +3149,5 @@ pub mod abort_multipart_upload_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl AbortMultipartUploadOutput {
-    /// Creates a new builder-style object to manufacture [`AbortMultipartUploadOutput`](crate::output::AbortMultipartUploadOutput).
-    pub fn builder() -> crate::output::abort_multipart_upload_output::Builder {
-        crate::output::abort_multipart_upload_output::Builder::default()
     }
 }

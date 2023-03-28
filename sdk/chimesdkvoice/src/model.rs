@@ -250,6 +250,13 @@ impl std::fmt::Debug for CandidateAddress {
         formatter.finish()
     }
 }
+impl CandidateAddress {
+    /// Creates a new builder-style object to manufacture [`CandidateAddress`](crate::model::CandidateAddress).
+    pub fn builder() -> crate::model::candidate_address::Builder {
+        crate::model::candidate_address::Builder::default()
+    }
+}
+
 /// See [`CandidateAddress`](crate::model::CandidateAddress).
 pub mod candidate_address {
 
@@ -369,12 +376,6 @@ pub mod candidate_address {
         }
     }
 }
-impl CandidateAddress {
-    /// Creates a new builder-style object to manufacture [`CandidateAddress`](crate::model::CandidateAddress).
-    pub fn builder() -> crate::model::candidate_address::Builder {
-        crate::model::candidate_address::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -469,6 +470,13 @@ impl std::fmt::Debug for Address {
         formatter.finish()
     }
 }
+impl Address {
+    /// Creates a new builder-style object to manufacture [`Address`](crate::model::Address).
+    pub fn builder() -> crate::model::address::Builder {
+        crate::model::address::Builder::default()
+    }
+}
+
 /// See [`Address`](crate::model::Address).
 pub mod address {
 
@@ -636,12 +644,6 @@ pub mod address {
         }
     }
 }
-impl Address {
-    /// Creates a new builder-style object to manufacture [`Address`](crate::model::Address).
-    pub fn builder() -> crate::model::address::Builder {
-        crate::model::address::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -694,6 +696,13 @@ impl VoiceConnectorGroup {
         self.voice_connector_group_arn.as_deref()
     }
 }
+impl VoiceConnectorGroup {
+    /// Creates a new builder-style object to manufacture [`VoiceConnectorGroup`](crate::model::VoiceConnectorGroup).
+    pub fn builder() -> crate::model::voice_connector_group::Builder {
+        crate::model::voice_connector_group::Builder::default()
+    }
+}
+
 /// See [`VoiceConnectorGroup`](crate::model::VoiceConnectorGroup).
 pub mod voice_connector_group {
 
@@ -803,12 +812,6 @@ pub mod voice_connector_group {
         }
     }
 }
-impl VoiceConnectorGroup {
-    /// Creates a new builder-style object to manufacture [`VoiceConnectorGroup`](crate::model::VoiceConnectorGroup).
-    pub fn builder() -> crate::model::voice_connector_group::Builder {
-        crate::model::voice_connector_group::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -831,6 +834,13 @@ impl VoiceConnectorItem {
         self.priority
     }
 }
+impl VoiceConnectorItem {
+    /// Creates a new builder-style object to manufacture [`VoiceConnectorItem`](crate::model::VoiceConnectorItem).
+    pub fn builder() -> crate::model::voice_connector_item::Builder {
+        crate::model::voice_connector_item::Builder::default()
+    }
+}
+
 /// See [`VoiceConnectorItem`](crate::model::VoiceConnectorItem).
 pub mod voice_connector_item {
 
@@ -872,12 +882,6 @@ pub mod voice_connector_item {
                 priority: self.priority,
             }
         }
-    }
-}
-impl VoiceConnectorItem {
-    /// Creates a new builder-style object to manufacture [`VoiceConnectorItem`](crate::model::VoiceConnectorItem).
-    pub fn builder() -> crate::model::voice_connector_item::Builder {
-        crate::model::voice_connector_item::Builder::default()
     }
 }
 
@@ -944,6 +948,13 @@ impl VoiceConnector {
         self.voice_connector_arn.as_deref()
     }
 }
+impl VoiceConnector {
+    /// Creates a new builder-style object to manufacture [`VoiceConnector`](crate::model::VoiceConnector).
+    pub fn builder() -> crate::model::voice_connector::Builder {
+        crate::model::voice_connector::Builder::default()
+    }
+}
+
 /// See [`VoiceConnector`](crate::model::VoiceConnector).
 pub mod voice_connector {
 
@@ -1072,12 +1083,6 @@ pub mod voice_connector {
                 voice_connector_arn: self.voice_connector_arn,
             }
         }
-    }
-}
-impl VoiceConnector {
-    /// Creates a new builder-style object to manufacture [`VoiceConnector`](crate::model::VoiceConnector).
-    pub fn builder() -> crate::model::voice_connector::Builder {
-        crate::model::voice_connector::Builder::default()
     }
 }
 
@@ -1290,6 +1295,13 @@ impl SipRule {
         self.updated_timestamp.as_ref()
     }
 }
+impl SipRule {
+    /// Creates a new builder-style object to manufacture [`SipRule`](crate::model::SipRule).
+    pub fn builder() -> crate::model::sip_rule::Builder {
+        crate::model::sip_rule::Builder::default()
+    }
+}
+
 /// See [`SipRule`](crate::model::SipRule).
 pub mod sip_rule {
 
@@ -1426,12 +1438,6 @@ pub mod sip_rule {
         }
     }
 }
-impl SipRule {
-    /// Creates a new builder-style object to manufacture [`SipRule`](crate::model::SipRule).
-    pub fn builder() -> crate::model::sip_rule::Builder {
-        crate::model::sip_rule::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1461,6 +1467,13 @@ impl SipRuleTargetApplication {
         self.aws_region.as_deref()
     }
 }
+impl SipRuleTargetApplication {
+    /// Creates a new builder-style object to manufacture [`SipRuleTargetApplication`](crate::model::SipRuleTargetApplication).
+    pub fn builder() -> crate::model::sip_rule_target_application::Builder {
+        crate::model::sip_rule_target_application::Builder::default()
+    }
+}
+
 /// See [`SipRuleTargetApplication`](crate::model::SipRuleTargetApplication).
 pub mod sip_rule_target_application {
 
@@ -1514,12 +1527,6 @@ pub mod sip_rule_target_application {
                 aws_region: self.aws_region,
             }
         }
-    }
-}
-impl SipRuleTargetApplication {
-    /// Creates a new builder-style object to manufacture [`SipRuleTargetApplication`](crate::model::SipRuleTargetApplication).
-    pub fn builder() -> crate::model::sip_rule_target_application::Builder {
-        crate::model::sip_rule_target_application::Builder::default()
     }
 }
 
@@ -1629,6 +1636,13 @@ impl SipMediaApplicationCall {
         self.transaction_id.as_deref()
     }
 }
+impl SipMediaApplicationCall {
+    /// Creates a new builder-style object to manufacture [`SipMediaApplicationCall`](crate::model::SipMediaApplicationCall).
+    pub fn builder() -> crate::model::sip_media_application_call::Builder {
+        crate::model::sip_media_application_call::Builder::default()
+    }
+}
+
 /// See [`SipMediaApplicationCall`](crate::model::SipMediaApplicationCall).
 pub mod sip_media_application_call {
 
@@ -1658,12 +1672,6 @@ pub mod sip_media_application_call {
                 transaction_id: self.transaction_id,
             }
         }
-    }
-}
-impl SipMediaApplicationCall {
-    /// Creates a new builder-style object to manufacture [`SipMediaApplicationCall`](crate::model::SipMediaApplicationCall).
-    pub fn builder() -> crate::model::sip_media_application_call::Builder {
-        crate::model::sip_media_application_call::Builder::default()
     }
 }
 
@@ -1716,6 +1724,13 @@ impl SipMediaApplication {
         self.updated_timestamp.as_ref()
     }
 }
+impl SipMediaApplication {
+    /// Creates a new builder-style object to manufacture [`SipMediaApplication`](crate::model::SipMediaApplication).
+    pub fn builder() -> crate::model::sip_media_application::Builder {
+        crate::model::sip_media_application::Builder::default()
+    }
+}
+
 /// See [`SipMediaApplication`](crate::model::SipMediaApplication).
 pub mod sip_media_application {
 
@@ -1822,12 +1837,6 @@ pub mod sip_media_application {
         }
     }
 }
-impl SipMediaApplication {
-    /// Creates a new builder-style object to manufacture [`SipMediaApplication`](crate::model::SipMediaApplication).
-    pub fn builder() -> crate::model::sip_media_application::Builder {
-        crate::model::sip_media_application::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1850,6 +1859,13 @@ impl std::fmt::Debug for SipMediaApplicationEndpoint {
         formatter.finish()
     }
 }
+impl SipMediaApplicationEndpoint {
+    /// Creates a new builder-style object to manufacture [`SipMediaApplicationEndpoint`](crate::model::SipMediaApplicationEndpoint).
+    pub fn builder() -> crate::model::sip_media_application_endpoint::Builder {
+        crate::model::sip_media_application_endpoint::Builder::default()
+    }
+}
+
 /// See [`SipMediaApplicationEndpoint`](crate::model::SipMediaApplicationEndpoint).
 pub mod sip_media_application_endpoint {
 
@@ -1883,12 +1899,6 @@ pub mod sip_media_application_endpoint {
             formatter.field("lambda_arn", &"*** Sensitive Data Redacted ***");
             formatter.finish()
         }
-    }
-}
-impl SipMediaApplicationEndpoint {
-    /// Creates a new builder-style object to manufacture [`SipMediaApplicationEndpoint`](crate::model::SipMediaApplicationEndpoint).
-    pub fn builder() -> crate::model::sip_media_application_endpoint::Builder {
-        crate::model::sip_media_application_endpoint::Builder::default()
     }
 }
 
@@ -1992,6 +2002,13 @@ impl ProxySession {
         self.geo_match_params.as_ref()
     }
 }
+impl ProxySession {
+    /// Creates a new builder-style object to manufacture [`ProxySession`](crate::model::ProxySession).
+    pub fn builder() -> crate::model::proxy_session::Builder {
+        crate::model::proxy_session::Builder::default()
+    }
+}
+
 /// See [`ProxySession`](crate::model::ProxySession).
 pub mod proxy_session {
 
@@ -2211,12 +2228,6 @@ pub mod proxy_session {
         }
     }
 }
-impl ProxySession {
-    /// Creates a new builder-style object to manufacture [`ProxySession`](crate::model::ProxySession).
-    pub fn builder() -> crate::model::proxy_session::Builder {
-        crate::model::proxy_session::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2239,6 +2250,13 @@ impl GeoMatchParams {
         self.area_code.as_deref()
     }
 }
+impl GeoMatchParams {
+    /// Creates a new builder-style object to manufacture [`GeoMatchParams`](crate::model::GeoMatchParams).
+    pub fn builder() -> crate::model::geo_match_params::Builder {
+        crate::model::geo_match_params::Builder::default()
+    }
+}
+
 /// See [`GeoMatchParams`](crate::model::GeoMatchParams).
 pub mod geo_match_params {
 
@@ -2277,12 +2295,6 @@ pub mod geo_match_params {
                 area_code: self.area_code,
             }
         }
-    }
-}
-impl GeoMatchParams {
-    /// Creates a new builder-style object to manufacture [`GeoMatchParams`](crate::model::GeoMatchParams).
-    pub fn builder() -> crate::model::geo_match_params::Builder {
-        crate::model::geo_match_params::Builder::default()
     }
 }
 
@@ -2497,6 +2509,13 @@ impl std::fmt::Debug for Participant {
         formatter.finish()
     }
 }
+impl Participant {
+    /// Creates a new builder-style object to manufacture [`Participant`](crate::model::Participant).
+    pub fn builder() -> crate::model::participant::Builder {
+        crate::model::participant::Builder::default()
+    }
+}
+
 /// See [`Participant`](crate::model::Participant).
 pub mod participant {
 
@@ -2546,12 +2565,6 @@ pub mod participant {
             formatter.field("proxy_phone_number", &"*** Sensitive Data Redacted ***");
             formatter.finish()
         }
-    }
-}
-impl Participant {
-    /// Creates a new builder-style object to manufacture [`Participant`](crate::model::Participant).
-    pub fn builder() -> crate::model::participant::Builder {
-        crate::model::participant::Builder::default()
     }
 }
 
@@ -2867,6 +2880,13 @@ impl std::fmt::Debug for PhoneNumber {
         formatter.finish()
     }
 }
+impl PhoneNumber {
+    /// Creates a new builder-style object to manufacture [`PhoneNumber`](crate::model::PhoneNumber).
+    pub fn builder() -> crate::model::phone_number::Builder {
+        crate::model::phone_number::Builder::default()
+    }
+}
+
 /// See [`PhoneNumber`](crate::model::PhoneNumber).
 pub mod phone_number {
 
@@ -3110,12 +3130,6 @@ pub mod phone_number {
         }
     }
 }
-impl PhoneNumber {
-    /// Creates a new builder-style object to manufacture [`PhoneNumber`](crate::model::PhoneNumber).
-    pub fn builder() -> crate::model::phone_number::Builder {
-        crate::model::phone_number::Builder::default()
-    }
-}
 
 /// When writing a match expression against `CallingNameStatus`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -3252,6 +3266,13 @@ impl PhoneNumberAssociation {
         self.associated_timestamp.as_ref()
     }
 }
+impl PhoneNumberAssociation {
+    /// Creates a new builder-style object to manufacture [`PhoneNumberAssociation`](crate::model::PhoneNumberAssociation).
+    pub fn builder() -> crate::model::phone_number_association::Builder {
+        crate::model::phone_number_association::Builder::default()
+    }
+}
+
 /// See [`PhoneNumberAssociation`](crate::model::PhoneNumberAssociation).
 pub mod phone_number_association {
 
@@ -3308,12 +3329,6 @@ pub mod phone_number_association {
                 associated_timestamp: self.associated_timestamp,
             }
         }
-    }
-}
-impl PhoneNumberAssociation {
-    /// Creates a new builder-style object to manufacture [`PhoneNumberAssociation`](crate::model::PhoneNumberAssociation).
-    pub fn builder() -> crate::model::phone_number_association::Builder {
-        crate::model::phone_number_association::Builder::default()
     }
 }
 
@@ -3463,6 +3478,13 @@ impl PhoneNumberCapabilities {
         self.outbound_mms
     }
 }
+impl PhoneNumberCapabilities {
+    /// Creates a new builder-style object to manufacture [`PhoneNumberCapabilities`](crate::model::PhoneNumberCapabilities).
+    pub fn builder() -> crate::model::phone_number_capabilities::Builder {
+        crate::model::phone_number_capabilities::Builder::default()
+    }
+}
+
 /// See [`PhoneNumberCapabilities`](crate::model::PhoneNumberCapabilities).
 pub mod phone_number_capabilities {
 
@@ -3549,12 +3571,6 @@ pub mod phone_number_capabilities {
                 outbound_mms: self.outbound_mms,
             }
         }
-    }
-}
-impl PhoneNumberCapabilities {
-    /// Creates a new builder-style object to manufacture [`PhoneNumberCapabilities`](crate::model::PhoneNumberCapabilities).
-    pub fn builder() -> crate::model::phone_number_capabilities::Builder {
-        crate::model::phone_number_capabilities::Builder::default()
     }
 }
 
@@ -3903,6 +3919,13 @@ impl VoiceConnectorSettings {
         self.cdr_bucket.as_deref()
     }
 }
+impl VoiceConnectorSettings {
+    /// Creates a new builder-style object to manufacture [`VoiceConnectorSettings`](crate::model::VoiceConnectorSettings).
+    pub fn builder() -> crate::model::voice_connector_settings::Builder {
+        crate::model::voice_connector_settings::Builder::default()
+    }
+}
+
 /// See [`VoiceConnectorSettings`](crate::model::VoiceConnectorSettings).
 pub mod voice_connector_settings {
 
@@ -3929,12 +3952,6 @@ pub mod voice_connector_settings {
                 cdr_bucket: self.cdr_bucket,
             }
         }
-    }
-}
-impl VoiceConnectorSettings {
-    /// Creates a new builder-style object to manufacture [`VoiceConnectorSettings`](crate::model::VoiceConnectorSettings).
-    pub fn builder() -> crate::model::voice_connector_settings::Builder {
-        crate::model::voice_connector_settings::Builder::default()
     }
 }
 
@@ -3967,6 +3984,13 @@ impl std::fmt::Debug for Credential {
         formatter.finish()
     }
 }
+impl Credential {
+    /// Creates a new builder-style object to manufacture [`Credential`](crate::model::Credential).
+    pub fn builder() -> crate::model::credential::Builder {
+        crate::model::credential::Builder::default()
+    }
+}
+
 /// See [`Credential`](crate::model::Credential).
 pub mod credential {
 
@@ -4013,12 +4037,6 @@ pub mod credential {
             formatter.field("password", &"*** Sensitive Data Redacted ***");
             formatter.finish()
         }
-    }
-}
-impl Credential {
-    /// Creates a new builder-style object to manufacture [`Credential`](crate::model::Credential).
-    pub fn builder() -> crate::model::credential::Builder {
-        crate::model::credential::Builder::default()
     }
 }
 
@@ -4075,6 +4093,13 @@ impl std::fmt::Debug for Termination {
         formatter.finish()
     }
 }
+impl Termination {
+    /// Creates a new builder-style object to manufacture [`Termination`](crate::model::Termination).
+    pub fn builder() -> crate::model::termination::Builder {
+        crate::model::termination::Builder::default()
+    }
+}
+
 /// See [`Termination`](crate::model::Termination).
 pub mod termination {
 
@@ -4181,12 +4206,6 @@ pub mod termination {
         }
     }
 }
-impl Termination {
-    /// Creates a new builder-style object to manufacture [`Termination`](crate::model::Termination).
-    pub fn builder() -> crate::model::termination::Builder {
-        crate::model::termination::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -4219,6 +4238,13 @@ impl StreamingConfiguration {
         self.streaming_notification_targets.as_deref()
     }
 }
+impl StreamingConfiguration {
+    /// Creates a new builder-style object to manufacture [`StreamingConfiguration`](crate::model::StreamingConfiguration).
+    pub fn builder() -> crate::model::streaming_configuration::Builder {
+        crate::model::streaming_configuration::Builder::default()
+    }
+}
+
 /// See [`StreamingConfiguration`](crate::model::StreamingConfiguration).
 pub mod streaming_configuration {
 
@@ -4283,12 +4309,6 @@ pub mod streaming_configuration {
         }
     }
 }
-impl StreamingConfiguration {
-    /// Creates a new builder-style object to manufacture [`StreamingConfiguration`](crate::model::StreamingConfiguration).
-    pub fn builder() -> crate::model::streaming_configuration::Builder {
-        crate::model::streaming_configuration::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -4304,6 +4324,13 @@ impl StreamingNotificationTarget {
         self.notification_target.as_ref()
     }
 }
+impl StreamingNotificationTarget {
+    /// Creates a new builder-style object to manufacture [`StreamingNotificationTarget`](crate::model::StreamingNotificationTarget).
+    pub fn builder() -> crate::model::streaming_notification_target::Builder {
+        crate::model::streaming_notification_target::Builder::default()
+    }
+}
+
 /// See [`StreamingNotificationTarget`](crate::model::StreamingNotificationTarget).
 pub mod streaming_notification_target {
 
@@ -4333,12 +4360,6 @@ pub mod streaming_notification_target {
                 notification_target: self.notification_target,
             }
         }
-    }
-}
-impl StreamingNotificationTarget {
-    /// Creates a new builder-style object to manufacture [`StreamingNotificationTarget`](crate::model::StreamingNotificationTarget).
-    pub fn builder() -> crate::model::streaming_notification_target::Builder {
-        crate::model::streaming_notification_target::Builder::default()
     }
 }
 
@@ -4487,6 +4508,13 @@ impl std::fmt::Debug for Proxy {
         formatter.finish()
     }
 }
+impl Proxy {
+    /// Creates a new builder-style object to manufacture [`Proxy`](crate::model::Proxy).
+    pub fn builder() -> crate::model::proxy::Builder {
+        crate::model::proxy::Builder::default()
+    }
+}
+
 /// See [`Proxy`](crate::model::Proxy).
 pub mod proxy {
 
@@ -4578,12 +4606,6 @@ pub mod proxy {
         }
     }
 }
-impl Proxy {
-    /// Creates a new builder-style object to manufacture [`Proxy`](crate::model::Proxy).
-    pub fn builder() -> crate::model::proxy::Builder {
-        crate::model::proxy::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -4606,6 +4628,13 @@ impl Origination {
         self.disabled
     }
 }
+impl Origination {
+    /// Creates a new builder-style object to manufacture [`Origination`](crate::model::Origination).
+    pub fn builder() -> crate::model::origination::Builder {
+        crate::model::origination::Builder::default()
+    }
+}
+
 /// See [`Origination`](crate::model::Origination).
 pub mod origination {
 
@@ -4654,12 +4683,6 @@ pub mod origination {
         }
     }
 }
-impl Origination {
-    /// Creates a new builder-style object to manufacture [`Origination`](crate::model::Origination).
-    pub fn builder() -> crate::model::origination::Builder {
-        crate::model::origination::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -4703,6 +4726,13 @@ impl OriginationRoute {
         self.weight
     }
 }
+impl OriginationRoute {
+    /// Creates a new builder-style object to manufacture [`OriginationRoute`](crate::model::OriginationRoute).
+    pub fn builder() -> crate::model::origination_route::Builder {
+        crate::model::origination_route::Builder::default()
+    }
+}
+
 /// See [`OriginationRoute`](crate::model::OriginationRoute).
 pub mod origination_route {
 
@@ -4780,12 +4810,6 @@ pub mod origination_route {
                 weight: self.weight,
             }
         }
-    }
-}
-impl OriginationRoute {
-    /// Creates a new builder-style object to manufacture [`OriginationRoute`](crate::model::OriginationRoute).
-    pub fn builder() -> crate::model::origination_route::Builder {
-        crate::model::origination_route::Builder::default()
     }
 }
 
@@ -4895,6 +4919,13 @@ impl LoggingConfiguration {
         self.enable_sip_logs
     }
 }
+impl LoggingConfiguration {
+    /// Creates a new builder-style object to manufacture [`LoggingConfiguration`](crate::model::LoggingConfiguration).
+    pub fn builder() -> crate::model::logging_configuration::Builder {
+        crate::model::logging_configuration::Builder::default()
+    }
+}
+
 /// See [`LoggingConfiguration`](crate::model::LoggingConfiguration).
 pub mod logging_configuration {
 
@@ -4923,12 +4954,6 @@ pub mod logging_configuration {
         }
     }
 }
-impl LoggingConfiguration {
-    /// Creates a new builder-style object to manufacture [`LoggingConfiguration`](crate::model::LoggingConfiguration).
-    pub fn builder() -> crate::model::logging_configuration::Builder {
-        crate::model::logging_configuration::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -4944,6 +4969,13 @@ impl EmergencyCallingConfiguration {
         self.dnis.as_deref()
     }
 }
+impl EmergencyCallingConfiguration {
+    /// Creates a new builder-style object to manufacture [`EmergencyCallingConfiguration`](crate::model::EmergencyCallingConfiguration).
+    pub fn builder() -> crate::model::emergency_calling_configuration::Builder {
+        crate::model::emergency_calling_configuration::Builder::default()
+    }
+}
+
 /// See [`EmergencyCallingConfiguration`](crate::model::EmergencyCallingConfiguration).
 pub mod emergency_calling_configuration {
 
@@ -4979,12 +5011,6 @@ pub mod emergency_calling_configuration {
         pub fn build(self) -> crate::model::EmergencyCallingConfiguration {
             crate::model::EmergencyCallingConfiguration { dnis: self.dnis }
         }
-    }
-}
-impl EmergencyCallingConfiguration {
-    /// Creates a new builder-style object to manufacture [`EmergencyCallingConfiguration`](crate::model::EmergencyCallingConfiguration).
-    pub fn builder() -> crate::model::emergency_calling_configuration::Builder {
-        crate::model::emergency_calling_configuration::Builder::default()
     }
 }
 
@@ -5025,6 +5051,13 @@ impl std::fmt::Debug for DnisEmergencyCallingConfiguration {
         formatter.finish()
     }
 }
+impl DnisEmergencyCallingConfiguration {
+    /// Creates a new builder-style object to manufacture [`DnisEmergencyCallingConfiguration`](crate::model::DnisEmergencyCallingConfiguration).
+    pub fn builder() -> crate::model::dnis_emergency_calling_configuration::Builder {
+        crate::model::dnis_emergency_calling_configuration::Builder::default()
+    }
+}
+
 /// See [`DnisEmergencyCallingConfiguration`](crate::model::DnisEmergencyCallingConfiguration).
 pub mod dnis_emergency_calling_configuration {
 
@@ -5095,12 +5128,6 @@ pub mod dnis_emergency_calling_configuration {
         }
     }
 }
-impl DnisEmergencyCallingConfiguration {
-    /// Creates a new builder-style object to manufacture [`DnisEmergencyCallingConfiguration`](crate::model::DnisEmergencyCallingConfiguration).
-    pub fn builder() -> crate::model::dnis_emergency_calling_configuration::Builder {
-        crate::model::dnis_emergency_calling_configuration::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -5116,6 +5143,13 @@ impl SipMediaApplicationLoggingConfiguration {
         self.enable_sip_media_application_message_logs
     }
 }
+impl SipMediaApplicationLoggingConfiguration {
+    /// Creates a new builder-style object to manufacture [`SipMediaApplicationLoggingConfiguration`](crate::model::SipMediaApplicationLoggingConfiguration).
+    pub fn builder() -> crate::model::sip_media_application_logging_configuration::Builder {
+        crate::model::sip_media_application_logging_configuration::Builder::default()
+    }
+}
+
 /// See [`SipMediaApplicationLoggingConfiguration`](crate::model::SipMediaApplicationLoggingConfiguration).
 pub mod sip_media_application_logging_configuration {
 
@@ -5148,12 +5182,6 @@ pub mod sip_media_application_logging_configuration {
         }
     }
 }
-impl SipMediaApplicationLoggingConfiguration {
-    /// Creates a new builder-style object to manufacture [`SipMediaApplicationLoggingConfiguration`](crate::model::SipMediaApplicationLoggingConfiguration).
-    pub fn builder() -> crate::model::sip_media_application_logging_configuration::Builder {
-        crate::model::sip_media_application_logging_configuration::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -5176,6 +5204,13 @@ impl SipMediaApplicationAlexaSkillConfiguration {
         self.alexa_skill_ids.as_deref()
     }
 }
+impl SipMediaApplicationAlexaSkillConfiguration {
+    /// Creates a new builder-style object to manufacture [`SipMediaApplicationAlexaSkillConfiguration`](crate::model::SipMediaApplicationAlexaSkillConfiguration).
+    pub fn builder() -> crate::model::sip_media_application_alexa_skill_configuration::Builder {
+        crate::model::sip_media_application_alexa_skill_configuration::Builder::default()
+    }
+}
+
 /// See [`SipMediaApplicationAlexaSkillConfiguration`](crate::model::SipMediaApplicationAlexaSkillConfiguration).
 pub mod sip_media_application_alexa_skill_configuration {
 
@@ -5225,12 +5260,6 @@ pub mod sip_media_application_alexa_skill_configuration {
                 alexa_skill_ids: self.alexa_skill_ids,
             }
         }
-    }
-}
-impl SipMediaApplicationAlexaSkillConfiguration {
-    /// Creates a new builder-style object to manufacture [`SipMediaApplicationAlexaSkillConfiguration`](crate::model::SipMediaApplicationAlexaSkillConfiguration).
-    pub fn builder() -> crate::model::sip_media_application_alexa_skill_configuration::Builder {
-        crate::model::sip_media_application_alexa_skill_configuration::Builder::default()
     }
 }
 
@@ -5348,6 +5377,13 @@ impl PhoneNumberCountry {
         self.supported_phone_number_types.as_deref()
     }
 }
+impl PhoneNumberCountry {
+    /// Creates a new builder-style object to manufacture [`PhoneNumberCountry`](crate::model::PhoneNumberCountry).
+    pub fn builder() -> crate::model::phone_number_country::Builder {
+        crate::model::phone_number_country::Builder::default()
+    }
+}
+
 /// See [`PhoneNumberCountry`](crate::model::PhoneNumberCountry).
 pub mod phone_number_country {
 
@@ -5398,12 +5434,6 @@ pub mod phone_number_country {
                 supported_phone_number_types: self.supported_phone_number_types,
             }
         }
-    }
-}
-impl PhoneNumberCountry {
-    /// Creates a new builder-style object to manufacture [`PhoneNumberCountry`](crate::model::PhoneNumberCountry).
-    pub fn builder() -> crate::model::phone_number_country::Builder {
-        crate::model::phone_number_country::Builder::default()
     }
 }
 
@@ -5465,6 +5495,13 @@ impl PhoneNumberOrder {
         self.updated_timestamp.as_ref()
     }
 }
+impl PhoneNumberOrder {
+    /// Creates a new builder-style object to manufacture [`PhoneNumberOrder`](crate::model::PhoneNumberOrder).
+    pub fn builder() -> crate::model::phone_number_order::Builder {
+        crate::model::phone_number_order::Builder::default()
+    }
+}
+
 /// See [`PhoneNumberOrder`](crate::model::PhoneNumberOrder).
 pub mod phone_number_order {
 
@@ -5592,12 +5629,6 @@ pub mod phone_number_order {
         }
     }
 }
-impl PhoneNumberOrder {
-    /// Creates a new builder-style object to manufacture [`PhoneNumberOrder`](crate::model::PhoneNumberOrder).
-    pub fn builder() -> crate::model::phone_number_order::Builder {
-        crate::model::phone_number_order::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -5628,6 +5659,13 @@ impl std::fmt::Debug for OrderedPhoneNumber {
         formatter.finish()
     }
 }
+impl OrderedPhoneNumber {
+    /// Creates a new builder-style object to manufacture [`OrderedPhoneNumber`](crate::model::OrderedPhoneNumber).
+    pub fn builder() -> crate::model::ordered_phone_number::Builder {
+        crate::model::ordered_phone_number::Builder::default()
+    }
+}
+
 /// See [`OrderedPhoneNumber`](crate::model::OrderedPhoneNumber).
 pub mod ordered_phone_number {
 
@@ -5680,12 +5718,6 @@ pub mod ordered_phone_number {
             formatter.field("status", &self.status);
             formatter.finish()
         }
-    }
-}
-impl OrderedPhoneNumber {
-    /// Creates a new builder-style object to manufacture [`OrderedPhoneNumber`](crate::model::OrderedPhoneNumber).
-    pub fn builder() -> crate::model::ordered_phone_number::Builder {
-        crate::model::ordered_phone_number::Builder::default()
     }
 }
 
@@ -6048,6 +6080,13 @@ impl TerminationHealth {
         self.source.as_deref()
     }
 }
+impl TerminationHealth {
+    /// Creates a new builder-style object to manufacture [`TerminationHealth`](crate::model::TerminationHealth).
+    pub fn builder() -> crate::model::termination_health::Builder {
+        crate::model::termination_health::Builder::default()
+    }
+}
+
 /// See [`TerminationHealth`](crate::model::TerminationHealth).
 pub mod termination_health {
 
@@ -6091,12 +6130,6 @@ pub mod termination_health {
         }
     }
 }
-impl TerminationHealth {
-    /// Creates a new builder-style object to manufacture [`TerminationHealth`](crate::model::TerminationHealth).
-    pub fn builder() -> crate::model::termination_health::Builder {
-        crate::model::termination_health::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -6135,6 +6168,13 @@ impl std::fmt::Debug for PhoneNumberError {
         formatter.finish()
     }
 }
+impl PhoneNumberError {
+    /// Creates a new builder-style object to manufacture [`PhoneNumberError`](crate::model::PhoneNumberError).
+    pub fn builder() -> crate::model::phone_number_error::Builder {
+        crate::model::phone_number_error::Builder::default()
+    }
+}
+
 /// See [`PhoneNumberError`](crate::model::PhoneNumberError).
 pub mod phone_number_error {
 
@@ -6205,12 +6245,6 @@ pub mod phone_number_error {
         }
     }
 }
-impl PhoneNumberError {
-    /// Creates a new builder-style object to manufacture [`PhoneNumberError`](crate::model::PhoneNumberError).
-    pub fn builder() -> crate::model::phone_number_error::Builder {
-        crate::model::phone_number_error::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -6249,6 +6283,13 @@ impl std::fmt::Debug for UpdatePhoneNumberRequestItem {
         formatter.finish()
     }
 }
+impl UpdatePhoneNumberRequestItem {
+    /// Creates a new builder-style object to manufacture [`UpdatePhoneNumberRequestItem`](crate::model::UpdatePhoneNumberRequestItem).
+    pub fn builder() -> crate::model::update_phone_number_request_item::Builder {
+        crate::model::update_phone_number_request_item::Builder::default()
+    }
+}
+
 /// See [`UpdatePhoneNumberRequestItem`](crate::model::UpdatePhoneNumberRequestItem).
 pub mod update_phone_number_request_item {
 
@@ -6314,11 +6355,5 @@ pub mod update_phone_number_request_item {
             formatter.field("calling_name", &"*** Sensitive Data Redacted ***");
             formatter.finish()
         }
-    }
-}
-impl UpdatePhoneNumberRequestItem {
-    /// Creates a new builder-style object to manufacture [`UpdatePhoneNumberRequestItem`](crate::model::UpdatePhoneNumberRequestItem).
-    pub fn builder() -> crate::model::update_phone_number_request_item::Builder {
-        crate::model::update_phone_number_request_item::Builder::default()
     }
 }

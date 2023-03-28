@@ -63,6 +63,13 @@ impl VodSource {
         self.vod_source_name.as_deref()
     }
 }
+impl VodSource {
+    /// Creates a new builder-style object to manufacture [`VodSource`](crate::model::VodSource).
+    pub fn builder() -> crate::model::vod_source::Builder {
+        crate::model::vod_source::Builder::default()
+    }
+}
+
 /// See [`VodSource`](crate::model::VodSource).
 pub mod vod_source {
 
@@ -205,12 +212,6 @@ pub mod vod_source {
         }
     }
 }
-impl VodSource {
-    /// Creates a new builder-style object to manufacture [`VodSource`](crate::model::VodSource).
-    pub fn builder() -> crate::model::vod_source::Builder {
-        crate::model::vod_source::Builder::default()
-    }
-}
 
 /// <p>The HTTP package configuration properties for the requested VOD source.</p>
 #[non_exhaustive]
@@ -240,6 +241,13 @@ impl HttpPackageConfiguration {
         self.r#type.as_ref()
     }
 }
+impl HttpPackageConfiguration {
+    /// Creates a new builder-style object to manufacture [`HttpPackageConfiguration`](crate::model::HttpPackageConfiguration).
+    pub fn builder() -> crate::model::http_package_configuration::Builder {
+        crate::model::http_package_configuration::Builder::default()
+    }
+}
+
 /// See [`HttpPackageConfiguration`](crate::model::HttpPackageConfiguration).
 pub mod http_package_configuration {
 
@@ -290,12 +298,6 @@ pub mod http_package_configuration {
                 r#type: self.r#type,
             }
         }
-    }
-}
-impl HttpPackageConfiguration {
-    /// Creates a new builder-style object to manufacture [`HttpPackageConfiguration`](crate::model::HttpPackageConfiguration).
-    pub fn builder() -> crate::model::http_package_configuration::Builder {
-        crate::model::http_package_configuration::Builder::default()
     }
 }
 
@@ -469,6 +471,13 @@ impl SourceLocation {
         self.tags.as_ref()
     }
 }
+impl SourceLocation {
+    /// Creates a new builder-style object to manufacture [`SourceLocation`](crate::model::SourceLocation).
+    pub fn builder() -> crate::model::source_location::Builder {
+        crate::model::source_location::Builder::default()
+    }
+}
+
 /// See [`SourceLocation`](crate::model::SourceLocation).
 pub mod source_location {
 
@@ -645,12 +654,6 @@ pub mod source_location {
         }
     }
 }
-impl SourceLocation {
-    /// Creates a new builder-style object to manufacture [`SourceLocation`](crate::model::SourceLocation).
-    pub fn builder() -> crate::model::source_location::Builder {
-        crate::model::source_location::Builder::default()
-    }
-}
 
 /// <p>The segment delivery configuration settings.</p>
 #[non_exhaustive]
@@ -673,6 +676,13 @@ impl SegmentDeliveryConfiguration {
         self.name.as_deref()
     }
 }
+impl SegmentDeliveryConfiguration {
+    /// Creates a new builder-style object to manufacture [`SegmentDeliveryConfiguration`](crate::model::SegmentDeliveryConfiguration).
+    pub fn builder() -> crate::model::segment_delivery_configuration::Builder {
+        crate::model::segment_delivery_configuration::Builder::default()
+    }
+}
+
 /// See [`SegmentDeliveryConfiguration`](crate::model::SegmentDeliveryConfiguration).
 pub mod segment_delivery_configuration {
 
@@ -713,12 +723,6 @@ pub mod segment_delivery_configuration {
         }
     }
 }
-impl SegmentDeliveryConfiguration {
-    /// Creates a new builder-style object to manufacture [`SegmentDeliveryConfiguration`](crate::model::SegmentDeliveryConfiguration).
-    pub fn builder() -> crate::model::segment_delivery_configuration::Builder {
-        crate::model::segment_delivery_configuration::Builder::default()
-    }
-}
 
 /// <p>The HTTP configuration for the source location.</p>
 #[non_exhaustive]
@@ -734,6 +738,13 @@ impl HttpConfiguration {
         self.base_url.as_deref()
     }
 }
+impl HttpConfiguration {
+    /// Creates a new builder-style object to manufacture [`HttpConfiguration`](crate::model::HttpConfiguration).
+    pub fn builder() -> crate::model::http_configuration::Builder {
+        crate::model::http_configuration::Builder::default()
+    }
+}
+
 /// See [`HttpConfiguration`](crate::model::HttpConfiguration).
 pub mod http_configuration {
 
@@ -762,12 +773,6 @@ pub mod http_configuration {
         }
     }
 }
-impl HttpConfiguration {
-    /// Creates a new builder-style object to manufacture [`HttpConfiguration`](crate::model::HttpConfiguration).
-    pub fn builder() -> crate::model::http_configuration::Builder {
-        crate::model::http_configuration::Builder::default()
-    }
-}
 
 /// <p>The optional configuration for a server that serves segments. Use this if you want the segment delivery server to be different from the source location server. For example, you can configure your source location server to be an origination server, such as MediaPackage, and the segment delivery server to be a content delivery network (CDN), such as CloudFront. If you don't specify a segment delivery server, then the source location server is used.</p>
 #[non_exhaustive]
@@ -783,6 +788,13 @@ impl DefaultSegmentDeliveryConfiguration {
         self.base_url.as_deref()
     }
 }
+impl DefaultSegmentDeliveryConfiguration {
+    /// Creates a new builder-style object to manufacture [`DefaultSegmentDeliveryConfiguration`](crate::model::DefaultSegmentDeliveryConfiguration).
+    pub fn builder() -> crate::model::default_segment_delivery_configuration::Builder {
+        crate::model::default_segment_delivery_configuration::Builder::default()
+    }
+}
+
 /// See [`DefaultSegmentDeliveryConfiguration`](crate::model::DefaultSegmentDeliveryConfiguration).
 pub mod default_segment_delivery_configuration {
 
@@ -809,12 +821,6 @@ pub mod default_segment_delivery_configuration {
                 base_url: self.base_url,
             }
         }
-    }
-}
-impl DefaultSegmentDeliveryConfiguration {
-    /// Creates a new builder-style object to manufacture [`DefaultSegmentDeliveryConfiguration`](crate::model::DefaultSegmentDeliveryConfiguration).
-    pub fn builder() -> crate::model::default_segment_delivery_configuration::Builder {
-        crate::model::default_segment_delivery_configuration::Builder::default()
     }
 }
 
@@ -852,6 +858,13 @@ impl AccessConfiguration {
         self.secrets_manager_access_token_configuration.as_ref()
     }
 }
+impl AccessConfiguration {
+    /// Creates a new builder-style object to manufacture [`AccessConfiguration`](crate::model::AccessConfiguration).
+    pub fn builder() -> crate::model::access_configuration::Builder {
+        crate::model::access_configuration::Builder::default()
+    }
+}
+
 /// See [`AccessConfiguration`](crate::model::AccessConfiguration).
 pub mod access_configuration {
 
@@ -913,12 +926,6 @@ pub mod access_configuration {
         }
     }
 }
-impl AccessConfiguration {
-    /// Creates a new builder-style object to manufacture [`AccessConfiguration`](crate::model::AccessConfiguration).
-    pub fn builder() -> crate::model::access_configuration::Builder {
-        crate::model::access_configuration::Builder::default()
-    }
-}
 
 /// <p>AWS Secrets Manager access token configuration parameters. For information about Secrets Manager access token authentication, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/channel-assembly-access-configuration-access-token.html">Working with AWS Secrets Manager access token authentication</a>.</p>
 #[non_exhaustive]
@@ -948,6 +955,13 @@ impl SecretsManagerAccessTokenConfiguration {
         self.secret_string_key.as_deref()
     }
 }
+impl SecretsManagerAccessTokenConfiguration {
+    /// Creates a new builder-style object to manufacture [`SecretsManagerAccessTokenConfiguration`](crate::model::SecretsManagerAccessTokenConfiguration).
+    pub fn builder() -> crate::model::secrets_manager_access_token_configuration::Builder {
+        crate::model::secrets_manager_access_token_configuration::Builder::default()
+    }
+}
+
 /// See [`SecretsManagerAccessTokenConfiguration`](crate::model::SecretsManagerAccessTokenConfiguration).
 pub mod secrets_manager_access_token_configuration {
 
@@ -1001,12 +1015,6 @@ pub mod secrets_manager_access_token_configuration {
                 secret_string_key: self.secret_string_key,
             }
         }
-    }
-}
-impl SecretsManagerAccessTokenConfiguration {
-    /// Creates a new builder-style object to manufacture [`SecretsManagerAccessTokenConfiguration`](crate::model::SecretsManagerAccessTokenConfiguration).
-    pub fn builder() -> crate::model::secrets_manager_access_token_configuration::Builder {
-        crate::model::secrets_manager_access_token_configuration::Builder::default()
     }
 }
 
@@ -1149,6 +1157,13 @@ impl PrefetchSchedule {
         self.stream_id.as_deref()
     }
 }
+impl PrefetchSchedule {
+    /// Creates a new builder-style object to manufacture [`PrefetchSchedule`](crate::model::PrefetchSchedule).
+    pub fn builder() -> crate::model::prefetch_schedule::Builder {
+        crate::model::prefetch_schedule::Builder::default()
+    }
+}
+
 /// See [`PrefetchSchedule`](crate::model::PrefetchSchedule).
 pub mod prefetch_schedule {
 
@@ -1249,12 +1264,6 @@ pub mod prefetch_schedule {
         }
     }
 }
-impl PrefetchSchedule {
-    /// Creates a new builder-style object to manufacture [`PrefetchSchedule`](crate::model::PrefetchSchedule).
-    pub fn builder() -> crate::model::prefetch_schedule::Builder {
-        crate::model::prefetch_schedule::Builder::default()
-    }
-}
 
 /// <p>A complex type that contains settings governing when MediaTailor prefetches ads, and which dynamic variables that MediaTailor includes in the request to the ad decision server.</p>
 #[non_exhaustive]
@@ -1290,6 +1299,13 @@ impl PrefetchRetrieval {
         self.start_time.as_ref()
     }
 }
+impl PrefetchRetrieval {
+    /// Creates a new builder-style object to manufacture [`PrefetchRetrieval`](crate::model::PrefetchRetrieval).
+    pub fn builder() -> crate::model::prefetch_retrieval::Builder {
+        crate::model::prefetch_retrieval::Builder::default()
+    }
+}
+
 /// See [`PrefetchRetrieval`](crate::model::PrefetchRetrieval).
 pub mod prefetch_retrieval {
 
@@ -1367,12 +1383,6 @@ pub mod prefetch_retrieval {
         }
     }
 }
-impl PrefetchRetrieval {
-    /// Creates a new builder-style object to manufacture [`PrefetchRetrieval`](crate::model::PrefetchRetrieval).
-    pub fn builder() -> crate::model::prefetch_retrieval::Builder {
-        crate::model::prefetch_retrieval::Builder::default()
-    }
-}
 
 /// <p>A complex type that contains settings that determine how and when that MediaTailor places prefetched ads into upcoming ad breaks.</p>
 #[non_exhaustive]
@@ -1405,6 +1415,13 @@ impl PrefetchConsumption {
         self.start_time.as_ref()
     }
 }
+impl PrefetchConsumption {
+    /// Creates a new builder-style object to manufacture [`PrefetchConsumption`](crate::model::PrefetchConsumption).
+    pub fn builder() -> crate::model::prefetch_consumption::Builder {
+        crate::model::prefetch_consumption::Builder::default()
+    }
+}
+
 /// See [`PrefetchConsumption`](crate::model::PrefetchConsumption).
 pub mod prefetch_consumption {
 
@@ -1476,12 +1493,6 @@ pub mod prefetch_consumption {
         }
     }
 }
-impl PrefetchConsumption {
-    /// Creates a new builder-style object to manufacture [`PrefetchConsumption`](crate::model::PrefetchConsumption).
-    pub fn builder() -> crate::model::prefetch_consumption::Builder {
-        crate::model::prefetch_consumption::Builder::default()
-    }
-}
 
 /// <p>MediaTailor only places (consumes) prefetched ads if the ad break meets the criteria defined by the dynamic variables. This gives you granular control over which ad break to place the prefetched ads into.</p>
 /// <p>As an example, let's say that you set <code>DynamicVariable</code> to <code>scte.event_id</code> and <code>Operator</code> to <code>EQUALS</code>, and your playback configuration has an ADS URL of <code>https://my.ads.server.com/path?&amp;podId=[scte.avail_num]&amp;event=[scte.event_id]&amp;duration=[session.avail_duration_secs]</code>. And the prefetch request to the ADS contains these values <code>https://my.ads.server.com/path?&amp;podId=3&amp;event=my-awesome-event&amp;duration=30</code>. MediaTailor will only insert the prefetched ads into the ad break if has a SCTE marker with an event id of <code>my-awesome-event</code>, since it must match the event id that MediaTailor uses to query the ADS.</p>
@@ -1508,6 +1519,13 @@ impl AvailMatchingCriteria {
         self.operator.as_ref()
     }
 }
+impl AvailMatchingCriteria {
+    /// Creates a new builder-style object to manufacture [`AvailMatchingCriteria`](crate::model::AvailMatchingCriteria).
+    pub fn builder() -> crate::model::avail_matching_criteria::Builder {
+        crate::model::avail_matching_criteria::Builder::default()
+    }
+}
+
 /// See [`AvailMatchingCriteria`](crate::model::AvailMatchingCriteria).
 pub mod avail_matching_criteria {
 
@@ -1551,12 +1569,6 @@ pub mod avail_matching_criteria {
                 operator: self.operator,
             }
         }
-    }
-}
-impl AvailMatchingCriteria {
-    /// Creates a new builder-style object to manufacture [`AvailMatchingCriteria`](crate::model::AvailMatchingCriteria).
-    pub fn builder() -> crate::model::avail_matching_criteria::Builder {
-        crate::model::avail_matching_criteria::Builder::default()
     }
 }
 
@@ -1805,6 +1817,13 @@ impl PlaybackConfiguration {
         self.video_content_source_url.as_deref()
     }
 }
+impl PlaybackConfiguration {
+    /// Creates a new builder-style object to manufacture [`PlaybackConfiguration`](crate::model::PlaybackConfiguration).
+    pub fn builder() -> crate::model::playback_configuration::Builder {
+        crate::model::playback_configuration::Builder::default()
+    }
+}
+
 /// See [`PlaybackConfiguration`](crate::model::PlaybackConfiguration).
 pub mod playback_configuration {
 
@@ -2144,12 +2163,6 @@ pub mod playback_configuration {
         }
     }
 }
-impl PlaybackConfiguration {
-    /// Creates a new builder-style object to manufacture [`PlaybackConfiguration`](crate::model::PlaybackConfiguration).
-    pub fn builder() -> crate::model::playback_configuration::Builder {
-        crate::model::playback_configuration::Builder::default()
-    }
-}
 
 /// <p>The configuration for manifest processing rules. Manifest processing rules enable customization of the personalized manifests created by MediaTailor.</p>
 #[non_exhaustive]
@@ -2167,6 +2180,13 @@ impl ManifestProcessingRules {
         self.ad_marker_passthrough.as_ref()
     }
 }
+impl ManifestProcessingRules {
+    /// Creates a new builder-style object to manufacture [`ManifestProcessingRules`](crate::model::ManifestProcessingRules).
+    pub fn builder() -> crate::model::manifest_processing_rules::Builder {
+        crate::model::manifest_processing_rules::Builder::default()
+    }
+}
+
 /// See [`ManifestProcessingRules`](crate::model::ManifestProcessingRules).
 pub mod manifest_processing_rules {
 
@@ -2200,12 +2220,6 @@ pub mod manifest_processing_rules {
         }
     }
 }
-impl ManifestProcessingRules {
-    /// Creates a new builder-style object to manufacture [`ManifestProcessingRules`](crate::model::ManifestProcessingRules).
-    pub fn builder() -> crate::model::manifest_processing_rules::Builder {
-        crate::model::manifest_processing_rules::Builder::default()
-    }
-}
 
 /// <p>For HLS, when set to <code>true</code>, MediaTailor passes through <code>EXT-X-CUE-IN</code>, <code>EXT-X-CUE-OUT</code>, and <code>EXT-X-SPLICEPOINT-SCTE35</code> ad markers from the origin manifest to the MediaTailor personalized manifest.</p>
 /// <p>No logic is applied to these ad markers. For example, if <code>EXT-X-CUE-OUT</code> has a value of <code>60</code>, but no ads are filled for that ad break, MediaTailor will not set the value to <code>0</code>.</p>
@@ -2222,6 +2236,13 @@ impl AdMarkerPassthrough {
         self.enabled
     }
 }
+impl AdMarkerPassthrough {
+    /// Creates a new builder-style object to manufacture [`AdMarkerPassthrough`](crate::model::AdMarkerPassthrough).
+    pub fn builder() -> crate::model::ad_marker_passthrough::Builder {
+        crate::model::ad_marker_passthrough::Builder::default()
+    }
+}
+
 /// See [`AdMarkerPassthrough`](crate::model::AdMarkerPassthrough).
 pub mod ad_marker_passthrough {
 
@@ -2250,12 +2271,6 @@ pub mod ad_marker_passthrough {
         }
     }
 }
-impl AdMarkerPassthrough {
-    /// Creates a new builder-style object to manufacture [`AdMarkerPassthrough`](crate::model::AdMarkerPassthrough).
-    pub fn builder() -> crate::model::ad_marker_passthrough::Builder {
-        crate::model::ad_marker_passthrough::Builder::default()
-    }
-}
 
 /// <p>Returns Amazon CloudWatch log settings for a playback configuration.</p>
 #[non_exhaustive]
@@ -2273,6 +2288,13 @@ impl LogConfiguration {
         self.percent_enabled
     }
 }
+impl LogConfiguration {
+    /// Creates a new builder-style object to manufacture [`LogConfiguration`](crate::model::LogConfiguration).
+    pub fn builder() -> crate::model::log_configuration::Builder {
+        crate::model::log_configuration::Builder::default()
+    }
+}
+
 /// See [`LogConfiguration`](crate::model::LogConfiguration).
 pub mod log_configuration {
 
@@ -2303,12 +2325,6 @@ pub mod log_configuration {
         }
     }
 }
-impl LogConfiguration {
-    /// Creates a new builder-style object to manufacture [`LogConfiguration`](crate::model::LogConfiguration).
-    pub fn builder() -> crate::model::log_configuration::Builder {
-        crate::model::log_configuration::Builder::default()
-    }
-}
 
 /// <p>The configuration for pre-roll ad insertion.</p>
 #[non_exhaustive]
@@ -2331,6 +2347,13 @@ impl LivePreRollConfiguration {
         self.max_duration_seconds
     }
 }
+impl LivePreRollConfiguration {
+    /// Creates a new builder-style object to manufacture [`LivePreRollConfiguration`](crate::model::LivePreRollConfiguration).
+    pub fn builder() -> crate::model::live_pre_roll_configuration::Builder {
+        crate::model::live_pre_roll_configuration::Builder::default()
+    }
+}
+
 /// See [`LivePreRollConfiguration`](crate::model::LivePreRollConfiguration).
 pub mod live_pre_roll_configuration {
 
@@ -2374,12 +2397,6 @@ pub mod live_pre_roll_configuration {
         }
     }
 }
-impl LivePreRollConfiguration {
-    /// Creates a new builder-style object to manufacture [`LivePreRollConfiguration`](crate::model::LivePreRollConfiguration).
-    pub fn builder() -> crate::model::live_pre_roll_configuration::Builder {
-        crate::model::live_pre_roll_configuration::Builder::default()
-    }
-}
 
 /// <p>The configuration for HLS content.</p>
 #[non_exhaustive]
@@ -2395,6 +2412,13 @@ impl HlsConfiguration {
         self.manifest_endpoint_prefix.as_deref()
     }
 }
+impl HlsConfiguration {
+    /// Creates a new builder-style object to manufacture [`HlsConfiguration`](crate::model::HlsConfiguration).
+    pub fn builder() -> crate::model::hls_configuration::Builder {
+        crate::model::hls_configuration::Builder::default()
+    }
+}
+
 /// See [`HlsConfiguration`](crate::model::HlsConfiguration).
 pub mod hls_configuration {
 
@@ -2426,12 +2450,6 @@ pub mod hls_configuration {
         }
     }
 }
-impl HlsConfiguration {
-    /// Creates a new builder-style object to manufacture [`HlsConfiguration`](crate::model::HlsConfiguration).
-    pub fn builder() -> crate::model::hls_configuration::Builder {
-        crate::model::hls_configuration::Builder::default()
-    }
-}
 
 /// <p>The configuration for DASH content.</p>
 #[non_exhaustive]
@@ -2461,6 +2479,13 @@ impl DashConfiguration {
         self.origin_manifest_type.as_ref()
     }
 }
+impl DashConfiguration {
+    /// Creates a new builder-style object to manufacture [`DashConfiguration`](crate::model::DashConfiguration).
+    pub fn builder() -> crate::model::dash_configuration::Builder {
+        crate::model::dash_configuration::Builder::default()
+    }
+}
+
 /// See [`DashConfiguration`](crate::model::DashConfiguration).
 pub mod dash_configuration {
 
@@ -2517,12 +2542,6 @@ pub mod dash_configuration {
                 origin_manifest_type: self.origin_manifest_type,
             }
         }
-    }
-}
-impl DashConfiguration {
-    /// Creates a new builder-style object to manufacture [`DashConfiguration`](crate::model::DashConfiguration).
-    pub fn builder() -> crate::model::dash_configuration::Builder {
-        crate::model::dash_configuration::Builder::default()
     }
 }
 
@@ -2639,6 +2658,13 @@ impl CdnConfiguration {
         self.content_segment_url_prefix.as_deref()
     }
 }
+impl CdnConfiguration {
+    /// Creates a new builder-style object to manufacture [`CdnConfiguration`](crate::model::CdnConfiguration).
+    pub fn builder() -> crate::model::cdn_configuration::Builder {
+        crate::model::cdn_configuration::Builder::default()
+    }
+}
+
 /// See [`CdnConfiguration`](crate::model::CdnConfiguration).
 pub mod cdn_configuration {
 
@@ -2685,12 +2711,6 @@ pub mod cdn_configuration {
         }
     }
 }
-impl CdnConfiguration {
-    /// Creates a new builder-style object to manufacture [`CdnConfiguration`](crate::model::CdnConfiguration).
-    pub fn builder() -> crate::model::cdn_configuration::Builder {
-        crate::model::cdn_configuration::Builder::default()
-    }
-}
 
 /// <p>The configuration for bumpers. Bumpers are short audio or video clips that play at the start or before the end of an ad break. To learn more about bumpers, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/bumpers.html">Bumpers</a>.</p>
 #[non_exhaustive]
@@ -2713,6 +2733,13 @@ impl Bumper {
         self.start_url.as_deref()
     }
 }
+impl Bumper {
+    /// Creates a new builder-style object to manufacture [`Bumper`](crate::model::Bumper).
+    pub fn builder() -> crate::model::bumper::Builder {
+        crate::model::bumper::Builder::default()
+    }
+}
+
 /// See [`Bumper`](crate::model::Bumper).
 pub mod bumper {
 
@@ -2753,12 +2780,6 @@ pub mod bumper {
         }
     }
 }
-impl Bumper {
-    /// Creates a new builder-style object to manufacture [`Bumper`](crate::model::Bumper).
-    pub fn builder() -> crate::model::bumper::Builder {
-        crate::model::bumper::Builder::default()
-    }
-}
 
 /// <p>The configuration for avail suppression, also known as ad suppression. For more information about ad suppression, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/ad-behavior.html">Ad Suppression</a>.</p>
 #[non_exhaustive]
@@ -2781,6 +2802,13 @@ impl AvailSuppression {
         self.value.as_deref()
     }
 }
+impl AvailSuppression {
+    /// Creates a new builder-style object to manufacture [`AvailSuppression`](crate::model::AvailSuppression).
+    pub fn builder() -> crate::model::avail_suppression::Builder {
+        crate::model::avail_suppression::Builder::default()
+    }
+}
+
 /// See [`AvailSuppression`](crate::model::AvailSuppression).
 pub mod avail_suppression {
 
@@ -2819,12 +2847,6 @@ pub mod avail_suppression {
                 value: self.value,
             }
         }
-    }
-}
-impl AvailSuppression {
-    /// Creates a new builder-style object to manufacture [`AvailSuppression`](crate::model::AvailSuppression).
-    pub fn builder() -> crate::model::avail_suppression::Builder {
-        crate::model::avail_suppression::Builder::default()
     }
 }
 
@@ -2939,6 +2961,13 @@ impl DashConfigurationForPut {
         self.origin_manifest_type.as_ref()
     }
 }
+impl DashConfigurationForPut {
+    /// Creates a new builder-style object to manufacture [`DashConfigurationForPut`](crate::model::DashConfigurationForPut).
+    pub fn builder() -> crate::model::dash_configuration_for_put::Builder {
+        crate::model::dash_configuration_for_put::Builder::default()
+    }
+}
+
 /// See [`DashConfigurationForPut`](crate::model::DashConfigurationForPut).
 pub mod dash_configuration_for_put {
 
@@ -2980,12 +3009,6 @@ pub mod dash_configuration_for_put {
                 origin_manifest_type: self.origin_manifest_type,
             }
         }
-    }
-}
-impl DashConfigurationForPut {
-    /// Creates a new builder-style object to manufacture [`DashConfigurationForPut`](crate::model::DashConfigurationForPut).
-    pub fn builder() -> crate::model::dash_configuration_for_put::Builder {
-        crate::model::dash_configuration_for_put::Builder::default()
     }
 }
 
@@ -3052,6 +3075,13 @@ impl LiveSource {
         self.tags.as_ref()
     }
 }
+impl LiveSource {
+    /// Creates a new builder-style object to manufacture [`LiveSource`](crate::model::LiveSource).
+    pub fn builder() -> crate::model::live_source::Builder {
+        crate::model::live_source::Builder::default()
+    }
+}
+
 /// See [`LiveSource`](crate::model::LiveSource).
 pub mod live_source {
 
@@ -3194,12 +3224,6 @@ pub mod live_source {
         }
     }
 }
-impl LiveSource {
-    /// Creates a new builder-style object to manufacture [`LiveSource`](crate::model::LiveSource).
-    pub fn builder() -> crate::model::live_source::Builder {
-        crate::model::live_source::Builder::default()
-    }
-}
 
 /// <p>The properties for a schedule.</p>
 #[non_exhaustive]
@@ -3278,6 +3302,13 @@ impl ScheduleEntry {
         self.vod_source_name.as_deref()
     }
 }
+impl ScheduleEntry {
+    /// Creates a new builder-style object to manufacture [`ScheduleEntry`](crate::model::ScheduleEntry).
+    pub fn builder() -> crate::model::schedule_entry::Builder {
+        crate::model::schedule_entry::Builder::default()
+    }
+}
+
 /// See [`ScheduleEntry`](crate::model::ScheduleEntry).
 pub mod schedule_entry {
 
@@ -3439,12 +3470,6 @@ pub mod schedule_entry {
         }
     }
 }
-impl ScheduleEntry {
-    /// Creates a new builder-style object to manufacture [`ScheduleEntry`](crate::model::ScheduleEntry).
-    pub fn builder() -> crate::model::schedule_entry::Builder {
-        crate::model::schedule_entry::Builder::default()
-    }
-}
 
 /// When writing a match expression against `ScheduleEntryType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -3573,6 +3598,13 @@ impl ScheduleAdBreak {
         self.vod_source_name.as_deref()
     }
 }
+impl ScheduleAdBreak {
+    /// Creates a new builder-style object to manufacture [`ScheduleAdBreak`](crate::model::ScheduleAdBreak).
+    pub fn builder() -> crate::model::schedule_ad_break::Builder {
+        crate::model::schedule_ad_break::Builder::default()
+    }
+}
+
 /// See [`ScheduleAdBreak`](crate::model::ScheduleAdBreak).
 pub mod schedule_ad_break {
 
@@ -3646,12 +3678,6 @@ pub mod schedule_ad_break {
         }
     }
 }
-impl ScheduleAdBreak {
-    /// Creates a new builder-style object to manufacture [`ScheduleAdBreak`](crate::model::ScheduleAdBreak).
-    pub fn builder() -> crate::model::schedule_ad_break::Builder {
-        crate::model::schedule_ad_break::Builder::default()
-    }
-}
 
 /// <p>The output item response.</p>
 #[non_exhaustive]
@@ -3697,6 +3723,13 @@ impl ResponseOutputItem {
         self.source_group.as_deref()
     }
 }
+impl ResponseOutputItem {
+    /// Creates a new builder-style object to manufacture [`ResponseOutputItem`](crate::model::ResponseOutputItem).
+    pub fn builder() -> crate::model::response_output_item::Builder {
+        crate::model::response_output_item::Builder::default()
+    }
+}
+
 /// See [`ResponseOutputItem`](crate::model::ResponseOutputItem).
 pub mod response_output_item {
 
@@ -3782,12 +3815,6 @@ pub mod response_output_item {
         }
     }
 }
-impl ResponseOutputItem {
-    /// Creates a new builder-style object to manufacture [`ResponseOutputItem`](crate::model::ResponseOutputItem).
-    pub fn builder() -> crate::model::response_output_item::Builder {
-        crate::model::response_output_item::Builder::default()
-    }
-}
 
 /// <p>HLS playlist configuration parameters.</p>
 #[non_exhaustive]
@@ -3803,6 +3830,13 @@ impl HlsPlaylistSettings {
         self.manifest_window_seconds
     }
 }
+impl HlsPlaylistSettings {
+    /// Creates a new builder-style object to manufacture [`HlsPlaylistSettings`](crate::model::HlsPlaylistSettings).
+    pub fn builder() -> crate::model::hls_playlist_settings::Builder {
+        crate::model::hls_playlist_settings::Builder::default()
+    }
+}
+
 /// See [`HlsPlaylistSettings`](crate::model::HlsPlaylistSettings).
 pub mod hls_playlist_settings {
 
@@ -3829,12 +3863,6 @@ pub mod hls_playlist_settings {
                 manifest_window_seconds: self.manifest_window_seconds.unwrap_or_default(),
             }
         }
-    }
-}
-impl HlsPlaylistSettings {
-    /// Creates a new builder-style object to manufacture [`HlsPlaylistSettings`](crate::model::HlsPlaylistSettings).
-    pub fn builder() -> crate::model::hls_playlist_settings::Builder {
-        crate::model::hls_playlist_settings::Builder::default()
     }
 }
 
@@ -3873,6 +3901,13 @@ impl DashPlaylistSettings {
         self.suggested_presentation_delay_seconds
     }
 }
+impl DashPlaylistSettings {
+    /// Creates a new builder-style object to manufacture [`DashPlaylistSettings`](crate::model::DashPlaylistSettings).
+    pub fn builder() -> crate::model::dash_playlist_settings::Builder {
+        crate::model::dash_playlist_settings::Builder::default()
+    }
+}
+
 /// See [`DashPlaylistSettings`](crate::model::DashPlaylistSettings).
 pub mod dash_playlist_settings {
 
@@ -3942,12 +3977,6 @@ pub mod dash_playlist_settings {
         }
     }
 }
-impl DashPlaylistSettings {
-    /// Creates a new builder-style object to manufacture [`DashPlaylistSettings`](crate::model::DashPlaylistSettings).
-    pub fn builder() -> crate::model::dash_playlist_settings::Builder {
-        crate::model::dash_playlist_settings::Builder::default()
-    }
-}
 
 /// <p>Slate VOD source configuration.</p>
 #[non_exhaustive]
@@ -3970,6 +3999,13 @@ impl SlateSource {
         self.vod_source_name.as_deref()
     }
 }
+impl SlateSource {
+    /// Creates a new builder-style object to manufacture [`SlateSource`](crate::model::SlateSource).
+    pub fn builder() -> crate::model::slate_source::Builder {
+        crate::model::slate_source::Builder::default()
+    }
+}
+
 /// See [`SlateSource`](crate::model::SlateSource).
 pub mod slate_source {
 
@@ -4014,12 +4050,6 @@ pub mod slate_source {
                 vod_source_name: self.vod_source_name,
             }
         }
-    }
-}
-impl SlateSource {
-    /// Creates a new builder-style object to manufacture [`SlateSource`](crate::model::SlateSource).
-    pub fn builder() -> crate::model::slate_source::Builder {
-        crate::model::slate_source::Builder::default()
     }
 }
 
@@ -4330,6 +4360,13 @@ impl RequestOutputItem {
         self.source_group.as_deref()
     }
 }
+impl RequestOutputItem {
+    /// Creates a new builder-style object to manufacture [`RequestOutputItem`](crate::model::RequestOutputItem).
+    pub fn builder() -> crate::model::request_output_item::Builder {
+        crate::model::request_output_item::Builder::default()
+    }
+}
+
 /// See [`RequestOutputItem`](crate::model::RequestOutputItem).
 pub mod request_output_item {
 
@@ -4401,12 +4438,6 @@ pub mod request_output_item {
                 source_group: self.source_group,
             }
         }
-    }
-}
-impl RequestOutputItem {
-    /// Creates a new builder-style object to manufacture [`RequestOutputItem`](crate::model::RequestOutputItem).
-    pub fn builder() -> crate::model::request_output_item::Builder {
-        crate::model::request_output_item::Builder::default()
     }
 }
 
@@ -4495,6 +4526,13 @@ impl Channel {
         self.tier.as_deref()
     }
 }
+impl Channel {
+    /// Creates a new builder-style object to manufacture [`Channel`](crate::model::Channel).
+    pub fn builder() -> crate::model::channel::Builder {
+        crate::model::channel::Builder::default()
+    }
+}
+
 /// See [`Channel`](crate::model::Channel).
 pub mod channel {
 
@@ -4676,12 +4714,6 @@ pub mod channel {
         }
     }
 }
-impl Channel {
-    /// Creates a new builder-style object to manufacture [`Channel`](crate::model::Channel).
-    pub fn builder() -> crate::model::channel::Builder {
-        crate::model::channel::Builder::default()
-    }
-}
 
 /// <p>Ad break configuration parameters.</p>
 #[non_exhaustive]
@@ -4729,6 +4761,13 @@ impl AdBreak {
         self.time_signal_message.as_ref()
     }
 }
+impl AdBreak {
+    /// Creates a new builder-style object to manufacture [`AdBreak`](crate::model::AdBreak).
+    pub fn builder() -> crate::model::ad_break::Builder {
+        crate::model::ad_break::Builder::default()
+    }
+}
+
 /// See [`AdBreak`](crate::model::AdBreak).
 pub mod ad_break {
 
@@ -4818,12 +4857,6 @@ pub mod ad_break {
         }
     }
 }
-impl AdBreak {
-    /// Creates a new builder-style object to manufacture [`AdBreak`](crate::model::AdBreak).
-    pub fn builder() -> crate::model::ad_break::Builder {
-        crate::model::ad_break::Builder::default()
-    }
-}
 
 /// <p>The SCTE-35 <code>time_signal</code> message can be sent with one or more <code>segmentation_descriptor</code> messages. A <code>time_signal</code> message can be sent only if a single <code>segmentation_descriptor</code> message is sent.</p>
 /// <p>The <code>time_signal</code> message contains only the <code>splice_time</code> field which is constructed using a given presentation timestamp. When sending a <code>time_signal</code> message, the <code>splice_command_type</code> field in the <code>splice_info_section</code> message is set to 6 (0x06).</p>
@@ -4844,6 +4877,13 @@ impl TimeSignalMessage {
         self.segmentation_descriptors.as_deref()
     }
 }
+impl TimeSignalMessage {
+    /// Creates a new builder-style object to manufacture [`TimeSignalMessage`](crate::model::TimeSignalMessage).
+    pub fn builder() -> crate::model::time_signal_message::Builder {
+        crate::model::time_signal_message::Builder::default()
+    }
+}
+
 /// See [`TimeSignalMessage`](crate::model::TimeSignalMessage).
 pub mod time_signal_message {
 
@@ -4883,12 +4923,6 @@ pub mod time_signal_message {
                 segmentation_descriptors: self.segmentation_descriptors,
             }
         }
-    }
-}
-impl TimeSignalMessage {
-    /// Creates a new builder-style object to manufacture [`TimeSignalMessage`](crate::model::TimeSignalMessage).
-    pub fn builder() -> crate::model::time_signal_message::Builder {
-        crate::model::time_signal_message::Builder::default()
     }
 }
 
@@ -4957,6 +4991,13 @@ impl SegmentationDescriptor {
         self.sub_segments_expected
     }
 }
+impl SegmentationDescriptor {
+    /// Creates a new builder-style object to manufacture [`SegmentationDescriptor`](crate::model::SegmentationDescriptor).
+    pub fn builder() -> crate::model::segmentation_descriptor::Builder {
+        crate::model::segmentation_descriptor::Builder::default()
+    }
+}
+
 /// See [`SegmentationDescriptor`](crate::model::SegmentationDescriptor).
 pub mod segmentation_descriptor {
 
@@ -5072,12 +5113,6 @@ pub mod segmentation_descriptor {
         }
     }
 }
-impl SegmentationDescriptor {
-    /// Creates a new builder-style object to manufacture [`SegmentationDescriptor`](crate::model::SegmentationDescriptor).
-    pub fn builder() -> crate::model::segmentation_descriptor::Builder {
-        crate::model::segmentation_descriptor::Builder::default()
-    }
-}
 
 /// <p>Splice insert message configuration.</p>
 #[non_exhaustive]
@@ -5114,6 +5149,13 @@ impl SpliceInsertMessage {
         self.unique_program_id
     }
 }
+impl SpliceInsertMessage {
+    /// Creates a new builder-style object to manufacture [`SpliceInsertMessage`](crate::model::SpliceInsertMessage).
+    pub fn builder() -> crate::model::splice_insert_message::Builder {
+        crate::model::splice_insert_message::Builder::default()
+    }
+}
+
 /// See [`SpliceInsertMessage`](crate::model::SpliceInsertMessage).
 pub mod splice_insert_message {
 
@@ -5176,12 +5218,6 @@ pub mod splice_insert_message {
                 unique_program_id: self.unique_program_id.unwrap_or_default(),
             }
         }
-    }
-}
-impl SpliceInsertMessage {
-    /// Creates a new builder-style object to manufacture [`SpliceInsertMessage`](crate::model::SpliceInsertMessage).
-    pub fn builder() -> crate::model::splice_insert_message::Builder {
-        crate::model::splice_insert_message::Builder::default()
     }
 }
 
@@ -5289,6 +5325,13 @@ impl ScheduleConfiguration {
         self.transition.as_ref()
     }
 }
+impl ScheduleConfiguration {
+    /// Creates a new builder-style object to manufacture [`ScheduleConfiguration`](crate::model::ScheduleConfiguration).
+    pub fn builder() -> crate::model::schedule_configuration::Builder {
+        crate::model::schedule_configuration::Builder::default()
+    }
+}
+
 /// See [`ScheduleConfiguration`](crate::model::ScheduleConfiguration).
 pub mod schedule_configuration {
 
@@ -5318,12 +5361,6 @@ pub mod schedule_configuration {
                 transition: self.transition,
             }
         }
-    }
-}
-impl ScheduleConfiguration {
-    /// Creates a new builder-style object to manufacture [`ScheduleConfiguration`](crate::model::ScheduleConfiguration).
-    pub fn builder() -> crate::model::schedule_configuration::Builder {
-        crate::model::schedule_configuration::Builder::default()
     }
 }
 
@@ -5379,6 +5416,13 @@ impl Transition {
         self.r#type.as_deref()
     }
 }
+impl Transition {
+    /// Creates a new builder-style object to manufacture [`Transition`](crate::model::Transition).
+    pub fn builder() -> crate::model::transition::Builder {
+        crate::model::transition::Builder::default()
+    }
+}
+
 /// See [`Transition`](crate::model::Transition).
 pub mod transition {
 
@@ -5469,12 +5513,6 @@ pub mod transition {
                 r#type: self.r#type,
             }
         }
-    }
-}
-impl Transition {
-    /// Creates a new builder-style object to manufacture [`Transition`](crate::model::Transition).
-    pub fn builder() -> crate::model::transition::Builder {
-        crate::model::transition::Builder::default()
     }
 }
 
@@ -5610,6 +5648,13 @@ impl Alert {
         self.resource_arn.as_deref()
     }
 }
+impl Alert {
+    /// Creates a new builder-style object to manufacture [`Alert`](crate::model::Alert).
+    pub fn builder() -> crate::model::alert::Builder {
+        crate::model::alert::Builder::default()
+    }
+}
+
 /// See [`Alert`](crate::model::Alert).
 pub mod alert {
 
@@ -5699,11 +5744,5 @@ pub mod alert {
                 resource_arn: self.resource_arn,
             }
         }
-    }
-}
-impl Alert {
-    /// Creates a new builder-style object to manufacture [`Alert`](crate::model::Alert).
-    pub fn builder() -> crate::model::alert::Builder {
-        crate::model::alert::Builder::default()
     }
 }

@@ -10,6 +10,13 @@ impl aws_http::request_id::RequestId for UpdateTaskExecutionOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdateTaskExecutionOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateTaskExecutionOutput`](crate::output::UpdateTaskExecutionOutput).
+    pub fn builder() -> crate::output::update_task_execution_output::Builder {
+        crate::output::update_task_execution_output::Builder::default()
+    }
+}
+
 /// See [`UpdateTaskExecutionOutput`](crate::output::UpdateTaskExecutionOutput).
 pub mod update_task_execution_output {
 
@@ -37,12 +44,6 @@ pub mod update_task_execution_output {
         }
     }
 }
-impl UpdateTaskExecutionOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateTaskExecutionOutput`](crate::output::UpdateTaskExecutionOutput).
-    pub fn builder() -> crate::output::update_task_execution_output::Builder {
-        crate::output::update_task_execution_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -55,6 +56,13 @@ impl aws_http::request_id::RequestId for UpdateTaskOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdateTaskOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateTaskOutput`](crate::output::UpdateTaskOutput).
+    pub fn builder() -> crate::output::update_task_output::Builder {
+        crate::output::update_task_output::Builder::default()
+    }
+}
+
 /// See [`UpdateTaskOutput`](crate::output::UpdateTaskOutput).
 pub mod update_task_output {
 
@@ -82,12 +90,6 @@ pub mod update_task_output {
         }
     }
 }
-impl UpdateTaskOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateTaskOutput`](crate::output::UpdateTaskOutput).
-    pub fn builder() -> crate::output::update_task_output::Builder {
-        crate::output::update_task_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -100,6 +102,13 @@ impl aws_http::request_id::RequestId for UpdateLocationSmbOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdateLocationSmbOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateLocationSmbOutput`](crate::output::UpdateLocationSmbOutput).
+    pub fn builder() -> crate::output::update_location_smb_output::Builder {
+        crate::output::update_location_smb_output::Builder::default()
+    }
+}
+
 /// See [`UpdateLocationSmbOutput`](crate::output::UpdateLocationSmbOutput).
 pub mod update_location_smb_output {
 
@@ -127,12 +136,6 @@ pub mod update_location_smb_output {
         }
     }
 }
-impl UpdateLocationSmbOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateLocationSmbOutput`](crate::output::UpdateLocationSmbOutput).
-    pub fn builder() -> crate::output::update_location_smb_output::Builder {
-        crate::output::update_location_smb_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -145,6 +148,13 @@ impl aws_http::request_id::RequestId for UpdateLocationObjectStorageOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdateLocationObjectStorageOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateLocationObjectStorageOutput`](crate::output::UpdateLocationObjectStorageOutput).
+    pub fn builder() -> crate::output::update_location_object_storage_output::Builder {
+        crate::output::update_location_object_storage_output::Builder::default()
+    }
+}
+
 /// See [`UpdateLocationObjectStorageOutput`](crate::output::UpdateLocationObjectStorageOutput).
 pub mod update_location_object_storage_output {
 
@@ -172,12 +182,6 @@ pub mod update_location_object_storage_output {
         }
     }
 }
-impl UpdateLocationObjectStorageOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateLocationObjectStorageOutput`](crate::output::UpdateLocationObjectStorageOutput).
-    pub fn builder() -> crate::output::update_location_object_storage_output::Builder {
-        crate::output::update_location_object_storage_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -190,6 +194,13 @@ impl aws_http::request_id::RequestId for UpdateLocationNfsOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdateLocationNfsOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateLocationNfsOutput`](crate::output::UpdateLocationNfsOutput).
+    pub fn builder() -> crate::output::update_location_nfs_output::Builder {
+        crate::output::update_location_nfs_output::Builder::default()
+    }
+}
+
 /// See [`UpdateLocationNfsOutput`](crate::output::UpdateLocationNfsOutput).
 pub mod update_location_nfs_output {
 
@@ -217,12 +228,6 @@ pub mod update_location_nfs_output {
         }
     }
 }
-impl UpdateLocationNfsOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateLocationNfsOutput`](crate::output::UpdateLocationNfsOutput).
-    pub fn builder() -> crate::output::update_location_nfs_output::Builder {
-        crate::output::update_location_nfs_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -235,6 +240,13 @@ impl aws_http::request_id::RequestId for UpdateLocationHdfsOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdateLocationHdfsOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateLocationHdfsOutput`](crate::output::UpdateLocationHdfsOutput).
+    pub fn builder() -> crate::output::update_location_hdfs_output::Builder {
+        crate::output::update_location_hdfs_output::Builder::default()
+    }
+}
+
 /// See [`UpdateLocationHdfsOutput`](crate::output::UpdateLocationHdfsOutput).
 pub mod update_location_hdfs_output {
 
@@ -262,12 +274,6 @@ pub mod update_location_hdfs_output {
         }
     }
 }
-impl UpdateLocationHdfsOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateLocationHdfsOutput`](crate::output::UpdateLocationHdfsOutput).
-    pub fn builder() -> crate::output::update_location_hdfs_output::Builder {
-        crate::output::update_location_hdfs_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -280,6 +286,13 @@ impl aws_http::request_id::RequestId for UpdateAgentOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdateAgentOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateAgentOutput`](crate::output::UpdateAgentOutput).
+    pub fn builder() -> crate::output::update_agent_output::Builder {
+        crate::output::update_agent_output::Builder::default()
+    }
+}
+
 /// See [`UpdateAgentOutput`](crate::output::UpdateAgentOutput).
 pub mod update_agent_output {
 
@@ -307,12 +320,6 @@ pub mod update_agent_output {
         }
     }
 }
-impl UpdateAgentOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateAgentOutput`](crate::output::UpdateAgentOutput).
-    pub fn builder() -> crate::output::update_agent_output::Builder {
-        crate::output::update_agent_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -325,6 +332,13 @@ impl aws_http::request_id::RequestId for UntagResourceOutput {
         self._request_id.as_deref()
     }
 }
+impl UntagResourceOutput {
+    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    pub fn builder() -> crate::output::untag_resource_output::Builder {
+        crate::output::untag_resource_output::Builder::default()
+    }
+}
+
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
 
@@ -352,12 +366,6 @@ pub mod untag_resource_output {
         }
     }
 }
-impl UntagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
-    pub fn builder() -> crate::output::untag_resource_output::Builder {
-        crate::output::untag_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -370,6 +378,13 @@ impl aws_http::request_id::RequestId for TagResourceOutput {
         self._request_id.as_deref()
     }
 }
+impl TagResourceOutput {
+    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
+    pub fn builder() -> crate::output::tag_resource_output::Builder {
+        crate::output::tag_resource_output::Builder::default()
+    }
+}
+
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
 
@@ -397,12 +412,6 @@ pub mod tag_resource_output {
         }
     }
 }
-impl TagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
-    pub fn builder() -> crate::output::tag_resource_output::Builder {
-        crate::output::tag_resource_output::Builder::default()
-    }
-}
 
 /// <p>StartTaskExecutionResponse</p>
 #[non_exhaustive]
@@ -424,6 +433,13 @@ impl aws_http::request_id::RequestId for StartTaskExecutionOutput {
         self._request_id.as_deref()
     }
 }
+impl StartTaskExecutionOutput {
+    /// Creates a new builder-style object to manufacture [`StartTaskExecutionOutput`](crate::output::StartTaskExecutionOutput).
+    pub fn builder() -> crate::output::start_task_execution_output::Builder {
+        crate::output::start_task_execution_output::Builder::default()
+    }
+}
+
 /// See [`StartTaskExecutionOutput`](crate::output::StartTaskExecutionOutput).
 pub mod start_task_execution_output {
 
@@ -466,12 +482,6 @@ pub mod start_task_execution_output {
         }
     }
 }
-impl StartTaskExecutionOutput {
-    /// Creates a new builder-style object to manufacture [`StartTaskExecutionOutput`](crate::output::StartTaskExecutionOutput).
-    pub fn builder() -> crate::output::start_task_execution_output::Builder {
-        crate::output::start_task_execution_output::Builder::default()
-    }
-}
 
 /// <p>ListTasksResponse</p>
 #[non_exhaustive]
@@ -500,6 +510,13 @@ impl aws_http::request_id::RequestId for ListTasksOutput {
         self._request_id.as_deref()
     }
 }
+impl ListTasksOutput {
+    /// Creates a new builder-style object to manufacture [`ListTasksOutput`](crate::output::ListTasksOutput).
+    pub fn builder() -> crate::output::list_tasks_output::Builder {
+        crate::output::list_tasks_output::Builder::default()
+    }
+}
+
 /// See [`ListTasksOutput`](crate::output::ListTasksOutput).
 pub mod list_tasks_output {
 
@@ -560,12 +577,6 @@ pub mod list_tasks_output {
         }
     }
 }
-impl ListTasksOutput {
-    /// Creates a new builder-style object to manufacture [`ListTasksOutput`](crate::output::ListTasksOutput).
-    pub fn builder() -> crate::output::list_tasks_output::Builder {
-        crate::output::list_tasks_output::Builder::default()
-    }
-}
 
 /// <p>ListTaskExecutionsResponse</p>
 #[non_exhaustive]
@@ -594,6 +605,13 @@ impl aws_http::request_id::RequestId for ListTaskExecutionsOutput {
         self._request_id.as_deref()
     }
 }
+impl ListTaskExecutionsOutput {
+    /// Creates a new builder-style object to manufacture [`ListTaskExecutionsOutput`](crate::output::ListTaskExecutionsOutput).
+    pub fn builder() -> crate::output::list_task_executions_output::Builder {
+        crate::output::list_task_executions_output::Builder::default()
+    }
+}
+
 /// See [`ListTaskExecutionsOutput`](crate::output::ListTaskExecutionsOutput).
 pub mod list_task_executions_output {
 
@@ -655,12 +673,6 @@ pub mod list_task_executions_output {
         }
     }
 }
-impl ListTaskExecutionsOutput {
-    /// Creates a new builder-style object to manufacture [`ListTaskExecutionsOutput`](crate::output::ListTaskExecutionsOutput).
-    pub fn builder() -> crate::output::list_task_executions_output::Builder {
-        crate::output::list_task_executions_output::Builder::default()
-    }
-}
 
 /// <p>ListTagsForResourceResponse</p>
 #[non_exhaustive]
@@ -689,6 +701,13 @@ impl aws_http::request_id::RequestId for ListTagsForResourceOutput {
         self._request_id.as_deref()
     }
 }
+impl ListTagsForResourceOutput {
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
+        crate::output::list_tags_for_resource_output::Builder::default()
+    }
+}
+
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
 
@@ -749,12 +768,6 @@ pub mod list_tags_for_resource_output {
         }
     }
 }
-impl ListTagsForResourceOutput {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
-    pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
-        crate::output::list_tags_for_resource_output::Builder::default()
-    }
-}
 
 /// <p>ListLocationsResponse</p>
 #[non_exhaustive]
@@ -783,6 +796,13 @@ impl aws_http::request_id::RequestId for ListLocationsOutput {
         self._request_id.as_deref()
     }
 }
+impl ListLocationsOutput {
+    /// Creates a new builder-style object to manufacture [`ListLocationsOutput`](crate::output::ListLocationsOutput).
+    pub fn builder() -> crate::output::list_locations_output::Builder {
+        crate::output::list_locations_output::Builder::default()
+    }
+}
+
 /// See [`ListLocationsOutput`](crate::output::ListLocationsOutput).
 pub mod list_locations_output {
 
@@ -843,12 +863,6 @@ pub mod list_locations_output {
         }
     }
 }
-impl ListLocationsOutput {
-    /// Creates a new builder-style object to manufacture [`ListLocationsOutput`](crate::output::ListLocationsOutput).
-    pub fn builder() -> crate::output::list_locations_output::Builder {
-        crate::output::list_locations_output::Builder::default()
-    }
-}
 
 /// <p>ListAgentsResponse</p>
 #[non_exhaustive]
@@ -877,6 +891,13 @@ impl aws_http::request_id::RequestId for ListAgentsOutput {
         self._request_id.as_deref()
     }
 }
+impl ListAgentsOutput {
+    /// Creates a new builder-style object to manufacture [`ListAgentsOutput`](crate::output::ListAgentsOutput).
+    pub fn builder() -> crate::output::list_agents_output::Builder {
+        crate::output::list_agents_output::Builder::default()
+    }
+}
+
 /// See [`ListAgentsOutput`](crate::output::ListAgentsOutput).
 pub mod list_agents_output {
 
@@ -935,12 +956,6 @@ pub mod list_agents_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl ListAgentsOutput {
-    /// Creates a new builder-style object to manufacture [`ListAgentsOutput`](crate::output::ListAgentsOutput).
-    pub fn builder() -> crate::output::list_agents_output::Builder {
-        crate::output::list_agents_output::Builder::default()
     }
 }
 
@@ -1056,6 +1071,13 @@ impl aws_http::request_id::RequestId for DescribeTaskExecutionOutput {
         self._request_id.as_deref()
     }
 }
+impl DescribeTaskExecutionOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeTaskExecutionOutput`](crate::output::DescribeTaskExecutionOutput).
+    pub fn builder() -> crate::output::describe_task_execution_output::Builder {
+        crate::output::describe_task_execution_output::Builder::default()
+    }
+}
+
 /// See [`DescribeTaskExecutionOutput`](crate::output::DescribeTaskExecutionOutput).
 pub mod describe_task_execution_output {
 
@@ -1277,12 +1299,6 @@ pub mod describe_task_execution_output {
         }
     }
 }
-impl DescribeTaskExecutionOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeTaskExecutionOutput`](crate::output::DescribeTaskExecutionOutput).
-    pub fn builder() -> crate::output::describe_task_execution_output::Builder {
-        crate::output::describe_task_execution_output::Builder::default()
-    }
-}
 
 /// <p>DescribeTaskResponse</p>
 #[non_exhaustive]
@@ -1417,6 +1433,13 @@ impl aws_http::request_id::RequestId for DescribeTaskOutput {
         self._request_id.as_deref()
     }
 }
+impl DescribeTaskOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeTaskOutput`](crate::output::DescribeTaskOutput).
+    pub fn builder() -> crate::output::describe_task_output::Builder {
+        crate::output::describe_task_output::Builder::default()
+    }
+}
+
 /// See [`DescribeTaskOutput`](crate::output::DescribeTaskOutput).
 pub mod describe_task_output {
 
@@ -1704,12 +1727,6 @@ pub mod describe_task_output {
         }
     }
 }
-impl DescribeTaskOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeTaskOutput`](crate::output::DescribeTaskOutput).
-    pub fn builder() -> crate::output::describe_task_output::Builder {
-        crate::output::describe_task_output::Builder::default()
-    }
-}
 
 /// <p>DescribeLocationSmbResponse</p>
 #[non_exhaustive]
@@ -1773,6 +1790,13 @@ impl aws_http::request_id::RequestId for DescribeLocationSmbOutput {
         self._request_id.as_deref()
     }
 }
+impl DescribeLocationSmbOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeLocationSmbOutput`](crate::output::DescribeLocationSmbOutput).
+    pub fn builder() -> crate::output::describe_location_smb_output::Builder {
+        crate::output::describe_location_smb_output::Builder::default()
+    }
+}
+
 /// See [`DescribeLocationSmbOutput`](crate::output::DescribeLocationSmbOutput).
 pub mod describe_location_smb_output {
 
@@ -1899,12 +1923,6 @@ pub mod describe_location_smb_output {
         }
     }
 }
-impl DescribeLocationSmbOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeLocationSmbOutput`](crate::output::DescribeLocationSmbOutput).
-    pub fn builder() -> crate::output::describe_location_smb_output::Builder {
-        crate::output::describe_location_smb_output::Builder::default()
-    }
-}
 
 /// <p>DescribeLocationS3Response</p>
 #[non_exhaustive]
@@ -1963,6 +1981,13 @@ impl aws_http::request_id::RequestId for DescribeLocationS3Output {
         self._request_id.as_deref()
     }
 }
+impl DescribeLocationS3Output {
+    /// Creates a new builder-style object to manufacture [`DescribeLocationS3Output`](crate::output::DescribeLocationS3Output).
+    pub fn builder() -> crate::output::describe_location_s3_output::Builder {
+        crate::output::describe_location_s3_output::Builder::default()
+    }
+}
+
 /// See [`DescribeLocationS3Output`](crate::output::DescribeLocationS3Output).
 pub mod describe_location_s3_output {
 
@@ -2079,12 +2104,6 @@ pub mod describe_location_s3_output {
         }
     }
 }
-impl DescribeLocationS3Output {
-    /// Creates a new builder-style object to manufacture [`DescribeLocationS3Output`](crate::output::DescribeLocationS3Output).
-    pub fn builder() -> crate::output::describe_location_s3_output::Builder {
-        crate::output::describe_location_s3_output::Builder::default()
-    }
-}
 
 /// <p>DescribeLocationObjectStorageResponse</p>
 #[non_exhaustive]
@@ -2157,6 +2176,13 @@ impl aws_http::request_id::RequestId for DescribeLocationObjectStorageOutput {
         self._request_id.as_deref()
     }
 }
+impl DescribeLocationObjectStorageOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeLocationObjectStorageOutput`](crate::output::DescribeLocationObjectStorageOutput).
+    pub fn builder() -> crate::output::describe_location_object_storage_output::Builder {
+        crate::output::describe_location_object_storage_output::Builder::default()
+    }
+}
+
 /// See [`DescribeLocationObjectStorageOutput`](crate::output::DescribeLocationObjectStorageOutput).
 pub mod describe_location_object_storage_output {
 
@@ -2298,12 +2324,6 @@ pub mod describe_location_object_storage_output {
         }
     }
 }
-impl DescribeLocationObjectStorageOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeLocationObjectStorageOutput`](crate::output::DescribeLocationObjectStorageOutput).
-    pub fn builder() -> crate::output::describe_location_object_storage_output::Builder {
-        crate::output::describe_location_object_storage_output::Builder::default()
-    }
-}
 
 /// <p>DescribeLocationNfsResponse</p>
 #[non_exhaustive]
@@ -2353,6 +2373,13 @@ impl aws_http::request_id::RequestId for DescribeLocationNfsOutput {
         self._request_id.as_deref()
     }
 }
+impl DescribeLocationNfsOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeLocationNfsOutput`](crate::output::DescribeLocationNfsOutput).
+    pub fn builder() -> crate::output::describe_location_nfs_output::Builder {
+        crate::output::describe_location_nfs_output::Builder::default()
+    }
+}
+
 /// See [`DescribeLocationNfsOutput`](crate::output::DescribeLocationNfsOutput).
 pub mod describe_location_nfs_output {
 
@@ -2447,12 +2474,6 @@ pub mod describe_location_nfs_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl DescribeLocationNfsOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeLocationNfsOutput`](crate::output::DescribeLocationNfsOutput).
-    pub fn builder() -> crate::output::describe_location_nfs_output::Builder {
-        crate::output::describe_location_nfs_output::Builder::default()
     }
 }
 
@@ -2555,6 +2576,13 @@ impl aws_http::request_id::RequestId for DescribeLocationHdfsOutput {
         self._request_id.as_deref()
     }
 }
+impl DescribeLocationHdfsOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeLocationHdfsOutput`](crate::output::DescribeLocationHdfsOutput).
+    pub fn builder() -> crate::output::describe_location_hdfs_output::Builder {
+        crate::output::describe_location_hdfs_output::Builder::default()
+    }
+}
+
 /// See [`DescribeLocationHdfsOutput`](crate::output::DescribeLocationHdfsOutput).
 pub mod describe_location_hdfs_output {
 
@@ -2759,12 +2787,6 @@ pub mod describe_location_hdfs_output {
         }
     }
 }
-impl DescribeLocationHdfsOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeLocationHdfsOutput`](crate::output::DescribeLocationHdfsOutput).
-    pub fn builder() -> crate::output::describe_location_hdfs_output::Builder {
-        crate::output::describe_location_hdfs_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2821,6 +2843,13 @@ impl aws_http::request_id::RequestId for DescribeLocationFsxWindowsOutput {
         self._request_id.as_deref()
     }
 }
+impl DescribeLocationFsxWindowsOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeLocationFsxWindowsOutput`](crate::output::DescribeLocationFsxWindowsOutput).
+    pub fn builder() -> crate::output::describe_location_fsx_windows_output::Builder {
+        crate::output::describe_location_fsx_windows_output::Builder::default()
+    }
+}
+
 /// See [`DescribeLocationFsxWindowsOutput`](crate::output::DescribeLocationFsxWindowsOutput).
 pub mod describe_location_fsx_windows_output {
 
@@ -2932,12 +2961,6 @@ pub mod describe_location_fsx_windows_output {
         }
     }
 }
-impl DescribeLocationFsxWindowsOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeLocationFsxWindowsOutput`](crate::output::DescribeLocationFsxWindowsOutput).
-    pub fn builder() -> crate::output::describe_location_fsx_windows_output::Builder {
-        crate::output::describe_location_fsx_windows_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2989,6 +3012,13 @@ impl aws_http::request_id::RequestId for DescribeLocationFsxOpenZfsOutput {
         self._request_id.as_deref()
     }
 }
+impl DescribeLocationFsxOpenZfsOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeLocationFsxOpenZfsOutput`](crate::output::DescribeLocationFsxOpenZfsOutput).
+    pub fn builder() -> crate::output::describe_location_fsx_open_zfs_output::Builder {
+        crate::output::describe_location_fsx_open_zfs_output::Builder::default()
+    }
+}
+
 /// See [`DescribeLocationFsxOpenZfsOutput`](crate::output::DescribeLocationFsxOpenZfsOutput).
 pub mod describe_location_fsx_open_zfs_output {
 
@@ -3093,12 +3123,6 @@ pub mod describe_location_fsx_open_zfs_output {
         }
     }
 }
-impl DescribeLocationFsxOpenZfsOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeLocationFsxOpenZfsOutput`](crate::output::DescribeLocationFsxOpenZfsOutput).
-    pub fn builder() -> crate::output::describe_location_fsx_open_zfs_output::Builder {
-        crate::output::describe_location_fsx_open_zfs_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3162,6 +3186,13 @@ impl aws_http::request_id::RequestId for DescribeLocationFsxOntapOutput {
         self._request_id.as_deref()
     }
 }
+impl DescribeLocationFsxOntapOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeLocationFsxOntapOutput`](crate::output::DescribeLocationFsxOntapOutput).
+    pub fn builder() -> crate::output::describe_location_fsx_ontap_output::Builder {
+        crate::output::describe_location_fsx_ontap_output::Builder::default()
+    }
+}
+
 /// See [`DescribeLocationFsxOntapOutput`](crate::output::DescribeLocationFsxOntapOutput).
 pub mod describe_location_fsx_ontap_output {
 
@@ -3297,12 +3328,6 @@ pub mod describe_location_fsx_ontap_output {
         }
     }
 }
-impl DescribeLocationFsxOntapOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeLocationFsxOntapOutput`](crate::output::DescribeLocationFsxOntapOutput).
-    pub fn builder() -> crate::output::describe_location_fsx_ontap_output::Builder {
-        crate::output::describe_location_fsx_ontap_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3345,6 +3370,13 @@ impl aws_http::request_id::RequestId for DescribeLocationFsxLustreOutput {
         self._request_id.as_deref()
     }
 }
+impl DescribeLocationFsxLustreOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeLocationFsxLustreOutput`](crate::output::DescribeLocationFsxLustreOutput).
+    pub fn builder() -> crate::output::describe_location_fsx_lustre_output::Builder {
+        crate::output::describe_location_fsx_lustre_output::Builder::default()
+    }
+}
+
 /// See [`DescribeLocationFsxLustreOutput`](crate::output::DescribeLocationFsxLustreOutput).
 pub mod describe_location_fsx_lustre_output {
 
@@ -3432,12 +3464,6 @@ pub mod describe_location_fsx_lustre_output {
         }
     }
 }
-impl DescribeLocationFsxLustreOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeLocationFsxLustreOutput`](crate::output::DescribeLocationFsxLustreOutput).
-    pub fn builder() -> crate::output::describe_location_fsx_lustre_output::Builder {
-        crate::output::describe_location_fsx_lustre_output::Builder::default()
-    }
-}
 
 /// <p>DescribeLocationEfsResponse</p>
 #[non_exhaustive]
@@ -3503,6 +3529,13 @@ impl aws_http::request_id::RequestId for DescribeLocationEfsOutput {
         self._request_id.as_deref()
     }
 }
+impl DescribeLocationEfsOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeLocationEfsOutput`](crate::output::DescribeLocationEfsOutput).
+    pub fn builder() -> crate::output::describe_location_efs_output::Builder {
+        crate::output::describe_location_efs_output::Builder::default()
+    }
+}
+
 /// See [`DescribeLocationEfsOutput`](crate::output::DescribeLocationEfsOutput).
 pub mod describe_location_efs_output {
 
@@ -3635,12 +3668,6 @@ pub mod describe_location_efs_output {
         }
     }
 }
-impl DescribeLocationEfsOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeLocationEfsOutput`](crate::output::DescribeLocationEfsOutput).
-    pub fn builder() -> crate::output::describe_location_efs_output::Builder {
-        crate::output::describe_location_efs_output::Builder::default()
-    }
-}
 
 /// <p>DescribeAgentResponse</p>
 #[non_exhaustive]
@@ -3704,6 +3731,13 @@ impl aws_http::request_id::RequestId for DescribeAgentOutput {
         self._request_id.as_deref()
     }
 }
+impl DescribeAgentOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeAgentOutput`](crate::output::DescribeAgentOutput).
+    pub fn builder() -> crate::output::describe_agent_output::Builder {
+        crate::output::describe_agent_output::Builder::default()
+    }
+}
+
 /// See [`DescribeAgentOutput`](crate::output::DescribeAgentOutput).
 pub mod describe_agent_output {
 
@@ -3827,12 +3861,6 @@ pub mod describe_agent_output {
         }
     }
 }
-impl DescribeAgentOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeAgentOutput`](crate::output::DescribeAgentOutput).
-    pub fn builder() -> crate::output::describe_agent_output::Builder {
-        crate::output::describe_agent_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3845,6 +3873,13 @@ impl aws_http::request_id::RequestId for DeleteTaskOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteTaskOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteTaskOutput`](crate::output::DeleteTaskOutput).
+    pub fn builder() -> crate::output::delete_task_output::Builder {
+        crate::output::delete_task_output::Builder::default()
+    }
+}
+
 /// See [`DeleteTaskOutput`](crate::output::DeleteTaskOutput).
 pub mod delete_task_output {
 
@@ -3872,12 +3907,6 @@ pub mod delete_task_output {
         }
     }
 }
-impl DeleteTaskOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteTaskOutput`](crate::output::DeleteTaskOutput).
-    pub fn builder() -> crate::output::delete_task_output::Builder {
-        crate::output::delete_task_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3890,6 +3919,13 @@ impl aws_http::request_id::RequestId for DeleteLocationOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteLocationOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteLocationOutput`](crate::output::DeleteLocationOutput).
+    pub fn builder() -> crate::output::delete_location_output::Builder {
+        crate::output::delete_location_output::Builder::default()
+    }
+}
+
 /// See [`DeleteLocationOutput`](crate::output::DeleteLocationOutput).
 pub mod delete_location_output {
 
@@ -3917,12 +3953,6 @@ pub mod delete_location_output {
         }
     }
 }
-impl DeleteLocationOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteLocationOutput`](crate::output::DeleteLocationOutput).
-    pub fn builder() -> crate::output::delete_location_output::Builder {
-        crate::output::delete_location_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3935,6 +3965,13 @@ impl aws_http::request_id::RequestId for DeleteAgentOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteAgentOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteAgentOutput`](crate::output::DeleteAgentOutput).
+    pub fn builder() -> crate::output::delete_agent_output::Builder {
+        crate::output::delete_agent_output::Builder::default()
+    }
+}
+
 /// See [`DeleteAgentOutput`](crate::output::DeleteAgentOutput).
 pub mod delete_agent_output {
 
@@ -3962,12 +3999,6 @@ pub mod delete_agent_output {
         }
     }
 }
-impl DeleteAgentOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteAgentOutput`](crate::output::DeleteAgentOutput).
-    pub fn builder() -> crate::output::delete_agent_output::Builder {
-        crate::output::delete_agent_output::Builder::default()
-    }
-}
 
 /// <p>CreateTaskResponse</p>
 #[non_exhaustive]
@@ -3989,6 +4020,13 @@ impl aws_http::request_id::RequestId for CreateTaskOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateTaskOutput {
+    /// Creates a new builder-style object to manufacture [`CreateTaskOutput`](crate::output::CreateTaskOutput).
+    pub fn builder() -> crate::output::create_task_output::Builder {
+        crate::output::create_task_output::Builder::default()
+    }
+}
+
 /// See [`CreateTaskOutput`](crate::output::CreateTaskOutput).
 pub mod create_task_output {
 
@@ -4028,12 +4066,6 @@ pub mod create_task_output {
         }
     }
 }
-impl CreateTaskOutput {
-    /// Creates a new builder-style object to manufacture [`CreateTaskOutput`](crate::output::CreateTaskOutput).
-    pub fn builder() -> crate::output::create_task_output::Builder {
-        crate::output::create_task_output::Builder::default()
-    }
-}
 
 /// <p>CreateLocationSmbResponse</p>
 #[non_exhaustive]
@@ -4055,6 +4087,13 @@ impl aws_http::request_id::RequestId for CreateLocationSmbOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateLocationSmbOutput {
+    /// Creates a new builder-style object to manufacture [`CreateLocationSmbOutput`](crate::output::CreateLocationSmbOutput).
+    pub fn builder() -> crate::output::create_location_smb_output::Builder {
+        crate::output::create_location_smb_output::Builder::default()
+    }
+}
+
 /// See [`CreateLocationSmbOutput`](crate::output::CreateLocationSmbOutput).
 pub mod create_location_smb_output {
 
@@ -4094,12 +4133,6 @@ pub mod create_location_smb_output {
         }
     }
 }
-impl CreateLocationSmbOutput {
-    /// Creates a new builder-style object to manufacture [`CreateLocationSmbOutput`](crate::output::CreateLocationSmbOutput).
-    pub fn builder() -> crate::output::create_location_smb_output::Builder {
-        crate::output::create_location_smb_output::Builder::default()
-    }
-}
 
 /// <p>CreateLocationS3Response</p>
 #[non_exhaustive]
@@ -4121,6 +4154,13 @@ impl aws_http::request_id::RequestId for CreateLocationS3Output {
         self._request_id.as_deref()
     }
 }
+impl CreateLocationS3Output {
+    /// Creates a new builder-style object to manufacture [`CreateLocationS3Output`](crate::output::CreateLocationS3Output).
+    pub fn builder() -> crate::output::create_location_s3_output::Builder {
+        crate::output::create_location_s3_output::Builder::default()
+    }
+}
+
 /// See [`CreateLocationS3Output`](crate::output::CreateLocationS3Output).
 pub mod create_location_s3_output {
 
@@ -4160,12 +4200,6 @@ pub mod create_location_s3_output {
         }
     }
 }
-impl CreateLocationS3Output {
-    /// Creates a new builder-style object to manufacture [`CreateLocationS3Output`](crate::output::CreateLocationS3Output).
-    pub fn builder() -> crate::output::create_location_s3_output::Builder {
-        crate::output::create_location_s3_output::Builder::default()
-    }
-}
 
 /// <p>CreateLocationObjectStorageResponse</p>
 #[non_exhaustive]
@@ -4187,6 +4221,13 @@ impl aws_http::request_id::RequestId for CreateLocationObjectStorageOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateLocationObjectStorageOutput {
+    /// Creates a new builder-style object to manufacture [`CreateLocationObjectStorageOutput`](crate::output::CreateLocationObjectStorageOutput).
+    pub fn builder() -> crate::output::create_location_object_storage_output::Builder {
+        crate::output::create_location_object_storage_output::Builder::default()
+    }
+}
+
 /// See [`CreateLocationObjectStorageOutput`](crate::output::CreateLocationObjectStorageOutput).
 pub mod create_location_object_storage_output {
 
@@ -4226,12 +4267,6 @@ pub mod create_location_object_storage_output {
         }
     }
 }
-impl CreateLocationObjectStorageOutput {
-    /// Creates a new builder-style object to manufacture [`CreateLocationObjectStorageOutput`](crate::output::CreateLocationObjectStorageOutput).
-    pub fn builder() -> crate::output::create_location_object_storage_output::Builder {
-        crate::output::create_location_object_storage_output::Builder::default()
-    }
-}
 
 /// <p>CreateLocationNfsResponse</p>
 #[non_exhaustive]
@@ -4253,6 +4288,13 @@ impl aws_http::request_id::RequestId for CreateLocationNfsOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateLocationNfsOutput {
+    /// Creates a new builder-style object to manufacture [`CreateLocationNfsOutput`](crate::output::CreateLocationNfsOutput).
+    pub fn builder() -> crate::output::create_location_nfs_output::Builder {
+        crate::output::create_location_nfs_output::Builder::default()
+    }
+}
+
 /// See [`CreateLocationNfsOutput`](crate::output::CreateLocationNfsOutput).
 pub mod create_location_nfs_output {
 
@@ -4292,12 +4334,6 @@ pub mod create_location_nfs_output {
         }
     }
 }
-impl CreateLocationNfsOutput {
-    /// Creates a new builder-style object to manufacture [`CreateLocationNfsOutput`](crate::output::CreateLocationNfsOutput).
-    pub fn builder() -> crate::output::create_location_nfs_output::Builder {
-        crate::output::create_location_nfs_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -4319,6 +4355,13 @@ impl aws_http::request_id::RequestId for CreateLocationHdfsOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateLocationHdfsOutput {
+    /// Creates a new builder-style object to manufacture [`CreateLocationHdfsOutput`](crate::output::CreateLocationHdfsOutput).
+    pub fn builder() -> crate::output::create_location_hdfs_output::Builder {
+        crate::output::create_location_hdfs_output::Builder::default()
+    }
+}
+
 /// See [`CreateLocationHdfsOutput`](crate::output::CreateLocationHdfsOutput).
 pub mod create_location_hdfs_output {
 
@@ -4358,12 +4401,6 @@ pub mod create_location_hdfs_output {
         }
     }
 }
-impl CreateLocationHdfsOutput {
-    /// Creates a new builder-style object to manufacture [`CreateLocationHdfsOutput`](crate::output::CreateLocationHdfsOutput).
-    pub fn builder() -> crate::output::create_location_hdfs_output::Builder {
-        crate::output::create_location_hdfs_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -4385,6 +4422,13 @@ impl aws_http::request_id::RequestId for CreateLocationFsxWindowsOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateLocationFsxWindowsOutput {
+    /// Creates a new builder-style object to manufacture [`CreateLocationFsxWindowsOutput`](crate::output::CreateLocationFsxWindowsOutput).
+    pub fn builder() -> crate::output::create_location_fsx_windows_output::Builder {
+        crate::output::create_location_fsx_windows_output::Builder::default()
+    }
+}
+
 /// See [`CreateLocationFsxWindowsOutput`](crate::output::CreateLocationFsxWindowsOutput).
 pub mod create_location_fsx_windows_output {
 
@@ -4424,12 +4468,6 @@ pub mod create_location_fsx_windows_output {
         }
     }
 }
-impl CreateLocationFsxWindowsOutput {
-    /// Creates a new builder-style object to manufacture [`CreateLocationFsxWindowsOutput`](crate::output::CreateLocationFsxWindowsOutput).
-    pub fn builder() -> crate::output::create_location_fsx_windows_output::Builder {
-        crate::output::create_location_fsx_windows_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -4451,6 +4489,13 @@ impl aws_http::request_id::RequestId for CreateLocationFsxOpenZfsOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateLocationFsxOpenZfsOutput {
+    /// Creates a new builder-style object to manufacture [`CreateLocationFsxOpenZfsOutput`](crate::output::CreateLocationFsxOpenZfsOutput).
+    pub fn builder() -> crate::output::create_location_fsx_open_zfs_output::Builder {
+        crate::output::create_location_fsx_open_zfs_output::Builder::default()
+    }
+}
+
 /// See [`CreateLocationFsxOpenZfsOutput`](crate::output::CreateLocationFsxOpenZfsOutput).
 pub mod create_location_fsx_open_zfs_output {
 
@@ -4490,12 +4535,6 @@ pub mod create_location_fsx_open_zfs_output {
         }
     }
 }
-impl CreateLocationFsxOpenZfsOutput {
-    /// Creates a new builder-style object to manufacture [`CreateLocationFsxOpenZfsOutput`](crate::output::CreateLocationFsxOpenZfsOutput).
-    pub fn builder() -> crate::output::create_location_fsx_open_zfs_output::Builder {
-        crate::output::create_location_fsx_open_zfs_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -4517,6 +4556,13 @@ impl aws_http::request_id::RequestId for CreateLocationFsxOntapOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateLocationFsxOntapOutput {
+    /// Creates a new builder-style object to manufacture [`CreateLocationFsxOntapOutput`](crate::output::CreateLocationFsxOntapOutput).
+    pub fn builder() -> crate::output::create_location_fsx_ontap_output::Builder {
+        crate::output::create_location_fsx_ontap_output::Builder::default()
+    }
+}
+
 /// See [`CreateLocationFsxOntapOutput`](crate::output::CreateLocationFsxOntapOutput).
 pub mod create_location_fsx_ontap_output {
 
@@ -4556,12 +4602,6 @@ pub mod create_location_fsx_ontap_output {
         }
     }
 }
-impl CreateLocationFsxOntapOutput {
-    /// Creates a new builder-style object to manufacture [`CreateLocationFsxOntapOutput`](crate::output::CreateLocationFsxOntapOutput).
-    pub fn builder() -> crate::output::create_location_fsx_ontap_output::Builder {
-        crate::output::create_location_fsx_ontap_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -4583,6 +4623,13 @@ impl aws_http::request_id::RequestId for CreateLocationFsxLustreOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateLocationFsxLustreOutput {
+    /// Creates a new builder-style object to manufacture [`CreateLocationFsxLustreOutput`](crate::output::CreateLocationFsxLustreOutput).
+    pub fn builder() -> crate::output::create_location_fsx_lustre_output::Builder {
+        crate::output::create_location_fsx_lustre_output::Builder::default()
+    }
+}
+
 /// See [`CreateLocationFsxLustreOutput`](crate::output::CreateLocationFsxLustreOutput).
 pub mod create_location_fsx_lustre_output {
 
@@ -4622,12 +4669,6 @@ pub mod create_location_fsx_lustre_output {
         }
     }
 }
-impl CreateLocationFsxLustreOutput {
-    /// Creates a new builder-style object to manufacture [`CreateLocationFsxLustreOutput`](crate::output::CreateLocationFsxLustreOutput).
-    pub fn builder() -> crate::output::create_location_fsx_lustre_output::Builder {
-        crate::output::create_location_fsx_lustre_output::Builder::default()
-    }
-}
 
 /// <p>CreateLocationEfs</p>
 #[non_exhaustive]
@@ -4649,6 +4690,13 @@ impl aws_http::request_id::RequestId for CreateLocationEfsOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateLocationEfsOutput {
+    /// Creates a new builder-style object to manufacture [`CreateLocationEfsOutput`](crate::output::CreateLocationEfsOutput).
+    pub fn builder() -> crate::output::create_location_efs_output::Builder {
+        crate::output::create_location_efs_output::Builder::default()
+    }
+}
+
 /// See [`CreateLocationEfsOutput`](crate::output::CreateLocationEfsOutput).
 pub mod create_location_efs_output {
 
@@ -4688,12 +4736,6 @@ pub mod create_location_efs_output {
         }
     }
 }
-impl CreateLocationEfsOutput {
-    /// Creates a new builder-style object to manufacture [`CreateLocationEfsOutput`](crate::output::CreateLocationEfsOutput).
-    pub fn builder() -> crate::output::create_location_efs_output::Builder {
-        crate::output::create_location_efs_output::Builder::default()
-    }
-}
 
 /// <p>CreateAgentResponse</p>
 #[non_exhaustive]
@@ -4715,6 +4757,13 @@ impl aws_http::request_id::RequestId for CreateAgentOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateAgentOutput {
+    /// Creates a new builder-style object to manufacture [`CreateAgentOutput`](crate::output::CreateAgentOutput).
+    pub fn builder() -> crate::output::create_agent_output::Builder {
+        crate::output::create_agent_output::Builder::default()
+    }
+}
+
 /// See [`CreateAgentOutput`](crate::output::CreateAgentOutput).
 pub mod create_agent_output {
 
@@ -4754,12 +4803,6 @@ pub mod create_agent_output {
         }
     }
 }
-impl CreateAgentOutput {
-    /// Creates a new builder-style object to manufacture [`CreateAgentOutput`](crate::output::CreateAgentOutput).
-    pub fn builder() -> crate::output::create_agent_output::Builder {
-        crate::output::create_agent_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -4772,6 +4815,13 @@ impl aws_http::request_id::RequestId for CancelTaskExecutionOutput {
         self._request_id.as_deref()
     }
 }
+impl CancelTaskExecutionOutput {
+    /// Creates a new builder-style object to manufacture [`CancelTaskExecutionOutput`](crate::output::CancelTaskExecutionOutput).
+    pub fn builder() -> crate::output::cancel_task_execution_output::Builder {
+        crate::output::cancel_task_execution_output::Builder::default()
+    }
+}
+
 /// See [`CancelTaskExecutionOutput`](crate::output::CancelTaskExecutionOutput).
 pub mod cancel_task_execution_output {
 
@@ -4797,11 +4847,5 @@ pub mod cancel_task_execution_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl CancelTaskExecutionOutput {
-    /// Creates a new builder-style object to manufacture [`CancelTaskExecutionOutput`](crate::output::CancelTaskExecutionOutput).
-    pub fn builder() -> crate::output::cancel_task_execution_output::Builder {
-        crate::output::cancel_task_execution_output::Builder::default()
     }
 }

@@ -4,7 +4,7 @@
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`add_attachments_to_set`](crate::client::Client::add_attachments_to_set).
 ///
-/// See [`crate::client::fluent_builders::AddAttachmentsToSet`] for more details about the operation.
+/// `ParseStrictResponse` impl for `AddAttachmentsToSet`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct AddAttachmentsToSet {
     _private: (),
@@ -39,7 +39,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AddAttachmentsToSet {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`add_communication_to_case`](crate::client::Client::add_communication_to_case).
 ///
-/// See [`crate::client::fluent_builders::AddCommunicationToCase`] for more details about the operation.
+/// `ParseStrictResponse` impl for `AddCommunicationToCase`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct AddCommunicationToCase {
     _private: (),
@@ -74,7 +74,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AddCommunicationToCase {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`create_case`](crate::client::Client::create_case).
 ///
-/// See [`crate::client::fluent_builders::CreateCase`] for more details about the operation.
+/// `ParseStrictResponse` impl for `CreateCase`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateCase {
     _private: (),
@@ -107,7 +107,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateCase {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`describe_attachment`](crate::client::Client::describe_attachment).
 ///
-/// See [`crate::client::fluent_builders::DescribeAttachment`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DescribeAttachment`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeAttachment {
     _private: (),
@@ -142,7 +142,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeAttachment {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`describe_cases`](crate::client::Client::describe_cases).
 ///
-/// See [`crate::client::fluent_builders::DescribeCases`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DescribeCases`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeCases {
     _private: (),
@@ -175,7 +175,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeCases {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`describe_communications`](crate::client::Client::describe_communications).
 ///
-/// See [`crate::client::fluent_builders::DescribeCommunications`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DescribeCommunications`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeCommunications {
     _private: (),
@@ -210,7 +210,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeCommunications {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`describe_services`](crate::client::Client::describe_services).
 ///
-/// See [`crate::client::fluent_builders::DescribeServices`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DescribeServices`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeServices {
     _private: (),
@@ -245,7 +245,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeServices {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`describe_severity_levels`](crate::client::Client::describe_severity_levels).
 ///
-/// See [`crate::client::fluent_builders::DescribeSeverityLevels`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DescribeSeverityLevels`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeSeverityLevels {
     _private: (),
@@ -280,7 +280,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeSeverityLevels {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`describe_trusted_advisor_check_refresh_statuses`](crate::client::Client::describe_trusted_advisor_check_refresh_statuses).
 ///
-/// See [`crate::client::fluent_builders::DescribeTrustedAdvisorCheckRefreshStatuses`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DescribeTrustedAdvisorCheckRefreshStatuses`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeTrustedAdvisorCheckRefreshStatuses {
     _private: (),
@@ -320,7 +320,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeTrustedAdvisorCh
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`describe_trusted_advisor_check_result`](crate::client::Client::describe_trusted_advisor_check_result).
 ///
-/// See [`crate::client::fluent_builders::DescribeTrustedAdvisorCheckResult`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DescribeTrustedAdvisorCheckResult`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeTrustedAdvisorCheckResult {
     _private: (),
@@ -355,7 +355,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeTrustedAdvisorCh
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`describe_trusted_advisor_checks`](crate::client::Client::describe_trusted_advisor_checks).
 ///
-/// See [`crate::client::fluent_builders::DescribeTrustedAdvisorChecks`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DescribeTrustedAdvisorChecks`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeTrustedAdvisorChecks {
     _private: (),
@@ -390,7 +390,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeTrustedAdvisorCh
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`describe_trusted_advisor_check_summaries`](crate::client::Client::describe_trusted_advisor_check_summaries).
 ///
-/// See [`crate::client::fluent_builders::DescribeTrustedAdvisorCheckSummaries`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DescribeTrustedAdvisorCheckSummaries`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeTrustedAdvisorCheckSummaries {
     _private: (),
@@ -427,7 +427,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeTrustedAdvisorCh
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`refresh_trusted_advisor_check`](crate::client::Client::refresh_trusted_advisor_check).
 ///
-/// See [`crate::client::fluent_builders::RefreshTrustedAdvisorCheck`] for more details about the operation.
+/// `ParseStrictResponse` impl for `RefreshTrustedAdvisorCheck`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct RefreshTrustedAdvisorCheck {
     _private: (),
@@ -462,7 +462,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RefreshTrustedAdvisorChe
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`resolve_case`](crate::client::Client::resolve_case).
 ///
-/// See [`crate::client::fluent_builders::ResolveCase`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ResolveCase`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ResolveCase {
     _private: (),

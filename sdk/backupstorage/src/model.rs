@@ -225,6 +225,13 @@ impl BackupObject {
         self.object_token.as_deref()
     }
 }
+impl BackupObject {
+    /// Creates a new builder-style object to manufacture [`BackupObject`](crate::model::BackupObject).
+    pub fn builder() -> crate::model::backup_object::Builder {
+        crate::model::backup_object::Builder::default()
+    }
+}
+
 /// See [`BackupObject`](crate::model::BackupObject).
 pub mod backup_object {
 
@@ -326,12 +333,6 @@ pub mod backup_object {
         }
     }
 }
-impl BackupObject {
-    /// Creates a new builder-style object to manufacture [`BackupObject`](crate::model::BackupObject).
-    pub fn builder() -> crate::model::backup_object::Builder {
-        crate::model::backup_object::Builder::default()
-    }
-}
 
 /// Chunk
 #[non_exhaustive]
@@ -375,6 +376,13 @@ impl Chunk {
         self.chunk_token.as_deref()
     }
 }
+impl Chunk {
+    /// Creates a new builder-style object to manufacture [`Chunk`](crate::model::Chunk).
+    pub fn builder() -> crate::model::chunk::Builder {
+        crate::model::chunk::Builder::default()
+    }
+}
+
 /// See [`Chunk`](crate::model::Chunk).
 pub mod chunk {
 
@@ -452,11 +460,5 @@ pub mod chunk {
                 chunk_token: self.chunk_token,
             }
         }
-    }
-}
-impl Chunk {
-    /// Creates a new builder-style object to manufacture [`Chunk`](crate::model::Chunk).
-    pub fn builder() -> crate::model::chunk::Builder {
-        crate::model::chunk::Builder::default()
     }
 }

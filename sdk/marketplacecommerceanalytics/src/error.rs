@@ -114,11 +114,43 @@ pub struct MarketplaceCommerceAnalyticsException {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl MarketplaceCommerceAnalyticsException {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for MarketplaceCommerceAnalyticsException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "MarketplaceCommerceAnalyticsException")?;
+        if let Some(inner_1) = &self.message {
+            {
+                write!(f, ": {}", inner_1)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for MarketplaceCommerceAnalyticsException {}
+impl aws_http::request_id::RequestId for crate::error::MarketplaceCommerceAnalyticsException {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata
+    for MarketplaceCommerceAnalyticsException
+{
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl MarketplaceCommerceAnalyticsException {
     /// Creates a new builder-style object to manufacture [`MarketplaceCommerceAnalyticsException`](crate::error::MarketplaceCommerceAnalyticsException).
     pub fn builder() -> crate::error::marketplace_commerce_analytics_exception::Builder {
         crate::error::marketplace_commerce_analytics_exception::Builder::default()
     }
 }
+
 /// See [`MarketplaceCommerceAnalyticsException`](crate::error::MarketplaceCommerceAnalyticsException).
 pub mod marketplace_commerce_analytics_exception {
 
@@ -161,37 +193,6 @@ pub mod marketplace_commerce_analytics_exception {
                 meta: self.meta.unwrap_or_default(),
             }
         }
-    }
-}
-impl MarketplaceCommerceAnalyticsException {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for MarketplaceCommerceAnalyticsException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "MarketplaceCommerceAnalyticsException")?;
-        if let Some(inner_1) = &self.message {
-            {
-                write!(f, ": {}", inner_1)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for MarketplaceCommerceAnalyticsException {}
-impl aws_http::request_id::RequestId for crate::error::MarketplaceCommerceAnalyticsException {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for MarketplaceCommerceAnalyticsException
-{
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
     }
 }
 

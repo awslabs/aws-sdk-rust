@@ -26,6 +26,13 @@ impl aws_http::request_id::RequestId for UpdateEnrollmentStatusOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdateEnrollmentStatusOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateEnrollmentStatusOutput`](crate::output::UpdateEnrollmentStatusOutput).
+    pub fn builder() -> crate::output::update_enrollment_status_output::Builder {
+        crate::output::update_enrollment_status_output::Builder::default()
+    }
+}
+
 /// See [`UpdateEnrollmentStatusOutput`](crate::output::UpdateEnrollmentStatusOutput).
 pub mod update_enrollment_status_output {
 
@@ -80,12 +87,6 @@ pub mod update_enrollment_status_output {
         }
     }
 }
-impl UpdateEnrollmentStatusOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateEnrollmentStatusOutput`](crate::output::UpdateEnrollmentStatusOutput).
-    pub fn builder() -> crate::output::update_enrollment_status_output::Builder {
-        crate::output::update_enrollment_status_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -98,6 +99,13 @@ impl aws_http::request_id::RequestId for PutRecommendationPreferencesOutput {
         self._request_id.as_deref()
     }
 }
+impl PutRecommendationPreferencesOutput {
+    /// Creates a new builder-style object to manufacture [`PutRecommendationPreferencesOutput`](crate::output::PutRecommendationPreferencesOutput).
+    pub fn builder() -> crate::output::put_recommendation_preferences_output::Builder {
+        crate::output::put_recommendation_preferences_output::Builder::default()
+    }
+}
+
 /// See [`PutRecommendationPreferencesOutput`](crate::output::PutRecommendationPreferencesOutput).
 pub mod put_recommendation_preferences_output {
 
@@ -123,12 +131,6 @@ pub mod put_recommendation_preferences_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl PutRecommendationPreferencesOutput {
-    /// Creates a new builder-style object to manufacture [`PutRecommendationPreferencesOutput`](crate::output::PutRecommendationPreferencesOutput).
-    pub fn builder() -> crate::output::put_recommendation_preferences_output::Builder {
-        crate::output::put_recommendation_preferences_output::Builder::default()
     }
 }
 
@@ -164,6 +166,13 @@ impl aws_http::request_id::RequestId for GetRecommendationSummariesOutput {
         self._request_id.as_deref()
     }
 }
+impl GetRecommendationSummariesOutput {
+    /// Creates a new builder-style object to manufacture [`GetRecommendationSummariesOutput`](crate::output::GetRecommendationSummariesOutput).
+    pub fn builder() -> crate::output::get_recommendation_summaries_output::Builder {
+        crate::output::get_recommendation_summaries_output::Builder::default()
+    }
+}
+
 /// See [`GetRecommendationSummariesOutput`](crate::output::GetRecommendationSummariesOutput).
 pub mod get_recommendation_summaries_output {
 
@@ -230,12 +239,6 @@ pub mod get_recommendation_summaries_output {
         }
     }
 }
-impl GetRecommendationSummariesOutput {
-    /// Creates a new builder-style object to manufacture [`GetRecommendationSummariesOutput`](crate::output::GetRecommendationSummariesOutput).
-    pub fn builder() -> crate::output::get_recommendation_summaries_output::Builder {
-        crate::output::get_recommendation_summaries_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -269,6 +272,13 @@ impl aws_http::request_id::RequestId for GetRecommendationPreferencesOutput {
         self._request_id.as_deref()
     }
 }
+impl GetRecommendationPreferencesOutput {
+    /// Creates a new builder-style object to manufacture [`GetRecommendationPreferencesOutput`](crate::output::GetRecommendationPreferencesOutput).
+    pub fn builder() -> crate::output::get_recommendation_preferences_output::Builder {
+        crate::output::get_recommendation_preferences_output::Builder::default()
+    }
+}
+
 /// See [`GetRecommendationPreferencesOutput`](crate::output::GetRecommendationPreferencesOutput).
 pub mod get_recommendation_preferences_output {
 
@@ -337,12 +347,6 @@ pub mod get_recommendation_preferences_output {
         }
     }
 }
-impl GetRecommendationPreferencesOutput {
-    /// Creates a new builder-style object to manufacture [`GetRecommendationPreferencesOutput`](crate::output::GetRecommendationPreferencesOutput).
-    pub fn builder() -> crate::output::get_recommendation_preferences_output::Builder {
-        crate::output::get_recommendation_preferences_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -376,6 +380,13 @@ impl aws_http::request_id::RequestId for GetLambdaFunctionRecommendationsOutput 
         self._request_id.as_deref()
     }
 }
+impl GetLambdaFunctionRecommendationsOutput {
+    /// Creates a new builder-style object to manufacture [`GetLambdaFunctionRecommendationsOutput`](crate::output::GetLambdaFunctionRecommendationsOutput).
+    pub fn builder() -> crate::output::get_lambda_function_recommendations_output::Builder {
+        crate::output::get_lambda_function_recommendations_output::Builder::default()
+    }
+}
+
 /// See [`GetLambdaFunctionRecommendationsOutput`](crate::output::GetLambdaFunctionRecommendationsOutput).
 pub mod get_lambda_function_recommendations_output {
 
@@ -442,12 +453,6 @@ pub mod get_lambda_function_recommendations_output {
         }
     }
 }
-impl GetLambdaFunctionRecommendationsOutput {
-    /// Creates a new builder-style object to manufacture [`GetLambdaFunctionRecommendationsOutput`](crate::output::GetLambdaFunctionRecommendationsOutput).
-    pub fn builder() -> crate::output::get_lambda_function_recommendations_output::Builder {
-        crate::output::get_lambda_function_recommendations_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -481,6 +486,13 @@ impl aws_http::request_id::RequestId for GetEnrollmentStatusesForOrganizationOut
         self._request_id.as_deref()
     }
 }
+impl GetEnrollmentStatusesForOrganizationOutput {
+    /// Creates a new builder-style object to manufacture [`GetEnrollmentStatusesForOrganizationOutput`](crate::output::GetEnrollmentStatusesForOrganizationOutput).
+    pub fn builder() -> crate::output::get_enrollment_statuses_for_organization_output::Builder {
+        crate::output::get_enrollment_statuses_for_organization_output::Builder::default()
+    }
+}
+
 /// See [`GetEnrollmentStatusesForOrganizationOutput`](crate::output::GetEnrollmentStatusesForOrganizationOutput).
 pub mod get_enrollment_statuses_for_organization_output {
 
@@ -547,12 +559,6 @@ pub mod get_enrollment_statuses_for_organization_output {
         }
     }
 }
-impl GetEnrollmentStatusesForOrganizationOutput {
-    /// Creates a new builder-style object to manufacture [`GetEnrollmentStatusesForOrganizationOutput`](crate::output::GetEnrollmentStatusesForOrganizationOutput).
-    pub fn builder() -> crate::output::get_enrollment_statuses_for_organization_output::Builder {
-        crate::output::get_enrollment_statuses_for_organization_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -604,6 +610,13 @@ impl aws_http::request_id::RequestId for GetEnrollmentStatusOutput {
         self._request_id.as_deref()
     }
 }
+impl GetEnrollmentStatusOutput {
+    /// Creates a new builder-style object to manufacture [`GetEnrollmentStatusOutput`](crate::output::GetEnrollmentStatusOutput).
+    pub fn builder() -> crate::output::get_enrollment_status_output::Builder {
+        crate::output::get_enrollment_status_output::Builder::default()
+    }
+}
+
 /// See [`GetEnrollmentStatusOutput`](crate::output::GetEnrollmentStatusOutput).
 pub mod get_enrollment_status_output {
 
@@ -702,12 +715,6 @@ pub mod get_enrollment_status_output {
         }
     }
 }
-impl GetEnrollmentStatusOutput {
-    /// Creates a new builder-style object to manufacture [`GetEnrollmentStatusOutput`](crate::output::GetEnrollmentStatusOutput).
-    pub fn builder() -> crate::output::get_enrollment_status_output::Builder {
-        crate::output::get_enrollment_status_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -753,6 +760,13 @@ impl aws_http::request_id::RequestId for GetEffectiveRecommendationPreferencesOu
         self._request_id.as_deref()
     }
 }
+impl GetEffectiveRecommendationPreferencesOutput {
+    /// Creates a new builder-style object to manufacture [`GetEffectiveRecommendationPreferencesOutput`](crate::output::GetEffectiveRecommendationPreferencesOutput).
+    pub fn builder() -> crate::output::get_effective_recommendation_preferences_output::Builder {
+        crate::output::get_effective_recommendation_preferences_output::Builder::default()
+    }
+}
+
 /// See [`GetEffectiveRecommendationPreferencesOutput`](crate::output::GetEffectiveRecommendationPreferencesOutput).
 pub mod get_effective_recommendation_preferences_output {
 
@@ -830,12 +844,6 @@ pub mod get_effective_recommendation_preferences_output {
         }
     }
 }
-impl GetEffectiveRecommendationPreferencesOutput {
-    /// Creates a new builder-style object to manufacture [`GetEffectiveRecommendationPreferencesOutput`](crate::output::GetEffectiveRecommendationPreferencesOutput).
-    pub fn builder() -> crate::output::get_effective_recommendation_preferences_output::Builder {
-        crate::output::get_effective_recommendation_preferences_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -874,6 +882,13 @@ impl aws_http::request_id::RequestId for GetEcsServiceRecommendationsOutput {
         self._request_id.as_deref()
     }
 }
+impl GetEcsServiceRecommendationsOutput {
+    /// Creates a new builder-style object to manufacture [`GetEcsServiceRecommendationsOutput`](crate::output::GetEcsServiceRecommendationsOutput).
+    pub fn builder() -> crate::output::get_ecs_service_recommendations_output::Builder {
+        crate::output::get_ecs_service_recommendations_output::Builder::default()
+    }
+}
+
 /// See [`GetEcsServiceRecommendationsOutput`](crate::output::GetEcsServiceRecommendationsOutput).
 pub mod get_ecs_service_recommendations_output {
 
@@ -959,12 +974,6 @@ pub mod get_ecs_service_recommendations_output {
         }
     }
 }
-impl GetEcsServiceRecommendationsOutput {
-    /// Creates a new builder-style object to manufacture [`GetEcsServiceRecommendationsOutput`](crate::output::GetEcsServiceRecommendationsOutput).
-    pub fn builder() -> crate::output::get_ecs_service_recommendations_output::Builder {
-        crate::output::get_ecs_service_recommendations_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -990,6 +999,14 @@ impl aws_http::request_id::RequestId for GetEcsServiceRecommendationProjectedMet
         self._request_id.as_deref()
     }
 }
+impl GetEcsServiceRecommendationProjectedMetricsOutput {
+    /// Creates a new builder-style object to manufacture [`GetEcsServiceRecommendationProjectedMetricsOutput`](crate::output::GetEcsServiceRecommendationProjectedMetricsOutput).
+    pub fn builder(
+    ) -> crate::output::get_ecs_service_recommendation_projected_metrics_output::Builder {
+        crate::output::get_ecs_service_recommendation_projected_metrics_output::Builder::default()
+    }
+}
+
 /// See [`GetEcsServiceRecommendationProjectedMetricsOutput`](crate::output::GetEcsServiceRecommendationProjectedMetricsOutput).
 pub mod get_ecs_service_recommendation_projected_metrics_output {
 
@@ -1047,13 +1064,6 @@ pub mod get_ecs_service_recommendation_projected_metrics_output {
         }
     }
 }
-impl GetEcsServiceRecommendationProjectedMetricsOutput {
-    /// Creates a new builder-style object to manufacture [`GetEcsServiceRecommendationProjectedMetricsOutput`](crate::output::GetEcsServiceRecommendationProjectedMetricsOutput).
-    pub fn builder(
-    ) -> crate::output::get_ecs_service_recommendation_projected_metrics_output::Builder {
-        crate::output::get_ecs_service_recommendation_projected_metrics_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1078,6 +1088,13 @@ impl aws_http::request_id::RequestId for GetEc2RecommendationProjectedMetricsOut
         self._request_id.as_deref()
     }
 }
+impl GetEc2RecommendationProjectedMetricsOutput {
+    /// Creates a new builder-style object to manufacture [`GetEc2RecommendationProjectedMetricsOutput`](crate::output::GetEc2RecommendationProjectedMetricsOutput).
+    pub fn builder() -> crate::output::get_ec2_recommendation_projected_metrics_output::Builder {
+        crate::output::get_ec2_recommendation_projected_metrics_output::Builder::default()
+    }
+}
+
 /// See [`GetEc2RecommendationProjectedMetricsOutput`](crate::output::GetEc2RecommendationProjectedMetricsOutput).
 pub mod get_ec2_recommendation_projected_metrics_output {
 
@@ -1134,12 +1151,6 @@ pub mod get_ec2_recommendation_projected_metrics_output {
         }
     }
 }
-impl GetEc2RecommendationProjectedMetricsOutput {
-    /// Creates a new builder-style object to manufacture [`GetEc2RecommendationProjectedMetricsOutput`](crate::output::GetEc2RecommendationProjectedMetricsOutput).
-    pub fn builder() -> crate::output::get_ec2_recommendation_projected_metrics_output::Builder {
-        crate::output::get_ec2_recommendation_projected_metrics_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1182,6 +1193,13 @@ impl aws_http::request_id::RequestId for GetEc2InstanceRecommendationsOutput {
         self._request_id.as_deref()
     }
 }
+impl GetEc2InstanceRecommendationsOutput {
+    /// Creates a new builder-style object to manufacture [`GetEc2InstanceRecommendationsOutput`](crate::output::GetEc2InstanceRecommendationsOutput).
+    pub fn builder() -> crate::output::get_ec2_instance_recommendations_output::Builder {
+        crate::output::get_ec2_instance_recommendations_output::Builder::default()
+    }
+}
+
 /// See [`GetEc2InstanceRecommendationsOutput`](crate::output::GetEc2InstanceRecommendationsOutput).
 pub mod get_ec2_instance_recommendations_output {
 
@@ -1271,12 +1289,6 @@ pub mod get_ec2_instance_recommendations_output {
         }
     }
 }
-impl GetEc2InstanceRecommendationsOutput {
-    /// Creates a new builder-style object to manufacture [`GetEc2InstanceRecommendationsOutput`](crate::output::GetEc2InstanceRecommendationsOutput).
-    pub fn builder() -> crate::output::get_ec2_instance_recommendations_output::Builder {
-        crate::output::get_ec2_instance_recommendations_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1319,6 +1331,13 @@ impl aws_http::request_id::RequestId for GetEbsVolumeRecommendationsOutput {
         self._request_id.as_deref()
     }
 }
+impl GetEbsVolumeRecommendationsOutput {
+    /// Creates a new builder-style object to manufacture [`GetEbsVolumeRecommendationsOutput`](crate::output::GetEbsVolumeRecommendationsOutput).
+    pub fn builder() -> crate::output::get_ebs_volume_recommendations_output::Builder {
+        crate::output::get_ebs_volume_recommendations_output::Builder::default()
+    }
+}
+
 /// See [`GetEbsVolumeRecommendationsOutput`](crate::output::GetEbsVolumeRecommendationsOutput).
 pub mod get_ebs_volume_recommendations_output {
 
@@ -1405,12 +1424,6 @@ pub mod get_ebs_volume_recommendations_output {
         }
     }
 }
-impl GetEbsVolumeRecommendationsOutput {
-    /// Creates a new builder-style object to manufacture [`GetEbsVolumeRecommendationsOutput`](crate::output::GetEbsVolumeRecommendationsOutput).
-    pub fn builder() -> crate::output::get_ebs_volume_recommendations_output::Builder {
-        crate::output::get_ebs_volume_recommendations_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1453,6 +1466,13 @@ impl aws_http::request_id::RequestId for GetAutoScalingGroupRecommendationsOutpu
         self._request_id.as_deref()
     }
 }
+impl GetAutoScalingGroupRecommendationsOutput {
+    /// Creates a new builder-style object to manufacture [`GetAutoScalingGroupRecommendationsOutput`](crate::output::GetAutoScalingGroupRecommendationsOutput).
+    pub fn builder() -> crate::output::get_auto_scaling_group_recommendations_output::Builder {
+        crate::output::get_auto_scaling_group_recommendations_output::Builder::default()
+    }
+}
+
 /// See [`GetAutoScalingGroupRecommendationsOutput`](crate::output::GetAutoScalingGroupRecommendationsOutput).
 pub mod get_auto_scaling_group_recommendations_output {
 
@@ -1542,12 +1562,6 @@ pub mod get_auto_scaling_group_recommendations_output {
         }
     }
 }
-impl GetAutoScalingGroupRecommendationsOutput {
-    /// Creates a new builder-style object to manufacture [`GetAutoScalingGroupRecommendationsOutput`](crate::output::GetAutoScalingGroupRecommendationsOutput).
-    pub fn builder() -> crate::output::get_auto_scaling_group_recommendations_output::Builder {
-        crate::output::get_auto_scaling_group_recommendations_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1578,6 +1592,13 @@ impl aws_http::request_id::RequestId for ExportLambdaFunctionRecommendationsOutp
         self._request_id.as_deref()
     }
 }
+impl ExportLambdaFunctionRecommendationsOutput {
+    /// Creates a new builder-style object to manufacture [`ExportLambdaFunctionRecommendationsOutput`](crate::output::ExportLambdaFunctionRecommendationsOutput).
+    pub fn builder() -> crate::output::export_lambda_function_recommendations_output::Builder {
+        crate::output::export_lambda_function_recommendations_output::Builder::default()
+    }
+}
+
 /// See [`ExportLambdaFunctionRecommendationsOutput`](crate::output::ExportLambdaFunctionRecommendationsOutput).
 pub mod export_lambda_function_recommendations_output {
 
@@ -1634,12 +1655,6 @@ pub mod export_lambda_function_recommendations_output {
         }
     }
 }
-impl ExportLambdaFunctionRecommendationsOutput {
-    /// Creates a new builder-style object to manufacture [`ExportLambdaFunctionRecommendationsOutput`](crate::output::ExportLambdaFunctionRecommendationsOutput).
-    pub fn builder() -> crate::output::export_lambda_function_recommendations_output::Builder {
-        crate::output::export_lambda_function_recommendations_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1670,6 +1685,13 @@ impl aws_http::request_id::RequestId for ExportEcsServiceRecommendationsOutput {
         self._request_id.as_deref()
     }
 }
+impl ExportEcsServiceRecommendationsOutput {
+    /// Creates a new builder-style object to manufacture [`ExportEcsServiceRecommendationsOutput`](crate::output::ExportEcsServiceRecommendationsOutput).
+    pub fn builder() -> crate::output::export_ecs_service_recommendations_output::Builder {
+        crate::output::export_ecs_service_recommendations_output::Builder::default()
+    }
+}
+
 /// See [`ExportEcsServiceRecommendationsOutput`](crate::output::ExportEcsServiceRecommendationsOutput).
 pub mod export_ecs_service_recommendations_output {
 
@@ -1726,12 +1748,6 @@ pub mod export_ecs_service_recommendations_output {
         }
     }
 }
-impl ExportEcsServiceRecommendationsOutput {
-    /// Creates a new builder-style object to manufacture [`ExportEcsServiceRecommendationsOutput`](crate::output::ExportEcsServiceRecommendationsOutput).
-    pub fn builder() -> crate::output::export_ecs_service_recommendations_output::Builder {
-        crate::output::export_ecs_service_recommendations_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1762,6 +1778,13 @@ impl aws_http::request_id::RequestId for ExportEc2InstanceRecommendationsOutput 
         self._request_id.as_deref()
     }
 }
+impl ExportEc2InstanceRecommendationsOutput {
+    /// Creates a new builder-style object to manufacture [`ExportEc2InstanceRecommendationsOutput`](crate::output::ExportEc2InstanceRecommendationsOutput).
+    pub fn builder() -> crate::output::export_ec2_instance_recommendations_output::Builder {
+        crate::output::export_ec2_instance_recommendations_output::Builder::default()
+    }
+}
+
 /// See [`ExportEc2InstanceRecommendationsOutput`](crate::output::ExportEc2InstanceRecommendationsOutput).
 pub mod export_ec2_instance_recommendations_output {
 
@@ -1818,12 +1841,6 @@ pub mod export_ec2_instance_recommendations_output {
         }
     }
 }
-impl ExportEc2InstanceRecommendationsOutput {
-    /// Creates a new builder-style object to manufacture [`ExportEc2InstanceRecommendationsOutput`](crate::output::ExportEc2InstanceRecommendationsOutput).
-    pub fn builder() -> crate::output::export_ec2_instance_recommendations_output::Builder {
-        crate::output::export_ec2_instance_recommendations_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1854,6 +1871,13 @@ impl aws_http::request_id::RequestId for ExportEbsVolumeRecommendationsOutput {
         self._request_id.as_deref()
     }
 }
+impl ExportEbsVolumeRecommendationsOutput {
+    /// Creates a new builder-style object to manufacture [`ExportEbsVolumeRecommendationsOutput`](crate::output::ExportEbsVolumeRecommendationsOutput).
+    pub fn builder() -> crate::output::export_ebs_volume_recommendations_output::Builder {
+        crate::output::export_ebs_volume_recommendations_output::Builder::default()
+    }
+}
+
 /// See [`ExportEbsVolumeRecommendationsOutput`](crate::output::ExportEbsVolumeRecommendationsOutput).
 pub mod export_ebs_volume_recommendations_output {
 
@@ -1910,12 +1934,6 @@ pub mod export_ebs_volume_recommendations_output {
         }
     }
 }
-impl ExportEbsVolumeRecommendationsOutput {
-    /// Creates a new builder-style object to manufacture [`ExportEbsVolumeRecommendationsOutput`](crate::output::ExportEbsVolumeRecommendationsOutput).
-    pub fn builder() -> crate::output::export_ebs_volume_recommendations_output::Builder {
-        crate::output::export_ebs_volume_recommendations_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1946,6 +1964,13 @@ impl aws_http::request_id::RequestId for ExportAutoScalingGroupRecommendationsOu
         self._request_id.as_deref()
     }
 }
+impl ExportAutoScalingGroupRecommendationsOutput {
+    /// Creates a new builder-style object to manufacture [`ExportAutoScalingGroupRecommendationsOutput`](crate::output::ExportAutoScalingGroupRecommendationsOutput).
+    pub fn builder() -> crate::output::export_auto_scaling_group_recommendations_output::Builder {
+        crate::output::export_auto_scaling_group_recommendations_output::Builder::default()
+    }
+}
+
 /// See [`ExportAutoScalingGroupRecommendationsOutput`](crate::output::ExportAutoScalingGroupRecommendationsOutput).
 pub mod export_auto_scaling_group_recommendations_output {
 
@@ -2002,12 +2027,6 @@ pub mod export_auto_scaling_group_recommendations_output {
         }
     }
 }
-impl ExportAutoScalingGroupRecommendationsOutput {
-    /// Creates a new builder-style object to manufacture [`ExportAutoScalingGroupRecommendationsOutput`](crate::output::ExportAutoScalingGroupRecommendationsOutput).
-    pub fn builder() -> crate::output::export_auto_scaling_group_recommendations_output::Builder {
-        crate::output::export_auto_scaling_group_recommendations_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2041,6 +2060,13 @@ impl aws_http::request_id::RequestId for DescribeRecommendationExportJobsOutput 
         self._request_id.as_deref()
     }
 }
+impl DescribeRecommendationExportJobsOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeRecommendationExportJobsOutput`](crate::output::DescribeRecommendationExportJobsOutput).
+    pub fn builder() -> crate::output::describe_recommendation_export_jobs_output::Builder {
+        crate::output::describe_recommendation_export_jobs_output::Builder::default()
+    }
+}
+
 /// See [`DescribeRecommendationExportJobsOutput`](crate::output::DescribeRecommendationExportJobsOutput).
 pub mod describe_recommendation_export_jobs_output {
 
@@ -2107,12 +2133,6 @@ pub mod describe_recommendation_export_jobs_output {
         }
     }
 }
-impl DescribeRecommendationExportJobsOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeRecommendationExportJobsOutput`](crate::output::DescribeRecommendationExportJobsOutput).
-    pub fn builder() -> crate::output::describe_recommendation_export_jobs_output::Builder {
-        crate::output::describe_recommendation_export_jobs_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2125,6 +2145,13 @@ impl aws_http::request_id::RequestId for DeleteRecommendationPreferencesOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteRecommendationPreferencesOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteRecommendationPreferencesOutput`](crate::output::DeleteRecommendationPreferencesOutput).
+    pub fn builder() -> crate::output::delete_recommendation_preferences_output::Builder {
+        crate::output::delete_recommendation_preferences_output::Builder::default()
+    }
+}
+
 /// See [`DeleteRecommendationPreferencesOutput`](crate::output::DeleteRecommendationPreferencesOutput).
 pub mod delete_recommendation_preferences_output {
 
@@ -2150,11 +2177,5 @@ pub mod delete_recommendation_preferences_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl DeleteRecommendationPreferencesOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteRecommendationPreferencesOutput`](crate::output::DeleteRecommendationPreferencesOutput).
-    pub fn builder() -> crate::output::delete_recommendation_preferences_output::Builder {
-        crate::output::delete_recommendation_preferences_output::Builder::default()
     }
 }

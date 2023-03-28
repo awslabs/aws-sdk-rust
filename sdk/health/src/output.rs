@@ -10,6 +10,14 @@ impl aws_http::request_id::RequestId for EnableHealthServiceAccessForOrganizatio
         self._request_id.as_deref()
     }
 }
+impl EnableHealthServiceAccessForOrganizationOutput {
+    /// Creates a new builder-style object to manufacture [`EnableHealthServiceAccessForOrganizationOutput`](crate::output::EnableHealthServiceAccessForOrganizationOutput).
+    pub fn builder() -> crate::output::enable_health_service_access_for_organization_output::Builder
+    {
+        crate::output::enable_health_service_access_for_organization_output::Builder::default()
+    }
+}
+
 /// See [`EnableHealthServiceAccessForOrganizationOutput`](crate::output::EnableHealthServiceAccessForOrganizationOutput).
 pub mod enable_health_service_access_for_organization_output {
 
@@ -37,13 +45,6 @@ pub mod enable_health_service_access_for_organization_output {
         }
     }
 }
-impl EnableHealthServiceAccessForOrganizationOutput {
-    /// Creates a new builder-style object to manufacture [`EnableHealthServiceAccessForOrganizationOutput`](crate::output::EnableHealthServiceAccessForOrganizationOutput).
-    pub fn builder() -> crate::output::enable_health_service_access_for_organization_output::Builder
-    {
-        crate::output::enable_health_service_access_for_organization_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -56,6 +57,14 @@ impl aws_http::request_id::RequestId for DisableHealthServiceAccessForOrganizati
         self._request_id.as_deref()
     }
 }
+impl DisableHealthServiceAccessForOrganizationOutput {
+    /// Creates a new builder-style object to manufacture [`DisableHealthServiceAccessForOrganizationOutput`](crate::output::DisableHealthServiceAccessForOrganizationOutput).
+    pub fn builder() -> crate::output::disable_health_service_access_for_organization_output::Builder
+    {
+        crate::output::disable_health_service_access_for_organization_output::Builder::default()
+    }
+}
+
 /// See [`DisableHealthServiceAccessForOrganizationOutput`](crate::output::DisableHealthServiceAccessForOrganizationOutput).
 pub mod disable_health_service_access_for_organization_output {
 
@@ -83,13 +92,6 @@ pub mod disable_health_service_access_for_organization_output {
         }
     }
 }
-impl DisableHealthServiceAccessForOrganizationOutput {
-    /// Creates a new builder-style object to manufacture [`DisableHealthServiceAccessForOrganizationOutput`](crate::output::DisableHealthServiceAccessForOrganizationOutput).
-    pub fn builder() -> crate::output::disable_health_service_access_for_organization_output::Builder
-    {
-        crate::output::disable_health_service_access_for_organization_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -114,6 +116,14 @@ impl aws_http::request_id::RequestId for DescribeHealthServiceStatusForOrganizat
         self._request_id.as_deref()
     }
 }
+impl DescribeHealthServiceStatusForOrganizationOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeHealthServiceStatusForOrganizationOutput`](crate::output::DescribeHealthServiceStatusForOrganizationOutput).
+    pub fn builder(
+    ) -> crate::output::describe_health_service_status_for_organization_output::Builder {
+        crate::output::describe_health_service_status_for_organization_output::Builder::default()
+    }
+}
+
 /// See [`DescribeHealthServiceStatusForOrganizationOutput`](crate::output::DescribeHealthServiceStatusForOrganizationOutput).
 pub mod describe_health_service_status_for_organization_output {
 
@@ -163,13 +173,6 @@ pub mod describe_health_service_status_for_organization_output {
         }
     }
 }
-impl DescribeHealthServiceStatusForOrganizationOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeHealthServiceStatusForOrganizationOutput`](crate::output::DescribeHealthServiceStatusForOrganizationOutput).
-    pub fn builder(
-    ) -> crate::output::describe_health_service_status_for_organization_output::Builder {
-        crate::output::describe_health_service_status_for_organization_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -198,6 +201,13 @@ impl aws_http::request_id::RequestId for DescribeEventTypesOutput {
         self._request_id.as_deref()
     }
 }
+impl DescribeEventTypesOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeEventTypesOutput`](crate::output::DescribeEventTypesOutput).
+    pub fn builder() -> crate::output::describe_event_types_output::Builder {
+        crate::output::describe_event_types_output::Builder::default()
+    }
+}
+
 /// See [`DescribeEventTypesOutput`](crate::output::DescribeEventTypesOutput).
 pub mod describe_event_types_output {
 
@@ -258,12 +268,6 @@ pub mod describe_event_types_output {
         }
     }
 }
-impl DescribeEventTypesOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeEventTypesOutput`](crate::output::DescribeEventTypesOutput).
-    pub fn builder() -> crate::output::describe_event_types_output::Builder {
-        crate::output::describe_event_types_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -292,6 +296,13 @@ impl aws_http::request_id::RequestId for DescribeEventsForOrganizationOutput {
         self._request_id.as_deref()
     }
 }
+impl DescribeEventsForOrganizationOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeEventsForOrganizationOutput`](crate::output::DescribeEventsForOrganizationOutput).
+    pub fn builder() -> crate::output::describe_events_for_organization_output::Builder {
+        crate::output::describe_events_for_organization_output::Builder::default()
+    }
+}
+
 /// See [`DescribeEventsForOrganizationOutput`](crate::output::DescribeEventsForOrganizationOutput).
 pub mod describe_events_for_organization_output {
 
@@ -352,12 +363,6 @@ pub mod describe_events_for_organization_output {
         }
     }
 }
-impl DescribeEventsForOrganizationOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeEventsForOrganizationOutput`](crate::output::DescribeEventsForOrganizationOutput).
-    pub fn builder() -> crate::output::describe_events_for_organization_output::Builder {
-        crate::output::describe_events_for_organization_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -386,6 +391,13 @@ impl aws_http::request_id::RequestId for DescribeEventsOutput {
         self._request_id.as_deref()
     }
 }
+impl DescribeEventsOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeEventsOutput`](crate::output::DescribeEventsOutput).
+    pub fn builder() -> crate::output::describe_events_output::Builder {
+        crate::output::describe_events_output::Builder::default()
+    }
+}
+
 /// See [`DescribeEventsOutput`](crate::output::DescribeEventsOutput).
 pub mod describe_events_output {
 
@@ -446,12 +458,6 @@ pub mod describe_events_output {
         }
     }
 }
-impl DescribeEventsOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeEventsOutput`](crate::output::DescribeEventsOutput).
-    pub fn builder() -> crate::output::describe_events_output::Builder {
-        crate::output::describe_events_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -483,6 +489,13 @@ impl aws_http::request_id::RequestId for DescribeEventDetailsForOrganizationOutp
         self._request_id.as_deref()
     }
 }
+impl DescribeEventDetailsForOrganizationOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeEventDetailsForOrganizationOutput`](crate::output::DescribeEventDetailsForOrganizationOutput).
+    pub fn builder() -> crate::output::describe_event_details_for_organization_output::Builder {
+        crate::output::describe_event_details_for_organization_output::Builder::default()
+    }
+}
+
 /// See [`DescribeEventDetailsForOrganizationOutput`](crate::output::DescribeEventDetailsForOrganizationOutput).
 pub mod describe_event_details_for_organization_output {
 
@@ -559,12 +572,6 @@ pub mod describe_event_details_for_organization_output {
         }
     }
 }
-impl DescribeEventDetailsForOrganizationOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeEventDetailsForOrganizationOutput`](crate::output::DescribeEventDetailsForOrganizationOutput).
-    pub fn builder() -> crate::output::describe_event_details_for_organization_output::Builder {
-        crate::output::describe_event_details_for_organization_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -593,6 +600,13 @@ impl aws_http::request_id::RequestId for DescribeEventDetailsOutput {
         self._request_id.as_deref()
     }
 }
+impl DescribeEventDetailsOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeEventDetailsOutput`](crate::output::DescribeEventDetailsOutput).
+    pub fn builder() -> crate::output::describe_event_details_output::Builder {
+        crate::output::describe_event_details_output::Builder::default()
+    }
+}
+
 /// See [`DescribeEventDetailsOutput`](crate::output::DescribeEventDetailsOutput).
 pub mod describe_event_details_output {
 
@@ -663,12 +677,6 @@ pub mod describe_event_details_output {
         }
     }
 }
-impl DescribeEventDetailsOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeEventDetailsOutput`](crate::output::DescribeEventDetailsOutput).
-    pub fn builder() -> crate::output::describe_event_details_output::Builder {
-        crate::output::describe_event_details_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -697,6 +705,13 @@ impl aws_http::request_id::RequestId for DescribeEventAggregatesOutput {
         self._request_id.as_deref()
     }
 }
+impl DescribeEventAggregatesOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeEventAggregatesOutput`](crate::output::DescribeEventAggregatesOutput).
+    pub fn builder() -> crate::output::describe_event_aggregates_output::Builder {
+        crate::output::describe_event_aggregates_output::Builder::default()
+    }
+}
+
 /// See [`DescribeEventAggregatesOutput`](crate::output::DescribeEventAggregatesOutput).
 pub mod describe_event_aggregates_output {
 
@@ -758,12 +773,6 @@ pub mod describe_event_aggregates_output {
         }
     }
 }
-impl DescribeEventAggregatesOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeEventAggregatesOutput`](crate::output::DescribeEventAggregatesOutput).
-    pub fn builder() -> crate::output::describe_event_aggregates_output::Builder {
-        crate::output::describe_event_aggregates_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -785,6 +794,13 @@ impl aws_http::request_id::RequestId for DescribeEntityAggregatesOutput {
         self._request_id.as_deref()
     }
 }
+impl DescribeEntityAggregatesOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeEntityAggregatesOutput`](crate::output::DescribeEntityAggregatesOutput).
+    pub fn builder() -> crate::output::describe_entity_aggregates_output::Builder {
+        crate::output::describe_entity_aggregates_output::Builder::default()
+    }
+}
+
 /// See [`DescribeEntityAggregatesOutput`](crate::output::DescribeEntityAggregatesOutput).
 pub mod describe_entity_aggregates_output {
 
@@ -834,12 +850,6 @@ pub mod describe_entity_aggregates_output {
         }
     }
 }
-impl DescribeEntityAggregatesOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeEntityAggregatesOutput`](crate::output::DescribeEntityAggregatesOutput).
-    pub fn builder() -> crate::output::describe_entity_aggregates_output::Builder {
-        crate::output::describe_entity_aggregates_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -878,6 +888,13 @@ impl aws_http::request_id::RequestId for DescribeAffectedEntitiesForOrganization
         self._request_id.as_deref()
     }
 }
+impl DescribeAffectedEntitiesForOrganizationOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeAffectedEntitiesForOrganizationOutput`](crate::output::DescribeAffectedEntitiesForOrganizationOutput).
+    pub fn builder() -> crate::output::describe_affected_entities_for_organization_output::Builder {
+        crate::output::describe_affected_entities_for_organization_output::Builder::default()
+    }
+}
+
 /// See [`DescribeAffectedEntitiesForOrganizationOutput`](crate::output::DescribeAffectedEntitiesForOrganizationOutput).
 pub mod describe_affected_entities_for_organization_output {
 
@@ -965,12 +982,6 @@ pub mod describe_affected_entities_for_organization_output {
         }
     }
 }
-impl DescribeAffectedEntitiesForOrganizationOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeAffectedEntitiesForOrganizationOutput`](crate::output::DescribeAffectedEntitiesForOrganizationOutput).
-    pub fn builder() -> crate::output::describe_affected_entities_for_organization_output::Builder {
-        crate::output::describe_affected_entities_for_organization_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -999,6 +1010,13 @@ impl aws_http::request_id::RequestId for DescribeAffectedEntitiesOutput {
         self._request_id.as_deref()
     }
 }
+impl DescribeAffectedEntitiesOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeAffectedEntitiesOutput`](crate::output::DescribeAffectedEntitiesOutput).
+    pub fn builder() -> crate::output::describe_affected_entities_output::Builder {
+        crate::output::describe_affected_entities_output::Builder::default()
+    }
+}
+
 /// See [`DescribeAffectedEntitiesOutput`](crate::output::DescribeAffectedEntitiesOutput).
 pub mod describe_affected_entities_output {
 
@@ -1059,12 +1077,6 @@ pub mod describe_affected_entities_output {
         }
     }
 }
-impl DescribeAffectedEntitiesOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeAffectedEntitiesOutput`](crate::output::DescribeAffectedEntitiesOutput).
-    pub fn builder() -> crate::output::describe_affected_entities_output::Builder {
-        crate::output::describe_affected_entities_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1110,6 +1122,13 @@ impl aws_http::request_id::RequestId for DescribeAffectedAccountsForOrganization
         self._request_id.as_deref()
     }
 }
+impl DescribeAffectedAccountsForOrganizationOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeAffectedAccountsForOrganizationOutput`](crate::output::DescribeAffectedAccountsForOrganizationOutput).
+    pub fn builder() -> crate::output::describe_affected_accounts_for_organization_output::Builder {
+        crate::output::describe_affected_accounts_for_organization_output::Builder::default()
+    }
+}
+
 /// See [`DescribeAffectedAccountsForOrganizationOutput`](crate::output::DescribeAffectedAccountsForOrganizationOutput).
 pub mod describe_affected_accounts_for_organization_output {
 
@@ -1193,11 +1212,5 @@ pub mod describe_affected_accounts_for_organization_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl DescribeAffectedAccountsForOrganizationOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeAffectedAccountsForOrganizationOutput`](crate::output::DescribeAffectedAccountsForOrganizationOutput).
-    pub fn builder() -> crate::output::describe_affected_accounts_for_organization_output::Builder {
-        crate::output::describe_affected_accounts_for_organization_output::Builder::default()
     }
 }

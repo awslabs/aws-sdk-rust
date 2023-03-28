@@ -127,6 +127,13 @@ impl std::fmt::Debug for Target {
         formatter.finish()
     }
 }
+impl Target {
+    /// Creates a new builder-style object to manufacture [`Target`](crate::model::Target).
+    pub fn builder() -> crate::model::target::Builder {
+        crate::model::target::Builder::default()
+    }
+}
+
 /// See [`Target`](crate::model::Target).
 pub mod target {
 
@@ -184,12 +191,6 @@ pub mod target {
             formatter.field("target_address", &"*** Sensitive Data Redacted ***");
             formatter.finish()
         }
-    }
-}
-impl Target {
-    /// Creates a new builder-style object to manufacture [`Target`](crate::model::Target).
-    pub fn builder() -> crate::model::target::Builder {
-        crate::model::target::Builder::default()
     }
 }
 
@@ -330,6 +331,13 @@ impl std::fmt::Debug for TargetSummary {
         formatter.finish()
     }
 }
+impl TargetSummary {
+    /// Creates a new builder-style object to manufacture [`TargetSummary`](crate::model::TargetSummary).
+    pub fn builder() -> crate::model::target_summary::Builder {
+        crate::model::target_summary::Builder::default()
+    }
+}
+
 /// See [`TargetSummary`](crate::model::TargetSummary).
 pub mod target_summary {
 
@@ -403,12 +411,6 @@ pub mod target_summary {
             formatter.field("target_status", &self.target_status);
             formatter.finish()
         }
-    }
-}
-impl TargetSummary {
-    /// Creates a new builder-style object to manufacture [`TargetSummary`](crate::model::TargetSummary).
-    pub fn builder() -> crate::model::target_summary::Builder {
-        crate::model::target_summary::Builder::default()
     }
 }
 
@@ -544,6 +546,13 @@ impl ListTargetsFilter {
         self.value.as_deref()
     }
 }
+impl ListTargetsFilter {
+    /// Creates a new builder-style object to manufacture [`ListTargetsFilter`](crate::model::ListTargetsFilter).
+    pub fn builder() -> crate::model::list_targets_filter::Builder {
+        crate::model::list_targets_filter::Builder::default()
+    }
+}
+
 /// See [`ListTargetsFilter`](crate::model::ListTargetsFilter).
 pub mod list_targets_filter {
 
@@ -585,12 +594,6 @@ pub mod list_targets_filter {
                 value: self.value,
             }
         }
-    }
-}
-impl ListTargetsFilter {
-    /// Creates a new builder-style object to manufacture [`ListTargetsFilter`](crate::model::ListTargetsFilter).
-    pub fn builder() -> crate::model::list_targets_filter::Builder {
-        crate::model::list_targets_filter::Builder::default()
     }
 }
 
@@ -712,6 +715,13 @@ impl NotificationRuleSummary {
         self.arn.as_deref()
     }
 }
+impl NotificationRuleSummary {
+    /// Creates a new builder-style object to manufacture [`NotificationRuleSummary`](crate::model::NotificationRuleSummary).
+    pub fn builder() -> crate::model::notification_rule_summary::Builder {
+        crate::model::notification_rule_summary::Builder::default()
+    }
+}
+
 /// See [`NotificationRuleSummary`](crate::model::NotificationRuleSummary).
 pub mod notification_rule_summary {
 
@@ -752,12 +762,6 @@ pub mod notification_rule_summary {
         }
     }
 }
-impl NotificationRuleSummary {
-    /// Creates a new builder-style object to manufacture [`NotificationRuleSummary`](crate::model::NotificationRuleSummary).
-    pub fn builder() -> crate::model::notification_rule_summary::Builder {
-        crate::model::notification_rule_summary::Builder::default()
-    }
-}
 
 /// <p>Information about a filter to apply to the list of returned notification rules. You can filter by event type, owner, resource, or target.</p>
 #[non_exhaustive]
@@ -780,6 +784,13 @@ impl ListNotificationRulesFilter {
         self.value.as_deref()
     }
 }
+impl ListNotificationRulesFilter {
+    /// Creates a new builder-style object to manufacture [`ListNotificationRulesFilter`](crate::model::ListNotificationRulesFilter).
+    pub fn builder() -> crate::model::list_notification_rules_filter::Builder {
+        crate::model::list_notification_rules_filter::Builder::default()
+    }
+}
+
 /// See [`ListNotificationRulesFilter`](crate::model::ListNotificationRulesFilter).
 pub mod list_notification_rules_filter {
 
@@ -821,12 +832,6 @@ pub mod list_notification_rules_filter {
                 value: self.value,
             }
         }
-    }
-}
-impl ListNotificationRulesFilter {
-    /// Creates a new builder-style object to manufacture [`ListNotificationRulesFilter`](crate::model::ListNotificationRulesFilter).
-    pub fn builder() -> crate::model::list_notification_rules_filter::Builder {
-        crate::model::list_notification_rules_filter::Builder::default()
     }
 }
 
@@ -967,6 +972,13 @@ impl EventTypeSummary {
         self.resource_type.as_deref()
     }
 }
+impl EventTypeSummary {
+    /// Creates a new builder-style object to manufacture [`EventTypeSummary`](crate::model::EventTypeSummary).
+    pub fn builder() -> crate::model::event_type_summary::Builder {
+        crate::model::event_type_summary::Builder::default()
+    }
+}
+
 /// See [`EventTypeSummary`](crate::model::EventTypeSummary).
 pub mod event_type_summary {
 
@@ -1040,12 +1052,6 @@ pub mod event_type_summary {
         }
     }
 }
-impl EventTypeSummary {
-    /// Creates a new builder-style object to manufacture [`EventTypeSummary`](crate::model::EventTypeSummary).
-    pub fn builder() -> crate::model::event_type_summary::Builder {
-        crate::model::event_type_summary::Builder::default()
-    }
-}
 
 /// <p>Information about a filter to apply to the list of returned event types. You can filter by resource type or service name.</p>
 #[non_exhaustive]
@@ -1068,6 +1074,13 @@ impl ListEventTypesFilter {
         self.value.as_deref()
     }
 }
+impl ListEventTypesFilter {
+    /// Creates a new builder-style object to manufacture [`ListEventTypesFilter`](crate::model::ListEventTypesFilter).
+    pub fn builder() -> crate::model::list_event_types_filter::Builder {
+        crate::model::list_event_types_filter::Builder::default()
+    }
+}
+
 /// See [`ListEventTypesFilter`](crate::model::ListEventTypesFilter).
 pub mod list_event_types_filter {
 
@@ -1109,12 +1122,6 @@ pub mod list_event_types_filter {
                 value: self.value,
             }
         }
-    }
-}
-impl ListEventTypesFilter {
-    /// Creates a new builder-style object to manufacture [`ListEventTypesFilter`](crate::model::ListEventTypesFilter).
-    pub fn builder() -> crate::model::list_event_types_filter::Builder {
-        crate::model::list_event_types_filter::Builder::default()
     }
 }
 

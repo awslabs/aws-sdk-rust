@@ -4,7 +4,7 @@
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`configure_logs`](crate::client::Client::configure_logs).
 ///
-/// See [`crate::client::fluent_builders::ConfigureLogs`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ConfigureLogs`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ConfigureLogs {
     _private: (),
@@ -37,7 +37,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ConfigureLogs {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`create_channel`](crate::client::Client::create_channel).
 ///
-/// See [`crate::client::fluent_builders::CreateChannel`] for more details about the operation.
+/// `ParseStrictResponse` impl for `CreateChannel`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateChannel {
     _private: (),
@@ -70,7 +70,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateChannel {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`create_harvest_job`](crate::client::Client::create_harvest_job).
 ///
-/// See [`crate::client::fluent_builders::CreateHarvestJob`] for more details about the operation.
+/// `ParseStrictResponse` impl for `CreateHarvestJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateHarvestJob {
     _private: (),
@@ -105,7 +105,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateHarvestJob {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`create_origin_endpoint`](crate::client::Client::create_origin_endpoint).
 ///
-/// See [`crate::client::fluent_builders::CreateOriginEndpoint`] for more details about the operation.
+/// `ParseStrictResponse` impl for `CreateOriginEndpoint`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateOriginEndpoint {
     _private: (),
@@ -140,7 +140,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateOriginEndpoint {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`delete_channel`](crate::client::Client::delete_channel).
 ///
-/// See [`crate::client::fluent_builders::DeleteChannel`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DeleteChannel`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteChannel {
     _private: (),
@@ -173,7 +173,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteChannel {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`delete_origin_endpoint`](crate::client::Client::delete_origin_endpoint).
 ///
-/// See [`crate::client::fluent_builders::DeleteOriginEndpoint`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DeleteOriginEndpoint`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteOriginEndpoint {
     _private: (),
@@ -208,7 +208,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteOriginEndpoint {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`describe_channel`](crate::client::Client::describe_channel).
 ///
-/// See [`crate::client::fluent_builders::DescribeChannel`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DescribeChannel`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeChannel {
     _private: (),
@@ -243,7 +243,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeChannel {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`describe_harvest_job`](crate::client::Client::describe_harvest_job).
 ///
-/// See [`crate::client::fluent_builders::DescribeHarvestJob`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DescribeHarvestJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeHarvestJob {
     _private: (),
@@ -278,7 +278,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeHarvestJob {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`describe_origin_endpoint`](crate::client::Client::describe_origin_endpoint).
 ///
-/// See [`crate::client::fluent_builders::DescribeOriginEndpoint`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DescribeOriginEndpoint`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeOriginEndpoint {
     _private: (),
@@ -313,7 +313,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeOriginEndpoint {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_channels`](crate::client::Client::list_channels).
 ///
-/// See [`crate::client::fluent_builders::ListChannels`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListChannels`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListChannels {
     _private: (),
@@ -346,7 +346,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListChannels {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_harvest_jobs`](crate::client::Client::list_harvest_jobs).
 ///
-/// See [`crate::client::fluent_builders::ListHarvestJobs`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListHarvestJobs`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListHarvestJobs {
     _private: (),
@@ -381,7 +381,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListHarvestJobs {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_origin_endpoints`](crate::client::Client::list_origin_endpoints).
 ///
-/// See [`crate::client::fluent_builders::ListOriginEndpoints`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListOriginEndpoints`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListOriginEndpoints {
     _private: (),
@@ -416,7 +416,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListOriginEndpoints {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
 ///
-/// See [`crate::client::fluent_builders::ListTagsForResource`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTagsForResource {
     _private: (),
@@ -451,7 +451,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`rotate_channel_credentials`](crate::client::Client::rotate_channel_credentials).
 ///
-/// See [`crate::client::fluent_builders::RotateChannelCredentials`] for more details about the operation.
+/// `ParseStrictResponse` impl for `RotateChannelCredentials`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct RotateChannelCredentials {
     _private: (),
@@ -486,7 +486,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RotateChannelCredentials
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`rotate_ingest_endpoint_credentials`](crate::client::Client::rotate_ingest_endpoint_credentials).
 ///
-/// See [`crate::client::fluent_builders::RotateIngestEndpointCredentials`] for more details about the operation.
+/// `ParseStrictResponse` impl for `RotateIngestEndpointCredentials`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct RotateIngestEndpointCredentials {
     _private: (),
@@ -521,7 +521,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RotateIngestEndpointCred
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`tag_resource`](crate::client::Client::tag_resource).
 ///
-/// See [`crate::client::fluent_builders::TagResource`] for more details about the operation.
+/// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct TagResource {
     _private: (),
@@ -554,7 +554,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`untag_resource`](crate::client::Client::untag_resource).
 ///
-/// See [`crate::client::fluent_builders::UntagResource`] for more details about the operation.
+/// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UntagResource {
     _private: (),
@@ -587,7 +587,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`update_channel`](crate::client::Client::update_channel).
 ///
-/// See [`crate::client::fluent_builders::UpdateChannel`] for more details about the operation.
+/// `ParseStrictResponse` impl for `UpdateChannel`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateChannel {
     _private: (),
@@ -620,7 +620,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateChannel {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`update_origin_endpoint`](crate::client::Client::update_origin_endpoint).
 ///
-/// See [`crate::client::fluent_builders::UpdateOriginEndpoint`] for more details about the operation.
+/// `ParseStrictResponse` impl for `UpdateOriginEndpoint`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateOriginEndpoint {
     _private: (),

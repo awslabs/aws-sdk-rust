@@ -4,7 +4,7 @@
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`add_notification_channels`](crate::client::Client::add_notification_channels).
 ///
-/// See [`crate::client::fluent_builders::AddNotificationChannels`] for more details about the operation.
+/// `ParseStrictResponse` impl for `AddNotificationChannels`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct AddNotificationChannels {
     _private: (),
@@ -39,7 +39,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AddNotificationChannels 
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`batch_get_frame_metric_data`](crate::client::Client::batch_get_frame_metric_data).
 ///
-/// See [`crate::client::fluent_builders::BatchGetFrameMetricData`] for more details about the operation.
+/// `ParseStrictResponse` impl for `BatchGetFrameMetricData`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct BatchGetFrameMetricData {
     _private: (),
@@ -74,7 +74,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchGetFrameMetricData 
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`configure_agent`](crate::client::Client::configure_agent).
 ///
-/// See [`crate::client::fluent_builders::ConfigureAgent`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ConfigureAgent`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ConfigureAgent {
     _private: (),
@@ -107,7 +107,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ConfigureAgent {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`create_profiling_group`](crate::client::Client::create_profiling_group).
 ///
-/// See [`crate::client::fluent_builders::CreateProfilingGroup`] for more details about the operation.
+/// `ParseStrictResponse` impl for `CreateProfilingGroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateProfilingGroup {
     _private: (),
@@ -142,7 +142,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateProfilingGroup {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`delete_profiling_group`](crate::client::Client::delete_profiling_group).
 ///
-/// See [`crate::client::fluent_builders::DeleteProfilingGroup`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DeleteProfilingGroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteProfilingGroup {
     _private: (),
@@ -177,7 +177,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteProfilingGroup {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`describe_profiling_group`](crate::client::Client::describe_profiling_group).
 ///
-/// See [`crate::client::fluent_builders::DescribeProfilingGroup`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DescribeProfilingGroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeProfilingGroup {
     _private: (),
@@ -212,7 +212,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeProfilingGroup {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`get_findings_report_account_summary`](crate::client::Client::get_findings_report_account_summary).
 ///
-/// See [`crate::client::fluent_builders::GetFindingsReportAccountSummary`] for more details about the operation.
+/// `ParseStrictResponse` impl for `GetFindingsReportAccountSummary`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetFindingsReportAccountSummary {
     _private: (),
@@ -247,7 +247,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetFindingsReportAccount
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`get_notification_configuration`](crate::client::Client::get_notification_configuration).
 ///
-/// See [`crate::client::fluent_builders::GetNotificationConfiguration`] for more details about the operation.
+/// `ParseStrictResponse` impl for `GetNotificationConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetNotificationConfiguration {
     _private: (),
@@ -282,7 +282,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetNotificationConfigura
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`get_policy`](crate::client::Client::get_policy).
 ///
-/// See [`crate::client::fluent_builders::GetPolicy`] for more details about the operation.
+/// `ParseStrictResponse` impl for `GetPolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetPolicy {
     _private: (),
@@ -314,7 +314,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetPolicy {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`get_profile`](crate::client::Client::get_profile).
 ///
-/// See [`crate::client::fluent_builders::GetProfile`] for more details about the operation.
+/// `ParseStrictResponse` impl for `GetProfile`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetProfile {
     _private: (),
@@ -347,7 +347,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetProfile {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`get_recommendations`](crate::client::Client::get_recommendations).
 ///
-/// See [`crate::client::fluent_builders::GetRecommendations`] for more details about the operation.
+/// `ParseStrictResponse` impl for `GetRecommendations`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetRecommendations {
     _private: (),
@@ -382,7 +382,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetRecommendations {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_findings_reports`](crate::client::Client::list_findings_reports).
 ///
-/// See [`crate::client::fluent_builders::ListFindingsReports`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListFindingsReports`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListFindingsReports {
     _private: (),
@@ -417,7 +417,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListFindingsReports {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_profile_times`](crate::client::Client::list_profile_times).
 ///
-/// See [`crate::client::fluent_builders::ListProfileTimes`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListProfileTimes`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListProfileTimes {
     _private: (),
@@ -452,7 +452,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListProfileTimes {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_profiling_groups`](crate::client::Client::list_profiling_groups).
 ///
-/// See [`crate::client::fluent_builders::ListProfilingGroups`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListProfilingGroups`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListProfilingGroups {
     _private: (),
@@ -487,7 +487,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListProfilingGroups {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
 ///
-/// See [`crate::client::fluent_builders::ListTagsForResource`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTagsForResource {
     _private: (),
@@ -522,7 +522,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`post_agent_profile`](crate::client::Client::post_agent_profile).
 ///
-/// See [`crate::client::fluent_builders::PostAgentProfile`] for more details about the operation.
+/// `ParseStrictResponse` impl for `PostAgentProfile`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PostAgentProfile {
     _private: (),
@@ -557,7 +557,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PostAgentProfile {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`put_permission`](crate::client::Client::put_permission).
 ///
-/// See [`crate::client::fluent_builders::PutPermission`] for more details about the operation.
+/// `ParseStrictResponse` impl for `PutPermission`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct PutPermission {
     _private: (),
@@ -590,7 +590,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutPermission {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`remove_notification_channel`](crate::client::Client::remove_notification_channel).
 ///
-/// See [`crate::client::fluent_builders::RemoveNotificationChannel`] for more details about the operation.
+/// `ParseStrictResponse` impl for `RemoveNotificationChannel`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct RemoveNotificationChannel {
     _private: (),
@@ -625,7 +625,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RemoveNotificationChanne
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`remove_permission`](crate::client::Client::remove_permission).
 ///
-/// See [`crate::client::fluent_builders::RemovePermission`] for more details about the operation.
+/// `ParseStrictResponse` impl for `RemovePermission`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct RemovePermission {
     _private: (),
@@ -660,7 +660,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RemovePermission {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`submit_feedback`](crate::client::Client::submit_feedback).
 ///
-/// See [`crate::client::fluent_builders::SubmitFeedback`] for more details about the operation.
+/// `ParseStrictResponse` impl for `SubmitFeedback`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct SubmitFeedback {
     _private: (),
@@ -693,7 +693,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SubmitFeedback {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`tag_resource`](crate::client::Client::tag_resource).
 ///
-/// See [`crate::client::fluent_builders::TagResource`] for more details about the operation.
+/// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct TagResource {
     _private: (),
@@ -726,7 +726,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`untag_resource`](crate::client::Client::untag_resource).
 ///
-/// See [`crate::client::fluent_builders::UntagResource`] for more details about the operation.
+/// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UntagResource {
     _private: (),
@@ -759,7 +759,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`update_profiling_group`](crate::client::Client::update_profiling_group).
 ///
-/// See [`crate::client::fluent_builders::UpdateProfilingGroup`] for more details about the operation.
+/// `ParseStrictResponse` impl for `UpdateProfilingGroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateProfilingGroup {
     _private: (),

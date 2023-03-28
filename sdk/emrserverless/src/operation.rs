@@ -4,7 +4,7 @@
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`cancel_job_run`](crate::client::Client::cancel_job_run).
 ///
-/// See [`crate::client::fluent_builders::CancelJobRun`] for more details about the operation.
+/// `ParseStrictResponse` impl for `CancelJobRun`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CancelJobRun {
     _private: (),
@@ -37,7 +37,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CancelJobRun {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`create_application`](crate::client::Client::create_application).
 ///
-/// See [`crate::client::fluent_builders::CreateApplication`] for more details about the operation.
+/// `ParseStrictResponse` impl for `CreateApplication`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateApplication {
     _private: (),
@@ -72,7 +72,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateApplication {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`delete_application`](crate::client::Client::delete_application).
 ///
-/// See [`crate::client::fluent_builders::DeleteApplication`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DeleteApplication`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteApplication {
     _private: (),
@@ -107,7 +107,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteApplication {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`get_application`](crate::client::Client::get_application).
 ///
-/// See [`crate::client::fluent_builders::GetApplication`] for more details about the operation.
+/// `ParseStrictResponse` impl for `GetApplication`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetApplication {
     _private: (),
@@ -140,7 +140,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetApplication {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`get_dashboard_for_job_run`](crate::client::Client::get_dashboard_for_job_run).
 ///
-/// See [`crate::client::fluent_builders::GetDashboardForJobRun`] for more details about the operation.
+/// `ParseStrictResponse` impl for `GetDashboardForJobRun`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetDashboardForJobRun {
     _private: (),
@@ -175,7 +175,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDashboardForJobRun {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`get_job_run`](crate::client::Client::get_job_run).
 ///
-/// See [`crate::client::fluent_builders::GetJobRun`] for more details about the operation.
+/// `ParseStrictResponse` impl for `GetJobRun`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetJobRun {
     _private: (),
@@ -207,7 +207,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetJobRun {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_applications`](crate::client::Client::list_applications).
 ///
-/// See [`crate::client::fluent_builders::ListApplications`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListApplications`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListApplications {
     _private: (),
@@ -242,7 +242,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListApplications {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_job_runs`](crate::client::Client::list_job_runs).
 ///
-/// See [`crate::client::fluent_builders::ListJobRuns`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListJobRuns`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListJobRuns {
     _private: (),
@@ -275,7 +275,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListJobRuns {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
 ///
-/// See [`crate::client::fluent_builders::ListTagsForResource`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTagsForResource {
     _private: (),
@@ -310,7 +310,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`start_application`](crate::client::Client::start_application).
 ///
-/// See [`crate::client::fluent_builders::StartApplication`] for more details about the operation.
+/// `ParseStrictResponse` impl for `StartApplication`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StartApplication {
     _private: (),
@@ -345,7 +345,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartApplication {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`start_job_run`](crate::client::Client::start_job_run).
 ///
-/// See [`crate::client::fluent_builders::StartJobRun`] for more details about the operation.
+/// `ParseStrictResponse` impl for `StartJobRun`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StartJobRun {
     _private: (),
@@ -378,7 +378,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartJobRun {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`stop_application`](crate::client::Client::stop_application).
 ///
-/// See [`crate::client::fluent_builders::StopApplication`] for more details about the operation.
+/// `ParseStrictResponse` impl for `StopApplication`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StopApplication {
     _private: (),
@@ -413,7 +413,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StopApplication {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`tag_resource`](crate::client::Client::tag_resource).
 ///
-/// See [`crate::client::fluent_builders::TagResource`] for more details about the operation.
+/// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct TagResource {
     _private: (),
@@ -446,7 +446,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`untag_resource`](crate::client::Client::untag_resource).
 ///
-/// See [`crate::client::fluent_builders::UntagResource`] for more details about the operation.
+/// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UntagResource {
     _private: (),
@@ -479,7 +479,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`update_application`](crate::client::Client::update_application).
 ///
-/// See [`crate::client::fluent_builders::UpdateApplication`] for more details about the operation.
+/// `ParseStrictResponse` impl for `UpdateApplication`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateApplication {
     _private: (),

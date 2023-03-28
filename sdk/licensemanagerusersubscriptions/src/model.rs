@@ -42,6 +42,13 @@ impl IdentityProviderSummary {
         self.failure_message.as_deref()
     }
 }
+impl IdentityProviderSummary {
+    /// Creates a new builder-style object to manufacture [`IdentityProviderSummary`](crate::model::IdentityProviderSummary).
+    pub fn builder() -> crate::model::identity_provider_summary::Builder {
+        crate::model::identity_provider_summary::Builder::default()
+    }
+}
+
 /// See [`IdentityProviderSummary`](crate::model::IdentityProviderSummary).
 pub mod identity_provider_summary {
 
@@ -124,12 +131,6 @@ pub mod identity_provider_summary {
         }
     }
 }
-impl IdentityProviderSummary {
-    /// Creates a new builder-style object to manufacture [`IdentityProviderSummary`](crate::model::IdentityProviderSummary).
-    pub fn builder() -> crate::model::identity_provider_summary::Builder {
-        crate::model::identity_provider_summary::Builder::default()
-    }
-}
 
 /// <p>The registered identity provider’s product related configuration settings such as the subnets to provision VPC endpoints, and the security group ID that is associated with the VPC endpoints. The security group should permit inbound TCP port 1688 communication from resources in the VPC.</p>
 #[non_exhaustive]
@@ -152,6 +153,13 @@ impl Settings {
         self.security_group_id.as_deref()
     }
 }
+impl Settings {
+    /// Creates a new builder-style object to manufacture [`Settings`](crate::model::Settings).
+    pub fn builder() -> crate::model::settings::Builder {
+        crate::model::settings::Builder::default()
+    }
+}
+
 /// See [`Settings`](crate::model::Settings).
 pub mod settings {
 
@@ -202,12 +210,6 @@ pub mod settings {
                 security_group_id: self.security_group_id,
             }
         }
-    }
-}
-impl Settings {
-    /// Creates a new builder-style object to manufacture [`Settings`](crate::model::Settings).
-    pub fn builder() -> crate::model::settings::Builder {
-        crate::model::settings::Builder::default()
     }
 }
 
@@ -264,6 +266,13 @@ impl ActiveDirectoryIdentityProvider {
         self.directory_id.as_deref()
     }
 }
+impl ActiveDirectoryIdentityProvider {
+    /// Creates a new builder-style object to manufacture [`ActiveDirectoryIdentityProvider`](crate::model::ActiveDirectoryIdentityProvider).
+    pub fn builder() -> crate::model::active_directory_identity_provider::Builder {
+        crate::model::active_directory_identity_provider::Builder::default()
+    }
+}
+
 /// See [`ActiveDirectoryIdentityProvider`](crate::model::ActiveDirectoryIdentityProvider).
 pub mod active_directory_identity_provider {
 
@@ -290,12 +299,6 @@ pub mod active_directory_identity_provider {
                 directory_id: self.directory_id,
             }
         }
-    }
-}
-impl ActiveDirectoryIdentityProvider {
-    /// Creates a new builder-style object to manufacture [`ActiveDirectoryIdentityProvider`](crate::model::ActiveDirectoryIdentityProvider).
-    pub fn builder() -> crate::model::active_directory_identity_provider::Builder {
-        crate::model::active_directory_identity_provider::Builder::default()
     }
 }
 
@@ -327,6 +330,13 @@ impl UpdateSettings {
         self.security_group_id.as_deref()
     }
 }
+impl UpdateSettings {
+    /// Creates a new builder-style object to manufacture [`UpdateSettings`](crate::model::UpdateSettings).
+    pub fn builder() -> crate::model::update_settings::Builder {
+        crate::model::update_settings::Builder::default()
+    }
+}
+
 /// See [`UpdateSettings`](crate::model::UpdateSettings).
 pub mod update_settings {
 
@@ -400,12 +410,6 @@ pub mod update_settings {
         }
     }
 }
-impl UpdateSettings {
-    /// Creates a new builder-style object to manufacture [`UpdateSettings`](crate::model::UpdateSettings).
-    pub fn builder() -> crate::model::update_settings::Builder {
-        crate::model::update_settings::Builder::default()
-    }
-}
 
 /// <p>The summary of the user-based subscription products for a user.</p>
 #[non_exhaustive]
@@ -470,6 +474,13 @@ impl ProductUserSummary {
         self.subscription_end_date.as_deref()
     }
 }
+impl ProductUserSummary {
+    /// Creates a new builder-style object to manufacture [`ProductUserSummary`](crate::model::ProductUserSummary).
+    pub fn builder() -> crate::model::product_user_summary::Builder {
+        crate::model::product_user_summary::Builder::default()
+    }
+}
+
 /// See [`ProductUserSummary`](crate::model::ProductUserSummary).
 pub mod product_user_summary {
 
@@ -594,12 +605,6 @@ pub mod product_user_summary {
         }
     }
 }
-impl ProductUserSummary {
-    /// Creates a new builder-style object to manufacture [`ProductUserSummary`](crate::model::ProductUserSummary).
-    pub fn builder() -> crate::model::product_user_summary::Builder {
-        crate::model::product_user_summary::Builder::default()
-    }
-}
 
 /// <p>Describes users of an EC2 instance providing user-based subscriptions.</p>
 #[non_exhaustive]
@@ -664,6 +669,13 @@ impl InstanceUserSummary {
         self.disassociation_date.as_deref()
     }
 }
+impl InstanceUserSummary {
+    /// Creates a new builder-style object to manufacture [`InstanceUserSummary`](crate::model::InstanceUserSummary).
+    pub fn builder() -> crate::model::instance_user_summary::Builder {
+        crate::model::instance_user_summary::Builder::default()
+    }
+}
+
 /// See [`InstanceUserSummary`](crate::model::InstanceUserSummary).
 pub mod instance_user_summary {
 
@@ -788,12 +800,6 @@ pub mod instance_user_summary {
         }
     }
 }
-impl InstanceUserSummary {
-    /// Creates a new builder-style object to manufacture [`InstanceUserSummary`](crate::model::InstanceUserSummary).
-    pub fn builder() -> crate::model::instance_user_summary::Builder {
-        crate::model::instance_user_summary::Builder::default()
-    }
-}
 
 /// <p>A filter name and value pair that is used to return more specific results from a describe operation. Filters can be used to match a set of resources by specific criteria, such as tags, attributes, or IDs.</p>
 #[non_exhaustive]
@@ -823,6 +829,13 @@ impl Filter {
         self.value.as_deref()
     }
 }
+impl Filter {
+    /// Creates a new builder-style object to manufacture [`Filter`](crate::model::Filter).
+    pub fn builder() -> crate::model::filter::Builder {
+        crate::model::filter::Builder::default()
+    }
+}
+
 /// See [`Filter`](crate::model::Filter).
 pub mod filter {
 
@@ -875,12 +888,6 @@ pub mod filter {
         }
     }
 }
-impl Filter {
-    /// Creates a new builder-style object to manufacture [`Filter`](crate::model::Filter).
-    pub fn builder() -> crate::model::filter::Builder {
-        crate::model::filter::Builder::default()
-    }
-}
 
 /// <p>Describes an EC2 instance providing user-based subscriptions.</p>
 #[non_exhaustive]
@@ -924,6 +931,13 @@ impl InstanceSummary {
         self.status_message.as_deref()
     }
 }
+impl InstanceSummary {
+    /// Creates a new builder-style object to manufacture [`InstanceSummary`](crate::model::InstanceSummary).
+    pub fn builder() -> crate::model::instance_summary::Builder {
+        crate::model::instance_summary::Builder::default()
+    }
+}
+
 /// See [`InstanceSummary`](crate::model::InstanceSummary).
 pub mod instance_summary {
 
@@ -1013,11 +1027,5 @@ pub mod instance_summary {
                 status_message: self.status_message,
             }
         }
-    }
-}
-impl InstanceSummary {
-    /// Creates a new builder-style object to manufacture [`InstanceSummary`](crate::model::InstanceSummary).
-    pub fn builder() -> crate::model::instance_summary::Builder {
-        crate::model::instance_summary::Builder::default()
     }
 }

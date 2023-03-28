@@ -81,6 +81,13 @@ impl InvalidConfigurationDetail {
         self.value.as_deref()
     }
 }
+impl InvalidConfigurationDetail {
+    /// Creates a new builder-style object to manufacture [`InvalidConfigurationDetail`](crate::model::InvalidConfigurationDetail).
+    pub fn builder() -> crate::model::invalid_configuration_detail::Builder {
+        crate::model::invalid_configuration_detail::Builder::default()
+    }
+}
+
 /// See [`InvalidConfigurationDetail`](crate::model::InvalidConfigurationDetail).
 pub mod invalid_configuration_detail {
 
@@ -155,12 +162,6 @@ pub mod invalid_configuration_detail {
                 value: self.value,
             }
         }
-    }
-}
-impl InvalidConfigurationDetail {
-    /// Creates a new builder-style object to manufacture [`InvalidConfigurationDetail`](crate::model::InvalidConfigurationDetail).
-    pub fn builder() -> crate::model::invalid_configuration_detail::Builder {
-        crate::model::invalid_configuration_detail::Builder::default()
     }
 }
 
@@ -270,6 +271,13 @@ impl Parameter {
         self.required
     }
 }
+impl Parameter {
+    /// Creates a new builder-style object to manufacture [`Parameter`](crate::model::Parameter).
+    pub fn builder() -> crate::model::parameter::Builder {
+        crate::model::parameter::Builder::default()
+    }
+}
+
 /// See [`Parameter`](crate::model::Parameter).
 pub mod parameter {
 
@@ -308,12 +316,6 @@ pub mod parameter {
                 required: self.required.unwrap_or_default(),
             }
         }
-    }
-}
-impl Parameter {
-    /// Creates a new builder-style object to manufacture [`Parameter`](crate::model::Parameter).
-    pub fn builder() -> crate::model::parameter::Builder {
-        crate::model::parameter::Builder::default()
     }
 }
 
@@ -361,6 +363,13 @@ impl Action {
         self.role_arn.as_deref()
     }
 }
+impl Action {
+    /// Creates a new builder-style object to manufacture [`Action`](crate::model::Action).
+    pub fn builder() -> crate::model::action::Builder {
+        crate::model::action::Builder::default()
+    }
+}
+
 /// See [`Action`](crate::model::Action).
 pub mod action {
 
@@ -423,12 +432,6 @@ pub mod action {
                 role_arn: self.role_arn,
             }
         }
-    }
-}
-impl Action {
-    /// Creates a new builder-style object to manufacture [`Action`](crate::model::Action).
-    pub fn builder() -> crate::model::action::Builder {
-        crate::model::action::Builder::default()
     }
 }
 
@@ -580,6 +583,13 @@ impl Monitor {
         self.alarm_role_arn.as_deref()
     }
 }
+impl Monitor {
+    /// Creates a new builder-style object to manufacture [`Monitor`](crate::model::Monitor).
+    pub fn builder() -> crate::model::monitor::Builder {
+        crate::model::monitor::Builder::default()
+    }
+}
+
 /// See [`Monitor`](crate::model::Monitor).
 pub mod monitor {
 
@@ -621,12 +631,6 @@ pub mod monitor {
                 alarm_role_arn: self.alarm_role_arn,
             }
         }
-    }
-}
-impl Monitor {
-    /// Creates a new builder-style object to manufacture [`Monitor`](crate::model::Monitor).
-    pub fn builder() -> crate::model::monitor::Builder {
-        crate::model::monitor::Builder::default()
     }
 }
 
@@ -944,6 +948,13 @@ impl std::fmt::Debug for Validator {
         formatter.finish()
     }
 }
+impl Validator {
+    /// Creates a new builder-style object to manufacture [`Validator`](crate::model::Validator).
+    pub fn builder() -> crate::model::validator::Builder {
+        crate::model::validator::Builder::default()
+    }
+}
+
 /// See [`Validator`](crate::model::Validator).
 pub mod validator {
 
@@ -990,12 +1001,6 @@ pub mod validator {
             formatter.field("content", &"*** Sensitive Data Redacted ***");
             formatter.finish()
         }
-    }
-}
-impl Validator {
-    /// Creates a new builder-style object to manufacture [`Validator`](crate::model::Validator).
-    pub fn builder() -> crate::model::validator::Builder {
-        crate::model::validator::Builder::default()
     }
 }
 
@@ -1128,6 +1133,13 @@ impl AppliedExtension {
         self.parameters.as_ref()
     }
 }
+impl AppliedExtension {
+    /// Creates a new builder-style object to manufacture [`AppliedExtension`](crate::model::AppliedExtension).
+    pub fn builder() -> crate::model::applied_extension::Builder {
+        crate::model::applied_extension::Builder::default()
+    }
+}
+
 /// See [`AppliedExtension`](crate::model::AppliedExtension).
 pub mod applied_extension {
 
@@ -1212,12 +1224,6 @@ pub mod applied_extension {
         }
     }
 }
-impl AppliedExtension {
-    /// Creates a new builder-style object to manufacture [`AppliedExtension`](crate::model::AppliedExtension).
-    pub fn builder() -> crate::model::applied_extension::Builder {
-        crate::model::applied_extension::Builder::default()
-    }
-}
 
 /// <p>An object that describes a deployment event.</p>
 #[non_exhaustive]
@@ -1261,6 +1267,13 @@ impl DeploymentEvent {
         self.occurred_at.as_ref()
     }
 }
+impl DeploymentEvent {
+    /// Creates a new builder-style object to manufacture [`DeploymentEvent`](crate::model::DeploymentEvent).
+    pub fn builder() -> crate::model::deployment_event::Builder {
+        crate::model::deployment_event::Builder::default()
+    }
+}
+
 /// See [`DeploymentEvent`](crate::model::DeploymentEvent).
 pub mod deployment_event {
 
@@ -1356,12 +1369,6 @@ pub mod deployment_event {
         }
     }
 }
-impl DeploymentEvent {
-    /// Creates a new builder-style object to manufacture [`DeploymentEvent`](crate::model::DeploymentEvent).
-    pub fn builder() -> crate::model::deployment_event::Builder {
-        crate::model::deployment_event::Builder::default()
-    }
-}
 
 /// <p>An extension that was invoked as part of a deployment event.</p>
 #[non_exhaustive]
@@ -1419,6 +1426,13 @@ impl ActionInvocation {
         self.invocation_id.as_deref()
     }
 }
+impl ActionInvocation {
+    /// Creates a new builder-style object to manufacture [`ActionInvocation`](crate::model::ActionInvocation).
+    pub fn builder() -> crate::model::action_invocation::Builder {
+        crate::model::action_invocation::Builder::default()
+    }
+}
+
 /// See [`ActionInvocation`](crate::model::ActionInvocation).
 pub mod action_invocation {
 
@@ -1526,12 +1540,6 @@ pub mod action_invocation {
                 invocation_id: self.invocation_id,
             }
         }
-    }
-}
-impl ActionInvocation {
-    /// Creates a new builder-style object to manufacture [`ActionInvocation`](crate::model::ActionInvocation).
-    pub fn builder() -> crate::model::action_invocation::Builder {
-        crate::model::action_invocation::Builder::default()
     }
 }
 
@@ -1913,6 +1921,13 @@ impl HostedConfigurationVersionSummary {
         self.content_type.as_deref()
     }
 }
+impl HostedConfigurationVersionSummary {
+    /// Creates a new builder-style object to manufacture [`HostedConfigurationVersionSummary`](crate::model::HostedConfigurationVersionSummary).
+    pub fn builder() -> crate::model::hosted_configuration_version_summary::Builder {
+        crate::model::hosted_configuration_version_summary::Builder::default()
+    }
+}
+
 /// See [`HostedConfigurationVersionSummary`](crate::model::HostedConfigurationVersionSummary).
 pub mod hosted_configuration_version_summary {
 
@@ -1995,12 +2010,6 @@ pub mod hosted_configuration_version_summary {
         }
     }
 }
-impl HostedConfigurationVersionSummary {
-    /// Creates a new builder-style object to manufacture [`HostedConfigurationVersionSummary`](crate::model::HostedConfigurationVersionSummary).
-    pub fn builder() -> crate::model::hosted_configuration_version_summary::Builder {
-        crate::model::hosted_configuration_version_summary::Builder::default()
-    }
-}
 
 /// <p>Information about an extension. Call <code>GetExtension</code> to get more information about an extension.</p>
 #[non_exhaustive]
@@ -2044,6 +2053,13 @@ impl ExtensionSummary {
         self.description.as_deref()
     }
 }
+impl ExtensionSummary {
+    /// Creates a new builder-style object to manufacture [`ExtensionSummary`](crate::model::ExtensionSummary).
+    pub fn builder() -> crate::model::extension_summary::Builder {
+        crate::model::extension_summary::Builder::default()
+    }
+}
+
 /// See [`ExtensionSummary`](crate::model::ExtensionSummary).
 pub mod extension_summary {
 
@@ -2120,12 +2136,6 @@ pub mod extension_summary {
         }
     }
 }
-impl ExtensionSummary {
-    /// Creates a new builder-style object to manufacture [`ExtensionSummary`](crate::model::ExtensionSummary).
-    pub fn builder() -> crate::model::extension_summary::Builder {
-        crate::model::extension_summary::Builder::default()
-    }
-}
 
 /// <p>Information about an association between an extension and an AppConfig resource such as an application, environment, or configuration profile. Call <code>GetExtensionAssociation</code> to get more information about an association.</p>
 #[non_exhaustive]
@@ -2155,6 +2165,13 @@ impl ExtensionAssociationSummary {
         self.resource_arn.as_deref()
     }
 }
+impl ExtensionAssociationSummary {
+    /// Creates a new builder-style object to manufacture [`ExtensionAssociationSummary`](crate::model::ExtensionAssociationSummary).
+    pub fn builder() -> crate::model::extension_association_summary::Builder {
+        crate::model::extension_association_summary::Builder::default()
+    }
+}
+
 /// See [`ExtensionAssociationSummary`](crate::model::ExtensionAssociationSummary).
 pub mod extension_association_summary {
 
@@ -2210,12 +2227,6 @@ pub mod extension_association_summary {
         }
     }
 }
-impl ExtensionAssociationSummary {
-    /// Creates a new builder-style object to manufacture [`ExtensionAssociationSummary`](crate::model::ExtensionAssociationSummary).
-    pub fn builder() -> crate::model::extension_association_summary::Builder {
-        crate::model::extension_association_summary::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2266,6 +2277,13 @@ impl Environment {
         self.monitors.as_deref()
     }
 }
+impl Environment {
+    /// Creates a new builder-style object to manufacture [`Environment`](crate::model::Environment).
+    pub fn builder() -> crate::model::environment::Builder {
+        crate::model::environment::Builder::default()
+    }
+}
+
 /// See [`Environment`](crate::model::Environment).
 pub mod environment {
 
@@ -2369,12 +2387,6 @@ pub mod environment {
         }
     }
 }
-impl Environment {
-    /// Creates a new builder-style object to manufacture [`Environment`](crate::model::Environment).
-    pub fn builder() -> crate::model::environment::Builder {
-        crate::model::environment::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2439,6 +2451,13 @@ impl DeploymentStrategy {
         self.replicate_to.as_ref()
     }
 }
+impl DeploymentStrategy {
+    /// Creates a new builder-style object to manufacture [`DeploymentStrategy`](crate::model::DeploymentStrategy).
+    pub fn builder() -> crate::model::deployment_strategy::Builder {
+        crate::model::deployment_strategy::Builder::default()
+    }
+}
+
 /// See [`DeploymentStrategy`](crate::model::DeploymentStrategy).
 pub mod deployment_strategy {
 
@@ -2562,12 +2581,6 @@ pub mod deployment_strategy {
         }
     }
 }
-impl DeploymentStrategy {
-    /// Creates a new builder-style object to manufacture [`DeploymentStrategy`](crate::model::DeploymentStrategy).
-    pub fn builder() -> crate::model::deployment_strategy::Builder {
-        crate::model::deployment_strategy::Builder::default()
-    }
-}
 
 /// <p>Information about the deployment.</p>
 #[non_exhaustive]
@@ -2653,6 +2666,13 @@ impl DeploymentSummary {
         self.completed_at.as_ref()
     }
 }
+impl DeploymentSummary {
+    /// Creates a new builder-style object to manufacture [`DeploymentSummary`](crate::model::DeploymentSummary).
+    pub fn builder() -> crate::model::deployment_summary::Builder {
+        crate::model::deployment_summary::Builder::default()
+    }
+}
+
 /// See [`DeploymentSummary`](crate::model::DeploymentSummary).
 pub mod deployment_summary {
 
@@ -2824,12 +2844,6 @@ pub mod deployment_summary {
         }
     }
 }
-impl DeploymentSummary {
-    /// Creates a new builder-style object to manufacture [`DeploymentSummary`](crate::model::DeploymentSummary).
-    pub fn builder() -> crate::model::deployment_summary::Builder {
-        crate::model::deployment_summary::Builder::default()
-    }
-}
 
 /// <p>A summary of a configuration profile.</p>
 #[non_exhaustive]
@@ -2884,6 +2898,13 @@ impl ConfigurationProfileSummary {
         self.r#type.as_deref()
     }
 }
+impl ConfigurationProfileSummary {
+    /// Creates a new builder-style object to manufacture [`ConfigurationProfileSummary`](crate::model::ConfigurationProfileSummary).
+    pub fn builder() -> crate::model::configuration_profile_summary::Builder {
+        crate::model::configuration_profile_summary::Builder::default()
+    }
+}
+
 /// See [`ConfigurationProfileSummary`](crate::model::ConfigurationProfileSummary).
 pub mod configuration_profile_summary {
 
@@ -2988,12 +3009,6 @@ pub mod configuration_profile_summary {
         }
     }
 }
-impl ConfigurationProfileSummary {
-    /// Creates a new builder-style object to manufacture [`ConfigurationProfileSummary`](crate::model::ConfigurationProfileSummary).
-    pub fn builder() -> crate::model::configuration_profile_summary::Builder {
-        crate::model::configuration_profile_summary::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3023,6 +3038,13 @@ impl Application {
         self.description.as_deref()
     }
 }
+impl Application {
+    /// Creates a new builder-style object to manufacture [`Application`](crate::model::Application).
+    pub fn builder() -> crate::model::application::Builder {
+        crate::model::application::Builder::default()
+    }
+}
+
 /// See [`Application`](crate::model::Application).
 pub mod application {
 
@@ -3073,12 +3095,6 @@ pub mod application {
                 description: self.description,
             }
         }
-    }
-}
-impl Application {
-    /// Creates a new builder-style object to manufacture [`Application`](crate::model::Application).
-    pub fn builder() -> crate::model::application::Builder {
-        crate::model::application::Builder::default()
     }
 }
 

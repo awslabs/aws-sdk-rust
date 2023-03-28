@@ -33,6 +33,13 @@ impl aws_http::request_id::RequestId for GetProductsOutput {
         self._request_id.as_deref()
     }
 }
+impl GetProductsOutput {
+    /// Creates a new builder-style object to manufacture [`GetProductsOutput`](crate::output::GetProductsOutput).
+    pub fn builder() -> crate::output::get_products_output::Builder {
+        crate::output::get_products_output::Builder::default()
+    }
+}
+
 /// See [`GetProductsOutput`](crate::output::GetProductsOutput).
 pub mod get_products_output {
 
@@ -108,12 +115,6 @@ pub mod get_products_output {
         }
     }
 }
-impl GetProductsOutput {
-    /// Creates a new builder-style object to manufacture [`GetProductsOutput`](crate::output::GetProductsOutput).
-    pub fn builder() -> crate::output::get_products_output::Builder {
-        crate::output::get_products_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -142,6 +143,13 @@ impl aws_http::request_id::RequestId for GetAttributeValuesOutput {
         self._request_id.as_deref()
     }
 }
+impl GetAttributeValuesOutput {
+    /// Creates a new builder-style object to manufacture [`GetAttributeValuesOutput`](crate::output::GetAttributeValuesOutput).
+    pub fn builder() -> crate::output::get_attribute_values_output::Builder {
+        crate::output::get_attribute_values_output::Builder::default()
+    }
+}
+
 /// See [`GetAttributeValuesOutput`](crate::output::GetAttributeValuesOutput).
 pub mod get_attribute_values_output {
 
@@ -203,12 +211,6 @@ pub mod get_attribute_values_output {
         }
     }
 }
-impl GetAttributeValuesOutput {
-    /// Creates a new builder-style object to manufacture [`GetAttributeValuesOutput`](crate::output::GetAttributeValuesOutput).
-    pub fn builder() -> crate::output::get_attribute_values_output::Builder {
-        crate::output::get_attribute_values_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -244,6 +246,13 @@ impl aws_http::request_id::RequestId for DescribeServicesOutput {
         self._request_id.as_deref()
     }
 }
+impl DescribeServicesOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeServicesOutput`](crate::output::DescribeServicesOutput).
+    pub fn builder() -> crate::output::describe_services_output::Builder {
+        crate::output::describe_services_output::Builder::default()
+    }
+}
+
 /// See [`DescribeServicesOutput`](crate::output::DescribeServicesOutput).
 pub mod describe_services_output {
 
@@ -317,11 +326,5 @@ pub mod describe_services_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl DescribeServicesOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeServicesOutput`](crate::output::DescribeServicesOutput).
-    pub fn builder() -> crate::output::describe_services_output::Builder {
-        crate::output::describe_services_output::Builder::default()
     }
 }

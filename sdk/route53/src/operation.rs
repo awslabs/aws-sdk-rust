@@ -4,7 +4,7 @@
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`activate_key_signing_key`](crate::client::Client::activate_key_signing_key).
 ///
-/// See [`crate::client::fluent_builders::ActivateKeySigningKey`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ActivateKeySigningKey`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ActivateKeySigningKey {
     _private: (),
@@ -39,7 +39,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ActivateKeySigningKey {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`associate_vpc_with_hosted_zone`](crate::client::Client::associate_vpc_with_hosted_zone).
 ///
-/// See [`crate::client::fluent_builders::AssociateVPCWithHostedZone`] for more details about the operation.
+/// `ParseStrictResponse` impl for `AssociateVPCWithHostedZone`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct AssociateVPCWithHostedZone {
     _private: (),
@@ -74,7 +74,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateVPCWithHostedZo
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`change_cidr_collection`](crate::client::Client::change_cidr_collection).
 ///
-/// See [`crate::client::fluent_builders::ChangeCidrCollection`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ChangeCidrCollection`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ChangeCidrCollection {
     _private: (),
@@ -109,7 +109,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ChangeCidrCollection {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`change_resource_record_sets`](crate::client::Client::change_resource_record_sets).
 ///
-/// See [`crate::client::fluent_builders::ChangeResourceRecordSets`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ChangeResourceRecordSets`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ChangeResourceRecordSets {
     _private: (),
@@ -144,7 +144,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ChangeResourceRecordSets
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`change_tags_for_resource`](crate::client::Client::change_tags_for_resource).
 ///
-/// See [`crate::client::fluent_builders::ChangeTagsForResource`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ChangeTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ChangeTagsForResource {
     _private: (),
@@ -179,7 +179,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ChangeTagsForResource {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`create_cidr_collection`](crate::client::Client::create_cidr_collection).
 ///
-/// See [`crate::client::fluent_builders::CreateCidrCollection`] for more details about the operation.
+/// `ParseStrictResponse` impl for `CreateCidrCollection`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateCidrCollection {
     _private: (),
@@ -214,7 +214,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateCidrCollection {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`create_health_check`](crate::client::Client::create_health_check).
 ///
-/// See [`crate::client::fluent_builders::CreateHealthCheck`] for more details about the operation.
+/// `ParseStrictResponse` impl for `CreateHealthCheck`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateHealthCheck {
     _private: (),
@@ -249,7 +249,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateHealthCheck {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`create_hosted_zone`](crate::client::Client::create_hosted_zone).
 ///
-/// See [`crate::client::fluent_builders::CreateHostedZone`] for more details about the operation.
+/// `ParseStrictResponse` impl for `CreateHostedZone`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateHostedZone {
     _private: (),
@@ -284,7 +284,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateHostedZone {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`create_key_signing_key`](crate::client::Client::create_key_signing_key).
 ///
-/// See [`crate::client::fluent_builders::CreateKeySigningKey`] for more details about the operation.
+/// `ParseStrictResponse` impl for `CreateKeySigningKey`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateKeySigningKey {
     _private: (),
@@ -319,7 +319,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateKeySigningKey {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`create_query_logging_config`](crate::client::Client::create_query_logging_config).
 ///
-/// See [`crate::client::fluent_builders::CreateQueryLoggingConfig`] for more details about the operation.
+/// `ParseStrictResponse` impl for `CreateQueryLoggingConfig`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateQueryLoggingConfig {
     _private: (),
@@ -354,7 +354,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateQueryLoggingConfig
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`create_reusable_delegation_set`](crate::client::Client::create_reusable_delegation_set).
 ///
-/// See [`crate::client::fluent_builders::CreateReusableDelegationSet`] for more details about the operation.
+/// `ParseStrictResponse` impl for `CreateReusableDelegationSet`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateReusableDelegationSet {
     _private: (),
@@ -389,7 +389,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateReusableDelegation
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`create_traffic_policy`](crate::client::Client::create_traffic_policy).
 ///
-/// See [`crate::client::fluent_builders::CreateTrafficPolicy`] for more details about the operation.
+/// `ParseStrictResponse` impl for `CreateTrafficPolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateTrafficPolicy {
     _private: (),
@@ -424,7 +424,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateTrafficPolicy {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`create_traffic_policy_instance`](crate::client::Client::create_traffic_policy_instance).
 ///
-/// See [`crate::client::fluent_builders::CreateTrafficPolicyInstance`] for more details about the operation.
+/// `ParseStrictResponse` impl for `CreateTrafficPolicyInstance`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateTrafficPolicyInstance {
     _private: (),
@@ -459,7 +459,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateTrafficPolicyInsta
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`create_traffic_policy_version`](crate::client::Client::create_traffic_policy_version).
 ///
-/// See [`crate::client::fluent_builders::CreateTrafficPolicyVersion`] for more details about the operation.
+/// `ParseStrictResponse` impl for `CreateTrafficPolicyVersion`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateTrafficPolicyVersion {
     _private: (),
@@ -494,7 +494,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateTrafficPolicyVersi
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`create_vpc_association_authorization`](crate::client::Client::create_vpc_association_authorization).
 ///
-/// See [`crate::client::fluent_builders::CreateVPCAssociationAuthorization`] for more details about the operation.
+/// `ParseStrictResponse` impl for `CreateVPCAssociationAuthorization`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateVPCAssociationAuthorization {
     _private: (),
@@ -529,7 +529,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateVPCAssociationAuth
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`deactivate_key_signing_key`](crate::client::Client::deactivate_key_signing_key).
 ///
-/// See [`crate::client::fluent_builders::DeactivateKeySigningKey`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DeactivateKeySigningKey`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeactivateKeySigningKey {
     _private: (),
@@ -564,7 +564,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeactivateKeySigningKey 
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`delete_cidr_collection`](crate::client::Client::delete_cidr_collection).
 ///
-/// See [`crate::client::fluent_builders::DeleteCidrCollection`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DeleteCidrCollection`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteCidrCollection {
     _private: (),
@@ -599,7 +599,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteCidrCollection {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`delete_health_check`](crate::client::Client::delete_health_check).
 ///
-/// See [`crate::client::fluent_builders::DeleteHealthCheck`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DeleteHealthCheck`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteHealthCheck {
     _private: (),
@@ -634,7 +634,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteHealthCheck {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`delete_hosted_zone`](crate::client::Client::delete_hosted_zone).
 ///
-/// See [`crate::client::fluent_builders::DeleteHostedZone`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DeleteHostedZone`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteHostedZone {
     _private: (),
@@ -669,7 +669,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteHostedZone {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`delete_key_signing_key`](crate::client::Client::delete_key_signing_key).
 ///
-/// See [`crate::client::fluent_builders::DeleteKeySigningKey`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DeleteKeySigningKey`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteKeySigningKey {
     _private: (),
@@ -704,7 +704,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteKeySigningKey {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`delete_query_logging_config`](crate::client::Client::delete_query_logging_config).
 ///
-/// See [`crate::client::fluent_builders::DeleteQueryLoggingConfig`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DeleteQueryLoggingConfig`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteQueryLoggingConfig {
     _private: (),
@@ -739,7 +739,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteQueryLoggingConfig
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`delete_reusable_delegation_set`](crate::client::Client::delete_reusable_delegation_set).
 ///
-/// See [`crate::client::fluent_builders::DeleteReusableDelegationSet`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DeleteReusableDelegationSet`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteReusableDelegationSet {
     _private: (),
@@ -774,7 +774,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteReusableDelegation
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`delete_traffic_policy`](crate::client::Client::delete_traffic_policy).
 ///
-/// See [`crate::client::fluent_builders::DeleteTrafficPolicy`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DeleteTrafficPolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteTrafficPolicy {
     _private: (),
@@ -809,7 +809,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteTrafficPolicy {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`delete_traffic_policy_instance`](crate::client::Client::delete_traffic_policy_instance).
 ///
-/// See [`crate::client::fluent_builders::DeleteTrafficPolicyInstance`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DeleteTrafficPolicyInstance`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteTrafficPolicyInstance {
     _private: (),
@@ -844,7 +844,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteTrafficPolicyInsta
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`delete_vpc_association_authorization`](crate::client::Client::delete_vpc_association_authorization).
 ///
-/// See [`crate::client::fluent_builders::DeleteVPCAssociationAuthorization`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DeleteVPCAssociationAuthorization`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteVPCAssociationAuthorization {
     _private: (),
@@ -879,7 +879,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteVPCAssociationAuth
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`disable_hosted_zone_dnssec`](crate::client::Client::disable_hosted_zone_dnssec).
 ///
-/// See [`crate::client::fluent_builders::DisableHostedZoneDNSSEC`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DisableHostedZoneDNSSEC`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DisableHostedZoneDNSSEC {
     _private: (),
@@ -914,7 +914,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisableHostedZoneDNSSEC 
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`disassociate_vpc_from_hosted_zone`](crate::client::Client::disassociate_vpc_from_hosted_zone).
 ///
-/// See [`crate::client::fluent_builders::DisassociateVPCFromHostedZone`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DisassociateVPCFromHostedZone`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DisassociateVPCFromHostedZone {
     _private: (),
@@ -949,7 +949,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateVPCFromHoste
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`enable_hosted_zone_dnssec`](crate::client::Client::enable_hosted_zone_dnssec).
 ///
-/// See [`crate::client::fluent_builders::EnableHostedZoneDNSSEC`] for more details about the operation.
+/// `ParseStrictResponse` impl for `EnableHostedZoneDNSSEC`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct EnableHostedZoneDNSSEC {
     _private: (),
@@ -984,7 +984,7 @@ impl aws_smithy_http::response::ParseStrictResponse for EnableHostedZoneDNSSEC {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`get_account_limit`](crate::client::Client::get_account_limit).
 ///
-/// See [`crate::client::fluent_builders::GetAccountLimit`] for more details about the operation.
+/// `ParseStrictResponse` impl for `GetAccountLimit`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetAccountLimit {
     _private: (),
@@ -1019,7 +1019,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAccountLimit {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`get_change`](crate::client::Client::get_change).
 ///
-/// See [`crate::client::fluent_builders::GetChange`] for more details about the operation.
+/// `ParseStrictResponse` impl for `GetChange`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetChange {
     _private: (),
@@ -1075,7 +1075,7 @@ mod get_change_request_test {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`get_checker_ip_ranges`](crate::client::Client::get_checker_ip_ranges).
 ///
-/// See [`crate::client::fluent_builders::GetCheckerIpRanges`] for more details about the operation.
+/// `ParseStrictResponse` impl for `GetCheckerIpRanges`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetCheckerIpRanges {
     _private: (),
@@ -1110,7 +1110,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetCheckerIpRanges {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`get_dnssec`](crate::client::Client::get_dnssec).
 ///
-/// See [`crate::client::fluent_builders::GetDNSSEC`] for more details about the operation.
+/// `ParseStrictResponse` impl for `GetDNSSEC`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetDNSSEC {
     _private: (),
@@ -1142,7 +1142,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDNSSEC {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`get_geo_location`](crate::client::Client::get_geo_location).
 ///
-/// See [`crate::client::fluent_builders::GetGeoLocation`] for more details about the operation.
+/// `ParseStrictResponse` impl for `GetGeoLocation`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetGeoLocation {
     _private: (),
@@ -1175,7 +1175,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetGeoLocation {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`get_health_check`](crate::client::Client::get_health_check).
 ///
-/// See [`crate::client::fluent_builders::GetHealthCheck`] for more details about the operation.
+/// `ParseStrictResponse` impl for `GetHealthCheck`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetHealthCheck {
     _private: (),
@@ -1208,7 +1208,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetHealthCheck {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`get_health_check_count`](crate::client::Client::get_health_check_count).
 ///
-/// See [`crate::client::fluent_builders::GetHealthCheckCount`] for more details about the operation.
+/// `ParseStrictResponse` impl for `GetHealthCheckCount`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetHealthCheckCount {
     _private: (),
@@ -1243,7 +1243,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetHealthCheckCount {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`get_health_check_last_failure_reason`](crate::client::Client::get_health_check_last_failure_reason).
 ///
-/// See [`crate::client::fluent_builders::GetHealthCheckLastFailureReason`] for more details about the operation.
+/// `ParseStrictResponse` impl for `GetHealthCheckLastFailureReason`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetHealthCheckLastFailureReason {
     _private: (),
@@ -1278,7 +1278,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetHealthCheckLastFailur
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`get_health_check_status`](crate::client::Client::get_health_check_status).
 ///
-/// See [`crate::client::fluent_builders::GetHealthCheckStatus`] for more details about the operation.
+/// `ParseStrictResponse` impl for `GetHealthCheckStatus`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetHealthCheckStatus {
     _private: (),
@@ -1313,7 +1313,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetHealthCheckStatus {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`get_hosted_zone`](crate::client::Client::get_hosted_zone).
 ///
-/// See [`crate::client::fluent_builders::GetHostedZone`] for more details about the operation.
+/// `ParseStrictResponse` impl for `GetHostedZone`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetHostedZone {
     _private: (),
@@ -1346,7 +1346,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetHostedZone {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`get_hosted_zone_count`](crate::client::Client::get_hosted_zone_count).
 ///
-/// See [`crate::client::fluent_builders::GetHostedZoneCount`] for more details about the operation.
+/// `ParseStrictResponse` impl for `GetHostedZoneCount`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetHostedZoneCount {
     _private: (),
@@ -1381,7 +1381,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetHostedZoneCount {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`get_hosted_zone_limit`](crate::client::Client::get_hosted_zone_limit).
 ///
-/// See [`crate::client::fluent_builders::GetHostedZoneLimit`] for more details about the operation.
+/// `ParseStrictResponse` impl for `GetHostedZoneLimit`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetHostedZoneLimit {
     _private: (),
@@ -1416,7 +1416,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetHostedZoneLimit {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`get_query_logging_config`](crate::client::Client::get_query_logging_config).
 ///
-/// See [`crate::client::fluent_builders::GetQueryLoggingConfig`] for more details about the operation.
+/// `ParseStrictResponse` impl for `GetQueryLoggingConfig`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetQueryLoggingConfig {
     _private: (),
@@ -1451,7 +1451,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetQueryLoggingConfig {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`get_reusable_delegation_set`](crate::client::Client::get_reusable_delegation_set).
 ///
-/// See [`crate::client::fluent_builders::GetReusableDelegationSet`] for more details about the operation.
+/// `ParseStrictResponse` impl for `GetReusableDelegationSet`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetReusableDelegationSet {
     _private: (),
@@ -1513,7 +1513,7 @@ mod get_reusable_delegation_set_request_test {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`get_reusable_delegation_set_limit`](crate::client::Client::get_reusable_delegation_set_limit).
 ///
-/// See [`crate::client::fluent_builders::GetReusableDelegationSetLimit`] for more details about the operation.
+/// `ParseStrictResponse` impl for `GetReusableDelegationSetLimit`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetReusableDelegationSetLimit {
     _private: (),
@@ -1548,7 +1548,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetReusableDelegationSet
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`get_traffic_policy`](crate::client::Client::get_traffic_policy).
 ///
-/// See [`crate::client::fluent_builders::GetTrafficPolicy`] for more details about the operation.
+/// `ParseStrictResponse` impl for `GetTrafficPolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetTrafficPolicy {
     _private: (),
@@ -1583,7 +1583,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetTrafficPolicy {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`get_traffic_policy_instance`](crate::client::Client::get_traffic_policy_instance).
 ///
-/// See [`crate::client::fluent_builders::GetTrafficPolicyInstance`] for more details about the operation.
+/// `ParseStrictResponse` impl for `GetTrafficPolicyInstance`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetTrafficPolicyInstance {
     _private: (),
@@ -1618,7 +1618,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetTrafficPolicyInstance
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`get_traffic_policy_instance_count`](crate::client::Client::get_traffic_policy_instance_count).
 ///
-/// See [`crate::client::fluent_builders::GetTrafficPolicyInstanceCount`] for more details about the operation.
+/// `ParseStrictResponse` impl for `GetTrafficPolicyInstanceCount`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetTrafficPolicyInstanceCount {
     _private: (),
@@ -1653,7 +1653,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetTrafficPolicyInstance
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_cidr_blocks`](crate::client::Client::list_cidr_blocks).
 ///
-/// See [`crate::client::fluent_builders::ListCidrBlocks`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListCidrBlocks`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListCidrBlocks {
     _private: (),
@@ -1686,7 +1686,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListCidrBlocks {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_cidr_collections`](crate::client::Client::list_cidr_collections).
 ///
-/// See [`crate::client::fluent_builders::ListCidrCollections`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListCidrCollections`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListCidrCollections {
     _private: (),
@@ -1721,7 +1721,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListCidrCollections {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_cidr_locations`](crate::client::Client::list_cidr_locations).
 ///
-/// See [`crate::client::fluent_builders::ListCidrLocations`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListCidrLocations`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListCidrLocations {
     _private: (),
@@ -1756,7 +1756,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListCidrLocations {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_geo_locations`](crate::client::Client::list_geo_locations).
 ///
-/// See [`crate::client::fluent_builders::ListGeoLocations`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListGeoLocations`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListGeoLocations {
     _private: (),
@@ -1791,7 +1791,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListGeoLocations {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_health_checks`](crate::client::Client::list_health_checks).
 ///
-/// See [`crate::client::fluent_builders::ListHealthChecks`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListHealthChecks`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListHealthChecks {
     _private: (),
@@ -1826,7 +1826,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListHealthChecks {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_hosted_zones`](crate::client::Client::list_hosted_zones).
 ///
-/// See [`crate::client::fluent_builders::ListHostedZones`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListHostedZones`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListHostedZones {
     _private: (),
@@ -1861,7 +1861,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListHostedZones {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_hosted_zones_by_name`](crate::client::Client::list_hosted_zones_by_name).
 ///
-/// See [`crate::client::fluent_builders::ListHostedZonesByName`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListHostedZonesByName`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListHostedZonesByName {
     _private: (),
@@ -1896,7 +1896,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListHostedZonesByName {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_hosted_zones_by_vpc`](crate::client::Client::list_hosted_zones_by_vpc).
 ///
-/// See [`crate::client::fluent_builders::ListHostedZonesByVPC`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListHostedZonesByVPC`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListHostedZonesByVPC {
     _private: (),
@@ -1931,7 +1931,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListHostedZonesByVPC {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_query_logging_configs`](crate::client::Client::list_query_logging_configs).
 ///
-/// See [`crate::client::fluent_builders::ListQueryLoggingConfigs`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListQueryLoggingConfigs`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListQueryLoggingConfigs {
     _private: (),
@@ -1966,7 +1966,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListQueryLoggingConfigs 
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_resource_record_sets`](crate::client::Client::list_resource_record_sets).
 ///
-/// See [`crate::client::fluent_builders::ListResourceRecordSets`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListResourceRecordSets`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListResourceRecordSets {
     _private: (),
@@ -2028,7 +2028,7 @@ mod list_resource_record_sets_request_test {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_reusable_delegation_sets`](crate::client::Client::list_reusable_delegation_sets).
 ///
-/// See [`crate::client::fluent_builders::ListReusableDelegationSets`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListReusableDelegationSets`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListReusableDelegationSets {
     _private: (),
@@ -2063,7 +2063,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListReusableDelegationSe
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
 ///
-/// See [`crate::client::fluent_builders::ListTagsForResource`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTagsForResource {
     _private: (),
@@ -2098,7 +2098,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_tags_for_resources`](crate::client::Client::list_tags_for_resources).
 ///
-/// See [`crate::client::fluent_builders::ListTagsForResources`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListTagsForResources`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTagsForResources {
     _private: (),
@@ -2133,7 +2133,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResources {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_traffic_policies`](crate::client::Client::list_traffic_policies).
 ///
-/// See [`crate::client::fluent_builders::ListTrafficPolicies`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListTrafficPolicies`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTrafficPolicies {
     _private: (),
@@ -2168,7 +2168,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTrafficPolicies {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_traffic_policy_instances`](crate::client::Client::list_traffic_policy_instances).
 ///
-/// See [`crate::client::fluent_builders::ListTrafficPolicyInstances`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListTrafficPolicyInstances`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTrafficPolicyInstances {
     _private: (),
@@ -2203,7 +2203,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTrafficPolicyInstanc
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_traffic_policy_instances_by_hosted_zone`](crate::client::Client::list_traffic_policy_instances_by_hosted_zone).
 ///
-/// See [`crate::client::fluent_builders::ListTrafficPolicyInstancesByHostedZone`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListTrafficPolicyInstancesByHostedZone`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTrafficPolicyInstancesByHostedZone {
     _private: (),
@@ -2242,7 +2242,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTrafficPolicyInstanc
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_traffic_policy_instances_by_policy`](crate::client::Client::list_traffic_policy_instances_by_policy).
 ///
-/// See [`crate::client::fluent_builders::ListTrafficPolicyInstancesByPolicy`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListTrafficPolicyInstancesByPolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTrafficPolicyInstancesByPolicy {
     _private: (),
@@ -2277,7 +2277,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTrafficPolicyInstanc
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_traffic_policy_versions`](crate::client::Client::list_traffic_policy_versions).
 ///
-/// See [`crate::client::fluent_builders::ListTrafficPolicyVersions`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListTrafficPolicyVersions`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTrafficPolicyVersions {
     _private: (),
@@ -2312,7 +2312,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTrafficPolicyVersion
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_vpc_association_authorizations`](crate::client::Client::list_vpc_association_authorizations).
 ///
-/// See [`crate::client::fluent_builders::ListVPCAssociationAuthorizations`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListVPCAssociationAuthorizations`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListVPCAssociationAuthorizations {
     _private: (),
@@ -2347,7 +2347,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListVPCAssociationAuthor
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`test_dns_answer`](crate::client::Client::test_dns_answer).
 ///
-/// See [`crate::client::fluent_builders::TestDNSAnswer`] for more details about the operation.
+/// `ParseStrictResponse` impl for `TestDNSAnswer`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct TestDNSAnswer {
     _private: (),
@@ -2380,7 +2380,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TestDNSAnswer {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`update_health_check`](crate::client::Client::update_health_check).
 ///
-/// See [`crate::client::fluent_builders::UpdateHealthCheck`] for more details about the operation.
+/// `ParseStrictResponse` impl for `UpdateHealthCheck`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateHealthCheck {
     _private: (),
@@ -2415,7 +2415,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateHealthCheck {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`update_hosted_zone_comment`](crate::client::Client::update_hosted_zone_comment).
 ///
-/// See [`crate::client::fluent_builders::UpdateHostedZoneComment`] for more details about the operation.
+/// `ParseStrictResponse` impl for `UpdateHostedZoneComment`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateHostedZoneComment {
     _private: (),
@@ -2450,7 +2450,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateHostedZoneComment 
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`update_traffic_policy_comment`](crate::client::Client::update_traffic_policy_comment).
 ///
-/// See [`crate::client::fluent_builders::UpdateTrafficPolicyComment`] for more details about the operation.
+/// `ParseStrictResponse` impl for `UpdateTrafficPolicyComment`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateTrafficPolicyComment {
     _private: (),
@@ -2485,7 +2485,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateTrafficPolicyComme
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`update_traffic_policy_instance`](crate::client::Client::update_traffic_policy_instance).
 ///
-/// See [`crate::client::fluent_builders::UpdateTrafficPolicyInstance`] for more details about the operation.
+/// `ParseStrictResponse` impl for `UpdateTrafficPolicyInstance`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateTrafficPolicyInstance {
     _private: (),

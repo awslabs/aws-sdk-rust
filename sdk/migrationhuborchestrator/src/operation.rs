@@ -4,7 +4,7 @@
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`create_workflow`](crate::client::Client::create_workflow).
 ///
-/// See [`crate::client::fluent_builders::CreateWorkflow`] for more details about the operation.
+/// `ParseStrictResponse` impl for `CreateWorkflow`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateWorkflow {
     _private: (),
@@ -37,7 +37,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateWorkflow {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`create_workflow_step`](crate::client::Client::create_workflow_step).
 ///
-/// See [`crate::client::fluent_builders::CreateWorkflowStep`] for more details about the operation.
+/// `ParseStrictResponse` impl for `CreateWorkflowStep`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateWorkflowStep {
     _private: (),
@@ -72,7 +72,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateWorkflowStep {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`create_workflow_step_group`](crate::client::Client::create_workflow_step_group).
 ///
-/// See [`crate::client::fluent_builders::CreateWorkflowStepGroup`] for more details about the operation.
+/// `ParseStrictResponse` impl for `CreateWorkflowStepGroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateWorkflowStepGroup {
     _private: (),
@@ -107,7 +107,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateWorkflowStepGroup 
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`delete_workflow`](crate::client::Client::delete_workflow).
 ///
-/// See [`crate::client::fluent_builders::DeleteWorkflow`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DeleteWorkflow`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteWorkflow {
     _private: (),
@@ -140,7 +140,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteWorkflow {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`delete_workflow_step`](crate::client::Client::delete_workflow_step).
 ///
-/// See [`crate::client::fluent_builders::DeleteWorkflowStep`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DeleteWorkflowStep`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteWorkflowStep {
     _private: (),
@@ -175,7 +175,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteWorkflowStep {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`delete_workflow_step_group`](crate::client::Client::delete_workflow_step_group).
 ///
-/// See [`crate::client::fluent_builders::DeleteWorkflowStepGroup`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DeleteWorkflowStepGroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteWorkflowStepGroup {
     _private: (),
@@ -210,7 +210,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteWorkflowStepGroup 
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`get_template`](crate::client::Client::get_template).
 ///
-/// See [`crate::client::fluent_builders::GetTemplate`] for more details about the operation.
+/// `ParseStrictResponse` impl for `GetTemplate`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetTemplate {
     _private: (),
@@ -243,7 +243,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetTemplate {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`get_template_step`](crate::client::Client::get_template_step).
 ///
-/// See [`crate::client::fluent_builders::GetTemplateStep`] for more details about the operation.
+/// `ParseStrictResponse` impl for `GetTemplateStep`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetTemplateStep {
     _private: (),
@@ -278,7 +278,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetTemplateStep {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`get_template_step_group`](crate::client::Client::get_template_step_group).
 ///
-/// See [`crate::client::fluent_builders::GetTemplateStepGroup`] for more details about the operation.
+/// `ParseStrictResponse` impl for `GetTemplateStepGroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetTemplateStepGroup {
     _private: (),
@@ -313,7 +313,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetTemplateStepGroup {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`get_workflow`](crate::client::Client::get_workflow).
 ///
-/// See [`crate::client::fluent_builders::GetWorkflow`] for more details about the operation.
+/// `ParseStrictResponse` impl for `GetWorkflow`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetWorkflow {
     _private: (),
@@ -346,7 +346,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetWorkflow {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`get_workflow_step`](crate::client::Client::get_workflow_step).
 ///
-/// See [`crate::client::fluent_builders::GetWorkflowStep`] for more details about the operation.
+/// `ParseStrictResponse` impl for `GetWorkflowStep`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetWorkflowStep {
     _private: (),
@@ -381,7 +381,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetWorkflowStep {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`get_workflow_step_group`](crate::client::Client::get_workflow_step_group).
 ///
-/// See [`crate::client::fluent_builders::GetWorkflowStepGroup`] for more details about the operation.
+/// `ParseStrictResponse` impl for `GetWorkflowStepGroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetWorkflowStepGroup {
     _private: (),
@@ -416,7 +416,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetWorkflowStepGroup {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_plugins`](crate::client::Client::list_plugins).
 ///
-/// See [`crate::client::fluent_builders::ListPlugins`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListPlugins`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListPlugins {
     _private: (),
@@ -449,7 +449,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListPlugins {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
 ///
-/// See [`crate::client::fluent_builders::ListTagsForResource`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTagsForResource {
     _private: (),
@@ -484,7 +484,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_templates`](crate::client::Client::list_templates).
 ///
-/// See [`crate::client::fluent_builders::ListTemplates`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListTemplates`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTemplates {
     _private: (),
@@ -517,7 +517,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTemplates {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_template_step_groups`](crate::client::Client::list_template_step_groups).
 ///
-/// See [`crate::client::fluent_builders::ListTemplateStepGroups`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListTemplateStepGroups`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTemplateStepGroups {
     _private: (),
@@ -552,7 +552,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTemplateStepGroups {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_template_steps`](crate::client::Client::list_template_steps).
 ///
-/// See [`crate::client::fluent_builders::ListTemplateSteps`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListTemplateSteps`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTemplateSteps {
     _private: (),
@@ -587,7 +587,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTemplateSteps {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_workflows`](crate::client::Client::list_workflows).
 ///
-/// See [`crate::client::fluent_builders::ListWorkflows`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListWorkflows`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListWorkflows {
     _private: (),
@@ -620,7 +620,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListWorkflows {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_workflow_step_groups`](crate::client::Client::list_workflow_step_groups).
 ///
-/// See [`crate::client::fluent_builders::ListWorkflowStepGroups`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListWorkflowStepGroups`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListWorkflowStepGroups {
     _private: (),
@@ -655,7 +655,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListWorkflowStepGroups {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_workflow_steps`](crate::client::Client::list_workflow_steps).
 ///
-/// See [`crate::client::fluent_builders::ListWorkflowSteps`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListWorkflowSteps`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListWorkflowSteps {
     _private: (),
@@ -690,7 +690,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListWorkflowSteps {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`retry_workflow_step`](crate::client::Client::retry_workflow_step).
 ///
-/// See [`crate::client::fluent_builders::RetryWorkflowStep`] for more details about the operation.
+/// `ParseStrictResponse` impl for `RetryWorkflowStep`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct RetryWorkflowStep {
     _private: (),
@@ -725,7 +725,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RetryWorkflowStep {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`start_workflow`](crate::client::Client::start_workflow).
 ///
-/// See [`crate::client::fluent_builders::StartWorkflow`] for more details about the operation.
+/// `ParseStrictResponse` impl for `StartWorkflow`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StartWorkflow {
     _private: (),
@@ -758,7 +758,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartWorkflow {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`stop_workflow`](crate::client::Client::stop_workflow).
 ///
-/// See [`crate::client::fluent_builders::StopWorkflow`] for more details about the operation.
+/// `ParseStrictResponse` impl for `StopWorkflow`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StopWorkflow {
     _private: (),
@@ -791,7 +791,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StopWorkflow {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`tag_resource`](crate::client::Client::tag_resource).
 ///
-/// See [`crate::client::fluent_builders::TagResource`] for more details about the operation.
+/// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct TagResource {
     _private: (),
@@ -824,7 +824,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`untag_resource`](crate::client::Client::untag_resource).
 ///
-/// See [`crate::client::fluent_builders::UntagResource`] for more details about the operation.
+/// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UntagResource {
     _private: (),
@@ -857,7 +857,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`update_workflow`](crate::client::Client::update_workflow).
 ///
-/// See [`crate::client::fluent_builders::UpdateWorkflow`] for more details about the operation.
+/// `ParseStrictResponse` impl for `UpdateWorkflow`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateWorkflow {
     _private: (),
@@ -890,7 +890,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateWorkflow {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`update_workflow_step`](crate::client::Client::update_workflow_step).
 ///
-/// See [`crate::client::fluent_builders::UpdateWorkflowStep`] for more details about the operation.
+/// `ParseStrictResponse` impl for `UpdateWorkflowStep`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateWorkflowStep {
     _private: (),
@@ -925,7 +925,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateWorkflowStep {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`update_workflow_step_group`](crate::client::Client::update_workflow_step_group).
 ///
-/// See [`crate::client::fluent_builders::UpdateWorkflowStepGroup`] for more details about the operation.
+/// `ParseStrictResponse` impl for `UpdateWorkflowStepGroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateWorkflowStepGroup {
     _private: (),

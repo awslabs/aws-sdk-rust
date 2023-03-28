@@ -61,6 +61,13 @@ impl Connection {
         self.replication_instance_identifier.as_deref()
     }
 }
+impl Connection {
+    /// Creates a new builder-style object to manufacture [`Connection`](crate::model::Connection).
+    pub fn builder() -> crate::model::connection::Builder {
+        crate::model::connection::Builder::default()
+    }
+}
+
 /// See [`Connection`](crate::model::Connection).
 pub mod connection {
 
@@ -174,12 +181,6 @@ pub mod connection {
                 replication_instance_identifier: self.replication_instance_identifier,
             }
         }
-    }
-}
-impl Connection {
-    /// Creates a new builder-style object to manufacture [`Connection`](crate::model::Connection).
-    pub fn builder() -> crate::model::connection::Builder {
-        crate::model::connection::Builder::default()
     }
 }
 
@@ -415,6 +416,13 @@ impl ReplicationTask {
         self.target_replication_instance_arn.as_deref()
     }
 }
+impl ReplicationTask {
+    /// Creates a new builder-style object to manufacture [`ReplicationTask`](crate::model::ReplicationTask).
+    pub fn builder() -> crate::model::replication_task::Builder {
+        crate::model::replication_task::Builder::default()
+    }
+}
+
 /// See [`ReplicationTask`](crate::model::ReplicationTask).
 pub mod replication_task {
 
@@ -801,12 +809,6 @@ pub mod replication_task {
         }
     }
 }
-impl ReplicationTask {
-    /// Creates a new builder-style object to manufacture [`ReplicationTask`](crate::model::ReplicationTask).
-    pub fn builder() -> crate::model::replication_task::Builder {
-        crate::model::replication_task::Builder::default()
-    }
-}
 
 /// <p>In response to a request by the <code>DescribeReplicationTasks</code> operation, this object provides a collection of statistics about a replication task.</p>
 #[non_exhaustive]
@@ -892,6 +894,13 @@ impl ReplicationTaskStats {
         self.full_load_finish_date.as_ref()
     }
 }
+impl ReplicationTaskStats {
+    /// Creates a new builder-style object to manufacture [`ReplicationTaskStats`](crate::model::ReplicationTaskStats).
+    pub fn builder() -> crate::model::replication_task_stats::Builder {
+        crate::model::replication_task_stats::Builder::default()
+    }
+}
+
 /// See [`ReplicationTaskStats`](crate::model::ReplicationTaskStats).
 pub mod replication_task_stats {
 
@@ -1053,12 +1062,6 @@ pub mod replication_task_stats {
                 full_load_finish_date: self.full_load_finish_date,
             }
         }
-    }
-}
-impl ReplicationTaskStats {
-    /// Creates a new builder-style object to manufacture [`ReplicationTaskStats`](crate::model::ReplicationTaskStats).
-    pub fn builder() -> crate::model::replication_task_stats::Builder {
-        crate::model::replication_task_stats::Builder::default()
     }
 }
 
@@ -1283,6 +1286,13 @@ impl ReplicationTaskAssessmentRun {
         self.assessment_run_name.as_deref()
     }
 }
+impl ReplicationTaskAssessmentRun {
+    /// Creates a new builder-style object to manufacture [`ReplicationTaskAssessmentRun`](crate::model::ReplicationTaskAssessmentRun).
+    pub fn builder() -> crate::model::replication_task_assessment_run::Builder {
+        crate::model::replication_task_assessment_run::Builder::default()
+    }
+}
+
 /// See [`ReplicationTaskAssessmentRun`](crate::model::ReplicationTaskAssessmentRun).
 pub mod replication_task_assessment_run {
 
@@ -1514,12 +1524,6 @@ pub mod replication_task_assessment_run {
         }
     }
 }
-impl ReplicationTaskAssessmentRun {
-    /// Creates a new builder-style object to manufacture [`ReplicationTaskAssessmentRun`](crate::model::ReplicationTaskAssessmentRun).
-    pub fn builder() -> crate::model::replication_task_assessment_run::Builder {
-        crate::model::replication_task_assessment_run::Builder::default()
-    }
-}
 
 /// <p>The progress values reported by the <code>AssessmentProgress</code> response element.</p>
 #[non_exhaustive]
@@ -1542,6 +1546,13 @@ impl ReplicationTaskAssessmentRunProgress {
         self.individual_assessment_completed_count
     }
 }
+impl ReplicationTaskAssessmentRunProgress {
+    /// Creates a new builder-style object to manufacture [`ReplicationTaskAssessmentRunProgress`](crate::model::ReplicationTaskAssessmentRunProgress).
+    pub fn builder() -> crate::model::replication_task_assessment_run_progress::Builder {
+        crate::model::replication_task_assessment_run_progress::Builder::default()
+    }
+}
+
 /// See [`ReplicationTaskAssessmentRunProgress`](crate::model::ReplicationTaskAssessmentRunProgress).
 pub mod replication_task_assessment_run_progress {
 
@@ -1585,12 +1596,6 @@ pub mod replication_task_assessment_run_progress {
                     .unwrap_or_default(),
             }
         }
-    }
-}
-impl ReplicationTaskAssessmentRunProgress {
-    /// Creates a new builder-style object to manufacture [`ReplicationTaskAssessmentRunProgress`](crate::model::ReplicationTaskAssessmentRunProgress).
-    pub fn builder() -> crate::model::replication_task_assessment_run_progress::Builder {
-        crate::model::replication_task_assessment_run_progress::Builder::default()
     }
 }
 
@@ -1804,6 +1809,13 @@ impl TableToReload {
         self.table_name.as_deref()
     }
 }
+impl TableToReload {
+    /// Creates a new builder-style object to manufacture [`TableToReload`](crate::model::TableToReload).
+    pub fn builder() -> crate::model::table_to_reload::Builder {
+        crate::model::table_to_reload::Builder::default()
+    }
+}
+
 /// See [`TableToReload`](crate::model::TableToReload).
 pub mod table_to_reload {
 
@@ -1842,12 +1854,6 @@ pub mod table_to_reload {
                 table_name: self.table_name,
             }
         }
-    }
-}
-impl TableToReload {
-    /// Creates a new builder-style object to manufacture [`TableToReload`](crate::model::TableToReload).
-    pub fn builder() -> crate::model::table_to_reload::Builder {
-        crate::model::table_to_reload::Builder::default()
     }
 }
 
@@ -1893,6 +1899,13 @@ impl RefreshSchemasStatus {
         self.last_failure_message.as_deref()
     }
 }
+impl RefreshSchemasStatus {
+    /// Creates a new builder-style object to manufacture [`RefreshSchemasStatus`](crate::model::RefreshSchemasStatus).
+    pub fn builder() -> crate::model::refresh_schemas_status::Builder {
+        crate::model::refresh_schemas_status::Builder::default()
+    }
+}
+
 /// See [`RefreshSchemasStatus`](crate::model::RefreshSchemasStatus).
 pub mod refresh_schemas_status {
 
@@ -1979,12 +1992,6 @@ pub mod refresh_schemas_status {
                 last_failure_message: self.last_failure_message,
             }
         }
-    }
-}
-impl RefreshSchemasStatus {
-    /// Creates a new builder-style object to manufacture [`RefreshSchemasStatus`](crate::model::RefreshSchemasStatus).
-    pub fn builder() -> crate::model::refresh_schemas_status::Builder {
-        crate::model::refresh_schemas_status::Builder::default()
     }
 }
 
@@ -2342,6 +2349,13 @@ impl ReplicationInstance {
         self.network_type.as_deref()
     }
 }
+impl ReplicationInstance {
+    /// Creates a new builder-style object to manufacture [`ReplicationInstance`](crate::model::ReplicationInstance).
+    pub fn builder() -> crate::model::replication_instance::Builder {
+        crate::model::replication_instance::Builder::default()
+    }
+}
+
 /// See [`ReplicationInstance`](crate::model::ReplicationInstance).
 pub mod replication_instance {
 
@@ -2847,12 +2861,6 @@ pub mod replication_instance {
         }
     }
 }
-impl ReplicationInstance {
-    /// Creates a new builder-style object to manufacture [`ReplicationInstance`](crate::model::ReplicationInstance).
-    pub fn builder() -> crate::model::replication_instance::Builder {
-        crate::model::replication_instance::Builder::default()
-    }
-}
 
 /// <p>Provides information about the values of pending modifications to a replication instance. This data type is an object of the <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_ReplicationInstance.html"> <code>ReplicationInstance</code> </a> user-defined data type. </p>
 #[non_exhaustive]
@@ -2898,6 +2906,13 @@ impl ReplicationPendingModifiedValues {
         self.network_type.as_deref()
     }
 }
+impl ReplicationPendingModifiedValues {
+    /// Creates a new builder-style object to manufacture [`ReplicationPendingModifiedValues`](crate::model::ReplicationPendingModifiedValues).
+    pub fn builder() -> crate::model::replication_pending_modified_values::Builder {
+        crate::model::replication_pending_modified_values::Builder::default()
+    }
+}
+
 /// See [`ReplicationPendingModifiedValues`](crate::model::ReplicationPendingModifiedValues).
 pub mod replication_pending_modified_values {
 
@@ -2982,12 +2997,6 @@ pub mod replication_pending_modified_values {
         }
     }
 }
-impl ReplicationPendingModifiedValues {
-    /// Creates a new builder-style object to manufacture [`ReplicationPendingModifiedValues`](crate::model::ReplicationPendingModifiedValues).
-    pub fn builder() -> crate::model::replication_pending_modified_values::Builder {
-        crate::model::replication_pending_modified_values::Builder::default()
-    }
-}
 
 /// <p>Describes a subnet group in response to a request by the <code>DescribeReplicationSubnetGroups</code> operation.</p>
 #[non_exhaustive]
@@ -3038,6 +3047,13 @@ impl ReplicationSubnetGroup {
         self.supported_network_types.as_deref()
     }
 }
+impl ReplicationSubnetGroup {
+    /// Creates a new builder-style object to manufacture [`ReplicationSubnetGroup`](crate::model::ReplicationSubnetGroup).
+    pub fn builder() -> crate::model::replication_subnet_group::Builder {
+        crate::model::replication_subnet_group::Builder::default()
+    }
+}
+
 /// See [`ReplicationSubnetGroup`](crate::model::ReplicationSubnetGroup).
 pub mod replication_subnet_group {
 
@@ -3159,12 +3175,6 @@ pub mod replication_subnet_group {
         }
     }
 }
-impl ReplicationSubnetGroup {
-    /// Creates a new builder-style object to manufacture [`ReplicationSubnetGroup`](crate::model::ReplicationSubnetGroup).
-    pub fn builder() -> crate::model::replication_subnet_group::Builder {
-        crate::model::replication_subnet_group::Builder::default()
-    }
-}
 
 /// <p>In response to a request by the <code>DescribeReplicationSubnetGroups</code> operation, this object identifies a subnet by its given Availability Zone, subnet identifier, and status.</p>
 #[non_exhaustive]
@@ -3194,6 +3204,13 @@ impl Subnet {
         self.subnet_status.as_deref()
     }
 }
+impl Subnet {
+    /// Creates a new builder-style object to manufacture [`Subnet`](crate::model::Subnet).
+    pub fn builder() -> crate::model::subnet::Builder {
+        crate::model::subnet::Builder::default()
+    }
+}
+
 /// See [`Subnet`](crate::model::Subnet).
 pub mod subnet {
 
@@ -3255,12 +3272,6 @@ pub mod subnet {
         }
     }
 }
-impl Subnet {
-    /// Creates a new builder-style object to manufacture [`Subnet`](crate::model::Subnet).
-    pub fn builder() -> crate::model::subnet::Builder {
-        crate::model::subnet::Builder::default()
-    }
-}
 
 /// <p>The name of an Availability Zone for use during database migration. <code>AvailabilityZone</code> is an optional parameter to the <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_CreateReplicationInstance.html"> <code>CreateReplicationInstance</code> </a> operation, and it’s value relates to the Amazon Web Services Region of an endpoint. For example, the availability zone of an endpoint in the us-east-1 region might be us-east-1a, us-east-1b, us-east-1c, or us-east-1d.</p>
 #[non_exhaustive]
@@ -3276,6 +3287,13 @@ impl AvailabilityZone {
         self.name.as_deref()
     }
 }
+impl AvailabilityZone {
+    /// Creates a new builder-style object to manufacture [`AvailabilityZone`](crate::model::AvailabilityZone).
+    pub fn builder() -> crate::model::availability_zone::Builder {
+        crate::model::availability_zone::Builder::default()
+    }
+}
+
 /// See [`AvailabilityZone`](crate::model::AvailabilityZone).
 pub mod availability_zone {
 
@@ -3302,12 +3320,6 @@ pub mod availability_zone {
         }
     }
 }
-impl AvailabilityZone {
-    /// Creates a new builder-style object to manufacture [`AvailabilityZone`](crate::model::AvailabilityZone).
-    pub fn builder() -> crate::model::availability_zone::Builder {
-        crate::model::availability_zone::Builder::default()
-    }
-}
 
 /// <p>Describes the status of a security group associated with the virtual private cloud (VPC) hosting your replication and DB instances.</p>
 #[non_exhaustive]
@@ -3330,6 +3342,13 @@ impl VpcSecurityGroupMembership {
         self.status.as_deref()
     }
 }
+impl VpcSecurityGroupMembership {
+    /// Creates a new builder-style object to manufacture [`VpcSecurityGroupMembership`](crate::model::VpcSecurityGroupMembership).
+    pub fn builder() -> crate::model::vpc_security_group_membership::Builder {
+        crate::model::vpc_security_group_membership::Builder::default()
+    }
+}
+
 /// See [`VpcSecurityGroupMembership`](crate::model::VpcSecurityGroupMembership).
 pub mod vpc_security_group_membership {
 
@@ -3371,12 +3390,6 @@ pub mod vpc_security_group_membership {
                 status: self.status,
             }
         }
-    }
-}
-impl VpcSecurityGroupMembership {
-    /// Creates a new builder-style object to manufacture [`VpcSecurityGroupMembership`](crate::model::VpcSecurityGroupMembership).
-    pub fn builder() -> crate::model::vpc_security_group_membership::Builder {
-        crate::model::vpc_security_group_membership::Builder::default()
     }
 }
 
@@ -3458,6 +3471,13 @@ impl EventSubscription {
         self.enabled
     }
 }
+impl EventSubscription {
+    /// Creates a new builder-style object to manufacture [`EventSubscription`](crate::model::EventSubscription).
+    pub fn builder() -> crate::model::event_subscription::Builder {
+        crate::model::event_subscription::Builder::default()
+    }
+}
+
 /// See [`EventSubscription`](crate::model::EventSubscription).
 pub mod event_subscription {
 
@@ -3618,12 +3638,6 @@ pub mod event_subscription {
                 enabled: self.enabled.unwrap_or_default(),
             }
         }
-    }
-}
-impl EventSubscription {
-    /// Creates a new builder-style object to manufacture [`EventSubscription`](crate::model::EventSubscription).
-    pub fn builder() -> crate::model::event_subscription::Builder {
-        crate::model::event_subscription::Builder::default()
     }
 }
 
@@ -3895,6 +3909,13 @@ impl Endpoint {
         self.gcp_my_sql_settings.as_ref()
     }
 }
+impl Endpoint {
+    /// Creates a new builder-style object to manufacture [`Endpoint`](crate::model::Endpoint).
+    pub fn builder() -> crate::model::endpoint::Builder {
+        crate::model::endpoint::Builder::default()
+    }
+}
+
 /// See [`Endpoint`](crate::model::Endpoint).
 pub mod endpoint {
 
@@ -4426,12 +4447,6 @@ pub mod endpoint {
         }
     }
 }
-impl Endpoint {
-    /// Creates a new builder-style object to manufacture [`Endpoint`](crate::model::Endpoint).
-    pub fn builder() -> crate::model::endpoint::Builder {
-        crate::model::endpoint::Builder::default()
-    }
-}
 
 /// <p>Settings in JSON format for the source GCP MySQL endpoint.</p>
 #[non_exhaustive]
@@ -4584,6 +4599,13 @@ impl std::fmt::Debug for GcpMySqlSettings {
         formatter.finish()
     }
 }
+impl GcpMySqlSettings {
+    /// Creates a new builder-style object to manufacture [`GcpMySqlSettings`](crate::model::GcpMySqlSettings).
+    pub fn builder() -> crate::model::gcp_my_sql_settings::Builder {
+        crate::model::gcp_my_sql_settings::Builder::default()
+    }
+}
+
 /// See [`GcpMySqlSettings`](crate::model::GcpMySqlSettings).
 pub mod gcp_my_sql_settings {
 
@@ -4838,12 +4860,6 @@ pub mod gcp_my_sql_settings {
         }
     }
 }
-impl GcpMySqlSettings {
-    /// Creates a new builder-style object to manufacture [`GcpMySqlSettings`](crate::model::GcpMySqlSettings).
-    pub fn builder() -> crate::model::gcp_my_sql_settings::Builder {
-        crate::model::gcp_my_sql_settings::Builder::default()
-    }
-}
 
 /// When writing a match expression against `TargetDbType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -5008,6 +5024,13 @@ impl std::fmt::Debug for RedisSettings {
         formatter.finish()
     }
 }
+impl RedisSettings {
+    /// Creates a new builder-style object to manufacture [`RedisSettings`](crate::model::RedisSettings).
+    pub fn builder() -> crate::model::redis_settings::Builder {
+        crate::model::redis_settings::Builder::default()
+    }
+}
+
 /// See [`RedisSettings`](crate::model::RedisSettings).
 pub mod redis_settings {
 
@@ -5140,12 +5163,6 @@ pub mod redis_settings {
             formatter.field("ssl_ca_certificate_arn", &self.ssl_ca_certificate_arn);
             formatter.finish()
         }
-    }
-}
-impl RedisSettings {
-    /// Creates a new builder-style object to manufacture [`RedisSettings`](crate::model::RedisSettings).
-    pub fn builder() -> crate::model::redis_settings::Builder {
-        crate::model::redis_settings::Builder::default()
     }
 }
 
@@ -5452,6 +5469,13 @@ impl std::fmt::Debug for DocDbSettings {
         formatter.finish()
     }
 }
+impl DocDbSettings {
+    /// Creates a new builder-style object to manufacture [`DocDbSettings`](crate::model::DocDbSettings).
+    pub fn builder() -> crate::model::doc_db_settings::Builder {
+        crate::model::doc_db_settings::Builder::default()
+    }
+}
+
 /// See [`DocDbSettings`](crate::model::DocDbSettings).
 pub mod doc_db_settings {
 
@@ -5643,12 +5667,6 @@ pub mod doc_db_settings {
             formatter.field("secrets_manager_secret_id", &self.secrets_manager_secret_id);
             formatter.finish()
         }
-    }
-}
-impl DocDbSettings {
-    /// Creates a new builder-style object to manufacture [`DocDbSettings`](crate::model::DocDbSettings).
-    pub fn builder() -> crate::model::doc_db_settings::Builder {
-        crate::model::doc_db_settings::Builder::default()
     }
 }
 
@@ -5844,6 +5862,13 @@ impl std::fmt::Debug for IbmDb2Settings {
         formatter.finish()
     }
 }
+impl IbmDb2Settings {
+    /// Creates a new builder-style object to manufacture [`IbmDb2Settings`](crate::model::IbmDb2Settings).
+    pub fn builder() -> crate::model::ibm_db2_settings::Builder {
+        crate::model::ibm_db2_settings::Builder::default()
+    }
+}
+
 /// See [`IbmDb2Settings`](crate::model::IbmDb2Settings).
 pub mod ibm_db2_settings {
 
@@ -6015,12 +6040,6 @@ pub mod ibm_db2_settings {
         }
     }
 }
-impl IbmDb2Settings {
-    /// Creates a new builder-style object to manufacture [`IbmDb2Settings`](crate::model::IbmDb2Settings).
-    pub fn builder() -> crate::model::ibm_db2_settings::Builder {
-        crate::model::ibm_db2_settings::Builder::default()
-    }
-}
 
 /// <p>Provides information that defines a Microsoft SQL Server endpoint.</p>
 #[non_exhaustive]
@@ -6172,6 +6191,13 @@ impl std::fmt::Debug for MicrosoftSqlServerSettings {
         formatter.finish()
     }
 }
+impl MicrosoftSqlServerSettings {
+    /// Creates a new builder-style object to manufacture [`MicrosoftSqlServerSettings`](crate::model::MicrosoftSqlServerSettings).
+    pub fn builder() -> crate::model::microsoft_sql_server_settings::Builder {
+        crate::model::microsoft_sql_server_settings::Builder::default()
+    }
+}
+
 /// See [`MicrosoftSqlServerSettings`](crate::model::MicrosoftSqlServerSettings).
 pub mod microsoft_sql_server_settings {
 
@@ -6427,12 +6453,6 @@ pub mod microsoft_sql_server_settings {
         }
     }
 }
-impl MicrosoftSqlServerSettings {
-    /// Creates a new builder-style object to manufacture [`MicrosoftSqlServerSettings`](crate::model::MicrosoftSqlServerSettings).
-    pub fn builder() -> crate::model::microsoft_sql_server_settings::Builder {
-        crate::model::microsoft_sql_server_settings::Builder::default()
-    }
-}
 
 /// When writing a match expression against `SafeguardPolicy`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -6613,6 +6633,13 @@ impl std::fmt::Debug for SybaseSettings {
         formatter.finish()
     }
 }
+impl SybaseSettings {
+    /// Creates a new builder-style object to manufacture [`SybaseSettings`](crate::model::SybaseSettings).
+    pub fn builder() -> crate::model::sybase_settings::Builder {
+        crate::model::sybase_settings::Builder::default()
+    }
+}
+
 /// See [`SybaseSettings`](crate::model::SybaseSettings).
 pub mod sybase_settings {
 
@@ -6743,12 +6770,6 @@ pub mod sybase_settings {
             formatter.field("secrets_manager_secret_id", &self.secrets_manager_secret_id);
             formatter.finish()
         }
-    }
-}
-impl SybaseSettings {
-    /// Creates a new builder-style object to manufacture [`SybaseSettings`](crate::model::SybaseSettings).
-    pub fn builder() -> crate::model::sybase_settings::Builder {
-        crate::model::sybase_settings::Builder::default()
     }
 }
 
@@ -7159,6 +7180,13 @@ impl std::fmt::Debug for OracleSettings {
         formatter.finish()
     }
 }
+impl OracleSettings {
+    /// Creates a new builder-style object to manufacture [`OracleSettings`](crate::model::OracleSettings).
+    pub fn builder() -> crate::model::oracle_settings::Builder {
+        crate::model::oracle_settings::Builder::default()
+    }
+}
+
 /// See [`OracleSettings`](crate::model::OracleSettings).
 pub mod oracle_settings {
 
@@ -7852,12 +7880,6 @@ pub mod oracle_settings {
         }
     }
 }
-impl OracleSettings {
-    /// Creates a new builder-style object to manufacture [`OracleSettings`](crate::model::OracleSettings).
-    pub fn builder() -> crate::model::oracle_settings::Builder {
-        crate::model::oracle_settings::Builder::default()
-    }
-}
 
 /// When writing a match expression against `CharLengthSemantics`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -8107,6 +8129,13 @@ impl std::fmt::Debug for MySqlSettings {
         formatter.finish()
     }
 }
+impl MySqlSettings {
+    /// Creates a new builder-style object to manufacture [`MySqlSettings`](crate::model::MySqlSettings).
+    pub fn builder() -> crate::model::my_sql_settings::Builder {
+        crate::model::my_sql_settings::Builder::default()
+    }
+}
+
 /// See [`MySqlSettings`](crate::model::MySqlSettings).
 pub mod my_sql_settings {
 
@@ -8361,12 +8390,6 @@ pub mod my_sql_settings {
         }
     }
 }
-impl MySqlSettings {
-    /// Creates a new builder-style object to manufacture [`MySqlSettings`](crate::model::MySqlSettings).
-    pub fn builder() -> crate::model::my_sql_settings::Builder {
-        crate::model::my_sql_settings::Builder::default()
-    }
-}
 
 /// <p>Provides information that defines a PostgreSQL endpoint.</p>
 #[non_exhaustive]
@@ -8559,6 +8582,13 @@ impl std::fmt::Debug for PostgreSqlSettings {
         formatter.finish()
     }
 }
+impl PostgreSqlSettings {
+    /// Creates a new builder-style object to manufacture [`PostgreSqlSettings`](crate::model::PostgreSqlSettings).
+    pub fn builder() -> crate::model::postgre_sql_settings::Builder {
+        crate::model::postgre_sql_settings::Builder::default()
+    }
+}
+
 /// See [`PostgreSqlSettings`](crate::model::PostgreSqlSettings).
 pub mod postgre_sql_settings {
 
@@ -8879,12 +8909,6 @@ pub mod postgre_sql_settings {
             formatter.field("trim_space_in_char", &self.trim_space_in_char);
             formatter.finish()
         }
-    }
-}
-impl PostgreSqlSettings {
-    /// Creates a new builder-style object to manufacture [`PostgreSqlSettings`](crate::model::PostgreSqlSettings).
-    pub fn builder() -> crate::model::postgre_sql_settings::Builder {
-        crate::model::postgre_sql_settings::Builder::default()
     }
 }
 
@@ -9269,6 +9293,13 @@ impl std::fmt::Debug for RedshiftSettings {
         formatter.finish()
     }
 }
+impl RedshiftSettings {
+    /// Creates a new builder-style object to manufacture [`RedshiftSettings`](crate::model::RedshiftSettings).
+    pub fn builder() -> crate::model::redshift_settings::Builder {
+        crate::model::redshift_settings::Builder::default()
+    }
+}
+
 /// See [`RedshiftSettings`](crate::model::RedshiftSettings).
 pub mod redshift_settings {
 
@@ -9750,12 +9781,6 @@ pub mod redshift_settings {
         }
     }
 }
-impl RedshiftSettings {
-    /// Creates a new builder-style object to manufacture [`RedshiftSettings`](crate::model::RedshiftSettings).
-    pub fn builder() -> crate::model::redshift_settings::Builder {
-        crate::model::redshift_settings::Builder::default()
-    }
-}
 
 /// When writing a match expression against `EncryptionModeValue`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -9905,6 +9930,13 @@ impl NeptuneSettings {
         self.iam_auth_enabled
     }
 }
+impl NeptuneSettings {
+    /// Creates a new builder-style object to manufacture [`NeptuneSettings`](crate::model::NeptuneSettings).
+    pub fn builder() -> crate::model::neptune_settings::Builder {
+        crate::model::neptune_settings::Builder::default()
+    }
+}
+
 /// See [`NeptuneSettings`](crate::model::NeptuneSettings).
 pub mod neptune_settings {
 
@@ -10014,12 +10046,6 @@ pub mod neptune_settings {
         }
     }
 }
-impl NeptuneSettings {
-    /// Creates a new builder-style object to manufacture [`NeptuneSettings`](crate::model::NeptuneSettings).
-    pub fn builder() -> crate::model::neptune_settings::Builder {
-        crate::model::neptune_settings::Builder::default()
-    }
-}
 
 /// <p>Provides information that defines an OpenSearch endpoint.</p>
 #[non_exhaustive]
@@ -10065,6 +10091,13 @@ impl ElasticsearchSettings {
         self.use_new_mapping_type
     }
 }
+impl ElasticsearchSettings {
+    /// Creates a new builder-style object to manufacture [`ElasticsearchSettings`](crate::model::ElasticsearchSettings).
+    pub fn builder() -> crate::model::elasticsearch_settings::Builder {
+        crate::model::elasticsearch_settings::Builder::default()
+    }
+}
+
 /// See [`ElasticsearchSettings`](crate::model::ElasticsearchSettings).
 pub mod elasticsearch_settings {
 
@@ -10144,12 +10177,6 @@ pub mod elasticsearch_settings {
                 use_new_mapping_type: self.use_new_mapping_type,
             }
         }
-    }
-}
-impl ElasticsearchSettings {
-    /// Creates a new builder-style object to manufacture [`ElasticsearchSettings`](crate::model::ElasticsearchSettings).
-    pub fn builder() -> crate::model::elasticsearch_settings::Builder {
-        crate::model::elasticsearch_settings::Builder::default()
     }
 }
 
@@ -10325,6 +10352,13 @@ impl std::fmt::Debug for KafkaSettings {
         formatter.finish()
     }
 }
+impl KafkaSettings {
+    /// Creates a new builder-style object to manufacture [`KafkaSettings`](crate::model::KafkaSettings).
+    pub fn builder() -> crate::model::kafka_settings::Builder {
+        crate::model::kafka_settings::Builder::default()
+    }
+}
+
 /// See [`KafkaSettings`](crate::model::KafkaSettings).
 pub mod kafka_settings {
 
@@ -10626,12 +10660,6 @@ pub mod kafka_settings {
         }
     }
 }
-impl KafkaSettings {
-    /// Creates a new builder-style object to manufacture [`KafkaSettings`](crate::model::KafkaSettings).
-    pub fn builder() -> crate::model::kafka_settings::Builder {
-        crate::model::kafka_settings::Builder::default()
-    }
-}
 
 /// When writing a match expression against `KafkaSecurityProtocol`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -10909,6 +10937,13 @@ impl KinesisSettings {
         self.no_hex_prefix
     }
 }
+impl KinesisSettings {
+    /// Creates a new builder-style object to manufacture [`KinesisSettings`](crate::model::KinesisSettings).
+    pub fn builder() -> crate::model::kinesis_settings::Builder {
+        crate::model::kinesis_settings::Builder::default()
+    }
+}
+
 /// See [`KinesisSettings`](crate::model::KinesisSettings).
 pub mod kinesis_settings {
 
@@ -11057,12 +11092,6 @@ pub mod kinesis_settings {
         }
     }
 }
-impl KinesisSettings {
-    /// Creates a new builder-style object to manufacture [`KinesisSettings`](crate::model::KinesisSettings).
-    pub fn builder() -> crate::model::kinesis_settings::Builder {
-        crate::model::kinesis_settings::Builder::default()
-    }
-}
 
 /// <p>Provides information that defines a MongoDB endpoint.</p>
 #[non_exhaustive]
@@ -11208,6 +11237,13 @@ impl std::fmt::Debug for MongoDbSettings {
         formatter.finish()
     }
 }
+impl MongoDbSettings {
+    /// Creates a new builder-style object to manufacture [`MongoDbSettings`](crate::model::MongoDbSettings).
+    pub fn builder() -> crate::model::mongo_db_settings::Builder {
+        crate::model::mongo_db_settings::Builder::default()
+    }
+}
+
 /// See [`MongoDbSettings`](crate::model::MongoDbSettings).
 pub mod mongo_db_settings {
 
@@ -11458,12 +11494,6 @@ pub mod mongo_db_settings {
         }
     }
 }
-impl MongoDbSettings {
-    /// Creates a new builder-style object to manufacture [`MongoDbSettings`](crate::model::MongoDbSettings).
-    pub fn builder() -> crate::model::mongo_db_settings::Builder {
-        crate::model::mongo_db_settings::Builder::default()
-    }
-}
 
 /// When writing a match expression against `AuthMechanismValue`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -11673,6 +11703,13 @@ impl DmsTransferSettings {
         self.bucket_name.as_deref()
     }
 }
+impl DmsTransferSettings {
+    /// Creates a new builder-style object to manufacture [`DmsTransferSettings`](crate::model::DmsTransferSettings).
+    pub fn builder() -> crate::model::dms_transfer_settings::Builder {
+        crate::model::dms_transfer_settings::Builder::default()
+    }
+}
+
 /// See [`DmsTransferSettings`](crate::model::DmsTransferSettings).
 pub mod dms_transfer_settings {
 
@@ -11714,12 +11751,6 @@ pub mod dms_transfer_settings {
                 bucket_name: self.bucket_name,
             }
         }
-    }
-}
-impl DmsTransferSettings {
-    /// Creates a new builder-style object to manufacture [`DmsTransferSettings`](crate::model::DmsTransferSettings).
-    pub fn builder() -> crate::model::dms_transfer_settings::Builder {
-        crate::model::dms_transfer_settings::Builder::default()
     }
 }
 
@@ -12176,6 +12207,13 @@ impl S3Settings {
         self.expected_bucket_owner.as_deref()
     }
 }
+impl S3Settings {
+    /// Creates a new builder-style object to manufacture [`S3Settings`](crate::model::S3Settings).
+    pub fn builder() -> crate::model::s3_settings::Builder {
+        crate::model::s3_settings::Builder::default()
+    }
+}
+
 /// See [`S3Settings`](crate::model::S3Settings).
 pub mod s3_settings {
 
@@ -12914,12 +12952,6 @@ pub mod s3_settings {
         }
     }
 }
-impl S3Settings {
-    /// Creates a new builder-style object to manufacture [`S3Settings`](crate::model::S3Settings).
-    pub fn builder() -> crate::model::s3_settings::Builder {
-        crate::model::s3_settings::Builder::default()
-    }
-}
 
 /// When writing a match expression against `CannedAclForObjectsValue`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -13646,6 +13678,13 @@ impl DynamoDbSettings {
         self.service_access_role_arn.as_deref()
     }
 }
+impl DynamoDbSettings {
+    /// Creates a new builder-style object to manufacture [`DynamoDbSettings`](crate::model::DynamoDbSettings).
+    pub fn builder() -> crate::model::dynamo_db_settings::Builder {
+        crate::model::dynamo_db_settings::Builder::default()
+    }
+}
+
 /// See [`DynamoDbSettings`](crate::model::DynamoDbSettings).
 pub mod dynamo_db_settings {
 
@@ -13675,12 +13714,6 @@ pub mod dynamo_db_settings {
                 service_access_role_arn: self.service_access_role_arn,
             }
         }
-    }
-}
-impl DynamoDbSettings {
-    /// Creates a new builder-style object to manufacture [`DynamoDbSettings`](crate::model::DynamoDbSettings).
-    pub fn builder() -> crate::model::dynamo_db_settings::Builder {
-        crate::model::dynamo_db_settings::Builder::default()
     }
 }
 
@@ -13909,6 +13942,13 @@ impl Tag {
         self.resource_arn.as_deref()
     }
 }
+impl Tag {
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
+    pub fn builder() -> crate::model::tag::Builder {
+        crate::model::tag::Builder::default()
+    }
+}
+
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
 
@@ -13959,12 +13999,6 @@ pub mod tag {
                 resource_arn: self.resource_arn,
             }
         }
-    }
-}
-impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
-    pub fn builder() -> crate::model::tag::Builder {
-        crate::model::tag::Builder::default()
     }
 }
 
@@ -14045,6 +14079,13 @@ impl Certificate {
         self.key_length
     }
 }
+impl Certificate {
+    /// Creates a new builder-style object to manufacture [`Certificate`](crate::model::Certificate).
+    pub fn builder() -> crate::model::certificate::Builder {
+        crate::model::certificate::Builder::default()
+    }
+}
+
 /// See [`Certificate`](crate::model::Certificate).
 pub mod certificate {
 
@@ -14206,12 +14247,6 @@ pub mod certificate {
                 key_length: self.key_length,
             }
         }
-    }
-}
-impl Certificate {
-    /// Creates a new builder-style object to manufacture [`Certificate`](crate::model::Certificate).
-    pub fn builder() -> crate::model::certificate::Builder {
-        crate::model::certificate::Builder::default()
     }
 }
 
@@ -14413,6 +14448,13 @@ impl TableStatistics {
         self.validation_state_details.as_deref()
     }
 }
+impl TableStatistics {
+    /// Creates a new builder-style object to manufacture [`TableStatistics`](crate::model::TableStatistics).
+    pub fn builder() -> crate::model::table_statistics::Builder {
+        crate::model::table_statistics::Builder::default()
+    }
+}
+
 /// See [`TableStatistics`](crate::model::TableStatistics).
 pub mod table_statistics {
 
@@ -14755,12 +14797,6 @@ pub mod table_statistics {
         }
     }
 }
-impl TableStatistics {
-    /// Creates a new builder-style object to manufacture [`TableStatistics`](crate::model::TableStatistics).
-    pub fn builder() -> crate::model::table_statistics::Builder {
-        crate::model::table_statistics::Builder::default()
-    }
-}
 
 /// <p>Identifies the name and value of a filter object. This filter is used to limit the number and type of DMS objects that are returned for a particular <code>Describe*</code> call or similar operation. Filters are used as an optional parameter for certain API operations. </p>
 #[non_exhaustive]
@@ -14783,6 +14819,13 @@ impl Filter {
         self.values.as_deref()
     }
 }
+impl Filter {
+    /// Creates a new builder-style object to manufacture [`Filter`](crate::model::Filter).
+    pub fn builder() -> crate::model::filter::Builder {
+        crate::model::filter::Builder::default()
+    }
+}
+
 /// See [`Filter`](crate::model::Filter).
 pub mod filter {
 
@@ -14830,12 +14873,6 @@ pub mod filter {
                 values: self.values,
             }
         }
-    }
-}
-impl Filter {
-    /// Creates a new builder-style object to manufacture [`Filter`](crate::model::Filter).
-    pub fn builder() -> crate::model::filter::Builder {
-        crate::model::filter::Builder::default()
     }
 }
 
@@ -14903,6 +14940,13 @@ impl ReplicationTaskIndividualAssessment {
             .as_ref()
     }
 }
+impl ReplicationTaskIndividualAssessment {
+    /// Creates a new builder-style object to manufacture [`ReplicationTaskIndividualAssessment`](crate::model::ReplicationTaskIndividualAssessment).
+    pub fn builder() -> crate::model::replication_task_individual_assessment::Builder {
+        crate::model::replication_task_individual_assessment::Builder::default()
+    }
+}
+
 /// See [`ReplicationTaskIndividualAssessment`](crate::model::ReplicationTaskIndividualAssessment).
 pub mod replication_task_individual_assessment {
 
@@ -15022,12 +15066,6 @@ pub mod replication_task_individual_assessment {
         }
     }
 }
-impl ReplicationTaskIndividualAssessment {
-    /// Creates a new builder-style object to manufacture [`ReplicationTaskIndividualAssessment`](crate::model::ReplicationTaskIndividualAssessment).
-    pub fn builder() -> crate::model::replication_task_individual_assessment::Builder {
-        crate::model::replication_task_individual_assessment::Builder::default()
-    }
-}
 
 /// <p> The task assessment report in JSON format. </p>
 #[non_exhaustive]
@@ -15091,6 +15129,13 @@ impl ReplicationTaskAssessmentResult {
         self.s3_object_url.as_deref()
     }
 }
+impl ReplicationTaskAssessmentResult {
+    /// Creates a new builder-style object to manufacture [`ReplicationTaskAssessmentResult`](crate::model::ReplicationTaskAssessmentResult).
+    pub fn builder() -> crate::model::replication_task_assessment_result::Builder {
+        crate::model::replication_task_assessment_result::Builder::default()
+    }
+}
+
 /// See [`ReplicationTaskAssessmentResult`](crate::model::ReplicationTaskAssessmentResult).
 pub mod replication_task_assessment_result {
 
@@ -15223,12 +15268,6 @@ pub mod replication_task_assessment_result {
         }
     }
 }
-impl ReplicationTaskAssessmentResult {
-    /// Creates a new builder-style object to manufacture [`ReplicationTaskAssessmentResult`](crate::model::ReplicationTaskAssessmentResult).
-    pub fn builder() -> crate::model::replication_task_assessment_result::Builder {
-        crate::model::replication_task_assessment_result::Builder::default()
-    }
-}
 
 /// <p>Contains metadata for a replication instance task log.</p>
 #[non_exhaustive]
@@ -15258,6 +15297,13 @@ impl ReplicationInstanceTaskLog {
         self.replication_instance_task_log_size
     }
 }
+impl ReplicationInstanceTaskLog {
+    /// Creates a new builder-style object to manufacture [`ReplicationInstanceTaskLog`](crate::model::ReplicationInstanceTaskLog).
+    pub fn builder() -> crate::model::replication_instance_task_log::Builder {
+        crate::model::replication_instance_task_log::Builder::default()
+    }
+}
+
 /// See [`ReplicationInstanceTaskLog`](crate::model::ReplicationInstanceTaskLog).
 pub mod replication_instance_task_log {
 
@@ -15321,12 +15367,6 @@ pub mod replication_instance_task_log {
         }
     }
 }
-impl ReplicationInstanceTaskLog {
-    /// Creates a new builder-style object to manufacture [`ReplicationInstanceTaskLog`](crate::model::ReplicationInstanceTaskLog).
-    pub fn builder() -> crate::model::replication_instance_task_log::Builder {
-        crate::model::replication_instance_task_log::Builder::default()
-    }
-}
 
 /// <p>Identifies an DMS resource and any pending actions for it.</p>
 #[non_exhaustive]
@@ -15352,6 +15392,13 @@ impl ResourcePendingMaintenanceActions {
         self.pending_maintenance_action_details.as_deref()
     }
 }
+impl ResourcePendingMaintenanceActions {
+    /// Creates a new builder-style object to manufacture [`ResourcePendingMaintenanceActions`](crate::model::ResourcePendingMaintenanceActions).
+    pub fn builder() -> crate::model::resource_pending_maintenance_actions::Builder {
+        crate::model::resource_pending_maintenance_actions::Builder::default()
+    }
+}
+
 /// See [`ResourcePendingMaintenanceActions`](crate::model::ResourcePendingMaintenanceActions).
 pub mod resource_pending_maintenance_actions {
 
@@ -15408,12 +15455,6 @@ pub mod resource_pending_maintenance_actions {
         }
     }
 }
-impl ResourcePendingMaintenanceActions {
-    /// Creates a new builder-style object to manufacture [`ResourcePendingMaintenanceActions`](crate::model::ResourcePendingMaintenanceActions).
-    pub fn builder() -> crate::model::resource_pending_maintenance_actions::Builder {
-        crate::model::resource_pending_maintenance_actions::Builder::default()
-    }
-}
 
 /// <p>Describes a maintenance action pending for an DMS resource, including when and how it will be applied. This data type is a response element to the <code>DescribePendingMaintenanceActions</code> operation.</p>
 #[non_exhaustive]
@@ -15464,6 +15505,13 @@ impl PendingMaintenanceAction {
         self.description.as_deref()
     }
 }
+impl PendingMaintenanceAction {
+    /// Creates a new builder-style object to manufacture [`PendingMaintenanceAction`](crate::model::PendingMaintenanceAction).
+    pub fn builder() -> crate::model::pending_maintenance_action::Builder {
+        crate::model::pending_maintenance_action::Builder::default()
+    }
+}
+
 /// See [`PendingMaintenanceAction`](crate::model::PendingMaintenanceAction).
 pub mod pending_maintenance_action {
 
@@ -15564,12 +15612,6 @@ pub mod pending_maintenance_action {
         }
     }
 }
-impl PendingMaintenanceAction {
-    /// Creates a new builder-style object to manufacture [`PendingMaintenanceAction`](crate::model::PendingMaintenanceAction).
-    pub fn builder() -> crate::model::pending_maintenance_action::Builder {
-        crate::model::pending_maintenance_action::Builder::default()
-    }
-}
 
 /// <p>In response to the <code>DescribeOrderableReplicationInstances</code> operation, this object describes an available replication instance. This description includes the replication instance's type, engine version, and allocated storage.</p>
 #[non_exhaustive]
@@ -15647,6 +15689,13 @@ impl OrderableReplicationInstance {
         self.release_status.as_ref()
     }
 }
+impl OrderableReplicationInstance {
+    /// Creates a new builder-style object to manufacture [`OrderableReplicationInstance`](crate::model::OrderableReplicationInstance).
+    pub fn builder() -> crate::model::orderable_replication_instance::Builder {
+        crate::model::orderable_replication_instance::Builder::default()
+    }
+}
+
 /// See [`OrderableReplicationInstance`](crate::model::OrderableReplicationInstance).
 pub mod orderable_replication_instance {
 
@@ -15793,12 +15842,6 @@ pub mod orderable_replication_instance {
                 release_status: self.release_status,
             }
         }
-    }
-}
-impl OrderableReplicationInstance {
-    /// Creates a new builder-style object to manufacture [`OrderableReplicationInstance`](crate::model::OrderableReplicationInstance).
-    pub fn builder() -> crate::model::orderable_replication_instance::Builder {
-        crate::model::orderable_replication_instance::Builder::default()
     }
 }
 
@@ -15961,6 +16004,13 @@ impl SchemaResponse {
         self.similarity
     }
 }
+impl SchemaResponse {
+    /// Creates a new builder-style object to manufacture [`SchemaResponse`](crate::model::SchemaResponse).
+    pub fn builder() -> crate::model::schema_response::Builder {
+        crate::model::schema_response::Builder::default()
+    }
+}
+
 /// See [`SchemaResponse`](crate::model::SchemaResponse).
 pub mod schema_response {
 
@@ -16094,12 +16144,6 @@ pub mod schema_response {
         }
     }
 }
-impl SchemaResponse {
-    /// Creates a new builder-style object to manufacture [`SchemaResponse`](crate::model::SchemaResponse).
-    pub fn builder() -> crate::model::schema_response::Builder {
-        crate::model::schema_response::Builder::default()
-    }
-}
 
 /// <p>Describes a schema in a Fleet Advisor collector inventory.</p>
 #[non_exhaustive]
@@ -16143,6 +16187,13 @@ impl SchemaShortInfoResponse {
         self.database_ip_address.as_deref()
     }
 }
+impl SchemaShortInfoResponse {
+    /// Creates a new builder-style object to manufacture [`SchemaShortInfoResponse`](crate::model::SchemaShortInfoResponse).
+    pub fn builder() -> crate::model::schema_short_info_response::Builder {
+        crate::model::schema_short_info_response::Builder::default()
+    }
+}
+
 /// See [`SchemaShortInfoResponse`](crate::model::SchemaShortInfoResponse).
 pub mod schema_short_info_response {
 
@@ -16225,12 +16276,6 @@ pub mod schema_short_info_response {
         }
     }
 }
-impl SchemaShortInfoResponse {
-    /// Creates a new builder-style object to manufacture [`SchemaShortInfoResponse`](crate::model::SchemaShortInfoResponse).
-    pub fn builder() -> crate::model::schema_short_info_response::Builder {
-        crate::model::schema_short_info_response::Builder::default()
-    }
-}
 
 /// <p>Describes a database in a Fleet Advisor collector inventory.</p>
 #[non_exhaustive]
@@ -16267,6 +16312,13 @@ impl DatabaseShortInfoResponse {
         self.database_engine.as_deref()
     }
 }
+impl DatabaseShortInfoResponse {
+    /// Creates a new builder-style object to manufacture [`DatabaseShortInfoResponse`](crate::model::DatabaseShortInfoResponse).
+    pub fn builder() -> crate::model::database_short_info_response::Builder {
+        crate::model::database_short_info_response::Builder::default()
+    }
+}
+
 /// See [`DatabaseShortInfoResponse`](crate::model::DatabaseShortInfoResponse).
 pub mod database_short_info_response {
 
@@ -16340,12 +16392,6 @@ pub mod database_short_info_response {
         }
     }
 }
-impl DatabaseShortInfoResponse {
-    /// Creates a new builder-style object to manufacture [`DatabaseShortInfoResponse`](crate::model::DatabaseShortInfoResponse).
-    pub fn builder() -> crate::model::database_short_info_response::Builder {
-        crate::model::database_short_info_response::Builder::default()
-    }
-}
 
 /// <p>Describes a server in a Fleet Advisor collector inventory.</p>
 #[non_exhaustive]
@@ -16375,6 +16421,13 @@ impl ServerShortInfoResponse {
         self.server_name.as_deref()
     }
 }
+impl ServerShortInfoResponse {
+    /// Creates a new builder-style object to manufacture [`ServerShortInfoResponse`](crate::model::ServerShortInfoResponse).
+    pub fn builder() -> crate::model::server_short_info_response::Builder {
+        crate::model::server_short_info_response::Builder::default()
+    }
+}
+
 /// See [`ServerShortInfoResponse`](crate::model::ServerShortInfoResponse).
 pub mod server_short_info_response {
 
@@ -16425,12 +16478,6 @@ pub mod server_short_info_response {
                 server_name: self.server_name,
             }
         }
-    }
-}
-impl ServerShortInfoResponse {
-    /// Creates a new builder-style object to manufacture [`ServerShortInfoResponse`](crate::model::ServerShortInfoResponse).
-    pub fn builder() -> crate::model::server_short_info_response::Builder {
-        crate::model::server_short_info_response::Builder::default()
     }
 }
 
@@ -16488,6 +16535,13 @@ impl FleetAdvisorSchemaObjectResponse {
         self.code_size
     }
 }
+impl FleetAdvisorSchemaObjectResponse {
+    /// Creates a new builder-style object to manufacture [`FleetAdvisorSchemaObjectResponse`](crate::model::FleetAdvisorSchemaObjectResponse).
+    pub fn builder() -> crate::model::fleet_advisor_schema_object_response::Builder {
+        crate::model::fleet_advisor_schema_object_response::Builder::default()
+    }
+}
+
 /// See [`FleetAdvisorSchemaObjectResponse`](crate::model::FleetAdvisorSchemaObjectResponse).
 pub mod fleet_advisor_schema_object_response {
 
@@ -16576,12 +16630,6 @@ pub mod fleet_advisor_schema_object_response {
         }
     }
 }
-impl FleetAdvisorSchemaObjectResponse {
-    /// Creates a new builder-style object to manufacture [`FleetAdvisorSchemaObjectResponse`](crate::model::FleetAdvisorSchemaObjectResponse).
-    pub fn builder() -> crate::model::fleet_advisor_schema_object_response::Builder {
-        crate::model::fleet_advisor_schema_object_response::Builder::default()
-    }
-}
 
 /// <p>Describes a large-scale assessment (LSA) analysis run by a Fleet Advisor collector.</p>
 #[non_exhaustive]
@@ -16604,6 +16652,13 @@ impl FleetAdvisorLsaAnalysisResponse {
         self.status.as_deref()
     }
 }
+impl FleetAdvisorLsaAnalysisResponse {
+    /// Creates a new builder-style object to manufacture [`FleetAdvisorLsaAnalysisResponse`](crate::model::FleetAdvisorLsaAnalysisResponse).
+    pub fn builder() -> crate::model::fleet_advisor_lsa_analysis_response::Builder {
+        crate::model::fleet_advisor_lsa_analysis_response::Builder::default()
+    }
+}
+
 /// See [`FleetAdvisorLsaAnalysisResponse`](crate::model::FleetAdvisorLsaAnalysisResponse).
 pub mod fleet_advisor_lsa_analysis_response {
 
@@ -16645,12 +16700,6 @@ pub mod fleet_advisor_lsa_analysis_response {
                 status: self.status,
             }
         }
-    }
-}
-impl FleetAdvisorLsaAnalysisResponse {
-    /// Creates a new builder-style object to manufacture [`FleetAdvisorLsaAnalysisResponse`](crate::model::FleetAdvisorLsaAnalysisResponse).
-    pub fn builder() -> crate::model::fleet_advisor_lsa_analysis_response::Builder {
-        crate::model::fleet_advisor_lsa_analysis_response::Builder::default()
     }
 }
 
@@ -16713,6 +16762,13 @@ impl DatabaseResponse {
         self.collectors.as_deref()
     }
 }
+impl DatabaseResponse {
+    /// Creates a new builder-style object to manufacture [`DatabaseResponse`](crate::model::DatabaseResponse).
+    pub fn builder() -> crate::model::database_response::Builder {
+        crate::model::database_response::Builder::default()
+    }
+}
+
 /// See [`DatabaseResponse`](crate::model::DatabaseResponse).
 pub mod database_response {
 
@@ -16836,12 +16892,6 @@ pub mod database_response {
         }
     }
 }
-impl DatabaseResponse {
-    /// Creates a new builder-style object to manufacture [`DatabaseResponse`](crate::model::DatabaseResponse).
-    pub fn builder() -> crate::model::database_response::Builder {
-        crate::model::database_response::Builder::default()
-    }
-}
 
 /// <p>Briefly describes a Fleet Advisor collector.</p>
 #[non_exhaustive]
@@ -16864,6 +16914,13 @@ impl CollectorShortInfoResponse {
         self.collector_name.as_deref()
     }
 }
+impl CollectorShortInfoResponse {
+    /// Creates a new builder-style object to manufacture [`CollectorShortInfoResponse`](crate::model::CollectorShortInfoResponse).
+    pub fn builder() -> crate::model::collector_short_info_response::Builder {
+        crate::model::collector_short_info_response::Builder::default()
+    }
+}
+
 /// See [`CollectorShortInfoResponse`](crate::model::CollectorShortInfoResponse).
 pub mod collector_short_info_response {
 
@@ -16908,12 +16965,6 @@ pub mod collector_short_info_response {
                 collector_name: self.collector_name,
             }
         }
-    }
-}
-impl CollectorShortInfoResponse {
-    /// Creates a new builder-style object to manufacture [`CollectorShortInfoResponse`](crate::model::CollectorShortInfoResponse).
-    pub fn builder() -> crate::model::collector_short_info_response::Builder {
-        crate::model::collector_short_info_response::Builder::default()
     }
 }
 
@@ -16973,6 +17024,13 @@ impl DatabaseInstanceSoftwareDetailsResponse {
         self.tooltip.as_deref()
     }
 }
+impl DatabaseInstanceSoftwareDetailsResponse {
+    /// Creates a new builder-style object to manufacture [`DatabaseInstanceSoftwareDetailsResponse`](crate::model::DatabaseInstanceSoftwareDetailsResponse).
+    pub fn builder() -> crate::model::database_instance_software_details_response::Builder {
+        crate::model::database_instance_software_details_response::Builder::default()
+    }
+}
+
 /// See [`DatabaseInstanceSoftwareDetailsResponse`](crate::model::DatabaseInstanceSoftwareDetailsResponse).
 pub mod database_instance_software_details_response {
 
@@ -17082,12 +17140,6 @@ pub mod database_instance_software_details_response {
         }
     }
 }
-impl DatabaseInstanceSoftwareDetailsResponse {
-    /// Creates a new builder-style object to manufacture [`DatabaseInstanceSoftwareDetailsResponse`](crate::model::DatabaseInstanceSoftwareDetailsResponse).
-    pub fn builder() -> crate::model::database_instance_software_details_response::Builder {
-        crate::model::database_instance_software_details_response::Builder::default()
-    }
-}
 
 /// <p>Describes a Fleet Advisor collector.</p>
 #[non_exhaustive]
@@ -17189,6 +17241,13 @@ impl CollectorResponse {
         self.inventory_data.as_ref()
     }
 }
+impl CollectorResponse {
+    /// Creates a new builder-style object to manufacture [`CollectorResponse`](crate::model::CollectorResponse).
+    pub fn builder() -> crate::model::collector_response::Builder {
+        crate::model::collector_response::Builder::default()
+    }
+}
+
 /// See [`CollectorResponse`](crate::model::CollectorResponse).
 pub mod collector_response {
 
@@ -17394,12 +17453,6 @@ pub mod collector_response {
         }
     }
 }
-impl CollectorResponse {
-    /// Creates a new builder-style object to manufacture [`CollectorResponse`](crate::model::CollectorResponse).
-    pub fn builder() -> crate::model::collector_response::Builder {
-        crate::model::collector_response::Builder::default()
-    }
-}
 
 /// <p>Describes a Fleet Advisor collector inventory.</p>
 #[non_exhaustive]
@@ -17422,6 +17475,13 @@ impl InventoryData {
         self.number_of_schemas
     }
 }
+impl InventoryData {
+    /// Creates a new builder-style object to manufacture [`InventoryData`](crate::model::InventoryData).
+    pub fn builder() -> crate::model::inventory_data::Builder {
+        crate::model::inventory_data::Builder::default()
+    }
+}
+
 /// See [`InventoryData`](crate::model::InventoryData).
 pub mod inventory_data {
 
@@ -17462,12 +17522,6 @@ pub mod inventory_data {
         }
     }
 }
-impl InventoryData {
-    /// Creates a new builder-style object to manufacture [`InventoryData`](crate::model::InventoryData).
-    pub fn builder() -> crate::model::inventory_data::Builder {
-        crate::model::inventory_data::Builder::default()
-    }
-}
 
 /// <p>Describes the last Fleet Advisor collector health check.</p>
 #[non_exhaustive]
@@ -17504,6 +17558,13 @@ impl CollectorHealthCheck {
         self.web_collector_granted_role_based_access
     }
 }
+impl CollectorHealthCheck {
+    /// Creates a new builder-style object to manufacture [`CollectorHealthCheck`](crate::model::CollectorHealthCheck).
+    pub fn builder() -> crate::model::collector_health_check::Builder {
+        crate::model::collector_health_check::Builder::default()
+    }
+}
+
 /// See [`CollectorHealthCheck`](crate::model::CollectorHealthCheck).
 pub mod collector_health_check {
 
@@ -17573,12 +17634,6 @@ pub mod collector_health_check {
                     .web_collector_granted_role_based_access,
             }
         }
-    }
-}
-impl CollectorHealthCheck {
-    /// Creates a new builder-style object to manufacture [`CollectorHealthCheck`](crate::model::CollectorHealthCheck).
-    pub fn builder() -> crate::model::collector_health_check::Builder {
-        crate::model::collector_health_check::Builder::default()
     }
 }
 
@@ -17811,6 +17866,13 @@ impl Event {
         self.date.as_ref()
     }
 }
+impl Event {
+    /// Creates a new builder-style object to manufacture [`Event`](crate::model::Event).
+    pub fn builder() -> crate::model::event::Builder {
+        crate::model::event::Builder::default()
+    }
+}
+
 /// See [`Event`](crate::model::Event).
 pub mod event {
 
@@ -17902,12 +17964,6 @@ pub mod event {
                 date: self.date,
             }
         }
-    }
-}
-impl Event {
-    /// Creates a new builder-style object to manufacture [`Event`](crate::model::Event).
-    pub fn builder() -> crate::model::event::Builder {
-        crate::model::event::Builder::default()
     }
 }
 
@@ -18019,6 +18075,13 @@ impl EventCategoryGroup {
         self.event_categories.as_deref()
     }
 }
+impl EventCategoryGroup {
+    /// Creates a new builder-style object to manufacture [`EventCategoryGroup`](crate::model::EventCategoryGroup).
+    pub fn builder() -> crate::model::event_category_group::Builder {
+        crate::model::event_category_group::Builder::default()
+    }
+}
+
 /// See [`EventCategoryGroup`](crate::model::EventCategoryGroup).
 pub mod event_category_group {
 
@@ -18070,12 +18133,6 @@ pub mod event_category_group {
         }
     }
 }
-impl EventCategoryGroup {
-    /// Creates a new builder-style object to manufacture [`EventCategoryGroup`](crate::model::EventCategoryGroup).
-    pub fn builder() -> crate::model::event_category_group::Builder {
-        crate::model::event_category_group::Builder::default()
-    }
-}
 
 /// <p>Provides information about types of supported endpoints in response to a request by the <code>DescribeEndpointTypes</code> operation. This information includes the type of endpoint, the database engine name, and whether change data capture (CDC) is supported.</p>
 #[non_exhaustive]
@@ -18121,6 +18178,13 @@ impl SupportedEndpointType {
         self.engine_display_name.as_deref()
     }
 }
+impl SupportedEndpointType {
+    /// Creates a new builder-style object to manufacture [`SupportedEndpointType`](crate::model::SupportedEndpointType).
+    pub fn builder() -> crate::model::supported_endpoint_type::Builder {
+        crate::model::supported_endpoint_type::Builder::default()
+    }
+}
+
 /// See [`SupportedEndpointType`](crate::model::SupportedEndpointType).
 pub mod supported_endpoint_type {
 
@@ -18211,12 +18275,6 @@ pub mod supported_endpoint_type {
         }
     }
 }
-impl SupportedEndpointType {
-    /// Creates a new builder-style object to manufacture [`SupportedEndpointType`](crate::model::SupportedEndpointType).
-    pub fn builder() -> crate::model::supported_endpoint_type::Builder {
-        crate::model::supported_endpoint_type::Builder::default()
-    }
-}
 
 /// <p>Endpoint settings.</p>
 #[non_exhaustive]
@@ -18288,6 +18346,13 @@ impl EndpointSetting {
         self.default_value.as_deref()
     }
 }
+impl EndpointSetting {
+    /// Creates a new builder-style object to manufacture [`EndpointSetting`](crate::model::EndpointSetting).
+    pub fn builder() -> crate::model::endpoint_setting::Builder {
+        crate::model::endpoint_setting::Builder::default()
+    }
+}
+
 /// See [`EndpointSetting`](crate::model::EndpointSetting).
 pub mod endpoint_setting {
 
@@ -18430,12 +18495,6 @@ pub mod endpoint_setting {
         }
     }
 }
-impl EndpointSetting {
-    /// Creates a new builder-style object to manufacture [`EndpointSetting`](crate::model::EndpointSetting).
-    pub fn builder() -> crate::model::endpoint_setting::Builder {
-        crate::model::endpoint_setting::Builder::default()
-    }
-}
 
 /// When writing a match expression against `EndpointSettingTypeValue`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -18567,6 +18626,13 @@ impl AccountQuota {
         self.max
     }
 }
+impl AccountQuota {
+    /// Creates a new builder-style object to manufacture [`AccountQuota`](crate::model::AccountQuota).
+    pub fn builder() -> crate::model::account_quota::Builder {
+        crate::model::account_quota::Builder::default()
+    }
+}
+
 /// See [`AccountQuota`](crate::model::AccountQuota).
 pub mod account_quota {
 
@@ -18620,11 +18686,5 @@ pub mod account_quota {
                 max: self.max.unwrap_or_default(),
             }
         }
-    }
-}
-impl AccountQuota {
-    /// Creates a new builder-style object to manufacture [`AccountQuota`](crate::model::AccountQuota).
-    pub fn builder() -> crate::model::account_quota::Builder {
-        crate::model::account_quota::Builder::default()
     }
 }

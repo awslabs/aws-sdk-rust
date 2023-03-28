@@ -26,6 +26,13 @@ impl aws_http::request_id::RequestId for ListAvailableResourceMetricsOutput {
         self._request_id.as_deref()
     }
 }
+impl ListAvailableResourceMetricsOutput {
+    /// Creates a new builder-style object to manufacture [`ListAvailableResourceMetricsOutput`](crate::output::ListAvailableResourceMetricsOutput).
+    pub fn builder() -> crate::output::list_available_resource_metrics_output::Builder {
+        crate::output::list_available_resource_metrics_output::Builder::default()
+    }
+}
+
 /// See [`ListAvailableResourceMetricsOutput`](crate::output::ListAvailableResourceMetricsOutput).
 pub mod list_available_resource_metrics_output {
 
@@ -87,12 +94,6 @@ pub mod list_available_resource_metrics_output {
         }
     }
 }
-impl ListAvailableResourceMetricsOutput {
-    /// Creates a new builder-style object to manufacture [`ListAvailableResourceMetricsOutput`](crate::output::ListAvailableResourceMetricsOutput).
-    pub fn builder() -> crate::output::list_available_resource_metrics_output::Builder {
-        crate::output::list_available_resource_metrics_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -121,6 +122,13 @@ impl aws_http::request_id::RequestId for ListAvailableResourceDimensionsOutput {
         self._request_id.as_deref()
     }
 }
+impl ListAvailableResourceDimensionsOutput {
+    /// Creates a new builder-style object to manufacture [`ListAvailableResourceDimensionsOutput`](crate::output::ListAvailableResourceDimensionsOutput).
+    pub fn builder() -> crate::output::list_available_resource_dimensions_output::Builder {
+        crate::output::list_available_resource_dimensions_output::Builder::default()
+    }
+}
+
 /// See [`ListAvailableResourceDimensionsOutput`](crate::output::ListAvailableResourceDimensionsOutput).
 pub mod list_available_resource_dimensions_output {
 
@@ -182,12 +190,6 @@ pub mod list_available_resource_dimensions_output {
         }
     }
 }
-impl ListAvailableResourceDimensionsOutput {
-    /// Creates a new builder-style object to manufacture [`ListAvailableResourceDimensionsOutput`](crate::output::ListAvailableResourceDimensionsOutput).
-    pub fn builder() -> crate::output::list_available_resource_dimensions_output::Builder {
-        crate::output::list_available_resource_dimensions_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -237,6 +239,13 @@ impl aws_http::request_id::RequestId for GetResourceMetricsOutput {
         self._request_id.as_deref()
     }
 }
+impl GetResourceMetricsOutput {
+    /// Creates a new builder-style object to manufacture [`GetResourceMetricsOutput`](crate::output::GetResourceMetricsOutput).
+    pub fn builder() -> crate::output::get_resource_metrics_output::Builder {
+        crate::output::get_resource_metrics_output::Builder::default()
+    }
+}
+
 /// See [`GetResourceMetricsOutput`](crate::output::GetResourceMetricsOutput).
 pub mod get_resource_metrics_output {
 
@@ -340,12 +349,6 @@ pub mod get_resource_metrics_output {
         }
     }
 }
-impl GetResourceMetricsOutput {
-    /// Creates a new builder-style object to manufacture [`GetResourceMetricsOutput`](crate::output::GetResourceMetricsOutput).
-    pub fn builder() -> crate::output::get_resource_metrics_output::Builder {
-        crate::output::get_resource_metrics_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -380,6 +383,13 @@ impl aws_http::request_id::RequestId for GetResourceMetadataOutput {
         self._request_id.as_deref()
     }
 }
+impl GetResourceMetadataOutput {
+    /// Creates a new builder-style object to manufacture [`GetResourceMetadataOutput`](crate::output::GetResourceMetadataOutput).
+    pub fn builder() -> crate::output::get_resource_metadata_output::Builder {
+        crate::output::get_resource_metadata_output::Builder::default()
+    }
+}
+
 /// See [`GetResourceMetadataOutput`](crate::output::GetResourceMetadataOutput).
 pub mod get_resource_metadata_output {
 
@@ -448,12 +458,6 @@ pub mod get_resource_metadata_output {
         }
     }
 }
-impl GetResourceMetadataOutput {
-    /// Creates a new builder-style object to manufacture [`GetResourceMetadataOutput`](crate::output::GetResourceMetadataOutput).
-    pub fn builder() -> crate::output::get_resource_metadata_output::Builder {
-        crate::output::get_resource_metadata_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -475,6 +479,13 @@ impl aws_http::request_id::RequestId for GetDimensionKeyDetailsOutput {
         self._request_id.as_deref()
     }
 }
+impl GetDimensionKeyDetailsOutput {
+    /// Creates a new builder-style object to manufacture [`GetDimensionKeyDetailsOutput`](crate::output::GetDimensionKeyDetailsOutput).
+    pub fn builder() -> crate::output::get_dimension_key_details_output::Builder {
+        crate::output::get_dimension_key_details_output::Builder::default()
+    }
+}
+
 /// See [`GetDimensionKeyDetailsOutput`](crate::output::GetDimensionKeyDetailsOutput).
 pub mod get_dimension_key_details_output {
 
@@ -521,12 +532,6 @@ pub mod get_dimension_key_details_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl GetDimensionKeyDetailsOutput {
-    /// Creates a new builder-style object to manufacture [`GetDimensionKeyDetailsOutput`](crate::output::GetDimensionKeyDetailsOutput).
-    pub fn builder() -> crate::output::get_dimension_key_details_output::Builder {
-        crate::output::get_dimension_key_details_output::Builder::default()
     }
 }
 
@@ -578,6 +583,13 @@ impl aws_http::request_id::RequestId for DescribeDimensionKeysOutput {
         self._request_id.as_deref()
     }
 }
+impl DescribeDimensionKeysOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeDimensionKeysOutput`](crate::output::DescribeDimensionKeysOutput).
+    pub fn builder() -> crate::output::describe_dimension_keys_output::Builder {
+        crate::output::describe_dimension_keys_output::Builder::default()
+    }
+}
+
 /// See [`DescribeDimensionKeysOutput`](crate::output::DescribeDimensionKeysOutput).
 pub mod describe_dimension_keys_output {
 
@@ -688,11 +700,5 @@ pub mod describe_dimension_keys_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl DescribeDimensionKeysOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeDimensionKeysOutput`](crate::output::DescribeDimensionKeysOutput).
-    pub fn builder() -> crate::output::describe_dimension_keys_output::Builder {
-        crate::output::describe_dimension_keys_output::Builder::default()
     }
 }

@@ -10,6 +10,13 @@ impl aws_http::request_id::RequestId for UpdateNotificationRuleOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdateNotificationRuleOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateNotificationRuleOutput`](crate::output::UpdateNotificationRuleOutput).
+    pub fn builder() -> crate::output::update_notification_rule_output::Builder {
+        crate::output::update_notification_rule_output::Builder::default()
+    }
+}
+
 /// See [`UpdateNotificationRuleOutput`](crate::output::UpdateNotificationRuleOutput).
 pub mod update_notification_rule_output {
 
@@ -37,12 +44,6 @@ pub mod update_notification_rule_output {
         }
     }
 }
-impl UpdateNotificationRuleOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateNotificationRuleOutput`](crate::output::UpdateNotificationRuleOutput).
-    pub fn builder() -> crate::output::update_notification_rule_output::Builder {
-        crate::output::update_notification_rule_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -55,6 +56,13 @@ impl aws_http::request_id::RequestId for UntagResourceOutput {
         self._request_id.as_deref()
     }
 }
+impl UntagResourceOutput {
+    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    pub fn builder() -> crate::output::untag_resource_output::Builder {
+        crate::output::untag_resource_output::Builder::default()
+    }
+}
+
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
 
@@ -82,12 +90,6 @@ pub mod untag_resource_output {
         }
     }
 }
-impl UntagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
-    pub fn builder() -> crate::output::untag_resource_output::Builder {
-        crate::output::untag_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -109,6 +111,13 @@ impl aws_http::request_id::RequestId for UnsubscribeOutput {
         self._request_id.as_deref()
     }
 }
+impl UnsubscribeOutput {
+    /// Creates a new builder-style object to manufacture [`UnsubscribeOutput`](crate::output::UnsubscribeOutput).
+    pub fn builder() -> crate::output::unsubscribe_output::Builder {
+        crate::output::unsubscribe_output::Builder::default()
+    }
+}
+
 /// See [`UnsubscribeOutput`](crate::output::UnsubscribeOutput).
 pub mod unsubscribe_output {
 
@@ -148,12 +157,6 @@ pub mod unsubscribe_output {
         }
     }
 }
-impl UnsubscribeOutput {
-    /// Creates a new builder-style object to manufacture [`UnsubscribeOutput`](crate::output::UnsubscribeOutput).
-    pub fn builder() -> crate::output::unsubscribe_output::Builder {
-        crate::output::unsubscribe_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -179,6 +182,13 @@ impl aws_http::request_id::RequestId for TagResourceOutput {
         self._request_id.as_deref()
     }
 }
+impl TagResourceOutput {
+    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
+    pub fn builder() -> crate::output::tag_resource_output::Builder {
+        crate::output::tag_resource_output::Builder::default()
+    }
+}
+
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
 
@@ -235,12 +245,6 @@ pub mod tag_resource_output {
         }
     }
 }
-impl TagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
-    pub fn builder() -> crate::output::tag_resource_output::Builder {
-        crate::output::tag_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -262,6 +266,13 @@ impl aws_http::request_id::RequestId for SubscribeOutput {
         self._request_id.as_deref()
     }
 }
+impl SubscribeOutput {
+    /// Creates a new builder-style object to manufacture [`SubscribeOutput`](crate::output::SubscribeOutput).
+    pub fn builder() -> crate::output::subscribe_output::Builder {
+        crate::output::subscribe_output::Builder::default()
+    }
+}
+
 /// See [`SubscribeOutput`](crate::output::SubscribeOutput).
 pub mod subscribe_output {
 
@@ -301,12 +312,6 @@ pub mod subscribe_output {
         }
     }
 }
-impl SubscribeOutput {
-    /// Creates a new builder-style object to manufacture [`SubscribeOutput`](crate::output::SubscribeOutput).
-    pub fn builder() -> crate::output::subscribe_output::Builder {
-        crate::output::subscribe_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -335,6 +340,13 @@ impl aws_http::request_id::RequestId for ListTargetsOutput {
         self._request_id.as_deref()
     }
 }
+impl ListTargetsOutput {
+    /// Creates a new builder-style object to manufacture [`ListTargetsOutput`](crate::output::ListTargetsOutput).
+    pub fn builder() -> crate::output::list_targets_output::Builder {
+        crate::output::list_targets_output::Builder::default()
+    }
+}
+
 /// See [`ListTargetsOutput`](crate::output::ListTargetsOutput).
 pub mod list_targets_output {
 
@@ -395,12 +407,6 @@ pub mod list_targets_output {
         }
     }
 }
-impl ListTargetsOutput {
-    /// Creates a new builder-style object to manufacture [`ListTargetsOutput`](crate::output::ListTargetsOutput).
-    pub fn builder() -> crate::output::list_targets_output::Builder {
-        crate::output::list_targets_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -426,6 +432,13 @@ impl aws_http::request_id::RequestId for ListTagsForResourceOutput {
         self._request_id.as_deref()
     }
 }
+impl ListTagsForResourceOutput {
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
+        crate::output::list_tags_for_resource_output::Builder::default()
+    }
+}
+
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
 
@@ -482,12 +495,6 @@ pub mod list_tags_for_resource_output {
         }
     }
 }
-impl ListTagsForResourceOutput {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
-    pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
-        crate::output::list_tags_for_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -519,6 +526,13 @@ impl aws_http::request_id::RequestId for ListNotificationRulesOutput {
         self._request_id.as_deref()
     }
 }
+impl ListNotificationRulesOutput {
+    /// Creates a new builder-style object to manufacture [`ListNotificationRulesOutput`](crate::output::ListNotificationRulesOutput).
+    pub fn builder() -> crate::output::list_notification_rules_output::Builder {
+        crate::output::list_notification_rules_output::Builder::default()
+    }
+}
+
 /// See [`ListNotificationRulesOutput`](crate::output::ListNotificationRulesOutput).
 pub mod list_notification_rules_output {
 
@@ -580,12 +594,6 @@ pub mod list_notification_rules_output {
         }
     }
 }
-impl ListNotificationRulesOutput {
-    /// Creates a new builder-style object to manufacture [`ListNotificationRulesOutput`](crate::output::ListNotificationRulesOutput).
-    pub fn builder() -> crate::output::list_notification_rules_output::Builder {
-        crate::output::list_notification_rules_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -614,6 +622,13 @@ impl aws_http::request_id::RequestId for ListEventTypesOutput {
         self._request_id.as_deref()
     }
 }
+impl ListEventTypesOutput {
+    /// Creates a new builder-style object to manufacture [`ListEventTypesOutput`](crate::output::ListEventTypesOutput).
+    pub fn builder() -> crate::output::list_event_types_output::Builder {
+        crate::output::list_event_types_output::Builder::default()
+    }
+}
+
 /// See [`ListEventTypesOutput`](crate::output::ListEventTypesOutput).
 pub mod list_event_types_output {
 
@@ -672,12 +687,6 @@ pub mod list_event_types_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl ListEventTypesOutput {
-    /// Creates a new builder-style object to manufacture [`ListEventTypesOutput`](crate::output::ListEventTypesOutput).
-    pub fn builder() -> crate::output::list_event_types_output::Builder {
-        crate::output::list_event_types_output::Builder::default()
     }
 }
 
@@ -793,6 +802,13 @@ impl aws_http::request_id::RequestId for DescribeNotificationRuleOutput {
         self._request_id.as_deref()
     }
 }
+impl DescribeNotificationRuleOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeNotificationRuleOutput`](crate::output::DescribeNotificationRuleOutput).
+    pub fn builder() -> crate::output::describe_notification_rule_output::Builder {
+        crate::output::describe_notification_rule_output::Builder::default()
+    }
+}
+
 /// See [`DescribeNotificationRuleOutput`](crate::output::DescribeNotificationRuleOutput).
 pub mod describe_notification_rule_output {
 
@@ -1017,12 +1033,6 @@ pub mod describe_notification_rule_output {
         }
     }
 }
-impl DescribeNotificationRuleOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeNotificationRuleOutput`](crate::output::DescribeNotificationRuleOutput).
-    pub fn builder() -> crate::output::describe_notification_rule_output::Builder {
-        crate::output::describe_notification_rule_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1035,6 +1045,13 @@ impl aws_http::request_id::RequestId for DeleteTargetOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteTargetOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteTargetOutput`](crate::output::DeleteTargetOutput).
+    pub fn builder() -> crate::output::delete_target_output::Builder {
+        crate::output::delete_target_output::Builder::default()
+    }
+}
+
 /// See [`DeleteTargetOutput`](crate::output::DeleteTargetOutput).
 pub mod delete_target_output {
 
@@ -1062,12 +1079,6 @@ pub mod delete_target_output {
         }
     }
 }
-impl DeleteTargetOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteTargetOutput`](crate::output::DeleteTargetOutput).
-    pub fn builder() -> crate::output::delete_target_output::Builder {
-        crate::output::delete_target_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1089,6 +1100,13 @@ impl aws_http::request_id::RequestId for DeleteNotificationRuleOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteNotificationRuleOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteNotificationRuleOutput`](crate::output::DeleteNotificationRuleOutput).
+    pub fn builder() -> crate::output::delete_notification_rule_output::Builder {
+        crate::output::delete_notification_rule_output::Builder::default()
+    }
+}
+
 /// See [`DeleteNotificationRuleOutput`](crate::output::DeleteNotificationRuleOutput).
 pub mod delete_notification_rule_output {
 
@@ -1128,12 +1146,6 @@ pub mod delete_notification_rule_output {
         }
     }
 }
-impl DeleteNotificationRuleOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteNotificationRuleOutput`](crate::output::DeleteNotificationRuleOutput).
-    pub fn builder() -> crate::output::delete_notification_rule_output::Builder {
-        crate::output::delete_notification_rule_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1155,6 +1167,13 @@ impl aws_http::request_id::RequestId for CreateNotificationRuleOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateNotificationRuleOutput {
+    /// Creates a new builder-style object to manufacture [`CreateNotificationRuleOutput`](crate::output::CreateNotificationRuleOutput).
+    pub fn builder() -> crate::output::create_notification_rule_output::Builder {
+        crate::output::create_notification_rule_output::Builder::default()
+    }
+}
+
 /// See [`CreateNotificationRuleOutput`](crate::output::CreateNotificationRuleOutput).
 pub mod create_notification_rule_output {
 
@@ -1192,11 +1211,5 @@ pub mod create_notification_rule_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl CreateNotificationRuleOutput {
-    /// Creates a new builder-style object to manufacture [`CreateNotificationRuleOutput`](crate::output::CreateNotificationRuleOutput).
-    pub fn builder() -> crate::output::create_notification_rule_output::Builder {
-        crate::output::create_notification_rule_output::Builder::default()
     }
 }

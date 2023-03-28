@@ -63,6 +63,13 @@ impl aws_http::request_id::RequestId for SendCommandOutput {
         self._request_id.as_deref()
     }
 }
+impl SendCommandOutput {
+    /// Creates a new builder-style object to manufacture [`SendCommandOutput`](crate::output::SendCommandOutput).
+    pub fn builder() -> crate::output::send_command_output::Builder {
+        crate::output::send_command_output::Builder::default()
+    }
+}
+
 /// See [`SendCommandOutput`](crate::output::SendCommandOutput).
 pub mod send_command_output {
 
@@ -193,11 +200,5 @@ pub mod send_command_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl SendCommandOutput {
-    /// Creates a new builder-style object to manufacture [`SendCommandOutput`](crate::output::SendCommandOutput).
-    pub fn builder() -> crate::output::send_command_output::Builder {
-        crate::output::send_command_output::Builder::default()
     }
 }

@@ -4,7 +4,7 @@
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`create_environment_ec2`](crate::client::Client::create_environment_ec2).
 ///
-/// See [`crate::client::fluent_builders::CreateEnvironmentEC2`] for more details about the operation.
+/// `ParseStrictResponse` impl for `CreateEnvironmentEC2`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateEnvironmentEC2 {
     _private: (),
@@ -39,7 +39,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateEnvironmentEC2 {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`create_environment_membership`](crate::client::Client::create_environment_membership).
 ///
-/// See [`crate::client::fluent_builders::CreateEnvironmentMembership`] for more details about the operation.
+/// `ParseStrictResponse` impl for `CreateEnvironmentMembership`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateEnvironmentMembership {
     _private: (),
@@ -74,7 +74,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateEnvironmentMembers
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`delete_environment`](crate::client::Client::delete_environment).
 ///
-/// See [`crate::client::fluent_builders::DeleteEnvironment`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DeleteEnvironment`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteEnvironment {
     _private: (),
@@ -109,7 +109,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteEnvironment {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`delete_environment_membership`](crate::client::Client::delete_environment_membership).
 ///
-/// See [`crate::client::fluent_builders::DeleteEnvironmentMembership`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DeleteEnvironmentMembership`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteEnvironmentMembership {
     _private: (),
@@ -144,7 +144,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteEnvironmentMembers
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`describe_environment_memberships`](crate::client::Client::describe_environment_memberships).
 ///
-/// See [`crate::client::fluent_builders::DescribeEnvironmentMemberships`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DescribeEnvironmentMemberships`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeEnvironmentMemberships {
     _private: (),
@@ -179,7 +179,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeEnvironmentMembe
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`describe_environments`](crate::client::Client::describe_environments).
 ///
-/// See [`crate::client::fluent_builders::DescribeEnvironments`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DescribeEnvironments`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeEnvironments {
     _private: (),
@@ -214,7 +214,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeEnvironments {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`describe_environment_status`](crate::client::Client::describe_environment_status).
 ///
-/// See [`crate::client::fluent_builders::DescribeEnvironmentStatus`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DescribeEnvironmentStatus`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeEnvironmentStatus {
     _private: (),
@@ -249,7 +249,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeEnvironmentStatu
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_environments`](crate::client::Client::list_environments).
 ///
-/// See [`crate::client::fluent_builders::ListEnvironments`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListEnvironments`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListEnvironments {
     _private: (),
@@ -284,7 +284,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListEnvironments {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
 ///
-/// See [`crate::client::fluent_builders::ListTagsForResource`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTagsForResource {
     _private: (),
@@ -319,7 +319,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`tag_resource`](crate::client::Client::tag_resource).
 ///
-/// See [`crate::client::fluent_builders::TagResource`] for more details about the operation.
+/// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct TagResource {
     _private: (),
@@ -352,7 +352,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`untag_resource`](crate::client::Client::untag_resource).
 ///
-/// See [`crate::client::fluent_builders::UntagResource`] for more details about the operation.
+/// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UntagResource {
     _private: (),
@@ -385,7 +385,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`update_environment`](crate::client::Client::update_environment).
 ///
-/// See [`crate::client::fluent_builders::UpdateEnvironment`] for more details about the operation.
+/// `ParseStrictResponse` impl for `UpdateEnvironment`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateEnvironment {
     _private: (),
@@ -420,7 +420,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateEnvironment {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`update_environment_membership`](crate::client::Client::update_environment_membership).
 ///
-/// See [`crate::client::fluent_builders::UpdateEnvironmentMembership`] for more details about the operation.
+/// `ParseStrictResponse` impl for `UpdateEnvironmentMembership`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateEnvironmentMembership {
     _private: (),

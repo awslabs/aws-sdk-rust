@@ -97,6 +97,13 @@ impl std::fmt::Debug for DomainSummary {
         formatter.finish()
     }
 }
+impl DomainSummary {
+    /// Creates a new builder-style object to manufacture [`DomainSummary`](crate::model::DomainSummary).
+    pub fn builder() -> crate::model::domain_summary::Builder {
+        crate::model::domain_summary::Builder::default()
+    }
+}
+
 /// See [`DomainSummary`](crate::model::DomainSummary).
 pub mod domain_summary {
 
@@ -265,12 +272,6 @@ pub mod domain_summary {
         }
     }
 }
-impl DomainSummary {
-    /// Creates a new builder-style object to manufacture [`DomainSummary`](crate::model::DomainSummary).
-    pub fn builder() -> crate::model::domain_summary::Builder {
-        crate::model::domain_summary::Builder::default()
-    }
-}
 
 /// <p>Details about the most recent server-side encryption configuration update. When the server-side encryption configuration is changed, dependency on the old KMS key is removed through an asynchronous process. When this update is complete, the domain’s data can only be accessed using the new KMS key.</p>
 #[non_exhaustive]
@@ -302,6 +303,13 @@ impl ServerSideEncryptionUpdateDetails {
         self.message.as_deref()
     }
 }
+impl ServerSideEncryptionUpdateDetails {
+    /// Creates a new builder-style object to manufacture [`ServerSideEncryptionUpdateDetails`](crate::model::ServerSideEncryptionUpdateDetails).
+    pub fn builder() -> crate::model::server_side_encryption_update_details::Builder {
+        crate::model::server_side_encryption_update_details::Builder::default()
+    }
+}
+
 /// See [`ServerSideEncryptionUpdateDetails`](crate::model::ServerSideEncryptionUpdateDetails).
 pub mod server_side_encryption_update_details {
 
@@ -362,12 +370,6 @@ pub mod server_side_encryption_update_details {
                 message: self.message,
             }
         }
-    }
-}
-impl ServerSideEncryptionUpdateDetails {
-    /// Creates a new builder-style object to manufacture [`ServerSideEncryptionUpdateDetails`](crate::model::ServerSideEncryptionUpdateDetails).
-    pub fn builder() -> crate::model::server_side_encryption_update_details::Builder {
-        crate::model::server_side_encryption_update_details::Builder::default()
     }
 }
 
@@ -482,6 +484,13 @@ impl ServerSideEncryptionConfiguration {
         self.kms_key_id.as_deref()
     }
 }
+impl ServerSideEncryptionConfiguration {
+    /// Creates a new builder-style object to manufacture [`ServerSideEncryptionConfiguration`](crate::model::ServerSideEncryptionConfiguration).
+    pub fn builder() -> crate::model::server_side_encryption_configuration::Builder {
+        crate::model::server_side_encryption_configuration::Builder::default()
+    }
+}
+
 /// See [`ServerSideEncryptionConfiguration`](crate::model::ServerSideEncryptionConfiguration).
 pub mod server_side_encryption_configuration {
 
@@ -508,12 +517,6 @@ pub mod server_side_encryption_configuration {
                 kms_key_id: self.kms_key_id,
             }
         }
-    }
-}
-impl ServerSideEncryptionConfiguration {
-    /// Creates a new builder-style object to manufacture [`ServerSideEncryptionConfiguration`](crate::model::ServerSideEncryptionConfiguration).
-    pub fn builder() -> crate::model::server_side_encryption_configuration::Builder {
-        crate::model::server_side_encryption_configuration::Builder::default()
     }
 }
 
@@ -963,6 +966,13 @@ impl std::fmt::Debug for Domain {
         formatter.finish()
     }
 }
+impl Domain {
+    /// Creates a new builder-style object to manufacture [`Domain`](crate::model::Domain).
+    pub fn builder() -> crate::model::domain::Builder {
+        crate::model::domain::Builder::default()
+    }
+}
+
 /// See [`Domain`](crate::model::Domain).
 pub mod domain {
 
@@ -1131,12 +1141,6 @@ pub mod domain {
         }
     }
 }
-impl Domain {
-    /// Creates a new builder-style object to manufacture [`Domain`](crate::model::Domain).
-    pub fn builder() -> crate::model::domain::Builder {
-        crate::model::domain::Builder::default()
-    }
-}
 
 /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
 #[non_exhaustive]
@@ -1167,6 +1171,13 @@ impl std::fmt::Debug for Tag {
         formatter.finish()
     }
 }
+impl Tag {
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
+    pub fn builder() -> crate::model::tag::Builder {
+        crate::model::tag::Builder::default()
+    }
+}
+
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
 
@@ -1213,12 +1224,6 @@ pub mod tag {
             formatter.field("value", &"*** Sensitive Data Redacted ***");
             formatter.finish()
         }
-    }
-}
-impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
-    pub fn builder() -> crate::model::tag::Builder {
-        crate::model::tag::Builder::default()
     }
 }
 
@@ -1331,6 +1336,13 @@ impl std::fmt::Debug for SpeakerEnrollmentJob {
         formatter.finish()
     }
 }
+impl SpeakerEnrollmentJob {
+    /// Creates a new builder-style object to manufacture [`SpeakerEnrollmentJob`](crate::model::SpeakerEnrollmentJob).
+    pub fn builder() -> crate::model::speaker_enrollment_job::Builder {
+        crate::model::speaker_enrollment_job::Builder::default()
+    }
+}
+
 /// See [`SpeakerEnrollmentJob`](crate::model::SpeakerEnrollmentJob).
 pub mod speaker_enrollment_job {
 
@@ -1536,12 +1548,6 @@ pub mod speaker_enrollment_job {
         }
     }
 }
-impl SpeakerEnrollmentJob {
-    /// Creates a new builder-style object to manufacture [`SpeakerEnrollmentJob`](crate::model::SpeakerEnrollmentJob).
-    pub fn builder() -> crate::model::speaker_enrollment_job::Builder {
-        crate::model::speaker_enrollment_job::Builder::default()
-    }
-}
 
 /// <p>Indicates the completion progress for a batch job.</p>
 #[non_exhaustive]
@@ -1557,6 +1563,13 @@ impl JobProgress {
         self.percent_complete
     }
 }
+impl JobProgress {
+    /// Creates a new builder-style object to manufacture [`JobProgress`](crate::model::JobProgress).
+    pub fn builder() -> crate::model::job_progress::Builder {
+        crate::model::job_progress::Builder::default()
+    }
+}
+
 /// See [`JobProgress`](crate::model::JobProgress).
 pub mod job_progress {
 
@@ -1585,12 +1598,6 @@ pub mod job_progress {
         }
     }
 }
-impl JobProgress {
-    /// Creates a new builder-style object to manufacture [`JobProgress`](crate::model::JobProgress).
-    pub fn builder() -> crate::model::job_progress::Builder {
-        crate::model::job_progress::Builder::default()
-    }
-}
 
 /// <p>Contains error details for a failed batch job.</p>
 #[non_exhaustive]
@@ -1613,6 +1620,13 @@ impl FailureDetails {
         self.message.as_deref()
     }
 }
+impl FailureDetails {
+    /// Creates a new builder-style object to manufacture [`FailureDetails`](crate::model::FailureDetails).
+    pub fn builder() -> crate::model::failure_details::Builder {
+        crate::model::failure_details::Builder::default()
+    }
+}
+
 /// See [`FailureDetails`](crate::model::FailureDetails).
 pub mod failure_details {
 
@@ -1653,12 +1667,6 @@ pub mod failure_details {
         }
     }
 }
-impl FailureDetails {
-    /// Creates a new builder-style object to manufacture [`FailureDetails`](crate::model::FailureDetails).
-    pub fn builder() -> crate::model::failure_details::Builder {
-        crate::model::failure_details::Builder::default()
-    }
-}
 
 /// <p>The configuration containing output file information for a batch job.</p>
 #[non_exhaustive]
@@ -1681,6 +1689,13 @@ impl OutputDataConfig {
         self.kms_key_id.as_deref()
     }
 }
+impl OutputDataConfig {
+    /// Creates a new builder-style object to manufacture [`OutputDataConfig`](crate::model::OutputDataConfig).
+    pub fn builder() -> crate::model::output_data_config::Builder {
+        crate::model::output_data_config::Builder::default()
+    }
+}
+
 /// See [`OutputDataConfig`](crate::model::OutputDataConfig).
 pub mod output_data_config {
 
@@ -1721,12 +1736,6 @@ pub mod output_data_config {
         }
     }
 }
-impl OutputDataConfig {
-    /// Creates a new builder-style object to manufacture [`OutputDataConfig`](crate::model::OutputDataConfig).
-    pub fn builder() -> crate::model::output_data_config::Builder {
-        crate::model::output_data_config::Builder::default()
-    }
-}
 
 /// <p>The configuration containing input file information for a batch job.</p>
 #[non_exhaustive]
@@ -1742,6 +1751,13 @@ impl InputDataConfig {
         self.s3_uri.as_deref()
     }
 }
+impl InputDataConfig {
+    /// Creates a new builder-style object to manufacture [`InputDataConfig`](crate::model::InputDataConfig).
+    pub fn builder() -> crate::model::input_data_config::Builder {
+        crate::model::input_data_config::Builder::default()
+    }
+}
+
 /// See [`InputDataConfig`](crate::model::InputDataConfig).
 pub mod input_data_config {
 
@@ -1768,12 +1784,6 @@ pub mod input_data_config {
                 s3_uri: self.s3_uri,
             }
         }
-    }
-}
-impl InputDataConfig {
-    /// Creates a new builder-style object to manufacture [`InputDataConfig`](crate::model::InputDataConfig).
-    pub fn builder() -> crate::model::input_data_config::Builder {
-        crate::model::input_data_config::Builder::default()
     }
 }
 
@@ -1803,6 +1813,13 @@ impl EnrollmentConfig {
         self.fraud_detection_config.as_ref()
     }
 }
+impl EnrollmentConfig {
+    /// Creates a new builder-style object to manufacture [`EnrollmentConfig`](crate::model::EnrollmentConfig).
+    pub fn builder() -> crate::model::enrollment_config::Builder {
+        crate::model::enrollment_config::Builder::default()
+    }
+}
+
 /// See [`EnrollmentConfig`](crate::model::EnrollmentConfig).
 pub mod enrollment_config {
 
@@ -1857,12 +1874,6 @@ pub mod enrollment_config {
         }
     }
 }
-impl EnrollmentConfig {
-    /// Creates a new builder-style object to manufacture [`EnrollmentConfig`](crate::model::EnrollmentConfig).
-    pub fn builder() -> crate::model::enrollment_config::Builder {
-        crate::model::enrollment_config::Builder::default()
-    }
-}
 
 /// <p>The configuration defining the action to take when a speaker is flagged by the fraud detection system during a batch speaker enrollment job, and the risk threshold to use for identification.</p>
 #[non_exhaustive]
@@ -1887,6 +1898,13 @@ impl EnrollmentJobFraudDetectionConfig {
         self.risk_threshold
     }
 }
+impl EnrollmentJobFraudDetectionConfig {
+    /// Creates a new builder-style object to manufacture [`EnrollmentJobFraudDetectionConfig`](crate::model::EnrollmentJobFraudDetectionConfig).
+    pub fn builder() -> crate::model::enrollment_job_fraud_detection_config::Builder {
+        crate::model::enrollment_job_fraud_detection_config::Builder::default()
+    }
+}
+
 /// See [`EnrollmentJobFraudDetectionConfig`](crate::model::EnrollmentJobFraudDetectionConfig).
 pub mod enrollment_job_fraud_detection_config {
 
@@ -1928,12 +1946,6 @@ pub mod enrollment_job_fraud_detection_config {
                 risk_threshold: self.risk_threshold,
             }
         }
-    }
-}
-impl EnrollmentJobFraudDetectionConfig {
-    /// Creates a new builder-style object to manufacture [`EnrollmentJobFraudDetectionConfig`](crate::model::EnrollmentJobFraudDetectionConfig).
-    pub fn builder() -> crate::model::enrollment_job_fraud_detection_config::Builder {
-        crate::model::enrollment_job_fraud_detection_config::Builder::default()
     }
 }
 
@@ -2343,6 +2355,13 @@ impl std::fmt::Debug for FraudsterRegistrationJob {
         formatter.finish()
     }
 }
+impl FraudsterRegistrationJob {
+    /// Creates a new builder-style object to manufacture [`FraudsterRegistrationJob`](crate::model::FraudsterRegistrationJob).
+    pub fn builder() -> crate::model::fraudster_registration_job::Builder {
+        crate::model::fraudster_registration_job::Builder::default()
+    }
+}
+
 /// See [`FraudsterRegistrationJob`](crate::model::FraudsterRegistrationJob).
 pub mod fraudster_registration_job {
 
@@ -2548,12 +2567,6 @@ pub mod fraudster_registration_job {
         }
     }
 }
-impl FraudsterRegistrationJob {
-    /// Creates a new builder-style object to manufacture [`FraudsterRegistrationJob`](crate::model::FraudsterRegistrationJob).
-    pub fn builder() -> crate::model::fraudster_registration_job::Builder {
-        crate::model::fraudster_registration_job::Builder::default()
-    }
-}
 
 /// <p>The configuration defining the action to take when a duplicate fraudster is detected, and the similarity threshold to use for detecting a duplicate fraudster during a batch fraudster registration job.</p>
 #[non_exhaustive]
@@ -2579,6 +2592,13 @@ impl RegistrationConfig {
         self.fraudster_similarity_threshold
     }
 }
+impl RegistrationConfig {
+    /// Creates a new builder-style object to manufacture [`RegistrationConfig`](crate::model::RegistrationConfig).
+    pub fn builder() -> crate::model::registration_config::Builder {
+        crate::model::registration_config::Builder::default()
+    }
+}
+
 /// See [`RegistrationConfig`](crate::model::RegistrationConfig).
 pub mod registration_config {
 
@@ -2627,12 +2647,6 @@ pub mod registration_config {
                 fraudster_similarity_threshold: self.fraudster_similarity_threshold,
             }
         }
-    }
-}
-impl RegistrationConfig {
-    /// Creates a new builder-style object to manufacture [`RegistrationConfig`](crate::model::RegistrationConfig).
-    pub fn builder() -> crate::model::registration_config::Builder {
-        crate::model::registration_config::Builder::default()
     }
 }
 
@@ -2910,6 +2924,13 @@ impl std::fmt::Debug for Speaker {
         formatter.finish()
     }
 }
+impl Speaker {
+    /// Creates a new builder-style object to manufacture [`Speaker`](crate::model::Speaker).
+    pub fn builder() -> crate::model::speaker::Builder {
+        crate::model::speaker::Builder::default()
+    }
+}
+
 /// See [`Speaker`](crate::model::Speaker).
 pub mod speaker {
 
@@ -3039,12 +3060,6 @@ pub mod speaker {
             formatter.field("last_accessed_at", &self.last_accessed_at);
             formatter.finish()
         }
-    }
-}
-impl Speaker {
-    /// Creates a new builder-style object to manufacture [`Speaker`](crate::model::Speaker).
-    pub fn builder() -> crate::model::speaker::Builder {
-        crate::model::speaker::Builder::default()
     }
 }
 
@@ -3217,6 +3232,13 @@ impl std::fmt::Debug for SpeakerSummary {
         formatter.finish()
     }
 }
+impl SpeakerSummary {
+    /// Creates a new builder-style object to manufacture [`SpeakerSummary`](crate::model::SpeakerSummary).
+    pub fn builder() -> crate::model::speaker_summary::Builder {
+        crate::model::speaker_summary::Builder::default()
+    }
+}
+
 /// See [`SpeakerSummary`](crate::model::SpeakerSummary).
 pub mod speaker_summary {
 
@@ -3348,12 +3370,6 @@ pub mod speaker_summary {
         }
     }
 }
-impl SpeakerSummary {
-    /// Creates a new builder-style object to manufacture [`SpeakerSummary`](crate::model::SpeakerSummary).
-    pub fn builder() -> crate::model::speaker_summary::Builder {
-        crate::model::speaker_summary::Builder::default()
-    }
-}
 
 /// <p>Contains a summary of information about a speaker enrollment job.</p>
 #[non_exhaustive]
@@ -3432,6 +3448,13 @@ impl std::fmt::Debug for SpeakerEnrollmentJobSummary {
         formatter.finish()
     }
 }
+impl SpeakerEnrollmentJobSummary {
+    /// Creates a new builder-style object to manufacture [`SpeakerEnrollmentJobSummary`](crate::model::SpeakerEnrollmentJobSummary).
+    pub fn builder() -> crate::model::speaker_enrollment_job_summary::Builder {
+        crate::model::speaker_enrollment_job_summary::Builder::default()
+    }
+}
+
 /// See [`SpeakerEnrollmentJobSummary`](crate::model::SpeakerEnrollmentJobSummary).
 pub mod speaker_enrollment_job_summary {
 
@@ -3573,12 +3596,6 @@ pub mod speaker_enrollment_job_summary {
         }
     }
 }
-impl SpeakerEnrollmentJobSummary {
-    /// Creates a new builder-style object to manufacture [`SpeakerEnrollmentJobSummary`](crate::model::SpeakerEnrollmentJobSummary).
-    pub fn builder() -> crate::model::speaker_enrollment_job_summary::Builder {
-        crate::model::speaker_enrollment_job_summary::Builder::default()
-    }
-}
 
 /// <p>Contains a summary of information about a fraudster registration job.</p>
 #[non_exhaustive]
@@ -3657,6 +3674,13 @@ impl std::fmt::Debug for FraudsterRegistrationJobSummary {
         formatter.finish()
     }
 }
+impl FraudsterRegistrationJobSummary {
+    /// Creates a new builder-style object to manufacture [`FraudsterRegistrationJobSummary`](crate::model::FraudsterRegistrationJobSummary).
+    pub fn builder() -> crate::model::fraudster_registration_job_summary::Builder {
+        crate::model::fraudster_registration_job_summary::Builder::default()
+    }
+}
+
 /// See [`FraudsterRegistrationJobSummary`](crate::model::FraudsterRegistrationJobSummary).
 pub mod fraudster_registration_job_summary {
 
@@ -3798,12 +3822,6 @@ pub mod fraudster_registration_job_summary {
         }
     }
 }
-impl FraudsterRegistrationJobSummary {
-    /// Creates a new builder-style object to manufacture [`FraudsterRegistrationJobSummary`](crate::model::FraudsterRegistrationJobSummary).
-    pub fn builder() -> crate::model::fraudster_registration_job_summary::Builder {
-        crate::model::fraudster_registration_job_summary::Builder::default()
-    }
-}
 
 /// <p>The fraud detection result produced by Voice ID, processed against the current session state and streamed audio of the speaker.</p>
 #[non_exhaustive]
@@ -3861,6 +3879,13 @@ impl FraudDetectionResult {
         self.risk_details.as_ref()
     }
 }
+impl FraudDetectionResult {
+    /// Creates a new builder-style object to manufacture [`FraudDetectionResult`](crate::model::FraudDetectionResult).
+    pub fn builder() -> crate::model::fraud_detection_result::Builder {
+        crate::model::fraud_detection_result::Builder::default()
+    }
+}
+
 /// See [`FraudDetectionResult`](crate::model::FraudDetectionResult).
 pub mod fraud_detection_result {
 
@@ -3988,12 +4013,6 @@ pub mod fraud_detection_result {
         }
     }
 }
-impl FraudDetectionResult {
-    /// Creates a new builder-style object to manufacture [`FraudDetectionResult`](crate::model::FraudDetectionResult).
-    pub fn builder() -> crate::model::fraud_detection_result::Builder {
-        crate::model::fraud_detection_result::Builder::default()
-    }
-}
 
 /// <p>Details regarding various fraud risk analyses performed against the current session state and streamed audio of the speaker.</p>
 #[non_exhaustive]
@@ -4016,6 +4035,13 @@ impl FraudRiskDetails {
         self.voice_spoofing_risk.as_ref()
     }
 }
+impl FraudRiskDetails {
+    /// Creates a new builder-style object to manufacture [`FraudRiskDetails`](crate::model::FraudRiskDetails).
+    pub fn builder() -> crate::model::fraud_risk_details::Builder {
+        crate::model::fraud_risk_details::Builder::default()
+    }
+}
+
 /// See [`FraudRiskDetails`](crate::model::FraudRiskDetails).
 pub mod fraud_risk_details {
 
@@ -4062,12 +4088,6 @@ pub mod fraud_risk_details {
         }
     }
 }
-impl FraudRiskDetails {
-    /// Creates a new builder-style object to manufacture [`FraudRiskDetails`](crate::model::FraudRiskDetails).
-    pub fn builder() -> crate::model::fraud_risk_details::Builder {
-        crate::model::fraud_risk_details::Builder::default()
-    }
-}
 
 /// <p>The details resulting from 'Voice Spoofing Risk' analysis of the speaker.</p>
 #[non_exhaustive]
@@ -4083,6 +4103,13 @@ impl VoiceSpoofingRisk {
         self.risk_score
     }
 }
+impl VoiceSpoofingRisk {
+    /// Creates a new builder-style object to manufacture [`VoiceSpoofingRisk`](crate::model::VoiceSpoofingRisk).
+    pub fn builder() -> crate::model::voice_spoofing_risk::Builder {
+        crate::model::voice_spoofing_risk::Builder::default()
+    }
+}
+
 /// See [`VoiceSpoofingRisk`](crate::model::VoiceSpoofingRisk).
 pub mod voice_spoofing_risk {
 
@@ -4111,12 +4138,6 @@ pub mod voice_spoofing_risk {
         }
     }
 }
-impl VoiceSpoofingRisk {
-    /// Creates a new builder-style object to manufacture [`VoiceSpoofingRisk`](crate::model::VoiceSpoofingRisk).
-    pub fn builder() -> crate::model::voice_spoofing_risk::Builder {
-        crate::model::voice_spoofing_risk::Builder::default()
-    }
-}
 
 /// <p>Contains details produced as a result of performing known fraudster risk analysis on a speaker.</p>
 #[non_exhaustive]
@@ -4139,6 +4160,13 @@ impl KnownFraudsterRisk {
         self.generated_fraudster_id.as_deref()
     }
 }
+impl KnownFraudsterRisk {
+    /// Creates a new builder-style object to manufacture [`KnownFraudsterRisk`](crate::model::KnownFraudsterRisk).
+    pub fn builder() -> crate::model::known_fraudster_risk::Builder {
+        crate::model::known_fraudster_risk::Builder::default()
+    }
+}
+
 /// See [`KnownFraudsterRisk`](crate::model::KnownFraudsterRisk).
 pub mod known_fraudster_risk {
 
@@ -4180,12 +4208,6 @@ pub mod known_fraudster_risk {
                 generated_fraudster_id: self.generated_fraudster_id,
             }
         }
-    }
-}
-impl KnownFraudsterRisk {
-    /// Creates a new builder-style object to manufacture [`KnownFraudsterRisk`](crate::model::KnownFraudsterRisk).
-    pub fn builder() -> crate::model::known_fraudster_risk::Builder {
-        crate::model::known_fraudster_risk::Builder::default()
     }
 }
 
@@ -4392,6 +4414,13 @@ impl FraudDetectionConfiguration {
         self.risk_threshold
     }
 }
+impl FraudDetectionConfiguration {
+    /// Creates a new builder-style object to manufacture [`FraudDetectionConfiguration`](crate::model::FraudDetectionConfiguration).
+    pub fn builder() -> crate::model::fraud_detection_configuration::Builder {
+        crate::model::fraud_detection_configuration::Builder::default()
+    }
+}
+
 /// See [`FraudDetectionConfiguration`](crate::model::FraudDetectionConfiguration).
 pub mod fraud_detection_configuration {
 
@@ -4418,12 +4447,6 @@ pub mod fraud_detection_configuration {
                 risk_threshold: self.risk_threshold,
             }
         }
-    }
-}
-impl FraudDetectionConfiguration {
-    /// Creates a new builder-style object to manufacture [`FraudDetectionConfiguration`](crate::model::FraudDetectionConfiguration).
-    pub fn builder() -> crate::model::fraud_detection_configuration::Builder {
-        crate::model::fraud_detection_configuration::Builder::default()
     }
 }
 
@@ -4510,6 +4533,13 @@ impl std::fmt::Debug for AuthenticationResult {
         formatter.finish()
     }
 }
+impl AuthenticationResult {
+    /// Creates a new builder-style object to manufacture [`AuthenticationResult`](crate::model::AuthenticationResult).
+    pub fn builder() -> crate::model::authentication_result::Builder {
+        crate::model::authentication_result::Builder::default()
+    }
+}
+
 /// See [`AuthenticationResult`](crate::model::AuthenticationResult).
 pub mod authentication_result {
 
@@ -4663,12 +4693,6 @@ pub mod authentication_result {
         }
     }
 }
-impl AuthenticationResult {
-    /// Creates a new builder-style object to manufacture [`AuthenticationResult`](crate::model::AuthenticationResult).
-    pub fn builder() -> crate::model::authentication_result::Builder {
-        crate::model::authentication_result::Builder::default()
-    }
-}
 
 /// <p>The configuration used to authenticate a speaker during a session.</p>
 #[non_exhaustive]
@@ -4684,6 +4708,13 @@ impl AuthenticationConfiguration {
         self.acceptance_threshold
     }
 }
+impl AuthenticationConfiguration {
+    /// Creates a new builder-style object to manufacture [`AuthenticationConfiguration`](crate::model::AuthenticationConfiguration).
+    pub fn builder() -> crate::model::authentication_configuration::Builder {
+        crate::model::authentication_configuration::Builder::default()
+    }
+}
+
 /// See [`AuthenticationConfiguration`](crate::model::AuthenticationConfiguration).
 pub mod authentication_configuration {
 
@@ -4710,12 +4741,6 @@ pub mod authentication_configuration {
                 acceptance_threshold: self.acceptance_threshold,
             }
         }
-    }
-}
-impl AuthenticationConfiguration {
-    /// Creates a new builder-style object to manufacture [`AuthenticationConfiguration`](crate::model::AuthenticationConfiguration).
-    pub fn builder() -> crate::model::authentication_configuration::Builder {
-        crate::model::authentication_configuration::Builder::default()
     }
 }
 
@@ -4967,6 +4992,13 @@ impl Fraudster {
         self.created_at.as_ref()
     }
 }
+impl Fraudster {
+    /// Creates a new builder-style object to manufacture [`Fraudster`](crate::model::Fraudster).
+    pub fn builder() -> crate::model::fraudster::Builder {
+        crate::model::fraudster::Builder::default()
+    }
+}
+
 /// See [`Fraudster`](crate::model::Fraudster).
 pub mod fraudster {
 
@@ -5023,11 +5055,5 @@ pub mod fraudster {
                 created_at: self.created_at,
             }
         }
-    }
-}
-impl Fraudster {
-    /// Creates a new builder-style object to manufacture [`Fraudster`](crate::model::Fraudster).
-    pub fn builder() -> crate::model::fraudster::Builder {
-        crate::model::fraudster::Builder::default()
     }
 }

@@ -27,6 +27,13 @@ impl aws_http::request_id::RequestId for GetEntitlementsOutput {
         self._request_id.as_deref()
     }
 }
+impl GetEntitlementsOutput {
+    /// Creates a new builder-style object to manufacture [`GetEntitlementsOutput`](crate::output::GetEntitlementsOutput).
+    pub fn builder() -> crate::output::get_entitlements_output::Builder {
+        crate::output::get_entitlements_output::Builder::default()
+    }
+}
+
 /// See [`GetEntitlementsOutput`](crate::output::GetEntitlementsOutput).
 pub mod get_entitlements_output {
 
@@ -85,11 +92,5 @@ pub mod get_entitlements_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl GetEntitlementsOutput {
-    /// Creates a new builder-style object to manufacture [`GetEntitlementsOutput`](crate::output::GetEntitlementsOutput).
-    pub fn builder() -> crate::output::get_entitlements_output::Builder {
-        crate::output::get_entitlements_output::Builder::default()
     }
 }

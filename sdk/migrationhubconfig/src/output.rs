@@ -19,6 +19,13 @@ impl aws_http::request_id::RequestId for GetHomeRegionOutput {
         self._request_id.as_deref()
     }
 }
+impl GetHomeRegionOutput {
+    /// Creates a new builder-style object to manufacture [`GetHomeRegionOutput`](crate::output::GetHomeRegionOutput).
+    pub fn builder() -> crate::output::get_home_region_output::Builder {
+        crate::output::get_home_region_output::Builder::default()
+    }
+}
+
 /// See [`GetHomeRegionOutput`](crate::output::GetHomeRegionOutput).
 pub mod get_home_region_output {
 
@@ -58,12 +65,6 @@ pub mod get_home_region_output {
         }
     }
 }
-impl GetHomeRegionOutput {
-    /// Creates a new builder-style object to manufacture [`GetHomeRegionOutput`](crate::output::GetHomeRegionOutput).
-    pub fn builder() -> crate::output::get_home_region_output::Builder {
-        crate::output::get_home_region_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -92,6 +93,13 @@ impl aws_http::request_id::RequestId for DescribeHomeRegionControlsOutput {
         self._request_id.as_deref()
     }
 }
+impl DescribeHomeRegionControlsOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeHomeRegionControlsOutput`](crate::output::DescribeHomeRegionControlsOutput).
+    pub fn builder() -> crate::output::describe_home_region_controls_output::Builder {
+        crate::output::describe_home_region_controls_output::Builder::default()
+    }
+}
+
 /// See [`DescribeHomeRegionControlsOutput`](crate::output::DescribeHomeRegionControlsOutput).
 pub mod describe_home_region_controls_output {
 
@@ -153,12 +161,6 @@ pub mod describe_home_region_controls_output {
         }
     }
 }
-impl DescribeHomeRegionControlsOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeHomeRegionControlsOutput`](crate::output::DescribeHomeRegionControlsOutput).
-    pub fn builder() -> crate::output::describe_home_region_controls_output::Builder {
-        crate::output::describe_home_region_controls_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -180,6 +182,13 @@ impl aws_http::request_id::RequestId for CreateHomeRegionControlOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateHomeRegionControlOutput {
+    /// Creates a new builder-style object to manufacture [`CreateHomeRegionControlOutput`](crate::output::CreateHomeRegionControlOutput).
+    pub fn builder() -> crate::output::create_home_region_control_output::Builder {
+        crate::output::create_home_region_control_output::Builder::default()
+    }
+}
+
 /// See [`CreateHomeRegionControlOutput`](crate::output::CreateHomeRegionControlOutput).
 pub mod create_home_region_control_output {
 
@@ -220,11 +229,5 @@ pub mod create_home_region_control_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl CreateHomeRegionControlOutput {
-    /// Creates a new builder-style object to manufacture [`CreateHomeRegionControlOutput`](crate::output::CreateHomeRegionControlOutput).
-    pub fn builder() -> crate::output::create_home_region_control_output::Builder {
-        crate::output::create_home_region_control_output::Builder::default()
     }
 }

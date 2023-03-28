@@ -54,6 +54,13 @@ impl aws_http::request_id::RequestId for StartDeviceAuthorizationOutput {
         self._request_id.as_deref()
     }
 }
+impl StartDeviceAuthorizationOutput {
+    /// Creates a new builder-style object to manufacture [`StartDeviceAuthorizationOutput`](crate::output::StartDeviceAuthorizationOutput).
+    pub fn builder() -> crate::output::start_device_authorization_output::Builder {
+        crate::output::start_device_authorization_output::Builder::default()
+    }
+}
+
 /// See [`StartDeviceAuthorizationOutput`](crate::output::StartDeviceAuthorizationOutput).
 pub mod start_device_authorization_output {
 
@@ -159,12 +166,6 @@ pub mod start_device_authorization_output {
         }
     }
 }
-impl StartDeviceAuthorizationOutput {
-    /// Creates a new builder-style object to manufacture [`StartDeviceAuthorizationOutput`](crate::output::StartDeviceAuthorizationOutput).
-    pub fn builder() -> crate::output::start_device_authorization_output::Builder {
-        crate::output::start_device_authorization_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -221,6 +222,13 @@ impl aws_http::request_id::RequestId for RegisterClientOutput {
         self._request_id.as_deref()
     }
 }
+impl RegisterClientOutput {
+    /// Creates a new builder-style object to manufacture [`RegisterClientOutput`](crate::output::RegisterClientOutput).
+    pub fn builder() -> crate::output::register_client_output::Builder {
+        crate::output::register_client_output::Builder::default()
+    }
+}
+
 /// See [`RegisterClientOutput`](crate::output::RegisterClientOutput).
 pub mod register_client_output {
 
@@ -329,12 +337,6 @@ pub mod register_client_output {
         }
     }
 }
-impl RegisterClientOutput {
-    /// Creates a new builder-style object to manufacture [`RegisterClientOutput`](crate::output::RegisterClientOutput).
-    pub fn builder() -> crate::output::register_client_output::Builder {
-        crate::output::register_client_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -388,6 +390,13 @@ impl aws_http::request_id::RequestId for CreateTokenOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateTokenOutput {
+    /// Creates a new builder-style object to manufacture [`CreateTokenOutput`](crate::output::CreateTokenOutput).
+    pub fn builder() -> crate::output::create_token_output::Builder {
+        crate::output::create_token_output::Builder::default()
+    }
+}
+
 /// See [`CreateTokenOutput`](crate::output::CreateTokenOutput).
 pub mod create_token_output {
 
@@ -480,11 +489,5 @@ pub mod create_token_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl CreateTokenOutput {
-    /// Creates a new builder-style object to manufacture [`CreateTokenOutput`](crate::output::CreateTokenOutput).
-    pub fn builder() -> crate::output::create_token_output::Builder {
-        crate::output::create_token_output::Builder::default()
     }
 }

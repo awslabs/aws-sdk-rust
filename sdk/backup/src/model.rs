@@ -51,6 +51,13 @@ impl ReportSetting {
         self.regions.as_deref()
     }
 }
+impl ReportSetting {
+    /// Creates a new builder-style object to manufacture [`ReportSetting`](crate::model::ReportSetting).
+    pub fn builder() -> crate::model::report_setting::Builder {
+        crate::model::report_setting::Builder::default()
+    }
+}
+
 /// See [`ReportSetting`](crate::model::ReportSetting).
 pub mod report_setting {
 
@@ -180,12 +187,6 @@ pub mod report_setting {
         }
     }
 }
-impl ReportSetting {
-    /// Creates a new builder-style object to manufacture [`ReportSetting`](crate::model::ReportSetting).
-    pub fn builder() -> crate::model::report_setting::Builder {
-        crate::model::report_setting::Builder::default()
-    }
-}
 
 /// <p>Contains information from your report plan about where to deliver your reports, specifically your Amazon S3 bucket name, S3 key prefix, and the formats of your reports.</p>
 #[non_exhaustive]
@@ -215,6 +216,13 @@ impl ReportDeliveryChannel {
         self.formats.as_deref()
     }
 }
+impl ReportDeliveryChannel {
+    /// Creates a new builder-style object to manufacture [`ReportDeliveryChannel`](crate::model::ReportDeliveryChannel).
+    pub fn builder() -> crate::model::report_delivery_channel::Builder {
+        crate::model::report_delivery_channel::Builder::default()
+    }
+}
+
 /// See [`ReportDeliveryChannel`](crate::model::ReportDeliveryChannel).
 pub mod report_delivery_channel {
 
@@ -282,12 +290,6 @@ pub mod report_delivery_channel {
         }
     }
 }
-impl ReportDeliveryChannel {
-    /// Creates a new builder-style object to manufacture [`ReportDeliveryChannel`](crate::model::ReportDeliveryChannel).
-    pub fn builder() -> crate::model::report_delivery_channel::Builder {
-        crate::model::report_delivery_channel::Builder::default()
-    }
-}
 
 /// <p>Contains <code>DeleteAt</code> and <code>MoveToColdStorageAt</code> timestamps, which are used to specify a lifecycle for a recovery point.</p>
 /// <p>The lifecycle defines when a protected resource is transitioned to cold storage and when it expires. Backup transitions and expires backups automatically according to the lifecycle that you define.</p>
@@ -313,6 +315,13 @@ impl CalculatedLifecycle {
         self.delete_at.as_ref()
     }
 }
+impl CalculatedLifecycle {
+    /// Creates a new builder-style object to manufacture [`CalculatedLifecycle`](crate::model::CalculatedLifecycle).
+    pub fn builder() -> crate::model::calculated_lifecycle::Builder {
+        crate::model::calculated_lifecycle::Builder::default()
+    }
+}
+
 /// See [`CalculatedLifecycle`](crate::model::CalculatedLifecycle).
 pub mod calculated_lifecycle {
 
@@ -359,12 +368,6 @@ pub mod calculated_lifecycle {
         }
     }
 }
-impl CalculatedLifecycle {
-    /// Creates a new builder-style object to manufacture [`CalculatedLifecycle`](crate::model::CalculatedLifecycle).
-    pub fn builder() -> crate::model::calculated_lifecycle::Builder {
-        crate::model::calculated_lifecycle::Builder::default()
-    }
-}
 
 /// <p>Contains an array of <code>Transition</code> objects specifying how long in days before a recovery point transitions to cold storage or is deleted.</p>
 /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, on the console, the “retention” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold.</p>
@@ -389,6 +392,13 @@ impl Lifecycle {
         self.delete_after_days
     }
 }
+impl Lifecycle {
+    /// Creates a new builder-style object to manufacture [`Lifecycle`](crate::model::Lifecycle).
+    pub fn builder() -> crate::model::lifecycle::Builder {
+        crate::model::lifecycle::Builder::default()
+    }
+}
+
 /// See [`Lifecycle`](crate::model::Lifecycle).
 pub mod lifecycle {
 
@@ -432,12 +442,6 @@ pub mod lifecycle {
         }
     }
 }
-impl Lifecycle {
-    /// Creates a new builder-style object to manufacture [`Lifecycle`](crate::model::Lifecycle).
-    pub fn builder() -> crate::model::lifecycle::Builder {
-        crate::model::lifecycle::Builder::default()
-    }
-}
 
 /// <p>Contains detailed information about all of the controls of a framework. Each framework must contain at least one control.</p>
 #[non_exhaustive]
@@ -470,6 +474,13 @@ impl FrameworkControl {
         self.control_scope.as_ref()
     }
 }
+impl FrameworkControl {
+    /// Creates a new builder-style object to manufacture [`FrameworkControl`](crate::model::FrameworkControl).
+    pub fn builder() -> crate::model::framework_control::Builder {
+        crate::model::framework_control::Builder::default()
+    }
+}
+
 /// See [`FrameworkControl`](crate::model::FrameworkControl).
 pub mod framework_control {
 
@@ -538,12 +549,6 @@ pub mod framework_control {
         }
     }
 }
-impl FrameworkControl {
-    /// Creates a new builder-style object to manufacture [`FrameworkControl`](crate::model::FrameworkControl).
-    pub fn builder() -> crate::model::framework_control::Builder {
-        crate::model::framework_control::Builder::default()
-    }
-}
 
 /// <p>A framework consists of one or more controls. Each control has its own control scope. The control scope can include one or more resource types, a combination of a tag key and value, or a combination of one resource type and one resource ID. If no scope is specified, evaluations for the rule are triggered when any resource in your recording group changes in configuration.</p> <note>
 /// <p>To set a control scope that includes all of a particular resource, leave the <code>ControlScope</code> empty or do not pass it when calling <code>CreateFramework</code>.</p>
@@ -579,6 +584,13 @@ impl ControlScope {
         self.tags.as_ref()
     }
 }
+impl ControlScope {
+    /// Creates a new builder-style object to manufacture [`ControlScope`](crate::model::ControlScope).
+    pub fn builder() -> crate::model::control_scope::Builder {
+        crate::model::control_scope::Builder::default()
+    }
+}
+
 /// See [`ControlScope`](crate::model::ControlScope).
 pub mod control_scope {
 
@@ -667,12 +679,6 @@ pub mod control_scope {
         }
     }
 }
-impl ControlScope {
-    /// Creates a new builder-style object to manufacture [`ControlScope`](crate::model::ControlScope).
-    pub fn builder() -> crate::model::control_scope::Builder {
-        crate::model::control_scope::Builder::default()
-    }
-}
 
 /// <p>A list of parameters for a control. A control can have zero, one, or more than one parameter. An example of a control with two parameters is: "backup plan frequency is at least <code>daily</code> and the retention period is at least <code>1 year</code>". The first parameter is <code>daily</code>. The second parameter is <code>1 year</code>.</p>
 #[non_exhaustive]
@@ -695,6 +701,13 @@ impl ControlInputParameter {
         self.parameter_value.as_deref()
     }
 }
+impl ControlInputParameter {
+    /// Creates a new builder-style object to manufacture [`ControlInputParameter`](crate::model::ControlInputParameter).
+    pub fn builder() -> crate::model::control_input_parameter::Builder {
+        crate::model::control_input_parameter::Builder::default()
+    }
+}
+
 /// See [`ControlInputParameter`](crate::model::ControlInputParameter).
 pub mod control_input_parameter {
 
@@ -741,12 +754,6 @@ pub mod control_input_parameter {
         }
     }
 }
-impl ControlInputParameter {
-    /// Creates a new builder-style object to manufacture [`ControlInputParameter`](crate::model::ControlInputParameter).
-    pub fn builder() -> crate::model::control_input_parameter::Builder {
-        crate::model::control_input_parameter::Builder::default()
-    }
-}
 
 /// <p>A list of backup options for each resource type.</p>
 #[non_exhaustive]
@@ -785,6 +792,13 @@ impl AdvancedBackupSetting {
         self.backup_options.as_ref()
     }
 }
+impl AdvancedBackupSetting {
+    /// Creates a new builder-style object to manufacture [`AdvancedBackupSetting`](crate::model::AdvancedBackupSetting).
+    pub fn builder() -> crate::model::advanced_backup_setting::Builder {
+        crate::model::advanced_backup_setting::Builder::default()
+    }
+}
+
 /// See [`AdvancedBackupSetting`](crate::model::AdvancedBackupSetting).
 pub mod advanced_backup_setting {
 
@@ -857,12 +871,6 @@ pub mod advanced_backup_setting {
         }
     }
 }
-impl AdvancedBackupSetting {
-    /// Creates a new builder-style object to manufacture [`AdvancedBackupSetting`](crate::model::AdvancedBackupSetting).
-    pub fn builder() -> crate::model::advanced_backup_setting::Builder {
-        crate::model::advanced_backup_setting::Builder::default()
-    }
-}
 
 /// <p>Contains an optional backup plan display name and an array of <code>BackupRule</code> objects, each of which specifies a backup rule. Each rule in a backup plan is a separate scheduled task. </p>
 #[non_exhaustive]
@@ -895,6 +903,13 @@ impl BackupPlanInput {
         self.advanced_backup_settings.as_deref()
     }
 }
+impl BackupPlanInput {
+    /// Creates a new builder-style object to manufacture [`BackupPlanInput`](crate::model::BackupPlanInput).
+    pub fn builder() -> crate::model::backup_plan_input::Builder {
+        crate::model::backup_plan_input::Builder::default()
+    }
+}
+
 /// See [`BackupPlanInput`](crate::model::BackupPlanInput).
 pub mod backup_plan_input {
 
@@ -970,12 +985,6 @@ pub mod backup_plan_input {
                 advanced_backup_settings: self.advanced_backup_settings,
             }
         }
-    }
-}
-impl BackupPlanInput {
-    /// Creates a new builder-style object to manufacture [`BackupPlanInput`](crate::model::BackupPlanInput).
-    pub fn builder() -> crate::model::backup_plan_input::Builder {
-        crate::model::backup_plan_input::Builder::default()
     }
 }
 
@@ -1072,6 +1081,13 @@ impl std::fmt::Debug for BackupRuleInput {
         formatter.finish()
     }
 }
+impl BackupRuleInput {
+    /// Creates a new builder-style object to manufacture [`BackupRuleInput`](crate::model::BackupRuleInput).
+    pub fn builder() -> crate::model::backup_rule_input::Builder {
+        crate::model::backup_rule_input::Builder::default()
+    }
+}
+
 /// See [`BackupRuleInput`](crate::model::BackupRuleInput).
 pub mod backup_rule_input {
 
@@ -1250,12 +1266,6 @@ pub mod backup_rule_input {
         }
     }
 }
-impl BackupRuleInput {
-    /// Creates a new builder-style object to manufacture [`BackupRuleInput`](crate::model::BackupRuleInput).
-    pub fn builder() -> crate::model::backup_rule_input::Builder {
-        crate::model::backup_rule_input::Builder::default()
-    }
-}
 
 /// <p>The details of the copy operation.</p>
 #[non_exhaustive]
@@ -1282,6 +1292,13 @@ impl CopyAction {
         self.destination_backup_vault_arn.as_deref()
     }
 }
+impl CopyAction {
+    /// Creates a new builder-style object to manufacture [`CopyAction`](crate::model::CopyAction).
+    pub fn builder() -> crate::model::copy_action::Builder {
+        crate::model::copy_action::Builder::default()
+    }
+}
+
 /// See [`CopyAction`](crate::model::CopyAction).
 pub mod copy_action {
 
@@ -1333,12 +1350,6 @@ pub mod copy_action {
                 destination_backup_vault_arn: self.destination_backup_vault_arn,
             }
         }
-    }
-}
-impl CopyAction {
-    /// Creates a new builder-style object to manufacture [`CopyAction`](crate::model::CopyAction).
-    pub fn builder() -> crate::model::copy_action::Builder {
-        crate::model::copy_action::Builder::default()
     }
 }
 
@@ -1623,6 +1634,13 @@ impl RestoreJobsListMember {
         self.resource_type.as_deref()
     }
 }
+impl RestoreJobsListMember {
+    /// Creates a new builder-style object to manufacture [`RestoreJobsListMember`](crate::model::RestoreJobsListMember).
+    pub fn builder() -> crate::model::restore_jobs_list_member::Builder {
+        crate::model::restore_jobs_list_member::Builder::default()
+    }
+}
+
 /// See [`RestoreJobsListMember`](crate::model::RestoreJobsListMember).
 pub mod restore_jobs_list_member {
 
@@ -1822,12 +1840,6 @@ pub mod restore_jobs_list_member {
         }
     }
 }
-impl RestoreJobsListMember {
-    /// Creates a new builder-style object to manufacture [`RestoreJobsListMember`](crate::model::RestoreJobsListMember).
-    pub fn builder() -> crate::model::restore_jobs_list_member::Builder {
-        crate::model::restore_jobs_list_member::Builder::default()
-    }
-}
 
 /// When writing a match expression against `RestoreJobStatus`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -2016,6 +2028,13 @@ impl ReportPlan {
         self.last_successful_execution_time.as_ref()
     }
 }
+impl ReportPlan {
+    /// Creates a new builder-style object to manufacture [`ReportPlan`](crate::model::ReportPlan).
+    pub fn builder() -> crate::model::report_plan::Builder {
+        crate::model::report_plan::Builder::default()
+    }
+}
+
 /// See [`ReportPlan`](crate::model::ReportPlan).
 pub mod report_plan {
 
@@ -2177,12 +2196,6 @@ pub mod report_plan {
         }
     }
 }
-impl ReportPlan {
-    /// Creates a new builder-style object to manufacture [`ReportPlan`](crate::model::ReportPlan).
-    pub fn builder() -> crate::model::report_plan::Builder {
-        crate::model::report_plan::Builder::default()
-    }
-}
 
 /// <p>Contains detailed information about a report job. A report job compiles a report based on a report plan and publishes it to Amazon S3.</p>
 #[non_exhaustive]
@@ -2253,6 +2266,13 @@ impl ReportJob {
         self.report_destination.as_ref()
     }
 }
+impl ReportJob {
+    /// Creates a new builder-style object to manufacture [`ReportJob`](crate::model::ReportJob).
+    pub fn builder() -> crate::model::report_job::Builder {
+        crate::model::report_job::Builder::default()
+    }
+}
+
 /// See [`ReportJob`](crate::model::ReportJob).
 pub mod report_job {
 
@@ -2392,12 +2412,6 @@ pub mod report_job {
         }
     }
 }
-impl ReportJob {
-    /// Creates a new builder-style object to manufacture [`ReportJob`](crate::model::ReportJob).
-    pub fn builder() -> crate::model::report_job::Builder {
-        crate::model::report_job::Builder::default()
-    }
-}
 
 /// <p>Contains information from your report job about your report destination.</p>
 #[non_exhaustive]
@@ -2420,6 +2434,13 @@ impl ReportDestination {
         self.s3_keys.as_deref()
     }
 }
+impl ReportDestination {
+    /// Creates a new builder-style object to manufacture [`ReportDestination`](crate::model::ReportDestination).
+    pub fn builder() -> crate::model::report_destination::Builder {
+        crate::model::report_destination::Builder::default()
+    }
+}
+
 /// See [`ReportDestination`](crate::model::ReportDestination).
 pub mod report_destination {
 
@@ -2470,12 +2491,6 @@ pub mod report_destination {
                 s3_keys: self.s3_keys,
             }
         }
-    }
-}
-impl ReportDestination {
-    /// Creates a new builder-style object to manufacture [`ReportDestination`](crate::model::ReportDestination).
-    pub fn builder() -> crate::model::report_destination::Builder {
-        crate::model::report_destination::Builder::default()
     }
 }
 
@@ -2549,6 +2564,13 @@ impl RecoveryPointByResource {
         self.parent_recovery_point_arn.as_deref()
     }
 }
+impl RecoveryPointByResource {
+    /// Creates a new builder-style object to manufacture [`RecoveryPointByResource`](crate::model::RecoveryPointByResource).
+    pub fn builder() -> crate::model::recovery_point_by_resource::Builder {
+        crate::model::recovery_point_by_resource::Builder::default()
+    }
+}
+
 /// See [`RecoveryPointByResource`](crate::model::RecoveryPointByResource).
 pub mod recovery_point_by_resource {
 
@@ -2694,12 +2716,6 @@ pub mod recovery_point_by_resource {
         }
     }
 }
-impl RecoveryPointByResource {
-    /// Creates a new builder-style object to manufacture [`RecoveryPointByResource`](crate::model::RecoveryPointByResource).
-    pub fn builder() -> crate::model::recovery_point_by_resource::Builder {
-        crate::model::recovery_point_by_resource::Builder::default()
-    }
-}
 
 /// When writing a match expression against `RecoveryPointStatus`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -2817,6 +2833,13 @@ impl RecoveryPointMember {
         self.recovery_point_arn.as_deref()
     }
 }
+impl RecoveryPointMember {
+    /// Creates a new builder-style object to manufacture [`RecoveryPointMember`](crate::model::RecoveryPointMember).
+    pub fn builder() -> crate::model::recovery_point_member::Builder {
+        crate::model::recovery_point_member::Builder::default()
+    }
+}
+
 /// See [`RecoveryPointMember`](crate::model::RecoveryPointMember).
 pub mod recovery_point_member {
 
@@ -2846,12 +2869,6 @@ pub mod recovery_point_member {
                 recovery_point_arn: self.recovery_point_arn,
             }
         }
-    }
-}
-impl RecoveryPointMember {
-    /// Creates a new builder-style object to manufacture [`RecoveryPointMember`](crate::model::RecoveryPointMember).
-    pub fn builder() -> crate::model::recovery_point_member::Builder {
-        crate::model::recovery_point_member::Builder::default()
     }
 }
 
@@ -3013,6 +3030,13 @@ impl RecoveryPointByBackupVault {
         self.is_parent
     }
 }
+impl RecoveryPointByBackupVault {
+    /// Creates a new builder-style object to manufacture [`RecoveryPointByBackupVault`](crate::model::RecoveryPointByBackupVault).
+    pub fn builder() -> crate::model::recovery_point_by_backup_vault::Builder {
+        crate::model::recovery_point_by_backup_vault::Builder::default()
+    }
+}
+
 /// See [`RecoveryPointByBackupVault`](crate::model::RecoveryPointByBackupVault).
 pub mod recovery_point_by_backup_vault {
 
@@ -3336,12 +3360,6 @@ pub mod recovery_point_by_backup_vault {
         }
     }
 }
-impl RecoveryPointByBackupVault {
-    /// Creates a new builder-style object to manufacture [`RecoveryPointByBackupVault`](crate::model::RecoveryPointByBackupVault).
-    pub fn builder() -> crate::model::recovery_point_by_backup_vault::Builder {
-        crate::model::recovery_point_by_backup_vault::Builder::default()
-    }
-}
 
 /// <p>Contains information about the backup plan and rule that Backup used to initiate the recovery point backup.</p>
 #[non_exhaustive]
@@ -3378,6 +3396,13 @@ impl RecoveryPointCreator {
         self.backup_rule_id.as_deref()
     }
 }
+impl RecoveryPointCreator {
+    /// Creates a new builder-style object to manufacture [`RecoveryPointCreator`](crate::model::RecoveryPointCreator).
+    pub fn builder() -> crate::model::recovery_point_creator::Builder {
+        crate::model::recovery_point_creator::Builder::default()
+    }
+}
+
 /// See [`RecoveryPointCreator`](crate::model::RecoveryPointCreator).
 pub mod recovery_point_creator {
 
@@ -3454,12 +3479,6 @@ pub mod recovery_point_creator {
         }
     }
 }
-impl RecoveryPointCreator {
-    /// Creates a new builder-style object to manufacture [`RecoveryPointCreator`](crate::model::RecoveryPointCreator).
-    pub fn builder() -> crate::model::recovery_point_creator::Builder {
-        crate::model::recovery_point_creator::Builder::default()
-    }
-}
 
 /// <p>A structure that contains information about a backed-up resource.</p>
 #[non_exhaustive]
@@ -3489,6 +3508,13 @@ impl ProtectedResource {
         self.last_backup_time.as_ref()
     }
 }
+impl ProtectedResource {
+    /// Creates a new builder-style object to manufacture [`ProtectedResource`](crate::model::ProtectedResource).
+    pub fn builder() -> crate::model::protected_resource::Builder {
+        crate::model::protected_resource::Builder::default()
+    }
+}
+
 /// See [`ProtectedResource`](crate::model::ProtectedResource).
 pub mod protected_resource {
 
@@ -3545,12 +3571,6 @@ pub mod protected_resource {
                 last_backup_time: self.last_backup_time,
             }
         }
-    }
-}
-impl ProtectedResource {
-    /// Creates a new builder-style object to manufacture [`ProtectedResource`](crate::model::ProtectedResource).
-    pub fn builder() -> crate::model::protected_resource::Builder {
-        crate::model::protected_resource::Builder::default()
     }
 }
 
@@ -3610,6 +3630,13 @@ impl LegalHold {
         self.cancellation_date.as_ref()
     }
 }
+impl LegalHold {
+    /// Creates a new builder-style object to manufacture [`LegalHold`](crate::model::LegalHold).
+    pub fn builder() -> crate::model::legal_hold::Builder {
+        crate::model::legal_hold::Builder::default()
+    }
+}
+
 /// See [`LegalHold`](crate::model::LegalHold).
 pub mod legal_hold {
 
@@ -3723,12 +3750,6 @@ pub mod legal_hold {
                 cancellation_date: self.cancellation_date,
             }
         }
-    }
-}
-impl LegalHold {
-    /// Creates a new builder-style object to manufacture [`LegalHold`](crate::model::LegalHold).
-    pub fn builder() -> crate::model::legal_hold::Builder {
-        crate::model::legal_hold::Builder::default()
     }
 }
 
@@ -3883,6 +3904,13 @@ impl Framework {
         self.deployment_status.as_deref()
     }
 }
+impl Framework {
+    /// Creates a new builder-style object to manufacture [`Framework`](crate::model::Framework).
+    pub fn builder() -> crate::model::framework::Builder {
+        crate::model::framework::Builder::default()
+    }
+}
+
 /// See [`Framework`](crate::model::Framework).
 pub mod framework {
 
@@ -3986,12 +4014,6 @@ pub mod framework {
                 deployment_status: self.deployment_status,
             }
         }
-    }
-}
-impl Framework {
-    /// Creates a new builder-style object to manufacture [`Framework`](crate::model::Framework).
-    pub fn builder() -> crate::model::framework::Builder {
-        crate::model::framework::Builder::default()
     }
 }
 
@@ -4145,6 +4167,13 @@ impl CopyJob {
         self.child_jobs_in_state.as_ref()
     }
 }
+impl CopyJob {
+    /// Creates a new builder-style object to manufacture [`CopyJob`](crate::model::CopyJob).
+    pub fn builder() -> crate::model::copy_job::Builder {
+        crate::model::copy_job::Builder::default()
+    }
+}
+
 /// See [`CopyJob`](crate::model::CopyJob).
 pub mod copy_job {
 
@@ -4453,12 +4482,6 @@ pub mod copy_job {
         }
     }
 }
-impl CopyJob {
-    /// Creates a new builder-style object to manufacture [`CopyJob`](crate::model::CopyJob).
-    pub fn builder() -> crate::model::copy_job::Builder {
-        crate::model::copy_job::Builder::default()
-    }
-}
 
 /// When writing a match expression against `CopyJobState`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -4654,6 +4677,13 @@ impl BackupVaultListMember {
         self.lock_date.as_ref()
     }
 }
+impl BackupVaultListMember {
+    /// Creates a new builder-style object to manufacture [`BackupVaultListMember`](crate::model::BackupVaultListMember).
+    pub fn builder() -> crate::model::backup_vault_list_member::Builder {
+        crate::model::backup_vault_list_member::Builder::default()
+    }
+}
+
 /// See [`BackupVaultListMember`](crate::model::BackupVaultListMember).
 pub mod backup_vault_list_member {
 
@@ -4820,12 +4850,6 @@ pub mod backup_vault_list_member {
         }
     }
 }
-impl BackupVaultListMember {
-    /// Creates a new builder-style object to manufacture [`BackupVaultListMember`](crate::model::BackupVaultListMember).
-    pub fn builder() -> crate::model::backup_vault_list_member::Builder {
-        crate::model::backup_vault_list_member::Builder::default()
-    }
-}
 
 /// <p>Contains metadata about a <code>BackupSelection</code> object.</p>
 #[non_exhaustive]
@@ -4878,6 +4902,13 @@ impl BackupSelectionsListMember {
         self.iam_role_arn.as_deref()
     }
 }
+impl BackupSelectionsListMember {
+    /// Creates a new builder-style object to manufacture [`BackupSelectionsListMember`](crate::model::BackupSelectionsListMember).
+    pub fn builder() -> crate::model::backup_selections_list_member::Builder {
+        crate::model::backup_selections_list_member::Builder::default()
+    }
+}
+
 /// See [`BackupSelectionsListMember`](crate::model::BackupSelectionsListMember).
 pub mod backup_selections_list_member {
 
@@ -4980,12 +5011,6 @@ pub mod backup_selections_list_member {
         }
     }
 }
-impl BackupSelectionsListMember {
-    /// Creates a new builder-style object to manufacture [`BackupSelectionsListMember`](crate::model::BackupSelectionsListMember).
-    pub fn builder() -> crate::model::backup_selections_list_member::Builder {
-        crate::model::backup_selections_list_member::Builder::default()
-    }
-}
 
 /// <p>Contains metadata about a backup plan.</p>
 #[non_exhaustive]
@@ -5062,6 +5087,13 @@ impl BackupPlansListMember {
         self.advanced_backup_settings.as_deref()
     }
 }
+impl BackupPlansListMember {
+    /// Creates a new builder-style object to manufacture [`BackupPlansListMember`](crate::model::BackupPlansListMember).
+    pub fn builder() -> crate::model::backup_plans_list_member::Builder {
+        crate::model::backup_plans_list_member::Builder::default()
+    }
+}
+
 /// See [`BackupPlansListMember`](crate::model::BackupPlansListMember).
 pub mod backup_plans_list_member {
 
@@ -5222,12 +5254,6 @@ pub mod backup_plans_list_member {
         }
     }
 }
-impl BackupPlansListMember {
-    /// Creates a new builder-style object to manufacture [`BackupPlansListMember`](crate::model::BackupPlansListMember).
-    pub fn builder() -> crate::model::backup_plans_list_member::Builder {
-        crate::model::backup_plans_list_member::Builder::default()
-    }
-}
 
 /// <p>An object specifying metadata associated with a backup plan template.</p>
 #[non_exhaustive]
@@ -5250,6 +5276,13 @@ impl BackupPlanTemplatesListMember {
         self.backup_plan_template_name.as_deref()
     }
 }
+impl BackupPlanTemplatesListMember {
+    /// Creates a new builder-style object to manufacture [`BackupPlanTemplatesListMember`](crate::model::BackupPlanTemplatesListMember).
+    pub fn builder() -> crate::model::backup_plan_templates_list_member::Builder {
+        crate::model::backup_plan_templates_list_member::Builder::default()
+    }
+}
+
 /// See [`BackupPlanTemplatesListMember`](crate::model::BackupPlanTemplatesListMember).
 pub mod backup_plan_templates_list_member {
 
@@ -5294,12 +5327,6 @@ pub mod backup_plan_templates_list_member {
                 backup_plan_template_name: self.backup_plan_template_name,
             }
         }
-    }
-}
-impl BackupPlanTemplatesListMember {
-    /// Creates a new builder-style object to manufacture [`BackupPlanTemplatesListMember`](crate::model::BackupPlanTemplatesListMember).
-    pub fn builder() -> crate::model::backup_plan_templates_list_member::Builder {
-        crate::model::backup_plan_templates_list_member::Builder::default()
     }
 }
 
@@ -5470,6 +5497,13 @@ impl BackupJob {
         self.is_parent
     }
 }
+impl BackupJob {
+    /// Creates a new builder-style object to manufacture [`BackupJob`](crate::model::BackupJob).
+    pub fn builder() -> crate::model::backup_job::Builder {
+        crate::model::backup_job::Builder::default()
+    }
+}
+
 /// See [`BackupJob`](crate::model::BackupJob).
 pub mod backup_job {
 
@@ -5808,12 +5842,6 @@ pub mod backup_job {
         }
     }
 }
-impl BackupJob {
-    /// Creates a new builder-style object to manufacture [`BackupJob`](crate::model::BackupJob).
-    pub fn builder() -> crate::model::backup_job::Builder {
-        crate::model::backup_job::Builder::default()
-    }
-}
 
 /// When writing a match expression against `BackupJobState`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -5980,6 +6008,13 @@ impl RecoveryPointSelection {
         self.date_range.as_ref()
     }
 }
+impl RecoveryPointSelection {
+    /// Creates a new builder-style object to manufacture [`RecoveryPointSelection`](crate::model::RecoveryPointSelection).
+    pub fn builder() -> crate::model::recovery_point_selection::Builder {
+        crate::model::recovery_point_selection::Builder::default()
+    }
+}
+
 /// See [`RecoveryPointSelection`](crate::model::RecoveryPointSelection).
 pub mod recovery_point_selection {
 
@@ -6055,12 +6090,6 @@ pub mod recovery_point_selection {
         }
     }
 }
-impl RecoveryPointSelection {
-    /// Creates a new builder-style object to manufacture [`RecoveryPointSelection`](crate::model::RecoveryPointSelection).
-    pub fn builder() -> crate::model::recovery_point_selection::Builder {
-        crate::model::recovery_point_selection::Builder::default()
-    }
-}
 
 /// <p>This is a resource filter containing FromDate: DateTime and ToDate: DateTime. Both values are required. Future DateTime values are not permitted.</p>
 /// <p>The date and time are in Unix format and Coordinated Universal Time (UTC), and it is accurate to milliseconds ((milliseconds are optional). For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
@@ -6088,6 +6117,13 @@ impl DateRange {
         self.to_date.as_ref()
     }
 }
+impl DateRange {
+    /// Creates a new builder-style object to manufacture [`DateRange`](crate::model::DateRange).
+    pub fn builder() -> crate::model::date_range::Builder {
+        crate::model::date_range::Builder::default()
+    }
+}
+
 /// See [`DateRange`](crate::model::DateRange).
 pub mod date_range {
 
@@ -6136,12 +6172,6 @@ pub mod date_range {
                 to_date: self.to_date,
             }
         }
-    }
-}
-impl DateRange {
-    /// Creates a new builder-style object to manufacture [`DateRange`](crate::model::DateRange).
-    pub fn builder() -> crate::model::date_range::Builder {
-        crate::model::date_range::Builder::default()
     }
 }
 
@@ -6219,6 +6249,13 @@ impl BackupSelection {
         self.conditions.as_ref()
     }
 }
+impl BackupSelection {
+    /// Creates a new builder-style object to manufacture [`BackupSelection`](crate::model::BackupSelection).
+    pub fn builder() -> crate::model::backup_selection::Builder {
+        crate::model::backup_selection::Builder::default()
+    }
+}
+
 /// See [`BackupSelection`](crate::model::BackupSelection).
 pub mod backup_selection {
 
@@ -6364,12 +6401,6 @@ pub mod backup_selection {
         }
     }
 }
-impl BackupSelection {
-    /// Creates a new builder-style object to manufacture [`BackupSelection`](crate::model::BackupSelection).
-    pub fn builder() -> crate::model::backup_selection::Builder {
-        crate::model::backup_selection::Builder::default()
-    }
-}
 
 /// <p>Contains information about which resources to include or exclude from a backup plan using their tags. Conditions are case sensitive.</p>
 #[non_exhaustive]
@@ -6406,6 +6437,13 @@ impl Conditions {
         self.string_not_like.as_deref()
     }
 }
+impl Conditions {
+    /// Creates a new builder-style object to manufacture [`Conditions`](crate::model::Conditions).
+    pub fn builder() -> crate::model::conditions::Builder {
+        crate::model::conditions::Builder::default()
+    }
+}
+
 /// See [`Conditions`](crate::model::Conditions).
 pub mod conditions {
 
@@ -6510,12 +6548,6 @@ pub mod conditions {
         }
     }
 }
-impl Conditions {
-    /// Creates a new builder-style object to manufacture [`Conditions`](crate::model::Conditions).
-    pub fn builder() -> crate::model::conditions::Builder {
-        crate::model::conditions::Builder::default()
-    }
-}
 
 /// <p>Includes information about tags you define to assign tagged resources to a backup plan.</p>
 #[non_exhaustive]
@@ -6538,6 +6570,13 @@ impl ConditionParameter {
         self.condition_value.as_deref()
     }
 }
+impl ConditionParameter {
+    /// Creates a new builder-style object to manufacture [`ConditionParameter`](crate::model::ConditionParameter).
+    pub fn builder() -> crate::model::condition_parameter::Builder {
+        crate::model::condition_parameter::Builder::default()
+    }
+}
+
 /// See [`ConditionParameter`](crate::model::ConditionParameter).
 pub mod condition_parameter {
 
@@ -6584,12 +6623,6 @@ pub mod condition_parameter {
         }
     }
 }
-impl ConditionParameter {
-    /// Creates a new builder-style object to manufacture [`ConditionParameter`](crate::model::ConditionParameter).
-    pub fn builder() -> crate::model::condition_parameter::Builder {
-        crate::model::condition_parameter::Builder::default()
-    }
-}
 
 /// <p>Contains an array of triplets made up of a condition type (such as <code>StringEquals</code>), a key, and a value. Used to filter resources using their tags and assign them to a backup plan. Case sensitive.</p>
 #[non_exhaustive]
@@ -6619,6 +6652,13 @@ impl Condition {
         self.condition_value.as_deref()
     }
 }
+impl Condition {
+    /// Creates a new builder-style object to manufacture [`Condition`](crate::model::Condition).
+    pub fn builder() -> crate::model::condition::Builder {
+        crate::model::condition::Builder::default()
+    }
+}
+
 /// See [`Condition`](crate::model::Condition).
 pub mod condition {
 
@@ -6678,12 +6718,6 @@ pub mod condition {
                 condition_value: self.condition_value,
             }
         }
-    }
-}
-impl Condition {
-    /// Creates a new builder-style object to manufacture [`Condition`](crate::model::Condition).
-    pub fn builder() -> crate::model::condition::Builder {
-        crate::model::condition::Builder::default()
     }
 }
 
@@ -6803,6 +6837,13 @@ impl BackupPlan {
         self.advanced_backup_settings.as_deref()
     }
 }
+impl BackupPlan {
+    /// Creates a new builder-style object to manufacture [`BackupPlan`](crate::model::BackupPlan).
+    pub fn builder() -> crate::model::backup_plan::Builder {
+        crate::model::backup_plan::Builder::default()
+    }
+}
+
 /// See [`BackupPlan`](crate::model::BackupPlan).
 pub mod backup_plan {
 
@@ -6878,12 +6919,6 @@ pub mod backup_plan {
                 advanced_backup_settings: self.advanced_backup_settings,
             }
         }
-    }
-}
-impl BackupPlan {
-    /// Creates a new builder-style object to manufacture [`BackupPlan`](crate::model::BackupPlan).
-    pub fn builder() -> crate::model::backup_plan::Builder {
-        crate::model::backup_plan::Builder::default()
     }
 }
 
@@ -6988,6 +7023,13 @@ impl std::fmt::Debug for BackupRule {
         formatter.finish()
     }
 }
+impl BackupRule {
+    /// Creates a new builder-style object to manufacture [`BackupRule`](crate::model::BackupRule).
+    pub fn builder() -> crate::model::backup_rule::Builder {
+        crate::model::backup_rule::Builder::default()
+    }
+}
+
 /// See [`BackupRule`](crate::model::BackupRule).
 pub mod backup_rule {
 
@@ -7177,12 +7219,6 @@ pub mod backup_rule {
             formatter.field("enable_continuous_backup", &self.enable_continuous_backup);
             formatter.finish()
         }
-    }
-}
-impl BackupRule {
-    /// Creates a new builder-style object to manufacture [`BackupRule`](crate::model::BackupRule).
-    pub fn builder() -> crate::model::backup_rule::Builder {
-        crate::model::backup_rule::Builder::default()
     }
 }
 

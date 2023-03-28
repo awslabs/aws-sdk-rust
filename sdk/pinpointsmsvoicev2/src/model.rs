@@ -21,6 +21,13 @@ impl ValidationExceptionField {
         self.message.as_deref()
     }
 }
+impl ValidationExceptionField {
+    /// Creates a new builder-style object to manufacture [`ValidationExceptionField`](crate::model::ValidationExceptionField).
+    pub fn builder() -> crate::model::validation_exception_field::Builder {
+        crate::model::validation_exception_field::Builder::default()
+    }
+}
+
 /// See [`ValidationExceptionField`](crate::model::ValidationExceptionField).
 pub mod validation_exception_field {
 
@@ -59,12 +66,6 @@ pub mod validation_exception_field {
                 message: self.message,
             }
         }
-    }
-}
-impl ValidationExceptionField {
-    /// Creates a new builder-style object to manufacture [`ValidationExceptionField`](crate::model::ValidationExceptionField).
-    pub fn builder() -> crate::model::validation_exception_field::Builder {
-        crate::model::validation_exception_field::Builder::default()
     }
 }
 
@@ -1325,6 +1326,13 @@ impl EventDestination {
         self.sns_destination.as_ref()
     }
 }
+impl EventDestination {
+    /// Creates a new builder-style object to manufacture [`EventDestination`](crate::model::EventDestination).
+    pub fn builder() -> crate::model::event_destination::Builder {
+        crate::model::event_destination::Builder::default()
+    }
+}
+
 /// See [`EventDestination`](crate::model::EventDestination).
 pub mod event_destination {
 
@@ -1443,12 +1451,6 @@ pub mod event_destination {
         }
     }
 }
-impl EventDestination {
-    /// Creates a new builder-style object to manufacture [`EventDestination`](crate::model::EventDestination).
-    pub fn builder() -> crate::model::event_destination::Builder {
-        crate::model::event_destination::Builder::default()
-    }
-}
 
 /// <p>An object that defines an Amazon SNS destination for events. You can use Amazon SNS to send notification when certain events occur.</p>
 #[non_exhaustive]
@@ -1464,6 +1466,13 @@ impl SnsDestination {
         self.topic_arn.as_deref()
     }
 }
+impl SnsDestination {
+    /// Creates a new builder-style object to manufacture [`SnsDestination`](crate::model::SnsDestination).
+    pub fn builder() -> crate::model::sns_destination::Builder {
+        crate::model::sns_destination::Builder::default()
+    }
+}
+
 /// See [`SnsDestination`](crate::model::SnsDestination).
 pub mod sns_destination {
 
@@ -1492,12 +1501,6 @@ pub mod sns_destination {
         }
     }
 }
-impl SnsDestination {
-    /// Creates a new builder-style object to manufacture [`SnsDestination`](crate::model::SnsDestination).
-    pub fn builder() -> crate::model::sns_destination::Builder {
-        crate::model::sns_destination::Builder::default()
-    }
-}
 
 /// <p>Contains the delivery stream Amazon Resource Name (ARN), and the ARN of the Identity and Access Management (IAM) role associated with an Kinesis Data Firehose event destination.</p>
 /// <p>Event destinations, such as Kinesis Data Firehose, are associated with configuration sets, which enable you to publish message sending events.</p>
@@ -1521,6 +1524,13 @@ impl KinesisFirehoseDestination {
         self.delivery_stream_arn.as_deref()
     }
 }
+impl KinesisFirehoseDestination {
+    /// Creates a new builder-style object to manufacture [`KinesisFirehoseDestination`](crate::model::KinesisFirehoseDestination).
+    pub fn builder() -> crate::model::kinesis_firehose_destination::Builder {
+        crate::model::kinesis_firehose_destination::Builder::default()
+    }
+}
+
 /// See [`KinesisFirehoseDestination`](crate::model::KinesisFirehoseDestination).
 pub mod kinesis_firehose_destination {
 
@@ -1564,12 +1574,6 @@ pub mod kinesis_firehose_destination {
         }
     }
 }
-impl KinesisFirehoseDestination {
-    /// Creates a new builder-style object to manufacture [`KinesisFirehoseDestination`](crate::model::KinesisFirehoseDestination).
-    pub fn builder() -> crate::model::kinesis_firehose_destination::Builder {
-        crate::model::kinesis_firehose_destination::Builder::default()
-    }
-}
 
 /// <p>Contains the destination configuration to use when publishing message sending events. </p>
 #[non_exhaustive]
@@ -1592,6 +1596,13 @@ impl CloudWatchLogsDestination {
         self.log_group_arn.as_deref()
     }
 }
+impl CloudWatchLogsDestination {
+    /// Creates a new builder-style object to manufacture [`CloudWatchLogsDestination`](crate::model::CloudWatchLogsDestination).
+    pub fn builder() -> crate::model::cloud_watch_logs_destination::Builder {
+        crate::model::cloud_watch_logs_destination::Builder::default()
+    }
+}
+
 /// See [`CloudWatchLogsDestination`](crate::model::CloudWatchLogsDestination).
 pub mod cloud_watch_logs_destination {
 
@@ -1633,12 +1644,6 @@ pub mod cloud_watch_logs_destination {
                 log_group_arn: self.log_group_arn,
             }
         }
-    }
-}
-impl CloudWatchLogsDestination {
-    /// Creates a new builder-style object to manufacture [`CloudWatchLogsDestination`](crate::model::CloudWatchLogsDestination).
-    pub fn builder() -> crate::model::cloud_watch_logs_destination::Builder {
-        crate::model::cloud_watch_logs_destination::Builder::default()
     }
 }
 
@@ -2095,6 +2100,13 @@ impl Tag {
         self.value.as_deref()
     }
 }
+impl Tag {
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
+    pub fn builder() -> crate::model::tag::Builder {
+        crate::model::tag::Builder::default()
+    }
+}
+
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
 
@@ -2133,12 +2145,6 @@ pub mod tag {
                 value: self.value,
             }
         }
-    }
-}
-impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
-    pub fn builder() -> crate::model::tag::Builder {
-        crate::model::tag::Builder::default()
     }
 }
 
@@ -2988,6 +2994,13 @@ impl OriginationIdentityMetadata {
         self.number_capabilities.as_deref()
     }
 }
+impl OriginationIdentityMetadata {
+    /// Creates a new builder-style object to manufacture [`OriginationIdentityMetadata`](crate::model::OriginationIdentityMetadata).
+    pub fn builder() -> crate::model::origination_identity_metadata::Builder {
+        crate::model::origination_identity_metadata::Builder::default()
+    }
+}
+
 /// See [`OriginationIdentityMetadata`](crate::model::OriginationIdentityMetadata).
 pub mod origination_identity_metadata {
 
@@ -3071,12 +3084,6 @@ pub mod origination_identity_metadata {
         }
     }
 }
-impl OriginationIdentityMetadata {
-    /// Creates a new builder-style object to manufacture [`OriginationIdentityMetadata`](crate::model::OriginationIdentityMetadata).
-    pub fn builder() -> crate::model::origination_identity_metadata::Builder {
-        crate::model::origination_identity_metadata::Builder::default()
-    }
-}
 
 /// <p>Information about origination identities associated with a pool that meets a specified criteria.</p>
 #[non_exhaustive]
@@ -3099,6 +3106,13 @@ impl PoolOriginationIdentitiesFilter {
         self.values.as_deref()
     }
 }
+impl PoolOriginationIdentitiesFilter {
+    /// Creates a new builder-style object to manufacture [`PoolOriginationIdentitiesFilter`](crate::model::PoolOriginationIdentitiesFilter).
+    pub fn builder() -> crate::model::pool_origination_identities_filter::Builder {
+        crate::model::pool_origination_identities_filter::Builder::default()
+    }
+}
+
 /// See [`PoolOriginationIdentitiesFilter`](crate::model::PoolOriginationIdentitiesFilter).
 pub mod pool_origination_identities_filter {
 
@@ -3149,12 +3163,6 @@ pub mod pool_origination_identities_filter {
                 values: self.values,
             }
         }
-    }
-}
-impl PoolOriginationIdentitiesFilter {
-    /// Creates a new builder-style object to manufacture [`PoolOriginationIdentitiesFilter`](crate::model::PoolOriginationIdentitiesFilter).
-    pub fn builder() -> crate::model::pool_origination_identities_filter::Builder {
-        crate::model::pool_origination_identities_filter::Builder::default()
     }
 }
 
@@ -3285,6 +3293,13 @@ impl SpendLimit {
         self.overridden
     }
 }
+impl SpendLimit {
+    /// Creates a new builder-style object to manufacture [`SpendLimit`](crate::model::SpendLimit).
+    pub fn builder() -> crate::model::spend_limit::Builder {
+        crate::model::spend_limit::Builder::default()
+    }
+}
+
 /// See [`SpendLimit`](crate::model::SpendLimit).
 pub mod spend_limit {
 
@@ -3350,12 +3365,6 @@ pub mod spend_limit {
                 overridden: self.overridden.unwrap_or_default(),
             }
         }
-    }
-}
-impl SpendLimit {
-    /// Creates a new builder-style object to manufacture [`SpendLimit`](crate::model::SpendLimit).
-    pub fn builder() -> crate::model::spend_limit::Builder {
-        crate::model::spend_limit::Builder::default()
     }
 }
 
@@ -3494,6 +3503,13 @@ impl SenderIdInformation {
         self.monthly_leasing_price.as_deref()
     }
 }
+impl SenderIdInformation {
+    /// Creates a new builder-style object to manufacture [`SenderIdInformation`](crate::model::SenderIdInformation).
+    pub fn builder() -> crate::model::sender_id_information::Builder {
+        crate::model::sender_id_information::Builder::default()
+    }
+}
+
 /// See [`SenderIdInformation`](crate::model::SenderIdInformation).
 pub mod sender_id_information {
 
@@ -3588,12 +3604,6 @@ pub mod sender_id_information {
         }
     }
 }
-impl SenderIdInformation {
-    /// Creates a new builder-style object to manufacture [`SenderIdInformation`](crate::model::SenderIdInformation).
-    pub fn builder() -> crate::model::sender_id_information::Builder {
-        crate::model::sender_id_information::Builder::default()
-    }
-}
 
 /// <p>The information for a sender ID that meets a specified criteria.</p>
 #[non_exhaustive]
@@ -3616,6 +3626,13 @@ impl SenderIdFilter {
         self.values.as_deref()
     }
 }
+impl SenderIdFilter {
+    /// Creates a new builder-style object to manufacture [`SenderIdFilter`](crate::model::SenderIdFilter).
+    pub fn builder() -> crate::model::sender_id_filter::Builder {
+        crate::model::sender_id_filter::Builder::default()
+    }
+}
+
 /// See [`SenderIdFilter`](crate::model::SenderIdFilter).
 pub mod sender_id_filter {
 
@@ -3666,12 +3683,6 @@ pub mod sender_id_filter {
                 values: self.values,
             }
         }
-    }
-}
-impl SenderIdFilter {
-    /// Creates a new builder-style object to manufacture [`SenderIdFilter`](crate::model::SenderIdFilter).
-    pub fn builder() -> crate::model::sender_id_filter::Builder {
-        crate::model::sender_id_filter::Builder::default()
     }
 }
 
@@ -3793,6 +3804,13 @@ impl SenderIdAndCountry {
         self.iso_country_code.as_deref()
     }
 }
+impl SenderIdAndCountry {
+    /// Creates a new builder-style object to manufacture [`SenderIdAndCountry`](crate::model::SenderIdAndCountry).
+    pub fn builder() -> crate::model::sender_id_and_country::Builder {
+        crate::model::sender_id_and_country::Builder::default()
+    }
+}
+
 /// See [`SenderIdAndCountry`](crate::model::SenderIdAndCountry).
 pub mod sender_id_and_country {
 
@@ -3834,12 +3852,6 @@ pub mod sender_id_and_country {
                 iso_country_code: self.iso_country_code,
             }
         }
-    }
-}
-impl SenderIdAndCountry {
-    /// Creates a new builder-style object to manufacture [`SenderIdAndCountry`](crate::model::SenderIdAndCountry).
-    pub fn builder() -> crate::model::sender_id_and_country::Builder {
-        crate::model::sender_id_and_country::Builder::default()
     }
 }
 
@@ -3929,6 +3941,13 @@ impl PoolInformation {
         self.created_timestamp.as_ref()
     }
 }
+impl PoolInformation {
+    /// Creates a new builder-style object to manufacture [`PoolInformation`](crate::model::PoolInformation).
+    pub fn builder() -> crate::model::pool_information::Builder {
+        crate::model::pool_information::Builder::default()
+    }
+}
+
 /// See [`PoolInformation`](crate::model::PoolInformation).
 pub mod pool_information {
 
@@ -4096,12 +4115,6 @@ pub mod pool_information {
         }
     }
 }
-impl PoolInformation {
-    /// Creates a new builder-style object to manufacture [`PoolInformation`](crate::model::PoolInformation).
-    pub fn builder() -> crate::model::pool_information::Builder {
-        crate::model::pool_information::Builder::default()
-    }
-}
 
 /// <p>The information for a pool that meets a specified criteria.</p>
 #[non_exhaustive]
@@ -4124,6 +4137,13 @@ impl PoolFilter {
         self.values.as_deref()
     }
 }
+impl PoolFilter {
+    /// Creates a new builder-style object to manufacture [`PoolFilter`](crate::model::PoolFilter).
+    pub fn builder() -> crate::model::pool_filter::Builder {
+        crate::model::pool_filter::Builder::default()
+    }
+}
+
 /// See [`PoolFilter`](crate::model::PoolFilter).
 pub mod pool_filter {
 
@@ -4174,12 +4194,6 @@ pub mod pool_filter {
                 values: self.values,
             }
         }
-    }
-}
-impl PoolFilter {
-    /// Creates a new builder-style object to manufacture [`PoolFilter`](crate::model::PoolFilter).
-    pub fn builder() -> crate::model::pool_filter::Builder {
-        crate::model::pool_filter::Builder::default()
     }
 }
 
@@ -4425,6 +4439,13 @@ impl PhoneNumberInformation {
         self.created_timestamp.as_ref()
     }
 }
+impl PhoneNumberInformation {
+    /// Creates a new builder-style object to manufacture [`PhoneNumberInformation`](crate::model::PhoneNumberInformation).
+    pub fn builder() -> crate::model::phone_number_information::Builder {
+        crate::model::phone_number_information::Builder::default()
+    }
+}
+
 /// See [`PhoneNumberInformation`](crate::model::PhoneNumberInformation).
 pub mod phone_number_information {
 
@@ -4678,12 +4699,6 @@ pub mod phone_number_information {
         }
     }
 }
-impl PhoneNumberInformation {
-    /// Creates a new builder-style object to manufacture [`PhoneNumberInformation`](crate::model::PhoneNumberInformation).
-    pub fn builder() -> crate::model::phone_number_information::Builder {
-        crate::model::phone_number_information::Builder::default()
-    }
-}
 
 /// <p>The information for a phone number that meets a specified criteria.</p>
 #[non_exhaustive]
@@ -4706,6 +4721,13 @@ impl PhoneNumberFilter {
         self.values.as_deref()
     }
 }
+impl PhoneNumberFilter {
+    /// Creates a new builder-style object to manufacture [`PhoneNumberFilter`](crate::model::PhoneNumberFilter).
+    pub fn builder() -> crate::model::phone_number_filter::Builder {
+        crate::model::phone_number_filter::Builder::default()
+    }
+}
+
 /// See [`PhoneNumberFilter`](crate::model::PhoneNumberFilter).
 pub mod phone_number_filter {
 
@@ -4756,12 +4778,6 @@ pub mod phone_number_filter {
                 values: self.values,
             }
         }
-    }
-}
-impl PhoneNumberFilter {
-    /// Creates a new builder-style object to manufacture [`PhoneNumberFilter`](crate::model::PhoneNumberFilter).
-    pub fn builder() -> crate::model::phone_number_filter::Builder {
-        crate::model::phone_number_filter::Builder::default()
     }
 }
 
@@ -4930,6 +4946,13 @@ impl OptOutListInformation {
         self.created_timestamp.as_ref()
     }
 }
+impl OptOutListInformation {
+    /// Creates a new builder-style object to manufacture [`OptOutListInformation`](crate::model::OptOutListInformation).
+    pub fn builder() -> crate::model::opt_out_list_information::Builder {
+        crate::model::opt_out_list_information::Builder::default()
+    }
+}
+
 /// See [`OptOutListInformation`](crate::model::OptOutListInformation).
 pub mod opt_out_list_information {
 
@@ -4991,12 +5014,6 @@ pub mod opt_out_list_information {
         }
     }
 }
-impl OptOutListInformation {
-    /// Creates a new builder-style object to manufacture [`OptOutListInformation`](crate::model::OptOutListInformation).
-    pub fn builder() -> crate::model::opt_out_list_information::Builder {
-        crate::model::opt_out_list_information::Builder::default()
-    }
-}
 
 /// <p>The information for an opted out number in an Amazon Web Services account.</p>
 #[non_exhaustive]
@@ -5026,6 +5043,13 @@ impl OptedOutNumberInformation {
         self.end_user_opted_out
     }
 }
+impl OptedOutNumberInformation {
+    /// Creates a new builder-style object to manufacture [`OptedOutNumberInformation`](crate::model::OptedOutNumberInformation).
+    pub fn builder() -> crate::model::opted_out_number_information::Builder {
+        crate::model::opted_out_number_information::Builder::default()
+    }
+}
+
 /// See [`OptedOutNumberInformation`](crate::model::OptedOutNumberInformation).
 pub mod opted_out_number_information {
 
@@ -5084,12 +5108,6 @@ pub mod opted_out_number_information {
         }
     }
 }
-impl OptedOutNumberInformation {
-    /// Creates a new builder-style object to manufacture [`OptedOutNumberInformation`](crate::model::OptedOutNumberInformation).
-    pub fn builder() -> crate::model::opted_out_number_information::Builder {
-        crate::model::opted_out_number_information::Builder::default()
-    }
-}
 
 /// <p>The information for opted out numbers that meet a specified criteria.</p>
 #[non_exhaustive]
@@ -5112,6 +5130,13 @@ impl OptedOutFilter {
         self.values.as_deref()
     }
 }
+impl OptedOutFilter {
+    /// Creates a new builder-style object to manufacture [`OptedOutFilter`](crate::model::OptedOutFilter).
+    pub fn builder() -> crate::model::opted_out_filter::Builder {
+        crate::model::opted_out_filter::Builder::default()
+    }
+}
+
 /// See [`OptedOutFilter`](crate::model::OptedOutFilter).
 pub mod opted_out_filter {
 
@@ -5162,12 +5187,6 @@ pub mod opted_out_filter {
                 values: self.values,
             }
         }
-    }
-}
-impl OptedOutFilter {
-    /// Creates a new builder-style object to manufacture [`OptedOutFilter`](crate::model::OptedOutFilter).
-    pub fn builder() -> crate::model::opted_out_filter::Builder {
-        crate::model::opted_out_filter::Builder::default()
     }
 }
 
@@ -5286,6 +5305,13 @@ impl KeywordInformation {
         self.keyword_action.as_ref()
     }
 }
+impl KeywordInformation {
+    /// Creates a new builder-style object to manufacture [`KeywordInformation`](crate::model::KeywordInformation).
+    pub fn builder() -> crate::model::keyword_information::Builder {
+        crate::model::keyword_information::Builder::default()
+    }
+}
+
 /// See [`KeywordInformation`](crate::model::KeywordInformation).
 pub mod keyword_information {
 
@@ -5344,12 +5370,6 @@ pub mod keyword_information {
         }
     }
 }
-impl KeywordInformation {
-    /// Creates a new builder-style object to manufacture [`KeywordInformation`](crate::model::KeywordInformation).
-    pub fn builder() -> crate::model::keyword_information::Builder {
-        crate::model::keyword_information::Builder::default()
-    }
-}
 
 /// <p>The information for keywords that meet a specified criteria.</p>
 #[non_exhaustive]
@@ -5372,6 +5392,13 @@ impl KeywordFilter {
         self.values.as_deref()
     }
 }
+impl KeywordFilter {
+    /// Creates a new builder-style object to manufacture [`KeywordFilter`](crate::model::KeywordFilter).
+    pub fn builder() -> crate::model::keyword_filter::Builder {
+        crate::model::keyword_filter::Builder::default()
+    }
+}
+
 /// See [`KeywordFilter`](crate::model::KeywordFilter).
 pub mod keyword_filter {
 
@@ -5422,12 +5449,6 @@ pub mod keyword_filter {
                 values: self.values,
             }
         }
-    }
-}
-impl KeywordFilter {
-    /// Creates a new builder-style object to manufacture [`KeywordFilter`](crate::model::KeywordFilter).
-    pub fn builder() -> crate::model::keyword_filter::Builder {
-        crate::model::keyword_filter::Builder::default()
     }
 }
 
@@ -5567,6 +5588,13 @@ impl ConfigurationSetInformation {
         self.created_timestamp.as_ref()
     }
 }
+impl ConfigurationSetInformation {
+    /// Creates a new builder-style object to manufacture [`ConfigurationSetInformation`](crate::model::ConfigurationSetInformation).
+    pub fn builder() -> crate::model::configuration_set_information::Builder {
+        crate::model::configuration_set_information::Builder::default()
+    }
+}
+
 /// See [`ConfigurationSetInformation`](crate::model::ConfigurationSetInformation).
 pub mod configuration_set_information {
 
@@ -5680,12 +5708,6 @@ pub mod configuration_set_information {
         }
     }
 }
-impl ConfigurationSetInformation {
-    /// Creates a new builder-style object to manufacture [`ConfigurationSetInformation`](crate::model::ConfigurationSetInformation).
-    pub fn builder() -> crate::model::configuration_set_information::Builder {
-        crate::model::configuration_set_information::Builder::default()
-    }
-}
 
 /// <p>The information for configuration sets that meet a specified criteria.</p>
 #[non_exhaustive]
@@ -5708,6 +5730,13 @@ impl ConfigurationSetFilter {
         self.values.as_deref()
     }
 }
+impl ConfigurationSetFilter {
+    /// Creates a new builder-style object to manufacture [`ConfigurationSetFilter`](crate::model::ConfigurationSetFilter).
+    pub fn builder() -> crate::model::configuration_set_filter::Builder {
+        crate::model::configuration_set_filter::Builder::default()
+    }
+}
+
 /// See [`ConfigurationSetFilter`](crate::model::ConfigurationSetFilter).
 pub mod configuration_set_filter {
 
@@ -5758,12 +5787,6 @@ pub mod configuration_set_filter {
                 values: self.values,
             }
         }
-    }
-}
-impl ConfigurationSetFilter {
-    /// Creates a new builder-style object to manufacture [`ConfigurationSetFilter`](crate::model::ConfigurationSetFilter).
-    pub fn builder() -> crate::model::configuration_set_filter::Builder {
-        crate::model::configuration_set_filter::Builder::default()
     }
 }
 
@@ -5902,6 +5925,13 @@ impl AccountLimit {
         self.max
     }
 }
+impl AccountLimit {
+    /// Creates a new builder-style object to manufacture [`AccountLimit`](crate::model::AccountLimit).
+    pub fn builder() -> crate::model::account_limit::Builder {
+        crate::model::account_limit::Builder::default()
+    }
+}
+
 /// See [`AccountLimit`](crate::model::AccountLimit).
 pub mod account_limit {
 
@@ -5955,12 +5985,6 @@ pub mod account_limit {
                 max: self.max.unwrap_or_default(),
             }
         }
-    }
-}
-impl AccountLimit {
-    /// Creates a new builder-style object to manufacture [`AccountLimit`](crate::model::AccountLimit).
-    pub fn builder() -> crate::model::account_limit::Builder {
-        crate::model::account_limit::Builder::default()
     }
 }
 
@@ -6090,6 +6114,13 @@ impl AccountAttribute {
         self.value.as_deref()
     }
 }
+impl AccountAttribute {
+    /// Creates a new builder-style object to manufacture [`AccountAttribute`](crate::model::AccountAttribute).
+    pub fn builder() -> crate::model::account_attribute::Builder {
+        crate::model::account_attribute::Builder::default()
+    }
+}
+
 /// See [`AccountAttribute`](crate::model::AccountAttribute).
 pub mod account_attribute {
 
@@ -6131,12 +6162,6 @@ pub mod account_attribute {
                 value: self.value,
             }
         }
-    }
-}
-impl AccountAttribute {
-    /// Creates a new builder-style object to manufacture [`AccountAttribute`](crate::model::AccountAttribute).
-    pub fn builder() -> crate::model::account_attribute::Builder {
-        crate::model::account_attribute::Builder::default()
     }
 }
 

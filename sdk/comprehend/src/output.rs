@@ -10,6 +10,13 @@ impl aws_http::request_id::RequestId for UpdateEndpointOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdateEndpointOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateEndpointOutput`](crate::output::UpdateEndpointOutput).
+    pub fn builder() -> crate::output::update_endpoint_output::Builder {
+        crate::output::update_endpoint_output::Builder::default()
+    }
+}
+
 /// See [`UpdateEndpointOutput`](crate::output::UpdateEndpointOutput).
 pub mod update_endpoint_output {
 
@@ -37,12 +44,6 @@ pub mod update_endpoint_output {
         }
     }
 }
-impl UpdateEndpointOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateEndpointOutput`](crate::output::UpdateEndpointOutput).
-    pub fn builder() -> crate::output::update_endpoint_output::Builder {
-        crate::output::update_endpoint_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -55,6 +56,13 @@ impl aws_http::request_id::RequestId for UntagResourceOutput {
         self._request_id.as_deref()
     }
 }
+impl UntagResourceOutput {
+    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    pub fn builder() -> crate::output::untag_resource_output::Builder {
+        crate::output::untag_resource_output::Builder::default()
+    }
+}
+
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
 
@@ -82,12 +90,6 @@ pub mod untag_resource_output {
         }
     }
 }
-impl UntagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
-    pub fn builder() -> crate::output::untag_resource_output::Builder {
-        crate::output::untag_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -100,6 +102,13 @@ impl aws_http::request_id::RequestId for TagResourceOutput {
         self._request_id.as_deref()
     }
 }
+impl TagResourceOutput {
+    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
+    pub fn builder() -> crate::output::tag_resource_output::Builder {
+        crate::output::tag_resource_output::Builder::default()
+    }
+}
+
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
 
@@ -127,12 +136,6 @@ pub mod tag_resource_output {
         }
     }
 }
-impl TagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
-    pub fn builder() -> crate::output::tag_resource_output::Builder {
-        crate::output::tag_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -145,6 +148,13 @@ impl aws_http::request_id::RequestId for StopTrainingEntityRecognizerOutput {
         self._request_id.as_deref()
     }
 }
+impl StopTrainingEntityRecognizerOutput {
+    /// Creates a new builder-style object to manufacture [`StopTrainingEntityRecognizerOutput`](crate::output::StopTrainingEntityRecognizerOutput).
+    pub fn builder() -> crate::output::stop_training_entity_recognizer_output::Builder {
+        crate::output::stop_training_entity_recognizer_output::Builder::default()
+    }
+}
+
 /// See [`StopTrainingEntityRecognizerOutput`](crate::output::StopTrainingEntityRecognizerOutput).
 pub mod stop_training_entity_recognizer_output {
 
@@ -172,12 +182,6 @@ pub mod stop_training_entity_recognizer_output {
         }
     }
 }
-impl StopTrainingEntityRecognizerOutput {
-    /// Creates a new builder-style object to manufacture [`StopTrainingEntityRecognizerOutput`](crate::output::StopTrainingEntityRecognizerOutput).
-    pub fn builder() -> crate::output::stop_training_entity_recognizer_output::Builder {
-        crate::output::stop_training_entity_recognizer_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -190,6 +194,13 @@ impl aws_http::request_id::RequestId for StopTrainingDocumentClassifierOutput {
         self._request_id.as_deref()
     }
 }
+impl StopTrainingDocumentClassifierOutput {
+    /// Creates a new builder-style object to manufacture [`StopTrainingDocumentClassifierOutput`](crate::output::StopTrainingDocumentClassifierOutput).
+    pub fn builder() -> crate::output::stop_training_document_classifier_output::Builder {
+        crate::output::stop_training_document_classifier_output::Builder::default()
+    }
+}
+
 /// See [`StopTrainingDocumentClassifierOutput`](crate::output::StopTrainingDocumentClassifierOutput).
 pub mod stop_training_document_classifier_output {
 
@@ -215,12 +226,6 @@ pub mod stop_training_document_classifier_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl StopTrainingDocumentClassifierOutput {
-    /// Creates a new builder-style object to manufacture [`StopTrainingDocumentClassifierOutput`](crate::output::StopTrainingDocumentClassifierOutput).
-    pub fn builder() -> crate::output::stop_training_document_classifier_output::Builder {
-        crate::output::stop_training_document_classifier_output::Builder::default()
     }
 }
 
@@ -251,6 +256,13 @@ impl aws_http::request_id::RequestId for StopTargetedSentimentDetectionJobOutput
         self._request_id.as_deref()
     }
 }
+impl StopTargetedSentimentDetectionJobOutput {
+    /// Creates a new builder-style object to manufacture [`StopTargetedSentimentDetectionJobOutput`](crate::output::StopTargetedSentimentDetectionJobOutput).
+    pub fn builder() -> crate::output::stop_targeted_sentiment_detection_job_output::Builder {
+        crate::output::stop_targeted_sentiment_detection_job_output::Builder::default()
+    }
+}
+
 /// See [`StopTargetedSentimentDetectionJobOutput`](crate::output::StopTargetedSentimentDetectionJobOutput).
 pub mod stop_targeted_sentiment_detection_job_output {
 
@@ -305,12 +317,6 @@ pub mod stop_targeted_sentiment_detection_job_output {
         }
     }
 }
-impl StopTargetedSentimentDetectionJobOutput {
-    /// Creates a new builder-style object to manufacture [`StopTargetedSentimentDetectionJobOutput`](crate::output::StopTargetedSentimentDetectionJobOutput).
-    pub fn builder() -> crate::output::stop_targeted_sentiment_detection_job_output::Builder {
-        crate::output::stop_targeted_sentiment_detection_job_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -339,6 +345,13 @@ impl aws_http::request_id::RequestId for StopSentimentDetectionJobOutput {
         self._request_id.as_deref()
     }
 }
+impl StopSentimentDetectionJobOutput {
+    /// Creates a new builder-style object to manufacture [`StopSentimentDetectionJobOutput`](crate::output::StopSentimentDetectionJobOutput).
+    pub fn builder() -> crate::output::stop_sentiment_detection_job_output::Builder {
+        crate::output::stop_sentiment_detection_job_output::Builder::default()
+    }
+}
+
 /// See [`StopSentimentDetectionJobOutput`](crate::output::StopSentimentDetectionJobOutput).
 pub mod stop_sentiment_detection_job_output {
 
@@ -393,12 +406,6 @@ pub mod stop_sentiment_detection_job_output {
         }
     }
 }
-impl StopSentimentDetectionJobOutput {
-    /// Creates a new builder-style object to manufacture [`StopSentimentDetectionJobOutput`](crate::output::StopSentimentDetectionJobOutput).
-    pub fn builder() -> crate::output::stop_sentiment_detection_job_output::Builder {
-        crate::output::stop_sentiment_detection_job_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -427,6 +434,13 @@ impl aws_http::request_id::RequestId for StopPiiEntitiesDetectionJobOutput {
         self._request_id.as_deref()
     }
 }
+impl StopPiiEntitiesDetectionJobOutput {
+    /// Creates a new builder-style object to manufacture [`StopPiiEntitiesDetectionJobOutput`](crate::output::StopPiiEntitiesDetectionJobOutput).
+    pub fn builder() -> crate::output::stop_pii_entities_detection_job_output::Builder {
+        crate::output::stop_pii_entities_detection_job_output::Builder::default()
+    }
+}
+
 /// See [`StopPiiEntitiesDetectionJobOutput`](crate::output::StopPiiEntitiesDetectionJobOutput).
 pub mod stop_pii_entities_detection_job_output {
 
@@ -481,12 +495,6 @@ pub mod stop_pii_entities_detection_job_output {
         }
     }
 }
-impl StopPiiEntitiesDetectionJobOutput {
-    /// Creates a new builder-style object to manufacture [`StopPiiEntitiesDetectionJobOutput`](crate::output::StopPiiEntitiesDetectionJobOutput).
-    pub fn builder() -> crate::output::stop_pii_entities_detection_job_output::Builder {
-        crate::output::stop_pii_entities_detection_job_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -515,6 +523,13 @@ impl aws_http::request_id::RequestId for StopKeyPhrasesDetectionJobOutput {
         self._request_id.as_deref()
     }
 }
+impl StopKeyPhrasesDetectionJobOutput {
+    /// Creates a new builder-style object to manufacture [`StopKeyPhrasesDetectionJobOutput`](crate::output::StopKeyPhrasesDetectionJobOutput).
+    pub fn builder() -> crate::output::stop_key_phrases_detection_job_output::Builder {
+        crate::output::stop_key_phrases_detection_job_output::Builder::default()
+    }
+}
+
 /// See [`StopKeyPhrasesDetectionJobOutput`](crate::output::StopKeyPhrasesDetectionJobOutput).
 pub mod stop_key_phrases_detection_job_output {
 
@@ -569,12 +584,6 @@ pub mod stop_key_phrases_detection_job_output {
         }
     }
 }
-impl StopKeyPhrasesDetectionJobOutput {
-    /// Creates a new builder-style object to manufacture [`StopKeyPhrasesDetectionJobOutput`](crate::output::StopKeyPhrasesDetectionJobOutput).
-    pub fn builder() -> crate::output::stop_key_phrases_detection_job_output::Builder {
-        crate::output::stop_key_phrases_detection_job_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -603,6 +612,13 @@ impl aws_http::request_id::RequestId for StopEventsDetectionJobOutput {
         self._request_id.as_deref()
     }
 }
+impl StopEventsDetectionJobOutput {
+    /// Creates a new builder-style object to manufacture [`StopEventsDetectionJobOutput`](crate::output::StopEventsDetectionJobOutput).
+    pub fn builder() -> crate::output::stop_events_detection_job_output::Builder {
+        crate::output::stop_events_detection_job_output::Builder::default()
+    }
+}
+
 /// See [`StopEventsDetectionJobOutput`](crate::output::StopEventsDetectionJobOutput).
 pub mod stop_events_detection_job_output {
 
@@ -657,12 +673,6 @@ pub mod stop_events_detection_job_output {
         }
     }
 }
-impl StopEventsDetectionJobOutput {
-    /// Creates a new builder-style object to manufacture [`StopEventsDetectionJobOutput`](crate::output::StopEventsDetectionJobOutput).
-    pub fn builder() -> crate::output::stop_events_detection_job_output::Builder {
-        crate::output::stop_events_detection_job_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -691,6 +701,13 @@ impl aws_http::request_id::RequestId for StopEntitiesDetectionJobOutput {
         self._request_id.as_deref()
     }
 }
+impl StopEntitiesDetectionJobOutput {
+    /// Creates a new builder-style object to manufacture [`StopEntitiesDetectionJobOutput`](crate::output::StopEntitiesDetectionJobOutput).
+    pub fn builder() -> crate::output::stop_entities_detection_job_output::Builder {
+        crate::output::stop_entities_detection_job_output::Builder::default()
+    }
+}
+
 /// See [`StopEntitiesDetectionJobOutput`](crate::output::StopEntitiesDetectionJobOutput).
 pub mod stop_entities_detection_job_output {
 
@@ -745,12 +762,6 @@ pub mod stop_entities_detection_job_output {
         }
     }
 }
-impl StopEntitiesDetectionJobOutput {
-    /// Creates a new builder-style object to manufacture [`StopEntitiesDetectionJobOutput`](crate::output::StopEntitiesDetectionJobOutput).
-    pub fn builder() -> crate::output::stop_entities_detection_job_output::Builder {
-        crate::output::stop_entities_detection_job_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -779,6 +790,13 @@ impl aws_http::request_id::RequestId for StopDominantLanguageDetectionJobOutput 
         self._request_id.as_deref()
     }
 }
+impl StopDominantLanguageDetectionJobOutput {
+    /// Creates a new builder-style object to manufacture [`StopDominantLanguageDetectionJobOutput`](crate::output::StopDominantLanguageDetectionJobOutput).
+    pub fn builder() -> crate::output::stop_dominant_language_detection_job_output::Builder {
+        crate::output::stop_dominant_language_detection_job_output::Builder::default()
+    }
+}
+
 /// See [`StopDominantLanguageDetectionJobOutput`](crate::output::StopDominantLanguageDetectionJobOutput).
 pub mod stop_dominant_language_detection_job_output {
 
@@ -831,12 +849,6 @@ pub mod stop_dominant_language_detection_job_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl StopDominantLanguageDetectionJobOutput {
-    /// Creates a new builder-style object to manufacture [`StopDominantLanguageDetectionJobOutput`](crate::output::StopDominantLanguageDetectionJobOutput).
-    pub fn builder() -> crate::output::stop_dominant_language_detection_job_output::Builder {
-        crate::output::stop_dominant_language_detection_job_output::Builder::default()
     }
 }
 
@@ -912,6 +924,13 @@ impl aws_http::request_id::RequestId for StartTopicsDetectionJobOutput {
         self._request_id.as_deref()
     }
 }
+impl StartTopicsDetectionJobOutput {
+    /// Creates a new builder-style object to manufacture [`StartTopicsDetectionJobOutput`](crate::output::StartTopicsDetectionJobOutput).
+    pub fn builder() -> crate::output::start_topics_detection_job_output::Builder {
+        crate::output::start_topics_detection_job_output::Builder::default()
+    }
+}
+
 /// See [`StartTopicsDetectionJobOutput`](crate::output::StartTopicsDetectionJobOutput).
 pub mod start_topics_detection_job_output {
 
@@ -1016,12 +1035,6 @@ pub mod start_topics_detection_job_output {
         }
     }
 }
-impl StartTopicsDetectionJobOutput {
-    /// Creates a new builder-style object to manufacture [`StartTopicsDetectionJobOutput`](crate::output::StartTopicsDetectionJobOutput).
-    pub fn builder() -> crate::output::start_topics_detection_job_output::Builder {
-        crate::output::start_topics_detection_job_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1095,6 +1108,13 @@ impl aws_http::request_id::RequestId for StartTargetedSentimentDetectionJobOutpu
         self._request_id.as_deref()
     }
 }
+impl StartTargetedSentimentDetectionJobOutput {
+    /// Creates a new builder-style object to manufacture [`StartTargetedSentimentDetectionJobOutput`](crate::output::StartTargetedSentimentDetectionJobOutput).
+    pub fn builder() -> crate::output::start_targeted_sentiment_detection_job_output::Builder {
+        crate::output::start_targeted_sentiment_detection_job_output::Builder::default()
+    }
+}
+
 /// See [`StartTargetedSentimentDetectionJobOutput`](crate::output::StartTargetedSentimentDetectionJobOutput).
 pub mod start_targeted_sentiment_detection_job_output {
 
@@ -1199,12 +1219,6 @@ pub mod start_targeted_sentiment_detection_job_output {
         }
     }
 }
-impl StartTargetedSentimentDetectionJobOutput {
-    /// Creates a new builder-style object to manufacture [`StartTargetedSentimentDetectionJobOutput`](crate::output::StartTargetedSentimentDetectionJobOutput).
-    pub fn builder() -> crate::output::start_targeted_sentiment_detection_job_output::Builder {
-        crate::output::start_targeted_sentiment_detection_job_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1278,6 +1292,13 @@ impl aws_http::request_id::RequestId for StartSentimentDetectionJobOutput {
         self._request_id.as_deref()
     }
 }
+impl StartSentimentDetectionJobOutput {
+    /// Creates a new builder-style object to manufacture [`StartSentimentDetectionJobOutput`](crate::output::StartSentimentDetectionJobOutput).
+    pub fn builder() -> crate::output::start_sentiment_detection_job_output::Builder {
+        crate::output::start_sentiment_detection_job_output::Builder::default()
+    }
+}
+
 /// See [`StartSentimentDetectionJobOutput`](crate::output::StartSentimentDetectionJobOutput).
 pub mod start_sentiment_detection_job_output {
 
@@ -1382,12 +1403,6 @@ pub mod start_sentiment_detection_job_output {
         }
     }
 }
-impl StartSentimentDetectionJobOutput {
-    /// Creates a new builder-style object to manufacture [`StartSentimentDetectionJobOutput`](crate::output::StartSentimentDetectionJobOutput).
-    pub fn builder() -> crate::output::start_sentiment_detection_job_output::Builder {
-        crate::output::start_sentiment_detection_job_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1449,6 +1464,13 @@ impl aws_http::request_id::RequestId for StartPiiEntitiesDetectionJobOutput {
         self._request_id.as_deref()
     }
 }
+impl StartPiiEntitiesDetectionJobOutput {
+    /// Creates a new builder-style object to manufacture [`StartPiiEntitiesDetectionJobOutput`](crate::output::StartPiiEntitiesDetectionJobOutput).
+    pub fn builder() -> crate::output::start_pii_entities_detection_job_output::Builder {
+        crate::output::start_pii_entities_detection_job_output::Builder::default()
+    }
+}
+
 /// See [`StartPiiEntitiesDetectionJobOutput`](crate::output::StartPiiEntitiesDetectionJobOutput).
 pub mod start_pii_entities_detection_job_output {
 
@@ -1541,12 +1563,6 @@ pub mod start_pii_entities_detection_job_output {
         }
     }
 }
-impl StartPiiEntitiesDetectionJobOutput {
-    /// Creates a new builder-style object to manufacture [`StartPiiEntitiesDetectionJobOutput`](crate::output::StartPiiEntitiesDetectionJobOutput).
-    pub fn builder() -> crate::output::start_pii_entities_detection_job_output::Builder {
-        crate::output::start_pii_entities_detection_job_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1620,6 +1636,13 @@ impl aws_http::request_id::RequestId for StartKeyPhrasesDetectionJobOutput {
         self._request_id.as_deref()
     }
 }
+impl StartKeyPhrasesDetectionJobOutput {
+    /// Creates a new builder-style object to manufacture [`StartKeyPhrasesDetectionJobOutput`](crate::output::StartKeyPhrasesDetectionJobOutput).
+    pub fn builder() -> crate::output::start_key_phrases_detection_job_output::Builder {
+        crate::output::start_key_phrases_detection_job_output::Builder::default()
+    }
+}
+
 /// See [`StartKeyPhrasesDetectionJobOutput`](crate::output::StartKeyPhrasesDetectionJobOutput).
 pub mod start_key_phrases_detection_job_output {
 
@@ -1724,12 +1747,6 @@ pub mod start_key_phrases_detection_job_output {
         }
     }
 }
-impl StartKeyPhrasesDetectionJobOutput {
-    /// Creates a new builder-style object to manufacture [`StartKeyPhrasesDetectionJobOutput`](crate::output::StartKeyPhrasesDetectionJobOutput).
-    pub fn builder() -> crate::output::start_key_phrases_detection_job_output::Builder {
-        crate::output::start_key_phrases_detection_job_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1791,6 +1808,13 @@ impl aws_http::request_id::RequestId for StartEventsDetectionJobOutput {
         self._request_id.as_deref()
     }
 }
+impl StartEventsDetectionJobOutput {
+    /// Creates a new builder-style object to manufacture [`StartEventsDetectionJobOutput`](crate::output::StartEventsDetectionJobOutput).
+    pub fn builder() -> crate::output::start_events_detection_job_output::Builder {
+        crate::output::start_events_detection_job_output::Builder::default()
+    }
+}
+
 /// See [`StartEventsDetectionJobOutput`](crate::output::StartEventsDetectionJobOutput).
 pub mod start_events_detection_job_output {
 
@@ -1883,12 +1907,6 @@ pub mod start_events_detection_job_output {
         }
     }
 }
-impl StartEventsDetectionJobOutput {
-    /// Creates a new builder-style object to manufacture [`StartEventsDetectionJobOutput`](crate::output::StartEventsDetectionJobOutput).
-    pub fn builder() -> crate::output::start_events_detection_job_output::Builder {
-        crate::output::start_events_detection_job_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1966,6 +1984,13 @@ impl aws_http::request_id::RequestId for StartEntitiesDetectionJobOutput {
         self._request_id.as_deref()
     }
 }
+impl StartEntitiesDetectionJobOutput {
+    /// Creates a new builder-style object to manufacture [`StartEntitiesDetectionJobOutput`](crate::output::StartEntitiesDetectionJobOutput).
+    pub fn builder() -> crate::output::start_entities_detection_job_output::Builder {
+        crate::output::start_entities_detection_job_output::Builder::default()
+    }
+}
+
 /// See [`StartEntitiesDetectionJobOutput`](crate::output::StartEntitiesDetectionJobOutput).
 pub mod start_entities_detection_job_output {
 
@@ -2074,12 +2099,6 @@ pub mod start_entities_detection_job_output {
         }
     }
 }
-impl StartEntitiesDetectionJobOutput {
-    /// Creates a new builder-style object to manufacture [`StartEntitiesDetectionJobOutput`](crate::output::StartEntitiesDetectionJobOutput).
-    pub fn builder() -> crate::output::start_entities_detection_job_output::Builder {
-        crate::output::start_entities_detection_job_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2153,6 +2172,13 @@ impl aws_http::request_id::RequestId for StartDominantLanguageDetectionJobOutput
         self._request_id.as_deref()
     }
 }
+impl StartDominantLanguageDetectionJobOutput {
+    /// Creates a new builder-style object to manufacture [`StartDominantLanguageDetectionJobOutput`](crate::output::StartDominantLanguageDetectionJobOutput).
+    pub fn builder() -> crate::output::start_dominant_language_detection_job_output::Builder {
+        crate::output::start_dominant_language_detection_job_output::Builder::default()
+    }
+}
+
 /// See [`StartDominantLanguageDetectionJobOutput`](crate::output::StartDominantLanguageDetectionJobOutput).
 pub mod start_dominant_language_detection_job_output {
 
@@ -2257,12 +2283,6 @@ pub mod start_dominant_language_detection_job_output {
         }
     }
 }
-impl StartDominantLanguageDetectionJobOutput {
-    /// Creates a new builder-style object to manufacture [`StartDominantLanguageDetectionJobOutput`](crate::output::StartDominantLanguageDetectionJobOutput).
-    pub fn builder() -> crate::output::start_dominant_language_detection_job_output::Builder {
-        crate::output::start_dominant_language_detection_job_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2340,6 +2360,13 @@ impl aws_http::request_id::RequestId for StartDocumentClassificationJobOutput {
         self._request_id.as_deref()
     }
 }
+impl StartDocumentClassificationJobOutput {
+    /// Creates a new builder-style object to manufacture [`StartDocumentClassificationJobOutput`](crate::output::StartDocumentClassificationJobOutput).
+    pub fn builder() -> crate::output::start_document_classification_job_output::Builder {
+        crate::output::start_document_classification_job_output::Builder::default()
+    }
+}
+
 /// See [`StartDocumentClassificationJobOutput`](crate::output::StartDocumentClassificationJobOutput).
 pub mod start_document_classification_job_output {
 
@@ -2448,12 +2475,6 @@ pub mod start_document_classification_job_output {
         }
     }
 }
-impl StartDocumentClassificationJobOutput {
-    /// Creates a new builder-style object to manufacture [`StartDocumentClassificationJobOutput`](crate::output::StartDocumentClassificationJobOutput).
-    pub fn builder() -> crate::output::start_document_classification_job_output::Builder {
-        crate::output::start_document_classification_job_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2475,6 +2496,13 @@ impl aws_http::request_id::RequestId for PutResourcePolicyOutput {
         self._request_id.as_deref()
     }
 }
+impl PutResourcePolicyOutput {
+    /// Creates a new builder-style object to manufacture [`PutResourcePolicyOutput`](crate::output::PutResourcePolicyOutput).
+    pub fn builder() -> crate::output::put_resource_policy_output::Builder {
+        crate::output::put_resource_policy_output::Builder::default()
+    }
+}
+
 /// See [`PutResourcePolicyOutput`](crate::output::PutResourcePolicyOutput).
 pub mod put_resource_policy_output {
 
@@ -2517,12 +2545,6 @@ pub mod put_resource_policy_output {
         }
     }
 }
-impl PutResourcePolicyOutput {
-    /// Creates a new builder-style object to manufacture [`PutResourcePolicyOutput`](crate::output::PutResourcePolicyOutput).
-    pub fn builder() -> crate::output::put_resource_policy_output::Builder {
-        crate::output::put_resource_policy_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2554,6 +2576,13 @@ impl aws_http::request_id::RequestId for ListTopicsDetectionJobsOutput {
         self._request_id.as_deref()
     }
 }
+impl ListTopicsDetectionJobsOutput {
+    /// Creates a new builder-style object to manufacture [`ListTopicsDetectionJobsOutput`](crate::output::ListTopicsDetectionJobsOutput).
+    pub fn builder() -> crate::output::list_topics_detection_jobs_output::Builder {
+        crate::output::list_topics_detection_jobs_output::Builder::default()
+    }
+}
+
 /// See [`ListTopicsDetectionJobsOutput`](crate::output::ListTopicsDetectionJobsOutput).
 pub mod list_topics_detection_jobs_output {
 
@@ -2620,12 +2649,6 @@ pub mod list_topics_detection_jobs_output {
         }
     }
 }
-impl ListTopicsDetectionJobsOutput {
-    /// Creates a new builder-style object to manufacture [`ListTopicsDetectionJobsOutput`](crate::output::ListTopicsDetectionJobsOutput).
-    pub fn builder() -> crate::output::list_topics_detection_jobs_output::Builder {
-        crate::output::list_topics_detection_jobs_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2658,6 +2681,13 @@ impl aws_http::request_id::RequestId for ListTargetedSentimentDetectionJobsOutpu
         self._request_id.as_deref()
     }
 }
+impl ListTargetedSentimentDetectionJobsOutput {
+    /// Creates a new builder-style object to manufacture [`ListTargetedSentimentDetectionJobsOutput`](crate::output::ListTargetedSentimentDetectionJobsOutput).
+    pub fn builder() -> crate::output::list_targeted_sentiment_detection_jobs_output::Builder {
+        crate::output::list_targeted_sentiment_detection_jobs_output::Builder::default()
+    }
+}
+
 /// See [`ListTargetedSentimentDetectionJobsOutput`](crate::output::ListTargetedSentimentDetectionJobsOutput).
 pub mod list_targeted_sentiment_detection_jobs_output {
 
@@ -2728,12 +2758,6 @@ pub mod list_targeted_sentiment_detection_jobs_output {
         }
     }
 }
-impl ListTargetedSentimentDetectionJobsOutput {
-    /// Creates a new builder-style object to manufacture [`ListTargetedSentimentDetectionJobsOutput`](crate::output::ListTargetedSentimentDetectionJobsOutput).
-    pub fn builder() -> crate::output::list_targeted_sentiment_detection_jobs_output::Builder {
-        crate::output::list_targeted_sentiment_detection_jobs_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2762,6 +2786,13 @@ impl aws_http::request_id::RequestId for ListTagsForResourceOutput {
         self._request_id.as_deref()
     }
 }
+impl ListTagsForResourceOutput {
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
+        crate::output::list_tags_for_resource_output::Builder::default()
+    }
+}
+
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
 
@@ -2822,12 +2853,6 @@ pub mod list_tags_for_resource_output {
         }
     }
 }
-impl ListTagsForResourceOutput {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
-    pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
-        crate::output::list_tags_for_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2859,6 +2884,13 @@ impl aws_http::request_id::RequestId for ListSentimentDetectionJobsOutput {
         self._request_id.as_deref()
     }
 }
+impl ListSentimentDetectionJobsOutput {
+    /// Creates a new builder-style object to manufacture [`ListSentimentDetectionJobsOutput`](crate::output::ListSentimentDetectionJobsOutput).
+    pub fn builder() -> crate::output::list_sentiment_detection_jobs_output::Builder {
+        crate::output::list_sentiment_detection_jobs_output::Builder::default()
+    }
+}
+
 /// See [`ListSentimentDetectionJobsOutput`](crate::output::ListSentimentDetectionJobsOutput).
 pub mod list_sentiment_detection_jobs_output {
 
@@ -2928,12 +2960,6 @@ pub mod list_sentiment_detection_jobs_output {
         }
     }
 }
-impl ListSentimentDetectionJobsOutput {
-    /// Creates a new builder-style object to manufacture [`ListSentimentDetectionJobsOutput`](crate::output::ListSentimentDetectionJobsOutput).
-    pub fn builder() -> crate::output::list_sentiment_detection_jobs_output::Builder {
-        crate::output::list_sentiment_detection_jobs_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2965,6 +2991,13 @@ impl aws_http::request_id::RequestId for ListPiiEntitiesDetectionJobsOutput {
         self._request_id.as_deref()
     }
 }
+impl ListPiiEntitiesDetectionJobsOutput {
+    /// Creates a new builder-style object to manufacture [`ListPiiEntitiesDetectionJobsOutput`](crate::output::ListPiiEntitiesDetectionJobsOutput).
+    pub fn builder() -> crate::output::list_pii_entities_detection_jobs_output::Builder {
+        crate::output::list_pii_entities_detection_jobs_output::Builder::default()
+    }
+}
+
 /// See [`ListPiiEntitiesDetectionJobsOutput`](crate::output::ListPiiEntitiesDetectionJobsOutput).
 pub mod list_pii_entities_detection_jobs_output {
 
@@ -3034,12 +3067,6 @@ pub mod list_pii_entities_detection_jobs_output {
         }
     }
 }
-impl ListPiiEntitiesDetectionJobsOutput {
-    /// Creates a new builder-style object to manufacture [`ListPiiEntitiesDetectionJobsOutput`](crate::output::ListPiiEntitiesDetectionJobsOutput).
-    pub fn builder() -> crate::output::list_pii_entities_detection_jobs_output::Builder {
-        crate::output::list_pii_entities_detection_jobs_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3071,6 +3098,13 @@ impl aws_http::request_id::RequestId for ListKeyPhrasesDetectionJobsOutput {
         self._request_id.as_deref()
     }
 }
+impl ListKeyPhrasesDetectionJobsOutput {
+    /// Creates a new builder-style object to manufacture [`ListKeyPhrasesDetectionJobsOutput`](crate::output::ListKeyPhrasesDetectionJobsOutput).
+    pub fn builder() -> crate::output::list_key_phrases_detection_jobs_output::Builder {
+        crate::output::list_key_phrases_detection_jobs_output::Builder::default()
+    }
+}
+
 /// See [`ListKeyPhrasesDetectionJobsOutput`](crate::output::ListKeyPhrasesDetectionJobsOutput).
 pub mod list_key_phrases_detection_jobs_output {
 
@@ -3140,12 +3174,6 @@ pub mod list_key_phrases_detection_jobs_output {
         }
     }
 }
-impl ListKeyPhrasesDetectionJobsOutput {
-    /// Creates a new builder-style object to manufacture [`ListKeyPhrasesDetectionJobsOutput`](crate::output::ListKeyPhrasesDetectionJobsOutput).
-    pub fn builder() -> crate::output::list_key_phrases_detection_jobs_output::Builder {
-        crate::output::list_key_phrases_detection_jobs_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3177,6 +3205,13 @@ impl aws_http::request_id::RequestId for ListEventsDetectionJobsOutput {
         self._request_id.as_deref()
     }
 }
+impl ListEventsDetectionJobsOutput {
+    /// Creates a new builder-style object to manufacture [`ListEventsDetectionJobsOutput`](crate::output::ListEventsDetectionJobsOutput).
+    pub fn builder() -> crate::output::list_events_detection_jobs_output::Builder {
+        crate::output::list_events_detection_jobs_output::Builder::default()
+    }
+}
+
 /// See [`ListEventsDetectionJobsOutput`](crate::output::ListEventsDetectionJobsOutput).
 pub mod list_events_detection_jobs_output {
 
@@ -3243,12 +3278,6 @@ pub mod list_events_detection_jobs_output {
         }
     }
 }
-impl ListEventsDetectionJobsOutput {
-    /// Creates a new builder-style object to manufacture [`ListEventsDetectionJobsOutput`](crate::output::ListEventsDetectionJobsOutput).
-    pub fn builder() -> crate::output::list_events_detection_jobs_output::Builder {
-        crate::output::list_events_detection_jobs_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3280,6 +3309,13 @@ impl aws_http::request_id::RequestId for ListEntityRecognizerSummariesOutput {
         self._request_id.as_deref()
     }
 }
+impl ListEntityRecognizerSummariesOutput {
+    /// Creates a new builder-style object to manufacture [`ListEntityRecognizerSummariesOutput`](crate::output::ListEntityRecognizerSummariesOutput).
+    pub fn builder() -> crate::output::list_entity_recognizer_summaries_output::Builder {
+        crate::output::list_entity_recognizer_summaries_output::Builder::default()
+    }
+}
+
 /// See [`ListEntityRecognizerSummariesOutput`](crate::output::ListEntityRecognizerSummariesOutput).
 pub mod list_entity_recognizer_summaries_output {
 
@@ -3344,12 +3380,6 @@ pub mod list_entity_recognizer_summaries_output {
         }
     }
 }
-impl ListEntityRecognizerSummariesOutput {
-    /// Creates a new builder-style object to manufacture [`ListEntityRecognizerSummariesOutput`](crate::output::ListEntityRecognizerSummariesOutput).
-    pub fn builder() -> crate::output::list_entity_recognizer_summaries_output::Builder {
-        crate::output::list_entity_recognizer_summaries_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3381,6 +3411,13 @@ impl aws_http::request_id::RequestId for ListEntityRecognizersOutput {
         self._request_id.as_deref()
     }
 }
+impl ListEntityRecognizersOutput {
+    /// Creates a new builder-style object to manufacture [`ListEntityRecognizersOutput`](crate::output::ListEntityRecognizersOutput).
+    pub fn builder() -> crate::output::list_entity_recognizers_output::Builder {
+        crate::output::list_entity_recognizers_output::Builder::default()
+    }
+}
+
 /// See [`ListEntityRecognizersOutput`](crate::output::ListEntityRecognizersOutput).
 pub mod list_entity_recognizers_output {
 
@@ -3445,12 +3482,6 @@ pub mod list_entity_recognizers_output {
         }
     }
 }
-impl ListEntityRecognizersOutput {
-    /// Creates a new builder-style object to manufacture [`ListEntityRecognizersOutput`](crate::output::ListEntityRecognizersOutput).
-    pub fn builder() -> crate::output::list_entity_recognizers_output::Builder {
-        crate::output::list_entity_recognizers_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3482,6 +3513,13 @@ impl aws_http::request_id::RequestId for ListEntitiesDetectionJobsOutput {
         self._request_id.as_deref()
     }
 }
+impl ListEntitiesDetectionJobsOutput {
+    /// Creates a new builder-style object to manufacture [`ListEntitiesDetectionJobsOutput`](crate::output::ListEntitiesDetectionJobsOutput).
+    pub fn builder() -> crate::output::list_entities_detection_jobs_output::Builder {
+        crate::output::list_entities_detection_jobs_output::Builder::default()
+    }
+}
+
 /// See [`ListEntitiesDetectionJobsOutput`](crate::output::ListEntitiesDetectionJobsOutput).
 pub mod list_entities_detection_jobs_output {
 
@@ -3548,12 +3586,6 @@ pub mod list_entities_detection_jobs_output {
         }
     }
 }
-impl ListEntitiesDetectionJobsOutput {
-    /// Creates a new builder-style object to manufacture [`ListEntitiesDetectionJobsOutput`](crate::output::ListEntitiesDetectionJobsOutput).
-    pub fn builder() -> crate::output::list_entities_detection_jobs_output::Builder {
-        crate::output::list_entities_detection_jobs_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3585,6 +3617,13 @@ impl aws_http::request_id::RequestId for ListEndpointsOutput {
         self._request_id.as_deref()
     }
 }
+impl ListEndpointsOutput {
+    /// Creates a new builder-style object to manufacture [`ListEndpointsOutput`](crate::output::ListEndpointsOutput).
+    pub fn builder() -> crate::output::list_endpoints_output::Builder {
+        crate::output::list_endpoints_output::Builder::default()
+    }
+}
+
 /// See [`ListEndpointsOutput`](crate::output::ListEndpointsOutput).
 pub mod list_endpoints_output {
 
@@ -3646,12 +3685,6 @@ pub mod list_endpoints_output {
         }
     }
 }
-impl ListEndpointsOutput {
-    /// Creates a new builder-style object to manufacture [`ListEndpointsOutput`](crate::output::ListEndpointsOutput).
-    pub fn builder() -> crate::output::list_endpoints_output::Builder {
-        crate::output::list_endpoints_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3684,6 +3717,13 @@ impl aws_http::request_id::RequestId for ListDominantLanguageDetectionJobsOutput
         self._request_id.as_deref()
     }
 }
+impl ListDominantLanguageDetectionJobsOutput {
+    /// Creates a new builder-style object to manufacture [`ListDominantLanguageDetectionJobsOutput`](crate::output::ListDominantLanguageDetectionJobsOutput).
+    pub fn builder() -> crate::output::list_dominant_language_detection_jobs_output::Builder {
+        crate::output::list_dominant_language_detection_jobs_output::Builder::default()
+    }
+}
+
 /// See [`ListDominantLanguageDetectionJobsOutput`](crate::output::ListDominantLanguageDetectionJobsOutput).
 pub mod list_dominant_language_detection_jobs_output {
 
@@ -3754,12 +3794,6 @@ pub mod list_dominant_language_detection_jobs_output {
         }
     }
 }
-impl ListDominantLanguageDetectionJobsOutput {
-    /// Creates a new builder-style object to manufacture [`ListDominantLanguageDetectionJobsOutput`](crate::output::ListDominantLanguageDetectionJobsOutput).
-    pub fn builder() -> crate::output::list_dominant_language_detection_jobs_output::Builder {
-        crate::output::list_dominant_language_detection_jobs_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3791,6 +3825,13 @@ impl aws_http::request_id::RequestId for ListDocumentClassifierSummariesOutput {
         self._request_id.as_deref()
     }
 }
+impl ListDocumentClassifierSummariesOutput {
+    /// Creates a new builder-style object to manufacture [`ListDocumentClassifierSummariesOutput`](crate::output::ListDocumentClassifierSummariesOutput).
+    pub fn builder() -> crate::output::list_document_classifier_summaries_output::Builder {
+        crate::output::list_document_classifier_summaries_output::Builder::default()
+    }
+}
+
 /// See [`ListDocumentClassifierSummariesOutput`](crate::output::ListDocumentClassifierSummariesOutput).
 pub mod list_document_classifier_summaries_output {
 
@@ -3855,12 +3896,6 @@ pub mod list_document_classifier_summaries_output {
         }
     }
 }
-impl ListDocumentClassifierSummariesOutput {
-    /// Creates a new builder-style object to manufacture [`ListDocumentClassifierSummariesOutput`](crate::output::ListDocumentClassifierSummariesOutput).
-    pub fn builder() -> crate::output::list_document_classifier_summaries_output::Builder {
-        crate::output::list_document_classifier_summaries_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3892,6 +3927,13 @@ impl aws_http::request_id::RequestId for ListDocumentClassifiersOutput {
         self._request_id.as_deref()
     }
 }
+impl ListDocumentClassifiersOutput {
+    /// Creates a new builder-style object to manufacture [`ListDocumentClassifiersOutput`](crate::output::ListDocumentClassifiersOutput).
+    pub fn builder() -> crate::output::list_document_classifiers_output::Builder {
+        crate::output::list_document_classifiers_output::Builder::default()
+    }
+}
+
 /// See [`ListDocumentClassifiersOutput`](crate::output::ListDocumentClassifiersOutput).
 pub mod list_document_classifiers_output {
 
@@ -3956,12 +3998,6 @@ pub mod list_document_classifiers_output {
         }
     }
 }
-impl ListDocumentClassifiersOutput {
-    /// Creates a new builder-style object to manufacture [`ListDocumentClassifiersOutput`](crate::output::ListDocumentClassifiersOutput).
-    pub fn builder() -> crate::output::list_document_classifiers_output::Builder {
-        crate::output::list_document_classifiers_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -3993,6 +4029,13 @@ impl aws_http::request_id::RequestId for ListDocumentClassificationJobsOutput {
         self._request_id.as_deref()
     }
 }
+impl ListDocumentClassificationJobsOutput {
+    /// Creates a new builder-style object to manufacture [`ListDocumentClassificationJobsOutput`](crate::output::ListDocumentClassificationJobsOutput).
+    pub fn builder() -> crate::output::list_document_classification_jobs_output::Builder {
+        crate::output::list_document_classification_jobs_output::Builder::default()
+    }
+}
+
 /// See [`ListDocumentClassificationJobsOutput`](crate::output::ListDocumentClassificationJobsOutput).
 pub mod list_document_classification_jobs_output {
 
@@ -4062,12 +4105,6 @@ pub mod list_document_classification_jobs_output {
         }
     }
 }
-impl ListDocumentClassificationJobsOutput {
-    /// Creates a new builder-style object to manufacture [`ListDocumentClassificationJobsOutput`](crate::output::ListDocumentClassificationJobsOutput).
-    pub fn builder() -> crate::output::list_document_classification_jobs_output::Builder {
-        crate::output::list_document_classification_jobs_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -4089,6 +4126,13 @@ impl aws_http::request_id::RequestId for ImportModelOutput {
         self._request_id.as_deref()
     }
 }
+impl ImportModelOutput {
+    /// Creates a new builder-style object to manufacture [`ImportModelOutput`](crate::output::ImportModelOutput).
+    pub fn builder() -> crate::output::import_model_output::Builder {
+        crate::output::import_model_output::Builder::default()
+    }
+}
+
 /// See [`ImportModelOutput`](crate::output::ImportModelOutput).
 pub mod import_model_output {
 
@@ -4128,12 +4172,6 @@ pub mod import_model_output {
         }
     }
 }
-impl ImportModelOutput {
-    /// Creates a new builder-style object to manufacture [`ImportModelOutput`](crate::output::ImportModelOutput).
-    pub fn builder() -> crate::output::import_model_output::Builder {
-        crate::output::import_model_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -4163,6 +4201,13 @@ impl aws_http::request_id::RequestId for DetectTargetedSentimentOutput {
         self._request_id.as_deref()
     }
 }
+impl DetectTargetedSentimentOutput {
+    /// Creates a new builder-style object to manufacture [`DetectTargetedSentimentOutput`](crate::output::DetectTargetedSentimentOutput).
+    pub fn builder() -> crate::output::detect_targeted_sentiment_output::Builder {
+        crate::output::detect_targeted_sentiment_output::Builder::default()
+    }
+}
+
 /// See [`DetectTargetedSentimentOutput`](crate::output::DetectTargetedSentimentOutput).
 pub mod detect_targeted_sentiment_output {
 
@@ -4220,12 +4265,6 @@ pub mod detect_targeted_sentiment_output {
         }
     }
 }
-impl DetectTargetedSentimentOutput {
-    /// Creates a new builder-style object to manufacture [`DetectTargetedSentimentOutput`](crate::output::DetectTargetedSentimentOutput).
-    pub fn builder() -> crate::output::detect_targeted_sentiment_output::Builder {
-        crate::output::detect_targeted_sentiment_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -4255,6 +4294,13 @@ impl aws_http::request_id::RequestId for DetectSyntaxOutput {
         self._request_id.as_deref()
     }
 }
+impl DetectSyntaxOutput {
+    /// Creates a new builder-style object to manufacture [`DetectSyntaxOutput`](crate::output::DetectSyntaxOutput).
+    pub fn builder() -> crate::output::detect_syntax_output::Builder {
+        crate::output::detect_syntax_output::Builder::default()
+    }
+}
+
 /// See [`DetectSyntaxOutput`](crate::output::DetectSyntaxOutput).
 pub mod detect_syntax_output {
 
@@ -4311,12 +4357,6 @@ pub mod detect_syntax_output {
         }
     }
 }
-impl DetectSyntaxOutput {
-    /// Creates a new builder-style object to manufacture [`DetectSyntaxOutput`](crate::output::DetectSyntaxOutput).
-    pub fn builder() -> crate::output::detect_syntax_output::Builder {
-        crate::output::detect_syntax_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -4354,6 +4394,13 @@ impl aws_http::request_id::RequestId for DetectSentimentOutput {
         self._request_id.as_deref()
     }
 }
+impl DetectSentimentOutput {
+    /// Creates a new builder-style object to manufacture [`DetectSentimentOutput`](crate::output::DetectSentimentOutput).
+    pub fn builder() -> crate::output::detect_sentiment_output::Builder {
+        crate::output::detect_sentiment_output::Builder::default()
+    }
+}
+
 /// See [`DetectSentimentOutput`](crate::output::DetectSentimentOutput).
 pub mod detect_sentiment_output {
 
@@ -4420,12 +4467,6 @@ pub mod detect_sentiment_output {
         }
     }
 }
-impl DetectSentimentOutput {
-    /// Creates a new builder-style object to manufacture [`DetectSentimentOutput`](crate::output::DetectSentimentOutput).
-    pub fn builder() -> crate::output::detect_sentiment_output::Builder {
-        crate::output::detect_sentiment_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -4447,6 +4488,13 @@ impl aws_http::request_id::RequestId for DetectPiiEntitiesOutput {
         self._request_id.as_deref()
     }
 }
+impl DetectPiiEntitiesOutput {
+    /// Creates a new builder-style object to manufacture [`DetectPiiEntitiesOutput`](crate::output::DetectPiiEntitiesOutput).
+    pub fn builder() -> crate::output::detect_pii_entities_output::Builder {
+        crate::output::detect_pii_entities_output::Builder::default()
+    }
+}
+
 /// See [`DetectPiiEntitiesOutput`](crate::output::DetectPiiEntitiesOutput).
 pub mod detect_pii_entities_output {
 
@@ -4495,12 +4543,6 @@ pub mod detect_pii_entities_output {
         }
     }
 }
-impl DetectPiiEntitiesOutput {
-    /// Creates a new builder-style object to manufacture [`DetectPiiEntitiesOutput`](crate::output::DetectPiiEntitiesOutput).
-    pub fn builder() -> crate::output::detect_pii_entities_output::Builder {
-        crate::output::detect_pii_entities_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -4530,6 +4572,13 @@ impl aws_http::request_id::RequestId for DetectKeyPhrasesOutput {
         self._request_id.as_deref()
     }
 }
+impl DetectKeyPhrasesOutput {
+    /// Creates a new builder-style object to manufacture [`DetectKeyPhrasesOutput`](crate::output::DetectKeyPhrasesOutput).
+    pub fn builder() -> crate::output::detect_key_phrases_output::Builder {
+        crate::output::detect_key_phrases_output::Builder::default()
+    }
+}
+
 /// See [`DetectKeyPhrasesOutput`](crate::output::DetectKeyPhrasesOutput).
 pub mod detect_key_phrases_output {
 
@@ -4584,12 +4633,6 @@ pub mod detect_key_phrases_output {
             formatter.field("_request_id", &self._request_id);
             formatter.finish()
         }
-    }
-}
-impl DetectKeyPhrasesOutput {
-    /// Creates a new builder-style object to manufacture [`DetectKeyPhrasesOutput`](crate::output::DetectKeyPhrasesOutput).
-    pub fn builder() -> crate::output::detect_key_phrases_output::Builder {
-        crate::output::detect_key_phrases_output::Builder::default()
     }
 }
 
@@ -4659,6 +4702,13 @@ impl aws_http::request_id::RequestId for DetectEntitiesOutput {
         self._request_id.as_deref()
     }
 }
+impl DetectEntitiesOutput {
+    /// Creates a new builder-style object to manufacture [`DetectEntitiesOutput`](crate::output::DetectEntitiesOutput).
+    pub fn builder() -> crate::output::detect_entities_output::Builder {
+        crate::output::detect_entities_output::Builder::default()
+    }
+}
+
 /// See [`DetectEntitiesOutput`](crate::output::DetectEntitiesOutput).
 pub mod detect_entities_output {
 
@@ -4804,12 +4854,6 @@ pub mod detect_entities_output {
         }
     }
 }
-impl DetectEntitiesOutput {
-    /// Creates a new builder-style object to manufacture [`DetectEntitiesOutput`](crate::output::DetectEntitiesOutput).
-    pub fn builder() -> crate::output::detect_entities_output::Builder {
-        crate::output::detect_entities_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -4839,6 +4883,13 @@ impl aws_http::request_id::RequestId for DetectDominantLanguageOutput {
         self._request_id.as_deref()
     }
 }
+impl DetectDominantLanguageOutput {
+    /// Creates a new builder-style object to manufacture [`DetectDominantLanguageOutput`](crate::output::DetectDominantLanguageOutput).
+    pub fn builder() -> crate::output::detect_dominant_language_output::Builder {
+        crate::output::detect_dominant_language_output::Builder::default()
+    }
+}
+
 /// See [`DetectDominantLanguageOutput`](crate::output::DetectDominantLanguageOutput).
 pub mod detect_dominant_language_output {
 
@@ -4895,12 +4946,6 @@ pub mod detect_dominant_language_output {
         }
     }
 }
-impl DetectDominantLanguageOutput {
-    /// Creates a new builder-style object to manufacture [`DetectDominantLanguageOutput`](crate::output::DetectDominantLanguageOutput).
-    pub fn builder() -> crate::output::detect_dominant_language_output::Builder {
-        crate::output::detect_dominant_language_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -4925,6 +4970,13 @@ impl aws_http::request_id::RequestId for DescribeTopicsDetectionJobOutput {
         self._request_id.as_deref()
     }
 }
+impl DescribeTopicsDetectionJobOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeTopicsDetectionJobOutput`](crate::output::DescribeTopicsDetectionJobOutput).
+    pub fn builder() -> crate::output::describe_topics_detection_job_output::Builder {
+        crate::output::describe_topics_detection_job_output::Builder::default()
+    }
+}
+
 /// See [`DescribeTopicsDetectionJobOutput`](crate::output::DescribeTopicsDetectionJobOutput).
 pub mod describe_topics_detection_job_output {
 
@@ -4971,12 +5023,6 @@ pub mod describe_topics_detection_job_output {
         }
     }
 }
-impl DescribeTopicsDetectionJobOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeTopicsDetectionJobOutput`](crate::output::DescribeTopicsDetectionJobOutput).
-    pub fn builder() -> crate::output::describe_topics_detection_job_output::Builder {
-        crate::output::describe_topics_detection_job_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -5001,6 +5047,13 @@ impl aws_http::request_id::RequestId for DescribeTargetedSentimentDetectionJobOu
         self._request_id.as_deref()
     }
 }
+impl DescribeTargetedSentimentDetectionJobOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeTargetedSentimentDetectionJobOutput`](crate::output::DescribeTargetedSentimentDetectionJobOutput).
+    pub fn builder() -> crate::output::describe_targeted_sentiment_detection_job_output::Builder {
+        crate::output::describe_targeted_sentiment_detection_job_output::Builder::default()
+    }
+}
+
 /// See [`DescribeTargetedSentimentDetectionJobOutput`](crate::output::DescribeTargetedSentimentDetectionJobOutput).
 pub mod describe_targeted_sentiment_detection_job_output {
 
@@ -5048,12 +5101,6 @@ pub mod describe_targeted_sentiment_detection_job_output {
         }
     }
 }
-impl DescribeTargetedSentimentDetectionJobOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeTargetedSentimentDetectionJobOutput`](crate::output::DescribeTargetedSentimentDetectionJobOutput).
-    pub fn builder() -> crate::output::describe_targeted_sentiment_detection_job_output::Builder {
-        crate::output::describe_targeted_sentiment_detection_job_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -5078,6 +5125,13 @@ impl aws_http::request_id::RequestId for DescribeSentimentDetectionJobOutput {
         self._request_id.as_deref()
     }
 }
+impl DescribeSentimentDetectionJobOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeSentimentDetectionJobOutput`](crate::output::DescribeSentimentDetectionJobOutput).
+    pub fn builder() -> crate::output::describe_sentiment_detection_job_output::Builder {
+        crate::output::describe_sentiment_detection_job_output::Builder::default()
+    }
+}
+
 /// See [`DescribeSentimentDetectionJobOutput`](crate::output::DescribeSentimentDetectionJobOutput).
 pub mod describe_sentiment_detection_job_output {
 
@@ -5124,12 +5178,6 @@ pub mod describe_sentiment_detection_job_output {
         }
     }
 }
-impl DescribeSentimentDetectionJobOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeSentimentDetectionJobOutput`](crate::output::DescribeSentimentDetectionJobOutput).
-    pub fn builder() -> crate::output::describe_sentiment_detection_job_output::Builder {
-        crate::output::describe_sentiment_detection_job_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -5172,6 +5220,13 @@ impl aws_http::request_id::RequestId for DescribeResourcePolicyOutput {
         self._request_id.as_deref()
     }
 }
+impl DescribeResourcePolicyOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeResourcePolicyOutput`](crate::output::DescribeResourcePolicyOutput).
+    pub fn builder() -> crate::output::describe_resource_policy_output::Builder {
+        crate::output::describe_resource_policy_output::Builder::default()
+    }
+}
+
 /// See [`DescribeResourcePolicyOutput`](crate::output::DescribeResourcePolicyOutput).
 pub mod describe_resource_policy_output {
 
@@ -5259,12 +5314,6 @@ pub mod describe_resource_policy_output {
         }
     }
 }
-impl DescribeResourcePolicyOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeResourcePolicyOutput`](crate::output::DescribeResourcePolicyOutput).
-    pub fn builder() -> crate::output::describe_resource_policy_output::Builder {
-        crate::output::describe_resource_policy_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -5289,6 +5338,13 @@ impl aws_http::request_id::RequestId for DescribePiiEntitiesDetectionJobOutput {
         self._request_id.as_deref()
     }
 }
+impl DescribePiiEntitiesDetectionJobOutput {
+    /// Creates a new builder-style object to manufacture [`DescribePiiEntitiesDetectionJobOutput`](crate::output::DescribePiiEntitiesDetectionJobOutput).
+    pub fn builder() -> crate::output::describe_pii_entities_detection_job_output::Builder {
+        crate::output::describe_pii_entities_detection_job_output::Builder::default()
+    }
+}
+
 /// See [`DescribePiiEntitiesDetectionJobOutput`](crate::output::DescribePiiEntitiesDetectionJobOutput).
 pub mod describe_pii_entities_detection_job_output {
 
@@ -5335,12 +5391,6 @@ pub mod describe_pii_entities_detection_job_output {
         }
     }
 }
-impl DescribePiiEntitiesDetectionJobOutput {
-    /// Creates a new builder-style object to manufacture [`DescribePiiEntitiesDetectionJobOutput`](crate::output::DescribePiiEntitiesDetectionJobOutput).
-    pub fn builder() -> crate::output::describe_pii_entities_detection_job_output::Builder {
-        crate::output::describe_pii_entities_detection_job_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -5365,6 +5415,13 @@ impl aws_http::request_id::RequestId for DescribeKeyPhrasesDetectionJobOutput {
         self._request_id.as_deref()
     }
 }
+impl DescribeKeyPhrasesDetectionJobOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeKeyPhrasesDetectionJobOutput`](crate::output::DescribeKeyPhrasesDetectionJobOutput).
+    pub fn builder() -> crate::output::describe_key_phrases_detection_job_output::Builder {
+        crate::output::describe_key_phrases_detection_job_output::Builder::default()
+    }
+}
+
 /// See [`DescribeKeyPhrasesDetectionJobOutput`](crate::output::DescribeKeyPhrasesDetectionJobOutput).
 pub mod describe_key_phrases_detection_job_output {
 
@@ -5411,12 +5468,6 @@ pub mod describe_key_phrases_detection_job_output {
         }
     }
 }
-impl DescribeKeyPhrasesDetectionJobOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeKeyPhrasesDetectionJobOutput`](crate::output::DescribeKeyPhrasesDetectionJobOutput).
-    pub fn builder() -> crate::output::describe_key_phrases_detection_job_output::Builder {
-        crate::output::describe_key_phrases_detection_job_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -5441,6 +5492,13 @@ impl aws_http::request_id::RequestId for DescribeEventsDetectionJobOutput {
         self._request_id.as_deref()
     }
 }
+impl DescribeEventsDetectionJobOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeEventsDetectionJobOutput`](crate::output::DescribeEventsDetectionJobOutput).
+    pub fn builder() -> crate::output::describe_events_detection_job_output::Builder {
+        crate::output::describe_events_detection_job_output::Builder::default()
+    }
+}
+
 /// See [`DescribeEventsDetectionJobOutput`](crate::output::DescribeEventsDetectionJobOutput).
 pub mod describe_events_detection_job_output {
 
@@ -5487,12 +5545,6 @@ pub mod describe_events_detection_job_output {
         }
     }
 }
-impl DescribeEventsDetectionJobOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeEventsDetectionJobOutput`](crate::output::DescribeEventsDetectionJobOutput).
-    pub fn builder() -> crate::output::describe_events_detection_job_output::Builder {
-        crate::output::describe_events_detection_job_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -5516,6 +5568,13 @@ impl aws_http::request_id::RequestId for DescribeEntityRecognizerOutput {
         self._request_id.as_deref()
     }
 }
+impl DescribeEntityRecognizerOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeEntityRecognizerOutput`](crate::output::DescribeEntityRecognizerOutput).
+    pub fn builder() -> crate::output::describe_entity_recognizer_output::Builder {
+        crate::output::describe_entity_recognizer_output::Builder::default()
+    }
+}
+
 /// See [`DescribeEntityRecognizerOutput`](crate::output::DescribeEntityRecognizerOutput).
 pub mod describe_entity_recognizer_output {
 
@@ -5562,12 +5621,6 @@ pub mod describe_entity_recognizer_output {
         }
     }
 }
-impl DescribeEntityRecognizerOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeEntityRecognizerOutput`](crate::output::DescribeEntityRecognizerOutput).
-    pub fn builder() -> crate::output::describe_entity_recognizer_output::Builder {
-        crate::output::describe_entity_recognizer_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -5592,6 +5645,13 @@ impl aws_http::request_id::RequestId for DescribeEntitiesDetectionJobOutput {
         self._request_id.as_deref()
     }
 }
+impl DescribeEntitiesDetectionJobOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeEntitiesDetectionJobOutput`](crate::output::DescribeEntitiesDetectionJobOutput).
+    pub fn builder() -> crate::output::describe_entities_detection_job_output::Builder {
+        crate::output::describe_entities_detection_job_output::Builder::default()
+    }
+}
+
 /// See [`DescribeEntitiesDetectionJobOutput`](crate::output::DescribeEntitiesDetectionJobOutput).
 pub mod describe_entities_detection_job_output {
 
@@ -5638,12 +5698,6 @@ pub mod describe_entities_detection_job_output {
         }
     }
 }
-impl DescribeEntitiesDetectionJobOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeEntitiesDetectionJobOutput`](crate::output::DescribeEntitiesDetectionJobOutput).
-    pub fn builder() -> crate::output::describe_entities_detection_job_output::Builder {
-        crate::output::describe_entities_detection_job_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -5665,6 +5719,13 @@ impl aws_http::request_id::RequestId for DescribeEndpointOutput {
         self._request_id.as_deref()
     }
 }
+impl DescribeEndpointOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeEndpointOutput`](crate::output::DescribeEndpointOutput).
+    pub fn builder() -> crate::output::describe_endpoint_output::Builder {
+        crate::output::describe_endpoint_output::Builder::default()
+    }
+}
+
 /// See [`DescribeEndpointOutput`](crate::output::DescribeEndpointOutput).
 pub mod describe_endpoint_output {
 
@@ -5707,12 +5768,6 @@ pub mod describe_endpoint_output {
         }
     }
 }
-impl DescribeEndpointOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeEndpointOutput`](crate::output::DescribeEndpointOutput).
-    pub fn builder() -> crate::output::describe_endpoint_output::Builder {
-        crate::output::describe_endpoint_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -5737,6 +5792,13 @@ impl aws_http::request_id::RequestId for DescribeDominantLanguageDetectionJobOut
         self._request_id.as_deref()
     }
 }
+impl DescribeDominantLanguageDetectionJobOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeDominantLanguageDetectionJobOutput`](crate::output::DescribeDominantLanguageDetectionJobOutput).
+    pub fn builder() -> crate::output::describe_dominant_language_detection_job_output::Builder {
+        crate::output::describe_dominant_language_detection_job_output::Builder::default()
+    }
+}
+
 /// See [`DescribeDominantLanguageDetectionJobOutput`](crate::output::DescribeDominantLanguageDetectionJobOutput).
 pub mod describe_dominant_language_detection_job_output {
 
@@ -5784,12 +5846,6 @@ pub mod describe_dominant_language_detection_job_output {
         }
     }
 }
-impl DescribeDominantLanguageDetectionJobOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeDominantLanguageDetectionJobOutput`](crate::output::DescribeDominantLanguageDetectionJobOutput).
-    pub fn builder() -> crate::output::describe_dominant_language_detection_job_output::Builder {
-        crate::output::describe_dominant_language_detection_job_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -5814,6 +5870,13 @@ impl aws_http::request_id::RequestId for DescribeDocumentClassifierOutput {
         self._request_id.as_deref()
     }
 }
+impl DescribeDocumentClassifierOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeDocumentClassifierOutput`](crate::output::DescribeDocumentClassifierOutput).
+    pub fn builder() -> crate::output::describe_document_classifier_output::Builder {
+        crate::output::describe_document_classifier_output::Builder::default()
+    }
+}
+
 /// See [`DescribeDocumentClassifierOutput`](crate::output::DescribeDocumentClassifierOutput).
 pub mod describe_document_classifier_output {
 
@@ -5860,12 +5923,6 @@ pub mod describe_document_classifier_output {
         }
     }
 }
-impl DescribeDocumentClassifierOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeDocumentClassifierOutput`](crate::output::DescribeDocumentClassifierOutput).
-    pub fn builder() -> crate::output::describe_document_classifier_output::Builder {
-        crate::output::describe_document_classifier_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -5890,6 +5947,13 @@ impl aws_http::request_id::RequestId for DescribeDocumentClassificationJobOutput
         self._request_id.as_deref()
     }
 }
+impl DescribeDocumentClassificationJobOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeDocumentClassificationJobOutput`](crate::output::DescribeDocumentClassificationJobOutput).
+    pub fn builder() -> crate::output::describe_document_classification_job_output::Builder {
+        crate::output::describe_document_classification_job_output::Builder::default()
+    }
+}
+
 /// See [`DescribeDocumentClassificationJobOutput`](crate::output::DescribeDocumentClassificationJobOutput).
 pub mod describe_document_classification_job_output {
 
@@ -5936,12 +6000,6 @@ pub mod describe_document_classification_job_output {
         }
     }
 }
-impl DescribeDocumentClassificationJobOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeDocumentClassificationJobOutput`](crate::output::DescribeDocumentClassificationJobOutput).
-    pub fn builder() -> crate::output::describe_document_classification_job_output::Builder {
-        crate::output::describe_document_classification_job_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -5954,6 +6012,13 @@ impl aws_http::request_id::RequestId for DeleteResourcePolicyOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteResourcePolicyOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteResourcePolicyOutput`](crate::output::DeleteResourcePolicyOutput).
+    pub fn builder() -> crate::output::delete_resource_policy_output::Builder {
+        crate::output::delete_resource_policy_output::Builder::default()
+    }
+}
+
 /// See [`DeleteResourcePolicyOutput`](crate::output::DeleteResourcePolicyOutput).
 pub mod delete_resource_policy_output {
 
@@ -5981,12 +6046,6 @@ pub mod delete_resource_policy_output {
         }
     }
 }
-impl DeleteResourcePolicyOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteResourcePolicyOutput`](crate::output::DeleteResourcePolicyOutput).
-    pub fn builder() -> crate::output::delete_resource_policy_output::Builder {
-        crate::output::delete_resource_policy_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -5999,6 +6058,13 @@ impl aws_http::request_id::RequestId for DeleteEntityRecognizerOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteEntityRecognizerOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteEntityRecognizerOutput`](crate::output::DeleteEntityRecognizerOutput).
+    pub fn builder() -> crate::output::delete_entity_recognizer_output::Builder {
+        crate::output::delete_entity_recognizer_output::Builder::default()
+    }
+}
+
 /// See [`DeleteEntityRecognizerOutput`](crate::output::DeleteEntityRecognizerOutput).
 pub mod delete_entity_recognizer_output {
 
@@ -6026,12 +6092,6 @@ pub mod delete_entity_recognizer_output {
         }
     }
 }
-impl DeleteEntityRecognizerOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteEntityRecognizerOutput`](crate::output::DeleteEntityRecognizerOutput).
-    pub fn builder() -> crate::output::delete_entity_recognizer_output::Builder {
-        crate::output::delete_entity_recognizer_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -6044,6 +6104,13 @@ impl aws_http::request_id::RequestId for DeleteEndpointOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteEndpointOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteEndpointOutput`](crate::output::DeleteEndpointOutput).
+    pub fn builder() -> crate::output::delete_endpoint_output::Builder {
+        crate::output::delete_endpoint_output::Builder::default()
+    }
+}
+
 /// See [`DeleteEndpointOutput`](crate::output::DeleteEndpointOutput).
 pub mod delete_endpoint_output {
 
@@ -6071,12 +6138,6 @@ pub mod delete_endpoint_output {
         }
     }
 }
-impl DeleteEndpointOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteEndpointOutput`](crate::output::DeleteEndpointOutput).
-    pub fn builder() -> crate::output::delete_endpoint_output::Builder {
-        crate::output::delete_endpoint_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -6089,6 +6150,13 @@ impl aws_http::request_id::RequestId for DeleteDocumentClassifierOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteDocumentClassifierOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteDocumentClassifierOutput`](crate::output::DeleteDocumentClassifierOutput).
+    pub fn builder() -> crate::output::delete_document_classifier_output::Builder {
+        crate::output::delete_document_classifier_output::Builder::default()
+    }
+}
+
 /// See [`DeleteDocumentClassifierOutput`](crate::output::DeleteDocumentClassifierOutput).
 pub mod delete_document_classifier_output {
 
@@ -6116,12 +6184,6 @@ pub mod delete_document_classifier_output {
         }
     }
 }
-impl DeleteDocumentClassifierOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteDocumentClassifierOutput`](crate::output::DeleteDocumentClassifierOutput).
-    pub fn builder() -> crate::output::delete_document_classifier_output::Builder {
-        crate::output::delete_document_classifier_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -6143,6 +6205,13 @@ impl aws_http::request_id::RequestId for CreateEntityRecognizerOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateEntityRecognizerOutput {
+    /// Creates a new builder-style object to manufacture [`CreateEntityRecognizerOutput`](crate::output::CreateEntityRecognizerOutput).
+    pub fn builder() -> crate::output::create_entity_recognizer_output::Builder {
+        crate::output::create_entity_recognizer_output::Builder::default()
+    }
+}
+
 /// See [`CreateEntityRecognizerOutput`](crate::output::CreateEntityRecognizerOutput).
 pub mod create_entity_recognizer_output {
 
@@ -6185,12 +6254,6 @@ pub mod create_entity_recognizer_output {
         }
     }
 }
-impl CreateEntityRecognizerOutput {
-    /// Creates a new builder-style object to manufacture [`CreateEntityRecognizerOutput`](crate::output::CreateEntityRecognizerOutput).
-    pub fn builder() -> crate::output::create_entity_recognizer_output::Builder {
-        crate::output::create_entity_recognizer_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -6212,6 +6275,13 @@ impl aws_http::request_id::RequestId for CreateEndpointOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateEndpointOutput {
+    /// Creates a new builder-style object to manufacture [`CreateEndpointOutput`](crate::output::CreateEndpointOutput).
+    pub fn builder() -> crate::output::create_endpoint_output::Builder {
+        crate::output::create_endpoint_output::Builder::default()
+    }
+}
+
 /// See [`CreateEndpointOutput`](crate::output::CreateEndpointOutput).
 pub mod create_endpoint_output {
 
@@ -6251,12 +6321,6 @@ pub mod create_endpoint_output {
         }
     }
 }
-impl CreateEndpointOutput {
-    /// Creates a new builder-style object to manufacture [`CreateEndpointOutput`](crate::output::CreateEndpointOutput).
-    pub fn builder() -> crate::output::create_endpoint_output::Builder {
-        crate::output::create_endpoint_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -6278,6 +6342,13 @@ impl aws_http::request_id::RequestId for CreateDocumentClassifierOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateDocumentClassifierOutput {
+    /// Creates a new builder-style object to manufacture [`CreateDocumentClassifierOutput`](crate::output::CreateDocumentClassifierOutput).
+    pub fn builder() -> crate::output::create_document_classifier_output::Builder {
+        crate::output::create_document_classifier_output::Builder::default()
+    }
+}
+
 /// See [`CreateDocumentClassifierOutput`](crate::output::CreateDocumentClassifierOutput).
 pub mod create_document_classifier_output {
 
@@ -6320,12 +6391,6 @@ pub mod create_document_classifier_output {
         }
     }
 }
-impl CreateDocumentClassifierOutput {
-    /// Creates a new builder-style object to manufacture [`CreateDocumentClassifierOutput`](crate::output::CreateDocumentClassifierOutput).
-    pub fn builder() -> crate::output::create_document_classifier_output::Builder {
-        crate::output::create_document_classifier_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -6347,6 +6412,13 @@ impl aws_http::request_id::RequestId for ContainsPiiEntitiesOutput {
         self._request_id.as_deref()
     }
 }
+impl ContainsPiiEntitiesOutput {
+    /// Creates a new builder-style object to manufacture [`ContainsPiiEntitiesOutput`](crate::output::ContainsPiiEntitiesOutput).
+    pub fn builder() -> crate::output::contains_pii_entities_output::Builder {
+        crate::output::contains_pii_entities_output::Builder::default()
+    }
+}
+
 /// See [`ContainsPiiEntitiesOutput`](crate::output::ContainsPiiEntitiesOutput).
 pub mod contains_pii_entities_output {
 
@@ -6393,12 +6465,6 @@ pub mod contains_pii_entities_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl ContainsPiiEntitiesOutput {
-    /// Creates a new builder-style object to manufacture [`ContainsPiiEntitiesOutput`](crate::output::ContainsPiiEntitiesOutput).
-    pub fn builder() -> crate::output::contains_pii_entities_output::Builder {
-        crate::output::contains_pii_entities_output::Builder::default()
     }
 }
 
@@ -6462,6 +6528,13 @@ impl aws_http::request_id::RequestId for ClassifyDocumentOutput {
         self._request_id.as_deref()
     }
 }
+impl ClassifyDocumentOutput {
+    /// Creates a new builder-style object to manufacture [`ClassifyDocumentOutput`](crate::output::ClassifyDocumentOutput).
+    pub fn builder() -> crate::output::classify_document_output::Builder {
+        crate::output::classify_document_output::Builder::default()
+    }
+}
+
 /// See [`ClassifyDocumentOutput`](crate::output::ClassifyDocumentOutput).
 pub mod classify_document_output {
 
@@ -6601,12 +6674,6 @@ pub mod classify_document_output {
         }
     }
 }
-impl ClassifyDocumentOutput {
-    /// Creates a new builder-style object to manufacture [`ClassifyDocumentOutput`](crate::output::ClassifyDocumentOutput).
-    pub fn builder() -> crate::output::classify_document_output::Builder {
-        crate::output::classify_document_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -6647,6 +6714,13 @@ impl aws_http::request_id::RequestId for BatchDetectTargetedSentimentOutput {
         self._request_id.as_deref()
     }
 }
+impl BatchDetectTargetedSentimentOutput {
+    /// Creates a new builder-style object to manufacture [`BatchDetectTargetedSentimentOutput`](crate::output::BatchDetectTargetedSentimentOutput).
+    pub fn builder() -> crate::output::batch_detect_targeted_sentiment_output::Builder {
+        crate::output::batch_detect_targeted_sentiment_output::Builder::default()
+    }
+}
+
 /// See [`BatchDetectTargetedSentimentOutput`](crate::output::BatchDetectTargetedSentimentOutput).
 pub mod batch_detect_targeted_sentiment_output {
 
@@ -6732,12 +6806,6 @@ pub mod batch_detect_targeted_sentiment_output {
         }
     }
 }
-impl BatchDetectTargetedSentimentOutput {
-    /// Creates a new builder-style object to manufacture [`BatchDetectTargetedSentimentOutput`](crate::output::BatchDetectTargetedSentimentOutput).
-    pub fn builder() -> crate::output::batch_detect_targeted_sentiment_output::Builder {
-        crate::output::batch_detect_targeted_sentiment_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -6775,6 +6843,13 @@ impl aws_http::request_id::RequestId for BatchDetectSyntaxOutput {
         self._request_id.as_deref()
     }
 }
+impl BatchDetectSyntaxOutput {
+    /// Creates a new builder-style object to manufacture [`BatchDetectSyntaxOutput`](crate::output::BatchDetectSyntaxOutput).
+    pub fn builder() -> crate::output::batch_detect_syntax_output::Builder {
+        crate::output::batch_detect_syntax_output::Builder::default()
+    }
+}
+
 /// See [`BatchDetectSyntaxOutput`](crate::output::BatchDetectSyntaxOutput).
 pub mod batch_detect_syntax_output {
 
@@ -6854,12 +6929,6 @@ pub mod batch_detect_syntax_output {
         }
     }
 }
-impl BatchDetectSyntaxOutput {
-    /// Creates a new builder-style object to manufacture [`BatchDetectSyntaxOutput`](crate::output::BatchDetectSyntaxOutput).
-    pub fn builder() -> crate::output::batch_detect_syntax_output::Builder {
-        crate::output::batch_detect_syntax_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -6900,6 +6969,13 @@ impl aws_http::request_id::RequestId for BatchDetectSentimentOutput {
         self._request_id.as_deref()
     }
 }
+impl BatchDetectSentimentOutput {
+    /// Creates a new builder-style object to manufacture [`BatchDetectSentimentOutput`](crate::output::BatchDetectSentimentOutput).
+    pub fn builder() -> crate::output::batch_detect_sentiment_output::Builder {
+        crate::output::batch_detect_sentiment_output::Builder::default()
+    }
+}
+
 /// See [`BatchDetectSentimentOutput`](crate::output::BatchDetectSentimentOutput).
 pub mod batch_detect_sentiment_output {
 
@@ -6979,12 +7055,6 @@ pub mod batch_detect_sentiment_output {
         }
     }
 }
-impl BatchDetectSentimentOutput {
-    /// Creates a new builder-style object to manufacture [`BatchDetectSentimentOutput`](crate::output::BatchDetectSentimentOutput).
-    pub fn builder() -> crate::output::batch_detect_sentiment_output::Builder {
-        crate::output::batch_detect_sentiment_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -7025,6 +7095,13 @@ impl aws_http::request_id::RequestId for BatchDetectKeyPhrasesOutput {
         self._request_id.as_deref()
     }
 }
+impl BatchDetectKeyPhrasesOutput {
+    /// Creates a new builder-style object to manufacture [`BatchDetectKeyPhrasesOutput`](crate::output::BatchDetectKeyPhrasesOutput).
+    pub fn builder() -> crate::output::batch_detect_key_phrases_output::Builder {
+        crate::output::batch_detect_key_phrases_output::Builder::default()
+    }
+}
+
 /// See [`BatchDetectKeyPhrasesOutput`](crate::output::BatchDetectKeyPhrasesOutput).
 pub mod batch_detect_key_phrases_output {
 
@@ -7106,12 +7183,6 @@ pub mod batch_detect_key_phrases_output {
         }
     }
 }
-impl BatchDetectKeyPhrasesOutput {
-    /// Creates a new builder-style object to manufacture [`BatchDetectKeyPhrasesOutput`](crate::output::BatchDetectKeyPhrasesOutput).
-    pub fn builder() -> crate::output::batch_detect_key_phrases_output::Builder {
-        crate::output::batch_detect_key_phrases_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -7152,6 +7223,13 @@ impl aws_http::request_id::RequestId for BatchDetectEntitiesOutput {
         self._request_id.as_deref()
     }
 }
+impl BatchDetectEntitiesOutput {
+    /// Creates a new builder-style object to manufacture [`BatchDetectEntitiesOutput`](crate::output::BatchDetectEntitiesOutput).
+    pub fn builder() -> crate::output::batch_detect_entities_output::Builder {
+        crate::output::batch_detect_entities_output::Builder::default()
+    }
+}
+
 /// See [`BatchDetectEntitiesOutput`](crate::output::BatchDetectEntitiesOutput).
 pub mod batch_detect_entities_output {
 
@@ -7231,12 +7309,6 @@ pub mod batch_detect_entities_output {
         }
     }
 }
-impl BatchDetectEntitiesOutput {
-    /// Creates a new builder-style object to manufacture [`BatchDetectEntitiesOutput`](crate::output::BatchDetectEntitiesOutput).
-    pub fn builder() -> crate::output::batch_detect_entities_output::Builder {
-        crate::output::batch_detect_entities_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -7277,6 +7349,13 @@ impl aws_http::request_id::RequestId for BatchDetectDominantLanguageOutput {
         self._request_id.as_deref()
     }
 }
+impl BatchDetectDominantLanguageOutput {
+    /// Creates a new builder-style object to manufacture [`BatchDetectDominantLanguageOutput`](crate::output::BatchDetectDominantLanguageOutput).
+    pub fn builder() -> crate::output::batch_detect_dominant_language_output::Builder {
+        crate::output::batch_detect_dominant_language_output::Builder::default()
+    }
+}
+
 /// See [`BatchDetectDominantLanguageOutput`](crate::output::BatchDetectDominantLanguageOutput).
 pub mod batch_detect_dominant_language_output {
 
@@ -7359,11 +7438,5 @@ pub mod batch_detect_dominant_language_output {
             formatter.field("_request_id", &self._request_id);
             formatter.finish()
         }
-    }
-}
-impl BatchDetectDominantLanguageOutput {
-    /// Creates a new builder-style object to manufacture [`BatchDetectDominantLanguageOutput`](crate::output::BatchDetectDominantLanguageOutput).
-    pub fn builder() -> crate::output::batch_detect_dominant_language_output::Builder {
-        crate::output::batch_detect_dominant_language_output::Builder::default()
     }
 }

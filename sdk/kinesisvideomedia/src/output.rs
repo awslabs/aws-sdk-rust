@@ -75,6 +75,13 @@ impl aws_http::request_id::RequestId for GetMediaOutput {
         self._request_id.as_deref()
     }
 }
+impl GetMediaOutput {
+    /// Creates a new builder-style object to manufacture [`GetMediaOutput`](crate::output::GetMediaOutput).
+    pub fn builder() -> crate::output::get_media_output::Builder {
+        crate::output::get_media_output::Builder::default()
+    }
+}
+
 /// See [`GetMediaOutput`](crate::output::GetMediaOutput).
 pub mod get_media_output {
 
@@ -177,11 +184,5 @@ pub mod get_media_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl GetMediaOutput {
-    /// Creates a new builder-style object to manufacture [`GetMediaOutput`](crate::output::GetMediaOutput).
-    pub fn builder() -> crate::output::get_media_output::Builder {
-        crate::output::get_media_output::Builder::default()
     }
 }

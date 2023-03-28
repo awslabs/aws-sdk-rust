@@ -19,6 +19,13 @@ impl aws_http::request_id::RequestId for UpdateTableOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdateTableOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateTableOutput`](crate::output::UpdateTableOutput).
+    pub fn builder() -> crate::output::update_table_output::Builder {
+        crate::output::update_table_output::Builder::default()
+    }
+}
+
 /// See [`UpdateTableOutput`](crate::output::UpdateTableOutput).
 pub mod update_table_output {
 
@@ -58,12 +65,6 @@ pub mod update_table_output {
         }
     }
 }
-impl UpdateTableOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateTableOutput`](crate::output::UpdateTableOutput).
-    pub fn builder() -> crate::output::update_table_output::Builder {
-        crate::output::update_table_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -76,6 +77,13 @@ impl aws_http::request_id::RequestId for UntagResourceOutput {
         self._request_id.as_deref()
     }
 }
+impl UntagResourceOutput {
+    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    pub fn builder() -> crate::output::untag_resource_output::Builder {
+        crate::output::untag_resource_output::Builder::default()
+    }
+}
+
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
 
@@ -103,12 +111,6 @@ pub mod untag_resource_output {
         }
     }
 }
-impl UntagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
-    pub fn builder() -> crate::output::untag_resource_output::Builder {
-        crate::output::untag_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -121,6 +123,13 @@ impl aws_http::request_id::RequestId for TagResourceOutput {
         self._request_id.as_deref()
     }
 }
+impl TagResourceOutput {
+    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
+    pub fn builder() -> crate::output::tag_resource_output::Builder {
+        crate::output::tag_resource_output::Builder::default()
+    }
+}
+
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
 
@@ -148,12 +157,6 @@ pub mod tag_resource_output {
         }
     }
 }
-impl TagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
-    pub fn builder() -> crate::output::tag_resource_output::Builder {
-        crate::output::tag_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -175,6 +178,13 @@ impl aws_http::request_id::RequestId for RestoreTableOutput {
         self._request_id.as_deref()
     }
 }
+impl RestoreTableOutput {
+    /// Creates a new builder-style object to manufacture [`RestoreTableOutput`](crate::output::RestoreTableOutput).
+    pub fn builder() -> crate::output::restore_table_output::Builder {
+        crate::output::restore_table_output::Builder::default()
+    }
+}
+
 /// See [`RestoreTableOutput`](crate::output::RestoreTableOutput).
 pub mod restore_table_output {
 
@@ -217,12 +227,6 @@ pub mod restore_table_output {
         }
     }
 }
-impl RestoreTableOutput {
-    /// Creates a new builder-style object to manufacture [`RestoreTableOutput`](crate::output::RestoreTableOutput).
-    pub fn builder() -> crate::output::restore_table_output::Builder {
-        crate::output::restore_table_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -251,6 +255,13 @@ impl aws_http::request_id::RequestId for ListTagsForResourceOutput {
         self._request_id.as_deref()
     }
 }
+impl ListTagsForResourceOutput {
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
+        crate::output::list_tags_for_resource_output::Builder::default()
+    }
+}
+
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
 
@@ -311,12 +322,6 @@ pub mod list_tags_for_resource_output {
         }
     }
 }
-impl ListTagsForResourceOutput {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
-    pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
-        crate::output::list_tags_for_resource_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -345,6 +350,13 @@ impl aws_http::request_id::RequestId for ListTablesOutput {
         self._request_id.as_deref()
     }
 }
+impl ListTablesOutput {
+    /// Creates a new builder-style object to manufacture [`ListTablesOutput`](crate::output::ListTablesOutput).
+    pub fn builder() -> crate::output::list_tables_output::Builder {
+        crate::output::list_tables_output::Builder::default()
+    }
+}
+
 /// See [`ListTablesOutput`](crate::output::ListTablesOutput).
 pub mod list_tables_output {
 
@@ -405,12 +417,6 @@ pub mod list_tables_output {
         }
     }
 }
-impl ListTablesOutput {
-    /// Creates a new builder-style object to manufacture [`ListTablesOutput`](crate::output::ListTablesOutput).
-    pub fn builder() -> crate::output::list_tables_output::Builder {
-        crate::output::list_tables_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -439,6 +445,13 @@ impl aws_http::request_id::RequestId for ListKeyspacesOutput {
         self._request_id.as_deref()
     }
 }
+impl ListKeyspacesOutput {
+    /// Creates a new builder-style object to manufacture [`ListKeyspacesOutput`](crate::output::ListKeyspacesOutput).
+    pub fn builder() -> crate::output::list_keyspaces_output::Builder {
+        crate::output::list_keyspaces_output::Builder::default()
+    }
+}
+
 /// See [`ListKeyspacesOutput`](crate::output::ListKeyspacesOutput).
 pub mod list_keyspaces_output {
 
@@ -497,12 +510,6 @@ pub mod list_keyspaces_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl ListKeyspacesOutput {
-    /// Creates a new builder-style object to manufacture [`ListKeyspacesOutput`](crate::output::ListKeyspacesOutput).
-    pub fn builder() -> crate::output::list_keyspaces_output::Builder {
-        crate::output::list_keyspaces_output::Builder::default()
     }
 }
 
@@ -613,6 +620,13 @@ impl aws_http::request_id::RequestId for GetTableOutput {
         self._request_id.as_deref()
     }
 }
+impl GetTableOutput {
+    /// Creates a new builder-style object to manufacture [`GetTableOutput`](crate::output::GetTableOutput).
+    pub fn builder() -> crate::output::get_table_output::Builder {
+        crate::output::get_table_output::Builder::default()
+    }
+}
+
 /// See [`GetTableOutput`](crate::output::GetTableOutput).
 pub mod get_table_output {
 
@@ -818,12 +832,6 @@ pub mod get_table_output {
         }
     }
 }
-impl GetTableOutput {
-    /// Creates a new builder-style object to manufacture [`GetTableOutput`](crate::output::GetTableOutput).
-    pub fn builder() -> crate::output::get_table_output::Builder {
-        crate::output::get_table_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -852,6 +860,13 @@ impl aws_http::request_id::RequestId for GetKeyspaceOutput {
         self._request_id.as_deref()
     }
 }
+impl GetKeyspaceOutput {
+    /// Creates a new builder-style object to manufacture [`GetKeyspaceOutput`](crate::output::GetKeyspaceOutput).
+    pub fn builder() -> crate::output::get_keyspace_output::Builder {
+        crate::output::get_keyspace_output::Builder::default()
+    }
+}
+
 /// See [`GetKeyspaceOutput`](crate::output::GetKeyspaceOutput).
 pub mod get_keyspace_output {
 
@@ -906,12 +921,6 @@ pub mod get_keyspace_output {
         }
     }
 }
-impl GetKeyspaceOutput {
-    /// Creates a new builder-style object to manufacture [`GetKeyspaceOutput`](crate::output::GetKeyspaceOutput).
-    pub fn builder() -> crate::output::get_keyspace_output::Builder {
-        crate::output::get_keyspace_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -924,6 +933,13 @@ impl aws_http::request_id::RequestId for DeleteTableOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteTableOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteTableOutput`](crate::output::DeleteTableOutput).
+    pub fn builder() -> crate::output::delete_table_output::Builder {
+        crate::output::delete_table_output::Builder::default()
+    }
+}
+
 /// See [`DeleteTableOutput`](crate::output::DeleteTableOutput).
 pub mod delete_table_output {
 
@@ -951,12 +967,6 @@ pub mod delete_table_output {
         }
     }
 }
-impl DeleteTableOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteTableOutput`](crate::output::DeleteTableOutput).
-    pub fn builder() -> crate::output::delete_table_output::Builder {
-        crate::output::delete_table_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -969,6 +979,13 @@ impl aws_http::request_id::RequestId for DeleteKeyspaceOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteKeyspaceOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteKeyspaceOutput`](crate::output::DeleteKeyspaceOutput).
+    pub fn builder() -> crate::output::delete_keyspace_output::Builder {
+        crate::output::delete_keyspace_output::Builder::default()
+    }
+}
+
 /// See [`DeleteKeyspaceOutput`](crate::output::DeleteKeyspaceOutput).
 pub mod delete_keyspace_output {
 
@@ -996,12 +1013,6 @@ pub mod delete_keyspace_output {
         }
     }
 }
-impl DeleteKeyspaceOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteKeyspaceOutput`](crate::output::DeleteKeyspaceOutput).
-    pub fn builder() -> crate::output::delete_keyspace_output::Builder {
-        crate::output::delete_keyspace_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1023,6 +1034,13 @@ impl aws_http::request_id::RequestId for CreateTableOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateTableOutput {
+    /// Creates a new builder-style object to manufacture [`CreateTableOutput`](crate::output::CreateTableOutput).
+    pub fn builder() -> crate::output::create_table_output::Builder {
+        crate::output::create_table_output::Builder::default()
+    }
+}
+
 /// See [`CreateTableOutput`](crate::output::CreateTableOutput).
 pub mod create_table_output {
 
@@ -1062,12 +1080,6 @@ pub mod create_table_output {
         }
     }
 }
-impl CreateTableOutput {
-    /// Creates a new builder-style object to manufacture [`CreateTableOutput`](crate::output::CreateTableOutput).
-    pub fn builder() -> crate::output::create_table_output::Builder {
-        crate::output::create_table_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1089,6 +1101,13 @@ impl aws_http::request_id::RequestId for CreateKeyspaceOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateKeyspaceOutput {
+    /// Creates a new builder-style object to manufacture [`CreateKeyspaceOutput`](crate::output::CreateKeyspaceOutput).
+    pub fn builder() -> crate::output::create_keyspace_output::Builder {
+        crate::output::create_keyspace_output::Builder::default()
+    }
+}
+
 /// See [`CreateKeyspaceOutput`](crate::output::CreateKeyspaceOutput).
 pub mod create_keyspace_output {
 
@@ -1126,11 +1145,5 @@ pub mod create_keyspace_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl CreateKeyspaceOutput {
-    /// Creates a new builder-style object to manufacture [`CreateKeyspaceOutput`](crate::output::CreateKeyspaceOutput).
-    pub fn builder() -> crate::output::create_keyspace_output::Builder {
-        crate::output::create_keyspace_output::Builder::default()
     }
 }

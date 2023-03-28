@@ -21,6 +21,13 @@ impl aws_http::request_id::RequestId for UpdateIdentityProviderSettingsOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdateIdentityProviderSettingsOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateIdentityProviderSettingsOutput`](crate::output::UpdateIdentityProviderSettingsOutput).
+    pub fn builder() -> crate::output::update_identity_provider_settings_output::Builder {
+        crate::output::update_identity_provider_settings_output::Builder::default()
+    }
+}
+
 /// See [`UpdateIdentityProviderSettingsOutput`](crate::output::UpdateIdentityProviderSettingsOutput).
 pub mod update_identity_provider_settings_output {
 
@@ -67,12 +74,6 @@ pub mod update_identity_provider_settings_output {
         }
     }
 }
-impl UpdateIdentityProviderSettingsOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateIdentityProviderSettingsOutput`](crate::output::UpdateIdentityProviderSettingsOutput).
-    pub fn builder() -> crate::output::update_identity_provider_settings_output::Builder {
-        crate::output::update_identity_provider_settings_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -94,6 +95,13 @@ impl aws_http::request_id::RequestId for StopProductSubscriptionOutput {
         self._request_id.as_deref()
     }
 }
+impl StopProductSubscriptionOutput {
+    /// Creates a new builder-style object to manufacture [`StopProductSubscriptionOutput`](crate::output::StopProductSubscriptionOutput).
+    pub fn builder() -> crate::output::stop_product_subscription_output::Builder {
+        crate::output::stop_product_subscription_output::Builder::default()
+    }
+}
+
 /// See [`StopProductSubscriptionOutput`](crate::output::StopProductSubscriptionOutput).
 pub mod stop_product_subscription_output {
 
@@ -136,12 +144,6 @@ pub mod stop_product_subscription_output {
         }
     }
 }
-impl StopProductSubscriptionOutput {
-    /// Creates a new builder-style object to manufacture [`StopProductSubscriptionOutput`](crate::output::StopProductSubscriptionOutput).
-    pub fn builder() -> crate::output::stop_product_subscription_output::Builder {
-        crate::output::stop_product_subscription_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -163,6 +165,13 @@ impl aws_http::request_id::RequestId for StartProductSubscriptionOutput {
         self._request_id.as_deref()
     }
 }
+impl StartProductSubscriptionOutput {
+    /// Creates a new builder-style object to manufacture [`StartProductSubscriptionOutput`](crate::output::StartProductSubscriptionOutput).
+    pub fn builder() -> crate::output::start_product_subscription_output::Builder {
+        crate::output::start_product_subscription_output::Builder::default()
+    }
+}
+
 /// See [`StartProductSubscriptionOutput`](crate::output::StartProductSubscriptionOutput).
 pub mod start_product_subscription_output {
 
@@ -205,12 +214,6 @@ pub mod start_product_subscription_output {
         }
     }
 }
-impl StartProductSubscriptionOutput {
-    /// Creates a new builder-style object to manufacture [`StartProductSubscriptionOutput`](crate::output::StartProductSubscriptionOutput).
-    pub fn builder() -> crate::output::start_product_subscription_output::Builder {
-        crate::output::start_product_subscription_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -234,6 +237,13 @@ impl aws_http::request_id::RequestId for RegisterIdentityProviderOutput {
         self._request_id.as_deref()
     }
 }
+impl RegisterIdentityProviderOutput {
+    /// Creates a new builder-style object to manufacture [`RegisterIdentityProviderOutput`](crate::output::RegisterIdentityProviderOutput).
+    pub fn builder() -> crate::output::register_identity_provider_output::Builder {
+        crate::output::register_identity_provider_output::Builder::default()
+    }
+}
+
 /// See [`RegisterIdentityProviderOutput`](crate::output::RegisterIdentityProviderOutput).
 pub mod register_identity_provider_output {
 
@@ -280,12 +290,6 @@ pub mod register_identity_provider_output {
         }
     }
 }
-impl RegisterIdentityProviderOutput {
-    /// Creates a new builder-style object to manufacture [`RegisterIdentityProviderOutput`](crate::output::RegisterIdentityProviderOutput).
-    pub fn builder() -> crate::output::register_identity_provider_output::Builder {
-        crate::output::register_identity_provider_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -317,6 +321,13 @@ impl aws_http::request_id::RequestId for ListUserAssociationsOutput {
         self._request_id.as_deref()
     }
 }
+impl ListUserAssociationsOutput {
+    /// Creates a new builder-style object to manufacture [`ListUserAssociationsOutput`](crate::output::ListUserAssociationsOutput).
+    pub fn builder() -> crate::output::list_user_associations_output::Builder {
+        crate::output::list_user_associations_output::Builder::default()
+    }
+}
+
 /// See [`ListUserAssociationsOutput`](crate::output::ListUserAssociationsOutput).
 pub mod list_user_associations_output {
 
@@ -378,12 +389,6 @@ pub mod list_user_associations_output {
         }
     }
 }
-impl ListUserAssociationsOutput {
-    /// Creates a new builder-style object to manufacture [`ListUserAssociationsOutput`](crate::output::ListUserAssociationsOutput).
-    pub fn builder() -> crate::output::list_user_associations_output::Builder {
-        crate::output::list_user_associations_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -415,6 +420,13 @@ impl aws_http::request_id::RequestId for ListProductSubscriptionsOutput {
         self._request_id.as_deref()
     }
 }
+impl ListProductSubscriptionsOutput {
+    /// Creates a new builder-style object to manufacture [`ListProductSubscriptionsOutput`](crate::output::ListProductSubscriptionsOutput).
+    pub fn builder() -> crate::output::list_product_subscriptions_output::Builder {
+        crate::output::list_product_subscriptions_output::Builder::default()
+    }
+}
+
 /// See [`ListProductSubscriptionsOutput`](crate::output::ListProductSubscriptionsOutput).
 pub mod list_product_subscriptions_output {
 
@@ -476,12 +488,6 @@ pub mod list_product_subscriptions_output {
         }
     }
 }
-impl ListProductSubscriptionsOutput {
-    /// Creates a new builder-style object to manufacture [`ListProductSubscriptionsOutput`](crate::output::ListProductSubscriptionsOutput).
-    pub fn builder() -> crate::output::list_product_subscriptions_output::Builder {
-        crate::output::list_product_subscriptions_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -510,6 +516,13 @@ impl aws_http::request_id::RequestId for ListInstancesOutput {
         self._request_id.as_deref()
     }
 }
+impl ListInstancesOutput {
+    /// Creates a new builder-style object to manufacture [`ListInstancesOutput`](crate::output::ListInstancesOutput).
+    pub fn builder() -> crate::output::list_instances_output::Builder {
+        crate::output::list_instances_output::Builder::default()
+    }
+}
+
 /// See [`ListInstancesOutput`](crate::output::ListInstancesOutput).
 pub mod list_instances_output {
 
@@ -571,12 +584,6 @@ pub mod list_instances_output {
         }
     }
 }
-impl ListInstancesOutput {
-    /// Creates a new builder-style object to manufacture [`ListInstancesOutput`](crate::output::ListInstancesOutput).
-    pub fn builder() -> crate::output::list_instances_output::Builder {
-        crate::output::list_instances_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -608,6 +615,13 @@ impl aws_http::request_id::RequestId for ListIdentityProvidersOutput {
         self._request_id.as_deref()
     }
 }
+impl ListIdentityProvidersOutput {
+    /// Creates a new builder-style object to manufacture [`ListIdentityProvidersOutput`](crate::output::ListIdentityProvidersOutput).
+    pub fn builder() -> crate::output::list_identity_providers_output::Builder {
+        crate::output::list_identity_providers_output::Builder::default()
+    }
+}
+
 /// See [`ListIdentityProvidersOutput`](crate::output::ListIdentityProvidersOutput).
 pub mod list_identity_providers_output {
 
@@ -672,12 +686,6 @@ pub mod list_identity_providers_output {
         }
     }
 }
-impl ListIdentityProvidersOutput {
-    /// Creates a new builder-style object to manufacture [`ListIdentityProvidersOutput`](crate::output::ListIdentityProvidersOutput).
-    pub fn builder() -> crate::output::list_identity_providers_output::Builder {
-        crate::output::list_identity_providers_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -699,6 +707,13 @@ impl aws_http::request_id::RequestId for DisassociateUserOutput {
         self._request_id.as_deref()
     }
 }
+impl DisassociateUserOutput {
+    /// Creates a new builder-style object to manufacture [`DisassociateUserOutput`](crate::output::DisassociateUserOutput).
+    pub fn builder() -> crate::output::disassociate_user_output::Builder {
+        crate::output::disassociate_user_output::Builder::default()
+    }
+}
+
 /// See [`DisassociateUserOutput`](crate::output::DisassociateUserOutput).
 pub mod disassociate_user_output {
 
@@ -741,12 +756,6 @@ pub mod disassociate_user_output {
         }
     }
 }
-impl DisassociateUserOutput {
-    /// Creates a new builder-style object to manufacture [`DisassociateUserOutput`](crate::output::DisassociateUserOutput).
-    pub fn builder() -> crate::output::disassociate_user_output::Builder {
-        crate::output::disassociate_user_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -770,6 +779,13 @@ impl aws_http::request_id::RequestId for DeregisterIdentityProviderOutput {
         self._request_id.as_deref()
     }
 }
+impl DeregisterIdentityProviderOutput {
+    /// Creates a new builder-style object to manufacture [`DeregisterIdentityProviderOutput`](crate::output::DeregisterIdentityProviderOutput).
+    pub fn builder() -> crate::output::deregister_identity_provider_output::Builder {
+        crate::output::deregister_identity_provider_output::Builder::default()
+    }
+}
+
 /// See [`DeregisterIdentityProviderOutput`](crate::output::DeregisterIdentityProviderOutput).
 pub mod deregister_identity_provider_output {
 
@@ -816,12 +832,6 @@ pub mod deregister_identity_provider_output {
         }
     }
 }
-impl DeregisterIdentityProviderOutput {
-    /// Creates a new builder-style object to manufacture [`DeregisterIdentityProviderOutput`](crate::output::DeregisterIdentityProviderOutput).
-    pub fn builder() -> crate::output::deregister_identity_provider_output::Builder {
-        crate::output::deregister_identity_provider_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -843,6 +853,13 @@ impl aws_http::request_id::RequestId for AssociateUserOutput {
         self._request_id.as_deref()
     }
 }
+impl AssociateUserOutput {
+    /// Creates a new builder-style object to manufacture [`AssociateUserOutput`](crate::output::AssociateUserOutput).
+    pub fn builder() -> crate::output::associate_user_output::Builder {
+        crate::output::associate_user_output::Builder::default()
+    }
+}
+
 /// See [`AssociateUserOutput`](crate::output::AssociateUserOutput).
 pub mod associate_user_output {
 
@@ -883,11 +900,5 @@ pub mod associate_user_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl AssociateUserOutput {
-    /// Creates a new builder-style object to manufacture [`AssociateUserOutput`](crate::output::AssociateUserOutput).
-    pub fn builder() -> crate::output::associate_user_output::Builder {
-        crate::output::associate_user_output::Builder::default()
     }
 }

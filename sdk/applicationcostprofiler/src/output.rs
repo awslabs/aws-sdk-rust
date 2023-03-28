@@ -19,6 +19,13 @@ impl aws_http::request_id::RequestId for UpdateReportDefinitionOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdateReportDefinitionOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateReportDefinitionOutput`](crate::output::UpdateReportDefinitionOutput).
+    pub fn builder() -> crate::output::update_report_definition_output::Builder {
+        crate::output::update_report_definition_output::Builder::default()
+    }
+}
+
 /// See [`UpdateReportDefinitionOutput`](crate::output::UpdateReportDefinitionOutput).
 pub mod update_report_definition_output {
 
@@ -58,12 +65,6 @@ pub mod update_report_definition_output {
         }
     }
 }
-impl UpdateReportDefinitionOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateReportDefinitionOutput`](crate::output::UpdateReportDefinitionOutput).
-    pub fn builder() -> crate::output::update_report_definition_output::Builder {
-        crate::output::update_report_definition_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -85,6 +86,13 @@ impl aws_http::request_id::RequestId for PutReportDefinitionOutput {
         self._request_id.as_deref()
     }
 }
+impl PutReportDefinitionOutput {
+    /// Creates a new builder-style object to manufacture [`PutReportDefinitionOutput`](crate::output::PutReportDefinitionOutput).
+    pub fn builder() -> crate::output::put_report_definition_output::Builder {
+        crate::output::put_report_definition_output::Builder::default()
+    }
+}
+
 /// See [`PutReportDefinitionOutput`](crate::output::PutReportDefinitionOutput).
 pub mod put_report_definition_output {
 
@@ -124,12 +132,6 @@ pub mod put_report_definition_output {
         }
     }
 }
-impl PutReportDefinitionOutput {
-    /// Creates a new builder-style object to manufacture [`PutReportDefinitionOutput`](crate::output::PutReportDefinitionOutput).
-    pub fn builder() -> crate::output::put_report_definition_output::Builder {
-        crate::output::put_report_definition_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -158,6 +160,13 @@ impl aws_http::request_id::RequestId for ListReportDefinitionsOutput {
         self._request_id.as_deref()
     }
 }
+impl ListReportDefinitionsOutput {
+    /// Creates a new builder-style object to manufacture [`ListReportDefinitionsOutput`](crate::output::ListReportDefinitionsOutput).
+    pub fn builder() -> crate::output::list_report_definitions_output::Builder {
+        crate::output::list_report_definitions_output::Builder::default()
+    }
+}
+
 /// See [`ListReportDefinitionsOutput`](crate::output::ListReportDefinitionsOutput).
 pub mod list_report_definitions_output {
 
@@ -219,12 +228,6 @@ pub mod list_report_definitions_output {
         }
     }
 }
-impl ListReportDefinitionsOutput {
-    /// Creates a new builder-style object to manufacture [`ListReportDefinitionsOutput`](crate::output::ListReportDefinitionsOutput).
-    pub fn builder() -> crate::output::list_report_definitions_output::Builder {
-        crate::output::list_report_definitions_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -246,6 +249,13 @@ impl aws_http::request_id::RequestId for ImportApplicationUsageOutput {
         self._request_id.as_deref()
     }
 }
+impl ImportApplicationUsageOutput {
+    /// Creates a new builder-style object to manufacture [`ImportApplicationUsageOutput`](crate::output::ImportApplicationUsageOutput).
+    pub fn builder() -> crate::output::import_application_usage_output::Builder {
+        crate::output::import_application_usage_output::Builder::default()
+    }
+}
+
 /// See [`ImportApplicationUsageOutput`](crate::output::ImportApplicationUsageOutput).
 pub mod import_application_usage_output {
 
@@ -283,12 +293,6 @@ pub mod import_application_usage_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl ImportApplicationUsageOutput {
-    /// Creates a new builder-style object to manufacture [`ImportApplicationUsageOutput`](crate::output::ImportApplicationUsageOutput).
-    pub fn builder() -> crate::output::import_application_usage_output::Builder {
-        crate::output::import_application_usage_output::Builder::default()
     }
 }
 
@@ -354,6 +358,13 @@ impl aws_http::request_id::RequestId for GetReportDefinitionOutput {
         self._request_id.as_deref()
     }
 }
+impl GetReportDefinitionOutput {
+    /// Creates a new builder-style object to manufacture [`GetReportDefinitionOutput`](crate::output::GetReportDefinitionOutput).
+    pub fn builder() -> crate::output::get_report_definition_output::Builder {
+        crate::output::get_report_definition_output::Builder::default()
+    }
+}
+
 /// See [`GetReportDefinitionOutput`](crate::output::GetReportDefinitionOutput).
 pub mod get_report_definition_output {
 
@@ -480,12 +491,6 @@ pub mod get_report_definition_output {
         }
     }
 }
-impl GetReportDefinitionOutput {
-    /// Creates a new builder-style object to manufacture [`GetReportDefinitionOutput`](crate::output::GetReportDefinitionOutput).
-    pub fn builder() -> crate::output::get_report_definition_output::Builder {
-        crate::output::get_report_definition_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -507,6 +512,13 @@ impl aws_http::request_id::RequestId for DeleteReportDefinitionOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteReportDefinitionOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteReportDefinitionOutput`](crate::output::DeleteReportDefinitionOutput).
+    pub fn builder() -> crate::output::delete_report_definition_output::Builder {
+        crate::output::delete_report_definition_output::Builder::default()
+    }
+}
+
 /// See [`DeleteReportDefinitionOutput`](crate::output::DeleteReportDefinitionOutput).
 pub mod delete_report_definition_output {
 
@@ -544,11 +556,5 @@ pub mod delete_report_definition_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl DeleteReportDefinitionOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteReportDefinitionOutput`](crate::output::DeleteReportDefinitionOutput).
-    pub fn builder() -> crate::output::delete_report_definition_output::Builder {
-        crate::output::delete_report_definition_output::Builder::default()
     }
 }

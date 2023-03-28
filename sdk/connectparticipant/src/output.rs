@@ -26,6 +26,13 @@ impl aws_http::request_id::RequestId for StartAttachmentUploadOutput {
         self._request_id.as_deref()
     }
 }
+impl StartAttachmentUploadOutput {
+    /// Creates a new builder-style object to manufacture [`StartAttachmentUploadOutput`](crate::output::StartAttachmentUploadOutput).
+    pub fn builder() -> crate::output::start_attachment_upload_output::Builder {
+        crate::output::start_attachment_upload_output::Builder::default()
+    }
+}
+
 /// See [`StartAttachmentUploadOutput`](crate::output::StartAttachmentUploadOutput).
 pub mod start_attachment_upload_output {
 
@@ -83,12 +90,6 @@ pub mod start_attachment_upload_output {
         }
     }
 }
-impl StartAttachmentUploadOutput {
-    /// Creates a new builder-style object to manufacture [`StartAttachmentUploadOutput`](crate::output::StartAttachmentUploadOutput).
-    pub fn builder() -> crate::output::start_attachment_upload_output::Builder {
-        crate::output::start_attachment_upload_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -119,6 +120,13 @@ impl aws_http::request_id::RequestId for SendMessageOutput {
         self._request_id.as_deref()
     }
 }
+impl SendMessageOutput {
+    /// Creates a new builder-style object to manufacture [`SendMessageOutput`](crate::output::SendMessageOutput).
+    pub fn builder() -> crate::output::send_message_output::Builder {
+        crate::output::send_message_output::Builder::default()
+    }
+}
+
 /// See [`SendMessageOutput`](crate::output::SendMessageOutput).
 pub mod send_message_output {
 
@@ -175,12 +183,6 @@ pub mod send_message_output {
         }
     }
 }
-impl SendMessageOutput {
-    /// Creates a new builder-style object to manufacture [`SendMessageOutput`](crate::output::SendMessageOutput).
-    pub fn builder() -> crate::output::send_message_output::Builder {
-        crate::output::send_message_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -211,6 +213,13 @@ impl aws_http::request_id::RequestId for SendEventOutput {
         self._request_id.as_deref()
     }
 }
+impl SendEventOutput {
+    /// Creates a new builder-style object to manufacture [`SendEventOutput`](crate::output::SendEventOutput).
+    pub fn builder() -> crate::output::send_event_output::Builder {
+        crate::output::send_event_output::Builder::default()
+    }
+}
+
 /// See [`SendEventOutput`](crate::output::SendEventOutput).
 pub mod send_event_output {
 
@@ -267,12 +276,6 @@ pub mod send_event_output {
         }
     }
 }
-impl SendEventOutput {
-    /// Creates a new builder-style object to manufacture [`SendEventOutput`](crate::output::SendEventOutput).
-    pub fn builder() -> crate::output::send_event_output::Builder {
-        crate::output::send_event_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -308,6 +311,13 @@ impl aws_http::request_id::RequestId for GetTranscriptOutput {
         self._request_id.as_deref()
     }
 }
+impl GetTranscriptOutput {
+    /// Creates a new builder-style object to manufacture [`GetTranscriptOutput`](crate::output::GetTranscriptOutput).
+    pub fn builder() -> crate::output::get_transcript_output::Builder {
+        crate::output::get_transcript_output::Builder::default()
+    }
+}
+
 /// See [`GetTranscriptOutput`](crate::output::GetTranscriptOutput).
 pub mod get_transcript_output {
 
@@ -383,12 +393,6 @@ pub mod get_transcript_output {
         }
     }
 }
-impl GetTranscriptOutput {
-    /// Creates a new builder-style object to manufacture [`GetTranscriptOutput`](crate::output::GetTranscriptOutput).
-    pub fn builder() -> crate::output::get_transcript_output::Builder {
-        crate::output::get_transcript_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -417,6 +421,13 @@ impl aws_http::request_id::RequestId for GetAttachmentOutput {
         self._request_id.as_deref()
     }
 }
+impl GetAttachmentOutput {
+    /// Creates a new builder-style object to manufacture [`GetAttachmentOutput`](crate::output::GetAttachmentOutput).
+    pub fn builder() -> crate::output::get_attachment_output::Builder {
+        crate::output::get_attachment_output::Builder::default()
+    }
+}
+
 /// See [`GetAttachmentOutput`](crate::output::GetAttachmentOutput).
 pub mod get_attachment_output {
 
@@ -468,12 +479,6 @@ pub mod get_attachment_output {
         }
     }
 }
-impl GetAttachmentOutput {
-    /// Creates a new builder-style object to manufacture [`GetAttachmentOutput`](crate::output::GetAttachmentOutput).
-    pub fn builder() -> crate::output::get_attachment_output::Builder {
-        crate::output::get_attachment_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -486,6 +491,13 @@ impl aws_http::request_id::RequestId for DisconnectParticipantOutput {
         self._request_id.as_deref()
     }
 }
+impl DisconnectParticipantOutput {
+    /// Creates a new builder-style object to manufacture [`DisconnectParticipantOutput`](crate::output::DisconnectParticipantOutput).
+    pub fn builder() -> crate::output::disconnect_participant_output::Builder {
+        crate::output::disconnect_participant_output::Builder::default()
+    }
+}
+
 /// See [`DisconnectParticipantOutput`](crate::output::DisconnectParticipantOutput).
 pub mod disconnect_participant_output {
 
@@ -511,12 +523,6 @@ pub mod disconnect_participant_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl DisconnectParticipantOutput {
-    /// Creates a new builder-style object to manufacture [`DisconnectParticipantOutput`](crate::output::DisconnectParticipantOutput).
-    pub fn builder() -> crate::output::disconnect_participant_output::Builder {
-        crate::output::disconnect_participant_output::Builder::default()
     }
 }
 
@@ -549,6 +555,13 @@ impl aws_http::request_id::RequestId for CreateParticipantConnectionOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateParticipantConnectionOutput {
+    /// Creates a new builder-style object to manufacture [`CreateParticipantConnectionOutput`](crate::output::CreateParticipantConnectionOutput).
+    pub fn builder() -> crate::output::create_participant_connection_output::Builder {
+        crate::output::create_participant_connection_output::Builder::default()
+    }
+}
+
 /// See [`CreateParticipantConnectionOutput`](crate::output::CreateParticipantConnectionOutput).
 pub mod create_participant_connection_output {
 
@@ -609,12 +622,6 @@ pub mod create_participant_connection_output {
         }
     }
 }
-impl CreateParticipantConnectionOutput {
-    /// Creates a new builder-style object to manufacture [`CreateParticipantConnectionOutput`](crate::output::CreateParticipantConnectionOutput).
-    pub fn builder() -> crate::output::create_participant_connection_output::Builder {
-        crate::output::create_participant_connection_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -627,6 +634,13 @@ impl aws_http::request_id::RequestId for CompleteAttachmentUploadOutput {
         self._request_id.as_deref()
     }
 }
+impl CompleteAttachmentUploadOutput {
+    /// Creates a new builder-style object to manufacture [`CompleteAttachmentUploadOutput`](crate::output::CompleteAttachmentUploadOutput).
+    pub fn builder() -> crate::output::complete_attachment_upload_output::Builder {
+        crate::output::complete_attachment_upload_output::Builder::default()
+    }
+}
+
 /// See [`CompleteAttachmentUploadOutput`](crate::output::CompleteAttachmentUploadOutput).
 pub mod complete_attachment_upload_output {
 
@@ -652,11 +666,5 @@ pub mod complete_attachment_upload_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl CompleteAttachmentUploadOutput {
-    /// Creates a new builder-style object to manufacture [`CompleteAttachmentUploadOutput`](crate::output::CompleteAttachmentUploadOutput).
-    pub fn builder() -> crate::output::complete_attachment_upload_output::Builder {
-        crate::output::complete_attachment_upload_output::Builder::default()
     }
 }

@@ -34,6 +34,13 @@ impl aws_http::request_id::RequestId for ResolveCustomerOutput {
         self._request_id.as_deref()
     }
 }
+impl ResolveCustomerOutput {
+    /// Creates a new builder-style object to manufacture [`ResolveCustomerOutput`](crate::output::ResolveCustomerOutput).
+    pub fn builder() -> crate::output::resolve_customer_output::Builder {
+        crate::output::resolve_customer_output::Builder::default()
+    }
+}
+
 /// See [`ResolveCustomerOutput`](crate::output::ResolveCustomerOutput).
 pub mod resolve_customer_output {
 
@@ -103,12 +110,6 @@ pub mod resolve_customer_output {
         }
     }
 }
-impl ResolveCustomerOutput {
-    /// Creates a new builder-style object to manufacture [`ResolveCustomerOutput`](crate::output::ResolveCustomerOutput).
-    pub fn builder() -> crate::output::resolve_customer_output::Builder {
-        crate::output::resolve_customer_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -139,6 +140,13 @@ impl aws_http::request_id::RequestId for RegisterUsageOutput {
         self._request_id.as_deref()
     }
 }
+impl RegisterUsageOutput {
+    /// Creates a new builder-style object to manufacture [`RegisterUsageOutput`](crate::output::RegisterUsageOutput).
+    pub fn builder() -> crate::output::register_usage_output::Builder {
+        crate::output::register_usage_output::Builder::default()
+    }
+}
+
 /// See [`RegisterUsageOutput`](crate::output::RegisterUsageOutput).
 pub mod register_usage_output {
 
@@ -193,12 +201,6 @@ pub mod register_usage_output {
         }
     }
 }
-impl RegisterUsageOutput {
-    /// Creates a new builder-style object to manufacture [`RegisterUsageOutput`](crate::output::RegisterUsageOutput).
-    pub fn builder() -> crate::output::register_usage_output::Builder {
-        crate::output::register_usage_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -220,6 +222,13 @@ impl aws_http::request_id::RequestId for MeterUsageOutput {
         self._request_id.as_deref()
     }
 }
+impl MeterUsageOutput {
+    /// Creates a new builder-style object to manufacture [`MeterUsageOutput`](crate::output::MeterUsageOutput).
+    pub fn builder() -> crate::output::meter_usage_output::Builder {
+        crate::output::meter_usage_output::Builder::default()
+    }
+}
+
 /// See [`MeterUsageOutput`](crate::output::MeterUsageOutput).
 pub mod meter_usage_output {
 
@@ -262,12 +271,6 @@ pub mod meter_usage_output {
         }
     }
 }
-impl MeterUsageOutput {
-    /// Creates a new builder-style object to manufacture [`MeterUsageOutput`](crate::output::MeterUsageOutput).
-    pub fn builder() -> crate::output::meter_usage_output::Builder {
-        crate::output::meter_usage_output::Builder::default()
-    }
-}
 
 /// <p>Contains the <code>UsageRecords</code> processed by <code>BatchMeterUsage</code> and any records that have failed due to transient error.</p>
 #[non_exhaustive]
@@ -296,6 +299,13 @@ impl aws_http::request_id::RequestId for BatchMeterUsageOutput {
         self._request_id.as_deref()
     }
 }
+impl BatchMeterUsageOutput {
+    /// Creates a new builder-style object to manufacture [`BatchMeterUsageOutput`](crate::output::BatchMeterUsageOutput).
+    pub fn builder() -> crate::output::batch_meter_usage_output::Builder {
+        crate::output::batch_meter_usage_output::Builder::default()
+    }
+}
+
 /// See [`BatchMeterUsageOutput`](crate::output::BatchMeterUsageOutput).
 pub mod batch_meter_usage_output {
 
@@ -364,11 +374,5 @@ pub mod batch_meter_usage_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl BatchMeterUsageOutput {
-    /// Creates a new builder-style object to manufacture [`BatchMeterUsageOutput`](crate::output::BatchMeterUsageOutput).
-    pub fn builder() -> crate::output::batch_meter_usage_output::Builder {
-        crate::output::batch_meter_usage_output::Builder::default()
     }
 }

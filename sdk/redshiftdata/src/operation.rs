@@ -4,7 +4,7 @@
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`batch_execute_statement`](crate::client::Client::batch_execute_statement).
 ///
-/// See [`crate::client::fluent_builders::BatchExecuteStatement`] for more details about the operation.
+/// `ParseStrictResponse` impl for `BatchExecuteStatement`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct BatchExecuteStatement {
     _private: (),
@@ -39,7 +39,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchExecuteStatement {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`cancel_statement`](crate::client::Client::cancel_statement).
 ///
-/// See [`crate::client::fluent_builders::CancelStatement`] for more details about the operation.
+/// `ParseStrictResponse` impl for `CancelStatement`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CancelStatement {
     _private: (),
@@ -74,7 +74,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CancelStatement {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`describe_statement`](crate::client::Client::describe_statement).
 ///
-/// See [`crate::client::fluent_builders::DescribeStatement`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DescribeStatement`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeStatement {
     _private: (),
@@ -109,7 +109,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeStatement {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`describe_table`](crate::client::Client::describe_table).
 ///
-/// See [`crate::client::fluent_builders::DescribeTable`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DescribeTable`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeTable {
     _private: (),
@@ -142,7 +142,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeTable {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`execute_statement`](crate::client::Client::execute_statement).
 ///
-/// See [`crate::client::fluent_builders::ExecuteStatement`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ExecuteStatement`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ExecuteStatement {
     _private: (),
@@ -177,7 +177,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ExecuteStatement {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`get_statement_result`](crate::client::Client::get_statement_result).
 ///
-/// See [`crate::client::fluent_builders::GetStatementResult`] for more details about the operation.
+/// `ParseStrictResponse` impl for `GetStatementResult`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetStatementResult {
     _private: (),
@@ -212,7 +212,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetStatementResult {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_databases`](crate::client::Client::list_databases).
 ///
-/// See [`crate::client::fluent_builders::ListDatabases`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListDatabases`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListDatabases {
     _private: (),
@@ -245,7 +245,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListDatabases {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_schemas`](crate::client::Client::list_schemas).
 ///
-/// See [`crate::client::fluent_builders::ListSchemas`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListSchemas`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListSchemas {
     _private: (),
@@ -278,7 +278,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListSchemas {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_statements`](crate::client::Client::list_statements).
 ///
-/// See [`crate::client::fluent_builders::ListStatements`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListStatements`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListStatements {
     _private: (),
@@ -311,7 +311,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListStatements {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_tables`](crate::client::Client::list_tables).
 ///
-/// See [`crate::client::fluent_builders::ListTables`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListTables`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTables {
     _private: (),

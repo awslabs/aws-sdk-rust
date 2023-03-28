@@ -14,6 +14,13 @@ impl Destination {
         self.s3.as_ref()
     }
 }
+impl Destination {
+    /// Creates a new builder-style object to manufacture [`Destination`](crate::model::Destination).
+    pub fn builder() -> crate::model::destination::Builder {
+        crate::model::destination::Builder::default()
+    }
+}
+
 /// See [`Destination`](crate::model::Destination).
 pub mod destination {
 
@@ -40,12 +47,6 @@ pub mod destination {
         }
     }
 }
-impl Destination {
-    /// Creates a new builder-style object to manufacture [`Destination`](crate::model::Destination).
-    pub fn builder() -> crate::model::destination::Builder {
-        crate::model::destination::Builder::default()
-    }
-}
 
 /// <p>The name and prefix of the S3 bucket where code signing saves your signed objects.</p>
 #[non_exhaustive]
@@ -68,6 +69,13 @@ impl S3Destination {
         self.prefix.as_deref()
     }
 }
+impl S3Destination {
+    /// Creates a new builder-style object to manufacture [`S3Destination`](crate::model::S3Destination).
+    pub fn builder() -> crate::model::s3_destination::Builder {
+        crate::model::s3_destination::Builder::default()
+    }
+}
+
 /// See [`S3Destination`](crate::model::S3Destination).
 pub mod s3_destination {
 
@@ -108,12 +116,6 @@ pub mod s3_destination {
         }
     }
 }
-impl S3Destination {
-    /// Creates a new builder-style object to manufacture [`S3Destination`](crate::model::S3Destination).
-    pub fn builder() -> crate::model::s3_destination::Builder {
-        crate::model::s3_destination::Builder::default()
-    }
-}
 
 /// <p>An <code>S3Source</code> object that contains information about the S3 bucket where you saved your unsigned code.</p>
 #[non_exhaustive]
@@ -129,6 +131,13 @@ impl Source {
         self.s3.as_ref()
     }
 }
+impl Source {
+    /// Creates a new builder-style object to manufacture [`Source`](crate::model::Source).
+    pub fn builder() -> crate::model::source::Builder {
+        crate::model::source::Builder::default()
+    }
+}
+
 /// See [`Source`](crate::model::Source).
 pub mod source {
 
@@ -153,12 +162,6 @@ pub mod source {
         pub fn build(self) -> crate::model::Source {
             crate::model::Source { s3: self.s3 }
         }
-    }
-}
-impl Source {
-    /// Creates a new builder-style object to manufacture [`Source`](crate::model::Source).
-    pub fn builder() -> crate::model::source::Builder {
-        crate::model::source::Builder::default()
     }
 }
 
@@ -190,6 +193,13 @@ impl S3Source {
         self.version.as_deref()
     }
 }
+impl S3Source {
+    /// Creates a new builder-style object to manufacture [`S3Source`](crate::model::S3Source).
+    pub fn builder() -> crate::model::s3_source::Builder {
+        crate::model::s3_source::Builder::default()
+    }
+}
+
 /// See [`S3Source`](crate::model::S3Source).
 pub mod s3_source {
 
@@ -242,12 +252,6 @@ pub mod s3_source {
         }
     }
 }
-impl S3Source {
-    /// Creates a new builder-style object to manufacture [`S3Source`](crate::model::S3Source).
-    pub fn builder() -> crate::model::s3_source::Builder {
-        crate::model::s3_source::Builder::default()
-    }
-}
 
 /// <p>Any overrides that are applied to the signing configuration of a code signing platform.</p>
 #[non_exhaustive]
@@ -272,6 +276,13 @@ impl SigningPlatformOverrides {
         self.signing_image_format.as_ref()
     }
 }
+impl SigningPlatformOverrides {
+    /// Creates a new builder-style object to manufacture [`SigningPlatformOverrides`](crate::model::SigningPlatformOverrides).
+    pub fn builder() -> crate::model::signing_platform_overrides::Builder {
+        crate::model::signing_platform_overrides::Builder::default()
+    }
+}
+
 /// See [`SigningPlatformOverrides`](crate::model::SigningPlatformOverrides).
 pub mod signing_platform_overrides {
 
@@ -320,12 +331,6 @@ pub mod signing_platform_overrides {
                 signing_image_format: self.signing_image_format,
             }
         }
-    }
-}
-impl SigningPlatformOverrides {
-    /// Creates a new builder-style object to manufacture [`SigningPlatformOverrides`](crate::model::SigningPlatformOverrides).
-    pub fn builder() -> crate::model::signing_platform_overrides::Builder {
-        crate::model::signing_platform_overrides::Builder::default()
     }
 }
 
@@ -445,6 +450,13 @@ impl SigningConfigurationOverrides {
         self.hash_algorithm.as_ref()
     }
 }
+impl SigningConfigurationOverrides {
+    /// Creates a new builder-style object to manufacture [`SigningConfigurationOverrides`](crate::model::SigningConfigurationOverrides).
+    pub fn builder() -> crate::model::signing_configuration_overrides::Builder {
+        crate::model::signing_configuration_overrides::Builder::default()
+    }
+}
+
 /// See [`SigningConfigurationOverrides`](crate::model::SigningConfigurationOverrides).
 pub mod signing_configuration_overrides {
 
@@ -489,12 +501,6 @@ pub mod signing_configuration_overrides {
                 hash_algorithm: self.hash_algorithm,
             }
         }
-    }
-}
-impl SigningConfigurationOverrides {
-    /// Creates a new builder-style object to manufacture [`SigningConfigurationOverrides`](crate::model::SigningConfigurationOverrides).
-    pub fn builder() -> crate::model::signing_configuration_overrides::Builder {
-        crate::model::signing_configuration_overrides::Builder::default()
     }
 }
 
@@ -701,6 +707,13 @@ impl SignatureValidityPeriod {
         self.r#type.as_ref()
     }
 }
+impl SignatureValidityPeriod {
+    /// Creates a new builder-style object to manufacture [`SignatureValidityPeriod`](crate::model::SignatureValidityPeriod).
+    pub fn builder() -> crate::model::signature_validity_period::Builder {
+        crate::model::signature_validity_period::Builder::default()
+    }
+}
+
 /// See [`SignatureValidityPeriod`](crate::model::SignatureValidityPeriod).
 pub mod signature_validity_period {
 
@@ -739,12 +752,6 @@ pub mod signature_validity_period {
                 r#type: self.r#type,
             }
         }
-    }
-}
-impl SignatureValidityPeriod {
-    /// Creates a new builder-style object to manufacture [`SignatureValidityPeriod`](crate::model::SignatureValidityPeriod).
-    pub fn builder() -> crate::model::signature_validity_period::Builder {
-        crate::model::signature_validity_period::Builder::default()
     }
 }
 
@@ -857,6 +864,13 @@ impl SigningMaterial {
         self.certificate_arn.as_deref()
     }
 }
+impl SigningMaterial {
+    /// Creates a new builder-style object to manufacture [`SigningMaterial`](crate::model::SigningMaterial).
+    pub fn builder() -> crate::model::signing_material::Builder {
+        crate::model::signing_material::Builder::default()
+    }
+}
+
 /// See [`SigningMaterial`](crate::model::SigningMaterial).
 pub mod signing_material {
 
@@ -886,12 +900,6 @@ pub mod signing_material {
                 certificate_arn: self.certificate_arn,
             }
         }
-    }
-}
-impl SigningMaterial {
-    /// Creates a new builder-style object to manufacture [`SigningMaterial`](crate::model::SigningMaterial).
-    pub fn builder() -> crate::model::signing_material::Builder {
-        crate::model::signing_material::Builder::default()
     }
 }
 
@@ -989,6 +997,13 @@ impl SigningProfile {
         self.tags.as_ref()
     }
 }
+impl SigningProfile {
+    /// Creates a new builder-style object to manufacture [`SigningProfile`](crate::model::SigningProfile).
+    pub fn builder() -> crate::model::signing_profile::Builder {
+        crate::model::signing_profile::Builder::default()
+    }
+}
+
 /// See [`SigningProfile`](crate::model::SigningProfile).
 pub mod signing_profile {
 
@@ -1193,12 +1208,6 @@ pub mod signing_profile {
         }
     }
 }
-impl SigningProfile {
-    /// Creates a new builder-style object to manufacture [`SigningProfile`](crate::model::SigningProfile).
-    pub fn builder() -> crate::model::signing_profile::Builder {
-        crate::model::signing_profile::Builder::default()
-    }
-}
 
 /// When writing a match expression against `SigningProfileStatus`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -1369,6 +1378,13 @@ impl SigningPlatform {
         self.revocation_supported
     }
 }
+impl SigningPlatform {
+    /// Creates a new builder-style object to manufacture [`SigningPlatform`](crate::model::SigningPlatform).
+    pub fn builder() -> crate::model::signing_platform::Builder {
+        crate::model::signing_platform::Builder::default()
+    }
+}
+
 /// See [`SigningPlatform`](crate::model::SigningPlatform).
 pub mod signing_platform {
 
@@ -1499,12 +1515,6 @@ pub mod signing_platform {
         }
     }
 }
-impl SigningPlatform {
-    /// Creates a new builder-style object to manufacture [`SigningPlatform`](crate::model::SigningPlatform).
-    pub fn builder() -> crate::model::signing_platform::Builder {
-        crate::model::signing_platform::Builder::default()
-    }
-}
 
 /// <p>The image format of a code signing platform or profile.</p>
 #[non_exhaustive]
@@ -1527,6 +1537,13 @@ impl SigningImageFormat {
         self.default_format.as_ref()
     }
 }
+impl SigningImageFormat {
+    /// Creates a new builder-style object to manufacture [`SigningImageFormat`](crate::model::SigningImageFormat).
+    pub fn builder() -> crate::model::signing_image_format::Builder {
+        crate::model::signing_image_format::Builder::default()
+    }
+}
+
 /// See [`SigningImageFormat`](crate::model::SigningImageFormat).
 pub mod signing_image_format {
 
@@ -1579,12 +1596,6 @@ pub mod signing_image_format {
         }
     }
 }
-impl SigningImageFormat {
-    /// Creates a new builder-style object to manufacture [`SigningImageFormat`](crate::model::SigningImageFormat).
-    pub fn builder() -> crate::model::signing_image_format::Builder {
-        crate::model::signing_image_format::Builder::default()
-    }
-}
 
 /// <p>The configuration of a code signing operation.</p>
 #[non_exhaustive]
@@ -1611,6 +1622,13 @@ impl SigningConfiguration {
         self.hash_algorithm_options.as_ref()
     }
 }
+impl SigningConfiguration {
+    /// Creates a new builder-style object to manufacture [`SigningConfiguration`](crate::model::SigningConfiguration).
+    pub fn builder() -> crate::model::signing_configuration::Builder {
+        crate::model::signing_configuration::Builder::default()
+    }
+}
+
 /// See [`SigningConfiguration`](crate::model::SigningConfiguration).
 pub mod signing_configuration {
 
@@ -1661,12 +1679,6 @@ pub mod signing_configuration {
         }
     }
 }
-impl SigningConfiguration {
-    /// Creates a new builder-style object to manufacture [`SigningConfiguration`](crate::model::SigningConfiguration).
-    pub fn builder() -> crate::model::signing_configuration::Builder {
-        crate::model::signing_configuration::Builder::default()
-    }
-}
 
 /// <p>The hash algorithms that are available to a code signing job.</p>
 #[non_exhaustive]
@@ -1689,6 +1701,13 @@ impl HashAlgorithmOptions {
         self.default_value.as_ref()
     }
 }
+impl HashAlgorithmOptions {
+    /// Creates a new builder-style object to manufacture [`HashAlgorithmOptions`](crate::model::HashAlgorithmOptions).
+    pub fn builder() -> crate::model::hash_algorithm_options::Builder {
+        crate::model::hash_algorithm_options::Builder::default()
+    }
+}
+
 /// See [`HashAlgorithmOptions`](crate::model::HashAlgorithmOptions).
 pub mod hash_algorithm_options {
 
@@ -1741,12 +1760,6 @@ pub mod hash_algorithm_options {
         }
     }
 }
-impl HashAlgorithmOptions {
-    /// Creates a new builder-style object to manufacture [`HashAlgorithmOptions`](crate::model::HashAlgorithmOptions).
-    pub fn builder() -> crate::model::hash_algorithm_options::Builder {
-        crate::model::hash_algorithm_options::Builder::default()
-    }
-}
 
 /// <p>The encryption algorithm options that are available to a code signing job.</p>
 #[non_exhaustive]
@@ -1769,6 +1782,13 @@ impl EncryptionAlgorithmOptions {
         self.default_value.as_ref()
     }
 }
+impl EncryptionAlgorithmOptions {
+    /// Creates a new builder-style object to manufacture [`EncryptionAlgorithmOptions`](crate::model::EncryptionAlgorithmOptions).
+    pub fn builder() -> crate::model::encryption_algorithm_options::Builder {
+        crate::model::encryption_algorithm_options::Builder::default()
+    }
+}
+
 /// See [`EncryptionAlgorithmOptions`](crate::model::EncryptionAlgorithmOptions).
 pub mod encryption_algorithm_options {
 
@@ -1820,12 +1840,6 @@ pub mod encryption_algorithm_options {
                 default_value: self.default_value,
             }
         }
-    }
-}
-impl EncryptionAlgorithmOptions {
-    /// Creates a new builder-style object to manufacture [`EncryptionAlgorithmOptions`](crate::model::EncryptionAlgorithmOptions).
-    pub fn builder() -> crate::model::encryption_algorithm_options::Builder {
-        crate::model::encryption_algorithm_options::Builder::default()
     }
 }
 
@@ -2019,6 +2033,13 @@ impl SigningJob {
         self.job_invoker.as_deref()
     }
 }
+impl SigningJob {
+    /// Creates a new builder-style object to manufacture [`SigningJob`](crate::model::SigningJob).
+    pub fn builder() -> crate::model::signing_job::Builder {
+        crate::model::signing_job::Builder::default()
+    }
+}
+
 /// See [`SigningJob`](crate::model::SigningJob).
 pub mod signing_job {
 
@@ -2224,12 +2245,6 @@ pub mod signing_job {
         }
     }
 }
-impl SigningJob {
-    /// Creates a new builder-style object to manufacture [`SigningJob`](crate::model::SigningJob).
-    pub fn builder() -> crate::model::signing_job::Builder {
-        crate::model::signing_job::Builder::default()
-    }
-}
 
 /// When writing a match expression against `SigningStatus`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -2340,6 +2355,13 @@ impl SignedObject {
         self.s3.as_ref()
     }
 }
+impl SignedObject {
+    /// Creates a new builder-style object to manufacture [`SignedObject`](crate::model::SignedObject).
+    pub fn builder() -> crate::model::signed_object::Builder {
+        crate::model::signed_object::Builder::default()
+    }
+}
+
 /// See [`SignedObject`](crate::model::SignedObject).
 pub mod signed_object {
 
@@ -2366,12 +2388,6 @@ pub mod signed_object {
         }
     }
 }
-impl SignedObject {
-    /// Creates a new builder-style object to manufacture [`SignedObject`](crate::model::SignedObject).
-    pub fn builder() -> crate::model::signed_object::Builder {
-        crate::model::signed_object::Builder::default()
-    }
-}
 
 /// <p>The S3 bucket name and key where code signing saved your signed code image.</p>
 #[non_exhaustive]
@@ -2394,6 +2410,13 @@ impl S3SignedObject {
         self.key.as_deref()
     }
 }
+impl S3SignedObject {
+    /// Creates a new builder-style object to manufacture [`S3SignedObject`](crate::model::S3SignedObject).
+    pub fn builder() -> crate::model::s3_signed_object::Builder {
+        crate::model::s3_signed_object::Builder::default()
+    }
+}
+
 /// See [`S3SignedObject`](crate::model::S3SignedObject).
 pub mod s3_signed_object {
 
@@ -2434,12 +2457,6 @@ pub mod s3_signed_object {
         }
     }
 }
-impl S3SignedObject {
-    /// Creates a new builder-style object to manufacture [`S3SignedObject`](crate::model::S3SignedObject).
-    pub fn builder() -> crate::model::s3_signed_object::Builder {
-        crate::model::s3_signed_object::Builder::default()
-    }
-}
 
 /// <p>A cross-account permission for a signing profile.</p>
 #[non_exhaustive]
@@ -2476,6 +2493,13 @@ impl Permission {
         self.profile_version.as_deref()
     }
 }
+impl Permission {
+    /// Creates a new builder-style object to manufacture [`Permission`](crate::model::Permission).
+    pub fn builder() -> crate::model::permission::Builder {
+        crate::model::permission::Builder::default()
+    }
+}
+
 /// See [`Permission`](crate::model::Permission).
 pub mod permission {
 
@@ -2543,12 +2567,6 @@ pub mod permission {
         }
     }
 }
-impl Permission {
-    /// Creates a new builder-style object to manufacture [`Permission`](crate::model::Permission).
-    pub fn builder() -> crate::model::permission::Builder {
-        crate::model::permission::Builder::default()
-    }
-}
 
 /// <p>Revocation information for a signing profile.</p>
 #[non_exhaustive]
@@ -2578,6 +2596,13 @@ impl SigningProfileRevocationRecord {
         self.revoked_by.as_deref()
     }
 }
+impl SigningProfileRevocationRecord {
+    /// Creates a new builder-style object to manufacture [`SigningProfileRevocationRecord`](crate::model::SigningProfileRevocationRecord).
+    pub fn builder() -> crate::model::signing_profile_revocation_record::Builder {
+        crate::model::signing_profile_revocation_record::Builder::default()
+    }
+}
+
 /// See [`SigningProfileRevocationRecord`](crate::model::SigningProfileRevocationRecord).
 pub mod signing_profile_revocation_record {
 
@@ -2636,12 +2661,6 @@ pub mod signing_profile_revocation_record {
         }
     }
 }
-impl SigningProfileRevocationRecord {
-    /// Creates a new builder-style object to manufacture [`SigningProfileRevocationRecord`](crate::model::SigningProfileRevocationRecord).
-    pub fn builder() -> crate::model::signing_profile_revocation_record::Builder {
-        crate::model::signing_profile_revocation_record::Builder::default()
-    }
-}
 
 /// <p>Revocation information for a signing job.</p>
 #[non_exhaustive]
@@ -2671,6 +2690,13 @@ impl SigningJobRevocationRecord {
         self.revoked_by.as_deref()
     }
 }
+impl SigningJobRevocationRecord {
+    /// Creates a new builder-style object to manufacture [`SigningJobRevocationRecord`](crate::model::SigningJobRevocationRecord).
+    pub fn builder() -> crate::model::signing_job_revocation_record::Builder {
+        crate::model::signing_job_revocation_record::Builder::default()
+    }
+}
+
 /// See [`SigningJobRevocationRecord`](crate::model::SigningJobRevocationRecord).
 pub mod signing_job_revocation_record {
 
@@ -2724,11 +2750,5 @@ pub mod signing_job_revocation_record {
                 revoked_by: self.revoked_by,
             }
         }
-    }
-}
-impl SigningJobRevocationRecord {
-    /// Creates a new builder-style object to manufacture [`SigningJobRevocationRecord`](crate::model::SigningJobRevocationRecord).
-    pub fn builder() -> crate::model::signing_job_revocation_record::Builder {
-        crate::model::signing_job_revocation_record::Builder::default()
     }
 }

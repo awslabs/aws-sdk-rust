@@ -74,6 +74,13 @@ impl QuantumTaskSummary {
         self.tags.as_ref()
     }
 }
+impl QuantumTaskSummary {
+    /// Creates a new builder-style object to manufacture [`QuantumTaskSummary`](crate::model::QuantumTaskSummary).
+    pub fn builder() -> crate::model::quantum_task_summary::Builder {
+        crate::model::quantum_task_summary::Builder::default()
+    }
+}
+
 /// See [`QuantumTaskSummary`](crate::model::QuantumTaskSummary).
 pub mod quantum_task_summary {
 
@@ -233,12 +240,6 @@ pub mod quantum_task_summary {
         }
     }
 }
-impl QuantumTaskSummary {
-    /// Creates a new builder-style object to manufacture [`QuantumTaskSummary`](crate::model::QuantumTaskSummary).
-    pub fn builder() -> crate::model::quantum_task_summary::Builder {
-        crate::model::quantum_task_summary::Builder::default()
-    }
-}
 
 /// When writing a match expression against `QuantumTaskStatus`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -393,6 +394,13 @@ impl SearchQuantumTasksFilter {
         self.operator.as_ref()
     }
 }
+impl SearchQuantumTasksFilter {
+    /// Creates a new builder-style object to manufacture [`SearchQuantumTasksFilter`](crate::model::SearchQuantumTasksFilter).
+    pub fn builder() -> crate::model::search_quantum_tasks_filter::Builder {
+        crate::model::search_quantum_tasks_filter::Builder::default()
+    }
+}
+
 /// See [`SearchQuantumTasksFilter`](crate::model::SearchQuantumTasksFilter).
 pub mod search_quantum_tasks_filter {
 
@@ -455,12 +463,6 @@ pub mod search_quantum_tasks_filter {
                 operator: self.operator,
             }
         }
-    }
-}
-impl SearchQuantumTasksFilter {
-    /// Creates a new builder-style object to manufacture [`SearchQuantumTasksFilter`](crate::model::SearchQuantumTasksFilter).
-    pub fn builder() -> crate::model::search_quantum_tasks_filter::Builder {
-        crate::model::search_quantum_tasks_filter::Builder::default()
     }
 }
 
@@ -735,6 +737,13 @@ impl JobSummary {
         self.tags.as_ref()
     }
 }
+impl JobSummary {
+    /// Creates a new builder-style object to manufacture [`JobSummary`](crate::model::JobSummary).
+    pub fn builder() -> crate::model::job_summary::Builder {
+        crate::model::job_summary::Builder::default()
+    }
+}
+
 /// See [`JobSummary`](crate::model::JobSummary).
 pub mod job_summary {
 
@@ -874,12 +883,6 @@ pub mod job_summary {
                 tags: self.tags,
             }
         }
-    }
-}
-impl JobSummary {
-    /// Creates a new builder-style object to manufacture [`JobSummary`](crate::model::JobSummary).
-    pub fn builder() -> crate::model::job_summary::Builder {
-        crate::model::job_summary::Builder::default()
     }
 }
 
@@ -1028,6 +1031,13 @@ impl SearchJobsFilter {
         self.operator.as_ref()
     }
 }
+impl SearchJobsFilter {
+    /// Creates a new builder-style object to manufacture [`SearchJobsFilter`](crate::model::SearchJobsFilter).
+    pub fn builder() -> crate::model::search_jobs_filter::Builder {
+        crate::model::search_jobs_filter::Builder::default()
+    }
+}
+
 /// See [`SearchJobsFilter`](crate::model::SearchJobsFilter).
 pub mod search_jobs_filter {
 
@@ -1090,12 +1100,6 @@ pub mod search_jobs_filter {
                 operator: self.operator,
             }
         }
-    }
-}
-impl SearchJobsFilter {
-    /// Creates a new builder-style object to manufacture [`SearchJobsFilter`](crate::model::SearchJobsFilter).
-    pub fn builder() -> crate::model::search_jobs_filter::Builder {
-        crate::model::search_jobs_filter::Builder::default()
     }
 }
 
@@ -1230,6 +1234,13 @@ impl DeviceConfig {
         self.device.as_deref()
     }
 }
+impl DeviceConfig {
+    /// Creates a new builder-style object to manufacture [`DeviceConfig`](crate::model::DeviceConfig).
+    pub fn builder() -> crate::model::device_config::Builder {
+        crate::model::device_config::Builder::default()
+    }
+}
+
 /// See [`DeviceConfig`](crate::model::DeviceConfig).
 pub mod device_config {
 
@@ -1256,12 +1267,6 @@ pub mod device_config {
                 device: self.device,
             }
         }
-    }
-}
-impl DeviceConfig {
-    /// Creates a new builder-style object to manufacture [`DeviceConfig`](crate::model::DeviceConfig).
-    pub fn builder() -> crate::model::device_config::Builder {
-        crate::model::device_config::Builder::default()
     }
 }
 
@@ -1293,6 +1298,13 @@ impl InstanceConfig {
         self.instance_count
     }
 }
+impl InstanceConfig {
+    /// Creates a new builder-style object to manufacture [`InstanceConfig`](crate::model::InstanceConfig).
+    pub fn builder() -> crate::model::instance_config::Builder {
+        crate::model::instance_config::Builder::default()
+    }
+}
+
 /// See [`InstanceConfig`](crate::model::InstanceConfig).
 pub mod instance_config {
 
@@ -1346,12 +1358,6 @@ pub mod instance_config {
                 instance_count: self.instance_count,
             }
         }
-    }
-}
-impl InstanceConfig {
-    /// Creates a new builder-style object to manufacture [`InstanceConfig`](crate::model::InstanceConfig).
-    pub fn builder() -> crate::model::instance_config::Builder {
-        crate::model::instance_config::Builder::default()
     }
 }
 
@@ -1684,6 +1690,13 @@ impl JobStoppingCondition {
         self.max_runtime_in_seconds
     }
 }
+impl JobStoppingCondition {
+    /// Creates a new builder-style object to manufacture [`JobStoppingCondition`](crate::model::JobStoppingCondition).
+    pub fn builder() -> crate::model::job_stopping_condition::Builder {
+        crate::model::job_stopping_condition::Builder::default()
+    }
+}
+
 /// See [`JobStoppingCondition`](crate::model::JobStoppingCondition).
 pub mod job_stopping_condition {
 
@@ -1712,12 +1725,6 @@ pub mod job_stopping_condition {
         }
     }
 }
-impl JobStoppingCondition {
-    /// Creates a new builder-style object to manufacture [`JobStoppingCondition`](crate::model::JobStoppingCondition).
-    pub fn builder() -> crate::model::job_stopping_condition::Builder {
-        crate::model::job_stopping_condition::Builder::default()
-    }
-}
 
 /// <p>Contains information about the output locations for job checkpoint data.</p>
 #[non_exhaustive]
@@ -1740,6 +1747,13 @@ impl JobCheckpointConfig {
         self.s3_uri.as_deref()
     }
 }
+impl JobCheckpointConfig {
+    /// Creates a new builder-style object to manufacture [`JobCheckpointConfig`](crate::model::JobCheckpointConfig).
+    pub fn builder() -> crate::model::job_checkpoint_config::Builder {
+        crate::model::job_checkpoint_config::Builder::default()
+    }
+}
+
 /// See [`JobCheckpointConfig`](crate::model::JobCheckpointConfig).
 pub mod job_checkpoint_config {
 
@@ -1780,12 +1794,6 @@ pub mod job_checkpoint_config {
         }
     }
 }
-impl JobCheckpointConfig {
-    /// Creates a new builder-style object to manufacture [`JobCheckpointConfig`](crate::model::JobCheckpointConfig).
-    pub fn builder() -> crate::model::job_checkpoint_config::Builder {
-        crate::model::job_checkpoint_config::Builder::default()
-    }
-}
 
 /// <p>Specifies the path to the S3 location where you want to store job artifacts and the encryption key used to store them.</p>
 #[non_exhaustive]
@@ -1808,6 +1816,13 @@ impl JobOutputDataConfig {
         self.s3_path.as_deref()
     }
 }
+impl JobOutputDataConfig {
+    /// Creates a new builder-style object to manufacture [`JobOutputDataConfig`](crate::model::JobOutputDataConfig).
+    pub fn builder() -> crate::model::job_output_data_config::Builder {
+        crate::model::job_output_data_config::Builder::default()
+    }
+}
+
 /// See [`JobOutputDataConfig`](crate::model::JobOutputDataConfig).
 pub mod job_output_data_config {
 
@@ -1848,12 +1863,6 @@ pub mod job_output_data_config {
         }
     }
 }
-impl JobOutputDataConfig {
-    /// Creates a new builder-style object to manufacture [`JobOutputDataConfig`](crate::model::JobOutputDataConfig).
-    pub fn builder() -> crate::model::job_output_data_config::Builder {
-        crate::model::job_output_data_config::Builder::default()
-    }
-}
 
 /// <p>A list of parameters that specify the input channels, type of input data, and where it is located.</p>
 #[non_exhaustive]
@@ -1883,6 +1892,13 @@ impl InputFileConfig {
         self.data_source.as_ref()
     }
 }
+impl InputFileConfig {
+    /// Creates a new builder-style object to manufacture [`InputFileConfig`](crate::model::InputFileConfig).
+    pub fn builder() -> crate::model::input_file_config::Builder {
+        crate::model::input_file_config::Builder::default()
+    }
+}
+
 /// See [`InputFileConfig`](crate::model::InputFileConfig).
 pub mod input_file_config {
 
@@ -1938,12 +1954,6 @@ pub mod input_file_config {
         }
     }
 }
-impl InputFileConfig {
-    /// Creates a new builder-style object to manufacture [`InputFileConfig`](crate::model::InputFileConfig).
-    pub fn builder() -> crate::model::input_file_config::Builder {
-        crate::model::input_file_config::Builder::default()
-    }
-}
 
 /// <p>Information about the source of the data used by the Amazon Braket job.</p>
 #[non_exhaustive]
@@ -1959,6 +1969,13 @@ impl DataSource {
         self.s3_data_source.as_ref()
     }
 }
+impl DataSource {
+    /// Creates a new builder-style object to manufacture [`DataSource`](crate::model::DataSource).
+    pub fn builder() -> crate::model::data_source::Builder {
+        crate::model::data_source::Builder::default()
+    }
+}
+
 /// See [`DataSource`](crate::model::DataSource).
 pub mod data_source {
 
@@ -1990,12 +2007,6 @@ pub mod data_source {
         }
     }
 }
-impl DataSource {
-    /// Creates a new builder-style object to manufacture [`DataSource`](crate::model::DataSource).
-    pub fn builder() -> crate::model::data_source::Builder {
-        crate::model::data_source::Builder::default()
-    }
-}
 
 /// <p>Information about the data stored in Amazon S3 used by the Amazon Braket job.</p>
 #[non_exhaustive]
@@ -2011,6 +2022,13 @@ impl S3DataSource {
         self.s3_uri.as_deref()
     }
 }
+impl S3DataSource {
+    /// Creates a new builder-style object to manufacture [`S3DataSource`](crate::model::S3DataSource).
+    pub fn builder() -> crate::model::s3_data_source::Builder {
+        crate::model::s3_data_source::Builder::default()
+    }
+}
+
 /// See [`S3DataSource`](crate::model::S3DataSource).
 pub mod s3_data_source {
 
@@ -2039,12 +2057,6 @@ pub mod s3_data_source {
         }
     }
 }
-impl S3DataSource {
-    /// Creates a new builder-style object to manufacture [`S3DataSource`](crate::model::S3DataSource).
-    pub fn builder() -> crate::model::s3_data_source::Builder {
-        crate::model::s3_data_source::Builder::default()
-    }
-}
 
 /// <p>Defines the Amazon Braket job to be created. Specifies the container image the job uses and the paths to the Python scripts used for entry and training.</p>
 #[non_exhaustive]
@@ -2067,6 +2079,13 @@ impl AlgorithmSpecification {
         self.container_image.as_ref()
     }
 }
+impl AlgorithmSpecification {
+    /// Creates a new builder-style object to manufacture [`AlgorithmSpecification`](crate::model::AlgorithmSpecification).
+    pub fn builder() -> crate::model::algorithm_specification::Builder {
+        crate::model::algorithm_specification::Builder::default()
+    }
+}
+
 /// See [`AlgorithmSpecification`](crate::model::AlgorithmSpecification).
 pub mod algorithm_specification {
 
@@ -2113,12 +2132,6 @@ pub mod algorithm_specification {
         }
     }
 }
-impl AlgorithmSpecification {
-    /// Creates a new builder-style object to manufacture [`AlgorithmSpecification`](crate::model::AlgorithmSpecification).
-    pub fn builder() -> crate::model::algorithm_specification::Builder {
-        crate::model::algorithm_specification::Builder::default()
-    }
-}
 
 /// <p>The container image used to create an Amazon Braket job.</p>
 #[non_exhaustive]
@@ -2134,6 +2147,13 @@ impl ContainerImage {
         self.uri.as_deref()
     }
 }
+impl ContainerImage {
+    /// Creates a new builder-style object to manufacture [`ContainerImage`](crate::model::ContainerImage).
+    pub fn builder() -> crate::model::container_image::Builder {
+        crate::model::container_image::Builder::default()
+    }
+}
+
 /// See [`ContainerImage`](crate::model::ContainerImage).
 pub mod container_image {
 
@@ -2158,12 +2178,6 @@ pub mod container_image {
         pub fn build(self) -> crate::model::ContainerImage {
             crate::model::ContainerImage { uri: self.uri }
         }
-    }
-}
-impl ContainerImage {
-    /// Creates a new builder-style object to manufacture [`ContainerImage`](crate::model::ContainerImage).
-    pub fn builder() -> crate::model::container_image::Builder {
-        crate::model::container_image::Builder::default()
     }
 }
 
@@ -2195,6 +2209,13 @@ impl ScriptModeConfig {
         self.compression_type.as_ref()
     }
 }
+impl ScriptModeConfig {
+    /// Creates a new builder-style object to manufacture [`ScriptModeConfig`](crate::model::ScriptModeConfig).
+    pub fn builder() -> crate::model::script_mode_config::Builder {
+        crate::model::script_mode_config::Builder::default()
+    }
+}
+
 /// See [`ScriptModeConfig`](crate::model::ScriptModeConfig).
 pub mod script_mode_config {
 
@@ -2248,12 +2269,6 @@ pub mod script_mode_config {
                 compression_type: self.compression_type,
             }
         }
-    }
-}
-impl ScriptModeConfig {
-    /// Creates a new builder-style object to manufacture [`ScriptModeConfig`](crate::model::ScriptModeConfig).
-    pub fn builder() -> crate::model::script_mode_config::Builder {
-        crate::model::script_mode_config::Builder::default()
     }
 }
 
@@ -2375,6 +2390,13 @@ impl JobEventDetails {
         self.message.as_deref()
     }
 }
+impl JobEventDetails {
+    /// Creates a new builder-style object to manufacture [`JobEventDetails`](crate::model::JobEventDetails).
+    pub fn builder() -> crate::model::job_event_details::Builder {
+        crate::model::job_event_details::Builder::default()
+    }
+}
+
 /// See [`JobEventDetails`](crate::model::JobEventDetails).
 pub mod job_event_details {
 
@@ -2431,12 +2453,6 @@ pub mod job_event_details {
                 message: self.message,
             }
         }
-    }
-}
-impl JobEventDetails {
-    /// Creates a new builder-style object to manufacture [`JobEventDetails`](crate::model::JobEventDetails).
-    pub fn builder() -> crate::model::job_event_details::Builder {
-        crate::model::job_event_details::Builder::default()
     }
 }
 
@@ -2629,6 +2645,13 @@ impl DeviceSummary {
         self.device_status.as_ref()
     }
 }
+impl DeviceSummary {
+    /// Creates a new builder-style object to manufacture [`DeviceSummary`](crate::model::DeviceSummary).
+    pub fn builder() -> crate::model::device_summary::Builder {
+        crate::model::device_summary::Builder::default()
+    }
+}
+
 /// See [`DeviceSummary`](crate::model::DeviceSummary).
 pub mod device_summary {
 
@@ -2712,12 +2735,6 @@ pub mod device_summary {
                 device_status: self.device_status,
             }
         }
-    }
-}
-impl DeviceSummary {
-    /// Creates a new builder-style object to manufacture [`DeviceSummary`](crate::model::DeviceSummary).
-    pub fn builder() -> crate::model::device_summary::Builder {
-        crate::model::device_summary::Builder::default()
     }
 }
 
@@ -2927,6 +2944,13 @@ impl SearchDevicesFilter {
         self.values.as_deref()
     }
 }
+impl SearchDevicesFilter {
+    /// Creates a new builder-style object to manufacture [`SearchDevicesFilter`](crate::model::SearchDevicesFilter).
+    pub fn builder() -> crate::model::search_devices_filter::Builder {
+        crate::model::search_devices_filter::Builder::default()
+    }
+}
+
 /// See [`SearchDevicesFilter`](crate::model::SearchDevicesFilter).
 pub mod search_devices_filter {
 
@@ -2974,11 +2998,5 @@ pub mod search_devices_filter {
                 values: self.values,
             }
         }
-    }
-}
-impl SearchDevicesFilter {
-    /// Creates a new builder-style object to manufacture [`SearchDevicesFilter`](crate::model::SearchDevicesFilter).
-    pub fn builder() -> crate::model::search_devices_filter::Builder {
-        crate::model::search_devices_filter::Builder::default()
     }
 }

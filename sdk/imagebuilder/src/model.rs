@@ -31,6 +31,13 @@ impl InstanceMetadataOptions {
         self.http_put_response_hop_limit
     }
 }
+impl InstanceMetadataOptions {
+    /// Creates a new builder-style object to manufacture [`InstanceMetadataOptions`](crate::model::InstanceMetadataOptions).
+    pub fn builder() -> crate::model::instance_metadata_options::Builder {
+        crate::model::instance_metadata_options::Builder::default()
+    }
+}
+
 /// See [`InstanceMetadataOptions`](crate::model::InstanceMetadataOptions).
 pub mod instance_metadata_options {
 
@@ -81,12 +88,6 @@ pub mod instance_metadata_options {
         }
     }
 }
-impl InstanceMetadataOptions {
-    /// Creates a new builder-style object to manufacture [`InstanceMetadataOptions`](crate::model::InstanceMetadataOptions).
-    pub fn builder() -> crate::model::instance_metadata_options::Builder {
-        crate::model::instance_metadata_options::Builder::default()
-    }
-}
 
 /// <p>Logging configuration defines where Image Builder uploads your logs.</p>
 #[non_exhaustive]
@@ -102,6 +103,13 @@ impl Logging {
         self.s3_logs.as_ref()
     }
 }
+impl Logging {
+    /// Creates a new builder-style object to manufacture [`Logging`](crate::model::Logging).
+    pub fn builder() -> crate::model::logging::Builder {
+        crate::model::logging::Builder::default()
+    }
+}
+
 /// See [`Logging`](crate::model::Logging).
 pub mod logging {
 
@@ -130,12 +138,6 @@ pub mod logging {
         }
     }
 }
-impl Logging {
-    /// Creates a new builder-style object to manufacture [`Logging`](crate::model::Logging).
-    pub fn builder() -> crate::model::logging::Builder {
-        crate::model::logging::Builder::default()
-    }
-}
 
 /// <p>Amazon S3 logging configuration.</p>
 #[non_exhaustive]
@@ -158,6 +160,13 @@ impl S3Logs {
         self.s3_key_prefix.as_deref()
     }
 }
+impl S3Logs {
+    /// Creates a new builder-style object to manufacture [`S3Logs`](crate::model::S3Logs).
+    pub fn builder() -> crate::model::s3_logs::Builder {
+        crate::model::s3_logs::Builder::default()
+    }
+}
+
 /// See [`S3Logs`](crate::model::S3Logs).
 pub mod s3_logs {
 
@@ -202,12 +211,6 @@ pub mod s3_logs {
                 s3_key_prefix: self.s3_key_prefix,
             }
         }
-    }
-}
-impl S3Logs {
-    /// Creates a new builder-style object to manufacture [`S3Logs`](crate::model::S3Logs).
-    pub fn builder() -> crate::model::s3_logs::Builder {
-        crate::model::s3_logs::Builder::default()
     }
 }
 
@@ -334,6 +337,13 @@ impl Schedule {
         self.pipeline_execution_start_condition.as_ref()
     }
 }
+impl Schedule {
+    /// Creates a new builder-style object to manufacture [`Schedule`](crate::model::Schedule).
+    pub fn builder() -> crate::model::schedule::Builder {
+        crate::model::schedule::Builder::default()
+    }
+}
+
 /// See [`Schedule`](crate::model::Schedule).
 pub mod schedule {
 
@@ -396,12 +406,6 @@ pub mod schedule {
                 pipeline_execution_start_condition: self.pipeline_execution_start_condition,
             }
         }
-    }
-}
-impl Schedule {
-    /// Creates a new builder-style object to manufacture [`Schedule`](crate::model::Schedule).
-    pub fn builder() -> crate::model::schedule::Builder {
-        crate::model::schedule::Builder::default()
     }
 }
 
@@ -529,6 +533,13 @@ impl ImageTestsConfiguration {
         self.timeout_minutes
     }
 }
+impl ImageTestsConfiguration {
+    /// Creates a new builder-style object to manufacture [`ImageTestsConfiguration`](crate::model::ImageTestsConfiguration).
+    pub fn builder() -> crate::model::image_tests_configuration::Builder {
+        crate::model::image_tests_configuration::Builder::default()
+    }
+}
+
 /// See [`ImageTestsConfiguration`](crate::model::ImageTestsConfiguration).
 pub mod image_tests_configuration {
 
@@ -571,12 +582,6 @@ pub mod image_tests_configuration {
                 timeout_minutes: self.timeout_minutes,
             }
         }
-    }
-}
-impl ImageTestsConfiguration {
-    /// Creates a new builder-style object to manufacture [`ImageTestsConfiguration`](crate::model::ImageTestsConfiguration).
-    pub fn builder() -> crate::model::image_tests_configuration::Builder {
-        crate::model::image_tests_configuration::Builder::default()
     }
 }
 
@@ -650,6 +655,13 @@ impl Distribution {
         self.fast_launch_configurations.as_deref()
     }
 }
+impl Distribution {
+    /// Creates a new builder-style object to manufacture [`Distribution`](crate::model::Distribution).
+    pub fn builder() -> crate::model::distribution::Builder {
+        crate::model::distribution::Builder::default()
+    }
+}
+
 /// See [`Distribution`](crate::model::Distribution).
 pub mod distribution {
 
@@ -807,12 +819,6 @@ pub mod distribution {
         }
     }
 }
-impl Distribution {
-    /// Creates a new builder-style object to manufacture [`Distribution`](crate::model::Distribution).
-    pub fn builder() -> crate::model::distribution::Builder {
-        crate::model::distribution::Builder::default()
-    }
-}
 
 /// <p>Define and configure faster launching for output Windows AMIs.</p>
 #[non_exhaustive]
@@ -860,6 +866,13 @@ impl FastLaunchConfiguration {
         self.account_id.as_deref()
     }
 }
+impl FastLaunchConfiguration {
+    /// Creates a new builder-style object to manufacture [`FastLaunchConfiguration`](crate::model::FastLaunchConfiguration).
+    pub fn builder() -> crate::model::fast_launch_configuration::Builder {
+        crate::model::fast_launch_configuration::Builder::default()
+    }
+}
+
 /// See [`FastLaunchConfiguration`](crate::model::FastLaunchConfiguration).
 pub mod fast_launch_configuration {
 
@@ -950,12 +963,6 @@ pub mod fast_launch_configuration {
         }
     }
 }
-impl FastLaunchConfiguration {
-    /// Creates a new builder-style object to manufacture [`FastLaunchConfiguration`](crate::model::FastLaunchConfiguration).
-    pub fn builder() -> crate::model::fast_launch_configuration::Builder {
-        crate::model::fast_launch_configuration::Builder::default()
-    }
-}
 
 /// <p>Identifies the launch template that the associated Windows AMI uses for launching an instance when faster launching is enabled.</p> <note>
 /// <p>You can specify either the <code>launchTemplateName</code> or the <code>launchTemplateId</code>, but not both.</p>
@@ -987,6 +994,13 @@ impl FastLaunchLaunchTemplateSpecification {
         self.launch_template_version.as_deref()
     }
 }
+impl FastLaunchLaunchTemplateSpecification {
+    /// Creates a new builder-style object to manufacture [`FastLaunchLaunchTemplateSpecification`](crate::model::FastLaunchLaunchTemplateSpecification).
+    pub fn builder() -> crate::model::fast_launch_launch_template_specification::Builder {
+        crate::model::fast_launch_launch_template_specification::Builder::default()
+    }
+}
+
 /// See [`FastLaunchLaunchTemplateSpecification`](crate::model::FastLaunchLaunchTemplateSpecification).
 pub mod fast_launch_launch_template_specification {
 
@@ -1048,12 +1062,6 @@ pub mod fast_launch_launch_template_specification {
         }
     }
 }
-impl FastLaunchLaunchTemplateSpecification {
-    /// Creates a new builder-style object to manufacture [`FastLaunchLaunchTemplateSpecification`](crate::model::FastLaunchLaunchTemplateSpecification).
-    pub fn builder() -> crate::model::fast_launch_launch_template_specification::Builder {
-        crate::model::fast_launch_launch_template_specification::Builder::default()
-    }
-}
 
 /// <p>Configuration settings for creating and managing pre-provisioned snapshots for a fast-launch enabled Windows AMI.</p>
 #[non_exhaustive]
@@ -1069,6 +1077,13 @@ impl FastLaunchSnapshotConfiguration {
         self.target_resource_count
     }
 }
+impl FastLaunchSnapshotConfiguration {
+    /// Creates a new builder-style object to manufacture [`FastLaunchSnapshotConfiguration`](crate::model::FastLaunchSnapshotConfiguration).
+    pub fn builder() -> crate::model::fast_launch_snapshot_configuration::Builder {
+        crate::model::fast_launch_snapshot_configuration::Builder::default()
+    }
+}
+
 /// See [`FastLaunchSnapshotConfiguration`](crate::model::FastLaunchSnapshotConfiguration).
 pub mod fast_launch_snapshot_configuration {
 
@@ -1095,12 +1110,6 @@ pub mod fast_launch_snapshot_configuration {
                 target_resource_count: self.target_resource_count,
             }
         }
-    }
-}
-impl FastLaunchSnapshotConfiguration {
-    /// Creates a new builder-style object to manufacture [`FastLaunchSnapshotConfiguration`](crate::model::FastLaunchSnapshotConfiguration).
-    pub fn builder() -> crate::model::fast_launch_snapshot_configuration::Builder {
-        crate::model::fast_launch_snapshot_configuration::Builder::default()
     }
 }
 
@@ -1149,6 +1158,13 @@ impl S3ExportConfiguration {
         self.s3_prefix.as_deref()
     }
 }
+impl S3ExportConfiguration {
+    /// Creates a new builder-style object to manufacture [`S3ExportConfiguration`](crate::model::S3ExportConfiguration).
+    pub fn builder() -> crate::model::s3_export_configuration::Builder {
+        crate::model::s3_export_configuration::Builder::default()
+    }
+}
+
 /// See [`S3ExportConfiguration`](crate::model::S3ExportConfiguration).
 pub mod s3_export_configuration {
 
@@ -1224,12 +1240,6 @@ pub mod s3_export_configuration {
                 s3_prefix: self.s3_prefix,
             }
         }
-    }
-}
-impl S3ExportConfiguration {
-    /// Creates a new builder-style object to manufacture [`S3ExportConfiguration`](crate::model::S3ExportConfiguration).
-    pub fn builder() -> crate::model::s3_export_configuration::Builder {
-        crate::model::s3_export_configuration::Builder::default()
     }
 }
 
@@ -1356,6 +1366,13 @@ impl LaunchTemplateConfiguration {
         self.set_default_version
     }
 }
+impl LaunchTemplateConfiguration {
+    /// Creates a new builder-style object to manufacture [`LaunchTemplateConfiguration`](crate::model::LaunchTemplateConfiguration).
+    pub fn builder() -> crate::model::launch_template_configuration::Builder {
+        crate::model::launch_template_configuration::Builder::default()
+    }
+}
+
 /// See [`LaunchTemplateConfiguration`](crate::model::LaunchTemplateConfiguration).
 pub mod launch_template_configuration {
 
@@ -1411,12 +1428,6 @@ pub mod launch_template_configuration {
         }
     }
 }
-impl LaunchTemplateConfiguration {
-    /// Creates a new builder-style object to manufacture [`LaunchTemplateConfiguration`](crate::model::LaunchTemplateConfiguration).
-    pub fn builder() -> crate::model::launch_template_configuration::Builder {
-        crate::model::launch_template_configuration::Builder::default()
-    }
-}
 
 /// <p>Container distribution settings for encryption, licensing, and sharing in a specific Region.</p>
 #[non_exhaustive]
@@ -1448,6 +1459,13 @@ impl ContainerDistributionConfiguration {
         self.target_repository.as_ref()
     }
 }
+impl ContainerDistributionConfiguration {
+    /// Creates a new builder-style object to manufacture [`ContainerDistributionConfiguration`](crate::model::ContainerDistributionConfiguration).
+    pub fn builder() -> crate::model::container_distribution_configuration::Builder {
+        crate::model::container_distribution_configuration::Builder::default()
+    }
+}
+
 /// See [`ContainerDistributionConfiguration`](crate::model::ContainerDistributionConfiguration).
 pub mod container_distribution_configuration {
 
@@ -1512,12 +1530,6 @@ pub mod container_distribution_configuration {
         }
     }
 }
-impl ContainerDistributionConfiguration {
-    /// Creates a new builder-style object to manufacture [`ContainerDistributionConfiguration`](crate::model::ContainerDistributionConfiguration).
-    pub fn builder() -> crate::model::container_distribution_configuration::Builder {
-        crate::model::container_distribution_configuration::Builder::default()
-    }
-}
 
 /// <p>The container repository where the output container image is stored.</p>
 #[non_exhaustive]
@@ -1540,6 +1552,13 @@ impl TargetContainerRepository {
         self.repository_name.as_deref()
     }
 }
+impl TargetContainerRepository {
+    /// Creates a new builder-style object to manufacture [`TargetContainerRepository`](crate::model::TargetContainerRepository).
+    pub fn builder() -> crate::model::target_container_repository::Builder {
+        crate::model::target_container_repository::Builder::default()
+    }
+}
+
 /// See [`TargetContainerRepository`](crate::model::TargetContainerRepository).
 pub mod target_container_repository {
 
@@ -1584,12 +1603,6 @@ pub mod target_container_repository {
                 repository_name: self.repository_name,
             }
         }
-    }
-}
-impl TargetContainerRepository {
-    /// Creates a new builder-style object to manufacture [`TargetContainerRepository`](crate::model::TargetContainerRepository).
-    pub fn builder() -> crate::model::target_container_repository::Builder {
-        crate::model::target_container_repository::Builder::default()
     }
 }
 
@@ -1735,6 +1748,13 @@ impl AmiDistributionConfiguration {
         self.launch_permission.as_ref()
     }
 }
+impl AmiDistributionConfiguration {
+    /// Creates a new builder-style object to manufacture [`AmiDistributionConfiguration`](crate::model::AmiDistributionConfiguration).
+    pub fn builder() -> crate::model::ami_distribution_configuration::Builder {
+        crate::model::ami_distribution_configuration::Builder::default()
+    }
+}
+
 /// See [`AmiDistributionConfiguration`](crate::model::AmiDistributionConfiguration).
 pub mod ami_distribution_configuration {
 
@@ -1856,12 +1876,6 @@ pub mod ami_distribution_configuration {
         }
     }
 }
-impl AmiDistributionConfiguration {
-    /// Creates a new builder-style object to manufacture [`AmiDistributionConfiguration`](crate::model::AmiDistributionConfiguration).
-    pub fn builder() -> crate::model::ami_distribution_configuration::Builder {
-        crate::model::ami_distribution_configuration::Builder::default()
-    }
-}
 
 /// <p>Describes the configuration for a launch permission. The launch permission modification request is sent to the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyImageAttribute.html">Amazon EC2 ModifyImageAttribute</a> API on behalf of the user for each Region they have selected to distribute the AMI. To make an AMI public, set the launch permission authorized accounts to <code>all</code>. See the examples for making an AMI public at <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyImageAttribute.html">Amazon EC2 ModifyImageAttribute</a>.</p>
 #[non_exhaustive]
@@ -1898,6 +1912,13 @@ impl LaunchPermissionConfiguration {
         self.organizational_unit_arns.as_deref()
     }
 }
+impl LaunchPermissionConfiguration {
+    /// Creates a new builder-style object to manufacture [`LaunchPermissionConfiguration`](crate::model::LaunchPermissionConfiguration).
+    pub fn builder() -> crate::model::launch_permission_configuration::Builder {
+        crate::model::launch_permission_configuration::Builder::default()
+    }
+}
+
 /// See [`LaunchPermissionConfiguration`](crate::model::LaunchPermissionConfiguration).
 pub mod launch_permission_configuration {
 
@@ -1999,12 +2020,6 @@ pub mod launch_permission_configuration {
         }
     }
 }
-impl LaunchPermissionConfiguration {
-    /// Creates a new builder-style object to manufacture [`LaunchPermissionConfiguration`](crate::model::LaunchPermissionConfiguration).
-    pub fn builder() -> crate::model::launch_permission_configuration::Builder {
-        crate::model::launch_permission_configuration::Builder::default()
-    }
-}
 
 /// <p>The infrastructure used when building Amazon EC2 AMIs.</p>
 #[non_exhaustive]
@@ -2084,6 +2099,13 @@ impl InfrastructureConfigurationSummary {
         self.instance_profile_name.as_deref()
     }
 }
+impl InfrastructureConfigurationSummary {
+    /// Creates a new builder-style object to manufacture [`InfrastructureConfigurationSummary`](crate::model::InfrastructureConfigurationSummary).
+    pub fn builder() -> crate::model::infrastructure_configuration_summary::Builder {
+        crate::model::infrastructure_configuration_summary::Builder::default()
+    }
+}
+
 /// See [`InfrastructureConfigurationSummary`](crate::model::InfrastructureConfigurationSummary).
 pub mod infrastructure_configuration_summary {
 
@@ -2254,12 +2276,6 @@ pub mod infrastructure_configuration_summary {
         }
     }
 }
-impl InfrastructureConfigurationSummary {
-    /// Creates a new builder-style object to manufacture [`InfrastructureConfigurationSummary`](crate::model::InfrastructureConfigurationSummary).
-    pub fn builder() -> crate::model::infrastructure_configuration_summary::Builder {
-        crate::model::infrastructure_configuration_summary::Builder::default()
-    }
-}
 
 /// <p>A filter name and value pair that is used to return a more specific list of results from a list operation. Filters can be used to match a set of resources by specific criteria, such as tags, attributes, or IDs.</p>
 #[non_exhaustive]
@@ -2282,6 +2298,13 @@ impl Filter {
         self.values.as_deref()
     }
 }
+impl Filter {
+    /// Creates a new builder-style object to manufacture [`Filter`](crate::model::Filter).
+    pub fn builder() -> crate::model::filter::Builder {
+        crate::model::filter::Builder::default()
+    }
+}
+
 /// See [`Filter`](crate::model::Filter).
 pub mod filter {
 
@@ -2329,12 +2352,6 @@ pub mod filter {
                 values: self.values,
             }
         }
-    }
-}
-impl Filter {
-    /// Creates a new builder-style object to manufacture [`Filter`](crate::model::Filter).
-    pub fn builder() -> crate::model::filter::Builder {
-        crate::model::filter::Builder::default()
     }
 }
 
@@ -2483,6 +2500,13 @@ impl ImageVersion {
         self.image_source.as_ref()
     }
 }
+impl ImageVersion {
+    /// Creates a new builder-style object to manufacture [`ImageVersion`](crate::model::ImageVersion).
+    pub fn builder() -> crate::model::image_version::Builder {
+        crate::model::image_version::Builder::default()
+    }
+}
+
 /// See [`ImageVersion`](crate::model::ImageVersion).
 pub mod image_version {
 
@@ -2691,12 +2715,6 @@ pub mod image_version {
                 image_source: self.image_source,
             }
         }
-    }
-}
-impl ImageVersion {
-    /// Creates a new builder-style object to manufacture [`ImageVersion`](crate::model::ImageVersion).
-    pub fn builder() -> crate::model::image_version::Builder {
-        crate::model::image_version::Builder::default()
     }
 }
 
@@ -3235,6 +3253,13 @@ impl ImageRecipeSummary {
         self.tags.as_ref()
     }
 }
+impl ImageRecipeSummary {
+    /// Creates a new builder-style object to manufacture [`ImageRecipeSummary`](crate::model::ImageRecipeSummary).
+    pub fn builder() -> crate::model::image_recipe_summary::Builder {
+        crate::model::image_recipe_summary::Builder::default()
+    }
+}
+
 /// See [`ImageRecipeSummary`](crate::model::ImageRecipeSummary).
 pub mod image_recipe_summary {
 
@@ -3350,12 +3375,6 @@ pub mod image_recipe_summary {
                 tags: self.tags,
             }
         }
-    }
-}
-impl ImageRecipeSummary {
-    /// Creates a new builder-style object to manufacture [`ImageRecipeSummary`](crate::model::ImageRecipeSummary).
-    pub fn builder() -> crate::model::image_recipe_summary::Builder {
-        crate::model::image_recipe_summary::Builder::default()
     }
 }
 
@@ -3491,6 +3510,13 @@ impl ImagePipeline {
         self.tags.as_ref()
     }
 }
+impl ImagePipeline {
+    /// Creates a new builder-style object to manufacture [`ImagePipeline`](crate::model::ImagePipeline).
+    pub fn builder() -> crate::model::image_pipeline::Builder {
+        crate::model::image_pipeline::Builder::default()
+    }
+}
+
 /// See [`ImagePipeline`](crate::model::ImagePipeline).
 pub mod image_pipeline {
 
@@ -3765,12 +3791,6 @@ pub mod image_pipeline {
         }
     }
 }
-impl ImagePipeline {
-    /// Creates a new builder-style object to manufacture [`ImagePipeline`](crate::model::ImagePipeline).
-    pub fn builder() -> crate::model::image_pipeline::Builder {
-        crate::model::image_pipeline::Builder::default()
-    }
-}
 
 /// <p>An image summary.</p>
 #[non_exhaustive]
@@ -3884,6 +3904,13 @@ impl ImageSummary {
         self.image_source.as_ref()
     }
 }
+impl ImageSummary {
+    /// Creates a new builder-style object to manufacture [`ImageSummary`](crate::model::ImageSummary).
+    pub fn builder() -> crate::model::image_summary::Builder {
+        crate::model::image_summary::Builder::default()
+    }
+}
+
 /// See [`ImageSummary`](crate::model::ImageSummary).
 pub mod image_summary {
 
@@ -4092,12 +4119,6 @@ pub mod image_summary {
         }
     }
 }
-impl ImageSummary {
-    /// Creates a new builder-style object to manufacture [`ImageSummary`](crate::model::ImageSummary).
-    pub fn builder() -> crate::model::image_summary::Builder {
-        crate::model::image_summary::Builder::default()
-    }
-}
 
 /// <p>The resources produced by this image.</p>
 #[non_exhaustive]
@@ -4120,6 +4141,13 @@ impl OutputResources {
         self.containers.as_deref()
     }
 }
+impl OutputResources {
+    /// Creates a new builder-style object to manufacture [`OutputResources`](crate::model::OutputResources).
+    pub fn builder() -> crate::model::output_resources::Builder {
+        crate::model::output_resources::Builder::default()
+    }
+}
+
 /// See [`OutputResources`](crate::model::OutputResources).
 pub mod output_resources {
 
@@ -4178,12 +4206,6 @@ pub mod output_resources {
         }
     }
 }
-impl OutputResources {
-    /// Creates a new builder-style object to manufacture [`OutputResources`](crate::model::OutputResources).
-    pub fn builder() -> crate::model::output_resources::Builder {
-        crate::model::output_resources::Builder::default()
-    }
-}
 
 /// <p>A container encapsulates the runtime environment for an application.</p>
 #[non_exhaustive]
@@ -4206,6 +4228,13 @@ impl Container {
         self.image_uris.as_deref()
     }
 }
+impl Container {
+    /// Creates a new builder-style object to manufacture [`Container`](crate::model::Container).
+    pub fn builder() -> crate::model::container::Builder {
+        crate::model::container::Builder::default()
+    }
+}
+
 /// See [`Container`](crate::model::Container).
 pub mod container {
 
@@ -4253,12 +4282,6 @@ pub mod container {
                 image_uris: self.image_uris,
             }
         }
-    }
-}
-impl Container {
-    /// Creates a new builder-style object to manufacture [`Container`](crate::model::Container).
-    pub fn builder() -> crate::model::container::Builder {
-        crate::model::container::Builder::default()
     }
 }
 
@@ -4311,6 +4334,13 @@ impl Ami {
         self.account_id.as_deref()
     }
 }
+impl Ami {
+    /// Creates a new builder-style object to manufacture [`Ami`](crate::model::Ami).
+    pub fn builder() -> crate::model::ami::Builder {
+        crate::model::ami::Builder::default()
+    }
+}
+
 /// See [`Ami`](crate::model::Ami).
 pub mod ami {
 
@@ -4399,12 +4429,6 @@ pub mod ami {
         }
     }
 }
-impl Ami {
-    /// Creates a new builder-style object to manufacture [`Ami`](crate::model::Ami).
-    pub fn builder() -> crate::model::ami::Builder {
-        crate::model::ami::Builder::default()
-    }
-}
 
 /// <p> Image state shows the image status and the reason for that status.</p>
 #[non_exhaustive]
@@ -4427,6 +4451,13 @@ impl ImageState {
         self.reason.as_deref()
     }
 }
+impl ImageState {
+    /// Creates a new builder-style object to manufacture [`ImageState`](crate::model::ImageState).
+    pub fn builder() -> crate::model::image_state::Builder {
+        crate::model::image_state::Builder::default()
+    }
+}
+
 /// See [`ImageState`](crate::model::ImageState).
 pub mod image_state {
 
@@ -4465,12 +4496,6 @@ pub mod image_state {
                 reason: self.reason,
             }
         }
-    }
-}
-impl ImageState {
-    /// Creates a new builder-style object to manufacture [`ImageState`](crate::model::ImageState).
-    pub fn builder() -> crate::model::image_state::Builder {
-        crate::model::image_state::Builder::default()
     }
 }
 
@@ -4642,6 +4667,13 @@ impl ImagePackage {
         self.package_version.as_deref()
     }
 }
+impl ImagePackage {
+    /// Creates a new builder-style object to manufacture [`ImagePackage`](crate::model::ImagePackage).
+    pub fn builder() -> crate::model::image_package::Builder {
+        crate::model::image_package::Builder::default()
+    }
+}
+
 /// See [`ImagePackage`](crate::model::ImagePackage).
 pub mod image_package {
 
@@ -4683,12 +4715,6 @@ pub mod image_package {
                 package_version: self.package_version,
             }
         }
-    }
-}
-impl ImagePackage {
-    /// Creates a new builder-style object to manufacture [`ImagePackage`](crate::model::ImagePackage).
-    pub fn builder() -> crate::model::image_package::Builder {
-        crate::model::image_package::Builder::default()
     }
 }
 
@@ -4752,6 +4778,13 @@ impl DistributionConfigurationSummary {
         self.regions.as_deref()
     }
 }
+impl DistributionConfigurationSummary {
+    /// Creates a new builder-style object to manufacture [`DistributionConfigurationSummary`](crate::model::DistributionConfigurationSummary).
+    pub fn builder() -> crate::model::distribution_configuration_summary::Builder {
+        crate::model::distribution_configuration_summary::Builder::default()
+    }
+}
+
 /// See [`DistributionConfigurationSummary`](crate::model::DistributionConfigurationSummary).
 pub mod distribution_configuration_summary {
 
@@ -4878,12 +4911,6 @@ pub mod distribution_configuration_summary {
         }
     }
 }
-impl DistributionConfigurationSummary {
-    /// Creates a new builder-style object to manufacture [`DistributionConfigurationSummary`](crate::model::DistributionConfigurationSummary).
-    pub fn builder() -> crate::model::distribution_configuration_summary::Builder {
-        crate::model::distribution_configuration_summary::Builder::default()
-    }
-}
 
 /// <p>A summary of a container recipe</p>
 #[non_exhaustive]
@@ -4952,6 +4979,13 @@ impl ContainerRecipeSummary {
         self.tags.as_ref()
     }
 }
+impl ContainerRecipeSummary {
+    /// Creates a new builder-style object to manufacture [`ContainerRecipeSummary`](crate::model::ContainerRecipeSummary).
+    pub fn builder() -> crate::model::container_recipe_summary::Builder {
+        crate::model::container_recipe_summary::Builder::default()
+    }
+}
+
 /// See [`ContainerRecipeSummary`](crate::model::ContainerRecipeSummary).
 pub mod container_recipe_summary {
 
@@ -5082,12 +5116,6 @@ pub mod container_recipe_summary {
                 tags: self.tags,
             }
         }
-    }
-}
-impl ContainerRecipeSummary {
-    /// Creates a new builder-style object to manufacture [`ContainerRecipeSummary`](crate::model::ContainerRecipeSummary).
-    pub fn builder() -> crate::model::container_recipe_summary::Builder {
-        crate::model::container_recipe_summary::Builder::default()
     }
 }
 
@@ -5304,6 +5332,13 @@ impl ComponentVersion {
         self.date_created.as_deref()
     }
 }
+impl ComponentVersion {
+    /// Creates a new builder-style object to manufacture [`ComponentVersion`](crate::model::ComponentVersion).
+    pub fn builder() -> crate::model::component_version::Builder {
+        crate::model::component_version::Builder::default()
+    }
+}
+
 /// See [`ComponentVersion`](crate::model::ComponentVersion).
 pub mod component_version {
 
@@ -5493,12 +5528,6 @@ pub mod component_version {
                 date_created: self.date_created,
             }
         }
-    }
-}
-impl ComponentVersion {
-    /// Creates a new builder-style object to manufacture [`ComponentVersion`](crate::model::ComponentVersion).
-    pub fn builder() -> crate::model::component_version::Builder {
-        crate::model::component_version::Builder::default()
     }
 }
 
@@ -5701,6 +5730,13 @@ impl ComponentSummary {
         self.obfuscate
     }
 }
+impl ComponentSummary {
+    /// Creates a new builder-style object to manufacture [`ComponentSummary`](crate::model::ComponentSummary).
+    pub fn builder() -> crate::model::component_summary::Builder {
+        crate::model::component_summary::Builder::default()
+    }
+}
+
 /// See [`ComponentSummary`](crate::model::ComponentSummary).
 pub mod component_summary {
 
@@ -5917,12 +5953,6 @@ pub mod component_summary {
         }
     }
 }
-impl ComponentSummary {
-    /// Creates a new builder-style object to manufacture [`ComponentSummary`](crate::model::ComponentSummary).
-    pub fn builder() -> crate::model::component_summary::Builder {
-        crate::model::component_summary::Builder::default()
-    }
-}
 
 /// <p>A group of fields that describe the current status of components that are no longer active.</p>
 #[non_exhaustive]
@@ -5945,6 +5975,13 @@ impl ComponentState {
         self.reason.as_deref()
     }
 }
+impl ComponentState {
+    /// Creates a new builder-style object to manufacture [`ComponentState`](crate::model::ComponentState).
+    pub fn builder() -> crate::model::component_state::Builder {
+        crate::model::component_state::Builder::default()
+    }
+}
+
 /// See [`ComponentState`](crate::model::ComponentState).
 pub mod component_state {
 
@@ -5986,12 +6023,6 @@ pub mod component_state {
                 reason: self.reason,
             }
         }
-    }
-}
-impl ComponentState {
-    /// Creates a new builder-style object to manufacture [`ComponentState`](crate::model::ComponentState).
-    pub fn builder() -> crate::model::component_state::Builder {
-        crate::model::component_state::Builder::default()
     }
 }
 
@@ -6298,6 +6329,13 @@ impl InfrastructureConfiguration {
         self.tags.as_ref()
     }
 }
+impl InfrastructureConfiguration {
+    /// Creates a new builder-style object to manufacture [`InfrastructureConfiguration`](crate::model::InfrastructureConfiguration).
+    pub fn builder() -> crate::model::infrastructure_configuration::Builder {
+        crate::model::infrastructure_configuration::Builder::default()
+    }
+}
+
 /// See [`InfrastructureConfiguration`](crate::model::InfrastructureConfiguration).
 pub mod infrastructure_configuration {
 
@@ -6578,12 +6616,6 @@ pub mod infrastructure_configuration {
         }
     }
 }
-impl InfrastructureConfiguration {
-    /// Creates a new builder-style object to manufacture [`InfrastructureConfiguration`](crate::model::InfrastructureConfiguration).
-    pub fn builder() -> crate::model::infrastructure_configuration::Builder {
-        crate::model::infrastructure_configuration::Builder::default()
-    }
-}
 
 /// <p>An image recipe.</p>
 #[non_exhaustive]
@@ -6700,6 +6732,13 @@ impl ImageRecipe {
         self.additional_instance_configuration.as_ref()
     }
 }
+impl ImageRecipe {
+    /// Creates a new builder-style object to manufacture [`ImageRecipe`](crate::model::ImageRecipe).
+    pub fn builder() -> crate::model::image_recipe::Builder {
+        crate::model::image_recipe::Builder::default()
+    }
+}
+
 /// See [`ImageRecipe`](crate::model::ImageRecipe).
 pub mod image_recipe {
 
@@ -6934,12 +6973,6 @@ pub mod image_recipe {
         }
     }
 }
-impl ImageRecipe {
-    /// Creates a new builder-style object to manufacture [`ImageRecipe`](crate::model::ImageRecipe).
-    pub fn builder() -> crate::model::image_recipe::Builder {
-        crate::model::image_recipe::Builder::default()
-    }
-}
 
 /// <p>In addition to your infrastructure configuration, these settings provide an extra layer of control over your build instances. You can also specify commands to run on launch for all of your build instances.</p>
 /// <p>Image Builder does not automatically install the Systems Manager agent on Windows instances. If your base image includes the Systems Manager agent, then the AMI that you create will also include the agent. For Linux instances, if the base image does not already include the Systems Manager agent, Image Builder installs it. For Linux instances where Image Builder installs the Systems Manager agent, you can choose whether to keep it for the AMI that you create.</p>
@@ -6975,6 +7008,13 @@ impl AdditionalInstanceConfiguration {
         self.user_data_override.as_deref()
     }
 }
+impl AdditionalInstanceConfiguration {
+    /// Creates a new builder-style object to manufacture [`AdditionalInstanceConfiguration`](crate::model::AdditionalInstanceConfiguration).
+    pub fn builder() -> crate::model::additional_instance_configuration::Builder {
+        crate::model::additional_instance_configuration::Builder::default()
+    }
+}
+
 /// See [`AdditionalInstanceConfiguration`](crate::model::AdditionalInstanceConfiguration).
 pub mod additional_instance_configuration {
 
@@ -7033,12 +7073,6 @@ pub mod additional_instance_configuration {
         }
     }
 }
-impl AdditionalInstanceConfiguration {
-    /// Creates a new builder-style object to manufacture [`AdditionalInstanceConfiguration`](crate::model::AdditionalInstanceConfiguration).
-    pub fn builder() -> crate::model::additional_instance_configuration::Builder {
-        crate::model::additional_instance_configuration::Builder::default()
-    }
-}
 
 /// <p>Contains settings for the Systems Manager agent on your build instance.</p>
 #[non_exhaustive]
@@ -7054,6 +7088,13 @@ impl SystemsManagerAgent {
         self.uninstall_after_build
     }
 }
+impl SystemsManagerAgent {
+    /// Creates a new builder-style object to manufacture [`SystemsManagerAgent`](crate::model::SystemsManagerAgent).
+    pub fn builder() -> crate::model::systems_manager_agent::Builder {
+        crate::model::systems_manager_agent::Builder::default()
+    }
+}
+
 /// See [`SystemsManagerAgent`](crate::model::SystemsManagerAgent).
 pub mod systems_manager_agent {
 
@@ -7080,12 +7121,6 @@ pub mod systems_manager_agent {
                 uninstall_after_build: self.uninstall_after_build,
             }
         }
-    }
-}
-impl SystemsManagerAgent {
-    /// Creates a new builder-style object to manufacture [`SystemsManagerAgent`](crate::model::SystemsManagerAgent).
-    pub fn builder() -> crate::model::systems_manager_agent::Builder {
-        crate::model::systems_manager_agent::Builder::default()
     }
 }
 
@@ -7124,6 +7159,13 @@ impl InstanceBlockDeviceMapping {
         self.no_device.as_deref()
     }
 }
+impl InstanceBlockDeviceMapping {
+    /// Creates a new builder-style object to manufacture [`InstanceBlockDeviceMapping`](crate::model::InstanceBlockDeviceMapping).
+    pub fn builder() -> crate::model::instance_block_device_mapping::Builder {
+        crate::model::instance_block_device_mapping::Builder::default()
+    }
+}
+
 /// See [`InstanceBlockDeviceMapping`](crate::model::InstanceBlockDeviceMapping).
 pub mod instance_block_device_mapping {
 
@@ -7191,12 +7233,6 @@ pub mod instance_block_device_mapping {
         }
     }
 }
-impl InstanceBlockDeviceMapping {
-    /// Creates a new builder-style object to manufacture [`InstanceBlockDeviceMapping`](crate::model::InstanceBlockDeviceMapping).
-    pub fn builder() -> crate::model::instance_block_device_mapping::Builder {
-        crate::model::instance_block_device_mapping::Builder::default()
-    }
-}
 
 /// <p>Amazon EBS-specific block device mapping specifications.</p>
 #[non_exhaustive]
@@ -7261,6 +7297,13 @@ impl EbsInstanceBlockDeviceSpecification {
         self.throughput
     }
 }
+impl EbsInstanceBlockDeviceSpecification {
+    /// Creates a new builder-style object to manufacture [`EbsInstanceBlockDeviceSpecification`](crate::model::EbsInstanceBlockDeviceSpecification).
+    pub fn builder() -> crate::model::ebs_instance_block_device_specification::Builder {
+        crate::model::ebs_instance_block_device_specification::Builder::default()
+    }
+}
+
 /// See [`EbsInstanceBlockDeviceSpecification`](crate::model::EbsInstanceBlockDeviceSpecification).
 pub mod ebs_instance_block_device_specification {
 
@@ -7374,12 +7417,6 @@ pub mod ebs_instance_block_device_specification {
                 throughput: self.throughput,
             }
         }
-    }
-}
-impl EbsInstanceBlockDeviceSpecification {
-    /// Creates a new builder-style object to manufacture [`EbsInstanceBlockDeviceSpecification`](crate::model::EbsInstanceBlockDeviceSpecification).
-    pub fn builder() -> crate::model::ebs_instance_block_device_specification::Builder {
-        crate::model::ebs_instance_block_device_specification::Builder::default()
     }
 }
 
@@ -7519,6 +7556,13 @@ impl ComponentConfiguration {
         self.parameters.as_deref()
     }
 }
+impl ComponentConfiguration {
+    /// Creates a new builder-style object to manufacture [`ComponentConfiguration`](crate::model::ComponentConfiguration).
+    pub fn builder() -> crate::model::component_configuration::Builder {
+        crate::model::component_configuration::Builder::default()
+    }
+}
+
 /// See [`ComponentConfiguration`](crate::model::ComponentConfiguration).
 pub mod component_configuration {
 
@@ -7571,12 +7615,6 @@ pub mod component_configuration {
         }
     }
 }
-impl ComponentConfiguration {
-    /// Creates a new builder-style object to manufacture [`ComponentConfiguration`](crate::model::ComponentConfiguration).
-    pub fn builder() -> crate::model::component_configuration::Builder {
-        crate::model::component_configuration::Builder::default()
-    }
-}
 
 /// <p>Contains a key/value pair that sets the named component parameter.</p>
 #[non_exhaustive]
@@ -7599,6 +7637,13 @@ impl ComponentParameter {
         self.value.as_deref()
     }
 }
+impl ComponentParameter {
+    /// Creates a new builder-style object to manufacture [`ComponentParameter`](crate::model::ComponentParameter).
+    pub fn builder() -> crate::model::component_parameter::Builder {
+        crate::model::component_parameter::Builder::default()
+    }
+}
+
 /// See [`ComponentParameter`](crate::model::ComponentParameter).
 pub mod component_parameter {
 
@@ -7646,12 +7691,6 @@ pub mod component_parameter {
                 value: self.value,
             }
         }
-    }
-}
-impl ComponentParameter {
-    /// Creates a new builder-style object to manufacture [`ComponentParameter`](crate::model::ComponentParameter).
-    pub fn builder() -> crate::model::component_parameter::Builder {
-        crate::model::component_parameter::Builder::default()
     }
 }
 
@@ -7881,6 +7920,13 @@ impl Image {
         self.image_source.as_ref()
     }
 }
+impl Image {
+    /// Creates a new builder-style object to manufacture [`Image`](crate::model::Image).
+    pub fn builder() -> crate::model::image::Builder {
+        crate::model::image::Builder::default()
+    }
+}
+
 /// See [`Image`](crate::model::Image).
 pub mod image {
 
@@ -8267,12 +8313,6 @@ pub mod image {
         }
     }
 }
-impl Image {
-    /// Creates a new builder-style object to manufacture [`Image`](crate::model::Image).
-    pub fn builder() -> crate::model::image::Builder {
-        crate::model::image::Builder::default()
-    }
-}
 
 /// <p>A distribution configuration.</p>
 #[non_exhaustive]
@@ -8341,6 +8381,13 @@ impl DistributionConfiguration {
         self.tags.as_ref()
     }
 }
+impl DistributionConfiguration {
+    /// Creates a new builder-style object to manufacture [`DistributionConfiguration`](crate::model::DistributionConfiguration).
+    pub fn builder() -> crate::model::distribution_configuration::Builder {
+        crate::model::distribution_configuration::Builder::default()
+    }
+}
+
 /// See [`DistributionConfiguration`](crate::model::DistributionConfiguration).
 pub mod distribution_configuration {
 
@@ -8477,12 +8524,6 @@ pub mod distribution_configuration {
                 tags: self.tags,
             }
         }
-    }
-}
-impl DistributionConfiguration {
-    /// Creates a new builder-style object to manufacture [`DistributionConfiguration`](crate::model::DistributionConfiguration).
-    pub fn builder() -> crate::model::distribution_configuration::Builder {
-        crate::model::distribution_configuration::Builder::default()
     }
 }
 
@@ -8678,6 +8719,13 @@ impl ContainerRecipe {
         self.target_repository.as_ref()
     }
 }
+impl ContainerRecipe {
+    /// Creates a new builder-style object to manufacture [`ContainerRecipe`](crate::model::ContainerRecipe).
+    pub fn builder() -> crate::model::container_recipe::Builder {
+        crate::model::container_recipe::Builder::default()
+    }
+}
+
 /// See [`ContainerRecipe`](crate::model::ContainerRecipe).
 pub mod container_recipe {
 
@@ -9001,12 +9049,6 @@ pub mod container_recipe {
         }
     }
 }
-impl ContainerRecipe {
-    /// Creates a new builder-style object to manufacture [`ContainerRecipe`](crate::model::ContainerRecipe).
-    pub fn builder() -> crate::model::container_recipe::Builder {
-        crate::model::container_recipe::Builder::default()
-    }
-}
 
 /// <p>Defines a custom base AMI and block device mapping configurations of an instance used for building and testing container images.</p>
 #[non_exhaustive]
@@ -9032,6 +9074,13 @@ impl InstanceConfiguration {
         self.block_device_mappings.as_deref()
     }
 }
+impl InstanceConfiguration {
+    /// Creates a new builder-style object to manufacture [`InstanceConfiguration`](crate::model::InstanceConfiguration).
+    pub fn builder() -> crate::model::instance_configuration::Builder {
+        crate::model::instance_configuration::Builder::default()
+    }
+}
+
 /// See [`InstanceConfiguration`](crate::model::InstanceConfiguration).
 pub mod instance_configuration {
 
@@ -9083,12 +9132,6 @@ pub mod instance_configuration {
                 block_device_mappings: self.block_device_mappings,
             }
         }
-    }
-}
-impl InstanceConfiguration {
-    /// Creates a new builder-style object to manufacture [`InstanceConfiguration`](crate::model::InstanceConfiguration).
-    pub fn builder() -> crate::model::instance_configuration::Builder {
-        crate::model::instance_configuration::Builder::default()
     }
 }
 
@@ -9229,6 +9272,13 @@ impl Component {
         self.obfuscate
     }
 }
+impl Component {
+    /// Creates a new builder-style object to manufacture [`Component`](crate::model::Component).
+    pub fn builder() -> crate::model::component::Builder {
+        crate::model::component::Builder::default()
+    }
+}
+
 /// See [`Component`](crate::model::Component).
 pub mod component {
 
@@ -9503,12 +9553,6 @@ pub mod component {
         }
     }
 }
-impl Component {
-    /// Creates a new builder-style object to manufacture [`Component`](crate::model::Component).
-    pub fn builder() -> crate::model::component::Builder {
-        crate::model::component::Builder::default()
-    }
-}
 
 /// <p>Defines a parameter that is used to provide configuration details for the component.</p>
 #[non_exhaustive]
@@ -9545,6 +9589,13 @@ impl ComponentParameterDetail {
         self.description.as_deref()
     }
 }
+impl ComponentParameterDetail {
+    /// Creates a new builder-style object to manufacture [`ComponentParameterDetail`](crate::model::ComponentParameterDetail).
+    pub fn builder() -> crate::model::component_parameter_detail::Builder {
+        crate::model::component_parameter_detail::Builder::default()
+    }
+}
+
 /// See [`ComponentParameterDetail`](crate::model::ComponentParameterDetail).
 pub mod component_parameter_detail {
 
@@ -9616,11 +9667,5 @@ pub mod component_parameter_detail {
                 description: self.description,
             }
         }
-    }
-}
-impl ComponentParameterDetail {
-    /// Creates a new builder-style object to manufacture [`ComponentParameterDetail`](crate::model::ComponentParameterDetail).
-    pub fn builder() -> crate::model::component_parameter_detail::Builder {
-        crate::model::component_parameter_detail::Builder::default()
     }
 }

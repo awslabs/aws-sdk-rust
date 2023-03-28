@@ -100,6 +100,13 @@ impl QualificationType {
         self.auto_granted_value
     }
 }
+impl QualificationType {
+    /// Creates a new builder-style object to manufacture [`QualificationType`](crate::model::QualificationType).
+    pub fn builder() -> crate::model::qualification_type::Builder {
+        crate::model::qualification_type::Builder::default()
+    }
+}
+
 /// See [`QualificationType`](crate::model::QualificationType).
 pub mod qualification_type {
 
@@ -285,12 +292,6 @@ pub mod qualification_type {
         }
     }
 }
-impl QualificationType {
-    /// Creates a new builder-style object to manufacture [`QualificationType`](crate::model::QualificationType).
-    pub fn builder() -> crate::model::qualification_type::Builder {
-        crate::model::qualification_type::Builder::default()
-    }
-}
 
 /// When writing a match expression against `QualificationTypeStatus`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -429,6 +430,13 @@ impl NotificationSpecification {
         self.event_types.as_deref()
     }
 }
+impl NotificationSpecification {
+    /// Creates a new builder-style object to manufacture [`NotificationSpecification`](crate::model::NotificationSpecification).
+    pub fn builder() -> crate::model::notification_specification::Builder {
+        crate::model::notification_specification::Builder::default()
+    }
+}
+
 /// See [`NotificationSpecification`](crate::model::NotificationSpecification).
 pub mod notification_specification {
 
@@ -513,12 +521,6 @@ pub mod notification_specification {
                 event_types: self.event_types,
             }
         }
-    }
-}
-impl NotificationSpecification {
-    /// Creates a new builder-style object to manufacture [`NotificationSpecification`](crate::model::NotificationSpecification).
-    pub fn builder() -> crate::model::notification_specification::Builder {
-        crate::model::notification_specification::Builder::default()
     }
 }
 
@@ -802,6 +804,13 @@ impl NotifyWorkersFailureStatus {
         self.worker_id.as_deref()
     }
 }
+impl NotifyWorkersFailureStatus {
+    /// Creates a new builder-style object to manufacture [`NotifyWorkersFailureStatus`](crate::model::NotifyWorkersFailureStatus).
+    pub fn builder() -> crate::model::notify_workers_failure_status::Builder {
+        crate::model::notify_workers_failure_status::Builder::default()
+    }
+}
+
 /// See [`NotifyWorkersFailureStatus`](crate::model::NotifyWorkersFailureStatus).
 pub mod notify_workers_failure_status {
 
@@ -865,12 +874,6 @@ pub mod notify_workers_failure_status {
                 worker_id: self.worker_id,
             }
         }
-    }
-}
-impl NotifyWorkersFailureStatus {
-    /// Creates a new builder-style object to manufacture [`NotifyWorkersFailureStatus`](crate::model::NotifyWorkersFailureStatus).
-    pub fn builder() -> crate::model::notify_workers_failure_status::Builder {
-        crate::model::notify_workers_failure_status::Builder::default()
     }
 }
 
@@ -1015,6 +1018,13 @@ impl Qualification {
         self.status.as_ref()
     }
 }
+impl Qualification {
+    /// Creates a new builder-style object to manufacture [`Qualification`](crate::model::Qualification).
+    pub fn builder() -> crate::model::qualification::Builder {
+        crate::model::qualification::Builder::default()
+    }
+}
+
 /// See [`Qualification`](crate::model::Qualification).
 pub mod qualification {
 
@@ -1113,12 +1123,6 @@ pub mod qualification {
                 status: self.status,
             }
         }
-    }
-}
-impl Qualification {
-    /// Creates a new builder-style object to manufacture [`Qualification`](crate::model::Qualification).
-    pub fn builder() -> crate::model::qualification::Builder {
-        crate::model::qualification::Builder::default()
     }
 }
 
@@ -1235,6 +1239,13 @@ impl Locale {
         self.subdivision.as_deref()
     }
 }
+impl Locale {
+    /// Creates a new builder-style object to manufacture [`Locale`](crate::model::Locale).
+    pub fn builder() -> crate::model::locale::Builder {
+        crate::model::locale::Builder::default()
+    }
+}
+
 /// See [`Locale`](crate::model::Locale).
 pub mod locale {
 
@@ -1275,12 +1286,6 @@ pub mod locale {
         }
     }
 }
-impl Locale {
-    /// Creates a new builder-style object to manufacture [`Locale`](crate::model::Locale).
-    pub fn builder() -> crate::model::locale::Builder {
-        crate::model::locale::Builder::default()
-    }
-}
 
 /// <p> The WorkerBlock data structure represents a Worker who has been blocked. It has two elements: the WorkerId and the Reason for the block. </p>
 #[non_exhaustive]
@@ -1303,6 +1308,13 @@ impl WorkerBlock {
         self.reason.as_deref()
     }
 }
+impl WorkerBlock {
+    /// Creates a new builder-style object to manufacture [`WorkerBlock`](crate::model::WorkerBlock).
+    pub fn builder() -> crate::model::worker_block::Builder {
+        crate::model::worker_block::Builder::default()
+    }
+}
+
 /// See [`WorkerBlock`](crate::model::WorkerBlock).
 pub mod worker_block {
 
@@ -1343,12 +1355,6 @@ pub mod worker_block {
         }
     }
 }
-impl WorkerBlock {
-    /// Creates a new builder-style object to manufacture [`WorkerBlock`](crate::model::WorkerBlock).
-    pub fn builder() -> crate::model::worker_block::Builder {
-        crate::model::worker_block::Builder::default()
-    }
-}
 
 /// <p> Contains both ReviewResult and ReviewAction elements for a particular HIT. </p>
 #[non_exhaustive]
@@ -1371,6 +1377,13 @@ impl ReviewReport {
         self.review_actions.as_deref()
     }
 }
+impl ReviewReport {
+    /// Creates a new builder-style object to manufacture [`ReviewReport`](crate::model::ReviewReport).
+    pub fn builder() -> crate::model::review_report::Builder {
+        crate::model::review_report::Builder::default()
+    }
+}
+
 /// See [`ReviewReport`](crate::model::ReviewReport).
 pub mod review_report {
 
@@ -1429,12 +1442,6 @@ pub mod review_report {
                 review_actions: self.review_actions,
             }
         }
-    }
-}
-impl ReviewReport {
-    /// Creates a new builder-style object to manufacture [`ReviewReport`](crate::model::ReviewReport).
-    pub fn builder() -> crate::model::review_report::Builder {
-        crate::model::review_report::Builder::default()
     }
 }
 
@@ -1501,6 +1508,13 @@ impl ReviewActionDetail {
         self.error_code.as_deref()
     }
 }
+impl ReviewActionDetail {
+    /// Creates a new builder-style object to manufacture [`ReviewActionDetail`](crate::model::ReviewActionDetail).
+    pub fn builder() -> crate::model::review_action_detail::Builder {
+        crate::model::review_action_detail::Builder::default()
+    }
+}
+
 /// See [`ReviewActionDetail`](crate::model::ReviewActionDetail).
 pub mod review_action_detail {
 
@@ -1617,12 +1631,6 @@ pub mod review_action_detail {
                 error_code: self.error_code,
             }
         }
-    }
-}
-impl ReviewActionDetail {
-    /// Creates a new builder-style object to manufacture [`ReviewActionDetail`](crate::model::ReviewActionDetail).
-    pub fn builder() -> crate::model::review_action_detail::Builder {
-        crate::model::review_action_detail::Builder::default()
     }
 }
 
@@ -1777,6 +1785,13 @@ impl ReviewResultDetail {
         self.value.as_deref()
     }
 }
+impl ReviewResultDetail {
+    /// Creates a new builder-style object to manufacture [`ReviewResultDetail`](crate::model::ReviewResultDetail).
+    pub fn builder() -> crate::model::review_result_detail::Builder {
+        crate::model::review_result_detail::Builder::default()
+    }
+}
+
 /// See [`ReviewResultDetail`](crate::model::ReviewResultDetail).
 pub mod review_result_detail {
 
@@ -1865,12 +1880,6 @@ pub mod review_result_detail {
         }
     }
 }
-impl ReviewResultDetail {
-    /// Creates a new builder-style object to manufacture [`ReviewResultDetail`](crate::model::ReviewResultDetail).
-    pub fn builder() -> crate::model::review_result_detail::Builder {
-        crate::model::review_result_detail::Builder::default()
-    }
-}
 
 /// <p> HIT Review Policy data structures represent HIT review policies, which you specify when you create a HIT. </p>
 #[non_exhaustive]
@@ -1893,6 +1902,13 @@ impl ReviewPolicy {
         self.parameters.as_deref()
     }
 }
+impl ReviewPolicy {
+    /// Creates a new builder-style object to manufacture [`ReviewPolicy`](crate::model::ReviewPolicy).
+    pub fn builder() -> crate::model::review_policy::Builder {
+        crate::model::review_policy::Builder::default()
+    }
+}
+
 /// See [`ReviewPolicy`](crate::model::ReviewPolicy).
 pub mod review_policy {
 
@@ -1942,12 +1958,6 @@ pub mod review_policy {
         }
     }
 }
-impl ReviewPolicy {
-    /// Creates a new builder-style object to manufacture [`ReviewPolicy`](crate::model::ReviewPolicy).
-    pub fn builder() -> crate::model::review_policy::Builder {
-        crate::model::review_policy::Builder::default()
-    }
-}
 
 /// <p> Name of the parameter from the Review policy. </p>
 #[non_exhaustive]
@@ -1977,6 +1987,13 @@ impl PolicyParameter {
         self.map_entries.as_deref()
     }
 }
+impl PolicyParameter {
+    /// Creates a new builder-style object to manufacture [`PolicyParameter`](crate::model::PolicyParameter).
+    pub fn builder() -> crate::model::policy_parameter::Builder {
+        crate::model::policy_parameter::Builder::default()
+    }
+}
+
 /// See [`PolicyParameter`](crate::model::PolicyParameter).
 pub mod policy_parameter {
 
@@ -2047,12 +2064,6 @@ pub mod policy_parameter {
         }
     }
 }
-impl PolicyParameter {
-    /// Creates a new builder-style object to manufacture [`PolicyParameter`](crate::model::PolicyParameter).
-    pub fn builder() -> crate::model::policy_parameter::Builder {
-        crate::model::policy_parameter::Builder::default()
-    }
-}
 
 /// <p> This data structure is the data type for the AnswerKey parameter of the ScoreMyKnownAnswers/2011-09-01 Review Policy. </p>
 #[non_exhaustive]
@@ -2075,6 +2086,13 @@ impl ParameterMapEntry {
         self.values.as_deref()
     }
 }
+impl ParameterMapEntry {
+    /// Creates a new builder-style object to manufacture [`ParameterMapEntry`](crate::model::ParameterMapEntry).
+    pub fn builder() -> crate::model::parameter_map_entry::Builder {
+        crate::model::parameter_map_entry::Builder::default()
+    }
+}
+
 /// See [`ParameterMapEntry`](crate::model::ParameterMapEntry).
 pub mod parameter_map_entry {
 
@@ -2122,12 +2140,6 @@ pub mod parameter_map_entry {
                 values: self.values,
             }
         }
-    }
-}
-impl ParameterMapEntry {
-    /// Creates a new builder-style object to manufacture [`ParameterMapEntry`](crate::model::ParameterMapEntry).
-    pub fn builder() -> crate::model::parameter_map_entry::Builder {
-        crate::model::parameter_map_entry::Builder::default()
     }
 }
 
@@ -2380,6 +2392,13 @@ impl Hit {
         self.number_of_assignments_completed
     }
 }
+impl Hit {
+    /// Creates a new builder-style object to manufacture [`Hit`](crate::model::Hit).
+    pub fn builder() -> crate::model::hit::Builder {
+        crate::model::hit::Builder::default()
+    }
+}
+
 /// See [`Hit`](crate::model::Hit).
 pub mod hit {
 
@@ -2694,12 +2713,6 @@ pub mod hit {
         }
     }
 }
-impl Hit {
-    /// Creates a new builder-style object to manufacture [`Hit`](crate::model::Hit).
-    pub fn builder() -> crate::model::hit::Builder {
-        crate::model::hit::Builder::default()
-    }
-}
 
 /// When writing a match expression against `HitReviewStatus`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -2857,6 +2870,13 @@ impl QualificationRequirement {
         self.actions_guarded.as_ref()
     }
 }
+impl QualificationRequirement {
+    /// Creates a new builder-style object to manufacture [`QualificationRequirement`](crate::model::QualificationRequirement).
+    pub fn builder() -> crate::model::qualification_requirement::Builder {
+        crate::model::qualification_requirement::Builder::default()
+    }
+}
+
 /// See [`QualificationRequirement`](crate::model::QualificationRequirement).
 pub mod qualification_requirement {
 
@@ -2972,12 +2992,6 @@ pub mod qualification_requirement {
                 actions_guarded: self.actions_guarded,
             }
         }
-    }
-}
-impl QualificationRequirement {
-    /// Creates a new builder-style object to manufacture [`QualificationRequirement`](crate::model::QualificationRequirement).
-    pub fn builder() -> crate::model::qualification_requirement::Builder {
-        crate::model::qualification_requirement::Builder::default()
     }
 }
 
@@ -3469,6 +3483,13 @@ impl QualificationRequest {
         self.submit_time.as_ref()
     }
 }
+impl QualificationRequest {
+    /// Creates a new builder-style object to manufacture [`QualificationRequest`](crate::model::QualificationRequest).
+    pub fn builder() -> crate::model::qualification_request::Builder {
+        crate::model::qualification_request::Builder::default()
+    }
+}
+
 /// See [`QualificationRequest`](crate::model::QualificationRequest).
 pub mod qualification_request {
 
@@ -3566,12 +3587,6 @@ pub mod qualification_request {
         }
     }
 }
-impl QualificationRequest {
-    /// Creates a new builder-style object to manufacture [`QualificationRequest`](crate::model::QualificationRequest).
-    pub fn builder() -> crate::model::qualification_request::Builder {
-        crate::model::qualification_request::Builder::default()
-    }
-}
 
 /// <p>An object representing a Bonus payment paid to a Worker.</p>
 #[non_exhaustive]
@@ -3615,6 +3630,13 @@ impl BonusPayment {
         self.grant_time.as_ref()
     }
 }
+impl BonusPayment {
+    /// Creates a new builder-style object to manufacture [`BonusPayment`](crate::model::BonusPayment).
+    pub fn builder() -> crate::model::bonus_payment::Builder {
+        crate::model::bonus_payment::Builder::default()
+    }
+}
+
 /// See [`BonusPayment`](crate::model::BonusPayment).
 pub mod bonus_payment {
 
@@ -3695,12 +3717,6 @@ pub mod bonus_payment {
                 grant_time: self.grant_time,
             }
         }
-    }
-}
-impl BonusPayment {
-    /// Creates a new builder-style object to manufacture [`BonusPayment`](crate::model::BonusPayment).
-    pub fn builder() -> crate::model::bonus_payment::Builder {
-        crate::model::bonus_payment::Builder::default()
     }
 }
 
@@ -3795,6 +3811,13 @@ impl Assignment {
         self.requester_feedback.as_deref()
     }
 }
+impl Assignment {
+    /// Creates a new builder-style object to manufacture [`Assignment`](crate::model::Assignment).
+    pub fn builder() -> crate::model::assignment::Builder {
+        crate::model::assignment::Builder::default()
+    }
+}
+
 /// See [`Assignment`](crate::model::Assignment).
 pub mod assignment {
 
@@ -3982,12 +4005,6 @@ pub mod assignment {
         }
     }
 }
-impl Assignment {
-    /// Creates a new builder-style object to manufacture [`Assignment`](crate::model::Assignment).
-    pub fn builder() -> crate::model::assignment::Builder {
-        crate::model::assignment::Builder::default()
-    }
-}
 
 /// When writing a match expression against `AssignmentStatus`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -4105,6 +4122,13 @@ impl HitLayoutParameter {
         self.value.as_deref()
     }
 }
+impl HitLayoutParameter {
+    /// Creates a new builder-style object to manufacture [`HitLayoutParameter`](crate::model::HitLayoutParameter).
+    pub fn builder() -> crate::model::hit_layout_parameter::Builder {
+        crate::model::hit_layout_parameter::Builder::default()
+    }
+}
+
 /// See [`HitLayoutParameter`](crate::model::HitLayoutParameter).
 pub mod hit_layout_parameter {
 
@@ -4143,11 +4167,5 @@ pub mod hit_layout_parameter {
                 value: self.value,
             }
         }
-    }
-}
-impl HitLayoutParameter {
-    /// Creates a new builder-style object to manufacture [`HitLayoutParameter`](crate::model::HitLayoutParameter).
-    pub fn builder() -> crate::model::hit_layout_parameter::Builder {
-        crate::model::hit_layout_parameter::Builder::default()
     }
 }

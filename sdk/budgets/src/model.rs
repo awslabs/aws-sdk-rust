@@ -36,6 +36,13 @@ impl std::fmt::Debug for Subscriber {
         formatter.finish()
     }
 }
+impl Subscriber {
+    /// Creates a new builder-style object to manufacture [`Subscriber`](crate::model::Subscriber).
+    pub fn builder() -> crate::model::subscriber::Builder {
+        crate::model::subscriber::Builder::default()
+    }
+}
+
 /// See [`Subscriber`](crate::model::Subscriber).
 pub mod subscriber {
 
@@ -87,12 +94,6 @@ pub mod subscriber {
             formatter.field("address", &"*** Sensitive Data Redacted ***");
             formatter.finish()
         }
-    }
-}
-impl Subscriber {
-    /// Creates a new builder-style object to manufacture [`Subscriber`](crate::model::Subscriber).
-    pub fn builder() -> crate::model::subscriber::Builder {
-        crate::model::subscriber::Builder::default()
     }
 }
 
@@ -236,6 +237,13 @@ impl Notification {
         self.notification_state.as_ref()
     }
 }
+impl Notification {
+    /// Creates a new builder-style object to manufacture [`Notification`](crate::model::Notification).
+    pub fn builder() -> crate::model::notification::Builder {
+        crate::model::notification::Builder::default()
+    }
+}
+
 /// See [`Notification`](crate::model::Notification).
 pub mod notification {
 
@@ -322,12 +330,6 @@ pub mod notification {
                 notification_state: self.notification_state,
             }
         }
-    }
-}
-impl Notification {
-    /// Creates a new builder-style object to manufacture [`Notification`](crate::model::Notification).
-    pub fn builder() -> crate::model::notification::Builder {
-        crate::model::notification::Builder::default()
     }
 }
 
@@ -781,6 +783,13 @@ impl Action {
         self.subscribers.as_deref()
     }
 }
+impl Action {
+    /// Creates a new builder-style object to manufacture [`Action`](crate::model::Action).
+    pub fn builder() -> crate::model::action::Builder {
+        crate::model::action::Builder::default()
+    }
+}
+
 /// See [`Action`](crate::model::Action).
 pub mod action {
 
@@ -945,12 +954,6 @@ pub mod action {
                 subscribers: self.subscribers,
             }
         }
-    }
-}
-impl Action {
-    /// Creates a new builder-style object to manufacture [`Action`](crate::model::Action).
-    pub fn builder() -> crate::model::action::Builder {
-        crate::model::action::Builder::default()
     }
 }
 
@@ -1213,6 +1216,13 @@ impl Definition {
         self.ssm_action_definition.as_ref()
     }
 }
+impl Definition {
+    /// Creates a new builder-style object to manufacture [`Definition`](crate::model::Definition).
+    pub fn builder() -> crate::model::definition::Builder {
+        crate::model::definition::Builder::default()
+    }
+}
+
 /// See [`Definition`](crate::model::Definition).
 pub mod definition {
 
@@ -1274,12 +1284,6 @@ pub mod definition {
         }
     }
 }
-impl Definition {
-    /// Creates a new builder-style object to manufacture [`Definition`](crate::model::Definition).
-    pub fn builder() -> crate::model::definition::Builder {
-        crate::model::definition::Builder::default()
-    }
-}
 
 /// <p>The Amazon Web Services Systems Manager (SSM) action definition details. </p>
 #[non_exhaustive]
@@ -1309,6 +1313,13 @@ impl SsmActionDefinition {
         self.instance_ids.as_deref()
     }
 }
+impl SsmActionDefinition {
+    /// Creates a new builder-style object to manufacture [`SsmActionDefinition`](crate::model::SsmActionDefinition).
+    pub fn builder() -> crate::model::ssm_action_definition::Builder {
+        crate::model::ssm_action_definition::Builder::default()
+    }
+}
+
 /// See [`SsmActionDefinition`](crate::model::SsmActionDefinition).
 pub mod ssm_action_definition {
 
@@ -1371,12 +1382,6 @@ pub mod ssm_action_definition {
                 instance_ids: self.instance_ids,
             }
         }
-    }
-}
-impl SsmActionDefinition {
-    /// Creates a new builder-style object to manufacture [`SsmActionDefinition`](crate::model::SsmActionDefinition).
-    pub fn builder() -> crate::model::ssm_action_definition::Builder {
-        crate::model::ssm_action_definition::Builder::default()
     }
 }
 
@@ -1491,6 +1496,13 @@ impl ScpActionDefinition {
         self.target_ids.as_deref()
     }
 }
+impl ScpActionDefinition {
+    /// Creates a new builder-style object to manufacture [`ScpActionDefinition`](crate::model::ScpActionDefinition).
+    pub fn builder() -> crate::model::scp_action_definition::Builder {
+        crate::model::scp_action_definition::Builder::default()
+    }
+}
+
 /// See [`ScpActionDefinition`](crate::model::ScpActionDefinition).
 pub mod scp_action_definition {
 
@@ -1540,12 +1552,6 @@ pub mod scp_action_definition {
         }
     }
 }
-impl ScpActionDefinition {
-    /// Creates a new builder-style object to manufacture [`ScpActionDefinition`](crate::model::ScpActionDefinition).
-    pub fn builder() -> crate::model::scp_action_definition::Builder {
-        crate::model::scp_action_definition::Builder::default()
-    }
-}
 
 /// <p>The Identity and Access Management (IAM) action definition details. </p>
 #[non_exhaustive]
@@ -1582,6 +1588,13 @@ impl IamActionDefinition {
         self.users.as_deref()
     }
 }
+impl IamActionDefinition {
+    /// Creates a new builder-style object to manufacture [`IamActionDefinition`](crate::model::IamActionDefinition).
+    pub fn builder() -> crate::model::iam_action_definition::Builder {
+        crate::model::iam_action_definition::Builder::default()
+    }
+}
+
 /// See [`IamActionDefinition`](crate::model::IamActionDefinition).
 pub mod iam_action_definition {
 
@@ -1673,12 +1686,6 @@ pub mod iam_action_definition {
         }
     }
 }
-impl IamActionDefinition {
-    /// Creates a new builder-style object to manufacture [`IamActionDefinition`](crate::model::IamActionDefinition).
-    pub fn builder() -> crate::model::iam_action_definition::Builder {
-        crate::model::iam_action_definition::Builder::default()
-    }
-}
 
 /// <p>The trigger threshold of the action. </p>
 #[non_exhaustive]
@@ -1701,6 +1708,13 @@ impl ActionThreshold {
         self.action_threshold_type.as_ref()
     }
 }
+impl ActionThreshold {
+    /// Creates a new builder-style object to manufacture [`ActionThreshold`](crate::model::ActionThreshold).
+    pub fn builder() -> crate::model::action_threshold::Builder {
+        crate::model::action_threshold::Builder::default()
+    }
+}
+
 /// See [`ActionThreshold`](crate::model::ActionThreshold).
 pub mod action_threshold {
 
@@ -1742,12 +1756,6 @@ pub mod action_threshold {
                 action_threshold_type: self.action_threshold_type,
             }
         }
-    }
-}
-impl ActionThreshold {
-    /// Creates a new builder-style object to manufacture [`ActionThreshold`](crate::model::ActionThreshold).
-    pub fn builder() -> crate::model::action_threshold::Builder {
-        crate::model::action_threshold::Builder::default()
     }
 }
 
@@ -1982,6 +1990,13 @@ impl Budget {
         self.auto_adjust_data.as_ref()
     }
 }
+impl Budget {
+    /// Creates a new builder-style object to manufacture [`Budget`](crate::model::Budget).
+    pub fn builder() -> crate::model::budget::Builder {
+        crate::model::budget::Builder::default()
+    }
+}
+
 /// See [`Budget`](crate::model::Budget).
 pub mod budget {
 
@@ -2222,12 +2237,6 @@ pub mod budget {
         }
     }
 }
-impl Budget {
-    /// Creates a new builder-style object to manufacture [`Budget`](crate::model::Budget).
-    pub fn builder() -> crate::model::budget::Builder {
-        crate::model::budget::Builder::default()
-    }
-}
 
 /// <p>The parameters that determine the budget amount for an auto-adjusting budget.</p>
 #[non_exhaustive]
@@ -2257,6 +2266,13 @@ impl AutoAdjustData {
         self.last_auto_adjust_time.as_ref()
     }
 }
+impl AutoAdjustData {
+    /// Creates a new builder-style object to manufacture [`AutoAdjustData`](crate::model::AutoAdjustData).
+    pub fn builder() -> crate::model::auto_adjust_data::Builder {
+        crate::model::auto_adjust_data::Builder::default()
+    }
+}
+
 /// See [`AutoAdjustData`](crate::model::AutoAdjustData).
 pub mod auto_adjust_data {
 
@@ -2318,12 +2334,6 @@ pub mod auto_adjust_data {
         }
     }
 }
-impl AutoAdjustData {
-    /// Creates a new builder-style object to manufacture [`AutoAdjustData`](crate::model::AutoAdjustData).
-    pub fn builder() -> crate::model::auto_adjust_data::Builder {
-        crate::model::auto_adjust_data::Builder::default()
-    }
-}
 
 /// <p>The parameters that define or describe the historical data that your auto-adjusting budget is based on.</p>
 #[non_exhaustive]
@@ -2362,6 +2372,13 @@ impl HistoricalOptions {
         self.look_back_available_periods
     }
 }
+impl HistoricalOptions {
+    /// Creates a new builder-style object to manufacture [`HistoricalOptions`](crate::model::HistoricalOptions).
+    pub fn builder() -> crate::model::historical_options::Builder {
+        crate::model::historical_options::Builder::default()
+    }
+}
+
 /// See [`HistoricalOptions`](crate::model::HistoricalOptions).
 pub mod historical_options {
 
@@ -2416,12 +2433,6 @@ pub mod historical_options {
                 look_back_available_periods: self.look_back_available_periods,
             }
         }
-    }
-}
-impl HistoricalOptions {
-    /// Creates a new builder-style object to manufacture [`HistoricalOptions`](crate::model::HistoricalOptions).
-    pub fn builder() -> crate::model::historical_options::Builder {
-        crate::model::historical_options::Builder::default()
     }
 }
 
@@ -2656,6 +2667,13 @@ impl CalculatedSpend {
         self.forecasted_spend.as_ref()
     }
 }
+impl CalculatedSpend {
+    /// Creates a new builder-style object to manufacture [`CalculatedSpend`](crate::model::CalculatedSpend).
+    pub fn builder() -> crate::model::calculated_spend::Builder {
+        crate::model::calculated_spend::Builder::default()
+    }
+}
+
 /// See [`CalculatedSpend`](crate::model::CalculatedSpend).
 pub mod calculated_spend {
 
@@ -2699,12 +2717,6 @@ pub mod calculated_spend {
         }
     }
 }
-impl CalculatedSpend {
-    /// Creates a new builder-style object to manufacture [`CalculatedSpend`](crate::model::CalculatedSpend).
-    pub fn builder() -> crate::model::calculated_spend::Builder {
-        crate::model::calculated_spend::Builder::default()
-    }
-}
 
 /// <p>The amount of cost or usage that's measured for a budget.</p>
 /// <p>For example, a <code>Spend</code> for <code>3 GB</code> of S3 usage has the following parameters:</p>
@@ -2732,6 +2744,13 @@ impl Spend {
         self.unit.as_deref()
     }
 }
+impl Spend {
+    /// Creates a new builder-style object to manufacture [`Spend`](crate::model::Spend).
+    pub fn builder() -> crate::model::spend::Builder {
+        crate::model::spend::Builder::default()
+    }
+}
+
 /// See [`Spend`](crate::model::Spend).
 pub mod spend {
 
@@ -2772,12 +2791,6 @@ pub mod spend {
         }
     }
 }
-impl Spend {
-    /// Creates a new builder-style object to manufacture [`Spend`](crate::model::Spend).
-    pub fn builder() -> crate::model::spend::Builder {
-        crate::model::spend::Builder::default()
-    }
-}
 
 /// <p>The period of time that's covered by a budget. The period has a start date and an end date. The start date must come before the end date. There are no restrictions on the end date. </p>
 #[non_exhaustive]
@@ -2804,6 +2817,13 @@ impl TimePeriod {
         self.end.as_ref()
     }
 }
+impl TimePeriod {
+    /// Creates a new builder-style object to manufacture [`TimePeriod`](crate::model::TimePeriod).
+    pub fn builder() -> crate::model::time_period::Builder {
+        crate::model::time_period::Builder::default()
+    }
+}
+
 /// See [`TimePeriod`](crate::model::TimePeriod).
 pub mod time_period {
 
@@ -2846,12 +2866,6 @@ pub mod time_period {
                 end: self.end,
             }
         }
-    }
-}
-impl TimePeriod {
-    /// Creates a new builder-style object to manufacture [`TimePeriod`](crate::model::TimePeriod).
-    pub fn builder() -> crate::model::time_period::Builder {
-        crate::model::time_period::Builder::default()
     }
 }
 
@@ -3062,6 +3076,13 @@ impl CostTypes {
         self.use_amortized
     }
 }
+impl CostTypes {
+    /// Creates a new builder-style object to manufacture [`CostTypes`](crate::model::CostTypes).
+    pub fn builder() -> crate::model::cost_types::Builder {
+        crate::model::cost_types::Builder::default()
+    }
+}
+
 /// See [`CostTypes`](crate::model::CostTypes).
 pub mod cost_types {
 
@@ -3232,12 +3253,6 @@ pub mod cost_types {
         }
     }
 }
-impl CostTypes {
-    /// Creates a new builder-style object to manufacture [`CostTypes`](crate::model::CostTypes).
-    pub fn builder() -> crate::model::cost_types::Builder {
-        crate::model::cost_types::Builder::default()
-    }
-}
 
 /// When writing a match expression against `ExecutionType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -3404,6 +3419,13 @@ impl BudgetPerformanceHistory {
         self.budgeted_and_actual_amounts_list.as_deref()
     }
 }
+impl BudgetPerformanceHistory {
+    /// Creates a new builder-style object to manufacture [`BudgetPerformanceHistory`](crate::model::BudgetPerformanceHistory).
+    pub fn builder() -> crate::model::budget_performance_history::Builder {
+        crate::model::budget_performance_history::Builder::default()
+    }
+}
+
 /// See [`BudgetPerformanceHistory`](crate::model::BudgetPerformanceHistory).
 pub mod budget_performance_history {
 
@@ -3530,12 +3552,6 @@ pub mod budget_performance_history {
         }
     }
 }
-impl BudgetPerformanceHistory {
-    /// Creates a new builder-style object to manufacture [`BudgetPerformanceHistory`](crate::model::BudgetPerformanceHistory).
-    pub fn builder() -> crate::model::budget_performance_history::Builder {
-        crate::model::budget_performance_history::Builder::default()
-    }
-}
 
 /// <p>The amount of cost or usage that you created the budget for, compared to your actual costs or usage.</p>
 #[non_exhaustive]
@@ -3565,6 +3581,13 @@ impl BudgetedAndActualAmounts {
         self.time_period.as_ref()
     }
 }
+impl BudgetedAndActualAmounts {
+    /// Creates a new builder-style object to manufacture [`BudgetedAndActualAmounts`](crate::model::BudgetedAndActualAmounts).
+    pub fn builder() -> crate::model::budgeted_and_actual_amounts::Builder {
+        crate::model::budgeted_and_actual_amounts::Builder::default()
+    }
+}
+
 /// See [`BudgetedAndActualAmounts`](crate::model::BudgetedAndActualAmounts).
 pub mod budgeted_and_actual_amounts {
 
@@ -3626,12 +3649,6 @@ pub mod budgeted_and_actual_amounts {
         }
     }
 }
-impl BudgetedAndActualAmounts {
-    /// Creates a new builder-style object to manufacture [`BudgetedAndActualAmounts`](crate::model::BudgetedAndActualAmounts).
-    pub fn builder() -> crate::model::budgeted_and_actual_amounts::Builder {
-        crate::model::budgeted_and_actual_amounts::Builder::default()
-    }
-}
 
 /// <p> The budget name and associated notifications for an account. </p>
 #[non_exhaustive]
@@ -3654,6 +3671,13 @@ impl BudgetNotificationsForAccount {
         self.budget_name.as_deref()
     }
 }
+impl BudgetNotificationsForAccount {
+    /// Creates a new builder-style object to manufacture [`BudgetNotificationsForAccount`](crate::model::BudgetNotificationsForAccount).
+    pub fn builder() -> crate::model::budget_notifications_for_account::Builder {
+        crate::model::budget_notifications_for_account::Builder::default()
+    }
+}
+
 /// See [`BudgetNotificationsForAccount`](crate::model::BudgetNotificationsForAccount).
 pub mod budget_notifications_for_account {
 
@@ -3703,12 +3727,6 @@ pub mod budget_notifications_for_account {
         }
     }
 }
-impl BudgetNotificationsForAccount {
-    /// Creates a new builder-style object to manufacture [`BudgetNotificationsForAccount`](crate::model::BudgetNotificationsForAccount).
-    pub fn builder() -> crate::model::budget_notifications_for_account::Builder {
-        crate::model::budget_notifications_for_account::Builder::default()
-    }
-}
 
 /// <p>The historical records for a budget action. </p>
 #[non_exhaustive]
@@ -3747,6 +3765,13 @@ impl ActionHistory {
         self.action_history_details.as_ref()
     }
 }
+impl ActionHistory {
+    /// Creates a new builder-style object to manufacture [`ActionHistory`](crate::model::ActionHistory).
+    pub fn builder() -> crate::model::action_history::Builder {
+        crate::model::action_history::Builder::default()
+    }
+}
+
 /// See [`ActionHistory`](crate::model::ActionHistory).
 pub mod action_history {
 
@@ -3823,12 +3848,6 @@ pub mod action_history {
         }
     }
 }
-impl ActionHistory {
-    /// Creates a new builder-style object to manufacture [`ActionHistory`](crate::model::ActionHistory).
-    pub fn builder() -> crate::model::action_history::Builder {
-        crate::model::action_history::Builder::default()
-    }
-}
 
 /// <p>The description of the details for the event. </p>
 #[non_exhaustive]
@@ -3851,6 +3870,13 @@ impl ActionHistoryDetails {
         self.action.as_ref()
     }
 }
+impl ActionHistoryDetails {
+    /// Creates a new builder-style object to manufacture [`ActionHistoryDetails`](crate::model::ActionHistoryDetails).
+    pub fn builder() -> crate::model::action_history_details::Builder {
+        crate::model::action_history_details::Builder::default()
+    }
+}
+
 /// See [`ActionHistoryDetails`](crate::model::ActionHistoryDetails).
 pub mod action_history_details {
 
@@ -3889,12 +3915,6 @@ pub mod action_history_details {
                 action: self.action,
             }
         }
-    }
-}
-impl ActionHistoryDetails {
-    /// Creates a new builder-style object to manufacture [`ActionHistoryDetails`](crate::model::ActionHistoryDetails).
-    pub fn builder() -> crate::model::action_history_details::Builder {
-        crate::model::action_history_details::Builder::default()
     }
 }
 
@@ -4030,6 +4050,13 @@ impl NotificationWithSubscribers {
         self.subscribers.as_deref()
     }
 }
+impl NotificationWithSubscribers {
+    /// Creates a new builder-style object to manufacture [`NotificationWithSubscribers`](crate::model::NotificationWithSubscribers).
+    pub fn builder() -> crate::model::notification_with_subscribers::Builder {
+        crate::model::notification_with_subscribers::Builder::default()
+    }
+}
+
 /// See [`NotificationWithSubscribers`](crate::model::NotificationWithSubscribers).
 pub mod notification_with_subscribers {
 
@@ -4080,11 +4107,5 @@ pub mod notification_with_subscribers {
                 subscribers: self.subscribers,
             }
         }
-    }
-}
-impl NotificationWithSubscribers {
-    /// Creates a new builder-style object to manufacture [`NotificationWithSubscribers`](crate::model::NotificationWithSubscribers).
-    pub fn builder() -> crate::model::notification_with_subscribers::Builder {
-        crate::model::notification_with_subscribers::Builder::default()
     }
 }

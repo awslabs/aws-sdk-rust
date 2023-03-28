@@ -10,6 +10,13 @@ impl aws_http::request_id::RequestId for UpdateRoutingControlStatesOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdateRoutingControlStatesOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateRoutingControlStatesOutput`](crate::output::UpdateRoutingControlStatesOutput).
+    pub fn builder() -> crate::output::update_routing_control_states_output::Builder {
+        crate::output::update_routing_control_states_output::Builder::default()
+    }
+}
+
 /// See [`UpdateRoutingControlStatesOutput`](crate::output::UpdateRoutingControlStatesOutput).
 pub mod update_routing_control_states_output {
 
@@ -37,12 +44,6 @@ pub mod update_routing_control_states_output {
         }
     }
 }
-impl UpdateRoutingControlStatesOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateRoutingControlStatesOutput`](crate::output::UpdateRoutingControlStatesOutput).
-    pub fn builder() -> crate::output::update_routing_control_states_output::Builder {
-        crate::output::update_routing_control_states_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -55,6 +56,13 @@ impl aws_http::request_id::RequestId for UpdateRoutingControlStateOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdateRoutingControlStateOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateRoutingControlStateOutput`](crate::output::UpdateRoutingControlStateOutput).
+    pub fn builder() -> crate::output::update_routing_control_state_output::Builder {
+        crate::output::update_routing_control_state_output::Builder::default()
+    }
+}
+
 /// See [`UpdateRoutingControlStateOutput`](crate::output::UpdateRoutingControlStateOutput).
 pub mod update_routing_control_state_output {
 
@@ -80,12 +88,6 @@ pub mod update_routing_control_state_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl UpdateRoutingControlStateOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateRoutingControlStateOutput`](crate::output::UpdateRoutingControlStateOutput).
-    pub fn builder() -> crate::output::update_routing_control_state_output::Builder {
-        crate::output::update_routing_control_state_output::Builder::default()
     }
 }
 
@@ -116,6 +118,13 @@ impl aws_http::request_id::RequestId for ListRoutingControlsOutput {
         self._request_id.as_deref()
     }
 }
+impl ListRoutingControlsOutput {
+    /// Creates a new builder-style object to manufacture [`ListRoutingControlsOutput`](crate::output::ListRoutingControlsOutput).
+    pub fn builder() -> crate::output::list_routing_controls_output::Builder {
+        crate::output::list_routing_controls_output::Builder::default()
+    }
+}
+
 /// See [`ListRoutingControlsOutput`](crate::output::ListRoutingControlsOutput).
 pub mod list_routing_controls_output {
 
@@ -177,12 +186,6 @@ pub mod list_routing_controls_output {
         }
     }
 }
-impl ListRoutingControlsOutput {
-    /// Creates a new builder-style object to manufacture [`ListRoutingControlsOutput`](crate::output::ListRoutingControlsOutput).
-    pub fn builder() -> crate::output::list_routing_controls_output::Builder {
-        crate::output::list_routing_controls_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -218,6 +221,13 @@ impl aws_http::request_id::RequestId for GetRoutingControlStateOutput {
         self._request_id.as_deref()
     }
 }
+impl GetRoutingControlStateOutput {
+    /// Creates a new builder-style object to manufacture [`GetRoutingControlStateOutput`](crate::output::GetRoutingControlStateOutput).
+    pub fn builder() -> crate::output::get_routing_control_state_output::Builder {
+        crate::output::get_routing_control_state_output::Builder::default()
+    }
+}
+
 /// See [`GetRoutingControlStateOutput`](crate::output::GetRoutingControlStateOutput).
 pub mod get_routing_control_state_output {
 
@@ -288,11 +298,5 @@ pub mod get_routing_control_state_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl GetRoutingControlStateOutput {
-    /// Creates a new builder-style object to manufacture [`GetRoutingControlStateOutput`](crate::output::GetRoutingControlStateOutput).
-    pub fn builder() -> crate::output::get_routing_control_state_output::Builder {
-        crate::output::get_routing_control_state_output::Builder::default()
     }
 }

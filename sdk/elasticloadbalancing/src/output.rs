@@ -11,6 +11,13 @@ impl aws_http::request_id::RequestId for SetLoadBalancerPoliciesOfListenerOutput
         self._request_id.as_deref()
     }
 }
+impl SetLoadBalancerPoliciesOfListenerOutput {
+    /// Creates a new builder-style object to manufacture [`SetLoadBalancerPoliciesOfListenerOutput`](crate::output::SetLoadBalancerPoliciesOfListenerOutput).
+    pub fn builder() -> crate::output::set_load_balancer_policies_of_listener_output::Builder {
+        crate::output::set_load_balancer_policies_of_listener_output::Builder::default()
+    }
+}
+
 /// See [`SetLoadBalancerPoliciesOfListenerOutput`](crate::output::SetLoadBalancerPoliciesOfListenerOutput).
 pub mod set_load_balancer_policies_of_listener_output {
 
@@ -38,12 +45,6 @@ pub mod set_load_balancer_policies_of_listener_output {
         }
     }
 }
-impl SetLoadBalancerPoliciesOfListenerOutput {
-    /// Creates a new builder-style object to manufacture [`SetLoadBalancerPoliciesOfListenerOutput`](crate::output::SetLoadBalancerPoliciesOfListenerOutput).
-    pub fn builder() -> crate::output::set_load_balancer_policies_of_listener_output::Builder {
-        crate::output::set_load_balancer_policies_of_listener_output::Builder::default()
-    }
-}
 
 /// <p>Contains the output of SetLoadBalancerPoliciesForBackendServer.</p>
 #[non_exhaustive]
@@ -56,6 +57,14 @@ impl aws_http::request_id::RequestId for SetLoadBalancerPoliciesForBackendServer
         self._request_id.as_deref()
     }
 }
+impl SetLoadBalancerPoliciesForBackendServerOutput {
+    /// Creates a new builder-style object to manufacture [`SetLoadBalancerPoliciesForBackendServerOutput`](crate::output::SetLoadBalancerPoliciesForBackendServerOutput).
+    pub fn builder() -> crate::output::set_load_balancer_policies_for_backend_server_output::Builder
+    {
+        crate::output::set_load_balancer_policies_for_backend_server_output::Builder::default()
+    }
+}
+
 /// See [`SetLoadBalancerPoliciesForBackendServerOutput`](crate::output::SetLoadBalancerPoliciesForBackendServerOutput).
 pub mod set_load_balancer_policies_for_backend_server_output {
 
@@ -83,13 +92,6 @@ pub mod set_load_balancer_policies_for_backend_server_output {
         }
     }
 }
-impl SetLoadBalancerPoliciesForBackendServerOutput {
-    /// Creates a new builder-style object to manufacture [`SetLoadBalancerPoliciesForBackendServerOutput`](crate::output::SetLoadBalancerPoliciesForBackendServerOutput).
-    pub fn builder() -> crate::output::set_load_balancer_policies_for_backend_server_output::Builder
-    {
-        crate::output::set_load_balancer_policies_for_backend_server_output::Builder::default()
-    }
-}
 
 /// <p>Contains the output of SetLoadBalancerListenerSSLCertificate.</p>
 #[non_exhaustive]
@@ -102,6 +104,13 @@ impl aws_http::request_id::RequestId for SetLoadBalancerListenerSslCertificateOu
         self._request_id.as_deref()
     }
 }
+impl SetLoadBalancerListenerSslCertificateOutput {
+    /// Creates a new builder-style object to manufacture [`SetLoadBalancerListenerSslCertificateOutput`](crate::output::SetLoadBalancerListenerSslCertificateOutput).
+    pub fn builder() -> crate::output::set_load_balancer_listener_ssl_certificate_output::Builder {
+        crate::output::set_load_balancer_listener_ssl_certificate_output::Builder::default()
+    }
+}
+
 /// See [`SetLoadBalancerListenerSslCertificateOutput`](crate::output::SetLoadBalancerListenerSslCertificateOutput).
 pub mod set_load_balancer_listener_ssl_certificate_output {
 
@@ -129,12 +138,6 @@ pub mod set_load_balancer_listener_ssl_certificate_output {
         }
     }
 }
-impl SetLoadBalancerListenerSslCertificateOutput {
-    /// Creates a new builder-style object to manufacture [`SetLoadBalancerListenerSslCertificateOutput`](crate::output::SetLoadBalancerListenerSslCertificateOutput).
-    pub fn builder() -> crate::output::set_load_balancer_listener_ssl_certificate_output::Builder {
-        crate::output::set_load_balancer_listener_ssl_certificate_output::Builder::default()
-    }
-}
 
 /// <p>Contains the output of RemoveTags.</p>
 #[non_exhaustive]
@@ -147,6 +150,13 @@ impl aws_http::request_id::RequestId for RemoveTagsOutput {
         self._request_id.as_deref()
     }
 }
+impl RemoveTagsOutput {
+    /// Creates a new builder-style object to manufacture [`RemoveTagsOutput`](crate::output::RemoveTagsOutput).
+    pub fn builder() -> crate::output::remove_tags_output::Builder {
+        crate::output::remove_tags_output::Builder::default()
+    }
+}
+
 /// See [`RemoveTagsOutput`](crate::output::RemoveTagsOutput).
 pub mod remove_tags_output {
 
@@ -174,12 +184,6 @@ pub mod remove_tags_output {
         }
     }
 }
-impl RemoveTagsOutput {
-    /// Creates a new builder-style object to manufacture [`RemoveTagsOutput`](crate::output::RemoveTagsOutput).
-    pub fn builder() -> crate::output::remove_tags_output::Builder {
-        crate::output::remove_tags_output::Builder::default()
-    }
-}
 
 /// <p>Contains the output of RegisterInstancesWithLoadBalancer.</p>
 #[non_exhaustive]
@@ -201,6 +205,13 @@ impl aws_http::request_id::RequestId for RegisterInstancesWithLoadBalancerOutput
         self._request_id.as_deref()
     }
 }
+impl RegisterInstancesWithLoadBalancerOutput {
+    /// Creates a new builder-style object to manufacture [`RegisterInstancesWithLoadBalancerOutput`](crate::output::RegisterInstancesWithLoadBalancerOutput).
+    pub fn builder() -> crate::output::register_instances_with_load_balancer_output::Builder {
+        crate::output::register_instances_with_load_balancer_output::Builder::default()
+    }
+}
+
 /// See [`RegisterInstancesWithLoadBalancerOutput`](crate::output::RegisterInstancesWithLoadBalancerOutput).
 pub mod register_instances_with_load_balancer_output {
 
@@ -249,12 +260,6 @@ pub mod register_instances_with_load_balancer_output {
         }
     }
 }
-impl RegisterInstancesWithLoadBalancerOutput {
-    /// Creates a new builder-style object to manufacture [`RegisterInstancesWithLoadBalancerOutput`](crate::output::RegisterInstancesWithLoadBalancerOutput).
-    pub fn builder() -> crate::output::register_instances_with_load_balancer_output::Builder {
-        crate::output::register_instances_with_load_balancer_output::Builder::default()
-    }
-}
 
 /// <p>Contains the output of ModifyLoadBalancerAttributes.</p>
 #[non_exhaustive]
@@ -285,6 +290,13 @@ impl aws_http::request_id::RequestId for ModifyLoadBalancerAttributesOutput {
         self._request_id.as_deref()
     }
 }
+impl ModifyLoadBalancerAttributesOutput {
+    /// Creates a new builder-style object to manufacture [`ModifyLoadBalancerAttributesOutput`](crate::output::ModifyLoadBalancerAttributesOutput).
+    pub fn builder() -> crate::output::modify_load_balancer_attributes_output::Builder {
+        crate::output::modify_load_balancer_attributes_output::Builder::default()
+    }
+}
+
 /// See [`ModifyLoadBalancerAttributesOutput`](crate::output::ModifyLoadBalancerAttributesOutput).
 pub mod modify_load_balancer_attributes_output {
 
@@ -346,12 +358,6 @@ pub mod modify_load_balancer_attributes_output {
         }
     }
 }
-impl ModifyLoadBalancerAttributesOutput {
-    /// Creates a new builder-style object to manufacture [`ModifyLoadBalancerAttributesOutput`](crate::output::ModifyLoadBalancerAttributesOutput).
-    pub fn builder() -> crate::output::modify_load_balancer_attributes_output::Builder {
-        crate::output::modify_load_balancer_attributes_output::Builder::default()
-    }
-}
 
 /// <p>Contains the output of EnableAvailabilityZonesForLoadBalancer.</p>
 #[non_exhaustive]
@@ -373,6 +379,13 @@ impl aws_http::request_id::RequestId for EnableAvailabilityZonesForLoadBalancerO
         self._request_id.as_deref()
     }
 }
+impl EnableAvailabilityZonesForLoadBalancerOutput {
+    /// Creates a new builder-style object to manufacture [`EnableAvailabilityZonesForLoadBalancerOutput`](crate::output::EnableAvailabilityZonesForLoadBalancerOutput).
+    pub fn builder() -> crate::output::enable_availability_zones_for_load_balancer_output::Builder {
+        crate::output::enable_availability_zones_for_load_balancer_output::Builder::default()
+    }
+}
+
 /// See [`EnableAvailabilityZonesForLoadBalancerOutput`](crate::output::EnableAvailabilityZonesForLoadBalancerOutput).
 pub mod enable_availability_zones_for_load_balancer_output {
 
@@ -421,12 +434,6 @@ pub mod enable_availability_zones_for_load_balancer_output {
         }
     }
 }
-impl EnableAvailabilityZonesForLoadBalancerOutput {
-    /// Creates a new builder-style object to manufacture [`EnableAvailabilityZonesForLoadBalancerOutput`](crate::output::EnableAvailabilityZonesForLoadBalancerOutput).
-    pub fn builder() -> crate::output::enable_availability_zones_for_load_balancer_output::Builder {
-        crate::output::enable_availability_zones_for_load_balancer_output::Builder::default()
-    }
-}
 
 /// <p>Contains the output for DisableAvailabilityZonesForLoadBalancer.</p>
 #[non_exhaustive]
@@ -448,6 +455,14 @@ impl aws_http::request_id::RequestId for DisableAvailabilityZonesForLoadBalancer
         self._request_id.as_deref()
     }
 }
+impl DisableAvailabilityZonesForLoadBalancerOutput {
+    /// Creates a new builder-style object to manufacture [`DisableAvailabilityZonesForLoadBalancerOutput`](crate::output::DisableAvailabilityZonesForLoadBalancerOutput).
+    pub fn builder() -> crate::output::disable_availability_zones_for_load_balancer_output::Builder
+    {
+        crate::output::disable_availability_zones_for_load_balancer_output::Builder::default()
+    }
+}
+
 /// See [`DisableAvailabilityZonesForLoadBalancerOutput`](crate::output::DisableAvailabilityZonesForLoadBalancerOutput).
 pub mod disable_availability_zones_for_load_balancer_output {
 
@@ -496,13 +511,6 @@ pub mod disable_availability_zones_for_load_balancer_output {
         }
     }
 }
-impl DisableAvailabilityZonesForLoadBalancerOutput {
-    /// Creates a new builder-style object to manufacture [`DisableAvailabilityZonesForLoadBalancerOutput`](crate::output::DisableAvailabilityZonesForLoadBalancerOutput).
-    pub fn builder() -> crate::output::disable_availability_zones_for_load_balancer_output::Builder
-    {
-        crate::output::disable_availability_zones_for_load_balancer_output::Builder::default()
-    }
-}
 
 /// <p>Contains the output of DetachLoadBalancerFromSubnets.</p>
 #[non_exhaustive]
@@ -524,6 +532,13 @@ impl aws_http::request_id::RequestId for DetachLoadBalancerFromSubnetsOutput {
         self._request_id.as_deref()
     }
 }
+impl DetachLoadBalancerFromSubnetsOutput {
+    /// Creates a new builder-style object to manufacture [`DetachLoadBalancerFromSubnetsOutput`](crate::output::DetachLoadBalancerFromSubnetsOutput).
+    pub fn builder() -> crate::output::detach_load_balancer_from_subnets_output::Builder {
+        crate::output::detach_load_balancer_from_subnets_output::Builder::default()
+    }
+}
+
 /// See [`DetachLoadBalancerFromSubnetsOutput`](crate::output::DetachLoadBalancerFromSubnetsOutput).
 pub mod detach_load_balancer_from_subnets_output {
 
@@ -572,12 +587,6 @@ pub mod detach_load_balancer_from_subnets_output {
         }
     }
 }
-impl DetachLoadBalancerFromSubnetsOutput {
-    /// Creates a new builder-style object to manufacture [`DetachLoadBalancerFromSubnetsOutput`](crate::output::DetachLoadBalancerFromSubnetsOutput).
-    pub fn builder() -> crate::output::detach_load_balancer_from_subnets_output::Builder {
-        crate::output::detach_load_balancer_from_subnets_output::Builder::default()
-    }
-}
 
 /// <p>Contains the output for DescribeTags.</p>
 #[non_exhaustive]
@@ -599,6 +608,13 @@ impl aws_http::request_id::RequestId for DescribeTagsOutput {
         self._request_id.as_deref()
     }
 }
+impl DescribeTagsOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeTagsOutput`](crate::output::DescribeTagsOutput).
+    pub fn builder() -> crate::output::describe_tags_output::Builder {
+        crate::output::describe_tags_output::Builder::default()
+    }
+}
+
 /// See [`DescribeTagsOutput`](crate::output::DescribeTagsOutput).
 pub mod describe_tags_output {
 
@@ -648,12 +664,6 @@ pub mod describe_tags_output {
         }
     }
 }
-impl DescribeTagsOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeTagsOutput`](crate::output::DescribeTagsOutput).
-    pub fn builder() -> crate::output::describe_tags_output::Builder {
-        crate::output::describe_tags_output::Builder::default()
-    }
-}
 
 /// <p>Contains the parameters for DescribeLoadBalancers.</p>
 #[non_exhaustive]
@@ -685,6 +695,13 @@ impl aws_http::request_id::RequestId for DescribeLoadBalancersOutput {
         self._request_id.as_deref()
     }
 }
+impl DescribeLoadBalancersOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeLoadBalancersOutput`](crate::output::DescribeLoadBalancersOutput).
+    pub fn builder() -> crate::output::describe_load_balancers_output::Builder {
+        crate::output::describe_load_balancers_output::Builder::default()
+    }
+}
+
 /// See [`DescribeLoadBalancersOutput`](crate::output::DescribeLoadBalancersOutput).
 pub mod describe_load_balancers_output {
 
@@ -749,12 +766,6 @@ pub mod describe_load_balancers_output {
         }
     }
 }
-impl DescribeLoadBalancersOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeLoadBalancersOutput`](crate::output::DescribeLoadBalancersOutput).
-    pub fn builder() -> crate::output::describe_load_balancers_output::Builder {
-        crate::output::describe_load_balancers_output::Builder::default()
-    }
-}
 
 /// <p>Contains the output of DescribeLoadBalancerPolicyTypes.</p>
 #[non_exhaustive]
@@ -779,6 +790,13 @@ impl aws_http::request_id::RequestId for DescribeLoadBalancerPolicyTypesOutput {
         self._request_id.as_deref()
     }
 }
+impl DescribeLoadBalancerPolicyTypesOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeLoadBalancerPolicyTypesOutput`](crate::output::DescribeLoadBalancerPolicyTypesOutput).
+    pub fn builder() -> crate::output::describe_load_balancer_policy_types_output::Builder {
+        crate::output::describe_load_balancer_policy_types_output::Builder::default()
+    }
+}
+
 /// See [`DescribeLoadBalancerPolicyTypesOutput`](crate::output::DescribeLoadBalancerPolicyTypesOutput).
 pub mod describe_load_balancer_policy_types_output {
 
@@ -831,12 +849,6 @@ pub mod describe_load_balancer_policy_types_output {
         }
     }
 }
-impl DescribeLoadBalancerPolicyTypesOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeLoadBalancerPolicyTypesOutput`](crate::output::DescribeLoadBalancerPolicyTypesOutput).
-    pub fn builder() -> crate::output::describe_load_balancer_policy_types_output::Builder {
-        crate::output::describe_load_balancer_policy_types_output::Builder::default()
-    }
-}
 
 /// <p>Contains the output of DescribeLoadBalancerPolicies.</p>
 #[non_exhaustive]
@@ -858,6 +870,13 @@ impl aws_http::request_id::RequestId for DescribeLoadBalancerPoliciesOutput {
         self._request_id.as_deref()
     }
 }
+impl DescribeLoadBalancerPoliciesOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeLoadBalancerPoliciesOutput`](crate::output::DescribeLoadBalancerPoliciesOutput).
+    pub fn builder() -> crate::output::describe_load_balancer_policies_output::Builder {
+        crate::output::describe_load_balancer_policies_output::Builder::default()
+    }
+}
+
 /// See [`DescribeLoadBalancerPoliciesOutput`](crate::output::DescribeLoadBalancerPoliciesOutput).
 pub mod describe_load_balancer_policies_output {
 
@@ -907,12 +926,6 @@ pub mod describe_load_balancer_policies_output {
         }
     }
 }
-impl DescribeLoadBalancerPoliciesOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeLoadBalancerPoliciesOutput`](crate::output::DescribeLoadBalancerPoliciesOutput).
-    pub fn builder() -> crate::output::describe_load_balancer_policies_output::Builder {
-        crate::output::describe_load_balancer_policies_output::Builder::default()
-    }
-}
 
 /// <p>Contains the output of DescribeLoadBalancerAttributes.</p>
 #[non_exhaustive]
@@ -936,6 +949,13 @@ impl aws_http::request_id::RequestId for DescribeLoadBalancerAttributesOutput {
         self._request_id.as_deref()
     }
 }
+impl DescribeLoadBalancerAttributesOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeLoadBalancerAttributesOutput`](crate::output::DescribeLoadBalancerAttributesOutput).
+    pub fn builder() -> crate::output::describe_load_balancer_attributes_output::Builder {
+        crate::output::describe_load_balancer_attributes_output::Builder::default()
+    }
+}
+
 /// See [`DescribeLoadBalancerAttributesOutput`](crate::output::DescribeLoadBalancerAttributesOutput).
 pub mod describe_load_balancer_attributes_output {
 
@@ -982,12 +1002,6 @@ pub mod describe_load_balancer_attributes_output {
         }
     }
 }
-impl DescribeLoadBalancerAttributesOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeLoadBalancerAttributesOutput`](crate::output::DescribeLoadBalancerAttributesOutput).
-    pub fn builder() -> crate::output::describe_load_balancer_attributes_output::Builder {
-        crate::output::describe_load_balancer_attributes_output::Builder::default()
-    }
-}
 
 /// <p>Contains the output for DescribeInstanceHealth.</p>
 #[non_exhaustive]
@@ -1009,6 +1023,13 @@ impl aws_http::request_id::RequestId for DescribeInstanceHealthOutput {
         self._request_id.as_deref()
     }
 }
+impl DescribeInstanceHealthOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeInstanceHealthOutput`](crate::output::DescribeInstanceHealthOutput).
+    pub fn builder() -> crate::output::describe_instance_health_output::Builder {
+        crate::output::describe_instance_health_output::Builder::default()
+    }
+}
+
 /// See [`DescribeInstanceHealthOutput`](crate::output::DescribeInstanceHealthOutput).
 pub mod describe_instance_health_output {
 
@@ -1057,12 +1078,6 @@ pub mod describe_instance_health_output {
         }
     }
 }
-impl DescribeInstanceHealthOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeInstanceHealthOutput`](crate::output::DescribeInstanceHealthOutput).
-    pub fn builder() -> crate::output::describe_instance_health_output::Builder {
-        crate::output::describe_instance_health_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1091,6 +1106,13 @@ impl aws_http::request_id::RequestId for DescribeAccountLimitsOutput {
         self._request_id.as_deref()
     }
 }
+impl DescribeAccountLimitsOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeAccountLimitsOutput`](crate::output::DescribeAccountLimitsOutput).
+    pub fn builder() -> crate::output::describe_account_limits_output::Builder {
+        crate::output::describe_account_limits_output::Builder::default()
+    }
+}
+
 /// See [`DescribeAccountLimitsOutput`](crate::output::DescribeAccountLimitsOutput).
 pub mod describe_account_limits_output {
 
@@ -1151,12 +1173,6 @@ pub mod describe_account_limits_output {
         }
     }
 }
-impl DescribeAccountLimitsOutput {
-    /// Creates a new builder-style object to manufacture [`DescribeAccountLimitsOutput`](crate::output::DescribeAccountLimitsOutput).
-    pub fn builder() -> crate::output::describe_account_limits_output::Builder {
-        crate::output::describe_account_limits_output::Builder::default()
-    }
-}
 
 /// <p>Contains the output of DeregisterInstancesFromLoadBalancer.</p>
 #[non_exhaustive]
@@ -1178,6 +1194,13 @@ impl aws_http::request_id::RequestId for DeregisterInstancesFromLoadBalancerOutp
         self._request_id.as_deref()
     }
 }
+impl DeregisterInstancesFromLoadBalancerOutput {
+    /// Creates a new builder-style object to manufacture [`DeregisterInstancesFromLoadBalancerOutput`](crate::output::DeregisterInstancesFromLoadBalancerOutput).
+    pub fn builder() -> crate::output::deregister_instances_from_load_balancer_output::Builder {
+        crate::output::deregister_instances_from_load_balancer_output::Builder::default()
+    }
+}
+
 /// See [`DeregisterInstancesFromLoadBalancerOutput`](crate::output::DeregisterInstancesFromLoadBalancerOutput).
 pub mod deregister_instances_from_load_balancer_output {
 
@@ -1226,12 +1249,6 @@ pub mod deregister_instances_from_load_balancer_output {
         }
     }
 }
-impl DeregisterInstancesFromLoadBalancerOutput {
-    /// Creates a new builder-style object to manufacture [`DeregisterInstancesFromLoadBalancerOutput`](crate::output::DeregisterInstancesFromLoadBalancerOutput).
-    pub fn builder() -> crate::output::deregister_instances_from_load_balancer_output::Builder {
-        crate::output::deregister_instances_from_load_balancer_output::Builder::default()
-    }
-}
 
 /// <p>Contains the output of DeleteLoadBalancerPolicy.</p>
 #[non_exhaustive]
@@ -1244,6 +1261,13 @@ impl aws_http::request_id::RequestId for DeleteLoadBalancerPolicyOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteLoadBalancerPolicyOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteLoadBalancerPolicyOutput`](crate::output::DeleteLoadBalancerPolicyOutput).
+    pub fn builder() -> crate::output::delete_load_balancer_policy_output::Builder {
+        crate::output::delete_load_balancer_policy_output::Builder::default()
+    }
+}
+
 /// See [`DeleteLoadBalancerPolicyOutput`](crate::output::DeleteLoadBalancerPolicyOutput).
 pub mod delete_load_balancer_policy_output {
 
@@ -1271,12 +1295,6 @@ pub mod delete_load_balancer_policy_output {
         }
     }
 }
-impl DeleteLoadBalancerPolicyOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteLoadBalancerPolicyOutput`](crate::output::DeleteLoadBalancerPolicyOutput).
-    pub fn builder() -> crate::output::delete_load_balancer_policy_output::Builder {
-        crate::output::delete_load_balancer_policy_output::Builder::default()
-    }
-}
 
 /// <p>Contains the output of DeleteLoadBalancerListeners.</p>
 #[non_exhaustive]
@@ -1289,6 +1307,13 @@ impl aws_http::request_id::RequestId for DeleteLoadBalancerListenersOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteLoadBalancerListenersOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteLoadBalancerListenersOutput`](crate::output::DeleteLoadBalancerListenersOutput).
+    pub fn builder() -> crate::output::delete_load_balancer_listeners_output::Builder {
+        crate::output::delete_load_balancer_listeners_output::Builder::default()
+    }
+}
+
 /// See [`DeleteLoadBalancerListenersOutput`](crate::output::DeleteLoadBalancerListenersOutput).
 pub mod delete_load_balancer_listeners_output {
 
@@ -1316,12 +1341,6 @@ pub mod delete_load_balancer_listeners_output {
         }
     }
 }
-impl DeleteLoadBalancerListenersOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteLoadBalancerListenersOutput`](crate::output::DeleteLoadBalancerListenersOutput).
-    pub fn builder() -> crate::output::delete_load_balancer_listeners_output::Builder {
-        crate::output::delete_load_balancer_listeners_output::Builder::default()
-    }
-}
 
 /// <p>Contains the output of DeleteLoadBalancer.</p>
 #[non_exhaustive]
@@ -1334,6 +1353,13 @@ impl aws_http::request_id::RequestId for DeleteLoadBalancerOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteLoadBalancerOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteLoadBalancerOutput`](crate::output::DeleteLoadBalancerOutput).
+    pub fn builder() -> crate::output::delete_load_balancer_output::Builder {
+        crate::output::delete_load_balancer_output::Builder::default()
+    }
+}
+
 /// See [`DeleteLoadBalancerOutput`](crate::output::DeleteLoadBalancerOutput).
 pub mod delete_load_balancer_output {
 
@@ -1361,12 +1387,6 @@ pub mod delete_load_balancer_output {
         }
     }
 }
-impl DeleteLoadBalancerOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteLoadBalancerOutput`](crate::output::DeleteLoadBalancerOutput).
-    pub fn builder() -> crate::output::delete_load_balancer_output::Builder {
-        crate::output::delete_load_balancer_output::Builder::default()
-    }
-}
 
 /// <p>Contains the output of CreateLoadBalancerPolicy.</p>
 #[non_exhaustive]
@@ -1379,6 +1399,13 @@ impl aws_http::request_id::RequestId for CreateLoadBalancerPolicyOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateLoadBalancerPolicyOutput {
+    /// Creates a new builder-style object to manufacture [`CreateLoadBalancerPolicyOutput`](crate::output::CreateLoadBalancerPolicyOutput).
+    pub fn builder() -> crate::output::create_load_balancer_policy_output::Builder {
+        crate::output::create_load_balancer_policy_output::Builder::default()
+    }
+}
+
 /// See [`CreateLoadBalancerPolicyOutput`](crate::output::CreateLoadBalancerPolicyOutput).
 pub mod create_load_balancer_policy_output {
 
@@ -1406,12 +1433,6 @@ pub mod create_load_balancer_policy_output {
         }
     }
 }
-impl CreateLoadBalancerPolicyOutput {
-    /// Creates a new builder-style object to manufacture [`CreateLoadBalancerPolicyOutput`](crate::output::CreateLoadBalancerPolicyOutput).
-    pub fn builder() -> crate::output::create_load_balancer_policy_output::Builder {
-        crate::output::create_load_balancer_policy_output::Builder::default()
-    }
-}
 
 /// <p>Contains the parameters for CreateLoadBalancerListener.</p>
 #[non_exhaustive]
@@ -1424,6 +1445,13 @@ impl aws_http::request_id::RequestId for CreateLoadBalancerListenersOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateLoadBalancerListenersOutput {
+    /// Creates a new builder-style object to manufacture [`CreateLoadBalancerListenersOutput`](crate::output::CreateLoadBalancerListenersOutput).
+    pub fn builder() -> crate::output::create_load_balancer_listeners_output::Builder {
+        crate::output::create_load_balancer_listeners_output::Builder::default()
+    }
+}
+
 /// See [`CreateLoadBalancerListenersOutput`](crate::output::CreateLoadBalancerListenersOutput).
 pub mod create_load_balancer_listeners_output {
 
@@ -1451,12 +1479,6 @@ pub mod create_load_balancer_listeners_output {
         }
     }
 }
-impl CreateLoadBalancerListenersOutput {
-    /// Creates a new builder-style object to manufacture [`CreateLoadBalancerListenersOutput`](crate::output::CreateLoadBalancerListenersOutput).
-    pub fn builder() -> crate::output::create_load_balancer_listeners_output::Builder {
-        crate::output::create_load_balancer_listeners_output::Builder::default()
-    }
-}
 
 /// <p>Contains the output for CreateLoadBalancer.</p>
 #[non_exhaustive]
@@ -1478,6 +1500,13 @@ impl aws_http::request_id::RequestId for CreateLoadBalancerOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateLoadBalancerOutput {
+    /// Creates a new builder-style object to manufacture [`CreateLoadBalancerOutput`](crate::output::CreateLoadBalancerOutput).
+    pub fn builder() -> crate::output::create_load_balancer_output::Builder {
+        crate::output::create_load_balancer_output::Builder::default()
+    }
+}
+
 /// See [`CreateLoadBalancerOutput`](crate::output::CreateLoadBalancerOutput).
 pub mod create_load_balancer_output {
 
@@ -1517,12 +1546,6 @@ pub mod create_load_balancer_output {
         }
     }
 }
-impl CreateLoadBalancerOutput {
-    /// Creates a new builder-style object to manufacture [`CreateLoadBalancerOutput`](crate::output::CreateLoadBalancerOutput).
-    pub fn builder() -> crate::output::create_load_balancer_output::Builder {
-        crate::output::create_load_balancer_output::Builder::default()
-    }
-}
 
 /// <p>Contains the output for CreateLBCookieStickinessPolicy.</p>
 #[non_exhaustive]
@@ -1535,6 +1558,13 @@ impl aws_http::request_id::RequestId for CreateLbCookieStickinessPolicyOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateLbCookieStickinessPolicyOutput {
+    /// Creates a new builder-style object to manufacture [`CreateLbCookieStickinessPolicyOutput`](crate::output::CreateLbCookieStickinessPolicyOutput).
+    pub fn builder() -> crate::output::create_lb_cookie_stickiness_policy_output::Builder {
+        crate::output::create_lb_cookie_stickiness_policy_output::Builder::default()
+    }
+}
+
 /// See [`CreateLbCookieStickinessPolicyOutput`](crate::output::CreateLbCookieStickinessPolicyOutput).
 pub mod create_lb_cookie_stickiness_policy_output {
 
@@ -1562,12 +1592,6 @@ pub mod create_lb_cookie_stickiness_policy_output {
         }
     }
 }
-impl CreateLbCookieStickinessPolicyOutput {
-    /// Creates a new builder-style object to manufacture [`CreateLbCookieStickinessPolicyOutput`](crate::output::CreateLbCookieStickinessPolicyOutput).
-    pub fn builder() -> crate::output::create_lb_cookie_stickiness_policy_output::Builder {
-        crate::output::create_lb_cookie_stickiness_policy_output::Builder::default()
-    }
-}
 
 /// <p>Contains the output for CreateAppCookieStickinessPolicy.</p>
 #[non_exhaustive]
@@ -1580,6 +1604,13 @@ impl aws_http::request_id::RequestId for CreateAppCookieStickinessPolicyOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateAppCookieStickinessPolicyOutput {
+    /// Creates a new builder-style object to manufacture [`CreateAppCookieStickinessPolicyOutput`](crate::output::CreateAppCookieStickinessPolicyOutput).
+    pub fn builder() -> crate::output::create_app_cookie_stickiness_policy_output::Builder {
+        crate::output::create_app_cookie_stickiness_policy_output::Builder::default()
+    }
+}
+
 /// See [`CreateAppCookieStickinessPolicyOutput`](crate::output::CreateAppCookieStickinessPolicyOutput).
 pub mod create_app_cookie_stickiness_policy_output {
 
@@ -1607,12 +1638,6 @@ pub mod create_app_cookie_stickiness_policy_output {
         }
     }
 }
-impl CreateAppCookieStickinessPolicyOutput {
-    /// Creates a new builder-style object to manufacture [`CreateAppCookieStickinessPolicyOutput`](crate::output::CreateAppCookieStickinessPolicyOutput).
-    pub fn builder() -> crate::output::create_app_cookie_stickiness_policy_output::Builder {
-        crate::output::create_app_cookie_stickiness_policy_output::Builder::default()
-    }
-}
 
 /// <p>Contains the output of ConfigureHealthCheck.</p>
 #[non_exhaustive]
@@ -1634,6 +1659,13 @@ impl aws_http::request_id::RequestId for ConfigureHealthCheckOutput {
         self._request_id.as_deref()
     }
 }
+impl ConfigureHealthCheckOutput {
+    /// Creates a new builder-style object to manufacture [`ConfigureHealthCheckOutput`](crate::output::ConfigureHealthCheckOutput).
+    pub fn builder() -> crate::output::configure_health_check_output::Builder {
+        crate::output::configure_health_check_output::Builder::default()
+    }
+}
+
 /// See [`ConfigureHealthCheckOutput`](crate::output::ConfigureHealthCheckOutput).
 pub mod configure_health_check_output {
 
@@ -1676,12 +1708,6 @@ pub mod configure_health_check_output {
         }
     }
 }
-impl ConfigureHealthCheckOutput {
-    /// Creates a new builder-style object to manufacture [`ConfigureHealthCheckOutput`](crate::output::ConfigureHealthCheckOutput).
-    pub fn builder() -> crate::output::configure_health_check_output::Builder {
-        crate::output::configure_health_check_output::Builder::default()
-    }
-}
 
 /// <p>Contains the output of AttachLoadBalancerToSubnets.</p>
 #[non_exhaustive]
@@ -1703,6 +1729,13 @@ impl aws_http::request_id::RequestId for AttachLoadBalancerToSubnetsOutput {
         self._request_id.as_deref()
     }
 }
+impl AttachLoadBalancerToSubnetsOutput {
+    /// Creates a new builder-style object to manufacture [`AttachLoadBalancerToSubnetsOutput`](crate::output::AttachLoadBalancerToSubnetsOutput).
+    pub fn builder() -> crate::output::attach_load_balancer_to_subnets_output::Builder {
+        crate::output::attach_load_balancer_to_subnets_output::Builder::default()
+    }
+}
+
 /// See [`AttachLoadBalancerToSubnetsOutput`](crate::output::AttachLoadBalancerToSubnetsOutput).
 pub mod attach_load_balancer_to_subnets_output {
 
@@ -1751,12 +1784,6 @@ pub mod attach_load_balancer_to_subnets_output {
         }
     }
 }
-impl AttachLoadBalancerToSubnetsOutput {
-    /// Creates a new builder-style object to manufacture [`AttachLoadBalancerToSubnetsOutput`](crate::output::AttachLoadBalancerToSubnetsOutput).
-    pub fn builder() -> crate::output::attach_load_balancer_to_subnets_output::Builder {
-        crate::output::attach_load_balancer_to_subnets_output::Builder::default()
-    }
-}
 
 /// <p>Contains the output of ApplySecurityGroupsToLoadBalancer.</p>
 #[non_exhaustive]
@@ -1778,6 +1805,13 @@ impl aws_http::request_id::RequestId for ApplySecurityGroupsToLoadBalancerOutput
         self._request_id.as_deref()
     }
 }
+impl ApplySecurityGroupsToLoadBalancerOutput {
+    /// Creates a new builder-style object to manufacture [`ApplySecurityGroupsToLoadBalancerOutput`](crate::output::ApplySecurityGroupsToLoadBalancerOutput).
+    pub fn builder() -> crate::output::apply_security_groups_to_load_balancer_output::Builder {
+        crate::output::apply_security_groups_to_load_balancer_output::Builder::default()
+    }
+}
+
 /// See [`ApplySecurityGroupsToLoadBalancerOutput`](crate::output::ApplySecurityGroupsToLoadBalancerOutput).
 pub mod apply_security_groups_to_load_balancer_output {
 
@@ -1826,12 +1860,6 @@ pub mod apply_security_groups_to_load_balancer_output {
         }
     }
 }
-impl ApplySecurityGroupsToLoadBalancerOutput {
-    /// Creates a new builder-style object to manufacture [`ApplySecurityGroupsToLoadBalancerOutput`](crate::output::ApplySecurityGroupsToLoadBalancerOutput).
-    pub fn builder() -> crate::output::apply_security_groups_to_load_balancer_output::Builder {
-        crate::output::apply_security_groups_to_load_balancer_output::Builder::default()
-    }
-}
 
 /// <p>Contains the output of AddTags.</p>
 #[non_exhaustive]
@@ -1844,6 +1872,13 @@ impl aws_http::request_id::RequestId for AddTagsOutput {
         self._request_id.as_deref()
     }
 }
+impl AddTagsOutput {
+    /// Creates a new builder-style object to manufacture [`AddTagsOutput`](crate::output::AddTagsOutput).
+    pub fn builder() -> crate::output::add_tags_output::Builder {
+        crate::output::add_tags_output::Builder::default()
+    }
+}
+
 /// See [`AddTagsOutput`](crate::output::AddTagsOutput).
 pub mod add_tags_output {
 
@@ -1869,11 +1904,5 @@ pub mod add_tags_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl AddTagsOutput {
-    /// Creates a new builder-style object to manufacture [`AddTagsOutput`](crate::output::AddTagsOutput).
-    pub fn builder() -> crate::output::add_tags_output::Builder {
-        crate::output::add_tags_output::Builder::default()
     }
 }

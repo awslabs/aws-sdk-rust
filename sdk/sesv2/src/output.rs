@@ -11,6 +11,13 @@ impl aws_http::request_id::RequestId for UpdateEmailTemplateOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdateEmailTemplateOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateEmailTemplateOutput`](crate::output::UpdateEmailTemplateOutput).
+    pub fn builder() -> crate::output::update_email_template_output::Builder {
+        crate::output::update_email_template_output::Builder::default()
+    }
+}
+
 /// See [`UpdateEmailTemplateOutput`](crate::output::UpdateEmailTemplateOutput).
 pub mod update_email_template_output {
 
@@ -38,12 +45,6 @@ pub mod update_email_template_output {
         }
     }
 }
-impl UpdateEmailTemplateOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateEmailTemplateOutput`](crate::output::UpdateEmailTemplateOutput).
-    pub fn builder() -> crate::output::update_email_template_output::Builder {
-        crate::output::update_email_template_output::Builder::default()
-    }
-}
 
 /// <p>An HTTP 200 response if the request succeeds, or an error message if the request fails.</p>
 #[non_exhaustive]
@@ -56,6 +57,13 @@ impl aws_http::request_id::RequestId for UpdateEmailIdentityPolicyOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdateEmailIdentityPolicyOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateEmailIdentityPolicyOutput`](crate::output::UpdateEmailIdentityPolicyOutput).
+    pub fn builder() -> crate::output::update_email_identity_policy_output::Builder {
+        crate::output::update_email_identity_policy_output::Builder::default()
+    }
+}
+
 /// See [`UpdateEmailIdentityPolicyOutput`](crate::output::UpdateEmailIdentityPolicyOutput).
 pub mod update_email_identity_policy_output {
 
@@ -83,12 +91,6 @@ pub mod update_email_identity_policy_output {
         }
     }
 }
-impl UpdateEmailIdentityPolicyOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateEmailIdentityPolicyOutput`](crate::output::UpdateEmailIdentityPolicyOutput).
-    pub fn builder() -> crate::output::update_email_identity_policy_output::Builder {
-        crate::output::update_email_identity_policy_output::Builder::default()
-    }
-}
 
 /// <p>If the action is successful, the service sends back an HTTP 200 response with an empty HTTP body.</p>
 #[non_exhaustive]
@@ -101,6 +103,13 @@ impl aws_http::request_id::RequestId for UpdateCustomVerificationEmailTemplateOu
         self._request_id.as_deref()
     }
 }
+impl UpdateCustomVerificationEmailTemplateOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateCustomVerificationEmailTemplateOutput`](crate::output::UpdateCustomVerificationEmailTemplateOutput).
+    pub fn builder() -> crate::output::update_custom_verification_email_template_output::Builder {
+        crate::output::update_custom_verification_email_template_output::Builder::default()
+    }
+}
+
 /// See [`UpdateCustomVerificationEmailTemplateOutput`](crate::output::UpdateCustomVerificationEmailTemplateOutput).
 pub mod update_custom_verification_email_template_output {
 
@@ -128,12 +137,6 @@ pub mod update_custom_verification_email_template_output {
         }
     }
 }
-impl UpdateCustomVerificationEmailTemplateOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateCustomVerificationEmailTemplateOutput`](crate::output::UpdateCustomVerificationEmailTemplateOutput).
-    pub fn builder() -> crate::output::update_custom_verification_email_template_output::Builder {
-        crate::output::update_custom_verification_email_template_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -146,6 +149,13 @@ impl aws_http::request_id::RequestId for UpdateContactListOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdateContactListOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateContactListOutput`](crate::output::UpdateContactListOutput).
+    pub fn builder() -> crate::output::update_contact_list_output::Builder {
+        crate::output::update_contact_list_output::Builder::default()
+    }
+}
+
 /// See [`UpdateContactListOutput`](crate::output::UpdateContactListOutput).
 pub mod update_contact_list_output {
 
@@ -173,12 +183,6 @@ pub mod update_contact_list_output {
         }
     }
 }
-impl UpdateContactListOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateContactListOutput`](crate::output::UpdateContactListOutput).
-    pub fn builder() -> crate::output::update_contact_list_output::Builder {
-        crate::output::update_contact_list_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -191,6 +195,13 @@ impl aws_http::request_id::RequestId for UpdateContactOutput {
         self._request_id.as_deref()
     }
 }
+impl UpdateContactOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateContactOutput`](crate::output::UpdateContactOutput).
+    pub fn builder() -> crate::output::update_contact_output::Builder {
+        crate::output::update_contact_output::Builder::default()
+    }
+}
+
 /// See [`UpdateContactOutput`](crate::output::UpdateContactOutput).
 pub mod update_contact_output {
 
@@ -218,12 +229,6 @@ pub mod update_contact_output {
         }
     }
 }
-impl UpdateContactOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateContactOutput`](crate::output::UpdateContactOutput).
-    pub fn builder() -> crate::output::update_contact_output::Builder {
-        crate::output::update_contact_output::Builder::default()
-    }
-}
 
 /// <p>An HTTP 200 response if the request succeeds, or an error message if the request fails.</p>
 #[non_exhaustive]
@@ -236,6 +241,13 @@ impl aws_http::request_id::RequestId for UpdateConfigurationSetEventDestinationO
         self._request_id.as_deref()
     }
 }
+impl UpdateConfigurationSetEventDestinationOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateConfigurationSetEventDestinationOutput`](crate::output::UpdateConfigurationSetEventDestinationOutput).
+    pub fn builder() -> crate::output::update_configuration_set_event_destination_output::Builder {
+        crate::output::update_configuration_set_event_destination_output::Builder::default()
+    }
+}
+
 /// See [`UpdateConfigurationSetEventDestinationOutput`](crate::output::UpdateConfigurationSetEventDestinationOutput).
 pub mod update_configuration_set_event_destination_output {
 
@@ -263,12 +275,6 @@ pub mod update_configuration_set_event_destination_output {
         }
     }
 }
-impl UpdateConfigurationSetEventDestinationOutput {
-    /// Creates a new builder-style object to manufacture [`UpdateConfigurationSetEventDestinationOutput`](crate::output::UpdateConfigurationSetEventDestinationOutput).
-    pub fn builder() -> crate::output::update_configuration_set_event_destination_output::Builder {
-        crate::output::update_configuration_set_event_destination_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -281,6 +287,13 @@ impl aws_http::request_id::RequestId for UntagResourceOutput {
         self._request_id.as_deref()
     }
 }
+impl UntagResourceOutput {
+    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
+    pub fn builder() -> crate::output::untag_resource_output::Builder {
+        crate::output::untag_resource_output::Builder::default()
+    }
+}
+
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
 
@@ -308,12 +321,6 @@ pub mod untag_resource_output {
         }
     }
 }
-impl UntagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
-    pub fn builder() -> crate::output::untag_resource_output::Builder {
-        crate::output::untag_resource_output::Builder::default()
-    }
-}
 
 /// <p>The following element is returned by the service.</p>
 #[non_exhaustive]
@@ -335,6 +342,13 @@ impl aws_http::request_id::RequestId for TestRenderEmailTemplateOutput {
         self._request_id.as_deref()
     }
 }
+impl TestRenderEmailTemplateOutput {
+    /// Creates a new builder-style object to manufacture [`TestRenderEmailTemplateOutput`](crate::output::TestRenderEmailTemplateOutput).
+    pub fn builder() -> crate::output::test_render_email_template_output::Builder {
+        crate::output::test_render_email_template_output::Builder::default()
+    }
+}
+
 /// See [`TestRenderEmailTemplateOutput`](crate::output::TestRenderEmailTemplateOutput).
 pub mod test_render_email_template_output {
 
@@ -377,12 +391,6 @@ pub mod test_render_email_template_output {
         }
     }
 }
-impl TestRenderEmailTemplateOutput {
-    /// Creates a new builder-style object to manufacture [`TestRenderEmailTemplateOutput`](crate::output::TestRenderEmailTemplateOutput).
-    pub fn builder() -> crate::output::test_render_email_template_output::Builder {
-        crate::output::test_render_email_template_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -395,6 +403,13 @@ impl aws_http::request_id::RequestId for TagResourceOutput {
         self._request_id.as_deref()
     }
 }
+impl TagResourceOutput {
+    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
+    pub fn builder() -> crate::output::tag_resource_output::Builder {
+        crate::output::tag_resource_output::Builder::default()
+    }
+}
+
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
 
@@ -422,12 +437,6 @@ pub mod tag_resource_output {
         }
     }
 }
-impl TagResourceOutput {
-    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
-    pub fn builder() -> crate::output::tag_resource_output::Builder {
-        crate::output::tag_resource_output::Builder::default()
-    }
-}
 
 /// <p>A unique message ID that you receive when an email is accepted for sending.</p>
 #[non_exhaustive]
@@ -453,6 +462,13 @@ impl aws_http::request_id::RequestId for SendEmailOutput {
         self._request_id.as_deref()
     }
 }
+impl SendEmailOutput {
+    /// Creates a new builder-style object to manufacture [`SendEmailOutput`](crate::output::SendEmailOutput).
+    pub fn builder() -> crate::output::send_email_output::Builder {
+        crate::output::send_email_output::Builder::default()
+    }
+}
+
 /// See [`SendEmailOutput`](crate::output::SendEmailOutput).
 pub mod send_email_output {
 
@@ -496,12 +512,6 @@ pub mod send_email_output {
         }
     }
 }
-impl SendEmailOutput {
-    /// Creates a new builder-style object to manufacture [`SendEmailOutput`](crate::output::SendEmailOutput).
-    pub fn builder() -> crate::output::send_email_output::Builder {
-        crate::output::send_email_output::Builder::default()
-    }
-}
 
 /// <p>The following element is returned by the service.</p>
 #[non_exhaustive]
@@ -523,6 +533,13 @@ impl aws_http::request_id::RequestId for SendCustomVerificationEmailOutput {
         self._request_id.as_deref()
     }
 }
+impl SendCustomVerificationEmailOutput {
+    /// Creates a new builder-style object to manufacture [`SendCustomVerificationEmailOutput`](crate::output::SendCustomVerificationEmailOutput).
+    pub fn builder() -> crate::output::send_custom_verification_email_output::Builder {
+        crate::output::send_custom_verification_email_output::Builder::default()
+    }
+}
+
 /// See [`SendCustomVerificationEmailOutput`](crate::output::SendCustomVerificationEmailOutput).
 pub mod send_custom_verification_email_output {
 
@@ -562,12 +579,6 @@ pub mod send_custom_verification_email_output {
         }
     }
 }
-impl SendCustomVerificationEmailOutput {
-    /// Creates a new builder-style object to manufacture [`SendCustomVerificationEmailOutput`](crate::output::SendCustomVerificationEmailOutput).
-    pub fn builder() -> crate::output::send_custom_verification_email_output::Builder {
-        crate::output::send_custom_verification_email_output::Builder::default()
-    }
-}
 
 /// <p>The following data is returned in JSON format by the service.</p>
 #[non_exhaustive]
@@ -592,6 +603,13 @@ impl aws_http::request_id::RequestId for SendBulkEmailOutput {
         self._request_id.as_deref()
     }
 }
+impl SendBulkEmailOutput {
+    /// Creates a new builder-style object to manufacture [`SendBulkEmailOutput`](crate::output::SendBulkEmailOutput).
+    pub fn builder() -> crate::output::send_bulk_email_output::Builder {
+        crate::output::send_bulk_email_output::Builder::default()
+    }
+}
+
 /// See [`SendBulkEmailOutput`](crate::output::SendBulkEmailOutput).
 pub mod send_bulk_email_output {
 
@@ -644,12 +662,6 @@ pub mod send_bulk_email_output {
         }
     }
 }
-impl SendBulkEmailOutput {
-    /// Creates a new builder-style object to manufacture [`SendBulkEmailOutput`](crate::output::SendBulkEmailOutput).
-    pub fn builder() -> crate::output::send_bulk_email_output::Builder {
-        crate::output::send_bulk_email_output::Builder::default()
-    }
-}
 
 /// <p>An HTTP 200 response if the request succeeds, or an error message if the request fails.</p>
 #[non_exhaustive]
@@ -662,6 +674,13 @@ impl aws_http::request_id::RequestId for PutSuppressedDestinationOutput {
         self._request_id.as_deref()
     }
 }
+impl PutSuppressedDestinationOutput {
+    /// Creates a new builder-style object to manufacture [`PutSuppressedDestinationOutput`](crate::output::PutSuppressedDestinationOutput).
+    pub fn builder() -> crate::output::put_suppressed_destination_output::Builder {
+        crate::output::put_suppressed_destination_output::Builder::default()
+    }
+}
+
 /// See [`PutSuppressedDestinationOutput`](crate::output::PutSuppressedDestinationOutput).
 pub mod put_suppressed_destination_output {
 
@@ -689,12 +708,6 @@ pub mod put_suppressed_destination_output {
         }
     }
 }
-impl PutSuppressedDestinationOutput {
-    /// Creates a new builder-style object to manufacture [`PutSuppressedDestinationOutput`](crate::output::PutSuppressedDestinationOutput).
-    pub fn builder() -> crate::output::put_suppressed_destination_output::Builder {
-        crate::output::put_suppressed_destination_output::Builder::default()
-    }
-}
 
 /// <p>An HTTP 200 response if the request succeeds, or an error message if the request fails.</p>
 #[non_exhaustive]
@@ -707,6 +720,13 @@ impl aws_http::request_id::RequestId for PutEmailIdentityMailFromAttributesOutpu
         self._request_id.as_deref()
     }
 }
+impl PutEmailIdentityMailFromAttributesOutput {
+    /// Creates a new builder-style object to manufacture [`PutEmailIdentityMailFromAttributesOutput`](crate::output::PutEmailIdentityMailFromAttributesOutput).
+    pub fn builder() -> crate::output::put_email_identity_mail_from_attributes_output::Builder {
+        crate::output::put_email_identity_mail_from_attributes_output::Builder::default()
+    }
+}
+
 /// See [`PutEmailIdentityMailFromAttributesOutput`](crate::output::PutEmailIdentityMailFromAttributesOutput).
 pub mod put_email_identity_mail_from_attributes_output {
 
@@ -734,12 +754,6 @@ pub mod put_email_identity_mail_from_attributes_output {
         }
     }
 }
-impl PutEmailIdentityMailFromAttributesOutput {
-    /// Creates a new builder-style object to manufacture [`PutEmailIdentityMailFromAttributesOutput`](crate::output::PutEmailIdentityMailFromAttributesOutput).
-    pub fn builder() -> crate::output::put_email_identity_mail_from_attributes_output::Builder {
-        crate::output::put_email_identity_mail_from_attributes_output::Builder::default()
-    }
-}
 
 /// <p>An HTTP 200 response if the request succeeds, or an error message if the request fails.</p>
 #[non_exhaustive]
@@ -752,6 +766,13 @@ impl aws_http::request_id::RequestId for PutEmailIdentityFeedbackAttributesOutpu
         self._request_id.as_deref()
     }
 }
+impl PutEmailIdentityFeedbackAttributesOutput {
+    /// Creates a new builder-style object to manufacture [`PutEmailIdentityFeedbackAttributesOutput`](crate::output::PutEmailIdentityFeedbackAttributesOutput).
+    pub fn builder() -> crate::output::put_email_identity_feedback_attributes_output::Builder {
+        crate::output::put_email_identity_feedback_attributes_output::Builder::default()
+    }
+}
+
 /// See [`PutEmailIdentityFeedbackAttributesOutput`](crate::output::PutEmailIdentityFeedbackAttributesOutput).
 pub mod put_email_identity_feedback_attributes_output {
 
@@ -777,12 +798,6 @@ pub mod put_email_identity_feedback_attributes_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl PutEmailIdentityFeedbackAttributesOutput {
-    /// Creates a new builder-style object to manufacture [`PutEmailIdentityFeedbackAttributesOutput`](crate::output::PutEmailIdentityFeedbackAttributesOutput).
-    pub fn builder() -> crate::output::put_email_identity_feedback_attributes_output::Builder {
-        crate::output::put_email_identity_feedback_attributes_output::Builder::default()
     }
 }
 
@@ -836,6 +851,13 @@ impl aws_http::request_id::RequestId for PutEmailIdentityDkimSigningAttributesOu
         self._request_id.as_deref()
     }
 }
+impl PutEmailIdentityDkimSigningAttributesOutput {
+    /// Creates a new builder-style object to manufacture [`PutEmailIdentityDkimSigningAttributesOutput`](crate::output::PutEmailIdentityDkimSigningAttributesOutput).
+    pub fn builder() -> crate::output::put_email_identity_dkim_signing_attributes_output::Builder {
+        crate::output::put_email_identity_dkim_signing_attributes_output::Builder::default()
+    }
+}
+
 /// See [`PutEmailIdentityDkimSigningAttributesOutput`](crate::output::PutEmailIdentityDkimSigningAttributesOutput).
 pub mod put_email_identity_dkim_signing_attributes_output {
 
@@ -921,12 +943,6 @@ pub mod put_email_identity_dkim_signing_attributes_output {
         }
     }
 }
-impl PutEmailIdentityDkimSigningAttributesOutput {
-    /// Creates a new builder-style object to manufacture [`PutEmailIdentityDkimSigningAttributesOutput`](crate::output::PutEmailIdentityDkimSigningAttributesOutput).
-    pub fn builder() -> crate::output::put_email_identity_dkim_signing_attributes_output::Builder {
-        crate::output::put_email_identity_dkim_signing_attributes_output::Builder::default()
-    }
-}
 
 /// <p>An HTTP 200 response if the request succeeds, or an error message if the request fails.</p>
 #[non_exhaustive]
@@ -939,6 +955,13 @@ impl aws_http::request_id::RequestId for PutEmailIdentityDkimAttributesOutput {
         self._request_id.as_deref()
     }
 }
+impl PutEmailIdentityDkimAttributesOutput {
+    /// Creates a new builder-style object to manufacture [`PutEmailIdentityDkimAttributesOutput`](crate::output::PutEmailIdentityDkimAttributesOutput).
+    pub fn builder() -> crate::output::put_email_identity_dkim_attributes_output::Builder {
+        crate::output::put_email_identity_dkim_attributes_output::Builder::default()
+    }
+}
+
 /// See [`PutEmailIdentityDkimAttributesOutput`](crate::output::PutEmailIdentityDkimAttributesOutput).
 pub mod put_email_identity_dkim_attributes_output {
 
@@ -966,12 +989,6 @@ pub mod put_email_identity_dkim_attributes_output {
         }
     }
 }
-impl PutEmailIdentityDkimAttributesOutput {
-    /// Creates a new builder-style object to manufacture [`PutEmailIdentityDkimAttributesOutput`](crate::output::PutEmailIdentityDkimAttributesOutput).
-    pub fn builder() -> crate::output::put_email_identity_dkim_attributes_output::Builder {
-        crate::output::put_email_identity_dkim_attributes_output::Builder::default()
-    }
-}
 
 /// <p>If the action is successful, the service sends back an HTTP 200 response with an empty HTTP body.</p>
 #[non_exhaustive]
@@ -984,6 +1001,14 @@ impl aws_http::request_id::RequestId for PutEmailIdentityConfigurationSetAttribu
         self._request_id.as_deref()
     }
 }
+impl PutEmailIdentityConfigurationSetAttributesOutput {
+    /// Creates a new builder-style object to manufacture [`PutEmailIdentityConfigurationSetAttributesOutput`](crate::output::PutEmailIdentityConfigurationSetAttributesOutput).
+    pub fn builder(
+    ) -> crate::output::put_email_identity_configuration_set_attributes_output::Builder {
+        crate::output::put_email_identity_configuration_set_attributes_output::Builder::default()
+    }
+}
+
 /// See [`PutEmailIdentityConfigurationSetAttributesOutput`](crate::output::PutEmailIdentityConfigurationSetAttributesOutput).
 pub mod put_email_identity_configuration_set_attributes_output {
 
@@ -1011,13 +1036,6 @@ pub mod put_email_identity_configuration_set_attributes_output {
         }
     }
 }
-impl PutEmailIdentityConfigurationSetAttributesOutput {
-    /// Creates a new builder-style object to manufacture [`PutEmailIdentityConfigurationSetAttributesOutput`](crate::output::PutEmailIdentityConfigurationSetAttributesOutput).
-    pub fn builder(
-    ) -> crate::output::put_email_identity_configuration_set_attributes_output::Builder {
-        crate::output::put_email_identity_configuration_set_attributes_output::Builder::default()
-    }
-}
 
 /// <p>A response that indicates whether the Deliverability dashboard is enabled.</p>
 #[non_exhaustive]
@@ -1030,6 +1048,13 @@ impl aws_http::request_id::RequestId for PutDeliverabilityDashboardOptionOutput 
         self._request_id.as_deref()
     }
 }
+impl PutDeliverabilityDashboardOptionOutput {
+    /// Creates a new builder-style object to manufacture [`PutDeliverabilityDashboardOptionOutput`](crate::output::PutDeliverabilityDashboardOptionOutput).
+    pub fn builder() -> crate::output::put_deliverability_dashboard_option_output::Builder {
+        crate::output::put_deliverability_dashboard_option_output::Builder::default()
+    }
+}
+
 /// See [`PutDeliverabilityDashboardOptionOutput`](crate::output::PutDeliverabilityDashboardOptionOutput).
 pub mod put_deliverability_dashboard_option_output {
 
@@ -1057,12 +1082,6 @@ pub mod put_deliverability_dashboard_option_output {
         }
     }
 }
-impl PutDeliverabilityDashboardOptionOutput {
-    /// Creates a new builder-style object to manufacture [`PutDeliverabilityDashboardOptionOutput`](crate::output::PutDeliverabilityDashboardOptionOutput).
-    pub fn builder() -> crate::output::put_deliverability_dashboard_option_output::Builder {
-        crate::output::put_deliverability_dashboard_option_output::Builder::default()
-    }
-}
 
 /// <p>An HTTP 200 response if the request succeeds, or an error message if the request fails.</p>
 #[non_exhaustive]
@@ -1075,6 +1094,13 @@ impl aws_http::request_id::RequestId for PutDedicatedIpWarmupAttributesOutput {
         self._request_id.as_deref()
     }
 }
+impl PutDedicatedIpWarmupAttributesOutput {
+    /// Creates a new builder-style object to manufacture [`PutDedicatedIpWarmupAttributesOutput`](crate::output::PutDedicatedIpWarmupAttributesOutput).
+    pub fn builder() -> crate::output::put_dedicated_ip_warmup_attributes_output::Builder {
+        crate::output::put_dedicated_ip_warmup_attributes_output::Builder::default()
+    }
+}
+
 /// See [`PutDedicatedIpWarmupAttributesOutput`](crate::output::PutDedicatedIpWarmupAttributesOutput).
 pub mod put_dedicated_ip_warmup_attributes_output {
 
@@ -1102,12 +1128,6 @@ pub mod put_dedicated_ip_warmup_attributes_output {
         }
     }
 }
-impl PutDedicatedIpWarmupAttributesOutput {
-    /// Creates a new builder-style object to manufacture [`PutDedicatedIpWarmupAttributesOutput`](crate::output::PutDedicatedIpWarmupAttributesOutput).
-    pub fn builder() -> crate::output::put_dedicated_ip_warmup_attributes_output::Builder {
-        crate::output::put_dedicated_ip_warmup_attributes_output::Builder::default()
-    }
-}
 
 /// <p>An HTTP 200 response if the request succeeds, or an error message if the request fails.</p>
 #[non_exhaustive]
@@ -1120,6 +1140,13 @@ impl aws_http::request_id::RequestId for PutDedicatedIpInPoolOutput {
         self._request_id.as_deref()
     }
 }
+impl PutDedicatedIpInPoolOutput {
+    /// Creates a new builder-style object to manufacture [`PutDedicatedIpInPoolOutput`](crate::output::PutDedicatedIpInPoolOutput).
+    pub fn builder() -> crate::output::put_dedicated_ip_in_pool_output::Builder {
+        crate::output::put_dedicated_ip_in_pool_output::Builder::default()
+    }
+}
+
 /// See [`PutDedicatedIpInPoolOutput`](crate::output::PutDedicatedIpInPoolOutput).
 pub mod put_dedicated_ip_in_pool_output {
 
@@ -1147,12 +1174,6 @@ pub mod put_dedicated_ip_in_pool_output {
         }
     }
 }
-impl PutDedicatedIpInPoolOutput {
-    /// Creates a new builder-style object to manufacture [`PutDedicatedIpInPoolOutput`](crate::output::PutDedicatedIpInPoolOutput).
-    pub fn builder() -> crate::output::put_dedicated_ip_in_pool_output::Builder {
-        crate::output::put_dedicated_ip_in_pool_output::Builder::default()
-    }
-}
 
 /// <p>An HTTP 200 response if the request succeeds, or an error message if the request fails.</p>
 #[non_exhaustive]
@@ -1165,6 +1186,13 @@ impl aws_http::request_id::RequestId for PutConfigurationSetVdmOptionsOutput {
         self._request_id.as_deref()
     }
 }
+impl PutConfigurationSetVdmOptionsOutput {
+    /// Creates a new builder-style object to manufacture [`PutConfigurationSetVdmOptionsOutput`](crate::output::PutConfigurationSetVdmOptionsOutput).
+    pub fn builder() -> crate::output::put_configuration_set_vdm_options_output::Builder {
+        crate::output::put_configuration_set_vdm_options_output::Builder::default()
+    }
+}
+
 /// See [`PutConfigurationSetVdmOptionsOutput`](crate::output::PutConfigurationSetVdmOptionsOutput).
 pub mod put_configuration_set_vdm_options_output {
 
@@ -1192,12 +1220,6 @@ pub mod put_configuration_set_vdm_options_output {
         }
     }
 }
-impl PutConfigurationSetVdmOptionsOutput {
-    /// Creates a new builder-style object to manufacture [`PutConfigurationSetVdmOptionsOutput`](crate::output::PutConfigurationSetVdmOptionsOutput).
-    pub fn builder() -> crate::output::put_configuration_set_vdm_options_output::Builder {
-        crate::output::put_configuration_set_vdm_options_output::Builder::default()
-    }
-}
 
 /// <p>An HTTP 200 response if the request succeeds, or an error message if the request fails.</p>
 #[non_exhaustive]
@@ -1210,6 +1232,13 @@ impl aws_http::request_id::RequestId for PutConfigurationSetTrackingOptionsOutpu
         self._request_id.as_deref()
     }
 }
+impl PutConfigurationSetTrackingOptionsOutput {
+    /// Creates a new builder-style object to manufacture [`PutConfigurationSetTrackingOptionsOutput`](crate::output::PutConfigurationSetTrackingOptionsOutput).
+    pub fn builder() -> crate::output::put_configuration_set_tracking_options_output::Builder {
+        crate::output::put_configuration_set_tracking_options_output::Builder::default()
+    }
+}
+
 /// See [`PutConfigurationSetTrackingOptionsOutput`](crate::output::PutConfigurationSetTrackingOptionsOutput).
 pub mod put_configuration_set_tracking_options_output {
 
@@ -1237,12 +1266,6 @@ pub mod put_configuration_set_tracking_options_output {
         }
     }
 }
-impl PutConfigurationSetTrackingOptionsOutput {
-    /// Creates a new builder-style object to manufacture [`PutConfigurationSetTrackingOptionsOutput`](crate::output::PutConfigurationSetTrackingOptionsOutput).
-    pub fn builder() -> crate::output::put_configuration_set_tracking_options_output::Builder {
-        crate::output::put_configuration_set_tracking_options_output::Builder::default()
-    }
-}
 
 /// <p>An HTTP 200 response if the request succeeds, or an error message if the request fails.</p>
 #[non_exhaustive]
@@ -1255,6 +1278,13 @@ impl aws_http::request_id::RequestId for PutConfigurationSetSuppressionOptionsOu
         self._request_id.as_deref()
     }
 }
+impl PutConfigurationSetSuppressionOptionsOutput {
+    /// Creates a new builder-style object to manufacture [`PutConfigurationSetSuppressionOptionsOutput`](crate::output::PutConfigurationSetSuppressionOptionsOutput).
+    pub fn builder() -> crate::output::put_configuration_set_suppression_options_output::Builder {
+        crate::output::put_configuration_set_suppression_options_output::Builder::default()
+    }
+}
+
 /// See [`PutConfigurationSetSuppressionOptionsOutput`](crate::output::PutConfigurationSetSuppressionOptionsOutput).
 pub mod put_configuration_set_suppression_options_output {
 
@@ -1282,12 +1312,6 @@ pub mod put_configuration_set_suppression_options_output {
         }
     }
 }
-impl PutConfigurationSetSuppressionOptionsOutput {
-    /// Creates a new builder-style object to manufacture [`PutConfigurationSetSuppressionOptionsOutput`](crate::output::PutConfigurationSetSuppressionOptionsOutput).
-    pub fn builder() -> crate::output::put_configuration_set_suppression_options_output::Builder {
-        crate::output::put_configuration_set_suppression_options_output::Builder::default()
-    }
-}
 
 /// <p>An HTTP 200 response if the request succeeds, or an error message if the request fails.</p>
 #[non_exhaustive]
@@ -1300,6 +1324,13 @@ impl aws_http::request_id::RequestId for PutConfigurationSetSendingOptionsOutput
         self._request_id.as_deref()
     }
 }
+impl PutConfigurationSetSendingOptionsOutput {
+    /// Creates a new builder-style object to manufacture [`PutConfigurationSetSendingOptionsOutput`](crate::output::PutConfigurationSetSendingOptionsOutput).
+    pub fn builder() -> crate::output::put_configuration_set_sending_options_output::Builder {
+        crate::output::put_configuration_set_sending_options_output::Builder::default()
+    }
+}
+
 /// See [`PutConfigurationSetSendingOptionsOutput`](crate::output::PutConfigurationSetSendingOptionsOutput).
 pub mod put_configuration_set_sending_options_output {
 
@@ -1327,12 +1358,6 @@ pub mod put_configuration_set_sending_options_output {
         }
     }
 }
-impl PutConfigurationSetSendingOptionsOutput {
-    /// Creates a new builder-style object to manufacture [`PutConfigurationSetSendingOptionsOutput`](crate::output::PutConfigurationSetSendingOptionsOutput).
-    pub fn builder() -> crate::output::put_configuration_set_sending_options_output::Builder {
-        crate::output::put_configuration_set_sending_options_output::Builder::default()
-    }
-}
 
 /// <p>An HTTP 200 response if the request succeeds, or an error message if the request fails.</p>
 #[non_exhaustive]
@@ -1345,6 +1370,13 @@ impl aws_http::request_id::RequestId for PutConfigurationSetReputationOptionsOut
         self._request_id.as_deref()
     }
 }
+impl PutConfigurationSetReputationOptionsOutput {
+    /// Creates a new builder-style object to manufacture [`PutConfigurationSetReputationOptionsOutput`](crate::output::PutConfigurationSetReputationOptionsOutput).
+    pub fn builder() -> crate::output::put_configuration_set_reputation_options_output::Builder {
+        crate::output::put_configuration_set_reputation_options_output::Builder::default()
+    }
+}
+
 /// See [`PutConfigurationSetReputationOptionsOutput`](crate::output::PutConfigurationSetReputationOptionsOutput).
 pub mod put_configuration_set_reputation_options_output {
 
@@ -1372,12 +1404,6 @@ pub mod put_configuration_set_reputation_options_output {
         }
     }
 }
-impl PutConfigurationSetReputationOptionsOutput {
-    /// Creates a new builder-style object to manufacture [`PutConfigurationSetReputationOptionsOutput`](crate::output::PutConfigurationSetReputationOptionsOutput).
-    pub fn builder() -> crate::output::put_configuration_set_reputation_options_output::Builder {
-        crate::output::put_configuration_set_reputation_options_output::Builder::default()
-    }
-}
 
 /// <p>An HTTP 200 response if the request succeeds, or an error message if the request fails.</p>
 #[non_exhaustive]
@@ -1390,6 +1416,13 @@ impl aws_http::request_id::RequestId for PutConfigurationSetDeliveryOptionsOutpu
         self._request_id.as_deref()
     }
 }
+impl PutConfigurationSetDeliveryOptionsOutput {
+    /// Creates a new builder-style object to manufacture [`PutConfigurationSetDeliveryOptionsOutput`](crate::output::PutConfigurationSetDeliveryOptionsOutput).
+    pub fn builder() -> crate::output::put_configuration_set_delivery_options_output::Builder {
+        crate::output::put_configuration_set_delivery_options_output::Builder::default()
+    }
+}
+
 /// See [`PutConfigurationSetDeliveryOptionsOutput`](crate::output::PutConfigurationSetDeliveryOptionsOutput).
 pub mod put_configuration_set_delivery_options_output {
 
@@ -1417,12 +1450,6 @@ pub mod put_configuration_set_delivery_options_output {
         }
     }
 }
-impl PutConfigurationSetDeliveryOptionsOutput {
-    /// Creates a new builder-style object to manufacture [`PutConfigurationSetDeliveryOptionsOutput`](crate::output::PutConfigurationSetDeliveryOptionsOutput).
-    pub fn builder() -> crate::output::put_configuration_set_delivery_options_output::Builder {
-        crate::output::put_configuration_set_delivery_options_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1435,6 +1462,13 @@ impl aws_http::request_id::RequestId for PutAccountVdmAttributesOutput {
         self._request_id.as_deref()
     }
 }
+impl PutAccountVdmAttributesOutput {
+    /// Creates a new builder-style object to manufacture [`PutAccountVdmAttributesOutput`](crate::output::PutAccountVdmAttributesOutput).
+    pub fn builder() -> crate::output::put_account_vdm_attributes_output::Builder {
+        crate::output::put_account_vdm_attributes_output::Builder::default()
+    }
+}
+
 /// See [`PutAccountVdmAttributesOutput`](crate::output::PutAccountVdmAttributesOutput).
 pub mod put_account_vdm_attributes_output {
 
@@ -1462,12 +1496,6 @@ pub mod put_account_vdm_attributes_output {
         }
     }
 }
-impl PutAccountVdmAttributesOutput {
-    /// Creates a new builder-style object to manufacture [`PutAccountVdmAttributesOutput`](crate::output::PutAccountVdmAttributesOutput).
-    pub fn builder() -> crate::output::put_account_vdm_attributes_output::Builder {
-        crate::output::put_account_vdm_attributes_output::Builder::default()
-    }
-}
 
 /// <p>An HTTP 200 response if the request succeeds, or an error message if the request fails.</p>
 #[non_exhaustive]
@@ -1480,6 +1508,13 @@ impl aws_http::request_id::RequestId for PutAccountSuppressionAttributesOutput {
         self._request_id.as_deref()
     }
 }
+impl PutAccountSuppressionAttributesOutput {
+    /// Creates a new builder-style object to manufacture [`PutAccountSuppressionAttributesOutput`](crate::output::PutAccountSuppressionAttributesOutput).
+    pub fn builder() -> crate::output::put_account_suppression_attributes_output::Builder {
+        crate::output::put_account_suppression_attributes_output::Builder::default()
+    }
+}
+
 /// See [`PutAccountSuppressionAttributesOutput`](crate::output::PutAccountSuppressionAttributesOutput).
 pub mod put_account_suppression_attributes_output {
 
@@ -1507,12 +1542,6 @@ pub mod put_account_suppression_attributes_output {
         }
     }
 }
-impl PutAccountSuppressionAttributesOutput {
-    /// Creates a new builder-style object to manufacture [`PutAccountSuppressionAttributesOutput`](crate::output::PutAccountSuppressionAttributesOutput).
-    pub fn builder() -> crate::output::put_account_suppression_attributes_output::Builder {
-        crate::output::put_account_suppression_attributes_output::Builder::default()
-    }
-}
 
 /// <p>An HTTP 200 response if the request succeeds, or an error message if the request fails.</p>
 #[non_exhaustive]
@@ -1525,6 +1554,13 @@ impl aws_http::request_id::RequestId for PutAccountSendingAttributesOutput {
         self._request_id.as_deref()
     }
 }
+impl PutAccountSendingAttributesOutput {
+    /// Creates a new builder-style object to manufacture [`PutAccountSendingAttributesOutput`](crate::output::PutAccountSendingAttributesOutput).
+    pub fn builder() -> crate::output::put_account_sending_attributes_output::Builder {
+        crate::output::put_account_sending_attributes_output::Builder::default()
+    }
+}
+
 /// See [`PutAccountSendingAttributesOutput`](crate::output::PutAccountSendingAttributesOutput).
 pub mod put_account_sending_attributes_output {
 
@@ -1552,12 +1588,6 @@ pub mod put_account_sending_attributes_output {
         }
     }
 }
-impl PutAccountSendingAttributesOutput {
-    /// Creates a new builder-style object to manufacture [`PutAccountSendingAttributesOutput`](crate::output::PutAccountSendingAttributesOutput).
-    pub fn builder() -> crate::output::put_account_sending_attributes_output::Builder {
-        crate::output::put_account_sending_attributes_output::Builder::default()
-    }
-}
 
 /// <p>An HTTP 200 response if the request succeeds, or an error message if the request fails.</p>
 #[non_exhaustive]
@@ -1570,6 +1600,13 @@ impl aws_http::request_id::RequestId for PutAccountDetailsOutput {
         self._request_id.as_deref()
     }
 }
+impl PutAccountDetailsOutput {
+    /// Creates a new builder-style object to manufacture [`PutAccountDetailsOutput`](crate::output::PutAccountDetailsOutput).
+    pub fn builder() -> crate::output::put_account_details_output::Builder {
+        crate::output::put_account_details_output::Builder::default()
+    }
+}
+
 /// See [`PutAccountDetailsOutput`](crate::output::PutAccountDetailsOutput).
 pub mod put_account_details_output {
 
@@ -1597,12 +1634,6 @@ pub mod put_account_details_output {
         }
     }
 }
-impl PutAccountDetailsOutput {
-    /// Creates a new builder-style object to manufacture [`PutAccountDetailsOutput`](crate::output::PutAccountDetailsOutput).
-    pub fn builder() -> crate::output::put_account_details_output::Builder {
-        crate::output::put_account_details_output::Builder::default()
-    }
-}
 
 /// <p>An HTTP 200 response if the request succeeds, or an error message if the request fails.</p>
 #[non_exhaustive]
@@ -1615,6 +1646,13 @@ impl aws_http::request_id::RequestId for PutAccountDedicatedIpWarmupAttributesOu
         self._request_id.as_deref()
     }
 }
+impl PutAccountDedicatedIpWarmupAttributesOutput {
+    /// Creates a new builder-style object to manufacture [`PutAccountDedicatedIpWarmupAttributesOutput`](crate::output::PutAccountDedicatedIpWarmupAttributesOutput).
+    pub fn builder() -> crate::output::put_account_dedicated_ip_warmup_attributes_output::Builder {
+        crate::output::put_account_dedicated_ip_warmup_attributes_output::Builder::default()
+    }
+}
+
 /// See [`PutAccountDedicatedIpWarmupAttributesOutput`](crate::output::PutAccountDedicatedIpWarmupAttributesOutput).
 pub mod put_account_dedicated_ip_warmup_attributes_output {
 
@@ -1642,12 +1680,6 @@ pub mod put_account_dedicated_ip_warmup_attributes_output {
         }
     }
 }
-impl PutAccountDedicatedIpWarmupAttributesOutput {
-    /// Creates a new builder-style object to manufacture [`PutAccountDedicatedIpWarmupAttributesOutput`](crate::output::PutAccountDedicatedIpWarmupAttributesOutput).
-    pub fn builder() -> crate::output::put_account_dedicated_ip_warmup_attributes_output::Builder {
-        crate::output::put_account_dedicated_ip_warmup_attributes_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -1669,6 +1701,13 @@ impl aws_http::request_id::RequestId for ListTagsForResourceOutput {
         self._request_id.as_deref()
     }
 }
+impl ListTagsForResourceOutput {
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
+    pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
+        crate::output::list_tags_for_resource_output::Builder::default()
+    }
+}
+
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
 
@@ -1717,12 +1756,6 @@ pub mod list_tags_for_resource_output {
         }
     }
 }
-impl ListTagsForResourceOutput {
-    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
-    pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
-        crate::output::list_tags_for_resource_output::Builder::default()
-    }
-}
 
 /// <p>A list of suppressed email addresses.</p>
 #[non_exhaustive]
@@ -1754,6 +1787,13 @@ impl aws_http::request_id::RequestId for ListSuppressedDestinationsOutput {
         self._request_id.as_deref()
     }
 }
+impl ListSuppressedDestinationsOutput {
+    /// Creates a new builder-style object to manufacture [`ListSuppressedDestinationsOutput`](crate::output::ListSuppressedDestinationsOutput).
+    pub fn builder() -> crate::output::list_suppressed_destinations_output::Builder {
+        crate::output::list_suppressed_destinations_output::Builder::default()
+    }
+}
+
 /// See [`ListSuppressedDestinationsOutput`](crate::output::ListSuppressedDestinationsOutput).
 pub mod list_suppressed_destinations_output {
 
@@ -1818,12 +1858,6 @@ pub mod list_suppressed_destinations_output {
         }
     }
 }
-impl ListSuppressedDestinationsOutput {
-    /// Creates a new builder-style object to manufacture [`ListSuppressedDestinationsOutput`](crate::output::ListSuppressedDestinationsOutput).
-    pub fn builder() -> crate::output::list_suppressed_destinations_output::Builder {
-        crate::output::list_suppressed_destinations_output::Builder::default()
-    }
-}
 
 /// <p>Contains the response to your request to retrieve the list of recommendations for your account.</p>
 #[non_exhaustive]
@@ -1852,6 +1886,13 @@ impl aws_http::request_id::RequestId for ListRecommendationsOutput {
         self._request_id.as_deref()
     }
 }
+impl ListRecommendationsOutput {
+    /// Creates a new builder-style object to manufacture [`ListRecommendationsOutput`](crate::output::ListRecommendationsOutput).
+    pub fn builder() -> crate::output::list_recommendations_output::Builder {
+        crate::output::list_recommendations_output::Builder::default()
+    }
+}
+
 /// See [`ListRecommendationsOutput`](crate::output::ListRecommendationsOutput).
 pub mod list_recommendations_output {
 
@@ -1913,12 +1954,6 @@ pub mod list_recommendations_output {
         }
     }
 }
-impl ListRecommendationsOutput {
-    /// Creates a new builder-style object to manufacture [`ListRecommendationsOutput`](crate::output::ListRecommendationsOutput).
-    pub fn builder() -> crate::output::list_recommendations_output::Builder {
-        crate::output::list_recommendations_output::Builder::default()
-    }
-}
 
 /// <p>An HTTP 200 response if the request succeeds, or an error message if the request fails.</p>
 #[non_exhaustive]
@@ -1947,6 +1982,13 @@ impl aws_http::request_id::RequestId for ListImportJobsOutput {
         self._request_id.as_deref()
     }
 }
+impl ListImportJobsOutput {
+    /// Creates a new builder-style object to manufacture [`ListImportJobsOutput`](crate::output::ListImportJobsOutput).
+    pub fn builder() -> crate::output::list_import_jobs_output::Builder {
+        crate::output::list_import_jobs_output::Builder::default()
+    }
+}
+
 /// See [`ListImportJobsOutput`](crate::output::ListImportJobsOutput).
 pub mod list_import_jobs_output {
 
@@ -2007,12 +2049,6 @@ pub mod list_import_jobs_output {
         }
     }
 }
-impl ListImportJobsOutput {
-    /// Creates a new builder-style object to manufacture [`ListImportJobsOutput`](crate::output::ListImportJobsOutput).
-    pub fn builder() -> crate::output::list_import_jobs_output::Builder {
-        crate::output::list_import_jobs_output::Builder::default()
-    }
-}
 
 /// <p>The following elements are returned by the service.</p>
 #[non_exhaustive]
@@ -2043,6 +2079,13 @@ impl aws_http::request_id::RequestId for ListEmailTemplatesOutput {
         self._request_id.as_deref()
     }
 }
+impl ListEmailTemplatesOutput {
+    /// Creates a new builder-style object to manufacture [`ListEmailTemplatesOutput`](crate::output::ListEmailTemplatesOutput).
+    pub fn builder() -> crate::output::list_email_templates_output::Builder {
+        crate::output::list_email_templates_output::Builder::default()
+    }
+}
+
 /// See [`ListEmailTemplatesOutput`](crate::output::ListEmailTemplatesOutput).
 pub mod list_email_templates_output {
 
@@ -2104,12 +2147,6 @@ pub mod list_email_templates_output {
         }
     }
 }
-impl ListEmailTemplatesOutput {
-    /// Creates a new builder-style object to manufacture [`ListEmailTemplatesOutput`](crate::output::ListEmailTemplatesOutput).
-    pub fn builder() -> crate::output::list_email_templates_output::Builder {
-        crate::output::list_email_templates_output::Builder::default()
-    }
-}
 
 /// <p>A list of all of the identities that you've attempted to verify, regardless of whether or not those identities were successfully verified.</p>
 #[non_exhaustive]
@@ -2138,6 +2175,13 @@ impl aws_http::request_id::RequestId for ListEmailIdentitiesOutput {
         self._request_id.as_deref()
     }
 }
+impl ListEmailIdentitiesOutput {
+    /// Creates a new builder-style object to manufacture [`ListEmailIdentitiesOutput`](crate::output::ListEmailIdentitiesOutput).
+    pub fn builder() -> crate::output::list_email_identities_output::Builder {
+        crate::output::list_email_identities_output::Builder::default()
+    }
+}
+
 /// See [`ListEmailIdentitiesOutput`](crate::output::ListEmailIdentitiesOutput).
 pub mod list_email_identities_output {
 
@@ -2198,12 +2242,6 @@ pub mod list_email_identities_output {
         }
     }
 }
-impl ListEmailIdentitiesOutput {
-    /// Creates a new builder-style object to manufacture [`ListEmailIdentitiesOutput`](crate::output::ListEmailIdentitiesOutput).
-    pub fn builder() -> crate::output::list_email_identities_output::Builder {
-        crate::output::list_email_identities_output::Builder::default()
-    }
-}
 
 /// <p>An array of objects that provide deliverability data for all the campaigns that used a specific domain to send email during a specified time range. This data is available for a domain only if you enabled the Deliverability dashboard for the domain.</p>
 #[non_exhaustive]
@@ -2235,6 +2273,13 @@ impl aws_http::request_id::RequestId for ListDomainDeliverabilityCampaignsOutput
         self._request_id.as_deref()
     }
 }
+impl ListDomainDeliverabilityCampaignsOutput {
+    /// Creates a new builder-style object to manufacture [`ListDomainDeliverabilityCampaignsOutput`](crate::output::ListDomainDeliverabilityCampaignsOutput).
+    pub fn builder() -> crate::output::list_domain_deliverability_campaigns_output::Builder {
+        crate::output::list_domain_deliverability_campaigns_output::Builder::default()
+    }
+}
+
 /// See [`ListDomainDeliverabilityCampaignsOutput`](crate::output::ListDomainDeliverabilityCampaignsOutput).
 pub mod list_domain_deliverability_campaigns_output {
 
@@ -2299,12 +2344,6 @@ pub mod list_domain_deliverability_campaigns_output {
         }
     }
 }
-impl ListDomainDeliverabilityCampaignsOutput {
-    /// Creates a new builder-style object to manufacture [`ListDomainDeliverabilityCampaignsOutput`](crate::output::ListDomainDeliverabilityCampaignsOutput).
-    pub fn builder() -> crate::output::list_domain_deliverability_campaigns_output::Builder {
-        crate::output::list_domain_deliverability_campaigns_output::Builder::default()
-    }
-}
 
 /// <p>A list of the predictive inbox placement test reports that are available for your account, regardless of whether or not those tests are complete.</p>
 #[non_exhaustive]
@@ -2336,6 +2375,13 @@ impl aws_http::request_id::RequestId for ListDeliverabilityTestReportsOutput {
         self._request_id.as_deref()
     }
 }
+impl ListDeliverabilityTestReportsOutput {
+    /// Creates a new builder-style object to manufacture [`ListDeliverabilityTestReportsOutput`](crate::output::ListDeliverabilityTestReportsOutput).
+    pub fn builder() -> crate::output::list_deliverability_test_reports_output::Builder {
+        crate::output::list_deliverability_test_reports_output::Builder::default()
+    }
+}
+
 /// See [`ListDeliverabilityTestReportsOutput`](crate::output::ListDeliverabilityTestReportsOutput).
 pub mod list_deliverability_test_reports_output {
 
@@ -2400,12 +2446,6 @@ pub mod list_deliverability_test_reports_output {
         }
     }
 }
-impl ListDeliverabilityTestReportsOutput {
-    /// Creates a new builder-style object to manufacture [`ListDeliverabilityTestReportsOutput`](crate::output::ListDeliverabilityTestReportsOutput).
-    pub fn builder() -> crate::output::list_deliverability_test_reports_output::Builder {
-        crate::output::list_deliverability_test_reports_output::Builder::default()
-    }
-}
 
 /// <p>A list of dedicated IP pools.</p>
 #[non_exhaustive]
@@ -2434,6 +2474,13 @@ impl aws_http::request_id::RequestId for ListDedicatedIpPoolsOutput {
         self._request_id.as_deref()
     }
 }
+impl ListDedicatedIpPoolsOutput {
+    /// Creates a new builder-style object to manufacture [`ListDedicatedIpPoolsOutput`](crate::output::ListDedicatedIpPoolsOutput).
+    pub fn builder() -> crate::output::list_dedicated_ip_pools_output::Builder {
+        crate::output::list_dedicated_ip_pools_output::Builder::default()
+    }
+}
+
 /// See [`ListDedicatedIpPoolsOutput`](crate::output::ListDedicatedIpPoolsOutput).
 pub mod list_dedicated_ip_pools_output {
 
@@ -2494,12 +2541,6 @@ pub mod list_dedicated_ip_pools_output {
         }
     }
 }
-impl ListDedicatedIpPoolsOutput {
-    /// Creates a new builder-style object to manufacture [`ListDedicatedIpPoolsOutput`](crate::output::ListDedicatedIpPoolsOutput).
-    pub fn builder() -> crate::output::list_dedicated_ip_pools_output::Builder {
-        crate::output::list_dedicated_ip_pools_output::Builder::default()
-    }
-}
 
 /// <p>The following elements are returned by the service.</p>
 #[non_exhaustive]
@@ -2531,6 +2572,13 @@ impl aws_http::request_id::RequestId for ListCustomVerificationEmailTemplatesOut
         self._request_id.as_deref()
     }
 }
+impl ListCustomVerificationEmailTemplatesOutput {
+    /// Creates a new builder-style object to manufacture [`ListCustomVerificationEmailTemplatesOutput`](crate::output::ListCustomVerificationEmailTemplatesOutput).
+    pub fn builder() -> crate::output::list_custom_verification_email_templates_output::Builder {
+        crate::output::list_custom_verification_email_templates_output::Builder::default()
+    }
+}
+
 /// See [`ListCustomVerificationEmailTemplatesOutput`](crate::output::ListCustomVerificationEmailTemplatesOutput).
 pub mod list_custom_verification_email_templates_output {
 
@@ -2598,12 +2646,6 @@ pub mod list_custom_verification_email_templates_output {
         }
     }
 }
-impl ListCustomVerificationEmailTemplatesOutput {
-    /// Creates a new builder-style object to manufacture [`ListCustomVerificationEmailTemplatesOutput`](crate::output::ListCustomVerificationEmailTemplatesOutput).
-    pub fn builder() -> crate::output::list_custom_verification_email_templates_output::Builder {
-        crate::output::list_custom_verification_email_templates_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2632,6 +2674,13 @@ impl aws_http::request_id::RequestId for ListContactsOutput {
         self._request_id.as_deref()
     }
 }
+impl ListContactsOutput {
+    /// Creates a new builder-style object to manufacture [`ListContactsOutput`](crate::output::ListContactsOutput).
+    pub fn builder() -> crate::output::list_contacts_output::Builder {
+        crate::output::list_contacts_output::Builder::default()
+    }
+}
+
 /// See [`ListContactsOutput`](crate::output::ListContactsOutput).
 pub mod list_contacts_output {
 
@@ -2692,12 +2741,6 @@ pub mod list_contacts_output {
         }
     }
 }
-impl ListContactsOutput {
-    /// Creates a new builder-style object to manufacture [`ListContactsOutput`](crate::output::ListContactsOutput).
-    pub fn builder() -> crate::output::list_contacts_output::Builder {
-        crate::output::list_contacts_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -2726,6 +2769,13 @@ impl aws_http::request_id::RequestId for ListContactListsOutput {
         self._request_id.as_deref()
     }
 }
+impl ListContactListsOutput {
+    /// Creates a new builder-style object to manufacture [`ListContactListsOutput`](crate::output::ListContactListsOutput).
+    pub fn builder() -> crate::output::list_contact_lists_output::Builder {
+        crate::output::list_contact_lists_output::Builder::default()
+    }
+}
+
 /// See [`ListContactListsOutput`](crate::output::ListContactListsOutput).
 pub mod list_contact_lists_output {
 
@@ -2786,12 +2836,6 @@ pub mod list_contact_lists_output {
         }
     }
 }
-impl ListContactListsOutput {
-    /// Creates a new builder-style object to manufacture [`ListContactListsOutput`](crate::output::ListContactListsOutput).
-    pub fn builder() -> crate::output::list_contact_lists_output::Builder {
-        crate::output::list_contact_lists_output::Builder::default()
-    }
-}
 
 /// <p>A list of configuration sets in your Amazon SES account in the current Amazon Web Services Region.</p>
 #[non_exhaustive]
@@ -2820,6 +2864,13 @@ impl aws_http::request_id::RequestId for ListConfigurationSetsOutput {
         self._request_id.as_deref()
     }
 }
+impl ListConfigurationSetsOutput {
+    /// Creates a new builder-style object to manufacture [`ListConfigurationSetsOutput`](crate::output::ListConfigurationSetsOutput).
+    pub fn builder() -> crate::output::list_configuration_sets_output::Builder {
+        crate::output::list_configuration_sets_output::Builder::default()
+    }
+}
+
 /// See [`ListConfigurationSetsOutput`](crate::output::ListConfigurationSetsOutput).
 pub mod list_configuration_sets_output {
 
@@ -2880,12 +2931,6 @@ pub mod list_configuration_sets_output {
         }
     }
 }
-impl ListConfigurationSetsOutput {
-    /// Creates a new builder-style object to manufacture [`ListConfigurationSetsOutput`](crate::output::ListConfigurationSetsOutput).
-    pub fn builder() -> crate::output::list_configuration_sets_output::Builder {
-        crate::output::list_configuration_sets_output::Builder::default()
-    }
-}
 
 /// <p>Information about the suppressed email address.</p>
 #[non_exhaustive]
@@ -2909,6 +2954,13 @@ impl aws_http::request_id::RequestId for GetSuppressedDestinationOutput {
         self._request_id.as_deref()
     }
 }
+impl GetSuppressedDestinationOutput {
+    /// Creates a new builder-style object to manufacture [`GetSuppressedDestinationOutput`](crate::output::GetSuppressedDestinationOutput).
+    pub fn builder() -> crate::output::get_suppressed_destination_output::Builder {
+        crate::output::get_suppressed_destination_output::Builder::default()
+    }
+}
+
 /// See [`GetSuppressedDestinationOutput`](crate::output::GetSuppressedDestinationOutput).
 pub mod get_suppressed_destination_output {
 
@@ -2952,12 +3004,6 @@ pub mod get_suppressed_destination_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl GetSuppressedDestinationOutput {
-    /// Creates a new builder-style object to manufacture [`GetSuppressedDestinationOutput`](crate::output::GetSuppressedDestinationOutput).
-    pub fn builder() -> crate::output::get_suppressed_destination_output::Builder {
-        crate::output::get_suppressed_destination_output::Builder::default()
     }
 }
 
@@ -3037,6 +3083,13 @@ impl aws_http::request_id::RequestId for GetImportJobOutput {
         self._request_id.as_deref()
     }
 }
+impl GetImportJobOutput {
+    /// Creates a new builder-style object to manufacture [`GetImportJobOutput`](crate::output::GetImportJobOutput).
+    pub fn builder() -> crate::output::get_import_job_output::Builder {
+        crate::output::get_import_job_output::Builder::default()
+    }
+}
+
 /// See [`GetImportJobOutput`](crate::output::GetImportJobOutput).
 pub mod get_import_job_output {
 
@@ -3190,12 +3243,6 @@ pub mod get_import_job_output {
         }
     }
 }
-impl GetImportJobOutput {
-    /// Creates a new builder-style object to manufacture [`GetImportJobOutput`](crate::output::GetImportJobOutput).
-    pub fn builder() -> crate::output::get_import_job_output::Builder {
-        crate::output::get_import_job_output::Builder::default()
-    }
-}
 
 /// <p>The following element is returned by the service.</p>
 #[non_exhaustive]
@@ -3224,6 +3271,13 @@ impl aws_http::request_id::RequestId for GetEmailTemplateOutput {
         self._request_id.as_deref()
     }
 }
+impl GetEmailTemplateOutput {
+    /// Creates a new builder-style object to manufacture [`GetEmailTemplateOutput`](crate::output::GetEmailTemplateOutput).
+    pub fn builder() -> crate::output::get_email_template_output::Builder {
+        crate::output::get_email_template_output::Builder::default()
+    }
+}
+
 /// See [`GetEmailTemplateOutput`](crate::output::GetEmailTemplateOutput).
 pub mod get_email_template_output {
 
@@ -3281,12 +3335,6 @@ pub mod get_email_template_output {
         }
     }
 }
-impl GetEmailTemplateOutput {
-    /// Creates a new builder-style object to manufacture [`GetEmailTemplateOutput`](crate::output::GetEmailTemplateOutput).
-    pub fn builder() -> crate::output::get_email_template_output::Builder {
-        crate::output::get_email_template_output::Builder::default()
-    }
-}
 
 /// <p>Identity policies associated with email identity.</p>
 #[non_exhaustive]
@@ -3312,6 +3360,13 @@ impl aws_http::request_id::RequestId for GetEmailIdentityPoliciesOutput {
         self._request_id.as_deref()
     }
 }
+impl GetEmailIdentityPoliciesOutput {
+    /// Creates a new builder-style object to manufacture [`GetEmailIdentityPoliciesOutput`](crate::output::GetEmailIdentityPoliciesOutput).
+    pub fn builder() -> crate::output::get_email_identity_policies_output::Builder {
+        crate::output::get_email_identity_policies_output::Builder::default()
+    }
+}
+
 /// See [`GetEmailIdentityPoliciesOutput`](crate::output::GetEmailIdentityPoliciesOutput).
 pub mod get_email_identity_policies_output {
 
@@ -3366,12 +3421,6 @@ pub mod get_email_identity_policies_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl GetEmailIdentityPoliciesOutput {
-    /// Creates a new builder-style object to manufacture [`GetEmailIdentityPoliciesOutput`](crate::output::GetEmailIdentityPoliciesOutput).
-    pub fn builder() -> crate::output::get_email_identity_policies_output::Builder {
-        crate::output::get_email_identity_policies_output::Builder::default()
     }
 }
 
@@ -3473,6 +3522,13 @@ impl aws_http::request_id::RequestId for GetEmailIdentityOutput {
         self._request_id.as_deref()
     }
 }
+impl GetEmailIdentityOutput {
+    /// Creates a new builder-style object to manufacture [`GetEmailIdentityOutput`](crate::output::GetEmailIdentityOutput).
+    pub fn builder() -> crate::output::get_email_identity_output::Builder {
+        crate::output::get_email_identity_output::Builder::default()
+    }
+}
+
 /// See [`GetEmailIdentityOutput`](crate::output::GetEmailIdentityOutput).
 pub mod get_email_identity_output {
 
@@ -3667,12 +3723,6 @@ pub mod get_email_identity_output {
         }
     }
 }
-impl GetEmailIdentityOutput {
-    /// Creates a new builder-style object to manufacture [`GetEmailIdentityOutput`](crate::output::GetEmailIdentityOutput).
-    pub fn builder() -> crate::output::get_email_identity_output::Builder {
-        crate::output::get_email_identity_output::Builder::default()
-    }
-}
 
 /// <p>An object that includes statistics that are related to the domain that you specified.</p>
 #[non_exhaustive]
@@ -3701,6 +3751,13 @@ impl aws_http::request_id::RequestId for GetDomainStatisticsReportOutput {
         self._request_id.as_deref()
     }
 }
+impl GetDomainStatisticsReportOutput {
+    /// Creates a new builder-style object to manufacture [`GetDomainStatisticsReportOutput`](crate::output::GetDomainStatisticsReportOutput).
+    pub fn builder() -> crate::output::get_domain_statistics_report_output::Builder {
+        crate::output::get_domain_statistics_report_output::Builder::default()
+    }
+}
+
 /// See [`GetDomainStatisticsReportOutput`](crate::output::GetDomainStatisticsReportOutput).
 pub mod get_domain_statistics_report_output {
 
@@ -3764,12 +3821,6 @@ pub mod get_domain_statistics_report_output {
         }
     }
 }
-impl GetDomainStatisticsReportOutput {
-    /// Creates a new builder-style object to manufacture [`GetDomainStatisticsReportOutput`](crate::output::GetDomainStatisticsReportOutput).
-    pub fn builder() -> crate::output::get_domain_statistics_report_output::Builder {
-        crate::output::get_domain_statistics_report_output::Builder::default()
-    }
-}
 
 /// <p>An object that contains all the deliverability data for a specific campaign. This data is available for a campaign only if the campaign sent email by using a domain that the Deliverability dashboard is enabled for.</p>
 #[non_exhaustive]
@@ -3794,6 +3845,13 @@ impl aws_http::request_id::RequestId for GetDomainDeliverabilityCampaignOutput {
         self._request_id.as_deref()
     }
 }
+impl GetDomainDeliverabilityCampaignOutput {
+    /// Creates a new builder-style object to manufacture [`GetDomainDeliverabilityCampaignOutput`](crate::output::GetDomainDeliverabilityCampaignOutput).
+    pub fn builder() -> crate::output::get_domain_deliverability_campaign_output::Builder {
+        crate::output::get_domain_deliverability_campaign_output::Builder::default()
+    }
+}
+
 /// See [`GetDomainDeliverabilityCampaignOutput`](crate::output::GetDomainDeliverabilityCampaignOutput).
 pub mod get_domain_deliverability_campaign_output {
 
@@ -3838,12 +3896,6 @@ pub mod get_domain_deliverability_campaign_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl GetDomainDeliverabilityCampaignOutput {
-    /// Creates a new builder-style object to manufacture [`GetDomainDeliverabilityCampaignOutput`](crate::output::GetDomainDeliverabilityCampaignOutput).
-    pub fn builder() -> crate::output::get_domain_deliverability_campaign_output::Builder {
-        crate::output::get_domain_deliverability_campaign_output::Builder::default()
     }
 }
 
@@ -3897,6 +3949,13 @@ impl aws_http::request_id::RequestId for GetDeliverabilityTestReportOutput {
         self._request_id.as_deref()
     }
 }
+impl GetDeliverabilityTestReportOutput {
+    /// Creates a new builder-style object to manufacture [`GetDeliverabilityTestReportOutput`](crate::output::GetDeliverabilityTestReportOutput).
+    pub fn builder() -> crate::output::get_deliverability_test_report_output::Builder {
+        crate::output::get_deliverability_test_report_output::Builder::default()
+    }
+}
+
 /// See [`GetDeliverabilityTestReportOutput`](crate::output::GetDeliverabilityTestReportOutput).
 pub mod get_deliverability_test_report_output {
 
@@ -4012,12 +4071,6 @@ pub mod get_deliverability_test_report_output {
         }
     }
 }
-impl GetDeliverabilityTestReportOutput {
-    /// Creates a new builder-style object to manufacture [`GetDeliverabilityTestReportOutput`](crate::output::GetDeliverabilityTestReportOutput).
-    pub fn builder() -> crate::output::get_deliverability_test_report_output::Builder {
-        crate::output::get_deliverability_test_report_output::Builder::default()
-    }
-}
 
 /// <p>An object that shows the status of the Deliverability dashboard.</p>
 #[non_exhaustive]
@@ -4075,6 +4128,13 @@ impl aws_http::request_id::RequestId for GetDeliverabilityDashboardOptionsOutput
         self._request_id.as_deref()
     }
 }
+impl GetDeliverabilityDashboardOptionsOutput {
+    /// Creates a new builder-style object to manufacture [`GetDeliverabilityDashboardOptionsOutput`](crate::output::GetDeliverabilityDashboardOptionsOutput).
+    pub fn builder() -> crate::output::get_deliverability_dashboard_options_output::Builder {
+        crate::output::get_deliverability_dashboard_options_output::Builder::default()
+    }
+}
+
 /// See [`GetDeliverabilityDashboardOptionsOutput`](crate::output::GetDeliverabilityDashboardOptionsOutput).
 pub mod get_deliverability_dashboard_options_output {
 
@@ -4204,12 +4264,6 @@ pub mod get_deliverability_dashboard_options_output {
         }
     }
 }
-impl GetDeliverabilityDashboardOptionsOutput {
-    /// Creates a new builder-style object to manufacture [`GetDeliverabilityDashboardOptionsOutput`](crate::output::GetDeliverabilityDashboardOptionsOutput).
-    pub fn builder() -> crate::output::get_deliverability_dashboard_options_output::Builder {
-        crate::output::get_deliverability_dashboard_options_output::Builder::default()
-    }
-}
 
 /// <p>Information about the dedicated IP addresses that are associated with your Amazon Web Services account.</p>
 #[non_exhaustive]
@@ -4238,6 +4292,13 @@ impl aws_http::request_id::RequestId for GetDedicatedIpsOutput {
         self._request_id.as_deref()
     }
 }
+impl GetDedicatedIpsOutput {
+    /// Creates a new builder-style object to manufacture [`GetDedicatedIpsOutput`](crate::output::GetDedicatedIpsOutput).
+    pub fn builder() -> crate::output::get_dedicated_ips_output::Builder {
+        crate::output::get_dedicated_ips_output::Builder::default()
+    }
+}
+
 /// See [`GetDedicatedIpsOutput`](crate::output::GetDedicatedIpsOutput).
 pub mod get_dedicated_ips_output {
 
@@ -4298,12 +4359,6 @@ pub mod get_dedicated_ips_output {
         }
     }
 }
-impl GetDedicatedIpsOutput {
-    /// Creates a new builder-style object to manufacture [`GetDedicatedIpsOutput`](crate::output::GetDedicatedIpsOutput).
-    pub fn builder() -> crate::output::get_dedicated_ips_output::Builder {
-        crate::output::get_dedicated_ips_output::Builder::default()
-    }
-}
 
 /// <p>The following element is returned by the service.</p>
 #[non_exhaustive]
@@ -4325,6 +4380,13 @@ impl aws_http::request_id::RequestId for GetDedicatedIpPoolOutput {
         self._request_id.as_deref()
     }
 }
+impl GetDedicatedIpPoolOutput {
+    /// Creates a new builder-style object to manufacture [`GetDedicatedIpPoolOutput`](crate::output::GetDedicatedIpPoolOutput).
+    pub fn builder() -> crate::output::get_dedicated_ip_pool_output::Builder {
+        crate::output::get_dedicated_ip_pool_output::Builder::default()
+    }
+}
+
 /// See [`GetDedicatedIpPoolOutput`](crate::output::GetDedicatedIpPoolOutput).
 pub mod get_dedicated_ip_pool_output {
 
@@ -4367,12 +4429,6 @@ pub mod get_dedicated_ip_pool_output {
         }
     }
 }
-impl GetDedicatedIpPoolOutput {
-    /// Creates a new builder-style object to manufacture [`GetDedicatedIpPoolOutput`](crate::output::GetDedicatedIpPoolOutput).
-    pub fn builder() -> crate::output::get_dedicated_ip_pool_output::Builder {
-        crate::output::get_dedicated_ip_pool_output::Builder::default()
-    }
-}
 
 /// <p>Information about a dedicated IP address.</p>
 #[non_exhaustive]
@@ -4394,6 +4450,13 @@ impl aws_http::request_id::RequestId for GetDedicatedIpOutput {
         self._request_id.as_deref()
     }
 }
+impl GetDedicatedIpOutput {
+    /// Creates a new builder-style object to manufacture [`GetDedicatedIpOutput`](crate::output::GetDedicatedIpOutput).
+    pub fn builder() -> crate::output::get_dedicated_ip_output::Builder {
+        crate::output::get_dedicated_ip_output::Builder::default()
+    }
+}
+
 /// See [`GetDedicatedIpOutput`](crate::output::GetDedicatedIpOutput).
 pub mod get_dedicated_ip_output {
 
@@ -4434,12 +4497,6 @@ pub mod get_dedicated_ip_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl GetDedicatedIpOutput {
-    /// Creates a new builder-style object to manufacture [`GetDedicatedIpOutput`](crate::output::GetDedicatedIpOutput).
-    pub fn builder() -> crate::output::get_dedicated_ip_output::Builder {
-        crate::output::get_dedicated_ip_output::Builder::default()
     }
 }
 
@@ -4498,6 +4555,13 @@ impl aws_http::request_id::RequestId for GetCustomVerificationEmailTemplateOutpu
         self._request_id.as_deref()
     }
 }
+impl GetCustomVerificationEmailTemplateOutput {
+    /// Creates a new builder-style object to manufacture [`GetCustomVerificationEmailTemplateOutput`](crate::output::GetCustomVerificationEmailTemplateOutput).
+    pub fn builder() -> crate::output::get_custom_verification_email_template_output::Builder {
+        crate::output::get_custom_verification_email_template_output::Builder::default()
+    }
+}
+
 /// See [`GetCustomVerificationEmailTemplateOutput`](crate::output::GetCustomVerificationEmailTemplateOutput).
 pub mod get_custom_verification_email_template_output {
 
@@ -4615,12 +4679,6 @@ pub mod get_custom_verification_email_template_output {
         }
     }
 }
-impl GetCustomVerificationEmailTemplateOutput {
-    /// Creates a new builder-style object to manufacture [`GetCustomVerificationEmailTemplateOutput`](crate::output::GetCustomVerificationEmailTemplateOutput).
-    pub fn builder() -> crate::output::get_custom_verification_email_template_output::Builder {
-        crate::output::get_custom_verification_email_template_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -4677,6 +4735,13 @@ impl aws_http::request_id::RequestId for GetContactListOutput {
         self._request_id.as_deref()
     }
 }
+impl GetContactListOutput {
+    /// Creates a new builder-style object to manufacture [`GetContactListOutput`](crate::output::GetContactListOutput).
+    pub fn builder() -> crate::output::get_contact_list_output::Builder {
+        crate::output::get_contact_list_output::Builder::default()
+    }
+}
+
 /// See [`GetContactListOutput`](crate::output::GetContactListOutput).
 pub mod get_contact_list_output {
 
@@ -4803,12 +4868,6 @@ pub mod get_contact_list_output {
         }
     }
 }
-impl GetContactListOutput {
-    /// Creates a new builder-style object to manufacture [`GetContactListOutput`](crate::output::GetContactListOutput).
-    pub fn builder() -> crate::output::get_contact_list_output::Builder {
-        crate::output::get_contact_list_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -4882,6 +4941,13 @@ impl aws_http::request_id::RequestId for GetContactOutput {
         self._request_id.as_deref()
     }
 }
+impl GetContactOutput {
+    /// Creates a new builder-style object to manufacture [`GetContactOutput`](crate::output::GetContactOutput).
+    pub fn builder() -> crate::output::get_contact_output::Builder {
+        crate::output::get_contact_output::Builder::default()
+    }
+}
+
 /// See [`GetContactOutput`](crate::output::GetContactOutput).
 pub mod get_contact_output {
 
@@ -5040,12 +5106,6 @@ pub mod get_contact_output {
         }
     }
 }
-impl GetContactOutput {
-    /// Creates a new builder-style object to manufacture [`GetContactOutput`](crate::output::GetContactOutput).
-    pub fn builder() -> crate::output::get_contact_output::Builder {
-        crate::output::get_contact_output::Builder::default()
-    }
-}
 
 /// <p>Information about an event destination for a configuration set.</p>
 #[non_exhaustive]
@@ -5067,6 +5127,13 @@ impl aws_http::request_id::RequestId for GetConfigurationSetEventDestinationsOut
         self._request_id.as_deref()
     }
 }
+impl GetConfigurationSetEventDestinationsOutput {
+    /// Creates a new builder-style object to manufacture [`GetConfigurationSetEventDestinationsOutput`](crate::output::GetConfigurationSetEventDestinationsOutput).
+    pub fn builder() -> crate::output::get_configuration_set_event_destinations_output::Builder {
+        crate::output::get_configuration_set_event_destinations_output::Builder::default()
+    }
+}
+
 /// See [`GetConfigurationSetEventDestinationsOutput`](crate::output::GetConfigurationSetEventDestinationsOutput).
 pub mod get_configuration_set_event_destinations_output {
 
@@ -5114,12 +5181,6 @@ pub mod get_configuration_set_event_destinations_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl GetConfigurationSetEventDestinationsOutput {
-    /// Creates a new builder-style object to manufacture [`GetConfigurationSetEventDestinationsOutput`](crate::output::GetConfigurationSetEventDestinationsOutput).
-    pub fn builder() -> crate::output::get_configuration_set_event_destinations_output::Builder {
-        crate::output::get_configuration_set_event_destinations_output::Builder::default()
     }
 }
 
@@ -5192,6 +5253,13 @@ impl aws_http::request_id::RequestId for GetConfigurationSetOutput {
         self._request_id.as_deref()
     }
 }
+impl GetConfigurationSetOutput {
+    /// Creates a new builder-style object to manufacture [`GetConfigurationSetOutput`](crate::output::GetConfigurationSetOutput).
+    pub fn builder() -> crate::output::get_configuration_set_output::Builder {
+        crate::output::get_configuration_set_output::Builder::default()
+    }
+}
+
 /// See [`GetConfigurationSetOutput`](crate::output::GetConfigurationSetOutput).
 pub mod get_configuration_set_output {
 
@@ -5345,12 +5413,6 @@ pub mod get_configuration_set_output {
         }
     }
 }
-impl GetConfigurationSetOutput {
-    /// Creates a new builder-style object to manufacture [`GetConfigurationSetOutput`](crate::output::GetConfigurationSetOutput).
-    pub fn builder() -> crate::output::get_configuration_set_output::Builder {
-        crate::output::get_configuration_set_output::Builder::default()
-    }
-}
 
 /// <p>An object that contains information about blacklist events.</p>
 #[non_exhaustive]
@@ -5381,6 +5443,13 @@ impl aws_http::request_id::RequestId for GetBlacklistReportsOutput {
         self._request_id.as_deref()
     }
 }
+impl GetBlacklistReportsOutput {
+    /// Creates a new builder-style object to manufacture [`GetBlacklistReportsOutput`](crate::output::GetBlacklistReportsOutput).
+    pub fn builder() -> crate::output::get_blacklist_reports_output::Builder {
+        crate::output::get_blacklist_reports_output::Builder::default()
+    }
+}
+
 /// See [`GetBlacklistReportsOutput`](crate::output::GetBlacklistReportsOutput).
 pub mod get_blacklist_reports_output {
 
@@ -5441,12 +5510,6 @@ pub mod get_blacklist_reports_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl GetBlacklistReportsOutput {
-    /// Creates a new builder-style object to manufacture [`GetBlacklistReportsOutput`](crate::output::GetBlacklistReportsOutput).
-    pub fn builder() -> crate::output::get_blacklist_reports_output::Builder {
-        crate::output::get_blacklist_reports_output::Builder::default()
     }
 }
 
@@ -5535,6 +5598,13 @@ impl aws_http::request_id::RequestId for GetAccountOutput {
         self._request_id.as_deref()
     }
 }
+impl GetAccountOutput {
+    /// Creates a new builder-style object to manufacture [`GetAccountOutput`](crate::output::GetAccountOutput).
+    pub fn builder() -> crate::output::get_account_output::Builder {
+        crate::output::get_account_output::Builder::default()
+    }
+}
+
 /// See [`GetAccountOutput`](crate::output::GetAccountOutput).
 pub mod get_account_output {
 
@@ -5695,12 +5765,6 @@ pub mod get_account_output {
         }
     }
 }
-impl GetAccountOutput {
-    /// Creates a new builder-style object to manufacture [`GetAccountOutput`](crate::output::GetAccountOutput).
-    pub fn builder() -> crate::output::get_account_output::Builder {
-        crate::output::get_account_output::Builder::default()
-    }
-}
 
 /// <p>An HTTP 200 response if the request succeeds, or an error message if the request fails.</p>
 #[non_exhaustive]
@@ -5713,6 +5777,13 @@ impl aws_http::request_id::RequestId for DeleteSuppressedDestinationOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteSuppressedDestinationOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteSuppressedDestinationOutput`](crate::output::DeleteSuppressedDestinationOutput).
+    pub fn builder() -> crate::output::delete_suppressed_destination_output::Builder {
+        crate::output::delete_suppressed_destination_output::Builder::default()
+    }
+}
+
 /// See [`DeleteSuppressedDestinationOutput`](crate::output::DeleteSuppressedDestinationOutput).
 pub mod delete_suppressed_destination_output {
 
@@ -5740,12 +5811,6 @@ pub mod delete_suppressed_destination_output {
         }
     }
 }
-impl DeleteSuppressedDestinationOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteSuppressedDestinationOutput`](crate::output::DeleteSuppressedDestinationOutput).
-    pub fn builder() -> crate::output::delete_suppressed_destination_output::Builder {
-        crate::output::delete_suppressed_destination_output::Builder::default()
-    }
-}
 
 /// <p>If the action is successful, the service sends back an HTTP 200 response with an empty HTTP body.</p>
 #[non_exhaustive]
@@ -5758,6 +5823,13 @@ impl aws_http::request_id::RequestId for DeleteEmailTemplateOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteEmailTemplateOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteEmailTemplateOutput`](crate::output::DeleteEmailTemplateOutput).
+    pub fn builder() -> crate::output::delete_email_template_output::Builder {
+        crate::output::delete_email_template_output::Builder::default()
+    }
+}
+
 /// See [`DeleteEmailTemplateOutput`](crate::output::DeleteEmailTemplateOutput).
 pub mod delete_email_template_output {
 
@@ -5785,12 +5857,6 @@ pub mod delete_email_template_output {
         }
     }
 }
-impl DeleteEmailTemplateOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteEmailTemplateOutput`](crate::output::DeleteEmailTemplateOutput).
-    pub fn builder() -> crate::output::delete_email_template_output::Builder {
-        crate::output::delete_email_template_output::Builder::default()
-    }
-}
 
 /// <p>An HTTP 200 response if the request succeeds, or an error message if the request fails.</p>
 #[non_exhaustive]
@@ -5803,6 +5869,13 @@ impl aws_http::request_id::RequestId for DeleteEmailIdentityPolicyOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteEmailIdentityPolicyOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteEmailIdentityPolicyOutput`](crate::output::DeleteEmailIdentityPolicyOutput).
+    pub fn builder() -> crate::output::delete_email_identity_policy_output::Builder {
+        crate::output::delete_email_identity_policy_output::Builder::default()
+    }
+}
+
 /// See [`DeleteEmailIdentityPolicyOutput`](crate::output::DeleteEmailIdentityPolicyOutput).
 pub mod delete_email_identity_policy_output {
 
@@ -5830,12 +5903,6 @@ pub mod delete_email_identity_policy_output {
         }
     }
 }
-impl DeleteEmailIdentityPolicyOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteEmailIdentityPolicyOutput`](crate::output::DeleteEmailIdentityPolicyOutput).
-    pub fn builder() -> crate::output::delete_email_identity_policy_output::Builder {
-        crate::output::delete_email_identity_policy_output::Builder::default()
-    }
-}
 
 /// <p>An HTTP 200 response if the request succeeds, or an error message if the request fails.</p>
 #[non_exhaustive]
@@ -5848,6 +5915,13 @@ impl aws_http::request_id::RequestId for DeleteEmailIdentityOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteEmailIdentityOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteEmailIdentityOutput`](crate::output::DeleteEmailIdentityOutput).
+    pub fn builder() -> crate::output::delete_email_identity_output::Builder {
+        crate::output::delete_email_identity_output::Builder::default()
+    }
+}
+
 /// See [`DeleteEmailIdentityOutput`](crate::output::DeleteEmailIdentityOutput).
 pub mod delete_email_identity_output {
 
@@ -5875,12 +5949,6 @@ pub mod delete_email_identity_output {
         }
     }
 }
-impl DeleteEmailIdentityOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteEmailIdentityOutput`](crate::output::DeleteEmailIdentityOutput).
-    pub fn builder() -> crate::output::delete_email_identity_output::Builder {
-        crate::output::delete_email_identity_output::Builder::default()
-    }
-}
 
 /// <p>An HTTP 200 response if the request succeeds, or an error message if the request fails.</p>
 #[non_exhaustive]
@@ -5893,6 +5961,13 @@ impl aws_http::request_id::RequestId for DeleteDedicatedIpPoolOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteDedicatedIpPoolOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteDedicatedIpPoolOutput`](crate::output::DeleteDedicatedIpPoolOutput).
+    pub fn builder() -> crate::output::delete_dedicated_ip_pool_output::Builder {
+        crate::output::delete_dedicated_ip_pool_output::Builder::default()
+    }
+}
+
 /// See [`DeleteDedicatedIpPoolOutput`](crate::output::DeleteDedicatedIpPoolOutput).
 pub mod delete_dedicated_ip_pool_output {
 
@@ -5920,12 +5995,6 @@ pub mod delete_dedicated_ip_pool_output {
         }
     }
 }
-impl DeleteDedicatedIpPoolOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteDedicatedIpPoolOutput`](crate::output::DeleteDedicatedIpPoolOutput).
-    pub fn builder() -> crate::output::delete_dedicated_ip_pool_output::Builder {
-        crate::output::delete_dedicated_ip_pool_output::Builder::default()
-    }
-}
 
 /// <p>If the action is successful, the service sends back an HTTP 200 response with an empty HTTP body.</p>
 #[non_exhaustive]
@@ -5938,6 +6007,13 @@ impl aws_http::request_id::RequestId for DeleteCustomVerificationEmailTemplateOu
         self._request_id.as_deref()
     }
 }
+impl DeleteCustomVerificationEmailTemplateOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteCustomVerificationEmailTemplateOutput`](crate::output::DeleteCustomVerificationEmailTemplateOutput).
+    pub fn builder() -> crate::output::delete_custom_verification_email_template_output::Builder {
+        crate::output::delete_custom_verification_email_template_output::Builder::default()
+    }
+}
+
 /// See [`DeleteCustomVerificationEmailTemplateOutput`](crate::output::DeleteCustomVerificationEmailTemplateOutput).
 pub mod delete_custom_verification_email_template_output {
 
@@ -5965,12 +6041,6 @@ pub mod delete_custom_verification_email_template_output {
         }
     }
 }
-impl DeleteCustomVerificationEmailTemplateOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteCustomVerificationEmailTemplateOutput`](crate::output::DeleteCustomVerificationEmailTemplateOutput).
-    pub fn builder() -> crate::output::delete_custom_verification_email_template_output::Builder {
-        crate::output::delete_custom_verification_email_template_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -5983,6 +6053,13 @@ impl aws_http::request_id::RequestId for DeleteContactListOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteContactListOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteContactListOutput`](crate::output::DeleteContactListOutput).
+    pub fn builder() -> crate::output::delete_contact_list_output::Builder {
+        crate::output::delete_contact_list_output::Builder::default()
+    }
+}
+
 /// See [`DeleteContactListOutput`](crate::output::DeleteContactListOutput).
 pub mod delete_contact_list_output {
 
@@ -6010,12 +6087,6 @@ pub mod delete_contact_list_output {
         }
     }
 }
-impl DeleteContactListOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteContactListOutput`](crate::output::DeleteContactListOutput).
-    pub fn builder() -> crate::output::delete_contact_list_output::Builder {
-        crate::output::delete_contact_list_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -6028,6 +6099,13 @@ impl aws_http::request_id::RequestId for DeleteContactOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteContactOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteContactOutput`](crate::output::DeleteContactOutput).
+    pub fn builder() -> crate::output::delete_contact_output::Builder {
+        crate::output::delete_contact_output::Builder::default()
+    }
+}
+
 /// See [`DeleteContactOutput`](crate::output::DeleteContactOutput).
 pub mod delete_contact_output {
 
@@ -6055,12 +6133,6 @@ pub mod delete_contact_output {
         }
     }
 }
-impl DeleteContactOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteContactOutput`](crate::output::DeleteContactOutput).
-    pub fn builder() -> crate::output::delete_contact_output::Builder {
-        crate::output::delete_contact_output::Builder::default()
-    }
-}
 
 /// <p>An HTTP 200 response if the request succeeds, or an error message if the request fails.</p>
 #[non_exhaustive]
@@ -6073,6 +6145,13 @@ impl aws_http::request_id::RequestId for DeleteConfigurationSetEventDestinationO
         self._request_id.as_deref()
     }
 }
+impl DeleteConfigurationSetEventDestinationOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteConfigurationSetEventDestinationOutput`](crate::output::DeleteConfigurationSetEventDestinationOutput).
+    pub fn builder() -> crate::output::delete_configuration_set_event_destination_output::Builder {
+        crate::output::delete_configuration_set_event_destination_output::Builder::default()
+    }
+}
+
 /// See [`DeleteConfigurationSetEventDestinationOutput`](crate::output::DeleteConfigurationSetEventDestinationOutput).
 pub mod delete_configuration_set_event_destination_output {
 
@@ -6100,12 +6179,6 @@ pub mod delete_configuration_set_event_destination_output {
         }
     }
 }
-impl DeleteConfigurationSetEventDestinationOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteConfigurationSetEventDestinationOutput`](crate::output::DeleteConfigurationSetEventDestinationOutput).
-    pub fn builder() -> crate::output::delete_configuration_set_event_destination_output::Builder {
-        crate::output::delete_configuration_set_event_destination_output::Builder::default()
-    }
-}
 
 /// <p>An HTTP 200 response if the request succeeds, or an error message if the request fails.</p>
 #[non_exhaustive]
@@ -6118,6 +6191,13 @@ impl aws_http::request_id::RequestId for DeleteConfigurationSetOutput {
         self._request_id.as_deref()
     }
 }
+impl DeleteConfigurationSetOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteConfigurationSetOutput`](crate::output::DeleteConfigurationSetOutput).
+    pub fn builder() -> crate::output::delete_configuration_set_output::Builder {
+        crate::output::delete_configuration_set_output::Builder::default()
+    }
+}
+
 /// See [`DeleteConfigurationSetOutput`](crate::output::DeleteConfigurationSetOutput).
 pub mod delete_configuration_set_output {
 
@@ -6145,12 +6225,6 @@ pub mod delete_configuration_set_output {
         }
     }
 }
-impl DeleteConfigurationSetOutput {
-    /// Creates a new builder-style object to manufacture [`DeleteConfigurationSetOutput`](crate::output::DeleteConfigurationSetOutput).
-    pub fn builder() -> crate::output::delete_configuration_set_output::Builder {
-        crate::output::delete_configuration_set_output::Builder::default()
-    }
-}
 
 /// <p>An HTTP 200 response if the request succeeds, or an error message if the request fails.</p>
 #[non_exhaustive]
@@ -6172,6 +6246,13 @@ impl aws_http::request_id::RequestId for CreateImportJobOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateImportJobOutput {
+    /// Creates a new builder-style object to manufacture [`CreateImportJobOutput`](crate::output::CreateImportJobOutput).
+    pub fn builder() -> crate::output::create_import_job_output::Builder {
+        crate::output::create_import_job_output::Builder::default()
+    }
+}
+
 /// See [`CreateImportJobOutput`](crate::output::CreateImportJobOutput).
 pub mod create_import_job_output {
 
@@ -6211,12 +6292,6 @@ pub mod create_import_job_output {
         }
     }
 }
-impl CreateImportJobOutput {
-    /// Creates a new builder-style object to manufacture [`CreateImportJobOutput`](crate::output::CreateImportJobOutput).
-    pub fn builder() -> crate::output::create_import_job_output::Builder {
-        crate::output::create_import_job_output::Builder::default()
-    }
-}
 
 /// <p>If the action is successful, the service sends back an HTTP 200 response with an empty HTTP body.</p>
 #[non_exhaustive]
@@ -6229,6 +6304,13 @@ impl aws_http::request_id::RequestId for CreateEmailTemplateOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateEmailTemplateOutput {
+    /// Creates a new builder-style object to manufacture [`CreateEmailTemplateOutput`](crate::output::CreateEmailTemplateOutput).
+    pub fn builder() -> crate::output::create_email_template_output::Builder {
+        crate::output::create_email_template_output::Builder::default()
+    }
+}
+
 /// See [`CreateEmailTemplateOutput`](crate::output::CreateEmailTemplateOutput).
 pub mod create_email_template_output {
 
@@ -6256,12 +6338,6 @@ pub mod create_email_template_output {
         }
     }
 }
-impl CreateEmailTemplateOutput {
-    /// Creates a new builder-style object to manufacture [`CreateEmailTemplateOutput`](crate::output::CreateEmailTemplateOutput).
-    pub fn builder() -> crate::output::create_email_template_output::Builder {
-        crate::output::create_email_template_output::Builder::default()
-    }
-}
 
 /// <p>An HTTP 200 response if the request succeeds, or an error message if the request fails.</p>
 #[non_exhaustive]
@@ -6274,6 +6350,13 @@ impl aws_http::request_id::RequestId for CreateEmailIdentityPolicyOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateEmailIdentityPolicyOutput {
+    /// Creates a new builder-style object to manufacture [`CreateEmailIdentityPolicyOutput`](crate::output::CreateEmailIdentityPolicyOutput).
+    pub fn builder() -> crate::output::create_email_identity_policy_output::Builder {
+        crate::output::create_email_identity_policy_output::Builder::default()
+    }
+}
+
 /// See [`CreateEmailIdentityPolicyOutput`](crate::output::CreateEmailIdentityPolicyOutput).
 pub mod create_email_identity_policy_output {
 
@@ -6299,12 +6382,6 @@ pub mod create_email_identity_policy_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl CreateEmailIdentityPolicyOutput {
-    /// Creates a new builder-style object to manufacture [`CreateEmailIdentityPolicyOutput`](crate::output::CreateEmailIdentityPolicyOutput).
-    pub fn builder() -> crate::output::create_email_identity_policy_output::Builder {
-        crate::output::create_email_identity_policy_output::Builder::default()
     }
 }
 
@@ -6343,6 +6420,13 @@ impl aws_http::request_id::RequestId for CreateEmailIdentityOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateEmailIdentityOutput {
+    /// Creates a new builder-style object to manufacture [`CreateEmailIdentityOutput`](crate::output::CreateEmailIdentityOutput).
+    pub fn builder() -> crate::output::create_email_identity_output::Builder {
+        crate::output::create_email_identity_output::Builder::default()
+    }
+}
+
 /// See [`CreateEmailIdentityOutput`](crate::output::CreateEmailIdentityOutput).
 pub mod create_email_identity_output {
 
@@ -6412,12 +6496,6 @@ pub mod create_email_identity_output {
         }
     }
 }
-impl CreateEmailIdentityOutput {
-    /// Creates a new builder-style object to manufacture [`CreateEmailIdentityOutput`](crate::output::CreateEmailIdentityOutput).
-    pub fn builder() -> crate::output::create_email_identity_output::Builder {
-        crate::output::create_email_identity_output::Builder::default()
-    }
-}
 
 /// <p>Information about the predictive inbox placement test that you created.</p>
 #[non_exhaustive]
@@ -6448,6 +6526,13 @@ impl aws_http::request_id::RequestId for CreateDeliverabilityTestReportOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateDeliverabilityTestReportOutput {
+    /// Creates a new builder-style object to manufacture [`CreateDeliverabilityTestReportOutput`](crate::output::CreateDeliverabilityTestReportOutput).
+    pub fn builder() -> crate::output::create_deliverability_test_report_output::Builder {
+        crate::output::create_deliverability_test_report_output::Builder::default()
+    }
+}
+
 /// See [`CreateDeliverabilityTestReportOutput`](crate::output::CreateDeliverabilityTestReportOutput).
 pub mod create_deliverability_test_report_output {
 
@@ -6506,12 +6591,6 @@ pub mod create_deliverability_test_report_output {
         }
     }
 }
-impl CreateDeliverabilityTestReportOutput {
-    /// Creates a new builder-style object to manufacture [`CreateDeliverabilityTestReportOutput`](crate::output::CreateDeliverabilityTestReportOutput).
-    pub fn builder() -> crate::output::create_deliverability_test_report_output::Builder {
-        crate::output::create_deliverability_test_report_output::Builder::default()
-    }
-}
 
 /// <p>An HTTP 200 response if the request succeeds, or an error message if the request fails.</p>
 #[non_exhaustive]
@@ -6524,6 +6603,13 @@ impl aws_http::request_id::RequestId for CreateDedicatedIpPoolOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateDedicatedIpPoolOutput {
+    /// Creates a new builder-style object to manufacture [`CreateDedicatedIpPoolOutput`](crate::output::CreateDedicatedIpPoolOutput).
+    pub fn builder() -> crate::output::create_dedicated_ip_pool_output::Builder {
+        crate::output::create_dedicated_ip_pool_output::Builder::default()
+    }
+}
+
 /// See [`CreateDedicatedIpPoolOutput`](crate::output::CreateDedicatedIpPoolOutput).
 pub mod create_dedicated_ip_pool_output {
 
@@ -6551,12 +6637,6 @@ pub mod create_dedicated_ip_pool_output {
         }
     }
 }
-impl CreateDedicatedIpPoolOutput {
-    /// Creates a new builder-style object to manufacture [`CreateDedicatedIpPoolOutput`](crate::output::CreateDedicatedIpPoolOutput).
-    pub fn builder() -> crate::output::create_dedicated_ip_pool_output::Builder {
-        crate::output::create_dedicated_ip_pool_output::Builder::default()
-    }
-}
 
 /// <p>If the action is successful, the service sends back an HTTP 200 response with an empty HTTP body.</p>
 #[non_exhaustive]
@@ -6569,6 +6649,13 @@ impl aws_http::request_id::RequestId for CreateCustomVerificationEmailTemplateOu
         self._request_id.as_deref()
     }
 }
+impl CreateCustomVerificationEmailTemplateOutput {
+    /// Creates a new builder-style object to manufacture [`CreateCustomVerificationEmailTemplateOutput`](crate::output::CreateCustomVerificationEmailTemplateOutput).
+    pub fn builder() -> crate::output::create_custom_verification_email_template_output::Builder {
+        crate::output::create_custom_verification_email_template_output::Builder::default()
+    }
+}
+
 /// See [`CreateCustomVerificationEmailTemplateOutput`](crate::output::CreateCustomVerificationEmailTemplateOutput).
 pub mod create_custom_verification_email_template_output {
 
@@ -6596,12 +6683,6 @@ pub mod create_custom_verification_email_template_output {
         }
     }
 }
-impl CreateCustomVerificationEmailTemplateOutput {
-    /// Creates a new builder-style object to manufacture [`CreateCustomVerificationEmailTemplateOutput`](crate::output::CreateCustomVerificationEmailTemplateOutput).
-    pub fn builder() -> crate::output::create_custom_verification_email_template_output::Builder {
-        crate::output::create_custom_verification_email_template_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -6614,6 +6695,13 @@ impl aws_http::request_id::RequestId for CreateContactListOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateContactListOutput {
+    /// Creates a new builder-style object to manufacture [`CreateContactListOutput`](crate::output::CreateContactListOutput).
+    pub fn builder() -> crate::output::create_contact_list_output::Builder {
+        crate::output::create_contact_list_output::Builder::default()
+    }
+}
+
 /// See [`CreateContactListOutput`](crate::output::CreateContactListOutput).
 pub mod create_contact_list_output {
 
@@ -6641,12 +6729,6 @@ pub mod create_contact_list_output {
         }
     }
 }
-impl CreateContactListOutput {
-    /// Creates a new builder-style object to manufacture [`CreateContactListOutput`](crate::output::CreateContactListOutput).
-    pub fn builder() -> crate::output::create_contact_list_output::Builder {
-        crate::output::create_contact_list_output::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -6659,6 +6741,13 @@ impl aws_http::request_id::RequestId for CreateContactOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateContactOutput {
+    /// Creates a new builder-style object to manufacture [`CreateContactOutput`](crate::output::CreateContactOutput).
+    pub fn builder() -> crate::output::create_contact_output::Builder {
+        crate::output::create_contact_output::Builder::default()
+    }
+}
+
 /// See [`CreateContactOutput`](crate::output::CreateContactOutput).
 pub mod create_contact_output {
 
@@ -6686,12 +6775,6 @@ pub mod create_contact_output {
         }
     }
 }
-impl CreateContactOutput {
-    /// Creates a new builder-style object to manufacture [`CreateContactOutput`](crate::output::CreateContactOutput).
-    pub fn builder() -> crate::output::create_contact_output::Builder {
-        crate::output::create_contact_output::Builder::default()
-    }
-}
 
 /// <p>An HTTP 200 response if the request succeeds, or an error message if the request fails.</p>
 #[non_exhaustive]
@@ -6704,6 +6787,13 @@ impl aws_http::request_id::RequestId for CreateConfigurationSetEventDestinationO
         self._request_id.as_deref()
     }
 }
+impl CreateConfigurationSetEventDestinationOutput {
+    /// Creates a new builder-style object to manufacture [`CreateConfigurationSetEventDestinationOutput`](crate::output::CreateConfigurationSetEventDestinationOutput).
+    pub fn builder() -> crate::output::create_configuration_set_event_destination_output::Builder {
+        crate::output::create_configuration_set_event_destination_output::Builder::default()
+    }
+}
+
 /// See [`CreateConfigurationSetEventDestinationOutput`](crate::output::CreateConfigurationSetEventDestinationOutput).
 pub mod create_configuration_set_event_destination_output {
 
@@ -6731,12 +6821,6 @@ pub mod create_configuration_set_event_destination_output {
         }
     }
 }
-impl CreateConfigurationSetEventDestinationOutput {
-    /// Creates a new builder-style object to manufacture [`CreateConfigurationSetEventDestinationOutput`](crate::output::CreateConfigurationSetEventDestinationOutput).
-    pub fn builder() -> crate::output::create_configuration_set_event_destination_output::Builder {
-        crate::output::create_configuration_set_event_destination_output::Builder::default()
-    }
-}
 
 /// <p>An HTTP 200 response if the request succeeds, or an error message if the request fails.</p>
 #[non_exhaustive]
@@ -6749,6 +6833,13 @@ impl aws_http::request_id::RequestId for CreateConfigurationSetOutput {
         self._request_id.as_deref()
     }
 }
+impl CreateConfigurationSetOutput {
+    /// Creates a new builder-style object to manufacture [`CreateConfigurationSetOutput`](crate::output::CreateConfigurationSetOutput).
+    pub fn builder() -> crate::output::create_configuration_set_output::Builder {
+        crate::output::create_configuration_set_output::Builder::default()
+    }
+}
+
 /// See [`CreateConfigurationSetOutput`](crate::output::CreateConfigurationSetOutput).
 pub mod create_configuration_set_output {
 
@@ -6774,12 +6865,6 @@ pub mod create_configuration_set_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl CreateConfigurationSetOutput {
-    /// Creates a new builder-style object to manufacture [`CreateConfigurationSetOutput`](crate::output::CreateConfigurationSetOutput).
-    pub fn builder() -> crate::output::create_configuration_set_output::Builder {
-        crate::output::create_configuration_set_output::Builder::default()
     }
 }
 
@@ -6810,6 +6895,13 @@ impl aws_http::request_id::RequestId for BatchGetMetricDataOutput {
         self._request_id.as_deref()
     }
 }
+impl BatchGetMetricDataOutput {
+    /// Creates a new builder-style object to manufacture [`BatchGetMetricDataOutput`](crate::output::BatchGetMetricDataOutput).
+    pub fn builder() -> crate::output::batch_get_metric_data_output::Builder {
+        crate::output::batch_get_metric_data_output::Builder::default()
+    }
+}
+
 /// See [`BatchGetMetricDataOutput`](crate::output::BatchGetMetricDataOutput).
 pub mod batch_get_metric_data_output {
 
@@ -6877,11 +6969,5 @@ pub mod batch_get_metric_data_output {
                 _request_id: self._request_id,
             }
         }
-    }
-}
-impl BatchGetMetricDataOutput {
-    /// Creates a new builder-style object to manufacture [`BatchGetMetricDataOutput`](crate::output::BatchGetMetricDataOutput).
-    pub fn builder() -> crate::output::batch_get_metric_data_output::Builder {
-        crate::output::batch_get_metric_data_output::Builder::default()
     }
 }

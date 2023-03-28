@@ -4,7 +4,7 @@
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`get_routing_control_state`](crate::client::Client::get_routing_control_state).
 ///
-/// See [`crate::client::fluent_builders::GetRoutingControlState`] for more details about the operation.
+/// `ParseStrictResponse` impl for `GetRoutingControlState`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetRoutingControlState {
     _private: (),
@@ -39,7 +39,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetRoutingControlState {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_routing_controls`](crate::client::Client::list_routing_controls).
 ///
-/// See [`crate::client::fluent_builders::ListRoutingControls`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListRoutingControls`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListRoutingControls {
     _private: (),
@@ -74,7 +74,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListRoutingControls {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`update_routing_control_state`](crate::client::Client::update_routing_control_state).
 ///
-/// See [`crate::client::fluent_builders::UpdateRoutingControlState`] for more details about the operation.
+/// `ParseStrictResponse` impl for `UpdateRoutingControlState`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateRoutingControlState {
     _private: (),
@@ -109,7 +109,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateRoutingControlStat
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`update_routing_control_states`](crate::client::Client::update_routing_control_states).
 ///
-/// See [`crate::client::fluent_builders::UpdateRoutingControlStates`] for more details about the operation.
+/// `ParseStrictResponse` impl for `UpdateRoutingControlStates`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateRoutingControlStates {
     _private: (),

@@ -83,6 +83,13 @@ impl StageDetails {
         self.log_group.as_deref()
     }
 }
+impl StageDetails {
+    /// Creates a new builder-style object to manufacture [`StageDetails`](crate::model::StageDetails).
+    pub fn builder() -> crate::model::stage_details::Builder {
+        crate::model::stage_details::Builder::default()
+    }
+}
+
 /// See [`StageDetails`](crate::model::StageDetails).
 pub mod stage_details {
 
@@ -244,12 +251,6 @@ pub mod stage_details {
         }
     }
 }
-impl StageDetails {
-    /// Creates a new builder-style object to manufacture [`StageDetails`](crate::model::StageDetails).
-    pub fn builder() -> crate::model::stage_details::Builder {
-        crate::model::stage_details::Builder::default()
-    }
-}
 
 /// When writing a match expression against `StageState`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -387,6 +388,13 @@ impl SnapshotDetails {
         self.last_updated.as_ref()
     }
 }
+impl SnapshotDetails {
+    /// Creates a new builder-style object to manufacture [`SnapshotDetails`](crate::model::SnapshotDetails).
+    pub fn builder() -> crate::model::snapshot_details::Builder {
+        crate::model::snapshot_details::Builder::default()
+    }
+}
+
 /// See [`SnapshotDetails`](crate::model::SnapshotDetails).
 pub mod snapshot_details {
 
@@ -486,12 +494,6 @@ pub mod snapshot_details {
         }
     }
 }
-impl SnapshotDetails {
-    /// Creates a new builder-style object to manufacture [`SnapshotDetails`](crate::model::SnapshotDetails).
-    pub fn builder() -> crate::model::snapshot_details::Builder {
-        crate::model::snapshot_details::Builder::default()
-    }
-}
 
 /// <p>The configuration section.</p>
 #[non_exhaustive]
@@ -521,6 +523,13 @@ impl Section {
         self.attributes.as_ref()
     }
 }
+impl Section {
+    /// Creates a new builder-style object to manufacture [`Section`](crate::model::Section).
+    pub fn builder() -> crate::model::section::Builder {
+        crate::model::section::Builder::default()
+    }
+}
+
 /// See [`Section`](crate::model::Section).
 pub mod section {
 
@@ -576,12 +585,6 @@ pub mod section {
         }
     }
 }
-impl Section {
-    /// Creates a new builder-style object to manufacture [`Section`](crate::model::Section).
-    pub fn builder() -> crate::model::section::Builder {
-        crate::model::section::Builder::default()
-    }
-}
 
 /// <p>Details about the game configuration.</p>
 /// <p> The game configuration is organized into named sections, where the schema of each section is defined by an extension. The schema for these sections can be retrieved using the <code>GetExtensionVersion</code> operation. </p>
@@ -616,6 +619,13 @@ impl GameConfigurationDetails {
         self.last_updated.as_ref()
     }
 }
+impl GameConfigurationDetails {
+    /// Creates a new builder-style object to manufacture [`GameConfigurationDetails`](crate::model::GameConfigurationDetails).
+    pub fn builder() -> crate::model::game_configuration_details::Builder {
+        crate::model::game_configuration_details::Builder::default()
+    }
+}
+
 /// See [`GameConfigurationDetails`](crate::model::GameConfigurationDetails).
 pub mod game_configuration_details {
 
@@ -691,12 +701,6 @@ pub mod game_configuration_details {
         }
     }
 }
-impl GameConfigurationDetails {
-    /// Creates a new builder-style object to manufacture [`GameConfigurationDetails`](crate::model::GameConfigurationDetails).
-    pub fn builder() -> crate::model::game_configuration_details::Builder {
-        crate::model::game_configuration_details::Builder::default()
-    }
-}
 
 /// <p>A single modification to the configuration section.</p>
 #[non_exhaustive]
@@ -737,6 +741,13 @@ impl SectionModification {
         self.value.as_ref()
     }
 }
+impl SectionModification {
+    /// Creates a new builder-style object to manufacture [`SectionModification`](crate::model::SectionModification).
+    pub fn builder() -> crate::model::section_modification::Builder {
+        crate::model::section_modification::Builder::default()
+    }
+}
+
 /// See [`SectionModification`](crate::model::SectionModification).
 pub mod section_modification {
 
@@ -806,12 +817,6 @@ pub mod section_modification {
                 value: self.value,
             }
         }
-    }
-}
-impl SectionModification {
-    /// Creates a new builder-style object to manufacture [`SectionModification`](crate::model::SectionModification).
-    pub fn builder() -> crate::model::section_modification::Builder {
-        crate::model::section_modification::Builder::default()
     }
 }
 
@@ -977,6 +982,13 @@ impl GameDetails {
         self.tags.as_ref()
     }
 }
+impl GameDetails {
+    /// Creates a new builder-style object to manufacture [`GameDetails`](crate::model::GameDetails).
+    pub fn builder() -> crate::model::game_details::Builder {
+        crate::model::game_details::Builder::default()
+    }
+}
+
 /// See [`GameDetails`](crate::model::GameDetails).
 pub mod game_details {
 
@@ -1115,12 +1127,6 @@ pub mod game_details {
                 tags: self.tags,
             }
         }
-    }
-}
-impl GameDetails {
-    /// Creates a new builder-style object to manufacture [`GameDetails`](crate::model::GameDetails).
-    pub fn builder() -> crate::model::game_details::Builder {
-        crate::model::game_details::Builder::default()
     }
 }
 
@@ -1270,6 +1276,13 @@ impl StageDeploymentDetails {
         self.deployment_result.as_ref()
     }
 }
+impl StageDeploymentDetails {
+    /// Creates a new builder-style object to manufacture [`StageDeploymentDetails`](crate::model::StageDeploymentDetails).
+    pub fn builder() -> crate::model::stage_deployment_details::Builder {
+        crate::model::stage_deployment_details::Builder::default()
+    }
+}
+
 /// See [`StageDeploymentDetails`](crate::model::StageDeploymentDetails).
 pub mod stage_deployment_details {
 
@@ -1388,12 +1401,6 @@ pub mod stage_deployment_details {
         }
     }
 }
-impl StageDeploymentDetails {
-    /// Creates a new builder-style object to manufacture [`StageDeploymentDetails`](crate::model::StageDeploymentDetails).
-    pub fn builder() -> crate::model::stage_deployment_details::Builder {
-        crate::model::stage_deployment_details::Builder::default()
-    }
-}
 
 /// <p>The result of the deployment.</p>
 #[non_exhaustive]
@@ -1416,6 +1423,13 @@ impl DeploymentResult {
         self.message.as_deref()
     }
 }
+impl DeploymentResult {
+    /// Creates a new builder-style object to manufacture [`DeploymentResult`](crate::model::DeploymentResult).
+    pub fn builder() -> crate::model::deployment_result::Builder {
+        crate::model::deployment_result::Builder::default()
+    }
+}
+
 /// See [`DeploymentResult`](crate::model::DeploymentResult).
 pub mod deployment_result {
 
@@ -1457,12 +1471,6 @@ pub mod deployment_result {
                 message: self.message,
             }
         }
-    }
-}
-impl DeploymentResult {
-    /// Creates a new builder-style object to manufacture [`DeploymentResult`](crate::model::DeploymentResult).
-    pub fn builder() -> crate::model::deployment_result::Builder {
-        crate::model::deployment_result::Builder::default()
     }
 }
 
@@ -1781,6 +1789,13 @@ impl Generator {
         self.game_sdk_version.as_deref()
     }
 }
+impl Generator {
+    /// Creates a new builder-style object to manufacture [`Generator`](crate::model::Generator).
+    pub fn builder() -> crate::model::generator::Builder {
+        crate::model::generator::Builder::default()
+    }
+}
+
 /// See [`Generator`](crate::model::Generator).
 pub mod generator {
 
@@ -1841,12 +1856,6 @@ pub mod generator {
         }
     }
 }
-impl Generator {
-    /// Creates a new builder-style object to manufacture [`Generator`](crate::model::Generator).
-    pub fn builder() -> crate::model::generator::Builder {
-        crate::model::generator::Builder::default()
-    }
-}
 
 /// <p>The summary of the properties of a stage.</p>
 #[non_exhaustive]
@@ -1896,6 +1905,13 @@ impl StageSummary {
         self.tags.as_ref()
     }
 }
+impl StageSummary {
+    /// Creates a new builder-style object to manufacture [`StageSummary`](crate::model::StageSummary).
+    pub fn builder() -> crate::model::stage_summary::Builder {
+        crate::model::stage_summary::Builder::default()
+    }
+}
+
 /// See [`StageSummary`](crate::model::StageSummary).
 pub mod stage_summary {
 
@@ -1991,12 +2007,6 @@ pub mod stage_summary {
         }
     }
 }
-impl StageSummary {
-    /// Creates a new builder-style object to manufacture [`StageSummary`](crate::model::StageSummary).
-    pub fn builder() -> crate::model::stage_summary::Builder {
-        crate::model::stage_summary::Builder::default()
-    }
-}
 
 /// <p>The summary of the properties of a stage deployment.</p>
 #[non_exhaustive]
@@ -2047,6 +2057,13 @@ impl StageDeploymentSummary {
         self.deployment_result.as_ref()
     }
 }
+impl StageDeploymentSummary {
+    /// Creates a new builder-style object to manufacture [`StageDeploymentSummary`](crate::model::StageDeploymentSummary).
+    pub fn builder() -> crate::model::stage_deployment_summary::Builder {
+        crate::model::stage_deployment_summary::Builder::default()
+    }
+}
+
 /// See [`StageDeploymentSummary`](crate::model::StageDeploymentSummary).
 pub mod stage_deployment_summary {
 
@@ -2150,12 +2167,6 @@ pub mod stage_deployment_summary {
         }
     }
 }
-impl StageDeploymentSummary {
-    /// Creates a new builder-style object to manufacture [`StageDeploymentSummary`](crate::model::StageDeploymentSummary).
-    pub fn builder() -> crate::model::stage_deployment_summary::Builder {
-        crate::model::stage_deployment_summary::Builder::default()
-    }
-}
 
 /// <p>The summary of the properties of a snapshot.</p>
 #[non_exhaustive]
@@ -2192,6 +2203,13 @@ impl SnapshotSummary {
         self.last_updated.as_ref()
     }
 }
+impl SnapshotSummary {
+    /// Creates a new builder-style object to manufacture [`SnapshotSummary`](crate::model::SnapshotSummary).
+    pub fn builder() -> crate::model::snapshot_summary::Builder {
+        crate::model::snapshot_summary::Builder::default()
+    }
+}
+
 /// See [`SnapshotSummary`](crate::model::SnapshotSummary).
 pub mod snapshot_summary {
 
@@ -2262,12 +2280,6 @@ pub mod snapshot_summary {
         }
     }
 }
-impl SnapshotSummary {
-    /// Creates a new builder-style object to manufacture [`SnapshotSummary`](crate::model::SnapshotSummary).
-    pub fn builder() -> crate::model::snapshot_summary::Builder {
-        crate::model::snapshot_summary::Builder::default()
-    }
-}
 
 /// <p>Details about a generated code job.</p>
 #[non_exhaustive]
@@ -2313,6 +2325,13 @@ impl GeneratedCodeJobDetails {
         self.generated_code_job_id.as_deref()
     }
 }
+impl GeneratedCodeJobDetails {
+    /// Creates a new builder-style object to manufacture [`GeneratedCodeJobDetails`](crate::model::GeneratedCodeJobDetails).
+    pub fn builder() -> crate::model::generated_code_job_details::Builder {
+        crate::model::generated_code_job_details::Builder::default()
+    }
+}
+
 /// See [`GeneratedCodeJobDetails`](crate::model::GeneratedCodeJobDetails).
 pub mod generated_code_job_details {
 
@@ -2398,12 +2417,6 @@ pub mod generated_code_job_details {
                 generated_code_job_id: self.generated_code_job_id,
             }
         }
-    }
-}
-impl GeneratedCodeJobDetails {
-    /// Creates a new builder-style object to manufacture [`GeneratedCodeJobDetails`](crate::model::GeneratedCodeJobDetails).
-    pub fn builder() -> crate::model::generated_code_job_details::Builder {
-        crate::model::generated_code_job_details::Builder::default()
     }
 }
 
@@ -2548,6 +2561,13 @@ impl GameSummary {
         self.tags.as_ref()
     }
 }
+impl GameSummary {
+    /// Creates a new builder-style object to manufacture [`GameSummary`](crate::model::GameSummary).
+    pub fn builder() -> crate::model::game_summary::Builder {
+        crate::model::game_summary::Builder::default()
+    }
+}
+
 /// See [`GameSummary`](crate::model::GameSummary).
 pub mod game_summary {
 
@@ -2629,12 +2649,6 @@ pub mod game_summary {
         }
     }
 }
-impl GameSummary {
-    /// Creates a new builder-style object to manufacture [`GameSummary`](crate::model::GameSummary).
-    pub fn builder() -> crate::model::game_summary::Builder {
-        crate::model::game_summary::Builder::default()
-    }
-}
 
 /// <p>Details about the extension version.</p>
 #[non_exhaustive]
@@ -2671,6 +2685,13 @@ impl ExtensionVersionDetails {
         self.version.as_deref()
     }
 }
+impl ExtensionVersionDetails {
+    /// Creates a new builder-style object to manufacture [`ExtensionVersionDetails`](crate::model::ExtensionVersionDetails).
+    pub fn builder() -> crate::model::extension_version_details::Builder {
+        crate::model::extension_version_details::Builder::default()
+    }
+}
+
 /// See [`ExtensionVersionDetails`](crate::model::ExtensionVersionDetails).
 pub mod extension_version_details {
 
@@ -2735,12 +2756,6 @@ pub mod extension_version_details {
         }
     }
 }
-impl ExtensionVersionDetails {
-    /// Creates a new builder-style object to manufacture [`ExtensionVersionDetails`](crate::model::ExtensionVersionDetails).
-    pub fn builder() -> crate::model::extension_version_details::Builder {
-        crate::model::extension_version_details::Builder::default()
-    }
-}
 
 /// <p>Details about the extension.</p>
 #[non_exhaustive]
@@ -2770,6 +2785,13 @@ impl ExtensionDetails {
         self.description.as_deref()
     }
 }
+impl ExtensionDetails {
+    /// Creates a new builder-style object to manufacture [`ExtensionDetails`](crate::model::ExtensionDetails).
+    pub fn builder() -> crate::model::extension_details::Builder {
+        crate::model::extension_details::Builder::default()
+    }
+}
+
 /// See [`ExtensionDetails`](crate::model::ExtensionDetails).
 pub mod extension_details {
 
@@ -2822,12 +2844,6 @@ pub mod extension_details {
         }
     }
 }
-impl ExtensionDetails {
-    /// Creates a new builder-style object to manufacture [`ExtensionDetails`](crate::model::ExtensionDetails).
-    pub fn builder() -> crate::model::extension_details::Builder {
-        crate::model::extension_details::Builder::default()
-    }
-}
 
 /// <p>The source used to import configuration sections.</p>
 #[non_exhaustive]
@@ -2843,6 +2859,13 @@ impl ImportGameConfigurationSource {
         self.file.as_ref()
     }
 }
+impl ImportGameConfigurationSource {
+    /// Creates a new builder-style object to manufacture [`ImportGameConfigurationSource`](crate::model::ImportGameConfigurationSource).
+    pub fn builder() -> crate::model::import_game_configuration_source::Builder {
+        crate::model::import_game_configuration_source::Builder::default()
+    }
+}
+
 /// See [`ImportGameConfigurationSource`](crate::model::ImportGameConfigurationSource).
 pub mod import_game_configuration_source {
 
@@ -2869,12 +2892,6 @@ pub mod import_game_configuration_source {
         }
     }
 }
-impl ImportGameConfigurationSource {
-    /// Creates a new builder-style object to manufacture [`ImportGameConfigurationSource`](crate::model::ImportGameConfigurationSource).
-    pub fn builder() -> crate::model::import_game_configuration_source::Builder {
-        crate::model::import_game_configuration_source::Builder::default()
-    }
-}
 
 /// <p>Details about a WebSocket connection.</p>
 #[non_exhaustive]
@@ -2897,6 +2914,13 @@ impl Connection {
         self.created.as_ref()
     }
 }
+impl Connection {
+    /// Creates a new builder-style object to manufacture [`Connection`](crate::model::Connection).
+    pub fn builder() -> crate::model::connection::Builder {
+        crate::model::connection::Builder::default()
+    }
+}
+
 /// See [`Connection`](crate::model::Connection).
 pub mod connection {
 
@@ -2938,11 +2962,5 @@ pub mod connection {
                 created: self.created,
             }
         }
-    }
-}
-impl Connection {
-    /// Creates a new builder-style object to manufacture [`Connection`](crate::model::Connection).
-    pub fn builder() -> crate::model::connection::Builder {
-        crate::model::connection::Builder::default()
     }
 }

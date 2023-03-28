@@ -28,6 +28,13 @@ impl PosixProfile {
         self.secondary_gids.as_deref()
     }
 }
+impl PosixProfile {
+    /// Creates a new builder-style object to manufacture [`PosixProfile`](crate::model::PosixProfile).
+    pub fn builder() -> crate::model::posix_profile::Builder {
+        crate::model::posix_profile::Builder::default()
+    }
+}
+
 /// See [`PosixProfile`](crate::model::PosixProfile).
 pub mod posix_profile {
 
@@ -89,12 +96,6 @@ pub mod posix_profile {
         }
     }
 }
-impl PosixProfile {
-    /// Creates a new builder-style object to manufacture [`PosixProfile`](crate::model::PosixProfile).
-    pub fn builder() -> crate::model::posix_profile::Builder {
-        crate::model::posix_profile::Builder::default()
-    }
-}
 
 /// <p>Represents an object that contains entries and targets for <code>HomeDirectoryMappings</code>.</p>
 /// <p>The following is an <code>Entry</code> and <code>Target</code> pair example for <code>chroot</code>.</p>
@@ -119,6 +120,13 @@ impl HomeDirectoryMapEntry {
         self.target.as_deref()
     }
 }
+impl HomeDirectoryMapEntry {
+    /// Creates a new builder-style object to manufacture [`HomeDirectoryMapEntry`](crate::model::HomeDirectoryMapEntry).
+    pub fn builder() -> crate::model::home_directory_map_entry::Builder {
+        crate::model::home_directory_map_entry::Builder::default()
+    }
+}
+
 /// See [`HomeDirectoryMapEntry`](crate::model::HomeDirectoryMapEntry).
 pub mod home_directory_map_entry {
 
@@ -157,12 +165,6 @@ pub mod home_directory_map_entry {
                 target: self.target,
             }
         }
-    }
-}
-impl HomeDirectoryMapEntry {
-    /// Creates a new builder-style object to manufacture [`HomeDirectoryMapEntry`](crate::model::HomeDirectoryMapEntry).
-    pub fn builder() -> crate::model::home_directory_map_entry::Builder {
-        crate::model::home_directory_map_entry::Builder::default()
     }
 }
 
@@ -285,6 +287,13 @@ impl WorkflowDetails {
         self.on_partial_upload.as_deref()
     }
 }
+impl WorkflowDetails {
+    /// Creates a new builder-style object to manufacture [`WorkflowDetails`](crate::model::WorkflowDetails).
+    pub fn builder() -> crate::model::workflow_details::Builder {
+        crate::model::workflow_details::Builder::default()
+    }
+}
+
 /// See [`WorkflowDetails`](crate::model::WorkflowDetails).
 pub mod workflow_details {
 
@@ -350,12 +359,6 @@ pub mod workflow_details {
         }
     }
 }
-impl WorkflowDetails {
-    /// Creates a new builder-style object to manufacture [`WorkflowDetails`](crate::model::WorkflowDetails).
-    pub fn builder() -> crate::model::workflow_details::Builder {
-        crate::model::workflow_details::Builder::default()
-    }
-}
 
 /// <p>Specifies the workflow ID for the workflow to assign and the execution role that's used for executing the workflow.</p>
 /// <p>In additon to a workflow to execute when a file is uploaded completely, <code>WorkflowDeatails</code> can also contain a workflow ID (and execution role) for a workflow to execute on partial upload. A partial upload occurs when a file is open when the session disconnects.</p>
@@ -379,6 +382,13 @@ impl WorkflowDetail {
         self.execution_role.as_deref()
     }
 }
+impl WorkflowDetail {
+    /// Creates a new builder-style object to manufacture [`WorkflowDetail`](crate::model::WorkflowDetail).
+    pub fn builder() -> crate::model::workflow_detail::Builder {
+        crate::model::workflow_detail::Builder::default()
+    }
+}
+
 /// See [`WorkflowDetail`](crate::model::WorkflowDetail).
 pub mod workflow_detail {
 
@@ -420,12 +430,6 @@ pub mod workflow_detail {
                 execution_role: self.execution_role,
             }
         }
-    }
-}
-impl WorkflowDetail {
-    /// Creates a new builder-style object to manufacture [`WorkflowDetail`](crate::model::WorkflowDetail).
-    pub fn builder() -> crate::model::workflow_detail::Builder {
-        crate::model::workflow_detail::Builder::default()
     }
 }
 
@@ -564,6 +568,13 @@ impl IdentityProviderDetails {
         self.function.as_deref()
     }
 }
+impl IdentityProviderDetails {
+    /// Creates a new builder-style object to manufacture [`IdentityProviderDetails`](crate::model::IdentityProviderDetails).
+    pub fn builder() -> crate::model::identity_provider_details::Builder {
+        crate::model::identity_provider_details::Builder::default()
+    }
+}
+
 /// See [`IdentityProviderDetails`](crate::model::IdentityProviderDetails).
 pub mod identity_provider_details {
 
@@ -629,12 +640,6 @@ pub mod identity_provider_details {
                 function: self.function,
             }
         }
-    }
-}
-impl IdentityProviderDetails {
-    /// Creates a new builder-style object to manufacture [`IdentityProviderDetails`](crate::model::IdentityProviderDetails).
-    pub fn builder() -> crate::model::identity_provider_details::Builder {
-        crate::model::identity_provider_details::Builder::default()
     }
 }
 
@@ -802,6 +807,13 @@ impl EndpointDetails {
         self.security_group_ids.as_deref()
     }
 }
+impl EndpointDetails {
+    /// Creates a new builder-style object to manufacture [`EndpointDetails`](crate::model::EndpointDetails).
+    pub fn builder() -> crate::model::endpoint_details::Builder {
+        crate::model::endpoint_details::Builder::default()
+    }
+}
+
 /// See [`EndpointDetails`](crate::model::EndpointDetails).
 pub mod endpoint_details {
 
@@ -932,12 +944,6 @@ pub mod endpoint_details {
         }
     }
 }
-impl EndpointDetails {
-    /// Creates a new builder-style object to manufacture [`EndpointDetails`](crate::model::EndpointDetails).
-    pub fn builder() -> crate::model::endpoint_details::Builder {
-        crate::model::endpoint_details::Builder::default()
-    }
-}
 
 /// <p> The protocol settings that are configured for your server. </p>
 #[non_exhaustive]
@@ -1010,6 +1016,13 @@ impl ProtocolDetails {
         self.as2_transports.as_deref()
     }
 }
+impl ProtocolDetails {
+    /// Creates a new builder-style object to manufacture [`ProtocolDetails`](crate::model::ProtocolDetails).
+    pub fn builder() -> crate::model::protocol_details::Builder {
+        crate::model::protocol_details::Builder::default()
+    }
+}
+
 /// See [`ProtocolDetails`](crate::model::ProtocolDetails).
 pub mod protocol_details {
 
@@ -1125,12 +1138,6 @@ pub mod protocol_details {
                 as2_transports: self.as2_transports,
             }
         }
-    }
-}
-impl ProtocolDetails {
-    /// Creates a new builder-style object to manufacture [`ProtocolDetails`](crate::model::ProtocolDetails).
-    pub fn builder() -> crate::model::protocol_details::Builder {
-        crate::model::protocol_details::Builder::default()
     }
 }
 
@@ -1481,6 +1488,13 @@ impl As2ConnectorConfig {
         self.mdn_response.as_ref()
     }
 }
+impl As2ConnectorConfig {
+    /// Creates a new builder-style object to manufacture [`As2ConnectorConfig`](crate::model::As2ConnectorConfig).
+    pub fn builder() -> crate::model::as2_connector_config::Builder {
+        crate::model::as2_connector_config::Builder::default()
+    }
+}
+
 /// See [`As2ConnectorConfig`](crate::model::As2ConnectorConfig).
 pub mod as2_connector_config {
 
@@ -1627,12 +1641,6 @@ pub mod as2_connector_config {
                 mdn_response: self.mdn_response,
             }
         }
-    }
-}
-impl As2ConnectorConfig {
-    /// Creates a new builder-style object to manufacture [`As2ConnectorConfig`](crate::model::As2ConnectorConfig).
-    pub fn builder() -> crate::model::as2_connector_config::Builder {
-        crate::model::as2_connector_config::Builder::default()
     }
 }
 
@@ -2244,6 +2252,13 @@ impl Tag {
         self.value.as_deref()
     }
 }
+impl Tag {
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
+    pub fn builder() -> crate::model::tag::Builder {
+        crate::model::tag::Builder::default()
+    }
+}
+
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
 
@@ -2282,12 +2297,6 @@ pub mod tag {
                 value: self.value,
             }
         }
-    }
-}
-impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
-    pub fn builder() -> crate::model::tag::Builder {
-        crate::model::tag::Builder::default()
     }
 }
 
@@ -2409,6 +2418,13 @@ impl ListedWorkflow {
         self.arn.as_deref()
     }
 }
+impl ListedWorkflow {
+    /// Creates a new builder-style object to manufacture [`ListedWorkflow`](crate::model::ListedWorkflow).
+    pub fn builder() -> crate::model::listed_workflow::Builder {
+        crate::model::listed_workflow::Builder::default()
+    }
+}
+
 /// See [`ListedWorkflow`](crate::model::ListedWorkflow).
 pub mod listed_workflow {
 
@@ -2459,12 +2475,6 @@ pub mod listed_workflow {
                 arn: self.arn,
             }
         }
-    }
-}
-impl ListedWorkflow {
-    /// Creates a new builder-style object to manufacture [`ListedWorkflow`](crate::model::ListedWorkflow).
-    pub fn builder() -> crate::model::listed_workflow::Builder {
-        crate::model::listed_workflow::Builder::default()
     }
 }
 
@@ -2525,6 +2535,13 @@ impl ListedUser {
         self.user_name.as_deref()
     }
 }
+impl ListedUser {
+    /// Creates a new builder-style object to manufacture [`ListedUser`](crate::model::ListedUser).
+    pub fn builder() -> crate::model::listed_user::Builder {
+        crate::model::listed_user::Builder::default()
+    }
+}
+
 /// See [`ListedUser`](crate::model::ListedUser).
 pub mod listed_user {
 
@@ -2627,12 +2644,6 @@ pub mod listed_user {
         }
     }
 }
-impl ListedUser {
-    /// Creates a new builder-style object to manufacture [`ListedUser`](crate::model::ListedUser).
-    pub fn builder() -> crate::model::listed_user::Builder {
-        crate::model::listed_user::Builder::default()
-    }
-}
 
 /// <p>Returns properties of a file transfer protocol-enabled server that was specified.</p>
 #[non_exhaustive]
@@ -2707,6 +2718,13 @@ impl ListedServer {
         self.user_count
     }
 }
+impl ListedServer {
+    /// Creates a new builder-style object to manufacture [`ListedServer`](crate::model::ListedServer).
+    pub fn builder() -> crate::model::listed_server::Builder {
+        crate::model::listed_server::Builder::default()
+    }
+}
+
 /// See [`ListedServer`](crate::model::ListedServer).
 pub mod listed_server {
 
@@ -2831,12 +2849,6 @@ pub mod listed_server {
                 user_count: self.user_count,
             }
         }
-    }
-}
-impl ListedServer {
-    /// Creates a new builder-style object to manufacture [`ListedServer`](crate::model::ListedServer).
-    pub fn builder() -> crate::model::listed_server::Builder {
-        crate::model::listed_server::Builder::default()
     }
 }
 
@@ -3204,6 +3216,13 @@ impl ListedProfile {
         self.profile_type.as_ref()
     }
 }
+impl ListedProfile {
+    /// Creates a new builder-style object to manufacture [`ListedProfile`](crate::model::ListedProfile).
+    pub fn builder() -> crate::model::listed_profile::Builder {
+        crate::model::listed_profile::Builder::default()
+    }
+}
+
 /// See [`ListedProfile`](crate::model::ListedProfile).
 pub mod listed_profile {
 
@@ -3269,12 +3288,6 @@ pub mod listed_profile {
                 profile_type: self.profile_type,
             }
         }
-    }
-}
-impl ListedProfile {
-    /// Creates a new builder-style object to manufacture [`ListedProfile`](crate::model::ListedProfile).
-    pub fn builder() -> crate::model::listed_profile::Builder {
-        crate::model::listed_profile::Builder::default()
     }
 }
 
@@ -3431,6 +3444,13 @@ impl ListedHostKey {
         self.date_imported.as_ref()
     }
 }
+impl ListedHostKey {
+    /// Creates a new builder-style object to manufacture [`ListedHostKey`](crate::model::ListedHostKey).
+    pub fn builder() -> crate::model::listed_host_key::Builder {
+        crate::model::listed_host_key::Builder::default()
+    }
+}
+
 /// See [`ListedHostKey`](crate::model::ListedHostKey).
 pub mod listed_host_key {
 
@@ -3536,12 +3556,6 @@ pub mod listed_host_key {
         }
     }
 }
-impl ListedHostKey {
-    /// Creates a new builder-style object to manufacture [`ListedHostKey`](crate::model::ListedHostKey).
-    pub fn builder() -> crate::model::listed_host_key::Builder {
-        crate::model::listed_host_key::Builder::default()
-    }
-}
 
 /// <p>Returns properties of the execution that is specified.</p>
 #[non_exhaustive]
@@ -3578,6 +3592,13 @@ impl ListedExecution {
         self.status.as_ref()
     }
 }
+impl ListedExecution {
+    /// Creates a new builder-style object to manufacture [`ListedExecution`](crate::model::ListedExecution).
+    pub fn builder() -> crate::model::listed_execution::Builder {
+        crate::model::listed_execution::Builder::default()
+    }
+}
+
 /// See [`ListedExecution`](crate::model::ListedExecution).
 pub mod listed_execution {
 
@@ -3649,12 +3670,6 @@ pub mod listed_execution {
                 status: self.status,
             }
         }
-    }
-}
-impl ListedExecution {
-    /// Creates a new builder-style object to manufacture [`ListedExecution`](crate::model::ListedExecution).
-    pub fn builder() -> crate::model::listed_execution::Builder {
-        crate::model::listed_execution::Builder::default()
     }
 }
 
@@ -3777,6 +3792,13 @@ impl ServiceMetadata {
         self.user_details.as_ref()
     }
 }
+impl ServiceMetadata {
+    /// Creates a new builder-style object to manufacture [`ServiceMetadata`](crate::model::ServiceMetadata).
+    pub fn builder() -> crate::model::service_metadata::Builder {
+        crate::model::service_metadata::Builder::default()
+    }
+}
+
 /// See [`ServiceMetadata`](crate::model::ServiceMetadata).
 pub mod service_metadata {
 
@@ -3808,12 +3830,6 @@ pub mod service_metadata {
         }
     }
 }
-impl ServiceMetadata {
-    /// Creates a new builder-style object to manufacture [`ServiceMetadata`](crate::model::ServiceMetadata).
-    pub fn builder() -> crate::model::service_metadata::Builder {
-        crate::model::service_metadata::Builder::default()
-    }
-}
 
 /// <p>Specifies the user name, server ID, and session ID for a workflow.</p>
 #[non_exhaustive]
@@ -3843,6 +3859,13 @@ impl UserDetails {
         self.session_id.as_deref()
     }
 }
+impl UserDetails {
+    /// Creates a new builder-style object to manufacture [`UserDetails`](crate::model::UserDetails).
+    pub fn builder() -> crate::model::user_details::Builder {
+        crate::model::user_details::Builder::default()
+    }
+}
+
 /// See [`UserDetails`](crate::model::UserDetails).
 pub mod user_details {
 
@@ -3895,12 +3918,6 @@ pub mod user_details {
         }
     }
 }
-impl UserDetails {
-    /// Creates a new builder-style object to manufacture [`UserDetails`](crate::model::UserDetails).
-    pub fn builder() -> crate::model::user_details::Builder {
-        crate::model::user_details::Builder::default()
-    }
-}
 
 /// <p>Specifies the Amazon S3 or EFS file details to be used in the step.</p>
 #[non_exhaustive]
@@ -3923,6 +3940,13 @@ impl FileLocation {
         self.efs_file_location.as_ref()
     }
 }
+impl FileLocation {
+    /// Creates a new builder-style object to manufacture [`FileLocation`](crate::model::FileLocation).
+    pub fn builder() -> crate::model::file_location::Builder {
+        crate::model::file_location::Builder::default()
+    }
+}
+
 /// See [`FileLocation`](crate::model::FileLocation).
 pub mod file_location {
 
@@ -3969,12 +3993,6 @@ pub mod file_location {
         }
     }
 }
-impl FileLocation {
-    /// Creates a new builder-style object to manufacture [`FileLocation`](crate::model::FileLocation).
-    pub fn builder() -> crate::model::file_location::Builder {
-        crate::model::file_location::Builder::default()
-    }
-}
 
 /// <p>Reserved for future use.</p>
 /// <p> </p>
@@ -3998,6 +4016,13 @@ impl EfsFileLocation {
         self.path.as_deref()
     }
 }
+impl EfsFileLocation {
+    /// Creates a new builder-style object to manufacture [`EfsFileLocation`](crate::model::EfsFileLocation).
+    pub fn builder() -> crate::model::efs_file_location::Builder {
+        crate::model::efs_file_location::Builder::default()
+    }
+}
+
 /// See [`EfsFileLocation`](crate::model::EfsFileLocation).
 pub mod efs_file_location {
 
@@ -4041,12 +4066,6 @@ pub mod efs_file_location {
         }
     }
 }
-impl EfsFileLocation {
-    /// Creates a new builder-style object to manufacture [`EfsFileLocation`](crate::model::EfsFileLocation).
-    pub fn builder() -> crate::model::efs_file_location::Builder {
-        crate::model::efs_file_location::Builder::default()
-    }
-}
 
 /// <p>Specifies the details for the file location for the file that's being used in the workflow. Only applicable if you are using S3 storage.</p>
 #[non_exhaustive]
@@ -4083,6 +4102,13 @@ impl S3FileLocation {
         self.etag.as_deref()
     }
 }
+impl S3FileLocation {
+    /// Creates a new builder-style object to manufacture [`S3FileLocation`](crate::model::S3FileLocation).
+    pub fn builder() -> crate::model::s3_file_location::Builder {
+        crate::model::s3_file_location::Builder::default()
+    }
+}
+
 /// See [`S3FileLocation`](crate::model::S3FileLocation).
 pub mod s3_file_location {
 
@@ -4147,12 +4173,6 @@ pub mod s3_file_location {
         }
     }
 }
-impl S3FileLocation {
-    /// Creates a new builder-style object to manufacture [`S3FileLocation`](crate::model::S3FileLocation).
-    pub fn builder() -> crate::model::s3_file_location::Builder {
-        crate::model::s3_file_location::Builder::default()
-    }
-}
 
 /// <p>Returns details of the connector that is specified.</p>
 #[non_exhaustive]
@@ -4182,6 +4202,13 @@ impl ListedConnector {
         self.url.as_deref()
     }
 }
+impl ListedConnector {
+    /// Creates a new builder-style object to manufacture [`ListedConnector`](crate::model::ListedConnector).
+    pub fn builder() -> crate::model::listed_connector::Builder {
+        crate::model::listed_connector::Builder::default()
+    }
+}
+
 /// See [`ListedConnector`](crate::model::ListedConnector).
 pub mod listed_connector {
 
@@ -4232,12 +4259,6 @@ pub mod listed_connector {
                 url: self.url,
             }
         }
-    }
-}
-impl ListedConnector {
-    /// Creates a new builder-style object to manufacture [`ListedConnector`](crate::model::ListedConnector).
-    pub fn builder() -> crate::model::listed_connector::Builder {
-        crate::model::listed_connector::Builder::default()
     }
 }
 
@@ -4304,6 +4325,13 @@ impl ListedCertificate {
         self.description.as_deref()
     }
 }
+impl ListedCertificate {
+    /// Creates a new builder-style object to manufacture [`ListedCertificate`](crate::model::ListedCertificate).
+    pub fn builder() -> crate::model::listed_certificate::Builder {
+        crate::model::listed_certificate::Builder::default()
+    }
+}
+
 /// See [`ListedCertificate`](crate::model::ListedCertificate).
 pub mod listed_certificate {
 
@@ -4432,12 +4460,6 @@ pub mod listed_certificate {
                 description: self.description,
             }
         }
-    }
-}
-impl ListedCertificate {
-    /// Creates a new builder-style object to manufacture [`ListedCertificate`](crate::model::ListedCertificate).
-    pub fn builder() -> crate::model::listed_certificate::Builder {
-        crate::model::listed_certificate::Builder::default()
     }
 }
 
@@ -4776,6 +4798,13 @@ impl ListedAgreement {
         self.partner_profile_id.as_deref()
     }
 }
+impl ListedAgreement {
+    /// Creates a new builder-style object to manufacture [`ListedAgreement`](crate::model::ListedAgreement).
+    pub fn builder() -> crate::model::listed_agreement::Builder {
+        crate::model::listed_agreement::Builder::default()
+    }
+}
+
 /// See [`ListedAgreement`](crate::model::ListedAgreement).
 pub mod listed_agreement {
 
@@ -4885,12 +4914,6 @@ pub mod listed_agreement {
         }
     }
 }
-impl ListedAgreement {
-    /// Creates a new builder-style object to manufacture [`ListedAgreement`](crate::model::ListedAgreement).
-    pub fn builder() -> crate::model::listed_agreement::Builder {
-        crate::model::listed_agreement::Builder::default()
-    }
-}
 
 /// <p>Lists the properties for one or more specified associated accesses.</p>
 #[non_exhaustive]
@@ -4935,6 +4958,13 @@ impl ListedAccess {
         self.external_id.as_deref()
     }
 }
+impl ListedAccess {
+    /// Creates a new builder-style object to manufacture [`ListedAccess`](crate::model::ListedAccess).
+    pub fn builder() -> crate::model::listed_access::Builder {
+        crate::model::listed_access::Builder::default()
+    }
+}
+
 /// See [`ListedAccess`](crate::model::ListedAccess).
 pub mod listed_access {
 
@@ -5013,12 +5043,6 @@ pub mod listed_access {
         }
     }
 }
-impl ListedAccess {
-    /// Creates a new builder-style object to manufacture [`ListedAccess`](crate::model::ListedAccess).
-    pub fn builder() -> crate::model::listed_access::Builder {
-        crate::model::listed_access::Builder::default()
-    }
-}
 
 /// <p>Describes the properties of the specified workflow</p>
 #[non_exhaustive]
@@ -5069,6 +5093,13 @@ impl DescribedWorkflow {
         self.tags.as_deref()
     }
 }
+impl DescribedWorkflow {
+    /// Creates a new builder-style object to manufacture [`DescribedWorkflow`](crate::model::DescribedWorkflow).
+    pub fn builder() -> crate::model::described_workflow::Builder {
+        crate::model::described_workflow::Builder::default()
+    }
+}
+
 /// See [`DescribedWorkflow`](crate::model::DescribedWorkflow).
 pub mod described_workflow {
 
@@ -5185,12 +5216,6 @@ pub mod described_workflow {
         }
     }
 }
-impl DescribedWorkflow {
-    /// Creates a new builder-style object to manufacture [`DescribedWorkflow`](crate::model::DescribedWorkflow).
-    pub fn builder() -> crate::model::described_workflow::Builder {
-        crate::model::described_workflow::Builder::default()
-    }
-}
 
 /// <p>The basic building block of a workflow.</p>
 #[non_exhaustive]
@@ -5269,6 +5294,13 @@ impl WorkflowStep {
         self.decrypt_step_details.as_ref()
     }
 }
+impl WorkflowStep {
+    /// Creates a new builder-style object to manufacture [`WorkflowStep`](crate::model::WorkflowStep).
+    pub fn builder() -> crate::model::workflow_step::Builder {
+        crate::model::workflow_step::Builder::default()
+    }
+}
+
 /// See [`WorkflowStep`](crate::model::WorkflowStep).
 pub mod workflow_step {
 
@@ -5403,12 +5435,6 @@ pub mod workflow_step {
         }
     }
 }
-impl WorkflowStep {
-    /// Creates a new builder-style object to manufacture [`WorkflowStep`](crate::model::WorkflowStep).
-    pub fn builder() -> crate::model::workflow_step::Builder {
-        crate::model::workflow_step::Builder::default()
-    }
-}
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
@@ -5454,6 +5480,13 @@ impl DecryptStepDetails {
         self.destination_file_location.as_ref()
     }
 }
+impl DecryptStepDetails {
+    /// Creates a new builder-style object to manufacture [`DecryptStepDetails`](crate::model::DecryptStepDetails).
+    pub fn builder() -> crate::model::decrypt_step_details::Builder {
+        crate::model::decrypt_step_details::Builder::default()
+    }
+}
+
 /// See [`DecryptStepDetails`](crate::model::DecryptStepDetails).
 pub mod decrypt_step_details {
 
@@ -5542,12 +5575,6 @@ pub mod decrypt_step_details {
         }
     }
 }
-impl DecryptStepDetails {
-    /// Creates a new builder-style object to manufacture [`DecryptStepDetails`](crate::model::DecryptStepDetails).
-    pub fn builder() -> crate::model::decrypt_step_details::Builder {
-        crate::model::decrypt_step_details::Builder::default()
-    }
-}
 
 /// <p>Specifies the location for the file being copied. Only applicable for the Copy type of workflow steps.</p>
 #[non_exhaustive]
@@ -5570,6 +5597,13 @@ impl InputFileLocation {
         self.efs_file_location.as_ref()
     }
 }
+impl InputFileLocation {
+    /// Creates a new builder-style object to manufacture [`InputFileLocation`](crate::model::InputFileLocation).
+    pub fn builder() -> crate::model::input_file_location::Builder {
+        crate::model::input_file_location::Builder::default()
+    }
+}
+
 /// See [`InputFileLocation`](crate::model::InputFileLocation).
 pub mod input_file_location {
 
@@ -5616,12 +5650,6 @@ pub mod input_file_location {
         }
     }
 }
-impl InputFileLocation {
-    /// Creates a new builder-style object to manufacture [`InputFileLocation`](crate::model::InputFileLocation).
-    pub fn builder() -> crate::model::input_file_location::Builder {
-        crate::model::input_file_location::Builder::default()
-    }
-}
 
 /// <p>Specifies the customer input S3 file location. If it is used inside <code>copyStepDetails.DestinationFileLocation</code>, it should be the S3 copy destination.</p>
 /// <p> You need to provide the bucket and key. The key can represent either a path or a file. This is determined by whether or not you end the key value with the forward slash (/) character. If the final character is "/", then your file is copied to the folder, and its name does not change. If, rather, the final character is alphanumeric, your uploaded file is renamed to the path value. In this case, if a file with that name already exists, it is overwritten. </p>
@@ -5646,6 +5674,13 @@ impl S3InputFileLocation {
         self.key.as_deref()
     }
 }
+impl S3InputFileLocation {
+    /// Creates a new builder-style object to manufacture [`S3InputFileLocation`](crate::model::S3InputFileLocation).
+    pub fn builder() -> crate::model::s3_input_file_location::Builder {
+        crate::model::s3_input_file_location::Builder::default()
+    }
+}
+
 /// See [`S3InputFileLocation`](crate::model::S3InputFileLocation).
 pub mod s3_input_file_location {
 
@@ -5684,12 +5719,6 @@ pub mod s3_input_file_location {
                 key: self.key,
             }
         }
-    }
-}
-impl S3InputFileLocation {
-    /// Creates a new builder-style object to manufacture [`S3InputFileLocation`](crate::model::S3InputFileLocation).
-    pub fn builder() -> crate::model::s3_input_file_location::Builder {
-        crate::model::s3_input_file_location::Builder::default()
     }
 }
 
@@ -5907,6 +5936,13 @@ impl TagStepDetails {
         self.source_file_location.as_deref()
     }
 }
+impl TagStepDetails {
+    /// Creates a new builder-style object to manufacture [`TagStepDetails`](crate::model::TagStepDetails).
+    pub fn builder() -> crate::model::tag_step_details::Builder {
+        crate::model::tag_step_details::Builder::default()
+    }
+}
+
 /// See [`TagStepDetails`](crate::model::TagStepDetails).
 pub mod tag_step_details {
 
@@ -5979,12 +6015,6 @@ pub mod tag_step_details {
         }
     }
 }
-impl TagStepDetails {
-    /// Creates a new builder-style object to manufacture [`TagStepDetails`](crate::model::TagStepDetails).
-    pub fn builder() -> crate::model::tag_step_details::Builder {
-        crate::model::tag_step_details::Builder::default()
-    }
-}
 
 /// <p>Specifies the key-value pair that are assigned to a file during the execution of a Tagging step.</p>
 #[non_exhaustive]
@@ -6007,6 +6037,13 @@ impl S3Tag {
         self.value.as_deref()
     }
 }
+impl S3Tag {
+    /// Creates a new builder-style object to manufacture [`S3Tag`](crate::model::S3Tag).
+    pub fn builder() -> crate::model::s3_tag::Builder {
+        crate::model::s3_tag::Builder::default()
+    }
+}
+
 /// See [`S3Tag`](crate::model::S3Tag).
 pub mod s3_tag {
 
@@ -6047,12 +6084,6 @@ pub mod s3_tag {
         }
     }
 }
-impl S3Tag {
-    /// Creates a new builder-style object to manufacture [`S3Tag`](crate::model::S3Tag).
-    pub fn builder() -> crate::model::s3_tag::Builder {
-        crate::model::s3_tag::Builder::default()
-    }
-}
 
 /// <p>The name of the step, used to identify the delete step.</p>
 #[non_exhaustive]
@@ -6083,6 +6114,13 @@ impl DeleteStepDetails {
         self.source_file_location.as_deref()
     }
 }
+impl DeleteStepDetails {
+    /// Creates a new builder-style object to manufacture [`DeleteStepDetails`](crate::model::DeleteStepDetails).
+    pub fn builder() -> crate::model::delete_step_details::Builder {
+        crate::model::delete_step_details::Builder::default()
+    }
+}
+
 /// See [`DeleteStepDetails`](crate::model::DeleteStepDetails).
 pub mod delete_step_details {
 
@@ -6134,12 +6172,6 @@ pub mod delete_step_details {
         }
     }
 }
-impl DeleteStepDetails {
-    /// Creates a new builder-style object to manufacture [`DeleteStepDetails`](crate::model::DeleteStepDetails).
-    pub fn builder() -> crate::model::delete_step_details::Builder {
-        crate::model::delete_step_details::Builder::default()
-    }
-}
 
 /// <p>Each step type has its own <code>StepDetails</code> structure.</p>
 #[non_exhaustive]
@@ -6184,6 +6216,13 @@ impl CustomStepDetails {
         self.source_file_location.as_deref()
     }
 }
+impl CustomStepDetails {
+    /// Creates a new builder-style object to manufacture [`CustomStepDetails`](crate::model::CustomStepDetails).
+    pub fn builder() -> crate::model::custom_step_details::Builder {
+        crate::model::custom_step_details::Builder::default()
+    }
+}
+
 /// See [`CustomStepDetails`](crate::model::CustomStepDetails).
 pub mod custom_step_details {
 
@@ -6259,12 +6298,6 @@ pub mod custom_step_details {
         }
     }
 }
-impl CustomStepDetails {
-    /// Creates a new builder-style object to manufacture [`CustomStepDetails`](crate::model::CustomStepDetails).
-    pub fn builder() -> crate::model::custom_step_details::Builder {
-        crate::model::custom_step_details::Builder::default()
-    }
-}
 
 /// <p>Each step type has its own <code>StepDetails</code> structure.</p>
 #[non_exhaustive]
@@ -6311,6 +6344,13 @@ impl CopyStepDetails {
         self.source_file_location.as_deref()
     }
 }
+impl CopyStepDetails {
+    /// Creates a new builder-style object to manufacture [`CopyStepDetails`](crate::model::CopyStepDetails).
+    pub fn builder() -> crate::model::copy_step_details::Builder {
+        crate::model::copy_step_details::Builder::default()
+    }
+}
+
 /// See [`CopyStepDetails`](crate::model::CopyStepDetails).
 pub mod copy_step_details {
 
@@ -6390,12 +6430,6 @@ pub mod copy_step_details {
                 source_file_location: self.source_file_location,
             }
         }
-    }
-}
-impl CopyStepDetails {
-    /// Creates a new builder-style object to manufacture [`CopyStepDetails`](crate::model::CopyStepDetails).
-    pub fn builder() -> crate::model::copy_step_details::Builder {
-        crate::model::copy_step_details::Builder::default()
     }
 }
 
@@ -6588,6 +6622,13 @@ impl DescribedUser {
         self.user_name.as_deref()
     }
 }
+impl DescribedUser {
+    /// Creates a new builder-style object to manufacture [`DescribedUser`](crate::model::DescribedUser).
+    pub fn builder() -> crate::model::described_user::Builder {
+        crate::model::described_user::Builder::default()
+    }
+}
+
 /// See [`DescribedUser`](crate::model::DescribedUser).
 pub mod described_user {
 
@@ -6768,12 +6809,6 @@ pub mod described_user {
         }
     }
 }
-impl DescribedUser {
-    /// Creates a new builder-style object to manufacture [`DescribedUser`](crate::model::DescribedUser).
-    pub fn builder() -> crate::model::described_user::Builder {
-        crate::model::described_user::Builder::default()
-    }
-}
 
 /// <p>Provides information about the public Secure Shell (SSH) key that is associated with a user account for the specific file transfer protocol-enabled server (as identified by <code>ServerId</code>). The information returned includes the date the key was imported, the public key contents, and the public key ID. A user can store more than one SSH public key associated with their user name on a specific server.</p>
 #[non_exhaustive]
@@ -6805,6 +6840,13 @@ impl SshPublicKey {
         self.ssh_public_key_id.as_deref()
     }
 }
+impl SshPublicKey {
+    /// Creates a new builder-style object to manufacture [`SshPublicKey`](crate::model::SshPublicKey).
+    pub fn builder() -> crate::model::ssh_public_key::Builder {
+        crate::model::ssh_public_key::Builder::default()
+    }
+}
+
 /// See [`SshPublicKey`](crate::model::SshPublicKey).
 pub mod ssh_public_key {
 
@@ -6866,12 +6908,6 @@ pub mod ssh_public_key {
                 ssh_public_key_id: self.ssh_public_key_id,
             }
         }
-    }
-}
-impl SshPublicKey {
-    /// Creates a new builder-style object to manufacture [`SshPublicKey`](crate::model::SshPublicKey).
-    pub fn builder() -> crate::model::ssh_public_key::Builder {
-        crate::model::ssh_public_key::Builder::default()
     }
 }
 
@@ -7075,6 +7111,13 @@ impl DescribedServer {
         self.workflow_details.as_ref()
     }
 }
+impl DescribedServer {
+    /// Creates a new builder-style object to manufacture [`DescribedServer`](crate::model::DescribedServer).
+    pub fn builder() -> crate::model::described_server::Builder {
+        crate::model::described_server::Builder::default()
+    }
+}
+
 /// See [`DescribedServer`](crate::model::DescribedServer).
 pub mod described_server {
 
@@ -7433,12 +7476,6 @@ pub mod described_server {
         }
     }
 }
-impl DescribedServer {
-    /// Creates a new builder-style object to manufacture [`DescribedServer`](crate::model::DescribedServer).
-    pub fn builder() -> crate::model::described_server::Builder {
-        crate::model::described_server::Builder::default()
-    }
-}
 
 /// <p>Describes the properties of a security policy that was specified. For more information about security policies, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/security-policies.html">Working with security policies</a>.</p>
 #[non_exhaustive]
@@ -7489,6 +7526,13 @@ impl DescribedSecurityPolicy {
         self.tls_ciphers.as_deref()
     }
 }
+impl DescribedSecurityPolicy {
+    /// Creates a new builder-style object to manufacture [`DescribedSecurityPolicy`](crate::model::DescribedSecurityPolicy).
+    pub fn builder() -> crate::model::described_security_policy::Builder {
+        crate::model::described_security_policy::Builder::default()
+    }
+}
+
 /// See [`DescribedSecurityPolicy`](crate::model::DescribedSecurityPolicy).
 pub mod described_security_policy {
 
@@ -7616,12 +7660,6 @@ pub mod described_security_policy {
         }
     }
 }
-impl DescribedSecurityPolicy {
-    /// Creates a new builder-style object to manufacture [`DescribedSecurityPolicy`](crate::model::DescribedSecurityPolicy).
-    pub fn builder() -> crate::model::described_security_policy::Builder {
-        crate::model::described_security_policy::Builder::default()
-    }
-}
 
 /// <p>The details for a local or partner AS2 profile. </p>
 #[non_exhaustive]
@@ -7672,6 +7710,13 @@ impl DescribedProfile {
         self.tags.as_deref()
     }
 }
+impl DescribedProfile {
+    /// Creates a new builder-style object to manufacture [`DescribedProfile`](crate::model::DescribedProfile).
+    pub fn builder() -> crate::model::described_profile::Builder {
+        crate::model::described_profile::Builder::default()
+    }
+}
+
 /// See [`DescribedProfile`](crate::model::DescribedProfile).
 pub mod described_profile {
 
@@ -7781,12 +7826,6 @@ pub mod described_profile {
         }
     }
 }
-impl DescribedProfile {
-    /// Creates a new builder-style object to manufacture [`DescribedProfile`](crate::model::DescribedProfile).
-    pub fn builder() -> crate::model::described_profile::Builder {
-        crate::model::described_profile::Builder::default()
-    }
-}
 
 /// <p>The details for a server host key.</p>
 #[non_exhaustive]
@@ -7858,6 +7897,13 @@ impl DescribedHostKey {
         self.tags.as_deref()
     }
 }
+impl DescribedHostKey {
+    /// Creates a new builder-style object to manufacture [`DescribedHostKey`](crate::model::DescribedHostKey).
+    pub fn builder() -> crate::model::described_host_key::Builder {
+        crate::model::described_host_key::Builder::default()
+    }
+}
+
 /// See [`DescribedHostKey`](crate::model::DescribedHostKey).
 pub mod described_host_key {
 
@@ -7987,12 +8033,6 @@ pub mod described_host_key {
         }
     }
 }
-impl DescribedHostKey {
-    /// Creates a new builder-style object to manufacture [`DescribedHostKey`](crate::model::DescribedHostKey).
-    pub fn builder() -> crate::model::described_host_key::Builder {
-        crate::model::described_host_key::Builder::default()
-    }
-}
 
 /// <p>The details for an execution object.</p>
 #[non_exhaustive]
@@ -8059,6 +8099,13 @@ impl DescribedExecution {
         self.results.as_ref()
     }
 }
+impl DescribedExecution {
+    /// Creates a new builder-style object to manufacture [`DescribedExecution`](crate::model::DescribedExecution).
+    pub fn builder() -> crate::model::described_execution::Builder {
+        crate::model::described_execution::Builder::default()
+    }
+}
+
 /// See [`DescribedExecution`](crate::model::DescribedExecution).
 pub mod described_execution {
 
@@ -8192,12 +8239,6 @@ pub mod described_execution {
         }
     }
 }
-impl DescribedExecution {
-    /// Creates a new builder-style object to manufacture [`DescribedExecution`](crate::model::DescribedExecution).
-    pub fn builder() -> crate::model::described_execution::Builder {
-        crate::model::described_execution::Builder::default()
-    }
-}
 
 /// <p>Specifies the steps in the workflow, as well as the steps to execute in case of any errors during workflow execution.</p>
 #[non_exhaustive]
@@ -8220,6 +8261,13 @@ impl ExecutionResults {
         self.on_exception_steps.as_deref()
     }
 }
+impl ExecutionResults {
+    /// Creates a new builder-style object to manufacture [`ExecutionResults`](crate::model::ExecutionResults).
+    pub fn builder() -> crate::model::execution_results::Builder {
+        crate::model::execution_results::Builder::default()
+    }
+}
+
 /// See [`ExecutionResults`](crate::model::ExecutionResults).
 pub mod execution_results {
 
@@ -8279,12 +8327,6 @@ pub mod execution_results {
         }
     }
 }
-impl ExecutionResults {
-    /// Creates a new builder-style object to manufacture [`ExecutionResults`](crate::model::ExecutionResults).
-    pub fn builder() -> crate::model::execution_results::Builder {
-        crate::model::execution_results::Builder::default()
-    }
-}
 
 /// <p>Specifies the following details for the step: error (if any), outputs (if any), and the step type.</p>
 #[non_exhaustive]
@@ -8326,6 +8368,13 @@ impl ExecutionStepResult {
         self.error.as_ref()
     }
 }
+impl ExecutionStepResult {
+    /// Creates a new builder-style object to manufacture [`ExecutionStepResult`](crate::model::ExecutionStepResult).
+    pub fn builder() -> crate::model::execution_step_result::Builder {
+        crate::model::execution_step_result::Builder::default()
+    }
+}
+
 /// See [`ExecutionStepResult`](crate::model::ExecutionStepResult).
 pub mod execution_step_result {
 
@@ -8396,12 +8445,6 @@ pub mod execution_step_result {
         }
     }
 }
-impl ExecutionStepResult {
-    /// Creates a new builder-style object to manufacture [`ExecutionStepResult`](crate::model::ExecutionStepResult).
-    pub fn builder() -> crate::model::execution_step_result::Builder {
-        crate::model::execution_step_result::Builder::default()
-    }
-}
 
 /// <p>Specifies the error message and type, for an error that occurs during the execution of the workflow.</p>
 #[non_exhaustive]
@@ -8448,6 +8491,13 @@ impl ExecutionError {
         self.message.as_deref()
     }
 }
+impl ExecutionError {
+    /// Creates a new builder-style object to manufacture [`ExecutionError`](crate::model::ExecutionError).
+    pub fn builder() -> crate::model::execution_error::Builder {
+        crate::model::execution_error::Builder::default()
+    }
+}
+
 /// See [`ExecutionError`](crate::model::ExecutionError).
 pub mod execution_error {
 
@@ -8513,12 +8563,6 @@ pub mod execution_error {
                 message: self.message,
             }
         }
-    }
-}
-impl ExecutionError {
-    /// Creates a new builder-style object to manufacture [`ExecutionError`](crate::model::ExecutionError).
-    pub fn builder() -> crate::model::execution_error::Builder {
-        crate::model::execution_error::Builder::default()
     }
 }
 
@@ -8674,6 +8718,13 @@ impl LoggingConfiguration {
         self.log_group_name.as_deref()
     }
 }
+impl LoggingConfiguration {
+    /// Creates a new builder-style object to manufacture [`LoggingConfiguration`](crate::model::LoggingConfiguration).
+    pub fn builder() -> crate::model::logging_configuration::Builder {
+        crate::model::logging_configuration::Builder::default()
+    }
+}
+
 /// See [`LoggingConfiguration`](crate::model::LoggingConfiguration).
 pub mod logging_configuration {
 
@@ -8715,12 +8766,6 @@ pub mod logging_configuration {
                 log_group_name: self.log_group_name,
             }
         }
-    }
-}
-impl LoggingConfiguration {
-    /// Creates a new builder-style object to manufacture [`LoggingConfiguration`](crate::model::LoggingConfiguration).
-    pub fn builder() -> crate::model::logging_configuration::Builder {
-        crate::model::logging_configuration::Builder::default()
     }
 }
 
@@ -8780,6 +8825,13 @@ impl DescribedConnector {
         self.tags.as_deref()
     }
 }
+impl DescribedConnector {
+    /// Creates a new builder-style object to manufacture [`DescribedConnector`](crate::model::DescribedConnector).
+    pub fn builder() -> crate::model::described_connector::Builder {
+        crate::model::described_connector::Builder::default()
+    }
+}
+
 /// See [`DescribedConnector`](crate::model::DescribedConnector).
 pub mod described_connector {
 
@@ -8890,12 +8942,6 @@ pub mod described_connector {
                 tags: self.tags,
             }
         }
-    }
-}
-impl DescribedConnector {
-    /// Creates a new builder-style object to manufacture [`DescribedConnector`](crate::model::DescribedConnector).
-    pub fn builder() -> crate::model::described_connector::Builder {
-        crate::model::described_connector::Builder::default()
     }
 }
 
@@ -9024,6 +9070,13 @@ impl std::fmt::Debug for DescribedCertificate {
         formatter.finish()
     }
 }
+impl DescribedCertificate {
+    /// Creates a new builder-style object to manufacture [`DescribedCertificate`](crate::model::DescribedCertificate).
+    pub fn builder() -> crate::model::described_certificate::Builder {
+        crate::model::described_certificate::Builder::default()
+    }
+}
+
 /// See [`DescribedCertificate`](crate::model::DescribedCertificate).
 pub mod described_certificate {
 
@@ -9264,12 +9317,6 @@ pub mod described_certificate {
         }
     }
 }
-impl DescribedCertificate {
-    /// Creates a new builder-style object to manufacture [`DescribedCertificate`](crate::model::DescribedCertificate).
-    pub fn builder() -> crate::model::described_certificate::Builder {
-        crate::model::described_certificate::Builder::default()
-    }
-}
 
 /// <p>Describes the properties of an agreement.</p>
 #[non_exhaustive]
@@ -9348,6 +9395,13 @@ impl DescribedAgreement {
         self.tags.as_deref()
     }
 }
+impl DescribedAgreement {
+    /// Creates a new builder-style object to manufacture [`DescribedAgreement`](crate::model::DescribedAgreement).
+    pub fn builder() -> crate::model::described_agreement::Builder {
+        crate::model::described_agreement::Builder::default()
+    }
+}
+
 /// See [`DescribedAgreement`](crate::model::DescribedAgreement).
 pub mod described_agreement {
 
@@ -9505,12 +9559,6 @@ pub mod described_agreement {
         }
     }
 }
-impl DescribedAgreement {
-    /// Creates a new builder-style object to manufacture [`DescribedAgreement`](crate::model::DescribedAgreement).
-    pub fn builder() -> crate::model::described_agreement::Builder {
-        crate::model::described_agreement::Builder::default()
-    }
-}
 
 /// <p>Describes the properties of the access that was specified.</p>
 #[non_exhaustive]
@@ -9581,6 +9629,13 @@ impl DescribedAccess {
         self.external_id.as_deref()
     }
 }
+impl DescribedAccess {
+    /// Creates a new builder-style object to manufacture [`DescribedAccess`](crate::model::DescribedAccess).
+    pub fn builder() -> crate::model::described_access::Builder {
+        crate::model::described_access::Builder::default()
+    }
+}
+
 /// See [`DescribedAccess`](crate::model::DescribedAccess).
 pub mod described_access {
 
@@ -9711,11 +9766,5 @@ pub mod described_access {
                 external_id: self.external_id,
             }
         }
-    }
-}
-impl DescribedAccess {
-    /// Creates a new builder-style object to manufacture [`DescribedAccess`](crate::model::DescribedAccess).
-    pub fn builder() -> crate::model::described_access::Builder {
-        crate::model::described_access::Builder::default()
     }
 }

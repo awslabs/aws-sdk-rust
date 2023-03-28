@@ -14,6 +14,13 @@ impl EnabledControlSummary {
         self.control_identifier.as_deref()
     }
 }
+impl EnabledControlSummary {
+    /// Creates a new builder-style object to manufacture [`EnabledControlSummary`](crate::model::EnabledControlSummary).
+    pub fn builder() -> crate::model::enabled_control_summary::Builder {
+        crate::model::enabled_control_summary::Builder::default()
+    }
+}
+
 /// See [`EnabledControlSummary`](crate::model::EnabledControlSummary).
 pub mod enabled_control_summary {
 
@@ -43,12 +50,6 @@ pub mod enabled_control_summary {
                 control_identifier: self.control_identifier,
             }
         }
-    }
-}
-impl EnabledControlSummary {
-    /// Creates a new builder-style object to manufacture [`EnabledControlSummary`](crate::model::EnabledControlSummary).
-    pub fn builder() -> crate::model::enabled_control_summary::Builder {
-        crate::model::enabled_control_summary::Builder::default()
     }
 }
 
@@ -94,6 +95,13 @@ impl ControlOperation {
         self.status_message.as_deref()
     }
 }
+impl ControlOperation {
+    /// Creates a new builder-style object to manufacture [`ControlOperation`](crate::model::ControlOperation).
+    pub fn builder() -> crate::model::control_operation::Builder {
+        crate::model::control_operation::Builder::default()
+    }
+}
+
 /// See [`ControlOperation`](crate::model::ControlOperation).
 pub mod control_operation {
 
@@ -183,12 +191,6 @@ pub mod control_operation {
                 status_message: self.status_message,
             }
         }
-    }
-}
-impl ControlOperation {
-    /// Creates a new builder-style object to manufacture [`ControlOperation`](crate::model::ControlOperation).
-    pub fn builder() -> crate::model::control_operation::Builder {
-        crate::model::control_operation::Builder::default()
     }
 }
 

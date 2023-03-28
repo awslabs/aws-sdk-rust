@@ -123,11 +123,41 @@ impl DocumentServiceException {
     }
 }
 impl DocumentServiceException {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for DocumentServiceException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "DocumentServiceException")?;
+        if let Some(inner_1) = &self.message {
+            {
+                write!(f, ": {}", inner_1)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for DocumentServiceException {}
+impl aws_http::request_id::RequestId for crate::error::DocumentServiceException {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for DocumentServiceException {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl DocumentServiceException {
     /// Creates a new builder-style object to manufacture [`DocumentServiceException`](crate::error::DocumentServiceException).
     pub fn builder() -> crate::error::document_service_exception::Builder {
         crate::error::document_service_exception::Builder::default()
     }
 }
+
 /// See [`DocumentServiceException`](crate::error::DocumentServiceException).
 pub mod document_service_exception {
 
@@ -182,35 +212,6 @@ pub mod document_service_exception {
                 meta: self.meta.unwrap_or_default(),
             }
         }
-    }
-}
-impl DocumentServiceException {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for DocumentServiceException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "DocumentServiceException")?;
-        if let Some(inner_1) = &self.message {
-            {
-                write!(f, ": {}", inner_1)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for DocumentServiceException {}
-impl aws_http::request_id::RequestId for crate::error::DocumentServiceException {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for DocumentServiceException {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
     }
 }
 
@@ -329,11 +330,41 @@ pub struct SearchException {
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl SearchException {
+    /// Returns the error message.
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for SearchException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "SearchException")?;
+        if let Some(inner_2) = &self.message {
+            {
+                write!(f, ": {}", inner_2)?;
+            }
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for SearchException {}
+impl aws_http::request_id::RequestId for crate::error::SearchException {
+    fn request_id(&self) -> Option<&str> {
+        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        self.meta().request_id()
+    }
+}
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for SearchException {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
+}
+impl SearchException {
     /// Creates a new builder-style object to manufacture [`SearchException`](crate::error::SearchException).
     pub fn builder() -> crate::error::search_exception::Builder {
         crate::error::search_exception::Builder::default()
     }
 }
+
 /// See [`SearchException`](crate::error::SearchException).
 pub mod search_exception {
 
@@ -376,35 +407,6 @@ pub mod search_exception {
                 meta: self.meta.unwrap_or_default(),
             }
         }
-    }
-}
-impl SearchException {
-    /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for SearchException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "SearchException")?;
-        if let Some(inner_2) = &self.message {
-            {
-                write!(f, ": {}", inner_2)?;
-            }
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for SearchException {}
-impl aws_http::request_id::RequestId for crate::error::SearchException {
-    fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
-        self.meta().request_id()
-    }
-}
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for SearchException {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
     }
 }
 

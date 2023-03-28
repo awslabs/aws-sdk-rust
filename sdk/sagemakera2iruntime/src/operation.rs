@@ -4,7 +4,7 @@
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`delete_human_loop`](crate::client::Client::delete_human_loop).
 ///
-/// See [`crate::client::fluent_builders::DeleteHumanLoop`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DeleteHumanLoop`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteHumanLoop {
     _private: (),
@@ -39,7 +39,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteHumanLoop {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`describe_human_loop`](crate::client::Client::describe_human_loop).
 ///
-/// See [`crate::client::fluent_builders::DescribeHumanLoop`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DescribeHumanLoop`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DescribeHumanLoop {
     _private: (),
@@ -74,7 +74,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeHumanLoop {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_human_loops`](crate::client::Client::list_human_loops).
 ///
-/// See [`crate::client::fluent_builders::ListHumanLoops`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListHumanLoops`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListHumanLoops {
     _private: (),
@@ -107,7 +107,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListHumanLoops {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`start_human_loop`](crate::client::Client::start_human_loop).
 ///
-/// See [`crate::client::fluent_builders::StartHumanLoop`] for more details about the operation.
+/// `ParseStrictResponse` impl for `StartHumanLoop`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StartHumanLoop {
     _private: (),
@@ -140,7 +140,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartHumanLoop {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`stop_human_loop`](crate::client::Client::stop_human_loop).
 ///
-/// See [`crate::client::fluent_builders::StopHumanLoop`] for more details about the operation.
+/// `ParseStrictResponse` impl for `StopHumanLoop`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct StopHumanLoop {
     _private: (),

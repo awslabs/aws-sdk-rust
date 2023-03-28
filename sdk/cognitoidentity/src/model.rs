@@ -32,6 +32,13 @@ impl CognitoIdentityProvider {
         self.server_side_token_check
     }
 }
+impl CognitoIdentityProvider {
+    /// Creates a new builder-style object to manufacture [`CognitoIdentityProvider`](crate::model::CognitoIdentityProvider).
+    pub fn builder() -> crate::model::cognito_identity_provider::Builder {
+        crate::model::cognito_identity_provider::Builder::default()
+    }
+}
+
 /// See [`CognitoIdentityProvider`](crate::model::CognitoIdentityProvider).
 pub mod cognito_identity_provider {
 
@@ -91,12 +98,6 @@ pub mod cognito_identity_provider {
         }
     }
 }
-impl CognitoIdentityProvider {
-    /// Creates a new builder-style object to manufacture [`CognitoIdentityProvider`](crate::model::CognitoIdentityProvider).
-    pub fn builder() -> crate::model::cognito_identity_provider::Builder {
-        crate::model::cognito_identity_provider::Builder::default()
-    }
-}
 
 /// <p>A role mapping.</p>
 #[non_exhaustive]
@@ -134,6 +135,13 @@ impl RoleMapping {
         self.rules_configuration.as_ref()
     }
 }
+impl RoleMapping {
+    /// Creates a new builder-style object to manufacture [`RoleMapping`](crate::model::RoleMapping).
+    pub fn builder() -> crate::model::role_mapping::Builder {
+        crate::model::role_mapping::Builder::default()
+    }
+}
+
 /// See [`RoleMapping`](crate::model::RoleMapping).
 pub mod role_mapping {
 
@@ -203,12 +211,6 @@ pub mod role_mapping {
         }
     }
 }
-impl RoleMapping {
-    /// Creates a new builder-style object to manufacture [`RoleMapping`](crate::model::RoleMapping).
-    pub fn builder() -> crate::model::role_mapping::Builder {
-        crate::model::role_mapping::Builder::default()
-    }
-}
 
 /// <p>A container for rules.</p>
 #[non_exhaustive]
@@ -226,6 +228,13 @@ impl RulesConfigurationType {
         self.rules.as_deref()
     }
 }
+impl RulesConfigurationType {
+    /// Creates a new builder-style object to manufacture [`RulesConfigurationType`](crate::model::RulesConfigurationType).
+    pub fn builder() -> crate::model::rules_configuration_type::Builder {
+        crate::model::rules_configuration_type::Builder::default()
+    }
+}
+
 /// See [`RulesConfigurationType`](crate::model::RulesConfigurationType).
 pub mod rules_configuration_type {
 
@@ -261,12 +270,6 @@ pub mod rules_configuration_type {
         pub fn build(self) -> crate::model::RulesConfigurationType {
             crate::model::RulesConfigurationType { rules: self.rules }
         }
-    }
-}
-impl RulesConfigurationType {
-    /// Creates a new builder-style object to manufacture [`RulesConfigurationType`](crate::model::RulesConfigurationType).
-    pub fn builder() -> crate::model::rules_configuration_type::Builder {
-        crate::model::rules_configuration_type::Builder::default()
     }
 }
 
@@ -305,6 +308,13 @@ impl MappingRule {
         self.role_arn.as_deref()
     }
 }
+impl MappingRule {
+    /// Creates a new builder-style object to manufacture [`MappingRule`](crate::model::MappingRule).
+    pub fn builder() -> crate::model::mapping_rule::Builder {
+        crate::model::mapping_rule::Builder::default()
+    }
+}
+
 /// See [`MappingRule`](crate::model::MappingRule).
 pub mod mapping_rule {
 
@@ -370,12 +380,6 @@ pub mod mapping_rule {
                 role_arn: self.role_arn,
             }
         }
-    }
-}
-impl MappingRule {
-    /// Creates a new builder-style object to manufacture [`MappingRule`](crate::model::MappingRule).
-    pub fn builder() -> crate::model::mapping_rule::Builder {
-        crate::model::mapping_rule::Builder::default()
     }
 }
 
@@ -684,6 +688,13 @@ impl IdentityPoolShortDescription {
         self.identity_pool_name.as_deref()
     }
 }
+impl IdentityPoolShortDescription {
+    /// Creates a new builder-style object to manufacture [`IdentityPoolShortDescription`](crate::model::IdentityPoolShortDescription).
+    pub fn builder() -> crate::model::identity_pool_short_description::Builder {
+        crate::model::identity_pool_short_description::Builder::default()
+    }
+}
+
 /// See [`IdentityPoolShortDescription`](crate::model::IdentityPoolShortDescription).
 pub mod identity_pool_short_description {
 
@@ -730,12 +741,6 @@ pub mod identity_pool_short_description {
         }
     }
 }
-impl IdentityPoolShortDescription {
-    /// Creates a new builder-style object to manufacture [`IdentityPoolShortDescription`](crate::model::IdentityPoolShortDescription).
-    pub fn builder() -> crate::model::identity_pool_short_description::Builder {
-        crate::model::identity_pool_short_description::Builder::default()
-    }
-}
 
 /// <p>A description of the identity.</p>
 #[non_exhaustive]
@@ -772,6 +777,13 @@ impl IdentityDescription {
         self.last_modified_date.as_ref()
     }
 }
+impl IdentityDescription {
+    /// Creates a new builder-style object to manufacture [`IdentityDescription`](crate::model::IdentityDescription).
+    pub fn builder() -> crate::model::identity_description::Builder {
+        crate::model::identity_description::Builder::default()
+    }
+}
+
 /// See [`IdentityDescription`](crate::model::IdentityDescription).
 pub mod identity_description {
 
@@ -851,12 +863,6 @@ pub mod identity_description {
         }
     }
 }
-impl IdentityDescription {
-    /// Creates a new builder-style object to manufacture [`IdentityDescription`](crate::model::IdentityDescription).
-    pub fn builder() -> crate::model::identity_description::Builder {
-        crate::model::identity_description::Builder::default()
-    }
-}
 
 /// <p>Credentials for the provided identity ID.</p>
 #[non_exhaustive]
@@ -893,6 +899,13 @@ impl Credentials {
         self.expiration.as_ref()
     }
 }
+impl Credentials {
+    /// Creates a new builder-style object to manufacture [`Credentials`](crate::model::Credentials).
+    pub fn builder() -> crate::model::credentials::Builder {
+        crate::model::credentials::Builder::default()
+    }
+}
+
 /// See [`Credentials`](crate::model::Credentials).
 pub mod credentials {
 
@@ -966,12 +979,6 @@ pub mod credentials {
         }
     }
 }
-impl Credentials {
-    /// Creates a new builder-style object to manufacture [`Credentials`](crate::model::Credentials).
-    pub fn builder() -> crate::model::credentials::Builder {
-        crate::model::credentials::Builder::default()
-    }
-}
 
 /// <p>An array of UnprocessedIdentityId objects, each of which contains an ErrorCode and IdentityId.</p>
 #[non_exhaustive]
@@ -994,6 +1001,13 @@ impl UnprocessedIdentityId {
         self.error_code.as_ref()
     }
 }
+impl UnprocessedIdentityId {
+    /// Creates a new builder-style object to manufacture [`UnprocessedIdentityId`](crate::model::UnprocessedIdentityId).
+    pub fn builder() -> crate::model::unprocessed_identity_id::Builder {
+        crate::model::unprocessed_identity_id::Builder::default()
+    }
+}
+
 /// See [`UnprocessedIdentityId`](crate::model::UnprocessedIdentityId).
 pub mod unprocessed_identity_id {
 
@@ -1035,12 +1049,6 @@ pub mod unprocessed_identity_id {
                 error_code: self.error_code,
             }
         }
-    }
-}
-impl UnprocessedIdentityId {
-    /// Creates a new builder-style object to manufacture [`UnprocessedIdentityId`](crate::model::UnprocessedIdentityId).
-    pub fn builder() -> crate::model::unprocessed_identity_id::Builder {
-        crate::model::unprocessed_identity_id::Builder::default()
     }
 }
 

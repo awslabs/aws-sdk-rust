@@ -4,7 +4,7 @@
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`create_schedule`](crate::client::Client::create_schedule).
 ///
-/// See [`crate::client::fluent_builders::CreateSchedule`] for more details about the operation.
+/// `ParseStrictResponse` impl for `CreateSchedule`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateSchedule {
     _private: (),
@@ -37,7 +37,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateSchedule {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`create_schedule_group`](crate::client::Client::create_schedule_group).
 ///
-/// See [`crate::client::fluent_builders::CreateScheduleGroup`] for more details about the operation.
+/// `ParseStrictResponse` impl for `CreateScheduleGroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct CreateScheduleGroup {
     _private: (),
@@ -72,7 +72,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateScheduleGroup {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`delete_schedule`](crate::client::Client::delete_schedule).
 ///
-/// See [`crate::client::fluent_builders::DeleteSchedule`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DeleteSchedule`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteSchedule {
     _private: (),
@@ -105,7 +105,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteSchedule {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`delete_schedule_group`](crate::client::Client::delete_schedule_group).
 ///
-/// See [`crate::client::fluent_builders::DeleteScheduleGroup`] for more details about the operation.
+/// `ParseStrictResponse` impl for `DeleteScheduleGroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct DeleteScheduleGroup {
     _private: (),
@@ -140,7 +140,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteScheduleGroup {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`get_schedule`](crate::client::Client::get_schedule).
 ///
-/// See [`crate::client::fluent_builders::GetSchedule`] for more details about the operation.
+/// `ParseStrictResponse` impl for `GetSchedule`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetSchedule {
     _private: (),
@@ -173,7 +173,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSchedule {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`get_schedule_group`](crate::client::Client::get_schedule_group).
 ///
-/// See [`crate::client::fluent_builders::GetScheduleGroup`] for more details about the operation.
+/// `ParseStrictResponse` impl for `GetScheduleGroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct GetScheduleGroup {
     _private: (),
@@ -208,7 +208,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetScheduleGroup {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_schedule_groups`](crate::client::Client::list_schedule_groups).
 ///
-/// See [`crate::client::fluent_builders::ListScheduleGroups`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListScheduleGroups`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListScheduleGroups {
     _private: (),
@@ -243,7 +243,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListScheduleGroups {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_schedules`](crate::client::Client::list_schedules).
 ///
-/// See [`crate::client::fluent_builders::ListSchedules`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListSchedules`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListSchedules {
     _private: (),
@@ -276,7 +276,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListSchedules {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
 ///
-/// See [`crate::client::fluent_builders::ListTagsForResource`] for more details about the operation.
+/// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct ListTagsForResource {
     _private: (),
@@ -311,7 +311,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`tag_resource`](crate::client::Client::tag_resource).
 ///
-/// See [`crate::client::fluent_builders::TagResource`] for more details about the operation.
+/// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct TagResource {
     _private: (),
@@ -344,7 +344,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`untag_resource`](crate::client::Client::untag_resource).
 ///
-/// See [`crate::client::fluent_builders::UntagResource`] for more details about the operation.
+/// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UntagResource {
     _private: (),
@@ -377,7 +377,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// This is usually constructed for you using the the fluent builder returned by
 /// [`update_schedule`](crate::client::Client::update_schedule).
 ///
-/// See [`crate::client::fluent_builders::UpdateSchedule`] for more details about the operation.
+/// `ParseStrictResponse` impl for `UpdateSchedule`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
 pub struct UpdateSchedule {
     _private: (),

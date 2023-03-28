@@ -134,6 +134,13 @@ impl LoRaWanUpdateDevice {
         self.f_ports.as_ref()
     }
 }
+impl LoRaWanUpdateDevice {
+    /// Creates a new builder-style object to manufacture [`LoRaWanUpdateDevice`](crate::model::LoRaWanUpdateDevice).
+    pub fn builder() -> crate::model::lo_ra_wan_update_device::Builder {
+        crate::model::lo_ra_wan_update_device::Builder::default()
+    }
+}
+
 /// See [`LoRaWanUpdateDevice`](crate::model::LoRaWanUpdateDevice).
 pub mod lo_ra_wan_update_device {
 
@@ -225,12 +232,6 @@ pub mod lo_ra_wan_update_device {
         }
     }
 }
-impl LoRaWanUpdateDevice {
-    /// Creates a new builder-style object to manufacture [`LoRaWanUpdateDevice`](crate::model::LoRaWanUpdateDevice).
-    pub fn builder() -> crate::model::lo_ra_wan_update_device::Builder {
-        crate::model::lo_ra_wan_update_device::Builder::default()
-    }
-}
 
 /// <p>Object for updating the FPorts information.</p>
 #[non_exhaustive]
@@ -253,6 +254,13 @@ impl UpdateFPorts {
         self.applications.as_deref()
     }
 }
+impl UpdateFPorts {
+    /// Creates a new builder-style object to manufacture [`UpdateFPorts`](crate::model::UpdateFPorts).
+    pub fn builder() -> crate::model::update_f_ports::Builder {
+        crate::model::update_f_ports::Builder::default()
+    }
+}
+
 /// See [`UpdateFPorts`](crate::model::UpdateFPorts).
 pub mod update_f_ports {
 
@@ -306,12 +314,6 @@ pub mod update_f_ports {
         }
     }
 }
-impl UpdateFPorts {
-    /// Creates a new builder-style object to manufacture [`UpdateFPorts`](crate::model::UpdateFPorts).
-    pub fn builder() -> crate::model::update_f_ports::Builder {
-        crate::model::update_f_ports::Builder::default()
-    }
-}
 
 /// <p>LoRaWAN application configuration, which can be used to perform geolocation.</p>
 #[non_exhaustive]
@@ -341,6 +343,13 @@ impl ApplicationConfig {
         self.destination_name.as_deref()
     }
 }
+impl ApplicationConfig {
+    /// Creates a new builder-style object to manufacture [`ApplicationConfig`](crate::model::ApplicationConfig).
+    pub fn builder() -> crate::model::application_config::Builder {
+        crate::model::application_config::Builder::default()
+    }
+}
+
 /// See [`ApplicationConfig`](crate::model::ApplicationConfig).
 pub mod application_config {
 
@@ -397,12 +406,6 @@ pub mod application_config {
                 destination_name: self.destination_name,
             }
         }
-    }
-}
-impl ApplicationConfig {
-    /// Creates a new builder-style object to manufacture [`ApplicationConfig`](crate::model::ApplicationConfig).
-    pub fn builder() -> crate::model::application_config::Builder {
-        crate::model::application_config::Builder::default()
     }
 }
 
@@ -521,6 +524,13 @@ impl Positioning {
         self.gnss
     }
 }
+impl Positioning {
+    /// Creates a new builder-style object to manufacture [`Positioning`](crate::model::Positioning).
+    pub fn builder() -> crate::model::positioning::Builder {
+        crate::model::positioning::Builder::default()
+    }
+}
+
 /// See [`Positioning`](crate::model::Positioning).
 pub mod positioning {
 
@@ -573,12 +583,6 @@ pub mod positioning {
         }
     }
 }
-impl Positioning {
-    /// Creates a new builder-style object to manufacture [`Positioning`](crate::model::Positioning).
-    pub fn builder() -> crate::model::positioning::Builder {
-        crate::model::positioning::Builder::default()
-    }
-}
 
 /// <p>ABP device object for LoRaWAN specification v1.0.x</p>
 #[non_exhaustive]
@@ -594,6 +598,13 @@ impl UpdateAbpV10X {
         self.f_cnt_start
     }
 }
+impl UpdateAbpV10X {
+    /// Creates a new builder-style object to manufacture [`UpdateAbpV10X`](crate::model::UpdateAbpV10X).
+    pub fn builder() -> crate::model::update_abp_v10_x::Builder {
+        crate::model::update_abp_v10_x::Builder::default()
+    }
+}
+
 /// See [`UpdateAbpV10X`](crate::model::UpdateAbpV10X).
 pub mod update_abp_v10_x {
 
@@ -622,12 +633,6 @@ pub mod update_abp_v10_x {
         }
     }
 }
-impl UpdateAbpV10X {
-    /// Creates a new builder-style object to manufacture [`UpdateAbpV10X`](crate::model::UpdateAbpV10X).
-    pub fn builder() -> crate::model::update_abp_v10_x::Builder {
-        crate::model::update_abp_v10_x::Builder::default()
-    }
-}
 
 /// <p>ABP device object for LoRaWAN specification v1.1</p>
 #[non_exhaustive]
@@ -643,6 +648,13 @@ impl UpdateAbpV11 {
         self.f_cnt_start
     }
 }
+impl UpdateAbpV11 {
+    /// Creates a new builder-style object to manufacture [`UpdateAbpV11`](crate::model::UpdateAbpV11).
+    pub fn builder() -> crate::model::update_abp_v11::Builder {
+        crate::model::update_abp_v11::Builder::default()
+    }
+}
+
 /// See [`UpdateAbpV11`](crate::model::UpdateAbpV11).
 pub mod update_abp_v11 {
 
@@ -669,12 +681,6 @@ pub mod update_abp_v11 {
                 f_cnt_start: self.f_cnt_start,
             }
         }
-    }
-}
-impl UpdateAbpV11 {
-    /// Creates a new builder-style object to manufacture [`UpdateAbpV11`](crate::model::UpdateAbpV11).
-    pub fn builder() -> crate::model::update_abp_v11::Builder {
-        crate::model::update_abp_v11::Builder::default()
     }
 }
 
@@ -796,6 +802,13 @@ impl MessageDeliveryStatusEventConfiguration {
         self.wireless_device_id_event_topic.as_ref()
     }
 }
+impl MessageDeliveryStatusEventConfiguration {
+    /// Creates a new builder-style object to manufacture [`MessageDeliveryStatusEventConfiguration`](crate::model::MessageDeliveryStatusEventConfiguration).
+    pub fn builder() -> crate::model::message_delivery_status_event_configuration::Builder {
+        crate::model::message_delivery_status_event_configuration::Builder::default()
+    }
+}
+
 /// See [`MessageDeliveryStatusEventConfiguration`](crate::model::MessageDeliveryStatusEventConfiguration).
 pub mod message_delivery_status_event_configuration {
 
@@ -848,12 +861,6 @@ pub mod message_delivery_status_event_configuration {
                 wireless_device_id_event_topic: self.wireless_device_id_event_topic,
             }
         }
-    }
-}
-impl MessageDeliveryStatusEventConfiguration {
-    /// Creates a new builder-style object to manufacture [`MessageDeliveryStatusEventConfiguration`](crate::model::MessageDeliveryStatusEventConfiguration).
-    pub fn builder() -> crate::model::message_delivery_status_event_configuration::Builder {
-        crate::model::message_delivery_status_event_configuration::Builder::default()
     }
 }
 
@@ -965,6 +972,13 @@ impl SidewalkEventNotificationConfigurations {
         self.amazon_id_event_topic.as_ref()
     }
 }
+impl SidewalkEventNotificationConfigurations {
+    /// Creates a new builder-style object to manufacture [`SidewalkEventNotificationConfigurations`](crate::model::SidewalkEventNotificationConfigurations).
+    pub fn builder() -> crate::model::sidewalk_event_notification_configurations::Builder {
+        crate::model::sidewalk_event_notification_configurations::Builder::default()
+    }
+}
+
 /// See [`SidewalkEventNotificationConfigurations`](crate::model::SidewalkEventNotificationConfigurations).
 pub mod sidewalk_event_notification_configurations {
 
@@ -1000,12 +1014,6 @@ pub mod sidewalk_event_notification_configurations {
         }
     }
 }
-impl SidewalkEventNotificationConfigurations {
-    /// Creates a new builder-style object to manufacture [`SidewalkEventNotificationConfigurations`](crate::model::SidewalkEventNotificationConfigurations).
-    pub fn builder() -> crate::model::sidewalk_event_notification_configurations::Builder {
-        crate::model::sidewalk_event_notification_configurations::Builder::default()
-    }
-}
 
 /// <p>Connection status event configuration object for enabling or disabling topic.</p>
 #[non_exhaustive]
@@ -1035,6 +1043,13 @@ impl ConnectionStatusEventConfiguration {
         self.wireless_gateway_id_event_topic.as_ref()
     }
 }
+impl ConnectionStatusEventConfiguration {
+    /// Creates a new builder-style object to manufacture [`ConnectionStatusEventConfiguration`](crate::model::ConnectionStatusEventConfiguration).
+    pub fn builder() -> crate::model::connection_status_event_configuration::Builder {
+        crate::model::connection_status_event_configuration::Builder::default()
+    }
+}
+
 /// See [`ConnectionStatusEventConfiguration`](crate::model::ConnectionStatusEventConfiguration).
 pub mod connection_status_event_configuration {
 
@@ -1092,12 +1107,6 @@ pub mod connection_status_event_configuration {
         }
     }
 }
-impl ConnectionStatusEventConfiguration {
-    /// Creates a new builder-style object to manufacture [`ConnectionStatusEventConfiguration`](crate::model::ConnectionStatusEventConfiguration).
-    pub fn builder() -> crate::model::connection_status_event_configuration::Builder {
-        crate::model::connection_status_event_configuration::Builder::default()
-    }
-}
 
 /// <p>Object for LoRaWAN connection status resource type event configuration.</p>
 #[non_exhaustive]
@@ -1115,6 +1124,14 @@ impl LoRaWanConnectionStatusEventNotificationConfigurations {
         self.gateway_eui_event_topic.as_ref()
     }
 }
+impl LoRaWanConnectionStatusEventNotificationConfigurations {
+    /// Creates a new builder-style object to manufacture [`LoRaWanConnectionStatusEventNotificationConfigurations`](crate::model::LoRaWanConnectionStatusEventNotificationConfigurations).
+    pub fn builder(
+    ) -> crate::model::lo_ra_wan_connection_status_event_notification_configurations::Builder {
+        crate::model::lo_ra_wan_connection_status_event_notification_configurations::Builder::default()
+    }
+}
+
 /// See [`LoRaWanConnectionStatusEventNotificationConfigurations`](crate::model::LoRaWanConnectionStatusEventNotificationConfigurations).
 pub mod lo_ra_wan_connection_status_event_notification_configurations {
 
@@ -1150,13 +1167,6 @@ pub mod lo_ra_wan_connection_status_event_notification_configurations {
         }
     }
 }
-impl LoRaWanConnectionStatusEventNotificationConfigurations {
-    /// Creates a new builder-style object to manufacture [`LoRaWanConnectionStatusEventNotificationConfigurations`](crate::model::LoRaWanConnectionStatusEventNotificationConfigurations).
-    pub fn builder(
-    ) -> crate::model::lo_ra_wan_connection_status_event_notification_configurations::Builder {
-        crate::model::lo_ra_wan_connection_status_event_notification_configurations::Builder::default()
-    }
-}
 
 /// <p>Join event configuration object for enabling or disabling topic.</p>
 #[non_exhaustive]
@@ -1184,6 +1194,13 @@ impl JoinEventConfiguration {
         self.wireless_device_id_event_topic.as_ref()
     }
 }
+impl JoinEventConfiguration {
+    /// Creates a new builder-style object to manufacture [`JoinEventConfiguration`](crate::model::JoinEventConfiguration).
+    pub fn builder() -> crate::model::join_event_configuration::Builder {
+        crate::model::join_event_configuration::Builder::default()
+    }
+}
+
 /// See [`JoinEventConfiguration`](crate::model::JoinEventConfiguration).
 pub mod join_event_configuration {
 
@@ -1238,12 +1255,6 @@ pub mod join_event_configuration {
         }
     }
 }
-impl JoinEventConfiguration {
-    /// Creates a new builder-style object to manufacture [`JoinEventConfiguration`](crate::model::JoinEventConfiguration).
-    pub fn builder() -> crate::model::join_event_configuration::Builder {
-        crate::model::join_event_configuration::Builder::default()
-    }
-}
 
 /// <p>Object for LoRaWAN join resource type event configuration.</p>
 #[non_exhaustive]
@@ -1261,6 +1272,13 @@ impl LoRaWanJoinEventNotificationConfigurations {
         self.dev_eui_event_topic.as_ref()
     }
 }
+impl LoRaWanJoinEventNotificationConfigurations {
+    /// Creates a new builder-style object to manufacture [`LoRaWanJoinEventNotificationConfigurations`](crate::model::LoRaWanJoinEventNotificationConfigurations).
+    pub fn builder() -> crate::model::lo_ra_wan_join_event_notification_configurations::Builder {
+        crate::model::lo_ra_wan_join_event_notification_configurations::Builder::default()
+    }
+}
+
 /// See [`LoRaWanJoinEventNotificationConfigurations`](crate::model::LoRaWanJoinEventNotificationConfigurations).
 pub mod lo_ra_wan_join_event_notification_configurations {
 
@@ -1296,12 +1314,6 @@ pub mod lo_ra_wan_join_event_notification_configurations {
         }
     }
 }
-impl LoRaWanJoinEventNotificationConfigurations {
-    /// Creates a new builder-style object to manufacture [`LoRaWanJoinEventNotificationConfigurations`](crate::model::LoRaWanJoinEventNotificationConfigurations).
-    pub fn builder() -> crate::model::lo_ra_wan_join_event_notification_configurations::Builder {
-        crate::model::lo_ra_wan_join_event_notification_configurations::Builder::default()
-    }
-}
 
 /// <p>Proximity event configuration object for enabling and disabling relevant topics.</p>
 #[non_exhaustive]
@@ -1329,6 +1341,13 @@ impl ProximityEventConfiguration {
         self.wireless_device_id_event_topic.as_ref()
     }
 }
+impl ProximityEventConfiguration {
+    /// Creates a new builder-style object to manufacture [`ProximityEventConfiguration`](crate::model::ProximityEventConfiguration).
+    pub fn builder() -> crate::model::proximity_event_configuration::Builder {
+        crate::model::proximity_event_configuration::Builder::default()
+    }
+}
+
 /// See [`ProximityEventConfiguration`](crate::model::ProximityEventConfiguration).
 pub mod proximity_event_configuration {
 
@@ -1383,12 +1402,6 @@ pub mod proximity_event_configuration {
         }
     }
 }
-impl ProximityEventConfiguration {
-    /// Creates a new builder-style object to manufacture [`ProximityEventConfiguration`](crate::model::ProximityEventConfiguration).
-    pub fn builder() -> crate::model::proximity_event_configuration::Builder {
-        crate::model::proximity_event_configuration::Builder::default()
-    }
-}
 
 /// <p>Device registration state event configuration object for enabling and disabling relevant topics.</p>
 #[non_exhaustive]
@@ -1416,6 +1429,13 @@ impl DeviceRegistrationStateEventConfiguration {
         self.wireless_device_id_event_topic.as_ref()
     }
 }
+impl DeviceRegistrationStateEventConfiguration {
+    /// Creates a new builder-style object to manufacture [`DeviceRegistrationStateEventConfiguration`](crate::model::DeviceRegistrationStateEventConfiguration).
+    pub fn builder() -> crate::model::device_registration_state_event_configuration::Builder {
+        crate::model::device_registration_state_event_configuration::Builder::default()
+    }
+}
+
 /// See [`DeviceRegistrationStateEventConfiguration`](crate::model::DeviceRegistrationStateEventConfiguration).
 pub mod device_registration_state_event_configuration {
 
@@ -1468,12 +1488,6 @@ pub mod device_registration_state_event_configuration {
                 wireless_device_id_event_topic: self.wireless_device_id_event_topic,
             }
         }
-    }
-}
-impl DeviceRegistrationStateEventConfiguration {
-    /// Creates a new builder-style object to manufacture [`DeviceRegistrationStateEventConfiguration`](crate::model::DeviceRegistrationStateEventConfiguration).
-    pub fn builder() -> crate::model::device_registration_state_event_configuration::Builder {
-        crate::model::device_registration_state_event_configuration::Builder::default()
     }
 }
 
@@ -1781,6 +1795,13 @@ impl std::fmt::Debug for SidewalkUpdateAccount {
         formatter.finish()
     }
 }
+impl SidewalkUpdateAccount {
+    /// Creates a new builder-style object to manufacture [`SidewalkUpdateAccount`](crate::model::SidewalkUpdateAccount).
+    pub fn builder() -> crate::model::sidewalk_update_account::Builder {
+        crate::model::sidewalk_update_account::Builder::default()
+    }
+}
+
 /// See [`SidewalkUpdateAccount`](crate::model::SidewalkUpdateAccount).
 pub mod sidewalk_update_account {
 
@@ -1819,12 +1840,6 @@ pub mod sidewalk_update_account {
         }
     }
 }
-impl SidewalkUpdateAccount {
-    /// Creates a new builder-style object to manufacture [`SidewalkUpdateAccount`](crate::model::SidewalkUpdateAccount).
-    pub fn builder() -> crate::model::sidewalk_update_account::Builder {
-        crate::model::sidewalk_update_account::Builder::default()
-    }
-}
 
 /// <p>Trace content for your wireless gateway and wireless device resources.</p>
 #[non_exhaustive]
@@ -1849,6 +1864,13 @@ impl TraceContent {
         self.log_level.as_ref()
     }
 }
+impl TraceContent {
+    /// Creates a new builder-style object to manufacture [`TraceContent`](crate::model::TraceContent).
+    pub fn builder() -> crate::model::trace_content::Builder {
+        crate::model::trace_content::Builder::default()
+    }
+}
+
 /// See [`TraceContent`](crate::model::TraceContent).
 pub mod trace_content {
 
@@ -1894,12 +1916,6 @@ pub mod trace_content {
                 log_level: self.log_level,
             }
         }
-    }
-}
-impl TraceContent {
-    /// Creates a new builder-style object to manufacture [`TraceContent`](crate::model::TraceContent).
-    pub fn builder() -> crate::model::trace_content::Builder {
-        crate::model::trace_content::Builder::default()
     }
 }
 
@@ -2114,6 +2130,13 @@ impl LoRaWanMulticast {
         self.dl_class.as_ref()
     }
 }
+impl LoRaWanMulticast {
+    /// Creates a new builder-style object to manufacture [`LoRaWanMulticast`](crate::model::LoRaWanMulticast).
+    pub fn builder() -> crate::model::lo_ra_wan_multicast::Builder {
+        crate::model::lo_ra_wan_multicast::Builder::default()
+    }
+}
+
 /// See [`LoRaWanMulticast`](crate::model::LoRaWanMulticast).
 pub mod lo_ra_wan_multicast {
 
@@ -2155,12 +2178,6 @@ pub mod lo_ra_wan_multicast {
                 dl_class: self.dl_class,
             }
         }
-    }
-}
-impl LoRaWanMulticast {
-    /// Creates a new builder-style object to manufacture [`LoRaWanMulticast`](crate::model::LoRaWanMulticast).
-    pub fn builder() -> crate::model::lo_ra_wan_multicast::Builder {
-        crate::model::lo_ra_wan_multicast::Builder::default()
     }
 }
 
@@ -2384,6 +2401,13 @@ impl WirelessGatewayLogOption {
         self.events.as_deref()
     }
 }
+impl WirelessGatewayLogOption {
+    /// Creates a new builder-style object to manufacture [`WirelessGatewayLogOption`](crate::model::WirelessGatewayLogOption).
+    pub fn builder() -> crate::model::wireless_gateway_log_option::Builder {
+        crate::model::wireless_gateway_log_option::Builder::default()
+    }
+}
+
 /// See [`WirelessGatewayLogOption`](crate::model::WirelessGatewayLogOption).
 pub mod wireless_gateway_log_option {
 
@@ -2449,12 +2473,6 @@ pub mod wireless_gateway_log_option {
         }
     }
 }
-impl WirelessGatewayLogOption {
-    /// Creates a new builder-style object to manufacture [`WirelessGatewayLogOption`](crate::model::WirelessGatewayLogOption).
-    pub fn builder() -> crate::model::wireless_gateway_log_option::Builder {
-        crate::model::wireless_gateway_log_option::Builder::default()
-    }
-}
 
 /// <p>The log options for a wireless gateway event and can be used to set log levels for a specific wireless gateway event.</p>
 /// <p>For a LoRaWAN gateway, possible events for a log message are <code>CUPS_Request</code> and <code>Certificate</code>.</p>
@@ -2478,6 +2496,13 @@ impl WirelessGatewayEventLogOption {
         self.log_level.as_ref()
     }
 }
+impl WirelessGatewayEventLogOption {
+    /// Creates a new builder-style object to manufacture [`WirelessGatewayEventLogOption`](crate::model::WirelessGatewayEventLogOption).
+    pub fn builder() -> crate::model::wireless_gateway_event_log_option::Builder {
+        crate::model::wireless_gateway_event_log_option::Builder::default()
+    }
+}
+
 /// See [`WirelessGatewayEventLogOption`](crate::model::WirelessGatewayEventLogOption).
 pub mod wireless_gateway_event_log_option {
 
@@ -2519,12 +2544,6 @@ pub mod wireless_gateway_event_log_option {
                 log_level: self.log_level,
             }
         }
-    }
-}
-impl WirelessGatewayEventLogOption {
-    /// Creates a new builder-style object to manufacture [`WirelessGatewayEventLogOption`](crate::model::WirelessGatewayEventLogOption).
-    pub fn builder() -> crate::model::wireless_gateway_event_log_option::Builder {
-        crate::model::wireless_gateway_event_log_option::Builder::default()
     }
 }
 
@@ -2735,6 +2754,13 @@ impl WirelessDeviceLogOption {
         self.events.as_deref()
     }
 }
+impl WirelessDeviceLogOption {
+    /// Creates a new builder-style object to manufacture [`WirelessDeviceLogOption`](crate::model::WirelessDeviceLogOption).
+    pub fn builder() -> crate::model::wireless_device_log_option::Builder {
+        crate::model::wireless_device_log_option::Builder::default()
+    }
+}
+
 /// See [`WirelessDeviceLogOption`](crate::model::WirelessDeviceLogOption).
 pub mod wireless_device_log_option {
 
@@ -2800,12 +2826,6 @@ pub mod wireless_device_log_option {
         }
     }
 }
-impl WirelessDeviceLogOption {
-    /// Creates a new builder-style object to manufacture [`WirelessDeviceLogOption`](crate::model::WirelessDeviceLogOption).
-    pub fn builder() -> crate::model::wireless_device_log_option::Builder {
-        crate::model::wireless_device_log_option::Builder::default()
-    }
-}
 
 /// <p>The log options for a wireless device event and can be used to set log levels for a specific wireless device event.</p>
 /// <p>For a LoRaWAN device, possible events for a log messsage are: <code>Join</code>, <code>Rejoin</code>, <code>Downlink_Data</code>, and <code>Uplink_Data</code>. For a Sidewalk device, possible events for a log message are <code>Registration</code>, <code>Downlink_Data</code>, and <code>Uplink_Data</code>.</p>
@@ -2829,6 +2849,13 @@ impl WirelessDeviceEventLogOption {
         self.log_level.as_ref()
     }
 }
+impl WirelessDeviceEventLogOption {
+    /// Creates a new builder-style object to manufacture [`WirelessDeviceEventLogOption`](crate::model::WirelessDeviceEventLogOption).
+    pub fn builder() -> crate::model::wireless_device_event_log_option::Builder {
+        crate::model::wireless_device_event_log_option::Builder::default()
+    }
+}
+
 /// See [`WirelessDeviceEventLogOption`](crate::model::WirelessDeviceEventLogOption).
 pub mod wireless_device_event_log_option {
 
@@ -2870,12 +2897,6 @@ pub mod wireless_device_event_log_option {
                 log_level: self.log_level,
             }
         }
-    }
-}
-impl WirelessDeviceEventLogOption {
-    /// Creates a new builder-style object to manufacture [`WirelessDeviceEventLogOption`](crate::model::WirelessDeviceEventLogOption).
-    pub fn builder() -> crate::model::wireless_device_event_log_option::Builder {
-        crate::model::wireless_device_event_log_option::Builder::default()
     }
 }
 
@@ -3098,6 +3119,13 @@ impl LoRaWanFuotaTask {
         self.rf_region.as_ref()
     }
 }
+impl LoRaWanFuotaTask {
+    /// Creates a new builder-style object to manufacture [`LoRaWanFuotaTask`](crate::model::LoRaWanFuotaTask).
+    pub fn builder() -> crate::model::lo_ra_wan_fuota_task::Builder {
+        crate::model::lo_ra_wan_fuota_task::Builder::default()
+    }
+}
+
 /// See [`LoRaWanFuotaTask`](crate::model::LoRaWanFuotaTask).
 pub mod lo_ra_wan_fuota_task {
 
@@ -3129,12 +3157,6 @@ pub mod lo_ra_wan_fuota_task {
         }
     }
 }
-impl LoRaWanFuotaTask {
-    /// Creates a new builder-style object to manufacture [`LoRaWanFuotaTask`](crate::model::LoRaWanFuotaTask).
-    pub fn builder() -> crate::model::lo_ra_wan_fuota_task::Builder {
-        crate::model::lo_ra_wan_fuota_task::Builder::default()
-    }
-}
 
 /// <p>Message delivery status resource type event configuration object for enabling or disabling relevant topic.</p>
 #[non_exhaustive]
@@ -3152,6 +3174,14 @@ impl MessageDeliveryStatusResourceTypeEventConfiguration {
         self.sidewalk.as_ref()
     }
 }
+impl MessageDeliveryStatusResourceTypeEventConfiguration {
+    /// Creates a new builder-style object to manufacture [`MessageDeliveryStatusResourceTypeEventConfiguration`](crate::model::MessageDeliveryStatusResourceTypeEventConfiguration).
+    pub fn builder(
+    ) -> crate::model::message_delivery_status_resource_type_event_configuration::Builder {
+        crate::model::message_delivery_status_resource_type_event_configuration::Builder::default()
+    }
+}
+
 /// See [`MessageDeliveryStatusResourceTypeEventConfiguration`](crate::model::MessageDeliveryStatusResourceTypeEventConfiguration).
 pub mod message_delivery_status_resource_type_event_configuration {
 
@@ -3187,13 +3217,6 @@ pub mod message_delivery_status_resource_type_event_configuration {
         }
     }
 }
-impl MessageDeliveryStatusResourceTypeEventConfiguration {
-    /// Creates a new builder-style object to manufacture [`MessageDeliveryStatusResourceTypeEventConfiguration`](crate::model::MessageDeliveryStatusResourceTypeEventConfiguration).
-    pub fn builder(
-    ) -> crate::model::message_delivery_status_resource_type_event_configuration::Builder {
-        crate::model::message_delivery_status_resource_type_event_configuration::Builder::default()
-    }
-}
 
 /// <p>Sidewalk resource type event configuration object for enabling or disabling topic.</p>
 #[non_exhaustive]
@@ -3212,6 +3235,13 @@ impl SidewalkResourceTypeEventConfiguration {
         self.wireless_device_event_topic.as_ref()
     }
 }
+impl SidewalkResourceTypeEventConfiguration {
+    /// Creates a new builder-style object to manufacture [`SidewalkResourceTypeEventConfiguration`](crate::model::SidewalkResourceTypeEventConfiguration).
+    pub fn builder() -> crate::model::sidewalk_resource_type_event_configuration::Builder {
+        crate::model::sidewalk_resource_type_event_configuration::Builder::default()
+    }
+}
+
 /// See [`SidewalkResourceTypeEventConfiguration`](crate::model::SidewalkResourceTypeEventConfiguration).
 pub mod sidewalk_resource_type_event_configuration {
 
@@ -3247,12 +3277,6 @@ pub mod sidewalk_resource_type_event_configuration {
         }
     }
 }
-impl SidewalkResourceTypeEventConfiguration {
-    /// Creates a new builder-style object to manufacture [`SidewalkResourceTypeEventConfiguration`](crate::model::SidewalkResourceTypeEventConfiguration).
-    pub fn builder() -> crate::model::sidewalk_resource_type_event_configuration::Builder {
-        crate::model::sidewalk_resource_type_event_configuration::Builder::default()
-    }
-}
 
 /// <p>Connection status resource type event configuration object for enabling or disabling topic.</p>
 #[non_exhaustive]
@@ -3272,6 +3296,13 @@ impl ConnectionStatusResourceTypeEventConfiguration {
         self.lo_ra_wan.as_ref()
     }
 }
+impl ConnectionStatusResourceTypeEventConfiguration {
+    /// Creates a new builder-style object to manufacture [`ConnectionStatusResourceTypeEventConfiguration`](crate::model::ConnectionStatusResourceTypeEventConfiguration).
+    pub fn builder() -> crate::model::connection_status_resource_type_event_configuration::Builder {
+        crate::model::connection_status_resource_type_event_configuration::Builder::default()
+    }
+}
+
 /// See [`ConnectionStatusResourceTypeEventConfiguration`](crate::model::ConnectionStatusResourceTypeEventConfiguration).
 pub mod connection_status_resource_type_event_configuration {
 
@@ -3310,12 +3341,6 @@ pub mod connection_status_resource_type_event_configuration {
         }
     }
 }
-impl ConnectionStatusResourceTypeEventConfiguration {
-    /// Creates a new builder-style object to manufacture [`ConnectionStatusResourceTypeEventConfiguration`](crate::model::ConnectionStatusResourceTypeEventConfiguration).
-    pub fn builder() -> crate::model::connection_status_resource_type_event_configuration::Builder {
-        crate::model::connection_status_resource_type_event_configuration::Builder::default()
-    }
-}
 
 /// <p>Object for LoRaWAN connection status resource type event configuration.</p>
 #[non_exhaustive]
@@ -3334,6 +3359,14 @@ impl LoRaWanConnectionStatusResourceTypeEventConfiguration {
         self.wireless_gateway_event_topic.as_ref()
     }
 }
+impl LoRaWanConnectionStatusResourceTypeEventConfiguration {
+    /// Creates a new builder-style object to manufacture [`LoRaWanConnectionStatusResourceTypeEventConfiguration`](crate::model::LoRaWanConnectionStatusResourceTypeEventConfiguration).
+    pub fn builder(
+    ) -> crate::model::lo_ra_wan_connection_status_resource_type_event_configuration::Builder {
+        crate::model::lo_ra_wan_connection_status_resource_type_event_configuration::Builder::default()
+    }
+}
+
 /// See [`LoRaWanConnectionStatusResourceTypeEventConfiguration`](crate::model::LoRaWanConnectionStatusResourceTypeEventConfiguration).
 pub mod lo_ra_wan_connection_status_resource_type_event_configuration {
 
@@ -3369,13 +3402,6 @@ pub mod lo_ra_wan_connection_status_resource_type_event_configuration {
         }
     }
 }
-impl LoRaWanConnectionStatusResourceTypeEventConfiguration {
-    /// Creates a new builder-style object to manufacture [`LoRaWanConnectionStatusResourceTypeEventConfiguration`](crate::model::LoRaWanConnectionStatusResourceTypeEventConfiguration).
-    pub fn builder(
-    ) -> crate::model::lo_ra_wan_connection_status_resource_type_event_configuration::Builder {
-        crate::model::lo_ra_wan_connection_status_resource_type_event_configuration::Builder::default()
-    }
-}
 
 /// <p>Join resource type event configuration object for enabling or disabling topic.</p>
 #[non_exhaustive]
@@ -3393,6 +3419,13 @@ impl JoinResourceTypeEventConfiguration {
         self.lo_ra_wan.as_ref()
     }
 }
+impl JoinResourceTypeEventConfiguration {
+    /// Creates a new builder-style object to manufacture [`JoinResourceTypeEventConfiguration`](crate::model::JoinResourceTypeEventConfiguration).
+    pub fn builder() -> crate::model::join_resource_type_event_configuration::Builder {
+        crate::model::join_resource_type_event_configuration::Builder::default()
+    }
+}
+
 /// See [`JoinResourceTypeEventConfiguration`](crate::model::JoinResourceTypeEventConfiguration).
 pub mod join_resource_type_event_configuration {
 
@@ -3428,12 +3461,6 @@ pub mod join_resource_type_event_configuration {
         }
     }
 }
-impl JoinResourceTypeEventConfiguration {
-    /// Creates a new builder-style object to manufacture [`JoinResourceTypeEventConfiguration`](crate::model::JoinResourceTypeEventConfiguration).
-    pub fn builder() -> crate::model::join_resource_type_event_configuration::Builder {
-        crate::model::join_resource_type_event_configuration::Builder::default()
-    }
-}
 
 /// <p>Object for LoRaWAN join resource type event configuration.</p>
 #[non_exhaustive]
@@ -3452,6 +3479,13 @@ impl LoRaWanJoinResourceTypeEventConfiguration {
         self.wireless_device_event_topic.as_ref()
     }
 }
+impl LoRaWanJoinResourceTypeEventConfiguration {
+    /// Creates a new builder-style object to manufacture [`LoRaWanJoinResourceTypeEventConfiguration`](crate::model::LoRaWanJoinResourceTypeEventConfiguration).
+    pub fn builder() -> crate::model::lo_ra_wan_join_resource_type_event_configuration::Builder {
+        crate::model::lo_ra_wan_join_resource_type_event_configuration::Builder::default()
+    }
+}
+
 /// See [`LoRaWanJoinResourceTypeEventConfiguration`](crate::model::LoRaWanJoinResourceTypeEventConfiguration).
 pub mod lo_ra_wan_join_resource_type_event_configuration {
 
@@ -3487,12 +3521,6 @@ pub mod lo_ra_wan_join_resource_type_event_configuration {
         }
     }
 }
-impl LoRaWanJoinResourceTypeEventConfiguration {
-    /// Creates a new builder-style object to manufacture [`LoRaWanJoinResourceTypeEventConfiguration`](crate::model::LoRaWanJoinResourceTypeEventConfiguration).
-    pub fn builder() -> crate::model::lo_ra_wan_join_resource_type_event_configuration::Builder {
-        crate::model::lo_ra_wan_join_resource_type_event_configuration::Builder::default()
-    }
-}
 
 /// <p>Proximity resource type event configuration object for enabling or disabling topic.</p>
 #[non_exhaustive]
@@ -3510,6 +3538,13 @@ impl ProximityResourceTypeEventConfiguration {
         self.sidewalk.as_ref()
     }
 }
+impl ProximityResourceTypeEventConfiguration {
+    /// Creates a new builder-style object to manufacture [`ProximityResourceTypeEventConfiguration`](crate::model::ProximityResourceTypeEventConfiguration).
+    pub fn builder() -> crate::model::proximity_resource_type_event_configuration::Builder {
+        crate::model::proximity_resource_type_event_configuration::Builder::default()
+    }
+}
+
 /// See [`ProximityResourceTypeEventConfiguration`](crate::model::ProximityResourceTypeEventConfiguration).
 pub mod proximity_resource_type_event_configuration {
 
@@ -3545,12 +3580,6 @@ pub mod proximity_resource_type_event_configuration {
         }
     }
 }
-impl ProximityResourceTypeEventConfiguration {
-    /// Creates a new builder-style object to manufacture [`ProximityResourceTypeEventConfiguration`](crate::model::ProximityResourceTypeEventConfiguration).
-    pub fn builder() -> crate::model::proximity_resource_type_event_configuration::Builder {
-        crate::model::proximity_resource_type_event_configuration::Builder::default()
-    }
-}
 
 /// <p>Device registration state resource type event configuration object for enabling or disabling topic.</p>
 #[non_exhaustive]
@@ -3568,6 +3597,15 @@ impl DeviceRegistrationStateResourceTypeEventConfiguration {
         self.sidewalk.as_ref()
     }
 }
+impl DeviceRegistrationStateResourceTypeEventConfiguration {
+    /// Creates a new builder-style object to manufacture [`DeviceRegistrationStateResourceTypeEventConfiguration`](crate::model::DeviceRegistrationStateResourceTypeEventConfiguration).
+    pub fn builder(
+    ) -> crate::model::device_registration_state_resource_type_event_configuration::Builder {
+        crate::model::device_registration_state_resource_type_event_configuration::Builder::default(
+        )
+    }
+}
+
 /// See [`DeviceRegistrationStateResourceTypeEventConfiguration`](crate::model::DeviceRegistrationStateResourceTypeEventConfiguration).
 pub mod device_registration_state_resource_type_event_configuration {
 
@@ -3601,14 +3639,6 @@ pub mod device_registration_state_resource_type_event_configuration {
                 sidewalk: self.sidewalk,
             }
         }
-    }
-}
-impl DeviceRegistrationStateResourceTypeEventConfiguration {
-    /// Creates a new builder-style object to manufacture [`DeviceRegistrationStateResourceTypeEventConfiguration`](crate::model::DeviceRegistrationStateResourceTypeEventConfiguration).
-    pub fn builder(
-    ) -> crate::model::device_registration_state_resource_type_event_configuration::Builder {
-        crate::model::device_registration_state_resource_type_event_configuration::Builder::default(
-        )
     }
 }
 
@@ -3723,6 +3753,13 @@ impl Tag {
         self.value.as_deref()
     }
 }
+impl Tag {
+    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
+    pub fn builder() -> crate::model::tag::Builder {
+        crate::model::tag::Builder::default()
+    }
+}
+
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
 
@@ -3763,12 +3800,6 @@ pub mod tag {
         }
     }
 }
-impl Tag {
-    /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
-    pub fn builder() -> crate::model::tag::Builder {
-        crate::model::tag::Builder::default()
-    }
-}
 
 /// <p>The LoRaWAN information used with the multicast session.</p>
 #[non_exhaustive]
@@ -3805,6 +3836,13 @@ impl LoRaWanMulticastSession {
         self.session_timeout
     }
 }
+impl LoRaWanMulticastSession {
+    /// Creates a new builder-style object to manufacture [`LoRaWanMulticastSession`](crate::model::LoRaWanMulticastSession).
+    pub fn builder() -> crate::model::lo_ra_wan_multicast_session::Builder {
+        crate::model::lo_ra_wan_multicast_session::Builder::default()
+    }
+}
+
 /// See [`LoRaWanMulticastSession`](crate::model::LoRaWanMulticastSession).
 pub mod lo_ra_wan_multicast_session {
 
@@ -3872,12 +3910,6 @@ pub mod lo_ra_wan_multicast_session {
         }
     }
 }
-impl LoRaWanMulticastSession {
-    /// Creates a new builder-style object to manufacture [`LoRaWanMulticastSession`](crate::model::LoRaWanMulticastSession).
-    pub fn builder() -> crate::model::lo_ra_wan_multicast_session::Builder {
-        crate::model::lo_ra_wan_multicast_session::Builder::default()
-    }
-}
 
 /// <p>The LoRaWAN information used to start a FUOTA task.</p>
 #[non_exhaustive]
@@ -3893,6 +3925,13 @@ impl LoRaWanStartFuotaTask {
         self.start_time.as_ref()
     }
 }
+impl LoRaWanStartFuotaTask {
+    /// Creates a new builder-style object to manufacture [`LoRaWanStartFuotaTask`](crate::model::LoRaWanStartFuotaTask).
+    pub fn builder() -> crate::model::lo_ra_wan_start_fuota_task::Builder {
+        crate::model::lo_ra_wan_start_fuota_task::Builder::default()
+    }
+}
+
 /// See [`LoRaWanStartFuotaTask`](crate::model::LoRaWanStartFuotaTask).
 pub mod lo_ra_wan_start_fuota_task {
 
@@ -3924,12 +3963,6 @@ pub mod lo_ra_wan_start_fuota_task {
         }
     }
 }
-impl LoRaWanStartFuotaTask {
-    /// Creates a new builder-style object to manufacture [`LoRaWanStartFuotaTask`](crate::model::LoRaWanStartFuotaTask).
-    pub fn builder() -> crate::model::lo_ra_wan_start_fuota_task::Builder {
-        crate::model::lo_ra_wan_start_fuota_task::Builder::default()
-    }
-}
 
 /// <p>WirelessMetadata object.</p>
 #[non_exhaustive]
@@ -3952,6 +3985,13 @@ impl WirelessMetadata {
         self.sidewalk.as_ref()
     }
 }
+impl WirelessMetadata {
+    /// Creates a new builder-style object to manufacture [`WirelessMetadata`](crate::model::WirelessMetadata).
+    pub fn builder() -> crate::model::wireless_metadata::Builder {
+        crate::model::wireless_metadata::Builder::default()
+    }
+}
+
 /// See [`WirelessMetadata`](crate::model::WirelessMetadata).
 pub mod wireless_metadata {
 
@@ -3998,12 +4038,6 @@ pub mod wireless_metadata {
         }
     }
 }
-impl WirelessMetadata {
-    /// Creates a new builder-style object to manufacture [`WirelessMetadata`](crate::model::WirelessMetadata).
-    pub fn builder() -> crate::model::wireless_metadata::Builder {
-        crate::model::wireless_metadata::Builder::default()
-    }
-}
 
 /// <p>Information about a Sidewalk router.</p>
 #[non_exhaustive]
@@ -4033,6 +4067,13 @@ impl SidewalkSendDataToDevice {
         self.ack_mode_retry_duration_secs
     }
 }
+impl SidewalkSendDataToDevice {
+    /// Creates a new builder-style object to manufacture [`SidewalkSendDataToDevice`](crate::model::SidewalkSendDataToDevice).
+    pub fn builder() -> crate::model::sidewalk_send_data_to_device::Builder {
+        crate::model::sidewalk_send_data_to_device::Builder::default()
+    }
+}
+
 /// See [`SidewalkSendDataToDevice`](crate::model::SidewalkSendDataToDevice).
 pub mod sidewalk_send_data_to_device {
 
@@ -4086,12 +4127,6 @@ pub mod sidewalk_send_data_to_device {
                 ack_mode_retry_duration_secs: self.ack_mode_retry_duration_secs,
             }
         }
-    }
-}
-impl SidewalkSendDataToDevice {
-    /// Creates a new builder-style object to manufacture [`SidewalkSendDataToDevice`](crate::model::SidewalkSendDataToDevice).
-    pub fn builder() -> crate::model::sidewalk_send_data_to_device::Builder {
-        crate::model::sidewalk_send_data_to_device::Builder::default()
     }
 }
 
@@ -4223,6 +4258,13 @@ impl LoRaWanSendDataToDevice {
         self.participating_gateways.as_ref()
     }
 }
+impl LoRaWanSendDataToDevice {
+    /// Creates a new builder-style object to manufacture [`LoRaWanSendDataToDevice`](crate::model::LoRaWanSendDataToDevice).
+    pub fn builder() -> crate::model::lo_ra_wan_send_data_to_device::Builder {
+        crate::model::lo_ra_wan_send_data_to_device::Builder::default()
+    }
+}
+
 /// See [`LoRaWanSendDataToDevice`](crate::model::LoRaWanSendDataToDevice).
 pub mod lo_ra_wan_send_data_to_device {
 
@@ -4269,12 +4311,6 @@ pub mod lo_ra_wan_send_data_to_device {
         }
     }
 }
-impl LoRaWanSendDataToDevice {
-    /// Creates a new builder-style object to manufacture [`LoRaWanSendDataToDevice`](crate::model::LoRaWanSendDataToDevice).
-    pub fn builder() -> crate::model::lo_ra_wan_send_data_to_device::Builder {
-        crate::model::lo_ra_wan_send_data_to_device::Builder::default()
-    }
-}
 
 /// <p>Specify the list of gateways to which you want to send downlink data traffic when the wireless device is running in class B or class C mode.</p>
 #[non_exhaustive]
@@ -4304,6 +4340,13 @@ impl ParticipatingGateways {
         self.transmission_interval
     }
 }
+impl ParticipatingGateways {
+    /// Creates a new builder-style object to manufacture [`ParticipatingGateways`](crate::model::ParticipatingGateways).
+    pub fn builder() -> crate::model::participating_gateways::Builder {
+        crate::model::participating_gateways::Builder::default()
+    }
+}
+
 /// See [`ParticipatingGateways`](crate::model::ParticipatingGateways).
 pub mod participating_gateways {
 
@@ -4368,12 +4411,6 @@ pub mod participating_gateways {
         }
     }
 }
-impl ParticipatingGateways {
-    /// Creates a new builder-style object to manufacture [`ParticipatingGateways`](crate::model::ParticipatingGateways).
-    pub fn builder() -> crate::model::participating_gateways::Builder {
-        crate::model::participating_gateways::Builder::default()
-    }
-}
 
 /// <p>Gateway list item object that specifies the frequency and list of gateways for which the downlink message should be sent.</p>
 #[non_exhaustive]
@@ -4396,6 +4433,13 @@ impl GatewayListItem {
         self.downlink_frequency
     }
 }
+impl GatewayListItem {
+    /// Creates a new builder-style object to manufacture [`GatewayListItem`](crate::model::GatewayListItem).
+    pub fn builder() -> crate::model::gateway_list_item::Builder {
+        crate::model::gateway_list_item::Builder::default()
+    }
+}
+
 /// See [`GatewayListItem`](crate::model::GatewayListItem).
 pub mod gateway_list_item {
 
@@ -4434,12 +4478,6 @@ pub mod gateway_list_item {
                 downlink_frequency: self.downlink_frequency,
             }
         }
-    }
-}
-impl GatewayListItem {
-    /// Creates a new builder-style object to manufacture [`GatewayListItem`](crate::model::GatewayListItem).
-    pub fn builder() -> crate::model::gateway_list_item::Builder {
-        crate::model::gateway_list_item::Builder::default()
     }
 }
 
@@ -4552,6 +4590,13 @@ impl MulticastWirelessMetadata {
         self.lo_ra_wan.as_ref()
     }
 }
+impl MulticastWirelessMetadata {
+    /// Creates a new builder-style object to manufacture [`MulticastWirelessMetadata`](crate::model::MulticastWirelessMetadata).
+    pub fn builder() -> crate::model::multicast_wireless_metadata::Builder {
+        crate::model::multicast_wireless_metadata::Builder::default()
+    }
+}
+
 /// See [`MulticastWirelessMetadata`](crate::model::MulticastWirelessMetadata).
 pub mod multicast_wireless_metadata {
 
@@ -4583,12 +4628,6 @@ pub mod multicast_wireless_metadata {
         }
     }
 }
-impl MulticastWirelessMetadata {
-    /// Creates a new builder-style object to manufacture [`MulticastWirelessMetadata`](crate::model::MulticastWirelessMetadata).
-    pub fn builder() -> crate::model::multicast_wireless_metadata::Builder {
-        crate::model::multicast_wireless_metadata::Builder::default()
-    }
-}
 
 /// <p>The metadata information of the LoRaWAN multicast group.</p>
 #[non_exhaustive]
@@ -4604,6 +4643,13 @@ impl LoRaWanMulticastMetadata {
         self.f_port
     }
 }
+impl LoRaWanMulticastMetadata {
+    /// Creates a new builder-style object to manufacture [`LoRaWanMulticastMetadata`](crate::model::LoRaWanMulticastMetadata).
+    pub fn builder() -> crate::model::lo_ra_wan_multicast_metadata::Builder {
+        crate::model::lo_ra_wan_multicast_metadata::Builder::default()
+    }
+}
+
 /// See [`LoRaWanMulticastMetadata`](crate::model::LoRaWanMulticastMetadata).
 pub mod lo_ra_wan_multicast_metadata {
 
@@ -4632,12 +4678,6 @@ pub mod lo_ra_wan_multicast_metadata {
         }
     }
 }
-impl LoRaWanMulticastMetadata {
-    /// Creates a new builder-style object to manufacture [`LoRaWanMulticastMetadata`](crate::model::LoRaWanMulticastMetadata).
-    pub fn builder() -> crate::model::lo_ra_wan_multicast_metadata::Builder {
-        crate::model::lo_ra_wan_multicast_metadata::Builder::default()
-    }
-}
 
 /// <p>The wrapper for position solver configurations.</p>
 #[non_exhaustive]
@@ -4653,6 +4693,13 @@ impl PositionSolverConfigurations {
         self.semtech_gnss.as_ref()
     }
 }
+impl PositionSolverConfigurations {
+    /// Creates a new builder-style object to manufacture [`PositionSolverConfigurations`](crate::model::PositionSolverConfigurations).
+    pub fn builder() -> crate::model::position_solver_configurations::Builder {
+        crate::model::position_solver_configurations::Builder::default()
+    }
+}
+
 /// See [`PositionSolverConfigurations`](crate::model::PositionSolverConfigurations).
 pub mod position_solver_configurations {
 
@@ -4684,12 +4731,6 @@ pub mod position_solver_configurations {
         }
     }
 }
-impl PositionSolverConfigurations {
-    /// Creates a new builder-style object to manufacture [`PositionSolverConfigurations`](crate::model::PositionSolverConfigurations).
-    pub fn builder() -> crate::model::position_solver_configurations::Builder {
-        crate::model::position_solver_configurations::Builder::default()
-    }
-}
 
 /// <p>Information about the Semtech GNSS solver configuration.</p>
 #[non_exhaustive]
@@ -4712,6 +4753,13 @@ impl SemtechGnssConfiguration {
         self.fec.as_ref()
     }
 }
+impl SemtechGnssConfiguration {
+    /// Creates a new builder-style object to manufacture [`SemtechGnssConfiguration`](crate::model::SemtechGnssConfiguration).
+    pub fn builder() -> crate::model::semtech_gnss_configuration::Builder {
+        crate::model::semtech_gnss_configuration::Builder::default()
+    }
+}
+
 /// See [`SemtechGnssConfiguration`](crate::model::SemtechGnssConfiguration).
 pub mod semtech_gnss_configuration {
 
@@ -4756,12 +4804,6 @@ pub mod semtech_gnss_configuration {
                 fec: self.fec,
             }
         }
-    }
-}
-impl SemtechGnssConfiguration {
-    /// Creates a new builder-style object to manufacture [`SemtechGnssConfiguration`](crate::model::SemtechGnssConfiguration).
-    pub fn builder() -> crate::model::semtech_gnss_configuration::Builder {
-        crate::model::semtech_gnss_configuration::Builder::default()
     }
 }
 
@@ -4977,6 +5019,13 @@ impl UpdateWirelessGatewayTaskEntry {
         self.arn.as_deref()
     }
 }
+impl UpdateWirelessGatewayTaskEntry {
+    /// Creates a new builder-style object to manufacture [`UpdateWirelessGatewayTaskEntry`](crate::model::UpdateWirelessGatewayTaskEntry).
+    pub fn builder() -> crate::model::update_wireless_gateway_task_entry::Builder {
+        crate::model::update_wireless_gateway_task_entry::Builder::default()
+    }
+}
+
 /// See [`UpdateWirelessGatewayTaskEntry`](crate::model::UpdateWirelessGatewayTaskEntry).
 pub mod update_wireless_gateway_task_entry {
 
@@ -5032,12 +5081,6 @@ pub mod update_wireless_gateway_task_entry {
         }
     }
 }
-impl UpdateWirelessGatewayTaskEntry {
-    /// Creates a new builder-style object to manufacture [`UpdateWirelessGatewayTaskEntry`](crate::model::UpdateWirelessGatewayTaskEntry).
-    pub fn builder() -> crate::model::update_wireless_gateway_task_entry::Builder {
-        crate::model::update_wireless_gateway_task_entry::Builder::default()
-    }
-}
 
 /// <p>LoRaWANUpdateGatewayTaskEntry object.</p>
 #[non_exhaustive]
@@ -5060,6 +5103,13 @@ impl LoRaWanUpdateGatewayTaskEntry {
         self.update_version.as_ref()
     }
 }
+impl LoRaWanUpdateGatewayTaskEntry {
+    /// Creates a new builder-style object to manufacture [`LoRaWanUpdateGatewayTaskEntry`](crate::model::LoRaWanUpdateGatewayTaskEntry).
+    pub fn builder() -> crate::model::lo_ra_wan_update_gateway_task_entry::Builder {
+        crate::model::lo_ra_wan_update_gateway_task_entry::Builder::default()
+    }
+}
+
 /// See [`LoRaWanUpdateGatewayTaskEntry`](crate::model::LoRaWanUpdateGatewayTaskEntry).
 pub mod lo_ra_wan_update_gateway_task_entry {
 
@@ -5106,12 +5156,6 @@ pub mod lo_ra_wan_update_gateway_task_entry {
         }
     }
 }
-impl LoRaWanUpdateGatewayTaskEntry {
-    /// Creates a new builder-style object to manufacture [`LoRaWanUpdateGatewayTaskEntry`](crate::model::LoRaWanUpdateGatewayTaskEntry).
-    pub fn builder() -> crate::model::lo_ra_wan_update_gateway_task_entry::Builder {
-        crate::model::lo_ra_wan_update_gateway_task_entry::Builder::default()
-    }
-}
 
 /// <p>LoRaWANGatewayVersion object.</p>
 #[non_exhaustive]
@@ -5141,6 +5185,13 @@ impl LoRaWanGatewayVersion {
         self.station.as_deref()
     }
 }
+impl LoRaWanGatewayVersion {
+    /// Creates a new builder-style object to manufacture [`LoRaWanGatewayVersion`](crate::model::LoRaWanGatewayVersion).
+    pub fn builder() -> crate::model::lo_ra_wan_gateway_version::Builder {
+        crate::model::lo_ra_wan_gateway_version::Builder::default()
+    }
+}
+
 /// See [`LoRaWanGatewayVersion`](crate::model::LoRaWanGatewayVersion).
 pub mod lo_ra_wan_gateway_version {
 
@@ -5194,12 +5245,6 @@ pub mod lo_ra_wan_gateway_version {
                 station: self.station,
             }
         }
-    }
-}
-impl LoRaWanGatewayVersion {
-    /// Creates a new builder-style object to manufacture [`LoRaWanGatewayVersion`](crate::model::LoRaWanGatewayVersion).
-    pub fn builder() -> crate::model::lo_ra_wan_gateway_version::Builder {
-        crate::model::lo_ra_wan_gateway_version::Builder::default()
     }
 }
 
@@ -5339,6 +5384,13 @@ impl WirelessGatewayStatistics {
         self.last_uplink_received_at.as_deref()
     }
 }
+impl WirelessGatewayStatistics {
+    /// Creates a new builder-style object to manufacture [`WirelessGatewayStatistics`](crate::model::WirelessGatewayStatistics).
+    pub fn builder() -> crate::model::wireless_gateway_statistics::Builder {
+        crate::model::wireless_gateway_statistics::Builder::default()
+    }
+}
+
 /// See [`WirelessGatewayStatistics`](crate::model::WirelessGatewayStatistics).
 pub mod wireless_gateway_statistics {
 
@@ -5433,12 +5485,6 @@ pub mod wireless_gateway_statistics {
         }
     }
 }
-impl WirelessGatewayStatistics {
-    /// Creates a new builder-style object to manufacture [`WirelessGatewayStatistics`](crate::model::WirelessGatewayStatistics).
-    pub fn builder() -> crate::model::wireless_gateway_statistics::Builder {
-        crate::model::wireless_gateway_statistics::Builder::default()
-    }
-}
 
 /// <p>LoRaWANGateway object.</p>
 #[non_exhaustive]
@@ -5489,6 +5535,13 @@ impl LoRaWanGateway {
         self.beaconing.as_ref()
     }
 }
+impl LoRaWanGateway {
+    /// Creates a new builder-style object to manufacture [`LoRaWanGateway`](crate::model::LoRaWanGateway).
+    pub fn builder() -> crate::model::lo_ra_wan_gateway::Builder {
+        crate::model::lo_ra_wan_gateway::Builder::default()
+    }
+}
+
 /// See [`LoRaWanGateway`](crate::model::LoRaWanGateway).
 pub mod lo_ra_wan_gateway {
 
@@ -5605,12 +5658,6 @@ pub mod lo_ra_wan_gateway {
         }
     }
 }
-impl LoRaWanGateway {
-    /// Creates a new builder-style object to manufacture [`LoRaWanGateway`](crate::model::LoRaWanGateway).
-    pub fn builder() -> crate::model::lo_ra_wan_gateway::Builder {
-        crate::model::lo_ra_wan_gateway::Builder::default()
-    }
-}
 
 /// <p>Beaconing parameters for configuring the wireless gateways.</p>
 #[non_exhaustive]
@@ -5633,6 +5680,13 @@ impl Beaconing {
         self.frequencies.as_deref()
     }
 }
+impl Beaconing {
+    /// Creates a new builder-style object to manufacture [`Beaconing`](crate::model::Beaconing).
+    pub fn builder() -> crate::model::beaconing::Builder {
+        crate::model::beaconing::Builder::default()
+    }
+}
+
 /// See [`Beaconing`](crate::model::Beaconing).
 pub mod beaconing {
 
@@ -5677,12 +5731,6 @@ pub mod beaconing {
                 frequencies: self.frequencies,
             }
         }
-    }
-}
-impl Beaconing {
-    /// Creates a new builder-style object to manufacture [`Beaconing`](crate::model::Beaconing).
-    pub fn builder() -> crate::model::beaconing::Builder {
-        crate::model::beaconing::Builder::default()
     }
 }
 
@@ -5770,6 +5818,13 @@ impl WirelessDeviceStatistics {
         self.mc_group_id
     }
 }
+impl WirelessDeviceStatistics {
+    /// Creates a new builder-style object to manufacture [`WirelessDeviceStatistics`](crate::model::WirelessDeviceStatistics).
+    pub fn builder() -> crate::model::wireless_device_statistics::Builder {
+        crate::model::wireless_device_statistics::Builder::default()
+    }
+}
+
 /// See [`WirelessDeviceStatistics`](crate::model::WirelessDeviceStatistics).
 pub mod wireless_device_statistics {
 
@@ -5937,12 +5992,6 @@ pub mod wireless_device_statistics {
                 mc_group_id: self.mc_group_id,
             }
         }
-    }
-}
-impl WirelessDeviceStatistics {
-    /// Creates a new builder-style object to manufacture [`WirelessDeviceStatistics`](crate::model::WirelessDeviceStatistics).
-    pub fn builder() -> crate::model::wireless_device_statistics::Builder {
-        crate::model::wireless_device_statistics::Builder::default()
     }
 }
 
@@ -6130,6 +6179,13 @@ impl SidewalkListDevice {
         self.device_certificates.as_deref()
     }
 }
+impl SidewalkListDevice {
+    /// Creates a new builder-style object to manufacture [`SidewalkListDevice`](crate::model::SidewalkListDevice).
+    pub fn builder() -> crate::model::sidewalk_list_device::Builder {
+        crate::model::sidewalk_list_device::Builder::default()
+    }
+}
+
 /// See [`SidewalkListDevice`](crate::model::SidewalkListDevice).
 pub mod sidewalk_list_device {
 
@@ -6207,12 +6263,6 @@ pub mod sidewalk_list_device {
         }
     }
 }
-impl SidewalkListDevice {
-    /// Creates a new builder-style object to manufacture [`SidewalkListDevice`](crate::model::SidewalkListDevice).
-    pub fn builder() -> crate::model::sidewalk_list_device::Builder {
-        crate::model::sidewalk_list_device::Builder::default()
-    }
-}
 
 /// <p>List of sidewalk certificates.</p>
 #[non_exhaustive]
@@ -6235,6 +6285,13 @@ impl CertificateList {
         self.value.as_deref()
     }
 }
+impl CertificateList {
+    /// Creates a new builder-style object to manufacture [`CertificateList`](crate::model::CertificateList).
+    pub fn builder() -> crate::model::certificate_list::Builder {
+        crate::model::certificate_list::Builder::default()
+    }
+}
+
 /// See [`CertificateList`](crate::model::CertificateList).
 pub mod certificate_list {
 
@@ -6276,12 +6333,6 @@ pub mod certificate_list {
                 value: self.value,
             }
         }
-    }
-}
-impl CertificateList {
-    /// Creates a new builder-style object to manufacture [`CertificateList`](crate::model::CertificateList).
-    pub fn builder() -> crate::model::certificate_list::Builder {
-        crate::model::certificate_list::Builder::default()
     }
 }
 
@@ -6389,6 +6440,13 @@ impl LoRaWanListDevice {
         self.dev_eui.as_deref()
     }
 }
+impl LoRaWanListDevice {
+    /// Creates a new builder-style object to manufacture [`LoRaWanListDevice`](crate::model::LoRaWanListDevice).
+    pub fn builder() -> crate::model::lo_ra_wan_list_device::Builder {
+        crate::model::lo_ra_wan_list_device::Builder::default()
+    }
+}
+
 /// See [`LoRaWanListDevice`](crate::model::LoRaWanListDevice).
 pub mod lo_ra_wan_list_device {
 
@@ -6415,12 +6473,6 @@ pub mod lo_ra_wan_list_device {
                 dev_eui: self.dev_eui,
             }
         }
-    }
-}
-impl LoRaWanListDevice {
-    /// Creates a new builder-style object to manufacture [`LoRaWanListDevice`](crate::model::LoRaWanListDevice).
-    pub fn builder() -> crate::model::lo_ra_wan_list_device::Builder {
-        crate::model::lo_ra_wan_list_device::Builder::default()
     }
 }
 
@@ -6452,6 +6504,13 @@ impl ServiceProfile {
         self.id.as_deref()
     }
 }
+impl ServiceProfile {
+    /// Creates a new builder-style object to manufacture [`ServiceProfile`](crate::model::ServiceProfile).
+    pub fn builder() -> crate::model::service_profile::Builder {
+        crate::model::service_profile::Builder::default()
+    }
+}
+
 /// See [`ServiceProfile`](crate::model::ServiceProfile).
 pub mod service_profile {
 
@@ -6504,12 +6563,6 @@ pub mod service_profile {
         }
     }
 }
-impl ServiceProfile {
-    /// Creates a new builder-style object to manufacture [`ServiceProfile`](crate::model::ServiceProfile).
-    pub fn builder() -> crate::model::service_profile::Builder {
-        crate::model::service_profile::Builder::default()
-    }
-}
 
 /// <p>The message in the downlink queue.</p>
 #[non_exhaustive]
@@ -6546,6 +6599,13 @@ impl DownlinkQueueMessage {
         self.lo_ra_wan.as_ref()
     }
 }
+impl DownlinkQueueMessage {
+    /// Creates a new builder-style object to manufacture [`DownlinkQueueMessage`](crate::model::DownlinkQueueMessage).
+    pub fn builder() -> crate::model::downlink_queue_message::Builder {
+        crate::model::downlink_queue_message::Builder::default()
+    }
+}
+
 /// See [`DownlinkQueueMessage`](crate::model::DownlinkQueueMessage).
 pub mod downlink_queue_message {
 
@@ -6613,12 +6673,6 @@ pub mod downlink_queue_message {
         }
     }
 }
-impl DownlinkQueueMessage {
-    /// Creates a new builder-style object to manufacture [`DownlinkQueueMessage`](crate::model::DownlinkQueueMessage).
-    pub fn builder() -> crate::model::downlink_queue_message::Builder {
-        crate::model::downlink_queue_message::Builder::default()
-    }
-}
 
 /// <p>The wrapper for a position configuration.</p>
 #[non_exhaustive]
@@ -6655,6 +6709,13 @@ impl PositionConfigurationItem {
         self.destination.as_deref()
     }
 }
+impl PositionConfigurationItem {
+    /// Creates a new builder-style object to manufacture [`PositionConfigurationItem`](crate::model::PositionConfigurationItem).
+    pub fn builder() -> crate::model::position_configuration_item::Builder {
+        crate::model::position_configuration_item::Builder::default()
+    }
+}
+
 /// See [`PositionConfigurationItem`](crate::model::PositionConfigurationItem).
 pub mod position_configuration_item {
 
@@ -6728,12 +6789,6 @@ pub mod position_configuration_item {
         }
     }
 }
-impl PositionConfigurationItem {
-    /// Creates a new builder-style object to manufacture [`PositionConfigurationItem`](crate::model::PositionConfigurationItem).
-    pub fn builder() -> crate::model::position_configuration_item::Builder {
-        crate::model::position_configuration_item::Builder::default()
-    }
-}
 
 /// <p>The wrapper for position solver details.</p>
 #[non_exhaustive]
@@ -6749,6 +6804,13 @@ impl PositionSolverDetails {
         self.semtech_gnss.as_ref()
     }
 }
+impl PositionSolverDetails {
+    /// Creates a new builder-style object to manufacture [`PositionSolverDetails`](crate::model::PositionSolverDetails).
+    pub fn builder() -> crate::model::position_solver_details::Builder {
+        crate::model::position_solver_details::Builder::default()
+    }
+}
+
 /// See [`PositionSolverDetails`](crate::model::PositionSolverDetails).
 pub mod position_solver_details {
 
@@ -6778,12 +6840,6 @@ pub mod position_solver_details {
                 semtech_gnss: self.semtech_gnss,
             }
         }
-    }
-}
-impl PositionSolverDetails {
-    /// Creates a new builder-style object to manufacture [`PositionSolverDetails`](crate::model::PositionSolverDetails).
-    pub fn builder() -> crate::model::position_solver_details::Builder {
-        crate::model::position_solver_details::Builder::default()
     }
 }
 
@@ -6822,6 +6878,13 @@ impl SemtechGnssDetail {
         self.fec.as_ref()
     }
 }
+impl SemtechGnssDetail {
+    /// Creates a new builder-style object to manufacture [`SemtechGnssDetail`](crate::model::SemtechGnssDetail).
+    pub fn builder() -> crate::model::semtech_gnss_detail::Builder {
+        crate::model::semtech_gnss_detail::Builder::default()
+    }
+}
+
 /// See [`SemtechGnssDetail`](crate::model::SemtechGnssDetail).
 pub mod semtech_gnss_detail {
 
@@ -6896,12 +6959,6 @@ pub mod semtech_gnss_detail {
                 fec: self.fec,
             }
         }
-    }
-}
-impl SemtechGnssDetail {
-    /// Creates a new builder-style object to manufacture [`SemtechGnssDetail`](crate::model::SemtechGnssDetail).
-    pub fn builder() -> crate::model::semtech_gnss_detail::Builder {
-        crate::model::semtech_gnss_detail::Builder::default()
     }
 }
 
@@ -7116,6 +7173,13 @@ impl std::fmt::Debug for SidewalkAccountInfoWithFingerprint {
         formatter.finish()
     }
 }
+impl SidewalkAccountInfoWithFingerprint {
+    /// Creates a new builder-style object to manufacture [`SidewalkAccountInfoWithFingerprint`](crate::model::SidewalkAccountInfoWithFingerprint).
+    pub fn builder() -> crate::model::sidewalk_account_info_with_fingerprint::Builder {
+        crate::model::sidewalk_account_info_with_fingerprint::Builder::default()
+    }
+}
+
 /// See [`SidewalkAccountInfoWithFingerprint`](crate::model::SidewalkAccountInfoWithFingerprint).
 pub mod sidewalk_account_info_with_fingerprint {
 
@@ -7177,12 +7241,6 @@ pub mod sidewalk_account_info_with_fingerprint {
         }
     }
 }
-impl SidewalkAccountInfoWithFingerprint {
-    /// Creates a new builder-style object to manufacture [`SidewalkAccountInfoWithFingerprint`](crate::model::SidewalkAccountInfoWithFingerprint).
-    pub fn builder() -> crate::model::sidewalk_account_info_with_fingerprint::Builder {
-        crate::model::sidewalk_account_info_with_fingerprint::Builder::default()
-    }
-}
 
 /// <p>Network analyzer configurations.</p>
 #[non_exhaustive]
@@ -7205,6 +7263,13 @@ impl NetworkAnalyzerConfigurations {
         self.name.as_deref()
     }
 }
+impl NetworkAnalyzerConfigurations {
+    /// Creates a new builder-style object to manufacture [`NetworkAnalyzerConfigurations`](crate::model::NetworkAnalyzerConfigurations).
+    pub fn builder() -> crate::model::network_analyzer_configurations::Builder {
+        crate::model::network_analyzer_configurations::Builder::default()
+    }
+}
+
 /// See [`NetworkAnalyzerConfigurations`](crate::model::NetworkAnalyzerConfigurations).
 pub mod network_analyzer_configurations {
 
@@ -7245,12 +7310,6 @@ pub mod network_analyzer_configurations {
         }
     }
 }
-impl NetworkAnalyzerConfigurations {
-    /// Creates a new builder-style object to manufacture [`NetworkAnalyzerConfigurations`](crate::model::NetworkAnalyzerConfigurations).
-    pub fn builder() -> crate::model::network_analyzer_configurations::Builder {
-        crate::model::network_analyzer_configurations::Builder::default()
-    }
-}
 
 /// <p>A multicast group that is associated with a FUOTA task.</p>
 #[non_exhaustive]
@@ -7266,6 +7325,13 @@ impl MulticastGroupByFuotaTask {
         self.id.as_deref()
     }
 }
+impl MulticastGroupByFuotaTask {
+    /// Creates a new builder-style object to manufacture [`MulticastGroupByFuotaTask`](crate::model::MulticastGroupByFuotaTask).
+    pub fn builder() -> crate::model::multicast_group_by_fuota_task::Builder {
+        crate::model::multicast_group_by_fuota_task::Builder::default()
+    }
+}
+
 /// See [`MulticastGroupByFuotaTask`](crate::model::MulticastGroupByFuotaTask).
 pub mod multicast_group_by_fuota_task {
 
@@ -7290,12 +7356,6 @@ pub mod multicast_group_by_fuota_task {
         pub fn build(self) -> crate::model::MulticastGroupByFuotaTask {
             crate::model::MulticastGroupByFuotaTask { id: self.id }
         }
-    }
-}
-impl MulticastGroupByFuotaTask {
-    /// Creates a new builder-style object to manufacture [`MulticastGroupByFuotaTask`](crate::model::MulticastGroupByFuotaTask).
-    pub fn builder() -> crate::model::multicast_group_by_fuota_task::Builder {
-        crate::model::multicast_group_by_fuota_task::Builder::default()
     }
 }
 
@@ -7327,6 +7387,13 @@ impl MulticastGroup {
         self.name.as_deref()
     }
 }
+impl MulticastGroup {
+    /// Creates a new builder-style object to manufacture [`MulticastGroup`](crate::model::MulticastGroup).
+    pub fn builder() -> crate::model::multicast_group::Builder {
+        crate::model::multicast_group::Builder::default()
+    }
+}
+
 /// See [`MulticastGroup`](crate::model::MulticastGroup).
 pub mod multicast_group {
 
@@ -7379,12 +7446,6 @@ pub mod multicast_group {
         }
     }
 }
-impl MulticastGroup {
-    /// Creates a new builder-style object to manufacture [`MulticastGroup`](crate::model::MulticastGroup).
-    pub fn builder() -> crate::model::multicast_group::Builder {
-        crate::model::multicast_group::Builder::default()
-    }
-}
 
 /// <p>A FUOTA task.</p>
 #[non_exhaustive]
@@ -7414,6 +7475,13 @@ impl FuotaTask {
         self.name.as_deref()
     }
 }
+impl FuotaTask {
+    /// Creates a new builder-style object to manufacture [`FuotaTask`](crate::model::FuotaTask).
+    pub fn builder() -> crate::model::fuota_task::Builder {
+        crate::model::fuota_task::Builder::default()
+    }
+}
+
 /// See [`FuotaTask`](crate::model::FuotaTask).
 pub mod fuota_task {
 
@@ -7466,12 +7534,6 @@ pub mod fuota_task {
         }
     }
 }
-impl FuotaTask {
-    /// Creates a new builder-style object to manufacture [`FuotaTask`](crate::model::FuotaTask).
-    pub fn builder() -> crate::model::fuota_task::Builder {
-        crate::model::fuota_task::Builder::default()
-    }
-}
 
 /// <p>Event configuration object for a single resource.</p>
 #[non_exhaustive]
@@ -7510,6 +7572,13 @@ impl EventConfigurationItem {
         self.events.as_ref()
     }
 }
+impl EventConfigurationItem {
+    /// Creates a new builder-style object to manufacture [`EventConfigurationItem`](crate::model::EventConfigurationItem).
+    pub fn builder() -> crate::model::event_configuration_item::Builder {
+        crate::model::event_configuration_item::Builder::default()
+    }
+}
+
 /// See [`EventConfigurationItem`](crate::model::EventConfigurationItem).
 pub mod event_configuration_item {
 
@@ -7583,12 +7652,6 @@ pub mod event_configuration_item {
         }
     }
 }
-impl EventConfigurationItem {
-    /// Creates a new builder-style object to manufacture [`EventConfigurationItem`](crate::model::EventConfigurationItem).
-    pub fn builder() -> crate::model::event_configuration_item::Builder {
-        crate::model::event_configuration_item::Builder::default()
-    }
-}
 
 /// <p>Object of all event configurations and the status of the event topics.</p>
 #[non_exhaustive]
@@ -7640,6 +7703,13 @@ impl EventNotificationItemConfigurations {
         self.message_delivery_status.as_ref()
     }
 }
+impl EventNotificationItemConfigurations {
+    /// Creates a new builder-style object to manufacture [`EventNotificationItemConfigurations`](crate::model::EventNotificationItemConfigurations).
+    pub fn builder() -> crate::model::event_notification_item_configurations::Builder {
+        crate::model::event_notification_item_configurations::Builder::default()
+    }
+}
+
 /// See [`EventNotificationItemConfigurations`](crate::model::EventNotificationItemConfigurations).
 pub mod event_notification_item_configurations {
 
@@ -7741,12 +7811,6 @@ pub mod event_notification_item_configurations {
                 message_delivery_status: self.message_delivery_status,
             }
         }
-    }
-}
-impl EventNotificationItemConfigurations {
-    /// Creates a new builder-style object to manufacture [`EventNotificationItemConfigurations`](crate::model::EventNotificationItemConfigurations).
-    pub fn builder() -> crate::model::event_notification_item_configurations::Builder {
-        crate::model::event_notification_item_configurations::Builder::default()
     }
 }
 
@@ -7875,6 +7939,13 @@ impl DeviceProfile {
         self.id.as_deref()
     }
 }
+impl DeviceProfile {
+    /// Creates a new builder-style object to manufacture [`DeviceProfile`](crate::model::DeviceProfile).
+    pub fn builder() -> crate::model::device_profile::Builder {
+        crate::model::device_profile::Builder::default()
+    }
+}
+
 /// See [`DeviceProfile`](crate::model::DeviceProfile).
 pub mod device_profile {
 
@@ -7927,12 +7998,6 @@ pub mod device_profile {
         }
     }
 }
-impl DeviceProfile {
-    /// Creates a new builder-style object to manufacture [`DeviceProfile`](crate::model::DeviceProfile).
-    pub fn builder() -> crate::model::device_profile::Builder {
-        crate::model::device_profile::Builder::default()
-    }
-}
 
 /// <p>Describes a destination.</p>
 #[non_exhaustive]
@@ -7983,6 +8048,13 @@ impl Destinations {
         self.role_arn.as_deref()
     }
 }
+impl Destinations {
+    /// Creates a new builder-style object to manufacture [`Destinations`](crate::model::Destinations).
+    pub fn builder() -> crate::model::destinations::Builder {
+        crate::model::destinations::Builder::default()
+    }
+}
+
 /// See [`Destinations`](crate::model::Destinations).
 pub mod destinations {
 
@@ -8074,12 +8146,6 @@ pub mod destinations {
         }
     }
 }
-impl Destinations {
-    /// Creates a new builder-style object to manufacture [`Destinations`](crate::model::Destinations).
-    pub fn builder() -> crate::model::destinations::Builder {
-        crate::model::destinations::Builder::default()
-    }
-}
 
 /// <p>UpdateWirelessGatewayTaskCreate object.</p>
 #[non_exhaustive]
@@ -8109,6 +8175,13 @@ impl UpdateWirelessGatewayTaskCreate {
         self.lo_ra_wan.as_ref()
     }
 }
+impl UpdateWirelessGatewayTaskCreate {
+    /// Creates a new builder-style object to manufacture [`UpdateWirelessGatewayTaskCreate`](crate::model::UpdateWirelessGatewayTaskCreate).
+    pub fn builder() -> crate::model::update_wireless_gateway_task_create::Builder {
+        crate::model::update_wireless_gateway_task_create::Builder::default()
+    }
+}
+
 /// See [`UpdateWirelessGatewayTaskCreate`](crate::model::UpdateWirelessGatewayTaskCreate).
 pub mod update_wireless_gateway_task_create {
 
@@ -8170,12 +8243,6 @@ pub mod update_wireless_gateway_task_create {
         }
     }
 }
-impl UpdateWirelessGatewayTaskCreate {
-    /// Creates a new builder-style object to manufacture [`UpdateWirelessGatewayTaskCreate`](crate::model::UpdateWirelessGatewayTaskCreate).
-    pub fn builder() -> crate::model::update_wireless_gateway_task_create::Builder {
-        crate::model::update_wireless_gateway_task_create::Builder::default()
-    }
-}
 
 /// <p>LoRaWANUpdateGatewayTaskCreate object.</p>
 #[non_exhaustive]
@@ -8212,6 +8279,13 @@ impl LoRaWanUpdateGatewayTaskCreate {
         self.update_version.as_ref()
     }
 }
+impl LoRaWanUpdateGatewayTaskCreate {
+    /// Creates a new builder-style object to manufacture [`LoRaWanUpdateGatewayTaskCreate`](crate::model::LoRaWanUpdateGatewayTaskCreate).
+    pub fn builder() -> crate::model::lo_ra_wan_update_gateway_task_create::Builder {
+        crate::model::lo_ra_wan_update_gateway_task_create::Builder::default()
+    }
+}
+
 /// See [`LoRaWanUpdateGatewayTaskCreate`](crate::model::LoRaWanUpdateGatewayTaskCreate).
 pub mod lo_ra_wan_update_gateway_task_create {
 
@@ -8283,12 +8357,6 @@ pub mod lo_ra_wan_update_gateway_task_create {
                 update_version: self.update_version,
             }
         }
-    }
-}
-impl LoRaWanUpdateGatewayTaskCreate {
-    /// Creates a new builder-style object to manufacture [`LoRaWanUpdateGatewayTaskCreate`](crate::model::LoRaWanUpdateGatewayTaskCreate).
-    pub fn builder() -> crate::model::lo_ra_wan_update_gateway_task_create::Builder {
-        crate::model::lo_ra_wan_update_gateway_task_create::Builder::default()
     }
 }
 
@@ -8515,6 +8583,13 @@ impl LoRaWanGatewayCurrentVersion {
         self.current_version.as_ref()
     }
 }
+impl LoRaWanGatewayCurrentVersion {
+    /// Creates a new builder-style object to manufacture [`LoRaWanGatewayCurrentVersion`](crate::model::LoRaWanGatewayCurrentVersion).
+    pub fn builder() -> crate::model::lo_ra_wan_gateway_current_version::Builder {
+        crate::model::lo_ra_wan_gateway_current_version::Builder::default()
+    }
+}
+
 /// See [`LoRaWanGatewayCurrentVersion`](crate::model::LoRaWanGatewayCurrentVersion).
 pub mod lo_ra_wan_gateway_current_version {
 
@@ -8544,12 +8619,6 @@ pub mod lo_ra_wan_gateway_current_version {
                 current_version: self.current_version,
             }
         }
-    }
-}
-impl LoRaWanGatewayCurrentVersion {
-    /// Creates a new builder-style object to manufacture [`LoRaWanGatewayCurrentVersion`](crate::model::LoRaWanGatewayCurrentVersion).
-    pub fn builder() -> crate::model::lo_ra_wan_gateway_current_version::Builder {
-        crate::model::lo_ra_wan_gateway_current_version::Builder::default()
     }
 }
 
@@ -8685,6 +8754,13 @@ impl SidewalkDeviceMetadata {
         self.device_state.as_ref()
     }
 }
+impl SidewalkDeviceMetadata {
+    /// Creates a new builder-style object to manufacture [`SidewalkDeviceMetadata`](crate::model::SidewalkDeviceMetadata).
+    pub fn builder() -> crate::model::sidewalk_device_metadata::Builder {
+        crate::model::sidewalk_device_metadata::Builder::default()
+    }
+}
+
 /// See [`SidewalkDeviceMetadata`](crate::model::SidewalkDeviceMetadata).
 pub mod sidewalk_device_metadata {
 
@@ -8753,12 +8829,6 @@ pub mod sidewalk_device_metadata {
                 device_state: self.device_state,
             }
         }
-    }
-}
-impl SidewalkDeviceMetadata {
-    /// Creates a new builder-style object to manufacture [`SidewalkDeviceMetadata`](crate::model::SidewalkDeviceMetadata).
-    pub fn builder() -> crate::model::sidewalk_device_metadata::Builder {
-        crate::model::sidewalk_device_metadata::Builder::default()
     }
 }
 
@@ -9116,6 +9186,13 @@ impl LoRaWanDeviceMetadata {
         self.gateways.as_deref()
     }
 }
+impl LoRaWanDeviceMetadata {
+    /// Creates a new builder-style object to manufacture [`LoRaWanDeviceMetadata`](crate::model::LoRaWanDeviceMetadata).
+    pub fn builder() -> crate::model::lo_ra_wan_device_metadata::Builder {
+        crate::model::lo_ra_wan_device_metadata::Builder::default()
+    }
+}
+
 /// See [`LoRaWanDeviceMetadata`](crate::model::LoRaWanDeviceMetadata).
 pub mod lo_ra_wan_device_metadata {
 
@@ -9214,12 +9291,6 @@ pub mod lo_ra_wan_device_metadata {
         }
     }
 }
-impl LoRaWanDeviceMetadata {
-    /// Creates a new builder-style object to manufacture [`LoRaWanDeviceMetadata`](crate::model::LoRaWanDeviceMetadata).
-    pub fn builder() -> crate::model::lo_ra_wan_device_metadata::Builder {
-        crate::model::lo_ra_wan_device_metadata::Builder::default()
-    }
-}
 
 /// <p>LoRaWAN gateway metatdata.</p>
 #[non_exhaustive]
@@ -9249,6 +9320,13 @@ impl LoRaWanGatewayMetadata {
         self.rssi
     }
 }
+impl LoRaWanGatewayMetadata {
+    /// Creates a new builder-style object to manufacture [`LoRaWanGatewayMetadata`](crate::model::LoRaWanGatewayMetadata).
+    pub fn builder() -> crate::model::lo_ra_wan_gateway_metadata::Builder {
+        crate::model::lo_ra_wan_gateway_metadata::Builder::default()
+    }
+}
+
 /// See [`LoRaWanGatewayMetadata`](crate::model::LoRaWanGatewayMetadata).
 pub mod lo_ra_wan_gateway_metadata {
 
@@ -9301,12 +9379,6 @@ pub mod lo_ra_wan_gateway_metadata {
         }
     }
 }
-impl LoRaWanGatewayMetadata {
-    /// Creates a new builder-style object to manufacture [`LoRaWanGatewayMetadata`](crate::model::LoRaWanGatewayMetadata).
-    pub fn builder() -> crate::model::lo_ra_wan_gateway_metadata::Builder {
-        crate::model::lo_ra_wan_gateway_metadata::Builder::default()
-    }
-}
 
 /// <p>Sidewalk device object.</p>
 #[non_exhaustive]
@@ -9343,6 +9415,13 @@ impl SidewalkDevice {
         self.device_certificates.as_deref()
     }
 }
+impl SidewalkDevice {
+    /// Creates a new builder-style object to manufacture [`SidewalkDevice`](crate::model::SidewalkDevice).
+    pub fn builder() -> crate::model::sidewalk_device::Builder {
+        crate::model::sidewalk_device::Builder::default()
+    }
+}
+
 /// See [`SidewalkDevice`](crate::model::SidewalkDevice).
 pub mod sidewalk_device {
 
@@ -9420,12 +9499,6 @@ pub mod sidewalk_device {
         }
     }
 }
-impl SidewalkDevice {
-    /// Creates a new builder-style object to manufacture [`SidewalkDevice`](crate::model::SidewalkDevice).
-    pub fn builder() -> crate::model::sidewalk_device::Builder {
-        crate::model::sidewalk_device::Builder::default()
-    }
-}
 
 /// <p>LoRaWAN object for create functions.</p>
 #[non_exhaustive]
@@ -9490,6 +9563,13 @@ impl LoRaWanDevice {
         self.f_ports.as_ref()
     }
 }
+impl LoRaWanDevice {
+    /// Creates a new builder-style object to manufacture [`LoRaWanDevice`](crate::model::LoRaWanDevice).
+    pub fn builder() -> crate::model::lo_ra_wan_device::Builder {
+        crate::model::lo_ra_wan_device::Builder::default()
+    }
+}
+
 /// See [`LoRaWanDevice`](crate::model::LoRaWanDevice).
 pub mod lo_ra_wan_device {
 
@@ -9611,12 +9691,6 @@ pub mod lo_ra_wan_device {
         }
     }
 }
-impl LoRaWanDevice {
-    /// Creates a new builder-style object to manufacture [`LoRaWanDevice`](crate::model::LoRaWanDevice).
-    pub fn builder() -> crate::model::lo_ra_wan_device::Builder {
-        crate::model::lo_ra_wan_device::Builder::default()
-    }
-}
 
 /// <p>List of FPort assigned for different LoRaWAN application packages to use</p>
 #[non_exhaustive]
@@ -9660,6 +9734,13 @@ impl FPorts {
         self.applications.as_deref()
     }
 }
+impl FPorts {
+    /// Creates a new builder-style object to manufacture [`FPorts`](crate::model::FPorts).
+    pub fn builder() -> crate::model::f_ports::Builder {
+        crate::model::f_ports::Builder::default()
+    }
+}
+
 /// See [`FPorts`](crate::model::FPorts).
 pub mod f_ports {
 
@@ -9749,12 +9830,6 @@ pub mod f_ports {
         }
     }
 }
-impl FPorts {
-    /// Creates a new builder-style object to manufacture [`FPorts`](crate::model::FPorts).
-    pub fn builder() -> crate::model::f_ports::Builder {
-        crate::model::f_ports::Builder::default()
-    }
-}
 
 /// <p>ABP device object for LoRaWAN specification v1.0.x</p>
 #[non_exhaustive]
@@ -9784,6 +9859,13 @@ impl AbpV10X {
         self.f_cnt_start
     }
 }
+impl AbpV10X {
+    /// Creates a new builder-style object to manufacture [`AbpV10X`](crate::model::AbpV10X).
+    pub fn builder() -> crate::model::abp_v10_x::Builder {
+        crate::model::abp_v10_x::Builder::default()
+    }
+}
+
 /// See [`AbpV10X`](crate::model::AbpV10X).
 pub mod abp_v10_x {
 
@@ -9839,12 +9921,6 @@ pub mod abp_v10_x {
         }
     }
 }
-impl AbpV10X {
-    /// Creates a new builder-style object to manufacture [`AbpV10X`](crate::model::AbpV10X).
-    pub fn builder() -> crate::model::abp_v10_x::Builder {
-        crate::model::abp_v10_x::Builder::default()
-    }
-}
 
 /// <p>Session keys for ABP v1.1</p>
 #[non_exhaustive]
@@ -9867,6 +9943,13 @@ impl SessionKeysAbpV10X {
         self.app_s_key.as_deref()
     }
 }
+impl SessionKeysAbpV10X {
+    /// Creates a new builder-style object to manufacture [`SessionKeysAbpV10X`](crate::model::SessionKeysAbpV10X).
+    pub fn builder() -> crate::model::session_keys_abp_v10_x::Builder {
+        crate::model::session_keys_abp_v10_x::Builder::default()
+    }
+}
+
 /// See [`SessionKeysAbpV10X`](crate::model::SessionKeysAbpV10X).
 pub mod session_keys_abp_v10_x {
 
@@ -9907,12 +9990,6 @@ pub mod session_keys_abp_v10_x {
         }
     }
 }
-impl SessionKeysAbpV10X {
-    /// Creates a new builder-style object to manufacture [`SessionKeysAbpV10X`](crate::model::SessionKeysAbpV10X).
-    pub fn builder() -> crate::model::session_keys_abp_v10_x::Builder {
-        crate::model::session_keys_abp_v10_x::Builder::default()
-    }
-}
 
 /// <p>ABP device object for LoRaWAN specification v1.1</p>
 #[non_exhaustive]
@@ -9942,6 +10019,13 @@ impl AbpV11 {
         self.f_cnt_start
     }
 }
+impl AbpV11 {
+    /// Creates a new builder-style object to manufacture [`AbpV11`](crate::model::AbpV11).
+    pub fn builder() -> crate::model::abp_v11::Builder {
+        crate::model::abp_v11::Builder::default()
+    }
+}
+
 /// See [`AbpV11`](crate::model::AbpV11).
 pub mod abp_v11 {
 
@@ -9997,12 +10081,6 @@ pub mod abp_v11 {
         }
     }
 }
-impl AbpV11 {
-    /// Creates a new builder-style object to manufacture [`AbpV11`](crate::model::AbpV11).
-    pub fn builder() -> crate::model::abp_v11::Builder {
-        crate::model::abp_v11::Builder::default()
-    }
-}
 
 /// <p>Session keys for ABP v1.1</p>
 #[non_exhaustive]
@@ -10039,6 +10117,13 @@ impl SessionKeysAbpV11 {
         self.app_s_key.as_deref()
     }
 }
+impl SessionKeysAbpV11 {
+    /// Creates a new builder-style object to manufacture [`SessionKeysAbpV11`](crate::model::SessionKeysAbpV11).
+    pub fn builder() -> crate::model::session_keys_abp_v11::Builder {
+        crate::model::session_keys_abp_v11::Builder::default()
+    }
+}
+
 /// See [`SessionKeysAbpV11`](crate::model::SessionKeysAbpV11).
 pub mod session_keys_abp_v11 {
 
@@ -10112,12 +10197,6 @@ pub mod session_keys_abp_v11 {
         }
     }
 }
-impl SessionKeysAbpV11 {
-    /// Creates a new builder-style object to manufacture [`SessionKeysAbpV11`](crate::model::SessionKeysAbpV11).
-    pub fn builder() -> crate::model::session_keys_abp_v11::Builder {
-        crate::model::session_keys_abp_v11::Builder::default()
-    }
-}
 
 /// <p>OTAA device object for v1.0.x</p>
 #[non_exhaustive]
@@ -10147,6 +10226,13 @@ impl OtaaV10X {
         self.gen_app_key.as_deref()
     }
 }
+impl OtaaV10X {
+    /// Creates a new builder-style object to manufacture [`OtaaV10X`](crate::model::OtaaV10X).
+    pub fn builder() -> crate::model::otaa_v10_x::Builder {
+        crate::model::otaa_v10_x::Builder::default()
+    }
+}
+
 /// See [`OtaaV10X`](crate::model::OtaaV10X).
 pub mod otaa_v10_x {
 
@@ -10199,12 +10285,6 @@ pub mod otaa_v10_x {
         }
     }
 }
-impl OtaaV10X {
-    /// Creates a new builder-style object to manufacture [`OtaaV10X`](crate::model::OtaaV10X).
-    pub fn builder() -> crate::model::otaa_v10_x::Builder {
-        crate::model::otaa_v10_x::Builder::default()
-    }
-}
 
 /// <p>OTAA device object for v1.1</p>
 #[non_exhaustive]
@@ -10234,6 +10314,13 @@ impl OtaaV11 {
         self.join_eui.as_deref()
     }
 }
+impl OtaaV11 {
+    /// Creates a new builder-style object to manufacture [`OtaaV11`](crate::model::OtaaV11).
+    pub fn builder() -> crate::model::otaa_v11::Builder {
+        crate::model::otaa_v11::Builder::default()
+    }
+}
+
 /// See [`OtaaV11`](crate::model::OtaaV11).
 pub mod otaa_v11 {
 
@@ -10284,12 +10371,6 @@ pub mod otaa_v11 {
                 join_eui: self.join_eui,
             }
         }
-    }
-}
-impl OtaaV11 {
-    /// Creates a new builder-style object to manufacture [`OtaaV11`](crate::model::OtaaV11).
-    pub fn builder() -> crate::model::otaa_v11::Builder {
-        crate::model::otaa_v11::Builder::default()
     }
 }
 
@@ -10540,6 +10621,13 @@ impl LoRaWanGetServiceProfileInfo {
         self.min_gw_diversity
     }
 }
+impl LoRaWanGetServiceProfileInfo {
+    /// Creates a new builder-style object to manufacture [`LoRaWanGetServiceProfileInfo`](crate::model::LoRaWanGetServiceProfileInfo).
+    pub fn builder() -> crate::model::lo_ra_wan_get_service_profile_info::Builder {
+        crate::model::lo_ra_wan_get_service_profile_info::Builder::default()
+    }
+}
+
 /// See [`LoRaWanGetServiceProfileInfo`](crate::model::LoRaWanGetServiceProfileInfo).
 pub mod lo_ra_wan_get_service_profile_info {
 
@@ -10790,12 +10878,6 @@ pub mod lo_ra_wan_get_service_profile_info {
         }
     }
 }
-impl LoRaWanGetServiceProfileInfo {
-    /// Creates a new builder-style object to manufacture [`LoRaWanGetServiceProfileInfo`](crate::model::LoRaWanGetServiceProfileInfo).
-    pub fn builder() -> crate::model::lo_ra_wan_get_service_profile_info::Builder {
-        crate::model::lo_ra_wan_get_service_profile_info::Builder::default()
-    }
-}
 
 /// When writing a match expression against `WirelessGatewayServiceType`, it is important to ensure
 /// your code is forward-compatible. That is, if a match arm handles a case for a
@@ -10938,6 +11020,13 @@ impl Gnss {
         self.use2_d_solver
     }
 }
+impl Gnss {
+    /// Creates a new builder-style object to manufacture [`Gnss`](crate::model::Gnss).
+    pub fn builder() -> crate::model::gnss::Builder {
+        crate::model::gnss::Builder::default()
+    }
+}
+
 /// See [`Gnss`](crate::model::Gnss).
 pub mod gnss {
 
@@ -11035,12 +11124,6 @@ pub mod gnss {
         }
     }
 }
-impl Gnss {
-    /// Creates a new builder-style object to manufacture [`Gnss`](crate::model::Gnss).
-    pub fn builder() -> crate::model::gnss::Builder {
-        crate::model::gnss::Builder::default()
-    }
-}
 
 /// <p>IP address used for resolving device location.</p>
 #[non_exhaustive]
@@ -11056,6 +11139,13 @@ impl Ip {
         self.ip_address.as_deref()
     }
 }
+impl Ip {
+    /// Creates a new builder-style object to manufacture [`Ip`](crate::model::Ip).
+    pub fn builder() -> crate::model::ip::Builder {
+        crate::model::ip::Builder::default()
+    }
+}
+
 /// See [`Ip`](crate::model::Ip).
 pub mod ip {
 
@@ -11082,12 +11172,6 @@ pub mod ip {
                 ip_address: self.ip_address,
             }
         }
-    }
-}
-impl Ip {
-    /// Creates a new builder-style object to manufacture [`Ip`](crate::model::Ip).
-    pub fn builder() -> crate::model::ip::Builder {
-        crate::model::ip::Builder::default()
     }
 }
 
@@ -11133,6 +11217,13 @@ impl CellTowers {
         self.cdma.as_deref()
     }
 }
+impl CellTowers {
+    /// Creates a new builder-style object to manufacture [`CellTowers`](crate::model::CellTowers).
+    pub fn builder() -> crate::model::cell_towers::Builder {
+        crate::model::cell_towers::Builder::default()
+    }
+}
+
 /// See [`CellTowers`](crate::model::CellTowers).
 pub mod cell_towers {
 
@@ -11254,12 +11345,6 @@ pub mod cell_towers {
         }
     }
 }
-impl CellTowers {
-    /// Creates a new builder-style object to manufacture [`CellTowers`](crate::model::CellTowers).
-    pub fn builder() -> crate::model::cell_towers::Builder {
-        crate::model::cell_towers::Builder::default()
-    }
-}
 
 /// <p>CDMA (Code-division multiple access) object.</p>
 #[non_exhaustive]
@@ -11331,6 +11416,13 @@ impl CdmaObj {
         self.cdma_nmr.as_deref()
     }
 }
+impl CdmaObj {
+    /// Creates a new builder-style object to manufacture [`CdmaObj`](crate::model::CdmaObj).
+    pub fn builder() -> crate::model::cdma_obj::Builder {
+        crate::model::cdma_obj::Builder::default()
+    }
+}
+
 /// See [`CdmaObj`](crate::model::CdmaObj).
 pub mod cdma_obj {
 
@@ -11467,12 +11559,6 @@ pub mod cdma_obj {
         }
     }
 }
-impl CdmaObj {
-    /// Creates a new builder-style object to manufacture [`CdmaObj`](crate::model::CdmaObj).
-    pub fn builder() -> crate::model::cdma_obj::Builder {
-        crate::model::cdma_obj::Builder::default()
-    }
-}
 
 /// <p>CDMA object for network measurement reports.</p>
 #[non_exhaustive]
@@ -11509,6 +11595,13 @@ impl CdmaNmrObj {
         self.base_station_id
     }
 }
+impl CdmaNmrObj {
+    /// Creates a new builder-style object to manufacture [`CdmaNmrObj`](crate::model::CdmaNmrObj).
+    pub fn builder() -> crate::model::cdma_nmr_obj::Builder {
+        crate::model::cdma_nmr_obj::Builder::default()
+    }
+}
+
 /// See [`CdmaNmrObj`](crate::model::CdmaNmrObj).
 pub mod cdma_nmr_obj {
 
@@ -11573,12 +11666,6 @@ pub mod cdma_nmr_obj {
         }
     }
 }
-impl CdmaNmrObj {
-    /// Creates a new builder-style object to manufacture [`CdmaNmrObj`](crate::model::CdmaNmrObj).
-    pub fn builder() -> crate::model::cdma_nmr_obj::Builder {
-        crate::model::cdma_nmr_obj::Builder::default()
-    }
-}
 
 /// <p>CDMA local ID information, which corresponds to the local identification parameters of a CDMA cell.</p>
 #[non_exhaustive]
@@ -11601,6 +11688,13 @@ impl CdmaLocalId {
         self.cdma_channel
     }
 }
+impl CdmaLocalId {
+    /// Creates a new builder-style object to manufacture [`CdmaLocalId`](crate::model::CdmaLocalId).
+    pub fn builder() -> crate::model::cdma_local_id::Builder {
+        crate::model::cdma_local_id::Builder::default()
+    }
+}
+
 /// See [`CdmaLocalId`](crate::model::CdmaLocalId).
 pub mod cdma_local_id {
 
@@ -11639,12 +11733,6 @@ pub mod cdma_local_id {
                 cdma_channel: self.cdma_channel,
             }
         }
-    }
-}
-impl CdmaLocalId {
-    /// Creates a new builder-style object to manufacture [`CdmaLocalId`](crate::model::CdmaLocalId).
-    pub fn builder() -> crate::model::cdma_local_id::Builder {
-        crate::model::cdma_local_id::Builder::default()
     }
 }
 
@@ -11725,6 +11813,13 @@ impl LteObj {
         self.lte_nmr.as_deref()
     }
 }
+impl LteObj {
+    /// Creates a new builder-style object to manufacture [`LteObj`](crate::model::LteObj).
+    pub fn builder() -> crate::model::lte_obj::Builder {
+        crate::model::lte_obj::Builder::default()
+    }
+}
+
 /// See [`LteObj`](crate::model::LteObj).
 pub mod lte_obj {
 
@@ -11873,12 +11968,6 @@ pub mod lte_obj {
         }
     }
 }
-impl LteObj {
-    /// Creates a new builder-style object to manufacture [`LteObj`](crate::model::LteObj).
-    pub fn builder() -> crate::model::lte_obj::Builder {
-        crate::model::lte_obj::Builder::default()
-    }
-}
 
 /// <p>LTE object for network measurement reports.</p>
 #[non_exhaustive]
@@ -11922,6 +12011,13 @@ impl LteNmrObj {
         self.rsrq
     }
 }
+impl LteNmrObj {
+    /// Creates a new builder-style object to manufacture [`LteNmrObj`](crate::model::LteNmrObj).
+    pub fn builder() -> crate::model::lte_nmr_obj::Builder {
+        crate::model::lte_nmr_obj::Builder::default()
+    }
+}
+
 /// See [`LteNmrObj`](crate::model::LteNmrObj).
 pub mod lte_nmr_obj {
 
@@ -11998,12 +12094,6 @@ pub mod lte_nmr_obj {
         }
     }
 }
-impl LteNmrObj {
-    /// Creates a new builder-style object to manufacture [`LteNmrObj`](crate::model::LteNmrObj).
-    pub fn builder() -> crate::model::lte_nmr_obj::Builder {
-        crate::model::lte_nmr_obj::Builder::default()
-    }
-}
 
 /// <p>LTE local identification (local ID) information.</p>
 #[non_exhaustive]
@@ -12026,6 +12116,13 @@ impl LteLocalId {
         self.earfcn
     }
 }
+impl LteLocalId {
+    /// Creates a new builder-style object to manufacture [`LteLocalId`](crate::model::LteLocalId).
+    pub fn builder() -> crate::model::lte_local_id::Builder {
+        crate::model::lte_local_id::Builder::default()
+    }
+}
+
 /// See [`LteLocalId`](crate::model::LteLocalId).
 pub mod lte_local_id {
 
@@ -12064,12 +12161,6 @@ pub mod lte_local_id {
                 earfcn: self.earfcn,
             }
         }
-    }
-}
-impl LteLocalId {
-    /// Creates a new builder-style object to manufacture [`LteLocalId`](crate::model::LteLocalId).
-    pub fn builder() -> crate::model::lte_local_id::Builder {
-        crate::model::lte_local_id::Builder::default()
     }
 }
 
@@ -12143,6 +12234,13 @@ impl TdscdmaObj {
         self.tdscdma_nmr.as_deref()
     }
 }
+impl TdscdmaObj {
+    /// Creates a new builder-style object to manufacture [`TdscdmaObj`](crate::model::TdscdmaObj).
+    pub fn builder() -> crate::model::tdscdma_obj::Builder {
+        crate::model::tdscdma_obj::Builder::default()
+    }
+}
+
 /// See [`TdscdmaObj`](crate::model::TdscdmaObj).
 pub mod tdscdma_obj {
 
@@ -12279,12 +12377,6 @@ pub mod tdscdma_obj {
         }
     }
 }
-impl TdscdmaObj {
-    /// Creates a new builder-style object to manufacture [`TdscdmaObj`](crate::model::TdscdmaObj).
-    pub fn builder() -> crate::model::tdscdma_obj::Builder {
-        crate::model::tdscdma_obj::Builder::default()
-    }
-}
 
 /// <p>TD-SCDMA object for network measurement reports.</p>
 #[non_exhaustive]
@@ -12328,6 +12420,13 @@ impl TdscdmaNmrObj {
         self.path_loss
     }
 }
+impl TdscdmaNmrObj {
+    /// Creates a new builder-style object to manufacture [`TdscdmaNmrObj`](crate::model::TdscdmaNmrObj).
+    pub fn builder() -> crate::model::tdscdma_nmr_obj::Builder {
+        crate::model::tdscdma_nmr_obj::Builder::default()
+    }
+}
+
 /// See [`TdscdmaNmrObj`](crate::model::TdscdmaNmrObj).
 pub mod tdscdma_nmr_obj {
 
@@ -12404,12 +12503,6 @@ pub mod tdscdma_nmr_obj {
         }
     }
 }
-impl TdscdmaNmrObj {
-    /// Creates a new builder-style object to manufacture [`TdscdmaNmrObj`](crate::model::TdscdmaNmrObj).
-    pub fn builder() -> crate::model::tdscdma_nmr_obj::Builder {
-        crate::model::tdscdma_nmr_obj::Builder::default()
-    }
-}
 
 /// <p>TD-SCDMA local identification (local Id) information.</p>
 #[non_exhaustive]
@@ -12432,6 +12525,13 @@ impl TdscdmaLocalId {
         self.cell_params
     }
 }
+impl TdscdmaLocalId {
+    /// Creates a new builder-style object to manufacture [`TdscdmaLocalId`](crate::model::TdscdmaLocalId).
+    pub fn builder() -> crate::model::tdscdma_local_id::Builder {
+        crate::model::tdscdma_local_id::Builder::default()
+    }
+}
+
 /// See [`TdscdmaLocalId`](crate::model::TdscdmaLocalId).
 pub mod tdscdma_local_id {
 
@@ -12470,12 +12570,6 @@ pub mod tdscdma_local_id {
                 cell_params: self.cell_params,
             }
         }
-    }
-}
-impl TdscdmaLocalId {
-    /// Creates a new builder-style object to manufacture [`TdscdmaLocalId`](crate::model::TdscdmaLocalId).
-    pub fn builder() -> crate::model::tdscdma_local_id::Builder {
-        crate::model::tdscdma_local_id::Builder::default()
     }
 }
 
@@ -12542,6 +12636,13 @@ impl WcdmaObj {
         self.wcdma_nmr.as_deref()
     }
 }
+impl WcdmaObj {
+    /// Creates a new builder-style object to manufacture [`WcdmaObj`](crate::model::WcdmaObj).
+    pub fn builder() -> crate::model::wcdma_obj::Builder {
+        crate::model::wcdma_obj::Builder::default()
+    }
+}
+
 /// See [`WcdmaObj`](crate::model::WcdmaObj).
 pub mod wcdma_obj {
 
@@ -12666,12 +12767,6 @@ pub mod wcdma_obj {
         }
     }
 }
-impl WcdmaObj {
-    /// Creates a new builder-style object to manufacture [`WcdmaObj`](crate::model::WcdmaObj).
-    pub fn builder() -> crate::model::wcdma_obj::Builder {
-        crate::model::wcdma_obj::Builder::default()
-    }
-}
 
 /// <p>Network Measurement Reports.</p>
 #[non_exhaustive]
@@ -12715,6 +12810,13 @@ impl WcdmaNmrObj {
         self.path_loss
     }
 }
+impl WcdmaNmrObj {
+    /// Creates a new builder-style object to manufacture [`WcdmaNmrObj`](crate::model::WcdmaNmrObj).
+    pub fn builder() -> crate::model::wcdma_nmr_obj::Builder {
+        crate::model::wcdma_nmr_obj::Builder::default()
+    }
+}
+
 /// See [`WcdmaNmrObj`](crate::model::WcdmaNmrObj).
 pub mod wcdma_nmr_obj {
 
@@ -12791,12 +12893,6 @@ pub mod wcdma_nmr_obj {
         }
     }
 }
-impl WcdmaNmrObj {
-    /// Creates a new builder-style object to manufacture [`WcdmaNmrObj`](crate::model::WcdmaNmrObj).
-    pub fn builder() -> crate::model::wcdma_nmr_obj::Builder {
-        crate::model::wcdma_nmr_obj::Builder::default()
-    }
-}
 
 /// <p>WCDMA local identification (local ID) information.</p>
 #[non_exhaustive]
@@ -12819,6 +12915,13 @@ impl WcdmaLocalId {
         self.psc
     }
 }
+impl WcdmaLocalId {
+    /// Creates a new builder-style object to manufacture [`WcdmaLocalId`](crate::model::WcdmaLocalId).
+    pub fn builder() -> crate::model::wcdma_local_id::Builder {
+        crate::model::wcdma_local_id::Builder::default()
+    }
+}
+
 /// See [`WcdmaLocalId`](crate::model::WcdmaLocalId).
 pub mod wcdma_local_id {
 
@@ -12857,12 +12960,6 @@ pub mod wcdma_local_id {
                 psc: self.psc,
             }
         }
-    }
-}
-impl WcdmaLocalId {
-    /// Creates a new builder-style object to manufacture [`WcdmaLocalId`](crate::model::WcdmaLocalId).
-    pub fn builder() -> crate::model::wcdma_local_id::Builder {
-        crate::model::wcdma_local_id::Builder::default()
     }
 }
 
@@ -12929,6 +13026,13 @@ impl GsmObj {
         self.gsm_nmr.as_deref()
     }
 }
+impl GsmObj {
+    /// Creates a new builder-style object to manufacture [`GsmObj`](crate::model::GsmObj).
+    pub fn builder() -> crate::model::gsm_obj::Builder {
+        crate::model::gsm_obj::Builder::default()
+    }
+}
+
 /// See [`GsmObj`](crate::model::GsmObj).
 pub mod gsm_obj {
 
@@ -13053,12 +13157,6 @@ pub mod gsm_obj {
         }
     }
 }
-impl GsmObj {
-    /// Creates a new builder-style object to manufacture [`GsmObj`](crate::model::GsmObj).
-    pub fn builder() -> crate::model::gsm_obj::Builder {
-        crate::model::gsm_obj::Builder::default()
-    }
-}
 
 /// <p>GSM object for network measurement reports.</p>
 #[non_exhaustive]
@@ -13095,6 +13193,13 @@ impl GsmNmrObj {
         self.global_identity.as_ref()
     }
 }
+impl GsmNmrObj {
+    /// Creates a new builder-style object to manufacture [`GsmNmrObj`](crate::model::GsmNmrObj).
+    pub fn builder() -> crate::model::gsm_nmr_obj::Builder {
+        crate::model::gsm_nmr_obj::Builder::default()
+    }
+}
+
 /// See [`GsmNmrObj`](crate::model::GsmNmrObj).
 pub mod gsm_nmr_obj {
 
@@ -13162,12 +13267,6 @@ pub mod gsm_nmr_obj {
         }
     }
 }
-impl GsmNmrObj {
-    /// Creates a new builder-style object to manufacture [`GsmNmrObj`](crate::model::GsmNmrObj).
-    pub fn builder() -> crate::model::gsm_nmr_obj::Builder {
-        crate::model::gsm_nmr_obj::Builder::default()
-    }
-}
 
 /// <p>Global identity information.</p>
 #[non_exhaustive]
@@ -13190,6 +13289,13 @@ impl GlobalIdentity {
         self.geran_cid
     }
 }
+impl GlobalIdentity {
+    /// Creates a new builder-style object to manufacture [`GlobalIdentity`](crate::model::GlobalIdentity).
+    pub fn builder() -> crate::model::global_identity::Builder {
+        crate::model::global_identity::Builder::default()
+    }
+}
+
 /// See [`GlobalIdentity`](crate::model::GlobalIdentity).
 pub mod global_identity {
 
@@ -13230,12 +13336,6 @@ pub mod global_identity {
         }
     }
 }
-impl GlobalIdentity {
-    /// Creates a new builder-style object to manufacture [`GlobalIdentity`](crate::model::GlobalIdentity).
-    pub fn builder() -> crate::model::global_identity::Builder {
-        crate::model::global_identity::Builder::default()
-    }
-}
 
 /// <p>GSM local ID information, which corresponds to the local identification parameters of a GSM cell.</p>
 #[non_exhaustive]
@@ -13258,6 +13358,13 @@ impl GsmLocalId {
         self.bcch
     }
 }
+impl GsmLocalId {
+    /// Creates a new builder-style object to manufacture [`GsmLocalId`](crate::model::GsmLocalId).
+    pub fn builder() -> crate::model::gsm_local_id::Builder {
+        crate::model::gsm_local_id::Builder::default()
+    }
+}
+
 /// See [`GsmLocalId`](crate::model::GsmLocalId).
 pub mod gsm_local_id {
 
@@ -13298,12 +13405,6 @@ pub mod gsm_local_id {
         }
     }
 }
-impl GsmLocalId {
-    /// Creates a new builder-style object to manufacture [`GsmLocalId`](crate::model::GsmLocalId).
-    pub fn builder() -> crate::model::gsm_local_id::Builder {
-        crate::model::gsm_local_id::Builder::default()
-    }
-}
 
 /// <p>Wi-Fi access point.</p>
 #[non_exhaustive]
@@ -13326,6 +13427,13 @@ impl WiFiAccessPoint {
         self.rss
     }
 }
+impl WiFiAccessPoint {
+    /// Creates a new builder-style object to manufacture [`WiFiAccessPoint`](crate::model::WiFiAccessPoint).
+    pub fn builder() -> crate::model::wi_fi_access_point::Builder {
+        crate::model::wi_fi_access_point::Builder::default()
+    }
+}
+
 /// See [`WiFiAccessPoint`](crate::model::WiFiAccessPoint).
 pub mod wi_fi_access_point {
 
@@ -13366,12 +13474,6 @@ pub mod wi_fi_access_point {
         }
     }
 }
-impl WiFiAccessPoint {
-    /// Creates a new builder-style object to manufacture [`WiFiAccessPoint`](crate::model::WiFiAccessPoint).
-    pub fn builder() -> crate::model::wi_fi_access_point::Builder {
-        crate::model::wi_fi_access_point::Builder::default()
-    }
-}
 
 /// <p>The accuracy of the estimated position in meters. An empty value indicates that no position data is available. A value of ‘0.0’ value indicates that position data is available. This data corresponds to the position information that you specified instead of the position computed by solver.</p>
 #[non_exhaustive]
@@ -13394,6 +13496,13 @@ impl Accuracy {
         self.vertical_accuracy
     }
 }
+impl Accuracy {
+    /// Creates a new builder-style object to manufacture [`Accuracy`](crate::model::Accuracy).
+    pub fn builder() -> crate::model::accuracy::Builder {
+        crate::model::accuracy::Builder::default()
+    }
+}
+
 /// See [`Accuracy`](crate::model::Accuracy).
 pub mod accuracy {
 
@@ -13434,12 +13543,6 @@ pub mod accuracy {
         }
     }
 }
-impl Accuracy {
-    /// Creates a new builder-style object to manufacture [`Accuracy`](crate::model::Accuracy).
-    pub fn builder() -> crate::model::accuracy::Builder {
-        crate::model::accuracy::Builder::default()
-    }
-}
 
 /// <p>The LoRaWAN information that is to be returned from getting multicast group information.</p>
 #[non_exhaustive]
@@ -13476,6 +13579,13 @@ impl LoRaWanMulticastGet {
         self.number_of_devices_in_group
     }
 }
+impl LoRaWanMulticastGet {
+    /// Creates a new builder-style object to manufacture [`LoRaWanMulticastGet`](crate::model::LoRaWanMulticastGet).
+    pub fn builder() -> crate::model::lo_ra_wan_multicast_get::Builder {
+        crate::model::lo_ra_wan_multicast_get::Builder::default()
+    }
+}
+
 /// See [`LoRaWanMulticastGet`](crate::model::LoRaWanMulticastGet).
 pub mod lo_ra_wan_multicast_get {
 
@@ -13543,12 +13653,6 @@ pub mod lo_ra_wan_multicast_get {
         }
     }
 }
-impl LoRaWanMulticastGet {
-    /// Creates a new builder-style object to manufacture [`LoRaWanMulticastGet`](crate::model::LoRaWanMulticastGet).
-    pub fn builder() -> crate::model::lo_ra_wan_multicast_get::Builder {
-        crate::model::lo_ra_wan_multicast_get::Builder::default()
-    }
-}
 
 /// <p>The LoRaWAN information returned from getting a FUOTA task.</p>
 #[non_exhaustive]
@@ -13571,6 +13675,13 @@ impl LoRaWanFuotaTaskGetInfo {
         self.start_time.as_ref()
     }
 }
+impl LoRaWanFuotaTaskGetInfo {
+    /// Creates a new builder-style object to manufacture [`LoRaWanFuotaTaskGetInfo`](crate::model::LoRaWanFuotaTaskGetInfo).
+    pub fn builder() -> crate::model::lo_ra_wan_fuota_task_get_info::Builder {
+        crate::model::lo_ra_wan_fuota_task_get_info::Builder::default()
+    }
+}
+
 /// See [`LoRaWanFuotaTaskGetInfo`](crate::model::LoRaWanFuotaTaskGetInfo).
 pub mod lo_ra_wan_fuota_task_get_info {
 
@@ -13612,12 +13723,6 @@ pub mod lo_ra_wan_fuota_task_get_info {
                 start_time: self.start_time,
             }
         }
-    }
-}
-impl LoRaWanFuotaTaskGetInfo {
-    /// Creates a new builder-style object to manufacture [`LoRaWanFuotaTaskGetInfo`](crate::model::LoRaWanFuotaTaskGetInfo).
-    pub fn builder() -> crate::model::lo_ra_wan_fuota_task_get_info::Builder {
-        crate::model::lo_ra_wan_fuota_task_get_info::Builder::default()
     }
 }
 
@@ -13872,6 +13977,13 @@ impl LoRaWanDeviceProfile {
         self.supports32_bit_f_cnt
     }
 }
+impl LoRaWanDeviceProfile {
+    /// Creates a new builder-style object to manufacture [`LoRaWanDeviceProfile`](crate::model::LoRaWanDeviceProfile).
+    pub fn builder() -> crate::model::lo_ra_wan_device_profile::Builder {
+        crate::model::lo_ra_wan_device_profile::Builder::default()
+    }
+}
+
 /// See [`LoRaWanDeviceProfile`](crate::model::LoRaWanDeviceProfile).
 pub mod lo_ra_wan_device_profile {
 
@@ -14128,12 +14240,6 @@ pub mod lo_ra_wan_device_profile {
         }
     }
 }
-impl LoRaWanDeviceProfile {
-    /// Creates a new builder-style object to manufacture [`LoRaWanDeviceProfile`](crate::model::LoRaWanDeviceProfile).
-    pub fn builder() -> crate::model::lo_ra_wan_device_profile::Builder {
-        crate::model::lo_ra_wan_device_profile::Builder::default()
-    }
-}
 
 /// <p>LoRaWANServiceProfile object.</p>
 #[non_exhaustive]
@@ -14163,6 +14269,13 @@ impl LoRaWanServiceProfile {
         self.dr_max
     }
 }
+impl LoRaWanServiceProfile {
+    /// Creates a new builder-style object to manufacture [`LoRaWanServiceProfile`](crate::model::LoRaWanServiceProfile).
+    pub fn builder() -> crate::model::lo_ra_wan_service_profile::Builder {
+        crate::model::lo_ra_wan_service_profile::Builder::default()
+    }
+}
+
 /// See [`LoRaWanServiceProfile`](crate::model::LoRaWanServiceProfile).
 pub mod lo_ra_wan_service_profile {
 
@@ -14215,12 +14328,6 @@ pub mod lo_ra_wan_service_profile {
         }
     }
 }
-impl LoRaWanServiceProfile {
-    /// Creates a new builder-style object to manufacture [`LoRaWanServiceProfile`](crate::model::LoRaWanServiceProfile).
-    pub fn builder() -> crate::model::lo_ra_wan_service_profile::Builder {
-        crate::model::lo_ra_wan_service_profile::Builder::default()
-    }
-}
 
 /// <p>Information about a Sidewalk account.</p>
 #[non_exhaustive]
@@ -14251,6 +14358,13 @@ impl std::fmt::Debug for SidewalkAccountInfo {
         formatter.finish()
     }
 }
+impl SidewalkAccountInfo {
+    /// Creates a new builder-style object to manufacture [`SidewalkAccountInfo`](crate::model::SidewalkAccountInfo).
+    pub fn builder() -> crate::model::sidewalk_account_info::Builder {
+        crate::model::sidewalk_account_info::Builder::default()
+    }
+}
+
 /// See [`SidewalkAccountInfo`](crate::model::SidewalkAccountInfo).
 pub mod sidewalk_account_info {
 
@@ -14300,11 +14414,5 @@ pub mod sidewalk_account_info {
             formatter.field("app_server_private_key", &"*** Sensitive Data Redacted ***");
             formatter.finish()
         }
-    }
-}
-impl SidewalkAccountInfo {
-    /// Creates a new builder-style object to manufacture [`SidewalkAccountInfo`](crate::model::SidewalkAccountInfo).
-    pub fn builder() -> crate::model::sidewalk_account_info::Builder {
-        crate::model::sidewalk_account_info::Builder::default()
     }
 }
