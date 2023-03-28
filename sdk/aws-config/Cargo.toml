@@ -25,6 +25,7 @@ default = ["client-hyper", "rustls", "rt-tokio"]
 ring = "0.16"
 hex = "0.4.3"
 zeroize = "1"
+fastrand = "1"
 bytes = "1.1.0"
 http = "0.2.4"
 
