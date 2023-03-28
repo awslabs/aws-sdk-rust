@@ -10,16 +10,16 @@ thiserror = "1.0"
 
 [dependencies.aws-config]
 path = "../../sdk/aws-config"
-version = "0.54.1"
+version = "0.0.0-smithy-rs-head"
 
 [dependencies.aws-sdk-cognitoidentityprovider]
 path = "../../sdk/cognitoidentityprovider"
-version = "0.27.0"
+version = "0.28.0"
 
 [dependencies.aws-smithy-types-convert]
 features = ["convert-chrono"]
 path = "../../sdk/aws-smithy-types-convert"
-version = "0.54.1"
+version = "0.0.0-smithy-rs-head"
 
 [dependencies.structopt]
 version = "0.3"

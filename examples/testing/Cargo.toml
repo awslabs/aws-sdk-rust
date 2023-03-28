@@ -15,29 +15,29 @@ serde_json = "1"
 
 [dependencies.aws-config]
 path = "../../sdk/aws-config"
-version = "0.54.1"
+version = "0.0.0-smithy-rs-head"
 
 [dependencies.aws-sdk-s3]
 path = "../../sdk/s3"
-version = "0.27.0"
+version = "0.28.0"
 
 [dependencies.aws-smithy-client]
 features = ["test-util"]
 path = "../../sdk/aws-smithy-client"
-version = "0.54.1"
+version = "0.0.0-smithy-rs-head"
 
 [dependencies.aws-smithy-http]
 path = "../../sdk/aws-smithy-http"
-version = "0.54.1"
+version = "0.0.0-smithy-rs-head"
 
 [dependencies.aws-types]
 path = "../../sdk/aws-types"
-version = "0.54.1"
+version = "0.0.0-smithy-rs-head"
 
 [dependencies.aws-credential-types]
 features = ["hardcoded-credentials"]
 path = "../../sdk/aws-credential-types"
-version = "0.54.1"
+version = "0.0.0-smithy-rs-head"
 
 [dependencies.tokio]
 version = "1.20.1"

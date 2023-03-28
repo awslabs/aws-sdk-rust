@@ -40,8 +40,8 @@ your project, add the following to your **Cargo.toml** file:
 
 ```toml
 [dependencies]
-aws-config = "0.54.1"
-aws-sdk-controltower = "0.8.0"
+aws-config = "0.0.0-smithy-rs-head"
+aws-sdk-controltower = "0.9.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

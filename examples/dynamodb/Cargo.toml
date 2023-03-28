@@ -18,29 +18,29 @@ tokio-stream = "0.1.8"
 
 [dependencies.aws-config]
 path = "../../sdk/aws-config"
-version = "0.54.1"
+version = "0.0.0-smithy-rs-head"
 
 [dependencies.aws-sdk-dynamodb]
 path = "../../sdk/dynamodb"
-version = "0.27.0"
+version = "0.28.0"
 
 [dependencies.aws-http]
 path = "../../sdk/aws-http"
-version = "0.54.1"
+version = "0.0.0-smithy-rs-head"
 
 [dependencies.aws-smithy-client]
 features = ["client-hyper", "rustls", "rt-tokio"]
 path = "../../sdk/aws-smithy-client"
-version = "0.54.1"
+version = "0.0.0-smithy-rs-head"
 
 [dependencies.aws-smithy-http]
 features = ["rt-tokio"]
 path = "../../sdk/aws-smithy-http"
-version = "0.54.1"
+version = "0.0.0-smithy-rs-head"
 
 [dependencies.aws-smithy-types]
 path = "../../sdk/aws-smithy-types"
-version = "0.54.1"
+version = "0.0.0-smithy-rs-head"
 
 [dependencies.sdk-examples-test-utils]
 path = "../test-utils"

@@ -11,16 +11,16 @@ rustls = "0.20.7"
 
 [dependencies.aws-config]
 path = "../../sdk/aws-config"
-version = "0.54.1"
+version = "0.0.0-smithy-rs-head"
 
 [dependencies.aws-smithy-client]
 path = "../../sdk/aws-smithy-client"
-version = "0.54.1"
+version = "0.0.0-smithy-rs-head"
 
 [dependencies.aws-sdk-s3]
 default-features = false
 path = "../../sdk/s3"
-version = "0.27.0"
+version = "0.28.0"
 
 [dependencies.tokio]
 version = "1.21.2"

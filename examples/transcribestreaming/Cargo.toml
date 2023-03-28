@@ -12,11 +12,11 @@ hound = "3.4"
 
 [dependencies.aws-config]
 path = "../../sdk/aws-config"
-version = "0.54.1"
+version = "0.0.0-smithy-rs-head"
 
 [dependencies.aws-sdk-transcribestreaming]
 path = "../../sdk/transcribestreaming"
-version = "0.27.0"
+version = "0.28.0"
 
 [dependencies.structopt]
 version = "0.3"
