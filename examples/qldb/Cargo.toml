@@ -8,8 +8,8 @@ publish = false
 
 [dependencies]
 aws-config= { version = "0.0.0-smithy-rs-head", path = "../../sdk/aws-config" }
-aws-sdk-qldb= { version = "0.65.0", path = "../../sdk/qldb" }
-aws-sdk-qldbsession= { version = "0.65.0", path = "../../sdk/qldbsession" }
+aws-sdk-qldb= { version = "0.66.0", path = "../../sdk/qldb" }
+aws-sdk-qldbsession= { version = "0.66.0", path = "../../sdk/qldbsession" }
 
 [dependencies.tokio]
 version = "1.20.1"
