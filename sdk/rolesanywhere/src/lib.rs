@@ -33,7 +33,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = "0.0.0-smithy-rs-head"
-//! aws-sdk-rolesanywhere = "0.48.0"
+//! aws-sdk-rolesanywhere = "0.49.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

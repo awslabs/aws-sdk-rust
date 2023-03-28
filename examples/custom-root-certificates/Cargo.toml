@@ -13,7 +13,7 @@ publish = false
 rustls = "0.20.7"
 aws-config= { version = "0.0.0-smithy-rs-head", path = "../../sdk/aws-config" }
 aws-smithy-client= { version = "0.0.0-smithy-rs-head", path = "../../sdk/aws-smithy-client" }
-aws-sdk-s3= { version = "0.63.0", path = "../../sdk/s3", default-features = false }
+aws-sdk-s3= { version = "0.64.0", path = "../../sdk/s3", default-features = false }
 
 [dependencies.tokio]
 version = "1.21.2"

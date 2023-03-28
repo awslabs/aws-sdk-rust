@@ -50,7 +50,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = "0.0.0-smithy-rs-head"
-//! aws-sdk-networkfirewall = "0.63.0"
+//! aws-sdk-networkfirewall = "0.64.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

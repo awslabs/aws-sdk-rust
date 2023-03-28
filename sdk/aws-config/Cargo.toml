@@ -40,12 +40,12 @@ version = "0.0.0-smithy-rs-head"
 [dependencies.aws-sdk-sso]
 path = "../sso"
 default-features = false
-version = "0.63.0"
+version = "0.64.0"
 
 [dependencies.aws-sdk-sts]
 path = "../sts"
 default-features = false
-version = "0.63.0"
+version = "0.64.0"
 
 [dependencies.aws-smithy-async]
 path = "../aws-smithy-async"
