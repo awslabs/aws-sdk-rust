@@ -2,7 +2,7 @@
 /// Operation shape for `AssociateAccounts`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`associate_accounts`](crate::client::Client::associate_accounts).
+/// [`associate_accounts`](crate::client::fluent_builders::AssociateAccounts).
 ///
 /// `ParseStrictResponse` impl for `AssociateAccounts`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -37,7 +37,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateAccounts {
 /// Operation shape for `AssociatePricingRules`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`associate_pricing_rules`](crate::client::Client::associate_pricing_rules).
+/// [`associate_pricing_rules`](crate::client::fluent_builders::AssociatePricingRules).
 ///
 /// `ParseStrictResponse` impl for `AssociatePricingRules`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -72,7 +72,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociatePricingRules {
 /// Operation shape for `BatchAssociateResourcesToCustomLineItem`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`batch_associate_resources_to_custom_line_item`](crate::client::Client::batch_associate_resources_to_custom_line_item).
+/// [`batch_associate_resources_to_custom_line_item`](crate::client::fluent_builders::BatchAssociateResourcesToCustomLineItem).
 ///
 /// `ParseStrictResponse` impl for `BatchAssociateResourcesToCustomLineItem`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -111,7 +111,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchAssociateResourcesT
 /// Operation shape for `BatchDisassociateResourcesFromCustomLineItem`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`batch_disassociate_resources_from_custom_line_item`](crate::client::Client::batch_disassociate_resources_from_custom_line_item).
+/// [`batch_disassociate_resources_from_custom_line_item`](crate::client::fluent_builders::BatchDisassociateResourcesFromCustomLineItem).
 ///
 /// `ParseStrictResponse` impl for `BatchDisassociateResourcesFromCustomLineItem`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -151,7 +151,7 @@ impl aws_smithy_http::response::ParseStrictResponse
 /// Operation shape for `CreateBillingGroup`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_billing_group`](crate::client::Client::create_billing_group).
+/// [`create_billing_group`](crate::client::fluent_builders::CreateBillingGroup).
 ///
 /// `ParseStrictResponse` impl for `CreateBillingGroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -186,7 +186,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateBillingGroup {
 /// Operation shape for `CreateCustomLineItem`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_custom_line_item`](crate::client::Client::create_custom_line_item).
+/// [`create_custom_line_item`](crate::client::fluent_builders::CreateCustomLineItem).
 ///
 /// `ParseStrictResponse` impl for `CreateCustomLineItem`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -221,7 +221,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateCustomLineItem {
 /// Operation shape for `CreatePricingPlan`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_pricing_plan`](crate::client::Client::create_pricing_plan).
+/// [`create_pricing_plan`](crate::client::fluent_builders::CreatePricingPlan).
 ///
 /// `ParseStrictResponse` impl for `CreatePricingPlan`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -256,7 +256,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreatePricingPlan {
 /// Operation shape for `CreatePricingRule`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_pricing_rule`](crate::client::Client::create_pricing_rule).
+/// [`create_pricing_rule`](crate::client::fluent_builders::CreatePricingRule).
 ///
 /// `ParseStrictResponse` impl for `CreatePricingRule`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -291,7 +291,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreatePricingRule {
 /// Operation shape for `DeleteBillingGroup`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_billing_group`](crate::client::Client::delete_billing_group).
+/// [`delete_billing_group`](crate::client::fluent_builders::DeleteBillingGroup).
 ///
 /// `ParseStrictResponse` impl for `DeleteBillingGroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -326,7 +326,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteBillingGroup {
 /// Operation shape for `DeleteCustomLineItem`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_custom_line_item`](crate::client::Client::delete_custom_line_item).
+/// [`delete_custom_line_item`](crate::client::fluent_builders::DeleteCustomLineItem).
 ///
 /// `ParseStrictResponse` impl for `DeleteCustomLineItem`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -361,7 +361,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteCustomLineItem {
 /// Operation shape for `DeletePricingPlan`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_pricing_plan`](crate::client::Client::delete_pricing_plan).
+/// [`delete_pricing_plan`](crate::client::fluent_builders::DeletePricingPlan).
 ///
 /// `ParseStrictResponse` impl for `DeletePricingPlan`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -396,7 +396,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeletePricingPlan {
 /// Operation shape for `DeletePricingRule`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_pricing_rule`](crate::client::Client::delete_pricing_rule).
+/// [`delete_pricing_rule`](crate::client::fluent_builders::DeletePricingRule).
 ///
 /// `ParseStrictResponse` impl for `DeletePricingRule`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -431,7 +431,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeletePricingRule {
 /// Operation shape for `DisassociateAccounts`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`disassociate_accounts`](crate::client::Client::disassociate_accounts).
+/// [`disassociate_accounts`](crate::client::fluent_builders::DisassociateAccounts).
 ///
 /// `ParseStrictResponse` impl for `DisassociateAccounts`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -466,7 +466,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateAccounts {
 /// Operation shape for `DisassociatePricingRules`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`disassociate_pricing_rules`](crate::client::Client::disassociate_pricing_rules).
+/// [`disassociate_pricing_rules`](crate::client::fluent_builders::DisassociatePricingRules).
 ///
 /// `ParseStrictResponse` impl for `DisassociatePricingRules`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -501,7 +501,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociatePricingRules
 /// Operation shape for `ListAccountAssociations`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_account_associations`](crate::client::Client::list_account_associations).
+/// [`list_account_associations`](crate::client::fluent_builders::ListAccountAssociations).
 ///
 /// `ParseStrictResponse` impl for `ListAccountAssociations`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -536,7 +536,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAccountAssociations 
 /// Operation shape for `ListBillingGroupCostReports`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_billing_group_cost_reports`](crate::client::Client::list_billing_group_cost_reports).
+/// [`list_billing_group_cost_reports`](crate::client::fluent_builders::ListBillingGroupCostReports).
 ///
 /// `ParseStrictResponse` impl for `ListBillingGroupCostReports`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -571,7 +571,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListBillingGroupCostRepo
 /// Operation shape for `ListBillingGroups`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_billing_groups`](crate::client::Client::list_billing_groups).
+/// [`list_billing_groups`](crate::client::fluent_builders::ListBillingGroups).
 ///
 /// `ParseStrictResponse` impl for `ListBillingGroups`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -606,7 +606,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListBillingGroups {
 /// Operation shape for `ListCustomLineItems`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_custom_line_items`](crate::client::Client::list_custom_line_items).
+/// [`list_custom_line_items`](crate::client::fluent_builders::ListCustomLineItems).
 ///
 /// `ParseStrictResponse` impl for `ListCustomLineItems`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -641,7 +641,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListCustomLineItems {
 /// Operation shape for `ListCustomLineItemVersions`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_custom_line_item_versions`](crate::client::Client::list_custom_line_item_versions).
+/// [`list_custom_line_item_versions`](crate::client::fluent_builders::ListCustomLineItemVersions).
 ///
 /// `ParseStrictResponse` impl for `ListCustomLineItemVersions`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -676,7 +676,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListCustomLineItemVersio
 /// Operation shape for `ListPricingPlans`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_pricing_plans`](crate::client::Client::list_pricing_plans).
+/// [`list_pricing_plans`](crate::client::fluent_builders::ListPricingPlans).
 ///
 /// `ParseStrictResponse` impl for `ListPricingPlans`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -711,7 +711,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListPricingPlans {
 /// Operation shape for `ListPricingPlansAssociatedWithPricingRule`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_pricing_plans_associated_with_pricing_rule`](crate::client::Client::list_pricing_plans_associated_with_pricing_rule).
+/// [`list_pricing_plans_associated_with_pricing_rule`](crate::client::fluent_builders::ListPricingPlansAssociatedWithPricingRule).
 ///
 /// `ParseStrictResponse` impl for `ListPricingPlansAssociatedWithPricingRule`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -751,7 +751,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListPricingPlansAssociat
 /// Operation shape for `ListPricingRules`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_pricing_rules`](crate::client::Client::list_pricing_rules).
+/// [`list_pricing_rules`](crate::client::fluent_builders::ListPricingRules).
 ///
 /// `ParseStrictResponse` impl for `ListPricingRules`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -786,7 +786,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListPricingRules {
 /// Operation shape for `ListPricingRulesAssociatedToPricingPlan`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_pricing_rules_associated_to_pricing_plan`](crate::client::Client::list_pricing_rules_associated_to_pricing_plan).
+/// [`list_pricing_rules_associated_to_pricing_plan`](crate::client::fluent_builders::ListPricingRulesAssociatedToPricingPlan).
 ///
 /// `ParseStrictResponse` impl for `ListPricingRulesAssociatedToPricingPlan`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -825,7 +825,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListPricingRulesAssociat
 /// Operation shape for `ListResourcesAssociatedToCustomLineItem`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_resources_associated_to_custom_line_item`](crate::client::Client::list_resources_associated_to_custom_line_item).
+/// [`list_resources_associated_to_custom_line_item`](crate::client::fluent_builders::ListResourcesAssociatedToCustomLineItem).
 ///
 /// `ParseStrictResponse` impl for `ListResourcesAssociatedToCustomLineItem`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -864,7 +864,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListResourcesAssociatedT
 /// Operation shape for `ListTagsForResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
+/// [`list_tags_for_resource`](crate::client::fluent_builders::ListTagsForResource).
 ///
 /// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -899,7 +899,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// Operation shape for `TagResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`tag_resource`](crate::client::Client::tag_resource).
+/// [`tag_resource`](crate::client::fluent_builders::TagResource).
 ///
 /// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -932,7 +932,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// Operation shape for `UntagResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`untag_resource`](crate::client::Client::untag_resource).
+/// [`untag_resource`](crate::client::fluent_builders::UntagResource).
 ///
 /// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -965,7 +965,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// Operation shape for `UpdateBillingGroup`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_billing_group`](crate::client::Client::update_billing_group).
+/// [`update_billing_group`](crate::client::fluent_builders::UpdateBillingGroup).
 ///
 /// `ParseStrictResponse` impl for `UpdateBillingGroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1000,7 +1000,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateBillingGroup {
 /// Operation shape for `UpdateCustomLineItem`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_custom_line_item`](crate::client::Client::update_custom_line_item).
+/// [`update_custom_line_item`](crate::client::fluent_builders::UpdateCustomLineItem).
 ///
 /// `ParseStrictResponse` impl for `UpdateCustomLineItem`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1035,7 +1035,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateCustomLineItem {
 /// Operation shape for `UpdatePricingPlan`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_pricing_plan`](crate::client::Client::update_pricing_plan).
+/// [`update_pricing_plan`](crate::client::fluent_builders::UpdatePricingPlan).
 ///
 /// `ParseStrictResponse` impl for `UpdatePricingPlan`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1070,7 +1070,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdatePricingPlan {
 /// Operation shape for `UpdatePricingRule`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_pricing_rule`](crate::client::Client::update_pricing_rule).
+/// [`update_pricing_rule`](crate::client::fluent_builders::UpdatePricingRule).
 ///
 /// `ParseStrictResponse` impl for `UpdatePricingRule`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

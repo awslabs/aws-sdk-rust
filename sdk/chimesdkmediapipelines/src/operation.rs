@@ -2,7 +2,7 @@
 /// Operation shape for `CreateMediaCapturePipeline`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_media_capture_pipeline`](crate::client::Client::create_media_capture_pipeline).
+/// [`create_media_capture_pipeline`](crate::client::fluent_builders::CreateMediaCapturePipeline).
 ///
 /// `ParseStrictResponse` impl for `CreateMediaCapturePipeline`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -37,7 +37,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateMediaCapturePipeli
 /// Operation shape for `CreateMediaConcatenationPipeline`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_media_concatenation_pipeline`](crate::client::Client::create_media_concatenation_pipeline).
+/// [`create_media_concatenation_pipeline`](crate::client::fluent_builders::CreateMediaConcatenationPipeline).
 ///
 /// `ParseStrictResponse` impl for `CreateMediaConcatenationPipeline`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -72,7 +72,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateMediaConcatenation
 /// Operation shape for `CreateMediaLiveConnectorPipeline`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_media_live_connector_pipeline`](crate::client::Client::create_media_live_connector_pipeline).
+/// [`create_media_live_connector_pipeline`](crate::client::fluent_builders::CreateMediaLiveConnectorPipeline).
 ///
 /// `ParseStrictResponse` impl for `CreateMediaLiveConnectorPipeline`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -107,7 +107,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateMediaLiveConnector
 /// Operation shape for `DeleteMediaCapturePipeline`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_media_capture_pipeline`](crate::client::Client::delete_media_capture_pipeline).
+/// [`delete_media_capture_pipeline`](crate::client::fluent_builders::DeleteMediaCapturePipeline).
 ///
 /// `ParseStrictResponse` impl for `DeleteMediaCapturePipeline`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -142,7 +142,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteMediaCapturePipeli
 /// Operation shape for `DeleteMediaPipeline`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_media_pipeline`](crate::client::Client::delete_media_pipeline).
+/// [`delete_media_pipeline`](crate::client::fluent_builders::DeleteMediaPipeline).
 ///
 /// `ParseStrictResponse` impl for `DeleteMediaPipeline`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -177,7 +177,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteMediaPipeline {
 /// Operation shape for `GetMediaCapturePipeline`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_media_capture_pipeline`](crate::client::Client::get_media_capture_pipeline).
+/// [`get_media_capture_pipeline`](crate::client::fluent_builders::GetMediaCapturePipeline).
 ///
 /// `ParseStrictResponse` impl for `GetMediaCapturePipeline`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -212,7 +212,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetMediaCapturePipeline 
 /// Operation shape for `GetMediaPipeline`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_media_pipeline`](crate::client::Client::get_media_pipeline).
+/// [`get_media_pipeline`](crate::client::fluent_builders::GetMediaPipeline).
 ///
 /// `ParseStrictResponse` impl for `GetMediaPipeline`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -247,7 +247,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetMediaPipeline {
 /// Operation shape for `ListMediaCapturePipelines`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_media_capture_pipelines`](crate::client::Client::list_media_capture_pipelines).
+/// [`list_media_capture_pipelines`](crate::client::fluent_builders::ListMediaCapturePipelines).
 ///
 /// `ParseStrictResponse` impl for `ListMediaCapturePipelines`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -282,7 +282,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListMediaCapturePipeline
 /// Operation shape for `ListMediaPipelines`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_media_pipelines`](crate::client::Client::list_media_pipelines).
+/// [`list_media_pipelines`](crate::client::fluent_builders::ListMediaPipelines).
 ///
 /// `ParseStrictResponse` impl for `ListMediaPipelines`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -317,7 +317,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListMediaPipelines {
 /// Operation shape for `ListTagsForResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
+/// [`list_tags_for_resource`](crate::client::fluent_builders::ListTagsForResource).
 ///
 /// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -352,7 +352,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// Operation shape for `TagResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`tag_resource`](crate::client::Client::tag_resource).
+/// [`tag_resource`](crate::client::fluent_builders::TagResource).
 ///
 /// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -385,7 +385,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// Operation shape for `UntagResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`untag_resource`](crate::client::Client::untag_resource).
+/// [`untag_resource`](crate::client::fluent_builders::UntagResource).
 ///
 /// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

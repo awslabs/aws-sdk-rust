@@ -2,7 +2,7 @@
 /// Operation shape for `AssociateMemberAccount`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`associate_member_account`](crate::client::Client::associate_member_account).
+/// [`associate_member_account`](crate::client::fluent_builders::AssociateMemberAccount).
 ///
 /// `ParseStrictResponse` impl for `AssociateMemberAccount`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -37,7 +37,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateMemberAccount {
 /// Operation shape for `AssociateS3Resources`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`associate_s3_resources`](crate::client::Client::associate_s3_resources).
+/// [`associate_s3_resources`](crate::client::fluent_builders::AssociateS3Resources).
 ///
 /// `ParseStrictResponse` impl for `AssociateS3Resources`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -72,7 +72,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateS3Resources {
 /// Operation shape for `DisassociateMemberAccount`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`disassociate_member_account`](crate::client::Client::disassociate_member_account).
+/// [`disassociate_member_account`](crate::client::fluent_builders::DisassociateMemberAccount).
 ///
 /// `ParseStrictResponse` impl for `DisassociateMemberAccount`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -107,7 +107,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateMemberAccoun
 /// Operation shape for `DisassociateS3Resources`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`disassociate_s3_resources`](crate::client::Client::disassociate_s3_resources).
+/// [`disassociate_s3_resources`](crate::client::fluent_builders::DisassociateS3Resources).
 ///
 /// `ParseStrictResponse` impl for `DisassociateS3Resources`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -142,7 +142,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateS3Resources 
 /// Operation shape for `ListMemberAccounts`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_member_accounts`](crate::client::Client::list_member_accounts).
+/// [`list_member_accounts`](crate::client::fluent_builders::ListMemberAccounts).
 ///
 /// `ParseStrictResponse` impl for `ListMemberAccounts`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -177,7 +177,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListMemberAccounts {
 /// Operation shape for `ListS3Resources`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_s3_resources`](crate::client::Client::list_s3_resources).
+/// [`list_s3_resources`](crate::client::fluent_builders::ListS3Resources).
 ///
 /// `ParseStrictResponse` impl for `ListS3Resources`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -212,7 +212,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListS3Resources {
 /// Operation shape for `UpdateS3Resources`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_s3_resources`](crate::client::Client::update_s3_resources).
+/// [`update_s3_resources`](crate::client::fluent_builders::UpdateS3Resources).
 ///
 /// `ParseStrictResponse` impl for `UpdateS3Resources`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

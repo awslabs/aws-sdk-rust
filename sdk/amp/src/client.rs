@@ -99,8 +99,10 @@ impl Client {
     /// - On success, responds with [`CreateAlertManagerDefinitionOutput`](crate::output::CreateAlertManagerDefinitionOutput) with field(s):
     ///   - [`status(Option<AlertManagerDefinitionStatus>)`](crate::output::CreateAlertManagerDefinitionOutput::status): The status of alert manager definition.
     /// - On failure, responds with [`SdkError<CreateAlertManagerDefinitionError>`](crate::error::CreateAlertManagerDefinitionError)
-    pub fn create_alert_manager_definition(&self) -> fluent_builders::CreateAlertManagerDefinition {
-        fluent_builders::CreateAlertManagerDefinition::new(self.handle.clone())
+    pub fn create_alert_manager_definition(
+        &self,
+    ) -> crate::client::fluent_builders::CreateAlertManagerDefinition {
+        crate::client::fluent_builders::CreateAlertManagerDefinition::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`CreateLoggingConfiguration`](crate::client::fluent_builders::CreateLoggingConfiguration) operation.
     ///
@@ -111,8 +113,10 @@ impl Client {
     /// - On success, responds with [`CreateLoggingConfigurationOutput`](crate::output::CreateLoggingConfigurationOutput) with field(s):
     ///   - [`status(Option<LoggingConfigurationStatus>)`](crate::output::CreateLoggingConfigurationOutput::status): The status of the logging configuration.
     /// - On failure, responds with [`SdkError<CreateLoggingConfigurationError>`](crate::error::CreateLoggingConfigurationError)
-    pub fn create_logging_configuration(&self) -> fluent_builders::CreateLoggingConfiguration {
-        fluent_builders::CreateLoggingConfiguration::new(self.handle.clone())
+    pub fn create_logging_configuration(
+        &self,
+    ) -> crate::client::fluent_builders::CreateLoggingConfiguration {
+        crate::client::fluent_builders::CreateLoggingConfiguration::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`CreateRuleGroupsNamespace`](crate::client::fluent_builders::CreateRuleGroupsNamespace) operation.
     ///
@@ -128,8 +132,10 @@ impl Client {
     ///   - [`status(Option<RuleGroupsNamespaceStatus>)`](crate::output::CreateRuleGroupsNamespaceOutput::status): The status of rule groups namespace.
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::CreateRuleGroupsNamespaceOutput::tags): The tags of this rule groups namespace.
     /// - On failure, responds with [`SdkError<CreateRuleGroupsNamespaceError>`](crate::error::CreateRuleGroupsNamespaceError)
-    pub fn create_rule_groups_namespace(&self) -> fluent_builders::CreateRuleGroupsNamespace {
-        fluent_builders::CreateRuleGroupsNamespace::new(self.handle.clone())
+    pub fn create_rule_groups_namespace(
+        &self,
+    ) -> crate::client::fluent_builders::CreateRuleGroupsNamespace {
+        crate::client::fluent_builders::CreateRuleGroupsNamespace::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`CreateWorkspace`](crate::client::fluent_builders::CreateWorkspace) operation.
     ///
@@ -143,8 +149,8 @@ impl Client {
     ///   - [`status(Option<WorkspaceStatus>)`](crate::output::CreateWorkspaceOutput::status): The status of the workspace that was just created (usually CREATING).
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::CreateWorkspaceOutput::tags): The tags of this workspace.
     /// - On failure, responds with [`SdkError<CreateWorkspaceError>`](crate::error::CreateWorkspaceError)
-    pub fn create_workspace(&self) -> fluent_builders::CreateWorkspace {
-        fluent_builders::CreateWorkspace::new(self.handle.clone())
+    pub fn create_workspace(&self) -> crate::client::fluent_builders::CreateWorkspace {
+        crate::client::fluent_builders::CreateWorkspace::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`DeleteAlertManagerDefinition`](crate::client::fluent_builders::DeleteAlertManagerDefinition) operation.
     ///
@@ -154,8 +160,10 @@ impl Client {
     /// - On success, responds with [`DeleteAlertManagerDefinitionOutput`](crate::output::DeleteAlertManagerDefinitionOutput)
 
     /// - On failure, responds with [`SdkError<DeleteAlertManagerDefinitionError>`](crate::error::DeleteAlertManagerDefinitionError)
-    pub fn delete_alert_manager_definition(&self) -> fluent_builders::DeleteAlertManagerDefinition {
-        fluent_builders::DeleteAlertManagerDefinition::new(self.handle.clone())
+    pub fn delete_alert_manager_definition(
+        &self,
+    ) -> crate::client::fluent_builders::DeleteAlertManagerDefinition {
+        crate::client::fluent_builders::DeleteAlertManagerDefinition::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`DeleteLoggingConfiguration`](crate::client::fluent_builders::DeleteLoggingConfiguration) operation.
     ///
@@ -165,8 +173,10 @@ impl Client {
     /// - On success, responds with [`DeleteLoggingConfigurationOutput`](crate::output::DeleteLoggingConfigurationOutput)
 
     /// - On failure, responds with [`SdkError<DeleteLoggingConfigurationError>`](crate::error::DeleteLoggingConfigurationError)
-    pub fn delete_logging_configuration(&self) -> fluent_builders::DeleteLoggingConfiguration {
-        fluent_builders::DeleteLoggingConfiguration::new(self.handle.clone())
+    pub fn delete_logging_configuration(
+        &self,
+    ) -> crate::client::fluent_builders::DeleteLoggingConfiguration {
+        crate::client::fluent_builders::DeleteLoggingConfiguration::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`DeleteRuleGroupsNamespace`](crate::client::fluent_builders::DeleteRuleGroupsNamespace) operation.
     ///
@@ -177,8 +187,10 @@ impl Client {
     /// - On success, responds with [`DeleteRuleGroupsNamespaceOutput`](crate::output::DeleteRuleGroupsNamespaceOutput)
 
     /// - On failure, responds with [`SdkError<DeleteRuleGroupsNamespaceError>`](crate::error::DeleteRuleGroupsNamespaceError)
-    pub fn delete_rule_groups_namespace(&self) -> fluent_builders::DeleteRuleGroupsNamespace {
-        fluent_builders::DeleteRuleGroupsNamespace::new(self.handle.clone())
+    pub fn delete_rule_groups_namespace(
+        &self,
+    ) -> crate::client::fluent_builders::DeleteRuleGroupsNamespace {
+        crate::client::fluent_builders::DeleteRuleGroupsNamespace::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`DeleteWorkspace`](crate::client::fluent_builders::DeleteWorkspace) operation.
     ///
@@ -188,8 +200,8 @@ impl Client {
     /// - On success, responds with [`DeleteWorkspaceOutput`](crate::output::DeleteWorkspaceOutput)
 
     /// - On failure, responds with [`SdkError<DeleteWorkspaceError>`](crate::error::DeleteWorkspaceError)
-    pub fn delete_workspace(&self) -> fluent_builders::DeleteWorkspace {
-        fluent_builders::DeleteWorkspace::new(self.handle.clone())
+    pub fn delete_workspace(&self) -> crate::client::fluent_builders::DeleteWorkspace {
+        crate::client::fluent_builders::DeleteWorkspace::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`DescribeAlertManagerDefinition`](crate::client::fluent_builders::DescribeAlertManagerDefinition) operation.
     ///
@@ -200,8 +212,8 @@ impl Client {
     /// - On failure, responds with [`SdkError<DescribeAlertManagerDefinitionError>`](crate::error::DescribeAlertManagerDefinitionError)
     pub fn describe_alert_manager_definition(
         &self,
-    ) -> fluent_builders::DescribeAlertManagerDefinition {
-        fluent_builders::DescribeAlertManagerDefinition::new(self.handle.clone())
+    ) -> crate::client::fluent_builders::DescribeAlertManagerDefinition {
+        crate::client::fluent_builders::DescribeAlertManagerDefinition::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`DescribeLoggingConfiguration`](crate::client::fluent_builders::DescribeLoggingConfiguration) operation.
     ///
@@ -210,8 +222,10 @@ impl Client {
     /// - On success, responds with [`DescribeLoggingConfigurationOutput`](crate::output::DescribeLoggingConfigurationOutput) with field(s):
     ///   - [`logging_configuration(Option<LoggingConfigurationMetadata>)`](crate::output::DescribeLoggingConfigurationOutput::logging_configuration): Metadata object containing information about the logging configuration of a workspace.
     /// - On failure, responds with [`SdkError<DescribeLoggingConfigurationError>`](crate::error::DescribeLoggingConfigurationError)
-    pub fn describe_logging_configuration(&self) -> fluent_builders::DescribeLoggingConfiguration {
-        fluent_builders::DescribeLoggingConfiguration::new(self.handle.clone())
+    pub fn describe_logging_configuration(
+        &self,
+    ) -> crate::client::fluent_builders::DescribeLoggingConfiguration {
+        crate::client::fluent_builders::DescribeLoggingConfiguration::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`DescribeRuleGroupsNamespace`](crate::client::fluent_builders::DescribeRuleGroupsNamespace) operation.
     ///
@@ -221,8 +235,10 @@ impl Client {
     /// - On success, responds with [`DescribeRuleGroupsNamespaceOutput`](crate::output::DescribeRuleGroupsNamespaceOutput) with field(s):
     ///   - [`rule_groups_namespace(Option<RuleGroupsNamespaceDescription>)`](crate::output::DescribeRuleGroupsNamespaceOutput::rule_groups_namespace): The selected rule groups namespace.
     /// - On failure, responds with [`SdkError<DescribeRuleGroupsNamespaceError>`](crate::error::DescribeRuleGroupsNamespaceError)
-    pub fn describe_rule_groups_namespace(&self) -> fluent_builders::DescribeRuleGroupsNamespace {
-        fluent_builders::DescribeRuleGroupsNamespace::new(self.handle.clone())
+    pub fn describe_rule_groups_namespace(
+        &self,
+    ) -> crate::client::fluent_builders::DescribeRuleGroupsNamespace {
+        crate::client::fluent_builders::DescribeRuleGroupsNamespace::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`DescribeWorkspace`](crate::client::fluent_builders::DescribeWorkspace) operation.
     ///
@@ -231,8 +247,8 @@ impl Client {
     /// - On success, responds with [`DescribeWorkspaceOutput`](crate::output::DescribeWorkspaceOutput) with field(s):
     ///   - [`workspace(Option<WorkspaceDescription>)`](crate::output::DescribeWorkspaceOutput::workspace): The properties of the selected workspace.
     /// - On failure, responds with [`SdkError<DescribeWorkspaceError>`](crate::error::DescribeWorkspaceError)
-    pub fn describe_workspace(&self) -> fluent_builders::DescribeWorkspace {
-        fluent_builders::DescribeWorkspace::new(self.handle.clone())
+    pub fn describe_workspace(&self) -> crate::client::fluent_builders::DescribeWorkspace {
+        crate::client::fluent_builders::DescribeWorkspace::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListRuleGroupsNamespaces`](crate::client::fluent_builders::ListRuleGroupsNamespaces) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListRuleGroupsNamespaces::into_paginator).
@@ -246,8 +262,10 @@ impl Client {
     ///   - [`rule_groups_namespaces(Option<Vec<RuleGroupsNamespaceSummary>>)`](crate::output::ListRuleGroupsNamespacesOutput::rule_groups_namespaces): The list of the selected rule groups namespaces.
     ///   - [`next_token(Option<String>)`](crate::output::ListRuleGroupsNamespacesOutput::next_token): Pagination token to use when requesting the next page in this list.
     /// - On failure, responds with [`SdkError<ListRuleGroupsNamespacesError>`](crate::error::ListRuleGroupsNamespacesError)
-    pub fn list_rule_groups_namespaces(&self) -> fluent_builders::ListRuleGroupsNamespaces {
-        fluent_builders::ListRuleGroupsNamespaces::new(self.handle.clone())
+    pub fn list_rule_groups_namespaces(
+        &self,
+    ) -> crate::client::fluent_builders::ListRuleGroupsNamespaces {
+        crate::client::fluent_builders::ListRuleGroupsNamespaces::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
@@ -256,8 +274,8 @@ impl Client {
     /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::ListTagsForResourceOutput::tags): The list of tags assigned to the resource.
     /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
-    pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource {
-        fluent_builders::ListTagsForResource::new(self.handle.clone())
+    pub fn list_tags_for_resource(&self) -> crate::client::fluent_builders::ListTagsForResource {
+        crate::client::fluent_builders::ListTagsForResource::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListWorkspaces`](crate::client::fluent_builders::ListWorkspaces) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListWorkspaces::into_paginator).
@@ -270,8 +288,8 @@ impl Client {
     ///   - [`workspaces(Option<Vec<WorkspaceSummary>>)`](crate::output::ListWorkspacesOutput::workspaces): The list of existing workspaces, including those undergoing creation or deletion.
     ///   - [`next_token(Option<String>)`](crate::output::ListWorkspacesOutput::next_token): Pagination token to use when requesting the next page in this list.
     /// - On failure, responds with [`SdkError<ListWorkspacesError>`](crate::error::ListWorkspacesError)
-    pub fn list_workspaces(&self) -> fluent_builders::ListWorkspaces {
-        fluent_builders::ListWorkspaces::new(self.handle.clone())
+    pub fn list_workspaces(&self) -> crate::client::fluent_builders::ListWorkspaces {
+        crate::client::fluent_builders::ListWorkspaces::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`PutAlertManagerDefinition`](crate::client::fluent_builders::PutAlertManagerDefinition) operation.
     ///
@@ -282,8 +300,10 @@ impl Client {
     /// - On success, responds with [`PutAlertManagerDefinitionOutput`](crate::output::PutAlertManagerDefinitionOutput) with field(s):
     ///   - [`status(Option<AlertManagerDefinitionStatus>)`](crate::output::PutAlertManagerDefinitionOutput::status): The status of alert manager definition.
     /// - On failure, responds with [`SdkError<PutAlertManagerDefinitionError>`](crate::error::PutAlertManagerDefinitionError)
-    pub fn put_alert_manager_definition(&self) -> fluent_builders::PutAlertManagerDefinition {
-        fluent_builders::PutAlertManagerDefinition::new(self.handle.clone())
+    pub fn put_alert_manager_definition(
+        &self,
+    ) -> crate::client::fluent_builders::PutAlertManagerDefinition {
+        crate::client::fluent_builders::PutAlertManagerDefinition::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`PutRuleGroupsNamespace`](crate::client::fluent_builders::PutRuleGroupsNamespace) operation.
     ///
@@ -298,8 +318,10 @@ impl Client {
     ///   - [`status(Option<RuleGroupsNamespaceStatus>)`](crate::output::PutRuleGroupsNamespaceOutput::status): The status of rule groups namespace.
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::PutRuleGroupsNamespaceOutput::tags): The tags of this rule groups namespace.
     /// - On failure, responds with [`SdkError<PutRuleGroupsNamespaceError>`](crate::error::PutRuleGroupsNamespaceError)
-    pub fn put_rule_groups_namespace(&self) -> fluent_builders::PutRuleGroupsNamespace {
-        fluent_builders::PutRuleGroupsNamespace::new(self.handle.clone())
+    pub fn put_rule_groups_namespace(
+        &self,
+    ) -> crate::client::fluent_builders::PutRuleGroupsNamespace {
+        crate::client::fluent_builders::PutRuleGroupsNamespace::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
@@ -309,8 +331,8 @@ impl Client {
     /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
 
     /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
-    pub fn tag_resource(&self) -> fluent_builders::TagResource {
-        fluent_builders::TagResource::new(self.handle.clone())
+    pub fn tag_resource(&self) -> crate::client::fluent_builders::TagResource {
+        crate::client::fluent_builders::TagResource::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
@@ -320,8 +342,8 @@ impl Client {
     /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 
     /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
-    pub fn untag_resource(&self) -> fluent_builders::UntagResource {
-        fluent_builders::UntagResource::new(self.handle.clone())
+    pub fn untag_resource(&self) -> crate::client::fluent_builders::UntagResource {
+        crate::client::fluent_builders::UntagResource::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`UpdateLoggingConfiguration`](crate::client::fluent_builders::UpdateLoggingConfiguration) operation.
     ///
@@ -332,8 +354,10 @@ impl Client {
     /// - On success, responds with [`UpdateLoggingConfigurationOutput`](crate::output::UpdateLoggingConfigurationOutput) with field(s):
     ///   - [`status(Option<LoggingConfigurationStatus>)`](crate::output::UpdateLoggingConfigurationOutput::status): The status of the logging configuration.
     /// - On failure, responds with [`SdkError<UpdateLoggingConfigurationError>`](crate::error::UpdateLoggingConfigurationError)
-    pub fn update_logging_configuration(&self) -> fluent_builders::UpdateLoggingConfiguration {
-        fluent_builders::UpdateLoggingConfiguration::new(self.handle.clone())
+    pub fn update_logging_configuration(
+        &self,
+    ) -> crate::client::fluent_builders::UpdateLoggingConfiguration {
+        crate::client::fluent_builders::UpdateLoggingConfiguration::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`UpdateWorkspaceAlias`](crate::client::fluent_builders::UpdateWorkspaceAlias) operation.
     ///
@@ -344,1933 +368,8 @@ impl Client {
     /// - On success, responds with [`UpdateWorkspaceAliasOutput`](crate::output::UpdateWorkspaceAliasOutput)
 
     /// - On failure, responds with [`SdkError<UpdateWorkspaceAliasError>`](crate::error::UpdateWorkspaceAliasError)
-    pub fn update_workspace_alias(&self) -> fluent_builders::UpdateWorkspaceAlias {
-        fluent_builders::UpdateWorkspaceAlias::new(self.handle.clone())
-    }
-}
-pub mod fluent_builders {
-
-    //! Utilities to ergonomically construct a request to the service.
-    //!
-    //! Fluent builders are created through the [`Client`](crate::client::Client) by calling
-    //! one if its operation methods. After parameters are set using the builder methods,
-    //! the `send` method can be called to initiate the request.
-    /// Fluent builder constructing a request to `CreateAlertManagerDefinition`.
-    ///
-    /// Create an alert manager definition.
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct CreateAlertManagerDefinition {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::create_alert_manager_definition_input::Builder,
-    }
-    impl CreateAlertManagerDefinition {
-        /// Creates a new `CreateAlertManagerDefinition`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::CreateAlertManagerDefinition,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::CreateAlertManagerDefinitionError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::CreateAlertManagerDefinitionOutput,
-            aws_smithy_http::result::SdkError<crate::error::CreateAlertManagerDefinitionError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// The ID of the workspace in which to create the alert manager definition.
-        pub fn workspace_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workspace_id(input.into());
-            self
-        }
-        /// The ID of the workspace in which to create the alert manager definition.
-        pub fn set_workspace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_workspace_id(input);
-            self
-        }
-        /// The alert manager definition data.
-        pub fn data(mut self, input: aws_smithy_types::Blob) -> Self {
-            self.inner = self.inner.data(input);
-            self
-        }
-        /// The alert manager definition data.
-        pub fn set_data(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
-            self.inner = self.inner.set_data(input);
-            self
-        }
-        /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
-        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(input.into());
-            self
-        }
-        /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
-        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_client_token(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `CreateLoggingConfiguration`.
-    ///
-    /// Create logging configuration.
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct CreateLoggingConfiguration {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::create_logging_configuration_input::Builder,
-    }
-    impl CreateLoggingConfiguration {
-        /// Creates a new `CreateLoggingConfiguration`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::CreateLoggingConfiguration,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::CreateLoggingConfigurationError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::CreateLoggingConfigurationOutput,
-            aws_smithy_http::result::SdkError<crate::error::CreateLoggingConfigurationError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// The ID of the workspace to vend logs to.
-        pub fn workspace_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workspace_id(input.into());
-            self
-        }
-        /// The ID of the workspace to vend logs to.
-        pub fn set_workspace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_workspace_id(input);
-            self
-        }
-        /// The ARN of the CW log group to which the vended log data will be published.
-        pub fn log_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.log_group_arn(input.into());
-            self
-        }
-        /// The ARN of the CW log group to which the vended log data will be published.
-        pub fn set_log_group_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.set_log_group_arn(input);
-            self
-        }
-        /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
-        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(input.into());
-            self
-        }
-        /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
-        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_client_token(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `CreateRuleGroupsNamespace`.
-    ///
-    /// Create a rule group namespace.
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct CreateRuleGroupsNamespace {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::create_rule_groups_namespace_input::Builder,
-    }
-    impl CreateRuleGroupsNamespace {
-        /// Creates a new `CreateRuleGroupsNamespace`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::CreateRuleGroupsNamespace,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::CreateRuleGroupsNamespaceError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::CreateRuleGroupsNamespaceOutput,
-            aws_smithy_http::result::SdkError<crate::error::CreateRuleGroupsNamespaceError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// The ID of the workspace in which to create the rule group namespace.
-        pub fn workspace_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workspace_id(input.into());
-            self
-        }
-        /// The ID of the workspace in which to create the rule group namespace.
-        pub fn set_workspace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_workspace_id(input);
-            self
-        }
-        /// The rule groups namespace name.
-        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(input.into());
-            self
-        }
-        /// The rule groups namespace name.
-        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_name(input);
-            self
-        }
-        /// The namespace data that define the rule groups.
-        pub fn data(mut self, input: aws_smithy_types::Blob) -> Self {
-            self.inner = self.inner.data(input);
-            self
-        }
-        /// The namespace data that define the rule groups.
-        pub fn set_data(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
-            self.inner = self.inner.set_data(input);
-            self
-        }
-        /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
-        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(input.into());
-            self
-        }
-        /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
-        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_client_token(input);
-            self
-        }
-        /// Adds a key-value pair to `tags`.
-        ///
-        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
-        ///
-        /// Optional, user-provided tags for this rule groups namespace.
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.tags(k.into(), v.into());
-            self
-        }
-        /// Optional, user-provided tags for this rule groups namespace.
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.inner = self.inner.set_tags(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `CreateWorkspace`.
-    ///
-    /// Creates a new AMP workspace.
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct CreateWorkspace {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::create_workspace_input::Builder,
-    }
-    impl CreateWorkspace {
-        /// Creates a new `CreateWorkspace`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::CreateWorkspace,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::CreateWorkspaceError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::CreateWorkspaceOutput,
-            aws_smithy_http::result::SdkError<crate::error::CreateWorkspaceError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// An optional user-assigned alias for this workspace. This alias is for user reference and does not need to be unique.
-        pub fn alias(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.alias(input.into());
-            self
-        }
-        /// An optional user-assigned alias for this workspace. This alias is for user reference and does not need to be unique.
-        pub fn set_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_alias(input);
-            self
-        }
-        /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
-        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(input.into());
-            self
-        }
-        /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
-        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_client_token(input);
-            self
-        }
-        /// Adds a key-value pair to `tags`.
-        ///
-        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
-        ///
-        /// Optional, user-provided tags for this workspace.
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.tags(k.into(), v.into());
-            self
-        }
-        /// Optional, user-provided tags for this workspace.
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.inner = self.inner.set_tags(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DeleteAlertManagerDefinition`.
-    ///
-    /// Deletes an alert manager definition.
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DeleteAlertManagerDefinition {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::delete_alert_manager_definition_input::Builder,
-    }
-    impl DeleteAlertManagerDefinition {
-        /// Creates a new `DeleteAlertManagerDefinition`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::DeleteAlertManagerDefinition,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::DeleteAlertManagerDefinitionError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::DeleteAlertManagerDefinitionOutput,
-            aws_smithy_http::result::SdkError<crate::error::DeleteAlertManagerDefinitionError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// The ID of the workspace in which to delete the alert manager definition.
-        pub fn workspace_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workspace_id(input.into());
-            self
-        }
-        /// The ID of the workspace in which to delete the alert manager definition.
-        pub fn set_workspace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_workspace_id(input);
-            self
-        }
-        /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
-        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(input.into());
-            self
-        }
-        /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
-        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_client_token(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DeleteLoggingConfiguration`.
-    ///
-    /// Delete logging configuration.
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DeleteLoggingConfiguration {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::delete_logging_configuration_input::Builder,
-    }
-    impl DeleteLoggingConfiguration {
-        /// Creates a new `DeleteLoggingConfiguration`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::DeleteLoggingConfiguration,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::DeleteLoggingConfigurationError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::DeleteLoggingConfigurationOutput,
-            aws_smithy_http::result::SdkError<crate::error::DeleteLoggingConfigurationError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// The ID of the workspace to vend logs to.
-        pub fn workspace_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workspace_id(input.into());
-            self
-        }
-        /// The ID of the workspace to vend logs to.
-        pub fn set_workspace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_workspace_id(input);
-            self
-        }
-        /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
-        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(input.into());
-            self
-        }
-        /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
-        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_client_token(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DeleteRuleGroupsNamespace`.
-    ///
-    /// Delete a rule groups namespace.
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DeleteRuleGroupsNamespace {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::delete_rule_groups_namespace_input::Builder,
-    }
-    impl DeleteRuleGroupsNamespace {
-        /// Creates a new `DeleteRuleGroupsNamespace`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::DeleteRuleGroupsNamespace,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::DeleteRuleGroupsNamespaceError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::DeleteRuleGroupsNamespaceOutput,
-            aws_smithy_http::result::SdkError<crate::error::DeleteRuleGroupsNamespaceError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// The ID of the workspace to delete rule group definition.
-        pub fn workspace_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workspace_id(input.into());
-            self
-        }
-        /// The ID of the workspace to delete rule group definition.
-        pub fn set_workspace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_workspace_id(input);
-            self
-        }
-        /// The rule groups namespace name.
-        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(input.into());
-            self
-        }
-        /// The rule groups namespace name.
-        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_name(input);
-            self
-        }
-        /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
-        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(input.into());
-            self
-        }
-        /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
-        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_client_token(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DeleteWorkspace`.
-    ///
-    /// Deletes an AMP workspace.
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DeleteWorkspace {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::delete_workspace_input::Builder,
-    }
-    impl DeleteWorkspace {
-        /// Creates a new `DeleteWorkspace`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::DeleteWorkspace,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::DeleteWorkspaceError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::DeleteWorkspaceOutput,
-            aws_smithy_http::result::SdkError<crate::error::DeleteWorkspaceError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// The ID of the workspace to delete.
-        pub fn workspace_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workspace_id(input.into());
-            self
-        }
-        /// The ID of the workspace to delete.
-        pub fn set_workspace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_workspace_id(input);
-            self
-        }
-        /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
-        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(input.into());
-            self
-        }
-        /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
-        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_client_token(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DescribeAlertManagerDefinition`.
-    ///
-    /// Describes an alert manager definition.
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DescribeAlertManagerDefinition {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::describe_alert_manager_definition_input::Builder,
-    }
-    impl DescribeAlertManagerDefinition {
-        /// Creates a new `DescribeAlertManagerDefinition`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::DescribeAlertManagerDefinition,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::DescribeAlertManagerDefinitionError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::DescribeAlertManagerDefinitionOutput,
-            aws_smithy_http::result::SdkError<crate::error::DescribeAlertManagerDefinitionError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// The ID of the workspace to describe.
-        pub fn workspace_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workspace_id(input.into());
-            self
-        }
-        /// The ID of the workspace to describe.
-        pub fn set_workspace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_workspace_id(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DescribeLoggingConfiguration`.
-    ///
-    /// Describes logging configuration.
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DescribeLoggingConfiguration {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::describe_logging_configuration_input::Builder,
-    }
-    impl DescribeLoggingConfiguration {
-        /// Creates a new `DescribeLoggingConfiguration`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::DescribeLoggingConfiguration,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::DescribeLoggingConfigurationError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::DescribeLoggingConfigurationOutput,
-            aws_smithy_http::result::SdkError<crate::error::DescribeLoggingConfigurationError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// The ID of the workspace to vend logs to.
-        pub fn workspace_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workspace_id(input.into());
-            self
-        }
-        /// The ID of the workspace to vend logs to.
-        pub fn set_workspace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_workspace_id(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DescribeRuleGroupsNamespace`.
-    ///
-    /// Describe a rule groups namespace.
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DescribeRuleGroupsNamespace {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::describe_rule_groups_namespace_input::Builder,
-    }
-    impl DescribeRuleGroupsNamespace {
-        /// Creates a new `DescribeRuleGroupsNamespace`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::DescribeRuleGroupsNamespace,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::DescribeRuleGroupsNamespaceError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::DescribeRuleGroupsNamespaceOutput,
-            aws_smithy_http::result::SdkError<crate::error::DescribeRuleGroupsNamespaceError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// The ID of the workspace to describe.
-        pub fn workspace_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workspace_id(input.into());
-            self
-        }
-        /// The ID of the workspace to describe.
-        pub fn set_workspace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_workspace_id(input);
-            self
-        }
-        /// The rule groups namespace.
-        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(input.into());
-            self
-        }
-        /// The rule groups namespace.
-        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_name(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DescribeWorkspace`.
-    ///
-    /// Describes an existing AMP workspace.
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DescribeWorkspace {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::describe_workspace_input::Builder,
-    }
-    impl DescribeWorkspace {
-        /// Creates a new `DescribeWorkspace`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::DescribeWorkspace,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::DescribeWorkspaceError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::DescribeWorkspaceOutput,
-            aws_smithy_http::result::SdkError<crate::error::DescribeWorkspaceError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// The ID of the workspace to describe.
-        pub fn workspace_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workspace_id(input.into());
-            self
-        }
-        /// The ID of the workspace to describe.
-        pub fn set_workspace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_workspace_id(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `ListRuleGroupsNamespaces`.
-    ///
-    /// Lists rule groups namespaces.
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct ListRuleGroupsNamespaces {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::list_rule_groups_namespaces_input::Builder,
-    }
-    impl ListRuleGroupsNamespaces {
-        /// Creates a new `ListRuleGroupsNamespaces`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::ListRuleGroupsNamespaces,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::ListRuleGroupsNamespacesError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::ListRuleGroupsNamespacesOutput,
-            aws_smithy_http::result::SdkError<crate::error::ListRuleGroupsNamespacesError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// Create a paginator for this request
-        ///
-        /// Paginators are used by calling [`send().await`](crate::paginator::ListRuleGroupsNamespacesPaginator::send) which returns a `Stream`.
-        pub fn into_paginator(self) -> crate::paginator::ListRuleGroupsNamespacesPaginator {
-            crate::paginator::ListRuleGroupsNamespacesPaginator::new(self.handle, self.inner)
-        }
-        /// The ID of the workspace.
-        pub fn workspace_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workspace_id(input.into());
-            self
-        }
-        /// The ID of the workspace.
-        pub fn set_workspace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_workspace_id(input);
-            self
-        }
-        /// Optional filter for rule groups namespace name. Only the rule groups namespace that begin with this value will be returned.
-        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(input.into());
-            self
-        }
-        /// Optional filter for rule groups namespace name. Only the rule groups namespace that begin with this value will be returned.
-        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_name(input);
-            self
-        }
-        /// Pagination token to request the next page in a paginated list. This token is obtained from the output of the previous ListRuleGroupsNamespaces request.
-        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(input.into());
-            self
-        }
-        /// Pagination token to request the next page in a paginated list. This token is obtained from the output of the previous ListRuleGroupsNamespaces request.
-        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(input);
-            self
-        }
-        /// Maximum results to return in response (default=100, maximum=1000).
-        pub fn max_results(mut self, input: i32) -> Self {
-            self.inner = self.inner.max_results(input);
-            self
-        }
-        /// Maximum results to return in response (default=100, maximum=1000).
-        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `ListTagsForResource`.
-    ///
-    /// Lists the tags you have assigned to the resource.
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct ListTagsForResource {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::list_tags_for_resource_input::Builder,
-    }
-    impl ListTagsForResource {
-        /// Creates a new `ListTagsForResource`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::ListTagsForResource,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::ListTagsForResourceOutput,
-            aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// The ARN of the resource.
-        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(input.into());
-            self
-        }
-        /// The ARN of the resource.
-        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_resource_arn(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `ListWorkspaces`.
-    ///
-    /// Lists all AMP workspaces, including workspaces being created or deleted.
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct ListWorkspaces {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::list_workspaces_input::Builder,
-    }
-    impl ListWorkspaces {
-        /// Creates a new `ListWorkspaces`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::ListWorkspaces,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::ListWorkspacesError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::ListWorkspacesOutput,
-            aws_smithy_http::result::SdkError<crate::error::ListWorkspacesError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// Create a paginator for this request
-        ///
-        /// Paginators are used by calling [`send().await`](crate::paginator::ListWorkspacesPaginator::send) which returns a `Stream`.
-        pub fn into_paginator(self) -> crate::paginator::ListWorkspacesPaginator {
-            crate::paginator::ListWorkspacesPaginator::new(self.handle, self.inner)
-        }
-        /// Pagination token to request the next page in a paginated list. This token is obtained from the output of the previous ListWorkspaces request.
-        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(input.into());
-            self
-        }
-        /// Pagination token to request the next page in a paginated list. This token is obtained from the output of the previous ListWorkspaces request.
-        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(input);
-            self
-        }
-        /// Optional filter for workspace alias. Only the workspaces with aliases that begin with this value will be returned.
-        pub fn alias(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.alias(input.into());
-            self
-        }
-        /// Optional filter for workspace alias. Only the workspaces with aliases that begin with this value will be returned.
-        pub fn set_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_alias(input);
-            self
-        }
-        /// Maximum results to return in response (default=100, maximum=1000).
-        pub fn max_results(mut self, input: i32) -> Self {
-            self.inner = self.inner.max_results(input);
-            self
-        }
-        /// Maximum results to return in response (default=100, maximum=1000).
-        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `PutAlertManagerDefinition`.
-    ///
-    /// Update an alert manager definition.
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct PutAlertManagerDefinition {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::put_alert_manager_definition_input::Builder,
-    }
-    impl PutAlertManagerDefinition {
-        /// Creates a new `PutAlertManagerDefinition`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::PutAlertManagerDefinition,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::PutAlertManagerDefinitionError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::PutAlertManagerDefinitionOutput,
-            aws_smithy_http::result::SdkError<crate::error::PutAlertManagerDefinitionError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// The ID of the workspace in which to update the alert manager definition.
-        pub fn workspace_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workspace_id(input.into());
-            self
-        }
-        /// The ID of the workspace in which to update the alert manager definition.
-        pub fn set_workspace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_workspace_id(input);
-            self
-        }
-        /// The alert manager definition data.
-        pub fn data(mut self, input: aws_smithy_types::Blob) -> Self {
-            self.inner = self.inner.data(input);
-            self
-        }
-        /// The alert manager definition data.
-        pub fn set_data(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
-            self.inner = self.inner.set_data(input);
-            self
-        }
-        /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
-        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(input.into());
-            self
-        }
-        /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
-        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_client_token(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `PutRuleGroupsNamespace`.
-    ///
-    /// Update a rule groups namespace.
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct PutRuleGroupsNamespace {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::put_rule_groups_namespace_input::Builder,
-    }
-    impl PutRuleGroupsNamespace {
-        /// Creates a new `PutRuleGroupsNamespace`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::PutRuleGroupsNamespace,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::PutRuleGroupsNamespaceError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::PutRuleGroupsNamespaceOutput,
-            aws_smithy_http::result::SdkError<crate::error::PutRuleGroupsNamespaceError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// The ID of the workspace in which to update the rule group namespace.
-        pub fn workspace_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workspace_id(input.into());
-            self
-        }
-        /// The ID of the workspace in which to update the rule group namespace.
-        pub fn set_workspace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_workspace_id(input);
-            self
-        }
-        /// The rule groups namespace name.
-        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(input.into());
-            self
-        }
-        /// The rule groups namespace name.
-        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_name(input);
-            self
-        }
-        /// The namespace data that define the rule groups.
-        pub fn data(mut self, input: aws_smithy_types::Blob) -> Self {
-            self.inner = self.inner.data(input);
-            self
-        }
-        /// The namespace data that define the rule groups.
-        pub fn set_data(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
-            self.inner = self.inner.set_data(input);
-            self
-        }
-        /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
-        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(input.into());
-            self
-        }
-        /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
-        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_client_token(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `TagResource`.
-    ///
-    /// Creates tags for the specified resource.
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct TagResource {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::tag_resource_input::Builder,
-    }
-    impl TagResource {
-        /// Creates a new `TagResource`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::TagResource,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::TagResourceError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::TagResourceOutput,
-            aws_smithy_http::result::SdkError<crate::error::TagResourceError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// The ARN of the resource.
-        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(input.into());
-            self
-        }
-        /// The ARN of the resource.
-        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_resource_arn(input);
-            self
-        }
-        /// Adds a key-value pair to `tags`.
-        ///
-        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
-        ///
-        /// The list of tags assigned to the resource.
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.tags(k.into(), v.into());
-            self
-        }
-        /// The list of tags assigned to the resource.
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.inner = self.inner.set_tags(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `UntagResource`.
-    ///
-    /// Deletes tags from the specified resource.
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct UntagResource {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::untag_resource_input::Builder,
-    }
-    impl UntagResource {
-        /// Creates a new `UntagResource`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::UntagResource,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::UntagResourceError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::UntagResourceOutput,
-            aws_smithy_http::result::SdkError<crate::error::UntagResourceError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// The ARN of the resource.
-        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(input.into());
-            self
-        }
-        /// The ARN of the resource.
-        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_resource_arn(input);
-            self
-        }
-        /// Appends an item to `tagKeys`.
-        ///
-        /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
-        ///
-        /// One or more tag keys
-        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(input.into());
-            self
-        }
-        /// One or more tag keys
-        pub fn set_tag_keys(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.inner = self.inner.set_tag_keys(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `UpdateLoggingConfiguration`.
-    ///
-    /// Update logging configuration.
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct UpdateLoggingConfiguration {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::update_logging_configuration_input::Builder,
-    }
-    impl UpdateLoggingConfiguration {
-        /// Creates a new `UpdateLoggingConfiguration`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::UpdateLoggingConfiguration,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::UpdateLoggingConfigurationError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::UpdateLoggingConfigurationOutput,
-            aws_smithy_http::result::SdkError<crate::error::UpdateLoggingConfigurationError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// The ID of the workspace to vend logs to.
-        pub fn workspace_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workspace_id(input.into());
-            self
-        }
-        /// The ID of the workspace to vend logs to.
-        pub fn set_workspace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_workspace_id(input);
-            self
-        }
-        /// The ARN of the CW log group to which the vended log data will be published.
-        pub fn log_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.log_group_arn(input.into());
-            self
-        }
-        /// The ARN of the CW log group to which the vended log data will be published.
-        pub fn set_log_group_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.set_log_group_arn(input);
-            self
-        }
-        /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
-        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(input.into());
-            self
-        }
-        /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
-        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_client_token(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `UpdateWorkspaceAlias`.
-    ///
-    /// Updates an AMP workspace alias.
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct UpdateWorkspaceAlias {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::update_workspace_alias_input::Builder,
-    }
-    impl UpdateWorkspaceAlias {
-        /// Creates a new `UpdateWorkspaceAlias`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::UpdateWorkspaceAlias,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::UpdateWorkspaceAliasError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::UpdateWorkspaceAliasOutput,
-            aws_smithy_http::result::SdkError<crate::error::UpdateWorkspaceAliasError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// The ID of the workspace being updated.
-        pub fn workspace_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workspace_id(input.into());
-            self
-        }
-        /// The ID of the workspace being updated.
-        pub fn set_workspace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_workspace_id(input);
-            self
-        }
-        /// The new alias of the workspace.
-        pub fn alias(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.alias(input.into());
-            self
-        }
-        /// The new alias of the workspace.
-        pub fn set_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_alias(input);
-            self
-        }
-        /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
-        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(input.into());
-            self
-        }
-        /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
-        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_client_token(input);
-            self
-        }
+    pub fn update_workspace_alias(&self) -> crate::client::fluent_builders::UpdateWorkspaceAlias {
+        crate::client::fluent_builders::UpdateWorkspaceAlias::new(self.handle.clone())
     }
 }
 
@@ -2357,3 +456,10 @@ impl Client {
         }
     }
 }
+
+/// Utilities to ergonomically construct a request to the service.
+///
+/// Fluent builders are created through the [`Client`](crate::client::Client) by calling
+/// one if its operation methods. After parameters are set using the builder methods,
+/// the `send` method can be called to initiate the request.
+pub mod fluent_builders;

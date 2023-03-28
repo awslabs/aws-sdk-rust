@@ -2,7 +2,7 @@
 /// Operation shape for `AssociateAlias`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`associate_alias`](crate::client::Client::associate_alias).
+/// [`associate_alias`](crate::client::fluent_builders::AssociateAlias).
 ///
 /// `ParseStrictResponse` impl for `AssociateAlias`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -35,7 +35,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateAlias {
 /// Operation shape for `CopyDistribution`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`copy_distribution`](crate::client::Client::copy_distribution).
+/// [`copy_distribution`](crate::client::fluent_builders::CopyDistribution).
 ///
 /// `ParseStrictResponse` impl for `CopyDistribution`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -70,7 +70,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CopyDistribution {
 /// Operation shape for `CreateCachePolicy`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_cache_policy`](crate::client::Client::create_cache_policy).
+/// [`create_cache_policy`](crate::client::fluent_builders::CreateCachePolicy).
 ///
 /// `ParseStrictResponse` impl for `CreateCachePolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -105,7 +105,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateCachePolicy {
 /// Operation shape for `CreateCloudFrontOriginAccessIdentity`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_cloud_front_origin_access_identity`](crate::client::Client::create_cloud_front_origin_access_identity).
+/// [`create_cloud_front_origin_access_identity`](crate::client::fluent_builders::CreateCloudFrontOriginAccessIdentity).
 ///
 /// `ParseStrictResponse` impl for `CreateCloudFrontOriginAccessIdentity`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -142,7 +142,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateCloudFrontOriginAc
 /// Operation shape for `CreateContinuousDeploymentPolicy`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_continuous_deployment_policy`](crate::client::Client::create_continuous_deployment_policy).
+/// [`create_continuous_deployment_policy`](crate::client::fluent_builders::CreateContinuousDeploymentPolicy).
 ///
 /// `ParseStrictResponse` impl for `CreateContinuousDeploymentPolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -177,7 +177,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateContinuousDeployme
 /// Operation shape for `CreateDistribution`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_distribution`](crate::client::Client::create_distribution).
+/// [`create_distribution`](crate::client::fluent_builders::CreateDistribution).
 ///
 /// `ParseStrictResponse` impl for `CreateDistribution`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -212,7 +212,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateDistribution {
 /// Operation shape for `CreateDistributionWithTags`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_distribution_with_tags`](crate::client::Client::create_distribution_with_tags).
+/// [`create_distribution_with_tags`](crate::client::fluent_builders::CreateDistributionWithTags).
 ///
 /// `ParseStrictResponse` impl for `CreateDistributionWithTags`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -247,7 +247,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateDistributionWithTa
 /// Operation shape for `CreateFieldLevelEncryptionConfig`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_field_level_encryption_config`](crate::client::Client::create_field_level_encryption_config).
+/// [`create_field_level_encryption_config`](crate::client::fluent_builders::CreateFieldLevelEncryptionConfig).
 ///
 /// `ParseStrictResponse` impl for `CreateFieldLevelEncryptionConfig`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -282,7 +282,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateFieldLevelEncrypti
 /// Operation shape for `CreateFieldLevelEncryptionProfile`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_field_level_encryption_profile`](crate::client::Client::create_field_level_encryption_profile).
+/// [`create_field_level_encryption_profile`](crate::client::fluent_builders::CreateFieldLevelEncryptionProfile).
 ///
 /// `ParseStrictResponse` impl for `CreateFieldLevelEncryptionProfile`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -317,7 +317,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateFieldLevelEncrypti
 /// Operation shape for `CreateFunction`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_function`](crate::client::Client::create_function).
+/// [`create_function`](crate::client::fluent_builders::CreateFunction).
 ///
 /// `ParseStrictResponse` impl for `CreateFunction`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -350,7 +350,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateFunction {
 /// Operation shape for `CreateInvalidation`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_invalidation`](crate::client::Client::create_invalidation).
+/// [`create_invalidation`](crate::client::fluent_builders::CreateInvalidation).
 ///
 /// `ParseStrictResponse` impl for `CreateInvalidation`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -385,7 +385,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateInvalidation {
 /// Operation shape for `CreateKeyGroup`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_key_group`](crate::client::Client::create_key_group).
+/// [`create_key_group`](crate::client::fluent_builders::CreateKeyGroup).
 ///
 /// `ParseStrictResponse` impl for `CreateKeyGroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -418,7 +418,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateKeyGroup {
 /// Operation shape for `CreateMonitoringSubscription`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_monitoring_subscription`](crate::client::Client::create_monitoring_subscription).
+/// [`create_monitoring_subscription`](crate::client::fluent_builders::CreateMonitoringSubscription).
 ///
 /// `ParseStrictResponse` impl for `CreateMonitoringSubscription`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -453,7 +453,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateMonitoringSubscrip
 /// Operation shape for `CreateOriginAccessControl`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_origin_access_control`](crate::client::Client::create_origin_access_control).
+/// [`create_origin_access_control`](crate::client::fluent_builders::CreateOriginAccessControl).
 ///
 /// `ParseStrictResponse` impl for `CreateOriginAccessControl`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -488,7 +488,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateOriginAccessContro
 /// Operation shape for `CreateOriginRequestPolicy`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_origin_request_policy`](crate::client::Client::create_origin_request_policy).
+/// [`create_origin_request_policy`](crate::client::fluent_builders::CreateOriginRequestPolicy).
 ///
 /// `ParseStrictResponse` impl for `CreateOriginRequestPolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -523,7 +523,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateOriginRequestPolic
 /// Operation shape for `CreatePublicKey`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_public_key`](crate::client::Client::create_public_key).
+/// [`create_public_key`](crate::client::fluent_builders::CreatePublicKey).
 ///
 /// `ParseStrictResponse` impl for `CreatePublicKey`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -558,7 +558,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreatePublicKey {
 /// Operation shape for `CreateRealtimeLogConfig`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_realtime_log_config`](crate::client::Client::create_realtime_log_config).
+/// [`create_realtime_log_config`](crate::client::fluent_builders::CreateRealtimeLogConfig).
 ///
 /// `ParseStrictResponse` impl for `CreateRealtimeLogConfig`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -593,7 +593,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateRealtimeLogConfig 
 /// Operation shape for `CreateResponseHeadersPolicy`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_response_headers_policy`](crate::client::Client::create_response_headers_policy).
+/// [`create_response_headers_policy`](crate::client::fluent_builders::CreateResponseHeadersPolicy).
 ///
 /// `ParseStrictResponse` impl for `CreateResponseHeadersPolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -628,7 +628,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateResponseHeadersPol
 /// Operation shape for `CreateStreamingDistribution`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_streaming_distribution`](crate::client::Client::create_streaming_distribution).
+/// [`create_streaming_distribution`](crate::client::fluent_builders::CreateStreamingDistribution).
 ///
 /// `ParseStrictResponse` impl for `CreateStreamingDistribution`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -663,7 +663,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateStreamingDistribut
 /// Operation shape for `CreateStreamingDistributionWithTags`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_streaming_distribution_with_tags`](crate::client::Client::create_streaming_distribution_with_tags).
+/// [`create_streaming_distribution_with_tags`](crate::client::fluent_builders::CreateStreamingDistributionWithTags).
 ///
 /// `ParseStrictResponse` impl for `CreateStreamingDistributionWithTags`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -698,7 +698,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateStreamingDistribut
 /// Operation shape for `DeleteCachePolicy`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_cache_policy`](crate::client::Client::delete_cache_policy).
+/// [`delete_cache_policy`](crate::client::fluent_builders::DeleteCachePolicy).
 ///
 /// `ParseStrictResponse` impl for `DeleteCachePolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -733,7 +733,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteCachePolicy {
 /// Operation shape for `DeleteCloudFrontOriginAccessIdentity`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_cloud_front_origin_access_identity`](crate::client::Client::delete_cloud_front_origin_access_identity).
+/// [`delete_cloud_front_origin_access_identity`](crate::client::fluent_builders::DeleteCloudFrontOriginAccessIdentity).
 ///
 /// `ParseStrictResponse` impl for `DeleteCloudFrontOriginAccessIdentity`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -770,7 +770,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteCloudFrontOriginAc
 /// Operation shape for `DeleteContinuousDeploymentPolicy`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_continuous_deployment_policy`](crate::client::Client::delete_continuous_deployment_policy).
+/// [`delete_continuous_deployment_policy`](crate::client::fluent_builders::DeleteContinuousDeploymentPolicy).
 ///
 /// `ParseStrictResponse` impl for `DeleteContinuousDeploymentPolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -805,7 +805,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteContinuousDeployme
 /// Operation shape for `DeleteDistribution`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_distribution`](crate::client::Client::delete_distribution).
+/// [`delete_distribution`](crate::client::fluent_builders::DeleteDistribution).
 ///
 /// `ParseStrictResponse` impl for `DeleteDistribution`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -840,7 +840,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteDistribution {
 /// Operation shape for `DeleteFieldLevelEncryptionConfig`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_field_level_encryption_config`](crate::client::Client::delete_field_level_encryption_config).
+/// [`delete_field_level_encryption_config`](crate::client::fluent_builders::DeleteFieldLevelEncryptionConfig).
 ///
 /// `ParseStrictResponse` impl for `DeleteFieldLevelEncryptionConfig`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -875,7 +875,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteFieldLevelEncrypti
 /// Operation shape for `DeleteFieldLevelEncryptionProfile`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_field_level_encryption_profile`](crate::client::Client::delete_field_level_encryption_profile).
+/// [`delete_field_level_encryption_profile`](crate::client::fluent_builders::DeleteFieldLevelEncryptionProfile).
 ///
 /// `ParseStrictResponse` impl for `DeleteFieldLevelEncryptionProfile`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -910,7 +910,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteFieldLevelEncrypti
 /// Operation shape for `DeleteFunction`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_function`](crate::client::Client::delete_function).
+/// [`delete_function`](crate::client::fluent_builders::DeleteFunction).
 ///
 /// `ParseStrictResponse` impl for `DeleteFunction`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -943,7 +943,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteFunction {
 /// Operation shape for `DeleteKeyGroup`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_key_group`](crate::client::Client::delete_key_group).
+/// [`delete_key_group`](crate::client::fluent_builders::DeleteKeyGroup).
 ///
 /// `ParseStrictResponse` impl for `DeleteKeyGroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -976,7 +976,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteKeyGroup {
 /// Operation shape for `DeleteMonitoringSubscription`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_monitoring_subscription`](crate::client::Client::delete_monitoring_subscription).
+/// [`delete_monitoring_subscription`](crate::client::fluent_builders::DeleteMonitoringSubscription).
 ///
 /// `ParseStrictResponse` impl for `DeleteMonitoringSubscription`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1011,7 +1011,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteMonitoringSubscrip
 /// Operation shape for `DeleteOriginAccessControl`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_origin_access_control`](crate::client::Client::delete_origin_access_control).
+/// [`delete_origin_access_control`](crate::client::fluent_builders::DeleteOriginAccessControl).
 ///
 /// `ParseStrictResponse` impl for `DeleteOriginAccessControl`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1046,7 +1046,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteOriginAccessContro
 /// Operation shape for `DeleteOriginRequestPolicy`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_origin_request_policy`](crate::client::Client::delete_origin_request_policy).
+/// [`delete_origin_request_policy`](crate::client::fluent_builders::DeleteOriginRequestPolicy).
 ///
 /// `ParseStrictResponse` impl for `DeleteOriginRequestPolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1081,7 +1081,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteOriginRequestPolic
 /// Operation shape for `DeletePublicKey`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_public_key`](crate::client::Client::delete_public_key).
+/// [`delete_public_key`](crate::client::fluent_builders::DeletePublicKey).
 ///
 /// `ParseStrictResponse` impl for `DeletePublicKey`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1116,7 +1116,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeletePublicKey {
 /// Operation shape for `DeleteRealtimeLogConfig`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_realtime_log_config`](crate::client::Client::delete_realtime_log_config).
+/// [`delete_realtime_log_config`](crate::client::fluent_builders::DeleteRealtimeLogConfig).
 ///
 /// `ParseStrictResponse` impl for `DeleteRealtimeLogConfig`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1151,7 +1151,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteRealtimeLogConfig 
 /// Operation shape for `DeleteResponseHeadersPolicy`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_response_headers_policy`](crate::client::Client::delete_response_headers_policy).
+/// [`delete_response_headers_policy`](crate::client::fluent_builders::DeleteResponseHeadersPolicy).
 ///
 /// `ParseStrictResponse` impl for `DeleteResponseHeadersPolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1186,7 +1186,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteResponseHeadersPol
 /// Operation shape for `DeleteStreamingDistribution`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_streaming_distribution`](crate::client::Client::delete_streaming_distribution).
+/// [`delete_streaming_distribution`](crate::client::fluent_builders::DeleteStreamingDistribution).
 ///
 /// `ParseStrictResponse` impl for `DeleteStreamingDistribution`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1221,7 +1221,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteStreamingDistribut
 /// Operation shape for `DescribeFunction`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_function`](crate::client::Client::describe_function).
+/// [`describe_function`](crate::client::fluent_builders::DescribeFunction).
 ///
 /// `ParseStrictResponse` impl for `DescribeFunction`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1256,7 +1256,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeFunction {
 /// Operation shape for `GetCachePolicy`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_cache_policy`](crate::client::Client::get_cache_policy).
+/// [`get_cache_policy`](crate::client::fluent_builders::GetCachePolicy).
 ///
 /// `ParseStrictResponse` impl for `GetCachePolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1289,7 +1289,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetCachePolicy {
 /// Operation shape for `GetCachePolicyConfig`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_cache_policy_config`](crate::client::Client::get_cache_policy_config).
+/// [`get_cache_policy_config`](crate::client::fluent_builders::GetCachePolicyConfig).
 ///
 /// `ParseStrictResponse` impl for `GetCachePolicyConfig`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1324,7 +1324,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetCachePolicyConfig {
 /// Operation shape for `GetCloudFrontOriginAccessIdentity`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_cloud_front_origin_access_identity`](crate::client::Client::get_cloud_front_origin_access_identity).
+/// [`get_cloud_front_origin_access_identity`](crate::client::fluent_builders::GetCloudFrontOriginAccessIdentity).
 ///
 /// `ParseStrictResponse` impl for `GetCloudFrontOriginAccessIdentity`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1359,7 +1359,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetCloudFrontOriginAcces
 /// Operation shape for `GetCloudFrontOriginAccessIdentityConfig`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_cloud_front_origin_access_identity_config`](crate::client::Client::get_cloud_front_origin_access_identity_config).
+/// [`get_cloud_front_origin_access_identity_config`](crate::client::fluent_builders::GetCloudFrontOriginAccessIdentityConfig).
 ///
 /// `ParseStrictResponse` impl for `GetCloudFrontOriginAccessIdentityConfig`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1398,7 +1398,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetCloudFrontOriginAcces
 /// Operation shape for `GetContinuousDeploymentPolicy`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_continuous_deployment_policy`](crate::client::Client::get_continuous_deployment_policy).
+/// [`get_continuous_deployment_policy`](crate::client::fluent_builders::GetContinuousDeploymentPolicy).
 ///
 /// `ParseStrictResponse` impl for `GetContinuousDeploymentPolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1433,7 +1433,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetContinuousDeploymentP
 /// Operation shape for `GetContinuousDeploymentPolicyConfig`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_continuous_deployment_policy_config`](crate::client::Client::get_continuous_deployment_policy_config).
+/// [`get_continuous_deployment_policy_config`](crate::client::fluent_builders::GetContinuousDeploymentPolicyConfig).
 ///
 /// `ParseStrictResponse` impl for `GetContinuousDeploymentPolicyConfig`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1468,7 +1468,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetContinuousDeploymentP
 /// Operation shape for `GetDistribution`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_distribution`](crate::client::Client::get_distribution).
+/// [`get_distribution`](crate::client::fluent_builders::GetDistribution).
 ///
 /// `ParseStrictResponse` impl for `GetDistribution`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1503,7 +1503,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDistribution {
 /// Operation shape for `GetDistributionConfig`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_distribution_config`](crate::client::Client::get_distribution_config).
+/// [`get_distribution_config`](crate::client::fluent_builders::GetDistributionConfig).
 ///
 /// `ParseStrictResponse` impl for `GetDistributionConfig`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1538,7 +1538,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDistributionConfig {
 /// Operation shape for `GetFieldLevelEncryption`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_field_level_encryption`](crate::client::Client::get_field_level_encryption).
+/// [`get_field_level_encryption`](crate::client::fluent_builders::GetFieldLevelEncryption).
 ///
 /// `ParseStrictResponse` impl for `GetFieldLevelEncryption`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1573,7 +1573,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetFieldLevelEncryption 
 /// Operation shape for `GetFieldLevelEncryptionConfig`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_field_level_encryption_config`](crate::client::Client::get_field_level_encryption_config).
+/// [`get_field_level_encryption_config`](crate::client::fluent_builders::GetFieldLevelEncryptionConfig).
 ///
 /// `ParseStrictResponse` impl for `GetFieldLevelEncryptionConfig`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1608,7 +1608,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetFieldLevelEncryptionC
 /// Operation shape for `GetFieldLevelEncryptionProfile`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_field_level_encryption_profile`](crate::client::Client::get_field_level_encryption_profile).
+/// [`get_field_level_encryption_profile`](crate::client::fluent_builders::GetFieldLevelEncryptionProfile).
 ///
 /// `ParseStrictResponse` impl for `GetFieldLevelEncryptionProfile`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1643,7 +1643,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetFieldLevelEncryptionP
 /// Operation shape for `GetFieldLevelEncryptionProfileConfig`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_field_level_encryption_profile_config`](crate::client::Client::get_field_level_encryption_profile_config).
+/// [`get_field_level_encryption_profile_config`](crate::client::fluent_builders::GetFieldLevelEncryptionProfileConfig).
 ///
 /// `ParseStrictResponse` impl for `GetFieldLevelEncryptionProfileConfig`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1680,7 +1680,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetFieldLevelEncryptionP
 /// Operation shape for `GetFunction`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_function`](crate::client::Client::get_function).
+/// [`get_function`](crate::client::fluent_builders::GetFunction).
 ///
 /// `ParseStrictResponse` impl for `GetFunction`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1713,7 +1713,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetFunction {
 /// Operation shape for `GetInvalidation`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_invalidation`](crate::client::Client::get_invalidation).
+/// [`get_invalidation`](crate::client::fluent_builders::GetInvalidation).
 ///
 /// `ParseStrictResponse` impl for `GetInvalidation`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1748,7 +1748,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetInvalidation {
 /// Operation shape for `GetKeyGroup`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_key_group`](crate::client::Client::get_key_group).
+/// [`get_key_group`](crate::client::fluent_builders::GetKeyGroup).
 ///
 /// `ParseStrictResponse` impl for `GetKeyGroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1781,7 +1781,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetKeyGroup {
 /// Operation shape for `GetKeyGroupConfig`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_key_group_config`](crate::client::Client::get_key_group_config).
+/// [`get_key_group_config`](crate::client::fluent_builders::GetKeyGroupConfig).
 ///
 /// `ParseStrictResponse` impl for `GetKeyGroupConfig`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1816,7 +1816,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetKeyGroupConfig {
 /// Operation shape for `GetMonitoringSubscription`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_monitoring_subscription`](crate::client::Client::get_monitoring_subscription).
+/// [`get_monitoring_subscription`](crate::client::fluent_builders::GetMonitoringSubscription).
 ///
 /// `ParseStrictResponse` impl for `GetMonitoringSubscription`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1851,7 +1851,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetMonitoringSubscriptio
 /// Operation shape for `GetOriginAccessControl`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_origin_access_control`](crate::client::Client::get_origin_access_control).
+/// [`get_origin_access_control`](crate::client::fluent_builders::GetOriginAccessControl).
 ///
 /// `ParseStrictResponse` impl for `GetOriginAccessControl`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1886,7 +1886,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetOriginAccessControl {
 /// Operation shape for `GetOriginAccessControlConfig`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_origin_access_control_config`](crate::client::Client::get_origin_access_control_config).
+/// [`get_origin_access_control_config`](crate::client::fluent_builders::GetOriginAccessControlConfig).
 ///
 /// `ParseStrictResponse` impl for `GetOriginAccessControlConfig`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1921,7 +1921,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetOriginAccessControlCo
 /// Operation shape for `GetOriginRequestPolicy`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_origin_request_policy`](crate::client::Client::get_origin_request_policy).
+/// [`get_origin_request_policy`](crate::client::fluent_builders::GetOriginRequestPolicy).
 ///
 /// `ParseStrictResponse` impl for `GetOriginRequestPolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1956,7 +1956,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetOriginRequestPolicy {
 /// Operation shape for `GetOriginRequestPolicyConfig`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_origin_request_policy_config`](crate::client::Client::get_origin_request_policy_config).
+/// [`get_origin_request_policy_config`](crate::client::fluent_builders::GetOriginRequestPolicyConfig).
 ///
 /// `ParseStrictResponse` impl for `GetOriginRequestPolicyConfig`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1991,7 +1991,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetOriginRequestPolicyCo
 /// Operation shape for `GetPublicKey`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_public_key`](crate::client::Client::get_public_key).
+/// [`get_public_key`](crate::client::fluent_builders::GetPublicKey).
 ///
 /// `ParseStrictResponse` impl for `GetPublicKey`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2024,7 +2024,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetPublicKey {
 /// Operation shape for `GetPublicKeyConfig`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_public_key_config`](crate::client::Client::get_public_key_config).
+/// [`get_public_key_config`](crate::client::fluent_builders::GetPublicKeyConfig).
 ///
 /// `ParseStrictResponse` impl for `GetPublicKeyConfig`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2059,7 +2059,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetPublicKeyConfig {
 /// Operation shape for `GetRealtimeLogConfig`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_realtime_log_config`](crate::client::Client::get_realtime_log_config).
+/// [`get_realtime_log_config`](crate::client::fluent_builders::GetRealtimeLogConfig).
 ///
 /// `ParseStrictResponse` impl for `GetRealtimeLogConfig`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2094,7 +2094,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetRealtimeLogConfig {
 /// Operation shape for `GetResponseHeadersPolicy`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_response_headers_policy`](crate::client::Client::get_response_headers_policy).
+/// [`get_response_headers_policy`](crate::client::fluent_builders::GetResponseHeadersPolicy).
 ///
 /// `ParseStrictResponse` impl for `GetResponseHeadersPolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2129,7 +2129,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetResponseHeadersPolicy
 /// Operation shape for `GetResponseHeadersPolicyConfig`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_response_headers_policy_config`](crate::client::Client::get_response_headers_policy_config).
+/// [`get_response_headers_policy_config`](crate::client::fluent_builders::GetResponseHeadersPolicyConfig).
 ///
 /// `ParseStrictResponse` impl for `GetResponseHeadersPolicyConfig`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2164,7 +2164,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetResponseHeadersPolicy
 /// Operation shape for `GetStreamingDistribution`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_streaming_distribution`](crate::client::Client::get_streaming_distribution).
+/// [`get_streaming_distribution`](crate::client::fluent_builders::GetStreamingDistribution).
 ///
 /// `ParseStrictResponse` impl for `GetStreamingDistribution`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2199,7 +2199,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetStreamingDistribution
 /// Operation shape for `GetStreamingDistributionConfig`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_streaming_distribution_config`](crate::client::Client::get_streaming_distribution_config).
+/// [`get_streaming_distribution_config`](crate::client::fluent_builders::GetStreamingDistributionConfig).
 ///
 /// `ParseStrictResponse` impl for `GetStreamingDistributionConfig`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2234,7 +2234,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetStreamingDistribution
 /// Operation shape for `ListCachePolicies`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_cache_policies`](crate::client::Client::list_cache_policies).
+/// [`list_cache_policies`](crate::client::fluent_builders::ListCachePolicies).
 ///
 /// `ParseStrictResponse` impl for `ListCachePolicies`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2269,7 +2269,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListCachePolicies {
 /// Operation shape for `ListCloudFrontOriginAccessIdentities`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_cloud_front_origin_access_identities`](crate::client::Client::list_cloud_front_origin_access_identities).
+/// [`list_cloud_front_origin_access_identities`](crate::client::fluent_builders::ListCloudFrontOriginAccessIdentities).
 ///
 /// `ParseStrictResponse` impl for `ListCloudFrontOriginAccessIdentities`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2306,7 +2306,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListCloudFrontOriginAcce
 /// Operation shape for `ListConflictingAliases`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_conflicting_aliases`](crate::client::Client::list_conflicting_aliases).
+/// [`list_conflicting_aliases`](crate::client::fluent_builders::ListConflictingAliases).
 ///
 /// `ParseStrictResponse` impl for `ListConflictingAliases`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2341,7 +2341,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListConflictingAliases {
 /// Operation shape for `ListContinuousDeploymentPolicies`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_continuous_deployment_policies`](crate::client::Client::list_continuous_deployment_policies).
+/// [`list_continuous_deployment_policies`](crate::client::fluent_builders::ListContinuousDeploymentPolicies).
 ///
 /// `ParseStrictResponse` impl for `ListContinuousDeploymentPolicies`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2376,7 +2376,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListContinuousDeployment
 /// Operation shape for `ListDistributions`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_distributions`](crate::client::Client::list_distributions).
+/// [`list_distributions`](crate::client::fluent_builders::ListDistributions).
 ///
 /// `ParseStrictResponse` impl for `ListDistributions`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2411,7 +2411,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListDistributions {
 /// Operation shape for `ListDistributionsByCachePolicyId`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_distributions_by_cache_policy_id`](crate::client::Client::list_distributions_by_cache_policy_id).
+/// [`list_distributions_by_cache_policy_id`](crate::client::fluent_builders::ListDistributionsByCachePolicyId).
 ///
 /// `ParseStrictResponse` impl for `ListDistributionsByCachePolicyId`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2446,7 +2446,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListDistributionsByCache
 /// Operation shape for `ListDistributionsByKeyGroup`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_distributions_by_key_group`](crate::client::Client::list_distributions_by_key_group).
+/// [`list_distributions_by_key_group`](crate::client::fluent_builders::ListDistributionsByKeyGroup).
 ///
 /// `ParseStrictResponse` impl for `ListDistributionsByKeyGroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2481,7 +2481,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListDistributionsByKeyGr
 /// Operation shape for `ListDistributionsByOriginRequestPolicyId`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_distributions_by_origin_request_policy_id`](crate::client::Client::list_distributions_by_origin_request_policy_id).
+/// [`list_distributions_by_origin_request_policy_id`](crate::client::fluent_builders::ListDistributionsByOriginRequestPolicyId).
 ///
 /// `ParseStrictResponse` impl for `ListDistributionsByOriginRequestPolicyId`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2521,7 +2521,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListDistributionsByOrigi
 /// Operation shape for `ListDistributionsByRealtimeLogConfig`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_distributions_by_realtime_log_config`](crate::client::Client::list_distributions_by_realtime_log_config).
+/// [`list_distributions_by_realtime_log_config`](crate::client::fluent_builders::ListDistributionsByRealtimeLogConfig).
 ///
 /// `ParseStrictResponse` impl for `ListDistributionsByRealtimeLogConfig`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2558,7 +2558,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListDistributionsByRealt
 /// Operation shape for `ListDistributionsByResponseHeadersPolicyId`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_distributions_by_response_headers_policy_id`](crate::client::Client::list_distributions_by_response_headers_policy_id).
+/// [`list_distributions_by_response_headers_policy_id`](crate::client::fluent_builders::ListDistributionsByResponseHeadersPolicyId).
 ///
 /// `ParseStrictResponse` impl for `ListDistributionsByResponseHeadersPolicyId`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2598,7 +2598,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListDistributionsByRespo
 /// Operation shape for `ListDistributionsByWebACLId`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_distributions_by_web_acl_id`](crate::client::Client::list_distributions_by_web_acl_id).
+/// [`list_distributions_by_web_acl_id`](crate::client::fluent_builders::ListDistributionsByWebACLId).
 ///
 /// `ParseStrictResponse` impl for `ListDistributionsByWebACLId`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2633,7 +2633,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListDistributionsByWebAC
 /// Operation shape for `ListFieldLevelEncryptionConfigs`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_field_level_encryption_configs`](crate::client::Client::list_field_level_encryption_configs).
+/// [`list_field_level_encryption_configs`](crate::client::fluent_builders::ListFieldLevelEncryptionConfigs).
 ///
 /// `ParseStrictResponse` impl for `ListFieldLevelEncryptionConfigs`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2668,7 +2668,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListFieldLevelEncryption
 /// Operation shape for `ListFieldLevelEncryptionProfiles`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_field_level_encryption_profiles`](crate::client::Client::list_field_level_encryption_profiles).
+/// [`list_field_level_encryption_profiles`](crate::client::fluent_builders::ListFieldLevelEncryptionProfiles).
 ///
 /// `ParseStrictResponse` impl for `ListFieldLevelEncryptionProfiles`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2703,7 +2703,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListFieldLevelEncryption
 /// Operation shape for `ListFunctions`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_functions`](crate::client::Client::list_functions).
+/// [`list_functions`](crate::client::fluent_builders::ListFunctions).
 ///
 /// `ParseStrictResponse` impl for `ListFunctions`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2736,7 +2736,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListFunctions {
 /// Operation shape for `ListInvalidations`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_invalidations`](crate::client::Client::list_invalidations).
+/// [`list_invalidations`](crate::client::fluent_builders::ListInvalidations).
 ///
 /// `ParseStrictResponse` impl for `ListInvalidations`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2771,7 +2771,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListInvalidations {
 /// Operation shape for `ListKeyGroups`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_key_groups`](crate::client::Client::list_key_groups).
+/// [`list_key_groups`](crate::client::fluent_builders::ListKeyGroups).
 ///
 /// `ParseStrictResponse` impl for `ListKeyGroups`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2804,7 +2804,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListKeyGroups {
 /// Operation shape for `ListOriginAccessControls`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_origin_access_controls`](crate::client::Client::list_origin_access_controls).
+/// [`list_origin_access_controls`](crate::client::fluent_builders::ListOriginAccessControls).
 ///
 /// `ParseStrictResponse` impl for `ListOriginAccessControls`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2839,7 +2839,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListOriginAccessControls
 /// Operation shape for `ListOriginRequestPolicies`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_origin_request_policies`](crate::client::Client::list_origin_request_policies).
+/// [`list_origin_request_policies`](crate::client::fluent_builders::ListOriginRequestPolicies).
 ///
 /// `ParseStrictResponse` impl for `ListOriginRequestPolicies`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2874,7 +2874,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListOriginRequestPolicie
 /// Operation shape for `ListPublicKeys`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_public_keys`](crate::client::Client::list_public_keys).
+/// [`list_public_keys`](crate::client::fluent_builders::ListPublicKeys).
 ///
 /// `ParseStrictResponse` impl for `ListPublicKeys`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2907,7 +2907,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListPublicKeys {
 /// Operation shape for `ListRealtimeLogConfigs`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_realtime_log_configs`](crate::client::Client::list_realtime_log_configs).
+/// [`list_realtime_log_configs`](crate::client::fluent_builders::ListRealtimeLogConfigs).
 ///
 /// `ParseStrictResponse` impl for `ListRealtimeLogConfigs`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2942,7 +2942,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListRealtimeLogConfigs {
 /// Operation shape for `ListResponseHeadersPolicies`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_response_headers_policies`](crate::client::Client::list_response_headers_policies).
+/// [`list_response_headers_policies`](crate::client::fluent_builders::ListResponseHeadersPolicies).
 ///
 /// `ParseStrictResponse` impl for `ListResponseHeadersPolicies`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2977,7 +2977,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListResponseHeadersPolic
 /// Operation shape for `ListStreamingDistributions`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_streaming_distributions`](crate::client::Client::list_streaming_distributions).
+/// [`list_streaming_distributions`](crate::client::fluent_builders::ListStreamingDistributions).
 ///
 /// `ParseStrictResponse` impl for `ListStreamingDistributions`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -3012,7 +3012,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListStreamingDistributio
 /// Operation shape for `ListTagsForResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
+/// [`list_tags_for_resource`](crate::client::fluent_builders::ListTagsForResource).
 ///
 /// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -3047,7 +3047,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// Operation shape for `PublishFunction`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`publish_function`](crate::client::Client::publish_function).
+/// [`publish_function`](crate::client::fluent_builders::PublishFunction).
 ///
 /// `ParseStrictResponse` impl for `PublishFunction`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -3082,7 +3082,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PublishFunction {
 /// Operation shape for `TagResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`tag_resource`](crate::client::Client::tag_resource).
+/// [`tag_resource`](crate::client::fluent_builders::TagResource).
 ///
 /// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -3115,7 +3115,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// Operation shape for `TestFunction`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`test_function`](crate::client::Client::test_function).
+/// [`test_function`](crate::client::fluent_builders::TestFunction).
 ///
 /// `ParseStrictResponse` impl for `TestFunction`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -3148,7 +3148,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TestFunction {
 /// Operation shape for `UntagResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`untag_resource`](crate::client::Client::untag_resource).
+/// [`untag_resource`](crate::client::fluent_builders::UntagResource).
 ///
 /// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -3181,7 +3181,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// Operation shape for `UpdateCachePolicy`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_cache_policy`](crate::client::Client::update_cache_policy).
+/// [`update_cache_policy`](crate::client::fluent_builders::UpdateCachePolicy).
 ///
 /// `ParseStrictResponse` impl for `UpdateCachePolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -3216,7 +3216,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateCachePolicy {
 /// Operation shape for `UpdateCloudFrontOriginAccessIdentity`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_cloud_front_origin_access_identity`](crate::client::Client::update_cloud_front_origin_access_identity).
+/// [`update_cloud_front_origin_access_identity`](crate::client::fluent_builders::UpdateCloudFrontOriginAccessIdentity).
 ///
 /// `ParseStrictResponse` impl for `UpdateCloudFrontOriginAccessIdentity`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -3253,7 +3253,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateCloudFrontOriginAc
 /// Operation shape for `UpdateContinuousDeploymentPolicy`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_continuous_deployment_policy`](crate::client::Client::update_continuous_deployment_policy).
+/// [`update_continuous_deployment_policy`](crate::client::fluent_builders::UpdateContinuousDeploymentPolicy).
 ///
 /// `ParseStrictResponse` impl for `UpdateContinuousDeploymentPolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -3288,7 +3288,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateContinuousDeployme
 /// Operation shape for `UpdateDistribution`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_distribution`](crate::client::Client::update_distribution).
+/// [`update_distribution`](crate::client::fluent_builders::UpdateDistribution).
 ///
 /// `ParseStrictResponse` impl for `UpdateDistribution`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -3323,7 +3323,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateDistribution {
 /// Operation shape for `UpdateDistributionWithStagingConfig`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_distribution_with_staging_config`](crate::client::Client::update_distribution_with_staging_config).
+/// [`update_distribution_with_staging_config`](crate::client::fluent_builders::UpdateDistributionWithStagingConfig).
 ///
 /// `ParseStrictResponse` impl for `UpdateDistributionWithStagingConfig`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -3358,7 +3358,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateDistributionWithSt
 /// Operation shape for `UpdateFieldLevelEncryptionConfig`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_field_level_encryption_config`](crate::client::Client::update_field_level_encryption_config).
+/// [`update_field_level_encryption_config`](crate::client::fluent_builders::UpdateFieldLevelEncryptionConfig).
 ///
 /// `ParseStrictResponse` impl for `UpdateFieldLevelEncryptionConfig`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -3393,7 +3393,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateFieldLevelEncrypti
 /// Operation shape for `UpdateFieldLevelEncryptionProfile`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_field_level_encryption_profile`](crate::client::Client::update_field_level_encryption_profile).
+/// [`update_field_level_encryption_profile`](crate::client::fluent_builders::UpdateFieldLevelEncryptionProfile).
 ///
 /// `ParseStrictResponse` impl for `UpdateFieldLevelEncryptionProfile`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -3428,7 +3428,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateFieldLevelEncrypti
 /// Operation shape for `UpdateFunction`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_function`](crate::client::Client::update_function).
+/// [`update_function`](crate::client::fluent_builders::UpdateFunction).
 ///
 /// `ParseStrictResponse` impl for `UpdateFunction`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -3461,7 +3461,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateFunction {
 /// Operation shape for `UpdateKeyGroup`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_key_group`](crate::client::Client::update_key_group).
+/// [`update_key_group`](crate::client::fluent_builders::UpdateKeyGroup).
 ///
 /// `ParseStrictResponse` impl for `UpdateKeyGroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -3494,7 +3494,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateKeyGroup {
 /// Operation shape for `UpdateOriginAccessControl`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_origin_access_control`](crate::client::Client::update_origin_access_control).
+/// [`update_origin_access_control`](crate::client::fluent_builders::UpdateOriginAccessControl).
 ///
 /// `ParseStrictResponse` impl for `UpdateOriginAccessControl`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -3529,7 +3529,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateOriginAccessContro
 /// Operation shape for `UpdateOriginRequestPolicy`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_origin_request_policy`](crate::client::Client::update_origin_request_policy).
+/// [`update_origin_request_policy`](crate::client::fluent_builders::UpdateOriginRequestPolicy).
 ///
 /// `ParseStrictResponse` impl for `UpdateOriginRequestPolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -3564,7 +3564,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateOriginRequestPolic
 /// Operation shape for `UpdatePublicKey`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_public_key`](crate::client::Client::update_public_key).
+/// [`update_public_key`](crate::client::fluent_builders::UpdatePublicKey).
 ///
 /// `ParseStrictResponse` impl for `UpdatePublicKey`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -3599,7 +3599,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdatePublicKey {
 /// Operation shape for `UpdateRealtimeLogConfig`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_realtime_log_config`](crate::client::Client::update_realtime_log_config).
+/// [`update_realtime_log_config`](crate::client::fluent_builders::UpdateRealtimeLogConfig).
 ///
 /// `ParseStrictResponse` impl for `UpdateRealtimeLogConfig`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -3634,7 +3634,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateRealtimeLogConfig 
 /// Operation shape for `UpdateResponseHeadersPolicy`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_response_headers_policy`](crate::client::Client::update_response_headers_policy).
+/// [`update_response_headers_policy`](crate::client::fluent_builders::UpdateResponseHeadersPolicy).
 ///
 /// `ParseStrictResponse` impl for `UpdateResponseHeadersPolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -3669,7 +3669,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateResponseHeadersPol
 /// Operation shape for `UpdateStreamingDistribution`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_streaming_distribution`](crate::client::Client::update_streaming_distribution).
+/// [`update_streaming_distribution`](crate::client::fluent_builders::UpdateStreamingDistribution).
 ///
 /// `ParseStrictResponse` impl for `UpdateStreamingDistribution`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

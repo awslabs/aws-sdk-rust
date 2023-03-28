@@ -2,7 +2,7 @@
 /// Operation shape for `AssociateChannelFlow`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`associate_channel_flow`](crate::client::Client::associate_channel_flow).
+/// [`associate_channel_flow`](crate::client::fluent_builders::AssociateChannelFlow).
 ///
 /// `ParseStrictResponse` impl for `AssociateChannelFlow`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -37,7 +37,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateChannelFlow {
 /// Operation shape for `BatchCreateChannelMembership`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`batch_create_channel_membership`](crate::client::Client::batch_create_channel_membership).
+/// [`batch_create_channel_membership`](crate::client::fluent_builders::BatchCreateChannelMembership).
 ///
 /// `ParseStrictResponse` impl for `BatchCreateChannelMembership`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -72,7 +72,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchCreateChannelMember
 /// Operation shape for `ChannelFlowCallback`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`channel_flow_callback`](crate::client::Client::channel_flow_callback).
+/// [`channel_flow_callback`](crate::client::fluent_builders::ChannelFlowCallback).
 ///
 /// `ParseStrictResponse` impl for `ChannelFlowCallback`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -107,7 +107,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ChannelFlowCallback {
 /// Operation shape for `CreateChannel`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_channel`](crate::client::Client::create_channel).
+/// [`create_channel`](crate::client::fluent_builders::CreateChannel).
 ///
 /// `ParseStrictResponse` impl for `CreateChannel`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -140,7 +140,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateChannel {
 /// Operation shape for `CreateChannelBan`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_channel_ban`](crate::client::Client::create_channel_ban).
+/// [`create_channel_ban`](crate::client::fluent_builders::CreateChannelBan).
 ///
 /// `ParseStrictResponse` impl for `CreateChannelBan`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -175,7 +175,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateChannelBan {
 /// Operation shape for `CreateChannelFlow`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_channel_flow`](crate::client::Client::create_channel_flow).
+/// [`create_channel_flow`](crate::client::fluent_builders::CreateChannelFlow).
 ///
 /// `ParseStrictResponse` impl for `CreateChannelFlow`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -210,7 +210,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateChannelFlow {
 /// Operation shape for `CreateChannelMembership`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_channel_membership`](crate::client::Client::create_channel_membership).
+/// [`create_channel_membership`](crate::client::fluent_builders::CreateChannelMembership).
 ///
 /// `ParseStrictResponse` impl for `CreateChannelMembership`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -245,7 +245,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateChannelMembership 
 /// Operation shape for `CreateChannelModerator`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_channel_moderator`](crate::client::Client::create_channel_moderator).
+/// [`create_channel_moderator`](crate::client::fluent_builders::CreateChannelModerator).
 ///
 /// `ParseStrictResponse` impl for `CreateChannelModerator`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -280,7 +280,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateChannelModerator {
 /// Operation shape for `DeleteChannel`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_channel`](crate::client::Client::delete_channel).
+/// [`delete_channel`](crate::client::fluent_builders::DeleteChannel).
 ///
 /// `ParseStrictResponse` impl for `DeleteChannel`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -313,7 +313,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteChannel {
 /// Operation shape for `DeleteChannelBan`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_channel_ban`](crate::client::Client::delete_channel_ban).
+/// [`delete_channel_ban`](crate::client::fluent_builders::DeleteChannelBan).
 ///
 /// `ParseStrictResponse` impl for `DeleteChannelBan`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -348,7 +348,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteChannelBan {
 /// Operation shape for `DeleteChannelFlow`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_channel_flow`](crate::client::Client::delete_channel_flow).
+/// [`delete_channel_flow`](crate::client::fluent_builders::DeleteChannelFlow).
 ///
 /// `ParseStrictResponse` impl for `DeleteChannelFlow`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -383,7 +383,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteChannelFlow {
 /// Operation shape for `DeleteChannelMembership`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_channel_membership`](crate::client::Client::delete_channel_membership).
+/// [`delete_channel_membership`](crate::client::fluent_builders::DeleteChannelMembership).
 ///
 /// `ParseStrictResponse` impl for `DeleteChannelMembership`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -418,7 +418,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteChannelMembership 
 /// Operation shape for `DeleteChannelMessage`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_channel_message`](crate::client::Client::delete_channel_message).
+/// [`delete_channel_message`](crate::client::fluent_builders::DeleteChannelMessage).
 ///
 /// `ParseStrictResponse` impl for `DeleteChannelMessage`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -453,7 +453,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteChannelMessage {
 /// Operation shape for `DeleteChannelModerator`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_channel_moderator`](crate::client::Client::delete_channel_moderator).
+/// [`delete_channel_moderator`](crate::client::fluent_builders::DeleteChannelModerator).
 ///
 /// `ParseStrictResponse` impl for `DeleteChannelModerator`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -488,7 +488,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteChannelModerator {
 /// Operation shape for `DescribeChannel`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_channel`](crate::client::Client::describe_channel).
+/// [`describe_channel`](crate::client::fluent_builders::DescribeChannel).
 ///
 /// `ParseStrictResponse` impl for `DescribeChannel`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -523,7 +523,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeChannel {
 /// Operation shape for `DescribeChannelBan`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_channel_ban`](crate::client::Client::describe_channel_ban).
+/// [`describe_channel_ban`](crate::client::fluent_builders::DescribeChannelBan).
 ///
 /// `ParseStrictResponse` impl for `DescribeChannelBan`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -558,7 +558,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeChannelBan {
 /// Operation shape for `DescribeChannelFlow`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_channel_flow`](crate::client::Client::describe_channel_flow).
+/// [`describe_channel_flow`](crate::client::fluent_builders::DescribeChannelFlow).
 ///
 /// `ParseStrictResponse` impl for `DescribeChannelFlow`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -593,7 +593,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeChannelFlow {
 /// Operation shape for `DescribeChannelMembership`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_channel_membership`](crate::client::Client::describe_channel_membership).
+/// [`describe_channel_membership`](crate::client::fluent_builders::DescribeChannelMembership).
 ///
 /// `ParseStrictResponse` impl for `DescribeChannelMembership`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -628,7 +628,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeChannelMembershi
 /// Operation shape for `DescribeChannelMembershipForAppInstanceUser`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_channel_membership_for_app_instance_user`](crate::client::Client::describe_channel_membership_for_app_instance_user).
+/// [`describe_channel_membership_for_app_instance_user`](crate::client::fluent_builders::DescribeChannelMembershipForAppInstanceUser).
 ///
 /// `ParseStrictResponse` impl for `DescribeChannelMembershipForAppInstanceUser`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -670,7 +670,7 @@ impl aws_smithy_http::response::ParseStrictResponse
 /// Operation shape for `DescribeChannelModeratedByAppInstanceUser`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_channel_moderated_by_app_instance_user`](crate::client::Client::describe_channel_moderated_by_app_instance_user).
+/// [`describe_channel_moderated_by_app_instance_user`](crate::client::fluent_builders::DescribeChannelModeratedByAppInstanceUser).
 ///
 /// `ParseStrictResponse` impl for `DescribeChannelModeratedByAppInstanceUser`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -710,7 +710,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeChannelModerated
 /// Operation shape for `DescribeChannelModerator`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_channel_moderator`](crate::client::Client::describe_channel_moderator).
+/// [`describe_channel_moderator`](crate::client::fluent_builders::DescribeChannelModerator).
 ///
 /// `ParseStrictResponse` impl for `DescribeChannelModerator`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -745,7 +745,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeChannelModerator
 /// Operation shape for `DisassociateChannelFlow`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`disassociate_channel_flow`](crate::client::Client::disassociate_channel_flow).
+/// [`disassociate_channel_flow`](crate::client::fluent_builders::DisassociateChannelFlow).
 ///
 /// `ParseStrictResponse` impl for `DisassociateChannelFlow`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -780,7 +780,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateChannelFlow 
 /// Operation shape for `GetChannelMembershipPreferences`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_channel_membership_preferences`](crate::client::Client::get_channel_membership_preferences).
+/// [`get_channel_membership_preferences`](crate::client::fluent_builders::GetChannelMembershipPreferences).
 ///
 /// `ParseStrictResponse` impl for `GetChannelMembershipPreferences`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -815,7 +815,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetChannelMembershipPref
 /// Operation shape for `GetChannelMessage`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_channel_message`](crate::client::Client::get_channel_message).
+/// [`get_channel_message`](crate::client::fluent_builders::GetChannelMessage).
 ///
 /// `ParseStrictResponse` impl for `GetChannelMessage`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -850,7 +850,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetChannelMessage {
 /// Operation shape for `GetChannelMessageStatus`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_channel_message_status`](crate::client::Client::get_channel_message_status).
+/// [`get_channel_message_status`](crate::client::fluent_builders::GetChannelMessageStatus).
 ///
 /// `ParseStrictResponse` impl for `GetChannelMessageStatus`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -885,7 +885,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetChannelMessageStatus 
 /// Operation shape for `GetMessagingSessionEndpoint`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_messaging_session_endpoint`](crate::client::Client::get_messaging_session_endpoint).
+/// [`get_messaging_session_endpoint`](crate::client::fluent_builders::GetMessagingSessionEndpoint).
 ///
 /// `ParseStrictResponse` impl for `GetMessagingSessionEndpoint`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -920,7 +920,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetMessagingSessionEndpo
 /// Operation shape for `ListChannelBans`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_channel_bans`](crate::client::Client::list_channel_bans).
+/// [`list_channel_bans`](crate::client::fluent_builders::ListChannelBans).
 ///
 /// `ParseStrictResponse` impl for `ListChannelBans`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -955,7 +955,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListChannelBans {
 /// Operation shape for `ListChannelFlows`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_channel_flows`](crate::client::Client::list_channel_flows).
+/// [`list_channel_flows`](crate::client::fluent_builders::ListChannelFlows).
 ///
 /// `ParseStrictResponse` impl for `ListChannelFlows`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -990,7 +990,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListChannelFlows {
 /// Operation shape for `ListChannelMemberships`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_channel_memberships`](crate::client::Client::list_channel_memberships).
+/// [`list_channel_memberships`](crate::client::fluent_builders::ListChannelMemberships).
 ///
 /// `ParseStrictResponse` impl for `ListChannelMemberships`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1025,7 +1025,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListChannelMemberships {
 /// Operation shape for `ListChannelMembershipsForAppInstanceUser`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_channel_memberships_for_app_instance_user`](crate::client::Client::list_channel_memberships_for_app_instance_user).
+/// [`list_channel_memberships_for_app_instance_user`](crate::client::fluent_builders::ListChannelMembershipsForAppInstanceUser).
 ///
 /// `ParseStrictResponse` impl for `ListChannelMembershipsForAppInstanceUser`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1065,7 +1065,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListChannelMembershipsFo
 /// Operation shape for `ListChannelMessages`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_channel_messages`](crate::client::Client::list_channel_messages).
+/// [`list_channel_messages`](crate::client::fluent_builders::ListChannelMessages).
 ///
 /// `ParseStrictResponse` impl for `ListChannelMessages`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1100,7 +1100,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListChannelMessages {
 /// Operation shape for `ListChannelModerators`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_channel_moderators`](crate::client::Client::list_channel_moderators).
+/// [`list_channel_moderators`](crate::client::fluent_builders::ListChannelModerators).
 ///
 /// `ParseStrictResponse` impl for `ListChannelModerators`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1135,7 +1135,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListChannelModerators {
 /// Operation shape for `ListChannels`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_channels`](crate::client::Client::list_channels).
+/// [`list_channels`](crate::client::fluent_builders::ListChannels).
 ///
 /// `ParseStrictResponse` impl for `ListChannels`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1168,7 +1168,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListChannels {
 /// Operation shape for `ListChannelsAssociatedWithChannelFlow`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_channels_associated_with_channel_flow`](crate::client::Client::list_channels_associated_with_channel_flow).
+/// [`list_channels_associated_with_channel_flow`](crate::client::fluent_builders::ListChannelsAssociatedWithChannelFlow).
 ///
 /// `ParseStrictResponse` impl for `ListChannelsAssociatedWithChannelFlow`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1205,7 +1205,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListChannelsAssociatedWi
 /// Operation shape for `ListChannelsModeratedByAppInstanceUser`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_channels_moderated_by_app_instance_user`](crate::client::Client::list_channels_moderated_by_app_instance_user).
+/// [`list_channels_moderated_by_app_instance_user`](crate::client::fluent_builders::ListChannelsModeratedByAppInstanceUser).
 ///
 /// `ParseStrictResponse` impl for `ListChannelsModeratedByAppInstanceUser`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1244,7 +1244,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListChannelsModeratedByA
 /// Operation shape for `ListSubChannels`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_sub_channels`](crate::client::Client::list_sub_channels).
+/// [`list_sub_channels`](crate::client::fluent_builders::ListSubChannels).
 ///
 /// `ParseStrictResponse` impl for `ListSubChannels`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1279,7 +1279,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListSubChannels {
 /// Operation shape for `ListTagsForResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
+/// [`list_tags_for_resource`](crate::client::fluent_builders::ListTagsForResource).
 ///
 /// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1314,7 +1314,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// Operation shape for `PutChannelMembershipPreferences`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`put_channel_membership_preferences`](crate::client::Client::put_channel_membership_preferences).
+/// [`put_channel_membership_preferences`](crate::client::fluent_builders::PutChannelMembershipPreferences).
 ///
 /// `ParseStrictResponse` impl for `PutChannelMembershipPreferences`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1349,7 +1349,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutChannelMembershipPref
 /// Operation shape for `RedactChannelMessage`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`redact_channel_message`](crate::client::Client::redact_channel_message).
+/// [`redact_channel_message`](crate::client::fluent_builders::RedactChannelMessage).
 ///
 /// `ParseStrictResponse` impl for `RedactChannelMessage`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1384,7 +1384,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RedactChannelMessage {
 /// Operation shape for `SearchChannels`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`search_channels`](crate::client::Client::search_channels).
+/// [`search_channels`](crate::client::fluent_builders::SearchChannels).
 ///
 /// `ParseStrictResponse` impl for `SearchChannels`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1417,7 +1417,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SearchChannels {
 /// Operation shape for `SendChannelMessage`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`send_channel_message`](crate::client::Client::send_channel_message).
+/// [`send_channel_message`](crate::client::fluent_builders::SendChannelMessage).
 ///
 /// `ParseStrictResponse` impl for `SendChannelMessage`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1452,7 +1452,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SendChannelMessage {
 /// Operation shape for `TagResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`tag_resource`](crate::client::Client::tag_resource).
+/// [`tag_resource`](crate::client::fluent_builders::TagResource).
 ///
 /// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1485,7 +1485,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// Operation shape for `UntagResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`untag_resource`](crate::client::Client::untag_resource).
+/// [`untag_resource`](crate::client::fluent_builders::UntagResource).
 ///
 /// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1518,7 +1518,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// Operation shape for `UpdateChannel`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_channel`](crate::client::Client::update_channel).
+/// [`update_channel`](crate::client::fluent_builders::UpdateChannel).
 ///
 /// `ParseStrictResponse` impl for `UpdateChannel`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1551,7 +1551,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateChannel {
 /// Operation shape for `UpdateChannelFlow`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_channel_flow`](crate::client::Client::update_channel_flow).
+/// [`update_channel_flow`](crate::client::fluent_builders::UpdateChannelFlow).
 ///
 /// `ParseStrictResponse` impl for `UpdateChannelFlow`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1586,7 +1586,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateChannelFlow {
 /// Operation shape for `UpdateChannelMessage`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_channel_message`](crate::client::Client::update_channel_message).
+/// [`update_channel_message`](crate::client::fluent_builders::UpdateChannelMessage).
 ///
 /// `ParseStrictResponse` impl for `UpdateChannelMessage`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1621,7 +1621,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateChannelMessage {
 /// Operation shape for `UpdateChannelReadMarker`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_channel_read_marker`](crate::client::Client::update_channel_read_marker).
+/// [`update_channel_read_marker`](crate::client::fluent_builders::UpdateChannelReadMarker).
 ///
 /// `ParseStrictResponse` impl for `UpdateChannelReadMarker`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

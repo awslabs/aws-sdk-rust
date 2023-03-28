@@ -2,7 +2,7 @@
 /// Operation shape for `AddTagsToStream`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`add_tags_to_stream`](crate::client::Client::add_tags_to_stream).
+/// [`add_tags_to_stream`](crate::client::fluent_builders::AddTagsToStream).
 ///
 /// `ParseStrictResponse` impl for `AddTagsToStream`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -37,7 +37,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AddTagsToStream {
 /// Operation shape for `CreateStream`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_stream`](crate::client::Client::create_stream).
+/// [`create_stream`](crate::client::fluent_builders::CreateStream).
 ///
 /// `ParseStrictResponse` impl for `CreateStream`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -70,7 +70,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateStream {
 /// Operation shape for `DecreaseStreamRetentionPeriod`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`decrease_stream_retention_period`](crate::client::Client::decrease_stream_retention_period).
+/// [`decrease_stream_retention_period`](crate::client::fluent_builders::DecreaseStreamRetentionPeriod).
 ///
 /// `ParseStrictResponse` impl for `DecreaseStreamRetentionPeriod`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -105,7 +105,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DecreaseStreamRetentionP
 /// Operation shape for `DeleteStream`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_stream`](crate::client::Client::delete_stream).
+/// [`delete_stream`](crate::client::fluent_builders::DeleteStream).
 ///
 /// `ParseStrictResponse` impl for `DeleteStream`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -138,7 +138,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteStream {
 /// Operation shape for `DeregisterStreamConsumer`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`deregister_stream_consumer`](crate::client::Client::deregister_stream_consumer).
+/// [`deregister_stream_consumer`](crate::client::fluent_builders::DeregisterStreamConsumer).
 ///
 /// `ParseStrictResponse` impl for `DeregisterStreamConsumer`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -173,7 +173,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeregisterStreamConsumer
 /// Operation shape for `DescribeLimits`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_limits`](crate::client::Client::describe_limits).
+/// [`describe_limits`](crate::client::fluent_builders::DescribeLimits).
 ///
 /// `ParseStrictResponse` impl for `DescribeLimits`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -206,7 +206,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeLimits {
 /// Operation shape for `DescribeStream`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_stream`](crate::client::Client::describe_stream).
+/// [`describe_stream`](crate::client::fluent_builders::DescribeStream).
 ///
 /// `ParseStrictResponse` impl for `DescribeStream`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -239,7 +239,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeStream {
 /// Operation shape for `DescribeStreamConsumer`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_stream_consumer`](crate::client::Client::describe_stream_consumer).
+/// [`describe_stream_consumer`](crate::client::fluent_builders::DescribeStreamConsumer).
 ///
 /// `ParseStrictResponse` impl for `DescribeStreamConsumer`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -274,7 +274,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeStreamConsumer {
 /// Operation shape for `DescribeStreamSummary`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_stream_summary`](crate::client::Client::describe_stream_summary).
+/// [`describe_stream_summary`](crate::client::fluent_builders::DescribeStreamSummary).
 ///
 /// `ParseStrictResponse` impl for `DescribeStreamSummary`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -309,7 +309,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeStreamSummary {
 /// Operation shape for `DisableEnhancedMonitoring`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`disable_enhanced_monitoring`](crate::client::Client::disable_enhanced_monitoring).
+/// [`disable_enhanced_monitoring`](crate::client::fluent_builders::DisableEnhancedMonitoring).
 ///
 /// `ParseStrictResponse` impl for `DisableEnhancedMonitoring`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -344,7 +344,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisableEnhancedMonitorin
 /// Operation shape for `EnableEnhancedMonitoring`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`enable_enhanced_monitoring`](crate::client::Client::enable_enhanced_monitoring).
+/// [`enable_enhanced_monitoring`](crate::client::fluent_builders::EnableEnhancedMonitoring).
 ///
 /// `ParseStrictResponse` impl for `EnableEnhancedMonitoring`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -379,7 +379,7 @@ impl aws_smithy_http::response::ParseStrictResponse for EnableEnhancedMonitoring
 /// Operation shape for `GetRecords`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_records`](crate::client::Client::get_records).
+/// [`get_records`](crate::client::fluent_builders::GetRecords).
 ///
 /// `ParseStrictResponse` impl for `GetRecords`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -412,7 +412,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetRecords {
 /// Operation shape for `GetShardIterator`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_shard_iterator`](crate::client::Client::get_shard_iterator).
+/// [`get_shard_iterator`](crate::client::fluent_builders::GetShardIterator).
 ///
 /// `ParseStrictResponse` impl for `GetShardIterator`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -447,7 +447,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetShardIterator {
 /// Operation shape for `IncreaseStreamRetentionPeriod`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`increase_stream_retention_period`](crate::client::Client::increase_stream_retention_period).
+/// [`increase_stream_retention_period`](crate::client::fluent_builders::IncreaseStreamRetentionPeriod).
 ///
 /// `ParseStrictResponse` impl for `IncreaseStreamRetentionPeriod`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -482,7 +482,7 @@ impl aws_smithy_http::response::ParseStrictResponse for IncreaseStreamRetentionP
 /// Operation shape for `ListShards`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_shards`](crate::client::Client::list_shards).
+/// [`list_shards`](crate::client::fluent_builders::ListShards).
 ///
 /// `ParseStrictResponse` impl for `ListShards`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -515,7 +515,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListShards {
 /// Operation shape for `ListStreamConsumers`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_stream_consumers`](crate::client::Client::list_stream_consumers).
+/// [`list_stream_consumers`](crate::client::fluent_builders::ListStreamConsumers).
 ///
 /// `ParseStrictResponse` impl for `ListStreamConsumers`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -550,7 +550,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListStreamConsumers {
 /// Operation shape for `ListStreams`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_streams`](crate::client::Client::list_streams).
+/// [`list_streams`](crate::client::fluent_builders::ListStreams).
 ///
 /// `ParseStrictResponse` impl for `ListStreams`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -583,7 +583,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListStreams {
 /// Operation shape for `ListTagsForStream`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_tags_for_stream`](crate::client::Client::list_tags_for_stream).
+/// [`list_tags_for_stream`](crate::client::fluent_builders::ListTagsForStream).
 ///
 /// `ParseStrictResponse` impl for `ListTagsForStream`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -618,7 +618,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForStream {
 /// Operation shape for `MergeShards`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`merge_shards`](crate::client::Client::merge_shards).
+/// [`merge_shards`](crate::client::fluent_builders::MergeShards).
 ///
 /// `ParseStrictResponse` impl for `MergeShards`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -651,7 +651,7 @@ impl aws_smithy_http::response::ParseStrictResponse for MergeShards {
 /// Operation shape for `PutRecord`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`put_record`](crate::client::Client::put_record).
+/// [`put_record`](crate::client::fluent_builders::PutRecord).
 ///
 /// `ParseStrictResponse` impl for `PutRecord`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -683,7 +683,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutRecord {
 /// Operation shape for `PutRecords`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`put_records`](crate::client::Client::put_records).
+/// [`put_records`](crate::client::fluent_builders::PutRecords).
 ///
 /// `ParseStrictResponse` impl for `PutRecords`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -716,7 +716,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutRecords {
 /// Operation shape for `RegisterStreamConsumer`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`register_stream_consumer`](crate::client::Client::register_stream_consumer).
+/// [`register_stream_consumer`](crate::client::fluent_builders::RegisterStreamConsumer).
 ///
 /// `ParseStrictResponse` impl for `RegisterStreamConsumer`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -751,7 +751,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RegisterStreamConsumer {
 /// Operation shape for `RemoveTagsFromStream`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`remove_tags_from_stream`](crate::client::Client::remove_tags_from_stream).
+/// [`remove_tags_from_stream`](crate::client::fluent_builders::RemoveTagsFromStream).
 ///
 /// `ParseStrictResponse` impl for `RemoveTagsFromStream`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -786,7 +786,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RemoveTagsFromStream {
 /// Operation shape for `SplitShard`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`split_shard`](crate::client::Client::split_shard).
+/// [`split_shard`](crate::client::fluent_builders::SplitShard).
 ///
 /// `ParseStrictResponse` impl for `SplitShard`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -819,7 +819,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SplitShard {
 /// Operation shape for `StartStreamEncryption`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`start_stream_encryption`](crate::client::Client::start_stream_encryption).
+/// [`start_stream_encryption`](crate::client::fluent_builders::StartStreamEncryption).
 ///
 /// `ParseStrictResponse` impl for `StartStreamEncryption`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -854,7 +854,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartStreamEncryption {
 /// Operation shape for `StopStreamEncryption`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`stop_stream_encryption`](crate::client::Client::stop_stream_encryption).
+/// [`stop_stream_encryption`](crate::client::fluent_builders::StopStreamEncryption).
 ///
 /// `ParseStrictResponse` impl for `StopStreamEncryption`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -889,7 +889,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StopStreamEncryption {
 /// Operation shape for `UpdateShardCount`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_shard_count`](crate::client::Client::update_shard_count).
+/// [`update_shard_count`](crate::client::fluent_builders::UpdateShardCount).
 ///
 /// `ParseStrictResponse` impl for `UpdateShardCount`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -924,7 +924,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateShardCount {
 /// Operation shape for `UpdateStreamMode`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_stream_mode`](crate::client::Client::update_stream_mode).
+/// [`update_stream_mode`](crate::client::fluent_builders::UpdateStreamMode).
 ///
 /// `ParseStrictResponse` impl for `UpdateStreamMode`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

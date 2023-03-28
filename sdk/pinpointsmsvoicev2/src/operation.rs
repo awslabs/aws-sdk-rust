@@ -2,7 +2,7 @@
 /// Operation shape for `AssociateOriginationIdentity`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`associate_origination_identity`](crate::client::Client::associate_origination_identity).
+/// [`associate_origination_identity`](crate::client::fluent_builders::AssociateOriginationIdentity).
 ///
 /// `ParseStrictResponse` impl for `AssociateOriginationIdentity`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -37,7 +37,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateOriginationIden
 /// Operation shape for `CreateConfigurationSet`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_configuration_set`](crate::client::Client::create_configuration_set).
+/// [`create_configuration_set`](crate::client::fluent_builders::CreateConfigurationSet).
 ///
 /// `ParseStrictResponse` impl for `CreateConfigurationSet`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -72,7 +72,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateConfigurationSet {
 /// Operation shape for `CreateEventDestination`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_event_destination`](crate::client::Client::create_event_destination).
+/// [`create_event_destination`](crate::client::fluent_builders::CreateEventDestination).
 ///
 /// `ParseStrictResponse` impl for `CreateEventDestination`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -107,7 +107,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateEventDestination {
 /// Operation shape for `CreateOptOutList`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_opt_out_list`](crate::client::Client::create_opt_out_list).
+/// [`create_opt_out_list`](crate::client::fluent_builders::CreateOptOutList).
 ///
 /// `ParseStrictResponse` impl for `CreateOptOutList`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -142,7 +142,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateOptOutList {
 /// Operation shape for `CreatePool`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_pool`](crate::client::Client::create_pool).
+/// [`create_pool`](crate::client::fluent_builders::CreatePool).
 ///
 /// `ParseStrictResponse` impl for `CreatePool`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -175,7 +175,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreatePool {
 /// Operation shape for `DeleteConfigurationSet`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_configuration_set`](crate::client::Client::delete_configuration_set).
+/// [`delete_configuration_set`](crate::client::fluent_builders::DeleteConfigurationSet).
 ///
 /// `ParseStrictResponse` impl for `DeleteConfigurationSet`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -210,7 +210,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteConfigurationSet {
 /// Operation shape for `DeleteDefaultMessageType`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_default_message_type`](crate::client::Client::delete_default_message_type).
+/// [`delete_default_message_type`](crate::client::fluent_builders::DeleteDefaultMessageType).
 ///
 /// `ParseStrictResponse` impl for `DeleteDefaultMessageType`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -245,7 +245,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteDefaultMessageType
 /// Operation shape for `DeleteDefaultSenderId`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_default_sender_id`](crate::client::Client::delete_default_sender_id).
+/// [`delete_default_sender_id`](crate::client::fluent_builders::DeleteDefaultSenderId).
 ///
 /// `ParseStrictResponse` impl for `DeleteDefaultSenderId`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -280,7 +280,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteDefaultSenderId {
 /// Operation shape for `DeleteEventDestination`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_event_destination`](crate::client::Client::delete_event_destination).
+/// [`delete_event_destination`](crate::client::fluent_builders::DeleteEventDestination).
 ///
 /// `ParseStrictResponse` impl for `DeleteEventDestination`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -315,7 +315,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteEventDestination {
 /// Operation shape for `DeleteKeyword`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_keyword`](crate::client::Client::delete_keyword).
+/// [`delete_keyword`](crate::client::fluent_builders::DeleteKeyword).
 ///
 /// `ParseStrictResponse` impl for `DeleteKeyword`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -348,7 +348,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteKeyword {
 /// Operation shape for `DeleteOptedOutNumber`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_opted_out_number`](crate::client::Client::delete_opted_out_number).
+/// [`delete_opted_out_number`](crate::client::fluent_builders::DeleteOptedOutNumber).
 ///
 /// `ParseStrictResponse` impl for `DeleteOptedOutNumber`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -383,7 +383,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteOptedOutNumber {
 /// Operation shape for `DeleteOptOutList`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_opt_out_list`](crate::client::Client::delete_opt_out_list).
+/// [`delete_opt_out_list`](crate::client::fluent_builders::DeleteOptOutList).
 ///
 /// `ParseStrictResponse` impl for `DeleteOptOutList`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -418,7 +418,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteOptOutList {
 /// Operation shape for `DeletePool`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_pool`](crate::client::Client::delete_pool).
+/// [`delete_pool`](crate::client::fluent_builders::DeletePool).
 ///
 /// `ParseStrictResponse` impl for `DeletePool`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -451,7 +451,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeletePool {
 /// Operation shape for `DeleteTextMessageSpendLimitOverride`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_text_message_spend_limit_override`](crate::client::Client::delete_text_message_spend_limit_override).
+/// [`delete_text_message_spend_limit_override`](crate::client::fluent_builders::DeleteTextMessageSpendLimitOverride).
 ///
 /// `ParseStrictResponse` impl for `DeleteTextMessageSpendLimitOverride`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -488,7 +488,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteTextMessageSpendLi
 /// Operation shape for `DeleteVoiceMessageSpendLimitOverride`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_voice_message_spend_limit_override`](crate::client::Client::delete_voice_message_spend_limit_override).
+/// [`delete_voice_message_spend_limit_override`](crate::client::fluent_builders::DeleteVoiceMessageSpendLimitOverride).
 ///
 /// `ParseStrictResponse` impl for `DeleteVoiceMessageSpendLimitOverride`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -525,7 +525,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteVoiceMessageSpendL
 /// Operation shape for `DescribeAccountAttributes`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_account_attributes`](crate::client::Client::describe_account_attributes).
+/// [`describe_account_attributes`](crate::client::fluent_builders::DescribeAccountAttributes).
 ///
 /// `ParseStrictResponse` impl for `DescribeAccountAttributes`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -560,7 +560,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeAccountAttribute
 /// Operation shape for `DescribeAccountLimits`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_account_limits`](crate::client::Client::describe_account_limits).
+/// [`describe_account_limits`](crate::client::fluent_builders::DescribeAccountLimits).
 ///
 /// `ParseStrictResponse` impl for `DescribeAccountLimits`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -595,7 +595,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeAccountLimits {
 /// Operation shape for `DescribeConfigurationSets`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_configuration_sets`](crate::client::Client::describe_configuration_sets).
+/// [`describe_configuration_sets`](crate::client::fluent_builders::DescribeConfigurationSets).
 ///
 /// `ParseStrictResponse` impl for `DescribeConfigurationSets`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -630,7 +630,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeConfigurationSet
 /// Operation shape for `DescribeKeywords`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_keywords`](crate::client::Client::describe_keywords).
+/// [`describe_keywords`](crate::client::fluent_builders::DescribeKeywords).
 ///
 /// `ParseStrictResponse` impl for `DescribeKeywords`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -665,7 +665,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeKeywords {
 /// Operation shape for `DescribeOptedOutNumbers`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_opted_out_numbers`](crate::client::Client::describe_opted_out_numbers).
+/// [`describe_opted_out_numbers`](crate::client::fluent_builders::DescribeOptedOutNumbers).
 ///
 /// `ParseStrictResponse` impl for `DescribeOptedOutNumbers`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -700,7 +700,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeOptedOutNumbers 
 /// Operation shape for `DescribeOptOutLists`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_opt_out_lists`](crate::client::Client::describe_opt_out_lists).
+/// [`describe_opt_out_lists`](crate::client::fluent_builders::DescribeOptOutLists).
 ///
 /// `ParseStrictResponse` impl for `DescribeOptOutLists`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -735,7 +735,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeOptOutLists {
 /// Operation shape for `DescribePhoneNumbers`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_phone_numbers`](crate::client::Client::describe_phone_numbers).
+/// [`describe_phone_numbers`](crate::client::fluent_builders::DescribePhoneNumbers).
 ///
 /// `ParseStrictResponse` impl for `DescribePhoneNumbers`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -770,7 +770,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribePhoneNumbers {
 /// Operation shape for `DescribePools`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_pools`](crate::client::Client::describe_pools).
+/// [`describe_pools`](crate::client::fluent_builders::DescribePools).
 ///
 /// `ParseStrictResponse` impl for `DescribePools`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -803,7 +803,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribePools {
 /// Operation shape for `DescribeSenderIds`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_sender_ids`](crate::client::Client::describe_sender_ids).
+/// [`describe_sender_ids`](crate::client::fluent_builders::DescribeSenderIds).
 ///
 /// `ParseStrictResponse` impl for `DescribeSenderIds`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -838,7 +838,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeSenderIds {
 /// Operation shape for `DescribeSpendLimits`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_spend_limits`](crate::client::Client::describe_spend_limits).
+/// [`describe_spend_limits`](crate::client::fluent_builders::DescribeSpendLimits).
 ///
 /// `ParseStrictResponse` impl for `DescribeSpendLimits`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -873,7 +873,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeSpendLimits {
 /// Operation shape for `DisassociateOriginationIdentity`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`disassociate_origination_identity`](crate::client::Client::disassociate_origination_identity).
+/// [`disassociate_origination_identity`](crate::client::fluent_builders::DisassociateOriginationIdentity).
 ///
 /// `ParseStrictResponse` impl for `DisassociateOriginationIdentity`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -908,7 +908,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateOriginationI
 /// Operation shape for `ListPoolOriginationIdentities`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_pool_origination_identities`](crate::client::Client::list_pool_origination_identities).
+/// [`list_pool_origination_identities`](crate::client::fluent_builders::ListPoolOriginationIdentities).
 ///
 /// `ParseStrictResponse` impl for `ListPoolOriginationIdentities`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -943,7 +943,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListPoolOriginationIdent
 /// Operation shape for `ListTagsForResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
+/// [`list_tags_for_resource`](crate::client::fluent_builders::ListTagsForResource).
 ///
 /// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -978,7 +978,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// Operation shape for `PutKeyword`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`put_keyword`](crate::client::Client::put_keyword).
+/// [`put_keyword`](crate::client::fluent_builders::PutKeyword).
 ///
 /// `ParseStrictResponse` impl for `PutKeyword`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1011,7 +1011,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutKeyword {
 /// Operation shape for `PutOptedOutNumber`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`put_opted_out_number`](crate::client::Client::put_opted_out_number).
+/// [`put_opted_out_number`](crate::client::fluent_builders::PutOptedOutNumber).
 ///
 /// `ParseStrictResponse` impl for `PutOptedOutNumber`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1046,7 +1046,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutOptedOutNumber {
 /// Operation shape for `ReleasePhoneNumber`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`release_phone_number`](crate::client::Client::release_phone_number).
+/// [`release_phone_number`](crate::client::fluent_builders::ReleasePhoneNumber).
 ///
 /// `ParseStrictResponse` impl for `ReleasePhoneNumber`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1081,7 +1081,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ReleasePhoneNumber {
 /// Operation shape for `RequestPhoneNumber`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`request_phone_number`](crate::client::Client::request_phone_number).
+/// [`request_phone_number`](crate::client::fluent_builders::RequestPhoneNumber).
 ///
 /// `ParseStrictResponse` impl for `RequestPhoneNumber`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1116,7 +1116,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RequestPhoneNumber {
 /// Operation shape for `SendTextMessage`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`send_text_message`](crate::client::Client::send_text_message).
+/// [`send_text_message`](crate::client::fluent_builders::SendTextMessage).
 ///
 /// `ParseStrictResponse` impl for `SendTextMessage`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1151,7 +1151,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SendTextMessage {
 /// Operation shape for `SendVoiceMessage`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`send_voice_message`](crate::client::Client::send_voice_message).
+/// [`send_voice_message`](crate::client::fluent_builders::SendVoiceMessage).
 ///
 /// `ParseStrictResponse` impl for `SendVoiceMessage`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1186,7 +1186,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SendVoiceMessage {
 /// Operation shape for `SetDefaultMessageType`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`set_default_message_type`](crate::client::Client::set_default_message_type).
+/// [`set_default_message_type`](crate::client::fluent_builders::SetDefaultMessageType).
 ///
 /// `ParseStrictResponse` impl for `SetDefaultMessageType`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1221,7 +1221,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SetDefaultMessageType {
 /// Operation shape for `SetDefaultSenderId`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`set_default_sender_id`](crate::client::Client::set_default_sender_id).
+/// [`set_default_sender_id`](crate::client::fluent_builders::SetDefaultSenderId).
 ///
 /// `ParseStrictResponse` impl for `SetDefaultSenderId`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1256,7 +1256,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SetDefaultSenderId {
 /// Operation shape for `SetTextMessageSpendLimitOverride`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`set_text_message_spend_limit_override`](crate::client::Client::set_text_message_spend_limit_override).
+/// [`set_text_message_spend_limit_override`](crate::client::fluent_builders::SetTextMessageSpendLimitOverride).
 ///
 /// `ParseStrictResponse` impl for `SetTextMessageSpendLimitOverride`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1291,7 +1291,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SetTextMessageSpendLimit
 /// Operation shape for `SetVoiceMessageSpendLimitOverride`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`set_voice_message_spend_limit_override`](crate::client::Client::set_voice_message_spend_limit_override).
+/// [`set_voice_message_spend_limit_override`](crate::client::fluent_builders::SetVoiceMessageSpendLimitOverride).
 ///
 /// `ParseStrictResponse` impl for `SetVoiceMessageSpendLimitOverride`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1326,7 +1326,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SetVoiceMessageSpendLimi
 /// Operation shape for `TagResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`tag_resource`](crate::client::Client::tag_resource).
+/// [`tag_resource`](crate::client::fluent_builders::TagResource).
 ///
 /// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1359,7 +1359,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// Operation shape for `UntagResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`untag_resource`](crate::client::Client::untag_resource).
+/// [`untag_resource`](crate::client::fluent_builders::UntagResource).
 ///
 /// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1392,7 +1392,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// Operation shape for `UpdateEventDestination`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_event_destination`](crate::client::Client::update_event_destination).
+/// [`update_event_destination`](crate::client::fluent_builders::UpdateEventDestination).
 ///
 /// `ParseStrictResponse` impl for `UpdateEventDestination`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1427,7 +1427,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateEventDestination {
 /// Operation shape for `UpdatePhoneNumber`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_phone_number`](crate::client::Client::update_phone_number).
+/// [`update_phone_number`](crate::client::fluent_builders::UpdatePhoneNumber).
 ///
 /// `ParseStrictResponse` impl for `UpdatePhoneNumber`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1462,7 +1462,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdatePhoneNumber {
 /// Operation shape for `UpdatePool`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_pool`](crate::client::Client::update_pool).
+/// [`update_pool`](crate::client::fluent_builders::UpdatePool).
 ///
 /// `ParseStrictResponse` impl for `UpdatePool`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

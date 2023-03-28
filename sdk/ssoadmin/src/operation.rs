@@ -2,7 +2,7 @@
 /// Operation shape for `AttachCustomerManagedPolicyReferenceToPermissionSet`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`attach_customer_managed_policy_reference_to_permission_set`](crate::client::Client::attach_customer_managed_policy_reference_to_permission_set).
+/// [`attach_customer_managed_policy_reference_to_permission_set`](crate::client::fluent_builders::AttachCustomerManagedPolicyReferenceToPermissionSet).
 ///
 /// `ParseStrictResponse` impl for `AttachCustomerManagedPolicyReferenceToPermissionSet`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -41,7 +41,7 @@ impl aws_smithy_http::response::ParseStrictResponse
 /// Operation shape for `AttachManagedPolicyToPermissionSet`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`attach_managed_policy_to_permission_set`](crate::client::Client::attach_managed_policy_to_permission_set).
+/// [`attach_managed_policy_to_permission_set`](crate::client::fluent_builders::AttachManagedPolicyToPermissionSet).
 ///
 /// `ParseStrictResponse` impl for `AttachManagedPolicyToPermissionSet`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -76,7 +76,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AttachManagedPolicyToPer
 /// Operation shape for `CreateAccountAssignment`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_account_assignment`](crate::client::Client::create_account_assignment).
+/// [`create_account_assignment`](crate::client::fluent_builders::CreateAccountAssignment).
 ///
 /// `ParseStrictResponse` impl for `CreateAccountAssignment`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -111,7 +111,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateAccountAssignment 
 /// Operation shape for `CreateInstanceAccessControlAttributeConfiguration`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_instance_access_control_attribute_configuration`](crate::client::Client::create_instance_access_control_attribute_configuration).
+/// [`create_instance_access_control_attribute_configuration`](crate::client::fluent_builders::CreateInstanceAccessControlAttributeConfiguration).
 ///
 /// `ParseStrictResponse` impl for `CreateInstanceAccessControlAttributeConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -150,7 +150,7 @@ impl aws_smithy_http::response::ParseStrictResponse
 /// Operation shape for `CreatePermissionSet`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_permission_set`](crate::client::Client::create_permission_set).
+/// [`create_permission_set`](crate::client::fluent_builders::CreatePermissionSet).
 ///
 /// `ParseStrictResponse` impl for `CreatePermissionSet`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -185,7 +185,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreatePermissionSet {
 /// Operation shape for `DeleteAccountAssignment`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_account_assignment`](crate::client::Client::delete_account_assignment).
+/// [`delete_account_assignment`](crate::client::fluent_builders::DeleteAccountAssignment).
 ///
 /// `ParseStrictResponse` impl for `DeleteAccountAssignment`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -220,7 +220,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteAccountAssignment 
 /// Operation shape for `DeleteInlinePolicyFromPermissionSet`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_inline_policy_from_permission_set`](crate::client::Client::delete_inline_policy_from_permission_set).
+/// [`delete_inline_policy_from_permission_set`](crate::client::fluent_builders::DeleteInlinePolicyFromPermissionSet).
 ///
 /// `ParseStrictResponse` impl for `DeleteInlinePolicyFromPermissionSet`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -257,7 +257,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteInlinePolicyFromPe
 /// Operation shape for `DeleteInstanceAccessControlAttributeConfiguration`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_instance_access_control_attribute_configuration`](crate::client::Client::delete_instance_access_control_attribute_configuration).
+/// [`delete_instance_access_control_attribute_configuration`](crate::client::fluent_builders::DeleteInstanceAccessControlAttributeConfiguration).
 ///
 /// `ParseStrictResponse` impl for `DeleteInstanceAccessControlAttributeConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -296,7 +296,7 @@ impl aws_smithy_http::response::ParseStrictResponse
 /// Operation shape for `DeletePermissionsBoundaryFromPermissionSet`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_permissions_boundary_from_permission_set`](crate::client::Client::delete_permissions_boundary_from_permission_set).
+/// [`delete_permissions_boundary_from_permission_set`](crate::client::fluent_builders::DeletePermissionsBoundaryFromPermissionSet).
 ///
 /// `ParseStrictResponse` impl for `DeletePermissionsBoundaryFromPermissionSet`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -336,7 +336,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeletePermissionsBoundar
 /// Operation shape for `DeletePermissionSet`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_permission_set`](crate::client::Client::delete_permission_set).
+/// [`delete_permission_set`](crate::client::fluent_builders::DeletePermissionSet).
 ///
 /// `ParseStrictResponse` impl for `DeletePermissionSet`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -371,7 +371,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeletePermissionSet {
 /// Operation shape for `DescribeAccountAssignmentCreationStatus`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_account_assignment_creation_status`](crate::client::Client::describe_account_assignment_creation_status).
+/// [`describe_account_assignment_creation_status`](crate::client::fluent_builders::DescribeAccountAssignmentCreationStatus).
 ///
 /// `ParseStrictResponse` impl for `DescribeAccountAssignmentCreationStatus`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -410,7 +410,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeAccountAssignmen
 /// Operation shape for `DescribeAccountAssignmentDeletionStatus`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_account_assignment_deletion_status`](crate::client::Client::describe_account_assignment_deletion_status).
+/// [`describe_account_assignment_deletion_status`](crate::client::fluent_builders::DescribeAccountAssignmentDeletionStatus).
 ///
 /// `ParseStrictResponse` impl for `DescribeAccountAssignmentDeletionStatus`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -449,7 +449,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeAccountAssignmen
 /// Operation shape for `DescribeInstanceAccessControlAttributeConfiguration`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_instance_access_control_attribute_configuration`](crate::client::Client::describe_instance_access_control_attribute_configuration).
+/// [`describe_instance_access_control_attribute_configuration`](crate::client::fluent_builders::DescribeInstanceAccessControlAttributeConfiguration).
 ///
 /// `ParseStrictResponse` impl for `DescribeInstanceAccessControlAttributeConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -487,7 +487,7 @@ impl aws_smithy_http::response::ParseStrictResponse
 /// Operation shape for `DescribePermissionSet`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_permission_set`](crate::client::Client::describe_permission_set).
+/// [`describe_permission_set`](crate::client::fluent_builders::DescribePermissionSet).
 ///
 /// `ParseStrictResponse` impl for `DescribePermissionSet`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -522,7 +522,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribePermissionSet {
 /// Operation shape for `DescribePermissionSetProvisioningStatus`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_permission_set_provisioning_status`](crate::client::Client::describe_permission_set_provisioning_status).
+/// [`describe_permission_set_provisioning_status`](crate::client::fluent_builders::DescribePermissionSetProvisioningStatus).
 ///
 /// `ParseStrictResponse` impl for `DescribePermissionSetProvisioningStatus`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -561,7 +561,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribePermissionSetPro
 /// Operation shape for `DetachCustomerManagedPolicyReferenceFromPermissionSet`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`detach_customer_managed_policy_reference_from_permission_set`](crate::client::Client::detach_customer_managed_policy_reference_from_permission_set).
+/// [`detach_customer_managed_policy_reference_from_permission_set`](crate::client::fluent_builders::DetachCustomerManagedPolicyReferenceFromPermissionSet).
 ///
 /// `ParseStrictResponse` impl for `DetachCustomerManagedPolicyReferenceFromPermissionSet`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -600,7 +600,7 @@ impl aws_smithy_http::response::ParseStrictResponse
 /// Operation shape for `DetachManagedPolicyFromPermissionSet`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`detach_managed_policy_from_permission_set`](crate::client::Client::detach_managed_policy_from_permission_set).
+/// [`detach_managed_policy_from_permission_set`](crate::client::fluent_builders::DetachManagedPolicyFromPermissionSet).
 ///
 /// `ParseStrictResponse` impl for `DetachManagedPolicyFromPermissionSet`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -637,7 +637,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DetachManagedPolicyFromP
 /// Operation shape for `GetInlinePolicyForPermissionSet`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_inline_policy_for_permission_set`](crate::client::Client::get_inline_policy_for_permission_set).
+/// [`get_inline_policy_for_permission_set`](crate::client::fluent_builders::GetInlinePolicyForPermissionSet).
 ///
 /// `ParseStrictResponse` impl for `GetInlinePolicyForPermissionSet`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -672,7 +672,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetInlinePolicyForPermis
 /// Operation shape for `GetPermissionsBoundaryForPermissionSet`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_permissions_boundary_for_permission_set`](crate::client::Client::get_permissions_boundary_for_permission_set).
+/// [`get_permissions_boundary_for_permission_set`](crate::client::fluent_builders::GetPermissionsBoundaryForPermissionSet).
 ///
 /// `ParseStrictResponse` impl for `GetPermissionsBoundaryForPermissionSet`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -711,7 +711,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetPermissionsBoundaryFo
 /// Operation shape for `ListAccountAssignmentCreationStatus`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_account_assignment_creation_status`](crate::client::Client::list_account_assignment_creation_status).
+/// [`list_account_assignment_creation_status`](crate::client::fluent_builders::ListAccountAssignmentCreationStatus).
 ///
 /// `ParseStrictResponse` impl for `ListAccountAssignmentCreationStatus`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -746,7 +746,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAccountAssignmentCre
 /// Operation shape for `ListAccountAssignmentDeletionStatus`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_account_assignment_deletion_status`](crate::client::Client::list_account_assignment_deletion_status).
+/// [`list_account_assignment_deletion_status`](crate::client::fluent_builders::ListAccountAssignmentDeletionStatus).
 ///
 /// `ParseStrictResponse` impl for `ListAccountAssignmentDeletionStatus`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -781,7 +781,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAccountAssignmentDel
 /// Operation shape for `ListAccountAssignments`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_account_assignments`](crate::client::Client::list_account_assignments).
+/// [`list_account_assignments`](crate::client::fluent_builders::ListAccountAssignments).
 ///
 /// `ParseStrictResponse` impl for `ListAccountAssignments`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -816,7 +816,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAccountAssignments {
 /// Operation shape for `ListAccountsForProvisionedPermissionSet`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_accounts_for_provisioned_permission_set`](crate::client::Client::list_accounts_for_provisioned_permission_set).
+/// [`list_accounts_for_provisioned_permission_set`](crate::client::fluent_builders::ListAccountsForProvisionedPermissionSet).
 ///
 /// `ParseStrictResponse` impl for `ListAccountsForProvisionedPermissionSet`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -855,7 +855,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAccountsForProvision
 /// Operation shape for `ListCustomerManagedPolicyReferencesInPermissionSet`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_customer_managed_policy_references_in_permission_set`](crate::client::Client::list_customer_managed_policy_references_in_permission_set).
+/// [`list_customer_managed_policy_references_in_permission_set`](crate::client::fluent_builders::ListCustomerManagedPolicyReferencesInPermissionSet).
 ///
 /// `ParseStrictResponse` impl for `ListCustomerManagedPolicyReferencesInPermissionSet`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -894,7 +894,7 @@ impl aws_smithy_http::response::ParseStrictResponse
 /// Operation shape for `ListInstances`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_instances`](crate::client::Client::list_instances).
+/// [`list_instances`](crate::client::fluent_builders::ListInstances).
 ///
 /// `ParseStrictResponse` impl for `ListInstances`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -927,7 +927,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListInstances {
 /// Operation shape for `ListManagedPoliciesInPermissionSet`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_managed_policies_in_permission_set`](crate::client::Client::list_managed_policies_in_permission_set).
+/// [`list_managed_policies_in_permission_set`](crate::client::fluent_builders::ListManagedPoliciesInPermissionSet).
 ///
 /// `ParseStrictResponse` impl for `ListManagedPoliciesInPermissionSet`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -962,7 +962,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListManagedPoliciesInPer
 /// Operation shape for `ListPermissionSetProvisioningStatus`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_permission_set_provisioning_status`](crate::client::Client::list_permission_set_provisioning_status).
+/// [`list_permission_set_provisioning_status`](crate::client::fluent_builders::ListPermissionSetProvisioningStatus).
 ///
 /// `ParseStrictResponse` impl for `ListPermissionSetProvisioningStatus`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -997,7 +997,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListPermissionSetProvisi
 /// Operation shape for `ListPermissionSets`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_permission_sets`](crate::client::Client::list_permission_sets).
+/// [`list_permission_sets`](crate::client::fluent_builders::ListPermissionSets).
 ///
 /// `ParseStrictResponse` impl for `ListPermissionSets`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1032,7 +1032,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListPermissionSets {
 /// Operation shape for `ListPermissionSetsProvisionedToAccount`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_permission_sets_provisioned_to_account`](crate::client::Client::list_permission_sets_provisioned_to_account).
+/// [`list_permission_sets_provisioned_to_account`](crate::client::fluent_builders::ListPermissionSetsProvisionedToAccount).
 ///
 /// `ParseStrictResponse` impl for `ListPermissionSetsProvisionedToAccount`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1071,7 +1071,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListPermissionSetsProvis
 /// Operation shape for `ListTagsForResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
+/// [`list_tags_for_resource`](crate::client::fluent_builders::ListTagsForResource).
 ///
 /// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1106,7 +1106,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// Operation shape for `ProvisionPermissionSet`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`provision_permission_set`](crate::client::Client::provision_permission_set).
+/// [`provision_permission_set`](crate::client::fluent_builders::ProvisionPermissionSet).
 ///
 /// `ParseStrictResponse` impl for `ProvisionPermissionSet`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1141,7 +1141,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ProvisionPermissionSet {
 /// Operation shape for `PutInlinePolicyToPermissionSet`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`put_inline_policy_to_permission_set`](crate::client::Client::put_inline_policy_to_permission_set).
+/// [`put_inline_policy_to_permission_set`](crate::client::fluent_builders::PutInlinePolicyToPermissionSet).
 ///
 /// `ParseStrictResponse` impl for `PutInlinePolicyToPermissionSet`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1176,7 +1176,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutInlinePolicyToPermiss
 /// Operation shape for `PutPermissionsBoundaryToPermissionSet`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`put_permissions_boundary_to_permission_set`](crate::client::Client::put_permissions_boundary_to_permission_set).
+/// [`put_permissions_boundary_to_permission_set`](crate::client::fluent_builders::PutPermissionsBoundaryToPermissionSet).
 ///
 /// `ParseStrictResponse` impl for `PutPermissionsBoundaryToPermissionSet`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1213,7 +1213,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutPermissionsBoundaryTo
 /// Operation shape for `TagResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`tag_resource`](crate::client::Client::tag_resource).
+/// [`tag_resource`](crate::client::fluent_builders::TagResource).
 ///
 /// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1246,7 +1246,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// Operation shape for `UntagResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`untag_resource`](crate::client::Client::untag_resource).
+/// [`untag_resource`](crate::client::fluent_builders::UntagResource).
 ///
 /// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1279,7 +1279,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// Operation shape for `UpdateInstanceAccessControlAttributeConfiguration`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_instance_access_control_attribute_configuration`](crate::client::Client::update_instance_access_control_attribute_configuration).
+/// [`update_instance_access_control_attribute_configuration`](crate::client::fluent_builders::UpdateInstanceAccessControlAttributeConfiguration).
 ///
 /// `ParseStrictResponse` impl for `UpdateInstanceAccessControlAttributeConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1318,7 +1318,7 @@ impl aws_smithy_http::response::ParseStrictResponse
 /// Operation shape for `UpdatePermissionSet`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_permission_set`](crate::client::Client::update_permission_set).
+/// [`update_permission_set`](crate::client::fluent_builders::UpdatePermissionSet).
 ///
 /// `ParseStrictResponse` impl for `UpdatePermissionSet`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

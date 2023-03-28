@@ -2,7 +2,7 @@
 /// Operation shape for `AssociateDefaultView`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`associate_default_view`](crate::client::Client::associate_default_view).
+/// [`associate_default_view`](crate::client::fluent_builders::AssociateDefaultView).
 ///
 /// `ParseStrictResponse` impl for `AssociateDefaultView`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -37,7 +37,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateDefaultView {
 /// Operation shape for `BatchGetView`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`batch_get_view`](crate::client::Client::batch_get_view).
+/// [`batch_get_view`](crate::client::fluent_builders::BatchGetView).
 ///
 /// `ParseStrictResponse` impl for `BatchGetView`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -70,7 +70,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchGetView {
 /// Operation shape for `CreateIndex`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_index`](crate::client::Client::create_index).
+/// [`create_index`](crate::client::fluent_builders::CreateIndex).
 ///
 /// `ParseStrictResponse` impl for `CreateIndex`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -103,7 +103,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateIndex {
 /// Operation shape for `CreateView`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_view`](crate::client::Client::create_view).
+/// [`create_view`](crate::client::fluent_builders::CreateView).
 ///
 /// `ParseStrictResponse` impl for `CreateView`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -136,7 +136,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateView {
 /// Operation shape for `DeleteIndex`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_index`](crate::client::Client::delete_index).
+/// [`delete_index`](crate::client::fluent_builders::DeleteIndex).
 ///
 /// `ParseStrictResponse` impl for `DeleteIndex`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -169,7 +169,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteIndex {
 /// Operation shape for `DeleteView`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_view`](crate::client::Client::delete_view).
+/// [`delete_view`](crate::client::fluent_builders::DeleteView).
 ///
 /// `ParseStrictResponse` impl for `DeleteView`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -202,7 +202,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteView {
 /// Operation shape for `DisassociateDefaultView`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`disassociate_default_view`](crate::client::Client::disassociate_default_view).
+/// [`disassociate_default_view`](crate::client::fluent_builders::DisassociateDefaultView).
 ///
 /// `ParseStrictResponse` impl for `DisassociateDefaultView`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -237,7 +237,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateDefaultView 
 /// Operation shape for `GetDefaultView`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_default_view`](crate::client::Client::get_default_view).
+/// [`get_default_view`](crate::client::fluent_builders::GetDefaultView).
 ///
 /// `ParseStrictResponse` impl for `GetDefaultView`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -270,7 +270,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDefaultView {
 /// Operation shape for `GetIndex`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_index`](crate::client::Client::get_index).
+/// [`get_index`](crate::client::fluent_builders::GetIndex).
 ///
 /// `ParseStrictResponse` impl for `GetIndex`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -302,7 +302,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetIndex {
 /// Operation shape for `GetView`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_view`](crate::client::Client::get_view).
+/// [`get_view`](crate::client::fluent_builders::GetView).
 ///
 /// `ParseStrictResponse` impl for `GetView`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -334,7 +334,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetView {
 /// Operation shape for `ListIndexes`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_indexes`](crate::client::Client::list_indexes).
+/// [`list_indexes`](crate::client::fluent_builders::ListIndexes).
 ///
 /// `ParseStrictResponse` impl for `ListIndexes`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -367,7 +367,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListIndexes {
 /// Operation shape for `ListSupportedResourceTypes`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_supported_resource_types`](crate::client::Client::list_supported_resource_types).
+/// [`list_supported_resource_types`](crate::client::fluent_builders::ListSupportedResourceTypes).
 ///
 /// `ParseStrictResponse` impl for `ListSupportedResourceTypes`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -402,7 +402,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListSupportedResourceTyp
 /// Operation shape for `ListTagsForResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
+/// [`list_tags_for_resource`](crate::client::fluent_builders::ListTagsForResource).
 ///
 /// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -437,7 +437,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// Operation shape for `ListViews`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_views`](crate::client::Client::list_views).
+/// [`list_views`](crate::client::fluent_builders::ListViews).
 ///
 /// `ParseStrictResponse` impl for `ListViews`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -469,7 +469,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListViews {
 /// Operation shape for `Search`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`search`](crate::client::Client::search).
+/// [`search`](crate::client::fluent_builders::Search).
 ///
 /// `ParseStrictResponse` impl for `Search`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -501,7 +501,7 @@ impl aws_smithy_http::response::ParseStrictResponse for Search {
 /// Operation shape for `TagResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`tag_resource`](crate::client::Client::tag_resource).
+/// [`tag_resource`](crate::client::fluent_builders::TagResource).
 ///
 /// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -534,7 +534,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// Operation shape for `UntagResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`untag_resource`](crate::client::Client::untag_resource).
+/// [`untag_resource`](crate::client::fluent_builders::UntagResource).
 ///
 /// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -567,7 +567,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// Operation shape for `UpdateIndexType`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_index_type`](crate::client::Client::update_index_type).
+/// [`update_index_type`](crate::client::fluent_builders::UpdateIndexType).
 ///
 /// `ParseStrictResponse` impl for `UpdateIndexType`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -602,7 +602,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateIndexType {
 /// Operation shape for `UpdateView`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_view`](crate::client::Client::update_view).
+/// [`update_view`](crate::client::fluent_builders::UpdateView).
 ///
 /// `ParseStrictResponse` impl for `UpdateView`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

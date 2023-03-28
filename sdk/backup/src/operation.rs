@@ -2,7 +2,7 @@
 /// Operation shape for `CancelLegalHold`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`cancel_legal_hold`](crate::client::Client::cancel_legal_hold).
+/// [`cancel_legal_hold`](crate::client::fluent_builders::CancelLegalHold).
 ///
 /// `ParseStrictResponse` impl for `CancelLegalHold`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -37,7 +37,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CancelLegalHold {
 /// Operation shape for `CreateBackupPlan`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_backup_plan`](crate::client::Client::create_backup_plan).
+/// [`create_backup_plan`](crate::client::fluent_builders::CreateBackupPlan).
 ///
 /// `ParseStrictResponse` impl for `CreateBackupPlan`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -72,7 +72,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateBackupPlan {
 /// Operation shape for `CreateBackupSelection`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_backup_selection`](crate::client::Client::create_backup_selection).
+/// [`create_backup_selection`](crate::client::fluent_builders::CreateBackupSelection).
 ///
 /// `ParseStrictResponse` impl for `CreateBackupSelection`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -107,7 +107,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateBackupSelection {
 /// Operation shape for `CreateBackupVault`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_backup_vault`](crate::client::Client::create_backup_vault).
+/// [`create_backup_vault`](crate::client::fluent_builders::CreateBackupVault).
 ///
 /// `ParseStrictResponse` impl for `CreateBackupVault`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -142,7 +142,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateBackupVault {
 /// Operation shape for `CreateFramework`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_framework`](crate::client::Client::create_framework).
+/// [`create_framework`](crate::client::fluent_builders::CreateFramework).
 ///
 /// `ParseStrictResponse` impl for `CreateFramework`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -177,7 +177,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateFramework {
 /// Operation shape for `CreateLegalHold`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_legal_hold`](crate::client::Client::create_legal_hold).
+/// [`create_legal_hold`](crate::client::fluent_builders::CreateLegalHold).
 ///
 /// `ParseStrictResponse` impl for `CreateLegalHold`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -212,7 +212,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateLegalHold {
 /// Operation shape for `CreateReportPlan`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_report_plan`](crate::client::Client::create_report_plan).
+/// [`create_report_plan`](crate::client::fluent_builders::CreateReportPlan).
 ///
 /// `ParseStrictResponse` impl for `CreateReportPlan`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -247,7 +247,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateReportPlan {
 /// Operation shape for `DeleteBackupPlan`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_backup_plan`](crate::client::Client::delete_backup_plan).
+/// [`delete_backup_plan`](crate::client::fluent_builders::DeleteBackupPlan).
 ///
 /// `ParseStrictResponse` impl for `DeleteBackupPlan`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -282,7 +282,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteBackupPlan {
 /// Operation shape for `DeleteBackupSelection`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_backup_selection`](crate::client::Client::delete_backup_selection).
+/// [`delete_backup_selection`](crate::client::fluent_builders::DeleteBackupSelection).
 ///
 /// `ParseStrictResponse` impl for `DeleteBackupSelection`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -317,7 +317,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteBackupSelection {
 /// Operation shape for `DeleteBackupVault`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_backup_vault`](crate::client::Client::delete_backup_vault).
+/// [`delete_backup_vault`](crate::client::fluent_builders::DeleteBackupVault).
 ///
 /// `ParseStrictResponse` impl for `DeleteBackupVault`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -352,7 +352,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteBackupVault {
 /// Operation shape for `DeleteBackupVaultAccessPolicy`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_backup_vault_access_policy`](crate::client::Client::delete_backup_vault_access_policy).
+/// [`delete_backup_vault_access_policy`](crate::client::fluent_builders::DeleteBackupVaultAccessPolicy).
 ///
 /// `ParseStrictResponse` impl for `DeleteBackupVaultAccessPolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -387,7 +387,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteBackupVaultAccessP
 /// Operation shape for `DeleteBackupVaultLockConfiguration`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_backup_vault_lock_configuration`](crate::client::Client::delete_backup_vault_lock_configuration).
+/// [`delete_backup_vault_lock_configuration`](crate::client::fluent_builders::DeleteBackupVaultLockConfiguration).
 ///
 /// `ParseStrictResponse` impl for `DeleteBackupVaultLockConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -422,7 +422,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteBackupVaultLockCon
 /// Operation shape for `DeleteBackupVaultNotifications`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_backup_vault_notifications`](crate::client::Client::delete_backup_vault_notifications).
+/// [`delete_backup_vault_notifications`](crate::client::fluent_builders::DeleteBackupVaultNotifications).
 ///
 /// `ParseStrictResponse` impl for `DeleteBackupVaultNotifications`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -457,7 +457,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteBackupVaultNotific
 /// Operation shape for `DeleteFramework`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_framework`](crate::client::Client::delete_framework).
+/// [`delete_framework`](crate::client::fluent_builders::DeleteFramework).
 ///
 /// `ParseStrictResponse` impl for `DeleteFramework`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -492,7 +492,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteFramework {
 /// Operation shape for `DeleteRecoveryPoint`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_recovery_point`](crate::client::Client::delete_recovery_point).
+/// [`delete_recovery_point`](crate::client::fluent_builders::DeleteRecoveryPoint).
 ///
 /// `ParseStrictResponse` impl for `DeleteRecoveryPoint`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -527,7 +527,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteRecoveryPoint {
 /// Operation shape for `DeleteReportPlan`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_report_plan`](crate::client::Client::delete_report_plan).
+/// [`delete_report_plan`](crate::client::fluent_builders::DeleteReportPlan).
 ///
 /// `ParseStrictResponse` impl for `DeleteReportPlan`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -562,7 +562,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteReportPlan {
 /// Operation shape for `DescribeBackupJob`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_backup_job`](crate::client::Client::describe_backup_job).
+/// [`describe_backup_job`](crate::client::fluent_builders::DescribeBackupJob).
 ///
 /// `ParseStrictResponse` impl for `DescribeBackupJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -597,7 +597,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeBackupJob {
 /// Operation shape for `DescribeBackupVault`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_backup_vault`](crate::client::Client::describe_backup_vault).
+/// [`describe_backup_vault`](crate::client::fluent_builders::DescribeBackupVault).
 ///
 /// `ParseStrictResponse` impl for `DescribeBackupVault`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -632,7 +632,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeBackupVault {
 /// Operation shape for `DescribeCopyJob`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_copy_job`](crate::client::Client::describe_copy_job).
+/// [`describe_copy_job`](crate::client::fluent_builders::DescribeCopyJob).
 ///
 /// `ParseStrictResponse` impl for `DescribeCopyJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -667,7 +667,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeCopyJob {
 /// Operation shape for `DescribeFramework`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_framework`](crate::client::Client::describe_framework).
+/// [`describe_framework`](crate::client::fluent_builders::DescribeFramework).
 ///
 /// `ParseStrictResponse` impl for `DescribeFramework`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -702,7 +702,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeFramework {
 /// Operation shape for `DescribeGlobalSettings`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_global_settings`](crate::client::Client::describe_global_settings).
+/// [`describe_global_settings`](crate::client::fluent_builders::DescribeGlobalSettings).
 ///
 /// `ParseStrictResponse` impl for `DescribeGlobalSettings`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -737,7 +737,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeGlobalSettings {
 /// Operation shape for `DescribeProtectedResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_protected_resource`](crate::client::Client::describe_protected_resource).
+/// [`describe_protected_resource`](crate::client::fluent_builders::DescribeProtectedResource).
 ///
 /// `ParseStrictResponse` impl for `DescribeProtectedResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -772,7 +772,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeProtectedResourc
 /// Operation shape for `DescribeRecoveryPoint`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_recovery_point`](crate::client::Client::describe_recovery_point).
+/// [`describe_recovery_point`](crate::client::fluent_builders::DescribeRecoveryPoint).
 ///
 /// `ParseStrictResponse` impl for `DescribeRecoveryPoint`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -807,7 +807,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeRecoveryPoint {
 /// Operation shape for `DescribeRegionSettings`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_region_settings`](crate::client::Client::describe_region_settings).
+/// [`describe_region_settings`](crate::client::fluent_builders::DescribeRegionSettings).
 ///
 /// `ParseStrictResponse` impl for `DescribeRegionSettings`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -842,7 +842,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeRegionSettings {
 /// Operation shape for `DescribeReportJob`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_report_job`](crate::client::Client::describe_report_job).
+/// [`describe_report_job`](crate::client::fluent_builders::DescribeReportJob).
 ///
 /// `ParseStrictResponse` impl for `DescribeReportJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -877,7 +877,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeReportJob {
 /// Operation shape for `DescribeReportPlan`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_report_plan`](crate::client::Client::describe_report_plan).
+/// [`describe_report_plan`](crate::client::fluent_builders::DescribeReportPlan).
 ///
 /// `ParseStrictResponse` impl for `DescribeReportPlan`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -912,7 +912,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeReportPlan {
 /// Operation shape for `DescribeRestoreJob`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_restore_job`](crate::client::Client::describe_restore_job).
+/// [`describe_restore_job`](crate::client::fluent_builders::DescribeRestoreJob).
 ///
 /// `ParseStrictResponse` impl for `DescribeRestoreJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -947,7 +947,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeRestoreJob {
 /// Operation shape for `DisassociateRecoveryPoint`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`disassociate_recovery_point`](crate::client::Client::disassociate_recovery_point).
+/// [`disassociate_recovery_point`](crate::client::fluent_builders::DisassociateRecoveryPoint).
 ///
 /// `ParseStrictResponse` impl for `DisassociateRecoveryPoint`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -982,7 +982,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateRecoveryPoin
 /// Operation shape for `DisassociateRecoveryPointFromParent`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`disassociate_recovery_point_from_parent`](crate::client::Client::disassociate_recovery_point_from_parent).
+/// [`disassociate_recovery_point_from_parent`](crate::client::fluent_builders::DisassociateRecoveryPointFromParent).
 ///
 /// `ParseStrictResponse` impl for `DisassociateRecoveryPointFromParent`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1017,7 +1017,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateRecoveryPoin
 /// Operation shape for `ExportBackupPlanTemplate`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`export_backup_plan_template`](crate::client::Client::export_backup_plan_template).
+/// [`export_backup_plan_template`](crate::client::fluent_builders::ExportBackupPlanTemplate).
 ///
 /// `ParseStrictResponse` impl for `ExportBackupPlanTemplate`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1052,7 +1052,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ExportBackupPlanTemplate
 /// Operation shape for `GetBackupPlan`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_backup_plan`](crate::client::Client::get_backup_plan).
+/// [`get_backup_plan`](crate::client::fluent_builders::GetBackupPlan).
 ///
 /// `ParseStrictResponse` impl for `GetBackupPlan`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1085,7 +1085,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetBackupPlan {
 /// Operation shape for `GetBackupPlanFromJSON`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_backup_plan_from_json`](crate::client::Client::get_backup_plan_from_json).
+/// [`get_backup_plan_from_json`](crate::client::fluent_builders::GetBackupPlanFromJSON).
 ///
 /// `ParseStrictResponse` impl for `GetBackupPlanFromJSON`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1120,7 +1120,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetBackupPlanFromJSON {
 /// Operation shape for `GetBackupPlanFromTemplate`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_backup_plan_from_template`](crate::client::Client::get_backup_plan_from_template).
+/// [`get_backup_plan_from_template`](crate::client::fluent_builders::GetBackupPlanFromTemplate).
 ///
 /// `ParseStrictResponse` impl for `GetBackupPlanFromTemplate`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1155,7 +1155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetBackupPlanFromTemplat
 /// Operation shape for `GetBackupSelection`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_backup_selection`](crate::client::Client::get_backup_selection).
+/// [`get_backup_selection`](crate::client::fluent_builders::GetBackupSelection).
 ///
 /// `ParseStrictResponse` impl for `GetBackupSelection`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1190,7 +1190,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetBackupSelection {
 /// Operation shape for `GetBackupVaultAccessPolicy`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_backup_vault_access_policy`](crate::client::Client::get_backup_vault_access_policy).
+/// [`get_backup_vault_access_policy`](crate::client::fluent_builders::GetBackupVaultAccessPolicy).
 ///
 /// `ParseStrictResponse` impl for `GetBackupVaultAccessPolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1225,7 +1225,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetBackupVaultAccessPoli
 /// Operation shape for `GetBackupVaultNotifications`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_backup_vault_notifications`](crate::client::Client::get_backup_vault_notifications).
+/// [`get_backup_vault_notifications`](crate::client::fluent_builders::GetBackupVaultNotifications).
 ///
 /// `ParseStrictResponse` impl for `GetBackupVaultNotifications`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1260,7 +1260,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetBackupVaultNotificati
 /// Operation shape for `GetLegalHold`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_legal_hold`](crate::client::Client::get_legal_hold).
+/// [`get_legal_hold`](crate::client::fluent_builders::GetLegalHold).
 ///
 /// `ParseStrictResponse` impl for `GetLegalHold`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1293,7 +1293,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetLegalHold {
 /// Operation shape for `GetRecoveryPointRestoreMetadata`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_recovery_point_restore_metadata`](crate::client::Client::get_recovery_point_restore_metadata).
+/// [`get_recovery_point_restore_metadata`](crate::client::fluent_builders::GetRecoveryPointRestoreMetadata).
 ///
 /// `ParseStrictResponse` impl for `GetRecoveryPointRestoreMetadata`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1328,7 +1328,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetRecoveryPointRestoreM
 /// Operation shape for `GetSupportedResourceTypes`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_supported_resource_types`](crate::client::Client::get_supported_resource_types).
+/// [`get_supported_resource_types`](crate::client::fluent_builders::GetSupportedResourceTypes).
 ///
 /// `ParseStrictResponse` impl for `GetSupportedResourceTypes`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1363,7 +1363,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSupportedResourceType
 /// Operation shape for `ListBackupJobs`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_backup_jobs`](crate::client::Client::list_backup_jobs).
+/// [`list_backup_jobs`](crate::client::fluent_builders::ListBackupJobs).
 ///
 /// `ParseStrictResponse` impl for `ListBackupJobs`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1396,7 +1396,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListBackupJobs {
 /// Operation shape for `ListBackupPlans`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_backup_plans`](crate::client::Client::list_backup_plans).
+/// [`list_backup_plans`](crate::client::fluent_builders::ListBackupPlans).
 ///
 /// `ParseStrictResponse` impl for `ListBackupPlans`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1431,7 +1431,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListBackupPlans {
 /// Operation shape for `ListBackupPlanTemplates`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_backup_plan_templates`](crate::client::Client::list_backup_plan_templates).
+/// [`list_backup_plan_templates`](crate::client::fluent_builders::ListBackupPlanTemplates).
 ///
 /// `ParseStrictResponse` impl for `ListBackupPlanTemplates`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1466,7 +1466,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListBackupPlanTemplates 
 /// Operation shape for `ListBackupPlanVersions`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_backup_plan_versions`](crate::client::Client::list_backup_plan_versions).
+/// [`list_backup_plan_versions`](crate::client::fluent_builders::ListBackupPlanVersions).
 ///
 /// `ParseStrictResponse` impl for `ListBackupPlanVersions`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1501,7 +1501,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListBackupPlanVersions {
 /// Operation shape for `ListBackupSelections`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_backup_selections`](crate::client::Client::list_backup_selections).
+/// [`list_backup_selections`](crate::client::fluent_builders::ListBackupSelections).
 ///
 /// `ParseStrictResponse` impl for `ListBackupSelections`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1536,7 +1536,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListBackupSelections {
 /// Operation shape for `ListBackupVaults`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_backup_vaults`](crate::client::Client::list_backup_vaults).
+/// [`list_backup_vaults`](crate::client::fluent_builders::ListBackupVaults).
 ///
 /// `ParseStrictResponse` impl for `ListBackupVaults`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1571,7 +1571,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListBackupVaults {
 /// Operation shape for `ListCopyJobs`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_copy_jobs`](crate::client::Client::list_copy_jobs).
+/// [`list_copy_jobs`](crate::client::fluent_builders::ListCopyJobs).
 ///
 /// `ParseStrictResponse` impl for `ListCopyJobs`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1604,7 +1604,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListCopyJobs {
 /// Operation shape for `ListFrameworks`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_frameworks`](crate::client::Client::list_frameworks).
+/// [`list_frameworks`](crate::client::fluent_builders::ListFrameworks).
 ///
 /// `ParseStrictResponse` impl for `ListFrameworks`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1637,7 +1637,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListFrameworks {
 /// Operation shape for `ListLegalHolds`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_legal_holds`](crate::client::Client::list_legal_holds).
+/// [`list_legal_holds`](crate::client::fluent_builders::ListLegalHolds).
 ///
 /// `ParseStrictResponse` impl for `ListLegalHolds`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1670,7 +1670,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListLegalHolds {
 /// Operation shape for `ListProtectedResources`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_protected_resources`](crate::client::Client::list_protected_resources).
+/// [`list_protected_resources`](crate::client::fluent_builders::ListProtectedResources).
 ///
 /// `ParseStrictResponse` impl for `ListProtectedResources`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1705,7 +1705,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListProtectedResources {
 /// Operation shape for `ListRecoveryPointsByBackupVault`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_recovery_points_by_backup_vault`](crate::client::Client::list_recovery_points_by_backup_vault).
+/// [`list_recovery_points_by_backup_vault`](crate::client::fluent_builders::ListRecoveryPointsByBackupVault).
 ///
 /// `ParseStrictResponse` impl for `ListRecoveryPointsByBackupVault`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1740,7 +1740,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListRecoveryPointsByBack
 /// Operation shape for `ListRecoveryPointsByLegalHold`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_recovery_points_by_legal_hold`](crate::client::Client::list_recovery_points_by_legal_hold).
+/// [`list_recovery_points_by_legal_hold`](crate::client::fluent_builders::ListRecoveryPointsByLegalHold).
 ///
 /// `ParseStrictResponse` impl for `ListRecoveryPointsByLegalHold`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1775,7 +1775,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListRecoveryPointsByLega
 /// Operation shape for `ListRecoveryPointsByResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_recovery_points_by_resource`](crate::client::Client::list_recovery_points_by_resource).
+/// [`list_recovery_points_by_resource`](crate::client::fluent_builders::ListRecoveryPointsByResource).
 ///
 /// `ParseStrictResponse` impl for `ListRecoveryPointsByResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1810,7 +1810,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListRecoveryPointsByReso
 /// Operation shape for `ListReportJobs`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_report_jobs`](crate::client::Client::list_report_jobs).
+/// [`list_report_jobs`](crate::client::fluent_builders::ListReportJobs).
 ///
 /// `ParseStrictResponse` impl for `ListReportJobs`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1843,7 +1843,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListReportJobs {
 /// Operation shape for `ListReportPlans`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_report_plans`](crate::client::Client::list_report_plans).
+/// [`list_report_plans`](crate::client::fluent_builders::ListReportPlans).
 ///
 /// `ParseStrictResponse` impl for `ListReportPlans`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1878,7 +1878,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListReportPlans {
 /// Operation shape for `ListRestoreJobs`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_restore_jobs`](crate::client::Client::list_restore_jobs).
+/// [`list_restore_jobs`](crate::client::fluent_builders::ListRestoreJobs).
 ///
 /// `ParseStrictResponse` impl for `ListRestoreJobs`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1913,7 +1913,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListRestoreJobs {
 /// Operation shape for `ListTags`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_tags`](crate::client::Client::list_tags).
+/// [`list_tags`](crate::client::fluent_builders::ListTags).
 ///
 /// `ParseStrictResponse` impl for `ListTags`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1945,7 +1945,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTags {
 /// Operation shape for `PutBackupVaultAccessPolicy`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`put_backup_vault_access_policy`](crate::client::Client::put_backup_vault_access_policy).
+/// [`put_backup_vault_access_policy`](crate::client::fluent_builders::PutBackupVaultAccessPolicy).
 ///
 /// `ParseStrictResponse` impl for `PutBackupVaultAccessPolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1980,7 +1980,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutBackupVaultAccessPoli
 /// Operation shape for `PutBackupVaultLockConfiguration`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`put_backup_vault_lock_configuration`](crate::client::Client::put_backup_vault_lock_configuration).
+/// [`put_backup_vault_lock_configuration`](crate::client::fluent_builders::PutBackupVaultLockConfiguration).
 ///
 /// `ParseStrictResponse` impl for `PutBackupVaultLockConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2015,7 +2015,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutBackupVaultLockConfig
 /// Operation shape for `PutBackupVaultNotifications`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`put_backup_vault_notifications`](crate::client::Client::put_backup_vault_notifications).
+/// [`put_backup_vault_notifications`](crate::client::fluent_builders::PutBackupVaultNotifications).
 ///
 /// `ParseStrictResponse` impl for `PutBackupVaultNotifications`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2050,7 +2050,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutBackupVaultNotificati
 /// Operation shape for `StartBackupJob`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`start_backup_job`](crate::client::Client::start_backup_job).
+/// [`start_backup_job`](crate::client::fluent_builders::StartBackupJob).
 ///
 /// `ParseStrictResponse` impl for `StartBackupJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2083,7 +2083,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartBackupJob {
 /// Operation shape for `StartCopyJob`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`start_copy_job`](crate::client::Client::start_copy_job).
+/// [`start_copy_job`](crate::client::fluent_builders::StartCopyJob).
 ///
 /// `ParseStrictResponse` impl for `StartCopyJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2116,7 +2116,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartCopyJob {
 /// Operation shape for `StartReportJob`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`start_report_job`](crate::client::Client::start_report_job).
+/// [`start_report_job`](crate::client::fluent_builders::StartReportJob).
 ///
 /// `ParseStrictResponse` impl for `StartReportJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2149,7 +2149,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartReportJob {
 /// Operation shape for `StartRestoreJob`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`start_restore_job`](crate::client::Client::start_restore_job).
+/// [`start_restore_job`](crate::client::fluent_builders::StartRestoreJob).
 ///
 /// `ParseStrictResponse` impl for `StartRestoreJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2184,7 +2184,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartRestoreJob {
 /// Operation shape for `StopBackupJob`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`stop_backup_job`](crate::client::Client::stop_backup_job).
+/// [`stop_backup_job`](crate::client::fluent_builders::StopBackupJob).
 ///
 /// `ParseStrictResponse` impl for `StopBackupJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2217,7 +2217,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StopBackupJob {
 /// Operation shape for `TagResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`tag_resource`](crate::client::Client::tag_resource).
+/// [`tag_resource`](crate::client::fluent_builders::TagResource).
 ///
 /// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2250,7 +2250,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// Operation shape for `UntagResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`untag_resource`](crate::client::Client::untag_resource).
+/// [`untag_resource`](crate::client::fluent_builders::UntagResource).
 ///
 /// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2283,7 +2283,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// Operation shape for `UpdateBackupPlan`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_backup_plan`](crate::client::Client::update_backup_plan).
+/// [`update_backup_plan`](crate::client::fluent_builders::UpdateBackupPlan).
 ///
 /// `ParseStrictResponse` impl for `UpdateBackupPlan`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2318,7 +2318,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateBackupPlan {
 /// Operation shape for `UpdateFramework`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_framework`](crate::client::Client::update_framework).
+/// [`update_framework`](crate::client::fluent_builders::UpdateFramework).
 ///
 /// `ParseStrictResponse` impl for `UpdateFramework`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2353,7 +2353,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateFramework {
 /// Operation shape for `UpdateGlobalSettings`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_global_settings`](crate::client::Client::update_global_settings).
+/// [`update_global_settings`](crate::client::fluent_builders::UpdateGlobalSettings).
 ///
 /// `ParseStrictResponse` impl for `UpdateGlobalSettings`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2388,7 +2388,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateGlobalSettings {
 /// Operation shape for `UpdateRecoveryPointLifecycle`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_recovery_point_lifecycle`](crate::client::Client::update_recovery_point_lifecycle).
+/// [`update_recovery_point_lifecycle`](crate::client::fluent_builders::UpdateRecoveryPointLifecycle).
 ///
 /// `ParseStrictResponse` impl for `UpdateRecoveryPointLifecycle`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2423,7 +2423,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateRecoveryPointLifec
 /// Operation shape for `UpdateRegionSettings`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_region_settings`](crate::client::Client::update_region_settings).
+/// [`update_region_settings`](crate::client::fluent_builders::UpdateRegionSettings).
 ///
 /// `ParseStrictResponse` impl for `UpdateRegionSettings`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2458,7 +2458,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateRegionSettings {
 /// Operation shape for `UpdateReportPlan`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_report_plan`](crate::client::Client::update_report_plan).
+/// [`update_report_plan`](crate::client::fluent_builders::UpdateReportPlan).
 ///
 /// `ParseStrictResponse` impl for `UpdateReportPlan`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

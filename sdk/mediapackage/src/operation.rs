@@ -2,7 +2,7 @@
 /// Operation shape for `ConfigureLogs`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`configure_logs`](crate::client::Client::configure_logs).
+/// [`configure_logs`](crate::client::fluent_builders::ConfigureLogs).
 ///
 /// `ParseStrictResponse` impl for `ConfigureLogs`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -35,7 +35,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ConfigureLogs {
 /// Operation shape for `CreateChannel`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_channel`](crate::client::Client::create_channel).
+/// [`create_channel`](crate::client::fluent_builders::CreateChannel).
 ///
 /// `ParseStrictResponse` impl for `CreateChannel`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -68,7 +68,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateChannel {
 /// Operation shape for `CreateHarvestJob`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_harvest_job`](crate::client::Client::create_harvest_job).
+/// [`create_harvest_job`](crate::client::fluent_builders::CreateHarvestJob).
 ///
 /// `ParseStrictResponse` impl for `CreateHarvestJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -103,7 +103,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateHarvestJob {
 /// Operation shape for `CreateOriginEndpoint`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_origin_endpoint`](crate::client::Client::create_origin_endpoint).
+/// [`create_origin_endpoint`](crate::client::fluent_builders::CreateOriginEndpoint).
 ///
 /// `ParseStrictResponse` impl for `CreateOriginEndpoint`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -138,7 +138,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateOriginEndpoint {
 /// Operation shape for `DeleteChannel`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_channel`](crate::client::Client::delete_channel).
+/// [`delete_channel`](crate::client::fluent_builders::DeleteChannel).
 ///
 /// `ParseStrictResponse` impl for `DeleteChannel`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -171,7 +171,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteChannel {
 /// Operation shape for `DeleteOriginEndpoint`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_origin_endpoint`](crate::client::Client::delete_origin_endpoint).
+/// [`delete_origin_endpoint`](crate::client::fluent_builders::DeleteOriginEndpoint).
 ///
 /// `ParseStrictResponse` impl for `DeleteOriginEndpoint`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -206,7 +206,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteOriginEndpoint {
 /// Operation shape for `DescribeChannel`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_channel`](crate::client::Client::describe_channel).
+/// [`describe_channel`](crate::client::fluent_builders::DescribeChannel).
 ///
 /// `ParseStrictResponse` impl for `DescribeChannel`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -241,7 +241,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeChannel {
 /// Operation shape for `DescribeHarvestJob`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_harvest_job`](crate::client::Client::describe_harvest_job).
+/// [`describe_harvest_job`](crate::client::fluent_builders::DescribeHarvestJob).
 ///
 /// `ParseStrictResponse` impl for `DescribeHarvestJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -276,7 +276,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeHarvestJob {
 /// Operation shape for `DescribeOriginEndpoint`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_origin_endpoint`](crate::client::Client::describe_origin_endpoint).
+/// [`describe_origin_endpoint`](crate::client::fluent_builders::DescribeOriginEndpoint).
 ///
 /// `ParseStrictResponse` impl for `DescribeOriginEndpoint`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -311,7 +311,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeOriginEndpoint {
 /// Operation shape for `ListChannels`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_channels`](crate::client::Client::list_channels).
+/// [`list_channels`](crate::client::fluent_builders::ListChannels).
 ///
 /// `ParseStrictResponse` impl for `ListChannels`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -344,7 +344,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListChannels {
 /// Operation shape for `ListHarvestJobs`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_harvest_jobs`](crate::client::Client::list_harvest_jobs).
+/// [`list_harvest_jobs`](crate::client::fluent_builders::ListHarvestJobs).
 ///
 /// `ParseStrictResponse` impl for `ListHarvestJobs`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -379,7 +379,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListHarvestJobs {
 /// Operation shape for `ListOriginEndpoints`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_origin_endpoints`](crate::client::Client::list_origin_endpoints).
+/// [`list_origin_endpoints`](crate::client::fluent_builders::ListOriginEndpoints).
 ///
 /// `ParseStrictResponse` impl for `ListOriginEndpoints`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -414,7 +414,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListOriginEndpoints {
 /// Operation shape for `ListTagsForResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
+/// [`list_tags_for_resource`](crate::client::fluent_builders::ListTagsForResource).
 ///
 /// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -449,7 +449,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// Operation shape for `RotateChannelCredentials`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`rotate_channel_credentials`](crate::client::Client::rotate_channel_credentials).
+/// [`rotate_channel_credentials`](crate::client::fluent_builders::RotateChannelCredentials).
 ///
 /// `ParseStrictResponse` impl for `RotateChannelCredentials`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -484,7 +484,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RotateChannelCredentials
 /// Operation shape for `RotateIngestEndpointCredentials`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`rotate_ingest_endpoint_credentials`](crate::client::Client::rotate_ingest_endpoint_credentials).
+/// [`rotate_ingest_endpoint_credentials`](crate::client::fluent_builders::RotateIngestEndpointCredentials).
 ///
 /// `ParseStrictResponse` impl for `RotateIngestEndpointCredentials`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -519,7 +519,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RotateIngestEndpointCred
 /// Operation shape for `TagResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`tag_resource`](crate::client::Client::tag_resource).
+/// [`tag_resource`](crate::client::fluent_builders::TagResource).
 ///
 /// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -552,7 +552,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// Operation shape for `UntagResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`untag_resource`](crate::client::Client::untag_resource).
+/// [`untag_resource`](crate::client::fluent_builders::UntagResource).
 ///
 /// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -585,7 +585,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// Operation shape for `UpdateChannel`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_channel`](crate::client::Client::update_channel).
+/// [`update_channel`](crate::client::fluent_builders::UpdateChannel).
 ///
 /// `ParseStrictResponse` impl for `UpdateChannel`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -618,7 +618,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateChannel {
 /// Operation shape for `UpdateOriginEndpoint`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_origin_endpoint`](crate::client::Client::update_origin_endpoint).
+/// [`update_origin_endpoint`](crate::client::fluent_builders::UpdateOriginEndpoint).
 ///
 /// `ParseStrictResponse` impl for `UpdateOriginEndpoint`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

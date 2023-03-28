@@ -2,7 +2,7 @@
 /// Operation shape for `CreateAccessPoint`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_access_point`](crate::client::Client::create_access_point).
+/// [`create_access_point`](crate::client::fluent_builders::CreateAccessPoint).
 ///
 /// `ParseStrictResponse` impl for `CreateAccessPoint`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -37,7 +37,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateAccessPoint {
 /// Operation shape for `CreateFileSystem`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_file_system`](crate::client::Client::create_file_system).
+/// [`create_file_system`](crate::client::fluent_builders::CreateFileSystem).
 ///
 /// `ParseStrictResponse` impl for `CreateFileSystem`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -72,7 +72,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateFileSystem {
 /// Operation shape for `CreateMountTarget`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_mount_target`](crate::client::Client::create_mount_target).
+/// [`create_mount_target`](crate::client::fluent_builders::CreateMountTarget).
 ///
 /// `ParseStrictResponse` impl for `CreateMountTarget`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -107,7 +107,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateMountTarget {
 /// Operation shape for `CreateReplicationConfiguration`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_replication_configuration`](crate::client::Client::create_replication_configuration).
+/// [`create_replication_configuration`](crate::client::fluent_builders::CreateReplicationConfiguration).
 ///
 /// `ParseStrictResponse` impl for `CreateReplicationConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -142,7 +142,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateReplicationConfigu
 /// Operation shape for `CreateTags`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_tags`](crate::client::Client::create_tags).
+/// [`create_tags`](crate::client::fluent_builders::CreateTags).
 ///
 /// `ParseStrictResponse` impl for `CreateTags`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -175,7 +175,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateTags {
 /// Operation shape for `DeleteAccessPoint`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_access_point`](crate::client::Client::delete_access_point).
+/// [`delete_access_point`](crate::client::fluent_builders::DeleteAccessPoint).
 ///
 /// `ParseStrictResponse` impl for `DeleteAccessPoint`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -210,7 +210,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteAccessPoint {
 /// Operation shape for `DeleteFileSystem`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_file_system`](crate::client::Client::delete_file_system).
+/// [`delete_file_system`](crate::client::fluent_builders::DeleteFileSystem).
 ///
 /// `ParseStrictResponse` impl for `DeleteFileSystem`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -245,7 +245,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteFileSystem {
 /// Operation shape for `DeleteFileSystemPolicy`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_file_system_policy`](crate::client::Client::delete_file_system_policy).
+/// [`delete_file_system_policy`](crate::client::fluent_builders::DeleteFileSystemPolicy).
 ///
 /// `ParseStrictResponse` impl for `DeleteFileSystemPolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -280,7 +280,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteFileSystemPolicy {
 /// Operation shape for `DeleteMountTarget`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_mount_target`](crate::client::Client::delete_mount_target).
+/// [`delete_mount_target`](crate::client::fluent_builders::DeleteMountTarget).
 ///
 /// `ParseStrictResponse` impl for `DeleteMountTarget`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -315,7 +315,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteMountTarget {
 /// Operation shape for `DeleteReplicationConfiguration`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_replication_configuration`](crate::client::Client::delete_replication_configuration).
+/// [`delete_replication_configuration`](crate::client::fluent_builders::DeleteReplicationConfiguration).
 ///
 /// `ParseStrictResponse` impl for `DeleteReplicationConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -350,7 +350,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteReplicationConfigu
 /// Operation shape for `DeleteTags`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_tags`](crate::client::Client::delete_tags).
+/// [`delete_tags`](crate::client::fluent_builders::DeleteTags).
 ///
 /// `ParseStrictResponse` impl for `DeleteTags`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -383,7 +383,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteTags {
 /// Operation shape for `DescribeAccessPoints`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_access_points`](crate::client::Client::describe_access_points).
+/// [`describe_access_points`](crate::client::fluent_builders::DescribeAccessPoints).
 ///
 /// `ParseStrictResponse` impl for `DescribeAccessPoints`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -418,7 +418,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeAccessPoints {
 /// Operation shape for `DescribeAccountPreferences`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_account_preferences`](crate::client::Client::describe_account_preferences).
+/// [`describe_account_preferences`](crate::client::fluent_builders::DescribeAccountPreferences).
 ///
 /// `ParseStrictResponse` impl for `DescribeAccountPreferences`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -453,7 +453,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeAccountPreferenc
 /// Operation shape for `DescribeBackupPolicy`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_backup_policy`](crate::client::Client::describe_backup_policy).
+/// [`describe_backup_policy`](crate::client::fluent_builders::DescribeBackupPolicy).
 ///
 /// `ParseStrictResponse` impl for `DescribeBackupPolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -488,7 +488,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeBackupPolicy {
 /// Operation shape for `DescribeFileSystemPolicy`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_file_system_policy`](crate::client::Client::describe_file_system_policy).
+/// [`describe_file_system_policy`](crate::client::fluent_builders::DescribeFileSystemPolicy).
 ///
 /// `ParseStrictResponse` impl for `DescribeFileSystemPolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -523,7 +523,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeFileSystemPolicy
 /// Operation shape for `DescribeFileSystems`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_file_systems`](crate::client::Client::describe_file_systems).
+/// [`describe_file_systems`](crate::client::fluent_builders::DescribeFileSystems).
 ///
 /// `ParseStrictResponse` impl for `DescribeFileSystems`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -558,7 +558,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeFileSystems {
 /// Operation shape for `DescribeLifecycleConfiguration`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_lifecycle_configuration`](crate::client::Client::describe_lifecycle_configuration).
+/// [`describe_lifecycle_configuration`](crate::client::fluent_builders::DescribeLifecycleConfiguration).
 ///
 /// `ParseStrictResponse` impl for `DescribeLifecycleConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -593,7 +593,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeLifecycleConfigu
 /// Operation shape for `DescribeMountTargets`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_mount_targets`](crate::client::Client::describe_mount_targets).
+/// [`describe_mount_targets`](crate::client::fluent_builders::DescribeMountTargets).
 ///
 /// `ParseStrictResponse` impl for `DescribeMountTargets`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -628,7 +628,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeMountTargets {
 /// Operation shape for `DescribeMountTargetSecurityGroups`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_mount_target_security_groups`](crate::client::Client::describe_mount_target_security_groups).
+/// [`describe_mount_target_security_groups`](crate::client::fluent_builders::DescribeMountTargetSecurityGroups).
 ///
 /// `ParseStrictResponse` impl for `DescribeMountTargetSecurityGroups`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -663,7 +663,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeMountTargetSecur
 /// Operation shape for `DescribeReplicationConfigurations`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_replication_configurations`](crate::client::Client::describe_replication_configurations).
+/// [`describe_replication_configurations`](crate::client::fluent_builders::DescribeReplicationConfigurations).
 ///
 /// `ParseStrictResponse` impl for `DescribeReplicationConfigurations`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -698,7 +698,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeReplicationConfi
 /// Operation shape for `DescribeTags`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_tags`](crate::client::Client::describe_tags).
+/// [`describe_tags`](crate::client::fluent_builders::DescribeTags).
 ///
 /// `ParseStrictResponse` impl for `DescribeTags`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -731,7 +731,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeTags {
 /// Operation shape for `ListTagsForResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
+/// [`list_tags_for_resource`](crate::client::fluent_builders::ListTagsForResource).
 ///
 /// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -766,7 +766,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// Operation shape for `ModifyMountTargetSecurityGroups`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`modify_mount_target_security_groups`](crate::client::Client::modify_mount_target_security_groups).
+/// [`modify_mount_target_security_groups`](crate::client::fluent_builders::ModifyMountTargetSecurityGroups).
 ///
 /// `ParseStrictResponse` impl for `ModifyMountTargetSecurityGroups`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -801,7 +801,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyMountTargetSecurit
 /// Operation shape for `PutAccountPreferences`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`put_account_preferences`](crate::client::Client::put_account_preferences).
+/// [`put_account_preferences`](crate::client::fluent_builders::PutAccountPreferences).
 ///
 /// `ParseStrictResponse` impl for `PutAccountPreferences`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -836,7 +836,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutAccountPreferences {
 /// Operation shape for `PutBackupPolicy`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`put_backup_policy`](crate::client::Client::put_backup_policy).
+/// [`put_backup_policy`](crate::client::fluent_builders::PutBackupPolicy).
 ///
 /// `ParseStrictResponse` impl for `PutBackupPolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -871,7 +871,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutBackupPolicy {
 /// Operation shape for `PutFileSystemPolicy`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`put_file_system_policy`](crate::client::Client::put_file_system_policy).
+/// [`put_file_system_policy`](crate::client::fluent_builders::PutFileSystemPolicy).
 ///
 /// `ParseStrictResponse` impl for `PutFileSystemPolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -906,7 +906,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutFileSystemPolicy {
 /// Operation shape for `PutLifecycleConfiguration`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`put_lifecycle_configuration`](crate::client::Client::put_lifecycle_configuration).
+/// [`put_lifecycle_configuration`](crate::client::fluent_builders::PutLifecycleConfiguration).
 ///
 /// `ParseStrictResponse` impl for `PutLifecycleConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -941,7 +941,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutLifecycleConfiguratio
 /// Operation shape for `TagResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`tag_resource`](crate::client::Client::tag_resource).
+/// [`tag_resource`](crate::client::fluent_builders::TagResource).
 ///
 /// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -974,7 +974,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// Operation shape for `UntagResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`untag_resource`](crate::client::Client::untag_resource).
+/// [`untag_resource`](crate::client::fluent_builders::UntagResource).
 ///
 /// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1007,7 +1007,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// Operation shape for `UpdateFileSystem`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_file_system`](crate::client::Client::update_file_system).
+/// [`update_file_system`](crate::client::fluent_builders::UpdateFileSystem).
 ///
 /// `ParseStrictResponse` impl for `UpdateFileSystem`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

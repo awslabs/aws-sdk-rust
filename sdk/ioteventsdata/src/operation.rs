@@ -2,7 +2,7 @@
 /// Operation shape for `BatchAcknowledgeAlarm`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`batch_acknowledge_alarm`](crate::client::Client::batch_acknowledge_alarm).
+/// [`batch_acknowledge_alarm`](crate::client::fluent_builders::BatchAcknowledgeAlarm).
 ///
 /// `ParseStrictResponse` impl for `BatchAcknowledgeAlarm`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -37,7 +37,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchAcknowledgeAlarm {
 /// Operation shape for `BatchDeleteDetector`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`batch_delete_detector`](crate::client::Client::batch_delete_detector).
+/// [`batch_delete_detector`](crate::client::fluent_builders::BatchDeleteDetector).
 ///
 /// `ParseStrictResponse` impl for `BatchDeleteDetector`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -72,7 +72,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchDeleteDetector {
 /// Operation shape for `BatchDisableAlarm`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`batch_disable_alarm`](crate::client::Client::batch_disable_alarm).
+/// [`batch_disable_alarm`](crate::client::fluent_builders::BatchDisableAlarm).
 ///
 /// `ParseStrictResponse` impl for `BatchDisableAlarm`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -107,7 +107,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchDisableAlarm {
 /// Operation shape for `BatchEnableAlarm`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`batch_enable_alarm`](crate::client::Client::batch_enable_alarm).
+/// [`batch_enable_alarm`](crate::client::fluent_builders::BatchEnableAlarm).
 ///
 /// `ParseStrictResponse` impl for `BatchEnableAlarm`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -142,7 +142,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchEnableAlarm {
 /// Operation shape for `BatchPutMessage`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`batch_put_message`](crate::client::Client::batch_put_message).
+/// [`batch_put_message`](crate::client::fluent_builders::BatchPutMessage).
 ///
 /// `ParseStrictResponse` impl for `BatchPutMessage`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -177,7 +177,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchPutMessage {
 /// Operation shape for `BatchResetAlarm`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`batch_reset_alarm`](crate::client::Client::batch_reset_alarm).
+/// [`batch_reset_alarm`](crate::client::fluent_builders::BatchResetAlarm).
 ///
 /// `ParseStrictResponse` impl for `BatchResetAlarm`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -212,7 +212,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchResetAlarm {
 /// Operation shape for `BatchSnoozeAlarm`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`batch_snooze_alarm`](crate::client::Client::batch_snooze_alarm).
+/// [`batch_snooze_alarm`](crate::client::fluent_builders::BatchSnoozeAlarm).
 ///
 /// `ParseStrictResponse` impl for `BatchSnoozeAlarm`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -247,7 +247,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchSnoozeAlarm {
 /// Operation shape for `BatchUpdateDetector`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`batch_update_detector`](crate::client::Client::batch_update_detector).
+/// [`batch_update_detector`](crate::client::fluent_builders::BatchUpdateDetector).
 ///
 /// `ParseStrictResponse` impl for `BatchUpdateDetector`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -282,7 +282,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchUpdateDetector {
 /// Operation shape for `DescribeAlarm`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_alarm`](crate::client::Client::describe_alarm).
+/// [`describe_alarm`](crate::client::fluent_builders::DescribeAlarm).
 ///
 /// `ParseStrictResponse` impl for `DescribeAlarm`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -315,7 +315,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeAlarm {
 /// Operation shape for `DescribeDetector`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_detector`](crate::client::Client::describe_detector).
+/// [`describe_detector`](crate::client::fluent_builders::DescribeDetector).
 ///
 /// `ParseStrictResponse` impl for `DescribeDetector`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -350,7 +350,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeDetector {
 /// Operation shape for `ListAlarms`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_alarms`](crate::client::Client::list_alarms).
+/// [`list_alarms`](crate::client::fluent_builders::ListAlarms).
 ///
 /// `ParseStrictResponse` impl for `ListAlarms`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -383,7 +383,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAlarms {
 /// Operation shape for `ListDetectors`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_detectors`](crate::client::Client::list_detectors).
+/// [`list_detectors`](crate::client::fluent_builders::ListDetectors).
 ///
 /// `ParseStrictResponse` impl for `ListDetectors`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

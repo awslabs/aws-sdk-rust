@@ -2,7 +2,7 @@
 /// Operation shape for `CreateConfigurationSet`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_configuration_set`](crate::client::Client::create_configuration_set).
+/// [`create_configuration_set`](crate::client::fluent_builders::CreateConfigurationSet).
 ///
 /// `ParseStrictResponse` impl for `CreateConfigurationSet`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -37,7 +37,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateConfigurationSet {
 /// Operation shape for `CreateConfigurationSetEventDestination`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_configuration_set_event_destination`](crate::client::Client::create_configuration_set_event_destination).
+/// [`create_configuration_set_event_destination`](crate::client::fluent_builders::CreateConfigurationSetEventDestination).
 ///
 /// `ParseStrictResponse` impl for `CreateConfigurationSetEventDestination`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -74,7 +74,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateConfigurationSetEv
 /// Operation shape for `DeleteConfigurationSet`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_configuration_set`](crate::client::Client::delete_configuration_set).
+/// [`delete_configuration_set`](crate::client::fluent_builders::DeleteConfigurationSet).
 ///
 /// `ParseStrictResponse` impl for `DeleteConfigurationSet`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -109,7 +109,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteConfigurationSet {
 /// Operation shape for `DeleteConfigurationSetEventDestination`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_configuration_set_event_destination`](crate::client::Client::delete_configuration_set_event_destination).
+/// [`delete_configuration_set_event_destination`](crate::client::fluent_builders::DeleteConfigurationSetEventDestination).
 ///
 /// `ParseStrictResponse` impl for `DeleteConfigurationSetEventDestination`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -146,7 +146,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteConfigurationSetEv
 /// Operation shape for `GetConfigurationSetEventDestinations`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_configuration_set_event_destinations`](crate::client::Client::get_configuration_set_event_destinations).
+/// [`get_configuration_set_event_destinations`](crate::client::fluent_builders::GetConfigurationSetEventDestinations).
 ///
 /// `ParseStrictResponse` impl for `GetConfigurationSetEventDestinations`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -183,7 +183,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetConfigurationSetEvent
 /// Operation shape for `ListConfigurationSets`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_configuration_sets`](crate::client::Client::list_configuration_sets).
+/// [`list_configuration_sets`](crate::client::fluent_builders::ListConfigurationSets).
 ///
 /// `ParseStrictResponse` impl for `ListConfigurationSets`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -218,7 +218,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListConfigurationSets {
 /// Operation shape for `SendVoiceMessage`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`send_voice_message`](crate::client::Client::send_voice_message).
+/// [`send_voice_message`](crate::client::fluent_builders::SendVoiceMessage).
 ///
 /// `ParseStrictResponse` impl for `SendVoiceMessage`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -253,7 +253,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SendVoiceMessage {
 /// Operation shape for `UpdateConfigurationSetEventDestination`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_configuration_set_event_destination`](crate::client::Client::update_configuration_set_event_destination).
+/// [`update_configuration_set_event_destination`](crate::client::fluent_builders::UpdateConfigurationSetEventDestination).
 ///
 /// `ParseStrictResponse` impl for `UpdateConfigurationSetEventDestination`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

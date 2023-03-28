@@ -2,7 +2,7 @@
 /// Operation shape for `AssociateAwsAccountWithPartnerAccount`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`associate_aws_account_with_partner_account`](crate::client::Client::associate_aws_account_with_partner_account).
+/// [`associate_aws_account_with_partner_account`](crate::client::fluent_builders::AssociateAwsAccountWithPartnerAccount).
 ///
 /// `ParseStrictResponse` impl for `AssociateAwsAccountWithPartnerAccount`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -39,7 +39,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateAwsAccountWithP
 /// Operation shape for `AssociateMulticastGroupWithFuotaTask`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`associate_multicast_group_with_fuota_task`](crate::client::Client::associate_multicast_group_with_fuota_task).
+/// [`associate_multicast_group_with_fuota_task`](crate::client::fluent_builders::AssociateMulticastGroupWithFuotaTask).
 ///
 /// `ParseStrictResponse` impl for `AssociateMulticastGroupWithFuotaTask`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -76,7 +76,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateMulticastGroupW
 /// Operation shape for `AssociateWirelessDeviceWithFuotaTask`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`associate_wireless_device_with_fuota_task`](crate::client::Client::associate_wireless_device_with_fuota_task).
+/// [`associate_wireless_device_with_fuota_task`](crate::client::fluent_builders::AssociateWirelessDeviceWithFuotaTask).
 ///
 /// `ParseStrictResponse` impl for `AssociateWirelessDeviceWithFuotaTask`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -113,7 +113,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateWirelessDeviceW
 /// Operation shape for `AssociateWirelessDeviceWithMulticastGroup`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`associate_wireless_device_with_multicast_group`](crate::client::Client::associate_wireless_device_with_multicast_group).
+/// [`associate_wireless_device_with_multicast_group`](crate::client::fluent_builders::AssociateWirelessDeviceWithMulticastGroup).
 ///
 /// `ParseStrictResponse` impl for `AssociateWirelessDeviceWithMulticastGroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -153,7 +153,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateWirelessDeviceW
 /// Operation shape for `AssociateWirelessDeviceWithThing`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`associate_wireless_device_with_thing`](crate::client::Client::associate_wireless_device_with_thing).
+/// [`associate_wireless_device_with_thing`](crate::client::fluent_builders::AssociateWirelessDeviceWithThing).
 ///
 /// `ParseStrictResponse` impl for `AssociateWirelessDeviceWithThing`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -188,7 +188,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateWirelessDeviceW
 /// Operation shape for `AssociateWirelessGatewayWithCertificate`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`associate_wireless_gateway_with_certificate`](crate::client::Client::associate_wireless_gateway_with_certificate).
+/// [`associate_wireless_gateway_with_certificate`](crate::client::fluent_builders::AssociateWirelessGatewayWithCertificate).
 ///
 /// `ParseStrictResponse` impl for `AssociateWirelessGatewayWithCertificate`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -227,7 +227,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateWirelessGateway
 /// Operation shape for `AssociateWirelessGatewayWithThing`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`associate_wireless_gateway_with_thing`](crate::client::Client::associate_wireless_gateway_with_thing).
+/// [`associate_wireless_gateway_with_thing`](crate::client::fluent_builders::AssociateWirelessGatewayWithThing).
 ///
 /// `ParseStrictResponse` impl for `AssociateWirelessGatewayWithThing`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -262,7 +262,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateWirelessGateway
 /// Operation shape for `CancelMulticastGroupSession`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`cancel_multicast_group_session`](crate::client::Client::cancel_multicast_group_session).
+/// [`cancel_multicast_group_session`](crate::client::fluent_builders::CancelMulticastGroupSession).
 ///
 /// `ParseStrictResponse` impl for `CancelMulticastGroupSession`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -297,7 +297,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CancelMulticastGroupSess
 /// Operation shape for `CreateDestination`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_destination`](crate::client::Client::create_destination).
+/// [`create_destination`](crate::client::fluent_builders::CreateDestination).
 ///
 /// `ParseStrictResponse` impl for `CreateDestination`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -332,7 +332,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateDestination {
 /// Operation shape for `CreateDeviceProfile`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_device_profile`](crate::client::Client::create_device_profile).
+/// [`create_device_profile`](crate::client::fluent_builders::CreateDeviceProfile).
 ///
 /// `ParseStrictResponse` impl for `CreateDeviceProfile`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -367,7 +367,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateDeviceProfile {
 /// Operation shape for `CreateFuotaTask`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_fuota_task`](crate::client::Client::create_fuota_task).
+/// [`create_fuota_task`](crate::client::fluent_builders::CreateFuotaTask).
 ///
 /// `ParseStrictResponse` impl for `CreateFuotaTask`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -402,7 +402,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateFuotaTask {
 /// Operation shape for `CreateMulticastGroup`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_multicast_group`](crate::client::Client::create_multicast_group).
+/// [`create_multicast_group`](crate::client::fluent_builders::CreateMulticastGroup).
 ///
 /// `ParseStrictResponse` impl for `CreateMulticastGroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -437,7 +437,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateMulticastGroup {
 /// Operation shape for `CreateNetworkAnalyzerConfiguration`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_network_analyzer_configuration`](crate::client::Client::create_network_analyzer_configuration).
+/// [`create_network_analyzer_configuration`](crate::client::fluent_builders::CreateNetworkAnalyzerConfiguration).
 ///
 /// `ParseStrictResponse` impl for `CreateNetworkAnalyzerConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -472,7 +472,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateNetworkAnalyzerCon
 /// Operation shape for `CreateServiceProfile`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_service_profile`](crate::client::Client::create_service_profile).
+/// [`create_service_profile`](crate::client::fluent_builders::CreateServiceProfile).
 ///
 /// `ParseStrictResponse` impl for `CreateServiceProfile`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -507,7 +507,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateServiceProfile {
 /// Operation shape for `CreateWirelessDevice`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_wireless_device`](crate::client::Client::create_wireless_device).
+/// [`create_wireless_device`](crate::client::fluent_builders::CreateWirelessDevice).
 ///
 /// `ParseStrictResponse` impl for `CreateWirelessDevice`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -542,7 +542,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateWirelessDevice {
 /// Operation shape for `CreateWirelessGateway`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_wireless_gateway`](crate::client::Client::create_wireless_gateway).
+/// [`create_wireless_gateway`](crate::client::fluent_builders::CreateWirelessGateway).
 ///
 /// `ParseStrictResponse` impl for `CreateWirelessGateway`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -577,7 +577,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateWirelessGateway {
 /// Operation shape for `CreateWirelessGatewayTask`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_wireless_gateway_task`](crate::client::Client::create_wireless_gateway_task).
+/// [`create_wireless_gateway_task`](crate::client::fluent_builders::CreateWirelessGatewayTask).
 ///
 /// `ParseStrictResponse` impl for `CreateWirelessGatewayTask`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -612,7 +612,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateWirelessGatewayTas
 /// Operation shape for `CreateWirelessGatewayTaskDefinition`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_wireless_gateway_task_definition`](crate::client::Client::create_wireless_gateway_task_definition).
+/// [`create_wireless_gateway_task_definition`](crate::client::fluent_builders::CreateWirelessGatewayTaskDefinition).
 ///
 /// `ParseStrictResponse` impl for `CreateWirelessGatewayTaskDefinition`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -647,7 +647,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateWirelessGatewayTas
 /// Operation shape for `DeleteDestination`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_destination`](crate::client::Client::delete_destination).
+/// [`delete_destination`](crate::client::fluent_builders::DeleteDestination).
 ///
 /// `ParseStrictResponse` impl for `DeleteDestination`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -682,7 +682,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteDestination {
 /// Operation shape for `DeleteDeviceProfile`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_device_profile`](crate::client::Client::delete_device_profile).
+/// [`delete_device_profile`](crate::client::fluent_builders::DeleteDeviceProfile).
 ///
 /// `ParseStrictResponse` impl for `DeleteDeviceProfile`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -717,7 +717,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteDeviceProfile {
 /// Operation shape for `DeleteFuotaTask`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_fuota_task`](crate::client::Client::delete_fuota_task).
+/// [`delete_fuota_task`](crate::client::fluent_builders::DeleteFuotaTask).
 ///
 /// `ParseStrictResponse` impl for `DeleteFuotaTask`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -752,7 +752,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteFuotaTask {
 /// Operation shape for `DeleteMulticastGroup`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_multicast_group`](crate::client::Client::delete_multicast_group).
+/// [`delete_multicast_group`](crate::client::fluent_builders::DeleteMulticastGroup).
 ///
 /// `ParseStrictResponse` impl for `DeleteMulticastGroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -787,7 +787,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteMulticastGroup {
 /// Operation shape for `DeleteNetworkAnalyzerConfiguration`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_network_analyzer_configuration`](crate::client::Client::delete_network_analyzer_configuration).
+/// [`delete_network_analyzer_configuration`](crate::client::fluent_builders::DeleteNetworkAnalyzerConfiguration).
 ///
 /// `ParseStrictResponse` impl for `DeleteNetworkAnalyzerConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -822,7 +822,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteNetworkAnalyzerCon
 /// Operation shape for `DeleteQueuedMessages`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_queued_messages`](crate::client::Client::delete_queued_messages).
+/// [`delete_queued_messages`](crate::client::fluent_builders::DeleteQueuedMessages).
 ///
 /// `ParseStrictResponse` impl for `DeleteQueuedMessages`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -857,7 +857,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteQueuedMessages {
 /// Operation shape for `DeleteServiceProfile`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_service_profile`](crate::client::Client::delete_service_profile).
+/// [`delete_service_profile`](crate::client::fluent_builders::DeleteServiceProfile).
 ///
 /// `ParseStrictResponse` impl for `DeleteServiceProfile`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -892,7 +892,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteServiceProfile {
 /// Operation shape for `DeleteWirelessDevice`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_wireless_device`](crate::client::Client::delete_wireless_device).
+/// [`delete_wireless_device`](crate::client::fluent_builders::DeleteWirelessDevice).
 ///
 /// `ParseStrictResponse` impl for `DeleteWirelessDevice`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -927,7 +927,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteWirelessDevice {
 /// Operation shape for `DeleteWirelessGateway`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_wireless_gateway`](crate::client::Client::delete_wireless_gateway).
+/// [`delete_wireless_gateway`](crate::client::fluent_builders::DeleteWirelessGateway).
 ///
 /// `ParseStrictResponse` impl for `DeleteWirelessGateway`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -962,7 +962,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteWirelessGateway {
 /// Operation shape for `DeleteWirelessGatewayTask`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_wireless_gateway_task`](crate::client::Client::delete_wireless_gateway_task).
+/// [`delete_wireless_gateway_task`](crate::client::fluent_builders::DeleteWirelessGatewayTask).
 ///
 /// `ParseStrictResponse` impl for `DeleteWirelessGatewayTask`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -997,7 +997,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteWirelessGatewayTas
 /// Operation shape for `DeleteWirelessGatewayTaskDefinition`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_wireless_gateway_task_definition`](crate::client::Client::delete_wireless_gateway_task_definition).
+/// [`delete_wireless_gateway_task_definition`](crate::client::fluent_builders::DeleteWirelessGatewayTaskDefinition).
 ///
 /// `ParseStrictResponse` impl for `DeleteWirelessGatewayTaskDefinition`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1032,7 +1032,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteWirelessGatewayTas
 /// Operation shape for `DisassociateAwsAccountFromPartnerAccount`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`disassociate_aws_account_from_partner_account`](crate::client::Client::disassociate_aws_account_from_partner_account).
+/// [`disassociate_aws_account_from_partner_account`](crate::client::fluent_builders::DisassociateAwsAccountFromPartnerAccount).
 ///
 /// `ParseStrictResponse` impl for `DisassociateAwsAccountFromPartnerAccount`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1071,7 +1071,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateAwsAccountFr
 /// Operation shape for `DisassociateMulticastGroupFromFuotaTask`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`disassociate_multicast_group_from_fuota_task`](crate::client::Client::disassociate_multicast_group_from_fuota_task).
+/// [`disassociate_multicast_group_from_fuota_task`](crate::client::fluent_builders::DisassociateMulticastGroupFromFuotaTask).
 ///
 /// `ParseStrictResponse` impl for `DisassociateMulticastGroupFromFuotaTask`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1110,7 +1110,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateMulticastGro
 /// Operation shape for `DisassociateWirelessDeviceFromFuotaTask`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`disassociate_wireless_device_from_fuota_task`](crate::client::Client::disassociate_wireless_device_from_fuota_task).
+/// [`disassociate_wireless_device_from_fuota_task`](crate::client::fluent_builders::DisassociateWirelessDeviceFromFuotaTask).
 ///
 /// `ParseStrictResponse` impl for `DisassociateWirelessDeviceFromFuotaTask`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1149,7 +1149,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateWirelessDevi
 /// Operation shape for `DisassociateWirelessDeviceFromMulticastGroup`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`disassociate_wireless_device_from_multicast_group`](crate::client::Client::disassociate_wireless_device_from_multicast_group).
+/// [`disassociate_wireless_device_from_multicast_group`](crate::client::fluent_builders::DisassociateWirelessDeviceFromMulticastGroup).
 ///
 /// `ParseStrictResponse` impl for `DisassociateWirelessDeviceFromMulticastGroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1191,7 +1191,7 @@ impl aws_smithy_http::response::ParseStrictResponse
 /// Operation shape for `DisassociateWirelessDeviceFromThing`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`disassociate_wireless_device_from_thing`](crate::client::Client::disassociate_wireless_device_from_thing).
+/// [`disassociate_wireless_device_from_thing`](crate::client::fluent_builders::DisassociateWirelessDeviceFromThing).
 ///
 /// `ParseStrictResponse` impl for `DisassociateWirelessDeviceFromThing`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1226,7 +1226,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateWirelessDevi
 /// Operation shape for `DisassociateWirelessGatewayFromCertificate`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`disassociate_wireless_gateway_from_certificate`](crate::client::Client::disassociate_wireless_gateway_from_certificate).
+/// [`disassociate_wireless_gateway_from_certificate`](crate::client::fluent_builders::DisassociateWirelessGatewayFromCertificate).
 ///
 /// `ParseStrictResponse` impl for `DisassociateWirelessGatewayFromCertificate`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1266,7 +1266,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateWirelessGate
 /// Operation shape for `DisassociateWirelessGatewayFromThing`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`disassociate_wireless_gateway_from_thing`](crate::client::Client::disassociate_wireless_gateway_from_thing).
+/// [`disassociate_wireless_gateway_from_thing`](crate::client::fluent_builders::DisassociateWirelessGatewayFromThing).
 ///
 /// `ParseStrictResponse` impl for `DisassociateWirelessGatewayFromThing`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1303,7 +1303,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateWirelessGate
 /// Operation shape for `GetDestination`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_destination`](crate::client::Client::get_destination).
+/// [`get_destination`](crate::client::fluent_builders::GetDestination).
 ///
 /// `ParseStrictResponse` impl for `GetDestination`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1336,7 +1336,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDestination {
 /// Operation shape for `GetDeviceProfile`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_device_profile`](crate::client::Client::get_device_profile).
+/// [`get_device_profile`](crate::client::fluent_builders::GetDeviceProfile).
 ///
 /// `ParseStrictResponse` impl for `GetDeviceProfile`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1371,7 +1371,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDeviceProfile {
 /// Operation shape for `GetEventConfigurationByResourceTypes`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_event_configuration_by_resource_types`](crate::client::Client::get_event_configuration_by_resource_types).
+/// [`get_event_configuration_by_resource_types`](crate::client::fluent_builders::GetEventConfigurationByResourceTypes).
 ///
 /// `ParseStrictResponse` impl for `GetEventConfigurationByResourceTypes`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1408,7 +1408,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetEventConfigurationByR
 /// Operation shape for `GetFuotaTask`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_fuota_task`](crate::client::Client::get_fuota_task).
+/// [`get_fuota_task`](crate::client::fluent_builders::GetFuotaTask).
 ///
 /// `ParseStrictResponse` impl for `GetFuotaTask`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1441,7 +1441,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetFuotaTask {
 /// Operation shape for `GetLogLevelsByResourceTypes`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_log_levels_by_resource_types`](crate::client::Client::get_log_levels_by_resource_types).
+/// [`get_log_levels_by_resource_types`](crate::client::fluent_builders::GetLogLevelsByResourceTypes).
 ///
 /// `ParseStrictResponse` impl for `GetLogLevelsByResourceTypes`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1476,7 +1476,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetLogLevelsByResourceTy
 /// Operation shape for `GetMulticastGroup`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_multicast_group`](crate::client::Client::get_multicast_group).
+/// [`get_multicast_group`](crate::client::fluent_builders::GetMulticastGroup).
 ///
 /// `ParseStrictResponse` impl for `GetMulticastGroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1511,7 +1511,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetMulticastGroup {
 /// Operation shape for `GetMulticastGroupSession`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_multicast_group_session`](crate::client::Client::get_multicast_group_session).
+/// [`get_multicast_group_session`](crate::client::fluent_builders::GetMulticastGroupSession).
 ///
 /// `ParseStrictResponse` impl for `GetMulticastGroupSession`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1546,7 +1546,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetMulticastGroupSession
 /// Operation shape for `GetNetworkAnalyzerConfiguration`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_network_analyzer_configuration`](crate::client::Client::get_network_analyzer_configuration).
+/// [`get_network_analyzer_configuration`](crate::client::fluent_builders::GetNetworkAnalyzerConfiguration).
 ///
 /// `ParseStrictResponse` impl for `GetNetworkAnalyzerConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1581,7 +1581,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetNetworkAnalyzerConfig
 /// Operation shape for `GetPartnerAccount`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_partner_account`](crate::client::Client::get_partner_account).
+/// [`get_partner_account`](crate::client::fluent_builders::GetPartnerAccount).
 ///
 /// `ParseStrictResponse` impl for `GetPartnerAccount`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1616,7 +1616,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetPartnerAccount {
 /// Operation shape for `GetPosition`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_position`](crate::client::Client::get_position).
+/// [`get_position`](crate::client::fluent_builders::GetPosition).
 ///
 /// `ParseStrictResponse` impl for `GetPosition`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1649,7 +1649,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetPosition {
 /// Operation shape for `GetPositionConfiguration`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_position_configuration`](crate::client::Client::get_position_configuration).
+/// [`get_position_configuration`](crate::client::fluent_builders::GetPositionConfiguration).
 ///
 /// `ParseStrictResponse` impl for `GetPositionConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1684,7 +1684,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetPositionConfiguration
 /// Operation shape for `GetPositionEstimate`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_position_estimate`](crate::client::Client::get_position_estimate).
+/// [`get_position_estimate`](crate::client::fluent_builders::GetPositionEstimate).
 ///
 /// `ParseStrictResponse` impl for `GetPositionEstimate`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1719,7 +1719,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetPositionEstimate {
 /// Operation shape for `GetResourceEventConfiguration`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_resource_event_configuration`](crate::client::Client::get_resource_event_configuration).
+/// [`get_resource_event_configuration`](crate::client::fluent_builders::GetResourceEventConfiguration).
 ///
 /// `ParseStrictResponse` impl for `GetResourceEventConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1754,7 +1754,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetResourceEventConfigur
 /// Operation shape for `GetResourceLogLevel`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_resource_log_level`](crate::client::Client::get_resource_log_level).
+/// [`get_resource_log_level`](crate::client::fluent_builders::GetResourceLogLevel).
 ///
 /// `ParseStrictResponse` impl for `GetResourceLogLevel`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1789,7 +1789,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetResourceLogLevel {
 /// Operation shape for `GetResourcePosition`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_resource_position`](crate::client::Client::get_resource_position).
+/// [`get_resource_position`](crate::client::fluent_builders::GetResourcePosition).
 ///
 /// `ParseStrictResponse` impl for `GetResourcePosition`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1824,7 +1824,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetResourcePosition {
 /// Operation shape for `GetServiceEndpoint`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_service_endpoint`](crate::client::Client::get_service_endpoint).
+/// [`get_service_endpoint`](crate::client::fluent_builders::GetServiceEndpoint).
 ///
 /// `ParseStrictResponse` impl for `GetServiceEndpoint`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1859,7 +1859,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetServiceEndpoint {
 /// Operation shape for `GetServiceProfile`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_service_profile`](crate::client::Client::get_service_profile).
+/// [`get_service_profile`](crate::client::fluent_builders::GetServiceProfile).
 ///
 /// `ParseStrictResponse` impl for `GetServiceProfile`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1894,7 +1894,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetServiceProfile {
 /// Operation shape for `GetWirelessDevice`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_wireless_device`](crate::client::Client::get_wireless_device).
+/// [`get_wireless_device`](crate::client::fluent_builders::GetWirelessDevice).
 ///
 /// `ParseStrictResponse` impl for `GetWirelessDevice`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1929,7 +1929,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetWirelessDevice {
 /// Operation shape for `GetWirelessDeviceStatistics`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_wireless_device_statistics`](crate::client::Client::get_wireless_device_statistics).
+/// [`get_wireless_device_statistics`](crate::client::fluent_builders::GetWirelessDeviceStatistics).
 ///
 /// `ParseStrictResponse` impl for `GetWirelessDeviceStatistics`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1964,7 +1964,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetWirelessDeviceStatist
 /// Operation shape for `GetWirelessGateway`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_wireless_gateway`](crate::client::Client::get_wireless_gateway).
+/// [`get_wireless_gateway`](crate::client::fluent_builders::GetWirelessGateway).
 ///
 /// `ParseStrictResponse` impl for `GetWirelessGateway`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1999,7 +1999,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetWirelessGateway {
 /// Operation shape for `GetWirelessGatewayCertificate`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_wireless_gateway_certificate`](crate::client::Client::get_wireless_gateway_certificate).
+/// [`get_wireless_gateway_certificate`](crate::client::fluent_builders::GetWirelessGatewayCertificate).
 ///
 /// `ParseStrictResponse` impl for `GetWirelessGatewayCertificate`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2034,7 +2034,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetWirelessGatewayCertif
 /// Operation shape for `GetWirelessGatewayFirmwareInformation`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_wireless_gateway_firmware_information`](crate::client::Client::get_wireless_gateway_firmware_information).
+/// [`get_wireless_gateway_firmware_information`](crate::client::fluent_builders::GetWirelessGatewayFirmwareInformation).
 ///
 /// `ParseStrictResponse` impl for `GetWirelessGatewayFirmwareInformation`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2071,7 +2071,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetWirelessGatewayFirmwa
 /// Operation shape for `GetWirelessGatewayStatistics`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_wireless_gateway_statistics`](crate::client::Client::get_wireless_gateway_statistics).
+/// [`get_wireless_gateway_statistics`](crate::client::fluent_builders::GetWirelessGatewayStatistics).
 ///
 /// `ParseStrictResponse` impl for `GetWirelessGatewayStatistics`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2106,7 +2106,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetWirelessGatewayStatis
 /// Operation shape for `GetWirelessGatewayTask`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_wireless_gateway_task`](crate::client::Client::get_wireless_gateway_task).
+/// [`get_wireless_gateway_task`](crate::client::fluent_builders::GetWirelessGatewayTask).
 ///
 /// `ParseStrictResponse` impl for `GetWirelessGatewayTask`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2141,7 +2141,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetWirelessGatewayTask {
 /// Operation shape for `GetWirelessGatewayTaskDefinition`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_wireless_gateway_task_definition`](crate::client::Client::get_wireless_gateway_task_definition).
+/// [`get_wireless_gateway_task_definition`](crate::client::fluent_builders::GetWirelessGatewayTaskDefinition).
 ///
 /// `ParseStrictResponse` impl for `GetWirelessGatewayTaskDefinition`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2176,7 +2176,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetWirelessGatewayTaskDe
 /// Operation shape for `ListDestinations`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_destinations`](crate::client::Client::list_destinations).
+/// [`list_destinations`](crate::client::fluent_builders::ListDestinations).
 ///
 /// `ParseStrictResponse` impl for `ListDestinations`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2211,7 +2211,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListDestinations {
 /// Operation shape for `ListDeviceProfiles`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_device_profiles`](crate::client::Client::list_device_profiles).
+/// [`list_device_profiles`](crate::client::fluent_builders::ListDeviceProfiles).
 ///
 /// `ParseStrictResponse` impl for `ListDeviceProfiles`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2246,7 +2246,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListDeviceProfiles {
 /// Operation shape for `ListEventConfigurations`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_event_configurations`](crate::client::Client::list_event_configurations).
+/// [`list_event_configurations`](crate::client::fluent_builders::ListEventConfigurations).
 ///
 /// `ParseStrictResponse` impl for `ListEventConfigurations`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2281,7 +2281,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListEventConfigurations 
 /// Operation shape for `ListFuotaTasks`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_fuota_tasks`](crate::client::Client::list_fuota_tasks).
+/// [`list_fuota_tasks`](crate::client::fluent_builders::ListFuotaTasks).
 ///
 /// `ParseStrictResponse` impl for `ListFuotaTasks`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2314,7 +2314,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListFuotaTasks {
 /// Operation shape for `ListMulticastGroups`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_multicast_groups`](crate::client::Client::list_multicast_groups).
+/// [`list_multicast_groups`](crate::client::fluent_builders::ListMulticastGroups).
 ///
 /// `ParseStrictResponse` impl for `ListMulticastGroups`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2349,7 +2349,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListMulticastGroups {
 /// Operation shape for `ListMulticastGroupsByFuotaTask`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_multicast_groups_by_fuota_task`](crate::client::Client::list_multicast_groups_by_fuota_task).
+/// [`list_multicast_groups_by_fuota_task`](crate::client::fluent_builders::ListMulticastGroupsByFuotaTask).
 ///
 /// `ParseStrictResponse` impl for `ListMulticastGroupsByFuotaTask`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2384,7 +2384,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListMulticastGroupsByFuo
 /// Operation shape for `ListNetworkAnalyzerConfigurations`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_network_analyzer_configurations`](crate::client::Client::list_network_analyzer_configurations).
+/// [`list_network_analyzer_configurations`](crate::client::fluent_builders::ListNetworkAnalyzerConfigurations).
 ///
 /// `ParseStrictResponse` impl for `ListNetworkAnalyzerConfigurations`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2419,7 +2419,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListNetworkAnalyzerConfi
 /// Operation shape for `ListPartnerAccounts`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_partner_accounts`](crate::client::Client::list_partner_accounts).
+/// [`list_partner_accounts`](crate::client::fluent_builders::ListPartnerAccounts).
 ///
 /// `ParseStrictResponse` impl for `ListPartnerAccounts`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2454,7 +2454,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListPartnerAccounts {
 /// Operation shape for `ListPositionConfigurations`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_position_configurations`](crate::client::Client::list_position_configurations).
+/// [`list_position_configurations`](crate::client::fluent_builders::ListPositionConfigurations).
 ///
 /// `ParseStrictResponse` impl for `ListPositionConfigurations`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2489,7 +2489,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListPositionConfiguratio
 /// Operation shape for `ListQueuedMessages`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_queued_messages`](crate::client::Client::list_queued_messages).
+/// [`list_queued_messages`](crate::client::fluent_builders::ListQueuedMessages).
 ///
 /// `ParseStrictResponse` impl for `ListQueuedMessages`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2524,7 +2524,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListQueuedMessages {
 /// Operation shape for `ListServiceProfiles`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_service_profiles`](crate::client::Client::list_service_profiles).
+/// [`list_service_profiles`](crate::client::fluent_builders::ListServiceProfiles).
 ///
 /// `ParseStrictResponse` impl for `ListServiceProfiles`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2559,7 +2559,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListServiceProfiles {
 /// Operation shape for `ListTagsForResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
+/// [`list_tags_for_resource`](crate::client::fluent_builders::ListTagsForResource).
 ///
 /// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2594,7 +2594,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// Operation shape for `ListWirelessDevices`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_wireless_devices`](crate::client::Client::list_wireless_devices).
+/// [`list_wireless_devices`](crate::client::fluent_builders::ListWirelessDevices).
 ///
 /// `ParseStrictResponse` impl for `ListWirelessDevices`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2629,7 +2629,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListWirelessDevices {
 /// Operation shape for `ListWirelessGateways`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_wireless_gateways`](crate::client::Client::list_wireless_gateways).
+/// [`list_wireless_gateways`](crate::client::fluent_builders::ListWirelessGateways).
 ///
 /// `ParseStrictResponse` impl for `ListWirelessGateways`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2664,7 +2664,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListWirelessGateways {
 /// Operation shape for `ListWirelessGatewayTaskDefinitions`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_wireless_gateway_task_definitions`](crate::client::Client::list_wireless_gateway_task_definitions).
+/// [`list_wireless_gateway_task_definitions`](crate::client::fluent_builders::ListWirelessGatewayTaskDefinitions).
 ///
 /// `ParseStrictResponse` impl for `ListWirelessGatewayTaskDefinitions`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2699,7 +2699,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListWirelessGatewayTaskD
 /// Operation shape for `PutPositionConfiguration`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`put_position_configuration`](crate::client::Client::put_position_configuration).
+/// [`put_position_configuration`](crate::client::fluent_builders::PutPositionConfiguration).
 ///
 /// `ParseStrictResponse` impl for `PutPositionConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2734,7 +2734,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutPositionConfiguration
 /// Operation shape for `PutResourceLogLevel`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`put_resource_log_level`](crate::client::Client::put_resource_log_level).
+/// [`put_resource_log_level`](crate::client::fluent_builders::PutResourceLogLevel).
 ///
 /// `ParseStrictResponse` impl for `PutResourceLogLevel`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2769,7 +2769,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutResourceLogLevel {
 /// Operation shape for `ResetAllResourceLogLevels`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`reset_all_resource_log_levels`](crate::client::Client::reset_all_resource_log_levels).
+/// [`reset_all_resource_log_levels`](crate::client::fluent_builders::ResetAllResourceLogLevels).
 ///
 /// `ParseStrictResponse` impl for `ResetAllResourceLogLevels`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2804,7 +2804,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ResetAllResourceLogLevel
 /// Operation shape for `ResetResourceLogLevel`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`reset_resource_log_level`](crate::client::Client::reset_resource_log_level).
+/// [`reset_resource_log_level`](crate::client::fluent_builders::ResetResourceLogLevel).
 ///
 /// `ParseStrictResponse` impl for `ResetResourceLogLevel`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2839,7 +2839,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ResetResourceLogLevel {
 /// Operation shape for `SendDataToMulticastGroup`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`send_data_to_multicast_group`](crate::client::Client::send_data_to_multicast_group).
+/// [`send_data_to_multicast_group`](crate::client::fluent_builders::SendDataToMulticastGroup).
 ///
 /// `ParseStrictResponse` impl for `SendDataToMulticastGroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2874,7 +2874,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SendDataToMulticastGroup
 /// Operation shape for `SendDataToWirelessDevice`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`send_data_to_wireless_device`](crate::client::Client::send_data_to_wireless_device).
+/// [`send_data_to_wireless_device`](crate::client::fluent_builders::SendDataToWirelessDevice).
 ///
 /// `ParseStrictResponse` impl for `SendDataToWirelessDevice`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2909,7 +2909,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SendDataToWirelessDevice
 /// Operation shape for `StartBulkAssociateWirelessDeviceWithMulticastGroup`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`start_bulk_associate_wireless_device_with_multicast_group`](crate::client::Client::start_bulk_associate_wireless_device_with_multicast_group).
+/// [`start_bulk_associate_wireless_device_with_multicast_group`](crate::client::fluent_builders::StartBulkAssociateWirelessDeviceWithMulticastGroup).
 ///
 /// `ParseStrictResponse` impl for `StartBulkAssociateWirelessDeviceWithMulticastGroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2948,7 +2948,7 @@ impl aws_smithy_http::response::ParseStrictResponse
 /// Operation shape for `StartBulkDisassociateWirelessDeviceFromMulticastGroup`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`start_bulk_disassociate_wireless_device_from_multicast_group`](crate::client::Client::start_bulk_disassociate_wireless_device_from_multicast_group).
+/// [`start_bulk_disassociate_wireless_device_from_multicast_group`](crate::client::fluent_builders::StartBulkDisassociateWirelessDeviceFromMulticastGroup).
 ///
 /// `ParseStrictResponse` impl for `StartBulkDisassociateWirelessDeviceFromMulticastGroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2987,7 +2987,7 @@ impl aws_smithy_http::response::ParseStrictResponse
 /// Operation shape for `StartFuotaTask`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`start_fuota_task`](crate::client::Client::start_fuota_task).
+/// [`start_fuota_task`](crate::client::fluent_builders::StartFuotaTask).
 ///
 /// `ParseStrictResponse` impl for `StartFuotaTask`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -3020,7 +3020,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartFuotaTask {
 /// Operation shape for `StartMulticastGroupSession`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`start_multicast_group_session`](crate::client::Client::start_multicast_group_session).
+/// [`start_multicast_group_session`](crate::client::fluent_builders::StartMulticastGroupSession).
 ///
 /// `ParseStrictResponse` impl for `StartMulticastGroupSession`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -3055,7 +3055,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartMulticastGroupSessi
 /// Operation shape for `TagResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`tag_resource`](crate::client::Client::tag_resource).
+/// [`tag_resource`](crate::client::fluent_builders::TagResource).
 ///
 /// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -3088,7 +3088,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// Operation shape for `TestWirelessDevice`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`test_wireless_device`](crate::client::Client::test_wireless_device).
+/// [`test_wireless_device`](crate::client::fluent_builders::TestWirelessDevice).
 ///
 /// `ParseStrictResponse` impl for `TestWirelessDevice`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -3123,7 +3123,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TestWirelessDevice {
 /// Operation shape for `UntagResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`untag_resource`](crate::client::Client::untag_resource).
+/// [`untag_resource`](crate::client::fluent_builders::UntagResource).
 ///
 /// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -3156,7 +3156,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// Operation shape for `UpdateDestination`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_destination`](crate::client::Client::update_destination).
+/// [`update_destination`](crate::client::fluent_builders::UpdateDestination).
 ///
 /// `ParseStrictResponse` impl for `UpdateDestination`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -3191,7 +3191,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateDestination {
 /// Operation shape for `UpdateEventConfigurationByResourceTypes`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_event_configuration_by_resource_types`](crate::client::Client::update_event_configuration_by_resource_types).
+/// [`update_event_configuration_by_resource_types`](crate::client::fluent_builders::UpdateEventConfigurationByResourceTypes).
 ///
 /// `ParseStrictResponse` impl for `UpdateEventConfigurationByResourceTypes`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -3230,7 +3230,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateEventConfiguration
 /// Operation shape for `UpdateFuotaTask`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_fuota_task`](crate::client::Client::update_fuota_task).
+/// [`update_fuota_task`](crate::client::fluent_builders::UpdateFuotaTask).
 ///
 /// `ParseStrictResponse` impl for `UpdateFuotaTask`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -3265,7 +3265,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateFuotaTask {
 /// Operation shape for `UpdateLogLevelsByResourceTypes`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_log_levels_by_resource_types`](crate::client::Client::update_log_levels_by_resource_types).
+/// [`update_log_levels_by_resource_types`](crate::client::fluent_builders::UpdateLogLevelsByResourceTypes).
 ///
 /// `ParseStrictResponse` impl for `UpdateLogLevelsByResourceTypes`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -3300,7 +3300,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateLogLevelsByResourc
 /// Operation shape for `UpdateMulticastGroup`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_multicast_group`](crate::client::Client::update_multicast_group).
+/// [`update_multicast_group`](crate::client::fluent_builders::UpdateMulticastGroup).
 ///
 /// `ParseStrictResponse` impl for `UpdateMulticastGroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -3335,7 +3335,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateMulticastGroup {
 /// Operation shape for `UpdateNetworkAnalyzerConfiguration`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_network_analyzer_configuration`](crate::client::Client::update_network_analyzer_configuration).
+/// [`update_network_analyzer_configuration`](crate::client::fluent_builders::UpdateNetworkAnalyzerConfiguration).
 ///
 /// `ParseStrictResponse` impl for `UpdateNetworkAnalyzerConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -3370,7 +3370,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateNetworkAnalyzerCon
 /// Operation shape for `UpdatePartnerAccount`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_partner_account`](crate::client::Client::update_partner_account).
+/// [`update_partner_account`](crate::client::fluent_builders::UpdatePartnerAccount).
 ///
 /// `ParseStrictResponse` impl for `UpdatePartnerAccount`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -3405,7 +3405,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdatePartnerAccount {
 /// Operation shape for `UpdatePosition`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_position`](crate::client::Client::update_position).
+/// [`update_position`](crate::client::fluent_builders::UpdatePosition).
 ///
 /// `ParseStrictResponse` impl for `UpdatePosition`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -3438,7 +3438,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdatePosition {
 /// Operation shape for `UpdateResourceEventConfiguration`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_resource_event_configuration`](crate::client::Client::update_resource_event_configuration).
+/// [`update_resource_event_configuration`](crate::client::fluent_builders::UpdateResourceEventConfiguration).
 ///
 /// `ParseStrictResponse` impl for `UpdateResourceEventConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -3473,7 +3473,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateResourceEventConfi
 /// Operation shape for `UpdateResourcePosition`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_resource_position`](crate::client::Client::update_resource_position).
+/// [`update_resource_position`](crate::client::fluent_builders::UpdateResourcePosition).
 ///
 /// `ParseStrictResponse` impl for `UpdateResourcePosition`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -3508,7 +3508,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateResourcePosition {
 /// Operation shape for `UpdateWirelessDevice`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_wireless_device`](crate::client::Client::update_wireless_device).
+/// [`update_wireless_device`](crate::client::fluent_builders::UpdateWirelessDevice).
 ///
 /// `ParseStrictResponse` impl for `UpdateWirelessDevice`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -3543,7 +3543,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateWirelessDevice {
 /// Operation shape for `UpdateWirelessGateway`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_wireless_gateway`](crate::client::Client::update_wireless_gateway).
+/// [`update_wireless_gateway`](crate::client::fluent_builders::UpdateWirelessGateway).
 ///
 /// `ParseStrictResponse` impl for `UpdateWirelessGateway`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

@@ -2,7 +2,7 @@
 /// Operation shape for `AddFacetToObject`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`add_facet_to_object`](crate::client::Client::add_facet_to_object).
+/// [`add_facet_to_object`](crate::client::fluent_builders::AddFacetToObject).
 ///
 /// `ParseStrictResponse` impl for `AddFacetToObject`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -37,7 +37,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AddFacetToObject {
 /// Operation shape for `ApplySchema`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`apply_schema`](crate::client::Client::apply_schema).
+/// [`apply_schema`](crate::client::fluent_builders::ApplySchema).
 ///
 /// `ParseStrictResponse` impl for `ApplySchema`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -70,7 +70,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ApplySchema {
 /// Operation shape for `AttachObject`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`attach_object`](crate::client::Client::attach_object).
+/// [`attach_object`](crate::client::fluent_builders::AttachObject).
 ///
 /// `ParseStrictResponse` impl for `AttachObject`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -103,7 +103,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AttachObject {
 /// Operation shape for `AttachPolicy`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`attach_policy`](crate::client::Client::attach_policy).
+/// [`attach_policy`](crate::client::fluent_builders::AttachPolicy).
 ///
 /// `ParseStrictResponse` impl for `AttachPolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -136,7 +136,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AttachPolicy {
 /// Operation shape for `AttachToIndex`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`attach_to_index`](crate::client::Client::attach_to_index).
+/// [`attach_to_index`](crate::client::fluent_builders::AttachToIndex).
 ///
 /// `ParseStrictResponse` impl for `AttachToIndex`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -169,7 +169,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AttachToIndex {
 /// Operation shape for `AttachTypedLink`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`attach_typed_link`](crate::client::Client::attach_typed_link).
+/// [`attach_typed_link`](crate::client::fluent_builders::AttachTypedLink).
 ///
 /// `ParseStrictResponse` impl for `AttachTypedLink`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -204,7 +204,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AttachTypedLink {
 /// Operation shape for `BatchRead`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`batch_read`](crate::client::Client::batch_read).
+/// [`batch_read`](crate::client::fluent_builders::BatchRead).
 ///
 /// `ParseStrictResponse` impl for `BatchRead`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -236,7 +236,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchRead {
 /// Operation shape for `BatchWrite`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`batch_write`](crate::client::Client::batch_write).
+/// [`batch_write`](crate::client::fluent_builders::BatchWrite).
 ///
 /// `ParseStrictResponse` impl for `BatchWrite`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -269,7 +269,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchWrite {
 /// Operation shape for `CreateDirectory`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_directory`](crate::client::Client::create_directory).
+/// [`create_directory`](crate::client::fluent_builders::CreateDirectory).
 ///
 /// `ParseStrictResponse` impl for `CreateDirectory`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -304,7 +304,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateDirectory {
 /// Operation shape for `CreateFacet`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_facet`](crate::client::Client::create_facet).
+/// [`create_facet`](crate::client::fluent_builders::CreateFacet).
 ///
 /// `ParseStrictResponse` impl for `CreateFacet`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -337,7 +337,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateFacet {
 /// Operation shape for `CreateIndex`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_index`](crate::client::Client::create_index).
+/// [`create_index`](crate::client::fluent_builders::CreateIndex).
 ///
 /// `ParseStrictResponse` impl for `CreateIndex`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -370,7 +370,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateIndex {
 /// Operation shape for `CreateObject`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_object`](crate::client::Client::create_object).
+/// [`create_object`](crate::client::fluent_builders::CreateObject).
 ///
 /// `ParseStrictResponse` impl for `CreateObject`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -403,7 +403,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateObject {
 /// Operation shape for `CreateSchema`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_schema`](crate::client::Client::create_schema).
+/// [`create_schema`](crate::client::fluent_builders::CreateSchema).
 ///
 /// `ParseStrictResponse` impl for `CreateSchema`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -436,7 +436,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateSchema {
 /// Operation shape for `CreateTypedLinkFacet`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_typed_link_facet`](crate::client::Client::create_typed_link_facet).
+/// [`create_typed_link_facet`](crate::client::fluent_builders::CreateTypedLinkFacet).
 ///
 /// `ParseStrictResponse` impl for `CreateTypedLinkFacet`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -471,7 +471,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateTypedLinkFacet {
 /// Operation shape for `DeleteDirectory`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_directory`](crate::client::Client::delete_directory).
+/// [`delete_directory`](crate::client::fluent_builders::DeleteDirectory).
 ///
 /// `ParseStrictResponse` impl for `DeleteDirectory`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -506,7 +506,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteDirectory {
 /// Operation shape for `DeleteFacet`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_facet`](crate::client::Client::delete_facet).
+/// [`delete_facet`](crate::client::fluent_builders::DeleteFacet).
 ///
 /// `ParseStrictResponse` impl for `DeleteFacet`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -539,7 +539,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteFacet {
 /// Operation shape for `DeleteObject`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_object`](crate::client::Client::delete_object).
+/// [`delete_object`](crate::client::fluent_builders::DeleteObject).
 ///
 /// `ParseStrictResponse` impl for `DeleteObject`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -572,7 +572,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteObject {
 /// Operation shape for `DeleteSchema`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_schema`](crate::client::Client::delete_schema).
+/// [`delete_schema`](crate::client::fluent_builders::DeleteSchema).
 ///
 /// `ParseStrictResponse` impl for `DeleteSchema`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -605,7 +605,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteSchema {
 /// Operation shape for `DeleteTypedLinkFacet`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_typed_link_facet`](crate::client::Client::delete_typed_link_facet).
+/// [`delete_typed_link_facet`](crate::client::fluent_builders::DeleteTypedLinkFacet).
 ///
 /// `ParseStrictResponse` impl for `DeleteTypedLinkFacet`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -640,7 +640,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteTypedLinkFacet {
 /// Operation shape for `DetachFromIndex`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`detach_from_index`](crate::client::Client::detach_from_index).
+/// [`detach_from_index`](crate::client::fluent_builders::DetachFromIndex).
 ///
 /// `ParseStrictResponse` impl for `DetachFromIndex`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -675,7 +675,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DetachFromIndex {
 /// Operation shape for `DetachObject`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`detach_object`](crate::client::Client::detach_object).
+/// [`detach_object`](crate::client::fluent_builders::DetachObject).
 ///
 /// `ParseStrictResponse` impl for `DetachObject`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -708,7 +708,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DetachObject {
 /// Operation shape for `DetachPolicy`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`detach_policy`](crate::client::Client::detach_policy).
+/// [`detach_policy`](crate::client::fluent_builders::DetachPolicy).
 ///
 /// `ParseStrictResponse` impl for `DetachPolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -741,7 +741,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DetachPolicy {
 /// Operation shape for `DetachTypedLink`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`detach_typed_link`](crate::client::Client::detach_typed_link).
+/// [`detach_typed_link`](crate::client::fluent_builders::DetachTypedLink).
 ///
 /// `ParseStrictResponse` impl for `DetachTypedLink`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -776,7 +776,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DetachTypedLink {
 /// Operation shape for `DisableDirectory`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`disable_directory`](crate::client::Client::disable_directory).
+/// [`disable_directory`](crate::client::fluent_builders::DisableDirectory).
 ///
 /// `ParseStrictResponse` impl for `DisableDirectory`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -811,7 +811,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisableDirectory {
 /// Operation shape for `EnableDirectory`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`enable_directory`](crate::client::Client::enable_directory).
+/// [`enable_directory`](crate::client::fluent_builders::EnableDirectory).
 ///
 /// `ParseStrictResponse` impl for `EnableDirectory`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -846,7 +846,7 @@ impl aws_smithy_http::response::ParseStrictResponse for EnableDirectory {
 /// Operation shape for `GetAppliedSchemaVersion`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_applied_schema_version`](crate::client::Client::get_applied_schema_version).
+/// [`get_applied_schema_version`](crate::client::fluent_builders::GetAppliedSchemaVersion).
 ///
 /// `ParseStrictResponse` impl for `GetAppliedSchemaVersion`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -881,7 +881,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAppliedSchemaVersion 
 /// Operation shape for `GetDirectory`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_directory`](crate::client::Client::get_directory).
+/// [`get_directory`](crate::client::fluent_builders::GetDirectory).
 ///
 /// `ParseStrictResponse` impl for `GetDirectory`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -914,7 +914,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDirectory {
 /// Operation shape for `GetFacet`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_facet`](crate::client::Client::get_facet).
+/// [`get_facet`](crate::client::fluent_builders::GetFacet).
 ///
 /// `ParseStrictResponse` impl for `GetFacet`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -946,7 +946,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetFacet {
 /// Operation shape for `GetLinkAttributes`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_link_attributes`](crate::client::Client::get_link_attributes).
+/// [`get_link_attributes`](crate::client::fluent_builders::GetLinkAttributes).
 ///
 /// `ParseStrictResponse` impl for `GetLinkAttributes`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -981,7 +981,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetLinkAttributes {
 /// Operation shape for `GetObjectAttributes`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_object_attributes`](crate::client::Client::get_object_attributes).
+/// [`get_object_attributes`](crate::client::fluent_builders::GetObjectAttributes).
 ///
 /// `ParseStrictResponse` impl for `GetObjectAttributes`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1016,7 +1016,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetObjectAttributes {
 /// Operation shape for `GetObjectInformation`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_object_information`](crate::client::Client::get_object_information).
+/// [`get_object_information`](crate::client::fluent_builders::GetObjectInformation).
 ///
 /// `ParseStrictResponse` impl for `GetObjectInformation`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1051,7 +1051,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetObjectInformation {
 /// Operation shape for `GetSchemaAsJson`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_schema_as_json`](crate::client::Client::get_schema_as_json).
+/// [`get_schema_as_json`](crate::client::fluent_builders::GetSchemaAsJson).
 ///
 /// `ParseStrictResponse` impl for `GetSchemaAsJson`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1086,7 +1086,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSchemaAsJson {
 /// Operation shape for `GetTypedLinkFacetInformation`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_typed_link_facet_information`](crate::client::Client::get_typed_link_facet_information).
+/// [`get_typed_link_facet_information`](crate::client::fluent_builders::GetTypedLinkFacetInformation).
 ///
 /// `ParseStrictResponse` impl for `GetTypedLinkFacetInformation`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1121,7 +1121,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetTypedLinkFacetInforma
 /// Operation shape for `ListAppliedSchemaArns`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_applied_schema_arns`](crate::client::Client::list_applied_schema_arns).
+/// [`list_applied_schema_arns`](crate::client::fluent_builders::ListAppliedSchemaArns).
 ///
 /// `ParseStrictResponse` impl for `ListAppliedSchemaArns`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1156,7 +1156,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAppliedSchemaArns {
 /// Operation shape for `ListAttachedIndices`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_attached_indices`](crate::client::Client::list_attached_indices).
+/// [`list_attached_indices`](crate::client::fluent_builders::ListAttachedIndices).
 ///
 /// `ParseStrictResponse` impl for `ListAttachedIndices`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1191,7 +1191,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAttachedIndices {
 /// Operation shape for `ListDevelopmentSchemaArns`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_development_schema_arns`](crate::client::Client::list_development_schema_arns).
+/// [`list_development_schema_arns`](crate::client::fluent_builders::ListDevelopmentSchemaArns).
 ///
 /// `ParseStrictResponse` impl for `ListDevelopmentSchemaArns`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1226,7 +1226,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListDevelopmentSchemaArn
 /// Operation shape for `ListDirectories`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_directories`](crate::client::Client::list_directories).
+/// [`list_directories`](crate::client::fluent_builders::ListDirectories).
 ///
 /// `ParseStrictResponse` impl for `ListDirectories`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1261,7 +1261,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListDirectories {
 /// Operation shape for `ListFacetAttributes`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_facet_attributes`](crate::client::Client::list_facet_attributes).
+/// [`list_facet_attributes`](crate::client::fluent_builders::ListFacetAttributes).
 ///
 /// `ParseStrictResponse` impl for `ListFacetAttributes`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1296,7 +1296,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListFacetAttributes {
 /// Operation shape for `ListFacetNames`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_facet_names`](crate::client::Client::list_facet_names).
+/// [`list_facet_names`](crate::client::fluent_builders::ListFacetNames).
 ///
 /// `ParseStrictResponse` impl for `ListFacetNames`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1329,7 +1329,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListFacetNames {
 /// Operation shape for `ListIncomingTypedLinks`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_incoming_typed_links`](crate::client::Client::list_incoming_typed_links).
+/// [`list_incoming_typed_links`](crate::client::fluent_builders::ListIncomingTypedLinks).
 ///
 /// `ParseStrictResponse` impl for `ListIncomingTypedLinks`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1364,7 +1364,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListIncomingTypedLinks {
 /// Operation shape for `ListIndex`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_index`](crate::client::Client::list_index).
+/// [`list_index`](crate::client::fluent_builders::ListIndex).
 ///
 /// `ParseStrictResponse` impl for `ListIndex`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1396,7 +1396,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListIndex {
 /// Operation shape for `ListManagedSchemaArns`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_managed_schema_arns`](crate::client::Client::list_managed_schema_arns).
+/// [`list_managed_schema_arns`](crate::client::fluent_builders::ListManagedSchemaArns).
 ///
 /// `ParseStrictResponse` impl for `ListManagedSchemaArns`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1431,7 +1431,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListManagedSchemaArns {
 /// Operation shape for `ListObjectAttributes`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_object_attributes`](crate::client::Client::list_object_attributes).
+/// [`list_object_attributes`](crate::client::fluent_builders::ListObjectAttributes).
 ///
 /// `ParseStrictResponse` impl for `ListObjectAttributes`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1466,7 +1466,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListObjectAttributes {
 /// Operation shape for `ListObjectChildren`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_object_children`](crate::client::Client::list_object_children).
+/// [`list_object_children`](crate::client::fluent_builders::ListObjectChildren).
 ///
 /// `ParseStrictResponse` impl for `ListObjectChildren`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1501,7 +1501,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListObjectChildren {
 /// Operation shape for `ListObjectParentPaths`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_object_parent_paths`](crate::client::Client::list_object_parent_paths).
+/// [`list_object_parent_paths`](crate::client::fluent_builders::ListObjectParentPaths).
 ///
 /// `ParseStrictResponse` impl for `ListObjectParentPaths`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1536,7 +1536,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListObjectParentPaths {
 /// Operation shape for `ListObjectParents`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_object_parents`](crate::client::Client::list_object_parents).
+/// [`list_object_parents`](crate::client::fluent_builders::ListObjectParents).
 ///
 /// `ParseStrictResponse` impl for `ListObjectParents`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1571,7 +1571,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListObjectParents {
 /// Operation shape for `ListObjectPolicies`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_object_policies`](crate::client::Client::list_object_policies).
+/// [`list_object_policies`](crate::client::fluent_builders::ListObjectPolicies).
 ///
 /// `ParseStrictResponse` impl for `ListObjectPolicies`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1606,7 +1606,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListObjectPolicies {
 /// Operation shape for `ListOutgoingTypedLinks`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_outgoing_typed_links`](crate::client::Client::list_outgoing_typed_links).
+/// [`list_outgoing_typed_links`](crate::client::fluent_builders::ListOutgoingTypedLinks).
 ///
 /// `ParseStrictResponse` impl for `ListOutgoingTypedLinks`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1641,7 +1641,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListOutgoingTypedLinks {
 /// Operation shape for `ListPolicyAttachments`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_policy_attachments`](crate::client::Client::list_policy_attachments).
+/// [`list_policy_attachments`](crate::client::fluent_builders::ListPolicyAttachments).
 ///
 /// `ParseStrictResponse` impl for `ListPolicyAttachments`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1676,7 +1676,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListPolicyAttachments {
 /// Operation shape for `ListPublishedSchemaArns`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_published_schema_arns`](crate::client::Client::list_published_schema_arns).
+/// [`list_published_schema_arns`](crate::client::fluent_builders::ListPublishedSchemaArns).
 ///
 /// `ParseStrictResponse` impl for `ListPublishedSchemaArns`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1711,7 +1711,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListPublishedSchemaArns 
 /// Operation shape for `ListTagsForResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
+/// [`list_tags_for_resource`](crate::client::fluent_builders::ListTagsForResource).
 ///
 /// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1746,7 +1746,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// Operation shape for `ListTypedLinkFacetAttributes`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_typed_link_facet_attributes`](crate::client::Client::list_typed_link_facet_attributes).
+/// [`list_typed_link_facet_attributes`](crate::client::fluent_builders::ListTypedLinkFacetAttributes).
 ///
 /// `ParseStrictResponse` impl for `ListTypedLinkFacetAttributes`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1781,7 +1781,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTypedLinkFacetAttrib
 /// Operation shape for `ListTypedLinkFacetNames`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_typed_link_facet_names`](crate::client::Client::list_typed_link_facet_names).
+/// [`list_typed_link_facet_names`](crate::client::fluent_builders::ListTypedLinkFacetNames).
 ///
 /// `ParseStrictResponse` impl for `ListTypedLinkFacetNames`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1816,7 +1816,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTypedLinkFacetNames 
 /// Operation shape for `LookupPolicy`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`lookup_policy`](crate::client::Client::lookup_policy).
+/// [`lookup_policy`](crate::client::fluent_builders::LookupPolicy).
 ///
 /// `ParseStrictResponse` impl for `LookupPolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1849,7 +1849,7 @@ impl aws_smithy_http::response::ParseStrictResponse for LookupPolicy {
 /// Operation shape for `PublishSchema`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`publish_schema`](crate::client::Client::publish_schema).
+/// [`publish_schema`](crate::client::fluent_builders::PublishSchema).
 ///
 /// `ParseStrictResponse` impl for `PublishSchema`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1882,7 +1882,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PublishSchema {
 /// Operation shape for `PutSchemaFromJson`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`put_schema_from_json`](crate::client::Client::put_schema_from_json).
+/// [`put_schema_from_json`](crate::client::fluent_builders::PutSchemaFromJson).
 ///
 /// `ParseStrictResponse` impl for `PutSchemaFromJson`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1917,7 +1917,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutSchemaFromJson {
 /// Operation shape for `RemoveFacetFromObject`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`remove_facet_from_object`](crate::client::Client::remove_facet_from_object).
+/// [`remove_facet_from_object`](crate::client::fluent_builders::RemoveFacetFromObject).
 ///
 /// `ParseStrictResponse` impl for `RemoveFacetFromObject`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1952,7 +1952,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RemoveFacetFromObject {
 /// Operation shape for `TagResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`tag_resource`](crate::client::Client::tag_resource).
+/// [`tag_resource`](crate::client::fluent_builders::TagResource).
 ///
 /// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1985,7 +1985,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// Operation shape for `UntagResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`untag_resource`](crate::client::Client::untag_resource).
+/// [`untag_resource`](crate::client::fluent_builders::UntagResource).
 ///
 /// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2018,7 +2018,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// Operation shape for `UpdateFacet`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_facet`](crate::client::Client::update_facet).
+/// [`update_facet`](crate::client::fluent_builders::UpdateFacet).
 ///
 /// `ParseStrictResponse` impl for `UpdateFacet`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2051,7 +2051,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateFacet {
 /// Operation shape for `UpdateLinkAttributes`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_link_attributes`](crate::client::Client::update_link_attributes).
+/// [`update_link_attributes`](crate::client::fluent_builders::UpdateLinkAttributes).
 ///
 /// `ParseStrictResponse` impl for `UpdateLinkAttributes`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2086,7 +2086,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateLinkAttributes {
 /// Operation shape for `UpdateObjectAttributes`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_object_attributes`](crate::client::Client::update_object_attributes).
+/// [`update_object_attributes`](crate::client::fluent_builders::UpdateObjectAttributes).
 ///
 /// `ParseStrictResponse` impl for `UpdateObjectAttributes`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2121,7 +2121,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateObjectAttributes {
 /// Operation shape for `UpdateSchema`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_schema`](crate::client::Client::update_schema).
+/// [`update_schema`](crate::client::fluent_builders::UpdateSchema).
 ///
 /// `ParseStrictResponse` impl for `UpdateSchema`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2154,7 +2154,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateSchema {
 /// Operation shape for `UpdateTypedLinkFacet`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_typed_link_facet`](crate::client::Client::update_typed_link_facet).
+/// [`update_typed_link_facet`](crate::client::fluent_builders::UpdateTypedLinkFacet).
 ///
 /// `ParseStrictResponse` impl for `UpdateTypedLinkFacet`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2189,7 +2189,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateTypedLinkFacet {
 /// Operation shape for `UpgradeAppliedSchema`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`upgrade_applied_schema`](crate::client::Client::upgrade_applied_schema).
+/// [`upgrade_applied_schema`](crate::client::fluent_builders::UpgradeAppliedSchema).
 ///
 /// `ParseStrictResponse` impl for `UpgradeAppliedSchema`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2224,7 +2224,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpgradeAppliedSchema {
 /// Operation shape for `UpgradePublishedSchema`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`upgrade_published_schema`](crate::client::Client::upgrade_published_schema).
+/// [`upgrade_published_schema`](crate::client::fluent_builders::UpgradePublishedSchema).
 ///
 /// `ParseStrictResponse` impl for `UpgradePublishedSchema`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

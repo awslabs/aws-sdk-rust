@@ -2,7 +2,7 @@
 /// Operation shape for `CreateAccessToken`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_access_token`](crate::client::Client::create_access_token).
+/// [`create_access_token`](crate::client::fluent_builders::CreateAccessToken).
 ///
 /// `ParseStrictResponse` impl for `CreateAccessToken`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -37,7 +37,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateAccessToken {
 /// Operation shape for `CreateDevEnvironment`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_dev_environment`](crate::client::Client::create_dev_environment).
+/// [`create_dev_environment`](crate::client::fluent_builders::CreateDevEnvironment).
 ///
 /// `ParseStrictResponse` impl for `CreateDevEnvironment`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -72,7 +72,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateDevEnvironment {
 /// Operation shape for `CreateProject`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_project`](crate::client::Client::create_project).
+/// [`create_project`](crate::client::fluent_builders::CreateProject).
 ///
 /// `ParseStrictResponse` impl for `CreateProject`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -105,7 +105,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateProject {
 /// Operation shape for `CreateSourceRepositoryBranch`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_source_repository_branch`](crate::client::Client::create_source_repository_branch).
+/// [`create_source_repository_branch`](crate::client::fluent_builders::CreateSourceRepositoryBranch).
 ///
 /// `ParseStrictResponse` impl for `CreateSourceRepositoryBranch`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -140,7 +140,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateSourceRepositoryBr
 /// Operation shape for `DeleteAccessToken`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_access_token`](crate::client::Client::delete_access_token).
+/// [`delete_access_token`](crate::client::fluent_builders::DeleteAccessToken).
 ///
 /// `ParseStrictResponse` impl for `DeleteAccessToken`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -175,7 +175,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteAccessToken {
 /// Operation shape for `DeleteDevEnvironment`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_dev_environment`](crate::client::Client::delete_dev_environment).
+/// [`delete_dev_environment`](crate::client::fluent_builders::DeleteDevEnvironment).
 ///
 /// `ParseStrictResponse` impl for `DeleteDevEnvironment`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -210,7 +210,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteDevEnvironment {
 /// Operation shape for `GetDevEnvironment`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_dev_environment`](crate::client::Client::get_dev_environment).
+/// [`get_dev_environment`](crate::client::fluent_builders::GetDevEnvironment).
 ///
 /// `ParseStrictResponse` impl for `GetDevEnvironment`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -245,7 +245,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDevEnvironment {
 /// Operation shape for `GetProject`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_project`](crate::client::Client::get_project).
+/// [`get_project`](crate::client::fluent_builders::GetProject).
 ///
 /// `ParseStrictResponse` impl for `GetProject`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -278,7 +278,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetProject {
 /// Operation shape for `GetSourceRepositoryCloneUrls`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_source_repository_clone_urls`](crate::client::Client::get_source_repository_clone_urls).
+/// [`get_source_repository_clone_urls`](crate::client::fluent_builders::GetSourceRepositoryCloneUrls).
 ///
 /// `ParseStrictResponse` impl for `GetSourceRepositoryCloneUrls`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -313,7 +313,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSourceRepositoryClone
 /// Operation shape for `GetSpace`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_space`](crate::client::Client::get_space).
+/// [`get_space`](crate::client::fluent_builders::GetSpace).
 ///
 /// `ParseStrictResponse` impl for `GetSpace`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -345,7 +345,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSpace {
 /// Operation shape for `GetSubscription`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_subscription`](crate::client::Client::get_subscription).
+/// [`get_subscription`](crate::client::fluent_builders::GetSubscription).
 ///
 /// `ParseStrictResponse` impl for `GetSubscription`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -380,7 +380,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSubscription {
 /// Operation shape for `GetUserDetails`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_user_details`](crate::client::Client::get_user_details).
+/// [`get_user_details`](crate::client::fluent_builders::GetUserDetails).
 ///
 /// `ParseStrictResponse` impl for `GetUserDetails`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -413,7 +413,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetUserDetails {
 /// Operation shape for `ListAccessTokens`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_access_tokens`](crate::client::Client::list_access_tokens).
+/// [`list_access_tokens`](crate::client::fluent_builders::ListAccessTokens).
 ///
 /// `ParseStrictResponse` impl for `ListAccessTokens`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -448,7 +448,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAccessTokens {
 /// Operation shape for `ListDevEnvironments`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_dev_environments`](crate::client::Client::list_dev_environments).
+/// [`list_dev_environments`](crate::client::fluent_builders::ListDevEnvironments).
 ///
 /// `ParseStrictResponse` impl for `ListDevEnvironments`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -483,7 +483,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListDevEnvironments {
 /// Operation shape for `ListEventLogs`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_event_logs`](crate::client::Client::list_event_logs).
+/// [`list_event_logs`](crate::client::fluent_builders::ListEventLogs).
 ///
 /// `ParseStrictResponse` impl for `ListEventLogs`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -516,7 +516,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListEventLogs {
 /// Operation shape for `ListProjects`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_projects`](crate::client::Client::list_projects).
+/// [`list_projects`](crate::client::fluent_builders::ListProjects).
 ///
 /// `ParseStrictResponse` impl for `ListProjects`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -549,7 +549,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListProjects {
 /// Operation shape for `ListSourceRepositories`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_source_repositories`](crate::client::Client::list_source_repositories).
+/// [`list_source_repositories`](crate::client::fluent_builders::ListSourceRepositories).
 ///
 /// `ParseStrictResponse` impl for `ListSourceRepositories`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -584,7 +584,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListSourceRepositories {
 /// Operation shape for `ListSourceRepositoryBranches`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_source_repository_branches`](crate::client::Client::list_source_repository_branches).
+/// [`list_source_repository_branches`](crate::client::fluent_builders::ListSourceRepositoryBranches).
 ///
 /// `ParseStrictResponse` impl for `ListSourceRepositoryBranches`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -619,7 +619,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListSourceRepositoryBran
 /// Operation shape for `ListSpaces`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_spaces`](crate::client::Client::list_spaces).
+/// [`list_spaces`](crate::client::fluent_builders::ListSpaces).
 ///
 /// `ParseStrictResponse` impl for `ListSpaces`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -652,7 +652,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListSpaces {
 /// Operation shape for `StartDevEnvironment`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`start_dev_environment`](crate::client::Client::start_dev_environment).
+/// [`start_dev_environment`](crate::client::fluent_builders::StartDevEnvironment).
 ///
 /// `ParseStrictResponse` impl for `StartDevEnvironment`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -687,7 +687,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartDevEnvironment {
 /// Operation shape for `StartDevEnvironmentSession`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`start_dev_environment_session`](crate::client::Client::start_dev_environment_session).
+/// [`start_dev_environment_session`](crate::client::fluent_builders::StartDevEnvironmentSession).
 ///
 /// `ParseStrictResponse` impl for `StartDevEnvironmentSession`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -722,7 +722,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartDevEnvironmentSessi
 /// Operation shape for `StopDevEnvironment`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`stop_dev_environment`](crate::client::Client::stop_dev_environment).
+/// [`stop_dev_environment`](crate::client::fluent_builders::StopDevEnvironment).
 ///
 /// `ParseStrictResponse` impl for `StopDevEnvironment`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -757,7 +757,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StopDevEnvironment {
 /// Operation shape for `UpdateDevEnvironment`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_dev_environment`](crate::client::Client::update_dev_environment).
+/// [`update_dev_environment`](crate::client::fluent_builders::UpdateDevEnvironment).
 ///
 /// `ParseStrictResponse` impl for `UpdateDevEnvironment`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -792,7 +792,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateDevEnvironment {
 /// Operation shape for `VerifySession`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`verify_session`](crate::client::Client::verify_session).
+/// [`verify_session`](crate::client::fluent_builders::VerifySession).
 ///
 /// `ParseStrictResponse` impl for `VerifySession`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

@@ -100,8 +100,8 @@ impl Client {
     /// - On success, responds with [`CreateProjectOutput`](crate::output::CreateProjectOutput) with field(s):
     ///   - [`details(Option<ProjectDetails>)`](crate::output::CreateProjectOutput::details): <p> Detailed information about the created AWS Mobile Hub project. </p>
     /// - On failure, responds with [`SdkError<CreateProjectError>`](crate::error::CreateProjectError)
-    pub fn create_project(&self) -> fluent_builders::CreateProject {
-        fluent_builders::CreateProject::new(self.handle.clone())
+    pub fn create_project(&self) -> crate::client::fluent_builders::CreateProject {
+        crate::client::fluent_builders::CreateProject::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`DeleteProject`](crate::client::fluent_builders::DeleteProject) operation.
     ///
@@ -111,8 +111,8 @@ impl Client {
     ///   - [`deleted_resources(Option<Vec<Resource>>)`](crate::output::DeleteProjectOutput::deleted_resources): <p> Resources which were deleted. </p>
     ///   - [`orphaned_resources(Option<Vec<Resource>>)`](crate::output::DeleteProjectOutput::orphaned_resources): <p> Resources which were not deleted, due to a risk of losing potentially important data or files. </p>
     /// - On failure, responds with [`SdkError<DeleteProjectError>`](crate::error::DeleteProjectError)
-    pub fn delete_project(&self) -> fluent_builders::DeleteProject {
-        fluent_builders::DeleteProject::new(self.handle.clone())
+    pub fn delete_project(&self) -> crate::client::fluent_builders::DeleteProject {
+        crate::client::fluent_builders::DeleteProject::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`DescribeBundle`](crate::client::fluent_builders::DescribeBundle) operation.
     ///
@@ -121,8 +121,8 @@ impl Client {
     /// - On success, responds with [`DescribeBundleOutput`](crate::output::DescribeBundleOutput) with field(s):
     ///   - [`details(Option<BundleDetails>)`](crate::output::DescribeBundleOutput::details): <p> The details of the bundle. </p>
     /// - On failure, responds with [`SdkError<DescribeBundleError>`](crate::error::DescribeBundleError)
-    pub fn describe_bundle(&self) -> fluent_builders::DescribeBundle {
-        fluent_builders::DescribeBundle::new(self.handle.clone())
+    pub fn describe_bundle(&self) -> crate::client::fluent_builders::DescribeBundle {
+        crate::client::fluent_builders::DescribeBundle::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`DescribeProject`](crate::client::fluent_builders::DescribeProject) operation.
     ///
@@ -132,8 +132,8 @@ impl Client {
     /// - On success, responds with [`DescribeProjectOutput`](crate::output::DescribeProjectOutput) with field(s):
     ///   - [`details(Option<ProjectDetails>)`](crate::output::DescribeProjectOutput::details): <p> Detailed information about an AWS Mobile Hub project. </p>
     /// - On failure, responds with [`SdkError<DescribeProjectError>`](crate::error::DescribeProjectError)
-    pub fn describe_project(&self) -> fluent_builders::DescribeProject {
-        fluent_builders::DescribeProject::new(self.handle.clone())
+    pub fn describe_project(&self) -> crate::client::fluent_builders::DescribeProject {
+        crate::client::fluent_builders::DescribeProject::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ExportBundle`](crate::client::fluent_builders::ExportBundle) operation.
     ///
@@ -144,8 +144,8 @@ impl Client {
     /// - On success, responds with [`ExportBundleOutput`](crate::output::ExportBundleOutput) with field(s):
     ///   - [`download_url(Option<String>)`](crate::output::ExportBundleOutput::download_url): <p> URL which contains the custom-generated SDK and tool packages used to integrate the client mobile app or web app with the AWS resources created by the AWS Mobile Hub project. </p>
     /// - On failure, responds with [`SdkError<ExportBundleError>`](crate::error::ExportBundleError)
-    pub fn export_bundle(&self) -> fluent_builders::ExportBundle {
-        fluent_builders::ExportBundle::new(self.handle.clone())
+    pub fn export_bundle(&self) -> crate::client::fluent_builders::ExportBundle {
+        crate::client::fluent_builders::ExportBundle::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ExportProject`](crate::client::fluent_builders::ExportProject) operation.
     ///
@@ -156,8 +156,8 @@ impl Client {
     ///   - [`share_url(Option<String>)`](crate::output::ExportProjectOutput::share_url): <p> URL which can be shared to allow other AWS users to create their own project in AWS Mobile Hub with the same configuration as the specified project. This URL pertains to a snapshot in time of the project configuration that is created when this API is called. If you want to share additional changes to your project configuration, then you will need to create and share a new snapshot by calling this method again. </p>
     ///   - [`snapshot_id(Option<String>)`](crate::output::ExportProjectOutput::snapshot_id): <p> Unique identifier for the exported snapshot of the project configuration. This snapshot identifier is included in the share URL. </p>
     /// - On failure, responds with [`SdkError<ExportProjectError>`](crate::error::ExportProjectError)
-    pub fn export_project(&self) -> fluent_builders::ExportProject {
-        fluent_builders::ExportProject::new(self.handle.clone())
+    pub fn export_project(&self) -> crate::client::fluent_builders::ExportProject {
+        crate::client::fluent_builders::ExportProject::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListBundles`](crate::client::fluent_builders::ListBundles) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListBundles::into_paginator).
@@ -169,8 +169,8 @@ impl Client {
     ///   - [`bundle_list(Option<Vec<BundleDetails>>)`](crate::output::ListBundlesOutput::bundle_list): <p> A list of bundles. </p>
     ///   - [`next_token(Option<String>)`](crate::output::ListBundlesOutput::next_token): <p> Pagination token. If non-null pagination token is returned in a result, then pass its value in another request to fetch more entries. </p>
     /// - On failure, responds with [`SdkError<ListBundlesError>`](crate::error::ListBundlesError)
-    pub fn list_bundles(&self) -> fluent_builders::ListBundles {
-        fluent_builders::ListBundles::new(self.handle.clone())
+    pub fn list_bundles(&self) -> crate::client::fluent_builders::ListBundles {
+        crate::client::fluent_builders::ListBundles::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListProjects`](crate::client::fluent_builders::ListProjects) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListProjects::into_paginator).
@@ -182,8 +182,8 @@ impl Client {
     ///   - [`projects(Option<Vec<ProjectSummary>>)`](crate::output::ListProjectsOutput::projects): <p> List of projects. </p>
     ///   - [`next_token(Option<String>)`](crate::output::ListProjectsOutput::next_token): <p> Pagination token. Set to null to start listing records from start. If non-null pagination token is returned in a result, then pass its value in here in another request to list more entries. </p>
     /// - On failure, responds with [`SdkError<ListProjectsError>`](crate::error::ListProjectsError)
-    pub fn list_projects(&self) -> fluent_builders::ListProjects {
-        fluent_builders::ListProjects::new(self.handle.clone())
+    pub fn list_projects(&self) -> crate::client::fluent_builders::ListProjects {
+        crate::client::fluent_builders::ListProjects::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`UpdateProject`](crate::client::fluent_builders::UpdateProject) operation.
     ///
@@ -193,775 +193,8 @@ impl Client {
     /// - On success, responds with [`UpdateProjectOutput`](crate::output::UpdateProjectOutput) with field(s):
     ///   - [`details(Option<ProjectDetails>)`](crate::output::UpdateProjectOutput::details): <p> Detailed information about the updated AWS Mobile Hub project. </p>
     /// - On failure, responds with [`SdkError<UpdateProjectError>`](crate::error::UpdateProjectError)
-    pub fn update_project(&self) -> fluent_builders::UpdateProject {
-        fluent_builders::UpdateProject::new(self.handle.clone())
-    }
-}
-pub mod fluent_builders {
-
-    //! Utilities to ergonomically construct a request to the service.
-    //!
-    //! Fluent builders are created through the [`Client`](crate::client::Client) by calling
-    //! one if its operation methods. After parameters are set using the builder methods,
-    //! the `send` method can be called to initiate the request.
-    /// Fluent builder constructing a request to `CreateProject`.
-    ///
-    /// <p> Creates an AWS Mobile Hub project. </p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct CreateProject {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::create_project_input::Builder,
-    }
-    impl CreateProject {
-        /// Creates a new `CreateProject`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::CreateProject,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::CreateProjectError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::CreateProjectOutput,
-            aws_smithy_http::result::SdkError<crate::error::CreateProjectError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// <p> Name of the project. </p>
-        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(input.into());
-            self
-        }
-        /// <p> Name of the project. </p>
-        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_name(input);
-            self
-        }
-        /// <p> Default region where project resources should be created. </p>
-        pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.region(input.into());
-            self
-        }
-        /// <p> Default region where project resources should be created. </p>
-        pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_region(input);
-            self
-        }
-        /// <p> ZIP or YAML file which contains configuration settings to be used when creating the project. This may be the contents of the file downloaded from the URL provided in an export project operation. </p>
-        pub fn contents(mut self, input: aws_smithy_types::Blob) -> Self {
-            self.inner = self.inner.contents(input);
-            self
-        }
-        /// <p> ZIP or YAML file which contains configuration settings to be used when creating the project. This may be the contents of the file downloaded from the URL provided in an export project operation. </p>
-        pub fn set_contents(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
-            self.inner = self.inner.set_contents(input);
-            self
-        }
-        /// <p> Unique identifier for an exported snapshot of project configuration. This snapshot identifier is included in the share URL when a project is exported. </p>
-        pub fn snapshot_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.snapshot_id(input.into());
-            self
-        }
-        /// <p> Unique identifier for an exported snapshot of project configuration. This snapshot identifier is included in the share URL when a project is exported. </p>
-        pub fn set_snapshot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_snapshot_id(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DeleteProject`.
-    ///
-    /// <p> Delets a project in AWS Mobile Hub. </p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DeleteProject {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::delete_project_input::Builder,
-    }
-    impl DeleteProject {
-        /// Creates a new `DeleteProject`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::DeleteProject,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::DeleteProjectError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::DeleteProjectOutput,
-            aws_smithy_http::result::SdkError<crate::error::DeleteProjectError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// <p> Unique project identifier. </p>
-        pub fn project_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_id(input.into());
-            self
-        }
-        /// <p> Unique project identifier. </p>
-        pub fn set_project_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_project_id(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DescribeBundle`.
-    ///
-    /// <p> Get the bundle details for the requested bundle id. </p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DescribeBundle {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::describe_bundle_input::Builder,
-    }
-    impl DescribeBundle {
-        /// Creates a new `DescribeBundle`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::DescribeBundle,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::DescribeBundleError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::DescribeBundleOutput,
-            aws_smithy_http::result::SdkError<crate::error::DescribeBundleError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// <p> Unique bundle identifier. </p>
-        pub fn bundle_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bundle_id(input.into());
-            self
-        }
-        /// <p> Unique bundle identifier. </p>
-        pub fn set_bundle_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_bundle_id(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DescribeProject`.
-    ///
-    /// <p> Gets details about a project in AWS Mobile Hub. </p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DescribeProject {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::describe_project_input::Builder,
-    }
-    impl DescribeProject {
-        /// Creates a new `DescribeProject`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::DescribeProject,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::DescribeProjectError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::DescribeProjectOutput,
-            aws_smithy_http::result::SdkError<crate::error::DescribeProjectError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// <p> Unique project identifier. </p>
-        pub fn project_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_id(input.into());
-            self
-        }
-        /// <p> Unique project identifier. </p>
-        pub fn set_project_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_project_id(input);
-            self
-        }
-        /// <p> If set to true, causes AWS Mobile Hub to synchronize information from other services, e.g., update state of AWS CloudFormation stacks in the AWS Mobile Hub project. </p>
-        pub fn sync_from_resources(mut self, input: bool) -> Self {
-            self.inner = self.inner.sync_from_resources(input);
-            self
-        }
-        /// <p> If set to true, causes AWS Mobile Hub to synchronize information from other services, e.g., update state of AWS CloudFormation stacks in the AWS Mobile Hub project. </p>
-        pub fn set_sync_from_resources(mut self, input: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_sync_from_resources(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `ExportBundle`.
-    ///
-    /// <p> Generates customized software development kit (SDK) and or tool packages used to integrate mobile web or mobile app clients with backend AWS resources. </p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct ExportBundle {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::export_bundle_input::Builder,
-    }
-    impl ExportBundle {
-        /// Creates a new `ExportBundle`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::ExportBundle,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::ExportBundleError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::ExportBundleOutput,
-            aws_smithy_http::result::SdkError<crate::error::ExportBundleError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// <p> Unique bundle identifier. </p>
-        pub fn bundle_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bundle_id(input.into());
-            self
-        }
-        /// <p> Unique bundle identifier. </p>
-        pub fn set_bundle_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_bundle_id(input);
-            self
-        }
-        /// <p> Unique project identifier. </p>
-        pub fn project_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_id(input.into());
-            self
-        }
-        /// <p> Unique project identifier. </p>
-        pub fn set_project_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_project_id(input);
-            self
-        }
-        /// <p> Developer desktop or target application platform. </p>
-        pub fn platform(mut self, input: crate::model::Platform) -> Self {
-            self.inner = self.inner.platform(input);
-            self
-        }
-        /// <p> Developer desktop or target application platform. </p>
-        pub fn set_platform(mut self, input: std::option::Option<crate::model::Platform>) -> Self {
-            self.inner = self.inner.set_platform(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `ExportProject`.
-    ///
-    /// <p> Exports project configuration to a snapshot which can be downloaded and shared. Note that mobile app push credentials are encrypted in exported projects, so they can only be shared successfully within the same AWS account. </p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct ExportProject {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::export_project_input::Builder,
-    }
-    impl ExportProject {
-        /// Creates a new `ExportProject`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::ExportProject,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::ExportProjectError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::ExportProjectOutput,
-            aws_smithy_http::result::SdkError<crate::error::ExportProjectError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// <p> Unique project identifier. </p>
-        pub fn project_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_id(input.into());
-            self
-        }
-        /// <p> Unique project identifier. </p>
-        pub fn set_project_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_project_id(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `ListBundles`.
-    ///
-    /// <p> List all available bundles. </p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct ListBundles {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::list_bundles_input::Builder,
-    }
-    impl ListBundles {
-        /// Creates a new `ListBundles`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::ListBundles,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::ListBundlesError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::ListBundlesOutput,
-            aws_smithy_http::result::SdkError<crate::error::ListBundlesError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// Create a paginator for this request
-        ///
-        /// Paginators are used by calling [`send().await`](crate::paginator::ListBundlesPaginator::send) which returns a `Stream`.
-        pub fn into_paginator(self) -> crate::paginator::ListBundlesPaginator {
-            crate::paginator::ListBundlesPaginator::new(self.handle, self.inner)
-        }
-        /// <p> Maximum number of records to list in a single response. </p>
-        pub fn max_results(mut self, input: i32) -> Self {
-            self.inner = self.inner.max_results(input);
-            self
-        }
-        /// <p> Maximum number of records to list in a single response. </p>
-        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(input);
-            self
-        }
-        /// <p> Pagination token. Set to null to start listing bundles from start. If non-null pagination token is returned in a result, then pass its value in here in another request to list more bundles. </p>
-        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(input.into());
-            self
-        }
-        /// <p> Pagination token. Set to null to start listing bundles from start. If non-null pagination token is returned in a result, then pass its value in here in another request to list more bundles. </p>
-        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `ListProjects`.
-    ///
-    /// <p> Lists projects in AWS Mobile Hub. </p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct ListProjects {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::list_projects_input::Builder,
-    }
-    impl ListProjects {
-        /// Creates a new `ListProjects`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::ListProjects,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::ListProjectsError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::ListProjectsOutput,
-            aws_smithy_http::result::SdkError<crate::error::ListProjectsError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// Create a paginator for this request
-        ///
-        /// Paginators are used by calling [`send().await`](crate::paginator::ListProjectsPaginator::send) which returns a `Stream`.
-        pub fn into_paginator(self) -> crate::paginator::ListProjectsPaginator {
-            crate::paginator::ListProjectsPaginator::new(self.handle, self.inner)
-        }
-        /// <p> Maximum number of records to list in a single response. </p>
-        pub fn max_results(mut self, input: i32) -> Self {
-            self.inner = self.inner.max_results(input);
-            self
-        }
-        /// <p> Maximum number of records to list in a single response. </p>
-        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(input);
-            self
-        }
-        /// <p> Pagination token. Set to null to start listing projects from start. If non-null pagination token is returned in a result, then pass its value in here in another request to list more projects. </p>
-        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(input.into());
-            self
-        }
-        /// <p> Pagination token. Set to null to start listing projects from start. If non-null pagination token is returned in a result, then pass its value in here in another request to list more projects. </p>
-        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `UpdateProject`.
-    ///
-    /// <p> Update an existing project. </p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct UpdateProject {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::update_project_input::Builder,
-    }
-    impl UpdateProject {
-        /// Creates a new `UpdateProject`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::UpdateProject,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::UpdateProjectError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::UpdateProjectOutput,
-            aws_smithy_http::result::SdkError<crate::error::UpdateProjectError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// <p> ZIP or YAML file which contains project configuration to be updated. This should be the contents of the file downloaded from the URL provided in an export project operation. </p>
-        pub fn contents(mut self, input: aws_smithy_types::Blob) -> Self {
-            self.inner = self.inner.contents(input);
-            self
-        }
-        /// <p> ZIP or YAML file which contains project configuration to be updated. This should be the contents of the file downloaded from the URL provided in an export project operation. </p>
-        pub fn set_contents(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
-            self.inner = self.inner.set_contents(input);
-            self
-        }
-        /// <p> Unique project identifier. </p>
-        pub fn project_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_id(input.into());
-            self
-        }
-        /// <p> Unique project identifier. </p>
-        pub fn set_project_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_project_id(input);
-            self
-        }
+    pub fn update_project(&self) -> crate::client::fluent_builders::UpdateProject {
+        crate::client::fluent_builders::UpdateProject::new(self.handle.clone())
     }
 }
 
@@ -1048,3 +281,10 @@ impl Client {
         }
     }
 }
+
+/// Utilities to ergonomically construct a request to the service.
+///
+/// Fluent builders are created through the [`Client`](crate::client::Client) by calling
+/// one if its operation methods. After parameters are set using the builder methods,
+/// the `send` method can be called to initiate the request.
+pub mod fluent_builders;

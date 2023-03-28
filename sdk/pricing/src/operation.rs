@@ -2,7 +2,7 @@
 /// Operation shape for `DescribeServices`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_services`](crate::client::Client::describe_services).
+/// [`describe_services`](crate::client::fluent_builders::DescribeServices).
 ///
 /// `ParseStrictResponse` impl for `DescribeServices`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -37,7 +37,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeServices {
 /// Operation shape for `GetAttributeValues`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_attribute_values`](crate::client::Client::get_attribute_values).
+/// [`get_attribute_values`](crate::client::fluent_builders::GetAttributeValues).
 ///
 /// `ParseStrictResponse` impl for `GetAttributeValues`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -72,7 +72,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAttributeValues {
 /// Operation shape for `GetProducts`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_products`](crate::client::Client::get_products).
+/// [`get_products`](crate::client::fluent_builders::GetProducts).
 ///
 /// `ParseStrictResponse` impl for `GetProducts`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

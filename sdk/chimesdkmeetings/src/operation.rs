@@ -2,7 +2,7 @@
 /// Operation shape for `BatchCreateAttendee`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`batch_create_attendee`](crate::client::Client::batch_create_attendee).
+/// [`batch_create_attendee`](crate::client::fluent_builders::BatchCreateAttendee).
 ///
 /// `ParseStrictResponse` impl for `BatchCreateAttendee`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -37,7 +37,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchCreateAttendee {
 /// Operation shape for `BatchUpdateAttendeeCapabilitiesExcept`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`batch_update_attendee_capabilities_except`](crate::client::Client::batch_update_attendee_capabilities_except).
+/// [`batch_update_attendee_capabilities_except`](crate::client::fluent_builders::BatchUpdateAttendeeCapabilitiesExcept).
 ///
 /// `ParseStrictResponse` impl for `BatchUpdateAttendeeCapabilitiesExcept`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -74,7 +74,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchUpdateAttendeeCapab
 /// Operation shape for `CreateAttendee`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_attendee`](crate::client::Client::create_attendee).
+/// [`create_attendee`](crate::client::fluent_builders::CreateAttendee).
 ///
 /// `ParseStrictResponse` impl for `CreateAttendee`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -107,7 +107,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateAttendee {
 /// Operation shape for `CreateMeeting`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_meeting`](crate::client::Client::create_meeting).
+/// [`create_meeting`](crate::client::fluent_builders::CreateMeeting).
 ///
 /// `ParseStrictResponse` impl for `CreateMeeting`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -140,7 +140,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateMeeting {
 /// Operation shape for `CreateMeetingWithAttendees`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_meeting_with_attendees`](crate::client::Client::create_meeting_with_attendees).
+/// [`create_meeting_with_attendees`](crate::client::fluent_builders::CreateMeetingWithAttendees).
 ///
 /// `ParseStrictResponse` impl for `CreateMeetingWithAttendees`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -175,7 +175,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateMeetingWithAttende
 /// Operation shape for `DeleteAttendee`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_attendee`](crate::client::Client::delete_attendee).
+/// [`delete_attendee`](crate::client::fluent_builders::DeleteAttendee).
 ///
 /// `ParseStrictResponse` impl for `DeleteAttendee`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -208,7 +208,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteAttendee {
 /// Operation shape for `DeleteMeeting`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_meeting`](crate::client::Client::delete_meeting).
+/// [`delete_meeting`](crate::client::fluent_builders::DeleteMeeting).
 ///
 /// `ParseStrictResponse` impl for `DeleteMeeting`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -241,7 +241,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteMeeting {
 /// Operation shape for `GetAttendee`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_attendee`](crate::client::Client::get_attendee).
+/// [`get_attendee`](crate::client::fluent_builders::GetAttendee).
 ///
 /// `ParseStrictResponse` impl for `GetAttendee`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -274,7 +274,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAttendee {
 /// Operation shape for `GetMeeting`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_meeting`](crate::client::Client::get_meeting).
+/// [`get_meeting`](crate::client::fluent_builders::GetMeeting).
 ///
 /// `ParseStrictResponse` impl for `GetMeeting`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -307,7 +307,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetMeeting {
 /// Operation shape for `ListAttendees`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_attendees`](crate::client::Client::list_attendees).
+/// [`list_attendees`](crate::client::fluent_builders::ListAttendees).
 ///
 /// `ParseStrictResponse` impl for `ListAttendees`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -340,7 +340,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAttendees {
 /// Operation shape for `ListTagsForResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
+/// [`list_tags_for_resource`](crate::client::fluent_builders::ListTagsForResource).
 ///
 /// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -375,7 +375,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// Operation shape for `StartMeetingTranscription`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`start_meeting_transcription`](crate::client::Client::start_meeting_transcription).
+/// [`start_meeting_transcription`](crate::client::fluent_builders::StartMeetingTranscription).
 ///
 /// `ParseStrictResponse` impl for `StartMeetingTranscription`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -410,7 +410,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartMeetingTranscriptio
 /// Operation shape for `StopMeetingTranscription`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`stop_meeting_transcription`](crate::client::Client::stop_meeting_transcription).
+/// [`stop_meeting_transcription`](crate::client::fluent_builders::StopMeetingTranscription).
 ///
 /// `ParseStrictResponse` impl for `StopMeetingTranscription`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -445,7 +445,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StopMeetingTranscription
 /// Operation shape for `TagResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`tag_resource`](crate::client::Client::tag_resource).
+/// [`tag_resource`](crate::client::fluent_builders::TagResource).
 ///
 /// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -478,7 +478,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// Operation shape for `UntagResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`untag_resource`](crate::client::Client::untag_resource).
+/// [`untag_resource`](crate::client::fluent_builders::UntagResource).
 ///
 /// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -511,7 +511,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// Operation shape for `UpdateAttendeeCapabilities`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_attendee_capabilities`](crate::client::Client::update_attendee_capabilities).
+/// [`update_attendee_capabilities`](crate::client::fluent_builders::UpdateAttendeeCapabilities).
 ///
 /// `ParseStrictResponse` impl for `UpdateAttendeeCapabilities`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

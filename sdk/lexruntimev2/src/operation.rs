@@ -2,7 +2,7 @@
 /// Operation shape for `DeleteSession`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_session`](crate::client::Client::delete_session).
+/// [`delete_session`](crate::client::fluent_builders::DeleteSession).
 ///
 /// `ParseStrictResponse` impl for `DeleteSession`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -35,7 +35,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteSession {
 /// Operation shape for `GetSession`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_session`](crate::client::Client::get_session).
+/// [`get_session`](crate::client::fluent_builders::GetSession).
 ///
 /// `ParseStrictResponse` impl for `GetSession`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -68,7 +68,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSession {
 /// Operation shape for `PutSession`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`put_session`](crate::client::Client::put_session).
+/// [`put_session`](crate::client::fluent_builders::PutSession).
 ///
 /// `ParseStrictResponse` impl for `PutSession`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -107,7 +107,7 @@ impl aws_smithy_http::response::ParseHttpResponse for PutSession {
 /// Operation shape for `RecognizeText`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`recognize_text`](crate::client::Client::recognize_text).
+/// [`recognize_text`](crate::client::fluent_builders::RecognizeText).
 ///
 /// `ParseStrictResponse` impl for `RecognizeText`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -140,7 +140,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RecognizeText {
 /// Operation shape for `RecognizeUtterance`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`recognize_utterance`](crate::client::Client::recognize_utterance).
+/// [`recognize_utterance`](crate::client::fluent_builders::RecognizeUtterance).
 ///
 /// `ParseStrictResponse` impl for `RecognizeUtterance`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

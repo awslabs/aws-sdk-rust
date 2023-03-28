@@ -2,7 +2,7 @@
 /// Operation shape for `CreateScalingPlan`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_scaling_plan`](crate::client::Client::create_scaling_plan).
+/// [`create_scaling_plan`](crate::client::fluent_builders::CreateScalingPlan).
 ///
 /// `ParseStrictResponse` impl for `CreateScalingPlan`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -37,7 +37,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateScalingPlan {
 /// Operation shape for `DeleteScalingPlan`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_scaling_plan`](crate::client::Client::delete_scaling_plan).
+/// [`delete_scaling_plan`](crate::client::fluent_builders::DeleteScalingPlan).
 ///
 /// `ParseStrictResponse` impl for `DeleteScalingPlan`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -72,7 +72,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteScalingPlan {
 /// Operation shape for `DescribeScalingPlanResources`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_scaling_plan_resources`](crate::client::Client::describe_scaling_plan_resources).
+/// [`describe_scaling_plan_resources`](crate::client::fluent_builders::DescribeScalingPlanResources).
 ///
 /// `ParseStrictResponse` impl for `DescribeScalingPlanResources`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -107,7 +107,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeScalingPlanResou
 /// Operation shape for `DescribeScalingPlans`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_scaling_plans`](crate::client::Client::describe_scaling_plans).
+/// [`describe_scaling_plans`](crate::client::fluent_builders::DescribeScalingPlans).
 ///
 /// `ParseStrictResponse` impl for `DescribeScalingPlans`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -142,7 +142,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeScalingPlans {
 /// Operation shape for `GetScalingPlanResourceForecastData`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_scaling_plan_resource_forecast_data`](crate::client::Client::get_scaling_plan_resource_forecast_data).
+/// [`get_scaling_plan_resource_forecast_data`](crate::client::fluent_builders::GetScalingPlanResourceForecastData).
 ///
 /// `ParseStrictResponse` impl for `GetScalingPlanResourceForecastData`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -177,7 +177,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetScalingPlanResourceFo
 /// Operation shape for `UpdateScalingPlan`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_scaling_plan`](crate::client::Client::update_scaling_plan).
+/// [`update_scaling_plan`](crate::client::fluent_builders::UpdateScalingPlan).
 ///
 /// `ParseStrictResponse` impl for `UpdateScalingPlan`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

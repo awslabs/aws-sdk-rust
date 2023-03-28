@@ -2,7 +2,7 @@
 /// Operation shape for `DeleteObject`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_object`](crate::client::Client::delete_object).
+/// [`delete_object`](crate::client::fluent_builders::DeleteObject).
 ///
 /// `ParseStrictResponse` impl for `DeleteObject`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -35,7 +35,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteObject {
 /// Operation shape for `DescribeObject`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_object`](crate::client::Client::describe_object).
+/// [`describe_object`](crate::client::fluent_builders::DescribeObject).
 ///
 /// `ParseStrictResponse` impl for `DescribeObject`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -68,7 +68,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeObject {
 /// Operation shape for `GetObject`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_object`](crate::client::Client::get_object).
+/// [`get_object`](crate::client::fluent_builders::GetObject).
 ///
 /// `ParseStrictResponse` impl for `GetObject`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -106,7 +106,7 @@ impl aws_smithy_http::response::ParseHttpResponse for GetObject {
 /// Operation shape for `ListItems`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_items`](crate::client::Client::list_items).
+/// [`list_items`](crate::client::fluent_builders::ListItems).
 ///
 /// `ParseStrictResponse` impl for `ListItems`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -138,7 +138,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListItems {
 /// Operation shape for `PutObject`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`put_object`](crate::client::Client::put_object).
+/// [`put_object`](crate::client::fluent_builders::PutObject).
 ///
 /// `ParseStrictResponse` impl for `PutObject`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

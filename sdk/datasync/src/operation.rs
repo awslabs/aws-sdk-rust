@@ -2,7 +2,7 @@
 /// Operation shape for `CancelTaskExecution`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`cancel_task_execution`](crate::client::Client::cancel_task_execution).
+/// [`cancel_task_execution`](crate::client::fluent_builders::CancelTaskExecution).
 ///
 /// `ParseStrictResponse` impl for `CancelTaskExecution`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -37,7 +37,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CancelTaskExecution {
 /// Operation shape for `CreateAgent`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_agent`](crate::client::Client::create_agent).
+/// [`create_agent`](crate::client::fluent_builders::CreateAgent).
 ///
 /// `ParseStrictResponse` impl for `CreateAgent`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -70,7 +70,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateAgent {
 /// Operation shape for `CreateLocationEfs`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_location_efs`](crate::client::Client::create_location_efs).
+/// [`create_location_efs`](crate::client::fluent_builders::CreateLocationEfs).
 ///
 /// `ParseStrictResponse` impl for `CreateLocationEfs`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -105,7 +105,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateLocationEfs {
 /// Operation shape for `CreateLocationFsxLustre`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_location_fsx_lustre`](crate::client::Client::create_location_fsx_lustre).
+/// [`create_location_fsx_lustre`](crate::client::fluent_builders::CreateLocationFsxLustre).
 ///
 /// `ParseStrictResponse` impl for `CreateLocationFsxLustre`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -140,7 +140,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateLocationFsxLustre 
 /// Operation shape for `CreateLocationFsxOntap`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_location_fsx_ontap`](crate::client::Client::create_location_fsx_ontap).
+/// [`create_location_fsx_ontap`](crate::client::fluent_builders::CreateLocationFsxOntap).
 ///
 /// `ParseStrictResponse` impl for `CreateLocationFsxOntap`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -175,7 +175,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateLocationFsxOntap {
 /// Operation shape for `CreateLocationFsxOpenZfs`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_location_fsx_open_zfs`](crate::client::Client::create_location_fsx_open_zfs).
+/// [`create_location_fsx_open_zfs`](crate::client::fluent_builders::CreateLocationFsxOpenZfs).
 ///
 /// `ParseStrictResponse` impl for `CreateLocationFsxOpenZfs`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -210,7 +210,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateLocationFsxOpenZfs
 /// Operation shape for `CreateLocationFsxWindows`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_location_fsx_windows`](crate::client::Client::create_location_fsx_windows).
+/// [`create_location_fsx_windows`](crate::client::fluent_builders::CreateLocationFsxWindows).
 ///
 /// `ParseStrictResponse` impl for `CreateLocationFsxWindows`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -245,7 +245,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateLocationFsxWindows
 /// Operation shape for `CreateLocationHdfs`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_location_hdfs`](crate::client::Client::create_location_hdfs).
+/// [`create_location_hdfs`](crate::client::fluent_builders::CreateLocationHdfs).
 ///
 /// `ParseStrictResponse` impl for `CreateLocationHdfs`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -280,7 +280,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateLocationHdfs {
 /// Operation shape for `CreateLocationNfs`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_location_nfs`](crate::client::Client::create_location_nfs).
+/// [`create_location_nfs`](crate::client::fluent_builders::CreateLocationNfs).
 ///
 /// `ParseStrictResponse` impl for `CreateLocationNfs`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -315,7 +315,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateLocationNfs {
 /// Operation shape for `CreateLocationObjectStorage`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_location_object_storage`](crate::client::Client::create_location_object_storage).
+/// [`create_location_object_storage`](crate::client::fluent_builders::CreateLocationObjectStorage).
 ///
 /// `ParseStrictResponse` impl for `CreateLocationObjectStorage`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -350,7 +350,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateLocationObjectStor
 /// Operation shape for `CreateLocationS3`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_location_s3`](crate::client::Client::create_location_s3).
+/// [`create_location_s3`](crate::client::fluent_builders::CreateLocationS3).
 ///
 /// `ParseStrictResponse` impl for `CreateLocationS3`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -385,7 +385,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateLocationS3 {
 /// Operation shape for `CreateLocationSmb`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_location_smb`](crate::client::Client::create_location_smb).
+/// [`create_location_smb`](crate::client::fluent_builders::CreateLocationSmb).
 ///
 /// `ParseStrictResponse` impl for `CreateLocationSmb`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -420,7 +420,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateLocationSmb {
 /// Operation shape for `CreateTask`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_task`](crate::client::Client::create_task).
+/// [`create_task`](crate::client::fluent_builders::CreateTask).
 ///
 /// `ParseStrictResponse` impl for `CreateTask`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -453,7 +453,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateTask {
 /// Operation shape for `DeleteAgent`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_agent`](crate::client::Client::delete_agent).
+/// [`delete_agent`](crate::client::fluent_builders::DeleteAgent).
 ///
 /// `ParseStrictResponse` impl for `DeleteAgent`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -486,7 +486,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteAgent {
 /// Operation shape for `DeleteLocation`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_location`](crate::client::Client::delete_location).
+/// [`delete_location`](crate::client::fluent_builders::DeleteLocation).
 ///
 /// `ParseStrictResponse` impl for `DeleteLocation`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -519,7 +519,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteLocation {
 /// Operation shape for `DeleteTask`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_task`](crate::client::Client::delete_task).
+/// [`delete_task`](crate::client::fluent_builders::DeleteTask).
 ///
 /// `ParseStrictResponse` impl for `DeleteTask`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -552,7 +552,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteTask {
 /// Operation shape for `DescribeAgent`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_agent`](crate::client::Client::describe_agent).
+/// [`describe_agent`](crate::client::fluent_builders::DescribeAgent).
 ///
 /// `ParseStrictResponse` impl for `DescribeAgent`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -585,7 +585,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeAgent {
 /// Operation shape for `DescribeLocationEfs`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_location_efs`](crate::client::Client::describe_location_efs).
+/// [`describe_location_efs`](crate::client::fluent_builders::DescribeLocationEfs).
 ///
 /// `ParseStrictResponse` impl for `DescribeLocationEfs`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -620,7 +620,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeLocationEfs {
 /// Operation shape for `DescribeLocationFsxLustre`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_location_fsx_lustre`](crate::client::Client::describe_location_fsx_lustre).
+/// [`describe_location_fsx_lustre`](crate::client::fluent_builders::DescribeLocationFsxLustre).
 ///
 /// `ParseStrictResponse` impl for `DescribeLocationFsxLustre`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -655,7 +655,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeLocationFsxLustr
 /// Operation shape for `DescribeLocationFsxOntap`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_location_fsx_ontap`](crate::client::Client::describe_location_fsx_ontap).
+/// [`describe_location_fsx_ontap`](crate::client::fluent_builders::DescribeLocationFsxOntap).
 ///
 /// `ParseStrictResponse` impl for `DescribeLocationFsxOntap`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -690,7 +690,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeLocationFsxOntap
 /// Operation shape for `DescribeLocationFsxOpenZfs`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_location_fsx_open_zfs`](crate::client::Client::describe_location_fsx_open_zfs).
+/// [`describe_location_fsx_open_zfs`](crate::client::fluent_builders::DescribeLocationFsxOpenZfs).
 ///
 /// `ParseStrictResponse` impl for `DescribeLocationFsxOpenZfs`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -725,7 +725,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeLocationFsxOpenZ
 /// Operation shape for `DescribeLocationFsxWindows`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_location_fsx_windows`](crate::client::Client::describe_location_fsx_windows).
+/// [`describe_location_fsx_windows`](crate::client::fluent_builders::DescribeLocationFsxWindows).
 ///
 /// `ParseStrictResponse` impl for `DescribeLocationFsxWindows`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -760,7 +760,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeLocationFsxWindo
 /// Operation shape for `DescribeLocationHdfs`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_location_hdfs`](crate::client::Client::describe_location_hdfs).
+/// [`describe_location_hdfs`](crate::client::fluent_builders::DescribeLocationHdfs).
 ///
 /// `ParseStrictResponse` impl for `DescribeLocationHdfs`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -795,7 +795,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeLocationHdfs {
 /// Operation shape for `DescribeLocationNfs`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_location_nfs`](crate::client::Client::describe_location_nfs).
+/// [`describe_location_nfs`](crate::client::fluent_builders::DescribeLocationNfs).
 ///
 /// `ParseStrictResponse` impl for `DescribeLocationNfs`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -830,7 +830,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeLocationNfs {
 /// Operation shape for `DescribeLocationObjectStorage`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_location_object_storage`](crate::client::Client::describe_location_object_storage).
+/// [`describe_location_object_storage`](crate::client::fluent_builders::DescribeLocationObjectStorage).
 ///
 /// `ParseStrictResponse` impl for `DescribeLocationObjectStorage`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -865,7 +865,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeLocationObjectSt
 /// Operation shape for `DescribeLocationS3`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_location_s3`](crate::client::Client::describe_location_s3).
+/// [`describe_location_s3`](crate::client::fluent_builders::DescribeLocationS3).
 ///
 /// `ParseStrictResponse` impl for `DescribeLocationS3`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -900,7 +900,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeLocationS3 {
 /// Operation shape for `DescribeLocationSmb`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_location_smb`](crate::client::Client::describe_location_smb).
+/// [`describe_location_smb`](crate::client::fluent_builders::DescribeLocationSmb).
 ///
 /// `ParseStrictResponse` impl for `DescribeLocationSmb`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -935,7 +935,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeLocationSmb {
 /// Operation shape for `DescribeTask`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_task`](crate::client::Client::describe_task).
+/// [`describe_task`](crate::client::fluent_builders::DescribeTask).
 ///
 /// `ParseStrictResponse` impl for `DescribeTask`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -968,7 +968,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeTask {
 /// Operation shape for `DescribeTaskExecution`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_task_execution`](crate::client::Client::describe_task_execution).
+/// [`describe_task_execution`](crate::client::fluent_builders::DescribeTaskExecution).
 ///
 /// `ParseStrictResponse` impl for `DescribeTaskExecution`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1003,7 +1003,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeTaskExecution {
 /// Operation shape for `ListAgents`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_agents`](crate::client::Client::list_agents).
+/// [`list_agents`](crate::client::fluent_builders::ListAgents).
 ///
 /// `ParseStrictResponse` impl for `ListAgents`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1036,7 +1036,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAgents {
 /// Operation shape for `ListLocations`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_locations`](crate::client::Client::list_locations).
+/// [`list_locations`](crate::client::fluent_builders::ListLocations).
 ///
 /// `ParseStrictResponse` impl for `ListLocations`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1069,7 +1069,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListLocations {
 /// Operation shape for `ListTagsForResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
+/// [`list_tags_for_resource`](crate::client::fluent_builders::ListTagsForResource).
 ///
 /// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1104,7 +1104,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// Operation shape for `ListTaskExecutions`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_task_executions`](crate::client::Client::list_task_executions).
+/// [`list_task_executions`](crate::client::fluent_builders::ListTaskExecutions).
 ///
 /// `ParseStrictResponse` impl for `ListTaskExecutions`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1139,7 +1139,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTaskExecutions {
 /// Operation shape for `ListTasks`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_tasks`](crate::client::Client::list_tasks).
+/// [`list_tasks`](crate::client::fluent_builders::ListTasks).
 ///
 /// `ParseStrictResponse` impl for `ListTasks`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1171,7 +1171,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTasks {
 /// Operation shape for `StartTaskExecution`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`start_task_execution`](crate::client::Client::start_task_execution).
+/// [`start_task_execution`](crate::client::fluent_builders::StartTaskExecution).
 ///
 /// `ParseStrictResponse` impl for `StartTaskExecution`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1206,7 +1206,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartTaskExecution {
 /// Operation shape for `TagResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`tag_resource`](crate::client::Client::tag_resource).
+/// [`tag_resource`](crate::client::fluent_builders::TagResource).
 ///
 /// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1239,7 +1239,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// Operation shape for `UntagResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`untag_resource`](crate::client::Client::untag_resource).
+/// [`untag_resource`](crate::client::fluent_builders::UntagResource).
 ///
 /// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1272,7 +1272,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// Operation shape for `UpdateAgent`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_agent`](crate::client::Client::update_agent).
+/// [`update_agent`](crate::client::fluent_builders::UpdateAgent).
 ///
 /// `ParseStrictResponse` impl for `UpdateAgent`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1305,7 +1305,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateAgent {
 /// Operation shape for `UpdateLocationHdfs`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_location_hdfs`](crate::client::Client::update_location_hdfs).
+/// [`update_location_hdfs`](crate::client::fluent_builders::UpdateLocationHdfs).
 ///
 /// `ParseStrictResponse` impl for `UpdateLocationHdfs`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1340,7 +1340,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateLocationHdfs {
 /// Operation shape for `UpdateLocationNfs`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_location_nfs`](crate::client::Client::update_location_nfs).
+/// [`update_location_nfs`](crate::client::fluent_builders::UpdateLocationNfs).
 ///
 /// `ParseStrictResponse` impl for `UpdateLocationNfs`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1375,7 +1375,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateLocationNfs {
 /// Operation shape for `UpdateLocationObjectStorage`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_location_object_storage`](crate::client::Client::update_location_object_storage).
+/// [`update_location_object_storage`](crate::client::fluent_builders::UpdateLocationObjectStorage).
 ///
 /// `ParseStrictResponse` impl for `UpdateLocationObjectStorage`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1410,7 +1410,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateLocationObjectStor
 /// Operation shape for `UpdateLocationSmb`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_location_smb`](crate::client::Client::update_location_smb).
+/// [`update_location_smb`](crate::client::fluent_builders::UpdateLocationSmb).
 ///
 /// `ParseStrictResponse` impl for `UpdateLocationSmb`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1445,7 +1445,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateLocationSmb {
 /// Operation shape for `UpdateTask`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_task`](crate::client::Client::update_task).
+/// [`update_task`](crate::client::fluent_builders::UpdateTask).
 ///
 /// `ParseStrictResponse` impl for `UpdateTask`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1478,7 +1478,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateTask {
 /// Operation shape for `UpdateTaskExecution`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_task_execution`](crate::client::Client::update_task_execution).
+/// [`update_task_execution`](crate::client::fluent_builders::UpdateTaskExecution).
 ///
 /// `ParseStrictResponse` impl for `UpdateTaskExecution`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

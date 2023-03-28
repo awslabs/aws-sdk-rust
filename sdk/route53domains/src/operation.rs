@@ -2,7 +2,7 @@
 /// Operation shape for `AcceptDomainTransferFromAnotherAwsAccount`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`accept_domain_transfer_from_another_aws_account`](crate::client::Client::accept_domain_transfer_from_another_aws_account).
+/// [`accept_domain_transfer_from_another_aws_account`](crate::client::fluent_builders::AcceptDomainTransferFromAnotherAwsAccount).
 ///
 /// `ParseStrictResponse` impl for `AcceptDomainTransferFromAnotherAwsAccount`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -42,7 +42,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AcceptDomainTransferFrom
 /// Operation shape for `AssociateDelegationSignerToDomain`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`associate_delegation_signer_to_domain`](crate::client::Client::associate_delegation_signer_to_domain).
+/// [`associate_delegation_signer_to_domain`](crate::client::fluent_builders::AssociateDelegationSignerToDomain).
 ///
 /// `ParseStrictResponse` impl for `AssociateDelegationSignerToDomain`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -77,7 +77,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateDelegationSigne
 /// Operation shape for `CancelDomainTransferToAnotherAwsAccount`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`cancel_domain_transfer_to_another_aws_account`](crate::client::Client::cancel_domain_transfer_to_another_aws_account).
+/// [`cancel_domain_transfer_to_another_aws_account`](crate::client::fluent_builders::CancelDomainTransferToAnotherAwsAccount).
 ///
 /// `ParseStrictResponse` impl for `CancelDomainTransferToAnotherAwsAccount`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -116,7 +116,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CancelDomainTransferToAn
 /// Operation shape for `CheckDomainAvailability`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`check_domain_availability`](crate::client::Client::check_domain_availability).
+/// [`check_domain_availability`](crate::client::fluent_builders::CheckDomainAvailability).
 ///
 /// `ParseStrictResponse` impl for `CheckDomainAvailability`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -151,7 +151,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CheckDomainAvailability 
 /// Operation shape for `CheckDomainTransferability`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`check_domain_transferability`](crate::client::Client::check_domain_transferability).
+/// [`check_domain_transferability`](crate::client::fluent_builders::CheckDomainTransferability).
 ///
 /// `ParseStrictResponse` impl for `CheckDomainTransferability`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -186,7 +186,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CheckDomainTransferabili
 /// Operation shape for `DeleteDomain`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_domain`](crate::client::Client::delete_domain).
+/// [`delete_domain`](crate::client::fluent_builders::DeleteDomain).
 ///
 /// `ParseStrictResponse` impl for `DeleteDomain`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -219,7 +219,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteDomain {
 /// Operation shape for `DeleteTagsForDomain`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_tags_for_domain`](crate::client::Client::delete_tags_for_domain).
+/// [`delete_tags_for_domain`](crate::client::fluent_builders::DeleteTagsForDomain).
 ///
 /// `ParseStrictResponse` impl for `DeleteTagsForDomain`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -254,7 +254,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteTagsForDomain {
 /// Operation shape for `DisableDomainAutoRenew`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`disable_domain_auto_renew`](crate::client::Client::disable_domain_auto_renew).
+/// [`disable_domain_auto_renew`](crate::client::fluent_builders::DisableDomainAutoRenew).
 ///
 /// `ParseStrictResponse` impl for `DisableDomainAutoRenew`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -289,7 +289,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisableDomainAutoRenew {
 /// Operation shape for `DisableDomainTransferLock`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`disable_domain_transfer_lock`](crate::client::Client::disable_domain_transfer_lock).
+/// [`disable_domain_transfer_lock`](crate::client::fluent_builders::DisableDomainTransferLock).
 ///
 /// `ParseStrictResponse` impl for `DisableDomainTransferLock`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -324,7 +324,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisableDomainTransferLoc
 /// Operation shape for `DisassociateDelegationSignerFromDomain`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`disassociate_delegation_signer_from_domain`](crate::client::Client::disassociate_delegation_signer_from_domain).
+/// [`disassociate_delegation_signer_from_domain`](crate::client::fluent_builders::DisassociateDelegationSignerFromDomain).
 ///
 /// `ParseStrictResponse` impl for `DisassociateDelegationSignerFromDomain`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -361,7 +361,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateDelegationSi
 /// Operation shape for `EnableDomainAutoRenew`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`enable_domain_auto_renew`](crate::client::Client::enable_domain_auto_renew).
+/// [`enable_domain_auto_renew`](crate::client::fluent_builders::EnableDomainAutoRenew).
 ///
 /// `ParseStrictResponse` impl for `EnableDomainAutoRenew`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -396,7 +396,7 @@ impl aws_smithy_http::response::ParseStrictResponse for EnableDomainAutoRenew {
 /// Operation shape for `EnableDomainTransferLock`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`enable_domain_transfer_lock`](crate::client::Client::enable_domain_transfer_lock).
+/// [`enable_domain_transfer_lock`](crate::client::fluent_builders::EnableDomainTransferLock).
 ///
 /// `ParseStrictResponse` impl for `EnableDomainTransferLock`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -431,7 +431,7 @@ impl aws_smithy_http::response::ParseStrictResponse for EnableDomainTransferLock
 /// Operation shape for `GetContactReachabilityStatus`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_contact_reachability_status`](crate::client::Client::get_contact_reachability_status).
+/// [`get_contact_reachability_status`](crate::client::fluent_builders::GetContactReachabilityStatus).
 ///
 /// `ParseStrictResponse` impl for `GetContactReachabilityStatus`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -466,7 +466,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetContactReachabilitySt
 /// Operation shape for `GetDomainDetail`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_domain_detail`](crate::client::Client::get_domain_detail).
+/// [`get_domain_detail`](crate::client::fluent_builders::GetDomainDetail).
 ///
 /// `ParseStrictResponse` impl for `GetDomainDetail`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -501,7 +501,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDomainDetail {
 /// Operation shape for `GetDomainSuggestions`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_domain_suggestions`](crate::client::Client::get_domain_suggestions).
+/// [`get_domain_suggestions`](crate::client::fluent_builders::GetDomainSuggestions).
 ///
 /// `ParseStrictResponse` impl for `GetDomainSuggestions`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -536,7 +536,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDomainSuggestions {
 /// Operation shape for `GetOperationDetail`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_operation_detail`](crate::client::Client::get_operation_detail).
+/// [`get_operation_detail`](crate::client::fluent_builders::GetOperationDetail).
 ///
 /// `ParseStrictResponse` impl for `GetOperationDetail`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -571,7 +571,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetOperationDetail {
 /// Operation shape for `ListDomains`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_domains`](crate::client::Client::list_domains).
+/// [`list_domains`](crate::client::fluent_builders::ListDomains).
 ///
 /// `ParseStrictResponse` impl for `ListDomains`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -604,7 +604,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListDomains {
 /// Operation shape for `ListOperations`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_operations`](crate::client::Client::list_operations).
+/// [`list_operations`](crate::client::fluent_builders::ListOperations).
 ///
 /// `ParseStrictResponse` impl for `ListOperations`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -637,7 +637,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListOperations {
 /// Operation shape for `ListPrices`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_prices`](crate::client::Client::list_prices).
+/// [`list_prices`](crate::client::fluent_builders::ListPrices).
 ///
 /// `ParseStrictResponse` impl for `ListPrices`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -670,7 +670,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListPrices {
 /// Operation shape for `ListTagsForDomain`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_tags_for_domain`](crate::client::Client::list_tags_for_domain).
+/// [`list_tags_for_domain`](crate::client::fluent_builders::ListTagsForDomain).
 ///
 /// `ParseStrictResponse` impl for `ListTagsForDomain`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -705,7 +705,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForDomain {
 /// Operation shape for `PushDomain`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`push_domain`](crate::client::Client::push_domain).
+/// [`push_domain`](crate::client::fluent_builders::PushDomain).
 ///
 /// `ParseStrictResponse` impl for `PushDomain`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -738,7 +738,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PushDomain {
 /// Operation shape for `RegisterDomain`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`register_domain`](crate::client::Client::register_domain).
+/// [`register_domain`](crate::client::fluent_builders::RegisterDomain).
 ///
 /// `ParseStrictResponse` impl for `RegisterDomain`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -771,7 +771,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RegisterDomain {
 /// Operation shape for `RejectDomainTransferFromAnotherAwsAccount`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`reject_domain_transfer_from_another_aws_account`](crate::client::Client::reject_domain_transfer_from_another_aws_account).
+/// [`reject_domain_transfer_from_another_aws_account`](crate::client::fluent_builders::RejectDomainTransferFromAnotherAwsAccount).
 ///
 /// `ParseStrictResponse` impl for `RejectDomainTransferFromAnotherAwsAccount`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -811,7 +811,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RejectDomainTransferFrom
 /// Operation shape for `RenewDomain`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`renew_domain`](crate::client::Client::renew_domain).
+/// [`renew_domain`](crate::client::fluent_builders::RenewDomain).
 ///
 /// `ParseStrictResponse` impl for `RenewDomain`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -844,7 +844,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RenewDomain {
 /// Operation shape for `ResendContactReachabilityEmail`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`resend_contact_reachability_email`](crate::client::Client::resend_contact_reachability_email).
+/// [`resend_contact_reachability_email`](crate::client::fluent_builders::ResendContactReachabilityEmail).
 ///
 /// `ParseStrictResponse` impl for `ResendContactReachabilityEmail`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -879,7 +879,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ResendContactReachabilit
 /// Operation shape for `ResendOperationAuthorization`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`resend_operation_authorization`](crate::client::Client::resend_operation_authorization).
+/// [`resend_operation_authorization`](crate::client::fluent_builders::ResendOperationAuthorization).
 ///
 /// `ParseStrictResponse` impl for `ResendOperationAuthorization`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -914,7 +914,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ResendOperationAuthoriza
 /// Operation shape for `RetrieveDomainAuthCode`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`retrieve_domain_auth_code`](crate::client::Client::retrieve_domain_auth_code).
+/// [`retrieve_domain_auth_code`](crate::client::fluent_builders::RetrieveDomainAuthCode).
 ///
 /// `ParseStrictResponse` impl for `RetrieveDomainAuthCode`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -949,7 +949,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RetrieveDomainAuthCode {
 /// Operation shape for `TransferDomain`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`transfer_domain`](crate::client::Client::transfer_domain).
+/// [`transfer_domain`](crate::client::fluent_builders::TransferDomain).
 ///
 /// `ParseStrictResponse` impl for `TransferDomain`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -982,7 +982,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TransferDomain {
 /// Operation shape for `TransferDomainToAnotherAwsAccount`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`transfer_domain_to_another_aws_account`](crate::client::Client::transfer_domain_to_another_aws_account).
+/// [`transfer_domain_to_another_aws_account`](crate::client::fluent_builders::TransferDomainToAnotherAwsAccount).
 ///
 /// `ParseStrictResponse` impl for `TransferDomainToAnotherAwsAccount`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1017,7 +1017,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TransferDomainToAnotherA
 /// Operation shape for `UpdateDomainContact`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_domain_contact`](crate::client::Client::update_domain_contact).
+/// [`update_domain_contact`](crate::client::fluent_builders::UpdateDomainContact).
 ///
 /// `ParseStrictResponse` impl for `UpdateDomainContact`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1052,7 +1052,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateDomainContact {
 /// Operation shape for `UpdateDomainContactPrivacy`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_domain_contact_privacy`](crate::client::Client::update_domain_contact_privacy).
+/// [`update_domain_contact_privacy`](crate::client::fluent_builders::UpdateDomainContactPrivacy).
 ///
 /// `ParseStrictResponse` impl for `UpdateDomainContactPrivacy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1087,7 +1087,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateDomainContactPriva
 /// Operation shape for `UpdateDomainNameservers`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_domain_nameservers`](crate::client::Client::update_domain_nameservers).
+/// [`update_domain_nameservers`](crate::client::fluent_builders::UpdateDomainNameservers).
 ///
 /// `ParseStrictResponse` impl for `UpdateDomainNameservers`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1122,7 +1122,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateDomainNameservers 
 /// Operation shape for `UpdateTagsForDomain`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_tags_for_domain`](crate::client::Client::update_tags_for_domain).
+/// [`update_tags_for_domain`](crate::client::fluent_builders::UpdateTagsForDomain).
 ///
 /// `ParseStrictResponse` impl for `UpdateTagsForDomain`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1157,7 +1157,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateTagsForDomain {
 /// Operation shape for `ViewBilling`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`view_billing`](crate::client::Client::view_billing).
+/// [`view_billing`](crate::client::fluent_builders::ViewBilling).
 ///
 /// `ParseStrictResponse` impl for `ViewBilling`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

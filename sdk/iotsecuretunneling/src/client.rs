@@ -98,8 +98,8 @@ impl Client {
     /// - On success, responds with [`CloseTunnelOutput`](crate::output::CloseTunnelOutput)
 
     /// - On failure, responds with [`SdkError<CloseTunnelError>`](crate::error::CloseTunnelError)
-    pub fn close_tunnel(&self) -> fluent_builders::CloseTunnel {
-        fluent_builders::CloseTunnel::new(self.handle.clone())
+    pub fn close_tunnel(&self) -> crate::client::fluent_builders::CloseTunnel {
+        crate::client::fluent_builders::CloseTunnel::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`DescribeTunnel`](crate::client::fluent_builders::DescribeTunnel) operation.
     ///
@@ -108,8 +108,8 @@ impl Client {
     /// - On success, responds with [`DescribeTunnelOutput`](crate::output::DescribeTunnelOutput) with field(s):
     ///   - [`tunnel(Option<Tunnel>)`](crate::output::DescribeTunnelOutput::tunnel): <p>The tunnel being described.</p>
     /// - On failure, responds with [`SdkError<DescribeTunnelError>`](crate::error::DescribeTunnelError)
-    pub fn describe_tunnel(&self) -> fluent_builders::DescribeTunnel {
-        fluent_builders::DescribeTunnel::new(self.handle.clone())
+    pub fn describe_tunnel(&self) -> crate::client::fluent_builders::DescribeTunnel {
+        crate::client::fluent_builders::DescribeTunnel::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
@@ -118,8 +118,8 @@ impl Client {
     /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
     ///   - [`tags(Option<Vec<Tag>>)`](crate::output::ListTagsForResourceOutput::tags): <p>The tags for the specified resource.</p>
     /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
-    pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource {
-        fluent_builders::ListTagsForResource::new(self.handle.clone())
+    pub fn list_tags_for_resource(&self) -> crate::client::fluent_builders::ListTagsForResource {
+        crate::client::fluent_builders::ListTagsForResource::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListTunnels`](crate::client::fluent_builders::ListTunnels) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListTunnels::into_paginator).
@@ -132,8 +132,8 @@ impl Client {
     ///   - [`tunnel_summaries(Option<Vec<TunnelSummary>>)`](crate::output::ListTunnelsOutput::tunnel_summaries): <p>A short description of the tunnels in an Amazon Web Services account.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListTunnelsOutput::next_token): <p>The token to use to get the next set of results, or null if there are no additional results.</p>
     /// - On failure, responds with [`SdkError<ListTunnelsError>`](crate::error::ListTunnelsError)
-    pub fn list_tunnels(&self) -> fluent_builders::ListTunnels {
-        fluent_builders::ListTunnels::new(self.handle.clone())
+    pub fn list_tunnels(&self) -> crate::client::fluent_builders::ListTunnels {
+        crate::client::fluent_builders::ListTunnels::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`OpenTunnel`](crate::client::fluent_builders::OpenTunnel) operation.
     ///
@@ -148,8 +148,8 @@ impl Client {
     ///   - [`source_access_token(Option<String>)`](crate::output::OpenTunnelOutput::source_access_token): <p>The access token the source local proxy uses to connect to IoT Secure Tunneling.</p>
     ///   - [`destination_access_token(Option<String>)`](crate::output::OpenTunnelOutput::destination_access_token): <p>The access token the destination local proxy uses to connect to IoT Secure Tunneling.</p>
     /// - On failure, responds with [`SdkError<OpenTunnelError>`](crate::error::OpenTunnelError)
-    pub fn open_tunnel(&self) -> fluent_builders::OpenTunnel {
-        fluent_builders::OpenTunnel::new(self.handle.clone())
+    pub fn open_tunnel(&self) -> crate::client::fluent_builders::OpenTunnel {
+        crate::client::fluent_builders::OpenTunnel::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`RotateTunnelAccessToken`](crate::client::fluent_builders::RotateTunnelAccessToken) operation.
     ///
@@ -162,8 +162,10 @@ impl Client {
     ///   - [`source_access_token(Option<String>)`](crate::output::RotateTunnelAccessTokenOutput::source_access_token): <p>The client access token that the source local proxy uses to connect to IoT Secure Tunneling.</p>
     ///   - [`destination_access_token(Option<String>)`](crate::output::RotateTunnelAccessTokenOutput::destination_access_token): <p>The client access token that the destination local proxy uses to connect to IoT Secure Tunneling.</p>
     /// - On failure, responds with [`SdkError<RotateTunnelAccessTokenError>`](crate::error::RotateTunnelAccessTokenError)
-    pub fn rotate_tunnel_access_token(&self) -> fluent_builders::RotateTunnelAccessToken {
-        fluent_builders::RotateTunnelAccessToken::new(self.handle.clone())
+    pub fn rotate_tunnel_access_token(
+        &self,
+    ) -> crate::client::fluent_builders::RotateTunnelAccessToken {
+        crate::client::fluent_builders::RotateTunnelAccessToken::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
@@ -173,8 +175,8 @@ impl Client {
     /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
 
     /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
-    pub fn tag_resource(&self) -> fluent_builders::TagResource {
-        fluent_builders::TagResource::new(self.handle.clone())
+    pub fn tag_resource(&self) -> crate::client::fluent_builders::TagResource {
+        crate::client::fluent_builders::TagResource::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
@@ -184,746 +186,8 @@ impl Client {
     /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 
     /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
-    pub fn untag_resource(&self) -> fluent_builders::UntagResource {
-        fluent_builders::UntagResource::new(self.handle.clone())
-    }
-}
-pub mod fluent_builders {
-
-    //! Utilities to ergonomically construct a request to the service.
-    //!
-    //! Fluent builders are created through the [`Client`](crate::client::Client) by calling
-    //! one if its operation methods. After parameters are set using the builder methods,
-    //! the `send` method can be called to initiate the request.
-    /// Fluent builder constructing a request to `CloseTunnel`.
-    ///
-    /// <p>Closes a tunnel identified by the unique tunnel id. When a <code>CloseTunnel</code> request is received, we close the WebSocket connections between the client and proxy server so no data can be transmitted.</p>
-    /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CloseTunnel</a> action.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct CloseTunnel {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::close_tunnel_input::Builder,
-    }
-    impl CloseTunnel {
-        /// Creates a new `CloseTunnel`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::CloseTunnel,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::CloseTunnelError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::CloseTunnelOutput,
-            aws_smithy_http::result::SdkError<crate::error::CloseTunnelError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// <p>The ID of the tunnel to close.</p>
-        pub fn tunnel_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tunnel_id(input.into());
-            self
-        }
-        /// <p>The ID of the tunnel to close.</p>
-        pub fn set_tunnel_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_tunnel_id(input);
-            self
-        }
-        /// <p>When set to true, IoT Secure Tunneling deletes the tunnel data immediately.</p>
-        pub fn delete(mut self, input: bool) -> Self {
-            self.inner = self.inner.delete(input);
-            self
-        }
-        /// <p>When set to true, IoT Secure Tunneling deletes the tunnel data immediately.</p>
-        pub fn set_delete(mut self, input: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_delete(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DescribeTunnel`.
-    ///
-    /// <p>Gets information about a tunnel identified by the unique tunnel id.</p>
-    /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeTunnel</a> action.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DescribeTunnel {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::describe_tunnel_input::Builder,
-    }
-    impl DescribeTunnel {
-        /// Creates a new `DescribeTunnel`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::DescribeTunnel,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::DescribeTunnelError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::DescribeTunnelOutput,
-            aws_smithy_http::result::SdkError<crate::error::DescribeTunnelError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// <p>The tunnel to describe.</p>
-        pub fn tunnel_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tunnel_id(input.into());
-            self
-        }
-        /// <p>The tunnel to describe.</p>
-        pub fn set_tunnel_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_tunnel_id(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `ListTagsForResource`.
-    ///
-    /// <p>Lists the tags for the specified resource.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct ListTagsForResource {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::list_tags_for_resource_input::Builder,
-    }
-    impl ListTagsForResource {
-        /// Creates a new `ListTagsForResource`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::ListTagsForResource,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::ListTagsForResourceOutput,
-            aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// <p>The resource ARN.</p>
-        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(input.into());
-            self
-        }
-        /// <p>The resource ARN.</p>
-        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_resource_arn(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `ListTunnels`.
-    ///
-    /// <p>List all tunnels for an Amazon Web Services account. Tunnels are listed by creation time in descending order, newer tunnels will be listed before older tunnels.</p>
-    /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListTunnels</a> action.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct ListTunnels {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::list_tunnels_input::Builder,
-    }
-    impl ListTunnels {
-        /// Creates a new `ListTunnels`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::ListTunnels,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::ListTunnelsError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::ListTunnelsOutput,
-            aws_smithy_http::result::SdkError<crate::error::ListTunnelsError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// Create a paginator for this request
-        ///
-        /// Paginators are used by calling [`send().await`](crate::paginator::ListTunnelsPaginator::send) which returns a `Stream`.
-        pub fn into_paginator(self) -> crate::paginator::ListTunnelsPaginator {
-            crate::paginator::ListTunnelsPaginator::new(self.handle, self.inner)
-        }
-        /// <p>The name of the IoT thing associated with the destination device.</p>
-        pub fn thing_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.thing_name(input.into());
-            self
-        }
-        /// <p>The name of the IoT thing associated with the destination device.</p>
-        pub fn set_thing_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_thing_name(input);
-            self
-        }
-        /// <p>The maximum number of results to return at once.</p>
-        pub fn max_results(mut self, input: i32) -> Self {
-            self.inner = self.inner.max_results(input);
-            self
-        }
-        /// <p>The maximum number of results to return at once.</p>
-        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(input);
-            self
-        }
-        /// <p>To retrieve the next set of results, the nextToken value from a previous response; otherwise null to receive the first set of results.</p>
-        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(input.into());
-            self
-        }
-        /// <p>To retrieve the next set of results, the nextToken value from a previous response; otherwise null to receive the first set of results.</p>
-        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `OpenTunnel`.
-    ///
-    /// <p>Creates a new tunnel, and returns two client access tokens for clients to use to connect to the IoT Secure Tunneling proxy server.</p>
-    /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">OpenTunnel</a> action.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct OpenTunnel {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::open_tunnel_input::Builder,
-    }
-    impl OpenTunnel {
-        /// Creates a new `OpenTunnel`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::OpenTunnel,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::OpenTunnelError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::OpenTunnelOutput,
-            aws_smithy_http::result::SdkError<crate::error::OpenTunnelError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// <p>A short text description of the tunnel. </p>
-        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(input.into());
-            self
-        }
-        /// <p>A short text description of the tunnel. </p>
-        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_description(input);
-            self
-        }
-        /// Appends an item to `tags`.
-        ///
-        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
-        ///
-        /// <p>A collection of tag metadata.</p>
-        pub fn tags(mut self, input: crate::model::Tag) -> Self {
-            self.inner = self.inner.tags(input);
-            self
-        }
-        /// <p>A collection of tag metadata.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.inner = self.inner.set_tags(input);
-            self
-        }
-        /// <p>The destination configuration for the OpenTunnel request.</p>
-        pub fn destination_config(mut self, input: crate::model::DestinationConfig) -> Self {
-            self.inner = self.inner.destination_config(input);
-            self
-        }
-        /// <p>The destination configuration for the OpenTunnel request.</p>
-        pub fn set_destination_config(
-            mut self,
-            input: std::option::Option<crate::model::DestinationConfig>,
-        ) -> Self {
-            self.inner = self.inner.set_destination_config(input);
-            self
-        }
-        /// <p>Timeout configuration for a tunnel.</p>
-        pub fn timeout_config(mut self, input: crate::model::TimeoutConfig) -> Self {
-            self.inner = self.inner.timeout_config(input);
-            self
-        }
-        /// <p>Timeout configuration for a tunnel.</p>
-        pub fn set_timeout_config(
-            mut self,
-            input: std::option::Option<crate::model::TimeoutConfig>,
-        ) -> Self {
-            self.inner = self.inner.set_timeout_config(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `RotateTunnelAccessToken`.
-    ///
-    /// <p>Revokes the current client access token (CAT) and returns new CAT for clients to use when reconnecting to secure tunneling to access the same tunnel.</p>
-    /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">RotateTunnelAccessToken</a> action.</p> <note>
-    /// <p>Rotating the CAT doesn't extend the tunnel duration. For example, say the tunnel duration is 12 hours and the tunnel has already been open for 4 hours. When you rotate the access tokens, the new tokens that are generated can only be used for the remaining 8 hours.</p>
-    /// </note>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct RotateTunnelAccessToken {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::rotate_tunnel_access_token_input::Builder,
-    }
-    impl RotateTunnelAccessToken {
-        /// Creates a new `RotateTunnelAccessToken`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::RotateTunnelAccessToken,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::RotateTunnelAccessTokenError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::RotateTunnelAccessTokenOutput,
-            aws_smithy_http::result::SdkError<crate::error::RotateTunnelAccessTokenError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// <p>The tunnel for which you want to rotate the access tokens.</p>
-        pub fn tunnel_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tunnel_id(input.into());
-            self
-        }
-        /// <p>The tunnel for which you want to rotate the access tokens.</p>
-        pub fn set_tunnel_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_tunnel_id(input);
-            self
-        }
-        /// <p>The mode of the client that will use the client token, which can be either the source or destination, or both source and destination.</p>
-        pub fn client_mode(mut self, input: crate::model::ClientMode) -> Self {
-            self.inner = self.inner.client_mode(input);
-            self
-        }
-        /// <p>The mode of the client that will use the client token, which can be either the source or destination, or both source and destination.</p>
-        pub fn set_client_mode(
-            mut self,
-            input: std::option::Option<crate::model::ClientMode>,
-        ) -> Self {
-            self.inner = self.inner.set_client_mode(input);
-            self
-        }
-        /// <p>The destination configuration.</p>
-        pub fn destination_config(mut self, input: crate::model::DestinationConfig) -> Self {
-            self.inner = self.inner.destination_config(input);
-            self
-        }
-        /// <p>The destination configuration.</p>
-        pub fn set_destination_config(
-            mut self,
-            input: std::option::Option<crate::model::DestinationConfig>,
-        ) -> Self {
-            self.inner = self.inner.set_destination_config(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `TagResource`.
-    ///
-    /// <p>A resource tag.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct TagResource {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::tag_resource_input::Builder,
-    }
-    impl TagResource {
-        /// Creates a new `TagResource`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::TagResource,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::TagResourceError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::TagResourceOutput,
-            aws_smithy_http::result::SdkError<crate::error::TagResourceError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// <p>The ARN of the resource.</p>
-        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(input.into());
-            self
-        }
-        /// <p>The ARN of the resource.</p>
-        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_resource_arn(input);
-            self
-        }
-        /// Appends an item to `tags`.
-        ///
-        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
-        ///
-        /// <p>The tags for the resource.</p>
-        pub fn tags(mut self, input: crate::model::Tag) -> Self {
-            self.inner = self.inner.tags(input);
-            self
-        }
-        /// <p>The tags for the resource.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.inner = self.inner.set_tags(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `UntagResource`.
-    ///
-    /// <p>Removes a tag from a resource.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct UntagResource {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::untag_resource_input::Builder,
-    }
-    impl UntagResource {
-        /// Creates a new `UntagResource`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::UntagResource,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::UntagResourceError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::UntagResourceOutput,
-            aws_smithy_http::result::SdkError<crate::error::UntagResourceError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// <p>The resource ARN.</p>
-        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(input.into());
-            self
-        }
-        /// <p>The resource ARN.</p>
-        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_resource_arn(input);
-            self
-        }
-        /// Appends an item to `tagKeys`.
-        ///
-        /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
-        ///
-        /// <p>The keys of the tags to remove.</p>
-        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(input.into());
-            self
-        }
-        /// <p>The keys of the tags to remove.</p>
-        pub fn set_tag_keys(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.inner = self.inner.set_tag_keys(input);
-            self
-        }
+    pub fn untag_resource(&self) -> crate::client::fluent_builders::UntagResource {
+        crate::client::fluent_builders::UntagResource::new(self.handle.clone())
     }
 }
 
@@ -1010,3 +274,10 @@ impl Client {
         }
     }
 }
+
+/// Utilities to ergonomically construct a request to the service.
+///
+/// Fluent builders are created through the [`Client`](crate::client::Client) by calling
+/// one if its operation methods. After parameters are set using the builder methods,
+/// the `send` method can be called to initiate the request.
+pub mod fluent_builders;

@@ -2,7 +2,7 @@
 /// Operation shape for `DescribeJobExecution`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_job_execution`](crate::client::Client::describe_job_execution).
+/// [`describe_job_execution`](crate::client::fluent_builders::DescribeJobExecution).
 ///
 /// `ParseStrictResponse` impl for `DescribeJobExecution`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -37,7 +37,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeJobExecution {
 /// Operation shape for `GetPendingJobExecutions`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_pending_job_executions`](crate::client::Client::get_pending_job_executions).
+/// [`get_pending_job_executions`](crate::client::fluent_builders::GetPendingJobExecutions).
 ///
 /// `ParseStrictResponse` impl for `GetPendingJobExecutions`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -72,7 +72,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetPendingJobExecutions 
 /// Operation shape for `StartNextPendingJobExecution`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`start_next_pending_job_execution`](crate::client::Client::start_next_pending_job_execution).
+/// [`start_next_pending_job_execution`](crate::client::fluent_builders::StartNextPendingJobExecution).
 ///
 /// `ParseStrictResponse` impl for `StartNextPendingJobExecution`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -107,7 +107,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartNextPendingJobExecu
 /// Operation shape for `UpdateJobExecution`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_job_execution`](crate::client::Client::update_job_execution).
+/// [`update_job_execution`](crate::client::fluent_builders::UpdateJobExecution).
 ///
 /// `ParseStrictResponse` impl for `UpdateJobExecution`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

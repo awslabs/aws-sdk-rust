@@ -2,7 +2,7 @@
 /// Operation shape for `CancelJobRun`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`cancel_job_run`](crate::client::Client::cancel_job_run).
+/// [`cancel_job_run`](crate::client::fluent_builders::CancelJobRun).
 ///
 /// `ParseStrictResponse` impl for `CancelJobRun`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -35,7 +35,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CancelJobRun {
 /// Operation shape for `CreateJobTemplate`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_job_template`](crate::client::Client::create_job_template).
+/// [`create_job_template`](crate::client::fluent_builders::CreateJobTemplate).
 ///
 /// `ParseStrictResponse` impl for `CreateJobTemplate`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -70,7 +70,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateJobTemplate {
 /// Operation shape for `CreateManagedEndpoint`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_managed_endpoint`](crate::client::Client::create_managed_endpoint).
+/// [`create_managed_endpoint`](crate::client::fluent_builders::CreateManagedEndpoint).
 ///
 /// `ParseStrictResponse` impl for `CreateManagedEndpoint`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -105,7 +105,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateManagedEndpoint {
 /// Operation shape for `CreateVirtualCluster`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_virtual_cluster`](crate::client::Client::create_virtual_cluster).
+/// [`create_virtual_cluster`](crate::client::fluent_builders::CreateVirtualCluster).
 ///
 /// `ParseStrictResponse` impl for `CreateVirtualCluster`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -140,7 +140,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateVirtualCluster {
 /// Operation shape for `DeleteJobTemplate`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_job_template`](crate::client::Client::delete_job_template).
+/// [`delete_job_template`](crate::client::fluent_builders::DeleteJobTemplate).
 ///
 /// `ParseStrictResponse` impl for `DeleteJobTemplate`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -175,7 +175,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteJobTemplate {
 /// Operation shape for `DeleteManagedEndpoint`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_managed_endpoint`](crate::client::Client::delete_managed_endpoint).
+/// [`delete_managed_endpoint`](crate::client::fluent_builders::DeleteManagedEndpoint).
 ///
 /// `ParseStrictResponse` impl for `DeleteManagedEndpoint`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -210,7 +210,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteManagedEndpoint {
 /// Operation shape for `DeleteVirtualCluster`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_virtual_cluster`](crate::client::Client::delete_virtual_cluster).
+/// [`delete_virtual_cluster`](crate::client::fluent_builders::DeleteVirtualCluster).
 ///
 /// `ParseStrictResponse` impl for `DeleteVirtualCluster`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -245,7 +245,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteVirtualCluster {
 /// Operation shape for `DescribeJobRun`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_job_run`](crate::client::Client::describe_job_run).
+/// [`describe_job_run`](crate::client::fluent_builders::DescribeJobRun).
 ///
 /// `ParseStrictResponse` impl for `DescribeJobRun`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -278,7 +278,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeJobRun {
 /// Operation shape for `DescribeJobTemplate`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_job_template`](crate::client::Client::describe_job_template).
+/// [`describe_job_template`](crate::client::fluent_builders::DescribeJobTemplate).
 ///
 /// `ParseStrictResponse` impl for `DescribeJobTemplate`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -313,7 +313,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeJobTemplate {
 /// Operation shape for `DescribeManagedEndpoint`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_managed_endpoint`](crate::client::Client::describe_managed_endpoint).
+/// [`describe_managed_endpoint`](crate::client::fluent_builders::DescribeManagedEndpoint).
 ///
 /// `ParseStrictResponse` impl for `DescribeManagedEndpoint`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -348,7 +348,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeManagedEndpoint 
 /// Operation shape for `DescribeVirtualCluster`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_virtual_cluster`](crate::client::Client::describe_virtual_cluster).
+/// [`describe_virtual_cluster`](crate::client::fluent_builders::DescribeVirtualCluster).
 ///
 /// `ParseStrictResponse` impl for `DescribeVirtualCluster`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -383,7 +383,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeVirtualCluster {
 /// Operation shape for `ListJobRuns`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_job_runs`](crate::client::Client::list_job_runs).
+/// [`list_job_runs`](crate::client::fluent_builders::ListJobRuns).
 ///
 /// `ParseStrictResponse` impl for `ListJobRuns`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -416,7 +416,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListJobRuns {
 /// Operation shape for `ListJobTemplates`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_job_templates`](crate::client::Client::list_job_templates).
+/// [`list_job_templates`](crate::client::fluent_builders::ListJobTemplates).
 ///
 /// `ParseStrictResponse` impl for `ListJobTemplates`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -451,7 +451,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListJobTemplates {
 /// Operation shape for `ListManagedEndpoints`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_managed_endpoints`](crate::client::Client::list_managed_endpoints).
+/// [`list_managed_endpoints`](crate::client::fluent_builders::ListManagedEndpoints).
 ///
 /// `ParseStrictResponse` impl for `ListManagedEndpoints`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -486,7 +486,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListManagedEndpoints {
 /// Operation shape for `ListTagsForResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
+/// [`list_tags_for_resource`](crate::client::fluent_builders::ListTagsForResource).
 ///
 /// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -521,7 +521,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// Operation shape for `ListVirtualClusters`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_virtual_clusters`](crate::client::Client::list_virtual_clusters).
+/// [`list_virtual_clusters`](crate::client::fluent_builders::ListVirtualClusters).
 ///
 /// `ParseStrictResponse` impl for `ListVirtualClusters`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -556,7 +556,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListVirtualClusters {
 /// Operation shape for `StartJobRun`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`start_job_run`](crate::client::Client::start_job_run).
+/// [`start_job_run`](crate::client::fluent_builders::StartJobRun).
 ///
 /// `ParseStrictResponse` impl for `StartJobRun`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -589,7 +589,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartJobRun {
 /// Operation shape for `TagResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`tag_resource`](crate::client::Client::tag_resource).
+/// [`tag_resource`](crate::client::fluent_builders::TagResource).
 ///
 /// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -622,7 +622,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// Operation shape for `UntagResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`untag_resource`](crate::client::Client::untag_resource).
+/// [`untag_resource`](crate::client::fluent_builders::UntagResource).
 ///
 /// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

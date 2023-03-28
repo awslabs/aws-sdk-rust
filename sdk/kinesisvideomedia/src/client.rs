@@ -100,128 +100,8 @@ impl Client {
     ///   - [`content_type(Option<String>)`](crate::output::GetMediaOutput::content_type): <p>The content type of the requested media.</p>
     ///   - [`payload(ByteStream)`](crate::output::GetMediaOutput::payload): <p> The payload Kinesis Video Streams returns is a sequence of chunks from the specified stream. For information about the chunks, see . The chunks that Kinesis Video Streams returns in the <code>GetMedia</code> call also include the following additional Matroska (MKV) tags: </p>  <ul>   <li> <p>AWS_KINESISVIDEO_CONTINUATION_TOKEN (UTF-8 string) - In the event your <code>GetMedia</code> call terminates, you can use this continuation token in your next request to get the next chunk where the last request terminated.</p> </li>   <li> <p>AWS_KINESISVIDEO_MILLIS_BEHIND_NOW (UTF-8 string) - Client applications can use this tag value to determine how far behind the chunk returned in the response is from the latest chunk on the stream. </p> </li>   <li> <p>AWS_KINESISVIDEO_FRAGMENT_NUMBER - Fragment number returned in the chunk.</p> </li>   <li> <p>AWS_KINESISVIDEO_SERVER_TIMESTAMP - Server timestamp of the fragment.</p> </li>   <li> <p>AWS_KINESISVIDEO_PRODUCER_TIMESTAMP - Producer timestamp of the fragment.</p> </li>  </ul>  <p>The following tags will be present if an error occurs:</p>  <ul>   <li> <p>AWS_KINESISVIDEO_ERROR_CODE - String description of an error that caused GetMedia to stop.</p> </li>   <li> <p>AWS_KINESISVIDEO_ERROR_ID: Integer code of the error.</p> </li>  </ul>  <p>The error codes are as follows:</p>  <ul>   <li> <p>3002 - Error writing to the stream</p> </li>   <li> <p>4000 - Requested fragment is not found</p> </li>   <li> <p>4500 - Access denied for the stream's KMS key</p> </li>   <li> <p>4501 - Stream's KMS key is disabled</p> </li>   <li> <p>4502 - Validation error on the stream's KMS key</p> </li>   <li> <p>4503 - KMS key specified in the stream is unavailable</p> </li>   <li> <p>4504 - Invalid usage of the KMS key specified in the stream</p> </li>   <li> <p>4505 - Invalid state of the KMS key specified in the stream</p> </li>   <li> <p>4506 - Unable to find the KMS key specified in the stream</p> </li>   <li> <p>5000 - Internal error</p> </li>  </ul>
     /// - On failure, responds with [`SdkError<GetMediaError>`](crate::error::GetMediaError)
-    pub fn get_media(&self) -> fluent_builders::GetMedia {
-        fluent_builders::GetMedia::new(self.handle.clone())
-    }
-}
-pub mod fluent_builders {
-
-    //! Utilities to ergonomically construct a request to the service.
-    //!
-    //! Fluent builders are created through the [`Client`](crate::client::Client) by calling
-    //! one if its operation methods. After parameters are set using the builder methods,
-    //! the `send` method can be called to initiate the request.
-    /// Fluent builder constructing a request to `GetMedia`.
-    ///
-    /// <p> Use this API to retrieve media content from a Kinesis video stream. In the request, you identify the stream name or stream Amazon Resource Name (ARN), and the starting chunk. Kinesis Video Streams then returns a stream of chunks in order by fragment number.</p> <note>
-    /// <p>You must first call the <code>GetDataEndpoint</code> API to get an endpoint. Then send the <code>GetMedia</code> requests to this endpoint using the <a href="https://docs.aws.amazon.com/cli/latest/reference/">--endpoint-url parameter</a>. </p>
-    /// </note>
-    /// <p>When you put media data (fragments) on a stream, Kinesis Video Streams stores each incoming fragment and related metadata in what is called a "chunk." For more information, see <a href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_dataplane_PutMedia.html">PutMedia</a>. The <code>GetMedia</code> API returns a stream of these chunks starting from the chunk that you specify in the request. </p>
-    /// <p>The following limits apply when using the <code>GetMedia</code> API:</p>
-    /// <ul>
-    /// <li> <p>A client can call <code>GetMedia</code> up to five times per second per stream. </p> </li>
-    /// <li> <p>Kinesis Video Streams sends media data at a rate of up to 25 megabytes per second (or 200 megabits per second) during a <code>GetMedia</code> session. </p> </li>
-    /// </ul> <note>
-    /// <p>If an error is thrown after invoking a Kinesis Video Streams media API, in addition to the HTTP status code and the response body, it includes the following pieces of information: </p>
-    /// <ul>
-    /// <li> <p> <code>x-amz-ErrorType</code> HTTP header – contains a more specific error type in addition to what the HTTP status code provides. </p> </li>
-    /// <li> <p> <code>x-amz-RequestId</code> HTTP header – if you want to report an issue to AWS, the support team can better diagnose the problem if given the Request Id.</p> </li>
-    /// </ul>
-    /// <p>Both the HTTP status code and the ErrorType header can be utilized to make programmatic decisions about whether errors are retry-able and under what conditions, as well as provide information on what actions the client programmer might need to take in order to successfully try again.</p>
-    /// <p>For more information, see the <b>Errors</b> section at the bottom of this topic, as well as <a href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/CommonErrors.html">Common Errors</a>. </p>
-    /// </note>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct GetMedia {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::get_media_input::Builder,
-    }
-    impl GetMedia {
-        /// Creates a new `GetMedia`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::GetMedia,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::GetMediaError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::GetMediaOutput,
-            aws_smithy_http::result::SdkError<crate::error::GetMediaError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// <p>The Kinesis video stream name from where you want to get the media content. If you don't specify the <code>streamName</code>, you must specify the <code>streamARN</code>.</p>
-        pub fn stream_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stream_name(input.into());
-            self
-        }
-        /// <p>The Kinesis video stream name from where you want to get the media content. If you don't specify the <code>streamName</code>, you must specify the <code>streamARN</code>.</p>
-        pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_stream_name(input);
-            self
-        }
-        /// <p>The ARN of the stream from where you want to get the media content. If you don't specify the <code>streamARN</code>, you must specify the <code>streamName</code>.</p>
-        pub fn stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stream_arn(input.into());
-            self
-        }
-        /// <p>The ARN of the stream from where you want to get the media content. If you don't specify the <code>streamARN</code>, you must specify the <code>streamName</code>.</p>
-        pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_stream_arn(input);
-            self
-        }
-        /// <p>Identifies the starting chunk to get from the specified stream. </p>
-        pub fn start_selector(mut self, input: crate::model::StartSelector) -> Self {
-            self.inner = self.inner.start_selector(input);
-            self
-        }
-        /// <p>Identifies the starting chunk to get from the specified stream. </p>
-        pub fn set_start_selector(
-            mut self,
-            input: std::option::Option<crate::model::StartSelector>,
-        ) -> Self {
-            self.inner = self.inner.set_start_selector(input);
-            self
-        }
+    pub fn get_media(&self) -> crate::client::fluent_builders::GetMedia {
+        crate::client::fluent_builders::GetMedia::new(self.handle.clone())
     }
 }
 
@@ -308,3 +188,10 @@ impl Client {
         }
     }
 }
+
+/// Utilities to ergonomically construct a request to the service.
+///
+/// Fluent builders are created through the [`Client`](crate::client::Client) by calling
+/// one if its operation methods. After parameters are set using the builder methods,
+/// the `send` method can be called to initiate the request.
+pub mod fluent_builders;

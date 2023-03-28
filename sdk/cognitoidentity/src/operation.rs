@@ -2,7 +2,7 @@
 /// Operation shape for `CreateIdentityPool`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_identity_pool`](crate::client::Client::create_identity_pool).
+/// [`create_identity_pool`](crate::client::fluent_builders::CreateIdentityPool).
 ///
 /// `ParseStrictResponse` impl for `CreateIdentityPool`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -37,7 +37,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateIdentityPool {
 /// Operation shape for `DeleteIdentities`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_identities`](crate::client::Client::delete_identities).
+/// [`delete_identities`](crate::client::fluent_builders::DeleteIdentities).
 ///
 /// `ParseStrictResponse` impl for `DeleteIdentities`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -72,7 +72,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteIdentities {
 /// Operation shape for `DeleteIdentityPool`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_identity_pool`](crate::client::Client::delete_identity_pool).
+/// [`delete_identity_pool`](crate::client::fluent_builders::DeleteIdentityPool).
 ///
 /// `ParseStrictResponse` impl for `DeleteIdentityPool`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -107,7 +107,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteIdentityPool {
 /// Operation shape for `DescribeIdentity`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_identity`](crate::client::Client::describe_identity).
+/// [`describe_identity`](crate::client::fluent_builders::DescribeIdentity).
 ///
 /// `ParseStrictResponse` impl for `DescribeIdentity`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -142,7 +142,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeIdentity {
 /// Operation shape for `DescribeIdentityPool`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_identity_pool`](crate::client::Client::describe_identity_pool).
+/// [`describe_identity_pool`](crate::client::fluent_builders::DescribeIdentityPool).
 ///
 /// `ParseStrictResponse` impl for `DescribeIdentityPool`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -177,7 +177,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeIdentityPool {
 /// Operation shape for `GetCredentialsForIdentity`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_credentials_for_identity`](crate::client::Client::get_credentials_for_identity).
+/// [`get_credentials_for_identity`](crate::client::fluent_builders::GetCredentialsForIdentity).
 ///
 /// `ParseStrictResponse` impl for `GetCredentialsForIdentity`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -212,7 +212,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetCredentialsForIdentit
 /// Operation shape for `GetId`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_id`](crate::client::Client::get_id).
+/// [`get_id`](crate::client::fluent_builders::GetId).
 ///
 /// `ParseStrictResponse` impl for `GetId`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -244,7 +244,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetId {
 /// Operation shape for `GetIdentityPoolRoles`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_identity_pool_roles`](crate::client::Client::get_identity_pool_roles).
+/// [`get_identity_pool_roles`](crate::client::fluent_builders::GetIdentityPoolRoles).
 ///
 /// `ParseStrictResponse` impl for `GetIdentityPoolRoles`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -279,7 +279,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetIdentityPoolRoles {
 /// Operation shape for `GetOpenIdToken`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_open_id_token`](crate::client::Client::get_open_id_token).
+/// [`get_open_id_token`](crate::client::fluent_builders::GetOpenIdToken).
 ///
 /// `ParseStrictResponse` impl for `GetOpenIdToken`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -312,7 +312,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetOpenIdToken {
 /// Operation shape for `GetOpenIdTokenForDeveloperIdentity`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_open_id_token_for_developer_identity`](crate::client::Client::get_open_id_token_for_developer_identity).
+/// [`get_open_id_token_for_developer_identity`](crate::client::fluent_builders::GetOpenIdTokenForDeveloperIdentity).
 ///
 /// `ParseStrictResponse` impl for `GetOpenIdTokenForDeveloperIdentity`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -349,7 +349,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetOpenIdTokenForDevelop
 /// Operation shape for `GetPrincipalTagAttributeMap`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_principal_tag_attribute_map`](crate::client::Client::get_principal_tag_attribute_map).
+/// [`get_principal_tag_attribute_map`](crate::client::fluent_builders::GetPrincipalTagAttributeMap).
 ///
 /// `ParseStrictResponse` impl for `GetPrincipalTagAttributeMap`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -384,7 +384,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetPrincipalTagAttribute
 /// Operation shape for `ListIdentities`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_identities`](crate::client::Client::list_identities).
+/// [`list_identities`](crate::client::fluent_builders::ListIdentities).
 ///
 /// `ParseStrictResponse` impl for `ListIdentities`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -417,7 +417,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListIdentities {
 /// Operation shape for `ListIdentityPools`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_identity_pools`](crate::client::Client::list_identity_pools).
+/// [`list_identity_pools`](crate::client::fluent_builders::ListIdentityPools).
 ///
 /// `ParseStrictResponse` impl for `ListIdentityPools`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -452,7 +452,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListIdentityPools {
 /// Operation shape for `ListTagsForResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
+/// [`list_tags_for_resource`](crate::client::fluent_builders::ListTagsForResource).
 ///
 /// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -487,7 +487,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// Operation shape for `LookupDeveloperIdentity`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`lookup_developer_identity`](crate::client::Client::lookup_developer_identity).
+/// [`lookup_developer_identity`](crate::client::fluent_builders::LookupDeveloperIdentity).
 ///
 /// `ParseStrictResponse` impl for `LookupDeveloperIdentity`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -522,7 +522,7 @@ impl aws_smithy_http::response::ParseStrictResponse for LookupDeveloperIdentity 
 /// Operation shape for `MergeDeveloperIdentities`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`merge_developer_identities`](crate::client::Client::merge_developer_identities).
+/// [`merge_developer_identities`](crate::client::fluent_builders::MergeDeveloperIdentities).
 ///
 /// `ParseStrictResponse` impl for `MergeDeveloperIdentities`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -557,7 +557,7 @@ impl aws_smithy_http::response::ParseStrictResponse for MergeDeveloperIdentities
 /// Operation shape for `SetIdentityPoolRoles`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`set_identity_pool_roles`](crate::client::Client::set_identity_pool_roles).
+/// [`set_identity_pool_roles`](crate::client::fluent_builders::SetIdentityPoolRoles).
 ///
 /// `ParseStrictResponse` impl for `SetIdentityPoolRoles`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -592,7 +592,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SetIdentityPoolRoles {
 /// Operation shape for `SetPrincipalTagAttributeMap`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`set_principal_tag_attribute_map`](crate::client::Client::set_principal_tag_attribute_map).
+/// [`set_principal_tag_attribute_map`](crate::client::fluent_builders::SetPrincipalTagAttributeMap).
 ///
 /// `ParseStrictResponse` impl for `SetPrincipalTagAttributeMap`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -627,7 +627,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SetPrincipalTagAttribute
 /// Operation shape for `TagResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`tag_resource`](crate::client::Client::tag_resource).
+/// [`tag_resource`](crate::client::fluent_builders::TagResource).
 ///
 /// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -660,7 +660,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// Operation shape for `UnlinkDeveloperIdentity`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`unlink_developer_identity`](crate::client::Client::unlink_developer_identity).
+/// [`unlink_developer_identity`](crate::client::fluent_builders::UnlinkDeveloperIdentity).
 ///
 /// `ParseStrictResponse` impl for `UnlinkDeveloperIdentity`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -695,7 +695,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UnlinkDeveloperIdentity 
 /// Operation shape for `UnlinkIdentity`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`unlink_identity`](crate::client::Client::unlink_identity).
+/// [`unlink_identity`](crate::client::fluent_builders::UnlinkIdentity).
 ///
 /// `ParseStrictResponse` impl for `UnlinkIdentity`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -728,7 +728,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UnlinkIdentity {
 /// Operation shape for `UntagResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`untag_resource`](crate::client::Client::untag_resource).
+/// [`untag_resource`](crate::client::fluent_builders::UntagResource).
 ///
 /// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -761,7 +761,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// Operation shape for `UpdateIdentityPool`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_identity_pool`](crate::client::Client::update_identity_pool).
+/// [`update_identity_pool`](crate::client::fluent_builders::UpdateIdentityPool).
 ///
 /// `ParseStrictResponse` impl for `UpdateIdentityPool`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

@@ -2,7 +2,7 @@
 /// Operation shape for `SendSerialConsoleSSHPublicKey`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`send_serial_console_ssh_public_key`](crate::client::Client::send_serial_console_ssh_public_key).
+/// [`send_serial_console_ssh_public_key`](crate::client::fluent_builders::SendSerialConsoleSSHPublicKey).
 ///
 /// `ParseStrictResponse` impl for `SendSerialConsoleSSHPublicKey`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -37,7 +37,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SendSerialConsoleSSHPubl
 /// Operation shape for `SendSSHPublicKey`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`send_ssh_public_key`](crate::client::Client::send_ssh_public_key).
+/// [`send_ssh_public_key`](crate::client::fluent_builders::SendSSHPublicKey).
 ///
 /// `ParseStrictResponse` impl for `SendSSHPublicKey`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

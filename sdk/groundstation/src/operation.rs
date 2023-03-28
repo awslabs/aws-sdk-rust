@@ -2,7 +2,7 @@
 /// Operation shape for `CancelContact`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`cancel_contact`](crate::client::Client::cancel_contact).
+/// [`cancel_contact`](crate::client::fluent_builders::CancelContact).
 ///
 /// `ParseStrictResponse` impl for `CancelContact`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -35,7 +35,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CancelContact {
 /// Operation shape for `CreateConfig`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_config`](crate::client::Client::create_config).
+/// [`create_config`](crate::client::fluent_builders::CreateConfig).
 ///
 /// `ParseStrictResponse` impl for `CreateConfig`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -68,7 +68,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateConfig {
 /// Operation shape for `CreateDataflowEndpointGroup`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_dataflow_endpoint_group`](crate::client::Client::create_dataflow_endpoint_group).
+/// [`create_dataflow_endpoint_group`](crate::client::fluent_builders::CreateDataflowEndpointGroup).
 ///
 /// `ParseStrictResponse` impl for `CreateDataflowEndpointGroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -103,7 +103,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateDataflowEndpointGr
 /// Operation shape for `CreateEphemeris`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_ephemeris`](crate::client::Client::create_ephemeris).
+/// [`create_ephemeris`](crate::client::fluent_builders::CreateEphemeris).
 ///
 /// `ParseStrictResponse` impl for `CreateEphemeris`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -138,7 +138,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateEphemeris {
 /// Operation shape for `CreateMissionProfile`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_mission_profile`](crate::client::Client::create_mission_profile).
+/// [`create_mission_profile`](crate::client::fluent_builders::CreateMissionProfile).
 ///
 /// `ParseStrictResponse` impl for `CreateMissionProfile`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -173,7 +173,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateMissionProfile {
 /// Operation shape for `DeleteConfig`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_config`](crate::client::Client::delete_config).
+/// [`delete_config`](crate::client::fluent_builders::DeleteConfig).
 ///
 /// `ParseStrictResponse` impl for `DeleteConfig`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -206,7 +206,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteConfig {
 /// Operation shape for `DeleteDataflowEndpointGroup`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_dataflow_endpoint_group`](crate::client::Client::delete_dataflow_endpoint_group).
+/// [`delete_dataflow_endpoint_group`](crate::client::fluent_builders::DeleteDataflowEndpointGroup).
 ///
 /// `ParseStrictResponse` impl for `DeleteDataflowEndpointGroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -241,7 +241,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteDataflowEndpointGr
 /// Operation shape for `DeleteEphemeris`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_ephemeris`](crate::client::Client::delete_ephemeris).
+/// [`delete_ephemeris`](crate::client::fluent_builders::DeleteEphemeris).
 ///
 /// `ParseStrictResponse` impl for `DeleteEphemeris`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -276,7 +276,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteEphemeris {
 /// Operation shape for `DeleteMissionProfile`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_mission_profile`](crate::client::Client::delete_mission_profile).
+/// [`delete_mission_profile`](crate::client::fluent_builders::DeleteMissionProfile).
 ///
 /// `ParseStrictResponse` impl for `DeleteMissionProfile`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -311,7 +311,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteMissionProfile {
 /// Operation shape for `DescribeContact`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_contact`](crate::client::Client::describe_contact).
+/// [`describe_contact`](crate::client::fluent_builders::DescribeContact).
 ///
 /// `ParseStrictResponse` impl for `DescribeContact`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -346,7 +346,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeContact {
 /// Operation shape for `DescribeEphemeris`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_ephemeris`](crate::client::Client::describe_ephemeris).
+/// [`describe_ephemeris`](crate::client::fluent_builders::DescribeEphemeris).
 ///
 /// `ParseStrictResponse` impl for `DescribeEphemeris`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -381,7 +381,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeEphemeris {
 /// Operation shape for `GetConfig`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_config`](crate::client::Client::get_config).
+/// [`get_config`](crate::client::fluent_builders::GetConfig).
 ///
 /// `ParseStrictResponse` impl for `GetConfig`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -413,7 +413,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetConfig {
 /// Operation shape for `GetDataflowEndpointGroup`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_dataflow_endpoint_group`](crate::client::Client::get_dataflow_endpoint_group).
+/// [`get_dataflow_endpoint_group`](crate::client::fluent_builders::GetDataflowEndpointGroup).
 ///
 /// `ParseStrictResponse` impl for `GetDataflowEndpointGroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -448,7 +448,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDataflowEndpointGroup
 /// Operation shape for `GetMinuteUsage`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_minute_usage`](crate::client::Client::get_minute_usage).
+/// [`get_minute_usage`](crate::client::fluent_builders::GetMinuteUsage).
 ///
 /// `ParseStrictResponse` impl for `GetMinuteUsage`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -481,7 +481,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetMinuteUsage {
 /// Operation shape for `GetMissionProfile`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_mission_profile`](crate::client::Client::get_mission_profile).
+/// [`get_mission_profile`](crate::client::fluent_builders::GetMissionProfile).
 ///
 /// `ParseStrictResponse` impl for `GetMissionProfile`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -516,7 +516,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetMissionProfile {
 /// Operation shape for `GetSatellite`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_satellite`](crate::client::Client::get_satellite).
+/// [`get_satellite`](crate::client::fluent_builders::GetSatellite).
 ///
 /// `ParseStrictResponse` impl for `GetSatellite`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -549,7 +549,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSatellite {
 /// Operation shape for `ListConfigs`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_configs`](crate::client::Client::list_configs).
+/// [`list_configs`](crate::client::fluent_builders::ListConfigs).
 ///
 /// `ParseStrictResponse` impl for `ListConfigs`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -582,7 +582,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListConfigs {
 /// Operation shape for `ListContacts`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_contacts`](crate::client::Client::list_contacts).
+/// [`list_contacts`](crate::client::fluent_builders::ListContacts).
 ///
 /// `ParseStrictResponse` impl for `ListContacts`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -615,7 +615,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListContacts {
 /// Operation shape for `ListDataflowEndpointGroups`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_dataflow_endpoint_groups`](crate::client::Client::list_dataflow_endpoint_groups).
+/// [`list_dataflow_endpoint_groups`](crate::client::fluent_builders::ListDataflowEndpointGroups).
 ///
 /// `ParseStrictResponse` impl for `ListDataflowEndpointGroups`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -650,7 +650,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListDataflowEndpointGrou
 /// Operation shape for `ListEphemerides`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_ephemerides`](crate::client::Client::list_ephemerides).
+/// [`list_ephemerides`](crate::client::fluent_builders::ListEphemerides).
 ///
 /// `ParseStrictResponse` impl for `ListEphemerides`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -685,7 +685,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListEphemerides {
 /// Operation shape for `ListGroundStations`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_ground_stations`](crate::client::Client::list_ground_stations).
+/// [`list_ground_stations`](crate::client::fluent_builders::ListGroundStations).
 ///
 /// `ParseStrictResponse` impl for `ListGroundStations`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -720,7 +720,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListGroundStations {
 /// Operation shape for `ListMissionProfiles`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_mission_profiles`](crate::client::Client::list_mission_profiles).
+/// [`list_mission_profiles`](crate::client::fluent_builders::ListMissionProfiles).
 ///
 /// `ParseStrictResponse` impl for `ListMissionProfiles`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -755,7 +755,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListMissionProfiles {
 /// Operation shape for `ListSatellites`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_satellites`](crate::client::Client::list_satellites).
+/// [`list_satellites`](crate::client::fluent_builders::ListSatellites).
 ///
 /// `ParseStrictResponse` impl for `ListSatellites`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -788,7 +788,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListSatellites {
 /// Operation shape for `ListTagsForResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
+/// [`list_tags_for_resource`](crate::client::fluent_builders::ListTagsForResource).
 ///
 /// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -823,7 +823,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// Operation shape for `ReserveContact`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`reserve_contact`](crate::client::Client::reserve_contact).
+/// [`reserve_contact`](crate::client::fluent_builders::ReserveContact).
 ///
 /// `ParseStrictResponse` impl for `ReserveContact`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -856,7 +856,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ReserveContact {
 /// Operation shape for `TagResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`tag_resource`](crate::client::Client::tag_resource).
+/// [`tag_resource`](crate::client::fluent_builders::TagResource).
 ///
 /// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -889,7 +889,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// Operation shape for `UntagResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`untag_resource`](crate::client::Client::untag_resource).
+/// [`untag_resource`](crate::client::fluent_builders::UntagResource).
 ///
 /// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -922,7 +922,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// Operation shape for `UpdateConfig`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_config`](crate::client::Client::update_config).
+/// [`update_config`](crate::client::fluent_builders::UpdateConfig).
 ///
 /// `ParseStrictResponse` impl for `UpdateConfig`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -955,7 +955,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateConfig {
 /// Operation shape for `UpdateEphemeris`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_ephemeris`](crate::client::Client::update_ephemeris).
+/// [`update_ephemeris`](crate::client::fluent_builders::UpdateEphemeris).
 ///
 /// `ParseStrictResponse` impl for `UpdateEphemeris`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -990,7 +990,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateEphemeris {
 /// Operation shape for `UpdateMissionProfile`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_mission_profile`](crate::client::Client::update_mission_profile).
+/// [`update_mission_profile`](crate::client::fluent_builders::UpdateMissionProfile).
 ///
 /// `ParseStrictResponse` impl for `UpdateMissionProfile`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

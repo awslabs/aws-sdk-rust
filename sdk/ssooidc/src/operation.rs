@@ -2,7 +2,7 @@
 /// Operation shape for `CreateToken`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_token`](crate::client::Client::create_token).
+/// [`create_token`](crate::client::fluent_builders::CreateToken).
 ///
 /// `ParseStrictResponse` impl for `CreateToken`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -35,7 +35,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateToken {
 /// Operation shape for `RegisterClient`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`register_client`](crate::client::Client::register_client).
+/// [`register_client`](crate::client::fluent_builders::RegisterClient).
 ///
 /// `ParseStrictResponse` impl for `RegisterClient`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -68,7 +68,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RegisterClient {
 /// Operation shape for `StartDeviceAuthorization`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`start_device_authorization`](crate::client::Client::start_device_authorization).
+/// [`start_device_authorization`](crate::client::fluent_builders::StartDeviceAuthorization).
 ///
 /// `ParseStrictResponse` impl for `StartDeviceAuthorization`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

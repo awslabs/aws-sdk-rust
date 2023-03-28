@@ -2,7 +2,7 @@
 /// Operation shape for `CompleteSnapshot`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`complete_snapshot`](crate::client::Client::complete_snapshot).
+/// [`complete_snapshot`](crate::client::fluent_builders::CompleteSnapshot).
 ///
 /// `ParseStrictResponse` impl for `CompleteSnapshot`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -137,7 +137,7 @@ mod complete_snapshot_request_test {
 /// Operation shape for `GetSnapshotBlock`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_snapshot_block`](crate::client::Client::get_snapshot_block).
+/// [`get_snapshot_block`](crate::client::fluent_builders::GetSnapshotBlock).
 ///
 /// `ParseStrictResponse` impl for `GetSnapshotBlock`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -278,7 +278,7 @@ mod get_snapshot_block_request_test {
 /// Operation shape for `ListChangedBlocks`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_changed_blocks`](crate::client::Client::list_changed_blocks).
+/// [`list_changed_blocks`](crate::client::fluent_builders::ListChangedBlocks).
 ///
 /// `ParseStrictResponse` impl for `ListChangedBlocks`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -413,7 +413,7 @@ mod list_changed_blocks_request_test {
 /// Operation shape for `ListSnapshotBlocks`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_snapshot_blocks`](crate::client::Client::list_snapshot_blocks).
+/// [`list_snapshot_blocks`](crate::client::fluent_builders::ListSnapshotBlocks).
 ///
 /// `ParseStrictResponse` impl for `ListSnapshotBlocks`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -548,7 +548,7 @@ mod list_snapshot_blocks_request_test {
 /// Operation shape for `PutSnapshotBlock`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`put_snapshot_block`](crate::client::Client::put_snapshot_block).
+/// [`put_snapshot_block`](crate::client::fluent_builders::PutSnapshotBlock).
 ///
 /// `ParseStrictResponse` impl for `PutSnapshotBlock`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -683,7 +683,7 @@ mod put_snapshot_block_request_test {
 /// Operation shape for `StartSnapshot`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`start_snapshot`](crate::client::Client::start_snapshot).
+/// [`start_snapshot`](crate::client::fluent_builders::StartSnapshot).
 ///
 /// `ParseStrictResponse` impl for `StartSnapshot`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

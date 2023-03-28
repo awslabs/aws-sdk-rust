@@ -2,7 +2,7 @@
 /// Operation shape for `BatchDeleteReadSet`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`batch_delete_read_set`](crate::client::Client::batch_delete_read_set).
+/// [`batch_delete_read_set`](crate::client::fluent_builders::BatchDeleteReadSet).
 ///
 /// `ParseStrictResponse` impl for `BatchDeleteReadSet`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -37,7 +37,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchDeleteReadSet {
 /// Operation shape for `CancelAnnotationImportJob`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`cancel_annotation_import_job`](crate::client::Client::cancel_annotation_import_job).
+/// [`cancel_annotation_import_job`](crate::client::fluent_builders::CancelAnnotationImportJob).
 ///
 /// `ParseStrictResponse` impl for `CancelAnnotationImportJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -72,7 +72,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CancelAnnotationImportJo
 /// Operation shape for `CancelRun`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`cancel_run`](crate::client::Client::cancel_run).
+/// [`cancel_run`](crate::client::fluent_builders::CancelRun).
 ///
 /// `ParseStrictResponse` impl for `CancelRun`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -104,7 +104,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CancelRun {
 /// Operation shape for `CancelVariantImportJob`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`cancel_variant_import_job`](crate::client::Client::cancel_variant_import_job).
+/// [`cancel_variant_import_job`](crate::client::fluent_builders::CancelVariantImportJob).
 ///
 /// `ParseStrictResponse` impl for `CancelVariantImportJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -139,7 +139,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CancelVariantImportJob {
 /// Operation shape for `CreateAnnotationStore`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_annotation_store`](crate::client::Client::create_annotation_store).
+/// [`create_annotation_store`](crate::client::fluent_builders::CreateAnnotationStore).
 ///
 /// `ParseStrictResponse` impl for `CreateAnnotationStore`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -174,7 +174,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateAnnotationStore {
 /// Operation shape for `CreateReferenceStore`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_reference_store`](crate::client::Client::create_reference_store).
+/// [`create_reference_store`](crate::client::fluent_builders::CreateReferenceStore).
 ///
 /// `ParseStrictResponse` impl for `CreateReferenceStore`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -209,7 +209,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateReferenceStore {
 /// Operation shape for `CreateRunGroup`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_run_group`](crate::client::Client::create_run_group).
+/// [`create_run_group`](crate::client::fluent_builders::CreateRunGroup).
 ///
 /// `ParseStrictResponse` impl for `CreateRunGroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -242,7 +242,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateRunGroup {
 /// Operation shape for `CreateSequenceStore`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_sequence_store`](crate::client::Client::create_sequence_store).
+/// [`create_sequence_store`](crate::client::fluent_builders::CreateSequenceStore).
 ///
 /// `ParseStrictResponse` impl for `CreateSequenceStore`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -277,7 +277,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateSequenceStore {
 /// Operation shape for `CreateVariantStore`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_variant_store`](crate::client::Client::create_variant_store).
+/// [`create_variant_store`](crate::client::fluent_builders::CreateVariantStore).
 ///
 /// `ParseStrictResponse` impl for `CreateVariantStore`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -312,7 +312,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateVariantStore {
 /// Operation shape for `CreateWorkflow`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_workflow`](crate::client::Client::create_workflow).
+/// [`create_workflow`](crate::client::fluent_builders::CreateWorkflow).
 ///
 /// `ParseStrictResponse` impl for `CreateWorkflow`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -345,7 +345,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateWorkflow {
 /// Operation shape for `DeleteAnnotationStore`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_annotation_store`](crate::client::Client::delete_annotation_store).
+/// [`delete_annotation_store`](crate::client::fluent_builders::DeleteAnnotationStore).
 ///
 /// `ParseStrictResponse` impl for `DeleteAnnotationStore`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -380,7 +380,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteAnnotationStore {
 /// Operation shape for `DeleteReference`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_reference`](crate::client::Client::delete_reference).
+/// [`delete_reference`](crate::client::fluent_builders::DeleteReference).
 ///
 /// `ParseStrictResponse` impl for `DeleteReference`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -415,7 +415,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteReference {
 /// Operation shape for `DeleteReferenceStore`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_reference_store`](crate::client::Client::delete_reference_store).
+/// [`delete_reference_store`](crate::client::fluent_builders::DeleteReferenceStore).
 ///
 /// `ParseStrictResponse` impl for `DeleteReferenceStore`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -450,7 +450,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteReferenceStore {
 /// Operation shape for `DeleteRun`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_run`](crate::client::Client::delete_run).
+/// [`delete_run`](crate::client::fluent_builders::DeleteRun).
 ///
 /// `ParseStrictResponse` impl for `DeleteRun`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -482,7 +482,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteRun {
 /// Operation shape for `DeleteRunGroup`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_run_group`](crate::client::Client::delete_run_group).
+/// [`delete_run_group`](crate::client::fluent_builders::DeleteRunGroup).
 ///
 /// `ParseStrictResponse` impl for `DeleteRunGroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -515,7 +515,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteRunGroup {
 /// Operation shape for `DeleteSequenceStore`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_sequence_store`](crate::client::Client::delete_sequence_store).
+/// [`delete_sequence_store`](crate::client::fluent_builders::DeleteSequenceStore).
 ///
 /// `ParseStrictResponse` impl for `DeleteSequenceStore`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -550,7 +550,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteSequenceStore {
 /// Operation shape for `DeleteVariantStore`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_variant_store`](crate::client::Client::delete_variant_store).
+/// [`delete_variant_store`](crate::client::fluent_builders::DeleteVariantStore).
 ///
 /// `ParseStrictResponse` impl for `DeleteVariantStore`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -585,7 +585,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteVariantStore {
 /// Operation shape for `DeleteWorkflow`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_workflow`](crate::client::Client::delete_workflow).
+/// [`delete_workflow`](crate::client::fluent_builders::DeleteWorkflow).
 ///
 /// `ParseStrictResponse` impl for `DeleteWorkflow`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -618,7 +618,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteWorkflow {
 /// Operation shape for `GetAnnotationImportJob`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_annotation_import_job`](crate::client::Client::get_annotation_import_job).
+/// [`get_annotation_import_job`](crate::client::fluent_builders::GetAnnotationImportJob).
 ///
 /// `ParseStrictResponse` impl for `GetAnnotationImportJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -653,7 +653,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAnnotationImportJob {
 /// Operation shape for `GetAnnotationStore`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_annotation_store`](crate::client::Client::get_annotation_store).
+/// [`get_annotation_store`](crate::client::fluent_builders::GetAnnotationStore).
 ///
 /// `ParseStrictResponse` impl for `GetAnnotationStore`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -688,7 +688,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAnnotationStore {
 /// Operation shape for `GetReadSet`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_read_set`](crate::client::Client::get_read_set).
+/// [`get_read_set`](crate::client::fluent_builders::GetReadSet).
 ///
 /// `ParseStrictResponse` impl for `GetReadSet`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -727,7 +727,7 @@ impl aws_smithy_http::response::ParseHttpResponse for GetReadSet {
 /// Operation shape for `GetReadSetActivationJob`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_read_set_activation_job`](crate::client::Client::get_read_set_activation_job).
+/// [`get_read_set_activation_job`](crate::client::fluent_builders::GetReadSetActivationJob).
 ///
 /// `ParseStrictResponse` impl for `GetReadSetActivationJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -762,7 +762,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetReadSetActivationJob 
 /// Operation shape for `GetReadSetExportJob`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_read_set_export_job`](crate::client::Client::get_read_set_export_job).
+/// [`get_read_set_export_job`](crate::client::fluent_builders::GetReadSetExportJob).
 ///
 /// `ParseStrictResponse` impl for `GetReadSetExportJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -797,7 +797,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetReadSetExportJob {
 /// Operation shape for `GetReadSetImportJob`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_read_set_import_job`](crate::client::Client::get_read_set_import_job).
+/// [`get_read_set_import_job`](crate::client::fluent_builders::GetReadSetImportJob).
 ///
 /// `ParseStrictResponse` impl for `GetReadSetImportJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -832,7 +832,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetReadSetImportJob {
 /// Operation shape for `GetReadSetMetadata`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_read_set_metadata`](crate::client::Client::get_read_set_metadata).
+/// [`get_read_set_metadata`](crate::client::fluent_builders::GetReadSetMetadata).
 ///
 /// `ParseStrictResponse` impl for `GetReadSetMetadata`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -867,7 +867,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetReadSetMetadata {
 /// Operation shape for `GetReference`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_reference`](crate::client::Client::get_reference).
+/// [`get_reference`](crate::client::fluent_builders::GetReference).
 ///
 /// `ParseStrictResponse` impl for `GetReference`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -906,7 +906,7 @@ impl aws_smithy_http::response::ParseHttpResponse for GetReference {
 /// Operation shape for `GetReferenceImportJob`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_reference_import_job`](crate::client::Client::get_reference_import_job).
+/// [`get_reference_import_job`](crate::client::fluent_builders::GetReferenceImportJob).
 ///
 /// `ParseStrictResponse` impl for `GetReferenceImportJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -941,7 +941,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetReferenceImportJob {
 /// Operation shape for `GetReferenceMetadata`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_reference_metadata`](crate::client::Client::get_reference_metadata).
+/// [`get_reference_metadata`](crate::client::fluent_builders::GetReferenceMetadata).
 ///
 /// `ParseStrictResponse` impl for `GetReferenceMetadata`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -976,7 +976,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetReferenceMetadata {
 /// Operation shape for `GetReferenceStore`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_reference_store`](crate::client::Client::get_reference_store).
+/// [`get_reference_store`](crate::client::fluent_builders::GetReferenceStore).
 ///
 /// `ParseStrictResponse` impl for `GetReferenceStore`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1011,7 +1011,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetReferenceStore {
 /// Operation shape for `GetRun`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_run`](crate::client::Client::get_run).
+/// [`get_run`](crate::client::fluent_builders::GetRun).
 ///
 /// `ParseStrictResponse` impl for `GetRun`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1043,7 +1043,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetRun {
 /// Operation shape for `GetRunGroup`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_run_group`](crate::client::Client::get_run_group).
+/// [`get_run_group`](crate::client::fluent_builders::GetRunGroup).
 ///
 /// `ParseStrictResponse` impl for `GetRunGroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1076,7 +1076,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetRunGroup {
 /// Operation shape for `GetRunTask`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_run_task`](crate::client::Client::get_run_task).
+/// [`get_run_task`](crate::client::fluent_builders::GetRunTask).
 ///
 /// `ParseStrictResponse` impl for `GetRunTask`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1109,7 +1109,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetRunTask {
 /// Operation shape for `GetSequenceStore`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_sequence_store`](crate::client::Client::get_sequence_store).
+/// [`get_sequence_store`](crate::client::fluent_builders::GetSequenceStore).
 ///
 /// `ParseStrictResponse` impl for `GetSequenceStore`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1144,7 +1144,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSequenceStore {
 /// Operation shape for `GetVariantImportJob`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_variant_import_job`](crate::client::Client::get_variant_import_job).
+/// [`get_variant_import_job`](crate::client::fluent_builders::GetVariantImportJob).
 ///
 /// `ParseStrictResponse` impl for `GetVariantImportJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1179,7 +1179,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetVariantImportJob {
 /// Operation shape for `GetVariantStore`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_variant_store`](crate::client::Client::get_variant_store).
+/// [`get_variant_store`](crate::client::fluent_builders::GetVariantStore).
 ///
 /// `ParseStrictResponse` impl for `GetVariantStore`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1214,7 +1214,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetVariantStore {
 /// Operation shape for `GetWorkflow`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_workflow`](crate::client::Client::get_workflow).
+/// [`get_workflow`](crate::client::fluent_builders::GetWorkflow).
 ///
 /// `ParseStrictResponse` impl for `GetWorkflow`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1247,7 +1247,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetWorkflow {
 /// Operation shape for `ListAnnotationImportJobs`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_annotation_import_jobs`](crate::client::Client::list_annotation_import_jobs).
+/// [`list_annotation_import_jobs`](crate::client::fluent_builders::ListAnnotationImportJobs).
 ///
 /// `ParseStrictResponse` impl for `ListAnnotationImportJobs`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1282,7 +1282,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAnnotationImportJobs
 /// Operation shape for `ListAnnotationStores`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_annotation_stores`](crate::client::Client::list_annotation_stores).
+/// [`list_annotation_stores`](crate::client::fluent_builders::ListAnnotationStores).
 ///
 /// `ParseStrictResponse` impl for `ListAnnotationStores`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1317,7 +1317,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAnnotationStores {
 /// Operation shape for `ListReadSetActivationJobs`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_read_set_activation_jobs`](crate::client::Client::list_read_set_activation_jobs).
+/// [`list_read_set_activation_jobs`](crate::client::fluent_builders::ListReadSetActivationJobs).
 ///
 /// `ParseStrictResponse` impl for `ListReadSetActivationJobs`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1352,7 +1352,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListReadSetActivationJob
 /// Operation shape for `ListReadSetExportJobs`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_read_set_export_jobs`](crate::client::Client::list_read_set_export_jobs).
+/// [`list_read_set_export_jobs`](crate::client::fluent_builders::ListReadSetExportJobs).
 ///
 /// `ParseStrictResponse` impl for `ListReadSetExportJobs`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1387,7 +1387,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListReadSetExportJobs {
 /// Operation shape for `ListReadSetImportJobs`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_read_set_import_jobs`](crate::client::Client::list_read_set_import_jobs).
+/// [`list_read_set_import_jobs`](crate::client::fluent_builders::ListReadSetImportJobs).
 ///
 /// `ParseStrictResponse` impl for `ListReadSetImportJobs`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1422,7 +1422,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListReadSetImportJobs {
 /// Operation shape for `ListReadSets`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_read_sets`](crate::client::Client::list_read_sets).
+/// [`list_read_sets`](crate::client::fluent_builders::ListReadSets).
 ///
 /// `ParseStrictResponse` impl for `ListReadSets`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1455,7 +1455,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListReadSets {
 /// Operation shape for `ListReferenceImportJobs`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_reference_import_jobs`](crate::client::Client::list_reference_import_jobs).
+/// [`list_reference_import_jobs`](crate::client::fluent_builders::ListReferenceImportJobs).
 ///
 /// `ParseStrictResponse` impl for `ListReferenceImportJobs`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1490,7 +1490,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListReferenceImportJobs 
 /// Operation shape for `ListReferences`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_references`](crate::client::Client::list_references).
+/// [`list_references`](crate::client::fluent_builders::ListReferences).
 ///
 /// `ParseStrictResponse` impl for `ListReferences`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1523,7 +1523,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListReferences {
 /// Operation shape for `ListReferenceStores`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_reference_stores`](crate::client::Client::list_reference_stores).
+/// [`list_reference_stores`](crate::client::fluent_builders::ListReferenceStores).
 ///
 /// `ParseStrictResponse` impl for `ListReferenceStores`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1558,7 +1558,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListReferenceStores {
 /// Operation shape for `ListRunGroups`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_run_groups`](crate::client::Client::list_run_groups).
+/// [`list_run_groups`](crate::client::fluent_builders::ListRunGroups).
 ///
 /// `ParseStrictResponse` impl for `ListRunGroups`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1591,7 +1591,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListRunGroups {
 /// Operation shape for `ListRuns`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_runs`](crate::client::Client::list_runs).
+/// [`list_runs`](crate::client::fluent_builders::ListRuns).
 ///
 /// `ParseStrictResponse` impl for `ListRuns`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1623,7 +1623,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListRuns {
 /// Operation shape for `ListRunTasks`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_run_tasks`](crate::client::Client::list_run_tasks).
+/// [`list_run_tasks`](crate::client::fluent_builders::ListRunTasks).
 ///
 /// `ParseStrictResponse` impl for `ListRunTasks`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1656,7 +1656,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListRunTasks {
 /// Operation shape for `ListSequenceStores`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_sequence_stores`](crate::client::Client::list_sequence_stores).
+/// [`list_sequence_stores`](crate::client::fluent_builders::ListSequenceStores).
 ///
 /// `ParseStrictResponse` impl for `ListSequenceStores`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1691,7 +1691,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListSequenceStores {
 /// Operation shape for `ListTagsForResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
+/// [`list_tags_for_resource`](crate::client::fluent_builders::ListTagsForResource).
 ///
 /// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1726,7 +1726,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// Operation shape for `ListVariantImportJobs`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_variant_import_jobs`](crate::client::Client::list_variant_import_jobs).
+/// [`list_variant_import_jobs`](crate::client::fluent_builders::ListVariantImportJobs).
 ///
 /// `ParseStrictResponse` impl for `ListVariantImportJobs`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1761,7 +1761,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListVariantImportJobs {
 /// Operation shape for `ListVariantStores`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_variant_stores`](crate::client::Client::list_variant_stores).
+/// [`list_variant_stores`](crate::client::fluent_builders::ListVariantStores).
 ///
 /// `ParseStrictResponse` impl for `ListVariantStores`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1796,7 +1796,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListVariantStores {
 /// Operation shape for `ListWorkflows`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_workflows`](crate::client::Client::list_workflows).
+/// [`list_workflows`](crate::client::fluent_builders::ListWorkflows).
 ///
 /// `ParseStrictResponse` impl for `ListWorkflows`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1829,7 +1829,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListWorkflows {
 /// Operation shape for `StartAnnotationImportJob`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`start_annotation_import_job`](crate::client::Client::start_annotation_import_job).
+/// [`start_annotation_import_job`](crate::client::fluent_builders::StartAnnotationImportJob).
 ///
 /// `ParseStrictResponse` impl for `StartAnnotationImportJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1864,7 +1864,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartAnnotationImportJob
 /// Operation shape for `StartReadSetActivationJob`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`start_read_set_activation_job`](crate::client::Client::start_read_set_activation_job).
+/// [`start_read_set_activation_job`](crate::client::fluent_builders::StartReadSetActivationJob).
 ///
 /// `ParseStrictResponse` impl for `StartReadSetActivationJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1899,7 +1899,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartReadSetActivationJo
 /// Operation shape for `StartReadSetExportJob`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`start_read_set_export_job`](crate::client::Client::start_read_set_export_job).
+/// [`start_read_set_export_job`](crate::client::fluent_builders::StartReadSetExportJob).
 ///
 /// `ParseStrictResponse` impl for `StartReadSetExportJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1934,7 +1934,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartReadSetExportJob {
 /// Operation shape for `StartReadSetImportJob`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`start_read_set_import_job`](crate::client::Client::start_read_set_import_job).
+/// [`start_read_set_import_job`](crate::client::fluent_builders::StartReadSetImportJob).
 ///
 /// `ParseStrictResponse` impl for `StartReadSetImportJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1969,7 +1969,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartReadSetImportJob {
 /// Operation shape for `StartReferenceImportJob`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`start_reference_import_job`](crate::client::Client::start_reference_import_job).
+/// [`start_reference_import_job`](crate::client::fluent_builders::StartReferenceImportJob).
 ///
 /// `ParseStrictResponse` impl for `StartReferenceImportJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2004,7 +2004,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartReferenceImportJob 
 /// Operation shape for `StartRun`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`start_run`](crate::client::Client::start_run).
+/// [`start_run`](crate::client::fluent_builders::StartRun).
 ///
 /// `ParseStrictResponse` impl for `StartRun`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2036,7 +2036,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartRun {
 /// Operation shape for `StartVariantImportJob`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`start_variant_import_job`](crate::client::Client::start_variant_import_job).
+/// [`start_variant_import_job`](crate::client::fluent_builders::StartVariantImportJob).
 ///
 /// `ParseStrictResponse` impl for `StartVariantImportJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2071,7 +2071,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartVariantImportJob {
 /// Operation shape for `TagResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`tag_resource`](crate::client::Client::tag_resource).
+/// [`tag_resource`](crate::client::fluent_builders::TagResource).
 ///
 /// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2104,7 +2104,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// Operation shape for `UntagResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`untag_resource`](crate::client::Client::untag_resource).
+/// [`untag_resource`](crate::client::fluent_builders::UntagResource).
 ///
 /// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2137,7 +2137,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// Operation shape for `UpdateAnnotationStore`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_annotation_store`](crate::client::Client::update_annotation_store).
+/// [`update_annotation_store`](crate::client::fluent_builders::UpdateAnnotationStore).
 ///
 /// `ParseStrictResponse` impl for `UpdateAnnotationStore`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2172,7 +2172,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateAnnotationStore {
 /// Operation shape for `UpdateRunGroup`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_run_group`](crate::client::Client::update_run_group).
+/// [`update_run_group`](crate::client::fluent_builders::UpdateRunGroup).
 ///
 /// `ParseStrictResponse` impl for `UpdateRunGroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2205,7 +2205,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateRunGroup {
 /// Operation shape for `UpdateVariantStore`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_variant_store`](crate::client::Client::update_variant_store).
+/// [`update_variant_store`](crate::client::fluent_builders::UpdateVariantStore).
 ///
 /// `ParseStrictResponse` impl for `UpdateVariantStore`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2240,7 +2240,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateVariantStore {
 /// Operation shape for `UpdateWorkflow`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_workflow`](crate::client::Client::update_workflow).
+/// [`update_workflow`](crate::client::fluent_builders::UpdateWorkflow).
 ///
 /// `ParseStrictResponse` impl for `UpdateWorkflow`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

@@ -2,7 +2,7 @@
 /// Operation shape for `DeleteHumanLoop`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_human_loop`](crate::client::Client::delete_human_loop).
+/// [`delete_human_loop`](crate::client::fluent_builders::DeleteHumanLoop).
 ///
 /// `ParseStrictResponse` impl for `DeleteHumanLoop`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -37,7 +37,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteHumanLoop {
 /// Operation shape for `DescribeHumanLoop`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_human_loop`](crate::client::Client::describe_human_loop).
+/// [`describe_human_loop`](crate::client::fluent_builders::DescribeHumanLoop).
 ///
 /// `ParseStrictResponse` impl for `DescribeHumanLoop`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -72,7 +72,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeHumanLoop {
 /// Operation shape for `ListHumanLoops`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_human_loops`](crate::client::Client::list_human_loops).
+/// [`list_human_loops`](crate::client::fluent_builders::ListHumanLoops).
 ///
 /// `ParseStrictResponse` impl for `ListHumanLoops`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -105,7 +105,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListHumanLoops {
 /// Operation shape for `StartHumanLoop`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`start_human_loop`](crate::client::Client::start_human_loop).
+/// [`start_human_loop`](crate::client::fluent_builders::StartHumanLoop).
 ///
 /// `ParseStrictResponse` impl for `StartHumanLoop`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -138,7 +138,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartHumanLoop {
 /// Operation shape for `StopHumanLoop`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`stop_human_loop`](crate::client::Client::stop_human_loop).
+/// [`stop_human_loop`](crate::client::fluent_builders::StopHumanLoop).
 ///
 /// `ParseStrictResponse` impl for `StopHumanLoop`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

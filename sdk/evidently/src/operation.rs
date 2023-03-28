@@ -2,7 +2,7 @@
 /// Operation shape for `BatchEvaluateFeature`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`batch_evaluate_feature`](crate::client::Client::batch_evaluate_feature).
+/// [`batch_evaluate_feature`](crate::client::fluent_builders::BatchEvaluateFeature).
 ///
 /// `ParseStrictResponse` impl for `BatchEvaluateFeature`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -37,7 +37,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchEvaluateFeature {
 /// Operation shape for `CreateExperiment`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_experiment`](crate::client::Client::create_experiment).
+/// [`create_experiment`](crate::client::fluent_builders::CreateExperiment).
 ///
 /// `ParseStrictResponse` impl for `CreateExperiment`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -72,7 +72,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateExperiment {
 /// Operation shape for `CreateFeature`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_feature`](crate::client::Client::create_feature).
+/// [`create_feature`](crate::client::fluent_builders::CreateFeature).
 ///
 /// `ParseStrictResponse` impl for `CreateFeature`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -105,7 +105,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateFeature {
 /// Operation shape for `CreateLaunch`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_launch`](crate::client::Client::create_launch).
+/// [`create_launch`](crate::client::fluent_builders::CreateLaunch).
 ///
 /// `ParseStrictResponse` impl for `CreateLaunch`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -138,7 +138,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateLaunch {
 /// Operation shape for `CreateProject`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_project`](crate::client::Client::create_project).
+/// [`create_project`](crate::client::fluent_builders::CreateProject).
 ///
 /// `ParseStrictResponse` impl for `CreateProject`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -171,7 +171,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateProject {
 /// Operation shape for `CreateSegment`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_segment`](crate::client::Client::create_segment).
+/// [`create_segment`](crate::client::fluent_builders::CreateSegment).
 ///
 /// `ParseStrictResponse` impl for `CreateSegment`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -204,7 +204,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateSegment {
 /// Operation shape for `DeleteExperiment`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_experiment`](crate::client::Client::delete_experiment).
+/// [`delete_experiment`](crate::client::fluent_builders::DeleteExperiment).
 ///
 /// `ParseStrictResponse` impl for `DeleteExperiment`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -239,7 +239,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteExperiment {
 /// Operation shape for `DeleteFeature`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_feature`](crate::client::Client::delete_feature).
+/// [`delete_feature`](crate::client::fluent_builders::DeleteFeature).
 ///
 /// `ParseStrictResponse` impl for `DeleteFeature`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -272,7 +272,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteFeature {
 /// Operation shape for `DeleteLaunch`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_launch`](crate::client::Client::delete_launch).
+/// [`delete_launch`](crate::client::fluent_builders::DeleteLaunch).
 ///
 /// `ParseStrictResponse` impl for `DeleteLaunch`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -305,7 +305,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteLaunch {
 /// Operation shape for `DeleteProject`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_project`](crate::client::Client::delete_project).
+/// [`delete_project`](crate::client::fluent_builders::DeleteProject).
 ///
 /// `ParseStrictResponse` impl for `DeleteProject`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -338,7 +338,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteProject {
 /// Operation shape for `DeleteSegment`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_segment`](crate::client::Client::delete_segment).
+/// [`delete_segment`](crate::client::fluent_builders::DeleteSegment).
 ///
 /// `ParseStrictResponse` impl for `DeleteSegment`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -371,7 +371,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteSegment {
 /// Operation shape for `EvaluateFeature`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`evaluate_feature`](crate::client::Client::evaluate_feature).
+/// [`evaluate_feature`](crate::client::fluent_builders::EvaluateFeature).
 ///
 /// `ParseStrictResponse` impl for `EvaluateFeature`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -406,7 +406,7 @@ impl aws_smithy_http::response::ParseStrictResponse for EvaluateFeature {
 /// Operation shape for `GetExperiment`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_experiment`](crate::client::Client::get_experiment).
+/// [`get_experiment`](crate::client::fluent_builders::GetExperiment).
 ///
 /// `ParseStrictResponse` impl for `GetExperiment`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -439,7 +439,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetExperiment {
 /// Operation shape for `GetExperimentResults`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_experiment_results`](crate::client::Client::get_experiment_results).
+/// [`get_experiment_results`](crate::client::fluent_builders::GetExperimentResults).
 ///
 /// `ParseStrictResponse` impl for `GetExperimentResults`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -474,7 +474,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetExperimentResults {
 /// Operation shape for `GetFeature`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_feature`](crate::client::Client::get_feature).
+/// [`get_feature`](crate::client::fluent_builders::GetFeature).
 ///
 /// `ParseStrictResponse` impl for `GetFeature`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -507,7 +507,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetFeature {
 /// Operation shape for `GetLaunch`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_launch`](crate::client::Client::get_launch).
+/// [`get_launch`](crate::client::fluent_builders::GetLaunch).
 ///
 /// `ParseStrictResponse` impl for `GetLaunch`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -539,7 +539,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetLaunch {
 /// Operation shape for `GetProject`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_project`](crate::client::Client::get_project).
+/// [`get_project`](crate::client::fluent_builders::GetProject).
 ///
 /// `ParseStrictResponse` impl for `GetProject`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -572,7 +572,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetProject {
 /// Operation shape for `GetSegment`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_segment`](crate::client::Client::get_segment).
+/// [`get_segment`](crate::client::fluent_builders::GetSegment).
 ///
 /// `ParseStrictResponse` impl for `GetSegment`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -605,7 +605,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSegment {
 /// Operation shape for `ListExperiments`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_experiments`](crate::client::Client::list_experiments).
+/// [`list_experiments`](crate::client::fluent_builders::ListExperiments).
 ///
 /// `ParseStrictResponse` impl for `ListExperiments`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -640,7 +640,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListExperiments {
 /// Operation shape for `ListFeatures`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_features`](crate::client::Client::list_features).
+/// [`list_features`](crate::client::fluent_builders::ListFeatures).
 ///
 /// `ParseStrictResponse` impl for `ListFeatures`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -673,7 +673,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListFeatures {
 /// Operation shape for `ListLaunches`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_launches`](crate::client::Client::list_launches).
+/// [`list_launches`](crate::client::fluent_builders::ListLaunches).
 ///
 /// `ParseStrictResponse` impl for `ListLaunches`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -706,7 +706,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListLaunches {
 /// Operation shape for `ListProjects`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_projects`](crate::client::Client::list_projects).
+/// [`list_projects`](crate::client::fluent_builders::ListProjects).
 ///
 /// `ParseStrictResponse` impl for `ListProjects`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -739,7 +739,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListProjects {
 /// Operation shape for `ListSegmentReferences`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_segment_references`](crate::client::Client::list_segment_references).
+/// [`list_segment_references`](crate::client::fluent_builders::ListSegmentReferences).
 ///
 /// `ParseStrictResponse` impl for `ListSegmentReferences`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -774,7 +774,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListSegmentReferences {
 /// Operation shape for `ListSegments`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_segments`](crate::client::Client::list_segments).
+/// [`list_segments`](crate::client::fluent_builders::ListSegments).
 ///
 /// `ParseStrictResponse` impl for `ListSegments`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -807,7 +807,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListSegments {
 /// Operation shape for `ListTagsForResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
+/// [`list_tags_for_resource`](crate::client::fluent_builders::ListTagsForResource).
 ///
 /// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -842,7 +842,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// Operation shape for `PutProjectEvents`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`put_project_events`](crate::client::Client::put_project_events).
+/// [`put_project_events`](crate::client::fluent_builders::PutProjectEvents).
 ///
 /// `ParseStrictResponse` impl for `PutProjectEvents`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -877,7 +877,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutProjectEvents {
 /// Operation shape for `StartExperiment`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`start_experiment`](crate::client::Client::start_experiment).
+/// [`start_experiment`](crate::client::fluent_builders::StartExperiment).
 ///
 /// `ParseStrictResponse` impl for `StartExperiment`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -912,7 +912,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartExperiment {
 /// Operation shape for `StartLaunch`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`start_launch`](crate::client::Client::start_launch).
+/// [`start_launch`](crate::client::fluent_builders::StartLaunch).
 ///
 /// `ParseStrictResponse` impl for `StartLaunch`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -945,7 +945,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartLaunch {
 /// Operation shape for `StopExperiment`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`stop_experiment`](crate::client::Client::stop_experiment).
+/// [`stop_experiment`](crate::client::fluent_builders::StopExperiment).
 ///
 /// `ParseStrictResponse` impl for `StopExperiment`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -978,7 +978,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StopExperiment {
 /// Operation shape for `StopLaunch`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`stop_launch`](crate::client::Client::stop_launch).
+/// [`stop_launch`](crate::client::fluent_builders::StopLaunch).
 ///
 /// `ParseStrictResponse` impl for `StopLaunch`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1011,7 +1011,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StopLaunch {
 /// Operation shape for `TagResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`tag_resource`](crate::client::Client::tag_resource).
+/// [`tag_resource`](crate::client::fluent_builders::TagResource).
 ///
 /// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1044,7 +1044,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// Operation shape for `TestSegmentPattern`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`test_segment_pattern`](crate::client::Client::test_segment_pattern).
+/// [`test_segment_pattern`](crate::client::fluent_builders::TestSegmentPattern).
 ///
 /// `ParseStrictResponse` impl for `TestSegmentPattern`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1079,7 +1079,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TestSegmentPattern {
 /// Operation shape for `UntagResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`untag_resource`](crate::client::Client::untag_resource).
+/// [`untag_resource`](crate::client::fluent_builders::UntagResource).
 ///
 /// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1112,7 +1112,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// Operation shape for `UpdateExperiment`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_experiment`](crate::client::Client::update_experiment).
+/// [`update_experiment`](crate::client::fluent_builders::UpdateExperiment).
 ///
 /// `ParseStrictResponse` impl for `UpdateExperiment`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1147,7 +1147,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateExperiment {
 /// Operation shape for `UpdateFeature`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_feature`](crate::client::Client::update_feature).
+/// [`update_feature`](crate::client::fluent_builders::UpdateFeature).
 ///
 /// `ParseStrictResponse` impl for `UpdateFeature`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1180,7 +1180,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateFeature {
 /// Operation shape for `UpdateLaunch`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_launch`](crate::client::Client::update_launch).
+/// [`update_launch`](crate::client::fluent_builders::UpdateLaunch).
 ///
 /// `ParseStrictResponse` impl for `UpdateLaunch`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1213,7 +1213,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateLaunch {
 /// Operation shape for `UpdateProject`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_project`](crate::client::Client::update_project).
+/// [`update_project`](crate::client::fluent_builders::UpdateProject).
 ///
 /// `ParseStrictResponse` impl for `UpdateProject`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1246,7 +1246,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateProject {
 /// Operation shape for `UpdateProjectDataDelivery`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_project_data_delivery`](crate::client::Client::update_project_data_delivery).
+/// [`update_project_data_delivery`](crate::client::fluent_builders::UpdateProjectDataDelivery).
 ///
 /// `ParseStrictResponse` impl for `UpdateProjectDataDelivery`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

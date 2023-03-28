@@ -2,7 +2,7 @@
 /// Operation shape for `DescribeDimensionKeys`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_dimension_keys`](crate::client::Client::describe_dimension_keys).
+/// [`describe_dimension_keys`](crate::client::fluent_builders::DescribeDimensionKeys).
 ///
 /// `ParseStrictResponse` impl for `DescribeDimensionKeys`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -37,7 +37,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeDimensionKeys {
 /// Operation shape for `GetDimensionKeyDetails`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_dimension_key_details`](crate::client::Client::get_dimension_key_details).
+/// [`get_dimension_key_details`](crate::client::fluent_builders::GetDimensionKeyDetails).
 ///
 /// `ParseStrictResponse` impl for `GetDimensionKeyDetails`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -72,7 +72,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDimensionKeyDetails {
 /// Operation shape for `GetResourceMetadata`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_resource_metadata`](crate::client::Client::get_resource_metadata).
+/// [`get_resource_metadata`](crate::client::fluent_builders::GetResourceMetadata).
 ///
 /// `ParseStrictResponse` impl for `GetResourceMetadata`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -107,7 +107,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetResourceMetadata {
 /// Operation shape for `GetResourceMetrics`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_resource_metrics`](crate::client::Client::get_resource_metrics).
+/// [`get_resource_metrics`](crate::client::fluent_builders::GetResourceMetrics).
 ///
 /// `ParseStrictResponse` impl for `GetResourceMetrics`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -142,7 +142,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetResourceMetrics {
 /// Operation shape for `ListAvailableResourceDimensions`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_available_resource_dimensions`](crate::client::Client::list_available_resource_dimensions).
+/// [`list_available_resource_dimensions`](crate::client::fluent_builders::ListAvailableResourceDimensions).
 ///
 /// `ParseStrictResponse` impl for `ListAvailableResourceDimensions`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -177,7 +177,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAvailableResourceDim
 /// Operation shape for `ListAvailableResourceMetrics`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_available_resource_metrics`](crate::client::Client::list_available_resource_metrics).
+/// [`list_available_resource_metrics`](crate::client::fluent_builders::ListAvailableResourceMetrics).
 ///
 /// `ParseStrictResponse` impl for `ListAvailableResourceMetrics`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

@@ -2,7 +2,7 @@
 /// Operation shape for `BatchGetSchema`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`batch_get_schema`](crate::client::Client::batch_get_schema).
+/// [`batch_get_schema`](crate::client::fluent_builders::BatchGetSchema).
 ///
 /// `ParseStrictResponse` impl for `BatchGetSchema`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -35,7 +35,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchGetSchema {
 /// Operation shape for `CreateCollaboration`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_collaboration`](crate::client::Client::create_collaboration).
+/// [`create_collaboration`](crate::client::fluent_builders::CreateCollaboration).
 ///
 /// `ParseStrictResponse` impl for `CreateCollaboration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -70,7 +70,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateCollaboration {
 /// Operation shape for `CreateConfiguredTable`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_configured_table`](crate::client::Client::create_configured_table).
+/// [`create_configured_table`](crate::client::fluent_builders::CreateConfiguredTable).
 ///
 /// `ParseStrictResponse` impl for `CreateConfiguredTable`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -105,7 +105,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateConfiguredTable {
 /// Operation shape for `CreateConfiguredTableAnalysisRule`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_configured_table_analysis_rule`](crate::client::Client::create_configured_table_analysis_rule).
+/// [`create_configured_table_analysis_rule`](crate::client::fluent_builders::CreateConfiguredTableAnalysisRule).
 ///
 /// `ParseStrictResponse` impl for `CreateConfiguredTableAnalysisRule`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -140,7 +140,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateConfiguredTableAna
 /// Operation shape for `CreateConfiguredTableAssociation`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_configured_table_association`](crate::client::Client::create_configured_table_association).
+/// [`create_configured_table_association`](crate::client::fluent_builders::CreateConfiguredTableAssociation).
 ///
 /// `ParseStrictResponse` impl for `CreateConfiguredTableAssociation`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -175,7 +175,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateConfiguredTableAss
 /// Operation shape for `CreateMembership`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_membership`](crate::client::Client::create_membership).
+/// [`create_membership`](crate::client::fluent_builders::CreateMembership).
 ///
 /// `ParseStrictResponse` impl for `CreateMembership`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -210,7 +210,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateMembership {
 /// Operation shape for `DeleteCollaboration`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_collaboration`](crate::client::Client::delete_collaboration).
+/// [`delete_collaboration`](crate::client::fluent_builders::DeleteCollaboration).
 ///
 /// `ParseStrictResponse` impl for `DeleteCollaboration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -245,7 +245,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteCollaboration {
 /// Operation shape for `DeleteConfiguredTable`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_configured_table`](crate::client::Client::delete_configured_table).
+/// [`delete_configured_table`](crate::client::fluent_builders::DeleteConfiguredTable).
 ///
 /// `ParseStrictResponse` impl for `DeleteConfiguredTable`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -280,7 +280,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteConfiguredTable {
 /// Operation shape for `DeleteConfiguredTableAnalysisRule`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_configured_table_analysis_rule`](crate::client::Client::delete_configured_table_analysis_rule).
+/// [`delete_configured_table_analysis_rule`](crate::client::fluent_builders::DeleteConfiguredTableAnalysisRule).
 ///
 /// `ParseStrictResponse` impl for `DeleteConfiguredTableAnalysisRule`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -315,7 +315,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteConfiguredTableAna
 /// Operation shape for `DeleteConfiguredTableAssociation`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_configured_table_association`](crate::client::Client::delete_configured_table_association).
+/// [`delete_configured_table_association`](crate::client::fluent_builders::DeleteConfiguredTableAssociation).
 ///
 /// `ParseStrictResponse` impl for `DeleteConfiguredTableAssociation`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -350,7 +350,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteConfiguredTableAss
 /// Operation shape for `DeleteMember`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_member`](crate::client::Client::delete_member).
+/// [`delete_member`](crate::client::fluent_builders::DeleteMember).
 ///
 /// `ParseStrictResponse` impl for `DeleteMember`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -383,7 +383,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteMember {
 /// Operation shape for `DeleteMembership`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_membership`](crate::client::Client::delete_membership).
+/// [`delete_membership`](crate::client::fluent_builders::DeleteMembership).
 ///
 /// `ParseStrictResponse` impl for `DeleteMembership`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -418,7 +418,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteMembership {
 /// Operation shape for `GetCollaboration`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_collaboration`](crate::client::Client::get_collaboration).
+/// [`get_collaboration`](crate::client::fluent_builders::GetCollaboration).
 ///
 /// `ParseStrictResponse` impl for `GetCollaboration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -453,7 +453,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetCollaboration {
 /// Operation shape for `GetConfiguredTable`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_configured_table`](crate::client::Client::get_configured_table).
+/// [`get_configured_table`](crate::client::fluent_builders::GetConfiguredTable).
 ///
 /// `ParseStrictResponse` impl for `GetConfiguredTable`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -488,7 +488,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetConfiguredTable {
 /// Operation shape for `GetConfiguredTableAnalysisRule`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_configured_table_analysis_rule`](crate::client::Client::get_configured_table_analysis_rule).
+/// [`get_configured_table_analysis_rule`](crate::client::fluent_builders::GetConfiguredTableAnalysisRule).
 ///
 /// `ParseStrictResponse` impl for `GetConfiguredTableAnalysisRule`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -523,7 +523,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetConfiguredTableAnalys
 /// Operation shape for `GetConfiguredTableAssociation`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_configured_table_association`](crate::client::Client::get_configured_table_association).
+/// [`get_configured_table_association`](crate::client::fluent_builders::GetConfiguredTableAssociation).
 ///
 /// `ParseStrictResponse` impl for `GetConfiguredTableAssociation`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -558,7 +558,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetConfiguredTableAssoci
 /// Operation shape for `GetMembership`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_membership`](crate::client::Client::get_membership).
+/// [`get_membership`](crate::client::fluent_builders::GetMembership).
 ///
 /// `ParseStrictResponse` impl for `GetMembership`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -591,7 +591,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetMembership {
 /// Operation shape for `GetProtectedQuery`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_protected_query`](crate::client::Client::get_protected_query).
+/// [`get_protected_query`](crate::client::fluent_builders::GetProtectedQuery).
 ///
 /// `ParseStrictResponse` impl for `GetProtectedQuery`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -626,7 +626,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetProtectedQuery {
 /// Operation shape for `GetSchema`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_schema`](crate::client::Client::get_schema).
+/// [`get_schema`](crate::client::fluent_builders::GetSchema).
 ///
 /// `ParseStrictResponse` impl for `GetSchema`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -658,7 +658,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSchema {
 /// Operation shape for `GetSchemaAnalysisRule`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_schema_analysis_rule`](crate::client::Client::get_schema_analysis_rule).
+/// [`get_schema_analysis_rule`](crate::client::fluent_builders::GetSchemaAnalysisRule).
 ///
 /// `ParseStrictResponse` impl for `GetSchemaAnalysisRule`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -693,7 +693,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSchemaAnalysisRule {
 /// Operation shape for `ListCollaborations`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_collaborations`](crate::client::Client::list_collaborations).
+/// [`list_collaborations`](crate::client::fluent_builders::ListCollaborations).
 ///
 /// `ParseStrictResponse` impl for `ListCollaborations`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -728,7 +728,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListCollaborations {
 /// Operation shape for `ListConfiguredTableAssociations`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_configured_table_associations`](crate::client::Client::list_configured_table_associations).
+/// [`list_configured_table_associations`](crate::client::fluent_builders::ListConfiguredTableAssociations).
 ///
 /// `ParseStrictResponse` impl for `ListConfiguredTableAssociations`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -763,7 +763,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListConfiguredTableAssoc
 /// Operation shape for `ListConfiguredTables`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_configured_tables`](crate::client::Client::list_configured_tables).
+/// [`list_configured_tables`](crate::client::fluent_builders::ListConfiguredTables).
 ///
 /// `ParseStrictResponse` impl for `ListConfiguredTables`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -798,7 +798,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListConfiguredTables {
 /// Operation shape for `ListMembers`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_members`](crate::client::Client::list_members).
+/// [`list_members`](crate::client::fluent_builders::ListMembers).
 ///
 /// `ParseStrictResponse` impl for `ListMembers`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -831,7 +831,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListMembers {
 /// Operation shape for `ListMemberships`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_memberships`](crate::client::Client::list_memberships).
+/// [`list_memberships`](crate::client::fluent_builders::ListMemberships).
 ///
 /// `ParseStrictResponse` impl for `ListMemberships`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -866,7 +866,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListMemberships {
 /// Operation shape for `ListProtectedQueries`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_protected_queries`](crate::client::Client::list_protected_queries).
+/// [`list_protected_queries`](crate::client::fluent_builders::ListProtectedQueries).
 ///
 /// `ParseStrictResponse` impl for `ListProtectedQueries`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -901,7 +901,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListProtectedQueries {
 /// Operation shape for `ListSchemas`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_schemas`](crate::client::Client::list_schemas).
+/// [`list_schemas`](crate::client::fluent_builders::ListSchemas).
 ///
 /// `ParseStrictResponse` impl for `ListSchemas`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -934,7 +934,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListSchemas {
 /// Operation shape for `StartProtectedQuery`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`start_protected_query`](crate::client::Client::start_protected_query).
+/// [`start_protected_query`](crate::client::fluent_builders::StartProtectedQuery).
 ///
 /// `ParseStrictResponse` impl for `StartProtectedQuery`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -969,7 +969,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartProtectedQuery {
 /// Operation shape for `UpdateCollaboration`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_collaboration`](crate::client::Client::update_collaboration).
+/// [`update_collaboration`](crate::client::fluent_builders::UpdateCollaboration).
 ///
 /// `ParseStrictResponse` impl for `UpdateCollaboration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1004,7 +1004,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateCollaboration {
 /// Operation shape for `UpdateConfiguredTable`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_configured_table`](crate::client::Client::update_configured_table).
+/// [`update_configured_table`](crate::client::fluent_builders::UpdateConfiguredTable).
 ///
 /// `ParseStrictResponse` impl for `UpdateConfiguredTable`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1039,7 +1039,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateConfiguredTable {
 /// Operation shape for `UpdateConfiguredTableAnalysisRule`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_configured_table_analysis_rule`](crate::client::Client::update_configured_table_analysis_rule).
+/// [`update_configured_table_analysis_rule`](crate::client::fluent_builders::UpdateConfiguredTableAnalysisRule).
 ///
 /// `ParseStrictResponse` impl for `UpdateConfiguredTableAnalysisRule`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1074,7 +1074,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateConfiguredTableAna
 /// Operation shape for `UpdateConfiguredTableAssociation`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_configured_table_association`](crate::client::Client::update_configured_table_association).
+/// [`update_configured_table_association`](crate::client::fluent_builders::UpdateConfiguredTableAssociation).
 ///
 /// `ParseStrictResponse` impl for `UpdateConfiguredTableAssociation`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1109,7 +1109,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateConfiguredTableAss
 /// Operation shape for `UpdateMembership`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_membership`](crate::client::Client::update_membership).
+/// [`update_membership`](crate::client::fluent_builders::UpdateMembership).
 ///
 /// `ParseStrictResponse` impl for `UpdateMembership`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1144,7 +1144,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateMembership {
 /// Operation shape for `UpdateProtectedQuery`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_protected_query`](crate::client::Client::update_protected_query).
+/// [`update_protected_query`](crate::client::fluent_builders::UpdateProtectedQuery).
 ///
 /// `ParseStrictResponse` impl for `UpdateProtectedQuery`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

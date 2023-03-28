@@ -2,7 +2,7 @@
 /// Operation shape for `AssociateFileSystemAliases`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`associate_file_system_aliases`](crate::client::Client::associate_file_system_aliases).
+/// [`associate_file_system_aliases`](crate::client::fluent_builders::AssociateFileSystemAliases).
 ///
 /// `ParseStrictResponse` impl for `AssociateFileSystemAliases`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -37,7 +37,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateFileSystemAlias
 /// Operation shape for `CancelDataRepositoryTask`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`cancel_data_repository_task`](crate::client::Client::cancel_data_repository_task).
+/// [`cancel_data_repository_task`](crate::client::fluent_builders::CancelDataRepositoryTask).
 ///
 /// `ParseStrictResponse` impl for `CancelDataRepositoryTask`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -72,7 +72,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CancelDataRepositoryTask
 /// Operation shape for `CopyBackup`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`copy_backup`](crate::client::Client::copy_backup).
+/// [`copy_backup`](crate::client::fluent_builders::CopyBackup).
 ///
 /// `ParseStrictResponse` impl for `CopyBackup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -105,7 +105,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CopyBackup {
 /// Operation shape for `CreateBackup`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_backup`](crate::client::Client::create_backup).
+/// [`create_backup`](crate::client::fluent_builders::CreateBackup).
 ///
 /// `ParseStrictResponse` impl for `CreateBackup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -138,7 +138,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateBackup {
 /// Operation shape for `CreateDataRepositoryAssociation`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_data_repository_association`](crate::client::Client::create_data_repository_association).
+/// [`create_data_repository_association`](crate::client::fluent_builders::CreateDataRepositoryAssociation).
 ///
 /// `ParseStrictResponse` impl for `CreateDataRepositoryAssociation`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -173,7 +173,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateDataRepositoryAsso
 /// Operation shape for `CreateDataRepositoryTask`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_data_repository_task`](crate::client::Client::create_data_repository_task).
+/// [`create_data_repository_task`](crate::client::fluent_builders::CreateDataRepositoryTask).
 ///
 /// `ParseStrictResponse` impl for `CreateDataRepositoryTask`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -208,7 +208,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateDataRepositoryTask
 /// Operation shape for `CreateFileCache`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_file_cache`](crate::client::Client::create_file_cache).
+/// [`create_file_cache`](crate::client::fluent_builders::CreateFileCache).
 ///
 /// `ParseStrictResponse` impl for `CreateFileCache`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -243,7 +243,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateFileCache {
 /// Operation shape for `CreateFileSystem`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_file_system`](crate::client::Client::create_file_system).
+/// [`create_file_system`](crate::client::fluent_builders::CreateFileSystem).
 ///
 /// `ParseStrictResponse` impl for `CreateFileSystem`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -278,7 +278,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateFileSystem {
 /// Operation shape for `CreateFileSystemFromBackup`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_file_system_from_backup`](crate::client::Client::create_file_system_from_backup).
+/// [`create_file_system_from_backup`](crate::client::fluent_builders::CreateFileSystemFromBackup).
 ///
 /// `ParseStrictResponse` impl for `CreateFileSystemFromBackup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -313,7 +313,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateFileSystemFromBack
 /// Operation shape for `CreateSnapshot`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_snapshot`](crate::client::Client::create_snapshot).
+/// [`create_snapshot`](crate::client::fluent_builders::CreateSnapshot).
 ///
 /// `ParseStrictResponse` impl for `CreateSnapshot`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -346,7 +346,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateSnapshot {
 /// Operation shape for `CreateStorageVirtualMachine`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_storage_virtual_machine`](crate::client::Client::create_storage_virtual_machine).
+/// [`create_storage_virtual_machine`](crate::client::fluent_builders::CreateStorageVirtualMachine).
 ///
 /// `ParseStrictResponse` impl for `CreateStorageVirtualMachine`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -381,7 +381,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateStorageVirtualMach
 /// Operation shape for `CreateVolume`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_volume`](crate::client::Client::create_volume).
+/// [`create_volume`](crate::client::fluent_builders::CreateVolume).
 ///
 /// `ParseStrictResponse` impl for `CreateVolume`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -414,7 +414,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateVolume {
 /// Operation shape for `CreateVolumeFromBackup`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_volume_from_backup`](crate::client::Client::create_volume_from_backup).
+/// [`create_volume_from_backup`](crate::client::fluent_builders::CreateVolumeFromBackup).
 ///
 /// `ParseStrictResponse` impl for `CreateVolumeFromBackup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -449,7 +449,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateVolumeFromBackup {
 /// Operation shape for `DeleteBackup`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_backup`](crate::client::Client::delete_backup).
+/// [`delete_backup`](crate::client::fluent_builders::DeleteBackup).
 ///
 /// `ParseStrictResponse` impl for `DeleteBackup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -482,7 +482,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteBackup {
 /// Operation shape for `DeleteDataRepositoryAssociation`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_data_repository_association`](crate::client::Client::delete_data_repository_association).
+/// [`delete_data_repository_association`](crate::client::fluent_builders::DeleteDataRepositoryAssociation).
 ///
 /// `ParseStrictResponse` impl for `DeleteDataRepositoryAssociation`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -517,7 +517,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteDataRepositoryAsso
 /// Operation shape for `DeleteFileCache`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_file_cache`](crate::client::Client::delete_file_cache).
+/// [`delete_file_cache`](crate::client::fluent_builders::DeleteFileCache).
 ///
 /// `ParseStrictResponse` impl for `DeleteFileCache`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -552,7 +552,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteFileCache {
 /// Operation shape for `DeleteFileSystem`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_file_system`](crate::client::Client::delete_file_system).
+/// [`delete_file_system`](crate::client::fluent_builders::DeleteFileSystem).
 ///
 /// `ParseStrictResponse` impl for `DeleteFileSystem`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -587,7 +587,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteFileSystem {
 /// Operation shape for `DeleteSnapshot`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_snapshot`](crate::client::Client::delete_snapshot).
+/// [`delete_snapshot`](crate::client::fluent_builders::DeleteSnapshot).
 ///
 /// `ParseStrictResponse` impl for `DeleteSnapshot`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -620,7 +620,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteSnapshot {
 /// Operation shape for `DeleteStorageVirtualMachine`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_storage_virtual_machine`](crate::client::Client::delete_storage_virtual_machine).
+/// [`delete_storage_virtual_machine`](crate::client::fluent_builders::DeleteStorageVirtualMachine).
 ///
 /// `ParseStrictResponse` impl for `DeleteStorageVirtualMachine`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -655,7 +655,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteStorageVirtualMach
 /// Operation shape for `DeleteVolume`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_volume`](crate::client::Client::delete_volume).
+/// [`delete_volume`](crate::client::fluent_builders::DeleteVolume).
 ///
 /// `ParseStrictResponse` impl for `DeleteVolume`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -688,7 +688,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteVolume {
 /// Operation shape for `DescribeBackups`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_backups`](crate::client::Client::describe_backups).
+/// [`describe_backups`](crate::client::fluent_builders::DescribeBackups).
 ///
 /// `ParseStrictResponse` impl for `DescribeBackups`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -723,7 +723,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeBackups {
 /// Operation shape for `DescribeDataRepositoryAssociations`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_data_repository_associations`](crate::client::Client::describe_data_repository_associations).
+/// [`describe_data_repository_associations`](crate::client::fluent_builders::DescribeDataRepositoryAssociations).
 ///
 /// `ParseStrictResponse` impl for `DescribeDataRepositoryAssociations`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -758,7 +758,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeDataRepositoryAs
 /// Operation shape for `DescribeDataRepositoryTasks`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_data_repository_tasks`](crate::client::Client::describe_data_repository_tasks).
+/// [`describe_data_repository_tasks`](crate::client::fluent_builders::DescribeDataRepositoryTasks).
 ///
 /// `ParseStrictResponse` impl for `DescribeDataRepositoryTasks`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -793,7 +793,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeDataRepositoryTa
 /// Operation shape for `DescribeFileCaches`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_file_caches`](crate::client::Client::describe_file_caches).
+/// [`describe_file_caches`](crate::client::fluent_builders::DescribeFileCaches).
 ///
 /// `ParseStrictResponse` impl for `DescribeFileCaches`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -828,7 +828,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeFileCaches {
 /// Operation shape for `DescribeFileSystemAliases`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_file_system_aliases`](crate::client::Client::describe_file_system_aliases).
+/// [`describe_file_system_aliases`](crate::client::fluent_builders::DescribeFileSystemAliases).
 ///
 /// `ParseStrictResponse` impl for `DescribeFileSystemAliases`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -863,7 +863,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeFileSystemAliase
 /// Operation shape for `DescribeFileSystems`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_file_systems`](crate::client::Client::describe_file_systems).
+/// [`describe_file_systems`](crate::client::fluent_builders::DescribeFileSystems).
 ///
 /// `ParseStrictResponse` impl for `DescribeFileSystems`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -898,7 +898,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeFileSystems {
 /// Operation shape for `DescribeSnapshots`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_snapshots`](crate::client::Client::describe_snapshots).
+/// [`describe_snapshots`](crate::client::fluent_builders::DescribeSnapshots).
 ///
 /// `ParseStrictResponse` impl for `DescribeSnapshots`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -933,7 +933,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeSnapshots {
 /// Operation shape for `DescribeStorageVirtualMachines`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_storage_virtual_machines`](crate::client::Client::describe_storage_virtual_machines).
+/// [`describe_storage_virtual_machines`](crate::client::fluent_builders::DescribeStorageVirtualMachines).
 ///
 /// `ParseStrictResponse` impl for `DescribeStorageVirtualMachines`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -968,7 +968,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeStorageVirtualMa
 /// Operation shape for `DescribeVolumes`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_volumes`](crate::client::Client::describe_volumes).
+/// [`describe_volumes`](crate::client::fluent_builders::DescribeVolumes).
 ///
 /// `ParseStrictResponse` impl for `DescribeVolumes`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1003,7 +1003,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeVolumes {
 /// Operation shape for `DisassociateFileSystemAliases`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`disassociate_file_system_aliases`](crate::client::Client::disassociate_file_system_aliases).
+/// [`disassociate_file_system_aliases`](crate::client::fluent_builders::DisassociateFileSystemAliases).
 ///
 /// `ParseStrictResponse` impl for `DisassociateFileSystemAliases`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1038,7 +1038,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateFileSystemAl
 /// Operation shape for `ListTagsForResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
+/// [`list_tags_for_resource`](crate::client::fluent_builders::ListTagsForResource).
 ///
 /// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1073,7 +1073,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// Operation shape for `ReleaseFileSystemNfsV3Locks`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`release_file_system_nfs_v3_locks`](crate::client::Client::release_file_system_nfs_v3_locks).
+/// [`release_file_system_nfs_v3_locks`](crate::client::fluent_builders::ReleaseFileSystemNfsV3Locks).
 ///
 /// `ParseStrictResponse` impl for `ReleaseFileSystemNfsV3Locks`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1108,7 +1108,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ReleaseFileSystemNfsV3Lo
 /// Operation shape for `RestoreVolumeFromSnapshot`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`restore_volume_from_snapshot`](crate::client::Client::restore_volume_from_snapshot).
+/// [`restore_volume_from_snapshot`](crate::client::fluent_builders::RestoreVolumeFromSnapshot).
 ///
 /// `ParseStrictResponse` impl for `RestoreVolumeFromSnapshot`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1143,7 +1143,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RestoreVolumeFromSnapsho
 /// Operation shape for `TagResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`tag_resource`](crate::client::Client::tag_resource).
+/// [`tag_resource`](crate::client::fluent_builders::TagResource).
 ///
 /// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1176,7 +1176,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// Operation shape for `UntagResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`untag_resource`](crate::client::Client::untag_resource).
+/// [`untag_resource`](crate::client::fluent_builders::UntagResource).
 ///
 /// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1209,7 +1209,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// Operation shape for `UpdateDataRepositoryAssociation`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_data_repository_association`](crate::client::Client::update_data_repository_association).
+/// [`update_data_repository_association`](crate::client::fluent_builders::UpdateDataRepositoryAssociation).
 ///
 /// `ParseStrictResponse` impl for `UpdateDataRepositoryAssociation`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1244,7 +1244,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateDataRepositoryAsso
 /// Operation shape for `UpdateFileCache`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_file_cache`](crate::client::Client::update_file_cache).
+/// [`update_file_cache`](crate::client::fluent_builders::UpdateFileCache).
 ///
 /// `ParseStrictResponse` impl for `UpdateFileCache`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1279,7 +1279,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateFileCache {
 /// Operation shape for `UpdateFileSystem`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_file_system`](crate::client::Client::update_file_system).
+/// [`update_file_system`](crate::client::fluent_builders::UpdateFileSystem).
 ///
 /// `ParseStrictResponse` impl for `UpdateFileSystem`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1314,7 +1314,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateFileSystem {
 /// Operation shape for `UpdateSnapshot`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_snapshot`](crate::client::Client::update_snapshot).
+/// [`update_snapshot`](crate::client::fluent_builders::UpdateSnapshot).
 ///
 /// `ParseStrictResponse` impl for `UpdateSnapshot`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1347,7 +1347,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateSnapshot {
 /// Operation shape for `UpdateStorageVirtualMachine`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_storage_virtual_machine`](crate::client::Client::update_storage_virtual_machine).
+/// [`update_storage_virtual_machine`](crate::client::fluent_builders::UpdateStorageVirtualMachine).
 ///
 /// `ParseStrictResponse` impl for `UpdateStorageVirtualMachine`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1382,7 +1382,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateStorageVirtualMach
 /// Operation shape for `UpdateVolume`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_volume`](crate::client::Client::update_volume).
+/// [`update_volume`](crate::client::fluent_builders::UpdateVolume).
 ///
 /// `ParseStrictResponse` impl for `UpdateVolume`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

@@ -2,7 +2,7 @@
 /// Operation shape for `CreateKeyspace`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_keyspace`](crate::client::Client::create_keyspace).
+/// [`create_keyspace`](crate::client::fluent_builders::CreateKeyspace).
 ///
 /// `ParseStrictResponse` impl for `CreateKeyspace`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -35,7 +35,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateKeyspace {
 /// Operation shape for `CreateTable`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_table`](crate::client::Client::create_table).
+/// [`create_table`](crate::client::fluent_builders::CreateTable).
 ///
 /// `ParseStrictResponse` impl for `CreateTable`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -68,7 +68,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateTable {
 /// Operation shape for `DeleteKeyspace`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_keyspace`](crate::client::Client::delete_keyspace).
+/// [`delete_keyspace`](crate::client::fluent_builders::DeleteKeyspace).
 ///
 /// `ParseStrictResponse` impl for `DeleteKeyspace`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -101,7 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteKeyspace {
 /// Operation shape for `DeleteTable`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_table`](crate::client::Client::delete_table).
+/// [`delete_table`](crate::client::fluent_builders::DeleteTable).
 ///
 /// `ParseStrictResponse` impl for `DeleteTable`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -134,7 +134,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteTable {
 /// Operation shape for `GetKeyspace`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_keyspace`](crate::client::Client::get_keyspace).
+/// [`get_keyspace`](crate::client::fluent_builders::GetKeyspace).
 ///
 /// `ParseStrictResponse` impl for `GetKeyspace`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -167,7 +167,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetKeyspace {
 /// Operation shape for `GetTable`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_table`](crate::client::Client::get_table).
+/// [`get_table`](crate::client::fluent_builders::GetTable).
 ///
 /// `ParseStrictResponse` impl for `GetTable`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -199,7 +199,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetTable {
 /// Operation shape for `ListKeyspaces`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_keyspaces`](crate::client::Client::list_keyspaces).
+/// [`list_keyspaces`](crate::client::fluent_builders::ListKeyspaces).
 ///
 /// `ParseStrictResponse` impl for `ListKeyspaces`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -232,7 +232,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListKeyspaces {
 /// Operation shape for `ListTables`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_tables`](crate::client::Client::list_tables).
+/// [`list_tables`](crate::client::fluent_builders::ListTables).
 ///
 /// `ParseStrictResponse` impl for `ListTables`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -265,7 +265,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTables {
 /// Operation shape for `ListTagsForResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
+/// [`list_tags_for_resource`](crate::client::fluent_builders::ListTagsForResource).
 ///
 /// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -300,7 +300,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// Operation shape for `RestoreTable`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`restore_table`](crate::client::Client::restore_table).
+/// [`restore_table`](crate::client::fluent_builders::RestoreTable).
 ///
 /// `ParseStrictResponse` impl for `RestoreTable`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -333,7 +333,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RestoreTable {
 /// Operation shape for `TagResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`tag_resource`](crate::client::Client::tag_resource).
+/// [`tag_resource`](crate::client::fluent_builders::TagResource).
 ///
 /// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -366,7 +366,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// Operation shape for `UntagResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`untag_resource`](crate::client::Client::untag_resource).
+/// [`untag_resource`](crate::client::fluent_builders::UntagResource).
 ///
 /// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -399,7 +399,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// Operation shape for `UpdateTable`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_table`](crate::client::Client::update_table).
+/// [`update_table`](crate::client::fluent_builders::UpdateTable).
 ///
 /// `ParseStrictResponse` impl for `UpdateTable`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

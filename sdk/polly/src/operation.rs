@@ -2,7 +2,7 @@
 /// Operation shape for `DeleteLexicon`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_lexicon`](crate::client::Client::delete_lexicon).
+/// [`delete_lexicon`](crate::client::fluent_builders::DeleteLexicon).
 ///
 /// `ParseStrictResponse` impl for `DeleteLexicon`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -35,7 +35,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteLexicon {
 /// Operation shape for `DescribeVoices`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_voices`](crate::client::Client::describe_voices).
+/// [`describe_voices`](crate::client::fluent_builders::DescribeVoices).
 ///
 /// `ParseStrictResponse` impl for `DescribeVoices`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -68,7 +68,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeVoices {
 /// Operation shape for `GetLexicon`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_lexicon`](crate::client::Client::get_lexicon).
+/// [`get_lexicon`](crate::client::fluent_builders::GetLexicon).
 ///
 /// `ParseStrictResponse` impl for `GetLexicon`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -101,7 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetLexicon {
 /// Operation shape for `GetSpeechSynthesisTask`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_speech_synthesis_task`](crate::client::Client::get_speech_synthesis_task).
+/// [`get_speech_synthesis_task`](crate::client::fluent_builders::GetSpeechSynthesisTask).
 ///
 /// `ParseStrictResponse` impl for `GetSpeechSynthesisTask`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -136,7 +136,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSpeechSynthesisTask {
 /// Operation shape for `ListLexicons`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_lexicons`](crate::client::Client::list_lexicons).
+/// [`list_lexicons`](crate::client::fluent_builders::ListLexicons).
 ///
 /// `ParseStrictResponse` impl for `ListLexicons`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -169,7 +169,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListLexicons {
 /// Operation shape for `ListSpeechSynthesisTasks`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_speech_synthesis_tasks`](crate::client::Client::list_speech_synthesis_tasks).
+/// [`list_speech_synthesis_tasks`](crate::client::fluent_builders::ListSpeechSynthesisTasks).
 ///
 /// `ParseStrictResponse` impl for `ListSpeechSynthesisTasks`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -204,7 +204,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListSpeechSynthesisTasks
 /// Operation shape for `PutLexicon`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`put_lexicon`](crate::client::Client::put_lexicon).
+/// [`put_lexicon`](crate::client::fluent_builders::PutLexicon).
 ///
 /// `ParseStrictResponse` impl for `PutLexicon`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -237,7 +237,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutLexicon {
 /// Operation shape for `StartSpeechSynthesisTask`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`start_speech_synthesis_task`](crate::client::Client::start_speech_synthesis_task).
+/// [`start_speech_synthesis_task`](crate::client::fluent_builders::StartSpeechSynthesisTask).
 ///
 /// `ParseStrictResponse` impl for `StartSpeechSynthesisTask`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -272,7 +272,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartSpeechSynthesisTask
 /// Operation shape for `SynthesizeSpeech`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`synthesize_speech`](crate::client::Client::synthesize_speech).
+/// [`synthesize_speech`](crate::client::fluent_builders::SynthesizeSpeech).
 ///
 /// `ParseStrictResponse` impl for `SynthesizeSpeech`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

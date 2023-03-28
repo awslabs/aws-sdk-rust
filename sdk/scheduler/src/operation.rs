@@ -2,7 +2,7 @@
 /// Operation shape for `CreateSchedule`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_schedule`](crate::client::Client::create_schedule).
+/// [`create_schedule`](crate::client::fluent_builders::CreateSchedule).
 ///
 /// `ParseStrictResponse` impl for `CreateSchedule`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -35,7 +35,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateSchedule {
 /// Operation shape for `CreateScheduleGroup`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_schedule_group`](crate::client::Client::create_schedule_group).
+/// [`create_schedule_group`](crate::client::fluent_builders::CreateScheduleGroup).
 ///
 /// `ParseStrictResponse` impl for `CreateScheduleGroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -70,7 +70,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateScheduleGroup {
 /// Operation shape for `DeleteSchedule`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_schedule`](crate::client::Client::delete_schedule).
+/// [`delete_schedule`](crate::client::fluent_builders::DeleteSchedule).
 ///
 /// `ParseStrictResponse` impl for `DeleteSchedule`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -103,7 +103,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteSchedule {
 /// Operation shape for `DeleteScheduleGroup`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_schedule_group`](crate::client::Client::delete_schedule_group).
+/// [`delete_schedule_group`](crate::client::fluent_builders::DeleteScheduleGroup).
 ///
 /// `ParseStrictResponse` impl for `DeleteScheduleGroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -138,7 +138,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteScheduleGroup {
 /// Operation shape for `GetSchedule`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_schedule`](crate::client::Client::get_schedule).
+/// [`get_schedule`](crate::client::fluent_builders::GetSchedule).
 ///
 /// `ParseStrictResponse` impl for `GetSchedule`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -171,7 +171,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSchedule {
 /// Operation shape for `GetScheduleGroup`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_schedule_group`](crate::client::Client::get_schedule_group).
+/// [`get_schedule_group`](crate::client::fluent_builders::GetScheduleGroup).
 ///
 /// `ParseStrictResponse` impl for `GetScheduleGroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -206,7 +206,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetScheduleGroup {
 /// Operation shape for `ListScheduleGroups`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_schedule_groups`](crate::client::Client::list_schedule_groups).
+/// [`list_schedule_groups`](crate::client::fluent_builders::ListScheduleGroups).
 ///
 /// `ParseStrictResponse` impl for `ListScheduleGroups`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -241,7 +241,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListScheduleGroups {
 /// Operation shape for `ListSchedules`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_schedules`](crate::client::Client::list_schedules).
+/// [`list_schedules`](crate::client::fluent_builders::ListSchedules).
 ///
 /// `ParseStrictResponse` impl for `ListSchedules`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -274,7 +274,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListSchedules {
 /// Operation shape for `ListTagsForResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
+/// [`list_tags_for_resource`](crate::client::fluent_builders::ListTagsForResource).
 ///
 /// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -309,7 +309,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// Operation shape for `TagResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`tag_resource`](crate::client::Client::tag_resource).
+/// [`tag_resource`](crate::client::fluent_builders::TagResource).
 ///
 /// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -342,7 +342,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// Operation shape for `UntagResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`untag_resource`](crate::client::Client::untag_resource).
+/// [`untag_resource`](crate::client::fluent_builders::UntagResource).
 ///
 /// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -375,7 +375,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// Operation shape for `UpdateSchedule`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_schedule`](crate::client::Client::update_schedule).
+/// [`update_schedule`](crate::client::fluent_builders::UpdateSchedule).
 ///
 /// `ParseStrictResponse` impl for `UpdateSchedule`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

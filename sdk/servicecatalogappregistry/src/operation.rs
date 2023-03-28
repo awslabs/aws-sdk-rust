@@ -2,7 +2,7 @@
 /// Operation shape for `AssociateAttributeGroup`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`associate_attribute_group`](crate::client::Client::associate_attribute_group).
+/// [`associate_attribute_group`](crate::client::fluent_builders::AssociateAttributeGroup).
 ///
 /// `ParseStrictResponse` impl for `AssociateAttributeGroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -37,7 +37,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateAttributeGroup 
 /// Operation shape for `AssociateResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`associate_resource`](crate::client::Client::associate_resource).
+/// [`associate_resource`](crate::client::fluent_builders::AssociateResource).
 ///
 /// `ParseStrictResponse` impl for `AssociateResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -72,7 +72,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateResource {
 /// Operation shape for `CreateApplication`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_application`](crate::client::Client::create_application).
+/// [`create_application`](crate::client::fluent_builders::CreateApplication).
 ///
 /// `ParseStrictResponse` impl for `CreateApplication`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -107,7 +107,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateApplication {
 /// Operation shape for `CreateAttributeGroup`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_attribute_group`](crate::client::Client::create_attribute_group).
+/// [`create_attribute_group`](crate::client::fluent_builders::CreateAttributeGroup).
 ///
 /// `ParseStrictResponse` impl for `CreateAttributeGroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -142,7 +142,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateAttributeGroup {
 /// Operation shape for `DeleteApplication`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_application`](crate::client::Client::delete_application).
+/// [`delete_application`](crate::client::fluent_builders::DeleteApplication).
 ///
 /// `ParseStrictResponse` impl for `DeleteApplication`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -177,7 +177,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteApplication {
 /// Operation shape for `DeleteAttributeGroup`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_attribute_group`](crate::client::Client::delete_attribute_group).
+/// [`delete_attribute_group`](crate::client::fluent_builders::DeleteAttributeGroup).
 ///
 /// `ParseStrictResponse` impl for `DeleteAttributeGroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -212,7 +212,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteAttributeGroup {
 /// Operation shape for `DisassociateAttributeGroup`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`disassociate_attribute_group`](crate::client::Client::disassociate_attribute_group).
+/// [`disassociate_attribute_group`](crate::client::fluent_builders::DisassociateAttributeGroup).
 ///
 /// `ParseStrictResponse` impl for `DisassociateAttributeGroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -247,7 +247,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateAttributeGro
 /// Operation shape for `DisassociateResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`disassociate_resource`](crate::client::Client::disassociate_resource).
+/// [`disassociate_resource`](crate::client::fluent_builders::DisassociateResource).
 ///
 /// `ParseStrictResponse` impl for `DisassociateResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -282,7 +282,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateResource {
 /// Operation shape for `GetApplication`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_application`](crate::client::Client::get_application).
+/// [`get_application`](crate::client::fluent_builders::GetApplication).
 ///
 /// `ParseStrictResponse` impl for `GetApplication`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -315,7 +315,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetApplication {
 /// Operation shape for `GetAssociatedResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_associated_resource`](crate::client::Client::get_associated_resource).
+/// [`get_associated_resource`](crate::client::fluent_builders::GetAssociatedResource).
 ///
 /// `ParseStrictResponse` impl for `GetAssociatedResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -350,7 +350,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAssociatedResource {
 /// Operation shape for `GetAttributeGroup`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_attribute_group`](crate::client::Client::get_attribute_group).
+/// [`get_attribute_group`](crate::client::fluent_builders::GetAttributeGroup).
 ///
 /// `ParseStrictResponse` impl for `GetAttributeGroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -385,7 +385,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAttributeGroup {
 /// Operation shape for `GetConfiguration`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_configuration`](crate::client::Client::get_configuration).
+/// [`get_configuration`](crate::client::fluent_builders::GetConfiguration).
 ///
 /// `ParseStrictResponse` impl for `GetConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -420,7 +420,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetConfiguration {
 /// Operation shape for `ListApplications`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_applications`](crate::client::Client::list_applications).
+/// [`list_applications`](crate::client::fluent_builders::ListApplications).
 ///
 /// `ParseStrictResponse` impl for `ListApplications`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -455,7 +455,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListApplications {
 /// Operation shape for `ListAssociatedAttributeGroups`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_associated_attribute_groups`](crate::client::Client::list_associated_attribute_groups).
+/// [`list_associated_attribute_groups`](crate::client::fluent_builders::ListAssociatedAttributeGroups).
 ///
 /// `ParseStrictResponse` impl for `ListAssociatedAttributeGroups`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -490,7 +490,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAssociatedAttributeG
 /// Operation shape for `ListAssociatedResources`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_associated_resources`](crate::client::Client::list_associated_resources).
+/// [`list_associated_resources`](crate::client::fluent_builders::ListAssociatedResources).
 ///
 /// `ParseStrictResponse` impl for `ListAssociatedResources`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -525,7 +525,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAssociatedResources 
 /// Operation shape for `ListAttributeGroups`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_attribute_groups`](crate::client::Client::list_attribute_groups).
+/// [`list_attribute_groups`](crate::client::fluent_builders::ListAttributeGroups).
 ///
 /// `ParseStrictResponse` impl for `ListAttributeGroups`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -560,7 +560,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAttributeGroups {
 /// Operation shape for `ListAttributeGroupsForApplication`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_attribute_groups_for_application`](crate::client::Client::list_attribute_groups_for_application).
+/// [`list_attribute_groups_for_application`](crate::client::fluent_builders::ListAttributeGroupsForApplication).
 ///
 /// `ParseStrictResponse` impl for `ListAttributeGroupsForApplication`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -595,7 +595,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAttributeGroupsForAp
 /// Operation shape for `ListTagsForResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
+/// [`list_tags_for_resource`](crate::client::fluent_builders::ListTagsForResource).
 ///
 /// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -630,7 +630,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// Operation shape for `PutConfiguration`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`put_configuration`](crate::client::Client::put_configuration).
+/// [`put_configuration`](crate::client::fluent_builders::PutConfiguration).
 ///
 /// `ParseStrictResponse` impl for `PutConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -665,7 +665,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutConfiguration {
 /// Operation shape for `SyncResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`sync_resource`](crate::client::Client::sync_resource).
+/// [`sync_resource`](crate::client::fluent_builders::SyncResource).
 ///
 /// `ParseStrictResponse` impl for `SyncResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -698,7 +698,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SyncResource {
 /// Operation shape for `TagResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`tag_resource`](crate::client::Client::tag_resource).
+/// [`tag_resource`](crate::client::fluent_builders::TagResource).
 ///
 /// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -731,7 +731,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// Operation shape for `UntagResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`untag_resource`](crate::client::Client::untag_resource).
+/// [`untag_resource`](crate::client::fluent_builders::UntagResource).
 ///
 /// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -764,7 +764,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// Operation shape for `UpdateApplication`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_application`](crate::client::Client::update_application).
+/// [`update_application`](crate::client::fluent_builders::UpdateApplication).
 ///
 /// `ParseStrictResponse` impl for `UpdateApplication`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -799,7 +799,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateApplication {
 /// Operation shape for `UpdateAttributeGroup`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_attribute_group`](crate::client::Client::update_attribute_group).
+/// [`update_attribute_group`](crate::client::fluent_builders::UpdateAttributeGroup).
 ///
 /// `ParseStrictResponse` impl for `UpdateAttributeGroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

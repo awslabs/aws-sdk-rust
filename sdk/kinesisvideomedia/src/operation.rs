@@ -2,7 +2,7 @@
 /// Operation shape for `GetMedia`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_media`](crate::client::Client::get_media).
+/// [`get_media`](crate::client::fluent_builders::GetMedia).
 ///
 /// `ParseStrictResponse` impl for `GetMedia`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

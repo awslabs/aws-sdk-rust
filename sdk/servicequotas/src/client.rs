@@ -99,8 +99,8 @@ impl Client {
     /// - On failure, responds with [`SdkError<AssociateServiceQuotaTemplateError>`](crate::error::AssociateServiceQuotaTemplateError)
     pub fn associate_service_quota_template(
         &self,
-    ) -> fluent_builders::AssociateServiceQuotaTemplate {
-        fluent_builders::AssociateServiceQuotaTemplate::new(self.handle.clone())
+    ) -> crate::client::fluent_builders::AssociateServiceQuotaTemplate {
+        crate::client::fluent_builders::AssociateServiceQuotaTemplate::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`DeleteServiceQuotaIncreaseRequestFromTemplate`](crate::client::fluent_builders::DeleteServiceQuotaIncreaseRequestFromTemplate) operation.
     ///
@@ -113,8 +113,10 @@ impl Client {
     /// - On failure, responds with [`SdkError<DeleteServiceQuotaIncreaseRequestFromTemplateError>`](crate::error::DeleteServiceQuotaIncreaseRequestFromTemplateError)
     pub fn delete_service_quota_increase_request_from_template(
         &self,
-    ) -> fluent_builders::DeleteServiceQuotaIncreaseRequestFromTemplate {
-        fluent_builders::DeleteServiceQuotaIncreaseRequestFromTemplate::new(self.handle.clone())
+    ) -> crate::client::fluent_builders::DeleteServiceQuotaIncreaseRequestFromTemplate {
+        crate::client::fluent_builders::DeleteServiceQuotaIncreaseRequestFromTemplate::new(
+            self.handle.clone(),
+        )
     }
     /// Constructs a fluent builder for the [`DisassociateServiceQuotaTemplate`](crate::client::fluent_builders::DisassociateServiceQuotaTemplate) operation.
     ///
@@ -125,8 +127,8 @@ impl Client {
     /// - On failure, responds with [`SdkError<DisassociateServiceQuotaTemplateError>`](crate::error::DisassociateServiceQuotaTemplateError)
     pub fn disassociate_service_quota_template(
         &self,
-    ) -> fluent_builders::DisassociateServiceQuotaTemplate {
-        fluent_builders::DisassociateServiceQuotaTemplate::new(self.handle.clone())
+    ) -> crate::client::fluent_builders::DisassociateServiceQuotaTemplate {
+        crate::client::fluent_builders::DisassociateServiceQuotaTemplate::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`GetAssociationForServiceQuotaTemplate`](crate::client::fluent_builders::GetAssociationForServiceQuotaTemplate) operation.
     ///
@@ -137,8 +139,10 @@ impl Client {
     /// - On failure, responds with [`SdkError<GetAssociationForServiceQuotaTemplateError>`](crate::error::GetAssociationForServiceQuotaTemplateError)
     pub fn get_association_for_service_quota_template(
         &self,
-    ) -> fluent_builders::GetAssociationForServiceQuotaTemplate {
-        fluent_builders::GetAssociationForServiceQuotaTemplate::new(self.handle.clone())
+    ) -> crate::client::fluent_builders::GetAssociationForServiceQuotaTemplate {
+        crate::client::fluent_builders::GetAssociationForServiceQuotaTemplate::new(
+            self.handle.clone(),
+        )
     }
     /// Constructs a fluent builder for the [`GetAWSDefaultServiceQuota`](crate::client::fluent_builders::GetAWSDefaultServiceQuota) operation.
     ///
@@ -148,8 +152,10 @@ impl Client {
     /// - On success, responds with [`GetAwsDefaultServiceQuotaOutput`](crate::output::GetAwsDefaultServiceQuotaOutput) with field(s):
     ///   - [`quota(Option<ServiceQuota>)`](crate::output::GetAwsDefaultServiceQuotaOutput::quota): <p>Information about the quota.</p>
     /// - On failure, responds with [`SdkError<GetAWSDefaultServiceQuotaError>`](crate::error::GetAWSDefaultServiceQuotaError)
-    pub fn get_aws_default_service_quota(&self) -> fluent_builders::GetAWSDefaultServiceQuota {
-        fluent_builders::GetAWSDefaultServiceQuota::new(self.handle.clone())
+    pub fn get_aws_default_service_quota(
+        &self,
+    ) -> crate::client::fluent_builders::GetAWSDefaultServiceQuota {
+        crate::client::fluent_builders::GetAWSDefaultServiceQuota::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`GetRequestedServiceQuotaChange`](crate::client::fluent_builders::GetRequestedServiceQuotaChange) operation.
     ///
@@ -160,8 +166,8 @@ impl Client {
     /// - On failure, responds with [`SdkError<GetRequestedServiceQuotaChangeError>`](crate::error::GetRequestedServiceQuotaChangeError)
     pub fn get_requested_service_quota_change(
         &self,
-    ) -> fluent_builders::GetRequestedServiceQuotaChange {
-        fluent_builders::GetRequestedServiceQuotaChange::new(self.handle.clone())
+    ) -> crate::client::fluent_builders::GetRequestedServiceQuotaChange {
+        crate::client::fluent_builders::GetRequestedServiceQuotaChange::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`GetServiceQuota`](crate::client::fluent_builders::GetServiceQuota) operation.
     ///
@@ -171,8 +177,8 @@ impl Client {
     /// - On success, responds with [`GetServiceQuotaOutput`](crate::output::GetServiceQuotaOutput) with field(s):
     ///   - [`quota(Option<ServiceQuota>)`](crate::output::GetServiceQuotaOutput::quota): <p>Information about the quota.</p>
     /// - On failure, responds with [`SdkError<GetServiceQuotaError>`](crate::error::GetServiceQuotaError)
-    pub fn get_service_quota(&self) -> fluent_builders::GetServiceQuota {
-        fluent_builders::GetServiceQuota::new(self.handle.clone())
+    pub fn get_service_quota(&self) -> crate::client::fluent_builders::GetServiceQuota {
+        crate::client::fluent_builders::GetServiceQuota::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`GetServiceQuotaIncreaseRequestFromTemplate`](crate::client::fluent_builders::GetServiceQuotaIncreaseRequestFromTemplate) operation.
     ///
@@ -185,8 +191,10 @@ impl Client {
     /// - On failure, responds with [`SdkError<GetServiceQuotaIncreaseRequestFromTemplateError>`](crate::error::GetServiceQuotaIncreaseRequestFromTemplateError)
     pub fn get_service_quota_increase_request_from_template(
         &self,
-    ) -> fluent_builders::GetServiceQuotaIncreaseRequestFromTemplate {
-        fluent_builders::GetServiceQuotaIncreaseRequestFromTemplate::new(self.handle.clone())
+    ) -> crate::client::fluent_builders::GetServiceQuotaIncreaseRequestFromTemplate {
+        crate::client::fluent_builders::GetServiceQuotaIncreaseRequestFromTemplate::new(
+            self.handle.clone(),
+        )
     }
     /// Constructs a fluent builder for the [`ListAWSDefaultServiceQuotas`](crate::client::fluent_builders::ListAWSDefaultServiceQuotas) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListAWSDefaultServiceQuotas::into_paginator).
@@ -199,8 +207,10 @@ impl Client {
     ///   - [`next_token(Option<String>)`](crate::output::ListAwsDefaultServiceQuotasOutput::next_token): <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
     ///   - [`quotas(Option<Vec<ServiceQuota>>)`](crate::output::ListAwsDefaultServiceQuotasOutput::quotas): <p>Information about the quotas.</p>
     /// - On failure, responds with [`SdkError<ListAWSDefaultServiceQuotasError>`](crate::error::ListAWSDefaultServiceQuotasError)
-    pub fn list_aws_default_service_quotas(&self) -> fluent_builders::ListAWSDefaultServiceQuotas {
-        fluent_builders::ListAWSDefaultServiceQuotas::new(self.handle.clone())
+    pub fn list_aws_default_service_quotas(
+        &self,
+    ) -> crate::client::fluent_builders::ListAWSDefaultServiceQuotas {
+        crate::client::fluent_builders::ListAWSDefaultServiceQuotas::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListRequestedServiceQuotaChangeHistory`](crate::client::fluent_builders::ListRequestedServiceQuotaChangeHistory) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListRequestedServiceQuotaChangeHistory::into_paginator).
@@ -216,8 +226,10 @@ impl Client {
     /// - On failure, responds with [`SdkError<ListRequestedServiceQuotaChangeHistoryError>`](crate::error::ListRequestedServiceQuotaChangeHistoryError)
     pub fn list_requested_service_quota_change_history(
         &self,
-    ) -> fluent_builders::ListRequestedServiceQuotaChangeHistory {
-        fluent_builders::ListRequestedServiceQuotaChangeHistory::new(self.handle.clone())
+    ) -> crate::client::fluent_builders::ListRequestedServiceQuotaChangeHistory {
+        crate::client::fluent_builders::ListRequestedServiceQuotaChangeHistory::new(
+            self.handle.clone(),
+        )
     }
     /// Constructs a fluent builder for the [`ListRequestedServiceQuotaChangeHistoryByQuota`](crate::client::fluent_builders::ListRequestedServiceQuotaChangeHistoryByQuota) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListRequestedServiceQuotaChangeHistoryByQuota::into_paginator).
@@ -234,8 +246,10 @@ impl Client {
     /// - On failure, responds with [`SdkError<ListRequestedServiceQuotaChangeHistoryByQuotaError>`](crate::error::ListRequestedServiceQuotaChangeHistoryByQuotaError)
     pub fn list_requested_service_quota_change_history_by_quota(
         &self,
-    ) -> fluent_builders::ListRequestedServiceQuotaChangeHistoryByQuota {
-        fluent_builders::ListRequestedServiceQuotaChangeHistoryByQuota::new(self.handle.clone())
+    ) -> crate::client::fluent_builders::ListRequestedServiceQuotaChangeHistoryByQuota {
+        crate::client::fluent_builders::ListRequestedServiceQuotaChangeHistoryByQuota::new(
+            self.handle.clone(),
+        )
     }
     /// Constructs a fluent builder for the [`ListServiceQuotaIncreaseRequestsInTemplate`](crate::client::fluent_builders::ListServiceQuotaIncreaseRequestsInTemplate) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListServiceQuotaIncreaseRequestsInTemplate::into_paginator).
@@ -251,8 +265,10 @@ impl Client {
     /// - On failure, responds with [`SdkError<ListServiceQuotaIncreaseRequestsInTemplateError>`](crate::error::ListServiceQuotaIncreaseRequestsInTemplateError)
     pub fn list_service_quota_increase_requests_in_template(
         &self,
-    ) -> fluent_builders::ListServiceQuotaIncreaseRequestsInTemplate {
-        fluent_builders::ListServiceQuotaIncreaseRequestsInTemplate::new(self.handle.clone())
+    ) -> crate::client::fluent_builders::ListServiceQuotaIncreaseRequestsInTemplate {
+        crate::client::fluent_builders::ListServiceQuotaIncreaseRequestsInTemplate::new(
+            self.handle.clone(),
+        )
     }
     /// Constructs a fluent builder for the [`ListServiceQuotas`](crate::client::fluent_builders::ListServiceQuotas) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListServiceQuotas::into_paginator).
@@ -265,8 +281,8 @@ impl Client {
     ///   - [`next_token(Option<String>)`](crate::output::ListServiceQuotasOutput::next_token): <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
     ///   - [`quotas(Option<Vec<ServiceQuota>>)`](crate::output::ListServiceQuotasOutput::quotas): <p>Information about the quotas.</p>
     /// - On failure, responds with [`SdkError<ListServiceQuotasError>`](crate::error::ListServiceQuotasError)
-    pub fn list_service_quotas(&self) -> fluent_builders::ListServiceQuotas {
-        fluent_builders::ListServiceQuotas::new(self.handle.clone())
+    pub fn list_service_quotas(&self) -> crate::client::fluent_builders::ListServiceQuotas {
+        crate::client::fluent_builders::ListServiceQuotas::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListServices`](crate::client::fluent_builders::ListServices) operation.
     /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListServices::into_paginator).
@@ -278,8 +294,8 @@ impl Client {
     ///   - [`next_token(Option<String>)`](crate::output::ListServicesOutput::next_token): <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
     ///   - [`services(Option<Vec<ServiceInfo>>)`](crate::output::ListServicesOutput::services): <p>Information about the services.</p>
     /// - On failure, responds with [`SdkError<ListServicesError>`](crate::error::ListServicesError)
-    pub fn list_services(&self) -> fluent_builders::ListServices {
-        fluent_builders::ListServices::new(self.handle.clone())
+    pub fn list_services(&self) -> crate::client::fluent_builders::ListServices {
+        crate::client::fluent_builders::ListServices::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
@@ -288,8 +304,8 @@ impl Client {
     /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
     ///   - [`tags(Option<Vec<Tag>>)`](crate::output::ListTagsForResourceOutput::tags): <p>A complex data type that contains zero or more tag elements.</p>
     /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
-    pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource {
-        fluent_builders::ListTagsForResource::new(self.handle.clone())
+    pub fn list_tags_for_resource(&self) -> crate::client::fluent_builders::ListTagsForResource {
+        crate::client::fluent_builders::ListTagsForResource::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`PutServiceQuotaIncreaseRequestIntoTemplate`](crate::client::fluent_builders::PutServiceQuotaIncreaseRequestIntoTemplate) operation.
     ///
@@ -303,8 +319,10 @@ impl Client {
     /// - On failure, responds with [`SdkError<PutServiceQuotaIncreaseRequestIntoTemplateError>`](crate::error::PutServiceQuotaIncreaseRequestIntoTemplateError)
     pub fn put_service_quota_increase_request_into_template(
         &self,
-    ) -> fluent_builders::PutServiceQuotaIncreaseRequestIntoTemplate {
-        fluent_builders::PutServiceQuotaIncreaseRequestIntoTemplate::new(self.handle.clone())
+    ) -> crate::client::fluent_builders::PutServiceQuotaIncreaseRequestIntoTemplate {
+        crate::client::fluent_builders::PutServiceQuotaIncreaseRequestIntoTemplate::new(
+            self.handle.clone(),
+        )
     }
     /// Constructs a fluent builder for the [`RequestServiceQuotaIncrease`](crate::client::fluent_builders::RequestServiceQuotaIncrease) operation.
     ///
@@ -315,8 +333,10 @@ impl Client {
     /// - On success, responds with [`RequestServiceQuotaIncreaseOutput`](crate::output::RequestServiceQuotaIncreaseOutput) with field(s):
     ///   - [`requested_quota(Option<RequestedServiceQuotaChange>)`](crate::output::RequestServiceQuotaIncreaseOutput::requested_quota): <p>Information about the quota increase request.</p>
     /// - On failure, responds with [`SdkError<RequestServiceQuotaIncreaseError>`](crate::error::RequestServiceQuotaIncreaseError)
-    pub fn request_service_quota_increase(&self) -> fluent_builders::RequestServiceQuotaIncrease {
-        fluent_builders::RequestServiceQuotaIncrease::new(self.handle.clone())
+    pub fn request_service_quota_increase(
+        &self,
+    ) -> crate::client::fluent_builders::RequestServiceQuotaIncrease {
+        crate::client::fluent_builders::RequestServiceQuotaIncrease::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
@@ -326,8 +346,8 @@ impl Client {
     /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
 
     /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
-    pub fn tag_resource(&self) -> fluent_builders::TagResource {
-        fluent_builders::TagResource::new(self.handle.clone())
+    pub fn tag_resource(&self) -> crate::client::fluent_builders::TagResource {
+        crate::client::fluent_builders::TagResource::new(self.handle.clone())
     }
     /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
@@ -337,1752 +357,8 @@ impl Client {
     /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 
     /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
-    pub fn untag_resource(&self) -> fluent_builders::UntagResource {
-        fluent_builders::UntagResource::new(self.handle.clone())
-    }
-}
-pub mod fluent_builders {
-
-    //! Utilities to ergonomically construct a request to the service.
-    //!
-    //! Fluent builders are created through the [`Client`](crate::client::Client) by calling
-    //! one if its operation methods. After parameters are set using the builder methods,
-    //! the `send` method can be called to initiate the request.
-    /// Fluent builder constructing a request to `AssociateServiceQuotaTemplate`.
-    ///
-    /// <p>Associates your quota request template with your organization. When a new account is created in your organization, the quota increase requests in the template are automatically applied to the account. You can add a quota increase request for any adjustable quota to your template.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct AssociateServiceQuotaTemplate {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::associate_service_quota_template_input::Builder,
-    }
-    impl AssociateServiceQuotaTemplate {
-        /// Creates a new `AssociateServiceQuotaTemplate`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::AssociateServiceQuotaTemplate,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::AssociateServiceQuotaTemplateError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::AssociateServiceQuotaTemplateOutput,
-            aws_smithy_http::result::SdkError<crate::error::AssociateServiceQuotaTemplateError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-    }
-    /// Fluent builder constructing a request to `DeleteServiceQuotaIncreaseRequestFromTemplate`.
-    ///
-    /// <p>Deletes the quota increase request for the specified quota from your quota request template.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DeleteServiceQuotaIncreaseRequestFromTemplate {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::delete_service_quota_increase_request_from_template_input::Builder,
-    }
-    impl DeleteServiceQuotaIncreaseRequestFromTemplate {
-        /// Creates a new `DeleteServiceQuotaIncreaseRequestFromTemplate`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::DeleteServiceQuotaIncreaseRequestFromTemplate,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<
-                crate::error::DeleteServiceQuotaIncreaseRequestFromTemplateError,
-            >,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::DeleteServiceQuotaIncreaseRequestFromTemplateOutput,
-            aws_smithy_http::result::SdkError<
-                crate::error::DeleteServiceQuotaIncreaseRequestFromTemplateError,
-            >,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// <p>The service identifier.</p>
-        pub fn service_code(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_code(input.into());
-            self
-        }
-        /// <p>The service identifier.</p>
-        pub fn set_service_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_service_code(input);
-            self
-        }
-        /// <p>The quota identifier.</p>
-        pub fn quota_code(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.quota_code(input.into());
-            self
-        }
-        /// <p>The quota identifier.</p>
-        pub fn set_quota_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_quota_code(input);
-            self
-        }
-        /// <p>The AWS Region.</p>
-        pub fn aws_region(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aws_region(input.into());
-            self
-        }
-        /// <p>The AWS Region.</p>
-        pub fn set_aws_region(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_aws_region(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `DisassociateServiceQuotaTemplate`.
-    ///
-    /// <p>Disables your quota request template. After a template is disabled, the quota increase requests in the template are not applied to new accounts in your organization. Disabling a quota request template does not apply its quota increase requests.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct DisassociateServiceQuotaTemplate {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::disassociate_service_quota_template_input::Builder,
-    }
-    impl DisassociateServiceQuotaTemplate {
-        /// Creates a new `DisassociateServiceQuotaTemplate`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::DisassociateServiceQuotaTemplate,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::DisassociateServiceQuotaTemplateError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::DisassociateServiceQuotaTemplateOutput,
-            aws_smithy_http::result::SdkError<crate::error::DisassociateServiceQuotaTemplateError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-    }
-    /// Fluent builder constructing a request to `GetAssociationForServiceQuotaTemplate`.
-    ///
-    /// <p>Retrieves the status of the association for the quota request template.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct GetAssociationForServiceQuotaTemplate {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::get_association_for_service_quota_template_input::Builder,
-    }
-    impl GetAssociationForServiceQuotaTemplate {
-        /// Creates a new `GetAssociationForServiceQuotaTemplate`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::GetAssociationForServiceQuotaTemplate,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<
-                crate::error::GetAssociationForServiceQuotaTemplateError,
-            >,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::GetAssociationForServiceQuotaTemplateOutput,
-            aws_smithy_http::result::SdkError<
-                crate::error::GetAssociationForServiceQuotaTemplateError,
-            >,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-    }
-    /// Fluent builder constructing a request to `GetAWSDefaultServiceQuota`.
-    ///
-    /// <p>Retrieves the default value for the specified quota. The default value does not reflect any quota increases.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct GetAWSDefaultServiceQuota {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::get_aws_default_service_quota_input::Builder,
-    }
-    impl GetAWSDefaultServiceQuota {
-        /// Creates a new `GetAWSDefaultServiceQuota`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::GetAWSDefaultServiceQuota,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::GetAWSDefaultServiceQuotaError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::GetAwsDefaultServiceQuotaOutput,
-            aws_smithy_http::result::SdkError<crate::error::GetAWSDefaultServiceQuotaError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// <p>The service identifier.</p>
-        pub fn service_code(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_code(input.into());
-            self
-        }
-        /// <p>The service identifier.</p>
-        pub fn set_service_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_service_code(input);
-            self
-        }
-        /// <p>The quota identifier.</p>
-        pub fn quota_code(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.quota_code(input.into());
-            self
-        }
-        /// <p>The quota identifier.</p>
-        pub fn set_quota_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_quota_code(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `GetRequestedServiceQuotaChange`.
-    ///
-    /// <p>Retrieves information about the specified quota increase request.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct GetRequestedServiceQuotaChange {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::get_requested_service_quota_change_input::Builder,
-    }
-    impl GetRequestedServiceQuotaChange {
-        /// Creates a new `GetRequestedServiceQuotaChange`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::GetRequestedServiceQuotaChange,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::GetRequestedServiceQuotaChangeError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::GetRequestedServiceQuotaChangeOutput,
-            aws_smithy_http::result::SdkError<crate::error::GetRequestedServiceQuotaChangeError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// <p>The ID of the quota increase request.</p>
-        pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.request_id(input.into());
-            self
-        }
-        /// <p>The ID of the quota increase request.</p>
-        pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_request_id(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `GetServiceQuota`.
-    ///
-    /// <p>Retrieves the applied quota value for the specified quota. For some quotas, only the default values are available. If the applied quota value is not available for a quota, the quota is not retrieved.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct GetServiceQuota {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::get_service_quota_input::Builder,
-    }
-    impl GetServiceQuota {
-        /// Creates a new `GetServiceQuota`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::GetServiceQuota,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::GetServiceQuotaError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::GetServiceQuotaOutput,
-            aws_smithy_http::result::SdkError<crate::error::GetServiceQuotaError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// <p>The service identifier.</p>
-        pub fn service_code(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_code(input.into());
-            self
-        }
-        /// <p>The service identifier.</p>
-        pub fn set_service_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_service_code(input);
-            self
-        }
-        /// <p>The quota identifier.</p>
-        pub fn quota_code(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.quota_code(input.into());
-            self
-        }
-        /// <p>The quota identifier.</p>
-        pub fn set_quota_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_quota_code(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `GetServiceQuotaIncreaseRequestFromTemplate`.
-    ///
-    /// <p>Retrieves information about the specified quota increase request in your quota request template.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct GetServiceQuotaIncreaseRequestFromTemplate {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::get_service_quota_increase_request_from_template_input::Builder,
-    }
-    impl GetServiceQuotaIncreaseRequestFromTemplate {
-        /// Creates a new `GetServiceQuotaIncreaseRequestFromTemplate`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::GetServiceQuotaIncreaseRequestFromTemplate,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<
-                crate::error::GetServiceQuotaIncreaseRequestFromTemplateError,
-            >,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::GetServiceQuotaIncreaseRequestFromTemplateOutput,
-            aws_smithy_http::result::SdkError<
-                crate::error::GetServiceQuotaIncreaseRequestFromTemplateError,
-            >,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// <p>The service identifier.</p>
-        pub fn service_code(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_code(input.into());
-            self
-        }
-        /// <p>The service identifier.</p>
-        pub fn set_service_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_service_code(input);
-            self
-        }
-        /// <p>The quota identifier.</p>
-        pub fn quota_code(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.quota_code(input.into());
-            self
-        }
-        /// <p>The quota identifier.</p>
-        pub fn set_quota_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_quota_code(input);
-            self
-        }
-        /// <p>The AWS Region.</p>
-        pub fn aws_region(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aws_region(input.into());
-            self
-        }
-        /// <p>The AWS Region.</p>
-        pub fn set_aws_region(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_aws_region(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `ListAWSDefaultServiceQuotas`.
-    ///
-    /// <p>Lists the default values for the quotas for the specified AWS service. A default value does not reflect any quota increases.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct ListAWSDefaultServiceQuotas {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::list_aws_default_service_quotas_input::Builder,
-    }
-    impl ListAWSDefaultServiceQuotas {
-        /// Creates a new `ListAWSDefaultServiceQuotas`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::ListAWSDefaultServiceQuotas,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::ListAWSDefaultServiceQuotasError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::ListAwsDefaultServiceQuotasOutput,
-            aws_smithy_http::result::SdkError<crate::error::ListAWSDefaultServiceQuotasError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// Create a paginator for this request
-        ///
-        /// Paginators are used by calling [`send().await`](crate::paginator::ListAwsDefaultServiceQuotasPaginator::send) which returns a `Stream`.
-        pub fn into_paginator(self) -> crate::paginator::ListAwsDefaultServiceQuotasPaginator {
-            crate::paginator::ListAwsDefaultServiceQuotasPaginator::new(self.handle, self.inner)
-        }
-        /// <p>The service identifier.</p>
-        pub fn service_code(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_code(input.into());
-            self
-        }
-        /// <p>The service identifier.</p>
-        pub fn set_service_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_service_code(input);
-            self
-        }
-        /// <p>The token for the next page of results.</p>
-        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(input.into());
-            self
-        }
-        /// <p>The token for the next page of results.</p>
-        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(input);
-            self
-        }
-        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, if any, make another call with the token returned from this call.</p>
-        pub fn max_results(mut self, input: i32) -> Self {
-            self.inner = self.inner.max_results(input);
-            self
-        }
-        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, if any, make another call with the token returned from this call.</p>
-        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `ListRequestedServiceQuotaChangeHistory`.
-    ///
-    /// <p>Retrieves the quota increase requests for the specified service.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct ListRequestedServiceQuotaChangeHistory {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::list_requested_service_quota_change_history_input::Builder,
-    }
-    impl ListRequestedServiceQuotaChangeHistory {
-        /// Creates a new `ListRequestedServiceQuotaChangeHistory`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::ListRequestedServiceQuotaChangeHistory,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<
-                crate::error::ListRequestedServiceQuotaChangeHistoryError,
-            >,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::ListRequestedServiceQuotaChangeHistoryOutput,
-            aws_smithy_http::result::SdkError<
-                crate::error::ListRequestedServiceQuotaChangeHistoryError,
-            >,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// Create a paginator for this request
-        ///
-        /// Paginators are used by calling [`send().await`](crate::paginator::ListRequestedServiceQuotaChangeHistoryPaginator::send) which returns a `Stream`.
-        pub fn into_paginator(
-            self,
-        ) -> crate::paginator::ListRequestedServiceQuotaChangeHistoryPaginator {
-            crate::paginator::ListRequestedServiceQuotaChangeHistoryPaginator::new(
-                self.handle,
-                self.inner,
-            )
-        }
-        /// <p>The service identifier.</p>
-        pub fn service_code(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_code(input.into());
-            self
-        }
-        /// <p>The service identifier.</p>
-        pub fn set_service_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_service_code(input);
-            self
-        }
-        /// <p>The status of the quota increase request.</p>
-        pub fn status(mut self, input: crate::model::RequestStatus) -> Self {
-            self.inner = self.inner.status(input);
-            self
-        }
-        /// <p>The status of the quota increase request.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::RequestStatus>,
-        ) -> Self {
-            self.inner = self.inner.set_status(input);
-            self
-        }
-        /// <p>The token for the next page of results.</p>
-        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(input.into());
-            self
-        }
-        /// <p>The token for the next page of results.</p>
-        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(input);
-            self
-        }
-        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, if any, make another call with the token returned from this call.</p>
-        pub fn max_results(mut self, input: i32) -> Self {
-            self.inner = self.inner.max_results(input);
-            self
-        }
-        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, if any, make another call with the token returned from this call.</p>
-        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `ListRequestedServiceQuotaChangeHistoryByQuota`.
-    ///
-    /// <p>Retrieves the quota increase requests for the specified quota.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct ListRequestedServiceQuotaChangeHistoryByQuota {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::list_requested_service_quota_change_history_by_quota_input::Builder,
-    }
-    impl ListRequestedServiceQuotaChangeHistoryByQuota {
-        /// Creates a new `ListRequestedServiceQuotaChangeHistoryByQuota`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::ListRequestedServiceQuotaChangeHistoryByQuota,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<
-                crate::error::ListRequestedServiceQuotaChangeHistoryByQuotaError,
-            >,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::ListRequestedServiceQuotaChangeHistoryByQuotaOutput,
-            aws_smithy_http::result::SdkError<
-                crate::error::ListRequestedServiceQuotaChangeHistoryByQuotaError,
-            >,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// Create a paginator for this request
-        ///
-        /// Paginators are used by calling [`send().await`](crate::paginator::ListRequestedServiceQuotaChangeHistoryByQuotaPaginator::send) which returns a `Stream`.
-        pub fn into_paginator(
-            self,
-        ) -> crate::paginator::ListRequestedServiceQuotaChangeHistoryByQuotaPaginator {
-            crate::paginator::ListRequestedServiceQuotaChangeHistoryByQuotaPaginator::new(
-                self.handle,
-                self.inner,
-            )
-        }
-        /// <p>The service identifier.</p>
-        pub fn service_code(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_code(input.into());
-            self
-        }
-        /// <p>The service identifier.</p>
-        pub fn set_service_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_service_code(input);
-            self
-        }
-        /// <p>The quota identifier.</p>
-        pub fn quota_code(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.quota_code(input.into());
-            self
-        }
-        /// <p>The quota identifier.</p>
-        pub fn set_quota_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_quota_code(input);
-            self
-        }
-        /// <p>The status value of the quota increase request.</p>
-        pub fn status(mut self, input: crate::model::RequestStatus) -> Self {
-            self.inner = self.inner.status(input);
-            self
-        }
-        /// <p>The status value of the quota increase request.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::RequestStatus>,
-        ) -> Self {
-            self.inner = self.inner.set_status(input);
-            self
-        }
-        /// <p>The token for the next page of results.</p>
-        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(input.into());
-            self
-        }
-        /// <p>The token for the next page of results.</p>
-        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(input);
-            self
-        }
-        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, if any, make another call with the token returned from this call.</p>
-        pub fn max_results(mut self, input: i32) -> Self {
-            self.inner = self.inner.max_results(input);
-            self
-        }
-        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, if any, make another call with the token returned from this call.</p>
-        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `ListServiceQuotaIncreaseRequestsInTemplate`.
-    ///
-    /// <p>Lists the quota increase requests in the specified quota request template.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct ListServiceQuotaIncreaseRequestsInTemplate {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::list_service_quota_increase_requests_in_template_input::Builder,
-    }
-    impl ListServiceQuotaIncreaseRequestsInTemplate {
-        /// Creates a new `ListServiceQuotaIncreaseRequestsInTemplate`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::ListServiceQuotaIncreaseRequestsInTemplate,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<
-                crate::error::ListServiceQuotaIncreaseRequestsInTemplateError,
-            >,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::ListServiceQuotaIncreaseRequestsInTemplateOutput,
-            aws_smithy_http::result::SdkError<
-                crate::error::ListServiceQuotaIncreaseRequestsInTemplateError,
-            >,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// Create a paginator for this request
-        ///
-        /// Paginators are used by calling [`send().await`](crate::paginator::ListServiceQuotaIncreaseRequestsInTemplatePaginator::send) which returns a `Stream`.
-        pub fn into_paginator(
-            self,
-        ) -> crate::paginator::ListServiceQuotaIncreaseRequestsInTemplatePaginator {
-            crate::paginator::ListServiceQuotaIncreaseRequestsInTemplatePaginator::new(
-                self.handle,
-                self.inner,
-            )
-        }
-        /// <p>The service identifier.</p>
-        pub fn service_code(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_code(input.into());
-            self
-        }
-        /// <p>The service identifier.</p>
-        pub fn set_service_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_service_code(input);
-            self
-        }
-        /// <p>The AWS Region.</p>
-        pub fn aws_region(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aws_region(input.into());
-            self
-        }
-        /// <p>The AWS Region.</p>
-        pub fn set_aws_region(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_aws_region(input);
-            self
-        }
-        /// <p>The token for the next page of results.</p>
-        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(input.into());
-            self
-        }
-        /// <p>The token for the next page of results.</p>
-        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(input);
-            self
-        }
-        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, if any, make another call with the token returned from this call.</p>
-        pub fn max_results(mut self, input: i32) -> Self {
-            self.inner = self.inner.max_results(input);
-            self
-        }
-        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, if any, make another call with the token returned from this call.</p>
-        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `ListServiceQuotas`.
-    ///
-    /// <p>Lists the applied quota values for the specified AWS service. For some quotas, only the default values are available. If the applied quota value is not available for a quota, the quota is not retrieved.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct ListServiceQuotas {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::list_service_quotas_input::Builder,
-    }
-    impl ListServiceQuotas {
-        /// Creates a new `ListServiceQuotas`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::ListServiceQuotas,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::ListServiceQuotasError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::ListServiceQuotasOutput,
-            aws_smithy_http::result::SdkError<crate::error::ListServiceQuotasError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// Create a paginator for this request
-        ///
-        /// Paginators are used by calling [`send().await`](crate::paginator::ListServiceQuotasPaginator::send) which returns a `Stream`.
-        pub fn into_paginator(self) -> crate::paginator::ListServiceQuotasPaginator {
-            crate::paginator::ListServiceQuotasPaginator::new(self.handle, self.inner)
-        }
-        /// <p>The service identifier.</p>
-        pub fn service_code(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_code(input.into());
-            self
-        }
-        /// <p>The service identifier.</p>
-        pub fn set_service_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_service_code(input);
-            self
-        }
-        /// <p>The token for the next page of results.</p>
-        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(input.into());
-            self
-        }
-        /// <p>The token for the next page of results.</p>
-        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(input);
-            self
-        }
-        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, if any, make another call with the token returned from this call.</p>
-        pub fn max_results(mut self, input: i32) -> Self {
-            self.inner = self.inner.max_results(input);
-            self
-        }
-        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, if any, make another call with the token returned from this call.</p>
-        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `ListServices`.
-    ///
-    /// <p>Lists the names and codes for the services integrated with Service Quotas.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct ListServices {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::list_services_input::Builder,
-    }
-    impl ListServices {
-        /// Creates a new `ListServices`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::ListServices,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::ListServicesError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::ListServicesOutput,
-            aws_smithy_http::result::SdkError<crate::error::ListServicesError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// Create a paginator for this request
-        ///
-        /// Paginators are used by calling [`send().await`](crate::paginator::ListServicesPaginator::send) which returns a `Stream`.
-        pub fn into_paginator(self) -> crate::paginator::ListServicesPaginator {
-            crate::paginator::ListServicesPaginator::new(self.handle, self.inner)
-        }
-        /// <p>The token for the next page of results.</p>
-        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(input.into());
-            self
-        }
-        /// <p>The token for the next page of results.</p>
-        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(input);
-            self
-        }
-        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, if any, make another call with the token returned from this call.</p>
-        pub fn max_results(mut self, input: i32) -> Self {
-            self.inner = self.inner.max_results(input);
-            self
-        }
-        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, if any, make another call with the token returned from this call.</p>
-        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `ListTagsForResource`.
-    ///
-    /// <p>Returns a list of the tags assigned to the specified applied quota.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct ListTagsForResource {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::list_tags_for_resource_input::Builder,
-    }
-    impl ListTagsForResource {
-        /// Creates a new `ListTagsForResource`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::ListTagsForResource,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::ListTagsForResourceOutput,
-            aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// <p>The Amazon Resource Name (ARN) for the applied quota for which you want to list tags. You can get this information by using the Service Quotas console, or by listing the quotas using the <a href="https://docs.aws.amazon.com/cli/latest/reference/service-quotas/list-service-quotas.html">list-service-quotas</a> AWS CLI command or the <a href="https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_ListServiceQuotas.html">ListServiceQuotas</a> AWS API operation.</p>
-        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(input.into());
-            self
-        }
-        /// <p>The Amazon Resource Name (ARN) for the applied quota for which you want to list tags. You can get this information by using the Service Quotas console, or by listing the quotas using the <a href="https://docs.aws.amazon.com/cli/latest/reference/service-quotas/list-service-quotas.html">list-service-quotas</a> AWS CLI command or the <a href="https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_ListServiceQuotas.html">ListServiceQuotas</a> AWS API operation.</p>
-        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_resource_arn(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `PutServiceQuotaIncreaseRequestIntoTemplate`.
-    ///
-    /// <p>Adds a quota increase request to your quota request template.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct PutServiceQuotaIncreaseRequestIntoTemplate {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::put_service_quota_increase_request_into_template_input::Builder,
-    }
-    impl PutServiceQuotaIncreaseRequestIntoTemplate {
-        /// Creates a new `PutServiceQuotaIncreaseRequestIntoTemplate`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::PutServiceQuotaIncreaseRequestIntoTemplate,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<
-                crate::error::PutServiceQuotaIncreaseRequestIntoTemplateError,
-            >,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::PutServiceQuotaIncreaseRequestIntoTemplateOutput,
-            aws_smithy_http::result::SdkError<
-                crate::error::PutServiceQuotaIncreaseRequestIntoTemplateError,
-            >,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// <p>The quota identifier.</p>
-        pub fn quota_code(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.quota_code(input.into());
-            self
-        }
-        /// <p>The quota identifier.</p>
-        pub fn set_quota_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_quota_code(input);
-            self
-        }
-        /// <p>The service identifier.</p>
-        pub fn service_code(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_code(input.into());
-            self
-        }
-        /// <p>The service identifier.</p>
-        pub fn set_service_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_service_code(input);
-            self
-        }
-        /// <p>The AWS Region.</p>
-        pub fn aws_region(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aws_region(input.into());
-            self
-        }
-        /// <p>The AWS Region.</p>
-        pub fn set_aws_region(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_aws_region(input);
-            self
-        }
-        /// <p>The new, increased value for the quota.</p>
-        pub fn desired_value(mut self, input: f64) -> Self {
-            self.inner = self.inner.desired_value(input);
-            self
-        }
-        /// <p>The new, increased value for the quota.</p>
-        pub fn set_desired_value(mut self, input: std::option::Option<f64>) -> Self {
-            self.inner = self.inner.set_desired_value(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `RequestServiceQuotaIncrease`.
-    ///
-    /// <p>Submits a quota increase request for the specified quota.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct RequestServiceQuotaIncrease {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::request_service_quota_increase_input::Builder,
-    }
-    impl RequestServiceQuotaIncrease {
-        /// Creates a new `RequestServiceQuotaIncrease`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::RequestServiceQuotaIncrease,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::RequestServiceQuotaIncreaseError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::RequestServiceQuotaIncreaseOutput,
-            aws_smithy_http::result::SdkError<crate::error::RequestServiceQuotaIncreaseError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// <p>The service identifier.</p>
-        pub fn service_code(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_code(input.into());
-            self
-        }
-        /// <p>The service identifier.</p>
-        pub fn set_service_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_service_code(input);
-            self
-        }
-        /// <p>The quota identifier.</p>
-        pub fn quota_code(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.quota_code(input.into());
-            self
-        }
-        /// <p>The quota identifier.</p>
-        pub fn set_quota_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_quota_code(input);
-            self
-        }
-        /// <p>The new, increased value for the quota.</p>
-        pub fn desired_value(mut self, input: f64) -> Self {
-            self.inner = self.inner.desired_value(input);
-            self
-        }
-        /// <p>The new, increased value for the quota.</p>
-        pub fn set_desired_value(mut self, input: std::option::Option<f64>) -> Self {
-            self.inner = self.inner.set_desired_value(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `TagResource`.
-    ///
-    /// <p>Adds tags to the specified applied quota. You can include one or more tags to add to the quota.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct TagResource {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::tag_resource_input::Builder,
-    }
-    impl TagResource {
-        /// Creates a new `TagResource`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::TagResource,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::TagResourceError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::TagResourceOutput,
-            aws_smithy_http::result::SdkError<crate::error::TagResourceError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// <p>The Amazon Resource Name (ARN) for the applied quota. You can get this information by using the Service Quotas console, or by listing the quotas using the <a href="https://docs.aws.amazon.com/cli/latest/reference/service-quotas/list-service-quotas.html">list-service-quotas</a> AWS CLI command or the <a href="https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_ListServiceQuotas.html">ListServiceQuotas</a> AWS API operation.</p>
-        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(input.into());
-            self
-        }
-        /// <p>The Amazon Resource Name (ARN) for the applied quota. You can get this information by using the Service Quotas console, or by listing the quotas using the <a href="https://docs.aws.amazon.com/cli/latest/reference/service-quotas/list-service-quotas.html">list-service-quotas</a> AWS CLI command or the <a href="https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_ListServiceQuotas.html">ListServiceQuotas</a> AWS API operation.</p>
-        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_resource_arn(input);
-            self
-        }
-        /// Appends an item to `Tags`.
-        ///
-        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
-        ///
-        /// <p>The tags that you want to add to the resource.</p>
-        pub fn tags(mut self, input: crate::model::Tag) -> Self {
-            self.inner = self.inner.tags(input);
-            self
-        }
-        /// <p>The tags that you want to add to the resource.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.inner = self.inner.set_tags(input);
-            self
-        }
-    }
-    /// Fluent builder constructing a request to `UntagResource`.
-    ///
-    /// <p>Removes tags from the specified applied quota. You can specify one or more tags to remove.</p>
-    #[derive(std::clone::Clone, std::fmt::Debug)]
-    pub struct UntagResource {
-        handle: std::sync::Arc<super::Handle>,
-        inner: crate::input::untag_resource_input::Builder,
-    }
-    impl UntagResource {
-        /// Creates a new `UntagResource`.
-        pub(crate) fn new(handle: std::sync::Arc<super::Handle>) -> Self {
-            Self {
-                handle,
-                inner: Default::default(),
-            }
-        }
-
-        /// Consume this builder, creating a customizable operation that can be modified before being
-        /// sent. The operation's inner [http::Request] can be modified as well.
-        pub async fn customize(
-            self,
-        ) -> std::result::Result<
-            crate::operation::customize::CustomizableOperation<
-                crate::operation::UntagResource,
-                aws_http::retry::AwsResponseRetryClassifier,
-            >,
-            aws_smithy_http::result::SdkError<crate::error::UntagResourceError>,
-        > {
-            let handle = self.handle.clone();
-            let operation = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            Ok(crate::operation::customize::CustomizableOperation { handle, operation })
-        }
-
-        /// Sends the request and returns the response.
-        ///
-        /// If an error occurs, an `SdkError` will be returned with additional details that
-        /// can be matched against.
-        ///
-        /// By default, any retryable failures will be retried twice. Retry behavior
-        /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-        /// set when configuring the client.
-        pub async fn send(
-            self,
-        ) -> std::result::Result<
-            crate::output::UntagResourceOutput,
-            aws_smithy_http::result::SdkError<crate::error::UntagResourceError>,
-        > {
-            let op = self
-                .inner
-                .build()
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                .make_operation(&self.handle.conf)
-                .await
-                .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-            self.handle.client.call(op).await
-        }
-        /// <p>The Amazon Resource Name (ARN) for the applied quota that you want to untag. You can get this information by using the Service Quotas console, or by listing the quotas using the <a href="https://docs.aws.amazon.com/cli/latest/reference/service-quotas/list-service-quotas.html">list-service-quotas</a> AWS CLI command or the <a href="https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_ListServiceQuotas.html">ListServiceQuotas</a> AWS API operation.</p>
-        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(input.into());
-            self
-        }
-        /// <p>The Amazon Resource Name (ARN) for the applied quota that you want to untag. You can get this information by using the Service Quotas console, or by listing the quotas using the <a href="https://docs.aws.amazon.com/cli/latest/reference/service-quotas/list-service-quotas.html">list-service-quotas</a> AWS CLI command or the <a href="https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_ListServiceQuotas.html">ListServiceQuotas</a> AWS API operation.</p>
-        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_resource_arn(input);
-            self
-        }
-        /// Appends an item to `TagKeys`.
-        ///
-        /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
-        ///
-        /// <p>The keys of the tags that you want to remove from the resource.</p>
-        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_keys(input.into());
-            self
-        }
-        /// <p>The keys of the tags that you want to remove from the resource.</p>
-        pub fn set_tag_keys(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.inner = self.inner.set_tag_keys(input);
-            self
-        }
+    pub fn untag_resource(&self) -> crate::client::fluent_builders::UntagResource {
+        crate::client::fluent_builders::UntagResource::new(self.handle.clone())
     }
 }
 
@@ -2169,3 +445,10 @@ impl Client {
         }
     }
 }
+
+/// Utilities to ergonomically construct a request to the service.
+///
+/// Fluent builders are created through the [`Client`](crate::client::Client) by calling
+/// one if its operation methods. After parameters are set using the builder methods,
+/// the `send` method can be called to initiate the request.
+pub mod fluent_builders;

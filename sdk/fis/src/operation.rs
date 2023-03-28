@@ -2,7 +2,7 @@
 /// Operation shape for `CreateExperimentTemplate`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_experiment_template`](crate::client::Client::create_experiment_template).
+/// [`create_experiment_template`](crate::client::fluent_builders::CreateExperimentTemplate).
 ///
 /// `ParseStrictResponse` impl for `CreateExperimentTemplate`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -37,7 +37,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateExperimentTemplate
 /// Operation shape for `DeleteExperimentTemplate`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_experiment_template`](crate::client::Client::delete_experiment_template).
+/// [`delete_experiment_template`](crate::client::fluent_builders::DeleteExperimentTemplate).
 ///
 /// `ParseStrictResponse` impl for `DeleteExperimentTemplate`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -72,7 +72,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteExperimentTemplate
 /// Operation shape for `GetAction`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_action`](crate::client::Client::get_action).
+/// [`get_action`](crate::client::fluent_builders::GetAction).
 ///
 /// `ParseStrictResponse` impl for `GetAction`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -104,7 +104,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAction {
 /// Operation shape for `GetExperiment`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_experiment`](crate::client::Client::get_experiment).
+/// [`get_experiment`](crate::client::fluent_builders::GetExperiment).
 ///
 /// `ParseStrictResponse` impl for `GetExperiment`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -137,7 +137,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetExperiment {
 /// Operation shape for `GetExperimentTemplate`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_experiment_template`](crate::client::Client::get_experiment_template).
+/// [`get_experiment_template`](crate::client::fluent_builders::GetExperimentTemplate).
 ///
 /// `ParseStrictResponse` impl for `GetExperimentTemplate`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -172,7 +172,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetExperimentTemplate {
 /// Operation shape for `GetTargetResourceType`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_target_resource_type`](crate::client::Client::get_target_resource_type).
+/// [`get_target_resource_type`](crate::client::fluent_builders::GetTargetResourceType).
 ///
 /// `ParseStrictResponse` impl for `GetTargetResourceType`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -207,7 +207,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetTargetResourceType {
 /// Operation shape for `ListActions`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_actions`](crate::client::Client::list_actions).
+/// [`list_actions`](crate::client::fluent_builders::ListActions).
 ///
 /// `ParseStrictResponse` impl for `ListActions`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -240,7 +240,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListActions {
 /// Operation shape for `ListExperiments`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_experiments`](crate::client::Client::list_experiments).
+/// [`list_experiments`](crate::client::fluent_builders::ListExperiments).
 ///
 /// `ParseStrictResponse` impl for `ListExperiments`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -275,7 +275,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListExperiments {
 /// Operation shape for `ListExperimentTemplates`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_experiment_templates`](crate::client::Client::list_experiment_templates).
+/// [`list_experiment_templates`](crate::client::fluent_builders::ListExperimentTemplates).
 ///
 /// `ParseStrictResponse` impl for `ListExperimentTemplates`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -310,7 +310,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListExperimentTemplates 
 /// Operation shape for `ListTagsForResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
+/// [`list_tags_for_resource`](crate::client::fluent_builders::ListTagsForResource).
 ///
 /// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -345,7 +345,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// Operation shape for `ListTargetResourceTypes`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_target_resource_types`](crate::client::Client::list_target_resource_types).
+/// [`list_target_resource_types`](crate::client::fluent_builders::ListTargetResourceTypes).
 ///
 /// `ParseStrictResponse` impl for `ListTargetResourceTypes`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -380,7 +380,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTargetResourceTypes 
 /// Operation shape for `StartExperiment`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`start_experiment`](crate::client::Client::start_experiment).
+/// [`start_experiment`](crate::client::fluent_builders::StartExperiment).
 ///
 /// `ParseStrictResponse` impl for `StartExperiment`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -415,7 +415,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartExperiment {
 /// Operation shape for `StopExperiment`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`stop_experiment`](crate::client::Client::stop_experiment).
+/// [`stop_experiment`](crate::client::fluent_builders::StopExperiment).
 ///
 /// `ParseStrictResponse` impl for `StopExperiment`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -448,7 +448,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StopExperiment {
 /// Operation shape for `TagResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`tag_resource`](crate::client::Client::tag_resource).
+/// [`tag_resource`](crate::client::fluent_builders::TagResource).
 ///
 /// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -481,7 +481,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// Operation shape for `UntagResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`untag_resource`](crate::client::Client::untag_resource).
+/// [`untag_resource`](crate::client::fluent_builders::UntagResource).
 ///
 /// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -514,7 +514,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// Operation shape for `UpdateExperimentTemplate`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_experiment_template`](crate::client::Client::update_experiment_template).
+/// [`update_experiment_template`](crate::client::fluent_builders::UpdateExperimentTemplate).
 ///
 /// `ParseStrictResponse` impl for `UpdateExperimentTemplate`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

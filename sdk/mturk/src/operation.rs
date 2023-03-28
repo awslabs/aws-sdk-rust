@@ -2,7 +2,7 @@
 /// Operation shape for `AcceptQualificationRequest`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`accept_qualification_request`](crate::client::Client::accept_qualification_request).
+/// [`accept_qualification_request`](crate::client::fluent_builders::AcceptQualificationRequest).
 ///
 /// `ParseStrictResponse` impl for `AcceptQualificationRequest`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -37,7 +37,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AcceptQualificationReque
 /// Operation shape for `ApproveAssignment`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`approve_assignment`](crate::client::Client::approve_assignment).
+/// [`approve_assignment`](crate::client::fluent_builders::ApproveAssignment).
 ///
 /// `ParseStrictResponse` impl for `ApproveAssignment`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -72,7 +72,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ApproveAssignment {
 /// Operation shape for `AssociateQualificationWithWorker`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`associate_qualification_with_worker`](crate::client::Client::associate_qualification_with_worker).
+/// [`associate_qualification_with_worker`](crate::client::fluent_builders::AssociateQualificationWithWorker).
 ///
 /// `ParseStrictResponse` impl for `AssociateQualificationWithWorker`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -107,7 +107,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateQualificationWi
 /// Operation shape for `CreateAdditionalAssignmentsForHIT`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_additional_assignments_for_hit`](crate::client::Client::create_additional_assignments_for_hit).
+/// [`create_additional_assignments_for_hit`](crate::client::fluent_builders::CreateAdditionalAssignmentsForHIT).
 ///
 /// `ParseStrictResponse` impl for `CreateAdditionalAssignmentsForHIT`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -142,7 +142,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateAdditionalAssignme
 /// Operation shape for `CreateHIT`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_hit`](crate::client::Client::create_hit).
+/// [`create_hit`](crate::client::fluent_builders::CreateHIT).
 ///
 /// `ParseStrictResponse` impl for `CreateHIT`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -174,7 +174,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateHIT {
 /// Operation shape for `CreateHITType`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_hit_type`](crate::client::Client::create_hit_type).
+/// [`create_hit_type`](crate::client::fluent_builders::CreateHITType).
 ///
 /// `ParseStrictResponse` impl for `CreateHITType`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -207,7 +207,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateHITType {
 /// Operation shape for `CreateHITWithHITType`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_hit_with_hit_type`](crate::client::Client::create_hit_with_hit_type).
+/// [`create_hit_with_hit_type`](crate::client::fluent_builders::CreateHITWithHITType).
 ///
 /// `ParseStrictResponse` impl for `CreateHITWithHITType`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -242,7 +242,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateHITWithHITType {
 /// Operation shape for `CreateQualificationType`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_qualification_type`](crate::client::Client::create_qualification_type).
+/// [`create_qualification_type`](crate::client::fluent_builders::CreateQualificationType).
 ///
 /// `ParseStrictResponse` impl for `CreateQualificationType`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -277,7 +277,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateQualificationType 
 /// Operation shape for `CreateWorkerBlock`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_worker_block`](crate::client::Client::create_worker_block).
+/// [`create_worker_block`](crate::client::fluent_builders::CreateWorkerBlock).
 ///
 /// `ParseStrictResponse` impl for `CreateWorkerBlock`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -312,7 +312,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateWorkerBlock {
 /// Operation shape for `DeleteHIT`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_hit`](crate::client::Client::delete_hit).
+/// [`delete_hit`](crate::client::fluent_builders::DeleteHIT).
 ///
 /// `ParseStrictResponse` impl for `DeleteHIT`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -344,7 +344,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteHIT {
 /// Operation shape for `DeleteQualificationType`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_qualification_type`](crate::client::Client::delete_qualification_type).
+/// [`delete_qualification_type`](crate::client::fluent_builders::DeleteQualificationType).
 ///
 /// `ParseStrictResponse` impl for `DeleteQualificationType`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -379,7 +379,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteQualificationType 
 /// Operation shape for `DeleteWorkerBlock`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_worker_block`](crate::client::Client::delete_worker_block).
+/// [`delete_worker_block`](crate::client::fluent_builders::DeleteWorkerBlock).
 ///
 /// `ParseStrictResponse` impl for `DeleteWorkerBlock`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -414,7 +414,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteWorkerBlock {
 /// Operation shape for `DisassociateQualificationFromWorker`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`disassociate_qualification_from_worker`](crate::client::Client::disassociate_qualification_from_worker).
+/// [`disassociate_qualification_from_worker`](crate::client::fluent_builders::DisassociateQualificationFromWorker).
 ///
 /// `ParseStrictResponse` impl for `DisassociateQualificationFromWorker`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -449,7 +449,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateQualificatio
 /// Operation shape for `GetAccountBalance`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_account_balance`](crate::client::Client::get_account_balance).
+/// [`get_account_balance`](crate::client::fluent_builders::GetAccountBalance).
 ///
 /// `ParseStrictResponse` impl for `GetAccountBalance`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -484,7 +484,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAccountBalance {
 /// Operation shape for `GetAssignment`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_assignment`](crate::client::Client::get_assignment).
+/// [`get_assignment`](crate::client::fluent_builders::GetAssignment).
 ///
 /// `ParseStrictResponse` impl for `GetAssignment`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -517,7 +517,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAssignment {
 /// Operation shape for `GetFileUploadURL`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_file_upload_url`](crate::client::Client::get_file_upload_url).
+/// [`get_file_upload_url`](crate::client::fluent_builders::GetFileUploadURL).
 ///
 /// `ParseStrictResponse` impl for `GetFileUploadURL`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -552,7 +552,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetFileUploadURL {
 /// Operation shape for `GetHIT`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_hit`](crate::client::Client::get_hit).
+/// [`get_hit`](crate::client::fluent_builders::GetHIT).
 ///
 /// `ParseStrictResponse` impl for `GetHIT`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -584,7 +584,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetHIT {
 /// Operation shape for `GetQualificationScore`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_qualification_score`](crate::client::Client::get_qualification_score).
+/// [`get_qualification_score`](crate::client::fluent_builders::GetQualificationScore).
 ///
 /// `ParseStrictResponse` impl for `GetQualificationScore`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -619,7 +619,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetQualificationScore {
 /// Operation shape for `GetQualificationType`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_qualification_type`](crate::client::Client::get_qualification_type).
+/// [`get_qualification_type`](crate::client::fluent_builders::GetQualificationType).
 ///
 /// `ParseStrictResponse` impl for `GetQualificationType`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -654,7 +654,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetQualificationType {
 /// Operation shape for `ListAssignmentsForHIT`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_assignments_for_hit`](crate::client::Client::list_assignments_for_hit).
+/// [`list_assignments_for_hit`](crate::client::fluent_builders::ListAssignmentsForHIT).
 ///
 /// `ParseStrictResponse` impl for `ListAssignmentsForHIT`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -689,7 +689,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAssignmentsForHIT {
 /// Operation shape for `ListBonusPayments`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_bonus_payments`](crate::client::Client::list_bonus_payments).
+/// [`list_bonus_payments`](crate::client::fluent_builders::ListBonusPayments).
 ///
 /// `ParseStrictResponse` impl for `ListBonusPayments`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -724,7 +724,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListBonusPayments {
 /// Operation shape for `ListHITs`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_hi_ts`](crate::client::Client::list_hi_ts).
+/// [`list_hi_ts`](crate::client::fluent_builders::ListHITs).
 ///
 /// `ParseStrictResponse` impl for `ListHITs`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -756,7 +756,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListHITs {
 /// Operation shape for `ListHITsForQualificationType`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_hi_ts_for_qualification_type`](crate::client::Client::list_hi_ts_for_qualification_type).
+/// [`list_hi_ts_for_qualification_type`](crate::client::fluent_builders::ListHITsForQualificationType).
 ///
 /// `ParseStrictResponse` impl for `ListHITsForQualificationType`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -791,7 +791,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListHITsForQualification
 /// Operation shape for `ListQualificationRequests`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_qualification_requests`](crate::client::Client::list_qualification_requests).
+/// [`list_qualification_requests`](crate::client::fluent_builders::ListQualificationRequests).
 ///
 /// `ParseStrictResponse` impl for `ListQualificationRequests`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -826,7 +826,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListQualificationRequest
 /// Operation shape for `ListQualificationTypes`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_qualification_types`](crate::client::Client::list_qualification_types).
+/// [`list_qualification_types`](crate::client::fluent_builders::ListQualificationTypes).
 ///
 /// `ParseStrictResponse` impl for `ListQualificationTypes`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -861,7 +861,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListQualificationTypes {
 /// Operation shape for `ListReviewableHITs`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_reviewable_hi_ts`](crate::client::Client::list_reviewable_hi_ts).
+/// [`list_reviewable_hi_ts`](crate::client::fluent_builders::ListReviewableHITs).
 ///
 /// `ParseStrictResponse` impl for `ListReviewableHITs`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -896,7 +896,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListReviewableHITs {
 /// Operation shape for `ListReviewPolicyResultsForHIT`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_review_policy_results_for_hit`](crate::client::Client::list_review_policy_results_for_hit).
+/// [`list_review_policy_results_for_hit`](crate::client::fluent_builders::ListReviewPolicyResultsForHIT).
 ///
 /// `ParseStrictResponse` impl for `ListReviewPolicyResultsForHIT`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -931,7 +931,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListReviewPolicyResultsF
 /// Operation shape for `ListWorkerBlocks`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_worker_blocks`](crate::client::Client::list_worker_blocks).
+/// [`list_worker_blocks`](crate::client::fluent_builders::ListWorkerBlocks).
 ///
 /// `ParseStrictResponse` impl for `ListWorkerBlocks`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -966,7 +966,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListWorkerBlocks {
 /// Operation shape for `ListWorkersWithQualificationType`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_workers_with_qualification_type`](crate::client::Client::list_workers_with_qualification_type).
+/// [`list_workers_with_qualification_type`](crate::client::fluent_builders::ListWorkersWithQualificationType).
 ///
 /// `ParseStrictResponse` impl for `ListWorkersWithQualificationType`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1001,7 +1001,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListWorkersWithQualifica
 /// Operation shape for `NotifyWorkers`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`notify_workers`](crate::client::Client::notify_workers).
+/// [`notify_workers`](crate::client::fluent_builders::NotifyWorkers).
 ///
 /// `ParseStrictResponse` impl for `NotifyWorkers`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1034,7 +1034,7 @@ impl aws_smithy_http::response::ParseStrictResponse for NotifyWorkers {
 /// Operation shape for `RejectAssignment`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`reject_assignment`](crate::client::Client::reject_assignment).
+/// [`reject_assignment`](crate::client::fluent_builders::RejectAssignment).
 ///
 /// `ParseStrictResponse` impl for `RejectAssignment`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1069,7 +1069,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RejectAssignment {
 /// Operation shape for `RejectQualificationRequest`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`reject_qualification_request`](crate::client::Client::reject_qualification_request).
+/// [`reject_qualification_request`](crate::client::fluent_builders::RejectQualificationRequest).
 ///
 /// `ParseStrictResponse` impl for `RejectQualificationRequest`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1104,7 +1104,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RejectQualificationReque
 /// Operation shape for `SendBonus`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`send_bonus`](crate::client::Client::send_bonus).
+/// [`send_bonus`](crate::client::fluent_builders::SendBonus).
 ///
 /// `ParseStrictResponse` impl for `SendBonus`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1136,7 +1136,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SendBonus {
 /// Operation shape for `SendTestEventNotification`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`send_test_event_notification`](crate::client::Client::send_test_event_notification).
+/// [`send_test_event_notification`](crate::client::fluent_builders::SendTestEventNotification).
 ///
 /// `ParseStrictResponse` impl for `SendTestEventNotification`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1171,7 +1171,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SendTestEventNotificatio
 /// Operation shape for `UpdateExpirationForHIT`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_expiration_for_hit`](crate::client::Client::update_expiration_for_hit).
+/// [`update_expiration_for_hit`](crate::client::fluent_builders::UpdateExpirationForHIT).
 ///
 /// `ParseStrictResponse` impl for `UpdateExpirationForHIT`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1206,7 +1206,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateExpirationForHIT {
 /// Operation shape for `UpdateHITReviewStatus`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_hit_review_status`](crate::client::Client::update_hit_review_status).
+/// [`update_hit_review_status`](crate::client::fluent_builders::UpdateHITReviewStatus).
 ///
 /// `ParseStrictResponse` impl for `UpdateHITReviewStatus`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1241,7 +1241,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateHITReviewStatus {
 /// Operation shape for `UpdateHITTypeOfHIT`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_hit_type_of_hit`](crate::client::Client::update_hit_type_of_hit).
+/// [`update_hit_type_of_hit`](crate::client::fluent_builders::UpdateHITTypeOfHIT).
 ///
 /// `ParseStrictResponse` impl for `UpdateHITTypeOfHIT`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1276,7 +1276,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateHITTypeOfHIT {
 /// Operation shape for `UpdateNotificationSettings`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_notification_settings`](crate::client::Client::update_notification_settings).
+/// [`update_notification_settings`](crate::client::fluent_builders::UpdateNotificationSettings).
 ///
 /// `ParseStrictResponse` impl for `UpdateNotificationSettings`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1311,7 +1311,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateNotificationSettin
 /// Operation shape for `UpdateQualificationType`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_qualification_type`](crate::client::Client::update_qualification_type).
+/// [`update_qualification_type`](crate::client::fluent_builders::UpdateQualificationType).
 ///
 /// `ParseStrictResponse` impl for `UpdateQualificationType`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

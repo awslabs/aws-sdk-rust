@@ -2,7 +2,7 @@
 /// Operation shape for `AddNotificationChannels`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`add_notification_channels`](crate::client::Client::add_notification_channels).
+/// [`add_notification_channels`](crate::client::fluent_builders::AddNotificationChannels).
 ///
 /// `ParseStrictResponse` impl for `AddNotificationChannels`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -37,7 +37,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AddNotificationChannels 
 /// Operation shape for `BatchGetFrameMetricData`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`batch_get_frame_metric_data`](crate::client::Client::batch_get_frame_metric_data).
+/// [`batch_get_frame_metric_data`](crate::client::fluent_builders::BatchGetFrameMetricData).
 ///
 /// `ParseStrictResponse` impl for `BatchGetFrameMetricData`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -72,7 +72,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchGetFrameMetricData 
 /// Operation shape for `ConfigureAgent`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`configure_agent`](crate::client::Client::configure_agent).
+/// [`configure_agent`](crate::client::fluent_builders::ConfigureAgent).
 ///
 /// `ParseStrictResponse` impl for `ConfigureAgent`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -105,7 +105,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ConfigureAgent {
 /// Operation shape for `CreateProfilingGroup`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_profiling_group`](crate::client::Client::create_profiling_group).
+/// [`create_profiling_group`](crate::client::fluent_builders::CreateProfilingGroup).
 ///
 /// `ParseStrictResponse` impl for `CreateProfilingGroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -140,7 +140,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateProfilingGroup {
 /// Operation shape for `DeleteProfilingGroup`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_profiling_group`](crate::client::Client::delete_profiling_group).
+/// [`delete_profiling_group`](crate::client::fluent_builders::DeleteProfilingGroup).
 ///
 /// `ParseStrictResponse` impl for `DeleteProfilingGroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -175,7 +175,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteProfilingGroup {
 /// Operation shape for `DescribeProfilingGroup`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_profiling_group`](crate::client::Client::describe_profiling_group).
+/// [`describe_profiling_group`](crate::client::fluent_builders::DescribeProfilingGroup).
 ///
 /// `ParseStrictResponse` impl for `DescribeProfilingGroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -210,7 +210,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeProfilingGroup {
 /// Operation shape for `GetFindingsReportAccountSummary`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_findings_report_account_summary`](crate::client::Client::get_findings_report_account_summary).
+/// [`get_findings_report_account_summary`](crate::client::fluent_builders::GetFindingsReportAccountSummary).
 ///
 /// `ParseStrictResponse` impl for `GetFindingsReportAccountSummary`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -245,7 +245,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetFindingsReportAccount
 /// Operation shape for `GetNotificationConfiguration`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_notification_configuration`](crate::client::Client::get_notification_configuration).
+/// [`get_notification_configuration`](crate::client::fluent_builders::GetNotificationConfiguration).
 ///
 /// `ParseStrictResponse` impl for `GetNotificationConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -280,7 +280,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetNotificationConfigura
 /// Operation shape for `GetPolicy`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_policy`](crate::client::Client::get_policy).
+/// [`get_policy`](crate::client::fluent_builders::GetPolicy).
 ///
 /// `ParseStrictResponse` impl for `GetPolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -312,7 +312,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetPolicy {
 /// Operation shape for `GetProfile`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_profile`](crate::client::Client::get_profile).
+/// [`get_profile`](crate::client::fluent_builders::GetProfile).
 ///
 /// `ParseStrictResponse` impl for `GetProfile`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -345,7 +345,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetProfile {
 /// Operation shape for `GetRecommendations`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_recommendations`](crate::client::Client::get_recommendations).
+/// [`get_recommendations`](crate::client::fluent_builders::GetRecommendations).
 ///
 /// `ParseStrictResponse` impl for `GetRecommendations`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -380,7 +380,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetRecommendations {
 /// Operation shape for `ListFindingsReports`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_findings_reports`](crate::client::Client::list_findings_reports).
+/// [`list_findings_reports`](crate::client::fluent_builders::ListFindingsReports).
 ///
 /// `ParseStrictResponse` impl for `ListFindingsReports`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -415,7 +415,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListFindingsReports {
 /// Operation shape for `ListProfileTimes`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_profile_times`](crate::client::Client::list_profile_times).
+/// [`list_profile_times`](crate::client::fluent_builders::ListProfileTimes).
 ///
 /// `ParseStrictResponse` impl for `ListProfileTimes`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -450,7 +450,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListProfileTimes {
 /// Operation shape for `ListProfilingGroups`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_profiling_groups`](crate::client::Client::list_profiling_groups).
+/// [`list_profiling_groups`](crate::client::fluent_builders::ListProfilingGroups).
 ///
 /// `ParseStrictResponse` impl for `ListProfilingGroups`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -485,7 +485,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListProfilingGroups {
 /// Operation shape for `ListTagsForResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
+/// [`list_tags_for_resource`](crate::client::fluent_builders::ListTagsForResource).
 ///
 /// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -520,7 +520,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// Operation shape for `PostAgentProfile`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`post_agent_profile`](crate::client::Client::post_agent_profile).
+/// [`post_agent_profile`](crate::client::fluent_builders::PostAgentProfile).
 ///
 /// `ParseStrictResponse` impl for `PostAgentProfile`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -555,7 +555,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PostAgentProfile {
 /// Operation shape for `PutPermission`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`put_permission`](crate::client::Client::put_permission).
+/// [`put_permission`](crate::client::fluent_builders::PutPermission).
 ///
 /// `ParseStrictResponse` impl for `PutPermission`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -588,7 +588,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutPermission {
 /// Operation shape for `RemoveNotificationChannel`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`remove_notification_channel`](crate::client::Client::remove_notification_channel).
+/// [`remove_notification_channel`](crate::client::fluent_builders::RemoveNotificationChannel).
 ///
 /// `ParseStrictResponse` impl for `RemoveNotificationChannel`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -623,7 +623,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RemoveNotificationChanne
 /// Operation shape for `RemovePermission`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`remove_permission`](crate::client::Client::remove_permission).
+/// [`remove_permission`](crate::client::fluent_builders::RemovePermission).
 ///
 /// `ParseStrictResponse` impl for `RemovePermission`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -658,7 +658,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RemovePermission {
 /// Operation shape for `SubmitFeedback`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`submit_feedback`](crate::client::Client::submit_feedback).
+/// [`submit_feedback`](crate::client::fluent_builders::SubmitFeedback).
 ///
 /// `ParseStrictResponse` impl for `SubmitFeedback`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -691,7 +691,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SubmitFeedback {
 /// Operation shape for `TagResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`tag_resource`](crate::client::Client::tag_resource).
+/// [`tag_resource`](crate::client::fluent_builders::TagResource).
 ///
 /// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -724,7 +724,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// Operation shape for `UntagResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`untag_resource`](crate::client::Client::untag_resource).
+/// [`untag_resource`](crate::client::fluent_builders::UntagResource).
 ///
 /// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -757,7 +757,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// Operation shape for `UpdateProfilingGroup`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_profiling_group`](crate::client::Client::update_profiling_group).
+/// [`update_profiling_group`](crate::client::fluent_builders::UpdateProfilingGroup).
 ///
 /// `ParseStrictResponse` impl for `UpdateProfilingGroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

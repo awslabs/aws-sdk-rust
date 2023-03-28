@@ -2,7 +2,7 @@
 /// Operation shape for `DeleteApp`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_app`](crate::client::Client::delete_app).
+/// [`delete_app`](crate::client::fluent_builders::DeleteApp).
 ///
 /// `ParseStrictResponse` impl for `DeleteApp`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -34,7 +34,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteApp {
 /// Operation shape for `DeleteSimulation`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_simulation`](crate::client::Client::delete_simulation).
+/// [`delete_simulation`](crate::client::fluent_builders::DeleteSimulation).
 ///
 /// `ParseStrictResponse` impl for `DeleteSimulation`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -69,7 +69,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteSimulation {
 /// Operation shape for `DescribeApp`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_app`](crate::client::Client::describe_app).
+/// [`describe_app`](crate::client::fluent_builders::DescribeApp).
 ///
 /// `ParseStrictResponse` impl for `DescribeApp`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -102,7 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeApp {
 /// Operation shape for `DescribeSimulation`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_simulation`](crate::client::Client::describe_simulation).
+/// [`describe_simulation`](crate::client::fluent_builders::DescribeSimulation).
 ///
 /// `ParseStrictResponse` impl for `DescribeSimulation`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -137,7 +137,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeSimulation {
 /// Operation shape for `ListApps`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_apps`](crate::client::Client::list_apps).
+/// [`list_apps`](crate::client::fluent_builders::ListApps).
 ///
 /// `ParseStrictResponse` impl for `ListApps`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -169,7 +169,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListApps {
 /// Operation shape for `ListSimulations`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_simulations`](crate::client::Client::list_simulations).
+/// [`list_simulations`](crate::client::fluent_builders::ListSimulations).
 ///
 /// `ParseStrictResponse` impl for `ListSimulations`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -204,7 +204,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListSimulations {
 /// Operation shape for `ListTagsForResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
+/// [`list_tags_for_resource`](crate::client::fluent_builders::ListTagsForResource).
 ///
 /// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -239,7 +239,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// Operation shape for `StartApp`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`start_app`](crate::client::Client::start_app).
+/// [`start_app`](crate::client::fluent_builders::StartApp).
 ///
 /// `ParseStrictResponse` impl for `StartApp`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -271,7 +271,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartApp {
 /// Operation shape for `StartClock`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`start_clock`](crate::client::Client::start_clock).
+/// [`start_clock`](crate::client::fluent_builders::StartClock).
 ///
 /// `ParseStrictResponse` impl for `StartClock`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -304,7 +304,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartClock {
 /// Operation shape for `StartSimulation`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`start_simulation`](crate::client::Client::start_simulation).
+/// [`start_simulation`](crate::client::fluent_builders::StartSimulation).
 ///
 /// `ParseStrictResponse` impl for `StartSimulation`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -339,7 +339,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartSimulation {
 /// Operation shape for `StopApp`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`stop_app`](crate::client::Client::stop_app).
+/// [`stop_app`](crate::client::fluent_builders::StopApp).
 ///
 /// `ParseStrictResponse` impl for `StopApp`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -371,7 +371,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StopApp {
 /// Operation shape for `StopClock`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`stop_clock`](crate::client::Client::stop_clock).
+/// [`stop_clock`](crate::client::fluent_builders::StopClock).
 ///
 /// `ParseStrictResponse` impl for `StopClock`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -403,7 +403,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StopClock {
 /// Operation shape for `StopSimulation`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`stop_simulation`](crate::client::Client::stop_simulation).
+/// [`stop_simulation`](crate::client::fluent_builders::StopSimulation).
 ///
 /// `ParseStrictResponse` impl for `StopSimulation`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -436,7 +436,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StopSimulation {
 /// Operation shape for `TagResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`tag_resource`](crate::client::Client::tag_resource).
+/// [`tag_resource`](crate::client::fluent_builders::TagResource).
 ///
 /// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -469,7 +469,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// Operation shape for `UntagResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`untag_resource`](crate::client::Client::untag_resource).
+/// [`untag_resource`](crate::client::fluent_builders::UntagResource).
 ///
 /// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

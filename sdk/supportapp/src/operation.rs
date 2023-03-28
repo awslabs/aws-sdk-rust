@@ -2,7 +2,7 @@
 /// Operation shape for `CreateSlackChannelConfiguration`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_slack_channel_configuration`](crate::client::Client::create_slack_channel_configuration).
+/// [`create_slack_channel_configuration`](crate::client::fluent_builders::CreateSlackChannelConfiguration).
 ///
 /// `ParseStrictResponse` impl for `CreateSlackChannelConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -37,7 +37,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateSlackChannelConfig
 /// Operation shape for `DeleteAccountAlias`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_account_alias`](crate::client::Client::delete_account_alias).
+/// [`delete_account_alias`](crate::client::fluent_builders::DeleteAccountAlias).
 ///
 /// `ParseStrictResponse` impl for `DeleteAccountAlias`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -72,7 +72,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteAccountAlias {
 /// Operation shape for `DeleteSlackChannelConfiguration`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_slack_channel_configuration`](crate::client::Client::delete_slack_channel_configuration).
+/// [`delete_slack_channel_configuration`](crate::client::fluent_builders::DeleteSlackChannelConfiguration).
 ///
 /// `ParseStrictResponse` impl for `DeleteSlackChannelConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -107,7 +107,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteSlackChannelConfig
 /// Operation shape for `DeleteSlackWorkspaceConfiguration`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_slack_workspace_configuration`](crate::client::Client::delete_slack_workspace_configuration).
+/// [`delete_slack_workspace_configuration`](crate::client::fluent_builders::DeleteSlackWorkspaceConfiguration).
 ///
 /// `ParseStrictResponse` impl for `DeleteSlackWorkspaceConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -142,7 +142,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteSlackWorkspaceConf
 /// Operation shape for `GetAccountAlias`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_account_alias`](crate::client::Client::get_account_alias).
+/// [`get_account_alias`](crate::client::fluent_builders::GetAccountAlias).
 ///
 /// `ParseStrictResponse` impl for `GetAccountAlias`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -177,7 +177,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAccountAlias {
 /// Operation shape for `ListSlackChannelConfigurations`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_slack_channel_configurations`](crate::client::Client::list_slack_channel_configurations).
+/// [`list_slack_channel_configurations`](crate::client::fluent_builders::ListSlackChannelConfigurations).
 ///
 /// `ParseStrictResponse` impl for `ListSlackChannelConfigurations`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -212,7 +212,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListSlackChannelConfigur
 /// Operation shape for `ListSlackWorkspaceConfigurations`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_slack_workspace_configurations`](crate::client::Client::list_slack_workspace_configurations).
+/// [`list_slack_workspace_configurations`](crate::client::fluent_builders::ListSlackWorkspaceConfigurations).
 ///
 /// `ParseStrictResponse` impl for `ListSlackWorkspaceConfigurations`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -247,7 +247,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListSlackWorkspaceConfig
 /// Operation shape for `PutAccountAlias`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`put_account_alias`](crate::client::Client::put_account_alias).
+/// [`put_account_alias`](crate::client::fluent_builders::PutAccountAlias).
 ///
 /// `ParseStrictResponse` impl for `PutAccountAlias`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -282,7 +282,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutAccountAlias {
 /// Operation shape for `RegisterSlackWorkspaceForOrganization`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`register_slack_workspace_for_organization`](crate::client::Client::register_slack_workspace_for_organization).
+/// [`register_slack_workspace_for_organization`](crate::client::fluent_builders::RegisterSlackWorkspaceForOrganization).
 ///
 /// `ParseStrictResponse` impl for `RegisterSlackWorkspaceForOrganization`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -319,7 +319,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RegisterSlackWorkspaceFo
 /// Operation shape for `UpdateSlackChannelConfiguration`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_slack_channel_configuration`](crate::client::Client::update_slack_channel_configuration).
+/// [`update_slack_channel_configuration`](crate::client::fluent_builders::UpdateSlackChannelConfiguration).
 ///
 /// `ParseStrictResponse` impl for `UpdateSlackChannelConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

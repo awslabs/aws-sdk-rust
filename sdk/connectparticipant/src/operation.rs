@@ -2,7 +2,7 @@
 /// Operation shape for `CompleteAttachmentUpload`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`complete_attachment_upload`](crate::client::Client::complete_attachment_upload).
+/// [`complete_attachment_upload`](crate::client::fluent_builders::CompleteAttachmentUpload).
 ///
 /// `ParseStrictResponse` impl for `CompleteAttachmentUpload`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -37,7 +37,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CompleteAttachmentUpload
 /// Operation shape for `CreateParticipantConnection`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_participant_connection`](crate::client::Client::create_participant_connection).
+/// [`create_participant_connection`](crate::client::fluent_builders::CreateParticipantConnection).
 ///
 /// `ParseStrictResponse` impl for `CreateParticipantConnection`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -72,7 +72,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateParticipantConnect
 /// Operation shape for `DisconnectParticipant`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`disconnect_participant`](crate::client::Client::disconnect_participant).
+/// [`disconnect_participant`](crate::client::fluent_builders::DisconnectParticipant).
 ///
 /// `ParseStrictResponse` impl for `DisconnectParticipant`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -107,7 +107,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisconnectParticipant {
 /// Operation shape for `GetAttachment`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_attachment`](crate::client::Client::get_attachment).
+/// [`get_attachment`](crate::client::fluent_builders::GetAttachment).
 ///
 /// `ParseStrictResponse` impl for `GetAttachment`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -140,7 +140,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAttachment {
 /// Operation shape for `GetTranscript`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_transcript`](crate::client::Client::get_transcript).
+/// [`get_transcript`](crate::client::fluent_builders::GetTranscript).
 ///
 /// `ParseStrictResponse` impl for `GetTranscript`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -173,7 +173,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetTranscript {
 /// Operation shape for `SendEvent`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`send_event`](crate::client::Client::send_event).
+/// [`send_event`](crate::client::fluent_builders::SendEvent).
 ///
 /// `ParseStrictResponse` impl for `SendEvent`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -205,7 +205,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SendEvent {
 /// Operation shape for `SendMessage`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`send_message`](crate::client::Client::send_message).
+/// [`send_message`](crate::client::fluent_builders::SendMessage).
 ///
 /// `ParseStrictResponse` impl for `SendMessage`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -238,7 +238,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SendMessage {
 /// Operation shape for `StartAttachmentUpload`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`start_attachment_upload`](crate::client::Client::start_attachment_upload).
+/// [`start_attachment_upload`](crate::client::fluent_builders::StartAttachmentUpload).
 ///
 /// `ParseStrictResponse` impl for `StartAttachmentUpload`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

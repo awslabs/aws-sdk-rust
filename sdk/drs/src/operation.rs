@@ -2,7 +2,7 @@
 /// Operation shape for `CreateExtendedSourceServer`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_extended_source_server`](crate::client::Client::create_extended_source_server).
+/// [`create_extended_source_server`](crate::client::fluent_builders::CreateExtendedSourceServer).
 ///
 /// `ParseStrictResponse` impl for `CreateExtendedSourceServer`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -37,7 +37,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateExtendedSourceServ
 /// Operation shape for `CreateReplicationConfigurationTemplate`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_replication_configuration_template`](crate::client::Client::create_replication_configuration_template).
+/// [`create_replication_configuration_template`](crate::client::fluent_builders::CreateReplicationConfigurationTemplate).
 ///
 /// `ParseStrictResponse` impl for `CreateReplicationConfigurationTemplate`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -74,7 +74,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateReplicationConfigu
 /// Operation shape for `DeleteJob`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_job`](crate::client::Client::delete_job).
+/// [`delete_job`](crate::client::fluent_builders::DeleteJob).
 ///
 /// `ParseStrictResponse` impl for `DeleteJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -106,7 +106,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteJob {
 /// Operation shape for `DeleteRecoveryInstance`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_recovery_instance`](crate::client::Client::delete_recovery_instance).
+/// [`delete_recovery_instance`](crate::client::fluent_builders::DeleteRecoveryInstance).
 ///
 /// `ParseStrictResponse` impl for `DeleteRecoveryInstance`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -141,7 +141,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteRecoveryInstance {
 /// Operation shape for `DeleteReplicationConfigurationTemplate`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_replication_configuration_template`](crate::client::Client::delete_replication_configuration_template).
+/// [`delete_replication_configuration_template`](crate::client::fluent_builders::DeleteReplicationConfigurationTemplate).
 ///
 /// `ParseStrictResponse` impl for `DeleteReplicationConfigurationTemplate`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -178,7 +178,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteReplicationConfigu
 /// Operation shape for `DeleteSourceServer`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_source_server`](crate::client::Client::delete_source_server).
+/// [`delete_source_server`](crate::client::fluent_builders::DeleteSourceServer).
 ///
 /// `ParseStrictResponse` impl for `DeleteSourceServer`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -213,7 +213,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteSourceServer {
 /// Operation shape for `DescribeJobLogItems`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_job_log_items`](crate::client::Client::describe_job_log_items).
+/// [`describe_job_log_items`](crate::client::fluent_builders::DescribeJobLogItems).
 ///
 /// `ParseStrictResponse` impl for `DescribeJobLogItems`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -248,7 +248,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeJobLogItems {
 /// Operation shape for `DescribeJobs`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_jobs`](crate::client::Client::describe_jobs).
+/// [`describe_jobs`](crate::client::fluent_builders::DescribeJobs).
 ///
 /// `ParseStrictResponse` impl for `DescribeJobs`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -281,7 +281,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeJobs {
 /// Operation shape for `DescribeRecoveryInstances`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_recovery_instances`](crate::client::Client::describe_recovery_instances).
+/// [`describe_recovery_instances`](crate::client::fluent_builders::DescribeRecoveryInstances).
 ///
 /// `ParseStrictResponse` impl for `DescribeRecoveryInstances`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -316,7 +316,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeRecoveryInstance
 /// Operation shape for `DescribeRecoverySnapshots`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_recovery_snapshots`](crate::client::Client::describe_recovery_snapshots).
+/// [`describe_recovery_snapshots`](crate::client::fluent_builders::DescribeRecoverySnapshots).
 ///
 /// `ParseStrictResponse` impl for `DescribeRecoverySnapshots`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -351,7 +351,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeRecoverySnapshot
 /// Operation shape for `DescribeReplicationConfigurationTemplates`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_replication_configuration_templates`](crate::client::Client::describe_replication_configuration_templates).
+/// [`describe_replication_configuration_templates`](crate::client::fluent_builders::DescribeReplicationConfigurationTemplates).
 ///
 /// `ParseStrictResponse` impl for `DescribeReplicationConfigurationTemplates`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -390,7 +390,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeReplicationConfi
 /// Operation shape for `DescribeSourceServers`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_source_servers`](crate::client::Client::describe_source_servers).
+/// [`describe_source_servers`](crate::client::fluent_builders::DescribeSourceServers).
 ///
 /// `ParseStrictResponse` impl for `DescribeSourceServers`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -425,7 +425,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeSourceServers {
 /// Operation shape for `DisconnectRecoveryInstance`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`disconnect_recovery_instance`](crate::client::Client::disconnect_recovery_instance).
+/// [`disconnect_recovery_instance`](crate::client::fluent_builders::DisconnectRecoveryInstance).
 ///
 /// `ParseStrictResponse` impl for `DisconnectRecoveryInstance`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -460,7 +460,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisconnectRecoveryInstan
 /// Operation shape for `DisconnectSourceServer`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`disconnect_source_server`](crate::client::Client::disconnect_source_server).
+/// [`disconnect_source_server`](crate::client::fluent_builders::DisconnectSourceServer).
 ///
 /// `ParseStrictResponse` impl for `DisconnectSourceServer`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -495,7 +495,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisconnectSourceServer {
 /// Operation shape for `GetFailbackReplicationConfiguration`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_failback_replication_configuration`](crate::client::Client::get_failback_replication_configuration).
+/// [`get_failback_replication_configuration`](crate::client::fluent_builders::GetFailbackReplicationConfiguration).
 ///
 /// `ParseStrictResponse` impl for `GetFailbackReplicationConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -530,7 +530,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetFailbackReplicationCo
 /// Operation shape for `GetLaunchConfiguration`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_launch_configuration`](crate::client::Client::get_launch_configuration).
+/// [`get_launch_configuration`](crate::client::fluent_builders::GetLaunchConfiguration).
 ///
 /// `ParseStrictResponse` impl for `GetLaunchConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -565,7 +565,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetLaunchConfiguration {
 /// Operation shape for `GetReplicationConfiguration`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_replication_configuration`](crate::client::Client::get_replication_configuration).
+/// [`get_replication_configuration`](crate::client::fluent_builders::GetReplicationConfiguration).
 ///
 /// `ParseStrictResponse` impl for `GetReplicationConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -600,7 +600,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetReplicationConfigurat
 /// Operation shape for `InitializeService`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`initialize_service`](crate::client::Client::initialize_service).
+/// [`initialize_service`](crate::client::fluent_builders::InitializeService).
 ///
 /// `ParseStrictResponse` impl for `InitializeService`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -635,7 +635,7 @@ impl aws_smithy_http::response::ParseStrictResponse for InitializeService {
 /// Operation shape for `ListExtensibleSourceServers`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_extensible_source_servers`](crate::client::Client::list_extensible_source_servers).
+/// [`list_extensible_source_servers`](crate::client::fluent_builders::ListExtensibleSourceServers).
 ///
 /// `ParseStrictResponse` impl for `ListExtensibleSourceServers`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -670,7 +670,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListExtensibleSourceServ
 /// Operation shape for `ListStagingAccounts`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_staging_accounts`](crate::client::Client::list_staging_accounts).
+/// [`list_staging_accounts`](crate::client::fluent_builders::ListStagingAccounts).
 ///
 /// `ParseStrictResponse` impl for `ListStagingAccounts`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -705,7 +705,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListStagingAccounts {
 /// Operation shape for `ListTagsForResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
+/// [`list_tags_for_resource`](crate::client::fluent_builders::ListTagsForResource).
 ///
 /// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -740,7 +740,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// Operation shape for `RetryDataReplication`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`retry_data_replication`](crate::client::Client::retry_data_replication).
+/// [`retry_data_replication`](crate::client::fluent_builders::RetryDataReplication).
 ///
 /// `ParseStrictResponse` impl for `RetryDataReplication`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -775,7 +775,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RetryDataReplication {
 /// Operation shape for `ReverseReplication`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`reverse_replication`](crate::client::Client::reverse_replication).
+/// [`reverse_replication`](crate::client::fluent_builders::ReverseReplication).
 ///
 /// `ParseStrictResponse` impl for `ReverseReplication`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -810,7 +810,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ReverseReplication {
 /// Operation shape for `StartFailbackLaunch`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`start_failback_launch`](crate::client::Client::start_failback_launch).
+/// [`start_failback_launch`](crate::client::fluent_builders::StartFailbackLaunch).
 ///
 /// `ParseStrictResponse` impl for `StartFailbackLaunch`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -845,7 +845,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartFailbackLaunch {
 /// Operation shape for `StartRecovery`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`start_recovery`](crate::client::Client::start_recovery).
+/// [`start_recovery`](crate::client::fluent_builders::StartRecovery).
 ///
 /// `ParseStrictResponse` impl for `StartRecovery`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -878,7 +878,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartRecovery {
 /// Operation shape for `StartReplication`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`start_replication`](crate::client::Client::start_replication).
+/// [`start_replication`](crate::client::fluent_builders::StartReplication).
 ///
 /// `ParseStrictResponse` impl for `StartReplication`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -913,7 +913,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartReplication {
 /// Operation shape for `StopFailback`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`stop_failback`](crate::client::Client::stop_failback).
+/// [`stop_failback`](crate::client::fluent_builders::StopFailback).
 ///
 /// `ParseStrictResponse` impl for `StopFailback`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -946,7 +946,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StopFailback {
 /// Operation shape for `StopReplication`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`stop_replication`](crate::client::Client::stop_replication).
+/// [`stop_replication`](crate::client::fluent_builders::StopReplication).
 ///
 /// `ParseStrictResponse` impl for `StopReplication`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -981,7 +981,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StopReplication {
 /// Operation shape for `TagResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`tag_resource`](crate::client::Client::tag_resource).
+/// [`tag_resource`](crate::client::fluent_builders::TagResource).
 ///
 /// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1014,7 +1014,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// Operation shape for `TerminateRecoveryInstances`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`terminate_recovery_instances`](crate::client::Client::terminate_recovery_instances).
+/// [`terminate_recovery_instances`](crate::client::fluent_builders::TerminateRecoveryInstances).
 ///
 /// `ParseStrictResponse` impl for `TerminateRecoveryInstances`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1049,7 +1049,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TerminateRecoveryInstanc
 /// Operation shape for `UntagResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`untag_resource`](crate::client::Client::untag_resource).
+/// [`untag_resource`](crate::client::fluent_builders::UntagResource).
 ///
 /// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1082,7 +1082,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// Operation shape for `UpdateFailbackReplicationConfiguration`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_failback_replication_configuration`](crate::client::Client::update_failback_replication_configuration).
+/// [`update_failback_replication_configuration`](crate::client::fluent_builders::UpdateFailbackReplicationConfiguration).
 ///
 /// `ParseStrictResponse` impl for `UpdateFailbackReplicationConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1119,7 +1119,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateFailbackReplicatio
 /// Operation shape for `UpdateLaunchConfiguration`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_launch_configuration`](crate::client::Client::update_launch_configuration).
+/// [`update_launch_configuration`](crate::client::fluent_builders::UpdateLaunchConfiguration).
 ///
 /// `ParseStrictResponse` impl for `UpdateLaunchConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1154,7 +1154,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateLaunchConfiguratio
 /// Operation shape for `UpdateReplicationConfiguration`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_replication_configuration`](crate::client::Client::update_replication_configuration).
+/// [`update_replication_configuration`](crate::client::fluent_builders::UpdateReplicationConfiguration).
 ///
 /// `ParseStrictResponse` impl for `UpdateReplicationConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1189,7 +1189,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateReplicationConfigu
 /// Operation shape for `UpdateReplicationConfigurationTemplate`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_replication_configuration_template`](crate::client::Client::update_replication_configuration_template).
+/// [`update_replication_configuration_template`](crate::client::fluent_builders::UpdateReplicationConfigurationTemplate).
 ///
 /// `ParseStrictResponse` impl for `UpdateReplicationConfigurationTemplate`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

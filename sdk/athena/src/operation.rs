@@ -2,7 +2,7 @@
 /// Operation shape for `BatchGetNamedQuery`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`batch_get_named_query`](crate::client::Client::batch_get_named_query).
+/// [`batch_get_named_query`](crate::client::fluent_builders::BatchGetNamedQuery).
 ///
 /// `ParseStrictResponse` impl for `BatchGetNamedQuery`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -37,7 +37,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchGetNamedQuery {
 /// Operation shape for `BatchGetPreparedStatement`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`batch_get_prepared_statement`](crate::client::Client::batch_get_prepared_statement).
+/// [`batch_get_prepared_statement`](crate::client::fluent_builders::BatchGetPreparedStatement).
 ///
 /// `ParseStrictResponse` impl for `BatchGetPreparedStatement`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -72,7 +72,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchGetPreparedStatemen
 /// Operation shape for `BatchGetQueryExecution`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`batch_get_query_execution`](crate::client::Client::batch_get_query_execution).
+/// [`batch_get_query_execution`](crate::client::fluent_builders::BatchGetQueryExecution).
 ///
 /// `ParseStrictResponse` impl for `BatchGetQueryExecution`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -107,7 +107,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchGetQueryExecution {
 /// Operation shape for `CreateDataCatalog`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_data_catalog`](crate::client::Client::create_data_catalog).
+/// [`create_data_catalog`](crate::client::fluent_builders::CreateDataCatalog).
 ///
 /// `ParseStrictResponse` impl for `CreateDataCatalog`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -142,7 +142,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateDataCatalog {
 /// Operation shape for `CreateNamedQuery`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_named_query`](crate::client::Client::create_named_query).
+/// [`create_named_query`](crate::client::fluent_builders::CreateNamedQuery).
 ///
 /// `ParseStrictResponse` impl for `CreateNamedQuery`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -177,7 +177,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateNamedQuery {
 /// Operation shape for `CreateNotebook`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_notebook`](crate::client::Client::create_notebook).
+/// [`create_notebook`](crate::client::fluent_builders::CreateNotebook).
 ///
 /// `ParseStrictResponse` impl for `CreateNotebook`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -210,7 +210,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateNotebook {
 /// Operation shape for `CreatePreparedStatement`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_prepared_statement`](crate::client::Client::create_prepared_statement).
+/// [`create_prepared_statement`](crate::client::fluent_builders::CreatePreparedStatement).
 ///
 /// `ParseStrictResponse` impl for `CreatePreparedStatement`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -245,7 +245,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreatePreparedStatement 
 /// Operation shape for `CreatePresignedNotebookUrl`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_presigned_notebook_url`](crate::client::Client::create_presigned_notebook_url).
+/// [`create_presigned_notebook_url`](crate::client::fluent_builders::CreatePresignedNotebookUrl).
 ///
 /// `ParseStrictResponse` impl for `CreatePresignedNotebookUrl`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -280,7 +280,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreatePresignedNotebookU
 /// Operation shape for `CreateWorkGroup`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_work_group`](crate::client::Client::create_work_group).
+/// [`create_work_group`](crate::client::fluent_builders::CreateWorkGroup).
 ///
 /// `ParseStrictResponse` impl for `CreateWorkGroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -315,7 +315,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateWorkGroup {
 /// Operation shape for `DeleteDataCatalog`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_data_catalog`](crate::client::Client::delete_data_catalog).
+/// [`delete_data_catalog`](crate::client::fluent_builders::DeleteDataCatalog).
 ///
 /// `ParseStrictResponse` impl for `DeleteDataCatalog`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -350,7 +350,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteDataCatalog {
 /// Operation shape for `DeleteNamedQuery`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_named_query`](crate::client::Client::delete_named_query).
+/// [`delete_named_query`](crate::client::fluent_builders::DeleteNamedQuery).
 ///
 /// `ParseStrictResponse` impl for `DeleteNamedQuery`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -385,7 +385,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteNamedQuery {
 /// Operation shape for `DeleteNotebook`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_notebook`](crate::client::Client::delete_notebook).
+/// [`delete_notebook`](crate::client::fluent_builders::DeleteNotebook).
 ///
 /// `ParseStrictResponse` impl for `DeleteNotebook`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -418,7 +418,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteNotebook {
 /// Operation shape for `DeletePreparedStatement`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_prepared_statement`](crate::client::Client::delete_prepared_statement).
+/// [`delete_prepared_statement`](crate::client::fluent_builders::DeletePreparedStatement).
 ///
 /// `ParseStrictResponse` impl for `DeletePreparedStatement`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -453,7 +453,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeletePreparedStatement 
 /// Operation shape for `DeleteWorkGroup`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_work_group`](crate::client::Client::delete_work_group).
+/// [`delete_work_group`](crate::client::fluent_builders::DeleteWorkGroup).
 ///
 /// `ParseStrictResponse` impl for `DeleteWorkGroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -488,7 +488,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteWorkGroup {
 /// Operation shape for `ExportNotebook`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`export_notebook`](crate::client::Client::export_notebook).
+/// [`export_notebook`](crate::client::fluent_builders::ExportNotebook).
 ///
 /// `ParseStrictResponse` impl for `ExportNotebook`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -521,7 +521,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ExportNotebook {
 /// Operation shape for `GetCalculationExecution`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_calculation_execution`](crate::client::Client::get_calculation_execution).
+/// [`get_calculation_execution`](crate::client::fluent_builders::GetCalculationExecution).
 ///
 /// `ParseStrictResponse` impl for `GetCalculationExecution`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -556,7 +556,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetCalculationExecution 
 /// Operation shape for `GetCalculationExecutionCode`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_calculation_execution_code`](crate::client::Client::get_calculation_execution_code).
+/// [`get_calculation_execution_code`](crate::client::fluent_builders::GetCalculationExecutionCode).
 ///
 /// `ParseStrictResponse` impl for `GetCalculationExecutionCode`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -591,7 +591,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetCalculationExecutionC
 /// Operation shape for `GetCalculationExecutionStatus`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_calculation_execution_status`](crate::client::Client::get_calculation_execution_status).
+/// [`get_calculation_execution_status`](crate::client::fluent_builders::GetCalculationExecutionStatus).
 ///
 /// `ParseStrictResponse` impl for `GetCalculationExecutionStatus`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -626,7 +626,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetCalculationExecutionS
 /// Operation shape for `GetDatabase`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_database`](crate::client::Client::get_database).
+/// [`get_database`](crate::client::fluent_builders::GetDatabase).
 ///
 /// `ParseStrictResponse` impl for `GetDatabase`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -659,7 +659,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDatabase {
 /// Operation shape for `GetDataCatalog`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_data_catalog`](crate::client::Client::get_data_catalog).
+/// [`get_data_catalog`](crate::client::fluent_builders::GetDataCatalog).
 ///
 /// `ParseStrictResponse` impl for `GetDataCatalog`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -692,7 +692,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDataCatalog {
 /// Operation shape for `GetNamedQuery`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_named_query`](crate::client::Client::get_named_query).
+/// [`get_named_query`](crate::client::fluent_builders::GetNamedQuery).
 ///
 /// `ParseStrictResponse` impl for `GetNamedQuery`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -725,7 +725,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetNamedQuery {
 /// Operation shape for `GetNotebookMetadata`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_notebook_metadata`](crate::client::Client::get_notebook_metadata).
+/// [`get_notebook_metadata`](crate::client::fluent_builders::GetNotebookMetadata).
 ///
 /// `ParseStrictResponse` impl for `GetNotebookMetadata`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -760,7 +760,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetNotebookMetadata {
 /// Operation shape for `GetPreparedStatement`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_prepared_statement`](crate::client::Client::get_prepared_statement).
+/// [`get_prepared_statement`](crate::client::fluent_builders::GetPreparedStatement).
 ///
 /// `ParseStrictResponse` impl for `GetPreparedStatement`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -795,7 +795,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetPreparedStatement {
 /// Operation shape for `GetQueryExecution`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_query_execution`](crate::client::Client::get_query_execution).
+/// [`get_query_execution`](crate::client::fluent_builders::GetQueryExecution).
 ///
 /// `ParseStrictResponse` impl for `GetQueryExecution`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -830,7 +830,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetQueryExecution {
 /// Operation shape for `GetQueryResults`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_query_results`](crate::client::Client::get_query_results).
+/// [`get_query_results`](crate::client::fluent_builders::GetQueryResults).
 ///
 /// `ParseStrictResponse` impl for `GetQueryResults`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -865,7 +865,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetQueryResults {
 /// Operation shape for `GetQueryRuntimeStatistics`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_query_runtime_statistics`](crate::client::Client::get_query_runtime_statistics).
+/// [`get_query_runtime_statistics`](crate::client::fluent_builders::GetQueryRuntimeStatistics).
 ///
 /// `ParseStrictResponse` impl for `GetQueryRuntimeStatistics`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -900,7 +900,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetQueryRuntimeStatistic
 /// Operation shape for `GetSession`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_session`](crate::client::Client::get_session).
+/// [`get_session`](crate::client::fluent_builders::GetSession).
 ///
 /// `ParseStrictResponse` impl for `GetSession`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -933,7 +933,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSession {
 /// Operation shape for `GetSessionStatus`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_session_status`](crate::client::Client::get_session_status).
+/// [`get_session_status`](crate::client::fluent_builders::GetSessionStatus).
 ///
 /// `ParseStrictResponse` impl for `GetSessionStatus`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -968,7 +968,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSessionStatus {
 /// Operation shape for `GetTableMetadata`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_table_metadata`](crate::client::Client::get_table_metadata).
+/// [`get_table_metadata`](crate::client::fluent_builders::GetTableMetadata).
 ///
 /// `ParseStrictResponse` impl for `GetTableMetadata`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1003,7 +1003,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetTableMetadata {
 /// Operation shape for `GetWorkGroup`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_work_group`](crate::client::Client::get_work_group).
+/// [`get_work_group`](crate::client::fluent_builders::GetWorkGroup).
 ///
 /// `ParseStrictResponse` impl for `GetWorkGroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1036,7 +1036,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetWorkGroup {
 /// Operation shape for `ImportNotebook`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`import_notebook`](crate::client::Client::import_notebook).
+/// [`import_notebook`](crate::client::fluent_builders::ImportNotebook).
 ///
 /// `ParseStrictResponse` impl for `ImportNotebook`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1069,7 +1069,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ImportNotebook {
 /// Operation shape for `ListApplicationDPUSizes`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_application_dpu_sizes`](crate::client::Client::list_application_dpu_sizes).
+/// [`list_application_dpu_sizes`](crate::client::fluent_builders::ListApplicationDPUSizes).
 ///
 /// `ParseStrictResponse` impl for `ListApplicationDPUSizes`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1104,7 +1104,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListApplicationDPUSizes 
 /// Operation shape for `ListCalculationExecutions`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_calculation_executions`](crate::client::Client::list_calculation_executions).
+/// [`list_calculation_executions`](crate::client::fluent_builders::ListCalculationExecutions).
 ///
 /// `ParseStrictResponse` impl for `ListCalculationExecutions`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1139,7 +1139,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListCalculationExecution
 /// Operation shape for `ListDatabases`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_databases`](crate::client::Client::list_databases).
+/// [`list_databases`](crate::client::fluent_builders::ListDatabases).
 ///
 /// `ParseStrictResponse` impl for `ListDatabases`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1172,7 +1172,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListDatabases {
 /// Operation shape for `ListDataCatalogs`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_data_catalogs`](crate::client::Client::list_data_catalogs).
+/// [`list_data_catalogs`](crate::client::fluent_builders::ListDataCatalogs).
 ///
 /// `ParseStrictResponse` impl for `ListDataCatalogs`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1207,7 +1207,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListDataCatalogs {
 /// Operation shape for `ListEngineVersions`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_engine_versions`](crate::client::Client::list_engine_versions).
+/// [`list_engine_versions`](crate::client::fluent_builders::ListEngineVersions).
 ///
 /// `ParseStrictResponse` impl for `ListEngineVersions`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1242,7 +1242,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListEngineVersions {
 /// Operation shape for `ListExecutors`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_executors`](crate::client::Client::list_executors).
+/// [`list_executors`](crate::client::fluent_builders::ListExecutors).
 ///
 /// `ParseStrictResponse` impl for `ListExecutors`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1275,7 +1275,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListExecutors {
 /// Operation shape for `ListNamedQueries`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_named_queries`](crate::client::Client::list_named_queries).
+/// [`list_named_queries`](crate::client::fluent_builders::ListNamedQueries).
 ///
 /// `ParseStrictResponse` impl for `ListNamedQueries`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1310,7 +1310,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListNamedQueries {
 /// Operation shape for `ListNotebookMetadata`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_notebook_metadata`](crate::client::Client::list_notebook_metadata).
+/// [`list_notebook_metadata`](crate::client::fluent_builders::ListNotebookMetadata).
 ///
 /// `ParseStrictResponse` impl for `ListNotebookMetadata`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1345,7 +1345,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListNotebookMetadata {
 /// Operation shape for `ListNotebookSessions`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_notebook_sessions`](crate::client::Client::list_notebook_sessions).
+/// [`list_notebook_sessions`](crate::client::fluent_builders::ListNotebookSessions).
 ///
 /// `ParseStrictResponse` impl for `ListNotebookSessions`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1380,7 +1380,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListNotebookSessions {
 /// Operation shape for `ListPreparedStatements`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_prepared_statements`](crate::client::Client::list_prepared_statements).
+/// [`list_prepared_statements`](crate::client::fluent_builders::ListPreparedStatements).
 ///
 /// `ParseStrictResponse` impl for `ListPreparedStatements`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1415,7 +1415,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListPreparedStatements {
 /// Operation shape for `ListQueryExecutions`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_query_executions`](crate::client::Client::list_query_executions).
+/// [`list_query_executions`](crate::client::fluent_builders::ListQueryExecutions).
 ///
 /// `ParseStrictResponse` impl for `ListQueryExecutions`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1450,7 +1450,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListQueryExecutions {
 /// Operation shape for `ListSessions`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_sessions`](crate::client::Client::list_sessions).
+/// [`list_sessions`](crate::client::fluent_builders::ListSessions).
 ///
 /// `ParseStrictResponse` impl for `ListSessions`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1483,7 +1483,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListSessions {
 /// Operation shape for `ListTableMetadata`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_table_metadata`](crate::client::Client::list_table_metadata).
+/// [`list_table_metadata`](crate::client::fluent_builders::ListTableMetadata).
 ///
 /// `ParseStrictResponse` impl for `ListTableMetadata`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1518,7 +1518,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTableMetadata {
 /// Operation shape for `ListTagsForResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
+/// [`list_tags_for_resource`](crate::client::fluent_builders::ListTagsForResource).
 ///
 /// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1553,7 +1553,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// Operation shape for `ListWorkGroups`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_work_groups`](crate::client::Client::list_work_groups).
+/// [`list_work_groups`](crate::client::fluent_builders::ListWorkGroups).
 ///
 /// `ParseStrictResponse` impl for `ListWorkGroups`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1586,7 +1586,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListWorkGroups {
 /// Operation shape for `StartCalculationExecution`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`start_calculation_execution`](crate::client::Client::start_calculation_execution).
+/// [`start_calculation_execution`](crate::client::fluent_builders::StartCalculationExecution).
 ///
 /// `ParseStrictResponse` impl for `StartCalculationExecution`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1621,7 +1621,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartCalculationExecutio
 /// Operation shape for `StartQueryExecution`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`start_query_execution`](crate::client::Client::start_query_execution).
+/// [`start_query_execution`](crate::client::fluent_builders::StartQueryExecution).
 ///
 /// `ParseStrictResponse` impl for `StartQueryExecution`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1656,7 +1656,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartQueryExecution {
 /// Operation shape for `StartSession`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`start_session`](crate::client::Client::start_session).
+/// [`start_session`](crate::client::fluent_builders::StartSession).
 ///
 /// `ParseStrictResponse` impl for `StartSession`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1689,7 +1689,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartSession {
 /// Operation shape for `StopCalculationExecution`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`stop_calculation_execution`](crate::client::Client::stop_calculation_execution).
+/// [`stop_calculation_execution`](crate::client::fluent_builders::StopCalculationExecution).
 ///
 /// `ParseStrictResponse` impl for `StopCalculationExecution`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1724,7 +1724,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StopCalculationExecution
 /// Operation shape for `StopQueryExecution`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`stop_query_execution`](crate::client::Client::stop_query_execution).
+/// [`stop_query_execution`](crate::client::fluent_builders::StopQueryExecution).
 ///
 /// `ParseStrictResponse` impl for `StopQueryExecution`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1759,7 +1759,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StopQueryExecution {
 /// Operation shape for `TagResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`tag_resource`](crate::client::Client::tag_resource).
+/// [`tag_resource`](crate::client::fluent_builders::TagResource).
 ///
 /// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1792,7 +1792,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// Operation shape for `TerminateSession`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`terminate_session`](crate::client::Client::terminate_session).
+/// [`terminate_session`](crate::client::fluent_builders::TerminateSession).
 ///
 /// `ParseStrictResponse` impl for `TerminateSession`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1827,7 +1827,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TerminateSession {
 /// Operation shape for `UntagResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`untag_resource`](crate::client::Client::untag_resource).
+/// [`untag_resource`](crate::client::fluent_builders::UntagResource).
 ///
 /// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1860,7 +1860,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// Operation shape for `UpdateDataCatalog`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_data_catalog`](crate::client::Client::update_data_catalog).
+/// [`update_data_catalog`](crate::client::fluent_builders::UpdateDataCatalog).
 ///
 /// `ParseStrictResponse` impl for `UpdateDataCatalog`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1895,7 +1895,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateDataCatalog {
 /// Operation shape for `UpdateNamedQuery`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_named_query`](crate::client::Client::update_named_query).
+/// [`update_named_query`](crate::client::fluent_builders::UpdateNamedQuery).
 ///
 /// `ParseStrictResponse` impl for `UpdateNamedQuery`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1930,7 +1930,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateNamedQuery {
 /// Operation shape for `UpdateNotebook`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_notebook`](crate::client::Client::update_notebook).
+/// [`update_notebook`](crate::client::fluent_builders::UpdateNotebook).
 ///
 /// `ParseStrictResponse` impl for `UpdateNotebook`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1963,7 +1963,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateNotebook {
 /// Operation shape for `UpdateNotebookMetadata`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_notebook_metadata`](crate::client::Client::update_notebook_metadata).
+/// [`update_notebook_metadata`](crate::client::fluent_builders::UpdateNotebookMetadata).
 ///
 /// `ParseStrictResponse` impl for `UpdateNotebookMetadata`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1998,7 +1998,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateNotebookMetadata {
 /// Operation shape for `UpdatePreparedStatement`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_prepared_statement`](crate::client::Client::update_prepared_statement).
+/// [`update_prepared_statement`](crate::client::fluent_builders::UpdatePreparedStatement).
 ///
 /// `ParseStrictResponse` impl for `UpdatePreparedStatement`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2033,7 +2033,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdatePreparedStatement 
 /// Operation shape for `UpdateWorkGroup`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_work_group`](crate::client::Client::update_work_group).
+/// [`update_work_group`](crate::client::fluent_builders::UpdateWorkGroup).
 ///
 /// `ParseStrictResponse` impl for `UpdateWorkGroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

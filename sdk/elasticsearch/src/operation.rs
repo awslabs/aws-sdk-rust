@@ -2,7 +2,7 @@
 /// Operation shape for `AcceptInboundCrossClusterSearchConnection`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`accept_inbound_cross_cluster_search_connection`](crate::client::Client::accept_inbound_cross_cluster_search_connection).
+/// [`accept_inbound_cross_cluster_search_connection`](crate::client::fluent_builders::AcceptInboundCrossClusterSearchConnection).
 ///
 /// `ParseStrictResponse` impl for `AcceptInboundCrossClusterSearchConnection`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -42,7 +42,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AcceptInboundCrossCluste
 /// Operation shape for `AddTags`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`add_tags`](crate::client::Client::add_tags).
+/// [`add_tags`](crate::client::fluent_builders::AddTags).
 ///
 /// `ParseStrictResponse` impl for `AddTags`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -74,7 +74,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AddTags {
 /// Operation shape for `AssociatePackage`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`associate_package`](crate::client::Client::associate_package).
+/// [`associate_package`](crate::client::fluent_builders::AssociatePackage).
 ///
 /// `ParseStrictResponse` impl for `AssociatePackage`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -109,7 +109,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociatePackage {
 /// Operation shape for `AuthorizeVpcEndpointAccess`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`authorize_vpc_endpoint_access`](crate::client::Client::authorize_vpc_endpoint_access).
+/// [`authorize_vpc_endpoint_access`](crate::client::fluent_builders::AuthorizeVpcEndpointAccess).
 ///
 /// `ParseStrictResponse` impl for `AuthorizeVpcEndpointAccess`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -144,7 +144,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AuthorizeVpcEndpointAcce
 /// Operation shape for `CancelElasticsearchServiceSoftwareUpdate`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`cancel_elasticsearch_service_software_update`](crate::client::Client::cancel_elasticsearch_service_software_update).
+/// [`cancel_elasticsearch_service_software_update`](crate::client::fluent_builders::CancelElasticsearchServiceSoftwareUpdate).
 ///
 /// `ParseStrictResponse` impl for `CancelElasticsearchServiceSoftwareUpdate`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -183,7 +183,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CancelElasticsearchServi
 /// Operation shape for `CreateElasticsearchDomain`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_elasticsearch_domain`](crate::client::Client::create_elasticsearch_domain).
+/// [`create_elasticsearch_domain`](crate::client::fluent_builders::CreateElasticsearchDomain).
 ///
 /// `ParseStrictResponse` impl for `CreateElasticsearchDomain`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -218,7 +218,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateElasticsearchDomai
 /// Operation shape for `CreateOutboundCrossClusterSearchConnection`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_outbound_cross_cluster_search_connection`](crate::client::Client::create_outbound_cross_cluster_search_connection).
+/// [`create_outbound_cross_cluster_search_connection`](crate::client::fluent_builders::CreateOutboundCrossClusterSearchConnection).
 ///
 /// `ParseStrictResponse` impl for `CreateOutboundCrossClusterSearchConnection`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -258,7 +258,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateOutboundCrossClust
 /// Operation shape for `CreatePackage`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_package`](crate::client::Client::create_package).
+/// [`create_package`](crate::client::fluent_builders::CreatePackage).
 ///
 /// `ParseStrictResponse` impl for `CreatePackage`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -291,7 +291,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreatePackage {
 /// Operation shape for `CreateVpcEndpoint`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_vpc_endpoint`](crate::client::Client::create_vpc_endpoint).
+/// [`create_vpc_endpoint`](crate::client::fluent_builders::CreateVpcEndpoint).
 ///
 /// `ParseStrictResponse` impl for `CreateVpcEndpoint`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -326,7 +326,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateVpcEndpoint {
 /// Operation shape for `DeleteElasticsearchDomain`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_elasticsearch_domain`](crate::client::Client::delete_elasticsearch_domain).
+/// [`delete_elasticsearch_domain`](crate::client::fluent_builders::DeleteElasticsearchDomain).
 ///
 /// `ParseStrictResponse` impl for `DeleteElasticsearchDomain`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -361,7 +361,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteElasticsearchDomai
 /// Operation shape for `DeleteElasticsearchServiceRole`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_elasticsearch_service_role`](crate::client::Client::delete_elasticsearch_service_role).
+/// [`delete_elasticsearch_service_role`](crate::client::fluent_builders::DeleteElasticsearchServiceRole).
 ///
 /// `ParseStrictResponse` impl for `DeleteElasticsearchServiceRole`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -396,7 +396,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteElasticsearchServi
 /// Operation shape for `DeleteInboundCrossClusterSearchConnection`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_inbound_cross_cluster_search_connection`](crate::client::Client::delete_inbound_cross_cluster_search_connection).
+/// [`delete_inbound_cross_cluster_search_connection`](crate::client::fluent_builders::DeleteInboundCrossClusterSearchConnection).
 ///
 /// `ParseStrictResponse` impl for `DeleteInboundCrossClusterSearchConnection`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -436,7 +436,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteInboundCrossCluste
 /// Operation shape for `DeleteOutboundCrossClusterSearchConnection`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_outbound_cross_cluster_search_connection`](crate::client::Client::delete_outbound_cross_cluster_search_connection).
+/// [`delete_outbound_cross_cluster_search_connection`](crate::client::fluent_builders::DeleteOutboundCrossClusterSearchConnection).
 ///
 /// `ParseStrictResponse` impl for `DeleteOutboundCrossClusterSearchConnection`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -476,7 +476,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteOutboundCrossClust
 /// Operation shape for `DeletePackage`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_package`](crate::client::Client::delete_package).
+/// [`delete_package`](crate::client::fluent_builders::DeletePackage).
 ///
 /// `ParseStrictResponse` impl for `DeletePackage`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -509,7 +509,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeletePackage {
 /// Operation shape for `DeleteVpcEndpoint`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_vpc_endpoint`](crate::client::Client::delete_vpc_endpoint).
+/// [`delete_vpc_endpoint`](crate::client::fluent_builders::DeleteVpcEndpoint).
 ///
 /// `ParseStrictResponse` impl for `DeleteVpcEndpoint`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -544,7 +544,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteVpcEndpoint {
 /// Operation shape for `DescribeDomainAutoTunes`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_domain_auto_tunes`](crate::client::Client::describe_domain_auto_tunes).
+/// [`describe_domain_auto_tunes`](crate::client::fluent_builders::DescribeDomainAutoTunes).
 ///
 /// `ParseStrictResponse` impl for `DescribeDomainAutoTunes`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -579,7 +579,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeDomainAutoTunes 
 /// Operation shape for `DescribeDomainChangeProgress`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_domain_change_progress`](crate::client::Client::describe_domain_change_progress).
+/// [`describe_domain_change_progress`](crate::client::fluent_builders::DescribeDomainChangeProgress).
 ///
 /// `ParseStrictResponse` impl for `DescribeDomainChangeProgress`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -614,7 +614,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeDomainChangeProg
 /// Operation shape for `DescribeElasticsearchDomain`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_elasticsearch_domain`](crate::client::Client::describe_elasticsearch_domain).
+/// [`describe_elasticsearch_domain`](crate::client::fluent_builders::DescribeElasticsearchDomain).
 ///
 /// `ParseStrictResponse` impl for `DescribeElasticsearchDomain`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -649,7 +649,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeElasticsearchDom
 /// Operation shape for `DescribeElasticsearchDomainConfig`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_elasticsearch_domain_config`](crate::client::Client::describe_elasticsearch_domain_config).
+/// [`describe_elasticsearch_domain_config`](crate::client::fluent_builders::DescribeElasticsearchDomainConfig).
 ///
 /// `ParseStrictResponse` impl for `DescribeElasticsearchDomainConfig`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -684,7 +684,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeElasticsearchDom
 /// Operation shape for `DescribeElasticsearchDomains`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_elasticsearch_domains`](crate::client::Client::describe_elasticsearch_domains).
+/// [`describe_elasticsearch_domains`](crate::client::fluent_builders::DescribeElasticsearchDomains).
 ///
 /// `ParseStrictResponse` impl for `DescribeElasticsearchDomains`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -719,7 +719,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeElasticsearchDom
 /// Operation shape for `DescribeElasticsearchInstanceTypeLimits`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_elasticsearch_instance_type_limits`](crate::client::Client::describe_elasticsearch_instance_type_limits).
+/// [`describe_elasticsearch_instance_type_limits`](crate::client::fluent_builders::DescribeElasticsearchInstanceTypeLimits).
 ///
 /// `ParseStrictResponse` impl for `DescribeElasticsearchInstanceTypeLimits`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -758,7 +758,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeElasticsearchIns
 /// Operation shape for `DescribeInboundCrossClusterSearchConnections`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_inbound_cross_cluster_search_connections`](crate::client::Client::describe_inbound_cross_cluster_search_connections).
+/// [`describe_inbound_cross_cluster_search_connections`](crate::client::fluent_builders::DescribeInboundCrossClusterSearchConnections).
 ///
 /// `ParseStrictResponse` impl for `DescribeInboundCrossClusterSearchConnections`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -800,7 +800,7 @@ impl aws_smithy_http::response::ParseStrictResponse
 /// Operation shape for `DescribeOutboundCrossClusterSearchConnections`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_outbound_cross_cluster_search_connections`](crate::client::Client::describe_outbound_cross_cluster_search_connections).
+/// [`describe_outbound_cross_cluster_search_connections`](crate::client::fluent_builders::DescribeOutboundCrossClusterSearchConnections).
 ///
 /// `ParseStrictResponse` impl for `DescribeOutboundCrossClusterSearchConnections`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -840,7 +840,7 @@ impl aws_smithy_http::response::ParseStrictResponse
 /// Operation shape for `DescribePackages`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_packages`](crate::client::Client::describe_packages).
+/// [`describe_packages`](crate::client::fluent_builders::DescribePackages).
 ///
 /// `ParseStrictResponse` impl for `DescribePackages`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -875,7 +875,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribePackages {
 /// Operation shape for `DescribeReservedElasticsearchInstanceOfferings`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_reserved_elasticsearch_instance_offerings`](crate::client::Client::describe_reserved_elasticsearch_instance_offerings).
+/// [`describe_reserved_elasticsearch_instance_offerings`](crate::client::fluent_builders::DescribeReservedElasticsearchInstanceOfferings).
 ///
 /// `ParseStrictResponse` impl for `DescribeReservedElasticsearchInstanceOfferings`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -915,7 +915,7 @@ impl aws_smithy_http::response::ParseStrictResponse
 /// Operation shape for `DescribeReservedElasticsearchInstances`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_reserved_elasticsearch_instances`](crate::client::Client::describe_reserved_elasticsearch_instances).
+/// [`describe_reserved_elasticsearch_instances`](crate::client::fluent_builders::DescribeReservedElasticsearchInstances).
 ///
 /// `ParseStrictResponse` impl for `DescribeReservedElasticsearchInstances`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -952,7 +952,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeReservedElastics
 /// Operation shape for `DescribeVpcEndpoints`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_vpc_endpoints`](crate::client::Client::describe_vpc_endpoints).
+/// [`describe_vpc_endpoints`](crate::client::fluent_builders::DescribeVpcEndpoints).
 ///
 /// `ParseStrictResponse` impl for `DescribeVpcEndpoints`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -987,7 +987,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeVpcEndpoints {
 /// Operation shape for `DissociatePackage`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`dissociate_package`](crate::client::Client::dissociate_package).
+/// [`dissociate_package`](crate::client::fluent_builders::DissociatePackage).
 ///
 /// `ParseStrictResponse` impl for `DissociatePackage`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1022,7 +1022,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DissociatePackage {
 /// Operation shape for `GetCompatibleElasticsearchVersions`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_compatible_elasticsearch_versions`](crate::client::Client::get_compatible_elasticsearch_versions).
+/// [`get_compatible_elasticsearch_versions`](crate::client::fluent_builders::GetCompatibleElasticsearchVersions).
 ///
 /// `ParseStrictResponse` impl for `GetCompatibleElasticsearchVersions`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1057,7 +1057,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetCompatibleElasticsear
 /// Operation shape for `GetPackageVersionHistory`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_package_version_history`](crate::client::Client::get_package_version_history).
+/// [`get_package_version_history`](crate::client::fluent_builders::GetPackageVersionHistory).
 ///
 /// `ParseStrictResponse` impl for `GetPackageVersionHistory`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1092,7 +1092,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetPackageVersionHistory
 /// Operation shape for `GetUpgradeHistory`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_upgrade_history`](crate::client::Client::get_upgrade_history).
+/// [`get_upgrade_history`](crate::client::fluent_builders::GetUpgradeHistory).
 ///
 /// `ParseStrictResponse` impl for `GetUpgradeHistory`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1127,7 +1127,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetUpgradeHistory {
 /// Operation shape for `GetUpgradeStatus`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_upgrade_status`](crate::client::Client::get_upgrade_status).
+/// [`get_upgrade_status`](crate::client::fluent_builders::GetUpgradeStatus).
 ///
 /// `ParseStrictResponse` impl for `GetUpgradeStatus`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1162,7 +1162,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetUpgradeStatus {
 /// Operation shape for `ListDomainNames`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_domain_names`](crate::client::Client::list_domain_names).
+/// [`list_domain_names`](crate::client::fluent_builders::ListDomainNames).
 ///
 /// `ParseStrictResponse` impl for `ListDomainNames`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1197,7 +1197,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListDomainNames {
 /// Operation shape for `ListDomainsForPackage`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_domains_for_package`](crate::client::Client::list_domains_for_package).
+/// [`list_domains_for_package`](crate::client::fluent_builders::ListDomainsForPackage).
 ///
 /// `ParseStrictResponse` impl for `ListDomainsForPackage`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1232,7 +1232,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListDomainsForPackage {
 /// Operation shape for `ListElasticsearchInstanceTypes`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_elasticsearch_instance_types`](crate::client::Client::list_elasticsearch_instance_types).
+/// [`list_elasticsearch_instance_types`](crate::client::fluent_builders::ListElasticsearchInstanceTypes).
 ///
 /// `ParseStrictResponse` impl for `ListElasticsearchInstanceTypes`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1267,7 +1267,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListElasticsearchInstanc
 /// Operation shape for `ListElasticsearchVersions`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_elasticsearch_versions`](crate::client::Client::list_elasticsearch_versions).
+/// [`list_elasticsearch_versions`](crate::client::fluent_builders::ListElasticsearchVersions).
 ///
 /// `ParseStrictResponse` impl for `ListElasticsearchVersions`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1302,7 +1302,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListElasticsearchVersion
 /// Operation shape for `ListPackagesForDomain`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_packages_for_domain`](crate::client::Client::list_packages_for_domain).
+/// [`list_packages_for_domain`](crate::client::fluent_builders::ListPackagesForDomain).
 ///
 /// `ParseStrictResponse` impl for `ListPackagesForDomain`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1337,7 +1337,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListPackagesForDomain {
 /// Operation shape for `ListTags`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_tags`](crate::client::Client::list_tags).
+/// [`list_tags`](crate::client::fluent_builders::ListTags).
 ///
 /// `ParseStrictResponse` impl for `ListTags`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1369,7 +1369,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTags {
 /// Operation shape for `ListVpcEndpointAccess`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_vpc_endpoint_access`](crate::client::Client::list_vpc_endpoint_access).
+/// [`list_vpc_endpoint_access`](crate::client::fluent_builders::ListVpcEndpointAccess).
 ///
 /// `ParseStrictResponse` impl for `ListVpcEndpointAccess`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1404,7 +1404,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListVpcEndpointAccess {
 /// Operation shape for `ListVpcEndpoints`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_vpc_endpoints`](crate::client::Client::list_vpc_endpoints).
+/// [`list_vpc_endpoints`](crate::client::fluent_builders::ListVpcEndpoints).
 ///
 /// `ParseStrictResponse` impl for `ListVpcEndpoints`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1439,7 +1439,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListVpcEndpoints {
 /// Operation shape for `ListVpcEndpointsForDomain`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_vpc_endpoints_for_domain`](crate::client::Client::list_vpc_endpoints_for_domain).
+/// [`list_vpc_endpoints_for_domain`](crate::client::fluent_builders::ListVpcEndpointsForDomain).
 ///
 /// `ParseStrictResponse` impl for `ListVpcEndpointsForDomain`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1474,7 +1474,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListVpcEndpointsForDomai
 /// Operation shape for `PurchaseReservedElasticsearchInstanceOffering`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`purchase_reserved_elasticsearch_instance_offering`](crate::client::Client::purchase_reserved_elasticsearch_instance_offering).
+/// [`purchase_reserved_elasticsearch_instance_offering`](crate::client::fluent_builders::PurchaseReservedElasticsearchInstanceOffering).
 ///
 /// `ParseStrictResponse` impl for `PurchaseReservedElasticsearchInstanceOffering`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1516,7 +1516,7 @@ impl aws_smithy_http::response::ParseStrictResponse
 /// Operation shape for `RejectInboundCrossClusterSearchConnection`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`reject_inbound_cross_cluster_search_connection`](crate::client::Client::reject_inbound_cross_cluster_search_connection).
+/// [`reject_inbound_cross_cluster_search_connection`](crate::client::fluent_builders::RejectInboundCrossClusterSearchConnection).
 ///
 /// `ParseStrictResponse` impl for `RejectInboundCrossClusterSearchConnection`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1556,7 +1556,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RejectInboundCrossCluste
 /// Operation shape for `RemoveTags`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`remove_tags`](crate::client::Client::remove_tags).
+/// [`remove_tags`](crate::client::fluent_builders::RemoveTags).
 ///
 /// `ParseStrictResponse` impl for `RemoveTags`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1589,7 +1589,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RemoveTags {
 /// Operation shape for `RevokeVpcEndpointAccess`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`revoke_vpc_endpoint_access`](crate::client::Client::revoke_vpc_endpoint_access).
+/// [`revoke_vpc_endpoint_access`](crate::client::fluent_builders::RevokeVpcEndpointAccess).
 ///
 /// `ParseStrictResponse` impl for `RevokeVpcEndpointAccess`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1624,7 +1624,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RevokeVpcEndpointAccess 
 /// Operation shape for `StartElasticsearchServiceSoftwareUpdate`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`start_elasticsearch_service_software_update`](crate::client::Client::start_elasticsearch_service_software_update).
+/// [`start_elasticsearch_service_software_update`](crate::client::fluent_builders::StartElasticsearchServiceSoftwareUpdate).
 ///
 /// `ParseStrictResponse` impl for `StartElasticsearchServiceSoftwareUpdate`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1663,7 +1663,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartElasticsearchServic
 /// Operation shape for `UpdateElasticsearchDomainConfig`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_elasticsearch_domain_config`](crate::client::Client::update_elasticsearch_domain_config).
+/// [`update_elasticsearch_domain_config`](crate::client::fluent_builders::UpdateElasticsearchDomainConfig).
 ///
 /// `ParseStrictResponse` impl for `UpdateElasticsearchDomainConfig`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1698,7 +1698,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateElasticsearchDomai
 /// Operation shape for `UpdatePackage`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_package`](crate::client::Client::update_package).
+/// [`update_package`](crate::client::fluent_builders::UpdatePackage).
 ///
 /// `ParseStrictResponse` impl for `UpdatePackage`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1731,7 +1731,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdatePackage {
 /// Operation shape for `UpdateVpcEndpoint`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_vpc_endpoint`](crate::client::Client::update_vpc_endpoint).
+/// [`update_vpc_endpoint`](crate::client::fluent_builders::UpdateVpcEndpoint).
 ///
 /// `ParseStrictResponse` impl for `UpdateVpcEndpoint`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1766,7 +1766,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateVpcEndpoint {
 /// Operation shape for `UpgradeElasticsearchDomain`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`upgrade_elasticsearch_domain`](crate::client::Client::upgrade_elasticsearch_domain).
+/// [`upgrade_elasticsearch_domain`](crate::client::fluent_builders::UpgradeElasticsearchDomain).
 ///
 /// `ParseStrictResponse` impl for `UpgradeElasticsearchDomain`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

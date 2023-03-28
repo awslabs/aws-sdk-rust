@@ -2,7 +2,7 @@
 /// Operation shape for `CreateApp`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_app`](crate::client::Client::create_app).
+/// [`create_app`](crate::client::fluent_builders::CreateApp).
 ///
 /// `ParseStrictResponse` impl for `CreateApp`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -34,7 +34,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateApp {
 /// Operation shape for `CreateReplicationJob`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_replication_job`](crate::client::Client::create_replication_job).
+/// [`create_replication_job`](crate::client::fluent_builders::CreateReplicationJob).
 ///
 /// `ParseStrictResponse` impl for `CreateReplicationJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -69,7 +69,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateReplicationJob {
 /// Operation shape for `DeleteApp`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_app`](crate::client::Client::delete_app).
+/// [`delete_app`](crate::client::fluent_builders::DeleteApp).
 ///
 /// `ParseStrictResponse` impl for `DeleteApp`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -101,7 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteApp {
 /// Operation shape for `DeleteAppLaunchConfiguration`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_app_launch_configuration`](crate::client::Client::delete_app_launch_configuration).
+/// [`delete_app_launch_configuration`](crate::client::fluent_builders::DeleteAppLaunchConfiguration).
 ///
 /// `ParseStrictResponse` impl for `DeleteAppLaunchConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -136,7 +136,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteAppLaunchConfigura
 /// Operation shape for `DeleteAppReplicationConfiguration`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_app_replication_configuration`](crate::client::Client::delete_app_replication_configuration).
+/// [`delete_app_replication_configuration`](crate::client::fluent_builders::DeleteAppReplicationConfiguration).
 ///
 /// `ParseStrictResponse` impl for `DeleteAppReplicationConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -171,7 +171,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteAppReplicationConf
 /// Operation shape for `DeleteAppValidationConfiguration`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_app_validation_configuration`](crate::client::Client::delete_app_validation_configuration).
+/// [`delete_app_validation_configuration`](crate::client::fluent_builders::DeleteAppValidationConfiguration).
 ///
 /// `ParseStrictResponse` impl for `DeleteAppValidationConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -206,7 +206,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteAppValidationConfi
 /// Operation shape for `DeleteReplicationJob`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_replication_job`](crate::client::Client::delete_replication_job).
+/// [`delete_replication_job`](crate::client::fluent_builders::DeleteReplicationJob).
 ///
 /// `ParseStrictResponse` impl for `DeleteReplicationJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -241,7 +241,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteReplicationJob {
 /// Operation shape for `DeleteServerCatalog`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_server_catalog`](crate::client::Client::delete_server_catalog).
+/// [`delete_server_catalog`](crate::client::fluent_builders::DeleteServerCatalog).
 ///
 /// `ParseStrictResponse` impl for `DeleteServerCatalog`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -276,7 +276,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteServerCatalog {
 /// Operation shape for `DisassociateConnector`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`disassociate_connector`](crate::client::Client::disassociate_connector).
+/// [`disassociate_connector`](crate::client::fluent_builders::DisassociateConnector).
 ///
 /// `ParseStrictResponse` impl for `DisassociateConnector`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -311,7 +311,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateConnector {
 /// Operation shape for `GenerateChangeSet`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`generate_change_set`](crate::client::Client::generate_change_set).
+/// [`generate_change_set`](crate::client::fluent_builders::GenerateChangeSet).
 ///
 /// `ParseStrictResponse` impl for `GenerateChangeSet`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -346,7 +346,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GenerateChangeSet {
 /// Operation shape for `GenerateTemplate`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`generate_template`](crate::client::Client::generate_template).
+/// [`generate_template`](crate::client::fluent_builders::GenerateTemplate).
 ///
 /// `ParseStrictResponse` impl for `GenerateTemplate`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -381,7 +381,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GenerateTemplate {
 /// Operation shape for `GetApp`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_app`](crate::client::Client::get_app).
+/// [`get_app`](crate::client::fluent_builders::GetApp).
 ///
 /// `ParseStrictResponse` impl for `GetApp`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -413,7 +413,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetApp {
 /// Operation shape for `GetAppLaunchConfiguration`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_app_launch_configuration`](crate::client::Client::get_app_launch_configuration).
+/// [`get_app_launch_configuration`](crate::client::fluent_builders::GetAppLaunchConfiguration).
 ///
 /// `ParseStrictResponse` impl for `GetAppLaunchConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -448,7 +448,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAppLaunchConfiguratio
 /// Operation shape for `GetAppReplicationConfiguration`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_app_replication_configuration`](crate::client::Client::get_app_replication_configuration).
+/// [`get_app_replication_configuration`](crate::client::fluent_builders::GetAppReplicationConfiguration).
 ///
 /// `ParseStrictResponse` impl for `GetAppReplicationConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -483,7 +483,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAppReplicationConfigu
 /// Operation shape for `GetAppValidationConfiguration`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_app_validation_configuration`](crate::client::Client::get_app_validation_configuration).
+/// [`get_app_validation_configuration`](crate::client::fluent_builders::GetAppValidationConfiguration).
 ///
 /// `ParseStrictResponse` impl for `GetAppValidationConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -518,7 +518,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAppValidationConfigur
 /// Operation shape for `GetAppValidationOutput`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_app_validation_output`](crate::client::Client::get_app_validation_output).
+/// [`get_app_validation_output`](crate::client::fluent_builders::GetAppValidationOutput).
 ///
 /// `ParseStrictResponse` impl for `GetAppValidationOutput`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -553,7 +553,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAppValidationOutput {
 /// Operation shape for `GetConnectors`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_connectors`](crate::client::Client::get_connectors).
+/// [`get_connectors`](crate::client::fluent_builders::GetConnectors).
 ///
 /// `ParseStrictResponse` impl for `GetConnectors`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -586,7 +586,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetConnectors {
 /// Operation shape for `GetReplicationJobs`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_replication_jobs`](crate::client::Client::get_replication_jobs).
+/// [`get_replication_jobs`](crate::client::fluent_builders::GetReplicationJobs).
 ///
 /// `ParseStrictResponse` impl for `GetReplicationJobs`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -621,7 +621,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetReplicationJobs {
 /// Operation shape for `GetReplicationRuns`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_replication_runs`](crate::client::Client::get_replication_runs).
+/// [`get_replication_runs`](crate::client::fluent_builders::GetReplicationRuns).
 ///
 /// `ParseStrictResponse` impl for `GetReplicationRuns`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -656,7 +656,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetReplicationRuns {
 /// Operation shape for `GetServers`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_servers`](crate::client::Client::get_servers).
+/// [`get_servers`](crate::client::fluent_builders::GetServers).
 ///
 /// `ParseStrictResponse` impl for `GetServers`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -689,7 +689,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetServers {
 /// Operation shape for `ImportAppCatalog`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`import_app_catalog`](crate::client::Client::import_app_catalog).
+/// [`import_app_catalog`](crate::client::fluent_builders::ImportAppCatalog).
 ///
 /// `ParseStrictResponse` impl for `ImportAppCatalog`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -724,7 +724,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ImportAppCatalog {
 /// Operation shape for `ImportServerCatalog`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`import_server_catalog`](crate::client::Client::import_server_catalog).
+/// [`import_server_catalog`](crate::client::fluent_builders::ImportServerCatalog).
 ///
 /// `ParseStrictResponse` impl for `ImportServerCatalog`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -759,7 +759,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ImportServerCatalog {
 /// Operation shape for `LaunchApp`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`launch_app`](crate::client::Client::launch_app).
+/// [`launch_app`](crate::client::fluent_builders::LaunchApp).
 ///
 /// `ParseStrictResponse` impl for `LaunchApp`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -791,7 +791,7 @@ impl aws_smithy_http::response::ParseStrictResponse for LaunchApp {
 /// Operation shape for `ListApps`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_apps`](crate::client::Client::list_apps).
+/// [`list_apps`](crate::client::fluent_builders::ListApps).
 ///
 /// `ParseStrictResponse` impl for `ListApps`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -823,7 +823,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListApps {
 /// Operation shape for `NotifyAppValidationOutput`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`notify_app_validation_output`](crate::client::Client::notify_app_validation_output).
+/// [`notify_app_validation_output`](crate::client::fluent_builders::NotifyAppValidationOutput).
 ///
 /// `ParseStrictResponse` impl for `NotifyAppValidationOutput`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -858,7 +858,7 @@ impl aws_smithy_http::response::ParseStrictResponse for NotifyAppValidationOutpu
 /// Operation shape for `PutAppLaunchConfiguration`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`put_app_launch_configuration`](crate::client::Client::put_app_launch_configuration).
+/// [`put_app_launch_configuration`](crate::client::fluent_builders::PutAppLaunchConfiguration).
 ///
 /// `ParseStrictResponse` impl for `PutAppLaunchConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -893,7 +893,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutAppLaunchConfiguratio
 /// Operation shape for `PutAppReplicationConfiguration`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`put_app_replication_configuration`](crate::client::Client::put_app_replication_configuration).
+/// [`put_app_replication_configuration`](crate::client::fluent_builders::PutAppReplicationConfiguration).
 ///
 /// `ParseStrictResponse` impl for `PutAppReplicationConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -928,7 +928,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutAppReplicationConfigu
 /// Operation shape for `PutAppValidationConfiguration`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`put_app_validation_configuration`](crate::client::Client::put_app_validation_configuration).
+/// [`put_app_validation_configuration`](crate::client::fluent_builders::PutAppValidationConfiguration).
 ///
 /// `ParseStrictResponse` impl for `PutAppValidationConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -963,7 +963,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutAppValidationConfigur
 /// Operation shape for `StartAppReplication`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`start_app_replication`](crate::client::Client::start_app_replication).
+/// [`start_app_replication`](crate::client::fluent_builders::StartAppReplication).
 ///
 /// `ParseStrictResponse` impl for `StartAppReplication`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -998,7 +998,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartAppReplication {
 /// Operation shape for `StartOnDemandAppReplication`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`start_on_demand_app_replication`](crate::client::Client::start_on_demand_app_replication).
+/// [`start_on_demand_app_replication`](crate::client::fluent_builders::StartOnDemandAppReplication).
 ///
 /// `ParseStrictResponse` impl for `StartOnDemandAppReplication`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1033,7 +1033,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartOnDemandAppReplicat
 /// Operation shape for `StartOnDemandReplicationRun`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`start_on_demand_replication_run`](crate::client::Client::start_on_demand_replication_run).
+/// [`start_on_demand_replication_run`](crate::client::fluent_builders::StartOnDemandReplicationRun).
 ///
 /// `ParseStrictResponse` impl for `StartOnDemandReplicationRun`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1068,7 +1068,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartOnDemandReplication
 /// Operation shape for `StopAppReplication`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`stop_app_replication`](crate::client::Client::stop_app_replication).
+/// [`stop_app_replication`](crate::client::fluent_builders::StopAppReplication).
 ///
 /// `ParseStrictResponse` impl for `StopAppReplication`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1103,7 +1103,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StopAppReplication {
 /// Operation shape for `TerminateApp`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`terminate_app`](crate::client::Client::terminate_app).
+/// [`terminate_app`](crate::client::fluent_builders::TerminateApp).
 ///
 /// `ParseStrictResponse` impl for `TerminateApp`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1136,7 +1136,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TerminateApp {
 /// Operation shape for `UpdateApp`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_app`](crate::client::Client::update_app).
+/// [`update_app`](crate::client::fluent_builders::UpdateApp).
 ///
 /// `ParseStrictResponse` impl for `UpdateApp`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1168,7 +1168,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateApp {
 /// Operation shape for `UpdateReplicationJob`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_replication_job`](crate::client::Client::update_replication_job).
+/// [`update_replication_job`](crate::client::fluent_builders::UpdateReplicationJob).
 ///
 /// `ParseStrictResponse` impl for `UpdateReplicationJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

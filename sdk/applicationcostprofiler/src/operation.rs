@@ -2,7 +2,7 @@
 /// Operation shape for `DeleteReportDefinition`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_report_definition`](crate::client::Client::delete_report_definition).
+/// [`delete_report_definition`](crate::client::fluent_builders::DeleteReportDefinition).
 ///
 /// `ParseStrictResponse` impl for `DeleteReportDefinition`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -37,7 +37,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteReportDefinition {
 /// Operation shape for `GetReportDefinition`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_report_definition`](crate::client::Client::get_report_definition).
+/// [`get_report_definition`](crate::client::fluent_builders::GetReportDefinition).
 ///
 /// `ParseStrictResponse` impl for `GetReportDefinition`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -72,7 +72,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetReportDefinition {
 /// Operation shape for `ImportApplicationUsage`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`import_application_usage`](crate::client::Client::import_application_usage).
+/// [`import_application_usage`](crate::client::fluent_builders::ImportApplicationUsage).
 ///
 /// `ParseStrictResponse` impl for `ImportApplicationUsage`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -107,7 +107,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ImportApplicationUsage {
 /// Operation shape for `ListReportDefinitions`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_report_definitions`](crate::client::Client::list_report_definitions).
+/// [`list_report_definitions`](crate::client::fluent_builders::ListReportDefinitions).
 ///
 /// `ParseStrictResponse` impl for `ListReportDefinitions`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -142,7 +142,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListReportDefinitions {
 /// Operation shape for `PutReportDefinition`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`put_report_definition`](crate::client::Client::put_report_definition).
+/// [`put_report_definition`](crate::client::fluent_builders::PutReportDefinition).
 ///
 /// `ParseStrictResponse` impl for `PutReportDefinition`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -177,7 +177,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutReportDefinition {
 /// Operation shape for `UpdateReportDefinition`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_report_definition`](crate::client::Client::update_report_definition).
+/// [`update_report_definition`](crate::client::fluent_builders::UpdateReportDefinition).
 ///
 /// `ParseStrictResponse` impl for `UpdateReportDefinition`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

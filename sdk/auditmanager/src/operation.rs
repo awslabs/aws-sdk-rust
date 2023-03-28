@@ -2,7 +2,7 @@
 /// Operation shape for `AssociateAssessmentReportEvidenceFolder`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`associate_assessment_report_evidence_folder`](crate::client::Client::associate_assessment_report_evidence_folder).
+/// [`associate_assessment_report_evidence_folder`](crate::client::fluent_builders::AssociateAssessmentReportEvidenceFolder).
 ///
 /// `ParseStrictResponse` impl for `AssociateAssessmentReportEvidenceFolder`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -41,7 +41,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateAssessmentRepor
 /// Operation shape for `BatchAssociateAssessmentReportEvidence`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`batch_associate_assessment_report_evidence`](crate::client::Client::batch_associate_assessment_report_evidence).
+/// [`batch_associate_assessment_report_evidence`](crate::client::fluent_builders::BatchAssociateAssessmentReportEvidence).
 ///
 /// `ParseStrictResponse` impl for `BatchAssociateAssessmentReportEvidence`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -78,7 +78,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchAssociateAssessment
 /// Operation shape for `BatchCreateDelegationByAssessment`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`batch_create_delegation_by_assessment`](crate::client::Client::batch_create_delegation_by_assessment).
+/// [`batch_create_delegation_by_assessment`](crate::client::fluent_builders::BatchCreateDelegationByAssessment).
 ///
 /// `ParseStrictResponse` impl for `BatchCreateDelegationByAssessment`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -113,7 +113,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchCreateDelegationByA
 /// Operation shape for `BatchDeleteDelegationByAssessment`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`batch_delete_delegation_by_assessment`](crate::client::Client::batch_delete_delegation_by_assessment).
+/// [`batch_delete_delegation_by_assessment`](crate::client::fluent_builders::BatchDeleteDelegationByAssessment).
 ///
 /// `ParseStrictResponse` impl for `BatchDeleteDelegationByAssessment`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -148,7 +148,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchDeleteDelegationByA
 /// Operation shape for `BatchDisassociateAssessmentReportEvidence`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`batch_disassociate_assessment_report_evidence`](crate::client::Client::batch_disassociate_assessment_report_evidence).
+/// [`batch_disassociate_assessment_report_evidence`](crate::client::fluent_builders::BatchDisassociateAssessmentReportEvidence).
 ///
 /// `ParseStrictResponse` impl for `BatchDisassociateAssessmentReportEvidence`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -187,7 +187,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchDisassociateAssessm
 /// Operation shape for `BatchImportEvidenceToAssessmentControl`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`batch_import_evidence_to_assessment_control`](crate::client::Client::batch_import_evidence_to_assessment_control).
+/// [`batch_import_evidence_to_assessment_control`](crate::client::fluent_builders::BatchImportEvidenceToAssessmentControl).
 ///
 /// `ParseStrictResponse` impl for `BatchImportEvidenceToAssessmentControl`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -226,7 +226,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchImportEvidenceToAss
 /// Operation shape for `CreateAssessment`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_assessment`](crate::client::Client::create_assessment).
+/// [`create_assessment`](crate::client::fluent_builders::CreateAssessment).
 ///
 /// `ParseStrictResponse` impl for `CreateAssessment`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -261,7 +261,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateAssessment {
 /// Operation shape for `CreateAssessmentFramework`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_assessment_framework`](crate::client::Client::create_assessment_framework).
+/// [`create_assessment_framework`](crate::client::fluent_builders::CreateAssessmentFramework).
 ///
 /// `ParseStrictResponse` impl for `CreateAssessmentFramework`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -296,7 +296,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateAssessmentFramewor
 /// Operation shape for `CreateAssessmentReport`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_assessment_report`](crate::client::Client::create_assessment_report).
+/// [`create_assessment_report`](crate::client::fluent_builders::CreateAssessmentReport).
 ///
 /// `ParseStrictResponse` impl for `CreateAssessmentReport`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -331,7 +331,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateAssessmentReport {
 /// Operation shape for `CreateControl`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_control`](crate::client::Client::create_control).
+/// [`create_control`](crate::client::fluent_builders::CreateControl).
 ///
 /// `ParseStrictResponse` impl for `CreateControl`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -364,7 +364,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateControl {
 /// Operation shape for `DeleteAssessment`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_assessment`](crate::client::Client::delete_assessment).
+/// [`delete_assessment`](crate::client::fluent_builders::DeleteAssessment).
 ///
 /// `ParseStrictResponse` impl for `DeleteAssessment`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -399,7 +399,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteAssessment {
 /// Operation shape for `DeleteAssessmentFramework`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_assessment_framework`](crate::client::Client::delete_assessment_framework).
+/// [`delete_assessment_framework`](crate::client::fluent_builders::DeleteAssessmentFramework).
 ///
 /// `ParseStrictResponse` impl for `DeleteAssessmentFramework`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -434,7 +434,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteAssessmentFramewor
 /// Operation shape for `DeleteAssessmentFrameworkShare`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_assessment_framework_share`](crate::client::Client::delete_assessment_framework_share).
+/// [`delete_assessment_framework_share`](crate::client::fluent_builders::DeleteAssessmentFrameworkShare).
 ///
 /// `ParseStrictResponse` impl for `DeleteAssessmentFrameworkShare`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -469,7 +469,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteAssessmentFramewor
 /// Operation shape for `DeleteAssessmentReport`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_assessment_report`](crate::client::Client::delete_assessment_report).
+/// [`delete_assessment_report`](crate::client::fluent_builders::DeleteAssessmentReport).
 ///
 /// `ParseStrictResponse` impl for `DeleteAssessmentReport`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -504,7 +504,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteAssessmentReport {
 /// Operation shape for `DeleteControl`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_control`](crate::client::Client::delete_control).
+/// [`delete_control`](crate::client::fluent_builders::DeleteControl).
 ///
 /// `ParseStrictResponse` impl for `DeleteControl`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -537,7 +537,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteControl {
 /// Operation shape for `DeregisterAccount`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`deregister_account`](crate::client::Client::deregister_account).
+/// [`deregister_account`](crate::client::fluent_builders::DeregisterAccount).
 ///
 /// `ParseStrictResponse` impl for `DeregisterAccount`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -572,7 +572,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeregisterAccount {
 /// Operation shape for `DeregisterOrganizationAdminAccount`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`deregister_organization_admin_account`](crate::client::Client::deregister_organization_admin_account).
+/// [`deregister_organization_admin_account`](crate::client::fluent_builders::DeregisterOrganizationAdminAccount).
 ///
 /// `ParseStrictResponse` impl for `DeregisterOrganizationAdminAccount`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -607,7 +607,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeregisterOrganizationAd
 /// Operation shape for `DisassociateAssessmentReportEvidenceFolder`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`disassociate_assessment_report_evidence_folder`](crate::client::Client::disassociate_assessment_report_evidence_folder).
+/// [`disassociate_assessment_report_evidence_folder`](crate::client::fluent_builders::DisassociateAssessmentReportEvidenceFolder).
 ///
 /// `ParseStrictResponse` impl for `DisassociateAssessmentReportEvidenceFolder`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -647,7 +647,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateAssessmentRe
 /// Operation shape for `GetAccountStatus`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_account_status`](crate::client::Client::get_account_status).
+/// [`get_account_status`](crate::client::fluent_builders::GetAccountStatus).
 ///
 /// `ParseStrictResponse` impl for `GetAccountStatus`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -682,7 +682,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAccountStatus {
 /// Operation shape for `GetAssessment`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_assessment`](crate::client::Client::get_assessment).
+/// [`get_assessment`](crate::client::fluent_builders::GetAssessment).
 ///
 /// `ParseStrictResponse` impl for `GetAssessment`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -715,7 +715,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAssessment {
 /// Operation shape for `GetAssessmentFramework`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_assessment_framework`](crate::client::Client::get_assessment_framework).
+/// [`get_assessment_framework`](crate::client::fluent_builders::GetAssessmentFramework).
 ///
 /// `ParseStrictResponse` impl for `GetAssessmentFramework`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -750,7 +750,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAssessmentFramework {
 /// Operation shape for `GetAssessmentReportUrl`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_assessment_report_url`](crate::client::Client::get_assessment_report_url).
+/// [`get_assessment_report_url`](crate::client::fluent_builders::GetAssessmentReportUrl).
 ///
 /// `ParseStrictResponse` impl for `GetAssessmentReportUrl`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -785,7 +785,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAssessmentReportUrl {
 /// Operation shape for `GetChangeLogs`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_change_logs`](crate::client::Client::get_change_logs).
+/// [`get_change_logs`](crate::client::fluent_builders::GetChangeLogs).
 ///
 /// `ParseStrictResponse` impl for `GetChangeLogs`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -818,7 +818,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetChangeLogs {
 /// Operation shape for `GetControl`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_control`](crate::client::Client::get_control).
+/// [`get_control`](crate::client::fluent_builders::GetControl).
 ///
 /// `ParseStrictResponse` impl for `GetControl`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -851,7 +851,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetControl {
 /// Operation shape for `GetDelegations`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_delegations`](crate::client::Client::get_delegations).
+/// [`get_delegations`](crate::client::fluent_builders::GetDelegations).
 ///
 /// `ParseStrictResponse` impl for `GetDelegations`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -884,7 +884,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDelegations {
 /// Operation shape for `GetEvidence`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_evidence`](crate::client::Client::get_evidence).
+/// [`get_evidence`](crate::client::fluent_builders::GetEvidence).
 ///
 /// `ParseStrictResponse` impl for `GetEvidence`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -917,7 +917,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetEvidence {
 /// Operation shape for `GetEvidenceByEvidenceFolder`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_evidence_by_evidence_folder`](crate::client::Client::get_evidence_by_evidence_folder).
+/// [`get_evidence_by_evidence_folder`](crate::client::fluent_builders::GetEvidenceByEvidenceFolder).
 ///
 /// `ParseStrictResponse` impl for `GetEvidenceByEvidenceFolder`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -952,7 +952,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetEvidenceByEvidenceFol
 /// Operation shape for `GetEvidenceFolder`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_evidence_folder`](crate::client::Client::get_evidence_folder).
+/// [`get_evidence_folder`](crate::client::fluent_builders::GetEvidenceFolder).
 ///
 /// `ParseStrictResponse` impl for `GetEvidenceFolder`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -987,7 +987,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetEvidenceFolder {
 /// Operation shape for `GetEvidenceFoldersByAssessment`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_evidence_folders_by_assessment`](crate::client::Client::get_evidence_folders_by_assessment).
+/// [`get_evidence_folders_by_assessment`](crate::client::fluent_builders::GetEvidenceFoldersByAssessment).
 ///
 /// `ParseStrictResponse` impl for `GetEvidenceFoldersByAssessment`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1022,7 +1022,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetEvidenceFoldersByAsse
 /// Operation shape for `GetEvidenceFoldersByAssessmentControl`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_evidence_folders_by_assessment_control`](crate::client::Client::get_evidence_folders_by_assessment_control).
+/// [`get_evidence_folders_by_assessment_control`](crate::client::fluent_builders::GetEvidenceFoldersByAssessmentControl).
 ///
 /// `ParseStrictResponse` impl for `GetEvidenceFoldersByAssessmentControl`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1059,7 +1059,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetEvidenceFoldersByAsse
 /// Operation shape for `GetInsights`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_insights`](crate::client::Client::get_insights).
+/// [`get_insights`](crate::client::fluent_builders::GetInsights).
 ///
 /// `ParseStrictResponse` impl for `GetInsights`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1092,7 +1092,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetInsights {
 /// Operation shape for `GetInsightsByAssessment`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_insights_by_assessment`](crate::client::Client::get_insights_by_assessment).
+/// [`get_insights_by_assessment`](crate::client::fluent_builders::GetInsightsByAssessment).
 ///
 /// `ParseStrictResponse` impl for `GetInsightsByAssessment`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1127,7 +1127,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetInsightsByAssessment 
 /// Operation shape for `GetOrganizationAdminAccount`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_organization_admin_account`](crate::client::Client::get_organization_admin_account).
+/// [`get_organization_admin_account`](crate::client::fluent_builders::GetOrganizationAdminAccount).
 ///
 /// `ParseStrictResponse` impl for `GetOrganizationAdminAccount`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1162,7 +1162,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetOrganizationAdminAcco
 /// Operation shape for `GetServicesInScope`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_services_in_scope`](crate::client::Client::get_services_in_scope).
+/// [`get_services_in_scope`](crate::client::fluent_builders::GetServicesInScope).
 ///
 /// `ParseStrictResponse` impl for `GetServicesInScope`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1197,7 +1197,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetServicesInScope {
 /// Operation shape for `GetSettings`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_settings`](crate::client::Client::get_settings).
+/// [`get_settings`](crate::client::fluent_builders::GetSettings).
 ///
 /// `ParseStrictResponse` impl for `GetSettings`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1230,7 +1230,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSettings {
 /// Operation shape for `ListAssessmentControlInsightsByControlDomain`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_assessment_control_insights_by_control_domain`](crate::client::Client::list_assessment_control_insights_by_control_domain).
+/// [`list_assessment_control_insights_by_control_domain`](crate::client::fluent_builders::ListAssessmentControlInsightsByControlDomain).
 ///
 /// `ParseStrictResponse` impl for `ListAssessmentControlInsightsByControlDomain`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1270,7 +1270,7 @@ impl aws_smithy_http::response::ParseStrictResponse
 /// Operation shape for `ListAssessmentFrameworks`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_assessment_frameworks`](crate::client::Client::list_assessment_frameworks).
+/// [`list_assessment_frameworks`](crate::client::fluent_builders::ListAssessmentFrameworks).
 ///
 /// `ParseStrictResponse` impl for `ListAssessmentFrameworks`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1305,7 +1305,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAssessmentFrameworks
 /// Operation shape for `ListAssessmentFrameworkShareRequests`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_assessment_framework_share_requests`](crate::client::Client::list_assessment_framework_share_requests).
+/// [`list_assessment_framework_share_requests`](crate::client::fluent_builders::ListAssessmentFrameworkShareRequests).
 ///
 /// `ParseStrictResponse` impl for `ListAssessmentFrameworkShareRequests`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1342,7 +1342,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAssessmentFrameworkS
 /// Operation shape for `ListAssessmentReports`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_assessment_reports`](crate::client::Client::list_assessment_reports).
+/// [`list_assessment_reports`](crate::client::fluent_builders::ListAssessmentReports).
 ///
 /// `ParseStrictResponse` impl for `ListAssessmentReports`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1377,7 +1377,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAssessmentReports {
 /// Operation shape for `ListAssessments`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_assessments`](crate::client::Client::list_assessments).
+/// [`list_assessments`](crate::client::fluent_builders::ListAssessments).
 ///
 /// `ParseStrictResponse` impl for `ListAssessments`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1412,7 +1412,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAssessments {
 /// Operation shape for `ListControlDomainInsights`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_control_domain_insights`](crate::client::Client::list_control_domain_insights).
+/// [`list_control_domain_insights`](crate::client::fluent_builders::ListControlDomainInsights).
 ///
 /// `ParseStrictResponse` impl for `ListControlDomainInsights`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1447,7 +1447,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListControlDomainInsight
 /// Operation shape for `ListControlDomainInsightsByAssessment`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_control_domain_insights_by_assessment`](crate::client::Client::list_control_domain_insights_by_assessment).
+/// [`list_control_domain_insights_by_assessment`](crate::client::fluent_builders::ListControlDomainInsightsByAssessment).
 ///
 /// `ParseStrictResponse` impl for `ListControlDomainInsightsByAssessment`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1484,7 +1484,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListControlDomainInsight
 /// Operation shape for `ListControlInsightsByControlDomain`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_control_insights_by_control_domain`](crate::client::Client::list_control_insights_by_control_domain).
+/// [`list_control_insights_by_control_domain`](crate::client::fluent_builders::ListControlInsightsByControlDomain).
 ///
 /// `ParseStrictResponse` impl for `ListControlInsightsByControlDomain`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1519,7 +1519,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListControlInsightsByCon
 /// Operation shape for `ListControls`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_controls`](crate::client::Client::list_controls).
+/// [`list_controls`](crate::client::fluent_builders::ListControls).
 ///
 /// `ParseStrictResponse` impl for `ListControls`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1552,7 +1552,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListControls {
 /// Operation shape for `ListKeywordsForDataSource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_keywords_for_data_source`](crate::client::Client::list_keywords_for_data_source).
+/// [`list_keywords_for_data_source`](crate::client::fluent_builders::ListKeywordsForDataSource).
 ///
 /// `ParseStrictResponse` impl for `ListKeywordsForDataSource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1587,7 +1587,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListKeywordsForDataSourc
 /// Operation shape for `ListNotifications`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_notifications`](crate::client::Client::list_notifications).
+/// [`list_notifications`](crate::client::fluent_builders::ListNotifications).
 ///
 /// `ParseStrictResponse` impl for `ListNotifications`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1622,7 +1622,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListNotifications {
 /// Operation shape for `ListTagsForResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
+/// [`list_tags_for_resource`](crate::client::fluent_builders::ListTagsForResource).
 ///
 /// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1657,7 +1657,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// Operation shape for `RegisterAccount`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`register_account`](crate::client::Client::register_account).
+/// [`register_account`](crate::client::fluent_builders::RegisterAccount).
 ///
 /// `ParseStrictResponse` impl for `RegisterAccount`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1692,7 +1692,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RegisterAccount {
 /// Operation shape for `RegisterOrganizationAdminAccount`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`register_organization_admin_account`](crate::client::Client::register_organization_admin_account).
+/// [`register_organization_admin_account`](crate::client::fluent_builders::RegisterOrganizationAdminAccount).
 ///
 /// `ParseStrictResponse` impl for `RegisterOrganizationAdminAccount`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1727,7 +1727,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RegisterOrganizationAdmi
 /// Operation shape for `StartAssessmentFrameworkShare`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`start_assessment_framework_share`](crate::client::Client::start_assessment_framework_share).
+/// [`start_assessment_framework_share`](crate::client::fluent_builders::StartAssessmentFrameworkShare).
 ///
 /// `ParseStrictResponse` impl for `StartAssessmentFrameworkShare`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1762,7 +1762,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartAssessmentFramework
 /// Operation shape for `TagResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`tag_resource`](crate::client::Client::tag_resource).
+/// [`tag_resource`](crate::client::fluent_builders::TagResource).
 ///
 /// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1795,7 +1795,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// Operation shape for `UntagResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`untag_resource`](crate::client::Client::untag_resource).
+/// [`untag_resource`](crate::client::fluent_builders::UntagResource).
 ///
 /// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1828,7 +1828,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// Operation shape for `UpdateAssessment`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_assessment`](crate::client::Client::update_assessment).
+/// [`update_assessment`](crate::client::fluent_builders::UpdateAssessment).
 ///
 /// `ParseStrictResponse` impl for `UpdateAssessment`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1863,7 +1863,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateAssessment {
 /// Operation shape for `UpdateAssessmentControl`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_assessment_control`](crate::client::Client::update_assessment_control).
+/// [`update_assessment_control`](crate::client::fluent_builders::UpdateAssessmentControl).
 ///
 /// `ParseStrictResponse` impl for `UpdateAssessmentControl`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1898,7 +1898,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateAssessmentControl 
 /// Operation shape for `UpdateAssessmentControlSetStatus`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_assessment_control_set_status`](crate::client::Client::update_assessment_control_set_status).
+/// [`update_assessment_control_set_status`](crate::client::fluent_builders::UpdateAssessmentControlSetStatus).
 ///
 /// `ParseStrictResponse` impl for `UpdateAssessmentControlSetStatus`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1933,7 +1933,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateAssessmentControlS
 /// Operation shape for `UpdateAssessmentFramework`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_assessment_framework`](crate::client::Client::update_assessment_framework).
+/// [`update_assessment_framework`](crate::client::fluent_builders::UpdateAssessmentFramework).
 ///
 /// `ParseStrictResponse` impl for `UpdateAssessmentFramework`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1968,7 +1968,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateAssessmentFramewor
 /// Operation shape for `UpdateAssessmentFrameworkShare`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_assessment_framework_share`](crate::client::Client::update_assessment_framework_share).
+/// [`update_assessment_framework_share`](crate::client::fluent_builders::UpdateAssessmentFrameworkShare).
 ///
 /// `ParseStrictResponse` impl for `UpdateAssessmentFrameworkShare`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2003,7 +2003,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateAssessmentFramewor
 /// Operation shape for `UpdateAssessmentStatus`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_assessment_status`](crate::client::Client::update_assessment_status).
+/// [`update_assessment_status`](crate::client::fluent_builders::UpdateAssessmentStatus).
 ///
 /// `ParseStrictResponse` impl for `UpdateAssessmentStatus`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2038,7 +2038,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateAssessmentStatus {
 /// Operation shape for `UpdateControl`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_control`](crate::client::Client::update_control).
+/// [`update_control`](crate::client::fluent_builders::UpdateControl).
 ///
 /// `ParseStrictResponse` impl for `UpdateControl`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2071,7 +2071,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateControl {
 /// Operation shape for `UpdateSettings`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_settings`](crate::client::Client::update_settings).
+/// [`update_settings`](crate::client::fluent_builders::UpdateSettings).
 ///
 /// `ParseStrictResponse` impl for `UpdateSettings`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2104,7 +2104,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateSettings {
 /// Operation shape for `ValidateAssessmentReportIntegrity`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`validate_assessment_report_integrity`](crate::client::Client::validate_assessment_report_integrity).
+/// [`validate_assessment_report_integrity`](crate::client::fluent_builders::ValidateAssessmentReportIntegrity).
 ///
 /// `ParseStrictResponse` impl for `ValidateAssessmentReportIntegrity`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

@@ -2,7 +2,7 @@
 /// Operation shape for `CancelRotateSecret`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`cancel_rotate_secret`](crate::client::Client::cancel_rotate_secret).
+/// [`cancel_rotate_secret`](crate::client::fluent_builders::CancelRotateSecret).
 ///
 /// `ParseStrictResponse` impl for `CancelRotateSecret`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -37,7 +37,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CancelRotateSecret {
 /// Operation shape for `CreateSecret`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_secret`](crate::client::Client::create_secret).
+/// [`create_secret`](crate::client::fluent_builders::CreateSecret).
 ///
 /// `ParseStrictResponse` impl for `CreateSecret`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -70,7 +70,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateSecret {
 /// Operation shape for `DeleteResourcePolicy`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_resource_policy`](crate::client::Client::delete_resource_policy).
+/// [`delete_resource_policy`](crate::client::fluent_builders::DeleteResourcePolicy).
 ///
 /// `ParseStrictResponse` impl for `DeleteResourcePolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -105,7 +105,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteResourcePolicy {
 /// Operation shape for `DeleteSecret`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_secret`](crate::client::Client::delete_secret).
+/// [`delete_secret`](crate::client::fluent_builders::DeleteSecret).
 ///
 /// `ParseStrictResponse` impl for `DeleteSecret`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -138,7 +138,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteSecret {
 /// Operation shape for `DescribeSecret`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_secret`](crate::client::Client::describe_secret).
+/// [`describe_secret`](crate::client::fluent_builders::DescribeSecret).
 ///
 /// `ParseStrictResponse` impl for `DescribeSecret`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -171,7 +171,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeSecret {
 /// Operation shape for `GetRandomPassword`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_random_password`](crate::client::Client::get_random_password).
+/// [`get_random_password`](crate::client::fluent_builders::GetRandomPassword).
 ///
 /// `ParseStrictResponse` impl for `GetRandomPassword`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -206,7 +206,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetRandomPassword {
 /// Operation shape for `GetResourcePolicy`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_resource_policy`](crate::client::Client::get_resource_policy).
+/// [`get_resource_policy`](crate::client::fluent_builders::GetResourcePolicy).
 ///
 /// `ParseStrictResponse` impl for `GetResourcePolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -241,7 +241,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetResourcePolicy {
 /// Operation shape for `GetSecretValue`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_secret_value`](crate::client::Client::get_secret_value).
+/// [`get_secret_value`](crate::client::fluent_builders::GetSecretValue).
 ///
 /// `ParseStrictResponse` impl for `GetSecretValue`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -274,7 +274,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSecretValue {
 /// Operation shape for `ListSecrets`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_secrets`](crate::client::Client::list_secrets).
+/// [`list_secrets`](crate::client::fluent_builders::ListSecrets).
 ///
 /// `ParseStrictResponse` impl for `ListSecrets`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -307,7 +307,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListSecrets {
 /// Operation shape for `ListSecretVersionIds`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_secret_version_ids`](crate::client::Client::list_secret_version_ids).
+/// [`list_secret_version_ids`](crate::client::fluent_builders::ListSecretVersionIds).
 ///
 /// `ParseStrictResponse` impl for `ListSecretVersionIds`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -342,7 +342,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListSecretVersionIds {
 /// Operation shape for `PutResourcePolicy`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`put_resource_policy`](crate::client::Client::put_resource_policy).
+/// [`put_resource_policy`](crate::client::fluent_builders::PutResourcePolicy).
 ///
 /// `ParseStrictResponse` impl for `PutResourcePolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -377,7 +377,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutResourcePolicy {
 /// Operation shape for `PutSecretValue`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`put_secret_value`](crate::client::Client::put_secret_value).
+/// [`put_secret_value`](crate::client::fluent_builders::PutSecretValue).
 ///
 /// `ParseStrictResponse` impl for `PutSecretValue`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -410,7 +410,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutSecretValue {
 /// Operation shape for `RemoveRegionsFromReplication`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`remove_regions_from_replication`](crate::client::Client::remove_regions_from_replication).
+/// [`remove_regions_from_replication`](crate::client::fluent_builders::RemoveRegionsFromReplication).
 ///
 /// `ParseStrictResponse` impl for `RemoveRegionsFromReplication`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -445,7 +445,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RemoveRegionsFromReplica
 /// Operation shape for `ReplicateSecretToRegions`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`replicate_secret_to_regions`](crate::client::Client::replicate_secret_to_regions).
+/// [`replicate_secret_to_regions`](crate::client::fluent_builders::ReplicateSecretToRegions).
 ///
 /// `ParseStrictResponse` impl for `ReplicateSecretToRegions`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -480,7 +480,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ReplicateSecretToRegions
 /// Operation shape for `RestoreSecret`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`restore_secret`](crate::client::Client::restore_secret).
+/// [`restore_secret`](crate::client::fluent_builders::RestoreSecret).
 ///
 /// `ParseStrictResponse` impl for `RestoreSecret`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -513,7 +513,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RestoreSecret {
 /// Operation shape for `RotateSecret`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`rotate_secret`](crate::client::Client::rotate_secret).
+/// [`rotate_secret`](crate::client::fluent_builders::RotateSecret).
 ///
 /// `ParseStrictResponse` impl for `RotateSecret`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -546,7 +546,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RotateSecret {
 /// Operation shape for `StopReplicationToReplica`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`stop_replication_to_replica`](crate::client::Client::stop_replication_to_replica).
+/// [`stop_replication_to_replica`](crate::client::fluent_builders::StopReplicationToReplica).
 ///
 /// `ParseStrictResponse` impl for `StopReplicationToReplica`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -581,7 +581,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StopReplicationToReplica
 /// Operation shape for `TagResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`tag_resource`](crate::client::Client::tag_resource).
+/// [`tag_resource`](crate::client::fluent_builders::TagResource).
 ///
 /// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -614,7 +614,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// Operation shape for `UntagResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`untag_resource`](crate::client::Client::untag_resource).
+/// [`untag_resource`](crate::client::fluent_builders::UntagResource).
 ///
 /// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -647,7 +647,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// Operation shape for `UpdateSecret`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_secret`](crate::client::Client::update_secret).
+/// [`update_secret`](crate::client::fluent_builders::UpdateSecret).
 ///
 /// `ParseStrictResponse` impl for `UpdateSecret`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -680,7 +680,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateSecret {
 /// Operation shape for `UpdateSecretVersionStage`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_secret_version_stage`](crate::client::Client::update_secret_version_stage).
+/// [`update_secret_version_stage`](crate::client::fluent_builders::UpdateSecretVersionStage).
 ///
 /// `ParseStrictResponse` impl for `UpdateSecretVersionStage`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -715,7 +715,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateSecretVersionStage
 /// Operation shape for `ValidateResourcePolicy`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`validate_resource_policy`](crate::client::Client::validate_resource_policy).
+/// [`validate_resource_policy`](crate::client::fluent_builders::ValidateResourcePolicy).
 ///
 /// `ParseStrictResponse` impl for `ValidateResourcePolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

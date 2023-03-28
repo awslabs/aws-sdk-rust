@@ -2,7 +2,7 @@
 /// Operation shape for `GetRoleCredentials`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_role_credentials`](crate::client::Client::get_role_credentials).
+/// [`get_role_credentials`](crate::client::fluent_builders::GetRoleCredentials).
 ///
 /// `ParseStrictResponse` impl for `GetRoleCredentials`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -37,7 +37,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetRoleCredentials {
 /// Operation shape for `ListAccountRoles`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_account_roles`](crate::client::Client::list_account_roles).
+/// [`list_account_roles`](crate::client::fluent_builders::ListAccountRoles).
 ///
 /// `ParseStrictResponse` impl for `ListAccountRoles`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -72,7 +72,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAccountRoles {
 /// Operation shape for `ListAccounts`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_accounts`](crate::client::Client::list_accounts).
+/// [`list_accounts`](crate::client::fluent_builders::ListAccounts).
 ///
 /// `ParseStrictResponse` impl for `ListAccounts`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -105,7 +105,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAccounts {
 /// Operation shape for `Logout`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`logout`](crate::client::Client::logout).
+/// [`logout`](crate::client::fluent_builders::Logout).
 ///
 /// `ParseStrictResponse` impl for `Logout`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

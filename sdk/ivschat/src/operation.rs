@@ -2,7 +2,7 @@
 /// Operation shape for `CreateChatToken`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_chat_token`](crate::client::Client::create_chat_token).
+/// [`create_chat_token`](crate::client::fluent_builders::CreateChatToken).
 ///
 /// `ParseStrictResponse` impl for `CreateChatToken`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -37,7 +37,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateChatToken {
 /// Operation shape for `CreateLoggingConfiguration`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_logging_configuration`](crate::client::Client::create_logging_configuration).
+/// [`create_logging_configuration`](crate::client::fluent_builders::CreateLoggingConfiguration).
 ///
 /// `ParseStrictResponse` impl for `CreateLoggingConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -72,7 +72,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateLoggingConfigurati
 /// Operation shape for `CreateRoom`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_room`](crate::client::Client::create_room).
+/// [`create_room`](crate::client::fluent_builders::CreateRoom).
 ///
 /// `ParseStrictResponse` impl for `CreateRoom`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -105,7 +105,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateRoom {
 /// Operation shape for `DeleteLoggingConfiguration`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_logging_configuration`](crate::client::Client::delete_logging_configuration).
+/// [`delete_logging_configuration`](crate::client::fluent_builders::DeleteLoggingConfiguration).
 ///
 /// `ParseStrictResponse` impl for `DeleteLoggingConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -140,7 +140,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteLoggingConfigurati
 /// Operation shape for `DeleteMessage`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_message`](crate::client::Client::delete_message).
+/// [`delete_message`](crate::client::fluent_builders::DeleteMessage).
 ///
 /// `ParseStrictResponse` impl for `DeleteMessage`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -173,7 +173,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteMessage {
 /// Operation shape for `DeleteRoom`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_room`](crate::client::Client::delete_room).
+/// [`delete_room`](crate::client::fluent_builders::DeleteRoom).
 ///
 /// `ParseStrictResponse` impl for `DeleteRoom`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -206,7 +206,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteRoom {
 /// Operation shape for `DisconnectUser`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`disconnect_user`](crate::client::Client::disconnect_user).
+/// [`disconnect_user`](crate::client::fluent_builders::DisconnectUser).
 ///
 /// `ParseStrictResponse` impl for `DisconnectUser`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -239,7 +239,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisconnectUser {
 /// Operation shape for `GetLoggingConfiguration`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_logging_configuration`](crate::client::Client::get_logging_configuration).
+/// [`get_logging_configuration`](crate::client::fluent_builders::GetLoggingConfiguration).
 ///
 /// `ParseStrictResponse` impl for `GetLoggingConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -274,7 +274,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetLoggingConfiguration 
 /// Operation shape for `GetRoom`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_room`](crate::client::Client::get_room).
+/// [`get_room`](crate::client::fluent_builders::GetRoom).
 ///
 /// `ParseStrictResponse` impl for `GetRoom`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -306,7 +306,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetRoom {
 /// Operation shape for `ListLoggingConfigurations`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_logging_configurations`](crate::client::Client::list_logging_configurations).
+/// [`list_logging_configurations`](crate::client::fluent_builders::ListLoggingConfigurations).
 ///
 /// `ParseStrictResponse` impl for `ListLoggingConfigurations`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -341,7 +341,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListLoggingConfiguration
 /// Operation shape for `ListRooms`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_rooms`](crate::client::Client::list_rooms).
+/// [`list_rooms`](crate::client::fluent_builders::ListRooms).
 ///
 /// `ParseStrictResponse` impl for `ListRooms`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -373,7 +373,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListRooms {
 /// Operation shape for `ListTagsForResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
+/// [`list_tags_for_resource`](crate::client::fluent_builders::ListTagsForResource).
 ///
 /// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -408,7 +408,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// Operation shape for `SendEvent`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`send_event`](crate::client::Client::send_event).
+/// [`send_event`](crate::client::fluent_builders::SendEvent).
 ///
 /// `ParseStrictResponse` impl for `SendEvent`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -440,7 +440,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SendEvent {
 /// Operation shape for `TagResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`tag_resource`](crate::client::Client::tag_resource).
+/// [`tag_resource`](crate::client::fluent_builders::TagResource).
 ///
 /// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -473,7 +473,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// Operation shape for `UntagResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`untag_resource`](crate::client::Client::untag_resource).
+/// [`untag_resource`](crate::client::fluent_builders::UntagResource).
 ///
 /// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -506,7 +506,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// Operation shape for `UpdateLoggingConfiguration`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_logging_configuration`](crate::client::Client::update_logging_configuration).
+/// [`update_logging_configuration`](crate::client::fluent_builders::UpdateLoggingConfiguration).
 ///
 /// `ParseStrictResponse` impl for `UpdateLoggingConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -541,7 +541,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateLoggingConfigurati
 /// Operation shape for `UpdateRoom`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_room`](crate::client::Client::update_room).
+/// [`update_room`](crate::client::fluent_builders::UpdateRoom).
 ///
 /// `ParseStrictResponse` impl for `UpdateRoom`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

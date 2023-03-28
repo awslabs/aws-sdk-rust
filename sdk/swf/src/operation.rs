@@ -2,7 +2,7 @@
 /// Operation shape for `CountClosedWorkflowExecutions`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`count_closed_workflow_executions`](crate::client::Client::count_closed_workflow_executions).
+/// [`count_closed_workflow_executions`](crate::client::fluent_builders::CountClosedWorkflowExecutions).
 ///
 /// `ParseStrictResponse` impl for `CountClosedWorkflowExecutions`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -37,7 +37,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CountClosedWorkflowExecu
 /// Operation shape for `CountOpenWorkflowExecutions`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`count_open_workflow_executions`](crate::client::Client::count_open_workflow_executions).
+/// [`count_open_workflow_executions`](crate::client::fluent_builders::CountOpenWorkflowExecutions).
 ///
 /// `ParseStrictResponse` impl for `CountOpenWorkflowExecutions`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -72,7 +72,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CountOpenWorkflowExecuti
 /// Operation shape for `CountPendingActivityTasks`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`count_pending_activity_tasks`](crate::client::Client::count_pending_activity_tasks).
+/// [`count_pending_activity_tasks`](crate::client::fluent_builders::CountPendingActivityTasks).
 ///
 /// `ParseStrictResponse` impl for `CountPendingActivityTasks`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -107,7 +107,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CountPendingActivityTask
 /// Operation shape for `CountPendingDecisionTasks`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`count_pending_decision_tasks`](crate::client::Client::count_pending_decision_tasks).
+/// [`count_pending_decision_tasks`](crate::client::fluent_builders::CountPendingDecisionTasks).
 ///
 /// `ParseStrictResponse` impl for `CountPendingDecisionTasks`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -142,7 +142,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CountPendingDecisionTask
 /// Operation shape for `DeprecateActivityType`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`deprecate_activity_type`](crate::client::Client::deprecate_activity_type).
+/// [`deprecate_activity_type`](crate::client::fluent_builders::DeprecateActivityType).
 ///
 /// `ParseStrictResponse` impl for `DeprecateActivityType`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -177,7 +177,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeprecateActivityType {
 /// Operation shape for `DeprecateDomain`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`deprecate_domain`](crate::client::Client::deprecate_domain).
+/// [`deprecate_domain`](crate::client::fluent_builders::DeprecateDomain).
 ///
 /// `ParseStrictResponse` impl for `DeprecateDomain`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -212,7 +212,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeprecateDomain {
 /// Operation shape for `DeprecateWorkflowType`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`deprecate_workflow_type`](crate::client::Client::deprecate_workflow_type).
+/// [`deprecate_workflow_type`](crate::client::fluent_builders::DeprecateWorkflowType).
 ///
 /// `ParseStrictResponse` impl for `DeprecateWorkflowType`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -247,7 +247,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeprecateWorkflowType {
 /// Operation shape for `DescribeActivityType`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_activity_type`](crate::client::Client::describe_activity_type).
+/// [`describe_activity_type`](crate::client::fluent_builders::DescribeActivityType).
 ///
 /// `ParseStrictResponse` impl for `DescribeActivityType`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -282,7 +282,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeActivityType {
 /// Operation shape for `DescribeDomain`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_domain`](crate::client::Client::describe_domain).
+/// [`describe_domain`](crate::client::fluent_builders::DescribeDomain).
 ///
 /// `ParseStrictResponse` impl for `DescribeDomain`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -315,7 +315,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeDomain {
 /// Operation shape for `DescribeWorkflowExecution`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_workflow_execution`](crate::client::Client::describe_workflow_execution).
+/// [`describe_workflow_execution`](crate::client::fluent_builders::DescribeWorkflowExecution).
 ///
 /// `ParseStrictResponse` impl for `DescribeWorkflowExecution`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -350,7 +350,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeWorkflowExecutio
 /// Operation shape for `DescribeWorkflowType`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_workflow_type`](crate::client::Client::describe_workflow_type).
+/// [`describe_workflow_type`](crate::client::fluent_builders::DescribeWorkflowType).
 ///
 /// `ParseStrictResponse` impl for `DescribeWorkflowType`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -385,7 +385,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeWorkflowType {
 /// Operation shape for `GetWorkflowExecutionHistory`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_workflow_execution_history`](crate::client::Client::get_workflow_execution_history).
+/// [`get_workflow_execution_history`](crate::client::fluent_builders::GetWorkflowExecutionHistory).
 ///
 /// `ParseStrictResponse` impl for `GetWorkflowExecutionHistory`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -420,7 +420,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetWorkflowExecutionHist
 /// Operation shape for `ListActivityTypes`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_activity_types`](crate::client::Client::list_activity_types).
+/// [`list_activity_types`](crate::client::fluent_builders::ListActivityTypes).
 ///
 /// `ParseStrictResponse` impl for `ListActivityTypes`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -455,7 +455,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListActivityTypes {
 /// Operation shape for `ListClosedWorkflowExecutions`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_closed_workflow_executions`](crate::client::Client::list_closed_workflow_executions).
+/// [`list_closed_workflow_executions`](crate::client::fluent_builders::ListClosedWorkflowExecutions).
 ///
 /// `ParseStrictResponse` impl for `ListClosedWorkflowExecutions`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -490,7 +490,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListClosedWorkflowExecut
 /// Operation shape for `ListDomains`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_domains`](crate::client::Client::list_domains).
+/// [`list_domains`](crate::client::fluent_builders::ListDomains).
 ///
 /// `ParseStrictResponse` impl for `ListDomains`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -523,7 +523,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListDomains {
 /// Operation shape for `ListOpenWorkflowExecutions`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_open_workflow_executions`](crate::client::Client::list_open_workflow_executions).
+/// [`list_open_workflow_executions`](crate::client::fluent_builders::ListOpenWorkflowExecutions).
 ///
 /// `ParseStrictResponse` impl for `ListOpenWorkflowExecutions`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -558,7 +558,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListOpenWorkflowExecutio
 /// Operation shape for `ListTagsForResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
+/// [`list_tags_for_resource`](crate::client::fluent_builders::ListTagsForResource).
 ///
 /// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -593,7 +593,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// Operation shape for `ListWorkflowTypes`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_workflow_types`](crate::client::Client::list_workflow_types).
+/// [`list_workflow_types`](crate::client::fluent_builders::ListWorkflowTypes).
 ///
 /// `ParseStrictResponse` impl for `ListWorkflowTypes`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -628,7 +628,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListWorkflowTypes {
 /// Operation shape for `PollForActivityTask`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`poll_for_activity_task`](crate::client::Client::poll_for_activity_task).
+/// [`poll_for_activity_task`](crate::client::fluent_builders::PollForActivityTask).
 ///
 /// `ParseStrictResponse` impl for `PollForActivityTask`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -663,7 +663,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PollForActivityTask {
 /// Operation shape for `PollForDecisionTask`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`poll_for_decision_task`](crate::client::Client::poll_for_decision_task).
+/// [`poll_for_decision_task`](crate::client::fluent_builders::PollForDecisionTask).
 ///
 /// `ParseStrictResponse` impl for `PollForDecisionTask`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -698,7 +698,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PollForDecisionTask {
 /// Operation shape for `RecordActivityTaskHeartbeat`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`record_activity_task_heartbeat`](crate::client::Client::record_activity_task_heartbeat).
+/// [`record_activity_task_heartbeat`](crate::client::fluent_builders::RecordActivityTaskHeartbeat).
 ///
 /// `ParseStrictResponse` impl for `RecordActivityTaskHeartbeat`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -733,7 +733,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RecordActivityTaskHeartb
 /// Operation shape for `RegisterActivityType`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`register_activity_type`](crate::client::Client::register_activity_type).
+/// [`register_activity_type`](crate::client::fluent_builders::RegisterActivityType).
 ///
 /// `ParseStrictResponse` impl for `RegisterActivityType`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -768,7 +768,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RegisterActivityType {
 /// Operation shape for `RegisterDomain`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`register_domain`](crate::client::Client::register_domain).
+/// [`register_domain`](crate::client::fluent_builders::RegisterDomain).
 ///
 /// `ParseStrictResponse` impl for `RegisterDomain`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -801,7 +801,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RegisterDomain {
 /// Operation shape for `RegisterWorkflowType`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`register_workflow_type`](crate::client::Client::register_workflow_type).
+/// [`register_workflow_type`](crate::client::fluent_builders::RegisterWorkflowType).
 ///
 /// `ParseStrictResponse` impl for `RegisterWorkflowType`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -836,7 +836,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RegisterWorkflowType {
 /// Operation shape for `RequestCancelWorkflowExecution`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`request_cancel_workflow_execution`](crate::client::Client::request_cancel_workflow_execution).
+/// [`request_cancel_workflow_execution`](crate::client::fluent_builders::RequestCancelWorkflowExecution).
 ///
 /// `ParseStrictResponse` impl for `RequestCancelWorkflowExecution`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -871,7 +871,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RequestCancelWorkflowExe
 /// Operation shape for `RespondActivityTaskCanceled`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`respond_activity_task_canceled`](crate::client::Client::respond_activity_task_canceled).
+/// [`respond_activity_task_canceled`](crate::client::fluent_builders::RespondActivityTaskCanceled).
 ///
 /// `ParseStrictResponse` impl for `RespondActivityTaskCanceled`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -906,7 +906,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RespondActivityTaskCance
 /// Operation shape for `RespondActivityTaskCompleted`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`respond_activity_task_completed`](crate::client::Client::respond_activity_task_completed).
+/// [`respond_activity_task_completed`](crate::client::fluent_builders::RespondActivityTaskCompleted).
 ///
 /// `ParseStrictResponse` impl for `RespondActivityTaskCompleted`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -941,7 +941,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RespondActivityTaskCompl
 /// Operation shape for `RespondActivityTaskFailed`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`respond_activity_task_failed`](crate::client::Client::respond_activity_task_failed).
+/// [`respond_activity_task_failed`](crate::client::fluent_builders::RespondActivityTaskFailed).
 ///
 /// `ParseStrictResponse` impl for `RespondActivityTaskFailed`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -976,7 +976,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RespondActivityTaskFaile
 /// Operation shape for `RespondDecisionTaskCompleted`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`respond_decision_task_completed`](crate::client::Client::respond_decision_task_completed).
+/// [`respond_decision_task_completed`](crate::client::fluent_builders::RespondDecisionTaskCompleted).
 ///
 /// `ParseStrictResponse` impl for `RespondDecisionTaskCompleted`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1011,7 +1011,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RespondDecisionTaskCompl
 /// Operation shape for `SignalWorkflowExecution`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`signal_workflow_execution`](crate::client::Client::signal_workflow_execution).
+/// [`signal_workflow_execution`](crate::client::fluent_builders::SignalWorkflowExecution).
 ///
 /// `ParseStrictResponse` impl for `SignalWorkflowExecution`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1046,7 +1046,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SignalWorkflowExecution 
 /// Operation shape for `StartWorkflowExecution`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`start_workflow_execution`](crate::client::Client::start_workflow_execution).
+/// [`start_workflow_execution`](crate::client::fluent_builders::StartWorkflowExecution).
 ///
 /// `ParseStrictResponse` impl for `StartWorkflowExecution`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1081,7 +1081,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartWorkflowExecution {
 /// Operation shape for `TagResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`tag_resource`](crate::client::Client::tag_resource).
+/// [`tag_resource`](crate::client::fluent_builders::TagResource).
 ///
 /// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1114,7 +1114,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// Operation shape for `TerminateWorkflowExecution`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`terminate_workflow_execution`](crate::client::Client::terminate_workflow_execution).
+/// [`terminate_workflow_execution`](crate::client::fluent_builders::TerminateWorkflowExecution).
 ///
 /// `ParseStrictResponse` impl for `TerminateWorkflowExecution`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1149,7 +1149,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TerminateWorkflowExecuti
 /// Operation shape for `UndeprecateActivityType`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`undeprecate_activity_type`](crate::client::Client::undeprecate_activity_type).
+/// [`undeprecate_activity_type`](crate::client::fluent_builders::UndeprecateActivityType).
 ///
 /// `ParseStrictResponse` impl for `UndeprecateActivityType`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1184,7 +1184,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UndeprecateActivityType 
 /// Operation shape for `UndeprecateDomain`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`undeprecate_domain`](crate::client::Client::undeprecate_domain).
+/// [`undeprecate_domain`](crate::client::fluent_builders::UndeprecateDomain).
 ///
 /// `ParseStrictResponse` impl for `UndeprecateDomain`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1219,7 +1219,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UndeprecateDomain {
 /// Operation shape for `UndeprecateWorkflowType`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`undeprecate_workflow_type`](crate::client::Client::undeprecate_workflow_type).
+/// [`undeprecate_workflow_type`](crate::client::fluent_builders::UndeprecateWorkflowType).
 ///
 /// `ParseStrictResponse` impl for `UndeprecateWorkflowType`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1254,7 +1254,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UndeprecateWorkflowType 
 /// Operation shape for `UntagResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`untag_resource`](crate::client::Client::untag_resource).
+/// [`untag_resource`](crate::client::fluent_builders::UntagResource).
 ///
 /// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

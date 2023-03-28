@@ -2,7 +2,7 @@
 /// Operation shape for `AddSourceIdentifierToSubscription`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`add_source_identifier_to_subscription`](crate::client::Client::add_source_identifier_to_subscription).
+/// [`add_source_identifier_to_subscription`](crate::client::fluent_builders::AddSourceIdentifierToSubscription).
 ///
 /// `ParseStrictResponse` impl for `AddSourceIdentifierToSubscription`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -37,7 +37,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AddSourceIdentifierToSub
 /// Operation shape for `AddTagsToResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`add_tags_to_resource`](crate::client::Client::add_tags_to_resource).
+/// [`add_tags_to_resource`](crate::client::fluent_builders::AddTagsToResource).
 ///
 /// `ParseStrictResponse` impl for `AddTagsToResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -72,7 +72,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AddTagsToResource {
 /// Operation shape for `ApplyPendingMaintenanceAction`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`apply_pending_maintenance_action`](crate::client::Client::apply_pending_maintenance_action).
+/// [`apply_pending_maintenance_action`](crate::client::fluent_builders::ApplyPendingMaintenanceAction).
 ///
 /// `ParseStrictResponse` impl for `ApplyPendingMaintenanceAction`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -107,7 +107,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ApplyPendingMaintenanceA
 /// Operation shape for `CopyDBClusterParameterGroup`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`copy_db_cluster_parameter_group`](crate::client::Client::copy_db_cluster_parameter_group).
+/// [`copy_db_cluster_parameter_group`](crate::client::fluent_builders::CopyDBClusterParameterGroup).
 ///
 /// `ParseStrictResponse` impl for `CopyDBClusterParameterGroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -142,7 +142,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CopyDBClusterParameterGr
 /// Operation shape for `CopyDBClusterSnapshot`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`copy_db_cluster_snapshot`](crate::client::Client::copy_db_cluster_snapshot).
+/// [`copy_db_cluster_snapshot`](crate::client::fluent_builders::CopyDBClusterSnapshot).
 ///
 /// `ParseStrictResponse` impl for `CopyDBClusterSnapshot`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -177,7 +177,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CopyDBClusterSnapshot {
 /// Operation shape for `CreateDBCluster`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_db_cluster`](crate::client::Client::create_db_cluster).
+/// [`create_db_cluster`](crate::client::fluent_builders::CreateDBCluster).
 ///
 /// `ParseStrictResponse` impl for `CreateDBCluster`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -212,7 +212,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateDBCluster {
 /// Operation shape for `CreateDBClusterParameterGroup`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_db_cluster_parameter_group`](crate::client::Client::create_db_cluster_parameter_group).
+/// [`create_db_cluster_parameter_group`](crate::client::fluent_builders::CreateDBClusterParameterGroup).
 ///
 /// `ParseStrictResponse` impl for `CreateDBClusterParameterGroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -247,7 +247,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateDBClusterParameter
 /// Operation shape for `CreateDBClusterSnapshot`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_db_cluster_snapshot`](crate::client::Client::create_db_cluster_snapshot).
+/// [`create_db_cluster_snapshot`](crate::client::fluent_builders::CreateDBClusterSnapshot).
 ///
 /// `ParseStrictResponse` impl for `CreateDBClusterSnapshot`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -282,7 +282,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateDBClusterSnapshot 
 /// Operation shape for `CreateDBInstance`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_db_instance`](crate::client::Client::create_db_instance).
+/// [`create_db_instance`](crate::client::fluent_builders::CreateDBInstance).
 ///
 /// `ParseStrictResponse` impl for `CreateDBInstance`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -317,7 +317,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateDBInstance {
 /// Operation shape for `CreateDBSubnetGroup`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_db_subnet_group`](crate::client::Client::create_db_subnet_group).
+/// [`create_db_subnet_group`](crate::client::fluent_builders::CreateDBSubnetGroup).
 ///
 /// `ParseStrictResponse` impl for `CreateDBSubnetGroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -352,7 +352,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateDBSubnetGroup {
 /// Operation shape for `CreateEventSubscription`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_event_subscription`](crate::client::Client::create_event_subscription).
+/// [`create_event_subscription`](crate::client::fluent_builders::CreateEventSubscription).
 ///
 /// `ParseStrictResponse` impl for `CreateEventSubscription`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -387,7 +387,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateEventSubscription 
 /// Operation shape for `CreateGlobalCluster`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_global_cluster`](crate::client::Client::create_global_cluster).
+/// [`create_global_cluster`](crate::client::fluent_builders::CreateGlobalCluster).
 ///
 /// `ParseStrictResponse` impl for `CreateGlobalCluster`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -422,7 +422,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateGlobalCluster {
 /// Operation shape for `DeleteDBCluster`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_db_cluster`](crate::client::Client::delete_db_cluster).
+/// [`delete_db_cluster`](crate::client::fluent_builders::DeleteDBCluster).
 ///
 /// `ParseStrictResponse` impl for `DeleteDBCluster`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -457,7 +457,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteDBCluster {
 /// Operation shape for `DeleteDBClusterParameterGroup`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_db_cluster_parameter_group`](crate::client::Client::delete_db_cluster_parameter_group).
+/// [`delete_db_cluster_parameter_group`](crate::client::fluent_builders::DeleteDBClusterParameterGroup).
 ///
 /// `ParseStrictResponse` impl for `DeleteDBClusterParameterGroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -492,7 +492,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteDBClusterParameter
 /// Operation shape for `DeleteDBClusterSnapshot`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_db_cluster_snapshot`](crate::client::Client::delete_db_cluster_snapshot).
+/// [`delete_db_cluster_snapshot`](crate::client::fluent_builders::DeleteDBClusterSnapshot).
 ///
 /// `ParseStrictResponse` impl for `DeleteDBClusterSnapshot`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -527,7 +527,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteDBClusterSnapshot 
 /// Operation shape for `DeleteDBInstance`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_db_instance`](crate::client::Client::delete_db_instance).
+/// [`delete_db_instance`](crate::client::fluent_builders::DeleteDBInstance).
 ///
 /// `ParseStrictResponse` impl for `DeleteDBInstance`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -562,7 +562,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteDBInstance {
 /// Operation shape for `DeleteDBSubnetGroup`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_db_subnet_group`](crate::client::Client::delete_db_subnet_group).
+/// [`delete_db_subnet_group`](crate::client::fluent_builders::DeleteDBSubnetGroup).
 ///
 /// `ParseStrictResponse` impl for `DeleteDBSubnetGroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -597,7 +597,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteDBSubnetGroup {
 /// Operation shape for `DeleteEventSubscription`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_event_subscription`](crate::client::Client::delete_event_subscription).
+/// [`delete_event_subscription`](crate::client::fluent_builders::DeleteEventSubscription).
 ///
 /// `ParseStrictResponse` impl for `DeleteEventSubscription`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -632,7 +632,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteEventSubscription 
 /// Operation shape for `DeleteGlobalCluster`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_global_cluster`](crate::client::Client::delete_global_cluster).
+/// [`delete_global_cluster`](crate::client::fluent_builders::DeleteGlobalCluster).
 ///
 /// `ParseStrictResponse` impl for `DeleteGlobalCluster`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -667,7 +667,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteGlobalCluster {
 /// Operation shape for `DescribeCertificates`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_certificates`](crate::client::Client::describe_certificates).
+/// [`describe_certificates`](crate::client::fluent_builders::DescribeCertificates).
 ///
 /// `ParseStrictResponse` impl for `DescribeCertificates`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -702,7 +702,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeCertificates {
 /// Operation shape for `DescribeDBClusterParameterGroups`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_db_cluster_parameter_groups`](crate::client::Client::describe_db_cluster_parameter_groups).
+/// [`describe_db_cluster_parameter_groups`](crate::client::fluent_builders::DescribeDBClusterParameterGroups).
 ///
 /// `ParseStrictResponse` impl for `DescribeDBClusterParameterGroups`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -737,7 +737,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeDBClusterParamet
 /// Operation shape for `DescribeDBClusterParameters`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_db_cluster_parameters`](crate::client::Client::describe_db_cluster_parameters).
+/// [`describe_db_cluster_parameters`](crate::client::fluent_builders::DescribeDBClusterParameters).
 ///
 /// `ParseStrictResponse` impl for `DescribeDBClusterParameters`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -772,7 +772,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeDBClusterParamet
 /// Operation shape for `DescribeDBClusters`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_db_clusters`](crate::client::Client::describe_db_clusters).
+/// [`describe_db_clusters`](crate::client::fluent_builders::DescribeDBClusters).
 ///
 /// `ParseStrictResponse` impl for `DescribeDBClusters`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -807,7 +807,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeDBClusters {
 /// Operation shape for `DescribeDBClusterSnapshotAttributes`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_db_cluster_snapshot_attributes`](crate::client::Client::describe_db_cluster_snapshot_attributes).
+/// [`describe_db_cluster_snapshot_attributes`](crate::client::fluent_builders::DescribeDBClusterSnapshotAttributes).
 ///
 /// `ParseStrictResponse` impl for `DescribeDBClusterSnapshotAttributes`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -842,7 +842,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeDBClusterSnapsho
 /// Operation shape for `DescribeDBClusterSnapshots`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_db_cluster_snapshots`](crate::client::Client::describe_db_cluster_snapshots).
+/// [`describe_db_cluster_snapshots`](crate::client::fluent_builders::DescribeDBClusterSnapshots).
 ///
 /// `ParseStrictResponse` impl for `DescribeDBClusterSnapshots`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -877,7 +877,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeDBClusterSnapsho
 /// Operation shape for `DescribeDBEngineVersions`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_db_engine_versions`](crate::client::Client::describe_db_engine_versions).
+/// [`describe_db_engine_versions`](crate::client::fluent_builders::DescribeDBEngineVersions).
 ///
 /// `ParseStrictResponse` impl for `DescribeDBEngineVersions`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -912,7 +912,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeDBEngineVersions
 /// Operation shape for `DescribeDBInstances`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_db_instances`](crate::client::Client::describe_db_instances).
+/// [`describe_db_instances`](crate::client::fluent_builders::DescribeDBInstances).
 ///
 /// `ParseStrictResponse` impl for `DescribeDBInstances`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -947,7 +947,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeDBInstances {
 /// Operation shape for `DescribeDBSubnetGroups`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_db_subnet_groups`](crate::client::Client::describe_db_subnet_groups).
+/// [`describe_db_subnet_groups`](crate::client::fluent_builders::DescribeDBSubnetGroups).
 ///
 /// `ParseStrictResponse` impl for `DescribeDBSubnetGroups`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -982,7 +982,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeDBSubnetGroups {
 /// Operation shape for `DescribeEngineDefaultClusterParameters`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_engine_default_cluster_parameters`](crate::client::Client::describe_engine_default_cluster_parameters).
+/// [`describe_engine_default_cluster_parameters`](crate::client::fluent_builders::DescribeEngineDefaultClusterParameters).
 ///
 /// `ParseStrictResponse` impl for `DescribeEngineDefaultClusterParameters`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1019,7 +1019,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeEngineDefaultClu
 /// Operation shape for `DescribeEventCategories`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_event_categories`](crate::client::Client::describe_event_categories).
+/// [`describe_event_categories`](crate::client::fluent_builders::DescribeEventCategories).
 ///
 /// `ParseStrictResponse` impl for `DescribeEventCategories`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1054,7 +1054,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeEventCategories 
 /// Operation shape for `DescribeEvents`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_events`](crate::client::Client::describe_events).
+/// [`describe_events`](crate::client::fluent_builders::DescribeEvents).
 ///
 /// `ParseStrictResponse` impl for `DescribeEvents`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1087,7 +1087,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeEvents {
 /// Operation shape for `DescribeEventSubscriptions`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_event_subscriptions`](crate::client::Client::describe_event_subscriptions).
+/// [`describe_event_subscriptions`](crate::client::fluent_builders::DescribeEventSubscriptions).
 ///
 /// `ParseStrictResponse` impl for `DescribeEventSubscriptions`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1122,7 +1122,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeEventSubscriptio
 /// Operation shape for `DescribeGlobalClusters`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_global_clusters`](crate::client::Client::describe_global_clusters).
+/// [`describe_global_clusters`](crate::client::fluent_builders::DescribeGlobalClusters).
 ///
 /// `ParseStrictResponse` impl for `DescribeGlobalClusters`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1157,7 +1157,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeGlobalClusters {
 /// Operation shape for `DescribeOrderableDBInstanceOptions`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_orderable_db_instance_options`](crate::client::Client::describe_orderable_db_instance_options).
+/// [`describe_orderable_db_instance_options`](crate::client::fluent_builders::DescribeOrderableDBInstanceOptions).
 ///
 /// `ParseStrictResponse` impl for `DescribeOrderableDBInstanceOptions`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1192,7 +1192,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeOrderableDBInsta
 /// Operation shape for `DescribePendingMaintenanceActions`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_pending_maintenance_actions`](crate::client::Client::describe_pending_maintenance_actions).
+/// [`describe_pending_maintenance_actions`](crate::client::fluent_builders::DescribePendingMaintenanceActions).
 ///
 /// `ParseStrictResponse` impl for `DescribePendingMaintenanceActions`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1227,7 +1227,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribePendingMaintenan
 /// Operation shape for `FailoverDBCluster`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`failover_db_cluster`](crate::client::Client::failover_db_cluster).
+/// [`failover_db_cluster`](crate::client::fluent_builders::FailoverDBCluster).
 ///
 /// `ParseStrictResponse` impl for `FailoverDBCluster`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1262,7 +1262,7 @@ impl aws_smithy_http::response::ParseStrictResponse for FailoverDBCluster {
 /// Operation shape for `ListTagsForResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
+/// [`list_tags_for_resource`](crate::client::fluent_builders::ListTagsForResource).
 ///
 /// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1297,7 +1297,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// Operation shape for `ModifyDBCluster`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`modify_db_cluster`](crate::client::Client::modify_db_cluster).
+/// [`modify_db_cluster`](crate::client::fluent_builders::ModifyDBCluster).
 ///
 /// `ParseStrictResponse` impl for `ModifyDBCluster`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1332,7 +1332,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyDBCluster {
 /// Operation shape for `ModifyDBClusterParameterGroup`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`modify_db_cluster_parameter_group`](crate::client::Client::modify_db_cluster_parameter_group).
+/// [`modify_db_cluster_parameter_group`](crate::client::fluent_builders::ModifyDBClusterParameterGroup).
 ///
 /// `ParseStrictResponse` impl for `ModifyDBClusterParameterGroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1367,7 +1367,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyDBClusterParameter
 /// Operation shape for `ModifyDBClusterSnapshotAttribute`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`modify_db_cluster_snapshot_attribute`](crate::client::Client::modify_db_cluster_snapshot_attribute).
+/// [`modify_db_cluster_snapshot_attribute`](crate::client::fluent_builders::ModifyDBClusterSnapshotAttribute).
 ///
 /// `ParseStrictResponse` impl for `ModifyDBClusterSnapshotAttribute`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1402,7 +1402,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyDBClusterSnapshotA
 /// Operation shape for `ModifyDBInstance`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`modify_db_instance`](crate::client::Client::modify_db_instance).
+/// [`modify_db_instance`](crate::client::fluent_builders::ModifyDBInstance).
 ///
 /// `ParseStrictResponse` impl for `ModifyDBInstance`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1437,7 +1437,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyDBInstance {
 /// Operation shape for `ModifyDBSubnetGroup`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`modify_db_subnet_group`](crate::client::Client::modify_db_subnet_group).
+/// [`modify_db_subnet_group`](crate::client::fluent_builders::ModifyDBSubnetGroup).
 ///
 /// `ParseStrictResponse` impl for `ModifyDBSubnetGroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1472,7 +1472,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyDBSubnetGroup {
 /// Operation shape for `ModifyEventSubscription`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`modify_event_subscription`](crate::client::Client::modify_event_subscription).
+/// [`modify_event_subscription`](crate::client::fluent_builders::ModifyEventSubscription).
 ///
 /// `ParseStrictResponse` impl for `ModifyEventSubscription`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1507,7 +1507,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyEventSubscription 
 /// Operation shape for `ModifyGlobalCluster`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`modify_global_cluster`](crate::client::Client::modify_global_cluster).
+/// [`modify_global_cluster`](crate::client::fluent_builders::ModifyGlobalCluster).
 ///
 /// `ParseStrictResponse` impl for `ModifyGlobalCluster`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1542,7 +1542,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyGlobalCluster {
 /// Operation shape for `RebootDBInstance`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`reboot_db_instance`](crate::client::Client::reboot_db_instance).
+/// [`reboot_db_instance`](crate::client::fluent_builders::RebootDBInstance).
 ///
 /// `ParseStrictResponse` impl for `RebootDBInstance`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1577,7 +1577,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RebootDBInstance {
 /// Operation shape for `RemoveFromGlobalCluster`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`remove_from_global_cluster`](crate::client::Client::remove_from_global_cluster).
+/// [`remove_from_global_cluster`](crate::client::fluent_builders::RemoveFromGlobalCluster).
 ///
 /// `ParseStrictResponse` impl for `RemoveFromGlobalCluster`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1612,7 +1612,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RemoveFromGlobalCluster 
 /// Operation shape for `RemoveSourceIdentifierFromSubscription`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`remove_source_identifier_from_subscription`](crate::client::Client::remove_source_identifier_from_subscription).
+/// [`remove_source_identifier_from_subscription`](crate::client::fluent_builders::RemoveSourceIdentifierFromSubscription).
 ///
 /// `ParseStrictResponse` impl for `RemoveSourceIdentifierFromSubscription`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1649,7 +1649,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RemoveSourceIdentifierFr
 /// Operation shape for `RemoveTagsFromResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`remove_tags_from_resource`](crate::client::Client::remove_tags_from_resource).
+/// [`remove_tags_from_resource`](crate::client::fluent_builders::RemoveTagsFromResource).
 ///
 /// `ParseStrictResponse` impl for `RemoveTagsFromResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1684,7 +1684,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RemoveTagsFromResource {
 /// Operation shape for `ResetDBClusterParameterGroup`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`reset_db_cluster_parameter_group`](crate::client::Client::reset_db_cluster_parameter_group).
+/// [`reset_db_cluster_parameter_group`](crate::client::fluent_builders::ResetDBClusterParameterGroup).
 ///
 /// `ParseStrictResponse` impl for `ResetDBClusterParameterGroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1719,7 +1719,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ResetDBClusterParameterG
 /// Operation shape for `RestoreDBClusterFromSnapshot`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`restore_db_cluster_from_snapshot`](crate::client::Client::restore_db_cluster_from_snapshot).
+/// [`restore_db_cluster_from_snapshot`](crate::client::fluent_builders::RestoreDBClusterFromSnapshot).
 ///
 /// `ParseStrictResponse` impl for `RestoreDBClusterFromSnapshot`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1754,7 +1754,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RestoreDBClusterFromSnap
 /// Operation shape for `RestoreDBClusterToPointInTime`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`restore_db_cluster_to_point_in_time`](crate::client::Client::restore_db_cluster_to_point_in_time).
+/// [`restore_db_cluster_to_point_in_time`](crate::client::fluent_builders::RestoreDBClusterToPointInTime).
 ///
 /// `ParseStrictResponse` impl for `RestoreDBClusterToPointInTime`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1789,7 +1789,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RestoreDBClusterToPointI
 /// Operation shape for `StartDBCluster`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`start_db_cluster`](crate::client::Client::start_db_cluster).
+/// [`start_db_cluster`](crate::client::fluent_builders::StartDBCluster).
 ///
 /// `ParseStrictResponse` impl for `StartDBCluster`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1822,7 +1822,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartDBCluster {
 /// Operation shape for `StopDBCluster`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`stop_db_cluster`](crate::client::Client::stop_db_cluster).
+/// [`stop_db_cluster`](crate::client::fluent_builders::StopDBCluster).
 ///
 /// `ParseStrictResponse` impl for `StopDBCluster`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

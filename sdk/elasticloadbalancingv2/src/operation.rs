@@ -2,7 +2,7 @@
 /// Operation shape for `AddListenerCertificates`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`add_listener_certificates`](crate::client::Client::add_listener_certificates).
+/// [`add_listener_certificates`](crate::client::fluent_builders::AddListenerCertificates).
 ///
 /// `ParseStrictResponse` impl for `AddListenerCertificates`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -37,7 +37,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AddListenerCertificates 
 /// Operation shape for `AddTags`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`add_tags`](crate::client::Client::add_tags).
+/// [`add_tags`](crate::client::fluent_builders::AddTags).
 ///
 /// `ParseStrictResponse` impl for `AddTags`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -69,7 +69,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AddTags {
 /// Operation shape for `CreateListener`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_listener`](crate::client::Client::create_listener).
+/// [`create_listener`](crate::client::fluent_builders::CreateListener).
 ///
 /// `ParseStrictResponse` impl for `CreateListener`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -102,7 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateListener {
 /// Operation shape for `CreateLoadBalancer`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_load_balancer`](crate::client::Client::create_load_balancer).
+/// [`create_load_balancer`](crate::client::fluent_builders::CreateLoadBalancer).
 ///
 /// `ParseStrictResponse` impl for `CreateLoadBalancer`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -137,7 +137,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateLoadBalancer {
 /// Operation shape for `CreateRule`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_rule`](crate::client::Client::create_rule).
+/// [`create_rule`](crate::client::fluent_builders::CreateRule).
 ///
 /// `ParseStrictResponse` impl for `CreateRule`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -170,7 +170,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateRule {
 /// Operation shape for `CreateTargetGroup`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_target_group`](crate::client::Client::create_target_group).
+/// [`create_target_group`](crate::client::fluent_builders::CreateTargetGroup).
 ///
 /// `ParseStrictResponse` impl for `CreateTargetGroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -205,7 +205,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateTargetGroup {
 /// Operation shape for `DeleteListener`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_listener`](crate::client::Client::delete_listener).
+/// [`delete_listener`](crate::client::fluent_builders::DeleteListener).
 ///
 /// `ParseStrictResponse` impl for `DeleteListener`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -238,7 +238,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteListener {
 /// Operation shape for `DeleteLoadBalancer`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_load_balancer`](crate::client::Client::delete_load_balancer).
+/// [`delete_load_balancer`](crate::client::fluent_builders::DeleteLoadBalancer).
 ///
 /// `ParseStrictResponse` impl for `DeleteLoadBalancer`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -273,7 +273,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteLoadBalancer {
 /// Operation shape for `DeleteRule`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_rule`](crate::client::Client::delete_rule).
+/// [`delete_rule`](crate::client::fluent_builders::DeleteRule).
 ///
 /// `ParseStrictResponse` impl for `DeleteRule`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -306,7 +306,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteRule {
 /// Operation shape for `DeleteTargetGroup`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_target_group`](crate::client::Client::delete_target_group).
+/// [`delete_target_group`](crate::client::fluent_builders::DeleteTargetGroup).
 ///
 /// `ParseStrictResponse` impl for `DeleteTargetGroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -341,7 +341,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteTargetGroup {
 /// Operation shape for `DeregisterTargets`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`deregister_targets`](crate::client::Client::deregister_targets).
+/// [`deregister_targets`](crate::client::fluent_builders::DeregisterTargets).
 ///
 /// `ParseStrictResponse` impl for `DeregisterTargets`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -376,7 +376,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeregisterTargets {
 /// Operation shape for `DescribeAccountLimits`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_account_limits`](crate::client::Client::describe_account_limits).
+/// [`describe_account_limits`](crate::client::fluent_builders::DescribeAccountLimits).
 ///
 /// `ParseStrictResponse` impl for `DescribeAccountLimits`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -411,7 +411,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeAccountLimits {
 /// Operation shape for `DescribeListenerCertificates`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_listener_certificates`](crate::client::Client::describe_listener_certificates).
+/// [`describe_listener_certificates`](crate::client::fluent_builders::DescribeListenerCertificates).
 ///
 /// `ParseStrictResponse` impl for `DescribeListenerCertificates`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -446,7 +446,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeListenerCertific
 /// Operation shape for `DescribeListeners`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_listeners`](crate::client::Client::describe_listeners).
+/// [`describe_listeners`](crate::client::fluent_builders::DescribeListeners).
 ///
 /// `ParseStrictResponse` impl for `DescribeListeners`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -481,7 +481,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeListeners {
 /// Operation shape for `DescribeLoadBalancerAttributes`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_load_balancer_attributes`](crate::client::Client::describe_load_balancer_attributes).
+/// [`describe_load_balancer_attributes`](crate::client::fluent_builders::DescribeLoadBalancerAttributes).
 ///
 /// `ParseStrictResponse` impl for `DescribeLoadBalancerAttributes`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -516,7 +516,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeLoadBalancerAttr
 /// Operation shape for `DescribeLoadBalancers`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_load_balancers`](crate::client::Client::describe_load_balancers).
+/// [`describe_load_balancers`](crate::client::fluent_builders::DescribeLoadBalancers).
 ///
 /// `ParseStrictResponse` impl for `DescribeLoadBalancers`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -551,7 +551,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeLoadBalancers {
 /// Operation shape for `DescribeRules`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_rules`](crate::client::Client::describe_rules).
+/// [`describe_rules`](crate::client::fluent_builders::DescribeRules).
 ///
 /// `ParseStrictResponse` impl for `DescribeRules`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -584,7 +584,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeRules {
 /// Operation shape for `DescribeSSLPolicies`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_ssl_policies`](crate::client::Client::describe_ssl_policies).
+/// [`describe_ssl_policies`](crate::client::fluent_builders::DescribeSSLPolicies).
 ///
 /// `ParseStrictResponse` impl for `DescribeSSLPolicies`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -619,7 +619,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeSSLPolicies {
 /// Operation shape for `DescribeTags`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_tags`](crate::client::Client::describe_tags).
+/// [`describe_tags`](crate::client::fluent_builders::DescribeTags).
 ///
 /// `ParseStrictResponse` impl for `DescribeTags`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -652,7 +652,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeTags {
 /// Operation shape for `DescribeTargetGroupAttributes`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_target_group_attributes`](crate::client::Client::describe_target_group_attributes).
+/// [`describe_target_group_attributes`](crate::client::fluent_builders::DescribeTargetGroupAttributes).
 ///
 /// `ParseStrictResponse` impl for `DescribeTargetGroupAttributes`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -687,7 +687,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeTargetGroupAttri
 /// Operation shape for `DescribeTargetGroups`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_target_groups`](crate::client::Client::describe_target_groups).
+/// [`describe_target_groups`](crate::client::fluent_builders::DescribeTargetGroups).
 ///
 /// `ParseStrictResponse` impl for `DescribeTargetGroups`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -722,7 +722,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeTargetGroups {
 /// Operation shape for `DescribeTargetHealth`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_target_health`](crate::client::Client::describe_target_health).
+/// [`describe_target_health`](crate::client::fluent_builders::DescribeTargetHealth).
 ///
 /// `ParseStrictResponse` impl for `DescribeTargetHealth`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -757,7 +757,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeTargetHealth {
 /// Operation shape for `ModifyListener`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`modify_listener`](crate::client::Client::modify_listener).
+/// [`modify_listener`](crate::client::fluent_builders::ModifyListener).
 ///
 /// `ParseStrictResponse` impl for `ModifyListener`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -790,7 +790,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyListener {
 /// Operation shape for `ModifyLoadBalancerAttributes`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`modify_load_balancer_attributes`](crate::client::Client::modify_load_balancer_attributes).
+/// [`modify_load_balancer_attributes`](crate::client::fluent_builders::ModifyLoadBalancerAttributes).
 ///
 /// `ParseStrictResponse` impl for `ModifyLoadBalancerAttributes`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -825,7 +825,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyLoadBalancerAttrib
 /// Operation shape for `ModifyRule`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`modify_rule`](crate::client::Client::modify_rule).
+/// [`modify_rule`](crate::client::fluent_builders::ModifyRule).
 ///
 /// `ParseStrictResponse` impl for `ModifyRule`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -858,7 +858,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyRule {
 /// Operation shape for `ModifyTargetGroup`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`modify_target_group`](crate::client::Client::modify_target_group).
+/// [`modify_target_group`](crate::client::fluent_builders::ModifyTargetGroup).
 ///
 /// `ParseStrictResponse` impl for `ModifyTargetGroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -893,7 +893,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyTargetGroup {
 /// Operation shape for `ModifyTargetGroupAttributes`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`modify_target_group_attributes`](crate::client::Client::modify_target_group_attributes).
+/// [`modify_target_group_attributes`](crate::client::fluent_builders::ModifyTargetGroupAttributes).
 ///
 /// `ParseStrictResponse` impl for `ModifyTargetGroupAttributes`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -928,7 +928,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyTargetGroupAttribu
 /// Operation shape for `RegisterTargets`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`register_targets`](crate::client::Client::register_targets).
+/// [`register_targets`](crate::client::fluent_builders::RegisterTargets).
 ///
 /// `ParseStrictResponse` impl for `RegisterTargets`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -963,7 +963,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RegisterTargets {
 /// Operation shape for `RemoveListenerCertificates`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`remove_listener_certificates`](crate::client::Client::remove_listener_certificates).
+/// [`remove_listener_certificates`](crate::client::fluent_builders::RemoveListenerCertificates).
 ///
 /// `ParseStrictResponse` impl for `RemoveListenerCertificates`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -998,7 +998,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RemoveListenerCertificat
 /// Operation shape for `RemoveTags`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`remove_tags`](crate::client::Client::remove_tags).
+/// [`remove_tags`](crate::client::fluent_builders::RemoveTags).
 ///
 /// `ParseStrictResponse` impl for `RemoveTags`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1031,7 +1031,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RemoveTags {
 /// Operation shape for `SetIpAddressType`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`set_ip_address_type`](crate::client::Client::set_ip_address_type).
+/// [`set_ip_address_type`](crate::client::fluent_builders::SetIpAddressType).
 ///
 /// `ParseStrictResponse` impl for `SetIpAddressType`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1066,7 +1066,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SetIpAddressType {
 /// Operation shape for `SetRulePriorities`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`set_rule_priorities`](crate::client::Client::set_rule_priorities).
+/// [`set_rule_priorities`](crate::client::fluent_builders::SetRulePriorities).
 ///
 /// `ParseStrictResponse` impl for `SetRulePriorities`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1101,7 +1101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SetRulePriorities {
 /// Operation shape for `SetSecurityGroups`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`set_security_groups`](crate::client::Client::set_security_groups).
+/// [`set_security_groups`](crate::client::fluent_builders::SetSecurityGroups).
 ///
 /// `ParseStrictResponse` impl for `SetSecurityGroups`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1136,7 +1136,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SetSecurityGroups {
 /// Operation shape for `SetSubnets`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`set_subnets`](crate::client::Client::set_subnets).
+/// [`set_subnets`](crate::client::fluent_builders::SetSubnets).
 ///
 /// `ParseStrictResponse` impl for `SetSubnets`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

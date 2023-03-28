@@ -2,7 +2,7 @@
 /// Operation shape for `DeleteAlternateContact`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_alternate_contact`](crate::client::Client::delete_alternate_contact).
+/// [`delete_alternate_contact`](crate::client::fluent_builders::DeleteAlternateContact).
 ///
 /// `ParseStrictResponse` impl for `DeleteAlternateContact`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -37,7 +37,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteAlternateContact {
 /// Operation shape for `GetAlternateContact`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_alternate_contact`](crate::client::Client::get_alternate_contact).
+/// [`get_alternate_contact`](crate::client::fluent_builders::GetAlternateContact).
 ///
 /// `ParseStrictResponse` impl for `GetAlternateContact`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -72,7 +72,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAlternateContact {
 /// Operation shape for `GetContactInformation`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_contact_information`](crate::client::Client::get_contact_information).
+/// [`get_contact_information`](crate::client::fluent_builders::GetContactInformation).
 ///
 /// `ParseStrictResponse` impl for `GetContactInformation`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -107,7 +107,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetContactInformation {
 /// Operation shape for `PutAlternateContact`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`put_alternate_contact`](crate::client::Client::put_alternate_contact).
+/// [`put_alternate_contact`](crate::client::fluent_builders::PutAlternateContact).
 ///
 /// `ParseStrictResponse` impl for `PutAlternateContact`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -142,7 +142,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutAlternateContact {
 /// Operation shape for `PutContactInformation`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`put_contact_information`](crate::client::Client::put_contact_information).
+/// [`put_contact_information`](crate::client::fluent_builders::PutContactInformation).
 ///
 /// `ParseStrictResponse` impl for `PutContactInformation`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

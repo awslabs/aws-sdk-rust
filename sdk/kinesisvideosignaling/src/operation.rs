@@ -2,7 +2,7 @@
 /// Operation shape for `GetIceServerConfig`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_ice_server_config`](crate::client::Client::get_ice_server_config).
+/// [`get_ice_server_config`](crate::client::fluent_builders::GetIceServerConfig).
 ///
 /// `ParseStrictResponse` impl for `GetIceServerConfig`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -37,7 +37,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetIceServerConfig {
 /// Operation shape for `SendAlexaOfferToMaster`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`send_alexa_offer_to_master`](crate::client::Client::send_alexa_offer_to_master).
+/// [`send_alexa_offer_to_master`](crate::client::fluent_builders::SendAlexaOfferToMaster).
 ///
 /// `ParseStrictResponse` impl for `SendAlexaOfferToMaster`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

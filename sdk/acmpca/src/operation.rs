@@ -2,7 +2,7 @@
 /// Operation shape for `CreateCertificateAuthority`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_certificate_authority`](crate::client::Client::create_certificate_authority).
+/// [`create_certificate_authority`](crate::client::fluent_builders::CreateCertificateAuthority).
 ///
 /// `ParseStrictResponse` impl for `CreateCertificateAuthority`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -37,7 +37,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateCertificateAuthori
 /// Operation shape for `CreateCertificateAuthorityAuditReport`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_certificate_authority_audit_report`](crate::client::Client::create_certificate_authority_audit_report).
+/// [`create_certificate_authority_audit_report`](crate::client::fluent_builders::CreateCertificateAuthorityAuditReport).
 ///
 /// `ParseStrictResponse` impl for `CreateCertificateAuthorityAuditReport`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -74,7 +74,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateCertificateAuthori
 /// Operation shape for `CreatePermission`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_permission`](crate::client::Client::create_permission).
+/// [`create_permission`](crate::client::fluent_builders::CreatePermission).
 ///
 /// `ParseStrictResponse` impl for `CreatePermission`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -109,7 +109,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreatePermission {
 /// Operation shape for `DeleteCertificateAuthority`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_certificate_authority`](crate::client::Client::delete_certificate_authority).
+/// [`delete_certificate_authority`](crate::client::fluent_builders::DeleteCertificateAuthority).
 ///
 /// `ParseStrictResponse` impl for `DeleteCertificateAuthority`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -144,7 +144,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteCertificateAuthori
 /// Operation shape for `DeletePermission`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_permission`](crate::client::Client::delete_permission).
+/// [`delete_permission`](crate::client::fluent_builders::DeletePermission).
 ///
 /// `ParseStrictResponse` impl for `DeletePermission`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -179,7 +179,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeletePermission {
 /// Operation shape for `DeletePolicy`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_policy`](crate::client::Client::delete_policy).
+/// [`delete_policy`](crate::client::fluent_builders::DeletePolicy).
 ///
 /// `ParseStrictResponse` impl for `DeletePolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -212,7 +212,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeletePolicy {
 /// Operation shape for `DescribeCertificateAuthority`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_certificate_authority`](crate::client::Client::describe_certificate_authority).
+/// [`describe_certificate_authority`](crate::client::fluent_builders::DescribeCertificateAuthority).
 ///
 /// `ParseStrictResponse` impl for `DescribeCertificateAuthority`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -247,7 +247,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeCertificateAutho
 /// Operation shape for `DescribeCertificateAuthorityAuditReport`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_certificate_authority_audit_report`](crate::client::Client::describe_certificate_authority_audit_report).
+/// [`describe_certificate_authority_audit_report`](crate::client::fluent_builders::DescribeCertificateAuthorityAuditReport).
 ///
 /// `ParseStrictResponse` impl for `DescribeCertificateAuthorityAuditReport`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -286,7 +286,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeCertificateAutho
 /// Operation shape for `GetCertificate`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_certificate`](crate::client::Client::get_certificate).
+/// [`get_certificate`](crate::client::fluent_builders::GetCertificate).
 ///
 /// `ParseStrictResponse` impl for `GetCertificate`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -319,7 +319,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetCertificate {
 /// Operation shape for `GetCertificateAuthorityCertificate`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_certificate_authority_certificate`](crate::client::Client::get_certificate_authority_certificate).
+/// [`get_certificate_authority_certificate`](crate::client::fluent_builders::GetCertificateAuthorityCertificate).
 ///
 /// `ParseStrictResponse` impl for `GetCertificateAuthorityCertificate`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -354,7 +354,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetCertificateAuthorityC
 /// Operation shape for `GetCertificateAuthorityCsr`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_certificate_authority_csr`](crate::client::Client::get_certificate_authority_csr).
+/// [`get_certificate_authority_csr`](crate::client::fluent_builders::GetCertificateAuthorityCsr).
 ///
 /// `ParseStrictResponse` impl for `GetCertificateAuthorityCsr`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -389,7 +389,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetCertificateAuthorityC
 /// Operation shape for `GetPolicy`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_policy`](crate::client::Client::get_policy).
+/// [`get_policy`](crate::client::fluent_builders::GetPolicy).
 ///
 /// `ParseStrictResponse` impl for `GetPolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -421,7 +421,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetPolicy {
 /// Operation shape for `ImportCertificateAuthorityCertificate`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`import_certificate_authority_certificate`](crate::client::Client::import_certificate_authority_certificate).
+/// [`import_certificate_authority_certificate`](crate::client::fluent_builders::ImportCertificateAuthorityCertificate).
 ///
 /// `ParseStrictResponse` impl for `ImportCertificateAuthorityCertificate`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -458,7 +458,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ImportCertificateAuthori
 /// Operation shape for `IssueCertificate`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`issue_certificate`](crate::client::Client::issue_certificate).
+/// [`issue_certificate`](crate::client::fluent_builders::IssueCertificate).
 ///
 /// `ParseStrictResponse` impl for `IssueCertificate`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -493,7 +493,7 @@ impl aws_smithy_http::response::ParseStrictResponse for IssueCertificate {
 /// Operation shape for `ListCertificateAuthorities`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_certificate_authorities`](crate::client::Client::list_certificate_authorities).
+/// [`list_certificate_authorities`](crate::client::fluent_builders::ListCertificateAuthorities).
 ///
 /// `ParseStrictResponse` impl for `ListCertificateAuthorities`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -528,7 +528,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListCertificateAuthoriti
 /// Operation shape for `ListPermissions`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_permissions`](crate::client::Client::list_permissions).
+/// [`list_permissions`](crate::client::fluent_builders::ListPermissions).
 ///
 /// `ParseStrictResponse` impl for `ListPermissions`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -563,7 +563,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListPermissions {
 /// Operation shape for `ListTags`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_tags`](crate::client::Client::list_tags).
+/// [`list_tags`](crate::client::fluent_builders::ListTags).
 ///
 /// `ParseStrictResponse` impl for `ListTags`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -595,7 +595,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTags {
 /// Operation shape for `PutPolicy`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`put_policy`](crate::client::Client::put_policy).
+/// [`put_policy`](crate::client::fluent_builders::PutPolicy).
 ///
 /// `ParseStrictResponse` impl for `PutPolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -627,7 +627,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutPolicy {
 /// Operation shape for `RestoreCertificateAuthority`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`restore_certificate_authority`](crate::client::Client::restore_certificate_authority).
+/// [`restore_certificate_authority`](crate::client::fluent_builders::RestoreCertificateAuthority).
 ///
 /// `ParseStrictResponse` impl for `RestoreCertificateAuthority`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -662,7 +662,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RestoreCertificateAuthor
 /// Operation shape for `RevokeCertificate`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`revoke_certificate`](crate::client::Client::revoke_certificate).
+/// [`revoke_certificate`](crate::client::fluent_builders::RevokeCertificate).
 ///
 /// `ParseStrictResponse` impl for `RevokeCertificate`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -697,7 +697,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RevokeCertificate {
 /// Operation shape for `TagCertificateAuthority`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`tag_certificate_authority`](crate::client::Client::tag_certificate_authority).
+/// [`tag_certificate_authority`](crate::client::fluent_builders::TagCertificateAuthority).
 ///
 /// `ParseStrictResponse` impl for `TagCertificateAuthority`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -732,7 +732,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagCertificateAuthority 
 /// Operation shape for `UntagCertificateAuthority`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`untag_certificate_authority`](crate::client::Client::untag_certificate_authority).
+/// [`untag_certificate_authority`](crate::client::fluent_builders::UntagCertificateAuthority).
 ///
 /// `ParseStrictResponse` impl for `UntagCertificateAuthority`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -767,7 +767,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagCertificateAuthorit
 /// Operation shape for `UpdateCertificateAuthority`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_certificate_authority`](crate::client::Client::update_certificate_authority).
+/// [`update_certificate_authority`](crate::client::fluent_builders::UpdateCertificateAuthority).
 ///
 /// `ParseStrictResponse` impl for `UpdateCertificateAuthority`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

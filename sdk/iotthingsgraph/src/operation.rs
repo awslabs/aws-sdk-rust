@@ -2,7 +2,7 @@
 /// Operation shape for `AssociateEntityToThing`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`associate_entity_to_thing`](crate::client::Client::associate_entity_to_thing).
+/// [`associate_entity_to_thing`](crate::client::fluent_builders::AssociateEntityToThing).
 ///
 /// `ParseStrictResponse` impl for `AssociateEntityToThing`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -37,7 +37,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateEntityToThing {
 /// Operation shape for `CreateFlowTemplate`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_flow_template`](crate::client::Client::create_flow_template).
+/// [`create_flow_template`](crate::client::fluent_builders::CreateFlowTemplate).
 ///
 /// `ParseStrictResponse` impl for `CreateFlowTemplate`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -72,7 +72,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateFlowTemplate {
 /// Operation shape for `CreateSystemInstance`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_system_instance`](crate::client::Client::create_system_instance).
+/// [`create_system_instance`](crate::client::fluent_builders::CreateSystemInstance).
 ///
 /// `ParseStrictResponse` impl for `CreateSystemInstance`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -107,7 +107,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateSystemInstance {
 /// Operation shape for `CreateSystemTemplate`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_system_template`](crate::client::Client::create_system_template).
+/// [`create_system_template`](crate::client::fluent_builders::CreateSystemTemplate).
 ///
 /// `ParseStrictResponse` impl for `CreateSystemTemplate`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -142,7 +142,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateSystemTemplate {
 /// Operation shape for `DeleteFlowTemplate`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_flow_template`](crate::client::Client::delete_flow_template).
+/// [`delete_flow_template`](crate::client::fluent_builders::DeleteFlowTemplate).
 ///
 /// `ParseStrictResponse` impl for `DeleteFlowTemplate`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -177,7 +177,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteFlowTemplate {
 /// Operation shape for `DeleteNamespace`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_namespace`](crate::client::Client::delete_namespace).
+/// [`delete_namespace`](crate::client::fluent_builders::DeleteNamespace).
 ///
 /// `ParseStrictResponse` impl for `DeleteNamespace`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -212,7 +212,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteNamespace {
 /// Operation shape for `DeleteSystemInstance`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_system_instance`](crate::client::Client::delete_system_instance).
+/// [`delete_system_instance`](crate::client::fluent_builders::DeleteSystemInstance).
 ///
 /// `ParseStrictResponse` impl for `DeleteSystemInstance`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -247,7 +247,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteSystemInstance {
 /// Operation shape for `DeleteSystemTemplate`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_system_template`](crate::client::Client::delete_system_template).
+/// [`delete_system_template`](crate::client::fluent_builders::DeleteSystemTemplate).
 ///
 /// `ParseStrictResponse` impl for `DeleteSystemTemplate`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -282,7 +282,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteSystemTemplate {
 /// Operation shape for `DeploySystemInstance`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`deploy_system_instance`](crate::client::Client::deploy_system_instance).
+/// [`deploy_system_instance`](crate::client::fluent_builders::DeploySystemInstance).
 ///
 /// `ParseStrictResponse` impl for `DeploySystemInstance`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -317,7 +317,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeploySystemInstance {
 /// Operation shape for `DeprecateFlowTemplate`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`deprecate_flow_template`](crate::client::Client::deprecate_flow_template).
+/// [`deprecate_flow_template`](crate::client::fluent_builders::DeprecateFlowTemplate).
 ///
 /// `ParseStrictResponse` impl for `DeprecateFlowTemplate`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -352,7 +352,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeprecateFlowTemplate {
 /// Operation shape for `DeprecateSystemTemplate`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`deprecate_system_template`](crate::client::Client::deprecate_system_template).
+/// [`deprecate_system_template`](crate::client::fluent_builders::DeprecateSystemTemplate).
 ///
 /// `ParseStrictResponse` impl for `DeprecateSystemTemplate`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -387,7 +387,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeprecateSystemTemplate 
 /// Operation shape for `DescribeNamespace`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_namespace`](crate::client::Client::describe_namespace).
+/// [`describe_namespace`](crate::client::fluent_builders::DescribeNamespace).
 ///
 /// `ParseStrictResponse` impl for `DescribeNamespace`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -422,7 +422,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeNamespace {
 /// Operation shape for `DissociateEntityFromThing`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`dissociate_entity_from_thing`](crate::client::Client::dissociate_entity_from_thing).
+/// [`dissociate_entity_from_thing`](crate::client::fluent_builders::DissociateEntityFromThing).
 ///
 /// `ParseStrictResponse` impl for `DissociateEntityFromThing`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -457,7 +457,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DissociateEntityFromThin
 /// Operation shape for `GetEntities`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_entities`](crate::client::Client::get_entities).
+/// [`get_entities`](crate::client::fluent_builders::GetEntities).
 ///
 /// `ParseStrictResponse` impl for `GetEntities`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -490,7 +490,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetEntities {
 /// Operation shape for `GetFlowTemplate`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_flow_template`](crate::client::Client::get_flow_template).
+/// [`get_flow_template`](crate::client::fluent_builders::GetFlowTemplate).
 ///
 /// `ParseStrictResponse` impl for `GetFlowTemplate`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -525,7 +525,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetFlowTemplate {
 /// Operation shape for `GetFlowTemplateRevisions`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_flow_template_revisions`](crate::client::Client::get_flow_template_revisions).
+/// [`get_flow_template_revisions`](crate::client::fluent_builders::GetFlowTemplateRevisions).
 ///
 /// `ParseStrictResponse` impl for `GetFlowTemplateRevisions`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -560,7 +560,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetFlowTemplateRevisions
 /// Operation shape for `GetNamespaceDeletionStatus`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_namespace_deletion_status`](crate::client::Client::get_namespace_deletion_status).
+/// [`get_namespace_deletion_status`](crate::client::fluent_builders::GetNamespaceDeletionStatus).
 ///
 /// `ParseStrictResponse` impl for `GetNamespaceDeletionStatus`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -595,7 +595,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetNamespaceDeletionStat
 /// Operation shape for `GetSystemInstance`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_system_instance`](crate::client::Client::get_system_instance).
+/// [`get_system_instance`](crate::client::fluent_builders::GetSystemInstance).
 ///
 /// `ParseStrictResponse` impl for `GetSystemInstance`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -630,7 +630,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSystemInstance {
 /// Operation shape for `GetSystemTemplate`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_system_template`](crate::client::Client::get_system_template).
+/// [`get_system_template`](crate::client::fluent_builders::GetSystemTemplate).
 ///
 /// `ParseStrictResponse` impl for `GetSystemTemplate`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -665,7 +665,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSystemTemplate {
 /// Operation shape for `GetSystemTemplateRevisions`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_system_template_revisions`](crate::client::Client::get_system_template_revisions).
+/// [`get_system_template_revisions`](crate::client::fluent_builders::GetSystemTemplateRevisions).
 ///
 /// `ParseStrictResponse` impl for `GetSystemTemplateRevisions`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -700,7 +700,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSystemTemplateRevisio
 /// Operation shape for `GetUploadStatus`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_upload_status`](crate::client::Client::get_upload_status).
+/// [`get_upload_status`](crate::client::fluent_builders::GetUploadStatus).
 ///
 /// `ParseStrictResponse` impl for `GetUploadStatus`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -735,7 +735,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetUploadStatus {
 /// Operation shape for `ListFlowExecutionMessages`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_flow_execution_messages`](crate::client::Client::list_flow_execution_messages).
+/// [`list_flow_execution_messages`](crate::client::fluent_builders::ListFlowExecutionMessages).
 ///
 /// `ParseStrictResponse` impl for `ListFlowExecutionMessages`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -770,7 +770,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListFlowExecutionMessage
 /// Operation shape for `ListTagsForResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
+/// [`list_tags_for_resource`](crate::client::fluent_builders::ListTagsForResource).
 ///
 /// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -805,7 +805,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// Operation shape for `SearchEntities`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`search_entities`](crate::client::Client::search_entities).
+/// [`search_entities`](crate::client::fluent_builders::SearchEntities).
 ///
 /// `ParseStrictResponse` impl for `SearchEntities`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -838,7 +838,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SearchEntities {
 /// Operation shape for `SearchFlowExecutions`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`search_flow_executions`](crate::client::Client::search_flow_executions).
+/// [`search_flow_executions`](crate::client::fluent_builders::SearchFlowExecutions).
 ///
 /// `ParseStrictResponse` impl for `SearchFlowExecutions`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -873,7 +873,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SearchFlowExecutions {
 /// Operation shape for `SearchFlowTemplates`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`search_flow_templates`](crate::client::Client::search_flow_templates).
+/// [`search_flow_templates`](crate::client::fluent_builders::SearchFlowTemplates).
 ///
 /// `ParseStrictResponse` impl for `SearchFlowTemplates`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -908,7 +908,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SearchFlowTemplates {
 /// Operation shape for `SearchSystemInstances`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`search_system_instances`](crate::client::Client::search_system_instances).
+/// [`search_system_instances`](crate::client::fluent_builders::SearchSystemInstances).
 ///
 /// `ParseStrictResponse` impl for `SearchSystemInstances`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -943,7 +943,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SearchSystemInstances {
 /// Operation shape for `SearchSystemTemplates`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`search_system_templates`](crate::client::Client::search_system_templates).
+/// [`search_system_templates`](crate::client::fluent_builders::SearchSystemTemplates).
 ///
 /// `ParseStrictResponse` impl for `SearchSystemTemplates`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -978,7 +978,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SearchSystemTemplates {
 /// Operation shape for `SearchThings`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`search_things`](crate::client::Client::search_things).
+/// [`search_things`](crate::client::fluent_builders::SearchThings).
 ///
 /// `ParseStrictResponse` impl for `SearchThings`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1011,7 +1011,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SearchThings {
 /// Operation shape for `TagResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`tag_resource`](crate::client::Client::tag_resource).
+/// [`tag_resource`](crate::client::fluent_builders::TagResource).
 ///
 /// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1044,7 +1044,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// Operation shape for `UndeploySystemInstance`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`undeploy_system_instance`](crate::client::Client::undeploy_system_instance).
+/// [`undeploy_system_instance`](crate::client::fluent_builders::UndeploySystemInstance).
 ///
 /// `ParseStrictResponse` impl for `UndeploySystemInstance`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1079,7 +1079,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UndeploySystemInstance {
 /// Operation shape for `UntagResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`untag_resource`](crate::client::Client::untag_resource).
+/// [`untag_resource`](crate::client::fluent_builders::UntagResource).
 ///
 /// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1112,7 +1112,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// Operation shape for `UpdateFlowTemplate`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_flow_template`](crate::client::Client::update_flow_template).
+/// [`update_flow_template`](crate::client::fluent_builders::UpdateFlowTemplate).
 ///
 /// `ParseStrictResponse` impl for `UpdateFlowTemplate`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1147,7 +1147,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateFlowTemplate {
 /// Operation shape for `UpdateSystemTemplate`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_system_template`](crate::client::Client::update_system_template).
+/// [`update_system_template`](crate::client::fluent_builders::UpdateSystemTemplate).
 ///
 /// `ParseStrictResponse` impl for `UpdateSystemTemplate`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1182,7 +1182,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateSystemTemplate {
 /// Operation shape for `UploadEntityDefinitions`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`upload_entity_definitions`](crate::client::Client::upload_entity_definitions).
+/// [`upload_entity_definitions`](crate::client::fluent_builders::UploadEntityDefinitions).
 ///
 /// `ParseStrictResponse` impl for `UploadEntityDefinitions`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

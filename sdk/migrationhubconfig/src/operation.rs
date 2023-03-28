@@ -2,7 +2,7 @@
 /// Operation shape for `CreateHomeRegionControl`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_home_region_control`](crate::client::Client::create_home_region_control).
+/// [`create_home_region_control`](crate::client::fluent_builders::CreateHomeRegionControl).
 ///
 /// `ParseStrictResponse` impl for `CreateHomeRegionControl`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -37,7 +37,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateHomeRegionControl 
 /// Operation shape for `DescribeHomeRegionControls`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_home_region_controls`](crate::client::Client::describe_home_region_controls).
+/// [`describe_home_region_controls`](crate::client::fluent_builders::DescribeHomeRegionControls).
 ///
 /// `ParseStrictResponse` impl for `DescribeHomeRegionControls`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -72,7 +72,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeHomeRegionContro
 /// Operation shape for `GetHomeRegion`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_home_region`](crate::client::Client::get_home_region).
+/// [`get_home_region`](crate::client::fluent_builders::GetHomeRegion).
 ///
 /// `ParseStrictResponse` impl for `GetHomeRegion`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

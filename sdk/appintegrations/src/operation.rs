@@ -2,7 +2,7 @@
 /// Operation shape for `CreateDataIntegration`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_data_integration`](crate::client::Client::create_data_integration).
+/// [`create_data_integration`](crate::client::fluent_builders::CreateDataIntegration).
 ///
 /// `ParseStrictResponse` impl for `CreateDataIntegration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -37,7 +37,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateDataIntegration {
 /// Operation shape for `CreateEventIntegration`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_event_integration`](crate::client::Client::create_event_integration).
+/// [`create_event_integration`](crate::client::fluent_builders::CreateEventIntegration).
 ///
 /// `ParseStrictResponse` impl for `CreateEventIntegration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -72,7 +72,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateEventIntegration {
 /// Operation shape for `DeleteDataIntegration`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_data_integration`](crate::client::Client::delete_data_integration).
+/// [`delete_data_integration`](crate::client::fluent_builders::DeleteDataIntegration).
 ///
 /// `ParseStrictResponse` impl for `DeleteDataIntegration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -107,7 +107,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteDataIntegration {
 /// Operation shape for `DeleteEventIntegration`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_event_integration`](crate::client::Client::delete_event_integration).
+/// [`delete_event_integration`](crate::client::fluent_builders::DeleteEventIntegration).
 ///
 /// `ParseStrictResponse` impl for `DeleteEventIntegration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -142,7 +142,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteEventIntegration {
 /// Operation shape for `GetDataIntegration`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_data_integration`](crate::client::Client::get_data_integration).
+/// [`get_data_integration`](crate::client::fluent_builders::GetDataIntegration).
 ///
 /// `ParseStrictResponse` impl for `GetDataIntegration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -177,7 +177,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDataIntegration {
 /// Operation shape for `GetEventIntegration`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_event_integration`](crate::client::Client::get_event_integration).
+/// [`get_event_integration`](crate::client::fluent_builders::GetEventIntegration).
 ///
 /// `ParseStrictResponse` impl for `GetEventIntegration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -212,7 +212,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetEventIntegration {
 /// Operation shape for `ListDataIntegrationAssociations`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_data_integration_associations`](crate::client::Client::list_data_integration_associations).
+/// [`list_data_integration_associations`](crate::client::fluent_builders::ListDataIntegrationAssociations).
 ///
 /// `ParseStrictResponse` impl for `ListDataIntegrationAssociations`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -247,7 +247,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListDataIntegrationAssoc
 /// Operation shape for `ListDataIntegrations`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_data_integrations`](crate::client::Client::list_data_integrations).
+/// [`list_data_integrations`](crate::client::fluent_builders::ListDataIntegrations).
 ///
 /// `ParseStrictResponse` impl for `ListDataIntegrations`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -282,7 +282,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListDataIntegrations {
 /// Operation shape for `ListEventIntegrationAssociations`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_event_integration_associations`](crate::client::Client::list_event_integration_associations).
+/// [`list_event_integration_associations`](crate::client::fluent_builders::ListEventIntegrationAssociations).
 ///
 /// `ParseStrictResponse` impl for `ListEventIntegrationAssociations`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -317,7 +317,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListEventIntegrationAsso
 /// Operation shape for `ListEventIntegrations`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_event_integrations`](crate::client::Client::list_event_integrations).
+/// [`list_event_integrations`](crate::client::fluent_builders::ListEventIntegrations).
 ///
 /// `ParseStrictResponse` impl for `ListEventIntegrations`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -352,7 +352,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListEventIntegrations {
 /// Operation shape for `ListTagsForResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
+/// [`list_tags_for_resource`](crate::client::fluent_builders::ListTagsForResource).
 ///
 /// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -387,7 +387,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// Operation shape for `TagResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`tag_resource`](crate::client::Client::tag_resource).
+/// [`tag_resource`](crate::client::fluent_builders::TagResource).
 ///
 /// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -420,7 +420,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// Operation shape for `UntagResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`untag_resource`](crate::client::Client::untag_resource).
+/// [`untag_resource`](crate::client::fluent_builders::UntagResource).
 ///
 /// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -453,7 +453,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// Operation shape for `UpdateDataIntegration`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_data_integration`](crate::client::Client::update_data_integration).
+/// [`update_data_integration`](crate::client::fluent_builders::UpdateDataIntegration).
 ///
 /// `ParseStrictResponse` impl for `UpdateDataIntegration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -488,7 +488,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateDataIntegration {
 /// Operation shape for `UpdateEventIntegration`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_event_integration`](crate::client::Client::update_event_integration).
+/// [`update_event_integration`](crate::client::fluent_builders::UpdateEventIntegration).
 ///
 /// `ParseStrictResponse` impl for `UpdateEventIntegration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

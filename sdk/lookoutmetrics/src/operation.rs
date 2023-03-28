@@ -2,7 +2,7 @@
 /// Operation shape for `ActivateAnomalyDetector`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`activate_anomaly_detector`](crate::client::Client::activate_anomaly_detector).
+/// [`activate_anomaly_detector`](crate::client::fluent_builders::ActivateAnomalyDetector).
 ///
 /// `ParseStrictResponse` impl for `ActivateAnomalyDetector`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -37,7 +37,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ActivateAnomalyDetector 
 /// Operation shape for `BackTestAnomalyDetector`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`back_test_anomaly_detector`](crate::client::Client::back_test_anomaly_detector).
+/// [`back_test_anomaly_detector`](crate::client::fluent_builders::BackTestAnomalyDetector).
 ///
 /// `ParseStrictResponse` impl for `BackTestAnomalyDetector`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -72,7 +72,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BackTestAnomalyDetector 
 /// Operation shape for `CreateAlert`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_alert`](crate::client::Client::create_alert).
+/// [`create_alert`](crate::client::fluent_builders::CreateAlert).
 ///
 /// `ParseStrictResponse` impl for `CreateAlert`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -105,7 +105,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateAlert {
 /// Operation shape for `CreateAnomalyDetector`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_anomaly_detector`](crate::client::Client::create_anomaly_detector).
+/// [`create_anomaly_detector`](crate::client::fluent_builders::CreateAnomalyDetector).
 ///
 /// `ParseStrictResponse` impl for `CreateAnomalyDetector`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -140,7 +140,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateAnomalyDetector {
 /// Operation shape for `CreateMetricSet`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_metric_set`](crate::client::Client::create_metric_set).
+/// [`create_metric_set`](crate::client::fluent_builders::CreateMetricSet).
 ///
 /// `ParseStrictResponse` impl for `CreateMetricSet`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -175,7 +175,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateMetricSet {
 /// Operation shape for `DeactivateAnomalyDetector`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`deactivate_anomaly_detector`](crate::client::Client::deactivate_anomaly_detector).
+/// [`deactivate_anomaly_detector`](crate::client::fluent_builders::DeactivateAnomalyDetector).
 ///
 /// `ParseStrictResponse` impl for `DeactivateAnomalyDetector`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -210,7 +210,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeactivateAnomalyDetecto
 /// Operation shape for `DeleteAlert`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_alert`](crate::client::Client::delete_alert).
+/// [`delete_alert`](crate::client::fluent_builders::DeleteAlert).
 ///
 /// `ParseStrictResponse` impl for `DeleteAlert`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -243,7 +243,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteAlert {
 /// Operation shape for `DeleteAnomalyDetector`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_anomaly_detector`](crate::client::Client::delete_anomaly_detector).
+/// [`delete_anomaly_detector`](crate::client::fluent_builders::DeleteAnomalyDetector).
 ///
 /// `ParseStrictResponse` impl for `DeleteAnomalyDetector`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -278,7 +278,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteAnomalyDetector {
 /// Operation shape for `DescribeAlert`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_alert`](crate::client::Client::describe_alert).
+/// [`describe_alert`](crate::client::fluent_builders::DescribeAlert).
 ///
 /// `ParseStrictResponse` impl for `DescribeAlert`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -311,7 +311,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeAlert {
 /// Operation shape for `DescribeAnomalyDetectionExecutions`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_anomaly_detection_executions`](crate::client::Client::describe_anomaly_detection_executions).
+/// [`describe_anomaly_detection_executions`](crate::client::fluent_builders::DescribeAnomalyDetectionExecutions).
 ///
 /// `ParseStrictResponse` impl for `DescribeAnomalyDetectionExecutions`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -346,7 +346,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeAnomalyDetection
 /// Operation shape for `DescribeAnomalyDetector`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_anomaly_detector`](crate::client::Client::describe_anomaly_detector).
+/// [`describe_anomaly_detector`](crate::client::fluent_builders::DescribeAnomalyDetector).
 ///
 /// `ParseStrictResponse` impl for `DescribeAnomalyDetector`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -381,7 +381,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeAnomalyDetector 
 /// Operation shape for `DescribeMetricSet`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_metric_set`](crate::client::Client::describe_metric_set).
+/// [`describe_metric_set`](crate::client::fluent_builders::DescribeMetricSet).
 ///
 /// `ParseStrictResponse` impl for `DescribeMetricSet`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -416,7 +416,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeMetricSet {
 /// Operation shape for `DetectMetricSetConfig`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`detect_metric_set_config`](crate::client::Client::detect_metric_set_config).
+/// [`detect_metric_set_config`](crate::client::fluent_builders::DetectMetricSetConfig).
 ///
 /// `ParseStrictResponse` impl for `DetectMetricSetConfig`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -451,7 +451,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DetectMetricSetConfig {
 /// Operation shape for `GetAnomalyGroup`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_anomaly_group`](crate::client::Client::get_anomaly_group).
+/// [`get_anomaly_group`](crate::client::fluent_builders::GetAnomalyGroup).
 ///
 /// `ParseStrictResponse` impl for `GetAnomalyGroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -486,7 +486,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAnomalyGroup {
 /// Operation shape for `GetDataQualityMetrics`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_data_quality_metrics`](crate::client::Client::get_data_quality_metrics).
+/// [`get_data_quality_metrics`](crate::client::fluent_builders::GetDataQualityMetrics).
 ///
 /// `ParseStrictResponse` impl for `GetDataQualityMetrics`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -521,7 +521,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDataQualityMetrics {
 /// Operation shape for `GetFeedback`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_feedback`](crate::client::Client::get_feedback).
+/// [`get_feedback`](crate::client::fluent_builders::GetFeedback).
 ///
 /// `ParseStrictResponse` impl for `GetFeedback`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -554,7 +554,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetFeedback {
 /// Operation shape for `GetSampleData`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_sample_data`](crate::client::Client::get_sample_data).
+/// [`get_sample_data`](crate::client::fluent_builders::GetSampleData).
 ///
 /// `ParseStrictResponse` impl for `GetSampleData`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -587,7 +587,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSampleData {
 /// Operation shape for `ListAlerts`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_alerts`](crate::client::Client::list_alerts).
+/// [`list_alerts`](crate::client::fluent_builders::ListAlerts).
 ///
 /// `ParseStrictResponse` impl for `ListAlerts`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -620,7 +620,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAlerts {
 /// Operation shape for `ListAnomalyDetectors`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_anomaly_detectors`](crate::client::Client::list_anomaly_detectors).
+/// [`list_anomaly_detectors`](crate::client::fluent_builders::ListAnomalyDetectors).
 ///
 /// `ParseStrictResponse` impl for `ListAnomalyDetectors`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -655,7 +655,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAnomalyDetectors {
 /// Operation shape for `ListAnomalyGroupRelatedMetrics`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_anomaly_group_related_metrics`](crate::client::Client::list_anomaly_group_related_metrics).
+/// [`list_anomaly_group_related_metrics`](crate::client::fluent_builders::ListAnomalyGroupRelatedMetrics).
 ///
 /// `ParseStrictResponse` impl for `ListAnomalyGroupRelatedMetrics`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -690,7 +690,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAnomalyGroupRelatedM
 /// Operation shape for `ListAnomalyGroupSummaries`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_anomaly_group_summaries`](crate::client::Client::list_anomaly_group_summaries).
+/// [`list_anomaly_group_summaries`](crate::client::fluent_builders::ListAnomalyGroupSummaries).
 ///
 /// `ParseStrictResponse` impl for `ListAnomalyGroupSummaries`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -725,7 +725,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAnomalyGroupSummarie
 /// Operation shape for `ListAnomalyGroupTimeSeries`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_anomaly_group_time_series`](crate::client::Client::list_anomaly_group_time_series).
+/// [`list_anomaly_group_time_series`](crate::client::fluent_builders::ListAnomalyGroupTimeSeries).
 ///
 /// `ParseStrictResponse` impl for `ListAnomalyGroupTimeSeries`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -760,7 +760,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAnomalyGroupTimeSeri
 /// Operation shape for `ListMetricSets`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_metric_sets`](crate::client::Client::list_metric_sets).
+/// [`list_metric_sets`](crate::client::fluent_builders::ListMetricSets).
 ///
 /// `ParseStrictResponse` impl for `ListMetricSets`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -793,7 +793,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListMetricSets {
 /// Operation shape for `ListTagsForResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
+/// [`list_tags_for_resource`](crate::client::fluent_builders::ListTagsForResource).
 ///
 /// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -828,7 +828,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// Operation shape for `PutFeedback`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`put_feedback`](crate::client::Client::put_feedback).
+/// [`put_feedback`](crate::client::fluent_builders::PutFeedback).
 ///
 /// `ParseStrictResponse` impl for `PutFeedback`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -861,7 +861,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutFeedback {
 /// Operation shape for `TagResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`tag_resource`](crate::client::Client::tag_resource).
+/// [`tag_resource`](crate::client::fluent_builders::TagResource).
 ///
 /// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -894,7 +894,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// Operation shape for `UntagResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`untag_resource`](crate::client::Client::untag_resource).
+/// [`untag_resource`](crate::client::fluent_builders::UntagResource).
 ///
 /// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -927,7 +927,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// Operation shape for `UpdateAlert`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_alert`](crate::client::Client::update_alert).
+/// [`update_alert`](crate::client::fluent_builders::UpdateAlert).
 ///
 /// `ParseStrictResponse` impl for `UpdateAlert`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -960,7 +960,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateAlert {
 /// Operation shape for `UpdateAnomalyDetector`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_anomaly_detector`](crate::client::Client::update_anomaly_detector).
+/// [`update_anomaly_detector`](crate::client::fluent_builders::UpdateAnomalyDetector).
 ///
 /// `ParseStrictResponse` impl for `UpdateAnomalyDetector`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -995,7 +995,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateAnomalyDetector {
 /// Operation shape for `UpdateMetricSet`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_metric_set`](crate::client::Client::update_metric_set).
+/// [`update_metric_set`](crate::client::fluent_builders::UpdateMetricSet).
 ///
 /// `ParseStrictResponse` impl for `UpdateMetricSet`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

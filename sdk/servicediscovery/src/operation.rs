@@ -2,7 +2,7 @@
 /// Operation shape for `CreateHttpNamespace`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_http_namespace`](crate::client::Client::create_http_namespace).
+/// [`create_http_namespace`](crate::client::fluent_builders::CreateHttpNamespace).
 ///
 /// `ParseStrictResponse` impl for `CreateHttpNamespace`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -37,7 +37,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateHttpNamespace {
 /// Operation shape for `CreatePrivateDnsNamespace`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_private_dns_namespace`](crate::client::Client::create_private_dns_namespace).
+/// [`create_private_dns_namespace`](crate::client::fluent_builders::CreatePrivateDnsNamespace).
 ///
 /// `ParseStrictResponse` impl for `CreatePrivateDnsNamespace`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -72,7 +72,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreatePrivateDnsNamespac
 /// Operation shape for `CreatePublicDnsNamespace`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_public_dns_namespace`](crate::client::Client::create_public_dns_namespace).
+/// [`create_public_dns_namespace`](crate::client::fluent_builders::CreatePublicDnsNamespace).
 ///
 /// `ParseStrictResponse` impl for `CreatePublicDnsNamespace`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -107,7 +107,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreatePublicDnsNamespace
 /// Operation shape for `CreateService`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_service`](crate::client::Client::create_service).
+/// [`create_service`](crate::client::fluent_builders::CreateService).
 ///
 /// `ParseStrictResponse` impl for `CreateService`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -140,7 +140,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateService {
 /// Operation shape for `DeleteNamespace`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_namespace`](crate::client::Client::delete_namespace).
+/// [`delete_namespace`](crate::client::fluent_builders::DeleteNamespace).
 ///
 /// `ParseStrictResponse` impl for `DeleteNamespace`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -175,7 +175,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteNamespace {
 /// Operation shape for `DeleteService`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_service`](crate::client::Client::delete_service).
+/// [`delete_service`](crate::client::fluent_builders::DeleteService).
 ///
 /// `ParseStrictResponse` impl for `DeleteService`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -208,7 +208,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteService {
 /// Operation shape for `DeregisterInstance`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`deregister_instance`](crate::client::Client::deregister_instance).
+/// [`deregister_instance`](crate::client::fluent_builders::DeregisterInstance).
 ///
 /// `ParseStrictResponse` impl for `DeregisterInstance`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -243,7 +243,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeregisterInstance {
 /// Operation shape for `DiscoverInstances`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`discover_instances`](crate::client::Client::discover_instances).
+/// [`discover_instances`](crate::client::fluent_builders::DiscoverInstances).
 ///
 /// `ParseStrictResponse` impl for `DiscoverInstances`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -278,7 +278,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DiscoverInstances {
 /// Operation shape for `GetInstance`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_instance`](crate::client::Client::get_instance).
+/// [`get_instance`](crate::client::fluent_builders::GetInstance).
 ///
 /// `ParseStrictResponse` impl for `GetInstance`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -311,7 +311,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetInstance {
 /// Operation shape for `GetInstancesHealthStatus`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_instances_health_status`](crate::client::Client::get_instances_health_status).
+/// [`get_instances_health_status`](crate::client::fluent_builders::GetInstancesHealthStatus).
 ///
 /// `ParseStrictResponse` impl for `GetInstancesHealthStatus`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -346,7 +346,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetInstancesHealthStatus
 /// Operation shape for `GetNamespace`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_namespace`](crate::client::Client::get_namespace).
+/// [`get_namespace`](crate::client::fluent_builders::GetNamespace).
 ///
 /// `ParseStrictResponse` impl for `GetNamespace`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -379,7 +379,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetNamespace {
 /// Operation shape for `GetOperation`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_operation`](crate::client::Client::get_operation).
+/// [`get_operation`](crate::client::fluent_builders::GetOperation).
 ///
 /// `ParseStrictResponse` impl for `GetOperation`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -412,7 +412,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetOperation {
 /// Operation shape for `GetService`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_service`](crate::client::Client::get_service).
+/// [`get_service`](crate::client::fluent_builders::GetService).
 ///
 /// `ParseStrictResponse` impl for `GetService`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -445,7 +445,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetService {
 /// Operation shape for `ListInstances`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_instances`](crate::client::Client::list_instances).
+/// [`list_instances`](crate::client::fluent_builders::ListInstances).
 ///
 /// `ParseStrictResponse` impl for `ListInstances`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -478,7 +478,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListInstances {
 /// Operation shape for `ListNamespaces`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_namespaces`](crate::client::Client::list_namespaces).
+/// [`list_namespaces`](crate::client::fluent_builders::ListNamespaces).
 ///
 /// `ParseStrictResponse` impl for `ListNamespaces`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -511,7 +511,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListNamespaces {
 /// Operation shape for `ListOperations`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_operations`](crate::client::Client::list_operations).
+/// [`list_operations`](crate::client::fluent_builders::ListOperations).
 ///
 /// `ParseStrictResponse` impl for `ListOperations`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -544,7 +544,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListOperations {
 /// Operation shape for `ListServices`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_services`](crate::client::Client::list_services).
+/// [`list_services`](crate::client::fluent_builders::ListServices).
 ///
 /// `ParseStrictResponse` impl for `ListServices`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -577,7 +577,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListServices {
 /// Operation shape for `ListTagsForResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
+/// [`list_tags_for_resource`](crate::client::fluent_builders::ListTagsForResource).
 ///
 /// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -612,7 +612,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// Operation shape for `RegisterInstance`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`register_instance`](crate::client::Client::register_instance).
+/// [`register_instance`](crate::client::fluent_builders::RegisterInstance).
 ///
 /// `ParseStrictResponse` impl for `RegisterInstance`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -647,7 +647,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RegisterInstance {
 /// Operation shape for `TagResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`tag_resource`](crate::client::Client::tag_resource).
+/// [`tag_resource`](crate::client::fluent_builders::TagResource).
 ///
 /// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -680,7 +680,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// Operation shape for `UntagResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`untag_resource`](crate::client::Client::untag_resource).
+/// [`untag_resource`](crate::client::fluent_builders::UntagResource).
 ///
 /// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -713,7 +713,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// Operation shape for `UpdateHttpNamespace`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_http_namespace`](crate::client::Client::update_http_namespace).
+/// [`update_http_namespace`](crate::client::fluent_builders::UpdateHttpNamespace).
 ///
 /// `ParseStrictResponse` impl for `UpdateHttpNamespace`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -748,7 +748,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateHttpNamespace {
 /// Operation shape for `UpdateInstanceCustomHealthStatus`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_instance_custom_health_status`](crate::client::Client::update_instance_custom_health_status).
+/// [`update_instance_custom_health_status`](crate::client::fluent_builders::UpdateInstanceCustomHealthStatus).
 ///
 /// `ParseStrictResponse` impl for `UpdateInstanceCustomHealthStatus`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -783,7 +783,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateInstanceCustomHeal
 /// Operation shape for `UpdatePrivateDnsNamespace`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_private_dns_namespace`](crate::client::Client::update_private_dns_namespace).
+/// [`update_private_dns_namespace`](crate::client::fluent_builders::UpdatePrivateDnsNamespace).
 ///
 /// `ParseStrictResponse` impl for `UpdatePrivateDnsNamespace`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -818,7 +818,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdatePrivateDnsNamespac
 /// Operation shape for `UpdatePublicDnsNamespace`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_public_dns_namespace`](crate::client::Client::update_public_dns_namespace).
+/// [`update_public_dns_namespace`](crate::client::fluent_builders::UpdatePublicDnsNamespace).
 ///
 /// `ParseStrictResponse` impl for `UpdatePublicDnsNamespace`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -853,7 +853,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdatePublicDnsNamespace
 /// Operation shape for `UpdateService`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_service`](crate::client::Client::update_service).
+/// [`update_service`](crate::client::fluent_builders::UpdateService).
 ///
 /// `ParseStrictResponse` impl for `UpdateService`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

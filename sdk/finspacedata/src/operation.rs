@@ -2,7 +2,7 @@
 /// Operation shape for `AssociateUserToPermissionGroup`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`associate_user_to_permission_group`](crate::client::Client::associate_user_to_permission_group).
+/// [`associate_user_to_permission_group`](crate::client::fluent_builders::AssociateUserToPermissionGroup).
 ///
 /// `ParseStrictResponse` impl for `AssociateUserToPermissionGroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -37,7 +37,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateUserToPermissio
 /// Operation shape for `CreateChangeset`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_changeset`](crate::client::Client::create_changeset).
+/// [`create_changeset`](crate::client::fluent_builders::CreateChangeset).
 ///
 /// `ParseStrictResponse` impl for `CreateChangeset`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -72,7 +72,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateChangeset {
 /// Operation shape for `CreateDataset`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_dataset`](crate::client::Client::create_dataset).
+/// [`create_dataset`](crate::client::fluent_builders::CreateDataset).
 ///
 /// `ParseStrictResponse` impl for `CreateDataset`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -105,7 +105,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateDataset {
 /// Operation shape for `CreateDataView`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_data_view`](crate::client::Client::create_data_view).
+/// [`create_data_view`](crate::client::fluent_builders::CreateDataView).
 ///
 /// `ParseStrictResponse` impl for `CreateDataView`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -138,7 +138,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateDataView {
 /// Operation shape for `CreatePermissionGroup`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_permission_group`](crate::client::Client::create_permission_group).
+/// [`create_permission_group`](crate::client::fluent_builders::CreatePermissionGroup).
 ///
 /// `ParseStrictResponse` impl for `CreatePermissionGroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -173,7 +173,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreatePermissionGroup {
 /// Operation shape for `CreateUser`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_user`](crate::client::Client::create_user).
+/// [`create_user`](crate::client::fluent_builders::CreateUser).
 ///
 /// `ParseStrictResponse` impl for `CreateUser`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -206,7 +206,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateUser {
 /// Operation shape for `DeleteDataset`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_dataset`](crate::client::Client::delete_dataset).
+/// [`delete_dataset`](crate::client::fluent_builders::DeleteDataset).
 ///
 /// `ParseStrictResponse` impl for `DeleteDataset`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -239,7 +239,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteDataset {
 /// Operation shape for `DeletePermissionGroup`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_permission_group`](crate::client::Client::delete_permission_group).
+/// [`delete_permission_group`](crate::client::fluent_builders::DeletePermissionGroup).
 ///
 /// `ParseStrictResponse` impl for `DeletePermissionGroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -274,7 +274,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeletePermissionGroup {
 /// Operation shape for `DisableUser`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`disable_user`](crate::client::Client::disable_user).
+/// [`disable_user`](crate::client::fluent_builders::DisableUser).
 ///
 /// `ParseStrictResponse` impl for `DisableUser`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -307,7 +307,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisableUser {
 /// Operation shape for `DisassociateUserFromPermissionGroup`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`disassociate_user_from_permission_group`](crate::client::Client::disassociate_user_from_permission_group).
+/// [`disassociate_user_from_permission_group`](crate::client::fluent_builders::DisassociateUserFromPermissionGroup).
 ///
 /// `ParseStrictResponse` impl for `DisassociateUserFromPermissionGroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -342,7 +342,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateUserFromPerm
 /// Operation shape for `EnableUser`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`enable_user`](crate::client::Client::enable_user).
+/// [`enable_user`](crate::client::fluent_builders::EnableUser).
 ///
 /// `ParseStrictResponse` impl for `EnableUser`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -375,7 +375,7 @@ impl aws_smithy_http::response::ParseStrictResponse for EnableUser {
 /// Operation shape for `GetChangeset`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_changeset`](crate::client::Client::get_changeset).
+/// [`get_changeset`](crate::client::fluent_builders::GetChangeset).
 ///
 /// `ParseStrictResponse` impl for `GetChangeset`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -408,7 +408,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetChangeset {
 /// Operation shape for `GetDataset`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_dataset`](crate::client::Client::get_dataset).
+/// [`get_dataset`](crate::client::fluent_builders::GetDataset).
 ///
 /// `ParseStrictResponse` impl for `GetDataset`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -441,7 +441,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDataset {
 /// Operation shape for `GetDataView`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_data_view`](crate::client::Client::get_data_view).
+/// [`get_data_view`](crate::client::fluent_builders::GetDataView).
 ///
 /// `ParseStrictResponse` impl for `GetDataView`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -474,7 +474,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDataView {
 /// Operation shape for `GetExternalDataViewAccessDetails`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_external_data_view_access_details`](crate::client::Client::get_external_data_view_access_details).
+/// [`get_external_data_view_access_details`](crate::client::fluent_builders::GetExternalDataViewAccessDetails).
 ///
 /// `ParseStrictResponse` impl for `GetExternalDataViewAccessDetails`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -509,7 +509,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetExternalDataViewAcces
 /// Operation shape for `GetPermissionGroup`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_permission_group`](crate::client::Client::get_permission_group).
+/// [`get_permission_group`](crate::client::fluent_builders::GetPermissionGroup).
 ///
 /// `ParseStrictResponse` impl for `GetPermissionGroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -544,7 +544,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetPermissionGroup {
 /// Operation shape for `GetProgrammaticAccessCredentials`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_programmatic_access_credentials`](crate::client::Client::get_programmatic_access_credentials).
+/// [`get_programmatic_access_credentials`](crate::client::fluent_builders::GetProgrammaticAccessCredentials).
 ///
 /// `ParseStrictResponse` impl for `GetProgrammaticAccessCredentials`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -579,7 +579,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetProgrammaticAccessCre
 /// Operation shape for `GetUser`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_user`](crate::client::Client::get_user).
+/// [`get_user`](crate::client::fluent_builders::GetUser).
 ///
 /// `ParseStrictResponse` impl for `GetUser`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -611,7 +611,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetUser {
 /// Operation shape for `GetWorkingLocation`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_working_location`](crate::client::Client::get_working_location).
+/// [`get_working_location`](crate::client::fluent_builders::GetWorkingLocation).
 ///
 /// `ParseStrictResponse` impl for `GetWorkingLocation`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -646,7 +646,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetWorkingLocation {
 /// Operation shape for `ListChangesets`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_changesets`](crate::client::Client::list_changesets).
+/// [`list_changesets`](crate::client::fluent_builders::ListChangesets).
 ///
 /// `ParseStrictResponse` impl for `ListChangesets`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -679,7 +679,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListChangesets {
 /// Operation shape for `ListDatasets`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_datasets`](crate::client::Client::list_datasets).
+/// [`list_datasets`](crate::client::fluent_builders::ListDatasets).
 ///
 /// `ParseStrictResponse` impl for `ListDatasets`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -712,7 +712,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListDatasets {
 /// Operation shape for `ListDataViews`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_data_views`](crate::client::Client::list_data_views).
+/// [`list_data_views`](crate::client::fluent_builders::ListDataViews).
 ///
 /// `ParseStrictResponse` impl for `ListDataViews`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -745,7 +745,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListDataViews {
 /// Operation shape for `ListPermissionGroups`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_permission_groups`](crate::client::Client::list_permission_groups).
+/// [`list_permission_groups`](crate::client::fluent_builders::ListPermissionGroups).
 ///
 /// `ParseStrictResponse` impl for `ListPermissionGroups`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -780,7 +780,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListPermissionGroups {
 /// Operation shape for `ListPermissionGroupsByUser`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_permission_groups_by_user`](crate::client::Client::list_permission_groups_by_user).
+/// [`list_permission_groups_by_user`](crate::client::fluent_builders::ListPermissionGroupsByUser).
 ///
 /// `ParseStrictResponse` impl for `ListPermissionGroupsByUser`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -815,7 +815,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListPermissionGroupsByUs
 /// Operation shape for `ListUsers`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_users`](crate::client::Client::list_users).
+/// [`list_users`](crate::client::fluent_builders::ListUsers).
 ///
 /// `ParseStrictResponse` impl for `ListUsers`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -847,7 +847,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListUsers {
 /// Operation shape for `ListUsersByPermissionGroup`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_users_by_permission_group`](crate::client::Client::list_users_by_permission_group).
+/// [`list_users_by_permission_group`](crate::client::fluent_builders::ListUsersByPermissionGroup).
 ///
 /// `ParseStrictResponse` impl for `ListUsersByPermissionGroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -882,7 +882,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListUsersByPermissionGro
 /// Operation shape for `ResetUserPassword`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`reset_user_password`](crate::client::Client::reset_user_password).
+/// [`reset_user_password`](crate::client::fluent_builders::ResetUserPassword).
 ///
 /// `ParseStrictResponse` impl for `ResetUserPassword`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -917,7 +917,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ResetUserPassword {
 /// Operation shape for `UpdateChangeset`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_changeset`](crate::client::Client::update_changeset).
+/// [`update_changeset`](crate::client::fluent_builders::UpdateChangeset).
 ///
 /// `ParseStrictResponse` impl for `UpdateChangeset`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -952,7 +952,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateChangeset {
 /// Operation shape for `UpdateDataset`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_dataset`](crate::client::Client::update_dataset).
+/// [`update_dataset`](crate::client::fluent_builders::UpdateDataset).
 ///
 /// `ParseStrictResponse` impl for `UpdateDataset`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -985,7 +985,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateDataset {
 /// Operation shape for `UpdatePermissionGroup`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_permission_group`](crate::client::Client::update_permission_group).
+/// [`update_permission_group`](crate::client::fluent_builders::UpdatePermissionGroup).
 ///
 /// `ParseStrictResponse` impl for `UpdatePermissionGroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1020,7 +1020,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdatePermissionGroup {
 /// Operation shape for `UpdateUser`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_user`](crate::client::Client::update_user).
+/// [`update_user`](crate::client::fluent_builders::UpdateUser).
 ///
 /// `ParseStrictResponse` impl for `UpdateUser`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

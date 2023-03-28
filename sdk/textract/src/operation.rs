@@ -2,7 +2,7 @@
 /// Operation shape for `AnalyzeDocument`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`analyze_document`](crate::client::Client::analyze_document).
+/// [`analyze_document`](crate::client::fluent_builders::AnalyzeDocument).
 ///
 /// `ParseStrictResponse` impl for `AnalyzeDocument`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -37,7 +37,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AnalyzeDocument {
 /// Operation shape for `AnalyzeExpense`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`analyze_expense`](crate::client::Client::analyze_expense).
+/// [`analyze_expense`](crate::client::fluent_builders::AnalyzeExpense).
 ///
 /// `ParseStrictResponse` impl for `AnalyzeExpense`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -70,7 +70,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AnalyzeExpense {
 /// Operation shape for `AnalyzeID`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`analyze_id`](crate::client::Client::analyze_id).
+/// [`analyze_id`](crate::client::fluent_builders::AnalyzeID).
 ///
 /// `ParseStrictResponse` impl for `AnalyzeID`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -102,7 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AnalyzeID {
 /// Operation shape for `DetectDocumentText`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`detect_document_text`](crate::client::Client::detect_document_text).
+/// [`detect_document_text`](crate::client::fluent_builders::DetectDocumentText).
 ///
 /// `ParseStrictResponse` impl for `DetectDocumentText`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -137,7 +137,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DetectDocumentText {
 /// Operation shape for `GetDocumentAnalysis`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_document_analysis`](crate::client::Client::get_document_analysis).
+/// [`get_document_analysis`](crate::client::fluent_builders::GetDocumentAnalysis).
 ///
 /// `ParseStrictResponse` impl for `GetDocumentAnalysis`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -172,7 +172,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDocumentAnalysis {
 /// Operation shape for `GetDocumentTextDetection`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_document_text_detection`](crate::client::Client::get_document_text_detection).
+/// [`get_document_text_detection`](crate::client::fluent_builders::GetDocumentTextDetection).
 ///
 /// `ParseStrictResponse` impl for `GetDocumentTextDetection`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -207,7 +207,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDocumentTextDetection
 /// Operation shape for `GetExpenseAnalysis`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_expense_analysis`](crate::client::Client::get_expense_analysis).
+/// [`get_expense_analysis`](crate::client::fluent_builders::GetExpenseAnalysis).
 ///
 /// `ParseStrictResponse` impl for `GetExpenseAnalysis`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -242,7 +242,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetExpenseAnalysis {
 /// Operation shape for `GetLendingAnalysis`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_lending_analysis`](crate::client::Client::get_lending_analysis).
+/// [`get_lending_analysis`](crate::client::fluent_builders::GetLendingAnalysis).
 ///
 /// `ParseStrictResponse` impl for `GetLendingAnalysis`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -277,7 +277,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetLendingAnalysis {
 /// Operation shape for `GetLendingAnalysisSummary`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_lending_analysis_summary`](crate::client::Client::get_lending_analysis_summary).
+/// [`get_lending_analysis_summary`](crate::client::fluent_builders::GetLendingAnalysisSummary).
 ///
 /// `ParseStrictResponse` impl for `GetLendingAnalysisSummary`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -312,7 +312,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetLendingAnalysisSummar
 /// Operation shape for `StartDocumentAnalysis`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`start_document_analysis`](crate::client::Client::start_document_analysis).
+/// [`start_document_analysis`](crate::client::fluent_builders::StartDocumentAnalysis).
 ///
 /// `ParseStrictResponse` impl for `StartDocumentAnalysis`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -347,7 +347,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartDocumentAnalysis {
 /// Operation shape for `StartDocumentTextDetection`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`start_document_text_detection`](crate::client::Client::start_document_text_detection).
+/// [`start_document_text_detection`](crate::client::fluent_builders::StartDocumentTextDetection).
 ///
 /// `ParseStrictResponse` impl for `StartDocumentTextDetection`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -382,7 +382,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartDocumentTextDetecti
 /// Operation shape for `StartExpenseAnalysis`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`start_expense_analysis`](crate::client::Client::start_expense_analysis).
+/// [`start_expense_analysis`](crate::client::fluent_builders::StartExpenseAnalysis).
 ///
 /// `ParseStrictResponse` impl for `StartExpenseAnalysis`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -417,7 +417,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartExpenseAnalysis {
 /// Operation shape for `StartLendingAnalysis`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`start_lending_analysis`](crate::client::Client::start_lending_analysis).
+/// [`start_lending_analysis`](crate::client::fluent_builders::StartLendingAnalysis).
 ///
 /// `ParseStrictResponse` impl for `StartLendingAnalysis`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

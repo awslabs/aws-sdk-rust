@@ -2,7 +2,7 @@
 /// Operation shape for `AssociateApprovalRuleTemplateWithRepository`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`associate_approval_rule_template_with_repository`](crate::client::Client::associate_approval_rule_template_with_repository).
+/// [`associate_approval_rule_template_with_repository`](crate::client::fluent_builders::AssociateApprovalRuleTemplateWithRepository).
 ///
 /// `ParseStrictResponse` impl for `AssociateApprovalRuleTemplateWithRepository`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -44,7 +44,7 @@ impl aws_smithy_http::response::ParseStrictResponse
 /// Operation shape for `BatchAssociateApprovalRuleTemplateWithRepositories`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`batch_associate_approval_rule_template_with_repositories`](crate::client::Client::batch_associate_approval_rule_template_with_repositories).
+/// [`batch_associate_approval_rule_template_with_repositories`](crate::client::fluent_builders::BatchAssociateApprovalRuleTemplateWithRepositories).
 ///
 /// `ParseStrictResponse` impl for `BatchAssociateApprovalRuleTemplateWithRepositories`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -82,7 +82,7 @@ impl aws_smithy_http::response::ParseStrictResponse
 /// Operation shape for `BatchDescribeMergeConflicts`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`batch_describe_merge_conflicts`](crate::client::Client::batch_describe_merge_conflicts).
+/// [`batch_describe_merge_conflicts`](crate::client::fluent_builders::BatchDescribeMergeConflicts).
 ///
 /// `ParseStrictResponse` impl for `BatchDescribeMergeConflicts`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -117,7 +117,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchDescribeMergeConfli
 /// Operation shape for `BatchDisassociateApprovalRuleTemplateFromRepositories`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`batch_disassociate_approval_rule_template_from_repositories`](crate::client::Client::batch_disassociate_approval_rule_template_from_repositories).
+/// [`batch_disassociate_approval_rule_template_from_repositories`](crate::client::fluent_builders::BatchDisassociateApprovalRuleTemplateFromRepositories).
 ///
 /// `ParseStrictResponse` impl for `BatchDisassociateApprovalRuleTemplateFromRepositories`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -156,7 +156,7 @@ impl aws_smithy_http::response::ParseStrictResponse
 /// Operation shape for `BatchGetCommits`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`batch_get_commits`](crate::client::Client::batch_get_commits).
+/// [`batch_get_commits`](crate::client::fluent_builders::BatchGetCommits).
 ///
 /// `ParseStrictResponse` impl for `BatchGetCommits`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -191,7 +191,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchGetCommits {
 /// Operation shape for `BatchGetRepositories`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`batch_get_repositories`](crate::client::Client::batch_get_repositories).
+/// [`batch_get_repositories`](crate::client::fluent_builders::BatchGetRepositories).
 ///
 /// `ParseStrictResponse` impl for `BatchGetRepositories`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -226,7 +226,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchGetRepositories {
 /// Operation shape for `CreateApprovalRuleTemplate`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_approval_rule_template`](crate::client::Client::create_approval_rule_template).
+/// [`create_approval_rule_template`](crate::client::fluent_builders::CreateApprovalRuleTemplate).
 ///
 /// `ParseStrictResponse` impl for `CreateApprovalRuleTemplate`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -261,7 +261,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateApprovalRuleTempla
 /// Operation shape for `CreateBranch`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_branch`](crate::client::Client::create_branch).
+/// [`create_branch`](crate::client::fluent_builders::CreateBranch).
 ///
 /// `ParseStrictResponse` impl for `CreateBranch`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -294,7 +294,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateBranch {
 /// Operation shape for `CreateCommit`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_commit`](crate::client::Client::create_commit).
+/// [`create_commit`](crate::client::fluent_builders::CreateCommit).
 ///
 /// `ParseStrictResponse` impl for `CreateCommit`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -327,7 +327,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateCommit {
 /// Operation shape for `CreatePullRequest`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_pull_request`](crate::client::Client::create_pull_request).
+/// [`create_pull_request`](crate::client::fluent_builders::CreatePullRequest).
 ///
 /// `ParseStrictResponse` impl for `CreatePullRequest`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -362,7 +362,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreatePullRequest {
 /// Operation shape for `CreatePullRequestApprovalRule`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_pull_request_approval_rule`](crate::client::Client::create_pull_request_approval_rule).
+/// [`create_pull_request_approval_rule`](crate::client::fluent_builders::CreatePullRequestApprovalRule).
 ///
 /// `ParseStrictResponse` impl for `CreatePullRequestApprovalRule`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -397,7 +397,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreatePullRequestApprova
 /// Operation shape for `CreateRepository`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_repository`](crate::client::Client::create_repository).
+/// [`create_repository`](crate::client::fluent_builders::CreateRepository).
 ///
 /// `ParseStrictResponse` impl for `CreateRepository`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -432,7 +432,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateRepository {
 /// Operation shape for `CreateUnreferencedMergeCommit`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_unreferenced_merge_commit`](crate::client::Client::create_unreferenced_merge_commit).
+/// [`create_unreferenced_merge_commit`](crate::client::fluent_builders::CreateUnreferencedMergeCommit).
 ///
 /// `ParseStrictResponse` impl for `CreateUnreferencedMergeCommit`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -467,7 +467,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateUnreferencedMergeC
 /// Operation shape for `DeleteApprovalRuleTemplate`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_approval_rule_template`](crate::client::Client::delete_approval_rule_template).
+/// [`delete_approval_rule_template`](crate::client::fluent_builders::DeleteApprovalRuleTemplate).
 ///
 /// `ParseStrictResponse` impl for `DeleteApprovalRuleTemplate`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -502,7 +502,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteApprovalRuleTempla
 /// Operation shape for `DeleteBranch`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_branch`](crate::client::Client::delete_branch).
+/// [`delete_branch`](crate::client::fluent_builders::DeleteBranch).
 ///
 /// `ParseStrictResponse` impl for `DeleteBranch`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -535,7 +535,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteBranch {
 /// Operation shape for `DeleteCommentContent`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_comment_content`](crate::client::Client::delete_comment_content).
+/// [`delete_comment_content`](crate::client::fluent_builders::DeleteCommentContent).
 ///
 /// `ParseStrictResponse` impl for `DeleteCommentContent`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -570,7 +570,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteCommentContent {
 /// Operation shape for `DeleteFile`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_file`](crate::client::Client::delete_file).
+/// [`delete_file`](crate::client::fluent_builders::DeleteFile).
 ///
 /// `ParseStrictResponse` impl for `DeleteFile`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -603,7 +603,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteFile {
 /// Operation shape for `DeletePullRequestApprovalRule`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_pull_request_approval_rule`](crate::client::Client::delete_pull_request_approval_rule).
+/// [`delete_pull_request_approval_rule`](crate::client::fluent_builders::DeletePullRequestApprovalRule).
 ///
 /// `ParseStrictResponse` impl for `DeletePullRequestApprovalRule`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -638,7 +638,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeletePullRequestApprova
 /// Operation shape for `DeleteRepository`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_repository`](crate::client::Client::delete_repository).
+/// [`delete_repository`](crate::client::fluent_builders::DeleteRepository).
 ///
 /// `ParseStrictResponse` impl for `DeleteRepository`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -673,7 +673,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteRepository {
 /// Operation shape for `DescribeMergeConflicts`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_merge_conflicts`](crate::client::Client::describe_merge_conflicts).
+/// [`describe_merge_conflicts`](crate::client::fluent_builders::DescribeMergeConflicts).
 ///
 /// `ParseStrictResponse` impl for `DescribeMergeConflicts`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -708,7 +708,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeMergeConflicts {
 /// Operation shape for `DescribePullRequestEvents`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_pull_request_events`](crate::client::Client::describe_pull_request_events).
+/// [`describe_pull_request_events`](crate::client::fluent_builders::DescribePullRequestEvents).
 ///
 /// `ParseStrictResponse` impl for `DescribePullRequestEvents`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -743,7 +743,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribePullRequestEvent
 /// Operation shape for `DisassociateApprovalRuleTemplateFromRepository`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`disassociate_approval_rule_template_from_repository`](crate::client::Client::disassociate_approval_rule_template_from_repository).
+/// [`disassociate_approval_rule_template_from_repository`](crate::client::fluent_builders::DisassociateApprovalRuleTemplateFromRepository).
 ///
 /// `ParseStrictResponse` impl for `DisassociateApprovalRuleTemplateFromRepository`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -783,7 +783,7 @@ impl aws_smithy_http::response::ParseStrictResponse
 /// Operation shape for `EvaluatePullRequestApprovalRules`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`evaluate_pull_request_approval_rules`](crate::client::Client::evaluate_pull_request_approval_rules).
+/// [`evaluate_pull_request_approval_rules`](crate::client::fluent_builders::EvaluatePullRequestApprovalRules).
 ///
 /// `ParseStrictResponse` impl for `EvaluatePullRequestApprovalRules`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -818,7 +818,7 @@ impl aws_smithy_http::response::ParseStrictResponse for EvaluatePullRequestAppro
 /// Operation shape for `GetApprovalRuleTemplate`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_approval_rule_template`](crate::client::Client::get_approval_rule_template).
+/// [`get_approval_rule_template`](crate::client::fluent_builders::GetApprovalRuleTemplate).
 ///
 /// `ParseStrictResponse` impl for `GetApprovalRuleTemplate`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -853,7 +853,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetApprovalRuleTemplate 
 /// Operation shape for `GetBlob`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_blob`](crate::client::Client::get_blob).
+/// [`get_blob`](crate::client::fluent_builders::GetBlob).
 ///
 /// `ParseStrictResponse` impl for `GetBlob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -885,7 +885,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetBlob {
 /// Operation shape for `GetBranch`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_branch`](crate::client::Client::get_branch).
+/// [`get_branch`](crate::client::fluent_builders::GetBranch).
 ///
 /// `ParseStrictResponse` impl for `GetBranch`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -917,7 +917,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetBranch {
 /// Operation shape for `GetComment`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_comment`](crate::client::Client::get_comment).
+/// [`get_comment`](crate::client::fluent_builders::GetComment).
 ///
 /// `ParseStrictResponse` impl for `GetComment`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -950,7 +950,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetComment {
 /// Operation shape for `GetCommentReactions`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_comment_reactions`](crate::client::Client::get_comment_reactions).
+/// [`get_comment_reactions`](crate::client::fluent_builders::GetCommentReactions).
 ///
 /// `ParseStrictResponse` impl for `GetCommentReactions`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -985,7 +985,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetCommentReactions {
 /// Operation shape for `GetCommentsForComparedCommit`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_comments_for_compared_commit`](crate::client::Client::get_comments_for_compared_commit).
+/// [`get_comments_for_compared_commit`](crate::client::fluent_builders::GetCommentsForComparedCommit).
 ///
 /// `ParseStrictResponse` impl for `GetCommentsForComparedCommit`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1020,7 +1020,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetCommentsForComparedCo
 /// Operation shape for `GetCommentsForPullRequest`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_comments_for_pull_request`](crate::client::Client::get_comments_for_pull_request).
+/// [`get_comments_for_pull_request`](crate::client::fluent_builders::GetCommentsForPullRequest).
 ///
 /// `ParseStrictResponse` impl for `GetCommentsForPullRequest`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1055,7 +1055,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetCommentsForPullReques
 /// Operation shape for `GetCommit`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_commit`](crate::client::Client::get_commit).
+/// [`get_commit`](crate::client::fluent_builders::GetCommit).
 ///
 /// `ParseStrictResponse` impl for `GetCommit`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1087,7 +1087,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetCommit {
 /// Operation shape for `GetDifferences`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_differences`](crate::client::Client::get_differences).
+/// [`get_differences`](crate::client::fluent_builders::GetDifferences).
 ///
 /// `ParseStrictResponse` impl for `GetDifferences`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1120,7 +1120,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDifferences {
 /// Operation shape for `GetFile`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_file`](crate::client::Client::get_file).
+/// [`get_file`](crate::client::fluent_builders::GetFile).
 ///
 /// `ParseStrictResponse` impl for `GetFile`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1152,7 +1152,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetFile {
 /// Operation shape for `GetFolder`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_folder`](crate::client::Client::get_folder).
+/// [`get_folder`](crate::client::fluent_builders::GetFolder).
 ///
 /// `ParseStrictResponse` impl for `GetFolder`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1184,7 +1184,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetFolder {
 /// Operation shape for `GetMergeCommit`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_merge_commit`](crate::client::Client::get_merge_commit).
+/// [`get_merge_commit`](crate::client::fluent_builders::GetMergeCommit).
 ///
 /// `ParseStrictResponse` impl for `GetMergeCommit`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1217,7 +1217,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetMergeCommit {
 /// Operation shape for `GetMergeConflicts`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_merge_conflicts`](crate::client::Client::get_merge_conflicts).
+/// [`get_merge_conflicts`](crate::client::fluent_builders::GetMergeConflicts).
 ///
 /// `ParseStrictResponse` impl for `GetMergeConflicts`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1252,7 +1252,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetMergeConflicts {
 /// Operation shape for `GetMergeOptions`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_merge_options`](crate::client::Client::get_merge_options).
+/// [`get_merge_options`](crate::client::fluent_builders::GetMergeOptions).
 ///
 /// `ParseStrictResponse` impl for `GetMergeOptions`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1287,7 +1287,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetMergeOptions {
 /// Operation shape for `GetPullRequest`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_pull_request`](crate::client::Client::get_pull_request).
+/// [`get_pull_request`](crate::client::fluent_builders::GetPullRequest).
 ///
 /// `ParseStrictResponse` impl for `GetPullRequest`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1320,7 +1320,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetPullRequest {
 /// Operation shape for `GetPullRequestApprovalStates`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_pull_request_approval_states`](crate::client::Client::get_pull_request_approval_states).
+/// [`get_pull_request_approval_states`](crate::client::fluent_builders::GetPullRequestApprovalStates).
 ///
 /// `ParseStrictResponse` impl for `GetPullRequestApprovalStates`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1355,7 +1355,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetPullRequestApprovalSt
 /// Operation shape for `GetPullRequestOverrideState`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_pull_request_override_state`](crate::client::Client::get_pull_request_override_state).
+/// [`get_pull_request_override_state`](crate::client::fluent_builders::GetPullRequestOverrideState).
 ///
 /// `ParseStrictResponse` impl for `GetPullRequestOverrideState`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1390,7 +1390,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetPullRequestOverrideSt
 /// Operation shape for `GetRepository`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_repository`](crate::client::Client::get_repository).
+/// [`get_repository`](crate::client::fluent_builders::GetRepository).
 ///
 /// `ParseStrictResponse` impl for `GetRepository`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1423,7 +1423,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetRepository {
 /// Operation shape for `GetRepositoryTriggers`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_repository_triggers`](crate::client::Client::get_repository_triggers).
+/// [`get_repository_triggers`](crate::client::fluent_builders::GetRepositoryTriggers).
 ///
 /// `ParseStrictResponse` impl for `GetRepositoryTriggers`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1458,7 +1458,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetRepositoryTriggers {
 /// Operation shape for `ListApprovalRuleTemplates`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_approval_rule_templates`](crate::client::Client::list_approval_rule_templates).
+/// [`list_approval_rule_templates`](crate::client::fluent_builders::ListApprovalRuleTemplates).
 ///
 /// `ParseStrictResponse` impl for `ListApprovalRuleTemplates`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1493,7 +1493,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListApprovalRuleTemplate
 /// Operation shape for `ListAssociatedApprovalRuleTemplatesForRepository`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_associated_approval_rule_templates_for_repository`](crate::client::Client::list_associated_approval_rule_templates_for_repository).
+/// [`list_associated_approval_rule_templates_for_repository`](crate::client::fluent_builders::ListAssociatedApprovalRuleTemplatesForRepository).
 ///
 /// `ParseStrictResponse` impl for `ListAssociatedApprovalRuleTemplatesForRepository`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1532,7 +1532,7 @@ impl aws_smithy_http::response::ParseStrictResponse
 /// Operation shape for `ListBranches`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_branches`](crate::client::Client::list_branches).
+/// [`list_branches`](crate::client::fluent_builders::ListBranches).
 ///
 /// `ParseStrictResponse` impl for `ListBranches`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1565,7 +1565,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListBranches {
 /// Operation shape for `ListPullRequests`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_pull_requests`](crate::client::Client::list_pull_requests).
+/// [`list_pull_requests`](crate::client::fluent_builders::ListPullRequests).
 ///
 /// `ParseStrictResponse` impl for `ListPullRequests`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1600,7 +1600,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListPullRequests {
 /// Operation shape for `ListRepositories`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_repositories`](crate::client::Client::list_repositories).
+/// [`list_repositories`](crate::client::fluent_builders::ListRepositories).
 ///
 /// `ParseStrictResponse` impl for `ListRepositories`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1635,7 +1635,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListRepositories {
 /// Operation shape for `ListRepositoriesForApprovalRuleTemplate`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_repositories_for_approval_rule_template`](crate::client::Client::list_repositories_for_approval_rule_template).
+/// [`list_repositories_for_approval_rule_template`](crate::client::fluent_builders::ListRepositoriesForApprovalRuleTemplate).
 ///
 /// `ParseStrictResponse` impl for `ListRepositoriesForApprovalRuleTemplate`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1674,7 +1674,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListRepositoriesForAppro
 /// Operation shape for `ListTagsForResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
+/// [`list_tags_for_resource`](crate::client::fluent_builders::ListTagsForResource).
 ///
 /// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1709,7 +1709,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// Operation shape for `MergeBranchesByFastForward`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`merge_branches_by_fast_forward`](crate::client::Client::merge_branches_by_fast_forward).
+/// [`merge_branches_by_fast_forward`](crate::client::fluent_builders::MergeBranchesByFastForward).
 ///
 /// `ParseStrictResponse` impl for `MergeBranchesByFastForward`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1744,7 +1744,7 @@ impl aws_smithy_http::response::ParseStrictResponse for MergeBranchesByFastForwa
 /// Operation shape for `MergeBranchesBySquash`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`merge_branches_by_squash`](crate::client::Client::merge_branches_by_squash).
+/// [`merge_branches_by_squash`](crate::client::fluent_builders::MergeBranchesBySquash).
 ///
 /// `ParseStrictResponse` impl for `MergeBranchesBySquash`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1779,7 +1779,7 @@ impl aws_smithy_http::response::ParseStrictResponse for MergeBranchesBySquash {
 /// Operation shape for `MergeBranchesByThreeWay`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`merge_branches_by_three_way`](crate::client::Client::merge_branches_by_three_way).
+/// [`merge_branches_by_three_way`](crate::client::fluent_builders::MergeBranchesByThreeWay).
 ///
 /// `ParseStrictResponse` impl for `MergeBranchesByThreeWay`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1814,7 +1814,7 @@ impl aws_smithy_http::response::ParseStrictResponse for MergeBranchesByThreeWay 
 /// Operation shape for `MergePullRequestByFastForward`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`merge_pull_request_by_fast_forward`](crate::client::Client::merge_pull_request_by_fast_forward).
+/// [`merge_pull_request_by_fast_forward`](crate::client::fluent_builders::MergePullRequestByFastForward).
 ///
 /// `ParseStrictResponse` impl for `MergePullRequestByFastForward`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1849,7 +1849,7 @@ impl aws_smithy_http::response::ParseStrictResponse for MergePullRequestByFastFo
 /// Operation shape for `MergePullRequestBySquash`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`merge_pull_request_by_squash`](crate::client::Client::merge_pull_request_by_squash).
+/// [`merge_pull_request_by_squash`](crate::client::fluent_builders::MergePullRequestBySquash).
 ///
 /// `ParseStrictResponse` impl for `MergePullRequestBySquash`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1884,7 +1884,7 @@ impl aws_smithy_http::response::ParseStrictResponse for MergePullRequestBySquash
 /// Operation shape for `MergePullRequestByThreeWay`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`merge_pull_request_by_three_way`](crate::client::Client::merge_pull_request_by_three_way).
+/// [`merge_pull_request_by_three_way`](crate::client::fluent_builders::MergePullRequestByThreeWay).
 ///
 /// `ParseStrictResponse` impl for `MergePullRequestByThreeWay`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1919,7 +1919,7 @@ impl aws_smithy_http::response::ParseStrictResponse for MergePullRequestByThreeW
 /// Operation shape for `OverridePullRequestApprovalRules`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`override_pull_request_approval_rules`](crate::client::Client::override_pull_request_approval_rules).
+/// [`override_pull_request_approval_rules`](crate::client::fluent_builders::OverridePullRequestApprovalRules).
 ///
 /// `ParseStrictResponse` impl for `OverridePullRequestApprovalRules`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1954,7 +1954,7 @@ impl aws_smithy_http::response::ParseStrictResponse for OverridePullRequestAppro
 /// Operation shape for `PostCommentForComparedCommit`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`post_comment_for_compared_commit`](crate::client::Client::post_comment_for_compared_commit).
+/// [`post_comment_for_compared_commit`](crate::client::fluent_builders::PostCommentForComparedCommit).
 ///
 /// `ParseStrictResponse` impl for `PostCommentForComparedCommit`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1989,7 +1989,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PostCommentForComparedCo
 /// Operation shape for `PostCommentForPullRequest`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`post_comment_for_pull_request`](crate::client::Client::post_comment_for_pull_request).
+/// [`post_comment_for_pull_request`](crate::client::fluent_builders::PostCommentForPullRequest).
 ///
 /// `ParseStrictResponse` impl for `PostCommentForPullRequest`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2024,7 +2024,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PostCommentForPullReques
 /// Operation shape for `PostCommentReply`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`post_comment_reply`](crate::client::Client::post_comment_reply).
+/// [`post_comment_reply`](crate::client::fluent_builders::PostCommentReply).
 ///
 /// `ParseStrictResponse` impl for `PostCommentReply`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2059,7 +2059,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PostCommentReply {
 /// Operation shape for `PutCommentReaction`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`put_comment_reaction`](crate::client::Client::put_comment_reaction).
+/// [`put_comment_reaction`](crate::client::fluent_builders::PutCommentReaction).
 ///
 /// `ParseStrictResponse` impl for `PutCommentReaction`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2094,7 +2094,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutCommentReaction {
 /// Operation shape for `PutFile`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`put_file`](crate::client::Client::put_file).
+/// [`put_file`](crate::client::fluent_builders::PutFile).
 ///
 /// `ParseStrictResponse` impl for `PutFile`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2126,7 +2126,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutFile {
 /// Operation shape for `PutRepositoryTriggers`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`put_repository_triggers`](crate::client::Client::put_repository_triggers).
+/// [`put_repository_triggers`](crate::client::fluent_builders::PutRepositoryTriggers).
 ///
 /// `ParseStrictResponse` impl for `PutRepositoryTriggers`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2161,7 +2161,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutRepositoryTriggers {
 /// Operation shape for `TagResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`tag_resource`](crate::client::Client::tag_resource).
+/// [`tag_resource`](crate::client::fluent_builders::TagResource).
 ///
 /// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2194,7 +2194,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// Operation shape for `TestRepositoryTriggers`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`test_repository_triggers`](crate::client::Client::test_repository_triggers).
+/// [`test_repository_triggers`](crate::client::fluent_builders::TestRepositoryTriggers).
 ///
 /// `ParseStrictResponse` impl for `TestRepositoryTriggers`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2229,7 +2229,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TestRepositoryTriggers {
 /// Operation shape for `UntagResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`untag_resource`](crate::client::Client::untag_resource).
+/// [`untag_resource`](crate::client::fluent_builders::UntagResource).
 ///
 /// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2262,7 +2262,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// Operation shape for `UpdateApprovalRuleTemplateContent`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_approval_rule_template_content`](crate::client::Client::update_approval_rule_template_content).
+/// [`update_approval_rule_template_content`](crate::client::fluent_builders::UpdateApprovalRuleTemplateContent).
 ///
 /// `ParseStrictResponse` impl for `UpdateApprovalRuleTemplateContent`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2297,7 +2297,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateApprovalRuleTempla
 /// Operation shape for `UpdateApprovalRuleTemplateDescription`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_approval_rule_template_description`](crate::client::Client::update_approval_rule_template_description).
+/// [`update_approval_rule_template_description`](crate::client::fluent_builders::UpdateApprovalRuleTemplateDescription).
 ///
 /// `ParseStrictResponse` impl for `UpdateApprovalRuleTemplateDescription`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2334,7 +2334,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateApprovalRuleTempla
 /// Operation shape for `UpdateApprovalRuleTemplateName`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_approval_rule_template_name`](crate::client::Client::update_approval_rule_template_name).
+/// [`update_approval_rule_template_name`](crate::client::fluent_builders::UpdateApprovalRuleTemplateName).
 ///
 /// `ParseStrictResponse` impl for `UpdateApprovalRuleTemplateName`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2369,7 +2369,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateApprovalRuleTempla
 /// Operation shape for `UpdateComment`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_comment`](crate::client::Client::update_comment).
+/// [`update_comment`](crate::client::fluent_builders::UpdateComment).
 ///
 /// `ParseStrictResponse` impl for `UpdateComment`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2402,7 +2402,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateComment {
 /// Operation shape for `UpdateDefaultBranch`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_default_branch`](crate::client::Client::update_default_branch).
+/// [`update_default_branch`](crate::client::fluent_builders::UpdateDefaultBranch).
 ///
 /// `ParseStrictResponse` impl for `UpdateDefaultBranch`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2437,7 +2437,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateDefaultBranch {
 /// Operation shape for `UpdatePullRequestApprovalRuleContent`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_pull_request_approval_rule_content`](crate::client::Client::update_pull_request_approval_rule_content).
+/// [`update_pull_request_approval_rule_content`](crate::client::fluent_builders::UpdatePullRequestApprovalRuleContent).
 ///
 /// `ParseStrictResponse` impl for `UpdatePullRequestApprovalRuleContent`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2474,7 +2474,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdatePullRequestApprova
 /// Operation shape for `UpdatePullRequestApprovalState`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_pull_request_approval_state`](crate::client::Client::update_pull_request_approval_state).
+/// [`update_pull_request_approval_state`](crate::client::fluent_builders::UpdatePullRequestApprovalState).
 ///
 /// `ParseStrictResponse` impl for `UpdatePullRequestApprovalState`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2509,7 +2509,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdatePullRequestApprova
 /// Operation shape for `UpdatePullRequestDescription`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_pull_request_description`](crate::client::Client::update_pull_request_description).
+/// [`update_pull_request_description`](crate::client::fluent_builders::UpdatePullRequestDescription).
 ///
 /// `ParseStrictResponse` impl for `UpdatePullRequestDescription`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2544,7 +2544,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdatePullRequestDescrip
 /// Operation shape for `UpdatePullRequestStatus`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_pull_request_status`](crate::client::Client::update_pull_request_status).
+/// [`update_pull_request_status`](crate::client::fluent_builders::UpdatePullRequestStatus).
 ///
 /// `ParseStrictResponse` impl for `UpdatePullRequestStatus`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2579,7 +2579,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdatePullRequestStatus 
 /// Operation shape for `UpdatePullRequestTitle`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_pull_request_title`](crate::client::Client::update_pull_request_title).
+/// [`update_pull_request_title`](crate::client::fluent_builders::UpdatePullRequestTitle).
 ///
 /// `ParseStrictResponse` impl for `UpdatePullRequestTitle`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2614,7 +2614,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdatePullRequestTitle {
 /// Operation shape for `UpdateRepositoryDescription`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_repository_description`](crate::client::Client::update_repository_description).
+/// [`update_repository_description`](crate::client::fluent_builders::UpdateRepositoryDescription).
 ///
 /// `ParseStrictResponse` impl for `UpdateRepositoryDescription`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2649,7 +2649,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateRepositoryDescript
 /// Operation shape for `UpdateRepositoryName`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_repository_name`](crate::client::Client::update_repository_name).
+/// [`update_repository_name`](crate::client::fluent_builders::UpdateRepositoryName).
 ///
 /// `ParseStrictResponse` impl for `UpdateRepositoryName`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

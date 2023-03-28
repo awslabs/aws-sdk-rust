@@ -2,7 +2,7 @@
 /// Operation shape for `BatchPutMetrics`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`batch_put_metrics`](crate::client::Client::batch_put_metrics).
+/// [`batch_put_metrics`](crate::client::fluent_builders::BatchPutMetrics).
 ///
 /// `ParseStrictResponse` impl for `BatchPutMetrics`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

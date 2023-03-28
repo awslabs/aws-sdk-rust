@@ -2,7 +2,7 @@
 /// Operation shape for `CopyBackupToRegion`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`copy_backup_to_region`](crate::client::Client::copy_backup_to_region).
+/// [`copy_backup_to_region`](crate::client::fluent_builders::CopyBackupToRegion).
 ///
 /// `ParseStrictResponse` impl for `CopyBackupToRegion`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -37,7 +37,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CopyBackupToRegion {
 /// Operation shape for `CreateCluster`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_cluster`](crate::client::Client::create_cluster).
+/// [`create_cluster`](crate::client::fluent_builders::CreateCluster).
 ///
 /// `ParseStrictResponse` impl for `CreateCluster`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -70,7 +70,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateCluster {
 /// Operation shape for `CreateHsm`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_hsm`](crate::client::Client::create_hsm).
+/// [`create_hsm`](crate::client::fluent_builders::CreateHsm).
 ///
 /// `ParseStrictResponse` impl for `CreateHsm`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -102,7 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateHsm {
 /// Operation shape for `DeleteBackup`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_backup`](crate::client::Client::delete_backup).
+/// [`delete_backup`](crate::client::fluent_builders::DeleteBackup).
 ///
 /// `ParseStrictResponse` impl for `DeleteBackup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -135,7 +135,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteBackup {
 /// Operation shape for `DeleteCluster`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_cluster`](crate::client::Client::delete_cluster).
+/// [`delete_cluster`](crate::client::fluent_builders::DeleteCluster).
 ///
 /// `ParseStrictResponse` impl for `DeleteCluster`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -168,7 +168,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteCluster {
 /// Operation shape for `DeleteHsm`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_hsm`](crate::client::Client::delete_hsm).
+/// [`delete_hsm`](crate::client::fluent_builders::DeleteHsm).
 ///
 /// `ParseStrictResponse` impl for `DeleteHsm`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -200,7 +200,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteHsm {
 /// Operation shape for `DescribeBackups`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_backups`](crate::client::Client::describe_backups).
+/// [`describe_backups`](crate::client::fluent_builders::DescribeBackups).
 ///
 /// `ParseStrictResponse` impl for `DescribeBackups`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -235,7 +235,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeBackups {
 /// Operation shape for `DescribeClusters`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_clusters`](crate::client::Client::describe_clusters).
+/// [`describe_clusters`](crate::client::fluent_builders::DescribeClusters).
 ///
 /// `ParseStrictResponse` impl for `DescribeClusters`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -270,7 +270,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeClusters {
 /// Operation shape for `InitializeCluster`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`initialize_cluster`](crate::client::Client::initialize_cluster).
+/// [`initialize_cluster`](crate::client::fluent_builders::InitializeCluster).
 ///
 /// `ParseStrictResponse` impl for `InitializeCluster`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -305,7 +305,7 @@ impl aws_smithy_http::response::ParseStrictResponse for InitializeCluster {
 /// Operation shape for `ListTags`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_tags`](crate::client::Client::list_tags).
+/// [`list_tags`](crate::client::fluent_builders::ListTags).
 ///
 /// `ParseStrictResponse` impl for `ListTags`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -337,7 +337,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTags {
 /// Operation shape for `ModifyBackupAttributes`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`modify_backup_attributes`](crate::client::Client::modify_backup_attributes).
+/// [`modify_backup_attributes`](crate::client::fluent_builders::ModifyBackupAttributes).
 ///
 /// `ParseStrictResponse` impl for `ModifyBackupAttributes`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -372,7 +372,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyBackupAttributes {
 /// Operation shape for `ModifyCluster`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`modify_cluster`](crate::client::Client::modify_cluster).
+/// [`modify_cluster`](crate::client::fluent_builders::ModifyCluster).
 ///
 /// `ParseStrictResponse` impl for `ModifyCluster`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -405,7 +405,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyCluster {
 /// Operation shape for `RestoreBackup`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`restore_backup`](crate::client::Client::restore_backup).
+/// [`restore_backup`](crate::client::fluent_builders::RestoreBackup).
 ///
 /// `ParseStrictResponse` impl for `RestoreBackup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -438,7 +438,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RestoreBackup {
 /// Operation shape for `TagResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`tag_resource`](crate::client::Client::tag_resource).
+/// [`tag_resource`](crate::client::fluent_builders::TagResource).
 ///
 /// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -471,7 +471,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// Operation shape for `UntagResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`untag_resource`](crate::client::Client::untag_resource).
+/// [`untag_resource`](crate::client::fluent_builders::UntagResource).
 ///
 /// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

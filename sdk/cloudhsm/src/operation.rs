@@ -2,7 +2,7 @@
 /// Operation shape for `AddTagsToResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`add_tags_to_resource`](crate::client::Client::add_tags_to_resource).
+/// [`add_tags_to_resource`](crate::client::fluent_builders::AddTagsToResource).
 ///
 /// `ParseStrictResponse` impl for `AddTagsToResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -37,7 +37,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AddTagsToResource {
 /// Operation shape for `CreateHapg`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_hapg`](crate::client::Client::create_hapg).
+/// [`create_hapg`](crate::client::fluent_builders::CreateHapg).
 ///
 /// `ParseStrictResponse` impl for `CreateHapg`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -70,7 +70,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateHapg {
 /// Operation shape for `CreateHsm`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_hsm`](crate::client::Client::create_hsm).
+/// [`create_hsm`](crate::client::fluent_builders::CreateHsm).
 ///
 /// `ParseStrictResponse` impl for `CreateHsm`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -102,7 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateHsm {
 /// Operation shape for `CreateLunaClient`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_luna_client`](crate::client::Client::create_luna_client).
+/// [`create_luna_client`](crate::client::fluent_builders::CreateLunaClient).
 ///
 /// `ParseStrictResponse` impl for `CreateLunaClient`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -137,7 +137,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateLunaClient {
 /// Operation shape for `DeleteHapg`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_hapg`](crate::client::Client::delete_hapg).
+/// [`delete_hapg`](crate::client::fluent_builders::DeleteHapg).
 ///
 /// `ParseStrictResponse` impl for `DeleteHapg`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -170,7 +170,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteHapg {
 /// Operation shape for `DeleteHsm`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_hsm`](crate::client::Client::delete_hsm).
+/// [`delete_hsm`](crate::client::fluent_builders::DeleteHsm).
 ///
 /// `ParseStrictResponse` impl for `DeleteHsm`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -202,7 +202,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteHsm {
 /// Operation shape for `DeleteLunaClient`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_luna_client`](crate::client::Client::delete_luna_client).
+/// [`delete_luna_client`](crate::client::fluent_builders::DeleteLunaClient).
 ///
 /// `ParseStrictResponse` impl for `DeleteLunaClient`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -237,7 +237,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteLunaClient {
 /// Operation shape for `DescribeHapg`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_hapg`](crate::client::Client::describe_hapg).
+/// [`describe_hapg`](crate::client::fluent_builders::DescribeHapg).
 ///
 /// `ParseStrictResponse` impl for `DescribeHapg`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -270,7 +270,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeHapg {
 /// Operation shape for `DescribeHsm`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_hsm`](crate::client::Client::describe_hsm).
+/// [`describe_hsm`](crate::client::fluent_builders::DescribeHsm).
 ///
 /// `ParseStrictResponse` impl for `DescribeHsm`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -303,7 +303,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeHsm {
 /// Operation shape for `DescribeLunaClient`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_luna_client`](crate::client::Client::describe_luna_client).
+/// [`describe_luna_client`](crate::client::fluent_builders::DescribeLunaClient).
 ///
 /// `ParseStrictResponse` impl for `DescribeLunaClient`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -338,7 +338,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeLunaClient {
 /// Operation shape for `GetConfig`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_config`](crate::client::Client::get_config).
+/// [`get_config`](crate::client::fluent_builders::GetConfig).
 ///
 /// `ParseStrictResponse` impl for `GetConfig`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -370,7 +370,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetConfig {
 /// Operation shape for `ListAvailableZones`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_available_zones`](crate::client::Client::list_available_zones).
+/// [`list_available_zones`](crate::client::fluent_builders::ListAvailableZones).
 ///
 /// `ParseStrictResponse` impl for `ListAvailableZones`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -405,7 +405,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAvailableZones {
 /// Operation shape for `ListHapgs`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_hapgs`](crate::client::Client::list_hapgs).
+/// [`list_hapgs`](crate::client::fluent_builders::ListHapgs).
 ///
 /// `ParseStrictResponse` impl for `ListHapgs`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -437,7 +437,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListHapgs {
 /// Operation shape for `ListHsms`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_hsms`](crate::client::Client::list_hsms).
+/// [`list_hsms`](crate::client::fluent_builders::ListHsms).
 ///
 /// `ParseStrictResponse` impl for `ListHsms`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -469,7 +469,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListHsms {
 /// Operation shape for `ListLunaClients`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_luna_clients`](crate::client::Client::list_luna_clients).
+/// [`list_luna_clients`](crate::client::fluent_builders::ListLunaClients).
 ///
 /// `ParseStrictResponse` impl for `ListLunaClients`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -504,7 +504,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListLunaClients {
 /// Operation shape for `ListTagsForResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
+/// [`list_tags_for_resource`](crate::client::fluent_builders::ListTagsForResource).
 ///
 /// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -539,7 +539,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// Operation shape for `ModifyHapg`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`modify_hapg`](crate::client::Client::modify_hapg).
+/// [`modify_hapg`](crate::client::fluent_builders::ModifyHapg).
 ///
 /// `ParseStrictResponse` impl for `ModifyHapg`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -572,7 +572,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyHapg {
 /// Operation shape for `ModifyHsm`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`modify_hsm`](crate::client::Client::modify_hsm).
+/// [`modify_hsm`](crate::client::fluent_builders::ModifyHsm).
 ///
 /// `ParseStrictResponse` impl for `ModifyHsm`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -604,7 +604,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyHsm {
 /// Operation shape for `ModifyLunaClient`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`modify_luna_client`](crate::client::Client::modify_luna_client).
+/// [`modify_luna_client`](crate::client::fluent_builders::ModifyLunaClient).
 ///
 /// `ParseStrictResponse` impl for `ModifyLunaClient`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -639,7 +639,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyLunaClient {
 /// Operation shape for `RemoveTagsFromResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`remove_tags_from_resource`](crate::client::Client::remove_tags_from_resource).
+/// [`remove_tags_from_resource`](crate::client::fluent_builders::RemoveTagsFromResource).
 ///
 /// `ParseStrictResponse` impl for `RemoveTagsFromResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

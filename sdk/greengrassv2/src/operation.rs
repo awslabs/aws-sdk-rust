@@ -2,7 +2,7 @@
 /// Operation shape for `AssociateServiceRoleToAccount`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`associate_service_role_to_account`](crate::client::Client::associate_service_role_to_account).
+/// [`associate_service_role_to_account`](crate::client::fluent_builders::AssociateServiceRoleToAccount).
 ///
 /// `ParseStrictResponse` impl for `AssociateServiceRoleToAccount`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -37,7 +37,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateServiceRoleToAc
 /// Operation shape for `BatchAssociateClientDeviceWithCoreDevice`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`batch_associate_client_device_with_core_device`](crate::client::Client::batch_associate_client_device_with_core_device).
+/// [`batch_associate_client_device_with_core_device`](crate::client::fluent_builders::BatchAssociateClientDeviceWithCoreDevice).
 ///
 /// `ParseStrictResponse` impl for `BatchAssociateClientDeviceWithCoreDevice`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -77,7 +77,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchAssociateClientDevi
 /// Operation shape for `BatchDisassociateClientDeviceFromCoreDevice`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`batch_disassociate_client_device_from_core_device`](crate::client::Client::batch_disassociate_client_device_from_core_device).
+/// [`batch_disassociate_client_device_from_core_device`](crate::client::fluent_builders::BatchDisassociateClientDeviceFromCoreDevice).
 ///
 /// `ParseStrictResponse` impl for `BatchDisassociateClientDeviceFromCoreDevice`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -119,7 +119,7 @@ impl aws_smithy_http::response::ParseStrictResponse
 /// Operation shape for `CancelDeployment`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`cancel_deployment`](crate::client::Client::cancel_deployment).
+/// [`cancel_deployment`](crate::client::fluent_builders::CancelDeployment).
 ///
 /// `ParseStrictResponse` impl for `CancelDeployment`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -154,7 +154,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CancelDeployment {
 /// Operation shape for `CreateComponentVersion`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_component_version`](crate::client::Client::create_component_version).
+/// [`create_component_version`](crate::client::fluent_builders::CreateComponentVersion).
 ///
 /// `ParseStrictResponse` impl for `CreateComponentVersion`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -189,7 +189,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateComponentVersion {
 /// Operation shape for `CreateDeployment`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_deployment`](crate::client::Client::create_deployment).
+/// [`create_deployment`](crate::client::fluent_builders::CreateDeployment).
 ///
 /// `ParseStrictResponse` impl for `CreateDeployment`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -224,7 +224,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateDeployment {
 /// Operation shape for `DeleteComponent`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_component`](crate::client::Client::delete_component).
+/// [`delete_component`](crate::client::fluent_builders::DeleteComponent).
 ///
 /// `ParseStrictResponse` impl for `DeleteComponent`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -259,7 +259,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteComponent {
 /// Operation shape for `DeleteCoreDevice`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_core_device`](crate::client::Client::delete_core_device).
+/// [`delete_core_device`](crate::client::fluent_builders::DeleteCoreDevice).
 ///
 /// `ParseStrictResponse` impl for `DeleteCoreDevice`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -294,7 +294,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteCoreDevice {
 /// Operation shape for `DeleteDeployment`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_deployment`](crate::client::Client::delete_deployment).
+/// [`delete_deployment`](crate::client::fluent_builders::DeleteDeployment).
 ///
 /// `ParseStrictResponse` impl for `DeleteDeployment`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -329,7 +329,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteDeployment {
 /// Operation shape for `DescribeComponent`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_component`](crate::client::Client::describe_component).
+/// [`describe_component`](crate::client::fluent_builders::DescribeComponent).
 ///
 /// `ParseStrictResponse` impl for `DescribeComponent`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -364,7 +364,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeComponent {
 /// Operation shape for `DisassociateServiceRoleFromAccount`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`disassociate_service_role_from_account`](crate::client::Client::disassociate_service_role_from_account).
+/// [`disassociate_service_role_from_account`](crate::client::fluent_builders::DisassociateServiceRoleFromAccount).
 ///
 /// `ParseStrictResponse` impl for `DisassociateServiceRoleFromAccount`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -399,7 +399,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateServiceRoleF
 /// Operation shape for `GetComponent`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_component`](crate::client::Client::get_component).
+/// [`get_component`](crate::client::fluent_builders::GetComponent).
 ///
 /// `ParseStrictResponse` impl for `GetComponent`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -432,7 +432,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetComponent {
 /// Operation shape for `GetComponentVersionArtifact`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_component_version_artifact`](crate::client::Client::get_component_version_artifact).
+/// [`get_component_version_artifact`](crate::client::fluent_builders::GetComponentVersionArtifact).
 ///
 /// `ParseStrictResponse` impl for `GetComponentVersionArtifact`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -467,7 +467,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetComponentVersionArtif
 /// Operation shape for `GetConnectivityInfo`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_connectivity_info`](crate::client::Client::get_connectivity_info).
+/// [`get_connectivity_info`](crate::client::fluent_builders::GetConnectivityInfo).
 ///
 /// `ParseStrictResponse` impl for `GetConnectivityInfo`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -502,7 +502,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetConnectivityInfo {
 /// Operation shape for `GetCoreDevice`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_core_device`](crate::client::Client::get_core_device).
+/// [`get_core_device`](crate::client::fluent_builders::GetCoreDevice).
 ///
 /// `ParseStrictResponse` impl for `GetCoreDevice`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -535,7 +535,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetCoreDevice {
 /// Operation shape for `GetDeployment`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_deployment`](crate::client::Client::get_deployment).
+/// [`get_deployment`](crate::client::fluent_builders::GetDeployment).
 ///
 /// `ParseStrictResponse` impl for `GetDeployment`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -568,7 +568,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDeployment {
 /// Operation shape for `GetServiceRoleForAccount`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_service_role_for_account`](crate::client::Client::get_service_role_for_account).
+/// [`get_service_role_for_account`](crate::client::fluent_builders::GetServiceRoleForAccount).
 ///
 /// `ParseStrictResponse` impl for `GetServiceRoleForAccount`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -603,7 +603,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetServiceRoleForAccount
 /// Operation shape for `ListClientDevicesAssociatedWithCoreDevice`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_client_devices_associated_with_core_device`](crate::client::Client::list_client_devices_associated_with_core_device).
+/// [`list_client_devices_associated_with_core_device`](crate::client::fluent_builders::ListClientDevicesAssociatedWithCoreDevice).
 ///
 /// `ParseStrictResponse` impl for `ListClientDevicesAssociatedWithCoreDevice`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -643,7 +643,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListClientDevicesAssocia
 /// Operation shape for `ListComponents`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_components`](crate::client::Client::list_components).
+/// [`list_components`](crate::client::fluent_builders::ListComponents).
 ///
 /// `ParseStrictResponse` impl for `ListComponents`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -676,7 +676,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListComponents {
 /// Operation shape for `ListComponentVersions`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_component_versions`](crate::client::Client::list_component_versions).
+/// [`list_component_versions`](crate::client::fluent_builders::ListComponentVersions).
 ///
 /// `ParseStrictResponse` impl for `ListComponentVersions`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -711,7 +711,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListComponentVersions {
 /// Operation shape for `ListCoreDevices`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_core_devices`](crate::client::Client::list_core_devices).
+/// [`list_core_devices`](crate::client::fluent_builders::ListCoreDevices).
 ///
 /// `ParseStrictResponse` impl for `ListCoreDevices`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -746,7 +746,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListCoreDevices {
 /// Operation shape for `ListDeployments`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_deployments`](crate::client::Client::list_deployments).
+/// [`list_deployments`](crate::client::fluent_builders::ListDeployments).
 ///
 /// `ParseStrictResponse` impl for `ListDeployments`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -781,7 +781,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListDeployments {
 /// Operation shape for `ListEffectiveDeployments`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_effective_deployments`](crate::client::Client::list_effective_deployments).
+/// [`list_effective_deployments`](crate::client::fluent_builders::ListEffectiveDeployments).
 ///
 /// `ParseStrictResponse` impl for `ListEffectiveDeployments`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -816,7 +816,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListEffectiveDeployments
 /// Operation shape for `ListInstalledComponents`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_installed_components`](crate::client::Client::list_installed_components).
+/// [`list_installed_components`](crate::client::fluent_builders::ListInstalledComponents).
 ///
 /// `ParseStrictResponse` impl for `ListInstalledComponents`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -851,7 +851,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListInstalledComponents 
 /// Operation shape for `ListTagsForResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
+/// [`list_tags_for_resource`](crate::client::fluent_builders::ListTagsForResource).
 ///
 /// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -886,7 +886,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// Operation shape for `ResolveComponentCandidates`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`resolve_component_candidates`](crate::client::Client::resolve_component_candidates).
+/// [`resolve_component_candidates`](crate::client::fluent_builders::ResolveComponentCandidates).
 ///
 /// `ParseStrictResponse` impl for `ResolveComponentCandidates`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -921,7 +921,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ResolveComponentCandidat
 /// Operation shape for `TagResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`tag_resource`](crate::client::Client::tag_resource).
+/// [`tag_resource`](crate::client::fluent_builders::TagResource).
 ///
 /// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -954,7 +954,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// Operation shape for `UntagResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`untag_resource`](crate::client::Client::untag_resource).
+/// [`untag_resource`](crate::client::fluent_builders::UntagResource).
 ///
 /// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -987,7 +987,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// Operation shape for `UpdateConnectivityInfo`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_connectivity_info`](crate::client::Client::update_connectivity_info).
+/// [`update_connectivity_info`](crate::client::fluent_builders::UpdateConnectivityInfo).
 ///
 /// `ParseStrictResponse` impl for `UpdateConnectivityInfo`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

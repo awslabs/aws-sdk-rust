@@ -2,7 +2,7 @@
 /// Operation shape for `AssociateTeamMember`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`associate_team_member`](crate::client::Client::associate_team_member).
+/// [`associate_team_member`](crate::client::fluent_builders::AssociateTeamMember).
 ///
 /// `ParseStrictResponse` impl for `AssociateTeamMember`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -37,7 +37,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateTeamMember {
 /// Operation shape for `CreateProject`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_project`](crate::client::Client::create_project).
+/// [`create_project`](crate::client::fluent_builders::CreateProject).
 ///
 /// `ParseStrictResponse` impl for `CreateProject`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -70,7 +70,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateProject {
 /// Operation shape for `CreateUserProfile`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_user_profile`](crate::client::Client::create_user_profile).
+/// [`create_user_profile`](crate::client::fluent_builders::CreateUserProfile).
 ///
 /// `ParseStrictResponse` impl for `CreateUserProfile`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -105,7 +105,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateUserProfile {
 /// Operation shape for `DeleteProject`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_project`](crate::client::Client::delete_project).
+/// [`delete_project`](crate::client::fluent_builders::DeleteProject).
 ///
 /// `ParseStrictResponse` impl for `DeleteProject`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -138,7 +138,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteProject {
 /// Operation shape for `DeleteUserProfile`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_user_profile`](crate::client::Client::delete_user_profile).
+/// [`delete_user_profile`](crate::client::fluent_builders::DeleteUserProfile).
 ///
 /// `ParseStrictResponse` impl for `DeleteUserProfile`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -173,7 +173,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteUserProfile {
 /// Operation shape for `DescribeProject`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_project`](crate::client::Client::describe_project).
+/// [`describe_project`](crate::client::fluent_builders::DescribeProject).
 ///
 /// `ParseStrictResponse` impl for `DescribeProject`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -208,7 +208,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeProject {
 /// Operation shape for `DescribeUserProfile`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_user_profile`](crate::client::Client::describe_user_profile).
+/// [`describe_user_profile`](crate::client::fluent_builders::DescribeUserProfile).
 ///
 /// `ParseStrictResponse` impl for `DescribeUserProfile`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -243,7 +243,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeUserProfile {
 /// Operation shape for `DisassociateTeamMember`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`disassociate_team_member`](crate::client::Client::disassociate_team_member).
+/// [`disassociate_team_member`](crate::client::fluent_builders::DisassociateTeamMember).
 ///
 /// `ParseStrictResponse` impl for `DisassociateTeamMember`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -278,7 +278,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateTeamMember {
 /// Operation shape for `ListProjects`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_projects`](crate::client::Client::list_projects).
+/// [`list_projects`](crate::client::fluent_builders::ListProjects).
 ///
 /// `ParseStrictResponse` impl for `ListProjects`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -311,7 +311,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListProjects {
 /// Operation shape for `ListResources`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_resources`](crate::client::Client::list_resources).
+/// [`list_resources`](crate::client::fluent_builders::ListResources).
 ///
 /// `ParseStrictResponse` impl for `ListResources`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -344,7 +344,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListResources {
 /// Operation shape for `ListTagsForProject`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_tags_for_project`](crate::client::Client::list_tags_for_project).
+/// [`list_tags_for_project`](crate::client::fluent_builders::ListTagsForProject).
 ///
 /// `ParseStrictResponse` impl for `ListTagsForProject`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -379,7 +379,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForProject {
 /// Operation shape for `ListTeamMembers`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_team_members`](crate::client::Client::list_team_members).
+/// [`list_team_members`](crate::client::fluent_builders::ListTeamMembers).
 ///
 /// `ParseStrictResponse` impl for `ListTeamMembers`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -414,7 +414,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTeamMembers {
 /// Operation shape for `ListUserProfiles`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_user_profiles`](crate::client::Client::list_user_profiles).
+/// [`list_user_profiles`](crate::client::fluent_builders::ListUserProfiles).
 ///
 /// `ParseStrictResponse` impl for `ListUserProfiles`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -449,7 +449,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListUserProfiles {
 /// Operation shape for `TagProject`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`tag_project`](crate::client::Client::tag_project).
+/// [`tag_project`](crate::client::fluent_builders::TagProject).
 ///
 /// `ParseStrictResponse` impl for `TagProject`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -482,7 +482,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagProject {
 /// Operation shape for `UntagProject`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`untag_project`](crate::client::Client::untag_project).
+/// [`untag_project`](crate::client::fluent_builders::UntagProject).
 ///
 /// `ParseStrictResponse` impl for `UntagProject`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -515,7 +515,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagProject {
 /// Operation shape for `UpdateProject`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_project`](crate::client::Client::update_project).
+/// [`update_project`](crate::client::fluent_builders::UpdateProject).
 ///
 /// `ParseStrictResponse` impl for `UpdateProject`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -548,7 +548,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateProject {
 /// Operation shape for `UpdateTeamMember`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_team_member`](crate::client::Client::update_team_member).
+/// [`update_team_member`](crate::client::fluent_builders::UpdateTeamMember).
 ///
 /// `ParseStrictResponse` impl for `UpdateTeamMember`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -583,7 +583,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateTeamMember {
 /// Operation shape for `UpdateUserProfile`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_user_profile`](crate::client::Client::update_user_profile).
+/// [`update_user_profile`](crate::client::fluent_builders::UpdateUserProfile).
 ///
 /// `ParseStrictResponse` impl for `UpdateUserProfile`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

@@ -2,7 +2,7 @@
 /// Operation shape for `BatchDeleteWorlds`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`batch_delete_worlds`](crate::client::Client::batch_delete_worlds).
+/// [`batch_delete_worlds`](crate::client::fluent_builders::BatchDeleteWorlds).
 ///
 /// `ParseStrictResponse` impl for `BatchDeleteWorlds`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -37,7 +37,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchDeleteWorlds {
 /// Operation shape for `BatchDescribeSimulationJob`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`batch_describe_simulation_job`](crate::client::Client::batch_describe_simulation_job).
+/// [`batch_describe_simulation_job`](crate::client::fluent_builders::BatchDescribeSimulationJob).
 ///
 /// `ParseStrictResponse` impl for `BatchDescribeSimulationJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -72,7 +72,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchDescribeSimulationJ
 /// Operation shape for `CancelDeploymentJob`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`cancel_deployment_job`](crate::client::Client::cancel_deployment_job).
+/// [`cancel_deployment_job`](crate::client::fluent_builders::CancelDeploymentJob).
 ///
 /// `ParseStrictResponse` impl for `CancelDeploymentJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -107,7 +107,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CancelDeploymentJob {
 /// Operation shape for `CancelSimulationJob`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`cancel_simulation_job`](crate::client::Client::cancel_simulation_job).
+/// [`cancel_simulation_job`](crate::client::fluent_builders::CancelSimulationJob).
 ///
 /// `ParseStrictResponse` impl for `CancelSimulationJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -142,7 +142,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CancelSimulationJob {
 /// Operation shape for `CancelSimulationJobBatch`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`cancel_simulation_job_batch`](crate::client::Client::cancel_simulation_job_batch).
+/// [`cancel_simulation_job_batch`](crate::client::fluent_builders::CancelSimulationJobBatch).
 ///
 /// `ParseStrictResponse` impl for `CancelSimulationJobBatch`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -177,7 +177,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CancelSimulationJobBatch
 /// Operation shape for `CancelWorldExportJob`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`cancel_world_export_job`](crate::client::Client::cancel_world_export_job).
+/// [`cancel_world_export_job`](crate::client::fluent_builders::CancelWorldExportJob).
 ///
 /// `ParseStrictResponse` impl for `CancelWorldExportJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -212,7 +212,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CancelWorldExportJob {
 /// Operation shape for `CancelWorldGenerationJob`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`cancel_world_generation_job`](crate::client::Client::cancel_world_generation_job).
+/// [`cancel_world_generation_job`](crate::client::fluent_builders::CancelWorldGenerationJob).
 ///
 /// `ParseStrictResponse` impl for `CancelWorldGenerationJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -247,7 +247,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CancelWorldGenerationJob
 /// Operation shape for `CreateDeploymentJob`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_deployment_job`](crate::client::Client::create_deployment_job).
+/// [`create_deployment_job`](crate::client::fluent_builders::CreateDeploymentJob).
 ///
 /// `ParseStrictResponse` impl for `CreateDeploymentJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -282,7 +282,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateDeploymentJob {
 /// Operation shape for `CreateFleet`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_fleet`](crate::client::Client::create_fleet).
+/// [`create_fleet`](crate::client::fluent_builders::CreateFleet).
 ///
 /// `ParseStrictResponse` impl for `CreateFleet`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -315,7 +315,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateFleet {
 /// Operation shape for `CreateRobot`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_robot`](crate::client::Client::create_robot).
+/// [`create_robot`](crate::client::fluent_builders::CreateRobot).
 ///
 /// `ParseStrictResponse` impl for `CreateRobot`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -348,7 +348,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateRobot {
 /// Operation shape for `CreateRobotApplication`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_robot_application`](crate::client::Client::create_robot_application).
+/// [`create_robot_application`](crate::client::fluent_builders::CreateRobotApplication).
 ///
 /// `ParseStrictResponse` impl for `CreateRobotApplication`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -383,7 +383,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateRobotApplication {
 /// Operation shape for `CreateRobotApplicationVersion`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_robot_application_version`](crate::client::Client::create_robot_application_version).
+/// [`create_robot_application_version`](crate::client::fluent_builders::CreateRobotApplicationVersion).
 ///
 /// `ParseStrictResponse` impl for `CreateRobotApplicationVersion`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -418,7 +418,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateRobotApplicationVe
 /// Operation shape for `CreateSimulationApplication`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_simulation_application`](crate::client::Client::create_simulation_application).
+/// [`create_simulation_application`](crate::client::fluent_builders::CreateSimulationApplication).
 ///
 /// `ParseStrictResponse` impl for `CreateSimulationApplication`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -453,7 +453,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateSimulationApplicat
 /// Operation shape for `CreateSimulationApplicationVersion`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_simulation_application_version`](crate::client::Client::create_simulation_application_version).
+/// [`create_simulation_application_version`](crate::client::fluent_builders::CreateSimulationApplicationVersion).
 ///
 /// `ParseStrictResponse` impl for `CreateSimulationApplicationVersion`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -488,7 +488,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateSimulationApplicat
 /// Operation shape for `CreateSimulationJob`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_simulation_job`](crate::client::Client::create_simulation_job).
+/// [`create_simulation_job`](crate::client::fluent_builders::CreateSimulationJob).
 ///
 /// `ParseStrictResponse` impl for `CreateSimulationJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -523,7 +523,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateSimulationJob {
 /// Operation shape for `CreateWorldExportJob`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_world_export_job`](crate::client::Client::create_world_export_job).
+/// [`create_world_export_job`](crate::client::fluent_builders::CreateWorldExportJob).
 ///
 /// `ParseStrictResponse` impl for `CreateWorldExportJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -558,7 +558,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateWorldExportJob {
 /// Operation shape for `CreateWorldGenerationJob`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_world_generation_job`](crate::client::Client::create_world_generation_job).
+/// [`create_world_generation_job`](crate::client::fluent_builders::CreateWorldGenerationJob).
 ///
 /// `ParseStrictResponse` impl for `CreateWorldGenerationJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -593,7 +593,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateWorldGenerationJob
 /// Operation shape for `CreateWorldTemplate`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_world_template`](crate::client::Client::create_world_template).
+/// [`create_world_template`](crate::client::fluent_builders::CreateWorldTemplate).
 ///
 /// `ParseStrictResponse` impl for `CreateWorldTemplate`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -628,7 +628,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateWorldTemplate {
 /// Operation shape for `DeleteFleet`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_fleet`](crate::client::Client::delete_fleet).
+/// [`delete_fleet`](crate::client::fluent_builders::DeleteFleet).
 ///
 /// `ParseStrictResponse` impl for `DeleteFleet`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -661,7 +661,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteFleet {
 /// Operation shape for `DeleteRobot`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_robot`](crate::client::Client::delete_robot).
+/// [`delete_robot`](crate::client::fluent_builders::DeleteRobot).
 ///
 /// `ParseStrictResponse` impl for `DeleteRobot`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -694,7 +694,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteRobot {
 /// Operation shape for `DeleteRobotApplication`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_robot_application`](crate::client::Client::delete_robot_application).
+/// [`delete_robot_application`](crate::client::fluent_builders::DeleteRobotApplication).
 ///
 /// `ParseStrictResponse` impl for `DeleteRobotApplication`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -729,7 +729,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteRobotApplication {
 /// Operation shape for `DeleteSimulationApplication`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_simulation_application`](crate::client::Client::delete_simulation_application).
+/// [`delete_simulation_application`](crate::client::fluent_builders::DeleteSimulationApplication).
 ///
 /// `ParseStrictResponse` impl for `DeleteSimulationApplication`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -764,7 +764,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteSimulationApplicat
 /// Operation shape for `DeleteWorldTemplate`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_world_template`](crate::client::Client::delete_world_template).
+/// [`delete_world_template`](crate::client::fluent_builders::DeleteWorldTemplate).
 ///
 /// `ParseStrictResponse` impl for `DeleteWorldTemplate`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -799,7 +799,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteWorldTemplate {
 /// Operation shape for `DeregisterRobot`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`deregister_robot`](crate::client::Client::deregister_robot).
+/// [`deregister_robot`](crate::client::fluent_builders::DeregisterRobot).
 ///
 /// `ParseStrictResponse` impl for `DeregisterRobot`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -834,7 +834,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeregisterRobot {
 /// Operation shape for `DescribeDeploymentJob`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_deployment_job`](crate::client::Client::describe_deployment_job).
+/// [`describe_deployment_job`](crate::client::fluent_builders::DescribeDeploymentJob).
 ///
 /// `ParseStrictResponse` impl for `DescribeDeploymentJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -869,7 +869,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeDeploymentJob {
 /// Operation shape for `DescribeFleet`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_fleet`](crate::client::Client::describe_fleet).
+/// [`describe_fleet`](crate::client::fluent_builders::DescribeFleet).
 ///
 /// `ParseStrictResponse` impl for `DescribeFleet`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -902,7 +902,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeFleet {
 /// Operation shape for `DescribeRobot`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_robot`](crate::client::Client::describe_robot).
+/// [`describe_robot`](crate::client::fluent_builders::DescribeRobot).
 ///
 /// `ParseStrictResponse` impl for `DescribeRobot`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -935,7 +935,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeRobot {
 /// Operation shape for `DescribeRobotApplication`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_robot_application`](crate::client::Client::describe_robot_application).
+/// [`describe_robot_application`](crate::client::fluent_builders::DescribeRobotApplication).
 ///
 /// `ParseStrictResponse` impl for `DescribeRobotApplication`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -970,7 +970,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeRobotApplication
 /// Operation shape for `DescribeSimulationApplication`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_simulation_application`](crate::client::Client::describe_simulation_application).
+/// [`describe_simulation_application`](crate::client::fluent_builders::DescribeSimulationApplication).
 ///
 /// `ParseStrictResponse` impl for `DescribeSimulationApplication`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1005,7 +1005,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeSimulationApplic
 /// Operation shape for `DescribeSimulationJob`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_simulation_job`](crate::client::Client::describe_simulation_job).
+/// [`describe_simulation_job`](crate::client::fluent_builders::DescribeSimulationJob).
 ///
 /// `ParseStrictResponse` impl for `DescribeSimulationJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1040,7 +1040,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeSimulationJob {
 /// Operation shape for `DescribeSimulationJobBatch`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_simulation_job_batch`](crate::client::Client::describe_simulation_job_batch).
+/// [`describe_simulation_job_batch`](crate::client::fluent_builders::DescribeSimulationJobBatch).
 ///
 /// `ParseStrictResponse` impl for `DescribeSimulationJobBatch`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1075,7 +1075,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeSimulationJobBat
 /// Operation shape for `DescribeWorld`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_world`](crate::client::Client::describe_world).
+/// [`describe_world`](crate::client::fluent_builders::DescribeWorld).
 ///
 /// `ParseStrictResponse` impl for `DescribeWorld`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1108,7 +1108,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeWorld {
 /// Operation shape for `DescribeWorldExportJob`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_world_export_job`](crate::client::Client::describe_world_export_job).
+/// [`describe_world_export_job`](crate::client::fluent_builders::DescribeWorldExportJob).
 ///
 /// `ParseStrictResponse` impl for `DescribeWorldExportJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1143,7 +1143,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeWorldExportJob {
 /// Operation shape for `DescribeWorldGenerationJob`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_world_generation_job`](crate::client::Client::describe_world_generation_job).
+/// [`describe_world_generation_job`](crate::client::fluent_builders::DescribeWorldGenerationJob).
 ///
 /// `ParseStrictResponse` impl for `DescribeWorldGenerationJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1178,7 +1178,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeWorldGenerationJ
 /// Operation shape for `DescribeWorldTemplate`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_world_template`](crate::client::Client::describe_world_template).
+/// [`describe_world_template`](crate::client::fluent_builders::DescribeWorldTemplate).
 ///
 /// `ParseStrictResponse` impl for `DescribeWorldTemplate`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1213,7 +1213,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeWorldTemplate {
 /// Operation shape for `GetWorldTemplateBody`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_world_template_body`](crate::client::Client::get_world_template_body).
+/// [`get_world_template_body`](crate::client::fluent_builders::GetWorldTemplateBody).
 ///
 /// `ParseStrictResponse` impl for `GetWorldTemplateBody`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1248,7 +1248,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetWorldTemplateBody {
 /// Operation shape for `ListDeploymentJobs`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_deployment_jobs`](crate::client::Client::list_deployment_jobs).
+/// [`list_deployment_jobs`](crate::client::fluent_builders::ListDeploymentJobs).
 ///
 /// `ParseStrictResponse` impl for `ListDeploymentJobs`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1283,7 +1283,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListDeploymentJobs {
 /// Operation shape for `ListFleets`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_fleets`](crate::client::Client::list_fleets).
+/// [`list_fleets`](crate::client::fluent_builders::ListFleets).
 ///
 /// `ParseStrictResponse` impl for `ListFleets`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1316,7 +1316,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListFleets {
 /// Operation shape for `ListRobotApplications`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_robot_applications`](crate::client::Client::list_robot_applications).
+/// [`list_robot_applications`](crate::client::fluent_builders::ListRobotApplications).
 ///
 /// `ParseStrictResponse` impl for `ListRobotApplications`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1351,7 +1351,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListRobotApplications {
 /// Operation shape for `ListRobots`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_robots`](crate::client::Client::list_robots).
+/// [`list_robots`](crate::client::fluent_builders::ListRobots).
 ///
 /// `ParseStrictResponse` impl for `ListRobots`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1384,7 +1384,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListRobots {
 /// Operation shape for `ListSimulationApplications`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_simulation_applications`](crate::client::Client::list_simulation_applications).
+/// [`list_simulation_applications`](crate::client::fluent_builders::ListSimulationApplications).
 ///
 /// `ParseStrictResponse` impl for `ListSimulationApplications`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1419,7 +1419,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListSimulationApplicatio
 /// Operation shape for `ListSimulationJobBatches`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_simulation_job_batches`](crate::client::Client::list_simulation_job_batches).
+/// [`list_simulation_job_batches`](crate::client::fluent_builders::ListSimulationJobBatches).
 ///
 /// `ParseStrictResponse` impl for `ListSimulationJobBatches`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1454,7 +1454,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListSimulationJobBatches
 /// Operation shape for `ListSimulationJobs`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_simulation_jobs`](crate::client::Client::list_simulation_jobs).
+/// [`list_simulation_jobs`](crate::client::fluent_builders::ListSimulationJobs).
 ///
 /// `ParseStrictResponse` impl for `ListSimulationJobs`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1489,7 +1489,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListSimulationJobs {
 /// Operation shape for `ListTagsForResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
+/// [`list_tags_for_resource`](crate::client::fluent_builders::ListTagsForResource).
 ///
 /// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1524,7 +1524,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// Operation shape for `ListWorldExportJobs`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_world_export_jobs`](crate::client::Client::list_world_export_jobs).
+/// [`list_world_export_jobs`](crate::client::fluent_builders::ListWorldExportJobs).
 ///
 /// `ParseStrictResponse` impl for `ListWorldExportJobs`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1559,7 +1559,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListWorldExportJobs {
 /// Operation shape for `ListWorldGenerationJobs`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_world_generation_jobs`](crate::client::Client::list_world_generation_jobs).
+/// [`list_world_generation_jobs`](crate::client::fluent_builders::ListWorldGenerationJobs).
 ///
 /// `ParseStrictResponse` impl for `ListWorldGenerationJobs`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1594,7 +1594,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListWorldGenerationJobs 
 /// Operation shape for `ListWorlds`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_worlds`](crate::client::Client::list_worlds).
+/// [`list_worlds`](crate::client::fluent_builders::ListWorlds).
 ///
 /// `ParseStrictResponse` impl for `ListWorlds`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1627,7 +1627,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListWorlds {
 /// Operation shape for `ListWorldTemplates`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_world_templates`](crate::client::Client::list_world_templates).
+/// [`list_world_templates`](crate::client::fluent_builders::ListWorldTemplates).
 ///
 /// `ParseStrictResponse` impl for `ListWorldTemplates`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1662,7 +1662,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListWorldTemplates {
 /// Operation shape for `RegisterRobot`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`register_robot`](crate::client::Client::register_robot).
+/// [`register_robot`](crate::client::fluent_builders::RegisterRobot).
 ///
 /// `ParseStrictResponse` impl for `RegisterRobot`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1695,7 +1695,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RegisterRobot {
 /// Operation shape for `RestartSimulationJob`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`restart_simulation_job`](crate::client::Client::restart_simulation_job).
+/// [`restart_simulation_job`](crate::client::fluent_builders::RestartSimulationJob).
 ///
 /// `ParseStrictResponse` impl for `RestartSimulationJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1730,7 +1730,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RestartSimulationJob {
 /// Operation shape for `StartSimulationJobBatch`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`start_simulation_job_batch`](crate::client::Client::start_simulation_job_batch).
+/// [`start_simulation_job_batch`](crate::client::fluent_builders::StartSimulationJobBatch).
 ///
 /// `ParseStrictResponse` impl for `StartSimulationJobBatch`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1765,7 +1765,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartSimulationJobBatch 
 /// Operation shape for `SyncDeploymentJob`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`sync_deployment_job`](crate::client::Client::sync_deployment_job).
+/// [`sync_deployment_job`](crate::client::fluent_builders::SyncDeploymentJob).
 ///
 /// `ParseStrictResponse` impl for `SyncDeploymentJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1800,7 +1800,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SyncDeploymentJob {
 /// Operation shape for `TagResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`tag_resource`](crate::client::Client::tag_resource).
+/// [`tag_resource`](crate::client::fluent_builders::TagResource).
 ///
 /// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1833,7 +1833,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// Operation shape for `UntagResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`untag_resource`](crate::client::Client::untag_resource).
+/// [`untag_resource`](crate::client::fluent_builders::UntagResource).
 ///
 /// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1866,7 +1866,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// Operation shape for `UpdateRobotApplication`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_robot_application`](crate::client::Client::update_robot_application).
+/// [`update_robot_application`](crate::client::fluent_builders::UpdateRobotApplication).
 ///
 /// `ParseStrictResponse` impl for `UpdateRobotApplication`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1901,7 +1901,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateRobotApplication {
 /// Operation shape for `UpdateSimulationApplication`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_simulation_application`](crate::client::Client::update_simulation_application).
+/// [`update_simulation_application`](crate::client::fluent_builders::UpdateSimulationApplication).
 ///
 /// `ParseStrictResponse` impl for `UpdateSimulationApplication`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1936,7 +1936,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateSimulationApplicat
 /// Operation shape for `UpdateWorldTemplate`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_world_template`](crate::client::Client::update_world_template).
+/// [`update_world_template`](crate::client::fluent_builders::UpdateWorldTemplate).
 ///
 /// `ParseStrictResponse` impl for `UpdateWorldTemplate`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

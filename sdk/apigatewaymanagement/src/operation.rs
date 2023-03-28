@@ -2,7 +2,7 @@
 /// Operation shape for `DeleteConnection`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_connection`](crate::client::Client::delete_connection).
+/// [`delete_connection`](crate::client::fluent_builders::DeleteConnection).
 ///
 /// `ParseStrictResponse` impl for `DeleteConnection`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -37,7 +37,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteConnection {
 /// Operation shape for `GetConnection`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_connection`](crate::client::Client::get_connection).
+/// [`get_connection`](crate::client::fluent_builders::GetConnection).
 ///
 /// `ParseStrictResponse` impl for `GetConnection`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -70,7 +70,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetConnection {
 /// Operation shape for `PostToConnection`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`post_to_connection`](crate::client::Client::post_to_connection).
+/// [`post_to_connection`](crate::client::fluent_builders::PostToConnection).
 ///
 /// `ParseStrictResponse` impl for `PostToConnection`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

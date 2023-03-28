@@ -2,7 +2,7 @@
 /// Operation shape for `CreateGame`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_game`](crate::client::Client::create_game).
+/// [`create_game`](crate::client::fluent_builders::CreateGame).
 ///
 /// `ParseStrictResponse` impl for `CreateGame`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -35,7 +35,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateGame {
 /// Operation shape for `CreateSnapshot`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_snapshot`](crate::client::Client::create_snapshot).
+/// [`create_snapshot`](crate::client::fluent_builders::CreateSnapshot).
 ///
 /// `ParseStrictResponse` impl for `CreateSnapshot`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -68,7 +68,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateSnapshot {
 /// Operation shape for `CreateStage`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_stage`](crate::client::Client::create_stage).
+/// [`create_stage`](crate::client::fluent_builders::CreateStage).
 ///
 /// `ParseStrictResponse` impl for `CreateStage`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -101,7 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateStage {
 /// Operation shape for `DeleteGame`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_game`](crate::client::Client::delete_game).
+/// [`delete_game`](crate::client::fluent_builders::DeleteGame).
 ///
 /// `ParseStrictResponse` impl for `DeleteGame`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -134,7 +134,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteGame {
 /// Operation shape for `DeleteStage`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_stage`](crate::client::Client::delete_stage).
+/// [`delete_stage`](crate::client::fluent_builders::DeleteStage).
 ///
 /// `ParseStrictResponse` impl for `DeleteStage`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -167,7 +167,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteStage {
 /// Operation shape for `DisconnectPlayer`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`disconnect_player`](crate::client::Client::disconnect_player).
+/// [`disconnect_player`](crate::client::fluent_builders::DisconnectPlayer).
 ///
 /// `ParseStrictResponse` impl for `DisconnectPlayer`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -202,7 +202,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisconnectPlayer {
 /// Operation shape for `ExportSnapshot`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`export_snapshot`](crate::client::Client::export_snapshot).
+/// [`export_snapshot`](crate::client::fluent_builders::ExportSnapshot).
 ///
 /// `ParseStrictResponse` impl for `ExportSnapshot`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -235,7 +235,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ExportSnapshot {
 /// Operation shape for `GetExtension`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_extension`](crate::client::Client::get_extension).
+/// [`get_extension`](crate::client::fluent_builders::GetExtension).
 ///
 /// `ParseStrictResponse` impl for `GetExtension`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -268,7 +268,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetExtension {
 /// Operation shape for `GetExtensionVersion`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_extension_version`](crate::client::Client::get_extension_version).
+/// [`get_extension_version`](crate::client::fluent_builders::GetExtensionVersion).
 ///
 /// `ParseStrictResponse` impl for `GetExtensionVersion`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -303,7 +303,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetExtensionVersion {
 /// Operation shape for `GetGame`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_game`](crate::client::Client::get_game).
+/// [`get_game`](crate::client::fluent_builders::GetGame).
 ///
 /// `ParseStrictResponse` impl for `GetGame`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -335,7 +335,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetGame {
 /// Operation shape for `GetGameConfiguration`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_game_configuration`](crate::client::Client::get_game_configuration).
+/// [`get_game_configuration`](crate::client::fluent_builders::GetGameConfiguration).
 ///
 /// `ParseStrictResponse` impl for `GetGameConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -370,7 +370,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetGameConfiguration {
 /// Operation shape for `GetGeneratedCodeJob`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_generated_code_job`](crate::client::Client::get_generated_code_job).
+/// [`get_generated_code_job`](crate::client::fluent_builders::GetGeneratedCodeJob).
 ///
 /// `ParseStrictResponse` impl for `GetGeneratedCodeJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -405,7 +405,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetGeneratedCodeJob {
 /// Operation shape for `GetPlayerConnectionStatus`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_player_connection_status`](crate::client::Client::get_player_connection_status).
+/// [`get_player_connection_status`](crate::client::fluent_builders::GetPlayerConnectionStatus).
 ///
 /// `ParseStrictResponse` impl for `GetPlayerConnectionStatus`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -440,7 +440,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetPlayerConnectionStatu
 /// Operation shape for `GetSnapshot`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_snapshot`](crate::client::Client::get_snapshot).
+/// [`get_snapshot`](crate::client::fluent_builders::GetSnapshot).
 ///
 /// `ParseStrictResponse` impl for `GetSnapshot`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -473,7 +473,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSnapshot {
 /// Operation shape for `GetStage`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_stage`](crate::client::Client::get_stage).
+/// [`get_stage`](crate::client::fluent_builders::GetStage).
 ///
 /// `ParseStrictResponse` impl for `GetStage`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -505,7 +505,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetStage {
 /// Operation shape for `GetStageDeployment`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_stage_deployment`](crate::client::Client::get_stage_deployment).
+/// [`get_stage_deployment`](crate::client::fluent_builders::GetStageDeployment).
 ///
 /// `ParseStrictResponse` impl for `GetStageDeployment`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -540,7 +540,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetStageDeployment {
 /// Operation shape for `ImportGameConfiguration`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`import_game_configuration`](crate::client::Client::import_game_configuration).
+/// [`import_game_configuration`](crate::client::fluent_builders::ImportGameConfiguration).
 ///
 /// `ParseStrictResponse` impl for `ImportGameConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -575,7 +575,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ImportGameConfiguration 
 /// Operation shape for `ListExtensions`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_extensions`](crate::client::Client::list_extensions).
+/// [`list_extensions`](crate::client::fluent_builders::ListExtensions).
 ///
 /// `ParseStrictResponse` impl for `ListExtensions`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -608,7 +608,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListExtensions {
 /// Operation shape for `ListExtensionVersions`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_extension_versions`](crate::client::Client::list_extension_versions).
+/// [`list_extension_versions`](crate::client::fluent_builders::ListExtensionVersions).
 ///
 /// `ParseStrictResponse` impl for `ListExtensionVersions`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -643,7 +643,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListExtensionVersions {
 /// Operation shape for `ListGames`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_games`](crate::client::Client::list_games).
+/// [`list_games`](crate::client::fluent_builders::ListGames).
 ///
 /// `ParseStrictResponse` impl for `ListGames`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -675,7 +675,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListGames {
 /// Operation shape for `ListGeneratedCodeJobs`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_generated_code_jobs`](crate::client::Client::list_generated_code_jobs).
+/// [`list_generated_code_jobs`](crate::client::fluent_builders::ListGeneratedCodeJobs).
 ///
 /// `ParseStrictResponse` impl for `ListGeneratedCodeJobs`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -710,7 +710,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListGeneratedCodeJobs {
 /// Operation shape for `ListSnapshots`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_snapshots`](crate::client::Client::list_snapshots).
+/// [`list_snapshots`](crate::client::fluent_builders::ListSnapshots).
 ///
 /// `ParseStrictResponse` impl for `ListSnapshots`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -743,7 +743,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListSnapshots {
 /// Operation shape for `ListStageDeployments`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_stage_deployments`](crate::client::Client::list_stage_deployments).
+/// [`list_stage_deployments`](crate::client::fluent_builders::ListStageDeployments).
 ///
 /// `ParseStrictResponse` impl for `ListStageDeployments`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -778,7 +778,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListStageDeployments {
 /// Operation shape for `ListStages`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_stages`](crate::client::Client::list_stages).
+/// [`list_stages`](crate::client::fluent_builders::ListStages).
 ///
 /// `ParseStrictResponse` impl for `ListStages`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -811,7 +811,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListStages {
 /// Operation shape for `ListTagsForResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
+/// [`list_tags_for_resource`](crate::client::fluent_builders::ListTagsForResource).
 ///
 /// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -846,7 +846,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// Operation shape for `StartGeneratedCodeJob`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`start_generated_code_job`](crate::client::Client::start_generated_code_job).
+/// [`start_generated_code_job`](crate::client::fluent_builders::StartGeneratedCodeJob).
 ///
 /// `ParseStrictResponse` impl for `StartGeneratedCodeJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -881,7 +881,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartGeneratedCodeJob {
 /// Operation shape for `StartStageDeployment`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`start_stage_deployment`](crate::client::Client::start_stage_deployment).
+/// [`start_stage_deployment`](crate::client::fluent_builders::StartStageDeployment).
 ///
 /// `ParseStrictResponse` impl for `StartStageDeployment`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -916,7 +916,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartStageDeployment {
 /// Operation shape for `TagResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`tag_resource`](crate::client::Client::tag_resource).
+/// [`tag_resource`](crate::client::fluent_builders::TagResource).
 ///
 /// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -949,7 +949,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// Operation shape for `UntagResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`untag_resource`](crate::client::Client::untag_resource).
+/// [`untag_resource`](crate::client::fluent_builders::UntagResource).
 ///
 /// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -982,7 +982,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// Operation shape for `UpdateGame`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_game`](crate::client::Client::update_game).
+/// [`update_game`](crate::client::fluent_builders::UpdateGame).
 ///
 /// `ParseStrictResponse` impl for `UpdateGame`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1015,7 +1015,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateGame {
 /// Operation shape for `UpdateGameConfiguration`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_game_configuration`](crate::client::Client::update_game_configuration).
+/// [`update_game_configuration`](crate::client::fluent_builders::UpdateGameConfiguration).
 ///
 /// `ParseStrictResponse` impl for `UpdateGameConfiguration`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1050,7 +1050,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateGameConfiguration 
 /// Operation shape for `UpdateSnapshot`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_snapshot`](crate::client::Client::update_snapshot).
+/// [`update_snapshot`](crate::client::fluent_builders::UpdateSnapshot).
 ///
 /// `ParseStrictResponse` impl for `UpdateSnapshot`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1083,7 +1083,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateSnapshot {
 /// Operation shape for `UpdateStage`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_stage`](crate::client::Client::update_stage).
+/// [`update_stage`](crate::client::fluent_builders::UpdateStage).
 ///
 /// `ParseStrictResponse` impl for `UpdateStage`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

@@ -2,7 +2,7 @@
 /// Operation shape for `DeleteResourcePermission`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_resource_permission`](crate::client::Client::delete_resource_permission).
+/// [`delete_resource_permission`](crate::client::fluent_builders::DeleteResourcePermission).
 ///
 /// `ParseStrictResponse` impl for `DeleteResourcePermission`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -37,7 +37,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteResourcePermission
 /// Operation shape for `DeregisterApplication`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`deregister_application`](crate::client::Client::deregister_application).
+/// [`deregister_application`](crate::client::fluent_builders::DeregisterApplication).
 ///
 /// `ParseStrictResponse` impl for `DeregisterApplication`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -72,7 +72,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeregisterApplication {
 /// Operation shape for `GetApplication`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_application`](crate::client::Client::get_application).
+/// [`get_application`](crate::client::fluent_builders::GetApplication).
 ///
 /// `ParseStrictResponse` impl for `GetApplication`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -105,7 +105,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetApplication {
 /// Operation shape for `GetComponent`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_component`](crate::client::Client::get_component).
+/// [`get_component`](crate::client::fluent_builders::GetComponent).
 ///
 /// `ParseStrictResponse` impl for `GetComponent`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -138,7 +138,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetComponent {
 /// Operation shape for `GetDatabase`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_database`](crate::client::Client::get_database).
+/// [`get_database`](crate::client::fluent_builders::GetDatabase).
 ///
 /// `ParseStrictResponse` impl for `GetDatabase`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -171,7 +171,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDatabase {
 /// Operation shape for `GetOperation`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_operation`](crate::client::Client::get_operation).
+/// [`get_operation`](crate::client::fluent_builders::GetOperation).
 ///
 /// `ParseStrictResponse` impl for `GetOperation`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -204,7 +204,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetOperation {
 /// Operation shape for `GetResourcePermission`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_resource_permission`](crate::client::Client::get_resource_permission).
+/// [`get_resource_permission`](crate::client::fluent_builders::GetResourcePermission).
 ///
 /// `ParseStrictResponse` impl for `GetResourcePermission`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -239,7 +239,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetResourcePermission {
 /// Operation shape for `ListApplications`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_applications`](crate::client::Client::list_applications).
+/// [`list_applications`](crate::client::fluent_builders::ListApplications).
 ///
 /// `ParseStrictResponse` impl for `ListApplications`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -274,7 +274,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListApplications {
 /// Operation shape for `ListComponents`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_components`](crate::client::Client::list_components).
+/// [`list_components`](crate::client::fluent_builders::ListComponents).
 ///
 /// `ParseStrictResponse` impl for `ListComponents`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -307,7 +307,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListComponents {
 /// Operation shape for `ListDatabases`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_databases`](crate::client::Client::list_databases).
+/// [`list_databases`](crate::client::fluent_builders::ListDatabases).
 ///
 /// `ParseStrictResponse` impl for `ListDatabases`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -340,7 +340,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListDatabases {
 /// Operation shape for `ListOperations`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_operations`](crate::client::Client::list_operations).
+/// [`list_operations`](crate::client::fluent_builders::ListOperations).
 ///
 /// `ParseStrictResponse` impl for `ListOperations`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -373,7 +373,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListOperations {
 /// Operation shape for `ListTagsForResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
+/// [`list_tags_for_resource`](crate::client::fluent_builders::ListTagsForResource).
 ///
 /// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -408,7 +408,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// Operation shape for `PutResourcePermission`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`put_resource_permission`](crate::client::Client::put_resource_permission).
+/// [`put_resource_permission`](crate::client::fluent_builders::PutResourcePermission).
 ///
 /// `ParseStrictResponse` impl for `PutResourcePermission`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -443,7 +443,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutResourcePermission {
 /// Operation shape for `RegisterApplication`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`register_application`](crate::client::Client::register_application).
+/// [`register_application`](crate::client::fluent_builders::RegisterApplication).
 ///
 /// `ParseStrictResponse` impl for `RegisterApplication`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -478,7 +478,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RegisterApplication {
 /// Operation shape for `TagResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`tag_resource`](crate::client::Client::tag_resource).
+/// [`tag_resource`](crate::client::fluent_builders::TagResource).
 ///
 /// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -511,7 +511,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// Operation shape for `UntagResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`untag_resource`](crate::client::Client::untag_resource).
+/// [`untag_resource`](crate::client::fluent_builders::UntagResource).
 ///
 /// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -544,7 +544,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// Operation shape for `UpdateApplicationSettings`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_application_settings`](crate::client::Client::update_application_settings).
+/// [`update_application_settings`](crate::client::fluent_builders::UpdateApplicationSettings).
 ///
 /// `ParseStrictResponse` impl for `UpdateApplicationSettings`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

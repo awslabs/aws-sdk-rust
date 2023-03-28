@@ -2,7 +2,7 @@
 /// Operation shape for `AcceptInputDeviceTransfer`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`accept_input_device_transfer`](crate::client::Client::accept_input_device_transfer).
+/// [`accept_input_device_transfer`](crate::client::fluent_builders::AcceptInputDeviceTransfer).
 ///
 /// `ParseStrictResponse` impl for `AcceptInputDeviceTransfer`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -37,7 +37,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AcceptInputDeviceTransfe
 /// Operation shape for `BatchDelete`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`batch_delete`](crate::client::Client::batch_delete).
+/// [`batch_delete`](crate::client::fluent_builders::BatchDelete).
 ///
 /// `ParseStrictResponse` impl for `BatchDelete`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -70,7 +70,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchDelete {
 /// Operation shape for `BatchStart`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`batch_start`](crate::client::Client::batch_start).
+/// [`batch_start`](crate::client::fluent_builders::BatchStart).
 ///
 /// `ParseStrictResponse` impl for `BatchStart`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -103,7 +103,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchStart {
 /// Operation shape for `BatchStop`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`batch_stop`](crate::client::Client::batch_stop).
+/// [`batch_stop`](crate::client::fluent_builders::BatchStop).
 ///
 /// `ParseStrictResponse` impl for `BatchStop`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -135,7 +135,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchStop {
 /// Operation shape for `BatchUpdateSchedule`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`batch_update_schedule`](crate::client::Client::batch_update_schedule).
+/// [`batch_update_schedule`](crate::client::fluent_builders::BatchUpdateSchedule).
 ///
 /// `ParseStrictResponse` impl for `BatchUpdateSchedule`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -170,7 +170,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchUpdateSchedule {
 /// Operation shape for `CancelInputDeviceTransfer`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`cancel_input_device_transfer`](crate::client::Client::cancel_input_device_transfer).
+/// [`cancel_input_device_transfer`](crate::client::fluent_builders::CancelInputDeviceTransfer).
 ///
 /// `ParseStrictResponse` impl for `CancelInputDeviceTransfer`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -205,7 +205,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CancelInputDeviceTransfe
 /// Operation shape for `ClaimDevice`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`claim_device`](crate::client::Client::claim_device).
+/// [`claim_device`](crate::client::fluent_builders::ClaimDevice).
 ///
 /// `ParseStrictResponse` impl for `ClaimDevice`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -238,7 +238,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ClaimDevice {
 /// Operation shape for `CreateChannel`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_channel`](crate::client::Client::create_channel).
+/// [`create_channel`](crate::client::fluent_builders::CreateChannel).
 ///
 /// `ParseStrictResponse` impl for `CreateChannel`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -271,7 +271,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateChannel {
 /// Operation shape for `CreateInput`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_input`](crate::client::Client::create_input).
+/// [`create_input`](crate::client::fluent_builders::CreateInput).
 ///
 /// `ParseStrictResponse` impl for `CreateInput`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -304,7 +304,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateInput {
 /// Operation shape for `CreateInputSecurityGroup`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_input_security_group`](crate::client::Client::create_input_security_group).
+/// [`create_input_security_group`](crate::client::fluent_builders::CreateInputSecurityGroup).
 ///
 /// `ParseStrictResponse` impl for `CreateInputSecurityGroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -339,7 +339,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateInputSecurityGroup
 /// Operation shape for `CreateMultiplex`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_multiplex`](crate::client::Client::create_multiplex).
+/// [`create_multiplex`](crate::client::fluent_builders::CreateMultiplex).
 ///
 /// `ParseStrictResponse` impl for `CreateMultiplex`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -374,7 +374,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateMultiplex {
 /// Operation shape for `CreateMultiplexProgram`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_multiplex_program`](crate::client::Client::create_multiplex_program).
+/// [`create_multiplex_program`](crate::client::fluent_builders::CreateMultiplexProgram).
 ///
 /// `ParseStrictResponse` impl for `CreateMultiplexProgram`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -409,7 +409,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateMultiplexProgram {
 /// Operation shape for `CreatePartnerInput`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_partner_input`](crate::client::Client::create_partner_input).
+/// [`create_partner_input`](crate::client::fluent_builders::CreatePartnerInput).
 ///
 /// `ParseStrictResponse` impl for `CreatePartnerInput`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -444,7 +444,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreatePartnerInput {
 /// Operation shape for `CreateTags`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_tags`](crate::client::Client::create_tags).
+/// [`create_tags`](crate::client::fluent_builders::CreateTags).
 ///
 /// `ParseStrictResponse` impl for `CreateTags`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -477,7 +477,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateTags {
 /// Operation shape for `DeleteChannel`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_channel`](crate::client::Client::delete_channel).
+/// [`delete_channel`](crate::client::fluent_builders::DeleteChannel).
 ///
 /// `ParseStrictResponse` impl for `DeleteChannel`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -510,7 +510,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteChannel {
 /// Operation shape for `DeleteInput`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_input`](crate::client::Client::delete_input).
+/// [`delete_input`](crate::client::fluent_builders::DeleteInput).
 ///
 /// `ParseStrictResponse` impl for `DeleteInput`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -543,7 +543,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteInput {
 /// Operation shape for `DeleteInputSecurityGroup`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_input_security_group`](crate::client::Client::delete_input_security_group).
+/// [`delete_input_security_group`](crate::client::fluent_builders::DeleteInputSecurityGroup).
 ///
 /// `ParseStrictResponse` impl for `DeleteInputSecurityGroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -578,7 +578,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteInputSecurityGroup
 /// Operation shape for `DeleteMultiplex`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_multiplex`](crate::client::Client::delete_multiplex).
+/// [`delete_multiplex`](crate::client::fluent_builders::DeleteMultiplex).
 ///
 /// `ParseStrictResponse` impl for `DeleteMultiplex`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -613,7 +613,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteMultiplex {
 /// Operation shape for `DeleteMultiplexProgram`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_multiplex_program`](crate::client::Client::delete_multiplex_program).
+/// [`delete_multiplex_program`](crate::client::fluent_builders::DeleteMultiplexProgram).
 ///
 /// `ParseStrictResponse` impl for `DeleteMultiplexProgram`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -648,7 +648,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteMultiplexProgram {
 /// Operation shape for `DeleteReservation`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_reservation`](crate::client::Client::delete_reservation).
+/// [`delete_reservation`](crate::client::fluent_builders::DeleteReservation).
 ///
 /// `ParseStrictResponse` impl for `DeleteReservation`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -683,7 +683,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteReservation {
 /// Operation shape for `DeleteSchedule`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_schedule`](crate::client::Client::delete_schedule).
+/// [`delete_schedule`](crate::client::fluent_builders::DeleteSchedule).
 ///
 /// `ParseStrictResponse` impl for `DeleteSchedule`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -716,7 +716,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteSchedule {
 /// Operation shape for `DeleteTags`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_tags`](crate::client::Client::delete_tags).
+/// [`delete_tags`](crate::client::fluent_builders::DeleteTags).
 ///
 /// `ParseStrictResponse` impl for `DeleteTags`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -749,7 +749,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteTags {
 /// Operation shape for `DescribeChannel`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_channel`](crate::client::Client::describe_channel).
+/// [`describe_channel`](crate::client::fluent_builders::DescribeChannel).
 ///
 /// `ParseStrictResponse` impl for `DescribeChannel`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -784,7 +784,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeChannel {
 /// Operation shape for `DescribeInput`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_input`](crate::client::Client::describe_input).
+/// [`describe_input`](crate::client::fluent_builders::DescribeInput).
 ///
 /// `ParseStrictResponse` impl for `DescribeInput`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -817,7 +817,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeInput {
 /// Operation shape for `DescribeInputDevice`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_input_device`](crate::client::Client::describe_input_device).
+/// [`describe_input_device`](crate::client::fluent_builders::DescribeInputDevice).
 ///
 /// `ParseStrictResponse` impl for `DescribeInputDevice`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -852,7 +852,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeInputDevice {
 /// Operation shape for `DescribeInputDeviceThumbnail`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_input_device_thumbnail`](crate::client::Client::describe_input_device_thumbnail).
+/// [`describe_input_device_thumbnail`](crate::client::fluent_builders::DescribeInputDeviceThumbnail).
 ///
 /// `ParseStrictResponse` impl for `DescribeInputDeviceThumbnail`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -893,7 +893,7 @@ impl aws_smithy_http::response::ParseHttpResponse for DescribeInputDeviceThumbna
 /// Operation shape for `DescribeInputSecurityGroup`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_input_security_group`](crate::client::Client::describe_input_security_group).
+/// [`describe_input_security_group`](crate::client::fluent_builders::DescribeInputSecurityGroup).
 ///
 /// `ParseStrictResponse` impl for `DescribeInputSecurityGroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -928,7 +928,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeInputSecurityGro
 /// Operation shape for `DescribeMultiplex`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_multiplex`](crate::client::Client::describe_multiplex).
+/// [`describe_multiplex`](crate::client::fluent_builders::DescribeMultiplex).
 ///
 /// `ParseStrictResponse` impl for `DescribeMultiplex`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -963,7 +963,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeMultiplex {
 /// Operation shape for `DescribeMultiplexProgram`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_multiplex_program`](crate::client::Client::describe_multiplex_program).
+/// [`describe_multiplex_program`](crate::client::fluent_builders::DescribeMultiplexProgram).
 ///
 /// `ParseStrictResponse` impl for `DescribeMultiplexProgram`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -998,7 +998,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeMultiplexProgram
 /// Operation shape for `DescribeOffering`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_offering`](crate::client::Client::describe_offering).
+/// [`describe_offering`](crate::client::fluent_builders::DescribeOffering).
 ///
 /// `ParseStrictResponse` impl for `DescribeOffering`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1033,7 +1033,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeOffering {
 /// Operation shape for `DescribeReservation`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_reservation`](crate::client::Client::describe_reservation).
+/// [`describe_reservation`](crate::client::fluent_builders::DescribeReservation).
 ///
 /// `ParseStrictResponse` impl for `DescribeReservation`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1068,7 +1068,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeReservation {
 /// Operation shape for `DescribeSchedule`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_schedule`](crate::client::Client::describe_schedule).
+/// [`describe_schedule`](crate::client::fluent_builders::DescribeSchedule).
 ///
 /// `ParseStrictResponse` impl for `DescribeSchedule`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1103,7 +1103,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeSchedule {
 /// Operation shape for `ListChannels`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_channels`](crate::client::Client::list_channels).
+/// [`list_channels`](crate::client::fluent_builders::ListChannels).
 ///
 /// `ParseStrictResponse` impl for `ListChannels`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1136,7 +1136,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListChannels {
 /// Operation shape for `ListInputDevices`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_input_devices`](crate::client::Client::list_input_devices).
+/// [`list_input_devices`](crate::client::fluent_builders::ListInputDevices).
 ///
 /// `ParseStrictResponse` impl for `ListInputDevices`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1171,7 +1171,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListInputDevices {
 /// Operation shape for `ListInputDeviceTransfers`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_input_device_transfers`](crate::client::Client::list_input_device_transfers).
+/// [`list_input_device_transfers`](crate::client::fluent_builders::ListInputDeviceTransfers).
 ///
 /// `ParseStrictResponse` impl for `ListInputDeviceTransfers`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1206,7 +1206,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListInputDeviceTransfers
 /// Operation shape for `ListInputs`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_inputs`](crate::client::Client::list_inputs).
+/// [`list_inputs`](crate::client::fluent_builders::ListInputs).
 ///
 /// `ParseStrictResponse` impl for `ListInputs`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1239,7 +1239,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListInputs {
 /// Operation shape for `ListInputSecurityGroups`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_input_security_groups`](crate::client::Client::list_input_security_groups).
+/// [`list_input_security_groups`](crate::client::fluent_builders::ListInputSecurityGroups).
 ///
 /// `ParseStrictResponse` impl for `ListInputSecurityGroups`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1274,7 +1274,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListInputSecurityGroups 
 /// Operation shape for `ListMultiplexes`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_multiplexes`](crate::client::Client::list_multiplexes).
+/// [`list_multiplexes`](crate::client::fluent_builders::ListMultiplexes).
 ///
 /// `ParseStrictResponse` impl for `ListMultiplexes`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1309,7 +1309,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListMultiplexes {
 /// Operation shape for `ListMultiplexPrograms`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_multiplex_programs`](crate::client::Client::list_multiplex_programs).
+/// [`list_multiplex_programs`](crate::client::fluent_builders::ListMultiplexPrograms).
 ///
 /// `ParseStrictResponse` impl for `ListMultiplexPrograms`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1344,7 +1344,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListMultiplexPrograms {
 /// Operation shape for `ListOfferings`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_offerings`](crate::client::Client::list_offerings).
+/// [`list_offerings`](crate::client::fluent_builders::ListOfferings).
 ///
 /// `ParseStrictResponse` impl for `ListOfferings`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1377,7 +1377,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListOfferings {
 /// Operation shape for `ListReservations`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_reservations`](crate::client::Client::list_reservations).
+/// [`list_reservations`](crate::client::fluent_builders::ListReservations).
 ///
 /// `ParseStrictResponse` impl for `ListReservations`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1412,7 +1412,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListReservations {
 /// Operation shape for `ListTagsForResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
+/// [`list_tags_for_resource`](crate::client::fluent_builders::ListTagsForResource).
 ///
 /// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1447,7 +1447,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// Operation shape for `PurchaseOffering`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`purchase_offering`](crate::client::Client::purchase_offering).
+/// [`purchase_offering`](crate::client::fluent_builders::PurchaseOffering).
 ///
 /// `ParseStrictResponse` impl for `PurchaseOffering`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1482,7 +1482,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PurchaseOffering {
 /// Operation shape for `RebootInputDevice`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`reboot_input_device`](crate::client::Client::reboot_input_device).
+/// [`reboot_input_device`](crate::client::fluent_builders::RebootInputDevice).
 ///
 /// `ParseStrictResponse` impl for `RebootInputDevice`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1517,7 +1517,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RebootInputDevice {
 /// Operation shape for `RejectInputDeviceTransfer`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`reject_input_device_transfer`](crate::client::Client::reject_input_device_transfer).
+/// [`reject_input_device_transfer`](crate::client::fluent_builders::RejectInputDeviceTransfer).
 ///
 /// `ParseStrictResponse` impl for `RejectInputDeviceTransfer`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1552,7 +1552,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RejectInputDeviceTransfe
 /// Operation shape for `StartChannel`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`start_channel`](crate::client::Client::start_channel).
+/// [`start_channel`](crate::client::fluent_builders::StartChannel).
 ///
 /// `ParseStrictResponse` impl for `StartChannel`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1585,7 +1585,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartChannel {
 /// Operation shape for `StartInputDeviceMaintenanceWindow`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`start_input_device_maintenance_window`](crate::client::Client::start_input_device_maintenance_window).
+/// [`start_input_device_maintenance_window`](crate::client::fluent_builders::StartInputDeviceMaintenanceWindow).
 ///
 /// `ParseStrictResponse` impl for `StartInputDeviceMaintenanceWindow`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1620,7 +1620,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartInputDeviceMaintena
 /// Operation shape for `StartMultiplex`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`start_multiplex`](crate::client::Client::start_multiplex).
+/// [`start_multiplex`](crate::client::fluent_builders::StartMultiplex).
 ///
 /// `ParseStrictResponse` impl for `StartMultiplex`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1653,7 +1653,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartMultiplex {
 /// Operation shape for `StopChannel`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`stop_channel`](crate::client::Client::stop_channel).
+/// [`stop_channel`](crate::client::fluent_builders::StopChannel).
 ///
 /// `ParseStrictResponse` impl for `StopChannel`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1686,7 +1686,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StopChannel {
 /// Operation shape for `StopMultiplex`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`stop_multiplex`](crate::client::Client::stop_multiplex).
+/// [`stop_multiplex`](crate::client::fluent_builders::StopMultiplex).
 ///
 /// `ParseStrictResponse` impl for `StopMultiplex`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1719,7 +1719,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StopMultiplex {
 /// Operation shape for `TransferInputDevice`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`transfer_input_device`](crate::client::Client::transfer_input_device).
+/// [`transfer_input_device`](crate::client::fluent_builders::TransferInputDevice).
 ///
 /// `ParseStrictResponse` impl for `TransferInputDevice`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1754,7 +1754,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TransferInputDevice {
 /// Operation shape for `UpdateChannel`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_channel`](crate::client::Client::update_channel).
+/// [`update_channel`](crate::client::fluent_builders::UpdateChannel).
 ///
 /// `ParseStrictResponse` impl for `UpdateChannel`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1787,7 +1787,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateChannel {
 /// Operation shape for `UpdateChannelClass`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_channel_class`](crate::client::Client::update_channel_class).
+/// [`update_channel_class`](crate::client::fluent_builders::UpdateChannelClass).
 ///
 /// `ParseStrictResponse` impl for `UpdateChannelClass`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1822,7 +1822,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateChannelClass {
 /// Operation shape for `UpdateInput`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_input`](crate::client::Client::update_input).
+/// [`update_input`](crate::client::fluent_builders::UpdateInput).
 ///
 /// `ParseStrictResponse` impl for `UpdateInput`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1855,7 +1855,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateInput {
 /// Operation shape for `UpdateInputDevice`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_input_device`](crate::client::Client::update_input_device).
+/// [`update_input_device`](crate::client::fluent_builders::UpdateInputDevice).
 ///
 /// `ParseStrictResponse` impl for `UpdateInputDevice`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1890,7 +1890,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateInputDevice {
 /// Operation shape for `UpdateInputSecurityGroup`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_input_security_group`](crate::client::Client::update_input_security_group).
+/// [`update_input_security_group`](crate::client::fluent_builders::UpdateInputSecurityGroup).
 ///
 /// `ParseStrictResponse` impl for `UpdateInputSecurityGroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1925,7 +1925,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateInputSecurityGroup
 /// Operation shape for `UpdateMultiplex`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_multiplex`](crate::client::Client::update_multiplex).
+/// [`update_multiplex`](crate::client::fluent_builders::UpdateMultiplex).
 ///
 /// `ParseStrictResponse` impl for `UpdateMultiplex`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1960,7 +1960,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateMultiplex {
 /// Operation shape for `UpdateMultiplexProgram`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_multiplex_program`](crate::client::Client::update_multiplex_program).
+/// [`update_multiplex_program`](crate::client::fluent_builders::UpdateMultiplexProgram).
 ///
 /// `ParseStrictResponse` impl for `UpdateMultiplexProgram`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1995,7 +1995,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateMultiplexProgram {
 /// Operation shape for `UpdateReservation`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_reservation`](crate::client::Client::update_reservation).
+/// [`update_reservation`](crate::client::fluent_builders::UpdateReservation).
 ///
 /// `ParseStrictResponse` impl for `UpdateReservation`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

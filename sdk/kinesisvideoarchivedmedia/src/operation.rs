@@ -2,7 +2,7 @@
 /// Operation shape for `GetClip`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_clip`](crate::client::Client::get_clip).
+/// [`get_clip`](crate::client::fluent_builders::GetClip).
 ///
 /// `ParseStrictResponse` impl for `GetClip`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -40,7 +40,7 @@ impl aws_smithy_http::response::ParseHttpResponse for GetClip {
 /// Operation shape for `GetDASHStreamingSessionURL`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_dash_streaming_session_url`](crate::client::Client::get_dash_streaming_session_url).
+/// [`get_dash_streaming_session_url`](crate::client::fluent_builders::GetDASHStreamingSessionURL).
 ///
 /// `ParseStrictResponse` impl for `GetDASHStreamingSessionURL`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -75,7 +75,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDASHStreamingSessionU
 /// Operation shape for `GetHLSStreamingSessionURL`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_hls_streaming_session_url`](crate::client::Client::get_hls_streaming_session_url).
+/// [`get_hls_streaming_session_url`](crate::client::fluent_builders::GetHLSStreamingSessionURL).
 ///
 /// `ParseStrictResponse` impl for `GetHLSStreamingSessionURL`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -110,7 +110,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetHLSStreamingSessionUR
 /// Operation shape for `GetImages`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_images`](crate::client::Client::get_images).
+/// [`get_images`](crate::client::fluent_builders::GetImages).
 ///
 /// `ParseStrictResponse` impl for `GetImages`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -142,7 +142,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetImages {
 /// Operation shape for `GetMediaForFragmentList`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_media_for_fragment_list`](crate::client::Client::get_media_for_fragment_list).
+/// [`get_media_for_fragment_list`](crate::client::fluent_builders::GetMediaForFragmentList).
 ///
 /// `ParseStrictResponse` impl for `GetMediaForFragmentList`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -185,7 +185,7 @@ impl aws_smithy_http::response::ParseHttpResponse for GetMediaForFragmentList {
 /// Operation shape for `ListFragments`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_fragments`](crate::client::Client::list_fragments).
+/// [`list_fragments`](crate::client::fluent_builders::ListFragments).
 ///
 /// `ParseStrictResponse` impl for `ListFragments`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

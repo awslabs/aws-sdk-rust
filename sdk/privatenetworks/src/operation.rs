@@ -2,7 +2,7 @@
 /// Operation shape for `AcknowledgeOrderReceipt`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`acknowledge_order_receipt`](crate::client::Client::acknowledge_order_receipt).
+/// [`acknowledge_order_receipt`](crate::client::fluent_builders::AcknowledgeOrderReceipt).
 ///
 /// `ParseStrictResponse` impl for `AcknowledgeOrderReceipt`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -37,7 +37,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AcknowledgeOrderReceipt 
 /// Operation shape for `ActivateDeviceIdentifier`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`activate_device_identifier`](crate::client::Client::activate_device_identifier).
+/// [`activate_device_identifier`](crate::client::fluent_builders::ActivateDeviceIdentifier).
 ///
 /// `ParseStrictResponse` impl for `ActivateDeviceIdentifier`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -72,7 +72,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ActivateDeviceIdentifier
 /// Operation shape for `ActivateNetworkSite`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`activate_network_site`](crate::client::Client::activate_network_site).
+/// [`activate_network_site`](crate::client::fluent_builders::ActivateNetworkSite).
 ///
 /// `ParseStrictResponse` impl for `ActivateNetworkSite`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -107,7 +107,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ActivateNetworkSite {
 /// Operation shape for `ConfigureAccessPoint`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`configure_access_point`](crate::client::Client::configure_access_point).
+/// [`configure_access_point`](crate::client::fluent_builders::ConfigureAccessPoint).
 ///
 /// `ParseStrictResponse` impl for `ConfigureAccessPoint`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -142,7 +142,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ConfigureAccessPoint {
 /// Operation shape for `CreateNetwork`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_network`](crate::client::Client::create_network).
+/// [`create_network`](crate::client::fluent_builders::CreateNetwork).
 ///
 /// `ParseStrictResponse` impl for `CreateNetwork`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -175,7 +175,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateNetwork {
 /// Operation shape for `CreateNetworkSite`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_network_site`](crate::client::Client::create_network_site).
+/// [`create_network_site`](crate::client::fluent_builders::CreateNetworkSite).
 ///
 /// `ParseStrictResponse` impl for `CreateNetworkSite`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -210,7 +210,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateNetworkSite {
 /// Operation shape for `DeactivateDeviceIdentifier`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`deactivate_device_identifier`](crate::client::Client::deactivate_device_identifier).
+/// [`deactivate_device_identifier`](crate::client::fluent_builders::DeactivateDeviceIdentifier).
 ///
 /// `ParseStrictResponse` impl for `DeactivateDeviceIdentifier`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -245,7 +245,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeactivateDeviceIdentifi
 /// Operation shape for `DeleteNetwork`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_network`](crate::client::Client::delete_network).
+/// [`delete_network`](crate::client::fluent_builders::DeleteNetwork).
 ///
 /// `ParseStrictResponse` impl for `DeleteNetwork`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -278,7 +278,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteNetwork {
 /// Operation shape for `DeleteNetworkSite`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_network_site`](crate::client::Client::delete_network_site).
+/// [`delete_network_site`](crate::client::fluent_builders::DeleteNetworkSite).
 ///
 /// `ParseStrictResponse` impl for `DeleteNetworkSite`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -313,7 +313,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteNetworkSite {
 /// Operation shape for `GetDeviceIdentifier`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_device_identifier`](crate::client::Client::get_device_identifier).
+/// [`get_device_identifier`](crate::client::fluent_builders::GetDeviceIdentifier).
 ///
 /// `ParseStrictResponse` impl for `GetDeviceIdentifier`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -348,7 +348,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDeviceIdentifier {
 /// Operation shape for `GetNetwork`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_network`](crate::client::Client::get_network).
+/// [`get_network`](crate::client::fluent_builders::GetNetwork).
 ///
 /// `ParseStrictResponse` impl for `GetNetwork`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -381,7 +381,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetNetwork {
 /// Operation shape for `GetNetworkResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_network_resource`](crate::client::Client::get_network_resource).
+/// [`get_network_resource`](crate::client::fluent_builders::GetNetworkResource).
 ///
 /// `ParseStrictResponse` impl for `GetNetworkResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -416,7 +416,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetNetworkResource {
 /// Operation shape for `GetNetworkSite`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_network_site`](crate::client::Client::get_network_site).
+/// [`get_network_site`](crate::client::fluent_builders::GetNetworkSite).
 ///
 /// `ParseStrictResponse` impl for `GetNetworkSite`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -449,7 +449,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetNetworkSite {
 /// Operation shape for `GetOrder`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_order`](crate::client::Client::get_order).
+/// [`get_order`](crate::client::fluent_builders::GetOrder).
 ///
 /// `ParseStrictResponse` impl for `GetOrder`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -481,7 +481,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetOrder {
 /// Operation shape for `ListDeviceIdentifiers`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_device_identifiers`](crate::client::Client::list_device_identifiers).
+/// [`list_device_identifiers`](crate::client::fluent_builders::ListDeviceIdentifiers).
 ///
 /// `ParseStrictResponse` impl for `ListDeviceIdentifiers`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -516,7 +516,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListDeviceIdentifiers {
 /// Operation shape for `ListNetworkResources`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_network_resources`](crate::client::Client::list_network_resources).
+/// [`list_network_resources`](crate::client::fluent_builders::ListNetworkResources).
 ///
 /// `ParseStrictResponse` impl for `ListNetworkResources`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -551,7 +551,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListNetworkResources {
 /// Operation shape for `ListNetworks`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_networks`](crate::client::Client::list_networks).
+/// [`list_networks`](crate::client::fluent_builders::ListNetworks).
 ///
 /// `ParseStrictResponse` impl for `ListNetworks`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -584,7 +584,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListNetworks {
 /// Operation shape for `ListNetworkSites`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_network_sites`](crate::client::Client::list_network_sites).
+/// [`list_network_sites`](crate::client::fluent_builders::ListNetworkSites).
 ///
 /// `ParseStrictResponse` impl for `ListNetworkSites`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -619,7 +619,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListNetworkSites {
 /// Operation shape for `ListOrders`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_orders`](crate::client::Client::list_orders).
+/// [`list_orders`](crate::client::fluent_builders::ListOrders).
 ///
 /// `ParseStrictResponse` impl for `ListOrders`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -652,7 +652,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListOrders {
 /// Operation shape for `ListTagsForResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
+/// [`list_tags_for_resource`](crate::client::fluent_builders::ListTagsForResource).
 ///
 /// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -687,7 +687,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// Operation shape for `Ping`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`ping`](crate::client::Client::ping).
+/// [`ping`](crate::client::fluent_builders::Ping).
 ///
 /// `ParseStrictResponse` impl for `Ping`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -719,7 +719,7 @@ impl aws_smithy_http::response::ParseStrictResponse for Ping {
 /// Operation shape for `TagResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`tag_resource`](crate::client::Client::tag_resource).
+/// [`tag_resource`](crate::client::fluent_builders::TagResource).
 ///
 /// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -752,7 +752,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// Operation shape for `UntagResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`untag_resource`](crate::client::Client::untag_resource).
+/// [`untag_resource`](crate::client::fluent_builders::UntagResource).
 ///
 /// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -785,7 +785,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// Operation shape for `UpdateNetworkSite`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_network_site`](crate::client::Client::update_network_site).
+/// [`update_network_site`](crate::client::fluent_builders::UpdateNetworkSite).
 ///
 /// `ParseStrictResponse` impl for `UpdateNetworkSite`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -820,7 +820,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateNetworkSite {
 /// Operation shape for `UpdateNetworkSitePlan`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_network_site_plan`](crate::client::Client::update_network_site_plan).
+/// [`update_network_site_plan`](crate::client::fluent_builders::UpdateNetworkSitePlan).
 ///
 /// `ParseStrictResponse` impl for `UpdateNetworkSitePlan`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

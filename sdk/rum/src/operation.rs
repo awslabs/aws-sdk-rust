@@ -2,7 +2,7 @@
 /// Operation shape for `BatchCreateRumMetricDefinitions`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`batch_create_rum_metric_definitions`](crate::client::Client::batch_create_rum_metric_definitions).
+/// [`batch_create_rum_metric_definitions`](crate::client::fluent_builders::BatchCreateRumMetricDefinitions).
 ///
 /// `ParseStrictResponse` impl for `BatchCreateRumMetricDefinitions`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -37,7 +37,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchCreateRumMetricDefi
 /// Operation shape for `BatchDeleteRumMetricDefinitions`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`batch_delete_rum_metric_definitions`](crate::client::Client::batch_delete_rum_metric_definitions).
+/// [`batch_delete_rum_metric_definitions`](crate::client::fluent_builders::BatchDeleteRumMetricDefinitions).
 ///
 /// `ParseStrictResponse` impl for `BatchDeleteRumMetricDefinitions`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -72,7 +72,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchDeleteRumMetricDefi
 /// Operation shape for `BatchGetRumMetricDefinitions`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`batch_get_rum_metric_definitions`](crate::client::Client::batch_get_rum_metric_definitions).
+/// [`batch_get_rum_metric_definitions`](crate::client::fluent_builders::BatchGetRumMetricDefinitions).
 ///
 /// `ParseStrictResponse` impl for `BatchGetRumMetricDefinitions`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -107,7 +107,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchGetRumMetricDefinit
 /// Operation shape for `CreateAppMonitor`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_app_monitor`](crate::client::Client::create_app_monitor).
+/// [`create_app_monitor`](crate::client::fluent_builders::CreateAppMonitor).
 ///
 /// `ParseStrictResponse` impl for `CreateAppMonitor`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -142,7 +142,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateAppMonitor {
 /// Operation shape for `DeleteAppMonitor`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_app_monitor`](crate::client::Client::delete_app_monitor).
+/// [`delete_app_monitor`](crate::client::fluent_builders::DeleteAppMonitor).
 ///
 /// `ParseStrictResponse` impl for `DeleteAppMonitor`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -177,7 +177,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteAppMonitor {
 /// Operation shape for `DeleteRumMetricsDestination`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_rum_metrics_destination`](crate::client::Client::delete_rum_metrics_destination).
+/// [`delete_rum_metrics_destination`](crate::client::fluent_builders::DeleteRumMetricsDestination).
 ///
 /// `ParseStrictResponse` impl for `DeleteRumMetricsDestination`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -212,7 +212,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteRumMetricsDestinat
 /// Operation shape for `GetAppMonitor`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_app_monitor`](crate::client::Client::get_app_monitor).
+/// [`get_app_monitor`](crate::client::fluent_builders::GetAppMonitor).
 ///
 /// `ParseStrictResponse` impl for `GetAppMonitor`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -245,7 +245,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAppMonitor {
 /// Operation shape for `GetAppMonitorData`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_app_monitor_data`](crate::client::Client::get_app_monitor_data).
+/// [`get_app_monitor_data`](crate::client::fluent_builders::GetAppMonitorData).
 ///
 /// `ParseStrictResponse` impl for `GetAppMonitorData`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -280,7 +280,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAppMonitorData {
 /// Operation shape for `ListAppMonitors`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_app_monitors`](crate::client::Client::list_app_monitors).
+/// [`list_app_monitors`](crate::client::fluent_builders::ListAppMonitors).
 ///
 /// `ParseStrictResponse` impl for `ListAppMonitors`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -315,7 +315,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAppMonitors {
 /// Operation shape for `ListRumMetricsDestinations`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_rum_metrics_destinations`](crate::client::Client::list_rum_metrics_destinations).
+/// [`list_rum_metrics_destinations`](crate::client::fluent_builders::ListRumMetricsDestinations).
 ///
 /// `ParseStrictResponse` impl for `ListRumMetricsDestinations`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -350,7 +350,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListRumMetricsDestinatio
 /// Operation shape for `ListTagsForResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
+/// [`list_tags_for_resource`](crate::client::fluent_builders::ListTagsForResource).
 ///
 /// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -385,7 +385,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// Operation shape for `PutRumEvents`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`put_rum_events`](crate::client::Client::put_rum_events).
+/// [`put_rum_events`](crate::client::fluent_builders::PutRumEvents).
 ///
 /// `ParseStrictResponse` impl for `PutRumEvents`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -418,7 +418,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutRumEvents {
 /// Operation shape for `PutRumMetricsDestination`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`put_rum_metrics_destination`](crate::client::Client::put_rum_metrics_destination).
+/// [`put_rum_metrics_destination`](crate::client::fluent_builders::PutRumMetricsDestination).
 ///
 /// `ParseStrictResponse` impl for `PutRumMetricsDestination`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -453,7 +453,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutRumMetricsDestination
 /// Operation shape for `TagResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`tag_resource`](crate::client::Client::tag_resource).
+/// [`tag_resource`](crate::client::fluent_builders::TagResource).
 ///
 /// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -486,7 +486,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// Operation shape for `UntagResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`untag_resource`](crate::client::Client::untag_resource).
+/// [`untag_resource`](crate::client::fluent_builders::UntagResource).
 ///
 /// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -519,7 +519,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// Operation shape for `UpdateAppMonitor`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_app_monitor`](crate::client::Client::update_app_monitor).
+/// [`update_app_monitor`](crate::client::fluent_builders::UpdateAppMonitor).
 ///
 /// `ParseStrictResponse` impl for `UpdateAppMonitor`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -554,7 +554,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateAppMonitor {
 /// Operation shape for `UpdateRumMetricDefinition`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_rum_metric_definition`](crate::client::Client::update_rum_metric_definition).
+/// [`update_rum_metric_definition`](crate::client::fluent_builders::UpdateRumMetricDefinition).
 ///
 /// `ParseStrictResponse` impl for `UpdateRumMetricDefinition`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

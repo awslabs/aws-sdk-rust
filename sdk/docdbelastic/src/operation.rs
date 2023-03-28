@@ -2,7 +2,7 @@
 /// Operation shape for `CreateCluster`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_cluster`](crate::client::Client::create_cluster).
+/// [`create_cluster`](crate::client::fluent_builders::CreateCluster).
 ///
 /// `ParseStrictResponse` impl for `CreateCluster`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -35,7 +35,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateCluster {
 /// Operation shape for `CreateClusterSnapshot`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_cluster_snapshot`](crate::client::Client::create_cluster_snapshot).
+/// [`create_cluster_snapshot`](crate::client::fluent_builders::CreateClusterSnapshot).
 ///
 /// `ParseStrictResponse` impl for `CreateClusterSnapshot`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -70,7 +70,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateClusterSnapshot {
 /// Operation shape for `DeleteCluster`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_cluster`](crate::client::Client::delete_cluster).
+/// [`delete_cluster`](crate::client::fluent_builders::DeleteCluster).
 ///
 /// `ParseStrictResponse` impl for `DeleteCluster`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -103,7 +103,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteCluster {
 /// Operation shape for `DeleteClusterSnapshot`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_cluster_snapshot`](crate::client::Client::delete_cluster_snapshot).
+/// [`delete_cluster_snapshot`](crate::client::fluent_builders::DeleteClusterSnapshot).
 ///
 /// `ParseStrictResponse` impl for `DeleteClusterSnapshot`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -138,7 +138,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteClusterSnapshot {
 /// Operation shape for `GetCluster`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_cluster`](crate::client::Client::get_cluster).
+/// [`get_cluster`](crate::client::fluent_builders::GetCluster).
 ///
 /// `ParseStrictResponse` impl for `GetCluster`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -171,7 +171,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetCluster {
 /// Operation shape for `GetClusterSnapshot`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_cluster_snapshot`](crate::client::Client::get_cluster_snapshot).
+/// [`get_cluster_snapshot`](crate::client::fluent_builders::GetClusterSnapshot).
 ///
 /// `ParseStrictResponse` impl for `GetClusterSnapshot`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -206,7 +206,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetClusterSnapshot {
 /// Operation shape for `ListClusters`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_clusters`](crate::client::Client::list_clusters).
+/// [`list_clusters`](crate::client::fluent_builders::ListClusters).
 ///
 /// `ParseStrictResponse` impl for `ListClusters`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -239,7 +239,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListClusters {
 /// Operation shape for `ListClusterSnapshots`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_cluster_snapshots`](crate::client::Client::list_cluster_snapshots).
+/// [`list_cluster_snapshots`](crate::client::fluent_builders::ListClusterSnapshots).
 ///
 /// `ParseStrictResponse` impl for `ListClusterSnapshots`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -274,7 +274,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListClusterSnapshots {
 /// Operation shape for `ListTagsForResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
+/// [`list_tags_for_resource`](crate::client::fluent_builders::ListTagsForResource).
 ///
 /// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -309,7 +309,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// Operation shape for `RestoreClusterFromSnapshot`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`restore_cluster_from_snapshot`](crate::client::Client::restore_cluster_from_snapshot).
+/// [`restore_cluster_from_snapshot`](crate::client::fluent_builders::RestoreClusterFromSnapshot).
 ///
 /// `ParseStrictResponse` impl for `RestoreClusterFromSnapshot`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -344,7 +344,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RestoreClusterFromSnapsh
 /// Operation shape for `TagResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`tag_resource`](crate::client::Client::tag_resource).
+/// [`tag_resource`](crate::client::fluent_builders::TagResource).
 ///
 /// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -377,7 +377,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// Operation shape for `UntagResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`untag_resource`](crate::client::Client::untag_resource).
+/// [`untag_resource`](crate::client::fluent_builders::UntagResource).
 ///
 /// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -410,7 +410,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// Operation shape for `UpdateCluster`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_cluster`](crate::client::Client::update_cluster).
+/// [`update_cluster`](crate::client::fluent_builders::UpdateCluster).
 ///
 /// `ParseStrictResponse` impl for `UpdateCluster`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

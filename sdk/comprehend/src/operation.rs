@@ -2,7 +2,7 @@
 /// Operation shape for `BatchDetectDominantLanguage`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`batch_detect_dominant_language`](crate::client::Client::batch_detect_dominant_language).
+/// [`batch_detect_dominant_language`](crate::client::fluent_builders::BatchDetectDominantLanguage).
 ///
 /// `ParseStrictResponse` impl for `BatchDetectDominantLanguage`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -37,7 +37,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchDetectDominantLangu
 /// Operation shape for `BatchDetectEntities`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`batch_detect_entities`](crate::client::Client::batch_detect_entities).
+/// [`batch_detect_entities`](crate::client::fluent_builders::BatchDetectEntities).
 ///
 /// `ParseStrictResponse` impl for `BatchDetectEntities`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -72,7 +72,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchDetectEntities {
 /// Operation shape for `BatchDetectKeyPhrases`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`batch_detect_key_phrases`](crate::client::Client::batch_detect_key_phrases).
+/// [`batch_detect_key_phrases`](crate::client::fluent_builders::BatchDetectKeyPhrases).
 ///
 /// `ParseStrictResponse` impl for `BatchDetectKeyPhrases`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -107,7 +107,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchDetectKeyPhrases {
 /// Operation shape for `BatchDetectSentiment`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`batch_detect_sentiment`](crate::client::Client::batch_detect_sentiment).
+/// [`batch_detect_sentiment`](crate::client::fluent_builders::BatchDetectSentiment).
 ///
 /// `ParseStrictResponse` impl for `BatchDetectSentiment`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -142,7 +142,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchDetectSentiment {
 /// Operation shape for `BatchDetectSyntax`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`batch_detect_syntax`](crate::client::Client::batch_detect_syntax).
+/// [`batch_detect_syntax`](crate::client::fluent_builders::BatchDetectSyntax).
 ///
 /// `ParseStrictResponse` impl for `BatchDetectSyntax`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -177,7 +177,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchDetectSyntax {
 /// Operation shape for `BatchDetectTargetedSentiment`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`batch_detect_targeted_sentiment`](crate::client::Client::batch_detect_targeted_sentiment).
+/// [`batch_detect_targeted_sentiment`](crate::client::fluent_builders::BatchDetectTargetedSentiment).
 ///
 /// `ParseStrictResponse` impl for `BatchDetectTargetedSentiment`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -212,7 +212,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchDetectTargetedSenti
 /// Operation shape for `ClassifyDocument`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`classify_document`](crate::client::Client::classify_document).
+/// [`classify_document`](crate::client::fluent_builders::ClassifyDocument).
 ///
 /// `ParseStrictResponse` impl for `ClassifyDocument`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -247,7 +247,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ClassifyDocument {
 /// Operation shape for `ContainsPiiEntities`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`contains_pii_entities`](crate::client::Client::contains_pii_entities).
+/// [`contains_pii_entities`](crate::client::fluent_builders::ContainsPiiEntities).
 ///
 /// `ParseStrictResponse` impl for `ContainsPiiEntities`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -282,7 +282,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ContainsPiiEntities {
 /// Operation shape for `CreateDocumentClassifier`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_document_classifier`](crate::client::Client::create_document_classifier).
+/// [`create_document_classifier`](crate::client::fluent_builders::CreateDocumentClassifier).
 ///
 /// `ParseStrictResponse` impl for `CreateDocumentClassifier`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -317,7 +317,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateDocumentClassifier
 /// Operation shape for `CreateEndpoint`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_endpoint`](crate::client::Client::create_endpoint).
+/// [`create_endpoint`](crate::client::fluent_builders::CreateEndpoint).
 ///
 /// `ParseStrictResponse` impl for `CreateEndpoint`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -350,7 +350,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateEndpoint {
 /// Operation shape for `CreateEntityRecognizer`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_entity_recognizer`](crate::client::Client::create_entity_recognizer).
+/// [`create_entity_recognizer`](crate::client::fluent_builders::CreateEntityRecognizer).
 ///
 /// `ParseStrictResponse` impl for `CreateEntityRecognizer`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -385,7 +385,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateEntityRecognizer {
 /// Operation shape for `DeleteDocumentClassifier`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_document_classifier`](crate::client::Client::delete_document_classifier).
+/// [`delete_document_classifier`](crate::client::fluent_builders::DeleteDocumentClassifier).
 ///
 /// `ParseStrictResponse` impl for `DeleteDocumentClassifier`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -420,7 +420,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteDocumentClassifier
 /// Operation shape for `DeleteEndpoint`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_endpoint`](crate::client::Client::delete_endpoint).
+/// [`delete_endpoint`](crate::client::fluent_builders::DeleteEndpoint).
 ///
 /// `ParseStrictResponse` impl for `DeleteEndpoint`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -453,7 +453,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteEndpoint {
 /// Operation shape for `DeleteEntityRecognizer`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_entity_recognizer`](crate::client::Client::delete_entity_recognizer).
+/// [`delete_entity_recognizer`](crate::client::fluent_builders::DeleteEntityRecognizer).
 ///
 /// `ParseStrictResponse` impl for `DeleteEntityRecognizer`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -488,7 +488,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteEntityRecognizer {
 /// Operation shape for `DeleteResourcePolicy`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_resource_policy`](crate::client::Client::delete_resource_policy).
+/// [`delete_resource_policy`](crate::client::fluent_builders::DeleteResourcePolicy).
 ///
 /// `ParseStrictResponse` impl for `DeleteResourcePolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -523,7 +523,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteResourcePolicy {
 /// Operation shape for `DescribeDocumentClassificationJob`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_document_classification_job`](crate::client::Client::describe_document_classification_job).
+/// [`describe_document_classification_job`](crate::client::fluent_builders::DescribeDocumentClassificationJob).
 ///
 /// `ParseStrictResponse` impl for `DescribeDocumentClassificationJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -558,7 +558,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeDocumentClassifi
 /// Operation shape for `DescribeDocumentClassifier`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_document_classifier`](crate::client::Client::describe_document_classifier).
+/// [`describe_document_classifier`](crate::client::fluent_builders::DescribeDocumentClassifier).
 ///
 /// `ParseStrictResponse` impl for `DescribeDocumentClassifier`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -593,7 +593,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeDocumentClassifi
 /// Operation shape for `DescribeDominantLanguageDetectionJob`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_dominant_language_detection_job`](crate::client::Client::describe_dominant_language_detection_job).
+/// [`describe_dominant_language_detection_job`](crate::client::fluent_builders::DescribeDominantLanguageDetectionJob).
 ///
 /// `ParseStrictResponse` impl for `DescribeDominantLanguageDetectionJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -630,7 +630,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeDominantLanguage
 /// Operation shape for `DescribeEndpoint`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_endpoint`](crate::client::Client::describe_endpoint).
+/// [`describe_endpoint`](crate::client::fluent_builders::DescribeEndpoint).
 ///
 /// `ParseStrictResponse` impl for `DescribeEndpoint`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -665,7 +665,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeEndpoint {
 /// Operation shape for `DescribeEntitiesDetectionJob`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_entities_detection_job`](crate::client::Client::describe_entities_detection_job).
+/// [`describe_entities_detection_job`](crate::client::fluent_builders::DescribeEntitiesDetectionJob).
 ///
 /// `ParseStrictResponse` impl for `DescribeEntitiesDetectionJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -700,7 +700,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeEntitiesDetectio
 /// Operation shape for `DescribeEntityRecognizer`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_entity_recognizer`](crate::client::Client::describe_entity_recognizer).
+/// [`describe_entity_recognizer`](crate::client::fluent_builders::DescribeEntityRecognizer).
 ///
 /// `ParseStrictResponse` impl for `DescribeEntityRecognizer`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -735,7 +735,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeEntityRecognizer
 /// Operation shape for `DescribeEventsDetectionJob`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_events_detection_job`](crate::client::Client::describe_events_detection_job).
+/// [`describe_events_detection_job`](crate::client::fluent_builders::DescribeEventsDetectionJob).
 ///
 /// `ParseStrictResponse` impl for `DescribeEventsDetectionJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -770,7 +770,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeEventsDetectionJ
 /// Operation shape for `DescribeKeyPhrasesDetectionJob`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_key_phrases_detection_job`](crate::client::Client::describe_key_phrases_detection_job).
+/// [`describe_key_phrases_detection_job`](crate::client::fluent_builders::DescribeKeyPhrasesDetectionJob).
 ///
 /// `ParseStrictResponse` impl for `DescribeKeyPhrasesDetectionJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -805,7 +805,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeKeyPhrasesDetect
 /// Operation shape for `DescribePiiEntitiesDetectionJob`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_pii_entities_detection_job`](crate::client::Client::describe_pii_entities_detection_job).
+/// [`describe_pii_entities_detection_job`](crate::client::fluent_builders::DescribePiiEntitiesDetectionJob).
 ///
 /// `ParseStrictResponse` impl for `DescribePiiEntitiesDetectionJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -840,7 +840,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribePiiEntitiesDetec
 /// Operation shape for `DescribeResourcePolicy`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_resource_policy`](crate::client::Client::describe_resource_policy).
+/// [`describe_resource_policy`](crate::client::fluent_builders::DescribeResourcePolicy).
 ///
 /// `ParseStrictResponse` impl for `DescribeResourcePolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -875,7 +875,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeResourcePolicy {
 /// Operation shape for `DescribeSentimentDetectionJob`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_sentiment_detection_job`](crate::client::Client::describe_sentiment_detection_job).
+/// [`describe_sentiment_detection_job`](crate::client::fluent_builders::DescribeSentimentDetectionJob).
 ///
 /// `ParseStrictResponse` impl for `DescribeSentimentDetectionJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -910,7 +910,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeSentimentDetecti
 /// Operation shape for `DescribeTargetedSentimentDetectionJob`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_targeted_sentiment_detection_job`](crate::client::Client::describe_targeted_sentiment_detection_job).
+/// [`describe_targeted_sentiment_detection_job`](crate::client::fluent_builders::DescribeTargetedSentimentDetectionJob).
 ///
 /// `ParseStrictResponse` impl for `DescribeTargetedSentimentDetectionJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -947,7 +947,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeTargetedSentimen
 /// Operation shape for `DescribeTopicsDetectionJob`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`describe_topics_detection_job`](crate::client::Client::describe_topics_detection_job).
+/// [`describe_topics_detection_job`](crate::client::fluent_builders::DescribeTopicsDetectionJob).
 ///
 /// `ParseStrictResponse` impl for `DescribeTopicsDetectionJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -982,7 +982,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeTopicsDetectionJ
 /// Operation shape for `DetectDominantLanguage`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`detect_dominant_language`](crate::client::Client::detect_dominant_language).
+/// [`detect_dominant_language`](crate::client::fluent_builders::DetectDominantLanguage).
 ///
 /// `ParseStrictResponse` impl for `DetectDominantLanguage`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1017,7 +1017,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DetectDominantLanguage {
 /// Operation shape for `DetectEntities`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`detect_entities`](crate::client::Client::detect_entities).
+/// [`detect_entities`](crate::client::fluent_builders::DetectEntities).
 ///
 /// `ParseStrictResponse` impl for `DetectEntities`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1050,7 +1050,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DetectEntities {
 /// Operation shape for `DetectKeyPhrases`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`detect_key_phrases`](crate::client::Client::detect_key_phrases).
+/// [`detect_key_phrases`](crate::client::fluent_builders::DetectKeyPhrases).
 ///
 /// `ParseStrictResponse` impl for `DetectKeyPhrases`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1085,7 +1085,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DetectKeyPhrases {
 /// Operation shape for `DetectPiiEntities`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`detect_pii_entities`](crate::client::Client::detect_pii_entities).
+/// [`detect_pii_entities`](crate::client::fluent_builders::DetectPiiEntities).
 ///
 /// `ParseStrictResponse` impl for `DetectPiiEntities`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1120,7 +1120,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DetectPiiEntities {
 /// Operation shape for `DetectSentiment`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`detect_sentiment`](crate::client::Client::detect_sentiment).
+/// [`detect_sentiment`](crate::client::fluent_builders::DetectSentiment).
 ///
 /// `ParseStrictResponse` impl for `DetectSentiment`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1155,7 +1155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DetectSentiment {
 /// Operation shape for `DetectSyntax`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`detect_syntax`](crate::client::Client::detect_syntax).
+/// [`detect_syntax`](crate::client::fluent_builders::DetectSyntax).
 ///
 /// `ParseStrictResponse` impl for `DetectSyntax`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1188,7 +1188,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DetectSyntax {
 /// Operation shape for `DetectTargetedSentiment`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`detect_targeted_sentiment`](crate::client::Client::detect_targeted_sentiment).
+/// [`detect_targeted_sentiment`](crate::client::fluent_builders::DetectTargetedSentiment).
 ///
 /// `ParseStrictResponse` impl for `DetectTargetedSentiment`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1223,7 +1223,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DetectTargetedSentiment 
 /// Operation shape for `ImportModel`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`import_model`](crate::client::Client::import_model).
+/// [`import_model`](crate::client::fluent_builders::ImportModel).
 ///
 /// `ParseStrictResponse` impl for `ImportModel`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1256,7 +1256,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ImportModel {
 /// Operation shape for `ListDocumentClassificationJobs`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_document_classification_jobs`](crate::client::Client::list_document_classification_jobs).
+/// [`list_document_classification_jobs`](crate::client::fluent_builders::ListDocumentClassificationJobs).
 ///
 /// `ParseStrictResponse` impl for `ListDocumentClassificationJobs`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1291,7 +1291,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListDocumentClassificati
 /// Operation shape for `ListDocumentClassifiers`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_document_classifiers`](crate::client::Client::list_document_classifiers).
+/// [`list_document_classifiers`](crate::client::fluent_builders::ListDocumentClassifiers).
 ///
 /// `ParseStrictResponse` impl for `ListDocumentClassifiers`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1326,7 +1326,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListDocumentClassifiers 
 /// Operation shape for `ListDocumentClassifierSummaries`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_document_classifier_summaries`](crate::client::Client::list_document_classifier_summaries).
+/// [`list_document_classifier_summaries`](crate::client::fluent_builders::ListDocumentClassifierSummaries).
 ///
 /// `ParseStrictResponse` impl for `ListDocumentClassifierSummaries`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1361,7 +1361,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListDocumentClassifierSu
 /// Operation shape for `ListDominantLanguageDetectionJobs`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_dominant_language_detection_jobs`](crate::client::Client::list_dominant_language_detection_jobs).
+/// [`list_dominant_language_detection_jobs`](crate::client::fluent_builders::ListDominantLanguageDetectionJobs).
 ///
 /// `ParseStrictResponse` impl for `ListDominantLanguageDetectionJobs`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1396,7 +1396,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListDominantLanguageDete
 /// Operation shape for `ListEndpoints`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_endpoints`](crate::client::Client::list_endpoints).
+/// [`list_endpoints`](crate::client::fluent_builders::ListEndpoints).
 ///
 /// `ParseStrictResponse` impl for `ListEndpoints`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1429,7 +1429,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListEndpoints {
 /// Operation shape for `ListEntitiesDetectionJobs`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_entities_detection_jobs`](crate::client::Client::list_entities_detection_jobs).
+/// [`list_entities_detection_jobs`](crate::client::fluent_builders::ListEntitiesDetectionJobs).
 ///
 /// `ParseStrictResponse` impl for `ListEntitiesDetectionJobs`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1464,7 +1464,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListEntitiesDetectionJob
 /// Operation shape for `ListEntityRecognizers`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_entity_recognizers`](crate::client::Client::list_entity_recognizers).
+/// [`list_entity_recognizers`](crate::client::fluent_builders::ListEntityRecognizers).
 ///
 /// `ParseStrictResponse` impl for `ListEntityRecognizers`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1499,7 +1499,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListEntityRecognizers {
 /// Operation shape for `ListEntityRecognizerSummaries`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_entity_recognizer_summaries`](crate::client::Client::list_entity_recognizer_summaries).
+/// [`list_entity_recognizer_summaries`](crate::client::fluent_builders::ListEntityRecognizerSummaries).
 ///
 /// `ParseStrictResponse` impl for `ListEntityRecognizerSummaries`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1534,7 +1534,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListEntityRecognizerSumm
 /// Operation shape for `ListEventsDetectionJobs`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_events_detection_jobs`](crate::client::Client::list_events_detection_jobs).
+/// [`list_events_detection_jobs`](crate::client::fluent_builders::ListEventsDetectionJobs).
 ///
 /// `ParseStrictResponse` impl for `ListEventsDetectionJobs`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1569,7 +1569,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListEventsDetectionJobs 
 /// Operation shape for `ListKeyPhrasesDetectionJobs`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_key_phrases_detection_jobs`](crate::client::Client::list_key_phrases_detection_jobs).
+/// [`list_key_phrases_detection_jobs`](crate::client::fluent_builders::ListKeyPhrasesDetectionJobs).
 ///
 /// `ParseStrictResponse` impl for `ListKeyPhrasesDetectionJobs`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1604,7 +1604,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListKeyPhrasesDetectionJ
 /// Operation shape for `ListPiiEntitiesDetectionJobs`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_pii_entities_detection_jobs`](crate::client::Client::list_pii_entities_detection_jobs).
+/// [`list_pii_entities_detection_jobs`](crate::client::fluent_builders::ListPiiEntitiesDetectionJobs).
 ///
 /// `ParseStrictResponse` impl for `ListPiiEntitiesDetectionJobs`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1639,7 +1639,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListPiiEntitiesDetection
 /// Operation shape for `ListSentimentDetectionJobs`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_sentiment_detection_jobs`](crate::client::Client::list_sentiment_detection_jobs).
+/// [`list_sentiment_detection_jobs`](crate::client::fluent_builders::ListSentimentDetectionJobs).
 ///
 /// `ParseStrictResponse` impl for `ListSentimentDetectionJobs`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1674,7 +1674,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListSentimentDetectionJo
 /// Operation shape for `ListTagsForResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_tags_for_resource`](crate::client::Client::list_tags_for_resource).
+/// [`list_tags_for_resource`](crate::client::fluent_builders::ListTagsForResource).
 ///
 /// `ParseStrictResponse` impl for `ListTagsForResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1709,7 +1709,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// Operation shape for `ListTargetedSentimentDetectionJobs`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_targeted_sentiment_detection_jobs`](crate::client::Client::list_targeted_sentiment_detection_jobs).
+/// [`list_targeted_sentiment_detection_jobs`](crate::client::fluent_builders::ListTargetedSentimentDetectionJobs).
 ///
 /// `ParseStrictResponse` impl for `ListTargetedSentimentDetectionJobs`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1744,7 +1744,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTargetedSentimentDet
 /// Operation shape for `ListTopicsDetectionJobs`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_topics_detection_jobs`](crate::client::Client::list_topics_detection_jobs).
+/// [`list_topics_detection_jobs`](crate::client::fluent_builders::ListTopicsDetectionJobs).
 ///
 /// `ParseStrictResponse` impl for `ListTopicsDetectionJobs`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1779,7 +1779,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTopicsDetectionJobs 
 /// Operation shape for `PutResourcePolicy`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`put_resource_policy`](crate::client::Client::put_resource_policy).
+/// [`put_resource_policy`](crate::client::fluent_builders::PutResourcePolicy).
 ///
 /// `ParseStrictResponse` impl for `PutResourcePolicy`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1814,7 +1814,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutResourcePolicy {
 /// Operation shape for `StartDocumentClassificationJob`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`start_document_classification_job`](crate::client::Client::start_document_classification_job).
+/// [`start_document_classification_job`](crate::client::fluent_builders::StartDocumentClassificationJob).
 ///
 /// `ParseStrictResponse` impl for `StartDocumentClassificationJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1849,7 +1849,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartDocumentClassificat
 /// Operation shape for `StartDominantLanguageDetectionJob`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`start_dominant_language_detection_job`](crate::client::Client::start_dominant_language_detection_job).
+/// [`start_dominant_language_detection_job`](crate::client::fluent_builders::StartDominantLanguageDetectionJob).
 ///
 /// `ParseStrictResponse` impl for `StartDominantLanguageDetectionJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1884,7 +1884,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartDominantLanguageDet
 /// Operation shape for `StartEntitiesDetectionJob`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`start_entities_detection_job`](crate::client::Client::start_entities_detection_job).
+/// [`start_entities_detection_job`](crate::client::fluent_builders::StartEntitiesDetectionJob).
 ///
 /// `ParseStrictResponse` impl for `StartEntitiesDetectionJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1919,7 +1919,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartEntitiesDetectionJo
 /// Operation shape for `StartEventsDetectionJob`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`start_events_detection_job`](crate::client::Client::start_events_detection_job).
+/// [`start_events_detection_job`](crate::client::fluent_builders::StartEventsDetectionJob).
 ///
 /// `ParseStrictResponse` impl for `StartEventsDetectionJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1954,7 +1954,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartEventsDetectionJob 
 /// Operation shape for `StartKeyPhrasesDetectionJob`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`start_key_phrases_detection_job`](crate::client::Client::start_key_phrases_detection_job).
+/// [`start_key_phrases_detection_job`](crate::client::fluent_builders::StartKeyPhrasesDetectionJob).
 ///
 /// `ParseStrictResponse` impl for `StartKeyPhrasesDetectionJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1989,7 +1989,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartKeyPhrasesDetection
 /// Operation shape for `StartPiiEntitiesDetectionJob`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`start_pii_entities_detection_job`](crate::client::Client::start_pii_entities_detection_job).
+/// [`start_pii_entities_detection_job`](crate::client::fluent_builders::StartPiiEntitiesDetectionJob).
 ///
 /// `ParseStrictResponse` impl for `StartPiiEntitiesDetectionJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2024,7 +2024,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartPiiEntitiesDetectio
 /// Operation shape for `StartSentimentDetectionJob`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`start_sentiment_detection_job`](crate::client::Client::start_sentiment_detection_job).
+/// [`start_sentiment_detection_job`](crate::client::fluent_builders::StartSentimentDetectionJob).
 ///
 /// `ParseStrictResponse` impl for `StartSentimentDetectionJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2059,7 +2059,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartSentimentDetectionJ
 /// Operation shape for `StartTargetedSentimentDetectionJob`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`start_targeted_sentiment_detection_job`](crate::client::Client::start_targeted_sentiment_detection_job).
+/// [`start_targeted_sentiment_detection_job`](crate::client::fluent_builders::StartTargetedSentimentDetectionJob).
 ///
 /// `ParseStrictResponse` impl for `StartTargetedSentimentDetectionJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2094,7 +2094,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartTargetedSentimentDe
 /// Operation shape for `StartTopicsDetectionJob`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`start_topics_detection_job`](crate::client::Client::start_topics_detection_job).
+/// [`start_topics_detection_job`](crate::client::fluent_builders::StartTopicsDetectionJob).
 ///
 /// `ParseStrictResponse` impl for `StartTopicsDetectionJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2129,7 +2129,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartTopicsDetectionJob 
 /// Operation shape for `StopDominantLanguageDetectionJob`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`stop_dominant_language_detection_job`](crate::client::Client::stop_dominant_language_detection_job).
+/// [`stop_dominant_language_detection_job`](crate::client::fluent_builders::StopDominantLanguageDetectionJob).
 ///
 /// `ParseStrictResponse` impl for `StopDominantLanguageDetectionJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2164,7 +2164,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StopDominantLanguageDete
 /// Operation shape for `StopEntitiesDetectionJob`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`stop_entities_detection_job`](crate::client::Client::stop_entities_detection_job).
+/// [`stop_entities_detection_job`](crate::client::fluent_builders::StopEntitiesDetectionJob).
 ///
 /// `ParseStrictResponse` impl for `StopEntitiesDetectionJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2199,7 +2199,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StopEntitiesDetectionJob
 /// Operation shape for `StopEventsDetectionJob`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`stop_events_detection_job`](crate::client::Client::stop_events_detection_job).
+/// [`stop_events_detection_job`](crate::client::fluent_builders::StopEventsDetectionJob).
 ///
 /// `ParseStrictResponse` impl for `StopEventsDetectionJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2234,7 +2234,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StopEventsDetectionJob {
 /// Operation shape for `StopKeyPhrasesDetectionJob`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`stop_key_phrases_detection_job`](crate::client::Client::stop_key_phrases_detection_job).
+/// [`stop_key_phrases_detection_job`](crate::client::fluent_builders::StopKeyPhrasesDetectionJob).
 ///
 /// `ParseStrictResponse` impl for `StopKeyPhrasesDetectionJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2269,7 +2269,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StopKeyPhrasesDetectionJ
 /// Operation shape for `StopPiiEntitiesDetectionJob`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`stop_pii_entities_detection_job`](crate::client::Client::stop_pii_entities_detection_job).
+/// [`stop_pii_entities_detection_job`](crate::client::fluent_builders::StopPiiEntitiesDetectionJob).
 ///
 /// `ParseStrictResponse` impl for `StopPiiEntitiesDetectionJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2304,7 +2304,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StopPiiEntitiesDetection
 /// Operation shape for `StopSentimentDetectionJob`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`stop_sentiment_detection_job`](crate::client::Client::stop_sentiment_detection_job).
+/// [`stop_sentiment_detection_job`](crate::client::fluent_builders::StopSentimentDetectionJob).
 ///
 /// `ParseStrictResponse` impl for `StopSentimentDetectionJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2339,7 +2339,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StopSentimentDetectionJo
 /// Operation shape for `StopTargetedSentimentDetectionJob`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`stop_targeted_sentiment_detection_job`](crate::client::Client::stop_targeted_sentiment_detection_job).
+/// [`stop_targeted_sentiment_detection_job`](crate::client::fluent_builders::StopTargetedSentimentDetectionJob).
 ///
 /// `ParseStrictResponse` impl for `StopTargetedSentimentDetectionJob`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2374,7 +2374,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StopTargetedSentimentDet
 /// Operation shape for `StopTrainingDocumentClassifier`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`stop_training_document_classifier`](crate::client::Client::stop_training_document_classifier).
+/// [`stop_training_document_classifier`](crate::client::fluent_builders::StopTrainingDocumentClassifier).
 ///
 /// `ParseStrictResponse` impl for `StopTrainingDocumentClassifier`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2409,7 +2409,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StopTrainingDocumentClas
 /// Operation shape for `StopTrainingEntityRecognizer`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`stop_training_entity_recognizer`](crate::client::Client::stop_training_entity_recognizer).
+/// [`stop_training_entity_recognizer`](crate::client::fluent_builders::StopTrainingEntityRecognizer).
 ///
 /// `ParseStrictResponse` impl for `StopTrainingEntityRecognizer`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2444,7 +2444,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StopTrainingEntityRecogn
 /// Operation shape for `TagResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`tag_resource`](crate::client::Client::tag_resource).
+/// [`tag_resource`](crate::client::fluent_builders::TagResource).
 ///
 /// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2477,7 +2477,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// Operation shape for `UntagResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`untag_resource`](crate::client::Client::untag_resource).
+/// [`untag_resource`](crate::client::fluent_builders::UntagResource).
 ///
 /// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -2510,7 +2510,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// Operation shape for `UpdateEndpoint`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_endpoint`](crate::client::Client::update_endpoint).
+/// [`update_endpoint`](crate::client::fluent_builders::UpdateEndpoint).
 ///
 /// `ParseStrictResponse` impl for `UpdateEndpoint`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]

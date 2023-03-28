@@ -2,7 +2,7 @@
 /// Operation shape for `CreateCell`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_cell`](crate::client::Client::create_cell).
+/// [`create_cell`](crate::client::fluent_builders::CreateCell).
 ///
 /// `ParseStrictResponse` impl for `CreateCell`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -35,7 +35,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateCell {
 /// Operation shape for `CreateCrossAccountAuthorization`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_cross_account_authorization`](crate::client::Client::create_cross_account_authorization).
+/// [`create_cross_account_authorization`](crate::client::fluent_builders::CreateCrossAccountAuthorization).
 ///
 /// `ParseStrictResponse` impl for `CreateCrossAccountAuthorization`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -70,7 +70,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateCrossAccountAuthor
 /// Operation shape for `CreateReadinessCheck`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_readiness_check`](crate::client::Client::create_readiness_check).
+/// [`create_readiness_check`](crate::client::fluent_builders::CreateReadinessCheck).
 ///
 /// `ParseStrictResponse` impl for `CreateReadinessCheck`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -105,7 +105,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateReadinessCheck {
 /// Operation shape for `CreateRecoveryGroup`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_recovery_group`](crate::client::Client::create_recovery_group).
+/// [`create_recovery_group`](crate::client::fluent_builders::CreateRecoveryGroup).
 ///
 /// `ParseStrictResponse` impl for `CreateRecoveryGroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -140,7 +140,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateRecoveryGroup {
 /// Operation shape for `CreateResourceSet`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`create_resource_set`](crate::client::Client::create_resource_set).
+/// [`create_resource_set`](crate::client::fluent_builders::CreateResourceSet).
 ///
 /// `ParseStrictResponse` impl for `CreateResourceSet`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -175,7 +175,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateResourceSet {
 /// Operation shape for `DeleteCell`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_cell`](crate::client::Client::delete_cell).
+/// [`delete_cell`](crate::client::fluent_builders::DeleteCell).
 ///
 /// `ParseStrictResponse` impl for `DeleteCell`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -208,7 +208,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteCell {
 /// Operation shape for `DeleteCrossAccountAuthorization`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_cross_account_authorization`](crate::client::Client::delete_cross_account_authorization).
+/// [`delete_cross_account_authorization`](crate::client::fluent_builders::DeleteCrossAccountAuthorization).
 ///
 /// `ParseStrictResponse` impl for `DeleteCrossAccountAuthorization`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -243,7 +243,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteCrossAccountAuthor
 /// Operation shape for `DeleteReadinessCheck`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_readiness_check`](crate::client::Client::delete_readiness_check).
+/// [`delete_readiness_check`](crate::client::fluent_builders::DeleteReadinessCheck).
 ///
 /// `ParseStrictResponse` impl for `DeleteReadinessCheck`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -278,7 +278,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteReadinessCheck {
 /// Operation shape for `DeleteRecoveryGroup`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_recovery_group`](crate::client::Client::delete_recovery_group).
+/// [`delete_recovery_group`](crate::client::fluent_builders::DeleteRecoveryGroup).
 ///
 /// `ParseStrictResponse` impl for `DeleteRecoveryGroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -313,7 +313,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteRecoveryGroup {
 /// Operation shape for `DeleteResourceSet`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`delete_resource_set`](crate::client::Client::delete_resource_set).
+/// [`delete_resource_set`](crate::client::fluent_builders::DeleteResourceSet).
 ///
 /// `ParseStrictResponse` impl for `DeleteResourceSet`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -348,7 +348,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteResourceSet {
 /// Operation shape for `GetArchitectureRecommendations`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_architecture_recommendations`](crate::client::Client::get_architecture_recommendations).
+/// [`get_architecture_recommendations`](crate::client::fluent_builders::GetArchitectureRecommendations).
 ///
 /// `ParseStrictResponse` impl for `GetArchitectureRecommendations`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -383,7 +383,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetArchitectureRecommend
 /// Operation shape for `GetCell`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_cell`](crate::client::Client::get_cell).
+/// [`get_cell`](crate::client::fluent_builders::GetCell).
 ///
 /// `ParseStrictResponse` impl for `GetCell`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -415,7 +415,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetCell {
 /// Operation shape for `GetCellReadinessSummary`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_cell_readiness_summary`](crate::client::Client::get_cell_readiness_summary).
+/// [`get_cell_readiness_summary`](crate::client::fluent_builders::GetCellReadinessSummary).
 ///
 /// `ParseStrictResponse` impl for `GetCellReadinessSummary`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -450,7 +450,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetCellReadinessSummary 
 /// Operation shape for `GetReadinessCheck`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_readiness_check`](crate::client::Client::get_readiness_check).
+/// [`get_readiness_check`](crate::client::fluent_builders::GetReadinessCheck).
 ///
 /// `ParseStrictResponse` impl for `GetReadinessCheck`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -485,7 +485,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetReadinessCheck {
 /// Operation shape for `GetReadinessCheckResourceStatus`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_readiness_check_resource_status`](crate::client::Client::get_readiness_check_resource_status).
+/// [`get_readiness_check_resource_status`](crate::client::fluent_builders::GetReadinessCheckResourceStatus).
 ///
 /// `ParseStrictResponse` impl for `GetReadinessCheckResourceStatus`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -520,7 +520,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetReadinessCheckResourc
 /// Operation shape for `GetReadinessCheckStatus`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_readiness_check_status`](crate::client::Client::get_readiness_check_status).
+/// [`get_readiness_check_status`](crate::client::fluent_builders::GetReadinessCheckStatus).
 ///
 /// `ParseStrictResponse` impl for `GetReadinessCheckStatus`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -555,7 +555,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetReadinessCheckStatus 
 /// Operation shape for `GetRecoveryGroup`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_recovery_group`](crate::client::Client::get_recovery_group).
+/// [`get_recovery_group`](crate::client::fluent_builders::GetRecoveryGroup).
 ///
 /// `ParseStrictResponse` impl for `GetRecoveryGroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -590,7 +590,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetRecoveryGroup {
 /// Operation shape for `GetRecoveryGroupReadinessSummary`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_recovery_group_readiness_summary`](crate::client::Client::get_recovery_group_readiness_summary).
+/// [`get_recovery_group_readiness_summary`](crate::client::fluent_builders::GetRecoveryGroupReadinessSummary).
 ///
 /// `ParseStrictResponse` impl for `GetRecoveryGroupReadinessSummary`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -625,7 +625,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetRecoveryGroupReadines
 /// Operation shape for `GetResourceSet`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`get_resource_set`](crate::client::Client::get_resource_set).
+/// [`get_resource_set`](crate::client::fluent_builders::GetResourceSet).
 ///
 /// `ParseStrictResponse` impl for `GetResourceSet`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -658,7 +658,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetResourceSet {
 /// Operation shape for `ListCells`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_cells`](crate::client::Client::list_cells).
+/// [`list_cells`](crate::client::fluent_builders::ListCells).
 ///
 /// `ParseStrictResponse` impl for `ListCells`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -690,7 +690,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListCells {
 /// Operation shape for `ListCrossAccountAuthorizations`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_cross_account_authorizations`](crate::client::Client::list_cross_account_authorizations).
+/// [`list_cross_account_authorizations`](crate::client::fluent_builders::ListCrossAccountAuthorizations).
 ///
 /// `ParseStrictResponse` impl for `ListCrossAccountAuthorizations`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -725,7 +725,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListCrossAccountAuthoriz
 /// Operation shape for `ListReadinessChecks`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_readiness_checks`](crate::client::Client::list_readiness_checks).
+/// [`list_readiness_checks`](crate::client::fluent_builders::ListReadinessChecks).
 ///
 /// `ParseStrictResponse` impl for `ListReadinessChecks`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -760,7 +760,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListReadinessChecks {
 /// Operation shape for `ListRecoveryGroups`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_recovery_groups`](crate::client::Client::list_recovery_groups).
+/// [`list_recovery_groups`](crate::client::fluent_builders::ListRecoveryGroups).
 ///
 /// `ParseStrictResponse` impl for `ListRecoveryGroups`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -795,7 +795,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListRecoveryGroups {
 /// Operation shape for `ListResourceSets`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_resource_sets`](crate::client::Client::list_resource_sets).
+/// [`list_resource_sets`](crate::client::fluent_builders::ListResourceSets).
 ///
 /// `ParseStrictResponse` impl for `ListResourceSets`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -830,7 +830,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListResourceSets {
 /// Operation shape for `ListRules`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_rules`](crate::client::Client::list_rules).
+/// [`list_rules`](crate::client::fluent_builders::ListRules).
 ///
 /// `ParseStrictResponse` impl for `ListRules`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -862,7 +862,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListRules {
 /// Operation shape for `ListTagsForResources`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`list_tags_for_resources`](crate::client::Client::list_tags_for_resources).
+/// [`list_tags_for_resources`](crate::client::fluent_builders::ListTagsForResources).
 ///
 /// `ParseStrictResponse` impl for `ListTagsForResources`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -897,7 +897,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResources {
 /// Operation shape for `TagResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`tag_resource`](crate::client::Client::tag_resource).
+/// [`tag_resource`](crate::client::fluent_builders::TagResource).
 ///
 /// `ParseStrictResponse` impl for `TagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -930,7 +930,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
 /// Operation shape for `UntagResource`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`untag_resource`](crate::client::Client::untag_resource).
+/// [`untag_resource`](crate::client::fluent_builders::UntagResource).
 ///
 /// `ParseStrictResponse` impl for `UntagResource`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -963,7 +963,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
 /// Operation shape for `UpdateCell`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_cell`](crate::client::Client::update_cell).
+/// [`update_cell`](crate::client::fluent_builders::UpdateCell).
 ///
 /// `ParseStrictResponse` impl for `UpdateCell`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -996,7 +996,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateCell {
 /// Operation shape for `UpdateReadinessCheck`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_readiness_check`](crate::client::Client::update_readiness_check).
+/// [`update_readiness_check`](crate::client::fluent_builders::UpdateReadinessCheck).
 ///
 /// `ParseStrictResponse` impl for `UpdateReadinessCheck`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1031,7 +1031,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateReadinessCheck {
 /// Operation shape for `UpdateRecoveryGroup`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_recovery_group`](crate::client::Client::update_recovery_group).
+/// [`update_recovery_group`](crate::client::fluent_builders::UpdateRecoveryGroup).
 ///
 /// `ParseStrictResponse` impl for `UpdateRecoveryGroup`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
@@ -1066,7 +1066,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateRecoveryGroup {
 /// Operation shape for `UpdateResourceSet`.
 ///
 /// This is usually constructed for you using the the fluent builder returned by
-/// [`update_resource_set`](crate::client::Client::update_resource_set).
+/// [`update_resource_set`](crate::client::fluent_builders::UpdateResourceSet).
 ///
 /// `ParseStrictResponse` impl for `UpdateResourceSet`.
 #[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
