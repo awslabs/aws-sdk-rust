@@ -26,9 +26,6 @@ allowed_external_types = [
     # TODO(https://github.com/awslabs/smithy-rs/issues/1193): Feature gate references to Tokio `File`
     "tokio::fs::file::File",
 
-    # TODO(https://github.com/awslabs/smithy-rs/issues/1193): Decide if `InvalidUri` should be exposed
-    "http::uri::InvalidUri",
-
     # TODO(https://github.com/awslabs/smithy-rs/issues/1193): Don't expose `once_cell` in public API
     "once_cell::sync::Lazy",
 
