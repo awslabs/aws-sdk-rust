@@ -100,6 +100,7 @@ impl Client {
     /// - On success, responds with [`AssociateEntityToThingOutput`](crate::output::AssociateEntityToThingOutput)
 
     /// - On failure, responds with [`SdkError<AssociateEntityToThingError>`](crate::error::AssociateEntityToThingError)
+    #[deprecated(note = "since: 2022-08-30")]
     pub fn associate_entity_to_thing(&self) -> fluent_builders::AssociateEntityToThing {
         fluent_builders::AssociateEntityToThing::new(self.handle.clone())
     }
@@ -111,6 +112,7 @@ impl Client {
     /// - On success, responds with [`CreateFlowTemplateOutput`](crate::output::CreateFlowTemplateOutput) with field(s):
     ///   - [`summary(Option<FlowTemplateSummary>)`](crate::output::CreateFlowTemplateOutput::summary): <p>The summary object that describes the created workflow.</p>
     /// - On failure, responds with [`SdkError<CreateFlowTemplateError>`](crate::error::CreateFlowTemplateError)
+    #[deprecated(note = "since: 2022-08-30")]
     pub fn create_flow_template(&self) -> fluent_builders::CreateFlowTemplate {
         fluent_builders::CreateFlowTemplate::new(self.handle.clone())
     }
@@ -127,6 +129,7 @@ impl Client {
     /// - On success, responds with [`CreateSystemInstanceOutput`](crate::output::CreateSystemInstanceOutput) with field(s):
     ///   - [`summary(Option<SystemInstanceSummary>)`](crate::output::CreateSystemInstanceOutput::summary): <p>The summary object that describes the new system instance.</p>
     /// - On failure, responds with [`SdkError<CreateSystemInstanceError>`](crate::error::CreateSystemInstanceError)
+    #[deprecated(note = "since: 2022-08-30")]
     pub fn create_system_instance(&self) -> fluent_builders::CreateSystemInstance {
         fluent_builders::CreateSystemInstance::new(self.handle.clone())
     }
@@ -138,6 +141,7 @@ impl Client {
     /// - On success, responds with [`CreateSystemTemplateOutput`](crate::output::CreateSystemTemplateOutput) with field(s):
     ///   - [`summary(Option<SystemTemplateSummary>)`](crate::output::CreateSystemTemplateOutput::summary): <p>The summary object that describes the created system.</p>
     /// - On failure, responds with [`SdkError<CreateSystemTemplateError>`](crate::error::CreateSystemTemplateError)
+    #[deprecated(note = "since: 2022-08-30")]
     pub fn create_system_template(&self) -> fluent_builders::CreateSystemTemplate {
         fluent_builders::CreateSystemTemplate::new(self.handle.clone())
     }
@@ -148,6 +152,7 @@ impl Client {
     /// - On success, responds with [`DeleteFlowTemplateOutput`](crate::output::DeleteFlowTemplateOutput)
 
     /// - On failure, responds with [`SdkError<DeleteFlowTemplateError>`](crate::error::DeleteFlowTemplateError)
+    #[deprecated(note = "since: 2022-08-30")]
     pub fn delete_flow_template(&self) -> fluent_builders::DeleteFlowTemplate {
         fluent_builders::DeleteFlowTemplate::new(self.handle.clone())
     }
@@ -159,6 +164,7 @@ impl Client {
     ///   - [`namespace_arn(Option<String>)`](crate::output::DeleteNamespaceOutput::namespace_arn): <p>The ARN of the namespace to be deleted.</p>
     ///   - [`namespace_name(Option<String>)`](crate::output::DeleteNamespaceOutput::namespace_name): <p>The name of the namespace to be deleted.</p>
     /// - On failure, responds with [`SdkError<DeleteNamespaceError>`](crate::error::DeleteNamespaceError)
+    #[deprecated(note = "since: 2022-08-30")]
     pub fn delete_namespace(&self) -> fluent_builders::DeleteNamespace {
         fluent_builders::DeleteNamespace::new(self.handle.clone())
     }
@@ -169,6 +175,7 @@ impl Client {
     /// - On success, responds with [`DeleteSystemInstanceOutput`](crate::output::DeleteSystemInstanceOutput)
 
     /// - On failure, responds with [`SdkError<DeleteSystemInstanceError>`](crate::error::DeleteSystemInstanceError)
+    #[deprecated(note = "since: 2022-08-30")]
     pub fn delete_system_instance(&self) -> fluent_builders::DeleteSystemInstance {
         fluent_builders::DeleteSystemInstance::new(self.handle.clone())
     }
@@ -179,6 +186,7 @@ impl Client {
     /// - On success, responds with [`DeleteSystemTemplateOutput`](crate::output::DeleteSystemTemplateOutput)
 
     /// - On failure, responds with [`SdkError<DeleteSystemTemplateError>`](crate::error::DeleteSystemTemplateError)
+    #[deprecated(note = "since: 2022-08-30")]
     pub fn delete_system_template(&self) -> fluent_builders::DeleteSystemTemplate {
         fluent_builders::DeleteSystemTemplate::new(self.handle.clone())
     }
@@ -190,6 +198,7 @@ impl Client {
     ///   - [`summary(Option<SystemInstanceSummary>)`](crate::output::DeploySystemInstanceOutput::summary): <p>An object that contains summary information about a system instance that was deployed. </p>
     ///   - [`greengrass_deployment_id(Option<String>)`](crate::output::DeploySystemInstanceOutput::greengrass_deployment_id): <p>The ID of the Greengrass deployment used to deploy the system instance.</p>
     /// - On failure, responds with [`SdkError<DeploySystemInstanceError>`](crate::error::DeploySystemInstanceError)
+    #[deprecated(note = "since: 2022-08-30")]
     pub fn deploy_system_instance(&self) -> fluent_builders::DeploySystemInstance {
         fluent_builders::DeploySystemInstance::new(self.handle.clone())
     }
@@ -200,6 +209,7 @@ impl Client {
     /// - On success, responds with [`DeprecateFlowTemplateOutput`](crate::output::DeprecateFlowTemplateOutput)
 
     /// - On failure, responds with [`SdkError<DeprecateFlowTemplateError>`](crate::error::DeprecateFlowTemplateError)
+    #[deprecated(note = "since: 2022-08-30")]
     pub fn deprecate_flow_template(&self) -> fluent_builders::DeprecateFlowTemplate {
         fluent_builders::DeprecateFlowTemplate::new(self.handle.clone())
     }
@@ -210,6 +220,7 @@ impl Client {
     /// - On success, responds with [`DeprecateSystemTemplateOutput`](crate::output::DeprecateSystemTemplateOutput)
 
     /// - On failure, responds with [`SdkError<DeprecateSystemTemplateError>`](crate::error::DeprecateSystemTemplateError)
+    #[deprecated(note = "since: 2022-08-30")]
     pub fn deprecate_system_template(&self) -> fluent_builders::DeprecateSystemTemplate {
         fluent_builders::DeprecateSystemTemplate::new(self.handle.clone())
     }
@@ -224,6 +235,7 @@ impl Client {
     ///   - [`tracking_namespace_version(Option<i64>)`](crate::output::DescribeNamespaceOutput::tracking_namespace_version): <p>The version of the public namespace that the latest version is tracking.</p>
     ///   - [`namespace_version(Option<i64>)`](crate::output::DescribeNamespaceOutput::namespace_version): <p>The version of the user's namespace to describe.</p>
     /// - On failure, responds with [`SdkError<DescribeNamespaceError>`](crate::error::DescribeNamespaceError)
+    #[deprecated(note = "since: 2022-08-30")]
     pub fn describe_namespace(&self) -> fluent_builders::DescribeNamespace {
         fluent_builders::DescribeNamespace::new(self.handle.clone())
     }
@@ -235,6 +247,7 @@ impl Client {
     /// - On success, responds with [`DissociateEntityFromThingOutput`](crate::output::DissociateEntityFromThingOutput)
 
     /// - On failure, responds with [`SdkError<DissociateEntityFromThingError>`](crate::error::DissociateEntityFromThingError)
+    #[deprecated(note = "since: 2022-08-30")]
     pub fn dissociate_entity_from_thing(&self) -> fluent_builders::DissociateEntityFromThing {
         fluent_builders::DissociateEntityFromThing::new(self.handle.clone())
     }
@@ -246,6 +259,7 @@ impl Client {
     /// - On success, responds with [`GetEntitiesOutput`](crate::output::GetEntitiesOutput) with field(s):
     ///   - [`descriptions(Option<Vec<EntityDescription>>)`](crate::output::GetEntitiesOutput::descriptions): <p>An array of descriptions for the specified entities.</p>
     /// - On failure, responds with [`SdkError<GetEntitiesError>`](crate::error::GetEntitiesError)
+    #[deprecated(note = "since: 2022-08-30")]
     pub fn get_entities(&self) -> fluent_builders::GetEntities {
         fluent_builders::GetEntities::new(self.handle.clone())
     }
@@ -257,6 +271,7 @@ impl Client {
     /// - On success, responds with [`GetFlowTemplateOutput`](crate::output::GetFlowTemplateOutput) with field(s):
     ///   - [`description(Option<FlowTemplateDescription>)`](crate::output::GetFlowTemplateOutput::description): <p>The object that describes the specified workflow.</p>
     /// - On failure, responds with [`SdkError<GetFlowTemplateError>`](crate::error::GetFlowTemplateError)
+    #[deprecated(note = "since: 2022-08-30")]
     pub fn get_flow_template(&self) -> fluent_builders::GetFlowTemplate {
         fluent_builders::GetFlowTemplate::new(self.handle.clone())
     }
@@ -271,6 +286,7 @@ impl Client {
     ///   - [`summaries(Option<Vec<FlowTemplateSummary>>)`](crate::output::GetFlowTemplateRevisionsOutput::summaries): <p>An array of objects that provide summary data about each revision.</p>
     ///   - [`next_token(Option<String>)`](crate::output::GetFlowTemplateRevisionsOutput::next_token): <p>The string to specify as <code>nextToken</code> when you request the next page of results.</p>
     /// - On failure, responds with [`SdkError<GetFlowTemplateRevisionsError>`](crate::error::GetFlowTemplateRevisionsError)
+    #[deprecated(note = "since: 2022-08-30")]
     pub fn get_flow_template_revisions(&self) -> fluent_builders::GetFlowTemplateRevisions {
         fluent_builders::GetFlowTemplateRevisions::new(self.handle.clone())
     }
@@ -285,6 +301,7 @@ impl Client {
     ///   - [`error_code(Option<NamespaceDeletionStatusErrorCodes>)`](crate::output::GetNamespaceDeletionStatusOutput::error_code): <p>An error code returned by the namespace deletion task.</p>
     ///   - [`error_message(Option<String>)`](crate::output::GetNamespaceDeletionStatusOutput::error_message): <p>An error code returned by the namespace deletion task.</p>
     /// - On failure, responds with [`SdkError<GetNamespaceDeletionStatusError>`](crate::error::GetNamespaceDeletionStatusError)
+    #[deprecated(note = "since: 2022-08-30")]
     pub fn get_namespace_deletion_status(&self) -> fluent_builders::GetNamespaceDeletionStatus {
         fluent_builders::GetNamespaceDeletionStatus::new(self.handle.clone())
     }
@@ -295,6 +312,7 @@ impl Client {
     /// - On success, responds with [`GetSystemInstanceOutput`](crate::output::GetSystemInstanceOutput) with field(s):
     ///   - [`description(Option<SystemInstanceDescription>)`](crate::output::GetSystemInstanceOutput::description): <p>An object that describes the system instance.</p>
     /// - On failure, responds with [`SdkError<GetSystemInstanceError>`](crate::error::GetSystemInstanceError)
+    #[deprecated(note = "since: 2022-08-30")]
     pub fn get_system_instance(&self) -> fluent_builders::GetSystemInstance {
         fluent_builders::GetSystemInstance::new(self.handle.clone())
     }
@@ -306,6 +324,7 @@ impl Client {
     /// - On success, responds with [`GetSystemTemplateOutput`](crate::output::GetSystemTemplateOutput) with field(s):
     ///   - [`description(Option<SystemTemplateDescription>)`](crate::output::GetSystemTemplateOutput::description): <p>An object that contains summary data about the system.</p>
     /// - On failure, responds with [`SdkError<GetSystemTemplateError>`](crate::error::GetSystemTemplateError)
+    #[deprecated(note = "since: 2022-08-30")]
     pub fn get_system_template(&self) -> fluent_builders::GetSystemTemplate {
         fluent_builders::GetSystemTemplate::new(self.handle.clone())
     }
@@ -320,6 +339,7 @@ impl Client {
     ///   - [`summaries(Option<Vec<SystemTemplateSummary>>)`](crate::output::GetSystemTemplateRevisionsOutput::summaries): <p>An array of objects that contain summary data about the system template revisions.</p>
     ///   - [`next_token(Option<String>)`](crate::output::GetSystemTemplateRevisionsOutput::next_token): <p>The string to specify as <code>nextToken</code> when you request the next page of results. </p>
     /// - On failure, responds with [`SdkError<GetSystemTemplateRevisionsError>`](crate::error::GetSystemTemplateRevisionsError)
+    #[deprecated(note = "since: 2022-08-30")]
     pub fn get_system_template_revisions(&self) -> fluent_builders::GetSystemTemplateRevisions {
         fluent_builders::GetSystemTemplateRevisions::new(self.handle.clone())
     }
@@ -336,6 +356,7 @@ impl Client {
     ///   - [`failure_reason(Option<Vec<String>>)`](crate::output::GetUploadStatusOutput::failure_reason): <p>The reason for an upload failure.</p>
     ///   - [`created_date(Option<DateTime>)`](crate::output::GetUploadStatusOutput::created_date): <p>The date at which the upload was created.</p>
     /// - On failure, responds with [`SdkError<GetUploadStatusError>`](crate::error::GetUploadStatusError)
+    #[deprecated(note = "since: 2022-08-30")]
     pub fn get_upload_status(&self) -> fluent_builders::GetUploadStatus {
         fluent_builders::GetUploadStatus::new(self.handle.clone())
     }
@@ -350,6 +371,7 @@ impl Client {
     ///   - [`messages(Option<Vec<FlowExecutionMessage>>)`](crate::output::ListFlowExecutionMessagesOutput::messages): <p>A list of objects that contain information about events in the specified flow execution.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListFlowExecutionMessagesOutput::next_token): <p>The string to specify as <code>nextToken</code> when you request the next page of results. </p>
     /// - On failure, responds with [`SdkError<ListFlowExecutionMessagesError>`](crate::error::ListFlowExecutionMessagesError)
+    #[deprecated(note = "since: 2022-08-30")]
     pub fn list_flow_execution_messages(&self) -> fluent_builders::ListFlowExecutionMessages {
         fluent_builders::ListFlowExecutionMessages::new(self.handle.clone())
     }
@@ -364,6 +386,7 @@ impl Client {
     ///   - [`tags(Option<Vec<Tag>>)`](crate::output::ListTagsForResourceOutput::tags): <p>List of tags returned by the <code>ListTagsForResource</code> operation.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListTagsForResourceOutput::next_token): <p>The token that specifies the next page of results to return.</p>
     /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
+    #[deprecated(note = "since: 2022-08-30")]
     pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource {
         fluent_builders::ListTagsForResource::new(self.handle.clone())
     }
@@ -380,6 +403,7 @@ impl Client {
     ///   - [`descriptions(Option<Vec<EntityDescription>>)`](crate::output::SearchEntitiesOutput::descriptions): <p>An array of descriptions for each entity returned in the search result.</p>
     ///   - [`next_token(Option<String>)`](crate::output::SearchEntitiesOutput::next_token): <p>The string to specify as <code>nextToken</code> when you request the next page of results.</p>
     /// - On failure, responds with [`SdkError<SearchEntitiesError>`](crate::error::SearchEntitiesError)
+    #[deprecated(note = "since: 2022-08-30")]
     pub fn search_entities(&self) -> fluent_builders::SearchEntities {
         fluent_builders::SearchEntities::new(self.handle.clone())
     }
@@ -397,6 +421,7 @@ impl Client {
     ///   - [`summaries(Option<Vec<FlowExecutionSummary>>)`](crate::output::SearchFlowExecutionsOutput::summaries): <p>An array of objects that contain summary information about each workflow execution in the result set.</p>
     ///   - [`next_token(Option<String>)`](crate::output::SearchFlowExecutionsOutput::next_token): <p>The string to specify as <code>nextToken</code> when you request the next page of results.</p>
     /// - On failure, responds with [`SdkError<SearchFlowExecutionsError>`](crate::error::SearchFlowExecutionsError)
+    #[deprecated(note = "since: 2022-08-30")]
     pub fn search_flow_executions(&self) -> fluent_builders::SearchFlowExecutions {
         fluent_builders::SearchFlowExecutions::new(self.handle.clone())
     }
@@ -411,6 +436,7 @@ impl Client {
     ///   - [`summaries(Option<Vec<FlowTemplateSummary>>)`](crate::output::SearchFlowTemplatesOutput::summaries): <p>An array of objects that contain summary information about each workflow in the result set.</p>
     ///   - [`next_token(Option<String>)`](crate::output::SearchFlowTemplatesOutput::next_token): <p>The string to specify as <code>nextToken</code> when you request the next page of results.</p>
     /// - On failure, responds with [`SdkError<SearchFlowTemplatesError>`](crate::error::SearchFlowTemplatesError)
+    #[deprecated(note = "since: 2022-08-30")]
     pub fn search_flow_templates(&self) -> fluent_builders::SearchFlowTemplates {
         fluent_builders::SearchFlowTemplates::new(self.handle.clone())
     }
@@ -425,6 +451,7 @@ impl Client {
     ///   - [`summaries(Option<Vec<SystemInstanceSummary>>)`](crate::output::SearchSystemInstancesOutput::summaries): <p>An array of objects that contain summary data abour the system instances in the result set.</p>
     ///   - [`next_token(Option<String>)`](crate::output::SearchSystemInstancesOutput::next_token): <p>The string to specify as <code>nextToken</code> when you request the next page of results. </p>
     /// - On failure, responds with [`SdkError<SearchSystemInstancesError>`](crate::error::SearchSystemInstancesError)
+    #[deprecated(note = "since: 2022-08-30")]
     pub fn search_system_instances(&self) -> fluent_builders::SearchSystemInstances {
         fluent_builders::SearchSystemInstances::new(self.handle.clone())
     }
@@ -439,6 +466,7 @@ impl Client {
     ///   - [`summaries(Option<Vec<SystemTemplateSummary>>)`](crate::output::SearchSystemTemplatesOutput::summaries): <p>An array of objects that contain summary information about each system deployment in the result set.</p>
     ///   - [`next_token(Option<String>)`](crate::output::SearchSystemTemplatesOutput::next_token): <p>The string to specify as <code>nextToken</code> when you request the next page of results.</p>
     /// - On failure, responds with [`SdkError<SearchSystemTemplatesError>`](crate::error::SearchSystemTemplatesError)
+    #[deprecated(note = "since: 2022-08-30")]
     pub fn search_system_templates(&self) -> fluent_builders::SearchSystemTemplates {
         fluent_builders::SearchSystemTemplates::new(self.handle.clone())
     }
@@ -454,6 +482,7 @@ impl Client {
     ///   - [`things(Option<Vec<Thing>>)`](crate::output::SearchThingsOutput::things): <p>An array of things in the result set.</p>
     ///   - [`next_token(Option<String>)`](crate::output::SearchThingsOutput::next_token): <p>The string to specify as <code>nextToken</code> when you request the next page of results.</p>
     /// - On failure, responds with [`SdkError<SearchThingsError>`](crate::error::SearchThingsError)
+    #[deprecated(note = "since: 2022-08-30")]
     pub fn search_things(&self) -> fluent_builders::SearchThings {
         fluent_builders::SearchThings::new(self.handle.clone())
     }
@@ -465,6 +494,7 @@ impl Client {
     /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
 
     /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
+    #[deprecated(note = "since: 2022-08-30")]
     pub fn tag_resource(&self) -> fluent_builders::TagResource {
         fluent_builders::TagResource::new(self.handle.clone())
     }
@@ -475,6 +505,7 @@ impl Client {
     /// - On success, responds with [`UndeploySystemInstanceOutput`](crate::output::UndeploySystemInstanceOutput) with field(s):
     ///   - [`summary(Option<SystemInstanceSummary>)`](crate::output::UndeploySystemInstanceOutput::summary): <p>An object that contains summary information about the system instance that was removed from its target.</p>
     /// - On failure, responds with [`SdkError<UndeploySystemInstanceError>`](crate::error::UndeploySystemInstanceError)
+    #[deprecated(note = "since: 2022-08-30")]
     pub fn undeploy_system_instance(&self) -> fluent_builders::UndeploySystemInstance {
         fluent_builders::UndeploySystemInstance::new(self.handle.clone())
     }
@@ -486,6 +517,7 @@ impl Client {
     /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 
     /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
+    #[deprecated(note = "since: 2022-08-30")]
     pub fn untag_resource(&self) -> fluent_builders::UntagResource {
         fluent_builders::UntagResource::new(self.handle.clone())
     }
@@ -498,6 +530,7 @@ impl Client {
     /// - On success, responds with [`UpdateFlowTemplateOutput`](crate::output::UpdateFlowTemplateOutput) with field(s):
     ///   - [`summary(Option<FlowTemplateSummary>)`](crate::output::UpdateFlowTemplateOutput::summary): <p>An object containing summary information about the updated workflow.</p>
     /// - On failure, responds with [`SdkError<UpdateFlowTemplateError>`](crate::error::UpdateFlowTemplateError)
+    #[deprecated(note = "since: 2022-08-30")]
     pub fn update_flow_template(&self) -> fluent_builders::UpdateFlowTemplate {
         fluent_builders::UpdateFlowTemplate::new(self.handle.clone())
     }
@@ -510,6 +543,7 @@ impl Client {
     /// - On success, responds with [`UpdateSystemTemplateOutput`](crate::output::UpdateSystemTemplateOutput) with field(s):
     ///   - [`summary(Option<SystemTemplateSummary>)`](crate::output::UpdateSystemTemplateOutput::summary): <p>An object containing summary information about the updated system.</p>
     /// - On failure, responds with [`SdkError<UpdateSystemTemplateError>`](crate::error::UpdateSystemTemplateError)
+    #[deprecated(note = "since: 2022-08-30")]
     pub fn update_system_template(&self) -> fluent_builders::UpdateSystemTemplate {
         fluent_builders::UpdateSystemTemplate::new(self.handle.clone())
     }
@@ -522,6 +556,7 @@ impl Client {
     /// - On success, responds with [`UploadEntityDefinitionsOutput`](crate::output::UploadEntityDefinitionsOutput) with field(s):
     ///   - [`upload_id(Option<String>)`](crate::output::UploadEntityDefinitionsOutput::upload_id): <p>The ID that specifies the upload action. You can use this to track the status of the upload.</p>
     /// - On failure, responds with [`SdkError<UploadEntityDefinitionsError>`](crate::error::UploadEntityDefinitionsError)
+    #[deprecated(note = "since: 2022-08-30")]
     pub fn upload_entity_definitions(&self) -> fluent_builders::UploadEntityDefinitions {
         fluent_builders::UploadEntityDefinitions::new(self.handle.clone())
     }

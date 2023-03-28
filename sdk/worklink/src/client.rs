@@ -101,6 +101,9 @@ impl Client {
     /// - On success, responds with [`AssociateDomainOutput`](crate::output::AssociateDomainOutput)
 
     /// - On failure, responds with [`SdkError<AssociateDomainError>`](crate::error::AssociateDomainError)
+    #[deprecated(
+        note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK."
+    )]
     pub fn associate_domain(&self) -> fluent_builders::AssociateDomain {
         fluent_builders::AssociateDomain::new(self.handle.clone())
     }
@@ -113,6 +116,9 @@ impl Client {
     /// - On success, responds with [`AssociateWebsiteAuthorizationProviderOutput`](crate::output::AssociateWebsiteAuthorizationProviderOutput) with field(s):
     ///   - [`authorization_provider_id(Option<String>)`](crate::output::AssociateWebsiteAuthorizationProviderOutput::authorization_provider_id): <p>A unique identifier for the authorization provider.</p>
     /// - On failure, responds with [`SdkError<AssociateWebsiteAuthorizationProviderError>`](crate::error::AssociateWebsiteAuthorizationProviderError)
+    #[deprecated(
+        note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK."
+    )]
     pub fn associate_website_authorization_provider(
         &self,
     ) -> fluent_builders::AssociateWebsiteAuthorizationProvider {
@@ -127,6 +133,9 @@ impl Client {
     /// - On success, responds with [`AssociateWebsiteCertificateAuthorityOutput`](crate::output::AssociateWebsiteCertificateAuthorityOutput) with field(s):
     ///   - [`website_ca_id(Option<String>)`](crate::output::AssociateWebsiteCertificateAuthorityOutput::website_ca_id): <p>A unique identifier for the CA.</p>
     /// - On failure, responds with [`SdkError<AssociateWebsiteCertificateAuthorityError>`](crate::error::AssociateWebsiteCertificateAuthorityError)
+    #[deprecated(
+        note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK."
+    )]
     pub fn associate_website_certificate_authority(
         &self,
     ) -> fluent_builders::AssociateWebsiteCertificateAuthority {
@@ -142,6 +151,9 @@ impl Client {
     /// - On success, responds with [`CreateFleetOutput`](crate::output::CreateFleetOutput) with field(s):
     ///   - [`fleet_arn(Option<String>)`](crate::output::CreateFleetOutput::fleet_arn): <p>The Amazon Resource Name (ARN) of the fleet.</p>
     /// - On failure, responds with [`SdkError<CreateFleetError>`](crate::error::CreateFleetError)
+    #[deprecated(
+        note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK."
+    )]
     pub fn create_fleet(&self) -> fluent_builders::CreateFleet {
         fluent_builders::CreateFleet::new(self.handle.clone())
     }
@@ -152,6 +164,9 @@ impl Client {
     /// - On success, responds with [`DeleteFleetOutput`](crate::output::DeleteFleetOutput)
 
     /// - On failure, responds with [`SdkError<DeleteFleetError>`](crate::error::DeleteFleetError)
+    #[deprecated(
+        note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK."
+    )]
     pub fn delete_fleet(&self) -> fluent_builders::DeleteFleet {
         fluent_builders::DeleteFleet::new(self.handle.clone())
     }
@@ -162,6 +177,9 @@ impl Client {
     /// - On success, responds with [`DescribeAuditStreamConfigurationOutput`](crate::output::DescribeAuditStreamConfigurationOutput) with field(s):
     ///   - [`audit_stream_arn(Option<String>)`](crate::output::DescribeAuditStreamConfigurationOutput::audit_stream_arn): <p>The ARN of the Amazon Kinesis data stream that will receive the audit events.</p>
     /// - On failure, responds with [`SdkError<DescribeAuditStreamConfigurationError>`](crate::error::DescribeAuditStreamConfigurationError)
+    #[deprecated(
+        note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK."
+    )]
     pub fn describe_audit_stream_configuration(
         &self,
     ) -> fluent_builders::DescribeAuditStreamConfiguration {
@@ -176,6 +194,9 @@ impl Client {
     ///   - [`subnet_ids(Option<Vec<String>>)`](crate::output::DescribeCompanyNetworkConfigurationOutput::subnet_ids): <p>The subnets used for X-ENI connections from Amazon WorkLink rendering containers.</p>
     ///   - [`security_group_ids(Option<Vec<String>>)`](crate::output::DescribeCompanyNetworkConfigurationOutput::security_group_ids): <p>The security groups associated with access to the provided subnets.</p>
     /// - On failure, responds with [`SdkError<DescribeCompanyNetworkConfigurationError>`](crate::error::DescribeCompanyNetworkConfigurationError)
+    #[deprecated(
+        note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK."
+    )]
     pub fn describe_company_network_configuration(
         &self,
     ) -> fluent_builders::DescribeCompanyNetworkConfiguration {
@@ -197,6 +218,9 @@ impl Client {
     ///   - [`last_accessed_time(Option<DateTime>)`](crate::output::DescribeDeviceOutput::last_accessed_time): <p>The date that the device last accessed Amazon WorkLink.</p>
     ///   - [`username(Option<String>)`](crate::output::DescribeDeviceOutput::username): <p>The user name associated with the device.</p>
     /// - On failure, responds with [`SdkError<DescribeDeviceError>`](crate::error::DescribeDeviceError)
+    #[deprecated(
+        note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK."
+    )]
     pub fn describe_device(&self) -> fluent_builders::DescribeDevice {
         fluent_builders::DescribeDevice::new(self.handle.clone())
     }
@@ -207,6 +231,9 @@ impl Client {
     /// - On success, responds with [`DescribeDevicePolicyConfigurationOutput`](crate::output::DescribeDevicePolicyConfigurationOutput) with field(s):
     ///   - [`device_ca_certificate(Option<String>)`](crate::output::DescribeDevicePolicyConfigurationOutput::device_ca_certificate): <p>The certificate chain, including intermediate certificates and the root certificate authority certificate used to issue device certificates.</p>
     /// - On failure, responds with [`SdkError<DescribeDevicePolicyConfigurationError>`](crate::error::DescribeDevicePolicyConfigurationError)
+    #[deprecated(
+        note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK."
+    )]
     pub fn describe_device_policy_configuration(
         &self,
     ) -> fluent_builders::DescribeDevicePolicyConfiguration {
@@ -224,6 +251,9 @@ impl Client {
     ///   - [`domain_status(Option<DomainStatus>)`](crate::output::DescribeDomainOutput::domain_status): <p>The current state for the domain.</p>
     ///   - [`acm_certificate_arn(Option<String>)`](crate::output::DescribeDomainOutput::acm_certificate_arn): <p>The ARN of an issued ACM certificate that is valid for the domain being associated.</p>
     /// - On failure, responds with [`SdkError<DescribeDomainError>`](crate::error::DescribeDomainError)
+    #[deprecated(
+        note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK."
+    )]
     pub fn describe_domain(&self) -> fluent_builders::DescribeDomain {
         fluent_builders::DescribeDomain::new(self.handle.clone())
     }
@@ -241,6 +271,9 @@ impl Client {
     ///   - [`fleet_status(Option<FleetStatus>)`](crate::output::DescribeFleetMetadataOutput::fleet_status): <p>The current state of the fleet.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::DescribeFleetMetadataOutput::tags): <p>The tags attached to the resource. A tag is a key-value pair.</p>
     /// - On failure, responds with [`SdkError<DescribeFleetMetadataError>`](crate::error::DescribeFleetMetadataError)
+    #[deprecated(
+        note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK."
+    )]
     pub fn describe_fleet_metadata(&self) -> fluent_builders::DescribeFleetMetadata {
         fluent_builders::DescribeFleetMetadata::new(self.handle.clone())
     }
@@ -253,6 +286,9 @@ impl Client {
     ///   - [`service_provider_saml_metadata(Option<String>)`](crate::output::DescribeIdentityProviderConfigurationOutput::service_provider_saml_metadata): <p>The SAML metadata document uploaded to the user’s identity provider.</p>
     ///   - [`identity_provider_saml_metadata(Option<String>)`](crate::output::DescribeIdentityProviderConfigurationOutput::identity_provider_saml_metadata): <p>The SAML metadata document provided by the user’s identity provider.</p>
     /// - On failure, responds with [`SdkError<DescribeIdentityProviderConfigurationError>`](crate::error::DescribeIdentityProviderConfigurationError)
+    #[deprecated(
+        note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK."
+    )]
     pub fn describe_identity_provider_configuration(
         &self,
     ) -> fluent_builders::DescribeIdentityProviderConfiguration {
@@ -268,6 +304,9 @@ impl Client {
     ///   - [`created_time(Option<DateTime>)`](crate::output::DescribeWebsiteCertificateAuthorityOutput::created_time): <p>The time that the certificate authority was added.</p>
     ///   - [`display_name(Option<String>)`](crate::output::DescribeWebsiteCertificateAuthorityOutput::display_name): <p>The certificate name to display.</p>
     /// - On failure, responds with [`SdkError<DescribeWebsiteCertificateAuthorityError>`](crate::error::DescribeWebsiteCertificateAuthorityError)
+    #[deprecated(
+        note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK."
+    )]
     pub fn describe_website_certificate_authority(
         &self,
     ) -> fluent_builders::DescribeWebsiteCertificateAuthority {
@@ -281,6 +320,9 @@ impl Client {
     /// - On success, responds with [`DisassociateDomainOutput`](crate::output::DisassociateDomainOutput)
 
     /// - On failure, responds with [`SdkError<DisassociateDomainError>`](crate::error::DisassociateDomainError)
+    #[deprecated(
+        note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK."
+    )]
     pub fn disassociate_domain(&self) -> fluent_builders::DisassociateDomain {
         fluent_builders::DisassociateDomain::new(self.handle.clone())
     }
@@ -292,6 +334,9 @@ impl Client {
     /// - On success, responds with [`DisassociateWebsiteAuthorizationProviderOutput`](crate::output::DisassociateWebsiteAuthorizationProviderOutput)
 
     /// - On failure, responds with [`SdkError<DisassociateWebsiteAuthorizationProviderError>`](crate::error::DisassociateWebsiteAuthorizationProviderError)
+    #[deprecated(
+        note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK."
+    )]
     pub fn disassociate_website_authorization_provider(
         &self,
     ) -> fluent_builders::DisassociateWebsiteAuthorizationProvider {
@@ -305,6 +350,9 @@ impl Client {
     /// - On success, responds with [`DisassociateWebsiteCertificateAuthorityOutput`](crate::output::DisassociateWebsiteCertificateAuthorityOutput)
 
     /// - On failure, responds with [`SdkError<DisassociateWebsiteCertificateAuthorityError>`](crate::error::DisassociateWebsiteCertificateAuthorityError)
+    #[deprecated(
+        note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK."
+    )]
     pub fn disassociate_website_certificate_authority(
         &self,
     ) -> fluent_builders::DisassociateWebsiteCertificateAuthority {
@@ -321,6 +369,9 @@ impl Client {
     ///   - [`devices(Option<Vec<DeviceSummary>>)`](crate::output::ListDevicesOutput::devices): <p>Information about the devices.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListDevicesOutput::next_token): <p>The pagination token used to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
     /// - On failure, responds with [`SdkError<ListDevicesError>`](crate::error::ListDevicesError)
+    #[deprecated(
+        note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK."
+    )]
     pub fn list_devices(&self) -> fluent_builders::ListDevices {
         fluent_builders::ListDevices::new(self.handle.clone())
     }
@@ -335,6 +386,9 @@ impl Client {
     ///   - [`domains(Option<Vec<DomainSummary>>)`](crate::output::ListDomainsOutput::domains): <p>Information about the domains.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListDomainsOutput::next_token): <p>The pagination token used to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
     /// - On failure, responds with [`SdkError<ListDomainsError>`](crate::error::ListDomainsError)
+    #[deprecated(
+        note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK."
+    )]
     pub fn list_domains(&self) -> fluent_builders::ListDomains {
         fluent_builders::ListDomains::new(self.handle.clone())
     }
@@ -348,6 +402,9 @@ impl Client {
     ///   - [`fleet_summary_list(Option<Vec<FleetSummary>>)`](crate::output::ListFleetsOutput::fleet_summary_list): <p>The summary list of the fleets.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListFleetsOutput::next_token): <p>The pagination token used to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
     /// - On failure, responds with [`SdkError<ListFleetsError>`](crate::error::ListFleetsError)
+    #[deprecated(
+        note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK."
+    )]
     pub fn list_fleets(&self) -> fluent_builders::ListFleets {
         fluent_builders::ListFleets::new(self.handle.clone())
     }
@@ -358,6 +415,9 @@ impl Client {
     /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::ListTagsForResourceOutput::tags): <p>The tags attached to the resource. A tag is a key-value pair.</p>
     /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
+    #[deprecated(
+        note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK."
+    )]
     pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource {
         fluent_builders::ListTagsForResource::new(self.handle.clone())
     }
@@ -372,6 +432,9 @@ impl Client {
     ///   - [`website_authorization_providers(Option<Vec<WebsiteAuthorizationProviderSummary>>)`](crate::output::ListWebsiteAuthorizationProvidersOutput::website_authorization_providers): <p>The website authorization providers.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListWebsiteAuthorizationProvidersOutput::next_token): <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     /// - On failure, responds with [`SdkError<ListWebsiteAuthorizationProvidersError>`](crate::error::ListWebsiteAuthorizationProvidersError)
+    #[deprecated(
+        note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK."
+    )]
     pub fn list_website_authorization_providers(
         &self,
     ) -> fluent_builders::ListWebsiteAuthorizationProviders {
@@ -388,6 +451,9 @@ impl Client {
     ///   - [`website_certificate_authorities(Option<Vec<WebsiteCaSummary>>)`](crate::output::ListWebsiteCertificateAuthoritiesOutput::website_certificate_authorities): <p>Information about the certificates.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListWebsiteCertificateAuthoritiesOutput::next_token): <p>The pagination token used to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
     /// - On failure, responds with [`SdkError<ListWebsiteCertificateAuthoritiesError>`](crate::error::ListWebsiteCertificateAuthoritiesError)
+    #[deprecated(
+        note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK."
+    )]
     pub fn list_website_certificate_authorities(
         &self,
     ) -> fluent_builders::ListWebsiteCertificateAuthorities {
@@ -401,6 +467,9 @@ impl Client {
     /// - On success, responds with [`RestoreDomainAccessOutput`](crate::output::RestoreDomainAccessOutput)
 
     /// - On failure, responds with [`SdkError<RestoreDomainAccessError>`](crate::error::RestoreDomainAccessError)
+    #[deprecated(
+        note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK."
+    )]
     pub fn restore_domain_access(&self) -> fluent_builders::RestoreDomainAccess {
         fluent_builders::RestoreDomainAccess::new(self.handle.clone())
     }
@@ -412,6 +481,9 @@ impl Client {
     /// - On success, responds with [`RevokeDomainAccessOutput`](crate::output::RevokeDomainAccessOutput)
 
     /// - On failure, responds with [`SdkError<RevokeDomainAccessError>`](crate::error::RevokeDomainAccessError)
+    #[deprecated(
+        note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK."
+    )]
     pub fn revoke_domain_access(&self) -> fluent_builders::RevokeDomainAccess {
         fluent_builders::RevokeDomainAccess::new(self.handle.clone())
     }
@@ -423,6 +495,9 @@ impl Client {
     /// - On success, responds with [`SignOutUserOutput`](crate::output::SignOutUserOutput)
 
     /// - On failure, responds with [`SdkError<SignOutUserError>`](crate::error::SignOutUserError)
+    #[deprecated(
+        note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK."
+    )]
     pub fn sign_out_user(&self) -> fluent_builders::SignOutUser {
         fluent_builders::SignOutUser::new(self.handle.clone())
     }
@@ -434,6 +509,9 @@ impl Client {
     /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
 
     /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
+    #[deprecated(
+        note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK."
+    )]
     pub fn tag_resource(&self) -> fluent_builders::TagResource {
         fluent_builders::TagResource::new(self.handle.clone())
     }
@@ -445,6 +523,9 @@ impl Client {
     /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
 
     /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
+    #[deprecated(
+        note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK."
+    )]
     pub fn untag_resource(&self) -> fluent_builders::UntagResource {
         fluent_builders::UntagResource::new(self.handle.clone())
     }
@@ -456,6 +537,9 @@ impl Client {
     /// - On success, responds with [`UpdateAuditStreamConfigurationOutput`](crate::output::UpdateAuditStreamConfigurationOutput)
 
     /// - On failure, responds with [`SdkError<UpdateAuditStreamConfigurationError>`](crate::error::UpdateAuditStreamConfigurationError)
+    #[deprecated(
+        note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK."
+    )]
     pub fn update_audit_stream_configuration(
         &self,
     ) -> fluent_builders::UpdateAuditStreamConfiguration {
@@ -471,6 +555,9 @@ impl Client {
     /// - On success, responds with [`UpdateCompanyNetworkConfigurationOutput`](crate::output::UpdateCompanyNetworkConfigurationOutput)
 
     /// - On failure, responds with [`SdkError<UpdateCompanyNetworkConfigurationError>`](crate::error::UpdateCompanyNetworkConfigurationError)
+    #[deprecated(
+        note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK."
+    )]
     pub fn update_company_network_configuration(
         &self,
     ) -> fluent_builders::UpdateCompanyNetworkConfiguration {
@@ -484,6 +571,9 @@ impl Client {
     /// - On success, responds with [`UpdateDevicePolicyConfigurationOutput`](crate::output::UpdateDevicePolicyConfigurationOutput)
 
     /// - On failure, responds with [`SdkError<UpdateDevicePolicyConfigurationError>`](crate::error::UpdateDevicePolicyConfigurationError)
+    #[deprecated(
+        note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK."
+    )]
     pub fn update_device_policy_configuration(
         &self,
     ) -> fluent_builders::UpdateDevicePolicyConfiguration {
@@ -498,6 +588,9 @@ impl Client {
     /// - On success, responds with [`UpdateDomainMetadataOutput`](crate::output::UpdateDomainMetadataOutput)
 
     /// - On failure, responds with [`SdkError<UpdateDomainMetadataError>`](crate::error::UpdateDomainMetadataError)
+    #[deprecated(
+        note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK."
+    )]
     pub fn update_domain_metadata(&self) -> fluent_builders::UpdateDomainMetadata {
         fluent_builders::UpdateDomainMetadata::new(self.handle.clone())
     }
@@ -510,6 +603,9 @@ impl Client {
     /// - On success, responds with [`UpdateFleetMetadataOutput`](crate::output::UpdateFleetMetadataOutput)
 
     /// - On failure, responds with [`SdkError<UpdateFleetMetadataError>`](crate::error::UpdateFleetMetadataError)
+    #[deprecated(
+        note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK."
+    )]
     pub fn update_fleet_metadata(&self) -> fluent_builders::UpdateFleetMetadata {
         fluent_builders::UpdateFleetMetadata::new(self.handle.clone())
     }
@@ -522,6 +618,9 @@ impl Client {
     /// - On success, responds with [`UpdateIdentityProviderConfigurationOutput`](crate::output::UpdateIdentityProviderConfigurationOutput)
 
     /// - On failure, responds with [`SdkError<UpdateIdentityProviderConfigurationError>`](crate::error::UpdateIdentityProviderConfigurationError)
+    #[deprecated(
+        note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK."
+    )]
     pub fn update_identity_provider_configuration(
         &self,
     ) -> fluent_builders::UpdateIdentityProviderConfiguration {

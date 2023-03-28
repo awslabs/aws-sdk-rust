@@ -336,6 +336,9 @@ impl Client {
     ///   - [`configuration_version(Option<String>)`](crate::output::GetConfigurationOutput::configuration_version): <p>The configuration version.</p>
     ///   - [`content_type(Option<String>)`](crate::output::GetConfigurationOutput::content_type): <p>A standard MIME type describing the format of the configuration content. For more information, see <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.</p>
     /// - On failure, responds with [`SdkError<GetConfigurationError>`](crate::error::GetConfigurationError)
+    #[deprecated(
+        note = "This API has been deprecated in favor of the GetLatestConfiguration API used in conjunction with StartConfigurationSession."
+    )]
     pub fn get_configuration(&self) -> fluent_builders::GetConfiguration {
         fluent_builders::GetConfiguration::new(self.handle.clone())
     }

@@ -143,6 +143,10 @@ impl Client {
     /// - On success, responds with [`ExecuteSqlOutput`](crate::output::ExecuteSqlOutput) with field(s):
     ///   - [`sql_statement_results(Option<Vec<SqlStatementResult>>)`](crate::output::ExecuteSqlOutput::sql_statement_results): <p>The results of the SQL statement or statements.</p>
     /// - On failure, responds with [`SdkError<ExecuteSqlError>`](crate::error::ExecuteSqlError)
+    #[deprecated(
+        note = "The ExecuteSql API is deprecated, please use the ExecuteStatement API.",
+        since = "2019-03-21"
+    )]
     pub fn execute_sql(&self) -> fluent_builders::ExecuteSql {
         fluent_builders::ExecuteSql::new(self.handle.clone())
     }

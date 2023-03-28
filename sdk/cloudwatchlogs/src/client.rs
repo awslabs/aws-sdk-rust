@@ -496,6 +496,7 @@ impl Client {
     /// - On success, responds with [`ListTagsLogGroupOutput`](crate::output::ListTagsLogGroupOutput) with field(s):
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::ListTagsLogGroupOutput::tags): <p>The tags for the log group.</p>
     /// - On failure, responds with [`SdkError<ListTagsLogGroupError>`](crate::error::ListTagsLogGroupError)
+    #[deprecated(note = "Please use the generic tagging API ListTagsForResource")]
     pub fn list_tags_log_group(&self) -> fluent_builders::ListTagsLogGroup {
         fluent_builders::ListTagsLogGroup::new(self.handle.clone())
     }
@@ -648,6 +649,7 @@ impl Client {
     /// - On success, responds with [`TagLogGroupOutput`](crate::output::TagLogGroupOutput)
 
     /// - On failure, responds with [`SdkError<TagLogGroupError>`](crate::error::TagLogGroupError)
+    #[deprecated(note = "Please use the generic tagging API TagResource")]
     pub fn tag_log_group(&self) -> fluent_builders::TagLogGroup {
         fluent_builders::TagLogGroup::new(self.handle.clone())
     }
@@ -681,6 +683,7 @@ impl Client {
     /// - On success, responds with [`UntagLogGroupOutput`](crate::output::UntagLogGroupOutput)
 
     /// - On failure, responds with [`SdkError<UntagLogGroupError>`](crate::error::UntagLogGroupError)
+    #[deprecated(note = "Please use the generic tagging API UntagResource")]
     pub fn untag_log_group(&self) -> fluent_builders::UntagLogGroup {
         fluent_builders::UntagLogGroup::new(self.handle.clone())
     }

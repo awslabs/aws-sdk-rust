@@ -254,6 +254,7 @@ impl Client {
     /// - On success, responds with [`DescribeJobFlowsOutput`](crate::output::DescribeJobFlowsOutput) with field(s):
     ///   - [`job_flows(Option<Vec<JobFlowDetail>>)`](crate::output::DescribeJobFlowsOutput::job_flows): <p>A list of job flows matching the parameters supplied.</p>
     /// - On failure, responds with [`SdkError<DescribeJobFlowsError>`](crate::error::DescribeJobFlowsError)
+    #[deprecated]
     pub fn describe_job_flows(&self) -> fluent_builders::DescribeJobFlows {
         fluent_builders::DescribeJobFlows::new(self.handle.clone())
     }

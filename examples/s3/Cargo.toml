@@ -37,7 +37,7 @@ version = "0.0.0-smithy-rs-head"
 
 [dependencies.aws-sdk-s3]
 path = "../../sdk/s3"
-version = "0.47.0"
+version = "0.48.0"
 
 [dependencies.aws-smithy-http]
 features = ["rt-tokio"]

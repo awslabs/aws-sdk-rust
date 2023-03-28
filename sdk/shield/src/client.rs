@@ -198,6 +198,7 @@ impl Client {
     /// - On success, responds with [`DeleteSubscriptionOutput`](crate::output::DeleteSubscriptionOutput)
 
     /// - On failure, responds with [`SdkError<DeleteSubscriptionError>`](crate::error::DeleteSubscriptionError)
+    #[deprecated]
     pub fn delete_subscription(&self) -> fluent_builders::DeleteSubscription {
         fluent_builders::DeleteSubscription::new(self.handle.clone())
     }

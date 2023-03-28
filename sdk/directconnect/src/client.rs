@@ -138,6 +138,7 @@ impl Client {
     ///   - [`encryption_mode(Option<String>)`](crate::output::AllocateConnectionOnInterconnectOutput::encryption_mode): <p>The MAC Security (MACsec) connection encryption mode.</p>  <p>The valid values are <code>no_encrypt</code>, <code>should_encrypt</code>, and <code>must_encrypt</code>.</p>
     ///   - [`mac_sec_keys(Option<Vec<MacSecKey>>)`](crate::output::AllocateConnectionOnInterconnectOutput::mac_sec_keys): <p>The MAC Security (MACsec) security keys associated with the connection.</p>
     /// - On failure, responds with [`SdkError<AllocateConnectionOnInterconnectError>`](crate::error::AllocateConnectionOnInterconnectError)
+    #[deprecated]
     pub fn allocate_connection_on_interconnect(
         &self,
     ) -> fluent_builders::AllocateConnectionOnInterconnect {
@@ -827,6 +828,7 @@ impl Client {
     /// - On success, responds with [`DescribeConnectionLoaOutput`](crate::output::DescribeConnectionLoaOutput) with field(s):
     ///   - [`loa(Option<Loa>)`](crate::output::DescribeConnectionLoaOutput::loa): <p>The Letter of Authorization - Connecting Facility Assignment (LOA-CFA).</p>
     /// - On failure, responds with [`SdkError<DescribeConnectionLoaError>`](crate::error::DescribeConnectionLoaError)
+    #[deprecated]
     pub fn describe_connection_loa(&self) -> fluent_builders::DescribeConnectionLoa {
         fluent_builders::DescribeConnectionLoa::new(self.handle.clone())
     }
@@ -847,6 +849,7 @@ impl Client {
     /// - On success, responds with [`DescribeConnectionsOnInterconnectOutput`](crate::output::DescribeConnectionsOnInterconnectOutput) with field(s):
     ///   - [`connections(Option<Vec<Connection>>)`](crate::output::DescribeConnectionsOnInterconnectOutput::connections): <p>The connections.</p>
     /// - On failure, responds with [`SdkError<DescribeConnectionsOnInterconnectError>`](crate::error::DescribeConnectionsOnInterconnectError)
+    #[deprecated]
     pub fn describe_connections_on_interconnect(
         &self,
     ) -> fluent_builders::DescribeConnectionsOnInterconnect {
@@ -948,6 +951,7 @@ impl Client {
     /// - On success, responds with [`DescribeInterconnectLoaOutput`](crate::output::DescribeInterconnectLoaOutput) with field(s):
     ///   - [`loa(Option<Loa>)`](crate::output::DescribeInterconnectLoaOutput::loa): <p>The Letter of Authorization - Connecting Facility Assignment (LOA-CFA).</p>
     /// - On failure, responds with [`SdkError<DescribeInterconnectLoaError>`](crate::error::DescribeInterconnectLoaError)
+    #[deprecated]
     pub fn describe_interconnect_loa(&self) -> fluent_builders::DescribeInterconnectLoa {
         fluent_builders::DescribeInterconnectLoa::new(self.handle.clone())
     }

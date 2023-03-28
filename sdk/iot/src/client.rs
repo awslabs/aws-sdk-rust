@@ -163,6 +163,7 @@ impl Client {
     /// - On success, responds with [`AttachPrincipalPolicyOutput`](crate::output::AttachPrincipalPolicyOutput)
 
     /// - On failure, responds with [`SdkError<AttachPrincipalPolicyError>`](crate::error::AttachPrincipalPolicyError)
+    #[deprecated]
     pub fn attach_principal_policy(&self) -> fluent_builders::AttachPrincipalPolicy {
         fluent_builders::AttachPrincipalPolicy::new(self.handle.clone())
     }
@@ -1584,6 +1585,7 @@ impl Client {
     /// - On success, responds with [`DetachPrincipalPolicyOutput`](crate::output::DetachPrincipalPolicyOutput)
 
     /// - On failure, responds with [`SdkError<DetachPrincipalPolicyError>`](crate::error::DetachPrincipalPolicyError)
+    #[deprecated]
     pub fn detach_principal_policy(&self) -> fluent_builders::DetachPrincipalPolicy {
         fluent_builders::DetachPrincipalPolicy::new(self.handle.clone())
     }
@@ -2293,6 +2295,7 @@ impl Client {
     ///   - [`principals(Option<Vec<String>>)`](crate::output::ListPolicyPrincipalsOutput::principals): <p>The descriptions of the principals.</p>
     ///   - [`next_marker(Option<String>)`](crate::output::ListPolicyPrincipalsOutput::next_marker): <p>The marker for the next set of results, or null if there are no additional results.</p>
     /// - On failure, responds with [`SdkError<ListPolicyPrincipalsError>`](crate::error::ListPolicyPrincipalsError)
+    #[deprecated]
     pub fn list_policy_principals(&self) -> fluent_builders::ListPolicyPrincipals {
         fluent_builders::ListPolicyPrincipals::new(self.handle.clone())
     }
@@ -2318,6 +2321,7 @@ impl Client {
     ///   - [`policies(Option<Vec<Policy>>)`](crate::output::ListPrincipalPoliciesOutput::policies): <p>The policies.</p>
     ///   - [`next_marker(Option<String>)`](crate::output::ListPrincipalPoliciesOutput::next_marker): <p>The marker for the next set of results, or null if there are no additional results.</p>
     /// - On failure, responds with [`SdkError<ListPrincipalPoliciesError>`](crate::error::ListPrincipalPoliciesError)
+    #[deprecated]
     pub fn list_principal_policies(&self) -> fluent_builders::ListPrincipalPolicies {
         fluent_builders::ListPrincipalPolicies::new(self.handle.clone())
     }

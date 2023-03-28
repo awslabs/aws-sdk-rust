@@ -153,6 +153,7 @@ impl Client {
     ///   - [`pagination_token(Option<String>)`](crate::output::DetectEntitiesOutput::pagination_token): <p> If the result of the previous request to <code>DetectEntities</code> was truncated, include the <code>PaginationToken</code> to fetch the next page of entities.</p>
     ///   - [`model_version(Option<String>)`](crate::output::DetectEntitiesOutput::model_version): <p>The version of the model used to analyze the documents. The version number looks like X.X.X. You can use this information to track the model used for a particular batch of documents.</p>
     /// - On failure, responds with [`SdkError<DetectEntitiesError>`](crate::error::DetectEntitiesError)
+    #[deprecated(note = "This operation is deprecated, use DetectEntitiesV2 instead.")]
     pub fn detect_entities(&self) -> fluent_builders::DetectEntities {
         fluent_builders::DetectEntities::new(self.handle.clone())
     }
