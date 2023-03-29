@@ -334,7 +334,7 @@
                 }
             ],
             "traits": {
-                "smithy.api#documentation": "<p>Configures the specified network resource. \n        </p>\n         <p>    \n            Use this action to specify the geographic\n            position of the hardware. You must provide Certified Professional Installer (CPI)\n            credentials in the request so that we can obtain spectrum grants. For more information,\n            see <a href=\"https://docs.aws.amazon.com/private-networks/latest/userguide/radio-units.html\">Radio\n                units</a> in the <i>Amazon Web Services Private 5G User Guide</i>. </p>",
+                "smithy.api#documentation": "<p>Configures the specified network resource. \n        </p>\n        <p>    \n            Use this action to specify the geographic\n            position of the hardware. You must provide Certified Professional Installer (CPI)\n            credentials in the request so that we can obtain spectrum grants. For more information,\n            see <a href=\"https://docs.aws.amazon.com/private-networks/latest/userguide/radio-units.html\">Radio\n                units</a> in the <i>Amazon Web Services Private 5G User Guide</i>. </p>",
                 "smithy.api#http": {
                     "uri": "/v1/network-resources/configure",
                     "method": "POST",
@@ -660,9 +660,6 @@
             },
             "errors": [
                 {
-                    "target": "com.amazonaws.privatenetworks#AccessDeniedException"
-                },
-                {
                     "target": "com.amazonaws.privatenetworks#InternalServerException"
                 },
                 {
@@ -723,9 +720,6 @@
                 "target": "com.amazonaws.privatenetworks#DeleteNetworkSiteResponse"
             },
             "errors": [
-                {
-                    "target": "com.amazonaws.privatenetworks#AccessDeniedException"
-                },
                 {
                     "target": "com.amazonaws.privatenetworks#InternalServerException"
                 },
@@ -972,9 +966,6 @@
                     "target": "com.amazonaws.privatenetworks#Ping"
                 },
                 {
-                    "target": "com.amazonaws.privatenetworks#StartNetworkResourceUpdate"
-                },
-                {
                     "target": "com.amazonaws.privatenetworks#TagResource"
                 },
                 {
@@ -1019,7 +1010,7 @@
                     "parameters": {
                         "Region": {
                             "builtIn": "AWS::Region",
-                            "required": false,
+                            "required": true,
                             "documentation": "The AWS region used to dispatch the request.",
                             "type": "String"
                         },
@@ -1048,16 +1039,161 @@
                         {
                             "conditions": [
                                 {
-                                    "fn": "isSet",
+                                    "fn": "aws.partition",
                                     "argv": [
                                         {
-                                            "ref": "Endpoint"
+                                            "ref": "Region"
                                         }
-                                    ]
+                                    ],
+                                    "assign": "PartitionResult"
                                 }
                             ],
                             "type": "tree",
                             "rules": [
+                                {
+                                    "conditions": [
+                                        {
+                                            "fn": "isSet",
+                                            "argv": [
+                                                {
+                                                    "ref": "Endpoint"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "type": "tree",
+                                    "rules": [
+                                        {
+                                            "conditions": [
+                                                {
+                                                    "fn": "booleanEquals",
+                                                    "argv": [
+                                                        {
+                                                            "ref": "UseFIPS"
+                                                        },
+                                                        true
+                                                    ]
+                                                }
+                                            ],
+                                            "error": "Invalid Configuration: FIPS and custom endpoint are not supported",
+                                            "type": "error"
+                                        },
+                                        {
+                                            "conditions": [],
+                                            "type": "tree",
+                                            "rules": [
+                                                {
+                                                    "conditions": [
+                                                        {
+                                                            "fn": "booleanEquals",
+                                                            "argv": [
+                                                                {
+                                                                    "ref": "UseDualStack"
+                                                                },
+                                                                true
+                                                            ]
+                                                        }
+                                                    ],
+                                                    "error": "Invalid Configuration: Dualstack and custom endpoint are not supported",
+                                                    "type": "error"
+                                                },
+                                                {
+                                                    "conditions": [],
+                                                    "endpoint": {
+                                                        "url": {
+                                                            "ref": "Endpoint"
+                                                        },
+                                                        "properties": {},
+                                                        "headers": {}
+                                                    },
+                                                    "type": "endpoint"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "conditions": [
+                                        {
+                                            "fn": "booleanEquals",
+                                            "argv": [
+                                                {
+                                                    "ref": "UseFIPS"
+                                                },
+                                                true
+                                            ]
+                                        },
+                                        {
+                                            "fn": "booleanEquals",
+                                            "argv": [
+                                                {
+                                                    "ref": "UseDualStack"
+                                                },
+                                                true
+                                            ]
+                                        }
+                                    ],
+                                    "type": "tree",
+                                    "rules": [
+                                        {
+                                            "conditions": [
+                                                {
+                                                    "fn": "booleanEquals",
+                                                    "argv": [
+                                                        true,
+                                                        {
+                                                            "fn": "getAttr",
+                                                            "argv": [
+                                                                {
+                                                                    "ref": "PartitionResult"
+                                                                },
+                                                                "supportsFIPS"
+                                                            ]
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "fn": "booleanEquals",
+                                                    "argv": [
+                                                        true,
+                                                        {
+                                                            "fn": "getAttr",
+                                                            "argv": [
+                                                                {
+                                                                    "ref": "PartitionResult"
+                                                                },
+                                                                "supportsDualStack"
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "type": "tree",
+                                            "rules": [
+                                                {
+                                                    "conditions": [],
+                                                    "type": "tree",
+                                                    "rules": [
+                                                        {
+                                                            "conditions": [],
+                                                            "endpoint": {
+                                                                "url": "https://private-networks-fips.{Region}.{PartitionResult#dualStackDnsSuffix}",
+                                                                "properties": {},
+                                                                "headers": {}
+                                                            },
+                                                            "type": "endpoint"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "conditions": [],
+                                            "error": "FIPS and DualStack are enabled, but this partition does not support one or both",
+                                            "type": "error"
+                                        }
+                                    ]
+                                },
                                 {
                                     "conditions": [
                                         {
@@ -1070,11 +1206,6 @@
                                             ]
                                         }
                                     ],
-                                    "error": "Invalid Configuration: FIPS and custom endpoint are not supported",
-                                    "type": "error"
-                                },
-                                {
-                                    "conditions": [],
                                     "type": "tree",
                                     "rules": [
                                         {
@@ -1082,260 +1213,21 @@
                                                 {
                                                     "fn": "booleanEquals",
                                                     "argv": [
+                                                        true,
                                                         {
-                                                            "ref": "UseDualStack"
-                                                        },
-                                                        true
-                                                    ]
-                                                }
-                                            ],
-                                            "error": "Invalid Configuration: Dualstack and custom endpoint are not supported",
-                                            "type": "error"
-                                        },
-                                        {
-                                            "conditions": [],
-                                            "endpoint": {
-                                                "url": {
-                                                    "ref": "Endpoint"
-                                                },
-                                                "properties": {},
-                                                "headers": {}
-                                            },
-                                            "type": "endpoint"
-                                        }
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "conditions": [],
-                            "type": "tree",
-                            "rules": [
-                                {
-                                    "conditions": [
-                                        {
-                                            "fn": "isSet",
-                                            "argv": [
-                                                {
-                                                    "ref": "Region"
-                                                }
-                                            ]
-                                        }
-                                    ],
-                                    "type": "tree",
-                                    "rules": [
-                                        {
-                                            "conditions": [
-                                                {
-                                                    "fn": "aws.partition",
-                                                    "argv": [
-                                                        {
-                                                            "ref": "Region"
+                                                            "fn": "getAttr",
+                                                            "argv": [
+                                                                {
+                                                                    "ref": "PartitionResult"
+                                                                },
+                                                                "supportsFIPS"
+                                                            ]
                                                         }
-                                                    ],
-                                                    "assign": "PartitionResult"
+                                                    ]
                                                 }
                                             ],
                                             "type": "tree",
                                             "rules": [
-                                                {
-                                                    "conditions": [
-                                                        {
-                                                            "fn": "booleanEquals",
-                                                            "argv": [
-                                                                {
-                                                                    "ref": "UseFIPS"
-                                                                },
-                                                                true
-                                                            ]
-                                                        },
-                                                        {
-                                                            "fn": "booleanEquals",
-                                                            "argv": [
-                                                                {
-                                                                    "ref": "UseDualStack"
-                                                                },
-                                                                true
-                                                            ]
-                                                        }
-                                                    ],
-                                                    "type": "tree",
-                                                    "rules": [
-                                                        {
-                                                            "conditions": [
-                                                                {
-                                                                    "fn": "booleanEquals",
-                                                                    "argv": [
-                                                                        true,
-                                                                        {
-                                                                            "fn": "getAttr",
-                                                                            "argv": [
-                                                                                {
-                                                                                    "ref": "PartitionResult"
-                                                                                },
-                                                                                "supportsFIPS"
-                                                                            ]
-                                                                        }
-                                                                    ]
-                                                                },
-                                                                {
-                                                                    "fn": "booleanEquals",
-                                                                    "argv": [
-                                                                        true,
-                                                                        {
-                                                                            "fn": "getAttr",
-                                                                            "argv": [
-                                                                                {
-                                                                                    "ref": "PartitionResult"
-                                                                                },
-                                                                                "supportsDualStack"
-                                                                            ]
-                                                                        }
-                                                                    ]
-                                                                }
-                                                            ],
-                                                            "type": "tree",
-                                                            "rules": [
-                                                                {
-                                                                    "conditions": [],
-                                                                    "type": "tree",
-                                                                    "rules": [
-                                                                        {
-                                                                            "conditions": [],
-                                                                            "endpoint": {
-                                                                                "url": "https://private-networks-fips.{Region}.{PartitionResult#dualStackDnsSuffix}",
-                                                                                "properties": {},
-                                                                                "headers": {}
-                                                                            },
-                                                                            "type": "endpoint"
-                                                                        }
-                                                                    ]
-                                                                }
-                                                            ]
-                                                        },
-                                                        {
-                                                            "conditions": [],
-                                                            "error": "FIPS and DualStack are enabled, but this partition does not support one or both",
-                                                            "type": "error"
-                                                        }
-                                                    ]
-                                                },
-                                                {
-                                                    "conditions": [
-                                                        {
-                                                            "fn": "booleanEquals",
-                                                            "argv": [
-                                                                {
-                                                                    "ref": "UseFIPS"
-                                                                },
-                                                                true
-                                                            ]
-                                                        }
-                                                    ],
-                                                    "type": "tree",
-                                                    "rules": [
-                                                        {
-                                                            "conditions": [
-                                                                {
-                                                                    "fn": "booleanEquals",
-                                                                    "argv": [
-                                                                        true,
-                                                                        {
-                                                                            "fn": "getAttr",
-                                                                            "argv": [
-                                                                                {
-                                                                                    "ref": "PartitionResult"
-                                                                                },
-                                                                                "supportsFIPS"
-                                                                            ]
-                                                                        }
-                                                                    ]
-                                                                }
-                                                            ],
-                                                            "type": "tree",
-                                                            "rules": [
-                                                                {
-                                                                    "conditions": [],
-                                                                    "type": "tree",
-                                                                    "rules": [
-                                                                        {
-                                                                            "conditions": [],
-                                                                            "endpoint": {
-                                                                                "url": "https://private-networks-fips.{Region}.{PartitionResult#dnsSuffix}",
-                                                                                "properties": {},
-                                                                                "headers": {}
-                                                                            },
-                                                                            "type": "endpoint"
-                                                                        }
-                                                                    ]
-                                                                }
-                                                            ]
-                                                        },
-                                                        {
-                                                            "conditions": [],
-                                                            "error": "FIPS is enabled but this partition does not support FIPS",
-                                                            "type": "error"
-                                                        }
-                                                    ]
-                                                },
-                                                {
-                                                    "conditions": [
-                                                        {
-                                                            "fn": "booleanEquals",
-                                                            "argv": [
-                                                                {
-                                                                    "ref": "UseDualStack"
-                                                                },
-                                                                true
-                                                            ]
-                                                        }
-                                                    ],
-                                                    "type": "tree",
-                                                    "rules": [
-                                                        {
-                                                            "conditions": [
-                                                                {
-                                                                    "fn": "booleanEquals",
-                                                                    "argv": [
-                                                                        true,
-                                                                        {
-                                                                            "fn": "getAttr",
-                                                                            "argv": [
-                                                                                {
-                                                                                    "ref": "PartitionResult"
-                                                                                },
-                                                                                "supportsDualStack"
-                                                                            ]
-                                                                        }
-                                                                    ]
-                                                                }
-                                                            ],
-                                                            "type": "tree",
-                                                            "rules": [
-                                                                {
-                                                                    "conditions": [],
-                                                                    "type": "tree",
-                                                                    "rules": [
-                                                                        {
-                                                                            "conditions": [],
-                                                                            "endpoint": {
-                                                                                "url": "https://private-networks.{Region}.{PartitionResult#dualStackDnsSuffix}",
-                                                                                "properties": {},
-                                                                                "headers": {}
-                                                                            },
-                                                                            "type": "endpoint"
-                                                                        }
-                                                                    ]
-                                                                }
-                                                            ]
-                                                        },
-                                                        {
-                                                            "conditions": [],
-                                                            "error": "DualStack is enabled but this partition does not support DualStack",
-                                                            "type": "error"
-                                                        }
-                                                    ]
-                                                },
                                                 {
                                                     "conditions": [],
                                                     "type": "tree",
@@ -1343,7 +1235,7 @@
                                                         {
                                                             "conditions": [],
                                                             "endpoint": {
-                                                                "url": "https://private-networks.{Region}.{PartitionResult#dnsSuffix}",
+                                                                "url": "https://private-networks-fips.{Region}.{PartitionResult#dnsSuffix}",
                                                                 "properties": {},
                                                                 "headers": {}
                                                             },
@@ -1352,13 +1244,86 @@
                                                     ]
                                                 }
                                             ]
+                                        },
+                                        {
+                                            "conditions": [],
+                                            "error": "FIPS is enabled but this partition does not support FIPS",
+                                            "type": "error"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "conditions": [
+                                        {
+                                            "fn": "booleanEquals",
+                                            "argv": [
+                                                {
+                                                    "ref": "UseDualStack"
+                                                },
+                                                true
+                                            ]
+                                        }
+                                    ],
+                                    "type": "tree",
+                                    "rules": [
+                                        {
+                                            "conditions": [
+                                                {
+                                                    "fn": "booleanEquals",
+                                                    "argv": [
+                                                        true,
+                                                        {
+                                                            "fn": "getAttr",
+                                                            "argv": [
+                                                                {
+                                                                    "ref": "PartitionResult"
+                                                                },
+                                                                "supportsDualStack"
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "type": "tree",
+                                            "rules": [
+                                                {
+                                                    "conditions": [],
+                                                    "type": "tree",
+                                                    "rules": [
+                                                        {
+                                                            "conditions": [],
+                                                            "endpoint": {
+                                                                "url": "https://private-networks.{Region}.{PartitionResult#dualStackDnsSuffix}",
+                                                                "properties": {},
+                                                                "headers": {}
+                                                            },
+                                                            "type": "endpoint"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "conditions": [],
+                                            "error": "DualStack is enabled but this partition does not support DualStack",
+                                            "type": "error"
                                         }
                                     ]
                                 },
                                 {
                                     "conditions": [],
-                                    "error": "Invalid Configuration: Missing Region",
-                                    "type": "error"
+                                    "type": "tree",
+                                    "rules": [
+                                        {
+                                            "conditions": [],
+                                            "endpoint": {
+                                                "url": "https://private-networks.{Region}.{PartitionResult#dnsSuffix}",
+                                                "properties": {},
+                                                "headers": {}
+                                            },
+                                            "type": "endpoint"
+                                        }
+                                    ]
                                 }
                             ]
                         }
@@ -1374,9 +1339,9 @@
                                 }
                             },
                             "params": {
-                                "Region": "us-east-1",
+                                "UseFIPS": true,
                                 "UseDualStack": true,
-                                "UseFIPS": true
+                                "Region": "us-east-1"
                             }
                         },
                         {
@@ -1387,9 +1352,9 @@
                                 }
                             },
                             "params": {
-                                "Region": "us-east-1",
+                                "UseFIPS": true,
                                 "UseDualStack": false,
-                                "UseFIPS": true
+                                "Region": "us-east-1"
                             }
                         },
                         {
@@ -1400,9 +1365,9 @@
                                 }
                             },
                             "params": {
-                                "Region": "us-east-1",
+                                "UseFIPS": false,
                                 "UseDualStack": true,
-                                "UseFIPS": false
+                                "Region": "us-east-1"
                             }
                         },
                         {
@@ -1413,61 +1378,9 @@
                                 }
                             },
                             "params": {
-                                "Region": "us-east-1",
+                                "UseFIPS": false,
                                 "UseDualStack": false,
-                                "UseFIPS": false
-                            }
-                        },
-                        {
-                            "documentation": "For region cn-north-1 with FIPS enabled and DualStack enabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://private-networks-fips.cn-north-1.api.amazonwebservices.com.cn"
-                                }
-                            },
-                            "params": {
-                                "Region": "cn-north-1",
-                                "UseDualStack": true,
-                                "UseFIPS": true
-                            }
-                        },
-                        {
-                            "documentation": "For region cn-north-1 with FIPS enabled and DualStack disabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://private-networks-fips.cn-north-1.amazonaws.com.cn"
-                                }
-                            },
-                            "params": {
-                                "Region": "cn-north-1",
-                                "UseDualStack": false,
-                                "UseFIPS": true
-                            }
-                        },
-                        {
-                            "documentation": "For region cn-north-1 with FIPS disabled and DualStack enabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://private-networks.cn-north-1.api.amazonwebservices.com.cn"
-                                }
-                            },
-                            "params": {
-                                "Region": "cn-north-1",
-                                "UseDualStack": true,
-                                "UseFIPS": false
-                            }
-                        },
-                        {
-                            "documentation": "For region cn-north-1 with FIPS disabled and DualStack disabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://private-networks.cn-north-1.amazonaws.com.cn"
-                                }
-                            },
-                            "params": {
-                                "Region": "cn-north-1",
-                                "UseDualStack": false,
-                                "UseFIPS": false
+                                "Region": "us-east-1"
                             }
                         },
                         {
@@ -1478,9 +1391,9 @@
                                 }
                             },
                             "params": {
-                                "Region": "us-gov-east-1",
+                                "UseFIPS": true,
                                 "UseDualStack": true,
-                                "UseFIPS": true
+                                "Region": "us-gov-east-1"
                             }
                         },
                         {
@@ -1491,9 +1404,9 @@
                                 }
                             },
                             "params": {
-                                "Region": "us-gov-east-1",
+                                "UseFIPS": true,
                                 "UseDualStack": false,
-                                "UseFIPS": true
+                                "Region": "us-gov-east-1"
                             }
                         },
                         {
@@ -1504,9 +1417,9 @@
                                 }
                             },
                             "params": {
-                                "Region": "us-gov-east-1",
+                                "UseFIPS": false,
                                 "UseDualStack": true,
-                                "UseFIPS": false
+                                "Region": "us-gov-east-1"
                             }
                         },
                         {
@@ -1517,35 +1430,9 @@
                                 }
                             },
                             "params": {
-                                "Region": "us-gov-east-1",
+                                "UseFIPS": false,
                                 "UseDualStack": false,
-                                "UseFIPS": false
-                            }
-                        },
-                        {
-                            "documentation": "For region us-iso-east-1 with FIPS enabled and DualStack disabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://private-networks-fips.us-iso-east-1.c2s.ic.gov"
-                                }
-                            },
-                            "params": {
-                                "Region": "us-iso-east-1",
-                                "UseDualStack": false,
-                                "UseFIPS": true
-                            }
-                        },
-                        {
-                            "documentation": "For region us-iso-east-1 with FIPS disabled and DualStack disabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://private-networks.us-iso-east-1.c2s.ic.gov"
-                                }
-                            },
-                            "params": {
-                                "Region": "us-iso-east-1",
-                                "UseDualStack": false,
-                                "UseFIPS": false
+                                "Region": "us-gov-east-1"
                             }
                         },
                         {
@@ -1556,9 +1443,9 @@
                                 }
                             },
                             "params": {
-                                "Region": "us-isob-east-1",
+                                "UseFIPS": true,
                                 "UseDualStack": false,
-                                "UseFIPS": true
+                                "Region": "us-isob-east-1"
                             }
                         },
                         {
@@ -1569,35 +1456,100 @@
                                 }
                             },
                             "params": {
-                                "Region": "us-isob-east-1",
+                                "UseFIPS": false,
                                 "UseDualStack": false,
-                                "UseFIPS": false
+                                "Region": "us-isob-east-1"
                             }
                         },
                         {
-                            "documentation": "For custom endpoint with region set and fips disabled and dualstack disabled",
+                            "documentation": "For region cn-north-1 with FIPS enabled and DualStack enabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://private-networks-fips.cn-north-1.api.amazonwebservices.com.cn"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": true,
+                                "UseDualStack": true,
+                                "Region": "cn-north-1"
+                            }
+                        },
+                        {
+                            "documentation": "For region cn-north-1 with FIPS enabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://private-networks-fips.cn-north-1.amazonaws.com.cn"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": true,
+                                "UseDualStack": false,
+                                "Region": "cn-north-1"
+                            }
+                        },
+                        {
+                            "documentation": "For region cn-north-1 with FIPS disabled and DualStack enabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://private-networks.cn-north-1.api.amazonwebservices.com.cn"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": false,
+                                "UseDualStack": true,
+                                "Region": "cn-north-1"
+                            }
+                        },
+                        {
+                            "documentation": "For region cn-north-1 with FIPS disabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://private-networks.cn-north-1.amazonaws.com.cn"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": false,
+                                "UseDualStack": false,
+                                "Region": "cn-north-1"
+                            }
+                        },
+                        {
+                            "documentation": "For region us-iso-east-1 with FIPS enabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://private-networks-fips.us-iso-east-1.c2s.ic.gov"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": true,
+                                "UseDualStack": false,
+                                "Region": "us-iso-east-1"
+                            }
+                        },
+                        {
+                            "documentation": "For region us-iso-east-1 with FIPS disabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://private-networks.us-iso-east-1.c2s.ic.gov"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": false,
+                                "UseDualStack": false,
+                                "Region": "us-iso-east-1"
+                            }
+                        },
+                        {
+                            "documentation": "For custom endpoint with fips disabled and dualstack disabled",
                             "expect": {
                                 "endpoint": {
                                     "url": "https://example.com"
                                 }
                             },
                             "params": {
+                                "UseFIPS": false,
+                                "UseDualStack": false,
                                 "Region": "us-east-1",
-                                "UseDualStack": false,
-                                "UseFIPS": false,
-                                "Endpoint": "https://example.com"
-                            }
-                        },
-                        {
-                            "documentation": "For custom endpoint with region not set and fips disabled and dualstack disabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://example.com"
-                                }
-                            },
-                            "params": {
-                                "UseDualStack": false,
-                                "UseFIPS": false,
                                 "Endpoint": "https://example.com"
                             }
                         },
@@ -1607,9 +1559,9 @@
                                 "error": "Invalid Configuration: FIPS and custom endpoint are not supported"
                             },
                             "params": {
-                                "Region": "us-east-1",
-                                "UseDualStack": false,
                                 "UseFIPS": true,
+                                "UseDualStack": false,
+                                "Region": "us-east-1",
                                 "Endpoint": "https://example.com"
                             }
                         },
@@ -1619,9 +1571,9 @@
                                 "error": "Invalid Configuration: Dualstack and custom endpoint are not supported"
                             },
                             "params": {
-                                "Region": "us-east-1",
-                                "UseDualStack": true,
                                 "UseFIPS": false,
+                                "UseDualStack": true,
+                                "Region": "us-east-1",
                                 "Endpoint": "https://example.com"
                             }
                         }
@@ -2035,7 +1987,7 @@
                 }
             ],
             "traits": {
-                "smithy.api#documentation": "<p>Lists device identifiers. Add filters to your request to return a more \n            specific list of results. Use filters to match the Amazon Resource Name (ARN) of an order, \n            the status of device identifiers, or the ARN of the traffic group.</p>\n         <p>If you specify multiple filters, filters are joined with an OR, and the request\nreturns results that match all of the specified filters.</p>",
+                "smithy.api#documentation": "<p>Lists device identifiers. Add filters to your request to return a more \n            specific list of results. Use filters to match the Amazon Resource Name (ARN) of an order, \n            the status of device identifiers, or the ARN of the traffic group.</p>\n        \n        <p>If you specify multiple filters, filters are joined with an OR, and the request\nreturns results that match all of the specified filters.</p>",
                 "smithy.api#http": {
                     "uri": "/v1/device-identifiers/list",
                     "method": "POST",
@@ -2056,7 +2008,7 @@
                 "filters": {
                     "target": "com.amazonaws.privatenetworks#DeviceIdentifierFilters",
                     "traits": {
-                        "smithy.api#documentation": "<p>The filters.</p>\n         <ul>\n            <li>\n               <p>\n                  <code>ORDER</code> - The Amazon Resource Name (ARN) of the order.</p>\n            </li>\n            <li>\n               <p>\n                  <code>STATUS</code> - The status (<code>ACTIVE</code> | <code>INACTIVE</code>).</p>\n            </li>\n            <li>\n               <p>\n                  <code>TRAFFIC_GROUP</code> - The Amazon Resource Name (ARN) of the traffic group.</p>\n            </li>\n         </ul>\n         <p>Filter values are case sensitive. If you specify multiple \n         values for a filter, the values are joined with an <code>OR</code>, and the request returns \n         all results that match any of the specified values.</p>"
+                        "smithy.api#documentation": "<p>The filters.</p>\n        <ul>\n            <li>\n                <p>\n                  <code>ORDER</code> - The Amazon Resource Name (ARN) of the order.</p>\n            </li>\n            <li>\n                <p>\n                  <code>STATUS</code> - The status (<code>ACTIVE</code> | <code>INACTIVE</code>).</p>\n            </li>\n            <li>\n                <p>\n                  <code>TRAFFIC_GROUP</code> - The Amazon Resource Name (ARN) of the traffic group.</p>\n            </li>\n         </ul>\n        <p>Filter values are case sensitive. If you specify multiple \n         values for a filter, the values are joined with an <code>OR</code>, and the request returns \n         all results that match any of the specified values.</p>"
                     }
                 },
                 "networkArn": {
@@ -2122,7 +2074,7 @@
                 }
             ],
             "traits": {
-                "smithy.api#documentation": "<p>Lists network resources.  Add filters to your request to return a more \n            specific list of results. Use filters to match the Amazon Resource Name (ARN) of an order or  \n            the status of network resources.</p>\n         <p>If you specify multiple filters, filters are joined with an OR, and the request\nreturns results that match all of the specified filters.</p>",
+                "smithy.api#documentation": "<p>Lists network resources.  Add filters to your request to return a more \n            specific list of results. Use filters to match the Amazon Resource Name (ARN) of an order or  \n            the status of network resources.</p>\n        <p>If you specify multiple filters, filters are joined with an OR, and the request\nreturns results that match all of the specified filters.</p>",
                 "smithy.api#http": {
                     "uri": "/v1/network-resources",
                     "method": "POST",
@@ -2143,7 +2095,7 @@
                 "filters": {
                     "target": "com.amazonaws.privatenetworks#NetworkResourceFilters",
                     "traits": {
-                        "smithy.api#documentation": "<p>The filters.</p>\n         <ul>\n            <li>\n               <p>\n                  <code>ORDER</code> - The Amazon Resource Name (ARN) of the order.</p>\n            </li>\n            <li>\n               <p>\n                  <code>STATUS</code> - The status (<code>AVAILABLE</code> | <code>DELETED</code>\n                    | <code>DELETING</code> | <code>PENDING</code> | <code>PENDING_RETURN</code>\n                    | <code>PROVISIONING</code> | <code>SHIPPED</code>).</p>\n            </li>\n         </ul>\n         <p>Filter values are case sensitive. If you specify multiple \n         values for a filter, the values are joined with an <code>OR</code>, and the request returns \n         all results that match any of the specified values.</p>"
+                        "smithy.api#documentation": "<p>The filters.</p>\n        <ul>\n            <li>\n                <p>\n                  <code>ORDER</code> - The Amazon Resource Name (ARN) of the order.</p>\n            </li>\n            <li>\n                <p>\n                  <code>STATUS</code> - The status (<code>AVAILABLE</code> | <code>DELETED</code>\n                    | <code>DELETING</code> | <code>PENDING</code> | <code>PENDING_RETURN</code>\n                    | <code>PROVISIONING</code> | <code>SHIPPED</code>).</p>\n            </li>\n         </ul>\n        <p>Filter values are case sensitive. If you specify multiple \n         values for a filter, the values are joined with an <code>OR</code>, and the request returns \n         all results that match any of the specified values.</p>"
                     }
                 },
                 "networkArn": {
@@ -2230,7 +2182,7 @@
                 "filters": {
                     "target": "com.amazonaws.privatenetworks#NetworkSiteFilters",
                     "traits": {
-                        "smithy.api#documentation": "<p>The filters. Add filters to your request to return a more \n            specific list of results. Use filters to match the status of the network sites.</p>\n         <ul>\n            <li>\n               <p>\n                  <code>STATUS</code> - The status (<code>AVAILABLE</code> | <code>CREATED</code>\n                    | <code>DELETED</code> | <code>DEPROVISIONING</code> | <code>PROVISIONING</code>).</p>\n            </li>\n         </ul>\n         <p>Filter values are case sensitive. If you specify multiple \n         values for a filter, the values are joined with an <code>OR</code>, and the request returns \n         all results that match any of the specified values.</p>"
+                        "smithy.api#documentation": "<p>The filters. Add filters to your request to return a more \n            specific list of results. Use filters to match the status of the network sites.</p>\n        <ul>\n            <li>\n                <p>\n                  <code>STATUS</code> - The status (<code>AVAILABLE</code> | <code>CREATED</code>\n                    | <code>DELETED</code> | <code>DEPROVISIONING</code> | <code>PROVISIONING</code>).</p>\n            </li>\n         </ul>\n        <p>Filter values are case sensitive. If you specify multiple \n         values for a filter, the values are joined with an <code>OR</code>, and the request returns \n         all results that match any of the specified values.</p>"
                     }
                 },
                 "networkArn": {
@@ -2317,7 +2269,7 @@
                 "filters": {
                     "target": "com.amazonaws.privatenetworks#NetworkFilters",
                     "traits": {
-                        "smithy.api#documentation": "<p>The filters.</p>\n         <ul>\n            <li>\n               <p>\n                  <code>STATUS</code> - The status (<code>AVAILABLE</code> | <code>CREATED</code>\n                    | <code>DELETED</code> | <code>DEPROVISIONING</code> | <code>PROVISIONING</code>).</p>\n            </li>\n         </ul>\n         <p>Filter values are case sensitive. If you specify multiple \n         values for a filter, the values are joined with an <code>OR</code>, and the request returns \n         all results that match any of the specified values.</p>"
+                        "smithy.api#documentation": "<p>The filters.</p>\n        <ul>\n            <li>\n                <p>\n                  <code>STATUS</code> - The status (<code>AVAILABLE</code> | <code>CREATED</code>\n                    | <code>DELETED</code> | <code>DEPROVISIONING</code> | <code>PROVISIONING</code>).</p>\n            </li>\n         </ul>\n        <p>Filter values are case sensitive. If you specify multiple \n         values for a filter, the values are joined with an <code>OR</code>, and the request returns \n         all results that match any of the specified values.</p>"
                     }
                 },
                 "startToken": {
@@ -2376,7 +2328,7 @@
                 }
             ],
             "traits": {
-                "smithy.api#documentation": "<p>Lists orders.  Add filters to your request to return a more \n            specific list of results. Use filters to match the Amazon Resource Name (ARN) of the network site or  \n            the status of the order.</p>\n         <p>If you specify multiple filters, filters are joined with an OR, and the request\nreturns results that match all of the specified filters.</p>",
+                "smithy.api#documentation": "<p>Lists orders.  Add filters to your request to return a more \n            specific list of results. Use filters to match the Amazon Resource Name (ARN) of the network site or  \n            the status of the order.</p>\n        <p>If you specify multiple filters, filters are joined with an OR, and the request\nreturns results that match all of the specified filters.</p>",
                 "smithy.api#http": {
                     "uri": "/v1/orders/list",
                     "method": "POST",
@@ -2421,7 +2373,7 @@
                 "filters": {
                     "target": "com.amazonaws.privatenetworks#OrderFilters",
                     "traits": {
-                        "smithy.api#documentation": "<p>The filters.</p>\n         <ul>\n            <li>\n               <p>\n                  <code>NETWORK_SITE</code> - The Amazon Resource Name (ARN) of the network site.</p>\n            </li>\n            <li>\n               <p>\n                  <code>STATUS</code> - The status (<code>ACKNOWLEDGING</code> | <code>ACKNOWLEDGED</code>\n                    | <code>UNACKNOWLEDGED</code>).</p>\n            </li>\n         </ul>\n         <p>Filter values are case sensitive. If you specify multiple \n         values for a filter, the values are joined with an <code>OR</code>, and the request returns \n         all results that match any of the specified values.</p>"
+                        "smithy.api#documentation": "<p>The filters.</p>\n        <ul>\n            <li>\n                <p>\n                  <code>NETWORK_SITE</code> - The Amazon Resource Name (ARN) of the network site.</p>\n            </li>\n            <li>\n                <p>\n                  <code>STATUS</code> - The status (<code>ACKNOWLEDGING</code> | <code>ACKNOWLEDGED</code>\n                    | <code>UNACKNOWLEDGED</code>).</p>\n            </li>\n         </ul>\n        <p>Filter values are case sensitive. If you specify multiple \n         values for a filter, the values are joined with an <code>OR</code>, and the request returns \n         all results that match any of the specified values.</p>"
                     }
                 }
             }
@@ -2710,12 +2662,6 @@
                     "traits": {
                         "smithy.api#documentation": "<p>The creation time of the network resource.</p>"
                     }
-                },
-                "returnInformation": {
-                    "target": "com.amazonaws.privatenetworks#ReturnInformation",
-                    "traits": {
-                        "smithy.api#documentation": "<p>Information about a request to return the network resource.</p>"
-                    }
                 }
             },
             "traits": {
@@ -2845,10 +2791,6 @@
                     {
                         "value": "DELETED",
                         "name": "DELETED"
-                    },
-                    {
-                        "value": "CREATING_SHIPPING_LABEL",
-                        "name": "CREATING_SHIPPING_LABEL"
                     }
                 ]
             }
@@ -3226,38 +3168,6 @@
                 "smithy.api#httpError": 404
             }
         },
-        "com.amazonaws.privatenetworks#ReturnInformation": {
-            "type": "structure",
-            "members": {
-                "shippingAddress": {
-                    "target": "com.amazonaws.privatenetworks#Address",
-                    "traits": {
-                        "smithy.api#documentation": "<p>The shipping address.</p>"
-                    }
-                },
-                "returnReason": {
-                    "target": "smithy.api#String",
-                    "traits": {
-                        "smithy.api#documentation": "<p>The reason for the return. If the return request did not include a \n           reason for the return, this value is null.</p>"
-                    }
-                },
-                "replacementOrderArn": {
-                    "target": "com.amazonaws.privatenetworks#Arn",
-                    "traits": {
-                        "smithy.api#documentation": "<p>The Amazon Resource Name (ARN) of the replacement order.</p>"
-                    }
-                },
-                "shippingLabel": {
-                    "target": "smithy.api#String",
-                    "traits": {
-                        "smithy.api#documentation": "<p>The URL of the shipping label. The shipping label is available for download\n            only if the status of the network resource is <code>PENDING_RETURN</code>.\n            For more information, see <a href=\"https://docs.aws.amazon.com/private-networks/latest/userguide/radio-units.html#return-radio-unit\">Return a radio unit</a>.</p>"
-                    }
-                }
-            },
-            "traits": {
-                "smithy.api#documentation": "<p>Information about a request to return a network resource.</p>"
-            }
-        },
         "com.amazonaws.privatenetworks#SensitiveString": {
             "type": "string",
             "traits": {
@@ -3282,81 +3192,6 @@
             },
             "traits": {
                 "smithy.api#documentation": "<p>Information about a site plan.</p>"
-            }
-        },
-        "com.amazonaws.privatenetworks#StartNetworkResourceUpdate": {
-            "type": "operation",
-            "input": {
-                "target": "com.amazonaws.privatenetworks#StartNetworkResourceUpdateRequest"
-            },
-            "output": {
-                "target": "com.amazonaws.privatenetworks#StartNetworkResourceUpdateResponse"
-            },
-            "errors": [
-                {
-                    "target": "com.amazonaws.privatenetworks#InternalServerException"
-                },
-                {
-                    "target": "com.amazonaws.privatenetworks#ResourceNotFoundException"
-                },
-                {
-                    "target": "com.amazonaws.privatenetworks#ValidationException"
-                }
-            ],
-            "traits": {
-                "smithy.api#documentation": "<p>Starts an update of the specified network resource.</p>\n         <p>After you submit a request to replace or return a network resource, the status\n           of the network resource is <code>CREATING_SHIPPING_LABEL</code>. The shipping label \n            is available when the status of the network resource is <code>PENDING_RETURN</code>. \n            After the network resource is successfully returned, its status is <code>DELETED</code>. \n            For more information, see <a href=\"https://docs.aws.amazon.com/private-networks/latest/userguide/radio-units.html#return-radio-unit\">Return a radio unit</a>.</p>",
-                "smithy.api#http": {
-                    "uri": "/v1/network-resources/update",
-                    "method": "POST",
-                    "code": 200
-                },
-                "smithy.api#idempotent": {}
-            }
-        },
-        "com.amazonaws.privatenetworks#StartNetworkResourceUpdateRequest": {
-            "type": "structure",
-            "members": {
-                "networkResourceArn": {
-                    "target": "com.amazonaws.privatenetworks#Arn",
-                    "traits": {
-                        "smithy.api#documentation": "<p>The Amazon Resource Name (ARN) of the network resource.</p>",
-                        "smithy.api#required": {}
-                    }
-                },
-                "updateType": {
-                    "target": "com.amazonaws.privatenetworks#UpdateType",
-                    "traits": {
-                        "smithy.api#documentation": "<p>The update type.</p>\n         <ul>\n            <li>\n               <p>\n                  <code>REPLACE</code> - Submits a request to replace a defective\n                   radio unit. We provide a shipping label that you can use for the \n                   return process and we ship a replacement radio unit to you.</p>\n            </li>\n            <li>\n               <p>\n                  <code>RETURN</code> - Submits a request to replace a radio unit\n                   that you no longer need. We provide a shipping label that you can \n                    use for the return process.</p>\n            </li>\n         </ul>",
-                        "smithy.api#required": {}
-                    }
-                },
-                "shippingAddress": {
-                    "target": "com.amazonaws.privatenetworks#Address",
-                    "traits": {
-                        "smithy.api#documentation": "<p>The shipping address. If you don't provide a shipping address when replacing or\n            returning a network resource, we use the address from the original order for the\n            network resource.</p>"
-                    }
-                },
-                "returnReason": {
-                    "target": "smithy.api#String",
-                    "traits": {
-                        "smithy.api#documentation": "<p>The reason for the return. Providing a reason for a return is optional.</p>",
-                        "smithy.api#length": {
-                            "min": 0,
-                            "max": 1000
-                        }
-                    }
-                }
-            }
-        },
-        "com.amazonaws.privatenetworks#StartNetworkResourceUpdateResponse": {
-            "type": "structure",
-            "members": {
-                "networkResource": {
-                    "target": "com.amazonaws.privatenetworks#NetworkResource",
-                    "traits": {
-                        "smithy.api#documentation": "<p>The network resource.</p>"
-                    }
-                }
             }
         },
         "com.amazonaws.privatenetworks#TagKey": {
@@ -3689,21 +3524,6 @@
                         "smithy.api#documentation": "<p>\n            The network site tags.\n        </p>"
                     }
                 }
-            }
-        },
-        "com.amazonaws.privatenetworks#UpdateType": {
-            "type": "string",
-            "traits": {
-                "smithy.api#enum": [
-                    {
-                        "value": "REPLACE",
-                        "name": "REPLACE"
-                    },
-                    {
-                        "value": "RETURN",
-                        "name": "RETURN"
-                    }
-                ]
             }
         },
         "com.amazonaws.privatenetworks#ValidationException": {

@@ -314,7 +314,7 @@
                     "parameters": {
                         "Region": {
                             "builtIn": "AWS::Region",
-                            "required": false,
+                            "required": true,
                             "documentation": "The AWS region used to dispatch the request.",
                             "type": "String"
                         },
@@ -343,16 +343,161 @@
                         {
                             "conditions": [
                                 {
-                                    "fn": "isSet",
+                                    "fn": "aws.partition",
                                     "argv": [
                                         {
-                                            "ref": "Endpoint"
+                                            "ref": "Region"
                                         }
-                                    ]
+                                    ],
+                                    "assign": "PartitionResult"
                                 }
                             ],
                             "type": "tree",
                             "rules": [
+                                {
+                                    "conditions": [
+                                        {
+                                            "fn": "isSet",
+                                            "argv": [
+                                                {
+                                                    "ref": "Endpoint"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "type": "tree",
+                                    "rules": [
+                                        {
+                                            "conditions": [
+                                                {
+                                                    "fn": "booleanEquals",
+                                                    "argv": [
+                                                        {
+                                                            "ref": "UseFIPS"
+                                                        },
+                                                        true
+                                                    ]
+                                                }
+                                            ],
+                                            "error": "Invalid Configuration: FIPS and custom endpoint are not supported",
+                                            "type": "error"
+                                        },
+                                        {
+                                            "conditions": [],
+                                            "type": "tree",
+                                            "rules": [
+                                                {
+                                                    "conditions": [
+                                                        {
+                                                            "fn": "booleanEquals",
+                                                            "argv": [
+                                                                {
+                                                                    "ref": "UseDualStack"
+                                                                },
+                                                                true
+                                                            ]
+                                                        }
+                                                    ],
+                                                    "error": "Invalid Configuration: Dualstack and custom endpoint are not supported",
+                                                    "type": "error"
+                                                },
+                                                {
+                                                    "conditions": [],
+                                                    "endpoint": {
+                                                        "url": {
+                                                            "ref": "Endpoint"
+                                                        },
+                                                        "properties": {},
+                                                        "headers": {}
+                                                    },
+                                                    "type": "endpoint"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "conditions": [
+                                        {
+                                            "fn": "booleanEquals",
+                                            "argv": [
+                                                {
+                                                    "ref": "UseFIPS"
+                                                },
+                                                true
+                                            ]
+                                        },
+                                        {
+                                            "fn": "booleanEquals",
+                                            "argv": [
+                                                {
+                                                    "ref": "UseDualStack"
+                                                },
+                                                true
+                                            ]
+                                        }
+                                    ],
+                                    "type": "tree",
+                                    "rules": [
+                                        {
+                                            "conditions": [
+                                                {
+                                                    "fn": "booleanEquals",
+                                                    "argv": [
+                                                        true,
+                                                        {
+                                                            "fn": "getAttr",
+                                                            "argv": [
+                                                                {
+                                                                    "ref": "PartitionResult"
+                                                                },
+                                                                "supportsFIPS"
+                                                            ]
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "fn": "booleanEquals",
+                                                    "argv": [
+                                                        true,
+                                                        {
+                                                            "fn": "getAttr",
+                                                            "argv": [
+                                                                {
+                                                                    "ref": "PartitionResult"
+                                                                },
+                                                                "supportsDualStack"
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "type": "tree",
+                                            "rules": [
+                                                {
+                                                    "conditions": [],
+                                                    "type": "tree",
+                                                    "rules": [
+                                                        {
+                                                            "conditions": [],
+                                                            "endpoint": {
+                                                                "url": "https://servicecatalog-fips.{Region}.{PartitionResult#dualStackDnsSuffix}",
+                                                                "properties": {},
+                                                                "headers": {}
+                                                            },
+                                                            "type": "endpoint"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "conditions": [],
+                                            "error": "FIPS and DualStack are enabled, but this partition does not support one or both",
+                                            "type": "error"
+                                        }
+                                    ]
+                                },
                                 {
                                     "conditions": [
                                         {
@@ -365,11 +510,6 @@
                                             ]
                                         }
                                     ],
-                                    "error": "Invalid Configuration: FIPS and custom endpoint are not supported",
-                                    "type": "error"
-                                },
-                                {
-                                    "conditions": [],
                                     "type": "tree",
                                     "rules": [
                                         {
@@ -377,260 +517,21 @@
                                                 {
                                                     "fn": "booleanEquals",
                                                     "argv": [
+                                                        true,
                                                         {
-                                                            "ref": "UseDualStack"
-                                                        },
-                                                        true
-                                                    ]
-                                                }
-                                            ],
-                                            "error": "Invalid Configuration: Dualstack and custom endpoint are not supported",
-                                            "type": "error"
-                                        },
-                                        {
-                                            "conditions": [],
-                                            "endpoint": {
-                                                "url": {
-                                                    "ref": "Endpoint"
-                                                },
-                                                "properties": {},
-                                                "headers": {}
-                                            },
-                                            "type": "endpoint"
-                                        }
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "conditions": [],
-                            "type": "tree",
-                            "rules": [
-                                {
-                                    "conditions": [
-                                        {
-                                            "fn": "isSet",
-                                            "argv": [
-                                                {
-                                                    "ref": "Region"
-                                                }
-                                            ]
-                                        }
-                                    ],
-                                    "type": "tree",
-                                    "rules": [
-                                        {
-                                            "conditions": [
-                                                {
-                                                    "fn": "aws.partition",
-                                                    "argv": [
-                                                        {
-                                                            "ref": "Region"
+                                                            "fn": "getAttr",
+                                                            "argv": [
+                                                                {
+                                                                    "ref": "PartitionResult"
+                                                                },
+                                                                "supportsFIPS"
+                                                            ]
                                                         }
-                                                    ],
-                                                    "assign": "PartitionResult"
+                                                    ]
                                                 }
                                             ],
                                             "type": "tree",
                                             "rules": [
-                                                {
-                                                    "conditions": [
-                                                        {
-                                                            "fn": "booleanEquals",
-                                                            "argv": [
-                                                                {
-                                                                    "ref": "UseFIPS"
-                                                                },
-                                                                true
-                                                            ]
-                                                        },
-                                                        {
-                                                            "fn": "booleanEquals",
-                                                            "argv": [
-                                                                {
-                                                                    "ref": "UseDualStack"
-                                                                },
-                                                                true
-                                                            ]
-                                                        }
-                                                    ],
-                                                    "type": "tree",
-                                                    "rules": [
-                                                        {
-                                                            "conditions": [
-                                                                {
-                                                                    "fn": "booleanEquals",
-                                                                    "argv": [
-                                                                        true,
-                                                                        {
-                                                                            "fn": "getAttr",
-                                                                            "argv": [
-                                                                                {
-                                                                                    "ref": "PartitionResult"
-                                                                                },
-                                                                                "supportsFIPS"
-                                                                            ]
-                                                                        }
-                                                                    ]
-                                                                },
-                                                                {
-                                                                    "fn": "booleanEquals",
-                                                                    "argv": [
-                                                                        true,
-                                                                        {
-                                                                            "fn": "getAttr",
-                                                                            "argv": [
-                                                                                {
-                                                                                    "ref": "PartitionResult"
-                                                                                },
-                                                                                "supportsDualStack"
-                                                                            ]
-                                                                        }
-                                                                    ]
-                                                                }
-                                                            ],
-                                                            "type": "tree",
-                                                            "rules": [
-                                                                {
-                                                                    "conditions": [],
-                                                                    "type": "tree",
-                                                                    "rules": [
-                                                                        {
-                                                                            "conditions": [],
-                                                                            "endpoint": {
-                                                                                "url": "https://servicecatalog-fips.{Region}.{PartitionResult#dualStackDnsSuffix}",
-                                                                                "properties": {},
-                                                                                "headers": {}
-                                                                            },
-                                                                            "type": "endpoint"
-                                                                        }
-                                                                    ]
-                                                                }
-                                                            ]
-                                                        },
-                                                        {
-                                                            "conditions": [],
-                                                            "error": "FIPS and DualStack are enabled, but this partition does not support one or both",
-                                                            "type": "error"
-                                                        }
-                                                    ]
-                                                },
-                                                {
-                                                    "conditions": [
-                                                        {
-                                                            "fn": "booleanEquals",
-                                                            "argv": [
-                                                                {
-                                                                    "ref": "UseFIPS"
-                                                                },
-                                                                true
-                                                            ]
-                                                        }
-                                                    ],
-                                                    "type": "tree",
-                                                    "rules": [
-                                                        {
-                                                            "conditions": [
-                                                                {
-                                                                    "fn": "booleanEquals",
-                                                                    "argv": [
-                                                                        true,
-                                                                        {
-                                                                            "fn": "getAttr",
-                                                                            "argv": [
-                                                                                {
-                                                                                    "ref": "PartitionResult"
-                                                                                },
-                                                                                "supportsFIPS"
-                                                                            ]
-                                                                        }
-                                                                    ]
-                                                                }
-                                                            ],
-                                                            "type": "tree",
-                                                            "rules": [
-                                                                {
-                                                                    "conditions": [],
-                                                                    "type": "tree",
-                                                                    "rules": [
-                                                                        {
-                                                                            "conditions": [],
-                                                                            "endpoint": {
-                                                                                "url": "https://servicecatalog-fips.{Region}.{PartitionResult#dnsSuffix}",
-                                                                                "properties": {},
-                                                                                "headers": {}
-                                                                            },
-                                                                            "type": "endpoint"
-                                                                        }
-                                                                    ]
-                                                                }
-                                                            ]
-                                                        },
-                                                        {
-                                                            "conditions": [],
-                                                            "error": "FIPS is enabled but this partition does not support FIPS",
-                                                            "type": "error"
-                                                        }
-                                                    ]
-                                                },
-                                                {
-                                                    "conditions": [
-                                                        {
-                                                            "fn": "booleanEquals",
-                                                            "argv": [
-                                                                {
-                                                                    "ref": "UseDualStack"
-                                                                },
-                                                                true
-                                                            ]
-                                                        }
-                                                    ],
-                                                    "type": "tree",
-                                                    "rules": [
-                                                        {
-                                                            "conditions": [
-                                                                {
-                                                                    "fn": "booleanEquals",
-                                                                    "argv": [
-                                                                        true,
-                                                                        {
-                                                                            "fn": "getAttr",
-                                                                            "argv": [
-                                                                                {
-                                                                                    "ref": "PartitionResult"
-                                                                                },
-                                                                                "supportsDualStack"
-                                                                            ]
-                                                                        }
-                                                                    ]
-                                                                }
-                                                            ],
-                                                            "type": "tree",
-                                                            "rules": [
-                                                                {
-                                                                    "conditions": [],
-                                                                    "type": "tree",
-                                                                    "rules": [
-                                                                        {
-                                                                            "conditions": [],
-                                                                            "endpoint": {
-                                                                                "url": "https://servicecatalog.{Region}.{PartitionResult#dualStackDnsSuffix}",
-                                                                                "properties": {},
-                                                                                "headers": {}
-                                                                            },
-                                                                            "type": "endpoint"
-                                                                        }
-                                                                    ]
-                                                                }
-                                                            ]
-                                                        },
-                                                        {
-                                                            "conditions": [],
-                                                            "error": "DualStack is enabled but this partition does not support DualStack",
-                                                            "type": "error"
-                                                        }
-                                                    ]
-                                                },
                                                 {
                                                     "conditions": [],
                                                     "type": "tree",
@@ -638,7 +539,7 @@
                                                         {
                                                             "conditions": [],
                                                             "endpoint": {
-                                                                "url": "https://servicecatalog.{Region}.{PartitionResult#dnsSuffix}",
+                                                                "url": "https://servicecatalog-fips.{Region}.{PartitionResult#dnsSuffix}",
                                                                 "properties": {},
                                                                 "headers": {}
                                                             },
@@ -647,13 +548,86 @@
                                                     ]
                                                 }
                                             ]
+                                        },
+                                        {
+                                            "conditions": [],
+                                            "error": "FIPS is enabled but this partition does not support FIPS",
+                                            "type": "error"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "conditions": [
+                                        {
+                                            "fn": "booleanEquals",
+                                            "argv": [
+                                                {
+                                                    "ref": "UseDualStack"
+                                                },
+                                                true
+                                            ]
+                                        }
+                                    ],
+                                    "type": "tree",
+                                    "rules": [
+                                        {
+                                            "conditions": [
+                                                {
+                                                    "fn": "booleanEquals",
+                                                    "argv": [
+                                                        true,
+                                                        {
+                                                            "fn": "getAttr",
+                                                            "argv": [
+                                                                {
+                                                                    "ref": "PartitionResult"
+                                                                },
+                                                                "supportsDualStack"
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "type": "tree",
+                                            "rules": [
+                                                {
+                                                    "conditions": [],
+                                                    "type": "tree",
+                                                    "rules": [
+                                                        {
+                                                            "conditions": [],
+                                                            "endpoint": {
+                                                                "url": "https://servicecatalog.{Region}.{PartitionResult#dualStackDnsSuffix}",
+                                                                "properties": {},
+                                                                "headers": {}
+                                                            },
+                                                            "type": "endpoint"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "conditions": [],
+                                            "error": "DualStack is enabled but this partition does not support DualStack",
+                                            "type": "error"
                                         }
                                     ]
                                 },
                                 {
                                     "conditions": [],
-                                    "error": "Invalid Configuration: Missing Region",
-                                    "type": "error"
+                                    "type": "tree",
+                                    "rules": [
+                                        {
+                                            "conditions": [],
+                                            "endpoint": {
+                                                "url": "https://servicecatalog.{Region}.{PartitionResult#dnsSuffix}",
+                                                "properties": {},
+                                                "headers": {}
+                                            },
+                                            "type": "endpoint"
+                                        }
+                                    ]
                                 }
                             ]
                         }
@@ -662,16 +636,16 @@
                 "smithy.rules#endpointTests": {
                     "testCases": [
                         {
-                            "documentation": "For region af-south-1 with FIPS disabled and DualStack disabled",
+                            "documentation": "For region sa-east-1 with FIPS disabled and DualStack disabled",
                             "expect": {
                                 "endpoint": {
-                                    "url": "https://servicecatalog.af-south-1.amazonaws.com"
+                                    "url": "https://servicecatalog.sa-east-1.amazonaws.com"
                                 }
                             },
                             "params": {
-                                "Region": "af-south-1",
+                                "UseFIPS": false,
                                 "UseDualStack": false,
-                                "UseFIPS": false
+                                "Region": "sa-east-1"
                             }
                         },
                         {
@@ -682,139 +656,9 @@
                                 }
                             },
                             "params": {
-                                "Region": "ap-east-1",
+                                "UseFIPS": false,
                                 "UseDualStack": false,
-                                "UseFIPS": false
-                            }
-                        },
-                        {
-                            "documentation": "For region ap-northeast-1 with FIPS disabled and DualStack disabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://servicecatalog.ap-northeast-1.amazonaws.com"
-                                }
-                            },
-                            "params": {
-                                "Region": "ap-northeast-1",
-                                "UseDualStack": false,
-                                "UseFIPS": false
-                            }
-                        },
-                        {
-                            "documentation": "For region ap-northeast-2 with FIPS disabled and DualStack disabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://servicecatalog.ap-northeast-2.amazonaws.com"
-                                }
-                            },
-                            "params": {
-                                "Region": "ap-northeast-2",
-                                "UseDualStack": false,
-                                "UseFIPS": false
-                            }
-                        },
-                        {
-                            "documentation": "For region ap-northeast-3 with FIPS disabled and DualStack disabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://servicecatalog.ap-northeast-3.amazonaws.com"
-                                }
-                            },
-                            "params": {
-                                "Region": "ap-northeast-3",
-                                "UseDualStack": false,
-                                "UseFIPS": false
-                            }
-                        },
-                        {
-                            "documentation": "For region ap-south-1 with FIPS disabled and DualStack disabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://servicecatalog.ap-south-1.amazonaws.com"
-                                }
-                            },
-                            "params": {
-                                "Region": "ap-south-1",
-                                "UseDualStack": false,
-                                "UseFIPS": false
-                            }
-                        },
-                        {
-                            "documentation": "For region ap-southeast-1 with FIPS disabled and DualStack disabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://servicecatalog.ap-southeast-1.amazonaws.com"
-                                }
-                            },
-                            "params": {
-                                "Region": "ap-southeast-1",
-                                "UseDualStack": false,
-                                "UseFIPS": false
-                            }
-                        },
-                        {
-                            "documentation": "For region ap-southeast-2 with FIPS disabled and DualStack disabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://servicecatalog.ap-southeast-2.amazonaws.com"
-                                }
-                            },
-                            "params": {
-                                "Region": "ap-southeast-2",
-                                "UseDualStack": false,
-                                "UseFIPS": false
-                            }
-                        },
-                        {
-                            "documentation": "For region ap-southeast-3 with FIPS disabled and DualStack disabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://servicecatalog.ap-southeast-3.amazonaws.com"
-                                }
-                            },
-                            "params": {
-                                "Region": "ap-southeast-3",
-                                "UseDualStack": false,
-                                "UseFIPS": false
-                            }
-                        },
-                        {
-                            "documentation": "For region ca-central-1 with FIPS disabled and DualStack disabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://servicecatalog.ca-central-1.amazonaws.com"
-                                }
-                            },
-                            "params": {
-                                "Region": "ca-central-1",
-                                "UseDualStack": false,
-                                "UseFIPS": false
-                            }
-                        },
-                        {
-                            "documentation": "For region eu-central-1 with FIPS disabled and DualStack disabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://servicecatalog.eu-central-1.amazonaws.com"
-                                }
-                            },
-                            "params": {
-                                "Region": "eu-central-1",
-                                "UseDualStack": false,
-                                "UseFIPS": false
-                            }
-                        },
-                        {
-                            "documentation": "For region eu-north-1 with FIPS disabled and DualStack disabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://servicecatalog.eu-north-1.amazonaws.com"
-                                }
-                            },
-                            "params": {
-                                "Region": "eu-north-1",
-                                "UseDualStack": false,
-                                "UseFIPS": false
+                                "Region": "ap-east-1"
                             }
                         },
                         {
@@ -825,126 +669,74 @@
                                 }
                             },
                             "params": {
-                                "Region": "eu-south-1",
+                                "UseFIPS": false,
                                 "UseDualStack": false,
-                                "UseFIPS": false
+                                "Region": "eu-south-1"
                             }
                         },
                         {
-                            "documentation": "For region eu-west-1 with FIPS disabled and DualStack disabled",
+                            "documentation": "For region eu-central-1 with FIPS disabled and DualStack disabled",
                             "expect": {
                                 "endpoint": {
-                                    "url": "https://servicecatalog.eu-west-1.amazonaws.com"
+                                    "url": "https://servicecatalog.eu-central-1.amazonaws.com"
                                 }
                             },
                             "params": {
-                                "Region": "eu-west-1",
+                                "UseFIPS": false,
                                 "UseDualStack": false,
-                                "UseFIPS": false
+                                "Region": "eu-central-1"
                             }
                         },
                         {
-                            "documentation": "For region eu-west-2 with FIPS disabled and DualStack disabled",
+                            "documentation": "For region ap-southeast-1 with FIPS disabled and DualStack disabled",
                             "expect": {
                                 "endpoint": {
-                                    "url": "https://servicecatalog.eu-west-2.amazonaws.com"
+                                    "url": "https://servicecatalog.ap-southeast-1.amazonaws.com"
                                 }
                             },
                             "params": {
-                                "Region": "eu-west-2",
+                                "UseFIPS": false,
                                 "UseDualStack": false,
-                                "UseFIPS": false
+                                "Region": "ap-southeast-1"
                             }
                         },
                         {
-                            "documentation": "For region eu-west-3 with FIPS disabled and DualStack disabled",
+                            "documentation": "For region ap-southeast-2 with FIPS disabled and DualStack disabled",
                             "expect": {
                                 "endpoint": {
-                                    "url": "https://servicecatalog.eu-west-3.amazonaws.com"
+                                    "url": "https://servicecatalog.ap-southeast-2.amazonaws.com"
                                 }
                             },
                             "params": {
-                                "Region": "eu-west-3",
+                                "UseFIPS": false,
                                 "UseDualStack": false,
-                                "UseFIPS": false
+                                "Region": "ap-southeast-2"
                             }
                         },
                         {
-                            "documentation": "For region me-south-1 with FIPS disabled and DualStack disabled",
+                            "documentation": "For region ap-southeast-3 with FIPS disabled and DualStack disabled",
                             "expect": {
                                 "endpoint": {
-                                    "url": "https://servicecatalog.me-south-1.amazonaws.com"
+                                    "url": "https://servicecatalog.ap-southeast-3.amazonaws.com"
                                 }
                             },
                             "params": {
-                                "Region": "me-south-1",
+                                "UseFIPS": false,
                                 "UseDualStack": false,
-                                "UseFIPS": false
+                                "Region": "ap-southeast-3"
                             }
                         },
                         {
-                            "documentation": "For region sa-east-1 with FIPS disabled and DualStack disabled",
+                            "documentation": "For region ca-central-1 with FIPS disabled and DualStack disabled",
                             "expect": {
                                 "endpoint": {
-                                    "url": "https://servicecatalog.sa-east-1.amazonaws.com"
+                                    "url": "https://servicecatalog.ca-central-1.amazonaws.com"
                                 }
                             },
                             "params": {
-                                "Region": "sa-east-1",
+                                "UseFIPS": false,
                                 "UseDualStack": false,
-                                "UseFIPS": false
-                            }
-                        },
-                        {
-                            "documentation": "For region us-east-1 with FIPS disabled and DualStack disabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://servicecatalog.us-east-1.amazonaws.com"
-                                }
-                            },
-                            "params": {
-                                "Region": "us-east-1",
-                                "UseDualStack": false,
-                                "UseFIPS": false
-                            }
-                        },
-                        {
-                            "documentation": "For region us-east-1 with FIPS enabled and DualStack disabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://servicecatalog-fips.us-east-1.amazonaws.com"
-                                }
-                            },
-                            "params": {
-                                "Region": "us-east-1",
-                                "UseDualStack": false,
-                                "UseFIPS": true
-                            }
-                        },
-                        {
-                            "documentation": "For region us-east-2 with FIPS disabled and DualStack disabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://servicecatalog.us-east-2.amazonaws.com"
-                                }
-                            },
-                            "params": {
-                                "Region": "us-east-2",
-                                "UseDualStack": false,
-                                "UseFIPS": false
-                            }
-                        },
-                        {
-                            "documentation": "For region us-east-2 with FIPS enabled and DualStack disabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://servicecatalog-fips.us-east-2.amazonaws.com"
-                                }
-                            },
-                            "params": {
-                                "Region": "us-east-2",
-                                "UseDualStack": false,
-                                "UseFIPS": true
+                                "Region": "ca-central-1"
                             }
                         },
                         {
@@ -955,9 +747,9 @@
                                 }
                             },
                             "params": {
-                                "Region": "us-west-1",
+                                "UseFIPS": false,
                                 "UseDualStack": false,
-                                "UseFIPS": false
+                                "Region": "us-west-1"
                             }
                         },
                         {
@@ -968,9 +760,9 @@
                                 }
                             },
                             "params": {
-                                "Region": "us-west-1",
+                                "UseFIPS": true,
                                 "UseDualStack": false,
-                                "UseFIPS": true
+                                "Region": "us-west-1"
                             }
                         },
                         {
@@ -981,9 +773,9 @@
                                 }
                             },
                             "params": {
-                                "Region": "us-west-2",
+                                "UseFIPS": false,
                                 "UseDualStack": false,
-                                "UseFIPS": false
+                                "Region": "us-west-2"
                             }
                         },
                         {
@@ -994,9 +786,191 @@
                                 }
                             },
                             "params": {
-                                "Region": "us-west-2",
+                                "UseFIPS": true,
                                 "UseDualStack": false,
-                                "UseFIPS": true
+                                "Region": "us-west-2"
+                            }
+                        },
+                        {
+                            "documentation": "For region af-south-1 with FIPS disabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://servicecatalog.af-south-1.amazonaws.com"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": false,
+                                "UseDualStack": false,
+                                "Region": "af-south-1"
+                            }
+                        },
+                        {
+                            "documentation": "For region ap-south-1 with FIPS disabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://servicecatalog.ap-south-1.amazonaws.com"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": false,
+                                "UseDualStack": false,
+                                "Region": "ap-south-1"
+                            }
+                        },
+                        {
+                            "documentation": "For region ap-northeast-1 with FIPS disabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://servicecatalog.ap-northeast-1.amazonaws.com"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": false,
+                                "UseDualStack": false,
+                                "Region": "ap-northeast-1"
+                            }
+                        },
+                        {
+                            "documentation": "For region ap-northeast-2 with FIPS disabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://servicecatalog.ap-northeast-2.amazonaws.com"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": false,
+                                "UseDualStack": false,
+                                "Region": "ap-northeast-2"
+                            }
+                        },
+                        {
+                            "documentation": "For region ap-northeast-3 with FIPS disabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://servicecatalog.ap-northeast-3.amazonaws.com"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": false,
+                                "UseDualStack": false,
+                                "Region": "ap-northeast-3"
+                            }
+                        },
+                        {
+                            "documentation": "For region us-east-1 with FIPS disabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://servicecatalog.us-east-1.amazonaws.com"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": false,
+                                "UseDualStack": false,
+                                "Region": "us-east-1"
+                            }
+                        },
+                        {
+                            "documentation": "For region us-east-1 with FIPS enabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://servicecatalog-fips.us-east-1.amazonaws.com"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": true,
+                                "UseDualStack": false,
+                                "Region": "us-east-1"
+                            }
+                        },
+                        {
+                            "documentation": "For region eu-west-1 with FIPS disabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://servicecatalog.eu-west-1.amazonaws.com"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": false,
+                                "UseDualStack": false,
+                                "Region": "eu-west-1"
+                            }
+                        },
+                        {
+                            "documentation": "For region eu-west-2 with FIPS disabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://servicecatalog.eu-west-2.amazonaws.com"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": false,
+                                "UseDualStack": false,
+                                "Region": "eu-west-2"
+                            }
+                        },
+                        {
+                            "documentation": "For region eu-west-3 with FIPS disabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://servicecatalog.eu-west-3.amazonaws.com"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": false,
+                                "UseDualStack": false,
+                                "Region": "eu-west-3"
+                            }
+                        },
+                        {
+                            "documentation": "For region me-south-1 with FIPS disabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://servicecatalog.me-south-1.amazonaws.com"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": false,
+                                "UseDualStack": false,
+                                "Region": "me-south-1"
+                            }
+                        },
+                        {
+                            "documentation": "For region eu-north-1 with FIPS disabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://servicecatalog.eu-north-1.amazonaws.com"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": false,
+                                "UseDualStack": false,
+                                "Region": "eu-north-1"
+                            }
+                        },
+                        {
+                            "documentation": "For region us-east-2 with FIPS disabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://servicecatalog.us-east-2.amazonaws.com"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": false,
+                                "UseDualStack": false,
+                                "Region": "us-east-2"
+                            }
+                        },
+                        {
+                            "documentation": "For region us-east-2 with FIPS enabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://servicecatalog-fips.us-east-2.amazonaws.com"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": true,
+                                "UseDualStack": false,
+                                "Region": "us-east-2"
                             }
                         },
                         {
@@ -1007,9 +981,9 @@
                                 }
                             },
                             "params": {
-                                "Region": "us-east-1",
+                                "UseFIPS": true,
                                 "UseDualStack": true,
-                                "UseFIPS": true
+                                "Region": "us-east-1"
                             }
                         },
                         {
@@ -1020,100 +994,9 @@
                                 }
                             },
                             "params": {
-                                "Region": "us-east-1",
+                                "UseFIPS": false,
                                 "UseDualStack": true,
-                                "UseFIPS": false
-                            }
-                        },
-                        {
-                            "documentation": "For region cn-north-1 with FIPS disabled and DualStack disabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://servicecatalog.cn-north-1.amazonaws.com.cn"
-                                }
-                            },
-                            "params": {
-                                "Region": "cn-north-1",
-                                "UseDualStack": false,
-                                "UseFIPS": false
-                            }
-                        },
-                        {
-                            "documentation": "For region cn-northwest-1 with FIPS disabled and DualStack disabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://servicecatalog.cn-northwest-1.amazonaws.com.cn"
-                                }
-                            },
-                            "params": {
-                                "Region": "cn-northwest-1",
-                                "UseDualStack": false,
-                                "UseFIPS": false
-                            }
-                        },
-                        {
-                            "documentation": "For region cn-north-1 with FIPS enabled and DualStack enabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://servicecatalog-fips.cn-north-1.api.amazonwebservices.com.cn"
-                                }
-                            },
-                            "params": {
-                                "Region": "cn-north-1",
-                                "UseDualStack": true,
-                                "UseFIPS": true
-                            }
-                        },
-                        {
-                            "documentation": "For region cn-north-1 with FIPS enabled and DualStack disabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://servicecatalog-fips.cn-north-1.amazonaws.com.cn"
-                                }
-                            },
-                            "params": {
-                                "Region": "cn-north-1",
-                                "UseDualStack": false,
-                                "UseFIPS": true
-                            }
-                        },
-                        {
-                            "documentation": "For region cn-north-1 with FIPS disabled and DualStack enabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://servicecatalog.cn-north-1.api.amazonwebservices.com.cn"
-                                }
-                            },
-                            "params": {
-                                "Region": "cn-north-1",
-                                "UseDualStack": true,
-                                "UseFIPS": false
-                            }
-                        },
-                        {
-                            "documentation": "For region us-gov-east-1 with FIPS disabled and DualStack disabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://servicecatalog.us-gov-east-1.amazonaws.com"
-                                }
-                            },
-                            "params": {
-                                "Region": "us-gov-east-1",
-                                "UseDualStack": false,
-                                "UseFIPS": false
-                            }
-                        },
-                        {
-                            "documentation": "For region us-gov-east-1 with FIPS enabled and DualStack disabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://servicecatalog-fips.us-gov-east-1.amazonaws.com"
-                                }
-                            },
-                            "params": {
-                                "Region": "us-gov-east-1",
-                                "UseDualStack": false,
-                                "UseFIPS": true
+                                "Region": "us-east-1"
                             }
                         },
                         {
@@ -1124,9 +1007,9 @@
                                 }
                             },
                             "params": {
-                                "Region": "us-gov-west-1",
+                                "UseFIPS": false,
                                 "UseDualStack": false,
-                                "UseFIPS": false
+                                "Region": "us-gov-west-1"
                             }
                         },
                         {
@@ -1137,9 +1020,35 @@
                                 }
                             },
                             "params": {
-                                "Region": "us-gov-west-1",
+                                "UseFIPS": true,
                                 "UseDualStack": false,
-                                "UseFIPS": true
+                                "Region": "us-gov-west-1"
+                            }
+                        },
+                        {
+                            "documentation": "For region us-gov-east-1 with FIPS disabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://servicecatalog.us-gov-east-1.amazonaws.com"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": false,
+                                "UseDualStack": false,
+                                "Region": "us-gov-east-1"
+                            }
+                        },
+                        {
+                            "documentation": "For region us-gov-east-1 with FIPS enabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://servicecatalog-fips.us-gov-east-1.amazonaws.com"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": true,
+                                "UseDualStack": false,
+                                "Region": "us-gov-east-1"
                             }
                         },
                         {
@@ -1150,9 +1059,9 @@
                                 }
                             },
                             "params": {
-                                "Region": "us-gov-east-1",
+                                "UseFIPS": true,
                                 "UseDualStack": true,
-                                "UseFIPS": true
+                                "Region": "us-gov-east-1"
                             }
                         },
                         {
@@ -1163,35 +1072,9 @@
                                 }
                             },
                             "params": {
-                                "Region": "us-gov-east-1",
+                                "UseFIPS": false,
                                 "UseDualStack": true,
-                                "UseFIPS": false
-                            }
-                        },
-                        {
-                            "documentation": "For region us-iso-east-1 with FIPS enabled and DualStack disabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://servicecatalog-fips.us-iso-east-1.c2s.ic.gov"
-                                }
-                            },
-                            "params": {
-                                "Region": "us-iso-east-1",
-                                "UseDualStack": false,
-                                "UseFIPS": true
-                            }
-                        },
-                        {
-                            "documentation": "For region us-iso-east-1 with FIPS disabled and DualStack disabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://servicecatalog.us-iso-east-1.c2s.ic.gov"
-                                }
-                            },
-                            "params": {
-                                "Region": "us-iso-east-1",
-                                "UseDualStack": false,
-                                "UseFIPS": false
+                                "Region": "us-gov-east-1"
                             }
                         },
                         {
@@ -1202,9 +1085,9 @@
                                 }
                             },
                             "params": {
-                                "Region": "us-isob-east-1",
+                                "UseFIPS": true,
                                 "UseDualStack": false,
-                                "UseFIPS": true
+                                "Region": "us-isob-east-1"
                             }
                         },
                         {
@@ -1215,35 +1098,113 @@
                                 }
                             },
                             "params": {
-                                "Region": "us-isob-east-1",
+                                "UseFIPS": false,
                                 "UseDualStack": false,
-                                "UseFIPS": false
+                                "Region": "us-isob-east-1"
                             }
                         },
                         {
-                            "documentation": "For custom endpoint with region set and fips disabled and dualstack disabled",
+                            "documentation": "For region cn-northwest-1 with FIPS disabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://servicecatalog.cn-northwest-1.amazonaws.com.cn"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": false,
+                                "UseDualStack": false,
+                                "Region": "cn-northwest-1"
+                            }
+                        },
+                        {
+                            "documentation": "For region cn-north-1 with FIPS disabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://servicecatalog.cn-north-1.amazonaws.com.cn"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": false,
+                                "UseDualStack": false,
+                                "Region": "cn-north-1"
+                            }
+                        },
+                        {
+                            "documentation": "For region cn-north-1 with FIPS enabled and DualStack enabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://servicecatalog-fips.cn-north-1.api.amazonwebservices.com.cn"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": true,
+                                "UseDualStack": true,
+                                "Region": "cn-north-1"
+                            }
+                        },
+                        {
+                            "documentation": "For region cn-north-1 with FIPS enabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://servicecatalog-fips.cn-north-1.amazonaws.com.cn"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": true,
+                                "UseDualStack": false,
+                                "Region": "cn-north-1"
+                            }
+                        },
+                        {
+                            "documentation": "For region cn-north-1 with FIPS disabled and DualStack enabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://servicecatalog.cn-north-1.api.amazonwebservices.com.cn"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": false,
+                                "UseDualStack": true,
+                                "Region": "cn-north-1"
+                            }
+                        },
+                        {
+                            "documentation": "For region us-iso-east-1 with FIPS enabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://servicecatalog-fips.us-iso-east-1.c2s.ic.gov"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": true,
+                                "UseDualStack": false,
+                                "Region": "us-iso-east-1"
+                            }
+                        },
+                        {
+                            "documentation": "For region us-iso-east-1 with FIPS disabled and DualStack disabled",
+                            "expect": {
+                                "endpoint": {
+                                    "url": "https://servicecatalog.us-iso-east-1.c2s.ic.gov"
+                                }
+                            },
+                            "params": {
+                                "UseFIPS": false,
+                                "UseDualStack": false,
+                                "Region": "us-iso-east-1"
+                            }
+                        },
+                        {
+                            "documentation": "For custom endpoint with fips disabled and dualstack disabled",
                             "expect": {
                                 "endpoint": {
                                     "url": "https://example.com"
                                 }
                             },
                             "params": {
+                                "UseFIPS": false,
+                                "UseDualStack": false,
                                 "Region": "us-east-1",
-                                "UseDualStack": false,
-                                "UseFIPS": false,
-                                "Endpoint": "https://example.com"
-                            }
-                        },
-                        {
-                            "documentation": "For custom endpoint with region not set and fips disabled and dualstack disabled",
-                            "expect": {
-                                "endpoint": {
-                                    "url": "https://example.com"
-                                }
-                            },
-                            "params": {
-                                "UseDualStack": false,
-                                "UseFIPS": false,
                                 "Endpoint": "https://example.com"
                             }
                         },
@@ -1253,9 +1214,9 @@
                                 "error": "Invalid Configuration: FIPS and custom endpoint are not supported"
                             },
                             "params": {
-                                "Region": "us-east-1",
-                                "UseDualStack": false,
                                 "UseFIPS": true,
+                                "UseDualStack": false,
+                                "Region": "us-east-1",
                                 "Endpoint": "https://example.com"
                             }
                         },
@@ -1265,9 +1226,9 @@
                                 "error": "Invalid Configuration: Dualstack and custom endpoint are not supported"
                             },
                             "params": {
-                                "Region": "us-east-1",
-                                "UseDualStack": true,
                                 "UseFIPS": false,
+                                "UseDualStack": true,
+                                "Region": "us-east-1",
                                 "Endpoint": "https://example.com"
                             }
                         }
@@ -1330,17 +1291,11 @@
                         "smithy.api#documentation": "<p>The type of shared portfolios to accept. The default is to accept imported portfolios.</p>\n         <ul>\n            <li>\n               <p>\n                  <code>AWS_ORGANIZATIONS</code> - Accept portfolios shared by the management account of your\n               organization.</p>\n            </li>\n            <li>\n               <p>\n                  <code>IMPORTED</code> - Accept imported portfolios.</p>\n            </li>\n            <li>\n               <p>\n                  <code>AWS_SERVICECATALOG</code> - Not supported. (Throws ResourceNotFoundException.)</p>\n            </li>\n         </ul>\n         <p>For example, <code>aws servicecatalog accept-portfolio-share --portfolio-id \"port-2qwzkwxt3y5fk\" --portfolio-share-type AWS_ORGANIZATIONS</code>\n         </p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.servicecatalog#AcceptPortfolioShareOutput": {
             "type": "structure",
-            "members": {},
-            "traits": {
-                "smithy.api#output": {}
-            }
+            "members": {}
         },
         "com.amazonaws.servicecatalog#AccessLevelFilter": {
             "type": "structure",
@@ -1490,17 +1445,11 @@
                         "smithy.api#required": {}
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.servicecatalog#AssociateBudgetWithResourceOutput": {
             "type": "structure",
-            "members": {},
-            "traits": {
-                "smithy.api#output": {}
-            }
+            "members": {}
         },
         "com.amazonaws.servicecatalog#AssociatePrincipalWithPortfolio": {
             "type": "operation",
@@ -1522,7 +1471,7 @@
                 }
             ],
             "traits": {
-                "smithy.api#documentation": "<p>Associates the specified principal ARN with the specified portfolio.</p>\n         <p>If you share the portfolio with principal name sharing enabled, the <code>PrincipalARN</code> association is \n         included in the share. </p>\n         <p>The <code>PortfolioID</code>, <code>PrincipalARN</code>, and <code>PrincipalType</code> parameters are\n      required. </p>\n         <p>You can associate a maximum of 10 Principals with a portfolio using <code>PrincipalType</code> as <code>IAM_PATTERN</code>\n         </p>\n         <note>\n            <p>When you associate a principal with portfolio, a potential privilege escalation path may occur when that portfolio is \n         then shared with other accounts. For a user in a recipient account who is <i>not</i> an Service Catalog Admin, \n         but still has the ability to create Principals (Users/Groups/Roles), that user could create a role that matches a principal \n         name association for the portfolio. Although this user may not know which principal names are associated through \n         Service Catalog, they may be able to guess the user. If this potential escalation path is a concern, then \n         Service Catalog recommends using <code>PrincipalType</code> as <code>IAM</code>. With this configuration, \n         the <code>PrincipalARN</code> must already exist in the recipient account before it can be associated. </p>\n         </note>"
+                "smithy.api#documentation": "<p>Associates the specified principal ARN with the specified portfolio.</p>\n         <p>If you share the portfolio with principal name sharing enabled, the <code>PrincipalARN</code> association is \n         included in the share. </p>\n         <p>The <code>PortfolioID</code>, <code>PrincipalARN</code>, and <code>PrincipalType</code> parameters are\n      required. </p>\n         <p>You can associate a maximum of 10 Principals with a portfolio using <code>PrincipalType</code> as <code>IAM_PATTERN</code>\n         </p>\n      \n         <note>\n            <p>When you associate a principal with portfolio, a potential privilege escalation path may occur when that portfolio is \n         then shared with other accounts. For a user in a recipient account who is <i>not</i> an Service Catalog Admin, \n         but still has the ability to create Principals (Users/Groups/Roles), that user could create a role that matches a principal \n         name association for the portfolio. Although this user may not know which principal names are associated through \n         Service Catalog, they may be able to guess the user. If this potential escalation path is a concern, then \n         Service Catalog recommends using <code>PrincipalType</code> as <code>IAM</code>. With this configuration, \n         the <code>PrincipalARN</code> must already exist in the recipient account before it can be associated. </p> \n         </note>"
             }
         },
         "com.amazonaws.servicecatalog#AssociatePrincipalWithPortfolioInput": {
@@ -1555,17 +1504,11 @@
                         "smithy.api#required": {}
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.servicecatalog#AssociatePrincipalWithPortfolioOutput": {
             "type": "structure",
-            "members": {},
-            "traits": {
-                "smithy.api#output": {}
-            }
+            "members": {}
         },
         "com.amazonaws.servicecatalog#AssociateProductWithPortfolio": {
             "type": "operation",
@@ -1619,17 +1562,11 @@
                         "smithy.api#documentation": "<p>The identifier of the source portfolio.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.servicecatalog#AssociateProductWithPortfolioOutput": {
             "type": "structure",
-            "members": {},
-            "traits": {
-                "smithy.api#output": {}
-            }
+            "members": {}
         },
         "com.amazonaws.servicecatalog#AssociateServiceActionWithProvisioningArtifact": {
             "type": "operation",
@@ -1684,17 +1621,11 @@
                         "smithy.api#documentation": "<p>The language code.</p>\n         <ul>\n            <li>\n               <p>\n                  <code>en</code> - English (default)</p>\n            </li>\n            <li>\n               <p>\n                  <code>jp</code> - Japanese</p>\n            </li>\n            <li>\n               <p>\n                  <code>zh</code> - Chinese</p>\n            </li>\n         </ul>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.servicecatalog#AssociateServiceActionWithProvisioningArtifactOutput": {
             "type": "structure",
-            "members": {},
-            "traits": {
-                "smithy.api#output": {}
-            }
+            "members": {}
         },
         "com.amazonaws.servicecatalog#AssociateTagOptionWithResource": {
             "type": "operation",
@@ -1745,17 +1676,11 @@
                         "smithy.api#required": {}
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.servicecatalog#AssociateTagOptionWithResourceOutput": {
             "type": "structure",
-            "members": {},
-            "traits": {
-                "smithy.api#output": {}
-            }
+            "members": {}
         },
         "com.amazonaws.servicecatalog#AttributeValue": {
             "type": "string"
@@ -1793,9 +1718,6 @@
                         "smithy.api#documentation": "<p>The language code.</p>\n         <ul>\n            <li>\n               <p>\n                  <code>en</code> - English (default)</p>\n            </li>\n            <li>\n               <p>\n                  <code>jp</code> - Japanese</p>\n            </li>\n            <li>\n               <p>\n                  <code>zh</code> - Chinese</p>\n            </li>\n         </ul>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.servicecatalog#BatchAssociateServiceActionWithProvisioningArtifactOutput": {
@@ -1807,9 +1729,6 @@
                         "smithy.api#documentation": "<p>An object that contains a list of errors, along with information to help you identify the self-service action.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#output": {}
             }
         },
         "com.amazonaws.servicecatalog#BatchDisassociateServiceActionFromProvisioningArtifact": {
@@ -1845,9 +1764,6 @@
                         "smithy.api#documentation": "<p>The language code.</p>\n         <ul>\n            <li>\n               <p>\n                  <code>en</code> - English (default)</p>\n            </li>\n            <li>\n               <p>\n                  <code>jp</code> - Japanese</p>\n            </li>\n            <li>\n               <p>\n                  <code>zh</code> - Chinese</p>\n            </li>\n         </ul>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.servicecatalog#BatchDisassociateServiceActionFromProvisioningArtifactOutput": {
@@ -1859,9 +1775,6 @@
                         "smithy.api#documentation": "<p>An object that contains a list of errors, along with information to help you identify the self-service action.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#output": {}
             }
         },
         "com.amazonaws.servicecatalog#Boolean": {
@@ -2125,7 +2038,7 @@
                 }
             ],
             "traits": {
-                "smithy.api#documentation": "<p>Copies the specified source product to the specified target product or a new\n         product.</p>\n         <p>You can copy a product to the same account or another account. You can copy a product\n         to the same Region or another Region. If you copy a product to another account, you must\n         first share the product in a portfolio using <a>CreatePortfolioShare</a>.</p>\n         <p>This operation is performed asynchronously. To track the progress of the\n         operation, use <a>DescribeCopyProductStatus</a>.</p>"
+                "smithy.api#documentation": "<p>Copies the specified source product to the specified target product or a new\n         product.</p> \n         <p>You can copy a product to the same account or another account. You can copy a product\n         to the same Region or another Region. If you copy a product to another account, you must\n         first share the product in a portfolio using <a>CreatePortfolioShare</a>.</p>\n         <p>This operation is performed asynchronously. To track the progress of the\n         operation, use <a>DescribeCopyProductStatus</a>.</p>"
             }
         },
         "com.amazonaws.servicecatalog#CopyProductInput": {
@@ -2176,9 +2089,6 @@
                         "smithy.api#required": {}
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.servicecatalog#CopyProductOutput": {
@@ -2190,9 +2100,6 @@
                         "smithy.api#documentation": "<p>The token to use to track the progress of the operation.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#output": {}
             }
         },
         "com.amazonaws.servicecatalog#CopyProductStatus": {
@@ -2295,9 +2202,6 @@
                         "smithy.api#required": {}
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.servicecatalog#CreateConstraintOutput": {
@@ -2321,9 +2225,6 @@
                         "smithy.api#documentation": "<p>The status of the current request.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#output": {}
             }
         },
         "com.amazonaws.servicecatalog#CreatePortfolio": {
@@ -2392,9 +2293,6 @@
                         "smithy.api#required": {}
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.servicecatalog#CreatePortfolioOutput": {
@@ -2412,9 +2310,6 @@
                         "smithy.api#documentation": "<p>Information about the tags associated with the portfolio.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#output": {}
             }
         },
         "com.amazonaws.servicecatalog#CreatePortfolioShare": {
@@ -2443,7 +2338,7 @@
                 }
             ],
             "traits": {
-                "smithy.api#documentation": "<p>Shares the specified portfolio with the specified account or organization node.\n         Shares to an organization node can only be created by the management account of an\n         organization or by a delegated administrator. You can share portfolios to an organization,\n         an organizational unit, or a specific account.</p>\n         <p>Note that if a delegated admin is de-registered, they can no longer create portfolio shares.</p>\n         <p>\n            <code>AWSOrganizationsAccess</code> must be enabled in order to create a portfolio share to an organization node.</p>\n         <p>You can't share a shared resource, including portfolios that contain a shared product.</p>\n         <p>If the portfolio share with the specified account or organization node already exists, this action will have no effect \n         and will not return an error. To update an existing share, you must use the <code> UpdatePortfolioShare</code> API instead. </p>\n         <note>\n            <p>When you associate a principal with portfolio, a potential privilege escalation path may occur when that portfolio is \n         then shared with other accounts. For a user in a recipient account who is <i>not</i> an Service Catalog Admin, \n         but still has the ability to create Principals (Users/Groups/Roles), that user could create a role that matches a principal \n         name association for the portfolio. Although this user may not know which principal names are associated through \n         Service Catalog, they may be able to guess the user. If this potential escalation path is a concern, then \n         Service Catalog recommends using <code>PrincipalType</code> as <code>IAM</code>. With this configuration, \n         the <code>PrincipalARN</code> must already exist in the recipient account before it can be associated. </p>\n         </note>"
+                "smithy.api#documentation": "<p>Shares the specified portfolio with the specified account or organization node.\n         Shares to an organization node can only be created by the management account of an\n         organization or by a delegated administrator. You can share portfolios to an organization,\n         an organizational unit, or a specific account.</p>\n         <p>Note that if a delegated admin is de-registered, they can no longer create portfolio shares.</p>\n        <p>\n            <code>AWSOrganizationsAccess</code> must be enabled in order to create a portfolio share to an organization node.</p>\n         <p>You can't share a shared resource, including portfolios that contain a shared product.</p>\n         <p>If the portfolio share with the specified account or organization node already exists, this action will have no effect \n         and will not return an error. To update an existing share, you must use the <code> UpdatePortfolioShare</code> API instead. </p>\n      \n         <note>\n            <p>When you associate a principal with portfolio, a potential privilege escalation path may occur when that portfolio is \n         then shared with other accounts. For a user in a recipient account who is <i>not</i> an Service Catalog Admin, \n         but still has the ability to create Principals (Users/Groups/Roles), that user could create a role that matches a principal \n         name association for the portfolio. Although this user may not know which principal names are associated through \n         Service Catalog, they may be able to guess the user. If this potential escalation path is a concern, then \n         Service Catalog recommends using <code>PrincipalType</code> as <code>IAM</code>. With this configuration, \n         the <code>PrincipalARN</code> must already exist in the recipient account before it can be associated. </p> \n         </note>"
             }
         },
         "com.amazonaws.servicecatalog#CreatePortfolioShareInput": {
@@ -2488,9 +2383,6 @@
                         "smithy.api#documentation": "<p>Enables or disables <code>Principal</code> sharing when creating the portfolio share. If this flag is not provided,\n         principal sharing is disabled. </p>\n         <p>When you enable Principal Name Sharing for a portfolio share, the share recipient\n         account end users with a principal that matches any of the associated IAM\n         patterns can provision products from the portfolio. Once\n         shared, the share recipient can view associations of <code>PrincipalType</code>: \n         <code>IAM_PATTERN</code> on their portfolio. You can create the principals in the recipient account before or \n         after creating the share. </p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.servicecatalog#CreatePortfolioShareOutput": {
@@ -2502,9 +2394,6 @@
                         "smithy.api#documentation": "<p>The portfolio shares a unique identifier that only returns if the portfolio is shared to an organization node.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#output": {}
             }
         },
         "com.amazonaws.servicecatalog#CreateProduct": {
@@ -2527,7 +2416,7 @@
                 }
             ],
             "traits": {
-                "smithy.api#documentation": "<p>Creates a product.</p>\n         <p>A delegated admin is authorized to invoke this command.</p>\n         <p>The user or role that performs this operation must have the\n            <code>cloudformation:GetTemplate</code> IAM policy permission. This policy permission is\n         required when using the <code>ImportFromPhysicalId</code> template source in the\n         information data section.</p>"
+                "smithy.api#documentation": "<p>Creates a product.</p>\n         <p>A delegated admin is authorized to invoke this command.</p>\n      \n         <p>The user or role that performs this operation must have the\n            <code>cloudformation:GetTemplate</code> IAM policy permission. This policy permission is\n         required when using the <code>ImportFromPhysicalId</code> template source in the\n         information data section.</p>"
             }
         },
         "com.amazonaws.servicecatalog#CreateProductInput": {
@@ -2616,9 +2505,6 @@
                         "smithy.api#documentation": "<p>Specifies connection details for the created product and syncs the product to the connection source\n         artifact. This automatically manages the product's artifacts based on changes to the source.\n         The <code>SourceConnection</code> parameter consists of the following sub-fields.</p>\n         <ul>\n            <li>\n               <p>\n                  <code>Type</code>\n               </p>\n            </li>\n            <li>\n               <p>\n                  <code>ConnectionParamters</code>\n               </p>\n            </li>\n         </ul>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.servicecatalog#CreateProductOutput": {
@@ -2642,9 +2528,6 @@
                         "smithy.api#documentation": "<p>Information about the tags associated with the product.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#output": {}
             }
         },
         "com.amazonaws.servicecatalog#CreateProvisionedProductPlan": {
@@ -2667,7 +2550,7 @@
                 }
             ],
             "traits": {
-                "smithy.api#documentation": "<p>Creates a plan.</p>\n         <p>A plan includes the list of resources to be  \n         created (when provisioning a new product) or modified (when updating a provisioned product)\n         when the plan is executed.</p>\n         <p>You can create one plan for each provisioned product. To create a plan for an existing \n         provisioned product, the product status must be AVAILABLE or TAINTED.</p>\n         <p>To view the resource changes in the change set, use <a>DescribeProvisionedProductPlan</a>.\n         To create or modify the provisioned product, use <a>ExecuteProvisionedProductPlan</a>.</p>"
+                "smithy.api#documentation": "<p>Creates a plan.</p> \n         <p>A plan includes the list of resources to be  \n         created (when provisioning a new product) or modified (when updating a provisioned product)\n         when the plan is executed.</p>\n         <p>You can create one plan for each provisioned product. To create a plan for an existing \n         provisioned product, the product status must be AVAILABLE or TAINTED.</p>\n         <p>To view the resource changes in the change set, use <a>DescribeProvisionedProductPlan</a>.\n         To create or modify the provisioned product, use <a>ExecuteProvisionedProductPlan</a>.</p>"
             }
         },
         "com.amazonaws.servicecatalog#CreateProvisionedProductPlanInput": {
@@ -2746,9 +2629,6 @@
                         "smithy.api#documentation": "<p>One or more tags.</p>\n         <p>If the plan is for an existing provisioned product, the product must have a <code>RESOURCE_UPDATE</code> constraint with <code>TagUpdatesOnProvisionedProduct</code> set to <code>ALLOWED</code> to allow tag updates.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.servicecatalog#CreateProvisionedProductPlanOutput": {
@@ -2784,9 +2664,6 @@
                         "smithy.api#documentation": "<p>The identifier of the provisioning artifact.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#output": {}
             }
         },
         "com.amazonaws.servicecatalog#CreateProvisioningArtifact": {
@@ -2809,7 +2686,7 @@
                 }
             ],
             "traits": {
-                "smithy.api#documentation": "<p>Creates a provisioning artifact (also known as a version) for the specified product.</p>\n         <p>You cannot create a provisioning artifact for a product that was shared with you.</p>\n         <p>The user or role that performs this operation must have the <code>cloudformation:GetTemplate</code>\n         IAM policy permission. This policy permission is required when using the\n         <code>ImportFromPhysicalId</code> template source in the information data section.</p>"
+                "smithy.api#documentation": "<p>Creates a provisioning artifact (also known as a version) for the specified product.</p> \n         <p>You cannot create a provisioning artifact for a product that was shared with you.</p>\n      \n         <p>The user or role that performs this operation must have the <code>cloudformation:GetTemplate</code>\n         IAM policy permission. This policy permission is required when using the\n         <code>ImportFromPhysicalId</code> template source in the information data section.</p>"
             }
         },
         "com.amazonaws.servicecatalog#CreateProvisioningArtifactInput": {
@@ -2843,9 +2720,6 @@
                         "smithy.api#required": {}
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.servicecatalog#CreateProvisioningArtifactOutput": {
@@ -2869,9 +2743,6 @@
                         "smithy.api#documentation": "<p>The status of the current request.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#output": {}
             }
         },
         "com.amazonaws.servicecatalog#CreateServiceAction": {
@@ -2938,9 +2809,6 @@
                         "smithy.api#required": {}
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.servicecatalog#CreateServiceActionOutput": {
@@ -2952,9 +2820,6 @@
                         "smithy.api#documentation": "<p>An object containing information about the self-service action.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#output": {}
             }
         },
         "com.amazonaws.servicecatalog#CreateTagOption": {
@@ -2997,9 +2862,6 @@
                         "smithy.api#required": {}
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.servicecatalog#CreateTagOptionOutput": {
@@ -3011,9 +2873,6 @@
                         "smithy.api#documentation": "<p>Information about the TagOption.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#output": {}
             }
         },
         "com.amazonaws.servicecatalog#CreatedTime": {
@@ -3061,17 +2920,11 @@
                         "smithy.api#required": {}
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.servicecatalog#DeleteConstraintOutput": {
             "type": "structure",
-            "members": {},
-            "traits": {
-                "smithy.api#output": {}
-            }
+            "members": {}
         },
         "com.amazonaws.servicecatalog#DeletePortfolio": {
             "type": "operation",
@@ -3115,17 +2968,11 @@
                         "smithy.api#required": {}
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.servicecatalog#DeletePortfolioOutput": {
             "type": "structure",
-            "members": {},
-            "traits": {
-                "smithy.api#output": {}
-            }
+            "members": {}
         },
         "com.amazonaws.servicecatalog#DeletePortfolioShare": {
             "type": "operation",
@@ -3181,9 +3028,6 @@
                         "smithy.api#documentation": "<p>The organization node to whom you are going to stop sharing.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.servicecatalog#DeletePortfolioShareOutput": {
@@ -3195,9 +3039,6 @@
                         "smithy.api#documentation": "<p>The portfolio share unique identifier. This will only be returned if delete is made to an organization node.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#output": {}
             }
         },
         "com.amazonaws.servicecatalog#DeleteProduct": {
@@ -3242,17 +3083,11 @@
                         "smithy.api#required": {}
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.servicecatalog#DeleteProductOutput": {
             "type": "structure",
-            "members": {},
-            "traits": {
-                "smithy.api#output": {}
-            }
+            "members": {}
         },
         "com.amazonaws.servicecatalog#DeleteProvisionedProductPlan": {
             "type": "operation",
@@ -3297,17 +3132,11 @@
                         "smithy.api#documentation": "<p>If set to true, Service Catalog stops managing the specified provisioned product even\n         if it cannot delete the underlying resources.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.servicecatalog#DeleteProvisionedProductPlanOutput": {
             "type": "structure",
-            "members": {},
-            "traits": {
-                "smithy.api#output": {}
-            }
+            "members": {}
         },
         "com.amazonaws.servicecatalog#DeleteProvisioningArtifact": {
             "type": "operation",
@@ -3329,7 +3158,7 @@
                 }
             ],
             "traits": {
-                "smithy.api#documentation": "<p>Deletes the specified provisioning artifact (also known as a version) for the specified product.</p>\n         <p>You cannot delete a provisioning artifact associated with a product that was shared with you. \n         You cannot delete the last provisioning artifact for a product, because a product must have at \n         least one provisioning artifact.</p>"
+                "smithy.api#documentation": "<p>Deletes the specified provisioning artifact (also known as a version) for the specified product.</p> \n         <p>You cannot delete a provisioning artifact associated with a product that was shared with you. \n         You cannot delete the last provisioning artifact for a product, because a product must have at \n         least one provisioning artifact.</p>"
             }
         },
         "com.amazonaws.servicecatalog#DeleteProvisioningArtifactInput": {
@@ -3355,17 +3184,11 @@
                         "smithy.api#required": {}
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.servicecatalog#DeleteProvisioningArtifactOutput": {
             "type": "structure",
-            "members": {},
-            "traits": {
-                "smithy.api#output": {}
-            }
+            "members": {}
         },
         "com.amazonaws.servicecatalog#DeleteServiceAction": {
             "type": "operation",
@@ -3403,17 +3226,11 @@
                         "smithy.api#documentation": "<p>The language code.</p>\n         <ul>\n            <li>\n               <p>\n                  <code>en</code> - English (default)</p>\n            </li>\n            <li>\n               <p>\n                  <code>jp</code> - Japanese</p>\n            </li>\n            <li>\n               <p>\n                  <code>zh</code> - Chinese</p>\n            </li>\n         </ul>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.servicecatalog#DeleteServiceActionOutput": {
             "type": "structure",
-            "members": {},
-            "traits": {
-                "smithy.api#output": {}
-            }
+            "members": {}
         },
         "com.amazonaws.servicecatalog#DeleteTagOption": {
             "type": "operation",
@@ -3449,17 +3266,11 @@
                         "smithy.api#required": {}
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.servicecatalog#DeleteTagOptionOutput": {
             "type": "structure",
-            "members": {},
-            "traits": {
-                "smithy.api#output": {}
-            }
+            "members": {}
         },
         "com.amazonaws.servicecatalog#DescribeConstraint": {
             "type": "operation",
@@ -3494,9 +3305,6 @@
                         "smithy.api#required": {}
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.servicecatalog#DescribeConstraintOutput": {
@@ -3520,9 +3328,6 @@
                         "smithy.api#documentation": "<p>The status of the current request.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#output": {}
             }
         },
         "com.amazonaws.servicecatalog#DescribeCopyProductStatus": {
@@ -3558,9 +3363,6 @@
                         "smithy.api#required": {}
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.servicecatalog#DescribeCopyProductStatusOutput": {
@@ -3584,9 +3386,6 @@
                         "smithy.api#documentation": "<p>The status message.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#output": {}
             }
         },
         "com.amazonaws.servicecatalog#DescribePortfolio": {
@@ -3622,9 +3421,6 @@
                         "smithy.api#required": {}
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.servicecatalog#DescribePortfolioOutput": {
@@ -3654,9 +3450,6 @@
                         "smithy.api#documentation": "<p>Information about the associated budgets.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#output": {}
             }
         },
         "com.amazonaws.servicecatalog#DescribePortfolioShareStatus": {
@@ -3692,9 +3485,6 @@
                         "smithy.api#required": {}
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.servicecatalog#DescribePortfolioShareStatusOutput": {
@@ -3730,9 +3520,6 @@
                         "smithy.api#documentation": "<p>Information about the portfolio share operation.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#output": {}
             }
         },
         "com.amazonaws.servicecatalog#DescribePortfolioShareType": {
@@ -3819,9 +3606,6 @@
                         "smithy.api#documentation": "<p>The maximum number of items to return with this call.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.servicecatalog#DescribePortfolioSharesOutput": {
@@ -3839,9 +3623,6 @@
                         "smithy.api#documentation": "<p>Summaries about each of the portfolio shares.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#output": {}
             }
         },
         "com.amazonaws.servicecatalog#DescribeProduct": {
@@ -3861,7 +3642,7 @@
                 }
             ],
             "traits": {
-                "smithy.api#documentation": "<p>Gets information about the specified product.</p>\n         <note>\n            <p>\n            Running this operation \n            with administrator access \n            results \n            in a failure. \n            <a>DescribeProductAsAdmin</a> should be used instead. \n         </p>\n         </note>"
+                "smithy.api#documentation": "<p>Gets information about the specified product.</p>"
             }
         },
         "com.amazonaws.servicecatalog#DescribeProductAsAdmin": {
@@ -3911,9 +3692,6 @@
                         "smithy.api#documentation": "<p>The unique identifier of the shared portfolio that the specified product is associated\n         with.</p>\n         <p>You can provide this parameter to retrieve the shared TagOptions associated with the\n         product. If this parameter is provided and if TagOptions sharing is enabled in the\n         portfolio share, the API returns both local and shared TagOptions associated with the\n         product. Otherwise only local TagOptions will be returned. </p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.servicecatalog#DescribeProductAsAdminOutput": {
@@ -3949,9 +3727,6 @@
                         "smithy.api#documentation": "<p>Information about the associated budgets.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#output": {}
             }
         },
         "com.amazonaws.servicecatalog#DescribeProductInput": {
@@ -3975,9 +3750,6 @@
                         "smithy.api#documentation": "<p>The product name.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.servicecatalog#DescribeProductOutput": {
@@ -4007,9 +3779,6 @@
                         "smithy.api#documentation": "<p>Information about the associated launch paths.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#output": {}
             }
         },
         "com.amazonaws.servicecatalog#DescribeProductView": {
@@ -4048,9 +3817,6 @@
                         "smithy.api#required": {}
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.servicecatalog#DescribeProductViewOutput": {
@@ -4068,9 +3834,6 @@
                         "smithy.api#documentation": "<p>Information about the provisioning artifacts for the product.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#output": {}
             }
         },
         "com.amazonaws.servicecatalog#DescribeProvisionedProduct": {
@@ -4116,8 +3879,7 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "DescribeProvisionedProductAPI input structure.\n\n        AcceptLanguage - [Optional]\n        The language code for localization.\n\n        Id - [Optional]\n        The provisioned product identifier.\n\n        Name - [Optional]\n        Another provisioned product identifier. Customers must provide either Id or Name.",
-                "smithy.api#input": {}
+                "smithy.api#documentation": "DescribeProvisionedProductAPI input structure.\n\n        AcceptLanguage - [Optional]\n        The language code for localization.\n\n        Id - [Optional]\n        The provisioned product identifier.\n\n        Name - [Optional]\n        Another provisioned product identifier. Customers must provide either Id or Name."
             }
         },
         "com.amazonaws.servicecatalog#DescribeProvisionedProductOutput": {
@@ -4135,9 +3897,6 @@
                         "smithy.api#documentation": "<p>Any CloudWatch dashboards that were created when provisioning the product.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#output": {}
             }
         },
         "com.amazonaws.servicecatalog#DescribeProvisionedProductPlan": {
@@ -4189,9 +3948,6 @@
                         "smithy.api#documentation": "<p>The page token for the next set of results. To retrieve the first set of results, use null.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.servicecatalog#DescribeProvisionedProductPlanOutput": {
@@ -4215,9 +3971,6 @@
                         "smithy.api#documentation": "<p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#output": {}
             }
         },
         "com.amazonaws.servicecatalog#DescribeProvisioningArtifact": {
@@ -4280,9 +4033,6 @@
                         "smithy.api#documentation": "<p>Indicates whether a verbose level of detail is enabled.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.servicecatalog#DescribeProvisioningArtifactOutput": {
@@ -4306,9 +4056,6 @@
                         "smithy.api#documentation": "<p>The status of the current request.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#output": {}
             }
         },
         "com.amazonaws.servicecatalog#DescribeProvisioningParameters": {
@@ -4376,9 +4123,6 @@
                         "smithy.api#documentation": "<p>The name of the path. You must provide the name or ID, but not both.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.servicecatalog#DescribeProvisioningParametersOutput": {
@@ -4429,9 +4173,6 @@
                         "smithy.api#documentation": "<p>A list of the keys and descriptions of the outputs. These outputs can be referenced from a provisioned product launched from this provisioning artifact.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#output": {}
             }
         },
         "com.amazonaws.servicecatalog#DescribeRecord": {
@@ -4448,7 +4189,7 @@
                 }
             ],
             "traits": {
-                "smithy.api#documentation": "<p>Gets information about the specified request operation.</p>\n         <p>Use this operation after calling a request operation (for example, <a>ProvisionProduct</a>, \n         <a>TerminateProvisionedProduct</a>, or <a>UpdateProvisionedProduct</a>).\n      </p>\n         <note>\n            <p>If a provisioned product was transferred to a new owner using <a>UpdateProvisionedProductProperties</a>, the new owner \n      will be able to describe all past records for that product. The previous owner will no longer be able to describe the records, but will be able to \n      use <a>ListRecordHistory</a> to see the product's history from when he was the owner.</p>\n         </note>"
+                "smithy.api#documentation": "<p>Gets information about the specified request operation.</p> \n         <p>Use this operation after calling a request operation (for example, <a>ProvisionProduct</a>, \n         <a>TerminateProvisionedProduct</a>, or <a>UpdateProvisionedProduct</a>).\n      </p>\n         <note>\n            <p>If a provisioned product was transferred to a new owner using <a>UpdateProvisionedProductProperties</a>, the new owner \n      will be able to describe all past records for that product. The previous owner will no longer be able to describe the records, but will be able to \n      use <a>ListRecordHistory</a> to see the product's history from when he was the owner.</p>\n         </note>"
             }
         },
         "com.amazonaws.servicecatalog#DescribeRecordInput": {
@@ -4480,9 +4221,6 @@
                         "smithy.api#documentation": "<p>The maximum number of items to return with this call.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.servicecatalog#DescribeRecordOutput": {
@@ -4506,9 +4244,6 @@
                         "smithy.api#documentation": "<p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#output": {}
             }
         },
         "com.amazonaws.servicecatalog#DescribeServiceAction": {
@@ -4571,9 +4306,6 @@
                         "smithy.api#documentation": "<p>The language code.</p>\n         <ul>\n            <li>\n               <p>\n                  <code>en</code> - English (default)</p>\n            </li>\n            <li>\n               <p>\n                  <code>jp</code> - Japanese</p>\n            </li>\n            <li>\n               <p>\n                  <code>zh</code> - Chinese</p>\n            </li>\n         </ul>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.servicecatalog#DescribeServiceActionExecutionParametersOutput": {
@@ -4585,9 +4317,6 @@
                         "smithy.api#documentation": "<p>The parameters of the self-service action.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#output": {}
             }
         },
         "com.amazonaws.servicecatalog#DescribeServiceActionInput": {
@@ -4606,9 +4335,6 @@
                         "smithy.api#documentation": "<p>The language code.</p>\n         <ul>\n            <li>\n               <p>\n                  <code>en</code> - English (default)</p>\n            </li>\n            <li>\n               <p>\n                  <code>jp</code> - Japanese</p>\n            </li>\n            <li>\n               <p>\n                  <code>zh</code> - Chinese</p>\n            </li>\n         </ul>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.servicecatalog#DescribeServiceActionOutput": {
@@ -4620,9 +4346,6 @@
                         "smithy.api#documentation": "<p>Detailed information about the self-service action.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#output": {}
             }
         },
         "com.amazonaws.servicecatalog#DescribeTagOption": {
@@ -4656,9 +4379,6 @@
                         "smithy.api#required": {}
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.servicecatalog#DescribeTagOptionOutput": {
@@ -4670,9 +4390,6 @@
                         "smithy.api#documentation": "<p>Information about the TagOption.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#output": {}
             }
         },
         "com.amazonaws.servicecatalog#Description": {
@@ -4703,17 +4420,11 @@
         },
         "com.amazonaws.servicecatalog#DisableAWSOrganizationsAccessInput": {
             "type": "structure",
-            "members": {},
-            "traits": {
-                "smithy.api#input": {}
-            }
+            "members": {}
         },
         "com.amazonaws.servicecatalog#DisableAWSOrganizationsAccessOutput": {
             "type": "structure",
-            "members": {},
-            "traits": {
-                "smithy.api#output": {}
-            }
+            "members": {}
         },
         "com.amazonaws.servicecatalog#DisableTemplateValidation": {
             "type": "boolean",
@@ -4755,17 +4466,11 @@
                         "smithy.api#required": {}
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.servicecatalog#DisassociateBudgetFromResourceOutput": {
             "type": "structure",
-            "members": {},
-            "traits": {
-                "smithy.api#output": {}
-            }
+            "members": {}
         },
         "com.amazonaws.servicecatalog#DisassociatePrincipalFromPortfolio": {
             "type": "operation",
@@ -4816,17 +4521,11 @@
                         "smithy.api#documentation": "<p>The supported value is <code>IAM</code> if you use a fully defined ARN, or <code>IAM_PATTERN</code>\n         if you use no <code>accountID</code>. </p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.servicecatalog#DisassociatePrincipalFromPortfolioOutput": {
             "type": "structure",
-            "members": {},
-            "traits": {
-                "smithy.api#output": {}
-            }
+            "members": {}
         },
         "com.amazonaws.servicecatalog#DisassociateProductFromPortfolio": {
             "type": "operation",
@@ -4874,17 +4573,11 @@
                         "smithy.api#required": {}
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.servicecatalog#DisassociateProductFromPortfolioOutput": {
             "type": "structure",
-            "members": {},
-            "traits": {
-                "smithy.api#output": {}
-            }
+            "members": {}
         },
         "com.amazonaws.servicecatalog#DisassociateServiceActionFromProvisioningArtifact": {
             "type": "operation",
@@ -4933,17 +4626,11 @@
                         "smithy.api#documentation": "<p>The language code.</p>\n         <ul>\n            <li>\n               <p>\n                  <code>en</code> - English (default)</p>\n            </li>\n            <li>\n               <p>\n                  <code>jp</code> - Japanese</p>\n            </li>\n            <li>\n               <p>\n                  <code>zh</code> - Chinese</p>\n            </li>\n         </ul>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.servicecatalog#DisassociateServiceActionFromProvisioningArtifactOutput": {
             "type": "structure",
-            "members": {},
-            "traits": {
-                "smithy.api#output": {}
-            }
+            "members": {}
         },
         "com.amazonaws.servicecatalog#DisassociateTagOptionFromResource": {
             "type": "operation",
@@ -4984,17 +4671,11 @@
                         "smithy.api#required": {}
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.servicecatalog#DisassociateTagOptionFromResourceOutput": {
             "type": "structure",
-            "members": {},
-            "traits": {
-                "smithy.api#output": {}
-            }
+            "members": {}
         },
         "com.amazonaws.servicecatalog#DuplicateResourceException": {
             "type": "structure",
@@ -5033,17 +4714,11 @@
         },
         "com.amazonaws.servicecatalog#EnableAWSOrganizationsAccessInput": {
             "type": "structure",
-            "members": {},
-            "traits": {
-                "smithy.api#input": {}
-            }
+            "members": {}
         },
         "com.amazonaws.servicecatalog#EnableAWSOrganizationsAccessOutput": {
             "type": "structure",
-            "members": {},
-            "traits": {
-                "smithy.api#output": {}
-            }
+            "members": {}
         },
         "com.amazonaws.servicecatalog#Error": {
             "type": "string"
@@ -5127,9 +4802,6 @@
                         "smithy.api#required": {}
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.servicecatalog#ExecuteProvisionedProductPlanOutput": {
@@ -5141,9 +4813,6 @@
                         "smithy.api#documentation": "<p>Information about the result of provisioning the product.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#output": {}
             }
         },
         "com.amazonaws.servicecatalog#ExecuteProvisionedProductServiceAction": {
@@ -5206,9 +4875,6 @@
                         "smithy.api#documentation": "<p>A map of all self-service action parameters and their values. If a provided parameter is of a special type, such as <code>TARGET</code>, the provided value will \n            override the default value generated by Service Catalog. If the parameters field is not provided, no additional parameters are passed and default values will be used for \n            any special parameters such as <code>TARGET</code>.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.servicecatalog#ExecuteProvisionedProductServiceActionOutput": {
@@ -5220,9 +4886,6 @@
                         "smithy.api#documentation": "<p>An object containing detailed information about the result of provisioning the product.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#output": {}
             }
         },
         "com.amazonaws.servicecatalog#ExecutionParameter": {
@@ -5383,10 +5046,7 @@
         },
         "com.amazonaws.servicecatalog#GetAWSOrganizationsAccessStatusInput": {
             "type": "structure",
-            "members": {},
-            "traits": {
-                "smithy.api#input": {}
-            }
+            "members": {}
         },
         "com.amazonaws.servicecatalog#GetAWSOrganizationsAccessStatusOutput": {
             "type": "structure",
@@ -5397,9 +5057,6 @@
                         "smithy.api#documentation": "<p>The status of the portfolio share feature.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#output": {}
             }
         },
         "com.amazonaws.servicecatalog#GetProvisionedProductOutputs": {
@@ -5467,9 +5124,6 @@
                         "smithy.api#documentation": "<p>The page token for the next set of results. To retrieve the first set of results, use null.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.servicecatalog#GetProvisionedProductOutputsOutput": {
@@ -5487,9 +5141,6 @@
                         "smithy.api#documentation": "<p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#output": {}
             }
         },
         "com.amazonaws.servicecatalog#HasDefaultPath": {
@@ -5547,7 +5198,7 @@
                 }
             ],
             "traits": {
-                "smithy.api#documentation": "<p>\n         Requests the import \n         of a resource \n         as an Service Catalog provisioned product \n         that is associated \n         to an Service Catalog product and provisioning artifact. \n         Once imported, \n         all supported governance actions are supported \n         on the provisioned product.\n      </p>\n         <p>\n         Resource import only supports CloudFormation stack ARNs. CloudFormation StackSets, and non-root nested stacks are not supported.\n      </p>\n         <p>\n         The CloudFormation stack must have one \n         of the following statuses \n         to be imported: <code>CREATE_COMPLETE</code>, <code>UPDATE_COMPLETE</code>, <code>UPDATE_ROLLBACK_COMPLETE</code>, <code>IMPORT_COMPLETE</code>, and <code>IMPORT_ROLLBACK_COMPLETE</code>.\n      </p>\n         <p>\n         Import \n         of the resource requires \n         that the CloudFormation stack template matches the associated Service Catalog product provisioning artifact.\n      </p>\n         <note>\n            <p>\n            When you import an existing CloudFormation stack \n            into a portfolio, \n            constraints \n            that are associated \n            with the product \n            aren't applied \n            during the import process.  \n            The constraints are applied \n            after you call <code>UpdateProvisionedProduct</code> \n            for the provisioned product.\n         </p>\n         </note>\n         <p>\n         The user or role \n         that performs this operation \n         must have the <code>cloudformation:GetTemplate</code> and <code>cloudformation:DescribeStacks</code> IAM policy permissions.\n      </p>"
+                "smithy.api#documentation": "<p>Requests the import of a resource as an Service Catalog provisioned product that is\n         associated to an Service Catalog product and provisioning artifact. Once imported, all\n         supported Service Catalog governance actions are supported on the provisioned\n         product.</p>\n         <p>Resource import only supports CloudFormation stack ARNs. CloudFormation StackSets and\n         non-root nested stacks are not supported.</p>\n         <p>The CloudFormation stack must have one of the following statuses to be imported:\n         <code>CREATE_COMPLETE</code>, <code>UPDATE_COMPLETE</code>, <code>UPDATE_ROLLBACK_COMPLETE</code>, <code>IMPORT_COMPLETE</code>,\n         <code>IMPORT_ROLLBACK_COMPLETE</code>.</p>\n         <p>Import of the resource requires that the CloudFormation stack template matches the\n         associated Service Catalog product provisioning artifact. </p>\n     \n         <p>The user or role that performs this operation must have the <code>cloudformation:GetTemplate</code>\n         and <code>cloudformation:DescribeStacks</code> IAM policy permissions. </p>"
             }
         },
         "com.amazonaws.servicecatalog#ImportAsProvisionedProductInput": {
@@ -5595,9 +5246,6 @@
                         "smithy.api#required": {}
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.servicecatalog#ImportAsProvisionedProductOutput": {
@@ -5606,9 +5254,6 @@
                 "RecordDetail": {
                     "target": "com.amazonaws.servicecatalog#RecordDetail"
                 }
-            },
-            "traits": {
-                "smithy.api#output": {}
             }
         },
         "com.amazonaws.servicecatalog#InstructionType": {
@@ -5837,9 +5482,6 @@
                         "smithy.api#documentation": "<p>The type of shared portfolios to list. The default is to list imported portfolios.</p>\n         <ul>\n            <li>\n               <p>\n                  <code>AWS_ORGANIZATIONS</code> - List portfolios accepted and shared via organizational sharing by the management account or delegated administrator of your organization.</p>\n            </li>\n            <li>\n               <p>\n                  <code>AWS_SERVICECATALOG</code> - Deprecated type.</p>\n            </li>\n            <li>\n               <p>\n                  <code>IMPORTED</code> - List imported portfolios that have been accepted and\n               shared through account-to-account sharing.</p>\n            </li>\n         </ul>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.servicecatalog#ListAcceptedPortfolioSharesOutput": {
@@ -5857,9 +5499,6 @@
                         "smithy.api#documentation": "<p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#output": {}
             }
         },
         "com.amazonaws.servicecatalog#ListBudgetsForResource": {
@@ -5916,9 +5555,6 @@
                         "smithy.api#documentation": "<p>The page token for the next set of results. To retrieve the first set of results, use null.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.servicecatalog#ListBudgetsForResourceOutput": {
@@ -5936,9 +5572,6 @@
                         "smithy.api#documentation": "<p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#output": {}
             }
         },
         "com.amazonaws.servicecatalog#ListConstraintsForPortfolio": {
@@ -6001,9 +5634,6 @@
                         "smithy.api#documentation": "<p>The page token for the next set of results. To retrieve the first set of results, use null.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.servicecatalog#ListConstraintsForPortfolioOutput": {
@@ -6021,9 +5651,6 @@
                         "smithy.api#documentation": "<p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#output": {}
             }
         },
         "com.amazonaws.servicecatalog#ListLaunchPaths": {
@@ -6043,7 +5670,7 @@
                 }
             ],
             "traits": {
-                "smithy.api#documentation": "<p>\n         Lists the paths \n         to the specified product. \n         A path describes\n         how the user\n         gets access \n         to a specified product\n         and is necessary \n         when provisioning a product. \n         A path also determines the constraints \n         that are put on a product. \n         A path is dependent \n         on a specific product, porfolio, and principal.\n      </p>\n         <note>\n            <p>\n            When provisioning a product \n            that's been added \n            to a portfolio, \n            you must grant your user, group, or role access \n            to the portfolio. \n            For more information, \n            see <a href=\"https://docs.aws.amazon.com/servicecatalog/latest/adminguide/catalogs_portfolios_users.html\">Granting users access</a> \n            in the <i>Service Catalog User Guide</i>.\n         </p>\n         </note>",
+                "smithy.api#documentation": "<p>Lists the paths to the specified product. A path is how the user\n         has access to a specified product, and is necessary when provisioning a product. A path\n         also determines the constraints put on the product.</p>",
                 "smithy.api#paginated": {
                     "inputToken": "PageToken",
                     "outputToken": "NextPageToken",
@@ -6080,9 +5707,6 @@
                         "smithy.api#documentation": "<p>The page token for the next set of results. To retrieve the first set of results, use null.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.servicecatalog#ListLaunchPathsOutput": {
@@ -6100,9 +5724,6 @@
                         "smithy.api#documentation": "<p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#output": {}
             }
         },
         "com.amazonaws.servicecatalog#ListOrganizationPortfolioAccess": {
@@ -6169,9 +5790,6 @@
                         "smithy.api#documentation": "<p>The maximum number of items to return with this call.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.servicecatalog#ListOrganizationPortfolioAccessOutput": {
@@ -6189,9 +5807,6 @@
                         "smithy.api#documentation": "<p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#output": {}
             }
         },
         "com.amazonaws.servicecatalog#ListPortfolioAccess": {
@@ -6254,9 +5869,6 @@
                         "smithy.api#documentation": "<p>The maximum number of items to return with this call.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.servicecatalog#ListPortfolioAccessOutput": {
@@ -6274,9 +5886,6 @@
                         "smithy.api#documentation": "<p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#output": {}
             }
         },
         "com.amazonaws.servicecatalog#ListPortfolios": {
@@ -6355,9 +5964,6 @@
                         "smithy.api#documentation": "<p>The maximum number of items to return with this call.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.servicecatalog#ListPortfoliosForProductOutput": {
@@ -6375,9 +5981,6 @@
                         "smithy.api#documentation": "<p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#output": {}
             }
         },
         "com.amazonaws.servicecatalog#ListPortfoliosInput": {
@@ -6402,9 +6005,6 @@
                         "smithy.api#documentation": "<p>The maximum number of items to return with this call.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.servicecatalog#ListPortfoliosOutput": {
@@ -6422,9 +6022,6 @@
                         "smithy.api#documentation": "<p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#output": {}
             }
         },
         "com.amazonaws.servicecatalog#ListPrincipalsForPortfolio": {
@@ -6481,9 +6078,6 @@
                         "smithy.api#documentation": "<p>The page token for the next set of results. To retrieve the first set of results, use null.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.servicecatalog#ListPrincipalsForPortfolioOutput": {
@@ -6501,9 +6095,6 @@
                         "smithy.api#documentation": "<p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#output": {}
             }
         },
         "com.amazonaws.servicecatalog#ListProvisionedProductPlans": {
@@ -6560,9 +6151,6 @@
                         "smithy.api#documentation": "<p>The access level to use to obtain results. The default is <code>User</code>.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.servicecatalog#ListProvisionedProductPlansOutput": {
@@ -6580,9 +6168,6 @@
                         "smithy.api#documentation": "<p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#output": {}
             }
         },
         "com.amazonaws.servicecatalog#ListProvisioningArtifacts": {
@@ -6659,9 +6244,6 @@
                         "smithy.api#documentation": "<p>The language code.</p>\n         <ul>\n            <li>\n               <p>\n                  <code>en</code> - English (default)</p>\n            </li>\n            <li>\n               <p>\n                  <code>jp</code> - Japanese</p>\n            </li>\n            <li>\n               <p>\n                  <code>zh</code> - Chinese</p>\n            </li>\n         </ul>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.servicecatalog#ListProvisioningArtifactsForServiceActionOutput": {
@@ -6679,9 +6261,6 @@
                         "smithy.api#documentation": "<p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#output": {}
             }
         },
         "com.amazonaws.servicecatalog#ListProvisioningArtifactsInput": {
@@ -6700,9 +6279,6 @@
                         "smithy.api#required": {}
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.servicecatalog#ListProvisioningArtifactsOutput": {
@@ -6720,9 +6296,6 @@
                         "smithy.api#documentation": "<p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#output": {}
             }
         },
         "com.amazonaws.servicecatalog#ListRecordHistory": {
@@ -6776,9 +6349,6 @@
                         "smithy.api#documentation": "<p>The page token for the next set of results. To retrieve the first set of results, use null.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.servicecatalog#ListRecordHistoryOutput": {
@@ -6796,9 +6366,6 @@
                         "smithy.api#documentation": "<p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#output": {}
             }
         },
         "com.amazonaws.servicecatalog#ListRecordHistorySearchFilter": {
@@ -6882,9 +6449,6 @@
                         "smithy.api#httpQuery": "pageToken"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.servicecatalog#ListResourcesForTagOptionOutput": {
@@ -6902,9 +6466,6 @@
                         "smithy.api#documentation": "<p>The page token for the next set of results. To retrieve the first set of results, use null.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#output": {}
             }
         },
         "com.amazonaws.servicecatalog#ListServiceActions": {
@@ -6990,9 +6551,6 @@
                         "smithy.api#documentation": "<p>The language code.</p>\n         <ul>\n            <li>\n               <p>\n                  <code>en</code> - English (default)</p>\n            </li>\n            <li>\n               <p>\n                  <code>jp</code> - Japanese</p>\n            </li>\n            <li>\n               <p>\n                  <code>zh</code> - Chinese</p>\n            </li>\n         </ul>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.servicecatalog#ListServiceActionsForProvisioningArtifactOutput": {
@@ -7010,9 +6568,6 @@
                         "smithy.api#documentation": "<p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#output": {}
             }
         },
         "com.amazonaws.servicecatalog#ListServiceActionsInput": {
@@ -7037,9 +6592,6 @@
                         "smithy.api#documentation": "<p>The page token for the next set of results. To retrieve the first set of results, use null.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.servicecatalog#ListServiceActionsOutput": {
@@ -7057,9 +6609,6 @@
                         "smithy.api#documentation": "<p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#output": {}
             }
         },
         "com.amazonaws.servicecatalog#ListStackInstancesForProvisionedProduct": {
@@ -7111,9 +6660,6 @@
                         "smithy.api#documentation": "<p>The maximum number of items to return with this call.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.servicecatalog#ListStackInstancesForProvisionedProductOutput": {
@@ -7131,9 +6677,6 @@
                         "smithy.api#documentation": "<p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#output": {}
             }
         },
         "com.amazonaws.servicecatalog#ListTagOptions": {
@@ -7209,9 +6752,6 @@
                         "smithy.api#documentation": "<p>The page token for the next set of results. To retrieve the first set of results, use null.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.servicecatalog#ListTagOptionsOutput": {
@@ -7229,9 +6769,6 @@
                         "smithy.api#documentation": "<p>The page token for the next set of results. To retrieve the first set of results, use null.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#output": {}
             }
         },
         "com.amazonaws.servicecatalog#LogicalResourceId": {
@@ -7422,7 +6959,7 @@
                 "ConstraintDescription": {
                     "target": "com.amazonaws.servicecatalog#String",
                     "traits": {
-                        "smithy.api#documentation": "<p>A string that explains a constraint when the constraint is violated. For example, without a constraint description, a parameter that has an allowed pattern of <code>[A-Za-z0-9]+</code> displays the following error message when the user specifies an invalid value:</p>\n         <p>\n            <code>Malformed input-Parameter MyParameter must match pattern [A-Za-z0-9]+</code>\n         </p>\n         <p>By adding a constraint description, such as must only contain letters (uppercase and lowercase) and numbers, you can display the following customized error message:</p>\n         <p>\n            <code>Malformed input-Parameter MyParameter must only contain uppercase and lowercase letters and numbers.</code>\n         </p>"
+                        "smithy.api#documentation": "<p>A string that explains a constraint when the constraint is violated. For example, without a constraint description, a parameter that has an allowed pattern of <code>[A-Za-z0-9]+</code> displays the following error message when the user specifies an invalid value:</p>\n      \n         <p>\n            <code>Malformed input-Parameter MyParameter must match pattern [A-Za-z0-9]+</code>\n         </p>\n      \n         <p>By adding a constraint description, such as must only contain letters (uppercase and lowercase) and numbers, you can display the following customized error message:</p>\n      \n         <p>\n            <code>Malformed input-Parameter MyParameter must only contain uppercase and lowercase letters and numbers.</code>\n         </p>"
                     }
                 },
                 "MaxLength": {
@@ -8055,7 +7592,7 @@
                 }
             ],
             "traits": {
-                "smithy.api#documentation": "<p>\n         Provisions the specified product.\n      </p>\n         <p>\n         A provisioned product is a resourced instance \n         of a product. \n         For example, \n         provisioning a product \n         that's based \n         on an CloudFormation template \n         launches an CloudFormation stack and its underlying resources.\n         You can check the status \n         of this request \n         using <a>DescribeRecord</a>.\n      </p>\n         <p>\n         If the request contains a tag key \n         with an empty list \n         of values, \n         there's a tag conflict \n         for that key. \n         Don't include conflicted keys \n         as tags, \n         or this will cause the error \"Parameter validation failed: Missing required parameter in Tags[<i>N</i>]:<i>Value</i>\".\n      </p>\n         <note>\n            <p>\n            When provisioning a product \n            that's been added \n            to a portfolio, \n            you must grant your user, group, or role access \n            to the portfolio. \n            For more information, \n            see <a href=\"https://docs.aws.amazon.com/servicecatalog/latest/adminguide/catalogs_portfolios_users.html\">Granting users access</a> \n            in the <i>Service Catalog User Guide</i>.\n         </p>\n         </note>"
+                "smithy.api#documentation": "<p>Provisions the specified product.</p>\n         <p>A provisioned product is a resourced instance of a product. \n         For example, provisioning a product based on a CloudFormation template launches a\n         CloudFormation stack and its underlying resources.\n         You can check the status of this request using <a>DescribeRecord</a>.</p>\n         <p>If the request contains a tag key with an empty list of values, there is a\n         tag conflict for that key. Do not include conflicted keys as tags, or this causes\n         the error \"Parameter validation failed: Missing required parameter in\n         Tags[<i>N</i>]:<i>Value</i>\".</p>"
             }
         },
         "com.amazonaws.servicecatalog#ProvisionProductInput": {
@@ -8142,9 +7679,6 @@
                         "smithy.api#required": {}
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.servicecatalog#ProvisionProductOutput": {
@@ -8156,9 +7690,6 @@
                         "smithy.api#documentation": "<p>Information about the result of provisioning the product.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#output": {}
             }
         },
         "com.amazonaws.servicecatalog#ProvisionedProductAttribute": {
@@ -8991,7 +8522,7 @@
                 "Info": {
                     "target": "com.amazonaws.servicecatalog#ProvisioningArtifactInfo",
                     "traits": {
-                        "smithy.api#documentation": "<p>Specify the template source with one of the following options, but not both.\n         Keys accepted: [ <code>LoadTemplateFromURL</code>, <code>ImportFromPhysicalId</code> ]</p>\n         <p>The URL of the CloudFormation template in Amazon S3 or GitHub in JSON format.\n       Specify the URL in JSON format as follows:</p>\n         <p>\n            <code>\"LoadTemplateFromURL\": \"https://s3.amazonaws.com/cf-templates-ozkq9d3hgiq2-us-east-1/...\"</code>\n         </p>\n         <p>\n            <code>ImportFromPhysicalId</code>: The physical id of the resource that contains the\n         template. Currently only supports CloudFormation stack arn. Specify the physical id in JSON\n         format as follows: <code>ImportFromPhysicalId: “arn:aws:cloudformation:[us-east-1]:[accountId]:stack/[StackName]/[resourceId]</code>\n         </p>"
+                        "smithy.api#documentation": "<p>Specify the template source with one of the following options, but not both.\n         Keys accepted: [ <code>LoadTemplateFromURL</code>, <code>ImportFromPhysicalId</code> ]</p>\n         <p>The URL of the CloudFormation template in Amazon S3 or GitHub in JSON format.\n       Specify the URL in JSON format as follows:</p>\n         <p>\n            <code>\"LoadTemplateFromURL\": \"https://s3.amazonaws.com/cf-templates-ozkq9d3hgiq2-us-east-1/...\"</code>\n         </p> \n         <p>\n            <code>ImportFromPhysicalId</code>: The physical id of the resource that contains the\n         template. Currently only supports CloudFormation stack arn. Specify the physical id in JSON\n         format as follows: <code>ImportFromPhysicalId: “arn:aws:cloudformation:[us-east-1]:[accountId]:stack/[StackName]/[resourceId]</code>\n         </p>"
                     }
                 },
                 "Type": {
@@ -9483,17 +9014,11 @@
                         "smithy.api#documentation": "<p>The type of shared portfolios to reject. The default is to reject imported portfolios.</p>\n         <ul>\n            <li>\n               <p>\n                  <code>AWS_ORGANIZATIONS</code> - Reject portfolios shared by the management account of your\n               organization.</p>\n            </li>\n            <li>\n               <p>\n                  <code>IMPORTED</code> - Reject imported portfolios.</p>\n            </li>\n            <li>\n               <p>\n                  <code>AWS_SERVICECATALOG</code> - Not supported. (Throws ResourceNotFoundException.)</p>\n            </li>\n         </ul>\n         <p>For example, <code>aws servicecatalog reject-portfolio-share --portfolio-id \"port-2qwzkwxt3y5fk\" --portfolio-share-type AWS_ORGANIZATIONS</code>\n         </p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.servicecatalog#RejectPortfolioShareOutput": {
             "type": "structure",
-            "members": {},
-            "traits": {
-                "smithy.api#output": {}
-            }
+            "members": {}
         },
         "com.amazonaws.servicecatalog#Replacement": {
             "type": "enum",
@@ -9882,9 +9407,6 @@
                         "smithy.api#documentation": "<p>The page token for the next set of results. To retrieve the first set of results, use null.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.servicecatalog#ScanProvisionedProductsOutput": {
@@ -9902,9 +9424,6 @@
                         "smithy.api#documentation": "<p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#output": {}
             }
         },
         "com.amazonaws.servicecatalog#Scope": {
@@ -10018,9 +9537,6 @@
                         "smithy.api#documentation": "<p>Access level of the source of the product.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.servicecatalog#SearchProductsAsAdminOutput": {
@@ -10038,9 +9554,6 @@
                         "smithy.api#documentation": "<p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#output": {}
             }
         },
         "com.amazonaws.servicecatalog#SearchProductsInput": {
@@ -10083,9 +9596,6 @@
                         "smithy.api#documentation": "<p>The page token for the next set of results. To retrieve the first set of results, use null.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.servicecatalog#SearchProductsOutput": {
@@ -10109,9 +9619,6 @@
                         "smithy.api#documentation": "<p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#output": {}
             }
         },
         "com.amazonaws.servicecatalog#SearchProvisionedProducts": {
@@ -10128,7 +9635,7 @@
                 }
             ],
             "traits": {
-                "smithy.api#documentation": "<p>Gets information about the provisioned products that meet the specified criteria.</p>",
+                "smithy.api#documentation": "<p>Gets information about the provisioned products that meet the specified criteria.</p>\n      \n         <note>\n            <p>To ensure a complete list of provisioned products and remove duplicate products, use\n               <code>sort-by createdTime</code>. </p>\n            <p>Here is a CLI example: <code> </code>\n            </p>\n            <p>\n               <code>aws servicecatalog search-provisioned-products --sort-by createdTime </code>\n            </p>\n         </note>",
                 "smithy.api#paginated": {
                     "inputToken": "PageToken",
                     "outputToken": "NextPageToken",
@@ -10154,7 +9661,7 @@
                 "Filters": {
                     "target": "com.amazonaws.servicecatalog#ProvisionedProductFilters",
                     "traits": {
-                        "smithy.api#documentation": "<p>The search filters.</p>\n         <p>When the key is <code>SearchQuery</code>, the searchable fields are <code>arn</code>, \n         <code>createdTime</code>, <code>id</code>, <code>lastRecordId</code>,\n         <code>idempotencyToken</code>, <code>name</code>, <code>physicalId</code>, <code>productId</code>, \n         <code>provisioningArtifact</code>, <code>type</code>, <code>status</code>,\n         <code>tags</code>, <code>userArn</code>, <code>userArnSession</code>, <code>lastProvisioningRecordId</code>, <code>lastSuccessfulProvisioningRecordId</code>, \n         <code>productName</code>, and <code>provisioningArtifactName</code>.</p>\n         <p>Example: <code>\"SearchQuery\":[\"status:AVAILABLE\"]</code>\n         </p>"
+                        "smithy.api#documentation": "<p>The search filters.</p> \n         <p>When the key is <code>SearchQuery</code>, the searchable fields are <code>arn</code>, \n         <code>createdTime</code>, <code>id</code>, <code>lastRecordId</code>,\n         <code>idempotencyToken</code>, <code>name</code>, <code>physicalId</code>, <code>productId</code>, \n         <code>provisioningArtifact</code>, <code>type</code>, <code>status</code>,\n         <code>tags</code>, <code>userArn</code>, <code>userArnSession</code>, <code>lastProvisioningRecordId</code>, <code>lastSuccessfulProvisioningRecordId</code>, \n         <code>productName</code>, and <code>provisioningArtifactName</code>.</p>\n         <p>Example: <code>\"SearchQuery\":[\"status:AVAILABLE\"]</code>\n         </p>"
                     }
                 },
                 "SortBy": {
@@ -10182,9 +9689,6 @@
                         "smithy.api#documentation": "<p>The page token for the next set of results. To retrieve the first set of results, use null.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.servicecatalog#SearchProvisionedProductsOutput": {
@@ -10209,9 +9713,6 @@
                         "smithy.api#documentation": "<p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#output": {}
             }
         },
         "com.amazonaws.servicecatalog#SearchProvisionedProductsPageSize": {
@@ -11085,9 +10586,6 @@
                         "smithy.api#documentation": "<p>When this boolean parameter is set to true, the <code>TerminateProvisionedProduct</code> API deletes\n         the Service Catalog provisioned product. However, it does not remove the CloudFormation\n         stack, stack set, or the underlying resources of the deleted provisioned product. The\n         default value is false.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.servicecatalog#TerminateProvisionedProductOutput": {
@@ -11099,9 +10597,6 @@
                         "smithy.api#documentation": "<p>Information about the result of this request.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#output": {}
             }
         },
         "com.amazonaws.servicecatalog#TotalResultsCount": {
@@ -11158,9 +10653,6 @@
                         "smithy.api#documentation": "<p>The constraint parameters, in JSON format. The syntax depends on the constraint type as follows:</p>\n         <dl>\n            <dt>LAUNCH</dt>\n            <dd>\n               <p>You are required to specify either the <code>RoleArn</code> or the <code>LocalRoleName</code> but can't use both.</p>\n               <p>Specify the <code>RoleArn</code> property as follows:</p>\n               <p>\n                  <code>{\"RoleArn\" : \"arn:aws:iam::123456789012:role/LaunchRole\"}</code>\n               </p>\n               <p>Specify the <code>LocalRoleName</code> property as follows:</p>\n               <p>\n                  <code>{\"LocalRoleName\": \"SCBasicLaunchRole\"}</code>\n               </p>\n               <p>If you specify the <code>LocalRoleName</code> property, when an account uses the launch constraint, the IAM role with that name in the account will be used. This allows launch-role constraints to be \n                  account-agnostic so the administrator can create fewer resources per shared account.</p>\n               <note>\n                  <p>The given role name must exist in the account used to create the launch constraint and the account of the user who launches a product with this launch constraint.</p>\n               </note>\n               <p>You cannot have both a <code>LAUNCH</code> and a <code>STACKSET</code> constraint.</p>\n               <p>You also cannot have more than one <code>LAUNCH</code> constraint on a product and portfolio.</p>\n            </dd>\n            <dt>NOTIFICATION</dt>\n            <dd>\n               <p>Specify the <code>NotificationArns</code> property as follows:</p>\n               <p>\n                  <code>{\"NotificationArns\" : [\"arn:aws:sns:us-east-1:123456789012:Topic\"]}</code>\n               </p>\n            </dd>\n            <dt>RESOURCE_UPDATE</dt>\n            <dd>\n               <p>Specify the <code>TagUpdatesOnProvisionedProduct</code> property as follows:</p>\n               <p>\n                  <code>{\"Version\":\"2.0\",\"Properties\":{\"TagUpdateOnProvisionedProduct\":\"String\"}}</code>\n               </p>\n               <p>The <code>TagUpdatesOnProvisionedProduct</code> property accepts a string value of <code>ALLOWED</code> or <code>NOT_ALLOWED</code>.</p>\n            </dd>\n            <dt>STACKSET</dt>\n            <dd>\n               <p>Specify the <code>Parameters</code> property as follows:</p>\n               <p>\n                  <code>{\"Version\": \"String\", \"Properties\": {\"AccountList\": [ \"String\" ], \"RegionList\": [ \"String\" ], \"AdminRole\": \"String\", \"ExecutionRole\": \"String\"}}</code>\n               </p>\n               <p>You cannot have both a <code>LAUNCH</code> and a <code>STACKSET</code> constraint.</p>\n               <p>You also cannot have more than one <code>STACKSET</code> constraint on a product and portfolio.</p>\n               <p>Products with a <code>STACKSET</code> constraint will launch an CloudFormation stack set.</p>\n            </dd>\n            <dt>TEMPLATE</dt>\n            <dd>\n               <p>Specify the <code>Rules</code> property. For more information, see\n                  <a href=\"http://docs.aws.amazon.com/servicecatalog/latest/adminguide/reference-template_constraint_rules.html\">Template Constraint Rules</a>.</p>\n            </dd>\n         </dl>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.servicecatalog#UpdateConstraintOutput": {
@@ -11184,9 +10676,6 @@
                         "smithy.api#documentation": "<p>The status of the current request.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#output": {}
             }
         },
         "com.amazonaws.servicecatalog#UpdatePortfolio": {
@@ -11261,9 +10750,6 @@
                         "smithy.api#documentation": "<p>The tags to remove.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.servicecatalog#UpdatePortfolioOutput": {
@@ -11281,9 +10767,6 @@
                         "smithy.api#documentation": "<p>Information about the tags associated with the portfolio.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#output": {}
             }
         },
         "com.amazonaws.servicecatalog#UpdatePortfolioShare": {
@@ -11309,7 +10792,7 @@
                 }
             ],
             "traits": {
-                "smithy.api#documentation": "<p>Updates the specified portfolio share. You can use this API to enable or disable <code>TagOptions</code> sharing \n         or Principal sharing for an existing portfolio share. </p>\n         <p>The portfolio share cannot be updated if the <code>CreatePortfolioShare</code> operation is <code>IN_PROGRESS</code>, as the share is not available to recipient entities. In this case, you must wait for the portfolio share to be COMPLETED.</p>\n         <p>You must provide the <code>accountId</code> or organization node in the input, but not both.</p>\n         <p>If the portfolio is shared to both an external account and an organization node, and both shares need to be updated, you must invoke <code>UpdatePortfolioShare</code> separately for each share type. </p>\n         <p>This API cannot be used for removing the portfolio share. You must use <code>DeletePortfolioShare</code> API for that action. </p>\n         <note>\n            <p>When you associate a principal with portfolio, a potential privilege escalation path may occur when that portfolio is \n         then shared with other accounts. For a user in a recipient account who is <i>not</i> an Service Catalog Admin, \n         but still has the ability to create Principals (Users/Groups/Roles), that user could create a role that matches a principal \n         name association for the portfolio. Although this user may not know which principal names are associated through \n         Service Catalog, they may be able to guess the user. If this potential escalation path is a concern, then \n         Service Catalog recommends using <code>PrincipalType</code> as <code>IAM</code>. With this configuration, \n         the <code>PrincipalARN</code> must already exist in the recipient account before it can be associated. </p>\n         </note>"
+                "smithy.api#documentation": "<p>Updates the specified portfolio share. You can use this API to enable or disable <code>TagOptions</code> sharing \n         or Principal sharing for an existing portfolio share. </p>\n      \n         <p>The portfolio share cannot be updated if the <code>CreatePortfolioShare</code> operation is <code>IN_PROGRESS</code>, as the share is not available to recipient entities. In this case, you must wait for the portfolio share to be COMPLETED.</p>\n      \n         <p>You must provide the <code>accountId</code> or organization node in the input, but not both.</p>\n      \n         <p>If the portfolio is shared to both an external account and an organization node, and both shares need to be updated, you must invoke <code>UpdatePortfolioShare</code> separately for each share type. </p>\n      \n         <p>This API cannot be used for removing the portfolio share. You must use <code>DeletePortfolioShare</code> API for that action. </p>\n      \n         <note>\n            <p>When you associate a principal with portfolio, a potential privilege escalation path may occur when that portfolio is \n         then shared with other accounts. For a user in a recipient account who is <i>not</i> an Service Catalog Admin, \n         but still has the ability to create Principals (Users/Groups/Roles), that user could create a role that matches a principal \n         name association for the portfolio. Although this user may not know which principal names are associated through \n         Service Catalog, they may be able to guess the user. If this potential escalation path is a concern, then \n         Service Catalog recommends using <code>PrincipalType</code> as <code>IAM</code>. With this configuration, \n         the <code>PrincipalARN</code> must already exist in the recipient account before it can be associated. </p> \n         </note>"
             }
         },
         "com.amazonaws.servicecatalog#UpdatePortfolioShareInput": {
@@ -11349,9 +10832,6 @@
                         "smithy.api#documentation": "<p>A flag to enables or disables <code>Principals</code> sharing in the portfolio. If this field is not provided,\n         the current state of the <code>Principals</code> sharing on the portfolio share will not be modified. </p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.servicecatalog#UpdatePortfolioShareOutput": {
@@ -11369,9 +10849,6 @@
                         "smithy.api#documentation": "<p>The status of <code>UpdatePortfolioShare</code> operation.\n         You can also obtain the operation status using <code>DescribePortfolioShareStatus</code> API. \n      </p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#output": {}
             }
         },
         "com.amazonaws.servicecatalog#UpdateProduct": {
@@ -11473,9 +10950,6 @@
                         "smithy.api#documentation": "<p>Specifies connection details for the updated product and syncs the product to the connection source\n         artifact. This automatically manages the product's artifacts based on changes to the source.\n         The <code>SourceConnection</code> parameter consists of the following sub-fields.</p>\n         <ul>\n            <li>\n               <p>\n                  <code>Type</code>\n               </p>\n            </li>\n            <li>\n               <p>\n                  <code>ConnectionParamters</code>\n               </p>\n            </li>\n         </ul>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.servicecatalog#UpdateProductOutput": {
@@ -11493,9 +10967,6 @@
                         "smithy.api#documentation": "<p>Information about the tags associated with the product.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#output": {}
             }
         },
         "com.amazonaws.servicecatalog#UpdateProvisionedProduct": {
@@ -11601,9 +11072,6 @@
                         "smithy.api#required": {}
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.servicecatalog#UpdateProvisionedProductOutput": {
@@ -11615,9 +11083,6 @@
                         "smithy.api#documentation": "<p>Information about the result of the request.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#output": {}
             }
         },
         "com.amazonaws.servicecatalog#UpdateProvisionedProductProperties": {
@@ -11662,7 +11127,7 @@
                 "ProvisionedProductProperties": {
                     "target": "com.amazonaws.servicecatalog#ProvisionedProductProperties",
                     "traits": {
-                        "smithy.api#documentation": "<p>A map that contains the provisioned product properties to be updated.</p>\n         <p>The <code>LAUNCH_ROLE</code> key accepts role ARNs. This key allows an\n         administrator to call <code>UpdateProvisionedProductProperties</code> to update the launch\n         role that is associated with a provisioned product. This role is used when an end user\n         calls a provisioning operation such as <code>UpdateProvisionedProduct</code>,\n            <code>TerminateProvisionedProduct</code>, or\n            <code>ExecuteProvisionedProductServiceAction</code>. Only a role ARN is valid. A user ARN is invalid. </p>\n         <p>The <code>OWNER</code> key accepts IAM user ARNs, IAM role ARNs, and STS \n         assumed-role ARNs. The owner is the user that has permission to see, update, terminate, and \n         execute service actions in the provisioned product.</p>\n         <p>The administrator can change the owner of a provisioned product to another IAM or STS entity within the \n         same account. Both end user owners and administrators can see ownership history of the provisioned \n         product using the <code>ListRecordHistory</code> API. The new owner can describe all past records \n         for the provisioned product using the <code>DescribeRecord</code> API. The previous owner can no \n         longer use <code>DescribeRecord</code>, but can still see the product's history from when he was \n         an owner using <code>ListRecordHistory</code>.</p>\n         <p>If a provisioned product ownership is assigned to an end user, they can see and perform any action through the API or \n         Service Catalog console such as update, terminate, and execute service actions. \n         If an end user provisions a product and the owner is updated to someone else, they will no longer be able to see or perform any actions through \n         API or the Service Catalog console on that provisioned product.</p>",
+                        "smithy.api#documentation": "<p>A map that contains the provisioned product properties to be updated.</p>\n         <p>The <code>LAUNCH_ROLE</code> key accepts role ARNs. This key allows an\n         administrator to call <code>UpdateProvisionedProductProperties</code> to update the launch\n         role that is associated with a provisioned product. This role is used when an end user\n         calls a provisioning operation such as <code>UpdateProvisionedProduct</code>,\n            <code>TerminateProvisionedProduct</code>, or\n            <code>ExecuteProvisionedProductServiceAction</code>. Only a role ARN is valid. A user ARN is invalid. </p>\n\n         <p>The <code>OWNER</code> key accepts IAM user ARNs, IAM role ARNs, and STS \n         assumed-role ARNs. The owner is the user that has permission to see, update, terminate, and \n         execute service actions in the provisioned product.</p>\n         <p>The administrator can change the owner of a provisioned product to another IAM or STS entity within the \n         same account. Both end user owners and administrators can see ownership history of the provisioned \n         product using the <code>ListRecordHistory</code> API. The new owner can describe all past records \n         for the provisioned product using the <code>DescribeRecord</code> API. The previous owner can no \n         longer use <code>DescribeRecord</code>, but can still see the product's history from when he was \n         an owner using <code>ListRecordHistory</code>.</p>\n         <p>If a provisioned product ownership is assigned to an end user, they can see and perform any action through the API or \n         Service Catalog console such as update, terminate, and execute service actions. \n         If an end user provisions a product and the owner is updated to someone else, they will no longer be able to see or perform any actions through \n         API or the Service Catalog console on that provisioned product.</p>",
                         "smithy.api#required": {}
                     }
                 },
@@ -11674,9 +11139,6 @@
                         "smithy.api#required": {}
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.servicecatalog#UpdateProvisionedProductPropertiesOutput": {
@@ -11706,9 +11168,6 @@
                         "smithy.api#documentation": "<p>The status of the request.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#output": {}
             }
         },
         "com.amazonaws.servicecatalog#UpdateProvisioningArtifact": {
@@ -11728,7 +11187,7 @@
                 }
             ],
             "traits": {
-                "smithy.api#documentation": "<p>Updates the specified provisioning artifact (also known as a version) for the specified product.</p>\n         <p>You cannot update a provisioning artifact for a product that was shared with you.</p>"
+                "smithy.api#documentation": "<p>Updates the specified provisioning artifact (also known as a version) for the specified product.</p> \n         <p>You cannot update a provisioning artifact for a product that was shared with you.</p>"
             }
         },
         "com.amazonaws.servicecatalog#UpdateProvisioningArtifactInput": {
@@ -11778,9 +11237,6 @@
                         "smithy.api#documentation": "<p>Information set by the administrator to provide guidance to end users about which provisioning artifacts to use.</p>\n         <p>The <code>DEFAULT</code> value indicates that the product version is active.</p>\n         <p>The administrator can set the guidance to <code>DEPRECATED</code> to inform\n          users that the product version is deprecated. Users are able to make updates to a provisioned product \n          of a deprecated version but cannot launch new provisioned products using a deprecated version.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.servicecatalog#UpdateProvisioningArtifactOutput": {
@@ -11804,9 +11260,6 @@
                         "smithy.api#documentation": "<p>The status of the current request.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#output": {}
             }
         },
         "com.amazonaws.servicecatalog#UpdateProvisioningParameter": {
@@ -11946,9 +11399,6 @@
                         "smithy.api#documentation": "<p>The language code.</p>\n         <ul>\n            <li>\n               <p>\n                  <code>en</code> - English (default)</p>\n            </li>\n            <li>\n               <p>\n                  <code>jp</code> - Japanese</p>\n            </li>\n            <li>\n               <p>\n                  <code>zh</code> - Chinese</p>\n            </li>\n         </ul>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.servicecatalog#UpdateServiceActionOutput": {
@@ -11960,9 +11410,6 @@
                         "smithy.api#documentation": "<p>Detailed information about the self-service action.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#output": {}
             }
         },
         "com.amazonaws.servicecatalog#UpdateTagOption": {
@@ -12013,9 +11460,6 @@
                         "smithy.api#documentation": "<p>The updated active state.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#input": {}
             }
         },
         "com.amazonaws.servicecatalog#UpdateTagOptionOutput": {
@@ -12027,9 +11471,6 @@
                         "smithy.api#documentation": "<p>Information about the TagOption.</p>"
                     }
                 }
-            },
-            "traits": {
-                "smithy.api#output": {}
             }
         },
         "com.amazonaws.servicecatalog#UpdatedTime": {
